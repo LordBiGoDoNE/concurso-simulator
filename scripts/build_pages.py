@@ -5,6 +5,8 @@ import hashlib
 import os
 import re
 import shutil
+import subprocess
+import sys
 from pathlib import Path
 
 
@@ -19,6 +21,11 @@ def copy_site(source, target):
         shutil.copy2(file, target / file.name)
     for directory in directories:
         shutil.copytree(directory, target / directory.name, dirs_exist_ok=True)
+    enrichment = source / "scripts" / "enrich_math.py"
+    if enrichment.exists():
+        subprocess.run([sys.executable, str(enrichment.resolve()), "--source", str(source.resolve()), "--output", str(target.resolve())], check=True)
+        subprocess.run([sys.executable, str((source / "scripts/check_math.py").resolve()), "--source", str(source.resolve()), "--site", str(target.resolve())], check=True)
+        subprocess.run([sys.executable, str((source / "scripts/check_links.py").resolve()), "--root", str(target.resolve())], check=True)
 
 
 def preview_slug(branch):

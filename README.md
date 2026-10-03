@@ -36,3 +36,15 @@ Para verificar os links locais:
 ```sh
 python3 scripts/check_links.py
 ```
+
+## Revisão por branch e previews
+
+Mantenha `main` como versão aprovada. Crie uma branch para cada melhoria e abra um Pull Request; faça merge apenas após aprovação.
+
+O workflow desta branch publica a versão de teste em `previews/<nome-da-branch>-<hash>/`, com um aviso de que o conteúdo ainda não foi aprovado. O link aparece no resumo da execução do GitHub Actions. Os previews são públicos e não devem conter dados privados.
+
+Durante uma publicação de preview, a raiz do site é montada exclusivamente a partir de `main`. A branch `pages-store` guarda os arquivos publicados e preserva os outros previews entre publicações; não edite essa branch como código-fonte. Todas as publicações usam a mesma fila para evitar sobreposições.
+
+Até a infraestrutura ser aprovada e mesclada, branches de melhorias precisam partir desta branch para utilizar o workflow novo. A automação antiga de `main` ainda não preserva previews; não envie mudanças para `main` antes dessa aprovação.
+
+Previews ficam disponíveis após o merge ou fechamento do PR até serem removidos explicitamente. A limpeza automática pode ser adicionada depois; o fechamento de PRs não executa código de forks nesta configuração.

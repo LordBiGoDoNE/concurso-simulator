@@ -1,0 +1,41 @@
+name: Publish GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Check internal links
+        run: python3 scripts/check_links.py
+      - uses: actions/configure-pages@v5
+      - name: Prepare static site
+        run: |
+          mkdir -p "$RUNNER_TEMP/site"
+          cp -a index.html 00_*.html 01_Portugues 02_Matematica_Logica 03_Informatica 04_Assistente_Administrativo 05_Secretario_Escola assets .nojekyll "$RUNNER_TEMP/site/"
+          cp manifesto_v3.json catalogo_fontes_questoes.csv "$RUNNER_TEMP/site/"
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ${{ runner.temp }}/site
+      - name: Deploy
+        id: deployment
+        uses: actions/deploy-pages@v4

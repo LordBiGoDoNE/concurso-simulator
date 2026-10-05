@@ -55,6 +55,12 @@ def check(source, site):
             # Each inline resolution must also occur in the separate answer file.
             for resolution in re.findall(r'<div class="inline-resolution">.*?</div>', text, re.S):
                 assert resolution in answers
+                if number == 6:
+                    assert not re.search(r'\b\d+x\b', resolution), 'Expand implicit multiplication in explanations'
+        if number == 6:
+            assert 'a × <var>x</var> + b = c' in text
+            assert 'abreviada como 2x' in text
+            assert 'não o sinal de multiplicação' in text
         for link in structure.links:
             url = urlsplit(link)
             if url.scheme or url.netloc or not url.fragment:

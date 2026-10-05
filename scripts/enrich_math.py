@@ -13,21 +13,33 @@ import shutil
 from math_content import FORMULAS, LESSONS, PRACTICE, SOLUTIONS
 
 
-def steps(route):
-    return '<ol class="steps">' + ''.join(f'<li>{escape(step)}</li>' for step in route.split('|')) + '</ol>'
+def readable(text, number, expand=True):
+    if number == 6 and expand:
+        # Expand shorthand in teaching text; preserve original exam-style options.
+        text = re.sub(r'\b(\d+)x\b', r'\1 × x', text)
+        text = re.sub(r'\b(\d+)\(', r'\1 × (', text)
+        text = text.replace('a(b + c)', 'a × (b + c)')
+    html = escape(text)
+    if number == 6:
+        html = re.sub(r'\b([xy])\b', r'<var>\1</var>', html)
+    return html
+
+
+def steps(route, number=0):
+    return '<ol class="steps">' + ''.join(f'<li>{readable(step, number)}</li>' for step in route.split('|')) + '</ol>'
 
 
 def lesson_section(number, index, lesson):
     title, explanation, route, formula, warning = lesson
     flow = '<figure class="flow" aria-label="Caminho do exemplo">'
-    flow += ''.join(f'<div>{escape(step)}</div>' + ('<span aria-hidden="true">↓</span>' if i < len(route.split('|')) - 1 else '') for i, step in enumerate(route.split('|')))
+    flow += ''.join(f'<div>{readable(step, number)}</div>' + ('<span aria-hidden="true">↓</span>' if i < len(route.split('|')) - 1 else '') for i, step in enumerate(route.split('|')))
     flow += '<figcaption>Leia de cima para baixo e refaça cada etapa no papel.</figcaption></figure>'
-    return f'<section class="card" id="s{index}"><h2>{index}. {escape(title)}</h2><p>{escape(explanation)}</p>{flow}<h3>Entenda cada passo</h3>{steps(route)}<div class="formula"><strong>Em linha:</strong> {escape(formula)}</div><aside class="note"><strong>Atenção:</strong> {escape(warning)}</aside></section>'
+    return f'<section class="card" id="s{index}"><h2>{index}. {escape(title)}</h2><p>{readable(explanation, number, expand=False)}</p>{flow}<h3>Entenda cada passo</h3>{steps(route, number)}<div class="formula"><strong>Em linha:</strong> {readable(formula, number)}</div><aside class="note"><strong>Atenção:</strong> {readable(warning, number)}</aside></section>'
 
 
 def answer(number, question, letter):
     route = SOLUTIONS[number][question - 1]
-    return f'<div class="inline-resolution"><h4>Resposta: alternativa {letter}</h4><p>Leia o pedido e acompanhe o raciocínio:</p>{steps(route)}<p><strong>Confira:</strong> refaça a operação final, verifique as unidades e compare com o que foi pedido.</p></div>'
+    return f'<div class="inline-resolution"><h4>Resposta: alternativa {letter}</h4><p>Leia o pedido e acompanhe o raciocínio:</p>{steps(route, number)}<p><strong>Confira:</strong> refaça a operação final, verifique as unidades e compare com o que foi pedido.</p></div>'
 
 
 def enhance(source, output):
@@ -63,14 +75,14 @@ def enhance(source, output):
         toc = '<ol class="toc">' + ''.join(f'<li><a href="#s{i}">{i}. {escape(lesson[0])}</a></li>' for i, lesson in enumerate(lessons, 1)) + '</ol>'
         text = re.sub(r'<ol class="toc">.*?</ol>', lambda _: toc, text, count=1, flags=re.S)
         title, math, linear = FORMULAS[number]
-        math_box = f'<section class="card"><h2>Fórmula em duas formas: {escape(title)}</h2><div class="formula"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow>{math}</mrow></math><p><strong>Em linha:</strong> {escape(linear)}</p></div><p>As duas escritas descrevem a mesma conta. Use o formato que ajudar a entender cada operação.</p></section>'
+        math_box = f'<section class="card"><h2>Fórmula em duas formas: {escape(title)}</h2><div class="formula"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow>{math}</mrow></math><p><strong>Em linha:</strong> {readable(linear, number)}</p></div><p>As duas escritas descrevem a mesma conta. Use o formato que ajudar a entender cada operação.</p></section>'
         text = text.replace(sections, sections + math_box, 1)
         prompt, solution = PRACTICE[number]
-        practice = f'<section class="card"><h2>Sua vez: tente antes de abrir</h2><p>{escape(prompt)}</p><details><summary>Conferir o raciocínio da atividade</summary>{steps(solution)}</details><p>Refaça no papel. Se errou, descubra em qual passo antes de seguir para as dez questões.</p></section>'
+        practice = f'<section class="card"><h2>Sua vez: tente antes de abrir</h2><p>{readable(prompt, number)}</p><details><summary>Conferir o raciocínio da atividade</summary>{steps(solution, number)}</details><p>Refaça no papel. Se errou, descubra em qual passo antes de seguir para as dez questões.</p></section>'
         text, replaced = re.subn(r'<section class="card"><h2>Exemplos resolvidos passo a passo</h2>.*?</section>', lambda _: practice, text, count=1, flags=re.S)
         if not replaced:
             text = text.replace(math_box, math_box + practice, 1)
-        recap = '<h2>Resumo depois de entender os exemplos</h2><ul>' + ''.join(f'<li>{escape(lesson[3])}</li>' for lesson in lessons) + '</ul>'
+        recap = '<h2>Resumo depois de entender os exemplos</h2><ul>' + ''.join(f'<li>{readable(lesson[3], number)}</li>' for lesson in lessons) + '</ul>'
         text = re.sub(r'(<section class="card callout callout--summary">).*?</section>', lambda m: m[1] + recap + '</section>', text, count=1, flags=re.S)
         def insert_question(match):
             question = int(match[1])

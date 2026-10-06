@@ -1,6 +1,7 @@
 """Check that local HTML links and asset references point to existing files."""
 
 from html.parser import HTMLParser
+import argparse
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
@@ -20,9 +21,12 @@ class References(HTMLParser):
 
 
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--root", type=Path, default=ROOT)
+    root = parser.parse_args().root.resolve()
     errors = []
     checked = 0
-    pages = sorted(ROOT.rglob("*.html"))
+    pages = sorted(root.rglob("*.html"))
     for page in pages:
         parser = References()
         parser.feed(page.read_text(encoding="utf-8"))
@@ -31,10 +35,10 @@ def main():
             if url.scheme or url.netloc or not url.path:
                 continue
             path = unquote(url.path)
-            target = ROOT / path.lstrip("/") if path.startswith("/") else page.parent / path
+            target = root / path.lstrip("/") if path.startswith("/") else page.parent / path
             checked += 1
             if not target.exists():
-                errors.append(f"{page.relative_to(ROOT)}: {reference}")
+                errors.append(f"{page.relative_to(root)}: {reference}")
     if errors:
         print("Referências locais não encontradas:")
         print("\n".join(errors))

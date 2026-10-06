@@ -6,14 +6,14 @@ Implementação autorizada pelo usuário. Versões atualizadas para Java 25 e Po
 
 - [x] 1.1 Criar `backend/` com Java 25, Spring Boot e Maven Wrapper, registrar versões estáveis compatíveis e verificar um build limpo pelo wrapper.
 - [x] 1.2 Criar `frontend/` com React, TypeScript, Vite e lockfile; verificar instalação reproduzível e build, mantendo os arquivos estáticos da raiz intactos.
-- [ ] 1.3 Documentar pré-requisitos, versões, diretórios e comandos de build; verificar os comandos em um clone limpo.
+- [x] 1.3 Documentar pré-requisitos, versões, diretórios e comandos de build; verificar os comandos em um clone limpo.
 
 ## 2. Banco e configuração
 
 - [x] 2.1 Criar Compose em `infra/` para PostgreSQL 18 com volume persistente, healthcheck e bind em loopback; verificar conexão e persistência após reinicialização sem remover o volume.
 - [x] 2.2 Adicionar exemplos de configuração sem segredos e ignorar configurações locais; verificar que credenciais reais não aparecem no Git nem nos artefatos públicos.
 - [x] 2.3 Integrar Flyway e migração inicial do marcador técnico; testar banco vazio, reinicialização idempotente e falha de migração em bancos Testcontainers isolados.
-- [ ] 2.4 Documentar inicialização, parada e preservação do volume; verificar a sequência completa sem comandos destrutivos implícitos.
+- [x] 2.4 Documentar inicialização, parada e preservação do volume; verificar a sequência completa sem comandos destrutivos implícitos.
 
 ## 3. API de plataforma
 
@@ -32,7 +32,7 @@ Implementação autorizada pelo usuário. Versões atualizadas para Java 25 e Po
 - [ ] 5.1 Adicionar CI da aplicação com builds e testes isolados; verificar sua execução no PR sem alterar o workflow de publicação atual nem usar credenciais de produção.
 - [x] 5.2 Executar montagem do site com `scripts/build_pages.py`, conferência de links e `check_math.py`; verificar os nove módulos, 90 resoluções, fontes nomeadas e âncoras.
 - [x] 5.3 Abrir o pacote montado offline e verificar fórmulas, resolução recolhida e gabarito separado, com API e banco desligados.
-- [ ] 5.4 Executar o fluxo completo local de clone limpo até a página inicial, registrar evidências e confirmar que nenhuma funcionalidade de questões, login ou simulados entrou neste incremento.
+- [x] 5.4 Executar o fluxo completo local de clone limpo até a página inicial, registrar evidências e confirmar que nenhuma funcionalidade de questões, login ou simulados entrou neste incremento.
 
 ## Workflow follow-up
 

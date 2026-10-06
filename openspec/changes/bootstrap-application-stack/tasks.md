@@ -29,7 +29,7 @@ Implementação autorizada pelo usuário. Versões atualizadas para Java 25 e Po
 
 ## 5. Integração e regressão
 
-- [ ] 5.1 Adicionar CI da aplicação com builds e testes isolados; verificar sua execução no PR sem alterar o workflow de publicação atual nem usar credenciais de produção.
+- [x] 5.1 Adicionar CI da aplicação com builds e testes isolados; verificar sua execução no PR sem alterar o workflow de publicação atual nem usar credenciais de produção.
 - [x] 5.2 Executar montagem do site com `scripts/build_pages.py`, conferência de links e `check_math.py`; verificar os nove módulos, 90 resoluções, fontes nomeadas e âncoras.
 - [x] 5.3 Abrir o pacote montado offline e verificar fórmulas, resolução recolhida e gabarito separado, com API e banco desligados.
 - [x] 5.4 Executar o fluxo completo local de clone limpo até a página inicial, registrar evidências e confirmar que nenhuma funcionalidade de questões, login ou simulados entrou neste incremento.

@@ -20,4 +20,8 @@ O primeiro smoke usou um banco de teste contendo uma tabela de persistência cri
 
 ## Revisão
 
-PR de implementação: https://github.com/LordBiGoDoNE/concurso-simulator/pull/7, empilhado sobre o PR OpenSpec #6. Nenhum merge realizado. A primeira execução do CI aprovou backend e frontend, mas revelou que o verificador estático tentava validar `/src/main.tsx` do Vite como arquivo do site. O verificador agora exclui os diretórios da aplicação, mantendo os diretórios de aulas e previews; o workflow Pages permanece intacto. A execução corrigida precisa ser confirmada antes de concluir a tarefa 5.1. A mudança não será arquivada antes da revisão.
+PR de implementação: https://github.com/LordBiGoDoNE/concurso-simulator/pull/7, empilhado sobre o PR OpenSpec #6. Nenhum merge realizado. A primeira execução do CI aprovou backend e frontend, mas revelou que o verificador estático tentava validar `/src/main.tsx` do Vite como arquivo do site. O verificador agora exclui os diretórios da aplicação, mantendo os diretórios de aulas e previews; o workflow Pages permanece intacto.
+
+CI corrigido aprovado em push e PR no commit `e9185ff`: backend, frontend (incluindo testes offline) e study-material. Execuções: https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/37529983894 e https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/37529988893.
+
+O workflow Pages foi recusado antes de executar por regras do ambiente: `Branch "feat/application-foundation" is not allowed to deploy to github-pages due to environment protection rules.` Nenhuma regra de deploy foi alterada. Não há preview novo dessa branch; o site oficial permanece intacto. A publicação da aplicação completa continua fora de escopo. A mudança não será arquivada antes da revisão.

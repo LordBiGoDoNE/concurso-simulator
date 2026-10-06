@@ -2,11 +2,11 @@ name: Publish GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: ['**', '!pages-store']
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
   pages: write
   id-token: write
 
@@ -28,11 +28,47 @@ jobs:
       - name: Check internal links
         run: python3 scripts/check_links.py
       - uses: actions/configure-pages@v5
-      - name: Prepare static site
+      - name: Read published previews
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
         run: |
-          mkdir -p "$RUNNER_TEMP/site"
-          cp -a index.html 00_*.html 01_Portugues 02_Matematica_Logica 03_Informatica 04_Assistente_Administrativo 05_Secretario_Escola assets .nojekyll "$RUNNER_TEMP/site/"
-          cp manifesto_v3.json catalogo_fontes_questoes.csv "$RUNNER_TEMP/site/"
+          if git ls-remote --exit-code --heads origin pages-store; then
+            git fetch origin pages-store
+            git worktree add "$RUNNER_TEMP/stored" FETCH_HEAD
+          else
+            mkdir -p "$RUNNER_TEMP/stored"
+          fi
+      - name: Read approved production version
+        if: github.ref_name != 'main'
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          path: approved
+      - name: Prepare production and preview
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: python3 scripts/build_pages.py --branch "$BRANCH" --stored "$RUNNER_TEMP/stored" --output "$RUNNER_TEMP/site"
+      - name: Save published versions
+        env:
+          BRANCH: ${{ github.ref_name }}
+        run: |
+          cd "$RUNNER_TEMP/site"
+          git init -b pages-store
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
+          git config http."${GITHUB_SERVER_URL}/".extraheader "$(git -C "$GITHUB_WORKSPACE" config --get http."${GITHUB_SERVER_URL}/".extraheader)"
+          if git ls-remote --exit-code --heads origin pages-store; then
+            git fetch origin pages-store
+            git reset --soft FETCH_HEAD
+          fi
+          git add .
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish site for $BRANCH"
+            git push origin HEAD:pages-store
+          fi
+          rm -rf .git
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ runner.temp }}/site

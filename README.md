@@ -70,3 +70,7 @@ Abra http://localhost:8000. Também é possível abrir o `index.html` dessa past
 - **M07-Q06:** a alternativa D dizia `ambas A e B`, mas a queda de 50 para 40 é de 10 unidades (B) e 20% (C). Agora D diz `ambas B e C`, mantendo o gabarito D.
 
 Além dos caminhos internos, a publicação confere as 90 respostas recolhidas, a correspondência com os gabaritos, a preservação das outras alternativas e os links com âncoras. Esta revisão não constitui auditoria integral do edital.
+
+### Fontes sem caixas repetitivas
+
+`scripts/compact_sources.py` troca as caixas “Fonte da questão” por uma única linha: **Fonte: referência de estudo**, mantendo o link de cada caixa. Aplica-se às disciplinas e aos gabaritos na publicação. O link é de apoio conceitual, não uma atribuição de autoria da questão à instituição referenciada. A origem autoral continua registrada nos arquivos-base e em `catalogo_fontes_questoes.csv`.

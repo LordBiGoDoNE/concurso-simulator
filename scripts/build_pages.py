@@ -24,6 +24,10 @@ def copy_site(source, target):
     enrichment = source / "scripts" / "enrich_math.py"
     if enrichment.exists():
         subprocess.run([sys.executable, str(enrichment.resolve()), "--source", str(source.resolve()), "--output", str(target.resolve())], check=True)
+    compact_sources = source / "scripts" / "compact_sources.py"
+    if compact_sources.exists():
+        subprocess.run([sys.executable, str(compact_sources.resolve()), "--site", str(target.resolve())], check=True)
+    if enrichment.exists():
         subprocess.run([sys.executable, str((source / "scripts/check_math.py").resolve()), "--source", str(source.resolve()), "--site", str(target.resolve())], check=True)
         subprocess.run([sys.executable, str((source / "scripts/check_links.py").resolve()), "--root", str(target.resolve())], check=True)
 

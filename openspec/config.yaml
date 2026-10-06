@@ -11,7 +11,8 @@ context: |
   Preserve aulas, links relativos, fórmulas acessíveis e funcionamento offline
   do material estático durante a migração. Não mova os arquivos-base agora.
   Evolução acordada: backend Java/Spring Boot, PostgreSQL, migrações Flyway,
-  monólito modular, API REST/OpenAPI, frontend React/TypeScript/Vite proposto.
+  monólito modular, API REST/OpenAPI, frontend React/TypeScript/Vite.
+  Versões escolhidas pelo usuário: Java 25 LTS e PostgreSQL 18.
   Trabalhe por mudanças pequenas, branches e PRs; nunca faça merge sem aprovação.
   Questões parametrizadas e correções precisam ser calculadas no backend,
   com versão, parâmetros e ordem de alternativas preservados por tentativa.

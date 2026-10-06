@@ -4,7 +4,28 @@ Material de estudo para o Concurso Público de Limeira 01/2026, voltado aos carg
 
 **Acesse o site:** https://lordbigodone.github.io/concurso-simulator/
 
-## Conteúdo
+## Aplicação em desenvolvimento
+
+A nova aplicação convive com o material estático, sem substituir sua publicação:
+
+- `backend/`: Java 25 LTS, Spring Boot 4.1.1, Maven Wrapper, Spring JDBC, Flyway e Spring Security.
+- `frontend/`: React 19.3.0, TypeScript 5.9.3 e Vite 8.3.3; Node 24 LTS.
+- `infra/`: PostgreSQL 18.6 em Docker Compose v2, com volume persistente.
+- `openspec/`: planejamento e checklist da mudança `bootstrap-application-stack`.
+
+**Pré-requisitos:** JDK 25 completo (`java` e `javac`), Node 24, Docker com Compose v2 e Python 3 para montar/verificar as aulas. Maven global não é necessário. Primeiras instalações requerem internet.
+
+Na raiz, copie `infra/.env.example` para `infra/.env`, preencha uma senha local e inicie:
+
+```sh
+docker compose -f infra/compose.yaml up -d --wait
+```
+
+Em outro terminal, na pasta `backend/`, defina `DB_PASSWORD` com a mesma senha e execute `./mvnw spring-boot:run`. Em um terceiro terminal, na pasta `frontend/`, execute `npm ci` e `npm run dev`. Abra http://127.0.0.1:5173; a API está em http://127.0.0.1:8080/api/v1/status.
+
+Detalhes e comandos de testes: `backend/README.md`, `frontend/README.md` e `infra/README.md`. Builds: `./mvnw clean verify` no backend e `npm ci`, `npm test`, `npm run build` no frontend. O workflow `application.yml` verifica a stack separadamente; `pages.yml` permanece intacto. **Não há login, banco de questões ou simulados implementados neste incremento.**
+
+## Material existente
 
 - 51 módulos organizados em cinco disciplinas.
 - Teoria, exercícios e gabaritos em páginas separadas.

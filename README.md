@@ -73,4 +73,4 @@ Além dos caminhos internos, a publicação confere as 90 respostas recolhidas, 
 
 ### Fontes sem caixas repetitivas
 
-`scripts/compact_sources.py` troca as caixas “Fonte da questão” por uma única linha: **Fonte: referência de estudo**, mantendo o link de cada caixa. Aplica-se às disciplinas e aos gabaritos na publicação. O link é de apoio conceitual, não uma atribuição de autoria da questão à instituição referenciada. A origem autoral continua registrada nos arquivos-base e em `catalogo_fontes_questoes.csv`.
+`scripts/compact_sources.py` troca as caixas “Fonte da questão” por **Fonte: nome real do material**, com link direto para o artigo, documento ou portal já listado nas referências do módulo. Se houver várias referências, mostra **Fontes:** e os nomes correspondentes, sem inventar uma associação específica por questão. Aplica-se às disciplinas e aos gabaritos na publicação. Os links são de apoio conceitual, não uma atribuição de autoria da questão à instituição referenciada. A origem autoral continua registrada nos arquivos-base e em `catalogo_fontes_questoes.csv`.

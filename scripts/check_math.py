@@ -36,6 +36,9 @@ def check(source, site):
         original = (source / '02_Matematica_Logica' / study.name).read_text(encoding='utf-8')
         answers = correction.read_text(encoding='utf-8')
         options = re.findall(r'<ol type="A">(.*?)</ol>', text, re.S)
+        if number == 6:
+            # Typography may change; mathematical content and options must not.
+            options = [option.replace('<var>', '').replace('</var>', '') for option in options]
         previous = re.findall(r'<ol type="A">(.*?)</ol>', original, re.S)
         assert len(options) == len(previous) == 10
         if number == 5:
@@ -59,8 +62,12 @@ def check(source, site):
                     assert not re.search(r'\b\d+x\b', resolution), 'Expand implicit multiplication in explanations'
         if number == 6:
             assert 'a × <var>x</var> + b = c' in text
-            assert 'abreviada como 2x' in text
+            assert 'abreviada como 2<var>x</var>' in text
             assert 'não o sinal de multiplicação' in text
+            question = re.search(r'<div class="q" id="q1">(.*?)<ol', text, re.S)[1]
+            assert '2<var>x</var>+4=14 → <var>x</var>=' in question
+            assert '<li>2<var>x</var>+7=19</li>' in text
+            assert '<var><var>' not in text
         for link in structure.links:
             url = urlsplit(link)
             if url.scheme or url.netloc or not url.fragment:

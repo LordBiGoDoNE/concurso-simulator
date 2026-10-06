@@ -6,11 +6,58 @@ M04 is already hand-authored and is copied unchanged.
 
 import argparse
 from html import escape
+from html.parser import HTMLParser
 from pathlib import Path
 import re
 import shutil
 
 from math_content import FORMULAS, LESSONS, PRACTICE, SOLUTIONS
+
+
+class VariableTypography(HTMLParser):
+    """Style unknowns in text, including 2x, without editing HTML attributes."""
+
+    def __init__(self):
+        super().__init__(convert_charrefs=False)
+        self.parts = []
+        self.protected = []
+
+    def handle_starttag(self, tag, attrs):
+        self.parts.append(self.get_starttag_text())
+        if tag in {'style', 'script', 'math', 'var', 'head'}:
+            self.protected.append(tag)
+
+    def handle_startendtag(self, tag, attrs):
+        self.parts.append(self.get_starttag_text())
+
+    def handle_endtag(self, tag):
+        self.parts.append(f'</{tag}>')
+        if self.protected and self.protected[-1] == tag:
+            self.protected.pop()
+
+    def handle_data(self, data):
+        if not self.protected:
+            data = re.sub(r'(?<![A-Za-zÀ-ÖØ-öø-ÿ_])([xy])(?![A-Za-zÀ-ÖØ-öø-ÿ_])', r'<var>\1</var>', data)
+        self.parts.append(data)
+
+    def handle_entityref(self, name):
+        self.parts.append(f'&{name};')
+
+    def handle_charref(self, name):
+        self.parts.append(f'&#{name};')
+
+    def handle_decl(self, decl):
+        self.parts.append(f'<!{decl}>')
+
+    def handle_comment(self, data):
+        self.parts.append(f'<!--{data}-->')
+
+
+def style_variables(html):
+    parser = VariableTypography()
+    parser.feed(html)
+    parser.close()
+    return ''.join(parser.parts)
 
 
 def readable(text, number, expand=True):
@@ -105,6 +152,8 @@ def enhance(source, output):
         for page, html in [(study, text), (correction, answers)]:
             html = html.replace('</head>', '<link rel="stylesheet" href="../assets/matematica.css"></head>', 1)
             html = html.replace('<span class="edition">Edição V3 · Estudo visual e referências</span>', '<span class="edition">Revisão didática · Aula guiada e resolução passo a passo</span>', 1)
+            if number == 6:
+                html = style_variables(html)
             (target / page.name).write_text(html, encoding='utf-8')
     assets = output / 'assets'
     assets.mkdir(exist_ok=True)

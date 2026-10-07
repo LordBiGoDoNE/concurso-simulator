@@ -7,6 +7,7 @@ from urllib.parse import unquote, urlsplit
 
 
 ROOT = Path(__file__).resolve().parents[1]
+APPLICATION_DIRECTORIES = {"backend", "frontend", "infra", "openspec", ".opencode", ".git"}
 
 
 class References(HTMLParser):
@@ -26,7 +27,13 @@ def main():
     root = parser.parse_args().root.resolve()
     errors = []
     checked = 0
-    pages = sorted(root.rglob("*.html"))
+    # Application entrypoints are resolved by Vite, not the static publication.
+    # Keep checking all study/preview pages, including when --root is a built site.
+    pages = list(root.glob("*.html"))
+    for directory in root.iterdir():
+        if directory.is_dir() and directory.name not in APPLICATION_DIRECTORIES:
+            pages.extend(directory.rglob("*.html"))
+    pages.sort()
     for page in pages:
         parser = References()
         parser.feed(page.read_text(encoding="utf-8"))

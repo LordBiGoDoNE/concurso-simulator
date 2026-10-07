@@ -1,15 +1,15 @@
 # Backend
 
-Base inicial: **Java 25 LTS**, **Spring Boot 4.1.1**, Maven **3.9.16** via Wrapper **3.3.4**.
+Base inicial: **Java 25 LTS**, **Spring Boot 4.1.1**, **Gradle 9.8.0** via Wrapper, com Kotlin DSL (`build.gradle.kts`).
 
-Requer JDK 25 e acesso à internet no primeiro build. Não requer Maven global.
+Requer JDK 25 e acesso à internet no primeiro build. Não requer Gradle global. O Wrapper fixa a versão e valida o SHA-256 da distribuição oficial.
 
 ```sh
 cd backend
-./mvnw clean verify
+./gradlew clean build
 ```
 
-No Windows, use `mvnw.cmd clean verify`. Configure `JAVA_HOME` para o JDK 25 caso o Java padrão seja outro.
+No Windows, use `gradlew.bat clean build`. Configure `JAVA_HOME` para o JDK 25 caso o Java padrão seja outro. A toolchain também exige JDK 25 completo.
 
 Os testes requerem Docker disponível: Testcontainers cria bancos PostgreSQL **18.6** isolados e os encerra ao terminar, sem acessar o volume local.
 
@@ -19,7 +19,7 @@ Inicie o banco conforme `../infra/README.md`. Depois, neste diretório:
 
 ```sh
 export DB_PASSWORD='sua-senha-local'
-./mvnw spring-boot:run
+./gradlew bootRun
 ```
 
 Use a mesma senha definida em `infra/.env`; não copie senhas para arquivos versionados. A API escuta em loopback por padrão. Flyway aplica migrações ao iniciar; uma falha impede a inicialização. Não há criação automática de schema por ORM.
@@ -35,5 +35,5 @@ Configurações externas: `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, `DB_CONNECTION
 Na máquina atual, o JDK completo está em `/usr/lib/jvm/java-25-temurin-jdk`; o runtime Red Hat não contém `javac`. Se necessário:
 
 ```sh
-JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./mvnw clean verify
+JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew clean build
 ```

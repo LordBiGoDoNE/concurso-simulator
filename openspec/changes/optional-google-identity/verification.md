@@ -22,3 +22,9 @@ O usuário autorizou grupos encadeados sem pausas em 2026-10-07. PRs seguintes t
 Tarefas 2.1–2.4 implementadas na branch encadeada sobre identity-storage. Spring Session JDBC com migração V3, cookie seguro por padrão, perfil local explícito, CSRF e CORS; contratos me/csrf/logout documentados em OpenAPI. Testes HTTP reais exercitam exemplos, independência de sessões, logout, timeout/limpeza, recuperação por novo repositório JDBC, flags de cookie e preflight. Comparação automática das respostas JSON com OpenAPI.
 
 Gradle clean build aprovado: 17 testes (12 anteriores + 5 novos). **7/16 verificadas, 0/16 integradas**. Nenhum endpoint de autenticação mock em produção; o fluxo OIDC é o próximo grupo. Documentação: `backend/docs/session-access.md`.
+
+## Grupo 3 — google-oidc — 2026-10-07
+
+Tarefas 3.1–3.4 implementadas sobre session-access: configuração desativada sem rede/segredos, startup recusado quando incompleta/insegura, fluxo code + PKCE, principal mínimo e redirect fixo. Provedor efêmero de teste exercita discovery/authorize/token/JWK/userinfo via HTTP e cookies reais. Verificados state/nonce/issuer/audience/assinatura/expiração/cancelamento/replay, rotação (cookie antigo inválido), novo login com mesmo UUID, ausência de contas criadas nas falhas e tokens em logs/sessões finais. CORS auth/config permite a consulta com credentials include.
+
+Gradle clean build aprovado: **29 testes**, 12 novos casos neste grupo. **11/16 verificadas, 0/16 integradas**. Roteiro Google real em `backend/docs/google-login.md`, não executado por depender das credenciais do usuário. Recuperação de identidade/sessão após restart é coberta pelos testes de serviço/repositório; o navegador integrado é o grupo 5.

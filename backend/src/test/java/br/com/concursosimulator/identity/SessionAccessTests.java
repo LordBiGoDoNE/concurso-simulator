@@ -47,6 +47,11 @@ class SessionAccessTests {
 
     @Test
     void visitorAndCsrfContract() throws Exception {
+        var config = send("GET", "/api/v1/auth/config", null, null, null);
+        HttpContract.json("/api/v1/auth/config", 200, config);
+        assertThat(config.body()).isEqualTo("{\"googleEnabled\":false}");
+        assertThat(send("GET", "/oauth2/authorization/google", null, null, null).statusCode()).isEqualTo(404);
+        assertThat(send("GET", "/login/oauth2/code/google", null, null, null).statusCode()).isEqualTo(404);
         var me = send("GET", "/api/v1/me", null, null, null);
         HttpContract.json("/api/v1/me", 401, me);
         assertThat(me.statusCode()).isEqualTo(401);

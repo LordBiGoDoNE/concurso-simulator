@@ -84,6 +84,20 @@ paths:
       responses:
         '204': {description: Sessão encerrada; também válido para visitante com CSRF}
         '403': {description: Token CSRF ausente ou inválido}
+  /api/v1/auth/config:
+    get:
+      summary: Consultar disponibilidade do login Google, sem segredos
+      responses:
+        '200':
+          description: Login Google habilitado ou desativado
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [googleEnabled]
+                properties:
+                  googleEnabled: {type: boolean}
 components:
   securitySchemes:
     sessionCookie:

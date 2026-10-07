@@ -13,6 +13,8 @@ No Windows, use `gradlew.bat clean build`. Configure `JAVA_HOME` para o JDK 25 c
 
 Os testes requerem Docker disponível: Testcontainers cria bancos PostgreSQL **18.6** isolados e os encerra ao terminar, sem acessar o volume local.
 
+O primeiro incremento de identidade cria somente o vínculo persistido e o principal interno mínimo, sem endpoints de login. Modelo, limites de privacidade e testes estão em `docs/identity-storage.md`.
+
 ## Executar localmente
 
 Inicie o banco conforme `../infra/README.md`. Depois, neste diretório:

@@ -1,0 +1,35 @@
+openapi: 3.1.0
+info:
+  title: Concurso Simulator — API de plataforma
+  version: 0.1.0
+  description: Contrato inicial público, sem dados de usuários ou gabaritos.
+paths:
+  /api/v1/status:
+    get:
+      summary: Verificar disponibilidade da aplicação e do banco
+      operationId: getStatus
+      responses:
+        '200':
+          description: Aplicação e banco disponíveis
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    const: UP
+        '503':
+          description: Banco indisponível após a inicialização
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    const: DOWN

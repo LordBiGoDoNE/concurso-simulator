@@ -4,7 +4,7 @@ Implementação já verificada na branch preservada `feat/application-foundation
 
 ## 1. Estrutura e builds
 
-- [ ] 1.1 Criar `backend/` com Java 25, Spring Boot e Maven Wrapper, registrar versões estáveis compatíveis e verificar um build limpo pelo wrapper.
+- [ ] 1.1 Criar `backend/` com Java 25, Spring Boot e Gradle Wrapper, registrar versões estáveis compatíveis e verificar um build limpo pelo wrapper.
 - [ ] 1.2 Criar `frontend/` com React, TypeScript, Vite e lockfile; verificar instalação reproduzível e build, mantendo os arquivos estáticos da raiz intactos.
 - [ ] 1.3 Documentar pré-requisitos, versões, diretórios e comandos de build; verificar os comandos em um clone limpo.
 

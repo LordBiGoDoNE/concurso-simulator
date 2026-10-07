@@ -15,4 +15,10 @@ O serviço não valida tokens nem cria sessão: sua entrada deve vir somente do 
 
 ## Próxima dependência
 
-Grupo 2 (sessões/contratos) começa após integração aprovada do grupo 1, conforme o fluxo de PRs da spec. Resultados de CI serão registrados na discussão do PR; não confundir implementação na branch com integração na épica.
+O usuário autorizou grupos encadeados sem pausas em 2026-10-07. PRs seguintes têm como base a tarefa anterior; revisão e merges ficam para o final.
+
+## Grupo 2 — session-access — 2026-10-07
+
+Tarefas 2.1–2.4 implementadas na branch encadeada sobre identity-storage. Spring Session JDBC com migração V3, cookie seguro por padrão, perfil local explícito, CSRF e CORS; contratos me/csrf/logout documentados em OpenAPI. Testes HTTP reais exercitam exemplos, independência de sessões, logout, timeout/limpeza, recuperação por novo repositório JDBC, flags de cookie e preflight. Comparação automática das respostas JSON com OpenAPI.
+
+Gradle clean build aprovado: 17 testes (12 anteriores + 5 novos). **7/16 verificadas, 0/16 integradas**. Nenhum endpoint de autenticação mock em produção; o fluxo OIDC é o próximo grupo. Documentação: `backend/docs/session-access.md`.

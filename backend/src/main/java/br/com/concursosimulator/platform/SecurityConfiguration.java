@@ -10,6 +10,8 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.security.web.savedrequest.NullRequestCache;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.cors.CorsConfiguration;
@@ -18,6 +20,10 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 public class SecurityConfiguration {
+    @Bean
+    HttpSessionSecurityContextRepository securityContextRepository() {
+        return new HttpSessionSecurityContextRepository();
+    }
     // Nenhum usuário ou login neste incremento; impede a conta padrão gerada pelo Boot.
     @Bean
     UserDetailsService userDetailsService() {
@@ -25,14 +31,27 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository) throws Exception {
         return http.cors(Customizer.withDefaults())
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .securityContext(context -> context.securityContextRepository(repository))
+                .requestCache(cache -> cache.requestCache(new NullRequestCache()))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET, "/api/v1/status").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/status", "/api/v1/csrf").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/me").authenticated()
                         .anyRequest().denyAll())
+                .logout(logout -> logout.logoutUrl("/api/v1/auth/logout")
+                        .invalidateHttpSession(true).clearAuthentication(true).deleteCookies("SESSION")
+                        .logoutSuccessHandler((request, response, authentication) -> response.setStatus(204)))
                 .exceptionHandling(errors -> errors
-                        .authenticationEntryPoint((request, response, exception) -> response.setStatus(403)))
+                        .authenticationEntryPoint((request, response, exception) -> {
+                            if (request.getServletPath().equals("/api/v1/me")) {
+                                response.setStatus(401);
+                                response.setContentType("application/json");
+                                response.setHeader("Cache-Control", "no-store");
+                                response.getWriter().write("{\"error\":\"unauthenticated\"}");
+                            } else response.setStatus(403);
+                        }))
                 .build();
     }
 
@@ -49,6 +68,13 @@ public class SecurityConfiguration {
         configuration.setAllowCredentials(false);
         var source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/api/v1/status", configuration);
+        var sessions = new CorsConfiguration(configuration);
+        sessions.setAllowCredentials(true);
+        sessions.setAllowedMethods(List.of("GET", "POST"));
+        sessions.setAllowedHeaders(List.of("Accept", "Content-Type", "X-CSRF-TOKEN"));
+        source.registerCorsConfiguration("/api/v1/me", sessions);
+        source.registerCorsConfiguration("/api/v1/csrf", sessions);
+        source.registerCorsConfiguration("/api/v1/auth/logout", sessions);
         return source;
     }
 }

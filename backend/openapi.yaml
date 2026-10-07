@@ -33,3 +33,60 @@ paths:
                   status:
                     type: string
                     const: DOWN
+  /api/v1/me:
+    get:
+      summary: Consultar a própria identidade (sessão necessária)
+      security: [{sessionCookie: []}]
+      responses:
+        '200':
+          description: Identidade atual; Cache-Control no-store
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [id]
+                properties:
+                  id: {type: string, format: uuid}
+        '401':
+          description: Visitante ou sessão expirada; sem redirect
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [error]
+                properties:
+                  error: {type: string, const: unauthenticated}
+  /api/v1/csrf:
+    get:
+      summary: Obter token CSRF da sessão; Cache-Control no-store
+      responses:
+        '200':
+          description: Token, também disponível a visitantes
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [token, headerName]
+                properties:
+                  token: {type: string}
+                  headerName: {type: string}
+  /api/v1/auth/logout:
+    post:
+      summary: Encerrar a sessão atual sem desconectar outros dispositivos
+      parameters:
+        - in: header
+          name: X-CSRF-TOKEN
+          required: true
+          schema: {type: string}
+      responses:
+        '204': {description: Sessão encerrada; também válido para visitante com CSRF}
+        '403': {description: Token CSRF ausente ou inválido}
+components:
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: SESSION

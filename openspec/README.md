@@ -30,6 +30,8 @@ Os arquivos gerados da ferramenta devem ser atualizados pela CLI; regras particu
 
 ## Próximas mudanças, em incrementos
 
+Os incrementos são revisados separadamente, mas a **entrega é única**: as branches das specs integram em `epic/application-reformulation`, não diretamente em main. A base inicial é a primeira spec desse pacote. Roadmap e critérios de entrega: `docs/application-reformulation.md`.
+
 1. Base local da aplicação: proposta atual.
 2. Identidade e regras de acesso, antes de persistir histórico privado.
 3. Banco de questões, revisão editorial e importação controlada.

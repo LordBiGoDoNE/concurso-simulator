@@ -41,6 +41,8 @@ python3 scripts/check_links.py
 
 **Padrão do projeto:** uma spec usa `epic/<nome-da-spec>`; tarefas ou grupos coesos usam `task/<nome-da-spec>/<assunto>` e abrem PRs para a épica. Após revisão dos PRs menores, a épica abre PR para `main`. Regras e dependências estão em `AGENTS.md`.
 
+**Reformulação completa:** neste pacote, as épicas das specs abrem PR para `epic/application-reformulation`, e não para main. Somente após concluir e aprovar todas as etapas, a épica geral segue para main em uma entrega única. O site atual permanece em produção. Veja `docs/application-reformulation.md`.
+
 Mantenha `main` como versão aprovada. Crie uma branch para cada melhoria e abra um Pull Request; faça merge apenas após aprovação.
 
 Previews são **exclusivamente manuais**, não fazem parte do CI: Actions → Publish GitHub Pages → Run workflow. Execute o workflow de `main` e informe a branch desejada no campo `branch`. Antes do merge desta automação, execute a referência `infra/spec-task-workflow`, já autorizada no ambiente Pages. O preview fica em `previews/<nome-da-branch>-<hash>/`, com aviso de versão não aprovada; o link aparece no resumo do Actions. São públicos e não devem conter dados privados. Apenas push em `main` publica produção automaticamente. O preview serve o material estático, não a aplicação Java/React.

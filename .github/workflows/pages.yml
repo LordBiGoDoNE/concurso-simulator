@@ -2,8 +2,14 @@ name: Publish GitHub Pages
 
 on:
   push:
-    branches: ['**', '!pages-store']
+    branches: [main]
   workflow_dispatch:
+    inputs:
+      branch:
+        description: 'Branch a publicar (main = produção; demais = preview estático)'
+        required: true
+        default: main
+        type: string
 
 permissions:
   contents: write
@@ -22,6 +28,15 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ inputs.branch || 'main' }}
+      - name: Validate requested branch
+        env:
+          BRANCH: ${{ inputs.branch || 'main' }}
+        run: |
+          test "$BRANCH" != pages-store
+          git check-ref-format "refs/heads/$BRANCH"
+          git ls-remote --exit-code --heads origin "refs/heads/$BRANCH"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
@@ -40,18 +55,18 @@ jobs:
             mkdir -p "$RUNNER_TEMP/stored"
           fi
       - name: Read approved production version
-        if: github.ref_name != 'main'
+        if: (inputs.branch || 'main') != 'main'
         uses: actions/checkout@v4
         with:
           ref: main
           path: approved
       - name: Prepare production and preview
         env:
-          BRANCH: ${{ github.ref_name }}
+          BRANCH: ${{ inputs.branch || 'main' }}
         run: python3 scripts/build_pages.py --branch "$BRANCH" --stored "$RUNNER_TEMP/stored" --output "$RUNNER_TEMP/site"
       - name: Save published versions
         env:
-          BRANCH: ${{ github.ref_name }}
+          BRANCH: ${{ inputs.branch || 'main' }}
         run: |
           cd "$RUNNER_TEMP/site"
           git init -b pages-store

@@ -13,6 +13,12 @@ context: |
   Evolução acordada: backend Java/Spring Boot, PostgreSQL, migrações Flyway,
   monólito modular, API REST/OpenAPI, frontend React/TypeScript/Vite proposto.
   Trabalhe por mudanças pequenas, branches e PRs; nunca faça merge sem aprovação.
+  Padrão obrigatório: epic/<change-name> integra a spec; task/<change-name>/<assunto>
+  implementa uma tarefa ou grupo coeso com testes e PR destinado à épica.
+  Dependências aguardam integração ou ficam em PR de rascunho explicitamente bloqueado.
+  Issue da spec reúne checklist e PRs; revisão final da épica para main é integrada.
+  CI não publica previews. Preview estático é workflow_dispatch manual com branch
+  informada como input e workflow executado a partir de main. Consulte AGENTS.md.
   Questões parametrizadas e correções precisam ser calculadas no backend,
   com versão, parâmetros e ordem de alternativas preservados por tentativa.
   Não exponha gabaritos durante simulados nem atribua questões autorais às

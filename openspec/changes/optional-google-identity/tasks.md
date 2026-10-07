@@ -1,6 +1,6 @@
 # Tasks
 
-Implementação autorizada pelo usuário em 2026-10-07. Cada grupo abaixo vira um PR coeso para `epic/optional-google-identity`, incluindo seus testes/documentação. Grupos dependentes aguardam integração dos anteriores. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados de branches ainda não integradas ficam em `verification.md`.
+Implementação autorizada pelo usuário em 2026-10-07. O usuário autorizou implementar todos os grupos sem pausas, em PRs encadeados para revisão individual ao final. Cada próximo grupo parte da branch anterior e abre PR em rascunho para ela; após revisão, a integração ocorre na ordem na épica da spec. Não fazer merges sem autorização. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados de branches ainda não integradas ficam em `verification.md`.
 
 ## 1. Identidade persistida — branch identity-storage
 

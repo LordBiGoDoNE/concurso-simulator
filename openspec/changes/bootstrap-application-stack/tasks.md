@@ -1,16 +1,16 @@
 # Tasks
 
-Todas as tarefas abaixo são de implementação futura. Nenhuma foi executada nesta proposta.
+Implementação já verificada na branch preservada `feat/application-foundation`, agora repartida em PRs de tarefas. Nesta épica, as caixas representam integração após aprovação dos PRs, não apenas implementação em branches externas. Java 25 LTS e PostgreSQL 18 foram escolhidos pelo usuário.
 
 ## 1. Estrutura e builds
 
-- [ ] 1.1 Criar `backend/` com Java 21, Spring Boot e Maven Wrapper, registrar versões estáveis compatíveis e verificar um build limpo pelo wrapper.
+- [ ] 1.1 Criar `backend/` com Java 25, Spring Boot e Maven Wrapper, registrar versões estáveis compatíveis e verificar um build limpo pelo wrapper.
 - [ ] 1.2 Criar `frontend/` com React, TypeScript, Vite e lockfile; verificar instalação reproduzível e build, mantendo os arquivos estáticos da raiz intactos.
 - [ ] 1.3 Documentar pré-requisitos, versões, diretórios e comandos de build; verificar os comandos em um clone limpo.
 
 ## 2. Banco e configuração
 
-- [ ] 2.1 Criar Compose em `infra/` para PostgreSQL 17 com volume persistente, healthcheck e bind em loopback; verificar conexão e persistência após reinicialização sem remover o volume.
+- [ ] 2.1 Criar Compose em `infra/` para PostgreSQL 18 com volume persistente, healthcheck e bind em loopback; verificar conexão e persistência após reinicialização sem remover o volume.
 - [ ] 2.2 Adicionar exemplos de configuração sem segredos e ignorar configurações locais; verificar que credenciais reais não aparecem no Git nem nos artefatos públicos.
 - [ ] 2.3 Integrar Flyway e migração inicial do marcador técnico; testar banco vazio, reinicialização idempotente e falha de migração em bancos Testcontainers isolados.
 - [ ] 2.4 Documentar inicialização, parada e preservação do volume; verificar a sequência completa sem comandos destrutivos implícitos.

@@ -18,11 +18,11 @@ Propor `backend/`, `frontend/` e `infra/`, sem mover os arquivos estáticos exis
 
 ### Java e monólito modular
 
-Propor Java 21 LTS, Maven Wrapper e Spring Boot em release estável compatível. A implementação deve registrar e fixar as versões exatas antes do primeiro commit de código. Usar organização por funcionalidade; criar apenas o módulo de plataforma nesta etapa, sem módulos vazios para capacidades futuras. Alternativa rejeitada: microsserviços, que adicionariam deploys e comunicação distribuída sem necessidade demonstrada.
+Usar Java 25 LTS (alteração solicitada pelo usuário), Maven Wrapper 3.3.4 com Maven 3.9.16 e Spring Boot 4.1.1. Usar organização por funcionalidade; criar apenas o módulo de plataforma nesta etapa, sem módulos vazios para capacidades futuras. Alternativa rejeitada: microsserviços, que adicionariam deploys e comunicação distribuída sem necessidade demonstrada.
 
 ### PostgreSQL e migrações
 
-Propor PostgreSQL 17 em Docker Compose, volume nomeado, credenciais locais via `.env` não versionado e `.env.example` sem segredos. Bind do banco em loopback. Flyway controla o schema; não usar criação automática destrutiva por ORM. A primeira migração cria somente um marcador técnico da aplicação, sem tabelas artificiais de usuários ou questões. Testcontainers usa a mesma versão major. Não incluir comandos de exclusão do volume na inicialização padrão.
+Usar PostgreSQL 18 (alteração solicitada pelo usuário) em Docker Compose, volume nomeado montado em `/var/lib/postgresql`, conforme o layout da imagem oficial a partir da versão 18. Credenciais locais via `.env` não versionado e `.env.example` sem segredos. Bind do banco em loopback. Flyway controla o schema; não usar criação automática destrutiva por ORM. A primeira migração cria somente um marcador técnico da aplicação, sem tabelas artificiais de usuários ou questões. Testcontainers usa a mesma versão major. Não incluir comandos de exclusão do volume na inicialização padrão.
 
 ### Contrato REST e segurança inicial
 

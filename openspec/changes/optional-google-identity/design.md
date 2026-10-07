@@ -47,7 +47,7 @@ Redirect pós-login para `FRONTEND_URL` fixa; falha/cancelamento usa marcador ge
 
 ### Testes e entrega por PRs
 
-Separar PRs coesos: persistência/identidade, sessão/contratos/CSRF, fluxo OIDC, frontend e documentação/validação integrada. Cada PR inclui seus testes. Dependências aguardam integração na branch da spec. CI usa PostgreSQL 18.6 isolado e um provedor OIDC local com discovery, authorization, token e JWK; cobrir redirect, troca de código e cookies reais, não só mock de principal autenticado. Negativos: state/nonce/issuer/audience/assinatura/expiração inválidos, replay, CSRF, fixação, CORS, timeout e logout. Um teste manual Google real é complementar e requer credenciais do usuário, sem colocá-las no CI.
+Separar PRs coesos: persistência/identidade, sessão/contratos/CSRF, fluxo OIDC, frontend e documentação/validação integrada. Cada PR inclui seus testes. Por autorização do usuário, implementar em PRs encadeados de rascunho sem pausas; revisar individualmente ao final e integrar na ordem, sem merges automáticos. CI usa PostgreSQL 18.6 isolado e um provedor OIDC local com discovery, authorization, token e JWK; cobrir redirect, troca de código e cookies reais, não só mock de principal autenticado. Negativos: state/nonce/issuer/audience/assinatura/expiração inválidos, replay, CSRF, fixação, CORS, timeout e logout. Um teste manual Google real é complementar e requer credenciais do usuário, sem colocá-las no CI.
 
 ## Risks / Trade-offs
 

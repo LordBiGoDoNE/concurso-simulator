@@ -39,6 +39,11 @@ test('login real, duas identidades e dispositivos isolados, CSRF e saída', asyn
     const three = await sameUser.newPage();
     await setProvider(request, 'browser-user-one');
     const firstId = await login(one);
+    // Reinicia o contexto Spring real mantendo PostgreSQL e os cookies do navegador.
+    expect((await request.post(`${provider}/fixture/restart`)).ok()).toBe(true);
+    const recovered = await first.request.get(`${api}/api/v1/me`);
+    expect(recovered.status()).toBe(200);
+    expect((await recovered.json()).id).toBe(firstId);
     const cookies = await first.cookies(api);
     const session = cookies.find(cookie => cookie.name === 'SESSION');
     expect(session).toMatchObject({ httpOnly: true, sameSite: 'Lax', secure: false, path: '/' });

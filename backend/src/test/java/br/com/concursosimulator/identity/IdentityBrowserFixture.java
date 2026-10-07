@@ -2,6 +2,9 @@ package br.com.concursosimulator.identity;
 
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
+import org.springframework.context.ConfigurableApplicationContext;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import java.util.concurrent.atomic.AtomicReference;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 
 /** Launcher exclusivo de testes; nunca empacotado no bootJar. */
@@ -10,31 +13,38 @@ public final class IdentityBrowserFixture {
         var postgres = new PostgreSQLContainer("postgres:18.6");
         postgres.start();
         var oidc = new OidcFixture(18081);
-        org.springframework.context.ConfigurableApplicationContext context;
+        var context = new AtomicReference<ConfigurableApplicationContext>();
         try {
             var registration = new OidcTestRegistration().fixtureRegistration(oidc.issuer(),
                     "http://127.0.0.1:18080/login/oauth2/code/google");
-            context = new SpringApplicationBuilder(ConcursoSimulatorApplication.class)
-                .initializers(application -> application.getBeanFactory().registerSingleton("fixtureRegistration", registration))
-                .run("--spring.profiles.active=local", "--server.address=127.0.0.1", "--server.port=18080",
-                        "--spring.datasource.url=" + postgres.getJdbcUrl(),
-                        "--spring.datasource.username=" + postgres.getUsername(),
-                        "--spring.datasource.password=" + postgres.getPassword(),
-                        "--spring.session.timeout=20s", "--app.google.enabled=true",
-                        "--fixture.issuer=" + oidc.issuer(),
-                        "--app.google.callback-url=http://127.0.0.1:18080/login/oauth2/code/google",
-                        "--app.google.frontend-url=http://127.0.0.1:5173",
-                        "--app.cors-origins=http://127.0.0.1:5173");
+            context.set(start(postgres, registration));
+            oidc.enableApiRestart(() -> {
+                context.get().close();
+                context.set(start(postgres, registration));
+            });
         } catch (RuntimeException exception) {
             oidc.close();
             postgres.stop();
             throw exception;
         }
         Runtime.getRuntime().addShutdownHook(new Thread(() -> {
-            context.close();
+            context.get().close();
             oidc.close();
             postgres.stop();
         }));
         new java.util.concurrent.CountDownLatch(1).await();
+    }
+
+    private static ConfigurableApplicationContext start(PostgreSQLContainer postgres, ClientRegistrationRepository registration) {
+        return new SpringApplicationBuilder(ConcursoSimulatorApplication.class)
+                .initializers(application -> application.getBeanFactory().registerSingleton("fixtureRegistration", registration))
+                .run("--spring.profiles.active=local", "--server.address=127.0.0.1", "--server.port=18080",
+                        "--spring.datasource.url=" + postgres.getJdbcUrl(),
+                        "--spring.datasource.username=" + postgres.getUsername(),
+                        "--spring.datasource.password=" + postgres.getPassword(),
+                        "--spring.session.timeout=20s", "--app.google.enabled=true",
+                        "--app.google.callback-url=http://127.0.0.1:18080/login/oauth2/code/google",
+                        "--app.google.frontend-url=http://127.0.0.1:5173",
+                        "--app.cors-origins=http://127.0.0.1:5173");
     }
 }

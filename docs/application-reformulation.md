@@ -18,8 +18,8 @@ Tarefa → branch da spec → épica geral → main apenas na entrega final. Nom
 
 ## Roadmap acordado
 
-1. **Base da aplicação**: Java 25, Gradle, Spring Boot, PostgreSQL 18, Flyway, segurança inicial, React/TypeScript/Vite, ambiente local e testes. Implementada e integrada na branch da spec; PR #14 agora aponta para a épica geral.
-2. **Identidade e acesso**: decidir login e regras antes de persistir histórico privado; especificar e implementar a solução aprovada.
+1. **Base da aplicação**: Java 25, Gradle, Spring Boot, PostgreSQL 18, Flyway, segurança inicial, React/TypeScript/Vite, ambiente local e testes. Implementada e integrada na épica geral pelo PR #14.
+2. **Identidade e acesso**: login opcional Google via OIDC e sessão JDBC aprovado em `optional-google-identity`; implementação em PRs encadeados para revisão individual ao final, sem merges automáticos. Histórico privado fica para specs seguintes.
 3. **Banco de questões**: disciplinas/assuntos, revisão editorial, referências reais e importação controlada do material. Definir a quantidade por disciplina ou assunto antes de ampliar o acervo.
 4. **Simulados e tentativas**: seleção aleatória, critérios de composição, realização, correção e histórico com versões, parâmetros e ordem das alternativas preservados; não expor gabaritos durante o simulado.
 5. **Questões parametrizadas**: variações controladas, especialmente em Matemática, com validação de resultados e resoluções didáticas. Não gerar questões por IA ao vivo sem validação.
@@ -30,7 +30,7 @@ Cada etapa requer seus artefatos OpenSpec e aprovação antes da implementação
 
 ## Decisões abertas
 
-- Login obrigatório ou opcional, método de autenticação e sincronização do progresso.
+- Sincronização do progresso em specs futuras (login opcional Google já decidido).
 - Meta de 50–100 questões por disciplina ou por assunto.
 - Escopo de cargos/concursos além dos dois atuais.
 - Hospedagem, disponibilidade, backups e estratégia de acesso à nova aplicação.

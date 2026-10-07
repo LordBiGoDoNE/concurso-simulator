@@ -71,6 +71,19 @@ public final class OidcFixture implements AutoCloseable {
     }
 
     public String issuer() { return "http://127.0.0.1:" + server.getAddress().getPort(); }
+
+    public void enableApiRestart(Runnable restart) {
+        server.createContext("/fixture/restart", exchange -> {
+            if (!exchange.getRequestMethod().equals("POST")) {
+                json(exchange, 405, Map.of("error", "method_not_allowed"));
+                return;
+            }
+            try {
+                restart.run();
+                json(exchange, 200, Map.of("ready", true));
+            } catch (RuntimeException exception) { json(exchange, 500, Map.of("error", "restart_failed")); }
+        });
+    }
     private void authorize(HttpExchange exchange) throws java.io.IOException {
         var params = parameters(exchange.getRequestURI().getRawQuery());
         String state = params.get("state");

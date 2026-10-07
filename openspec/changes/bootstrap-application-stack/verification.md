@@ -1,5 +1,13 @@
 # Verification
 
+## Integração aprovada — 2026-10-07
+
+PRs #6 e #8 integrados em main; PRs #9, #10, #11 e #12 integrados em `epic/bootstrap-application-stack` após aprovação do usuário. CI Gradle integrado aprovado em https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/37665072528 e https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/37665078380 (backend, frontend e study-material).
+
+Repetidos na integração: Gradle `clean build` com 5 testes PostgreSQL; `npm ci`, 5 testes Vitest, build e 4 testes Playwright; montagem das 108 páginas e conferência de 90 resoluções. Repetidos também em clone limpo `/tmp/opencode/concurso-gradle-integrated-clean`, incluindo Wrapper Gradle e regressão offline do novo pacote `/tmp/opencode/concurso-integrated-study`. Todos aprovados. Não houve mudança no conteúdo das aulas. A revisão final épica → main permanece pendente; OpenSpec não arquivado.
+
+Os registros seguintes são históricos, preservados para rastreabilidade.
+
 Este registro descreve a implementação original preservada em `feat/application-foundation`/PR #7. Ela foi repartida em PRs destinados à épica; os resultados abaixo não significam que a épica já integrou esses PRs. Reexecute a validação integrada após suas aprovações. O preview passou a ser manual no PR de organização #8.
 
 ## Ambiente local — 2026-10-06

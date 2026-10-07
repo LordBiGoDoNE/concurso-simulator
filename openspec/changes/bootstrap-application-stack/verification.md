@@ -4,6 +4,8 @@ Este registro descreve a implementação original preservada em `feat/applicatio
 
 ## Ambiente local — 2026-10-06
 
+As referências a Maven abaixo são evidências históricas do PR #7, não instruções atuais. O backend do PR #9 foi migrado para Gradle em 2026-10-07, com `./gradlew --no-daemon --console=plain clean build` aprovado e os mesmos 5 testes PostgreSQL aprovados. Gradle 9.8.0, Java 25, Spring Boot 4.1.1; distribuição e JAR do Wrapper conferidos contra SHA-256 oficiais. O CI deste PR #12 foi alinhado ao Gradle; continua aguardando integração dos PRs de implementação antes da validação conjunta.
+
 - Java Temurin 25.0.4.1, Spring Boot 4.1.1, Maven 3.9.16 via Wrapper 3.3.4.
 - PostgreSQL 18.6, Flyway 12.4.0 e Testcontainers 2.0.5 (dependências gerenciadas pelo Boot).
 - Node 24.21.0, React 19.3.0, TypeScript 5.9.3, Vite 8.3.3, Vitest 5.0.3, Playwright 1.63.0.

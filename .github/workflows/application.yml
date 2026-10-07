@@ -14,10 +14,13 @@ jobs:
         with:
           distribution: temurin
           java-version: '25'
-          cache: maven
+          cache: gradle
+          cache-dependency-path: |
+            backend/*.gradle.kts
+            backend/gradle/wrapper/gradle-wrapper.properties
       - name: Build and isolated PostgreSQL tests
         working-directory: backend
-        run: ./mvnw -B -ntp clean verify
+        run: ./gradlew --no-daemon --console=plain clean build
   frontend:
     runs-on: ubuntu-latest
     steps:

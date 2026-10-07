@@ -55,3 +55,27 @@ jobs:
       - name: Build unchanged public material
         run: python3 scripts/build_pages.py --branch main --stored "$RUNNER_TEMP/empty" --output "$RUNNER_TEMP/study"
       - run: python3 scripts/check_links.py --root "$RUNNER_TEMP/study"
+  identity-browser:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '25'
+          cache: gradle
+          cache-dependency-path: |
+            backend/*.gradle.kts
+            backend/gradle/wrapper/gradle-wrapper.properties
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: npm ci
+        working-directory: frontend
+      - run: npx playwright install --with-deps chromium
+        working-directory: frontend
+      - name: Real browser identity flow with isolated PostgreSQL and local OIDC
+        run: npm run test:identity
+        working-directory: frontend

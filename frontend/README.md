@@ -29,3 +29,9 @@ Para testar Google local, veja `../backend/docs/google-login.md`: use `SPRING_PR
 “Entrar com Google” é navegação à API. “Sair” busca novo CSRF e faz POST; 403 oferece nova tentativa, erro de rede não afirma saída. “Atualizar sessão” e retorno do foco consultam novamente e reconhecem expiração. Falha no login mostra mensagem genérica e remove auth=failed da URL, preservando demais parâmetros. Não há tokens Google em localStorage/sessionStorage. Testes Vitest cobrem estados/falhas/logout e Playwright cobre teclado/390px/1280px.
 
 Testes de navegador: `npx playwright install chromium` e `npm run test:e2e`. Para incluir a regressão offline das aulas, monte o pacote com `scripts/build_pages.py` e defina `STUDY_ROOT=/caminho/absoluto/do/pacote` ao executar os testes. Sem essa variável, o teste offline é explicitamente ignorado; o CI sempre a define.
+
+## Navegador integrado sem Google real
+
+`npm run test:identity` requer Docker e JDK 25 (configure JAVA_HOME se necessário), além do Chromium. Playwright inicia Vite, backend real, PostgreSQL 18.6 isolado e provedor OIDC local com discovery/token/JWK. Reserve portas 5173, 18080 e 18081. Não reutiliza banco/servidor local existente nem precisa de credenciais Google. O launcher e controle de subject/cancelamento ficam exclusivamente em src/test, fora do JAR de produção.
+
+Os três cenários cobrem visitante, login real, UUID estável em novo login, duas identidades e dispositivos independentes, cookie, CSRF/saída, expiração real de 20s e cancelamento genérico. O timeout reduzido é exclusivo desse launcher. CI executa esse comando num job separado, sem publicação. Não substitui o smoke Google real antes do deployment.

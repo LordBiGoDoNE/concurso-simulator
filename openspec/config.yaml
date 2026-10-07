@@ -1,0 +1,41 @@
+schema: spec-driven
+
+context: |
+  Language: pt-BR
+  All artifacts must be written in pt-BR.
+  Keep OpenSpec structural headings and SHALL/MUST keywords in English.
+  Projeto: concurso-simulator, material de estudo para concurso público.
+  Estado atual: site HTML/CSS estático no GitHub Pages, com geração Python,
+  nove módulos de Matemática enriquecidos, 90 resoluções recolhidas e
+  um catálogo original de 510 questões autorais ainda sujeito a revisão.
+  Preserve aulas, links relativos, fórmulas acessíveis e funcionamento offline
+  do material estático durante a migração. Não mova os arquivos-base agora.
+  Evolução acordada: backend Java/Spring Boot, PostgreSQL, migrações Flyway,
+  monólito modular, API REST/OpenAPI, frontend React/TypeScript/Vite proposto.
+  Trabalhe por mudanças pequenas, branches e PRs; nunca faça merge sem aprovação.
+  Questões parametrizadas e correções precisam ser calculadas no backend,
+  com versão, parâmetros e ordem de alternativas preservados por tentativa.
+  Não exponha gabaritos durante simulados nem atribua questões autorais às
+  instituições usadas apenas como referências de estudo.
+
+# Per-artifact rules (optional)
+# Add custom rules for specific artifacts.
+# Example:
+#   rules:
+#     proposal:
+#       - Keep proposals under 500 words
+#       - Always state what is out of scope
+#     tasks:
+#       - Break tasks into chunks of max 2 hours
+
+# Per-operation guidance (optional)
+# Add advisory guidance for how apply and archive work should be conducted.
+# This is separate from artifact rules above.
+# Example:
+#   operations:
+#     apply:
+#       guidance:
+#         - Keep test summaries concise
+#     archive:
+#       guidance:
+#         - Summarize the archive outcome before finishing

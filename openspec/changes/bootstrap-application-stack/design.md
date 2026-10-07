@@ -18,11 +18,11 @@ Propor `backend/`, `frontend/` e `infra/`, sem mover os arquivos estáticos exis
 
 ### Java e monólito modular
 
-Propor Java 21 LTS, Maven Wrapper e Spring Boot em release estável compatível. A implementação deve registrar e fixar as versões exatas antes do primeiro commit de código. Usar organização por funcionalidade; criar apenas o módulo de plataforma nesta etapa, sem módulos vazios para capacidades futuras. Alternativa rejeitada: microsserviços, que adicionariam deploys e comunicação distribuída sem necessidade demonstrada.
+Usar Java 25 LTS, Gradle Wrapper 9.8.0 com Kotlin DSL e Spring Boot 4.1.1 (Gradle substitui Maven por solicitação do usuário no PR #9). Fixar versão e checksum da distribuição; usar toolchain Java 25 e BOM do Spring Boot para dependências. Usar organização por funcionalidade; criar apenas o módulo de plataforma nesta etapa, sem módulos vazios para capacidades futuras. Alternativa rejeitada: microsserviços, que adicionariam deploys e comunicação distribuída sem necessidade demonstrada.
 
 ### PostgreSQL e migrações
 
-Propor PostgreSQL 17 em Docker Compose, volume nomeado, credenciais locais via `.env` não versionado e `.env.example` sem segredos. Bind do banco em loopback. Flyway controla o schema; não usar criação automática destrutiva por ORM. A primeira migração cria somente um marcador técnico da aplicação, sem tabelas artificiais de usuários ou questões. Testcontainers usa a mesma versão major. Não incluir comandos de exclusão do volume na inicialização padrão.
+Usar PostgreSQL 18 (alteração solicitada pelo usuário) em Docker Compose, volume nomeado montado em `/var/lib/postgresql`, conforme o layout da imagem oficial a partir da versão 18. Credenciais locais via `.env` não versionado e `.env.example` sem segredos. Bind do banco em loopback. Flyway controla o schema; não usar criação automática destrutiva por ORM. A primeira migração cria somente um marcador técnico da aplicação, sem tabelas artificiais de usuários ou questões. Testcontainers usa a mesma versão major. Não incluir comandos de exclusão do volume na inicialização padrão.
 
 ### Contrato REST e segurança inicial
 
@@ -34,7 +34,7 @@ Propor React, TypeScript e Vite com lockfile. Página inicial mínima: disponibi
 
 ### Ambiente e testes
 
-Docker Compose inicia o banco; Maven Wrapper e comandos npm documentados iniciam API e frontend. Portas propostas: banco 5432 (loopback), API 8080, frontend 5173. Novo CI executa build, testes HTTP, migrações em PostgreSQL Testcontainers, build e testes de estados da página inicial. Manter os testes Python de montagem do site. Nenhum teste usa banco persistente de desenvolvimento.
+Docker Compose inicia o banco; Gradle Wrapper e comandos npm documentados iniciam API e frontend. Portas propostas: banco 5432 (loopback), API 8080, frontend 5173. Novo CI executa build, testes HTTP, migrações em PostgreSQL Testcontainers, build e testes de estados da página inicial. Manter os testes Python de montagem do site. Nenhum teste usa banco persistente de desenvolvimento.
 
 ## Risks / Trade-offs
 

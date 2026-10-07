@@ -11,6 +11,8 @@ context: |
   Preserve aulas, links relativos, fórmulas acessíveis e funcionamento offline
   do material estático durante a migração. Não mova os arquivos-base agora.
   Evolução acordada: backend Java/Spring Boot, PostgreSQL, migrações Flyway,
+  Versões escolhidas pelo usuário: Java 25 LTS e PostgreSQL 18.
+  Build do backend: Gradle Wrapper 9.8.0 com Kotlin DSL, não Maven.
   monólito modular, API REST/OpenAPI, frontend React/TypeScript/Vite proposto.
   Trabalhe por mudanças pequenas, branches e PRs; nunca faça merge sem aprovação.
   Padrão obrigatório: epic/<change-name> integra a spec; task/<change-name>/<assunto>

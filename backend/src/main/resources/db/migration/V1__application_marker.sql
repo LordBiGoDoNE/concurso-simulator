@@ -1,0 +1,5 @@
+CREATE TABLE application_marker (
+    id INTEGER PRIMARY KEY CHECK (id = 1),
+    created_at TIMESTAMP WITH TIME ZONE NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO application_marker (id) VALUES (1);

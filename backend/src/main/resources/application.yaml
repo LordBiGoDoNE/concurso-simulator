@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: concurso-simulator
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/concurso_simulator?connectTimeout=2&socketTimeout=3}
+    username: ${DB_USERNAME:concurso}
+    password: ${DB_PASSWORD}
+    hikari:
+      connection-timeout: ${DB_CONNECTION_TIMEOUT_MS:2000}
+      validation-timeout: 1000
+  jdbc:
+    template:
+      query-timeout: ${DB_QUERY_TIMEOUT_SECONDS:2}
+server:
+  address: ${SERVER_ADDRESS:127.0.0.1}
+  port: ${SERVER_PORT:8080}
+  error:
+    include-message: never
+    include-stacktrace: never
+app:
+  cors-origins: ${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}

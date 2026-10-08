@@ -21,6 +21,7 @@ dependencies {
     implementation(platform("org.springframework.boot:spring-boot-dependencies:4.1.1"))
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
     implementation("org.springframework.boot:spring-boot-starter-jdbc")
+    implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-flyway")
     implementation("org.flywaydb:flyway-database-postgresql")
     implementation("org.springframework.boot:spring-boot-starter-security")
@@ -29,6 +30,7 @@ dependencies {
 
     testImplementation("org.springframework.boot:spring-boot-starter-webmvc-test")
     testImplementation("org.springframework.security:spring-security-test")
+    testImplementation("com.tngtech.archunit:archunit-junit5:1.5.1")
     testImplementation("org.testcontainers:testcontainers-postgresql")
     testImplementation("org.testcontainers:testcontainers-junit-jupiter")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")

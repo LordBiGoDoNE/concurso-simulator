@@ -76,7 +76,8 @@ class GoogleOidcTests {
         assertThat(get(second, base() + "/api/v1/me").body()).isEqualTo(me.body());
         for (byte[] bytes : jdbc.queryForList("SELECT attribute_bytes FROM spring_session_attributes", byte[].class)) {
             String serialized = new String(bytes, java.nio.charset.StandardCharsets.ISO_8859_1);
-            assertThat(serialized).doesNotContain("fixture-access-", "Google fixture profile", "OidcIdToken", OIDC.lastIdToken);
+            assertThat(serialized).doesNotContain("fixture-access-", "Google fixture profile", "OidcIdToken", OIDC.lastIdToken,
+                    "UserPersistenceEntity", "ExternalIdentityPersistenceEntity");
         }
         assertThat(output.getAll()).doesNotContain("fixture-access-", OIDC.lastIdToken, "returning-subject");
     }

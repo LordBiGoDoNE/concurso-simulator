@@ -1,4 +1,4 @@
-package br.com.concursosimulator.identity;
+package br.com.concursosimulator.identity.infrastructure;
 
 import java.net.URI;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;

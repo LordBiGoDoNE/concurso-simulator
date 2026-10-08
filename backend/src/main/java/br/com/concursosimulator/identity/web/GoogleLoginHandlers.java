@@ -1,4 +1,8 @@
-package br.com.concursosimulator.identity;
+package br.com.concursosimulator.identity.web;
+
+import br.com.concursosimulator.identity.application.ResolveExternalIdentityUseCase;
+import br.com.concursosimulator.identity.application.port.LoginOptions;
+import br.com.concursosimulator.identity.domain.ExternalIdentity;
 
 import java.io.IOException;
 import java.util.List;
@@ -20,12 +24,12 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GoogleLoginHandlers implements AuthenticationSuccessHandler, AuthenticationFailureHandler {
-    private final GoogleIdentityService identities;
-    private final GoogleLoginProperties properties;
+    private final ResolveExternalIdentityUseCase identities;
+    private final LoginOptions properties;
     private final HttpSessionSecurityContextRepository contexts;
     private final HttpSessionOAuth2AuthorizedClientRepository clients;
 
-    public GoogleLoginHandlers(GoogleIdentityService identities, GoogleLoginProperties properties,
+    public GoogleLoginHandlers(ResolveExternalIdentityUseCase identities, LoginOptions properties,
                               HttpSessionSecurityContextRepository contexts, HttpSessionOAuth2AuthorizedClientRepository clients) {
         this.identities = identities;
         this.properties = properties;
@@ -43,7 +47,8 @@ public class GoogleLoginHandlers implements AuthenticationSuccessHandler, Authen
                 fail(request, response);
                 return;
             }
-            var principal = identities.resolveVerifiedSubject(user.getSubject());
+            var external = new ExternalIdentity("google", "https://accounts.google.com", user.getSubject());
+            var principal = new UserPrincipal(identities.execute(external));
             var minimal = UsernamePasswordAuthenticationToken.authenticated(principal, null,
                     List.of(new SimpleGrantedAuthority("ROLE_USER")));
             clients.removeAuthorizedClient("google", authentication, request, response);

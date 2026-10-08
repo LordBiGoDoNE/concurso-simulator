@@ -1,5 +1,8 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.identity.infrastructure.GoogleLoginConfiguration;
+import br.com.concursosimulator.identity.infrastructure.GoogleLoginProperties;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.runner.ApplicationContextRunner;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;

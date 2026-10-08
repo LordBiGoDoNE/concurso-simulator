@@ -1,4 +1,4 @@
-package br.com.concursosimulator.identity;
+package br.com.concursosimulator.identity.infrastructure;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

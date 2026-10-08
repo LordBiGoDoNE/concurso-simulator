@@ -1,4 +1,4 @@
-package br.com.concursosimulator.identity;
+package br.com.concursosimulator.identity.infrastructure;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.mock.env.MockEnvironment;

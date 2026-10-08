@@ -1,4 +1,6 @@
-package br.com.concursosimulator.identity;
+package br.com.concursosimulator.identity.web;
+
+import br.com.concursosimulator.identity.application.port.LoginOptions;
 
 import java.util.Map;
 import org.springframework.http.ResponseEntity;
@@ -7,8 +9,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class GoogleLoginController {
-    private final GoogleLoginProperties properties;
-    public GoogleLoginController(GoogleLoginProperties properties) { this.properties = properties; }
+    private final LoginOptions properties;
+    public GoogleLoginController(LoginOptions properties) { this.properties = properties; }
 
     @GetMapping("/api/v1/auth/config")
     ResponseEntity<?> config() {

@@ -7,7 +7,7 @@
 - Inclua código, testes e documentação necessários à tarefa no mesmo PR. Evite separar testes da implementação.
 - Prefira PRs revisáveis: cerca de 300–500 linhas autorais quando possível; identifique lockfiles e arquivos gerados à parte. Não divida artificialmente uma mudança inseparável.
 - Branches novas partem da épica atualizada. Tarefas dependentes aguardam os PRs anteriores; PR antecipado deve ser rascunho com dependências explícitas. Não marque tarefas integradas à épica antes da revisão/merge.
-- Quando o usuário autorizar revisão apenas ao final, implemente dependências em PRs encadeados de rascunho: cada branch parte da tarefa anterior e o PR aponta para ela. Não pause para aprovação entre grupos e não faça merges. Após revisão, integre na ordem, retargetando cada próximo PR para a épica atualizada. Este modo foi autorizado para `optional-google-identity`.
+- Quando autorizado pelo usuário, implemente grupos em PRs encadeados de rascunho para revisão ao final, sem pausas e sem merges no GitHub. Este modo está autorizado para `optional-google-identity`. Preserve o histórico ao atualizar dependências; merges locais entre branches de trabalho não representam aprovação/integração na épica. Retargetar os PRs na ordem após revisão autorizada.
 - Use uma issue da spec com checklist e links dos PRs. Registre tarefas implementadas/verificadas separadamente das integradas/aprovadas.
 - Durante a reformulação, a épica geral é `epic/application-reformulation`. Cada spec cria sua branch `epic/<change-name>` a partir da épica geral atualizada; tarefas continuam abrindo PRs para a branch da spec. Ao concluir a spec, seu PR é destinado à épica geral, **não a main**.
 - Todas as specs da reformulação ficam fora de main até concluir o pacote e obter aprovação explícita da entrega final. Só então abra PR `epic/application-reformulation` → `main`. Merges de tarefas/specs não autorizam esse merge final. O diff final é cumulativo; os PRs menores são a evidência da revisão por partes.
@@ -15,6 +15,16 @@
 - Nunca faça merge, feche PRs sem substituição documentada, arquive OpenSpec ou relaxe regras de deploy sem autorização.
 - Preserve branches/commits anteriores ao reorganizar trabalho. Não apague implementação existente.
 - Consulte `docs/application-reformulation.md` para o roadmap, critérios de entrega e decisões ainda abertas. Uma etapa do roadmap não autoriza implementar uma spec sem proposta e aprovação.
+
+## Arquitetura
+
+- Antes de implementar ou revisar backend, leia `docs/architecture/adr/0001-domain-and-application-boundaries.md`. Esta é a referência detalhada das decisões aprovadas em 2026-10-08; não dependa da memória da conversa.
+- Use monólito modular por funcionalidade. UseCases coordenam ações relevantes; entidades/objetos de valor protegem invariantes. Domain Services somente para regras sem proprietário natural; não invente comportamento para preencher camadas.
+- Domínio e núcleo da aplicação são Java puro, sem Spring/JPA/JDBC/HTTP/OAuth. Dependências apontam dos adaptadores para o núcleo, nunca no sentido contrário. Wiring e execução transacional ficam na infraestrutura.
+- Persistência do domínio usa JPA/Hibernate por contratos de repository. Modelos JPA ficam na infraestrutura; SQL nativo é permitido ali quando justificado. Nunca acessar EntityManager/JdbcTemplate ou repositories JPA concretos em UseCases/controllers/handlers.
+- Flyway é o único dono do schema; Hibernate usa `ddl-auto=validate` e `open-in-view=false`. Não alterar migrações já versionadas para adaptar ORM. Spring Session JDBC e prontidão SQL são mecanismos técnicos, não entidades de negócio.
+- Prefira composição; interfaces somente em fronteiras úteis. Não criar Service intermediário que apenas repasse ao UseCase, classe abstrata especulativa, entidade de negócio para cookie/CSRF ou DTO que vaze entidade JPA.
+- Teste domínio sem framework, aplicação com portas substituíveis, infraestrutura com PostgreSQL real isolado e limites com ArchUnit. Preserve rollback antes de recuperar conflitos; não tratar toda falha de integridade como identidade já vinculada.
 
 ## CI e preview
 

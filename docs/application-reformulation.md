@@ -28,6 +28,8 @@ Tarefa → branch da spec → épica geral → main apenas na entrega final. Nom
 
 Cada etapa requer seus artefatos OpenSpec e aprovação antes da implementação. Não preparar de uma vez todos os detalhes futuros; dependências e novos requisitos devem ser discutidos por spec.
 
+Arquitetura/persistência revisadas pelo usuário em 2026-10-08: monólito modular, UseCases/domínio puro e JPA/Hibernate na infraestrutura, mantendo Flyway e Spring Session JDBC. Regras persistentes em `AGENTS.md` e [ADR 0001](architecture/adr/0001-domain-and-application-boundaries.md); PR #24 registra a decisão e precede a revisão dos PRs #19–#23. Implementação não significa integração aprovada.
+
 ## Decisões abertas
 
 - Sincronização do progresso em specs futuras (login opcional Google já decidido).

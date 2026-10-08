@@ -1,5 +1,7 @@
 # Sessões e acesso
 
+Revisão arquitetural de 2026-10-08: configuração em `identity.infrastructure`, contratos HTTP/principal em `identity.web`. Sessões continuam infraestrutura técnica Spring Session JDBC; não são entidades de negócio nem precisam de um UseCase que apenas repasse chamadas. Persistência de identidade JPA usa o JpaTransactionManager compartilhado com a integração JDBC, validada nos testes HTTP reais. Nenhum controller acessa o banco diretamente.
+
 Spring Session JDBC usa a migração V3 (schema PostgreSQL oficial da versão 4.1.1); Flyway é o único inicializador. Cookie SESSION host-only, Path=/, HttpOnly, SameSite=Lax, Secure por padrão. Para HTTP local, use explicitamente `SPRING_PROFILES_ACTIVE=local`. Use o mesmo hostname para frontend/API, por exemplo 127.0.0.1 nas duas portas.
 
 Sessões expiram após 30 minutos sem atividade (`SESSION_TIMEOUT`, exemplo `15m`). Spring Session remove expiradas periodicamente. O UUID é o único dado do principal; nenhum token Google fica nele. O repositório pode recuperar a sessão após restart; mudanças incompatíveis de serialização exigem expirar sessões antigas no deployment.

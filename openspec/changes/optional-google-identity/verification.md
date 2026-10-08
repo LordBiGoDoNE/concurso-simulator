@@ -1,5 +1,7 @@
 # Verification
 
+As seções de 2026-10-07 registram evidências históricas da primeira implementação. A revisão JPA/arquitetural de 2026-10-08 é registrada nas seções finais; a ordem de revisão abaixo já reflete o novo PR #24. Nenhuma evidência representa aprovação de merge.
+
 ## Grupo 1 — identity-storage — 2026-10-07
 
 Tarefas 1.1–1.3 implementadas e verificadas na branch `task/optional-google-identity/identity-storage`, ainda aguardando revisão/merge na épica da spec. **3/16 tarefas verificadas; 0/16 integradas.** As caixas do checklist permanecem pendentes até a aprovação do PR.
@@ -15,7 +17,7 @@ O serviço não valida tokens nem cria sessão: sua entrada deve vir somente do 
 
 ## Próxima dependência
 
-O usuário autorizou grupos encadeados sem pausas em 2026-10-07. PRs seguintes têm como base a tarefa anterior; revisão e merges ficam para o final.
+O usuário autorizou grupos encadeados sem pausas, com revisão/merges no GitHub apenas após aprovação ao final. Resultados de CI ficam nos PRs; implementação na branch não é integração na épica.
 
 ## Grupo 2 — session-access — 2026-10-07
 
@@ -60,12 +62,41 @@ O navegador integrado verificou visitante sem login, sessão após login, **recu
 
 ### Ordem de revisão e integração (não executar merges automaticamente)
 
-1. [#19 — identidade persistida](https://github.com/LordBiGoDoNE/concurso-simulator/pull/19) → épica da spec.
-2. [#20 — sessões/contratos](https://github.com/LordBiGoDoNE/concurso-simulator/pull/20) → branch de #19.
-3. [#21 — Google OIDC](https://github.com/LordBiGoDoNE/concurso-simulator/pull/21) → branch de #20.
-4. [#22 — interface](https://github.com/LordBiGoDoNE/concurso-simulator/pull/22) → branch de #21.
-5. Grupo 5 — verificação integrada → branch de #22.
+1. [#24 — arquitetura/decisões JPA](https://github.com/LordBiGoDoNE/concurso-simulator/pull/24) → épica da spec.
+2. [#19 — identidade JPA](https://github.com/LordBiGoDoNE/concurso-simulator/pull/19) → branch de #24.
+3. [#20 — sessões/contratos](https://github.com/LordBiGoDoNE/concurso-simulator/pull/20) → branch de #19.
+4. [#21 — Google OIDC](https://github.com/LordBiGoDoNE/concurso-simulator/pull/21) → branch de #20.
+5. [#22 — interface](https://github.com/LordBiGoDoNE/concurso-simulator/pull/22) → branch de #21.
+6. [#23 — verificação integrada](https://github.com/LordBiGoDoNE/concurso-simulator/pull/23) → branch de #22.
 
 Após revisar cada PR, retargetar e integrar na ordem em `epic/optional-google-identity`, marcando somente tarefas efetivamente integradas. Abrir o PR da spec para `epic/application-reformulation` somente após autorização e integração; não arquivar nem publicar em main. Main permanece no commit `f5f30d64e0c968c4530504929c6d0d413f13eefc`.
 
 Pendência externa: smoke Google real antes da publicação pública na etapa de deployment, seguindo `backend/docs/google-login.md`. Precisa de client/segredo do usuário, não afeta a conclusão dos testes locais/CI e não foi realizado nesta etapa.
+
+## Revisão arquitetural/JPA do grupo 1 — 2026-10-08
+
+ADR 0001/regras e desenho aprovados no planejamento do usuário, registrados no PR #24 (ainda não integrado); #19 agora aponta para sua branch. Commits originais preservados; nenhuma tarefa integrada.
+
+GoogleIdentityService removido: VO ExternalIdentity + ResolveExternalIdentityUseCase Java puro, portas IdentityRepository/UnitOfWork, JpaIdentityRepository e execução transacional na infraestrutura. Principal fora do domínio. Prontidão SQL extraída do controller para porta/adaptador técnico, sem inventar uma cadeia de Services. Nenhuma migração alterada.
+
+Gradle clean build: **28 testes aprovados**, incluindo 5 ArchUnit, 2 de domínio, 5 de aplicação e 11 de storage (4 novos casos JPA); checks existentes de API/migração preservados. Cobertos namespaces/subject opaco, restart EntityManagerFactory, 12 logins concorrentes sem órfãos, rollback antes de retry, conflito de chave do usuário não convertido em identidade, transação chamadora e schema incompatível recusado. Configuração efetiva valida Hibernate/OSIV; logServerErrorDetail=false e logs de bind/extract OFF evitam exposição de valores pessoais.
+
+**3/16 verificadas com a arquitetura revisada; 0/16 integradas.** Grupos seguintes serão propagados/revalidados. Não confundir evidências históricas JDBC de 2026-10-07 com a versão atual JPA. CI remoto e cadeia completa serão registrados nos PRs/issue #17.
+
+## Revisão arquitetural/JPA do grupo 2 — 2026-10-08
+
+Dependência #19 atualizada por merge local que preserva commits, não por merge de PR. Configuração de sessões na infraestrutura, endpoints/principal na web; nenhuma entidade artificial para CSRF/cookies e nenhum endpoint/contrato alterado. Migração V3 intacta. Spring Session JDBC permanece compatível com JpaTransactionManager, sem alterar sua recuperação JDBC de sessões.
+
+Gradle clean build **33 testes aprovados** (28 da base revisada + 5 de sessão/cookie). HTTP real verifica me/csrf/logout, timeout/limpeza, recuperação do repositório e isolamento de dispositivos; ArchUnit cobre os novos pacotes. **7/16 revalidadas, 0/16 integradas.** Próximo: adequar o adaptador Google ao UseCase/portas.
+
+## Revisão arquitetural/JPA do grupo 3 — 2026-10-08
+
+Callback Google convertido em adaptador web do UseCase genérico, sem SQL/JPA no handler. Propriedades/wiring do provedor na infraestrutura; LoginOptions é a porta mínima para disponibilidade/destino, sem credenciais na web. Não adicionados Domain Services artificiais nem provedores extras. SessionPrincipal/contratos continuam mínimos; testes também recusam modelos JPA serializados nas sessões.
+
+Gradle clean build **45 testes aprovados**: todos os anteriores e 12 casos de configuração/OIDC. PKCE, rotação, negativos criptográficos/replay, UUID estável e ausência de tokens/logs preservados com persistência JPA real. **11/16 revalidadas, 0/16 integradas.** Teste Google real segue externo para antes do deployment público.
+
+## Revisão arquitetural/JPA do grupo 4 — 2026-10-08
+
+Backend revisado propagado sem reescrever commits. React permanece adaptador de contratos HTTP; nenhum modelo JPA, token ou provider secret no cliente. Não alterar contratos nem criar camadas de negócio artificiais para sessão. Documentação explicita essa fronteira.
+
+Gradle clean build **45 testes aprovados**; Vitest **14**, TypeScript/Vite build aprovado; Playwright teclado/390/1280px **5 aprovados**, offline pendente nesta rodada sem STUDY_ROOT e obrigatório no clone limpo do grupo 5. **14/16 revalidadas, 0/16 integradas.**

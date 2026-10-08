@@ -22,6 +22,12 @@ Alternativa rejeitada: JWT/bearer próprio no localStorage, que ampliaria exposi
 
 Nova migração após V1 cria `app_user` (UUID, data de criação) e `external_identity` (usuário interno, provider, issuer normalizado, subject). Restrição única para provider/issuer/subject; criação em transação e leitura da identidade existente em caso de concorrência, sem usuários órfãos. Não usar e-mail como chave, não unir contas por e-mail e não persistir foto, nome ou e-mail nesta etapa. A UI pode dizer “Você está conectado” sem esses dados. O vínculo pseudonimizado ainda é dado pessoal e deve permanecer privado.
 
+### Arquitetura e JPA — revisão aprovada em 2026-10-08
+
+Aplicar `docs/architecture/adr/0001-domain-and-application-boundaries.md`: monólito modular, domínio/UseCases Java puro e portas para persistência/unidade transacional. Substituir o serviço específico Google com SQL por resolução genérica de identidade externa. O adaptador de autenticação fornece identidade verificada; VO valida apenas invariantes, sem habilitar outro provedor.
+
+Persistência de identidade passa a JPA/Hibernate na infraestrutura, com modelos separados do domínio. Flyway permanece único dono do schema, sem alterar V1/V2; `ddl-auto=validate` e `open-in-view=false`. A porta transacional executa a unidade lookup/criação em transação independente; traduzir somente conflito da constraint de identidade e recuperar em nova transação depois do rollback. Preservar testes de migração, unicidade e ausência de órfãos. Spring Session JDBC e prontidão técnica continuam usando SQL na infraestrutura. Não criar Domain Service ou interfaces sem necessidade real.
+
 ### Sessões JDBC e principal mínimo
 
 Usar Spring Session JDBC, sem Redis novo. Flyway cria também as tabelas e índices de sessão conforme a versão gerenciada pelo Boot; desativar inicialização automática concorrente. Sessão por necessidade, com rotação após login, inatividade de 30 minutos configurável e limpeza de sessões expiradas. Após login verificado, manter no contexto de segurança somente principal interno serializável com UUID e permissões mínimas; remover o authorized client e não reter tokens Google além da conclusão do fluxo. Não manter refresh tokens. Isso evita gravar o principal OIDC completo nas sessões JDBC.
@@ -47,7 +53,7 @@ Redirect pós-login para `FRONTEND_URL` fixa; falha/cancelamento usa marcador ge
 
 ### Testes e entrega por PRs
 
-Separar PRs coesos: persistência/identidade, sessão/contratos/CSRF, fluxo OIDC, frontend e documentação/validação integrada. Cada PR inclui seus testes. Por autorização do usuário, implementar em PRs encadeados de rascunho sem pausas; revisar individualmente ao final e integrar na ordem, sem merges automáticos. CI usa PostgreSQL 18.6 isolado e um provedor OIDC local com discovery, authorization, token e JWK; cobrir redirect, troca de código e cookies reais, não só mock de principal autenticado. Negativos: state/nonce/issuer/audience/assinatura/expiração inválidos, replay, CSRF, fixação, CORS, timeout e logout. Um teste manual Google real é complementar e requer credenciais do usuário, sem colocá-las no CI.
+Separar PRs coesos: arquitetura/decisões, persistência/identidade, sessão/contratos/CSRF, fluxo OIDC, frontend e documentação/validação integrada. Cada PR inclui seus testes. O usuário autorizou PRs encadeados de rascunho para revisão ao final, sem pausas nem merges no GitHub; preservar histórico ao atualizar dependências. CI usa PostgreSQL 18.6 isolado e um provedor OIDC local com discovery, authorization, token e JWK; cobrir redirect, troca de código e cookies reais, não só mock de principal autenticado. Negativos: state/nonce/issuer/audience/assinatura/expiração inválidos, replay, CSRF, fixação, CORS, timeout e logout. Um teste manual Google real é complementar e requer credenciais do usuário, sem colocá-las no CI.
 
 ## Risks / Trade-offs
 

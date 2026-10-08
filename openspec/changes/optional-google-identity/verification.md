@@ -100,3 +100,26 @@ Gradle clean build **45 testes aprovados**: todos os anteriores e 12 casos de co
 Backend revisado propagado sem reescrever commits. React permanece adaptador de contratos HTTP; nenhum modelo JPA, token ou provider secret no cliente. Não alterar contratos nem criar camadas de negócio artificiais para sessão. Documentação explicita essa fronteira.
 
 Gradle clean build **45 testes aprovados**; Vitest **14**, TypeScript/Vite build aprovado; Playwright teclado/390/1280px **5 aprovados**, offline pendente nesta rodada sem STUDY_ROOT e obrigatório no clone limpo do grupo 5. **14/16 revalidadas, 0/16 integradas.**
+
+## Revisão arquitetural/JPA do grupo 5 — 2026-10-08
+
+Cadeia completa revalidada no clone limpo `/tmp/opencode/concurso-jpa-clean-20261008`, commit de código `f4beef8`. Sem banco local/credenciais Google reais. Launcher OIDC/API/PostgreSQL continua exclusivo de teste, fora do bootJar.
+
+| Verificação atual | Resultado |
+| --- | --- |
+| Gradle clean build/JDK 25 | **45 testes**, incluindo 5 ArchUnit, aprovados |
+| npm ci / audit | 0 vulnerabilidades reportadas |
+| Vitest / TypeScript / Vite | **14 testes** / build aprovados |
+| Playwright UI + material offline | **6 testes**, nenhum ignorado |
+| Playwright API/JPA/PostgreSQL/OIDC reais | **3 testes**, nenhum ignorado |
+| Links/pacote de estudo | 108 páginas, 1757 referências locais |
+| Matemática offline sem JavaScript | 9 módulos, 90 resoluções e gabaritos separados preservados |
+| Flyway V1/V2/V3 / pages.yml | idênticos à implementação anterior / main |
+| OpenSpec estrito | aprovado |
+| JAR de produção | nenhum launcher/provedor/registration ou teste |
+
+O navegador verifica login opcional e isolamento de identidades/dispositivos com a implementação JPA; reinicia o contexto Spring real e recupera a sessão JDBC/principal mínimo; novo login conserva UUID; CSRF/logout, inatividade real, cancelamento e link de aulas preservados. Nenhum modelo JPA é transportado à web/sessão. SQL de prontidão permanece em adaptador técnico, fora do controller.
+
+**16/16 tarefas revalidadas na arquitetura JPA atual; 0/16 integradas.** 68 casos de teste aprovados no conjunto das suítes, além das verificações estruturais do material. ADR 0001 e AGENTS.md são a memória versionada desta decisão, não apenas o histórico da conversa. Sem skill adicional por não substituir regras permanentes. CI remoto atualizado será registrado nos PRs/issue #17.
+
+Ordem atual de revisão: **#24 → #19 → #20 → #21 → #22 → #23**. Commits anteriores preservados com merges locais de dependências, sem force-push nem merge de PRs; nenhum checklist de integração marcado, nenhum arquivamento/preview/publicação. Main continua `f5f30d64e0c968c4530504929c6d0d413f13eefc`. Smoke Google real permanece pendente para antes do deployment público.

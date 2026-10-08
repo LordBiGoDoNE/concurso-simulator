@@ -1,11 +1,11 @@
 # Tasks
 
-Planejamento apenas. Implementação requer aprovação. Cada grupo abaixo vira um PR coeso para `epic/optional-google-identity`, incluindo seus testes/documentação. Grupos dependentes aguardam integração dos anteriores. Checklist é concluído na épica somente após verificação e merge aprovado.
+Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Registrar decisões antes da adequação dos PRs #19–#23; não fazer merges no GitHub. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados de branches ainda não integradas ficam em `verification.md`.
 
 ## 1. Identidade persistida — branch identity-storage
 
 - [ ] 1.1 Criar migração aditiva de usuário/identidade externa com UUID, vínculo e unicidade; testar banco novo e upgrade desde V1 em PostgreSQL 18.6 isolado, sem perda do marcador técnico.
-- [ ] 1.2 Implementar resolução transacional de identidade e principal interno mínimo; testar retorno da mesma identidade, identidades diferentes e concorrência sem duplicatas/usuários órfãos.
+- [ ] 1.2 Implementar resolução genérica por UseCase/VO/portas e repository JPA, com principal interno mínimo; testar invariantes sem framework, fluxo da aplicação, estabilidade/diferenciação, concorrência/rollback sem órfãos e limites ArchUnit. Hibernate valida o schema Flyway, sem alterá-lo.
 - [ ] 1.3 Documentar modelo mínimo, ausência de e-mail como chave e escopo de dados pessoais; verificar que testes e schema não armazenam nome, foto, e-mail ou senha.
 
 ## 2. Sessões e contratos — branch session-access, após grupo 1

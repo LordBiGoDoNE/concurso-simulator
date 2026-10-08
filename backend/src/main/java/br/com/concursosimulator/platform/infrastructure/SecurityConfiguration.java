@@ -1,4 +1,4 @@
-package br.com.concursosimulator.platform;
+package br.com.concursosimulator.platform.infrastructure;
 
 import java.util.Arrays;
 import java.util.List;

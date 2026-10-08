@@ -1,4 +1,4 @@
-package br.com.concursosimulator.identity;
+package br.com.concursosimulator.identity.web;
 
 import java.io.Serializable;
 import java.util.Objects;

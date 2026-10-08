@@ -1,5 +1,7 @@
 # Google OIDC opcional
 
+Revisão JPA/arquitetura de 2026-10-08: Google/OIDC é adaptador web; após validação fornece ExternalIdentity ao ResolveExternalIdentityUseCase genérico. Apenas esse adaptador conhece provider/issuer canônicos Google. O UseCase não recebe tokens nem depende do provedor/ORM. Wiring e propriedades secretas ficam na infraestrutura; a porta LoginOptions oferece à web somente disponibilidade/destino, sem expor o client secret. Modelos JPA nunca vão à sessão ou ao contrato me.
+
 Desativado por padrão (`AUTH_GOOGLE_ENABLED=false`): nenhuma discovery/chamada ao Google no startup, entradas retornam 404 e `/api/v1/auth/config` retorna somente `googleEnabled:false`. Não há login simulado em produção.
 
 Para habilitar, configure externamente, somente no backend:

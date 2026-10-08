@@ -1,4 +1,4 @@
-package br.com.concursosimulator.platform;
+package br.com.concursosimulator.platform.infrastructure;
 
 import java.util.Arrays;
 import java.util.List;
@@ -17,8 +17,8 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizationRequestResolver;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestCustomizers;
 import org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizedClientRepository;
-import br.com.concursosimulator.identity.GoogleLoginHandlers;
-import br.com.concursosimulator.identity.GoogleLoginProperties;
+import br.com.concursosimulator.identity.web.GoogleLoginHandlers;
+import br.com.concursosimulator.identity.infrastructure.GoogleLoginProperties;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.cors.CorsConfiguration;
@@ -31,7 +31,7 @@ public class SecurityConfiguration {
     HttpSessionSecurityContextRepository securityContextRepository() {
         return new HttpSessionSecurityContextRepository();
     }
-    // Nenhum usuário ou login neste incremento; impede a conta padrão gerada pelo Boot.
+    // Sem login por senha; impede a conta padrão gerada pelo Boot.
     @Bean
     UserDetailsService userDetailsService() {
         return username -> { throw new UsernameNotFoundException("Login não configurado"); };

@@ -37,6 +37,8 @@ class ConcursoSimulatorApplicationTests {
     int port;
     @Autowired JdbcTemplate jdbc;
     @Autowired Flyway flyway;
+    @Autowired jakarta.persistence.EntityManagerFactory entities;
+    @Autowired org.springframework.core.env.Environment environment;
     final HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
 
     @DynamicPropertySource
@@ -48,6 +50,8 @@ class ConcursoSimulatorApplicationTests {
     @Test
     @Order(1)
     void contextLoads() {
+        assertThat(entities.getProperties().get("hibernate.hbm2ddl.auto")).isEqualTo("validate");
+        assertThat(environment.getProperty("spring.jpa.open-in-view", Boolean.class)).isFalse();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);
         assertThat(flyway.migrate().migrationsExecuted).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);

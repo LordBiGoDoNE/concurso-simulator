@@ -8,6 +8,8 @@ Dois testes em ArchitectureTests protegem o controller de sessão: dependências
 
 Verificação negativa: controller antigo reintroduzido temporariamente; os dois novos testes falharam, os cinco anteriores passaram. Controller corrigido restaurado e confirmado sem diff de produção. Gradle clean build/JDK 25: **36 testes aprovados na branch #20**, incluindo sete arquiteturais, HTTP real e PostgreSQL 18.6. CI executa os novos testes pelo build já existente. Padronização aplicada em PR de trabalho, não integrada: **3/16 tarefas integradas**, sem merge/publicação.
 
+Propagado às branches dependentes preservando o histórico: #20 `ab289e7`, #21 `c6cdccb`, #22 `68ddfc6`. Cadeia final revalidada com Gradle clean build: **48 testes backend aprovados**, incluindo sete arquiteturais e OIDC. Código de produção, frontend e workflows idênticos à rodada `44b578d`; OpenSpec estrito aprovado. Evidência de CI dos heads atualizados fica nos PRs/issue #17; nenhum merge de PR presumido.
+
 ## Integração aprovada — estado atual
 
 - #24 aprovado pelo usuário e integrado na épica da spec: `326db4435ad4b4215187bcc4cc9a99cfa50032a8`.

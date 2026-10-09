@@ -24,9 +24,15 @@ class SpecReviewTests(unittest.TestCase):
         self.git("init", "--initial-branch=main")
         self.git("config", "user.name", "Test fixture")
         self.git("config", "user.email", "fixture@example.invalid")
-        self.write("README.md", "base\n")
+        self.readme = [f"line {index}\n" for index in range(30)]
+        self.readme[6] = "\n"
+        self.write("README.md", "".join(self.readme))
         self.base = self.commit("base")
+        self.readme[5] = "first change\n"
+        self.readme[20] = "second change\n"
+        self.write("README.md", "".join(self.readme))
         self.write("backend/feature.txt", "implementation\n")
+        self.write("docs/revisão.txt", "UTF-8 path fixture\n")
         self.head = self.commit("feature")
         self.spec = "fixture-spec"
         self.paths = gate.report_paths(self.spec)
@@ -98,13 +104,49 @@ class SpecReviewTests(unittest.TestCase):
                 self.validate(report)
 
     def test_code_docs_tests_workflow_and_other_report_changes_invalidate(self):
-        for path in ("backend/feature.txt", "AGENTS.md", "tests/new.txt", ".github/workflows/check.yml",
-                     "openspec/changes/other-spec/spec-review.md"):
+        for index, path in enumerate(("backend/feature.txt", "AGENTS.md", "tests/new.txt", ".github/workflows/check.yml",
+                                     "openspec/changes/other-spec/spec-review.md")):
             with self.subTest(path=path):
+                # Branch independente do head original: um caso não mascara o próximo.
+                self.git("switch", "-c", f"invalidation-{index}", self.head)
+                self.validate(head=self.git("rev-parse", "HEAD"))
                 self.write(path, "new content\n")
                 head = self.commit(f"change {path}")
+                self.assertEqual(self.git("diff", "--name-only", self.head, head), path)
                 with self.assertRaisesRegex(gate.ReviewError, "Diff mudou"):
                     self.validate(head=head)
+
+    def test_snapshot_is_independent_of_local_diff_rendering_preferences(self):
+        expected = gate.snapshot(self.base, self.head, self.spec)
+        self.write("diff-order.txt", "backend/*\nREADME.md\n")
+        preferences = (("diff.context", "8"), ("diff.interHunkContext", "30"),
+                       ("diff.indentHeuristic", "true"), ("diff.algorithm", "histogram"),
+                       ("diff.color", "always"), ("diff.mnemonicPrefix", "true"),
+                       ("diff.noprefix", "true"), ("diff.relative", "true"),
+                       ("diff.suppressBlankEmpty", "true"), ("core.quotePath", "false"),
+                       ("diff.orderFile", "diff-order.txt"))
+        for key, value in preferences:
+            with self.subTest(preference=key):
+                self.git("config", key, value)
+                try:
+                    self.assertEqual(gate.snapshot(self.base, self.head, self.spec), expected)
+                    self.validate()
+                finally:
+                    self.git("config", "--unset", key)
+
+    def test_advancing_and_merging_base_requires_new_review_even_with_same_diff(self):
+        self.git("switch", "-c", "advanced-base", self.base)
+        self.write("base-only.txt", "independent base change\n")
+        advanced_base = self.commit("advance base")
+        self.git("switch", "main")
+        self.git("merge", "--no-edit", "advanced-base")
+        head = self.git("rev-parse", "HEAD")
+        new_snapshot = gate.snapshot(advanced_base, head, self.spec)
+        self.assertEqual(new_snapshot["diff_sha256"], self.report["diff_sha256"])
+        with self.assertRaisesRegex(gate.ReviewError, "Base mudou"):
+            gate.validate_report(self.report, self.explanation, advanced_base, head, self.spec, 25)
+        revalidated = {**self.report, **new_snapshot}
+        gate.validate_report(revalidated, self.explanation, advanced_base, head, self.spec, 25)
 
     def test_forged_digest_and_changed_base_are_blocked(self):
         report = copy.deepcopy(self.report)

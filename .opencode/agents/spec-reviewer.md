@@ -1,6 +1,7 @@
 ---
 description: Revisa uma spec integrada em contexto independente, sem editar ou fazer merges
 mode: subagent
+model: openai/gpt-6-astra#medium
 permissions:
   - action: "*"
     resource: "*"

@@ -1,6 +1,7 @@
 # Revisão independente — optional-google-identity — PR #25
 
-**Estado: pendente, não executada.** Modelo/variante ainda não escolhido pelo usuário.
+**Estado: pendente, não executada para o conjunto do #25.** Modelo/variante escolhido
+pelo usuário: `openai/gpt-6-astra#medium`, fixado no perfil `spec-reviewer`.
 Nenhuma aprovação da integração da spec na épica geral. Este documento não substitui
 o retorno do revisor nem atesta ausência de problemas.
 
@@ -18,7 +19,8 @@ Não iniciados. Lista vazia no JSON significa revisão pendente, não “sem ach
 ## Evidências e limitações
 
 Testes da implementação e CI registrados em verification.md não equivalem à revisão
-independente. Confirmar modelo/variante disponível antes do disparo; sem fallback.
+independente. A revisão do processo no #26 não substitui a revisão completa do #25.
+Confirmar modelo/variante disponível antes do disparo; sem fallback.
 O revisor inicial não recebe o histórico das justificativas/relatórios anteriores.
 
 ## Revalidação

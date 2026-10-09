@@ -16,7 +16,7 @@ main (site atual)
 
 Tarefa → branch da spec → épica geral → main apenas na entrega final. Nomes entre `<...>` são exemplos, não specs já criadas. PRs exigem aprovação em cada nível; não há merge automático.
 
-PRs de integração de spec usam `[SPEC] <Título>` e passam por revisão independente do conjunto antes da aprovação de merge. Processo, relatório rastreável e gate estão em [Revisão de spec](architecture/spec-review.md). A implantação desse processo está em PR próprio; o #25 é a primeira integração sujeita a ele, ainda sem revisão independente/modelo escolhido. Sem fallback ou conclusão de revisão presumidos.
+PRs de integração de spec usam `[SPEC] <Título>` e passam por revisão independente do conjunto antes da aprovação de merge. Processo, relatório rastreável e gate estão em [Revisão de spec](architecture/spec-review.md). A implantação desse processo está em PR próprio; o #25 é a primeira integração sujeita a ele, ainda sem revisão independente do conjunto. Modelo escolhido pelo usuário: `openai/gpt-6-astra#medium`. Sem fallback ou conclusão de revisão presumidos.
 
 ## Roadmap acordado
 

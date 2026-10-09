@@ -8,12 +8,13 @@ examina o conjunto, não uma nova implementação. CI verde e revisão de tarefa
 provam que as responsabilidades e a integração estão corretas.
 
 1. Abrir PR `[SPEC]` em rascunho com escopo, requisitos, evidências e pendências.
-2. Escolher com o usuário o modelo/variante de raciocínio aprofundado; descobrir o ID
-   disponível, sem presumir nome/capacidade/custo. Sem escolha/disponibilidade, parar
-   a revisão, informar e manter relatório pendente. Não há fallback silencioso.
+2. Modelo/variante escolhido pelo usuário: `openai/gpt-6-astra#medium`, fixado no
+   perfil. Confirmar disponibilidade e ID efetivo antes do disparo, sem presumir
+   capacidade/custo. Sem disponibilidade, parar e manter relatório pendente. Outra
+   escolha exige aprovação e atualização do perfil; não há fallback silencioso.
 3. Capturar base/head imutáveis e snapshot. Disparar `spec-reviewer` em sessão nova,
    sem reutilizar sessão do implementador. O perfil OpenCode V2 é somente leitura e
-   não fixa modelo: o coordenador deve selecioná-lo explicitamente ao disparar.
+   fixa o modelo aprovado: o coordenador confere o ID efetivo ao disparar.
 4. Fornecer spec aprovada, AGENTS.md, ADRs/padrões, commits e diff completo; permitir
    explorar código relacionado. Não fornecer conversa/defesas da implementação,
    relatórios de findings ou verification.md na primeira rodada. Decisões versionadas
@@ -59,6 +60,12 @@ python3 scripts/check_spec_review.py --snapshot --base <base-sha> --head <head-s
 
 O snapshot contém base/head e SHA-256 do diff completo `base...head`, incluindo docs,
 requisitos, CI e testes, excluindo **somente** esses dois arquivos de relatório.
+Renderização fixada: três linhas de contexto, zero contexto entre hunks, sem heurística
+de indentação/renames, ordem de paths padrão, indicadores/prefixos/quoting explícitos,
+sem cor, diff externo ou textconv. Preferências locais de Git não devem mudar o digest;
+há regressão para essas opções. Use a raiz do repo e versões compatíveis do Git:
+não se promete identidade entre implementações diferentes de Git ou atributos de diff
+divergentes fora do snapshot versionado.
 A base deve ser a base atual do PR, não um merge-base antigo escolhido pelo autor.
 O head analisado deve ser ancestral do head atual e conter o mesmo diff relevante.
 Mudança de base exige revalidação mesmo quando o diff aparenta não mudar. Registrar
@@ -98,6 +105,17 @@ Uma regra GitHub na **épica geral apenas** exige PR e check `spec-review` da ap
 GitHub Actions. Não alterar proteção de main/deploy nem regras existentes. A ativação
 é registrada no PR; sem workflow integrado, o check fica ausente e bloqueia integração,
 inclusive #25, até instalar o processo e executar a revisão.
+
+Obrigatório também exigir branch atualizada antes do merge:
+`strict_required_status_checks_policy: true`. O workflow de PR não dispara só porque
+a branch-base avançou. A regra estrita bloqueia o head desatualizado; atualizar a
+branch dispara nova execução, e o script rejeita relatório com base anterior mesmo
+quando o diff relevante continua igual. Não desativar essa política para reaproveitar
+check antigo. Regra ativa: `24766642`, limitada a `epic/application-reformulation`,
+check `spec-review` vinculado ao app `15368`, sem bypass configurado. O coordenador
+confere esses campos via API antes de solicitar integração. O teste Git isolado cobre
+avanço/merge da base e exigência de novo snapshot; não substitui ensaio operacional
+do comportamento do GitHub, ainda não executado neste processo.
 
 Limites: o check valida evidência estrutural, não prova qualidade, identidade do modelo
 ou autenticidade do relatório. Workflow/script são versionados no PR e também precisam

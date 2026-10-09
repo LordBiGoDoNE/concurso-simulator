@@ -37,8 +37,13 @@ def snapshot(base, head, spec):
     validate_sha(base)
     validate_sha(head)
     paths = report_paths(spec)
-    diff = git("diff", "--binary", "--full-index", "--no-ext-diff", "--no-textconv",
+    # Não herdar preferências locais de renderização para a identidade da revisão.
+    diff = git("-c", "core.quotePath=true", "-c", "diff.suppressBlankEmpty=false",
+               "diff", "--binary", "--full-index", "--no-ext-diff", "--no-textconv",
+               "--unified=3", "--inter-hunk-context=0", "--no-indent-heuristic", "--no-relative",
+               "-O/dev/null", "--ignore-submodules=none", "--submodule=short",
                "--no-renames", "--diff-algorithm=myers", "--no-color", "--src-prefix=a/", "--dst-prefix=b/",
+               "--output-indicator-new=+", "--output-indicator-old=-", "--output-indicator-context= ",
                f"{base}...{head}", "--", ".", *(f":(exclude){path}" for path in paths))
     return {"base_sha": base, "reviewed_head_sha": head,
             "diff_sha256": hashlib.sha256(diff).hexdigest()}

@@ -1,5 +1,13 @@
 # Verification
 
+## Padronização após o achado de sessão — #20
+
+Pedido do usuário para tornar o aprendizado persistente: AGENTS.md agora exige revisão de responsabilidades HTTP; ADR 0001 registra o refinamento; `docs/architecture/http-endpoint-review.md` define proprietários, exemplos, checklist e limites; template de PR solicita evidências e exceções justificadas. Sem impor UseCases artificiais ou mover regras de negócio para filtros.
+
+Dois testes em ArchitectureTests protegem o controller de sessão: dependências de autenticação/contexto/sessão e mecanismos CSRF; contratos HTTP com DTOs records concretos na web. Escopo específico, sem proibir Authentication nos callbacks OIDC ou afirmar que análise estrutural prova toda decisão semântica.
+
+Verificação negativa: controller antigo reintroduzido temporariamente; os dois novos testes falharam, os cinco anteriores passaram. Controller corrigido restaurado e confirmado sem diff de produção. Gradle clean build/JDK 25: **36 testes aprovados na branch #20**, incluindo sete arquiteturais, HTTP real e PostgreSQL 18.6. CI executa os novos testes pelo build já existente. Padronização aplicada em PR de trabalho, não integrada: **3/16 tarefas integradas**, sem merge/publicação.
+
 ## Integração aprovada — estado atual
 
 - #24 aprovado pelo usuário e integrado na épica da spec: `326db4435ad4b4215187bcc4cc9a99cfa50032a8`.

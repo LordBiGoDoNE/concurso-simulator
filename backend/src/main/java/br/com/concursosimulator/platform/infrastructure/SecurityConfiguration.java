@@ -15,6 +15,13 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.security.web.savedrequest.NullRequestCache;
+import org.springframework.beans.factory.ObjectProvider;
+import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
+import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizationRequestResolver;
+import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestCustomizers;
+import org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizedClientRepository;
+import br.com.concursosimulator.identity.web.GoogleLoginHandlers;
+import br.com.concursosimulator.identity.infrastructure.GoogleLoginProperties;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.cors.CorsConfiguration;
@@ -27,7 +34,7 @@ public class SecurityConfiguration {
     HttpSessionSecurityContextRepository securityContextRepository() {
         return new HttpSessionSecurityContextRepository();
     }
-    // Nenhum usuário ou login neste incremento; impede a conta padrão gerada pelo Boot.
+    // Sem login por senha; impede a conta padrão gerada pelo Boot.
     @Bean
     UserDetailsService userDetailsService() {
         return username -> { throw new UsernameNotFoundException("Login não configurado"); };
@@ -35,14 +42,24 @@ public class SecurityConfiguration {
 
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository,
+            GoogleLoginProperties google, ObjectProvider<ClientRegistrationRepository> registrations,
+            GoogleLoginHandlers handlers, HttpSessionOAuth2AuthorizedClientRepository clients,
             ApiAccessFailureHandler failures) throws Exception {
+        if (google.enabled()) {
+            var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), "/oauth2/authorization");
+            resolver.setAuthorizationRequestCustomizer(OAuth2AuthorizationRequestCustomizers.withPkce());
+            http.oauth2Login(login -> login.authorizedClientRepository(clients)
+                    .authorizationEndpoint(endpoint -> endpoint.authorizationRequestResolver(resolver))
+                    .successHandler(handlers).failureHandler(handlers));
+        }
         var trust = new AuthenticationTrustResolverImpl();
         return http.cors(Customizer.withDefaults())
                 .securityContext(context -> context.securityContextRepository(repository))
                 .requestCache(cache -> cache.requestCache(new NullRequestCache()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET, "/api/v1/status", "/api/v1/csrf").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/status", "/api/v1/csrf", "/api/v1/auth/config",
+                                "/oauth2/authorization/google", "/login/oauth2/code/google").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/me").access((authentication, request) -> {
                             var current = authentication.get();
                             return new AuthorizationDecision(trust.isAuthenticated(current)
@@ -77,6 +94,7 @@ public class SecurityConfiguration {
         source.registerCorsConfiguration("/api/v1/me", sessions);
         source.registerCorsConfiguration("/api/v1/csrf", sessions);
         source.registerCorsConfiguration("/api/v1/auth/logout", sessions);
+        source.registerCorsConfiguration("/api/v1/auth/config", sessions);
         return source;
     }
 }

@@ -69,3 +69,9 @@ Gradle clean build **45 testes aprovados**: todos os anteriores e 12 casos de co
 Backend revisado propagado sem reescrever commits. React permanece adaptador de contratos HTTP; nenhum modelo JPA, token ou provider secret no cliente. Não alterar contratos nem criar camadas de negócio artificiais para sessão. Documentação explicita essa fronteira.
 
 Gradle clean build **45 testes aprovados**; Vitest **14**, TypeScript/Vite build aprovado; Playwright teclado/390/1280px **5 aprovados**, offline pendente nesta rodada sem STUDY_ROOT e obrigatório no clone limpo do grupo 5. **14/16 revalidadas, 0/16 integradas.**
+
+## Revisão do controller de sessão — #20
+
+Correção solicitada pelo usuário durante a revisão, sem autorização de merge do #20. A regra de `/me` exige autenticação não anônima e principal interno; rejeições 401 JSON/no-store ficam em `ApiAccessFailureHandler`, compartilhado pelos pontos de entrada/negação do Spring Security. O controller recebe `@AuthenticationPrincipal UserPrincipal` e retorna `MeResponse`; `/csrf` retorna `CsrfResponse`, sem assumir geração/validação do token. Sem UseCase/Service artificial, mudança de contrato, schema ou endpoint.
+
+`JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew --no-daemon --console=plain clean build`: **34 testes aprovados**, incluindo ArchUnit e HTTP real/PostgreSQL 18.6. Novo teste cobre contexto sem autenticação, principal incompatível, autenticação não concluída e principal anônimo; todos retornam 401 sem redirect/dados pessoais. O teste de visitante também confirma que obter CSRF não autentica a sessão. Contratos OpenAPI, cookie, logout/CSRF, expiração e isolamento continuam aprovados. Estado de integração permanece **3/16**; #20–#23 aguardam aprovação individual.

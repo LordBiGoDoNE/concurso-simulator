@@ -1,6 +1,6 @@
 # Tasks
 
-Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24, #19 e #20 aprovados/integrados; **7/16 tarefas integradas**. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados históricos e estado de integração ficam em `verification.md`.
+Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24, #19, #20 e #21 aprovados/integrados; **11/16 tarefas integradas**. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados históricos e estado de integração ficam em `verification.md`.
 
 ## 1. Identidade persistida — branch identity-storage
 
@@ -17,10 +17,10 @@ Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados
 
 ## 3. Login Google — branch google-oidc, após grupo 2
 
-- [ ] 3.1 Integrar OAuth2 Client, configuração habilitável e auth/config público; testar desativado sem chamadas externas, entrada 404 desativada e startup recusado com configuração habilitada incompleta. Documentar variáveis sem segredos.
-- [ ] 3.2 Implementar fluxo code com PKCE, callback, associação de identidade, rotação da sessão e principal mínimo; testar login completo com provedor OIDC local (discovery, autorização, token e JWK) e confirmar mesmo UUID em novo login/restart.
-- [ ] 3.3 Implementar falha genérica e redirect fixo; testar state, nonce, issuer, audience, assinatura, expiração e replay inválidos, ausência de contas criadas em falhas, ausência de tokens em respostas/logs/sessões persistidas e rejeição de destinos externos.
-- [ ] 3.4 Documentar configuração de client Google, escopos mínimos e callback local consistente; entregar roteiro de smoke Google real, sem provisionar credenciais nem exigir login Google no CI.
+- [x] 3.1 Integrar OAuth2 Client, configuração habilitável e auth/config público; testar desativado sem chamadas externas, entrada 404 desativada e startup recusado com configuração habilitada incompleta. Documentar variáveis sem segredos.
+- [x] 3.2 Implementar fluxo code com PKCE, callback, associação de identidade, rotação da sessão e principal mínimo; testar login completo com provedor OIDC local (discovery, autorização, token e JWK) e confirmar mesmo UUID em novo login/restart.
+- [x] 3.3 Implementar falha genérica e redirect fixo; testar state, nonce, issuer, audience, assinatura, expiração e replay inválidos, ausência de contas criadas em falhas, ausência de tokens em respostas/logs/sessões persistidas e rejeição de destinos externos.
+- [x] 3.4 Documentar configuração de client Google, escopos mínimos e callback local consistente; entregar roteiro de smoke Google real, sem provisionar credenciais nem exigir login Google no CI.
 
 ## 4. Interface opcional — branch login-interface, após grupo 3
 

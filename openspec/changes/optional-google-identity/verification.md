@@ -21,6 +21,23 @@ Propagado às branches dependentes preservando o histórico: #20 `ab289e7`, #21 
 - Todos os grupos integrados: **16/16 tarefas na épica da spec**. #24 e #19–#23 revisados/aprovados individualmente. Integração na épica geral depende de PR/aprovação próprios; nenhum merge em main, arquivamento ou publicação autorizado.
 - Registros abaixo descrevem rodadas históricas e branches de implementação; os números históricos de integração não substituem este estado. Nenhuma alteração de código faz parte deste registro de progresso.
 
+### Revalidação da épica integrada — 2026-10-09
+
+Clone limpo `/tmp/opencode/concurso-identity-integrated-20261009`, commit `3d633c4` após todos os merges autorizados. Código/contratos/migrações/workflows idênticos ao head revisado do #23 `edbd424`; atualizações posteriores apenas registram o estado aprovado.
+
+| Verificação | Resultado |
+| --- | --- |
+| Gradle clean build / Java 25 / PostgreSQL 18.6 isolado | **48 testes backend**, incluindo sete arquiteturais |
+| npm ci / audit | 0 vulnerabilidades reportadas |
+| Vitest / TypeScript / Vite | **14 testes**, build aprovado |
+| Playwright API/JPA/PostgreSQL/OIDC reais locais | **3 testes** |
+| Playwright UI + offline sem JavaScript | **6 testes**, nove módulos/90 resoluções |
+| Pacote estático e referências locais | 108 páginas / 1757 referências aprovadas |
+| JAR de produção | sem launcher/provedor/registration ou classes de teste |
+| OpenSpec estrito | aprovado |
+
+**71 casos aprovados**, nenhuma falha ou teste ignorado. Navegador integrado verifica isolamento, recuperação da mesma sessão após restart Spring, UUID estável, CSRF/logout, expiração por inatividade e cancelamento. Nenhuma credencial Google real usada. Smoke Google real segue pendente antes de deployment público. Spec não arquivada; main e épica geral intactas. PR da spec para a épica geral preparado para aprovação própria, não para publicação.
+
 As seções datadas abaixo registram evidências históricas da implementação. A revisão JPA/arquitetural de 2026-10-08 é registrada nas seções finais; a ordem de revisão inclui o PR #24. Somente o estado de integração acima representa os merges já aprovados.
 
 Na revisão, confirmado nas versões efetivas Spring Security 7.1.1/Spring Session 4.1.1: `AbstractAuthenticationToken.getName()` reconhece `java.security.Principal` e chama seu `getName()`; sem essa interface (ou outros contratos reconhecidos), usa `toString()`. `PrincipalNameIndexResolver` resolve o índice por `authentication?.name`. Assim, UserPrincipal fornece UUID explícito como nome de identidade à infraestrutura, não uma abstração artificial; Serializable continua com a função distinta de persistir o principal na sessão.

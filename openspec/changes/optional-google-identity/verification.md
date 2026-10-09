@@ -44,3 +44,9 @@ Gradle clean build: **28 testes aprovados**, incluindo 5 ArchUnit, 2 de domínio
 Dependência #19 atualizada por merge local que preserva commits, não por merge de PR. Configuração de sessões na infraestrutura, endpoints/principal na web; nenhuma entidade artificial para CSRF/cookies e nenhum endpoint/contrato alterado. Migração V3 intacta. Spring Session JDBC permanece compatível com JpaTransactionManager, sem alterar sua recuperação JDBC de sessões.
 
 Gradle clean build **33 testes aprovados** (28 da base revisada + 5 de sessão/cookie). HTTP real verifica me/csrf/logout, timeout/limpeza, recuperação do repositório e isolamento de dispositivos; ArchUnit cobre os novos pacotes. **7/16 revalidadas, 0/16 integradas.** Próximo: adequar o adaptador Google ao UseCase/portas.
+
+## Revisão do controller de sessão — #20
+
+Correção solicitada pelo usuário durante a revisão, sem autorização de merge do #20. A regra de `/me` exige autenticação não anônima e principal interno; rejeições 401 JSON/no-store ficam em `ApiAccessFailureHandler`, compartilhado pelos pontos de entrada/negação do Spring Security. O controller recebe `@AuthenticationPrincipal UserPrincipal` e retorna `MeResponse`; `/csrf` retorna `CsrfResponse`, sem assumir geração/validação do token. Sem UseCase/Service artificial, mudança de contrato, schema ou endpoint.
+
+`JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew --no-daemon --console=plain clean build`: **34 testes aprovados**, incluindo ArchUnit e HTTP real/PostgreSQL 18.6. Novo teste cobre contexto sem autenticação, principal incompatível, autenticação não concluída e principal anônimo; todos retornam 401 sem redirect/dados pessoais. O teste de visitante também confirma que obter CSRF não autentica a sessão. Contratos OpenAPI, cookie, logout/CSRF, expiração e isolamento continuam aprovados. Estado de integração permanece **3/16**; #20–#23 aguardam aprovação individual.

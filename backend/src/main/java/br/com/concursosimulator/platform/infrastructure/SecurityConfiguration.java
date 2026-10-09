@@ -1,11 +1,14 @@
 package br.com.concursosimulator.platform.infrastructure;
 
+import br.com.concursosimulator.identity.web.UserPrincipal;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.http.HttpMethod;
+import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
+import org.springframework.security.authorization.AuthorizationDecision;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
@@ -31,27 +34,26 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository) throws Exception {
+    SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository,
+            ApiAccessFailureHandler failures) throws Exception {
+        var trust = new AuthenticationTrustResolverImpl();
         return http.cors(Customizer.withDefaults())
                 .securityContext(context -> context.securityContextRepository(repository))
                 .requestCache(cache -> cache.requestCache(new NullRequestCache()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/api/v1/status", "/api/v1/csrf").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/me").authenticated()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/me").access((authentication, request) -> {
+                            var current = authentication.get();
+                            return new AuthorizationDecision(trust.isAuthenticated(current)
+                                    && current.getPrincipal() instanceof UserPrincipal);
+                        })
                         .anyRequest().denyAll())
                 .logout(logout -> logout.logoutUrl("/api/v1/auth/logout")
                         .invalidateHttpSession(true).clearAuthentication(true).deleteCookies("SESSION")
                         .logoutSuccessHandler((request, response, authentication) -> response.setStatus(204)))
                 .exceptionHandling(errors -> errors
-                        .authenticationEntryPoint((request, response, exception) -> {
-                            if (request.getServletPath().equals("/api/v1/me")) {
-                                response.setStatus(401);
-                                response.setContentType("application/json");
-                                response.setHeader("Cache-Control", "no-store");
-                                response.getWriter().write("{\"error\":\"unauthenticated\"}");
-                            } else response.setStatus(403);
-                        }))
+                        .authenticationEntryPoint(failures).accessDeniedHandler(failures))
                 .build();
     }
 

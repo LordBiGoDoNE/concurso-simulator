@@ -8,6 +8,10 @@ Sessões expiram após 30 minutos sem atividade (`SESSION_TIMEOUT`, exemplo `15m
 
 Contratos em `openapi.yaml`: GET me → UUID ou 401 JSON; GET csrf → token/headerName e no-store; POST auth/logout → 204 com CSRF válido, 403 sem ele. Logout revoga só a sessão atual; obter novo token após login/expiração. Não há login real neste grupo e nenhum endpoint de autenticação simulada é exposto.
 
+`/api/v1/me` permite ao frontend consultar a identidade da sessão sem ler o cookie HttpOnly. A regra de acesso do Spring Security exige autenticação não anônima e `UserPrincipal`; `ApiAccessFailureHandler` responde 401 JSON/no-store para sessões ausentes, expiradas ou com principal incompatível, antes do controller. Outras rotas negadas continuam retornando 403. O controller recebe `@AuthenticationPrincipal` tipado e apenas monta `MeResponse`, sem repetir a rejeição de autenticação.
+
+`/api/v1/csrf` fornece o token e o nome do header necessários ao POST de logout. Spring Security gera e valida o token; o controller apenas monta `CsrfResponse`. O endpoint atende também visitantes: materializar o token pode criar uma sessão anônima, mas não autentica ninguém. Ambos os DTOs são records web, não entidades nem casos de uso artificiais; JSON/OpenAPI e no-store permanecem inalterados.
+
 Exemplo visitante (com API local em execução):
 
 ```sh
@@ -19,4 +23,4 @@ curl -i -b /tmp/concurso-cookies -X POST -H "X-CSRF-TOKEN: $TOKEN" http://127.0.
 
 Resultados esperados: 401, token JSON com cookie, 204. Testes executam a mesma sequência HTTP com cookies reais e PostgreSQL isolado. CORS permite credenciais somente nas rotas de sessão para origens explícitas; `/api/v1/status` continua público e não cria sessão por consulta. Qualquer futura rota privada requer autorização própria; `/api/**` não foi liberado genericamente.
 
-Valide com `./gradlew clean build`. Inclui logout CSRF entre sessões, recuperação por novo repositório JDBC, timeout/limpeza, CORS/preflight e flags de cookie em perfis local/default/produção.
+Valide com `./gradlew clean build`. Inclui rejeição na segurança de contexto ausente, principal incompatível, autenticação não concluída e principal anônimo; sessão CSRF de visitante não autentica. Também cobre logout CSRF entre sessões, recuperação por novo repositório JDBC, timeout/limpeza, CORS/preflight e flags de cookie em perfis local/default/produção.

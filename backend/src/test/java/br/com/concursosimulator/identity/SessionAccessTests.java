@@ -17,6 +17,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
@@ -62,6 +65,26 @@ class SessionAccessTests {
         assertThat(csrf.headers().firstValue("Cache-Control")).contains("no-store");
         String cookie = csrf.headers().firstValue("Set-Cookie").orElseThrow();
         assertThat(cookie).contains("HttpOnly", "SameSite=Lax", "Path=/").doesNotContain("Secure", "Domain=");
+        // Materializar CSRF de visitante cria sessão, mas nunca autentica.
+        HttpContract.json("/api/v1/me", 401, send("GET", "/api/v1/me", cookie.split(";", 2)[0], null, null));
+    }
+
+    @Test
+    void securityRejectsMissingUntrustedAndUnauthenticatedPrincipalsBeforeController() throws Exception {
+        var principal = new UserPrincipal(UUID.randomUUID());
+        for (Authentication authentication : new Authentication[]{
+                null,
+                UsernamePasswordAuthenticationToken.authenticated("fixture-other-principal", null, java.util.List.of()),
+                UsernamePasswordAuthenticationToken.unauthenticated(principal, null),
+                new AnonymousAuthenticationToken("fixture-key", principal,
+                        java.util.List.of(new SimpleGrantedAuthority("ROLE_ANONYMOUS")))}) {
+            String cookie = sessionWithAuthentication(authentication);
+            var me = send("GET", "/api/v1/me", cookie, null, null);
+            HttpContract.json("/api/v1/me", 401, me);
+            assertThat(me.headers().firstValue("Cache-Control")).contains("no-store");
+            assertThat(me.headers().firstValue("Location")).isEmpty();
+            assertThat(me.body()).doesNotContain("fixture-other-principal", principal.id().toString());
+        }
     }
 
     @Test
@@ -119,9 +142,12 @@ class SessionAccessTests {
 
     String authenticatedSession(UUID id) {
         // Apenas fixture de teste: nenhuma rota ou autenticação simulada em produção.
+        return sessionWithAuthentication(UsernamePasswordAuthenticationToken.authenticated(new UserPrincipal(id), null, java.util.List.of()));
+    }
+    String sessionWithAuthentication(Authentication authentication) {
         var session = repository().createSession();
         session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
-                new SecurityContextImpl(UsernamePasswordAuthenticationToken.authenticated(new UserPrincipal(id), null, java.util.List.of())));
+                new SecurityContextImpl(authentication));
         repository().save(session);
         return "SESSION=" + session.getId();
     }

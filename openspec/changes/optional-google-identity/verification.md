@@ -130,3 +130,9 @@ O navegador verifica login opcional e isolamento de identidades/dispositivos com
 **16/16 tarefas revalidadas na arquitetura JPA atual; 0/16 integradas.** 68 casos de teste aprovados no conjunto das suítes, além das verificações estruturais do material. ADR 0001 e AGENTS.md são a memória versionada desta decisão, não apenas o histórico da conversa. Sem skill adicional por não substituir regras permanentes. CI remoto atualizado será registrado nos PRs/issue #17.
 
 Ordem atual de revisão: **#24 → #19 → #20 → #21 → #22 → #23**. Commits anteriores preservados com merges locais de dependências, sem force-push nem merge de PRs; nenhum checklist de integração marcado, nenhum arquivamento/preview/publicação. Main continua `f5f30d64e0c968c4530504929c6d0d413f13eefc`. Smoke Google real permanece pendente para antes do deployment público.
+
+## Revisão do controller de sessão — #20
+
+Correção solicitada pelo usuário durante a revisão, sem autorização de merge do #20. A regra de `/me` exige autenticação não anônima e principal interno; rejeições 401 JSON/no-store ficam em `ApiAccessFailureHandler`, compartilhado pelos pontos de entrada/negação do Spring Security. O controller recebe `@AuthenticationPrincipal UserPrincipal` e retorna `MeResponse`; `/csrf` retorna `CsrfResponse`, sem assumir geração/validação do token. Sem UseCase/Service artificial, mudança de contrato, schema ou endpoint.
+
+`JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew --no-daemon --console=plain clean build`: **34 testes aprovados**, incluindo ArchUnit e HTTP real/PostgreSQL 18.6. Novo teste cobre contexto sem autenticação, principal incompatível, autenticação não concluída e principal anônimo; todos retornam 401 sem redirect/dados pessoais. O teste de visitante também confirma que obter CSRF não autentica a sessão. Contratos OpenAPI, cookie, logout/CSRF, expiração e isolamento continuam aprovados. Estado de integração permanece **3/16**; #20–#23 aguardam aprovação individual.

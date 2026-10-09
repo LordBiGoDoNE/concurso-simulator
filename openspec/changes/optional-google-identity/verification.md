@@ -1,6 +1,13 @@
 # Verification
 
-As seções de 2026-10-07 registram evidências históricas da primeira implementação. A revisão JPA/arquitetural de 2026-10-08 é registrada nas seções finais; a ordem de revisão abaixo já reflete o novo PR #24. Nenhuma evidência representa aprovação de merge.
+## Integração aprovada — estado atual
+
+- #24 aprovado pelo usuário e integrado na épica da spec: `326db4435ad4b4215187bcc4cc9a99cfa50032a8`.
+- #19 aprovado na sequência e integrado: `a9edfbf4f7b3681bfaf6e074f9a401dca83f21aa`; CI backend/frontend/material aprovado para o head revisado `3077b85` (28 testes backend).
+- Tarefas **1.1–1.3 integradas, 3/16**. #20 é o próximo PR; #20–#23 permanecem sem aprovação/merge. A aprovação destes dois PRs não autoriza integrar a spec na épica geral ou publicar em main.
+- Registros abaixo descrevem rodadas históricas e branches de implementação; os números históricos de integração não substituem este estado. Nenhuma alteração de código faz parte deste registro de progresso.
+
+As seções datadas abaixo registram evidências históricas da implementação. A revisão JPA/arquitetural de 2026-10-08 é registrada nas seções finais; a ordem de revisão inclui o PR #24. Somente o estado de integração acima representa os merges já aprovados.
 
 ## Grupo 1 — identity-storage — 2026-10-07
 

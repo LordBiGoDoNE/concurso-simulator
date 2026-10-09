@@ -1,7 +1,7 @@
 # ADR 0001 — Domínio, aplicação e persistência JPA
 
 - Data: 2026-10-08
-- Estado: decisão aprovada pelo usuário; implementação/revisão nos PRs, sem integração autorizada
+- Estado: decisão aprovada e registrada na épica pelo #24; implementação integrada somente conforme aprovação individual (#19 integrado, #20–#23 em revisão)
 - Escopo: backend da reformulação, incluindo adequação dos PRs #19–#23
 
 ## Contexto
@@ -54,6 +54,14 @@ Não persistir e-mail/nome/foto/senhas/tokens; entidades JPA não são retornada
 JDBC-only foi substituído por decisão do usuário, não por estar obsoleto. ORM foi escolhido por gestão da persistência/ecossistema, não só economia de digitação na era da IA. Modelo JPA separado custa mapeamento, mas preserva a independência acordada. Rejeitamos herança especulativa, interface para cada classe e uma skill como única fonte das regras permanentes.
 
 ## Verificação e evolução
+
+### Refinamento após a revisão de sessão (#20)
+
+A revisão encontrou rejeição de visitante em `SessionController` duplicando a regra do Spring Security, além de respostas `Map`/`ResponseEntity<?>`. Os testes de contrato comprovavam o 401, mas não o proprietário dessa decisão: comportamento correto não basta para demonstrar separação de responsabilidades. O usuário autorizou a correção e sua inclusão na padronização.
+
+Autenticação, autorização técnica da rota, sessão e CSRF pertencem à segurança/infraestrutura. Controllers recebem identidade já verificada e traduzem contratos com DTOs tipados. Regras de negócio, inclusive posse/transições de recursos, permanecem no domínio/aplicação. DTOs não são entidades; endpoints técnicos triviais não exigem UseCases/Services intermediários. CSRF pode ser exposto na web, mas é gerado/validado pelo framework.
+
+`docs/architecture/http-endpoint-review.md` define checklist e exemplos. ArchUnit protege dependências do controller de sessão; teste de assinatura protege respostas concretas. Testes HTTP reais protegem rejeições e contratos. As proteções estruturais são deliberadamente limitadas: não detectam toda duplicação de regra, não tornam o checklist automático e não substituem revisão semântica. Nenhuma regra genérica impede callbacks de autenticação de receber tipos próprios do framework.
 
 Regras resumidas em `AGENTS.md`; este ADR é a referência detalhada, versionada junto ao código. Skills podem futuramente oferecer workflow de revisão, não substituir essas instruções. Alterações arquiteturais exigem nova decisão/justificativa e atualização coerente dos documentos.
 

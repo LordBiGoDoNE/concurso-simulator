@@ -1,6 +1,6 @@
 # Tasks
 
-Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24 e #19–#22 aprovados/integrados; **14/16 tarefas integradas**. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados históricos e estado de integração ficam em `verification.md`.
+Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24 e #19–#23 aprovados/integrados; **16/16 tarefas integradas na épica da spec**. Integração na épica geral permanece pendente de PR/aprovação próprios. Resultados históricos e estado de integração ficam em `verification.md`.
 
 ## 1. Identidade persistida — branch identity-storage
 
@@ -30,8 +30,8 @@ Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados
 
 ## 5. Verificação integrada — branch identity-verification, após grupo 4
 
-- [ ] 5.1 Executar fluxo de navegador com frontend/API/provedor OIDC local/PostgreSQL reais isolados; verificar login, sessão, consulta me, expiração, logout, duas identidades isoladas e visitante sem login. Registrar evidências sem segredos.
-- [ ] 5.2 Repetir Gradle clean build, testes/build frontend e regressão de material offline em clone limpo; verificar CI no PR sem credenciais Google reais e preservar os 9 módulos/90 resoluções e o workflow de preview manual.
+- [x] 5.1 Executar fluxo de navegador com frontend/API/provedor OIDC local/PostgreSQL reais isolados; verificar login, sessão, consulta me, expiração, logout, duas identidades isoladas e visitante sem login. Registrar evidências sem segredos.
+- [x] 5.2 Repetir Gradle clean build, testes/build frontend e regressão de material offline em clone limpo; verificar CI no PR sem credenciais Google reais e preservar os 9 módulos/90 resoluções e o workflow de preview manual.
 
 ## Workflow follow-up
 

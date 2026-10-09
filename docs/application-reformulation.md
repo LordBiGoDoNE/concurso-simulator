@@ -19,7 +19,7 @@ Tarefa → branch da spec → épica geral → main apenas na entrega final. Nom
 ## Roadmap acordado
 
 1. **Base da aplicação**: Java 25, Gradle, Spring Boot, PostgreSQL 18, Flyway, segurança inicial, React/TypeScript/Vite, ambiente local e testes. Implementada e integrada na épica geral pelo PR #14.
-2. **Identidade e acesso**: login opcional Google via OIDC e sessão JDBC aprovado em `optional-google-identity`; implementação em PRs encadeados para revisão individual ao final, sem merges automáticos. Histórico privado fica para specs seguintes.
+2. **Identidade e acesso**: login opcional Google via OIDC e sessão JDBC em `optional-google-identity`; #24 e #19–#23 aprovados individualmente e integrados na épica da spec, 16/16 tarefas concluídas. Integração na épica geral aguarda PR/aprovação próprios; nenhuma publicação autorizada. Smoke Google real depende de credenciais externas e permanece obrigatório antes do deployment público. Histórico privado fica para specs seguintes.
 3. **Banco de questões**: disciplinas/assuntos, revisão editorial, referências reais e importação controlada do material. Definir a quantidade por disciplina ou assunto antes de ampliar o acervo.
 4. **Simulados e tentativas**: seleção aleatória, critérios de composição, realização, correção e histórico com versões, parâmetros e ordem das alternativas preservados; não expor gabaritos durante o simulado.
 5. **Questões parametrizadas**: variações controladas, especialmente em Matemática, com validação de resultados e resoluções didáticas. Não gerar questões por IA ao vivo sem validação.

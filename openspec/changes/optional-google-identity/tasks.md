@@ -1,6 +1,6 @@
 # Tasks
 
-Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24, #19, #20 e #21 aprovados/integrados; **11/16 tarefas integradas**. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados históricos e estado de integração ficam em `verification.md`.
+Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24 e #19–#22 aprovados/integrados; **14/16 tarefas integradas**. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados históricos e estado de integração ficam em `verification.md`.
 
 ## 1. Identidade persistida — branch identity-storage
 
@@ -24,9 +24,9 @@ Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados
 
 ## 4. Interface opcional — branch login-interface, após grupo 3
 
-- [ ] 4.1 Adicionar consulta de auth/config e me, estados visitante/autenticado/indisponível e entrada Google por navegação; testar habilitado/desativado, 401 e erros de rede, sem iniciar login automaticamente nem prometer histórico já disponível.
-- [ ] 4.2 Adicionar saída com CSRF atualizado e credentials include, tratar expiração e retorno de falha; testar logout, 403 com mensagem, perda de sessão e marcador auth=failed retirado da URL, sem storage de tokens Google.
-- [ ] 4.3 Documentar execução local e verificar teclado e telas de 390/1280px com Playwright, mantendo link das aulas disponível em todos os estados.
+- [x] 4.1 Adicionar consulta de auth/config e me, estados visitante/autenticado/indisponível e entrada Google por navegação; testar habilitado/desativado, 401 e erros de rede, sem iniciar login automaticamente nem prometer histórico já disponível.
+- [x] 4.2 Adicionar saída com CSRF atualizado e credentials include, tratar expiração e retorno de falha; testar logout, 403 com mensagem, perda de sessão e marcador auth=failed retirado da URL, sem storage de tokens Google.
+- [x] 4.3 Documentar execução local e verificar teclado e telas de 390/1280px com Playwright, mantendo link das aulas disponível em todos os estados.
 
 ## 5. Verificação integrada — branch identity-verification, após grupo 4
 

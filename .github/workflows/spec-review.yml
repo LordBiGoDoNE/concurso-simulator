@@ -6,6 +6,7 @@ permissions:
   contents: read
 jobs:
   spec-review:
+    name: ${{ github.base_ref == 'epic/application-reformulation' && 'spec-review' || 'spec-review-tests' }}
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:

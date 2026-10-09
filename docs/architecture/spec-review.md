@@ -85,8 +85,10 @@ revalidação, usando os títulos do relatório inicial. Modelo ainda não escol
 
 ## Check e proteção no GitHub
 
-`Spec review gate` executa testes do guard e publica o check `spec-review` em todos
-os PRs, inclusive alterações de título/base. Tarefas são não aplicáveis; na épica geral
+`Spec review gate` executa testes do guard em todos os PRs, inclusive alterações de
+título/base. Na épica geral publica `spec-review`; nas tarefas, `spec-review-tests`,
+para que sucesso não aplicável de tarefa não certifique revisão de spec no mesmo SHA.
+Tarefas são não aplicáveis; na épica geral
 exige branch `epic/<spec>` e título `[SPEC]`, evitando bypass só por renomear título/branch.
 `main` → épica geral é sincronização do site existente, não integração de spec;
 o check registra essa exceção e não autoriza seu merge.

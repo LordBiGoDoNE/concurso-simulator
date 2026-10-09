@@ -57,3 +57,9 @@ Gradle clean build **33 testes aprovados** (28 da base revisada + 5 de sessão/c
 Callback Google convertido em adaptador web do UseCase genérico, sem SQL/JPA no handler. Propriedades/wiring do provedor na infraestrutura; LoginOptions é a porta mínima para disponibilidade/destino, sem credenciais na web. Não adicionados Domain Services artificiais nem provedores extras. SessionPrincipal/contratos continuam mínimos; testes também recusam modelos JPA serializados nas sessões.
 
 Gradle clean build **45 testes aprovados**: todos os anteriores e 12 casos de configuração/OIDC. PKCE, rotação, negativos criptográficos/replay, UUID estável e ausência de tokens/logs preservados com persistência JPA real. **11/16 revalidadas, 0/16 integradas.** Teste Google real segue externo para antes do deployment público.
+
+## Revisão do controller de sessão — #20
+
+Correção solicitada pelo usuário durante a revisão, sem autorização de merge do #20. A regra de `/me` exige autenticação não anônima e principal interno; rejeições 401 JSON/no-store ficam em `ApiAccessFailureHandler`, compartilhado pelos pontos de entrada/negação do Spring Security. O controller recebe `@AuthenticationPrincipal UserPrincipal` e retorna `MeResponse`; `/csrf` retorna `CsrfResponse`, sem assumir geração/validação do token. Sem UseCase/Service artificial, mudança de contrato, schema ou endpoint.
+
+`JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew --no-daemon --console=plain clean build`: **34 testes aprovados**, incluindo ArchUnit e HTTP real/PostgreSQL 18.6. Novo teste cobre contexto sem autenticação, principal incompatível, autenticação não concluída e principal anônimo; todos retornam 401 sem redirect/dados pessoais. O teste de visitante também confirma que obter CSRF não autentica a sessão. Contratos OpenAPI, cookie, logout/CSRF, expiração e isolamento continuam aprovados. Estado de integração permanece **3/16**; #20–#23 aguardam aprovação individual.

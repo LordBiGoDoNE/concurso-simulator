@@ -26,6 +26,14 @@
 - Prefira composição; interfaces somente em fronteiras úteis. Não criar Service intermediário que apenas repasse ao UseCase, classe abstrata especulativa, entidade de negócio para cookie/CSRF ou DTO que vaze entidade JPA.
 - Teste domínio sem framework, aplicação com portas substituíveis, infraestrutura com PostgreSQL real isolado e limites com ArchUnit. Preserve rollback antes de recuperar conflitos; não tratar toda falha de integridade como identidade já vinculada.
 
+## Endpoints e revisão de responsabilidades
+
+- Antes de criar/revisar endpoints, leia `docs/architecture/http-endpoint-review.md` e aplique seu checklist. CI verde não substitui revisão de responsabilidades; inclua no PR o proprietário das decisões e as evidências, não apenas a contagem de testes.
+- Autenticação, autorização técnica de rota, sessão e validação CSRF pertencem ao Spring Security/infraestrutura. Controllers recebem identidade já verificada e traduzem HTTP; não repetir rejeição de visitante/principal inválido nem gerar/validar tokens manualmente. Regras de negócio/posse de recursos continuam no núcleo, não em filtros.
+- Contratos JSON estáveis usam DTOs tipados na web e retornos concretos; evite `Map`, `Object` e `ResponseEntity<?>` como contrato. Exceções (ex.: payload genuinamente dinâmico) precisam de justificativa e testes, não de proibição cega.
+- UseCases só para ações relevantes. Expor UUID da sessão ou token CSRF do framework não exige Service/UseCase artificial. Teste rejeições com a cadeia de segurança real, além dos contratos; testes isolados de controller não demonstram essa fronteira.
+- Ao corrigir um achado recorrente, registre causa, regra positiva, regressão automatizada quando viável e limites da proteção. Não relaxe testes para acomodar violações nem prometa que lint/ArchUnit/modelo garantem toda decisão semântica.
+
 ## CI e preview
 
 - CI verifica builds, testes e regressão; não publica previews.

@@ -49,3 +49,11 @@ tasks.test {
         events("passed", "skipped", "failed")
     }
 }
+
+tasks.register<JavaExec>("identityBrowserFixture") {
+    group = "verification"
+    description = "Start isolated PostgreSQL and test-only OIDC/API for Playwright"
+    dependsOn(tasks.testClasses)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.identity.IdentityBrowserFixture")
+}

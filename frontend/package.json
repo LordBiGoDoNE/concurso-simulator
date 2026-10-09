@@ -11,7 +11,8 @@
     "build": "tsc --noEmit && vite build",
     "test": "vitest run",
     "preview": "vite preview --host 127.0.0.1",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:identity": "playwright test --config playwright.identity.config.ts"
   },
   "dependencies": {
     "react": "19.3.0",

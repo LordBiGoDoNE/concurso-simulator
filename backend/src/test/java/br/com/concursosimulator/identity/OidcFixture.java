@@ -36,10 +36,12 @@ public final class OidcFixture implements AutoCloseable {
     public volatile boolean pkceVerified;
     public volatile String lastIdToken;
 
-    public OidcFixture() {
+    public OidcFixture() { this(0); }
+
+    public OidcFixture(int port) {
         try {
             key = new RSAKeyGenerator(2048).keyID("fixture-key").generate();
-            server = HttpServer.create(new InetSocketAddress("127.0.0.1", 0), 0);
+            server = HttpServer.create(new InetSocketAddress("127.0.0.1", port), 0);
             server.createContext("/.well-known/openid-configuration", exchange -> json(exchange, 200, Map.of(
                     "issuer", issuer(), "authorization_endpoint", issuer() + "/authorize", "token_endpoint", issuer() + "/token",
                     "jwks_uri", issuer() + "/jwks", "userinfo_endpoint", issuer() + "/userinfo",
@@ -54,11 +56,34 @@ public final class OidcFixture implements AutoCloseable {
                 json(exchange, user == null ? 401 : 200, user == null ? Map.of("error", "invalid_token")
                         : Map.of("sub", user, "name", "Google fixture profile"));
             });
+            server.createContext("/fixture/control", exchange -> {
+                if (!exchange.getRequestMethod().equals("POST")) {
+                    json(exchange, 405, Map.of("error", "method_not_allowed"));
+                    return;
+                }
+                var params = parameters(new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8));
+                subject = params.getOrDefault("subject", "browser-subject-one");
+                mode = params.getOrDefault("mode", "valid");
+                json(exchange, 200, Map.of("ready", true));
+            });
             server.start();
         } catch (Exception exception) { throw new IllegalStateException("OIDC fixture não iniciou", exception); }
     }
 
     public String issuer() { return "http://127.0.0.1:" + server.getAddress().getPort(); }
+
+    public void enableApiRestart(Runnable restart) {
+        server.createContext("/fixture/restart", exchange -> {
+            if (!exchange.getRequestMethod().equals("POST")) {
+                json(exchange, 405, Map.of("error", "method_not_allowed"));
+                return;
+            }
+            try {
+                restart.run();
+                json(exchange, 200, Map.of("ready", true));
+            } catch (RuntimeException exception) { json(exchange, 500, Map.of("error", "restart_failed")); }
+        });
+    }
     private void authorize(HttpExchange exchange) throws java.io.IOException {
         var params = parameters(exchange.getRequestURI().getRawQuery());
         String state = params.get("state");

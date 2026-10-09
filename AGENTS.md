@@ -16,6 +16,15 @@
 - Preserve branches/commits anteriores ao reorganizar trabalho. Não apague implementação existente.
 - Consulte `docs/application-reformulation.md` para o roadmap, critérios de entrega e decisões ainda abertas. Uma etapa do roadmap não autoriza implementar uma spec sem proposta e aprovação.
 
+## Gate de integração de specs
+
+- Todo PR `epic/<spec>` → `epic/application-reformulation` usa `[SPEC] <Título>` e passa por revisão independente do diff completo, conforme `docs/architecture/spec-review.md`, antes de solicitar aprovação de merge. Aprovações das tarefas/CI não substituem essa revisão.
+- Dispare o subagente `spec-reviewer` em contexto novo; forneça spec aprovada, AGENTS.md/ADRs/padrões, base/head imutáveis e acesso ao código. Não fornecer inicialmente conversa, justificativas de implementação, relatórios anteriores ou sugestões de resultado. Decisões versionadas são requisitos, não devem ser ocultadas. A autorização para delegar cobre somente essa revisão, sem edições/merges pelo revisor.
+- Antes do disparo, confirme com o usuário o modelo/variante, descubra seu ID exato e registre-o. Modelo indisponível ou ainda não escolhido bloqueia o disparo; não herdar/substituir silenciosamente. O perfil não fixa modelo até essa decisão. Contexto novo reduz viés, não garante ausência de viés.
+- Registre evidências em `openspec/changes/<spec>/spec-review.json` e `spec-review.md`: commits/digest analisados, modelo/sessão, cobertura/limitações, achados e triagem. Não invente revisão executada, aprovações ou findings. Ausência de achados é válida quando fundamentada.
+- Corrija achados confirmados por commits/PRs revisáveis. Bloqueadores não podem ser adiados. Mudança de base ou do diff (incluindo requisitos, docs, testes e CI) invalida o relatório; só os dois arquivos de evidência são excluídos do digest para permitir registrar a revisão sem ciclo infinito. Revisor confere o novo conjunto; não atualizar digest apenas para fazer o gate passar.
+- O check `spec-review` valida título, evidência/atualidade e triagem, não a qualidade semântica. Sem gate aprovado e autorização explícita do usuário, não integrar a spec. Sem autorização adicional, não arquivar, publicar ou integrar main. Sincronização independente `main` → épica geral não é integração de spec e é identificada separadamente pelo check.
+
 ## Arquitetura
 
 - Antes de implementar ou revisar backend, leia `docs/architecture/adr/0001-domain-and-application-boundaries.md`. Esta é a referência detalhada das decisões aprovadas em 2026-10-08; não dependa da memória da conversa.

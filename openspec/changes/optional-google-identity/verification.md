@@ -1,5 +1,11 @@
 # Verification
 
+## Gate de revisão independente da spec — implantação do processo
+
+Solicitado pelo usuário após concluir as tarefas. #25 renomeado para `[SPEC] Integração de identidade opcional com Google`; permanece em rascunho/sem merge. Regras em AGENTS.md, documento/prompt de revisão, perfil OpenCode V2 somente leitura, template de PR, relatório inicial e check versionados na branch `task/optional-google-identity/spec-review-process`, aguardando revisão/integração próprias.
+
+Relatório `spec-review.json/md` começa **pending**: nenhum modelo escolhido ou revisão independente executada. CI da implementação não substitui essa análise. Guard valida título/transição, commits e digest atual (exclui somente os dois arquivos de evidência), cobertura/limitações e triagem; não atesta qualidade ou autenticidade do relatório. 15 testes isolados do guard aprovados: revisão completa, ausência de achados, pendência, metadados, digest/base alterados, alterações em código/docs/testes/workflows, commit de relatório sem ciclo de invalidação, triagem/bloqueadores, renomeações e sincronização main somente no mesmo repo. OpenSpec estrito aprovado. Aplicação, material, deployment e migrações não alterados; 16/16 tarefas da implementação continuam integradas somente na épica da spec.
+
 ## Padronização após o achado de sessão — #20
 
 Pedido do usuário para tornar o aprendizado persistente: AGENTS.md agora exige revisão de responsabilidades HTTP; ADR 0001 registra o refinamento; `docs/architecture/http-endpoint-review.md` define proprietários, exemplos, checklist e limites; template de PR solicita evidências e exceções justificadas. Sem impor UseCases artificiais ou mover regras de negócio para filtros.

@@ -1,6 +1,6 @@
 # Tasks
 
-Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24 e #19 aprovados/integrados; **3/16 tarefas integradas**. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados históricos e estado de integração ficam em `verification.md`.
+Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados sem pausas para revisão ao final. Em 2026-10-08, aprovados ADR 0001, UseCases/domínio puro e migração de identidade para JPA. Merges no GitHub exigem aprovação individual. #24, #19 e #20 aprovados/integrados; **7/16 tarefas integradas**. Checklist é concluído na épica somente após verificação e merge aprovado. Resultados históricos e estado de integração ficam em `verification.md`.
 
 ## 1. Identidade persistida — branch identity-storage
 
@@ -10,10 +10,10 @@ Implementação autorizada pelo usuário em 2026-10-07, incluindo PRs encadeados
 
 ## 2. Sessões e contratos — branch session-access, após grupo 1
 
-- [ ] 2.1 Integrar Spring Session JDBC e migração versionada de suas tabelas; testar sessão, timeout configurável, limpeza de expiradas e recuperação após restart, com principal interno sem tokens OAuth.
-- [ ] 2.2 Implementar contratos me, csrf e logout com proteção CSRF, cookie seguro e negação padrão; testar 200/401/204/403, idempotência da saída, no-store, cookie anterior inválido e independência entre dispositivos. Atualizar OpenAPI e conferir JSON contra o contrato.
-- [ ] 2.3 Configurar CORS explícito com credenciais para identidade/sessão e preservar prontidão pública; testar origens permitidas/desconhecidas, preflight, flags HttpOnly/SameSite/Secure e exceção HTTP somente no perfil local.
-- [ ] 2.4 Documentar contratos, tempo de sessão e exemplos de consulta/saída com token CSRF; verificar os exemplos no ambiente isolado, sem introduzir autenticação mock em produção.
+- [x] 2.1 Integrar Spring Session JDBC e migração versionada de suas tabelas; testar sessão, timeout configurável, limpeza de expiradas e recuperação após restart, com principal interno sem tokens OAuth.
+- [x] 2.2 Implementar contratos me, csrf e logout com proteção CSRF, cookie seguro e negação padrão; testar 200/401/204/403, idempotência da saída, no-store, cookie anterior inválido e independência entre dispositivos. Atualizar OpenAPI e conferir JSON contra o contrato.
+- [x] 2.3 Configurar CORS explícito com credenciais para identidade/sessão e preservar prontidão pública; testar origens permitidas/desconhecidas, preflight, flags HttpOnly/SameSite/Secure e exceção HTTP somente no perfil local.
+- [x] 2.4 Documentar contratos, tempo de sessão e exemplos de consulta/saída com token CSRF; verificar os exemplos no ambiente isolado, sem introduzir autenticação mock em produção.
 
 ## 3. Login Google — branch google-oidc, após grupo 2
 

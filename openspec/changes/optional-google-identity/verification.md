@@ -48,6 +48,12 @@ Tarefas 3.1–3.4 implementadas sobre session-access: configuração desativada 
 
 Gradle clean build aprovado: **29 testes**, 12 novos casos neste grupo. **11/16 verificadas, 0/16 integradas**. Roteiro Google real em `backend/docs/google-login.md`, não executado por depender das credenciais do usuário. Recuperação de identidade/sessão após restart é coberta pelos testes de serviço/repositório; o navegador integrado é o grupo 5.
 
+## Grupo 4 — login-interface — 2026-10-07
+
+Tarefas 4.1–4.3 implementadas sobre google-oidc: estados visitante/conectado/indisponível, Google desativado, navegação explícita, saída com CSRF fresco e credentials include, expiração reconhecida ao atualizar/retomar foco, falha genérica removida da URL e aulas sempre acessíveis. Nenhum storage de tokens nem promessa de histórico pronto.
+
+Vitest **14 testes aprovados** (9 novos casos); TypeScript/Vite build aprovado. Playwright **5 testes aprovados**: teclado e ausência de overflow em 390/1280px incluindo consulta indisponível, login opcional, falha e logout; o sexto caso offline não foi executado nesta rodada sem STUDY_ROOT, será obrigatório no clone limpo do grupo 5. **14/16 verificadas, 0/16 integradas**. Documentação local atualizada no README frontend.
+
 ## Revisão arquitetural/JPA do grupo 1 — 2026-10-08
 
 ADR 0001/regras e desenho aprovados no planejamento do usuário, registrados no PR #24 (ainda não integrado); #19 agora aponta para sua branch. Commits originais preservados; nenhuma tarefa integrada.
@@ -69,6 +75,12 @@ Gradle clean build **33 testes aprovados** (28 da base revisada + 5 de sessão/c
 Callback Google convertido em adaptador web do UseCase genérico, sem SQL/JPA no handler. Propriedades/wiring do provedor na infraestrutura; LoginOptions é a porta mínima para disponibilidade/destino, sem credenciais na web. Não adicionados Domain Services artificiais nem provedores extras. SessionPrincipal/contratos continuam mínimos; testes também recusam modelos JPA serializados nas sessões.
 
 Gradle clean build **45 testes aprovados**: todos os anteriores e 12 casos de configuração/OIDC. PKCE, rotação, negativos criptográficos/replay, UUID estável e ausência de tokens/logs preservados com persistência JPA real. **11/16 revalidadas, 0/16 integradas.** Teste Google real segue externo para antes do deployment público.
+
+## Revisão arquitetural/JPA do grupo 4 — 2026-10-08
+
+Backend revisado propagado sem reescrever commits. React permanece adaptador de contratos HTTP; nenhum modelo JPA, token ou provider secret no cliente. Não alterar contratos nem criar camadas de negócio artificiais para sessão. Documentação explicita essa fronteira.
+
+Gradle clean build **45 testes aprovados**; Vitest **14**, TypeScript/Vite build aprovado; Playwright teclado/390/1280px **5 aprovados**, offline pendente nesta rodada sem STUDY_ROOT e obrigatório no clone limpo do grupo 5. **14/16 revalidadas, 0/16 integradas.**
 
 ## Revisão do controller de sessão — #20
 

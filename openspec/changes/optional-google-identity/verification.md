@@ -14,10 +14,13 @@ Propagado às branches dependentes preservando o histórico: #20 `ab289e7`, #21 
 
 - #24 aprovado pelo usuário e integrado na épica da spec: `326db4435ad4b4215187bcc4cc9a99cfa50032a8`.
 - #19 aprovado na sequência e integrado: `a9edfbf4f7b3681bfaf6e074f9a401dca83f21aa`; CI backend/frontend/material aprovado para o head revisado `3077b85` (28 testes backend).
-- Tarefas **1.1–1.3 integradas, 3/16**. #20 é o próximo PR; #20–#23 permanecem sem aprovação/merge. A aprovação destes dois PRs não autoriza integrar a spec na épica geral ou publicar em main.
+- #20 aprovado após confirmar o uso de `java.security.Principal` pelo Spring Security/Session, integrado em `771846c621192c24415e772fa09c1d3fb48649ea`. CI push/PR aprovado para o head `ab289e7` (36 testes backend, sete arquiteturais). Correção do controller e padronização de revisão HTTP também integradas.
+- Tarefas **1.1–1.3 e 2.1–2.4 integradas, 7/16**. #21 é o próximo PR; #21–#23 permanecem sem aprovação/merge. Estes merges não autorizam integrar a spec na épica geral ou publicar em main.
 - Registros abaixo descrevem rodadas históricas e branches de implementação; os números históricos de integração não substituem este estado. Nenhuma alteração de código faz parte deste registro de progresso.
 
 As seções datadas abaixo registram evidências históricas da implementação. A revisão JPA/arquitetural de 2026-10-08 é registrada nas seções finais; a ordem de revisão inclui o PR #24. Somente o estado de integração acima representa os merges já aprovados.
+
+Na revisão, confirmado nas versões efetivas Spring Security 7.1.1/Spring Session 4.1.1: `AbstractAuthenticationToken.getName()` reconhece `java.security.Principal` e chama seu `getName()`; sem essa interface (ou outros contratos reconhecidos), usa `toString()`. `PrincipalNameIndexResolver` resolve o índice por `authentication?.name`. Assim, UserPrincipal fornece UUID explícito como nome de identidade à infraestrutura, não uma abstração artificial; Serializable continua com a função distinta de persistir o principal na sessão.
 
 ## Grupo 1 — identity-storage — 2026-10-07
 

@@ -4,6 +4,7 @@
 import argparse
 import hashlib
 import json
+import os
 import re
 import subprocess
 from datetime import datetime
@@ -19,7 +20,10 @@ def require(condition, message):
 
 
 def git(*args):
-    return subprocess.check_output(["git", *args], stderr=subprocess.PIPE)
+    env = os.environ.copy()
+    # Esta variável prevalece até sobre --unified explícito na linha de comando.
+    env.pop("GIT_DIFF_OPTS", None)
+    return subprocess.check_output(["git", *args], stderr=subprocess.PIPE, env=env)
 
 
 def validate_sha(sha):

@@ -63,7 +63,9 @@ requisitos, CI e testes, excluindo **somente** esses dois arquivos de relatório
 Renderização fixada: três linhas de contexto, zero contexto entre hunks, sem heurística
 de indentação/renames, ordem de paths padrão, indicadores/prefixos/quoting explícitos,
 sem cor, diff externo ou textconv. Preferências locais de Git não devem mudar o digest;
-há regressão para essas opções. Use a raiz do repo e versões compatíveis do Git:
+há regressão para essas opções. `GIT_DIFF_OPTS` é removida apenas do ambiente do
+subprocesso Git, sem alterar o ambiente do chamador; há regressão específica para ela.
+Use a raiz do repo e versões compatíveis do Git:
 não se promete identidade entre implementações diferentes de Git ou atributos de diff
 divergentes fora do snapshot versionado.
 A base deve ser a base atual do PR, não um merge-base antigo escolhido pelo autor.

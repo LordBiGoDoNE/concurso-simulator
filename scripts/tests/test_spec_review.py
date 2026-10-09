@@ -8,6 +8,7 @@ from pathlib import Path
 import subprocess
 import tempfile
 import unittest
+from unittest import mock
 
 MODULE = Path(__file__).resolve().parents[1] / "check_spec_review.py"
 loader = importlib.util.spec_from_file_location("check_spec_review", MODULE)
@@ -133,6 +134,14 @@ class SpecReviewTests(unittest.TestCase):
                     self.validate()
                 finally:
                     self.git("config", "--unset", key)
+
+    def test_snapshot_ignores_git_diff_opts_environment(self):
+        expected = gate.snapshot(self.base, self.head, self.spec)
+        for value in ("--unified=0", "--unified=20"):
+            with self.subTest(value=value), mock.patch.dict(os.environ, {"GIT_DIFF_OPTS": value}):
+                self.assertEqual(gate.snapshot(self.base, self.head, self.spec), expected)
+                self.validate()
+                self.assertEqual(os.environ["GIT_DIFF_OPTS"], value)
 
     def test_advancing_and_merging_base_requires_new_review_even_with_same_diff(self):
         self.git("switch", "-c", "advanced-base", self.base)

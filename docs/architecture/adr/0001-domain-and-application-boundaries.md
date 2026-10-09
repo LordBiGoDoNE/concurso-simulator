@@ -1,7 +1,7 @@
 # ADR 0001 — Domínio, aplicação e persistência JPA
 
 - Data: 2026-10-08
-- Estado: decisão aprovada e registrada na épica pelo #24; implementação integrada somente conforme aprovação individual (#19 integrado, #20–#23 em revisão)
+- Estado: decisão aprovada e registrada na épica pelo #24; implementação integrada somente conforme aprovação individual (#19/#20 integrados, #21–#23 em revisão)
 - Escopo: backend da reformulação, incluindo adequação dos PRs #19–#23
 
 ## Contexto

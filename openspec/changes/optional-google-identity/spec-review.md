@@ -1,6 +1,7 @@
 # Revisão independente — optional-google-identity — PR #25
 
-**Análise independente concluída; triagem, correções e revalidação pendentes.**
+**Análise independente concluída; correções autorizadas e candidatas nos PRs #27/#28.**
+Ambos aguardam aprovação/integração próprias e revalidação independente do conjunto.
 Estado JSON permanece `pending`, `triage_complete: false`, com cinco achados abertos.
 Não há aprovação da integração da spec na épica geral.
 
@@ -79,8 +80,44 @@ GET `/login`, `/login?error`, `/logout` retorna403 habilitado; GET/POST/HEAD/OPT
 retorna403 desabilitado. Não manter essa hipótese como vulnerabilidade. Matriz inteira
 dessas páginas habilitadas não foi ensaiada. B03 trata rotas OAuth, problema distinto.
 
-**Triagem aguardando usuário:** corrigir/refutar com evidência ou adiar somente melhoria
-não bloqueadora. Não marcar nenhum achado como fixed nem triage_complete antes disso.
+**Decisão do usuário: corrigir os cinco achados**, com regressões e sessões novas por
+PR. Implementação candidata não fecha achado: todos permanecem open até integração
+aprovada e revalidação independente. Nenhum bloqueador adiado ou aprovação presumida.
+
+### Candidatos após autorização — piloto de sessões curtas
+
+- [#27](https://github.com/LordBiGoDoNE/concurso-simulator/pull/27), backend B01/B02/B03,
+  head `937860d6d1e124ffc4a4132f7b58831b95def8aa`, sessão nova
+  `ses_ed97dd6d1ffeWbi2NVFMBjLuJC`.
+- [#28](https://github.com/LordBiGoDoNE/concurso-simulator/pull/28), frontend R01/R02,
+  head `91ffeeb5ebc2ce5346a864771b21869e895010a8`, sessão nova
+  `ses_ed971ee8dffeURLAX4iZp3FoHQ`.
+- Base comum `c3fb7f5`, PRs independentes para a épica da spec, em rascunho/sem merge;
+  CI de ambos aprovado. Implementadores GPT-6.1 Sol high; revisor permanece Astra medium.
+- Combinação apenas local no worktree `concurso-identity-review-candidate`, commit
+  `2d70d67cd8ffbf87f4e65978e48dceee314782fd`; não publicada/não integrada. Coordenador
+  repetiu **53 backend + 47 frontend + 6 UI/offline + 3 browser real + 18 guard = 127
+  testes aprovados, nenhum ignorado**, builds/OpenSpec estrito e pacote de 108 páginas/
+  1757 referências. As regressões dos candidatos detectaram implementação antiga.
+- O offline ignorado na execução inicial do agente frontend por falta de STUDY_ROOT
+  foi resolvido nessa combinação: pacote montado fornecido, seis testes UI/offline OK.
+
+Medição solicitada pelo usuário passou a **tokens registrados**, não quota variável.
+SQLite foi consultado somente leitura; números das sessões completas de implementação:
+
+| Sessão | Chamadas | Entrada nova | Cache read | Saída | Raciocínio registrado |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Backend #27 | 44 | 96.789 | 2.378.240 | 13.046 | 9.926 |
+| Frontend #28 | 21 | 46.032 | 547.584 | 8.674 | 2.980 |
+| Coordenador, parcial até 13h17m39s UTC−3 | 19 | 82.124 | 3.348.864 | 8.771 | 4.828 |
+
+Cache write zero; raciocínio separado sem soma presumida à saída. Cache read é soma
+de uso repetido, não conteúdo único. Não inclui revisor ou uso externo nem determina
+custo financeiro ou percentual da quota. As duas primeiras linhas não incluem o
+coordenador; a terceira é parcial entre o pedido de implementação (12h48m40s UTC−3)
+e a consulta, excluindo finalização posterior. São tarefas distintas da revisão anterior:
+não é comparação controlada de economia. Coordenador ainda usa a sessão longa original,
+e isso continua aparecendo no volume de cache reenviado; sessões novas não zeram seu uso.
 
 ## Evidências e limitações
 
@@ -107,10 +144,10 @@ antes do deployment público, sem bloquear reprodução desses achados locais.
 
 ## Revalidação
 
-**Nenhuma correção/revalidação realizada.** Recomendação do revisor: corrigir backend
-B01/B02/B03 com regressões HTTP/arquiteturais e frontend R01/R02 com testes de
-comportamento desejado; depois repetir builds, testes, navegador integrado, material
-offline e guard e revisar novo diff completo/base/head.
+**Nenhuma correção integrada nem revalidação independente realizada.** Candidatos
+implementados/verificados como acima, aguardando aprovações de #27/#28. Após merges
+autorizados, capturar base/head/diff completos novos e revalidar com Astra medium;
+testes/CI do candidato não substituem esse fechamento nem autorizam merge do #25.
 
 Mudança de base ou diff relevante exige nova revisão; não atualizar digest
 artificialmente. Só estes dois relatórios são excluídos para permitir registrar análise.

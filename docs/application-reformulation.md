@@ -16,10 +16,12 @@ main (site atual)
 
 Tarefa → branch da spec → épica geral → main apenas na entrega final. Nomes entre `<...>` são exemplos, não specs já criadas. PRs exigem aprovação em cada nível; não há merge automático.
 
+PRs de integração de spec usam `[SPEC] <Título>` e passam por revisão independente do conjunto antes da aprovação de merge. Processo, relatório rastreável e gate estão em [Revisão de spec](architecture/spec-review.md). A implantação desse processo está em PR próprio; o #25 é a primeira integração sujeita a ele, ainda sem revisão independente do conjunto. Modelo escolhido pelo usuário: `openai/gpt-6-astra#medium`. Sem fallback ou conclusão de revisão presumidos.
+
 ## Roadmap acordado
 
-1. **Base da aplicação**: Java 25, Gradle, Spring Boot, PostgreSQL 18, Flyway, segurança inicial, React/TypeScript/Vite, ambiente local e testes. Implementada e integrada na branch da spec; PR #14 agora aponta para a épica geral.
-2. **Identidade e acesso**: decidir login e regras antes de persistir histórico privado; especificar e implementar a solução aprovada.
+1. **Base da aplicação**: Java 25, Gradle, Spring Boot, PostgreSQL 18, Flyway, segurança inicial, React/TypeScript/Vite, ambiente local e testes. Implementada e integrada na épica geral pelo PR #14.
+2. **Identidade e acesso**: login opcional Google via OIDC e sessão JDBC em `optional-google-identity`; #24 e #19–#23 aprovados individualmente e integrados na épica da spec, 16/16 tarefas concluídas. Integração na épica geral aguarda PR/aprovação próprios; nenhuma publicação autorizada. Smoke Google real depende de credenciais externas e permanece obrigatório antes do deployment público. Histórico privado fica para specs seguintes.
 3. **Banco de questões**: disciplinas/assuntos, revisão editorial, referências reais e importação controlada do material. Definir a quantidade por disciplina ou assunto antes de ampliar o acervo.
 4. **Simulados e tentativas**: seleção aleatória, critérios de composição, realização, correção e histórico com versões, parâmetros e ordem das alternativas preservados; não expor gabaritos durante o simulado.
 5. **Questões parametrizadas**: variações controladas, especialmente em Matemática, com validação de resultados e resoluções didáticas. Não gerar questões por IA ao vivo sem validação.
@@ -28,9 +30,11 @@ Tarefa → branch da spec → épica geral → main apenas na entrega final. Nom
 
 Cada etapa requer seus artefatos OpenSpec e aprovação antes da implementação. Não preparar de uma vez todos os detalhes futuros; dependências e novos requisitos devem ser discutidos por spec.
 
+Arquitetura/persistência revisadas pelo usuário em 2026-10-08: monólito modular, UseCases/domínio puro e JPA/Hibernate na infraestrutura, mantendo Flyway e Spring Session JDBC. Regras persistentes em `AGENTS.md` e [ADR 0001](architecture/adr/0001-domain-and-application-boundaries.md); PR #24 registra a decisão e precede a revisão dos PRs #19–#23. Implementação não significa integração aprovada.
+
 ## Decisões abertas
 
-- Login obrigatório ou opcional, método de autenticação e sincronização do progresso.
+- Sincronização do progresso em specs futuras (login opcional Google já decidido).
 - Meta de 50–100 questões por disciplina ou por assunto.
 - Escopo de cargos/concursos além dos dois atuais.
 - Hospedagem, disponibilidade, backups e estratégia de acesso à nova aplicação.

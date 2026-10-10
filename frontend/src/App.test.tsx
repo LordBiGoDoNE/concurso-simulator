@@ -11,7 +11,7 @@ describe('entrada da aplicação', () => {
     render(<App />);
     expect(await screen.findByText('API disponível.')).toBeInTheDocument();
     fireEvent.click(screen.getByRole('button', { name: 'Verificar novamente' }));
-    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(2));
+    await waitFor(() => expect(fetchMock.mock.calls.filter(([url]) => String(url).endsWith('/status'))).toHaveLength(2));
   });
 
   it.each(['503', 'network', 'invalid'])('mantém aulas acessíveis quando ocorre %s', async failure => {
@@ -21,7 +21,7 @@ describe('entrada da aplicação', () => {
     render(<App />);
     expect(await screen.findByText(/API indisponível/)).toBeInTheDocument();
     expect(screen.getByRole('link', { name: 'Acessar material de estudo' })).toHaveAttribute('href', 'https://lordbigodone.github.io/concurso-simulator/');
-    expect(screen.getByRole('button')).toBeEnabled();
+    expect(screen.getByRole('button', { name: 'Verificar novamente' })).toBeEnabled();
   });
 
   it('interrompe a consulta no timeout e informa indisponibilidade', async () => {

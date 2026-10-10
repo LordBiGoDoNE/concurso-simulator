@@ -9,3 +9,5 @@ section { margin-top: 32px; padding: 24px; background: white; border: 1px solid 
 button { cursor: pointer; }
 button:disabled { opacity: .65; cursor: wait; }
 :focus-visible { outline: 3px solid #a14300; outline-offset: 4px; }
+.session-refresh { margin: 12px 0 0 12px; }
+@media (max-width: 480px) { .session-refresh { display: block; margin-left: 0; } }

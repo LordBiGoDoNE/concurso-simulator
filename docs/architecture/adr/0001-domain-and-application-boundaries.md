@@ -65,6 +65,8 @@ Autenticação, autorização técnica da rota, sessão e CSRF pertencem à segu
 
 Regras resumidas em `AGENTS.md`; este ADR é a referência detalhada, versionada junto ao código. Skills podem futuramente oferecer workflow de revisão, não substituir essas instruções. Alterações arquiteturais exigem nova decisão/justificativa e atualização coerente dos documentos.
 
+Integrações de spec usam PR `[SPEC]` e revisão independente do conjunto em contexto novo, conforme `docs/architecture/spec-review.md`. Modelo/variante é escolhido explicitamente; revisão pendente/desatualizada impede integração. Check estrutural, tests e aprovações das tarefas não substituem análise semântica ou autorização do usuário.
+
 Testar invariantes em Java puro, fluxo do UseCase com portas substituíveis, repositories/transações/schema em PostgreSQL 18.6 isolado, e o fluxo de navegador/OIDC já existente. ArchUnit verifica dependências, ausência de frameworks no núcleo e ciclos; não decide sozinho se o comportamento está no objeto correto. Não adicionar exceções abrangentes apenas para testes passarem.
 
 Revisão: PR de arquitetura antes do #19, depois #20–#23 encadeados. Atualizar branches por commits adicionais sem descartar histórico; nenhum merge no GitHub, arquivamento ou publicação sem autorização. `main` e o material permanecem fora desta mudança.

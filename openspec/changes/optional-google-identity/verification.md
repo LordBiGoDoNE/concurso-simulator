@@ -1,5 +1,21 @@
 # Verification
 
+## Gate de revisão independente da spec — implantação do processo
+
+Solicitado pelo usuário após concluir as tarefas. #25 renomeado para `[SPEC] Integração de identidade opcional com Google`; permanece em rascunho/sem merge. Regras em AGENTS.md, documento/prompt de revisão, perfil OpenCode V2 somente leitura, template de PR, relatório inicial e check versionados na branch `task/optional-google-identity/spec-review-process`, aguardando revisão/integração próprias.
+
+Registro inicial no head `52a71ca`: relatório `spec-review.json/md` começou **pending**, sem modelo escolhido ou revisão independente executada naquela etapa. CI da implementação não substitui essa análise. Guard valida título/transição, commits e digest atual (exclui somente os dois arquivos de evidência), cobertura/limitações e triagem; não atesta qualidade ou autenticidade do relatório. Naquela etapa, 15 testes isolados do guard aprovados: revisão completa, ausência de achados, pendência, metadados, digest/base alterados, alterações em código/docs/testes/workflows, commit de relatório sem ciclo de invalidação, triagem/bloqueadores, renomeações e sincronização main somente no mesmo repo. OpenSpec estrito aprovado. Aplicação, material, deployment e migrações não alterados; 16/16 tarefas da implementação continuam integradas somente na épica da spec.
+
+### Correções após revisão independente do processo — PR #26
+
+Usuário escolheu `openai/gpt-6-astra#medium`. Primeira revisão/revalidação em sessão independente `ses_eddbdf778ffeLW3P7FYl7c9e0o`, via Explore somente leitura, examinou o processo #26 (base `8a4cd0a`, head `52a71ca`), **não o conjunto #25**. Sem bloqueadores operacionais confirmados; três recomendações autorizadas para correção: isolamento dos casos negativos, renderização determinística do diff e explicitação da política estrita da proteção.
+
+Causa/regra/regressão: casos acumulavam mudanças, permitindo mascarar exclusão indevida de paths; agora cada caso parte do mesmo head em branch efêmera própria, confere baseline válido e apenas um path alterado. Digest dependia de preferências de Git; renderização fixada e teste varia opções locais. Avanço da base já protegido pelo ruleset estrito, mas a exigência não estava documentada; documentação registra `strict_required_status_checks_policy: true`, e teste Git isolado avança/integra a base e rejeita evidência antiga mesmo com diff idêntico. Modelo fixado no perfil e registrado como escolhido no relatório #25, que permanece **pending**, sem sessão/commits/achados de revisão completa.
+
+Coordenador executou `python3 -B -m unittest discover -s scripts/tests -v`: **17 testes aprovados** no commit `388214c`, incluindo duas regressões novas. Verificação negativa em cópias efêmeras detectou exclusão indevida de AGENTS.md e retirada do contexto fixo do diff; código de produção não foi mutado. Cada preferência local é restaurada em `finally`, inclusive quando a asserção falha. API do ruleset `24766642` confirma regra ativa apenas na épica geral, check do app `15368`, política estrita e nenhum bypass configurado; consulta sem modificar regras. Sem ensaio remoto de avanço da base e sem disparo operacional do perfil customizado nesta etapa. Revalidação final será registrada no PR, sem declarar conclusão antecipadamente. Limites da proteção semântica/autenticidade continuam explícitos.
+
+Nova análise inicial independente em sessão `ses_eddb3e2afffeTDYmd51nza0xWN` no head `388214c` verificou as três correções e identificou recomendação adicional PR26-R01: `GIT_DIFF_OPTS` prevalece sobre `--unified`. Coordenador reproduziu no mesmo diff hashes `02155a30…` sem a variável e `482ceeda…` com `--unified=0`. Correção remove a variável somente do ambiente do subprocesso e adiciona teste com contextos 0/20 e ambiente do chamador preservado; a revisão final do novo commit ainda não é declarada neste registro.
+
 ## Padronização após o achado de sessão — #20
 
 Pedido do usuário para tornar o aprendizado persistente: AGENTS.md agora exige revisão de responsabilidades HTTP; ADR 0001 registra o refinamento; `docs/architecture/http-endpoint-review.md` define proprietários, exemplos, checklist e limites; template de PR solicita evidências e exceções justificadas. Sem impor UseCases artificiais ou mover regras de negócio para filtros.

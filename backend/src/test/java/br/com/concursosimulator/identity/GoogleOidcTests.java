@@ -7,6 +7,8 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.util.Map;
+import java.util.List;
+import java.time.Duration;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -97,6 +99,79 @@ class GoogleOidcTests {
         assertThat(result.body()).doesNotContain("fixture-access-", "id_token", "invalid-");
         assertThat(output.getAll()).doesNotContain("fixture-access-", "invalid-" + mode);
         if (OIDC.lastIdToken != null) assertThat(output.getAll()).doesNotContain(OIDC.lastIdToken);
+    }
+
+    @Test
+    void nonGetRequestsCannotStartOAuthConsumeCallbacksOrInvalidateTheSession() throws Exception {
+        OIDC.mode = "valid";
+        OIDC.subject = "method-boundary-subject";
+        var cookies = new CookieManager(null, CookiePolicy.ACCEPT_ALL);
+        var client = HttpClient.newBuilder().cookieHandler(cookies).build();
+        get(client, callback(client, base() + "/oauth2/authorization/google"));
+        var identity = get(client, base() + "/api/v1/me");
+        HttpContract.json("/api/v1/me", 200, identity);
+        var csrf = new Yaml().<Map<String, String>>load(get(client, base() + "/api/v1/csrf").body());
+        String pending = callback(client, base() + "/oauth2/authorization/google");
+        String sessionId = cookies.getCookieStore().getCookies().getFirst().getValue();
+        var row = sessionRow(sessionId);
+        var attributes = sessionAttributes(sessionId);
+        int users = jdbc.queryForObject("SELECT count(*) FROM app_user", Integer.class);
+        int exchanges = OIDC.tokenRequests.get();
+        for (String method : List.of("POST", "HEAD", "OPTIONS", "PUT", "PATCH", "DELETE")) {
+            for (boolean withCsrf : List.of(true, false)) {
+                for (String url : List.of(base() + "/oauth2/authorization/google", pending,
+                        base() + "/login/oauth2/code/google?code=invalid&state=invalid")) {
+                    var request = HttpRequest.newBuilder(URI.create(url)).timeout(Duration.ofSeconds(10))
+                            .method(method, HttpRequest.BodyPublishers.noBody());
+                    if (withCsrf) request.header(csrf.get("headerName"), csrf.get("token"));
+                    var response = client.send(request.build(), HttpResponse.BodyHandlers.ofString());
+                    assertThat(response.statusCode()).as("%s %s csrf=%s", method, URI.create(url).getPath(), withCsrf)
+                            .isEqualTo(403);
+                    assertThat(response.headers().firstValue("Location")).isEmpty();
+                    assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+                    assertThat(sessionRow(sessionId)).isEqualTo(row);
+                    assertThat(sessionAttributes(sessionId)).isEqualTo(attributes);
+                    assertThat(OIDC.tokenRequests.get()).isEqualTo(exchanges);
+                    assertThat(jdbc.queryForObject("SELECT count(*) FROM app_user", Integer.class)).isEqualTo(users);
+                }
+            }
+        }
+        assertThat(get(client, base() + "/api/v1/me").body()).isEqualTo(identity.body());
+        var completed = get(client, pending);
+        assertThat(completed.statusCode()).isEqualTo(302);
+        assertThat(completed.headers().firstValue("Location")).contains("http://127.0.0.1:5173");
+        assertThat(OIDC.tokenRequests.get()).isEqualTo(exchanges + 1);
+        assertThat(get(client, base() + "/api/v1/me").body()).isEqualTo(identity.body());
+        assertThat(OIDC.pkceVerified).isTrue();
+    }
+
+    @Test
+    void rejectedMethodsDoNotCreateAVisitorSession() throws Exception {
+        var client = HttpClient.newHttpClient();
+        int sessions = jdbc.queryForObject("SELECT count(*) FROM spring_session", Integer.class);
+        for (String method : List.of("POST", "HEAD", "OPTIONS", "PUT")) {
+            for (String path : List.of("/oauth2/authorization/google", "/login/oauth2/code/google?code=invalid&state=invalid")) {
+                var response = client.send(HttpRequest.newBuilder(URI.create(base() + path))
+                        .timeout(Duration.ofSeconds(10)).method(method, HttpRequest.BodyPublishers.noBody()).build(),
+                        HttpResponse.BodyHandlers.ofString());
+                assertThat(response.statusCode()).isEqualTo(403);
+                assertThat(response.headers().firstValue("Location")).isEmpty();
+                assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+                assertThat(jdbc.queryForObject("SELECT count(*) FROM spring_session", Integer.class)).isEqualTo(sessions);
+            }
+        }
+    }
+
+    Map<String, Object> sessionRow(String id) {
+        return jdbc.queryForMap("SELECT session_id, last_access_time, expiry_time FROM spring_session WHERE session_id = ?", id);
+    }
+
+    List<String> sessionAttributes(String id) {
+        return jdbc.queryForList("""
+                SELECT attribute_name || ':' || encode(attribute_bytes, 'base64')
+                FROM spring_session_attributes a JOIN spring_session s ON s.primary_id = a.session_primary_id
+                WHERE s.session_id = ? ORDER BY attribute_name
+                """, String.class, id);
     }
 
     @Test

@@ -35,6 +35,7 @@ public final class OidcFixture implements AutoCloseable {
     public volatile String subject = "subject-one";
     public volatile boolean pkceVerified;
     public volatile String lastIdToken;
+    public final java.util.concurrent.atomic.AtomicInteger tokenRequests = new java.util.concurrent.atomic.AtomicInteger();
 
     public OidcFixture() { this(0); }
 
@@ -100,6 +101,7 @@ public final class OidcFixture implements AutoCloseable {
     }
 
     private void token(HttpExchange exchange) throws java.io.IOException {
+        tokenRequests.incrementAndGet();
         try {
             var params = parameters(new String(exchange.getRequestBody().readAllBytes(), StandardCharsets.UTF_8));
             Ticket ticket = codes.remove(params.getOrDefault("code", ""));

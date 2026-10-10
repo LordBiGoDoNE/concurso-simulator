@@ -17,6 +17,18 @@ import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.time.Duration;
 import java.util.Map;
+import java.util.List;
+import java.util.UUID;
+import java.util.Base64;
+import br.com.concursosimulator.identity.web.UserPrincipal;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.context.SecurityContextImpl;
+import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.session.Session;
+import org.springframework.session.SessionRepository;
+import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
+import org.springframework.session.web.http.SessionRepositoryFilter;
+import org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean;
 import static org.assertj.core.api.Assertions.assertThat;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.DynamicPropertyRegistry;
@@ -39,6 +51,9 @@ class ConcursoSimulatorApplicationTests {
     @Autowired Flyway flyway;
     @Autowired jakarta.persistence.EntityManagerFactory entities;
     @Autowired org.springframework.core.env.Environment environment;
+    @Autowired JdbcIndexedSessionRepository sessions;
+    @Autowired org.springframework.context.ApplicationContext context;
+    @Autowired jakarta.servlet.ServletContext servlet;
     final HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
 
     @DynamicPropertySource
@@ -82,12 +97,64 @@ class ConcursoSimulatorApplicationTests {
     }
 
     @Test
+    @Order(4)
+    void readinessDoesNotLoadOrPersistSessions() throws Exception {
+        var cookies = readinessCookies();
+        String id = cookies.getFirst().substring("SESSION=".length());
+        Session before = sessions.findById(id);
+        var accessed = before.getLastAccessedTime();
+        assertReadinessForEveryCookie(200, cookies);
+        Session after = sessions.findById(id);
+        assertThat(after.getLastAccessedTime()).isEqualTo(accessed);
+        assertThat(context.getBeansOfType(SessionRepositoryFilter.class)).hasSize(1);
+        var registration = context.getBean("sessionRepositoryFilterRegistration", DelegatingFilterProxyRegistrationBean.class);
+        assertThat(registration.getOrder()).isEqualTo(SessionRepositoryFilter.DEFAULT_ORDER);
+        var securityRegistration = context.getBean("securityFilterChainRegistration", DelegatingFilterProxyRegistrationBean.class);
+        assertThat(registration.getOrder()).isLessThan(securityRegistration.getOrder());
+        assertThat(servlet.getFilterRegistrations().keySet().stream()
+                .filter(name -> name.toLowerCase(java.util.Locale.ROOT).contains("session")).toList()).hasSize(1);
+    }
+
+    @Test
     @Order(99)
     void databaseLossReturnsDownWithinTimeout() throws Exception {
+        var cookies = readinessCookies();
         POSTGRES.stop();
-        long start = System.nanoTime();
-        assertContract(get("/api/v1/status", null), 503);
-        assertThat(Duration.ofNanos(System.nanoTime() - start)).isLessThan(Duration.ofSeconds(8));
+        assertReadinessForEveryCookie(503, cookies);
+    }
+
+    @SuppressWarnings({"unchecked", "rawtypes"})
+    List<String> readinessCookies() {
+        SessionRepository<Session> repository = (SessionRepository) sessions;
+        var session = repository.createSession();
+        session.setLastAccessedTime(java.time.Instant.now().minusSeconds(60));
+        session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
+                new SecurityContextImpl(UsernamePasswordAuthenticationToken.authenticated(
+                        new UserPrincipal(UUID.randomUUID()), null, List.of())));
+        repository.save(session);
+        String unknown = UUID.randomUUID().toString();
+        return List.of("SESSION=" + session.getId(), "SESSION=" + unknown,
+                "SESSION=" + Base64.getEncoder().encodeToString(unknown.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+    }
+
+    void assertReadinessForEveryCookie(int code, List<String> readinessCookies) throws Exception {
+        var cookies = new java.util.ArrayList<String>();
+        cookies.add(null);
+        cookies.addAll(readinessCookies);
+        for (String cookie : cookies) {
+            var request = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + "/api/v1/status"))
+                    .timeout(Duration.ofSeconds(10)).header("Origin", "http://localhost:5173").GET();
+            if (cookie != null) request.header("Cookie", cookie);
+            long start = System.nanoTime();
+            var response = client.send(request.build(), HttpResponse.BodyHandlers.ofString());
+            assertThat(Duration.ofNanos(System.nanoTime() - start)).isLessThan(Duration.ofSeconds(8));
+            assertContract(response, code);
+            assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+            assertThat(response.headers().firstValue("Access-Control-Allow-Origin")).contains("http://localhost:5173");
+            assertThat(response.headers().firstValue("Access-Control-Allow-Credentials")).isEmpty();
+            assertThat(response.headers().firstValue("X-Content-Type-Options")).contains("nosniff");
+            assertThat(response.headers().firstValue("X-Frame-Options")).contains("DENY");
+        }
     }
 
     HttpResponse<String> get(String path, String origin) throws Exception {

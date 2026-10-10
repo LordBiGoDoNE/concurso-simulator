@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
 import org.springframework.security.authorization.AuthorizationDecision;
@@ -14,6 +15,7 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
+import org.springframework.security.web.context.NullSecurityContextRepository;
 import org.springframework.security.web.savedrequest.NullRequestCache;
 import org.springframework.beans.factory.ObjectProvider;
 import org.springframework.security.oauth2.client.registration.ClientRegistrationRepository;
@@ -22,6 +24,7 @@ import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequest
 import org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizedClientRepository;
 import br.com.concursosimulator.identity.web.GoogleLoginHandlers;
 import br.com.concursosimulator.identity.infrastructure.GoogleLoginProperties;
+import br.com.concursosimulator.identity.infrastructure.OAuthRequestMethods;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.web.cors.CorsConfiguration;
@@ -41,6 +44,37 @@ public class SecurityConfiguration {
     }
 
     @Bean
+    @Order(1)
+    SecurityFilterChain readinessSecurityFilterChain(HttpSecurity http, ApiAccessFailureHandler failures) throws Exception {
+        return http.securityMatcher("/api/v1/status")
+                .cors(Customizer.withDefaults())
+                .securityContext(context -> context.securityContextRepository(new NullSecurityContextRepository()))
+                .requestCache(cache -> cache.requestCache(new NullRequestCache()))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.GET, "/api/v1/status").permitAll()
+                        .anyRequest().denyAll())
+                .exceptionHandling(errors -> errors.authenticationEntryPoint(failures).accessDeniedHandler(failures))
+                .build();
+    }
+
+    @Bean
+    @Order(2)
+    SecurityFilterChain rejectedOAuthMethodsSecurityFilterChain(HttpSecurity http, ApiAccessFailureHandler failures)
+            throws Exception {
+        // This chain cannot execute an operation: reject before OAuth or session/CSRF materialization.
+        return http.securityMatcher(OAuthRequestMethods::rejects)
+                .cors(Customizer.withDefaults())
+                .securityContext(context -> context.securityContextRepository(new NullSecurityContextRepository()))
+                .requestCache(cache -> cache.requestCache(new NullRequestCache()))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth.anyRequest().denyAll())
+                .exceptionHandling(errors -> errors.authenticationEntryPoint(failures).accessDeniedHandler(failures))
+                .build();
+    }
+
+    @Bean
+    @Order(3)
     SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository,
             GoogleLoginProperties google, ObjectProvider<ClientRegistrationRepository> registrations,
             GoogleLoginHandlers handlers, HttpSessionOAuth2AuthorizedClientRepository clients,
@@ -58,7 +92,7 @@ public class SecurityConfiguration {
                 .requestCache(cache -> cache.requestCache(new NullRequestCache()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET, "/api/v1/status", "/api/v1/csrf", "/api/v1/auth/config",
+                        .requestMatchers(HttpMethod.GET, "/api/v1/csrf", "/api/v1/auth/config",
                                 "/oauth2/authorization/google", "/login/oauth2/code/google").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/me").access((authentication, request) -> {
                             var current = authentication.get();

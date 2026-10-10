@@ -30,6 +30,8 @@ Para testar Google local, veja `../backend/docs/google-login.md`: use `SPRING_PR
 
 “Entrar com Google” é navegação à API. “Sair” busca novo CSRF e faz POST; 403 oferece nova tentativa, erro de rede não afirma saída. “Atualizar sessão” e retorno do foco consultam novamente e reconhecem expiração. Falha no login mostra mensagem genérica e remove auth=failed da URL, preservando demais parâmetros. Não há tokens Google em localStorage/sessionStorage. Testes Vitest cobrem estados/falhas/logout e Playwright cobre teclado/390px/1280px.
 
+O prazo de 5 segundos das chamadas de identidade inclui headers e consumo do JSON necessário (config/me/CSRF); logout usa somente o status, sem ler corpo. Timers e listeners são liberados ao concluir ou falhar. LoginPanel invalida consultas anteriores e concorrentes ao logout: respostas tardias não podem sobrescrever seu resultado, e uma nova atualização continua possível. Essas proteções cuidam do transporte/estado local; autenticação, expiração e invalidação real da sessão continuam sendo responsabilidade do backend.
+
 Testes de navegador: `npx playwright install chromium` e `npm run test:e2e`. Para incluir a regressão offline das aulas, monte o pacote com `scripts/build_pages.py` e defina `STUDY_ROOT=/caminho/absoluto/do/pacote` ao executar os testes. Sem essa variável, o teste offline é explicitamente ignorado; o CI sempre a define.
 
 ## Navegador integrado sem Google real

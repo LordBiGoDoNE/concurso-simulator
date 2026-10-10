@@ -3,20 +3,121 @@
   "status": "pending",
   "spec": "optional-google-identity",
   "pr": 25,
-  "base_sha": null,
-  "reviewed_head_sha": null,
-  "diff_sha256": null,
+  "base_sha": "6664e2c516facf61169c52095c732a77ee68e0cf",
+  "reviewed_head_sha": "fba7719ec9b4fd58ae5be4a52855290cab845129",
+  "diff_sha256": "773682c4e010a356bc1fddb8d0bd0510cebb92bdab9935ad4cad608ef78473ea",
   "reviewer": {
     "model": "openai/gpt-6-astra#medium",
-    "session": null,
-    "independent_context": false
+    "session": "ses_ed9ab0a5affevkCQABqq93wgIK",
+    "independent_context": true
   },
-  "reviewed_at": null,
-  "coverage": {},
+  "reviewed_at": "2026-10-10T15:12:51Z",
+  "review_phase": "awaiting_triage",
+  "coverage": {
+    "requirements": "Revisor confrontou proposta, design, tasks, user-auth e foundation bootstrap-application-stack; diff integral de 80 arquivos, 4412 linhas, incluindo evidências somente após análise inicial.",
+    "architecture": "Domínio/aplicação Java puro, VO, UseCase, portas, wiring, JPA separado, responsabilidades HTTP e DTOs. B01 identifica contrato genérico indevido em auth/config.",
+    "integration": "Combinação frontend/API/OIDC/PostgreSQL, fixtures, restart, expiração e dispositivos. B02/B03 e R01/R02 confirmados por probes isolados do coordenador, não executados pelo revisor.",
+    "security": "Code/PKCE, issuer/claims, contexto mínimo, cookie/sessão, CSRF/CORS, negação de rotas e whitelist de métodos. Páginas geradas abertas refutadas no alcance testado; B03 confirma processamento de métodos não permitidos nas rotas OAuth.",
+    "persistence": "Flyway V1–V3, validate/OSIV, unicidade, atomicidade, rollback antes de recovery e ausência de órfãos. B02 identifica interferência da sessão JDBC no contrato de prontidão.",
+    "tests": "Revisor leu testes unitários/HTTP/OIDC/browser/arquitetura/gate, os probes e seus resultados. CI de aplicação passou, mas não cobria os cinco achados. Probes caracterizam defeitos, não validam correções.",
+    "maintenance": "CI, pipeline estático separado, montagem allowlist/offline, docs e guard de snapshot/ancestralidade/base/triagem; sem alterações de aulas no diff. Runtime do perfil customizado e avanço remoto de base não ensaiados."
+  },
   "limitations": [
-    "Revisão independente do conjunto não executada; CI e revisões das tarefas não a substituem."
+    "Análise independente do diff completo concluída; triagem pelo usuário, correções e revalidação permanecem pendentes. status pending impede integração.",
+    "Revisor Explore somente leitura, modelo explícito; não executou testes/Git/API e não testou runtime do perfil customizado spec-reviewer.",
+    "Coordenador executou probes em clone isolado do head analisado, com produção inalterada e PostgreSQL/OIDC locais efêmeros. Probes afirmam/imprimem defeitos observados; PASSED não significa conformidade.",
+    "Não houve ensaio remoto de avanço da base/retargeting nem auditoria exaustiva de todas as dependências ou aulas.",
+    "Smoke Google real requer credenciais externas e continua obrigatório antes do deployment público, não para confirmar estes achados."
   ],
-  "verification": [],
-  "findings": [],
+  "verification": [
+    {
+      "command": "GitHub Actions Application checks, PR #25 head fba7719, run 38061810020",
+      "result": "Backend/frontend/material/navegador integrado aprovados; https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38061810020. Não substitui revisão nem cobre os cinco achados.",
+      "executed_by": "GitHub Actions; consultado pelo coordenador"
+    },
+    {
+      "command": "GitHub Actions Spec review gate, run 38061810036",
+      "result": "Guard executado, integração BLOQUEADA por relatório pending: Revisão independente pendente/não executada. Falha esperada; regra não relaxada.",
+      "executed_by": "GitHub Actions; log consultado pelo coordenador"
+    },
+    {
+      "command": "Clone isolado: JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew --no-daemon --console=plain test --tests '*ReviewIntegrationProbeTests' --tests '*ReviewDisabledRoutesProbeTests'",
+      "result": "3 probes de caracterização concluídos. Banco parado: sem cookie 503 JSON DOWN; válido/desconhecido 500 HTML. OAuth habilitado: GET/POST/HEAD/OPTIONS/PUT processados com 302; páginas GET login/login?error/logout 403. Desabilitado: GET entry/callback 404, demais métodos 403. Hikari timeout do probe 2000ms, PG connect/socket 2/3s; tempos não garantem produção.",
+      "executed_by": "Coordenador, clone /tmp/opencode/concurso-pr25-review-probes-20261010; código original não alterado"
+    },
+    {
+      "command": "Clone isolado frontend: npm test -- --run src/ReviewProbe.test.tsx --reporter=json --outputFile=/tmp/opencode/pr25-frontend-probes.json",
+      "result": "4 probes de caracterização passaram afirmando defeitos: JSON config/me/CSRF pendente além de 6s sem abort; refresh tardio recoloca conectado após logout 204. Não são regressões da correção.",
+      "executed_by": "Coordenador, clone isolado; revisor leu fontes/resultados"
+    },
+    {
+      "command": "gh api repos/LordBiGoDoNE/concurso-simulator/rulesets/24766642",
+      "result": "Regra active apenas na épica geral, exige PR/check spec-review do app 15368, strict_required_status_checks_policy=true e sem bypass configurado.",
+      "executed_by": "Coordenador, consulta somente leitura"
+    }
+  ],
+  "findings": [
+    {
+      "id": "B01",
+      "severity": "blocking",
+      "location": "backend/src/main/java/br/com/concursosimulator/identity/web/GoogleLoginController.java:15-17",
+      "evidence": "Contrato fechado auth/config retorna ResponseEntity<?> com Map.of(googleEnabled), sem payload dinâmico ou exceção justificada.",
+      "reference": "AGENTS.md:42-44; docs/architecture/http-endpoint-review.md:26-29; ADR 0001 refinamento HTTP",
+      "impact": "Violação arquitetural aprovada; teste estrutural específico de SessionController não detecta a reincidência. Não há vulnerabilidade ou JSON incorreto demonstrados.",
+      "suggestion": "DTO web AuthConfigResponse e retorno concreto; regressão de assinatura sem Service/UseCase artificial.",
+      "disposition": "open",
+      "resolution": "Triagem/correção/revalidação pendentes; nenhuma edição de aplicação autorizada nesta rodada."
+    },
+    {
+      "id": "B02",
+      "severity": "blocking",
+      "location": "backend/src/main/java/br/com/concursosimulator/platform/infrastructure/SecurityConfiguration.java:56-62; backend/src/main/resources/application.yaml:16-19; backend/src/test/java/br/com/concursosimulator/ConcursoSimulatorApplicationTests.java:84-96",
+      "evidence": "H01 confirmada em PostgreSQL isolado: após queda, status sem cookie 503 JSON DOWN; cookie autenticado válido/desconhecido 500 HTML. Stack de leitura de sessão chega a JdbcIndexedSessionRepository.findById antes da prontidão.",
+      "reference": "bootstrap-application-stack/specs/application-runtime/spec.md:27-36, Contrato público de prontidão; design optional-google-identity, status independente de sessão",
+      "impact": "Contrato público muda conforme cookie durante indisponibilidade de banco; permitAll não elimina dependência de sessão JDBC.",
+      "suggestion": "Isolar prontidão da leitura/persistência de sessão na infraestrutura de filtros/segurança. Testar cookies ausente/válido/desconhecido com banco UP/DOWN e prazo finito, preservando CORS/headers e probe real.",
+      "disposition": "open",
+      "resolution": "Triagem/correção/revalidação pendentes; reprodução confirmada, sem correção aplicada."
+    },
+    {
+      "id": "B03",
+      "severity": "blocking",
+      "location": "backend/src/main/java/br/com/concursosimulator/platform/infrastructure/SecurityConfiguration.java:48-53,60-68; backend/src/main/java/br/com/concursosimulator/identity/web/GoogleLoginHandlers.java:67-75",
+      "evidence": "OAuth habilitado processa GET/POST/HEAD/OPTIONS/PUT na entrada e callback, todos 302; a whitelist autoriza somente GET. Matriz usou CSRF válido; callback inválido percorre handler e invalida sessão.",
+      "reference": "Design optional-google-identity, OIDC no backend e Contratos/negação por padrão; docs/architecture/http-endpoint-review.md:5-15",
+      "impact": "Filtros OAuth executam métodos que deveriam ser negados antes da autorização técnica, com efeitos de fluxo/sessão. Não é bypassCSRF, autenticação indevida ou vazamento demonstrados.",
+      "suggestion": "Restringir métodos antes do processamento OAuth ou nos matchers/resolver técnicos; testar habilitado/desabilitado com/sem CSRF e ausência de efeitos sobre sessão após rejeição.",
+      "disposition": "open",
+      "resolution": "Triagem/correção/revalidação pendentes. Achado distinto da hipótese de páginas geradas abertas, refutada."
+    },
+    {
+      "id": "R01",
+      "severity": "recommended",
+      "location": "frontend/src/identity-api.ts:3-10,17-21; frontend/src/LoginPanel.tsx:37-40,70",
+      "evidence": "Timer cancelado após fetch/headers, antes de response.json. Probes config/me não concluíram nem abortaram após 6s; CSRF pendente manteve Saindo desabilitado.",
+      "reference": "user-auth, Erros compreensíveis e interface acessível",
+      "impact": "JSON interrompido deixa consulta/logout indefinidamente pendente apesar do timeout; aulas permanecem acessíveis.",
+      "suggestion": "Manter prazo/abort até consumir JSON; separar logout204 sem corpo e testar recuperação da UI após headers sem corpo completo.",
+      "disposition": "open",
+      "resolution": "Triagem/correção/revalidação pendentes; reproduzido em promises/tempo controlados, sem correção aplicada."
+    },
+    {
+      "id": "R02",
+      "severity": "recommended",
+      "location": "frontend/src/LoginPanel.tsx:22-31,33-52",
+      "evidence": "Logout aguardando, foco dispara me; logout204 conclui e consulta autenticada tardia sobrescreve visitante. Probe mostrou conectado, alerta sem sessão e botão Sair simultâneos.",
+      "reference": "user-auth, Logout da sessão atual e Erros compreensíveis/interface acessível",
+      "impact": "UI contraditória após saída bem-sucedida; não restaura sessão no servidor.",
+      "suggestion": "Invalidar resultados anteriores durante mutação e coordenar refresh/logout por geração de operação ou equivalente; regressão com promises controladas.",
+      "disposition": "open",
+      "resolution": "Triagem/correção/revalidação pendentes; sem correção aplicada."
+    }
+  ],
+  "refuted_hypotheses": [
+    {
+      "id": "H02-generated-pages",
+      "result": "GET login/login?error/logout retornou403 com Google habilitado; GET/POST/HEAD/OPTIONS/PUT retornou403 desabilitado. Páginas abertas não confirmadas. Matriz completa dessas páginas habilitadas não ensaiada; B03 é problema distinto em rotas OAuth."
+    }
+  ],
   "triage_complete": false
 }

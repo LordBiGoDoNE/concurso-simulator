@@ -1,13 +1,17 @@
-# GitHub Stacks — piloto e adoção limitada em question-bank
+# GitHub Stacks — padrão de tarefas dependentes e evidência do piloto
 
 ## Escopo e autorização
 
 O usuário aprovou o piloto e a proposta #31, integrada somente em `epic/question-bank`
 como `952d445820cb0b1237d155e62b09610d3e62ee69`. O ajuste limitado #32 foi aprovado e
 integrado como `07e1ddbbe735586aed501ecca71da08bcd4a28f4`; habilitou somente o ensaio
-sintético. Após o relatório remoto, o usuário aprovou estender o uso às tarefas reais.
-Esta extensão será aplicada após revisão/aprovação e merge do PR que a registra;
-não é autorização de merge desse PR, da stack ou de implementação das 44 tarefas.
+sintético. Após o relatório remoto, o usuário aprovou a adoção nas tarefas reais de
+question-bank pelo #36, integrado somente na épica da spec como
+`d04c6d74712128b716dc345bc8979a530c97c355`, e solicitou **o mesmo padrão para as próximas
+specs**. A generalização segue por PR próprio para revisão/merge; não presume aprovação
+desse diff nem de merges de stacks. Depois de integrado, o método não exige nova
+autorização por spec, mas proposta e implementação continuam exigindo aprovação e
+pedido próprios. A aprovação do fluxo não implementa as 44 tarefas de question-bank.
 
 Exceção inicial ensaiada: dois PRs sintéticos, ambos em rascunho, no mesmo
 repositório/spec, com um pequeno arquivo de documentação por camada:
@@ -18,11 +22,11 @@ epic/question-bank (trunk)
       ← task/question-bank/stacks-pilot-upper
 ```
 
-PRs independentes e `epic/question-bank` → `epic/application-reformulation` não entram
-na stack. Este último mantém título `[SPEC]`, revisão cumulativa independente e gate
-próprios. Até integrar esta extensão, tarefas de produto seguem em PRs sequenciais
-para a épica. Depois, somente dependências reais de question-bank podem usar Stacks,
-conforme o procedimento abaixo. Nenhuma proteção será reduzida.
+PRs independentes e `epic/<spec>` → `epic/application-reformulation` não entram na
+stack. Este último mantém título `[SPEC]`, revisão cumulativa independente e gate
+próprios. #36 habilitou a adoção em question-bank; este registro estende o padrão a
+dependências reais das próximas specs, após revisão/merge próprio, sem nova aprovação
+do método por spec. Nenhuma proteção será reduzida.
 
 ## Etapa local executada
 
@@ -111,14 +115,18 @@ SHA256 `cba7468665f96792c998983a08a4aa96f135befbfbd690b9ae1e2e3341051ab6`.
 O relatório na issue preserva comandos, SHAs, links de CI e limites; artefatos não
 distribuídos integralmente. Sem revisão independente cumulativa de question-bank.
 
-## Uso nas tarefas reais — após integração desta extensão
+## Procedimento padrão nas specs
 
 1. Conferir pedido/escopo da tarefa, spec aprovada, épica atualizada e ferramenta
-   v0.2.1 fixada. Criar stack nova, **nunca ampliar a sintética #35**. Camada inferior
+   v0.2.1 fixada. Para dependências reais, criar stack nova, **nunca ampliar a sintética
+   #35 nem misturar specs**. Camada inferior
    parte da épica; superior da tarefa inferior realmente necessária. Todos os nomes
-   são `task/question-bank/<assunto>`, trunk explícita `epic/question-bank`.
+   são `task/<change-name>/<assunto>`, trunk explícita `epic/<change-name>`,
+   nunca main/épica geral. Tarefas independentes abrem PRs diretamente para a épica.
 2. Abrir camadas novas em draft, com dependências e testes/docs no mesmo PR. Conferir
-   base/diff/composição após submit e registrar issue #30. Tarefas independentes e
+   base/diff/composição após submit e registrar na issue de acompanhamento da spec.
+   Conferir refs/checks de cada nova stack: o piloto não prova configurações diferentes.
+   Tarefas independentes e
    PR `[SPEC]` seguem separados. Não criar dependência só para usar a ferramenta.
 3. Após correções, preservar refs e assegurar worktrees limpos **e ociosos**; rebase e
    push com leases/ref remotos conferidos. Esperar CI de cada head atual, verificar
@@ -136,10 +144,12 @@ distribuídos integralmente. Sem revisão independente cumulativa de question-ba
    composição/base/diffs/CI. Se indisponível, retomar sequencial por ajuste autorizado,
    sem relaxar regras. Integrado na épica é estado distinto de implementado/verificado.
 
-O usuário aprovou o método, não implementação automática de todas as tarefas/grupos
-sem pausas. Esta extensão não concede autorização de merges, encerramento dos PRs
-sintéticos, outras specs, deployment ou main. A revisão cumulativa Astra medium e
-gate do PR `[SPEC]` permanecem obrigatórios antes da integração na épica geral.
+O usuário aprovou o método como padrão, não implementação automática de specs/tarefas
+ou grupos sem pausas. Não repetir pilotos/propostas de processo por spec somente por
+mudar o nome: conferir compatibilidade e registrar limites; divergência real exige
+ajuste revisável. O padrão não concede autorização de merges, encerramento dos PRs
+sintéticos, deployment ou main. A revisão cumulativa Astra medium e gate do PR `[SPEC]`
+permanecem obrigatórios antes da integração na épica geral.
 
 ## Revisão e colaboração
 

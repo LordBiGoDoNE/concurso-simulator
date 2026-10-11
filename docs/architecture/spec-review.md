@@ -102,10 +102,13 @@ exige branch `epic/<spec>` e título `[SPEC]`, evitando bypass só por renomear 
 `main` → épica geral é sincronização do site existente, não integração de spec;
 o check registra essa exceção e não autoriza seu merge.
 
-O [piloto e a adoção limitada de Stacks em question-bank](../stacks-pilot.md) registram
+O [padrão de Stacks e a evidência do piloto em question-bank](../stacks-pilot.md) registram
 criação/diffs/rebase/CI remotos e a restrição de retargeting: GitHub bloqueia troca de
-base de membro. Extensão autorizada pelo usuário para tarefas reais exige integração
-do PR de processo antes do uso; limita-se a dependências da mesma spec. PR `[SPEC]`
+base de membro. #36 integrou a adoção em question-bank; o usuário aprovou o padrão para
+próximas specs, versionado por PR de processo próprio. Não repetir aprovação do método
+por spec após esse registro; conferir refs/checks e limitar a dependências reais da
+mesma spec/repositório, trunk `epic/<change-name>`. Aprovações de propostas/tarefas/merges
+continuam separadas. PR `[SPEC]`
 fica fora da stack, sempre da épica da spec para a épica geral; sem isenção nova no
 guard. Logs do ensaio confirmaram base/head e `spec-review-tests`; raw payload não
 foi exportado. Igualdade visual de diff após rebase não preserva evidência: o gate

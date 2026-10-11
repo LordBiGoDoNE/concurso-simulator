@@ -1,6 +1,7 @@
 package br.com.concursosimulator.questionbank.infrastructure.persistence;
 
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
+import br.com.concursosimulator.questionbank.application.port.OriginAlreadyExistsException;
 import br.com.concursosimulator.questionbank.domain.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.LockModeType;
@@ -12,6 +13,7 @@ import tools.jackson.databind.json.JsonMapper;
 import java.net.URI;
 import java.util.*;
 import java.util.function.Function;
+import org.hibernate.exception.ConstraintViolationException;
 
 /** Porta de escrita de questões: transação independente, bloqueio por agregado e retorno após commit. */
 @Repository
@@ -25,11 +27,21 @@ public class JpaQuestionStore implements QuestionStore {
         transactions.setTimeout(15);
     }
     @Override public <T> T transaction(Function<Session,T> operation) {
-        return transactions.execute(status -> {
-            var session=new JpaSession();
-            try { var result=operation.apply(session); entities.flush(); return result; }
-            finally { session.active=false; }
-        });
+        try {
+            return transactions.execute(status -> {
+                var session=new JpaSession();
+                try { var result=operation.apply(session); entities.flush(); return result; }
+                finally { session.active=false; }
+            });
+        } catch(RuntimeException exception) {
+            // Somente fora de execute: rollback já concluído, inclusive falha no commit.
+            for(Throwable cause=exception;cause!=null;cause=cause.getCause()) {
+                if(cause instanceof ConstraintViolationException violation && "qb_question_origin_key".equals(violation.getConstraintName())) {
+                    throw new OriginAlreadyExistsException(exception);
+                }
+            }
+            throw exception; // FK, PK, validação e indisponibilidade nunca são sucesso/idempotência.
+        }
     }
     private final class JpaSession implements Session {
         private boolean active=true;

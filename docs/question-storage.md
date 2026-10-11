@@ -44,3 +44,29 @@ conferindo estados/ponteiro persistidos. Inconsistência é falha, nunca acervo 
 Payload JSONB é armazenamento interno tipado por Jackson na infraestrutura, não um
 DTO web nem contrato do pacote. Testes PG reais verificam round-trip, substituição,
 retirada, rollback de dois agregados, concorrência e commit independente/porta encerrada.
+
+## Idempotência e recuperação — tarefa 2.3
+
+`ApplyQuestionCandidatesUseCase` aplica candidatos já validados em uma unidade atômica,
+ordenando travas por namespace/chave. Pacote com origem repetida é rejeitado. Origem nova
+gera questão/revisão DRAFT; mesma origem/conteúdo retorna IDs existentes, inclusive revisão
+antiga/retirada, sem mudar estado/ponteiro/histórico. Conteúdo diferente exige ID da última
+revisão esperada; base desatualizada desfaz todo o pacote, inclusive inclusões anteriores.
+Não remover questões ausentes nem fundir chaves diferentes por similaridade.
+
+O adaptador traduz **somente** `qb_question_origin_key`, fora de TransactionTemplate.execute
+e portanto depois do rollback. O UseCase tenta uma segunda unidade completa; novo conflito
+ou outra falha propaga. PK/FK, validação, corrupção de payload e indisponibilidade não viram
+sucesso. Não continuar numa transação abortada nem retornar IDs ainda não commitados.
+Travas serializam origens já existentes; constraint protege a corrida de origem ausente.
+
+PG18.6 real força seis imports a observar a origem ausente antes da escrita: um vencedor,
+cinco colisões recuperadas pós-rollback, uma questão/revisão e zero decisões. Testes também
+cobrem pacote revertido, revisão-base desatualizada, reimportação de retirada e falhas de
+PK/FK; porta substituível cobre indisponibilidade/ordem de recuperação. ArchUnit protege
+o núcleo de questões contra dependências de identidade/framework/adaptadores.
+
+Ainda não há extrator/JSON de pacote/prévia/CLI/relatório de similaridade: 3.1–3.4.
+Esse UseCase não é chamado no startup nem exposto por HTTP; toda escrita usa fixtures
+identificadas nesta rodada. O payload interno não aprova fonte/conteúdo nem deve ser enviado
+a clientes. Nenhuma aprovação real ou meta editorial foi produzida por testes/importação.

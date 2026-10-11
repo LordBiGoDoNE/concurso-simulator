@@ -6,11 +6,25 @@ spring:
     username: ${DB_USERNAME:concurso}
     password: ${DB_PASSWORD}
     hikari:
+      data-source-properties:
+        logServerErrorDetail: false # Erros PostgreSQL não devem expor valores das chaves pessoais.
       connection-timeout: ${DB_CONNECTION_TIMEOUT_MS:2000}
       validation-timeout: 1000
   jdbc:
     template:
       query-timeout: ${DB_QUERY_TIMEOUT_SECONDS:2}
+  session:
+    timeout: ${SESSION_TIMEOUT:30m}
+    jdbc:
+      initialize-schema: never
+  jpa:
+    open-in-view: false
+    hibernate:
+      ddl-auto: validate
+logging:
+  level:
+    org.hibernate.orm.jdbc.bind: 'OFF'
+    org.hibernate.orm.jdbc.extract: 'OFF'
 server:
   address: ${SERVER_ADDRESS:127.0.0.1}
   port: ${SERVER_PORT:8080}
@@ -19,3 +33,9 @@ server:
     include-stacktrace: never
 app:
   cors-origins: ${CORS_ORIGINS:http://localhost:5173,http://127.0.0.1:5173}
+  google:
+    enabled: ${AUTH_GOOGLE_ENABLED:false}
+    client-id: ${GOOGLE_CLIENT_ID:}
+    client-secret: ${GOOGLE_CLIENT_SECRET:}
+    callback-url: ${GOOGLE_CALLBACK_URL:}
+    frontend-url: ${FRONTEND_URL:}

@@ -4,6 +4,8 @@ Revisão JPA/arquitetura de 2026-10-08: Google/OIDC é adaptador web; após vali
 
 Desativado por padrão (`AUTH_GOOGLE_ENABLED=false`): nenhuma discovery/chamada ao Google no startup, entradas retornam 404 e `/api/v1/auth/config` retorna somente `googleEnabled:false`. Não há login simulado em produção.
 
+`GET /api/v1/auth/config` tem contrato web concreto `ResponseEntity<AuthConfigResponse>`, sem Service/UseCase intermediário. JSON/OpenAPI continuam contendo apenas o booleano `googleEnabled`; teste de assinatura impede retorno curinga/Map neste endpoint, sem tentar avaliar toda decisão semântica dos controllers.
+
 Para habilitar, configure externamente, somente no backend:
 
 | Variável | Uso |
@@ -22,6 +24,8 @@ No Google Cloud Console, configure consentimento (e usuários de teste se aplic�
 ## Fluxo e privacidade
 
 Navegação a `/oauth2/authorization/google` inicia code + PKCE S256. Spring Security valida state, nonce, issuer Google fixo, audience, assinatura/JWK e validade do ID token. Sucesso resolve subject validado em UUID, gira a sessão, substitui o principal OIDC por UUID/permissão e remove authorized client. Nenhum refresh token é solicitado; tokens Google não são mantidos na sessão final ou no browser storage. Não registrar payload OAuth nem ativar trace/debug de segurança/HTTP em produção; proxies não devem registrar query strings do callback (podem conter code/state).
+
+Entrada e callback aceitam **somente GET**, habilitados ou desativados. A whitelist de autorização final não basta: filtros OAuth processam requisições antes dela. Uma cadeia Spring Security prioritária rejeita outros métodos com 403, sem filtros OAuth nem materialização CSRF/sessão; o filtro de sessão também desvia essas rejeições. CSRF permanece obrigatório no POST de logout. Não há operação na cadeia de rejeição, mesmo com token válido: ela não inicia OAuth, consome callback, troca código, cria usuário, renova ou invalida sessão. Testes HTTP com/sem cookie e com/sem CSRF verificam essas fronteiras; um callback pendente continua utilizável pelo GET/PKCE após as rejeições. Isso não substitui validação OIDC/CSRF nem abre `/login`, `/logout` ou outras rotas.
 
 Redirect usa exclusivamente `FRONTEND_URL`, nunca `returnTo` público. Falha/cancelamento invalida a sessão temporária e retorna `?auth=failed`, sem detalhes/token. O marcador é consumido pela UI. Conta é criada somente após validação; login não promete histórico sincronizado.
 

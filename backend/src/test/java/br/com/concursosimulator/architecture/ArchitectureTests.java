@@ -1,6 +1,8 @@
 package br.com.concursosimulator.architecture;
 
 import br.com.concursosimulator.identity.web.SessionController;
+import br.com.concursosimulator.identity.web.GoogleLoginController;
+import br.com.concursosimulator.identity.web.AuthConfigResponse;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption;
 import com.tngtech.archunit.core.domain.JavaClasses;
@@ -68,6 +70,17 @@ class ArchitectureTests {
                 .orShould().dependOnClassesThat().haveFullyQualifiedName(
                         "org.springframework.security.web.csrf.CsrfFilter")
                 .check(CODE);
+    }
+
+    @Test
+    void authConfigurationHasAConcreteWebContract() throws Exception {
+        var method = GoogleLoginController.class.getDeclaredMethod("config");
+        assertThat(method.isAnnotationPresent(GetMapping.class)).isTrue();
+        assertThat(method.getGenericReturnType()).isInstanceOf(ParameterizedType.class);
+        var response = (ParameterizedType) method.getGenericReturnType();
+        assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
+        assertThat(response.getActualTypeArguments()).containsExactly(AuthConfigResponse.class);
+        assertThat(AuthConfigResponse.class.isRecord()).isTrue();
     }
 
     @Test

@@ -75,6 +75,43 @@ class SessionAccessTests {
     }
 
     @Test
+    void disabledGoogleRejectsNonGetWithoutChangingSessions() throws Exception {
+        String cookie = authenticatedSession(UUID.randomUUID());
+        String id = cookie.substring("SESSION=".length());
+        String token = json(send("GET", "/api/v1/csrf", cookie, null, null)).get("token").toString();
+        var before = repository().findById(id);
+        var context = before.getAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY);
+        var attributes = jdbc.queryForList("SELECT encode(attribute_bytes, 'base64') FROM spring_session_attributes "
+                + "WHERE session_primary_id = (SELECT primary_id FROM spring_session WHERE session_id = ?) ORDER BY attribute_name",
+                String.class, id);
+        int count = jdbc.queryForObject("SELECT count(*) FROM spring_session", Integer.class);
+        for (String method : java.util.List.of("POST", "HEAD", "OPTIONS", "PUT", "PATCH", "DELETE")) {
+            for (String path : java.util.List.of("/oauth2/authorization/google", "/login/oauth2/code/google?code=invalid&state=invalid")) {
+                for (boolean csrf : java.util.List.of(false, true)) {
+                    var response = send(method, path, cookie, csrf ? token : null, null);
+                    assertThat(response.statusCode()).isEqualTo(403);
+                    assertThat(response.headers().firstValue("Location")).isEmpty();
+                    assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+                    var after = repository().findById(id);
+                    assertThat(after).isNotNull();
+                    assertThat(after.getLastAccessedTime()).isEqualTo(before.getLastAccessedTime());
+                    assertThat((Object) after.getAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY))
+                            .isEqualTo(context);
+                    assertThat(jdbc.queryForList("SELECT encode(attribute_bytes, 'base64') FROM spring_session_attributes "
+                            + "WHERE session_primary_id = (SELECT primary_id FROM spring_session WHERE session_id = ?) ORDER BY attribute_name",
+                            String.class, id)).isEqualTo(attributes);
+                }
+                var visitor = send(method, path, null, null, null);
+                assertThat(visitor.statusCode()).isEqualTo(403);
+                assertThat(visitor.headers().firstValue("Location")).isEmpty();
+                assertThat(visitor.headers().allValues("Set-Cookie")).isEmpty();
+                assertThat(jdbc.queryForObject("SELECT count(*) FROM spring_session", Integer.class)).isEqualTo(count);
+            }
+        }
+        assertThat(send("GET", "/api/v1/me", cookie, null, null).statusCode()).isEqualTo(200);
+    }
+
+    @Test
     void securityRejectsMissingUntrustedAndUnauthenticatedPrincipalsBeforeController() throws Exception {
         var principal = new UserPrincipal(UUID.randomUUID());
         for (Authentication authentication : new Authentication[]{

@@ -1,19 +1,19 @@
 {
   "version": 1,
-  "status": "pending",
+  "status": "completed",
   "spec": "optional-google-identity",
   "pr": 25,
   "base_sha": "6664e2c516facf61169c52095c732a77ee68e0cf",
-  "reviewed_head_sha": "35883adae490a56bbbefe015229395bf55364614",
-  "diff_sha256": "8c83e6c8ceca2cf2a4ee83bf8688a77d112948fcc783562cd6b90a4ba03d9b46",
+  "reviewed_head_sha": "9f7016d3c8268fd02b57e77089e445857675a2b8",
+  "diff_sha256": "6fe0b993c3de717cc982643040ab20e4b0a6aa5de0800b50f07e6763ca8278ed",
   "reviewer": {
     "model": "openai/gpt-6-astra#medium",
-    "session": "ses_ed74c3f8bffeDtZHRjlE71ZeV4",
+    "session": "ses_ed6e4c07dffeNI9Nl8nqetQm9r",
     "independent_context": true
   },
-  "reviewed_at": "2026-10-11T02:09:43Z",
-  "review_phase": "B04_candidate_awaiting_task_approval",
-  "triage_decision": "Usuário aprovou merges #27/#28 e autorizou corrigir B04. Cinco achados anteriores fixed; B04 candidato implementado/revisado no PR29, sem aprovação/merge. Continua open até integração autorizada e revalidação independente do conjunto; #25 sem autorização de merge.",
+  "reviewed_at": "2026-10-11T04:00:47Z",
+  "review_phase": "completed_awaiting_spec_merge_approval",
+  "triage_decision": "Usuário aprovou merges #27/#28/#29 somente na épica da spec. Revalidação independente nova do diff cumulativo completo confirmou os seis achados fixed, sem novos findings confirmados; H01 refutada na matriz GET solicitada. Triagem encerrada, não é aprovação de merge do #25/épica geral/main/publicação/arquivamento.",
   "previous_reviews": [
     {
       "reviewed_head_sha": "fba7719ec9b4fd58ae5be4a52855290cab845129",
@@ -22,6 +22,14 @@
       "model": "openai/gpt-6-astra#medium",
       "reviewed_at": "2026-10-10T15:12:51Z",
       "result": "B01/B02/B03/R01/R02 confirmados e posteriormente corrigidos pelos PRs27/28; detalhes históricos abaixo e no Git."
+    },
+    {
+      "reviewed_head_sha": "35883adae490a56bbbefe015229395bf55364614",
+      "diff_sha256": "8c83e6c8ceca2cf2a4ee83bf8688a77d112948fcc783562cd6b90a4ba03d9b46",
+      "session": "ses_ed74c3f8bffeDtZHRjlE71ZeV4",
+      "model": "openai/gpt-6-astra#medium",
+      "reviewed_at": "2026-10-11T02:09:43Z",
+      "result": "Cinco achados anteriores fixed; B04 novo confirmado, posteriormente corrigido/integrado via PR29 e revalidado no head9f7016d."
     }
   ],
   "revalidation_tokens": {
@@ -40,7 +48,7 @@
       "model": "openai/gpt-6.1-sol#high",
       "tokens": { "calls": 44, "input": 96789, "cache_read": 2378240, "output": 13046, "reasoning": 9926, "cache_write": 0 },
       "merge_sha": "dba0d247883506e7fe44844020b5f202982ed88f",
-      "state": "aprovado pelo usuário e integrado na épica da spec; B01/B02/B03 canônico revalidados fixed, B04 separado permanece aberto"
+      "state": "aprovado pelo usuário e integrado na épica da spec; B01/B02/B03 revalidados fixed em9f7016d, assim como B04 separado via PR29"
     },
     {
       "pr": 28,
@@ -71,7 +79,8 @@
       "verification": "Implementador:26focais e cleanbuild59testes, zero falhas/erros/skips; negativo retirando só linha corretiva faz3/6regressões falharem, restaurada antes buildfinal. Coordenador:XML59, três cenáriosbrowser reais e OpenSpecstrict/diffcheck aprovados. Rejeições alternativas403 semredirect/cookie/token/criação deusuário, preservamidentidade/atributos/pendingflow; callbackcanônico conclui PKCE.",
       "measured_at": "2026-10-11T02:43:43.674Z",
       "ci": "PR29 application run38106109008 backend/frontend/identity-browser/study-material PASS; spec-review-tests run38106108987 PASS. Check da tarefa não satisfaz gate cumulativo do #25.",
-      "state": "draft, CI verde, correção autorizada/implementada/revisada, aguardando aprovação explícita e merge na épica; B04 permanece open"
+      "merge_sha": "9f7016d3c8268fd02b57e77089e445857675a2b8",
+      "state": "aprovado pelo usuário e integrado na épica da spec; B04 revalidado fixed na revisão cumulativa independente de9f7016d"
     }
   ],
   "candidate_verification": {
@@ -96,23 +105,44 @@
     "tokens": { "calls": 11, "input": 282464, "cache_read": 1336960, "output": 3660, "reasoning": 1986, "cache_write": 0 },
     "scope": "Consulta SQLite somente leitura desde Pode sim até consulta, exclui registro/finalização posteriores. Implementação/revisor medidos em sessões completas no candidato29; raciocínio separado sem soma presumida à saída, sem conversão para quota/custo."
   },
+  "final_revalidation_tokens": {
+    "measured_at": "2026-10-11T04:00:47.055Z",
+    "reviewer": { "session": "ses_ed6e4c07dffeNI9Nl8nqetQm9r", "model": "openai/gpt-6-astra#medium", "calls": 23, "input": 137912, "cache_read": 1735680, "output": 2192, "reasoning": 339, "cache_write": 0 },
+    "coordinator_partial": { "session": "ses_efda5be1effe9Zd0s86NlHxour", "from": "2026-10-11T03:55:56.581Z", "calls": 14, "input": 78845, "cache_read": 896000, "output": 5529, "reasoning": 313, "cache_write": 0 },
+    "scope": "Revisor sessão completa; coordenador parcial desde aprovado. até consulta, exclui registro/finalização posteriores. SQLite somente leitura; raciocínio separado sem soma presumida à saída; sem conversão quota/custo e sem comparação controlada."
+  },
   "coverage": {
-    "requirements": "Revisor confrontou requisitos/ADRs e leu diff cumulativo integral do head35883ad: 86 arquivos, 4794 linhas iniciais e 531 de evidências após conclusões independentes. Cinco achados anteriores fixed; B04 novo aberto.",
-    "architecture": "Núcleo puro, VO/UseCase/portas/JPA/wiring e responsabilidades HTTP revisados; DTO concreto/regressão B01 validado, fronteiras de filtro/sessão/cadeias examinadas.",
-    "integration": "Conjunto frontend/API/OIDC/PostgreSQL/sessões/restart/timeout/logout/CI. Código relevante integrado idêntico ao candidato dos127testes; equivalência e execução atribuídas ao coordenador, não ao revisor.",
-    "security": "B03 corrigido nos dois caminhos canônicos. B04 confirma matcher de callback wildcard ainda processa outro sufixo: invalida sessão ou conclui fluxo legítimo fora whitelist. Páginas GET login/login?error/logout habilitadas refutadas por probes atuais anônimo/autenticado, sem efeitos.",
-    "persistence": "Flyway/JPA/atomicidade/recovery/mínimo de dados preservados; B02 fixed por fronteira antes do wrapperJDBC e cadeia stateless com regressões de cookies/UP/DOWN/registro/ordem.",
-    "tests": "Testes novos/backend/frontend e probes HTTP atuais lidos. B01/B02/B03 canônico/R01/R02 revalidados por código/regressões/evidência. Três probes novos caracterizam B04 e refutam inferência de páginas abertas; PASSED não significa conformidade.",
+    "requirements": "Diff cumulativo integral de9f7016d revisado em contexto novo contra base6664e2c:86arquivos/4874linhas iniciais+696evidência após conclusões independentes. AGENTS/ADRs/design/tasks/user-auth/foundation confrontados. Seis achados fixed; nenhum novo finding confirmado, sem garantia global.",
+    "architecture": "Núcleo puro, invariantes/VO/UseCase/portas/JPA/wiring/HTTP DTO e responsabilidades revisados no conjunto. Fronteiras de filtro/sessão e configuração nativa de callback na infraestrutura sem camada artificial.",
+    "integration": "Conjunto frontend/API/OIDC/PostgreSQL/sessões/timeout/logout/material/browser/CI; preservados callbacks canônicos, negações antes de efeitos e pendingflowPKCE. Código relevante integrado idêntico ao candidato80be9b7 dos59backend+3browser; equivalência/execução atribuídas ao coordenador/implementador/CI, não ao revisor.",
+    "security": "B03 nega métodos canônicos nãoGET; B04 matcher efetivo exato antesOAuth e regressões paths/sessão/pending. H01 páginas/entradaother refutada por probes atuais quatro contextos GET403 semHTML/redirect/cookie/token/criação/invalidação, pendingflow ainda concluiPKCE. Resolverother registra aviso interno de registration inválida: negação sem efeitos investigados, não ausência absoluta de processamento interno.",
+    "persistence": "Flyway/JPA/atomicidade/constraint específica/recovery apósrollback/dados mínimos revisados. B02 fronteira antes wrapperJDBC evita leitura e commit de sessão na prontidão, cadeia stateless e regressões UP/DOWN/cookies/prazo/ordem/registro.",
+    "tests": "Revisor leu testes unitários/HTTP/OIDC/browser/arquitetura/gate e fonte/XML atuais. Coordenador reexecutou17GoogleOidcTests+4probes de conformidade no headintegrado:21PASS, nenhumskip. Builds59backend e3browser do candidato idêntico+CIintegrado aprovados, não executados pelo revisor. Matriz não exaustiva.",
     "maintenance": "CI, pipeline estático separado, montagem allowlist/offline, docs e guard de snapshot/ancestralidade/base/triagem; sem alterações de aulas no diff. Runtime do perfil customizado e avanço remoto de base não ensaiados."
   },
   "limitations": [
-    "Revalidação independente concluiu cinco achados anteriores fixed após merges aprovados #27/#28. B04 correção autorizada e candidata no PR29, revisada no escopo da tarefa; aguarda aprovação/merge e revalidação cumulativa. Status pending impede integração.",
+    "Revalidação independente cumulativa concluiu todos seis achados fixed após merges aprovados #27/#28/#29; triagem encerrada. Nenhum novo finding confirmado não garante ausência global de falhas; #25 ainda requer aprovação explícita própria.",
     "Revisor Explore somente leitura, modelo explícito; não executou testes/Git/API e não testou runtime do perfil customizado spec-reviewer.",
-    "Coordenador executou probes em clone isolado do head analisado, com produção inalterada e PostgreSQL/OIDC locais efêmeros. Probes afirmam/imprimem defeitos observados; PASSED não significa conformidade.",
+    "Coordenador executou quatro probes finais de conformidade em worktree isolado com produção inalterada e PostgreSQL/OIDC locais. Probes históricos afirmavam defeitos, não correções; matriz atual GET não certifica todas as variantes/métodos, nem ausência de processamento interno sem efeito observável.",
     "Não houve ensaio remoto de avanço da base/retargeting nem auditoria exaustiva de todas as dependências ou aulas.",
     "Smoke Google real requer credenciais externas e continua obrigatório antes do deployment público, não para confirmar estes achados."
   ],
   "verification": [
+    {
+      "command": "git diff --exit-code 80be9b7a26a48137b56d197abc8a46a058ba4d62 9f7016d3c8268fd02b57e77089e445857675a2b8 -- . excluindo somente os dois relatórios",
+      "result": "Nenhuma alteração em código/testes/docs/CI relevante versus candidato aprovado PR29:59backend+3browser locais aprovados, semskip. CI real do headintegrado38109973938 backend/frontend/material/browser PASS; gate38109973847 falhou corretamente com relatório ainda pending/snapshot anterior, sem relaxar regra.",
+      "executed_by": "Coordenador (Git/equivalência/consulta); implementador59backend/coordenador3browser candidato; GitHub Actions CI"
+    },
+    {
+      "command": "Worktree9f7016d isolado: JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew --no-daemon --console=plain test --tests '*FinalReviewRouteProbeTests' --tests '*GoogleOidcTests'",
+      "result": "21PASS (17OIDC+4probes), zero falhas/erros/skips. GET login/login?error/logout/entradaother403 nos contextos anônimo/autenticado/pendingvisitante/pendingautenticado, semHTML/redirect/cookie/token/criaçãoUser e atributos/identidade preservados. Ambosflows pendentes concluem callbackcanônicoPKCE/me200. Resolverother registra aviso interno, mas não efeitos investigados; nenhuma garantia global.",
+      "executed_by": "Coordenador, /tmp/opencode/concurso-identity-final-review-probes; apenas classe de teste nova, produção/original inalterados. Revisor leu fonte/XML, não executou testes"
+    },
+    {
+      "command": "gh api repos/LordBiGoDoNE/concurso-simulator/rulesets/24766642 (reconfirmado após merge29)",
+      "result": "Active só épica geral, PR/checkspec-reviewapp15368 obrigatório, strict_required_status_checks_policy=true, sem bypass. Confirmação remota não equivale a ensaio de avanço/retargeting.",
+      "executed_by": "Coordenador, API somente leitura"
+    },
     {
       "command": "git diff --exit-code 2d70d67cd8ffbf87f4e65978e48dceee314782fd 35883adae490a56bbbefe015229395bf55364614 -- . excluindo somente os dois relatórios",
       "result": "Nenhuma mudança em código/testes/docs/CI relevante versus candidato que passou127testes, nenhum ignorado; evita repetir execução idêntica. CI real do headintegrado38103864534 aprovou aplicação/material/browser, guard38103864499 falha corretamente pending.",
@@ -159,7 +189,7 @@
       "impact": "Violação arquitetural aprovada; teste estrutural específico de SessionController não detecta a reincidência. Não há vulnerabilidade ou JSON incorreto demonstrados.",
       "suggestion": "DTO web AuthConfigResponse e retorno concreto; regressão de assinatura sem Service/UseCase artificial.",
       "disposition": "fixed",
-      "resolution": "PR27 aprovado/integrado dba0d247; revisor ses_ed74c3f8bffeDtZHRjlE71ZeV4 conferiu no head35883ad DTO concreto GoogleLoginController:14-17 e regressão ArchitectureTests."
+      "resolution": "PR27 integrado; revisor novo ses_ed6e4c07dffeNI9Nl8nqetQm9r reconfirmou DTO concreto GoogleLoginController:14-17 e regressão de assinatura no conjunto9f7016d."
     },
     {
       "id": "B02",
@@ -170,7 +200,7 @@
       "impact": "Contrato público muda conforme cookie durante indisponibilidade de banco; permitAll não elimina dependência de sessão JDBC.",
       "suggestion": "Isolar prontidão da leitura/persistência de sessão na infraestrutura de filtros/segurança. Testar cookies ausente/válido/desconhecido com banco UP/DOWN e prazo finito, preservando CORS/headers e probe real.",
       "disposition": "fixed",
-      "resolution": "PR27 integrado; revisor conferiu SessionIndependentRoutesFilter:18-25, cadeia stateless e regressões de registro único/ordem/cookies/UP/DOWN/headers/prazo no head35883ad."
+      "resolution": "PR27 integrado; revisor novo reconfirmou no conjunto9f7016d SessionIndependentRoutesFilter:18-25 antes wrapperJDBC, sem leitura/commit de sessão; cadeia stateless e regressões registro/ordem/cookies/UP/DOWN/headers/prazo."
     },
     {
       "id": "B03",
@@ -181,7 +211,7 @@
       "impact": "Filtros OAuth executam métodos que deveriam ser negados antes da autorização técnica, com efeitos de fluxo/sessão. Não é bypassCSRF, autenticação indevida ou vazamento demonstrados.",
       "suggestion": "Restringir métodos antes do processamento OAuth ou nos matchers/resolver técnicos; testar habilitado/desabilitado com/sem CSRF e ausência de efeitos sobre sessão após rejeição.",
       "disposition": "fixed",
-      "resolution": "PR27 integrado; revisor conferiu rejeição antes do OAuth SecurityConfiguration:60-73 e regressões enabled/disabled/CSRF nos dois caminhos canônicos. Fechamento é desse escopo; outros caminhos não certificados, B04 separado aberto."
+      "resolution": "PR27 integrado; revisor novo reconfirmou no conjunto9f7016d SecurityConfiguration:60-73 rejeição antesOAuth, enabled/disabled/CSRF nos caminhos canônicos. B04 relativo aos caminhos alternativos também fixed viaPR29; matriz não exaustiva."
     },
     {
       "id": "R01",
@@ -192,7 +222,7 @@
       "impact": "JSON interrompido deixa consulta/logout indefinidamente pendente apesar do timeout; aulas permanecem acessíveis.",
       "suggestion": "Manter prazo/abort até consumir JSON; separar logout204 sem corpo e testar recuperação da UI após headers sem corpo completo.",
       "disposition": "fixed",
-      "resolution": "PR28 aprovado/integrado35883ad; revisor conferiu identity-api:3-27 e regressões JSON pendente/abort/limpeza/recuperação, logout sem corpo."
+      "resolution": "PR28 integrado; revisor novo reconfirmou no conjunto9f7016d identity-api:3-27 prazo headers+JSON/abort/limpeza/recuperação, logout sem corpo e regressões."
     },
     {
       "id": "R02",
@@ -203,7 +233,7 @@
       "impact": "UI contraditória após saída bem-sucedida; não restaura sessão no servidor.",
       "suggestion": "Invalidar resultados anteriores durante mutação e coordenar refresh/logout por geração de operação ou equivalente; regressão com promises controladas.",
       "disposition": "fixed",
-      "resolution": "PR28 integrado; revisor conferiu LoginPanel:29-68 gerações/marcador de mutação e regressões determinísticas sucesso/falha/retry no head35883ad."
+      "resolution": "PR28 integrado; revisor novo reconfirmou no conjunto9f7016d LoginPanel:29-68 gerações/mutação e regressões determinísticas sucesso/falha/retry contra refresh tardio."
     },
     {
       "id": "B04",
@@ -213,11 +243,15 @@
       "reference": "Design optional-google-identity, Contratos/negação por padrão e entrada/callback explícitos; AGENTS.md responsabilidades de autorização técnica na segurança",
       "impact": "Processamento com efeitos de autenticação/sessão em caminho fora whitelist. Não demonstra identidade forjada ou bypassstate/nonce/PKCE: código/estado/verificação OIDC válidos continuam necessários no caminho de sucesso.",
       "suggestion": "Restringir matcher efetivo ao callback/método canônicos antes de processamentoOAuth; regressões caminhos alternativos com sessão autenticada/autorização pendente/métodos variados e rejeição sem efeitos.",
-      "disposition": "open",
-      "resolution": "Correção autorizada e candidata no PR29, head80be9b7: matcher nativo loginProcessingUrl exato, seis regressões de callbacks alternativos/autorização pendente/sessão/métodos, negativo detecta antiga implementação. Revisão da tarefa independente Astra medium sem novos findings; sem aprovação/merge/revalidação cumulativa, permanece open. B-01 da rodada anterior renumerado B04 para preservar IDs históricos."
+      "disposition": "fixed",
+      "resolution": "PR29 aprovado/integrado9f7016d; revisor novo ses_ed6e4c07dffeNI9Nl8nqetQm9r revalidou conjunto completo e SecurityConfiguration:82-88 matcher efetivo loginProcessingUrl exato antesOAuth. Seis regressões paths/métodos/sessão/pending comPKCE, negativo detecta antigo matcher;17GoogleOidcTests reexecutados pelo coordenadorPASS. Matriz não exaustiva; sem aprovação do#25."
     }
   ],
   "refuted_hypotheses": [
+    {
+      "id": "final-H01-generated-pages-and-other-entry",
+      "result": "Refutada na matrizGET solicitada no head9f7016d: login/login?error/logout/entradaother403 semHTML/redirect/cookie/token/criação/invalidação, anônimo/autenticado/pendingvisitante/pendingautenticado. Atributos/identidadepreservados e callbackcanônico depois concluiPKCE. Resolverother gera aviso interno de registration inválida: comprova negação sem efeitos investigados, não ausência absoluta de processamento interno. Outros métodos/variantes não certificados."
+    },
     {
       "id": "rereview-generated-pages",
       "result": "B-02 da rodada inicial atual retirado pelo revisor: inferência de defaults incorreta. No head35883ad, GET login/login?error/logout403 semHTML/redirect/cookie, anônimo e autenticado(me200 preservado). Outros métodos dessas páginas habilitadas não testados neste probe."
@@ -227,5 +261,5 @@
       "result": "GET login/login?error/logout retornou403 com Google habilitado; GET/POST/HEAD/OPTIONS/PUT retornou403 desabilitado. Páginas abertas não confirmadas. Matriz completa dessas páginas habilitadas não ensaiada; B03 é problema distinto em rotas OAuth."
     }
   ],
-  "triage_complete": false
+  "triage_complete": true
 }

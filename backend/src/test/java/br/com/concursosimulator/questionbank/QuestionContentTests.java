@@ -10,6 +10,15 @@ import static org.assertj.core.api.Assertions.*;
 import static br.com.concursosimulator.questionbank.QuestionFixtures.*;
 
 class QuestionContentTests {
+    @Test void rejectsMalformedUtf16InsteadOfReplacingItInCanonicalUtf8() {
+        for (var invalid:List.of("\uD800", "\uDC00", "x\uD800y", "\uD800\uD800")) {
+            assertThatThrownBy(()->new TextContent(invalid)).isInstanceOf(IllegalArgumentException.class);
+        }
+        var supplementary="Caractere suplementar: \uD83D\uDE00; fórmulas πr²";
+        assertThat(new TextContent(supplementary).text()).isEqualTo(supplementary);
+        assertThat(content(supplementary).fingerprint()).isNotEqualTo(content("Caractere suplementar: ?; fórmulas πr²").fingerprint());
+        assertThatThrownBy(()->new StudyReference("Fonte",URI.create("https://example.test/\uD800"),null)).isInstanceOf(IllegalArgumentException.class);
+    }
     @Test void versionsAndOptionsAreImmutableAndKeepIdentityAndEditorialOrder() {
         var first = content("Texto Unicode: área πr² — uma única classificação para ambos os cargos.");
         var id = UUID.randomUUID(); var revisionId = UUID.randomUUID();

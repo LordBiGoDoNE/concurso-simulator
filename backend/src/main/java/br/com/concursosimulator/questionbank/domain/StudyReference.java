@@ -11,6 +11,7 @@ public record StudyReference(String name, URI url, LegalBasis legalBasis) {
                 || url.getHost() == null || url.getUserInfo() != null || url.toString().length() > 4000) {
             throw new IllegalArgumentException("URL de estudo inválida");
         }
+        ContentRules.text(url.toString(), 4000, "URL de estudo");
     }
     public record LegalBasis(String provision, LocalDate checkedOn) {
         public LegalBasis {

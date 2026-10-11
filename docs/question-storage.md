@@ -35,8 +35,11 @@ públicas. Sessão da porta só funciona durante seu callback. O core não impor
 
 Cada alteração carrega a linha com PESSIMISTIC_WRITE; save exige carregamento na unidade,
 histórico/conteúdo prefixos íntegros e usa @Version/force increment. O UseCase confere
-ponteiro elegível esperado dentro da trava; duas aprovações concorrentes com a mesma
-base não sobrescrevem silenciosamente a primeira. A segunda falha por base desatualizada.
+ponteiro elegível e sequência esperados dentro da trava; a base editorial inclui a
+sequência monotônica de decisões, além do ponteiro, impedindo
+comandos de ciclo antigo mesmo quando o ponteiro foi alterado e voltou ao valor anterior.
+Duas aprovações concorrentes com a mesma base não sobrescrevem silenciosamente a primeira.
+A segunda falha por base desatualizada.
 Revisões/decisões são acrescentadas; salvar nunca faz merge JPA de um grafo destacado.
 
 Leitura recompõe conteúdo, verifica fingerprint/espelhos/ordem e reproduz decisões,

@@ -32,7 +32,8 @@ class QuestionStorageTests {
     Question load(UUID id) { return db.store.transaction(s->s.loadForUpdate(id).orElseThrow()); }
     @Test void roundTripAndAtomicReplacementPreserveExactContentHistoryAndEligibleClassification() {
         var q=create("roundtrip"); var first=q.latest(); var useCase=new DecideQuestionUseCase(db.store);
-        useCase.execute(decision(q,first.id(),SUBMIT),null); useCase.execute(decision(q,first.id(),APPROVE),null);
+        useCase.execute(decision(q,first.id(),SUBMIT),null,q.editorialSequence());
+        useCase.execute(decision(q,first.id(),APPROVE),null,load(q.id()).editorialSequence());
         var initial=content("Outra versão πr²");
         var classification=new QuestionClassification(Discipline.MATHEMATICS_LOGIC,Topic.M01,Set.of(TargetRole.SCHOOL_SECRETARY));
         var changed=new QuestionContent(initial.statement(),initial.alternatives(),initial.correctAlternativeId(),initial.resolution(),
@@ -41,13 +42,13 @@ class QuestionStorageTests {
         var read=load(q.id()); assertThat(read.revisions()).containsExactly(first,next); assertThat(read.eligible()).contains(first);
         assertThat(read.eligible().orElseThrow().content().classification()).isEqualTo(first.content().classification());
         assertThat(read.latest().content().classification()).isEqualTo(classification);
-        useCase.execute(decision(read,next.id(),SUBMIT),first.id());
+        useCase.execute(decision(read,next.id(),SUBMIT),first.id(),read.editorialSequence());
         assertThat(load(q.id()).eligible().orElseThrow().content().classification()).isEqualTo(first.content().classification());
-        useCase.execute(decision(read,next.id(),APPROVE),first.id());
+        useCase.execute(decision(read,next.id(),APPROVE),first.id(),load(q.id()).editorialSequence());
         read=load(q.id()); assertThat(read.eligible()).contains(next); assertThat(read.status(first.id())).isEqualTo(Question.Status.APPROVED);
         assertThat(read.eligible().orElseThrow().content().classification()).isEqualTo(classification);
         assertThat(read.revision(first.id()).content()).isEqualTo(first.content());
-        useCase.execute(decision(read,next.id(),WITHDRAW),next.id());
+        useCase.execute(decision(read,next.id(),WITHDRAW),next.id(),read.editorialSequence());
         assertThat(load(q.id()).eligible()).isEmpty(); assertThat(load(q.id()).decisions()).hasSize(5);
     }
     @Test void roundTripPreservesResourcesLegalBasisAndFingerprintWithoutLossyNormalization() {
@@ -67,7 +68,7 @@ class QuestionStorageTests {
     }
     @Test void lateFailureRollsBackEveryAggregateAndEditorialChangeInTheUnit() {
         var a=create("a");var b=create("b");
-        var useCase=new DecideQuestionUseCase(db.store);useCase.execute(decision(a,a.latest().id(),SUBMIT),null);
+        var useCase=new DecideQuestionUseCase(db.store);useCase.execute(decision(a,a.latest().id(),SUBMIT),null,a.editorialSequence());
         assertThatThrownBy(()->db.store.transaction(s->{
             var first=s.loadForUpdate(a.id()).orElseThrow();first.decide(decision(first,first.latest().id(),APPROVE));s.save(first);
             var second=s.loadForUpdate(b.id()).orElseThrow();second.decide(decision(second,second.latest().id(),APPROVE));s.save(second);return null;
@@ -80,12 +81,12 @@ class QuestionStorageTests {
         var questionId=q.id();
         q=db.store.transaction(s->{var x=s.loadForUpdate(questionId).orElseThrow();x.append(UUID.randomUUID(),content("Nova"));s.save(x);return x;});
         var useCase=new DecideQuestionUseCase(db.store);
-        for(var r:q.revisions())useCase.execute(decision(q,r.id(),SUBMIT),null);
-        var snapshot=q;var start=new CountDownLatch(1);
+        for(var r:q.revisions())useCase.execute(decision(q,r.id(),SUBMIT),null,load(q.id()).editorialSequence());
+        var snapshot=load(q.id());var start=new CountDownLatch(1);
         try(var executor=Executors.newFixedThreadPool(2)) {
             var futures=snapshot.revisions().stream().map(r->executor.submit(()->{
                 assertThat(start.await(5,TimeUnit.SECONDS)).isTrue();
-                try { useCase.execute(decision(snapshot,r.id(),APPROVE),null);return true; }
+                try { useCase.execute(decision(snapshot,r.id(),APPROVE),null,snapshot.editorialSequence());return true; }
                 catch(StaleQuestionException expected){return false;}
             })).toList();start.countDown();
             assertThat(List.of(futures.get(0).get(10,TimeUnit.SECONDS),futures.get(1).get(10,TimeUnit.SECONDS))).containsExactlyInAnyOrder(true,false);
@@ -99,5 +100,26 @@ class QuestionStorageTests {
         assertThat(load(q.id()).latest().content()).isEqualTo(q.latest().content());
         var escaped=db.store.transaction(s->s);
         assertThatThrownBy(()->escaped.loadForUpdate(q.id())).isInstanceOf(IllegalStateException.class);
+    }
+    @Test void rejectsAnApprovalPreparedBeforeThePointerReturnsToNull() {
+        var q=create("aba-pointer");
+        var prepared=db.store.transaction(s->{var x=s.loadForUpdate(q.id()).orElseThrow();x.append(UUID.randomUUID(),content("Segunda fixture"));
+            for(var r:x.revisions())x.decide(decision(x,r.id(),SUBMIT));s.save(x);return x;});
+        var useCase=new DecideQuestionUseCase(db.store);var first=prepared.revisions().getFirst();
+        var stale=decision(prepared,prepared.latest().id(),APPROVE);
+        useCase.execute(decision(prepared,first.id(),APPROVE),null,prepared.editorialSequence());
+        useCase.execute(decision(prepared,first.id(),WITHDRAW),first.id(),load(q.id()).editorialSequence());
+        assertThat(load(q.id()).eligible()).isEmpty();
+        assertThatThrownBy(()->useCase.execute(stale,null,prepared.editorialSequence())).isInstanceOf(StaleQuestionException.class);
+        assertThat(load(q.id()).eligible()).isEmpty();
+    }
+    @Test void rejectsAnApprovalPreparedInAnEarlierReviewCycleWithUnchangedContentAndPointer() {
+        var q=create("aba-cycle");var useCase=new DecideQuestionUseCase(db.store);var revision=q.latest().id();
+        useCase.execute(decision(q,revision,SUBMIT),null,q.editorialSequence());var prepared=load(q.id());
+        var stale=decision(prepared,revision,APPROVE);
+        useCase.execute(decision(prepared,revision,RETURN_TO_DRAFT),null,prepared.editorialSequence());
+        useCase.execute(decision(prepared,revision,SUBMIT),null,load(q.id()).editorialSequence());
+        assertThatThrownBy(()->useCase.execute(stale,null,prepared.editorialSequence())).isInstanceOf(StaleQuestionException.class);
+        assertThat(load(q.id()).eligible()).isEmpty();
     }
 }

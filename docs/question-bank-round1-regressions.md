@@ -36,6 +36,26 @@ versionada. Otimização, se necessária após medição representativa, exige m
 e regressões de ponteiro/estado. Não é prova de escalabilidade nem garantia de custo
 constante, e não dispensa reexaminar essa limitação antes de uso operacional maior.
 
+## Comando editorial antigo e UTF-16 malformado
+
+SOL-QB-001: comparar somente o ponteiro não identifica aprovação/retirada que volta a
+null, nem retorno a rascunho/submissão que mantém o ponteiro. Regra positiva: comando
+editorial informa também a sequência de decisões do snapshot revisado. `Question`
+expõe a quantidade monotônica do histórico append-only; o UseCase confere esse token
+dentro da trava, sem vazar versão JPA. Não há overload que aceite somente o ponteiro.
+Os dois cenários determinísticos agora rejeitam comando antigo com StaleQuestionException;
+operador deve reler e revisar o estado, não renovar token automaticamente para tentar novamente.
+
+SOL-QB-002: getBytes(UTF_8) substitui surrogate isolado, então o domínio não deve aceitá-lo.
+`ContentRules.text` rejeita pares UTF-16 malformados em todos os textos, incluindo URL de
+fonte, preservando pares suplementares válidos e Unicode sem normalização. A regressão
+inclui high/low isolados, par high/high, caractere suplementar válido e URL malformada.
+Não é colisão criptográfica: evita duas entradas distintas chegarem à mesma codificação.
+
+Controle negativo antes da correção: três testes executados e três falhas esperadas
+(dois ABA, um UTF-16); após correção, build completo com 91 testes, zero falhas/erros/skips.
+Nenhum sanitizador ou mudança de formato de canonização foi introduzido por esta correção.
+
 Execução de testes é do coordenador. Pareceres, digests, comparação e tokens ficam em
 `openspec/changes/question-bank/reviews/`, por PR independente de evidência; não preencher
 o gate cumulativo da spec como concluído nem aprovar merges pelo resultado destes testes.

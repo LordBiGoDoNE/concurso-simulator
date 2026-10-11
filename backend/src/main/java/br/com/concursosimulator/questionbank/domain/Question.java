@@ -56,6 +56,8 @@ public final class Question {
     public Status status(UUID revisionId) { revision(revisionId); return statuses.get(revisionId); }
     public Optional<QuestionRevision> eligible() { return Optional.ofNullable(eligibleRevisionId).map(this::revision); }
     public List<EditorialDecision> decisions() { return List.copyOf(decisions); }
+    /** Token monotônico de decisões; não expõe @Version/JPA nem depende do ponteiro elegível. */
+    public int editorialSequence() { return decisions.size(); }
     public void decide(EditorialDecision decision) {
         var revision = revision(decision.revisionId());
         if (!id.equals(decision.questionId()) || !revision.fingerprint().equals(decision.fingerprint())) {

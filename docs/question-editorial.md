@@ -14,8 +14,12 @@ Reaplicação de pacote não deve chamar decide ou reativar retirada.
 
 O histórico é imutável para o chamador; restore reproduz decisões e valida suas invariantes.
 `DecideQuestionUseCase` coordena uma unidade atômica por `QuestionStore`: carregar para
-alteração, conferir ponteiro esperado, decidir e salvar. O adaptador deve bloquear a
-linha/garantir commit ou rollback antes de retornar. A porta não expõe JPA/Spring/SQL.
+alteração, conferir ponteiro e sequência esperados, decidir e salvar. O UseCase confere
+também a sequência editorial esperada (quantidade monotônica de decisões) dentro da trava
+para detectar ciclos antigos, mesmo quando o ponteiro retorna ao mesmo valor. Comando
+antigo é rejeitado; reler/revisar o snapshot, nunca renovar token silenciosamente para retry.
+O adaptador deve bloquear a linha e garantir commit ou rollback antes de retornar.
+A porta não expõe JPA/Spring/SQL.
 É uma fronteira específica da escrita de questões, não generalização automática do
 UnitOfWork da identidade. Concorrência/banco serão demonstrados nas tarefas 2.1–2.3.
 

@@ -59,10 +59,10 @@ class QuestionEditorialTests {
     }
     @Test void applicationChecksExpectedPointerWithinTheUnitBeforeSaving() {
         var q = question(); var store = new FakeStore(q); var useCase = new DecideQuestionUseCase(store);
-        useCase.execute(decision(q, q.latest().id(), SUBMIT), null);
-        useCase.execute(decision(q, q.latest().id(), APPROVE), null);
+        useCase.execute(decision(q, q.latest().id(), SUBMIT), null, q.editorialSequence());
+        useCase.execute(decision(q, q.latest().id(), APPROVE), null, q.editorialSequence());
         assertThat(store.saved).isEqualTo(2); assertThat(store.units).isEqualTo(2);
-        assertThatThrownBy(() -> useCase.execute(decision(q, q.latest().id(), WITHDRAW), null)).isInstanceOf(StaleQuestionException.class);
+        assertThatThrownBy(() -> useCase.execute(decision(q, q.latest().id(), WITHDRAW), null, q.editorialSequence())).isInstanceOf(StaleQuestionException.class);
         assertThat(store.saved).isEqualTo(2); assertThat(q.eligible()).isPresent();
     }
     static final class FakeStore implements QuestionStore, QuestionStore.Session {

@@ -30,8 +30,9 @@ class QuestionImportTests {
         var original=candidate("same","Fixture",null);var first=apply.execute(List.of(original)).getFirst();
         assertThat(load(first.questionId()).eligible()).isEmpty();
         var editorial=new DecideQuestionUseCase(db.store);var q=load(first.questionId());
-        editorial.execute(decision(q,first.revisionId(),SUBMIT),null);editorial.execute(decision(q,first.revisionId(),APPROVE),null);
-        editorial.execute(decision(q,first.revisionId(),WITHDRAW),first.revisionId());
+        editorial.execute(decision(q,first.revisionId(),SUBMIT),null,q.editorialSequence());
+        editorial.execute(decision(q,first.revisionId(),APPROVE),null,load(q.id()).editorialSequence());
+        editorial.execute(decision(q,first.revisionId(),WITHDRAW),first.revisionId(),load(q.id()).editorialSequence());
         var next=apply.execute(List.of(candidate("same","Nova versão",first.revisionId()))).getFirst();
         var repeated=apply.execute(List.of(original)).getFirst();
         assertThat(repeated.questionId()).isEqualTo(first.questionId());assertThat(repeated.revisionId()).isEqualTo(first.revisionId());assertThat(repeated.reused()).isTrue();

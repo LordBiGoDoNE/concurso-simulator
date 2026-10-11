@@ -7,6 +7,8 @@ proveniência e referências de estudo nomeadas. Ordem da lista é ordem editori
 nunca índice/letra de gabarito. Nenhuma variante parametrizada/tentativa nesta etapa.
 
 `TextContent` é texto acessível, preservando Unicode/fórmulas sem trim ou normalização;
+UTF-16 malformado é rejeitado antes da canonização UTF-8, sem substituir surrogates
+isolados. Pares válidos de caracteres suplementares são preservados, inclusive em URLs.
 recursos de cada bloco têm caminho relativo, tipo permitido, SHA-256 e descrição.
 Não é HTML renderizável nem um sanitizador. A conversão/allowlist e inspeção de SVG,
 raízes/symlinks do extrator pertencem a 3.1–3.2; não publicar recursos apenas porque

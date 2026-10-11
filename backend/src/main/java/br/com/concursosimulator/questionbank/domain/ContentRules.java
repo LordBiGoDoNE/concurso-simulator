@@ -7,6 +7,16 @@ final class ContentRules {
                 || value.codePoints().anyMatch(c -> Character.isISOControl(c) && c != '\n' && c != '\r' && c != '\t')) {
             throw new IllegalArgumentException(field + " inválido");
         }
+        for (int i = 0; i < value.length(); i++) {
+            char current = value.charAt(i);
+            if (Character.isHighSurrogate(current)) {
+                if (i + 1 >= value.length() || !Character.isLowSurrogate(value.charAt(++i))) {
+                    throw new IllegalArgumentException(field + " contém UTF-16 malformado");
+                }
+            } else if (Character.isLowSurrogate(current)) {
+                throw new IllegalArgumentException(field + " contém UTF-16 malformado");
+            }
+        }
         return value; // Não fazer trim/normalização lossy de Unicode ou fórmulas.
     }
     static String hash(String value) {

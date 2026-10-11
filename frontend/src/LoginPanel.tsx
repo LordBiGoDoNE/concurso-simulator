@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { currentIdentity, identityApiUrl, identityRequest } from './identity-api';
 
 type Identity = { connected: boolean; googleEnabled: boolean };
@@ -9,6 +9,13 @@ export default function LoginPanel() {
   const [attempt, setAttempt] = useState(0);
   const [exiting, setExiting] = useState(false);
   const [message, setMessage] = useState('');
+  const generation = useRef(0);
+  const logoutPending = useRef(false);
+
+  function refreshSession() {
+    generation.current += 1;
+    setAttempt(value => value + 1);
+  }
 
   useEffect(() => {
     const url = new URL(window.location.href);
@@ -21,26 +28,30 @@ export default function LoginPanel() {
 
   useEffect(() => {
     let active = true;
-    setState('loading');
+    const requestGeneration = ++generation.current;
+    const isCurrent = () => active && requestGeneration === generation.current && !logoutPending.current;
+    if (!logoutPending.current) setState('loading');
     currentIdentity().then(value => {
-      if (active) { setIdentity(value); setState('ready'); }
-    }).catch(() => { if (active) setState('unavailable'); });
-    const refresh = () => { if (document.visibilityState === 'visible') setAttempt(value => value + 1); };
+      if (isCurrent()) { setIdentity(value); setState('ready'); }
+    }).catch(() => { if (isCurrent()) setState('unavailable'); });
+    const refresh = () => { if (document.visibilityState === 'visible') refreshSession(); };
     window.addEventListener('focus', refresh);
     return () => { active = false; window.removeEventListener('focus', refresh); };
   }, [attempt]);
 
   async function logout() {
+    logoutPending.current = true;
+    generation.current += 1;
     setExiting(true);
     setMessage('');
     try {
       const csrf = await identityRequest('/api/v1/csrf');
       if (!csrf.ok) throw new Error('csrf unavailable');
-      const token = await csrf.json();
-      if (token.headerName !== 'X-CSRF-TOKEN' || typeof token.token !== 'string' || !token.token) throw new Error('invalid csrf');
+      const token = csrf.body;
+      if (token?.headerName !== 'X-CSRF-TOKEN' || typeof token.token !== 'string' || !token.token) throw new Error('invalid csrf');
       const response = await identityRequest('/api/v1/auth/logout', {
         method: 'POST', headers: { [token.headerName]: token.token },
-      });
+      }, false);
       if (response.status === 403) {
         setMessage('Não foi possível confirmar a saída. Tente novamente para renovar a proteção da sessão.');
       } else if (response.status === 204 || response.status === 401) {
@@ -49,7 +60,13 @@ export default function LoginPanel() {
       } else throw new Error('logout unavailable');
     } catch {
       setMessage('Saída indisponível. Sua sessão pode continuar ativa; tente novamente. As aulas continuam acessíveis.');
-    } finally { setExiting(false); }
+    } finally {
+      // Consultas iniciadas antes ou durante a mutação não representam sua sessão final.
+      generation.current += 1;
+      logoutPending.current = false;
+      setState('ready');
+      setExiting(false);
+    }
   }
 
   return (
@@ -67,7 +84,7 @@ export default function LoginPanel() {
         <a className="material-link" href={`${identityApiUrl}/oauth2/authorization/google`}>Entrar com Google</a>
       )}
       {state === 'ready' && !identity?.googleEnabled && !identity?.connected && <p>Login Google desativado neste ambiente.</p>}
-      <button className="session-refresh" disabled={state === 'loading' || exiting} onClick={() => setAttempt(value => value + 1)}>Atualizar sessão</button>
+      <button className="session-refresh" disabled={state === 'loading' || exiting} onClick={refreshSession}>Atualizar sessão</button>
     </section>
   );
 }

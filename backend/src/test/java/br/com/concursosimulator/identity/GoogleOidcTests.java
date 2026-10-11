@@ -12,6 +12,7 @@ import java.time.Duration;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -160,6 +161,82 @@ class GoogleOidcTests {
                 assertThat(jdbc.queryForObject("SELECT count(*) FROM spring_session", Integer.class)).isEqualTo(sessions);
             }
         }
+    }
+
+    @ParameterizedTest
+    @ValueSource(strings = {"/login/oauth2/code/other", "/login/oauth2/code/google/extra"})
+    void alternateCallbacksWithoutCodeCannotInvalidateAuthenticatedSession(String path) throws Exception {
+        OIDC.mode = "valid";
+        OIDC.subject = "callback-path-authenticated";
+        var cookies = new CookieManager(null, CookiePolicy.ACCEPT_ALL);
+        var client = HttpClient.newBuilder().cookieHandler(cookies).build();
+        get(client, callback(client, base() + "/oauth2/authorization/google"));
+        var identity = get(client, base() + "/api/v1/me");
+        HttpContract.json("/api/v1/me", 200, identity);
+        var csrf = new Yaml().<Map<String, String>>load(get(client, base() + "/api/v1/csrf").body());
+        String sessionId = cookies.getCookieStore().getCookies().getFirst().getValue();
+        var attributes = sessionAttributes(sessionId);
+        int exchanges = OIDC.tokenRequests.get();
+        for (String method : List.of("GET", "POST", "HEAD", "OPTIONS", "PUT")) {
+            assertCallbackDenied(client, method, base() + path, csrf);
+            assertThat(OIDC.tokenRequests.get()).isEqualTo(exchanges);
+            assertThat(sessionAttributes(sessionId)).isEqualTo(attributes);
+            var me = get(client, base() + "/api/v1/me");
+            assertThat(me.body()).isEqualTo(identity.body());
+            assertThat(me.statusCode()).isEqualTo(200);
+        }
+    }
+
+    @ParameterizedTest
+    @CsvSource({
+            "/login/oauth2/code/other, false", "/login/oauth2/code/other, true",
+            "/login/oauth2/code/google/extra, false", "/login/oauth2/code/google/extra, true"
+    })
+    void alternateCallbacksCannotConsumePendingAuthorization(String path, boolean authenticated) throws Exception {
+        OIDC.mode = "valid";
+        OIDC.subject = "callback-path-pending";
+        var cookies = new CookieManager(null, CookiePolicy.ACCEPT_ALL);
+        var client = HttpClient.newBuilder().cookieHandler(cookies).build();
+        if (authenticated) get(client, callback(client, base() + "/oauth2/authorization/google"));
+        var identity = get(client, base() + "/api/v1/me");
+        assertThat(identity.statusCode()).isEqualTo(authenticated ? 200 : 401);
+        var csrf = new Yaml().<Map<String, String>>load(get(client, base() + "/api/v1/csrf").body());
+        String pending = callback(client, base() + "/oauth2/authorization/google");
+        String alternate = base() + path + "?" + URI.create(pending).getRawQuery();
+        String sessionId = cookies.getCookieStore().getCookies().getFirst().getValue();
+        var attributes = sessionAttributes(sessionId);
+        int users = jdbc.queryForObject("SELECT count(*) FROM app_user", Integer.class);
+        int exchanges = OIDC.tokenRequests.get();
+        for (String method : List.of("GET", "POST", "HEAD", "OPTIONS", "PUT")) {
+            assertCallbackDenied(client, method, alternate, csrf);
+            assertThat(OIDC.tokenRequests.get()).isEqualTo(exchanges);
+            assertThat(jdbc.queryForObject("SELECT count(*) FROM app_user", Integer.class)).isEqualTo(users);
+            assertThat(sessionAttributes(sessionId)).isEqualTo(attributes);
+            var me = get(client, base() + "/api/v1/me");
+            assertThat(me.statusCode()).isEqualTo(identity.statusCode());
+            assertThat(me.body()).isEqualTo(identity.body());
+            assertThat(cookies.getCookieStore().getCookies().getFirst().getValue()).isEqualTo(sessionId);
+        }
+        OIDC.pkceVerified = false;
+        var completed = get(client, pending);
+        assertThat(completed.statusCode()).isEqualTo(302);
+        assertThat(completed.headers().firstValue("Location")).contains("http://127.0.0.1:5173");
+        assertThat(OIDC.tokenRequests.get()).isEqualTo(exchanges + 1);
+        assertThat(OIDC.pkceVerified).isTrue();
+        var me = get(client, base() + "/api/v1/me");
+        HttpContract.json("/api/v1/me", 200, me);
+        if (authenticated) assertThat(me.body()).isEqualTo(identity.body());
+    }
+
+    void assertCallbackDenied(HttpClient client, String method, String url, Map<String, String> csrf) throws Exception {
+        // Valid CSRF on unsafe methods proves route denial, rather than accidental CSRF rejection.
+        var request = HttpRequest.newBuilder(URI.create(url)).timeout(Duration.ofSeconds(10))
+                .header(csrf.get("headerName"), csrf.get("token"))
+                .method(method, HttpRequest.BodyPublishers.noBody()).build();
+        var response = client.send(request, HttpResponse.BodyHandlers.ofString());
+        assertThat(response.statusCode()).as("%s %s", method, URI.create(url).getPath()).isEqualTo(403);
+        assertThat(response.headers().firstValue("Location")).isEmpty();
+        assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
     }
 
     Map<String, Object> sessionRow(String id) {

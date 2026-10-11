@@ -83,6 +83,7 @@ public class SecurityConfiguration {
             var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), "/oauth2/authorization");
             resolver.setAuthorizationRequestCustomizer(OAuth2AuthorizationRequestCustomizers.withPkce());
             http.oauth2Login(login -> login.authorizedClientRepository(clients)
+                    .loginProcessingUrl("/login/oauth2/code/google")
                     .authorizationEndpoint(endpoint -> endpoint.authorizationRequestResolver(resolver))
                     .successHandler(handlers).failureHandler(handlers));
         }

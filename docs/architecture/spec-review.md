@@ -102,14 +102,16 @@ exige branch `epic/<spec>` e título `[SPEC]`, evitando bypass só por renomear 
 `main` → épica geral é sincronização do site existente, não integração de spec;
 o check registra essa exceção e não autoriza seu merge.
 
-O [piloto de Stacks de question-bank](../stacks-pilot.md) propõe exceção de base
-somente para duas camadas sintéticas, após aprovação/merge do ajuste de processo.
-PRs de tarefas reais continuam sequenciais até extensão aprovada. O PR `[SPEC]`
-fica fora da stack, sempre da épica da spec para a épica geral; não há isenção nova
-no guard. Conferir payloads/bases/SHAs e nomes dos checks no ensaio remoto, ainda
-pendente. Igualdade visual de diff após rebase não preserva automaticamente evidência:
-o gate exige base atual, ancestralidade do head revisado e digest, não só conteúdo
-aparentemente igual. Piloto não demonstra proteções de merge/fila sem ensaiá-las.
+O [piloto e a adoção limitada de Stacks em question-bank](../stacks-pilot.md) registram
+criação/diffs/rebase/CI remotos e a restrição de retargeting: GitHub bloqueia troca de
+base de membro. Extensão autorizada pelo usuário para tarefas reais exige integração
+do PR de processo antes do uso; limita-se a dependências da mesma spec. PR `[SPEC]`
+fica fora da stack, sempre da épica da spec para a épica geral; sem isenção nova no
+guard. Logs do ensaio confirmaram base/head e `spec-review-tests`; raw payload não
+foi exportado. Igualdade visual de diff após rebase não preserva evidência: o gate
+exige base atual, ancestralidade do head revisado e digest. O ensaio não demonstrou
+merge/fila/proteções de prefixo nem sync pós-merge; não presumir esses caminhos seguros
+ou autorizados. Aprovação do topo não aprova camadas inferiores nem a spec cumulativa.
 
 O check exige relatório concluído, snapshot atual, cobertura e triagem registradas.
 Uma regra GitHub na **épica geral apenas** exige PR e check `spec-review` da aplicação
@@ -126,7 +128,7 @@ check antigo. Regra ativa: `24766642`, limitada a `epic/application-reformulatio
 check `spec-review` vinculado ao app `15368`, sem bypass configurado. O coordenador
 confere esses campos via API antes de solicitar integração. O teste Git isolado cobre
 avanço/merge da base e exigência de novo snapshot; não substitui ensaio operacional
-do comportamento do GitHub, ainda não executado neste processo.
+de avanço da base na integração de specs no GitHub, não coberto pelo piloto de tarefas.
 
 Limites: o check valida evidência estrutural, não prova qualidade, identidade do modelo
 ou autenticidade do relatório. Workflow/script são versionados no PR e também precisam

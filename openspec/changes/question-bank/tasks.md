@@ -1,10 +1,10 @@
 # Tasks
 
-**Planejamento para revisão; implementação não autorizada.** Escopo/quantidade confirmados pelo usuário, mas esta proposta ainda exige aprovação própria. Issue #30; branches partem da épica atualizada. Cada PR inclui seus testes/documentação; não agrupar todo o módulo em um PR gigante. Testes editoriais usam fixtures identificadas, não aprovam o acervo real.
+**Proposta aprovada no #31; início da implementação autorizado pelo usuário.** Issue #30; branches partem da épica atualizada. `[x]` registra implementação/verificação na branch de trabalho, **não aprovação/integração à épica**; a issue distingue esses estados e reúne os PRs. Cada PR inclui seus testes/documentação; não agrupar todo o módulo em um PR gigante. Testes editoriais usam fixtures identificadas, não aprovam o acervo real. Nesta entrega, somente 1.1; demais tarefas permanecem pendentes.
 
 ## 1. Catálogo e domínio — grupo catalog-domain
 
-- [ ] 1.1 Definir IDs/mapeamento das cinco disciplinas, assuntos e dois cargos; testar associação assunto-disciplina, compartilhamento sem duplicação e rejeição de cargos externos; documentar matriz rastreável aos módulos.
+- [x] 1.1 Definir IDs/mapeamento das cinco disciplinas, assuntos e dois cargos; testar associação assunto-disciplina, compartilhamento sem duplicação e rejeição de cargos externos; documentar matriz rastreável aos módulos.
 - [ ] 1.2 Implementar questão/revisão/alternativas e invariantes de conteúdo imutável, resposta única, fontes/acessibilidade; testar versões/classificação e ausência de frameworks no núcleo, com documentação do modelo.
 - [ ] 1.3 Implementar transições editoriais, evidência da versão exata, substituição/retirada de elegibilidade e UseCases/portas necessários; testes puros de evidência desatualizada, revisão pendente e inexistência de aprovação implícita.
 

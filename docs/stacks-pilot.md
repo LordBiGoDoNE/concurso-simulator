@@ -1,14 +1,15 @@
-# Piloto de GitHub Stacks — question-bank
+# GitHub Stacks — piloto e adoção limitada em question-bank
 
 ## Escopo e autorização
 
 O usuário aprovou o piloto e a proposta #31, integrada somente em `epic/question-bank`
-como `952d445820cb0b1237d155e62b09610d3e62ee69`. Depois autorizou **abrir um PR**
-de ajuste de processo; isso não aprova nem integra este ajuste automaticamente.
-O ensaio remoto começa somente após aprovação/merge deste PR. Não é implementação
-das 44 tarefas do banco nem autorização para encadear PRs reais de produto.
+como `952d445820cb0b1237d155e62b09610d3e62ee69`. O ajuste limitado #32 foi aprovado e
+integrado como `07e1ddbbe735586aed501ecca71da08bcd4a28f4`; habilitou somente o ensaio
+sintético. Após o relatório remoto, o usuário aprovou estender o uso às tarefas reais.
+Esta extensão será aplicada após revisão/aprovação e merge do PR que a registra;
+não é autorização de merge desse PR, da stack ou de implementação das 44 tarefas.
 
-Exceção proposta à base de tarefas: dois PRs sintéticos, ambos em rascunho, no mesmo
+Exceção inicial ensaiada: dois PRs sintéticos, ambos em rascunho, no mesmo
 repositório/spec, com um pequeno arquivo de documentação por camada:
 
 ```text
@@ -19,8 +20,9 @@ epic/question-bank (trunk)
 
 PRs independentes e `epic/question-bank` → `epic/application-reformulation` não entram
 na stack. Este último mantém título `[SPEC]`, revisão cumulativa independente e gate
-próprios. Até validar o ensaio remoto e aprovar extensão do processo, tarefas de
-produto seguem em PRs sequenciais para a épica. Nenhuma proteção será reduzida.
+próprios. Até integrar esta extensão, tarefas de produto seguem em PRs sequenciais
+para a épica. Depois, somente dependências reais de question-bank podem usar Stacks,
+conforme o procedimento abaixo. Nenhuma proteção será reduzida.
 
 ## Etapa local executada
 
@@ -48,10 +50,10 @@ Log local: `/tmp/opencode/concurso-stack-pilot-20261011-results.json`, SHA-256
 `8db49b3aa2817225d5388533ee4495a1343be4aef1b199ffffc315c84ba6d2a6`;
 runner `/tmp/opencode/run-concurso-stack-pilot.py`. Os artefatos locais não são
 distribuídos neste PR; o registro na issue resume comandos, SHAs, resultados e limites.
-Estado: **etapa local aprovada; etapa remota pendente**. Sem revisão independente
-cumulativa executada e sem evidência de compatibilidade completa.
+Na conclusão dessa etapa, o ensaio remoto ainda estava pendente. Ele foi executado
+depois, com os resultados/limites abaixo; não é evidência de compatibilidade completa.
 
-## Etapa remota planejada — após aprovação deste ajuste
+## Procedimento do ensaio remoto — histórico
 
 1. Conferir a épica atualizada e a versão fixada. Criar clone/worktrees isolados,
    duas branches sintéticas com commits pequenos e backups das refs. Não adotar,
@@ -68,9 +70,9 @@ cumulativa executada e sem evidência de compatibilidade completa.
 5. Corrigir a inferior por novo commit, salvar refs anteriores, manter donos limpos
    e ociosos, executar rebase da cadeia e push com leases. Conferir todas as refs e
    novos eventos `synchronize`, SHAs e CI; push da ferramenta pode ser parcial.
-6. Em PR sintético apenas, alterar/restaurar a base para a épica com dependência
-   explícita e registrar evento `edited`, diff temporariamente cumulativo e rerun do
-   guard. Não usar essa manobra para simular aprovação ou mudar o PR `[SPEC]` real.
+6. A tentativa planejada de alterar/restaurar a base sintética foi **bloqueada pelo
+   GitHub**, sem mudança de base. Não repetir no produto: membros de stack não
+   permitem retargeting manual. `edited` foi verificado por troca/restauração de título.
 7. Conferir via API o ruleset da épica geral (check `spec-review`, app 15368, strict,
    sem bypass). Registrar limite: sem ensaio de merge, não demonstramos como o GitHub
    aplica todas as proteções a um prefixo de stack ou à fila. Não testar merge real.
@@ -78,10 +80,66 @@ cumulativa executada e sem evidência de compatibilidade completa.
    manter PRs em rascunho e propor correção revisável separada; não declarar adoção
    concluída. Retomar fluxo sequencial para o produto.
 
-Sem `gh stack merge`, `submit --open`, prune, fechamento/deleção ou publicação.
+No ensaio, sem `gh stack merge`, `submit --open`, prune, fechamento/deleção ou publicação.
 Encerramento dos PRs sintéticos exige autorização adicional e substituição documentada
-pelo relatório da issue. Para estender a exceção a tarefas reais, apresentar evidências
-e solicitar aprovação própria do processo; este PR não concede essa autorização.
+pelo relatório da issue. Não integrar fixtures nem incluí-las em stacks de produto.
+
+## Resultado remoto e limites
+
+[Relatório do coordenador](https://github.com/LordBiGoDoNE/concurso-simulator/issues/30#issuecomment-6110900254):
+stack **#35**, PRs **#33/#34**, ambos draft, mesma spec/repositório. Criação,
+diff de um arquivo por camada, worktrees, correção inferior/rebase/leases/refs e CI
+inicial/pós-rebase passaram. Heads finais `88b99160082148418cecde5f64e8caffbe055664`
+e `9088aff1eab507a645d168c47485a2ff1313dbdc`. Runs do guard após rebase:
+[38153323108](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38153323108)
+e [38153323770](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38153323770).
+
+Logs reais confirmaram base/head por camada e `spec-review-tests` não aplicável à
+integração. `edited` por título passou nos runs 38153499944/38153520282; base não mudou.
+Metadados REST e env derivados do evento foram registrados, mas raw GITHUB_EVENT_PATH
+e subtipo do webhook não foram exportados. Não afirmar captura integral do payload.
+
+Erro do retarget: `Cannot change the base branch because the pull request is part of
+a stack.` Não houve unstack para contornar. Mesmo com diff superior idêntico após
+rebase, head anterior deixou de ser ancestral; revisão SHA/digest não é transportável.
+Ruleset 24766642 continuou active/strict, app 15368, sem bypass. Merge/fila/aplicação
+das proteções de prefixo, retarget pós-merge, sync pós-merge e encerramento **não
+ensaiados**. Não simular que o primeiro merge produtivo já é um caminho validado.
+
+Artefatos locais: `/tmp/opencode/concurso-stacks-remote-evidence/`; resumo JSON com
+SHA256 `cba7468665f96792c998983a08a4aa96f135befbfbd690b9ae1e2e3341051ab6`.
+O relatório na issue preserva comandos, SHAs, links de CI e limites; artefatos não
+distribuídos integralmente. Sem revisão independente cumulativa de question-bank.
+
+## Uso nas tarefas reais — após integração desta extensão
+
+1. Conferir pedido/escopo da tarefa, spec aprovada, épica atualizada e ferramenta
+   v0.2.1 fixada. Criar stack nova, **nunca ampliar a sintética #35**. Camada inferior
+   parte da épica; superior da tarefa inferior realmente necessária. Todos os nomes
+   são `task/question-bank/<assunto>`, trunk explícita `epic/question-bank`.
+2. Abrir camadas novas em draft, com dependências e testes/docs no mesmo PR. Conferir
+   base/diff/composição após submit e registrar issue #30. Tarefas independentes e
+   PR `[SPEC]` seguem separados. Não criar dependência só para usar a ferramenta.
+3. Após correções, preservar refs e assegurar worktrees limpos **e ociosos**; rebase e
+   push com leases/ref remotos conferidos. Esperar CI de cada head atual, verificar
+   `spec-review-tests`, invalidar/revalidar revisão desatualizada. Não usar prune.
+4. Não editar a base de membro da stack nem contornar via unstack/link/modify.
+   Converter/reorganizar PRs existentes requer autorização e histórico preservado.
+   Se checks/metadados divergirem, parar e propor correção separada ou fluxo sequencial,
+   sem fechar/substituir/retargetar PRs silenciosamente.
+5. Antes de qualquer integração, apresentar prefixo exato, PRs, heads, checks e limites
+   do caminho não ensaiado para aprovação explícita. Cada PR incluído precisa ser
+   aprovado; não usar merge sem alvo/prefixo conferido ou auto-merge/fila/bypass.
+   Não executar merge produtivo só como teste, nem presumir sync pós-merge seguro.
+6. Depois de merge autorizado, parar antes de sync/reorganização pós-merge ainda não
+   ensaiados e obter autorização específica. Conferir preservação de commits, nova
+   composição/base/diffs/CI. Se indisponível, retomar sequencial por ajuste autorizado,
+   sem relaxar regras. Integrado na épica é estado distinto de implementado/verificado.
+
+O usuário aprovou o método, não implementação automática de todas as tarefas/grupos
+sem pausas. Esta extensão não concede autorização de merges, encerramento dos PRs
+sintéticos, outras specs, deployment ou main. A revisão cumulativa Astra medium e
+gate do PR `[SPEC]` permanecem obrigatórios antes da integração na épica geral.
 
 ## Revisão e colaboração
 

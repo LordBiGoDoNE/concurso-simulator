@@ -1,35 +1,62 @@
 # Revisão independente — optional-google-identity — PR #25
 
-**Análise independente concluída; correções autorizadas e candidatas nos PRs #27/#28.**
-Ambos aguardam aprovação/integração próprias e revalidação independente do conjunto.
-Estado JSON permanece `pending`, `triage_complete: false`, com cinco achados abertos.
+**#27/#28 aprovados e integrados; cinco achados anteriores revalidados como fixed.**
+**Novo B04 blocking aberto:** callback alternativo processa fluxo fora da whitelist.
+Estado JSON permanece `pending`, `triage_complete: false`, aguardando triagem de B04.
 Não há aprovação da integração da spec na épica geral.
 
 - Modelo escolhido/efetivo: `openai/gpt-6-astra#medium`.
-- Sessão independente: `ses_ed9ab0a5affevkCQABqq93wgIK`, Explore somente leitura.
+- Sessão independente nova: `ses_ed74c3f8bffeDtZHRjlE71ZeV4`, Explore somente leitura.
 - Base analisada: `6664e2c516facf61169c52095c732a77ee68e0cf`.
-- Head analisado: `fba7719ec9b4fd58ae5be4a52855290cab845129`, após merge aprovado #26.
-- Digest relevante: `773682c4e010a356bc1fddb8d0bd0510cebb92bdab9935ad4cad608ef78473ea`.
-- Registro do retorno final: 2026-10-10T15:12:51Z.
+- Head analisado: `35883adae490a56bbbefe015229395bf55364614`, após merges #27/#28.
+- Digest relevante: `8c83e6c8ceca2cf2a4ee83bf8688a77d112948fcc783562cd6b90a4ba03d9b46`.
+- Registro do retorno final: 2026-10-11T02:09:43Z.
+- Revisão anterior preservada: head `fba7719`, sessão `ses_ed9ab0a5affevkCQABqq93wgIK`,
+  resultado histórico 3 blocking/2 recommended, agora corrigidos no escopo abaixo.
 
 Perfil customizado está versionado com o modelo aprovado; o runtime desse perfil não
 foi ensaiado. A sessão utilizou Explore com modelo explícito, sem fallback de modelo.
 
 ## Escopo e cobertura
 
-Revisor leu o diff cumulativo **inteiro: 80 arquivos, 4.412 linhas**, 77 entradas na
+Revisor leu o diff cumulativo **inteiro: 86 arquivos, 5.325 linhas**, 83 entradas na
 primeira rodada e os três arquivos de evidência depois das conclusões iniciais.
 Confrontou proposta/design/tasks/user-auth, foundation `bootstrap-application-stack`,
 AGENTS.md, ADR 0001 e checklists. Cobriu responsabilidades/núcleo puro, JPA/Flyway,
 atomicidade/concorrência/rollback, OIDC/PKCE/claims, privacidade/sessões/CSRF/CORS,
 contratos/rotas/headers, frontend, fixtures, testes/browser, material/offline e CI/gate.
 Também leu probes/resultados do coordenador; existência/execução de testes não foi
-usada como substituto da revisão. Cobertura declarada pelo revisor: todos os 80 paths
+usada como substituto da revisão. Cobertura declarada pelo revisor: todos os paths
 do diff, mais os arquivos de contexto necessários à análise.
 
 ## Achados e triagem
 
-**3 blocking e 2 recommended confirmados; nenhum optional. Todos abertos.**
+**Atual: B04 blocking aberto.** B01/B02/B03 canônico/R01/R02 fixed, sem achados opcionais.
+
+### B04 — blocking — callback alternativo fora da whitelist
+
+`backend/src/main/java/br/com/concursosimulator/platform/infrastructure/SecurityConfiguration.java:82–87,94–102`
+e `identity/infrastructure/OAuthRequestMethods.java:9–12`. Matcher do filtro continua
+wildcard `/login/oauth2/code/*`; cadeia de rejeição cobre só caminho exato Google.
+Probe atual `/login/oauth2/code/other` sem código invalidou sessão autenticada; com
+query de fluxo OIDC legítimo pendente, concluiu login nessa rota alternativa. Viola
+negação técnica por padrão e delimitação de callback do design. **Não é identidade
+forjada nem bypass state/nonce/PKCE.** Sugestão: matcher efetivo estrito do callback/
+método, com regressões de paths alternativos/métodos/sessão/autorizações pendentes,
+negando sem efeitos. Novo achado ainda sem autorização de correção.
+
+### Fechamento independente dos cinco anteriores
+
+| ID | Evidência de fechamento no head atual |
+| --- | --- |
+| B01 | DTO concreto GoogleLoginController:14–17 e regressão ArchitectureTests |
+| B02 | SessionIndependentRoutesFilter:18–25 antes wrapperJDBC, cadeia stateless, testes registro/ordem/cookies UP-DOWN/headers/prazo |
+| B03 | SecurityConfiguration:60–73 nega antes OAuth, com testes CSRF/provedor nos dois paths canônicos; não certifica paths alternativos, B04 aberto |
+| R01 | identity-api:3–27 prazo headers+JSON/abort/limpeza; testes recuperação e logout sem corpo |
+| R02 | LoginPanel:29–68 gerações/mutação e regressões de respostas tardias/sucesso/falha/retry |
+
+Os blocos B01–R02 a seguir descrevem **defeitos históricos no head fba7719**, não o
+código corrigido35883ad. Disposition atual desses cinco é fixed conforme tabela.
 
 ### B01 — blocking — contrato genérico de auth/config
 
@@ -81,8 +108,8 @@ retorna403 desabilitado. Não manter essa hipótese como vulnerabilidade. Matriz
 dessas páginas habilitadas não foi ensaiada. B03 trata rotas OAuth, problema distinto.
 
 **Decisão do usuário: corrigir os cinco achados**, com regressões e sessões novas por
-PR. Implementação candidata não fecha achado: todos permanecem open até integração
-aprovada e revalidação independente. Nenhum bloqueador adiado ou aprovação presumida.
+PR. Aprovações de #27/#28 aplicadas, integração/revalidação concluídas para esses cinco.
+B04 permanece open até nova decisão/correção/revalidação. Sem bloqueador adiado.
 
 ### Candidatos após autorização — piloto de sessões curtas
 
@@ -92,8 +119,9 @@ aprovada e revalidação independente. Nenhum bloqueador adiado ou aprovação p
 - [#28](https://github.com/LordBiGoDoNE/concurso-simulator/pull/28), frontend R01/R02,
   head `91ffeeb5ebc2ce5346a864771b21869e895010a8`, sessão nova
   `ses_ed971ee8dffeURLAX4iZp3FoHQ`.
-- Base comum `c3fb7f5`, PRs independentes para a épica da spec, em rascunho/sem merge;
-  CI de ambos aprovado. Implementadores GPT-6.1 Sol high; revisor permanece Astra medium.
+- Base comum `c3fb7f5`, PRs independentes aprovados pelo usuário e integrados somente
+  na épica da spec: #27 `dba0d247883506e7fe44844020b5f202982ed88f`, #28 `35883ad`.
+  Implementadores GPT-6.1 Sol high; revisor permanece Astra medium.
 - Combinação apenas local no worktree `concurso-identity-review-candidate`, commit
   `2d70d67cd8ffbf87f4e65978e48dceee314782fd`; não publicada/não integrada. Coordenador
   repetiu **53 backend + 47 frontend + 6 UI/offline + 3 browser real + 18 guard = 127
@@ -121,6 +149,21 @@ e isso continua aparecendo no volume de cache reenviado; sessões novas não zer
 
 ## Evidências e limitações
 
+**Revalidação atual:** código/testes/docs/CI relevantes de35883ad são idênticos ao
+candidato127testes, confirmado por Gitdiff excluindo apenas estes dois relatórios.
+Não houve repetição redundante dessa execução idêntica; CI do head integrado também
+passou aplicação/material/browser (run38103864534); gate38103864499 falha pending.
+
+Três probes HTTP reais atuais em worktree isolado
+`/tmp/opencode/concurso-identity-revalidation-probes`, apenas classe de teste nova:
+GET páginas login/login?error/logout403 anônimo/autenticado, semHTML/redirect/cookie,
+preservando sessão; inferência inicial de páginas abertas **retirada pelo revisor**.
+Callbackother inválido302/me401; com querylegítima pendente302/me200. Callbackgoogle/
+extra e entradaother403 preservam sessão. Fonte/XML lidos pelo revisor; execução pelo
+coordenador, sem alteração de produção. Três probes caracterizam, não validam correção.
+
+**Histórico da primeira reprodução no head fba7719:**
+
 Coordenador executou três probes backend e quatro frontend em clone isolado do head
 analisado: `/tmp/opencode/concurso-pr25-review-probes-20261010`. Só adicionou testes
 nesse clone; produção/original não alterados. PostgreSQL18.6/Testcontainers e OIDC
@@ -144,10 +187,21 @@ antes do deployment público, sem bloquear reprodução desses achados locais.
 
 ## Revalidação
 
-**Nenhuma correção integrada nem revalidação independente realizada.** Candidatos
-implementados/verificados como acima, aguardando aprovações de #27/#28. Após merges
-autorizados, capturar base/head/diff completos novos e revalidar com Astra medium;
-testes/CI do candidato não substituem esse fechamento nem autorizam merge do #25.
+**Cinco achados corrigidos/integrados e revalidados; B04 novo aberto.** Captura do
+novo snapshot só ocorreu após revisão independente do conjunto atualizado, não para
+fazer check passar. Correção de B04 exige triagem/autorização e novo ciclo de regressão/
+revalidação. Nenhuma aprovação/merge do #25/main/publicação/arquivamento.
+
+### Tokens desta revalidação
+
+| Sessão | Chamadas | Entrada nova | Cache read | Saída | Raciocínio registrado |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Revisor Astra medium, nova | 25 | 123.322 | 1.940.608 | 2.931 | 454 |
+| Coordenador Sol high, parcial | 12 | 217.877 | 2.309.632 | 5.156 | 3.419 |
+
+Consulta em 2026-10-11T02:09:43.971Z; coordenador desde aprovação às02:02:17.342Z,
+exclui registro/finalização posteriores. Raciocínio separado sem soma à saída; cache
+write zero. Sem conversão para quota/custo ou alegação de comparação controlada.
 
 Mudança de base ou diff relevante exige nova revisão; não atualizar digest
 artificialmente. Só estes dois relatórios são excluídos para permitir registrar análise.

@@ -6,7 +6,7 @@
 
 - [x] 1.1 Definir IDs/mapeamento das cinco disciplinas, assuntos e dois cargos; testar associação assunto-disciplina, compartilhamento sem duplicação e rejeição de cargos externos; documentar matriz rastreável aos módulos.
 - [x] 1.2 Implementar questão/revisão/alternativas e invariantes de conteúdo imutável, resposta única, fontes/acessibilidade; testar versões/classificação e ausência de frameworks no núcleo, com documentação do modelo.
-- [ ] 1.3 Implementar transições editoriais, evidência da versão exata, substituição/retirada de elegibilidade e UseCases/portas necessários; testes puros de evidência desatualizada, revisão pendente e inexistência de aprovação implícita.
+- [x] 1.3 Implementar transições editoriais, evidência da versão exata, substituição/retirada de elegibilidade e UseCases/portas necessários; testes puros de evidência desatualizada, revisão pendente e inexistência de aprovação implícita.
 
 ## 2. Persistência e unidade atômica — grupo question-storage, após 1
 

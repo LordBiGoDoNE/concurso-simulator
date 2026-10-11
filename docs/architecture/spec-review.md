@@ -102,6 +102,15 @@ exige branch `epic/<spec>` e título `[SPEC]`, evitando bypass só por renomear 
 `main` → épica geral é sincronização do site existente, não integração de spec;
 o check registra essa exceção e não autoriza seu merge.
 
+O [piloto de Stacks de question-bank](../stacks-pilot.md) propõe exceção de base
+somente para duas camadas sintéticas, após aprovação/merge do ajuste de processo.
+PRs de tarefas reais continuam sequenciais até extensão aprovada. O PR `[SPEC]`
+fica fora da stack, sempre da épica da spec para a épica geral; não há isenção nova
+no guard. Conferir payloads/bases/SHAs e nomes dos checks no ensaio remoto, ainda
+pendente. Igualdade visual de diff após rebase não preserva automaticamente evidência:
+o gate exige base atual, ancestralidade do head revisado e digest, não só conteúdo
+aparentemente igual. Piloto não demonstra proteções de merge/fila sem ensaiá-las.
+
 O check exige relatório concluído, snapshot atual, cobertura e triagem registradas.
 Uma regra GitHub na **épica geral apenas** exige PR e check `spec-review` da aplicação
 GitHub Actions. Não alterar proteção de main/deploy nem regras existentes. A ativação

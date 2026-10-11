@@ -3,18 +3,27 @@
 ## Specs, épicas e tarefas
 
 - Toda spec OpenSpec usa `epic/<change-name>` como branch de integração.
-- Uma tarefa ou grupo pequeno e coeso usa `task/<change-name>/<assunto>` e abre PR para a épica, nunca diretamente para `main`.
+- Uma tarefa ou grupo pequeno e coeso usa `task/<change-name>/<assunto>` e abre PR para a épica, nunca diretamente para `main`. A única exceção de base entre tarefas é o piloto de Stacks descrito abaixo.
 - Inclua código, testes e documentação necessários à tarefa no mesmo PR. Evite separar testes da implementação.
 - Prefira PRs revisáveis: cerca de 300–500 linhas autorais quando possível; identifique lockfiles e arquivos gerados à parte. Não divida artificialmente uma mudança inseparável.
 - Branches novas partem da épica atualizada. Tarefas dependentes aguardam os PRs anteriores; PR antecipado deve ser rascunho com dependências explícitas. Não marque tarefas integradas à épica antes da revisão/merge.
 - Quando autorizado pelo usuário, implemente grupos em PRs encadeados de rascunho para revisão ao final, sem pausas e sem merges no GitHub. Este modo está autorizado para `optional-google-identity`. Preserve o histórico ao atualizar dependências; merges locais entre branches de trabalho não representam aprovação/integração na épica. Retargetar os PRs na ordem após revisão autorizada.
 - Use uma issue da spec com checklist e links dos PRs. Registre tarefas implementadas/verificadas separadamente das integradas/aprovadas.
-- Durante a reformulação, a épica geral é `epic/application-reformulation`. Cada spec cria sua branch `epic/<change-name>` a partir da épica geral atualizada; tarefas continuam abrindo PRs para a branch da spec. Ao concluir a spec, seu PR é destinado à épica geral, **não a main**.
+- Durante a reformulação, a épica geral é `epic/application-reformulation`. Cada spec cria sua branch `epic/<change-name>` a partir da épica geral atualizada; tarefas continuam abrindo PRs para a branch da spec, salvo a exceção limitada do piloto. Ao concluir a spec, seu PR é destinado à épica geral, **não a main**.
 - Todas as specs da reformulação ficam fora de main até concluir o pacote e obter aprovação explícita da entrega final. Só então abra PR `epic/application-reformulation` → `main`. Merges de tarefas/specs não autorizam esse merge final. O diff final é cumulativo; os PRs menores são a evidência da revisão por partes.
 - Não congele correções independentes do site atual: podem continuar em main por PR aprovado, sem trazer a aplicação incompleta. Atualize a épica geral com main quando necessário, preservando o trabalho em andamento.
 - Nunca faça merge, feche PRs sem substituição documentada, arquive OpenSpec ou relaxe regras de deploy sem autorização.
 - Preserve branches/commits anteriores ao reorganizar trabalho. Não apague implementação existente.
 - Consulte `docs/application-reformulation.md` para o roadmap, critérios de entrega e decisões ainda abertas. Uma etapa do roadmap não autoriza implementar uma spec sem proposta e aprovação.
+
+## Piloto de Stacks — question-bank
+
+- Após aprovação e merge do PR deste ajuste de processo, o piloto autorizado pode abrir dois PRs sintéticos em rascunho: `task/question-bank/stacks-pilot-<camada>`. A camada inferior parte de `epic/question-bank` atualizada e abre PR para ela; a superior parte da inferior e abre PR para essa tarefa. Ambas pertencem à mesma spec/repositório; o trunk é sempre `epic/question-bank`, nunca main/épica geral/outra spec.
+- Esta exceção vale somente para o ensaio, não autoriza encadear tarefas reais, implementar grupos sem pausas ou adotar Stacks em outras specs. Tarefas independentes e o PR `[SPEC]` ficam fora da stack. Adoção em tarefas reais exige evidência do ensaio remoto e aprovação própria de extensão do processo; até lá, manter PRs sequenciais normais para o produto.
+- Registrar na issue #30 dependências, bases/heads, composição da stack, payloads/checks de CI e limitações. Conferir diffs por camada, avanço/rebase da inferior e eventos `synchronize`/`edited`; tarefas devem emitir `spec-review-tests`, sem certificar revisão cumulativa. Não relaxar workflow/ruleset/deploy para obter sucesso; qualquer correção de automação exige PR/aprovação próprios.
+- Rebase/sync apenas com todos os worktrees afetados limpos e ociosos, preservando refs dos commits anteriores. Metadados da stack são compartilhados entre worktrees; o lock da ferramenta não protege contra outro agente/editor/Git. Usar leases conferidas nos pushes e verificar cada ref após a operação, que pode ter sucesso parcial. Não usar prune automático nem atualizar a versão fixada da ferramenta durante o ensaio.
+- Piloto não autoriza merge, auto-merge, fila de merge, retargeting de PRs de trabalho existentes, fechamento/deleção, publicação ou arquivamento. Troca/restauração de base para testar `edited` limita-se ao PR sintético, entre a tarefa inferior e a épica da mesma spec. Encerramento exige autorização e substituição documentada por evidência na issue. Em eventual adoção, merge de um prefixo/topo exige aprovação explícita de cada PR incluído e conferência dos commits/checks atuais; aprovação do topo não aprova implicitamente as camadas inferiores.
+- Base/head/digest de revisão devem ser conferidos após rebase/retargeting; não reaproveitar evidência por igualdade visual do diff. Revisão independente cumulativa Astra medium e gate da épica geral continuam obrigatórios. Procedimento e evidências: `docs/stacks-pilot.md`.
 
 ## Gate de integração de specs
 

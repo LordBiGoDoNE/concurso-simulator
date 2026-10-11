@@ -1,8 +1,9 @@
 # Revisão independente — optional-google-identity — PR #25
 
 **#27/#28 aprovados e integrados; cinco achados anteriores revalidados como fixed.**
-**Novo B04 blocking aberto:** callback alternativo processa fluxo fora da whitelist.
-Estado JSON permanece `pending`, `triage_complete: false`, aguardando triagem de B04.
+**B04 blocking aberto na spec; correção autorizada e candidata no PR #29.**
+Estado JSON permanece `pending`, `triage_complete: false`, aguardando aprovação/merge
+do candidato e revalidação independente do conjunto integrado.
 Não há aprovação da integração da spec na épica geral.
 
 - Modelo escolhido/efetivo: `openai/gpt-6-astra#medium`.
@@ -43,7 +44,8 @@ query de fluxo OIDC legítimo pendente, concluiu login nessa rota alternativa. V
 negação técnica por padrão e delimitação de callback do design. **Não é identidade
 forjada nem bypass state/nonce/PKCE.** Sugestão: matcher efetivo estrito do callback/
 método, com regressões de paths alternativos/métodos/sessão/autorizações pendentes,
-negando sem efeitos. Novo achado ainda sem autorização de correção.
+negando sem efeitos. Correção autorizada e implementada no PR #29, ainda sem merge;
+descrição acima refere-se ao código atual da épica, não ao candidato corrigido.
 
 ### Fechamento independente dos cinco anteriores
 
@@ -109,9 +111,47 @@ dessas páginas habilitadas não foi ensaiada. B03 trata rotas OAuth, problema d
 
 **Decisão do usuário: corrigir os cinco achados**, com regressões e sessões novas por
 PR. Aprovações de #27/#28 aplicadas, integração/revalidação concluídas para esses cinco.
-B04 permanece open até nova decisão/correção/revalidação. Sem bloqueador adiado.
+B04 permanece open até aprovação/integração do candidato e revalidação. Sem bloqueador adiado.
 
 ### Candidatos após autorização — piloto de sessões curtas
+
+#### B04 — PR #29, ainda sem integração
+
+- [#29](https://github.com/LordBiGoDoNE/concurso-simulator/pull/29), base `73180bf`,
+  head `80be9b7a26a48137b56d197abc8a46a058ba4d62`, três arquivos/80 linhas adicionadas.
+  Uma linha de infraestrutura com `loginProcessingUrl` exato; sem novo filtro/camada.
+- Implementador sessão nova `ses_ed7307d39ffeTGAOUuxIk6JnnY`: 26 testes focais e
+  clean build **59 testes, sem falhas/erros/ignorados**. Negativo retirando só linha
+  adicionada: três das seis regressões falham com `/other`302; linha restaurada antes
+  build final. Coordenador conferiu XMLs e executou **3 cenários browser reais**,
+  OpenSpec strict e diff-check, todos aprovados.
+- Regressões `/other` e `/google/extra`, GET/POST/HEAD/OPTIONS/PUT com CSRF válido,
+  sessão autenticada e autorização pendente visitante/autenticada: 403 sem redirect/
+  cookie/troca de token/criação de usuário, identidade/atributos preservados; callback
+  canônico posterior conclui com PKCE. Não esgota variantes de método/caminho.
+- Revisor em contexto novo `ses_ed72c4feaffefOMthLjzkHYXqP`, Astra `medium`, leu diff
+  integral/contexto e depois evidências: **sem findings confirmados, candidato B04
+  validado no escopo da tarefa**. Bytecode da dependência real Security7.1.1 extraído
+  pelo coordenador confirma matcher instalado no filtro, sem override de endpoint;
+  métodos ficam com cadeia existente. Revisor não executou testes/Git/API.
+- Não é revisão cumulativa nova do #25, aprovação ou fechamento oficial de B04.
+  Sem merge, publicação, arquivamento ou Google smoke real.
+- CI do PR #29 aprovado: application run38106109008 backend/frontend/browser/material,
+  spec-review-tests run38106108987. Este check de tarefa não satisfaz o gate do #25.
+
+| Sessão B04 | Chamadas | Entrada nova | Cache read | Saída | Raciocínio registrado |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| Implementador, nova | 21 | 57.312 | 726.912 | 5.278 | 970 |
+| Revisor Astra medium, nova | 10 | 37.813 | 175.104 | 2.401 | 48 |
+| Coordenador, parcial | 11 | 282.464 | 1.336.960 | 3.660 | 1.986 |
+
+Consulta SQLite somente leitura2026-10-11T02:43:43.674Z; coordenador desde autorização
+02:33:22.647Z, exclui registro/finalização posteriores. Implementador/revisor: sessões
+completas. Cache write zero, raciocínio separado sem soma à saída; sem conversão quota/
+custo ou comparação controlada. Snapshot cumulativo acima permanece35883ad: candidato
+não integrado não atualiza digest nem fecha finding.
+
+#### Histórico #27/#28
 
 - [#27](https://github.com/LordBiGoDoNE/concurso-simulator/pull/27), backend B01/B02/B03,
   head `937860d6d1e124ffc4a4132f7b58831b95def8aa`, sessão nova
@@ -189,8 +229,9 @@ antes do deployment público, sem bloquear reprodução desses achados locais.
 
 **Cinco achados corrigidos/integrados e revalidados; B04 novo aberto.** Captura do
 novo snapshot só ocorreu após revisão independente do conjunto atualizado, não para
-fazer check passar. Correção de B04 exige triagem/autorização e novo ciclo de regressão/
-revalidação. Nenhuma aprovação/merge do #25/main/publicação/arquivamento.
+fazer check passar. Correção de B04 foi autorizada e passou regressões/revisão da tarefa
+no PR #29; exige aprovação/integração e revalidação cumulativa antes de fechamento.
+Nenhuma aprovação/merge do #29/#25/main/publicação/arquivamento.
 
 ### Tokens desta revalidação
 

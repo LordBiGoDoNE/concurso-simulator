@@ -10,7 +10,7 @@
 
 ## 2. Persistência e unidade atômica — grupo question-storage, após 1
 
-- [ ] 2.1 Criar migração Flyway aditiva apósV3 e modelosJPA separados; testar banco novo/upgradePG18.6, constraints e preservação de identidades/sessões; documentar schema/rollback não destrutivo.
+- [x] 2.1 Criar migração Flyway aditiva apósV3 e modelosJPA separados; testar banco novo/upgradePG18.6, constraints e preservação de identidades/sessões; documentar schema/rollback não destrutivo.
 - [ ] 2.2 Implementar persistência/leitura e controle concorrente de revisões/ponteiro elegível; testar rollback integral, substituição atômica, duas aprovações concorrentes e base desatualizada, sem sobrescrita silenciosa.
 - [ ] 2.3 Implementar unicidade/idempotência por origem/conteúdo e tradução somente de conflitos conhecidos; testar reimportação concorrente, FK/falha inesperada propagadas e recovery apósrollback; proteger fronteiras com ArchUnit e documentar limites.
 

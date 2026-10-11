@@ -10,6 +10,9 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.springframework.transaction.support.TransactionTemplate;
 import java.util.List;
 import java.util.UUID;
+import java.util.Set;
+import java.net.URI;
+import java.time.LocalDate;
 import java.util.concurrent.*;
 import static br.com.concursosimulator.questionbank.domain.EditorialDecision.Action.*;
 import static br.com.concursosimulator.questionbank.QuestionFixtures.*;
@@ -30,13 +33,37 @@ class QuestionStorageTests {
     @Test void roundTripAndAtomicReplacementPreserveExactContentHistoryAndEligibleClassification() {
         var q=create("roundtrip"); var first=q.latest(); var useCase=new DecideQuestionUseCase(db.store);
         useCase.execute(decision(q,first.id(),SUBMIT),null); useCase.execute(decision(q,first.id(),APPROVE),null);
-        var next=db.store.transaction(s->{var x=s.loadForUpdate(q.id()).orElseThrow();var r=x.append(UUID.randomUUID(),content("Outra versão πr²"));s.save(x);return r;});
+        var initial=content("Outra versão πr²");
+        var classification=new QuestionClassification(Discipline.MATHEMATICS_LOGIC,Topic.M01,Set.of(TargetRole.SCHOOL_SECRETARY));
+        var changed=new QuestionContent(initial.statement(),initial.alternatives(),initial.correctAlternativeId(),initial.resolution(),
+                classification,initial.references(),initial.provenance());
+        var next=db.store.transaction(s->{var x=s.loadForUpdate(q.id()).orElseThrow();var r=x.append(UUID.randomUUID(),changed);s.save(x);return r;});
         var read=load(q.id()); assertThat(read.revisions()).containsExactly(first,next); assertThat(read.eligible()).contains(first);
-        useCase.execute(decision(read,next.id(),SUBMIT),first.id()); useCase.execute(decision(read,next.id(),APPROVE),first.id());
+        assertThat(read.eligible().orElseThrow().content().classification()).isEqualTo(first.content().classification());
+        assertThat(read.latest().content().classification()).isEqualTo(classification);
+        useCase.execute(decision(read,next.id(),SUBMIT),first.id());
+        assertThat(load(q.id()).eligible().orElseThrow().content().classification()).isEqualTo(first.content().classification());
+        useCase.execute(decision(read,next.id(),APPROVE),first.id());
         read=load(q.id()); assertThat(read.eligible()).contains(next); assertThat(read.status(first.id())).isEqualTo(Question.Status.APPROVED);
+        assertThat(read.eligible().orElseThrow().content().classification()).isEqualTo(classification);
         assertThat(read.revision(first.id()).content()).isEqualTo(first.content());
         useCase.execute(decision(read,next.id(),WITHDRAW),next.id());
         assertThat(load(q.id()).eligible()).isEmpty(); assertThat(load(q.id()).decisions()).hasSize(5);
+    }
+    @Test void roundTripPreservesResourcesLegalBasisAndFingerprintWithoutLossyNormalization() {
+        var original=content("Representação acessível: πr², é e é.");
+        var resource=new TextContent.Resource("fixtures/formula.png","image/png","c".repeat(64),"Área: pi vezes raio ao quadrado");
+        var text=new TextContent(original.statement().text(),List.of(resource));
+        var references=List.of(new StudyReference("Norma sintética para teste",URI.create("https://example.test/norma"),
+                new StudyReference.LegalBasis("Art. 1º — fixture, sem validade editorial",LocalDate.of(2026,10,11))));
+        var full=new QuestionContent(text,List.of(new QuestionContent.Alternative(FIRST,text),original.alternatives().getLast()),
+                FIRST,text,original.classification(),references,original.provenance());
+        var q=Question.draft(UUID.randomUUID(),new QuestionOrigin("fixture","resources"),UUID.randomUUID(),full);
+        db.store.transaction(s->{s.insert(q);return null;});
+        var read=load(q.id()).latest();
+        assertThat(read.content()).isEqualTo(full);assertThat(read.fingerprint()).isEqualTo(full.fingerprint());
+        assertThat(read.content().statement().resources()).containsExactly(resource);
+        assertThat(read.content().references()).isEqualTo(references);
     }
     @Test void lateFailureRollsBackEveryAggregateAndEditorialChangeInTheUnit() {
         var a=create("a");var b=create("b");

@@ -95,4 +95,42 @@ class QuestionImportTests {
         assertThat(db.jdbc.queryForObject("SELECT count(*) FROM qb_revision",Integer.class)).isEqualTo(1);
         assertThat(db.jdbc.queryForObject("SELECT count(*) FROM qb_decision",Integer.class)).isZero();
     }
+    @Test void concurrentMultiOriginPackagesInOppositeInputOrderUseTheSameLockOrderAndCommitAtomically() throws Exception {
+        var bothMissing=new CountDownLatch(2);var attempts=new AtomicInteger();
+        var racing=new QuestionStore(){
+            public <T>T transaction(Function<Session,T> operation){
+                attempts.incrementAndGet();return db.store.transaction(s->operation.apply(new Session(){
+                    public Optional<Question> loadForUpdate(UUID id){return s.loadForUpdate(id);}
+                    public Optional<Question> findOriginForUpdate(QuestionOrigin origin){
+                        var found=s.findOriginForUpdate(origin);
+                        if(found.isEmpty() && origin.key().equals("a")) {
+                            bothMissing.countDown();
+                            try{assertThat(bothMissing.await(5,TimeUnit.SECONDS)).isTrue();}
+                            catch(InterruptedException e){Thread.currentThread().interrupt();throw new IllegalStateException(e);}
+                        }
+                        return found;
+                    }
+                    public void insert(Question q){s.insert(q);}public void save(Question q){s.save(q);}
+                }));
+            }
+        };
+        var a=candidate("a","Primeira fixture",null);var z=candidate("z","Segunda fixture",null);
+        try(var pool=Executors.newFixedThreadPool(2)){
+            var importer=new ApplyQuestionCandidatesUseCase(racing);
+            var first=pool.submit(()->importer.execute(List.of(a,z)));
+            var second=pool.submit(()->importer.execute(List.of(z,a)));
+            var one=first.get(15,TimeUnit.SECONDS);var two=second.get(15,TimeUnit.SECONDS);
+            assertThat(one.stream().map(ApplyQuestionCandidatesUseCase.Result::questionId).toList())
+                    .isEqualTo(two.stream().map(ApplyQuestionCandidatesUseCase.Result::questionId).toList());
+            assertThat(one.stream().map(ApplyQuestionCandidatesUseCase.Result::revisionId).toList())
+                    .isEqualTo(two.stream().map(ApplyQuestionCandidatesUseCase.Result::revisionId).toList());
+            assertThat(one.stream().map(ApplyQuestionCandidatesUseCase.Result::reused).distinct().toList()).hasSize(1);
+            assertThat(two.stream().map(ApplyQuestionCandidatesUseCase.Result::reused).distinct().toList()).hasSize(1);
+            assertThat(one.getFirst().reused()).isNotEqualTo(two.getFirst().reused());
+        }
+        assertThat(attempts.get()).isEqualTo(3);
+        assertThat(db.jdbc.queryForObject("SELECT count(*) FROM qb_question",Integer.class)).isEqualTo(2);
+        assertThat(db.jdbc.queryForObject("SELECT count(*) FROM qb_revision",Integer.class)).isEqualTo(2);
+        assertThat(db.jdbc.queryForObject("SELECT count(*) FROM qb_decision",Integer.class)).isZero();
+    }
 }

@@ -34,10 +34,11 @@ public final class QuestionBankLocal {
     }
 
     public static int run(String[] args, Map<String,String> env, BufferedReader input, PrintStream output) throws Exception {
+        if (args.length>0 && Set.of("report", "decide").contains(args[0])) return LocalEditorialCommands.run(args,env,input,output);
         var options = options(args);
         var action = options.get("action");
         var destination = destination(env.get("DB_URL"));
-        if (!env.containsKey("DB_USERNAME") || !env.containsKey("DB_PASSWORD")) throw new IllegalArgumentException("Credenciais externas obrigatórias");
+        credentials(env);
         var keys = new LinkedHashSet<>(List.of(options.get("keys").split(",", -1)));
         if (keys.contains("") || keys.size() != options.get("keys").split(",", -1).length) throw new IllegalArgumentException("Seleção vazia/repetida");
         var file = Path.of(options.get("package"));
@@ -54,6 +55,21 @@ public final class QuestionBankLocal {
             if (!phrase.equals(input.readLine())) { output.println("Cancelado, sem acesso ao banco."); return 2; }
             if (!LocalFiles.sha(LocalFiles.bounded(file, 32_000_000)).equals(digest)) throw new IllegalArgumentException("Pacote mudou durante confirmação");
         }
+        try (var context = open(env,destination)) {
+            var json = JsonMapper.builder().build();
+            if (action.equals("preview")) {
+                output.println(json.writeValueAsString(new PreviewQuestionCandidatesUseCase(context.getBean(QuestionInventory.class)).execute(selected.candidates())));
+            } else {
+                output.println(json.writeValueAsString(new ApplyQuestionCandidatesUseCase(context.getBean(QuestionStore.class)).execute(selected.candidates())));
+                output.println("Commit confirmado; novos conteúdos permanecem em rascunho.");
+            }
+        }
+        return 0;
+    }
+    static void credentials(Map<String,String> env) {
+        if (!env.containsKey("DB_USERNAME") || !env.containsKey("DB_PASSWORD")) throw new IllegalArgumentException("Credenciais externas obrigatórias");
+    }
+    static org.springframework.context.ConfigurableApplicationContext open(Map<String,String> env, String destination) {
         var app = new SpringApplication(PersistenceOnly.class);
         app.setWebApplicationType(WebApplicationType.NONE);
         app.setDefaultProperties(Map.of("spring.flyway.enabled", "false", "spring.main.banner-mode", "off",
@@ -65,17 +81,8 @@ public final class QuestionBankLocal {
                         "DB_URL", destination, "DB_USERNAME", env.get("DB_USERNAME"), "DB_PASSWORD", env.get("DB_PASSWORD"))));
             }
         });
-        try (var context = app.run("--spring.config.location=classpath:/application.yaml", "--spring.flyway.enabled=false",
-                "--spring.jpa.hibernate.ddl-auto=validate", "--spring.jpa.open-in-view=false", "--spring.main.web-application-type=none")) {
-            var json = JsonMapper.builder().build();
-            if (action.equals("preview")) {
-                output.println(json.writeValueAsString(new PreviewQuestionCandidatesUseCase(context.getBean(QuestionInventory.class)).execute(selected.candidates())));
-            } else {
-                output.println(json.writeValueAsString(new ApplyQuestionCandidatesUseCase(context.getBean(QuestionStore.class)).execute(selected.candidates())));
-                output.println("Commit confirmado; novos conteúdos permanecem em rascunho.");
-            }
-        }
-        return 0;
+        return app.run("--spring.config.location=classpath:/application.yaml", "--spring.flyway.enabled=false",
+                "--spring.jpa.hibernate.ddl-auto=validate", "--spring.jpa.open-in-view=false", "--spring.main.web-application-type=none");
     }
     static Map<String,String> options(String[] args) {
         if (args.length != 9 || !Set.of("preview", "import").contains(args[0])) throw new IllegalArgumentException("Uso: preview|import --editorial-local true --package arquivo --root raiz --keys ID,ID");

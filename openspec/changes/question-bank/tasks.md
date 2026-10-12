@@ -19,7 +19,7 @@
 - [x] 3.1 Definir formatoJSON/canonização/fingerprint e extrator manifesto/CSV-BOM/HTML/gabaritos; testar joins porID, contagens510, Unicode/fórmulas, recursos e resolução correspondente; produzir inventário completo/pendências e documentar o formato.
 - [x] 3.2 Validar markup/URLs/caminhos/recursos e suspeitas de duplicação; testes de scripts/eventos/traversal/symlinks/extração incompleta e ausência de fusão/perda silenciosa, com documentação da allowlist.
 - [x] 3.3 Implementar CLI nonweb de prévia/aplicação local confirmada, seleção de pacote e versão-base esperada; testar prévia sem escrita, pacote inválido sempartial e reaplicação sem novosIDs/versões/reativação; verificar comandos documentados emDBisolado.
-- [ ] 3.4 Implementar CLI de envio à revisão/aprovação/retirada e relatório editorial por disciplina/assunto; testar com fixtures a versão exata/checklist/destino/confirmação, bloquear ativação em startup normal e aprovação real em CI; documentar responsabilidade operacional e ausência de privilégios Google/API admin.
+- [x] 3.4 Implementar CLI de envio à revisão/aprovação/retirada e relatório editorial por disciplina/assunto; testar com fixtures a versão exata/checklist/destino/confirmação, bloquear ativação em startup normal e aprovação real em CI; documentar responsabilidade operacional e ausência de privilégios Google/API admin.
 
 ## 4. Consulta HTTP pública — grupo public-question-api, após 1–2
 

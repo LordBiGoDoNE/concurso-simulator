@@ -70,6 +70,9 @@ class ConcursoSimulatorApplicationTests {
         assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);
         assertThat(flyway.migrate().migrationsExecuted).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);
+        assertThat(context.getBeansOfType(br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal.PersistenceOnly.class)).isEmpty();
+        assertThat(context.getBeansOfType(br.com.concursosimulator.questionbank.application.port.QuestionInventory.class)).isEmpty();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM qb_question", Integer.class)).isZero();
     }
 
     @Test

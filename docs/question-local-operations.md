@@ -52,3 +52,40 @@ prévia/recusa/importação/reaplicação/retirada/base desatualizada/edição n
 PG18.6 em schema aleatório. Escritas e decisões são somente de fixture sintética;
 nenhum conteúdo real é aprovado nem essa execução conta como curadoria do grupo 6.
 Custos de relatório e triggers devem ser medidos antes de uso operacional maior.
+
+## Revisão, aprovação e retirada deliberadas
+
+```sh
+./backend/gradlew -p backend questionBankLocal -PlocalArgs='report --editorial-local true'
+./backend/gradlew -p backend questionBankLocal -PlocalArgs='decide --editorial-local true --decision /tmp/opencode/decision.json'
+```
+
+Relatório privado retorna IDs/revisões/fingerprints/estado/ponteiro/sequence e cobertura
+por disciplina e assunto. Inventário original refere-se aos 510 IDs preservados;
+importadas/pendentes/em revisão/retiradas usam classificação da última revisão,
+e elegíveis usam a revisão aprovada corrente. Categorias não são partição exclusiva:
+uma questão pode ter versão elegível e uma correção pendente, inclusive em outra
+classificação. Conta identidades únicas por assunto/disciplina, não versões/cargos.
+Ausência de questões é 0 importadas, não curadoria/meta cumprida.
+
+Arquivo JSON `question-decision/v1` tem campos obrigatórios `format`, `decision`,
+`expectedEligible` (UUID/null **explícito**) e `expectedEditorialSequence` (inteiro).
+`decision`: `action` (SUBMIT/RETURN_TO_DRAFT/APPROVE/WITHDRAW), `questionId`, `revisionId`,
+`fingerprint`, `responsible`, `at` (ISO-8601 UTC), `checklist` e `rationale`.
+APPROVE exige checklist CORRECTNESS, DISTRACTORS, CLARITY, STEP_BY_STEP, ACCESSIBILITY,
+SOURCES e CLASSIFICATION; o domínio exige a revisão/conteúdo exatos e transição válida.
+SUBMIT envia rascunho à revisão; RETURN_TO_DRAFT retorna com motivo; WITHDRAW retira
+ponteiro corrente sem apagar histórico. Não reaproveite approval após retirada.
+Sequence é monotônica, evita ABA e protege decisões mesmo sem mudança de ponteiro.
+
+Antes de conectar, mostrar ação/destino/IDs/fingerprint/checklist/base esperada e exigir
+`DECIDE <DB_URL> <SHA-256 do arquivo>` exatamente. Arquivo é lido uma vez, decisão
+permanece imutável durante confirmação, e bases são rechecadas sob trava no commit.
+O operador deve revisar conteúdo/fontes/distratores e identificar responsável real:
+nomes no arquivo são rastreabilidade, não autenticação nem prova de competência.
+Com CI=true ou GITHUB_ACTIONS=true, launcher recusa APPROVE **antes de conectar**;
+nenhum override de fixture/--yes está disponível. Testes diretos do adaptador injetam
+ambiente de fixture e banco/schema isolados; não aprovam acervo real em CI.
+Isso não protege contra um operador privilegiado removendo variáveis/alterando código;
+controle de acesso ao banco e execução externa continuam responsabilidade operacional.
+Startup web normal não descobre o configuration nonweb nem executa ações editoriais.

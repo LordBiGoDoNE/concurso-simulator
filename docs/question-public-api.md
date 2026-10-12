@@ -68,3 +68,8 @@ continua recusando scripts/tags/atributos ativos/declarativos; não é um saniti
 nem garantia semântica de todo texto. O controller/UseCase/segurança não mudam de papel.
 HTTP real cobre positivos em resumo/detalhe e negativos existentes: no-store/503 genérico
 mantidos para conteúdo efetivamente incompatível, sem relaxar routes/CSRF/sessão.
+
+Positivos adicionais `a < b > c` e `x < i > y` conferem que tags neutras exigem nome
+adjacente ao < (não espaço após <). Uma sequência literal que tenha exatamente sintaxe
+de tag conhecida, como `<b>`, continua incompatível com esta representação; comparações
+com variáveis usam texto inequívoco/espaçado. Nenhuma string passa a ser renderizada como HTML.

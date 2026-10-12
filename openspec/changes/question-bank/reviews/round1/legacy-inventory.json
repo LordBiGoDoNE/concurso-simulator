@@ -1,0 +1,63 @@
+{
+  "base": "600cf6a59a608cec37c3cc22e4902de46ef5a46d",
+  "head": "2e38370cfc76fd6d0651967686e60569bee87765",
+  "protected_hashes": [
+    {
+      "path": "manifesto_v3.json",
+      "sha256": "1689294fab7c5c2d9ce9a418f4118a040f0d859e8fe6943469f65b7e5aeacb89",
+      "unchanged": true
+    },
+    {
+      "path": "catalogo_fontes_questoes.csv",
+      "sha256": "d4a47446a7f2c418da0e3699590132d60db83be30ad331c1bf678ad5606456e9",
+      "unchanged": true
+    },
+    {
+      "path": "scripts/math_content.py",
+      "sha256": "545e4a2603f9bf30b07af8f5f1b6b2a0211638e9c403c49dfd8c3fbb01f222c9",
+      "unchanged": true
+    }
+  ],
+  "changed_paths": [
+    "backend/README.md",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/application/ApplyQuestionCandidatesUseCase.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/application/DecideQuestionUseCase.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/application/port/OriginAlreadyExistsException.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/application/port/QuestionStore.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/application/port/StaleQuestionException.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/ContentRules.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/Discipline.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/EditorialDecision.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/Provenance.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/Question.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/QuestionClassification.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/QuestionContent.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/QuestionOrigin.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/QuestionRevision.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/StudyReference.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/TargetRole.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/TextContent.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/domain/Topic.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/infrastructure/persistence/DecisionRow.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/infrastructure/persistence/JpaQuestionStore.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/infrastructure/persistence/OptionValue.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/infrastructure/persistence/QuestionRow.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/infrastructure/persistence/ReferenceValue.java",
+    "backend/src/main/java/br/com/concursosimulator/questionbank/infrastructure/persistence/RevisionRow.java",
+    "backend/src/main/resources/db/migration/V4__question_bank.sql",
+    "backend/src/test/java/br/com/concursosimulator/architecture/ArchitectureTests.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionCatalogTests.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionContentTests.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionDatabase.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionEditorialTests.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionFixtures.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionImportTests.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionSchemaTests.java",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionStorageTests.java",
+    "docs/question-bank-catalog.md",
+    "docs/question-content.md",
+    "docs/question-editorial.md",
+    "docs/question-storage.md",
+    "openspec/changes/question-bank/tasks.md"
+  ]
+}

@@ -11,7 +11,7 @@ CATALOG = {**{f"P{i:02}": "portugues" for i in range(1, 11)},
            **{f"I{i:02}": "informatica" for i in range(1, 11)},
            **{f"A{i:02}": "conhecimentos-administrativos" for i in range(1, 9)},
            **{f"S{i:02}": "conhecimentos-escolares" for i in range(1, 12)}}
-ROLES = ("assistente-administrativo", "secretario-escola")
+ROLES = ("assistente-administrativo", "secretario-de-escola")
 SOURCE_ROOTS = {"01_Portugues", "02_Matematica_Logica", "03_Informatica",
                 "04_Assistente_Administrativo", "05_Secretario_Escola", "assets"}
 

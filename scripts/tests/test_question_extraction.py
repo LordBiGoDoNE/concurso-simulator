@@ -55,7 +55,7 @@ class ExtractionTests(unittest.TestCase):
             self.assertNotEqual(fingerprint(changed), item["fingerprint"])
         changed = copy.deepcopy(item["content"]); changed["references"][0]["name"] += "!"
         self.assertNotEqual(fingerprint(changed), item["fingerprint"])
-        changed = copy.deepcopy(item["content"]); changed["classification"]["roleIds"] = ["secretario-escola"]
+        changed = copy.deepcopy(item["content"]); changed["classification"]["roleIds"] = ["secretario-de-escola"]
         self.assertNotEqual(fingerprint(changed), item["fingerprint"])
 
     def test_ids_join_numbers_csv_and_answer_not_paragraph_proximity(self):

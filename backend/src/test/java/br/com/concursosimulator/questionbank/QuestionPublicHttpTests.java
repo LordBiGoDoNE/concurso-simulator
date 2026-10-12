@@ -15,6 +15,9 @@ import java.net.*;
 import java.net.http.*;
 import java.time.*;
 import static org.assertj.core.api.Assertions.*;
+import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
+import org.springframework.test.context.bean.override.mockito.MockitoSpyBean;
+import static org.mockito.Mockito.*;
 
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
@@ -26,6 +29,10 @@ class QuestionPublicHttpTests {
     }
     @Value("${local.server.port}") int port;
     @Autowired QuestionStore store;
+    @Autowired org.springframework.jdbc.core.JdbcTemplate jdbc;
+    @MockitoSpyBean JdbcIndexedSessionRepository sessions;
+    @Autowired org.springframework.context.ApplicationContext context;
+    @Autowired jakarta.servlet.ServletContext servlet;
     final JsonMapper json=JsonMapper.builder().build();
     final HttpClient client=HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
     static final UUID FIRST=UUID.fromString("10000000-0000-0000-0000-000000000001"),SECOND=UUID.fromString("20000000-0000-0000-0000-000000000002");
@@ -77,6 +84,106 @@ class QuestionPublicHttpTests {
             var response=get(path);assertThat(response.statusCode()).as(path).isEqualTo(400);assertThat(response.body()).isEqualTo("{\"error\":\"invalid_request\"}");
         }
         var absent=get("/questions/"+UUID.randomUUID());assertThat(absent.statusCode()).isEqualTo(404);assertThat(absent.body()).isEqualTo("{\"error\":\"not_found\"}");
+    }
+    @SuppressWarnings({"unchecked","rawtypes"})
+    @Test @Order(4) void publicAndDeniedRoutesNeverLoadRenewCreateOrCommitSessionsForAnyCookie() throws Exception {
+        var repository=(org.springframework.session.SessionRepository<org.springframework.session.Session>)(org.springframework.session.SessionRepository)sessions;
+        var session=repository.createSession();session.setLastAccessedTime(Instant.now().minusSeconds(70));
+        session.setAttribute(org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
+                new org.springframework.security.core.context.SecurityContextImpl(org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated(
+                        new br.com.concursosimulator.identity.web.UserPrincipal(UUID.randomUUID()),null,List.of())));
+        repository.save(session);
+        var invalid=repository.createSession();invalid.setAttribute(org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
+                        new org.springframework.security.core.context.SecurityContextImpl(org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated("not-a-UserPrincipal",null,List.of())));repository.save(invalid);
+        var before=jdbc.queryForList("select session_id,last_access_time,expiry_time from spring_session order by session_id");
+        var questions=jdbc.queryForList("select id,version,eligible_revision_id from qb_question order by id");
+        var decisions=jdbc.queryForObject("select count(*) from qb_decision",Integer.class);
+        var cookies=new ArrayList<String>();cookies.add(null);cookies.add("SESSION="+session.getId());
+        cookies.add("SESSION="+Base64.getEncoder().encodeToString(session.getId().getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        cookies.add("SESSION="+invalid.getId());cookies.add("SESSION="+UUID.randomUUID());
+        clearInvocations(sessions);
+        for(var cookie:cookies) {
+            for(var path:List.of("/catalog","/questions","/questions/"+FIRST)) {
+                var response=send("GET",path,cookie,null);assertThat(response.statusCode()).isEqualTo(200);assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+                var publicBody=get(path).body();assertThat(response.body()).isEqualTo(publicBody);
+                for(var method:List.of("POST","PUT","PATCH","DELETE","HEAD")) {
+                    var denied=send(method,path,cookie,null);assertThat(denied.statusCode()).as(method+path).isEqualTo(403);assertThat(denied.headers().allValues("Set-Cookie")).isEmpty();
+                }
+            }
+            for(var path:List.of("/admin","/catalog/","/questions/"+FIRST+"/revisions","/questions/"+FIRST+"/gabarito","/questions/"+FIRST+"/resolution")) {
+                var denied=send("GET",path,cookie,null);assertThat(denied.statusCode()).as(path).isEqualTo(403);assertThat(denied.headers().allValues("Set-Cookie")).isEmpty();
+            }
+        }
+        assertNoSessionIo();
+        assertThat(jdbc.queryForList("select session_id,last_access_time,expiry_time from spring_session order by session_id")).isEqualTo(before);
+        assertThat(jdbc.queryForList("select id,version,eligible_revision_id from qb_question order by id")).isEqualTo(questions);
+        assertThat(jdbc.queryForObject("select count(*) from qb_decision",Integer.class)).isEqualTo(decisions);
+        assertThat(context.getBeansOfType(org.springframework.session.web.http.SessionRepositoryFilter.class)).hasSize(1);
+        var registration=context.getBean("sessionRepositoryFilterRegistration",org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean.class);
+        var security=context.getBean("securityFilterChainRegistration",org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean.class);
+        assertThat(registration.getOrder()).isEqualTo(org.springframework.session.web.http.SessionRepositoryFilter.DEFAULT_ORDER).isLessThan(security.getOrder());
+        assertThat(servlet.getFilterRegistrations().keySet().stream().filter(n -> n.toLowerCase(Locale.ROOT).contains("session"))).hasSize(1);
+    }
+    @Test @Order(5) void corsAllowsOnlyReadFromExplicitOriginsAndPreflightDoesNotTouchSessions() throws Exception {
+        clearInvocations(sessions);
+        for(var path:List.of("/catalog","/questions","/questions/"+FIRST)) {
+            var allowed=send("GET",path,"SESSION="+UUID.randomUUID(),"http://localhost:5173");
+            assertThat(allowed.statusCode()).isEqualTo(200);assertThat(allowed.headers().firstValue("Access-Control-Allow-Origin")).contains("http://localhost:5173");
+            assertThat(allowed.headers().firstValue("Access-Control-Allow-Credentials")).isEmpty();
+            assertThat(allowed.headers().allValues("Set-Cookie")).isEmpty();
+            assertThat(send("GET",path,null,"https://unknown.example").statusCode()).isEqualTo(403);
+            for(var method:List.of("GET","POST")) {
+                var preflight=client.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+"/api/v1/question-bank"+path)).timeout(Duration.ofSeconds(5))
+                        .method("OPTIONS",HttpRequest.BodyPublishers.noBody()).header("Origin","http://localhost:5173").header("Access-Control-Request-Method",method).build(),HttpResponse.BodyHandlers.ofString());
+                assertThat(preflight.statusCode()).isEqualTo(method.equals("GET")?200:403);assertThat(preflight.headers().allValues("Set-Cookie")).isEmpty();
+            }
+        }
+        assertNoSessionIo();
+    }
+    @SuppressWarnings({"unchecked","rawtypes"}) void assertNoSessionIo() {
+        var repository=(org.springframework.session.SessionRepository<org.springframework.session.Session>)(org.springframework.session.SessionRepository)sessions;
+        verify(repository,never()).findById(anyString());verify(repository,never()).save(any());verify(repository,never()).deleteById(anyString());
+    }
+    @Test @Order(6) void incompatibleMarkupAndCorrectiveResourceOrUrlNeverReachPublicJson() throws Exception {
+        var original=QuestionFixtures.content("Fixture, enunciado sem resposta");
+        var resource=new TextContent.Resource("assets/correct-answer.svg","image/svg+xml","a".repeat(64),"Alternativa correta");
+        var badCases=List.of(
+                new QuestionContent(new TextContent("<span data-correct='true'>MARKUP_SENTINEL</span>"),original.alternatives(),original.correctAlternativeId(),original.resolution(),original.classification(),original.references(),original.provenance()),
+                new QuestionContent(original.statement(),List.of(new QuestionContent.Alternative(QuestionFixtures.FIRST,new TextContent("Opção",List.of(resource))),original.alternatives().get(1)),original.correctAlternativeId(),original.resolution(),original.classification(),original.references(),original.provenance()),
+                new QuestionContent(original.statement(),original.alternatives(),original.correctAlternativeId(),original.resolution(),original.classification(),List.of(new StudyReference("Estudo",URI.create("https://example.test/%67abarito.html"),null)),original.provenance()));
+        for(var content:badCases) {
+            var q=Question.draft(UUID.randomUUID(),new QuestionOrigin("fixture-projection-negative",UUID.randomUUID().toString()),UUID.randomUUID(),content);
+            store.transaction(s -> {s.insert(q);return null;});decision(q.id(),q.latest().id(),EditorialDecision.Action.SUBMIT);decision(q.id(),q.latest().id(),EditorialDecision.Action.APPROVE);
+            var response=get("/questions/"+q.id());assertThat(response.statusCode()).isEqualTo(503);
+            assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+        }
+        assertThat(get("/questions").statusCode()).isEqualTo(503); // markup em resumo também é rejeitado
+    }
+    @Test @Order(7) void negativeSerializationControlDetectsAnAddedAnswerEvenWhenNotVisibleInUi() throws Exception {
+        var good=get("/questions/"+FIRST);assertSchema(good.body(),"QuestionDetail");
+        var mutant=(tools.jackson.databind.node.ObjectNode)json.readTree(good.body());mutant.put("correctAlternativeId",QuestionFixtures.FIRST.toString());
+        assertThatThrownBy(() -> assertSchema(json.writeValueAsString(mutant),"QuestionDetail")).isInstanceOf(AssertionError.class);
+        mutant.remove("correctAlternativeId");mutant.put("resolution","PRIVATE_RESOLUTION_NEGATIVE_CONTROL");
+        assertThatThrownBy(() -> assertSchema(json.writeValueAsString(mutant),"QuestionDetail")).isInstanceOf(AssertionError.class);
+        // Campo privado serializado pelo domínio existe no servidor, mas não no DTO/JSON público.
+        var content=store.transaction(s -> s.loadForUpdate(FIRST).orElseThrow().revision(firstRevision).content());
+        assertThat(json.writeValueAsString(content)).contains("correctAlternativeId","resolution","provenance");
+        assertThat(good.body()).doesNotContain("correctAlternativeId","resolution","provenance");
+    }
+    @Test @Order(99) void unavailableDatabaseCannotMasqueradeAsAnEmptyCollectionOrUnknownId() throws Exception {
+        POSTGRES.stop();
+        for(var path:List.of("/questions","/questions/"+FIRST)) {
+            long start=System.nanoTime();var response=get(path);
+            assertThat(response.statusCode()).isEqualTo(503);assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            assertThat(Duration.ofNanos(System.nanoTime()-start)).isLessThan(Duration.ofSeconds(8));
+            assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+        }
+        assertThat(get("/catalog").statusCode()).isEqualTo(200); // catálogo fixo não inventa estado do banco
+    }
+    HttpResponse<String> send(String method,String path,String cookie,String origin) throws Exception {
+        var request=HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+"/api/v1/question-bank"+path)).timeout(Duration.ofSeconds(10)).method(method,HttpRequest.BodyPublishers.noBody());
+        if(cookie!=null) request.header("Cookie",cookie);if(origin!=null) request.header("Origin",origin);
+        return client.send(request.build(),HttpResponse.BodyHandlers.ofString());
     }
     @SuppressWarnings("unchecked") void assertSchema(String body,String name) throws Exception {
         Map<String,Object> api=new org.yaml.snakeyaml.Yaml().load(java.nio.file.Files.readString(java.nio.file.Path.of("openapi.yaml")));

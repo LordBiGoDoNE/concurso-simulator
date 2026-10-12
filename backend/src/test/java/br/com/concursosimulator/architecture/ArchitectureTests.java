@@ -43,6 +43,19 @@ class ArchitectureTests {
                         "java..", "..questionbank.domain..", "..questionbank.application..").check(CODE);
     }
 
+    @Test void questionControllerDoesNotOwnSessionOrAuthenticationAndHasConcreteContracts() {
+        noClasses().that().haveFullyQualifiedName(br.com.concursosimulator.questionbank.web.QuestionController.class.getName())
+                .should().dependOnClassesThat().resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..")
+                .check(CODE);
+        for(var method:br.com.concursosimulator.questionbank.web.QuestionController.class.getDeclaredMethods()) {
+            if(!method.isAnnotationPresent(GetMapping.class)) continue;
+            assertThat(method.getGenericReturnType()).isInstanceOf(ParameterizedType.class);
+            var returnType=(ParameterizedType)method.getGenericReturnType();assertThat(returnType.getRawType()).isEqualTo(ResponseEntity.class);
+            assertThat(returnType.getActualTypeArguments()[0]).isInstanceOf(Class.class);
+            assertThat(((Class<?>)returnType.getActualTypeArguments()[0]).isRecord()).isTrue();
+        }
+    }
+
     @Test
     void webDoesNotAccessPersistenceImplementations() {
         noClasses().that().resideInAPackage("..web..")

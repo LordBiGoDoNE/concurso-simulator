@@ -28,3 +28,36 @@ Fontes são apoio de estudo, não atribuição de autoria a uma banca.
 Não há sigilo global: aulas/gabaritos estáticos legados continuam públicos, com mesmas URLs
 e uso offline. Fronteira protege o contrato novo e não promete impedir alguém de estudar
 com gabaritos antigos. Questões ainda precisam de revisão editorial real; fixtures não contam.
+
+## Fronteira sem sessão
+
+Matcher técnico compartilhado entre Spring Security e o único SessionRepositoryFilter:
+todo namespace question-bank entra em cadeia stateless de **leitura ou negação**; apenas
+os três caminhos GET permitem conteúdo. Caminhos adicionais/métodos de escrita/HEAD
+são negados antes do controller, sem lookup/save/delete de sessão. Preflight CORS GET
+nas rotas exatas aceita somente origens configuradas, sem allow-credentials; outros
+métodos/origens são negados. Dispensa CSRF somente nessa cadeia sem escritas; logout
+continua na cadeia normal protegida e OAuth/readiness conservam suas cadeias/ordem.
+Não abrir `/api/**` nem implementar regras de autenticação nos controllers.
+
+HTTP real + spy do repository verificam visitantes/cookies conhecidos/desconhecidos/
+contexto autenticado ou principal inválido com os mesmos contratos, zero lookup/commit,
+sem Set-Cookie, timestamps/acervo/histórico inalterados. Ordem e registro único dos filtros
+são conferidos. Spy é evidência de chamada, não prova completa de inexistência de I/O
+em todo futuro filtro; testes e revisão de responsabilidades se complementam.
+
+## Proteção da projeção e controles negativos
+
+Contratos recursivos/OpenAPI com `additionalProperties=false` verificam lista e detalhe.
+Controle negativo de serialização injeta ID correto/resolução no JSON válido e confirma
+que o mesmo verificador falha — ocultação por CSS não passa. É um mutante do resultado,
+não uma afirmação de execução com o serializer de produção alterado. Fixtures aprovadas
+deliberadamente incompatíveis (markup/data-correct, recurso com marcador corretivo, URL
+percent-encoded de gabarito) geram 503 genérico/no-store, sem payload/cookies. Banco
+derrubado gera 503 no prazo, não 200 vazio nem 404 fictício; catálogo fixo segue independente.
+
+Não há heurística que comprove semanticamente todo texto/figura: guard cobre formas
+estruturais/marcadores e restrições de caminhos, e recursos aceitos ainda precisam de
+revisão editorial do conteúdo, tipo/hash/descrição na operação local. A API não publica
+diretórios/arquivos arbitrários nem lê byte de arquivo remoto. Renderização do cliente
+usa texto/descrições, nunca HTML bruto ou carregamento indiscriminado de assets legados.

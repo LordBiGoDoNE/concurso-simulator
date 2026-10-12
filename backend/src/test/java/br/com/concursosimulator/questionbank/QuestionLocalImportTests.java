@@ -155,6 +155,13 @@ class QuestionLocalImportTests {
             assertThat(QuestionBankLocal.launch(args("import",file,"P01-Q01"),env,new BufferedReader(new StringReader("")),new PrintStream(out),new PrintStream(err))).isEqualTo(1);
             assertThat(out.size()).isZero();assertThat(err.toString()).contains("P01-Q01","INVALID_QUESTION_CONTENT").doesNotContain("PRIVATE_","secret","jdbc:");
         }
+        for(var field:List.of("statement","resolution","alternative")) {
+            var bad=(ObjectNode)JSON.readTree(baseline);var content=(ObjectNode)bad.get("items").get(0).get("content");
+            var text=(ObjectNode)(field.equals("alternative")?content.get("alternatives").get(0).get("content"):content.get(field));
+            text.put("text","");Files.writeString(file,JSON.writeValueAsString(bad));err.reset();out.reset();
+            assertThat(QuestionBankLocal.launch(args("import",file,"P01-Q01"),env,new BufferedReader(new StringReader("")),new PrintStream(out),new PrintStream(err))).isEqualTo(1);
+            assertThat(out.size()).isZero();assertThat(err.toString()).contains("P01-Q01","INVALID_ITEM_STRUCTURE").doesNotContain("PRIVATE_","secret","jdbc:");
+        }
     }
     @Test void reclassificationKeepsIdentityProvenanceAndOldEligibleClassificationUntilApproval() throws Exception {
         try(var db=new QuestionDatabase(POSTGRES)) {

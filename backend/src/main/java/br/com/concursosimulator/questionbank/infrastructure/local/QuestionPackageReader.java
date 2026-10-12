@@ -4,6 +4,7 @@ import br.com.concursosimulator.questionbank.application.ApplyQuestionCandidates
 import br.com.concursosimulator.questionbank.domain.*;
 import tools.jackson.databind.DeserializationFeature;
 import tools.jackson.databind.json.JsonMapper;
+import tools.jackson.databind.JsonNode;
 import java.nio.file.Path;
 import java.net.URI;
 import java.util.*;
@@ -23,7 +24,7 @@ public final class QuestionPackageReader {
     }
     public record Item(QuestionOrigin origin, Content content, String fingerprint, UUID expectedLatestRevision) {}
     public record Package(String format, List<CatalogItem> catalog, List<SourceFile> sourceFiles, List<InventoryItem> inventory,
-                          List<Item> items, List<Issue> issues, List<List<String>> possibleDuplicates) {}
+                          List<JsonNode> items, List<Issue> issues, List<List<String>> possibleDuplicates) {}
     public record Selected(List<Candidate> candidates, List<InventoryItem> inventory, List<Issue> issues, List<List<String>> possibleDuplicates) {}
     public Selected read(Path file, Path root, Set<String> keys) throws java.io.IOException {
         return read(LocalFiles.bounded(file, 32_000_000), root, keys);
@@ -56,7 +57,13 @@ public final class QuestionPackageReader {
         var paths = new HashMap<String, List<String>>();
         for (var module : manifest.get("modulos")) paths.put(module.get("id").asString(), List.of(module.get("conteudo").asString(), module.get("gabarito").asString()));
         var items = new HashMap<String, Item>();
-        for (var item : pack.items()) {
+        for (var node : pack.items()) {
+            // Fronteira por item: o JSON já é sintaticamente válido, mas construir VOs também pode rejeitá-lo.
+            var rawKey=node.path("origin").path("key");
+            var diagnosticKey=rawKey.isString()?rawKey.asString():"INVALID_KEY";
+            Item item;
+            try { item=json.treeToValue(node,Item.class); }
+            catch (RuntimeException error) { throw diagnostic(diagnosticKey,"INVALID_ITEM_STRUCTURE"); }
             if (!"legacy-v3".equals(item.origin().namespace()) || items.put(item.origin().key(), item) != null
                     || !inventory.containsKey(item.origin().key()) || !"candidate".equals(inventory.get(item.origin().key()).status()))
                 throw new IllegalArgumentException("Origem/ID repetido ou fora do inventário");

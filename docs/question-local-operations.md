@@ -117,3 +117,10 @@ risco/atributos mantém rejeição. Validações conhecidas feitas pelo domínio
 INVALID_QUESTION_CONTENT e chave sanitizada, sem duplicar invariantes no adaptador;
 fingerprint/proveniência/caminho recebem códigos próprios. Falhas técnicas de parsing/I/O
 continuam genéricas para não expor payloads ou credenciais.
+
+A conversão tipada agora é feita por item após parsing sintático do envelope: rejeições
+dos VOs durante desserialização (enunciado/alternativa/resolução vazios, recurso inválido,
+campo desconhecido) têm chave sanitizada e INVALID_ITEM_STRUCTURE. Não interpretar
+mensagens de exceção nem replicar invariantes. JSON sintaticamente inválido/arquivo ilegível,
+em que a chave não é confiável, permanece erro genérico. Regressores passam pelo launch
+com banco inacessível e exigem diagnóstico/exit1 antes de conectar, sem exposição privada.

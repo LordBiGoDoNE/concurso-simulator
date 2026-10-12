@@ -61,3 +61,10 @@ estruturais/marcadores e restrições de caminhos, e recursos aceitos ainda prec
 revisão editorial do conteúdo, tipo/hash/descrição na operação local. A API não publica
 diretórios/arquivos arbitrários nem lê byte de arquivo remoto. Renderização do cliente
 usa texto/descrições, nunca HTML bruto ou carregamento indiscriminado de assets legados.
+
+Correção de revisão: detector técnico QuestionTextSafety também usado pelo leitor local
+aceita `x < y e y > z` e índices literais sem tratar comparações como tags. Projeção
+continua recusando scripts/tags/atributos ativos/declarativos; não é um sanitizer genérico
+nem garantia semântica de todo texto. O controller/UseCase/segurança não mudam de papel.
+HTTP real cobre positivos em resumo/detalhe e negativos existentes: no-store/503 genérico
+mantidos para conteúdo efetivamente incompatível, sem relaxar routes/CSRF/sessão.

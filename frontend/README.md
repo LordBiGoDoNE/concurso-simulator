@@ -20,7 +20,7 @@ Visitante e conectado usam os mesmos contratos públicos, sem cookies na consult
 questões. Aulas/login continuam independentes. Vazio e indisponível são estados distintos,
 com retry; VITE_QUESTION_TIMEOUT_MS (público, default 5000ms) limita headers+JSON de cada
 consulta. Mudanças de filtro cancelam/invalidate respostas anteriores e fecham detalhe.
-Labels, teclado, fórmulas/ênfase textuais/fontes nomeadas e foco de detalhe/paginação;
+Labels, teclado, fórmulas/ênfase textuais literais/fontes nomeadas e foco de detalhe/paginação;
 recursos têm descrições acessíveis, não execução de HTML/SVG nem carregamento indiscriminado.
 Limites, teste determinístico e política de renderização em [consulta](../docs/question-browser.md).
 

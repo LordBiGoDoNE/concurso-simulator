@@ -3,7 +3,7 @@ import { questionCatalog, questionDetail, questionList, type Catalog, type Conte
 
 type Load<T> = { key: string; state: 'loading' | 'error' } | { key: string; state: 'ready'; value: T };
 function Text({ content }: { content: Content }) {
-  return <><p className="question-text">{content.text.split(/(\*\*[^*]+\*\*|_[^_]+_)/g).map((piece, i) => piece.startsWith('**') ? <strong key={i}>{piece.slice(2, -2)}</strong> : piece.startsWith('_') ? <em key={i}>{piece.slice(1, -1)}</em> : piece)}</p>{content.resources.map((r, i) => <p key={`${r.sha256}-${i}`}>Descrição da figura: {r.description}</p>)}</>;
+  return <><p className="question-text">{content.text}</p>{content.resources.map((r, i) => <p key={`${r.sha256}-${i}`}>Descrição da figura: {r.description}</p>)}</>;
 }
 export default function QuestionBrowser() {
   const [catalog, setCatalog] = useState<Load<Catalog>>({ key: '', state: 'loading' });

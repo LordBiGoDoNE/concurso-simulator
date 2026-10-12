@@ -33,7 +33,9 @@ for (const width of [390, 1280]) {
     const name = await item.textContent();await item.focus();await page.keyboard.press('Enter');
     await expect(page.getByRole('heading', { name: 'Detalhe da questão' })).toBeFocused();
     await expect(page.getByRole('link', { name: 'Referência sintética' })).toHaveAttribute('href', 'https://example.test/study');
-    await expect(page.locator('article strong')).toHaveText('πr²');
+    await expect(page.locator('article')).toContainText('[destaque: πr²]');
+    await expect(page.locator('article')).toContainText('(x)_(1) + (y)_(2); 2^(3); H_(2)O; _abc; x < y e y > z');
+    await expect(page.locator('article em,article strong')).toHaveCount(0);
     await expect(page.locator('article')).toContainText('(1)/(2)');
     await expect(page.getByRole('radio')).toHaveCount(0);await expect(page.getByRole('checkbox')).toHaveCount(0);
     await expect(page.locator('[data-correct], .correct, .answer, script[src*="gabarito"]')).toHaveCount(0);

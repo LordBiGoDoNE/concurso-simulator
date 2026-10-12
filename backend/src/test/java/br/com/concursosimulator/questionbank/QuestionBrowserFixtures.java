@@ -12,7 +12,7 @@ public final class QuestionBrowserFixtures {
     public static void seed(ConfigurableApplicationContext context) {
         var store=context.getBean(QuestionStore.class);var candidates=new ArrayList<ApplyQuestionCandidatesUseCase.Candidate>();
         for(int i=1;i<=24;i++) {
-            var fixture=QuestionFixtures.content("Questão sintética "+i+": **πr²** e (1)/(2), sem correção.");
+            var fixture=QuestionFixtures.content("Questão sintética "+i+": [destaque: πr²] e (1)/(2); (x)_(1) + (y)_(2); 2^(3); H_(2)O; _abc; x < y e y > z, sem correção.");
             var classification=i==22?new QuestionClassification(Discipline.MATHEMATICS_LOGIC,Topic.M01,Set.of(TargetRole.SCHOOL_SECRETARY)):fixture.classification();
             var content=new QuestionContent(fixture.statement(),fixture.alternatives(),fixture.correctAlternativeId(),
                     new TextContent("PRIVATE_BROWSER_RESOLUTION_SENTINEL — não transmitir"),classification,fixture.references(),fixture.provenance());

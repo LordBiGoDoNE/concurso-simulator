@@ -57,7 +57,7 @@ class QuestionPublicHttpTests {
         assertSchema(catalog.body(),"QuestionCatalog");assertSchema(empty.body(),"QuestionPage");
     }
     @Test @Order(2) void filtersAreAndOrderedPagedAndUseOnlyEligibleRevisionClassification() throws Exception {
-        var q1=insert(FIRST,"Fixture pública: πr² e 2 < 3.",new QuestionClassification(Discipline.PORTUGUESE,Topic.P01,Set.of(TargetRole.values())));
+        var q1=insert(FIRST,"Fixture pública: πr² e 2 < 3; x < y e y > z; (x)_(1) + (y)_(2).",new QuestionClassification(Discipline.PORTUGUESE,Topic.P01,Set.of(TargetRole.values())));
         firstRevision=q1.latest().id();decision(FIRST,firstRevision,EditorialDecision.Action.SUBMIT);decision(FIRST,firstRevision,EditorialDecision.Action.APPROVE);
         var q2=insert(SECOND,"Outra fixture",new QuestionClassification(Discipline.MATHEMATICS_LOGIC,Topic.M01,Set.of(TargetRole.SCHOOL_SECRETARY)));
         decision(SECOND,q2.latest().id(),EditorialDecision.Action.SUBMIT);decision(SECOND,q2.latest().id(),EditorialDecision.Action.APPROVE);
@@ -71,7 +71,7 @@ class QuestionPublicHttpTests {
         var detail=get("/questions/"+FIRST);assertThat(detail.statusCode()).isEqualTo(200);
         assertThat(json.readTree(detail.body()).get("revisionId").asString()).isEqualTo(firstRevision.toString());
         assertThat(json.readTree(detail.body()).get("classification").get("disciplineId").asString()).isEqualTo("portugues");
-        assertThat(detail.body()).contains("πr²","2 < 3").doesNotContain("correctAlternativeId","resolution","status","provenance","checklist","gabarito","PRIVATE_DRAFT_SENTINEL");
+        assertThat(detail.body()).contains("πr²","2 < 3","x < y e y > z","(x)_(1) + (y)_(2)").doesNotContain("correctAlternativeId","resolution","status","provenance","checklist","gabarito","PRIVATE_DRAFT_SENTINEL");
         assertSchema(page.body(),"QuestionPage");assertSchema(detail.body(),"QuestionDetail");
         decision(SECOND,q2.latest().id(),EditorialDecision.Action.WITHDRAW);
         assertThat(get("/questions/"+SECOND).statusCode()).isEqualTo(404);

@@ -17,7 +17,7 @@ consultas de questões; não muda comportamentos/proteções já corrigidos de i
 
 Contratos de entrada são verificados por whitelist recursiva, sem campos corretivos extras
 ou links javascript/data. React recebe texto, não dangerouslySetInnerHTML; ênfase
-restrita por marcadores **/_**, listas e fórmulas textuais preservadas. Recursos exibem
+textual explícita `[destaque: ...]`/`[ênfase: ...]`, listas e fórmulas textuais preservadas. Recursos exibem
 descrição acessível: nenhum arquivo legado é carregado indiscriminadamente nem URL
 remota de pacote é executada. Referências aceitam http/https, sem credenciais. Essa
 interface não é um visualizador arbitrário de SVG/HTML nem publica imagens automaticamente.
@@ -42,3 +42,11 @@ de label consultado pelo browser; regra positiva: label separado com htmlFor/id 
 Regressão exige localizar rótulos exatos e navegar por teclado/foco, além de testar DOM.
 Na instrumentação, resposta abortada durante troca de filtro não tem corpo disponível;
 inspeção aguarda requestfinished/Promise.all, sem ignorar falhas de respostas concluídas.
+
+Revisões independentes identificaram colisão Markdown/índices: o cliente agora exibe
+**o texto integral**, sem split/slice ou interpretação de underscores/asteriscos. Até
+pacotes antigos com marcadores ambíguos permanecem literais, nunca são degradados pelo
+renderer. Nova extração usa ênfase por extenso, não uma linguagem a interpretar.
+Regressões antes da correção reproduziram índices removidos e `_abc` → `ab`;
+após correção exigem textContent exato em unit e browser real (390/1280), junto de
+expoentes/índices/desigualdades e preservação das negações de markup no HTTP.

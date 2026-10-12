@@ -79,3 +79,9 @@ it('paginação mantém ordem do servidor e direciona foco ao resultado novo', a
   expect(await screen.findByText(/Página 2/)).toBeInTheDocument();expect(screen.getByRole('heading', { name: 'Resultados da consulta' })).toHaveFocus();
   expect(screen.getByRole('button', { name: 'Página anterior' })).toBeEnabled();
 });
+it.each(['(x)_(1) + (y)_(2)', '_abc', '**abc', 'a_b_c', '[destaque: πr²]; 2^(3); H_(2)O; x < y e y > z'])('detalhe preserva texto/fórmula integral: %s', async text => {
+  vi.stubGlobal('fetch',vi.fn(async (url: string) => response(url.endsWith('/catalog')?catalog:url.endsWith(questionId)?{...detail,statement:{text,resources:[]}}:page)));
+  render(<QuestionBrowser />);fireEvent.click(await screen.findByRole('button',{name:/Consultar:/}));
+  const statement=await screen.findByText(text,{selector:'article p.question-text'});
+  expect(statement.textContent).toBe(text);expect(statement.querySelector('em,strong')).toBeNull();
+});

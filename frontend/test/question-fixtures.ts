@@ -1,0 +1,10 @@
+export const questionId = '10000000-0000-0000-0000-000000000001';
+export const revisionId = '30000000-0000-0000-0000-000000000001';
+export const classification = { disciplineId: 'portugues', topicId: 'P01', roleIds: ['assistente-administrativo', 'secretario-de-escola'] };
+export const catalog = { contestId: 'limeira-01-2026', disciplines: [{ id: 'portugues', title: 'Português' }, { id: 'matematica-raciocinio', title: 'Matemática' }], topics: [{ id: 'P01', disciplineId: 'portugues', title: 'Interpretação' }, { id: 'M01', disciplineId: 'matematica-raciocinio', title: 'Operações' }], roles: [{ id: 'assistente-administrativo', title: 'Assistente Administrativo' }, { id: 'secretario-de-escola', title: 'Secretário de Escola' }] };
+export const content = (text: string) => ({ text, resources: [] });
+export const detail = { questionId, revisionId, classification, statement: content('Fixture: πr² e 2 < 3'), alternatives: [{ id: '40000000-0000-0000-0000-000000000001', content: content('Opção A') }, { id: '40000000-0000-0000-0000-000000000002', content: content('Opção B') }], references: [{ name: 'Fonte sintética nomeada', url: 'https://example.test/study' }] };
+export const page = { items: [{ questionId, revisionId, classification, statementStart: 'Fixture: πr²' }], page: 0, size: 20, total: 1 };
+export const emptyPage = { items: [], page: 0, size: 20, total: 0 };
+export const response = (body: unknown, status = 200) => ({ ok: status >= 200 && status < 300, status, json: async () => body });
+export const emptyQuestionResponse = (url: string) => url.endsWith('/question-bank/catalog') ? response(catalog) : response(emptyPage);

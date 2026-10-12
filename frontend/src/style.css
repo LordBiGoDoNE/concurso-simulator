@@ -11,3 +11,13 @@ button:disabled { opacity: .65; cursor: wait; }
 :focus-visible { outline: 3px solid #a14300; outline-offset: 4px; }
 .session-refresh { margin: 12px 0 0 12px; }
 @media (max-width: 480px) { .session-refresh { display: block; margin-left: 0; } }
+.question-filters { display: grid; gap: 16px; }
+.question-filters label { display: grid; gap: 4px; font-weight: 600; }
+.question-filters select { width: 100%; min-width: 0; padding: 10px; font: inherit; color: inherit; background: white; }
+.question-list { list-style: none; padding: 0; }
+.question-list li { margin: 12px 0; }
+.question-list button { width: 100%; text-align: left; overflow-wrap: anywhere; }
+.question-text { white-space: pre-wrap; overflow-wrap: anywhere; }
+article { margin-top: 24px; border-top: 1px solid #ccd9e0; }
+article a { overflow-wrap: anywhere; }
+nav[aria-label="Paginação de questões"] { display: flex; flex-wrap: wrap; gap: 12px; }

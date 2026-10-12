@@ -57,3 +57,12 @@ tasks.register<JavaExec>("identityBrowserFixture") {
     classpath = sourceSets.test.get().runtimeClasspath
     mainClass.set("br.com.concursosimulator.identity.IdentityBrowserFixture")
 }
+
+tasks.register<JavaExec>("questionBankLocal") {
+    group = "application"
+    description = "Deliberate nonweb question package preview/import; never runs on startup or build"
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal")
+    standardInput = System.`in`
+    if (project.hasProperty("localArgs")) args(project.property("localArgs").toString().split(" "))
+}

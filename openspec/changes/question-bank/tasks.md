@@ -1,18 +1,18 @@
 # Tasks
 
-**Planejamento para revisão; implementação não autorizada.** Escopo/quantidade confirmados pelo usuário, mas esta proposta ainda exige aprovação própria. Issue #30; branches partem da épica atualizada. Cada PR inclui seus testes/documentação; não agrupar todo o módulo em um PR gigante. Testes editoriais usam fixtures identificadas, não aprovam o acervo real.
+**Proposta aprovada no #31; rodada 1.2, 1.3 e 2.1–2.3 autorizada pelo usuário**, sem pausas entre tarefas e sem merges. Issue #30; `[x]` registra implementação/verificação na branch, **não aprovação/integração à épica**. PRs pequenos em draft; duas revisões independentes do lote (Astra medium e SOL 6.1 xhigh) ao fim da implementação, antes da aprovação de merge. Registro do processo: #39, sem integração presumida. Fixtures não aprovam conteúdo real; demais tarefas não iniciam automaticamente.
 
 ## 1. Catálogo e domínio — grupo catalog-domain
 
-- [ ] 1.1 Definir IDs/mapeamento das cinco disciplinas, assuntos e dois cargos; testar associação assunto-disciplina, compartilhamento sem duplicação e rejeição de cargos externos; documentar matriz rastreável aos módulos.
-- [ ] 1.2 Implementar questão/revisão/alternativas e invariantes de conteúdo imutável, resposta única, fontes/acessibilidade; testar versões/classificação e ausência de frameworks no núcleo, com documentação do modelo.
-- [ ] 1.3 Implementar transições editoriais, evidência da versão exata, substituição/retirada de elegibilidade e UseCases/portas necessários; testes puros de evidência desatualizada, revisão pendente e inexistência de aprovação implícita.
+- [x] 1.1 Definir IDs/mapeamento das cinco disciplinas, assuntos e dois cargos; testar associação assunto-disciplina, compartilhamento sem duplicação e rejeição de cargos externos; documentar matriz rastreável aos módulos.
+- [x] 1.2 Implementar questão/revisão/alternativas e invariantes de conteúdo imutável, resposta única, fontes/acessibilidade; testar versões/classificação e ausência de frameworks no núcleo, com documentação do modelo.
+- [x] 1.3 Implementar transições editoriais, evidência da versão exata, substituição/retirada de elegibilidade e UseCases/portas necessários; testes puros de evidência desatualizada, revisão pendente e inexistência de aprovação implícita.
 
 ## 2. Persistência e unidade atômica — grupo question-storage, após 1
 
-- [ ] 2.1 Criar migração Flyway aditiva apósV3 e modelosJPA separados; testar banco novo/upgradePG18.6, constraints e preservação de identidades/sessões; documentar schema/rollback não destrutivo.
-- [ ] 2.2 Implementar persistência/leitura e controle concorrente de revisões/ponteiro elegível; testar rollback integral, substituição atômica, duas aprovações concorrentes e base desatualizada, sem sobrescrita silenciosa.
-- [ ] 2.3 Implementar unicidade/idempotência por origem/conteúdo e tradução somente de conflitos conhecidos; testar reimportação concorrente, FK/falha inesperada propagadas e recovery apósrollback; proteger fronteiras com ArchUnit e documentar limites.
+- [x] 2.1 Criar migração Flyway aditiva apósV3 e modelosJPA separados; testar banco novo/upgradePG18.6, constraints e preservação de identidades/sessões; documentar schema/rollback não destrutivo.
+- [x] 2.2 Implementar persistência/leitura e controle concorrente de revisões/ponteiro elegível; testar rollback integral, substituição atômica, duas aprovações concorrentes e base desatualizada, sem sobrescrita silenciosa.
+- [x] 2.3 Implementar unicidade/idempotência por origem/conteúdo e tradução somente de conflitos conhecidos; testar reimportação concorrente, FK/falha inesperada propagadas e recovery apósrollback; proteger fronteiras com ArchUnit e documentar limites.
 
 ## 3. Extração e operações locais — grupos legacy-extraction e editorial-cli, após 1–2 conforme dependência
 

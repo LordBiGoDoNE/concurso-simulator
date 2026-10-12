@@ -37,6 +37,13 @@ class ArchitectureTests {
     }
 
     @Test
+    void questionCoreOwnsItsRulesWithoutDependingOnIdentityOrAdapters() {
+        classes().that().resideInAnyPackage("..questionbank.domain..", "..questionbank.application..")
+                .should().onlyDependOnClassesThat().resideInAnyPackage(
+                        "java..", "..questionbank.domain..", "..questionbank.application..").check(CODE);
+    }
+
+    @Test
     void webDoesNotAccessPersistenceImplementations() {
         noClasses().that().resideInAPackage("..web..")
                 .should().dependOnClassesThat().resideInAnyPackage("..infrastructure..", "jakarta.persistence..",

@@ -4,7 +4,23 @@ Decisão do usuário: entregar 5–10 tarefas por rodada, em PRs coesos, sem pau
 tarefa nem merges. Revisões externas acontecem depois da implementação do lote e
 antes de pedir sua aprovação. [Procedimento](architecture/spec-review.md).
 
-## Rodada inicial de question-bank
+## Política atual — revisão baseada em risco (2026-10-12)
+
+- SOL 6.1 xhigh é o revisor independente padrão dos lotes, incluindo PRs documentais
+  sem impacto crítico. Registrar classificação/justificativa antes do disparo.
+- Mudanças críticas exigem também Astra medium: segurança, concorrência,
+  persistência/integridade ou controles executáveis de proteção. Se qualquer PR ou
+  interação for crítico, ambos revisam o mesmo conjunto; dúvida exige dupla revisão.
+  O [procedimento](architecture/spec-review.md) detalha critérios e reclassificação.
+- O gate cumulativo final `[SPEC]` continua Astra medium. Revisão de lote não o substitui.
+- Medir antes/depois de cada revisor executado; dois revisores são sequenciais. Relatar
+  ao usuário variação de cota por janela/fase e seus limites, não custo financeiro.
+  Não disparar o segundo modelo só para medir nem inventar comparação em revisão única.
+- Triagem/correção/revalidação, diffs completos por PR/combinação, modelos sem fallback,
+  autorização individual de merge e proibição de publicação/arquivamento presumidos
+  permanecem. Esta decisão não inicia outra rodada nem reescreve revisões históricas.
+
+## Histórico — rodada inicial de question-bank
 
 - Cinco tarefas novas: 1.2, 1.3, 2.1, 2.2, 2.3; dependência existente: #38 (1.1).
 - Usuário autorizou especificamente adotar #38 como camada inicial de stack nova,

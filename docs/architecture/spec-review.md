@@ -6,16 +6,44 @@
 
 O usuário aprovou lotes de 5–10 tarefas, com implementação sem pausas intermediárias,
 PRs pequenos em rascunho e nenhuma integração presumida. Ao fim da implementação,
-**antes de solicitar aprovação de merge**, dois agentes novos revisam o mesmo conjunto:
-`openai/gpt-6-astra#medium` e `openai/gpt-6.1-sol#xhigh`. Confirmar disponibilidade e
-modelo/variante efetivos; não fazer fallback silencioso. O segundo modelo é comparação
-autorizada, não substituição do Astra no gate final.
+**antes de solicitar aprovação de merge**, um agente novo com
+`openai/gpt-6.1-sol#xhigh` revisa o conjunto por padrão. Em 2026-10-12, o usuário
+autorizou substituir a dupla revisão obrigatória de todo lote por revisão baseada em
+risco. **Mudanças críticas exigem também `openai/gpt-6-astra#medium`**, em outra sessão
+nova, sequencialmente e sem resultados compartilhados. Confirmar disponibilidade e
+modelo/variante efetivos; indisponibilidade bloqueia a revisão exigida, sem fallback
+silencioso. O gate cumulativo final permanece Astra medium, sem alteração.
+
+#### Classificação de risco — registrar antes de disparar revisores
+
+Registrar na issue/PR a classificação do lote, arquivos/regras afetadas e justificativa:
+
+- **Crítico:** alteração de autenticação/autorização, sessão/CSRF/OAuth/segredos;
+  persistência, schema/migrações, transações, travas, concorrência, rollback ou
+  idempotência; invariantes de integridade/versionamento/elegibilidade editorial ou
+  proteção contra exposição indevida de respostas; controles executáveis de CI/gate,
+  permissões ou deploy que protegem essas fronteiras. Exige SOL xhigh e Astra medium.
+- **Padrão:** documentação/processo, evidências históricas ou alterações sem impacto
+  crítico demonstrado. Exige SOL xhigh, não dois modelos automaticamente. Classificar
+  pelo efeito real: extensão `.md`, tamanho do diff e CI verde não garantem baixo risco.
+- Se qualquer PR ou interação do lote for crítica, ambos examinam **o mesmo conjunto**,
+  incluindo os diffs completos por PR e a combinação. Dúvida na classificação adota
+  crítico; se SOL identificar impacto crítico inicialmente não reconhecido, registrar
+  a reclassificação e executar Astra antes de solicitar aprovação.
+
+Revalidação mantém os revisores exigidos pelo risco do novo snapshot. Não rebaixar risco
+só para economizar cota nem dispensar Astra de mudança crítica sem nova autorização.
 
 Cada revisor recebe requisitos/padrões versionados, composição e bases/heads imutáveis,
 diffs completos por PR e combinação do lote; não recebe conversa/defesas do implementador
 ou resultado do outro revisor. Reportar achados por PR e interações entre camadas,
 cobertura/limites e testes não executados. Não exigir tarefas fora do lote antecipadamente.
 Aplicar as mesmas regras de triagem, correção e revalidação descritas abaixo.
+
+Em PR cujo objeto é registrar evidências históricas, o perfil pode ler os relatórios e
+registros do próprio diff para revisão **documental**, não para atestar a corretude do
+produto. Registrar a exposição incidental a achados históricos; não compartilhar
+resultados dos revisores atuais. Essa exceção não relaxa o isolamento do gate final.
 
 Registrar evidência por lote em `openspec/changes/<spec>/reviews/<lote>/`, separando
 relatórios/modelos/sessões, composição/digests, triagem e verificação do coordenador.
@@ -25,11 +53,14 @@ ou diff relevante invalidam a revisão do lote; relatórios isolados de evidênc
 autorizam alterar código sem revalidação. O check de tarefa continua `spec-review-tests`,
 não há novo gate automático nem mudança de workflow/ruleset nesta decisão.
 
-Apresentar relatório único com PRs/SHAs/checks, achados comuns/exclusivos e consumo real
-separado por modelo/coordenador (entrada nova, cache read/write, saída, raciocínio
-reportado). Não somar raciocínio à saída por inferência nem estimar por quota. Extrapolações
-de próximas rodadas devem indicar amostra/hipóteses; gasto financeiro só com preço confiável.
-Zero achados não prova equivalência dos modelos nem garante economia futura.
+Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem e
+consumo separado por modelo/coordenador: cota 5h/semanal antes/depois, com limites de
+atribuição, e tokens (entrada nova, cache read/write, saída, raciocínio reportado).
+Comparar achados comuns/exclusivos e consumo **somente quando ambos executarem**;
+com um revisor, registrar que comparação não foi realizada, não que o outro teve zero
+achados/consumo. Seguir [protocolo de cota](../review-quota.md); não somar raciocínio à
+saída nem converter tokens em consumo da assinatura. Extrapolações exigem amostra e
+hipóteses explícitas. Zero achados não prova equivalência nem garante economia futura.
 
 Aprovação do conjunto exige a lista explícita dos PRs/heads; não implica merges automáticos,
 aprovação editorial de conteúdo real, publicação ou arquivamento. Não iniciar outra rodada

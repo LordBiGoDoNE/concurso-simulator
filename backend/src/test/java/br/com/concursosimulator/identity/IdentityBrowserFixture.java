@@ -18,6 +18,7 @@ public final class IdentityBrowserFixture {
             var registration = new OidcTestRegistration().fixtureRegistration(oidc.issuer(),
                     "http://127.0.0.1:18080/login/oauth2/code/google");
             context.set(start(postgres, registration));
+            br.com.concursosimulator.questionbank.QuestionBrowserFixtures.seed(context.get());
             oidc.enableApiRestart(() -> {
                 context.get().close();
                 context.set(start(postgres, registration));

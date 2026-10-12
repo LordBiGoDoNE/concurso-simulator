@@ -13,6 +13,17 @@ Abra http://127.0.0.1:5173. Se o backend estiver parado, o link das aulas contin
 
 `VITE_API_URL`, `VITE_MATERIAL_URL` e `VITE_STATUS_TIMEOUT_MS` são configurações **públicas**, incorporadas no build. Nunca coloque senhas ou tokens nelas. Para estudar offline, configure o link das aulas para um servidor local com o pacote estático montado; o material também pode ser aberto diretamente por arquivo.
 
+## Banco de questões — consulta livre
+
+Catálogo/filtros AND/página/detalhe de revisões elegíveis, sem responder ou corrigir.
+Visitante e conectado usam os mesmos contratos públicos, sem cookies na consulta de
+questões. Aulas/login continuam independentes. Vazio e indisponível são estados distintos,
+com retry; VITE_QUESTION_TIMEOUT_MS (público, default 5000ms) limita headers+JSON de cada
+consulta. Mudanças de filtro cancelam/invalidate respostas anteriores e fecham detalhe.
+Labels, teclado, fórmulas/ênfase textuais/fontes nomeadas e foco de detalhe/paginação;
+recursos têm descrições acessíveis, não execução de HTML/SVG nem carregamento indiscriminado.
+Limites, teste determinístico e política de renderização em [consulta](../docs/question-browser.md).
+
 ```sh
 npm test
 npm run build
@@ -38,4 +49,13 @@ Testes de navegador: `npx playwright install chromium` e `npm run test:e2e`. Par
 
 `npm run test:identity` requer Docker e JDK 25 (configure JAVA_HOME se necessário), além do Chromium. Playwright inicia Vite, backend real, PostgreSQL 18.6 isolado e provedor OIDC local com discovery/token/JWK. Reserve portas 5173, 18080 e 18081. Não reutiliza banco/servidor local existente nem precisa de credenciais Google. O launcher e controle de subject/cancelamento ficam exclusivamente em src/test, fora do JAR de produção.
 
-Os três cenários cobrem visitante, login real, recuperação da sessão após reiniciar o contexto Spring mantendo PostgreSQL/cookies, UUID estável em novo login, duas identidades e dispositivos independentes, cookie, CSRF/saída, expiração real de 20s e cancelamento genérico. O timeout reduzido é exclusivo desse launcher. CI executa esse comando num job separado, sem publicação. Não substitui o smoke Google real antes do deployment.
+O mesmo comando agora inclui `questions.real.spec.ts` além dos três cenários de identidade:
+filtros/paginação/detalhe/teclado/foco/fórmulas/fontes em 390/1280px, mesmos filtros após
+login OIDC real e falha de transporte com aulas acessíveis, JSON/DOM/bundle sem gabarito.
+O harness compila o bundle antes de abrir Vite para inspeção; testes de UI usam backend/PG
+reais, e falha de rede é injetada no Playwright (não alegamos derrubar PG no browser).
+Somente esse harness em src/test importa/aprova/retira fixtures claramente sintéticas;
+nunca conteúdo real, bootJar/produção ou evidência de curadoria. CI existente continua
+chamando o mesmo comando, sem alterar workflow/proteções/publicação; suíte de identidade
+mantém recuperação/UUID/dispositivos/cookie/CSRF/expiração/cancelamento. Timeout20s é
+exclusivo desse launcher. Não substitui smoke Google real antes do deployment.

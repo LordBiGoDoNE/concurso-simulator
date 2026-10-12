@@ -31,7 +31,7 @@
 
 - [x] 5.1 Criar catálogo/filtros/paginação/lista/detalhe e estados carregando/vazio/erro, sem seleção de resposta/correção/histórico; testar consultas por visitante e mesmos filtros com usuário autenticado, mantendo LoginPanel e link das aulas.
 - [x] 5.2 Aplicar prazo finito atéJSON e invalidação/cancelamento entre filtros; regressões determinísticas de resposta antiga, timeout/retry/abort, sem alterar os comportamentos corrigidos da identidade; documentar limites de consulta.
-- [ ] 5.3 Verificar teclado/foco/rótulos/fórmulas/fontes e layouts390/1280px comPlaywright; inspecionarDOM/bundle/recursos sem dados corretivos e APIindisponível com aulas acessíveis; atualizarREADME da interface.
+- [x] 5.3 Verificar teclado/foco/rótulos/fórmulas/fontes e layouts390/1280px comPlaywright; inspecionarDOM/bundle/recursos sem dados corretivos e APIindisponível com aulas acessíveis; atualizarREADME da interface.
 
 ## 6. Curadoria inicial — lotes pequenos após 3, paralelos a 4–5
 

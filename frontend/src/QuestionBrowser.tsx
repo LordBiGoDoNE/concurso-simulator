@@ -56,15 +56,15 @@ export default function QuestionBrowser() {
     {catalog.state === 'error' && <><p role="alert">Catálogo indisponível. As aulas continuam acessíveis.</p><button onClick={() => setCatalogRetry(v => v + 1)}>Tentar catálogo novamente</button></>}
     {catalog.state === 'ready' && <>
       <div className="question-filters">
-        <label>Disciplina<select value={filters.disciplineId} onChange={e => change({ disciplineId: e.target.value, topicId: '' })}><option value="">Todas as disciplinas</option>{catalog.value.disciplines.map(d => <option key={d.id} value={d.id}>{d.title}</option>)}</select></label>
-        <label>Assunto<select value={filters.topicId} onChange={e => change({ topicId: e.target.value })}><option value="">Todos os assuntos</option>{catalog.value.topics.filter(t => !filters.disciplineId || t.disciplineId === filters.disciplineId).map(t => <option key={t.id} value={t.id}>{t.title}</option>)}</select></label>
-        <label>Cargo<select value={filters.roleId} onChange={e => change({ roleId: e.target.value })}><option value="">Ambos os cargos</option>{catalog.value.roles.map(r => <option key={r.id} value={r.id}>{r.title}</option>)}</select></label>
+        <div><label htmlFor="question-discipline">Disciplina</label><select id="question-discipline" value={filters.disciplineId} onChange={e => change({ disciplineId: e.target.value, topicId: '' })}><option value="">Todas as disciplinas</option>{catalog.value.disciplines.map(d => <option key={d.id} value={d.id}>{d.title}</option>)}</select></div>
+        <div><label htmlFor="question-topic">Assunto</label><select id="question-topic" value={filters.topicId} onChange={e => change({ topicId: e.target.value })}><option value="">Todos os assuntos</option>{catalog.value.topics.filter(t => !filters.disciplineId || t.disciplineId === filters.disciplineId).map(t => <option key={t.id} value={t.id}>{t.title}</option>)}</select></div>
+        <div><label htmlFor="question-role">Cargo</label><select id="question-role" value={filters.roleId} onChange={e => change({ roleId: e.target.value })}><option value="">Ambos os cargos</option>{catalog.value.roles.map(r => <option key={r.id} value={r.id}>{r.title}</option>)}</select></div>
       </div>
       <h3 ref={resultsHeading} tabIndex={-1}>Resultados da consulta</h3>
       {currentList.state === 'loading' && <p role="status">Carregando questões…</p>}
       {currentList.state === 'error' && <><p role="alert">Consulta de questões indisponível. Não é um acervo vazio.</p><button onClick={() => setRetry(v => v + 1)}>Tentar questões novamente</button></>}
       {currentList.state === 'ready' && <>
-        <p role="status">{currentList.value.total === 0 ? 'Nenhuma questão elegível para estes filtros.' : `${currentList.value.total} questões elegíveis. Página ${filters.page + 1}.`}</p>
+        <p role="status">{currentList.value.total === 0 ? 'Nenhuma questão elegível para estes filtros.' : `${currentList.value.total} ${currentList.value.total === 1 ? 'questão elegível' : 'questões elegíveis'}. Página ${filters.page + 1}.`}</p>
         <ul className="question-list">{currentList.value.items.map(q => <li key={q.questionId}><button onClick={event => { selectionButton.current = event.currentTarget; setSelected(q.questionId); }}>Consultar: {q.statementStart}</button></li>)}</ul>
       </>}
       <nav aria-label="Paginação de questões"><button disabled={currentList.state !== 'ready' || filters.page === 0} onClick={() => { focusResults.current = true; change({ page: filters.page - 1 }); }}>Página anterior</button><button disabled={currentList.state !== 'ready' || (filters.page + 1) * currentList.value.size >= currentList.value.total} onClick={() => { focusResults.current = true; change({ page: filters.page + 1 }); }}>Próxima página</button></nav>

@@ -28,3 +28,17 @@ Paginar direciona foco ao título dos resultados atualizados, não deixa foco em
 Testes determinísticos exercitam prazo/abort/retry, respostas antigas/filtro/detalhe,
 vazio/erro/URLs/contrato e preservação das regressões de login. Fixtures ficam fora
 dos imports de produção; nenhuma aprovação editorial do acervo real.
+
+Verificação Playwright real usa o harness exclusivo de testes da identidade, com PG18.6
+isolado e provedor OIDC local: 22 identidades elegíveis sintéticas, um rascunho e uma
+retirada; nenhuma questão real/curadoria. Seis cenários passaram (três identidade +
+três consulta), incluindo 390/1280px, teclado/foco de abertura/fechamento/paginação,
+mesmos filtros após login, falha de transporte e inspeção de JSON/DOM/bundle. Nenhum
+skip dessa suíte. A indisponibilidade no navegador é falha de rede injetada; queda real
+de PG é verificada separadamente no teste HTTP, não alegada como browser.
+
+Primeira execução identificou que labels envolvendo selects incluíam opções no texto
+de label consultado pelo browser; regra positiva: label separado com htmlFor/id explícitos.
+Regressão exige localizar rótulos exatos e navegar por teclado/foco, além de testar DOM.
+Na instrumentação, resposta abortada durante troca de filtro não tem corpo disponível;
+inspeção aguarda requestfinished/Promise.all, sem ignorar falhas de respostas concluídas.

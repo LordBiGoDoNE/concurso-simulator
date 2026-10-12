@@ -2,6 +2,41 @@
 
 ## Quando e por quê
 
+### Rodadas de implementação — antes da aprovação de merge
+
+O usuário aprovou lotes de 5–10 tarefas, com implementação sem pausas intermediárias,
+PRs pequenos em rascunho e nenhuma integração presumida. Ao fim da implementação,
+**antes de solicitar aprovação de merge**, dois agentes novos revisam o mesmo conjunto:
+`openai/gpt-6-astra#medium` e `openai/gpt-6.1-sol#xhigh`. Confirmar disponibilidade e
+modelo/variante efetivos; não fazer fallback silencioso. O segundo modelo é comparação
+autorizada, não substituição do Astra no gate final.
+
+Cada revisor recebe requisitos/padrões versionados, composição e bases/heads imutáveis,
+diffs completos por PR e combinação do lote; não recebe conversa/defesas do implementador
+ou resultado do outro revisor. Reportar achados por PR e interações entre camadas,
+cobertura/limites e testes não executados. Não exigir tarefas fora do lote antecipadamente.
+Aplicar as mesmas regras de triagem, correção e revalidação descritas abaixo.
+
+Registrar evidência por lote em `openspec/changes/<spec>/reviews/<lote>/`, separando
+relatórios/modelos/sessões, composição/digests, triagem e verificação do coordenador.
+Não preencher `spec-review.json/md` como completed por uma revisão parcial de lote:
+esses dois arquivos continuam exclusivos do gate cumulativo final. Alterações de base
+ou diff relevante invalidam a revisão do lote; relatórios isolados de evidência não
+autorizam alterar código sem revalidação. O check de tarefa continua `spec-review-tests`,
+não há novo gate automático nem mudança de workflow/ruleset nesta decisão.
+
+Apresentar relatório único com PRs/SHAs/checks, achados comuns/exclusivos e consumo real
+separado por modelo/coordenador (entrada nova, cache read/write, saída, raciocínio
+reportado). Não somar raciocínio à saída por inferência nem estimar por quota. Extrapolações
+de próximas rodadas devem indicar amostra/hipóteses; gasto financeiro só com preço confiável.
+Zero achados não prova equivalência dos modelos nem garante economia futura.
+
+Aprovação do conjunto exige a lista explícita dos PRs/heads; não implica merges automáticos,
+aprovação editorial de conteúdo real, publicação ou arquivamento. Não iniciar outra rodada
+automaticamente. A primeira rodada autorizada é question-bank 1.2, 1.3, 2.1–2.3, sobre #38.
+
+### Integração final da spec
+
 PRs de tarefas são revisados individualmente e integrados na épica da spec. Depois,
 `[SPEC] <Título>` propõe `epic/<spec>` → `epic/application-reformulation`. Este gate
 examina o conjunto, não uma nova implementação. CI verde e revisão de tarefas não

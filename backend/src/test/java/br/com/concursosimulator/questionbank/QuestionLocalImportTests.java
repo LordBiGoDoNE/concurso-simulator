@@ -35,7 +35,7 @@ class QuestionLocalImportTests {
         var pack = (ObjectNode) JSON.readTree(extracted);
         var item = (ObjectNode) pack.get("items").get(0);
         var source = JSON.treeToValue(item.get("content"), QuestionPackageReader.Content.class);
-        var fixture = QuestionFixtures.content("Fixture CLI: x < y e y > z; (x)_(1) + (y)_(2); 2^(3), πr² e é");
+        var fixture = QuestionFixtures.content("Fixture CLI: x < y e y > z; a < b > c; x < i > y; (x)_(1) + (y)_(2); 2^(3), πr² e é");
         var domain = new QuestionContent(fixture.statement(), fixture.alternatives(), fixture.correctAlternativeId(), fixture.resolution(),
                 fixture.classification(), fixture.references(), source.provenance());
         var content = new QuestionPackageReader.Content(domain.statement(), domain.alternatives(), domain.correctAlternativeId(), domain.resolution(),
@@ -129,7 +129,7 @@ class QuestionLocalImportTests {
             var domain = new QuestionContent(dto.statement(),dto.alternatives(),dto.correctAlternativeId(),dto.resolution(),
                     QuestionClassification.fromIds(dto.classification().disciplineId(),dto.classification().topicId(),dto.classification().roleIds()),dto.references(),dto.provenance());
             item.put("fingerprint",domain.fingerprint());
-            assertThatThrownBy(() -> new QuestionPackageReader().read(JSON.writeValueAsBytes(tree),ROOT,Set.of("P01-Q01"))).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("markup");
+            assertThatThrownBy(() -> new QuestionPackageReader().read(JSON.writeValueAsBytes(tree),ROOT,Set.of("P01-Q01"))).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("UNSAFE_CONTENT");
         }
         var tree = (ObjectNode) JSON.readTree(Files.readString(file)); ((ObjectNode)tree.get("items").get(0)).put("status","APPROVED");
         assertThatThrownBy(() -> new QuestionPackageReader().read(JSON.writeValueAsBytes(tree),ROOT,Set.of("P01-Q01"))).isInstanceOf(RuntimeException.class);
@@ -145,6 +145,16 @@ class QuestionLocalImportTests {
         err.reset();
         assertThat(QuestionBankLocal.launch(args("preview",file,"PRIVATE_KEY_SECRET"),env,new BufferedReader(new StringReader("")),new PrintStream(out),new PrintStream(err))).isEqualTo(1);
         assertThat(err.toString()).contains("INVALID_KEY","UNKNOWN_SELECTED_KEY").doesNotContain("PRIVATE_KEY_SECRET");
+        var baseline=Files.readString(file);
+        for(var invalidContent:List.of("answer","alternatives")) {
+            var bad=(ObjectNode)JSON.readTree(baseline);var item=(ObjectNode)bad.get("items").get(0);
+            var content=(ObjectNode)item.get("content");
+            if(invalidContent.equals("answer")) content.put("correctAlternativeId",UUID.randomUUID().toString());
+            else ((ArrayNode)content.get("alternatives")).add(content.get("alternatives").get(0));
+            Files.writeString(file,JSON.writeValueAsString(bad));err.reset();out.reset();
+            assertThat(QuestionBankLocal.launch(args("import",file,"P01-Q01"),env,new BufferedReader(new StringReader("")),new PrintStream(out),new PrintStream(err))).isEqualTo(1);
+            assertThat(out.size()).isZero();assertThat(err.toString()).contains("P01-Q01","INVALID_QUESTION_CONTENT").doesNotContain("PRIVATE_","secret","jdbc:");
+        }
     }
     @Test void reclassificationKeepsIdentityProvenanceAndOldEligibleClassificationUntilApproval() throws Exception {
         try(var db=new QuestionDatabase(POSTGRES)) {

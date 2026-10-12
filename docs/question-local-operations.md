@@ -110,3 +110,10 @@ Consulte arquivo local de extração para mensagens detalhadas de fonte, não st
 Conflito de base recebe STALE_BASE; erro técnico/desconhecido permanece genérico.
 Testes exercitam o caminho usado pelo main com stdout/stderr/código de saída e sentinelas
 privadas, PG isolado/reclassificação e positivos matemáticos versus negativos ativos.
+
+Revalidação ampliou os positivos a `a < b > c`/`x < i > y`: tags neutras exigem nome
+adjacente ao <, conforme sintaxe HTML; texto com espaço após < não é tag. Markup de
+risco/atributos mantém rejeição. Validações conhecidas feitas pelo domínio recebem
+INVALID_QUESTION_CONTENT e chave sanitizada, sem duplicar invariantes no adaptador;
+fingerprint/proveniência/caminho recebem códigos próprios. Falhas técnicas de parsing/I/O
+continuam genéricas para não expor payloads ou credenciais.

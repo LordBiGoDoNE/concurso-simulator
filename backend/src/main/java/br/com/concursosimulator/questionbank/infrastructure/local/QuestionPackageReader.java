@@ -67,17 +67,24 @@ public final class QuestionPackageReader {
         if (!invalid.isEmpty()) throw new LocalPackageDiagnostics.InvalidSelection(invalid);
         for (var key : keys.stream().sorted().toList()) {
             var item = items.get(key);
-            var content = item.content().domain(); var provenance = content.provenance();
+            QuestionContent content;
+            try { content=item.content().domain(); }
+            catch (IllegalArgumentException | NullPointerException error) { throw diagnostic(key,"INVALID_QUESTION_CONTENT"); }
+            var provenance = content.provenance();
             // Chave/proveniência identificam o módulo histórico, não a classificação da revisão nova.
             var originTopic = key.substring(0,key.indexOf("-Q"));
             if (!Objects.equals(sources.get(provenance.contentPath()), provenance.contentSha256())
-                    || !Objects.equals(sources.get(provenance.answerPath()), provenance.answerSha256())) throw new IllegalArgumentException("Proveniência fora do snapshot");
+                    || !Objects.equals(sources.get(provenance.answerPath()), provenance.answerSha256())) throw diagnostic(key,"PROVENANCE_MISMATCH");
             if (!List.of(provenance.contentPath(), provenance.answerPath()).equals(paths.get(originTopic)))
-                throw new IllegalArgumentException("Join origem/caminhos divergente do manifesto");
-            if (!content.fingerprint().equals(item.fingerprint())) throw new IllegalArgumentException("Fingerprint divergente: " + key);
-            PackageContentSafety.check(root, content);
+                throw diagnostic(key,"ORIGIN_PATH_MISMATCH");
+            if (!content.fingerprint().equals(item.fingerprint())) throw diagnostic(key,"FINGERPRINT_MISMATCH");
+            try { PackageContentSafety.check(root, content); }
+            catch (IllegalArgumentException error) { throw diagnostic(key,"UNSAFE_CONTENT"); }
             selected.add(new Candidate(item.origin(), content, item.expectedLatestRevision()));
         }
         return new Selected(List.copyOf(selected), List.copyOf(pack.inventory()), List.copyOf(pack.issues()), List.copyOf(pack.possibleDuplicates()));
+    }
+    private static LocalPackageDiagnostics.InvalidSelection diagnostic(String key,String code) {
+        return new LocalPackageDiagnostics.InvalidSelection(List.of(new LocalPackageDiagnostics.Diagnostic(key,code)));
     }
 }

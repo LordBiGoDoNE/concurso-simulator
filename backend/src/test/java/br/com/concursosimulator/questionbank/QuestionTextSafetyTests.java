@@ -7,7 +7,7 @@ import static org.assertj.core.api.Assertions.*;
 
 class QuestionTextSafetyTests {
     @Test void mathematicalComparisonsAndLiteralIndicesAreNotHtml() {
-        for(var text:List.of("x < y e y > z","x < p e p > z","x<y>z","2 < 3","_abc","(x)_(1) + (y)_(2)","x^(2)"))
+        for(var text:List.of("x < y e y > z","a < b > c","x < i > y","x < p e p > z","x<y>z","2 < 3","_abc","(x)_(1) + (y)_(2)","x^(2)"))
             assertThat(QuestionTextSafety.looksLikeMarkup(text)).as(text).isFalse();
     }
     @Test void activeTagsAttributesClosingsAndDeclarationsRemainBlocked() {

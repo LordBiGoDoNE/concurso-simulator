@@ -23,7 +23,7 @@
 
 ## 4. Consulta HTTP pública — grupo public-question-api, após 1–2
 
-- [ ] 4.1 Implementar catálogo/lista/detalhe filtrados, paginação/ordem e DTOs/OpenAPI; testesHTTP reais de400/404/200/vazio, filtrosAND e somente versão elegível, sem gabarito/resolução/estado privado ou entidadesJPA.
+- [x] 4.1 Implementar catálogo/lista/detalhe filtrados, paginação/ordem e DTOs/OpenAPI; testesHTTP reais de400/404/200/vazio, filtrosAND e somente versão elegível, sem gabarito/resolução/estado privado ou entidadesJPA.
 - [ ] 4.2 Configurar fronteira de segurança/leitura semsessão para rotas exatas, incluindo negações e preflightCORS permitido; testar visitantes/autenticados/cookies conhecidos/desconhecidos, métodos/paths/gabaritos/escritas negados e ausência de efeitos; regressar ordem/registro/readiness/OIDC/CSRFlogout.
 - [ ] 4.3 Testar projeções deJSON/markup/recursos contra campos/indicadores da resposta, leitura direta de rascunho/retirada e indisponibilidade sem acervo vazio fictício; documentar diferença entre proteção da API e gabaritos públicos legados, com negativo controlado de vazamento.
 

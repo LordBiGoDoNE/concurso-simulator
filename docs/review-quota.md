@@ -15,7 +15,9 @@ O multiplicador de entrada nova da rodada 1 não é multiplicador de cota ou din
 
 ## Protocolo para cada lote solicitado
 
-1. Preparar diffs acessíveis dentro do workspace, bases/heads/digests fixos; registrar
+1. Confirmar grupos completos escolhidos pelo usuário, sem limite fixo de tarefas;
+   sem escopo explícito, listar pendências e perguntar quais entram antes de implementar.
+   Preparar diffs acessíveis dentro do workspace, bases/heads/digests fixos; registrar
    risco/justificativa e confirmar modelos/variantes exigidos. Em lote padrão, somente
    SOL; em lote crítico, ambos. Alternar a ordem entre lotes que exigem dois e registrar
    a ordem. Reclassificação após achado de SOL pode exigir Astra depois dele.

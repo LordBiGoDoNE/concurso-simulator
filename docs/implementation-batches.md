@@ -1,7 +1,13 @@
 # Rodadas de implementação e revisão
 
-Decisão do usuário: entregar 5–10 tarefas por rodada, em PRs coesos, sem pausas por
-tarefa nem merges. Revisões externas acontecem depois da implementação do lote e
+Decisão atual do usuário: entregar os grupos completos escolhidos para cada lote,
+sem limite fixo de tarefas, em PRs coesos, sem pausas por subtarefa nem merges.
+Se o escopo não vier explícito, listar grupos/tarefas pendentes e perguntar quais serão
+feitos antes de começar. “Faça 3, 4 e 5” inclui todas as subtarefas desses três grupos;
+não encerrar em 3.3 deixando 3.4 para depois. PRs podem ser pequenos, mas o lote só
+termina com seus grupos inteiros implementados/testados/documentados/revisados.
+Bloqueio real é reportado sem declarar conclusão ou ampliar escopo automaticamente.
+Revisões externas acontecem depois da implementação do lote e
 antes de pedir sua aprovação. [Procedimento](architecture/spec-review.md).
 
 ## Política atual — revisão baseada em risco (2026-10-12)

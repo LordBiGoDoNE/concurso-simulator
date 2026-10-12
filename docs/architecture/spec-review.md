@@ -4,8 +4,14 @@
 
 ### Rodadas de implementação — antes da aprovação de merge
 
-O usuário aprovou lotes de 5–10 tarefas, com implementação sem pausas intermediárias,
-PRs pequenos em rascunho e nenhuma integração presumida. Ao fim da implementação,
+O usuário define o lote por **grupos completos**, sem limite fixo de tarefas: “faça
+3, 4 e 5” inclui 3.1–3.4, 4.1–4.3 e 5.1–5.3 na spec question-bank. Se o pedido não
+informar escopo, listar os grupos/tarefas pendentes e perguntar quais entram antes de
+implementar. Não encerrar num prefixo de grupo; PRs pequenos/coerentes não autorizam
+deixar sua última subtarefa para outro lote. Comunicar bloqueios reais sem fingir
+conclusão nem incluir dependências fora do escopo por iniciativa própria. Implementação
+sem pausas por subtarefa, PRs em rascunho e nenhuma integração presumida permanecem.
+Ao fim da implementação,
 **antes de solicitar aprovação de merge**, um agente novo com
 `openai/gpt-6.1-sol#xhigh` revisa o conjunto por padrão. Em 2026-10-12, o usuário
 autorizou substituir a dupla revisão obrigatória de todo lote por revisão baseada em

@@ -47,7 +47,9 @@ public final class QuestionPackageReader {
             if (inventory.put(row.key(), row) != null || !row.editorialReviewRequired() || !Set.of("candidate", "invalid").contains(row.status()))
                 throw new IllegalArgumentException("Inventário inválido");
         }
-        if (inventory.size() != 510 || !inventory.keySet().containsAll(keys)) throw new IllegalArgumentException("Inventário/seleção incompleto");
+        if (inventory.size() != 510) throw new IllegalArgumentException("Inventário incompleto");
+        var unknown=keys.stream().filter(key -> !inventory.containsKey(key)).map(key -> new LocalPackageDiagnostics.Diagnostic(key,"UNKNOWN_SELECTED_KEY")).toList();
+        if (!unknown.isEmpty()) throw new LocalPackageDiagnostics.InvalidSelection(unknown);
         for (var topic : Topic.values()) for (int number=1; number<=10; number++)
             if (!inventory.containsKey(topic.id() + "-Q" + String.format(java.util.Locale.ROOT, "%02d", number))) throw new IllegalArgumentException("ID fora do inventário aprovado");
         var manifest = json.readTree(LocalFiles.source(root, "manifesto_v3.json"));
@@ -60,15 +62,17 @@ public final class QuestionPackageReader {
                 throw new IllegalArgumentException("Origem/ID repetido ou fora do inventário");
         }
         var selected = new ArrayList<Candidate>();
+        var invalid = keys.stream().sorted().filter(key -> !items.containsKey(key) || !"candidate".equals(inventory.get(key).status())
+                || pack.issues().stream().anyMatch(i -> key.equals(i.key()))).map(key -> new LocalPackageDiagnostics.Diagnostic(key,"INVALID_SELECTED_ITEM")).toList();
+        if (!invalid.isEmpty()) throw new LocalPackageDiagnostics.InvalidSelection(invalid);
         for (var key : keys.stream().sorted().toList()) {
             var item = items.get(key);
-            if (item == null || !"candidate".equals(inventory.get(key).status()) || pack.issues().stream().anyMatch(i -> key.equals(i.key())))
-                throw new IllegalArgumentException("Item selecionado inválido: " + key);
             var content = item.content().domain(); var provenance = content.provenance();
-            if (!key.matches(java.util.regex.Pattern.quote(content.classification().topic().id()) + "-Q[0-9]{2}")) throw new IllegalArgumentException("Join origem/assunto inválido");
+            // Chave/proveniência identificam o módulo histórico, não a classificação da revisão nova.
+            var originTopic = key.substring(0,key.indexOf("-Q"));
             if (!Objects.equals(sources.get(provenance.contentPath()), provenance.contentSha256())
                     || !Objects.equals(sources.get(provenance.answerPath()), provenance.answerSha256())) throw new IllegalArgumentException("Proveniência fora do snapshot");
-            if (!List.of(provenance.contentPath(), provenance.answerPath()).equals(paths.get(content.classification().topic().id())))
+            if (!List.of(provenance.contentPath(), provenance.answerPath()).equals(paths.get(originTopic)))
                 throw new IllegalArgumentException("Join origem/caminhos divergente do manifesto");
             if (!content.fingerprint().equals(item.fingerprint())) throw new IllegalArgumentException("Fingerprint divergente: " + key);
             PackageContentSafety.check(root, content);

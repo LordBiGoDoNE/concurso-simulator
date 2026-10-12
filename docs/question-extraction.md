@@ -33,7 +33,7 @@ Selecionar blocos por `qN`, não copiar aula/esquemas/soluções inline adjacent
 Gabarito corresponde ao mesmo ID e cabeçalho inequívoco. Excluir somente rótulo numérico,
 aside de proveniência e navegação conhecida. Markup aceito vira **texto**, nunca HTML
 executável: parágrafos/listas, marcadores de ênfase, Unicode e fórmulas MathML restritas
-(fração/expoente/raiz representados textualmente). Scripts/eventos/atributos desconhecidos,
+(fração/expoente/índice/raiz representados textualmente). Scripts/eventos/atributos desconhecidos,
 marcações de correção em enunciado/opções e conversão incompleta geram pendência.
 Imagens PNG/JPEG/SVG têm hash e descrição; SVG restrito sem scripts/entidades/referências
 ativas. Recursos não são publicados automaticamente por essa ferramenta.
@@ -48,3 +48,10 @@ uma pendência estrutural em `P05-Q01` (alternativas repetidas), mantida no rela
 Há seis grupos de possível duplicação textual e 30 fundamentos legais a conferir.
 Não corrigimos/aprovamos esses itens para completar contagens; aplicação integral
 de seleção inválida deve ser recusada. Curadoria permanece no grupo 6.
+
+Revisão do lote identificou perda silenciosa em HTML sup/sub: agora `2<sup>3</sup>`
+vira `2^(3)` e `H<sub>2</sub>O` vira `H_(2)O`, inclusive estruturas aninhadas. Ênfase
+usa texto explícito `[destaque: ...]` / `[ênfase: ...]`, não underscores/Markdown que
+colidem com índices matemáticos. Esses marcadores não são uma linguagem executável:
+o cliente exibe o texto integral, sem reinterpretá-lo. Pacotes já gerados devem ser
+regenerados; fingerprints dependem do conteúdo exato e não recebem atualização silenciosa.

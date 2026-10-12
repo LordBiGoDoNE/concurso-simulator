@@ -23,14 +23,24 @@ public final class QuestionBankLocal {
     public static class PersistenceOnly {}
 
     public static void main(String[] args) {
-        int code;
-        try { code = run(args, System.getenv(), new BufferedReader(new InputStreamReader(System.in)), System.out); }
+        int code = launch(args,System.getenv(),new BufferedReader(new InputStreamReader(System.in)),System.out,System.err);
+        if (code != 0) System.exit(code);
+    }
+
+    /** Mesmo caminho do main, com streams externos substituíveis para verificar diagnóstico/código de saída. */
+    public static int launch(String[] args,Map<String,String> env,BufferedReader input,PrintStream output,PrintStream errors) {
+        try { return run(args,env,input,output); }
+        catch (LocalPackageDiagnostics.InvalidSelection error) {
+            var json=JsonMapper.builder().build();
+            errors.println(json.writeValueAsString(error.diagnostics().stream().map(d -> new LocalPackageDiagnostics.Diagnostic(LocalPackageDiagnostics.key(d.key()),d.code())).toList()));
+            return 1;
+        }
+        catch (StaleQuestionException error) { errors.println("STALE_BASE: base mudou; releia a prévia/relatório antes de reenviar.");return 1; }
         catch (Exception error) {
             // Não ecoar exceções JDBC/Jackson/args: podem conter credenciais, payloads ou valores privados.
-            System.err.println("Operação recusada/falhou; nenhum sucesso foi confirmado. Confira seleção, base, snapshot e configuração local.");
-            code = 1;
+            errors.println("Operação recusada/falhou; nenhum sucesso foi confirmado. Confira seleção, base, snapshot e configuração local.");
+            return 1;
         }
-        if (code != 0) System.exit(code);
     }
 
     public static int run(String[] args, Map<String,String> env, BufferedReader input, PrintStream output) throws Exception {
@@ -49,6 +59,10 @@ public final class QuestionBankLocal {
         output.println("Ação: " + action + " | Destino: " + destination + " | Seleção: " + String.join(",", keys.stream().sorted().toList()) + " | SHA-256: " + digest);
         output.println("Inventário: " + selected.inventory().size() + "; selecionados: " + selected.candidates().size()
                 + "; pendências: " + selected.issues().size() + "; suspeitas: " + selected.possibleDuplicates().size() + ". Importação não aprova.");
+        var json=JsonMapper.builder().build();
+        output.println("Pendências: " + json.writeValueAsString(selected.issues().stream().map(i -> new LocalPackageDiagnostics.Diagnostic(LocalPackageDiagnostics.key(i.key()),"SOURCE_ITEM_ISSUE")).toList()));
+        output.println("Fundamentos legais pendentes: " + json.writeValueAsString(selected.inventory().stream().filter(i -> i.legalBasisPending()!=null && !i.legalBasisPending().isBlank()).map(i -> LocalPackageDiagnostics.key(i.key())).toList()));
+        output.println("Suspeitas de duplicação (não fundidas): " + json.writeValueAsString(selected.possibleDuplicates().stream().map(group -> group.stream().map(LocalPackageDiagnostics::key).toList()).toList()));
         if (action.equals("import")) {
             var phrase = "APPLY " + destination + " " + digest;
             output.println("Confirme digitando exatamente: " + phrase); output.flush();
@@ -56,7 +70,6 @@ public final class QuestionBankLocal {
             if (!LocalFiles.sha(LocalFiles.bounded(file, 32_000_000)).equals(digest)) throw new IllegalArgumentException("Pacote mudou durante confirmação");
         }
         try (var context = open(env,destination)) {
-            var json = JsonMapper.builder().build();
             if (action.equals("preview")) {
                 output.println(json.writeValueAsString(new PreviewQuestionCandidatesUseCase(context.getBean(QuestionInventory.class)).execute(selected.candidates())));
             } else {

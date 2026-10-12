@@ -117,14 +117,18 @@ def accessible(nodes, root, source, public_content=True):
             if len(children) != 2: raise ValueError("Fórmula incompleta")
             pieces.append("("); visit(children[0]); pieces.append(")" + {"mfrac": "/", "msup": "^", "msub": "_"}[node.tag] + "(")
             visit(children[1]); pieces.append(")"); return
+        if node.tag in {"sup", "sub"}:
+            if not node.children or not node.text().strip(): raise ValueError("Expoente/índice incompleto")
+            pieces.append("^(" if node.tag == "sup" else "_(")
+            for child in node.children: visit(child)
+            pieces.append(")"); return
         if node.tag == "msqrt": pieces.append("raiz quadrada de (")
         if node.tag in {"p", "div", "details", "summary", "br", "li"}: pieces.append("\n")
         if node.tag == "li": pieces.append("• ")
-        if node.tag in {"strong", "b"}: pieces.append("**")
-        if node.tag in {"em", "i"}: pieces.append("_")
+        if node.tag in {"strong", "b"}: pieces.append("[destaque: ")
+        if node.tag in {"em", "i"}: pieces.append("[ênfase: ")
         for child in node.children: visit(child)
-        if node.tag in {"strong", "b"}: pieces.append("**")
-        if node.tag in {"em", "i"}: pieces.append("_")
+        if node.tag in {"strong", "b", "em", "i"}: pieces.append("]")
         if node.tag in {"p", "div", "li", "summary"}: pieces.append("\n")
         if node.tag == "msqrt": pieces.append(")")
     for node in nodes: visit(node)

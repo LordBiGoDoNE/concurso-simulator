@@ -1,6 +1,7 @@
 package br.com.concursosimulator.questionbank.infrastructure.local;
 
 import br.com.concursosimulator.questionbank.domain.*;
+import br.com.concursosimulator.shared.infrastructure.QuestionTextSafety;
 import java.nio.file.Path;
 import java.util.List;
 import java.util.Set;
@@ -10,7 +11,6 @@ import java.nio.charset.StandardCharsets;
 import javax.xml.parsers.DocumentBuilderFactory;
 
 final class PackageContentSafety {
-    private static final Pattern MARKUP = Pattern.compile("<\\s*[/!a-zA-Z][^>]*>");
     private static final Pattern CORRECTIVE = Pattern.compile("gabarito|answer|correct|corret[ao]|resolu[cç][aã]o", Pattern.CASE_INSENSITIVE);
     static void check(Path root, QuestionContent content) throws java.io.IOException {
         text(root, content.statement(), true);
@@ -22,9 +22,9 @@ final class PackageContentSafety {
         }
     }
     private static void text(Path root, TextContent text, boolean publicContent) throws java.io.IOException {
-        if (MARKUP.matcher(text.text()).find()) throw new IllegalArgumentException("Conteúdo deve ser texto, não markup");
+        if (QuestionTextSafety.looksLikeMarkup(text.text())) throw new IllegalArgumentException("Conteúdo deve ser texto, não markup");
         for (var resource : text.resources()) {
-            if (!resource.path().startsWith("assets/") || MARKUP.matcher(resource.description()).find()
+            if (!resource.path().startsWith("assets/") || QuestionTextSafety.looksLikeMarkup(resource.description())
                     || (publicContent && CORRECTIVE.matcher(resource.path() + resource.description()).find())) throw new IllegalArgumentException("Recurso inseguro/corretivo");
             var bytes = LocalFiles.source(root, resource.path());
             if (!LocalFiles.sha(bytes).equals(resource.sha256())) throw new IllegalArgumentException("Hash de recurso divergente");

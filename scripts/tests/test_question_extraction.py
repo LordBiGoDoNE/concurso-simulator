@@ -78,7 +78,7 @@ class ExtractionTests(unittest.TestCase):
     def test_plain_representation_keeps_emphasis_lists_and_fraction_structure(self):
         node = Document('<p><strong>Importante</strong>: <em>π</em></p><ul><li>Passo 1</li><li>Passo 2</li></ul><math xmlns="http://www.w3.org/1998/Math/MathML"><mfrac><mn>1</mn><mn>2</mn></mfrac></math>')
         value = accessible(node.root.children, ROOT, '01_Portugues/fixture.html')
-        for text in ('**Importante**', '_π_', '• Passo 1', '(1)/(2)'): self.assertIn(text, value['text'])
+        for text in ('[destaque: Importante]', '[ênfase: π]', '• Passo 1', '(1)/(2)'): self.assertIn(text, value['text'])
         self.assertNotIn('<', value['text'])
 
     def test_roots_traversal_symlinks_unsafe_urls_and_assets(self):
@@ -95,6 +95,11 @@ class ExtractionTests(unittest.TestCase):
             with self.assertRaises(ValueError): image_resource(Document('<img src="../assets/active.svg" alt="Descrição">').root.children[0], root, '01_Portugues/fixture.html')
         for url in ('javascript:alert(1)', 'data:text/html,x', 'https://user:pass@example.test/x', 'https://example.test/gabarito.html'):
             with self.assertRaises(ValueError): safe_url(url)
+
+    def test_html_exponents_indices_and_nested_math_keep_structure(self):
+        node = Document('<p>2<sup>3</sup>; H<sub>2</sub>O; x<sup>1<sub>n</sub></sup></p>')
+        text = accessible(node.root.children, ROOT, '01_Portugues/fixture.html')['text']
+        self.assertEqual(text, '2^(3); H_(2)O; x^(1_(n))')
 
 
 if __name__ == '__main__': unittest.main()

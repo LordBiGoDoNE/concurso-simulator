@@ -89,3 +89,24 @@ ambiente de fixture e banco/schema isolados; não aprovam acervo real em CI.
 Isso não protege contra um operador privilegiado removendo variáveis/alterando código;
 controle de acesso ao banco e execução externa continuam responsabilidade operacional.
 Startup web normal não descobre o configuration nonweb nem executa ações editoriais.
+
+## Correções de revisão do lote
+
+Origem e caminhos do manifesto correspondem ao **módulo histórico** da chave, não ao
+assunto editorial atual. Reclassificar P01-Q01 para P02 mantém identidade/proveniência,
+exige versão-base, gera novo rascunho e preserva a elegível P01 até aprovação explícita.
+O relatório privado pode mostrar essas classificações distintas sem duplicar a questão.
+
+Comparações `x < y e y > z` são texto inerte válido. Detector estrutural comum bloqueia
+tags/atributos ativos/declarativos em vez de qualquer trecho entre < e >; não é um
+sanitizer nem promessa de detectar toda intenção semântica. Recursos mantêm hash/tipo/
+raízes e revisão editorial, React nunca interpreta HTML bruto.
+
+Launcher `main` usa `launch`: seleção inválida retorna código1 e JSON sanitizado de
+chave/código (`INVALID_SELECTED_ITEM`/`UNKNOWN_SELECTED_KEY`) **antes de conectar**;
+não ecoa mensagem/payload de pacote ou segredo. Prévia válida apresenta por chave as
+pendências de fonte, fundamentos legais e suspeitas, sem inventar correções/aprovações.
+Consulte arquivo local de extração para mensagens detalhadas de fonte, não stdout público.
+Conflito de base recebe STALE_BASE; erro técnico/desconhecido permanece genérico.
+Testes exercitam o caminho usado pelo main com stdout/stderr/código de saída e sentinelas
+privadas, PG isolado/reclassificação e positivos matemáticos versus negativos ativos.

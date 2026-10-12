@@ -1,10 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { catalog, emptyPage } from '../test/question-fixtures';
 
 for (const width of [390, 1280]) {
   test(`login opcional, falha e saída por teclado em ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 1000 });
     let connected = false;
     await page.route('**/api/v1/status', route => route.fulfill({ json: { status: 'UP' } }));
+    await page.route('**/api/v1/question-bank/**', route => route.fulfill({ json: route.request().url().endsWith('/catalog') ? catalog : emptyPage }));
     await page.route('**/api/v1/auth/config', route => route.fulfill({ json: { googleEnabled: true } }));
     await page.route('**/api/v1/me', route => route.fulfill({ status: connected ? 200 : 401,
       json: connected ? { id: '12345678-1234-1234-1234-123456789abc' } : { error: 'unauthenticated' } }));

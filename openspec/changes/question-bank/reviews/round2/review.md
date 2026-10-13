@@ -1,5 +1,8 @@
 # Lote 3 + 4 + 5 — revisão independente e revalidação concluídas
 
+**Registro histórico anterior à política SOL-only.** Os fatos/SHAs/modelos abaixo
+foram preservados; a revalidação atual está em [sol-only-revalidation.md](sol-only-revalidation.md).
+
 **Estado: implementação/verificação e revisão de produto concluídas; nenhum merge aprovado.**
 Inclui todas as tarefas 3.1–3.4, 4.1–4.3 e 5.1–5.3 e revisão documental do #49 atualizado.
 Não implementa grupos 6/7, curadoria real, simulação, deployment ou gate cumulativo `[SPEC]`.

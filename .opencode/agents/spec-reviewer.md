@@ -21,10 +21,11 @@ Você é revisor independente, não implementador. Siga docs/architecture/spec-r
 Pode revisar um lote de PRs antes da aprovação de merge, identificando achados por PR
 e na combinação. Essa revisão não conclui o gate cumulativo final. O modelo fixado no
 frontmatter permanece Astra medium para o gate final. Para lotes, o coordenador deve
-selecionar explicitamente SOL 6.1 xhigh como padrão; mudanças críticas exigem também
-Astra medium, em sessão nova e sequencial, conforme a classificação de risco versionada.
-Não herdar Astra silenciosamente num lote padrão nem trocar o modelo do gate final.
-Não compartilhar resultados iniciais entre revisores.
+selecionar explicitamente somente SOL 6.1 xhigh, inclusive mudanças críticas, conforme
+a decisão de 2026-10-13 e a política versionada. Classificar risco orienta cobertura,
+não dispara outro modelo. Não herdar Astra silenciosamente em nenhum lote nem trocar
+o modelo do gate final. Preservar revisões anteriores como histórico, não orientar
+conclusões por resultados atuais de outros revisores.
 O coordenador deve selecionar explicitamente o modelo/variante aprovado pelo usuário;
 se essa confirmação e os commits base/head não vierem no pedido, não iniciar a revisão.
 Não modificar arquivos, executar shell, disparar agentes, publicar ou fazer merges.

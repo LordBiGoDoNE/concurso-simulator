@@ -13,12 +13,14 @@ conclusão nem incluir dependências fora do escopo por iniciativa própria. Imp
 sem pausas por subtarefa, PRs em rascunho e nenhuma integração presumida permanecem.
 Ao fim da implementação,
 **antes de solicitar aprovação de merge**, um agente novo com
-`openai/gpt-6.1-sol#xhigh` revisa o conjunto por padrão. Em 2026-10-12, o usuário
-autorizou substituir a dupla revisão obrigatória de todo lote por revisão baseada em
-risco. **Mudanças críticas exigem também `openai/gpt-6-astra#medium`**, em outra sessão
-nova, sequencialmente e sem resultados compartilhados. Confirmar disponibilidade e
-modelo/variante efetivos; indisponibilidade bloqueia a revisão exigida, sem fallback
-silencioso. O gate cumulativo final permanece Astra medium, sem alteração.
+`openai/gpt-6.1-sol#xhigh` revisa o conjunto como **único revisor do lote**, inclusive
+mudanças críticas. Em 2026-10-13, o usuário retirou a verificação Astra dos lotes,
+substituindo a política baseada em risco de 2026-10-12. Não disparar Astra nem outro
+modelo automaticamente por risco, dúvida, revalidação ou medição. Confirmar
+disponibilidade e modelo/variante efetivos; indisponibilidade bloqueia a revisão,
+sem fallback silencioso. O gate cumulativo final permanece Astra medium, sem alteração.
+Revisões Astra já executadas permanecem histórico verdadeiro, não são apagadas nem
+reclassificadas como execuções SOL.
 
 #### Classificação de risco — registrar antes de disparar revisores
 
@@ -28,17 +30,20 @@ Registrar na issue/PR a classificação do lote, arquivos/regras afetadas e just
   persistência, schema/migrações, transações, travas, concorrência, rollback ou
   idempotência; invariantes de integridade/versionamento/elegibilidade editorial ou
   proteção contra exposição indevida de respostas; controles executáveis de CI/gate,
-  permissões ou deploy que protegem essas fronteiras. Exige SOL xhigh e Astra medium.
+  permissões ou deploy que protegem essas fronteiras. Exige cobertura explícita dessas
+  fronteiras pelo SOL xhigh e regressões/verificações adequadas, não segundo modelo.
 - **Padrão:** documentação/processo, evidências históricas ou alterações sem impacto
-  crítico demonstrado. Exige SOL xhigh, não dois modelos automaticamente. Classificar
+  crítico demonstrado. Exige SOL xhigh. Classificar
   pelo efeito real: extensão `.md`, tamanho do diff e CI verde não garantem baixo risco.
-- Se qualquer PR ou interação do lote for crítica, ambos examinam **o mesmo conjunto**,
-  incluindo os diffs completos por PR e a combinação. Dúvida na classificação adota
-  crítico; se SOL identificar impacto crítico inicialmente não reconhecido, registrar
-  a reclassificação e executar Astra antes de solicitar aprovação.
+- Se qualquer PR ou interação do lote for crítica, registrar o lote como crítico e
+  examinar **todo o conjunto**, incluindo diffs completos por PR e combinação. Dúvida
+  na classificação adota crítico; se SOL identificar impacto crítico inicialmente
+  não reconhecido, registrar a reclassificação e ampliar a cobertura/verificação
+  necessária antes de solicitar aprovação, sem disparar Astra.
 
-Revalidação mantém os revisores exigidos pelo risco do novo snapshot. Não rebaixar risco
-só para economizar cota nem dispensar Astra de mudança crítica sem nova autorização.
+Revalidação permanece somente SOL xhigh, com novo snapshot e conferência real do conjunto.
+Não rebaixar risco, omitir cobertura ou dispensar correção de bloqueador para economizar
+cota. Somente SOL não significa garantia de corretude nem flexibilização de CI/gates.
 
 Cada revisor recebe requisitos/padrões versionados, composição e bases/heads imutáveis,
 diffs completos por PR e combinação do lote; não recebe conversa/defesas do implementador
@@ -62,9 +67,10 @@ não há novo gate automático nem mudança de workflow/ruleset nesta decisão.
 Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem e
 consumo separado por modelo/coordenador: cota 5h/semanal antes/depois, com limites de
 atribuição, e tokens (entrada nova, cache read/write, saída, raciocínio reportado).
-Comparar achados comuns/exclusivos e consumo **somente quando ambos executarem**;
-com um revisor, registrar que comparação não foi realizada, não que o outro teve zero
-achados/consumo. Seguir [protocolo de cota](../review-quota.md); não somar raciocínio à
+Comparações históricas de achados comuns/exclusivos e consumo só são válidas quando
+ambos realmente executaram. Nos lotes SOL-only, registrar que comparação não foi
+realizada, não que outro modelo teve zero achados/consumo; não dispará-lo para comparar.
+Seguir [protocolo de cota](../review-quota.md); não somar raciocínio à
 saída nem converter tokens em consumo da assinatura. Extrapolações exigem amostra e
 hipóteses explícitas. Zero achados não prova equivalência nem garante economia futura.
 

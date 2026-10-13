@@ -10,18 +10,19 @@ Bloqueio real é reportado sem declarar conclusão ou ampliar escopo automaticam
 Revisões externas acontecem depois da implementação do lote e
 antes de pedir sua aprovação. [Procedimento](architecture/spec-review.md).
 
-## Política atual — revisão baseada em risco (2026-10-12)
+## Política atual — somente SOL nos lotes (2026-10-13)
 
-- SOL 6.1 xhigh é o revisor independente padrão dos lotes, incluindo PRs documentais
-  sem impacto crítico. Registrar classificação/justificativa antes do disparo.
-- Mudanças críticas exigem também Astra medium: segurança, concorrência,
-  persistência/integridade ou controles executáveis de proteção. Se qualquer PR ou
-  interação for crítico, ambos revisam o mesmo conjunto; dúvida exige dupla revisão.
-  O [procedimento](architecture/spec-review.md) detalha critérios e reclassificação.
+- Somente SOL 6.1 xhigh revisa os lotes, incluindo os críticos e documentais.
+  A decisão substitui a revisão dupla por risco de 2026-10-12. Registrar classificação/
+  justificativa antes do disparo; dúvida adota crítico, sem acionar outro modelo.
+- Segurança, concorrência, persistência/integridade e controles executáveis de proteção
+  exigem cobertura/regressões adequadas. SOL examina os diffs completos por PR e a
+  combinação, não um prefixo conveniente. O [procedimento](architecture/spec-review.md)
+  detalha critérios, reclassificação e limites, sem garantir corretude por revisão única.
 - O gate cumulativo final `[SPEC]` continua Astra medium. Revisão de lote não o substitui.
-- Medir antes/depois de cada revisor executado; dois revisores são sequenciais. Relatar
+- Medir antes/depois de cada revisão SOL executada. Relatar
   ao usuário variação de cota por janela/fase e seus limites, não custo financeiro.
-  Não disparar o segundo modelo só para medir nem inventar comparação em revisão única.
+  Não disparar segundo modelo por risco/medição nem inventar comparação em revisão única.
 - Triagem/correção/revalidação, diffs completos por PR/combinação, modelos sem fallback,
   autorização individual de merge e proibição de publicação/arquivamento presumidos
   permanecem. Esta decisão não inicia outra rodada nem reescreve revisões históricas.

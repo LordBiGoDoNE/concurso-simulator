@@ -2,8 +2,8 @@
   "version": 1,
   "spec": "question-bank",
   "batch": "groups-3-4-5",
-  "status": "revalidation-pending",
-  "triage_complete": false,
+  "status": "completed",
+  "triage_complete": true,
   "merge_authorized": false,
   "scope": ["3.1", "3.2", "3.3", "3.4", "4.1", "4.2", "4.3", "5.1", "5.2", "5.3"],
   "additional_documentary_pr": 49,
@@ -15,12 +15,12 @@
   },
   "base_sha": "0fb8fc2d11b33dd2edd8213454ddd46238909ce0",
   "current_snapshot": {
-    "head_sha": "1359a552e802982033bfe2c71d2ab436ecf058f7",
-    "diff_sha256": "c69ee2ce9bc85d786e041ebbb4e95ff19c7b78351f21ec0c15a4f2c8a2a1ed1e",
-    "captured_at": "2026-10-12T21:45:50.320579+00:00",
+    "head_sha": "872c8018ca96895a1ddd8d125198a0b79de6dbd7",
+    "diff_sha256": "ee7f05f87a87dff4f6d9fc0262b902c208ba4dd76818fe6d06ba328c3fd3a701",
+    "captured_at": "2026-10-13T12:26:42.036995+00:00",
     "kind": "local-combination-not-epic-integration",
-    "reviewed_by": [],
-    "pending": ["SOL-current-snapshot", "Astra-corrected-combination"]
+    "reviewed_by": ["openai/gpt-6.1-sol#xhigh", "openai/gpt-6-astra#medium"],
+    "pending": []
   },
   "digest_method": "SHA256 of git diff --binary base head bytes; captured by coordinator, not independently recalculated by reviewers. Batch digest, not final SPEC gate canonical digest.",
   "prs": [
@@ -93,8 +93,8 @@
       "base_ref": "task/question-bank/editorial-cli",
       "head_ref": "task/question-bank/local-review-fixes",
       "base_sha": "cc1dcb769272824fc464bcaf0347d37a029ade18",
-      "head_sha": "22bb26600ef2ffaff2b060d3c95ed186f83d1e6e",
-      "diff_sha256": "6a7ba4777da4dfc2cc563cc30aacc870dc4d64aad40f22679c96d60932ad9335"
+      "head_sha": "6f1117d4b079ec99f45b942ca66932b3f0fc8cea",
+      "diff_sha256": "c162921ba7e3b85b67eb517e5ae0984d063130335bab602437ecd33e0824c08a"
     },
     {
       "number": 60,
@@ -106,7 +106,7 @@
     }
   ],
   "checks": {
-    "captured_at": "2026-10-12T21:45:50.320579+00:00",
+    "captured_at": "2026-10-13T12:26:42.036995+00:00",
     "executed_by": "GitHub Actions; queried by coordinator",
     "pr_state": "all ten OPEN and draft",
     "names": ["backend", "frontend", "identity-browser", "spec-review-tests", "study-material"],
@@ -174,6 +174,58 @@
       "coverage": "Verified unchanged base/head/digests of eight original PRs against prior manifest and reused their examination. Read complete 162-line delta and both current corrective diffs, related code and combination interactions.",
       "result": "SOL-QB-01/02/03/04 resolved; SOL-QB-05 partially resolved, recommended. No blockers or distinct new cause.",
       "limitations": "No tests/shell/hash recalculation/live CI; captured PR60 identity-browser still in progress then. Later coordinator capture confirms success. No Astra findings received."
+    },
+    {
+      "phase": "revalidation-resume-SOL",
+      "model": "openai/gpt-6.1-sol#xhigh",
+      "session": "ses_ecef7938affeLGiC6phNdWmI7g",
+      "independent_context": true,
+      "status": "executed",
+      "completed_at": "2026-10-13T12:14:47.327Z",
+      "head_sha": "1359a552e802982033bfe2c71d2ab436ecf058f7",
+      "diff_sha256": "c69ee2ce9bc85d786e041ebbb4e95ff19c7b78351f21ec0c15a4f2c8a2a1ed1e",
+      "coverage": "Conferiu os identificadores dos dez PRs; somente #59 mudou desde seu último exame. Leu delta de 69 linhas e diff #59 de 449 linhas; reutilizou as nove partes imutáveis e conferiu contexto/interações do conjunto.",
+      "result": "Cinco achados próprios resolvidos; nenhum novo ou remanescente.",
+      "limitations": "Somente leitura; sem testes/hash/Git/CI ao vivo. Não recebeu relatórios atuais Astra nem leu PR61."
+    },
+    {
+      "phase": "revalidation-resume-Astra",
+      "model": "openai/gpt-6-astra#medium",
+      "session": "ses_ece0feb87ffexxwRcVBSehJfEU",
+      "independent_context": true,
+      "status": "executed",
+      "completed_at": "2026-10-13T12:20:48.434Z",
+      "head_sha": "1359a552e802982033bfe2c71d2ab436ecf058f7",
+      "diff_sha256": "c69ee2ce9bc85d786e041ebbb4e95ff19c7b78351f21ec0c15a4f2c8a2a1ed1e",
+      "coverage": "Reutilizou os oito heads originais após conferir identidade. Leu delta integral desde a inicial (607 linhas) e diffs completos #59/#60, código e requisitos relacionados para conferir o conjunto.",
+      "result": "ASTRA-01/02 resolvidos; ASTRA-03 parcialmente resolvido: origem duplicada/namespace incompatível ainda recebiam erro genérico.",
+      "limitations": "Manifesto inicial indisponível para comparação independente dos digests individuais antigos. Sem testes/hash/Git/CI ao vivo; sem relatório atual SOL/PR61/cota privada."
+    },
+    {
+      "phase": "revalidation-final-Astra",
+      "model": "openai/gpt-6-astra#medium",
+      "session": "ses_ece0feb87ffexxwRcVBSehJfEU",
+      "independent_context": true,
+      "status": "executed",
+      "completed_at": "2026-10-13T12:28:52.067Z",
+      "head_sha": "872c8018ca96895a1ddd8d125198a0b79de6dbd7",
+      "diff_sha256": "ee7f05f87a87dff4f6d9fc0262b902c208ba4dd76818fe6d06ba328c3fd3a701",
+      "coverage": "Conferiu base/head/digests iguais dos nove PRs imutáveis; leu delta integral de 68 linhas e #59 atualizado (484 linhas), leitor/launcher/sanitização/prévia/aplicação/testes e suas interações.",
+      "result": "Todos três achados próprios resolvidos; nenhum blocking/recommended/optional novo. Validação segue recusando antes do DB; inserção no mapa só após validar a origem.",
+      "limitations": "Sem testes/hash/Git/CI ao vivo. Sem resultados atuais SOL, PR61 ou cota privada. Não aprova merge/SPEC."
+    },
+    {
+      "phase": "revalidation-final-SOL",
+      "model": "openai/gpt-6.1-sol#xhigh",
+      "session": "ses_ecef7938affeLGiC6phNdWmI7g",
+      "independent_context": true,
+      "status": "executed",
+      "completed_at": "2026-10-13T12:35:19.329Z",
+      "head_sha": "872c8018ca96895a1ddd8d125198a0b79de6dbd7",
+      "diff_sha256": "ee7f05f87a87dff4f6d9fc0262b902c208ba4dd76818fe6d06ba328c3fd3a701",
+      "coverage": "Conferiu base/head/digests iguais dos nove PRs imutáveis; leu delta integral de 68 linhas, diff #59 de 484 linhas, trecho correspondente da combinação e código relacionado. Conferiu efeitos em relatório, seleção, recusa/atomicidade e privacidade, além dos cinco achados próprios.",
+      "result": "Cinco achados próprios resolvidos; nenhum blocking/recommended/optional novo ou remanescente no conjunto.",
+      "limitations": "Sem testes/hash/Git/CI ao vivo. Exposição incidental à documentação versionada que atribui a correção ao Astra e descreve a rejeição; não recebeu seus relatórios nem usou a atribuição como prova. Contextos separados não garantem cegamento completo."
     }
   ],
   "findings": [
@@ -184,7 +236,8 @@
       "evidence": "Underscore emphasis consumes formula indices; startsWith/slice truncates incomplete literal delimiters.",
       "reference": "Approved spec: Conteúdo seguro e acessível; tasks 5.1/5.3.",
       "impact": "DOM differs mathematically from exact approved revision.",
-      "resolution": "PR60 renders integral text; explicit textual emphasis from extraction. Exact DOM/unit/browser regressions. SOL confirmed at revalidation-2; Astra/current snapshot still pending."
+      "disposition": "fixed",
+      "resolution": "#60 preserva texto integral; extração explicita ênfase textual. Regressões de DOM/unit/browser. SOL e Astra confirmaram no snapshot final."
     },
     {
       "ids": ["SOL-QB-02"],
@@ -193,7 +246,8 @@
       "evidence": "Reader joins origin/provenance to new editorial topic; rejects stable-origin P01-Q01 reclassified to P02.",
       "reference": "Approved spec: Versões e alternativas estáveis; ADR0001 invariants.",
       "impact": "Legitimate editorial correction cannot preserve identity/history through CLI.",
-      "resolution": "PR59 validates historical-origin module independently; PG tests retain UUID/provenance/old eligible classification. SOL confirmed; current combination pending."
+      "disposition": "fixed",
+      "resolution": "#59 valida módulo histórico separado da classificação; PG preserva UUID/proveniência/classificação elegível antiga. SOL confirmou, e Astra conferiu a interação no conjunto final."
     },
     {
       "ids": ["SOL-QB-03"],
@@ -202,7 +256,8 @@
       "evidence": "Broad markup regex rejects x < y e y > z; first correction still rejected a < b > c / x < i > y.",
       "reference": "Approved spec: public consultation and Conteúdo seguro e acessível.",
       "impact": "Valid import rejected or eligible public page/detail becomes 503.",
-      "resolution": "PR59/60 identical shared structural detector with mathematical positives and active-markup negatives in CLI/HTTP. SOL revalidation-2 confirmed; Astra/current combination pending."
+      "disposition": "fixed",
+      "resolution": "#59/#60 compartilham detector idêntico, positivos matemáticos e negativos ativos CLI/HTTP. SOL confirmou; Astra conferiu a interação no conjunto final."
     },
     {
       "ids": ["SOL-QB-04", "ASTRA-01"],
@@ -211,7 +266,8 @@
       "evidence": "Allowlisted sup/sub concatenated generic children: 2 cubed becomes 23, H subscript 2 O becomes H2O without pending issue.",
       "reference": "Approved spec: Conteúdo seguro e acessível; tasks 3.1/3.2.",
       "impact": "Accepted conversion loses semantic structure before fingerprint/curation.",
-      "resolution": "PR59 explicit ^(...) / _(...) including nesting, synthetic reproduction/regression. No claimed loss in current real inventory. SOL confirmed; Astra/current combination pending."
+      "disposition": "fixed",
+      "resolution": "#59 explicita ^(...) / _(...), inclusive aninhamento; reprodução/regressão sintética. Sem alegar perda no inventário real. SOL e Astra confirmaram no snapshot final."
     },
     {
       "ids": ["SOL-QB-05", "ASTRA-03"],
@@ -220,26 +276,27 @@
       "evidence": "Launcher hides key-specific known errors and only prints issue counts; successive fixes missed invalid domain content, then VO decoding failures before per-item translation.",
       "reference": "Approved spec: Importação controlada e idempotente, invalid-package scenario; task3.3; ADR0001.",
       "impact": "Import safely refused, but operator lacks required per-item diagnosis.",
-      "resolution": "PR59 sanitized key/fixed-code JSON and per-key issue/legal/duplicate report; latest 22bb266 decodes typed items behind per-item boundary. Launcher regressions for empty statement/alternative/resolution, exit1, no DB or payload/credential exposure pass. Not yet reviewer-confirmed."
+      "disposition": "fixed",
+      "resolution": "#59 oferece chave/código sanitizados e relatório por item. 22bb266 cobre rejeições dos VOs durante conversão; 6f1117d cobre origem duplicada, namespace, ID fora/não candidato/origem ausente antes da inserção no mapa. Testes pelo launch exigem exit1 sem DB/stdout parcial/payload/credenciais. SOL e Astra confirmaram no mesmo snapshot final."
     }
   ],
   "verification": [
-    {"command": "./gradlew --no-daemon --console=plain build", "result": "PASS; 109 tests, 0 skipped/failures/errors; PG18.6 isolated. Latest CLI decoding change included.", "executed_by": "coordinator"},
+    {"command": "./gradlew --no-daemon --console=plain clean build", "result": "PASS; 110 testes, zero skips/falhas/erros; PG18.6 isolado, última correção de origem incluída.", "executed_by": "coordinator"},
     {"command": "npm test", "result": "PASS; 73 frontend tests.", "executed_by": "coordinator"},
     {"command": "python3 -B -m unittest discover -s scripts/tests -q", "result": "PASS; 33 Python tests; sources unchanged by latest delta.", "executed_by": "coordinator"},
     {"command": "npm run test:identity", "result": "PASS; 6 real identity/question scenarios, 390/1280px. Latest delta CLI/docs only; browser/frontend/server public sources unchanged.", "executed_by": "coordinator"},
-    {"command": "STUDY_ROOT=/tmp/opencode/question-bank-round2-study npm run test:e2e", "result": "PASS; 6 static/offline scenarios, study HTML sources unchanged.", "executed_by": "coordinator"},
+    {"command": "STUDY_ROOT=/tmp/opencode/question-bank-round2-resume-study npm run test:e2e", "result": "PASS; 6 cenários estáticos/offline, sem mudança de fontes HTML.", "executed_by": "coordinator"},
     {"command": "OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.14.1 validate --all --strict", "result": "PASS; 3 changes.", "executed_by": "coordinator"},
     {"command": "git diff --name-only base head -- '*.html' manifesto_v3.json catalogo_fontes_questoes.csv assets; inspect built jar entries", "result": "No lesson/manifest/CSV/asset changes; no fixture classes packaged.", "executed_by": "coordinator"}
   ],
   "quota_evidence": {
     "status": "measured-private-not-published",
     "method": "Actual before/after observations per model/phase, validated by scripts/review_quota.py; token fields from local OpenCode message API.",
-    "limitations": "No confirmed external account isolation; coordinator pauses generation during reviews. Reset-crossing failed attempt excluded from completed-review comparison. No token-to-subscription-price conversion or attribution guarantee.",
-    "decision": "Pending final revalidations; no additional dispatch while remaining margin insufficient. Resume only with fresh actual observation and confirmed model availability."
+    "limitations": "Isolamento externo não confirmado; coordenador sem geração durante revisões. Tentativa falha anterior/reset separados; interrupção de transporte antes do disparo Astra não tratada como revisão. Última revalidação SOL mudou horário de reset nas duas janelas e o comparador classificou reset-changed; não declarar delta válido. Sem conversão de tokens em preço/consumo da assinatura ou garantia de atribuição.",
+    "decision": "Revalidações de produto concluídas após observações novas e confirmação de modelos efetivos; evidências documentais #61 têm revisão própria, não substituem gateSPEC/decisão de merge."
   },
   "limitations": [
-    "Latest snapshot not yet reviewed by either model; Astra has not reviewed corrective PR59/60.",
+    "Exposição incidental SOL à atribuição da correção ao Astra em documentação versionada; relatórios não foram compartilhados, mas não se garante cegamento completo.",
     "Corrections at stack tops do not fix prior PR heads individually; no unsafe-prefix merge approval.",
     "Read-only reviewers did not execute tests or independently recalculate hashes/check remote CI.",
     "Local synthetic content/decisions are not real editorial approval; P05-Q01 remains invalid/inventoried.",

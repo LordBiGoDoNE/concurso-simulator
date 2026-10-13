@@ -1,6 +1,6 @@
-# Lote 3 + 4 + 5 — revisão independente e revalidação pendente
+# Lote 3 + 4 + 5 — revisão independente e revalidação concluídas
 
-**Estado: implementação/verificação completas; revisão final pendente. Nenhum merge aprovado.**
+**Estado: implementação/verificação e revisão de produto concluídas; nenhum merge aprovado.**
 Inclui todas as tarefas 3.1–3.4, 4.1–4.3 e 5.1–5.3 e revisão documental do #49 atualizado.
 Não implementa grupos 6/7, curadoria real, simulação, deployment ou gate cumulativo `[SPEC]`.
 No conjunto, 16/44 tarefas implementadas/verificadas; somente 6/44 integradas à épica.
@@ -46,24 +46,36 @@ pelos revisores, cujo perfil permite somente leitura.
 5. SOL revalidou `ede2f7e3cf886761f6c6c7d5eda04296cbd64ab6`: conferiu base/head/digests
    dos oito PRs inalterados, reutilizou esse exame, leu delta integral de 162 linhas,
    corretivos atuais e contexto/interações. Sem bloqueador; 1 recomendação remanescente.
-6. Última correção `22bb266` de diagnóstico de desserialização foi implementada/testada
-   **depois** dessa revalidação. Snapshot atual em review.json requer nova conferência
-   SOL e revalidação Astra do conjunto. Revisão inicial não certifica correções posteriores.
+6. Em 2026-10-13, SOL revalidou `1359a55`: nove partes imutáveis conferidas, delta completo
+   de 69 linhas e #59 (449 linhas); cinco achados próprios resolvidos. Astra revalidou
+   esse mesmo snapshot lendo delta desde inicial (607 linhas) e #59/#60 completos:
+   bloqueadores resolvidos, diagnóstico de origem duplicada/namespace ainda recomendado.
+7. Correção `6f1117d` acrescentou códigos/chaves de origem e regressão pelo launcher.
+   Ambos revalidaram o conjunto final `872c8018ca96895a1ddd8d125198a0b79de6dbd7`, digest
+   `ee7f05f87a87dff4f6d9fc0262b902c208ba4dd76818fe6d06ba328c3fd3a701`: conferiram
+   base/head/digests das nove partes imutáveis, leram delta completo de 68 linhas e
+   #59 atualizado (484 linhas), código/contexto/interações. Astra e depois SOL,
+   sequencialmente, **todos achados próprios resolvidos, nenhum novo/remanescente**.
+8. Limite de isolamento: SOL leu incidentalmente atribuição da correção ao Astra e
+   descrição da rejeição no próprio documento versionado. Não recebeu relatórios atuais
+   nem usou a atribuição como prova; isso limita cegamento completo e fica declarado.
+   Astra não recebeu os resultados atuais SOL. Nenhum revisor leu PR61 durante exame de produto.
 
 ## Achados, triagem e regressões
 
 | Causa | Revisores / severidade inicial | Correção / situação |
 | --- | --- | --- |
-| Parser da UI removia índices/underscores e delimitadores incompletos | SOL-QB-01 blocking; ASTRA-02 blocking | #60 exibe texto integral; SOL confirmou resolução. |
-| Leitor impedia reclassificar mantendo origem/proveniência | SOL-QB-02 blocking | #59 separa módulo histórico/classificação editorial; SOL confirmou resolução. |
-| Comparações matemáticas confundidas com markup | SOL-QB-03 blocking | #59/#60 detector estrutural; segunda revalidação SOL confirmou resolução, inclusive variáveis b/i. |
-| HTML sup/sub aceito com perda silenciosa | SOL-QB-04 recommended; ASTRA-01 blocking | #59 conserva expoentes/índices e aninhamento; SOL confirmou resolução. |
-| Diagnóstico da CLI genérico/sem chave | SOL-QB-05 recommended; ASTRA-03 recommended | #59 códigos/chaves sanitizados; casos durante desserialização corrigidos por último, revalidação pendente. |
+| Parser da UI removia índices/underscores e delimitadores incompletos | SOL-QB-01 blocking; ASTRA-02 blocking | #60 texto integral; SOL/Astra confirmaram no conjunto final. |
+| Leitor impedia reclassificar mantendo origem/proveniência | SOL-QB-02 blocking | #59 separa origem/classificação; SOL confirmou, Astra conferiu interação final. |
+| Comparações matemáticas confundidas com markup | SOL-QB-03 blocking | #59/#60 detector estrutural; SOL confirmou, Astra conferiu interação final. |
+| HTML sup/sub aceito com perda silenciosa | SOL-QB-04 recommended; ASTRA-01 blocking | #59 conserva estrutura/aninhamento; SOL/Astra confirmaram no conjunto final. |
+| Diagnóstico da CLI genérico/sem chave | SOL-QB-05 recommended; ASTRA-03 recommended | #59 cobre conversão/invariantes/origem; SOL/Astra confirmaram no conjunto final. |
 
-Todos os achados foram confirmados e tratados, não refutados ou adiados. "Tratado" é
-implementação/verificação do coordenador, **não resolução certificada no último head**.
-Não houve achado exclusivo adicional de Astra: confirmou independentemente três causas
-e classificou sup/sub como bloqueador. SOL identificou duas causas adicionais distintas.
+Todos os achados foram confirmados/corrigidos/revalidados, sem refutação ou adiamento;
+triagem de produto encerrada, **não aprovação do usuário**. Na inicial Astra confirmou
+três causas comuns e classificou sup/sub como bloqueador; SOL identificou duas causas
+adicionais distintas. Na revalidação Astra apontou o caso adicional de origem dentro
+da causa de diagnóstico, corrigido depois de SOL considerar seus próprios achados encerrados.
 Essa comparação deste lote não prova equivalência ou qualidade futura dos modelos.
 
 Negativos antes das correções reproduziram `sup/sub` → `23/H2O/x1n`, quatro perdas de
@@ -72,18 +84,23 @@ texto no DOM e recusa/503 de desigualdades. Positivos/regressões protegem texto
 ponteiro antigo, diagnóstico por item/exit1/stdout/stderr sem payload/credenciais.
 Casos finais enunciado/alternativa/resolução vazios passam pelo mesmo `launch` usado
 pelo main, antes da conexão; domínio continua dono das invariantes, sem duplicação.
+Também passaram casos de origem duplicada/namespace/ID fora/não candidato/ausente,
+com códigos fixos e chave sanitizada antes de inserir no mapa/abrir DB. O teste falhou
+antes do fix exibindo mensagem genérica de namespace; não se afirma que todos os cinco
+casos foram reproduzidos antes da correção, pois a primeira falha interrompeu o método.
 
 ## Verificações do coordenador e limites
 
-- Build + **109 testes backend**, PostgreSQL18.6 isolado, sem skips/falhas.
+- Clean build + **110 testes backend**, PostgreSQL18.6 isolado, sem skips/falhas.
 - **73 frontend**, **33 Python**, **6 browser reais identidade/questões**,
   **6 browser estáticos/offline** e **3 OpenSpec estritos** passaram, sem skips.
 - Browser real: 390/1280px, teclado/foco/rótulos/fórmulas/fontes, filtros após OIDC local,
   falha de transporte com aulas acessíveis, JSON/DOM/bundle sem dados corretivos.
 - JAR sem fixtures; nenhuma aula/manifesto/CSV/asset foi alterado.
 - Todos os checks dos dez heads de produto/processo atuais passaram na última consulta.
-- A última alteração é CLI/desserialização/docs; fontes de frontend/browser/Python são
-  as mesmas das últimas execuções completas. Backend completo reexecutado após ela.
+- Última alteração é CLI/origem/regressão/docs; clean build backend, frontend/Python,
+  browser real e strict reexecutados após ela. HTML e suíte offline não mudaram desde
+  a execução completa do mesmo dia. JAR sem fixtures e aulas intactas reconferidos.
 - Uma tentativa inválida de compilar e executar o harness Gradle simultaneamente causou
   disputa dos classfiles. Foi descartada como evidência; clean build sequencial passou.
   Não repetir paralelismo entre build backend e harness que recompila o mesmo diretório.
@@ -101,7 +118,10 @@ separados; correções/coordenador não atribuídos ao revisor. Tokens reais por
 obtidos da API local, sem somar raciocínio à saída ou converter em custo da assinatura.
 Percentuais/diagnósticos privados não publicados; números apresentados somente ao usuário.
 
-Revalidação final está suspensa por margem de cota insuficiente para arriscar nova
-execução Astra; não dispensada, substituída ou marcada concluída. Não pedir aprovação
-de merge até os dois revisores conferirem o snapshot atual e encerrar a triagem.
-Este registro não modifica os dois arquivos exclusivos do gate cumulativo final.
+Pausa anterior por cota foi encerrada após renovação e novas medições reais. Comparações
+iniciais/revalidações não atravessam reset; o comparador invalidou o último intervalo
+SOL porque ambos os resets mudaram. Essa observação não atesta consumo zero nem delta válido.
+Revisões de produto concluídas; registro #61 tem revisão documental própria de risco
+padrão (evidência histórica, sem controle executável/código/requisitos alterados), não
+certifica semântica adicional de produto nem o gate final. Sem aprovação explícita,
+nenhum PR é integrado. Não modificar os dois arquivos exclusivos do gate cumulativo final.

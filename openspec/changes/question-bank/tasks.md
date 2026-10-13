@@ -1,6 +1,6 @@
 # Tasks
 
-**Proposta aprovada no #31; rodada 1.2, 1.3 e 2.1–2.3 autorizada pelo usuário**, sem pausas entre tarefas e sem merges. Issue #30; `[x]` registra implementação/verificação na branch, **não aprovação/integração à épica**. PRs pequenos em draft; duas revisões independentes do lote (Astra medium e SOL 6.1 xhigh) ao fim da implementação, antes da aprovação de merge. Registro do processo: #39, sem integração presumida. Fixtures não aprovam conteúdo real; demais tarefas não iniciam automaticamente.
+**Proposta aprovada no #31; rodada inicial 1.2, 1.3 e 2.1–2.3 e lote atual dos grupos completos 3, 4 e 5 autorizados pelo usuário**, sem pausas por subtarefa e sem merges presumidos. Não há limite fixo de tarefas por lote; sem escopo explícito, listar pendências e perguntar quais grupos serão feitos antes de começar. Não encerrar num prefixo do grupo. Issue #30; `[x]` registra implementação/verificação na branch, **não aprovação/integração à épica**. A rodada inicial teve duas revisões independentes (Astra medium e SOL 6.1 xhigh), registradas historicamente. Política atual de 2026-10-13: somente SOL xhigh nos lotes, inclusive críticos, mantendo Astra medium no gate cumulativo final, conforme [procedimento](../../../docs/architecture/spec-review.md). PRs pequenos em draft; aprovação/merge explícitos continuam obrigatórios. Fixtures não aprovam conteúdo real; demais grupos não iniciam automaticamente.
 
 ## 1. Catálogo e domínio — grupo catalog-domain
 

@@ -1,10 +1,33 @@
 # Rodadas de implementação e revisão
 
-Decisão do usuário: entregar 5–10 tarefas por rodada, em PRs coesos, sem pausas por
-tarefa nem merges. Revisões externas acontecem depois da implementação do lote e
+Decisão atual do usuário: entregar os grupos completos escolhidos para cada lote,
+sem limite fixo de tarefas, em PRs coesos, sem pausas por subtarefa nem merges.
+Se o escopo não vier explícito, listar grupos/tarefas pendentes e perguntar quais serão
+feitos antes de começar. “Faça 3, 4 e 5” inclui todas as subtarefas desses três grupos;
+não encerrar em 3.3 deixando 3.4 para depois. PRs podem ser pequenos, mas o lote só
+termina com seus grupos inteiros implementados/testados/documentados/revisados.
+Bloqueio real é reportado sem declarar conclusão ou ampliar escopo automaticamente.
+Revisões externas acontecem depois da implementação do lote e
 antes de pedir sua aprovação. [Procedimento](architecture/spec-review.md).
 
-## Rodada inicial de question-bank
+## Política atual — somente SOL nos lotes (2026-10-13)
+
+- Somente SOL 6.1 xhigh revisa os lotes, incluindo os críticos e documentais.
+  A decisão substitui a revisão dupla por risco de 2026-10-12. Registrar classificação/
+  justificativa antes do disparo; dúvida adota crítico, sem acionar outro modelo.
+- Segurança, concorrência, persistência/integridade e controles executáveis de proteção
+  exigem cobertura/regressões adequadas. SOL examina os diffs completos por PR e a
+  combinação, não um prefixo conveniente. O [procedimento](architecture/spec-review.md)
+  detalha critérios, reclassificação e limites, sem garantir corretude por revisão única.
+- O gate cumulativo final `[SPEC]` continua Astra medium. Revisão de lote não o substitui.
+- Medir antes/depois de cada revisão SOL executada. Relatar
+  ao usuário variação de cota por janela/fase e seus limites, não custo financeiro.
+  Não disparar segundo modelo por risco/medição nem inventar comparação em revisão única.
+- Triagem/correção/revalidação, diffs completos por PR/combinação, modelos sem fallback,
+  autorização individual de merge e proibição de publicação/arquivamento presumidos
+  permanecem. Esta decisão não inicia outra rodada nem reescreve revisões históricas.
+
+## Histórico — rodada inicial de question-bank
 
 - Cinco tarefas novas: 1.2, 1.3, 2.1, 2.2, 2.3; dependência existente: #38 (1.1).
 - Usuário autorizou especificamente adotar #38 como camada inicial de stack nova,

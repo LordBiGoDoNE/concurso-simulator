@@ -1,9 +1,11 @@
 # Cota da assinatura ChatGPT/Codex nas revisões
 
-Decisão do usuário: preparar medição para os próximos lotes. Revisão independente com
-Astra medium e SOL 6.1 xhigh continua obrigatória antes do pedido de aprovação; para
-medir, executar **sequencialmente**, sem compartilhar resultados ou mudar seus snapshots.
-Não iniciar lote, revisão extra, merge ou publicação apenas para testar o consumo.
+Decisão atual do usuário (2026-10-13): somente SOL 6.1 xhigh revisa os lotes, inclusive
+mudanças críticas, conforme o [procedimento](architecture/spec-review.md). A política
+anterior de revisão dupla por risco foi substituída, sem apagar execuções históricas.
+O gate cumulativo final continua Astra medium. Medir cada revisão efetivamente
+executada; não disparar Astra/outro modelo nos lotes por risco ou para comparar consumo,
+nem iniciar lote, revisão extra, merge ou publicação apenas para testar a cota.
 
 Assinatura não é cobrança por token. Métrica principal: **pontos percentuais observados
 da cota da conta**, separando janelas 5h e semanal. Tokens são diagnóstico complementar;
@@ -12,8 +14,12 @@ O multiplicador de entrada nova da rodada 1 não é multiplicador de cota ou din
 
 ## Protocolo para cada lote solicitado
 
-1. Preparar diffs acessíveis dentro do workspace, bases/heads/digests fixos; confirmar
-   modelos/variantes. Alternar a ordem dos dois modelos entre lotes, registrando a ordem.
+1. Confirmar grupos completos escolhidos pelo usuário, sem limite fixo de tarefas;
+   sem escopo explícito, listar pendências e perguntar quais entram antes de implementar.
+   Preparar diffs acessíveis dentro do workspace, bases/heads/digests fixos; registrar
+   risco/justificativa e confirmar SOL xhigh efetivo, tanto em lote padrão como crítico.
+   Risco e reclassificação orientam cobertura/verificação, não outro modelo. Não iniciar
+   o gate final Astra como parte do lote ou como comparação de consumo.
 2. Conferir sessões locais ativas por `opencode api get /api/session/active`, sem assumir
    que isso detecta uso da mesma conta em outro dispositivo. Solicitar que outros usos
    pausem durante a medição. Se não for possível, declarar ausência de isolamento.
@@ -23,13 +29,18 @@ O multiplicador de entrada nova da rodada 1 não é multiplicador de cota ou din
 4. Executar o revisor sozinho; durante o intervalo, o coordenador não faz geração,
    correções nem disparo de outro agente. Após conclusão, consultar a cota novamente.
    Não esperar/pollar andamento de subagentes; usar notificação de conclusão do harness.
-5. Comparar observações, depois iniciar o outro revisor com snapshot próprio fresco.
-   A conta inclui qualquer overhead/coordenador no intervalo; não garantir atribuição
+5. Comparar o antes/depois da sessão SOL e encerrar a medição dessa revisão; não iniciar
+   segundo revisor. A conta inclui qualquer overhead/coordenador no intervalo; não garantir atribuição
    exata por modelo nem que a atualização do provedor esteja completa.
 6. Revalidação segue o mesmo protocolo, separada de revisão inicial. Correções/implementação
    e consumo do coordenador ficam em intervalos próprios, nunca no custo isolado do revisor.
 7. Registrar tokens reais por sessão/chamada como antes, sem somar raciocínio à saída.
-   Relatório reúne quota por fase/janela, tempo, achados comuns/adicionais e limitações.
+   Apresentar ao usuário quota por fase/janela, tempo, achados e limitações no fechamento,
+   sem deixar a medição somente nos artefatos locais. Comparação entre modelos e achados
+   comuns/adicionais só em comparações históricas nas quais ambos executaram; modelo
+   não executado é **não medido**, não consumo/achados zero. Dados privados não vão para issue/PR sem
+   autorização. Consumo alto ou falha de cota deve ser comunicado antes de novos disparos;
+   isso não autoriza trocar modelo ou dispensar revisão exigida.
 
 Não há endpoint de quota adivinhado, leitura de banco/credenciais ou configuração global
 neste PR. O coletor live continua a ferramenta disponível no harness; o script local
@@ -48,7 +59,7 @@ Somente resumo sanitizado autorizado pelo usuário pode ser anexado à issue/PR 
   "batch": "<lote>",
   "phase": "initial",
   "moment": "before",
-  "model": "openai/gpt-6-astra#medium",
+  "model": "openai/gpt-6.1-sol#xhigh",
   "session": "<sessão efetiva>",
   "observed_at": "<ISO-8601 com timezone>",
   "isolation_declared": false,

@@ -4,18 +4,57 @@
 
 ### Rodadas de implementação — antes da aprovação de merge
 
-O usuário aprovou lotes de 5–10 tarefas, com implementação sem pausas intermediárias,
-PRs pequenos em rascunho e nenhuma integração presumida. Ao fim da implementação,
-**antes de solicitar aprovação de merge**, dois agentes novos revisam o mesmo conjunto:
-`openai/gpt-6-astra#medium` e `openai/gpt-6.1-sol#xhigh`. Confirmar disponibilidade e
-modelo/variante efetivos; não fazer fallback silencioso. O segundo modelo é comparação
-autorizada, não substituição do Astra no gate final.
+O usuário define o lote por **grupos completos**, sem limite fixo de tarefas: “faça
+3, 4 e 5” inclui 3.1–3.4, 4.1–4.3 e 5.1–5.3 na spec question-bank. Se o pedido não
+informar escopo, listar os grupos/tarefas pendentes e perguntar quais entram antes de
+implementar. Não encerrar num prefixo de grupo; PRs pequenos/coerentes não autorizam
+deixar sua última subtarefa para outro lote. Comunicar bloqueios reais sem fingir
+conclusão nem incluir dependências fora do escopo por iniciativa própria. Implementação
+sem pausas por subtarefa, PRs em rascunho e nenhuma integração presumida permanecem.
+Ao fim da implementação,
+**antes de solicitar aprovação de merge**, um agente novo com
+`openai/gpt-6.1-sol#xhigh` revisa o conjunto como **único revisor do lote**, inclusive
+mudanças críticas. Em 2026-10-13, o usuário retirou a verificação Astra dos lotes,
+substituindo a política baseada em risco de 2026-10-12. Não disparar Astra nem outro
+modelo automaticamente por risco, dúvida, revalidação ou medição. Confirmar
+disponibilidade e modelo/variante efetivos; indisponibilidade bloqueia a revisão,
+sem fallback silencioso. O gate cumulativo final permanece Astra medium, sem alteração.
+Revisões Astra já executadas permanecem histórico verdadeiro, não são apagadas nem
+reclassificadas como execuções SOL.
+
+#### Classificação de risco — registrar antes de disparar revisores
+
+Registrar na issue/PR a classificação do lote, arquivos/regras afetadas e justificativa:
+
+- **Crítico:** alteração de autenticação/autorização, sessão/CSRF/OAuth/segredos;
+  persistência, schema/migrações, transações, travas, concorrência, rollback ou
+  idempotência; invariantes de integridade/versionamento/elegibilidade editorial ou
+  proteção contra exposição indevida de respostas; controles executáveis de CI/gate,
+  permissões ou deploy que protegem essas fronteiras. Exige cobertura explícita dessas
+  fronteiras pelo SOL xhigh e regressões/verificações adequadas, não segundo modelo.
+- **Padrão:** documentação/processo, evidências históricas ou alterações sem impacto
+  crítico demonstrado. Exige SOL xhigh. Classificar
+  pelo efeito real: extensão `.md`, tamanho do diff e CI verde não garantem baixo risco.
+- Se qualquer PR ou interação do lote for crítica, registrar o lote como crítico e
+  examinar **todo o conjunto**, incluindo diffs completos por PR e combinação. Dúvida
+  na classificação adota crítico; se SOL identificar impacto crítico inicialmente
+  não reconhecido, registrar a reclassificação e ampliar a cobertura/verificação
+  necessária antes de solicitar aprovação, sem disparar Astra.
+
+Revalidação permanece somente SOL xhigh, com novo snapshot e conferência real do conjunto.
+Não rebaixar risco, omitir cobertura ou dispensar correção de bloqueador para economizar
+cota. Somente SOL não significa garantia de corretude nem flexibilização de CI/gates.
 
 Cada revisor recebe requisitos/padrões versionados, composição e bases/heads imutáveis,
 diffs completos por PR e combinação do lote; não recebe conversa/defesas do implementador
 ou resultado do outro revisor. Reportar achados por PR e interações entre camadas,
 cobertura/limites e testes não executados. Não exigir tarefas fora do lote antecipadamente.
 Aplicar as mesmas regras de triagem, correção e revalidação descritas abaixo.
+
+Em PR cujo objeto é registrar evidências históricas, o perfil pode ler os relatórios e
+registros do próprio diff para revisão **documental**, não para atestar a corretude do
+produto. Registrar a exposição incidental a achados históricos; não compartilhar
+resultados dos revisores atuais. Essa exceção não relaxa o isolamento do gate final.
 
 Registrar evidência por lote em `openspec/changes/<spec>/reviews/<lote>/`, separando
 relatórios/modelos/sessões, composição/digests, triagem e verificação do coordenador.
@@ -25,11 +64,15 @@ ou diff relevante invalidam a revisão do lote; relatórios isolados de evidênc
 autorizam alterar código sem revalidação. O check de tarefa continua `spec-review-tests`,
 não há novo gate automático nem mudança de workflow/ruleset nesta decisão.
 
-Apresentar relatório único com PRs/SHAs/checks, achados comuns/exclusivos e consumo real
-separado por modelo/coordenador (entrada nova, cache read/write, saída, raciocínio
-reportado). Não somar raciocínio à saída por inferência nem estimar por quota. Extrapolações
-de próximas rodadas devem indicar amostra/hipóteses; gasto financeiro só com preço confiável.
-Zero achados não prova equivalência dos modelos nem garante economia futura.
+Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem e
+consumo separado por modelo/coordenador: cota 5h/semanal antes/depois, com limites de
+atribuição, e tokens (entrada nova, cache read/write, saída, raciocínio reportado).
+Comparações históricas de achados comuns/exclusivos e consumo só são válidas quando
+ambos realmente executaram. Nos lotes SOL-only, registrar que comparação não foi
+realizada, não que outro modelo teve zero achados/consumo; não dispará-lo para comparar.
+Seguir [protocolo de cota](../review-quota.md); não somar raciocínio à
+saída nem converter tokens em consumo da assinatura. Extrapolações exigem amostra e
+hipóteses explícitas. Zero achados não prova equivalência nem garante economia futura.
 
 Aprovação do conjunto exige a lista explícita dos PRs/heads; não implica merges automáticos,
 aprovação editorial de conteúdo real, publicação ou arquivamento. Não iniciar outra rodada

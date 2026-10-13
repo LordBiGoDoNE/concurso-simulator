@@ -64,9 +64,13 @@ public final class QuestionPackageReader {
             Item item;
             try { item=json.treeToValue(node,Item.class); }
             catch (RuntimeException error) { throw diagnostic(diagnosticKey,"INVALID_ITEM_STRUCTURE"); }
-            if (!"legacy-v3".equals(item.origin().namespace()) || items.put(item.origin().key(), item) != null
-                    || !inventory.containsKey(item.origin().key()) || !"candidate".equals(inventory.get(item.origin().key()).status()))
-                throw new IllegalArgumentException("Origem/ID repetido ou fora do inventário");
+            if (item==null || item.origin()==null) throw diagnostic(diagnosticKey,"MISSING_ORIGIN");
+            var key=item.origin().key();
+            if (!"legacy-v3".equals(item.origin().namespace())) throw diagnostic(key,"ORIGIN_NAMESPACE_MISMATCH");
+            if (items.containsKey(key)) throw diagnostic(key,"DUPLICATE_ORIGIN");
+            if (!inventory.containsKey(key)) throw diagnostic(key,"ORIGIN_NOT_IN_INVENTORY");
+            if (!"candidate".equals(inventory.get(key).status())) throw diagnostic(key,"ORIGIN_NOT_CANDIDATE");
+            items.put(key,item);
         }
         var selected = new ArrayList<Candidate>();
         var invalid = keys.stream().sorted().filter(key -> !items.containsKey(key) || !"candidate".equals(inventory.get(key).status())

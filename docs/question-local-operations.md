@@ -124,3 +124,11 @@ campo desconhecido) têm chave sanitizada e INVALID_ITEM_STRUCTURE. Não interpr
 mensagens de exceção nem replicar invariantes. JSON sintaticamente inválido/arquivo ilegível,
 em que a chave não é confiável, permanece erro genérico. Regressores passam pelo launch
 com banco inacessível e exigem diagnóstico/exit1 antes de conectar, sem exposição privada.
+
+A revalidação Astra encontrou rejeições conhecidas de origem que ainda escapavam para
+erro genérico. Namespace incompatível, chave duplicada/fora do inventário e origem não
+candidata agora recebem respectivamente ORIGIN_NAMESPACE_MISMATCH, DUPLICATE_ORIGIN,
+ORIGIN_NOT_IN_INVENTORY e ORIGIN_NOT_CANDIDATE, com chave sanitizada; origem ausente recebe
+MISSING_ORIGIN/INVALID_KEY. Não ecoar namespace/payload/exception: códigos fixos identificam
+o problema e o operador confere seu pacote local. Regressão pelo launch reproduziu o
+erro genérico antes da correção e exige diagnóstico sem DB/saída parcial/credenciais.

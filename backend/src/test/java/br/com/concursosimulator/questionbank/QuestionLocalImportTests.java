@@ -163,6 +163,26 @@ class QuestionLocalImportTests {
             assertThat(out.size()).isZero();assertThat(err.toString()).contains("P01-Q01","INVALID_ITEM_STRUCTURE").doesNotContain("PRIVATE_","secret","jdbc:");
         }
     }
+    @Test void launcherDiagnosesKnownOriginFailuresBeforeDatabaseAccess() throws Exception {
+        var file=fixturePackage();var baseline=Files.readString(file);
+        var env=Map.of("DB_URL","jdbc:postgresql://127.0.0.1:1/unreachable","DB_USERNAME","fixture","DB_PASSWORD","PRIVATE_PASSWORD_SENTINEL");
+        var cases=Map.of("duplicate","DUPLICATE_ORIGIN","namespace","ORIGIN_NAMESPACE_MISMATCH",
+                "outside","ORIGIN_NOT_IN_INVENTORY","invalid","ORIGIN_NOT_CANDIDATE","missing","MISSING_ORIGIN");
+        for(var entry:cases.entrySet()) {
+            var tree=(ObjectNode)JSON.readTree(baseline);var items=(ArrayNode)tree.get("items");var item=(ObjectNode)items.get(0);
+            var key="P01-Q01";
+            switch(entry.getKey()) {
+                case "duplicate" -> items.add(item.deepCopy());
+                case "namespace" -> ((ObjectNode)item.get("origin")).put("namespace","PRIVATE_NAMESPACE_SENTINEL");
+                case "outside" -> { key="P01-Q99";((ObjectNode)item.get("origin")).put("key",key); }
+                case "invalid" -> { key="P05-Q01";((ObjectNode)item.get("origin")).put("key",key); }
+                case "missing" -> { key="INVALID_KEY";item.putNull("origin"); }
+            }
+            Files.writeString(file,JSON.writeValueAsString(tree));var out=new ByteArrayOutputStream();var err=new ByteArrayOutputStream();
+            assertThat(QuestionBankLocal.launch(args("import",file,"P01-Q01"),env,new BufferedReader(new StringReader("")),new PrintStream(out),new PrintStream(err))).isEqualTo(1);
+            assertThat(out.size()).isZero();assertThat(err.toString()).as(entry.getKey()).contains(key,entry.getValue()).doesNotContain("PRIVATE_","jdbc:");
+        }
+    }
     @Test void reclassificationKeepsIdentityProvenanceAndOldEligibleClassificationUntilApproval() throws Exception {
         try(var db=new QuestionDatabase(POSTGRES)) {
             var file=fixturePackage();var selected=new QuestionPackageReader().read(file,ROOT,Set.of("P01-Q01"));

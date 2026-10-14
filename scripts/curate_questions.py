@@ -126,7 +126,7 @@ def write_outputs(root, output, verify=True):
     output.mkdir(parents=True, exist_ok=True)
     (output / "packages").mkdir(exist_ok=True)
     def write(path, value):
-        path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+        path.write_text(json.dumps(value, ensure_ascii=False, indent=2) + "\n", encoding="utf-8", newline="\n")
     for batch in batches:
         write(output / "packages" / (batch["id"] + ".json"), batch["package"])
     write(output / "review-records.json", records)
@@ -154,7 +154,7 @@ def write_outputs(root, output, verify=True):
                       f"Fingerprint: `{item['fingerprint']}`.", ""]
             lines += [f"- [{r['name']}]({r['url']})" + (f" — {r['legalBasis']['provision']}; consulta {r['legalBasis']['checkedOn']}" if r["legalBasis"] else "") for r in content["references"]]
             lines += [""]
-    (output / "review.md").write_text("\n".join(lines), encoding="utf-8")
+    (output / "review.md").write_text("\n".join(lines), encoding="utf-8", newline="\n")
     return coverage
 
 

@@ -1,5 +1,13 @@
 # Tasks
 
+**Retomada em 2026-10-14:** usuário solicitou os grupos **6 e 7 completos**
+(6.1–6.25 e 7.1–7.3). Preparação editorial e verificações estão na branch
+`task/question-bank/initial-curation`; registros em `editorial/question-bank/2026-10/`.
+As caixas de 6/7 permanecem pendentes até cumprir todos os critérios. Aprovação
+editorial persistida das 250 revisões em banco isolado foi bloqueada pelo controle
+automático de aprovação, que exige autorização operacional explícita; não executada.
+Não houve aprovação fictícia, merge, publicação ou conclusão antecipada da spec.
+
 **Proposta aprovada no #31; rodada inicial 1.2, 1.3 e 2.1–2.3 e lote atual dos grupos completos 3, 4 e 5 autorizados pelo usuário**, sem pausas por subtarefa e sem merges presumidos. Não há limite fixo de tarefas por lote; sem escopo explícito, listar pendências e perguntar quais grupos serão feitos antes de começar. Não encerrar num prefixo do grupo. Issue #30; `[x]` registra implementação/verificação na branch, **não aprovação/integração à épica**. A rodada inicial teve duas revisões independentes (Astra medium e SOL 6.1 xhigh), registradas historicamente. Política atual de 2026-10-13: somente SOL xhigh nos lotes, inclusive críticos, mantendo Astra medium no gate cumulativo final, conforme [procedimento](../../../docs/architecture/spec-review.md). PRs pequenos em draft; aprovação/merge explícitos continuam obrigatórios. Fixtures não aprovam conteúdo real; demais grupos não iniciam automaticamente.
 
 ## 1. Catálogo e domínio — grupo catalog-domain

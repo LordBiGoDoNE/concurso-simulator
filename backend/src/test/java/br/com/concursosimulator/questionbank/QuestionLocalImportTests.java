@@ -29,7 +29,8 @@ class QuestionLocalImportTests {
     static byte[] extracted;
     @BeforeAll static void extractPythonPackage() throws Exception {
         var file = TEMP.resolve("extracted.json");
-        var process = new ProcessBuilder("python3", "-B", "scripts/extract_questions.py", "--root", ".")
+        var python = System.getProperty("os.name").startsWith("Windows") ? "python" : "python3";
+        var process = new ProcessBuilder(python, "-B", "scripts/extract_questions.py", "--root", ".")
                 .directory(ROOT.toFile()).redirectOutput(file.toFile()).redirectError(ProcessBuilder.Redirect.INHERIT).start();
         assertThat(process.waitFor()).isZero(); extracted = Files.readAllBytes(file);
     }

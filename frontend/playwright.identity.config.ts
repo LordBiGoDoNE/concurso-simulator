@@ -8,7 +8,9 @@ export default defineConfig({
   use: { baseURL: 'http://127.0.0.1:5173', browserName: 'chromium' },
   webServer: [
     {
-      command: '../backend/gradlew -p ../backend --no-daemon --console=plain identityBrowserFixture',
+      command: process.platform === 'win32'
+        ? '..\\backend\\gradlew.bat -p ../backend --no-daemon --console=plain identityBrowserFixture'
+        : '../backend/gradlew -p ../backend --no-daemon --console=plain identityBrowserFixture',
       url: 'http://127.0.0.1:18080/api/v1/status',
       timeout: 180000,
       reuseExistingServer: false,

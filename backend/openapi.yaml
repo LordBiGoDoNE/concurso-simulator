@@ -98,7 +98,161 @@ paths:
                 required: [googleEnabled]
                 properties:
                   googleEnabled: {type: boolean}
+  /api/v1/question-bank/catalog:
+    get:
+      summary: Consultar catálogo público fixo de Limeira 01/2026, sem sessão
+      security: []
+      responses:
+        '200':
+          description: Catálogo; Cache-Control no-store
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionCatalog'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+  /api/v1/question-bank/questions:
+    get:
+      summary: Listar revisões correntes elegíveis; filtros AND, ordem fixa por UUID
+      security: []
+      parameters:
+        - {in: query, name: disciplineId, schema: {type: string, enum: [portugues, matematica-raciocinio, informatica, conhecimentos-administrativos, conhecimentos-escolares]}}
+        - {in: query, name: topicId, schema: {type: string, pattern: '^[PMIAS][0-9]{2}$'}}
+        - {in: query, name: roleId, schema: {type: string, enum: [assistente-administrativo, secretario-de-escola]}}
+        - {in: query, name: page, schema: {type: integer, minimum: 0, default: 0}}
+        - {in: query, name: size, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
+      responses:
+        '200':
+          description: Página, inclusive vazia; sem alternativas/respostas/resoluções; no-store
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionPage'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/question-bank/questions/{questionId}:
+    get:
+      summary: Ler somente revisão elegível atual; sem acesso a rascunhos/versões antigas
+      security: []
+      parameters:
+        - {in: path, name: questionId, required: true, schema: {type: string, format: uuid}}
+      responses:
+        '200':
+          description: Texto acessível/opções/fontes; sem dados corretivos ou caminhos de gabarito; no-store
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionDetail'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '404':
+          description: ID desconhecido ou não elegível, indistinguíveis
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [error]
+                properties: {error: {type: string, const: not_found}}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
 components:
+  responses:
+    QuestionInvalid:
+      description: UUID/filtro/paginação/parâmetro desconhecido, vazio ou repetido; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: invalid_request}}
+    QuestionUnavailable:
+      description: Indisponibilidade/conteúdo incompatível; não é acervo vazio; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: unavailable}}
+  schemas:
+    QuestionNamed:
+      type: object
+      additionalProperties: false
+      required: [id, title]
+      properties: {id: {type: string}, title: {type: string}}
+    QuestionTopic:
+      type: object
+      additionalProperties: false
+      required: [id, disciplineId, title]
+      properties: {id: {type: string}, disciplineId: {type: string}, title: {type: string}}
+    QuestionCatalog:
+      type: object
+      additionalProperties: false
+      required: [contestId, disciplines, topics, roles]
+      properties:
+        contestId: {type: string, const: limeira-01-2026}
+        disciplines: {type: array, items: {$ref: '#/components/schemas/QuestionNamed'}}
+        topics: {type: array, items: {$ref: '#/components/schemas/QuestionTopic'}}
+        roles: {type: array, items: {$ref: '#/components/schemas/QuestionNamed'}}
+    QuestionClassification:
+      type: object
+      additionalProperties: false
+      required: [disciplineId, topicId, roleIds]
+      properties:
+        disciplineId: {type: string}
+        topicId: {type: string}
+        roleIds: {type: array, uniqueItems: true, items: {type: string}}
+    QuestionResource:
+      type: object
+      additionalProperties: false
+      required: [path, mediaType, sha256, description]
+      properties:
+        path: {type: string, pattern: '^assets/'}
+        mediaType: {type: string, enum: [image/png, image/jpeg, image/svg+xml]}
+        sha256: {type: string, pattern: '^[0-9a-f]{64}$'}
+        description: {type: string}
+    QuestionText:
+      type: object
+      additionalProperties: false
+      required: [text, resources]
+      properties:
+        text: {type: string}
+        resources: {type: array, items: {$ref: '#/components/schemas/QuestionResource'}}
+    QuestionSummary:
+      type: object
+      additionalProperties: false
+      required: [questionId, revisionId, classification, statementStart]
+      properties:
+        questionId: {type: string, format: uuid}
+        revisionId: {type: string, format: uuid}
+        classification: {$ref: '#/components/schemas/QuestionClassification'}
+        statementStart: {type: string, maxLength: 240}
+    QuestionPage:
+      type: object
+      additionalProperties: false
+      required: [items, page, size, total]
+      properties:
+        items: {type: array, items: {$ref: '#/components/schemas/QuestionSummary'}}
+        page: {type: integer, minimum: 0}
+        size: {type: integer, minimum: 1, maximum: 100}
+        total: {type: integer, minimum: 0}
+    QuestionAlternative:
+      type: object
+      additionalProperties: false
+      required: [id, content]
+      properties: {id: {type: string, format: uuid}, content: {$ref: '#/components/schemas/QuestionText'}}
+    QuestionReference:
+      type: object
+      additionalProperties: false
+      required: [name, url]
+      properties: {name: {type: string}, url: {type: string, format: uri}}
+    QuestionDetail:
+      type: object
+      additionalProperties: false
+      required: [questionId, revisionId, classification, statement, alternatives, references]
+      properties:
+        questionId: {type: string, format: uuid}
+        revisionId: {type: string, format: uuid}
+        classification: {$ref: '#/components/schemas/QuestionClassification'}
+        statement: {$ref: '#/components/schemas/QuestionText'}
+        alternatives: {type: array, minItems: 2, items: {$ref: '#/components/schemas/QuestionAlternative'}}
+        references: {type: array, minItems: 1, items: {$ref: '#/components/schemas/QuestionReference'}}
   securitySchemes:
     sessionCookie:
       type: apiKey

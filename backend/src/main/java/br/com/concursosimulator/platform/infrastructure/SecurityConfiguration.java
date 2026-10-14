@@ -1,6 +1,7 @@
 package br.com.concursosimulator.platform.infrastructure;
 
 import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.shared.infrastructure.PublicQuestionRoutes;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
@@ -75,6 +76,18 @@ public class SecurityConfiguration {
 
     @Bean
     @Order(3)
+    SecurityFilterChain publicQuestionsSecurityFilterChain(HttpSecurity http,ApiAccessFailureHandler failures) throws Exception {
+        return http.securityMatcher(PublicQuestionRoutes::owns).cors(Customizer.withDefaults())
+                .securityContext(context -> context.securityContextRepository(new NullSecurityContextRepository()))
+                .requestCache(cache -> cache.requestCache(new NullRequestCache()))
+                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .csrf(csrf -> csrf.disable()) // Essa cadeia só lê ou nega; logout/OIDC mantêm proteção própria.
+                .authorizeHttpRequests(auth -> auth.requestMatchers(PublicQuestionRoutes::permits).permitAll().anyRequest().denyAll())
+                .exceptionHandling(errors -> errors.authenticationEntryPoint(failures).accessDeniedHandler(failures)).build();
+    }
+
+    @Bean
+    @Order(4)
     SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository,
             GoogleLoginProperties google, ObjectProvider<ClientRegistrationRepository> registrations,
             GoogleLoginHandlers handlers, HttpSessionOAuth2AuthorizedClientRepository clients,
@@ -122,6 +135,9 @@ public class SecurityConfiguration {
         configuration.setAllowCredentials(false);
         var source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/api/v1/status", configuration);
+        source.registerCorsConfiguration("/api/v1/question-bank/catalog", configuration);
+        source.registerCorsConfiguration("/api/v1/question-bank/questions", configuration);
+        source.registerCorsConfiguration("/api/v1/question-bank/questions/*", configuration);
         var sessions = new CorsConfiguration(configuration);
         sessions.setAllowCredentials(true);
         sessions.setAllowedMethods(List.of("GET", "POST"));

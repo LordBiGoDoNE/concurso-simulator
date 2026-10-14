@@ -23,15 +23,15 @@
 
 ## 4. Consulta HTTP pública — grupo public-question-api, após 1–2
 
-- [ ] 4.1 Implementar catálogo/lista/detalhe filtrados, paginação/ordem e DTOs/OpenAPI; testesHTTP reais de400/404/200/vazio, filtrosAND e somente versão elegível, sem gabarito/resolução/estado privado ou entidadesJPA.
-- [ ] 4.2 Configurar fronteira de segurança/leitura semsessão para rotas exatas, incluindo negações e preflightCORS permitido; testar visitantes/autenticados/cookies conhecidos/desconhecidos, métodos/paths/gabaritos/escritas negados e ausência de efeitos; regressar ordem/registro/readiness/OIDC/CSRFlogout.
-- [ ] 4.3 Testar projeções deJSON/markup/recursos contra campos/indicadores da resposta, leitura direta de rascunho/retirada e indisponibilidade sem acervo vazio fictício; documentar diferença entre proteção da API e gabaritos públicos legados, com negativo controlado de vazamento.
+- [x] 4.1 Implementar catálogo/lista/detalhe filtrados, paginação/ordem e DTOs/OpenAPI; testesHTTP reais de400/404/200/vazio, filtrosAND e somente versão elegível, sem gabarito/resolução/estado privado ou entidadesJPA.
+- [x] 4.2 Configurar fronteira de segurança/leitura semsessão para rotas exatas, incluindo negações e preflightCORS permitido; testar visitantes/autenticados/cookies conhecidos/desconhecidos, métodos/paths/gabaritos/escritas negados e ausência de efeitos; regressar ordem/registro/readiness/OIDC/CSRFlogout.
+- [x] 4.3 Testar projeções deJSON/markup/recursos contra campos/indicadores da resposta, leitura direta de rascunho/retirada e indisponibilidade sem acervo vazio fictício; documentar diferença entre proteção da API e gabaritos públicos legados, com negativo controlado de vazamento.
 
 ## 5. Interface acessível — grupo question-browser, após 4
 
-- [ ] 5.1 Criar catálogo/filtros/paginação/lista/detalhe e estados carregando/vazio/erro, sem seleção de resposta/correção/histórico; testar consultas por visitante e mesmos filtros com usuário autenticado, mantendo LoginPanel e link das aulas.
-- [ ] 5.2 Aplicar prazo finito atéJSON e invalidação/cancelamento entre filtros; regressões determinísticas de resposta antiga, timeout/retry/abort, sem alterar os comportamentos corrigidos da identidade; documentar limites de consulta.
-- [ ] 5.3 Verificar teclado/foco/rótulos/fórmulas/fontes e layouts390/1280px comPlaywright; inspecionarDOM/bundle/recursos sem dados corretivos e APIindisponível com aulas acessíveis; atualizarREADME da interface.
+- [x] 5.1 Criar catálogo/filtros/paginação/lista/detalhe e estados carregando/vazio/erro, sem seleção de resposta/correção/histórico; testar consultas por visitante e mesmos filtros com usuário autenticado, mantendo LoginPanel e link das aulas.
+- [x] 5.2 Aplicar prazo finito atéJSON e invalidação/cancelamento entre filtros; regressões determinísticas de resposta antiga, timeout/retry/abort, sem alterar os comportamentos corrigidos da identidade; documentar limites de consulta.
+- [x] 5.3 Verificar teclado/foco/rótulos/fórmulas/fontes e layouts390/1280px comPlaywright; inspecionarDOM/bundle/recursos sem dados corretivos e APIindisponível com aulas acessíveis; atualizarREADME da interface.
 
 ## 6. Curadoria inicial — lotes pequenos após 3, paralelos a 4–5
 

@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import LoginPanel from './LoginPanel';
+import QuestionBrowser from './QuestionBrowser';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const materialUrl = import.meta.env.VITE_MATERIAL_URL || 'https://lordbigodone.github.io/concurso-simulator/';
@@ -32,6 +33,7 @@ export default function App() {
       <p>Continue aprendendo com as aulas, questões e resoluções do material de estudo.</p>
       <a className="material-link" href={materialUrl}>Acessar material de estudo</a>
       <LoginPanel />
+      <QuestionBrowser />
       <section aria-labelledby="application-title">
         <h2 id="application-title">Nova aplicação — ambiente local</h2>
         <p>A base técnica está em desenvolvimento. O material de estudo continua independente da aplicação.</p>

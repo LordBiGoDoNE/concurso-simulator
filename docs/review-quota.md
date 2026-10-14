@@ -7,6 +7,10 @@ O gate cumulativo final continua Astra medium. Medir cada revisão efetivamente
 executada; não disparar Astra/outro modelo nos lotes por risco ou para comparar consumo,
 nem iniciar lote, revisão extra, merge ou publicação apenas para testar a cota.
 
+Exceção temporária aprovada em 2026-10-14: gate question-bank #63 com SOL xhigh no
+Codex, Astra suspenso nessa validação. A tentativa Astra/OpenCode com 401 fica como
+falha sem parecer; medir a execução SOL separadamente, sem comparação fictícia.
+
 Assinatura não é cobrança por token. Métrica principal: **pontos percentuais observados
 da cota da conta**, separando janelas 5h e semanal. Tokens são diagnóstico complementar;
 preço de API, inclusive exibido por plugins, é no máximo equivalente hipotético, não fatura.

@@ -80,6 +80,12 @@ automaticamente. A primeira rodada autorizada é question-bank 1.2, 1.3, 2.1–2
 
 ### Integração final da spec
 
+**Exceção temporária de 2026-10-14:** por pedido explícito do usuário, o gate de
+question-bank #63 usa **SOL 6.1 xhigh no Codex**, com perfil atualizado, suspendendo
+Astra nesta validação. Substitui a seleção do passo 2 para esse gate, sem alterar
+cobertura, independência, triagem ou aprovação. Não restaurar Astra nem ampliar a
+exceção a outro gate automaticamente. Tentativa Astra anterior com 401 não é revisão.
+
 PRs de tarefas são revisados individualmente e integrados na épica da spec. Depois,
 `[SPEC] <Título>` propõe `epic/<spec>` → `epic/application-reformulation`. Este gate
 examina o conjunto, não uma nova implementação. CI verde e revisão de tarefas não
@@ -100,7 +106,9 @@ provam que as responsabilidades e a integração estão corretas.
 5. Revisor analisa responsabilidades, invariantes, dependências, integração, contratos,
    segurança, privacidade, persistência/concorrência/migrações, testes e regressões.
    Ele reporta, não edita/aprova merge. O coordenador executa testes necessários e
-   registra quem executou; neste perfil o revisor não tem shell nem ferramentas de escrita.
+   registra quem executou. OpenCode usa read/glob/grep, sem shell; no Codex são
+   permitidos comandos estritamente de leitura de código/commits/hashes. Sem testes,
+   build, aplicação, rede/DB ou escritas pelo revisor; orientação não é sandbox absoluto.
 6. Triar achados com o usuário: corrigir, refutar com evidência ou adiar melhoria não
    bloqueadora. Mudança arquitetural exige decisão, não alteração silenciosa de escopo.
    Ausência fundamentada de achados é válida. Não inventar complexidade/findings.

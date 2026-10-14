@@ -192,5 +192,36 @@ class ExtractionTests(unittest.TestCase):
             self.assertEqual(len(package['items']), len(baseline['items']) - 1)
             self.assertEqual((ROOT/module['conteudo']).read_text(), original)
 
+    def test_svg_attributes_use_inert_value_grammars_not_url_blacklist(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); (root/'assets').mkdir(); asset = root/'assets/fixture.svg'
+            image = Document('<img src="../assets/fixture.svg" alt="Figura sintética">').root.children[0]
+            for attr in (r'style="filter:u\72l(https://example.test/effects.svg#fx)"',
+                         r'style="filter:u\000072l(https://example.test/effects.svg#fx)"',
+                         r'fill="u\72l(https://example.test/paint.svg#p)"',
+                         r'stroke="u\72l(https://example.test/paint.svg#p)"',
+                         'style="fill:red"', 'filter="none"', 'fill="var(--paint)"',
+                         'href="https://example.test/remote.svg"', 'onclick="bad()"',
+                         'xml:base="https://example.test/"', 'width="calc(1 + 2)"',
+                         'id="x;filter:bad"', 'transform="translate(1);filter:bad"'):
+                with self.subTest(attr=attr):
+                    attrs = 'height="1" ' + attr if attr.startswith('width=') else 'width="1" height="1" ' + attr
+                    data = ('<svg xmlns="http://www.w3.org/2000/svg"><rect '+attrs+'/></svg>').encode()
+                    asset.write_bytes(data)
+                    with self.assertRaises(ValueError): image_resource(image, root, '01_Portugues/fixture.html')
+                    self.assertEqual(asset.read_bytes(), data)
+            for xml in ('<svg xmlns="http://www.w3.org/2000/svg" xmlns:x="https://example.test/ns"><x:rect/></svg>',
+                        '<svg xmlns="http://www.w3.org/2000/svg"><rect xmlns="https://example.test/ns"/></svg>'):
+                asset.write_text(xml)
+                with self.assertRaises(ValueError): image_resource(image, root, '01_Portugues/fixture.html')
+            xml = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 80" role="img" aria-labelledby="title desc">'
+                   '<title id="title">Figura</title><desc id="desc">Descrição</desc>'
+                   '<g transform="translate(1,2) scale(2)"><path d="M0 0 L6 3 L0 6 Z" fill="#16796d" stroke="black" stroke-width="1.5"/>'
+                   '<rect x="-1" y=".5" width="20px" height="30%" rx="2" fill="none" opacity=".5"/>'
+                   '<text x="1" y="2" font-family="Segoe UI, Arial, sans-serif" font-size="14" font-weight="700" text-anchor="middle">πr²</text>'
+                   '<polyline points="0,0 1,2 3,4" stroke-dasharray="1 2"/></g></svg>')
+            asset.write_text(xml)
+            self.assertEqual(image_resource(image, root, '01_Portugues/fixture.html')['sha256'], hashlib.sha256(asset.read_bytes()).hexdigest())
+
 
 if __name__ == '__main__': unittest.main()

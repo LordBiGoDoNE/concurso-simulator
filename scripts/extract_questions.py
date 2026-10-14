@@ -69,10 +69,37 @@ class Document(HTMLParser):
         return result
 
 
+SVG_NAMESPACE = "http://www.w3.org/2000/svg"
+SVG_NUMBER = r"[+-]?(?:[0-9]+(?:\.[0-9]*)?|\.[0-9]+)(?:[eE][+-]?[0-9]+)?"
+SVG_NUMBER_LIST = SVG_NUMBER + r"(?:[ ,\t\r\n]+" + SVG_NUMBER + r")*"
+SVG_IDENTIFIER = r"[A-Za-z_][A-Za-z0-9_.-]*"
+SVG_TRANSFORM = r"(?:matrix|translate|scale|rotate|skewX|skewY)\(" + SVG_NUMBER_LIST + r"\)"
+# Subconjunto sem CSS arbitrário, referências, escapes ou atributos desconhecidos.
+SVG_ATTRIBUTES = {name: SVG_NUMBER + r"(?:px|%)?" for name in
+                  "x y dx dy x1 y1 x2 y2 cx cy r rx ry width height refX refY markerWidth markerHeight font-size stroke-width stroke-dashoffset".split()}
+SVG_ATTRIBUTES.update({
+    "viewBox": SVG_NUMBER + (r"[ ,\t\r\n]+" + SVG_NUMBER) * 3,
+    "points": SVG_NUMBER_LIST, "d": r"[MmZzLlHhVvCcSsQqTtAa0-9eE+., \t\r\n-]+",
+    "transform": SVG_TRANSFORM + r"(?:[ ,\t\r\n]*" + SVG_TRANSFORM + r")*",
+    "id": SVG_IDENTIFIER, "aria-labelledby": SVG_IDENTIFIER + r"(?:[ \t]+" + SVG_IDENTIFIER + r")*",
+    "role": r"img", "fill": r"(?:#[0-9A-Fa-f]{3}|#[0-9A-Fa-f]{4}|#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{8}|(?i:none|currentColor|transparent|black|white|gray|grey|red|green|blue|yellow|orange|purple|pink|brown|cyan|magenta))",
+    "opacity": SVG_NUMBER, "fill-opacity": SVG_NUMBER, "stroke-opacity": SVG_NUMBER,
+    "stroke-dasharray": r"(?:none|" + SVG_NUMBER_LIST + r")",
+    "stroke-linecap": r"(?:butt|round|square)", "stroke-linejoin": r"(?:miter|round|bevel)",
+    "fill-rule": r"(?:nonzero|evenodd)", "font-family": r"[A-Za-z][A-Za-z0-9 ,_-]*",
+    "font-weight": r"(?:normal|bold|bolder|lighter|[1-9]00)", "font-style": r"(?:normal|italic|oblique)",
+    "text-anchor": r"(?:start|middle|end)", "dominant-baseline": r"(?:auto|middle|central|hanging|alphabetic)",
+    "orient": r"(?:auto|auto-start-reverse|" + SVG_NUMBER + r"(?:deg)?)"
+})
+SVG_ATTRIBUTES["stroke"] = SVG_ATTRIBUTES["fill"]
+
+
 class InertSvgTreeBuilder(ET.TreeBuilder):
     # Callbacks estruturais também veem PI fora da raiz e XML codificado em UTF-16.
     def pi(self, target, text): raise ValueError("SVG com instrução de processamento")
     def doctype(self, name, public_id, system_id): raise ValueError("SVG com entidades/DOCTYPE")
+    def start_ns(self, prefix, uri):
+        if uri != SVG_NAMESPACE: raise ValueError("Namespace SVG não permitido")
 
 
 def image_resource(node, root, source):
@@ -88,13 +115,15 @@ def image_resource(node, root, source):
     if extension in {"jpg", "jpeg"} and not data.startswith(b"\xff\xd8\xff"): raise ValueError("JPEG inválido")
     if extension == "svg":
         svg = ET.fromstring(data, parser=ET.XMLParser(target=InertSvgTreeBuilder()))
-        if svg.tag != "{http://www.w3.org/2000/svg}svg": raise ValueError("Raiz SVG inválida")
-        allowed = {"svg", "g", "path", "rect", "circle", "ellipse", "line", "polyline", "polygon", "text", "tspan", "title", "desc", "defs", "marker"}
+        if svg.tag != "{" + SVG_NAMESPACE + "}svg": raise ValueError("Raiz SVG inválida")
+        allowed = {"{" + SVG_NAMESPACE + "}" + tag for tag in
+                   {"svg", "g", "path", "rect", "circle", "ellipse", "line", "polyline", "polygon", "text", "tspan", "title", "desc", "defs", "marker"}}
         for element in svg.iter():
-            if element.tag.split("}")[-1] not in allowed: raise ValueError("SVG ativo/não permitido")
+            if element.tag not in allowed: raise ValueError("SVG ativo/não permitido")
             for attr, value in element.attrib.items():
-                if attr.split("}")[-1].lower().startswith("on") or re.search(r"href|url\s*\(|javascript:|data:", attr + value, re.I):
-                    raise ValueError("SVG com referência ativa")
+                pattern = SVG_ATTRIBUTES.get(attr)
+                if pattern is None or not re.fullmatch(pattern, value.strip(" \t\r\n"), flags=re.ASCII):
+                    raise ValueError("Atributo/valor SVG não permitido")
     alt = node.attrs.get("alt", "").strip()
     if not alt: raise ValueError("Imagem sem descrição acessível")
     return {"path": path, "mediaType": kinds[extension], "sha256": hashlib.sha256(data).hexdigest(), "description": alt}

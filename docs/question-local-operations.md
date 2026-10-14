@@ -153,3 +153,13 @@ inerte/SVG válido aceitos até a confirmação cancelada. Erros continuam receb
 UNSAFE_CONTENT sem detalhes privados ou stderr do parser; o listener local não recebe
 conexão. O extrator aplica a mesma regra estrutural; veja `question-extraction.md` para
 os limites dos recursos e a preservação de blocos auxiliares (SOL-S52-RV-02).
+
+SOL-S52-RV-03: o leitor aplica allowlist de atributos e gramáticas de valores SVG
+inertes; não depende mais de blacklist textual de url nem interpreta CSS escapado.
+Style/eventos/referências/atributos qualificados ou desconhecidos são rejeitados;
+geometria/texto/cores explícitas têm positivos de regressão. O launcher exercita
+escapes em style/fill/stroke, valores funcionais incompatíveis e namespaces estrangeiros
+em UTF-8/UTF-16, exigindo UNSAFE_CONTENT, System.err real vazio, ausência de stdout parcial
+e de conexão ao listener local. XML/PI/DTD/hash/proveniência continuam protegidos.
+O subset e os limites lexicais estão em `question-extraction.md`: não é sanitizer CSS,
+validador completo de geometria nem garantia sobre todos os consumidores de recursos.

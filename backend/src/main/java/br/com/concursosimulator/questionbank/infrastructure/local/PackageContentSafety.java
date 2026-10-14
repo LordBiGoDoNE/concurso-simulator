@@ -15,6 +15,33 @@ import org.xml.sax.SAXParseException;
 
 final class PackageContentSafety {
     private static final Pattern CORRECTIVE = Pattern.compile("gabarito|answer|correct|corret[ao]|resolu[cç][aã]o", Pattern.CASE_INSENSITIVE);
+    private static final String SVG_NAMESPACE = "http://www.w3.org/2000/svg";
+    private static final String SVG_NUMBER = "[+-]?(?:[0-9]+(?:\\.[0-9]*)?|\\.[0-9]+)(?:[eE][+-]?[0-9]+)?";
+    private static final String SVG_NUMBER_LIST = SVG_NUMBER + "(?:[ ,\\t\\r\\n]+" + SVG_NUMBER + ")*";
+    private static final String SVG_IDENTIFIER = "[A-Za-z_][A-Za-z0-9_.-]*";
+    private static final String SVG_TRANSFORM = "(?:matrix|translate|scale|rotate|skewX|skewY)\\(" + SVG_NUMBER_LIST + "\\)";
+    private static final java.util.Map<String,Pattern> SVG_ATTRIBUTES = svgAttributes();
+    private static java.util.Map<String,Pattern> svgAttributes() {
+        var rules = new java.util.HashMap<String,String>();
+        for (var name : "x y dx dy x1 y1 x2 y2 cx cy r rx ry width height refX refY markerWidth markerHeight font-size stroke-width stroke-dashoffset".split(" "))
+            rules.put(name, SVG_NUMBER + "(?:px|%)?");
+        rules.put("viewBox", SVG_NUMBER + ("[ ,\\t\\r\\n]+" + SVG_NUMBER).repeat(3));
+        rules.put("points", SVG_NUMBER_LIST); rules.put("d", "[MmZzLlHhVvCcSsQqTtAa0-9eE+., \\t\\r\\n-]+");
+        rules.put("transform", SVG_TRANSFORM + "(?:[ ,\\t\\r\\n]*" + SVG_TRANSFORM + ")*");
+        rules.put("id", SVG_IDENTIFIER); rules.put("aria-labelledby", SVG_IDENTIFIER + "(?:[ \\t]+" + SVG_IDENTIFIER + ")*");
+        rules.put("role", "img");
+        rules.put("fill", "(?:#[0-9A-Fa-f]{3}|#[0-9A-Fa-f]{4}|#[0-9A-Fa-f]{6}|#[0-9A-Fa-f]{8}|(?i:none|currentColor|transparent|black|white|gray|grey|red|green|blue|yellow|orange|purple|pink|brown|cyan|magenta))");
+        rules.put("stroke", rules.get("fill"));
+        for (var name : java.util.List.of("opacity", "fill-opacity", "stroke-opacity")) rules.put(name, SVG_NUMBER);
+        rules.put("stroke-dasharray", "(?:none|" + SVG_NUMBER_LIST + ")");
+        rules.put("stroke-linecap", "(?:butt|round|square)"); rules.put("stroke-linejoin", "(?:miter|round|bevel)");
+        rules.put("fill-rule", "(?:nonzero|evenodd)"); rules.put("font-family", "[A-Za-z][A-Za-z0-9 ,_-]*");
+        rules.put("font-weight", "(?:normal|bold|bolder|lighter|[1-9]00)"); rules.put("font-style", "(?:normal|italic|oblique)");
+        rules.put("text-anchor", "(?:start|middle|end)"); rules.put("dominant-baseline", "(?:auto|middle|central|hanging|alphabetic)");
+        rules.put("orient", "(?:auto|auto-start-reverse|" + SVG_NUMBER + "(?:deg)?)");
+        var patterns = new java.util.HashMap<String,Pattern>(); rules.forEach((name, regex) -> patterns.put(name, Pattern.compile(regex)));
+        return java.util.Map.copyOf(patterns);
+    }
     static void check(Path root, QuestionContent content) throws java.io.IOException {
         text(root, content.statement(), true);
         for (var option : content.alternatives()) text(root, option.content(), true);
@@ -60,11 +87,17 @@ final class PackageContentSafety {
             var nodes = document.getElementsByTagName("*");
             for (int i=0; i<nodes.getLength(); i++) {
                 var node = nodes.item(i);
-                if (!"http://www.w3.org/2000/svg".equals(node.getNamespaceURI()) || !tags.contains(node.getLocalName())) throw new IllegalArgumentException("SVG ativo/não permitido");
+                if (!SVG_NAMESPACE.equals(node.getNamespaceURI()) || !tags.contains(node.getLocalName())) throw new IllegalArgumentException("SVG ativo/não permitido");
                 var attrs = node.getAttributes();
                 for (int j=0; j<attrs.getLength(); j++) {
-                    var attr = attrs.item(j); var value = (attr.getNodeName() + attr.getNodeValue()).toLowerCase(java.util.Locale.ROOT);
-                    if (attr.getNodeName().toLowerCase(java.util.Locale.ROOT).startsWith("on") || value.matches("(?s).*?(href|url\\s*\\(|javascript:|data:).*")) throw new IllegalArgumentException("SVG ativo");
+                    var attr = attrs.item(j);
+                    if (javax.xml.XMLConstants.XMLNS_ATTRIBUTE_NS_URI.equals(attr.getNamespaceURI())) {
+                        if (!SVG_NAMESPACE.equals(attr.getNodeValue())) throw new IllegalArgumentException("Namespace SVG não permitido");
+                    } else {
+                        var pattern = SVG_ATTRIBUTES.get(attr.getNodeName());
+                        if (attr.getNamespaceURI() != null || pattern == null || !pattern.matcher(attr.getNodeValue().trim()).matches())
+                            throw new IllegalArgumentException("Atributo/valor SVG não permitido");
+                    }
                 }
             }
         } catch (Exception error) { throw new IllegalArgumentException("SVG recusado", error); }

@@ -76,3 +76,22 @@ pendência, mantém o ID no inventário e não produz candidato parcial. Variant
 precisam de conversão deliberada, não heurística permissiva por classe CSS.
 Fixtures verificam positivos conhecidos, negativos alterados e inventário completo em
 snapshot temporário; não modificam as aulas nem substituem conferência editorial.
+
+SOL-S52-RV-03: blacklist literal de `url` não reconhecia escapes CSS, como
+`filter:u\72l(...)`. Atributos SVG agora usam allowlist de **nome e gramática do valor**
+em Python e Java: coordenadas/dimensões numéricas (px/% restritos), listas numéricas,
+comandos de path, transformações numéricas, cores hex/nomes explícitos, identificadores
+e enums/tipografia restritos. Namespaces de elementos/declarados devem ser SVG;
+atributos qualificados não são aceitos. `style`, eventos, href, filtros, máscaras,
+marker-end/clip-path e atributos desconhecidos são recusados, não reinterpretados.
+CSS arbitrário/var/calc/escapes e referências (inclusive locais) não fazem parte desse
+subconjunto. Declarações de namespace SVG não são referências de recurso.
+
+Não tentar decodificar/sanitizar CSS nem remover atributos para aceitar parcialmente
+um desenho: recursos incompatíveis geram pendência/rejeição e exigem revisão deliberada.
+As gramáticas são uma restrição lexical inerte, não uma validação completa de geometria
+SVG, aridade de path/transform ou adequação visual/pedagógica. Os testes cobrem escapes
+em style/fill/stroke, atributos ativos/desconhecidos, namespace estrangeiro e positivos
+de formas/texto/cores/transformações; recursos permanecem byte a byte iguais.
+Essa regra afeta extração/importação de candidatos, não altera SVG/aulas do site estático
+nem aprova/publica recursos. O acervo original continua exigindo curadoria do grupo6.

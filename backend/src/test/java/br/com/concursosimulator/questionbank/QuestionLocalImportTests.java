@@ -197,21 +197,39 @@ class QuestionLocalImportTests {
         Files.createDirectories(root.resolve("assets"));
         var asset=root.resolve("assets/fixture.svg");
         var valid="<svg xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"1\" height=\"1\"/></svg>";
-        var cases=List.of(valid,
+        var rich="<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 80\" role=\"img\" aria-labelledby=\"title desc\">"
+                +"<title id=\"title\">Figura</title><desc id=\"desc\">Descrição</desc>"
+                +"<g transform=\"translate(1,2) scale(2)\"><path d=\"M0 0 L6 3 L0 6 Z\" fill=\"#16796d\" stroke=\"black\" stroke-width=\"1.5\"/>"
+                +"<rect x=\"-1\" y=\".5\" width=\"20px\" height=\"30%\" rx=\"2\" fill=\"none\" opacity=\".5\"/>"
+                +"<text x=\"1\" y=\"2\" font-family=\"Segoe UI, Arial, sans-serif\" font-size=\"14\" font-weight=\"700\" text-anchor=\"middle\">πr²</text>"
+                +"<polyline points=\"0,0 1,2 3,4\" stroke-dasharray=\"1 2\"/></g></svg>";
+        var validCases=List.of(valid,rich);
+        var cases=new ArrayList<>(List.of(valid,rich,
                 "<svg xmlns=\"http://www.w3.org/2000/svg\"><PRIVATE_SVG_SENTINEL></svg>",
                 "<svg xmlns=\"http://www.w3.org/2000/svg\">&PRIVATE_ENTITY_SENTINEL;</svg>",
                 "<!DOCTYPE svg [<!ENTITY private SYSTEM \"file:///PRIVATE_FILE_SENTINEL\">]><svg xmlns=\"http://www.w3.org/2000/svg\">&private;</svg>",
                 "<?xml-stylesheet type=\"text/css\" href=\"https://example.test/PRIVATE_STYLE_SENTINEL\"?>"+valid,
                 valid.replace("</svg>","<?xml-stylesheet href=\"https://example.test/PRIVATE_STYLE_SENTINEL\"?></svg>"),
                 valid+"<?xml-stylesheet href=\"https://example.test/PRIVATE_STYLE_SENTINEL\"?>",
-                "<?private PRIVATE_PI_SENTINEL?>"+valid);
+                "<?private PRIVATE_PI_SENTINEL?>"+valid));
+        for(var attr:List.of("style=\"filter:u\\72l(https://example.test/PRIVATE_STYLE_SENTINEL#fx)\"",
+                "style=\"filter:u\\000072l(https://example.test/PRIVATE_STYLE_SENTINEL#fx)\"",
+                "fill=\"u\\72l(https://example.test/PRIVATE_PAINT_SENTINEL#p)\"",
+                "stroke=\"u\\72l(https://example.test/PRIVATE_PAINT_SENTINEL#p)\"",
+                "style=\"fill:red\"", "filter=\"none\"", "fill=\"var(--paint)\"",
+                "href=\"https://example.test/PRIVATE_REMOTE_SENTINEL.svg\"", "onclick=\"bad()\"",
+                "xml:base=\"https://example.test/PRIVATE_BASE_SENTINEL\"", "id=\"x;filter:bad\"", "transform=\"translate(1);filter:bad\""))
+            cases.add(valid.replace("width=\"1\"","width=\"1\" "+attr));
+        cases.add(valid.replace("width=\"1\"","width=\"calc(1 + 2)\""));
+        cases.add("<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:x=\"https://example.test/ns\"><x:rect/></svg>");
+        cases.add("<svg xmlns=\"http://www.w3.org/2000/svg\"><rect xmlns=\"https://example.test/ns\"/></svg>");
         try(var destination=new java.net.ServerSocket(0,1,java.net.InetAddress.getLoopbackAddress())) {
             destination.setSoTimeout(200);
             var env=Map.of("DB_URL","jdbc:postgresql://localhost:"+destination.getLocalPort()+"/fixture",
                     "DB_USERNAME","fixture","DB_PASSWORD","PRIVATE_PASSWORD_SENTINEL");
             for(var svg:cases) for(var charset:List.of(java.nio.charset.StandardCharsets.UTF_8,java.nio.charset.StandardCharsets.UTF_16)) {
                 // A declaração XML não é PI; comentário com texto semelhante também é inerte.
-                var xml=svg.equals(valid)?"<?xml version=\"1.0\" encoding=\""+charset.name()+"\"?>"+svg.replace("</svg>","<!-- <?private benign text?> --></svg>"):svg;
+                var xml=validCases.contains(svg)?"<?xml version=\"1.0\" encoding=\""+charset.name()+"\"?>"+svg.replace("</svg>","<!-- <?private benign text?> --></svg>"):svg;
                 Files.write(asset,xml.getBytes(charset));
                 var tree=(ObjectNode)JSON.readTree(baseline);var item=(ObjectNode)tree.get("items").get(0);
                 var c=JSON.treeToValue(item.get("content"),QuestionPackageReader.Content.class);
@@ -231,7 +249,7 @@ class QuestionLocalImportTests {
                 }
                 assertThat(raw.toString(java.nio.charset.StandardCharsets.UTF_8)).isEmpty();
                 assertThat(err.toString()).doesNotContain("PRIVATE_","jdbc:","<svg","Fatal Error");
-                if(svg.equals(valid)) {
+                if(validCases.contains(svg)) {
                     assertThat(exit).isEqualTo(2);assertThat(err.size()).isZero();
                     assertThat(out.toString()).contains("Confirme digitando exatamente:","Cancelado, sem acesso ao banco.");
                 } else {

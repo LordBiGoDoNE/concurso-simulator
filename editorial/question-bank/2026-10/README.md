@@ -22,8 +22,9 @@ nos seis primeiros assuntos, com as substituições explícitas nas linhas JSONL
 São cobertos todos os 51 assuntos; nenhuma meta quantitativa aprova o restante.
 
 `P05-Q01` continua inválida no inventário original. Alertas textuais compartilhados
-não são fundidos: P07-Q02 é o único selecionado do seu grupo; os demais grupos de
-Português não são selecionados; A02-Q05/A06-Q01/A07-Q05 são selecionados e suas
+não são fundidos: P07-Q02 e P10-Q03 representam, cada uma, um grupo distinto de
+Português, sem outro representante selecionado; P10-Q03 foi reformulada explicitamente.
+A02-Q05/A06-Q01/A07-Q05 são selecionados e suas
 contrapartes escolares S06-Q01/S09-Q01/S10-Q02 não são. S07-Q03/Q04 também são
 substituídas para evitar repetir as perguntas S01-Q01/Q05; S10-Q07 substitui
 S10-Q01 para não repetir a pergunta de compartilhamento de senha S02-Q04.
@@ -82,7 +83,8 @@ Não são tarefas de startup ou CI. A operação editorial exige a CLI deliberad
 confirmações documentadas em `docs/question-local-operations.md`; nenhuma credencial
 de banco deve ir ao Git. Os testes automatizados continuam usando fixtures identificadas.
 
-Situação: grupos 6/7 implementados e verificados no PR #62 em rascunho; revalidação
-independente do conjunto final em andamento. Integração/merge e gate cumulativo da
+Situação: grupos 6/7 implementados e verificados no PR #62 em rascunho. O parecer
+independente e sua atualidade estão em `openspec/changes/question-bank/reviews/round3/final-review.md`.
+Integração/merge e gate cumulativo da
 spec exigem seus procedimentos próprios. Não inferir integração pela existência
 dos pacotes ou por aprovações editoriais no banco local.

@@ -99,7 +99,8 @@ Banco local não implica implantação da aplicação nem aprovação automátic
 ## Revisão independente e limites
 
 A revisão inicial SOL do head `3dc4389` não certifica automaticamente este delta.
-Risco crítico mantido; revalidação do conjunto final somente SOL 6.1 xhigh pendente.
+Risco crítico mantido; o parecer SOL 6.1 xhigh e os snapshots efetivamente revalidados
+estão em `final-review.md`. Este documento registra as verificações operacionais.
 Quadro de tarefas registra implementação/verificação, não aprovação/integração de PR.
 Gate cumulativo Astra medium, integração na épica geral, main e publicação da aplicação
 permanecem separados. Cota/tokens indisponíveis no harness; não inventar medição.

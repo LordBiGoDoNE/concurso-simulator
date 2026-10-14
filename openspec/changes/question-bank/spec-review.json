@@ -2,20 +2,41 @@
   "version": 1,
   "status": "pending",
   "spec": "question-bank",
-  "pr": null,
-  "base_sha": null,
+  "pr": 63,
+  "base_sha": "f72fcc5d9c92c326ad789e5cf72eef54665913cf",
   "reviewed_head_sha": null,
   "diff_sha256": null,
   "reviewer": {
-    "model": "openai/gpt-6-astra#medium",
+    "model": "openai/gpt-6.1-sol#xhigh",
     "session": null,
-    "independent_context": false
+    "independent_context": false,
+    "harness": "Codex",
+    "profile": "spec-reviewer-codex",
+    "profile_sha256": "378c0cd216842c048fb511b2043f2cbb168d84830e78db0b53ce38b5c1df863a"
   },
   "reviewed_at": null,
-  "review_phase": "proposal_awaiting_approval",
+  "review_phase": "integration_review_pending_sol_codex",
+  "candidate_snapshot": {
+    "base_sha": "f72fcc5d9c92c326ad789e5cf72eef54665913cf",
+    "reviewed_head_sha": "28932edf719e4df9399944c00f831f6a80387f92",
+    "diff_sha256": "4cf769cf0c3cd97ba62acb8dbd6979f24e42e5b41f81feb8001a8409df5dc537"
+  },
   "coverage": {},
-  "limitations": ["Somente planejamento; implementação e revisão cumulativa ainda não executadas. Modelo registrado é a escolha aprovada, não uma sessão efetiva."],
+  "limitations": [
+    "As 44 tarefas foram integradas na epica da spec; a revisao cumulativa final continua pendente ate execucao real.",
+    "Tentativa Astra no OpenCode falhou com HTTP401 antes da analise; preservada como falha. Perfil efetivo Codex agora solicita SOL6.1xhigh por escolha explicita do usuario, sem troca silenciosa.",
+    "Cota 5h/semanal e tokens indisponiveis; observacoes minimas privadas validadas, sem estimativa."
+  ],
   "verification": [],
   "findings": [],
-  "triage_complete": false
+  "triage_complete": false,
+  "attempts": [
+    {
+      "at": "2026-10-14T21:36:00.922000+00:00",
+      "requested_model": "openai/gpt-6-astra#medium",
+      "agent": "spec-reviewer",
+      "outcome": "provider.auth HTTP 401: Missing bearer or basic authentication in header; no review completed"
+    }
+  ],
+  "temporary_user_override": "2026-10-14: usuario suspendeu Astra temporariamente para esta validacao e solicitou SOL xHigh no Codex"
 }

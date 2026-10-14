@@ -16,27 +16,30 @@ main (site atual)
 
 Tarefa → branch da spec → épica geral → main apenas na entrega final. Nomes entre `<...>` são exemplos, não specs já criadas. PRs exigem aprovação em cada nível; não há merge automático.
 
-PRs de integração de spec usam `[SPEC] <Título>` e passam por revisão independente do conjunto antes da aprovação de merge. Processo, relatório rastreável e gate estão em [Revisão de spec](architecture/spec-review.md). A implantação desse processo está em PR próprio; o #25 é a primeira integração sujeita a ele, ainda sem revisão independente do conjunto. Modelo escolhido pelo usuário: `openai/gpt-6-astra#medium`. Sem fallback ou conclusão de revisão presumidos.
+PRs de integração de spec usam `[SPEC] <Título>` e passam por revisão independente do conjunto antes da aprovação de merge. Processo, relatório rastreável e gate estão em [Revisão de spec](architecture/spec-review.md). #26 instalou o processo; #25 foi aprovado e integrado após revisão cumulativa independente, correções #27/#28/#29, seis achados revalidados como corrigidos e gate aprovado. Modelo do gate de identidade: `openai/gpt-6-astra#medium`, sem fallback; a exceção SOL temporária do gate #63 está registrada abaixo. Revisão/gate não autorizam merge sem decisão explícita do usuário.
 
 ## Roadmap acordado
 
 1. **Base da aplicação**: Java 25, Gradle, Spring Boot, PostgreSQL 18, Flyway, segurança inicial, React/TypeScript/Vite, ambiente local e testes. Implementada e integrada na épica geral pelo PR #14.
-2. **Identidade e acesso**: login opcional Google via OIDC e sessão JDBC em `optional-google-identity`; #24 e #19–#23 aprovados individualmente e integrados na épica da spec, 16/16 tarefas concluídas. Integração na épica geral aguarda PR/aprovação próprios; nenhuma publicação autorizada. Smoke Google real depende de credenciais externas e permanece obrigatório antes do deployment público. Histórico privado fica para specs seguintes.
-3. **Banco de questões**: disciplinas/assuntos, revisão editorial, referências reais e importação controlada do material. Definir a quantidade por disciplina ou assunto antes de ampliar o acervo.
-4. **Simulados e tentativas**: seleção aleatória, critérios de composição, realização, correção e histórico com versões, parâmetros e ordem das alternativas preservados; não expor gabaritos durante o simulado.
+2. **Identidade e acesso**: login opcional Google/OIDC/PKCE e sessão JDBC integrados na épica geral pelo #25, merge `f72fcc5d9c92c326ad789e5cf72eef54665913cf`, após aprovações de tarefas e revisão independente. Sem publicação ou arquivamento. Smoke Google real depende de credenciais e continua obrigatório antes do deployment público; histórico/sincronização ficam para specs seguintes.
+3. **Banco de questões**: issue #30, **44/44 tarefas aprovadas/integradas em `epic/question-bank`**, incluindo #62 (merge `28932ed`). Curadoria real: 25 lotes, 250 revisões elegíveis em PostgreSQL local isolado, 50 por disciplina/51 assuntos; consulta/projeções/navegador verificados. PR **#63 `[SPEC]`** para a épica geral ainda depende da revisão cumulativa, gate e aprovação próprios. Por exceção temporária pedida em 2026-10-14, o gate atual usa **SOL 6.1 xhigh no Codex**, suspendendo Astra nessa validação. Meta editorial aprovada: 50–100 por disciplina, Limeira 01/2026/Assistente Administrativo e Secretário de Escola. A evidência local não publica nem popula automaticamente outros bancos; a spec ainda não integra a épica geral.
+4. **Simulados e tentativas**: proposta local `mock-exam-attempts`, issue #64, validada e ainda não aprovada/implementada (0/24 tarefas). Seleção aleatória, realização, correção e histórico com versões/parâmetros/ordens preservados, sem gabarito durante o simulado. Decisão de 2026-10-14: visitante sem histórico permanente; conectado salva/retoma pela conta. Branch própria partirá da épica geral atualizada após #63; detalhes de quantidade/pontuação/duração continuam propostos para revisão.
 5. **Questões parametrizadas**: variações controladas, especialmente em Matemática, com validação de resultados e resoluções didáticas. Não gerar questões por IA ao vivo sem validação.
 6. **Revisão por conceito**: desempenho, dificuldades e prática orientada ao aprendizado, não à memorização.
 7. **Preparação da entrega**: definir hospedagem Java/PostgreSQL, configuração segura, integração das experiências de estudo, regressão, migrações e plano de publicação/rollback. Esta etapa inclui a spec própria de deployment prevista no plano.
 
 Cada etapa requer seus artefatos OpenSpec e aprovação antes da implementação. Não preparar de uma vez todos os detalhes futuros; dependências e novos requisitos devem ser discutidos por spec.
 
+Acervo original: 51 módulos/510 questões (Português100, Matemática/Raciocínio120, Informática100, Administrativo80, Escolar110), sujeito a revisão. Importação não aprova automaticamente conteúdo. A proposta do banco separa inventário, rascunhos, revisões e versões elegíveis; dificuldades de atingir a meta devem ser registradas, sem aprovação fictícia.
+
+GitHub Stacks: #32 e #36 aprovados/integrados somente na épica de question-bank (head `d04c6d7`), v0.2.1 fixada. Piloto remoto #33/#34 (stack #35, drafts) confirmou criação/diffs/rebase/CI; troca de base de membro foi bloqueada e `edited` foi testado por título. O usuário aprovou a abordagem como **padrão também para próximas specs**, registrada por PR de processo próprio. Depois de integrar esse registro, não repetir autorização do método por spec: dependências reais usam stack da mesma spec/repositório, trunk `epic/<change-name>`; independentes e PR `[SPEC]` separados. Propostas/pedidos de implementação e merges mantêm suas aprovações próprias, sem início automático de tarefas. Conferir refs/checks de cada stack, com fallback sequencial seguro; sem retargeting manual. Merge/fila/sync pós-merge não ensaiados exigem decisão explícita do caminho. Sintéticos não entram no produto nem têm encerramento autorizado. [Procedimento e limites](stacks-pilot.md). Stacks não substitui revisão cumulativa nem garante redução de tokens.
+
 Arquitetura/persistência revisadas pelo usuário em 2026-10-08: monólito modular, UseCases/domínio puro e JPA/Hibernate na infraestrutura, mantendo Flyway e Spring Session JDBC. Regras persistentes em `AGENTS.md` e [ADR 0001](architecture/adr/0001-domain-and-application-boundaries.md); PR #24 registra a decisão e precede a revisão dos PRs #19–#23. Implementação não significa integração aprovada.
 
 ## Decisões abertas
 
-- Sincronização do progresso em specs futuras (login opcional Google já decidido).
-- Meta de 50–100 questões por disciplina ou por assunto.
-- Escopo de cargos/concursos além dos dois atuais.
+- Sincronização offline e eventual mescla de visitante com conta; salvar/retomar simulados pela conta já foi escolhido para a proposta da etapa 4.
+- Expansão além dos dois cargos atuais, fora da spec inicial do banco (quantidade por disciplina e escopo inicial já decididos).
 - Hospedagem, disponibilidade, backups e estratégia de acesso à nova aplicação.
 
 Essas decisões não serão presumidas apenas por constarem no roadmap.

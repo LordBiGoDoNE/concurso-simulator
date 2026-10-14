@@ -1,6 +1,7 @@
 import { act, fireEvent, render, screen } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
 import App from './App';
+import { emptyQuestionResponse } from '../test/question-fixtures';
 
 const id = '12345678-1234-1234-1234-123456789abc';
 const response = (body: unknown, status = 200) => ({ ok: status >= 200 && status < 300, status, json: async () => body });
@@ -11,6 +12,7 @@ it.each(['/auth/config', '/me', '/csrf'])('UI recupera de JSON pendente em %s e 
   let stall = stalled !== '/csrf';
   let signal!: AbortSignal;
   vi.stubGlobal('fetch', vi.fn(async (url: string, options: RequestInit) => {
+    if (url.includes('/question-bank/')) return emptyQuestionResponse(url);
     if (stall && url.endsWith(stalled)) {
       signal = options.signal as AbortSignal;
       return { ok: true, status: 200, json: () => new Promise(() => {}) };
@@ -58,6 +60,7 @@ it.each([204, 401, 403, 500].flatMap(status => [true, false].map(lateSuccess => 
   let csrfCalls = 0;
   vi.spyOn(document, 'visibilityState', 'get').mockReturnValue('visible');
   vi.stubGlobal('fetch', vi.fn(async (url: string) => {
+    if (url.includes('/question-bank/')) return emptyQuestionResponse(url);
     if (url.endsWith('/status')) return response({ status: 'UP' });
     if (url.endsWith('/auth/config')) return response({ googleEnabled: true });
     if (url.endsWith('/me')) {
@@ -97,6 +100,7 @@ it.each([204, 401, 403, 500].flatMap(status => [true, false].map(lateSuccess => 
 
 it.each([null, { headerName: 'Wrong', token: 'token' }, { headerName: 'X-CSRF-TOKEN', token: '' }])('CSRF inválido %j não envia logout nem bloqueia retry', async token => {
   const fetchMock = vi.fn(async (url: string) => {
+    if (url.includes('/question-bank/')) return emptyQuestionResponse(url);
     if (url.endsWith('/status')) return response({ status: 'UP' });
     if (url.endsWith('/auth/config')) return response({ googleEnabled: true });
     if (url.endsWith('/me')) return response({ id });

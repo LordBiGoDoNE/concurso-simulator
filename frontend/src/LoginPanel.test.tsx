@@ -1,6 +1,7 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import App from './App';
+import { emptyQuestionResponse } from '../test/question-fixtures';
 
 const id = '12345678-1234-1234-1234-123456789abc';
 const response = (body: unknown, status = 200) => ({ ok: status >= 200 && status < 300, status, json: async () => body });
@@ -8,6 +9,7 @@ const response = (body: unknown, status = 200) => ({ ok: status >= 200 && status
 function api({ enabled = true, connected = false, logout = 204, failure = '' } = {}) {
   let active = connected;
   const fetchMock = vi.fn(async (url: string, options?: RequestInit) => {
+    if (url.includes('/question-bank/')) return emptyQuestionResponse(url);
     if (url.endsWith('/status')) return response({ status: 'UP' });
     if (url.endsWith(failure) && failure) throw new TypeError('network');
     if (url.endsWith('/auth/config')) return response({ googleEnabled: enabled });
@@ -34,7 +36,7 @@ describe('login opcional', () => {
     else expect(screen.queryByRole('link', { name: 'Entrar com Google' })).not.toBeInTheDocument();
     expect(fetchMock.mock.calls.some(([url]) => url.includes('/oauth2/'))).toBe(false);
     expect(screen.getByRole('link', { name: 'Acessar material de estudo' })).toBeInTheDocument();
-    for (const [url, options] of fetchMock.mock.calls) if (!url.endsWith('/status')) expect(options?.credentials).toBe('include');
+    for (const [url, options] of fetchMock.mock.calls) if (!url.endsWith('/status')) expect(options?.credentials).toBe(url.includes('/question-bank/') ? 'omit' : 'include');
   });
 
   it.each(['/me', '/auth/config'])('falha de rede em %s não bloqueia aulas e permite nova tentativa', async failure => {

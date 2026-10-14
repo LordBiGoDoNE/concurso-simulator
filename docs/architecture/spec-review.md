@@ -2,6 +2,90 @@
 
 ## Quando e por quê
 
+### Rodadas de implementação — antes da aprovação de merge
+
+O usuário define o lote por **grupos completos**, sem limite fixo de tarefas: “faça
+3, 4 e 5” inclui 3.1–3.4, 4.1–4.3 e 5.1–5.3 na spec question-bank. Se o pedido não
+informar escopo, listar os grupos/tarefas pendentes e perguntar quais entram antes de
+implementar. Não encerrar num prefixo de grupo; PRs pequenos/coerentes não autorizam
+deixar sua última subtarefa para outro lote. Comunicar bloqueios reais sem fingir
+conclusão nem incluir dependências fora do escopo por iniciativa própria. Implementação
+sem pausas por subtarefa, PRs em rascunho e nenhuma integração presumida permanecem.
+Ao fim da implementação,
+**antes de solicitar aprovação de merge**, um agente novo com
+`openai/gpt-6.1-sol#xhigh` revisa o conjunto como **único revisor do lote**, inclusive
+mudanças críticas. Em 2026-10-13, o usuário retirou a verificação Astra dos lotes,
+substituindo a política baseada em risco de 2026-10-12. Não disparar Astra nem outro
+modelo automaticamente por risco, dúvida, revalidação ou medição. Confirmar
+disponibilidade e modelo/variante efetivos; indisponibilidade bloqueia a revisão,
+sem fallback silencioso. O gate cumulativo final permanece Astra medium, sem alteração.
+Revisões Astra já executadas permanecem histórico verdadeiro, não são apagadas nem
+reclassificadas como execuções SOL.
+
+#### Classificação de risco — registrar antes de disparar revisores
+
+Registrar na issue/PR a classificação do lote, arquivos/regras afetadas e justificativa:
+
+- **Crítico:** alteração de autenticação/autorização, sessão/CSRF/OAuth/segredos;
+  persistência, schema/migrações, transações, travas, concorrência, rollback ou
+  idempotência; invariantes de integridade/versionamento/elegibilidade editorial ou
+  proteção contra exposição indevida de respostas; controles executáveis de CI/gate,
+  permissões ou deploy que protegem essas fronteiras. Exige cobertura explícita dessas
+  fronteiras pelo SOL xhigh e regressões/verificações adequadas, não segundo modelo.
+- **Padrão:** documentação/processo, evidências históricas ou alterações sem impacto
+  crítico demonstrado. Exige SOL xhigh. Classificar
+  pelo efeito real: extensão `.md`, tamanho do diff e CI verde não garantem baixo risco.
+- Se qualquer PR ou interação do lote for crítica, registrar o lote como crítico e
+  examinar **todo o conjunto**, incluindo diffs completos por PR e combinação. Dúvida
+  na classificação adota crítico; se SOL identificar impacto crítico inicialmente
+  não reconhecido, registrar a reclassificação e ampliar a cobertura/verificação
+  necessária antes de solicitar aprovação, sem disparar Astra.
+
+Revalidação permanece somente SOL xhigh, com novo snapshot e conferência real do conjunto.
+Não rebaixar risco, omitir cobertura ou dispensar correção de bloqueador para economizar
+cota. Somente SOL não significa garantia de corretude nem flexibilização de CI/gates.
+
+Cada revisor recebe requisitos/padrões versionados, composição e bases/heads imutáveis,
+diffs completos por PR e combinação do lote; não recebe conversa/defesas do implementador
+ou resultado do outro revisor. Reportar achados por PR e interações entre camadas,
+cobertura/limites e testes não executados. Não exigir tarefas fora do lote antecipadamente.
+Aplicar as mesmas regras de triagem, correção e revalidação descritas abaixo.
+
+Em PR cujo objeto é registrar evidências históricas, o perfil pode ler os relatórios e
+registros do próprio diff para revisão **documental**, não para atestar a corretude do
+produto. Registrar a exposição incidental a achados históricos; não compartilhar
+resultados dos revisores atuais. Essa exceção não relaxa o isolamento do gate final.
+
+Registrar evidência por lote em `openspec/changes/<spec>/reviews/<lote>/`, separando
+relatórios/modelos/sessões, composição/digests, triagem e verificação do coordenador.
+Não preencher `spec-review.json/md` como completed por uma revisão parcial de lote:
+esses dois arquivos continuam exclusivos do gate cumulativo final. Alterações de base
+ou diff relevante invalidam a revisão do lote; relatórios isolados de evidência não
+autorizam alterar código sem revalidação. O check de tarefa continua `spec-review-tests`,
+não há novo gate automático nem mudança de workflow/ruleset nesta decisão.
+
+Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem e
+consumo separado por modelo/coordenador: cota 5h/semanal antes/depois, com limites de
+atribuição, e tokens (entrada nova, cache read/write, saída, raciocínio reportado).
+Comparações históricas de achados comuns/exclusivos e consumo só são válidas quando
+ambos realmente executaram. Nos lotes SOL-only, registrar que comparação não foi
+realizada, não que outro modelo teve zero achados/consumo; não dispará-lo para comparar.
+Seguir [protocolo de cota](../review-quota.md); não somar raciocínio à
+saída nem converter tokens em consumo da assinatura. Extrapolações exigem amostra e
+hipóteses explícitas. Zero achados não prova equivalência nem garante economia futura.
+
+Aprovação do conjunto exige a lista explícita dos PRs/heads; não implica merges automáticos,
+aprovação editorial de conteúdo real, publicação ou arquivamento. Não iniciar outra rodada
+automaticamente. A primeira rodada autorizada é question-bank 1.2, 1.3, 2.1–2.3, sobre #38.
+
+### Integração final da spec
+
+**Exceção temporária de 2026-10-14:** por pedido explícito do usuário, o gate de
+question-bank #63 usa **SOL 6.1 xhigh no Codex**, com perfil atualizado, suspendendo
+Astra nesta validação. Substitui a seleção do passo 2 para esse gate, sem alterar
+cobertura, independência, triagem ou aprovação. Não restaurar Astra nem ampliar a
+exceção a outro gate automaticamente. Tentativa Astra anterior com 401 não é revisão.
+
 PRs de tarefas são revisados individualmente e integrados na épica da spec. Depois,
 `[SPEC] <Título>` propõe `epic/<spec>` → `epic/application-reformulation`. Este gate
 examina o conjunto, não uma nova implementação. CI verde e revisão de tarefas não
@@ -22,7 +106,9 @@ provam que as responsabilidades e a integração estão corretas.
 5. Revisor analisa responsabilidades, invariantes, dependências, integração, contratos,
    segurança, privacidade, persistência/concorrência/migrações, testes e regressões.
    Ele reporta, não edita/aprova merge. O coordenador executa testes necessários e
-   registra quem executou; neste perfil o revisor não tem shell nem ferramentas de escrita.
+   registra quem executou. OpenCode usa read/glob/grep, sem shell; no Codex são
+   permitidos comandos estritamente de leitura de código/commits/hashes. Sem testes,
+   build, aplicação, rede/DB ou escritas pelo revisor; orientação não é sandbox absoluto.
 6. Triar achados com o usuário: corrigir, refutar com evidência ou adiar melhoria não
    bloqueadora. Mudança arquitetural exige decisão, não alteração silenciosa de escopo.
    Ausência fundamentada de achados é válida. Não inventar complexidade/findings.
@@ -102,6 +188,20 @@ exige branch `epic/<spec>` e título `[SPEC]`, evitando bypass só por renomear 
 `main` → épica geral é sincronização do site existente, não integração de spec;
 o check registra essa exceção e não autoriza seu merge.
 
+O [padrão de Stacks e a evidência do piloto em question-bank](../stacks-pilot.md) registram
+criação/diffs/rebase/CI remotos e a restrição de retargeting: GitHub bloqueia troca de
+base de membro. #36 integrou a adoção em question-bank; o usuário aprovou o padrão para
+próximas specs, versionado por PR de processo próprio. Não repetir aprovação do método
+por spec após esse registro; conferir refs/checks e limitar a dependências reais da
+mesma spec/repositório, trunk `epic/<change-name>`. Aprovações de propostas/tarefas/merges
+continuam separadas. PR `[SPEC]`
+fica fora da stack, sempre da épica da spec para a épica geral; sem isenção nova no
+guard. Logs do ensaio confirmaram base/head e `spec-review-tests`; raw payload não
+foi exportado. Igualdade visual de diff após rebase não preserva evidência: o gate
+exige base atual, ancestralidade do head revisado e digest. O ensaio não demonstrou
+merge/fila/proteções de prefixo nem sync pós-merge; não presumir esses caminhos seguros
+ou autorizados. Aprovação do topo não aprova camadas inferiores nem a spec cumulativa.
+
 O check exige relatório concluído, snapshot atual, cobertura e triagem registradas.
 Uma regra GitHub na **épica geral apenas** exige PR e check `spec-review` da aplicação
 GitHub Actions. Não alterar proteção de main/deploy nem regras existentes. A ativação
@@ -117,7 +217,7 @@ check antigo. Regra ativa: `24766642`, limitada a `epic/application-reformulatio
 check `spec-review` vinculado ao app `15368`, sem bypass configurado. O coordenador
 confere esses campos via API antes de solicitar integração. O teste Git isolado cobre
 avanço/merge da base e exigência de novo snapshot; não substitui ensaio operacional
-do comportamento do GitHub, ainda não executado neste processo.
+de avanço da base na integração de specs no GitHub, não coberto pelo piloto de tarefas.
 
 Limites: o check valida evidência estrutural, não prova qualidade, identidade do modelo
 ou autenticidade do relatório. Workflow/script são versionados no PR e também precisam

@@ -4,6 +4,8 @@ Base inicial: **Java 25 LTS**, **Spring Boot 4.1.1**, **Gradle 9.8.0** via Wrapp
 
 Persistência de domínio: **JPA/Hibernate**, por contratos de repository e modelos na infraestrutura. Domínio/UseCases são Java puro, conforme [ADR 0001](../docs/architecture/adr/0001-domain-and-application-boundaries.md). Flyway cria/migra schema; Hibernate somente valida, com OSIV desativado. ArchUnit protege as fronteiras. JDBC permanece na prontidão técnica e nas sessões Spring Session, nunca no UseCase de identidade.
 
+O módulo `questionbank` oferece catálogo de cinco disciplinas/51 assuntos/dois cargos de Limeira 01/2026, revisões imutáveis, persistência JPA, importação/editorial local deliberado e consulta pública sem gabaritos. [Catálogo](../docs/question-bank-catalog.md), [API](../docs/question-public-api.md) e [operações locais](../docs/question-local-operations.md). A curadoria inicial tem 250 revisões elegíveis verificadas em banco local isolado, 50 por disciplina; essa evidência não popula outros bancos nem publica a aplicação.
+
 Requer JDK 25 e acesso à internet no primeiro build. Não requer Gradle global. O Wrapper fixa a versão e valida o SHA-256 da distribuição oficial.
 
 ```sh

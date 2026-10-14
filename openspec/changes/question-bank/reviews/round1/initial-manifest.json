@@ -1,0 +1,103 @@
+{
+  "spec": "question-bank",
+  "trunk": "epic/question-bank",
+  "stack": 41,
+  "prs": [
+    {
+      "baseRefName": "epic/question-bank",
+      "baseRefOid": "600cf6a59a608cec37c3cc22e4902de46ef5a46d",
+      "headRefName": "task/question-bank/catalog",
+      "headRefOid": "cf857f12784824e23dccbf993ca782791ae62026",
+      "isDraft": true,
+      "number": 38,
+      "state": "OPEN",
+      "title": "Banco de questões: catálogo inicial e classificação (1.1)",
+      "base_sha": "600cf6a59a608cec37c3cc22e4902de46ef5a46d",
+      "reviewed_head_sha": "cf857f12784824e23dccbf993ca782791ae62026",
+      "diff_sha256": "63a8ffc5d6e09707d81f56f25780b396172ae5212d56e836b2b44d70277dfddf"
+    },
+    {
+      "baseRefName": "epic/question-bank",
+      "baseRefOid": "600cf6a59a608cec37c3cc22e4902de46ef5a46d",
+      "headRefName": "task/question-bank/batch-review-process",
+      "headRefOid": "ce624fcca484222330351cdf715973859888ab87",
+      "isDraft": true,
+      "number": 39,
+      "state": "OPEN",
+      "title": "Processo: lotes de tarefas e revisão dupla antes do merge",
+      "base_sha": "600cf6a59a608cec37c3cc22e4902de46ef5a46d",
+      "reviewed_head_sha": "ce624fcca484222330351cdf715973859888ab87",
+      "diff_sha256": "16c0cc5b318914bb082345062f10b2649700f6a6d8164ba16a0a5a2617644120"
+    },
+    {
+      "baseRefName": "task/question-bank/catalog",
+      "baseRefOid": "cf857f12784824e23dccbf993ca782791ae62026",
+      "headRefName": "task/question-bank/revision-content",
+      "headRefOid": "447dec1d9826cfaff1b3ff295cdd6060ba3ea588",
+      "isDraft": true,
+      "number": 40,
+      "state": "OPEN",
+      "title": "Questões: conteúdo imutável e revisões (1.2)",
+      "base_sha": "cf857f12784824e23dccbf993ca782791ae62026",
+      "reviewed_head_sha": "447dec1d9826cfaff1b3ff295cdd6060ba3ea588",
+      "diff_sha256": "1748042eddb34327a44f465487a109d9939894674923be60b48633883f554987"
+    },
+    {
+      "baseRefName": "task/question-bank/revision-content",
+      "baseRefOid": "447dec1d9826cfaff1b3ff295cdd6060ba3ea588",
+      "headRefName": "task/question-bank/editorial",
+      "headRefOid": "efb5c570ae7150fd489e50e6311e70f7c2c22fee",
+      "isDraft": true,
+      "number": 42,
+      "state": "OPEN",
+      "title": "Questões: ciclo editorial e evidência da versão exata (1.3)",
+      "base_sha": "447dec1d9826cfaff1b3ff295cdd6060ba3ea588",
+      "reviewed_head_sha": "efb5c570ae7150fd489e50e6311e70f7c2c22fee",
+      "diff_sha256": "523835b5fe02132e0f8fabe63efc9e076d03984e17ed2dab4da2017727b934fc"
+    },
+    {
+      "baseRefName": "task/question-bank/editorial",
+      "baseRefOid": "efb5c570ae7150fd489e50e6311e70f7c2c22fee",
+      "headRefName": "task/question-bank/storage-schema",
+      "headRefOid": "a195035cae505322c5e368ff0b2df78a677ce147",
+      "isDraft": true,
+      "number": 43,
+      "state": "OPEN",
+      "title": "Questões: schema Flyway e modelos JPA (2.1)",
+      "base_sha": "efb5c570ae7150fd489e50e6311e70f7c2c22fee",
+      "reviewed_head_sha": "a195035cae505322c5e368ff0b2df78a677ce147",
+      "diff_sha256": "71dcef09e16cffe2bdb4ae86135d7440aa510ebc7191e2187e94452e99562ef1"
+    },
+    {
+      "baseRefName": "task/question-bank/storage-schema",
+      "baseRefOid": "a195035cae505322c5e368ff0b2df78a677ce147",
+      "headRefName": "task/question-bank/storage-transactions",
+      "headRefOid": "35a36064b50fe756693b9da5501c6c5f97ef54ab",
+      "isDraft": true,
+      "number": 44,
+      "state": "OPEN",
+      "title": "Questões: persistência atômica e concorrência editorial (2.2)",
+      "base_sha": "a195035cae505322c5e368ff0b2df78a677ce147",
+      "reviewed_head_sha": "35a36064b50fe756693b9da5501c6c5f97ef54ab",
+      "diff_sha256": "14015f9b76e5fc12e248d43c810bd924f1e2ed967398d226ac103b3d709ab802"
+    },
+    {
+      "baseRefName": "task/question-bank/storage-transactions",
+      "baseRefOid": "35a36064b50fe756693b9da5501c6c5f97ef54ab",
+      "headRefName": "task/question-bank/import-idempotency",
+      "headRefOid": "2e38370cfc76fd6d0651967686e60569bee87765",
+      "isDraft": true,
+      "number": 45,
+      "state": "OPEN",
+      "title": "Questões: importação idempotente e recovery pós-rollback (2.3)",
+      "base_sha": "35a36064b50fe756693b9da5501c6c5f97ef54ab",
+      "reviewed_head_sha": "2e38370cfc76fd6d0651967686e60569bee87765",
+      "diff_sha256": "823141206c4ae0264cbaab3a787c22967cb80b60d65f8b6257e8cdbf768a24df"
+    }
+  ],
+  "combined": {
+    "base_sha": "600cf6a59a608cec37c3cc22e4902de46ef5a46d",
+    "reviewed_head_sha": "2e38370cfc76fd6d0651967686e60569bee87765",
+    "diff_sha256": "9f35d0c79cc7b0326c4b368e2ea5880bf4414bf252334e21fb062eb4bd214cf5"
+  }
+}

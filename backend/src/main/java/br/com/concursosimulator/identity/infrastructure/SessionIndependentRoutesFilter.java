@@ -18,7 +18,8 @@ final class SessionIndependentRoutesFilter<S extends Session> extends SessionRep
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain chain)
             throws ServletException, IOException {
-        if ("/api/v1/status".equals(request.getServletPath()) || OAuthRequestMethods.rejects(request)) {
+        if ("/api/v1/status".equals(request.getServletPath()) || OAuthRequestMethods.rejects(request)
+                || br.com.concursosimulator.shared.infrastructure.PublicQuestionRoutes.owns(request)) {
             chain.doFilter(request, response);
         } else {
             super.doFilterInternal(request, response, chain);

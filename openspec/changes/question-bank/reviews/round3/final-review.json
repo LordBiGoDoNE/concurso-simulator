@@ -1,0 +1,53 @@
+{
+  "kind": "batch-review-evidence",
+  "spec": "question-bank",
+  "groups": ["6.1-6.25", "7.1-7.3"],
+  "pullRequests": [62],
+  "risk": "critical",
+  "riskReason": "Conteudo, respostas, elegibilidade editorial e ausencia de campos corretivos publicos",
+  "baseSha": "dcbe086af47a6fafca114290850a419f0886cc92",
+  "reviewer": {
+    "session": "/root/round3_sol_final",
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "dispatchModel": "gpt-6.1-sol",
+    "dispatchEffort": "xhigh",
+    "independentProviderTelemetry": false,
+    "readOnly": true,
+    "historicalReportsReadAfterInitialTechnicalAssessment": true
+  },
+  "fullReview": {
+    "headSha": "1ff1a947b693e44aefc631e517c30be84ac0bc81",
+    "diffSha256": "503fe84c566262af6be5ab9bff857679fe5a3b1d8990aa6c268f3993daba73ae",
+    "startedAt": "2026-10-14T20:20:50Z",
+    "completedAt": "2026-10-14T20:29:24Z",
+    "blocking": 0,
+    "recommended": 0,
+    "optional": 1,
+    "previousAttempt": "Interrupted by usage limit; no completed report"
+  },
+  "revalidation": {
+    "headSha": "e09feffe7103181ead5c6d7b378304aca2676c10",
+    "diffSha256": "86f366333e5ab2990dc6f1fb4ae1e7437c189518f823db597385314f4e6d1b85",
+    "startedAt": "2026-10-14T20:32:10Z",
+    "completedAt": "2026-10-14T20:32:47Z",
+    "scope": "Documentary delta fully read; unchanged product and evidence identity verified; database read-only comparisons repeated",
+    "outcome": "No remaining or new findings",
+    "findings": [{"id": "O1", "severity": "optional", "status": "resolved", "fixCommit": "5137557301a528ef44c1064c25665b36c34543f9"}]
+  },
+  "quota": {
+    "initial": "unavailable",
+    "revalidation5h": "unavailable",
+    "revalidationWeekly": "unavailable",
+    "coordinator": "unavailable",
+    "tokens": null,
+    "privateObservationsValidated": true,
+    "accountIsolationVerified": false,
+    "coordinatorGeneratedDuringReview": false,
+    "newModelComparisonExecuted": false
+  },
+  "limitations": [
+    "Report-only evidence recorded after reviewed head; does not claim self-review of its recording commit",
+    "No merge authorization or final cumulative Astra gate",
+    "Local editorial eligibility does not approve PRs or populate other databases"
+  ]
+}

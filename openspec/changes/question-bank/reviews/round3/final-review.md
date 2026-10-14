@@ -94,3 +94,28 @@ Sem comparação nova entre modelos; Astra não executado neste lote.
 tarefas aguardam aprovação/merge explícitos do #62. 250 aprovações editoriais locais
 não aprovam PRs nem populam outros destinos. Nenhum merge, publicação, arquivamento ou
 integração na épica geral/main. Gate cumulativo final Astra medium permanece separado.
+
+## Revalidação final executada — atualização posterior ao snapshot acima
+
+Em **2026-10-14 20:32:10–20:32:47 UTC** (37 s), o mesmo SOL xhigh revalidou:
+
+- Base `dcbe086af47a6fafca114290850a419f0886cc92`.
+- Head `e09feffe7103181ead5c6d7b378304aca2676c10`.
+- Digest cumulativo `86f366333e5ab2990dc6f1fb4ae1e7437c189518f823db597385314f4e6d1b85`.
+
+Leu integralmente o delta de 5137557/e09feff: cinco documentos. **O1 resolvida;
+zero achados novos ou pendentes.** Conferiu atribuição/contagens/limites deste relatório,
+igualdade de todos os arquivos de código/conteúdo/fingerprints/evidência versionada,
+compilação em memória/manifesto, digest/diff check e worktree limpo. SELECT confirmou
+novamente os 250 payloads/IDs/fingerprints e 500 decisões/hashes de comandos.
+
+A análise completa de produto foi reutilizada após comprovar identidade dos arquivos;
+o delta documental foi efetivamente examinado. Não repetiu testes abrangentes sem
+mudança pertinente. Checks remotos permanecem sob conferência do coordenador.
+Nova observação mínima antes/depois, separada: ambas as janelas indisponíveis,
+sem delta/tokens estimados. Nenhum outro modelo executado.
+
+Esta seção e `final-review.json` apenas registram o parecer efetivamente recebido
+depois do head e09feff; não alteram produto, requisitos, conteúdo editorial ou decisão
+no banco, nem afirmam que o revisor examinou o commit posterior do próprio registro.
+O head publicado e seus checks finais são reconferidos no relatório do PR/issue.

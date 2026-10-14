@@ -132,3 +132,16 @@ ORIGIN_NOT_IN_INVENTORY e ORIGIN_NOT_CANDIDATE, com chave sanitizada; origem aus
 MISSING_ORIGIN/INVALID_KEY. Não ecoar namespace/payload/exception: códigos fixos identificam
 o problema e o operador confere seu pacote local. Regressão pelo launch reproduziu o
 erro genérico antes da correção e exige diagnóstico sem DB/saída parcial/credenciais.
+
+SOL-QB-06: o handler padrão do parser DOM podia imprimir nomes/fragmentos privados
+de SVG malformado diretamente em `System.err`, antes da tradução pelo launcher.
+O parser agora tem `ErrorHandler` explícito: warning/error/fatal rejeitam sem imprimir,
+e o launcher continua retornando somente chave/UNSAFE_CONTENT. Não suprimir stderr
+global em produção nem relaxar rejeição, hash, allowlist ou bloqueios de DTD/entidades
+externas. Regressão pelo launch captura também `System.err` real, com restauração e
+lock de teste: SVG válido chega à confirmação cancelada; tags malformadas, entidade
+indefinida e DOCTYPE são recusados sem fragmentos/credenciais/saída parcial. Uma porta
+local observada não recebe conexão em nenhum desses casos. O teste usa snapshot/assets
+temporários e conteúdo sintético, sem modificar o acervo. Essa proteção cobre o parser
+SVG desta entrada, não certifica todos os logs de bibliotecas nem a segurança semântica
+de qualquer recurso; validação editorial e demais controles continuam necessários.

@@ -6,6 +6,8 @@ import br.com.concursosimulator.questionbank.infrastructure.persistence.JpaQuest
 import br.com.concursosimulator.questionbank.domain.*;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.io.TempDir;
+import org.junit.jupiter.api.parallel.ResourceLock;
+import org.junit.jupiter.api.parallel.Resources;
 import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.springframework.orm.jpa.SharedEntityManagerCreator;
@@ -181,6 +183,57 @@ class QuestionLocalImportTests {
             Files.writeString(file,JSON.writeValueAsString(tree));var out=new ByteArrayOutputStream();var err=new ByteArrayOutputStream();
             assertThat(QuestionBankLocal.launch(args("import",file,"P01-Q01"),env,new BufferedReader(new StringReader("")),new PrintStream(out),new PrintStream(err))).isEqualTo(1);
             assertThat(out.size()).isZero();assertThat(err.toString()).as(entry.getKey()).contains(key,entry.getValue()).doesNotContain("PRIVATE_","jdbc:");
+        }
+    }
+    @Test @ResourceLock(Resources.SYSTEM_ERR)
+    void launcherValidatesSvgWithoutRawParserDiagnosticsOrDatabaseAccess() throws Exception {
+        var file=fixturePackage();var baseline=Files.readString(file);
+        var root=Files.createTempDirectory(TEMP,"svg-root-");
+        // Snapshot isolado: não criar nem modificar assets no acervo real.
+        for(var source:JSON.readTree(baseline).get("sourceFiles")) {
+            var relative=source.get("path").asString();var target=root.resolve(relative);
+            Files.createDirectories(target.getParent());Files.copy(ROOT.resolve(relative),target);
+        }
+        Files.createDirectories(root.resolve("assets"));
+        var asset=root.resolve("assets/fixture.svg");
+        var valid="<svg xmlns=\"http://www.w3.org/2000/svg\"><rect width=\"1\" height=\"1\"/></svg>";
+        var cases=List.of(valid,
+                "<svg xmlns=\"http://www.w3.org/2000/svg\"><PRIVATE_SVG_SENTINEL></svg>",
+                "<svg xmlns=\"http://www.w3.org/2000/svg\">&PRIVATE_ENTITY_SENTINEL;</svg>",
+                "<!DOCTYPE svg [<!ENTITY private SYSTEM \"file:///PRIVATE_FILE_SENTINEL\">]><svg xmlns=\"http://www.w3.org/2000/svg\">&private;</svg>");
+        try(var destination=new java.net.ServerSocket(0,1,java.net.InetAddress.getLoopbackAddress())) {
+            destination.setSoTimeout(200);
+            var env=Map.of("DB_URL","jdbc:postgresql://localhost:"+destination.getLocalPort()+"/fixture",
+                    "DB_USERNAME","fixture","DB_PASSWORD","PRIVATE_PASSWORD_SENTINEL");
+            for(var svg:cases) {
+                Files.writeString(asset,svg);
+                var tree=(ObjectNode)JSON.readTree(baseline);var item=(ObjectNode)tree.get("items").get(0);
+                var c=JSON.treeToValue(item.get("content"),QuestionPackageReader.Content.class);
+                var hash=java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(asset)));
+                var statement=new TextContent(c.statement().text(),List.of(new TextContent.Resource("assets/fixture.svg","image/svg+xml",hash,"Figura sintética")));
+                var content=new QuestionContent(statement,c.alternatives(),c.correctAlternativeId(),c.resolution(),
+                        QuestionClassification.fromIds(c.classification().disciplineId(),c.classification().topicId(),c.classification().roleIds()),c.references(),c.provenance());
+                ((ObjectNode)item.get("content")).set("statement",JSON.valueToTree(statement));item.put("fingerprint",content.fingerprint());
+                Files.writeString(file,JSON.writeValueAsString(tree));
+                var out=new ByteArrayOutputStream();var err=new ByteArrayOutputStream();var raw=new ByteArrayOutputStream();
+                var arguments=args("import",file,"P01-Q01");arguments[6]=root.toString();
+                var previous=System.err;int exit;
+                try(var captured=new PrintStream(raw,true,java.nio.charset.StandardCharsets.UTF_8)) {
+                    System.setErr(captured);
+                    try { exit=QuestionBankLocal.launch(arguments,env,new BufferedReader(new StringReader("")),new PrintStream(out),new PrintStream(err)); }
+                    finally { System.setErr(previous); }
+                }
+                assertThat(raw.toString(java.nio.charset.StandardCharsets.UTF_8)).isEmpty();
+                assertThat(err.toString()).doesNotContain("PRIVATE_","jdbc:","<svg","Fatal Error");
+                if(svg.equals(valid)) {
+                    assertThat(exit).isEqualTo(2);assertThat(err.size()).isZero();
+                    assertThat(out.toString()).contains("Confirme digitando exatamente:","Cancelado, sem acesso ao banco.");
+                } else {
+                    assertThat(exit).isEqualTo(1);assertThat(out.size()).isZero();
+                    assertThat(err.toString()).contains("P01-Q01","UNSAFE_CONTENT");
+                }
+                assertThatThrownBy(destination::accept).isInstanceOf(java.net.SocketTimeoutException.class);
+            }
         }
     }
     @Test void reclassificationKeepsIdentityProvenanceAndOldEligibleClassificationUntilApproval() throws Exception {

@@ -9,6 +9,9 @@ import java.util.regex.Pattern;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import javax.xml.parsers.DocumentBuilderFactory;
+import org.xml.sax.ErrorHandler;
+import org.xml.sax.SAXException;
+import org.xml.sax.SAXParseException;
 
 final class PackageContentSafety {
     private static final Pattern CORRECTIVE = Pattern.compile("gabarito|answer|correct|corret[ao]|resolu[cç][aã]o", Pattern.CASE_INSENSITIVE);
@@ -43,7 +46,14 @@ final class PackageContentSafety {
             factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
             factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
             factory.setAttribute(javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD, ""); factory.setAttribute(javax.xml.XMLConstants.ACCESS_EXTERNAL_SCHEMA, "");
-            var document = factory.newDocumentBuilder().parse(new java.io.ByteArrayInputStream(bytes));
+            var builder = factory.newDocumentBuilder();
+            // O handler padrão pode imprimir trechos privados em System.err antes da tradução pelo launcher.
+            builder.setErrorHandler(new ErrorHandler() {
+                @Override public void warning(SAXParseException error) throws SAXException { throw error; }
+                @Override public void error(SAXParseException error) throws SAXException { throw error; }
+                @Override public void fatalError(SAXParseException error) throws SAXException { throw error; }
+            });
+            var document = builder.parse(new java.io.ByteArrayInputStream(bytes));
             if (!"svg".equals(document.getDocumentElement().getLocalName())) throw new IllegalArgumentException("Raiz SVG inválida");
             var tags = Set.of("svg","g","path","rect","circle","ellipse","line","polyline","polygon","text","tspan","title","desc","defs","marker");
             var nodes = document.getElementsByTagName("*");

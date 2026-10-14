@@ -1,6 +1,8 @@
 # Tasks
 
-**Proposta aprovada no #31; rodada inicial 1.2, 1.3 e 2.1–2.3 e lote atual dos grupos completos 3, 4 e 5 autorizados pelo usuário**, sem pausas por subtarefa e sem merges presumidos. Não há limite fixo de tarefas por lote; sem escopo explícito, listar pendências e perguntar quais grupos serão feitos antes de começar. Não encerrar num prefixo do grupo. Issue #30; `[x]` registra implementação/verificação na branch, **não aprovação/integração à épica**. A rodada inicial teve duas revisões independentes (Astra medium e SOL 6.1 xhigh), registradas historicamente. Política atual de 2026-10-13: somente SOL xhigh nos lotes, inclusive críticos, mantendo Astra medium no gate cumulativo final, conforme [procedimento](../../../docs/architecture/spec-review.md). PRs pequenos em draft; aprovação/merge explícitos continuam obrigatórios. Fixtures não aprovam conteúdo real; demais grupos não iniciam automaticamente.
+**Retomada em 2026-10-14:** grupos completos **6.1–6.25 e 7.1–7.3** solicitados, implementados e verificados na branch `task/question-bank/initial-curation`, PR draft #62. Após autorização operacional explícita, 250 revisões exatas foram importadas/reaplicadas e aprovadas em PostgreSQL18.6 local isolado, 50 por disciplina. Evidências em `editorial/question-bank/2026-10/` e `reviews/round3/operational-verification.md`. **44/44 implementadas/verificadas; 16/44 integradas na épica da spec; 28 aguardam aprovação/merge do PR.** Parecer independente SOL e snapshots revalidados em `reviews/round3/final-review.md`; aprovações editoriais locais não aprovam PRs nem substituem gate cumulativo Astra. Rejeições anteriores ficaram históricas; nenhum merge/publicação da aplicação/integração na épica geral foi executado.
+
+**Proposta aprovada no #31; rodada inicial 1.2, 1.3 e 2.1–2.3 e lotes dos grupos completos 3–5 e 6–7 autorizados pelo usuário**, sem pausas por subtarefa e sem merges presumidos. Não há limite fixo de tarefas por lote; sem escopo explícito, listar pendências e perguntar quais grupos serão feitos antes de começar. Não encerrar num prefixo do grupo. Issue #30; `[x]` registra implementação/verificação na branch, **não aprovação/integração à épica**. A rodada inicial teve duas revisões independentes (Astra medium e SOL 6.1 xhigh), registradas historicamente. Política atual de 2026-10-13: somente SOL xhigh nos lotes, inclusive críticos, mantendo Astra medium no gate cumulativo final, conforme [procedimento](../../../docs/architecture/spec-review.md). PRs pequenos em draft; aprovação/merge explícitos continuam obrigatórios. Fixtures não aprovam conteúdo real; demais grupos não iniciam automaticamente.
 
 ## 1. Catálogo e domínio — grupo catalog-domain
 
@@ -37,37 +39,37 @@
 
 Selecionar50questões distintas por disciplina, distribuídas por assuntos, em5lotes de10; pode ampliar até100 com lotes adicionais explicitamente revisados. Cada tarefa abaixo entrega pacote/registro/checklist da revisão exata, conferência de resposta/distratores/resolução acessível/referências e testes aplicáveis. Não escolher itens só para preencher número. Pendências bloqueiam sua aprovação; registrar lacuna sem fingir tarefa concluída. Cada lote é unidade revisável, não uma aprovação automática de toda a disciplina.
 
-- [ ] 6.1 Revisar lote1 dePortuguês(10), com evidências/editorial e validação do pacote; conferir identidade/classificação/fontes/resolução antes da aprovação explícita.
-- [ ] 6.2 Revisar lote2 dePortuguês(10), incluindo duplicações/cobertura contra lote1 e validação/evidências da versão exata.
-- [ ] 6.3 Revisar lote3 dePortuguês(10), incluindo duplicações/cobertura acumulada e validação/evidências da versão exata.
-- [ ] 6.4 Revisar lote4 dePortuguês(10), incluindo duplicações/cobertura acumulada e validação/evidências da versão exata.
-- [ ] 6.5 Revisar lote 5 de Português (10), conferir total de 50 IDs elegíveis distintos/cobertura e entregar relatório/pendências com validação/evidências.
-- [ ] 6.6 Revisar lote1 deMatemática/Raciocínio(10), com conferência de cálculo/resultado/fórmula e evidências/editorial da versão exata.
-- [ ] 6.7 Revisar lote2 deMatemática/Raciocínio(10), conferir cálculo/duplicações/cobertura acumulada e validar pacote/evidências.
-- [ ] 6.8 Revisar lote3 deMatemática/Raciocínio(10), conferir cálculo/duplicações/cobertura acumulada e validar pacote/evidências.
-- [ ] 6.9 Revisar lote4 deMatemática/Raciocínio(10), conferir cálculo/duplicações/cobertura acumulada e validar pacote/evidências.
-- [ ] 6.10 Revisar lote 5 de Matemática/Raciocínio (10), conferir 50 IDs distintos/cobertura, cálculos e relatório/pendências com validação/evidências.
-- [ ] 6.11 Revisar lote1 deInformática(10), conferir condições/versões de ferramentas citadas, fontes/resolução e validar pacote/evidências.
-- [ ] 6.12 Revisar lote2 deInformática(10), conferir duplicações/cobertura/condições de ferramentas e validar pacote/evidências da versão exata.
-- [ ] 6.13 Revisar lote3 deInformática(10), conferir duplicações/cobertura/condições de ferramentas e validar pacote/evidências da versão exata.
-- [ ] 6.14 Revisar lote4 deInformática(10), conferir duplicações/cobertura/condições de ferramentas e validar pacote/evidências da versão exata.
-- [ ] 6.15 Revisar lote 5 de Informática (10), conferir 50 IDs distintos/cobertura e relatório/pendências com validação/evidências.
-- [ ] 6.16 Revisar lote1 deconteúdo administrativo(10), conferir rotina/associação ao cargo/fontes/normas aplicáveis e validar pacote/evidências.
-- [ ] 6.17 Revisar lote2 deconteúdo administrativo(10), conferir duplicações/cobertura e fontes/normas aplicáveis com validação/evidências.
-- [ ] 6.18 Revisar lote3 deconteúdo administrativo(10), conferir duplicações/cobertura e fontes/normas aplicáveis com validação/evidências.
-- [ ] 6.19 Revisar lote4 deconteúdo administrativo(10), conferir duplicações/cobertura e fontes/normas aplicáveis com validação/evidências.
-- [ ] 6.20 Revisar lote 5 de conteúdo administrativo (10), conferir 50 IDs distintos/cobertura e relatório/pendências com validação/evidências.
-- [ ] 6.21 Revisar lote 1 de conteúdo escolar (10), conferir rotina/dispositivo/vigência das normas aplicáveis e registrar fonte/data/pendências; validar pacote/evidências.
-- [ ] 6.22 Revisar lote2 deconteúdo escolar(10), conferir duplicações/cobertura/normas e validar pacote/evidências da versão exata.
-- [ ] 6.23 Revisar lote3 deconteúdo escolar(10), conferir duplicações/cobertura/normas e validar pacote/evidências da versão exata.
-- [ ] 6.24 Revisar lote4 deconteúdo escolar(10), conferir duplicações/cobertura/normas e validar pacote/evidências da versão exata.
-- [ ] 6.25 Revisar lote 5 de conteúdo escolar (10), conferir 50 IDs distintos/cobertura e relatório/pendências com validação/evidências.
+- [x] 6.1 Revisar lote1 dePortuguês(10), com evidências/editorial e validação do pacote; conferir identidade/classificação/fontes/resolução antes da aprovação explícita.
+- [x] 6.2 Revisar lote2 dePortuguês(10), incluindo duplicações/cobertura contra lote1 e validação/evidências da versão exata.
+- [x] 6.3 Revisar lote3 dePortuguês(10), incluindo duplicações/cobertura acumulada e validação/evidências da versão exata.
+- [x] 6.4 Revisar lote4 dePortuguês(10), incluindo duplicações/cobertura acumulada e validação/evidências da versão exata.
+- [x] 6.5 Revisar lote 5 de Português (10), conferir total de 50 IDs elegíveis distintos/cobertura e entregar relatório/pendências com validação/evidências.
+- [x] 6.6 Revisar lote1 deMatemática/Raciocínio(10), com conferência de cálculo/resultado/fórmula e evidências/editorial da versão exata.
+- [x] 6.7 Revisar lote2 deMatemática/Raciocínio(10), conferir cálculo/duplicações/cobertura acumulada e validar pacote/evidências.
+- [x] 6.8 Revisar lote3 deMatemática/Raciocínio(10), conferir cálculo/duplicações/cobertura acumulada e validar pacote/evidências.
+- [x] 6.9 Revisar lote4 deMatemática/Raciocínio(10), conferir cálculo/duplicações/cobertura acumulada e validar pacote/evidências.
+- [x] 6.10 Revisar lote 5 de Matemática/Raciocínio (10), conferir 50 IDs distintos/cobertura, cálculos e relatório/pendências com validação/evidências.
+- [x] 6.11 Revisar lote1 deInformática(10), conferir condições/versões de ferramentas citadas, fontes/resolução e validar pacote/evidências.
+- [x] 6.12 Revisar lote2 deInformática(10), conferir duplicações/cobertura/condições de ferramentas e validar pacote/evidências da versão exata.
+- [x] 6.13 Revisar lote3 deInformática(10), conferir duplicações/cobertura/condições de ferramentas e validar pacote/evidências da versão exata.
+- [x] 6.14 Revisar lote4 deInformática(10), conferir duplicações/cobertura/condições de ferramentas e validar pacote/evidências da versão exata.
+- [x] 6.15 Revisar lote 5 de Informática (10), conferir 50 IDs distintos/cobertura e relatório/pendências com validação/evidências.
+- [x] 6.16 Revisar lote1 deconteúdo administrativo(10), conferir rotina/associação ao cargo/fontes/normas aplicáveis e validar pacote/evidências.
+- [x] 6.17 Revisar lote2 deconteúdo administrativo(10), conferir duplicações/cobertura e fontes/normas aplicáveis com validação/evidências.
+- [x] 6.18 Revisar lote3 deconteúdo administrativo(10), conferir duplicações/cobertura e fontes/normas aplicáveis com validação/evidências.
+- [x] 6.19 Revisar lote4 deconteúdo administrativo(10), conferir duplicações/cobertura e fontes/normas aplicáveis com validação/evidências.
+- [x] 6.20 Revisar lote 5 de conteúdo administrativo (10), conferir 50 IDs distintos/cobertura e relatório/pendências com validação/evidências.
+- [x] 6.21 Revisar lote 1 de conteúdo escolar (10), conferir rotina/dispositivo/vigência das normas aplicáveis e registrar fonte/data/pendências; validar pacote/evidências.
+- [x] 6.22 Revisar lote2 deconteúdo escolar(10), conferir duplicações/cobertura/normas e validar pacote/evidências da versão exata.
+- [x] 6.23 Revisar lote3 deconteúdo escolar(10), conferir duplicações/cobertura/normas e validar pacote/evidências da versão exata.
+- [x] 6.24 Revisar lote4 deconteúdo escolar(10), conferir duplicações/cobertura/normas e validar pacote/evidências da versão exata.
+- [x] 6.25 Revisar lote 5 de conteúdo escolar (10), conferir 50 IDs distintos/cobertura e relatório/pendências com validação/evidências.
 
 ## 7. Verificação integrada — após 1–6
 
-- [ ] 7.1 Executar fluxoCLI/backend/PG/browser reais isolados:importar/reaplicar/revisar/aprovar/retirar/filtrar/consultar, incluindo concorrência/erros/migração; conferir250IDs aprovados no mínimo(50pordisciplina) ou registrar decisão de escopo explícita, sem misturarfixtures com acervo real.
-- [ ] 7.2 Regressar Gradlecleanbuild, frontendtest/build, guard/OpenSpec, identidade/OIDC/readiness e UI/offline comSTUDY_ROOT construído; conferir108páginas/1757referências/nove módulos90resoluções e hashes de fontes intactos, registrando quem executou e nenhumskip silencioso.
-- [ ] 7.3 Verificar pacotes/JAR/bundle semfixtures/editorial real automático/dados corretivos públicos, comandoslocais/rollback eCIsempublicação; registrar evidência de integração e tokens por sessão, sem confundir testes/aprovaçãoeditorial/revisãoindependente.
+- [x] 7.1 Executar fluxoCLI/backend/PG/browser reais isolados:importar/reaplicar/revisar/aprovar/retirar/filtrar/consultar, incluindo concorrência/erros/migração; conferir250IDs aprovados no mínimo(50pordisciplina) ou registrar decisão de escopo explícita, sem misturarfixtures com acervo real.
+- [x] 7.2 Regressar Gradlecleanbuild, frontendtest/build, guard/OpenSpec, identidade/OIDC/readiness e UI/offline comSTUDY_ROOT construído; conferir108páginas/1757referências/nove módulos90resoluções e hashes de fontes intactos, registrando quem executou e nenhumskip silencioso.
+- [x] 7.3 Verificar pacotes/JAR/bundle semfixtures/editorial real automático/dados corretivos públicos, comandoslocais/rollback eCIsempublicação; registrar evidência de integração e tokens por sessão, sem confundir testes/aprovaçãoeditorial/revisãoindependente.
 
 ## Workflow follow-up
 

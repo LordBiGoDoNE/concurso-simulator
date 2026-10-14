@@ -54,6 +54,7 @@ final class PackageContentSafety {
                 @Override public void fatalError(SAXParseException error) throws SAXException { throw error; }
             });
             var document = builder.parse(new java.io.ByteArrayInputStream(bytes));
+            rejectProcessingInstructions(document);
             if (!"svg".equals(document.getDocumentElement().getLocalName())) throw new IllegalArgumentException("Raiz SVG inválida");
             var tags = Set.of("svg","g","path","rect","circle","ellipse","line","polyline","polygon","text","tspan","title","desc","defs","marker");
             var nodes = document.getElementsByTagName("*");
@@ -67,5 +68,15 @@ final class PackageContentSafety {
                 }
             }
         } catch (Exception error) { throw new IllegalArgumentException("SVG recusado", error); }
+    }
+    private static void rejectProcessingInstructions(org.w3c.dom.Node root) {
+        // Percorrer o documento inteiro, inclusive antes/depois da raiz; não só os elementos SVG.
+        var pending = new java.util.ArrayDeque<org.w3c.dom.Node>(); pending.push(root);
+        while (!pending.isEmpty()) {
+            var node = pending.pop();
+            if (node.getNodeType() == org.w3c.dom.Node.PROCESSING_INSTRUCTION_NODE)
+                throw new IllegalArgumentException("SVG com instrução de processamento");
+            for (var child = node.getFirstChild(); child != null; child = child.getNextSibling()) pending.push(child);
+        }
     }
 }

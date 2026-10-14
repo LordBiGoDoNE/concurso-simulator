@@ -145,3 +145,11 @@ local observada não recebe conexão em nenhum desses casos. O teste usa snapsho
 temporários e conteúdo sintético, sem modificar o acervo. Essa proteção cobre o parser
 SVG desta entrada, não certifica todos os logs de bibliotecas nem a segurança semântica
 de qualquer recurso; validação editorial e demais controles continuam necessários.
+
+SOL-S52-RV-01: a importação também recusa instruções de processamento SVG em todo o
+DOM, inclusive anteriores/posteriores à raiz. A regressão pelo launcher cobre
+`xml-stylesheet` e PI desconhecida em UTF-8/UTF-16, mantendo declaração XML/comentário
+inerte/SVG válido aceitos até a confirmação cancelada. Erros continuam recebendo
+UNSAFE_CONTENT sem detalhes privados ou stderr do parser; o listener local não recebe
+conexão. O extrator aplica a mesma regra estrutural; veja `question-extraction.md` para
+os limites dos recursos e a preservação de blocos auxiliares (SOL-S52-RV-02).

@@ -200,13 +200,19 @@ class QuestionLocalImportTests {
         var cases=List.of(valid,
                 "<svg xmlns=\"http://www.w3.org/2000/svg\"><PRIVATE_SVG_SENTINEL></svg>",
                 "<svg xmlns=\"http://www.w3.org/2000/svg\">&PRIVATE_ENTITY_SENTINEL;</svg>",
-                "<!DOCTYPE svg [<!ENTITY private SYSTEM \"file:///PRIVATE_FILE_SENTINEL\">]><svg xmlns=\"http://www.w3.org/2000/svg\">&private;</svg>");
+                "<!DOCTYPE svg [<!ENTITY private SYSTEM \"file:///PRIVATE_FILE_SENTINEL\">]><svg xmlns=\"http://www.w3.org/2000/svg\">&private;</svg>",
+                "<?xml-stylesheet type=\"text/css\" href=\"https://example.test/PRIVATE_STYLE_SENTINEL\"?>"+valid,
+                valid.replace("</svg>","<?xml-stylesheet href=\"https://example.test/PRIVATE_STYLE_SENTINEL\"?></svg>"),
+                valid+"<?xml-stylesheet href=\"https://example.test/PRIVATE_STYLE_SENTINEL\"?>",
+                "<?private PRIVATE_PI_SENTINEL?>"+valid);
         try(var destination=new java.net.ServerSocket(0,1,java.net.InetAddress.getLoopbackAddress())) {
             destination.setSoTimeout(200);
             var env=Map.of("DB_URL","jdbc:postgresql://localhost:"+destination.getLocalPort()+"/fixture",
                     "DB_USERNAME","fixture","DB_PASSWORD","PRIVATE_PASSWORD_SENTINEL");
-            for(var svg:cases) {
-                Files.writeString(asset,svg);
+            for(var svg:cases) for(var charset:List.of(java.nio.charset.StandardCharsets.UTF_8,java.nio.charset.StandardCharsets.UTF_16)) {
+                // A declaração XML não é PI; comentário com texto semelhante também é inerte.
+                var xml=svg.equals(valid)?"<?xml version=\"1.0\" encoding=\""+charset.name()+"\"?>"+svg.replace("</svg>","<!-- <?private benign text?> --></svg>"):svg;
+                Files.write(asset,xml.getBytes(charset));
                 var tree=(ObjectNode)JSON.readTree(baseline);var item=(ObjectNode)tree.get("items").get(0);
                 var c=JSON.treeToValue(item.get("content"),QuestionPackageReader.Content.class);
                 var hash=java.util.HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(asset)));

@@ -69,6 +69,12 @@ class Document(HTMLParser):
         return result
 
 
+class InertSvgTreeBuilder(ET.TreeBuilder):
+    # Callbacks estruturais também veem PI fora da raiz e XML codificado em UTF-16.
+    def pi(self, target, text): raise ValueError("SVG com instrução de processamento")
+    def doctype(self, name, public_id, system_id): raise ValueError("SVG com entidades/DOCTYPE")
+
+
 def image_resource(node, root, source):
     src = node.attrs.get("src", ""); parsed = urlsplit(src)
     if parsed.scheme or parsed.netloc or parsed.query or parsed.fragment:
@@ -81,8 +87,7 @@ def image_resource(node, root, source):
     if extension == "png" and not data.startswith(b"\x89PNG\r\n\x1a\n"): raise ValueError("PNG inválido")
     if extension in {"jpg", "jpeg"} and not data.startswith(b"\xff\xd8\xff"): raise ValueError("JPEG inválido")
     if extension == "svg":
-        if b"<!DOCTYPE" in data.upper() or b"<!ENTITY" in data.upper(): raise ValueError("SVG com entidades")
-        svg = ET.fromstring(data)
+        svg = ET.fromstring(data, parser=ET.XMLParser(target=InertSvgTreeBuilder()))
         if svg.tag != "{http://www.w3.org/2000/svg}svg": raise ValueError("Raiz SVG inválida")
         allowed = {"svg", "g", "path", "rect", "circle", "ellipse", "line", "polyline", "polygon", "text", "tspan", "title", "desc", "defs", "marker"}
         for element in svg.iter():
@@ -137,6 +142,32 @@ def accessible(nodes, root, source, public_content=True):
     return {"text": text, "resources": resources}
 
 
+def known_source_block(node, module, row):
+    if not row.get("Tipo"): return False
+    reference = Node("p", {}, ["Base para estudo e conferência: ", Node("a", {"href": "#referencias"},
+                     ["Referências temáticas deste módulo"]), "."])
+    if row.get("Fundamento_legal"):
+        ref = module["referencias"][0]
+        reference = Node("p", {}, ["Base para estudo e conferência: ", Node("a",
+                         {"href": ref["url"], "target": "_blank", "rel": "noopener"}, [ref["titulo"]]),
+                         " · " + row["Fundamento_legal"] + "."])
+    return node == Node("aside", {"class": "callout callout--source"}, [
+        Node("span", {"class": "callout-label"}, ["Fonte da questão"]),
+        Node("p", {}, [Node("strong", {}, [row["Tipo"]]), " · " + row["ID"] + "."]),
+        Node("p", {}, ["Origem: material aprofundado do projeto [Gaby], mantido na V3."]),
+        reference
+    ])
+
+
+def known_return_link(node, module, number):
+    if node.tag == "p" and node.attrs == {"class": "small"} and len(node.children) == 1:
+        node = node.children[0]
+    if not isinstance(node, Node) or node.tag != "a" or set(node.attrs) != {"href"}: return False
+    target = posixpath.basename(module["conteudo"]) + f"#q{number}"
+    return (unquote(node.attrs["href"]) == target and node.children in
+            [[f"Rever o enunciado da questão {number}"], [f"Rever o enunciado {number}"]])
+
+
 def candidate(root, module, row, content, answer, content_hash, answer_hash):
     key = row["ID"]; number = int(row["Questao"])
     if key != f"{module['id']}-Q{number:02}" or row["Arquivo"] != module["conteudo"]:
@@ -152,9 +183,12 @@ def candidate(root, module, row, content, answer, content_hash, answer_hash):
     headers = [n for n in a.children if isinstance(n, Node) and n.tag in {"h2", "h3"}]
     match = re.fullmatch(rf"Questão {number} — alternativa ([A-Z])", headers[0].text().strip()) if len(headers) == 1 else None
     if not match or ord(match[1]) - ord("A") >= len(choices): raise ValueError("Gabarito sem join inequívoco")
-    # Fonte/notas de navegação e rótulo numérico não são enunciado/resolução.
-    statement = [n for n in q.children if n is not options[0] and not (isinstance(n, Node) and (n.tag == "aside" or (n.tag in {"strong", "h3"} and re.fullmatch(r"Questão \d+\.?", n.text().strip()))))]
-    resolution = [n for n in a.children if not (isinstance(n, Node) and (n.tag in {"h2", "h3", "aside"} or "small" in n.attrs.get("class", "").split() or (n.tag == "a" and re.fullmatch(r"Rever o enunciado \d+", n.text().strip()))))]
+    # Excluir só estruturas auxiliares conhecidas, nunca qualquer aside/classe small.
+    labels = [Node("strong", {}, [f"Questão {number}."]), Node("h3", {}, [f"Questão {number}"])]
+    statement = [n for n in q.children if n is not options[0] and not
+                 (isinstance(n, Node) and (n in labels or known_source_block(n, module, row)))]
+    resolution = [n for n in a.children if n is not headers[0] and not
+                  (isinstance(n, Node) and (known_source_block(n, module, row) or known_return_link(n, module, number)))]
     alternatives = [{"id": str(uuid.uuid5(uuid.NAMESPACE_URL, f"concurso-simulator:legacy-v3:{key}:option:{i}")),
                      "content": accessible([Node("span", n.attrs, n.children)], root, module["conteudo"])} for i, n in enumerate(choices)]
     role_ids = [ROLES[0]] if module["id"].startswith("A") else [ROLES[1]] if module["id"].startswith("S") else list(ROLES)

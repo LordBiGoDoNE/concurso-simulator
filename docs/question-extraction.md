@@ -55,3 +55,24 @@ usa texto explícito `[destaque: ...]` / `[ênfase: ...]`, não underscores/Mark
 colidem com índices matemáticos. Esses marcadores não são uma linguagem executável:
 o cliente exibe o texto integral, sem reinterpretá-lo. Pacotes já gerados devem ser
 regenerados; fingerprints dependem do conteúdo exato e não recebem atualização silenciosa.
+
+## Revalidação da fronteira de recursos e blocos auxiliares
+
+SOL-S52-RV-01: examinar somente elementos/atributos deixava `xml-stylesheet` fora da
+allowlist. Extração e importação agora recusam **qualquer instrução de processamento**
+no documento SVG, antes/dentro/depois da raiz. Python usa callbacks do parser (também
+para DOCTYPE), Java percorre todos os nós DOM. Declaração XML e comentários inertes
+não são instruções executáveis; seguem aceitos. Regressões UTF-8/UTF-16 não reescrevem
+os recursos, nem renderizam/buscam referências externas. O launcher mantém diagnóstico
+sanitizado, System.err real vazio e rejeição antes de confirmação/conexão ao banco.
+
+SOL-S52-RV-02: excluir qualquer `aside`/classe `small` podia perder condições ou etapas
+silenciosamente. Só excluir proveniência com estrutura/textos/atributos conhecidos,
+ID/tipo do CSV e referência/fundamento legal exatos quando presentes; só excluir link
+de retorno com texto conhecido e alvo local do módulo/questão correspondentes.
+Bloco `small` com texto suportado entra na resolução e no fingerprint. `aside` diferente
+ou auxiliar com conteúdo extra não é descartado: por ser markup não suportado, gera
+pendência, mantém o ID no inventário e não produz candidato parcial. Variantes novas
+precisam de conversão deliberada, não heurística permissiva por classe CSS.
+Fixtures verificam positivos conhecidos, negativos alterados e inventário completo em
+snapshot temporário; não modificam as aulas nem substituem conferência editorial.

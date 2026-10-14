@@ -18,7 +18,8 @@ class ExtractionTests(unittest.TestCase):
     def fixture(self, text="Quanto é 2 + 2?", answer="A", attributes="", option="4"):
         module = {"id": "P01", "conteudo": "01_Portugues/fixture.html", "gabarito": "01_Portugues/answers.html",
                   "referencias": [{"titulo": "Referência sintética", "url": "https://example.test/study"}]}
-        row = {"ID": "P01-Q01", "Questao": "1", "Arquivo": module["conteudo"], "Origem": "Fixture, sem validade editorial"}
+        row = {"ID": "P01-Q01", "Questao": "1", "Arquivo": module["conteudo"], "Origem": "Fixture, sem validade editorial",
+               "Tipo": "Autoral — língua portuguesa", "Fundamento_legal": ""}
         q = Document(f'<div class="q" id="q1"><strong>Questão 1.</strong>{text}<ol type="A"><li {attributes}>{option}</li><li>5</li></ol></div>').questions()
         a = Document(f'<div class="q" id="q1"><h3>Questão 1 — alternativa {answer}</h3><p>2 + 2 = 4, em duas etapas.</p></div>').questions()
         return module, row, q, a
@@ -100,6 +101,96 @@ class ExtractionTests(unittest.TestCase):
         node = Document('<p>2<sup>3</sup>; H<sub>2</sub>O; x<sup>1<sub>n</sub></sup></p>')
         text = accessible(node.root.children, ROOT, '01_Portugues/fixture.html')['text']
         self.assertEqual(text, '2^(3); H_(2)O; x^(1_(n))')
+
+    def test_svg_processing_instructions_anywhere_are_rejected_without_rewriting(self):
+        opening = '<svg xmlns="http://www.w3.org/2000/svg">'
+        pi = '<?xml-stylesheet type="text/css" href="https://example.test/style.css"?>'
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory); (root/'assets').mkdir(); asset = root/'assets/fixture.svg'
+            image = Document('<img src="../assets/fixture.svg" alt="Figura sintética">').root.children[0]
+            for xml in (pi + opening + '</svg>', opening + pi + '</svg>', opening + '</svg>' + pi,
+                        '<?private sentinel?>' + opening + '</svg>',
+                        '<!DOCTYPE svg [<!ENTITY private "synthetic">]>' + opening + '&private;</svg>'):
+                for encoding in ('utf-8', 'utf-16'):
+                    with self.subTest(xml=xml, encoding=encoding):
+                        data = xml.encode(encoding); asset.write_bytes(data)
+                        with self.assertRaises(ValueError): image_resource(image, root, '01_Portugues/fixture.html')
+                        self.assertEqual(asset.read_bytes(), data)
+            for encoding in ('utf-8', 'utf-16'):
+                xml = '<?xml version="1.0" encoding="'+encoding+'"?>' + opening + '<!-- <?private benign text?> --><rect width="1"/></svg>'
+                data = xml.encode(encoding); asset.write_bytes(data)
+                self.assertEqual(image_resource(image, root, '01_Portugues/fixture.html')['sha256'], hashlib.sha256(data).hexdigest())
+
+    def test_unknown_asides_create_pending_issue_not_silent_candidates(self):
+        for aside in ('<aside>Considere x = 4.</aside>',
+                      '<aside class="callout callout--source">Considere x = 4.</aside>'):
+            for side in (2, 3):
+                with self.subTest(aside=aside, side=side):
+                    f = self.fixture(); f[side]['q1'].children.extend(Document(aside).root.children)
+                    with self.assertRaises(ValueError): self.convert(f)
+
+    def test_small_resolution_text_is_preserved_not_treated_as_navigation(self):
+        f = self.fixture(); f[3]['q1'].children.extend(Document('<p class="small">Considere x = 4.</p>').root.children)
+        item = self.convert(f)
+        self.assertIn('Considere x = 4.', item['content']['resolution']['text'])
+        self.assertNotEqual(item['fingerprint'], self.convert()['fingerprint'])
+
+    def test_only_exact_known_source_and_navigation_blocks_are_excluded(self):
+        source = ('<aside class="callout callout--source"><span class="callout-label">Fonte da questão</span>'
+                  '<p><strong>Autoral — língua portuguesa</strong> · P01-Q01.</p>'
+                  '<p>Origem: material aprofundado do projeto [Gaby], mantido na V3.</p>'
+                  '<p>Base para estudo e conferência: <a href="#referencias">Referências temáticas deste módulo</a>.</p></aside>')
+        navigation = '<p class="small"><a href="fixture.html#q1">Rever o enunciado da questão 1</a></p>'
+        f = self.fixture()
+        for side in (2, 3): f[side]['q1'].children.extend(Document(source).root.children)
+        f[3]['q1'].children.extend(Document(navigation).root.children)
+        self.assertEqual(self.convert(f), self.convert())
+        for html in (source.replace('P01-Q01', 'P01-Q02'), source.replace('</aside>', '<p>Considere x = 4.</p></aside>'),
+                     source.replace('<aside ', '<aside onclick="bad()" '),
+                     navigation.replace('</p>', 'Considere x = 4.</p>'), navigation.replace('#q1', '#q2'),
+                     navigation.replace('fixture.html#q1', 'https://example.test/fixture.html#q1')):
+            with self.subTest(html=html):
+                f = self.fixture(); f[3]['q1'].children.extend(Document(html).root.children)
+                with self.assertRaises(ValueError): self.convert(f)
+
+    def test_legal_source_block_requires_exact_manifest_reference_and_csv_basis(self):
+        f = self.fixture(); f[1]['Fundamento_legal'] = 'Art. 1º'
+        source = ('<aside class="callout callout--source"><span class="callout-label">Fonte da questão</span>'
+                  '<p><strong>Autoral — língua portuguesa</strong> · P01-Q01.</p>'
+                  '<p>Origem: material aprofundado do projeto [Gaby], mantido na V3.</p>'
+                  '<p>Base para estudo e conferência: <a href="https://example.test/study" target="_blank" rel="noopener">Referência sintética</a> · Art. 1º.</p></aside>')
+        baseline = self.convert(f)
+        for side in (2, 3): f[side]['q1'].children.extend(Document(source).root.children)
+        self.assertEqual(self.convert(f), baseline)
+        for changed in (source.replace('Art. 1º', 'Art. 2º'), source.replace('/study', '/other'),
+                        source.replace('Referência sintética', 'Outra referência'),
+                        source.replace('</aside>', '<p>Considere x = 4.</p></aside>')):
+            with self.subTest(changed=changed):
+                bad = self.fixture(); bad[1]['Fundamento_legal'] = 'Art. 1º'
+                bad[2]['q1'].children.extend(Document(changed).root.children)
+                with self.assertRaises(ValueError): self.convert(bad)
+
+    def test_unsupported_auxiliary_content_stays_in_full_inventory_as_pending(self):
+        baseline = extract(ROOT)
+        module = json.loads((ROOT/'manifesto_v3.json').read_text())['modulos'][0]
+        with tempfile.TemporaryDirectory() as directory:
+            root = Path(directory)
+            for source in baseline['sourceFiles']:
+                target = root/source['path']; target.parent.mkdir(parents=True, exist_ok=True)
+                target.write_bytes((ROOT/source['path']).read_bytes())
+            lesson = root/module['conteudo']
+            original = lesson.read_text()
+            lesson.write_text(original.replace('<strong>Questão 1.</strong>',
+                              '<strong>Questão 1.</strong><aside>Considere x = 4.</aside>', 1))
+            package = extract(root)
+            self.assertEqual(len(package['inventory']), 510)
+            row = next(r for r in package['inventory'] if r['key'] == 'P01-Q01')
+            self.assertEqual(row['status'], 'invalid')
+            self.assertTrue(row['editorialReviewRequired'])
+            self.assertTrue(any(i['key'] == 'P01-Q01' for i in package['issues']))
+            self.assertFalse(any(i['origin']['key'] == 'P01-Q01' for i in package['items']))
+            self.assertEqual(len(package['items']), len(baseline['items']) - 1)
+            self.assertEqual((ROOT/module['conteudo']).read_text(), original)
 
 
 if __name__ == '__main__': unittest.main()

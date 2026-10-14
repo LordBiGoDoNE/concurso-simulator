@@ -4,6 +4,13 @@
 produz candidatos, inventário/pendências e suspeitas; não escreve nas aulas, consulta
 a rede, executa Python do pacote, abre banco ou aprova conteúdo. Saída fica fora do Git.
 
+O stdout da CLI é explicitamente UTF-8/LF, inclusive redirecionado no Windows. Não
+depende de `PYTHONUTF8`/`PYTHONIOENCODING`: o launcher Java lê o pacote em UTF-8.
+A revisão cumulativa reproduziu falha `UnicodeEncodeError` com o padrão CP1252;
+a regressão executa a CLI com esse padrão forçado e decodifica estritamente a saída,
+preservando Unicode, inventário e candidatos. Isso protege o protocolo de bytes,
+não valida conteúdo editorial nem substitui os testes Java/PostgreSQL.
+
 ## Contrato e identidade
 
 Formato JSON `question-package/v1`: `catalog`, `sourceFiles` (path/SHA-256),

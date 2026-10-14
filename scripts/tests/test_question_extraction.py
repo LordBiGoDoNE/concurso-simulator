@@ -2,6 +2,8 @@
 import copy
 import hashlib
 import json
+import os
+import subprocess
 import tempfile
 import unittest
 from pathlib import Path
@@ -15,6 +17,19 @@ ROOT = Path(__file__).resolve().parents[2]
 
 
 class ExtractionTests(unittest.TestCase):
+    def test_cli_redirected_output_is_utf8_even_with_cp1252_process_default(self):
+        process = subprocess.run(
+            [sys.executable, "-B", "scripts/extract_questions.py", "--root", "."],
+            cwd=ROOT, capture_output=True,
+            env={**os.environ, "PYTHONUTF8": "0", "PYTHONIOENCODING": "cp1252"},
+            timeout=30,
+        )
+        self.assertEqual(process.returncode, 0, process.stderr.decode("utf-8", errors="replace"))
+        package = json.loads(process.stdout.decode("utf-8", errors="strict"))
+        self.assertEqual(len(package["inventory"]), 510)
+        self.assertEqual(len(package["items"]), 509)
+        self.assertTrue(any("π" in json.dumps(item, ensure_ascii=False) for item in package["items"]))
+
     def fixture(self, text="Quanto é 2 + 2?", answer="A", attributes="", option="4"):
         module = {"id": "P01", "conteudo": "01_Portugues/fixture.html", "gabarito": "01_Portugues/answers.html",
                   "referencias": [{"titulo": "Referência sintética", "url": "https://example.test/study"}]}

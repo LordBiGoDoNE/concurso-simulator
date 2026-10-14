@@ -279,6 +279,8 @@ def extract(root):
 
 
 def main():
+    # O pacote e consumido como UTF-8 pelo launcher Java, inclusive via pipe no Windows.
+    sys.stdout.reconfigure(encoding="utf-8", newline="\n")
     parser = argparse.ArgumentParser(description=__doc__); parser.add_argument("--root", default=".")
     args = parser.parse_args()
     try: result = extract(args.root)

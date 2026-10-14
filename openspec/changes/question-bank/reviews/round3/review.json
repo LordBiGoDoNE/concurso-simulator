@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "batch": "question-bank-groups-6-7",
+  "scope": ["6.1–6.25", "7.1–7.3"],
+  "risk": "critical",
+  "review_status": "initial_review_completed",
+  "batch_complete": false,
+  "base_sha": "dcbe086af47a6fafca114290850a419f0886cc92",
+  "reviewed_head_sha": "3dc4389eb73662ad3d74e2272919813b64e0f3dd",
+  "diff_sha256": "8ff9f4bced1fdc7bd78e875e23d4934e5e7fb5570ac0f0753112302c0ccc57bd",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/round3_sol_initial",
+    "independent_context": true,
+    "identity_evidence": "Dispatch explícito do harness: model gpt-6.1-sol, reasoning_effort xhigh. Revisor não tem telemetria própria adicional de modelo/variante.",
+    "tokens": null
+  },
+  "coverage": {
+    "diff": "15 arquivos e interações, requisitos aprovados, ADR e responsabilidades HTTP.",
+    "editorial": "250 enunciados/opções/gabaritos/resoluções finais lidos; notas JSONL e referências consultadas; nenhuma divergência concreta de gabarito identificada.",
+    "integrity": "25 pacotes de dez, 50 identidades por disciplina, 51 assuntos, manifesto/fingerprints/registros e hashes de 104 fontes conferidos pelo revisor sem divergências.",
+    "security": "Fluxo offline não aprova em startup/CI, projeção pública e preservação do legado examinados; nenhuma integração real do acervo executada pelo revisor.",
+    "persistence": "Contratos/código relacionados lidos; elegibilidade real das 250 revisões permanece não comprovada.",
+    "documentation": "verification.md foi examinado só depois da avaliação semântica inicial; testes relatados não foram usados como prova independente."
+  },
+  "findings": [],
+  "triage_complete": true,
+  "open_work": [
+    "Autorização operacional explícita para criar PostgreSQL 18.6 isolado em loopback e persistir SUBMIT/APPROVE das 250 revisões exatamente identificadas.",
+    "Executar o fluxo integrado real e comprovar 250 IDs elegíveis, 50 por disciplina; completar 7.1 e demais critérios de 6/7.",
+    "Autenticar GitHub para publicar o PR em rascunho, conferir CI e atualizar issue #30.",
+    "Revalidar o conjunto/evidências resultantes antes de solicitar aprovação de merge."
+  ],
+  "limitations": [
+    "Revisor não executou testes, decisões editoriais, importações, operações Git mutantes ou escrita no GitHub.",
+    "O XML disponível após a revalidação direcionada não comprova sozinho os 112 testes da execução completa anterior relatada pelo coordenador.",
+    "Leitura e referências não equivalem a certificação humana pedagógica, leitura integral de todas as obras ou cobertura integral do edital.",
+    "Cota 5h/semanal e tokens indisponíveis; não há atribuição exata nem comparação atual com outro modelo.",
+    "O snapshot cobre o head declarado; estes arquivos posteriores apenas registram o relatório, não são recertificados automaticamente por ele.",
+    "Não substitui gate cumulativo final Astra medium nem autoriza merge/publicação/arquivamento."
+  ]
+}

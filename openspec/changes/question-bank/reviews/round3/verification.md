@@ -1,5 +1,20 @@
 # Grupos 6 e 7 — verificação em andamento
 
+## Retomada após configuração do ambiente
+
+Em 2026-10-14 o usuário informou GitHub autenticado e autorizou subir o PostgreSQL
+necessário. Autenticação `LordBiGoDoNE` foi confirmada pelo GitHub CLI instalado;
+o PATH da sessão antiga não o incluía, por isso foi usado seu caminho absoluto.
+Foi preparado PostgreSQL 18.6 exclusivo, em volume próprio e bind 127.0.0.1,
+com API local, Flyway aplicado e consulta pública vazia (zero elegíveis).
+Essa preparação **não importou questões nem executou decisões editoriais**.
+
+Uma nova tentativa do ensaio completo foi rejeitada pelo controle automático:
+autorização de subir PostgreSQL foi aceita, mas as 500 decisões SUBMIT/APPROVE
+continuaram exigindo autorização separada. Foi solicitada explicitamente ao usuário;
+não será presumida. O restante deste documento registra a primeira execução e seus
+bloqueios à época. GitHub está agora disponível para publicar PR em rascunho/CI.
+
 Pedido: todos os 25 lotes editoriais (6.1–6.25), mais 7.1–7.3. Branch de tarefa
 criada da épica `dcbe086af47a6fafca114290850a419f0886cc92`, com histórico preservado.
 Não representa integração à épica, aprovação humana dos PRs ou gate `[SPEC]`.

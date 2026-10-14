@@ -3,7 +3,7 @@
 Escopo solicitado: 6.1–6.25 e 7.1–7.3, 50 identidades por disciplina, em cinco
 lotes de dez. Base de trabalho: `dcbe086af47a6fafca114290850a419f0886cc92`.
 
-Os arquivos JSONL são intervenções editoriais, não um gerador de respostas:
+As cinco JSONL de disciplinas são intervenções editoriais, não um gerador de respostas:
 cada linha identifica uma questão lida, a resolução conferida e, quando necessário,
 a correção de enunciado/alternativas. Os IDs de origem e alternativas e os hashes
 dos HTML originais são preservados. Fontes são apoio para estudo e conferência;
@@ -48,6 +48,41 @@ de `manifest.json` fixam o conteúdo revisado: divergência exige nova revisão,
 não regeneração silenciosa do aceite. Pacotes completos não entram em Flyway,
 recursos do JAR, frontend, assets ou build público das aulas.
 
-Estado inicial: revisão/editorial em preparação; decisões persistidas, verificação
-integrada e revisão independente do lote ainda não executadas. Não marcar os
-grupos concluídos com base apenas na existência destes arquivos.
+## Elegibilidade verificada no banco local
+
+Após autorização explícita do usuário, os 25 pacotes foram importados e reaplicados
+na CLI real em PostgreSQL 18.6 isolado. `eligibility.jsonl` contém 250 registros
+**gerados de evidência**, com questão/revisão/fingerprint, responsável, checklist,
+IDs/datas das duas decisões persistidas e SHA-256 dos comandos confirmados.
+Foram cruzadas as 500 decisões do banco com esses comandos; o resultado é de
+50 identidades elegíveis por disciplina, sem pendências importadas. A tolerância
+temporal é de um microssegundo, conforme a precisão persistida; hashes são exatos.
+
+`eligibility-summary.json` liga a evidência ao manifesto/JAR e registra consulta
+dos 250 detalhes, 102 combinações AND, navegador 390/1280 e retirada/reaplicação
+numa cópia lógica isolada. A cópia não aumenta as contagens do acervo original.
+Esses arquivos não são executados, descobertos pelo startup ou incorporados ao JAR.
+Representam observação no ambiente local, não aprovação automática de outro banco.
+
+Os arquivos gerados pelo compilador (`review-records.json`/`coverage.json`) descrevem
+apenas sua saída offline: `not-imported` e `databaseEligible: null` não consultam o
+estado atual do banco. A evidência persistida está nos dois arquivos de elegibilidade
+acima; regenerar pacotes não a atualiza nem executa aprovação.
+
+Repetir as consultas de API em modo somente leitura:
+
+```text
+python scripts/verify_curated_bank.py --root . --report backend/build/curation/approved-report.json --api http://127.0.0.1:18180 --output backend/build/curation/http-verification.json
+node scripts/verify_curated_browser.cjs
+```
+
+O primeiro requer o relatório privado real da CLI (`report --editorial-local true`)
+e API local; o segundo, frontend em 5173 apontando à API 18180 e Chromium instalado.
+Não são tarefas de startup ou CI. A operação editorial exige a CLI deliberada e as
+confirmações documentadas em `docs/question-local-operations.md`; nenhuma credencial
+de banco deve ir ao Git. Os testes automatizados continuam usando fixtures identificadas.
+
+Situação: grupos 6/7 implementados e verificados no PR #62 em rascunho; revalidação
+independente do conjunto final em andamento. Integração/merge e gate cumulativo da
+spec exigem seus procedimentos próprios. Não inferir integração pela existência
+dos pacotes ou por aprovações editoriais no banco local.

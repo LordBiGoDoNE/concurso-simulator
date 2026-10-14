@@ -41,7 +41,9 @@ ativas. Recursos não são publicados automaticamente por essa ferramenta.
 O inventário mantém inclusive inválidos; seleção futura não implica apagar os demais.
 Suspeitas por texto equivalente são apenas alertas: nenhuma fusão/exclusão automática.
 Validação estrutural é distinta de revisão editorial de resposta/distratores/resolução.
-Fixtures e testes não aprovam acervo real; grupo 6 permanece pendente.
+Fixtures e testes não aprovam acervo real nem concluem o grupo 6. A curadoria real
+autorizada posteriormente está registrada em `editorial/question-bank/2026-10/`,
+com evidência de elegibilidade local separada dos resultados deste extrator.
 
 Snapshot observado nesta implementação: 510 itens inventariados, 509 candidatos e
 uma pendência estrutural em `P05-Q01` (alternativas repetidas), mantida no relatório.

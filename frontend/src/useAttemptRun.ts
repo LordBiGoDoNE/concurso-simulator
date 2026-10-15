@@ -12,7 +12,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
   const drafts = useRef<Record<string, string | null>>({}); const queue = useRef<Job[]>([]);
   const [revision, redraw] = useState(0); const working = useRef(false); const blocked = useRef(false);
   const lifetime = useRef<AbortController | null>(null); const unavailable = useRef(onUnavailable); unavailable.current = onUnavailable;
-  useLayoutEffect(() => { const controller = new AbortController(); lifetime.current = controller; return () => controller.abort(); }, []);
+  useLayoutEffect(() => { const controller = new AbortController(); lifetime.current = controller; if (queue.current.length) void pump(); return () => controller.abort(); }, []);
   useEffect(() => { if (view.finishedAt !== null && !result) void loadResult(); }, [view.finishedAt]);
   async function loadResult() {
     const controller = lifetime.current; if (!controller || view.finishedAt === null) return;
@@ -42,7 +42,11 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
       setPhase(conflict ? 'conflict' : 'failed'); setMessage(conflict
         ? 'Outra alteração avançou a tentativa. Recarregue para conferir a versão atual; sua escolha não confirmada será preservada.'
         : 'Salvamento não confirmado. Sua escolha permanece neste navegador; repita o mesmo comando para confirmar.');
-    } finally { working.current = false; }
+    } finally {
+      working.current = false;
+      // Effect recreation preserves jobs. Retry only in a live, newer generation with the same command.
+      if (controller.signal.aborted && lifetime.current !== controller && lifetime.current && !lifetime.current.signal.aborted && queue.current.length && !blocked.current) void pump();
+    }
   }
   function choose(itemId: string, alternativeId: string | null) {
     if (server.current.finishedAt !== null || closeOperation.current || closing.current) return;

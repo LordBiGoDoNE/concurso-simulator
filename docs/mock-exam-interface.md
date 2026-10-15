@@ -104,6 +104,9 @@ O título recebe foco antes da pintura da tela, sem depender de um efeito poster
 O controle de vida da fila também é instalado antes de a tela aceitar escolhas:
 uma ação no primeiro commit já deve iniciar o salvamento, sem manter o estado salvo
 de uma escolha ainda não enviada. Regressão dispara a escolha antes dos efeitos passivos.
+Se o StrictMode recriar os efeitos durante um envio, a nova geração retoma a fila após
+o abort da anterior com o mesmo comando/versão; desmontagem definitiva não inicia retry.
+Regressão exige abort da geração antiga, confirmação pela nova e payload idêntico.
 Um teste real bloqueia esse download após iniciar a realização e exige resultado,
 aulas e identidade acessíveis com uma única conclusão. O contrato HTTP e os controles
 de gabarito no JSON/DOM ativo e de payloads nos assets permanecem os mesmos.

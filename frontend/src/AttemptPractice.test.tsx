@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
-import { useLayoutEffect } from 'react';
+import { StrictMode, useLayoutEffect, useRef } from 'react';
 import AttemptPractice from './AttemptPractice';
 import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer } from './attempt-api';
 import { view, result } from '../test/attempt-fixtures';
@@ -16,6 +16,20 @@ it('inicializa o controle da fila antes de aceitar a primeira escolha', async ()
   }
   render(<ImmediateChoice />);await screen.findByText('Respostas confirmadas.');
   expect(saveAnswer).toHaveBeenCalledTimes(1);expect(screen.getAllByRole('radio')[0]).toBeChecked();
+});
+it('StrictMode retoma o mesmo comando na nova geração após abort sem confirmar a antiga', async () => {
+  vi.mocked(saveAnswer).mockImplementationOnce((_id, _item, _body, signal) => new Promise((_resolve, reject) => {
+    signal.addEventListener('abort', () => reject(new DOMException('aborted', 'AbortError')), { once: true });
+  })).mockResolvedValueOnce({ ...view, version: 1, items: [{ ...view.items[0], selectedAlternativeId: first }] });
+  function ImmediateChoice() {
+    const chosen = useRef(false);
+    useLayoutEffect(() => { if (!chosen.current) { chosen.current = true;document.querySelector<HTMLInputElement>('input[type="radio"]')?.click(); } }, []);
+    return <AttemptPractice initial={view} onUnavailable={vi.fn()} />;
+  }
+  render(<StrictMode><ImmediateChoice /></StrictMode>);
+  await waitFor(() => expect(saveAnswer).toHaveBeenCalledTimes(2));await screen.findByText('Respostas confirmadas.');
+  const calls = vi.mocked(saveAnswer).mock.calls;expect(calls[0][3].aborted).toBe(true);expect(calls[1][3].aborted).toBe(false);
+  expect(calls[0][2]).toEqual(calls[1][2]);expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.getByText('Versão confirmada: 1. A correção só estará disponível após concluir.')).toBeInTheDocument();
 });
 it('serializa alterações rápidas, usa a versão confirmada e permite limpar', async () => {
   let done!: (v: AttemptView) => void;

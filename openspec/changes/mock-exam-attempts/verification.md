@@ -38,7 +38,7 @@ e na issue #64. Esta matriz não certifica o gate cumulativo final nem autoriza 
 ## Execuções locais da combinação
 
 - Backend Windows/Java25/PostgreSQL18.6: **149 testes, zero falhas/erros/skips**, test bootJar PASS.
-- Frontend: **106 testes PASS**, incluindo invalidação por headers, primeira escolha no commit e preservação ao reabrir ID ativo; TypeScript/Vite build PASS.
+- Frontend: **107 testes PASS**, incluindo invalidação por headers, primeira escolha no commit/StrictMode e preservação ao reabrir ID ativo; TypeScript/Vite build PASS.
 - Navegador real Chromium/API/PG/OIDC: **14 cenários PASS**, oito de simulados e seis regressões; renderer sem download posterior à conclusão.
 - Navegador de aulas/entrada/login: **6 cenários**, incluindo nove módulos e 90 resoluções offline.
 - Python3.14/Linux isolado, repo somente leitura e rede desativada: **54 testes** PASS, sem skips.

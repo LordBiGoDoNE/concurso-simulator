@@ -1,10 +1,91 @@
 # Revisão cumulativa — mock-exam-attempts
 
-**Gate final pendente.** A revisão abaixo cobre somente o lote solicitado: grupos
-1 e 2 completos, 8/24 tarefas implementadas/verificadas, 0/8 integradas/aprovadas.
-Os grupos 3–6 aguardam pedido próprio. Não é revisão final da spec nem autorização de merge.
+**Gate cumulativo final pendente.** 24/24 tarefas implementadas/verificadas; grupos1/2
+integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`. Grupos3–6 revisados e revalidados como lote,
+ainda em dez PRs draft, sem aprovação/integração presumida. Não é revisão final da spec.
 
-## Lote 1 — grupos 1 e 2
+## Lote 2 — grupos 3–6 completos
+
+Revisor independente em contexto novo `openai/gpt-6.1-sol#xhigh`, sessão
+`/root/mock_round2_sol_retry`, seguido de duas revalidações na mesma sessão/modelo.
+Seleção aceita pelo Codex; telemetria efetiva de variante do provedor não exposta.
+Risco **crítico**: sessão/CSRF, privacidade/correção, concorrência, histórico/expiração
+e operação/rollback. Nenhum segundo modelo foi disparado para o lote.
+
+**Parecer final: R1/R2/R3 corrigidos; nenhum novo achado nem bloqueador remanescente.**
+Inicial em `27f6d730`: dois bloqueadores e um recomendado, confirmados pelo coordenador.
+O #82 contém código, regressões e documentação para os três. A primeira revalidação
+aprovou `69855a5`; depois, CI de push registrou falha de foco (o CI do PR passou).
+O foco passou de efeito passivo para `useLayoutEffect`, antes da pintura, sem relaxar
+asserções. Nova revalidação conferiu o novo diff e a combinação no snapshot abaixo.
+
+| Achado | Causa e correção | Triagem |
+| --- | --- | --- |
+| R1, bloqueador, #75 | Corpo JSON falho ocultava rejeição conhecida. 401/403/404 agora invalidam pelos headers; regressões de corpo truncado/pendente e limpeza no App. | fixed, confirmado pelo revisor |
+| R2, bloqueador, #79 | Renderer lazy sem contenção podia desmontar a raiz. Renderer inicial e projeção tipada no validador tardio eliminam download pós-confirmação; E2E exige resultado/aulas/identidade e única conclusão. | fixed, confirmado pelo revisor |
+| R3, recomendado, #79 | Abrir ID atual descartava drafts/comando. Abertura sem efeito preserva estado e mesmo payload/commandId no retry. | fixed, confirmado pelo revisor |
+
+## Snapshot, composição e checks do lote 2
+
+Stack #76; trunk `epic/mock-exam-attempts`. Base `ec4f85ec133991c6e791914da54bd56ab088906a`.
+Head de código revisado `fc205eef5d079c51b573aca10ac0942ed996ac2e`.
+Digest canônico **recalculado pelo revisor**: `03956495f2c65b11de5f1bb4ca3492dcdddb36d6b1ee8a8b1c30802b68e297f4`.
+Dez camadas em sequência; base de cada superior é o head anterior. Nenhum dos nove
+heads originais foi reescrito. Bases/digests e URLs individuais dos checks estão no JSON.
+
+| PR | Head revisado | Checks |
+| --- | --- | --- |
+| [#72](https://github.com/LordBiGoDoNE/concurso-simulator/pull/72) | `a550c241458cca6257fe859f31df0bc39080ed23` | SUCCESS |
+| [#73](https://github.com/LordBiGoDoNE/concurso-simulator/pull/73) | `89c4525a1e9c17fd7dcf9d9960ca0d6d8d3b561f` | SUCCESS |
+| [#74](https://github.com/LordBiGoDoNE/concurso-simulator/pull/74) | `5232393aaf875c26a23f9efece72dea3f4070ea9` | SUCCESS |
+| [#75](https://github.com/LordBiGoDoNE/concurso-simulator/pull/75) | `6ac58ec0b0ffd811e3d2d9c2b67c645c790be0b9` | SUCCESS |
+| [#77](https://github.com/LordBiGoDoNE/concurso-simulator/pull/77) | `1d03b0bd9055e7281964787d1c59c520c3a0d370` | SUCCESS |
+| [#78](https://github.com/LordBiGoDoNE/concurso-simulator/pull/78) | `a93b76f0b5119ebe4d46450b340d2c43e29c90a5` | SUCCESS |
+| [#79](https://github.com/LordBiGoDoNE/concurso-simulator/pull/79) | `e3c267003328dc94d86d5d5f3f4d6d7b13438c81` | SUCCESS |
+| [#80](https://github.com/LordBiGoDoNE/concurso-simulator/pull/80) | `904aeed1caf17f1a7625e5479a2ac2c65c35b781` | SUCCESS |
+| [#81](https://github.com/LordBiGoDoNE/concurso-simulator/pull/81) | `27f6d7308020d8ecc7d6cc371645dfffe4cd384c` | SUCCESS |
+| [#82](https://github.com/LordBiGoDoNE/concurso-simulator/pull/82) | `fc205eef5d079c51b573aca10ac0942ed996ac2e` | SUCCESS |
+
+Todos os checks desses heads passaram: backend, frontend, study-material,
+identity-browser e spec-review-tests. Registro posterior altera apenas os dois arquivos
+de evidência excluídos do digest. Conferir novamente os heads/checks antes de qualquer merge.
+
+## Cobertura, verificação e limites do lote 2
+
+Revisor leu diffs completos por PR e combinação: ator/segurança, DTOs/OpenAPI estritos,
+projeções ativas, conclusão/resultado/histórico e indisponibilidade; cliente/prazo,
+composição/fila/comandos, identidade/logout/descarte tardio; browser/fixtures/operação,
+artefatos e documentação. R1–R3 e foco foram revalidados com seus consumidores.
+Posse/transições continuam no núcleo, autenticação/CSRF na segurança, correção no
+servidor e recuperação de conflitos após rollback. A apresentação inicial é código
+genérico, sem payload editorial; contrato corretivo continua no módulo tardio.
+
+Coordenador/CI: **149 backend, 105 frontend, 14 browser reais, 54 Python/Linux,
+6 browser offline**, builds/artefatos/links/OpenSpec PASS. Operação adicional local
+com JAR anterior sobre V5 e retorno à versão atual PASS. Matriz e limites por tarefa
+em [verification.md](verification.md). Backend/Python/rollback/offline locais não foram
+repetidos por correções somente frontend; checks atuais verificaram a combinação.
+
+Revisor somente leitura: não executou testes, build, browser, rede ou DB nem conferiu
+CI, screenshots ou binário histórico. Resultados acima não são execuções do revisor.
+Leu verification.md após formar achados independentes para revisão documental do #81.
+Regressão de renderer depende do padrão de URL AttemptResult; testes/sentinelas não
+demonstram toda falha de rede, ausência de todo segredo ou toda decisão semântica.
+Dados privados de medição permanecem fora do Git; disponibilidade/limites são
+apresentados ao usuário separadamente. Sem comparação de consumo com outro modelo.
+
+## Integração ainda exige aprovação
+
+Solicitar aprovação explícita de **#72, #73, #74, #75, #77, #78, #79, #80, #81 e #82**.
+Topo não aprova inferiores; sem auto-merge/fila/bypass/sync pós-merge presumido.
+O status principal permanece pending, com modelo/sessão/base/head/digest finais nulos.
+Gate cumulativo final, integração na épica geral/main, deploy e arquivamento separados.
+
+## Histórico — lote 1, grupos 1 e 2
+
+Registro abaixo preserva a revisão anterior à integração autorizada dos #66–#70.
+Os estados de pendência daquele momento não substituem a situação atual acima.
+
 
 Revisão independente em contexto novo `/root/mock_round1_sol_initial`, somente leitura,
 com seleção `openai/gpt-6.1-sol#xhigh` aceita pelo orquestrador Codex. A sessão não expôs

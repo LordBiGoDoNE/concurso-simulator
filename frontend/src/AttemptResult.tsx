@@ -11,8 +11,8 @@ export default function AttemptResult({ result }: { result: Result }) {
     {result.items.map((correction, i) => <article key={correction.item.id}>
       <h4>Revisão da questão {i + 1}</h4><AttemptText content={correction.item.statement} />
       <p>Sua escolha: {correction.item.alternatives.find(a => a.id === correction.item.selectedAlternativeId)?.content.text || 'Em branco.'}</p>
-      <p>Resposta correta: {correction.item.alternatives.find(a => a.id === correction.correctAlternativeId)?.content.text}</p>
-      <h5>Resolução</h5><AttemptText content={correction.resolution} />
+      <p>Resposta correta: {correction.correctAnswer.text}</p>
+      <h5>Resolução</h5><AttemptText content={correction.explanation} />
       <h5>Fontes para estudo</h5><ul>{correction.item.references.map((r, j) => <li key={j}><a href={r.url} rel="noopener noreferrer">{r.name}</a></li>)}</ul>
     </article>)}
   </section>;

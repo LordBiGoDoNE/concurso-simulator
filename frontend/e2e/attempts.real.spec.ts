@@ -25,6 +25,15 @@ async function storage(page: Page) {
   return page.evaluate(async () => ({ local: localStorage.length, session: sessionStorage.length,
     caches: 'caches' in window ? await caches.keys() : [], workers: 'serviceWorker' in navigator ? (await navigator.serviceWorker.getRegistrations()).length : 0 }));
 }
+test('resultado independe de novo download do renderer depois da conclusao', async ({ page }) => {
+  const rendererRequests: string[] = [];
+  await page.goto('/');const view = await start(page, 1);let finishes = 0;
+  await page.route('**/*AttemptResult*', async route => { rendererRequests.push(route.request().url());await route.abort('failed'); });
+  page.on('request', request => { if (request.url().endsWith('/finish') && request.method() === 'POST') finishes++; });
+  await finish(page);await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toBeVisible();
+  await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();expect(rendererRequests).toEqual([]);
+  expect(finishes).toBe(1);expect((await (await page.request.get(`${api}/api/v1/attempts/${view.id}`)).json()).finishedAt).not.toBeNull();
+});
 for (const width of [390, 1280]) test(`visitante realiza por teclado, confirma e revisa sem vazamento antecipado em ${width}px`, async ({ page }, info) => {
   await page.setViewportSize({ width, height: 850 });await page.goto('/');const area = workspace(page);const view = await start(page);
   await expect(area.getByRole('heading', { name: 'Questão 1 de 2' })).toBeFocused();

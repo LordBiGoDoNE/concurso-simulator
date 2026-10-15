@@ -5,7 +5,7 @@ export interface AttemptItem extends Detail { id: string; selectedAlternativeId:
 export interface AttemptView { id: string; roleId: string; createdAt: string; finishedAt: string | null; version: number; items: AttemptItem[] }
 export interface Composition { roleId: string; disciplines: { disciplineId: string; quantity: number; topicIds: string[] }[] }
 export interface Answer { commandId: string; expectedVersion: number; alternativeId: string | null }
-export interface Result { total: number; points: number; correct: number; wrong: number; blank: number; percentage: number; items: { item: AttemptItem; correctAlternativeId: string; resolution: Content }[] }
+export interface Result { total: number; points: number; correct: number; wrong: number; blank: number; percentage: number; items: { item: AttemptItem; correctAnswer: Content; explanation: Content }[] }
 export interface Finished { attempt: AttemptView; result: Result }
 export interface HistoryItem { id: string; roleId: string; createdAt: string; finishedAt: string | null; total: number; percentage: number | null }
 export interface HistoryPage { items: HistoryItem[]; page: number; size: number }
@@ -48,13 +48,15 @@ function history(v: unknown): asserts v is HistoryPage {
     if (e.finishedAt === null) ensure(e.percentage === null); else { date(e.finishedAt); ensure(typeof e.percentage === 'number' && e.percentage >= 0 && e.percentage <= 100); }
   });
 }
-async function request<T>(path: string, signal: AbortSignal, validate: (v: unknown) => void | Promise<void>, method = 'GET', payload?: unknown): Promise<T> {
+async function request<T>(path: string, signal: AbortSignal, validate: (v: unknown) => void | T | Promise<void | T>, method = 'GET', payload?: unknown): Promise<T> {
   const controller = new AbortController(); const abort = () => controller.abort(); signal.addEventListener('abort', abort, { once: true }); if (signal.aborted) abort();
   const timer = window.setTimeout(abort, 5000); let rejectAbort!: () => void;
   const aborted = new Promise<never>((_, reject) => { rejectAbort = () => reject(new DOMException('Operação interrompida', 'AbortError')); controller.signal.addEventListener('abort', rejectAbort, { once: true }); if (controller.signal.aborted) rejectAbort(); });
   const fetchJson = async (url: string, options: RequestInit = {}) => {
     controller.signal.throwIfAborted();
     const response = await fetch(identityApiUrl + url, { ...options, credentials: 'include', cache: 'no-store', signal: controller.signal });
+    // Access is already denied by the headers; a missing/broken body must not retain private state.
+    if ([401, 403, 404].includes(response.status)) throw new AttemptApiError(response.status);
     const body: unknown = await response.json(); controller.signal.throwIfAborted();
     if (!response.ok) {
       const available = typeof body === 'object' && body && 'available' in body && Array.isArray(body.available) ? body.available.filter((a): a is { disciplineId: string; available: number } => !!a && typeof a.disciplineId === 'string' && Number.isSafeInteger(a.available) && a.available >= 0) : [];
@@ -67,7 +69,7 @@ async function request<T>(path: string, signal: AbortSignal, validate: (v: unkno
       const headers: Record<string, string> = {};
       if (method !== 'GET') { const csrf = row(await fetchJson('/api/v1/csrf'), ['token', 'headerName']); text(csrf.token); ensure(csrf.headerName === 'X-CSRF-TOKEN'); headers[csrf.headerName] = csrf.token; headers['Content-Type'] = 'application/json'; }
       const body = await fetchJson(path, { method, headers, ...(payload === undefined ? {} : { body: JSON.stringify(payload) }) });
-      await validate(body); controller.signal.throwIfAborted(); return body as T;
+      const projected = await validate(body); controller.signal.throwIfAborted(); return (projected === undefined ? body : projected) as T;
     })()]);
   } finally { window.clearTimeout(timer); signal.removeEventListener('abort', abort); controller.signal.removeEventListener('abort', rejectAbort); }
 }
@@ -75,6 +77,6 @@ const attemptPath = (id: string) => { ensure(uuid.test(id)); return `/api/v1/att
 export const createAttempt = (composition: Composition, commandId: string, signal: AbortSignal) => request<AttemptView>('/api/v1/attempts', signal, validateAttempt, 'POST', { ...composition, commandId });
 export const readAttempt = (id: string, signal: AbortSignal) => request<AttemptView>(attemptPath(id), signal, v => { validateAttempt(v); ensure(v.id === id); });
 export const saveAnswer = (id: string, itemId: string, answer: Answer, signal: AbortSignal) => request<AttemptView>(`${attemptPath(id)}/answers/${encodeURIComponent(itemId)}`, signal, v => { validateAttempt(v); ensure(v.id === id && v.version === answer.expectedVersion + 1 && v.finishedAt === null && v.items.some(i => i.id === itemId && i.selectedAlternativeId === answer.alternativeId)); }, 'PUT', answer);
-export const finishAttempt = (id: string, commandId: string, expectedVersion: number, signal: AbortSignal) => request<Finished>(`${attemptPath(id)}/finish`, signal, async v => { const validator: typeof import('./attempt-result-api') = await import('./attempt-result-api'); validator.validateFinished(v, id, expectedVersion); }, 'POST', { commandId, expectedVersion });
-export const attemptResult = (id: string, signal: AbortSignal) => request<Result>(`${attemptPath(id)}/result`, signal, async v => { const validator: typeof import('./attempt-result-api') = await import('./attempt-result-api'); validator.validateResult(v); });
+export const finishAttempt = (id: string, commandId: string, expectedVersion: number, signal: AbortSignal) => request<Finished>(`${attemptPath(id)}/finish`, signal, async v => { const validator: typeof import('./attempt-result-api') = await import('./attempt-result-api'); return validator.finished(v, id, expectedVersion); }, 'POST', { commandId, expectedVersion });
+export const attemptResult = (id: string, signal: AbortSignal) => request<Result>(`${attemptPath(id)}/result`, signal, async v => { const validator: typeof import('./attempt-result-api') = await import('./attempt-result-api'); return validator.result(v); });
 export const attemptHistory = (page: number, signal: AbortSignal) => request<HistoryPage>(`/api/v1/me/attempts?page=${page}&size=20`, signal, v => { history(v); ensure(v.page === page && v.size === 20); });

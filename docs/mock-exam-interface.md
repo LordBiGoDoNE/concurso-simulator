@@ -66,8 +66,8 @@ não receba conteúdo da workspace anterior.
 
 ## Verificação de assets e módulos corretivos
 
-A entrada inicial da SPA e a consulta pública não carregam o renderer/validador de
-resultado. Esses módulos genéricos são importados dinamicamente após a resposta de
+A entrada inicial da SPA contém a apresentação genérica, sem dados corretivos. O
+validador do contrato de resultado é importado dinamicamente após a resposta de
 conclusão ou ao consultar tentativa fechada. Todos os chunks continuam sem payloads,
 resoluções, credenciais ou seeds de fixtures. O campo de contrato correctAlternativeId
 é usado apenas nos módulos corretivos; seu nome no código genérico não é um gabarito.
@@ -78,8 +78,8 @@ controles negativos de JSON/DOM ativos. Os endpoints continuam sendo a fronteira
 
 ## Verificação em navegador real
 
-Playwright/Chromium com API Java, PostgreSQL18.6 e OIDC local: 13 cenários passaram,
-sete novos de simulados e seis regressões de identidade/banco. Os novos cobrem teclado,
+Playwright/Chromium com API Java, PostgreSQL18.6 e OIDC local: 14 cenários,
+oito de simulados e seis regressões de identidade/banco. Os novos cobrem teclado,
 foco/radios/dialog e largura 390/1280 sem overflow, visitante e resultado, confirmação
 perdida depois do commit, retomada em outro navegador após reinício, duas contas/abas,
 edição editorial depois do início, login sem transferência e expiração real da sessão.
@@ -89,3 +89,21 @@ Fixtures/editorial/restart existem somente no classpath de testes; sem Google re
 acervo aprovado local. Cache/storage/service workers permanecem vazios na origem da SPA.
 A verificação de navegador não demonstra comportamento sob toda carga/rede nem o smoke
 Google real exigido para deployment; estes limites permanecem explícitos.
+
+## Recuperação verificada na revisão do lote
+
+401/403/404 invalidam acesso assim que os headers chegam, antes de consumir JSON:
+corpo truncado ou pendente não pode manter a tentativa privada visível. Testes de
+transporte e da aplicação cobrem ambas as falhas; abort continua descartando respostas
+tardias. Outros erros mantêm o prazo total e o tratamento de insuficiência por disciplina.
+
+O renderer do resultado faz parte do código inicial. A validação tardia projeta os
+campos corretivos em conteúdo para apresentação, sem calcular a nota. Assim, depois
+de aceitar o resultado, não há novo download de renderer capaz de desmontar a raiz.
+Um teste real bloqueia esse download após iniciar a realização e exige resultado,
+aulas e identidade acessíveis com uma única conclusão. O contrato HTTP e os controles
+de gabarito no JSON/DOM ativo e de payloads nos assets permanecem os mesmos.
+
+Abrir pelo histórico o ID já ativo não faz nova leitura nem desmonta a realização;
+regressão preserva a escolha após falha e o mesmo commandId/payload ao repetir.
+Essas proteções não cobrem toda falha de execução do navegador ou de rede.

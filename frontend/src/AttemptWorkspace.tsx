@@ -25,6 +25,7 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
   const finished = useCallback(() => setHistoryRefresh(v => v + 1), []);
   function created(view: AttemptView) { onGuestActive(!identity.connected); setSelected(view); setAccess('ready'); setMessage(''); setHistoryRefresh(v => v + 1); }
   async function open(id: string) {
+    if (selected?.id === id) return;
     if (selected && selected.id !== id && !window.confirm('Trocar de tentativa? Apenas respostas confirmadas poderão ser retomadas.')) return;
     request.current?.abort(); const controller = new AbortController(); request.current = controller; const current = ++generation.current;
     setSelected(null); setLoading(true); setMessage('');

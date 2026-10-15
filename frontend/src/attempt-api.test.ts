@@ -1,9 +1,25 @@
 import { afterEach, expect, it, vi } from 'vitest';
-import { attemptHistory, createAttempt, finishAttempt, readAttempt, validateAttempt } from './attempt-api';
+import { attemptHistory, attemptResult, createAttempt, finishAttempt, readAttempt, validateAttempt } from './attempt-api';
 import { view, result } from '../test/attempt-fixtures';
 import { response } from '../test/question-fixtures';
 const signal = () => new AbortController().signal;
 const composition = { roleId: 'assistente-administrativo', disciplines: [{ disciplineId: 'portugues', quantity: 1, topicIds: [] }] };
+
+it('valida contrato corretivo tardio e projeta apresentação sem recalcular a nota', async () => {
+  const wire = { ...result, items: [{ item: view.items[0], correctAlternativeId: view.items[0].alternatives[0].id, resolution: result.items[0].explanation }] };
+  const closed = { ...view, finishedAt: '2026-10-14T12:05:00Z', version: 1 };
+  vi.stubGlobal('fetch', vi.fn(async (url: string) => url.endsWith('/csrf') ? response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' }) : response(url.endsWith('/finish') ? { attempt: closed, result: wire } : wire)));
+  expect(await attemptResult(view.id, signal())).toEqual(result);
+  expect(await finishAttempt(view.id, 'operation', 0, signal())).toEqual({ attempt: closed, result });
+});
+
+it.each([401, 403, 404])('invalida acesso %s pelos headers sem consumir corpo truncado ou pendente', async status => {
+  for (const json of [vi.fn().mockRejectedValue(new SyntaxError('truncated')), vi.fn(() => new Promise(() => {}))]) {
+    vi.stubGlobal('fetch', vi.fn(async () => ({ ok: false, status, json })));
+    await expect(readAttempt(view.id, signal())).rejects.toMatchObject({ status });
+    expect(json).not.toHaveBeenCalled();
+  }
+});
 afterEach(() => { vi.useRealTimers(); vi.restoreAllMocks(); vi.unstubAllGlobals(); });
 it('envia CSRF/credenciais/no-store e preserva payload e commandId no retry', async () => {
   const fetchMock = vi.fn(async (url: string) => url.endsWith('/csrf') ? response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' }) : response(view));
@@ -28,7 +44,7 @@ it.each(['csrf-body', 'mutation-body', 'headers'])('prazo único encerra %s sem 
 it('nega propriedades corretivas em qualquer item e detecção negativa não depende do DOM', () => {
   expect(() => validateAttempt(view)).not.toThrow();
   expect(() => validateAttempt({ ...view, correctAlternativeId: 'leak' })).toThrow();
-  expect(() => validateAttempt({ ...view, items: [{ ...view.items[0], resolution: result.items[0].resolution }] })).toThrow();
+  expect(() => validateAttempt({ ...view, items: [{ ...view.items[0], resolution: result.items[0].explanation }] })).toThrow();
   expect(() => validateAttempt({ ...view, items: [view.items[0], view.items[0]] })).toThrow();
 });
 it('aceita correção apenas no contrato fechado e recusa nota parcial no histórico', async () => {

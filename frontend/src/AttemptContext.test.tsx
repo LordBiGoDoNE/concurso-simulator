@@ -6,7 +6,7 @@ import { catalog, emptyPage, response } from '../test/question-fixtures';
 const userA = '90000000-0000-0000-0000-000000000001'; const userB = '90000000-0000-0000-0000-000000000002';
 const privateView = { ...view, items: [{ ...view.items[0], statement: { text: 'PRIVATE_CONTEXT_STATEMENT', resources: [] } }] };
 afterEach(() => { vi.restoreAllMocks();vi.unstubAllGlobals(); });
-function api(initial: string | null) {
+function api(initial: string | null, denied?: { status: number; stalled: boolean }, history = false) {
   let user = initial; let expired = false; let resolveWrite: ((body: unknown) => void) | undefined;
   const fetchMock = vi.fn(async (url: string, options?: RequestInit) => {
     if (url.endsWith('/status')) return response({ status: 'UP' });
@@ -16,10 +16,10 @@ function api(initial: string | null) {
     if (url.endsWith('/auth/logout')) { user = null;return response(null, 204); }
     if (url.endsWith('/question-bank/catalog')) return response(catalog);
     if (url.includes('/question-bank/questions')) return response(emptyPage);
-    if (url.includes('/me/attempts')) return response({ page: 0, size: 20, items: [] });
+    if (url.includes('/me/attempts')) return response({ page: 0, size: 20, items: history ? [{ id: view.id, roleId: view.roleId, createdAt: view.createdAt, finishedAt: null, total: 1, percentage: null }] : [] });
     if (url.endsWith('/attempts') && options?.method === 'POST') return response(privateView, 201);
     if (url.endsWith(`/attempts/${view.id}`)) return expired ? response({ error: 'not_found' }, 404) : response(privateView);
-    if (url.includes('/answers/') && expired) return response({ error: 'unauthenticated' }, 401);
+    if (url.includes('/answers/') && expired) return denied ? { ok: false, status: denied.status, json: () => denied.stalled ? new Promise(() => {}) : Promise.reject(new SyntaxError('truncated')) } : response({ error: 'unauthenticated' }, 401);
     if (url.includes('/answers/')) return { ok: true, status: 200, json: () => new Promise(resolve => { resolveWrite = resolve; }) };
     throw new Error('unexpected request');
   });vi.stubGlobal('fetch', fetchMock);
@@ -33,6 +33,22 @@ it('logout limpa tentativa imediatamente e resposta tardia não reaparece nem en
   await screen.findByText('Você está estudando como visitante.');await act(async () => fixture.finishWrite());
   expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();expect(screen.queryByRole('heading', { name: 'Histórico de simulados' })).not.toBeInTheDocument();
   expect(localStorage.length).toBe(0);expect(sessionStorage.length).toBe(0);
+});
+it.each([{ status: 401, stalled: false }, { status: 404, stalled: true }])('limpa conteúdo privado mesmo com corpo de rejeição $status incompleto', async denied => {
+  const fixture = api(userA, denied);render(<App />);await start();fixture.expire();fireEvent.click(screen.getAllByRole('radio')[0]);
+  await screen.findByText('Você está estudando como visitante.');expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();
+  expect(screen.getByText(/O conteúdo privado foi limpo/)).toBeInTheDocument();expect(screen.queryByText('Respostas confirmadas.')).not.toBeInTheDocument();
+});
+it('abrir a tentativa atual preserva escolha e comando após falha de salvamento', async () => {
+  const fixture = api(userA, undefined, true);render(<App />);await start();
+  fixture.fetchMock.mockImplementationOnce(async () => response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' })).mockImplementationOnce(async () => { throw new TypeError('network'); });
+  fireEvent.click(screen.getAllByRole('radio')[0]);await screen.findByRole('button', { name: 'Repetir salvamento' });
+  const calls = fixture.fetchMock.mock.calls.length;fireEvent.click(screen.getByRole('button', { name: /Abrir simulado de/ }));
+  expect(fixture.fetchMock).toHaveBeenCalledTimes(calls);expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.getByRole('button', { name: 'Repetir salvamento' })).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Repetir salvamento' }));
+  await waitFor(() => expect(fixture.fetchMock.mock.calls.filter(([url]) => url.includes('/answers/'))).toHaveLength(2));
+  const writes = fixture.fetchMock.mock.calls.filter(([url]) => url.includes('/answers/'));expect(writes[0][1]?.body).toEqual(writes[1][1]?.body);
+  await act(async () => fixture.finishWrite());await screen.findByText('Respostas confirmadas.');expect(screen.getAllByRole('radio')[0]).toBeChecked();
 });
 it('trocar para outra conta no refresh desmonta o contexto anterior e ignora escrita tardia', async () => {
   const fixture = api(userA);render(<App />);await start();fireEvent.click(screen.getAllByRole('radio')[0]);

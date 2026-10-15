@@ -73,9 +73,10 @@ transfere a tentativa. Logout/troca de conta/rejeições limpam conteúdo privad
 requisições anteriores. Dados ficam só em memória, sem storage/cache/service worker.
 [Fluxos e limites](../docs/mock-exam-interface.md) e [matriz de testes](../openspec/changes/mock-exam-attempts/verification.md).
 
-`npm run test:identity` inclui também sete cenários em attempts.real.spec.ts: visitante
+`npm run test:identity` inclui também oito cenários em attempts.real.spec.ts: visitante
 390/1280/teclado/dialog, resposta confirmada com confirmação perdida, retomada após
 restart, duas contas/abas, edição posterior do acervo, login sem transferência e expiração.
-São 13 cenários reais no comando. O renderer/validador de resultado é carregado em módulos
-tardios; todos os chunks ficam sem payloads de fixtures. A inspeção do entry inicial e
+São 14 cenários reais no comando, incluindo ausência de download do renderer após concluir.
+A apresentação está no código inicial; o validador corretivo permanece em módulo tardio.
+Todos os chunks ficam sem payloads de fixtures. A inspeção do entry inicial e
 JSON/DOM ativos continua proibindo contrato/material corretivo antecipado.

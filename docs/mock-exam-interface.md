@@ -16,3 +16,12 @@ O cliente valida objetos, IDs, referências HTTP(S), alternativas e associação
 rejeita propriedades extras/corretivas na View e nota parcial no histórico. Resultado tem
 contrato separado e só é aceito junto de tentativa concluída no finish. Isso complementa
 o servidor; não promete detectar toda dica semântica em texto editorial. Não calcula nota.
+
+A realização navega por IDs/ordens capturados. Fila única envia respostas/limpeza em
+ordem, atribuindo expectedVersion somente quando chega sua vez. Escolha local aparece
+como pendente; resposta de uma gravação anterior não apaga uma escolha posterior.
+Falha mantém commandId/payload para retry e bloqueia o restante da fila. Conflito exige
+recarregar por ação explícita, mantendo escolhas não confirmadas em memória. O usuário
+confere a versão atual e escolhe salvar essas escolhas com novos comandos/versões.
+Nenhum conflito vira sucesso fictício nem descarta a escolha local silenciosamente.
+Domínio impede alterações quando a tentativa já está fechada; a UI acompanha esse estado.

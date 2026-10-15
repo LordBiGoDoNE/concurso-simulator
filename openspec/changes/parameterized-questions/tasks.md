@@ -1,8 +1,9 @@
 # Tasks
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
-épica da spec; primeiro lote autorizado: grupos completos 1 e 2. Implementação em
-andamento, nenhuma tarefa integrada/aprovada ainda. Pré-requisito #84 em `0d0fc48`.
+épica da spec; primeiro lote autorizado: grupos completos 1 e 2. **8/24 tarefas
+implementadas/verificadas, 0/24 integradas/aprovadas**; revisão independente e CI do lote
+registrados separadamente na issue #86. Grupos 3–6 pendentes. Pré-requisito #84 em `0d0fc48`.
 
 Grupos completos são a unidade de autorização do lote. Cada tarefa inclui código,
 testes e documentação pertinentes; PRs coesos podem dividir um grupo sem interrompê-lo.
@@ -21,7 +22,7 @@ editoriais são acompanhadas separadamente na issue. Sem conteúdo aprovado por 
 - [x] 2.1 Criar migração aditiva após V5/JPA/repositories de templates, versões, manifestos e decisões; testar PG18 novo/upgrade, FKs/constraints/imutabilidade preservando banco/contas/sessões; documentar schema.
 - [x] 2.2 Implementar registro/decisão/ponteiro elegível atômicos, unicidade e recuperação após rollback; testar aprovação concorrente de versões, retirada atual/histórica, base desatualizada, repetição sem reativação e falhas desconhecidas; documentar transações.
 - [x] 2.3 Implementar captura privada de templates na transação consumidora, vinculada à revisão-base elegível; testar retirada/troca de base antes/depois do snapshot e ausência de dependência reversa; documentar contrato de módulos.
-- [ ] 2.4 Implementar launcher local explícito com prévia sem escrita, limites de entrada e confirmação destino/digest; testar path traversal, seleção parcial, falhas/CI sem aprovação e ausência no startup web; documentar operação segura.
+- [x] 2.4 Implementar launcher local explícito com prévia sem escrita, limites de entrada e confirmação destino/digest; testar path traversal, seleção parcial, falhas/CI sem aprovação e ausência no startup web; documentar operação segura.
 
 ## 3. Integração de tentativas e compatibilidade — depende de 1 e 2
 

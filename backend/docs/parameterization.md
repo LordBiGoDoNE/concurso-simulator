@@ -17,8 +17,8 @@ confundir juros e montante/ignorar prazo/omitir divisão por 100. Não há arred
 da resposta, DSL, IA em tempo real, rede ou acesso a banco pelo núcleo.
 
 Testes sintéticos não aprovam conteúdo. Famílias reais e bases serão preparadas e
-submetidas editorialmente no grupo 4; manifesto/validação e transições vêm nas camadas
-seguintes dos grupos 1 e 2. O aplicativo público e os snapshots V5 permanecem intactos.
+submetidas editorialmente no grupo 4. Grupos 1/2 entregam manifesto/validação,
+transições, persistência e operação local. Aplicativo público e snapshots V5 intactos.
 
 ## Manifesto e validação
 
@@ -69,3 +69,49 @@ REPEATABLE_READ como a de tentativas) e faz um join de ponteiro, aprovação e r
 elegível/fingerprint em uma consulta. Retirada/substituição da base remove a geração
 futura; um snapshot transacional anterior mantém seu conjunto. Não modifica a consulta
 pública do banco nem cria dependência do núcleo de questões para parametrização.
+
+## Operação editorial local explícita
+
+Comandos são individuais e processam integralmente um arquivo de até 64 KiB numa raiz
+escolhida pelo operador. Caminho do arquivo é relativo com `/`, sem traversal/symlinks;
+a raiz/diretórios devem permanecer estáveis durante confirmação. JSON com campos
+extras, duplicados, ausentes, objetos adicionais ou seleção em array é recusado antes
+de conectar. Arquivo é relido/conferido após confirmação. Não importa listas parcialmente.
+
+Arquivo de definição: `{format: "parameter-template/v1", definition: TemplateDefinition,
+expectedLatest: inteiro}`; versão deve ser expectedLatest+1. Definição tem id/version,
+family (`DIRECT_PROPORTION`, `PERCENTAGE`, `SIMPLE_INTEREST`), generatorVersion
+`numeric-v1`, baseQuestionId/baseRevisionId/baseFingerprint reais, classification com
+M03/M04 e os dois cargos, references e provenance. Nomes de enum no JSON são os do Java;
+IDs da interface pública não são um contrato editorial. A fonte/resolução autorais
+referenciadas e seus hashes devem ser conferidos na revisão do grupo 4.
+
+Na pasta backend (Windows: `gradlew.bat`; outros ambientes: `./gradlew`):
+
+```text
+gradlew.bat parameterizationLocal -PtemplateAction=preview -PtemplateRoot=C:/editorial-local -PtemplateFile=template.json
+gradlew.bat parameterizationLocal -PtemplateAction=register -PtemplateRoot=C:/editorial-local -PtemplateFile=template.json
+gradlew.bat parameterizationLocal -PtemplateAction=decide -PtemplateRoot=C:/editorial-local -PtemplateFile=decision.json
+```
+
+Propriedades são argumentos separados; citar cada `-P...` quando houver espaços.
+Preview é offline, não lê DB_URL/senhas e retorna os valores/digests de todo o domínio
+para revisão **privada**. Registro/decisão exigem DB_URL, DB_USERNAME e DB_PASSWORD
+externos e PostgreSQL local com schema V6 migrado previamente. O launcher mantém
+Flyway desabilitado, Hibernate validate e OSIV false; não aceita flags para habilitar
+DDL/web ou propriedades arbitrárias. Não roda em build/startup normal.
+
+Registro mostra destino/digest e exige `REGISTER <DB_URL> <SHA-256-do-arquivo>`;
+cancelamento/EOF retorna 2 sem conexão. Registro novo fica DRAFT, idêntico é reutilizado
+sem restaurar ponteiro. Decisão usa arquivo `{format: "parameter-decision/v1", decision:
+TemplateDecision, expectedEligible: inteiro-ou-null, expectedSequence: inteiro}`,
+confirmação `DECIDE <DB_URL> <SHA-256-do-arquivo>`. Evidência traz operationId/templateId/
+version/action, digests definition/domain/manifest e baseRevisionId/baseFingerprint,
+responsible/at/checklist/rationale. Checklist completo inclui COMPLETE_DOMAIN. Mesmo
+operationId/conteúdo é retry, payload divergente falha. APPROVE/ACTIVATE recusados em CI.
+Google não autoriza editar conteúdo. Fixtures isoladas não são decisões do acervo real.
+
+Só anunciar commit após fechar a transação. Falha/recusa retorna 1 com diagnóstico
+genérico, sem imprimir senha, payload rejeitado ou exceção SQL. Rotas HTTP não recebem
+esses arquivos nem conseguem ativar o launcher. Migração/revisão/merge/deploy permanecem
+ações separadas; este lote não cria famílias reais automaticamente.

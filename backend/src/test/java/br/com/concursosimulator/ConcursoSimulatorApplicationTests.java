@@ -69,6 +69,9 @@ class ConcursoSimulatorApplicationTests {
         assertThat(environment.getProperty("spring.jpa.open-in-view", Boolean.class)).isFalse();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);
         assertThat(flyway.migrate().migrationsExecuted).isZero();
+        assertThat(context.getBeansOfType(br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal.PersistenceOnly.class)).isEmpty();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM pq_family",Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM pq_decision",Integer.class)).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);
         assertThat(context.getBeansOfType(br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal.PersistenceOnly.class)).isEmpty();
         assertThat(context.getBeansOfType(br.com.concursosimulator.questionbank.application.port.QuestionInventory.class)).isEmpty();

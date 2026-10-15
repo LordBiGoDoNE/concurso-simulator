@@ -25,3 +25,11 @@ recarregar por ação explícita, mantendo escolhas não confirmadas em memória
 confere a versão atual e escolhe salvar essas escolhas com novos comandos/versões.
 Nenhum conflito vira sucesso fictício nem descarta a escolha local silenciosamente.
 Domínio impede alterações quando a tentativa já está fechada; a UI acompanha esse estado.
+
+Concluir exige confirmação em dialog nativo, com foco inicial na ação de continuar e
+Escape/cancelamento. Não há conclusão com fila/escolha pendente. Falha de confirmação
+mantém o mesmo comando/versão e bloqueia novas respostas até retry ou recarga; não presume
+que timeout significa rollback. Resultado só aparece após resposta fechada do servidor
+ou consulta de tentativa já fechada, e nunca é calculado na SPA. Resoluções e fontes
+são da versão capturada; tentativas ativas continuam sem esses campos. Testes cobrem
+cancelamento/foco, retry da conclusão e retry de resultado sem uma segunda conclusão.

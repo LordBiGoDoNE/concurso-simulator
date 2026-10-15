@@ -1,15 +1,25 @@
 import { useEffect, useRef, useState } from 'react';
-import { AttemptApiError, readAttempt, saveAnswer, type Answer, type AttemptItem, type AttemptView } from './attempt-api';
+import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer, type Answer, type AttemptItem, type AttemptView, type Result } from './attempt-api';
 
 type Phase = 'saved' | 'pending' | 'failed' | 'conflict' | 'unsaved';
 interface Job { itemId: string; alternativeId: string | null; commandId: string; expectedVersion?: number }
 export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
   const [view, setView] = useState(initial); const server = useRef(initial);
   const [phase, setPhase] = useState<Phase>('saved'); const [message, setMessage] = useState('');
+  const [result, setResult] = useState<Result | null>(null); const [resultFailed, setResultFailed] = useState(false);
+  const [finishing, setFinishing] = useState(false); const [finishFailed, setFinishFailed] = useState(false);
+  const closeOperation = useRef<{ commandId: string; version: number } | null>(null); const closing = useRef(false);
   const drafts = useRef<Record<string, string | null>>({}); const queue = useRef<Job[]>([]);
   const [revision, redraw] = useState(0); const working = useRef(false); const blocked = useRef(false);
   const lifetime = useRef<AbortController | null>(null); const unavailable = useRef(onUnavailable); unavailable.current = onUnavailable;
   useEffect(() => { const controller = new AbortController(); lifetime.current = controller; return () => controller.abort(); }, []);
+  useEffect(() => { if (view.finishedAt !== null && !result) void loadResult(); }, [view.finishedAt]);
+  async function loadResult() {
+    const controller = lifetime.current; if (!controller || view.finishedAt === null) return;
+    setResultFailed(false);
+    try { const value = await attemptResult(view.id, controller.signal); if (!controller.signal.aborted) setResult(value); }
+    catch (error) { if (!controller.signal.aborted) { if (error instanceof AttemptApiError && [401, 404].includes(error.status)) unavailable.current(); else setResultFailed(true); } }
+  }
   async function pump() {
     const controller = lifetime.current; if (!controller || controller.signal.aborted || working.current || blocked.current) return;
     working.current = true; setPhase('pending'); setMessage('');
@@ -35,17 +45,18 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
     } finally { working.current = false; }
   }
   function choose(itemId: string, alternativeId: string | null) {
-    if (server.current.finishedAt !== null) return;
+    if (server.current.finishedAt !== null || closeOperation.current || closing.current) return;
     drafts.current[itemId] = alternativeId; queue.current.push({ itemId, alternativeId, commandId: crypto.randomUUID() }); redraw(v => v + 1);
     if (!blocked.current) void pump();
   }
   function retry() { if (phase !== 'failed') return; if (!queue.current.length) { void reload(); return; } blocked.current = false; void pump(); }
   async function reload() {
-    const controller = lifetime.current; if (!controller || controller.signal.aborted || working.current) return;
+    const controller = lifetime.current; if (!controller || controller.signal.aborted || working.current || closing.current) return;
     working.current = true; setPhase('pending');
     try {
       const current = await readAttempt(server.current.id, controller.signal); if (controller.signal.aborted) return;
       server.current = current; setView(current); queue.current = []; blocked.current = true;
+      closeOperation.current = null; setFinishFailed(false);
       const dirty = Object.keys(drafts.current).length > 0;
       setPhase(dirty && current.finishedAt === null ? 'unsaved' : 'saved');
       setMessage(dirty ? current.finishedAt === null ? 'Versão atual carregada. Escolhas locais preservadas, ainda não salvas; confira antes de enviar.' : 'A tentativa já foi concluída. Escolhas locais não confirmadas não foram aplicadas ao resultado.' : 'Versão atual carregada.');
@@ -61,8 +72,30 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
     queue.current = Object.entries(drafts.current).map(([itemId, alternativeId]) => ({ itemId, alternativeId, commandId: crypto.randomUUID() }));
     blocked.current = false; void pump();
   }
-  return { view, phase, message, revision, choose, retry, reload, savePreserved,
+  async function finish() {
+    const controller = lifetime.current;
+    if (!controller || controller.signal.aborted || closing.current || working.current || queue.current.length || server.current.finishedAt !== null) return;
+    if (!closeOperation.current) {
+      if (phase !== 'saved' || Object.keys(drafts.current).length) return;
+      closeOperation.current = { commandId: crypto.randomUUID(), version: server.current.version };
+    }
+    closing.current = true; setFinishing(true); setFinishFailed(false); setMessage('');
+    try {
+      const closed = await finishAttempt(server.current.id, closeOperation.current.commandId, closeOperation.current.version, controller.signal);
+      if (controller.signal.aborted) return;
+      server.current = closed.attempt; setView(closed.attempt); setResult(closed.result);
+    } catch (error) {
+      if (controller.signal.aborted) return;
+      if (error instanceof AttemptApiError && [401, 404].includes(error.status)) { unavailable.current(); return; }
+      if (error instanceof AttemptApiError && error.status === 409) {
+        closeOperation.current = null; blocked.current = true; setPhase('conflict');
+        setMessage('A versão mudou antes de concluir. Recarregue e confira as respostas confirmadas.');
+      } else { setFinishFailed(true); setMessage('Conclusão não confirmada. Repita a mesma operação ou recarregue para verificar; nenhuma nota local foi calculada.'); }
+    } finally { closing.current = false; if (!controller.signal.aborted) setFinishing(false); }
+  }
+  return { view, phase, message, revision, choose, retry, reload, savePreserved, finish, finishing, finishFailed, result, resultFailed, loadResult,
     selected: (item: AttemptItem) => Object.hasOwn(drafts.current, item.id) ? drafts.current[item.id] : item.selectedAlternativeId,
-    canFinish: phase === 'saved' && queue.current.length === 0 && Object.keys(drafts.current).length === 0 && view.finishedAt === null,
+    controlsLocked: closeOperation.current !== null || finishing || view.finishedAt !== null,
+    canFinish: phase === 'saved' && queue.current.length === 0 && Object.keys(drafts.current).length === 0 && view.finishedAt === null && closeOperation.current === null,
   };
 }

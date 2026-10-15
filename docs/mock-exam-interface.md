@@ -60,6 +60,10 @@ contexto antes de qualquer evento/requisição. Browser real/OIDC/PG verifica a 
 
 Ao revalidar a identidade com tentativa ativa, a workspace também confere seu acesso por GET antes de voltar a exibi-la, preservando escolhas em memória enquanto a identidade é a mesma. Isso detecta expiração/troca de sessão visitante, que não pode ser distinguida apenas pelo 401 de /me. Falha mantém conteúdo oculto até retry; 401/403/404 desmontam o contexto.
 
+Retorno à aba visível e pageshow de documento restaurado também revalidam a identidade;
+a proteção não depende apenas de focus. O teste de restauração exige que a conta nova
+não receba conteúdo da workspace anterior.
+
 ## Verificação de assets e módulos corretivos
 
 A entrada inicial da SPA e a consulta pública não carregam o renderer/validador de

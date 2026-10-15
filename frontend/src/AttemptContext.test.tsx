@@ -58,3 +58,8 @@ it('revalidação do visitante também confere acesso à tentativa quando a sess
   await screen.findByRole('button', { name: 'Iniciar simulado' });
   expect(fixture.fetchMock.mock.calls.some(([url]) => url.endsWith(`/attempts/${view.id}`))).toBe(true);
 });
+it('retorno de página restaurada pelo navegador revalida a conta antes de exibir o contexto privado', async () => {
+  const fixture = api(userA);render(<App />);await start();fixture.change(userB);
+  const restored = new Event('pageshow');Object.defineProperty(restored, 'persisted', { value: true });fireEvent(window, restored);
+  await screen.findByRole('button', { name: 'Iniciar simulado' });expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();
+});

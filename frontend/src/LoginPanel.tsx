@@ -36,8 +36,11 @@ export default function LoginPanel({ onIdentity, onChecking, onBeforeLogin }: { 
     }).catch(() => { if (isCurrent()) { setState('unavailable'); onIdentity?.(null); } });
     const refresh = () => { if (document.visibilityState === 'visible') refreshSession(); };
     window.addEventListener('focus', refresh);
+    document.addEventListener('visibilitychange', refresh);
+    const restored = (event: PageTransitionEvent) => { if (event.persisted) refreshSession(); };
+    window.addEventListener('pageshow', restored);
     const recheck = () => refreshSession(); window.addEventListener('identity-recheck', recheck);
-    return () => { active = false; window.removeEventListener('focus', refresh); window.removeEventListener('identity-recheck', recheck); };
+    return () => { active = false; window.removeEventListener('focus', refresh); document.removeEventListener('visibilitychange', refresh); window.removeEventListener('pageshow', restored); window.removeEventListener('identity-recheck', recheck); };
   }, [attempt, onIdentity, onChecking]);
 
   async function logout() {

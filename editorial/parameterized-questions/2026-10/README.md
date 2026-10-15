@@ -38,12 +38,12 @@ sem chamar o gerador/oráculo Java, e recompõe digests binários da definição
 saídas/manifesto. Isso complementa a validação Java, sem garantir revisão pedagógica.
 
 ```text
-./gradlew -p backend parameterizationLocal -PtemplateAction=preview -PtemplateRoot=<raiz-absoluta> -PtemplateFile=editorial/parameterized-questions/2026-10/direct-proportion.json
-./gradlew -p backend parameterizationLocal -PtemplateAction=preview -PtemplateRoot=<raiz-absoluta> -PtemplateFile=editorial/parameterized-questions/2026-10/percentage.json
+./backend/gradlew -p backend parameterizationLocal -PtemplateAction=preview -PtemplateRoot=<raiz-absoluta> -PtemplateFile=editorial/parameterized-questions/2026-10/direct-proportion.json
+./backend/gradlew -p backend parameterizationLocal -PtemplateAction=preview -PtemplateRoot=<raiz-absoluta> -PtemplateFile=editorial/parameterized-questions/2026-10/percentage.json
 python scripts/audit_parameterized_content.py --directory editorial/parameterized-questions/2026-10 --output editorial/parameterized-questions/2026-10 --allow-partial
 ```
 
-No Windows usar `gradlew.bat`. A opção `--allow-partial` documenta a lacuna; sem ela,
+No Windows usar `backend\gradlew.bat`. A opção `--allow-partial` documenta a lacuna; sem ela,
 o auditor rejeita este pacote incompleto. O launcher requer raiz/arquivo explícitos;
 prévia não grava nem usa credenciais. Não converter esse comando em aprovação automática.
 

@@ -38,13 +38,13 @@ e na issue #64. Esta matriz não certifica o gate cumulativo final nem autoriza 
 ## Execuções locais da combinação
 
 - Backend Windows/Java25/PostgreSQL18.6: **149 testes, zero falhas/erros/skips**, test bootJar PASS.
-- Frontend: **105 testes**, incluindo invalidação por headers e preservação ao reabrir ID ativo; TypeScript/Vite build.
-- Navegador real Chromium/API/PG/OIDC: **14 cenários**, oito de simulados e seis regressões; renderer sem download posterior à conclusão.
+- Frontend: **105 testes PASS**, incluindo invalidação por headers e preservação ao reabrir ID ativo; TypeScript/Vite build PASS.
+- Navegador real Chromium/API/PG/OIDC: **14 cenários PASS**, oito de simulados e seis regressões; renderer sem download posterior à conclusão.
 - Navegador de aulas/entrada/login: **6 cenários**, incluindo nove módulos e 90 resoluções offline.
 - Python3.14/Linux isolado, repo somente leitura e rede desativada: **54 testes** PASS, sem skips.
 - Links originais: 108 páginas/1661 referências locais; pacote gerado: 108 páginas/1757 referências PASS.
 - OpenSpec 1.14.1: todas as quatro mudanças estritamente válidas.
-- Artefatos: 191 classes da aplicação no bootJar, quatro arquivos no dist; checker.
+- Artefatos: 191 classes da aplicação no bootJar, quatro arquivos no dist; checker PASS.
   Quatro controles sintéticos rejeitam fixture/env no JAR, payload privado em chunk e escape de entrada.
 - Operação deliberada adicional: JAR anterior de `54896da` sobre V5 e retorno à aplicação atual PASS,
   preservando conta/sessão/acervo/tentativas e removendo somente visitante vencido no startup.

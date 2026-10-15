@@ -100,6 +100,7 @@ tardias. Outros erros mantêm o prazo total e o tratamento de insuficiência por
 O renderer do resultado faz parte do código inicial. A validação tardia projeta os
 campos corretivos em conteúdo para apresentação, sem calcular a nota. Assim, depois
 de aceitar o resultado, não há novo download de renderer capaz de desmontar a raiz.
+O título recebe foco antes da pintura da tela, sem depender de um efeito posterior.
 Um teste real bloqueia esse download após iniciar a realização e exige resultado,
 aulas e identidade acessíveis com uma única conclusão. O contrato HTTP e os controles
 de gabarito no JSON/DOM ativo e de payloads nos assets permanecem os mesmos.

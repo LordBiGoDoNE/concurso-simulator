@@ -1,9 +1,9 @@
-import { useEffect, useRef } from 'react';
+import { useLayoutEffect, useRef } from 'react';
 import type { Result } from './attempt-api';
 import AttemptText from './AttemptText';
 
 export default function AttemptResult({ result }: { result: Result }) {
-  const heading = useRef<HTMLHeadingElement>(null); useEffect(() => heading.current?.focus(), []);
+  const heading = useRef<HTMLHeadingElement>(null); useLayoutEffect(() => heading.current?.focus(), []);
   return <section aria-labelledby="attempt-result-title">
     <h3 id="attempt-result-title" tabIndex={-1} ref={heading}>Resultado do simulado</h3>
     <p>{result.points}/{result.total} pontos — {result.percentage.toLocaleString('pt-BR', { maximumFractionDigits: 2 })}%.</p>

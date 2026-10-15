@@ -1,7 +1,7 @@
 # Revisão independente da spec parameterized-questions
 
 **Pending — gate cumulativo não executado.** Modelo escolhido pelo usuário:
-`openai/gpt-6.1-sol#xhigh`. Proposta e grupos de implementação ainda não aprovados.
+`openai/gpt-6.1-sol#xhigh`. Proposta aprovada e grupos 1/2 autorizados; implementação em andamento, sem gate executado.
 Revisão documental da proposta, quando executada, não será declarada gate do produto.
 
 ## Escopo e cobertura

@@ -1,8 +1,9 @@
 # Proposal
 
-**Em proposta, sem autorização de implementação.** Etapa 5 do roadmap. O usuário
-escolheu três famílias em 2026-10-15: regra de três direta, porcentagem e juros simples.
-Esse recorte não aprova automaticamente o restante desta proposta, conteúdo ou merges.
+**Aprovada pelo usuário em 2026-10-15, issue #86.** Proposta integrada pelo #87
+em `05b9cb9` na épica da spec. Primeiro lote autorizado: grupos completos 1 e 2.
+Três famílias: regra de três direta, porcentagem e juros simples. Decisões editoriais
+reais, merges de implementação e integração da spec continuam separados.
 Pré-requisito integrado: simulados e tentativas, #84, `0d0fc48` na épica geral.
 
 ## Why

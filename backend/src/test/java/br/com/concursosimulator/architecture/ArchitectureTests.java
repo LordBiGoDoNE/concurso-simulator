@@ -48,6 +48,11 @@ class ArchitectureTests {
                 .should().onlyDependOnClassesThat().resideInAnyPackage(
                         "java..", "..mockexam.domain..", "..mockexam.application..", "..questionbank.domain..").check(CODE);
     }
+    @Test void parameterizationCoreOnlyDependsOnItsOwnCoreAndQuestionValueObjects() {
+        classes().that().resideInAnyPackage("..parameterization.domain..", "..parameterization.application..")
+                .should().onlyDependOnClassesThat().resideInAnyPackage(
+                        "java..", "..parameterization.domain..", "..parameterization.application..", "..questionbank.domain..").check(CODE);
+    }
     @Test void attemptControllersReceiveVerifiedActorsAndUseConcreteWebContracts() {
         for (var controller:java.util.List.of(br.com.concursosimulator.mockexam.web.AttemptController.class,
                 br.com.concursosimulator.mockexam.web.AttemptHistoryController.class)) {

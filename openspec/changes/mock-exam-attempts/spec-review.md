@@ -1,84 +1,87 @@
-# Revisão cumulativa — mock-exam-attempts
+# Revisão cumulativa — mock-exam-attempts, PR #84
 
-**Gate do PR #84 ainda pendente.** SOL 6.1 xhigh é o padrão permanente de todas as
-revisões, revalidações e gates cumulativos, inclusive da épica geral, conforme decisão
-do usuário em 2026-10-15. Não há exigência ativa de Astra. Execuções passadas permanecem
-históricas; os requisitos de independência, cobertura, triagem e autorização não mudaram.
+**Revisão independente concluída no head conjunto `6727055d0568a13c8b2dab8e61dfe7a7b153afd6`.**
+SOL-CUM-R1 corrigido; nenhum novo achado ou bloqueador remanescente confirmado.
+Autorização de merge do **#84 ainda pendente**. O usuário autorizou apenas as tarefas
+#83/#85; o gate automatizado do head real deve ser conferido após integrar #83.
 
-24/24 tarefas de produto estão integradas em `d888a2b4b18276465bb7753d3b6174955a79f41a`.
-PR #83 versiona a política; PR #85 corrige um achado de apresentação. São tarefas
-independentes, ambas para `epic/mock-exam-attempts`, sem merge aprovado/presumido.
+## Escopo e cobertura
 
-## Revisão independente inicial e revalidação
+Modelo permanente `openai/gpt-6.1-sol#xhigh`, contexto inicialmente novo
+`/root/spec_reviewer_sol_global`, mesmo revisor nas revalidações. Seleção aceita pelo
+Codex como gpt-6.1-sol +xhigh; telemetria independente da variante do provedor não exposta.
+Risco **crítico**: posse/sessão/CSRF, snapshot e correção privada, idempotência/concorrência,
+schema/transações/rollback/expiração e política de seleção do revisor.
 
-Contexto novo `/root/spec_reviewer_sol_global`, modelo solicitado/aceito
-`openai/gpt-6.1-sol#xhigh`. Não houve outro modelo. Risco cumulativo **crítico**:
-posse/sessão/CSRF, conteúdo privado/correção, snapshot, concorrência/idempotência,
-schema/JPA/rollback/expiração e seleção do revisor. Telemetria de variante do provedor
-não está exposta; não confundir seleção aceita com verificação independente do provedor.
+Diff completo cumulativo de 94 arquivos relevantes, incluindo código, requisitos,
+testes, documentação e política permanente SOL. Os dois arquivos de evidência não
+foram lidos pelo revisor e são os únicos excluídos do digest. A matriz foi examinada
+depois da análise semântica independente inicial e conferida novamente no conjunto.
 
-O candidato inicial `d65006eb29a733c13c4f2a9f3741147d235dcd5b` →
-`4ac43c482d37e1d90516553998dccb54f6fbb471` teve digest recalculado
-`cb50621618dca2234c4a364c33845543a19de7d433e0e1e20c2ce1ec12bbd27b`.
-O revisor examinou os92 arquivos relevantes antes da matriz, sem consultar relatórios
-ou verification.md. Depois do parecer independente inicial, conferiu a matriz completa
-de24 itens, os testes relacionados e o diff integral da correção #85.
+| Área | Cobertura |
+| --- | --- |
+| requirements | Composição de 1–100/filtros/insuficiência/sem reposição, versões/ordens/respostas, conclusão/correção, visitante/histórico e 24 itens da matriz |
+| architecture | ADR 0001/checklist HTTP, núcleo puro, agregado/UseCases/portas, transações/JPA infra, ator verificado e DTOs concretos |
+| integration | Porta questionbank, HTTP/OpenAPI, fila/retry/resultado/histórico/identidade e coexistência real dos PRs #83/#85 |
+| security | Posse antes de replay/exposição, principal/sessão/CSRF/CORS/404/no-store, projeções ativas e respostas tardias |
+| persistence | V5 aditiva, captura histórica, constraints/triggers/FKs, versão/CAS/comandos/rollback/expiração/cascata restrita |
+| tests | Testes novos de todas as camadas e browser/artefatos/operação lidos; regressão R1 e matriz completas revalidadas |
+| maintenance | Rollback sem apagar dados, fixtures só de teste, conteúdo acessível e política SOL sem relaxar gate/workflow/aprovações |
 
-**Achado SOL-CUM-R1, recommended → fixed:** a revisão do resultado mostrava somente
-texto nas alternativas escolhida/correta, omitindo descrições de figuras preservadas
-no snapshot/API e presentes na realização. O #85 reutiliza Content/AttemptText completo
-com HTML válido. A regressão usa textos e descrições diferentes nas duas alternativas,
-exige foco/nota e falha com o renderer anterior. Revisor confirmou corrigido, sem novos
-achados ou bloqueadores confirmados nas análises executadas.
+## Achados e triagem
 
-## Tarefas revisadas e checks
+**SOL-CUM-R1 — recommended → fixed.** A tela de resultado mostrava apenas texto das
+alternativas escolhida/correta, omitindo descrições de figuras presentes no snapshot.
+O #85, aprovado e integrado em `e1c03ec66921c5dca70099f889d175d09d9999b1`, passou a usar Content/AttemptText
+completo em blocos HTML válidos. A regressão distingue textos/descrições das duas
+alternativas e exige foco/nota; o renderer anterior falha no controle negativo.
+Resposta em branco, resolução, fontes e nota do servidor foram preservadas.
 
-| PR | Base | Head de código revisado | Parecer |
-| --- | --- | --- | --- |
-| [#83](https://github.com/LordBiGoDoNE/concurso-simulator/pull/83) | `d888a2b4b18276465bb7753d3b6174955a79f41a` | `4ac43c482d37e1d90516553998dccb54f6fbb471` | Política coerente; nenhum achado; risco crítico |
-| [#85](https://github.com/LordBiGoDoNE/concurso-simulator/pull/85) | `d888a2b4b18276465bb7753d3b6174955a79f41a` | `4320caa629bfedb904bbdd8a3b00af3d515f7bfe` | R1 corrigido; nenhum novo achado; apresentação padrão |
+O revisor confirmou a correção novamente no head conjunto, sem novos achados
+blocking/recommended/optional. Triagem encerrada. Os achados dos lotes anteriores
+permanecem históricos separados, sem serem apresentados como resultados desta revisão.
 
-Digests por tarefa recalculados pelo revisor: #83
-`b4b2181fc89458f6032ea45e3965e8f7e607882de7fad46465560c309359c5d5`;
-#85 `ce71adb319579a8fc6c945d5f265057fd36c2c2459f37e6f608f4d6ca9e034a6`.
-Todos os checks dos dois heads passaram; URLs individuais no JSON. Commits posteriores
-do #83 registram apenas estes dois arquivos de evidência, excluídos do digest.
-Conferir novamente heads/checks atuais antes de qualquer integração.
+## Evidências e limitações
 
-## Cobertura e limites
+Coordenador/GitHub Actions: **149 backend, 108 frontend, 14 cenários reais de navegador**, builds,
+study-material/aulas/offline e guard de revisão PASS no head conjunto. Oito testes de
+cota Windows e 54 scripts Linux passaram na atualização da política. Quatro mudanças
+OpenSpec estritas e inspeção de artefatos PASS; rollback operacional adicional já
+verificado e não repetido para alterações somente frontend/política. URLs por tarefa
+e verificações/executores estão no JSON; matriz em [verification.md](verification.md).
 
-Requisitos1–100/filtros/insuficiência atômica/seleção sem reposição/captura imutável,
-respostas/conclusão/correção/visitante/histórico; ADR0001 e checklist HTTP; integração
-questionbank/OpenAPI/React/fila/identidade; proprietário antes de replay/estado,
-sessão/principal/CSRF/CORS/404/no-store/projeções; V5 aditiva/FKs/triggers/JPA/version/
-CAS/comandos/rollback/expiração; testes de domínio/aplicação/PG/HTTP/arquitetura/React/
-browser/artefatos/operação e matriz completa. Nenhuma alteração de regras de negócio
-ou contrato foi exigida pela correção de apresentação.
+Revisor não executou testes/build/aplicação/browser/rede/DB, não inspecionou artefatos,
+logs privados ou CI remoto, nem fez edições/merges. Após comunicar a conclusão inicial
+independente e o achado, uma consulta list_agents expôs incidentalmente resumo de lote
+anterior; essa exposição posterior limita qualquer alegação de zero exposição. As fases
+complementares não repetiram a consulta. Contexto novo reduz viés, não garante ausência.
+Testes e inspeção estática não demonstram toda falha de transporte, escalonamento,
+carga, ausência de dica semântica ou decisão arquitetural. Cota/tokens indisponíveis;
+observações privadas ficam fora do Git e são apresentadas ao usuário separadamente.
+Uma tentativa intermediária interrompida não produziu parecer e não foi contada como revisão.
 
-Coordenador: oito testes de cota Windows,54 scripts Linux, quatro specs OpenSpec
-estritas,108 frontend/build/artefatos e controle negativo PASS. CI dos heads examinados
-passou, incluindo backend e14 browser reais. Execuções do coordenador/GitHub Actions,
-não do revisor. Revisor não executou testes/build/app/browser/rede/DB, não inspecionou
-binários/logs privados/CI remoto e não modificou arquivos.
+## Revalidação
 
-Depois de comunicar a conclusão independente inicial e o achado, o revisor consultou
-list_agents e recebeu incidentalmente resumo de revisão anterior do lote. Essa exposição
-posterior limita qualquer promessa de ausência total de exposição; o achado já estava
-emitido. A fase complementar não consultou agentes. Contexto novo reduz viés, não
-garante ausência de viés. Cota/tokens indisponíveis; dados privados de observação ficam
-fora do Git e são apresentados ao usuário separadamente, sem estimativa ou comparação.
+Base da épica geral: `d65006eb29a733c13c4f2a9f3741147d235dcd5b`.
+Head conjunto examinado: `6727055d0568a13c8b2dab8e61dfe7a7b153afd6`.
+SHA-256 cumulativo recalculado pelo revisor: `d1f7bd2706356ad74d6303426fc8e2ed25edb4e28267cf5bf02eca860dc5fa08`.
 
-## Por que o gate real continua pending
+O head conjunto tem pais `ee6366403deadb07871311f2de4c98f4b9c4ec57` e `e1c03ec66921c5dca70099f889d175d09d9999b1`;
+preserva os commits aprovados/revisados 4ac43c4,4320caa,ee63664 e e1c03ec. A árvore do
+merge do #85 é idêntica à do head do #85 aprovado. Contra o candidato inicial 4ac, o delta relevante
+é exatamente renderer, regressão, documentação e matriz da correção #85.
 
-O PR #84 ainda aponta para `d888a2b`. O candidato4ac contém #83, mas não a correção
-independente #85. **Não há um único head real com as duas alterações.** Não criamos
-digest de união sintética nem declaramos que o check spec-review passou.
+O #83 foi revalidado contra sua **nova base real** `e1c03ec66921c5dca70099f889d175d09d9999b1`, não apenas por
+igualdade visual/digest anterior. Digest por tarefa
+`b4b2181fc89458f6032ea45e3965e8f7e607882de7fad46465560c309359c5d5` recalculado.
+A política mantém SOL permanente, independência, risco, triagem, atualidade e aprovação;
+sem novo bypass ou exigência de outro modelo.
 
-Após aprovação explícita dos #83 e #85, integrar preservando commits e revalidar o
-head conjunto real contra a base atual de #84, incluindo eventual mudança de base das
-tarefas. Só então concluir o relatório principal, conferir ancestralidade/digest/checks
-e solicitar aprovação própria do [SPEC]. Modelo final já selecionado SOL; nenhuma nova
-confirmação de modelo é necessária. Sem main/deploy/arquivamento ou etapa futura.
+No momento do parecer, #83 ainda estava aberto e o head real de #84 era e1c03ec.
+Após o merge autorizado de #83, o coordenador deve confirmar a mesma base de #84,
+ancestralidade deste head revisado, digest idêntico e o check real `spec-review`.
+Somente estes dois arquivos de evidência são atualizados depois do head examinado.
+Isso não autoriza merge de #84, épica geral→main, deployment ou arquivamento.
 
 ## Histórico — revisões dos lotes anteriores à integração
 

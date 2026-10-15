@@ -14,6 +14,7 @@ function api({ enabled = true, connected = false, logout = 204, failure = '' } =
     if (url.endsWith(failure) && failure) throw new TypeError('network');
     if (url.endsWith('/auth/config')) return response({ googleEnabled: enabled });
     if (url.endsWith('/me')) return active ? response({ id }) : response({ error: 'unauthenticated' }, 401);
+    if (url.includes('/me/attempts')) return response({ items: [], page: 0, size: 20 });
     if (url.endsWith('/csrf')) return response({ token: 'fresh-csrf', headerName: 'X-CSRF-TOKEN' });
     if (url.endsWith('/auth/logout') && options?.method === 'POST') {
       if (logout === 204 || logout === 401) active = false;

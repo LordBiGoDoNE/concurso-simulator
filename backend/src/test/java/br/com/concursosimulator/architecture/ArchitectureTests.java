@@ -43,6 +43,26 @@ class ArchitectureTests {
                         "java..", "..questionbank.domain..", "..questionbank.application..").check(CODE);
     }
 
+    @Test void mockExamCoreOnlyDependsOnItsOwnCoreAndQuestionValueObjects() {
+        classes().that().resideInAnyPackage("..mockexam.domain..", "..mockexam.application..")
+                .should().onlyDependOnClassesThat().resideInAnyPackage(
+                        "java..", "..mockexam.domain..", "..mockexam.application..", "..questionbank.domain..").check(CODE);
+    }
+    @Test void attemptControllersReceiveVerifiedActorsAndUseConcreteWebContracts() {
+        for (var controller:java.util.List.of(br.com.concursosimulator.mockexam.web.AttemptController.class,
+                br.com.concursosimulator.mockexam.web.AttemptHistoryController.class)) {
+            noClasses().that().haveFullyQualifiedName(controller.getName()).should().dependOnClassesThat()
+                    .resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..").check(CODE);
+            for(var method:controller.getDeclaredMethods()) {
+                if(java.util.Arrays.stream(method.getAnnotations()).noneMatch(a -> a.annotationType().isAnnotationPresent(org.springframework.web.bind.annotation.RequestMapping.class)))continue;
+                assertThat(method.getGenericReturnType()).isInstanceOf(ParameterizedType.class);
+                var response=(ParameterizedType)method.getGenericReturnType();assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
+                assertThat(response.getActualTypeArguments()[0]).isInstanceOf(Class.class);
+                assertThat(((Class<?>)response.getActualTypeArguments()[0]).isRecord()).isTrue();
+            }
+        }
+    }
+
     @Test void questionControllerDoesNotOwnSessionOrAuthenticationAndHasConcreteContracts() {
         noClasses().that().haveFullyQualifiedName(br.com.concursosimulator.questionbank.web.QuestionController.class.getName())
                 .should().dependOnClassesThat().resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..")

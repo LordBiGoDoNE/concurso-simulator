@@ -1,9 +1,9 @@
 import { useEffect, useRef, useState } from 'react';
-import { currentIdentity, identityApiUrl, identityRequest } from './identity-api';
+import { currentIdentity, identityApiUrl, identityRequest, type CurrentIdentity } from './identity-api';
 
-type Identity = { connected: boolean; googleEnabled: boolean };
+type Identity = CurrentIdentity;
 
-export default function LoginPanel() {
+export default function LoginPanel({ onIdentity, onChecking, onBeforeLogin }: { onIdentity?: (v: CurrentIdentity | null) => void; onChecking?: () => void; onBeforeLogin?: () => boolean }) {
   const [identity, setIdentity] = useState<Identity | null>(null);
   const [state, setState] = useState<'loading' | 'ready' | 'unavailable'>('loading');
   const [attempt, setAttempt] = useState(0);
@@ -30,17 +30,22 @@ export default function LoginPanel() {
     let active = true;
     const requestGeneration = ++generation.current;
     const isCurrent = () => active && requestGeneration === generation.current && !logoutPending.current;
-    if (!logoutPending.current) setState('loading');
+    if (!logoutPending.current) { setState('loading'); onChecking?.(); }
     currentIdentity().then(value => {
-      if (isCurrent()) { setIdentity(value); setState('ready'); }
-    }).catch(() => { if (isCurrent()) setState('unavailable'); });
+      if (isCurrent()) { setIdentity(value); setState('ready'); onIdentity?.(value); }
+    }).catch(() => { if (isCurrent()) { setState('unavailable'); onIdentity?.(null); } });
     const refresh = () => { if (document.visibilityState === 'visible') refreshSession(); };
     window.addEventListener('focus', refresh);
-    return () => { active = false; window.removeEventListener('focus', refresh); };
-  }, [attempt]);
+    document.addEventListener('visibilitychange', refresh);
+    const restored = (event: PageTransitionEvent) => { if (event.persisted) refreshSession(); };
+    window.addEventListener('pageshow', restored);
+    const recheck = () => refreshSession(); window.addEventListener('identity-recheck', recheck);
+    return () => { active = false; window.removeEventListener('focus', refresh); document.removeEventListener('visibilitychange', refresh); window.removeEventListener('pageshow', restored); window.removeEventListener('identity-recheck', recheck); };
+  }, [attempt, onIdentity, onChecking]);
 
   async function logout() {
     logoutPending.current = true;
+    onIdentity?.(null);
     generation.current += 1;
     setExiting(true);
     setMessage('');
@@ -55,7 +60,8 @@ export default function LoginPanel() {
       if (response.status === 403) {
         setMessage('Não foi possível confirmar a saída. Tente novamente para renovar a proteção da sessão.');
       } else if (response.status === 204 || response.status === 401) {
-        setIdentity(value => value && { ...value, connected: false });
+        setIdentity(value => value && { connected: false, googleEnabled: value.googleEnabled });
+        if (identity) onIdentity?.({ connected: false, googleEnabled: identity.googleEnabled });
         setMessage('Você está sem sessão. Pode continuar estudando sem login.');
       } else throw new Error('logout unavailable');
     } catch {
@@ -72,7 +78,7 @@ export default function LoginPanel() {
   return (
     <section aria-labelledby="identity-title">
       <h2 id="identity-title">Login opcional</h2>
-      <p>Estude sem entrar. O login prepara sua identidade; a sincronização de histórico ainda não está disponível.</p>
+      <p>Estude sem entrar. Com a conta, salve e retome simulados; como visitante, a tentativa é temporária e não será transferida no login.</p>
       <p role="status" aria-live="polite">
         {state === 'loading' ? 'Consultando sessão…' : state === 'unavailable'
           ? 'Consulta de sessão indisponível. Continue acessando as aulas sem login.'
@@ -81,7 +87,7 @@ export default function LoginPanel() {
       {message && <p role="alert">{message}</p>}
       {state === 'ready' && identity?.connected && <button disabled={exiting} onClick={logout}>{exiting ? 'Saindo…' : 'Sair'}</button>}
       {state === 'ready' && !identity?.connected && identity?.googleEnabled && (
-        <a className="material-link" href={`${identityApiUrl}/oauth2/authorization/google`}>Entrar com Google</a>
+        <a className="material-link" href={`${identityApiUrl}/oauth2/authorization/google`} onClick={event => { if (onBeforeLogin && !onBeforeLogin()) event.preventDefault(); }}>Entrar com Google</a>
       )}
       {state === 'ready' && !identity?.googleEnabled && !identity?.connected && <p>Login Google desativado neste ambiente.</p>}
       <button className="session-refresh" disabled={state === 'loading' || exiting} onClick={refreshSession}>Atualizar sessão</button>

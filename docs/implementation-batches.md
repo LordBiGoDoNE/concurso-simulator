@@ -10,7 +10,7 @@ Bloqueio real é reportado sem declarar conclusão ou ampliar escopo automaticam
 Revisões externas acontecem depois da implementação do lote e
 antes de pedir sua aprovação. [Procedimento](architecture/spec-review.md).
 
-## Política atual — somente SOL nos lotes (2026-10-13)
+## Política atual — SOL em todas as revisões (2026-10-15)
 
 - Somente SOL 6.1 xhigh revisa os lotes, incluindo os críticos e documentais.
   A decisão substitui a revisão dupla por risco de 2026-10-12. Registrar classificação/
@@ -19,7 +19,8 @@ antes de pedir sua aprovação. [Procedimento](architecture/spec-review.md).
   exigem cobertura/regressões adequadas. SOL examina os diffs completos por PR e a
   combinação, não um prefixo conveniente. O [procedimento](architecture/spec-review.md)
   detalha critérios, reclassificação e limites, sem garantir corretude por revisão única.
-- O gate cumulativo final `[SPEC]` continua Astra medium. Revisão de lote não o substitui.
+- O gate cumulativo final `[SPEC]` e o da épica geral também usam SOL 6.1 xhigh.
+  Revisão de lote não os substitui; cada gate exige contexto independente próprio.
 - Medir antes/depois de cada revisão SOL executada. Relatar
   ao usuário variação de cota por janela/fase e seus limites, não custo financeiro.
   Não disparar segundo modelo por risco/medição nem inventar comparação em revisão única.

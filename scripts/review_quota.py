@@ -7,6 +7,8 @@ import math
 import sys
 from datetime import datetime, timezone
 
+# Historical observations remain readable; this validator does not select reviewers.
+# The current review policy selects only SOL 6.1 xhigh (2026-10-15).
 MODELS = {"openai/gpt-6-astra#medium", "openai/gpt-6.1-sol#xhigh"}
 WINDOWS = ("5h", "weekly")
 

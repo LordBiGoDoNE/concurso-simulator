@@ -148,7 +148,7 @@ O usuário aprovou o método como padrão, não implementação automática de s
 ou grupos sem pausas. Não repetir pilotos/propostas de processo por spec somente por
 mudar o nome: conferir compatibilidade e registrar limites; divergência real exige
 ajuste revisável. O padrão não concede autorização de merges, encerramento dos PRs
-sintéticos, deployment ou main. A revisão cumulativa Astra medium e gate do PR `[SPEC]`
+sintéticos, deployment ou main. A revisão cumulativa SOL 6.1 xhigh e gate do PR `[SPEC]`
 permanecem obrigatórios antes da integração na épica geral.
 
 ## Revisão e colaboração

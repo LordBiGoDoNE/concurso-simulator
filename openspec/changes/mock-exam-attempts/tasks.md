@@ -1,6 +1,6 @@
 # Tasks
 
-**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 0/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; lote autorizado inclui **1.1–1.4 e 2.1–2.4 completos**, sem merge presumido da implementação. Grupos 3–6 aguardam pedido próprio. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
+**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 8/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; lote autorizado inclui **1.1–1.4 e 2.1–2.4 completos**, sem merge presumido da implementação. Grupos 3–6 aguardam pedido próprio. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
 
 Cada grupo inclui seus próprios código/testes/docs. Tarefas pequenas/coesas em PRs
 revisáveis (preferência 300–500 linhas autorais), sem reunir toda a spec num PR.
@@ -9,17 +9,17 @@ Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos p
 
 ## 1. Tentativa e regras de aplicação
 
-- [ ] 1.1 Definir composição por cargo/disciplina/assuntos e limites 1–100; testar critérios incompatíveis/quantidades/insuficiência em Java puro e documentar pontuação/distribuição sem regra oficial presumida.
-- [ ] 1.2 Implementar agregado/itens/respostas e snapshot de versões/ordens/parâmetros; testar identidades distintas, associação de alternativa, limpar resposta e imutabilidade, com modelo documentado.
-- [ ] 1.3 Implementar conclusão e correção uniforme-v1; testar respostas em branco, 3/5=60%, arredondamento, irreversibilidade e independência de mudanças do banco, com regras de resultado documentadas.
-- [ ] 1.4 Implementar UseCases/portas de criação, resposta, conclusão, leitura e histórico com ator/posse/versão/operação/relógio/sorteio substituíveis; testar autorização de negócio e retries sem framework, documentando responsabilidades.
+- [x] 1.1 Definir composição por cargo/disciplina/assuntos e limites 1–100; testar critérios incompatíveis/quantidades/insuficiência em Java puro e documentar pontuação/distribuição sem regra oficial presumida.
+- [x] 1.2 Implementar agregado/itens/respostas e snapshot de versões/ordens/parâmetros; testar identidades distintas, associação de alternativa, limpar resposta e imutabilidade, com modelo documentado.
+- [x] 1.3 Implementar conclusão e correção uniforme-v1; testar respostas em branco, 3/5=60%, arredondamento, irreversibilidade e independência de mudanças do banco, com regras de resultado documentadas.
+- [x] 1.4 Implementar UseCases/portas de criação, resposta, conclusão, leitura e histórico com ator/posse/versão/operação/relógio/sorteio substituíveis; testar autorização de negócio e retries sem framework, documentando responsabilidades.
 
 ## 2. Persistência, composição real e duração — depende de 1
 
-- [ ] 2.1 Criar migração aditiva/JPA/repository de tentativas, itens e comandos, sem editar V1–V4; testar constraints/novo banco/upgrade PG18.6 preservando contas/sessões/acervo, documentando schema e rollback não destrutivo.
-- [ ] 2.2 Implementar contrato interno mínimo do banco e captura/seleção transacional das versões elegíveis; testar sem reposição, filtros, insuficiência atômica e retirada concorrente antes/depois do snapshot, com fronteira de módulos documentada.
-- [ ] 2.3 Implementar persistência de comandos/idempotência e compare-and-set; testar duas abas/criações/conclusões concorrentes, timeout/retry, hash divergente, rollback integral e propagação de falhas desconhecidas, documentando limites.
-- [ ] 2.4 Implementar consultas paginadas por owner e limpeza visitante por vencimento/startup; testar 24h/limite de uma hora, reinício, cascata dos dados temporários e preservação da conta, com operação documentada e relógio controlável.
+- [x] 2.1 Criar migração aditiva/JPA/repository de tentativas, itens e comandos, sem editar V1–V4; testar constraints/novo banco/upgrade PG18.6 preservando contas/sessões/acervo, documentando schema e rollback não destrutivo.
+- [x] 2.2 Implementar contrato interno mínimo do banco e captura/seleção transacional das versões elegíveis; testar sem reposição, filtros, insuficiência atômica e retirada concorrente antes/depois do snapshot, com fronteira de módulos documentada.
+- [x] 2.3 Implementar persistência de comandos/idempotência e compare-and-set; testar duas abas/criações/conclusões concorrentes, timeout/retry, hash divergente, rollback integral e propagação de falhas desconhecidas, documentando limites.
+- [x] 2.4 Implementar consultas paginadas por owner e limpeza visitante por vencimento/startup; testar 24h/limite de uma hora, reinício, cascata dos dados temporários e preservação da conta, com operação documentada e relógio controlável.
 
 ## 3. Ator técnico, segurança e HTTP — depende de 1–2
 

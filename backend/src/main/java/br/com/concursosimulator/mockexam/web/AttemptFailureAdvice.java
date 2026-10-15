@@ -8,7 +8,7 @@ import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.transaction.TransactionException;
 import org.springframework.web.bind.annotation.*;
 
-@RestControllerAdvice(assignableTypes=AttemptController.class)
+@RestControllerAdvice(assignableTypes={AttemptController.class,AttemptHistoryController.class})
 public class AttemptFailureAdvice {
     @ExceptionHandler({IllegalArgumentException.class,HttpMessageNotReadableException.class})
     public ResponseEntity<AttemptContracts.Error> invalid() { return error(400,"invalid_request"); }

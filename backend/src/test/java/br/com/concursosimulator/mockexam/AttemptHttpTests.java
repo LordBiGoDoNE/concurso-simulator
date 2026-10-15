@@ -80,6 +80,50 @@ class AttemptHttpTests {
         var mutant=(tools.jackson.databind.node.ObjectNode)view;mutant.put("correctAlternativeId",UUID.randomUUID().toString());
         assertThatThrownBy(() -> assertSchema(mutant.toString(),"AttemptView")).isInstanceOf(AssertionError.class);
     }
+    @Test @Order(4) void finishUsesCapturedCorrectionAllowsBlanksAndReplaysWithoutAnotherTransition() throws Exception {
+        var b=browser(null);var outsider=browser(null);var initial=send("POST","/api/v1/attempts",b,createBody(UUID.randomUUID(),5));
+        var v=json.readTree(initial.body());var path="/api/v1/attempts/"+v.get("id").asString();
+        assertThat(send("GET",path+"/result",b,null).statusCode()).isEqualTo(409);
+        assertThat(send("GET",path+"/result",outsider,null).statusCode()).isEqualTo(404);
+        for (int i=0;i<4;i++) {
+            var item=v.get("items").get(i);var option=i<3?br.com.concursosimulator.questionbank.QuestionFixtures.FIRST:br.com.concursosimulator.questionbank.QuestionFixtures.SECOND;
+            assertThat(send("PUT",path+"/answers/"+item.get("id").asString(),b,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":"+i+",\"alternativeId\":\""+option+"\"}").statusCode()).isEqualTo(200);
+        }
+        var op=UUID.randomUUID();var command="{\"commandId\":\""+op+"\",\"expectedVersion\":4}";
+        assertThat(send("POST",path+"/finish",outsider,command).statusCode()).isEqualTo(404);
+        assertThat(send("POST",path+"/finish",new Browser(b.cookie(),null),command).statusCode()).isEqualTo(403);
+        assertThat(send("POST",path+"/finish",b,command.replace("4}","3}")).statusCode()).isEqualTo(409);
+        var finish=send("POST",path+"/finish",b,command);assertThat(finish.statusCode()).isEqualTo(200);assertSchema(finish.body(),"AttemptFinished");
+        var result=json.readTree(finish.body()).get("result");
+        assertThat(result.get("correct").asInt()).isEqualTo(3);assertThat(result.get("points").asInt()).isEqualTo(3);
+        assertThat(result.get("wrong").asInt()).isEqualTo(1);assertThat(result.get("blank").asInt()).isEqualTo(1);assertThat(result.get("percentage").asDouble()).isEqualTo(60);
+        assertThat(result.get("items").size()).isEqualTo(5);assertThat(finish.body()).contains("PRIVATE_BROWSER_RESOLUTION_SENTINEL");
+        assertThat(send("POST",path+"/finish",b,command).body()).isEqualTo(finish.body());
+        assertThat(json.readTree(send("GET",path+"/result",b,null).body())).isEqualTo(result);
+        assertSafe(send("GET",path,b,null).body());
+        assertThat(send("PUT",path+"/answers/"+v.get("items").get(0).get("id").asString(),b,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":5,\"alternativeId\":null}").statusCode()).isEqualTo(409);
+    }
+    @Test @Order(5) void historyIsPaginatedPrivateAndResumableWithAnotherSessionOfTheSameAccount() throws Exception {
+        var owner=UUID.randomUUID();var a=account(owner);var other=account(UUID.randomUUID());
+        var first=json.readTree(send("POST","/api/v1/attempts",a,createBody(UUID.randomUUID(),1)).body());
+        var second=json.readTree(send("POST","/api/v1/attempts",a,createBody(UUID.randomUUID(),2)).body());
+        var path="/api/v1/attempts/"+first.get("id").asString();
+        send("POST",path+"/finish",a,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}");
+        var fresh=account(owner);var page=send("GET","/api/v1/me/attempts?page=0&size=1",fresh,null);assertThat(page.statusCode()).isEqualTo(200);assertSchema(page.body(),"AttemptHistory");
+        assertThat(json.readTree(page.body()).get("items").get(0).get("id").asString()).isEqualTo(second.get("id").asString());
+        assertThat(json.readTree(page.body()).get("items").get(0).get("percentage").isNull()).isTrue();
+        var next=json.readTree(send("GET","/api/v1/me/attempts?page=1&size=1",fresh,null).body());assertThat(next.get("items").get(0).get("id").asString()).isEqualTo(first.get("id").asString());
+        assertThat(next.get("items").get(0).get("percentage").asDouble()).isEqualTo(0);
+        assertThat(json.readTree(send("GET","/api/v1/me/attempts",other,null).body()).get("items").size()).isZero();
+        assertThat(send("GET",path,other,null).statusCode()).isEqualTo(404);
+        assertThat(send("GET","/api/v1/attempts/"+second.get("id").asString(),fresh,null).body()).isEqualTo(second.toString());
+        assertThat(send("GET","/api/v1/me/attempts",browser(null),null).statusCode()).isEqualTo(401);
+        for(var q:List.of("page=-1","size=101","finished=invalid","owner="+owner,"page=0&page=1"))assertThat(send("GET","/api/v1/me/attempts?"+q,fresh,null).statusCode()).isEqualTo(400);
+        assertThat(json.readTree(send("GET","/api/v1/me/attempts?finished=true",fresh,null).body()).get("items").size()).isEqualTo(1);
+        var logout=send("POST","/api/v1/auth/logout",a,null);assertThat(logout.statusCode()).isEqualTo(204);
+        assertThat(send("GET","/api/v1/me/attempts",a,null).statusCode()).isEqualTo(401);
+        assertThat(send("GET",path,fresh,null).statusCode()).isEqualTo(200);
+    }
     @Test @Order(90) void incompatibleProjectionReturns503WithoutLeakingOrWritingAnyAttempt() throws Exception {
         var store=context.getBean(br.com.concursosimulator.questionbank.application.port.QuestionStore.class);
         var c=br.com.concursosimulator.questionbank.QuestionFixtures.content("<span data-correct='true'>PRIVATE_MARKUP_SENTINEL</span>");
@@ -94,6 +138,14 @@ class AttemptHttpTests {
             assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
             assertThat(jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(before);
         } finally { store.transaction(s -> {var loaded=s.loadForUpdate(q.id()).orElseThrow();loaded.decide(new br.com.concursosimulator.questionbank.domain.EditorialDecision(br.com.concursosimulator.questionbank.domain.EditorialDecision.Action.WITHDRAW,q.id(),q.latest().id(),c.fingerprint(),"Fixture",java.time.Instant.now(),Set.of(),"Remover controle negativo"));s.save(loaded);return null;}); }
+    }
+    @Test @Order(99) void unavailableSessionDatabaseReturns503BeforeMvcAndReadinessStillWorks() throws Exception {
+        var b=browser(null);PG.stop();
+        for(var path:List.of("/api/v1/me/attempts","/api/v1/attempts/"+UUID.randomUUID())) {
+            var r=send("GET",path,b,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+        }
+        assertThat(send("GET","/api/v1/status",null,null).statusCode()).isEqualTo(503);
+        assertThat(send("GET","/api/v1/question-bank/catalog",null,null).statusCode()).isEqualTo(200);
     }
     String createBody(UUID operation,int quantity) { return "{\"commandId\":\""+operation+"\",\"roleId\":\"assistente-administrativo\",\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":"+quantity+",\"topicIds\":[]}] }"; }
     void assertSafe(String body) { assertThat(body).doesNotContain("correctAlternativeId","resolution","provenance","PRIVATE_BROWSER_RESOLUTION_SENTINEL","gabarito","percentage"); }
@@ -115,7 +167,7 @@ class AttemptHttpTests {
         if(browser!=null&&browser.cookie()!=null)r.header("Cookie",browser.cookie());if(browser!=null&&browser.token()!=null)r.header("X-CSRF-TOKEN",browser.token());
         if(body!=null)r.header("Content-Type","application/json");
         var response=client.send(r.build(),HttpResponse.BodyHandlers.ofString());
-        if(path.startsWith("/api/v1/attempts"))assertThat(response.headers().firstValue("Cache-Control")).contains("no-store");
+        if(path.startsWith("/api/v1/attempts") || path.startsWith("/api/v1/me/attempts"))assertThat(response.headers().firstValue("Cache-Control")).contains("no-store");
         return response;
     }
     @SuppressWarnings("unchecked") void assertSchema(String body,String name) throws Exception {

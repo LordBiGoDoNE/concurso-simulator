@@ -43,3 +43,28 @@ confere contratos, retries, limpar, associação por ID, owner, ausência de efe
 inválidos e controle negativo que falha ao inserir um campo de gabarito no JSON.
 O validador de teste cobre estrutura/tipos usados; não substitui um validador geral
 OpenAPI nem demonstra ausência semântica de dicas em todo texto editorial.
+
+## Conclusão, resultado e histórico
+
+POST /{id}/finish exige commandId/expectedVersion e CSRF; devolve tentativa fechada e
+resultado tipados. GET /{id}/result é 409 enquanto aberta e só retorna gabarito/resolução
+após concluir. Respostas posteriores são conflito. Repetir o mesmo comando de conclusão
+recupera o resultado fechado; percentuais/pontos são exclusivamente do domínio.
+
+GET /api/v1/me/attempts exige conta pela segurança; page 0–100000, size 1–100, finished
+opcional true/false, sem parâmetros repetidos/desconhecidos. Ordena createdAt/id DESC e
+não anuncia total; a interface pode avançar enquanto a página estiver cheia. Sessões
+diferentes da mesma conta retomam o mesmo snapshot; outra conta/visitante não o recebem.
+
+Indisponibilidade de Spring Session pode ocorrer antes do MVC. Um filtro técnico,
+restrito a rotas de tentativas e anterior ao filtro de sessão, traduz somente causas
+DataAccessException/TransactionException em 503/no-store quando a resposta ainda não
+foi confirmada. Não decide autenticação, posse ou CSRF; erros desconhecidos propagam.
+A consulta stateless do banco e prontidão mantêm cadeias próprias. Teste interrompe PG
+para conferir 503 de sessão/resultado e preservação do catálogo fixo, sem falso vazio.
+
+Testes reais também verificam 3/5=60%, branco/erro, resultado precoce, conclusão repetida,
+negação de outro dono/CSRF, irreversibilidade, páginas e retomada em outra sessão,
+logout sem apagar tentativas e ArchUnit sobre dependências/contratos concretos dos
+controllers. O checklist é evidência de responsabilidades; ArchUnit não prova toda
+semântica e a indisponibilidade com resposta já confirmada não pode ser reescrita.

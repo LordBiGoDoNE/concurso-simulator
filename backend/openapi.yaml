@@ -201,6 +201,52 @@ paths:
         '404': {$ref: '#/components/responses/AttemptNotFound'}
         '409': {$ref: '#/components/responses/AttemptConflict'}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/finish:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    post:
+      summary: Concluir irreversivelmente e corrigir snapshot privado; replay confirmado
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptFinish'}
+      responses:
+        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptFinished'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/result:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Consultar resultado fechado somente do dono
+      responses:
+        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptResult'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/me/attempts:
+    get:
+      summary: Histórico privado da conta; createdAt/id DESC, sem nota parcial
+      security: [{sessionCookie: []}]
+      parameters:
+        - {in: query, name: page, schema: {type: integer, minimum: 0, maximum: 100000, default: 0}}
+        - {in: query, name: size, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
+        - {in: query, name: finished, schema: {type: boolean}}
+      responses:
+        '200': {description: Página do owner, no-store; sem total prometido, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptHistory'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
 components:
   responses:
     QuestionInvalid:
@@ -409,6 +455,57 @@ components:
             additionalProperties: false
             required: [disciplineId, available]
             properties: {disciplineId: {type: string}, available: {type: integer, minimum: 0}}
+    AttemptFinish:
+      type: object
+      additionalProperties: false
+      required: [commandId, expectedVersion]
+      properties: {commandId: {type: string, format: uuid}, expectedVersion: {type: integer, minimum: 0}}
+    AttemptResult:
+      type: object
+      additionalProperties: false
+      required: [total, points, correct, wrong, blank, percentage, items]
+      properties:
+        total: {type: integer}
+        points: {type: integer}
+        correct: {type: integer}
+        wrong: {type: integer}
+        blank: {type: integer}
+        percentage: {type: number, minimum: 0, maximum: 100}
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [item, correctAlternativeId, resolution]
+            properties:
+              item: {$ref: '#/components/schemas/AttemptItem'}
+              correctAlternativeId: {type: string, format: uuid}
+              resolution: {$ref: '#/components/schemas/QuestionText'}
+    AttemptFinished:
+      type: object
+      additionalProperties: false
+      required: [attempt, result]
+      properties: {attempt: {$ref: '#/components/schemas/AttemptView'}, result: {$ref: '#/components/schemas/AttemptResult'}}
+    AttemptHistory:
+      type: object
+      additionalProperties: false
+      required: [items, page, size]
+      properties:
+        page: {type: integer}
+        size: {type: integer}
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, roleId, createdAt, finishedAt, total, percentage]
+            properties:
+              id: {type: string, format: uuid}
+              roleId: {type: string}
+              createdAt: {type: string, format: date-time}
+              finishedAt: {type: [string, 'null'], format: date-time}
+              total: {type: integer}
+              percentage: {type: [number, 'null']}
   securitySchemes:
     sessionCookie:
       type: apiKey

@@ -27,6 +27,14 @@ public class AttemptController {
         return ok(View.from(cases.answer(actor,uuid(id),uuid(body.commandId()),version(body.expectedVersion()),uuid(item),
                 body.alternativeId()==null?null:uuid(body.alternativeId())).attempt()));
     }
+    @PostMapping("/{id}/finish") public ResponseEntity<Finished> finish(@CurrentActor AttemptOwner actor,@PathVariable String id,@RequestBody FinishRequest body,@RequestParam MultiValueMap<String,String> params) {
+        parameters(params,Set.of());
+        var result=cases.finish(actor,uuid(id),uuid(body.commandId()),version(body.expectedVersion()));
+        return ok(new Finished(View.from(result.attempt()),Result.from(result.result())));
+    }
+    @GetMapping("/{id}/result") public ResponseEntity<Result> result(@CurrentActor AttemptOwner actor,@PathVariable String id,@RequestParam MultiValueMap<String,String> params) {
+        parameters(params,Set.of()); return ok(Result.from(cases.result(actor,uuid(id))));
+    }
     static <T> ResponseEntity<T> ok(T body) { return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(body); }
     static void parameters(MultiValueMap<String,String> params,Set<String> allowed) {
         if (!allowed.containsAll(params.keySet()) || params.values().stream().anyMatch(v -> v.size()!=1 || v.getFirst().isBlank())) throw invalid();

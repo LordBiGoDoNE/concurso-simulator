@@ -12,7 +12,7 @@
     "independent_context": false
   },
   "reviewed_at": null,
-  "review_phase": "groups_3_6_lifecycle_fix_pending_revalidation_final_gate_pending",
+  "review_phase": "groups_3_6_batch_reviewed_tasks_pending_approval_final_gate_pending",
   "coverage": {},
   "limitations": [
     "24/24 tarefas implementadas/verificadas; grupos1/2 integrados em ec4f85e. Grupos3–6 revisados como lote, em dez PRs draft ainda sem aprovação/integração.",
@@ -365,7 +365,7 @@
     },
     {
       "batch": "round2-groups3-6",
-      "status": "pending_revalidation",
+      "status": "completed",
       "scope": [
         "3.1–3.4",
         "4.1–4.4",
@@ -380,11 +380,11 @@
         "independent_context": true,
         "selection_evidence": "Codex accepted gpt-6.1-sol with reasoning_effort xhigh for the fresh initial reviewer; same session/model revalidated. Provider variant and token telemetry not exposed."
       },
-      "recorded_at": "2026-10-15T11:22:03.566142+00:00",
+      "recorded_at": "2026-10-15T11:33:38.697000+00:00",
       "combined": {
         "base_sha": "ec4f85ec133991c6e791914da54bd56ab088906a",
-        "reviewed_head_sha": "fc205eef5d079c51b573aca10ac0942ed996ac2e",
-        "diff_sha256": "03956495f2c65b11de5f1bb4ca3492dcdddb36d6b1ee8a8b1c30802b68e297f4"
+        "reviewed_head_sha": "c09c7a0c15913acda42bc530ff7352eab482531c",
+        "diff_sha256": "cd042b7e6ab417b85fdf157832bac2da986ab4102d4543f995f5ce90aeef1f40"
       },
       "prs": [
         {
@@ -891,6 +891,11 @@
               "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38678364068/job/116237022837"
             },
             {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726999705/job/116395224684"
+            },
+            {
               "name": "frontend",
               "conclusion": "SUCCESS",
               "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38678364233/job/116237023506"
@@ -927,53 +932,53 @@
           "branch": "task/mock-exam-attempts/review-recovery",
           "base_ref": "task/mock-exam-attempts/integrated-verification",
           "base_sha": "27f6d7308020d8ecc7d6cc371645dfffe4cd384c",
-          "reviewed_head_sha": "fc205eef5d079c51b573aca10ac0942ed996ac2e",
-          "diff_sha256": "53ce9a259e1c53fb6a493908c8a212a8052c12d442b510a057e6c60293c9f179",
+          "reviewed_head_sha": "c09c7a0c15913acda42bc530ff7352eab482531c",
+          "diff_sha256": "0b658c9ea170f2fb23242737de1132ddbbf967aed5a183a3a42dccdea3277753",
           "checks": [
             {
               "name": "backend",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726325847/job/116392970201"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727792693/job/116397840485"
             },
             {
               "name": "backend",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726318938/job/116392947410"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727782769/job/116397808665"
             },
             {
               "name": "spec-review-tests",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726325830/job/116392970345"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727792428/job/116397839588"
             },
             {
               "name": "frontend",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726325847/job/116392970506"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727792693/job/116397840400"
             },
             {
               "name": "frontend",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726318938/job/116392947656"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727782769/job/116397809515"
             },
             {
               "name": "study-material",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726325847/job/116392970450"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727792693/job/116397840089"
             },
             {
               "name": "study-material",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726318938/job/116392947146"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727782769/job/116397808899"
             },
             {
               "name": "identity-browser",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726325847/job/116392970319"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727792693/job/116397840519"
             },
             {
               "name": "identity-browser",
               "conclusion": "SUCCESS",
-              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38726318938/job/116392947417"
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38727782769/job/116397808787"
             }
           ]
         }
@@ -995,13 +1000,25 @@
           "reviewed_head_sha": "69855a5150d05291aba1aa1144dc0d43405b88c7",
           "diff_sha256": "3302805da28c9a1269fc6ef02acb164717fcd85a5205301101060423857041ee",
           "digest_recalculated_by_reviewer": true,
-          "conclusion": "R1/R2/R3 corrigidos; nenhum novo achado. Snapshot depois alterado por correção de foco."
+          "conclusion": "R1–R3 fixed; later snapshot changed for focus."
         },
         {
           "reviewed_head_sha": "fc205eef5d079c51b573aca10ac0942ed996ac2e",
           "diff_sha256": "03956495f2c65b11de5f1bb4ca3492dcdddb36d6b1ee8a8b1c30802b68e297f4",
           "digest_recalculated_by_reviewer": true,
-          "conclusion": "R1/R2/R3 permanecem corrigidos; novo diff e combinação revalidados, nenhum novo achado."
+          "conclusion": "R1–R3/focus checked; later CI exposed initial lifecycle race."
+        },
+        {
+          "reviewed_head_sha": "9b7e237ad0d35e3710e1c43339ccc2d67d65f8e4",
+          "diff_sha256": "2cced9ca32203e3ae363610ec55844a06abd4c5e4f25921d041ee9cd0114bc77",
+          "digest_recalculated_by_reviewer": true,
+          "conclusion": "R4 confirmed/fixed; R5 recommended, corrected in following snapshot."
+        },
+        {
+          "reviewed_head_sha": "c09c7a0c15913acda42bc530ff7352eab482531c",
+          "diff_sha256": "cd042b7e6ab417b85fdf157832bac2da986ab4102d4543f995f5ce90aeef1f40",
+          "digest_recalculated_by_reviewer": true,
+          "conclusion": "R1–R5 fixed; full resulting hook and cumulative corrections checked, no open/new findings."
         }
       ],
       "findings": [
@@ -1040,9 +1057,34 @@
           "suggestion": "Tornar abertura do ID atual sem efeito.",
           "disposition": "fixed",
           "resolution": "Retorno imediato para ID selecionado. Regressão exige ausência de nova leitura, escolha/estado preservados e mesmo payload/commandId no retry. Revisor confirmou no head final."
+        },
+        {
+          "id": "R4",
+          "severity": "blocking",
+          "origin_pr": 82,
+          "identified_by": "coordinator CI investigation, confirmed by reviewer",
+          "location": "frontend/src/useAttemptRun.ts:15",
+          "evidence": "Choice could enqueue before the passive lifecycle effect installed a controller, leaving phase saved with no request.",
+          "reference": "task4.2: confirmed save states and ordered queue",
+          "impact": "First choice could remain unsent with an incorrect saved status.",
+          "suggestion": "Install lifecycle before interaction and regress the initial commit.",
+          "disposition": "fixed",
+          "resolution": "Controller installed in layout. First-choice layout regression detects old implementation with zero save calls, passes corrected implementation. Reviewer confirmed R4 fixed."
+        },
+        {
+          "id": "R5",
+          "severity": "recommended",
+          "origin_pr": 82,
+          "location": "frontend/src/useAttemptRun.ts:15 and pump finally",
+          "evidence": "StrictMode effect recreation could abort the old controller and leave preserved queue pending with no restart.",
+          "reference": "task4.2 and development StrictMode lifecycle",
+          "impact": "Development-only effect replay could stall pending save.",
+          "suggestion": "Resume preserved jobs only in a newer live generation after the old pump releases working.",
+          "disposition": "fixed",
+          "resolution": "New effect starts idle preserved queue; old aborted pump restarts only when a distinct live controller exists and queue is not blocked. Definitive unmount cannot retry. StrictMode regression checks two calls, old abort/new live signal, identical payload/command/version and confirmed version1. Negative control fails without recovery. Reviewer confirmed, no new findings."
         }
       ],
-      "triage_complete": false,
+      "triage_complete": true,
       "coverage": {
         "requirements": "Grupos3–6 completos, requisitos de simulado/histórico e limites visitante/conta.",
         "architecture": "ADR0001, checklistHTTP, decisão de posse/transição no núcleo e ator na segurança.",
@@ -1055,7 +1097,7 @@
       "verification": {
         "executed_by": "coordinator and GitHub Actions, not reviewer",
         "backend_tests": 149,
-        "frontend_tests": 105,
+        "frontend_tests": 107,
         "browser_real_scenarios": 14,
         "python_linux_tests": 54,
         "offline_browser_scenarios": 6,
@@ -1065,7 +1107,7 @@
         "operational_rollback_restart": "passed locally; no operational harness rerun for frontend-only corrections",
         "all_reviewed_heads_checks": "success"
       },
-      "conclusion": "New lifecycle fix after CI failure requires revalidation; previous snapshot remains historical.",
+      "conclusion": "Nenhum bloqueador remanescente ou novo achado após correções/revalidação. Solicitar autorização explícita dos dez PRs; sem merge automático.",
       "limitations": [
         "Revisão estática somente leitura; revisor não executou testes/build/browser/rede/DB e não conferiu CI/binários/screenshots.",
         "Resultados operacionais/backend/Python/offline locais prévios permanecem evidência de código inalterado; CI do head final passou.",

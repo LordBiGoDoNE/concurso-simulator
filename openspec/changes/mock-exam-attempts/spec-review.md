@@ -1,16 +1,89 @@
 # Revisão cumulativa — mock-exam-attempts
 
-**Gate final pendente.** As 24/24 tarefas de produto foram aprovadas e integradas na
-épica da spec. Modelo selecionado: `openai/gpt-6.1-sol#xhigh`; falta executar a
-revisão cumulativa em contexto independente, sem presumir integração na épica geral.
+**Gate do PR #84 ainda pendente.** SOL 6.1 xhigh é o padrão permanente de todas as
+revisões, revalidações e gates cumulativos, inclusive da épica geral, conforme decisão
+do usuário em 2026-10-15. Não há exigência ativa de Astra. Execuções passadas permanecem
+históricas; os requisitos de independência, cobertura, triagem e autorização não mudaram.
 
-## Selecao do gate final em 2026-10-15
+24/24 tarefas de produto estão integradas em `d888a2b4b18276465bb7753d3b6174955a79f41a`.
+PR #83 versiona a política; PR #85 corrige um achado de apresentação. São tarefas
+independentes, ambas para `epic/mock-exam-attempts`, sem merge aprovado/presumido.
 
-Usuario definiu `openai/gpt-6.1-sol#xhigh` como padrao permanente para todas as
-revisoes, inclusive gates cumulativos de specs e da epica geral. A politica esta
-sendo versionada em PR proprio; nao houve novo parecer cumulativo nesta atualizacao.
-24/24 tarefas de produto estao integradas em `d888a2b4b18276465bb7753d3b6174955a79f41a`.
-Os relatos abaixo preservam as revisoes de lote e seus estados no momento da execucao.
+## Revisão independente inicial e revalidação
+
+Contexto novo `/root/spec_reviewer_sol_global`, modelo solicitado/aceito
+`openai/gpt-6.1-sol#xhigh`. Não houve outro modelo. Risco cumulativo **crítico**:
+posse/sessão/CSRF, conteúdo privado/correção, snapshot, concorrência/idempotência,
+schema/JPA/rollback/expiração e seleção do revisor. Telemetria de variante do provedor
+não está exposta; não confundir seleção aceita com verificação independente do provedor.
+
+O candidato inicial `d65006eb29a733c13c4f2a9f3741147d235dcd5b` →
+`4ac43c482d37e1d90516553998dccb54f6fbb471` teve digest recalculado
+`cb50621618dca2234c4a364c33845543a19de7d433e0e1e20c2ce1ec12bbd27b`.
+O revisor examinou os92 arquivos relevantes antes da matriz, sem consultar relatórios
+ou verification.md. Depois do parecer independente inicial, conferiu a matriz completa
+de24 itens, os testes relacionados e o diff integral da correção #85.
+
+**Achado SOL-CUM-R1, recommended → fixed:** a revisão do resultado mostrava somente
+texto nas alternativas escolhida/correta, omitindo descrições de figuras preservadas
+no snapshot/API e presentes na realização. O #85 reutiliza Content/AttemptText completo
+com HTML válido. A regressão usa textos e descrições diferentes nas duas alternativas,
+exige foco/nota e falha com o renderer anterior. Revisor confirmou corrigido, sem novos
+achados ou bloqueadores confirmados nas análises executadas.
+
+## Tarefas revisadas e checks
+
+| PR | Base | Head de código revisado | Parecer |
+| --- | --- | --- | --- |
+| [#83](https://github.com/LordBiGoDoNE/concurso-simulator/pull/83) | `d888a2b4b18276465bb7753d3b6174955a79f41a` | `4ac43c482d37e1d90516553998dccb54f6fbb471` | Política coerente; nenhum achado; risco crítico |
+| [#85](https://github.com/LordBiGoDoNE/concurso-simulator/pull/85) | `d888a2b4b18276465bb7753d3b6174955a79f41a` | `4320caa629bfedb904bbdd8a3b00af3d515f7bfe` | R1 corrigido; nenhum novo achado; apresentação padrão |
+
+Digests por tarefa recalculados pelo revisor: #83
+`b4b2181fc89458f6032ea45e3965e8f7e607882de7fad46465560c309359c5d5`;
+#85 `ce71adb319579a8fc6c945d5f265057fd36c2c2459f37e6f608f4d6ca9e034a6`.
+Todos os checks dos dois heads passaram; URLs individuais no JSON. Commits posteriores
+do #83 registram apenas estes dois arquivos de evidência, excluídos do digest.
+Conferir novamente heads/checks atuais antes de qualquer integração.
+
+## Cobertura e limites
+
+Requisitos1–100/filtros/insuficiência atômica/seleção sem reposição/captura imutável,
+respostas/conclusão/correção/visitante/histórico; ADR0001 e checklist HTTP; integração
+questionbank/OpenAPI/React/fila/identidade; proprietário antes de replay/estado,
+sessão/principal/CSRF/CORS/404/no-store/projeções; V5 aditiva/FKs/triggers/JPA/version/
+CAS/comandos/rollback/expiração; testes de domínio/aplicação/PG/HTTP/arquitetura/React/
+browser/artefatos/operação e matriz completa. Nenhuma alteração de regras de negócio
+ou contrato foi exigida pela correção de apresentação.
+
+Coordenador: oito testes de cota Windows,54 scripts Linux, quatro specs OpenSpec
+estritas,108 frontend/build/artefatos e controle negativo PASS. CI dos heads examinados
+passou, incluindo backend e14 browser reais. Execuções do coordenador/GitHub Actions,
+não do revisor. Revisor não executou testes/build/app/browser/rede/DB, não inspecionou
+binários/logs privados/CI remoto e não modificou arquivos.
+
+Depois de comunicar a conclusão independente inicial e o achado, o revisor consultou
+list_agents e recebeu incidentalmente resumo de revisão anterior do lote. Essa exposição
+posterior limita qualquer promessa de ausência total de exposição; o achado já estava
+emitido. A fase complementar não consultou agentes. Contexto novo reduz viés, não
+garante ausência de viés. Cota/tokens indisponíveis; dados privados de observação ficam
+fora do Git e são apresentados ao usuário separadamente, sem estimativa ou comparação.
+
+## Por que o gate real continua pending
+
+O PR #84 ainda aponta para `d888a2b`. O candidato4ac contém #83, mas não a correção
+independente #85. **Não há um único head real com as duas alterações.** Não criamos
+digest de união sintética nem declaramos que o check spec-review passou.
+
+Após aprovação explícita dos #83 e #85, integrar preservando commits e revalidar o
+head conjunto real contra a base atual de #84, incluindo eventual mudança de base das
+tarefas. Só então concluir o relatório principal, conferir ancestralidade/digest/checks
+e solicitar aprovação própria do [SPEC]. Modelo final já selecionado SOL; nenhuma nova
+confirmação de modelo é necessária. Sem main/deploy/arquivamento ou etapa futura.
+
+## Histórico — revisões dos lotes anteriores à integração
+
+Os registros abaixo preservam os estados no momento das análises. Não certificam
+a revisão cumulativa atual nem substituem as integrações registradas na issue #64.
 
 ## Lote 2 — grupos 3–6 completos
 

@@ -17,4 +17,9 @@ public final class ParameterFixtures {
     public static TemplateDefinition version(TemplateDefinition d,int number) {
         return new TemplateDefinition(d.id(),number,d.family(),d.generatorVersion(),d.baseQuestionId(),d.baseRevisionId(),d.baseFingerprint(),d.classification(),d.references(),d.provenance());
     }
+    public static TemplateDecision decision(TemplateVersion v,TemplateDecision.Action action) {
+        var d=v.definition();return new TemplateDecision(UUID.randomUUID(),d.id(),d.version(),action,d.digest(),d.family().domainDigest(),
+                v.manifest().digest(),d.baseRevisionId(),d.baseFingerprint(),"Fixture",java.time.Instant.parse("2026-10-15T00:00:00Z"),
+                Set.of(TemplateDecision.Check.values()),"Decisão sintética de teste, não aprovação real");
+    }
 }

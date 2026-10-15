@@ -32,3 +32,20 @@ duplicação, troca de ordem ou adulteração invalida o conjunto. Nenhuma tupla
 Digest é detecção de mudança, não prova matemática ou aprovação pedagógica. A decisão
 editorial continua necessária para linguagem, distratores, passos, unidades e referências.
 Não publicar manifesto/relatório privado nos contratos de realização da tentativa.
+
+## Elegibilidade e decisões
+
+`TemplateFamily` protege versões sequenciais, manifesto exato, estados e ponteiro único.
+SUBMIT/RETURN_TO_DRAFT/APPROVE preservam a revisão editorial; WITHDRAW da versão atual
+limpa o ponteiro e da histórica não altera a atual. ACTIVATE é decisão explícita com
+checklist completo, não reativação por importação/status. Aprovar uma versão inicial
+não regrede uma sucessora já aprovada. Todas as decisões preservam digests e base exatos.
+
+UseCases exigem base elegível/classificação/fingerprint exatos ao registrar conteúdo
+novo e aprovar/ativar. Registro idêntico e operação editorial idêntica recuperam o
+resultado sem reativação; comando com outro conteúdo falha. Versão esperada do ponteiro
+e sequência editorial protegem contra decisões concorrentes/ABA. Somente conflito de
+registro conhecido é recuperado em nova transação após rollback; outras falhas propagam.
+
+`EligibleTemplates` é uma porta privada para captura no snapshot do consumidor; ainda
+não altera a composição nem expõe HTTP. Aprovação editorial real permanece no grupo 4.

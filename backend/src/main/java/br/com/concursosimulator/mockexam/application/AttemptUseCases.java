@@ -32,43 +32,44 @@ public final class AttemptUseCases {
                 for (int i=order.size()-1;i>0;i--) Collections.swap(order,i,rng.nextInt(i+1));
                 return new Attempt.Item(ids.get(),q,order,Map.of());
             }).toList();
-            var attempt=Attempt.start(ids.get(),actor,composition,clock.instant(),items);
+            var attempt=Attempt.start(ids.get(),actor,composition,now(),items);
             session.insert(attempt.snapshot()); return attempt;
         });
     }
     public Outcome answer(AttemptOwner actor, UUID attemptId, UUID operation, long version, UUID item, UUID alternative) {
         Objects.requireNonNull(item);
         return execute(actor,operation,hash("answer",attemptId,version,item,alternative),attemptId, session -> {
-            var attempt=load(session,actor,attemptId); attempt.answer(actor,clock.instant(),version,item,alternative);
+            var attempt=load(session,actor,attemptId); attempt.answer(actor,now(),version,item,alternative);
             session.update(attempt.snapshot(),version); return attempt;
         });
     }
     public Finished finish(AttemptOwner actor, UUID attemptId, UUID operation, long version) {
         var outcome=execute(actor,operation,hash("finish",attemptId,version),attemptId, session -> {
-            var attempt=load(session,actor,attemptId); attempt.finish(actor,clock.instant(),version);
+            var attempt=load(session,actor,attemptId); attempt.finish(actor,now(),version);
             session.update(attempt.snapshot(),version); return attempt;
         });
-        var result=store.transaction(s -> load(s,actor,attemptId).result(actor,clock.instant()));
+        var result=store.transaction(s -> load(s,actor,attemptId).result(actor,now()));
         return new Finished(outcome.attempt(),result,outcome.replayed());
     }
     public Attempt.View read(AttemptOwner actor, UUID id) {
-        return store.transaction(s -> load(s,actor,id).view(actor,clock.instant()));
+        return store.transaction(s -> load(s,actor,id).view(actor,now()));
     }
     public Attempt.Result result(AttemptOwner actor, UUID id) {
-        return store.transaction(s -> load(s,actor,id).result(actor,clock.instant()));
+        return store.transaction(s -> load(s,actor,id).result(actor,now()));
     }
     public List<HistoryEntry> history(AttemptOwner actor, AttemptStore.HistoryQuery query) {
         Objects.requireNonNull(actor); Objects.requireNonNull(query);
         if (actor.kind()!=AttemptOwner.Kind.ACCOUNT) throw new Attempt.Unavailable();
         return store.transaction(s -> s.history(actor,query).stream().map(snapshot -> {
-            var a=Attempt.restore(snapshot); a.requireAccessible(actor,clock.instant());
+            var a=Attempt.restore(snapshot); a.requireAccessible(actor,now());
             return new HistoryEntry(snapshot.id(),snapshot.composition().role().name(),snapshot.createdAt(),snapshot.finishedAt(),
-                    snapshot.items().size(),snapshot.finishedAt()==null?null:a.result(actor,clock.instant()).percentage());
+                    snapshot.items().size(),snapshot.finishedAt()==null?null:a.result(actor,now()).percentage());
         }).toList());
     }
+    private Instant now() { return clock.instant().truncatedTo(java.time.temporal.ChronoUnit.MICROS); }
     private Attempt load(AttemptStore.Session session, AttemptOwner actor, UUID id) {
         var attempt=Attempt.restore(session.find(Objects.requireNonNull(id)).orElseThrow(Attempt.Unavailable::new));
-        attempt.requireAccessible(Objects.requireNonNull(actor),clock.instant()); return attempt;
+        attempt.requireAccessible(Objects.requireNonNull(actor),now()); return attempt;
     }
     private Outcome execute(AttemptOwner actor, UUID operation, String hash, UUID id, Function<AttemptStore.Session,Attempt> action) {
         Objects.requireNonNull(actor); Objects.requireNonNull(operation);
@@ -89,12 +90,12 @@ public final class AttemptUseCases {
         if (prior.isPresent()) return replay(prior.get(),actor,hash);
         var attempt=action.apply(session);
         session.record(actor,operation,new AttemptStore.Command(hash,attempt.snapshot()));
-        return new Outcome(attempt.view(actor,clock.instant()),false);
+        return new Outcome(attempt.view(actor,now()),false);
     }
     private Outcome replay(AttemptStore.Command prior, AttemptOwner actor, String hash) {
-        var attempt=Attempt.restore(prior.outcome()); attempt.requireAccessible(actor,clock.instant());
+        var attempt=Attempt.restore(prior.outcome()); attempt.requireAccessible(actor,now());
         if (!prior.hash().equals(hash)) throw new Attempt.Conflict();
-        return new Outcome(attempt.view(actor,clock.instant()),true);
+        return new Outcome(attempt.view(actor,now()),true);
     }
     private static String canonical(Composition c) {
         var parts=new ArrayList<String>(); parts.add(c.role().name());

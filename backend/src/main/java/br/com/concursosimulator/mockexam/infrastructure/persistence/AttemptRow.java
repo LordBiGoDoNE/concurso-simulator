@@ -6,7 +6,7 @@ import org.hibernate.type.SqlTypes;
 import java.time.Instant;
 import java.util.UUID;
 
-@Entity @Table(name="me_attempt")
+@Entity @Table(name="me_attempt") @org.hibernate.annotations.DynamicUpdate
 public class AttemptRow {
     @Id UUID id;
     @Column(name="owner_kind",nullable=false,length=7) String ownerKind;

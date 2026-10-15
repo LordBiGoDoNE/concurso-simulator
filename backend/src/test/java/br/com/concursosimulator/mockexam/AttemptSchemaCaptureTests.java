@@ -22,7 +22,8 @@ class AttemptSchemaCaptureTests {
             db.jdbc.update("insert into spring_session values (?,?,1,1,1800,1800000,?)",id.toString(),id.toString(),id.toString());
             db.jdbc.update("insert into spring_session_attributes values (?,'fixture',decode('1234','hex'))",id.toString());
             db.jdbc.update("insert into qb_question(id,origin_namespace,origin_key) values (?,'fixture','existing')",id);
-            var tables=List.of("app_user","external_identity","spring_session","qb_question");
+            db.openBank(); db.seed("Acervo aprovado anterior à V5",true); db.factory.close();
+            var tables=List.of("app_user","external_identity","spring_session","qb_question","qb_revision","qb_alternative","qb_decision","qb_revision_role","qb_reference");
             var before=tables.stream().map(t -> db.jdbc.queryForList("select * from "+t)).toList();
             db.migrate("5"); db.open();
             assertThat(tables.stream().map(t -> db.jdbc.queryForList("select * from "+t)).toList()).isEqualTo(before);

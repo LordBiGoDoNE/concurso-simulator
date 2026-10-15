@@ -29,16 +29,21 @@ public final class AttemptDatabase implements AutoCloseable {
         if (target.equals("5")) open();
     }
     void migrate(String target) { Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).target(target).load().migrate(); }
-    void open() {
+    void open() { open("br.com.concursosimulator.questionbank.infrastructure.persistence","br.com.concursosimulator.mockexam.infrastructure.persistence"); }
+    void openBank() { open("br.com.concursosimulator.questionbank.infrastructure.persistence"); }
+    private void open(String... packages) {
         var bean=new LocalContainerEntityManagerFactoryBean(); bean.setDataSource(ds);
-        bean.setPackagesToScan("br.com.concursosimulator.questionbank.infrastructure.persistence","br.com.concursosimulator.mockexam.infrastructure.persistence");
+        bean.setPackagesToScan(packages);
         bean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         bean.setJpaPropertyMap(Map.of("hibernate.hbm2ddl.auto","validate")); bean.afterPropertiesSet();
         factory=bean.getObject(); entities=SharedEntityManagerCreator.createSharedEntityManager(factory);
         manager=new JpaTransactionManager(factory); questions=new JpaQuestionStore(entities,manager); pool=new JpaEligibleRevisionPool(entities);
     }
     Question seed(String text,boolean approve) {
-        var q=Question.draft(UUID.randomUUID(),new QuestionOrigin("attempt-fixture",UUID.randomUUID().toString()),UUID.randomUUID(),QuestionFixtures.content(text));
+        return seed(QuestionFixtures.content(text),approve);
+    }
+    Question seed(QuestionContent content,boolean approve) {
+        var q=Question.draft(UUID.randomUUID(),new QuestionOrigin("attempt-fixture",UUID.randomUUID().toString()),UUID.randomUUID(),content);
         questions.transaction(s -> { s.insert(q); return null; });
         if (approve) for (var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE)) decide(q.id(),action);
         return q;

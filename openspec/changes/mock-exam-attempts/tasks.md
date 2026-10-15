@@ -1,6 +1,6 @@
 # Tasks
 
-**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 4/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; lote autorizado inclui **1.1–1.4 e 2.1–2.4 completos**, sem merge presumido da implementação. Grupos 3–6 aguardam pedido próprio. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
+**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 7/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; lote autorizado inclui **1.1–1.4 e 2.1–2.4 completos**, sem merge presumido da implementação. Grupos 3–6 aguardam pedido próprio. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
 
 Cada grupo inclui seus próprios código/testes/docs. Tarefas pequenas/coesas em PRs
 revisáveis (preferência 300–500 linhas autorais), sem reunir toda a spec num PR.
@@ -16,9 +16,9 @@ Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos p
 
 ## 2. Persistência, composição real e duração — depende de 1
 
-- [ ] 2.1 Criar migração aditiva/JPA/repository de tentativas, itens e comandos, sem editar V1–V4; testar constraints/novo banco/upgrade PG18.6 preservando contas/sessões/acervo, documentando schema e rollback não destrutivo.
-- [ ] 2.2 Implementar contrato interno mínimo do banco e captura/seleção transacional das versões elegíveis; testar sem reposição, filtros, insuficiência atômica e retirada concorrente antes/depois do snapshot, com fronteira de módulos documentada.
-- [ ] 2.3 Implementar persistência de comandos/idempotência e compare-and-set; testar duas abas/criações/conclusões concorrentes, timeout/retry, hash divergente, rollback integral e propagação de falhas desconhecidas, documentando limites.
+- [x] 2.1 Criar migração aditiva/JPA/repository de tentativas, itens e comandos, sem editar V1–V4; testar constraints/novo banco/upgrade PG18.6 preservando contas/sessões/acervo, documentando schema e rollback não destrutivo.
+- [x] 2.2 Implementar contrato interno mínimo do banco e captura/seleção transacional das versões elegíveis; testar sem reposição, filtros, insuficiência atômica e retirada concorrente antes/depois do snapshot, com fronteira de módulos documentada.
+- [x] 2.3 Implementar persistência de comandos/idempotência e compare-and-set; testar duas abas/criações/conclusões concorrentes, timeout/retry, hash divergente, rollback integral e propagação de falhas desconhecidas, documentando limites.
 - [ ] 2.4 Implementar consultas paginadas por owner e limpeza visitante por vencimento/startup; testar 24h/limite de uma hora, reinício, cascata dos dados temporários e preservação da conta, com operação documentada e relógio controlável.
 
 ## 3. Ator técnico, segurança e HTTP — depende de 1–2

@@ -43,6 +43,12 @@ class ArchitectureTests {
                         "java..", "..questionbank.domain..", "..questionbank.application..").check(CODE);
     }
 
+    @Test void mockExamCoreOnlyDependsOnItsOwnCoreAndQuestionValueObjects() {
+        classes().that().resideInAnyPackage("..mockexam.domain..", "..mockexam.application..")
+                .should().onlyDependOnClassesThat().resideInAnyPackage(
+                        "java..", "..mockexam.domain..", "..mockexam.application..", "..questionbank.domain..").check(CODE);
+    }
+
     @Test void questionControllerDoesNotOwnSessionOrAuthenticationAndHasConcreteContracts() {
         noClasses().that().haveFullyQualifiedName(br.com.concursosimulator.questionbank.web.QuestionController.class.getName())
                 .should().dependOnClassesThat().resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..")

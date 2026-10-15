@@ -1,6 +1,6 @@
 # Tasks
 
-**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 3/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; lote autorizado inclui **1.1–1.4 e 2.1–2.4 completos**, sem merge presumido da implementação. Grupos 3–6 aguardam pedido próprio. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
+**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 4/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; lote autorizado inclui **1.1–1.4 e 2.1–2.4 completos**, sem merge presumido da implementação. Grupos 3–6 aguardam pedido próprio. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
 
 Cada grupo inclui seus próprios código/testes/docs. Tarefas pequenas/coesas em PRs
 revisáveis (preferência 300–500 linhas autorais), sem reunir toda a spec num PR.
@@ -12,7 +12,7 @@ Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos p
 - [x] 1.1 Definir composição por cargo/disciplina/assuntos e limites 1–100; testar critérios incompatíveis/quantidades/insuficiência em Java puro e documentar pontuação/distribuição sem regra oficial presumida.
 - [x] 1.2 Implementar agregado/itens/respostas e snapshot de versões/ordens/parâmetros; testar identidades distintas, associação de alternativa, limpar resposta e imutabilidade, com modelo documentado.
 - [x] 1.3 Implementar conclusão e correção uniforme-v1; testar respostas em branco, 3/5=60%, arredondamento, irreversibilidade e independência de mudanças do banco, com regras de resultado documentadas.
-- [ ] 1.4 Implementar UseCases/portas de criação, resposta, conclusão, leitura e histórico com ator/posse/versão/operação/relógio/sorteio substituíveis; testar autorização de negócio e retries sem framework, documentando responsabilidades.
+- [x] 1.4 Implementar UseCases/portas de criação, resposta, conclusão, leitura e histórico com ator/posse/versão/operação/relógio/sorteio substituíveis; testar autorização de negócio e retries sem framework, documentando responsabilidades.
 
 ## 2. Persistência, composição real e duração — depende de 1
 

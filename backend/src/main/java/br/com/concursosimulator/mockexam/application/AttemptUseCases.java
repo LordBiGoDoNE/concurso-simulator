@@ -18,14 +18,21 @@ public final class AttemptUseCases {
     private final Clock clock;
     private final Supplier<UUID> ids;
     private final Supplier<RandomGenerator> random;
+    private final boolean generationEnabled;
     public AttemptUseCases(AttemptStore store, Clock clock, Supplier<UUID> ids, Supplier<RandomGenerator> random) {
+        this(store,clock,ids,random,true);
+    }
+    public AttemptUseCases(AttemptStore store, Clock clock, Supplier<UUID> ids, Supplier<RandomGenerator> random, boolean generationEnabled) {
         this.store=Objects.requireNonNull(store); this.clock=Objects.requireNonNull(clock);
         this.ids=Objects.requireNonNull(ids); this.random=Objects.requireNonNull(random);
+        this.generationEnabled=generationEnabled;
     }
     public Outcome create(AttemptOwner actor, UUID operation, Composition composition) {
         Objects.requireNonNull(actor); Objects.requireNonNull(operation); Objects.requireNonNull(composition);
         var hash=hash("create", canonical(composition));
         return execute(actor,operation,hash,null, session -> {
+            if (composition.useParameterizedQuestions() && !generationEnabled)
+                throw new IllegalStateException("Geração temporariamente desabilitada");
             var rng=random.get(); var selected=composition.select(session.eligible(),rng);
             var captured=composition.useParameterizedQuestions()
                     ?AttemptMaterializer.materialize(selected,session.templates(),rng,ids):selected;

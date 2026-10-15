@@ -1,9 +1,11 @@
 # Tasks
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
-épica da spec; primeiro lote autorizado: grupos completos 1 e 2. **8/24 tarefas
-implementadas/verificadas, 0/24 integradas/aprovadas**; revisão independente e CI do lote
-registrados separadamente na issue #86. Grupos 3–6 pendentes. Pré-requisito #84 em `0d0fc48`.
+épica da spec; grupos 1 e 2 integrados por #88/#89/#90/#92/#93 em `6781e9c`.
+**12/24 tarefas implementadas/verificadas, 8/24 integradas/aprovadas**. Segundo lote
+autorizado: grupos completos 3 e 4. Grupo 3 implementado, revisão do lote pendente;
+grupo 4 em preparação, com dependência editorial da base de juros simples registrada
+na issue #86. Grupos 5 e 6 não iniciados. Pré-requisito #84 em `0d0fc48`.
 
 Grupos completos são a unidade de autorização do lote. Cada tarefa inclui código,
 testes e documentação pertinentes; PRs coesos podem dividir um grupo sem interrompê-lo.
@@ -26,10 +28,10 @@ editoriais são acompanhadas separadamente na issue. Sem conteúdo aprovado por 
 
 ## 3. Integração de tentativas e compatibilidade — depende de 1 e 2
 
-- [ ] 3.1 Estender composição e seleção por identidade-base com opção false por padrão; testar uniformidade estrutural/sem reposição, fixas misturadas, ausência/retirada de template e integridade falhando sem fallback; documentar política.
-- [ ] 3.2 Materializar/capturar conteúdo, metadados/parâmetros e alternativas opacas numa transação, com vínculo imutável ao item; testar FKs, divergência do manifesto/fingerprint, rollback integral e cleanup visitante sem remover famílias; documentar fontes fixa/gerada.
-- [ ] 3.3 Versionar snapshot e manter codecs de origem em tentativas/itens/comandos; testar alteração com triggers V5/JSON imutável, retry de hash produzido no V5 com opção ausente/false, 409 com true, corrida/timeout; documentar compatibilidade de codec e hash sem reescrever histórico.
-- [ ] 3.4 Preservar correção e histórico após retirada/atualização/ausência de gerador; testar sem invocação de geração na leitura/conclusão, posse/expiração e rollback com leitor compatível; documentar limite do JAR antigo.
+- [x] 3.1 Estender composição e seleção por identidade-base com opção false por padrão; testar uniformidade estrutural/sem reposição, fixas misturadas, ausência/retirada de template e integridade falhando sem fallback; documentar política.
+- [x] 3.2 Materializar/capturar conteúdo, metadados/parâmetros e alternativas opacas numa transação, com vínculo imutável ao item; testar FKs, divergência do manifesto/fingerprint, rollback integral e cleanup visitante sem remover famílias; documentar fontes fixa/gerada.
+- [x] 3.3 Versionar snapshot e manter codecs de origem em tentativas/itens/comandos; testar alteração com triggers V5/JSON imutável, retry de hash produzido no V5 com opção ausente/false, 409 com true, corrida/timeout; documentar compatibilidade de codec e hash sem reescrever histórico.
+- [x] 3.4 Preservar correção e histórico após retirada/atualização/ausência de gerador; testar sem invocação de geração na leitura/conclusão, posse/expiração e rollback com leitor compatível; documentar limite do JAR antigo.
 
 ## 4. Conteúdo e revisão editorial — depende de 1 e 2
 

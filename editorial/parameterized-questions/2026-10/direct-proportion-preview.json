@@ -1,0 +1,4335 @@
+{
+  "version": {
+    "definition": {
+      "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+      "version": 1,
+      "family": "DIRECT_PROPORTION",
+      "generatorVersion": "numeric-v1",
+      "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+      "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+      "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+      "classification": {
+        "discipline": "MATHEMATICS_LOGIC",
+        "topic": "M03",
+        "roles": [
+          "ADMINISTRATIVE_ASSISTANT",
+          "SCHOOL_SECRETARY"
+        ]
+      },
+      "references": [
+        {
+          "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+          "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+          "legalBasis": null
+        }
+      ],
+      "provenance": {
+        "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+        "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+        "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+        "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+        "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+      }
+    },
+    "manifest": {
+      "definitionDigest": "814856a1723091fd5b1c19d4a60f043a2b932e302fb3203bd5a6d9858a82caf3",
+      "domainDigest": "4e79ada209d2b163b2be7379ccfef710e46715c1daa7d22bf1b26f73861e2a9d",
+      "generatorVersion": "numeric-v1",
+      "entries": [
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 6,
+              "u": 2
+            }
+          },
+          "outputDigest": "5d5c8f35f52a2d8d9ad02eeecb5dab3e8b97a805eafb681d1f1849218d129100"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 6,
+              "u": 3
+            }
+          },
+          "outputDigest": "6bc134502b350c275339d53b5cfa24a6b1060c26a584ecc2223c5f5c6567c267"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 6,
+              "u": 5
+            }
+          },
+          "outputDigest": "5a25bf5442d654a665fefb4604e9722687fb439c16c33ad5aa621380e6fab325"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 6,
+              "u": 7
+            }
+          },
+          "outputDigest": "a570ffc68649e1b7c46a5f3bd88515cbc4e1dd05ff3b53992838a335b7db7b59"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 7,
+              "u": 2
+            }
+          },
+          "outputDigest": "9c7e9fdf0c2f40e46d5e1d6bb2885982e4845cf3e3b06ae0d16d169b8892cd2d"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 7,
+              "u": 3
+            }
+          },
+          "outputDigest": "da134ccea0094e310491e7048a2268982fd115b2ccc725476a01d571d155ab2b"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 7,
+              "u": 5
+            }
+          },
+          "outputDigest": "6b198a3ec4f5673cc6ecc7345ee06e765d6bbae4a554378b4f46f659be99d860"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 7,
+              "u": 7
+            }
+          },
+          "outputDigest": "93300e75ebcac64139d1519e60e2cdace8836db6d36ca4fce24d8445c9a22293"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 8,
+              "u": 2
+            }
+          },
+          "outputDigest": "d7f0e78e887b268c31192a2982e1181f300e9049705b195884b75781f8ac57df"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 8,
+              "u": 3
+            }
+          },
+          "outputDigest": "2ba262ed1628514ee8ab2b41b2d56d3972f292dc85f5a603d4a84a0cc9d68925"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 8,
+              "u": 5
+            }
+          },
+          "outputDigest": "bc85798ce5edd5e19e3f1757966afad4a110eacb1466047633d2ffb3006cfd03"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 8,
+              "u": 7
+            }
+          },
+          "outputDigest": "9304e60fda2168220752f54b1f0742eb67252b119a69c6284946eb357d18c854"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 9,
+              "u": 2
+            }
+          },
+          "outputDigest": "7f3457178152df2c73dff5be7f648387363f01f410a07b605134acaf89d1a14c"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 9,
+              "u": 3
+            }
+          },
+          "outputDigest": "1344787d0f610aad1db2652eba643afcffdad0ecd1137cfe7313b0d64a86edb1"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 9,
+              "u": 5
+            }
+          },
+          "outputDigest": "bfd49f719008e946a3240742005ca6af23fa94fb8d909bed8662b1ce23e69114"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 2,
+              "b": 9,
+              "u": 7
+            }
+          },
+          "outputDigest": "5ee5ab90b476cdc5cd657c2692a4041fe14a4a3ecc84ee6f296255a65f3a8e4e"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 6,
+              "u": 2
+            }
+          },
+          "outputDigest": "4508dfdf66cde5b3e889a8d209b421eeb29b2498b1bd657eebabd4375e4950ca"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 6,
+              "u": 3
+            }
+          },
+          "outputDigest": "545dd86f77f187ca1a8cf2862b9260fe91c6670d5b74c75f6a3a9f4cd7f6075d"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 6,
+              "u": 5
+            }
+          },
+          "outputDigest": "5e62481e676eb217cd8606faa7bb47d07419eb9d890220f059a38449e6374392"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 6,
+              "u": 7
+            }
+          },
+          "outputDigest": "17f95fc776f5c084e40adf944bff39dda89b7b398d7c830eaed8d261d55b40c6"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 7,
+              "u": 2
+            }
+          },
+          "outputDigest": "798ce1e764d07d96e92646226147b15e2d30997a8a9091206b414d319b7d4a08"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 7,
+              "u": 3
+            }
+          },
+          "outputDigest": "b87bf67fb0ad98638ea893356239c69020f3bf3bb369ca17ef1c27b0bd7abd23"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 7,
+              "u": 5
+            }
+          },
+          "outputDigest": "873c338652eee67239ed49e8e08fe66dbd9bafdf11ce015af237ce2ae75d6d61"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 7,
+              "u": 7
+            }
+          },
+          "outputDigest": "decc13530dd9282cfd37d9de8586fdcf23ca8362c14553b9271a644de253b84b"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 8,
+              "u": 2
+            }
+          },
+          "outputDigest": "4ee154456a00fd8a02584d9f10ac6e9b663e7d1116d4b4e3e07029083c2b3dab"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 8,
+              "u": 3
+            }
+          },
+          "outputDigest": "736487f39bf79c681475a292020de296e88db1b1feb633197076e7f7177007fd"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 8,
+              "u": 5
+            }
+          },
+          "outputDigest": "aa6d7c1673c5e043a08aaaf4cae8ae8e74370e3b4c9963e4767b7c165e799fb3"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 8,
+              "u": 7
+            }
+          },
+          "outputDigest": "6bddac6fe7accd7a8402c035066a3f7ecc3e9e257afb714faa24ad6592fe8a0e"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 9,
+              "u": 2
+            }
+          },
+          "outputDigest": "1d1dc0cf171a48fb2d99c37807d8fe62b165ba12eb27fd8831dc422338cc4340"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 9,
+              "u": 3
+            }
+          },
+          "outputDigest": "67fc26b19c09fc5d112d60edf2dd1ec76143acf5327aec39fff9caefd3ca0aec"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 9,
+              "u": 5
+            }
+          },
+          "outputDigest": "1b739075cd22b971ffbf3bc983d69ebd2901fdc10431b8bf45c403729a2aaeca"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 3,
+              "b": 9,
+              "u": 7
+            }
+          },
+          "outputDigest": "f12217b10f578c92ca9da47764e56fe640ce16f116e5152222fbbc9d8c2b6884"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 6,
+              "u": 2
+            }
+          },
+          "outputDigest": "58f35cc5974f0bc185560718cd83ca85dc04e5e759c80bac30f9768c9cf036c9"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 6,
+              "u": 3
+            }
+          },
+          "outputDigest": "f66463de8106d963f84f44d2f4c1febb5982ec9cbc71d773f35d6da308ecc6b5"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 6,
+              "u": 5
+            }
+          },
+          "outputDigest": "b9a846c60558b1e575e1682bfa604045ca830f0495172b1c493f0d4732651fb5"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 6,
+              "u": 7
+            }
+          },
+          "outputDigest": "54dfc21c20a2f9f0ef03b450bc4d08bf4c0bfbeacb275e95867755b775b3f1cf"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 7,
+              "u": 2
+            }
+          },
+          "outputDigest": "ade68aee2b02183782e7b0d0c9bee264dceee6ad625add3915a5bd9bdf3d6273"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 7,
+              "u": 3
+            }
+          },
+          "outputDigest": "4b21beaacac704698f56e631cb46e001b4cbd54c49a7fffc9aa56b6a963cc070"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 7,
+              "u": 5
+            }
+          },
+          "outputDigest": "c6c04f8bb9f64b79655a7efe0268a3b85de63554e713f86550bcd66b78aa7cea"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 7,
+              "u": 7
+            }
+          },
+          "outputDigest": "3f460d845d51bb545c97cccc04e689db9d4b7cb6933852209a4a6fa78157b4dc"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 8,
+              "u": 2
+            }
+          },
+          "outputDigest": "10fcd070cc64f6eb591063d8100ad59c37e8a50fee0547d2e9f7b06265eb9bd0"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 8,
+              "u": 3
+            }
+          },
+          "outputDigest": "7307ebf88fd02a648779b3d3689985607fe3ceacf55c8cb626ce4e437219eab1"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 8,
+              "u": 5
+            }
+          },
+          "outputDigest": "2f7338acb1f1222da47e157ea00af74bc28abe665e974ddfb6199af005dd612b"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 8,
+              "u": 7
+            }
+          },
+          "outputDigest": "86b8a28fe9bdb1f4d0962d2853ee19c2d0c0eea20065bb2f8e339cbcaeb41d48"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 9,
+              "u": 2
+            }
+          },
+          "outputDigest": "27467c0585ef7e937ddc20b2f937fb74d7ec47b63c31f0f53016bef371bf8f3f"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 9,
+              "u": 3
+            }
+          },
+          "outputDigest": "049daf65ae10d1db318ef14f8a4d2f080dda5c2da748da5af51e0f9f247d4e06"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 9,
+              "u": 5
+            }
+          },
+          "outputDigest": "cbed9ffb77148ced8eead69fbe0ddc96aaeaaf528476980138bd8b9d32335e04"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 4,
+              "b": 9,
+              "u": 7
+            }
+          },
+          "outputDigest": "c7319b36a8d83f86f7bef68debb62d5dd246f8c1e907bf0b60bc5a449c0a9a1a"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 6,
+              "u": 2
+            }
+          },
+          "outputDigest": "c4a036af4e18ce1c914ff54a999bd2d7e09b719dbc870cfb7ef5297c600be944"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 6,
+              "u": 3
+            }
+          },
+          "outputDigest": "aba4d8596e88218235d976b049dd2a6668fb221b7fb64fb738e735bdf05cc6c9"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 6,
+              "u": 5
+            }
+          },
+          "outputDigest": "207655226fdc5c46c7e51556abddc722d7c29ed2d125d48c56cd31291ad0ceeb"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 6,
+              "u": 7
+            }
+          },
+          "outputDigest": "a98bf601d926d37d3e7eaad89afd13224c8f66ab6b9a98ff5845c5d9dc422161"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 7,
+              "u": 2
+            }
+          },
+          "outputDigest": "eda1f3e97b9bb63ec27708b242aba2fac046b06451904700628b678f7613f653"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 7,
+              "u": 3
+            }
+          },
+          "outputDigest": "255c5b896e0c3fd76bd5ab944a8ae45feb7ef8aa747e8c337187c72133d15baa"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 7,
+              "u": 5
+            }
+          },
+          "outputDigest": "07304e0057fbfdaf9c98cb6560067a6ddae0630278fb9e4cc93e973ca5143645"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 7,
+              "u": 7
+            }
+          },
+          "outputDigest": "9fe645c8af060c19454a908c8e83703b1998e5f5e9f3427f817d6a7548d7affd"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 8,
+              "u": 2
+            }
+          },
+          "outputDigest": "216f99efbf471adedb84f2c0626cfd4f4826a3abb9e934d841b999b8976f40d9"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 8,
+              "u": 3
+            }
+          },
+          "outputDigest": "73561e772370800d03ccd73e303aac29682d5c153600cfce42a0b9415376ed09"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 8,
+              "u": 5
+            }
+          },
+          "outputDigest": "1e06bdae0e67d40b15dc30fdcae5363bdff301bdafdabbf2b149f0c6489297ec"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 8,
+              "u": 7
+            }
+          },
+          "outputDigest": "de648846cfaa7952a4e8afc942c294fa6a7429c4e4e198011f424a4708a13a97"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 9,
+              "u": 2
+            }
+          },
+          "outputDigest": "9f8cee12c51f068b895d58873ecb8193d7782bcd45a256b95495a4d07ce43727"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 9,
+              "u": 3
+            }
+          },
+          "outputDigest": "8e42d30d8a5ade0a06ca1fc6bb55bd964a29b51fb978e2ccb1d892244356039e"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 9,
+              "u": 5
+            }
+          },
+          "outputDigest": "815f110e34e6b137510f1afc5cf2f2e459a1eda8020da794ce69fe6ef9ae43c3"
+        },
+        {
+          "parameters": {
+            "family": "DIRECT_PROPORTION",
+            "values": {
+              "a": 5,
+              "b": 9,
+              "u": 7
+            }
+          },
+          "outputDigest": "9fe239f95b3c185163017ddd18da6e44805a970bc4a0811b1547bbab1da4c183"
+        }
+      ]
+    }
+  },
+  "definitionDigest": "814856a1723091fd5b1c19d4a60f043a2b932e302fb3203bd5a6d9858a82caf3",
+  "domainDigest": "4e79ada209d2b163b2be7379ccfef710e46715c1daa7d22bf1b26f73861e2a9d",
+  "manifestDigest": "6814d912447caccc81fdd7ac8c188847083bb89ff6fe94818c51a769b20dba21",
+  "variants": [
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 6,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 4,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        12,
+        4,
+        16,
+        24
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 4,00. 2. Divida pelo número de unidades: 4 ÷ 2 = 2 reais por caderno. 3. Multiplique por 6: 2 × 6 = 12. Resposta: R$ 12,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 6,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        6,
+        24,
+        36
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 2 = 3 reais por caderno. 3. Multiplique por 6: 3 × 6 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 6,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        30,
+        10,
+        40,
+        60
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 2 = 5 reais por caderno. 3. Multiplique por 6: 5 × 6 = 30. Resposta: R$ 30,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 6,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 14,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        42,
+        14,
+        56,
+        84
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 14,00. 2. Divida pelo número de unidades: 14 ÷ 2 = 7 reais por caderno. 3. Multiplique por 6: 7 × 6 = 42. Resposta: R$ 42,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 7,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 4,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        14,
+        4,
+        18,
+        28
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 4,00. 2. Divida pelo número de unidades: 4 ÷ 2 = 2 reais por caderno. 3. Multiplique por 7: 2 × 7 = 14. Resposta: R$ 14,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 7,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        21,
+        6,
+        27,
+        42
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 2 = 3 reais por caderno. 3. Multiplique por 7: 3 × 7 = 21. Resposta: R$ 21,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 7,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        35,
+        10,
+        45,
+        70
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 2 = 5 reais por caderno. 3. Multiplique por 7: 5 × 7 = 35. Resposta: R$ 35,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 7,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 14,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        49,
+        14,
+        63,
+        98
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 14,00. 2. Divida pelo número de unidades: 14 ÷ 2 = 7 reais por caderno. 3. Multiplique por 7: 7 × 7 = 49. Resposta: R$ 49,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 8,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 4,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        16,
+        4,
+        20,
+        32
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 4,00. 2. Divida pelo número de unidades: 4 ÷ 2 = 2 reais por caderno. 3. Multiplique por 8: 2 × 8 = 16. Resposta: R$ 16,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 8,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        24,
+        6,
+        30,
+        48
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 2 = 3 reais por caderno. 3. Multiplique por 8: 3 × 8 = 24. Resposta: R$ 24,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 8,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        10,
+        50,
+        80
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 2 = 5 reais por caderno. 3. Multiplique por 8: 5 × 8 = 40. Resposta: R$ 40,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 8,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 14,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        56,
+        14,
+        70,
+        112
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 14,00. 2. Divida pelo número de unidades: 14 ÷ 2 = 7 reais por caderno. 3. Multiplique por 8: 7 × 8 = 56. Resposta: R$ 56,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 9,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 4,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        4,
+        22,
+        36
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 4,00. 2. Divida pelo número de unidades: 4 ÷ 2 = 2 reais por caderno. 3. Multiplique por 9: 2 × 9 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 9,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        27,
+        6,
+        33,
+        54
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 2 = 3 reais por caderno. 3. Multiplique por 9: 3 × 9 = 27. Resposta: R$ 27,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 9,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        45,
+        10,
+        55,
+        90
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 2 = 5 reais por caderno. 3. Multiplique por 9: 5 × 9 = 45. Resposta: R$ 45,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 2,
+          "b": 9,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "2 cadernos iguais custam R$ 14,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        63,
+        14,
+        77,
+        126
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 2 cadernos é R$ 14,00. 2. Divida pelo número de unidades: 14 ÷ 2 = 7 reais por caderno. 3. Multiplique por 9: 7 × 9 = 63. Resposta: R$ 63,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 6,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        12,
+        6,
+        18,
+        36
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 3 = 2 reais por caderno. 3. Multiplique por 6: 2 × 6 = 12. Resposta: R$ 12,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 6,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 9,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        9,
+        27,
+        54
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 9,00. 2. Divida pelo número de unidades: 9 ÷ 3 = 3 reais por caderno. 3. Multiplique por 6: 3 × 6 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 6,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        30,
+        15,
+        45,
+        90
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 3 = 5 reais por caderno. 3. Multiplique por 6: 5 × 6 = 30. Resposta: R$ 30,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 6,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 21,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        42,
+        21,
+        63,
+        126
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 21,00. 2. Divida pelo número de unidades: 21 ÷ 3 = 7 reais por caderno. 3. Multiplique por 6: 7 × 6 = 42. Resposta: R$ 42,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 7,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        14,
+        6,
+        20,
+        42
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 3 = 2 reais por caderno. 3. Multiplique por 7: 2 × 7 = 14. Resposta: R$ 14,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 7,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 9,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        21,
+        9,
+        30,
+        63
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 9,00. 2. Divida pelo número de unidades: 9 ÷ 3 = 3 reais por caderno. 3. Multiplique por 7: 3 × 7 = 21. Resposta: R$ 21,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 7,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        35,
+        15,
+        50,
+        105
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 3 = 5 reais por caderno. 3. Multiplique por 7: 5 × 7 = 35. Resposta: R$ 35,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 7,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 21,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        49,
+        21,
+        70,
+        147
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 21,00. 2. Divida pelo número de unidades: 21 ÷ 3 = 7 reais por caderno. 3. Multiplique por 7: 7 × 7 = 49. Resposta: R$ 49,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 8,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        16,
+        6,
+        22,
+        48
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 3 = 2 reais por caderno. 3. Multiplique por 8: 2 × 8 = 16. Resposta: R$ 16,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 8,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 9,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        24,
+        9,
+        33,
+        72
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 9,00. 2. Divida pelo número de unidades: 9 ÷ 3 = 3 reais por caderno. 3. Multiplique por 8: 3 × 8 = 24. Resposta: R$ 24,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 8,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        15,
+        55,
+        120
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 3 = 5 reais por caderno. 3. Multiplique por 8: 5 × 8 = 40. Resposta: R$ 40,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 8,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 21,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        56,
+        21,
+        77,
+        168
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 21,00. 2. Divida pelo número de unidades: 21 ÷ 3 = 7 reais por caderno. 3. Multiplique por 8: 7 × 8 = 56. Resposta: R$ 56,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 9,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 6,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        6,
+        24,
+        54
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 6,00. 2. Divida pelo número de unidades: 6 ÷ 3 = 2 reais por caderno. 3. Multiplique por 9: 2 × 9 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 9,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 9,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        27,
+        9,
+        36,
+        81
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 9,00. 2. Divida pelo número de unidades: 9 ÷ 3 = 3 reais por caderno. 3. Multiplique por 9: 3 × 9 = 27. Resposta: R$ 27,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 9,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        45,
+        15,
+        60,
+        135
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 3 = 5 reais por caderno. 3. Multiplique por 9: 5 × 9 = 45. Resposta: R$ 45,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 3,
+          "b": 9,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "3 cadernos iguais custam R$ 21,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        63,
+        21,
+        84,
+        189
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 3 cadernos é R$ 21,00. 2. Divida pelo número de unidades: 21 ÷ 3 = 7 reais por caderno. 3. Multiplique por 9: 7 × 9 = 63. Resposta: R$ 63,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 6,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 8,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        12,
+        8,
+        20,
+        48
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 8,00. 2. Divida pelo número de unidades: 8 ÷ 4 = 2 reais por caderno. 3. Multiplique por 6: 2 × 6 = 12. Resposta: R$ 12,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 6,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 12,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        12,
+        30,
+        72
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 12,00. 2. Divida pelo número de unidades: 12 ÷ 4 = 3 reais por caderno. 3. Multiplique por 6: 3 × 6 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 6,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 20,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        30,
+        20,
+        50,
+        120
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 20,00. 2. Divida pelo número de unidades: 20 ÷ 4 = 5 reais por caderno. 3. Multiplique por 6: 5 × 6 = 30. Resposta: R$ 30,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 6,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 28,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        42,
+        28,
+        70,
+        168
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 28,00. 2. Divida pelo número de unidades: 28 ÷ 4 = 7 reais por caderno. 3. Multiplique por 6: 7 × 6 = 42. Resposta: R$ 42,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 7,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 8,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        14,
+        8,
+        22,
+        56
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 8,00. 2. Divida pelo número de unidades: 8 ÷ 4 = 2 reais por caderno. 3. Multiplique por 7: 2 × 7 = 14. Resposta: R$ 14,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 7,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 12,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        21,
+        12,
+        33,
+        84
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 12,00. 2. Divida pelo número de unidades: 12 ÷ 4 = 3 reais por caderno. 3. Multiplique por 7: 3 × 7 = 21. Resposta: R$ 21,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 7,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 20,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        35,
+        20,
+        55,
+        140
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 20,00. 2. Divida pelo número de unidades: 20 ÷ 4 = 5 reais por caderno. 3. Multiplique por 7: 5 × 7 = 35. Resposta: R$ 35,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 7,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 28,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        49,
+        28,
+        77,
+        196
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 28,00. 2. Divida pelo número de unidades: 28 ÷ 4 = 7 reais por caderno. 3. Multiplique por 7: 7 × 7 = 49. Resposta: R$ 49,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 8,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 8,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        16,
+        8,
+        24,
+        64
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 8,00. 2. Divida pelo número de unidades: 8 ÷ 4 = 2 reais por caderno. 3. Multiplique por 8: 2 × 8 = 16. Resposta: R$ 16,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 8,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 12,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        24,
+        12,
+        36,
+        96
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 12,00. 2. Divida pelo número de unidades: 12 ÷ 4 = 3 reais por caderno. 3. Multiplique por 8: 3 × 8 = 24. Resposta: R$ 24,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 8,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 20,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        20,
+        60,
+        160
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 20,00. 2. Divida pelo número de unidades: 20 ÷ 4 = 5 reais por caderno. 3. Multiplique por 8: 5 × 8 = 40. Resposta: R$ 40,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 8,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 28,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        56,
+        28,
+        84,
+        224
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 28,00. 2. Divida pelo número de unidades: 28 ÷ 4 = 7 reais por caderno. 3. Multiplique por 8: 7 × 8 = 56. Resposta: R$ 56,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 9,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 8,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        8,
+        26,
+        72
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 8,00. 2. Divida pelo número de unidades: 8 ÷ 4 = 2 reais por caderno. 3. Multiplique por 9: 2 × 9 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 9,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 12,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        27,
+        12,
+        39,
+        108
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 12,00. 2. Divida pelo número de unidades: 12 ÷ 4 = 3 reais por caderno. 3. Multiplique por 9: 3 × 9 = 27. Resposta: R$ 27,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 9,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 20,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        45,
+        20,
+        65,
+        180
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 20,00. 2. Divida pelo número de unidades: 20 ÷ 4 = 5 reais por caderno. 3. Multiplique por 9: 5 × 9 = 45. Resposta: R$ 45,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 4,
+          "b": 9,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "4 cadernos iguais custam R$ 28,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        63,
+        28,
+        91,
+        252
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 4 cadernos é R$ 28,00. 2. Divida pelo número de unidades: 28 ÷ 4 = 7 reais por caderno. 3. Multiplique por 9: 7 × 9 = 63. Resposta: R$ 63,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 6,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        12,
+        10,
+        22,
+        60
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 5 = 2 reais por caderno. 3. Multiplique por 6: 2 × 6 = 12. Resposta: R$ 12,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 6,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        15,
+        33,
+        90
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 5 = 3 reais por caderno. 3. Multiplique por 6: 3 × 6 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 6,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 25,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        30,
+        25,
+        55,
+        150
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 25,00. 2. Divida pelo número de unidades: 25 ÷ 5 = 5 reais por caderno. 3. Multiplique por 6: 5 × 6 = 30. Resposta: R$ 30,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 6,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 35,00. Mantido o preço por unidade, quanto custam 6 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        42,
+        35,
+        77,
+        210
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 35,00. 2. Divida pelo número de unidades: 35 ÷ 5 = 7 reais por caderno. 3. Multiplique por 6: 7 × 6 = 42. Resposta: R$ 42,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 7,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        14,
+        10,
+        24,
+        70
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 5 = 2 reais por caderno. 3. Multiplique por 7: 2 × 7 = 14. Resposta: R$ 14,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 7,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        21,
+        15,
+        36,
+        105
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 5 = 3 reais por caderno. 3. Multiplique por 7: 3 × 7 = 21. Resposta: R$ 21,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 7,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 25,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        35,
+        25,
+        60,
+        175
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 25,00. 2. Divida pelo número de unidades: 25 ÷ 5 = 5 reais por caderno. 3. Multiplique por 7: 5 × 7 = 35. Resposta: R$ 35,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 7,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 35,00. Mantido o preço por unidade, quanto custam 7 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        49,
+        35,
+        84,
+        245
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 35,00. 2. Divida pelo número de unidades: 35 ÷ 5 = 7 reais por caderno. 3. Multiplique por 7: 7 × 7 = 49. Resposta: R$ 49,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 8,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        16,
+        10,
+        26,
+        80
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 5 = 2 reais por caderno. 3. Multiplique por 8: 2 × 8 = 16. Resposta: R$ 16,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 8,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        24,
+        15,
+        39,
+        120
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 5 = 3 reais por caderno. 3. Multiplique por 8: 3 × 8 = 24. Resposta: R$ 24,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 8,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 25,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        25,
+        65,
+        200
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 25,00. 2. Divida pelo número de unidades: 25 ÷ 5 = 5 reais por caderno. 3. Multiplique por 8: 5 × 8 = 40. Resposta: R$ 40,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 8,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 35,00. Mantido o preço por unidade, quanto custam 8 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        56,
+        35,
+        91,
+        280
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 35,00. 2. Divida pelo número de unidades: 35 ÷ 5 = 7 reais por caderno. 3. Multiplique por 8: 7 × 8 = 56. Resposta: R$ 56,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 9,
+          "u": 2
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 10,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        18,
+        10,
+        28,
+        90
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 10,00. 2. Divida pelo número de unidades: 10 ÷ 5 = 2 reais por caderno. 3. Multiplique por 9: 2 × 9 = 18. Resposta: R$ 18,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 9,
+          "u": 3
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 15,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        27,
+        15,
+        42,
+        135
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 15,00. 2. Divida pelo número de unidades: 15 ÷ 5 = 3 reais por caderno. 3. Multiplique por 9: 3 × 9 = 27. Resposta: R$ 27,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 9,
+          "u": 5
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 25,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        45,
+        25,
+        70,
+        225
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 25,00. 2. Divida pelo número de unidades: 25 ÷ 5 = 5 reais por caderno. 3. Multiplique por 9: 5 × 9 = 45. Resposta: R$ 45,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+        "version": 1,
+        "family": "DIRECT_PROPORTION",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+        "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+        "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M03",
+          "roles": [
+            "ADMINISTRATIVE_ASSISTANT",
+            "SCHOOL_SECRETARY"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "DIRECT_PROPORTION",
+        "values": {
+          "a": 5,
+          "b": 9,
+          "u": 7
+        }
+      },
+      "statement": {
+        "text": "5 cadernos iguais custam R$ 35,00. Mantido o preço por unidade, quanto custam 9 cadernos?",
+        "resources": []
+      },
+      "alternatives": [
+        63,
+        35,
+        98,
+        315
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. O preço de 5 cadernos é R$ 35,00. 2. Divida pelo número de unidades: 35 ÷ 5 = 7 reais por caderno. 3. Multiplique por 9: 7 × 9 = 63. Resposta: R$ 63,00. O custo é diretamente proporcional à quantidade; não some quantidades nem esqueça a divisão inicial.",
+        "resources": []
+      }
+    }
+  ]
+}

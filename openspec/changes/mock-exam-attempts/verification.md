@@ -24,7 +24,7 @@ e na issue #64. Esta matriz não certifica o gate cumulativo final nem autoriza 
 | 3.4 | AttemptHttpTests, QuestionPublicHttpTests, ArchitectureTests | Histórico/retomada, no-store, indisponibilidade, sessão e stateless preservados |
 | 4.1 | attempt-api.test, AttemptComposer.test | Prazo inclui CSRF/JSON, abort, limites, duplo clique/retry e insuficiência |
 | 4.2 | AttemptPractice.test, attempts.real.spec.ts | Fila/versão, limpar, duas abas, conflito com escolhas preservadas |
-| 4.3 | AttemptPractice.test, attempts.real.spec.ts | Confirmação/foco, fila pendente bloqueia, retry e nota do servidor |
+| 4.3 | AttemptPractice.test, AttemptResult.test, attempts.real.spec.ts | Confirmação/foco, fila pendente bloqueia, retry, nota do servidor e descrições das alternativas escolhida/correta |
 | 4.4 | attempts.real.spec.ts, screenshots locais | Teclado/radios/dialog/progresso em 390/1280, falha/retry, aulas e controle negativo |
 | 5.1 | AttemptHistory.test, AttemptHttpTests | Páginas/ordem/estado, vazio, nota somente final e abrir sem novo sorteio |
 | 5.2 | attempts.real.spec.ts | OIDC/PG reais, mesma conta em outro navegador após restart, outra conta negada |

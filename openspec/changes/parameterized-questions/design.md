@@ -90,12 +90,27 @@ Banco e template precisam estar elegíveis no mesmo snapshot. Troca da revisão-
 invalida o vínculo para novas capturas até aprovação de versão correspondente; retirada
 de template desabilita a família para novas gerações. Nada altera tentativas existentes.
 
+Cada família mantém um único ponteiro de versão elegível, separado dos estados
+históricos `APPROVED`; a mesma identidade-base não pertence a famílias concorrentes.
+Aprovar v2 substitui explicitamente v1 nesse ponteiro, de modo atômico e com versão
+esperada da decisão/ponteiro. Não selecionar por maior número ou por qualquer status
+aprovado. Retirar a versão atual limpa o ponteiro, sem reativar v1 automaticamente;
+retirar uma versão histórica não altera a atual. Decisões concorrentes incompatíveis
+falham sem sobrescrita; nova ativação exige decisão explícita, não reimportação.
+
 ### 4. Composição e captura atômica
 
 Acrescentar `useParameterizedQuestions` booleano opcional ao comando de criação;
 ausente significa false. Valores de outro tipo e campos extras continuam rejeitados.
 Incluir o valor normalizado no hash idempotente e na composição imutável; mesmo
 commandId com opção diferente resulta em 409. Clientes antigos continuam criando fixas.
+
+Para false, inclusive opção ausente, preservar **exatamente** a canonização/hash de
+criação V5 (cargo/disciplinas/assuntos), sem acrescentar o literal false nem reescrever
+hashes gravados. True usa discriminador versionado novo e não pode recuperar um
+comando fixo anterior. Regressão usa comando/hash realmente produzido pelo código V5:
+ausente e false recuperam a criação original; true com a mesma chave retorna 409.
+Compatibilidade de hash é distinta da compatibilidade dos codecs JSON.
 
 Primeiro selecionar identidades/revisões-base com os critérios atuais, uniformemente
 e sem reposição. Se opção true, materializar somente bases com template atualmente

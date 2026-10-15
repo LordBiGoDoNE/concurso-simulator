@@ -58,6 +58,17 @@ Geração SHALL exigir base atualmente elegível e template aprovado corresponde
 - **WHEN** a versão-base ou template é retirado após confirmar a criação
 - **THEN** dono continua podendo retomar/concluir/ver o conteúdo capturado, conforme posse e prazo existentes.
 
+### Requirement: Sucessão explícita da versão elegível
+Família SHALL manter um único ponteiro de versão elegível separado de aprovações históricas; uma base MUST NOT pertencer a famílias concorrentes. Aprovação de sucessora SHALL trocar o ponteiro explicitamente/atomicamente com versão esperada; retirada da atual MUST deixá-lo vazio, sem reativação automática de anterior.
+
+#### Scenario: Aprovação de sucessora e retirada
+- **WHEN** aprova v2 substituindo v1 e depois retira v2
+- **THEN** somente v2 fica elegível entre as decisões; após retirada nenhuma versão gera variações, sem reativar v1 pelo status histórico.
+
+#### Scenario: Duas decisões partem do mesmo ponteiro
+- **WHEN** decisões editoriais incompatíveis concorrem com a mesma versão esperada
+- **THEN** somente uma altera o ponteiro; a outra falha sem sobrescrever nem habilitar duas versões.
+
 ### Requirement: Opção de composição compatível
 Criação SHALL aceitar `useParameterizedQuestions` booleano opcional, false quando ausente. Quando true, SHALL variar somente bases com template elegível, mantendo demais fixas, filtros/quantidades 1–100 e identidades-base distintas. A opção MUST integrar o hash idempotente e a composição imutável.
 
@@ -72,6 +83,13 @@ Criação SHALL aceitar `useParameterizedQuestions` booleano opcional, false qua
 #### Scenario: Reuso do comando com opção diferente
 - **WHEN** envia mesmo commandId alterando o booleano
 - **THEN** recebe 409 sem mudar nem duplicar a tentativa confirmada.
+
+### Requirement: Canonização compatível dos comandos antigos
+Canonização de criação fixa SHALL permanecer idêntica à V5; true SHALL usar discriminador versionado distinto, sem reescrever hashes antigos ou aceitar comando fixo como parametrizado.
+
+#### Scenario: Retry de criação confirmado antes do upgrade
+- **WHEN** repete comando/hash produzido no V5 sem a opção ou com false explícito
+- **THEN** recupera a tentativa original sem novo sorteio; true com a mesma chave retorna 409.
 
 ### Requirement: Captura reproduzível da instância
 O backend SHALL sortear uma tupla por base parametrizada e preservar conteúdo renderizado, resolução/correta privadas, fingerprint da instância, versão/manifesto/gerador, revisão-base/fingerprint, parâmetros, IDs e ordens. A referência da base MUST continuar válida; conteúdo da instância MUST NOT ser apresentado como payload original dessa revisão.

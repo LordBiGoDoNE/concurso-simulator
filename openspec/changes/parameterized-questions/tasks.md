@@ -14,12 +14,12 @@ editoriais são acompanhadas separadamente na issue. Sem conteúdo aprovado por 
 - [ ] 1.1 Modelar template/versão/domínio/fonte/tupla e invariantes Java puras; testar campos/tipos, compatibilidade da base e imutabilidade; documentar fronteiras entre banco, parametrização e tentativa.
 - [ ] 1.2 Implementar as três famílias com aritmética exata, quatro alternativas e resolução concreta; testar casos de referência, unidades, distratores equivalentes e limites; documentar os domínios 64/20/27.
 - [ ] 1.3 Implementar enumeração/manifesto/digests versionados e validação exaustiva das 111 tuplas com oráculo independente; testar adulteração, cardinalidade e saídas divergentes; documentar canonização e limites da prova.
-- [ ] 1.4 Implementar UseCases/portas de prévia/registro/decisão/captura com validação editorial da versão exata; testar transições, retirada/replay/conflitos com portas substituíveis; documentar critérios de elegibilidade.
+- [ ] 1.4 Implementar UseCases/portas de prévia/registro/decisão/captura com aprovação exata e ponteiro único elegível por família; testar v2 substituindo v1, retirada sem reativação, replay e decisões concorrentes com portas substituíveis; documentar critérios de elegibilidade.
 
 ## 2. Persistência e operação editorial local — depende de 1
 
 - [ ] 2.1 Criar migração aditiva após V5/JPA/repositories de templates, versões, manifestos e decisões; testar PG18 novo/upgrade, FKs/constraints/imutabilidade preservando banco/contas/sessões; documentar schema.
-- [ ] 2.2 Implementar registro/decisão atômicos, unicidade e recuperação após rollback; testar corridas/base desatualizada, repetição sem reativar retirada e propagação de falhas desconhecidas; documentar transações.
+- [ ] 2.2 Implementar registro/decisão/ponteiro elegível atômicos, unicidade e recuperação após rollback; testar aprovação concorrente de versões, retirada atual/histórica, base desatualizada, repetição sem reativação e falhas desconhecidas; documentar transações.
 - [ ] 2.3 Implementar captura privada de templates na transação consumidora, vinculada à revisão-base elegível; testar retirada/troca de base antes/depois do snapshot e ausência de dependência reversa; documentar contrato de módulos.
 - [ ] 2.4 Implementar launcher local explícito com prévia sem escrita, limites de entrada e confirmação destino/digest; testar path traversal, seleção parcial, falhas/CI sem aprovação e ausência no startup web; documentar operação segura.
 
@@ -27,7 +27,7 @@ editoriais são acompanhadas separadamente na issue. Sem conteúdo aprovado por 
 
 - [ ] 3.1 Estender composição e seleção por identidade-base com opção false por padrão; testar uniformidade estrutural/sem reposição, fixas misturadas, ausência/retirada de template e integridade falhando sem fallback; documentar política.
 - [ ] 3.2 Materializar/capturar conteúdo, metadados/parâmetros e alternativas opacas numa transação, com vínculo imutável ao item; testar FKs, divergência do manifesto/fingerprint, rollback integral e cleanup visitante sem remover famílias; documentar fontes fixa/gerada.
-- [ ] 3.3 Versionar snapshot e manter codecs de leitura/escrita do formato de origem em tentativas/itens/comandos; testar retomada/alteração com triggers V5, JSON imutável preservado, idempotência, corrida/timeout e conflito quando muda a opção; documentar compatibilidade.
+- [ ] 3.3 Versionar snapshot e manter codecs de origem em tentativas/itens/comandos; testar alteração com triggers V5/JSON imutável, retry de hash produzido no V5 com opção ausente/false, 409 com true, corrida/timeout; documentar compatibilidade de codec e hash sem reescrever histórico.
 - [ ] 3.4 Preservar correção e histórico após retirada/atualização/ausência de gerador; testar sem invocação de geração na leitura/conclusão, posse/expiração e rollback com leitor compatível; documentar limite do JAR antigo.
 
 ## 4. Conteúdo e revisão editorial — depende de 1 e 2

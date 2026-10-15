@@ -31,7 +31,7 @@ class QuestionSchemaTests {
         var users=jdbc.queryForList("SELECT * FROM app_user"); var identities=jdbc.queryForList("SELECT * FROM external_identity");
         var sessions=jdbc.queryForList("SELECT * FROM spring_session");
         var before=jdbc.queryForObject("SELECT encode(attribute_bytes,'hex') FROM spring_session_attributes",String.class);
-        assertThat(Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).load().migrate().migrationsExecuted).isEqualTo(2);
+        assertThat(Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).load().migrate().migrationsExecuted).isEqualTo(3);
         assertThat(jdbc.queryForList("SELECT * FROM app_user")).isEqualTo(users);
         assertThat(jdbc.queryForList("SELECT * FROM external_identity")).isEqualTo(identities);
         assertThat(jdbc.queryForList("SELECT * FROM spring_session")).isEqualTo(sessions);
@@ -39,7 +39,7 @@ class QuestionSchemaTests {
         assertCatalogAndJpa(ds,jdbc);
         var fresh="qb_"+UUID.randomUUID().toString().replace("-", "");
         var empty=new DriverManagerDataSource(POSTGRES.getJdbcUrl()+"&currentSchema="+fresh,POSTGRES.getUsername(),POSTGRES.getPassword());
-        assertThat(Flyway.configure().dataSource(empty).schemas(fresh).defaultSchema(fresh).load().migrate().migrationsExecuted).isEqualTo(5);
+        assertThat(Flyway.configure().dataSource(empty).schemas(fresh).defaultSchema(fresh).load().migrate().migrationsExecuted).isEqualTo(6);
         assertCatalogAndJpa(empty,new JdbcTemplate(empty));
     }
     @Test void constraintsRejectUnknownClassificationOriginDuplicatesAndCrossRevisionAnswers() {

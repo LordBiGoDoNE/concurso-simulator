@@ -76,3 +76,17 @@ tasks.register<JavaExec>("mockExamOperationalCheck") {
     mainClass.set("br.com.concursosimulator.mockexam.MockExamOperationalFixture")
     if (project.hasProperty("rollbackJar")) args(project.property("rollbackJar").toString())
 }
+
+tasks.register<JavaExec>("parameterizationLocal") {
+    group = "application"
+    description = "Deliberate nonweb numeric template preview/register/decision; never runs on startup or build"
+    dependsOn(tasks.classes)
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal")
+    standardInput = System.`in`
+    if (project.hasProperty("templateAction")) {
+        val action = project.property("templateAction").toString()
+        args(action, "--editorial-local", "true", "--root", project.property("templateRoot").toString(),
+            if (action == "decide") "--decision" else "--definition", project.property("templateFile").toString())
+    }
+}

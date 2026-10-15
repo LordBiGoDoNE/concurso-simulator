@@ -1,8 +1,9 @@
 # Tasks
 
-**Proposta pendente de aprovação.** Recorte das três famílias escolhido pelo usuário
-em 2026-10-15; não há lote de implementação escolhido. 0/24 implementadas/verificadas,
-0/24 integradas. Pré-requisito #84 integrado na épica geral em `0d0fc48`.
+**Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
+épica da spec; primeiro lote autorizado: grupos completos 1 e 2. **8/24 tarefas
+implementadas/verificadas, 0/24 integradas/aprovadas**; revisão independente e CI do lote
+registrados separadamente na issue #86. Grupos 3–6 pendentes. Pré-requisito #84 em `0d0fc48`.
 
 Grupos completos são a unidade de autorização do lote. Cada tarefa inclui código,
 testes e documentação pertinentes; PRs coesos podem dividir um grupo sem interrompê-lo.
@@ -11,17 +12,17 @@ editoriais são acompanhadas separadamente na issue. Sem conteúdo aprovado por 
 
 ## 1. Domínio e geração determinística
 
-- [ ] 1.1 Modelar template/versão/domínio/fonte/tupla e invariantes Java puras; testar campos/tipos, compatibilidade da base e imutabilidade; documentar fronteiras entre banco, parametrização e tentativa.
-- [ ] 1.2 Implementar as três famílias com aritmética exata, quatro alternativas e resolução concreta; testar casos de referência, unidades, distratores equivalentes e limites; documentar os domínios 64/20/27.
-- [ ] 1.3 Implementar enumeração/manifesto/digests versionados e validação exaustiva das 111 tuplas com oráculo independente; testar adulteração, cardinalidade e saídas divergentes; documentar canonização e limites da prova.
-- [ ] 1.4 Implementar UseCases/portas de prévia/registro/decisão/captura com aprovação exata e ponteiro único elegível por família; testar v2 substituindo v1, retirada sem reativação, replay e decisões concorrentes com portas substituíveis; documentar critérios de elegibilidade.
+- [x] 1.1 Modelar template/versão/domínio/fonte/tupla e invariantes Java puras; testar campos/tipos, compatibilidade da base e imutabilidade; documentar fronteiras entre banco, parametrização e tentativa.
+- [x] 1.2 Implementar as três famílias com aritmética exata, quatro alternativas e resolução concreta; testar casos de referência, unidades, distratores equivalentes e limites; documentar os domínios 64/20/27.
+- [x] 1.3 Implementar enumeração/manifesto/digests versionados e validação exaustiva das 111 tuplas com oráculo independente; testar adulteração, cardinalidade e saídas divergentes; documentar canonização e limites da prova.
+- [x] 1.4 Implementar UseCases/portas de prévia/registro/decisão/captura com aprovação exata e ponteiro único elegível por família; testar v2 substituindo v1, retirada sem reativação, replay e decisões concorrentes com portas substituíveis; documentar critérios de elegibilidade.
 
 ## 2. Persistência e operação editorial local — depende de 1
 
-- [ ] 2.1 Criar migração aditiva após V5/JPA/repositories de templates, versões, manifestos e decisões; testar PG18 novo/upgrade, FKs/constraints/imutabilidade preservando banco/contas/sessões; documentar schema.
-- [ ] 2.2 Implementar registro/decisão/ponteiro elegível atômicos, unicidade e recuperação após rollback; testar aprovação concorrente de versões, retirada atual/histórica, base desatualizada, repetição sem reativação e falhas desconhecidas; documentar transações.
-- [ ] 2.3 Implementar captura privada de templates na transação consumidora, vinculada à revisão-base elegível; testar retirada/troca de base antes/depois do snapshot e ausência de dependência reversa; documentar contrato de módulos.
-- [ ] 2.4 Implementar launcher local explícito com prévia sem escrita, limites de entrada e confirmação destino/digest; testar path traversal, seleção parcial, falhas/CI sem aprovação e ausência no startup web; documentar operação segura.
+- [x] 2.1 Criar migração aditiva após V5/JPA/repositories de templates, versões, manifestos e decisões; testar PG18 novo/upgrade, FKs/constraints/imutabilidade preservando banco/contas/sessões; documentar schema.
+- [x] 2.2 Implementar registro/decisão/ponteiro elegível atômicos, unicidade e recuperação após rollback; testar aprovação concorrente de versões, retirada atual/histórica, base desatualizada, repetição sem reativação e falhas desconhecidas; documentar transações.
+- [x] 2.3 Implementar captura privada de templates na transação consumidora, vinculada à revisão-base elegível; testar retirada/troca de base antes/depois do snapshot e ausência de dependência reversa; documentar contrato de módulos.
+- [x] 2.4 Implementar launcher local explícito com prévia sem escrita, limites de entrada e confirmação destino/digest; testar path traversal, seleção parcial, falhas/CI sem aprovação e ausência no startup web; documentar operação segura.
 
 ## 3. Integração de tentativas e compatibilidade — depende de 1 e 2
 

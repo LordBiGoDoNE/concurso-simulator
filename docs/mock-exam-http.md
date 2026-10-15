@@ -73,3 +73,8 @@ O 503 anterior ao MVC limpa somente o buffer/campo de comprimento e preserva hea
 CORS já aplicados pelo framework, para que a origem autorizada possa ler o erro JSON.
 A regressão interrompe PG e exige 503 com Allow-Origin explícito/credentials, além de
 no-store. Não refaz autenticação/CORS manualmente nem traduz falhas desconhecidas.
+
+Coerção escalar de Jackson foi desabilitada: quantidade/versão JSON textual ("1"/"0")
+recebia aceitação implícita apesar do contrato integer. Regressões HTTP agora exigem
+400 para strings numéricas, além de frações/null, sem gravação parcial. Parâmetros de
+query continuam sendo traduzidos explicitamente pela web conforme seu contrato.

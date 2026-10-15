@@ -47,6 +47,7 @@ class AttemptHttpTests {
         var answer="{\"commandId\":\""+op+"\",\"expectedVersion\":0,\"alternativeId\":\""+alt+"\"}";
         var url="/api/v1/attempts/"+id+"/answers/"+item.get("id").asString();
         assertThat(send("PUT",url,browser,"{\"commandId\":\""+op+"\",\"expectedVersion\":0}").statusCode()).isEqualTo(400);
+        assertThat(send("PUT",url,browser,"{\"commandId\":\""+op+"\",\"expectedVersion\":\"0\",\"alternativeId\":null}").statusCode()).isEqualTo(400);
         var saved=send("PUT",url,browser,answer);assertThat(saved.statusCode()).isEqualTo(200);assertSafe(saved.body());assertSchema(saved.body(),"AttemptView");
         assertThat(json.readTree(saved.body()).get("items").get(0).get("selectedAlternativeId").asString()).isEqualTo(alt);
         assertThat(send("PUT",url,browser,answer).body()).isEqualTo(saved.body());
@@ -58,7 +59,7 @@ class AttemptHttpTests {
     @Test @Order(2) void invalidInputsCsrfAndInsufficientPoolNeverCreatePartialAttempts() throws Exception {
         var b=browser(null);int before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
         var valid=createBody(UUID.randomUUID(),1);
-        for (var body:List.of(valid.replace("\"quantity\":1","\"quantity\":1.5"),valid.replace("\"quantity\":1","\"quantity\":null"),
+        for (var body:List.of(valid.replace("\"quantity\":1","\"quantity\":1.5"),valid.replace("\"quantity\":1","\"quantity\":\"1\""),valid.replace("\"quantity\":1","\"quantity\":null"),
                 valid.replace("\"quantity\":1","\"quantity\":0"),valid.replace("assistente-administrativo","outside"),
                 valid.replace("\"portugues\"","\"outside\""),valid.replace("\"topicIds\":[]","\"topicIds\":[\"M01\"]"),
                 valid.substring(0,valid.length()-1)+",\"owner\":\""+UUID.randomUUID()+"\"}",valid.substring(0,valid.length()-1)+",\"correctAlternativeId\":\""+UUID.randomUUID()+"\"}")) {

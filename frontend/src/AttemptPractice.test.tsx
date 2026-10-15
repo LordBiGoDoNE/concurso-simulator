@@ -1,5 +1,6 @@
 import { fireEvent, render, screen, waitFor } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
+import { useLayoutEffect } from 'react';
 import AttemptPractice from './AttemptPractice';
 import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer } from './attempt-api';
 import { view, result } from '../test/attempt-fixtures';
@@ -7,6 +8,15 @@ import type { AttemptView } from './attempt-api';
 vi.mock('./attempt-api', async original => ({ ...await original<typeof import('./attempt-api')>(), readAttempt: vi.fn(), saveAnswer: vi.fn(), finishAttempt: vi.fn(), attemptResult: vi.fn() }));
 afterEach(() => vi.clearAllMocks());
 const first = view.items[0].alternatives[0].id; const second = view.items[0].alternatives[1].id;
+it('inicializa o controle da fila antes de aceitar a primeira escolha', async () => {
+  vi.mocked(saveAnswer).mockResolvedValue({ ...view, version: 1, items: [{ ...view.items[0], selectedAlternativeId: first }] });
+  function ImmediateChoice() {
+    useLayoutEffect(() => { document.querySelector<HTMLInputElement>('input[type="radio"]')?.click(); }, []);
+    return <AttemptPractice initial={view} onUnavailable={vi.fn()} />;
+  }
+  render(<ImmediateChoice />);await screen.findByText('Respostas confirmadas.');
+  expect(saveAnswer).toHaveBeenCalledTimes(1);expect(screen.getAllByRole('radio')[0]).toBeChecked();
+});
 it('serializa alterações rápidas, usa a versão confirmada e permite limpar', async () => {
   let done!: (v: AttemptView) => void;
   vi.mocked(saveAnswer).mockImplementationOnce(() => new Promise(resolve => { done = resolve; })).mockResolvedValueOnce({ ...view, version: 2, items: [{ ...view.items[0], selectedAlternativeId: second }] });

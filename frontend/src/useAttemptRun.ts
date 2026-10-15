@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer, type Answer, type AttemptItem, type AttemptView, type Result } from './attempt-api';
 
 type Phase = 'saved' | 'pending' | 'failed' | 'conflict' | 'unsaved';
@@ -12,7 +12,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
   const drafts = useRef<Record<string, string | null>>({}); const queue = useRef<Job[]>([]);
   const [revision, redraw] = useState(0); const working = useRef(false); const blocked = useRef(false);
   const lifetime = useRef<AbortController | null>(null); const unavailable = useRef(onUnavailable); unavailable.current = onUnavailable;
-  useEffect(() => { const controller = new AbortController(); lifetime.current = controller; return () => controller.abort(); }, []);
+  useLayoutEffect(() => { const controller = new AbortController(); lifetime.current = controller; return () => controller.abort(); }, []);
   useEffect(() => { if (view.finishedAt !== null && !result) void loadResult(); }, [view.finishedAt]);
   async function loadResult() {
     const controller = lifetime.current; if (!controller || view.finishedAt === null) return;

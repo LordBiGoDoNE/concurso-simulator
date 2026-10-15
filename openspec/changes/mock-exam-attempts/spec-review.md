@@ -6,6 +6,8 @@ ainda em dez PRs draft, sem aprovação/integração presumida. Não é revisão
 
 ## Lote 2 — grupos 3–6 completos
 
+**Atualizacao: correcao posterior de inicializacao da fila aguarda nova revalidacao. O parecer abaixo refere-se ao snapshot fc205eef, nao ao novo diff.**
+
 Revisor independente em contexto novo `openai/gpt-6.1-sol#xhigh`, sessão
 `/root/mock_round2_sol_retry`, seguido de duas revalidações na mesma sessão/modelo.
 Seleção aceita pelo Codex; telemetria efetiva de variante do provedor não exposta.

@@ -12,12 +12,356 @@
     "independent_context": false
   },
   "reviewed_at": null,
-  "review_phase": "planning_approved_implementation_not_started",
+  "review_phase": "groups_1_2_implemented_batch_reviewed_final_gate_pending",
   "coverage": {},
   "limitations": [
-    "Planejamento aprovado, implementacao nao iniciada. Modelo/variante do gate cumulativo final a confirmar antes do disparo; excecao SOL do gate question-bank63 nao se amplia automaticamente."
+    "Grupos 1 e 2 implementados/verificados e revisados como lote; 8/24 tarefas, nenhuma implementação integrada. Grupos 3–6 fora do lote.",
+    "Gate cumulativo final não executado. Modelo/variante a confirmar antes do disparo; exceção SOL de question-bank63 não se amplia automaticamente."
   ],
   "verification": [],
   "findings": [],
-  "triage_complete": false
+  "triage_complete": false,
+  "batch_reviews": [
+    {
+      "batch": "round1-groups1-2",
+      "status": "completed",
+      "scope": [
+        "1.1",
+        "1.2",
+        "1.3",
+        "1.4",
+        "2.1",
+        "2.2",
+        "2.3",
+        "2.4"
+      ],
+      "risk": "critical",
+      "risk_reason": "Private snapshots, owner checks, idempotent commands, concurrent writes, schema and temporary-data deletion.",
+      "reviewer": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/mock_round1_sol_initial",
+        "independent_context": true,
+        "selection_evidence": "Codex collaboration accepted model gpt-6.1-sol with reasoning_effort xhigh; provider ID/variant telemetry not exposed."
+      },
+      "recorded_at": "2026-10-15T02:21:25.861952+00:00",
+      "combined": {
+        "base_sha": "54896dae37a65dd0cd5b1cbc9f03fe387eb595a8",
+        "reviewed_head_sha": "6612007093be210936489597dbd12a6b67612d93",
+        "diff_sha256": "c09a2e0cbc2298d08f3fb6ae96c82306b8adc8bfba57db8c39b96a91caceb7e8"
+      },
+      "prs": [
+        {
+          "pr": 66,
+          "branch": "task/mock-exam-attempts/domain",
+          "base_sha": "54896dae37a65dd0cd5b1cbc9f03fe387eb595a8",
+          "reviewed_head_sha": "e1a398e97d2a26f040c5d6e17abc117571db266d",
+          "diff_sha256": "6fa6ce6ddd7ba502b39b12806d61174bbb1195edd50193c32dc46776bfdf8cfa",
+          "checks": [
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669731905/job/116209760803"
+            },
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669727781/job/116209748026"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669731920/job/116209760863"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669848526/job/116210145604"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669731905/job/116209761075"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669727781/job/116209748139"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669731905/job/116209761068"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669727781/job/116209748030"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669731905/job/116209761129"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669727781/job/116209747848"
+            }
+          ]
+        },
+        {
+          "pr": 67,
+          "branch": "task/mock-exam-attempts/application",
+          "base_sha": "e1a398e97d2a26f040c5d6e17abc117571db266d",
+          "reviewed_head_sha": "5eef51942372c27b2a14ecb1f6fe850693870fd5",
+          "diff_sha256": "f55cc216ccf5404d7a0f0b9b868426b9317e02207074cf6fe2b972b5642a3839",
+          "checks": [
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669738861/job/116209782690"
+            },
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669734128/job/116209768626"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669738919/job/116209783255"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669850711/job/116210152455"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669738861/job/116209782626"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669734128/job/116209768575"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669738861/job/116209782698"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669734128/job/116209768263"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669738861/job/116209782458"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669734128/job/116209768543"
+            }
+          ]
+        },
+        {
+          "pr": 68,
+          "branch": "task/mock-exam-attempts/schema-capture",
+          "base_sha": "5eef51942372c27b2a14ecb1f6fe850693870fd5",
+          "reviewed_head_sha": "029eecbbf9b0d07b35cf7c2aef35eef724a0fe44",
+          "diff_sha256": "e571d2bd9d73a2c9a6aaa2d1de67ef5d31f6f038982bd678c77993581b4ce4c0",
+          "checks": [
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669744484/job/116209801953"
+            },
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669740012/job/116209786640"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669744521/job/116209801543"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669853343/job/116210161257"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669744484/job/116209801935"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669740012/job/116209786310"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669744484/job/116209801628"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669740012/job/116209786641"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669744484/job/116209801770"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669740012/job/116209786608"
+            }
+          ]
+        },
+        {
+          "pr": 69,
+          "branch": "task/mock-exam-attempts/atomic-store",
+          "base_sha": "029eecbbf9b0d07b35cf7c2aef35eef724a0fe44",
+          "reviewed_head_sha": "a08906b9ca4f13f869bca5e2a85a49adb27090e5",
+          "diff_sha256": "ef0404676c82b4e135a661a28cfa488d604b0ba023d2b78f6604c2a994efa1bf",
+          "checks": [
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669749396/job/116209817152"
+            },
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669745604/job/116209805178"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669749342/job/116209817255"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669857088/job/116210172798"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669749396/job/116209817365"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669745604/job/116209805246"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669749396/job/116209818396"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669745604/job/116209804918"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669749396/job/116209817413"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669745604/job/116209805170"
+            }
+          ]
+        },
+        {
+          "pr": 70,
+          "branch": "task/mock-exam-attempts/history-expiry",
+          "base_sha": "a08906b9ca4f13f869bca5e2a85a49adb27090e5",
+          "reviewed_head_sha": "6612007093be210936489597dbd12a6b67612d93",
+          "diff_sha256": "f1154308ec5da9b8e7d1c378a117d29b0cceeb066797494e7200421fec3ec0b6",
+          "checks": [
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669757339/job/116209843679"
+            },
+            {
+              "name": "backend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669750884/job/116209822357"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669757332/job/116209843664"
+            },
+            {
+              "name": "spec-review-tests",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669859120/job/116210178844"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669757339/job/116209843775"
+            },
+            {
+              "name": "frontend",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669750884/job/116209822159"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669757339/job/116209843535"
+            },
+            {
+              "name": "study-material",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669750884/job/116209822255"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669757339/job/116209843706"
+            },
+            {
+              "name": "identity-browser",
+              "conclusion": "SUCCESS",
+              "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38669750884/job/116209822382"
+            }
+          ]
+        }
+      ],
+      "verification": {
+        "backend_tests": 138,
+        "failures": 0,
+        "skipped": 0,
+        "bootJar": "passed",
+        "openspec_strict": "passed"
+      },
+      "findings": [],
+      "triage_complete": true,
+      "conclusion": "No blocking findings or confirmed functional defects in individual diffs or combination.",
+      "limitations": [
+        "Static read-only independent review; reviewer did not run tests/build/network/DB or write files.",
+        "HTTP/UI, technical actor/session/CSRF and integrated user flow await groups 3–6.",
+        "Batch review does not certify the final spec integration gate or authorize any merge.",
+        "Only these two evidence files are excluded from canonical digest; no implementation change after reviewed head."
+      ]
+    }
+  ]
 }

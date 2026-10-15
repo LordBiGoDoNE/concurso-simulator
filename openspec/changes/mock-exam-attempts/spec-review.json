@@ -1,26 +1,98 @@
 {
   "version": 1,
-  "status": "pending",
+  "status": "completed",
   "spec": "mock-exam-attempts",
-  "pr": null,
-  "base_sha": null,
-  "reviewed_head_sha": null,
-  "diff_sha256": null,
+  "pr": 84,
+  "base_sha": "d65006eb29a733c13c4f2a9f3741147d235dcd5b",
+  "reviewed_head_sha": "6727055d0568a13c8b2dab8e61dfe7a7b153afd6",
+  "diff_sha256": "d1f7bd2706356ad74d6303426fc8e2ed25edb4e28267cf5bf02eca860dc5fa08",
   "reviewer": {
-    "model": null,
-    "session": null,
-    "independent_context": false
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer_sol_global",
+    "independent_context": true,
+    "selection_evidence": "Fresh Codex context selected gpt-6.1-sol with reasoning_effort xhigh; the same reviewer performed revalidations. Provider variant/token telemetry not exposed."
   },
-  "reviewed_at": null,
-  "review_phase": "groups_3_6_batch_reviewed_tasks_pending_approval_final_gate_pending",
-  "coverage": {},
+  "reviewed_at": "2026-10-15T16:06:59.703056+00:00",
+  "review_phase": "cumulative_joint_head_revalidated_spec_merge_authorization_pending",
+  "coverage": {
+    "requirements": "Full cumulative diff of94 relevant files: composition1–100, filters/insufficiency/no replacement, captured revisions/orders, answers/finish/server correction, temporary visitor/account history; complete24-item matrix confronted with tests.",
+    "architecture": "ADR0001 and HTTP checklist; pure Java core, aggregate invariants, coordinated UseCases/ports, transaction/JPA infrastructure, verified actor and concrete web DTOs.",
+    "integration": "Questionbank snapshot port, HTTP/OpenAPI, React command queue/retry/result/history/identity; policy83 and correction85 now coexist in a real committed joint tree.",
+    "security": "Ownership before replay/exposure, principal/session/CSRF/CORS, indistinguishable404, no premature correction in active projections, no-store and late response invalidation.",
+    "persistence": "AdditiveV5, captured historical correction, FKs/constraints/triggers, version/CAS, rollback before conflict recovery, idempotent commands and restricted visitor expiration/cascade.",
+    "tests": "All new domain/application/PG/HTTP/architecture/React/browser/artifact/operational tests read during the independent analysis; R1 regression and complete matrix rechecked in the joint head.",
+    "maintenance": "Operational rollback preserves data/schema; test-only fixtures, declared limits, accessible captured Content presentation and permanent global SOL review policy without gate/workflow/approval relaxation."
+  },
   "limitations": [
-    "24/24 tarefas implementadas/verificadas; grupos1/2 integrados em ec4f85e. Grupos3–6 revisados como lote, em dez PRs draft ainda sem aprovação/integração.",
-    "Gate cumulativo final não executado; modelo/variante a confirmar antes do disparo. A exceção SOL de question-bank63 não se amplia automaticamente."
+    "Read-only static review: reviewer did not run tests/build/app/browser/network/DB, inspect generated artifacts/private logs/remote CI or make file edits/merges. Executed tests are coordinator/GitHub Actions evidence.",
+    "After communicating initial independent conclusion and finding, reviewer incidentally saw a previous batch summary via list_agents. Initial analysis preceded exposure; complementary/joint phases did not repeat agent queries. Fresh context does not guarantee absence of bias.",
+    "Static inspection and targeted regressions do not prove every network failure, scheduling interleaving/load, absence of semantic hints or every architectural decision.",
+    "Quota5h/weekly and token telemetry are unavailable; private observations remain outside Git. One interrupted attempt produced no verdict and was not treated as completed review.",
+    "Reviewer checked candidate6727055 in task83. At review time SPEC84 actual head was e1c03ec. After authorized task83 integration, coordinator must confirm actual base/head/ancestry/digest and real spec-review check before requesting SPEC84 merge.",
+    "Backend operational rollback/private local fixtures were not rerun for frontend/policy-only changes; backend remained unchanged and joint CI reran backend/browser checks.",
+    "Review completion is not user authorization to merge SPEC84, main, deploy or archive."
   ],
-  "verification": [],
-  "findings": [],
-  "triage_complete": false,
+  "verification": [
+    {
+      "command": "GitHub Actions Application checks on joint PR83 head6727055 (runs38749963508 and38749954801)",
+      "result": "SUCCESS: backend149, frontend108/build, study-material and identity-browser14; reviewer did not execute these jobs.",
+      "executed_by": "GitHub Actions, checked by coordinator"
+    },
+    {
+      "command": "GitHub Actions spec-review-tests on task83 head6727055",
+      "result": "SUCCESS: executable review guard tests; task check does not certify SPEC84.",
+      "executed_by": "GitHub Actions, checked by coordinator"
+    },
+    {
+      "command": "python -m unittest discover -s scripts/tests -p test_review_quota.py -v",
+      "result": "8 PASS on Windows after policy change; historical model observations remain readable and distinct sessions/models cannot be mixed.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "docker run --rm --network none --mount repository:/workspace:readonly --tmpfs /tmp python:3.14-bookworm python -m unittest discover -s scripts/tests -v",
+      "result": "54 PASS in Linux during policy verification; script behavior unchanged since then and current task CI also passed guard tests.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npm --prefix frontend test; npm --prefix frontend run build",
+      "result": "108 tests PASS and TypeScript/Vite build PASS for correction85; joint CI rechecked the same frontend with policy included.",
+      "executed_by": "coordinator and GitHub Actions"
+    },
+    {
+      "command": "Targeted AttemptResult.test against previous renderer, followed by restored fixed renderer",
+      "result": "Negative control fails for missing figure descriptions; fixed implementation passes.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npx --offline --yes @fission-ai/openspec@1.14.1 validate --all --strict",
+      "result": "4 changes PASS on joint head6727055.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "python scripts/check_attempt_artifacts.py --jar backend/build/libs/concurso-simulator-0.1.0-SNAPSHOT.jar --dist frontend/dist",
+      "result": "PASS on generated artifacts; known sentinels/paths only, not proof against all secrets.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "python -B scripts/check_spec_review.py --snapshot --base d65006eb29a733c13c4f2a9f3741147d235dcd5b --head 6727055d0568a13c8b2dab8e61dfe7a7b153afd6 --spec mock-exam-attempts; equivalent task83 snapshot against e1c03ec",
+      "result": "Reviewer recalculated and confirmed cumulative d1f7bd2706356ad74d6303426fc8e2ed25edb4e28267cf5bf02eca860dc5fa08 and task83 b4b2181fc89458f6032ea45e3965e8f7e607882de7fad46465560c309359c5d5.",
+      "executed_by": "independent reviewer, coordinator also recalculated"
+    }
+  ],
+  "findings": [
+    {
+      "id": "SOL-CUM-R1",
+      "severity": "recommended",
+      "location": "frontend/src/AttemptResult.tsx:13",
+      "evidence": "Selected and correct alternatives displayed only Content.text, omitting captured resources[].description shown during practice.",
+      "reference": "mock-exams: server correction/captured resolution and accessible interface; task4.3.",
+      "impact": "Incomplete accessible review of alternatives with figures, without server data loss or grading change.",
+      "suggestion": "Use complete Content presentation for selected/correct alternatives and regress distinct resources.",
+      "disposition": "fixed",
+      "resolution": "Independent PR85 uses AttemptText in valid block structure for both alternatives. Test asserts distinct texts/descriptions, server score and focus; previous renderer fails negative control. Reviewer confirmed fixed at4320caa with no new findings. PR85 merged at e1c03ec; correction confirmed again in real joint head6727055, including distinct alternatives/resources and preserved score/focus."
+    }
+  ],
+  "triage_complete": true,
   "batch_reviews": [
     {
       "batch": "round1-groups1-2",
@@ -1115,6 +1187,252 @@
         "Revisor leu verification.md somente após formar achados iniciais, para revisar documentação do próprio diff; não recebeu resultados de outro revisor.",
         "Gate cumulativo final da spec permanece pending e separado; nenhuma autorização de merge, main, deploy ou arquivo."
       ]
+    }
+  ],
+  "candidate_reviews": [
+    {
+      "status": "initial_semantic_analysis_and_followup_completed_not_final_gate",
+      "reviewer": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/spec_reviewer_sol_global",
+        "independent_context": true,
+        "selection_evidence": "Fresh Codex context accepted gpt-6.1-sol with reasoning_effort xhigh; provider variant/token telemetry not exposed."
+      },
+      "recorded_at": "2026-10-15T13:57:40.397428+00:00",
+      "initial_candidate": {
+        "base_sha": "d65006eb29a733c13c4f2a9f3741147d235dcd5b",
+        "reviewed_head_sha": "4ac43c482d37e1d90516553998dccb54f6fbb471",
+        "diff_sha256": "cb50621618dca2234c4a364c33845543a19de7d433e0e1e20c2ce1ec12bbd27b",
+        "digest_recalculated_by_reviewer": true
+      },
+      "coverage": {
+        "requirements": "All approved composition/capture/answers/finish/scoring/visitor/history requirements and24-row matrix confronted with tests.",
+        "architecture": "ADR0001, HTTP checklist, pure core, coordinated UseCases, infrastructure transactions/JPA, verified actor and concrete web DTOs.",
+        "integration": "Internal questionbank capture, OpenAPI/React queue/result/history/context, public study/query regressions; independent policy and result diffs examined.",
+        "security": "Owner before replay/state, principal/session/CSRF/CORS, indistinguishable404, no-store, separate projections and late-response invalidation.",
+        "persistence": "AdditiveV5, FKs/triggers/constraints, version/CAS, command identity, rollback before conflict recovery, visitor expiry/cascade.",
+        "tests": "Domain/application/PG/HTTP/architecture/React/browser/artifact/operational tests read; resource regression and complete matrix reviewed after initial analysis.",
+        "maintenance": "Permanent SOL policy, history compatibility, proper result resource presentation, documented causes/limits and explicit pending integrations."
+      },
+      "findings": [
+        {
+          "id": "SOL-CUM-R1",
+          "severity": "recommended",
+          "location": "frontend/src/AttemptResult.tsx:13",
+          "evidence": "Selected and correct alternatives displayed only Content.text, omitting captured resources[].description shown during practice.",
+          "reference": "mock-exams: server correction/captured resolution and accessible interface; task4.3.",
+          "impact": "Incomplete accessible review of alternatives with figures, without server data loss or grading change.",
+          "suggestion": "Use complete Content presentation for selected/correct alternatives and regress distinct resources.",
+          "disposition": "fixed",
+          "resolution": "Independent PR85 uses AttemptText in valid block structure for both alternatives. Test asserts distinct texts/descriptions, server score and focus; previous renderer fails negative control. Reviewer confirmed fixed at4320caa with no new findings. PR85 merged at e1c03ec; correction confirmed again in real joint head6727055, including distinct alternatives/resources and preserved score/focus."
+        }
+      ],
+      "limitations": [
+        "Initial semantic analysis covered92 files before verification.md; complete24-row matrix examined in later phase against tests.",
+        "After communicating initial independent conclusion/finding, reviewer called list_agents and incidentally received an earlier batch summary. This limits any claim of zero exposure after the initial analysis; later phase did not query agents.",
+        "Reviewer did not run tests/build/app/browser/network/DB or inspect generated artifacts/private logs/remote CI. Results are coordinator/GitHub Actions evidence.",
+        "Policy83 and resource85 are independent siblings fromd888a2b. No real joint epic head contains both yet; no synthetic union digest or final gate certification.",
+        "Only read operations occurred; reviewer also made the agent-list query described above. No reviewer file edits or merges."
+      ]
+    },
+    {
+      "status": "completed_joint_head_revalidation",
+      "reviewer": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/spec_reviewer_sol_global",
+        "independent_context": true,
+        "selection_evidence": "Fresh Codex context selected gpt-6.1-sol with reasoning_effort xhigh; the same reviewer performed revalidations. Provider variant/token telemetry not exposed."
+      },
+      "base_sha": "d65006eb29a733c13c4f2a9f3741147d235dcd5b",
+      "reviewed_head_sha": "6727055d0568a13c8b2dab8e61dfe7a7b153afd6",
+      "diff_sha256": "d1f7bd2706356ad74d6303426fc8e2ed25edb4e28267cf5bf02eca860dc5fa08",
+      "digest_recalculated_by_reviewer": true,
+      "findings": [
+        {
+          "id": "SOL-CUM-R1",
+          "severity": "recommended",
+          "location": "frontend/src/AttemptResult.tsx:13",
+          "evidence": "Selected and correct alternatives displayed only Content.text, omitting captured resources[].description shown during practice.",
+          "reference": "mock-exams: server correction/captured resolution and accessible interface; task4.3.",
+          "impact": "Incomplete accessible review of alternatives with figures, without server data loss or grading change.",
+          "suggestion": "Use complete Content presentation for selected/correct alternatives and regress distinct resources.",
+          "disposition": "fixed",
+          "resolution": "Independent PR85 uses AttemptText in valid block structure for both alternatives. Test asserts distinct texts/descriptions, server score and focus; previous renderer fails negative control. Reviewer confirmed fixed at4320caa with no new findings. PR85 merged at e1c03ec; correction confirmed again in real joint head6727055, including distinct alternatives/resources and preserved score/focus."
+        }
+      ],
+      "conclusion": "No new findings; R1 remains fixed; task83 revalidated against actual new base and cumulative94-file tree."
+    }
+  ],
+  "task_reviews": [
+    {
+      "pr": 83,
+      "status": "completed",
+      "risk": "critical",
+      "risk_reason": "Selection/profile of reviewer for cumulative gate; no executable guard/permissions/approval relaxation.",
+      "base_sha": "e1c03ec66921c5dca70099f889d175d09d9999b1",
+      "reviewed_head_sha": "6727055d0568a13c8b2dab8e61dfe7a7b153afd6",
+      "diff_sha256": "b4b2181fc89458f6032ea45e3965e8f7e607882de7fad46465560c309359c5d5",
+      "reviewer": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/spec_reviewer_sol_global",
+        "independent_context": true,
+        "selection_evidence": "Fresh Codex context selected gpt-6.1-sol with reasoning_effort xhigh; the same reviewer performed revalidations. Provider variant/token telemetry not exposed."
+      },
+      "findings": [],
+      "triage_complete": true,
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749963508/job/116473468527"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749954801/job/116473437995"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749962687/job/116473465799"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38766014163/job/116529267931"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749963508/job/116473469030"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749954801/job/116473437855"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749963508/job/116473468991"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749954801/job/116473437978"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749963508/job/116473469264"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38749954801/job/116473437613"
+        }
+      ],
+      "verification": {
+        "executed_by": "coordinator",
+        "quota_tests_windows": 8,
+        "scripts_linux": 54,
+        "openspec_strict_changes": 4
+      },
+      "conclusion": "No findings after revalidation of new base e1c03ec and real joint tree6727055; task merge authorized separately by user.",
+      "previous_review": {
+        "base_sha": "d888a2b4b18276465bb7753d3b6174955a79f41a",
+        "reviewed_head_sha": "4ac43c482d37e1d90516553998dccb54f6fbb471",
+        "diff_sha256": "b4b2181fc89458f6032ea45e3965e8f7e607882de7fad46465560c309359c5d5"
+      }
+    },
+    {
+      "pr": 85,
+      "status": "completed",
+      "risk": "standard",
+      "risk_reason": "Presentation of already permitted captured Content after finish; no scoring/HTTP/persistence/security changes. Cumulative combination remains critical.",
+      "base_sha": "d888a2b4b18276465bb7753d3b6174955a79f41a",
+      "reviewed_head_sha": "4320caa629bfedb904bbdd8a3b00af3d515f7bfe",
+      "diff_sha256": "ce71adb319579a8fc6c945d5f265057fd36c2c2459f37e6f608f4d6ca9e034a6",
+      "reviewer": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/spec_reviewer_sol_global",
+        "independent_context": true,
+        "selection_evidence": "Fresh Codex context accepted gpt-6.1-sol with reasoning_effort xhigh; provider variant/token telemetry not exposed."
+      },
+      "findings": [
+        {
+          "id": "SOL-CUM-R1",
+          "severity": "recommended",
+          "location": "frontend/src/AttemptResult.tsx:13",
+          "evidence": "Selected and correct alternatives displayed only Content.text, omitting captured resources[].description shown during practice.",
+          "reference": "mock-exams: server correction/captured resolution and accessible interface; task4.3.",
+          "impact": "Incomplete accessible review of alternatives with figures, without server data loss or grading change.",
+          "suggestion": "Use complete Content presentation for selected/correct alternatives and regress distinct resources.",
+          "disposition": "fixed",
+          "resolution": "Independent PR85 uses AttemptText in valid block structure for both alternatives. Test asserts distinct texts/descriptions, server score and focus; previous renderer fails negative control. Reviewer confirmed fixed at4320caa with no new findings."
+        }
+      ],
+      "triage_complete": true,
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746251168/job/116460560322"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746248734/job/116460552243"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746251106/job/116460559670"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746251168/job/116460560477"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746248734/job/116460552862"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746251168/job/116460560908"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746248734/job/116460552810"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746251168/job/116460560753"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38746248734/job/116460553181"
+        }
+      ],
+      "verification": {
+        "executed_by": "coordinator and GitHub Actions, not reviewer",
+        "frontend_tests": 108,
+        "build": "passed",
+        "artifact_scan": "passed",
+        "negative_control": "old renderer fails resource-description regression; fixed renderer restored"
+      },
+      "conclusion": "SOL-CUM-R1 fixed, no new findings; no joint snapshot or merge authorization.",
+      "integration": {
+        "state": "MERGED",
+        "merge_sha": "e1c03ec66921c5dca70099f889d175d09d9999b1",
+        "user_authorized": true
+      }
     }
   ]
 }

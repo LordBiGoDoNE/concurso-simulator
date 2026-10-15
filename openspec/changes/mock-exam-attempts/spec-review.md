@@ -1,8 +1,92 @@
-# Revisão cumulativa — mock-exam-attempts
+# Revisão cumulativa — mock-exam-attempts, PR #84
 
-**Gate cumulativo final pendente.** 24/24 tarefas implementadas/verificadas; grupos1/2
-integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`. Grupos3–6 revisados e revalidados como lote,
-ainda em dez PRs draft, sem aprovação/integração presumida. Não é revisão final da spec.
+**Revisão independente concluída no head conjunto `6727055d0568a13c8b2dab8e61dfe7a7b153afd6`.**
+SOL-CUM-R1 corrigido; nenhum novo achado ou bloqueador remanescente confirmado.
+Autorização de merge do **#84 ainda pendente**. O usuário autorizou apenas as tarefas
+#83/#85; o gate automatizado do head real deve ser conferido após integrar #83.
+
+## Escopo e cobertura
+
+Modelo permanente `openai/gpt-6.1-sol#xhigh`, contexto inicialmente novo
+`/root/spec_reviewer_sol_global`, mesmo revisor nas revalidações. Seleção aceita pelo
+Codex como gpt-6.1-sol +xhigh; telemetria independente da variante do provedor não exposta.
+Risco **crítico**: posse/sessão/CSRF, snapshot e correção privada, idempotência/concorrência,
+schema/transações/rollback/expiração e política de seleção do revisor.
+
+Diff completo cumulativo de 94 arquivos relevantes, incluindo código, requisitos,
+testes, documentação e política permanente SOL. Os dois arquivos de evidência não
+foram lidos pelo revisor e são os únicos excluídos do digest. A matriz foi examinada
+depois da análise semântica independente inicial e conferida novamente no conjunto.
+
+| Área | Cobertura |
+| --- | --- |
+| requirements | Composição de 1–100/filtros/insuficiência/sem reposição, versões/ordens/respostas, conclusão/correção, visitante/histórico e 24 itens da matriz |
+| architecture | ADR 0001/checklist HTTP, núcleo puro, agregado/UseCases/portas, transações/JPA infra, ator verificado e DTOs concretos |
+| integration | Porta questionbank, HTTP/OpenAPI, fila/retry/resultado/histórico/identidade e coexistência real dos PRs #83/#85 |
+| security | Posse antes de replay/exposição, principal/sessão/CSRF/CORS/404/no-store, projeções ativas e respostas tardias |
+| persistence | V5 aditiva, captura histórica, constraints/triggers/FKs, versão/CAS/comandos/rollback/expiração/cascata restrita |
+| tests | Testes novos de todas as camadas e browser/artefatos/operação lidos; regressão R1 e matriz completas revalidadas |
+| maintenance | Rollback sem apagar dados, fixtures só de teste, conteúdo acessível e política SOL sem relaxar gate/workflow/aprovações |
+
+## Achados e triagem
+
+**SOL-CUM-R1 — recommended → fixed.** A tela de resultado mostrava apenas texto das
+alternativas escolhida/correta, omitindo descrições de figuras presentes no snapshot.
+O #85, aprovado e integrado em `e1c03ec66921c5dca70099f889d175d09d9999b1`, passou a usar Content/AttemptText
+completo em blocos HTML válidos. A regressão distingue textos/descrições das duas
+alternativas e exige foco/nota; o renderer anterior falha no controle negativo.
+Resposta em branco, resolução, fontes e nota do servidor foram preservadas.
+
+O revisor confirmou a correção novamente no head conjunto, sem novos achados
+blocking/recommended/optional. Triagem encerrada. Os achados dos lotes anteriores
+permanecem históricos separados, sem serem apresentados como resultados desta revisão.
+
+## Evidências e limitações
+
+Coordenador/GitHub Actions: **149 backend, 108 frontend, 14 cenários reais de navegador**, builds,
+study-material/aulas/offline e guard de revisão PASS no head conjunto. Oito testes de
+cota Windows e 54 scripts Linux passaram na atualização da política. Quatro mudanças
+OpenSpec estritas e inspeção de artefatos PASS; rollback operacional adicional já
+verificado e não repetido para alterações somente frontend/política. URLs por tarefa
+e verificações/executores estão no JSON; matriz em [verification.md](verification.md).
+
+Revisor não executou testes/build/aplicação/browser/rede/DB, não inspecionou artefatos,
+logs privados ou CI remoto, nem fez edições/merges. Após comunicar a conclusão inicial
+independente e o achado, uma consulta list_agents expôs incidentalmente resumo de lote
+anterior; essa exposição posterior limita qualquer alegação de zero exposição. As fases
+complementares não repetiram a consulta. Contexto novo reduz viés, não garante ausência.
+Testes e inspeção estática não demonstram toda falha de transporte, escalonamento,
+carga, ausência de dica semântica ou decisão arquitetural. Cota/tokens indisponíveis;
+observações privadas ficam fora do Git e são apresentadas ao usuário separadamente.
+Uma tentativa intermediária interrompida não produziu parecer e não foi contada como revisão.
+
+## Revalidação
+
+Base da épica geral: `d65006eb29a733c13c4f2a9f3741147d235dcd5b`.
+Head conjunto examinado: `6727055d0568a13c8b2dab8e61dfe7a7b153afd6`.
+SHA-256 cumulativo recalculado pelo revisor: `d1f7bd2706356ad74d6303426fc8e2ed25edb4e28267cf5bf02eca860dc5fa08`.
+
+O head conjunto tem pais `ee6366403deadb07871311f2de4c98f4b9c4ec57` e `e1c03ec66921c5dca70099f889d175d09d9999b1`;
+preserva os commits aprovados/revisados 4ac43c4,4320caa,ee63664 e e1c03ec. A árvore do
+merge do #85 é idêntica à do head do #85 aprovado. Contra o candidato inicial 4ac, o delta relevante
+é exatamente renderer, regressão, documentação e matriz da correção #85.
+
+O #83 foi revalidado contra sua **nova base real** `e1c03ec66921c5dca70099f889d175d09d9999b1`, não apenas por
+igualdade visual/digest anterior. Digest por tarefa
+`b4b2181fc89458f6032ea45e3965e8f7e607882de7fad46465560c309359c5d5` recalculado.
+A política mantém SOL permanente, independência, risco, triagem, atualidade e aprovação;
+sem novo bypass ou exigência de outro modelo.
+
+No momento do parecer, #83 ainda estava aberto e o head real de #84 era e1c03ec.
+Após o merge autorizado de #83, o coordenador deve confirmar a mesma base de #84,
+ancestralidade deste head revisado, digest idêntico e o check real `spec-review`.
+Somente estes dois arquivos de evidência são atualizados depois do head examinado.
+Isso não autoriza merge de #84, épica geral→main, deployment ou arquivamento.
+
+## Histórico — revisões dos lotes anteriores à integração
+
+Os registros abaixo preservam os estados no momento das análises. Não certificam
+a revisão cumulativa atual nem substituem as integrações registradas na issue #64.
 
 ## Lote 2 — grupos 3–6 completos
 

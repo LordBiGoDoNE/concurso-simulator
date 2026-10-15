@@ -49,3 +49,23 @@ registro conhecido é recuperado em nova transação após rollback; outras falh
 
 `EligibleTemplates` é uma porta privada para captura no snapshot do consumidor; ainda
 não altera a composição nem expõe HTTP. Aprovação editorial real permanece no grupo 4.
+
+## Persistência V6
+
+V6 adiciona apenas `pq_family`, `pq_version` e `pq_decision`. Família tem uma base única,
+ponteiro elegível e versão técnica; definições/manifestações/decisões são imutáveis com
+FKs para a revisão real e aprovação obrigatória para o ponteiro. Não altera V1–V5 ou
+seus triggers. Metadados da instância do simulado serão adicionados no grupo 3, ainda
+não autorizado neste lote. Nenhuma família é cadastrada/aprovada por migração/startup.
+
+Escrita usa JPA, REQUIRES_NEW/REPEATABLE_READ, lock por agregado e limite de 15s.
+Somente `pq_family_pkey`/`pq_family_base_key` permitem recuperação de registro idêntico
+em transação nova após rollback. SQLSTATE 40001 resulta em estado desatualizado; FK,
+indisponibilidade e falhas desconhecidas não viram sucesso. Repositório confere colunas,
+payloads, digests, histórico e ponteiro ao restaurar. Sessão não escapa da transação.
+
+Captura privada `JpaEligibleTemplates` exige transação do consumidor (que deve ser
+REPEATABLE_READ como a de tentativas) e faz um join de ponteiro, aprovação e revisão-base
+elegível/fingerprint em uma consulta. Retirada/substituição da base remove a geração
+futura; um snapshot transacional anterior mantém seu conjunto. Não modifica a consulta
+pública do banco nem cria dependência do núcleo de questões para parametrização.

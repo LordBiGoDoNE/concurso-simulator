@@ -59,3 +59,15 @@ identidade só muda após resposta verificada, sem alegar detecção de cookie d
 contexto antes de qualquer evento/requisição. Browser real/OIDC/PG verifica a combinação.
 
 Ao revalidar a identidade com tentativa ativa, a workspace também confere seu acesso por GET antes de voltar a exibi-la, preservando escolhas em memória enquanto a identidade é a mesma. Isso detecta expiração/troca de sessão visitante, que não pode ser distinguida apenas pelo 401 de /me. Falha mantém conteúdo oculto até retry; 401/403/404 desmontam o contexto.
+
+## Verificação de assets e módulos corretivos
+
+A entrada inicial da SPA e a consulta pública não carregam o renderer/validador de
+resultado. Esses módulos genéricos são importados dinamicamente após a resposta de
+conclusão ou ao consultar tentativa fechada. Todos os chunks continuam sem payloads,
+resoluções, credenciais ou seeds de fixtures. O campo de contrato correctAlternativeId
+é usado apenas nos módulos corretivos; seu nome no código genérico não é um gabarito.
+O teste anterior procurava esse nome em todo JS, antes de existir uma tela de resultado.
+A regressão agora verifica ausência no entry inicial, ausência de carregamento corretivo
+na consulta pública e ausência de conteúdo privado em todos os chunks, além dos
+controles negativos de JSON/DOM ativos. Os endpoints continuam sendo a fronteira de posse.

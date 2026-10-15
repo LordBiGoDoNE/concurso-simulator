@@ -1,9 +1,10 @@
-import { useEffect, useRef, useState } from 'react';
+import { lazy, Suspense, useEffect, useRef, useState } from 'react';
 import type { AttemptView } from './attempt-api';
 import { useAttemptRun } from './useAttemptRun';
-import AttemptResult from './AttemptResult';
 import ConfirmAttemptFinish from './ConfirmAttemptFinish';
 import AttemptText from './AttemptText';
+
+const AttemptResult = lazy(() => import('./AttemptResult'));
 
 export default function AttemptPractice({ initial, onUnavailable, onFinished }: { initial: AttemptView; onUnavailable: () => void; onFinished?: () => void }) {
   const run = useAttemptRun(initial, onUnavailable); const [position, setPosition] = useState(0); const heading = useRef<HTMLHeadingElement>(null);
@@ -16,7 +17,7 @@ export default function AttemptPractice({ initial, onUnavailable, onFinished }: 
   const answered = run.view.items.filter(i => run.selected(i) !== null).length;
   if (run.view.finishedAt !== null) return <>
     {run.message && <p role="alert">{run.message}</p>}
-    {run.result ? <AttemptResult result={run.result} /> : <p role="status">Carregando resultado do servidor…</p>}
+    {run.result ? <Suspense fallback={<p role="status">Carregando revisão…</p>}><AttemptResult result={run.result} /></Suspense> : <p role="status">Carregando resultado do servidor…</p>}
     {run.resultFailed && <><p role="alert">Resultado indisponível. A tentativa continua concluída no servidor.</p><button onClick={() => void run.loadResult()}>Tentar resultado novamente</button></>}
   </>;
   return <section aria-labelledby="attempt-practice-title">

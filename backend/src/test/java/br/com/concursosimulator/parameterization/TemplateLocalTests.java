@@ -71,6 +71,46 @@ class TemplateLocalTests {
         }
         assertThat(output.size()).isZero();
     }
+    @Test void scalarStringsFractionsAndEnumOrdinalsAreRejectedBeforeAccessingTheDatabase()throws Exception{
+        var d=definition(Family.PERCENTAGE);var definition=new TemplateLocal.DefinitionInput("parameter-template/v1",d,0);
+        for(var patch:List.of("string-latest","fraction-latest","string-version","fraction-version","ordinal-family","null-version")){
+            var tree=(tools.jackson.databind.node.ObjectNode)json.valueToTree(definition);
+            var value=(tools.jackson.databind.node.ObjectNode)tree.get("definition");
+            switch(patch){
+                case "string-latest" -> tree.put("expectedLatest","0");
+                case "fraction-latest" -> tree.put("expectedLatest",0.9);
+                case "string-version" -> value.put("version","1");
+                case "fraction-version" -> value.put("version",1.9);
+                case "ordinal-family" -> value.put("family",1);
+                case "null-version" -> value.putNull("version");
+                default -> throw new AssertionError();
+            }
+            Files.writeString(root.resolve("coercion.json"),json.writeValueAsString(tree));
+            assertThatThrownBy(() -> run("register","coercion.json",Map.of(),"")).isInstanceOf(tools.jackson.core.JacksonException.class);
+        }
+        var v=TemplateUseCases.preview(d);var decision=new TemplateLocal.DecisionInput("parameter-decision/v1",decision(v,TemplateDecision.Action.APPROVE),1,2);
+        for(var patch:List.of("string-sequence","fraction-sequence","string-eligible","fraction-eligible","ordinal-action","ordinal-checklist","boolean-action","null-sequence","numeric-responsible","boolean-rationale","string-action")){
+            var tree=(tools.jackson.databind.node.ObjectNode)json.valueToTree(decision);
+            var value=(tools.jackson.databind.node.ObjectNode)tree.get("decision");
+            switch(patch){
+                case "string-sequence" -> tree.put("expectedSequence","2");
+                case "fraction-sequence" -> tree.put("expectedSequence",2.9);
+                case "string-eligible" -> tree.put("expectedEligible","1");
+                case "fraction-eligible" -> tree.put("expectedEligible",1.9);
+                case "ordinal-action" -> value.put("action",2);
+                case "ordinal-checklist" -> value.putArray("checklist").add(0);
+                case "boolean-action" -> value.put("action",true);
+                case "null-sequence" -> tree.putNull("expectedSequence");
+                case "numeric-responsible" -> value.put("responsible",123);
+                case "boolean-rationale" -> value.put("rationale",true);
+                case "string-action" -> value.put("action","2");
+                default -> throw new AssertionError();
+            }
+            Files.writeString(root.resolve("coercion.json"),json.writeValueAsString(tree));
+            assertThatThrownBy(() -> run("decide","coercion.json",Map.of(),"")).isInstanceOf(tools.jackson.core.JacksonException.class);
+        }
+        assertThat(output.size()).isZero();
+    }
     @Test void traversalOversizeAndSymlinkInputsCannotEscapeTheChosenRoot()throws Exception{
         assertThatThrownBy(() -> run("preview","../outside.json",Map.of(),"")).isInstanceOf(IllegalArgumentException.class);
         assertThatThrownBy(() -> run("preview","C:/private.json",Map.of(),"")).isInstanceOf(IllegalArgumentException.class);

@@ -77,6 +77,11 @@ escolhida pelo operador. Caminho do arquivo é relativo com `/`, sem traversal/s
 a raiz/diretórios devem permanecer estáveis durante confirmação. JSON com campos
 extras, duplicados, ausentes, objetos adicionais ou seleção em array é recusado antes
 de conectar. Arquivo é relido/conferido após confirmação. Não importa listas parcialmente.
+Tipos são exatos: strings/frações não viram inteiros e enums não aceitam ordinais, tanto
+em definição/versão quanto em estado esperado, ação ou checklist. O mapper local é
+configurado explicitamente; flags da aplicação web não configuram esse mapper estático.
+Regressão dessa fronteira cobre coerções que Jackson aceita por padrão; proteção não
+substitui validação semântica ou a decisão editorial do conjunto exato.
 
 Arquivo de definição: `{format: "parameter-template/v1", definition: TemplateDefinition,
 expectedLatest: inteiro}`; versão deve ser expectedLatest+1. Definição tem id/version,

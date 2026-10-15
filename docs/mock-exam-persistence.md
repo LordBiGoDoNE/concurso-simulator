@@ -40,3 +40,21 @@ mesma versão, conclusões distintas e retry da mesma conclusão. Também exerci
 editorial antes/depois da captura, insuficiência sem resíduos, falha após gravações,
 FK desconhecida e resposta do commit perdida pelo cliente. Este último caso simula
 perda de confirmação; não é um teste de transporte HTTP, fora do escopo deste lote.
+
+O histórico consulta somente owner ACCOUNT, com índice e paginação limitada, ordem
+createdAt DESC/id DESC e filtro opcional de estado. Retorna percentual apenas depois
+da conclusão. Não depende da sessão que iniciou a tentativa; outra conta e visitante
+continuam sem acesso. Os testes PG conferem páginas inclusive com datas empatadas.
+
+Visitantes vencem exatamente em createdAt + 24h. `ExpiredAttemptCleanup` usa o Clock
+do servidor, executa no ApplicationReadyEvent e a cada cinco minutos enquanto saudável,
+margem para o limite de uma hora. A exclusão indexada remove vencidos e cascata itens/
+comandos, preservando conta/acervo e visitantes ainda válidos. Domínio bloqueia acesso
+no vencimento independentemente da limpeza. Falhas de limpeza propagam para a operação
+de startup ou são registradas pelo scheduler, sem incluir conteúdo privado. Monitorar
+falhas e capacidade em produção será responsabilidade do deployment; indisponibilidade
+não permite prometer execução no prazo enquanto o aplicativo estiver parado.
+
+Os testes controlam relógio, publicam o evento real de startup e acionam a tarefa
+registrada no scheduler, sem esperar 24h. Conferem acesso no limite, intervalo registrado,
+recuperação de atrasos após reinício, cascata, visitantes mais novos e contas preservadas.

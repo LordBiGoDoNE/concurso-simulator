@@ -19,3 +19,16 @@ da resposta, DSL, IA em tempo real, rede ou acesso a banco pelo núcleo.
 Testes sintéticos não aprovam conteúdo. Famílias reais e bases serão preparadas e
 submetidas editorialmente no grupo 4; manifesto/validação e transições vêm nas camadas
 seguintes dos grupos 1 e 2. O aplicativo público e os snapshots V5 permanecem intactos.
+
+## Manifesto e validação
+
+`VariantManifest.create` enumera o domínio inteiro na ordem de chaves/valores fixada,
+compara saída com o gerador conhecido e verifica a resposta por relações aritméticas
+independentes (`NumericOracle`, sem chamar o gerador). Testes também rejeitam cada uma
+das 333 respostas distratoras no domínio completo, além dos problemas de referência.
+Manifesto registra definição/domínio/gerador e parâmetros/digest de cada saída; ausência,
+duplicação, troca de ordem ou adulteração invalida o conjunto. Nenhuma tupla é descartada.
+
+Digest é detecção de mudança, não prova matemática ou aprovação pedagógica. A decisão
+editorial continua necessária para linguagem, distratores, passos, unidades e referências.
+Não publicar manifesto/relatório privado nos contratos de realização da tentativa.

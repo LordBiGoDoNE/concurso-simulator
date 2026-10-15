@@ -31,4 +31,18 @@ public final class QuestionBrowserFixtures {
                 "Fixture de navegador, sem validade editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Banco Testcontainers exclusivo, não aprovação do acervo"),
                 q.eligible().map(QuestionRevision::id).orElse(null),q.editorialSequence());
     }
+    /** Mutação editorial exclusivamente no harness local de testes, com nova revisão. */
+    public static void replace(ConfigurableApplicationContext context,UUID id) {
+        var store=context.getBean(QuestionStore.class);
+        var revision=store.transaction(s -> {
+            var q=s.loadForUpdate(id).orElseThrow();var c=q.latest().content();
+            var r=q.append(UUID.randomUUID(),new QuestionContent(new TextContent(c.statement().text()+" EDITORIAL_CHANGED"),c.alternatives(),
+                    QuestionFixtures.SECOND,new TextContent("NEW_BROWSER_RESOLUTION_SENTINEL"),c.classification(),c.references(),c.provenance()));
+            s.save(q);return r;
+        });
+        for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE)) store.transaction(s -> {
+            var q=s.loadForUpdate(id).orElseThrow();q.decide(new EditorialDecision(action,id,revision.id(),revision.fingerprint(),
+                    "Fixture de mudança editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente banco sintético de navegador"));s.save(q);return null;
+        });
+    }
 }

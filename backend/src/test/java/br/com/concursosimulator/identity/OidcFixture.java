@@ -85,6 +85,16 @@ public final class OidcFixture implements AutoCloseable {
             } catch (RuntimeException exception) { json(exchange, 500, Map.of("error", "restart_failed")); }
         });
     }
+    public void enableEditorialChange(java.util.function.Consumer<UUID> change) {
+        server.createContext("/fixture/editorial", exchange -> {
+            if (!exchange.getRequestMethod().equals("POST")) { json(exchange,405,Map.of("error","method_not_allowed")); return; }
+            try {
+                var params=parameters(new String(exchange.getRequestBody().readAllBytes(),StandardCharsets.UTF_8));
+                change.accept(UUID.fromString(params.getOrDefault("id","")));json(exchange,200,Map.of("ready",true));
+            } catch (IllegalArgumentException error) { json(exchange,400,Map.of("error","invalid_fixture_request")); }
+            catch (RuntimeException error) { json(exchange,500,Map.of("error","fixture_change_failed")); }
+        });
+    }
     private void authorize(HttpExchange exchange) throws java.io.IOException {
         var params = parameters(exchange.getRequestURI().getRawQuery());
         String state = params.get("state");

@@ -71,3 +71,17 @@ O teste anterior procurava esse nome em todo JS, antes de existir uma tela de re
 A regressão agora verifica ausência no entry inicial, ausência de carregamento corretivo
 na consulta pública e ausência de conteúdo privado em todos os chunks, além dos
 controles negativos de JSON/DOM ativos. Os endpoints continuam sendo a fronteira de posse.
+
+## Verificação em navegador real
+
+Playwright/Chromium com API Java, PostgreSQL18.6 e OIDC local: 13 cenários passaram,
+sete novos de simulados e seis regressões de identidade/banco. Os novos cobrem teclado,
+foco/radios/dialog e largura 390/1280 sem overflow, visitante e resultado, confirmação
+perdida depois do commit, retomada em outro navegador após reinício, duas contas/abas,
+edição editorial depois do início, login sem transferência e expiração real da sessão.
+Um controle negativo acrescenta campo corretivo e exige falha da proteção de JSON.
+Screenshots de realização/resultado em ambas as larguras foram inspecionados localmente.
+Fixtures/editorial/restart existem somente no classpath de testes; sem Google real ou
+acervo aprovado local. Cache/storage/service workers permanecem vazios na origem da SPA.
+A verificação de navegador não demonstra comportamento sob toda carga/rede nem o smoke
+Google real exigido para deployment; estes limites permanecem explícitos.

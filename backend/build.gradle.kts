@@ -66,3 +66,13 @@ tasks.register<JavaExec>("questionBankLocal") {
     standardInput = System.`in`
     if (project.hasProperty("localArgs")) args(project.property("localArgs").toString().split(" "))
 }
+
+
+tasks.register<JavaExec>("mockExamOperationalCheck") {
+    group = "verification"
+    description = "Deliberate isolated PostgreSQL rollback/restart check using an approved previous JAR"
+    dependsOn(tasks.testClasses)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.mockexam.MockExamOperationalFixture")
+    if (project.hasProperty("rollbackJar")) args(project.property("rollbackJar").toString())
+}

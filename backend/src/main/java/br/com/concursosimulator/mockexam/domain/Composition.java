@@ -4,7 +4,8 @@ import br.com.concursosimulator.questionbank.domain.*;
 import java.util.*;
 import java.util.random.RandomGenerator;
 
-public record Composition(TargetRole role, Map<Discipline, Portion> disciplines) {
+public record Composition(TargetRole role, Map<Discipline, Portion> disciplines, boolean useParameterizedQuestions) {
+    public Composition(TargetRole role, Map<Discipline, Portion> disciplines) { this(role,disciplines,false); }
     public record Portion(int quantity, Set<Topic> topics) {
         public Portion {
             if (quantity < 1 || quantity > 100) throw new IllegalArgumentException("Quantidade inválida");

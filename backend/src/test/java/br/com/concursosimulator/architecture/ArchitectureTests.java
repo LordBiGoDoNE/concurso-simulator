@@ -43,10 +43,11 @@ class ArchitectureTests {
                         "java..", "..questionbank.domain..", "..questionbank.application..").check(CODE);
     }
 
-    @Test void mockExamCoreOnlyDependsOnItsOwnCoreAndQuestionValueObjects() {
+    @Test void mockExamCoreConsumesQuestionAndParameterizationDomainWithoutAdaptersOrReverseDependency() {
         classes().that().resideInAnyPackage("..mockexam.domain..", "..mockexam.application..")
                 .should().onlyDependOnClassesThat().resideInAnyPackage(
-                        "java..", "..mockexam.domain..", "..mockexam.application..", "..questionbank.domain..").check(CODE);
+                        "java..", "..mockexam.domain..", "..mockexam.application..", "..questionbank.domain..",
+                        "..parameterization.domain..").check(CODE);
     }
     @Test void parameterizationCoreOnlyDependsOnItsOwnCoreAndQuestionValueObjects() {
         classes().that().resideInAnyPackage("..parameterization.domain..", "..parameterization.application..")

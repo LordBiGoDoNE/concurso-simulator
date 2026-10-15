@@ -12,6 +12,9 @@ public interface AttemptStore {
         Optional<Attempt.Snapshot> find(UUID id);
         Optional<Command> command(AttemptOwner owner, UUID operation);
         List<AttemptQuestion> eligible();
+        default List<br.com.concursosimulator.parameterization.domain.TemplateVersion> templates() {
+            throw new IllegalStateException("Captura de templates indisponível");
+        }
         void insert(Attempt.Snapshot snapshot);
         void update(Attempt.Snapshot snapshot, long expectedVersion);
         void record(AttemptOwner owner, UUID operation, Command command);

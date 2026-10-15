@@ -2,6 +2,8 @@ package br.com.concursosimulator.platform.infrastructure;
 
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.shared.infrastructure.PublicQuestionRoutes;
+import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
+import br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
@@ -91,7 +93,7 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository,
             GoogleLoginProperties google, ObjectProvider<ClientRegistrationRepository> registrations,
             GoogleLoginHandlers handlers, HttpSessionOAuth2AuthorizedClientRepository clients,
-            ApiAccessFailureHandler failures) throws Exception {
+            ApiAccessFailureHandler failures, AttemptAccess attempts) throws Exception {
         if (google.enabled()) {
             var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), "/oauth2/authorization");
             resolver.setAuthorizationRequestCustomizer(OAuth2AuthorizationRequestCustomizers.withPkce());
@@ -108,6 +110,8 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/api/v1/csrf", "/api/v1/auth/config",
                                 "/oauth2/authorization/google", "/login/oauth2/code/google").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/v1/me/attempts").access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
+                        .requestMatchers(AttemptRoutes::permits).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
                         .requestMatchers(HttpMethod.GET, "/api/v1/me").access((authentication, request) -> {
                             var current = authentication.get();
                             return new AuthorizationDecision(trust.isAuthenticated(current)
@@ -146,6 +150,11 @@ public class SecurityConfiguration {
         source.registerCorsConfiguration("/api/v1/csrf", sessions);
         source.registerCorsConfiguration("/api/v1/auth/logout", sessions);
         source.registerCorsConfiguration("/api/v1/auth/config", sessions);
+        var attempts=new CorsConfiguration(sessions);
+        attempts.setAllowedMethods(List.of("GET","POST","PUT"));
+        source.registerCorsConfiguration("/api/v1/attempts",attempts);
+        source.registerCorsConfiguration("/api/v1/attempts/**",attempts);
+        source.registerCorsConfiguration("/api/v1/me/attempts",attempts);
         return source;
     }
 }

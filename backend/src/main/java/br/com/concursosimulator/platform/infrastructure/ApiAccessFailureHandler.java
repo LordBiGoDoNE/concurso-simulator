@@ -15,23 +15,30 @@ public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
             throws IOException {
-        reject(request, response);
+        reject(request, response, false);
     }
 
     @Override
     public void handle(HttpServletRequest request, HttpServletResponse response, AccessDeniedException exception)
             throws IOException {
-        reject(request, response);
+        reject(request, response, exception instanceof org.springframework.security.web.csrf.CsrfException);
     }
 
-    private void reject(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        if ("GET".equals(request.getMethod()) && "/api/v1/me".equals(request.getServletPath())) {
+    private void reject(HttpServletRequest request, HttpServletResponse response, boolean csrf) throws IOException {
+        boolean attempts=br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.owns(request);
+        if (!csrf && ("GET".equals(request.getMethod()) && ("/api/v1/me".equals(request.getServletPath())
+                || "/api/v1/me/attempts".equals(request.getServletPath()))
+                || br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.permits(request))) {
             response.setStatus(401);
             response.setContentType("application/json");
             response.setHeader("Cache-Control", "no-store");
             response.getWriter().write("{\"error\":\"unauthenticated\"}");
         } else {
             response.setStatus(403);
+            if (attempts) {
+                response.setContentType("application/json"); response.setHeader("Cache-Control","no-store");
+                response.getWriter().write("{\"error\":\"forbidden\"}");
+            }
         }
     }
 }

@@ -1,6 +1,6 @@
 # Tasks
 
-**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 8/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; lote autorizado inclui **1.1–1.4 e 2.1–2.4 completos**, sem merge presumido da implementação. Grupos 3–6 aguardam pedido próprio. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
+**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 9/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; grupos 1/2 aprovados e integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`. Novo lote explicitamente autorizado pelo usuário: **grupos 3–6 completos (3.1–6.4)**, sem merge presumido de novas implementações. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
 
 Cada grupo inclui seus próprios código/testes/docs. Tarefas pequenas/coesas em PRs
 revisáveis (preferência 300–500 linhas autorais), sem reunir toda a spec num PR.
@@ -23,7 +23,7 @@ Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos p
 
 ## 3. Ator técnico, segurança e HTTP — depende de 1–2
 
-- [ ] 3.1 Resolver ator tipado da sessão/identidade verificada e proteger rotas/CSRF/CORS sem duplicar rejeições no controller; testar cadeia real visitante/conectado/expirado/principal inválido e ausência de owner vindo do cliente, documentando checklist HTTP.
+- [x] 3.1 Resolver ator tipado da sessão/identidade verificada e proteger rotas/CSRF/CORS sem duplicar rejeições no controller; testar cadeia real visitante/conectado/expirado/principal inválido e ausência de owner vindo do cliente, documentando checklist HTTP.
 - [ ] 3.2 Expor criação/consulta/respostas com DTOs tipados e OpenAPI, sem campos corretivos; testar 200/201/400/403/404/409/503, campos extras e negativo controlado de vazamento/posse, com contratos documentados.
 - [ ] 3.3 Expor conclusão/resultado e proteger transições; testar resultado precoce 409, dono incorreto 404 indistinguível, correção da versão capturada e retry de conclusão sem novo efeito, com exemplos documentados.
 - [ ] 3.4 Expor histórico privado/retomada com paginação/ordem/no-store; testar outra conta, visitante 401, cookies/CSRF, indisponibilidade e isolamento da consulta stateless existente, com regressões OIDC/logout/readiness e ArchUnit.
@@ -51,7 +51,7 @@ Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos p
 
 ## Workflow follow-up
 
-- Publicar os artefatos aprovados da issue #64 na branch correta; lote 1/2 já escolhido explicitamente. Novos grupos e merges da implementação continuam exigindo autorização própria.
+- Publicar os artefatos aprovados da issue #64 na branch correta; lote 1/2 já escolhido explicitamente. Grupos 3–6 agora autorizados integralmente; novos merges da implementação continuam exigindo autorização própria.
 - Usar Stacks v0.2.1 apenas em tarefas realmente dependentes desta spec, drafts com trunk `epic/mock-exam-attempts`, código/testes/docs coesos; conferir metadados/checks a cada camada e preservar refs.
 - Revisão independente SOL 6.1 xhigh por lote, observações mínimas de cota antes/depois e nenhuma geração concorrente; integrações somente com aprovação explícita dos PRs/heads.
 - Ao concluir a spec, abrir `[SPEC]` para a épica geral e executar gate cumulativo Astra medium em contexto novo; aprovação de tarefas não autoriza esse merge.

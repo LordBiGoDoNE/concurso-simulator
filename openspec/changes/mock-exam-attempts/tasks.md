@@ -1,6 +1,6 @@
 # Tasks
 
-**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 21/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; grupos 1/2 aprovados e integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`. Novo lote explicitamente autorizado pelo usuário: **grupos 3–6 completos (3.1–6.4)**, sem merge presumido de novas implementações. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
+**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 22/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; grupos 1/2 aprovados e integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`. Novo lote explicitamente autorizado pelo usuário: **grupos 3–6 completos (3.1–6.4)**, sem merge presumido de novas implementações. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
 
 Cada grupo inclui seus próprios código/testes/docs. Tarefas pequenas/coesas em PRs
 revisáveis (preferência 300–500 linhas autorais), sem reunir toda a spec num PR.
@@ -44,7 +44,7 @@ Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos p
 
 ## 6. Verificação da combinação — depende de 1–5 completos
 
-- [ ] 6.1 Exercitar upgrade/reinício/rollback operacional sobre base com identidades/sessões/acervo e tentativas; conferir integridade, duração visitante e retomada real, registrando comandos/resultados sem dados privados.
+- [x] 6.1 Exercitar upgrade/reinício/rollback operacional sobre base com identidades/sessões/acervo e tentativas; conferir integridade, duração visitante e retomada real, registrando comandos/resultados sem dados privados.
 - [x] 6.2 Executar E2E completo visitante e conta, duas abas/contas e mudança editorial após início; comprovar seleção/correção histórica, isolamento e conflitos, sem usar acervo real aprovado como fixture de CI.
 - [ ] 6.3 Executar builds/testes/ArchUnit/HTTP/browser/OpenSpec e regressão das aulas/URLs/offline; inspecionar JAR/bundle/contratos contra fixtures/segredos/gabarito antecipado e comprovar CI sem deploy.
 - [ ] 6.4 Consolidar matriz requisitos→testes, PRs/SHAs/checks, limites e achados triados da combinação; manter issue distinguindo implementado de integrado e preparar evidência para o gate cumulativo sem inventar sua execução.

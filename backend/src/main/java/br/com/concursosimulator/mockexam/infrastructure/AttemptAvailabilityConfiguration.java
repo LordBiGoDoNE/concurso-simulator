@@ -20,7 +20,7 @@ public class AttemptAvailabilityConfiguration {
                 try { chain.doFilter(request,response); }
                 catch (RuntimeException | ServletException failure) {
                     if (response.isCommitted() || !databaseFailure(failure)) throw failure;
-                    response.reset();response.setStatus(503);response.setContentType("application/json");response.setHeader("Cache-Control","no-store");
+                    response.resetBuffer();response.setHeader("Content-Length",null);response.setStatus(503);response.setContentType("application/json");response.setHeader("Cache-Control","no-store");
                     response.getWriter().write("{\"error\":\"unavailable\"}");
                 }
             }

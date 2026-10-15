@@ -68,3 +68,8 @@ negação de outro dono/CSRF, irreversibilidade, páginas e retomada em outra se
 logout sem apagar tentativas e ArchUnit sobre dependências/contratos concretos dos
 controllers. O checklist é evidência de responsabilidades; ArchUnit não prova toda
 semântica e a indisponibilidade com resposta já confirmada não pode ser reescrita.
+
+O 503 anterior ao MVC limpa somente o buffer/campo de comprimento e preserva headers
+CORS já aplicados pelo framework, para que a origem autorizada possa ler o erro JSON.
+A regressão interrompe PG e exige 503 com Allow-Origin explícito/credentials, além de
+no-store. Não refaz autenticação/CORS manualmente nem traduz falhas desconhecidas.

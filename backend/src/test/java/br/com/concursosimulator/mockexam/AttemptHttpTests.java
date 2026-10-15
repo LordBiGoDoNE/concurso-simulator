@@ -144,6 +144,10 @@ class AttemptHttpTests {
         for(var path:List.of("/api/v1/me/attempts","/api/v1/attempts/"+UUID.randomUUID())) {
             var r=send("GET",path,b,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
         }
+        var cors=client.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+"/api/v1/me/attempts"))
+                .header("Origin","http://localhost:5173").header("Cookie",b.cookie()).timeout(Duration.ofSeconds(10)).build(),HttpResponse.BodyHandlers.ofString());
+        assertThat(cors.statusCode()).isEqualTo(503);assertThat(cors.headers().firstValue("Access-Control-Allow-Origin")).contains("http://localhost:5173");
+        assertThat(cors.headers().firstValue("Access-Control-Allow-Credentials")).contains("true");
         assertThat(send("GET","/api/v1/status",null,null).statusCode()).isEqualTo(503);
         assertThat(send("GET","/api/v1/question-bank/catalog",null,null).statusCode()).isEqualTo(200);
     }

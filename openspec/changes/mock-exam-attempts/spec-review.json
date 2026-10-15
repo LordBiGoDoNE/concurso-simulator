@@ -7,16 +7,17 @@
   "reviewed_head_sha": null,
   "diff_sha256": null,
   "reviewer": {
-    "model": null,
+    "model": "openai/gpt-6.1-sol#xhigh",
     "session": null,
     "independent_context": false
   },
   "reviewed_at": null,
-  "review_phase": "groups_3_6_batch_reviewed_tasks_pending_approval_final_gate_pending",
+  "review_phase": "all_product_tasks_integrated_global_sol_policy_update_final_gate_pending",
   "coverage": {},
   "limitations": [
-    "24/24 tarefas implementadas/verificadas; grupos1/2 integrados em ec4f85e. Grupos3–6 revisados como lote, em dez PRs draft ainda sem aprovação/integração.",
-    "Gate cumulativo final não executado; modelo/variante a confirmar antes do disparo. A exceção SOL de question-bank63 não se amplia automaticamente."
+    "24/24 tarefas de produto integradas na epica da spec em d888a2b; revisoes dos lotes nao substituem o gate cumulativo.",
+    "Modelo final confirmado pelo usuario em 2026-10-15: openai/gpt-6.1-sol#xhigh para todas as revisoes/gates; nova politica em PR proprio, sem integracao presumida.",
+    "Gate cumulativo ainda nao executado; sessao/base/head/digest finais permanecem pendentes ate a revisao independente."
   ],
   "verification": [],
   "findings": [],

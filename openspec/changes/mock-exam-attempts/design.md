@@ -150,4 +150,5 @@ partir da épica geral atualizada; tarefas pequenas com código/testes/docs coes
 dependências reais via Stacks v0.2.1. Não colocar esta proposta na épica question-bank.
 Migração aditiva testada sobre V4 com identidades/sessões/acervo preservados. Rollback
 desabilita o fluxo novo e preserva dados; sem downmigration/apagamento. CI só verifica;
-revisão SOL por lote e gate final Astra para `[SPEC]`, sem merge/main/deploy presumidos.
+revisão SOL 6.1 xhigh por lote e gate cumulativo SOL 6.1 xhigh para `[SPEC]`, em contexto
+independente próprio, conforme decisão do usuário de 2026-10-15; sem merge/main/deploy presumidos.

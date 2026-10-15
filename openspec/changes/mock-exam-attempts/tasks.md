@@ -1,11 +1,11 @@
 # Tasks
 
-**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 24/24 implementadas.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Épica desta spec criada da épica geral atualizada; grupos 1/2 aprovados e integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`. Novo lote explicitamente autorizado pelo usuário: **grupos 3–6 completos (3.1–6.4)**, sem merge presumido de novas implementações. Visitante temporário, conta com salvar/retomar e os requisitos desta proposta aprovados.
+**Proposta aprovada pelo usuário em 2026-10-14, issue #64; 24/24 tarefas implementadas/verificadas e integradas na épica da spec.** Pré-requisito cumprido: question-bank integrado pelo #63 (`d65006e`). Grupos1/2 integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`; grupos3–6 aprovados e integrados pelos #72, #73, #74, #75, #77, #78, #79, #80, #81 e #82 em `d888a2b4b18276465bb7753d3b6174955a79f41a`. Visitante temporário e conta com salvar/retomar, sem transferência automática. Gate cumulativo da spec permanece separado.
 
 Cada grupo inclui seus próprios código/testes/docs. Tarefas pequenas/coesas em PRs
 revisáveis (preferência 300–500 linhas autorais), sem reunir toda a spec num PR.
 Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos parciais.
-`[x]` registra implementação/verificação; integração/aprovação são acompanhadas separadamente na issue. Grupos 1/2 integrados; grupos 3–6 aguardam revisão/aprovação própria do lote.
+`[x]` registra implementação/verificação; integração/aprovação são acompanhadas separadamente na issue. Os seis grupos estão aprovados e integrados na épica da spec, concluídos pelos #72–#82 em `d888a2b4b18276465bb7753d3b6174955a79f41a`; gate cumulativo e integração na épica geral continuam separados.
 
 ## 1. Tentativa e regras de aplicação
 
@@ -51,8 +51,8 @@ Antes de aplicar, o usuário escolhe os grupos completos do lote, sem prefixos p
 
 ## Workflow follow-up
 
-- Publicar os artefatos aprovados da issue #64 na branch correta; lote 1/2 já escolhido explicitamente. Grupos 3–6 agora autorizados integralmente; novos merges da implementação continuam exigindo autorização própria.
+- Publicar os artefatos aprovados da issue #64 na branch correta; grupos1–6 já implementados e integrados com aprovação explícita. Novas alterações e integração final continuam exigindo autorização própria.
 - Usar Stacks v0.2.1 apenas em tarefas realmente dependentes desta spec, drafts com trunk `epic/mock-exam-attempts`, código/testes/docs coesos; conferir metadados/checks a cada camada e preservar refs.
 - Revisão independente SOL 6.1 xhigh por lote, observações mínimas de cota antes/depois e nenhuma geração concorrente; integrações somente com aprovação explícita dos PRs/heads.
-- Ao concluir a spec, abrir `[SPEC]` para a épica geral e executar gate cumulativo Astra medium em contexto novo; aprovação de tarefas não autoriza esse merge.
+- Ao concluir a spec, abrir `[SPEC]` para a épica geral e executar gate cumulativo SOL 6.1 xhigh em contexto novo, conforme decisão do usuário de 2026-10-15; aprovação de tarefas não autoriza esse merge.
 - Não arquivar, publicar, integrar main ou iniciar as etapas 5/6/deployment automaticamente.

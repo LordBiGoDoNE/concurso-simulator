@@ -1,8 +1,16 @@
 # Revisão cumulativa — mock-exam-attempts
 
-**Gate cumulativo final pendente.** 24/24 tarefas implementadas/verificadas; grupos1/2
-integrados pelos #66–#70 em `ec4f85ec133991c6e791914da54bd56ab088906a`. Grupos3–6 revisados e revalidados como lote,
-ainda em dez PRs draft, sem aprovação/integração presumida. Não é revisão final da spec.
+**Gate final pendente.** As 24/24 tarefas de produto foram aprovadas e integradas na
+épica da spec. Modelo selecionado: `openai/gpt-6.1-sol#xhigh`; falta executar a
+revisão cumulativa em contexto independente, sem presumir integração na épica geral.
+
+## Selecao do gate final em 2026-10-15
+
+Usuario definiu `openai/gpt-6.1-sol#xhigh` como padrao permanente para todas as
+revisoes, inclusive gates cumulativos de specs e da epica geral. A politica esta
+sendo versionada em PR proprio; nao houve novo parecer cumulativo nesta atualizacao.
+24/24 tarefas de produto estao integradas em `d888a2b4b18276465bb7753d3b6174955a79f41a`.
+Os relatos abaixo preservam as revisoes de lote e seus estados no momento da execucao.
 
 ## Lote 2 — grupos 3–6 completos
 

@@ -1,14 +1,15 @@
 # Cota da assinatura ChatGPT/Codex nas revisões
 
-Decisão atual do usuário (2026-10-13): somente SOL 6.1 xhigh revisa os lotes, inclusive
-mudanças críticas, conforme o [procedimento](architecture/spec-review.md). A política
+Decisão atual do usuário (2026-10-15): somente SOL 6.1 xhigh executa as revisões,
+revalidações e gates cumulativos, inclusive mudanças críticas e a épica geral,
+conforme o [procedimento](architecture/spec-review.md). A política
 anterior de revisão dupla por risco foi substituída, sem apagar execuções históricas.
-O gate cumulativo final continua Astra medium. Medir cada revisão efetivamente
-executada; não disparar Astra/outro modelo nos lotes por risco ou para comparar consumo,
+Gate cumulativo final e revisão de lote continuam separados, com contexto independente
+próprio. Medir cada revisão efetivamente executada; não disparar outro modelo por risco ou para comparar consumo,
 nem iniciar lote, revisão extra, merge ou publicação apenas para testar a cota.
 
-Exceção temporária aprovada em 2026-10-14: gate question-bank #63 com SOL xhigh no
-Codex, Astra suspenso nessa validação. A tentativa Astra/OpenCode com 401 fica como
+Histórico anterior ao padrão atual: exceção aprovada em 2026-10-14 para o gate
+question-bank #63 com SOL xhigh no Codex. A tentativa Astra/OpenCode com 401 fica como
 falha sem parecer; medir a execução SOL separadamente, sem comparação fictícia.
 
 Assinatura não é cobrança por token. Métrica principal: **pontos percentuais observados
@@ -23,7 +24,7 @@ O multiplicador de entrada nova da rodada 1 não é multiplicador de cota ou din
    Preparar diffs acessíveis dentro do workspace, bases/heads/digests fixos; registrar
    risco/justificativa e confirmar SOL xhigh efetivo, tanto em lote padrão como crítico.
    Risco e reclassificação orientam cobertura/verificação, não outro modelo. Não iniciar
-   o gate final Astra como parte do lote ou como comparação de consumo.
+   o gate cumulativo final SOL como parte do lote ou como comparação de consumo.
 2. Conferir sessões locais ativas por `opencode api get /api/session/active`, sem assumir
    que isso detecta uso da mesma conta em outro dispositivo. Solicitar que outros usos
    pausem durante a medição. Se não for possível, declarar ausência de isolamento.

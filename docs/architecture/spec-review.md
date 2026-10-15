@@ -18,7 +18,9 @@ mudanças críticas. Em 2026-10-13, o usuário retirou a verificação Astra dos
 substituindo a política baseada em risco de 2026-10-12. Não disparar Astra nem outro
 modelo automaticamente por risco, dúvida, revalidação ou medição. Confirmar
 disponibilidade e modelo/variante efetivos; indisponibilidade bloqueia a revisão,
-sem fallback silencioso. O gate cumulativo final permanece Astra medium, sem alteração.
+sem fallback silencioso. Por decisão do usuário de **2026-10-15**, SOL 6.1 xhigh é
+também o padrão dos gates cumulativos finais, inclusive o da épica geral. A revisão
+do lote não substitui esse gate, que continua exigindo contexto independente próprio.
 Revisões Astra já executadas permanecem histórico verdadeiro, não são apagadas nem
 reclassificadas como execuções SOL.
 
@@ -39,7 +41,7 @@ Registrar na issue/PR a classificação do lote, arquivos/regras afetadas e just
   examinar **todo o conjunto**, incluindo diffs completos por PR e combinação. Dúvida
   na classificação adota crítico; se SOL identificar impacto crítico inicialmente
   não reconhecido, registrar a reclassificação e ampliar a cobertura/verificação
-  necessária antes de solicitar aprovação, sem disparar Astra.
+  necessária antes de solicitar aprovação, sem disparar outro modelo.
 
 Revalidação permanece somente SOL xhigh, com novo snapshot e conferência real do conjunto.
 Não rebaixar risco, omitir cobertura ou dispensar correção de bloqueador para economizar
@@ -80,11 +82,11 @@ automaticamente. A primeira rodada autorizada é question-bank 1.2, 1.3, 2.1–2
 
 ### Integração final da spec
 
-**Exceção temporária de 2026-10-14:** por pedido explícito do usuário, o gate de
-question-bank #63 usa **SOL 6.1 xhigh no Codex**, com perfil atualizado, suspendendo
-Astra nesta validação. Substitui a seleção do passo 2 para esse gate, sem alterar
-cobertura, independência, triagem ou aprovação. Não restaurar Astra nem ampliar a
-exceção a outro gate automaticamente. Tentativa Astra anterior com 401 não é revisão.
+**Padrão aprovado em 2026-10-15:** `openai/gpt-6.1-sol#xhigh` para todas as revisões,
+revalidações e gates cumulativos, inclusive da épica geral. Não há exigência ativa
+de Astra. Cobertura, independência, triagem, atualidade e autorização de merge permanecem.
+A exceção SOL de question-bank #63 em 2026-10-14 é histórico anterior a este padrão;
+a tentativa Astra com 401 permanece falha sem parecer, não revisão executada.
 
 PRs de tarefas são revisados individualmente e integrados na épica da spec. Depois,
 `[SPEC] <Título>` propõe `epic/<spec>` → `epic/application-reformulation`. Este gate
@@ -92,7 +94,7 @@ examina o conjunto, não uma nova implementação. CI verde e revisão de tarefa
 provam que as responsabilidades e a integração estão corretas.
 
 1. Abrir PR `[SPEC]` em rascunho com escopo, requisitos, evidências e pendências.
-2. Modelo/variante escolhido pelo usuário: `openai/gpt-6-astra#medium`, fixado no
+2. Modelo/variante escolhido pelo usuário: `openai/gpt-6.1-sol#xhigh`, fixado no
    perfil. Confirmar disponibilidade e ID efetivo antes do disparo, sem presumir
    capacidade/custo. Sem disponibilidade, parar e manter relatório pendente. Outra
    escolha exige aprovação e atualização do perfil; não há fallback silencioso.

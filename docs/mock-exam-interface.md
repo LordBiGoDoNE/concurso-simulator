@@ -114,3 +114,12 @@ de gabarito no JSON/DOM ativo e de payloads nos assets permanecem os mesmos.
 Abrir pelo histórico o ID já ativo não faz nova leitura nem desmonta a realização;
 regressão preserva a escolha após falha e o mesmo commandId/payload ao repetir.
 Essas proteções não cobrem toda falha de execução do navegador ou de rede.
+
+## Recursos das alternativas na revisão
+
+Escolha e resposta correta apresentam o conteúdo capturado completo, incluindo
+descrições das figuras. Antes, a tela de resultado usava apenas o texto e omitia
+essas descrições, embora estivessem preservadas no snapshot e no contrato.
+Uma regressão usa recursos distintos nas duas alternativas e confere texto,
+descrição, foco e nota do servidor. A apresentação continua em texto acessível,
+sem buscar ou executar o arquivo do recurso no navegador.

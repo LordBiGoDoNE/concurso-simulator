@@ -22,3 +22,24 @@ Isso não é um token de autorização nem um mecanismo de autenticação person
 conta, contexto inválido, expiração, CSRF, métodos negados e CORS. Um controller probe
 exclusivo de teste confirma a entrega do ator via argumento MVC, sem endpoint de fixture
 em produção. Isso não comprova posse ou contrato de recurso, cobertos na camada HTTP seguinte.
+
+## Composição e respostas
+
+POST /api/v1/attempts aceita commandId, roleId e lista de disciplinas com quantidade
+inteira e topicIds opcionais. Responde 201 na criação, 200 no replay. GET /{id} e
+PUT /{id}/answers/{item} retornam somente View tipada, incluindo seleção própria,
+sem resposta correta, resolução, proveniência ou nota parcial. PUT aceita commandId,
+expectedVersion e alternativeId nullable para limpar. IDs são UUIDs canônicos.
+
+Jackson rejeita campos desconhecidos e quantidades fracionárias/nulas. Proprietário,
+correção e nota enviados pelo cliente são inválidos; a segurança fornece o ator.
+400 inválido, 401 contexto técnico inválido, 403 CSRF/CORS, 404 ausente/outro dono/
+expirado indistinguíveis, 409 estado/versão/payload/insuficiência, 503 banco/conteúdo
+incompatível. Insuficiência usa lista tipada de disciplina/disponíveis. Todas as
+respostas de tentativas usam no-store. OpenAPI define objetos sem propriedades extras.
+
+AttemptHttpTests atravessa HTTP/Security/JPA/PG18.6 real com fixtures sintéticas;
+confere contratos, retries, limpar, associação por ID, owner, ausência de efeitos
+inválidos e controle negativo que falha ao inserir um campo de gabarito no JSON.
+O validador de teste cobre estrutura/tipos usados; não substitui um validador geral
+OpenAPI nem demonstra ausência semântica de dicas em todo texto editorial.

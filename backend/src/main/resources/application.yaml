@@ -1,6 +1,11 @@
 spring:
   application:
     name: concurso-simulator
+  jackson:
+    deserialization:
+      fail-on-unknown-properties: true
+      fail-on-null-for-primitives: true
+      accept-float-as-int: false
   datasource:
     url: ${DB_URL:jdbc:postgresql://localhost:5432/concurso_simulator?connectTimeout=2&socketTimeout=3}
     username: ${DB_USERNAME:concurso}

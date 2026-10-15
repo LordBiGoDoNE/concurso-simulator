@@ -150,6 +150,57 @@ paths:
                 required: [error]
                 properties: {error: {type: string, const: not_found}}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts:
+    post:
+      summary: Compor tentativa do visitante ou conta; 1–100 questões, sem distribuição oficial
+      security: [{}, {sessionCookie: []}]
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptCreate'}
+      responses:
+        '201': {description: Criada; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '200': {description: Replay confirmado; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '409': {description: Payload divergente ou acervo insuficiente; error e available por disciplina, content: {application/json: {schema: {oneOf: [{$ref: '#/components/schemas/AttemptError'}, {$ref: '#/components/schemas/AttemptInsufficient'}]}}}}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Consultar snapshot e respostas próprias, sem correção ou nota parcial
+      responses:
+        '200': {description: Tentativa do dono; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/answers/{item}:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+      - {in: path, name: item, required: true, schema: {type: string, format: uuid}}
+    put:
+      summary: Salvar ou limpar resposta por ID; versão esperada e comando idempotente
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptAnswer'}
+      responses:
+        '200': {description: Resposta confirmada ou replay; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
 components:
   responses:
     QuestionInvalid:
@@ -170,6 +221,42 @@ components:
             additionalProperties: false
             required: [error]
             properties: {error: {type: string, const: unavailable}}
+    AttemptUnauthenticated:
+      description: Contexto inválido ou histórico sem conta; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: unauthenticated}}
+    AttemptForbidden:
+      description: CSRF inválido ou acesso técnico negado; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: forbidden}}
+    AttemptNotFound:
+      description: Ausente, outro dono ou visitante expirado, indistinguíveis; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: not_found}}
+    AttemptConflict:
+      description: Estado, versão ou payload divergente; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: conflict}}
   schemas:
     QuestionNamed:
       type: object
@@ -253,6 +340,75 @@ components:
         statement: {$ref: '#/components/schemas/QuestionText'}
         alternatives: {type: array, minItems: 2, items: {$ref: '#/components/schemas/QuestionAlternative'}}
         references: {type: array, minItems: 1, items: {$ref: '#/components/schemas/QuestionReference'}}
+    AttemptCreate:
+      type: object
+      additionalProperties: false
+      required: [commandId, roleId, disciplines]
+      properties:
+        commandId: {type: string, format: uuid}
+        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        disciplines:
+          type: array
+          minItems: 1
+          maxItems: 5
+          items:
+            type: object
+            additionalProperties: false
+            required: [disciplineId, quantity]
+            properties:
+              disciplineId: {type: string}
+              quantity: {type: integer, minimum: 1, maximum: 100}
+              topicIds: {type: array, uniqueItems: true, items: {type: string}}
+    AttemptAnswer:
+      type: object
+      additionalProperties: false
+      required: [commandId, expectedVersion, alternativeId]
+      properties:
+        commandId: {type: string, format: uuid}
+        expectedVersion: {type: integer, minimum: 0}
+        alternativeId: {type: [string, 'null'], format: uuid}
+    AttemptItem:
+      type: object
+      additionalProperties: false
+      required: [id, questionId, revisionId, classification, statement, alternatives, references, selectedAlternativeId]
+      properties:
+        id: {type: string, format: uuid}
+        questionId: {type: string, format: uuid}
+        revisionId: {type: string, format: uuid}
+        classification: {$ref: '#/components/schemas/QuestionClassification'}
+        statement: {$ref: '#/components/schemas/QuestionText'}
+        alternatives: {type: array, minItems: 2, items: {$ref: '#/components/schemas/QuestionAlternative'}}
+        references: {type: array, items: {$ref: '#/components/schemas/QuestionReference'}}
+        selectedAlternativeId: {type: [string, 'null'], format: uuid}
+    AttemptView:
+      type: object
+      additionalProperties: false
+      required: [id, roleId, createdAt, finishedAt, version, items]
+      properties:
+        id: {type: string, format: uuid}
+        roleId: {type: string}
+        createdAt: {type: string, format: date-time}
+        finishedAt: {type: [string, 'null'], format: date-time}
+        version: {type: integer, minimum: 0}
+        items: {type: array, minItems: 1, maxItems: 100, items: {$ref: '#/components/schemas/AttemptItem'}}
+    AttemptError:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties: {error: {type: string}}
+    AttemptInsufficient:
+      type: object
+      additionalProperties: false
+      required: [error, available]
+      properties:
+        error: {type: string, const: insufficient_pool}
+        available:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [disciplineId, available]
+            properties: {disciplineId: {type: string}, available: {type: integer, minimum: 0}}
   securitySchemes:
     sessionCookie:
       type: apiKey

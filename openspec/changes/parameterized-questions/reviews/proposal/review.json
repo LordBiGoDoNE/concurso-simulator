@@ -1,0 +1,80 @@
+{
+  "version": 1,
+  "scope": "documentary-proposal-only",
+  "status": "completed",
+  "spec": "parameterized-questions",
+  "pr": 87,
+  "risk": "critical",
+  "risk_reason": "Requisitos propostos afetam elegibilidade, proteção de respostas, atomicidade, formato de snapshots e replay; não houve implementação de produto.",
+  "base_sha": "0d0fc4848f55fc93c736aa76dcfbb73a7269eb39",
+  "reviewed_head_sha": "d80e00b20fff26cfedecf1b343aee36270fa4303",
+  "diff_sha256": "9e17d04714027bafdfb94ed3cf9d1488c28e94bc262280b8e8169967c266b06d",
+  "digest_scope": "Snapshot canônico dos fontes documentais no head analisado, excluindo somente spec-review.json/md; estes registros de evidência são posteriores e não se declaram parte do digest analisado.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/parameterized_proposal_sol",
+    "independent_context": true,
+    "selection_evidence": "Codex spawn_agent com fork_turns=none, model=gpt-6.1-sol e reasoning_effort=xhigh; mesma sessão retomada para revalidação. Sem identificador adicional do provedor exposto."
+  },
+  "rounds": [
+    {
+      "phase": "initial",
+      "reviewed_head_sha": "655cde1296b28345384fe8ef5fd54dbdc11ab547",
+      "diff_sha256": "077c35efd0da79eb37d1e05ba0d7885cf31c590fcd16c258bba741d8b2843eea",
+      "result": "Sem bloqueadores; duas recomendações confirmadas."
+    },
+    {
+      "phase": "revalidation",
+      "reviewed_head_sha": "d80e00b20fff26cfedecf1b343aee36270fa4303",
+      "diff_sha256": "9e17d04714027bafdfb94ed3cf9d1488c28e94bc262280b8e8169967c266b06d",
+      "result": "Ambas corrigidas documentalmente; nenhum novo achado."
+    }
+  ],
+  "coverage": {
+    "requirements": "Sete arquivos completos, proposta/design/spec/24 tarefas, escopo 3 famílias e domínios 64/20/27; pending do gate conferido como documento.",
+    "architecture": "AGENTS, ADR 0001, checklist HTTP e política de revisão; fronteiras Java puro, portas e dependências de módulos.",
+    "integration": "Composition, Attempt/AttemptQuestion/AttemptUseCases/AttemptStore, pools, DTOs e validadores/compositor frontend, incluindo retry e hash.",
+    "security": "Correção e parâmetros privados, IDs opacos, projeções/recursos, ausência de rotas editoriais, posse e CSRF.",
+    "persistence": "V4/V5, FKs/triggers, transação de captura, codecs de origem, ponteiro elegível, comandos, rollback e cleanup visitante.",
+    "tests": "Leitura dos testes existentes de domínio/aplicação e testes relevantes de persistência/schema/ArchUnit; avaliação da matriz futura, sem executar testes.",
+    "maintenance": "Roadmap, migração aditiva, manifesto, decisões editoriais e compatibilidade; preservação de material e gate de produto ainda pending."
+  },
+  "findings": [
+    {
+      "id": "P5-PROP-R1",
+      "severity": "recommended",
+      "location": "design.md — elegibilidade editorial; spec — elegibilidade conjunta",
+      "evidence": "A versão inicial não distinguia qual versão aprovada ficava elegível, nem se retirada reativaria anterior.",
+      "reference": "Elegibilidade exata da proposta e domínio responsável por invariantes, ADR 0001.",
+      "impact": "Seleção por status/ordem poderia gerar versão diferente da decisão editorial.",
+      "suggestion": "Ponteiro único, substituição atômica, retirada sem reativação e cenários concorrentes.",
+      "disposition": "fixed",
+      "resolution": "d80e00b: design define ponteiro único por família, revisão esperada e retirada sem fallback; requisito/cenários de sucessão e tarefas 1.4/2.2. Conferido na revalidação do conjunto."
+    },
+    {
+      "id": "P5-PROP-R2",
+      "severity": "recommended",
+      "location": "design.md — composição/hash e compatibilidade; tarefa 3.3",
+      "evidence": "Acrescentar false à canonização mudaria o hash V5 que o replay atual compara por igualdade exata.",
+      "reference": "Repetição segura da spec de simulados e compatibilidade exigida pela proposta.",
+      "impact": "Retry de criação anterior ao upgrade poderia retornar 409 indevidamente.",
+      "suggestion": "Preservar canonização V5 para ausente/false e exigir discriminador para true, sem reescrever hashes.",
+      "disposition": "fixed",
+      "resolution": "d80e00b: design/requisito exigem hash fixo V5 inalterado, discriminador true e regressão com comando produzido no V5; tarefa 3.3 cobre ausente/false/rejeição de true. Conferido na revalidação."
+    }
+  ],
+  "triage_complete": true,
+  "verification": [
+    {"command": "OpenSpec 1.14.1 offline validate --all --strict", "result": "5/5 changes válidas após correções.", "executed_by": "coordinator"},
+    {"command": "git diff --check e cardinalidade/checklist", "result": "Sem erros; 111 tuplas propostas e 24 tarefas pendentes.", "executed_by": "coordinator"},
+    {"command": "Leituras git/código e hash dos bytes do diff", "result": "Base/head/digests e conjunto documental conferidos nas duas fases.", "executed_by": "reviewer"}
+  ],
+  "limitations": [
+    "Revisão da proposta, não gate cumulativo do produto nem autorização de implementação/merge.",
+    "Revisor não executou testes/build/OpenSpec/aplicação/rede/DB e não fez escritas/delegação.",
+    "Não verificou conteúdo das 111 variantes futuras, bases reais ou decisões editoriais reais.",
+    "Não verificou checks remotos; o coordenador confere os checks do head efetivamente publicado.",
+    "Execução do script de snapshot pelo revisor foi rejeitada pela aprovação automática; alternativa autorizada sem escrita calculou hash direto do stdout de git diff. Nada ficou bloqueado.",
+    "Cotas/tokens privados e observações operacionais permanecem fora do Git; não se infere consumo zero ou atribuição exata."
+  ]
+}

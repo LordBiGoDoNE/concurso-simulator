@@ -33,3 +33,29 @@ que timeout significa rollback. Resultado só aparece após resposta fechada do 
 ou consulta de tentativa já fechada, e nunca é calculado na SPA. Resoluções e fontes
 são da versão capturada; tentativas ativas continuam sem esses campos. Testes cobrem
 cancelamento/foco, retry da conclusão e retry de resultado sem uma segunda conclusão.
+
+## Conta, visitante e mudança de contexto
+
+Histórico da conta tem páginas de 20 registros, estado/datas/cargo/quantidade e percentual
+apenas ao concluir. Abrir usa o ID persistido e nunca sorteia novamente; atualizar retoma
+somente respostas confirmadas. Outra tentativa/nova composição exige confirmação de
+troca para evitar descarte acidental de escolhas locais. A página cheia permite avançar;
+uma última página cheia pode ser seguida de página vazia, sem total inventado.
+
+LoginPanel publica a identidade interna verificada ao App, que mantém a workspace por
+ID da conta (ou contexto visitante). Durante revalidação da identidade, o conteúdo fica
+oculto até conferência; identidade diferente desmonta/aborta o contexto anterior. Logout
+e início de login limpam imediatamente. Rejeições 401/403/404 limpam conteúdo e pedem
+nova verificação; não mantêm resposta tardia ou supõem posse. Falha de logout não anuncia
+saída: o conteúdo privado já foi limpo e o usuário pode verificar novamente a sessão.
+
+Visitante vê validade de até 24h dependente da sessão, sem histórico/mescla. Login com
+tentativa ativa exige confirmação de que ela não será transferida. Voltar como visitante
+após logout não restaura a sessão antiga. Conteúdo, respostas e resultados permanecem só
+em memória; sem localStorage/sessionStorage, cache público, service worker ou respostas
+na URL. Aulas e consulta pública continuam independentes da disponibilidade privada.
+Testes exercitam páginas/estado, logout/troca de conta e escrita tardia ignorada; a
+identidade só muda após resposta verificada, sem alegar detecção de cookie de outro
+contexto antes de qualquer evento/requisição. Browser real/OIDC/PG verifica a combinação.
+
+Ao revalidar a identidade com tentativa ativa, a workspace também confere seu acesso por GET antes de voltar a exibi-la, preservando escolhas em memória enquanto a identidade é a mesma. Isso detecta expiração/troca de sessão visitante, que não pode ser distinguida apenas pelo 401 de /me. Falha mantém conteúdo oculto até retry; 401/403/404 desmontam o contexto.

@@ -18,7 +18,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
     const controller = lifetime.current; if (!controller || view.finishedAt === null) return;
     setResultFailed(false);
     try { const value = await attemptResult(view.id, controller.signal); if (!controller.signal.aborted) setResult(value); }
-    catch (error) { if (!controller.signal.aborted) { if (error instanceof AttemptApiError && [401, 404].includes(error.status)) unavailable.current(); else setResultFailed(true); } }
+    catch (error) { if (!controller.signal.aborted) { if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) unavailable.current(); else setResultFailed(true); } }
   }
   async function pump() {
     const controller = lifetime.current; if (!controller || controller.signal.aborted || working.current || blocked.current) return;
@@ -37,7 +37,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
     } catch (error) {
       if (controller.signal.aborted) return;
       blocked.current = true;
-      if (error instanceof AttemptApiError && [401, 404].includes(error.status)) { unavailable.current(); return; }
+      if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) { unavailable.current(); return; }
       const conflict = error instanceof AttemptApiError && error.status === 409;
       setPhase(conflict ? 'conflict' : 'failed'); setMessage(conflict
         ? 'Outra alteração avançou a tentativa. Recarregue para conferir a versão atual; sua escolha não confirmada será preservada.'
@@ -63,7 +63,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
       if (!dirty) blocked.current = false;
     } catch (error) {
       if (controller.signal.aborted) return;
-      if (error instanceof AttemptApiError && [401, 404].includes(error.status)) { unavailable.current(); return; }
+      if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) { unavailable.current(); return; }
       setPhase('failed'); setMessage('Não foi possível recarregar. Escolhas locais continuam sem confirmação.');
     } finally { working.current = false; }
   }
@@ -86,7 +86,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
       server.current = closed.attempt; setView(closed.attempt); setResult(closed.result);
     } catch (error) {
       if (controller.signal.aborted) return;
-      if (error instanceof AttemptApiError && [401, 404].includes(error.status)) { unavailable.current(); return; }
+      if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) { unavailable.current(); return; }
       if (error instanceof AttemptApiError && error.status === 409) {
         closeOperation.current = null; blocked.current = true; setPhase('conflict');
         setMessage('A versão mudou antes de concluir. Recarregue e confira as respostas confirmadas.');

@@ -24,7 +24,7 @@ export default function AttemptComposer({ onCreated, onUnavailable }: { onCreate
     try { const value = await createAttempt(composition, operation.current.id, controller.signal); if (!controller.signal.aborted) onCreated(value); }
     catch (error) {
       if (controller.signal.aborted) return;
-      if (error instanceof AttemptApiError && error.status === 401) { onUnavailable(); return; }
+      if (error instanceof AttemptApiError && [401, 403].includes(error.status)) { onUnavailable(); return; }
       setMessage(error instanceof AttemptApiError && error.available.length ? `Acervo insuficiente: ${error.available.map(a => `${catalog?.disciplines.find(d => d.id === a.disciplineId)?.title || a.disciplineId}: ${a.available} disponíveis`).join('; ')}.` : 'Criação não confirmada. Tente novamente com os mesmos critérios para recuperar a tentativa, se ela foi gravada.');
     } finally { pending.current = false; if (!controller.signal.aborted) setBusy(false); }
   }

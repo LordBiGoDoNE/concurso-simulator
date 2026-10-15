@@ -1,6 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useRef, useState } from 'react';
 import LoginPanel from './LoginPanel';
 import QuestionBrowser from './QuestionBrowser';
+import AttemptWorkspace from './AttemptWorkspace';
+import type { CurrentIdentity } from './identity-api';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const materialUrl = import.meta.env.VITE_MATERIAL_URL || 'https://lordbigodone.github.io/concurso-simulator/';
@@ -10,6 +12,16 @@ const timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? 
 export default function App() {
   const [attempt, setAttempt] = useState(0);
   const [status, setStatus] = useState<'loading' | 'up' | 'down'>('loading');
+  const [identity, setIdentity] = useState<CurrentIdentity | null>(null); const [checking, setChecking] = useState(true);
+  const guestActive = useRef(false); const [privateNotice, setPrivateNotice] = useState('');
+  const setGuestActive = useCallback((value: boolean) => { guestActive.current = value; }, []);
+  const changedIdentity = useCallback((value: CurrentIdentity | null) => { setIdentity(value); setChecking(false); }, []);
+  const checkingIdentity = useCallback(() => setChecking(true), []);
+  const privateUnavailable = useCallback(() => { setIdentity(null); setChecking(true); setPrivateNotice('Tentativa ou sessão indisponível. O conteúdo privado foi limpo; confira sua sessão e o histórico da conta.'); window.dispatchEvent(new Event('identity-recheck')); }, []);
+  const beforeLogin = useCallback(() => {
+    if (!identity?.connected && guestActive.current && !window.confirm('A tentativa visitante não será transferida para a conta. Entrar agora encerra esta realização na interface. Deseja continuar?')) return false;
+    setIdentity(null); return true;
+  }, [identity]);
 
   useEffect(() => {
     const controller = new AbortController();
@@ -32,7 +44,10 @@ export default function App() {
       <h1>Concurso Simulator</h1>
       <p>Continue aprendendo com as aulas, questões e resoluções do material de estudo.</p>
       <a className="material-link" href={materialUrl}>Acessar material de estudo</a>
-      <LoginPanel />
+      <LoginPanel onIdentity={changedIdentity} onChecking={checkingIdentity} onBeforeLogin={beforeLogin} />
+      {privateNotice && <p role="status">{privateNotice}</p>}
+      {checking && <p role="status">Conferindo acesso aos simulados…</p>}
+      <div hidden={checking}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
       <QuestionBrowser />
       <section aria-labelledby="application-title">
         <h2 id="application-title">Nova aplicação — ambiente local</h2>

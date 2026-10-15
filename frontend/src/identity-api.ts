@@ -27,7 +27,8 @@ export async function identityRequest(path: string, options: RequestInit = {}, r
   }
 }
 
-export async function currentIdentity() {
+export type CurrentIdentity = { connected: false; googleEnabled: boolean } | { connected: true; googleEnabled: boolean; id: string };
+export async function currentIdentity(): Promise<CurrentIdentity> {
   const [config, me] = await Promise.all([
     identityRequest('/api/v1/auth/config'), identityRequest('/api/v1/me'),
   ]);
@@ -39,5 +40,5 @@ export async function currentIdentity() {
   if (typeof user?.id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(user.id)) {
     throw new Error('invalid identity');
   }
-  return { connected: true, googleEnabled: settings.googleEnabled as boolean };
+  return { connected: true, googleEnabled: settings.googleEnabled as boolean, id: user.id as string };
 }

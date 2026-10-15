@@ -5,12 +5,13 @@ import AttemptResult from './AttemptResult';
 import ConfirmAttemptFinish from './ConfirmAttemptFinish';
 import AttemptText from './AttemptText';
 
-export default function AttemptPractice({ initial, onUnavailable }: { initial: AttemptView; onUnavailable: () => void }) {
+export default function AttemptPractice({ initial, onUnavailable, onFinished }: { initial: AttemptView; onUnavailable: () => void; onFinished?: () => void }) {
   const run = useAttemptRun(initial, onUnavailable); const [position, setPosition] = useState(0); const heading = useRef<HTMLHeadingElement>(null);
   const [confirm, setConfirm] = useState(false); const finishButton = useRef<HTMLButtonElement>(null);
   const wasConfirming = useRef(false);
   useEffect(() => { if (wasConfirming.current && !confirm) finishButton.current?.focus(); wasConfirming.current = confirm; }, [confirm]);
   useEffect(() => { heading.current?.focus(); }, [position]);
+  useEffect(() => { if (run.view.finishedAt !== null) onFinished?.(); }, [run.view.finishedAt, onFinished]);
   const item = run.view.items[position]; const selection = run.selected(item);
   const answered = run.view.items.filter(i => run.selected(i) !== null).length;
   if (run.view.finishedAt !== null) return <>

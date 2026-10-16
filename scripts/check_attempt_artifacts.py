@@ -11,7 +11,8 @@ import zipfile
 SENTINELS = tuple(text.encode("utf-8") for text in (
     "PRIVATE_BROWSER_RESOLUTION_SENTINEL", "NEW_BROWSER_RESOLUTION_SENTINEL",
     "PRIVATE_ATTEMPT_RESOLUTION_SENTINEL", "PRIVATE_CONTEXT_STATEMENT",
-    "Questão sintética", "Fixture de navegador"))
+    "Questão sintética", "Fixture de navegador", "PRIVATE_PARAMETERIZED_FIXTURE"))
+NUMERIC_PRIVATE = (b"parameter-output/v1", b"parameter-template/v1", b"definitionDigest", b"manifestDigest", b"domainDigest", b"outputDigest", b"NumericGenerator")
 
 
 class Entry(HTMLParser):
@@ -46,6 +47,8 @@ def check(jar, dist):
     for path in files:
         if path.name.startswith(".env") or any(marker in path.read_bytes() for marker in SENTINELS):
             raise ValueError("Ambiente/payload de fixture no frontend")
+        if any(marker in path.read_bytes() for marker in NUMERIC_PRIVATE):
+            raise ValueError("Gerador ou metadado numérico privado no frontend")
     entry = Entry()
     entry.feed((dist / "index.html").read_text(encoding="utf-8"))
     if len(entry.paths) != 1:

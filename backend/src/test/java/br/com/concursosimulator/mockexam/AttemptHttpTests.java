@@ -33,6 +33,8 @@ class AttemptHttpTests {
     @Autowired ConfigurableApplicationContext context;
     @Autowired JdbcTemplate jdbc;
     @Autowired JdbcIndexedSessionRepository sessions;
+    @org.springframework.test.context.bean.override.mockito.MockitoSpyBean
+    br.com.concursosimulator.parameterization.infrastructure.persistence.JpaEligibleTemplates templates;
     @Value("${local.server.port}") int port;
     final HttpClient client=HttpClient.newHttpClient(); final JsonMapper json=JsonMapper.builder().build();
     record Browser(String cookie,String token) {}
@@ -125,6 +127,58 @@ class AttemptHttpTests {
         assertThat(send("GET","/api/v1/me/attempts",a,null).statusCode()).isEqualTo(401);
         assertThat(send("GET",path,fresh,null).statusCode()).isEqualTo(200);
     }
+    @Test @Order(6) void numericOptionIsStrictAndLegacyFalseReplaysTheSameCommand() throws Exception {
+        var b=browser(null);var request=createBody(UUID.randomUUID(),1);
+        var old=send("POST","/api/v1/attempts",b,request);assertThat(old.statusCode()).isEqualTo(201);
+        assertThat(send("POST","/api/v1/attempts",b,option(request,"false")).body()).isEqualTo(old.body());
+        assertThat(send("POST","/api/v1/attempts",b,option(request,"true")).statusCode()).isEqualTo(409);
+        var before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
+        for(var value:List.of("null","\"true\"","1","0","[]","{}")) {
+            var r=send("POST","/api/v1/attempts",b,option(createBody(UUID.randomUUID(),1),value));
+            assertThat(r.statusCode()).as(value).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+        }
+        assertThat(send("POST","/api/v1/attempts",new Browser(b.cookie(),null),option(request,"true")).statusCode()).isEqualTo(403);
+        assertThat(send("POST","/api/v1/attempts",b,option(request,"true").replace("\"useParameterizedQuestions\":true","\"useParameterizedQuestions\":true,\"parameters\":{}")).statusCode()).isEqualTo(400);
+        assertThat(jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(before);
+    }
+    @Test @Order(7) void generatedAndFixedItemsStayPrivateAndAccountCanResumeAfterWithdrawal() throws Exception {
+        var versions=br.com.concursosimulator.parameterization.ParameterizedBrowserFixtures.seed(context);
+        var owner=UUID.randomUUID();var account=account(owner);var visitor=browser(null);
+        var store=context.getBean(br.com.concursosimulator.mockexam.application.AttemptStore.class);
+        String accountId=null;
+        for(var actor:List.of(visitor,account)) {
+            var request=option(createBody(UUID.randomUUID(),4).replace("portugues","matematica-raciocinio"),"true");
+            var created=send("POST","/api/v1/attempts",actor,request);assertThat(created.statusCode()).isEqualTo(201);assertSchema(created.body(),"AttemptView");
+            assertSafe(created.body());assertThat(created.body()).doesNotContain("templateId","parameters","manifestDigest","outputDigest","generatorVersion","\"source\"");
+            assertThat(send("POST","/api/v1/attempts",actor,request).body()).isEqualTo(created.body());
+            var id=UUID.fromString(json.readTree(created.body()).get("id").asString());
+            var captured=store.transaction(s->s.find(id).orElseThrow());
+            assertThat(captured.items().stream().filter(i->!i.parameters().isEmpty())).hasSize(3);
+            assertThat(captured.items().stream().map(i->i.question().questionId()).distinct()).hasSize(4);
+            var item=captured.items().getFirst();var path="/api/v1/attempts/"+id;
+            assertThat(send("PUT",path+"/answers/"+item.id(),actor,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0,\"alternativeId\":\""+item.question().content().correctAlternativeId()+"\"}").statusCode()).isEqualTo(200);
+            var finished=send("POST",path+"/finish",actor,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":1}");assertThat(finished.statusCode()).isEqualTo(200);assertSchema(finished.body(),"AttemptFinished");
+            assertThat(json.readTree(finished.body()).get("result").get("correct").asInt()).isEqualTo(1);
+            assertThat(finished.body()).doesNotContain("templateId","parameters","manifestDigest","outputDigest","generatorVersion");
+            if(actor==account)accountId=id.toString();
+        }
+        var uc=new br.com.concursosimulator.parameterization.application.TemplateUseCases(context.getBean(br.com.concursosimulator.parameterization.application.TemplateStore.class));
+        for(var v:versions)uc.decide(br.com.concursosimulator.parameterization.ParameterFixtures.decision(v,br.com.concursosimulator.parameterization.domain.TemplateDecision.Action.WITHDRAW),1,2);
+        var fresh=account(owner);assertThat(send("GET","/api/v1/attempts/"+accountId+"/result",fresh,null).statusCode()).isEqualTo(200);
+        assertThat(send("GET","/api/v1/attempts/"+accountId,browser(null),null).statusCode()).isEqualTo(404);
+        assertThat(send("GET","/api/v1/me/attempts",fresh,null).body()).contains(accountId);
+    }
+    @Test @Order(8) void generationIntegrityFailureIsGenericAndRollsBackTheWholeRequest() throws Exception {
+        var b=browser(null);var tables=List.of("me_attempt","me_item","pq_instance","me_command");
+        var before=tables.stream().map(t->jdbc.queryForObject("select count(*) from "+t,Integer.class)).toList();
+        org.mockito.Mockito.doThrow(new IllegalStateException("PRIVATE_PARAMETERIZED_FAILURE definitionDigest=secret")).when(templates).capture();
+        try {
+            var r=send("POST","/api/v1/attempts",b,option(createBody(UUID.randomUUID(),1),"true"));
+            assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");
+            assertThat(tables.stream().map(t->jdbc.queryForObject("select count(*) from "+t,Integer.class)).toList()).isEqualTo(before);
+        } finally { org.mockito.Mockito.reset(templates); }
+    }
+    String option(String body,String value){return body.substring(0,body.length()-1)+",\"useParameterizedQuestions\":"+value+"}";}
     @Test @Order(90) void incompatibleProjectionReturns503WithoutLeakingOrWritingAnyAttempt() throws Exception {
         var store=context.getBean(br.com.concursosimulator.questionbank.application.port.QuestionStore.class);
         var c=br.com.concursosimulator.questionbank.QuestionFixtures.content("<span data-correct='true'>PRIVATE_MARKUP_SENTINEL</span>");

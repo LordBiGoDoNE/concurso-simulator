@@ -1,0 +1,38 @@
+{
+  "format": "parameter-withdrawal-probe/v1",
+  "observedAt": "2026-10-16T00:12:52.210863+00:00",
+  "target": "second-isolated-copy-only",
+  "approvedCopyBefore": {
+    "families": [
+      "DIRECT_PROPORTION",
+      "PERCENTAGE",
+      "SIMPLE_INTEREST"
+    ],
+    "eligible": 3,
+    "variants": 111
+  },
+  "probeAfterWithdrawal": {
+    "eligible": 0,
+    "variants": 0,
+    "families": []
+  },
+  "probeAfterRegistrationAndApprovalReplay": {
+    "eligible": 0,
+    "variants": 0,
+    "families": []
+  },
+  "approvedCopyAfter": {
+    "variants": 111,
+    "eligible": 3,
+    "families": [
+      "DIRECT_PROPORTION",
+      "PERCENTAGE",
+      "SIMPLE_INTEREST"
+    ]
+  },
+  "approvedCopyTemplateDecisions": 6,
+  "probeTemplateDecisions": 9,
+  "sourceEligible": 250,
+  "sameDefinitionManifestAndBaseDigests": true,
+  "limits": "Retiradas pertencem somente ao clone de ensaio; alvo editorial aprovado mantém três versões elegíveis."
+}

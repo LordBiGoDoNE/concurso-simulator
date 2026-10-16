@@ -14,13 +14,18 @@ public final class Attempt {
             Objects.requireNonNull(id); Objects.requireNonNull(question);
             optionOrder = List.copyOf(optionOrder); parameters = Map.copyOf(parameters);
             var ids = question.content().alternatives().stream().map(QuestionContent.Alternative::id).toList();
-            if (!parameters.isEmpty() || optionOrder.size() != ids.size() || !new HashSet<>(optionOrder).equals(new HashSet<>(ids)))
+            var expected=question.source().capture()==null?Map.<String,String>of():question.source().capture().parameterStrings();
+            if (!parameters.equals(expected) || optionOrder.size() != ids.size() || !new HashSet<>(optionOrder).equals(new HashSet<>(ids)))
                 throw new IllegalArgumentException("Ordem/parâmetros inválidos");
         }
     }
     /** Somente persistência interna; contém material privado de correção. */
     public record Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt,
-                           Instant finishedAt, String policy, List<Item> items, Map<UUID,UUID> answers, long version) {
+                           Instant finishedAt, String policy, List<Item> items, Map<UUID,UUID> answers, long version, int format) {
+        public Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt, Instant finishedAt,
+                        String policy, List<Item> items, Map<UUID,UUID> answers, long version) {
+            this(id,owner,composition,createdAt,finishedAt,policy,items,answers,version,2);
+        }
         public Snapshot { items = List.copyOf(items); answers = Map.copyOf(answers); }
     }
     public record Reference(String name, URI url) {}
@@ -38,11 +43,14 @@ public final class Attempt {
     private Attempt(Snapshot state) {
         Objects.requireNonNull(state.id()); Objects.requireNonNull(state.owner());
         Objects.requireNonNull(state.composition()); Objects.requireNonNull(state.createdAt());
-        if (!POLICY.equals(state.policy()) || state.version() < 0 || state.items().size() != state.composition().total())
+        if ((state.format()!=1 && state.format()!=2) || state.format()==1 && state.composition().useParameterizedQuestions()
+                || !POLICY.equals(state.policy()) || state.version() < 0 || state.items().size() != state.composition().total())
             throw new IllegalArgumentException("Snapshot de tentativa inválido");
         var itemIds = new HashSet<UUID>(); var questions = new HashSet<UUID>();
         var counts = new EnumMap<Discipline,Integer>(Discipline.class);
         for (var item : state.items()) {
+            if (!state.composition().useParameterizedQuestions() && item.question().source().kind()!=QuestionSource.Kind.FIXED)
+                throw new IllegalArgumentException("Geração não solicitada");
             if (!itemIds.add(item.id()) || !questions.add(item.question().questionId()) || !state.composition().accepts(item.question()))
                 throw new IllegalArgumentException("Itens da composição inválidos");
             counts.merge(item.question().content().classification().discipline(), 1, Integer::sum);
@@ -73,12 +81,12 @@ public final class Attempt {
         var answers = new HashMap<>(state.answers());
         if (alternativeId == null) answers.remove(itemId); else answers.put(itemId,alternativeId);
         state = new Snapshot(state.id(),state.owner(),state.composition(),state.createdAt(),null,POLICY,
-                state.items(),answers,Math.addExact(state.version(),1));
+                state.items(),answers,Math.addExact(state.version(),1),state.format());
     }
     public void finish(AttemptOwner actor, Instant now, long expectedVersion) {
         editable(actor,now,expectedVersion);
         state = new Snapshot(state.id(),state.owner(),state.composition(),state.createdAt(),now,POLICY,
-                state.items(),state.answers(),Math.addExact(state.version(),1));
+                state.items(),state.answers(),Math.addExact(state.version(),1),state.format());
     }
     private void editable(AttemptOwner actor, Instant now, long version) {
         requireAccessible(actor,now);

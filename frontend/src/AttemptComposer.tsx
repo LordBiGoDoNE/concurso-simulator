@@ -5,6 +5,7 @@ import { AttemptApiError, createAttempt, type AttemptView, type Composition } fr
 export default function AttemptComposer({ onCreated, onUnavailable }: { onCreated: (v: AttemptView) => void; onUnavailable: () => void }) {
   const [catalog, setCatalog] = useState<Catalog | null>(null); const [catalogFailed, setCatalogFailed] = useState(false); const [retry, setRetry] = useState(0);
   const [role, setRole] = useState(''); const [quantities, setQuantities] = useState<Record<string, string>>({}); const [topics, setTopics] = useState<Record<string, string[]>>({});
+  const [useParameterizedQuestions, setUseParameterizedQuestions] = useState(false);
   const [busy, setBusy] = useState(false); const [message, setMessage] = useState(''); const pending = useRef(false);
   const operation = useRef<{ key: string; id: string } | null>(null); const lifetime = useRef<AbortController | null>(null);
   useEffect(() => { lifetime.current = new AbortController(); return () => lifetime.current?.abort(); }, []);
@@ -19,7 +20,7 @@ export default function AttemptComposer({ onCreated, onUnavailable }: { onCreate
     if (pending.current || !valid || !lifetime.current) return;
     const controller = lifetime.current;
     pending.current = true; setBusy(true); setMessage('');
-    const composition: Composition = { roleId: role, disciplines: portions }; const key = JSON.stringify(composition);
+    const composition: Composition = { roleId: role, disciplines: portions, useParameterizedQuestions }; const key = JSON.stringify(composition);
     if (operation.current?.key !== key) operation.current = { key, id: crypto.randomUUID() };
     try { const value = await createAttempt(composition, operation.current.id, controller.signal); if (!controller.signal.aborted) onCreated(value); }
     catch (error) {
@@ -40,6 +41,9 @@ export default function AttemptComposer({ onCreated, onUnavailable }: { onCreate
         <input id={`quantity-${d.id}`} type="number" min="0" max="100" step="1" value={quantities[d.id] || ''} onChange={e => setQuantities(v => ({ ...v, [d.id]: e.target.value }))} />
         <details><summary>Assuntos de {d.title} (opcional)</summary>{catalog.topics.filter(t => t.disciplineId === d.id).map(t => <label className="attempt-topic" key={t.id}><input type="checkbox" checked={(topics[d.id] || []).includes(t.id)} onChange={e => setTopics(v => ({ ...v, [d.id]: e.target.checked ? [...(v[d.id] || []), t.id] : (v[d.id] || []).filter(id => id !== t.id) }))} />{t.title}</label>)}</details>
       </fieldset>)}</div>
+      <label htmlFor="attempt-variations"><input id="attempt-variations" type="checkbox" checked={useParameterizedQuestions} disabled={busy}
+        aria-describedby="attempt-variations-help" onChange={e => setUseParameterizedQuestions(e.target.checked)} />Usar variações numéricas quando disponíveis</label>
+      <p id="attempt-variations-help">Pode misturar questões fixas e variações de regra de três direta, porcentagem e juros simples. Os valores podem se repetir entre simulados; não há garantia de questão nova.</p>
       <p role="status">Total: {total} questões. {!valid && 'Informe quantidades inteiras que somem de 1 a 100.'}</p>
       {message && <p role="alert">{message}</p>}
       <button disabled={!valid || busy} type="submit">{busy ? 'Criando simulado…' : message ? 'Tentar criar novamente' : 'Iniciar simulado'}</button>

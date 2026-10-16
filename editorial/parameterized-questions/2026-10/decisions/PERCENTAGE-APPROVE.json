@@ -1,0 +1,29 @@
+{
+  "format": "parameter-decision/v1",
+  "expectedEligible": null,
+  "expectedSequence": 1,
+  "decision": {
+    "operationId": "2988862a-d399-4e00-b627-ca8cfe74c5b9",
+    "templateId": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+    "version": 1,
+    "action": "APPROVE",
+    "definitionDigest": "b6ab95874bee5d34a69312ddd6cd88598b21dd8f77419037fde5f3b0b0c0277a",
+    "domainDigest": "c5607626f484fb4bc1faa0a3c95d6a2521abc98bd97d2203c643b52fff890e39",
+    "manifestDigest": "9bba42ad7fb4364584cfc588b8cabbf7a504e36d3b16f6c58398ffc0ac4ca9bc",
+    "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+    "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+    "responsible": "Codex — revisão editorial assistida por IA, sem revisão humana independente",
+    "at": "2026-10-16T00:09:14.990922Z",
+    "checklist": [
+      "CORRECTNESS",
+      "DISTRACTORS",
+      "CLARITY",
+      "STEP_BY_STEP",
+      "ACCESSIBILITY",
+      "SOURCES",
+      "CLASSIFICATION",
+      "COMPLETE_DOMAIN"
+    ],
+    "rationale": "20 tuplas conferidas por geração Java, oráculo racional independente e revisão editorial assistida; conteúdo/digests liberados explicitamente pelo usuário na seleção 879e9fa5d43d885a6125c9cbccc8590b373abc8d2321929d370159426ef1dba3."
+  }
+}

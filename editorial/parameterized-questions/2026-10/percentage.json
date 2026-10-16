@@ -1,0 +1,35 @@
+{
+  "format": "parameter-template/v1",
+  "definition": {
+    "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+    "version": 1,
+    "family": "PERCENTAGE",
+    "generatorVersion": "numeric-v1",
+    "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+    "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+    "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+    "classification": {
+      "roles": [
+        "ADMINISTRATIVE_ASSISTANT",
+        "SCHOOL_SECRETARY"
+      ],
+      "topic": "M04",
+      "discipline": "MATHEMATICS_LOGIC"
+    },
+    "references": [
+      {
+        "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+        "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+        "legalBasis": null
+      }
+    ],
+    "provenance": {
+      "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+      "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+      "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+      "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+      "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+    }
+  },
+  "expectedLatest": 0
+}

@@ -168,6 +168,7 @@ paths:
         '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
         '403': {$ref: '#/components/responses/AttemptForbidden'}
         '409': {description: Payload divergente ou acervo insuficiente; error e available por disciplina, content: {application/json: {schema: {oneOf: [{$ref: '#/components/schemas/AttemptError'}, {$ref: '#/components/schemas/AttemptInsufficient'}]}}}}
+        '500': {description: Falha interna de integridade; sem captura parcial ou dados privados; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptError'}}}}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
   /api/v1/attempts/{id}:
     parameters:
@@ -393,6 +394,10 @@ components:
       properties:
         commandId: {type: string, format: uuid}
         roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        useParameterizedQuestions:
+          type: boolean
+          default: false
+          description: Usa variações numéricas aprovadas quando disponíveis; pode misturar fixas e variações, sem garantir novidade. Ausente equivale a false; null e coerção de tipos não são aceitos.
         disciplines:
           type: array
           minItems: 1

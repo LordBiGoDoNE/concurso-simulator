@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "parameterized-questions",
+  "scope": "revalidation-after-authorized-stack-merge",
+  "pr": 97,
+  "risk": "critical",
+  "risk_reason": "Aprovação exata de conteúdo e interação com captura/persistência após avanço da base.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/parameterized_round2_sol",
+    "selection": "Mesma sessão inicialmente independente, gpt-6.1-sol com reasoning_effort=xhigh explicitamente selecionado, sem substituição; provider ID não exposto."
+  },
+  "recorded_at": "2026-10-16T01:23:10.066470+00:00",
+  "base_sha": "2ca17bac27813ae8351a7b50f55f29c9a8ec878d",
+  "reviewed_head_sha": "5ae849ece54f06bc4674d921b846b38f38e62a37",
+  "diff_sha256": "f4b4b6e6d22791eadb29e912bb6e4efbe99385468ee8b23e1cdca295506f741e",
+  "original_approved_pr_head": "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c",
+  "original_head_triple_snapshot": {
+    "number": 97,
+    "base_sha": "2ca17bac27813ae8351a7b50f55f29c9a8ec878d",
+    "reviewed_head_sha": "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c",
+    "diff_sha256": "d0eaa1982d7bb74c450e44bd1d70dd812927fe1b9fa55694cde37318cef411af"
+  },
+  "digest_note": "O triple com head original usa merge-base antiga 6781e9c; somente a combinação local 5ae849e representa o residual contra a base real 2ca17ba.",
+  "combination_parents": [
+    "2ca17bac27813ae8351a7b50f55f29c9a8ec878d",
+    "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c"
+  ],
+  "branch_update": "A branch independente #97 avança para a combinação exata já revalidada, preservando o head original como pai; sem rebase/retargeting ou sync pós-merge da stack.",
+  "evidence_note": "Estes dois novos arquivos de registro são posteriores ao source head revalidado; não estão incluídos em seu digest. Nenhuma outra mudança de fonte por esse registro.",
+  "integrated_stack": {
+    "number": 96,
+    "prs": [
+      94,
+      95,
+      98
+    ],
+    "merge_sha": "2ca17bac27813ae8351a7b50f55f29c9a8ec878d"
+  },
+  "previous_reviewed_combination": "52abdfa00a6ad5a04d7b43da1989fb3db7ace1db",
+  "only_difference_from_previous": [
+    "openspec/changes/parameterized-questions/reviews/round2/review.json",
+    "openspec/changes/parameterized-questions/reviews/round2/review.md"
+  ],
+  "coverage": {
+    "residual": "Diff completo de #97, conteúdo editorial, definições/prévias, pacote-base, decisões/observações, auditor Python, regressões e tarefas.",
+    "interaction": "Fonte capturada/definição/manifestações com persistência integrada e proteções V8/V9; P5-R2-001/002 continuam corrigidos.",
+    "hashes": "Recalculados independentemente os dois digests canônicos, pais da combinação, 111 hashes de saída e três manifestos; todos conferem.",
+    "historical_evidence": "Os dois registros round2/review.json/md foram lidos e estão coerentes com a análise anterior, incluindo triagem e atribuição de execuções; não atestam a nova base retroativamente."
+  },
+  "findings": [],
+  "triage_complete": true,
+  "prior_findings": [
+    {
+      "id": "P5-R2-001",
+      "disposition": "fixed"
+    },
+    {
+      "id": "P5-R2-002",
+      "disposition": "fixed"
+    }
+  ],
+  "verification": [
+    {
+      "executed_by": "reviewer",
+      "result": "Conferência somente leitura dos SHAs/pais/digests, residual completo e interação; árvore igual a 52abdfa exceto dois relatórios históricos."
+    },
+    {
+      "executed_by": "coordinator",
+      "result": "Oito regressões editoriais novamente aprovadas na combinação atual; whitespace sem erros. Execuções anteriores de build/CI permanecem históricas, não declaradas como novas."
+    }
+  ],
+  "limitations": [
+    "Não é novo lote, aprovação de merge ou gate cumulativo final. Grupos 5/6 continuam fora do escopo.",
+    "Revisor não executou testes/build/scripts do projeto/rede/DB/aplicação/escritas nem consultou os serviços remotos.",
+    "Na revisão, a ref real da épica era 2ca17ba, enquanto metadados/testmerge GitHub ainda cacheavam 6781e9c. A análise usou a base real e a combinação local conferida; não certificou CI da combinação nova.",
+    "A publicação da combinação já revisada na branch independente deve renovar checks e permitir conferir base/pais/árvore efetivos antes/depois do merge, sem bypass.",
+    "Cota/tokens e observações privadas não são publicados; disponibilidade e limites comunicados separadamente ao usuário."
+  ]
+}

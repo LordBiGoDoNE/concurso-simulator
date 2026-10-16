@@ -1,0 +1,140 @@
+{
+  "version": 1,
+  "status": "completed",
+  "scope": "implementation-batch-groups-1-2-only",
+  "spec": "parameterized-questions",
+  "risk": "critical",
+  "risk_reason": "Integridade de geração/manifesto/elegibilidade editorial, persistência, migração, transações, conflitos e captura privada.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/parameterized_round1_sol",
+    "independent_context": true,
+    "selection_evidence": "Codex spawn_agent fork_turns=none, model=gpt-6.1-sol, reasoning_effort=xhigh; mesma sessão retomada para revalidação, sem ID adicional de provedor exposto."
+  },
+  "reviewed_at": "2026-10-15T19:13:28.812132+00:00",
+  "recorded_at": "2026-10-15T19:15:37.389145+00:00",
+  "prs": [
+    {
+      "pr": 88,
+      "base_ref": "epic/parameterized-questions",
+      "head_ref": "task/parameterized-questions/generation",
+      "base_sha": "05b9cb956c78105793d2956c90df81b34d69f4fd",
+      "reviewed_head_sha": "a110c2b42d2ba1623991fc9c91e06df648246426",
+      "diff_sha256": "98a41593f30910fae2f6540fad30d6572480022dbfcef27c891698cfc2273192"
+    },
+    {
+      "pr": 89,
+      "base_ref": "task/parameterized-questions/generation",
+      "head_ref": "task/parameterized-questions/manifest",
+      "base_sha": "a110c2b42d2ba1623991fc9c91e06df648246426",
+      "reviewed_head_sha": "40c701aea401db3e32a6e9b332e1cf07c771a107",
+      "diff_sha256": "aa633f1cca59f61696be723884148c017c7c18afc45442e303a7f65b4abfcc7b"
+    },
+    {
+      "pr": 90,
+      "base_ref": "task/parameterized-questions/manifest",
+      "head_ref": "task/parameterized-questions/editorial-core",
+      "base_sha": "40c701aea401db3e32a6e9b332e1cf07c771a107",
+      "reviewed_head_sha": "261ac824ab945bacaedfa4ad7cec7b7e0c10c6d2",
+      "diff_sha256": "2739f54c3a58ecf26ac21c4e1295dce149f451cc785469f05060a54a3b167dce"
+    },
+    {
+      "pr": 92,
+      "base_ref": "task/parameterized-questions/editorial-core",
+      "head_ref": "task/parameterized-questions/persistence",
+      "base_sha": "261ac824ab945bacaedfa4ad7cec7b7e0c10c6d2",
+      "reviewed_head_sha": "89206044b6656041643e5d3e223f57839ec4fa16",
+      "diff_sha256": "118edd284088f0848f52b736924b7a5f2aa7897c82ab684a6fb2be21c4941141"
+    },
+    {
+      "pr": 93,
+      "base_ref": "task/parameterized-questions/persistence",
+      "head_ref": "task/parameterized-questions/editorial-local",
+      "base_sha": "89206044b6656041643e5d3e223f57839ec4fa16",
+      "reviewed_head_sha": "14081b9630488f159ba19b45d70b5c2c7e17853e",
+      "diff_sha256": "d6c7693ceef941adc92be36546dc3245dcc80f705334cc12a88f0a2b7e80e507"
+    }
+  ],
+  "combined": {
+    "base_sha": "05b9cb956c78105793d2956c90df81b34d69f4fd",
+    "reviewed_head_sha": "14081b9630488f159ba19b45d70b5c2c7e17853e",
+    "diff_sha256": "0b306fd518bec56e3d83c53b22ccaf8556f49a59b12f5ccad0ecea3aa263010a"
+  },
+  "digest_scope": "Digests canônicos dos fontes no head analisado; somente spec-review.json/md excluídos. Estes dois registros do lote são posteriores ao source head e não se declaram incluídos no digest analisado.",
+  "initial": {
+    "combined": {
+      "base_sha": "05b9cb956c78105793d2956c90df81b34d69f4fd",
+      "reviewed_head_sha": "ea851aa7273906e4f99de91413a01af94dd4e153",
+      "diff_sha256": "90ca1822c63b0f0a4f5cd700bb51852381af0eb81050795f88a43a645f56c697"
+    },
+    "result": "Nenhum bloqueador, uma recomendação confirmada."
+  },
+  "revalidation": {
+    "combined": {
+      "base_sha": "05b9cb956c78105793d2956c90df81b34d69f4fd",
+      "reviewed_head_sha": "14081b9630488f159ba19b45d70b5c2c7e17853e",
+      "diff_sha256": "0b306fd518bec56e3d83c53b22ccaf8556f49a59b12f5ccad0ecea3aa263010a"
+    },
+    "result": "P5-R1-R1 fixed; nenhum novo achado ou achado aberto."
+  },
+  "coverage": {
+    "requirements": "38 arquivos relevantes completos, cinco diffs e combinação, proposta/design/spec/8 tarefas; 111 tuplas; grupos 3–6 não antecipados.",
+    "architecture": "Núcleo Java puro, VOs do banco, portas úteis, JPA/transações na infraestrutura e launcher fora de startup web.",
+    "integration": "Definição, manifesto, agregado, persistência, revisão-base e captura privada; sem exigir integração de tentativa do grupo 3.",
+    "security": "Parser/tipos exatos, limites/raiz/caminhos/destino, confirmação/digest, CI sem aprovação real, diagnóstico genérico e contratos privados.",
+    "persistence": "V6 aditivo, FKs/triggers, ponteiro único/locks, REPEATABLE_READ, conflitos específicos e recuperação pós-rollback, preservação V5.",
+    "tests": "Leitura de testes de domínio/oráculo/distratores, adulteração, editorial, concorrência/captura, upgrade, launcher e regressão de coerção; revisor não executou testes.",
+    "maintenance": "Canonização/versionamento, restauração conferida, documentação da operação e dos limites, implementação distinta de aprovação editorial."
+  },
+  "findings": [
+    {
+      "id": "P5-R1-R1",
+      "severity": "recommended",
+      "pr": 93,
+      "location": "TemplateLocal.java — JsonMapper estático; TemplateLocalTests.java — parsing editorial",
+      "evidence": "Defaults Jackson 3.1.5 aceitavam coerção de escalares, float para int e ordinais de enum; mapper local não herda flags de application.yaml.",
+      "reference": "Tarefas 1.1/2.4, design seleção editorial exata e contrato de inteiros/enums nomeados.",
+      "impact": "Arquivo malformado poderia tornar-se operação válida de versão/estado diferentes da representação fornecida, ainda sujeito a confirmação/CI/digests.",
+      "suggestion": "Configurar tipos estritos e testar strings/frações/ordinais antes de acesso ao banco.",
+      "disposition": "fixed",
+      "resolution": "Commit 14081b9630488f159ba19b45d70b5c2c7e17853e desabilita scalar coercion e float→int, rejeita ordinais, null em primitivos e números/booleanos para texto. Regressão pelo launcher exige JacksonException com ambiente vazio em definição/versão/ação/checklist/estados; documentação registra causa/regra/limites. Revalidado no novo diff completo sem novos achados."
+    }
+  ],
+  "triage_complete": true,
+  "verification": [
+    {
+      "command": "gradlew build no Windows antes da correção do parser",
+      "result": "177 casos: 176 executados, zero falhas/erros; um symlink omitido por permissão do Windows.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "gradlew test --tests *TemplateLocalTests após 14081b9",
+      "result": "Oito casos: sete executados, zero falhas/erros; symlink omitido no Windows.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Application checks Linux no source head 14081b9, run38791654981 job116617464041",
+      "result": "178 PASSED, zero SKIPPED nos logs; symlink e regressão de tipos PASSED.",
+      "executed_by": "github-actions-verified-by-coordinator"
+    },
+    {
+      "command": "OpenSpec 1.14.1 offline validate --all --strict e git diff --check",
+      "result": "5/5 changes válidas; sem erros de whitespace.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Hash direto dos bytes dos cinco diffs/cumulativo e leitura de código/testes/docs",
+      "result": "Seis digests recalculados confirmados nas duas fases.",
+      "executed_by": "reviewer"
+    }
+  ],
+  "limitations": [
+    "Revisão do lote grupos 1/2, não gate cumulativo final da spec nem aprovação de merge.",
+    "Revisor somente leitura, sem testes/build/aplicação/rede/DB/escritas/delegação; resultados executados pertencem ao coordenador/CI.",
+    "Não verificou CI remoto; coordenador confere bases/heads/checks publicados separadamente.",
+    "Sem conteúdo real, aprovação editorial ou integração de tentativas/interface dos grupos futuros.",
+    "Contexto novo reduz viés sem garanti-lo; sem Graphify, conversas/outros agentes ou relatórios anteriores.",
+    "Dados privados de cota/tokens/observações operacionais ficam fora do Git e das issues/PRs; sem comparação fictícia ou consumo zero inferido.",
+    "Primeiro merge/sync pós-merge produtivo da stack não é ensaio autorizado neste lote; sem retargeting/bypass/fila/auto-merge."
+  ]
+}

@@ -83,3 +83,6 @@ jobs:
       - name: Real browser identity flow with isolated PostgreSQL and local OIDC
         run: npm run test:identity
         working-directory: frontend
+      - name: Numeric variations with isolated PostgreSQL and local OIDC
+        run: npm run test:parameterized
+        working-directory: frontend

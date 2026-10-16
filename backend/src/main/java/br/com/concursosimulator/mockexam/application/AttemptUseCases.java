@@ -18,19 +18,28 @@ public final class AttemptUseCases {
     private final Clock clock;
     private final Supplier<UUID> ids;
     private final Supplier<RandomGenerator> random;
+    private final boolean generationEnabled;
     public AttemptUseCases(AttemptStore store, Clock clock, Supplier<UUID> ids, Supplier<RandomGenerator> random) {
+        this(store,clock,ids,random,true);
+    }
+    public AttemptUseCases(AttemptStore store, Clock clock, Supplier<UUID> ids, Supplier<RandomGenerator> random, boolean generationEnabled) {
         this.store=Objects.requireNonNull(store); this.clock=Objects.requireNonNull(clock);
         this.ids=Objects.requireNonNull(ids); this.random=Objects.requireNonNull(random);
+        this.generationEnabled=generationEnabled;
     }
     public Outcome create(AttemptOwner actor, UUID operation, Composition composition) {
         Objects.requireNonNull(actor); Objects.requireNonNull(operation); Objects.requireNonNull(composition);
         var hash=hash("create", canonical(composition));
         return execute(actor,operation,hash,null, session -> {
+            if (composition.useParameterizedQuestions() && !generationEnabled)
+                throw new IllegalStateException("Geração temporariamente desabilitada");
             var rng=random.get(); var selected=composition.select(session.eligible(),rng);
-            var items=selected.stream().map(q -> {
+            var captured=composition.useParameterizedQuestions()
+                    ?AttemptMaterializer.materialize(selected,session.templates(),rng,ids):selected;
+            var items=captured.stream().map(q -> {
                 var order=new ArrayList<>(q.content().alternatives().stream().map(a -> a.id()).toList());
                 for (int i=order.size()-1;i>0;i--) Collections.swap(order,i,rng.nextInt(i+1));
-                return new Attempt.Item(ids.get(),q,order,Map.of());
+                return new Attempt.Item(ids.get(),q,order,q.source().capture()==null?Map.of():q.source().capture().parameterStrings());
             }).toList();
             var attempt=Attempt.start(ids.get(),actor,composition,now(),items);
             session.insert(attempt.snapshot()); return attempt;
@@ -103,7 +112,8 @@ public final class AttemptUseCases {
             parts.add(e.getKey().name()); parts.add(Integer.toString(e.getValue().quantity()));
             parts.add(e.getValue().topics().stream().map(Enum::name).sorted().toList().toString());
         });
-        return parts.toString();
+        // Ausente/false deve produzir exatamente os bytes da V5, inclusive pontuação.
+        return c.useParameterizedQuestions()?"parameterized-create/v1:"+parts:parts.toString();
     }
     private static String hash(Object... values) {
         try {

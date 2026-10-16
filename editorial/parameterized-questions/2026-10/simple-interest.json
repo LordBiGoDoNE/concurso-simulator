@@ -1,0 +1,35 @@
+{
+  "format": "parameter-template/v1",
+  "definition": {
+    "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+    "version": 1,
+    "family": "SIMPLE_INTEREST",
+    "generatorVersion": "numeric-v1",
+    "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+    "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+    "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+    "classification": {
+      "roles": [
+        "ADMINISTRATIVE_ASSISTANT",
+        "SCHOOL_SECRETARY"
+      ],
+      "topic": "M04",
+      "discipline": "MATHEMATICS_LOGIC"
+    },
+    "references": [
+      {
+        "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+        "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+        "legalBasis": null
+      }
+    ],
+    "provenance": {
+      "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+      "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+      "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+      "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+      "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+    }
+  },
+  "expectedLatest": 0
+}

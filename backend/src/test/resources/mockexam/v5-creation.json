@@ -1,0 +1,151 @@
+{
+  "operationId" : "f244d880-01a1-4ce1-b784-50ed8071ee20",
+  "sourceCommit" : "0d0fc4848f55fc93c736aa76dcfbb73a7269eb39",
+  "snapshot" : {
+    "id" : "fe7f90ee-c6de-4761-b8e1-7c2c50c8323e",
+    "owner" : {
+      "kind" : "ACCOUNT",
+      "id" : "6bf95b59-194e-487d-a760-dced237df7c1"
+    },
+    "composition" : {
+      "role" : "ADMINISTRATIVE_ASSISTANT",
+      "disciplines" : {
+        "PORTUGUESE" : {
+          "quantity" : 1,
+          "topics" : [ ]
+        }
+      }
+    },
+    "createdAt" : "2026-10-14T12:00:00Z",
+    "finishedAt" : null,
+    "policy" : "uniform-v1",
+    "items" : [ {
+      "id" : "e6e6724f-b47a-46e3-b95e-c653f2e9bb9a",
+      "question" : {
+        "questionId" : "eb200723-847b-4acc-a870-11a999e1d225",
+        "revisionId" : "c01c8ddc-fe9a-4bff-8f61-68bf99781f2a",
+        "fingerprint" : "4051f4365da513770b7c3af2e559fd05ac0eb5f632dfe469ebdc045830ca2279",
+        "content" : {
+          "statement" : {
+            "text" : "Fixture realmente produzida pelo código V5 em 0d0fc48",
+            "resources" : [ ]
+          },
+          "alternatives" : [ {
+            "id" : "10000000-0000-0000-0000-000000000001",
+            "content" : {
+              "text" : "Opção sintética A",
+              "resources" : [ ]
+            }
+          }, {
+            "id" : "10000000-0000-0000-0000-000000000002",
+            "content" : {
+              "text" : "Opção sintética B",
+              "resources" : [ ]
+            }
+          } ],
+          "correctAlternativeId" : "10000000-0000-0000-0000-000000000001",
+          "resolution" : {
+            "text" : "Resolução sintética: x² = x vezes x.",
+            "resources" : [ ]
+          },
+          "classification" : {
+            "discipline" : "PORTUGUESE",
+            "topic" : "P01",
+            "roles" : [ "SCHOOL_SECRETARY", "ADMINISTRATIVE_ASSISTANT" ]
+          },
+          "references" : [ {
+            "name" : "Referência sintética",
+            "url" : "https://example.test/study",
+            "legalBasis" : null
+          } ],
+          "provenance" : {
+            "author" : "Fixture autoral de teste",
+            "contentPath" : "fixtures/conteudo.html",
+            "answerPath" : "fixtures/gabarito.html",
+            "contentSha256" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+            "answerSha256" : "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+          }
+        }
+      },
+      "optionOrder" : [ "10000000-0000-0000-0000-000000000001", "10000000-0000-0000-0000-000000000002" ],
+      "parameters" : { }
+    } ],
+    "answers" : { },
+    "version" : 0
+  },
+  "command" : {
+    "hash" : "2c65452f9a51ac3d5e56c6fa613b9e03ca2aae9d7222d38c515358e1fd43a2be",
+    "outcome" : {
+      "id" : "fe7f90ee-c6de-4761-b8e1-7c2c50c8323e",
+      "owner" : {
+        "kind" : "ACCOUNT",
+        "id" : "6bf95b59-194e-487d-a760-dced237df7c1"
+      },
+      "composition" : {
+        "role" : "ADMINISTRATIVE_ASSISTANT",
+        "disciplines" : {
+          "PORTUGUESE" : {
+            "quantity" : 1,
+            "topics" : [ ]
+          }
+        }
+      },
+      "createdAt" : "2026-10-14T12:00:00Z",
+      "finishedAt" : null,
+      "policy" : "uniform-v1",
+      "items" : [ {
+        "id" : "e6e6724f-b47a-46e3-b95e-c653f2e9bb9a",
+        "question" : {
+          "questionId" : "eb200723-847b-4acc-a870-11a999e1d225",
+          "revisionId" : "c01c8ddc-fe9a-4bff-8f61-68bf99781f2a",
+          "fingerprint" : "4051f4365da513770b7c3af2e559fd05ac0eb5f632dfe469ebdc045830ca2279",
+          "content" : {
+            "statement" : {
+              "text" : "Fixture realmente produzida pelo código V5 em 0d0fc48",
+              "resources" : [ ]
+            },
+            "alternatives" : [ {
+              "id" : "10000000-0000-0000-0000-000000000001",
+              "content" : {
+                "text" : "Opção sintética A",
+                "resources" : [ ]
+              }
+            }, {
+              "id" : "10000000-0000-0000-0000-000000000002",
+              "content" : {
+                "text" : "Opção sintética B",
+                "resources" : [ ]
+              }
+            } ],
+            "correctAlternativeId" : "10000000-0000-0000-0000-000000000001",
+            "resolution" : {
+              "text" : "Resolução sintética: x² = x vezes x.",
+              "resources" : [ ]
+            },
+            "classification" : {
+              "discipline" : "PORTUGUESE",
+              "topic" : "P01",
+              "roles" : [ "SCHOOL_SECRETARY", "ADMINISTRATIVE_ASSISTANT" ]
+            },
+            "references" : [ {
+              "name" : "Referência sintética",
+              "url" : "https://example.test/study",
+              "legalBasis" : null
+            } ],
+            "provenance" : {
+              "author" : "Fixture autoral de teste",
+              "contentPath" : "fixtures/conteudo.html",
+              "answerPath" : "fixtures/gabarito.html",
+              "contentSha256" : "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+              "answerSha256" : "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"
+            }
+          }
+        },
+        "optionOrder" : [ "10000000-0000-0000-0000-000000000001", "10000000-0000-0000-0000-000000000002" ],
+        "parameters" : { }
+      } ],
+      "answers" : { },
+      "version" : 0
+    }
+  }
+}

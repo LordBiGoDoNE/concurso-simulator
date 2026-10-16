@@ -1,0 +1,117 @@
+{
+  "format": "parameter-content-approval-selection/v1",
+  "status": "PENDING_USER_DECISION",
+  "target": "isolated-local-postgresql-copy",
+  "variants": 111,
+  "requiresExplicitApproval": true,
+  "responsible": "Codex — revisão editorial assistida por IA, sem revisão humana independente",
+  "timestampPolicy": "Atribuir Instant e IDs de operação às decisões somente após autorização explícita; esta seleção não executa decisões.",
+  "newBase": {
+    "key": "M04-Q05",
+    "questionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+    "revisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+    "fingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+    "packageFile": "base-m04-q05-package.json",
+    "packageSha256": "aa64aa95507b3aefca22d8fe8cf8cd317316951c1a94a989d8837035a92ea612",
+    "expectedEligible": null,
+    "expectedEditorialSequence": 0,
+    "actions": [
+      "SUBMIT",
+      "APPROVE"
+    ]
+  },
+  "templates": [
+    {
+      "family": "DIRECT_PROPORTION",
+      "templateId": "ae2f9e5e-e000-5e95-bbae-9499ab5ade07",
+      "version": 1,
+      "definitionFile": "direct-proportion.json",
+      "fileSha256": "a9ca8c130c96e5e1509bc35adef1bfbbec806b07cd086c2b9121096a5e915b4d",
+      "baseQuestionId": "2bb8c482-8107-47bc-beec-abcefc540caf",
+      "baseRevisionId": "632ee809-9a3b-4e97-8144-9539f6b951bb",
+      "baseFingerprint": "cadb800275af1eaf48256c86104b921325bcaba5dcc7b69ae26c5535a0b2c98b",
+      "definitionDigest": "814856a1723091fd5b1c19d4a60f043a2b932e302fb3203bd5a6d9858a82caf3",
+      "domainDigest": "4e79ada209d2b163b2be7379ccfef710e46715c1daa7d22bf1b26f73861e2a9d",
+      "manifestDigest": "6814d912447caccc81fdd7ac8c188847083bb89ff6fe94818c51a769b20dba21",
+      "variants": 64,
+      "expectedLatest": 0,
+      "expectedEligible": null,
+      "expectedSequence": 0,
+      "actions": [
+        "REGISTER_DRAFT",
+        "SUBMIT",
+        "APPROVE"
+      ]
+    },
+    {
+      "family": "PERCENTAGE",
+      "templateId": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+      "version": 1,
+      "definitionFile": "percentage.json",
+      "fileSha256": "ad07585c1c45e5851619c4ad23d7b27cbb29544cf2595d7e9155e6162e112ed5",
+      "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+      "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+      "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+      "definitionDigest": "b6ab95874bee5d34a69312ddd6cd88598b21dd8f77419037fde5f3b0b0c0277a",
+      "domainDigest": "c5607626f484fb4bc1faa0a3c95d6a2521abc98bd97d2203c643b52fff890e39",
+      "manifestDigest": "9bba42ad7fb4364584cfc588b8cabbf7a504e36d3b16f6c58398ffc0ac4ca9bc",
+      "variants": 20,
+      "expectedLatest": 0,
+      "expectedEligible": null,
+      "expectedSequence": 0,
+      "actions": [
+        "REGISTER_DRAFT",
+        "SUBMIT",
+        "APPROVE"
+      ]
+    },
+    {
+      "family": "SIMPLE_INTEREST",
+      "templateId": "e574536d-2328-5f5d-931b-01741b8f1092",
+      "version": 1,
+      "definitionFile": "simple-interest.json",
+      "fileSha256": "7d1ab21a35ce84793723f6778a61bbdf708fc4e29e6fef5bc0a3d2e60d4e5fa1",
+      "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+      "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+      "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+      "definitionDigest": "1661c38884b4f71c61e943b83c6fd51c0a250b027dcf6488b324cb413803fb6c",
+      "domainDigest": "4f245cbdd68f2b450e4d091e65979190fdeb0bbda9baada91599770d1a9d57cc",
+      "manifestDigest": "0617b27c85219241fcf9d336be6b9a492671df15bfb246dfe58e5f1696eedc30",
+      "variants": 27,
+      "expectedLatest": 0,
+      "expectedEligible": null,
+      "expectedSequence": 0,
+      "actions": [
+        "REGISTER_DRAFT",
+        "SUBMIT",
+        "APPROVE"
+      ]
+    }
+  ],
+  "baseChecklist": [
+    "CORRECTNESS",
+    "DISTRACTORS",
+    "CLARITY",
+    "STEP_BY_STEP",
+    "ACCESSIBILITY",
+    "SOURCES",
+    "CLASSIFICATION"
+  ],
+  "templateChecklist": [
+    "CORRECTNESS",
+    "DISTRACTORS",
+    "CLARITY",
+    "STEP_BY_STEP",
+    "ACCESSIBILITY",
+    "SOURCES",
+    "CLASSIFICATION",
+    "COMPLETE_DOMAIN"
+  ],
+  "excludedActions": [
+    "GitHub merge",
+    "main",
+    "deploy",
+    "archive",
+    "other templates or versions"
+  ]
+}

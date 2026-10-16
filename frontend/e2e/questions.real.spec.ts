@@ -37,7 +37,9 @@ for (const width of [390, 1280]) {
     await expect(page.locator('article')).toContainText('(x)_(1) + (y)_(2); 2^(3); H_(2)O; _abc; x < y e y > z');
     await expect(page.locator('article em,article strong')).toHaveCount(0);
     await expect(page.locator('article')).toContainText('(1)/(2)');
-    await expect(page.getByRole('radio')).toHaveCount(0);await expect(page.getByRole('checkbox')).toHaveCount(0);
+    await expect(page.getByRole('radio')).toHaveCount(0);await expect(page.locator('article').getByRole('checkbox')).toHaveCount(0);
+    await expect(page.getByRole('checkbox')).toHaveCount(1);
+    await expect(page.getByRole('region', { name: 'Simulados', exact: true }).getByRole('checkbox', { name: 'Usar variações numéricas quando disponíveis' })).not.toBeChecked();
     await expect(page.locator('[data-correct], .correct, .answer, script[src*="gabarito"]')).toHaveCount(0);
     expect(await page.content()).not.toMatch(/correctAlternativeId|PRIVATE_BROWSER_RESOLUTION_SENTINEL|PRIVATE_DRAFT_SENTINEL/);
     await page.keyboard.press('Tab');await expect(page.getByRole('button', { name: 'Fechar detalhe' })).toBeFocused();

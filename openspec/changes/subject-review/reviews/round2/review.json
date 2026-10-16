@@ -1,0 +1,465 @@
+{
+  "version": 1,
+  "status": "completed",
+  "scope": "implementation-batch-groups-3-4-only",
+  "spec": "subject-review",
+  "risk": "critical",
+  "risk_reason": "Segurança de rota/principal/sessão/CSRF, privacidade HTTP/browser, projeções históricas e concorrência de conclusão/logout/expiração.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/subject_round2_sol",
+    "independent_context": true,
+    "selection_evidence": "Harness disponibilizou/aceitou spawn_agent fork_turns=none,model=gpt-6.1-sol,reasoning_effort=xhigh;perfil coincide,sem fallback. Mesma sessão retomada para revalidação. Nenhum ID adicional de provedor exposto."
+  },
+  "reviewed_at": "2026-10-16T17:51:24.217371+00:00",
+  "recorded_at": "2026-10-16T17:51:24.217371+00:00",
+  "time_basis": "Horário de registro do encerramento pelo coordenador; não telemetria do provedor.",
+  "prs": [
+    {
+      "pr": 111,
+      "base_ref": "epic/subject-review",
+      "head_ref": "task/subject-review/http-query",
+      "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+      "reviewed_head_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+      "diff_sha256": "976e9d1a74aac4de708dee1d5dab49df3fe0bab5ee99814e806a653e049bd802"
+    },
+    {
+      "pr": 112,
+      "base_ref": "task/subject-review/http-query",
+      "head_ref": "task/subject-review/http-privacy",
+      "base_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+      "reviewed_head_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+      "diff_sha256": "e07b01644c989405f233794ceabaff42dd4a167de87c3a7cf4170b539fa2285f"
+    },
+    {
+      "pr": 113,
+      "base_ref": "task/subject-review/http-privacy",
+      "head_ref": "task/subject-review/review-interface",
+      "base_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+      "reviewed_head_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+      "diff_sha256": "6394d3c8c476c20c8229ec6f16fac559f70971b67d72278038f4404e4f24606d"
+    },
+    {
+      "pr": 114,
+      "base_ref": "task/subject-review/review-interface",
+      "head_ref": "task/subject-review/review-browser",
+      "base_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+      "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+      "diff_sha256": "edaedc164a65a8cb30cf7b70e2c1b26dcc564421e8725a1fa3a65844c3d052ba"
+    }
+  ],
+  "combined": {
+    "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+    "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+    "diff_sha256": "f808636a2e8d3a1141a58ae23a1d1405d68b2c23d0c0b4fd4109cea07de9b33b"
+  },
+  "digest_scope": "Snapshots canônicos de fonte;exclusivamente spec-review.json/md excluídos. Dois registros reviews/round2 posteriores não se declaram incluídos.",
+  "initial": {
+    "prs": [
+      {
+        "pr": 111,
+        "base_ref": "epic/subject-review",
+        "head_ref": "task/subject-review/http-query",
+        "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+        "reviewed_head_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+        "diff_sha256": "976e9d1a74aac4de708dee1d5dab49df3fe0bab5ee99814e806a653e049bd802"
+      },
+      {
+        "pr": 112,
+        "base_ref": "task/subject-review/http-query",
+        "head_ref": "task/subject-review/http-privacy",
+        "base_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+        "reviewed_head_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+        "diff_sha256": "e07b01644c989405f233794ceabaff42dd4a167de87c3a7cf4170b539fa2285f"
+      },
+      {
+        "pr": 113,
+        "base_ref": "task/subject-review/http-privacy",
+        "head_ref": "task/subject-review/review-interface",
+        "base_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+        "reviewed_head_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+        "diff_sha256": "6394d3c8c476c20c8229ec6f16fac559f70971b67d72278038f4404e4f24606d"
+      },
+      {
+        "pr": 114,
+        "base_ref": "task/subject-review/review-interface",
+        "head_ref": "task/subject-review/review-browser",
+        "base_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+        "reviewed_head_sha": "792c0a95f99feea6eca7819e728d8a78e000bf91",
+        "diff_sha256": "c6f37cc6a2eabfc080aa3ee7c7a0ce9bcde8db8066ce00ffabd88a9041bd4fe5"
+      }
+    ],
+    "combined": {
+      "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+      "reviewed_head_sha": "792c0a95f99feea6eca7819e728d8a78e000bf91",
+      "diff_sha256": "ed65f89b23b515a9796bfcb4fb02e21b98fb94f7c7a2e4df164c3c38024f5480"
+    },
+    "result": "Zero bloqueadores,um recomendado e um opcional;ambos confirmados."
+  },
+  "revalidation": {
+    "prs": [
+      {
+        "pr": 111,
+        "base_ref": "epic/subject-review",
+        "head_ref": "task/subject-review/http-query",
+        "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+        "reviewed_head_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+        "diff_sha256": "976e9d1a74aac4de708dee1d5dab49df3fe0bab5ee99814e806a653e049bd802"
+      },
+      {
+        "pr": 112,
+        "base_ref": "task/subject-review/http-query",
+        "head_ref": "task/subject-review/http-privacy",
+        "base_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+        "reviewed_head_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+        "diff_sha256": "e07b01644c989405f233794ceabaff42dd4a167de87c3a7cf4170b539fa2285f"
+      },
+      {
+        "pr": 113,
+        "base_ref": "task/subject-review/http-privacy",
+        "head_ref": "task/subject-review/review-interface",
+        "base_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+        "reviewed_head_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+        "diff_sha256": "6394d3c8c476c20c8229ec6f16fac559f70971b67d72278038f4404e4f24606d"
+      },
+      {
+        "pr": 114,
+        "base_ref": "task/subject-review/review-interface",
+        "head_ref": "task/subject-review/review-browser",
+        "base_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+        "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+        "diff_sha256": "edaedc164a65a8cb30cf7b70e2c1b26dcc564421e8725a1fa3a65844c3d052ba"
+      }
+    ],
+    "combined": {
+      "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+      "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+      "diff_sha256": "f808636a2e8d3a1141a58ae23a1d1405d68b2c23d0c0b4fd4109cea07de9b33b"
+    },
+    "result": "SR-R2-SOL-001/002 corrigidos na combinação,nenhum novo achado;três diffs inferiores preservados."
+  },
+  "coverage": {
+    "requirements": "Grupos completos3.1–3.4 e4.1–4.4, quatro diffs e combinação; proposta/design/specs versionados. Grupos1/2 lidos como pré-requisitos e5/6 não antecipados.",
+    "architecture": "Controllers/DTO/advice e fronteira Java puro/infra; UseCases, domínio/cálculo e produtor de evidência. Sem SQL/JPA ou autenticação manual no controller.",
+    "http_security": "Ator verificado antes do MVC, painel conta, principal inválido, posse/expiração/conclusão, entradas estritas,401/403/404/409/500/503,CORS e POST com CSRF preservado.",
+    "privacy_persistence": "Projeções sem correção/captura/identidade privada;no-store antes da segurança;503 pré-MVC; leitura limitada/transaçãoRR e validação em lote relacionadas, sem comandos novos.",
+    "interface": "Escolha explícita do cargo,51 assuntos, estados distintos,janela/corte/amostra/prioridade, individual sem histórico implícito, timeout e contexto vigente.",
+    "context_lifecycle": "App/workspace/conclusão/revisão; cancelamento,retry,limpeza por cargo/conta/logout, suspensão na revalidação e atualização após confirmação.",
+    "focus_and_types": "Intenção de foco vinculada à consulta explícita, descartada em erro/inatividade/substituição; disciplineId string antes do enum, sem coerção.",
+    "regressions": "Fontes HTTP/ArchUnit/cliente/componentes/contexto/Playwright e relacionados de cálculo/janela/concorrência/compatibilidade inspecionadas, sem execução pelo revisor.",
+    "maintenance": "Causa/regra positiva/regressões/limites das duas correções documentados; histórico e três diffs inferiores preservados, correções no topo da stack."
+  },
+  "findings": [
+    {
+      "id": "SR-R2-SOL-001",
+      "severity": "recommended",
+      "introduced_pr": 113,
+      "fixed_pr": 114,
+      "location": "frontend/src/SubjectReviewPanel.tsx:9",
+      "evidence": "Booleano de intenção de foco só era limpo em ready. Falha/cancelamento podia deixá-lo para atualização automática após conclusão, retirando foco do resultado.",
+      "reference": "Tarefas4.3/4.4 e frontend/docs/subject-review.md: atualização automática não desloca foco do resultado.",
+      "impact": "Perda do ponto de leitura por teclado, sem vazamento/perda de respostas identificados.",
+      "suggestion": "Associar foco à consulta explícita e descartar intenção em erro/cancelamento/substituição; preservar foco explícito bem-sucedido.",
+      "disposition": "fixed",
+      "resolution": "Commit4b72f79901ded4425c0d14ddf2dbf3eff5394e77 em#114 vincula cargo/refresh/retry e descarta intenção inválida. Regressão do App falhou antes, passou depois; cancelamento e cenário real Playwright cobertos. Revisor revalidou fontes/combinação sem achado aberto."
+    },
+    {
+      "id": "SR-R2-SOL-002",
+      "severity": "optional",
+      "introduced_pr": 113,
+      "fixed_pr": 114,
+      "location": "frontend/src/subject-review-api.ts:22",
+      "evidence": "String(m.disciplineId) convertia array[portugues] em slug permitido, retornando valor original fora do tipo/schema.",
+      "reference": "OpenAPI SubjectReviewSubject.disciplineId e tarefa4.1, contrato estrito.",
+      "impact": "Aceitação de tipo fora do contrato; nenhum efeito visual/vazamento concreto no componente atual foi identificado.",
+      "suggestion": "Validar string antes do enum, controles negativos em painel/individual.",
+      "disposition": "fixed",
+      "resolution": "Mesmo commit4b72f79 em#114 usa validação textual sem coerção. Dois controles negativos falharam antes e passaram após o ajuste; revalidação confirmou a correção na combinação."
+    }
+  ],
+  "triage_complete": true,
+  "verification": [
+    {
+      "command": "Backend gradlew --offline build Windows",
+      "result": "Sucesso3m23,243 casos,242 executados sem falhas/erros; um symlink omitido por permissão. Backend não mudou nas correções frontend.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "ReviewHttpTests/ArchUnit e PostgreSQL18.6 descartável",
+      "result": "Primeira camada passou17s; nove testes HTTP ampliados passaram22s, incluindo falhas/capturas/CORS/imutabilidade/conclusão/logout/expiração.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Regressões dos achados antes/depois",
+      "result": "Três casos falharam no source inicial. Depois das correções137 testes frontend/15 arquivos e build TypeScript/Vite passaram; cancelamento adicional também coberto.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Playwright real subject-review.real.spec.ts após correções",
+      "result": "Cinco testes passaram26,4s, incluindo foco depois de falha/conclusão,390/1280px,51 assuntos,visitante,retry/logout. Seis capturas sintéticas inspecionadas localmente.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Regressão browser e material local antes das correções",
+      "result": "18 identidade/simulados/revisão e5 parametrizados passaram;6 públicos/offline passaram,108 páginas/1.757 referências locais válidas.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "CI Linux source4b72f79 run38942150820",
+      "result": "Todos os jobs aprovados. Backend243 PASSED,zero SKIPPED; browser19 identidade/simulados/revisão e5 parametrizados;6 públicos/offline.",
+      "executed_by": "github-actions-verified-by-coordinator"
+    },
+    {
+      "command": "Artefatos/OpenSpec/diff-check",
+      "result": "SPA sem sentinelas privadas sintéticas, JAR sem fixtures/.env/seleção editorial;OpenSpec1.14.1 strict6/6; git diff --check limpo.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Recalcular cinco digests e conferir merge-base/ancestralidade",
+      "result": "Os cinco digests conferem nas duas fases;792c0a9 é ancestral de4b72f79 e três diffs inferiores idênticos. Nenhum script do projeto executado.",
+      "executed_by": "reviewer"
+    }
+  ],
+  "source_checks": [
+    {
+      "pr": 111,
+      "head_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940830576/job/117107725427"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809411/job/117107653592"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940830515/job/117107725653"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940987279/job/117108257823"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940830576/job/117107725382"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809411/job/117107653981"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940830576/job/117107725645"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809411/job/117107654134"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940830576/job/117107725081"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809411/job/117107654242"
+        }
+      ]
+    },
+    {
+      "pr": 112,
+      "head_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940838097/job/117107750741"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940808889/job/117107652702"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940838504/job/117107751715"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940988127/job/117108260809"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940838097/job/117107750584"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940808889/job/117107652886"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940838097/job/117107750378"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940808889/job/117107652775"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940838097/job/117107750771"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940808889/job/117107653015"
+        }
+      ]
+    },
+    {
+      "pr": 113,
+      "head_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940841683/job/117107762358"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809349/job/117107654560"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940841696/job/117107761933"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940993856/job/117108279988"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942244653/job/117112500098"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940841683/job/117107762277"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809349/job/117107654119"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940841683/job/117107762302"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809349/job/117107654491"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940841683/job/117107761947"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940809349/job/117107654518"
+        }
+      ]
+    },
+    {
+      "pr": 114,
+      "head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183508"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154837"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150828/job/117112183861"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942248467/job/117112513120"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183826"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154850"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183851"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154881"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183800"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154571"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Revisão de lote3/4, não gate cumulativo final ou aprovação de merge. Grupos5/6 fora da avaliação de completude.",
+    "Correções no#114: o#113 isolado permanece com os achados originais. Parecer sem achados abertos vale somente para o conjunto#111–#114, sem aprovação de prefixos.",
+    "Revisor somente leitura local de código/diffs/hashes; não executou testes/build/aplicação/scripts do projeto/navegador/rede/DB/escritas/delegação nem verificou CI.",
+    "Não leu semanticamente spec-review.json/md,verification*.md,reviews ou artefatos privados;verification-round2.md integra o digest. Exposição incidental a contagens em documentação versionada não foi usada como prova própria.",
+    "Revisor não inspecionou capturas/artefatos nem uso real de teclado/leitor de tela. Inspeção visual e execuções acima são do coordenador/CI; sem auditoria WCAG integral.",
+    "Requisição autorizada pode terminar após logout/expiração;não há revogação retroativa nem prova de todos os schedulings. Cliente cancela/ignora resposta fora do contexto.",
+    "Testes HTTP pausam após capturar evidência;teste relacionado do lote anterior cobre intervalo entre cabeçalhos/carregamento na transação. Reinícios de contexto não equivalem a processo/JAR.",
+    "Contexto novo reduz viés sem garantia absoluta. Sem outro modelo ou comparação fictícia. Cota/tokens/observações privadas não publicados/inventados.",
+    "Os dois registros reviews/round2 são posteriores ao source revalidado e não se declaram incluídos no digest. Não acompanham mudança de código/requisito."
+  ]
+}

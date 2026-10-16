@@ -1,20 +1,83 @@
 {
   "version": 1,
-  "status": "pending",
+  "status": "completed",
   "spec": "parameterized-questions",
-  "pr": null,
-  "base_sha": null,
-  "reviewed_head_sha": null,
-  "diff_sha256": null,
+  "pr": 103,
+  "base_sha": "0d0fc4848f55fc93c736aa76dcfbb73a7269eb39",
+  "reviewed_head_sha": "425626b4ec9ad9194f29ae89c82d23f6592c5542",
+  "diff_sha256": "aa8abb0e0d499d5778b748f55c546ab706013b9a7533aa78a86b294f035662bc",
+  "risk": "critical",
+  "risk_reason": "Elegibilidade e aprovação editorial exata, integridade/digests/captura privada, schema/transações/concorrência/idempotência/compatibilidade, HTTP/sessão/CSRF e CI.",
   "reviewer": {
     "model": "openai/gpt-6.1-sol#xhigh",
-    "session": null,
-    "independent_context": false
+    "session": "/root/parameterized_final_sol",
+    "independent_context": true,
+    "selection_evidence": "Codex spawn_agent fork_turns=none, model=gpt-6.1-sol, reasoning_effort=xhigh; seleção confirmada pelo revisor, sem substituição. Provider/session ID adicional não exposto."
   },
-  "reviewed_at": null,
-  "coverage": {},
-  "limitations": ["Proposta sem implementação; gate cumulativo ainda não executado."],
-  "verification": [],
+  "reviewed_at": "2026-10-16T12:30:14.971342+00:00",
+  "recorded_at": "2026-10-16T12:31:49.773772+00:00",
+  "coverage": {
+    "requirements": "Spec/proposta/design/tarefas confrontadas com produto completo. Inspecionadas111 variantes das três famílias, parâmetros, alternativas, resoluções, decisões exatas e distinção base/família. Checklist24/24 distingue execução de aprovação/integração.",
+    "architecture": "Núcleo Java puro; transições no agregado editorial; UseCases coordenam; adaptadores JPA/infraestrutura executam transações. Contratos HTTP concretos, dependência de simulados na parametrização sem dependência reversa do banco.",
+    "integration": "Seleção uniforme por identidade-base sem reposição, mistura com fixas, materialização/captura atômica, UUIDs opacos, composição imutável e replay/retomada/resposta/conclusão/histórico sobre conteúdo capturado.",
+    "security": "Booleano público estrito, ausência/false compatíveis, extras rejeitados; sessão/CSRF e autorização técnica na infraestrutura, posse no núcleo; projeções sem parâmetros/manifesto/correção antecipada. Operação editorial local explícita fora do startup/HTTP.",
+    "persistence": "Migrações aditivasV6–V9, FKs, ponteiro único, imutabilidade e constraints deferidas. Vínculos de saída/metadados, REPEATABLE_READ, concorrência/rollback/cleanup e codecs/comandos V5 preservados.",
+    "tests": "Inspeção das regressões Java puro, oráculos independentes, ArchUnit, PostgreSQL, concorrência/idempotência/integridade, upgradeV5, HTTP real, navegador e ensaio operacional. Revisor não executou testes.",
+    "maintenance": "Canonizações/formatos versionados, limites operacionais e leitores compatíveis no rollback. CI parametrizado preserva gates/deploy; HTMLs e migraçõesV1–V5 não alterados. Consolidação final documental sem mudança de produto/testes/CI."
+  },
+  "limitations": [
+    "Revisor somente leitura local: não executou testes/build/aplicação/scripts de projeto/navegador/rede/DB/migrações.",
+    "Checks/ruleset remotos e execução editorial real foram conferidos/declarados pelo coordenador, não certificados pelo revisor.",
+    "Decisões editoriais versionadas foram consideradas como registros/requisitos; não houve reprodução nem nova aprovação editorial pelo revisor.",
+    "Na revisão inicial não leu spec-review.json/md, verification.md ou reviews/. Na revalidação leu somente o delta autorizado de verification.md após análise independente inicial; bytes dos demais relatórios participaram somente do digest.",
+    "Não validou JAR/dist privados produzidos, acessibilidade com leitor de tela, desempenho sob carga ou disponibilidade das referências externas.",
+    "Cota5h/semanal e tokens indisponíveis. Observações mínimas privadas permanecem fora do Git; nenhum consumo zero, estimativa ou comparação com outro modelo.",
+    "Gate sem findings não garante ausência de defeitos e não autoriza merge/main/deploy/arquivamento."
+  ],
+  "verification": [
+    {
+      "command": "git rev-parse; git merge-base; diffs/leitura e SHA-256 com renderização canônica",
+      "result": "Base/head/merge-base e digest conferidos nas duas fases. Revalidação confirmou delta exclusivo nos três documentos; produto/testes/migrações/editorial/requisitos normativos/CI idênticos. Hash de NumericGenerator corresponde à proveniência editorial declarada.",
+      "executed_by": "independent-reviewer:/root/parameterized_final_sol"
+    },
+    {
+      "command": "Application checks no head a8aa71e272961d5649879e1372ef3b7faf7c91b2, runs38899847308/38899841292",
+      "result": "backend/frontend/study-material/identity-browser passaram. Mudança posterior antes da revalidação somente documental. Checks do head de evidência serão novamente conferidos antes da aprovação.",
+      "executed_by": "GitHub Actions; conferido pelo coordenador"
+    },
+    {
+      "command": "Build backend e testes Java puro/ArchUnit/PG/HTTP; frontend unitário/build",
+      "result": "207 casos backend,206 executados sem falha/erro e1symlink omitido no Windows;110 frontend. Resultados locais registrados em verification.md.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Navegador real de identidade/banco/tentativas/variações e material offline",
+      "result": "14 regressões+5 parametrizados+6 aplicação/material offline passaram; CI de tarefas e da spec também passou. Fixtures sintéticas/PG isolado, sem aprovação editorial implícita.",
+      "executed_by": "coordinator/GitHub Actions"
+    },
+    {
+      "command": "parameterizedOperationalCheck com JAR V5 de0d0fc48; exportação limpa7a55651; auditor e consulta editorial somente leitura",
+      "result": "UpgradeV5→V9 preservado;V5 só antes da primeira nova escrita fixa;rollback com leitor compatível/geração desligada preserva replay/conclusão/restart. Build limpo/scanner/material/111variantes passaram;três versões elegíveis e saídas aprovadas sem alteração ou nova decisão.",
+      "executed_by": "coordinator"
+    }
+  ],
   "findings": [],
-  "triage_complete": false
+  "triage_complete": true,
+  "initial_review": {
+    "base_sha": "0d0fc4848f55fc93c736aa76dcfbb73a7269eb39",
+    "reviewed_head_sha": "a8aa71e272961d5649879e1372ef3b7faf7c91b2",
+    "diff_sha256": "f7675424f001705718e9068b864c18a79d61072969a8b321bca5fc47009fffd2",
+    "findings": []
+  },
+  "revalidation": {
+    "completed": true,
+    "reviewed_head_sha": "425626b4ec9ad9194f29ae89c82d23f6592c5542",
+    "diff_sha256": "aa8abb0e0d499d5778b748f55c546ab706013b9a7533aa78a86b294f035662bc",
+    "changed_paths": [
+      "docs/application-reformulation.md",
+      "openspec/changes/parameterized-questions/tasks.md",
+      "openspec/changes/parameterized-questions/verification.md"
+    ],
+    "result": "Conjunto revalidado sem findings. Marcação6.4 não declara aprovação/integração da spec."
+  }
 }

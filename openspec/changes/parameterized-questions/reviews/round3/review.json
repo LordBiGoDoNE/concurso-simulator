@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "status": "completed",
+  "scope": "implementation-batch-groups-5-6-excluding-independent-cumulative-gate-6.4",
+  "spec": "parameterized-questions",
+  "risk": "critical",
+  "risk_reason": "Contrato HTTP/CSRF/sessão, idempotência, privacidade, persistência e rollback compatível, controles executáveis de CI.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/parameterized_round3_sol",
+    "independent_context": true,
+    "selection_evidence": "Codex spawn_agent fork_turns=none, model=gpt-6.1-sol, reasoning_effort=xhigh; revisor confirmou seleção sem substituição. Provider/session ID adicional não exposto."
+  },
+  "recorded_at": "2026-10-16T03:25:36.319406+00:00",
+  "prs": [
+    {
+      "pr": 99,
+      "base_sha": "542f9ac1733f1338048b4851fbd2e9a07a5c038d",
+      "reviewed_head_sha": "f413165e761dccf42e9840ef6588988f879986b9",
+      "diff_sha256": "34cfabf6ed6c0ae51c2c5c337489448f42a815a482e50538fbc50f6e13979c92"
+    },
+    {
+      "pr": 100,
+      "base_sha": "f413165e761dccf42e9840ef6588988f879986b9",
+      "reviewed_head_sha": "700603ed837469889d130a015d95cd4b691c0d72",
+      "diff_sha256": "b7fb0aff53133bc0f81eef49bdf0c6e0010461bd76e7123e5d8fbad2dc1b12da"
+    },
+    {
+      "pr": null,
+      "base_sha": "700603ed837469889d130a015d95cd4b691c0d72",
+      "reviewed_head_sha": "61b6d736ec374895377c05217fa2b7fb1e8bd533",
+      "diff_sha256": "171230b54a0382ef5d776d3d01672413cf5c1633a506923d4ff4ed61ca5e847b"
+    }
+  ],
+  "combined": {
+    "base_sha": "542f9ac1733f1338048b4851fbd2e9a07a5c038d",
+    "reviewed_head_sha": "61b6d736ec374895377c05217fa2b7fb1e8bd533",
+    "diff_sha256": "852af3bf84c46377f30c901ab8abf29d227a45c7fc2f00a7cc9fd0fbbbbd023d"
+  },
+  "initial_composition": {
+    "spec": "parameterized-questions",
+    "risk": "critical",
+    "scope": "Grupos 5 e 6; gate cumulativo 6.4 separado após integração das tarefas",
+    "prs": [
+      {
+        "pr": 99,
+        "base_sha": "542f9ac1733f1338048b4851fbd2e9a07a5c038d",
+        "reviewed_head_sha": "54f807085cafe990d59a67903d63907c4bcfcc89",
+        "diff_sha256": "69c4ff25119936aea41df43b7a1030af8c35451e1a82303458115312b3b84e7a"
+      },
+      {
+        "pr": 100,
+        "base_sha": "54f807085cafe990d59a67903d63907c4bcfcc89",
+        "reviewed_head_sha": "a9d8ebdfbba786444461846995166af8915bd9fd",
+        "diff_sha256": "b7fb0aff53133bc0f81eef49bdf0c6e0010461bd76e7123e5d8fbad2dc1b12da"
+      },
+      {
+        "pr": null,
+        "branch": "task/parameterized-questions/integrated-verification",
+        "base_sha": "a9d8ebdfbba786444461846995166af8915bd9fd",
+        "reviewed_head_sha": "1db1c109e023bd9190a437c24e54b33a5d90a528",
+        "diff_sha256": "dfacdc5b11dc7d9d3505ad7d9a4f262e42910cafd3b83b2913e5be5e4abc7c70"
+      }
+    ],
+    "combined": {
+      "base_sha": "542f9ac1733f1338048b4851fbd2e9a07a5c038d",
+      "reviewed_head_sha": "1db1c109e023bd9190a437c24e54b33a5d90a528",
+      "diff_sha256": "852af3bf84c46377f30c901ab8abf29d227a45c7fc2f00a7cc9fd0fbbbbd023d"
+    }
+  },
+  "revalidation": {
+    "complete": true,
+    "all_layer_diffs_reexamined": true,
+    "canonical_digests_independently_confirmed": true,
+    "final_tree": "9ea1a04438fffe410db034786e262e325cd74356"
+  },
+  "coverage": {
+    "requirements": "Grupos 5 e 6, opção compatível, três famílias, captura e projeção. 6.4 é gate independente posterior.",
+    "architecture": "ADR0001, núcleo puro, adaptação HTTP e responsabilidades Security/controller/UseCase/infraestrutura.",
+    "integration": "Cada camada e combinação, opção pública, canonização/hash/replay, materialização/captura e projeções.",
+    "security": "Cadeia CSRF/sessão, posse, visitante/conta, privacidade de payload/DOM/storage/chunks, erros genéricos.",
+    "persistence": "Compatibilidade V5/V9, primeira escrita nova fixa, leitores compatíveis, geração desligada, replay/conclusão/restart; rollback e transações relacionados.",
+    "tests": "Leitura das regressões HTTP, unitárias, navegador, artefatos e ensaio operacional; revisor não executou testes.",
+    "maintenance": "CI sem deploy/relaxamento, fixture explícita fora do JAR, documentação HTTP e operação, contratos estritos."
+  },
+  "findings": [
+    {
+      "id": "PQ-R3-001",
+      "severity": "blocking",
+      "location": "backend/src/main/java/br/com/concursosimulator/mockexam/web/AttemptFailureAdvice.java:17; backend/src/test/java/br/com/concursosimulator/mockexam/AttemptHttpTests.java:177",
+      "evidence": "Na composição inicial, #99/#100 classificavam IllegalStateException traduzida por @Repository como DataAccessException genérica 503; a correção existia só na terceira camada.",
+      "reference": "Design §7; Privacidade e responsabilidades HTTP preservadas; tarefa5.1.",
+      "impact": "Classificação HTTP incorreta de falha interna nos prefixos; não identificado vazamento ou falso sucesso.",
+      "suggestion": "Incluir InvalidDataAccessApiUsageException no handler de integridade500 junto à regressão e documentação na camada HTTP.",
+      "disposition": "fixed",
+      "resolution": "f413165e761dccf42e9840ef6588988f879986b9 move a correção já existente para #99. Revalidação conferiu500 internal_error e rollback de quatro tabelas em cada prefixo e combinação; blobs idênticos nos três heads. Nenhum novo achado."
+    }
+  ],
+  "triage_complete": true,
+  "verification": [
+    {
+      "command": "backend/gradlew.bat build",
+      "result": "207 casos;206 executados sem falhas/erros;1 symlink omitido por permissão Windows.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "frontend: testes unitários/build",
+      "result": "110 testes em12 arquivos passaram;build passou.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npm run test:parameterized",
+      "result": "5 cenários reais passaram;390/1280px, retry, conta/restart/base, conflito, expiração.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npm run test:identity e navegador aplicação/material offline",
+      "result": "14+6 cenários passaram.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "parameterizedOperationalCheck com JAR V5 recompilado do commit0d0fc48",
+      "result": "PostgreSQL18.6 isolado: V5→V9 preservado;V5 antes de escrita nova;bloqueado após nova fixa;rollback compatível/replay/conclusão/restart passaram.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Exportação limpa7a55651, build/artefatos/material/auditor; consulta editorial somente leitura",
+      "result": "Build Java/SPA,scanner,108 páginas/links/offline e111 variantes aprovados;3 famílias elegíveis sem nova decisão/escrita. Mudanças posteriores não alteram fontes da aplicação/dependências; ver verification.md.",
+      "executed_by": "coordinator"
+    }
+  ],
+  "limitations": [
+    "Revisor executou somente consultas locais de leitura, sem testes/build/rede/DB/escritas.",
+    "verification.md, relatórios anteriores e evidências de gate não foram lidos; seus bytes participaram apenas do hash.",
+    "Checks remotos não atestados pelo revisor; publicação da terceira camada pendente de escopo workflow ao registrar.",
+    "Este relatório é evidência posterior aos heads revisados, não incluída no digest de fontes acima.",
+    "Cota/tokens indisponíveis; observações mínimas privadas ficam fora do Git. Sem medição retroativa, estimativa ou comparação de modelos.",
+    "Lote não substitui gate cumulativo6.4 nem aprovação editorial/merge."
+  ],
+  "integration_status": "23/24 implementadas/verificadas;16/24 integradas. Gate6.4 e autorizações próprias pendentes."
+}

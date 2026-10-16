@@ -6,6 +6,9 @@ import br.com.concursosimulator.parameterization.ParameterFixtures;
 import br.com.concursosimulator.parameterization.domain.*;
 import br.com.concursosimulator.questionbank.domain.*;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import tools.jackson.databind.json.JsonMapper;
 import java.time.*;
 import java.util.*;
 import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
@@ -120,5 +123,27 @@ class ParameterizedAttemptTests {
                 c.manifestDigest(),otherOutput.digest(),c.generatorVersion(),c.baseRevisionId(),c.baseFingerprint(),c.renderedFingerprint(),other);
         assertThatThrownBy(()->new AttemptQuestion(first.questionId(),first.revisionId(),first.fingerprint(),first.content(),
                 new QuestionSource(QuestionSource.Kind.PARAMETERIZED,swapped))).isInstanceOf(IllegalArgumentException.class);
+    }
+    @ParameterizedTest @ValueSource(strings={"reference","provenance","roles"})
+    void changedEditorialMetadataCannotReuseTheApprovedDefinition(String field) {
+        var q=base(Family.PERCENTAGE);var v=template(q,Family.PERCENTAGE);
+        var generated=AttemptMaterializer.materialize(List.of(q),List.of(v),new Random(1),UUID::randomUUID).getFirst();
+        var old=generated.content();var reference=old.references().getFirst();var provenance=old.provenance();
+        var content=new QuestionContent(old.statement(),old.alternatives(),old.correctAlternativeId(),old.resolution(),
+                field.equals("roles")?new QuestionClassification(old.classification().discipline(),old.classification().topic(),Set.of(TargetRole.SCHOOL_SECRETARY)):old.classification(),
+                field.equals("reference")?List.of(new StudyReference(reference.name()+" adulterada",reference.url(),reference.legalBasis())):old.references(),
+                field.equals("provenance")?new Provenance(provenance.author()+" adulterada",provenance.contentPath(),provenance.answerPath(),provenance.contentSha256(),provenance.answerSha256()):provenance);
+        var c=generated.source().capture();
+        var changed=new QuestionSource.Capture(c.templateId(),c.templateVersion(),c.definitionDigest(),c.domainDigest(),c.manifestDigest(),
+                c.outputDigest(),c.generatorVersion(),c.baseRevisionId(),c.baseFingerprint(),content.fingerprint(),c.parameters());
+        assertThat(content.statement()).isEqualTo(old.statement());
+        assertThat(CapturedOutputDigest.fromContent(c.definitionDigest(),c.parameters(),content)).isEqualTo(c.outputDigest());
+        assertThatThrownBy(()->new AttemptQuestion(q.questionId(),q.revisionId(),content.fingerprint(),content,
+                new QuestionSource(QuestionSource.Kind.PARAMETERIZED,changed))).isInstanceOf(IllegalArgumentException.class);
+        var json=JsonMapper.builder().build();var payload=json.valueToTree(generated);
+        ((tools.jackson.databind.node.ObjectNode)payload).set("content",json.valueToTree(content));
+        ((tools.jackson.databind.node.ObjectNode)payload).put("fingerprint",content.fingerprint());
+        ((tools.jackson.databind.node.ObjectNode)payload.get("source")).set("capture",json.valueToTree(changed));
+        assertThatThrownBy(()->json.treeToValue(payload,AttemptQuestion.class)).isInstanceOf(RuntimeException.class);
     }
 }

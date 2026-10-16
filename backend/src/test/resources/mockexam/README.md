@@ -13,6 +13,6 @@ Snapshot e outcome não contêm `format`, `source` ou a nova opção de composi�
 Os UUIDs foram atribuídos naquela execução; não são IDs editoriais nem produção.
 
 O teste instala esses JSONs diretamente em schema V5 com a base real correspondente,
-aplica V6/V7/V8 sem reescrever linhas, testa retry ausente/false/true, resposta,
+aplica V6/V7/V8/V9 sem reescrever linhas, testa retry ausente/false/true, resposta,
 conclusão, histórico e formatos de todos os outcomes sob os triggers originais.
 Não usar o serializador atual para regenerar essa evidência histórica.

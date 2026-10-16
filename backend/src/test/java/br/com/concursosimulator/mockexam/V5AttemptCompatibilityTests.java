@@ -44,7 +44,7 @@ class V5AttemptCompatibilityTests {
             var tables=List.of("app_user","spring_session","qb_question","qb_revision","qb_decision","me_attempt","me_item","me_command");
             var before=tables.stream().map(t->db.jdbc.queryForList("select row_to_json(r)::text from "+t+" r order by 1",String.class)).toList();
             var trigger=db.jdbc.queryForObject("select pg_get_functiondef('me_protect_attempt()'::regprocedure)",String.class);
-            db.factory.close();db.factory=null;db.migrate("8");db.open();
+            db.factory.close();db.factory=null;db.migrate("9");db.open();
             assertThat(tables.stream().map(t->db.jdbc.queryForList("select row_to_json(r)::text from "+t+" r order by 1",String.class)).toList()).isEqualTo(before);
             assertThat(db.jdbc.queryForObject("select pg_get_functiondef('me_protect_attempt()'::regprocedure)",String.class)).isEqualTo(trigger);
             var s=new JpaAttemptStore(db.entities,db.manager,()->{throw new AssertionError("Replay não seleciona");});

@@ -130,9 +130,12 @@ class ParameterizedPersistenceTests {
             })).isInstanceOf(RuntimeException.class);
             assertThat(db.jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(1);
             var c=item.question().source().capture();
-            var bad=new QuestionSource.Capture(UUID.randomUUID(),c.templateVersion(),c.definitionDigest(),c.domainDigest(),c.manifestDigest(),
-                    c.outputDigest(),c.generatorVersion(),c.baseRevisionId(),c.baseFingerprint(),c.renderedFingerprint(),c.parameters());
-            var q=item.question();var badQuestion=new AttemptQuestion(q.questionId(),q.revisionId(),q.fingerprint(),q.content(),
+            var q=item.question();var content=q.content();
+            var unknown=new TemplateDefinition(UUID.randomUUID(),c.templateVersion(),c.parameters().family(),c.generatorVersion(),
+                    q.questionId(),q.revisionId(),c.baseFingerprint(),content.classification(),content.references(),content.provenance());
+            var bad=new QuestionSource.Capture(unknown.id(),c.templateVersion(),unknown.digest(),c.domainDigest(),VariantManifest.create(unknown).digest(),
+                    CapturedOutputDigest.fromContent(unknown.digest(),c.parameters(),content),c.generatorVersion(),c.baseRevisionId(),c.baseFingerprint(),c.renderedFingerprint(),c.parameters());
+            var badQuestion=new AttemptQuestion(q.questionId(),q.revisionId(),q.fingerprint(),q.content(),
                     new QuestionSource(QuestionSource.Kind.PARAMETERIZED,bad));
             var invalid=Attempt.start(UUID.randomUUID(),VISITOR,composition(true),NOW,List.of(
                     new Attempt.Item(UUID.randomUUID(),badQuestion,item.optionOrder(),item.parameters()))).snapshot();

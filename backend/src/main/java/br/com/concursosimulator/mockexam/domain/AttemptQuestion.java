@@ -2,6 +2,7 @@ package br.com.concursosimulator.mockexam.domain;
 
 import br.com.concursosimulator.questionbank.domain.QuestionContent;
 import br.com.concursosimulator.parameterization.domain.CapturedOutputDigest;
+import br.com.concursosimulator.parameterization.domain.TemplateDefinition;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -21,5 +22,12 @@ public record AttemptQuestion(UUID questionId, UUID revisionId, String fingerpri
         if (source.capture()!=null && !source.capture().outputDigest().equals(CapturedOutputDigest.fromContent(
                 source.capture().definitionDigest(),source.capture().parameters(),content)))
             throw new IllegalArgumentException("Conteúdo capturado diverge do digest da saída");
+        if (source.capture()!=null) {
+            var c=source.capture();
+            var definition=new TemplateDefinition(c.templateId(),c.templateVersion(),c.parameters().family(),c.generatorVersion(),
+                    questionId,c.baseRevisionId(),c.baseFingerprint(),content.classification(),content.references(),content.provenance());
+            if (!definition.digest().equals(c.definitionDigest()))
+                throw new IllegalArgumentException("Metadados capturados divergem da definição aprovada");
+        }
     }
 }

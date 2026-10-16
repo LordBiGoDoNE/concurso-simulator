@@ -22,11 +22,11 @@ public final class AttemptDatabase implements AutoCloseable {
     JpaTransactionManager manager;
     JpaQuestionStore questions;
     JpaEligibleRevisionPool pool;
-    AttemptDatabase(PostgreSQLContainer pg) { this(pg,"8"); }
+    AttemptDatabase(PostgreSQLContainer pg) { this(pg,"9"); }
     AttemptDatabase(PostgreSQLContainer pg,String target) {
         ds=new DriverManagerDataSource(pg.getJdbcUrl()+"&currentSchema="+schema,pg.getUsername(),pg.getPassword());
         jdbc=new JdbcTemplate(ds); migrate(target);
-        if (target.equals("5") || target.equals("7") || target.equals("8")) open();
+        if (target.equals("5") || target.equals("7") || target.equals("8") || target.equals("9")) open();
     }
     void migrate(String target) { Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).target(target).load().migrate(); }
     void open() { open("br.com.concursosimulator.questionbank.infrastructure.persistence","br.com.concursosimulator.mockexam.infrastructure.persistence"); }

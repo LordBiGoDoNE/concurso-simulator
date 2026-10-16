@@ -47,6 +47,16 @@ Testes reproduziram a troca válida antes da correção, cobrem restauração, a
 saídas em Java/PostgreSQL e atualização V7→V8 com JSONs e checksums preservados.
 O vínculo prova consistência com a saída aprovada; não substitui sua revisão editorial.
 
+V9 complementa esse vínculo para classificação, referências e proveniência. A causa
+da segunda lacuna era reutilizar o `definitionDigest` declarado na captura sem conferir
+os metadados reais do conteúdo. O domínio reconstrói a definição dos identificadores
+capturados e desses metadados, e confere seu digest; não executa o gerador. A constraint
+V9 compara os metadados com a definição imutável da versão persistida, preservando a
+ordem editorial das referências e a semântica de conjunto dos cargos. Trocar referência,
+autoria ou cargos, mesmo recalculando o fingerprint renderizado e mantendo o corpo
+matemático, falha na construção/restauração, no commit SQL e no upgrade de legado
+divergente. V1–V8 permanecem intactas; atualização válida V7/V8→V9 preserva os JSONs.
+
 O adaptador JPA usa SQL nativo parametrizado apenas para inserir/consultar a cópia
 JSON imutável da instância, sem entidade mutável adicional; o agregado e os itens
 continuam mapeados por Hibernate. A restauração confere igualdade dessa cópia.
@@ -59,7 +69,7 @@ o formato antigo; não há preenchimento retroativo em `me_item` ou `me_command`
 Formato desconhecido, composição nova sem versão e fonte nova em item antigo falham.
 
 Regressão instala snapshot e hash produzidos pelo código V5 real (`0d0fc48`) em
-PostgreSQL V5 e atualiza para V8; prova replay ausente/false e conflito true, preservação
+PostgreSQL V5 e atualiza para V9; prova replay ausente/false e conflito true, preservação
 das linhas durante upgrade e dos campos imutáveis durante resposta/conclusão.
 
 ## Rollback compatível

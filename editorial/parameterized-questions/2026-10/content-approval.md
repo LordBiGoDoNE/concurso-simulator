@@ -1,6 +1,8 @@
-# Decisão editorial solicitada
+# Decisão editorial aprovada e registrada
 
-**Pendente: esta seleção não constitui aprovação nem executa decisões.**
+**Seleção aprovada explicitamente pelo usuário; atos registrados na cópia local isolada.**
+
+A solicitação e seus digests foram preservados abaixo. Resultado efetivo em [eligibility-after.json](eligibility-after.json); retirada/replay somente no [clone de ensaio](withdrawal-probe.json). A intenção JSON mantém o estado histórico anterior à decisão.
 
 Escopo: aprovar a revisão-base M04-Q05 abaixo e as versões v1 das três famílias, exclusivamente na cópia local isolada do PostgreSQL.
 A preparação de M04-Q05 foi autorizada pelo usuário. Esta é a decisão editorial separada prevista na tarefa 4.3.
@@ -24,11 +26,11 @@ Um capital de R$ 2.000,00 é aplicado a juros simples de 3% ao mês durante 4 me
 
 Resolução: 1% de 2.000 = R$ 20,00; juros mensais = 20 × 3 = R$ 60,00; quatro meses = 60 × 4 = R$ 240,00. O capital inicial continua sendo a base em todos os meses. A responde só um mês; B soma capital e juros de um mês; C responde o montante dos quatro meses.
 
-Revisão preparada em DRAFT, sem decisões nem ponteiro elegível. [Pacote exato](base-m04-q05-package.json) e [registro de preparação/reimportação](base-preparation.json).
+Histórico: revisão preparada em DRAFT e posteriormente submetida/aprovada após autorização explícita, com ponteiro elegível confirmado. [Pacote exato](base-m04-q05-package.json) e [registro de preparação/reimportação](base-preparation.json).
 
 ## Versões e manifestos exatos
 
-Todas as [111 variantes](variants.md) incluem enunciado, quatro alternativas, correta, resolução, cálculo racional independente e digest. O [relatório de auditoria](audit.json) mantém a base de juros como não elegível e a aprovação pendente.
+Todas as [111 variantes](variants.md) incluem enunciado, quatro alternativas, correta, resolução, cálculo racional independente e digest. O [relatório de auditoria](audit.json) confere a observação posterior das bases, sem atribuir aprovação por testes; os atos reais estão em eligibility-after.json.
 
 ### DIRECT_PROPORTION — v1, 64 variantes
 
@@ -61,6 +63,6 @@ Template `e574536d-2328-5f5d-931b-01741b8f1092`; [definição](simple-interest.j
 
 Após autorização explícita, executar SUBMIT/APPROVE da base M04-Q05 com estado esperado, registrar os três templates em DRAFT e executar SUBMIT/APPROVE de cada versão com seus digests e checklist completo. Cada ato terá timestamp real de execução, responsável e confirmação de destino/digest; registrar resultados/replay separadamente. Esta seleção não contém atos fictícios previamente executados.
 
-O banco original mantém as 250 revisões elegíveis. A cópia tem 251 identidades (250 elegíveis + uma base em rascunho). Aprovar a nova base acrescenta uma identidade editorial; as 111 variantes acrescentam zero identidades. Os templates ainda não existem no banco.
+O banco original mantém 250 revisões elegíveis. Após os atos autorizados, a cópia tem 251 identidades elegíveis e três templates v1 aprovados. A nova base acrescentou uma identidade editorial; as 111 variantes acrescentaram zero identidades.
 
-A autorização editorial não integra PRs, não publica a aplicação nem aprova o gate cumulativo. O lote 3/4 continua pendente até registro autorizado, verificações operacionais e revisão independente SOL 6.1 xhigh; merges exigem autorização própria.
+A autorização editorial não integra PRs, não publica a aplicação nem aprova o gate cumulativo. Registro e ensaio operacional concluídos; o lote 3/4 aguarda revisão independente SOL 6.1 xhigh, e merges exigem autorização própria.

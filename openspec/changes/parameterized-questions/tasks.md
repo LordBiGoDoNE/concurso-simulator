@@ -33,10 +33,15 @@ editoriais são acompanhadas separadamente na issue. Sem conteúdo aprovado por 
 
 ## 4. Conteúdo e revisão editorial — depende de 1 e 2
 
-- [ ] 4.1 Preparar definições e selecionar três bases compatíveis, origens/fontes e domínios em arquivos versionados; verificar elegibilidade real sem inventar IDs/aprovações; documentar lacunas que dependam de decisão editorial própria.
-- [ ] 4.2 Produzir relatório integral das 111 variantes com resultados independentes, alternativas, unidades e resoluções; revisar linguagem/distratores/acessibilidade/proveniência de todo o domínio; documentar pendências sem aprovação fictícia.
-- [ ] 4.3 Submeter versões/digests exatos para decisão editorial explícita e registrar resultado autorizado em PG local isolado; testar distinção entre fixtures e conteúdo real, reexecução/retirada e relatório por família; não declarar família liberada se aprovação estiver pendente.
-- [ ] 4.4 Demonstrar que variantes não aumentam contagem de identidades na meta do banco nem duplicam a mesma base no simulado; verificar material original/URLs/offline e registrar rastreabilidade de bases/manifestações.
+- [x] 4.1 Preparar definições e selecionar três bases compatíveis, origens/fontes e domínios em arquivos versionados; verificar elegibilidade real sem inventar IDs/aprovações; documentar lacunas que dependam de decisão editorial própria.
+- [x] 4.2 Produzir relatório integral das 111 variantes com resultados independentes, alternativas, unidades e resoluções; revisar linguagem/distratores/acessibilidade/proveniência de todo o domínio; documentar pendências sem aprovação fictícia.
+- [x] 4.3 Submeter versões/digests exatos para decisão editorial explícita e registrar resultado autorizado em PG local isolado; testar distinção entre fixtures e conteúdo real, reexecução/retirada e relatório por família; não declarar família liberada se aprovação estiver pendente.
+- [x] 4.4 Demonstrar que variantes não aumentam contagem de identidades na meta do banco nem duplicam a mesma base no simulado; verificar material original/URLs/offline e registrar rastreabilidade de bases/manifestações.
+
+Grupo 4: seleção editorial exata aprovada pelo usuário e executada somente na cópia
+local, com replay/retirada em clone separado. Evidências em
+`editorial/parameterized-questions/2026-10/eligibility-after.json` e `withdrawal-probe.json`.
+Implementação/verificação não significa revisão do lote nem integração dos PRs.
 
 ## 5. Contrato HTTP e interface — depende de 3
 

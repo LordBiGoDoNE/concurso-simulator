@@ -1,6 +1,6 @@
 # Prévia editorial de variantes
 
-**Aprovação editorial PENDENTE. Este relatório não libera templates.**
+**Esta auditoria não concede aprovação editorial. Decisões registradas constam de eligibility-after.json.**
 
 Resultado do oráculo Python racional; conferir também linguagem, distratores, fontes e acessibilidade.
 
@@ -1032,7 +1032,7 @@ Digest da saída: `d296df459210cb7d7978859f136f34364f2dda78bf85f7ab095d6f8829c94
 
 Base: `0a4e9bac-c340-4562-a906-aaa0a33c64c8` / revisão `80f32d25-9f88-4616-8ba0-8afafbeea9ab`.
 
-Estado observado da base: DRAFT; NÃO ELEGÍVEL, aprovação pendente.
+Estado observado da base: APPROVED; elegível.
 
 Definição: `1661c38884b4f71c61e943b83c6fd51c0a250b027dcf6488b324cb413803fb6c`. Manifesto: `0617b27c85219241fcf9d336be6b9a492671df15bfb246dfe58e5f1696eedc30`.
 

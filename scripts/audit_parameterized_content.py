@@ -82,7 +82,7 @@ def audit(directory, allow_partial=False, allow_pending_bases=False):
     bases = json.loads((directory / 'bases.json').read_text(encoding='utf-8'))
     seen_bases = set(); pending_bases = []
     families = {}; report = ['# Prévia editorial de variantes', '',
-        '**Aprovação editorial PENDENTE. Este relatório não libera templates.**', '',
+        '**Esta auditoria não concede aprovação editorial. Decisões registradas constam de eligibility-after.json.**', '',
         'Resultado do oráculo Python racional; conferir também linguagem, distratores, fontes e acessibilidade.', '']
     for file in files:
         preview = json.loads(file.read_text(encoding='utf-8'))
@@ -138,7 +138,7 @@ def audit(directory, allow_partial=False, allow_pending_bases=False):
     missing = sorted(set(DOMAINS) - families.keys())
     require(allow_partial or not missing, 'Famílias pendentes: ' + ', '.join(missing))
     summary = {'format': 'parameter-editorial-audit/v1', 'expected': 111, 'validated': sum(families.values()),
-               'families': families, 'missingFamilies': missing, 'editorialApproval': 'PENDING',
+               'families': families, 'missingFamilies': missing, 'editorialApproval': 'NOT_GRANTED_BY_AUDIT',
                'pendingBaseFamilies': sorted(pending_bases), 'allBasesEligible': not pending_bases,
                'scope': 'Oráculo aritmético/tuplas/digests/unidades; não certifica revisão humana ou elegibilidade futura.'}
     return summary, '\n'.join(report) + '\n'

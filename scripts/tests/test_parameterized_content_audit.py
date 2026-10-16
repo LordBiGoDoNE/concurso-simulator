@@ -24,21 +24,29 @@ class ParameterizedContentAuditTests(unittest.TestCase):
             summary, report = audit(directory, allow_partial=True)
             self.assertEqual(summary['validated'], 84)
             self.assertEqual(summary['missingFamilies'], ['SIMPLE_INTEREST'])
-            self.assertEqual(summary['editorialApproval'], 'PENDING')
-            self.assertIn('Aprovação editorial PENDENTE', report)
+            self.assertEqual(summary['editorialApproval'], 'NOT_GRANTED_BY_AUDIT')
+            self.assertIn('não concede aprovação editorial', report)
             with self.assertRaisesRegex(ValueError, 'Famílias pendentes'):
                 audit(directory)
 
     def test_all_111_prepared_but_draft_base_cannot_pass_as_eligible(self):
-        with self.assertRaisesRegex(ValueError, 'Base pendente de aprovação editorial'):
-            audit(DIRECTORY)
-        summary, report = audit(DIRECTORY, allow_pending_bases=True)
-        self.assertEqual(summary['validated'], 111)
-        self.assertEqual(summary['missingFamilies'], [])
-        self.assertEqual(summary['pendingBaseFamilies'], ['SIMPLE_INTEREST'])
-        self.assertFalse(summary['allBasesEligible'])
-        self.assertEqual(summary['editorialApproval'], 'PENDING')
-        self.assertIn('NÃO ELEGÍVEL', report)
+        with tempfile.TemporaryDirectory() as temp:
+            directory = Path(temp)
+            for file in DIRECTORY.glob('*.json'):
+                shutil.copyfile(file, directory / file.name)
+            bases = json.loads((directory / 'bases.json').read_text(encoding='utf-8'))
+            base = next(b for b in bases if b['family'] == 'SIMPLE_INTEREST')
+            base['status'] = 'DRAFT'; base['eligible_revision_id'] = None
+            (directory / 'bases.json').write_text(json.dumps(bases), encoding='utf-8')
+            with self.assertRaisesRegex(ValueError, 'Base pendente de aprovação editorial'):
+                audit(directory)
+            summary, report = audit(directory, allow_pending_bases=True)
+            self.assertEqual(summary['validated'], 111)
+            self.assertEqual(summary['missingFamilies'], [])
+            self.assertEqual(summary['pendingBaseFamilies'], ['SIMPLE_INTEREST'])
+            self.assertFalse(summary['allBasesEligible'])
+            self.assertEqual(summary['editorialApproval'], 'NOT_GRANTED_BY_AUDIT')
+            self.assertIn('NÃO ELEGÍVEL', report)
 
     def test_independent_oracle_rejects_changed_answer_and_duplicate_options(self):
         preview = json.loads((DIRECTORY / 'percentage-preview.json').read_text(encoding='utf-8'))
@@ -62,7 +70,7 @@ class ParameterizedContentAuditTests(unittest.TestCase):
             audit_variant(changed)
 
     def test_versioned_report_matches_all_prepared_variants_without_approval(self):
-        summary, report = audit(DIRECTORY, allow_pending_bases=True)
+        summary, report = audit(DIRECTORY)
         self.assertEqual(summary, json.loads((DIRECTORY / 'audit.json').read_text(encoding='utf-8')))
         self.assertEqual(report, (DIRECTORY / 'variants.md').read_text(encoding='utf-8'))
 
@@ -99,6 +107,27 @@ class ParameterizedContentAuditTests(unittest.TestCase):
         self.assertTrue(evidence['reimportReused']); self.assertEqual(evidence['decisionsForNewBase'], 0)
         self.assertEqual(evidence['sourceApprovedBefore'], evidence['sourceApprovedAfter'])
         self.assertEqual(evidence['isolatedApprovedBefore'], evidence['isolatedApprovedAfter'])
+
+    def test_recorded_approval_matches_selection_and_probe_cannot_change_approved_target(self):
+        plan = json.loads((DIRECTORY / 'approval-selection.json').read_text(encoding='utf-8'))
+        release = json.loads((DIRECTORY / 'eligibility-after.json').read_text(encoding='utf-8'))
+        probe = json.loads((DIRECTORY / 'withdrawal-probe.json').read_text(encoding='utf-8'))
+        self.assertEqual(release['approvalSelectionSha256'], hashlib.sha256((DIRECTORY / 'approval-selection.json').read_bytes()).hexdigest())
+        self.assertEqual(release['eligibleTemplates'], 3); self.assertEqual(release['templateDecisions'], 6)
+        self.assertEqual(release['base']['status'], 'APPROVED'); self.assertTrue(release['templateReplayUnchanged'])
+        for t in plan['templates']:
+            row = next(r for r in release['families'] if r['kind'] == t['family'])
+            self.assertEqual(row['eligible_version'], 1); self.assertEqual(row['status'], 'APPROVED')
+            for field, key in [('definition_digest', 'definitionDigest'), ('domain_digest', 'domainDigest'), ('manifest_digest', 'manifestDigest')]:
+                self.assertEqual(row[field], t[key])
+            for action in ['SUBMIT', 'APPROVE']:
+                decision = json.loads((DIRECTORY / 'decisions' / (t['family'] + '-' + action + '.json')).read_text(encoding='utf-8'))['decision']
+                self.assertEqual(decision['action'], action); self.assertEqual(decision['manifestDigest'], t['manifestDigest'])
+                self.assertEqual(set(decision['checklist']), set(plan['templateChecklist']))
+        self.assertEqual(probe['approvedCopyBefore'], probe['approvedCopyAfter'])
+        self.assertEqual(probe['approvedCopyAfter']['eligible'], 3)
+        self.assertEqual(probe['probeAfterWithdrawal']['eligible'], 0)
+        self.assertEqual(probe['probeAfterRegistrationAndApprovalReplay']['eligible'], 0)
 
 
 if __name__ == '__main__':

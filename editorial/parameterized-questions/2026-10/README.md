@@ -1,101 +1,85 @@
-# Conteúdo parametrizado — lote 3 e 4 em andamento
+# Conteúdo parametrizado — três famílias v1
 
-**111 variantes preparadas; nenhuma família registrada ou aprovada.** A base real
-de juros simples está em DRAFT; falta a decisão editorial explícita dessa revisão
-e dos digests finais das três famílias, reunidos em [content-approval.md](content-approval.md).
-Não marcar o grupo 4 concluído nem inferir aprovação a partir destes arquivos/CI.
+**111/111 variantes verificadas e três versões v1 aprovadas editorialmente na cópia
+local isolada**, após aprovação explícita do usuário da [seleção exata](approval-selection.json).
+Aprovação editorial não integra PRs nem substitui revisão independente do lote.
 
-| Família | Base real observada | Variantes preparadas | Aprovação do template |
+| Família | Base/revisão real | Tuplas | Estado observado na cópia |
 | --- | --- | --- | --- |
-| Regra de três direta | M03-Q01, revisão `632ee809-9a3b-4e97-8144-9539f6b951bb` | 64 | Pendente |
-| Porcentagem | M04-Q01, revisão `f4cfd6d7-96a5-4268-b257-638f4d6ae494` | 20 | Pendente |
-| Juros simples | M04-Q05, revisão `80f32d25-9f88-4616-8ba0-8afafbeea9ab` em DRAFT | 27 | Pendente, base não elegível |
+| Regra de três direta | M03-Q01 / `632ee809-9a3b-4e97-8144-9539f6b951bb` | 64 | Base e template aprovados |
+| Porcentagem | M04-Q01 / `f4cfd6d7-96a5-4268-b257-638f4d6ae494` | 20 | Base e template aprovados |
+| Juros simples | M04-Q05 / `80f32d25-9f88-4616-8ba0-8afafbeea9ab` | 27 | Base e template aprovados |
 
-Os IDs/fingerprints exatos observados estão em `bases.json`. A observação veio do
-PostgreSQL editorial local. As duas primeiras revisões estão APPROVED com ponteiros
-elegíveis iguais; a terceira está em DRAFT, sem ponteiro. A observação não é promessa
-de elegibilidade futura. O banco original tem M04-Q01–Q04, de porcentagem/aumento/
-desconto; M04-Q05 foi importada somente em cópia isolada após autorização do usuário.
-Não reutilizar identidades de porcentagem para juros nem tratar o título do assunto
-M04 como prova de compatibilidade pedagógica.
+## Evidência e alcance
 
-Dependência concreta: M04-Q05 do material original pergunta juros de R$ 2.000 a
-3% ao mês por quatro meses: R$ 60 por mês e R$ 240 de juros. Ela não integra as
-250 bases aprovadas. O usuário autorizou revisar/preparar essa base. O pacote agora
-explicita a pergunta sobre juros, unidades e três distratores, com resolução em etapas;
-importação/reimportação reais preservaram a mesma revisão DRAFT, sem SUBMIT/APPROVE.
-O acervo original mantém 250 elegíveis. A cópia tem 251 identidades, 250 elegíveis e
-uma em rascunho; suas tabelas editoriais de templates continuam vazias. Aprovar essa
-base acrescentará uma identidade à cópia; as variantes não acrescentam identidades.
-IDs da nova base vieram do commit real da importação, não de fixtures ou placeholders.
+[content-approval.md](content-approval.md) apresenta conteúdo, IDs e digests exatos.
+[eligibility-after.json](eligibility-after.json) registra os três ponteiros elegíveis
+observados, seis decisões de template, duas decisões da nova base e replay sem alteração.
+Os arquivos reais de decisões estão em `decisions/`, com responsável, timestamp,
+checklist e digests. A intenção em `approval-selection.json` foi preservada com seu
+estado original de solicitação; não deve ser reescrita como se já tivesse sido um ato.
 
-## Arquivos e reprodução
+O banco original permanece com 250 revisões elegíveis. A cópia aprovada tem 251:
+uma nova identidade editorial M04-Q05, cuja revisão foi preparada/importada/reaplicada
+em DRAFT antes da autorização. Esse histórico está em `base-preparation.json` e no
+commit `86ba135`. O pacote tem inventário completo e somente M04-Q05 selecionada.
+Os IDs vieram da importação real; não são fixtures nem placeholders.
 
-`direct-proportion.json`, `percentage.json` e `simple-interest.json` são entradas exatas
-para o launcher local, com expectedLatest 0. O registro de juros só será possível após
-aprovar sua base. Seus UUIDs de template são identidades novas planejadas;
-os UUIDs das bases são reais observados. `*-preview.json` são saídas completas do
-launcher Java sem acesso ao banco. Incluem manifesto, gabarito e resolução e são
-artefatos editoriais do repositório; não são recursos do cliente ou endpoints públicos.
+`bases.json` contém a observação posterior às decisões, com revisões APPROVED e
+ponteiros iguais. É fotografia do banco, não promessa de elegibilidade futura.
+Não se afirma que o JAR foi implantado ou que esse banco configura a aplicação pública.
 
-`variants.md` contém todas as 111 tuplas preparadas, enunciados, quatro alternativas,
-correta, resolução, cálculo independente e digest de cada saída. `audit.json` registra
-111/111 e a base de juros pendente. São **arquivos gerados**, separados do código autoral.
-O oráculo Python usa somas de frações (preço por unidade/centésimo/juros mensais),
-sem chamar o gerador/oráculo Java, e recompõe digests binários da definição/domínio/
-saídas/manifesto. Isso complementa a validação Java, sem garantir revisão pedagógica.
+## Geração, autoria e revisão
+
+`direct-proportion.json`, `percentage.json` e `simple-interest.json` são entradas
+exatas do launcher, expectedLatest 0. Os UUIDs de template foram planejados antes do
+registro; as bases são reais. `*-preview.json`, `variants.md`, `audit.json`, pacote
+de base e observações são **arquivos gerados** e contêm material editorial privado
+dos contratos HTTP. Não são endpoints, bundle ou recursos do pacote estático.
+
+As [111 variantes](variants.md) mostram enunciados, alternativas, correta, resolução,
+cálculo independente e digest de cada saída. O auditor Python usa somas de frações
+por unidade/centésimo/juros mensais e recompõe digests binários, sem chamar gerador
+ou oráculo Java. Ele não concede aprovação: `NOT_GRANTED_BY_AUDIT` remete às decisões
+reais separadas. Testes/CI/importação não aprovam conteúdo implicitamente.
+
+Responsável: Codex, revisão editorial assistida por IA, sem revisão humana independente.
+As variações são adaptações autorais; IMPA/OBMEP é apoio temático, sem autoria/validação
+oficial alegada. A proveniência aponta ao código exato dos textos/resoluções e seu
+SHA-256. Bases preservam autoria e hashes dos HTML originais do projeto [Gaby].
+
+Regra de três explicita preço unitário constante; distratores usam custo inicial,
+soma de quantidades ou produto sem divisão. Porcentagem pede apenas a parte em reais;
+distratores omitem divisão por cem ou respondem aumento/restante. Juros simples pede
+juros, taxa e prazo em meses; distratores respondem montante, só um mês ou omitem cem.
+Todas as opções são positivas/distintas; resoluções têm etapas, substituições e unidades.
+Texto puro, sem depender de figura, cor ou áudio. Ordem editorial A correta não é
+a ordem da tentativa, que atribui UUIDs opacos e embaralha alternativas no servidor.
+
+## Reprodução e retirada
 
 ```text
-./backend/gradlew -p backend parameterizationLocal -PtemplateAction=preview -PtemplateRoot=<raiz-absoluta> -PtemplateFile=editorial/parameterized-questions/2026-10/direct-proportion.json
-./backend/gradlew -p backend parameterizationLocal -PtemplateAction=preview -PtemplateRoot=<raiz-absoluta> -PtemplateFile=editorial/parameterized-questions/2026-10/percentage.json
 ./backend/gradlew -p backend parameterizationLocal -PtemplateAction=preview -PtemplateRoot=<raiz-absoluta> -PtemplateFile=editorial/parameterized-questions/2026-10/simple-interest.json
-python scripts/audit_parameterized_content.py --directory editorial/parameterized-questions/2026-10 --output editorial/parameterized-questions/2026-10 --allow-pending-bases
+python scripts/audit_parameterized_content.py --directory editorial/parameterized-questions/2026-10 --output editorial/parameterized-questions/2026-10
 ```
 
-No Windows usar `backend\gradlew.bat`. `--allow-pending-bases` permite somente preparar
-o relatório de uma base não elegível e mantém a pendência explícita. Sem essa opção,
-o auditor rejeita o pacote enquanto a base estiver pendente. `--allow-partial` continua
-separada para relatórios com famílias ausentes. Nenhuma opção aprova/libera conteúdo.
-O launcher requer raiz/arquivo explícitos;
-prévia não grava nem usa credenciais. Não converter esse comando em aprovação automática.
+Repetir a prévia para os outros dois arquivos. Windows: `backend\gradlew.bat`.
+Prévia não usa banco nem grava. O auditor padrão rejeita famílias incompletas/bases
+pendentes; flags de preparação mantêm essas lacunas explícitas, sem liberar versões.
+Decisões locais exigem destino/seleção/digest e estados esperados; não automatizar
+novas aprovações a partir destes arquivos.
 
-## Revisão editorial assistida e limites
+[withdrawal-probe.json](withdrawal-probe.json) comprova captura real de três famílias/
+111 tuplas, retirada das três somente em segunda cópia e zero elegíveis após reimportar
+e repetir as aprovações antigas. As decisões `probe-*` pertencem exclusivamente ao
+clone de ensaio. A cópia aprovada permaneceu com três elegíveis/seis decisões; o banco
+original manteve 250. Retirada não reativa versões históricas nem muda instâncias.
 
-Responsável pela preparação: Codex, assistido por IA, sem revisão humana independente.
-As saídas são adaptações autorais; as referências IMPA/OBMEP são apoio temático,
-sem alegar autoria/validação oficial. A proveniência aponta ao código exato de textos
-e resoluções (`NumericGenerator.java` e SHA-256); a origem das bases e os hashes dos
-HTML originais permanecem em `bases.json` e na curadoria do banco anterior.
+Variantes acrescentam **zero identidades** à meta e não duplicam uma base por simulado;
+a nova base acrescenta uma identidade editorial separada. Os testes do núcleo de
+tentativas preservam seleção por identidade sem reposição. HTML/URLs originais M03/M04
+não foram editados; hashes conferidos. Montagem offline: 9 módulos/90 respostas,
+108 páginas/1.757 referências válidas, sem API/login e sem cópia das prévias editoriais.
 
-Regra de três: preço unitário constante explícito, quantidades positivas, pergunta em
-reais; distratores usam custo inicial, soma de quantidades ou produto sem divisão.
-Porcentagem: pergunta somente a parte percentual em reais; distratores omitem divisão
-por cem ou respondem aumento/restante. Juros simples: capital e taxa mensal explícitos,
-prazo em meses e pergunta apenas dos juros; distratores respondem montante, só um mês
-ou omitem a divisão por cem. O prazo mínimo de dois meses evita coincidência com o
-distrator de um mês. Em todas as 111 tuplas, opções positivas/distintas,
-sem equivalência com a correta; textos têm etapas/substituições, unidade e contraste
-com erros plausíveis. A ordem editorial A correta é privada; a tentativa atribui UUIDs
-opacos e embaralha alternativas. Texto puro, sem figura essencial, cor ou áudio.
-
-Nenhum texto original foi editado. M03/M04 mantêm arquivos, URLs e gabaritos separados;
-recursos locais seguem independentes de API/login. As variantes preservam a mesma base:
-as variantes adicionam **zero identidades** às metas; a curadoria separada da nova base
-adiciona uma identidade na cópia isolada. A prova de não repetição por base está nos
-testes do núcleo de tentativas. O relatório integral 111/111 está preparado; operação
-de aprovação e liberação continua pendente. Aprovação da base não aprova o template, revisão de código
-não aprova conteúdo, e CI não registra decisões editoriais.
-
-Verificação local desta preparação: hashes dos quatro HTML M03/M04 iguais aos
-registros das bases; montagem estática isolada com 9 módulos/90 respostas recolhidas,
-108 páginas e 1.757 referências locais válidas. Nenhum servidor/API ou credencial
-foi necessário. As prévias editoriais não são copiadas para essa montagem estática.
-
-## Decisão pendente
-
-[approval-selection.json](approval-selection.json) fixa arquivos/SHA-256, IDs e
-digests da base e das três versões. [content-approval.md](content-approval.md) apresenta
-o conteúdo e o escopo exatos. Após autorização editorial explícita, atribuir timestamps
-reais e registrar SUBMIT/APPROVE da base, registros DRAFT dos templates e suas decisões
-exatas. Depois conferir replay/retirada em cópia de ensaio e obter a revisão independente
-SOL 6.1 xhigh do lote 3/4. Nenhum merge ou gate cumulativo é aprovado por essa decisão.
+Grupos 3/4 implementados/verificados; revisão independente SOL 6.1 xhigh ainda pendente.
+PRs #94/#95/#97 em rascunho, sem merge, deploy, arquivamento ou gate cumulativo presumidos.

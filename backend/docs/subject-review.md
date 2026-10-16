@@ -17,3 +17,11 @@ bases retidas. Percentual tem duas casas HALF_UP. Prioridade exige três bases e
 erro/branco, ordena pela fração exata, depois quantidade de erros/brancos e topicId.
 Essas heurísticas não afirmam domínio ou novidade. Nenhum acesso ao banco atual,
 geração, framework, persistência derivada ou interface faz parte do cálculo.
+
+`CompletedAttemptReader` é o contrato de aplicação de mockexam. ReviewUseCases o
+consome diretamente, sem interface/Service intermediário redundante. Leitura e
+validação pertencem ao produtor; o consumidor ainda recusa mistura de proprietário,
+cargo, IDs, ordem e hasOlder sem janela cheia. Falha não vira resumo parcial/vazio.
+Painel só aceita conta; revisão individual aceita o proprietário visitante ou conta.
+O agregado Attempt protege conclusão/posse/expiração antes de produzir evidência.
+O UseCase recebe Clock e a porta, testáveis sem Spring. Não há endpoint neste lote.

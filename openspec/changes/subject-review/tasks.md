@@ -2,7 +2,7 @@
 
 Issue #104. **Proposta aprovada, #105 integrado em `0bd6652`.**
 Grupos completos 1 e 2 autorizados; implementação em andamento, sem merge de produto.
-3/24 tarefas implementadas/verificadas, 0/24 integradas/aprovadas nas tarefas de produto.
+4/24 tarefas implementadas/verificadas, 0/24 integradas/aprovadas nas tarefas de produto.
 Decisão de granularidade: 51 assuntos existentes, escolhida pelo usuário em 2026-10-16.
 Primeiro lote escolhido pelo usuário em 2026-10-16: grupos completos 1 e 2.
 Grupos 3–6 ficam fora deste lote; tarefa verificada não significa revisão/merge aprovado.
@@ -14,7 +14,7 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 - [x] 1.1 Modelar evidência concluída e janela por conta/cargo, identidade-base e classificação capturada; testar V5/fixa/gerada, ordenação e deduplicação antes do agrupamento; documentar política subject-review/v1.
 - [x] 1.2 Implementar métricas por assunto e revisão individual com Java puro; testar 51 assuntos, zero/null, brancos, arredondamento e exposições independentes do denominador; documentar amostra e limitação.
 - [x] 1.3 Implementar prioridade com mínimo de três bases/fração exata/desempates; testar poucos dados, todos certos, empate e erros+brancos; documentar heurística sem selo de domínio.
-- [ ] 1.4 Implementar UseCases/portas de painel e revisão individual; testar isolamento de cargo/conta, conclusão/posse/expiração e falhas sem falso vazio com portas substituíveis; documentar dependências.
+- [x] 1.4 Implementar UseCases/portas de painel e revisão individual; testar isolamento de cargo/conta, conclusão/posse/expiração e falhas sem falso vazio com portas substituíveis; documentar dependências.
 
 ## 2. Leitura PostgreSQL e compatibilidade — depende de 1
 

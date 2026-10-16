@@ -48,3 +48,10 @@ it('mostra corte, datas extremas e amostra sem representar todo o histórico', a
   await screen.findByText(/Há conclusões anteriores fora da janela/);expect(screen.getByText(/O resumo pode diminuir e não representa todo o histórico/)).toBeInTheDocument();
   expect(screen.getAllByRole('time')).toHaveLength(3);
 });
+
+it('cancelamento descarta intenção explícita de foco antes da revalidação automática', async () => {
+  vi.mocked(reviewOverview).mockImplementationOnce(() => new Promise(() => {})).mockResolvedValueOnce(overview(true));
+  const show = (active: boolean) => <><button>Resultado atual</button><SubjectReviewPanel active={active} refresh={0} onUnavailable={vi.fn()} /></>;
+  const ui = render(show(true));choose();ui.rerender(show(false));screen.getByRole('button', { name: 'Resultado atual' }).focus();ui.rerender(show(true));
+  await screen.findByRole('table');expect(screen.getByRole('button', { name: 'Resultado atual' })).toHaveFocus();
+});

@@ -51,3 +51,15 @@ test('falha não vira zero, retry preserva cargo e logout descarta resposta real
   await area.getByRole('button', { name: 'Atualizar revisão' }).click();await expect.poll(() => captured).toBe(true);await page.getByRole('button', { name: 'Sair' }).click();
   await expect(panel(page)).toHaveCount(0);release();await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();await expect(panel(page)).toHaveCount(0);expect(await storage(page)).toEqual({ local: 0, session: 0, caches: [], workers: 0 });
 });
+
+test('falha explícita seguida de conclusão preserva foco no resultado durante atualização automática', async ({ page, request }) => {
+  await login(page, request, 'subject-review-focus-regression');await page.getByLabel('Quantidade de Português').fill('1');
+  await page.getByRole('button', { name: 'Iniciar simulado' }).click();await expect(page.getByRole('heading', { name: 'Questão 1 de 1' })).toBeVisible();
+  let failed = false;await page.route('**/api/v1/me/subject-review?*', async route => {
+    if (!failed) { failed = true;await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"unavailable"}' }); } else await route.continue();
+  });
+  const area = panel(page);await area.getByLabel('Cargo para revisão').selectOption('assistente-administrativo');await expect(area.getByRole('alert')).toBeVisible();
+  await page.getByRole('button', { name: 'Concluir simulado', exact: true }).click();await page.getByRole('button', { name: 'Confirmar conclusão' }).click();
+  await expect(area.getByRole('table')).toBeVisible();await expect(area.getByText('Poucos dados', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Resultado do simulado' })).toBeFocused();
+});

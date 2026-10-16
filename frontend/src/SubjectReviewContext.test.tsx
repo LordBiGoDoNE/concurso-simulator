@@ -44,3 +44,12 @@ it.each([null, userA])('conclusão confirmada atualiza painel somente da conta; 
   await waitFor(() => expect(individualReview).toHaveBeenCalledWith(view.id, view.roleId, expect.any(AbortSignal)));
   if (user) await waitFor(() => expect(vi.mocked(reviewOverview).mock.calls.length).toBeGreaterThan(1));else expect(reviewOverview).not.toHaveBeenCalled();
 });
+
+it('consulta explícita falha e conclusão posterior não move foco do resultado na atualização automática', async () => {
+  api(userA);vi.mocked(reviewOverview).mockRejectedValueOnce(new Error('offline')).mockResolvedValue(overview());vi.mocked(individualReview).mockResolvedValue(individual());render(<App />);
+  fireEvent.click(await screen.findByRole('button', { name: 'Iniciar simulado' }));await screen.findByRole('heading', { name: 'Questão 1 de 1' });
+  fireEvent.change(screen.getByLabelText('Cargo para revisão'), { target: { value: view.roleId } });await screen.findByRole('alert');
+  fireEvent.click(screen.getByRole('button', { name: 'Concluir simulado' }));fireEvent.click(screen.getByRole('button', { name: 'Confirmar conclusão' }));
+  await screen.findByText('Assunto P1: 3 erros ou brancos em 3 bases.', { selector: '#subject-review-title ~ ol li' });
+  expect(screen.getByRole('heading', { name: 'Resultado do simulado' })).toHaveFocus();
+});

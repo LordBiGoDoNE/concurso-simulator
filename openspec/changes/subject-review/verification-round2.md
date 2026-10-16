@@ -3,8 +3,8 @@
 Escopo escolhido pelo usuário em2026-10-16:3.1–3.4 e4.1–4.4. Base da épica da spec
 a16b69acf3ffcb4f82eac87018fd1270fae4aea8, que integrou o lote1 aprovado. Nova stack,
 sem sync/rebase/retarget da stack110. Grupos5/6 não autorizados neste lote.
-16/24 implementadas/verificadas,8/24 integradas. Revisão e merges do lote2 pendentes
-na preparação deste registro; nenhuma tarefa nova integrada por CI ou commit local.
+16/24 implementadas/verificadas,8/24 integradas. Revisão inicial executada com dois achados confirmados e corrigidos, revalidação
+e merges do lote2 pendentes na preparação deste registro; nenhuma tarefa nova integrada por CI ou commit local.
 
 ## Matriz de cobertura executada
 
@@ -25,7 +25,8 @@ na preparação deste registro; nenhuma tarefa nova integrada por CI ou commit l
   um teste de symlink omitido por permissão do Windows. PostgreSQL18.6 isolado.
 - ReviewHttpTests ampliado: nove testes passaram22s. Primeira camada junto com ArchUnit
   passou17s. O teste adicional de expiração com o mesmo cookie também passou isolado.
-- Frontend completo:133 testes passaram,15 arquivos. Build TypeScript/Vite aprovado.
+- Frontend antes da revisão:133 testes passaram. Após correções:137 testes passaram,
+ 15 arquivos, TypeScript/Vite aprovado.
 - Novos fluxos reais:4/4 passaram25,9s; inspeção das capturas de painel/individual/tabela
   em390/1280px. Uma primeira rodada encontrou apenas localizador de screenshot ambíguo;
   foi tornado explícito, sem relaxar assertions de produto/teclado/foco.
@@ -52,3 +53,13 @@ Não houve acesso ao PostgreSQL editorial aprovado do operador, decisão editori
 nova migração ou alteração de material. Não há implementação de aula/prática dirigida
 do grupo5 nem gate cumulativo do grupo6. Sem main/deploy/arquivamento.
 Cota/tokens privados não são inventados/publicados. Revisão de lote e gate final separados.
+
+## Correções após revisão inicial
+
+SOL6.1 xhigh apontou SR-R2-SOL-001 recomendado (intenção de foco sobrevivendo a falha)
+e SR-R2-SOL-002 opcional (coerção de disciplineId aceitando array). Ambos confirmados.
+Os três casos reproduzidos falharam antes do ajuste. Regra de foco vinculada à consulta
+explícita e tipo textual verificado antes do enum;137 testes unitários passaram após
+a correção, incluindo cancelamento, e cinco fluxos reais passaram26,4s com nova regressão
+de foco após falha/conclusão. Nenhuma mudança backend; build completo anterior preservado,
+checks do novo source e revalidação independente serão conferidos antes da aprovação.

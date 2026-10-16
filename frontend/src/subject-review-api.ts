@@ -19,7 +19,7 @@ function summary(v: unknown, context: 'window' | 'attemptId', roleId: string) {
   for (const value of r.subjects) {
     const m = row(value, ['topicId', 'title', 'disciplineId', 'disciplineTitle', 'correct', 'wrong', 'blank', 'assessed', 'exposures', 'percentage', 'lastFinishedAt']);
     text(m.topicId);ensure(topicIds.includes(m.topicId) && !ids.has(m.topicId));ids.add(m.topicId);text(m.title);text(m.disciplineTitle);
-    ensure(['portugues', 'matematica-raciocinio', 'informatica', 'conhecimentos-administrativos', 'conhecimentos-escolares'].includes(String(m.disciplineId)));
+    text(m.disciplineId);ensure(['portugues', 'matematica-raciocinio', 'informatica', 'conhecimentos-administrativos', 'conhecimentos-escolares'].includes(m.disciplineId));
     ['correct', 'wrong', 'blank', 'assessed', 'exposures'].forEach(k => count(m[k]));
     ensure(m.assessed === Number(m.correct) + Number(m.wrong) + Number(m.blank) && Number(m.exposures) >= Number(m.assessed));
     if (m.assessed === 0) ensure(m.percentage === null && m.lastFinishedAt === null);

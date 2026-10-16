@@ -24,14 +24,29 @@ do simulado; logout/troca de conta desmonta o contexto privado. Não há storage
 persistente ou dados de desempenho em URL. O cliente não promete revogar resposta já
 em voo no servidor; cancela e ignora seu resultado ao mudar o contexto.
 
-133 testes frontend passaram: contratos negativos, erro sem corpo, timeout, cancelamento,
+137 testes frontend passaram: contratos negativos, erro sem corpo, timeout, cancelamento,
 cargo/conta/logout/resposta tardia, retry e conclusão confirmada para visitante/conta,
 além das regressões existentes. Acessibilidade usa tabela com caption/cabeçalhos,
 estados em texto, seletor rotulado, botões por teclado e foco no painel após ação
 explícita. Atualização automática não desloca foco do resultado. Browser real390/1280px e inspeção visual das seis capturas locais passaram.
-Tabela tem rolagem própria por teclado, sem overflow da página. Os quatro novos fluxos
-e as regressões reais (18 identidade/simulados/revisão,5 parametrizados) passaram;
+Tabela tem rolagem própria por teclado, sem overflow da página. Os cinco fluxos novos passaram após as correções de revisão (26,4s). Antes delas,
+as regressões reais completas passaram (18 identidade/simulados/revisão,5 parametrizados);
 navegação pública/offline6/6, com material montado e links108 páginas/1.757 referências.
 Não houve teste com leitor de tela nem auditoria WCAG integral. Capturas contêm somente
 fixtures sintéticas e ficam ignoradas em build/, sem publicação de imagens.
 Links de aula/prática dirigida são grupo5, fora deste lote. Sem deploy/main.
+
+## Regressões da revisão independente do lote
+
+SR-R2-SOL-001 confirmado: um booleano de intenção de foco sobrevivia à falha/cancelamento.
+A regra positiva agora vincula intenção ao cargo e contadores da consulta explícita;
+erro,cancelamento,revalidação ou atualização automática a descartam. Teste do App
+reproduziu falha explícita → conclusão → foco indevido no painel e passou após correção;
+regressão separada cobre cancelamento. Browser real confirma foco no resultado após
+a mesma sequência, e atualização explícita bem-sucedida continua focando o painel.
+Proteção não garante toda combinação possível de eventos ou uso de leitor de tela.
+
+SR-R2-SOL-002 confirmado: converter disciplineId com String aceitava array unitário.
+Agora o tipo string é verificado antes do enum,sem coerção. Controles negativos de
+painel e individual falharam antes da correção e passaram depois. Validação de contrato
+não prova veracidade das métricas; cálculo/correção continuam exclusivamente no servidor.

@@ -35,3 +35,9 @@ it('aceita janela cortada completa e recusa exposição impossível para sua qua
   vi.stubGlobal('fetch', vi.fn(async () => response(data)));expect((await reviewOverview(view.roleId, new AbortController().signal)).window.hasOlder).toBe(true);
   data.subjects[0].exposures = 3;await expect(reviewOverview(view.roleId, new AbortController().signal)).rejects.toThrow('Contrato');
 });
+
+it.each(['overview', 'individual'])('rejeita disciplineId array sem coerção no contrato %s', async kind => {
+  const data = kind === 'overview' ? overview() : individual();(data.subjects[0] as unknown as Record<string, unknown>).disciplineId = ['portugues'];
+  vi.stubGlobal('fetch', vi.fn(async () => response(data)));
+  await expect(kind === 'overview' ? reviewOverview(view.roleId, new AbortController().signal) : individualReview(view.id, view.roleId, new AbortController().signal)).rejects.toThrow('Contrato');
+});

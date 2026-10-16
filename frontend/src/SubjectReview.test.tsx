@@ -13,7 +13,7 @@ it('exige cargo explícito e distingue sem dados, poucos dados, prioridade e atu
   await screen.findByText('Sem dados para este cargo. Nenhuma dificuldade foi inferida.');expect(screen.getAllByRole('row')).toHaveLength(52);expect(screen.getByText('Nenhuma prioridade nesta amostra.')).toBeInTheDocument();
   const data = overview();data.subjects[1] = { ...data.subjects[1], wrong: 1, assessed: 1, exposures: 1, percentage: 0, lastFinishedAt: data.window.latestFinishedAt };
   vi.mocked(reviewOverview).mockResolvedValueOnce(data);fireEvent.click(screen.getByRole('button', { name: 'Atualizar revisão' }));
-  await screen.findByText('Assunto P1: 3 erros ou brancos em 3 bases.');expect(screen.getByText('Poucos dados')).toBeInTheDocument();expect(screen.getByRole('heading', { name: 'Revisão por assunto' })).toHaveFocus();
+  await screen.findByText('Assunto P1: 3 erros ou brancos em 3 bases.');expect(screen.getByText('Poucos dados')).toBeInTheDocument();await waitFor(() => expect(screen.getByRole('heading', { name: 'Revisão por assunto' })).toHaveFocus());
 });
 it('falha não vira vazio e retry mantém cargo; nova conclusão confirmada atualiza a janela', async () => {
   vi.mocked(reviewOverview).mockRejectedValueOnce(new Error('offline'));const props = { active: true, refresh: 0, onUnavailable: vi.fn() };const ui = render(<SubjectReviewPanel {...props} />);choose();

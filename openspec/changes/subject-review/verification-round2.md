@@ -63,3 +63,9 @@ explícita e tipo textual verificado antes do enum;137 testes unitários passara
 a correção, incluindo cancelamento, e cinco fluxos reais passaram26,4s com nova regressão
 de foco após falha/conclusão. Nenhuma mudança backend; build completo anterior preservado,
 checks do novo source e revalidação independente serão conferidos antes da aprovação.
+
+O CI do registro posterior detectou intermitência no teste positivo de foco em
+SubjectReview.test.tsx: a presença do texto não aguardava useEffect. Assertion alterada
+para waitFor do mesmo título focado; nenhum comportamento de produção ou destino foi
+alterado. Esta mudança de teste/documentação exige nova revalidação do snapshot;
+a evidência anterior permanece histórico e será consolidada após ela.

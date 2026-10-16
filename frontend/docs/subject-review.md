@@ -50,3 +50,8 @@ SR-R2-SOL-002 confirmado: converter disciplineId com String aceitava array unit�
 Agora o tipo string é verificado antes do enum,sem coerção. Controles negativos de
 painel e individual falharam antes da correção e passaram depois. Validação de contrato
 não prova veracidade das métricas; cálculo/correção continuam exclusivamente no servidor.
+
+O CI identificou uma corrida no teste positivo de foco: findByText podia terminar
+antes do useEffect de foco. A assertion agora aguarda o título receber foco com
+waitFor; continua exigindo o mesmo destino, como o Playwright já fazia. Presença de
+texto não certifica conclusão de efeitos. Não houve mudança do comportamento de produção.

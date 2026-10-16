@@ -2,10 +2,11 @@
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
 épica da spec; grupos 1 e 2 integrados por #88/#89/#90/#92/#93 em `6781e9c`.
-**12/24 tarefas implementadas/verificadas, 8/24 integradas/aprovadas**. Segundo lote
-autorizado: grupos completos 3 e 4. Grupo 3 implementado, revisão do lote pendente;
-grupo 4 em preparação, com dependência editorial da base de juros simples registrada
-na issue #86. Grupos 5 e 6 não iniciados. Pré-requisito #84 em `0d0fc48`.
+**16/24 tarefas implementadas/verificadas no conjunto #94/#95/#97, 8/24 integradas/aprovadas**.
+Segundo lote autorizado: grupos completos 3 e 4. Implementação/verificação e conteúdo
+editorial real concluídos; revisão independente do conjunto pendente. Grupo 4 e seus
+registros editoriais estão no PR independente #97. Grupos 5 e 6 não iniciados.
+Pré-requisito #84 em `0d0fc48`.
 
 Grupos completos são a unidade de autorização do lote. Cada tarefa inclui código,
 testes e documentação pertinentes; PRs coesos podem dividir um grupo sem interrompê-lo.

@@ -1,6 +1,7 @@
 package br.com.concursosimulator.mockexam.domain;
 
 import br.com.concursosimulator.questionbank.domain.QuestionContent;
+import br.com.concursosimulator.parameterization.domain.CapturedOutputDigest;
 import java.util.Objects;
 import java.util.UUID;
 
@@ -17,5 +18,8 @@ public record AttemptQuestion(UUID questionId, UUID revisionId, String fingerpri
                 || !source.capture().renderedFingerprint().equals(fingerprint)
                 || source.capture().parameters().family().topic()!=content.classification().topic()))
             throw new IllegalArgumentException("Fonte/conteúdo divergente");
+        if (source.capture()!=null && !source.capture().outputDigest().equals(CapturedOutputDigest.fromContent(
+                source.capture().definitionDigest(),source.capture().parameters(),content)))
+            throw new IllegalArgumentException("Conteúdo capturado diverge do digest da saída");
     }
 }

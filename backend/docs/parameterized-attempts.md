@@ -32,7 +32,20 @@ V7 adiciona `pq_instance`, ligada ao item e à versão real do template. Snapsho
 item, instância e comando confirmam na mesma transação REPEATABLE_READ. Constraints
 deferidas impedem item gerado sem instância, vínculo divergente e instância em item
 fixo; UPDATE e DELETE independente são proibidos. Cleanup em cascata remove apenas
-dados dependentes do item. As tabelas, FKs e funções V1–V6 não são reescritas.
+dados dependentes do item. As migrações V1–V7 não são reescritas.
+
+V8 vincula o digest aprovado ao texto, às alternativas e à correção realmente
+capturados, com a canonização `parameter-output/v1` também aplicada pelo domínio
+na construção e na restauração. A causa da falha corrigida era conferir separadamente
+o fingerprint renderizado e o par parâmetros/digest do manifesto: dois pares válidos
+podiam ser trocados sem vincular o conteúdo ao digest. A regra positiva exige essa
+correspondência em cada fronteira, sem resolver novamente a questão ou consultar
+catálogo/gerador na leitura. O trigger deferido rejeita inclusive SQL direto e desfaz
+tentativa, item, instância e comando na mesma transação. A migração verifica instâncias
+V7 existentes e interrompe diante de divergência; não reescreve dados nem regenera saídas.
+Testes reproduziram a troca válida antes da correção, cobrem restauração, as 111
+saídas em Java/PostgreSQL e atualização V7→V8 com JSONs e checksums preservados.
+O vínculo prova consistência com a saída aprovada; não substitui sua revisão editorial.
 
 O adaptador JPA usa SQL nativo parametrizado apenas para inserir/consultar a cópia
 JSON imutável da instância, sem entidade mutável adicional; o agregado e os itens
@@ -46,7 +59,7 @@ o formato antigo; não há preenchimento retroativo em `me_item` ou `me_command`
 Formato desconhecido, composição nova sem versão e fonte nova em item antigo falham.
 
 Regressão instala snapshot e hash produzidos pelo código V5 real (`0d0fc48`) em
-PostgreSQL V5 e atualiza para V7; prova replay ausente/false e conflito true, preservação
+PostgreSQL V5 e atualiza para V8; prova replay ausente/false e conflito true, preservação
 das linhas durante upgrade e dos campos imutáveis durante resposta/conclusão.
 
 ## Rollback compatível

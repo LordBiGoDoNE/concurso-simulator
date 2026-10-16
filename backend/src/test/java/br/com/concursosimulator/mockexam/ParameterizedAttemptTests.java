@@ -108,4 +108,17 @@ class ParameterizedAttemptTests {
         assertThatThrownBy(() -> new Attempt.Item(item.id(),item.question(),item.optionOrder(),Map.of()))
                 .isInstanceOf(IllegalArgumentException.class);
     }
+    @Test void validTupleAndDigestFromAnotherOutputCannotBeAttachedToCapturedContent() {
+        var q=base(Family.PERCENTAGE);var v=template(q,Family.PERCENTAGE);
+        var first=AttemptMaterializer.materialize(List.of(q),List.of(v),new Random(){
+            @Override public int nextInt(int bound){return 0;}
+        },UUID::randomUUID).getFirst();
+        var other=v.definition().family().domain().get(1);var otherOutput=NumericGenerator.render(v.definition(),other);
+        v.manifest().verifyOutput(otherOutput); // O par trocado é válido, não digest zerado/inexistente.
+        var c=first.source().capture();
+        var swapped=new QuestionSource.Capture(c.templateId(),c.templateVersion(),c.definitionDigest(),c.domainDigest(),
+                c.manifestDigest(),otherOutput.digest(),c.generatorVersion(),c.baseRevisionId(),c.baseFingerprint(),c.renderedFingerprint(),other);
+        assertThatThrownBy(()->new AttemptQuestion(first.questionId(),first.revisionId(),first.fingerprint(),first.content(),
+                new QuestionSource(QuestionSource.Kind.PARAMETERIZED,swapped))).isInstanceOf(IllegalArgumentException.class);
+    }
 }

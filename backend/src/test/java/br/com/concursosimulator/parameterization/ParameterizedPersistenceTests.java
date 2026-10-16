@@ -140,12 +140,8 @@ class ParameterizedPersistenceTests {
                     .isNotInstanceOf(AttemptStore.ConcurrentWrite.class);
             var changedOutput=new QuestionSource.Capture(c.templateId(),c.templateVersion(),c.definitionDigest(),c.domainDigest(),c.manifestDigest(),
                     "0".repeat(64),c.generatorVersion(),c.baseRevisionId(),c.baseFingerprint(),c.renderedFingerprint(),c.parameters());
-            var changedQuestion=new AttemptQuestion(q.questionId(),q.revisionId(),q.fingerprint(),q.content(),
-                    new QuestionSource(QuestionSource.Kind.PARAMETERIZED,changedOutput));
-            var divergent=Attempt.start(UUID.randomUUID(),VISITOR,composition(true),NOW,List.of(
-                    new Attempt.Item(UUID.randomUUID(),changedQuestion,item.optionOrder(),item.parameters()))).snapshot();
-            assertThatThrownBy(()->s.transaction(tx->{tx.insert(divergent);return null;})).isInstanceOf(RuntimeException.class)
-                    .isNotInstanceOf(AttemptStore.ConcurrentWrite.class);
+            assertThatThrownBy(()->new AttemptQuestion(q.questionId(),q.revisionId(),q.fingerprint(),q.content(),
+                    new QuestionSource(QuestionSource.Kind.PARAMETERIZED,changedOutput))).isInstanceOf(IllegalArgumentException.class);
             for(var table:List.of("me_attempt","me_item","me_command","pq_instance"))
                 assertThat(db.jdbc.queryForObject("select count(*) from "+table,Integer.class)).isEqualTo(1);
         }

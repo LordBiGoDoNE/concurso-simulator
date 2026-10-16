@@ -26,6 +26,10 @@ As classes com nomes resumidos acima estão sob backend/src/test; o nome efetivo
 cada teste/execução está nos logs de CI. A matriz não substitui inspeção semântica
 nem garante cobertura de todos os erros possíveis. Escopo não inclui IA ao vivo,
 novo conteúdo/família, sincronização offline ou deployment.
+O teste antigo da consulta proibia qualquer checkbox na página. A regressão agora
+mantém zero controles no detalhe e zero radios, exigindo globalmente o único checkbox
+permitido, no compositor e desligado. Os controles negativos de gabarito continuam
+globais; não se ocultou o novo controle nem se removeu a proteção da consulta.
 
 ## Execuções do lote final
 
@@ -37,8 +41,20 @@ novo conteúdo/família, sincronização offline ou deployment.
   inspecionados, sem overflow horizontal. Fixtures sintéticas, não aprovação real.
 - Controles negativos de artefatos: cinco testes passaram. Scanner do JAR/SPA passou;
   metadados/gerador/sentinelas não podem entrar em nenhum chunk, inclusive resultado.
-- Build Java completo, regressão de identidade/navegador, material/checkout limpo e
-  checks remotos: em consolidação, sem alegar execuções ainda não concluídas.
+- Build backend completo: 207 casos, 206 executados sem falhas/erros; um symlink
+  omitido por permissão do Windows. Inclui domínio, ArchUnit, PostgreSQL e HTTP.
+- Regressão existente de identidade/banco/simulados no navegador: 14/14 cenários
+  aprovados. Aplicação/material offline: 6/6, incluindo nove módulos e 90 resoluções
+  sem JavaScript e sem rede.
+- Exportação limpa dos 739 arquivos/entradas versionados em `7a55651`: sem .git,
+  .env ou artefatos/dependências locais. Compilação Java/bootJar offline, npm ci
+  offline/build, scanner e auditor 111/111 aprovados. Ajustes posteriores neste lote
+  consolidam documentos/checklist e delimitam a expectativa do teste antigo de
+  consulta; não alteram fontes da aplicação, HTML/assets ou as dependências compiladas.
+- Material da exportação limpa: 108 páginas/1661 referências originais e 108/1757
+  no pacote enriquecido, sem erros. HTML/assets originais idênticos à base `542f9ac`.
+- Checks remotos e revisão independente do lote ainda pendentes ao registrar estes
+  resultados locais; não são substituídos pela contagem de testes.
 
 ## Ensaio de artefatos/upgrade/rollback
 

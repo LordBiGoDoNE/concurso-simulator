@@ -2,11 +2,13 @@
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
 épica da spec; grupos 1 e 2 integrados por #88/#89/#90/#92/#93 em `6781e9c`.
-**20/24 tarefas implementadas/verificadas, 16/24 integradas/aprovadas**.
+**23/24 tarefas implementadas/verificadas, 16/24 integradas/aprovadas**.
 Grupos completos 3/4 integrados por #94/#95/#98/#97 na épica da spec em `542f9ac`,
 com revisão SOL 6.1 xhigh e CI aprovados. Conteúdo real aprovado somente na cópia local.
 Lote final autorizado pelo usuário: grupos completos 5 e 6, em implementação.
 Revisão de lote e gate cumulativo permanecem atos separados, sem merge presumido.
+Grupos 5 e verificação 6.1–6.3 executados; 6.4 depende da revisão/aprovação/integração
+dos PRs deste lote antes do gate cumulativo sobre a épica real atualizada.
 Pré-requisito #84 em `0d0fc48`.
 
 Grupos completos são a unidade de autorização do lote. Cada tarefa inclui código,
@@ -56,7 +58,7 @@ Implementação/verificação não significa revisão do lote nem integração d
 
 ## 6. Verificação integrada e gate — depende de 3, 4 e 5
 
-- [ ] 6.1 Executar matriz de cenários desta spec, testes Java puro/ArchUnit/PG real/HTTP/browser e build frontend/backend; conferir requisito→código/teste, sem apresentar contagem como revisão semântica.
-- [ ] 6.2 Ensaiar upgrade com banco V5/contas/sessões/tentativas/comandos antigos e rollback com geração desabilitada/leitor compatível, inclusive novas instâncias; documentar incompatibilidade do JAR anterior desde a primeira escrita no formato novo, mesmo fixa, sem apagar dados.
-- [ ] 6.3 Verificar clone limpo/material/links/offline e operação editorial de ponta a ponta, registrando 111/111 validadas e decisões reais separadas de aprovação de código; manter pendências explícitas sem liberar versões não aprovadas.
+- [x] 6.1 Executar matriz de cenários desta spec, testes Java puro/ArchUnit/PG real/HTTP/browser e build frontend/backend; conferir requisito→código/teste, sem apresentar contagem como revisão semântica.
+- [x] 6.2 Ensaiar upgrade com banco V5/contas/sessões/tentativas/comandos antigos e rollback com geração desabilitada/leitor compatível, inclusive novas instâncias; documentar incompatibilidade do JAR anterior desde a primeira escrita no formato novo, mesmo fixa, sem apagar dados.
+- [x] 6.3 Verificar clone limpo/material/links/offline e operação editorial de ponta a ponta, registrando 111/111 validadas e decisões reais separadas de aprovação de código; manter pendências explícitas sem liberar versões não aprovadas.
 - [ ] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisões dos lotes; abrir/manter `[SPEC]` para épica geral e solicitar aprovação própria, sem main/deploy/arquivamento.

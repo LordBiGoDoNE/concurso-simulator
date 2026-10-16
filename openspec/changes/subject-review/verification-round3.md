@@ -36,7 +36,15 @@ estados distintos. Este registro não atesta revisão independente nem merge.
 - Auditoria das definições/previews/proveniências/digests versionados:111/111,64 direta,
   20 porcentagem,27 juros. Não é nova consulta de elegibilidade em DB nem ato editorial.
 - Ensaio de processoJAR passou26s,V9→V10,dois processos,12 tabelas inalteradas e geraçãofalse.
-- Backend/regressão parametrizada/exportação limpa em execução na preparação deste registro.
+- Backend build passou3m13:243 casos,zero falhas/erros,um symlink omitido no Windows.
+  Inclui planos2.400 tentativas/Sort→IndexScan,100×100/quatroSELECTs,integridade e cadeiaHTTP.
+- Browser parametrizado5/5 passou49,8s;inclui expiração e novas sessões/restart.
+- Exportação Git limpa c3f74961db7f57460b11fb6993588da466655016: npmci offline,
+  TypeScript/Vite e bootJar offline passaram.263 classes de produção/quatro arquivosSPA
+  inspecionados por check_attempt_artifacts.py,sem fixtures/.env/solver/metadados privados.
+  JAR SHA256715636d21f0c2db4d1205efbc5c5f1e3d627bb4fe5c1948a934aed762572c9ad,
+  idêntico ao usado no ensaio de processo. Atualização posterior deste registro não muda
+  código de produção,dependências ou configurações de build.
 - OpenSpec6/6 strict e git diff --check passaram antes do fechamento do lote.
 
 Quatro capturas sintéticas de tabela/ações390/1280 foram inspecionadas localmente.
@@ -53,3 +61,17 @@ não marcar6.4 concluída nem preencher spec-review como completed com parecer p
 A pendência é a dependência explícita do AGENTS.md e de tasks6.4, não outro escopo.
 Depois de aprovação/integração das tarefas,continuar o gate já autorizado deste grupo;
 merge do futuro [SPEC] exige aprovação própria. Sem main/deploy/arquivamento.
+
+## Preparação da revisão
+
+Risco crítico: preservação de contexto/privacidade,CSRF/idempotência de criação,
+concorrência/abort e compatibilidade operacional. A revisão SOL6.1 xhigh deve cobrir
+cada camada e combinação,sem outro modelo. Camadas:lesson-links→directed-practice→
+guided-browser→operational-regression, trunk epic/subject-review em b2355f8.
+Nenhum lockfile/artefato gerado alterado;mapaJSON público controlado contém51 pares.
+
+Push/submit foi recusado pela revisão automática de permissões por ausência alegada
+de autorização explícita para publicar branches/PRs. Nenhuma parte do comando foi
+executada; quatro camadas locais aguardam autorização específica para publicação.
+PRs/CI remotos e atualização da issue serão registrados depois,sem inventar números/checks.
+Isso não impede revisão independente do conjunto local nem altera o requisito de merge.

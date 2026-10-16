@@ -19,6 +19,8 @@ public final class IdentityBrowserFixture {
                     "http://127.0.0.1:18080/login/oauth2/code/google");
             context.set(start(postgres, registration));
             br.com.concursosimulator.questionbank.QuestionBrowserFixtures.seed(context.get());
+            if ("true".equals(System.getenv("PARAMETERIZED_BROWSER_FIXTURE")))
+                br.com.concursosimulator.parameterization.ParameterizedBrowserFixtures.seed(context.get());
             oidc.enableEditorialChange(id -> br.com.concursosimulator.questionbank.QuestionBrowserFixtures.replace(context.get(),id));
             oidc.enableApiRestart(() -> {
                 context.get().close();

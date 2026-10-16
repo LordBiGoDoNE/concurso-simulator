@@ -14,10 +14,24 @@ it('valida 1–100, mostra limites livres e impede duplo clique enquanto cria', 
   vi.mocked(createAttempt).mockImplementation(() => new Promise(resolve => { finish = resolve; }));
   const created = vi.fn(); render(<AttemptComposer onCreated={created} onUnavailable={vi.fn()} />);
   const quantity = await screen.findByLabelText('Quantidade de Português');
+  const variations = screen.getByRole('checkbox', { name: 'Usar variações numéricas quando disponíveis' });
+  expect(variations).not.toBeChecked();expect(variations).toHaveAccessibleDescription(expect.stringContaining('não há garantia de questão nova'));
   fireEvent.change(quantity, { target: { value: '101' } }); expect(screen.getByRole('button', { name: 'Iniciar simulado' })).toBeDisabled();
   fireEvent.change(quantity, { target: { value: '2' } }); const start = screen.getByRole('button', { name: 'Iniciar simulado' });
   fireEvent.click(start); fireEvent.click(start); expect(createAttempt).toHaveBeenCalledTimes(1);
+  expect(variations).toBeDisabled();expect(vi.mocked(createAttempt).mock.calls[0][0].useParameterizedQuestions).toBe(false);
   expect(screen.getByText(/não são regras oficiais/)).toBeInTheDocument(); finish(view); await waitFor(() => expect(created).toHaveBeenCalledWith(view));
+});
+it('mantém opção e comando após confirmação perdida e muda operação ao mudar a opção', async () => {
+  vi.mocked(questionCatalog).mockResolvedValue(catalog);vi.mocked(createAttempt).mockRejectedValue(new TypeError('network'));
+  render(<AttemptComposer onCreated={vi.fn()} onUnavailable={vi.fn()} />);
+  const option = await screen.findByRole('checkbox', { name: 'Usar variações numéricas quando disponíveis' });
+  fireEvent.click(option);fireEvent.click(screen.getByRole('button', { name: 'Iniciar simulado' }));
+  const retry = await screen.findByRole('button', { name: 'Tentar criar novamente' });expect(option).toBeChecked();
+  await waitFor(() => expect(retry).toBeEnabled());fireEvent.click(retry);await waitFor(() => expect(createAttempt).toHaveBeenCalledTimes(2));
+  const calls = vi.mocked(createAttempt).mock.calls;expect(calls[0][0]).toEqual(calls[1][0]);expect(calls[0][1]).toBe(calls[1][1]);expect(calls[0][0].useParameterizedQuestions).toBe(true);
+  await waitFor(() => expect(retry).toBeEnabled());fireEvent.click(option);fireEvent.click(retry);await waitFor(() => expect(createAttempt).toHaveBeenCalledTimes(3));
+  expect(calls[2][1]).not.toBe(calls[0][1]);expect(calls[2][0].useParameterizedQuestions).toBe(false);
 });
 it('insuficiência mantém operação no retry e critérios alterados geram outra operação', async () => {
   vi.mocked(questionCatalog).mockResolvedValue(catalog); vi.mocked(createAttempt).mockRejectedValue(new AttemptApiError(409, [{ disciplineId: 'portugues', available: 1 }]));

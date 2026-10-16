@@ -3,7 +3,7 @@ import type { Classification, Content, Detail } from './question-api';
 
 export interface AttemptItem extends Detail { id: string; selectedAlternativeId: string | null }
 export interface AttemptView { id: string; roleId: string; createdAt: string; finishedAt: string | null; version: number; items: AttemptItem[] }
-export interface Composition { roleId: string; disciplines: { disciplineId: string; quantity: number; topicIds: string[] }[] }
+export interface Composition { roleId: string; disciplines: { disciplineId: string; quantity: number; topicIds: string[] }[]; useParameterizedQuestions?: boolean }
 export interface Answer { commandId: string; expectedVersion: number; alternativeId: string | null }
 export interface Result { total: number; points: number; correct: number; wrong: number; blank: number; percentage: number; items: { item: AttemptItem; correctAnswer: Content; explanation: Content }[] }
 export interface Finished { attempt: AttemptView; result: Result }

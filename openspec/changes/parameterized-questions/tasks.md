@@ -2,7 +2,7 @@
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
 épica da spec; grupos 1 e 2 integrados por #88/#89/#90/#92/#93 em `6781e9c`.
-**17/24 tarefas implementadas/verificadas, 16/24 integradas/aprovadas**.
+**20/24 tarefas implementadas/verificadas, 16/24 integradas/aprovadas**.
 Grupos completos 3/4 integrados por #94/#95/#98/#97 na épica da spec em `542f9ac`,
 com revisão SOL 6.1 xhigh e CI aprovados. Conteúdo real aprovado somente na cópia local.
 Lote final autorizado pelo usuário: grupos completos 5 e 6, em implementação.
@@ -50,9 +50,9 @@ Implementação/verificação não significa revisão do lote nem integração d
 ## 5. Contrato HTTP e interface — depende de 3
 
 - [x] 5.1 Estender DTO/OpenAPI de criação com opção booleana opcional e false por padrão; testar cadeia real de segurança/CSRF, payload inválido, campos extras, clientes antigos e erro genérico; documentar proprietário de cada decisão pelo checklist HTTP.
-- [ ] 5.2 Adicionar checkbox/explicação acessíveis e preservar escolha/commandId no retry; testar teclado/foco, opção desligada inicial, mistura fixa/gerada e troca de contexto; documentar comportamento e ausência de garantia de novidade.
-- [ ] 5.3 Verificar projeções/recursos/DOM/bundle/erros sem metadados privados ou correção antecipada e resultado com valores/descrições corretos; testar inspeção e validação rigorosa dos contratos, sem solver no cliente; documentar limites do legado.
-- [ ] 5.4 Verificar conta salva/retoma/resultado em outra sessão, visitante temporário e falhas de rede/expiração/concorrência com conteúdo gerado; adicionar regressões necessárias sem duplicar a suíte anterior; documentar evidências por ator.
+- [x] 5.2 Adicionar checkbox/explicação acessíveis e preservar escolha/commandId no retry; testar teclado/foco, opção desligada inicial, mistura fixa/gerada e troca de contexto; documentar comportamento e ausência de garantia de novidade.
+- [x] 5.3 Verificar projeções/recursos/DOM/bundle/erros sem metadados privados ou correção antecipada e resultado com valores/descrições corretos; testar inspeção e validação rigorosa dos contratos, sem solver no cliente; documentar limites do legado.
+- [x] 5.4 Verificar conta salva/retoma/resultado em outra sessão, visitante temporário e falhas de rede/expiração/concorrência com conteúdo gerado; adicionar regressões necessárias sem duplicar a suíte anterior; documentar evidências por ator.
 
 ## 6. Verificação integrada e gate — depende de 3, 4 e 5
 

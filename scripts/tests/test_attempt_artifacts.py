@@ -50,3 +50,11 @@ class ArtifactTests(unittest.TestCase):
         (self.dist / "index.html").write_text('<script type="module" src="../outside.js"></script>', encoding="utf-8")
         with self.assertRaises(ValueError):
             module.check(self.jar, self.dist)
+
+    def test_numeric_generator_metadata_and_fixture_cannot_enter_any_frontend_chunk(self):
+        late = self.dist / "assets/AttemptResult-lazy.js"
+        for marker in (*module.NUMERIC_PRIVATE, b"PRIVATE_PARAMETERIZED_FIXTURE"):
+            with self.subTest(marker=marker):
+                late.write_bytes(marker)
+                with self.assertRaises(ValueError):
+                    module.check(self.jar, self.dist)

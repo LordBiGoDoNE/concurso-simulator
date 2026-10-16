@@ -41,3 +41,10 @@ it('individual consulta só o ID concluído, 409/falha distintos e retry sem agr
   await screen.findByText('A conclusão ainda não foi confirmada para esta revisão.');fireEvent.click(screen.getByRole('button', { name: 'Tentar revisão deste simulado novamente' }));await screen.findByRole('table');
   expect(within(screen.getByRole('region', { name: 'Revisão por assunto deste simulado' })).getByText('Somente esta tentativa concluída; não reúne outras tentativas.')).toBeInTheDocument();expect(reviewOverview).not.toHaveBeenCalled();
 });
+
+it('mostra corte, datas extremas e amostra sem representar todo o histórico', async () => {
+  const data = overview();data.window.attemptCount = 100;data.window.hasOlder = true;data.subjects[0].exposures = 300;
+  vi.mocked(reviewOverview).mockResolvedValue(data);render(<SubjectReviewPanel active refresh={0} onUnavailable={vi.fn()} />);choose();
+  await screen.findByText(/Há conclusões anteriores fora da janela/);expect(screen.getByText(/O resumo pode diminuir e não representa todo o histórico/)).toBeInTheDocument();
+  expect(screen.getAllByRole('time')).toHaveLength(3);
+});

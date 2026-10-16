@@ -1,7 +1,8 @@
 # Proposal
 
 **Proposta aprovada pelo usuário em 2026-10-16, issue #104.** PR #105 integrado
-na épica da spec em `0bd6652`. Primeiro lote autorizado: grupos completos 1 e 2. O usuário escolheu
+na épica da spec em `0bd6652`. Primeiro lote autorizado: grupos completos 1 e 2, integrado por #106–#109 em a16b69a.
+Segundo lote autorizado em 2026-10-16: grupos completos 3 e 4. O usuário escolheu
 em 2026-10-16 começar pelos 51 assuntos existentes, sem nova taxonomia de conceitos.
 Etapa 5 integrada na épica geral pelo #103, commit `119ec25`.
 

@@ -29,3 +29,9 @@ it('limita JSON pendente e cancela mesmo se fetch ignorar abort', async () => {
   const pending = reviewOverview(view.roleId, new AbortController().signal);const check = expect(pending).rejects.toThrow();await vi.advanceTimersByTimeAsync(5001);await check;
   const controller = new AbortController();const aborted = reviewOverview(view.roleId, controller.signal);const rejected = expect(aborted).rejects.toThrow();controller.abort();await rejected;
 });
+
+it('aceita janela cortada completa e recusa exposição impossível para sua quantidade de tentativas', async () => {
+  const data = overview();data.window.attemptCount = 100;data.window.hasOlder = true;data.subjects[0].exposures = 300;
+  vi.stubGlobal('fetch', vi.fn(async () => response(data)));expect((await reviewOverview(view.roleId, new AbortController().signal)).window.hasOlder).toBe(true);
+  data.subjects[0].exposures = 3;await expect(reviewOverview(view.roleId, new AbortController().signal)).rejects.toThrow('Contrato');
+});

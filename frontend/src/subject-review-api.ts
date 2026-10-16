@@ -39,7 +39,8 @@ export async function reviewOverview(roleId: string, signal: AbortSignal): Promi
   count(w.attemptCount);ensure(w.limit === 100 && Number(w.attemptCount) <= 100 && typeof w.hasOlder === 'boolean' && (!w.hasOlder || w.attemptCount === 100));
   if (w.attemptCount === 0) ensure(w.latestFinishedAt === null && w.oldestFinishedAt === null);
   else { date(w.latestFinishedAt);date(w.oldestFinishedAt);ensure(Date.parse(String(w.latestFinishedAt)) >= Date.parse(String(w.oldestFinishedAt))); }
-  ensure((r.subjects as SubjectMetric[]).reduce((total, m) => total + m.exposures, 0) <= Number(w.attemptCount) * 100);
+  const exposures = (r.subjects as SubjectMetric[]).reduce((total, m) => total + m.exposures, 0);
+  ensure(exposures >= Number(w.attemptCount) && exposures <= Number(w.attemptCount) * 100);
   return v as ReviewOverview;
 }
 export async function individualReview(attemptId: string, roleId: string, signal: AbortSignal): Promise<IndividualReview> {

@@ -141,6 +141,6 @@ schema anterior nem voltar ao JAR V5 após escritas no formato 2.
 
 ## Open Questions
 
-Nenhuma bloqueia a proposta. Janela de 100, deduplicação por base, mínimo de três e
-preenchimento com uma questão são políticas propostas para aprovação, não decisões
-já dadas pelo usuário. Depois da aprovação ele escolhe os grupos completos do lote.
+Nenhuma decisão de produto aberta. Proposta e políticas aprovadas pelo usuário em
+2026-10-16. Grupos1/2 integrados; segundo lote autorizado: grupos completos3/4.
+Grupos5/6 e respectivos merges/gate continuam exigindo seus escopos e aprovações.

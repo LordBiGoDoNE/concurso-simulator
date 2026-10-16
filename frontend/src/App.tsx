@@ -47,7 +47,7 @@ export default function App() {
       <LoginPanel onIdentity={changedIdentity} onChecking={checkingIdentity} onBeforeLogin={beforeLogin} />
       {privateNotice && <p role="status">{privateNotice}</p>}
       {checking && <p role="status">Conferindo acesso aos simulados…</p>}
-      <div hidden={checking}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
+      <div hidden={checking}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} reviewActive={!checking} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
       <QuestionBrowser />
       <section aria-labelledby="application-title">
         <h2 id="application-title">Nova aplicação — ambiente local</h2>

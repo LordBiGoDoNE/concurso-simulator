@@ -36,3 +36,10 @@ dialog { border: 1px solid #ccd9e0; border-radius: 12px; padding: 24px; max-widt
 dialog::backdrop { background: #172b3a99; }
 dialog button { margin: 6px; }
 @media (max-width: 480px) { section section { padding: 12px; } #mock-exam-title ~ p { overflow-wrap: anywhere; } }
+
+#subject-review-role { display: block; width: 100%; max-width: 100%; font: inherit; padding: 10px; margin: 8px 0 16px; }
+.subject-review-table { max-width: 100%; overflow-x: auto; margin-top: 16px; }
+.subject-review-table table { border-collapse: collapse; width: 100%; min-width: 850px; font-size: .9rem; }
+.subject-review-table caption { text-align: left; font-weight: 700; padding: 12px 0; }
+.subject-review-table th, .subject-review-table td { text-align: left; vertical-align: top; padding: 10px; border-bottom: 1px solid #ccd9e0; }
+.subject-review-table th[scope="row"] { min-width: 180px; overflow-wrap: anywhere; font-weight: 500; }

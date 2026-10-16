@@ -4,8 +4,9 @@ import { AttemptApiError, readAttempt, type AttemptView } from './attempt-api';
 import AttemptComposer from './AttemptComposer';
 import AttemptPractice from './AttemptPractice';
 import AttemptHistory from './AttemptHistory';
+import SubjectReviewPanel from './SubjectReviewPanel';
 
-export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive }: { identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
+export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true }: { reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
   const [selected, setSelected] = useState<AttemptView | null>(null); const [loading, setLoading] = useState(false); const [message, setMessage] = useState('');
   const [historyRefresh, setHistoryRefresh] = useState(0); const generation = useRef(0); const request = useRef<AbortController | null>(null);
   const selectedRef = useRef(selected); selectedRef.current = selected;
@@ -39,9 +40,10 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
     {loading ? <p role="status">Retomando tentativa…</p> : selected ? <>
       {access === 'checking' && <p role="status">Conferindo acesso à tentativa…</p>}
       {access === 'failed' && <><p role="alert">Não foi possível confirmar o acesso à tentativa. O conteúdo permanece oculto.</p><button onClick={() => setVerifyRetry(v => v + 1)}>Conferir tentativa novamente</button></>}
-      <div hidden={access !== 'ready'}><AttemptPractice key={selected.id} initial={selected} onUnavailable={onUnavailable} onFinished={finished} /></div>
+      <div hidden={access !== 'ready'}><AttemptPractice key={selected.id} initial={selected} reviewActive={reviewActive && access === 'ready'} onUnavailable={onUnavailable} onFinished={finished} /></div>
       <button onClick={() => { if (window.confirm('Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.')) setSelected(null); }}>Compor outro simulado</button>
     </> : <AttemptComposer onCreated={created} onUnavailable={onUnavailable} />}
+    {identity.connected && <SubjectReviewPanel active={reviewActive} refresh={historyRefresh} onUnavailable={onUnavailable} />}
     {identity.connected && <AttemptHistory refresh={historyRefresh} onOpen={id => void open(id)} onUnavailable={onUnavailable} />}
   </section>;
 }

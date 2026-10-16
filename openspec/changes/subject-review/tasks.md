@@ -2,7 +2,7 @@
 
 Issue #104. **Proposta aprovada, #105 integrado em `0bd6652`.**
 Grupos 1 e 2 integrados por #106–#109 em a16b69a, com autorização e CI pós-merge verde.
-12/24 tarefas implementadas/verificadas, 8/24 integradas/aprovadas.
+15/24 tarefas implementadas/verificadas, 8/24 integradas/aprovadas.
 Segundo lote autorizado pelo usuário em 2026-10-16: grupos completos 3 e 4.
 Decisão de granularidade: 51 assuntos existentes, escolhida pelo usuário em 2026-10-16.
 Primeiro lote escolhido pelo usuário em 2026-10-16: grupos completos 1 e 2.
@@ -33,9 +33,9 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 
 ## 4. Painel e revisão por assunto na interface — depende de 3
 
-- [ ] 4.1 Implementar painel por cargo com 51 assuntos, métricas/janela/prioridade/amostra e atualização explícita; testar sem dados/poucos dados/empates/falha e contratos estritos; documentar mensagens.
-- [ ] 4.2 Integrar decomposição individual ao resultado concluído, visitante e conta sem carregar histórico implícito; testar401/404/409/expiração e revisão de capturas antigas; documentar escopo temporário.
-- [ ] 4.3 Proteger ciclo de consultas e contexto, limpeza/cancelamento/logout/troca de cargo/conta/respostas tardias; testar nenhuma persistência privada no navegador e atualização após conclusão confirmada; documentar comportamento.
+- [x] 4.1 Implementar painel por cargo com 51 assuntos, métricas/janela/prioridade/amostra e atualização explícita; testar sem dados/poucos dados/empates/falha e contratos estritos; documentar mensagens.
+- [x] 4.2 Integrar decomposição individual ao resultado concluído, visitante e conta sem carregar histórico implícito; testar401/404/409/expiração e revisão de capturas antigas; documentar escopo temporário.
+- [x] 4.3 Proteger ciclo de consultas e contexto, limpeza/cancelamento/logout/troca de cargo/conta/respostas tardias; testar nenhuma persistência privada no navegador e atualização após conclusão confirmada; documentar comportamento.
 - [ ] 4.4 Verificar tabela/links/estados/foco por teclado e 390/1280px em testes unitários/browser reais; testar falha/retry sem falso zero e aulas independentes; documentar inspeção e limites de acessibilidade.
 
 ## 5. Aulas e prática direcionada — depende de 3/4

@@ -34,6 +34,8 @@ class ReviewHttpTests {
     @Autowired ConfigurableApplicationContext context;
     @Autowired JdbcTemplate jdbc;
     @Autowired JdbcIndexedSessionRepository sessions;
+    @org.springframework.test.context.bean.override.mockito.MockitoSpyBean
+    br.com.concursosimulator.mockexam.infrastructure.persistence.JpaCompletedAttempts evidence;
     @Value("${local.server.port}") int port;
     final HttpClient client=HttpClient.newHttpClient();final JsonMapper json=JsonMapper.builder().build();
     final String panel="/api/v1/me/subject-review",role="?roleId=assistente-administrativo";
@@ -84,6 +86,106 @@ class ReviewHttpTests {
         session.setLastAccessedTime(Instant.now().minusSeconds(3600));repository().save(session);
         assertThat(send("GET",path+"/subject-review",guest,null).statusCode()).isEqualTo(404);
     }
+    @Test @Order(4) void allProjectionLevelsRejectPrivateFieldsAndReadsNeverWriteBusinessRows() throws Exception {
+        var a=account(UUID.randomUUID());var v=create(a);var path="/api/v1/attempts/"+v.get("id").asString();
+        send("POST",path+"/finish",a,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}");
+        var before=rows();
+        for(var entry:List.of(Map.entry(panel+role,"SubjectReviewOverview"),Map.entry(path+"/subject-review","SubjectReviewIndividual"))) {
+            var response=send("GET",entry.getKey(),a,null);schema(response.body(),entry.getValue());
+            assertThat(response.body()).doesNotContain("PRIVATE_BROWSER_RESOLUTION_SENTINEL","questionId","revisionId","itemId","owner","accountId","correctAlternativeId","resolution","parameters","Digest","generatorVersion");
+            for(var target:List.of("root","subject")) {
+                var value=json.readTree(response.body());var object=(tools.jackson.databind.node.ObjectNode)(target.equals("root")?value:value.get("subjects").get(0));
+                object.put("parameters","PRIVATE_INJECTED");assertThatThrownBy(()->schema(value.toString(),entry.getValue())).isInstanceOf(AssertionError.class);
+            }
+        }
+        assertThat(rows()).isEqualTo(before);
+    }
+    @Test @Order(5) void corruptionAndTechnicalFailuresReturnWholeGenericErrorsInsteadOfEmptySuccess() throws Exception {
+        var a=account(UUID.randomUUID());var v=create(a);var path="/api/v1/attempts/"+v.get("id").asString();
+        send("POST",path+"/finish",a,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}");
+        jdbc.execute("alter table me_item disable trigger user");
+        try { jdbc.update("update me_item set payload=jsonb_set(payload,'{question,revisionId}',to_jsonb(?::text)) where attempt_id=?",UUID.randomUUID().toString(),UUID.fromString(v.get("id").asString())); }
+        finally { jdbc.execute("alter table me_item enable trigger user"); }
+        var before=rows();
+        for(var url:List.of(panel+role,path+"/subject-review")) {var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");}
+        assertThat(rows()).isEqualTo(before);
+        for(var failure:List.of(new IllegalStateException("PRIVATE_FORMAT payload=secret"),new org.springframework.dao.InvalidDataAccessApiUsageException("PRIVATE_INTEGRITY"),
+                new org.springframework.dao.DataAccessResourceFailureException("PRIVATE_JDBC password=secret"),new org.springframework.transaction.CannotCreateTransactionException("PRIVATE_TX"))) {
+            org.mockito.Mockito.doThrow(failure).when(evidence).recent(org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.anyInt(),org.mockito.ArgumentMatchers.any());
+            try {var r=send("GET",panel+role,a,null);boolean integrity=failure instanceof IllegalStateException || failure instanceof org.springframework.dao.InvalidDataAccessApiUsageException;
+                assertThat(r.statusCode()).isEqualTo(integrity?500:503);assertThat(r.body()).isEqualTo(integrity?"{\"error\":\"internal_error\"}":"{\"error\":\"unavailable\"}");}
+            finally {org.mockito.Mockito.reset(evidence);}
+        }
+        assertThat(rows()).isEqualTo(before);
+    }
+    @Test @Order(6) void finishedDuringHttpReadAppearsOnlyInTheFollowingWindowAndLogoutInvalidatesFollowingRequests() throws Exception {
+        var a=account(UUID.randomUUID());var v=create(a);var path="/api/v1/attempts/"+v.get("id").asString();
+        var captured=new java.util.concurrent.CountDownLatch(1);var release=new java.util.concurrent.CountDownLatch(1);
+        var first=new java.util.concurrent.atomic.AtomicBoolean(true);
+        org.mockito.Mockito.doAnswer(call->{var window=call.callRealMethod();if(first.getAndSet(false)){captured.countDown();if(!release.await(10,java.util.concurrent.TimeUnit.SECONDS))throw new IllegalStateException("Timeout fixture");}return window;})
+                .when(evidence).recent(org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.anyInt(),org.mockito.ArgumentMatchers.any());
+        try(var pool=java.util.concurrent.Executors.newSingleThreadExecutor()) {
+            var pending=pool.submit(()->send("GET",panel+role,a,null));assertThat(captured.await(5,java.util.concurrent.TimeUnit.SECONDS)).isTrue();
+            assertThat(send("POST",path+"/finish",a,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}").statusCode()).isEqualTo(200);
+            assertThat(send("POST","/api/v1/auth/logout",a,null).statusCode()).isEqualTo(204);release.countDown();
+            var earlier=pending.get(10,java.util.concurrent.TimeUnit.SECONDS);assertThat(earlier.statusCode()).isEqualTo(200);
+            assertThat(json.readTree(earlier.body()).get("window").get("attemptCount").asInt()).isZero();
+            assertThat(send("GET",panel+role,a,null).statusCode()).isEqualTo(401);
+        } finally {release.countDown();org.mockito.Mockito.reset(evidence);}
+        // Identity was checked when the earlier request entered. It is not a promise to revoke an in-flight response.
+        var owner=jdbc.queryForObject("select owner_id from me_attempt where id=?",UUID.class,UUID.fromString(v.get("id").asString()));
+        var fresh=account(owner);var later=json.readTree(send("GET",panel+role,fresh,null).body());
+        assertThat(later.get("window").get("attemptCount").asInt()).isEqualTo(1);assertThat(later.get("subjects").get(0).get("blank").asInt()).isEqualTo(3);
+        assertThat(send("GET",path+"/result",fresh,null).statusCode()).isEqualTo(200);
+    }
+    @Test @Order(7) void visitorExpiryIsCheckedForTheCapturedReadAndNextRequestCannotRecoverExpiredEvidence() throws Exception {
+        var a=browser(null);var v=create(a);var path="/api/v1/attempts/"+v.get("id").asString();var id=UUID.fromString(v.get("id").asString());
+        send("POST",path+"/finish",a,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}");
+        var captured=new java.util.concurrent.CountDownLatch(1);var release=new java.util.concurrent.CountDownLatch(1);
+        var first=new java.util.concurrent.atomic.AtomicBoolean(true);var now=Instant.now();
+        var shortSession=repository().findById(a.cookie().substring(8));shortSession.setMaxInactiveInterval(Duration.ofSeconds(1));repository().save(shortSession);
+        org.mockito.Mockito.doAnswer(call->{var result=call.callRealMethod();if(first.getAndSet(false)){captured.countDown();if(!release.await(10,java.util.concurrent.TimeUnit.SECONDS))throw new IllegalStateException("Timeout fixture");}return result;})
+                .when(evidence).one(org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.eq(id),org.mockito.ArgumentMatchers.any());
+        try(var pool=java.util.concurrent.Executors.newSingleThreadExecutor()) {
+            var pending=pool.submit(()->send("GET",path+"/subject-review",a,null));assertThat(captured.await(5,java.util.concurrent.TimeUnit.SECONDS)).isTrue();
+            Thread.sleep(1300);release.countDown();
+            assertThat(pending.get(10,java.util.concurrent.TimeUnit.SECONDS).statusCode()).isEqualTo(200);
+        } finally {release.countDown();org.mockito.Mockito.reset(evidence);}
+        // The old actor still cannot read beyond the domain's 24h deadline even with a live session.
+        var owner=jdbc.queryForObject("select owner_id from me_attempt where id=?",UUID.class,id);
+        var actor=new br.com.concursosimulator.mockexam.domain.AttemptOwner(br.com.concursosimulator.mockexam.domain.AttemptOwner.Kind.VISITOR,owner);
+        assertThatThrownBy(()->evidence.one(actor,id,now.plusSeconds(86401))).isInstanceOf(br.com.concursosimulator.mockexam.domain.Attempt.Unavailable.class);
+        assertThat(send("GET",path+"/subject-review",a,null).statusCode()).isEqualTo(404);
+        assertThat(send("GET",path+"/subject-review",browser(null),null).statusCode()).isEqualTo(404);
+    }
+    @Test @Order(8) void capturedGeneratedResultRemainsMinimalAfterTemplateWithdrawalAndCorsKeepsCredentialsControlled() throws Exception {
+        var versions=br.com.concursosimulator.parameterization.ParameterizedBrowserFixtures.seed(context);
+        var a=account(UUID.randomUUID());var body=createBody().replace("portugues","matematica-raciocinio").replace("\"quantity\":3","\"quantity\":4");
+        body=body.substring(0,body.length()-1)+",\"useParameterizedQuestions\":true}";
+        var created=send("POST","/api/v1/attempts",a,body);assertThat(created.statusCode()).isEqualTo(201);var id=json.readTree(created.body()).get("id").asString();
+        var path="/api/v1/attempts/"+id;send("POST",path+"/finish",a,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}");
+        var first=send("GET",path+"/subject-review",a,null);assertThat(first.statusCode()).isEqualTo(200);
+        var uc=new br.com.concursosimulator.parameterization.application.TemplateUseCases(context.getBean(br.com.concursosimulator.parameterization.application.TemplateStore.class));
+        for(var v:versions)uc.decide(br.com.concursosimulator.parameterization.ParameterFixtures.decision(v,br.com.concursosimulator.parameterization.domain.TemplateDecision.Action.WITHDRAW),1,2);
+        var before=rows();assertThat(send("GET",path+"/subject-review",a,null).body()).isEqualTo(first.body());
+        var response=send("GET",panel+role,a,null);schema(response.body(),"SubjectReviewOverview");
+        assertThat(response.body()).doesNotContain("parameters","Digest","correctAlternativeId","resolution","generatorVersion","PRIVATE_");assertThat(rows()).isEqualTo(before);
+        for(var origin:List.of("http://localhost:5173","https://unknown.example")) {
+            var request=HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+panel+role)).header("Cookie",a.cookie()).header("Origin",origin).build();
+            var cors=client.send(request,HttpResponse.BodyHandlers.ofString());assertThat(cors.headers().firstValue("Cache-Control").orElse("")).contains("no-store");
+            assertThat(cors.statusCode()).isEqualTo(origin.contains("localhost")?200:403);
+            if(origin.contains("localhost")){assertThat(cors.headers().firstValue("Access-Control-Allow-Origin")).contains(origin);assertThat(cors.headers().firstValue("Access-Control-Allow-Credentials")).contains("true");}
+            else assertThat(cors.headers().firstValue("Access-Control-Allow-Origin")).isEmpty();
+        }
+    }
+    @Test @Order(90) void databaseAndSessionOutageRemain503JsonNoStoreIncludingCors() throws Exception {
+        var a=account(UUID.randomUUID());PG.stop();
+        for(var url:List.of(panel+role,"/api/v1/attempts/"+UUID.randomUUID()+"/subject-review")) {
+            var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+        }
+    }
+    List<List<String>> rows() { return List.of("app_user","qb_question","qb_revision","qb_decision","me_attempt","me_item","me_command","pq_instance").stream()
+            .map(t->jdbc.queryForList("select row_to_json(r)::text from "+t+" r order by 1",String.class)).toList(); }
     String createBody() { return "{\"commandId\":\""+UUID.randomUUID()+"\",\"roleId\":\"assistente-administrativo\",\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":3,\"topicIds\":[]}]}"; }
     JsonNode create(Browser b) throws Exception { var r=send("POST","/api/v1/attempts",b,createBody());assertThat(r.statusCode()).isEqualTo(201);return json.readTree(r.body()); }
     Browser account(UUID id) throws Exception {

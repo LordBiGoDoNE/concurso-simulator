@@ -17,6 +17,7 @@ public class AttemptAvailabilityConfiguration {
         var filter=new OncePerRequestFilter() {
             @Override protected boolean shouldNotFilter(HttpServletRequest request) { return !AttemptRoutes.owns(request) && !br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.owns(request); }
             @Override protected void doFilterInternal(HttpServletRequest request,HttpServletResponse response,FilterChain chain) throws ServletException,IOException {
+                response.setHeader("Cache-Control","no-store");
                 try { chain.doFilter(request,response); }
                 catch (RuntimeException | ServletException failure) {
                     if (response.isCommitted() || !databaseFailure(failure)) throw failure;

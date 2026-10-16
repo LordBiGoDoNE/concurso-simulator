@@ -29,3 +29,29 @@ Primeira camada do lote3/4 entrega3.1/3.2, verificada com ReviewHttpTests e Arch
 3.3/3.4; nenhuma tarefa do grupo é considerada concluída por um prefixo. Revisão
 independente SOL6.1 xhigh e aprovação de merge continuam pendentes no lote em execução.
 Sem endpoint de criação de progresso, dado editorial real, main ou deploy.
+
+## Privacidade e concorrência verificadas
+
+ReviewHttpTests: nove testes passaram em22s com PostgreSQL18.6 descartável, servidor e
+cadeia de segurança reais. Projeções fechadas rejeitam inclusão negativa de parameters
+na raiz/assuntos; as consultas preservam integralmente app_user, banco/editorial,
+tentativas, itens, comandos e instâncias. Captura gerada segue legível após retirada.
+
+Leitor adulterado falha integralmente com500 e não repara registros; falhas injetadas
+de formato/API JPA são500, recurso/transação503, sem mensagem/SQL/credencial. PostgreSQL
+parado de verdade também produz503 JSON/no-store quando a sessão falha antes do MVC.
+Filtro técnico aplica no-store antes da segurança, incluindo rejeições CORS; origens
+permitidas mantêm credenciais, origens desconhecidas são negadas.
+
+Uma consulta autorizada na entrada pode terminar depois do logout/expiração: não há
+promessa de revogação de resposta já em voo. O teste pausa após capturar a janela,
+conclui e encerra a sessão: aquela resposta conserva a visão anterior, pedidos seguintes
+recebem401; nova sessão da mesma conta vê a conclusão inteira. Visitante com timeout
+curto é testado com o mesmo cookie após expirar e recebe404; domínio recusa evidência
+além de24h. Nenhuma conta incorpora o visitante. A interface deve cancelar/ignorar
+respostas antigas e limpar o contexto; grupo4 cobre essa responsabilidade.
+
+Matriz: conta própria200, outra sessão da conta200, outra conta/visitante/ausente404,
+aberta própria409, painel visitante/principal inválido401, entradas400, POST semCSRF403,
+integridade500 e indisponibilidade503. Testes não demonstram revogação retroativa de
+requisição já autorizada, todos os schedulings de concorrência ou latência operacional.

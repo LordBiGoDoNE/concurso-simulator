@@ -1,6 +1,7 @@
 # Proposal
 
-**Proposta em revisão, ainda não aprovada, issue #104.** Etapa 6 do roadmap. O usuário escolheu
+**Proposta aprovada pelo usuário em 2026-10-16, issue #104.** PR #105 integrado
+na épica da spec em `0bd6652`. Primeiro lote autorizado: grupos completos 1 e 2. O usuário escolheu
 em 2026-10-16 começar pelos 51 assuntos existentes, sem nova taxonomia de conceitos.
 Etapa 5 integrada na épica geral pelo #103, commit `119ec25`.
 
@@ -56,4 +57,5 @@ resultados. Eventual índice exige plano de consulta e Flyway aditivo após V9.
 Novos contratos OpenAPI e interface React, mapeamento controlado de 51 aulas a partir
 de `manifesto_v3.json`, sem alterar HTML/material. A épica da spec parte de
 `119ec25`; tarefas vão para ela e o futuro `[SPEC]` para a épica geral.
-Nenhum grupo de implementação está autorizado por esta proposta em revisão.
+Grupos completos 1 e 2 autorizados explicitamente pelo usuário; grupos 3–6 não
+entram no primeiro lote. Merges de implementação continuam exigindo aprovação própria.

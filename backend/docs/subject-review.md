@@ -25,3 +25,16 @@ cargo, IDs, ordem e hasOlder sem janela cheia. Falha não vira resumo parcial/va
 Painel só aceita conta; revisão individual aceita o proprietário visitante ou conta.
 O agregado Attempt protege conclusão/posse/expiração antes de produzir evidência.
 O UseCase recebe Clock e a porta, testáveis sem Spring. Não há endpoint neste lote.
+
+O produtor JPA usa transação própria read-only/REPEATABLE_READ com timeout 15s.
+Consulta primeiro até 101 UUIDs de conclusões por conta/cargo, retém até 100 e só então
+carrega payloads, itens e instâncias em lote: quatro SELECTs para formato 2, independentemente
+de 1 ou 10.000 itens. O cabeçalho extra nunca é decodificado. Revisão individual usa
+os mesmos codecs/vínculos, com consulta limitada ao ator e vigência, seguida da regra
+do agregado. AttemptStore também usa o leitor comum; não mantém validação paralela.
+Nenhum JSON/hash, progresso, decisão editorial ou comando é gravado pela consulta.
+
+PostgreSQL 18.6 isolado: 100 tentativas/10.000 itens em quatro SELECTs, nenhuma escrita;
+101º cabeçalho adulterado não é decodificado, corrupção dentro da janela falha
+integralmente. Regressões de concorrência/idempotência e fixture V5 real passaram
+com o leitor comum. Planos/índice e revalidação de capturas seguem nesta mesma rodada.

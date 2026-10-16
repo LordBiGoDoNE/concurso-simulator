@@ -122,26 +122,7 @@ public class JpaAttemptStore implements AttemptStore {
     }
     private Attempt.Snapshot decode(String payload) { return codec.decode(payload); }
     private Attempt.Snapshot read(AttemptRow row) {
-        var s=decode(row.payload); var a=Attempt.restore(s);
-        require(s.id().equals(row.id) && s.owner().kind().name().equals(row.ownerKind) && s.owner().id().equals(row.ownerId)
-                && Objects.equals(row.accountId,s.owner().kind()==AttemptOwner.Kind.ACCOUNT?s.owner().id():null)
-                && s.version()==row.version && s.createdAt().equals(row.createdAt) && Objects.equals(s.finishedAt(),row.finishedAt)
-                && Objects.equals(a.expiresAt(),row.expiresAt));
-        var items=entities.createQuery("select i from ItemRow i where i.attemptId=:id order by i.position",ItemRow.class)
-                .setParameter("id",row.id).getResultList();
-        require(items.size()==s.items().size());
-        for (int i=0;i<items.size();i++) {
-            var r=items.get(i); var item=codec.item(r.payload,s.format());
-            require(r.position==i && r.id.equals(item.id()) && r.questionId.equals(item.question().questionId())
-                    && r.revisionId.equals(item.question().revisionId()) && item.equals(s.items().get(i)));
-            if (s.format()==2) {
-                var instances=entities.createNativeQuery("select payload::text from pq_instance where item_id=:id",String.class)
-                        .setParameter("id",r.id).getResultList();
-                require(instances.size()==(item.question().source().capture()==null?0:1));
-                if (!instances.isEmpty()) require(codec.item((String)instances.getFirst(),2).equals(item));
-            }
-        }
-        return s;
+        return new AttemptSnapshotReader(entities).read(List.of(row)).getFirst();
     }
     private static void require(boolean condition) { if (!condition) throw new IllegalStateException("Persistência da tentativa inconsistente"); }
 }

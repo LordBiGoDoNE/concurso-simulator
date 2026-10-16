@@ -2,10 +2,13 @@
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
 épica da spec; grupos 1 e 2 integrados por #88/#89/#90/#92/#93 em `6781e9c`.
-**16/24 tarefas implementadas/verificadas no conjunto #94/#95/#97, 8/24 integradas/aprovadas**.
-Segundo lote autorizado: grupos completos 3 e 4. Implementação/verificação e conteúdo
-editorial real concluídos; revisão independente do conjunto pendente. Grupo 4 e seus
-registros editoriais estão no PR independente #97. Grupos 5 e 6 não iniciados.
+**23/24 tarefas implementadas/verificadas, 16/24 integradas/aprovadas**.
+Grupos completos 3/4 integrados por #94/#95/#98/#97 na épica da spec em `542f9ac`,
+com revisão SOL 6.1 xhigh e CI aprovados. Conteúdo real aprovado somente na cópia local.
+Lote final autorizado pelo usuário: grupos completos 5 e 6, em implementação.
+Revisão de lote e gate cumulativo permanecem atos separados, sem merge presumido.
+Grupos 5 e verificação 6.1–6.3 executados; 6.4 depende da revisão/aprovação/integração
+dos PRs deste lote antes do gate cumulativo sobre a épica real atualizada.
 Pré-requisito #84 em `0d0fc48`.
 
 Grupos completos são a unidade de autorização do lote. Cada tarefa inclui código,
@@ -48,14 +51,14 @@ Implementação/verificação não significa revisão do lote nem integração d
 
 ## 5. Contrato HTTP e interface — depende de 3
 
-- [ ] 5.1 Estender DTO/OpenAPI de criação com opção booleana opcional e false por padrão; testar cadeia real de segurança/CSRF, payload inválido, campos extras, clientes antigos e erro genérico; documentar proprietário de cada decisão pelo checklist HTTP.
-- [ ] 5.2 Adicionar checkbox/explicação acessíveis e preservar escolha/commandId no retry; testar teclado/foco, opção desligada inicial, mistura fixa/gerada e troca de contexto; documentar comportamento e ausência de garantia de novidade.
-- [ ] 5.3 Verificar projeções/recursos/DOM/bundle/erros sem metadados privados ou correção antecipada e resultado com valores/descrições corretos; testar inspeção e validação rigorosa dos contratos, sem solver no cliente; documentar limites do legado.
-- [ ] 5.4 Verificar conta salva/retoma/resultado em outra sessão, visitante temporário e falhas de rede/expiração/concorrência com conteúdo gerado; adicionar regressões necessárias sem duplicar a suíte anterior; documentar evidências por ator.
+- [x] 5.1 Estender DTO/OpenAPI de criação com opção booleana opcional e false por padrão; testar cadeia real de segurança/CSRF, payload inválido, campos extras, clientes antigos e erro genérico; documentar proprietário de cada decisão pelo checklist HTTP.
+- [x] 5.2 Adicionar checkbox/explicação acessíveis e preservar escolha/commandId no retry; testar teclado/foco, opção desligada inicial, mistura fixa/gerada e troca de contexto; documentar comportamento e ausência de garantia de novidade.
+- [x] 5.3 Verificar projeções/recursos/DOM/bundle/erros sem metadados privados ou correção antecipada e resultado com valores/descrições corretos; testar inspeção e validação rigorosa dos contratos, sem solver no cliente; documentar limites do legado.
+- [x] 5.4 Verificar conta salva/retoma/resultado em outra sessão, visitante temporário e falhas de rede/expiração/concorrência com conteúdo gerado; adicionar regressões necessárias sem duplicar a suíte anterior; documentar evidências por ator.
 
 ## 6. Verificação integrada e gate — depende de 3, 4 e 5
 
-- [ ] 6.1 Executar matriz de cenários desta spec, testes Java puro/ArchUnit/PG real/HTTP/browser e build frontend/backend; conferir requisito→código/teste, sem apresentar contagem como revisão semântica.
-- [ ] 6.2 Ensaiar upgrade com banco V5/contas/sessões/tentativas/comandos antigos e rollback com geração desabilitada/leitor compatível, inclusive novas instâncias; documentar incompatibilidade do JAR anterior desde a primeira escrita no formato novo, mesmo fixa, sem apagar dados.
-- [ ] 6.3 Verificar clone limpo/material/links/offline e operação editorial de ponta a ponta, registrando 111/111 validadas e decisões reais separadas de aprovação de código; manter pendências explícitas sem liberar versões não aprovadas.
+- [x] 6.1 Executar matriz de cenários desta spec, testes Java puro/ArchUnit/PG real/HTTP/browser e build frontend/backend; conferir requisito→código/teste, sem apresentar contagem como revisão semântica.
+- [x] 6.2 Ensaiar upgrade com banco V5/contas/sessões/tentativas/comandos antigos e rollback com geração desabilitada/leitor compatível, inclusive novas instâncias; documentar incompatibilidade do JAR anterior desde a primeira escrita no formato novo, mesmo fixa, sem apagar dados.
+- [x] 6.3 Verificar clone limpo/material/links/offline e operação editorial de ponta a ponta, registrando 111/111 validadas e decisões reais separadas de aprovação de código; manter pendências explícitas sem liberar versões não aprovadas.
 - [ ] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisões dos lotes; abrir/manter `[SPEC]` para épica geral e solicitar aprovação própria, sem main/deploy/arquivamento.

@@ -51,9 +51,11 @@ it('abrir a tentativa atual preserva escolha e comando após falha de salvamento
   await act(async () => fixture.finishWrite());await screen.findByText('Respostas confirmadas.');expect(screen.getAllByRole('radio')[0]).toBeChecked();
 });
 it('trocar para outra conta no refresh desmonta o contexto anterior e ignora escrita tardia', async () => {
-  const fixture = api(userA);render(<App />);await start();fireEvent.click(screen.getAllByRole('radio')[0]);
+  const fixture = api(userA);render(<App />);
+  fireEvent.click(await screen.findByRole('checkbox', { name: 'Usar variações numéricas quando disponíveis' }));await start();fireEvent.click(screen.getAllByRole('radio')[0]);
   await waitFor(() => expect(fixture.fetchMock.mock.calls.some(([u]) => u.includes('/answers/'))).toBe(true));fixture.change(userB);
   fireEvent.click(screen.getByRole('button', { name: 'Atualizar sessão' }));await screen.findByRole('button', { name: 'Iniciar simulado' });
+  expect(screen.getByRole('checkbox', { name: 'Usar variações numéricas quando disponíveis' })).not.toBeChecked();
   await act(async () => fixture.finishWrite());expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();
 });
 it('visitante vê duração/ausência de transferência e cancelar login preserva a realização', async () => {

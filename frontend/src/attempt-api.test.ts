@@ -29,6 +29,15 @@ it('envia CSRF/credenciais/no-store e preserva payload e commandId no retry', as
   expect(writes).toHaveLength(2); expect(writes[0][1].body).toEqual(writes[1][1].body);
   expect(writes[0][1]).toMatchObject({ credentials: 'include', cache: 'no-store', method: 'POST', headers: { 'X-CSRF-TOKEN': 'csrf-test', 'Content-Type': 'application/json' } });
 });
+it('envia somente a opção pública e rejeita metadados privados em qualquer item', async () => {
+  const fetchMock = vi.fn(async (url: string) => url.endsWith('/csrf') ? response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' }) : response(view));
+  vi.stubGlobal('fetch', fetchMock);await createAttempt({ ...composition, useParameterizedQuestions: true }, 'operation', signal());
+  const request = fetchMock.mock.calls.find(([url]) => url.endsWith('/attempts')) as unknown as [string, RequestInit];
+  expect(JSON.parse(String(request[1].body))).toEqual({ ...composition, useParameterizedQuestions: true, commandId: 'operation' });
+  for (const key of ['source', 'templateId', 'templateVersion', 'parameters', 'definitionDigest', 'manifestDigest', 'outputDigest', 'generatorVersion', 'seed']) {
+    expect(() => validateAttempt({ ...view, items: [{ ...view.items[0], [key]: 'PRIVATE_PARAMETERIZED_LEAK' }] })).toThrow();
+  }
+});
 it.each(['csrf-body', 'mutation-body', 'headers'])('prazo único encerra %s sem depender de fetch obedecer abort', async stalled => {
   vi.useFakeTimers(); let finish!: (v: unknown) => void; let captured!: AbortSignal;
   vi.stubGlobal('fetch', vi.fn(async (url: string, options: RequestInit) => {

@@ -90,3 +90,12 @@ tasks.register<JavaExec>("parameterizationLocal") {
             if (action == "decide") "--decision" else "--definition", project.property("templateFile").toString())
     }
 }
+
+tasks.register<JavaExec>("parameterizedOperationalCheck") {
+    group = "verification"
+    description = "Deliberate isolated V5/V9 upgrade and compatible rollback check; requires approved V5 JAR"
+    dependsOn(tasks.testClasses)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.parameterization.ParameterizedOperationalFixture")
+    if (project.hasProperty("rollbackJar")) args(project.property("rollbackJar").toString())
+}

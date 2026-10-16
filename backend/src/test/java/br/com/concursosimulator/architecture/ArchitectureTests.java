@@ -88,6 +88,18 @@ class ArchitectureTests {
         }
     }
 
+    @Test void subjectReviewControllerReceivesVerifiedActorAndUsesConcreteWebRecords() {
+        var controller=br.com.concursosimulator.subjectreview.web.ReviewController.class;
+        noClasses().that().haveFullyQualifiedName(controller.getName()).should().dependOnClassesThat()
+                .resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..").check(CODE);
+        for(var method:controller.getDeclaredMethods()) {
+            if(!method.isAnnotationPresent(GetMapping.class))continue;
+            var response=(ParameterizedType)method.getGenericReturnType();assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
+            assertThat(response.getActualTypeArguments()[0]).isInstanceOf(Class.class);
+            assertThat(((Class<?>)response.getActualTypeArguments()[0]).isRecord()).isTrue();
+        }
+    }
+
     @Test
     void webDoesNotAccessPersistenceImplementations() {
         noClasses().that().resideInAPackage("..web..")

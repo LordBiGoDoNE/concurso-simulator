@@ -1,11 +1,12 @@
 # Tasks
 
 Issue #104. **Proposta aprovada, #105 integrado em `0bd6652`.**
-Grupos completos 1 e 2 autorizados; implementação em andamento, sem merge de produto.
-8/24 tarefas implementadas/verificadas, 0/24 integradas/aprovadas nas tarefas de produto.
+Grupos 1 e 2 integrados por #106–#109 em a16b69a, com autorização e CI pós-merge verde.
+10/24 tarefas implementadas/verificadas, 8/24 integradas/aprovadas.
+Segundo lote autorizado pelo usuário em 2026-10-16: grupos completos 3 e 4.
 Decisão de granularidade: 51 assuntos existentes, escolhida pelo usuário em 2026-10-16.
 Primeiro lote escolhido pelo usuário em 2026-10-16: grupos completos 1 e 2.
-Grupos 3–6 ficam fora deste lote; tarefa verificada não significa revisão/merge aprovado.
+Grupos 5 e 6 ficam fora do segundo lote; tarefa verificada não significa revisão/merge aprovado.
 Cada grupo escolhido inclui todas as suas subtarefas, código/testes/documentação,
 revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma spec.
 
@@ -25,8 +26,8 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 
 ## 3. HTTP, contratos e privacidade — depende de 1/2
 
-- [ ] 3.1 Implementar as duas consultas/DTOs concretos e OpenAPI estrito; testar cargos/UUID/parâmetros extras e repetidos/limites; documentar respostas/janela e checklist de responsabilidades.
-- [ ] 3.2 Integrar Spring Security/principal já verificado e posse no núcleo; testar cadeia real 401/403 do POST existente/404/409 para visitantes e contas, sem controller duplicar regras; documentar proprietário das decisões.
+- [x] 3.1 Implementar as duas consultas/DTOs concretos e OpenAPI estrito; testar cargos/UUID/parâmetros extras e repetidos/limites; documentar respostas/janela e checklist de responsabilidades.
+- [x] 3.2 Integrar Spring Security/principal já verificado e posse no núcleo; testar cadeia real 401/403 do POST existente/404/409 para visitantes e contas, sem controller duplicar regras; documentar proprietário das decisões.
 - [ ] 3.3 Verificar no-store e projeções/erros sem correção/captura/identidade privada, integridade 500 versus indisponibilidade 503; testar controles negativos HTTP/artefatos e zero escrita nos GETs; documentar limites.
 - [ ] 3.4 Cobrir consulta concorrente a conclusão/expiração/logout e sessão alternativa da mesma conta; testar snapshots coerentes, ausência de parcial e compatibilidade dos endpoints existentes; documentar matriz de atores.
 

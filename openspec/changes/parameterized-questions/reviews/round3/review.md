@@ -23,24 +23,24 @@ Composição inicial e resultado estruturado estão em [review.json](review.json
 ## Achado e triagem
 
 **PQ-R3-001, blocking nos prefixos iniciais, corrigido.** A tradução de
-IllegalStateException pelo repository caía no handler503 de DataAccessException;
-a correção500 existia somente na última camada. `f413165` coloca advice, teste e
-documentação na camada HTTP. Revalidação confirmou o contrato500 internal_error,
+IllegalStateException pelo repository caía no handler 503 de DataAccessException;
+a correção 500 existia somente na última camada. `f413165` coloca advice, teste e
+documentação na camada HTTP. Revalidação confirmou o contrato 500 internal_error,
 rollback das quatro tabelas e ausência de dependência da camada superior.
 Nenhum novo achado blocking/recommended/optional.
 
 ## Cobertura e verificação
 
 Revisados cada diff e combinação, DTO/OpenAPI/parsing estrito e compatibilidade,
-CSRF/posse, fronteiras do ADR0001, projeções e artefatos privados, checkbox/acessibilidade,
-retry/commandId/troca de contexto, browser/fixtures, V5→V9 e rollback compatível,
+CSRF/posse, fronteiras do ADR 0001, projeções e artefatos privados, checkbox/acessibilidade,
+retry/commandId/troca de contexto, browser/fixtures, V5 → V9 e rollback compatível,
 CI sem deploy. A matriz e as execuções do coordenador estão em
 [verification.md](../../verification.md), que não foi fornecido ao revisor.
 
-Coordenador executou: backend207 casos/206 sem falhas e1symlink omitido Windows;
-frontend110; navegador5 parametrizados+14 regressões+6 aplicação/material offline;
+Coordenador executou: backend 207 casos/206 sem falhas e 1 symlink omitido Windows;
+frontend 110; navegador 5 parametrizados + 14 regressões + 6 aplicação/material offline;
 ensaio operacional com JAR V5 real, PostgreSQL isolado e geração desligada;
-exportação limpa7a55651 com builds/scanner/material/111 variantes; nova consulta
+exportação limpa 7a55651 com builds/scanner/material/111 variantes; nova consulta
 editorial somente leitura, sem alteração das três famílias e111 saídas aprovadas.
 
 O revisor realizou somente consultas locais; não executou testes/build/rede/DB,
@@ -56,3 +56,11 @@ aguarda publicação com escopo workflow; checks e composição remota serão co
 antes da aprovação explícita de cada PR. Após integração autorizada das tarefas,
 6.4 exige novo contexto independente para gate da spec real contra a épica geral.
 Sem autorização de main, deploy ou arquivamento.
+
+## Checks remotos conferidos pelo coordenador
+
+Após revalidação, todos os checks reportados passaram nos heads de #99 `f413165`
+e #100 `700603e`: backend, frontend, study-material, identity-browser e
+spec-review-tests. Referências: [#99](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38845178979),
+[#100](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38845177113).
+Os checks da terceira camada continuam pendentes de publicação; nenhum merge autorizado.

@@ -1,0 +1,1856 @@
+{
+  "version": {
+    "definition": {
+      "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+      "version": 1,
+      "family": "SIMPLE_INTEREST",
+      "generatorVersion": "numeric-v1",
+      "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+      "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+      "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+      "classification": {
+        "discipline": "MATHEMATICS_LOGIC",
+        "topic": "M04",
+        "roles": [
+          "SCHOOL_SECRETARY",
+          "ADMINISTRATIVE_ASSISTANT"
+        ]
+      },
+      "references": [
+        {
+          "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+          "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+          "legalBasis": null
+        }
+      ],
+      "provenance": {
+        "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+        "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+        "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+        "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+        "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+      }
+    },
+    "manifest": {
+      "definitionDigest": "1661c38884b4f71c61e943b83c6fd51c0a250b027dcf6488b324cb413803fb6c",
+      "domainDigest": "4f245cbdd68f2b450e4d091e65979190fdeb0bbda9baada91599770d1a9d57cc",
+      "generatorVersion": "numeric-v1",
+      "entries": [
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 1,
+              "t": 2
+            }
+          },
+          "outputDigest": "cad74868547ce8442d4e6161ef8ced985d6822854ca7fdee1a613038d5ca514d"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 1,
+              "t": 3
+            }
+          },
+          "outputDigest": "00db1f02ca73bdc0663a07d2338b41769374ea92e8de283905e872eed0f7a42f"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 1,
+              "t": 6
+            }
+          },
+          "outputDigest": "7f24390af397c0832f7ea9fe31d26bc7cdba4557ce65e553d00a764b27f4e8bf"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 2,
+              "t": 2
+            }
+          },
+          "outputDigest": "d9a9428846393442168223edabb88b19ac9c3b85f234babb08e4364d9bb421ad"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 2,
+              "t": 3
+            }
+          },
+          "outputDigest": "0d4af3f4abed586933fbcea56d1422bc5ce3a01e27d89fbdaabe143f57371c5d"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 2,
+              "t": 6
+            }
+          },
+          "outputDigest": "7e451258caac1dfb8622eaa47f18789be971c78bcc7d9c8e16c5ce9c397fd85a"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 3,
+              "t": 2
+            }
+          },
+          "outputDigest": "81c20ebc7f91949f815087acd721bc70ad974c5f712d005cbc53fbcb0eaf7abd"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 3,
+              "t": 3
+            }
+          },
+          "outputDigest": "935632a0a52b9cc8e562d4cf72305776c09c76eda308a4ea8bc8751f0ed4125d"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 1000,
+              "i": 3,
+              "t": 6
+            }
+          },
+          "outputDigest": "abac8a847d5d73bf6847fce5ca723a748910d6c62218e0dbd5dbde0623506e52"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 1,
+              "t": 2
+            }
+          },
+          "outputDigest": "d5cb7f78d1942503a5a32bb48bbf831e79e9b375c8bdded4d518f8c44b2de78a"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 1,
+              "t": 3
+            }
+          },
+          "outputDigest": "84b4f7f1737d818e95de4753045cbb0e2ca56762d56633b39fdc5536f38d22f8"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 1,
+              "t": 6
+            }
+          },
+          "outputDigest": "6f01a5c8caf753130123af93df948541b25cec5a719b5ca0415a636772219c2b"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 2,
+              "t": 2
+            }
+          },
+          "outputDigest": "e856dbc7417b561f4b2d7d756ac0137c35791b66387a1c8e0410f40cf1d1b194"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 2,
+              "t": 3
+            }
+          },
+          "outputDigest": "614267ea62eb322798d6428a441374a542e999160d570e0ac143a46eaca08a08"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 2,
+              "t": 6
+            }
+          },
+          "outputDigest": "ad2c5c5fbc0c42d6a23aca3a98098525a8fe305a07c0c65d034fe93431762baa"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 3,
+              "t": 2
+            }
+          },
+          "outputDigest": "5f3947c38e7231fd62d55d16f4ba68975ac588a84e902cb23d5251325d219299"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 3,
+              "t": 3
+            }
+          },
+          "outputDigest": "d4be3e2480c327611a62c44d55883940bb690facc9ad0cbdada175724b2c7b6d"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 2000,
+              "i": 3,
+              "t": 6
+            }
+          },
+          "outputDigest": "97c42c9e423f2082f440dd2c1808793003fa42ed2e834f3a60881a47fea2f308"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 1,
+              "t": 2
+            }
+          },
+          "outputDigest": "e191b072a9538fc804634816af5dad6a3282e96d8da2e1a3d532d6f035b5f071"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 1,
+              "t": 3
+            }
+          },
+          "outputDigest": "93b1ba1eec5f2b94d7404f520571181979e65ac7357dfd3e0a0134cfdd034e26"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 1,
+              "t": 6
+            }
+          },
+          "outputDigest": "4f4c0a3d81ab7061675d879c8674c219625af64a2b2c69dbb7857ffaae726717"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 2,
+              "t": 2
+            }
+          },
+          "outputDigest": "8651ec0a7316f8d72417d0c21e561f512c36ed29bfee7429b1f0694a495f8e8b"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 2,
+              "t": 3
+            }
+          },
+          "outputDigest": "4e1c16675258d92e0cc71ee4c01c1f3eb08385c975a23936e357143b4c93e36a"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 2,
+              "t": 6
+            }
+          },
+          "outputDigest": "3f6b6ea604b79022691d85a53b65caaaede45437b9d265f2d699299a0786f95a"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 3,
+              "t": 2
+            }
+          },
+          "outputDigest": "6288b7f80da209f1b243ff05a734219deec709e7acffe23104e5329844cabd51"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 3,
+              "t": 3
+            }
+          },
+          "outputDigest": "2a5ed043f80bb1a31abd1de4169382ad6833e46db6d5c503f02def4dd5ec1800"
+        },
+        {
+          "parameters": {
+            "family": "SIMPLE_INTEREST",
+            "values": {
+              "c": 4000,
+              "i": 3,
+              "t": 6
+            }
+          },
+          "outputDigest": "a73ded86a5e680a79ffb41a01990c3d8231282a21bbef902a1ebb761699610ac"
+        }
+      ]
+    }
+  },
+  "definitionDigest": "1661c38884b4f71c61e943b83c6fd51c0a250b027dcf6488b324cb413803fb6c",
+  "domainDigest": "4f245cbdd68f2b450e4d091e65979190fdeb0bbda9baada91599770d1a9d57cc",
+  "manifestDigest": "0617b27c85219241fcf9d336be6b9a492671df15bfb246dfe58e5f1696eedc30",
+  "variants": [
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 1,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 1% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        20,
+        1020,
+        10,
+        2000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 1000 × 1 × 2 ÷ 100 = 20. Juros: R$ 20,00; o montante seria R$ 1020,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 1,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 1% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        30,
+        1030,
+        10,
+        3000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 1000 × 1 × 3 ÷ 100 = 30. Juros: R$ 30,00; o montante seria R$ 1030,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 1,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 1% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        60,
+        1060,
+        10,
+        6000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 1000 × 1 × 6 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 1060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 2,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 2% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        1040,
+        20,
+        4000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 1000 × 2 × 2 ÷ 100 = 40. Juros: R$ 40,00; o montante seria R$ 1040,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 2,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 2% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        60,
+        1060,
+        20,
+        6000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 1000 × 2 × 3 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 1060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 2,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 2% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        120,
+        1120,
+        20,
+        12000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 1000 × 2 × 6 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 1120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 3,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 3% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        60,
+        1060,
+        30,
+        6000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 1000 × 3 × 2 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 1060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 3,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 3% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        90,
+        1090,
+        30,
+        9000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 1000 × 3 × 3 ÷ 100 = 90. Juros: R$ 90,00; o montante seria R$ 1090,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 1000,
+          "i": 3,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 1000,00 rende juros simples de 3% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        180,
+        1180,
+        30,
+        18000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 1000 × 3 × 6 ÷ 100 = 180. Juros: R$ 180,00; o montante seria R$ 1180,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 1,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 1% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        2040,
+        20,
+        4000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 2000 × 1 × 2 ÷ 100 = 40. Juros: R$ 40,00; o montante seria R$ 2040,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 1,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 1% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        60,
+        2060,
+        20,
+        6000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 2000 × 1 × 3 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 2060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 1,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 1% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        120,
+        2120,
+        20,
+        12000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 2000 × 1 × 6 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 2120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 2,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 2% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        80,
+        2080,
+        40,
+        8000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 2000 × 2 × 2 ÷ 100 = 80. Juros: R$ 80,00; o montante seria R$ 2080,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 2,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 2% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        120,
+        2120,
+        40,
+        12000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 2000 × 2 × 3 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 2120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 2,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 2% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        240,
+        2240,
+        40,
+        24000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 2000 × 2 × 6 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 2240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 3,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 3% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        120,
+        2120,
+        60,
+        12000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 2000 × 3 × 2 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 2120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 3,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 3% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        180,
+        2180,
+        60,
+        18000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 2000 × 3 × 3 ÷ 100 = 180. Juros: R$ 180,00; o montante seria R$ 2180,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 2000,
+          "i": 3,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 2000,00 rende juros simples de 3% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        360,
+        2360,
+        60,
+        36000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 2000 × 3 × 6 ÷ 100 = 360. Juros: R$ 360,00; o montante seria R$ 2360,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 1,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 1% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        80,
+        4080,
+        40,
+        8000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 4000 × 1 × 2 ÷ 100 = 80. Juros: R$ 80,00; o montante seria R$ 4080,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 1,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 1% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        120,
+        4120,
+        40,
+        12000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 4000 × 1 × 3 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 4120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 1,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 1% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        240,
+        4240,
+        40,
+        24000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 4000 × 1 × 6 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 4240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 2,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 2% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        160,
+        4160,
+        80,
+        16000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 4000 × 2 × 2 ÷ 100 = 160. Juros: R$ 160,00; o montante seria R$ 4160,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 2,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 2% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        240,
+        4240,
+        80,
+        24000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 4000 × 2 × 3 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 4240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 2,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 2% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        480,
+        4480,
+        80,
+        48000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 4000 × 2 × 6 ÷ 100 = 480. Juros: R$ 480,00; o montante seria R$ 4480,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 3,
+          "t": 2
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 3% ao mês por 2 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        240,
+        4240,
+        120,
+        24000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 4000 × 3 × 2 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 4240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 3,
+          "t": 3
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 3% ao mês por 3 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        360,
+        4360,
+        120,
+        36000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 4000 × 3 × 3 ÷ 100 = 360. Juros: R$ 360,00; o montante seria R$ 4360,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "e574536d-2328-5f5d-931b-01741b8f1092",
+        "version": 1,
+        "family": "SIMPLE_INTEREST",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+        "baseRevisionId": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+        "baseFingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "SIMPLE_INTEREST",
+        "values": {
+          "c": 4000,
+          "i": 3,
+          "t": 6
+        }
+      },
+      "statement": {
+        "text": "Um capital de R$ 4000,00 rende juros simples de 3% ao mês por 6 meses. Qual é o valor dos juros?",
+        "resources": []
+      },
+      "alternatives": [
+        720,
+        4720,
+        120,
+        72000
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 4000 × 3 × 6 ÷ 100 = 720. Juros: R$ 720,00; o montante seria R$ 4720,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.",
+        "resources": []
+      }
+    }
+  ]
+}

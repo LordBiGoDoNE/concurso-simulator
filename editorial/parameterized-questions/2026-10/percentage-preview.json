@@ -1,0 +1,1347 @@
+{
+  "version": {
+    "definition": {
+      "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+      "version": 1,
+      "family": "PERCENTAGE",
+      "generatorVersion": "numeric-v1",
+      "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+      "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+      "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+      "classification": {
+        "discipline": "MATHEMATICS_LOGIC",
+        "topic": "M04",
+        "roles": [
+          "SCHOOL_SECRETARY",
+          "ADMINISTRATIVE_ASSISTANT"
+        ]
+      },
+      "references": [
+        {
+          "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+          "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+          "legalBasis": null
+        }
+      ],
+      "provenance": {
+        "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+        "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+        "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+        "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+        "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+      }
+    },
+    "manifest": {
+      "definitionDigest": "b6ab95874bee5d34a69312ddd6cd88598b21dd8f77419037fde5f3b0b0c0277a",
+      "domainDigest": "c5607626f484fb4bc1faa0a3c95d6a2521abc98bd97d2203c643b52fff890e39",
+      "generatorVersion": "numeric-v1",
+      "entries": [
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 5,
+              "v": 100
+            }
+          },
+          "outputDigest": "8987bb56d74d3aba92ff22069abb9e4fac21b6e3893dc4b46f6fcf52a04bd32b"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 5,
+              "v": 200
+            }
+          },
+          "outputDigest": "dcf843903f58e3f2a8a18894968f2b63f7e95dee2f632961efa976eb422d5b77"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 5,
+              "v": 400
+            }
+          },
+          "outputDigest": "9f063f9acb19bddc9d7211547e0daddf5720282e54be414270c0b895dbc52ca9"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 5,
+              "v": 800
+            }
+          },
+          "outputDigest": "011c58b20242554b147996be4fc6cee3ebdbb49598f24432c158af88777619aa"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 10,
+              "v": 100
+            }
+          },
+          "outputDigest": "db11dd53c7a3aaa20a511661f06cff9df235742a5d68c822bd7290b3d6dbe849"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 10,
+              "v": 200
+            }
+          },
+          "outputDigest": "c3ea2a110e52b46550a9f8edc0bb98356e9f32fdb2fac12ae6b11983f531d6a9"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 10,
+              "v": 400
+            }
+          },
+          "outputDigest": "c9f2f960a1f6d07c67741ad597abbaa7c3289e20404f4593be0a1162147a250d"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 10,
+              "v": 800
+            }
+          },
+          "outputDigest": "984656adda4cb8a2b748bccaf0c191c435de3d74664f8050c71a1bc8346b7927"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 15,
+              "v": 100
+            }
+          },
+          "outputDigest": "3a660bcb2e9968ac44b1ab109e06de6883c3e4cd5997af764ec38067c0a50055"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 15,
+              "v": 200
+            }
+          },
+          "outputDigest": "7472dad45f2237b62e60ff84795aedc37d9720aa8a5dad1f36a08cbdb6548673"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 15,
+              "v": 400
+            }
+          },
+          "outputDigest": "6df8e9443480a68c176abc934f00c35cb7e95b2101ba380d85e89102e6cbc575"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 15,
+              "v": 800
+            }
+          },
+          "outputDigest": "2ead042b3369d05b862ee6d2587df498fc3faecdf75e594cbbd95126ba02190a"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 20,
+              "v": 100
+            }
+          },
+          "outputDigest": "2174014cebb8d43cf381389b282d209ab40a7630e58e7b7aa4736a26b024e4e4"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 20,
+              "v": 200
+            }
+          },
+          "outputDigest": "16d70319df6dc6543a1052afbc393f47b07c1e0abefa61e829a8bdecf1a7c584"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 20,
+              "v": 400
+            }
+          },
+          "outputDigest": "b1c0d46eb8c6ec381b747b49a79a122cd651c8bec21a2413ce7447a4e4825147"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 20,
+              "v": 800
+            }
+          },
+          "outputDigest": "1f4160330dbc3e8035cc9fd0dd7083095871995912a12777df9a0d83105d9150"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 25,
+              "v": 100
+            }
+          },
+          "outputDigest": "9b3805725ce062ad0931399c56ea92cffd10c06695db77d6994860801e426b18"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 25,
+              "v": 200
+            }
+          },
+          "outputDigest": "1eb28ea7fcb47a06a1092fc1524762d88b074b3424df863bb583259b3c0cc789"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 25,
+              "v": 400
+            }
+          },
+          "outputDigest": "83c06e43d60bb899b5a9ec295ae02de3e504d1a0ddacc811bc10a2ade7046190"
+        },
+        {
+          "parameters": {
+            "family": "PERCENTAGE",
+            "values": {
+              "p": 25,
+              "v": 800
+            }
+          },
+          "outputDigest": "d296df459210cb7d7978859f136f34364f2dda78bf85f7ab095d6f8829c9459c"
+        }
+      ]
+    }
+  },
+  "definitionDigest": "b6ab95874bee5d34a69312ddd6cd88598b21dd8f77419037fde5f3b0b0c0277a",
+  "domainDigest": "c5607626f484fb4bc1faa0a3c95d6a2521abc98bd97d2203c643b52fff890e39",
+  "manifestDigest": "9bba42ad7fb4364584cfc588b8cabbf7a504e36d3b16f6c58398ffc0ac4ca9bc",
+  "variants": [
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 5,
+          "v": 100
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 5% de R$ 100,00?",
+        "resources": []
+      },
+      "alternatives": [
+        5,
+        500,
+        105,
+        95
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 5% significa 5 em cada 100. 2. Calcule 100 × 5 ÷ 100 = 5. Resposta: R$ 5,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 5,
+          "v": 200
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 5% de R$ 200,00?",
+        "resources": []
+      },
+      "alternatives": [
+        10,
+        1000,
+        210,
+        190
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 5% significa 5 em cada 100. 2. Calcule 200 × 5 ÷ 100 = 10. Resposta: R$ 10,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 5,
+          "v": 400
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 5% de R$ 400,00?",
+        "resources": []
+      },
+      "alternatives": [
+        20,
+        2000,
+        420,
+        380
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 5% significa 5 em cada 100. 2. Calcule 400 × 5 ÷ 100 = 20. Resposta: R$ 20,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 5,
+          "v": 800
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 5% de R$ 800,00?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        4000,
+        840,
+        760
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 5% significa 5 em cada 100. 2. Calcule 800 × 5 ÷ 100 = 40. Resposta: R$ 40,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 10,
+          "v": 100
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 10% de R$ 100,00?",
+        "resources": []
+      },
+      "alternatives": [
+        10,
+        1000,
+        110,
+        90
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 10% significa 10 em cada 100. 2. Calcule 100 × 10 ÷ 100 = 10. Resposta: R$ 10,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 10,
+          "v": 200
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 10% de R$ 200,00?",
+        "resources": []
+      },
+      "alternatives": [
+        20,
+        2000,
+        220,
+        180
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 10% significa 10 em cada 100. 2. Calcule 200 × 10 ÷ 100 = 20. Resposta: R$ 20,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 10,
+          "v": 400
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 10% de R$ 400,00?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        4000,
+        440,
+        360
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 10% significa 10 em cada 100. 2. Calcule 400 × 10 ÷ 100 = 40. Resposta: R$ 40,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 10,
+          "v": 800
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 10% de R$ 800,00?",
+        "resources": []
+      },
+      "alternatives": [
+        80,
+        8000,
+        880,
+        720
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 10% significa 10 em cada 100. 2. Calcule 800 × 10 ÷ 100 = 80. Resposta: R$ 80,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 15,
+          "v": 100
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 15% de R$ 100,00?",
+        "resources": []
+      },
+      "alternatives": [
+        15,
+        1500,
+        115,
+        85
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 15% significa 15 em cada 100. 2. Calcule 100 × 15 ÷ 100 = 15. Resposta: R$ 15,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 15,
+          "v": 200
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 15% de R$ 200,00?",
+        "resources": []
+      },
+      "alternatives": [
+        30,
+        3000,
+        230,
+        170
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 15% significa 15 em cada 100. 2. Calcule 200 × 15 ÷ 100 = 30. Resposta: R$ 30,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 15,
+          "v": 400
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 15% de R$ 400,00?",
+        "resources": []
+      },
+      "alternatives": [
+        60,
+        6000,
+        460,
+        340
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 15% significa 15 em cada 100. 2. Calcule 400 × 15 ÷ 100 = 60. Resposta: R$ 60,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 15,
+          "v": 800
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 15% de R$ 800,00?",
+        "resources": []
+      },
+      "alternatives": [
+        120,
+        12000,
+        920,
+        680
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 15% significa 15 em cada 100. 2. Calcule 800 × 15 ÷ 100 = 120. Resposta: R$ 120,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 20,
+          "v": 100
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 20% de R$ 100,00?",
+        "resources": []
+      },
+      "alternatives": [
+        20,
+        2000,
+        120,
+        80
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 20% significa 20 em cada 100. 2. Calcule 100 × 20 ÷ 100 = 20. Resposta: R$ 20,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 20,
+          "v": 200
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 20% de R$ 200,00?",
+        "resources": []
+      },
+      "alternatives": [
+        40,
+        4000,
+        240,
+        160
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 20% significa 20 em cada 100. 2. Calcule 200 × 20 ÷ 100 = 40. Resposta: R$ 40,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 20,
+          "v": 400
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 20% de R$ 400,00?",
+        "resources": []
+      },
+      "alternatives": [
+        80,
+        8000,
+        480,
+        320
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 20% significa 20 em cada 100. 2. Calcule 400 × 20 ÷ 100 = 80. Resposta: R$ 80,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 20,
+          "v": 800
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 20% de R$ 800,00?",
+        "resources": []
+      },
+      "alternatives": [
+        160,
+        16000,
+        960,
+        640
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 20% significa 20 em cada 100. 2. Calcule 800 × 20 ÷ 100 = 160. Resposta: R$ 160,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 25,
+          "v": 100
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 25% de R$ 100,00?",
+        "resources": []
+      },
+      "alternatives": [
+        25,
+        2500,
+        125,
+        75
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 25% significa 25 em cada 100. 2. Calcule 100 × 25 ÷ 100 = 25. Resposta: R$ 25,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 25,
+          "v": 200
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 25% de R$ 200,00?",
+        "resources": []
+      },
+      "alternatives": [
+        50,
+        5000,
+        250,
+        150
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 25% significa 25 em cada 100. 2. Calcule 200 × 25 ÷ 100 = 50. Resposta: R$ 50,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 25,
+          "v": 400
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 25% de R$ 400,00?",
+        "resources": []
+      },
+      "alternatives": [
+        100,
+        10000,
+        500,
+        300
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 25% significa 25 em cada 100. 2. Calcule 400 × 25 ÷ 100 = 100. Resposta: R$ 100,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    },
+    {
+      "definition": {
+        "id": "ba13d9bf-2bc6-5a19-881f-b73e3062e2c3",
+        "version": 1,
+        "family": "PERCENTAGE",
+        "generatorVersion": "numeric-v1",
+        "baseQuestionId": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
+        "baseRevisionId": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
+        "baseFingerprint": "e996529dde883cacb6ed642e5272cfa54665a3afb9ac162cb92a0980339cb2ab",
+        "classification": {
+          "discipline": "MATHEMATICS_LOGIC",
+          "topic": "M04",
+          "roles": [
+            "SCHOOL_SECRETARY",
+            "ADMINISTRATIVE_ASSISTANT"
+          ]
+        },
+        "references": [
+          {
+            "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+            "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+            "legalBasis": null
+          }
+        ],
+        "provenance": {
+          "author": "Codex — variações autorais assistidas por IA, adaptadas do material do projeto [Gaby]; sem validação oficial",
+          "contentPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "answerPath": "backend/src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java",
+          "contentSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce",
+          "answerSha256": "9755fc40a96b059b49fb9c00e02ef3f197022b8dbaa2be6c6e16a6d4d5b97fce"
+        }
+      },
+      "parameters": {
+        "family": "PERCENTAGE",
+        "values": {
+          "p": 25,
+          "v": 800
+        }
+      },
+      "statement": {
+        "text": "Quanto corresponde a 25% de R$ 800,00?",
+        "resources": []
+      },
+      "alternatives": [
+        200,
+        20000,
+        1000,
+        600
+      ],
+      "correctIndex": 0,
+      "resolution": {
+        "text": "1. 25% significa 25 em cada 100. 2. Calcule 800 × 25 ÷ 100 = 200. Resposta: R$ 200,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.",
+        "resources": []
+      }
+    }
+  ]
+}

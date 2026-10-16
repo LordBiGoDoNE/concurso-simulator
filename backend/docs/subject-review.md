@@ -37,4 +37,33 @@ Nenhum JSON/hash, progresso, decisão editorial ou comando é gravado pela consu
 PostgreSQL 18.6 isolado: 100 tentativas/10.000 itens em quatro SELECTs, nenhuma escrita;
 101º cabeçalho adulterado não é decodificado, corrupção dentro da janela falha
 integralmente. Regressões de concorrência/idempotência e fixture V5 real passaram
-com o leitor comum. Planos/índice e revalidação de capturas seguem nesta mesma rodada.
+com o leitor comum. Planos, índice e revalidação de capturas também passaram nesta rodada.
+
+## Consistência, índice e recuperação
+
+V10 cria somente me_completed_subject_window_idx: proprietário, cargo capturado,
+finished_at/UUID decrescentes, parcial para contas concluídas. Com 2.400 tentativas
+sintéticas, EXPLAIN ANALYZE mostrou Sort antes e Index Scan depois, sem desabilitar
+seqscan/forçar planner. A consulta existente por createdAt não atende a ordenação
+por conclusão/cargo. Planos brutos ficam ignorados em build/subject-review-plans;
+números locais não são promessa de latência. Nenhuma migração V1–V9 foi alterada.
+
+Um ensaio pausa após os cabeçalhos e conclui outra tentativa por comando real em
+outra transação: a leitura atual mantém sua janela e a seguinte inclui a conclusão.
+SHOW confirma repeatable read e read-only on. Para testar UPDATE, o setup cria a
+tentativa pelo UseCase, preservando a serialização de origem protegida pelos triggers;
+fixtures de volume congeladas são usadas somente em leituras.
+
+Fixture V5 serializada pelo código antigo, novas fixas e geradas passam pelo mesmo
+produtor, sem reescrever payloads/hashes. A base foi reclassificada/retirada e a família
+retirada em fixtures sintéticas; a janela usa a última classificação capturada,
+mas o resultado individual mantém a anterior. Após migração V9→V10 e reabertura da
+EntityManagerFactory, dois ciclos reais de fechamento/abertura do contexto da aplicação
+com geração false preservam resumo e correção. São reinícios de contexto no mesmo
+JVM, não reinícios de processo. Não foi executado JAR V5 após formato 2.
+
+Recuperação mantém dados/schema/codecs e usa leitor compatível com geração desligada.
+O índice é aditivo e não exige perfil/progresso persistente ou backfill. A comparação
+integral das tabelas antes/depois verifica que as consultas e a migração não regravam
+contas, banco, decisões, snapshots, itens, comandos ou instâncias. Nenhum banco editorial
+aprovado do operador foi acessado; todos os ensaios usam PG 18.6 descartável.

@@ -1,24 +1,24 @@
-# Revisão independente da spec subject-review
+# RevisÃ£o independente da spec subject-review
 
-**Pending — implementação e gate cumulativo não executados.** Modelo de referência
-`openai/gpt-6.1-sol#xhigh`, contexto novo e somente leitura. Uma eventual revisão
-documental da proposta não certifica o produto nem conclui este gate.
+**Pending â€” implementaÃ§Ã£o e gate cumulativo nÃ£o executados.** Modelo de referÃªncia
+`openai/gpt-6.1-sol#xhigh`, contexto novo e somente leitura. Uma eventual revisÃ£o
+documental da proposta nÃ£o certifica o produto nem conclui este gate.
 
 ## Escopo e cobertura
 
 Futuro diff completo de epic/subject-review para epic/application-reformulation,
-com base/head/digest imutáveis, requisitos e ADRs. Sem cobertura de produto declarada.
+com base/head/digest imutÃ¡veis, requisitos e ADRs. Sem cobertura de produto declarada.
 
 ## Achados e triagem
 
-Ainda não examinados no gate; lista vazia pendente não significa ausência de falhas.
+Ainda nÃ£o examinados no gate; lista vazia pendente nÃ£o significa ausÃªncia de falhas.
 
-## Evidências e limitações
+## EvidÃªncias e limitaÃ§Ãµes
 
-Nenhuma implementação, execução de testes de produto, decisão editorial ou aprovação
-de merge declarada. Cota/tokens indisponíveis não serão estimados nem publicados.
+Nenhuma implementaÃ§Ã£o, execuÃ§Ã£o de testes de produto, decisÃ£o editorial ou aprovaÃ§Ã£o
+de merge declarada. Cota/tokens indisponÃ­veis nÃ£o serÃ£o estimados nem publicados.
 
-## Revalidação
+## RevalidaÃ§Ã£o
 
-Pendente. Mudanças de base/diff exigem conferência real do conjunto. Gate concluído
-não substitui autorização de integração, main, publicação ou arquivamento.
+Pendente. MudanÃ§as de base/diff exigem conferÃªncia real do conjunto. Gate concluÃ­do
+nÃ£o substitui autorizaÃ§Ã£o de integraÃ§Ã£o, main, publicaÃ§Ã£o ou arquivamento.

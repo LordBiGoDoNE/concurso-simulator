@@ -2,7 +2,7 @@
 
 Issue #104. **Proposta aprovada, #105 integrado em `0bd6652`.**
 Grupos completos 1 e 2 autorizados; implementação em andamento, sem merge de produto.
-6/24 tarefas implementadas/verificadas, 0/24 integradas/aprovadas nas tarefas de produto.
+8/24 tarefas implementadas/verificadas, 0/24 integradas/aprovadas nas tarefas de produto.
 Decisão de granularidade: 51 assuntos existentes, escolhida pelo usuário em 2026-10-16.
 Primeiro lote escolhido pelo usuário em 2026-10-16: grupos completos 1 e 2.
 Grupos 3–6 ficam fora deste lote; tarefa verificada não significa revisão/merge aprovado.
@@ -20,8 +20,8 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 
 - [x] 2.1 Oferecer evidência concluída pelo contrato de aplicação de mockexam com adaptador JPA, filtro antes de limite 100 e cabeçalho 101/hasOlder; testar mais de 100, cargos, empate e planos de consulta; documentar portabilidade/limites.
 - [x] 2.2 Ler e validar snapshots/itens/instâncias em lote reutilizando codecs e invariantes; testar 100×100 itens, número limitado de consultas, adulteração e ausência de N+1; documentar fail-closed.
-- [ ] 2.3 Verificar isolamento/concorrência e necessidade de índice por plano; se justificado adicionar índice via Flyway após V9 e testar upgrade sem reescrita; registrar decisão e rollback compatível, sem nova tabela de progresso.
-- [ ] 2.4 Demonstrar V5/formato 2/retirada/reclassificação/geração desligada/restart, sem escrita/leak de dados; testar JSONs/hashes e contagens antes/depois; documentar evidências de leitura.
+- [x] 2.3 Verificar isolamento/concorrência e necessidade de índice por plano; se justificado adicionar índice via Flyway após V9 e testar upgrade sem reescrita; registrar decisão e rollback compatível, sem nova tabela de progresso.
+- [x] 2.4 Demonstrar V5/formato 2/retirada/reclassificação/geração desligada/restart, sem escrita/leak de dados; testar JSONs/hashes e contagens antes/depois; documentar evidências de leitura.
 
 ## 3. HTTP, contratos e privacidade — depende de 1/2
 

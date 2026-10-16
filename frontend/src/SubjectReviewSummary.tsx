@@ -1,4 +1,5 @@
 import type { ReviewSummary } from './subject-review-api';
+import { lessonUrl } from './lesson-links';
 const date = (value: string) => new Date(value).toLocaleString('pt-BR');
 
 export default function SubjectReviewSummary({ summary, individual = false }: { summary: ReviewSummary; individual?: boolean }) {
@@ -12,11 +13,11 @@ export default function SubjectReviewSummary({ summary, individual = false }: { 
     <p>Assuntos com menos de {summary.minimumBases} bases têm poucos dados. A tabela pode ser percorrida horizontalmente; com foco nela, use as setas.</p>
     <div className="subject-review-table" role="region" aria-label={individual ? 'Tabela de revisão deste simulado' : 'Tabela de desempenho por assunto'} tabIndex={0}>
       <table><caption>{individual ? 'Desempenho dos 51 assuntos nesta tentativa' : 'Desempenho dos 51 assuntos na janela'}</caption>
-        <thead><tr>{['Disciplina e assunto', 'Acertos', 'Erros', 'Em branco', 'Bases', 'Exposições', 'Acerto (%)', 'Última conclusão', 'Amostra'].map(title => <th key={title} scope="col">{title}</th>)}</tr></thead>
+        <thead><tr>{['Disciplina e assunto', 'Acertos', 'Erros', 'Em branco', 'Bases', 'Exposições', 'Acerto (%)', 'Última conclusão', 'Amostra', 'Estudar'].map(title => <th key={title} scope="col">{title}</th>)}</tr></thead>
         <tbody>{summary.subjects.map(m => <tr key={m.topicId}><th scope="row">{m.disciplineTitle}<br />{m.topicId} — {m.title}</th>
           <td>{m.correct}</td><td>{m.wrong}</td><td>{m.blank}</td><td>{m.assessed}</td><td>{m.exposures}</td>
           <td>{m.percentage === null ? '—' : m.percentage.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-          <td>{m.lastFinishedAt === null ? '—' : <time dateTime={m.lastFinishedAt}>{date(m.lastFinishedAt)}</time>}</td><td>{m.assessed === 0 ? 'Sem dados' : m.assessed < summary.minimumBases ? 'Poucos dados' : `${m.assessed} bases`}</td></tr>)}</tbody>
+          <td>{m.lastFinishedAt === null ? '—' : <time dateTime={m.lastFinishedAt}>{date(m.lastFinishedAt)}</time>}</td><td>{m.assessed === 0 ? 'Sem dados' : m.assessed < summary.minimumBases ? 'Poucos dados' : `${m.assessed} bases`}</td><td>{lessonUrl(m.topicId) ? <a href={lessonUrl(m.topicId)!} target="_blank" rel="noopener noreferrer">Rever aula de {m.topicId} (nova aba)</a> : 'Link de aula indisponível'}</td></tr>)}</tbody>
       </table>
     </div>
   </>;

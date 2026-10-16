@@ -5,7 +5,7 @@ import AttemptWorkspace from './AttemptWorkspace';
 import type { CurrentIdentity } from './identity-api';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
-const materialUrl = import.meta.env.VITE_MATERIAL_URL || 'https://lordbigodone.github.io/concurso-simulator/';
+import { materialUrl } from './lesson-links';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
 const timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : 5000;
 

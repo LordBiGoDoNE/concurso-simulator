@@ -34,7 +34,7 @@ as regressões reais completas passaram (18 identidade/simulados/revisão,5 para
 navegação pública/offline6/6, com material montado e links108 páginas/1.757 referências.
 Não houve teste com leitor de tela nem auditoria WCAG integral. Capturas contêm somente
 fixtures sintéticas e ficam ignoradas em build/, sem publicação de imagens.
-Links de aula/prática dirigida são grupo5, fora deste lote. Sem deploy/main.
+O terceiro lote autorizado inclui os grupos completos5/6. Sem deploy/main.
 
 ## Regressões da revisão independente do lote
 
@@ -55,3 +55,13 @@ O CI identificou uma corrida no teste positivo de foco: findByText podia termina
 antes do useEffect de foco. A assertion agora aguarda o título receber foco com
 waitFor; continua exigindo o mesmo destino, como o Playwright já fazia. Presença de
 texto não certifica conclusão de efeitos. Não houve mudança do comportamento de produção.
+
+## Aulas (5.1)
+
+lesson-paths.json é a cópia pública controlada dos51 pares id/conteudo de manifesto_v3.json.
+O teste exige igualdade completa e existência de cada HTML; não importa gabarito, dados de
+conta ou conteúdo de API. lessonUrl consulta somente chaves próprias do mapa, valida caminho
+relativo e baseHTTP(S) sem credenciais/query/fragmento, codifica cada segmento uma vez e
+preserva subpath da VITE_MATERIAL_URL. Configuração inválida mostra link indisponível.
+Links abrem nova aba com aviso e noopener/noreferrer, preservando a realização e respostas
+locais na aba original. O material estático permanece no mesmo lugar e funciona sem API.

@@ -86,3 +86,23 @@ commandId; qualquer edição descarta o comando anterior, mesmo se valores retor
 Insuficiência mantém critérios/contagens reais, sem mudar assunto, reduzir ou misturar
 acervo automaticamente. Regressões unitárias cobrem essas transições com componentes
 reais e portas substituídas; testes reais de rede/abas/retirada completam a cobertura.
+
+## Fluxo integrado por ator (5.3/5.4)
+
+Playwright subject-review.real.spec.ts passou10/10 (33,6s antes do ajuste de largura):
+conta em390/1280px abre aula real e preenche M01/Secretário, cria só ao confirmar,
+POST semCSRF recebe403, recupera criação gravada com a mesma operação após perda da
+resposta e conclui outra vez a única base do assunto. A última observação substitui
+branco por acerto (bases1/exposições2), sem criar denominador artificial. Outra sessão
+da mesma conta recebe o mesmo resultado capturado. Visitante usa aula/atalho individual
+sem painel/histórico; cancelar abandono e abrir aula preservam escolha local. Duas
+abas mantêm conflito/recarga/salvamento explícitos. Retirada sintética da única M01
+produz409/zero disponíveis, preserva critérios/comando, não cria parcial e não muda
+resultado antigo. Os51 links permanecem acessíveis mesmo sem evidência.
+
+O hosting externo é substituído pelo HTML/assets públicos reais do repositório no
+teste; API/OIDC/PostgreSQL/navegador são reais. Isso verifica navegação/encoding/material,
+sem certificar disponibilidade do CDN de produção. Fixture/rota de retirada existem
+somente em src/test, não no JAR. Capturas locais sintéticas390/1280 foram inspecionadas;
+a coluna de estudo tem largura mínima própria e rolagem contida, sem botão fragmentado.
+Sem auditoria integral de leitor de tela ou WCAG; nenhuma decisão editorial real.

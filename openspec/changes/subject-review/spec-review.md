@@ -1,8 +1,8 @@
 # Revisão independente cumulativa — subject-review
 
-**Pendente.** Grupos1/2 integrados na épica da spec em a16b69a por #106–#109,
-com revisão de lote independente. Grupos3/4 autorizados e em implementação/verificação;
-grupos5/6 não iniciados. Nenhuma revisão parcial certifica este gate cumulativo final.
+**Pendente.** Grupos1–4 integrados na épica da spec em b2355f8 por #106–#109 e
+#111–#114,com revisões de lote independentes. Lote3 autorizado com grupos completos5/6
+em implementação/verificação; o gate próprio depende da revisão/integração das tarefas. Nenhuma revisão parcial certifica este gate cumulativo final.
 
 Modelo de referência: openai/gpt-6.1-sol#xhigh, contexto novo e somente leitura.
 O futuro gate examinará o diff completo epic/subject-review →

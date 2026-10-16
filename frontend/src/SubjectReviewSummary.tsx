@@ -1,8 +1,9 @@
 import type { ReviewSummary } from './subject-review-api';
 import { lessonUrl } from './lesson-links';
+import type { DirectedPractice } from './directed-practice';
 const date = (value: string) => new Date(value).toLocaleString('pt-BR');
 
-export default function SubjectReviewSummary({ summary, individual = false }: { summary: ReviewSummary; individual?: boolean }) {
+export default function SubjectReviewSummary({ summary, individual = false, onPractice, practiceEnabled = true }: { summary: ReviewSummary; individual?: boolean; onPractice?: (selection: DirectedPractice) => void; practiceEnabled?: boolean }) {
   const hasData = summary.subjects.some(m => m.assessed > 0);
   return <>
     <p>{individual ? 'Somente esta tentativa concluída; não reúne outras tentativas.' : 'Última observação de cada questão-base na janela. Revisões e variantes da mesma base contam uma única vez; exposições incluem repetições. O resumo pode diminuir e não representa todo o histórico.'}</p>
@@ -17,7 +18,7 @@ export default function SubjectReviewSummary({ summary, individual = false }: { 
         <tbody>{summary.subjects.map(m => <tr key={m.topicId}><th scope="row">{m.disciplineTitle}<br />{m.topicId} — {m.title}</th>
           <td>{m.correct}</td><td>{m.wrong}</td><td>{m.blank}</td><td>{m.assessed}</td><td>{m.exposures}</td>
           <td>{m.percentage === null ? '—' : m.percentage.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}</td>
-          <td>{m.lastFinishedAt === null ? '—' : <time dateTime={m.lastFinishedAt}>{date(m.lastFinishedAt)}</time>}</td><td>{m.assessed === 0 ? 'Sem dados' : m.assessed < summary.minimumBases ? 'Poucos dados' : `${m.assessed} bases`}</td><td>{lessonUrl(m.topicId) ? <a href={lessonUrl(m.topicId)!} target="_blank" rel="noopener noreferrer">Rever aula de {m.topicId} (nova aba)</a> : 'Link de aula indisponível'}</td></tr>)}</tbody>
+          <td>{m.lastFinishedAt === null ? '—' : <time dateTime={m.lastFinishedAt}>{date(m.lastFinishedAt)}</time>}</td><td>{m.assessed === 0 ? 'Sem dados' : m.assessed < summary.minimumBases ? 'Poucos dados' : `${m.assessed} bases`}</td><td>{lessonUrl(m.topicId) ? <a href={lessonUrl(m.topicId)!} target="_blank" rel="noopener noreferrer">Rever aula de {m.topicId} (nova aba)</a> : 'Link de aula indisponível'}{onPractice && <button disabled={!practiceEnabled} onClick={() => onPractice({ roleId: summary.roleId, disciplineId: m.disciplineId, topicId: m.topicId })}>Praticar {m.topicId}</button>}</td></tr>)}</tbody>
       </table>
     </div>
   </>;

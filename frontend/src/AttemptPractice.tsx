@@ -7,7 +7,9 @@ import AttemptResult from './AttemptResult';
 import IndividualSubjectReview from './IndividualSubjectReview';
 
 
-export default function AttemptPractice({ initial, onUnavailable, onFinished, reviewActive = true }: { reviewActive?: boolean; initial: AttemptView; onUnavailable: () => void; onFinished?: () => void }) {
+import type { DirectedPractice } from './directed-practice';
+
+export default function AttemptPractice({ initial, onUnavailable, onFinished, reviewActive = true, onPractice }: { reviewActive?: boolean; initial: AttemptView; onUnavailable: () => void; onFinished?: () => void; onPractice?: (selection: DirectedPractice) => void }) {
   const run = useAttemptRun(initial, onUnavailable); const [position, setPosition] = useState(0); const heading = useRef<HTMLHeadingElement>(null);
   const [confirm, setConfirm] = useState(false); const finishButton = useRef<HTMLButtonElement>(null);
   const wasConfirming = useRef(false);
@@ -19,7 +21,7 @@ export default function AttemptPractice({ initial, onUnavailable, onFinished, re
   if (run.view.finishedAt !== null) return <>
     {run.message && <p role="alert">{run.message}</p>}
     {run.result ? <AttemptResult result={run.result} /> : <p role="status">Carregando resultado do servidor…</p>}
-    {run.result && <IndividualSubjectReview attemptId={run.view.id} roleId={run.view.roleId} active={reviewActive} onUnavailable={onUnavailable} />}
+    {run.result && <IndividualSubjectReview attemptId={run.view.id} roleId={run.view.roleId} active={reviewActive} onPractice={onPractice} onUnavailable={onUnavailable} />}
     {run.resultFailed && <><p role="alert">Resultado indisponível. A tentativa continua concluída no servidor.</p><button onClick={() => void run.loadResult()}>Tentar resultado novamente</button></>}
   </>;
   return <section aria-labelledby="attempt-practice-title">

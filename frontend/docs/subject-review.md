@@ -65,3 +65,24 @@ relativo e baseHTTP(S) sem credenciais/query/fragmento, codifica cada segmento u
 preserva subpath da VITE_MATERIAL_URL. Configuração inválida mostra link indisponível.
 Links abrem nova aba com aviso e noopener/noreferrer, preservando a realização e respostas
 locais na aba original. O material estático permanece no mesmo lugar e funciona sem API.
+
+## Prática direcionada (5.2/5.3)
+
+Praticar em qualquer linha (inclusive sem dados) passa somente cargo/disciplina/assunto
+públicos ao workspace. Nova montagem do compositor zera outras disciplinas/assuntos,
+seleciona uma questão e desliga variações. O catálogo confirma a seleção antes de
+habilitar o formulário; inconsistência falha sem fallback. Nada é criado até Iniciar.
+O usuário pode alterar os critérios e optar por variações; não se promete novidade.
+
+O workspace pede a confirmação existente antes de desmontar qualquer realização:
+cancelar preserva a fila, respostas locais e commandId. Aula em nova aba não desmonta
+a realização. Enquanto cria, atalhos e cargo do painel ficam desabilitados; verificação
+de sessão suspende comandos. Troca de cargo do painel limpa prefill/comando e aborta
+catálogo anterior; identidade/expiração/logout desmontam o workspace e cancelam operações.
+Respostas tardias não restauram contexto. Não há storage ou querystring para o prefill.
+
+Criação usa o POST, CSRF e idempotência existentes. Retry sem mudar critérios mantém o
+commandId; qualquer edição descarta o comando anterior, mesmo se valores retornarem.
+Insuficiência mantém critérios/contagens reais, sem mudar assunto, reduzir ou misturar
+acervo automaticamente. Regressões unitárias cobrem essas transições com componentes
+reais e portas substituídas; testes reais de rede/abas/retirada completam a cobertura.

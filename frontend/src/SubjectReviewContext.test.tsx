@@ -53,3 +53,14 @@ it('consulta explícita falha e conclusão posterior não move foco do resultado
   await screen.findByText('Assunto P1: 3 erros ou brancos em 3 bases.', { selector: '#subject-review-title ~ ol li' });
   expect(screen.getByRole('heading', { name: 'Resultado do simulado' })).toHaveFocus();
 });
+
+it.each(['logout', 'account', 'expiry'])('limpa preenchimento direcionado e comando ao trocar contexto: %s', async action => {
+  const fixture = api(userA);vi.mocked(reviewOverview).mockResolvedValue(overview(true));render(<App />);
+  fireEvent.change(await screen.findByLabelText('Cargo para revisão'), { target: { value: view.roleId } });fireEvent.click(await screen.findByRole('button', { name: 'Praticar M01' }));
+  await waitFor(() => expect(screen.getByLabelText('Quantidade de Matemática')).toHaveValue(1));
+  fireEvent.click(screen.getByLabelText('Usar variações numéricas quando disponíveis'));
+  if (action === 'logout') fireEvent.click(screen.getByRole('button', { name: 'Sair' }));
+  else { fixture.change(action === 'account' ? userB : null);fireEvent.click(screen.getByRole('button', { name: 'Atualizar sessão' })); }
+  await waitFor(() => expect(screen.queryByText(/Prática direcionada/)).not.toBeInTheDocument());
+  expect(await screen.findByLabelText('Usar variações numéricas quando disponíveis')).not.toBeChecked();expect(screen.getByLabelText('Quantidade de Português')).toHaveValue(5);expect(screen.getByLabelText('Operações')).not.toBeChecked();
+});

@@ -14,6 +14,8 @@ class AttemptUseCasesTests {
         Map<UUID,Attempt.Snapshot> attempts=new HashMap<>();
         Map<String,Command> commands=new HashMap<>();
         List<AttemptQuestion> pool=pool(5);
+        List<br.com.concursosimulator.parameterization.domain.TemplateVersion> templates=List.of();
+        boolean templatesUnavailable;
         int selections;
         RuntimeException failure;
         public <T> T transaction(Function<Session,T> work) {
@@ -22,6 +24,10 @@ class AttemptUseCasesTests {
                 public Optional<Attempt.Snapshot> find(UUID id) { return Optional.ofNullable(a.get(id)); }
                 public Optional<Command> command(AttemptOwner o, UUID op) { return Optional.ofNullable(c.get(o+":"+op)); }
                 public List<AttemptQuestion> eligible() { selections++; return pool; }
+                public List<br.com.concursosimulator.parameterization.domain.TemplateVersion> templates() {
+                    if (templatesUnavailable) throw new IllegalStateException("Gerador/catálogo indisponível");
+                    return templates;
+                }
                 public void insert(Attempt.Snapshot s) { a.put(s.id(),s); }
                 public void update(Attempt.Snapshot s,long v) {
                     if (a.get(s.id()).version()!=v) throw new ConcurrentWrite(null); a.put(s.id(),s);

@@ -1,0 +1,473 @@
+{
+  "version": 1,
+  "status": "completed",
+  "scope": "implementation-batch-complete-groups-3-4-only",
+  "spec": "parameterized-questions",
+  "risk": "critical",
+  "risk_reason": "Persistência aditiva, codecs legados/hashes, atomicidade, concorrência, elegibilidade, instâncias privadas e decisões editoriais exatas.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/parameterized_round2_sol",
+    "independent_context": true,
+    "selection_evidence": "Codex spawn_agent fork_turns=none, model=gpt-6.1-sol, reasoning_effort=xhigh; mesma sessão nas duas revalidações; sem provider ID adicional exposto."
+  },
+  "reviewed_at": "2026-10-16T00:58:28.348986+00:00",
+  "recorded_at": "2026-10-16T00:58:28.348986+00:00",
+  "prs": [
+    {
+      "pr": 94,
+      "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+      "reviewed_head_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+      "diff_sha256": "7db0e3435157e4b221442632832298dcd09826746bda028dc5a320bd3ab7bc7a",
+      "base_ref": "epic/parameterized-questions",
+      "head_ref": "task/parameterized-questions/attempt-capture",
+      "lines": {
+        "added": 247,
+        "deleted": 12,
+        "generated_bulk_added": 0,
+        "generated_bulk_deleted": 0,
+        "generated_bulk_paths": []
+      }
+    },
+    {
+      "pr": 95,
+      "base_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+      "reviewed_head_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+      "diff_sha256": "9f0c1cd15575dfc326ec7bcbd61763a3a4ab25d8cb8f0dfabc092e950f52fefc",
+      "base_ref": "task/parameterized-questions/attempt-capture",
+      "head_ref": "task/parameterized-questions/attempt-storage",
+      "lines": {
+        "added": 589,
+        "deleted": 25,
+        "generated_bulk_added": 151,
+        "generated_bulk_deleted": 0,
+        "generated_bulk_paths": [
+          "backend/src/test/resources/mockexam/v5-creation.json"
+        ]
+      }
+    },
+    {
+      "pr": 97,
+      "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+      "reviewed_head_sha": "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c",
+      "diff_sha256": "d0eaa1982d7bb74c450e44bd1d70dd812927fe1b9fa55694cde37318cef411af",
+      "base_ref": "epic/parameterized-questions",
+      "head_ref": "task/parameterized-questions/editorial-content",
+      "lines": {
+        "added": 14043,
+        "deleted": 4,
+        "generated_bulk_added": 12920,
+        "generated_bulk_deleted": 0,
+        "generated_bulk_paths": [
+          "editorial/parameterized-questions/2026-10/base-m04-q05-package.json",
+          "editorial/parameterized-questions/2026-10/bases.json",
+          "editorial/parameterized-questions/2026-10/direct-proportion-preview.json",
+          "editorial/parameterized-questions/2026-10/percentage-preview.json",
+          "editorial/parameterized-questions/2026-10/simple-interest-preview.json",
+          "editorial/parameterized-questions/2026-10/variants.md"
+        ]
+      }
+    },
+    {
+      "pr": 98,
+      "base_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+      "reviewed_head_sha": "fd54499bfd885c89877e21f45a69eb2dc89842f3",
+      "diff_sha256": "c2110febb80672e86254faac6e856edbd8710113df71f3e07137e144134e7e4f",
+      "base_ref": "task/parameterized-questions/attempt-storage",
+      "head_ref": "task/parameterized-questions/capture-integrity",
+      "lines": {
+        "added": 358,
+        "deleted": 21,
+        "generated_bulk_added": 0,
+        "generated_bulk_deleted": 0,
+        "generated_bulk_paths": []
+      }
+    }
+  ],
+  "combined": {
+    "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+    "reviewed_head_sha": "52abdfa00a6ad5a04d7b43da1989fb3db7ace1db",
+    "diff_sha256": "76e71dce4b1e4a5d847fa0d1deb933d21f3467d86d72c60d8bf26b434230ff63"
+  },
+  "combined_kind": "Merge somente local para revisão; não é integração remota nem pertence à stack publicada.",
+  "digest_scope": "Digests dos fontes efetivamente examinados, somente spec-review.json/md excluídos. Estes dois relatórios de lote são registros posteriores ao source head, não incluídos no digest analisado. Nenhuma mudança de fonte é autorizada por essa distinção.",
+  "initial": {
+    "prs": [
+      {
+        "pr": 94,
+        "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+        "reviewed_head_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+        "diff_sha256": "7db0e3435157e4b221442632832298dcd09826746bda028dc5a320bd3ab7bc7a"
+      },
+      {
+        "pr": 95,
+        "base_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+        "reviewed_head_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+        "diff_sha256": "9f0c1cd15575dfc326ec7bcbd61763a3a4ab25d8cb8f0dfabc092e950f52fefc"
+      },
+      {
+        "pr": 97,
+        "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+        "reviewed_head_sha": "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c",
+        "diff_sha256": "d0eaa1982d7bb74c450e44bd1d70dd812927fe1b9fa55694cde37318cef411af"
+      }
+    ],
+    "combined": {
+      "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+      "reviewed_head_sha": "4dc2dbc16da733e7eba4d7867a79293aa32dcf28",
+      "diff_sha256": "db778658c9020888e883a4f3b3529113e2651bd29dce86f4bb1eb35e6cdfc50e"
+    },
+    "result": "Um bloqueador: P5-R2-001."
+  },
+  "revalidations": [
+    {
+      "prs": [
+        {
+          "pr": 94,
+          "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+          "reviewed_head_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+          "diff_sha256": "7db0e3435157e4b221442632832298dcd09826746bda028dc5a320bd3ab7bc7a"
+        },
+        {
+          "pr": 95,
+          "base_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+          "reviewed_head_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+          "diff_sha256": "9f0c1cd15575dfc326ec7bcbd61763a3a4ab25d8cb8f0dfabc092e950f52fefc"
+        },
+        {
+          "pr": 97,
+          "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+          "reviewed_head_sha": "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c",
+          "diff_sha256": "d0eaa1982d7bb74c450e44bd1d70dd812927fe1b9fa55694cde37318cef411af"
+        },
+        {
+          "pr": 98,
+          "base_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+          "reviewed_head_sha": "a9195979e88d85e66ab8d913a1457dcc0aa0c1c7",
+          "diff_sha256": "49a531bcb40c1bb86f20992b49a4527f649ee34248c68ed14e76c7e5cd027674"
+        }
+      ],
+      "combined": {
+        "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+        "reviewed_head_sha": "47d756be739b96079de48cd85590ab6007f327b7",
+        "diff_sha256": "6000f5148f28d2c696024124d7ce5975e3bf6ec823a02e1e725b83245ea5e6e5"
+      },
+      "result": "P5-R2-001 corrigido; novo bloqueador P5-R2-002."
+    },
+    {
+      "prs": [
+        {
+          "pr": 94,
+          "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+          "reviewed_head_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+          "diff_sha256": "7db0e3435157e4b221442632832298dcd09826746bda028dc5a320bd3ab7bc7a",
+          "base_ref": "epic/parameterized-questions",
+          "head_ref": "task/parameterized-questions/attempt-capture",
+          "lines": {
+            "added": 247,
+            "deleted": 12,
+            "generated_bulk_added": 0,
+            "generated_bulk_deleted": 0,
+            "generated_bulk_paths": []
+          }
+        },
+        {
+          "pr": 95,
+          "base_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+          "reviewed_head_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+          "diff_sha256": "9f0c1cd15575dfc326ec7bcbd61763a3a4ab25d8cb8f0dfabc092e950f52fefc",
+          "base_ref": "task/parameterized-questions/attempt-capture",
+          "head_ref": "task/parameterized-questions/attempt-storage",
+          "lines": {
+            "added": 589,
+            "deleted": 25,
+            "generated_bulk_added": 151,
+            "generated_bulk_deleted": 0,
+            "generated_bulk_paths": [
+              "backend/src/test/resources/mockexam/v5-creation.json"
+            ]
+          }
+        },
+        {
+          "pr": 97,
+          "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+          "reviewed_head_sha": "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c",
+          "diff_sha256": "d0eaa1982d7bb74c450e44bd1d70dd812927fe1b9fa55694cde37318cef411af",
+          "base_ref": "epic/parameterized-questions",
+          "head_ref": "task/parameterized-questions/editorial-content",
+          "lines": {
+            "added": 14043,
+            "deleted": 4,
+            "generated_bulk_added": 12920,
+            "generated_bulk_deleted": 0,
+            "generated_bulk_paths": [
+              "editorial/parameterized-questions/2026-10/base-m04-q05-package.json",
+              "editorial/parameterized-questions/2026-10/bases.json",
+              "editorial/parameterized-questions/2026-10/direct-proportion-preview.json",
+              "editorial/parameterized-questions/2026-10/percentage-preview.json",
+              "editorial/parameterized-questions/2026-10/simple-interest-preview.json",
+              "editorial/parameterized-questions/2026-10/variants.md"
+            ]
+          }
+        },
+        {
+          "pr": 98,
+          "base_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+          "reviewed_head_sha": "fd54499bfd885c89877e21f45a69eb2dc89842f3",
+          "diff_sha256": "c2110febb80672e86254faac6e856edbd8710113df71f3e07137e144134e7e4f",
+          "base_ref": "task/parameterized-questions/attempt-storage",
+          "head_ref": "task/parameterized-questions/capture-integrity",
+          "lines": {
+            "added": 358,
+            "deleted": 21,
+            "generated_bulk_added": 0,
+            "generated_bulk_deleted": 0,
+            "generated_bulk_paths": []
+          }
+        }
+      ],
+      "combined": {
+        "base_sha": "6781e9cbd7e09b2831131259a5f84a10f8d259ce",
+        "reviewed_head_sha": "52abdfa00a6ad5a04d7b43da1989fb3db7ace1db",
+        "diff_sha256": "76e71dce4b1e4a5d847fa0d1deb933d21f3467d86d72c60d8bf26b434230ff63"
+      },
+      "result": "P5-R2-001 e P5-R2-002 corrigidos; nenhum novo achado, recomendação ou hipótese adicional."
+    }
+  ],
+  "coverage": {
+    "requirements": "Grupos completos 3/4; opção por padrão false, seleção por identidade sem reposição e captura reproduzível; grupos 5/6 não antecipados.",
+    "architecture": "Domínio/aplicação Java puros, invariantes em VOs, portas úteis; JPA/SQL/transações na infraestrutura; nenhum endpoint novo.",
+    "integration": "Materialização após seleção, fonte privada, UUIDs opacos, manifesto exato, persistência/restauração e metadados vinculados à definição; nenhuma consulta a gerador/oráculo/catalogação atual na leitura.",
+    "persistence": "V7/V8/V9 aditivas, FKs, constraints deferidas, imutabilidade, cleanup, RR, recuperação pós-rollback, concorrência e codecs V5 preservando hashes e JSON.",
+    "editorial": "111 tuplas 64/20/27, alternativas/correta/resolução, três definições/manifestos e hashes; 111 seções do relatório; três fingerprints-base e 104 arquivos-fonte conferidos na revisão inicial. Árvore editorial idêntica nas revalidações.",
+    "security": "Posse/expiração, projeções públicas sem captura privada, entrada editorial local exata, preparação/aprovação/retirada em clone distintas.",
+    "tests": "Leitura das regressões de domínio, persistência/concorrência, restauração, SQL direto, upgrade válido/adulterado, V5 real e auditor editorial; revisor não executou testes.",
+    "maintenance": "Canonização versionada preservada, causas/regras positivas/regressões/limites documentados; rollback compatível bloqueia apenas novas criações parametrizadas."
+  },
+  "findings": [
+    {
+      "id": "P5-R2-001",
+      "severity": "blocker",
+      "prs": [
+        94,
+        95,
+        98
+      ],
+      "location": "AttemptQuestion.java; QuestionSource.java; V7__captured_parameterized_items.sql; JpaAttemptStore.java",
+      "evidence": "Conteúdo de PERCENTAGE p=5/v=100 aceitava parâmetros e outputDigest aprovados de p=5/v=200, com cópias JSON iguais.",
+      "reference": "Design §5; tarefa 3.2; captura reproduzível da instância.",
+      "impact": "Captura divergente aceita/congelada compromete rastreabilidade; sem exploração API ou erro das 111 saídas identificado.",
+      "disposition": "fixed",
+      "resolution": "a9195979e88d85e66ab8d913a1457dcc0aa0c1c7 extrai a canonização sem mudar bytes e vincula conteúdo real no domínio/restauração/V8. RED antes, GREEN depois; rollback das quatro tabelas e legado divergente recusado. Fechado na primeira revalidação e mantido na segunda."
+    },
+    {
+      "id": "P5-R2-002",
+      "severity": "blocker",
+      "prs": [
+        94,
+        95,
+        98
+      ],
+      "location": "CapturedOutputDigest.java; AttemptQuestion.java; V8__bind_captured_output.sql, em interação com V7",
+      "evidence": "Referência/autoria/cargos reais podiam mudar com fingerprint coerente, mantendo definitionDigest/outputDigest antigos.",
+      "reference": "Cenário Definição alterada após revisão; design §§3/5, aprovação exata e consistência fonte/conteúdo.",
+      "impact": "Metadados diferentes dos aprovados podiam conservar identificação da aprovação; não encontrado nas 111 saídas nem exploração API.",
+      "disposition": "fixed",
+      "resolution": "fd54499bfd885c89877e21f45a69eb2dc89842f3 reconstrói definição dos identificadores/metadados reais e compara digest; V9 confere com definição persistida. Três testes de construtor e um SQL reproduziram RED; regressões GREEN de restauração, SQL, rollback e upgrade; fechado na segunda revalidação."
+    }
+  ],
+  "triage_complete": true,
+  "checks_at_reviewed_source_heads": [
+    {
+      "pr": 94,
+      "head_sha": "b84d169874603697b162ae2cf0c619c0dc818f87",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38809148049/job/116677643131"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38809350774/job/116678338748"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38809148049/job/116677643498"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38809148049/job/116677643705"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38809148049/job/116677643383"
+        }
+      ]
+    },
+    {
+      "pr": 95,
+      "head_sha": "ddc37f1932d818a9ab94a001aaca2fb3b4d92588",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828414486/job/116741221634"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828420753/job/116741239602"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828414486/job/116741221673"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828414486/job/116741221344"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828414486/job/116741221751"
+        }
+      ]
+    },
+    {
+      "pr": 97,
+      "head_sha": "062bf0f7a973552c0599ff0d0eed2af1eafd8f1c",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828375751/job/116741102304"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828709684/job/116742167786"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828375751/job/116741102610"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828375751/job/116741103405"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38828375751/job/116741102523"
+        }
+      ]
+    },
+    {
+      "pr": 98,
+      "head_sha": "fd54499bfd885c89877e21f45a69eb2dc89842f3",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38831939581/job/116752455669"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38831958860/job/116752515618"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38831939581/job/116752455707"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38831939581/job/116752455509"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38831939581/job/116752455654"
+        }
+      ]
+    }
+  ],
+  "verification": [
+    {
+      "command": "Regressões de troca válida de tupla/digest antes/depois da primeira correção",
+      "result": "Dois casos RED por ausência de exceção, depois GREEN em domínio e PostgreSQL.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Regressões de metadados adulterados antes/depois da segunda correção",
+      "result": "Quatro casos RED confirmados; depois construção/restauração, SQL, rollback e upgrade com referência/autoria/cargos passaram.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "gradlew build Windows após fd54499",
+      "result": "204 casos, 203 executados sem falhas/erros; um symlink omitido por permissão do Windows.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Application checks backend Linux fd54499, run38831945208/job116752473824",
+      "result": "204 PASSED, nenhum SKIPPED/FAILED, build concluído.",
+      "executed_by": "github-actions-verified-by-coordinator"
+    },
+    {
+      "command": "spec-review-tests Linux #97 062bf0f, run38828381344/job116741121824",
+      "result": "62 testes OK, incluindo as oito regressões editoriais.",
+      "executed_by": "github-actions-verified-by-coordinator"
+    },
+    {
+      "command": "Oito testes editoriais e auditor independente de conteúdo no conjunto local",
+      "result": "8/8; 111/111 variantes, três famílias, bases elegíveis; o auditor não concede aprovação editorial.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Preview offline com classes após correção contra artefatos aprovados",
+      "result": "111 saídas e três manifestos idênticos; cargos comparados como conjunto sem ordem; nenhum acesso DB.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "OpenSpec 1.14.1 offline validate --all --strict; git diff --check",
+      "result": "5/5 changes válidas; sem erro de whitespace.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Conferência independente dos cinco snapshots e hashes canônicos editoriais",
+      "result": "SHAs/digests conferidos; 111 saídas, três definições/manifestos preservados; V1–V8 intactas.",
+      "executed_by": "reviewer"
+    }
+  ],
+  "editorial_release": {
+    "selection_sha256": "879e9fa5d43d885a6125c9cbccc8590b373abc8d2321929d370159426ef1dba3",
+    "scope": "Somente cópia local PostgreSQL autorizada pelo usuário; registros de decisão/observação em #97.",
+    "result": "M04-Q05 aprovada e três famílias v1 registradas/aprovadas; 111 variantes não ampliam identidades. Retirada testada em segundo clone sem mudar o destino aprovado."
+  },
+  "limitations": [
+    "Revisão de lote grupos 3/4, não gate cumulativo final nem aprovação de merge; spec-review.json/md permanecem pending.",
+    "Revisor estático somente leitura; não executou testes/build/scripts do projeto/rede/DB/escritas e não autenticou observações diretamente no banco.",
+    "Checks remotos consultados pelo coordenador; fonte combinada foi merge somente local, sem PR/CI remoto próprio. Backend corresponde ao #98 e auditor/editorial ao #97; demais alterações editoriais não mudam Java/frontend.",
+    "HTTP/browser parametrizado, acessibilidade interativa, inspeção bundle e ensaio operacional de JARs pertencem aos grupos 5/6, fora deste lote.",
+    "Contexto inicial independente reduz viés, não o elimina; revalidações na mesma sessão, sem outro modelo/Graphify.",
+    "Observações privadas de cota/tokens e operações não são publicadas aqui; disponibilidade/limites serão apresentados separadamente ao usuário, sem inferir consumo ou cobrança.",
+    "Stack #96 conserva heads/bases e trunk; nenhum rebase/sync pós-merge/retarget/unstack/prune/merge executado. Após avanço de base, reconferir snapshot/revalidar quando aplicável antes de integrar remanescentes.",
+    "Nenhuma mudança de main/deploy, arquivamento ou fechamento de PR autorizado por este relatório."
+  ],
+  "progress": {
+    "implemented_verified": 16,
+    "approved_integrated": 8,
+    "total": 24
+  }
+}

@@ -30,7 +30,7 @@ class TemplateSchemaTests {
             var before=new HashMap<String,List<String>>();
             for(var table:tables)before.put(table,db.jdbc.queryForList("select row_to_json(t)::text from "+table+" t order by 1",String.class));
             var trigger=db.jdbc.queryForObject("select pg_get_functiondef('me_protect_attempt()'::regprocedure)",String.class);
-            db.factory.close();db.factory=null;db.migrate("6");db.open(true);
+            db.factory.close();db.factory=null;db.migrate("9");db.open(true);
             for(var table:tables)assertThat(db.jdbc.queryForList("select row_to_json(t)::text from "+table+" t order by 1",String.class)).as(table).isEqualTo(before.get(table));
             assertThat(db.jdbc.queryForObject("select pg_get_functiondef('me_protect_attempt()'::regprocedure)",String.class)).isEqualTo(trigger);
             var afterCases=attempts(db);assertThat(afterCases.create(owner,command,composition).attempt()).isEqualTo(created);

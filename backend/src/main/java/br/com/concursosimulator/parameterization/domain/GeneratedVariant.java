@@ -16,8 +16,7 @@ public record GeneratedVariant(TemplateDefinition definition,Parameters paramete
             throw new IllegalArgumentException("Instância numérica inválida");
     }
     public String digest() {
-        var f=new ArrayList<String>(List.of("parameter-output/v1",definition.digest(),parameters.key(),statement.text(),Integer.toString(correctIndex)));
-        alternatives.forEach(v -> f.add(v.toString())); f.add(resolution.text()); return CanonicalDigest.of(f);
+        return CapturedOutputDigest.of(definition.digest(),parameters,statement,alternatives,correctIndex,resolution);
     }
     public BigInteger correctValue() { return alternatives.get(correctIndex); }
 }

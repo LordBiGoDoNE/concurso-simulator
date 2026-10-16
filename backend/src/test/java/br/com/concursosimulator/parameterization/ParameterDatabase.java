@@ -21,10 +21,10 @@ final class ParameterDatabase implements AutoCloseable {
     final DriverManagerDataSource ds;final JdbcTemplate jdbc;
     EntityManagerFactory factory;EntityManager entities;JpaTransactionManager manager;
     JpaQuestionStore questions;JpaTemplateStore store;JpaEligibleTemplates eligible;
-    ParameterDatabase(PostgreSQLContainer pg){this(pg,"6");}
+    ParameterDatabase(PostgreSQLContainer pg){this(pg,"9");}
     ParameterDatabase(PostgreSQLContainer pg,String target) {
         ds=new DriverManagerDataSource(pg.getJdbcUrl()+"&currentSchema="+schema,pg.getUsername(),pg.getPassword());jdbc=new JdbcTemplate(ds);
-        migrate(target);open(target.equals("6"));
+        migrate(target);open(!target.equals("5"));
     }
     void migrate(String target){Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).target(target).load().migrate();}
     void open(boolean templates) {

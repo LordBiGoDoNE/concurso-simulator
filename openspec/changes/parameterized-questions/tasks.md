@@ -2,13 +2,14 @@
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
 épica da spec; grupos 1 e 2 integrados por #88/#89/#90/#92/#93 em `6781e9c`.
-**23/24 tarefas implementadas/verificadas, 16/24 integradas/aprovadas**.
+**23/24 tarefas implementadas/verificadas, 23/24 integradas/aprovadas**.
 Grupos completos 3/4 integrados por #94/#95/#98/#97 na épica da spec em `542f9ac`,
 com revisão SOL 6.1 xhigh e CI aprovados. Conteúdo real aprovado somente na cópia local.
-Lote final autorizado pelo usuário: grupos completos 5 e 6, em implementação.
-Revisão de lote e gate cumulativo permanecem atos separados, sem merge presumido.
-Grupos 5 e verificação 6.1–6.3 executados; 6.4 depende da revisão/aprovação/integração
-dos PRs deste lote antes do gate cumulativo sobre a épica real atualizada.
+Lote final autorizado pelo usuário: grupos completos 5 e 6. Grupo 5 e verificações
+6.1–6.3 integrados por #99/#100/#101 (stack #102), merge `4434f7a`, após revisão e
+revalidação SOL 6.1 xhigh e aprovação explícita dos três PRs. Branches preservadas.
+Revisão de lote e gate cumulativo permanecem atos separados. 6.4 em execução no
+[SPEC] #103 para a épica geral, sem autorização de integração da spec presumida.
 Pré-requisito #84 em `0d0fc48`.
 
 Grupos completos são a unidade de autorização do lote. Cada tarefa inclui código,

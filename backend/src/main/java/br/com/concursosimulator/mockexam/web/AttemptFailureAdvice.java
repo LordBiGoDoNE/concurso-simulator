@@ -14,6 +14,7 @@ public class AttemptFailureAdvice {
     public ResponseEntity<AttemptContracts.Error> invalid() { return error(400,"invalid_request"); }
     @ExceptionHandler(Attempt.Unavailable.class) public ResponseEntity<AttemptContracts.Error> absent() { return error(404,"not_found"); }
     @ExceptionHandler(Attempt.Conflict.class) public ResponseEntity<AttemptContracts.Error> conflict() { return error(409,"conflict"); }
+    @ExceptionHandler(IllegalStateException.class) public ResponseEntity<AttemptContracts.Error> integrity() { return error(500,"internal_error"); }
     @ExceptionHandler(Composition.InsufficientPool.class) public ResponseEntity<AttemptContracts.Insufficient> insufficient(Composition.InsufficientPool e) {
         return ResponseEntity.status(409).cacheControl(CacheControl.noStore()).body(new AttemptContracts.Insufficient("insufficient_pool",
                 e.available().entrySet().stream().sorted(java.util.Map.Entry.comparingByKey()).map(a -> new AttemptContracts.Available(a.getKey().id(),a.getValue())).toList()));

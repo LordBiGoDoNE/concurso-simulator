@@ -8,7 +8,8 @@ import java.util.*;
 public final class AttemptContracts {
     private AttemptContracts() {}
     public record PortionRequest(String disciplineId,Integer quantity,Set<String> topicIds) {}
-    public record CreateRequest(String commandId,String roleId,List<PortionRequest> disciplines) {
+    public record CreateRequest(String commandId,String roleId,List<PortionRequest> disciplines,
+                                @tools.jackson.databind.annotation.JsonDeserialize(using=NumericOption.class) boolean useParameterizedQuestions) {
         Composition composition() {
             if (disciplines==null || disciplines.isEmpty() || disciplines.size()>Discipline.values().length) throw invalid();
             var map=new EnumMap<Discipline,Composition.Portion>(Discipline.class);
@@ -17,8 +18,18 @@ public final class AttemptContracts {
                 var topics=p.topicIds()==null?Set.<Topic>of():p.topicIds().stream().map(Topic::fromId).collect(java.util.stream.Collectors.toSet());
                 if (map.put(Discipline.fromId(p.disciplineId()),new Composition.Portion(p.quantity(),topics))!=null) throw invalid();
             }
-            return new Composition(TargetRole.fromId(roleId),map);
+            return new Composition(TargetRole.fromId(roleId),map,useParameterizedQuestions);
         }
+    }
+    /** Ausente é false; null não é booleano. Não relaxa coerção/null dos demais DTOs. */
+    public static final class NumericOption extends tools.jackson.databind.ValueDeserializer<Boolean> {
+        @Override public Boolean deserialize(tools.jackson.core.JsonParser p,tools.jackson.databind.DeserializationContext c) {
+            if (p.currentToken()==tools.jackson.core.JsonToken.VALUE_TRUE || p.currentToken()==tools.jackson.core.JsonToken.VALUE_FALSE) return p.getBooleanValue();
+            return c.reportInputMismatch(Boolean.class,"Opção deve ser booleana");
+        }
+        @Override public Boolean getAbsentValue(tools.jackson.databind.DeserializationContext c) { return false; }
+        @Override public Boolean getNullValue(tools.jackson.databind.DeserializationContext c) { return c.reportInputMismatch(Boolean.class,"Null não é opção booleana"); }
+        @Override public tools.jackson.databind.util.AccessPattern getNullAccessPattern() { return tools.jackson.databind.util.AccessPattern.DYNAMIC; }
     }
     public record AnswerRequest(String commandId,Long expectedVersion,@com.fasterxml.jackson.annotation.JsonProperty(required=true) String alternativeId) {}
     public record FinishRequest(String commandId,Long expectedVersion) {}

@@ -1,6 +1,6 @@
 # Revisão independente — subject-review, grupos3 e4
 
-Revisão inicial e revalidação concluídas pelo SOL6.1 xhigh. Inicial: zero bloqueadores,
+Revisão inicial e duas revalidações concluídas pelo SOL6.1 xhigh. Inicial: zero bloqueadores,
 um recomendado e um opcional. Ambos confirmados/corrigidos; **nenhum achado aberto na
 combinação revalidada**. Escopo completo3.1–3.4/4.1–4.4,16/24 tarefas verificadas,
 8/24 integradas. Risco **crítico** por segurança/principal/sessão/CSRF,privacidade HTTP/
@@ -18,14 +18,15 @@ do provedor exposto. Registro temporal do coordenador,não telemetria do provedo
 | #111 | `a16b69acf3ffcb4f82eac87018fd1270fae4aea8` | `79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440` | `976e9d1a74aac4de708dee1d5dab49df3fe0bab5ee99814e806a653e049bd802` |
 | #112 | `79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440` | `ebe169b8eeca4f28c3d9c2cad459eb38a9f09413` | `e07b01644c989405f233794ceabaff42dd4a167de87c3a7cf4170b539fa2285f` |
 | #113 | `ebe169b8eeca4f28c3d9c2cad459eb38a9f09413` | `d41a8cbefb025c38c88fa344649a46a502b07e59` | `6394d3c8c476c20c8229ec6f16fac559f70971b67d72278038f4404e4f24606d` |
-| #114 | `d41a8cbefb025c38c88fa344649a46a502b07e59` | `4b72f79901ded4425c0d14ddf2dbf3eff5394e77` | `edaedc164a65a8cb30cf7b70e2c1b26dcc564421e8725a1fa3a65844c3d052ba` |
+| #114 | `d41a8cbefb025c38c88fa344649a46a502b07e59` | `5fba4e60705a990baea129609242ce8f41abd4dd` | `2424850dbdc53c9c314f64597f1bf4422ece0675b101afd0a0fdb2acac31aff3` |
 
-Combinado `a16b69acf3ffcb4f82eac87018fd1270fae4aea8` → `4b72f79901ded4425c0d14ddf2dbf3eff5394e77`:
-`f808636a2e8d3a1141a58ae23a1d1405d68b2c23d0c0b4fd4109cea07de9b33b`. Inicial tinha head792c0a95f99feea6eca7819e728d8a78e000bf91,
+Combinado `a16b69acf3ffcb4f82eac87018fd1270fae4aea8` → `5fba4e60705a990baea129609242ce8f41abd4dd`:
+`d533a60af8690448bdffea181abe12b5036c60c995df695464cee600cab76e04`. Inicial tinha head792c0a95f99feea6eca7819e728d8a78e000bf91,
 digest `ed65f89b23b515a9796bfcb4fb02e21b98fb94f7c7a2e4df164c3c38024f5480`;metadados integrais das duas fases no JSON.
 Todos os cinco digests/merge-bases conferidos em cada fase,com argumentos canônicos.
 Somente spec-review.json/md excluídos;verification-round2.md incluído criptograficamente.
-Estes dois registros posteriores não integram o source analisado nem mudam produto.
+Source5fba4e6 contém as versões anteriores destes dois registros (commitc15f4cc).
+Esta atualização posterior não se declara incluída no digest analisado e não muda produto.
 
 ## Achados e triagem
 
@@ -93,7 +94,7 @@ CI não demonstra sozinho qualidade semântica e não aprova merge.
 
 - Revisor somente leitura local de código/diffs/hashes; não executou testes/build/aplicação/scripts do projeto/navegador/rede/DB/escritas/delegação nem verificou CI.
 
-- Não leu semanticamente spec-review.json/md,verification*.md,reviews ou artefatos privados;verification-round2.md integra o digest. Exposição incidental a contagens em documentação versionada não foi usada como prova própria.
+- Não leu semanticamente spec-review.json/md,verification*.md ou revisões de outras sessões. Inicial/primeira revalidação não leram reviews;segunda leu apenas os dois registros anteriores da própria sessão para coerência documental,após análise independente inicial. verification-round2.md e registros históricos integram o digest.
 
 - Revisor não inspecionou capturas/artefatos nem uso real de teclado/leitor de tela. Inspeção visual e execuções acima são do coordenador/CI; sem auditoria WCAG integral.
 
@@ -103,8 +104,24 @@ CI não demonstra sozinho qualidade semântica e não aprova merge.
 
 - Contexto novo reduz viés sem garantia absoluta. Sem outro modelo ou comparação fictícia. Cota/tokens/observações privadas não publicados/inventados.
 
-- Os dois registros reviews/round2 são posteriores ao source revalidado e não se declaram incluídos no digest. Não acompanham mudança de código/requisito.
+- Os dois registros reviews/round2 atualizados são posteriores ao source5fba4e6,que contém sua versão histórica anterior. A atualização não se declara incluída no digest e não acompanha código/requisito.
 
 Sem merge/sync/retarget/bypass/fila,deployment,main ou arquivamento executados por esta
 revisão. Aprovação dos quatro PRs é decisão própria do usuário;gate cumulativo permanece
 pendente para o término da spec. Evidências anteriores preservadas como histórico.
+
+## Segunda revalidação após verificação do CI
+
+Uma execução frontend no registroc15f4cc detectou corrida no teste positivo de foco;
+a presença de texto não aguardava useEffect. Source5fba4e60705a990baea129609242ce8f41abd4dd
+usa waitFor para o mesmo título focado,sem alterar produção.137 testes/build passaram.
+SOL revalidou novamente os cinco digests,o delta integral permitido e a composição;
+concluiu que a espera é apropriada,não remove a assertion e não traz novo achado.
+
+Primeira revalidação em4b72f79 e seus digests preservados no JSON como sequência1;
+segunda em5fba4e6 como sequência2. O revisor leu os dois registros anteriores da própria
+sessão somente para coerência documental,depois da análise inicial independente.
+Não executou testes,nem certificou CI. Achados001/002 seguem fixed no conjunto com#114.
+
+Checks do source5fba4e6 após a segunda revalidação:backend/frontend/study-material/
+identity-browser/spec-review-tests aprovados nos quatro PRs. Links atuais no JSON.

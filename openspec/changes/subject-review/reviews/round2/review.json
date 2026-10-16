@@ -11,8 +11,8 @@
     "independent_context": true,
     "selection_evidence": "Harness disponibilizou/aceitou spawn_agent fork_turns=none,model=gpt-6.1-sol,reasoning_effort=xhigh;perfil coincide,sem fallback. Mesma sessão retomada para revalidação. Nenhum ID adicional de provedor exposto."
   },
-  "reviewed_at": "2026-10-16T17:51:24.217371+00:00",
-  "recorded_at": "2026-10-16T17:51:24.217371+00:00",
+  "reviewed_at": "2026-10-16T17:59:35.036987+00:00",
+  "recorded_at": "2026-10-16T18:01:21.750903+00:00",
   "time_basis": "Horário de registro do encerramento pelo coordenador; não telemetria do provedor.",
   "prs": [
     {
@@ -44,16 +44,16 @@
       "base_ref": "task/subject-review/review-interface",
       "head_ref": "task/subject-review/review-browser",
       "base_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
-      "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
-      "diff_sha256": "edaedc164a65a8cb30cf7b70e2c1b26dcc564421e8725a1fa3a65844c3d052ba"
+      "reviewed_head_sha": "5fba4e60705a990baea129609242ce8f41abd4dd",
+      "diff_sha256": "2424850dbdc53c9c314f64597f1bf4422ece0675b101afd0a0fdb2acac31aff3"
     }
   ],
   "combined": {
     "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
-    "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
-    "diff_sha256": "f808636a2e8d3a1141a58ae23a1d1405d68b2c23d0c0b4fd4109cea07de9b33b"
+    "reviewed_head_sha": "5fba4e60705a990baea129609242ce8f41abd4dd",
+    "diff_sha256": "d533a60af8690448bdffea181abe12b5036c60c995df695464cee600cab76e04"
   },
-  "digest_scope": "Snapshots canônicos de fonte;exclusivamente spec-review.json/md excluídos. Dois registros reviews/round2 posteriores não se declaram incluídos.",
+  "digest_scope": "Source5fba4e6 inclui versões anteriores dos registros reviews/round2 do commitc15f4cc. Somente spec-review.json/md excluídos do digest canônico. Esta atualização dos dois registros é posterior à leitura e não se declara incluída no digest;sem mudança de produto.",
   "initial": {
     "prs": [
       {
@@ -97,6 +97,7 @@
     "result": "Zero bloqueadores,um recomendado e um opcional;ambos confirmados."
   },
   "revalidation": {
+    "sequence": 2,
     "prs": [
       {
         "pr": 111,
@@ -127,16 +128,16 @@
         "base_ref": "task/subject-review/review-interface",
         "head_ref": "task/subject-review/review-browser",
         "base_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
-        "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
-        "diff_sha256": "edaedc164a65a8cb30cf7b70e2c1b26dcc564421e8725a1fa3a65844c3d052ba"
+        "reviewed_head_sha": "5fba4e60705a990baea129609242ce8f41abd4dd",
+        "diff_sha256": "2424850dbdc53c9c314f64597f1bf4422ece0675b101afd0a0fdb2acac31aff3"
       }
     ],
     "combined": {
       "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
-      "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
-      "diff_sha256": "f808636a2e8d3a1141a58ae23a1d1405d68b2c23d0c0b4fd4109cea07de9b33b"
+      "reviewed_head_sha": "5fba4e60705a990baea129609242ce8f41abd4dd",
+      "diff_sha256": "d533a60af8690448bdffea181abe12b5036c60c995df695464cee600cab76e04"
     },
-    "result": "SR-R2-SOL-001/002 corrigidos na combinação,nenhum novo achado;três diffs inferiores preservados."
+    "result": "Nenhum novo achado;waitFor do mesmo título focado é apropriado. Produção idêntica a4b72f79,SR-R2-SOL-001/002 permanecem corrigidos na combinação."
   },
   "coverage": {
     "requirements": "Grupos completos3.1–3.4 e4.1–4.4, quatro diffs e combinação; proposta/design/specs versionados. Grupos1/2 lidos como pré-requisitos e5/6 não antecipados.",
@@ -145,7 +146,7 @@
     "privacy_persistence": "Projeções sem correção/captura/identidade privada;no-store antes da segurança;503 pré-MVC; leitura limitada/transaçãoRR e validação em lote relacionadas, sem comandos novos.",
     "interface": "Escolha explícita do cargo,51 assuntos, estados distintos,janela/corte/amostra/prioridade, individual sem histórico implícito, timeout e contexto vigente.",
     "context_lifecycle": "App/workspace/conclusão/revisão; cancelamento,retry,limpeza por cargo/conta/logout, suspensão na revalidação e atualização após confirmação.",
-    "focus_and_types": "Intenção de foco vinculada à consulta explícita, descartada em erro/inatividade/substituição; disciplineId string antes do enum, sem coerção.",
+    "focus_and_types": "Intenção de foco vinculada à consulta explícita, descartada em erro/inatividade/substituição; disciplineId string antes do enum, sem coerção. Assertion positiva agora aguarda o efeito com waitFor sem mudar destino/produção;segunda revalidação confirmou adequação.",
     "regressions": "Fontes HTTP/ArchUnit/cliente/componentes/contexto/Playwright e relacionados de cálculo/janela/concorrência/compatibilidade inspecionadas, sem execução pelo revisor.",
     "maintenance": "Causa/regra positiva/regressões/limites das duas correções documentados; histórico e três diffs inferiores preservados, correções no topo da stack."
   },
@@ -218,6 +219,16 @@
       "command": "Recalcular cinco digests e conferir merge-base/ancestralidade",
       "result": "Os cinco digests conferem nas duas fases;792c0a9 é ancestral de4b72f79 e três diffs inferiores idênticos. Nenhum script do projeto executado.",
       "executed_by": "reviewer"
+    },
+    {
+      "command": "CI de c15f4cc e correção de sincronização do teste em5fba4e6",
+      "result": "Uma execução frontend falhou na assertion positiva de foco antes do useEffect;outra passou. Teste passou a aguardar o mesmo foco por waitFor,sem mudar produção.137 testes/frontend build passaram após alteração. Segunda revalidação conferiu o novo snapshot,sem novos achados.",
+      "executed_by": "coordinator-and-independent-reviewer-with-separated-responsibilities"
+    },
+    {
+      "command": "Checks no source5fba4e6 depois da segunda revalidação",
+      "result": "Todos aprovados:backend/frontend/study-material/identity-browser/spec-review-tests. A assertion positiva aguarda o mesmo foco;nenhuma assertion desativada nem produção alterada.",
+      "executed_by": "github-actions-verified-by-coordinator"
     }
   ],
   "source_checks": [
@@ -244,6 +255,11 @@
           "name": "spec-review-tests",
           "conclusion": "SUCCESS",
           "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940987279/job/117108257823"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943122042/job/117115452978"
         },
         {
           "name": "frontend",
@@ -300,6 +316,11 @@
           "name": "spec-review-tests",
           "conclusion": "SUCCESS",
           "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940988127/job/117108260809"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943125651/job/117115465552"
         },
         {
           "name": "frontend",
@@ -363,6 +384,11 @@
           "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942244653/job/117112500098"
         },
         {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943129669/job/117115477465"
+        },
+        {
           "name": "frontend",
           "conclusion": "SUCCESS",
           "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38940841683/job/117107762277"
@@ -396,57 +422,57 @@
     },
     {
       "pr": 114,
-      "head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+      "head_sha": "5fba4e60705a990baea129609242ce8f41abd4dd",
       "checks": [
         {
           "name": "backend",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183508"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943506474/job/117116738099"
         },
         {
           "name": "backend",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154837"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943497906/job/117116708253"
         },
         {
           "name": "spec-review-tests",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150828/job/117112183861"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943506246/job/117116736595"
         },
         {
           "name": "spec-review-tests",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942248467/job/117112513120"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943563225/job/117116927463"
         },
         {
           "name": "frontend",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183826"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943506474/job/117116737705"
         },
         {
           "name": "frontend",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154850"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943497906/job/117116708558"
         },
         {
           "name": "study-material",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183851"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943506474/job/117116738136"
         },
         {
           "name": "study-material",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154881"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943497906/job/117116708939"
         },
         {
           "name": "identity-browser",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942150820/job/117112183800"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943506474/job/117116737944"
         },
         {
           "name": "identity-browser",
           "conclusion": "SUCCESS",
-          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38942142333/job/117112154571"
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38943497906/job/117116708664"
         }
       ]
     }
@@ -455,11 +481,99 @@
     "Revisão de lote3/4, não gate cumulativo final ou aprovação de merge. Grupos5/6 fora da avaliação de completude.",
     "Correções no#114: o#113 isolado permanece com os achados originais. Parecer sem achados abertos vale somente para o conjunto#111–#114, sem aprovação de prefixos.",
     "Revisor somente leitura local de código/diffs/hashes; não executou testes/build/aplicação/scripts do projeto/navegador/rede/DB/escritas/delegação nem verificou CI.",
-    "Não leu semanticamente spec-review.json/md,verification*.md,reviews ou artefatos privados;verification-round2.md integra o digest. Exposição incidental a contagens em documentação versionada não foi usada como prova própria.",
+    "Não leu semanticamente spec-review.json/md,verification*.md ou revisões de outras sessões. Inicial/primeira revalidação não leram reviews;segunda leu apenas os dois registros anteriores da própria sessão para coerência documental,após análise independente inicial. verification-round2.md e registros históricos integram o digest.",
     "Revisor não inspecionou capturas/artefatos nem uso real de teclado/leitor de tela. Inspeção visual e execuções acima são do coordenador/CI; sem auditoria WCAG integral.",
     "Requisição autorizada pode terminar após logout/expiração;não há revogação retroativa nem prova de todos os schedulings. Cliente cancela/ignora resposta fora do contexto.",
     "Testes HTTP pausam após capturar evidência;teste relacionado do lote anterior cobre intervalo entre cabeçalhos/carregamento na transação. Reinícios de contexto não equivalem a processo/JAR.",
     "Contexto novo reduz viés sem garantia absoluta. Sem outro modelo ou comparação fictícia. Cota/tokens/observações privadas não publicados/inventados.",
-    "Os dois registros reviews/round2 são posteriores ao source revalidado e não se declaram incluídos no digest. Não acompanham mudança de código/requisito."
+    "Os dois registros reviews/round2 atualizados são posteriores ao source5fba4e6,que contém sua versão histórica anterior. A atualização não se declara incluída no digest e não acompanha código/requisito."
+  ],
+  "revalidations": [
+    {
+      "sequence": 1,
+      "prs": [
+        {
+          "pr": 111,
+          "base_ref": "epic/subject-review",
+          "head_ref": "task/subject-review/http-query",
+          "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+          "reviewed_head_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+          "diff_sha256": "976e9d1a74aac4de708dee1d5dab49df3fe0bab5ee99814e806a653e049bd802"
+        },
+        {
+          "pr": 112,
+          "base_ref": "task/subject-review/http-query",
+          "head_ref": "task/subject-review/http-privacy",
+          "base_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+          "reviewed_head_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+          "diff_sha256": "e07b01644c989405f233794ceabaff42dd4a167de87c3a7cf4170b539fa2285f"
+        },
+        {
+          "pr": 113,
+          "base_ref": "task/subject-review/http-privacy",
+          "head_ref": "task/subject-review/review-interface",
+          "base_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+          "reviewed_head_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+          "diff_sha256": "6394d3c8c476c20c8229ec6f16fac559f70971b67d72278038f4404e4f24606d"
+        },
+        {
+          "pr": 114,
+          "base_ref": "task/subject-review/review-interface",
+          "head_ref": "task/subject-review/review-browser",
+          "base_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+          "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+          "diff_sha256": "edaedc164a65a8cb30cf7b70e2c1b26dcc564421e8725a1fa3a65844c3d052ba"
+        }
+      ],
+      "combined": {
+        "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+        "reviewed_head_sha": "4b72f79901ded4425c0d14ddf2dbf3eff5394e77",
+        "diff_sha256": "f808636a2e8d3a1141a58ae23a1d1405d68b2c23d0c0b4fd4109cea07de9b33b"
+      },
+      "result": "SR-R2-SOL-001/002 corrigidos na combinação,nenhum novo achado;três diffs inferiores preservados."
+    },
+    {
+      "sequence": 2,
+      "prs": [
+        {
+          "pr": 111,
+          "base_ref": "epic/subject-review",
+          "head_ref": "task/subject-review/http-query",
+          "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+          "reviewed_head_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+          "diff_sha256": "976e9d1a74aac4de708dee1d5dab49df3fe0bab5ee99814e806a653e049bd802"
+        },
+        {
+          "pr": 112,
+          "base_ref": "task/subject-review/http-query",
+          "head_ref": "task/subject-review/http-privacy",
+          "base_sha": "79dc2c4167d7435c0e9b8facd2fd8cdc09c4d440",
+          "reviewed_head_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+          "diff_sha256": "e07b01644c989405f233794ceabaff42dd4a167de87c3a7cf4170b539fa2285f"
+        },
+        {
+          "pr": 113,
+          "base_ref": "task/subject-review/http-privacy",
+          "head_ref": "task/subject-review/review-interface",
+          "base_sha": "ebe169b8eeca4f28c3d9c2cad459eb38a9f09413",
+          "reviewed_head_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+          "diff_sha256": "6394d3c8c476c20c8229ec6f16fac559f70971b67d72278038f4404e4f24606d"
+        },
+        {
+          "pr": 114,
+          "base_ref": "task/subject-review/review-interface",
+          "head_ref": "task/subject-review/review-browser",
+          "base_sha": "d41a8cbefb025c38c88fa344649a46a502b07e59",
+          "reviewed_head_sha": "5fba4e60705a990baea129609242ce8f41abd4dd",
+          "diff_sha256": "2424850dbdc53c9c314f64597f1bf4422ece0675b101afd0a0fdb2acac31aff3"
+        }
+      ],
+      "combined": {
+        "base_sha": "a16b69acf3ffcb4f82eac87018fd1270fae4aea8",
+        "reviewed_head_sha": "5fba4e60705a990baea129609242ce8f41abd4dd",
+        "diff_sha256": "d533a60af8690448bdffea181abe12b5036c60c995df695464cee600cab76e04"
+      },
+      "result": "Nenhum novo achado;waitFor do mesmo título focado é apropriado. Produção idêntica a4b72f79,SR-R2-SOL-001/002 permanecem corrigidos na combinação."
+    }
   ]
 }

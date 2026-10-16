@@ -2,13 +2,13 @@
 
 **Proposta aprovada pelo usuário em 2026-10-15**, #87 integrado em `05b9cb9` na
 épica da spec; grupos 1 e 2 integrados por #88/#89/#90/#92/#93 em `6781e9c`.
-**23/24 tarefas implementadas/verificadas, 23/24 integradas/aprovadas**.
+**24/24 tarefas implementadas/verificadas, 23/24 integradas/aprovadas**.
 Grupos completos 3/4 integrados por #94/#95/#98/#97 na épica da spec em `542f9ac`,
 com revisão SOL 6.1 xhigh e CI aprovados. Conteúdo real aprovado somente na cópia local.
 Lote final autorizado pelo usuário: grupos completos 5 e 6. Grupo 5 e verificações
 6.1–6.3 integrados por #99/#100/#101 (stack #102), merge `4434f7a`, após revisão e
 revalidação SOL 6.1 xhigh e aprovação explícita dos três PRs. Branches preservadas.
-Revisão de lote e gate cumulativo permanecem atos separados. 6.4 em execução no
+Revisão de lote e gate cumulativo permanecem atos separados. 6.4 realizada no
 [SPEC] #103 para a épica geral, sem autorização de integração da spec presumida.
 Pré-requisito #84 em `0d0fc48`.
 
@@ -62,4 +62,9 @@ Implementação/verificação não significa revisão do lote nem integração d
 - [x] 6.1 Executar matriz de cenários desta spec, testes Java puro/ArchUnit/PG real/HTTP/browser e build frontend/backend; conferir requisito→código/teste, sem apresentar contagem como revisão semântica.
 - [x] 6.2 Ensaiar upgrade com banco V5/contas/sessões/tentativas/comandos antigos e rollback com geração desabilitada/leitor compatível, inclusive novas instâncias; documentar incompatibilidade do JAR anterior desde a primeira escrita no formato novo, mesmo fixa, sem apagar dados.
 - [x] 6.3 Verificar clone limpo/material/links/offline e operação editorial de ponta a ponta, registrando 111/111 validadas e decisões reais separadas de aprovação de código; manter pendências explícitas sem liberar versões não aprovadas.
-- [ ] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisões dos lotes; abrir/manter `[SPEC]` para épica geral e solicitar aprovação própria, sem main/deploy/arquivamento.
+- [x] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisões dos lotes; abrir/manter `[SPEC]` para épica geral e solicitar aprovação própria, sem main/deploy/arquivamento.
+
+Grupo 6: revisão cumulativa independente executada por SOL 6.1 xhigh no [SPEC] #103,
+sem achados verificáveis. Os metadados de conclusão também exigem revalidação do
+conjunto final. Evidências atuais em `spec-review.json/md`; aprovação de integração
+da spec na épica geral continua própria e pendente. Sem main/deploy/arquivamento.

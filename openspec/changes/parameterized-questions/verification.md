@@ -99,9 +99,19 @@ Observações de conexão/logs, screenshots e cotas ficam em diretórios ignorad
 Relatório de lote e gate terão SHAs/digests e modelos/sessões próprios. Cota/tokens
 não disponíveis não são consumo zero. Nada foi publicado em main ou implantado.
 
-## Gate pendente
+## Gate cumulativo e integração
 
-Após revisão do lote e autorização própria dos PRs de tarefas, integrar na épica da
-spec, abrir/manter `[SPEC]` para epic/application-reformulation e executar o gate
-cumulativo SOL 6.1 xhigh em contexto novo sobre base/head reais. Não reaproveitar
-revisões parciais como gate. A tarefa 6.4 permanece pendente até essa execução.
+PRs #99/#100/#101 aprovados individualmente e integrados atomicamente pela stack
+#102 em `4434f7a`. Árvore final e ancestralidade dos heads conferidas, branches
+preservadas; nenhum sync/prune pós-merge. `[SPEC]` #103 destina a spec à épica geral.
+
+Revisão cumulativa independente SOL 6.1 xhigh executada em contexto novo, somente
+leitura, sobre base `0d0fc48` e head `a8aa71e`, sem achados verificáveis. O revisor
+não executou testes/build/rede/DB nem leu este registro ou relatórios anteriores.
+Os metadados finais de conclusão exigem revalidação real; fontes/SHAs/digest,
+cobertura, limitações, triagem e resultado dessa revalidação ficam em
+`spec-review.json/md`. Check estrutural e análise semântica são evidências distintas.
+
+6.4 executada; integração da spec na épica geral aguarda relatório atual, checks
+verdes e aprovação própria do usuário. A regra active/strict da épica geral exige
+spec-review do app15368 e não tem bypass. Sem autorização de main/deploy/arquivamento.

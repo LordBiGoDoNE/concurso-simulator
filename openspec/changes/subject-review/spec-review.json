@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "status": "pending",
+  "spec": "subject-review",
+  "pr": null,
+  "base_sha": null,
+  "reviewed_head_sha": null,
+  "diff_sha256": null,
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": null,
+    "independent_context": false
+  },
+  "reviewed_at": null,
+  "coverage": {},
+  "limitations": ["Somente proposta; implementação e gate cumulativo não executados."],
+  "verification": [],
+  "findings": [],
+  "triage_complete": false
+}

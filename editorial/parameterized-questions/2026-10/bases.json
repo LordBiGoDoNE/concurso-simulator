@@ -70,8 +70,8 @@
     "status": "APPROVED",
     "eligible_revision_id": "632ee809-9a3b-4e97-8144-9539f6b951bb",
     "family": "DIRECT_PROPORTION",
-    "observedAt": "2026-10-15T21:23:15.966853+00:00",
-    "observation": "PostgreSQL local real; não certifica estado futuro nem aprovação do template."
+    "observedAt": "2026-10-15T23:59:32.886591+00:00",
+    "observation": "Cópia isolada do PostgreSQL local real; observação não concede aprovação ao template."
   },
   {
     "question_id": "db48c5ab-a883-4dbd-954c-2615d1624d3a",
@@ -144,7 +144,81 @@
     "status": "APPROVED",
     "eligible_revision_id": "f4cfd6d7-96a5-4268-b257-638f4d6ae494",
     "family": "PERCENTAGE",
-    "observedAt": "2026-10-15T21:23:16.813809+00:00",
-    "observation": "PostgreSQL local real; não certifica estado futuro nem aprovação do template."
+    "observedAt": "2026-10-15T23:59:32.886616+00:00",
+    "observation": "Cópia isolada do PostgreSQL local real; observação não concede aprovação ao template."
+  },
+  {
+    "question_id": "0a4e9bac-c340-4562-a906-aaa0a33c64c8",
+    "origin_key": "M04-Q05",
+    "revision_id": "80f32d25-9f88-4616-8ba0-8afafbeea9ab",
+    "fingerprint": "2d862a94c761041955772ac972a9f4dc9f2ce81fe8b6f2a12824450d592eb81e",
+    "payload": {
+      "statement": {
+        "text": "Um capital de R$ 2.000,00 é aplicado a juros simples de 3% ao mês durante 4 meses. Qual é o valor dos juros produzidos nesse período?",
+        "resources": []
+      },
+      "provenance": {
+        "author": "Material aprofundado do projeto [Gaby]",
+        "answerPath": "02_Matematica_Logica/Matemática 04 - Porcentagem e Juros Simples - Gabarito e Revisão.html",
+        "contentPath": "02_Matematica_Logica/Matemática 04 - Porcentagem e Juros Simples.html",
+        "answerSha256": "1017b4b07aba0047137519ca0512118d6ee20f445844fddd81d46d5e5766c48a",
+        "contentSha256": "30657317d1a6875ad8716cce8cd2fcde81338e4f5dc1ed03339cebbc13d03811"
+      },
+      "references": [
+        {
+          "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+          "name": "IMPA/OBMEP — Portal da Matemática, módulos",
+          "legalBasis": null
+        }
+      ],
+      "resolution": {
+        "text": "1. Calcule 1% do capital: 2.000 ÷ 100 = R$ 20,00. 2. Os juros mensais são 20 × 3 = R$ 60,00. 3. Nos quatro meses, os juros simples são 60 × 4 = R$ 240,00, alternativa D. O capital inicial continua sendo a base em todos os meses. R$ 60,00 correspondem a apenas um mês; R$ 2.060,00 somam o capital aos juros de um mês; R$ 2.240,00 são o montante dos quatro meses, não os juros pedidos.",
+        "resources": []
+      },
+      "alternatives": [
+        {
+          "id": "f431dac9-b0ad-5844-b575-aed99ef6ed34",
+          "content": {
+            "text": "R$ 60,00",
+            "resources": []
+          }
+        },
+        {
+          "id": "ceacdfe4-242e-5070-ae2f-ff5bcf08d5ab",
+          "content": {
+            "text": "R$ 2.060,00",
+            "resources": []
+          }
+        },
+        {
+          "id": "416ddf98-0fea-5a48-bfae-a24a9646f5d8",
+          "content": {
+            "text": "R$ 2.240,00",
+            "resources": []
+          }
+        },
+        {
+          "id": "29f7d336-3a77-57be-8e70-81f2240dad60",
+          "content": {
+            "text": "R$ 240,00",
+            "resources": []
+          }
+        }
+      ],
+      "classification": {
+        "roles": [
+          "ADMINISTRATIVE_ASSISTANT",
+          "SCHOOL_SECRETARY"
+        ],
+        "topic": "M04",
+        "discipline": "MATHEMATICS_LOGIC"
+      },
+      "correctAlternativeId": "29f7d336-3a77-57be-8e70-81f2240dad60"
+    },
+    "status": "DRAFT",
+    "eligible_revision_id": null,
+    "family": "SIMPLE_INTEREST",
+    "observedAt": "2026-10-15T23:59:32.886622+00:00",
+    "observation": "Cópia isolada do PostgreSQL local real; observação não concede aprovação ao template."
   }
 ]

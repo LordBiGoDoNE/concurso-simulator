@@ -8,6 +8,8 @@ Resultado do oráculo Python racional; conferir também linguagem, distratores, 
 
 Base: `2bb8c482-8107-47bc-beec-abcefc540caf` / revisão `632ee809-9a3b-4e97-8144-9539f6b951bb`.
 
+Estado observado da base: APPROVED; elegível.
+
 Definição: `814856a1723091fd5b1c19d4a60f043a2b932e302fb3203bd5a6d9858a82caf3`. Manifesto: `6814d912447caccc81fdd7ac8c188847083bb89ff6fe94818c51a769b20dba21`.
 
 ### 1. `DIRECT_PROPORTION:[a=2, b=6, u=2]`
@@ -782,6 +784,8 @@ Digest da saída: `9fe239f95b3c185163017ddd18da6e44805a970bc4a0811b1547bbab1da4c
 
 Base: `db48c5ab-a883-4dbd-954c-2615d1624d3a` / revisão `f4cfd6d7-96a5-4268-b257-638f4d6ae494`.
 
+Estado observado da base: APPROVED; elegível.
+
 Definição: `b6ab95874bee5d34a69312ddd6cd88598b21dd8f77419037fde5f3b0b0c0277a`. Manifesto: `9bba42ad7fb4364584cfc588b8cabbf7a504e36d3b16f6c58398ffc0ac4ca9bc`.
 
 ### 1. `PERCENTAGE:[p=5, v=100]`
@@ -1023,4 +1027,336 @@ Correta editorial: A. Oráculo: 1% = 8; 25% = 200 reais.
 1. 25% significa 25 em cada 100. 2. Calcule 800 × 25 ÷ 100 = 200. Resposta: R$ 200,00. A pergunta pede apenas a parte percentual, não o total após aumento ou o restante após desconto.
 
 Digest da saída: `d296df459210cb7d7978859f136f34364f2dda78bf85f7ab095d6f8829c9459c`.
+
+## SIMPLE_INTEREST — 27 variantes
+
+Base: `0a4e9bac-c340-4562-a906-aaa0a33c64c8` / revisão `80f32d25-9f88-4616-8ba0-8afafbeea9ab`.
+
+Estado observado da base: DRAFT; NÃO ELEGÍVEL, aprovação pendente.
+
+Definição: `1661c38884b4f71c61e943b83c6fd51c0a250b027dcf6488b324cb413803fb6c`. Manifesto: `0617b27c85219241fcf9d336be6b9a492671df15bfb246dfe58e5f1696eedc30`.
+
+### 1. `SIMPLE_INTEREST:[c=1000, i=1, t=2]`
+
+Um capital de R$ 1000,00 rende juros simples de 1% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 20,00 | B: R$ 1020,00 | C: R$ 10,00 | D: R$ 2000,00
+
+Correta editorial: A. Oráculo: juros mensais = 10; 2 meses = 20 reais; montante = 1020.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 1000 × 1 × 2 ÷ 100 = 20. Juros: R$ 20,00; o montante seria R$ 1020,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `cad74868547ce8442d4e6161ef8ced985d6822854ca7fdee1a613038d5ca514d`.
+
+### 2. `SIMPLE_INTEREST:[c=1000, i=1, t=3]`
+
+Um capital de R$ 1000,00 rende juros simples de 1% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 30,00 | B: R$ 1030,00 | C: R$ 10,00 | D: R$ 3000,00
+
+Correta editorial: A. Oráculo: juros mensais = 10; 3 meses = 30 reais; montante = 1030.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 1000 × 1 × 3 ÷ 100 = 30. Juros: R$ 30,00; o montante seria R$ 1030,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `00db1f02ca73bdc0663a07d2338b41769374ea92e8de283905e872eed0f7a42f`.
+
+### 3. `SIMPLE_INTEREST:[c=1000, i=1, t=6]`
+
+Um capital de R$ 1000,00 rende juros simples de 1% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 60,00 | B: R$ 1060,00 | C: R$ 10,00 | D: R$ 6000,00
+
+Correta editorial: A. Oráculo: juros mensais = 10; 6 meses = 60 reais; montante = 1060.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 1000 × 1 × 6 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 1060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `7f24390af397c0832f7ea9fe31d26bc7cdba4557ce65e553d00a764b27f4e8bf`.
+
+### 4. `SIMPLE_INTEREST:[c=1000, i=2, t=2]`
+
+Um capital de R$ 1000,00 rende juros simples de 2% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 40,00 | B: R$ 1040,00 | C: R$ 20,00 | D: R$ 4000,00
+
+Correta editorial: A. Oráculo: juros mensais = 20; 2 meses = 40 reais; montante = 1040.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 1000 × 2 × 2 ÷ 100 = 40. Juros: R$ 40,00; o montante seria R$ 1040,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `d9a9428846393442168223edabb88b19ac9c3b85f234babb08e4364d9bb421ad`.
+
+### 5. `SIMPLE_INTEREST:[c=1000, i=2, t=3]`
+
+Um capital de R$ 1000,00 rende juros simples de 2% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 60,00 | B: R$ 1060,00 | C: R$ 20,00 | D: R$ 6000,00
+
+Correta editorial: A. Oráculo: juros mensais = 20; 3 meses = 60 reais; montante = 1060.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 1000 × 2 × 3 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 1060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `0d4af3f4abed586933fbcea56d1422bc5ce3a01e27d89fbdaabe143f57371c5d`.
+
+### 6. `SIMPLE_INTEREST:[c=1000, i=2, t=6]`
+
+Um capital de R$ 1000,00 rende juros simples de 2% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 120,00 | B: R$ 1120,00 | C: R$ 20,00 | D: R$ 12000,00
+
+Correta editorial: A. Oráculo: juros mensais = 20; 6 meses = 120 reais; montante = 1120.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 1000 × 2 × 6 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 1120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `7e451258caac1dfb8622eaa47f18789be971c78bcc7d9c8e16c5ce9c397fd85a`.
+
+### 7. `SIMPLE_INTEREST:[c=1000, i=3, t=2]`
+
+Um capital de R$ 1000,00 rende juros simples de 3% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 60,00 | B: R$ 1060,00 | C: R$ 30,00 | D: R$ 6000,00
+
+Correta editorial: A. Oráculo: juros mensais = 30; 2 meses = 60 reais; montante = 1060.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 1000 × 3 × 2 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 1060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `81c20ebc7f91949f815087acd721bc70ad974c5f712d005cbc53fbcb0eaf7abd`.
+
+### 8. `SIMPLE_INTEREST:[c=1000, i=3, t=3]`
+
+Um capital de R$ 1000,00 rende juros simples de 3% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 90,00 | B: R$ 1090,00 | C: R$ 30,00 | D: R$ 9000,00
+
+Correta editorial: A. Oráculo: juros mensais = 30; 3 meses = 90 reais; montante = 1090.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 1000 × 3 × 3 ÷ 100 = 90. Juros: R$ 90,00; o montante seria R$ 1090,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `935632a0a52b9cc8e562d4cf72305776c09c76eda308a4ea8bc8751f0ed4125d`.
+
+### 9. `SIMPLE_INTEREST:[c=1000, i=3, t=6]`
+
+Um capital de R$ 1000,00 rende juros simples de 3% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 180,00 | B: R$ 1180,00 | C: R$ 30,00 | D: R$ 18000,00
+
+Correta editorial: A. Oráculo: juros mensais = 30; 6 meses = 180 reais; montante = 1180.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 1000 × 3 × 6 ÷ 100 = 180. Juros: R$ 180,00; o montante seria R$ 1180,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `abac8a847d5d73bf6847fce5ca723a748910d6c62218e0dbd5dbde0623506e52`.
+
+### 10. `SIMPLE_INTEREST:[c=2000, i=1, t=2]`
+
+Um capital de R$ 2000,00 rende juros simples de 1% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 40,00 | B: R$ 2040,00 | C: R$ 20,00 | D: R$ 4000,00
+
+Correta editorial: A. Oráculo: juros mensais = 20; 2 meses = 40 reais; montante = 2040.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 2000 × 1 × 2 ÷ 100 = 40. Juros: R$ 40,00; o montante seria R$ 2040,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `d5cb7f78d1942503a5a32bb48bbf831e79e9b375c8bdded4d518f8c44b2de78a`.
+
+### 11. `SIMPLE_INTEREST:[c=2000, i=1, t=3]`
+
+Um capital de R$ 2000,00 rende juros simples de 1% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 60,00 | B: R$ 2060,00 | C: R$ 20,00 | D: R$ 6000,00
+
+Correta editorial: A. Oráculo: juros mensais = 20; 3 meses = 60 reais; montante = 2060.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 2000 × 1 × 3 ÷ 100 = 60. Juros: R$ 60,00; o montante seria R$ 2060,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `84b4f7f1737d818e95de4753045cbb0e2ca56762d56633b39fdc5536f38d22f8`.
+
+### 12. `SIMPLE_INTEREST:[c=2000, i=1, t=6]`
+
+Um capital de R$ 2000,00 rende juros simples de 1% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 120,00 | B: R$ 2120,00 | C: R$ 20,00 | D: R$ 12000,00
+
+Correta editorial: A. Oráculo: juros mensais = 20; 6 meses = 120 reais; montante = 2120.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 2000 × 1 × 6 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 2120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `6f01a5c8caf753130123af93df948541b25cec5a719b5ca0415a636772219c2b`.
+
+### 13. `SIMPLE_INTEREST:[c=2000, i=2, t=2]`
+
+Um capital de R$ 2000,00 rende juros simples de 2% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 80,00 | B: R$ 2080,00 | C: R$ 40,00 | D: R$ 8000,00
+
+Correta editorial: A. Oráculo: juros mensais = 40; 2 meses = 80 reais; montante = 2080.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 2000 × 2 × 2 ÷ 100 = 80. Juros: R$ 80,00; o montante seria R$ 2080,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `e856dbc7417b561f4b2d7d756ac0137c35791b66387a1c8e0410f40cf1d1b194`.
+
+### 14. `SIMPLE_INTEREST:[c=2000, i=2, t=3]`
+
+Um capital de R$ 2000,00 rende juros simples de 2% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 120,00 | B: R$ 2120,00 | C: R$ 40,00 | D: R$ 12000,00
+
+Correta editorial: A. Oráculo: juros mensais = 40; 3 meses = 120 reais; montante = 2120.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 2000 × 2 × 3 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 2120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `614267ea62eb322798d6428a441374a542e999160d570e0ac143a46eaca08a08`.
+
+### 15. `SIMPLE_INTEREST:[c=2000, i=2, t=6]`
+
+Um capital de R$ 2000,00 rende juros simples de 2% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 240,00 | B: R$ 2240,00 | C: R$ 40,00 | D: R$ 24000,00
+
+Correta editorial: A. Oráculo: juros mensais = 40; 6 meses = 240 reais; montante = 2240.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 2000 × 2 × 6 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 2240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `ad2c5c5fbc0c42d6a23aca3a98098525a8fe305a07c0c65d034fe93431762baa`.
+
+### 16. `SIMPLE_INTEREST:[c=2000, i=3, t=2]`
+
+Um capital de R$ 2000,00 rende juros simples de 3% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 120,00 | B: R$ 2120,00 | C: R$ 60,00 | D: R$ 12000,00
+
+Correta editorial: A. Oráculo: juros mensais = 60; 2 meses = 120 reais; montante = 2120.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 2000 × 3 × 2 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 2120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `5f3947c38e7231fd62d55d16f4ba68975ac588a84e902cb23d5251325d219299`.
+
+### 17. `SIMPLE_INTEREST:[c=2000, i=3, t=3]`
+
+Um capital de R$ 2000,00 rende juros simples de 3% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 180,00 | B: R$ 2180,00 | C: R$ 60,00 | D: R$ 18000,00
+
+Correta editorial: A. Oráculo: juros mensais = 60; 3 meses = 180 reais; montante = 2180.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 2000 × 3 × 3 ÷ 100 = 180. Juros: R$ 180,00; o montante seria R$ 2180,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `d4be3e2480c327611a62c44d55883940bb690facc9ad0cbdada175724b2c7b6d`.
+
+### 18. `SIMPLE_INTEREST:[c=2000, i=3, t=6]`
+
+Um capital de R$ 2000,00 rende juros simples de 3% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 360,00 | B: R$ 2360,00 | C: R$ 60,00 | D: R$ 36000,00
+
+Correta editorial: A. Oráculo: juros mensais = 60; 6 meses = 360 reais; montante = 2360.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 2000 × 3 × 6 ÷ 100 = 360. Juros: R$ 360,00; o montante seria R$ 2360,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `97c42c9e423f2082f440dd2c1808793003fa42ed2e834f3a60881a47fea2f308`.
+
+### 19. `SIMPLE_INTEREST:[c=4000, i=1, t=2]`
+
+Um capital de R$ 4000,00 rende juros simples de 1% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 80,00 | B: R$ 4080,00 | C: R$ 40,00 | D: R$ 8000,00
+
+Correta editorial: A. Oráculo: juros mensais = 40; 2 meses = 80 reais; montante = 4080.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 4000 × 1 × 2 ÷ 100 = 80. Juros: R$ 80,00; o montante seria R$ 4080,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `e191b072a9538fc804634816af5dad6a3282e96d8da2e1a3d532d6f035b5f071`.
+
+### 20. `SIMPLE_INTEREST:[c=4000, i=1, t=3]`
+
+Um capital de R$ 4000,00 rende juros simples de 1% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 120,00 | B: R$ 4120,00 | C: R$ 40,00 | D: R$ 12000,00
+
+Correta editorial: A. Oráculo: juros mensais = 40; 3 meses = 120 reais; montante = 4120.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 4000 × 1 × 3 ÷ 100 = 120. Juros: R$ 120,00; o montante seria R$ 4120,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `93b1ba1eec5f2b94d7404f520571181979e65ac7357dfd3e0a0134cfdd034e26`.
+
+### 21. `SIMPLE_INTEREST:[c=4000, i=1, t=6]`
+
+Um capital de R$ 4000,00 rende juros simples de 1% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 240,00 | B: R$ 4240,00 | C: R$ 40,00 | D: R$ 24000,00
+
+Correta editorial: A. Oráculo: juros mensais = 40; 6 meses = 240 reais; montante = 4240.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 1% = 1/100. 3. Use o prazo em meses: 4000 × 1 × 6 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 4240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `4f4c0a3d81ab7061675d879c8674c219625af64a2b2c69dbb7857ffaae726717`.
+
+### 22. `SIMPLE_INTEREST:[c=4000, i=2, t=2]`
+
+Um capital de R$ 4000,00 rende juros simples de 2% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 160,00 | B: R$ 4160,00 | C: R$ 80,00 | D: R$ 16000,00
+
+Correta editorial: A. Oráculo: juros mensais = 80; 2 meses = 160 reais; montante = 4160.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 4000 × 2 × 2 ÷ 100 = 160. Juros: R$ 160,00; o montante seria R$ 4160,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `8651ec0a7316f8d72417d0c21e561f512c36ed29bfee7429b1f0694a495f8e8b`.
+
+### 23. `SIMPLE_INTEREST:[c=4000, i=2, t=3]`
+
+Um capital de R$ 4000,00 rende juros simples de 2% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 240,00 | B: R$ 4240,00 | C: R$ 80,00 | D: R$ 24000,00
+
+Correta editorial: A. Oráculo: juros mensais = 80; 3 meses = 240 reais; montante = 4240.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 4000 × 2 × 3 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 4240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `4e1c16675258d92e0cc71ee4c01c1f3eb08385c975a23936e357143b4c93e36a`.
+
+### 24. `SIMPLE_INTEREST:[c=4000, i=2, t=6]`
+
+Um capital de R$ 4000,00 rende juros simples de 2% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 480,00 | B: R$ 4480,00 | C: R$ 80,00 | D: R$ 48000,00
+
+Correta editorial: A. Oráculo: juros mensais = 80; 6 meses = 480 reais; montante = 4480.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 2% = 2/100. 3. Use o prazo em meses: 4000 × 2 × 6 ÷ 100 = 480. Juros: R$ 480,00; o montante seria R$ 4480,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `3f6b6ea604b79022691d85a53b65caaaede45437b9d265f2d699299a0786f95a`.
+
+### 25. `SIMPLE_INTEREST:[c=4000, i=3, t=2]`
+
+Um capital de R$ 4000,00 rende juros simples de 3% ao mês por 2 meses. Qual é o valor dos juros?
+
+A: R$ 240,00 | B: R$ 4240,00 | C: R$ 120,00 | D: R$ 24000,00
+
+Correta editorial: A. Oráculo: juros mensais = 120; 2 meses = 240 reais; montante = 4240.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 4000 × 3 × 2 ÷ 100 = 240. Juros: R$ 240,00; o montante seria R$ 4240,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `6288b7f80da209f1b243ff05a734219deec709e7acffe23104e5329844cabd51`.
+
+### 26. `SIMPLE_INTEREST:[c=4000, i=3, t=3]`
+
+Um capital de R$ 4000,00 rende juros simples de 3% ao mês por 3 meses. Qual é o valor dos juros?
+
+A: R$ 360,00 | B: R$ 4360,00 | C: R$ 120,00 | D: R$ 36000,00
+
+Correta editorial: A. Oráculo: juros mensais = 120; 3 meses = 360 reais; montante = 4360.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 4000 × 3 × 3 ÷ 100 = 360. Juros: R$ 360,00; o montante seria R$ 4360,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `2a5ed043f80bb1a31abd1de4169382ad6833e46db6d5c503f02def4dd5ec1800`.
+
+### 27. `SIMPLE_INTEREST:[c=4000, i=3, t=6]`
+
+Um capital de R$ 4000,00 rende juros simples de 3% ao mês por 6 meses. Qual é o valor dos juros?
+
+A: R$ 720,00 | B: R$ 4720,00 | C: R$ 120,00 | D: R$ 72000,00
+
+Correta editorial: A. Oráculo: juros mensais = 120; 6 meses = 720 reais; montante = 4720.
+
+1. Em juros simples, J = capital × taxa × tempo. 2. Converta a taxa mensal: 3% = 3/100. 3. Use o prazo em meses: 4000 × 3 × 6 ÷ 100 = 720. Juros: R$ 720,00; o montante seria R$ 4720,00 e não é o que foi pedido. A taxa não incide sobre juros acumulados.
+
+Digest da saída: `a73ded86a5e680a79ffb41a01990c3d8231282a21bbef902a1ebb761699610ac`.
 

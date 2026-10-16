@@ -1,14 +1,17 @@
 {
   "format": "parameter-editorial-audit/v1",
   "expected": 111,
-  "validated": 84,
+  "validated": 111,
   "families": {
     "DIRECT_PROPORTION": 64,
-    "PERCENTAGE": 20
+    "PERCENTAGE": 20,
+    "SIMPLE_INTEREST": 27
   },
-  "missingFamilies": [
+  "missingFamilies": [],
+  "editorialApproval": "PENDING",
+  "pendingBaseFamilies": [
     "SIMPLE_INTEREST"
   ],
-  "editorialApproval": "PENDING",
+  "allBasesEligible": false,
   "scope": "Oráculo aritmético/tuplas/digests/unidades; não certifica revisão humana ou elegibilidade futura."
 }

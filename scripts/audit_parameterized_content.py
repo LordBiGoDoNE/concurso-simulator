@@ -76,11 +76,11 @@ def audit_variant(variant):
     return calculation
 
 
-def audit(directory, allow_partial=False):
+def audit(directory, allow_partial=False, allow_pending_bases=False):
     directory = Path(directory); root = Path(__file__).resolve().parents[1]
     files = sorted(directory.glob('*-preview.json'))
     bases = json.loads((directory / 'bases.json').read_text(encoding='utf-8'))
-    seen_bases = set()
+    seen_bases = set(); pending_bases = []
     families = {}; report = ['# Prévia editorial de variantes', '',
         '**Aprovação editorial PENDENTE. Este relatório não libera templates.**', '',
         'Resultado do oráculo Python racional; conferir também linguagem, distratores, fontes e acessibilidade.', '']
@@ -95,10 +95,15 @@ def audit(directory, allow_partial=False):
                 and same_classification(input_classification, preview_classification) and definition['expectedLatest'] == 0,
                 'Arquivo de definição divergente')
         base = next((b for b in bases if b['family'] == family), None)
-        require(base is not None and base['status'] == 'APPROVED' and base['question_id'] not in seen_bases
-                and base['question_id'] == d['baseQuestionId'] and base['revision_id'] == base['eligible_revision_id'] == d['baseRevisionId']
+        require(base is not None and base['question_id'] not in seen_bases
+                and base['question_id'] == d['baseQuestionId'] and base['revision_id'] == d['baseRevisionId']
                 and base['fingerprint'] == d['baseFingerprint'] and same_classification(base['payload']['classification'], d['classification']),
                 'Observação de base incompatível; não inventar elegibilidade')
+        eligible = base['status'] == 'APPROVED' and base['eligible_revision_id'] == base['revision_id']
+        if not eligible:
+            require(allow_pending_bases and base['status'] in ['DRAFT', 'IN_REVIEW'] and base['eligible_revision_id'] is None,
+                    'Base pendente de aprovação editorial: ' + family)
+            pending_bases.append(family)
         seen_bases.add(base['question_id'])
         for path_key, hash_key in [('contentPath', 'contentSha256'), ('answerPath', 'answerSha256')]:
             source = (root / d['provenance'][path_key]).resolve()
@@ -114,6 +119,7 @@ def audit(directory, allow_partial=False):
         fields = ['parameter-manifest/v1', preview['definitionDigest'], dd, 'numeric-v1', str(len(domain))]
         report += [f'## {family} — {len(domain)} variantes', '',
                    f"Base: `{d['baseQuestionId']}` / revisão `{d['baseRevisionId']}`.", '',
+                   'Estado observado da base: ' + base['status'] + ('; elegível.' if eligible else '; NÃO ELEGÍVEL, aprovação pendente.'), '',
                    f"Definição: `{preview['definitionDigest']}`. Manifesto: `{preview['manifestDigest']}`.", '']
         for number, (p, v, entry) in enumerate(zip(domain, variants, manifest['entries']), 1):
             require(v['definition'] == d and v['parameters'] == entry['parameters']
@@ -133,6 +139,7 @@ def audit(directory, allow_partial=False):
     require(allow_partial or not missing, 'Famílias pendentes: ' + ', '.join(missing))
     summary = {'format': 'parameter-editorial-audit/v1', 'expected': 111, 'validated': sum(families.values()),
                'families': families, 'missingFamilies': missing, 'editorialApproval': 'PENDING',
+               'pendingBaseFamilies': sorted(pending_bases), 'allBasesEligible': not pending_bases,
                'scope': 'Oráculo aritmético/tuplas/digests/unidades; não certifica revisão humana ou elegibilidade futura.'}
     return summary, '\n'.join(report) + '\n'
 
@@ -141,7 +148,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--directory', required=True); parser.add_argument('--output', required=True)
     parser.add_argument('--allow-partial', action='store_true', help='Registre lacuna explicitamente, sem declarar 111/111')
-    args = parser.parse_args(); summary, report = audit(args.directory, args.allow_partial)
+    parser.add_argument('--allow-pending-bases', action='store_true', help='Somente preparação: identifique bases não elegíveis, sem aprová-las')
+    args = parser.parse_args(); summary, report = audit(args.directory, args.allow_partial, args.allow_pending_bases)
     out = Path(args.output); out.mkdir(parents=True, exist_ok=True)
     (out / 'variants.md').write_text(report, encoding='utf-8', newline='\n')
     (out / 'audit.json').write_text(json.dumps(summary, ensure_ascii=False, indent=2) + '\n', encoding='utf-8', newline='\n')

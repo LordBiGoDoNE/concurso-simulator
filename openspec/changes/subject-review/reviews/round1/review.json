@@ -1,0 +1,343 @@
+{
+  "version": 1,
+  "status": "completed",
+  "scope": "implementation-batch-groups-1-2-only",
+  "spec": "subject-review",
+  "risk": "critical",
+  "risk_reason": "Persistência, schema V10, transações, concorrência, posse e integridade de snapshots/capturas.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/subject_round1_sol",
+    "independent_context": true,
+    "selection_evidence": "Modelo gpt-6.1-sol disponível no harness; spawn_agent fork_turns=none, model=gpt-6.1-sol, reasoning_effort=xhigh aceito sem erro/fallback. Perfil versionado coincide. Nenhum ID adicional do provedor exposto."
+  },
+  "reviewed_at": "2026-10-16T15:52:19.295812+00:00",
+  "recorded_at": "2026-10-16T15:54:01.883180+00:00",
+  "prs": [
+    {
+      "pr": 106,
+      "base_ref": "epic/subject-review",
+      "head_ref": "task/subject-review/domain",
+      "base_sha": "0bd66526eb93fd8bc51efbea50da4eba4061df09",
+      "reviewed_head_sha": "3c5e366c72b817e14a92e0af15596849c7da5d84",
+      "diff_sha256": "94af173bed3a0f7abf675caef0a58e859c317826860378d9d7703a7e36ddb105"
+    },
+    {
+      "pr": 107,
+      "base_ref": "task/subject-review/domain",
+      "head_ref": "task/subject-review/use-cases",
+      "base_sha": "3c5e366c72b817e14a92e0af15596849c7da5d84",
+      "reviewed_head_sha": "906d54a17bb583faca980be65c5c2b2f2d06091b",
+      "diff_sha256": "c5e41b08620546dae75a1fc6ad007b4ce8b68eb54e0bb6b9a5a064d5fe319ab4"
+    },
+    {
+      "pr": 108,
+      "base_ref": "task/subject-review/use-cases",
+      "head_ref": "task/subject-review/postgres-evidence",
+      "base_sha": "906d54a17bb583faca980be65c5c2b2f2d06091b",
+      "reviewed_head_sha": "8944e3e959d842b6911be88521b7623ef02267c7",
+      "diff_sha256": "44ee6a7737fd7a7ac5217b774dff11d13a07e908d9afebe2056c8344a0be31e4"
+    },
+    {
+      "pr": 109,
+      "base_ref": "task/subject-review/postgres-evidence",
+      "head_ref": "task/subject-review/read-consistency",
+      "base_sha": "8944e3e959d842b6911be88521b7623ef02267c7",
+      "reviewed_head_sha": "d7e056f680b9f04cc0d790541e670aa084b250ab",
+      "diff_sha256": "f5f6f55e9e7fcb6619d4080448c233d969802de95f67a3115de05ca1a19152c2"
+    }
+  ],
+  "combined": {
+    "base_sha": "0bd66526eb93fd8bc51efbea50da4eba4061df09",
+    "reviewed_head_sha": "d7e056f680b9f04cc0d790541e670aa084b250ab",
+    "diff_sha256": "1cdbfbb3a7f325e7f5409eb8b361497d12ba34654127a4019d894b118de0b094"
+  },
+  "digest_scope": "Snapshots canônicos no source head; exclusivamente spec-review.json/md excluídos. Os dois registros reviews/round1 são posteriores e não constam no digest analisado.",
+  "initial": {
+    "result": "Nenhum achado confirmado: zero bloqueadores, recomendados ou opcionais."
+  },
+  "revalidation": null,
+  "coverage": {
+    "requirements": "Quatro diffs e combinação; 25 arquivos permitidos lidos. 51 assuntos, última base antes do agrupamento, classificação histórica, exposições, HALF_UP, amostra mínima e fração exata; UUID unsigned compatível com PostgreSQL.",
+    "architecture": "Núcleo Java puro, desfecho no agregado Attempt, contrato CompletedAttemptReader consumido diretamente e wiring/transação na infraestrutura; sem dependência reversa ou camada artificial.",
+    "integration": "Projeção comum para painel/individual e leitor compartilhado por JpaAttemptStore; codecs V5/formato 2, cabeçalhos, itens, posições, identidade e captura conferidos.",
+    "security": "Painel só conta; individual por ator/vigência e regras do agregado. Projeção mínima sem conteúdo corretivo/params/digests; owner interno não é contrato público.",
+    "persistence": "REQUIRES_NEW, REPEATABLE_READ, read-only/timeout; filtros antes do limite, 101 cabeçalhos/100 payloads/10.000 itens; consultas em lote e índice parcial V10 aditivo.",
+    "concurrency": "Inspeção de teste de conclusão concorrente após cabeçalhos, SHOW de isolamento/read-only, ordem PostgreSQL e snapshot coerente.",
+    "compatibility": "Fixture V5 real, capturas fixas/geradas, retirada/reclassificação, geração desligada, fábrica JPA e contextos Spring reabertos; nenhuma regravação ou progresso derivado.",
+    "maintenance": "Documentação da política/limites, distinção entre implementação e integração e reutilização dos critérios de restauração. Grupos futuros não exigidos antecipadamente.",
+    "tests": "Inspeção de testes puros/portas/ArchUnit/PG/índice/volume/adulteração/compatibilidade; revisor não executou testes."
+  },
+  "findings": [],
+  "triage_complete": true,
+  "verification": [
+    {
+      "command": "gradlew --offline build, Windows",
+      "result": "Sucesso em 2m54; 233 casos, 232 executados sem falhas/erros, um symlink omitido por permissão. Expectativas de migração atualizadas de V9 para V10 sem relaxar assertions de dados/JPA.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Application checks Linux, source d7e056f, run38926586822/job117059565965",
+      "result": "233 PASSED, zero SKIPPED/falhas; BUILD SUCCESSFUL in 2m59.",
+      "executed_by": "github-actions-verified-by-coordinator"
+    },
+    {
+      "command": "Testes direcionados domínio/UseCases/ArchUnit e PostgreSQL 18.6 isolado",
+      "result": "Passaram políticas, 100×100/quatro SELECTs sem escrita, cabeçalho 101, integridade, concorrência, V5/formato 2, índice, retirada/reclassificação, geração desligada e contextos reiniciados.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "OpenSpec1.14.1 offline validate --all --strict e git diff --check",
+      "result": "6/6 changes válidas e whitespace limpo.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Recalcular diretamente bytes dos quatro diffs e combinação com argumentos canônicos de snapshot",
+      "result": "Todos os cinco digests e commits confirmados. Nenhum script do projeto executado pelo revisor.",
+      "executed_by": "reviewer"
+    },
+    {
+      "command": "Frontend PR108 run38926581220 tentativa2/job117062648674, mesmo source8944e3e",
+      "result": "Reexecução específica do job falho passou em npm test/build/e2e; falha anterior de foco no teste de paginação preservada como intermitência, sem mudança/skip/relaxamento. Todos os checks dos quatro heads de fonte passaram.",
+      "executed_by": "github-actions-verified-by-coordinator"
+    }
+  ],
+  "limitations": [
+    "Revisão parcial dos grupos completos 1/2, não gate cumulativo final nem aprovação de merge. Grupos 3–6 fora do lote.",
+    "Revisor leu somente código/testes/requisitos/docs permitidos; não leu semanticamente spec-review.json/md, verification.md ou relatórios históricos. verification.md integra o digest criptográfico.",
+    "Revisor não executou testes/build/aplicação/scripts do projeto/rede/DB/escritas/delegação nem conferiu CI/regras/plano bruto; resultados de execução abaixo são do coordenador/CI.",
+    "Restart demonstrado por contextos Spring/fábrica JPA no mesmo JVM, não por processos/JAR separados; não se iniciou JAR V5 após formato 2.",
+    "Não há ensaio específico de limpeza concorrente de visitante no novo leitor; vigência/visão transacional inspecionadas sem defeito concreto identificado.",
+    "Volume sintético/planos locais não provam latência no banco operacional. Nenhum banco editorial aprovado do operador foi usado.",
+    "Contexto novo reduz viés sem garantir ausência de viés. Sem Graphify ou comparação com outro modelo.",
+    "Cota, tokens e observações operacionais privadas não são publicados nestes relatórios/issues/PRs; indisponibilidade não é consumo zero.",
+    "Os dois registros reviews/round1 são posteriores ao source head revisado e não se declaram incluídos no digest. Nenhuma mudança de código/requisito acompanha o registro.",
+    "Uma execução anterior de frontend #108 falhou no foco assíncrono de paginação; outra já passava no mesmo source, e a tentativa2 do job falho passou. A causa temporal é hipótese, não defeito corrigido; intermitência permanece como limite de teste existente."
+  ],
+  "source_head_checks": [
+    {
+      "pr": 106,
+      "head_sha": "3c5e366c72b817e14a92e0af15596849c7da5d84",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926568039/job/117059500959"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550945/job/117059442717"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926568056/job/117059500535"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926733576/job/117060078894"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926568039/job/117059501091"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550945/job/117059442279"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926568039/job/117059500918"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550945/job/117059442481"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926568039/job/117059500591"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550945/job/117059442596"
+        }
+      ]
+    },
+    {
+      "pr": 107,
+      "head_sha": "906d54a17bb583faca980be65c5c2b2f2d06091b",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926576276/job/117059532643"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550817/job/117059442134"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926576190/job/117059532102"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926739501/job/117060097749"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926576276/job/117059532782"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550817/job/117059441749"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926576276/job/117059532062"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550817/job/117059442255"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926576276/job/117059532449"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550817/job/117059441523"
+        }
+      ]
+    },
+    {
+      "pr": 108,
+      "head_sha": "8944e3e959d842b6911be88521b7623ef02267c7",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926581220/job/117062651352"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926552005/job/117059446961"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926581233/job/117059549333"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926742004/job/117060105547"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926581220/job/117062648674"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926552005/job/117059446599"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926581220/job/117062714394"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926552005/job/117059447419"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926581220/job/117062650411"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926552005/job/117059446854"
+        }
+      ]
+    },
+    {
+      "pr": 109,
+      "head_sha": "d7e056f680b9f04cc0d790541e670aa084b250ab",
+      "checks": [
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926586822/job/117059565965"
+        },
+        {
+          "name": "backend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550728/job/117059442004"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926586830/job/117059567130"
+        },
+        {
+          "name": "spec-review-tests",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926747985/job/117060126704"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926586822/job/117059565687"
+        },
+        {
+          "name": "frontend",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550728/job/117059441807"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926586822/job/117059565314"
+        },
+        {
+          "name": "study-material",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550728/job/117059441670"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926586822/job/117059565810"
+        },
+        {
+          "name": "identity-browser",
+          "conclusion": "SUCCESS",
+          "url": "https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/38926550728/job/117059441571"
+        }
+      ]
+    }
+  ]
+}

@@ -1,24 +1,27 @@
 # Tasks
 
-Issue #104. **Proposta não aprovada. 0/24 tarefas implementadas/verificadas, 0/24 integradas.**
+Issue #104. **Proposta aprovada, #105 integrado em `0bd6652`.**
+Grupos completos 1 e 2 autorizados; implementação em andamento, sem merge de produto.
+8/24 tarefas implementadas/verificadas, 0/24 integradas/aprovadas nas tarefas de produto.
 Decisão de granularidade: 51 assuntos existentes, escolhida pelo usuário em 2026-10-16.
-Primeiro lote ainda não escolhido; aprovação desta proposta não inicia implementação.
+Primeiro lote escolhido pelo usuário em 2026-10-16: grupos completos 1 e 2.
+Grupos 3–6 ficam fora deste lote; tarefa verificada não significa revisão/merge aprovado.
 Cada grupo escolhido inclui todas as suas subtarefas, código/testes/documentação,
 revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma spec.
 
 ## 1. Domínio, políticas e UseCases
 
-- [ ] 1.1 Modelar evidência concluída e janela por conta/cargo, identidade-base e classificação capturada; testar V5/fixa/gerada, ordenação e deduplicação antes do agrupamento; documentar política subject-review/v1.
-- [ ] 1.2 Implementar métricas por assunto e revisão individual com Java puro; testar 51 assuntos, zero/null, brancos, arredondamento e exposições independentes do denominador; documentar amostra e limitação.
-- [ ] 1.3 Implementar prioridade com mínimo de três bases/fração exata/desempates; testar poucos dados, todos certos, empate e erros+brancos; documentar heurística sem selo de domínio.
-- [ ] 1.4 Implementar UseCases/portas de painel e revisão individual; testar isolamento de cargo/conta, conclusão/posse/expiração e falhas sem falso vazio com portas substituíveis; documentar dependências.
+- [x] 1.1 Modelar evidência concluída e janela por conta/cargo, identidade-base e classificação capturada; testar V5/fixa/gerada, ordenação e deduplicação antes do agrupamento; documentar política subject-review/v1.
+- [x] 1.2 Implementar métricas por assunto e revisão individual com Java puro; testar 51 assuntos, zero/null, brancos, arredondamento e exposições independentes do denominador; documentar amostra e limitação.
+- [x] 1.3 Implementar prioridade com mínimo de três bases/fração exata/desempates; testar poucos dados, todos certos, empate e erros+brancos; documentar heurística sem selo de domínio.
+- [x] 1.4 Implementar UseCases/portas de painel e revisão individual; testar isolamento de cargo/conta, conclusão/posse/expiração e falhas sem falso vazio com portas substituíveis; documentar dependências.
 
 ## 2. Leitura PostgreSQL e compatibilidade — depende de 1
 
-- [ ] 2.1 Oferecer evidência concluída pelo contrato de aplicação de mockexam com adaptador JPA, filtro antes de limite 100 e cabeçalho 101/hasOlder; testar mais de 100, cargos, empate e planos de consulta; documentar portabilidade/limites.
-- [ ] 2.2 Ler e validar snapshots/itens/instâncias em lote reutilizando codecs e invariantes; testar 100×100 itens, número limitado de consultas, adulteração e ausência de N+1; documentar fail-closed.
-- [ ] 2.3 Verificar isolamento/concorrência e necessidade de índice por plano; se justificado adicionar índice via Flyway após V9 e testar upgrade sem reescrita; registrar decisão e rollback compatível, sem nova tabela de progresso.
-- [ ] 2.4 Demonstrar V5/formato 2/retirada/reclassificação/geração desligada/restart, sem escrita/leak de dados; testar JSONs/hashes e contagens antes/depois; documentar evidências de leitura.
+- [x] 2.1 Oferecer evidência concluída pelo contrato de aplicação de mockexam com adaptador JPA, filtro antes de limite 100 e cabeçalho 101/hasOlder; testar mais de 100, cargos, empate e planos de consulta; documentar portabilidade/limites.
+- [x] 2.2 Ler e validar snapshots/itens/instâncias em lote reutilizando codecs e invariantes; testar 100×100 itens, número limitado de consultas, adulteração e ausência de N+1; documentar fail-closed.
+- [x] 2.3 Verificar isolamento/concorrência e necessidade de índice por plano; se justificado adicionar índice via Flyway após V9 e testar upgrade sem reescrita; registrar decisão e rollback compatível, sem nova tabela de progresso.
+- [x] 2.4 Demonstrar V5/formato 2/retirada/reclassificação/geração desligada/restart, sem escrita/leak de dados; testar JSONs/hashes e contagens antes/depois; documentar evidências de leitura.
 
 ## 3. HTTP, contratos e privacidade — depende de 1/2
 

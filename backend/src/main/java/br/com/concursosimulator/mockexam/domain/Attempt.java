@@ -113,12 +113,22 @@ public final class Attempt {
         requireAccessible(actor,now); if (state.finishedAt() == null) throw new Conflict();
         int correct = 0, blank = 0;
         for (var item : state.items()) {
-            var answer = state.answers().get(item.id());
-            if (answer == null) blank++; else if (answer.equals(item.question().content().correctAlternativeId())) correct++;
+            switch (outcome(item)) { case CORRECT -> correct++; case BLANK -> blank++; case WRONG -> {} }
         }
         int total = state.items().size();
         return new Result(total,correct,total-correct-blank,blank,
                 BigDecimal.valueOf(correct * 100L).divide(BigDecimal.valueOf(total),2,RoundingMode.HALF_UP),
                 state.items().stream().map(i -> new Correction(viewItem(i),i.question().content().correctAlternativeId(),i.question().content().resolution())).toList());
+    }
+    public CompletedAttempt evidence(AttemptOwner actor, Instant now) {
+        requireAccessible(actor,now); if (state.finishedAt()==null) throw new Conflict();
+        return new CompletedAttempt(state.id(),state.owner(),state.composition().role(),state.finishedAt(),
+                state.items().stream().map(i -> new CompletedAttempt.Item(i.question().questionId(),
+                        i.question().content().classification(),outcome(i))).toList());
+    }
+    private CompletedAttempt.Outcome outcome(Item item) {
+        var answer=state.answers().get(item.id());
+        return answer==null?CompletedAttempt.Outcome.BLANK:answer.equals(item.question().content().correctAlternativeId())
+                ?CompletedAttempt.Outcome.CORRECT:CompletedAttempt.Outcome.WRONG;
     }
 }

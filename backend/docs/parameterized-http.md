@@ -16,6 +16,10 @@ schemas de tentativa/resultado/histórico permanecem iguais; metadados não são
 
 Falha interna de estado da geração é 500 `internal_error`, no-store e sem conteúdo
 privado; falhas de banco/projeção permanecem 503. Não há fallback de integridade.
+O tradutor de exceções de `@Repository` envolve IllegalStateException em
+InvalidDataAccessApiUsageException; o advice reconhece essa causa de uso/estado
+inválido como 500, sem confundi-la com indisponibilidade de conexão. A regressão da
+porta sob a cadeia real e o rollback com geração desligada verificam essa fronteira.
 O advice só trata os controllers de tentativas; não transforma falhas desconhecidas
 em sucesso. Não substitui validação interna, segurança real ou revisão semântica.
 

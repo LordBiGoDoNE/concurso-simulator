@@ -174,7 +174,7 @@ class AttemptHttpTests {
         org.mockito.Mockito.doThrow(new IllegalStateException("PRIVATE_PARAMETERIZED_FAILURE definitionDigest=secret")).when(templates).capture();
         try {
             var r=send("POST","/api/v1/attempts",b,option(createBody(UUID.randomUUID(),1),"true"));
-            assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");
             assertThat(tables.stream().map(t->jdbc.queryForObject("select count(*) from "+t,Integer.class)).toList()).isEqualTo(before);
         } finally { org.mockito.Mockito.reset(templates); }
     }

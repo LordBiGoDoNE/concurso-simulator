@@ -35,7 +35,8 @@ mantêm a mesma visão transacional. Consulta seguinte pode incluir as novas cap
 O cenário anterior após cabeçalhos continua sendo outra intercalação válida.
 
 **Aberto para integração:**correção candidata preparada e testada em task própria,
-não integrada,não revalidada. Não há findings adicionais verificáveis nesta rodada.
+não integrada. A primeira revalidação manteve o bloqueador na fronteira de precisão
+do bind SQL. Não há outros achados independentes verificáveis nessa rodada.
 Triagem final depende do novo source e parecer;nenhuma aprovação de merge é inferida.
 
 ## Evidências e limitações
@@ -60,8 +61,27 @@ expostos;sem estimativas,conversão financeira ou execução de outro modelo.
 
 ## Revalidação
 
-**Ainda não executada.** Source7ce mantém o bloqueador. Alterações locais de código,
-testes/docs e estados de tarefas precisam de commit/PR revisável e nova conferência do
-conjunto completo pelo mesmo revisor. Estes registros não atualizam digest para fazer
-o check passar. Revalidação depende do novo source;aprovação própria da correção e da
-spec continuam necessárias. Sem main/deploy/arquivamento/sincronização de stack.
+Primeira revalidação executada no mesmo contexto independente SOL6.1xHigh sobre a
+candidata52cd578866a78c02bfccd4a90ef51e39b5d5817a, PR corretivo#122:
+base7ce292f3edc1da47029f263747d71de95495ea02, digest
+`7247071955432c6df60665db80cf76ff1fdea03581ebb15e209e9729e5249b9f`.
+Cumulativo candidato sobre119ec25: digest
+`531007ea5efa3a88f621c3a7bd653923137ef0f5ce6871ca82927704e6920776`.
+O revisor recalculou ambos e examinou novamente requisitos,arquitetura,integração,
+segurança,persistência,testes e manutenção. Leu o próprio parecer inicial e docs alterados;
+não executou testes/build/scripts/rede/DB. Cota5h/semanal e tokens indisponíveis.
+
+**SR-FINAL-SOL-001 permanece aberto:** a intercalação em segundos foi corrigida,
+mas pgjdbc arredonda o Timestamp de NOW+600ns para NOW+1000ns. Uma captura criada
+nesse microssegundo passa no SQL e falha no domínio com o instante original.
+Coordenador confirmou em PostgreSQL real: a nova regressão falhou com Unavailable.
+A candidata seguinte trunca somente o parâmetro SQL para microssegundos, conservando
+a referência original do domínio; o teste exige janela antiga,hasOlder correto,
+inclusão na consulta seguinte e nenhuma escrita. Não há outros achados independentes. Após ajuste de precisão, o coordenador executou
+34 casos PG/HTTP/ArchUnit/limites: zero falhas/erros/skips; OpenSpec estrito6/6.
+São execuções do coordenador, não do revisor.
+
+O PR#121 real permanece em7ce292f, sem correção integrada. Nova candidata exige
+snapshot/revalidação real, aprovação própria do PR#122 e conferência do source integrado;
+estes registros não mudam digest para fazer o gate passar. Aprovação própria da spec
+continua necessária. Sem main/deploy/arquivamento/sincronização de stack.

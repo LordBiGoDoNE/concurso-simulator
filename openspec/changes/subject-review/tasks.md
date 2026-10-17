@@ -55,5 +55,6 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 
 Terceiro lote integrado na épica da spec;6.4 em execução no [SPEC] #121 para a épica
 geral. Gate inicial SOL6.1xHigh encontrou SR-FINAL-SOL-001 bloqueador temporal;
-correção candidata reproduzida/verificada em task própria aguarda revisão,integração e revalidação.
+correção candidata no PR#122; primeira revalidação manteve bloqueador de precisão,
+reproduzido em PostgreSQL. Próxima candidata exige revalidação e integração próprias.
 Revisão inicial com bloqueador não conclui6.4 nem autoriza integrar a spec.

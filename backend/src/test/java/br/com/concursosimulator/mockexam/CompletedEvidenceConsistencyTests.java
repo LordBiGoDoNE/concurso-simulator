@@ -106,6 +106,22 @@ class CompletedEvidenceConsistencyTests {
             } finally {release.countDown();}
         }
     }
+    @Test void subMicrosecondAccessCutoffCannotRoundUpToAFutureCapture() {
+        try(var db=new AttemptDatabase(PG)) {
+            db.jdbc.update("insert into app_user(id) values (?)",ACCOUNT.id());var q=question(db);
+            var old=snapshot(ACCOUNT,ROLE,UUID.randomUUID(),NOW,List.of(q),true);insert(db,List.of(old));
+            var createdAt=NOW.plusNanos(1000);
+            var cases=new AttemptUseCases(new JpaAttemptStore(db.entities,db.manager,db.pool),Clock.fixed(createdAt,ZoneOffset.UTC),UUID::randomUUID,()->new Random(),false);
+            var future=cases.create(ACCOUNT,UUID.randomUUID(),composition(1)).attempt();cases.finish(ACCOUNT,future.id(),UUID.randomUUID(),0);
+            var frozen=rows(db);var reader=new JpaCompletedAttempts(db.entities,db.manager);
+            // pgjdbc rounds a raw +600ns Timestamp up to +1000ns; that is later than the domain reference.
+            var current=reader.recent(ACCOUNT,ROLE,1,NOW.plusNanos(600));
+            assertThat(current.attempts()).extracting(CompletedAttempt::id).containsExactly(old.id());assertThat(current.hasOlder()).isFalse();
+            var next=reader.recent(ACCOUNT,ROLE,1,createdAt);
+            assertThat(next.attempts()).extracting(CompletedAttempt::id).containsExactly(future.id());assertThat(next.hasOlder()).isTrue();
+            assertThat(rows(db)).isEqualTo(frozen);
+        }
+    }
     @Test void tiedUuidOrderingMatchesTheDatabaseAcrossTheSignedLongBoundary() {
         try(var db=new AttemptDatabase(PG)) {
             db.jdbc.update("insert into app_user(id) values (?)",ACCOUNT.id());var q=question(db);

@@ -47,6 +47,11 @@
       "command": "coordinator: frontend/build/browser revisão após correção local",
       "result": "164 testes passaram em execução sem paralelismo de arquivos,buildpassed,10 browser reaispassed;um timeout anterior de carregamento registrado durante execução concorrente.",
       "executed_by": "coordinator"
+    },
+    {
+      "command": "coordinator: precision regression +600ns/+1000ns and targeted PG/HTTP/ArchUnit/window suites",
+      "result": "Before precision adjustment: Unavailable reproduced. After:34 cases,0failures/errors/skips; OpenSpec strict6/6. Candidate awaits independent revalidation.",
+      "executed_by": "coordinator"
     }
   ],
   "findings": [
@@ -59,11 +64,31 @@
       "impact": "Valid session can receive404 and lose unconfirmed choices without abandonment confirmation.",
       "suggestion": "Align selected rows with captured access instant before ordering/limit;keep extra header/hasOlder and transactional snapshot.",
       "disposition": "open",
-      "verification": "Reviewer static analysis only;coordinator preparing PG/HTTP regressions before first SELECT.",
-      "resolution": "Bloqueador confirmado por duas regressões que falharam antes do ajuste.Correção local adiciona created_at<=now antes de ordenar/limitar e mantém proteções;testes passaram,mas commit/PR,integração e revalidação no novo source ainda pendentes."
+      "verification": "Coordinator reproduced seconds-scale PGUnavailable/HTTP404 and sub-microsecond PGUnavailable before each respective adjustment; reviewer static analysis only.",
+      "resolution": "Candidate PR#122 adds created_at<=cutoff before ordering/limit and truncates SQL cutoff to microseconds, retaining original domain access instant. First revalidation of52cd578 kept blocker open for precision; next source awaits independent revalidation and integration. No gate approval."
     }
   ],
   "triage_complete": false,
   "initial_review_status": "completed-with-open-blocker",
-  "cumulative_gate_status": "pending-correction-integration-and-revalidation"
+  "cumulative_gate_status": "pending-correction-integration-and-revalidation",
+  "revalidations": [
+    {
+      "reviewed_head_sha": "52cd578866a78c02bfccd4a90ef51e39b5d5817a",
+      "base_sha": "119ec25afe6ca1859ca615c95632096badcc9dd0",
+      "diff_sha256": "531007ea5efa3a88f621c3a7bd653923137ef0f5ce6871ca82927704e6920776",
+      "fix_base_sha": "7ce292f3edc1da47029f263747d71de95495ea02",
+      "fix_diff_sha256": "7247071955432c6df60665db80cf76ff1fdea03581ebb15e209e9729e5249b9f",
+      "reviewer": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/subject_final_sol",
+        "independent_context": true
+      },
+      "status": "completed-with-open-blocker",
+      "finding": "SR-FINAL-SOL-001",
+      "result": "Seconds-scale interleaving fixed; raw Instant bind still rounds +600ns to +1000ns in pgjdbc, admitting a future capture. No additional independent findings.",
+      "limitations": "Static read-only; no execution. Revalidation read own initial report and altered documentation. Actual SPEC head remains 7ce292f.",
+      "after_observed_at": "2026-10-17T14:02:07.829678+00:00",
+      "quota": "5h/weekly unavailable; isolation false; tokens not exposed."
+    }
+  ]
 }

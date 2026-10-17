@@ -91,3 +91,35 @@ Logs/relatório/hash do JAR ficam ignorados em build/subject-review-ops. Nenhum 
 ou banco editorial do operador é lido. A fixture/launcher não entra no bootJar.
 Planos de2.400 tentativas (Sort→Index Scan) e janela100×100/quatroSELECTs continuam
 regressões obrigatórias; não se promete SLA nem toda intercalação possível.
+
+## Corte de acesso antes do limite — SR-FINAL-SOL-001
+
+Causa: o UseCase captura now antes de abrir a transação; outra sessão pode criar e
+concluir uma tentativa enquanto a leitura aguarda o primeiro SELECT. Sem created_at<=now
+nos cabeçalhos, essa linha entra no limite e a validação do domínio com now antigo
+rejeita o acesso (Unavailable/404). O cliente corretamente trata404 como perda de
+acesso, mas aqui isso desmontava uma realização válida e podia descartar escolhas locais.
+
+Regra positiva: posse,cargo,conclusão e criação acessível no instante recebido são
+predicados SQL anteriores à ordenação/limite101. Não filtrar após limitar,não ignorar
+capturas inválidas,não trocar somente status e não enfraquecer a proteção do domínio.
+O parâmetro SQL é truncado para microssegundos antes do bind: PostgreSQL tem essa
+precisão e pgjdbc arredonda frações de nanossegundo para o microssegundo seguinte.
+Truncar impede selecionar uma criação futura; o domínio conserva o instante original.
+Cabeçalho extra,hasOlder,payloads/itens/instâncias mantêm a mesma visão REPEATABLE_READ.
+Capturas criadas após a referência podem aparecer integralmente na consulta seguinte;
+uma conclusão visível de tentativa já criada/acessível continua regida pelo snapshotSQL.
+Nenhuma nova migração,V1–V10 ou regra de sessão/posse/correção é alterada.
+
+Duas regressões falharam antes do ajuste: pausa antes do primeiro SELECT,duas criações
+concluídas posteriores ocupando limit+1 e leituraHTTP em outra sessão da mesma conta
+produziram respectivamente Unavailable e404. Exigem janela antiga coerente/200,
+limite aplicado depois do corte,hasOlder correto,nova consulta incluindo capturas e
+nenhuma escrita da leitura. O plano EXPLAIN usa o mesmo predicado de criação. Teste
+integrado do App preserva escolha local e commandId quando a consulta coerente termina.
+O teste anterior após cabeçalhos permanece: é outra intercalação,não substitui esta.
+Na primeira revalidação, SOL identificou que o bind bruto ainda arredondava o corte
+para o futuro. Uma terceira regressão PostgreSQL reproduziu Unavailable com referência
+NOW+600ns e criação real NOW+1000ns. Exige a janela antiga sem hasOlder falso-positivo,
+inclusão na consulta seguinte no instante exato da criação e nenhuma escrita da leitura.
+Testes não provam todos os schedulings,clock skew ou disponibilidade operacional.

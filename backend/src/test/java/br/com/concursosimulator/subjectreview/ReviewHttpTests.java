@@ -178,6 +178,26 @@ class ReviewHttpTests {
             else assertThat(cors.headers().firstValue("Access-Control-Allow-Origin")).isEmpty();
         }
     }
+    @Test @Order(9) void creationInAnotherSessionBeforeTheFirstSelectReturnsACoherentWindowInsteadOf404() throws Exception {
+        var owner=UUID.randomUUID();var firstSession=account(owner);var secondSession=account(owner);
+        var old=create(firstSession);var oldPath="/api/v1/attempts/"+old.get("id").asString();
+        assertThat(send("POST",oldPath+"/finish",firstSession,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}").statusCode()).isEqualTo(200);
+        var captured=new java.util.concurrent.CountDownLatch(1);var release=new java.util.concurrent.CountDownLatch(1);
+        var first=new java.util.concurrent.atomic.AtomicBoolean(true);var at=new java.util.concurrent.atomic.AtomicReference<Instant>();
+        org.mockito.Mockito.doAnswer(call->{
+            if(first.getAndSet(false)){at.set(call.getArgument(3));captured.countDown();if(!release.await(10,java.util.concurrent.TimeUnit.SECONDS))throw new IllegalStateException("Timeout fixture");}
+            return call.callRealMethod();
+        }).when(evidence).recent(org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.anyInt(),org.mockito.ArgumentMatchers.any());
+        try(var pool=java.util.concurrent.Executors.newSingleThreadExecutor()) {
+            var pending=pool.submit(()->send("GET",panel+role,firstSession,null));assertThat(captured.await(5,java.util.concurrent.TimeUnit.SECONDS)).isTrue();
+            var concurrent=create(secondSession);assertThat(Instant.parse(concurrent.get("createdAt").asString())).isAfter(at.get());
+            assertThat(send("POST","/api/v1/attempts/"+concurrent.get("id").asString()+"/finish",secondSession,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}").statusCode()).isEqualTo(200);
+            var before=rows();release.countDown();var response=pending.get(10,java.util.concurrent.TimeUnit.SECONDS);
+            assertThat(response.statusCode()).isEqualTo(200);var earlier=json.readTree(response.body());assertThat(earlier.get("window").get("attemptCount").asInt()).isEqualTo(1);assertThat(earlier.get("window").get("hasOlder").asBoolean()).isFalse();
+            var later=send("GET",panel+role,firstSession,null);assertThat(later.statusCode()).isEqualTo(200);assertThat(json.readTree(later.body()).get("window").get("attemptCount").asInt()).isEqualTo(2);
+            assertThat(send("GET","/api/v1/me",firstSession,null).statusCode()).isEqualTo(200);assertThat(rows()).isEqualTo(before);
+        } finally {release.countDown();org.mockito.Mockito.reset(evidence);}
+    }
     @Test @Order(90) void databaseAndSessionOutageRemain503JsonNoStoreIncludingCors() throws Exception {
         var a=account(UUID.randomUUID());PG.stop();
         for(var url:List.of(panel+role,"/api/v1/attempts/"+UUID.randomUUID()+"/subject-review")) {

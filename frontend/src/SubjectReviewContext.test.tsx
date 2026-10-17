@@ -64,3 +64,16 @@ it.each(['logout', 'account', 'expiry'])('limpa preenchimento direcionado e coma
   await waitFor(() => expect(screen.queryByText(/Prática direcionada/)).not.toBeInTheDocument());
   expect(await screen.findByLabelText('Usar variações numéricas quando disponíveis')).not.toBeChecked();expect(screen.getByLabelText('Quantidade de Português')).toHaveValue(5);expect(screen.getByLabelText('Operações')).not.toBeChecked();
 });
+
+it('consulta coerente após criação concorrente preserva escolha local e comando sem desmontar a realização', async () => {
+  api(userA);let resolve!: (value: ReturnType<typeof overview>) => void;
+  vi.mocked(reviewOverview).mockImplementationOnce(() => new Promise(done => { resolve = done; }));render(<App />);
+  fireEvent.click(await screen.findByRole('button', { name: 'Iniciar simulado' }));fireEvent.click((await screen.findAllByRole('radio'))[0]);await screen.findByRole('button', { name: 'Repetir salvamento' });
+  const writes = () => vi.mocked(fetch).mock.calls.filter(([url]) => String(url).includes('/answers/'));
+  expect(writes()).toHaveLength(1);const firstBody = writes()[0][1]?.body;
+  fireEvent.change(screen.getByLabelText('Cargo para revisão'), { target: { value: view.roleId } });await screen.findByText('Consultando revisão por assunto…');
+  await act(async () => resolve(overview(true)));await screen.findByText('Sem dados para este cargo. Nenhuma dificuldade foi inferida.');
+  expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.queryByText(/O conteúdo privado foi limpo/)).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Repetir salvamento' }));await waitFor(() => expect(writes()).toHaveLength(2));expect(writes()[1][1]?.body).toBe(firstBody);
+  expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(localStorage.length).toBe(0);expect(sessionStorage.length).toBe(0);
+});

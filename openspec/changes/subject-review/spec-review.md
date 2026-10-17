@@ -1,6 +1,7 @@
 # Revisão independente cumulativa — subject-review
 
-**Gate pendente:um bloqueador aberto.** PR[SPEC] #121 permanece em rascunho.
+**Gate do source real pendente; candidata revalidada sem achados abertos.**
+PR[SPEC] #121 permanece em rascunho.
 Revisão inicial concluída com SOL6.1xHigh (`openai/gpt-6.1-sol#xhigh`),contexto novo
 `/root/subject_final_sol`. Risco crítico por segurança/privacidade/transação/concorrência.
 Não confundir exame concluído com gate aprovado;6.4 permanece aberta.
@@ -85,3 +86,28 @@ O PR#121 real permanece em7ce292f, sem correção integrada. Nova candidata exig
 snapshot/revalidação real, aprovação própria do PR#122 e conferência do source integrado;
 estes registros não mudam digest para fazer o gate passar. Aprovação própria da spec
 continua necessária. Sem main/deploy/arquivamento/sincronização de stack.
+
+### Segunda revalidação: candidata corrigida
+
+SOL6.1xHigh, mesma sessão independente, conferiu diretamente o PR#122:
+base7ce292f3edc1da47029f263747d71de95495ea02 →
+head07764284a575c843efdab5b25faefaab50e8e276, digest
+`b04b6c0389d0c4515ac95f8b78185e558c6b2e3081c137369fc72e5c5878bbc0`.
+Cumulativo sobre119ec25afe6ca1859ca615c95632096badcc9dd0, mesmo head, digest
+`4e897a8a8912efd74b9173c3c59ec0e24431d99fb913243192d48b4025e64a7c`.
+Ambos coincidem; somente estes dois arquivos de evidência são excluídos.
+
+**SR-FINAL-SOL-001: fixed na candidata; nenhum novo achado.** Truncar o parâmetro
+assegura created_at<=cutoff<=now; o driver não arredonda microssegundo exato para o
+futuro. O domínio usa o instante original e a validação exige data da linha igual
+à captura. Filtro antecede ordem/limite; hasOlder e carga continuam no mesmo snapshot.
+Revisor examinou as regressões PG/HTTP/App, incluindo precisão, consulta posterior e
+nenhuma escrita. Conferiu requisitos, arquitetura, integração, segurança, persistência,
+testes e manutenção; detalhes no JSON. Não executou testes/build/scripts/rede/DB.
+Leu o próprio parecer/evidências autorizadas; limitações anteriores permanecem.
+
+A correção ainda exige aprovação própria do PR#122 e integração. O PR#121 real segue
+em7ce292f, onde o bloqueador existe; a revisão candidata não aprova esse source nem
+conclui6.4. Após integração, conferir head/base/digest/ancestralidade atuais e registrar
+o gate sem modificar o diff revisado; qualquer diferença relevante requer revalidação.
+Somente estes dois arquivos são alterados para registrar este parecer.

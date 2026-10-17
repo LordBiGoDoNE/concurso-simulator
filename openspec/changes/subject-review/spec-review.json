@@ -1,36 +1,35 @@
 {
   "version": 1,
-  "status": "pending",
+  "status": "completed",
   "spec": "subject-review",
   "pr": 121,
   "base_sha": "119ec25afe6ca1859ca615c95632096badcc9dd0",
-  "reviewed_head_sha": "7ce292f3edc1da47029f263747d71de95495ea02",
-  "diff_sha256": "c6002c4a64996a2a33d6c51b2e2ca77d61086fffb5c8d5a2a92508c93a298b8a",
+  "reviewed_head_sha": "2e902de943bef7f116e65e3fc4427175a2c97761",
+  "diff_sha256": "d79cd7ec0c9e8e07f1e3b3d091e60065e10718ea7fd9e8810cb85ea9bb058ff6",
   "reviewer": {
     "model": "openai/gpt-6.1-sol#xhigh",
     "session": "/root/subject_final_sol",
     "independent_context": true
   },
-  "reviewed_at": "2026-10-17T04:03:16.707319+00:00",
+  "reviewed_at": "2026-10-17T14:20:12.562184+00:00",
   "reviewed_at_basis": "Registro de encerramento pelo coordenador,não telemetria do provedor.",
   "risk": "critical",
   "risk_reason": "Segurança/principal/sessão/CSRF,posse/privacidade,transação/capturas/índice e concorrência.",
   "coverage": {
-    "requirements": "Janela100/101,cargo/posse,ordenaçãoUUID,deduplicação/classificação capturada,51 assuntos,exposições,percentuais/prioridades,aulas e composição explícita examinados.",
-    "architecture": "ADR0001/checklistHTTP;Java puro,portas/adaptadores,cálculo de desfechos compartilhado,DTOs concretos.",
-    "integration": "Compositor/realização/resultado/histórico,atualização após conclusão,seleção direcionada,confirmação,retry/commandId/insuficiência.",
-    "security": "SpringSecurity/principal,visitante,posse/expiração,isolamento,CSRF,CORS,no-store,projeções mínimas e respostas tardias;achado temporal aberto.",
-    "persistence": "REQUIRES_NEW/read-only/REPEATABLE_READ,carga em lote/limites/validação compartilhada,capturasV5/formato2 eV10 aditiva;corrida antes do primeiroSELECT identificada.",
-    "tests": "Revisor leu domínio/aplicação,PG/HTTP/concorrência,ArchUnit,contratos/frontend/Playwright;novo cenário não estava coberto no source7ce.",
-    "maintenance": "OpenAPI,docs,fixture operacional e51 pares/arquivos de aula conferidos por leitura;relatórios anteriores não usados como prova."
+    "requirements": "Janela/corte/UUID, última base, métricas/prioridades, revisão individual, aulas e prática direcionada confrontados com requisitos aprovados.",
+    "architecture": "ADR0001/checklistHTTP, núcleo puro, portas e responsabilidades preservados.",
+    "integration": "Janela/hasOlder, HTTP, contexto privado, realização, respostas locais e retry.",
+    "security": "Principal, posse, sessão/expiração, CSRF/CORS, projeções mínimas e cache.",
+    "persistence": "Precisão temporal, REPEATABLE_READ, leitura em lote, integridade capturada, V5/formato2 e V10.",
+    "tests": "Regressões de concorrência/precisão, HTTP/App, limites, planos e cobertura cumulativa examinadas, sem execução pelo revisor.",
+    "maintenance": "Ancestralidade, identidade do source, registros históricos e metadados finais de conclusão examinados; código/testes/configurações iguais à candidata corrigida."
   },
   "limitations": [
-    "Reviewer read-only,no tests/build/project scripts/network/DB.",
-    "No reviews/spec-review/verification read;incidental historical references in frontend docs after semantic analysis.",
-    "Tokens and both quota windows unavailable.",
-    "Cota5h/semanal indisponível antes/depois;isolationfalse;tokens de revisor/coordenador não expostos.",
-    "Gatependente:um bloqueador no source7ce;correção local não é evidência de correção integrada/revalidada.",
-    "Relatórios de lotes/revisões everification não lidos no gate inicial;referências incidentais dos docsfrontend declaradas."
+    "Revisor somente leitura: não executou testes,builds,aplicação,scripts do projeto,rede ou banco; não atesta CI/publicação remotos.",
+    "No gate inicial não leu relatórios anteriores; exposição incidental a referências SR-R2 nos docsfrontend após análise independente foi declarada.",
+    "Nas revalidações leu próprios pareceres e evidências autorizadas, sem usar relatos como prova dinâmica.",
+    "Sem auditoria WCAG/leitor de tela, medição de desempenho ou prova de todas as intercalações concorrentes.",
+    "Cota5h/semanal indisponível antes/depois em todas as fases; isolamento não verificado; tokens de revisor/coordenador não expostos."
   ],
   "verification": [
     {
@@ -52,6 +51,21 @@
       "command": "coordinator: precision regression +600ns/+1000ns and targeted PG/HTTP/ArchUnit/window suites",
       "result": "Before precision adjustment: Unavailable reproduced. After:34 cases,0failures/errors/skips; OpenSpec strict6/6. Independent revalidation confirmed fix by static inspection; no reviewer test execution.",
       "executed_by": "coordinator"
+    },
+    {
+      "command": "coordinator: mergePR122 and compare approved source/tree/digests",
+      "result": "MERGED b811fcb629169bf0f949df21af0f45a400ab5501 after explicit approval; tree3dccd9d363ffb580258d5b59975069b37d42e013 identical approved5c77d88; cumulative digest preserved4e897a8a8912efd74b9173c3c59ec0e24431d99fb913243192d48b4025e64a7c.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "coordinator: postmerge Application checks runs39040013397/39040017499",
+      "result": "Both success on b811fcb; backend/frontend/material/identity-browser passed. Historical pending-evidence guard failure remains until final record publication.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "coordinator: gh api rulesets/24766642",
+      "result": "Active, only refs/heads/epic/application-reformulation; PR required; strict_required_status_checks_policy=true; spec-review app15368; bypass_actors empty. No rule modified.",
+      "executed_by": "coordinator"
     }
   ],
   "findings": [
@@ -63,14 +77,14 @@
       "reference": "subject-performance private role window/concurrent completion;design1/3;guided-practice context/local draft preservation",
       "impact": "Valid session can receive404 and lose unconfirmed choices without abandonment confirmation.",
       "suggestion": "Align selected rows with captured access instant before ordering/limit;keep extra header/hasOlder and transactional snapshot.",
-      "disposition": "open",
+      "disposition": "fixed",
       "verification": "Coordinator reproduced seconds-scale PGUnavailable/HTTP404 and sub-microsecond PGUnavailable before each respective adjustment; reviewer static analysis only.",
-      "resolution": "Fixed in candidate07764284a575c843efdab5b25faefaab50e8e276 by pre-limit creation filter and SQL cutoff truncated to MICROS, preserving original domain instant. SOL independently revalidated both fix and cumulative candidate with no open findings. Actual reviewed_head7ce292f still lacks correction: status/disposition remain pending/open for actual SPEC until integration and current-source verification."
+      "resolution": "Filtro created_at<=cutoff antes de ordenar/limitar; cutoff truncado para MICROS antes do bind, domínio conserva now original. Três regressões reproduziram falhas antes dos ajustes e passaram após. SOL revalidou candidata0776428 e conjunto final2e902de sem achados abertos. PR#122 integrado com autorização em b811fcb, árvore idêntica à5c77d88; metadados finais examinados independentemente no novo digest."
     }
   ],
-  "triage_complete": false,
+  "triage_complete": true,
   "initial_review_status": "completed-with-open-blocker",
-  "cumulative_gate_status": "candidate-revalidated-no-open-findings-awaiting-correction-integration-and-current-source-verification",
+  "cumulative_gate_status": "completed-no-open-findings-awaiting-spec-merge-approval",
   "revalidations": [
     {
       "reviewed_head_sha": "52cd578866a78c02bfccd4a90ef51e39b5d5817a",
@@ -122,6 +136,77 @@
       ],
       "after_observed_at": "2026-10-17T14:07:22.238918+00:00",
       "quota": "5h/weekly unavailable; isolation false; tokens not exposed."
+    },
+    {
+      "reviewed_head_sha": "2e902de943bef7f116e65e3fc4427175a2c97761",
+      "base_sha": "119ec25afe6ca1859ca615c95632096badcc9dd0",
+      "diff_sha256": "d79cd7ec0c9e8e07f1e3b3d091e60065e10718ea7fd9e8810cb85ea9bb058ff6",
+      "reviewer": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/subject_final_sol",
+        "independent_context": true
+      },
+      "status": "completed-no-open-findings-on-integrated-source",
+      "finding": "SR-FINAL-SOL-001",
+      "disposition": "fixed",
+      "coverage": {
+        "requirements": "Janela/corte/UUID, última base, métricas/prioridades, revisão individual, aulas e prática direcionada confrontados com requisitos aprovados.",
+        "architecture": "ADR0001/checklistHTTP, núcleo puro, portas e responsabilidades preservados.",
+        "integration": "Janela/hasOlder, HTTP, contexto privado, realização, respostas locais e retry.",
+        "security": "Principal, posse, sessão/expiração, CSRF/CORS, projeções mínimas e cache.",
+        "persistence": "Precisão temporal, REPEATABLE_READ, leitura em lote, integridade capturada, V5/formato2 e V10.",
+        "tests": "Regressões de concorrência/precisão, HTTP/App, limites, planos e cobertura cumulativa examinadas, sem execução pelo revisor.",
+        "maintenance": "Ancestralidade, identidade do source, registros históricos e metadados finais de conclusão examinados; código/testes/configurações iguais à candidata corrigida."
+      },
+      "limitations": [
+        "Revisor somente leitura: não executou testes,builds,aplicação,scripts do projeto,rede ou banco; não atesta CI/publicação remotos.",
+        "No gate inicial não leu relatórios anteriores; exposição incidental a referências SR-R2 nos docsfrontend após análise independente foi declarada.",
+        "Nas revalidações leu próprios pareceres e evidências autorizadas, sem usar relatos como prova dinâmica.",
+        "Sem auditoria WCAG/leitor de tela, medição de desempenho ou prova de todas as intercalações concorrentes.",
+        "Cota5h/semanal indisponível antes/depois em todas as fases; isolamento não verificado; tokens de revisor/coordenador não expostos."
+      ],
+      "result": "Base/merge-base unchanged;0776428 ancestor5c77d88 with evidence-only delta; b811fcb merge tree identical5c77d88; final2e902de changes only roadmap/design/tasks. Relevant source identity and digests checked directly; no new findings.",
+      "after_observed_at": "2026-10-17T14:20:12.562184+00:00",
+      "quota": "5h/weekly unavailable; isolation false; tokens not exposed."
     }
-  ]
+  ],
+  "initial_review": {
+    "base_sha": "119ec25afe6ca1859ca615c95632096badcc9dd0",
+    "reviewed_head_sha": "7ce292f3edc1da47029f263747d71de95495ea02",
+    "diff_sha256": "c6002c4a64996a2a33d6c51b2e2ca77d61086fffb5c8d5a2a92508c93a298b8a",
+    "reviewed_at": "2026-10-17T04:03:16.707319+00:00",
+    "coverage": {
+      "requirements": "Janela100/101,cargo/posse,ordenaçãoUUID,deduplicação/classificação capturada,51 assuntos,exposições,percentuais/prioridades,aulas e composição explícita examinados.",
+      "architecture": "ADR0001/checklistHTTP;Java puro,portas/adaptadores,cálculo de desfechos compartilhado,DTOs concretos.",
+      "integration": "Compositor/realização/resultado/histórico,atualização após conclusão,seleção direcionada,confirmação,retry/commandId/insuficiência.",
+      "security": "SpringSecurity/principal,visitante,posse/expiração,isolamento,CSRF,CORS,no-store,projeções mínimas e respostas tardias;achado temporal aberto.",
+      "persistence": "REQUIRES_NEW/read-only/REPEATABLE_READ,carga em lote/limites/validação compartilhada,capturasV5/formato2 eV10 aditiva;corrida antes do primeiroSELECT identificada.",
+      "tests": "Revisor leu domínio/aplicação,PG/HTTP/concorrência,ArchUnit,contratos/frontend/Playwright;novo cenário não estava coberto no source7ce.",
+      "maintenance": "OpenAPI,docs,fixture operacional e51 pares/arquivos de aula conferidos por leitura;relatórios anteriores não usados como prova."
+    },
+    "limitations": [
+      "Reviewer read-only,no tests/build/project scripts/network/DB.",
+      "No reviews/spec-review/verification read;incidental historical references in frontend docs after semantic analysis.",
+      "Tokens and both quota windows unavailable.",
+      "Cota5h/semanal indisponível antes/depois;isolationfalse;tokens de revisor/coordenador não expostos.",
+      "Gatependente:um bloqueador no source7ce;correção local não é evidência de correção integrada/revalidada.",
+      "Relatórios de lotes/revisões everification não lidos no gate inicial;referências incidentais dos docsfrontend declaradas."
+    ],
+    "findings": [
+      {
+        "id": "SR-FINAL-SOL-001",
+        "severity": "blocking",
+        "location": "JpaCompletedAttempts.java:29-44;ReviewUseCases.java:22;Attempt.java:75-77",
+        "evidence": "Clock instant precedes transaction;concurrent account creation+finish before first SELECT enters headers without createdAt cutoff;domain rejects evidence at old instant and HTTP404 clears browser workspace.",
+        "reference": "subject-performance private role window/concurrent completion;design1/3;guided-practice context/local draft preservation",
+        "impact": "Valid session can receive404 and lose unconfirmed choices without abandonment confirmation.",
+        "suggestion": "Align selected rows with captured access instant before ordering/limit;keep extra header/hasOlder and transactional snapshot.",
+        "disposition": "open",
+        "verification": "Reviewer static analysis only;coordinator preparing PG/HTTP regressions before first SELECT.",
+        "resolution": "Bloqueador confirmado por duas regressões que falharam antes do ajuste.Correção local adiciona created_at<=now antes de ordenar/limitar e mantém proteções;testes passaram,mas commit/PR,integração e revalidação no novo source ainda pendentes."
+      }
+    ],
+    "triage_complete": false,
+    "status": "completed-with-open-blocker"
+  }
 }

@@ -67,3 +67,27 @@ O índice é aditivo e não exige perfil/progresso persistente ou backfill. A co
 integral das tabelas antes/depois verifica que as consultas e a migração não regravam
 contas, banco, decisões, snapshots, itens, comandos ou instâncias. Nenhum banco editorial
 aprovado do operador foi acessado; todos os ensaios usam PG 18.6 descartável.
+
+## Ensaio operacional cumulativo (6.2)
+
+`gradlew --offline subjectReviewOperationalCheck` é deliberado, fora do build/startup:
+cria PostgreSQL18.6 descartável, carrega a fixture serializada pelo código V5 aprovado
+(commit0d0fc4848f55fc93c736aa76dcfbb73a7269eb39), preserva o hash/outcome original,
+conclui essa tentativa e cria/conclui formato2 no schemaV9. O JAR atual de produção
+inicia em processo separado, Flyway aplicaV10, e cinco GETs HTTP reais consultam painel,
+revisões individuais e resultados. Duas conclusões da mesma base dão bases1/exposições2.
+Após encerrar, outro processo do mesmo JAR recupera exatamente as mesmas respostas.
+
+O ensaio passou26s; compara integralmente12 tabelas de negócio antes/depois de ambas as
+execuções (conta/identidade/banco/decisões/templates/instâncias/tentativas/itens/comandos).
+Sessões técnicas podem atualizar timestamps de acesso; Flyway registraV10. O índice
+existe e permanece. Geração está desligada em ambos os processos. Isso demonstra
+recuperação pelo binário atual compatível, mantendo schema/dados; não é downgrade
+para V9 nem autorização de remover índice/migração. JAR V5 nunca é iniciado após
+formato2. Capturas geradas/retiradas/reclassificadas são cobertas separadamente por
+SubjectReviewCaptureReadTests; o ensaio de processo usa fixasV5/formato2.
+
+Logs/relatório/hash do JAR ficam ignorados em build/subject-review-ops. Nenhum arquivo
+ou banco editorial do operador é lido. A fixture/launcher não entra no bootJar.
+Planos de2.400 tentativas (Sort→Index Scan) e janela100×100/quatroSELECTs continuam
+regressões obrigatórias; não se promete SLA nem toda intercalação possível.

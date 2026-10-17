@@ -34,7 +34,7 @@ as regressões reais completas passaram (18 identidade/simulados/revisão,5 para
 navegação pública/offline6/6, com material montado e links108 páginas/1.757 referências.
 Não houve teste com leitor de tela nem auditoria WCAG integral. Capturas contêm somente
 fixtures sintéticas e ficam ignoradas em build/, sem publicação de imagens.
-Links de aula/prática dirigida são grupo5, fora deste lote. Sem deploy/main.
+O terceiro lote autorizado inclui os grupos completos5/6. Sem deploy/main.
 
 ## Regressões da revisão independente do lote
 
@@ -55,3 +55,54 @@ O CI identificou uma corrida no teste positivo de foco: findByText podia termina
 antes do useEffect de foco. A assertion agora aguarda o título receber foco com
 waitFor; continua exigindo o mesmo destino, como o Playwright já fazia. Presença de
 texto não certifica conclusão de efeitos. Não houve mudança do comportamento de produção.
+
+## Aulas (5.1)
+
+lesson-paths.json é a cópia pública controlada dos51 pares id/conteudo de manifesto_v3.json.
+O teste exige igualdade completa e existência de cada HTML; não importa gabarito, dados de
+conta ou conteúdo de API. lessonUrl consulta somente chaves próprias do mapa, valida caminho
+relativo e baseHTTP(S) sem credenciais/query/fragmento, codifica cada segmento uma vez e
+preserva subpath da VITE_MATERIAL_URL. Configuração inválida mostra link indisponível.
+Links abrem nova aba com aviso e noopener/noreferrer, preservando a realização e respostas
+locais na aba original. O material estático permanece no mesmo lugar e funciona sem API.
+
+## Prática direcionada (5.2/5.3)
+
+Praticar em qualquer linha (inclusive sem dados) passa somente cargo/disciplina/assunto
+públicos ao workspace. Nova montagem do compositor zera outras disciplinas/assuntos,
+seleciona uma questão e desliga variações. O catálogo confirma a seleção antes de
+habilitar o formulário; inconsistência falha sem fallback. Nada é criado até Iniciar.
+O usuário pode alterar os critérios e optar por variações; não se promete novidade.
+
+O workspace pede a confirmação existente antes de desmontar qualquer realização:
+cancelar preserva a fila, respostas locais e commandId. Aula em nova aba não desmonta
+a realização. Enquanto cria, atalhos e cargo do painel ficam desabilitados; verificação
+de sessão suspende comandos. Troca de cargo do painel limpa prefill/comando e aborta
+catálogo anterior; identidade/expiração/logout desmontam o workspace e cancelam operações.
+Respostas tardias não restauram contexto. Não há storage ou querystring para o prefill.
+
+Criação usa o POST, CSRF e idempotência existentes. Retry sem mudar critérios mantém o
+commandId; qualquer edição descarta o comando anterior, mesmo se valores retornarem.
+Insuficiência mantém critérios/contagens reais, sem mudar assunto, reduzir ou misturar
+acervo automaticamente. Regressões unitárias cobrem essas transições com componentes
+reais e portas substituídas; testes reais de rede/abas/retirada completam a cobertura.
+
+## Fluxo integrado por ator (5.3/5.4)
+
+Playwright subject-review.real.spec.ts passou10/10 (33,6s antes do ajuste de largura):
+conta em390/1280px abre aula real e preenche M01/Secretário, cria só ao confirmar,
+POST semCSRF recebe403, recupera criação gravada com a mesma operação após perda da
+resposta e conclui outra vez a única base do assunto. A última observação substitui
+branco por acerto (bases1/exposições2), sem criar denominador artificial. Outra sessão
+da mesma conta recebe o mesmo resultado capturado. Visitante usa aula/atalho individual
+sem painel/histórico; cancelar abandono e abrir aula preservam escolha local. Duas
+abas mantêm conflito/recarga/salvamento explícitos. Retirada sintética da única M01
+produz409/zero disponíveis, preserva critérios/comando, não cria parcial e não muda
+resultado antigo. Os51 links permanecem acessíveis mesmo sem evidência.
+
+O hosting externo é substituído pelo HTML/assets públicos reais do repositório no
+teste; API/OIDC/PostgreSQL/navegador são reais. Isso verifica navegação/encoding/material,
+sem certificar disponibilidade do CDN de produção. Fixture/rota de retirada existem
+somente em src/test, não no JAR. Capturas locais sintéticas390/1280 foram inspecionadas;
+a coluna de estudo tem largura mínima própria e rolagem contida, sem botão fragmentado.
+Sem auditoria integral de leitor de tela ou WCAG; nenhuma decisão editorial real.

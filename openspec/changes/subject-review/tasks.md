@@ -2,11 +2,11 @@
 
 Issue #104. **Proposta aprovada, #105 integrado em `0bd6652`.**
 Grupos 1 e 2 integrados por #106–#109 em a16b69a, com autorização e CI pós-merge verde.
-16/24 tarefas implementadas/verificadas, 8/24 integradas/aprovadas.
+23/24 tarefas implementadas/verificadas; 16/24 integradas/aprovadas; grupos3/4 por #111–#114 em b2355f8.
 Segundo lote autorizado pelo usuário em 2026-10-16: grupos completos 3 e 4.
 Decisão de granularidade: 51 assuntos existentes, escolhida pelo usuário em 2026-10-16.
 Primeiro lote escolhido pelo usuário em 2026-10-16: grupos completos 1 e 2.
-Grupos 5 e 6 ficam fora do segundo lote; tarefa verificada não significa revisão/merge aprovado.
+Terceiro lote autorizado pelo usuário: grupos completos5 e6; tarefa verificada não significa revisão/merge aprovado.
 Cada grupo escolhido inclui todas as suas subtarefas, código/testes/documentação,
 revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma spec.
 
@@ -40,14 +40,18 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 
 ## 5. Aulas e prática direcionada — depende de 3/4
 
-- [ ] 5.1 Criar mapa público controlado dos 51 campos conteudo do manifesto e links de aula na base configurada; testar acentos/encoding/subpath/traversal/gabarito e todos os links; documentar rastreabilidade sem mover material.
-- [ ] 5.2 Preencher compositor existente com cargo/assunto/quantidade 1/variações false, sem criação automática; testar alteração de critérios e limpeza de demais disciplinas/contextos; documentar escolha explícita.
-- [ ] 5.3 Preservar confirmação de abandono, respostas locais, CSRF/idempotência/commandId/insuficiência e variações explícitas; testar rede/duas abas/retirada de acervo sem fallback; documentar ausência de garantia de novidade.
-- [ ] 5.4 Executar fluxo real desempenho→aula→composição→conclusão→revisão, visitante e conta em outra sessão; testar atualização da última base e resultado reproduzível; documentar evidências por ator.
+- [x] 5.1 Criar mapa público controlado dos 51 campos conteudo do manifesto e links de aula na base configurada; testar acentos/encoding/subpath/traversal/gabarito e todos os links; documentar rastreabilidade sem mover material.
+- [x] 5.2 Preencher compositor existente com cargo/assunto/quantidade 1/variações false, sem criação automática; testar alteração de critérios e limpeza de demais disciplinas/contextos; documentar escolha explícita.
+- [x] 5.3 Preservar confirmação de abandono, respostas locais, CSRF/idempotência/commandId/insuficiência e variações explícitas; testar rede/duas abas/retirada de acervo sem fallback; documentar ausência de garantia de novidade.
+- [x] 5.4 Executar fluxo real desempenho→aula→composição→conclusão→revisão, visitante e conta em outra sessão; testar atualização da última base e resultado reproduzível; documentar evidências por ator.
 
 ## 6. Regressão, operação e gate cumulativo — depende de 1–5
 
-- [ ] 6.1 Consolidar matriz requisito→código/teste, Java puro/ArchUnit/PG/HTTP/browser e builds; executar regressões anteriores, conferindo limites de consulta e integridade, sem tratar contagem como revisão semântica.
-- [ ] 6.2 Ensaiar consulta de banco V9 com contas/tentativas V5/formato 2 e eventual upgrade de índice/rollback, sem reescrever dados ou reiniciar JAR V5 incompatível; documentar planos/volume/limites.
-- [ ] 6.3 Verificar exportação limpa/JAR/SPA/material/links/offline e ausência de dados privados/solver no cliente; conferir 51 assuntos e 111 variantes preservados, sem novas decisões editoriais; documentar evidências.
+- [x] 6.1 Consolidar matriz requisito→código/teste, Java puro/ArchUnit/PG/HTTP/browser e builds; executar regressões anteriores, conferindo limites de consulta e integridade, sem tratar contagem como revisão semântica.
+- [x] 6.2 Ensaiar consulta de banco V9 com contas/tentativas V5/formato 2 e eventual upgrade de índice/rollback, sem reescrever dados ou reiniciar JAR V5 incompatível; documentar planos/volume/limites.
+- [x] 6.3 Verificar exportação limpa/JAR/SPA/material/links/offline e ausência de dados privados/solver no cliente; conferir 51 assuntos e 111 variantes preservados, sem novas decisões editoriais; documentar evidências.
 - [ ] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisão/integração das tarefas; abrir/manter [SPEC] para a épica geral e pedir aprovação própria, sem main/deploy/arquivamento.
+
+Terceiro lote:5.1–5.4 e6.1–6.3 implementadas/verificadas localmente; revisão independente
+e PRs/CI/merges pendentes.6.4 permanece aberta pela dependência explícita de integração
+das tarefas antes do gate novo. Nada deste lote foi integrado ou publicado no GitHub.

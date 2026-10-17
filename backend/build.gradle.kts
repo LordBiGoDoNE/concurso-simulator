@@ -99,3 +99,13 @@ tasks.register<JavaExec>("parameterizedOperationalCheck") {
     mainClass.set("br.com.concursosimulator.parameterization.ParameterizedOperationalFixture")
     if (project.hasProperty("rollbackJar")) args(project.property("rollbackJar").toString())
 }
+
+// Deliberate operational exercise, outside normal build/startup; synthetic PostgreSQL only.
+tasks.register<JavaExec>("subjectReviewOperationalCheck") {
+    group = "verification"
+    description = "Check V9/V10 and mixed snapshots across separate compatible JAR processes"
+    dependsOn(tasks.testClasses, tasks.named("bootJar"))
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.mockexam.SubjectReviewOperationalFixture")
+    args(tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar").get().archiveFile.get().asFile.absolutePath)
+}

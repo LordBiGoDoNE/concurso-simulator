@@ -142,6 +142,10 @@ schema anterior nem voltar ao JAR V5 após escritas no formato 2.
 ## Open Questions
 
 Nenhuma decisão de produto aberta. Proposta e políticas aprovadas pelo usuário em
-2026-10-16. Grupos1–5 e6.1–6.3 integrados na épica da spec em7ce292f. Terceiro lote escolhido pelo usuário:
-grupos completos5/6. Implementação/revisão não autoriza merges; gate cumulativo separado
-está em execução no [SPEC] #121 e depende da resolução/revalidação de achados.
+2026-10-16. Grupos1–5 e6.1–6.3 integrados na épica da spec; correção do gate#122
+integrada com autorização em b811fcb629169bf0f949df21af0f45a400ab5501.
+Grupo6.4 consolida os registros do gate cumulativo no [SPEC] #121. SOL6.1xHigh
+confirmou a resolução de SR-FINAL-SOL-001 na candidata; os registros finais também
+exigem revalidação cumulativa. Evidências atuais em spec-review.json/md.
+24/24 tarefas executadas/verificadas não autorizam integrar a spec na épica geral;
+essa aprovação continua própria e pendente. Sem main,deploy ou arquivamento.

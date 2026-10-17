@@ -51,10 +51,14 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 - [x] 6.1 Consolidar matriz requisito→código/teste, Java puro/ArchUnit/PG/HTTP/browser e builds; executar regressões anteriores, conferindo limites de consulta e integridade, sem tratar contagem como revisão semântica.
 - [x] 6.2 Ensaiar consulta de banco V9 com contas/tentativas V5/formato 2 e eventual upgrade de índice/rollback, sem reescrever dados ou reiniciar JAR V5 incompatível; documentar planos/volume/limites.
 - [x] 6.3 Verificar exportação limpa/JAR/SPA/material/links/offline e ausência de dados privados/solver no cliente; conferir 51 assuntos e 111 variantes preservados, sem novas decisões editoriais; documentar evidências.
-- [ ] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisão/integração das tarefas; abrir/manter [SPEC] para a épica geral e pedir aprovação própria, sem main/deploy/arquivamento.
+- [x] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisão/integração das tarefas; abrir/manter [SPEC] para a épica geral e pedir aprovação própria, sem main/deploy/arquivamento.
 
-Terceiro lote integrado na épica da spec;6.4 em execução no [SPEC] #121 para a épica
-geral. Gate inicial SOL6.1xHigh encontrou SR-FINAL-SOL-001 bloqueador temporal;
-correção candidata no PR#122; primeira revalidação manteve bloqueador de precisão,
-reproduzido em PostgreSQL. Próxima candidata exige revalidação e integração próprias.
-Revisão inicial com bloqueador não conclui6.4 nem autoriza integrar a spec.
+24/24 tarefas executadas e verificadas. Grupos1–5 e6.1–6.3 integrados na épica
+da spec;6.4 consolida o gate no [SPEC] #121, cuja integração na épica geral exige
+aprovação própria. O gate inicial SOL6.1xHigh encontrou SR-FINAL-SOL-001; a primeira
+revalidação revelou também arredondamento submicrossegundo. As três regressões
+reproduziram as falhas antes dos respectivos ajustes. Segunda revalidação confirmou
+a correção sem novos achados; PR#122 integrado com autorização em
+b811fcb629169bf0f949df21af0f45a400ab5501, com árvore idêntica à candidata aprovada.
+Os metadados finais também exigem revalidação do conjunto; evidências atuais em
+spec-review.json/md. Nenhum merge da spec,main,deploy ou arquivamento é presumido.

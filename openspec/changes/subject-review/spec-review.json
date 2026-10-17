@@ -2,21 +2,68 @@
   "version": 1,
   "status": "pending",
   "spec": "subject-review",
-  "pr": null,
-  "base_sha": null,
-  "reviewed_head_sha": null,
-  "diff_sha256": null,
+  "pr": 121,
+  "base_sha": "119ec25afe6ca1859ca615c95632096badcc9dd0",
+  "reviewed_head_sha": "7ce292f3edc1da47029f263747d71de95495ea02",
+  "diff_sha256": "c6002c4a64996a2a33d6c51b2e2ca77d61086fffb5c8d5a2a92508c93a298b8a",
   "reviewer": {
     "model": "openai/gpt-6.1-sol#xhigh",
-    "session": null,
-    "independent_context": false
+    "session": "/root/subject_final_sol",
+    "independent_context": true
   },
-  "reviewed_at": null,
-  "coverage": {},
+  "reviewed_at": "2026-10-17T04:03:16.707319+00:00",
+  "reviewed_at_basis": "Registro de encerramento pelo coordenador,não telemetria do provedor.",
+  "risk": "critical",
+  "risk_reason": "Segurança/principal/sessão/CSRF,posse/privacidade,transação/capturas/índice e concorrência.",
+  "coverage": {
+    "requirements": "Janela100/101,cargo/posse,ordenaçãoUUID,deduplicação/classificação capturada,51 assuntos,exposições,percentuais/prioridades,aulas e composição explícita examinados.",
+    "architecture": "ADR0001/checklistHTTP;Java puro,portas/adaptadores,cálculo de desfechos compartilhado,DTOs concretos.",
+    "integration": "Compositor/realização/resultado/histórico,atualização após conclusão,seleção direcionada,confirmação,retry/commandId/insuficiência.",
+    "security": "SpringSecurity/principal,visitante,posse/expiração,isolamento,CSRF,CORS,no-store,projeções mínimas e respostas tardias;achado temporal aberto.",
+    "persistence": "REQUIRES_NEW/read-only/REPEATABLE_READ,carga em lote/limites/validação compartilhada,capturasV5/formato2 eV10 aditiva;corrida antes do primeiroSELECT identificada.",
+    "tests": "Revisor leu domínio/aplicação,PG/HTTP/concorrência,ArchUnit,contratos/frontend/Playwright;novo cenário não estava coberto no source7ce.",
+    "maintenance": "OpenAPI,docs,fixture operacional e51 pares/arquivos de aula conferidos por leitura;relatórios anteriores não usados como prova."
+  },
   "limitations": [
-    "Grupos1–4 integrados em b2355f8; lote3 autorizado com grupos5/6 em implementação/verificação. Gate cumulativo próprio aguarda revisão/integração das tarefas e contexto independente novo."
+    "Reviewer read-only,no tests/build/project scripts/network/DB.",
+    "No reviews/spec-review/verification read;incidental historical references in frontend docs after semantic analysis.",
+    "Tokens and both quota windows unavailable.",
+    "Cota5h/semanal indisponível antes/depois;isolationfalse;tokens de revisor/coordenador não expostos.",
+    "Gatependente:um bloqueador no source7ce;correção local não é evidência de correção integrada/revalidada.",
+    "Relatórios de lotes/revisões everification não lidos no gate inicial;referências incidentais dos docsfrontend declaradas."
   ],
-  "verification": [],
-  "findings": [],
-  "triage_complete": false
+  "verification": [
+    {
+      "command": "coordinator: duas novas regressões antes da correção",
+      "result": "REPRODUCED:PGUnavailable eHTTP404 em vez de200;revisor não executou.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "coordinator: build backend completo após correção local",
+      "result": "passed245 casos,0failures/errors,1skipWindows;source local ainda não integrado/revalidado.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "coordinator: frontend/build/browser revisão após correção local",
+      "result": "164 testes passaram em execução sem paralelismo de arquivos,buildpassed,10 browser reaispassed;um timeout anterior de carregamento registrado durante execução concorrente.",
+      "executed_by": "coordinator"
+    }
+  ],
+  "findings": [
+    {
+      "id": "SR-FINAL-SOL-001",
+      "severity": "blocking",
+      "location": "JpaCompletedAttempts.java:29-44;ReviewUseCases.java:22;Attempt.java:75-77",
+      "evidence": "Clock instant precedes transaction;concurrent account creation+finish before first SELECT enters headers without createdAt cutoff;domain rejects evidence at old instant and HTTP404 clears browser workspace.",
+      "reference": "subject-performance private role window/concurrent completion;design1/3;guided-practice context/local draft preservation",
+      "impact": "Valid session can receive404 and lose unconfirmed choices without abandonment confirmation.",
+      "suggestion": "Align selected rows with captured access instant before ordering/limit;keep extra header/hasOlder and transactional snapshot.",
+      "disposition": "open",
+      "verification": "Reviewer static analysis only;coordinator preparing PG/HTTP regressions before first SELECT.",
+      "resolution": "Bloqueador confirmado por duas regressões que falharam antes do ajuste.Correção local adiciona created_at<=now antes de ordenar/limitar e mantém proteções;testes passaram,mas commit/PR,integração e revalidação no novo source ainda pendentes."
+    }
+  ],
+  "triage_complete": false,
+  "initial_review_status": "completed-with-open-blocker",
+  "cumulative_gate_status": "pending-correction-integration-and-revalidation"
 }

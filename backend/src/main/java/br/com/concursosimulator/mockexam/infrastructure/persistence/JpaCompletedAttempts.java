@@ -25,11 +25,11 @@ public class JpaCompletedAttempts implements CompletedAttemptReader {
         if(account.kind()!=AttemptOwner.Kind.ACCOUNT)throw new Attempt.Unavailable();
         if(limit<1 || limit>MAX_LIMIT)throw new IllegalArgumentException("Limite de leitura inválido");
         return read.execute(status -> {
-            // SQL nativo: filtro JSON de cargo capturado e ordenação/limite antes de carregar payloads.
+            // SQL nativo: posse/cargo e criação acessível no instante capturado ANTES de ordenar/limitar.
             @SuppressWarnings("unchecked") List<UUID> headers=entities.createNativeQuery(
-                    "select id from me_attempt where owner_kind='ACCOUNT' and owner_id=:owner and finished_at is not null "
+                    "select id from me_attempt where owner_kind='ACCOUNT' and owner_id=:owner and created_at<=:now and finished_at is not null "
                     +"and payload->'composition'->>'role'=:role order by finished_at desc,id desc",UUID.class)
-                    .setParameter("owner",account.id()).setParameter("role",role.name()).setMaxResults(limit+1).getResultList();
+                    .setParameter("owner",account.id()).setParameter("now",now).setParameter("role",role.name()).setMaxResults(limit+1).getResultList();
             var ids=headers.stream().limit(limit).toList();
             if(ids.isEmpty())return new Window(List.of(),false);
             var rows=entities.createQuery("select a from AttemptRow a where a.id in :ids",AttemptRow.class)

@@ -2,7 +2,8 @@
 
 Issue #104. **Proposta aprovada, #105 integrado em `0bd6652`.**
 Grupos 1 e 2 integrados por #106–#109 em a16b69a, com autorização e CI pós-merge verde.
-23/24 tarefas implementadas/verificadas; 16/24 integradas/aprovadas; grupos3/4 por #111–#114 em b2355f8.
+23/24 tarefas implementadas/verificadas e integradas/aprovadas; grupos3/4 por #111–#114 em b2355f8.
+Grupos5 e6.1–6.3 integrados por #116–#119 em7ce292f,com autorização eCI pós-merge aprovado.
 Segundo lote autorizado pelo usuário em 2026-10-16: grupos completos 3 e 4.
 Decisão de granularidade: 51 assuntos existentes, escolhida pelo usuário em 2026-10-16.
 Primeiro lote escolhido pelo usuário em 2026-10-16: grupos completos 1 e 2.
@@ -52,6 +53,7 @@ revisão SOL 6.1 xhigh e PRs coesos. Dependências reais usam Stacks da mesma sp
 - [x] 6.3 Verificar exportação limpa/JAR/SPA/material/links/offline e ausência de dados privados/solver no cliente; conferir 51 assuntos e 111 variantes preservados, sem novas decisões editoriais; documentar evidências.
 - [ ] 6.4 Consolidar PRs/SHAs/checks/triagem/cobertura/cota/tokens e executar gate cumulativo SOL 6.1 xhigh em contexto novo após revisão/integração das tarefas; abrir/manter [SPEC] para a épica geral e pedir aprovação própria, sem main/deploy/arquivamento.
 
-Terceiro lote:5.1–5.4 e6.1–6.3 implementadas/verificadas localmente; revisão independente
-e PRs/CI/merges pendentes.6.4 permanece aberta pela dependência explícita de integração
-das tarefas antes do gate novo. Nada deste lote foi integrado ou publicado no GitHub.
+Terceiro lote integrado na épica da spec;6.4 em execução no [SPEC] #121 para a épica
+geral. Gate inicial SOL6.1xHigh encontrou SR-FINAL-SOL-001 bloqueador temporal;
+correção candidata reproduzida/verificada em task própria aguarda revisão,integração e revalidação.
+Revisão inicial com bloqueador não conclui6.4 nem autoriza integrar a spec.

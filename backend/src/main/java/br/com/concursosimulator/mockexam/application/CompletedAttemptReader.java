@@ -15,7 +15,7 @@ public interface CompletedAttemptReader {
                 throw new IllegalArgumentException("Janela de evidência inválida");
         }
     }
-    /** Filtros antecedem limite; ordem finishedAt/UUID sem sinal decrescente; uma visão transacional. */
+    /** Posse/cargo/conclusão e criação<=now antecedem limite; ordem finishedAt/UUID sem sinal; uma visão transacional. */
     Window recent(AttemptOwner account, TargetRole role, int limit, Instant now);
     /** Ausente/alheia/expirada: Unavailable; própria aberta: Conflict; nunca retorna correção privada. */
     CompletedAttempt one(AttemptOwner actor, UUID id, Instant now);

@@ -48,8 +48,8 @@ class CompletedEvidenceConsistencyTests {
     }
     String plan(AttemptDatabase db) {
         return String.join("\n",db.jdbc.queryForList("explain (analyze,buffers) select id from me_attempt where owner_kind='ACCOUNT' "
-                +"and owner_id=? and finished_at is not null and payload->'composition'->>'role'=? order by finished_at desc,id desc limit 101",
-                String.class,ACCOUNT.id(),ROLE.name()));
+                +"and owner_id=? and created_at<=? and finished_at is not null and payload->'composition'->>'role'=? order by finished_at desc,id desc limit 101",
+                String.class,ACCOUNT.id(),java.sql.Timestamp.from(NOW.plusSeconds(3000)),ROLE.name()));
     }
     @Test void completionDuringAReadOnlyRepeatableReadAppearsOnlyInTheNextWindow() throws Exception {
         try(var db=new AttemptDatabase(PG)) {
@@ -73,6 +73,37 @@ class CompletedEvidenceConsistencyTests {
                 var second=new JpaCompletedAttempts(db.entities,db.manager).recent(ACCOUNT,ROLE,1,NOW.plusSeconds(2));
                 assertThat(second.attempts()).extracting(CompletedAttempt::id).containsExactly(open.id());assertThat(second.hasOlder()).isTrue();
             } finally { resume.countDown(); }
+        }
+    }
+    @Test void creationAndFinishBeforeTheFirstSelectCannotInvalidateTheCapturedAccessInstant() throws Exception {
+        try(var db=new AttemptDatabase(PG)) {
+            db.jdbc.update("insert into app_user(id) values (?)",ACCOUNT.id());var q=question(db);
+            var old=snapshot(ACCOUNT,ROLE,UUID.randomUUID(),NOW,List.of(q),true);insert(db,List.of(old));
+            var entered=new CountDownLatch(1);var release=new CountDownLatch(1);
+            var paused=(EntityManager)Proxy.newProxyInstance(getClass().getClassLoader(),new Class<?>[]{EntityManager.class},(proxy,method,args)-> {
+                // No SQL (including SHOW) before this latch: the RR snapshot must see both later commits.
+                if(method.getName().equals("createNativeQuery") && args[0].toString().startsWith("select id from me_attempt")) {
+                    entered.countDown();if(!release.await(15,TimeUnit.SECONDS))throw new AssertionError("Fixture não liberada");
+                }
+                return invoke(method,db.entities,args);
+            });
+            try(var executor=Executors.newSingleThreadExecutor()) {
+                var first=executor.submit(()->new JpaCompletedAttempts(paused,db.manager).recent(ACCOUNT,ROLE,1,NOW));
+                assertThat(entered.await(15,TimeUnit.SECONDS)).isTrue();
+                UUID latest=null;List<List<String>> frozen;
+                try {
+                    // Two later captures fill limit+1: filtering after the limit would lose the old base.
+                    for(int i=1;i<=2;i++) {
+                        var cases=new AttemptUseCases(new JpaAttemptStore(db.entities,db.manager,db.pool),Clock.fixed(NOW.plusSeconds(i),ZoneOffset.UTC),UUID::randomUUID,()->new Random(),false);
+                        var created=cases.create(ACCOUNT,UUID.randomUUID(),composition(1)).attempt();cases.finish(ACCOUNT,created.id(),UUID.randomUUID(),0);latest=created.id();
+                    }
+                    frozen=rows(db);
+                } finally {release.countDown();}
+                var current=first.get(15,TimeUnit.SECONDS);assertThat(current.attempts()).extracting(CompletedAttempt::id).containsExactly(old.id());assertThat(current.hasOlder()).isFalse();
+                var next=new JpaCompletedAttempts(db.entities,db.manager).recent(ACCOUNT,ROLE,1,NOW.plusSeconds(3));
+                assertThat(next.attempts()).extracting(CompletedAttempt::id).containsExactly(latest);assertThat(next.hasOlder()).isTrue();
+                assertThat(rows(db)).isEqualTo(frozen);
+            } finally {release.countDown();}
         }
     }
     @Test void tiedUuidOrderingMatchesTheDatabaseAcrossTheSignedLongBoundary() {

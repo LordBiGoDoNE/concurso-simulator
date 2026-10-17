@@ -142,6 +142,6 @@ schema anterior nem voltar ao JAR V5 após escritas no formato 2.
 ## Open Questions
 
 Nenhuma decisão de produto aberta. Proposta e políticas aprovadas pelo usuário em
-2026-10-16. Grupos1–4 integrados na épica da spec em b2355f8. Terceiro lote escolhido pelo usuário:
+2026-10-16. Grupos1–5 e6.1–6.3 integrados na épica da spec em7ce292f. Terceiro lote escolhido pelo usuário:
 grupos completos5/6. Implementação/revisão não autoriza merges; gate cumulativo separado
-permanece dependente da integração das tarefas.
+está em execução no [SPEC] #121 e depende da resolução/revalidação de achados.

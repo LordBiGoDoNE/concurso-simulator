@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "status": "completed",
+  "scope": "proposal-documentation-only-not-product-gate",
+  "spec": "subject-review",
+  "pr": 105,
+  "risk": "critical",
+  "risk_reason": "Efeito normativo sobre posse/privacidade, classificação histórica, consistência, limites e contratos; diff somente documental.",
+  "base_sha": "119ec25afe6ca1859ca615c95632096badcc9dd0",
+  "reviewed_head_sha": "e9f4854878dd97fb54f71609e4a0a4fead2adacd",
+  "diff_sha256": "ac3fb60a967485bafb52b99c1f075fb186dc9ecda4d8d4c9bb8dacb23e7445ea",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/subject_proposal_sol",
+    "independent_context": true,
+    "selection_evidence": "Codex spawn_agent fork_turns=none, model=gpt-6.1-sol, reasoning_effort=xhigh; seleção confirmada sem fallback. Provider/session ID adicional não exposto."
+  },
+  "recorded_at": "2026-10-16T13:29:05.995123+00:00",
+  "coverage": {
+    "requirements": "51 assuntos como escolha do usuário; janela100, última base, mínimo3 e quantidade1 continuam propostas; sem implementação/lote autorizado.",
+    "architecture": "Núcleo puro, portas mínimas e evidência concluída sob mockexam; infraestrutura JPA/transações, adaptador em lote sem presumir suficiência do histórico atual.",
+    "integration": "Amostra por cargo antes do limite; deduplicação antes de agrupar; classificação/exposições capturadas; aulas/compositor preservam contratos existentes.",
+    "security": "Painel autenticado e revisão individual por posse/estado/expiração; DTOs mínimos, validação/no-store/cancelamento/limpeza sem correção antecipada ou mescla.",
+    "persistence": "Leitura compatível V5/formato2 sem regravação, integridade integral, índices somente aditivos e limites100/10000. Plano real e concorrência serão verificados na implementação.",
+    "tests": "Tarefas cobrem domínio/PG/HTTP/browser/compatibilidade/links/offline, sem declarar execução de produto novo. Revisor não executou testes.",
+    "maintenance": "24 tarefas em seis grupos, aprovação/grupos/merges/gate futuro separados. Mapeamento controlado dos51 conteúdos e atualização correta da etapa5 no roadmap."
+  },
+  "verification": [
+    {
+      "command": "git rev-parse/merge-base/diff; consultas locais de arquivos; cálculo canônico do SHA-256",
+      "result": "Base/head/digest e estatística8 arquivos/443 adições/2 remoções conferidos; requisitos relacionados e código atual inspecionados, sem incompatibilidade impeditiva.",
+      "executed_by": "independent-reviewer:/root/subject_proposal_sol"
+    },
+    {
+      "command": "OpenSpec1.14.1 validate --all --strict; git diff --check",
+      "result": "6/6 changes válidas; diff da proposta sem erros de whitespace.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Checks remotos no fonte e9f4854878dd97fb54f71609e4a0a4fead2adacd",
+      "result": "backend/frontend/study-material/identity-browser/spec-review-tests concluídos SUCCESS; não constituem teste de produto ainda não implementado. Head posterior de evidência será conferido antes da aprovação.",
+      "executed_by": "GitHub Actions; conferido pelo coordenador"
+    }
+  ],
+  "findings": [],
+  "triage_complete": true,
+  "limitations": [
+    "Revisão da proposta, não certificação de implementação/CI/gate cumulativo de produto.",
+    "Somente consultas locais; sem testes/build/aplicação/scripts do projeto/navegador/rede/DB/escritas pelo revisor.",
+    "Planos SQL/desempenho/volume/número de consultas/concorrência/integridade HTTP/acessibilidade/links/offline exigem futuras evidências previstas nas tarefas.",
+    "Não leu corpos de PR/issues, verification.md, relatórios anteriores, placeholders do futuro gate ou arquivos privados salvo composition.json.",
+    "Este registro é posterior aos fontes revisados; não se declara incluído no digest acima.",
+    "Cota5h/semanal e tokens indisponíveis; observações mínimas privadas ficam fora do Git, sem estimativa financeira ou consumo zero."
+  ],
+  "approval_state": "Proposta/merge e primeiro lote ainda sem aprovação. 0/24 implementadas/verificadas ou integradas; spec-review.json/md permanecem pending."
+}

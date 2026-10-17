@@ -61,6 +61,14 @@ class V5AttemptCompatibilityTests {
             assertThat(uc.answer(owner,id,answerOp,0,itemId,content.correctAlternativeId()).attempt()).isEqualTo(answer.attempt());
             assertThat(uc.finish(owner,id,finishOp,1).replayed()).isTrue();
             assertThat(uc.create(owner,operation,composition).attempt()).isEqualTo(absent.attempt());
+            var beforeEvidence=tables.stream().map(t->db.jdbc.queryForList("select row_to_json(r)::text from "+t+" r order by 1",String.class)).toList();
+            var reader=new br.com.concursosimulator.mockexam.infrastructure.persistence.JpaCompletedAttempts(db.entities,db.manager);
+            var evidence=reader.one(owner,id,NOW);
+            assertThat(evidence.items().getFirst().outcome()).isEqualTo(br.com.concursosimulator.mockexam.domain.CompletedAttempt.Outcome.CORRECT);
+            var summary=new br.com.concursosimulator.subjectreview.application.ReviewUseCases(reader,Clock.fixed(NOW,ZoneOffset.UTC)).overview(owner,composition.role());
+            assertThat(summary.summary().subjects().stream().mapToInt(m->m.correct()).sum()).isEqualTo(1);
+            assertThat(summary.window().attemptCount()).isEqualTo(1);
+            assertThat(tables.stream().map(t->db.jdbc.queryForList("select row_to_json(r)::text from "+t+" r order by 1",String.class)).toList()).isEqualTo(beforeEvidence);
             var finalPayload=json.readTree(db.jdbc.queryForObject("select payload::text from me_attempt where id=?",String.class,id));
             assertThat(finalPayload.has("format")).isFalse();
             for(var field:List.of("composition","items","policy"))assertThat(finalPayload.get(field)).isEqualTo(original.get(field));

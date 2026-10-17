@@ -2,7 +2,7 @@ import { defineConfig } from '@playwright/test';
 
 export default defineConfig({
   testDir: './e2e',
-  testMatch: ['**/identity.real.spec.ts', '**/questions.real.spec.ts', '**/attempts.real.spec.ts'],
+  testMatch: ['**/identity.real.spec.ts', '**/questions.real.spec.ts', '**/attempts.real.spec.ts', '**/subject-review.real.spec.ts'],
   workers: 1,
   timeout: 60000,
   use: { baseURL: 'http://127.0.0.1:5173', browserName: 'chromium' },

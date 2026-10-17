@@ -22,6 +22,7 @@ public final class IdentityBrowserFixture {
             if ("true".equals(System.getenv("PARAMETERIZED_BROWSER_FIXTURE")))
                 br.com.concursosimulator.parameterization.ParameterizedBrowserFixtures.seed(context.get());
             oidc.enableEditorialChange(id -> br.com.concursosimulator.questionbank.QuestionBrowserFixtures.replace(context.get(),id));
+            oidc.enableEditorialWithdrawal(id -> br.com.concursosimulator.questionbank.QuestionBrowserFixtures.withdraw(context.get(),id));
             oidc.enableApiRestart(() -> {
                 context.get().close();
                 context.set(start(postgres, registration));

@@ -94,6 +94,7 @@ def check():
         print("RUNTIME_CHECK_PASS: isolated Compose, security, empty V10, outage and restart")
     except subprocess.CalledProcessError as failure:
         (OUTPUT / "runtime-failure.log").write_bytes((failure.stdout or b"") + (failure.stderr or b""))
+        (OUTPUT / "runtime-container-private.log").write_bytes(compose(path, config, "logs", "--no-color", "api", "postgres"))
         raise
     finally:
         cleanup(path, config)

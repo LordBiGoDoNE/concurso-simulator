@@ -1,6 +1,6 @@
 # Tasks
 
-Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **15/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente. Item4.4 permanece aberto: gate cumulativo após integração autorizada das tarefas; grupo4 não declarado concluído.**
+Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **15/16 implementadas/verificadas;0/16 integradas/aprovadas. Pareceres/triagem do lote em reviews/groups-1-4; autorização de merge pendente. Item4.4 permanece aberto: gate cumulativo após integração autorizada das tarefas; grupo4 não declarado concluído.**
 Usuário escolheu Docker local primeiro e todos os16 itens deste lote. Implementação/verificação em execução;merges continuam sujeitos à aprovação própria.
 Cada grupo inclui código, testes, documentação e revisão SOL6.1xHigh. Dependências
 reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própria.

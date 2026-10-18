@@ -1,9 +1,10 @@
-# Verificação do coordenador — lote grupos1–4
+# Registro inicial de verificação do coordenador — lote grupos1–4
 
 Execução Windows/Docker Linux em2026-10-18. **15/16 verificadas;0/16 integradas**.
 Item4.4/gate cumulativo permanece pendente após merges autorizados e contexto próprio;
 esta verificação não é parecer independente nem autorização de merge.
-Revisão inicial do lote encontrou B1/R1 confirmados; correções e revalidação em andamento.
+Revisão inicial encontrou B1/R1 confirmados; correções estão na camada superior.
+Rodadas posteriores e resultados atualizados ficam em reviews/groups-1-4.
 
 Risco crítico: sessão/segredos/proxy, persistência/recuperação e CI. PRs#125–#128,
 stack#129 v0.2.1, trunk epic/local-application-delivery. Base da spec6283c4d.

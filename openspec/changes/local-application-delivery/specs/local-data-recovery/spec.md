@@ -32,12 +32,22 @@ por tabelas de negócio,sessão ou Flyway. API SHALL permanecer parada até vali
 Somente SHALL liberar uso depois de restauração bem-sucedida e validação das versões,
 schema e dados. Falha MUST NOT aparentar sucesso nem modificar a origem.
 
+### Requirement: Sessões restauradas não reativam acesso revogado
+O destino SHALL invalidar todas as sessões do dump antes de liberar a API.
+Contas,histórico,capturas e comandos SHALL permanecer, com nova autenticação para
+retomada. Backup completo MUST NOT permitir reuso de cookie revogado após o dump.
+
+#### Scenario: Backup anterior ao logout
+- **WHEN** captura backup com sessão válida, faz logout e restaura antes da expiração
+- **THEN** o cookie antigo continua recebendo401 no destino e o histórico/retomada da conta funciona após nova autenticação ou sessão sintética nova no ensaio isolado.
+
 #### Scenario: Destino contém dados ou restauração falha
 - **WHEN** o destino está ocupado ou o restore produz erro
 - **THEN** recusa a operação ou mantém o novo destino indisponível, sem apagar dados existentes, escrever na origem ou apresentar aplicação parcialmente restaurada como pronta.
 
 ### Requirement: Reinício e retorno compatível
-Reinício SHALL preservar volume, capturas/comandos/decisões e retomada da conta.
+Reinício comum SHALL preservar volume, capturas/comandos/decisões e pode recuperar
+sessões válidas. Restore SHALL exigir nova autenticação para retomada da conta.
 Retorno SHALL usar artefato compatível identificado; MUST NOT reescrever migrações,
 apagar volume, fazer downgrade de schema ou executar JAR V5 após escrita formato2.
 

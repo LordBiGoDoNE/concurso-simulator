@@ -76,9 +76,17 @@ configuração e papéis do cluster são tratados separadamente. Credenciais fic
 de argumentos/artefatos públicos. Restauração aceita somente destino novo/vazio,
 sem tabelas de negócio,sessão ou Flyway, e confere identidade antes da primeira escrita.
 A API permanece parada até restaurar e validar; erro não libera aplicação parcial.
+Antes de liberar o destino, invalidar todas as sessões restauradas por mecanismo
+de infraestrutura. O dump continua completo, mas não pode reativar cookie revogado
+após a captura do backup. Contas,histórico,capturas e comandos permanecem; acesso
+de conta exige nova autenticação (sessão sintética nova no ensaio das imagens).
 Ensaiar dump/restore com cliente PG18.6 e imagens identificadas, comparar hashes,
-capturas/comandos e retomada de conta; preservar versão e decisões editoriais.
-Reinício conserva volume. Retorno usa binário compatível e backup; não é downgrade
+capturas/comandos e retomada de conta após nova autenticação; preservar versão e
+decisões editoriais. Comparação de igualdade exclui somente as sessões invalidadas.
+Ensaiar backup→logout→restore antes da expiração: cookie antigo continua401,
+enquanto nova sessão da mesma conta acessa histórico e retoma a tentativa.
+Reinício comum conserva volume e pode recuperar sessões válidas; não é restauração.
+Retorno usa binário compatível e backup; não é downgrade
 de schema, remoção de migrações ou execução de JAR V5 após capturas formato2.
 
 ### 5. Verificação e caminho posterior

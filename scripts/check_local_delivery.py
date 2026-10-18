@@ -22,7 +22,7 @@ def check():
     # Git is read-only provenance for the image builder; the exported worktree has no .git/private files.
     env = dict(os.environ, GIT_DIR=git_dir, GIT_WORK_TREE=str(destination))
     npm = "npm.cmd" if os.name == "nt" else "npm"
-    gradle = "gradlew.bat" if os.name == "nt" else "./gradlew"
+    gradle = str(destination / "backend" / ("gradlew.bat" if os.name == "nt" else "gradlew"))
     commands = [
         ([sys.executable, "scripts/local_app_images.py", "--revision", sha, "--origin", "http://127.0.0.1:18088"], destination),
         ([gradle, "--no-daemon", "--console=plain", "localDeliveryFixtureClasses"], destination / "backend"),

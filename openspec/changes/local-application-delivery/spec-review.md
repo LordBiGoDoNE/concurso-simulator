@@ -1,6 +1,6 @@
 # Revisão cumulativa — local-application-delivery
 
-**Pendente, não executada.** Proposta#124 aprovada;15/16 tarefas implementadas/verificadas,0/16 integradas. Item4.4 aberto, sem declarar grupo4 concluído.
+**Pendente, não executada.** Proposta#124 aprovada;15/16 tarefas implementadas/verificadas e aprovadas/integradas na épica da spec. Item4.4 aberto, sem declarar grupo4 concluído.
 Modelo permanente: `openai/gpt-6.1-sol#xhigh`.
 
 ## Escopo e cobertura

@@ -1,9 +1,9 @@
 # Proposal
 
-**Proposta pendente de aprovação, acompanhamento #123.** Em 2026-10-18 o usuário escolheu começar a
+**Proposta aprovada pelo usuário e integrada pelo #124 em6283c4d, acompanhamento#123.** Em 2026-10-18 o usuário escolheu começar a
 etapa 7 pela execução local com Docker; hospedagem e domínio ainda não definidos.
 Etapa 6 integrada na épica geral pelo #121 em `3715219a02dfe77262ce0af4bcbb858fbc08fca7`.
-Esta escolha autoriza preparar a proposta, não implementar grupos nem publicar.
+Em2026-10-18 o usuário escolheu todos os grupos1–4 para implementação. Publicação e merges de tarefas continuam exigindo autorização própria.
 
 ## Why
 
@@ -53,8 +53,7 @@ CI verifica e não publica imagens ou ambientes. O Compose de desenvolvimento,
 GitHub Pages e os previews armazenados continuam preservados.
 
 A spec parte da épica geral em `3715219`; proposta e tarefas destinam-se a
-`epic/local-application-delivery`, e o futuro `[SPEC]` à épica geral. Implementação
-exige aprovação da proposta e escolha de grupos completos. O incremento local não
+`epic/local-application-delivery`, e o futuro `[SPEC]` à épica geral. Os quatro grupos completos foram autorizados; sua implementação está em execução. O incremento local não
 conclui a etapa 7: hospedagem, acesso público, smoke Google real e plano de publicação
 continuam dependentes de decisões/proposta posteriores. Merge final para main e
 qualquer publicação continuam sujeitos à aprovação específica.

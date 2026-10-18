@@ -1,7 +1,7 @@
 # Tasks
 
-Proposta pendente, acompanhamento #123. **0/16 implementadas/verificadas;0/16 integradas/aprovadas.**
-Usuário escolheu Docker local primeiro; nenhum grupo de implementação autorizado.
+Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **0/16 implementadas/verificadas;0/16 integradas/aprovadas.**
+Usuário escolheu Docker local primeiro e todos os16 itens deste lote. Implementação/verificação em execução;merges continuam sujeitos à aprovação própria.
 Cada grupo inclui código, testes, documentação e revisão SOL6.1xHigh. Dependências
 reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própria.
 

@@ -1,7 +1,10 @@
 import io
 import tarfile
 import unittest
-from local_app_images import origin, restricted_tar
+import subprocess
+import tempfile
+from pathlib import Path
+from local_app_images import OUTPUT, committed_context, origin, restricted_tar
 
 
 def archive(entries):
@@ -19,6 +22,22 @@ def archive(entries):
 
 
 class ContextTests(unittest.TestCase):
+    def test_git_export_does_not_read_untracked_files_even_under_public_paths(self):
+        OUTPUT.mkdir(parents=True, exist_ok=True)
+        with tempfile.TemporaryDirectory(prefix="source-test-", dir=OUTPUT) as directory:
+            root = Path(directory).resolve()
+            self.assertTrue(root.is_relative_to(OUTPUT.resolve()))
+            (root / "assets").mkdir()
+            (root / "assets/public.txt").write_text("PUBLIC", encoding="utf-8")
+            subprocess.run(["git", "init", "-q", str(root)], check=True)
+            subprocess.run(["git", "add", "assets/public.txt"], cwd=root, check=True)
+            subprocess.run(["git", "-c", "user.name=Fixture", "-c", "user.email=fixture@example.invalid",
+                            "-c", "commit.gpgsign=false", "commit", "-qm", "synthetic"], cwd=root, check=True)
+            (root / "assets/untracked.txt").write_text("PRIVATE_SENTINEL", encoding="utf-8")
+            _, context, selected = committed_context(root=root)
+            self.assertEqual(list(selected), ["assets/public.txt"])
+            self.assertNotIn(b"PRIVATE_SENTINEL", context)
+
     def test_only_runtime_sources_and_public_material_reach_docker(self):
         entries = {"backend/src/main/App.java": b"source", "frontend/src/App.tsx": b"ui",
                    "01_Portugues/aula.html": b"lesson", "scripts/math_content.py": b"math",

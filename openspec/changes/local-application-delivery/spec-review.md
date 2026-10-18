@@ -1,6 +1,6 @@
 # Revisão cumulativa — local-application-delivery
 
-**Pendente, não executada.** Proposta ainda não aprovada;0/16 tarefas implementadas.
+**Pendente, não executada.** Proposta#124 aprovada;15/16 tarefas implementadas/verificadas,0/16 integradas. Item4.4 aberto, sem declarar grupo4 concluído.
 Modelo permanente: `openai/gpt-6.1-sol#xhigh`.
 
 ## Escopo e cobertura
@@ -14,7 +14,7 @@ Nenhum parecer cumulativo emitido; lista vazia não significa aprovação.
 
 ## Evidências e limitações
 
-Nenhum teste de imagens/Compose/restore ou revisão de implementação executado.
+Testes locais de imagens/Compose/restore/navegador e exportação limpa executados pelo coordenador; evidências em verification.md. Revisão independente de lote e gate cumulativo são registros separados.
 
 ## Revalidação
 

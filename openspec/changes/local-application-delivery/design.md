@@ -118,8 +118,8 @@ Navegação local e OIDC sintético não substituem TLS/hospedagem nem smoke Goo
 
 ## Open Questions
 
-Nenhuma decisão pública de hospedagem é tomada. Proposta/implementação/grupos e merges
-continuam pendentes de suas aprovações. Um incremento posterior deve definir provedor,
+Nenhuma decisão pública de hospedagem é tomada. Proposta#124 aprovada e grupos1–4
+autorizados pelo usuário em2026-10-18; implementação em execução,merges pendentes. Um incremento posterior deve definir provedor,
 domínio, TLS, orçamento, disponibilidade, backups externos e publicação/rollback.
 
 ## References

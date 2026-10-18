@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "phase": "revalidation-2",
+  "status": "no-open-findings",
+  "risk": "critical",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/local_delivery_batch_sol",
+    "independent_context": true
+  },
+  "recorded_at": "2026-10-18T21:24:42.194866+00:00",
+  "snapshots": {
+    "128": {
+      "base_sha": "ea45531a2408c107740340c158596f63d4bc6be2",
+      "reviewed_head_sha": "891d8df14c052c72b4a3c430fcfc25331cb1c760",
+      "diff_sha256": "0fd372529fa282783ada451ffe61ba022670ed9cfb7f1e9bf029f266c0b197d7"
+    },
+    "combined": {
+      "base_sha": "6283c4dd9ac3c5daedfad42ab650629c266c5732",
+      "reviewed_head_sha": "891d8df14c052c72b4a3c430fcfc25331cb1c760",
+      "diff_sha256": "e91817f46756bc2d69259415142bb9fa1f4808a2c2c68b637853327be16022cd"
+    }
+  },
+  "findings": [
+    {
+      "id": "B1",
+      "status": "fixed-in-combination-including-128"
+    },
+    {
+      "id": "R1",
+      "status": "fixed-in-combination-including-128"
+    },
+    {
+      "id": "B2",
+      "status": "fixed",
+      "correction": "scripts/local_app_data.py restores subprocess import"
+    }
+  ],
+  "new_findings": [],
+  "coverage": "Full delta5f51152..891d8df examined; backup/restore, exact-name ownership and Docker selection re-evaluated; accumulated rounds cover complete PR diffs/combination and documentary evidence.",
+  "limitations": [
+    "Reviewer executed no tests/build/Docker/network/DB/CI consultation.",
+    "Lower heads alone retain original defects; approval must include upper corrections.",
+    "Automated coordinator full procedure is separate from static review.",
+    "This record adds review evidence only; any implementation change requires new validation.",
+    "Final cumulative gate/item4.4 and every merge remain pending."
+  ],
+  "quota": {
+    "five_hour": "unavailable-before-and-after",
+    "weekly": "unavailable-before-and-after",
+    "attribution": "not determined"
+  },
+  "tokens": "not supplied by harness"
+}

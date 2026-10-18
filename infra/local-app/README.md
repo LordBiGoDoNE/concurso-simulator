@@ -184,3 +184,40 @@ backup→logout→restore→cookie antigo401, nova sessão com histórico/retoma
 destino ocupado recusado e recuperação falha bloqueada. Resultado privado em
 backend/build/local-app/recovery-check.json. Nenhum dado do operador é copiado;
 tal transferência exige autorização específica de origem/destino/escopo.
+
+## Navegador, exportação limpa e CI
+
+Com helper compilado e Chromium do Playwright instalado (`npm ci` e
+`npx playwright install chromium` em frontend):
+
+```sh
+python scripts/check_local_browser.py
+python scripts/check_local_delivery.py
+```
+
+O primeiro usa imagens reais, sem Vite, com visitante e duas sessões da mesma
+conta, outra conta404, CSRF, resposta perdida/retry idempotente, conflito, retomada,
+conclusão,51 assuntos, aulas reais e prática dirigida em390/1280px. As sessões vêm
+do helper separado, somente no projeto descartável. Não é login Google real.
+`npm run test:identity` continua sendo a suíte separada de OIDC sintético existente.
+
+O segundo exporta somente o commit atual em backend/build/local-app/exports/,
+constrói as imagens e repete inspeção/runtime/recuperação/navegador nessa cópia.
+Usa o Git original somente para leitura da proveniência do commit; não copia
+workspace, `.git`, credenciais ou banco. Requer Git, Python3.14, JDK25, Node24 e
+Docker Linux no host, além de rede para dependências no primeiro build. Porta do
+ensaio:18088, nunca escolhida silenciosamente; colisão falha sem parar terceiros.
+Exportações e relatórios permanecem ignorados/privados; não anexe dumps/cookies
+ou logs brutos a issues/PRs. Execução Windows local e Linux no CI são evidências
+distintas; CI pendente não é prova de execução Linux.
+
+CI acrescenta apenas verificações, sem previews/deploy nem upload de dados do
+ensaio. Pages e gates existentes permanecem. Regressões Java/ArchUnit/PG/HTTP,
+frontend, material/offline e111 variantes complementam a matriz; nenhum teste
+individual certifica ausência absoluta de segredos ou decisões semânticas.
+
+A etapa7 ainda precisa de uma spec posterior para hospedagem/domínio/TLS,
+backups externos, observabilidade e operação pública, smoke Google real e
+procedimento de publicação/rollback. Este pacote local não integra main nem
+publica a aplicação. Revisão do lote e gate cumulativo são decisões separadas;
+merges de cada tarefa e da spec exigem aprovação explícita.

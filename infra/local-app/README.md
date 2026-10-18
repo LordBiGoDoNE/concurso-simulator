@@ -46,3 +46,13 @@ python -m unittest discover -s scripts -p test_local_app_images.py
 Sentinelas sintéticas verificam exclusão e recusa de links/traversal. Inspeção real
 das imagens e execução limpa complementam essa proteção; não é detector de segredo
 arbitrário inserido em um arquivo de código versionado permitido.
+
+Verificação real das imagens:
+
+```sh
+python scripts/check_local_images.py
+```
+
+Inspeciona usuários e JAR real, rejeita dependências/fixtures de teste, abre as51
+ aulas e exige503/no-store quando a API não existe. Remove somente os containers
+ efêmeros cujos IDs criou, sem volumes. Relatório ignorado:backend/build/local-app/image-check.json.

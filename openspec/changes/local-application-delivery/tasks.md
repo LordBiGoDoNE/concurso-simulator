@@ -1,16 +1,16 @@
 # Tasks
 
-Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **0/16 implementadas/verificadas;0/16 integradas/aprovadas.**
+Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **4/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente.**
 Usuário escolheu Docker local primeiro e todos os16 itens deste lote. Implementação/verificação em execução;merges continuam sujeitos à aprovação própria.
 Cada grupo inclui código, testes, documentação e revisão SOL6.1xHigh. Dependências
 reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própria.
 
 ## 1. Imagens e pacote executável
 
-- [ ] 1.1 Empacotar backend Java25/JAR em imagem de runtime sem Gradle/fixtures/launchers de teste; verificar execução e identidade do artefato; documentar versão/requisitos.
-- [ ] 1.2 Empacotar SPA compilada e material público em servidor HTTP, sem Vite no runtime; testar arquivos/51 aulas/encoding e independência da API; documentar origem e parâmetros públicos.
-- [ ] 1.3 Restringir contexto/camadas/usuários/segredos dos builds; testar sentinelas, ausência de arquivos privados/fixtures e separação de material/bundle; documentar alcance e limites.
-- [ ] 1.4 Demonstrar build em exportação limpa com versões fixadas e registrar commit/IDs das imagens; testar execução dos artefatos obtidos, sem alegar determinismo não medido; documentar comandos Windows/Linux.
+- [x] 1.1 Empacotar backend Java25/JAR em imagem de runtime sem Gradle/fixtures/launchers de teste; verificar execução e identidade do artefato; documentar versão/requisitos.
+- [x] 1.2 Empacotar SPA compilada e material público em servidor HTTP, sem Vite no runtime; testar arquivos/51 aulas/encoding e independência da API; documentar origem e parâmetros públicos.
+- [x] 1.3 Restringir contexto/camadas/usuários/segredos dos builds; testar sentinelas, ausência de arquivos privados/fixtures e separação de material/bundle; documentar alcance e limites.
+- [x] 1.4 Demonstrar build em exportação limpa com versões fixadas e registrar commit/IDs das imagens; testar execução dos artefatos obtidos, sem alegar determinismo não medido; documentar comandos Windows/Linux.
 
 ## 2. Compose local, origem e segurança — depende de 1
 

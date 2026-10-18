@@ -1,0 +1,72 @@
+{
+  "version": 1,
+  "kind": "documentary-proposal-review",
+  "status": "completed",
+  "scope": "Proposta local-application-delivery; nenhuma implementação ou gate cumulativo.",
+  "risk": "critical",
+  "risk_reason": "Requisitos de segredos,rede/cookies/CSRF,persistência/restauração e controles de entrega.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/local_delivery_proposal_sol",
+    "independent_context": true
+  },
+  "base_sha": "3715219a02dfe77262ce0af4bcbb858fbc08fca7",
+  "initial": {
+    "head_sha": "a288e84ef51b2b107bb0e61ffa5c682555692f7a",
+    "diff_sha256": "d56cc96daf0746199c3c9723c63a9583e794db337a0d6cb5378df65ca8b536a8",
+    "result": "LAD-SOL-001 blocking: restauração não definia invalidação de sessões."
+  },
+  "revalidation": {
+    "head_sha": "7c668076dbaeee1eb6dda9e99a9dd8a4c1948f96",
+    "diff_sha256": "c5a30f0c71bea991bb82f47e7dfee708ae2974f10db5bbe26e469a4dc56999d4",
+    "result": "LAD-SOL-001 corrigido na proposta; nenhum novo achado no conjunto."
+  },
+  "coverage": {
+    "requirements": "Oito arquivos semânticos completos,proposta/design/16 tarefas,três deltas e roadmap.",
+    "architecture": "AGENTS,ADR0001/checklistHTTP,núcleo/adaptadores e sessões como infraestrutura.",
+    "integration": "Origem única,consumidores VITE_API_URL,material e empacotamento real.",
+    "security": "Segredos,isolamento,cookies/CSRF/OIDC e revogação de sessões após restore.",
+    "persistence": "Compose/Flyway,V5/formato2,backup/restore,compatibilidade e CLIs editoriais.",
+    "tests": "Viabilidade/coerência das verificações futuras,conta sintética e OIDC separado.",
+    "maintenance": "Limites local/público,aprovações distintas e roadmap; tarefas continuam pendentes."
+  },
+  "findings": [
+    {
+      "id": "LAD-SOL-001",
+      "severity": "blocking",
+      "location": "design.md:74;specs/local-data-recovery/spec.md:29;tasks.md:26",
+      "evidence": "Dump inclui sessões; restaurar backup anterior ao logout pode revalidar cookie ainda não expirado.",
+      "reference": "optional-google-identity/specs/user-auth/spec.md:74-76;SessionAccessTests:133-160",
+      "impact": "Violação da revogação pós-logout se implementada a política incompleta.",
+      "suggestion": "Invalidar sessões restauradas antes de liberar destino;preservar negócio/histórico e testar cookie antigo401.",
+      "disposition": "fixed",
+      "resolution": "Design/requisito/tarefa3.3 exigem API parada e invalidação de todas as sessões restauradas,nova autenticação,igualdade de negócio excluindo somente sessões e regressão backup→logout→restore. Reinício comum permanece distinto. Revisor confirmou por inspeção no source7c66807."
+    }
+  ],
+  "triage_complete": true,
+  "limitations": [
+    "Revisor somente leitura; não executou testes/build/aplicação/scripts do projeto/rede/DB/escritas.",
+    "Não leu relatórios de outros revisores ou arquivos spec-review; revalidação usou o próprio parecer.",
+    "Cenário inferido; nenhuma implementação existe para reprodução dinâmica.",
+    "Não aprova proposta,grupos,merges,editorial ou publicação e não substitui gate cumulativo.",
+    "Cota5h/semanal e tokens indisponíveis; observações mínimas locais separadas,sem atribuição exata."
+  ],
+  "verification": [
+    {
+      "command": "OpenSpec validate --all --strict",
+      "result": "7/7 após ajuste dos cenários; uma validação intermediária falhou por posição de cenário e foi corrigida.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "git diff --check",
+      "result": "passed; alterações somente documentais.",
+      "executed_by": "coordinator"
+    }
+  ],
+  "implementation": {
+    "total": 16,
+    "implemented_verified": 0,
+    "integrated_approved": 0
+  },
+  "record_scope": "Registro histórico dos dois snapshots efetivamente examinados; os próprios relatórios são acrescentados depois,sem alterar requisitos/produto."
+}

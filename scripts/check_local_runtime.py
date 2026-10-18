@@ -59,7 +59,8 @@ def check():
         for route in ["/oauth2/authorization/google", "/login/oauth2/code/google?code=synthetic&state=synthetic"]:
             assert request(client, base, route)[0] == 404
             status, headers, body = request(client, base, route, "POST")
-            assert status == 403 and "Location" not in headers and not isinstance(body, bytes)
+            # Canonical OAuth rejection is an empty 403, unlike the typed JSON API errors.
+            assert status == 403 and body == b"" and "Location" not in headers and "Set-Cookie" not in headers
         assert request(client, base, "/api/unknown")[0] == 403
         assert request(client, base, "/api/v1/status", headers={"Forwarded": "host=evil.invalid;proto=https", "X-Forwarded-Host": "evil.invalid"})[0] == 200
         assert sql(path, config, "select count(*) from flyway_schema_history where success") == "10"

@@ -33,6 +33,8 @@ resoluções públicas do legado separadas do bundle da aplicação. Ela não ce
 ausência de gabaritos no material original nem autoriza exportar capturas privadas.
 API/OAuth/callback passam ao backend; nenhum erro dessas rotas vira página da SPA.
 Access/error logs do proxy não registram callback/cookies. Status/health dão diagnóstico.
+Rejeição de método OAuth conserva o403 vazio canônico do backend,sem redirect/cookie;
+não é transformada em JSON nem página da SPA pelo proxy.
 
 O Compose daqui é independente de `infra/compose.yaml`. Não adota seu volume nem
 importa a cópia editorial. O primeiro banco começa vazio, com estados de insuficiência

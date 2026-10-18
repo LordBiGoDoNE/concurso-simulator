@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "phase": "initial",
+  "status": "findings-require-revalidation",
+  "risk": "critical",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/local_delivery_batch_sol",
+    "independent_context": true,
+    "configuration": "gpt-6.1-sol/xhigh explicit supported override"
+  },
+  "recorded_at": "2026-10-18T21:17:49.558888+00:00",
+  "snapshots": {
+    "125": {
+      "base_sha": "6283c4dd9ac3c5daedfad42ab650629c266c5732",
+      "reviewed_head_sha": "38b2e7b51fbd2ce9e558f8240d0a3d1e572dc4f6",
+      "diff_sha256": "63aba1816739572a313f41ca3ed1ff58db28bfdfdf79583ebbb11f35b70a2e4f"
+    },
+    "126": {
+      "base_sha": "38b2e7b51fbd2ce9e558f8240d0a3d1e572dc4f6",
+      "reviewed_head_sha": "6ec2ec03269e87cca1d34aac8e060813abbb1a5d",
+      "diff_sha256": "09df47cf6fc031ae9215200780c8488b76cd0aed501b8cf4010cf1efd5e4f87f"
+    },
+    "127": {
+      "base_sha": "6ec2ec03269e87cca1d34aac8e060813abbb1a5d",
+      "reviewed_head_sha": "ea45531a2408c107740340c158596f63d4bc6be2",
+      "diff_sha256": "f3f8e309f2d60674805044c8799e676d60328218aba1df9740ad2acc2c1ac97a"
+    },
+    "128": {
+      "base_sha": "ea45531a2408c107740340c158596f63d4bc6be2",
+      "reviewed_head_sha": "927d8d0098b79f64ebbbcab4c840f1b62be11d58",
+      "diff_sha256": "052354e1c916b952fa882cbcb8899bd803f9ffbad56b9738dc7906913a95cb7d"
+    },
+    "combined": {
+      "base_sha": "6283c4dd9ac3c5daedfad42ab650629c266c5732",
+      "reviewed_head_sha": "927d8d0098b79f64ebbbcab4c840f1b62be11d58",
+      "diff_sha256": "29e35bd0ee30b23996e96c430ec7c09e8fbb54da58623519d4e85f216b8b1c15"
+    }
+  },
+  "findings": [
+    {
+      "id": "B1",
+      "severity": "blocking",
+      "source_pr": 126,
+      "location": "scripts/local_app.py:58; infra/local-app/compose.yaml:14",
+      "finding": "Exact-name resources without matching project label bypass ownership discovery and may be adopted by Compose.",
+      "triage": "confirmed; corrective commit in top layer; revalidation pending"
+    },
+    {
+      "id": "R1",
+      "severity": "recommended",
+      "source_prs": [
+        125,
+        126
+      ],
+      "location": "scripts/local_app.py:24,136; scripts/local_app_images.py:99",
+      "finding": "DOCKER_CONTEXT precedence can select a different daemon from the validated DOCKER_HOST; image build did not require local endpoint.",
+      "triage": "confirmed; shared pinned selection and builder; revalidation pending"
+    }
+  ],
+  "coverage": "All implementation diffs per PR and combination; production consumers/security/readiness/packaging/material/browser config examined.",
+  "limitations": [
+    "Read-only reviewer; no tests/build/Docker/network/DB executed.",
+    "verification.md and the two spec-review evidence files excluded semantically from initial review; hash scope unchanged.",
+    "Batch review does not replace final cumulative gate or merge authorization."
+  ],
+  "quota": {
+    "five_hour": "unavailable",
+    "weekly": "unavailable",
+    "attribution": "not determined; isolation not declared"
+  },
+  "tokens": "not supplied by harness"
+}

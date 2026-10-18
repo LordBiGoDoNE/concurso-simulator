@@ -10,6 +10,7 @@ import uuid
 from contextlib import contextmanager
 from pathlib import Path
 from local_app_images import ROOT, OUTPUT, origin
+from local_docker import run as docker_run, endpoint
 
 DEFAULT_STATE = ROOT / "infra/local-app/.local"
 OWNER_LABEL = "com.concursosimulator.local.owner"
@@ -17,16 +18,11 @@ SECRET_NAMES = ("db_password", "google_enabled", "google_client_id", "google_cli
 
 
 def docker(*args, data=None):
-    return subprocess.run(["docker", *args], input=data, capture_output=True, check=True).stdout
+    return docker_run(list(args), input=data, capture_output=True, check=True).stdout
 
 
 def local_engine():
-    endpoint = os.environ.get("DOCKER_HOST")
-    if not endpoint:
-        context = docker("context", "show").decode().strip()
-        endpoint = json.loads(docker("context", "inspect", context, "--format", "{{json .Endpoints.docker.Host}}"))
-    if not endpoint.startswith(("unix://", "npipe://")):
-        raise ValueError("Operação restrita ao Docker local por unix socket/named pipe")
+    endpoint()
     if docker("version", "--format", "{{.Server.Os}}").decode().strip() != "linux":
         raise ValueError("Use containers Linux")
 
@@ -44,6 +40,10 @@ def state_path(path):
 
 def port_available(port):
     with socket.socket() as check:
+        # Unix must allow a recently stopped listener's TIME_WAIT connections, while refusing live listeners.
+        # Windows SO_REUSEADDR can allow another process's active binding, so keep its exclusive default.
+        if os.name != "nt":
+            check.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
         check.bind(("127.0.0.1", port))
 
 
@@ -60,6 +60,17 @@ def owned(config):
             token = docker(kind, "inspect", resource, "--format", '{{index ' + field + ' "' + OWNER_LABEL + '"}}').decode().strip()
             if token != config["owner"]:
                 raise ValueError("Recurso existente não pertence a este estado; nenhuma adoção automática")
+    # Compose may adopt an existing name even if its project label is absent/different.
+    for kind, listing, expected, field in [
+        ("volume", ("volume", "ls", "--format", "{{.Name}}"), {project + "_postgres_data"}, ".Labels"),
+        ("network", ("network", "ls", "--format", "{{.Name}}"), {project + "_edge", project + "_database"}, ".Labels"),
+        ("container", ("ps", "-a", "--format", "{{.Names}}"), {project + "-" + service + "-1" for service in ("postgres", "api", "web")}, ".Config.Labels"),
+    ]:
+        present = set(docker(*listing).decode().splitlines())
+        for name in sorted(expected & present):
+            labels = json.loads(docker(kind, "inspect", name, "--format", "{{json " + field + "}}").decode()) or {}
+            if labels.get("com.docker.compose.project") != project or labels.get(OWNER_LABEL) != config["owner"]:
+                raise ValueError("Nome Docker já ocupado por recurso sem a identidade esperada; nenhuma adoção")
 
 
 def validate_images(metadata):
@@ -140,7 +151,7 @@ def compose(path, config, *args):
                 "LOCAL_WEB_IMAGE": config["images"]["images"]["web"]["id"],
                 "LOCAL_POSTGRES_IMAGE": config["images"]["base_images"]["postgres"],
                 "LOCAL_GENERATION_ENABLED": str(config["generation_enabled"]).lower()})
-    return subprocess.run(["docker", "compose", "--env-file", str(path / "empty.env"),
+    return docker_run(["compose", "--env-file", str(path / "empty.env"),
                            "-f", str(ROOT / "infra/local-app/compose.yaml"), "-p", config["project"], *args],
                           env=env, capture_output=True, check=True).stdout
 
@@ -148,6 +159,7 @@ def compose(path, config, *args):
 def start(path, config):
     if (path / "recovery.json").exists():
         raise ValueError("Recuperação incompleta; destino não pode ser liberado")
+    owned(config)
     validate_images(config["images"])
     web = compose(path, config, "ps", "-q", "web").decode().strip()
     if not web:

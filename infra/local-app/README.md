@@ -74,10 +74,18 @@ segredo; nunca sobrescreve estado anterior. Projeto `concurso-simulator-app-loca
 volume/rede próprios. API/PG não publicam portas; web somente127.0.0.1:8088.
 Origem/porta devem ser as mesmas do build. Colisão falha sem parar outro serviço.
 O Docker deve ser local (unix socket/named pipe) e executar containers Linux.
+Os comandos resolvem a precedência `DOCKER_CONTEXT`→`DOCKER_HOST`→contexto atual,
+recusam endpoint remoto e fixam o mesmo endpoint com `--host` durante todo o processo.
+Build usa explicitamente o builder `default` desse daemon; não aceita builder remoto
+herdado do ambiente. Referências: [CLI Docker](https://docs.docker.com/reference/cli/docker/)
+e [default builder](https://docs.docker.com/build/builders/).
 
 `start` usa IDs das imagens registradas e espera prontidão real dos três serviços.
 `stop` preserva volume/segredos; novo `start` retoma os mesmos dados. Não há comando
 de remoção no operador. Estado/projeto com recurso de outro proprietário é recusado.
+São conferidos também os nomes exatos de volumes/redes/containers esperados,
+inclusive se o recurso preexistente não tiver rótulo de projeto. Rótulo ausente ou
+divergente bloqueia antes do `up`; a ferramenta não adota volume homônimo.
 `status` não imprime valores de configuração nem dumps. Falha não é sucesso parcial.
 
 Segredos ficam em `.local/secrets/`: parent0700 e arquivos0644 permitem leitura dos
@@ -114,6 +122,13 @@ O ensaio de runtime comprovou origem única,cookie/CSRF/OAuth,zero questões/ten
 em V10,portas somente na web,colisão sem interrupção,503 com PostgreSQL parado,
 material disponível e reinício preservando schema/volume. Relatório ignorado:
 backend/build/local-app/runtime-check.json. O teste não simula login Google real.
+No Unix, a sondagem de porta permite TIME_WAIT de conexão já encerrada e continua
+recusando listener ativo; Windows conserva bind exclusivo. Regressões cobrem ambos.
+
+`python scripts/check_local_ownership.py` cria somente um volume sintético homônimo
+sem rótulo de projeto, comprova recusa antes de criar containers e verifica seu
+conteúdo intacto. Depois remove exclusivamente o volume que o próprio teste criou,
+conferindo um rótulo de ensaio único. Nunca recebe volume do operador.
 
 ## Backup deliberado e recuperação
 

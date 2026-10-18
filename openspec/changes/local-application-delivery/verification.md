@@ -3,6 +3,7 @@
 Execução Windows/Docker Linux em2026-10-18. **15/16 verificadas;0/16 integradas**.
 Item4.4/gate cumulativo permanece pendente após merges autorizados e contexto próprio;
 esta verificação não é parecer independente nem autorização de merge.
+Revisão inicial do lote encontrou B1/R1 confirmados; correções e revalidação em andamento.
 
 Risco crítico: sessão/segredos/proxy, persistência/recuperação e CI. PRs#125–#128,
 stack#129 v0.2.1, trunk epic/local-application-delivery. Base da spec6283c4d.
@@ -14,7 +15,7 @@ posse/regras no núcleo e persistência nos adaptadores existentes.
 
 | Verificação | Resultado e limites |
 |---|---|
-| Ferramentas locais |11 testes, contexto/sentinelas/links, ownership, locks, checksum, confirmação e bloqueio de recuperação |
+| Ferramentas locais |17 testes Linux aprovados;Windows16 aprovados/1 TIME_WAIT ignorado; contexto/sentinelas/links, ownership, locks, checksum, confirmação e bloqueio de recuperação |
 | Java build |246 testes,245 aprovados e1 symlink ignorado no Windows; ArchUnit/domínio/JPA/PG/HTTP presentes |
 | Frontend |164 testes e build aprovados |
 | Python legado |63 testes aprovados em Linux; Windows esbarrou em symlink/encoding/configuração global Git, sem relaxar testes |
@@ -24,7 +25,7 @@ posse/regras no núcleo e persistência nos adaptadores existentes.
 | OIDC separado |23/24 inicialmente; teste que excedeu timeout passou isolado1/1. No CI das três primeiras camadas, suíte completa aprovada. Provedor sintético, sem Google real |
 | Browser empacotado |4/4, visitante/CSRF/retry, duas sessões/conflito/retomada, outra conta404,51 assuntos/aulas/prática em390/1280px |
 | Recuperação real |Dump custom18.6 com API parada;20 tabelas não técnicas comparadas integralmente; sessões técnicas incluídas no dump e invalidadas no destino; V5/formato2/V10; histórico/retomada; destino ocupado e falha bloqueados |
-| Exportação limpa |Sete fases aprovadas: imagens/helper/dependências/inspeção/runtime/recuperação/browser, fonte commitada apenas |
+| Exportação limpa |Sete fases iniciais aprovadas: imagens/helper/dependências/inspeção/runtime/recuperação/browser, fonte commitada apenas |
 
 ## Identidade da execução limpa
 
@@ -54,8 +55,10 @@ Desktop; mesmo arquivo no caminho curto passou. Usar diretório ignorado curto n
 sem elevar runtime a root. Estado/segredos preservam permissões próprias. Logs brutos,
 dumps e cookies ficam privados; diagnóstico público só mostra arquivo/linha/categoria.
 
-CI novo de entrega local falhou no head anterior, na etapa runtime; cabe ao head atual
-confirmar Linux. Checks aprovados de camadas anteriores não certificam mudanças novas.
+CI de entrega local revelou falso conflito no bind após stop em Linux (TIME_WAIT).
+Sondagem Unix passou a aceitar conexão encerrada e continuar recusando listener ativo;
+Windows conserva bind exclusivo. Regressão real de sockets passou em Linux.
+O novo head precisa confirmar o procedimento completo Linux. Checks aprovados de camadas anteriores não certificam mudanças novas.
 Não há publicação/preview nem upload dos dados do ensaio. Não se copiou nem leu banco
 do operador. Todos os projetos do ensaio têm namespace/owner próprios e são removidos
 somente após conferência; start/stop do operador preservam volume.

@@ -14,10 +14,11 @@ from urllib.parse import quote
 from urllib.request import urlopen
 from local_app_images import OUTPUT, ROOT, write_report
 from check_attempt_artifacts import check as inspect_artifacts
+from local_docker import run as docker_run, check_output as docker_output
 
 
 def copied(container, path):
-    raw = subprocess.check_output(["docker", "cp", container + ":" + path, "-"])
+    raw = docker_output(["cp", container + ":" + path, "-"])
     with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
         return archive.extractfile(archive.getmembers()[0]).read()
 
@@ -26,9 +27,9 @@ def check(report):
     metadata = json.loads(report.read_text(encoding="utf-8"))
     images = metadata["images"]
     for item in images.values():
-        identity = subprocess.check_output(["docker", "image", "inspect", item["tag"], "--format", "{{.Id}}|{{.Config.User}}"], text=True).strip().split("|")
+        identity = docker_output(["image", "inspect", item["tag"], "--format", "{{.Id}}|{{.Config.User}}"], text=True).strip().split("|")
         assert identity == [item["id"], item["user"]] and item["user"].split(":")[0] not in ("", "0", "root")
-    api = subprocess.check_output(["docker", "create", "--label", "com.concursosimulator.check=images", images["api"]["id"]], text=True).strip()
+    api = docker_output(["create", "--label", "com.concursosimulator.check=images", images["api"]["id"]], text=True).strip()
     web = None
     try:
         with zipfile.ZipFile(io.BytesIO(copied(api, "/app/application.jar"))) as jar:
@@ -38,16 +39,16 @@ def check(report):
             assert not any(n.endswith(("Fixture.class", "Tests.class")) for n in names)
             assert not any(n.startswith("BOOT-INF/lib/") and any(t in n for t in ("junit", "mockito", "testcontainers")) for n in names)
         # Missing configuration must fail before serving; this isolated container has no network or secrets.
-        probe = subprocess.check_output(["docker", "create", "--network", "none", images["api"]["id"]], text=True).strip()
+        probe = docker_output(["create", "--network", "none", images["api"]["id"]], text=True).strip()
         try:
-            subprocess.run(["docker", "start", "-a", probe], capture_output=True, timeout=60)
-            assert subprocess.check_output(["docker", "inspect", probe, "--format", "{{.State.ExitCode}}"], text=True).strip() != "0"
+            docker_run(["start", "-a", probe], capture_output=True, timeout=60)
+            assert docker_output(["inspect", probe, "--format", "{{.State.ExitCode}}"], text=True).strip() != "0"
         finally:
-            subprocess.run(["docker", "rm", "-f", probe], check=True, stdout=subprocess.DEVNULL)
+            docker_run(["rm", "-f", probe], check=True, stdout=subprocess.DEVNULL)
         with socket.socket() as reservation:
             reservation.bind(("127.0.0.1", 0))
             port = reservation.getsockname()[1]
-        web = subprocess.check_output(["docker", "run", "-d", "--name", "cs-image-check-" + uuid.uuid4().hex[:12],
+        web = docker_output(["run", "-d", "--name", "cs-image-check-" + uuid.uuid4().hex[:12],
                                        "--label", "com.concursosimulator.check=images", "-p", f"127.0.0.1:{port}:8080", images["web"]["id"]], text=True).strip()
         base = f"http://127.0.0.1:{port}"
         OUTPUT.mkdir(parents=True, exist_ok=True)
@@ -56,7 +57,7 @@ def check(report):
             assert directory.is_relative_to(OUTPUT.resolve())
             jar = directory / "application.jar"; jar.write_bytes(copied(api, "/app/application.jar"))
             dist = directory / "dist"; dist.mkdir()
-            raw = subprocess.check_output(["docker", "cp", web + ":/usr/share/nginx/html/.", "-"])
+            raw = docker_output(["cp", web + ":/usr/share/nginx/html/.", "-"])
             with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
                 # Material intentionally contains public legacy solutions; inspect the SPA independently.
                 members = [m for m in archive.getmembers() if "material" not in PurePosixPath(m.name).parts]
@@ -90,8 +91,8 @@ def check(report):
     finally:
         # Only IDs returned by our create/run; no volumes or other projects are removed.
         if web:
-            subprocess.run(["docker", "rm", "-f", web], check=True, stdout=subprocess.DEVNULL)
-        subprocess.run(["docker", "rm", api], check=True, stdout=subprocess.DEVNULL)
+            docker_run(["rm", "-f", web], check=True, stdout=subprocess.DEVNULL)
+        docker_run(["rm", api], check=True, stdout=subprocess.DEVNULL)
 
 
 if __name__ == "__main__":

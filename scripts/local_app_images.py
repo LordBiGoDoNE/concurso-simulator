@@ -8,6 +8,7 @@ import subprocess
 import tarfile
 from pathlib import Path, PurePosixPath
 from urllib.parse import urlsplit
+from local_docker import run as docker_run, check_output as docker_output, endpoint
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "backend/build/local-app"
@@ -96,7 +97,8 @@ def write_report(path, value):
 
 def build(revision, public_origin, report):
     public_origin = origin(public_origin)
-    if subprocess.check_output(["docker", "version", "--format", "{{.Server.Os}}"], text=True).strip() != "linux":
+    endpoint()
+    if docker_output(["version", "--format", "{{.Server.Os}}"], text=True).strip() != "linux":
         raise ValueError("Docker deve executar containers Linux")
     sha, context, selected = committed_context(revision)
     with tarfile.open(fileobj=io.BytesIO(context)) as archive:
@@ -108,12 +110,12 @@ def build(revision, public_origin, report):
     images = {}
     for service, dockerfile in [("api", "backend"), ("web", "web")]:
         tag = f"concurso-simulator-{service}:{suffix}"
-        command = ["docker", "build", "--progress=plain", "-f", f"infra/local-app/{dockerfile}.Dockerfile",
+        command = ["build", "--builder", "default", "--progress=plain", "-f", f"infra/local-app/{dockerfile}.Dockerfile",
                    "--label", f"org.opencontainers.image.revision={sha}", "-t", tag]
         if service == "web":
             command += ["--build-arg", f"LOCAL_APP_ORIGIN={public_origin}"]
-        subprocess.run(command + ["-"], input=context, check=True)
-        identity = subprocess.check_output(["docker", "image", "inspect", tag, "--format", "{{.Id}}|{{.Config.User}}"], text=True).strip().split("|")
+        docker_run(command + ["-"], input=context, check=True)
+        identity = docker_output(["image", "inspect", tag, "--format", "{{.Id}}|{{.Config.User}}"], text=True).strip().split("|")
         if identity[1].split(":")[0] in ("", "0", "root"):
             raise ValueError("Runtime não pode executar como root")
         images[service] = {"tag": tag, "id": identity[0], "user": identity[1]}

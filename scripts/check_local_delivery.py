@@ -31,6 +31,7 @@ def check():
         ([gradle, "--no-daemon", "--console=plain", "localDeliveryFixtureClasses"], destination / "backend"),
         ([npm, "ci"], destination / "frontend"),
         ([sys.executable, "scripts/check_local_images.py"], destination),
+        ([sys.executable, "scripts/check_local_ownership.py"], destination),
         ([sys.executable, "scripts/check_local_runtime.py"], destination),
         ([sys.executable, "scripts/check_local_recovery.py"], destination),
         ([sys.executable, "scripts/check_local_browser.py"], destination),
@@ -49,14 +50,14 @@ def check():
                     file, line = locations[-1]
                     print(f"Falha etapa {number}; origem {file.replace(chr(92), '/').rsplit('/', 1)[-1]}:{line}", flush=True)
                 diagnostic = destination / "backend/build/local-app/runtime-container-private.log"
-                if number == 5 and diagnostic.is_file():
+                if command[-1] == "scripts/check_local_runtime.py" and diagnostic.is_file():
                     private = diagnostic.read_text(encoding="utf-8", errors="replace")
                     for category in ("Input/output error", "Permission denied", "AccessDeniedException", "OutOfMemoryError"):
                         if category in private:
                             print("Categoria de falha: " + category, flush=True)
                 raise
     reports = {name: json.loads((destination / "backend/build/local-app" / (name + ".json")).read_text(encoding="utf-8"))
-               for name in ("image-check", "runtime-check", "recovery-check", "browser-check")}
+               for name in ("image-check", "ownership-check", "runtime-check", "recovery-check", "browser-check")}
     assert all(report["status"] == "passed" and report["source_sha"] == sha for report in reports.values())
     write_report(OUTPUT / "clean-delivery-check.json", {"status": "passed", "source_sha": sha,
                  "export": str(destination.relative_to(ROOT)), "reports": reports,

@@ -3,11 +3,11 @@ import hashlib
 import json
 import os
 import re
-import subprocess
 import uuid
 from datetime import datetime, timezone
 from pathlib import Path
 from local_app import ROOT, compose, docker, owned
+from local_docker import run as docker_run
 
 SESSIONS = {"spring_session", "spring_session_attributes"}
 TABLES = {"application_marker", "app_user", "external_identity", "spring_session", "spring_session_attributes",
@@ -65,7 +65,7 @@ def backup(path, config):
     dump = directory / (stem + ".dump")
     partial = dump.with_suffix(".partial")
     with os.fdopen(os.open(partial, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), "wb") as stream:
-        subprocess.run(["docker", "exec", postgres(path, config), "pg_dump", "-U", "concurso", "-d", "concurso_simulator",
+        docker_run(["exec", postgres(path, config), "pg_dump", "-U", "concurso", "-d", "concurso_simulator",
                         "--format=custom", "--no-owner", "--no-privileges", "--no-password"],
                        stdout=stream, stderr=subprocess.PIPE, check=True)
     if fingerprints(path, config) != expected:

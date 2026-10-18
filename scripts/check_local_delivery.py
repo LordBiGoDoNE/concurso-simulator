@@ -13,8 +13,10 @@ def check():
     sha = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "HEAD"], text=True).strip()
     git_dir = subprocess.check_output(["git", "-C", str(ROOT), "rev-parse", "--absolute-git-dir"], text=True).strip()
     raw = subprocess.check_output(["git", "-C", str(ROOT), "archive", "--format=tar", sha])
-    destination = OUTPUT / "exports" / ("check-" + uuid.uuid4().hex[:12])
-    destination.mkdir(parents=True, mode=0o700)
+    # Keep Windows bind-mount paths short; deep exported secret paths failed for non-root Desktop guests.
+    # Only committed public source is exported here; test state/secrets retain their own private permissions.
+    destination = ROOT / (".local-app-export-" + uuid.uuid4().hex[:8])
+    destination.mkdir(mode=0o755)
     with tarfile.open(fileobj=io.BytesIO(raw)) as archive:
         if any(not (item.isfile() or item.isdir()) for item in archive.getmembers()):
             raise ValueError("Exportação recusa links/arquivos especiais")

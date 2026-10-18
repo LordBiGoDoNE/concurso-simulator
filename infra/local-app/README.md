@@ -201,7 +201,7 @@ conclusão,51 assuntos, aulas reais e prática dirigida em390/1280px. As sessõe
 do helper separado, somente no projeto descartável. Não é login Google real.
 `npm run test:identity` continua sendo a suíte separada de OIDC sintético existente.
 
-O segundo exporta somente o commit atual em backend/build/local-app/exports/,
+O segundo exporta somente o commit atual em `.local-app-export-<id>/`, ignorado,
 constrói as imagens e repete inspeção/runtime/recuperação/navegador nessa cópia.
 Usa o Git original somente para leitura da proveniência do commit; não copia
 workspace, `.git`, credenciais ou banco. Requer Git, Python3.14, JDK25, Node24 e
@@ -210,6 +210,11 @@ ensaio:18088, nunca escolhida silenciosamente; colisão falha sem parar terceiro
 Exportações e relatórios permanecem ignorados/privados; não anexe dumps/cookies
 ou logs brutos a issues/PRs. Execução Windows local e Linux no CI são evidências
 distintas; CI pendente não é prova de execução Linux.
+O caminho curto evita erro de bind mount de arquivos pelo usuário sem privilégios
+observado no Docker Desktop com exportações profundamente aninhadas. Em checkouts
+muito longos, prefira um caminho curto para o repositório; não execute API como root
+para contornar falha de montagem. Fonte exportada é pública; estado/segredos mantêm
+as permissões privadas próprias.
 
 CI acrescenta apenas verificações, sem previews/deploy nem upload de dados do
 ensaio. Pages e gates existentes permanecem. Regressões Java/ArchUnit/PG/HTTP,

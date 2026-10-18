@@ -1,6 +1,6 @@
 # Tasks
 
-Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **4/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente.**
+Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **8/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente.**
 Usuário escolheu Docker local primeiro e todos os16 itens deste lote. Implementação/verificação em execução;merges continuam sujeitos à aprovação própria.
 Cada grupo inclui código, testes, documentação e revisão SOL6.1xHigh. Dependências
 reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própria.
@@ -14,10 +14,10 @@ reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própri
 
 ## 2. Compose local, origem e segurança — depende de 1
 
-- [ ] 2.1 Criar projeto Compose próprio com rede/volume isolados, web em127.0.0.1 e API/PG sem portas no host; testar isolamento, colisão e stop/start sem apagar dados; documentar preservação do ambiente existente.
-- [ ] 2.2 Encaminhar API/OAuth/callback na mesma origem e configurar base pública do material/porta; testar métodos/query/status/no-store, paths negados e ausência de fallback HTML em erros; documentar proprietários conforme checklist HTTP.
-- [ ] 2.3 Fornecer configuração externa/segredos por arquivo e perfil local explícito, Google desligado; testar falta de configuração, cookies/CSRF/CORS e manutenção das proteções padrão/produção; documentar habilitação opcional sem credenciais versionadas.
-- [ ] 2.4 Integrar healthchecks/prontidão e falhas limitadas; testar banco indisponível antes/depois do startup, recuperação e aulas acessíveis, sem falso UP ou vazamento; documentar diagnóstico sem dados privados.
+- [x] 2.1 Criar projeto Compose próprio com rede/volume isolados, web em127.0.0.1 e API/PG sem portas no host; testar isolamento, colisão e stop/start sem apagar dados; documentar preservação do ambiente existente.
+- [x] 2.2 Encaminhar API/OAuth/callback na mesma origem e configurar base pública do material/porta; testar métodos/query/status/no-store, paths negados e ausência de fallback HTML em erros; documentar proprietários conforme checklist HTTP.
+- [x] 2.3 Fornecer configuração externa/segredos por arquivo e perfil local explícito, Google desligado; testar falta de configuração, cookies/CSRF/CORS e manutenção das proteções padrão/produção; documentar habilitação opcional sem credenciais versionadas.
+- [x] 2.4 Integrar healthchecks/prontidão e falhas limitadas; testar banco indisponível antes/depois do startup, recuperação e aulas acessíveis, sem falso UP ou vazamento; documentar diagnóstico sem dados privados.
 
 ## 3. Persistência e recuperação — depende de 2
 

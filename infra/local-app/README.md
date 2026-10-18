@@ -109,3 +109,8 @@ Cria somente projeto `concurso-simulator-app-local-check<id>` e estado em
 backend/build/local-app/environments/check-<id>. O cleanup desse teste descarta apenas
 esse projeto/volume sintéticos após conferir proprietário. Nunca aceita `.local/`
 do operador. Não se aplica ao start/stop normal, que preserva todos os dados.
+
+O ensaio de runtime comprovou origem única,cookie/CSRF/OAuth,zero questões/tentativas
+em V10,portas somente na web,colisão sem interrupção,503 com PostgreSQL parado,
+material disponível e reinício preservando schema/volume. Relatório ignorado:
+backend/build/local-app/runtime-check.json. O teste não simula login Google real.

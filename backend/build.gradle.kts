@@ -109,3 +109,13 @@ tasks.register<JavaExec>("subjectReviewOperationalCheck") {
     mainClass.set("br.com.concursosimulator.mockexam.SubjectReviewOperationalFixture")
     args(tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar").get().archiveFile.get().asFile.absolutePath)
 }
+
+// Separate helper image/classpath; never copied into the production bootJar or startup.
+tasks.register<Sync>("localDeliveryFixtureClasses") {
+    group = "verification"
+    dependsOn(tasks.testClasses)
+    into(layout.buildDirectory.dir("local-delivery-fixture"))
+    from(sourceSets.main.get().output) { into("classes") }
+    from(sourceSets.test.get().output) { into("classes") }
+    from(configurations.testRuntimeClasspath) { into("lib") }
+}

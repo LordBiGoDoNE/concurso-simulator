@@ -97,7 +97,7 @@ incompleto. OIDC de teste não existe na imagem normal.
 Se o banco cair, prontidão retorna503 em prazo finito e o material permanece acessível.
 Healthcheck não reinicia automaticamente nem promete disponibilidade. Para diagnóstico
 use status/health no Docker Desktop; evite habilitar logs de payload/cookies/SQL bind.
-O grupo3 acrescentará backup/restauração com invalidação de sessões restauradas.
+Backup/restauração estão descritos abaixo; não use `down -v` na instância do operador.
 
 Ensaio real e isolado do Compose:
 
@@ -114,3 +114,73 @@ O ensaio de runtime comprovou origem única,cookie/CSRF/OAuth,zero questões/ten
 em V10,portas somente na web,colisão sem interrupção,503 com PostgreSQL parado,
 material disponível e reinício preservando schema/volume. Relatório ignorado:
 backend/build/local-app/runtime-check.json. O teste não simula login Google real.
+
+## Backup deliberado e recuperação
+
+```sh
+python scripts/local_app.py backup
+```
+
+O comando para a API e mantém o PostgreSQL em execução. Suspenda também CLIs
+editoriais e qualquer escrita externa durante a operação. O dump custom usa o
+cliente18.6 do próprio container, sem senha nos argumentos, e compara todas as
+tabelas de negócio/catálogo/Flyway antes/depois. A API permanece parada até `start`.
+Um backup que falhou não deve ser usado: somente `.dump` com `.dump.json` validado
+é aceito; arquivos `.partial` ficam privados para diagnóstico.
+
+Artefatos em `.local/backups/` são privados: incluem capturas, contas e sessões.
+Não os publique como artefatos de CI, issues ou commits. Metadados registram origem,
+SHA, imagem API, schemaV10, versão PostgreSQL, contagens e hashes. Checksum detecta
+corrupção acidental; não autentica um dump de terceiro. Restaure somente backups
+confiáveis da ferramenta. Papéis globais, configurações, imagens e segredos ficam
+fora do dump. Preserve também o estado original e as imagens por ID.
+
+Restauração exige projeto próprio, volume novo/vazio e imagem API com o mesmo ID
+compatível do backup. Pare a origem para liberar a porta; não a remova. Exemplo:
+
+```sh
+python scripts/local_app.py stop
+python scripts/local_app.py --state infra/local-app/.local/recoveries/ensaio init --project concurso-simulator-app-local-recuperado
+python scripts/local_app.py --state infra/local-app/.local/recoveries/ensaio restore --backup CAMINHO_DO_DUMP
+```
+
+O último comando mostra uma prévia e o texto exato para `--confirm`, incluindo
+origem, destino e SHA256. Repita com esse argumento entre aspas. A ferramenta
+inicia somente o banco, recusa qualquer tabela existente e restaura atomicamente.
+Antes de liberar, apaga **todas** as sessões Spring restauradas e verifica hashes
+de negócio/Flyway e índiceV10. Nenhum cookie anterior volta a funcionar, mesmo
+que estivesse válido no instante do backup. Depois execute `start` nesse estado
+e autentique novamente. Histórico e tentativas da conta continuam preservados.
+Google desligado continua sem login real; habilitá-lo é uma configuração opcional,
+não uma autorização para injetar sessões no ambiente do operador.
+
+Falha após iniciar restauração mantém `recovery.json`, bloqueando `start`. Preserve
+o destino para diagnóstico e crie outro destino novo; não remova o bloqueio para
+forçar acesso. `operation.lock` impede comandos simultâneos da ferramenta. Se o
+processo for encerrado abruptamente, investigue se ainda há operação ativa antes
+de qualquer intervenção manual; a ferramenta nunca quebra locks automaticamente.
+
+Reinício comum (`stop`/`start`) preserva volume e sessões válidas; restauração
+invalida sessões deliberadamente. Retorno compatível usa o ID da imagem guardada,
+mantendo V10 e capturas formato1/V5 e formato2. Não execute binário V5 em banco com
+formato2, nem reverta migrações ou apague volume para simular rollback. É possível
+desligar novas gerações (`generation_enabled: false` em state.json, API parada);
+os leitores continuam apresentando as capturas existentes. Troca de versão com
+schema diferente exige outro procedimento aprovado; este ensaio não a certifica.
+
+Ensaio sintético (requer JDK25 no host para compilar o helper):
+
+```sh
+cd backend
+./gradlew localDeliveryFixtureClasses
+cd ..
+python scripts/check_local_recovery.py
+```
+
+O helper roda em JVM/container separado, ligado somente ao banco descartável,
+sem endpoint de fixture/provedor falso no runtime. O ensaio compara todas as
+tabelas não técnicas, lê V5/formato2 com geração desligada, comprova reinício,
+backup→logout→restore→cookie antigo401, nova sessão com histórico/retomada,
+destino ocupado recusado e recuperação falha bloqueada. Resultado privado em
+backend/build/local-app/recovery-check.json. Nenhum dado do operador é copiado;
+tal transferência exige autorização específica de origem/destino/escopo.

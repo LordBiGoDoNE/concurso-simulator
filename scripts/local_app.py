@@ -7,6 +7,7 @@ import secrets
 import socket
 import subprocess
 import uuid
+from contextlib import contextmanager
 from pathlib import Path
 from local_app_images import ROOT, OUTPUT, origin
 
@@ -32,8 +33,10 @@ def local_engine():
 
 def state_path(path):
     resolved = Path(path).resolve()
-    if resolved != DEFAULT_STATE.resolve() and not resolved.is_relative_to((OUTPUT / "environments").resolve()):
-        raise ValueError("Estado deve ficar em infra/local-app/.local ou backend/build/local-app/environments")
+    recovery = DEFAULT_STATE.resolve() / "recoveries"
+    operator_target = resolved.parent == recovery and re.fullmatch(r"[a-z0-9][a-z0-9-]{0,40}", resolved.name)
+    if resolved != DEFAULT_STATE.resolve() and not operator_target and not resolved.is_relative_to((OUTPUT / "environments").resolve()):
+        raise ValueError("Use .local, .local/recoveries/<nome> ou o diretório de ensaios isolados")
     if any(c in str(resolved) for c in "\r\n$"):
         raise ValueError("Path de estado inválido")
     return resolved
@@ -107,8 +110,26 @@ def load(path):
         raise ValueError("Estado inválido")
     if origin(config["origin"]) != f'http://127.0.0.1:{config["port"]}':
         raise ValueError("Origem divergente")
+    if not isinstance(config["generation_enabled"], bool):
+        raise ValueError("Opção de geração deve ser booleana")
     owned(config)
     return path, config
+
+
+@contextmanager
+def operation(path):
+    """Serialize our start/stop/backup/restore commands; never break a stale lock automatically."""
+    path = state_path(path)
+    lock = path / "operation.lock"
+    token = uuid.uuid4().hex
+    with lock.open("x", encoding="utf-8") as stream:
+        stream.write(token)
+    try:
+        yield
+    finally:
+        if lock.read_text(encoding="utf-8") != token:
+            raise ValueError("Lock alterado; preserve o estado e investigue")
+        lock.unlink()
 
 
 def compose(path, config, *args):
@@ -145,19 +166,31 @@ def main():
     init.add_argument("--project", default="concurso-simulator-app-local")
     for action in ("start", "stop", "status"):
         actions.add_parser(action)
+    actions.add_parser("backup")
+    restore = actions.add_parser("restore")
+    restore.add_argument("--backup", type=Path, required=True)
+    restore.add_argument("--confirm")
     args = parser.parse_args()
     try:
         if args.action == "init":
             initialize(args.state, args.images, args.port, args.project)
         else:
             path, config = load(args.state)
-            if args.action == "start":
-                start(path, config)
-            elif args.action == "stop":
-                compose(path, config, "stop")
-                print("Containers parados; volume e segredos preservados.")
-            else:
+            if args.action == "status":
                 print(compose(path, config, "ps", "--format", "json").decode())
+            else:
+                with operation(path):
+                    if args.action == "start":
+                        start(path, config)
+                    elif args.action == "stop":
+                        compose(path, config, "stop")
+                        print("Containers parados; volume e segredos preservados.")
+                    elif args.action == "backup":
+                        from local_app_data import backup
+                        backup(path, config)
+                    else:
+                        from local_app_data import restore_backup
+                        restore_backup(path, config, args.backup, args.confirm)
     except (ValueError, OSError, KeyError, subprocess.CalledProcessError):
         parser.exit(1, "Operação local recusada/falhou; confira estado, configuração, portas e health no Docker. Nenhum segredo é impresso.\n")
 

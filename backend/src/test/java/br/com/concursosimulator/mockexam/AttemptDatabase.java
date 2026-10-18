@@ -15,7 +15,7 @@ import static br.com.concursosimulator.mockexam.AttemptFixtures.NOW;
 
 public final class AttemptDatabase implements AutoCloseable {
     final DriverManagerDataSource ds;
-    final String schema="me_"+UUID.randomUUID().toString().replace("-","");
+    final String schema;
     final JdbcTemplate jdbc;
     EntityManagerFactory factory;
     EntityManager entities;
@@ -24,9 +24,16 @@ public final class AttemptDatabase implements AutoCloseable {
     JpaEligibleRevisionPool pool;
     AttemptDatabase(PostgreSQLContainer pg) { this(pg,"9"); }
     AttemptDatabase(PostgreSQLContainer pg,String target) {
+        schema="me_"+UUID.randomUUID().toString().replace("-","");
         ds=new DriverManagerDataSource(pg.getJdbcUrl()+"&currentSchema="+schema,pg.getUsername(),pg.getPassword());
         jdbc=new JdbcTemplate(ds); migrate(target);
         if (target.equals("5") || target.equals("7") || target.equals("8") || target.equals("9")) open();
+    }
+    // Explicit verification harness only: Compose has already migrated this disposable database.
+    AttemptDatabase(String url,String username,String password) {
+        schema="public";
+        ds=new DriverManagerDataSource(url,username,password);
+        jdbc=new JdbcTemplate(ds); open();
     }
     void migrate(String target) { Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).target(target).load().migrate(); }
     void open() { open("br.com.concursosimulator.questionbank.infrastructure.persistence","br.com.concursosimulator.mockexam.infrastructure.persistence"); }

@@ -1,6 +1,6 @@
 # Tasks
 
-Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **8/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente.**
+Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **12/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente.**
 Usuário escolheu Docker local primeiro e todos os16 itens deste lote. Implementação/verificação em execução;merges continuam sujeitos à aprovação própria.
 Cada grupo inclui código, testes, documentação e revisão SOL6.1xHigh. Dependências
 reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própria.
@@ -21,10 +21,10 @@ reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própri
 
 ## 3. Persistência e recuperação — depende de 2
 
-- [ ] 3.1 Demonstrar FlywayV1–V10,validate e volume persistente sem seed/importação automática; testar reinício e banco vazio honesto, preservando CLIs editoriais e banco do operador; documentar autorização específica para cópia real.
-- [ ] 3.2 Implementar backup lógico local deliberado com credencial fora de args/logs, artefato privado e identificação de origem/versões; testar dump consistente com fixtures sintéticas; documentar papéis/configuração fora do dump.
-- [ ] 3.3 Restaurar somente em destino novo/vazio com confirmação de identidade, API parada e invalidação das sessões restauradas antes de uso; testar backup→logout→restore mantendo cookie antigo401, igualdade de negócio/Flyway/capturas/comandos e histórico/retomada após nova sessão, rejeitando destino ocupado; documentar validação e diferença de reinício comum.
-- [ ] 3.4 Ensaiar stop/restart/retorno a imagem compatível sem apagar volume ou migrar para trás; testar V5/formato2/índiceV10,geração desligada e leitores compatíveis; documentar plano local e limites de recuperação.
+- [x] 3.1 Demonstrar FlywayV1–V10,validate e volume persistente sem seed/importação automática; testar reinício e banco vazio honesto, preservando CLIs editoriais e banco do operador; documentar autorização específica para cópia real.
+- [x] 3.2 Implementar backup lógico local deliberado com credencial fora de args/logs, artefato privado e identificação de origem/versões; testar dump consistente com fixtures sintéticas; documentar papéis/configuração fora do dump.
+- [x] 3.3 Restaurar somente em destino novo/vazio com confirmação de identidade, API parada e invalidação das sessões restauradas antes de uso; testar backup→logout→restore mantendo cookie antigo401, igualdade de negócio/Flyway/capturas/comandos e histórico/retomada após nova sessão, rejeitando destino ocupado; documentar validação e diferença de reinício comum.
+- [x] 3.4 Ensaiar stop/restart/retorno a imagem compatível sem apagar volume ou migrar para trás; testar V5/formato2/índiceV10,geração desligada e leitores compatíveis; documentar plano local e limites de recuperação.
 
 ## 4. Verificação integrada e gate — depende de 1–3
 

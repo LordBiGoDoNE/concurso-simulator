@@ -5,7 +5,7 @@ import AttemptWorkspace from './AttemptWorkspace';
 import type { CurrentIdentity } from './identity-api';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
-const materialUrl = import.meta.env.VITE_MATERIAL_URL || 'https://lordbigodone.github.io/concurso-simulator/';
+import { materialUrl } from './lesson-links';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
 const timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : 5000;
 
@@ -47,7 +47,7 @@ export default function App() {
       <LoginPanel onIdentity={changedIdentity} onChecking={checkingIdentity} onBeforeLogin={beforeLogin} />
       {privateNotice && <p role="status">{privateNotice}</p>}
       {checking && <p role="status">Conferindo acesso aos simulados…</p>}
-      <div hidden={checking}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
+      <div hidden={checking}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} reviewActive={!checking} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
       <QuestionBrowser />
       <section aria-labelledby="application-title">
         <h2 id="application-title">Nova aplicação — ambiente local</h2>

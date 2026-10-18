@@ -2,6 +2,7 @@ package br.com.concursosimulator.platform.infrastructure;
 
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.shared.infrastructure.PublicQuestionRoutes;
+import br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes;
 import java.util.Arrays;
@@ -111,6 +112,8 @@ public class SecurityConfiguration {
                         .requestMatchers(HttpMethod.GET, "/api/v1/csrf", "/api/v1/auth/config",
                                 "/oauth2/authorization/google", "/login/oauth2/code/google").permitAll()
                         .requestMatchers(HttpMethod.GET, "/api/v1/me/attempts").access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
+                        .requestMatchers(r -> SubjectReviewRoutes.permits(r) && SubjectReviewRoutes.overview(r)).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
+                        .requestMatchers(SubjectReviewRoutes::permits).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
                         .requestMatchers(AttemptRoutes::permits).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
                         .requestMatchers(HttpMethod.GET, "/api/v1/me").access((authentication, request) -> {
                             var current = authentication.get();
@@ -155,6 +158,7 @@ public class SecurityConfiguration {
         source.registerCorsConfiguration("/api/v1/attempts",attempts);
         source.registerCorsConfiguration("/api/v1/attempts/**",attempts);
         source.registerCorsConfiguration("/api/v1/me/attempts",attempts);
+        source.registerCorsConfiguration("/api/v1/me/subject-review",sessions);
         return source;
     }
 }

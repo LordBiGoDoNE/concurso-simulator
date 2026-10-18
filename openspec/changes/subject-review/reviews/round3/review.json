@@ -1,0 +1,158 @@
+{
+  "version": 1,
+  "status": "completed",
+  "scope": "local-implementation-batch-groups5-6-with-6.4-pending",
+  "spec": "subject-review",
+  "risk": "critical",
+  "risk_reason": "Contexto/privacidade,CSRF/idempotência,concorrência/cancelamento e compatibilidade operacional.",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/subject_round3_sol",
+    "independent_context": true,
+    "selection_evidence": "Perfil .opencode/agents/spec-reviewer.md conferido;harness aceitou fork_turns=none,model=gpt-6.1-sol,reasoning_effort=xhigh;revisor confirmou modelo do despacho.Sem ID adicional de provedor exposto ou fallback."
+  },
+  "reviewed_at": "2026-10-16T21:55:40.295491+00:00",
+  "time_basis": "Registro de encerramento pelo coordenador; não telemetria do provedor.",
+  "prs": [
+    {
+      "pr": null,
+      "base_ref": "epic/subject-review",
+      "head_ref": "task/subject-review/lesson-links",
+      "base_sha": "b2355f881213937fe3cd660147b4933e23b82e27",
+      "reviewed_head_sha": "7f968a671105feca0ee00131d82bb2b8defdf0f2",
+      "diff_sha256": "1035f9a97bd59144607c54858389bbee37a519f9e2c8c2dfa5a8d6355003ef4f"
+    },
+    {
+      "pr": null,
+      "base_ref": "task/subject-review/lesson-links",
+      "head_ref": "task/subject-review/directed-practice",
+      "base_sha": "7f968a671105feca0ee00131d82bb2b8defdf0f2",
+      "reviewed_head_sha": "602d7201c32ea24381929e93f2abdc03bd180906",
+      "diff_sha256": "9a83323ada554efb845637a790b7b9b3140c6ab823c2ae5a35643180ea5c89e2"
+    },
+    {
+      "pr": null,
+      "base_ref": "task/subject-review/directed-practice",
+      "head_ref": "task/subject-review/guided-browser",
+      "base_sha": "602d7201c32ea24381929e93f2abdc03bd180906",
+      "reviewed_head_sha": "e748e085fb8fb3a45d5b77f1e408773d9ba8ddef",
+      "diff_sha256": "aa1d50141d1b8b0f84c333afaea9b6971e8c8e63843bb647646af2ab3c767f5c"
+    },
+    {
+      "pr": null,
+      "base_ref": "task/subject-review/guided-browser",
+      "head_ref": "task/subject-review/operational-regression",
+      "base_sha": "e748e085fb8fb3a45d5b77f1e408773d9ba8ddef",
+      "reviewed_head_sha": "d676132f193cecf4765739a5fc5131194ea08702",
+      "diff_sha256": "4e08984883fd9cc2e923a883fc7da14a6f6c62bd1b4716cfb74080566d74e2c5"
+    }
+  ],
+  "combined": {
+    "base_sha": "b2355f881213937fe3cd660147b4933e23b82e27",
+    "reviewed_head_sha": "d676132f193cecf4765739a5fc5131194ea08702",
+    "diff_sha256": "217779d646d45497bd3b37aa03d495e74dea146594288f726fd7f48cdf812ded"
+  },
+  "digest_scope": "Source d676132 revisado. Registro destes dois arquivos reviews/round3 é posterior à leitura; não se declara incluído no digest nem excluído pelo guard.Somente spec-review.json/md são excluídos canonicamente.Nenhum arquivo de produto/requisito/teste/CI mudou após a revisão.",
+  "execution_history": [
+    {
+      "attempt": "initial",
+      "status": "interrupted-usage-limit",
+      "final_report": false,
+      "findings_inferred": false
+    },
+    {
+      "attempt": "initial-resumed",
+      "status": "completed",
+      "same_session": true,
+      "source_unchanged": true,
+      "revalidation": false
+    }
+  ],
+  "coverage": {
+    "requirements": "Todas as quatro camadas e combinação confrontadas com proposta/design/tasks,51 conteudo,composição explícita,contextos,recuperação e regressão.6.4 permanece dependente de integração e contexto cumulativo próprio.",
+    "architecture": "ADR0001/checklist HTTP;núcleo Java puro/portas e adaptadores existentes preservados;nenhuma camada intermediária artificial ou nova API de produção.",
+    "integration": "Resumo/painel/individual→workspace→compositor→POST/useAttemptRun,histórico e App/LoginPanel;confirmação,cancelamento,retry,novas sessões e contexto.",
+    "security": "Privacidade de métricas/preenchimento;limpeza/desmontagem e respostas tardias;CSRF existente,idempotência,catálogo validado,URLs controladas;rota de retirada somentefixture.",
+    "persistence": "Reutilização da seleção/elegibilidade e replay transacional;leitura concluída REQUIRES_NEW/REPEATABLE_READ/filtro antes do limite/posse/expiração;ensaio V9/V10 e recuperação com JAR atual sem downgrade.",
+    "tests": "Assertions unitárias/integração/browser examinadas, incluindo perda de confirmação,duas abas,retirada,atores,última base e processosJAR;revisor não executou testes.",
+    "maintenance": "Mapa público rastreável,taskGradle operacional deliberada,docs/estados distintos;6.4 aberta. Exceção documental aplicada somente a verification-round3 após análise semântica."
+  },
+  "verification": [
+    {
+      "command": "gradlew -p backend --offline --console=plain build",
+      "result": "passed;243 casos,zero falhas/erros,1 symlink omitidoWindows;3m13",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npm --prefix frontend test; npm --prefix frontend run build",
+      "result": "passed;163 testes/17 arquivos;TypeScript/Vite",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npm --prefix frontend run test:identity",
+      "result": "passed;24/24,1.5m;inclui10 subject-review/prática390/1280",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npm --prefix frontend run test:parameterized",
+      "result": "passed;5/5,49.8s",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "npm --prefix frontend run test:e2e (STUDY_ROOT=material montado)",
+      "result": "passed;6/6,9.6s;offline9 módulos/90 resoluções semJS",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "gradlew -p backend --offline subjectReviewOperationalCheck",
+      "result": "passed;26s;V9→V10,V5/formato2,dois processos JAR,12 tabelas de negócio inalteradas,geraçãofalse",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "git archive c3f74961db7f57460b11fb6993588da466655016; npmci/build offline; gradlew bootJar offline; check_attempt_artifacts.py",
+      "result": "passed;exportação limpa,263 classes de produção/4 arquivosSPA;JAR715636d21f0c2db4d1205efbc5c5f1e3d627bb4fe5c1948a934aed762572c9ad;semfixtures/.env/solver/metadados privados conhecidos",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "build_pages.py; check_links.py; audit_parameterized_content.py; openspec validate --all --strict; git diff --check",
+      "result": "passed;108HTML/1757refs,111 variantes versionadas(64/20/27),51 pares/mapa,6 specs;sem decisões editoriais novas",
+      "executed_by": "coordinator"
+    }
+  ],
+  "findings": [],
+  "triage_complete": true,
+  "limitations": [
+    "Revisor somente leitura;não executou testes/build/scriptsprojeto/browser/rede/DB nem verificou artefatos/checks remotos.",
+    "Sem auditoria WCAG/leitor de tela,disponibilidadeCDN,prova de todas intercalações ou SLA.",
+    "Após análise semântica leu somente verification-round3 do próprio diff pela exceção documental;declarações do coordenador não certificam produto.Não leu reviews anteriores/spec-review ou outrosverification.",
+    "Primeira tentativa interrompida por limite de uso,sem parecer final;retomada do mesmo source/contexto concluiu a revisão.Não contar ausência de parecer como ausência de achados.",
+    "Branches/PRs não publicados:ação bloqueada pela revisão automática de permissões;checks remotos inexistentes neste lote.NúmerosPR null não são placeholders de checks aprovados.",
+    "6.4 e gate cumulativo final não executados;dependem da integração autorizada das tarefas e contexto novo.",
+    "Estados pendentes em tasks/verification do source são o registro de preparação;este relatório posterior atualiza somente revisão de lote,sem integrar/publicar tarefas."
+  ],
+  "usage": {
+    "quota_5h": "unavailable",
+    "quota_weekly": "unavailable",
+    "isolation_verified": false,
+    "observations": "Privadas,ignoradas em backend/build;validadas/comparadas por review_quota.py.Nenhum delta atribuível;observação posterior da tentativa interrompida foi tardia e não mede duração ativa.",
+    "tokens": {
+      "input_new": null,
+      "cache_read": null,
+      "cache_write": null,
+      "output": null,
+      "reasoning": null
+    },
+    "coordinator_tokens": null,
+    "no_other_model_executed": true
+  },
+  "publication": {
+    "status": "awaiting-explicit-authorization-after-auto-review-rejection",
+    "remote_checks": [],
+    "merges_authorized": false
+  },
+  "cumulative_gate": {
+    "status": "pending",
+    "task": "6.4",
+    "requires": "Tasks integrated and new independent context before SPEC integration approval"
+  }
+}

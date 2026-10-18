@@ -45,4 +45,15 @@ public final class QuestionBrowserFixtures {
                     "Fixture de mudança editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente banco sintético de navegador"));s.save(q);return null;
         });
     }
+    /** Retirada exclusivamente sintética; não existe rota editorial no produto. */
+    public static void withdraw(ConfigurableApplicationContext context,UUID id) {
+        var store=context.getBean(QuestionStore.class);
+        store.transaction(s -> {
+            var q=s.loadForUpdate(id).orElseThrow();var revision=q.eligible().orElseThrow();
+            q.decide(new EditorialDecision(EditorialDecision.Action.WITHDRAW,id,revision.id(),revision.fingerprint(),
+                    "Fixture de retirada",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente banco descartável do navegador"));
+            s.save(q);return null;
+        });
+    }
+
 }

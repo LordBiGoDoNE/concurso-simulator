@@ -31,7 +31,7 @@ class QuestionSchemaTests {
         var users=jdbc.queryForList("SELECT * FROM app_user"); var identities=jdbc.queryForList("SELECT * FROM external_identity");
         var sessions=jdbc.queryForList("SELECT * FROM spring_session");
         var before=jdbc.queryForObject("SELECT encode(attribute_bytes,'hex') FROM spring_session_attributes",String.class);
-        assertThat(Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).load().migrate().migrationsExecuted).isEqualTo(6);
+        assertThat(Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).load().migrate().migrationsExecuted).isEqualTo(7);
         assertThat(jdbc.queryForList("SELECT * FROM app_user")).isEqualTo(users);
         assertThat(jdbc.queryForList("SELECT * FROM external_identity")).isEqualTo(identities);
         assertThat(jdbc.queryForList("SELECT * FROM spring_session")).isEqualTo(sessions);
@@ -39,7 +39,7 @@ class QuestionSchemaTests {
         assertCatalogAndJpa(ds,jdbc);
         var fresh="qb_"+UUID.randomUUID().toString().replace("-", "");
         var empty=new DriverManagerDataSource(POSTGRES.getJdbcUrl()+"&currentSchema="+fresh,POSTGRES.getUsername(),POSTGRES.getPassword());
-        assertThat(Flyway.configure().dataSource(empty).schemas(fresh).defaultSchema(fresh).load().migrate().migrationsExecuted).isEqualTo(9);
+        assertThat(Flyway.configure().dataSource(empty).schemas(fresh).defaultSchema(fresh).load().migrate().migrationsExecuted).isEqualTo(10);
         assertCatalogAndJpa(empty,new JdbcTemplate(empty));
     }
     @Test void constraintsRejectUnknownClassificationOriginDuplicatesAndCrossRevisionAnswers() {
@@ -73,6 +73,7 @@ class QuestionSchemaTests {
     private void assertCatalogAndJpa(DriverManagerDataSource ds,JdbcTemplate jdbc) {
         assertThat(jdbc.queryForObject("SELECT count(*) FROM qb_question",Integer.class)).isZero();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM qb_topic",Integer.class)).isEqualTo(51);
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM pg_indexes WHERE schemaname=current_schema() AND indexname='me_completed_subject_window_idx'",Integer.class)).isEqualTo(1);
         var bean=new LocalContainerEntityManagerFactoryBean(); bean.setDataSource(ds);
         bean.setPackagesToScan("br.com.concursosimulator.questionbank.infrastructure.persistence");
         bean.setJpaVendorAdapter(new HibernateJpaVendorAdapter()); bean.setJpaPropertyMap(Map.of("hibernate.hbm2ddl.auto","validate"));

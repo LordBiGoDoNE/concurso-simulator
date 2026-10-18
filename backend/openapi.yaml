@@ -248,8 +248,46 @@ paths:
         '400': {$ref: '#/components/responses/QuestionInvalid'}
         '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/me/subject-review:
+    get:
+      summary: Revisão privada dos 51 assuntos, conta e cargo selecionado
+      description: Filtros antes de 100 conclusões; finishedAt/UUID DESC, última base antes do agrupamento. Entrada fechada, somente roleId único obrigatório. no-store; não grava progresso.
+      security: [{sessionCookie: []}]
+      parameters:
+        - {in: query, name: roleId, required: true, schema: {type: string, enum: [assistente-administrativo, secretario-de-escola]}}
+      responses:
+        '200': {description: Janela consistente, métricas e prioridade; owner/capturas nunca serializados, content: {application/json: {schema: {$ref: '#/components/schemas/SubjectReviewOverview'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '500': {$ref: '#/components/responses/ReviewIntegrity'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/subject-review:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Revisão por assunto de tentativa própria concluída, visitante ou conta
+      description: Entrada fechada, nenhum query parameter aceito. Não consulta histórico implicitamente; no-store.
+      responses:
+        '200': {description: Somente contexto e métricas da tentativa solicitada, content: {application/json: {schema: {$ref: '#/components/schemas/SubjectReviewIndividual'}}}}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '500': {$ref: '#/components/responses/ReviewIntegrity'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
 components:
   responses:
+    ReviewIntegrity:
+      description: Evidência inconsistente; erro integral e genérico, sem resumo parcial; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: internal_error}}
     QuestionInvalid:
       description: UUID/filtro/paginação/parâmetro desconhecido, vazio ou repetido; no-store
       content:
@@ -511,6 +549,54 @@ components:
               finishedAt: {type: [string, 'null'], format: date-time}
               total: {type: integer}
               percentage: {type: [number, 'null']}
+    SubjectReviewSubject:
+      type: object
+      additionalProperties: false
+      required: [topicId, title, disciplineId, disciplineTitle, correct, wrong, blank, assessed, exposures, percentage, lastFinishedAt]
+      properties:
+        topicId: {type: string}
+        title: {type: string}
+        disciplineId: {type: string, enum: [portugues, matematica-raciocinio, informatica, conhecimentos-administrativos, conhecimentos-escolares]}
+        disciplineTitle: {type: string}
+        correct: {type: integer, minimum: 0, maximum: 10000}
+        wrong: {type: integer, minimum: 0, maximum: 10000}
+        blank: {type: integer, minimum: 0, maximum: 10000}
+        assessed: {type: integer, minimum: 0, maximum: 10000}
+        exposures: {type: integer, minimum: 0, maximum: 10000}
+        percentage: {type: [number, 'null'], minimum: 0, maximum: 100, multipleOf: 0.01}
+        lastFinishedAt: {type: [string, 'null'], format: date-time}
+    SubjectReviewWindow:
+      type: object
+      additionalProperties: false
+      required: [limit, attemptCount, hasOlder, latestFinishedAt, oldestFinishedAt]
+      properties:
+        limit: {type: integer, const: 100}
+        attemptCount: {type: integer, minimum: 0, maximum: 100}
+        hasOlder: {type: boolean}
+        latestFinishedAt: {type: [string, 'null'], format: date-time}
+        oldestFinishedAt: {type: [string, 'null'], format: date-time}
+    SubjectReviewOverview:
+      type: object
+      additionalProperties: false
+      required: [policy, roleId, minimumBases, window, subjects, priorityTopicIds]
+      properties:
+        policy: {type: string, const: subject-review/v1}
+        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        minimumBases: {type: integer, const: 3}
+        window: {$ref: '#/components/schemas/SubjectReviewWindow'}
+        subjects: {type: array, minItems: 51, maxItems: 51, items: {$ref: '#/components/schemas/SubjectReviewSubject'}}
+        priorityTopicIds: {type: array, uniqueItems: true, maxItems: 51, items: {type: string}}
+    SubjectReviewIndividual:
+      type: object
+      additionalProperties: false
+      required: [policy, roleId, minimumBases, attemptId, subjects, priorityTopicIds]
+      properties:
+        policy: {type: string, const: subject-review/v1}
+        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        minimumBases: {type: integer, const: 3}
+        attemptId: {type: string, format: uuid}
+        subjects: {type: array, minItems: 51, maxItems: 51, items: {$ref: '#/components/schemas/SubjectReviewSubject'}}
+        priorityTopicIds: {type: array, uniqueItems: true, maxItems: 51, items: {type: string}}
   securitySchemes:
     sessionCookie:
       type: apiKey

@@ -119,7 +119,7 @@ Navegação local e OIDC sintético não substituem TLS/hospedagem nem smoke Goo
 ## Open Questions
 
 Nenhuma decisão pública de hospedagem é tomada. Proposta#124 aprovada e grupos1–4
-autorizados pelo usuário em2026-10-18; tarefas#125–#128 aprovadas/integradas em0ae60a4;gate cumulativo e integração da spec na épica geral pendentes. Um incremento posterior deve definir provedor,
+autorizados pelo usuário em2026-10-18; tarefas#125–#128 aprovadas/integradas em0ae60a4;gate cumulativo e atualidade registrados no[SPEC]#130,integração da spec na épica geral sujeita à aprovação própria. Um incremento posterior deve definir provedor,
 domínio, TLS, orçamento, disponibilidade, backups externos e publicação/rollback.
 
 ## References

@@ -1,6 +1,7 @@
 """Real local Compose smoke with an isolated empty database; no operator state is used."""
 import http.cookiejar
 import json
+import subprocess
 import time
 import uuid
 from urllib.error import HTTPError
@@ -90,6 +91,9 @@ def check():
                      "checks": ["single-origin", "empty-schema-v10", "csrf-cookie", "oauth-methods", "no-host-api-db", "collision", "database-outage", "material-independent", "restart"],
                      "limits": "Synthetic empty database, no Google login; browser/account flows tested separately."})
         print("RUNTIME_CHECK_PASS: isolated Compose, security, empty V10, outage and restart")
+    except subprocess.CalledProcessError as failure:
+        (OUTPUT / "runtime-failure.log").write_bytes((failure.stdout or b"") + (failure.stderr or b""))
+        raise
     finally:
         cleanup(path, config)
 

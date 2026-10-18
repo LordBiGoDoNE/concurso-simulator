@@ -51,7 +51,7 @@ services:
       postgres: {condition: service_healthy}
     networks: [edge, database]
     read_only: true
-    tmpfs: [/tmp:rw,nosuid,nodev,noexec,size=64m]
+    tmpfs: ["/tmp:rw,nosuid,nodev,noexec,size=64m"]
     mem_limit: 1024m
   web:
     image: ${LOCAL_WEB_IMAGE:?Use scripts/local_app.py}
@@ -63,7 +63,7 @@ services:
       api: {condition: service_started}
     networks: [edge]
     read_only: true
-    tmpfs: [/tmp:rw,nosuid,nodev,noexec,size=32m]
+    tmpfs: ["/tmp:rw,nosuid,nodev,noexec,size=32m"]
     mem_limit: 128m
 networks:
   edge:

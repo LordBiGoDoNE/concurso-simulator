@@ -1,6 +1,6 @@
 # Tasks
 
-Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **12/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente.**
+Proposta aprovada/integrada pelo#124;grupos completos1–4 autorizados pelo usuário em2026-10-18,acompanhamento#123. **15/16 implementadas/verificadas;0/16 integradas/aprovadas. Revisão do lote pendente. Item4.4 permanece aberto: gate cumulativo após integração autorizada das tarefas; grupo4 não declarado concluído.**
 Usuário escolheu Docker local primeiro e todos os16 itens deste lote. Implementação/verificação em execução;merges continuam sujeitos à aprovação própria.
 Cada grupo inclui código, testes, documentação e revisão SOL6.1xHigh. Dependências
 reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própria.
@@ -28,7 +28,7 @@ reais usam Stacks da mesma spec, com PRs coesos; merge exige aprovação própri
 
 ## 4. Verificação integrada e gate — depende de 1–3
 
-- [ ] 4.1 Verificar imagens reais via navegador/proxy/JAR/PG, visitante e conta com sessão sintética criada fora do runtime em banco descartável; cobrir composição/retomada/conclusão/revisão/prática,CSRF/retry/duas sessões e executar OIDC existente separadamente; documentar matriz e limites, sem alegar Google real.
-- [ ] 4.2 Executar regressões Java/ArchUnit/PG/HTTP/frontend/material/offline e inspeção de artefatos; conferir51 aulas/111 variantes sem fixtures/segredos/solver no cliente; ajustar CI somente para verificar, preservando Pages e proteções.
-- [ ] 4.3 Executar o procedimento local em exportação limpa, reunindo build/start/stop/backup/restore/reinício e falhas, com evidências reproduzíveis e limites Windows/Linux; documentar pendências públicas da etapa7 sem declará-la concluída.
+- [x] 4.1 Verificar imagens reais via navegador/proxy/JAR/PG, visitante e conta com sessão sintética criada fora do runtime em banco descartável; cobrir composição/retomada/conclusão/revisão/prática,CSRF/retry/duas sessões e executar OIDC existente separadamente; documentar matriz e limites, sem alegar Google real.
+- [x] 4.2 Executar regressões Java/ArchUnit/PG/HTTP/frontend/material/offline e inspeção de artefatos; conferir51 aulas/111 variantes sem fixtures/segredos/solver no cliente; ajustar CI somente para verificar, preservando Pages e proteções.
+- [x] 4.3 Executar o procedimento local em exportação limpa, reunindo build/start/stop/backup/restore/reinício e falhas, com evidências reproduzíveis e limites Windows/Linux; documentar pendências públicas da etapa7 sem declará-la concluída.
 - [ ] 4.4 Consolidar PRs/SHAs/checks/triagem/cota/tokens e gate cumulativo independente SOL6.1xHigh; manter [SPEC] para épica geral e solicitar aprovação própria, sem main/deploy/arquivamento ou autorização presumida da próxima spec.

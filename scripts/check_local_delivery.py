@@ -2,6 +2,7 @@
 import io
 import json
 import os
+import re
 import subprocess
 import sys
 import tarfile
@@ -37,7 +38,23 @@ def check():
     for number, (command, cwd) in enumerate(commands, 1):
         print(f"Exportação limpa: verificação {number}/{len(commands)}", flush=True)
         with (destination / f"operation-{number}.log").open("wb") as log:
-            subprocess.run(command, cwd=cwd, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
+            try:
+                subprocess.run(command, cwd=cwd, env=env, stdout=log, stderr=subprocess.STDOUT, check=True)
+            except subprocess.CalledProcessError:
+                log.flush()
+                # Public diagnostics contain only source filename/line and known error categories, no log payloads.
+                text = (destination / f"operation-{number}.log").read_text(encoding="utf-8", errors="replace")
+                locations = re.findall(r'File "([^"\n]+\.py)", line (\d+)', text)
+                if locations:
+                    file, line = locations[-1]
+                    print(f"Falha etapa {number}; origem {file.replace(chr(92), '/').rsplit('/', 1)[-1]}:{line}", flush=True)
+                diagnostic = destination / "backend/build/local-app/runtime-container-private.log"
+                if number == 5 and diagnostic.is_file():
+                    private = diagnostic.read_text(encoding="utf-8", errors="replace")
+                    for category in ("Input/output error", "Permission denied", "AccessDeniedException", "OutOfMemoryError"):
+                        if category in private:
+                            print("Categoria de falha: " + category, flush=True)
+                raise
     reports = {name: json.loads((destination / "backend/build/local-app" / (name + ".json")).read_text(encoding="utf-8"))
                for name in ("image-check", "runtime-check", "recovery-check", "browser-check")}
     assert all(report["status"] == "passed" and report["source_sha"] == sha for report in reports.values())

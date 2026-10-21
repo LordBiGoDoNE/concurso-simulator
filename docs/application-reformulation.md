@@ -4,6 +4,13 @@
 
 Entregar a reformulação completa de uma vez, mantendo `main` e o site atual utilizáveis durante o desenvolvimento. A épica geral é **`epic/application-reformulation`**. As specs permanecem pequenas e revisáveis, mas não são publicadas individualmente em main.
 
+**Escopo acordado em 2026-10-20:** a entrega atual será somente local, com Docker.
+O usuário adiou a publicação externa para o futuro. Hospedagem, domínio, TLS e
+operação pública deixam de ser pendências desta entrega; serão tratados em uma
+proposta futura, se solicitada. Os requisitos de segurança para uma eventual
+publicação permanecem válidos. O gate cumulativo da épica geral e a aprovação
+expressa do PR final para `main` continuam necessários.
+
 ```text
 main (site atual)
 └── epic/application-reformulation
@@ -27,7 +34,7 @@ PRs de integração de spec usam `[SPEC] <Título>` e passam por revisão indepe
 
 5. **Questões parametrizadas**: concluída e integrada na épica geral pelo **#103**, merge `119ec25afe6ca1859ca615c95632096badcc9dd0`, autorizado pelo usuário em 2026-10-16. 24/24 tarefas, gate cumulativo e revalidação SOL 6.1 xhigh sem achados abertos, checks e CI pós-merge aprovados. Três famílias/111 variantes, captura imutável e opção desligada por padrão; aprovação editorial específica exclusiva da cópia local. Acompanhamento #86. Sem main/deploy/arquivamento.
 6. **Revisão por conceito**: concluída e integrada na épica geral pelo **#121**, merge `3715219a02dfe77262ce0af4bcbb858fbc08fca7`, autorizado em2026-10-18. 24/24 tarefas,gate cumulativo e revalidações SOL6.1xHigh sem achados abertos,correção#122 incluída e CI pós-merge39099797203 aprovado. Os51 assuntos existentes orientam painel privado por cargo,revisão individual,aulas e prática dirigida (janela100/última base/mínimo3). Acompanhamento#104. Sem main,deploy ou arquivamento.
-7. **Preparação da entrega**: primeiro incremento proposto `local-application-delivery`, acompanhamento#123, após escolha explícita de Docker local antes de hospedagem/domínio em2026-10-18. Proposta#124 aprovada/integrada na épica da spec em6283c4d;grupos completos1–4 (16tarefas) autorizados pelo usuário em2026-10-18:16/16 implementadas/verificadas na épica da spec;PRs#125–#128 aprovados/integrados por merge atômico0ae60a4. Gate cumulativo SOL6.1xHigh em contexto novo e atualidade registrados no[SPEC]#130;integração na épica geral exige aprovação própria. Inclui imagens,origem local única,Compose isolado,material e recuperação de dados,com verificação real dos artefatos. Hospedagem pública,TLS,disponibilidade,backups externos,smoke Google real e plano de publicação/rollback continuam para incremento posterior,sem contratação/publicação presumidas. Concluir o incremento local não conclui a etapa7 nem autoriza entrega em main.
+7. **Preparação da entrega local**: concluída no escopo escolhido pelo usuário em 2026-10-20. A spec `local-application-delivery`, acompanhamento #123, foi integrada na épica geral pelo **#130**, merge `da1c0a538c992fd9f638fb132e5cb46dd8e6740d`: 16/16 tarefas, revisão cumulativa independente SOL 6.1 xHigh sem achados abertos e CI pós-merge [39194174589](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/39194174589) aprovado. Inclui imagens, origem local única em loopback, Compose isolado, material, persistência e recuperação de dados, com verificação dos artefatos no Windows/Linux. A decisão anterior de manter a etapa 7 aberta até preparar hospedagem pública foi substituída pelo escopo somente local. Publicação externa fica para uma proposta futura; gate cumulativo da épica geral e aprovação final para `main` permanecem pendentes.
 
 Cada etapa requer seus artefatos OpenSpec e aprovação antes da implementação. Não preparar de uma vez todos os detalhes futuros; dependências e novos requisitos devem ser discutidos por spec.
 
@@ -41,21 +48,25 @@ Arquitetura/persistência revisadas pelo usuário em 2026-10-08: monólito modul
 
 - Sincronização offline e eventual mescla de visitante com conta; salvar/retomar simulados pela conta já foi escolhido para a proposta da etapa 4.
 - Expansão além dos dois cargos atuais, fora da spec inicial do banco (quantidade por disciplina e escopo inicial já decididos).
-- Hospedagem, disponibilidade, backups e estratégia de acesso à nova aplicação.
+- Para uma futura publicação externa: hospedagem, domínio/TLS, disponibilidade,
+  backups externos, acesso público, smoke Google real e publicação/rollback.
+  Adiados em 2026-10-20, fora do escopo da entrega local atual. O procedimento de
+  persistência e backup/restauração local já faz parte da spec #123.
 
 Essas decisões não serão presumidas apenas por constarem no roadmap.
 
 ## Critérios da entrega única
 
-- Todas as specs do roadmap aceitas, implementadas, revisadas e integradas na épica geral; mudanças de escopo explicitamente aprovadas.
+- Todas as specs do escopo local atual aceitas, implementadas, revisadas e integradas na épica geral; a publicação externa foi adiada explicitamente em 2026-10-20.
 - Testes de integração, fluxos ponta a ponta e regressão das aulas aprovados na combinação final.
-- Infraestrutura de execução acordada e validada; GitHub Pages não executa Java/PostgreSQL.
+- Execução local com Docker, acesso em loopback, persistência e recuperação de dados validados; GitHub Pages não executa Java/PostgreSQL. Hospedagem pública e smoke Google real não bloqueiam esta entrega local, com Google desligado por padrão; os requisitos da preparação pública, incluindo smoke Google real, permanecem para a publicação futura.
 - Material atual preservado até a transição, com URLs e acessibilidade verificadas.
 - Dados privados, senhas e gabaritos protegidos; migrações e rollback documentados.
+- Gate cumulativo independente SOL 6.1 xHigh da épica geral concluído sobre o conjunto final, incluindo o ajuste do escopo local. Gates de specs não o substituem.
 - PR final da épica geral para main aprovado expressamente antes do merge/publicação.
 
 ## Preview e manutenção
 
-CI somente verifica. Preview estático é manual no Actions, executando o workflow de main e informando a branch como input. Não interrompe o site oficial e não executa a aplicação completa. Preview funcional da aplicação dependerá da spec de deployment.
+CI somente verifica. Preview estático é manual no Actions, executando o workflow de main e informando a branch como input. Não interrompe o site oficial e não executa a aplicação completa. A aplicação completa pode ser executada localmente conforme [o procedimento Docker](../infra/local-app/README.md). Preview funcional externo depende de proposta futura de deployment.
 
 PRs #6 e #8 já foram integrados em main como preparação do processo, sem substituir as aulas. Não serão revertidos. Daqui em diante, o código da reformulação será integrado exclusivamente na épica geral até a entrega final. Correções independentes do material podem seguir em main por revisão normal.

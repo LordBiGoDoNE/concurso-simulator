@@ -1,0 +1,75 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "local-only-delivery-scope",
+  "pr": 132,
+  "base_sha": "da1c0a538c992fd9f638fb132e5cb46dd8e6740d",
+  "reviewed_head_sha": "14e323b389a1972957a35c4db7ea4e2885ba10a8",
+  "diff_sha256": "349db7c62213a149c888a75a6685a74c7edbd16877fbb495cdcbf3673aede633",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer_local_scope",
+    "independent_context": true
+  },
+  "reviewed_at": "2026-10-21T00:58:10.601411+00:00",
+  "risk": "standard",
+  "risk_justification": "Documentary acceptance-scope adjustment; no runtime, security, schema, deployment, workflow or protection changes. Final cumulative review and explicit main approval preserved.",
+  "coverage": {
+    "requirements": "Approved local-only decision, proposal, requirement scenarios, roadmap and Docker runbook confronted in full.",
+    "architecture": "ADR0001 consulted; no changes to layers, contracts or dependencies.",
+    "integration": "Five-file cumulative diff and corrective incremental diff examined; this spec and final main cumulative gate remain distinct.",
+    "security": "Loopback, Google disabled by default, editorial/privacy boundaries and future public safety requirements preserved; Compose read confirms web-only loopback publication.",
+    "persistence": "Local persistence and recovery requirements preserved; no schema, data or mechanism changes.",
+    "tests": "Final integration/regression criteria preserved; read-only review executed no tests/builds.",
+    "maintenance": "Active Docker procedure aligned with dated roadmap; historical proposals and evidence preserved."
+  },
+  "limitations": [
+    "Read-only review: no tests/build/application/network/DB/writes/delegation by reviewer.",
+    "Remote PR/checks, prior CI and Windows/Linux runtime assertions not independently verified by reviewer; no product correctness certification from documentary review.",
+    "This review does not replace the final cumulative review of the application against main and does not authorize merge.",
+    "Quota 5h/weekly unavailable before/after both phases; no isolation or consumption attribution declared. Coordinator operational updates occurred while waiting; token categories unavailable."
+  ],
+  "verification": [
+    {
+      "command": "git diff da1c0a5...14e323b; incremental ef45bd7..14e323b; canonical SHA256 calculation",
+      "result": "5 files completely examined, 102 additions/9 removals; merge-base equals base; digest independently recalculated: 349db7c62213a149c888a75a6685a74c7edbd16877fbb495cdcbf3673aede633",
+      "executed_by": "independent reviewer"
+    },
+    {
+      "command": "git diff --check; relative runbook/roadmap link target inspection",
+      "result": "No whitespace errors; relative targets exist in reviewed commits.",
+      "executed_by": "coordinator; link target also independently checked by reviewer"
+    }
+  ],
+  "findings": [
+    {
+      "id": "R1",
+      "severity": "recommended",
+      "location": "infra/local-app/README.md:239-246; docs/application-reformulation.md",
+      "evidence": "Initial review found the active Docker runbook still requiring public preparation to complete stage 7, contradicting the approved local-only scope.",
+      "reference": "current-delivery-scope: Entrega atual somente local com Docker",
+      "impact": "Conflicting operational documentation could confuse acceptance; runtime and protection behavior unchanged.",
+      "suggestion": "Align the runbook conclusion while retaining future public requirements and final approval/gates.",
+      "disposition": "fixed",
+      "resolution": "Corrected in 14e323b389a1972957a35c4db7ea4e2885ba10a8; independent reviewer reread complete five-file cumulative diff and incremental correction, confirmed R1 fixed and no new findings."
+    }
+  ],
+  "triage_complete": true,
+  "review_phases": [
+    {
+      "phase": "initial",
+      "elapsed_seconds": 173,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied by harness"
+    },
+    {
+      "phase": "revalidation",
+      "elapsed_seconds": 70,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied by harness"
+    }
+  ],
+  "merge_authorization": "User approved the local-only scope; merge of PR132 remains subject to explicit PR/head approval and green checks. No main/publication/archive authorization inferred."
+}

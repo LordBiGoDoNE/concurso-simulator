@@ -30,6 +30,7 @@ publicação/rollback para uma proposta futura.
 ## Acompanhamento
 
 Épica desta decisão: `epic/local-only-delivery-scope`, criada da épica geral no
-commit acima. Objeto documental único: atualizar `docs/application-reformulation.md`
-e registrar os requisitos desta decisão. Não há lote de implementação de produto.
-Issue geral #15 e acompanhamento do incremento local #123 registram o novo escopo.
+commit acima. Objeto documental único: atualizar `docs/application-reformulation.md`,
+alinhar a conclusão do procedimento Docker e registrar os requisitos desta decisão.
+Não há lote de implementação de produto. Acompanhamento próprio #131; issue geral
+#15 e acompanhamento do incremento local #123 registram o novo escopo.

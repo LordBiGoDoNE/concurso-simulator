@@ -236,8 +236,11 @@ ensaio. Pages e gates existentes permanecem. Regressões Java/ArchUnit/PG/HTTP,
 frontend, material/offline e111 variantes complementam a matriz; nenhum teste
 individual certifica ausência absoluta de segredos ou decisões semânticas.
 
-A etapa7 ainda precisa de uma spec posterior para hospedagem/domínio/TLS,
+Em 2026-10-20 o usuário definiu a entrega atual somente local com Docker e adiou
+a publicação externa. A etapa 7 está concluída nesse escopo, conforme o
+[roadmap](../../docs/application-reformulation.md). Hospedagem/domínio/TLS,
 backups externos, observabilidade e operação pública, smoke Google real e
-procedimento de publicação/rollback. Este pacote local não integra main nem
-publica a aplicação. Revisão do lote e gate cumulativo são decisões separadas;
-merges de cada tarefa e da spec exigem aprovação explícita.
+publicação/rollback ficam para uma proposta futura, mantendo seus requisitos.
+O gate cumulativo final da épica geral e a aprovação expressa do PR para main
+continuam necessários. Este pacote não publica a aplicação Java/PostgreSQL;
+o Pages do material estático mantém suas regras existentes.

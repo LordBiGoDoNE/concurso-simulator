@@ -1,6 +1,7 @@
 # Tasks
 
-Estudo visual solicitado em 2026-10-23. Implementação React não iniciada.
+Estudo visual e layout completo aprovados em 2026-10-23. Implementação React solicitada;
+os grupos completos do primeiro lote ainda serão escolhidos pelo usuário.
 Estados de preparação não equivalem à aprovação visual, revisão ou integração.
 
 ## 1. Proposta e protótipo — escopo visual atual
@@ -10,7 +11,9 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 - [x] 1.3 Renderizar desktop/celular e conferir visualmente; organizar tokens e registrar limites.
 - [x] 1.4 Apresentar o estudo e registrar o aceite visual das três telas iniciais; feedback solicitou aulas.
 - [x] 1.5 Acrescentar biblioteca e prévia de leitura das51 aulas, busca/filtros, navegação e atalho de prática; conferir desktop/celular e links.
-- [ ] 1.6 Recolher a decisão visual do usuário sobre a extensão de aulas e incorporar ajustes.
+- [x] 1.6 Registrar o aceite do usuário para biblioteca/leitura e para seguir com o layout completo.
+- [ ] 1.7 Executar revisão independente SOL 6.1 xHigh dos artefatos e tratar achados antes de solicitar merge.
+- [ ] 1.8 Obter autorização específica e integrar o PR de proposta/protótipo na épica.
 
 ## 2. Navegação e início — proposta de lote futuro, não autorizado
 

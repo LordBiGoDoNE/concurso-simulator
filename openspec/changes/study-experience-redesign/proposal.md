@@ -22,10 +22,10 @@ Precisamos validar uma organização e uma direção visual antes de alterar o R
 - Organizar as 51 aulas existentes por disciplina/assunto, com links ao material
   completo e composição demonstrativa preenchida para praticar o assunto escolhido.
 
-Esta proposta ainda é rascunho para implementação de produto. A autorização atual
-cobre o estudo visual e seus artefatos; não aprova integração React, novos recursos
-ou os grupos seguintes. Os grupos completos de implementação serão escolhidos após
-a aprovação visual, conforme AGENTS.md.
+O usuário aprovou o layout completo em 2026-10-23 e solicitou seguir com ele.
+A direção e o percurso estão aceitos; o primeiro lote de implementação depende da
+escolha explícita dos grupos completos, conforme AGENTS.md. Revisão dos artefatos,
+autorização de merges e gate cumulativo continuam separados desse aceite visual.
 
 ## Capabilities
 
@@ -48,8 +48,8 @@ as questões usadas na realização são exemplos demonstrativos repetidos. `les
 é uma saída derivada das fontes públicas:51 títulos, caminhos, hashes e trechos de
 153 seções para prévia. Não substitui figuras, tabelas, fórmulas ou exercícios do original.
 
-O aceite visual das três primeiras telas não aprova integração ou merge. A extensão
-de aulas ainda será avaliada; são quatro áreas e cinco estados visuais no protótipo.
+O aceite abrange as quatro áreas e cinco estados visuais do protótipo, incluindo aulas.
+Não representa merge autorizado nem seleção automática dos grupos de integração.
 
 Base: `epic/application-reformulation` em `1817673`; sua árvore é idêntica à entrega
 em `main` `c8efceb`. A tarefa visual usa branch própria e PR de rascunho para

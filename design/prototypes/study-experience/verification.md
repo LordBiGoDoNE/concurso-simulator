@@ -21,9 +21,9 @@ Observação: 2026-10-23T14:46:17.703649+00:00.
   completa:figuras,tabelas,fórmulas e exercícios permanecem no original vinculado.
 - GET `http://127.0.0.1:18889/?tela=aulas`:HTTP200 e bytes iguais ao HTML.
 
-As três telas iniciais foram aprovadas visualmente pelo usuário no feedback que
-solicitou aulas. A biblioteca/leitura aguardam nova avaliação. Não se declara aceite
-React,merge,aprovação editorial,teste integrado ou revisão independente SOL.
+O usuário aprovou o layout completo, incluindo biblioteca/leitura, em2026-10-23 e
+solicitou seguir com ele. A escolha do lote de integração está pendente. Não se declara
+merge,aprovação editorial,teste integrado ou revisão independente SOL por esse aceite.
 
 Não houve smoke interativo por teclado nem auditoria WCAG nesta rodada. Capturas e
 checagens estáticas não demonstram todos os estados de interação. Exportação de

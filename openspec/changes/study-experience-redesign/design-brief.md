@@ -69,6 +69,5 @@ a auditoria WCAG, teste integrado, revisão independente de lote ou aceite do us
 
 ## Decisões aguardando o usuário
 
-- Direção das três telas iniciais aprovada. A biblioteca e a leitura atendem à expectativa?
-- Há necessidade de outra composição visual antes de detalhar os demais espaços?
+- Direção completa aprovada em 2026-10-23, incluindo biblioteca e leitura.
 - Após aprovação, quais grupos completos de implementação entram no primeiro lote?

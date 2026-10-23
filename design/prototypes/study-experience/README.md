@@ -31,6 +31,7 @@ Capturas/relatórios locais ficam ignorados, separados dos fontes deste protóti
 
 Direção visual em `DESIGN.md`; proposta e limites em
 `openspec/changes/study-experience-redesign/`. O React, Docker, acervo, main, stable
-e Pages não são alterados. Proposta de produto, revisão e aceite visual pendentes.
+e Pages não são alterados. Layout completo aprovado pelo usuário em2026-10-23;
+escolha do lote, revisão independente e merges continuam pendentes.
 
 As dez capturas geradas estão em `previews/`; comandos executados e limites em [verification.md](verification.md). A exportação de página longa pode repetir elementos fixos entre trechos. Confira a interação no HTML local.

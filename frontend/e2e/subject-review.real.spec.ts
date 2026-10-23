@@ -7,7 +7,7 @@ const panel = (page: Page) => page.getByRole('region', { name: 'Revisão por ass
 const individual = (page: Page) => page.getByRole('region', { name: 'Revisão por assunto deste simulado', exact: true });
 async function login(page: Page, request: APIRequestContext, subject: string) {
   expect((await request.post(provider + '/fixture/control', { form: { subject, mode: 'valid' } })).ok()).toBe(true);
-  await page.goto('/');await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
 }
 async function finish(page: Page, quantity = 3) {
   await page.getByLabel('Quantidade de Português').fill(String(quantity));const created = page.waitForResponse(r => r.url() === api + '/api/v1/attempts' && r.request().method() === 'POST');
@@ -37,7 +37,7 @@ for (const width of [390, 1280]) test(`painel e revisão real por teclado com 51
   expect(await storage(page)).toEqual({ local: 0, session: 0, caches: [], workers: 0 });
 });
 test('visitante revisa somente tentativa concluída sem painel nem histórico implícito', async ({ page }) => {
-  let overviewRequests = 0;page.on('request', r => { if (r.url().includes('/me/subject-review')) overviewRequests++; });await page.goto('/');
+  let overviewRequests = 0;page.on('request', r => { if (r.url().includes('/me/subject-review')) overviewRequests++; });await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
   await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();const id = await finish(page, 1);
   await expect(individual(page).getByRole('table')).toBeVisible();await expect(panel(page)).toHaveCount(0);expect(overviewRequests).toBe(0);
   expect((await page.request.get(`${api}/api/v1/attempts/${id}/subject-review`)).status()).toBe(200);
@@ -127,7 +127,7 @@ for (const width of [390, 1280]) test(`conta estuda e pratica a última base, re
   } finally { await another.close(); }
 });
 test('visitante estuda e compõe outro assunto pelo resultado, sem criar histórico nem tentativa no clique', async ({ page }) => {
-  await page.goto('/');await lessonHosting(page);await finish(page, 1);await expect(individual(page).getByRole('button', { name: 'Praticar P01', exact: true })).toBeVisible();
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await lessonHosting(page);await finish(page, 1);await expect(individual(page).getByRole('button', { name: 'Praticar P01', exact: true })).toBeVisible();
   const opened = page.waitForEvent('popup');await individual(page).getByRole('link', { name: 'Rever aula de P01 (nova aba)', exact: true }).click();const lesson = await opened;
   await expect(lesson.locator('h1')).toContainText('Interpretação');await lesson.close();let posts = 0;page.on('request', r => { if (r.url() === api + '/api/v1/attempts' && r.method() === 'POST') posts++; });
   page.once('dialog', dialog => dialog.accept());await individual(page).getByRole('button', { name: 'Praticar P01', exact: true }).click();await expect(page.getByRole('heading', { name: 'Compor simulado' })).toBeFocused();expect(posts).toBe(0);
@@ -142,7 +142,7 @@ test('atalho cancelado e aula preservam rascunho; duas abas exigem recuperação
   page.once('dialog', dialog => dialog.dismiss());await panel(page).getByRole('button', { name: 'Praticar M01', exact: true }).click();await expect(page.getByRole('radio').first()).toBeChecked();
   const opened = page.waitForEvent('popup');await panel(page).getByRole('link', { name: 'Rever aula de P01 (nova aba)', exact: true }).click();const lesson = await opened;await expect(lesson.locator('h1')).toBeVisible();await lesson.close();await expect(page.getByRole('radio').first()).toBeChecked();
   const second = await context.newPage();try {
-    await second.goto('/');await second.getByRole('button', { name: /Abrir simulado/ }).first().click();await second.getByRole('radio').last().check();await expect(second.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
+    await second.goto('/');await second.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await second.getByRole('button', { name: /Abrir simulado/ }).first().click();await second.getByRole('radio').last().check();await expect(second.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
     failed = false;await page.getByRole('button', { name: 'Repetir salvamento' }).click();await page.getByRole('button', { name: 'Recarregar tentativa' }).click();
     await expect(page.getByRole('radio').first()).toBeChecked();await page.getByRole('button', { name: 'Salvar escolhas preservadas' }).click();await expect(page.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
     expect((await (await page.request.get(`${api}/api/v1/attempts/${attempt.id}`)).json()).version).toBe(2);

@@ -99,3 +99,19 @@ it('retomada fechada recupera resultado do servidor e permite retry de resultado
   fireEvent.click(await screen.findByRole('button', { name: 'Tentar resultado novamente' })); await screen.findByRole('heading', { name: 'Resultado do simulado' });
   expect(finishAttempt).not.toHaveBeenCalled();
 });
+it('mapa navega, distingue escolha de correção e confirmação informa os brancos', async () => {
+  const more = { ...view, items: [...view.items, { ...view.items[0], id: '80000000-0000-0000-0000-000000000002' }] };
+  vi.mocked(saveAnswer).mockResolvedValue({ ...more, version: 1, items: [{ ...more.items[0], selectedAlternativeId: first }, more.items[1]] });
+  render(<AttemptPractice initial={more} onUnavailable={vi.fn()} />);
+  fireEvent.click(screen.getAllByRole('radio')[0]);await screen.findByText('Respostas confirmadas.');
+  expect(screen.getByRole('button', { name: 'Ir para questão 1: respondida' })).toHaveAttribute('aria-current', 'step');
+  fireEvent.click(screen.getByRole('button', { name: 'Ir para questão 2: sem resposta' }));
+  expect(screen.getByRole('heading', { name: 'Questão 2 de 2' })).toHaveFocus();
+  expect(screen.getAllByRole('radio').every(r => !(r as HTMLInputElement).checked)).toBe(true);
+  expect(screen.getByRole('progressbar', { name: 'Questões respondidas' })).toHaveAttribute('value', '1');
+  expect(screen.queryByText('PRIVATE_ATTEMPT_RESOLUTION_SENTINEL')).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Concluir simulado' }));
+  expect(screen.getByRole('dialog')).toHaveTextContent('1 de 2 questões respondidas; 1 em branco.');
+  fireEvent.click(screen.getByRole('button', { name: 'Continuar respondendo' }));
+  expect(screen.getByRole('button', { name: 'Concluir simulado' })).toHaveFocus();
+});

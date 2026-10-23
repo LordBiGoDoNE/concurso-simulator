@@ -24,20 +24,20 @@ function api(initial: string | null) {
 }
 it('logout desmonta painel imediatamente e resposta tardia não reaparece nem vai para storage', async () => {
   api(userA);let finish!: (v: ReturnType<typeof overview>) => void;let signal!: AbortSignal;
-  vi.mocked(reviewOverview).mockImplementation((_r, s) => { signal = s;return new Promise(resolve => { finish = resolve; }); });render(<App />);
+  vi.mocked(reviewOverview).mockImplementation((_r, s) => { signal = s;return new Promise(resolve => { finish = resolve; }); });render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   fireEvent.change(await screen.findByLabelText('Cargo para revisão'), { target: { value: view.roleId } });await screen.findByText('Consultando revisão por assunto…');
   fireEvent.click(screen.getByRole('button', { name: 'Sair' }));expect(screen.queryByRole('heading', { name: 'Revisão por assunto' })).not.toBeInTheDocument();expect(signal.aborted).toBe(true);
   await act(async () => finish(overview()));await screen.findByText('Você está estudando como visitante.');expect(screen.queryByRole('table')).not.toBeInTheDocument();expect(localStorage.length).toBe(0);expect(sessionStorage.length).toBe(0);
 });
 it('troca de conta limpa cargo/métricas e cancela consulta anterior sem adotar visitante', async () => {
   const fixture = api(userA);let finish!: (v: ReturnType<typeof overview>) => void;let signal!: AbortSignal;
-  vi.mocked(reviewOverview).mockImplementationOnce((_r, s) => { signal = s;return new Promise(resolve => { finish = resolve; }); }).mockResolvedValueOnce(overview(true));render(<App />);
+  vi.mocked(reviewOverview).mockImplementationOnce((_r, s) => { signal = s;return new Promise(resolve => { finish = resolve; }); }).mockResolvedValueOnce(overview(true));render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   fireEvent.change(await screen.findByLabelText('Cargo para revisão'), { target: { value: view.roleId } });fixture.change(userB);fireEvent.click(screen.getByRole('button', { name: 'Atualizar sessão' }));
   await waitFor(() => expect(screen.getByLabelText('Cargo para revisão')).toHaveValue(''));expect(signal.aborted).toBe(true);await act(async () => finish(overview()));expect(screen.queryByRole('table')).not.toBeInTheDocument();
   fireEvent.change(screen.getByLabelText('Cargo para revisão'), { target: { value: view.roleId } });await screen.findByText('Sem dados para este cargo. Nenhuma dificuldade foi inferida.');
 });
 it.each([null, userA])('conclusão confirmada atualiza painel somente da conta; individual não pede histórico implícito (%s)', async user => {
-  api(user);vi.mocked(reviewOverview).mockResolvedValue(overview(true));vi.mocked(individualReview).mockResolvedValue(individual());render(<App />);
+  api(user);vi.mocked(reviewOverview).mockResolvedValue(overview(true));vi.mocked(individualReview).mockResolvedValue(individual());render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   if (user) { fireEvent.change(await screen.findByLabelText('Cargo para revisão'), { target: { value: view.roleId } });await screen.findByText('Sem dados para este cargo. Nenhuma dificuldade foi inferida.'); }
   fireEvent.click(await screen.findByRole('button', { name: 'Iniciar simulado' }));await screen.findByRole('heading', { name: 'Questão 1 de 1' });
   fireEvent.click(screen.getByRole('button', { name: 'Concluir simulado' }));fireEvent.click(screen.getByRole('button', { name: 'Confirmar conclusão' }));await screen.findByRole('heading', { name: 'Resultado do simulado' });
@@ -46,7 +46,7 @@ it.each([null, userA])('conclusão confirmada atualiza painel somente da conta; 
 });
 
 it('consulta explícita falha e conclusão posterior não move foco do resultado na atualização automática', async () => {
-  api(userA);vi.mocked(reviewOverview).mockRejectedValueOnce(new Error('offline')).mockResolvedValue(overview());vi.mocked(individualReview).mockResolvedValue(individual());render(<App />);
+  api(userA);vi.mocked(reviewOverview).mockRejectedValueOnce(new Error('offline')).mockResolvedValue(overview());vi.mocked(individualReview).mockResolvedValue(individual());render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   fireEvent.click(await screen.findByRole('button', { name: 'Iniciar simulado' }));await screen.findByRole('heading', { name: 'Questão 1 de 1' });
   fireEvent.change(screen.getByLabelText('Cargo para revisão'), { target: { value: view.roleId } });await screen.findByRole('alert');
   fireEvent.click(screen.getByRole('button', { name: 'Concluir simulado' }));fireEvent.click(screen.getByRole('button', { name: 'Confirmar conclusão' }));
@@ -55,7 +55,7 @@ it('consulta explícita falha e conclusão posterior não move foco do resultado
 });
 
 it.each(['logout', 'account', 'expiry'])('limpa preenchimento direcionado e comando ao trocar contexto: %s', async action => {
-  const fixture = api(userA);vi.mocked(reviewOverview).mockResolvedValue(overview(true));render(<App />);
+  const fixture = api(userA);vi.mocked(reviewOverview).mockResolvedValue(overview(true));render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   fireEvent.change(await screen.findByLabelText('Cargo para revisão'), { target: { value: view.roleId } });fireEvent.click(await screen.findByRole('button', { name: 'Praticar M01' }));
   await waitFor(() => expect(screen.getByLabelText('Quantidade de Matemática')).toHaveValue(1));
   fireEvent.click(screen.getByLabelText('Usar variações numéricas quando disponíveis'));
@@ -67,7 +67,7 @@ it.each(['logout', 'account', 'expiry'])('limpa preenchimento direcionado e coma
 
 it('consulta coerente após criação concorrente preserva escolha local e comando sem desmontar a realização', async () => {
   api(userA);let resolve!: (value: ReturnType<typeof overview>) => void;
-  vi.mocked(reviewOverview).mockImplementationOnce(() => new Promise(done => { resolve = done; }));render(<App />);
+  vi.mocked(reviewOverview).mockImplementationOnce(() => new Promise(done => { resolve = done; }));render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   fireEvent.click(await screen.findByRole('button', { name: 'Iniciar simulado' }));fireEvent.click((await screen.findAllByRole('radio'))[0]);await screen.findByRole('button', { name: 'Repetir salvamento' });
   const writes = () => vi.mocked(fetch).mock.calls.filter(([url]) => String(url).includes('/answers/'));
   expect(writes()).toHaveLength(1);const firstBody = writes()[0][1]?.body;

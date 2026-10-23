@@ -1,15 +1,33 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 import LoginPanel from './LoginPanel';
 import QuestionBrowser from './QuestionBrowser';
-import AttemptWorkspace from './AttemptWorkspace';
+import AttemptWorkspace, { type AttemptWorkspaceHandle } from './AttemptWorkspace';
+import StudyHome from './StudyHome';
+import LessonLibrary from './LessonLibrary';
+import type { DirectedPractice } from './directed-practice';
 import type { CurrentIdentity } from './identity-api';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 import { materialUrl } from './lesson-links';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
 const timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : 5000;
+type Area = 'home' | 'attempts' | 'lessons' | 'questions';
+const areaNames: Record<Area, string> = { home: 'Início', attempts: 'Simulados', lessons: 'Aulas', questions: 'Banco de questões' };
 
 export default function App() {
+  const [area, setArea] = useState<Area>('home');
+  const [runActive, setRunActive] = useState(false);
+  const [lessonsOpened, setLessonsOpened] = useState(false);
+  const [lessonDiscipline, setLessonDiscipline] = useState(''); const [practiceNotice, setPracticeNotice] = useState('');
+  const workspace = useRef<AttemptWorkspaceHandle>(null);
+  const pageHeading = useRef<HTMLHeadingElement>(null); const navigated = useRef(false);
+  function navigate(next: Area) { if (next === area) return; if (next === 'lessons') setLessonsOpened(true); navigated.current = true; setArea(next); }
+  useEffect(() => { if (navigated.current) { navigated.current = false; pageHeading.current?.focus(); } }, [area]);
+  function openLessons(discipline = '') { setLessonDiscipline(discipline); navigate('lessons'); }
+  function practiceLesson(selection: DirectedPractice) {
+    if (checking || !workspace.current?.practice(selection)) { setPracticeNotice('Prática não iniciada. A realização atual foi preservada; confira sua sessão ou aguarde uma operação em andamento.'); return; }
+    setPracticeNotice(''); navigate('attempts');
+  }
   const [attempt, setAttempt] = useState(0);
   const [status, setStatus] = useState<'loading' | 'up' | 'down'>('loading');
   const [identity, setIdentity] = useState<CurrentIdentity | null>(null); const [checking, setChecking] = useState(true);
@@ -39,24 +57,32 @@ export default function App() {
   }, [attempt]);
 
   return (
-    <main>
-      <p className="eyebrow">Seu espaço de estudo</p>
-      <h1>Concurso Simulator</h1>
-      <p>Continue aprendendo com as aulas, questões e resoluções do material de estudo.</p>
-      <a className="material-link" href={materialUrl}>Acessar material de estudo</a>
+    <div className={`app-layout${area === 'attempts' && runActive && !checking ? ' exam-mode' : ''}`}>
+      <a className="skip-link" href="#study-content">Pular para o conteúdo</a>
+      <aside className="sidebar"><div className="brand"><span className="brand-symbol" aria-hidden="true">CS</span><span>Concurso Simulator<small>Seu espaço de estudo</small></span></div>
+        <details className="study-menu" open={!(area === 'attempts' && runActive && !checking)}><summary>Ir para outra área</summary><nav aria-label="Navegação principal">{(Object.keys(areaNames) as Area[]).map(item => <button key={item} aria-current={area === item ? 'page' : undefined} onClick={() => navigate(item)}>{areaNames[item]}</button>)}</nav></details>
+        <div className="sidebar-foot"><p>Aprenda no seu ritmo.<br /><small>Aulas, prática e revisão.</small></p></div>
+      </aside>
+      <div className="workspace"><header className="topbar"><span>Seu espaço de estudo <span aria-hidden="true">/</span> <strong>{areaNames[area]}</strong></span><span className="identity-pill">{checking ? 'Conferindo sessão' : identity?.connected ? 'Conta conectada' : 'Acesso visitante'}</span></header>
+      <main id="study-content" tabIndex={-1}>
+      <h2 ref={pageHeading} tabIndex={-1} className="sr-only">{areaNames[area]}</h2>
+      <div hidden={area !== 'home'}><StudyHome onCompose={() => navigate('attempts')} onLessons={openLessons} /></div>
+      <div className="identity-panel">
       <LoginPanel onIdentity={changedIdentity} onChecking={checkingIdentity} onBeforeLogin={beforeLogin} />
+      </div>
       {privateNotice && <p role="status">{privateNotice}</p>}
-      {checking && <p role="status">Conferindo acesso aos simulados…</p>}
-      <div hidden={checking}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} reviewActive={!checking} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
-      <QuestionBrowser />
-      <section aria-labelledby="application-title">
-        <h2 id="application-title">Nova aplicação — ambiente local</h2>
-        <p>A base técnica está em desenvolvimento. O material de estudo continua independente da aplicação.</p>
+      {checking && area === 'attempts' && <p role="status">Conferindo acesso aos simulados…</p>}
+      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace ref={workspace} key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} />}</div>
+      <div hidden={area !== 'lessons'}>{practiceNotice && <p role="status">{practiceNotice}</p>}{lessonsOpened && <LessonLibrary initialDiscipline={lessonDiscipline} onPractice={practiceLesson} />}</div>
+      <div hidden={area !== 'questions'}><QuestionBrowser /></div>
+      <footer className="availability">
+        <a href={materialUrl}>Acessar material de estudo</a>
         <p role="status" aria-live="polite">
           {status === 'loading' ? 'Verificando disponibilidade da API…' : status === 'up' ? 'API disponível.' : 'API indisponível. Você pode continuar acessando as aulas.'}
         </p>
         <button disabled={status === 'loading'} onClick={() => setAttempt(value => value + 1)}>Verificar novamente</button>
-      </section>
+      </footer>
     </main>
+    </div></div>
   );
 }

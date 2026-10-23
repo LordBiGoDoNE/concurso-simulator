@@ -37,7 +37,9 @@ for (const width of [390, 1280]) test(`biblioteca e leitura integral no pacote D
   const frame = page.frameLocator('iframe[title="Aula completa: Operações com Números Reais"]');
   await expect(frame.getByRole('heading', { name: 'Matemática 01 - Operações com Números Reais', exact: true })).toBeVisible();
   expect(await frame.locator('math').count()).toBeGreaterThan(0);
-  await frame.locator('#s5').scrollIntoViewIfNeeded();await expect(frame.locator('#s5')).toContainText('Estimativa');
+  await frame.getByRole('heading', { name: 'Checklist de domínio', exact: true }).scrollIntoViewIfNeeded();
+  await expect(frame.getByRole('heading', { name: 'Checklist de domínio', exact: true })).toBeVisible();
+  await expect(frame.locator('details.question-solution')).toHaveCount(10);
   await frame.locator('img').first().scrollIntoViewIfNeeded();await expect(frame.locator('img').first()).toBeVisible();
   expect(await frame.locator('img').first().evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

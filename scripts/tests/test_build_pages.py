@@ -75,6 +75,23 @@ class BuildPagesTests(unittest.TestCase):
             pages.build_site(self.root, self.stored, self.output, "main", "stable")
         self.assertFalse(self.output.exists())
 
+    def test_old_preview_scripts_are_not_required_or_executed(self):
+        publisher = self.home / "publisher"
+        self.site(publisher, "stable production")
+        scripts = self.root / "scripts"
+        scripts.mkdir()
+        (scripts / "build_pages.py").write_text(
+            "import argparse\np=argparse.ArgumentParser()\np.add_argument('--branch')\np.parse_args()\n",
+            encoding="utf-8")
+        (scripts / "enrich_math.py").write_text(
+            "raise RuntimeError('preview code must not run')\n", encoding="utf-8")
+        pages.build_site(self.root, self.stored, self.output, "melhoria/old", "stable",
+                         production_source=publisher, tools_source=publisher)
+        self.assertIn("stable production", (self.output / "index.html").read_text(encoding="utf-8"))
+        preview = self.output / "previews" / pages.preview_slug("melhoria/old")
+        self.assertIn("selected", (preview / "index.html").read_text(encoding="utf-8"))
+        self.assertFalse((preview / "scripts").exists())
+
     def test_storage_branch_cannot_be_published(self):
         with self.assertRaises(ValueError):
             pages.build_site(self.root, self.stored, self.output, "pages-store", "stable")

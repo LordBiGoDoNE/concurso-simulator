@@ -17,6 +17,9 @@ completa não usa Pages nesta entrega; sua execução continua local com Docker.
 - Em Run workflow, selecionar `stable`. O campo `branch` usa `stable` para produção
   e outra branch de material para preview. `main` e `pages-store` são recusadas.
   O material de produção vem sempre de stable; previews armazenados são preservados.
+- Montador, enriquecimento e verificadores vêm de stable. A branch de preview fornece
+  dados/arquivos públicos, sem executar seus scripts antigos. Checkouts não persistem
+  credenciais; acesso Git autenticado usa o helper gh somente nos passos que precisam.
 - O workflow permanece também na branch padrão para ser descoberto pelo Actions,
   mas seu job de publicação exige `refs/heads/stable` e não roda em main.
 

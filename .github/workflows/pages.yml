@@ -30,15 +30,17 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch || 'stable' }}
+          ref: stable
+          persist-credentials: false
       - name: Validate requested branch
         env:
           BRANCH: ${{ inputs.branch || 'stable' }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           test "$BRANCH" != main
           test "$BRANCH" != pages-store
           git check-ref-format "refs/heads/$BRANCH"
-          git ls-remote --exit-code --heads origin "refs/heads/$BRANCH"
+          git -c credential.helper= -c 'credential.helper=!gh auth git-credential' ls-remote --exit-code --heads origin "refs/heads/$BRANCH"
       - uses: actions/setup-python@v5
         with:
           python-version: '3.x'
@@ -50,40 +52,46 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           REPOSITORY: ${{ github.repository }}
         run: |
-          if git ls-remote --exit-code --heads origin pages-store; then
-            git fetch origin pages-store
+          if git -c credential.helper= -c 'credential.helper=!gh auth git-credential' ls-remote --exit-code --heads origin pages-store; then
+            git -c credential.helper= -c 'credential.helper=!gh auth git-credential' fetch origin pages-store
             git worktree add "$RUNNER_TEMP/stored" FETCH_HEAD
           else
             mkdir -p "$RUNNER_TEMP/stored"
           fi
-      - name: Read approved production version
+      - name: Read preview material without using its build scripts
         if: (inputs.branch || 'stable') != 'stable'
         uses: actions/checkout@v4
         with:
-          ref: stable
-          path: approved
+          ref: ${{ inputs.branch }}
+          path: preview-source
+          persist-credentials: false
       - name: Prepare production and preview
         env:
           BRANCH: ${{ inputs.branch || 'stable' }}
-        run: python3 scripts/build_pages.py --branch "$BRANCH" --production-branch stable --stored "$RUNNER_TEMP/stored" --output "$RUNNER_TEMP/site"
+        run: |
+          MATERIAL="$GITHUB_WORKSPACE"
+          if test "$BRANCH" != stable; then
+            MATERIAL="$GITHUB_WORKSPACE/preview-source"
+          fi
+          python3 scripts/build_pages.py --source "$MATERIAL" --production-source "$GITHUB_WORKSPACE" --branch "$BRANCH" --production-branch stable --stored "$RUNNER_TEMP/stored" --output "$RUNNER_TEMP/site"
       - name: Save published versions
         env:
           BRANCH: ${{ inputs.branch || 'stable' }}
+          GH_TOKEN: ${{ github.token }}
         run: |
           cd "$RUNNER_TEMP/site"
           git init -b pages-store
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git remote add origin "${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}.git"
-          git config http."${GITHUB_SERVER_URL}/".extraheader "$(git -C "$GITHUB_WORKSPACE" config --get http."${GITHUB_SERVER_URL}/".extraheader)"
-          if git ls-remote --exit-code --heads origin pages-store; then
-            git fetch origin pages-store
+          if git -c credential.helper= -c 'credential.helper=!gh auth git-credential' ls-remote --exit-code --heads origin pages-store; then
+            git -c credential.helper= -c 'credential.helper=!gh auth git-credential' fetch origin pages-store
             git reset --soft FETCH_HEAD
           fi
           git add .
           if ! git diff --cached --quiet; then
             git commit -m "Publish site for $BRANCH"
-            git push origin HEAD:pages-store
+            git -c credential.helper= -c 'credential.helper=!gh auth git-credential' push origin HEAD:pages-store
           fi
           rm -rf .git
       - uses: actions/upload-pages-artifact@v3

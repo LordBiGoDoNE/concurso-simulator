@@ -5,7 +5,7 @@
 Após testar a entrega local, o usuário descreveu a interface como confusa e com
 aparência de formulário. A página atual reúne identidade, composição, realização,
 consulta de questões e diagnóstico técnico, com pouca separação entre objetivos.
-Precisamos validar uma organização e uma direção visual antes de alterar o React.
+A direção foi validada no protótipo; a implementação React agora aplica o layout completo.
 
 ## What Changes
 
@@ -36,8 +36,8 @@ autorização de merges e gate cumulativo continuam separados desse aceite visua
 ### Modified Capabilities
 
 Nenhuma alteração de regras de identidade, composição, tentativas, correção,
-persistência ou conteúdo nesta fase. A futura implementação deve preservar os
-contratos e comportamentos aprovados nas specs anteriores.
+persistência ou conteúdo. A integração preserva os contratos e comportamentos
+aprovados nas specs anteriores, incluindo erros, recuperação e contexto privado.
 
 ## Impact
 
@@ -56,5 +56,7 @@ em `main` `c8efceb`. A tarefa visual usa branch própria e PR de rascunho para
 `epic/study-experience-redesign`. Integração futura exige conferir/sincronizar bases,
 revisões, autorização de merge e a sequência da épica, sem reorganização silenciosa.
 
-O site `stable`, Pages, o acervo e a aplicação Docker em 8088 permanecem fora da
-mudança. Não há publicação externa, arquivamento ou integração em main nesta fase.
+Implementação em `frontend/src`, testes unitários/Chromium e verificações em pacote
+Docker isolado, mantendo as fontes completas das aulas. O site `stable`, Pages, o acervo
+e o banco da aplicação do operador em 8088 permanecem preservados. Não há publicação
+externa, arquivamento ou integração em main nesta fase.

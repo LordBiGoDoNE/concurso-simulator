@@ -22,6 +22,32 @@ async function finish(page: Page) {
   await page.getByRole('button', { name: 'Confirmar conclusão' }).click();
   await expect(area(page).getByRole('heading', { name: 'Resultado do simulado' })).toBeVisible();
 }
+for (const width of [390, 1280]) test(`biblioteca e leitura integral no pacote Docker em ${width}px`, async ({ page }, info) => {
+  const paths: Record<string, string> = JSON.parse(readFileSync('src/lesson-paths.json', 'utf8'));
+  for (const path of Object.values(paths)) {
+    const response = await page.request.get('/material/' + path.split('/').map(encodeURIComponent).join('/'));
+    expect(response.status()).toBe(200);expect(response.headers()['content-type']).toContain('text/html');
+  }
+  await page.setViewportSize({ width, height: 900 });await page.goto('/');
+  await page.getByRole('button', { name: 'Explorar as aulas' }).click();
+  await expect(page.getByRole('status').filter({ hasText: '51 aulas encontradas.' })).toBeVisible();
+  await page.getByLabel('Buscar aula').fill('M01');
+  await page.getByRole('button', { name: /M01.*Operações com Números Reais/ }).click();
+  await expect(page.getByRole('link', { name: 'Abrir aula original (nova aba)' })).toHaveAttribute('href', origin + '/material/' + paths.M01.split('/').map(encodeURIComponent).join('/'));
+  const frame = page.frameLocator('iframe[title="Aula completa: Operações com Números Reais"]');
+  await expect(frame.getByRole('heading', { name: 'Matemática 01 - Operações com Números Reais', exact: true })).toBeVisible();
+  expect(await frame.locator('math').count()).toBeGreaterThan(0);
+  await frame.locator('#s5').scrollIntoViewIfNeeded();await expect(frame.locator('#s5')).toContainText('Estimativa');
+  await frame.locator('img').first().scrollIntoViewIfNeeded();await expect(frame.locator('img').first()).toBeVisible();
+  expect(await frame.locator('img').first().evaluate((image: HTMLImageElement) => image.naturalWidth)).toBeGreaterThan(0);
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: info.outputPath(`packaged-reader-${width}.png`), fullPage: true });
+  let posts = 0;page.on('request', request => { if (request.method() === 'POST' && request.url().endsWith('/attempts')) posts++; });
+  await page.getByRole('button', { name: 'Praticar este assunto' }).click();
+  await expect(page.getByLabel('Quantidade de Matemática/Raciocínio Lógico')).toHaveValue('1');
+  await expect(page.getByLabel('Quantidade de Português')).toHaveValue('0');
+  await expect(page.getByLabel('Operações com Números Reais', { exact: true })).toBeChecked();expect(posts).toBe(0);
+});
 test('visitante: CSRF, retry idempotente, conclusão e revisão no pacote real', async ({ page }) => {
   await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();
   expect((await page.request.post('/api/v1/attempts', { data: {} })).status()).toBe(403);

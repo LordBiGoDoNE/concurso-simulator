@@ -1,8 +1,8 @@
 # Concurso Simulator — direção visual proposta
 
 Estudo em OpenDesign 0.21.1 a partir de `modern-minimal`; identidade própria do projeto.
-O usuário aprovou o layout completo, incluindo aulas, em 2026-10-23. A escolha dos
-grupos de integração está pendente; o aceite visual não autoriza merges.
+O usuário aprovou o layout completo, incluindo aulas, em 2026-10-23. O primeiro lote inclui
+todos os grupos2–6, escolhidos pelo usuário; o aceite visual não autoriza merges.
 
 ## Paleta
 

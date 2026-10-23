@@ -44,6 +44,6 @@ Manter PR atual em rascunho, sem merges, arquivamento, deploy ou mudança de dad
 
 ## Open Questions
 
-Layout completo, incluindo aulas, aprovado pelo usuário em 2026-10-23. A escolha
-dos grupos do primeiro lote de integração está pendente. Não há aprovação implícita
+Layout completo, incluindo aulas, aprovado pelo usuário em 2026-10-23. O usuário escolheu
+todos os grupos2–6 para implementação. Não há aprovação implícita
 de outras áreas, novos recursos ou merges.

@@ -22,7 +22,7 @@ Observação: 2026-10-23T14:46:17.703649+00:00.
 - GET `http://127.0.0.1:18889/?tela=aulas`:HTTP200 e bytes iguais ao HTML.
 
 O usuário aprovou o layout completo, incluindo biblioteca/leitura, em2026-10-23 e
-solicitou seguir com ele. A escolha do lote de integração está pendente. Não se declara
+solicitou seguir com ele. O usuário escolheu todos os grupos2–6. Não se declara
 merge,aprovação editorial,teste integrado ou revisão independente SOL por esse aceite.
 
 Não houve smoke interativo por teclado nem auditoria WCAG nesta rodada. Capturas e
@@ -48,3 +48,11 @@ A direção inicial,fonte anterior e seis prévias estão preservadas no commit
 sem rebase,force-push,merge ou alteração da aplicação/Pages/acervo.
 
 A formatação CSS anterior foi preservada para evitar alterações de milhares de linhas sem mudança visual. O snapshot embutido gerado é conferido contra lessons.json, que permanece legível.
+
+## Revisão independente do lote visual
+
+SOL6.1xHigh examinou os21 arquivos no headcb0744de2476b7fdf0b031fdf4e115cf6237f211,
+primeiro o protótipo e depois este documento. Nenhum achado confirmado. O novo
+registro de escopo/status requer revalidação antes do merge. Evidência própria
+em openspec/changes/study-experience-redesign/reviews/prototype-sol/review.json/md.
+Revisão visual não substitui a implementação, seus lotes ou o gate cumulativo final.

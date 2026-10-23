@@ -23,8 +23,8 @@ Precisamos validar uma organização e uma direção visual antes de alterar o R
   completo e composição demonstrativa preenchida para praticar o assunto escolhido.
 
 O usuário aprovou o layout completo em 2026-10-23 e solicitou seguir com ele.
-A direção e o percurso estão aceitos; o primeiro lote de implementação depende da
-escolha explícita dos grupos completos, conforme AGENTS.md. Revisão dos artefatos,
+A direção e o percurso estão aceitos. O usuário escolheu explicitamente todos os
+grupos2–6 para o primeiro lote completo, conforme AGENTS.md. Revisão dos artefatos,
 autorização de merges e gate cumulativo continuam separados desse aceite visual.
 
 ## Capabilities
@@ -49,7 +49,7 @@ as questões usadas na realização são exemplos demonstrativos repetidos. `les
 153 seções para prévia. Não substitui figuras, tabelas, fórmulas ou exercícios do original.
 
 O aceite abrange as quatro áreas e cinco estados visuais do protótipo, incluindo aulas.
-Não representa merge autorizado nem seleção automática dos grupos de integração.
+A escolha posterior abrange todos os grupos2–6. Aceite e escopo não autorizam merges.
 
 Base: `epic/application-reformulation` em `1817673`; sua árvore é idêntica à entrega
 em `main` `c8efceb`. A tarefa visual usa branch própria e PR de rascunho para

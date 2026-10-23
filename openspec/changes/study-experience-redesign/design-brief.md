@@ -70,4 +70,5 @@ a auditoria WCAG, teste integrado, revisão independente de lote ou aceite do us
 ## Decisões aguardando o usuário
 
 - Direção completa aprovada em 2026-10-23, incluindo biblioteca e leitura.
-- Após aprovação, quais grupos completos de implementação entram no primeiro lote?
+- Primeiro lote definido pelo usuário:todos os grupos2–6. Novas escolhas só serão
+  necessárias se surgirem mudanças reais de escopo, sem presumir autorização de merges.

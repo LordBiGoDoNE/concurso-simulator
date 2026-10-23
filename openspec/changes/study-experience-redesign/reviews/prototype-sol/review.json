@@ -1,0 +1,63 @@
+{
+  "version": 1,
+  "scope": "Complete visual/proposal batch PR140; not final spec gate or production implementation review.",
+  "status": "pending-revalidation",
+  "pr": 140,
+  "risk": "standard",
+  "risk_justification": "Isolated static prototype and planning documents; no production runtime,authentication,persistence,CI/deploy or protected response handling modified.",
+  "base_sha": "181767332d5178f576a5e3853a557be90c16afa8",
+  "reviewed_head_sha": "cb0744de2476b7fdf0b031fdf4e115cf6237f211",
+  "diff_sha256": "0d99d69e57622b49220ddbb4b43271a15285cbead96708965a8b58e841587180",
+  "canonical_diff_bytes": 1832348,
+  "excluded_own_evidence": [
+    "openspec/changes/study-experience-redesign/reviews/prototype-sol/review.json",
+    "openspec/changes/study-experience-redesign/reviews/prototype-sol/review.md"
+  ],
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/study_prototype_sol_review",
+    "independent_context": true,
+    "runtime_introspection": "Explicit harness selection and matching profile; no additional provider introspection."
+  },
+  "reviewed_at": "2026-10-23T15:35:57.222394+00:00",
+  "coverage": {
+    "files": 21,
+    "initial_files": 20,
+    "documentary_files": 1,
+    "requirements": "Full proposal/design/brief/spec/tasks,AGENTS,profile,batch/review policies and roadmap examined; acceptance and integration groups kept separate from merges.",
+    "prototype": "Complete CSS/HTML/JS and local composition,answer/map/clear/navigation/confirmation controls,bounds and state isolation read.",
+    "lessons": "Library/search/discipline filters,empty state,reader outline/previous-next,known public paths and practice prefill examined.",
+    "data": "51 records/153 sections read; embedded/external JSON identical;51 source hashes/IDs/disciplines/titles/paths match immutable source blobs.360 derived text nodes match after whitespace normalization.",
+    "visual": "All10 existing PNGs inspected,desktop/mobile across five states; readability and known fixed-element export artifacts examined.",
+    "security": "No external scripts,API/storage/analytics identified;derived text escaped,query IDs do not supply free paths,known theory URLs only.",
+    "integration": "No React/backend/material/workflow/infrastructure file changed; related frontend contracts/maps inspected to compare preserved behavior.",
+    "documentary": "verification.md read only after independent initial opinion;HTML hash,10PNG links,e21c013 ancestor and historical files,claims/limits/attribution consistent."
+  },
+  "findings": [],
+  "triage_complete": true,
+  "limitations": [
+    "Static read-only review; no tests,build,product scripts,renderer,network,DB,writes or delegation.",
+    "No remote authentication of CI,HTTP URLs,OpenDesign execution,acceptance,model/session history or absence of force-push; reports attributed to coordinator.",
+    "No interactive keyboard/screen-reader smoke,other viewports or WCAG audit.",
+    "Quota5h/weekly unavailable before/after both phases;tokens unavailable,no isolated/exact consumption attribution or model comparison.",
+    "New scope/status documentation after cb0744d requires independent revalidation; source evidence is not a completed cumulative spec gate."
+  ],
+  "phases": [
+    {
+      "phase": "initial",
+      "scope": "20files before opening verification.md",
+      "findings": [],
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": null
+    },
+    {
+      "phase": "documentary-revalidation",
+      "scope": "verification.md and full21-file coverage",
+      "findings": [],
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": null
+    }
+  ]
+}

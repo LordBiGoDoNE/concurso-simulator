@@ -1,0 +1,111 @@
+{
+  "version": 1,
+  "status": "changes-requested",
+  "spec": "study-experience-redesign",
+  "batch": "groups-2-6",
+  "risk": "critical",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/study_layout_batch_sol",
+    "independent_context": true
+  },
+  "reviewed_at": "2026-10-23T17:39:49.037235+00:00",
+  "snapshot": {
+    "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+    "head_sha": "65b53f7f646010b3c55aa046f4861835774e637c",
+    "diff_sha256": "2ab5226639f7b4f2d9379541e74570d0ef06a64d7dd7b80ca1eb88d22338181b",
+    "bytes": 157214,
+    "excluded_paths": [
+      "openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+      "openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+    ],
+    "prs": [
+      {
+        "pr": 141,
+        "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+        "head_sha": "4e09f37d0352cd9808caa9e27024f2ea989f353b",
+        "diff_sha256": "7eacd17211775a9b95812d998f8c2bf106d7a6e84304e2459b8284f0a03f7804",
+        "bytes": 71314
+      },
+      {
+        "pr": 142,
+        "base_sha": "4e09f37d0352cd9808caa9e27024f2ea989f353b",
+        "head_sha": "73e1737be8965de42f63519428c5a8c106265c22",
+        "diff_sha256": "05265653a7357336f2e76890227aafdeacb4f0b998ee0e18614f72442b18760a",
+        "bytes": 19574
+      },
+      {
+        "pr": 144,
+        "base_sha": "73e1737be8965de42f63519428c5a8c106265c22",
+        "head_sha": "3135ac013a2b1f1e7bfb39e9f57dfa2f40b461dd",
+        "diff_sha256": "c020fe5ca093bf123e817f1baea959638f458f7e42c5af585431a915e0604162",
+        "bytes": 28389
+      },
+      {
+        "pr": 145,
+        "base_sha": "3135ac013a2b1f1e7bfb39e9f57dfa2f40b461dd",
+        "head_sha": "3ac3277c562688e90d268265aad553906bc78589",
+        "diff_sha256": "54ce81915b0219ada2183bb1103df179f118002f842e2d6c1b321d461240c13b",
+        "bytes": 45843
+      },
+      {
+        "pr": 146,
+        "base_sha": "3ac3277c562688e90d268265aad553906bc78589",
+        "head_sha": "65b53f7f646010b3c55aa046f4861835774e637c",
+        "diff_sha256": "dfab080b92c6f40f49d701f7bc5d7a7708a3ad7e612d6c78e2ceec233bad4c17",
+        "bytes": 18575
+      }
+    ],
+    "created_at": "2026-10-23T17:29:05.672710+00:00"
+  },
+  "findings": [
+    {
+      "id": "LAYOUT-SOL-001",
+      "severity": "blocking",
+      "pr": 145,
+      "location": "frontend/src/AttemptWorkspace.tsx:34",
+      "evidence": "Prática da aula pode desmontar realização durante PUT/recarga/conclusão, sem consultar operações do run.",
+      "reference": "design.md: recusar durante operação; grupo5.2",
+      "impact": "Fila/comandos idempotentes podem ser descartados antes de resultado conhecido.",
+      "suggestion": "Bloquear substituição pela fronteira operacional viva e testar gravação/fila/conclusão suspensas.",
+      "disposition": "pending-fix"
+    },
+    {
+      "id": "LAYOUT-SOL-002",
+      "severity": "recommended",
+      "pr": [
+        141,
+        144
+      ],
+      "location": "frontend/src/App.tsx:59",
+      "evidence": "Shell completo permanece durante realização, divergindo do cabeçalho reduzido aprovado.",
+      "reference": "DESIGN.md: realização com cabeçalho reduzido",
+      "impact": "Navegação/orientações ocupam primeira tela, principalmente no celular.",
+      "suggestion": "Propagar estado de realização ao shell e reduzir navegação sem desmontar tentativa.",
+      "disposition": "pending-fix"
+    },
+    {
+      "id": "LAYOUT-SOL-003",
+      "severity": "recommended",
+      "pr": 145,
+      "location": "frontend/e2e/study-layout.spec.ts:68",
+      "evidence": "Mock entrega assets/v3.css com MIME text/html.",
+      "reference": "Grupo5.3: apresentação e recursos preservados",
+      "impact": "Captura/largura da aula no mock não refletem CSS original.",
+      "suggestion": "MIME correto e asserção de aplicação da folha.",
+      "disposition": "pending-fix"
+    }
+  ],
+  "coverage": [
+    "Todos os diffs por PR e combinação recalculados e conferidos.",
+    "Navegação/identidade/fila/retry/conflito/conclusão/resultado/histórico/revisão.",
+    "Biblioteca/catálogo51/mapa/cargos/sandbox/foco/CSS/capturas.",
+    "51 fontes sem script e517 referências locais existentes conferidas pelo revisor."
+  ],
+  "limitations": [
+    "Somente leitura: revisor não executou testes/build/aplicação/rede/DB.",
+    "Interações e resultados operacionais são do coordenador; capturas são estáticas.",
+    "Cota5h/semanal e tokens indisponíveis; comparação validada por review_quota.py, sem atribuição.",
+    "Não autoriza merge nem substitui gate cumulativo final."
+  ]
+}

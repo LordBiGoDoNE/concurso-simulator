@@ -48,7 +48,7 @@ for (const width of [390, 1280]) test(`biblioteca e leitura integral no pacote D
   await page.getByRole('button', { name: 'Praticar este assunto' }).click();
   await expect(page.getByLabel('Quantidade de Matemática/Raciocínio Lógico')).toHaveValue('1');
   await expect(page.getByLabel('Quantidade de Português')).toHaveValue('0');
-  await expect(page.getByLabel('Operações com Números Reais', { exact: true })).toBeChecked();expect(posts).toBe(0);
+  await expect(area(page).getByLabel('Operações com Números Reais', { exact: true })).toBeChecked();expect(posts).toBe(0);
 });
 test('visitante: CSRF, retry idempotente, conclusão e revisão no pacote real', async ({ page }) => {
   await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();

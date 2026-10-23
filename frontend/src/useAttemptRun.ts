@@ -98,6 +98,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
     } finally { closing.current = false; if (!controller.signal.aborted) setFinishing(false); }
   }
   return { view, phase, message, revision, choose, retry, reload, savePreserved, finish, finishing, finishFailed, result, resultFailed, loadResult,
+    canReplace: () => !working.current && !closing.current,
     selected: (item: AttemptItem) => Object.hasOwn(drafts.current, item.id) ? drafts.current[item.id] : item.selectedAlternativeId,
     controlsLocked: closeOperation.current !== null || finishing || view.finishedAt !== null,
     canFinish: phase === 'saved' && queue.current.length === 0 && Object.keys(drafts.current).length === 0 && view.finishedAt === null && closeOperation.current === null,

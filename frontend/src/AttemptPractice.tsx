@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useImperativeHandle, useRef, useState, type Ref } from 'react';
 import type { AttemptView } from './attempt-api';
 import { useAttemptRun } from './useAttemptRun';
 import ConfirmAttemptFinish from './ConfirmAttemptFinish';
@@ -9,8 +9,10 @@ import IndividualSubjectReview from './IndividualSubjectReview';
 
 import type { DirectedPractice } from './directed-practice';
 
-export default function AttemptPractice({ initial, onUnavailable, onFinished, reviewActive = true, onPractice }: { reviewActive?: boolean; initial: AttemptView; onUnavailable: () => void; onFinished?: () => void; onPractice?: (selection: DirectedPractice) => void }) {
+export interface AttemptPracticeHandle { canReplace: () => boolean }
+export default function AttemptPractice({ initial, onUnavailable, onFinished, reviewActive = true, onPractice, ref }: { ref?: Ref<AttemptPracticeHandle>; reviewActive?: boolean; initial: AttemptView; onUnavailable: () => void; onFinished?: () => void; onPractice?: (selection: DirectedPractice) => void }) {
   const run = useAttemptRun(initial, onUnavailable); const [position, setPosition] = useState(0); const heading = useRef<HTMLHeadingElement>(null);
+  useImperativeHandle(ref, () => ({ canReplace: run.canReplace }));
   const [confirm, setConfirm] = useState(false); const finishButton = useRef<HTMLButtonElement>(null);
   const wasConfirming = useRef(false);
   useEffect(() => { if (wasConfirming.current && !confirm) finishButton.current?.focus(); wasConfirming.current = confirm; }, [confirm]);

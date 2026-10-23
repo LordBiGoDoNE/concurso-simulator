@@ -33,3 +33,11 @@ A moldura do leitor segue o layout aprovado; a página incorporada conserva sua 
 O atalho usa a fronteira de composição da realização existente. A camada depende da navegação/composição e do contexto de realização que preserva: cancelar troca mantém escolha/fila/comando; confirmar apenas preenche uma questão do assunto, sem POST automático e sem variações selecionadas. Operação em andamento ou verificação de identidade bloqueiam a substituição.
 
 Verificação: 171 unitários passaram; 9 testes Chromium de início/composição/realização/aulas passaram (390px e 1280px/1440px), incluindo fontes completas locais, imagem original carregada, teclado/foco e ausência de corte lateral. Capturas do leitor/biblioteca conferidas. Não representa auditoria WCAG completa ou gate final.
+
+## Correções da revisão independente
+
+LAYOUT-SOL-001: a fronteira de substituição consulta um getter vivo da realização (gravação/fila ativa, recarga e conclusão), em vez de deduzir disponibilidade apenas de estado React do compositor. Enquanto houver operação, a aula, nova composição e outra tentativa não desmontam a realização. Falha de rede já encerrada continua permitindo a decisão explícita de substituir; cancelar preserva escolhas/comandos. Três regressões suspendem gravação com dois trabalhos, conclusão e recarga; dois testes de navegador percorrem menu/aula durante PUT suspenso e conferem a conclusão da fila. A proteção não impede logout/troca de identidade, que devem limpar o contexto privado.
+
+LAYOUT-SOL-003: o mock das aulas entrega CSS como text/css e confere display:flex da navegação definido na folha externa, além da imagem/HTML. As capturas foram regeneradas após essa correção; as antigas mantêm a limitação descrita no parecer inicial.
+
+Verificações locais das correções: 19 unitários de contexto/transição/prática dirigida e 8 testes Chromium de layout passaram; build passou. A revalidação independente do novo snapshot permanece necessária.

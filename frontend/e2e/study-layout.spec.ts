@@ -41,6 +41,33 @@ for (const width of [390, 1440]) test(`realização, mapa e confirmação por te
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath(`practice-${width}.png`), fullPage: true });
 });
+for (const width of [390, 1440]) test(`aula recusa substituir gravação e preserva a fila em ${width}px`, async ({ page }) => {
+  let current = { ...view, items: [...view.items, { ...view.items[0], id: '80000000-0000-0000-0000-000000000002', questionId: '10000000-0000-0000-0000-000000000002' }] };
+  let release!: () => void;const paused = new Promise<void>(resolve => { release = resolve; });let writes = 0, creates = 0, confirmations = 0;
+  page.on('dialog', dialog => { confirmations++;void dialog.accept(); });
+  await page.route('**/api/v1/csrf', route => route.fulfill({ json: { token: 'test', headerName: 'X-CSRF-TOKEN' } }));
+  await page.route('**/api/v1/attempts**', async route => {
+    if (route.request().method() === 'PUT') {
+      writes++;await paused;const answer = route.request().postDataJSON();const id = new URL(route.request().url()).pathname.split('/').at(-1);
+      current = { ...current, version: current.version + 1, items: current.items.map(item => item.id === id ? { ...item, selectedAlternativeId: answer.alternativeId } : item) };
+    }
+    if (route.request().method() === 'POST') creates++;
+    return route.fulfill({ status: route.request().method() === 'POST' ? 201 : 200, json: current });
+  });
+  await page.setViewportSize({ width, height: 900 });await page.goto('/');await page.getByRole('button', { name: 'Montar um simulado' }).click();
+  await page.getByLabel('Quantidade de Português').fill('2');await page.getByRole('button', { name: 'Iniciar simulado' }).click();
+  try {
+    await page.getByRole('radio').first().check();await page.getByRole('button', { name: 'Próxima questão' }).click();await page.getByRole('radio').first().check();
+    await expect.poll(() => writes).toBe(1);
+    const nav = page.getByRole('navigation', { name: 'Navegação principal' });await expect(nav.getByRole('button', { name: 'Aulas', exact: true })).toBeHidden();
+    await page.getByText('Ir para outra área', { exact: true }).focus();await page.keyboard.press('Enter');
+    await nav.getByRole('button', { name: 'Aulas', exact: true }).click();
+    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar este assunto' }).click();
+    await expect(page.getByRole('status').filter({ hasText: 'Prática não iniciada.' })).toBeVisible();expect(confirmations).toBe(0);expect(creates).toBe(1);
+    await nav.getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByRole('heading', { name: 'Questão 2 de 2' })).toBeVisible();
+    await expect(page.getByRole('radio').first()).toBeChecked();release();await expect(page.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect(writes).toBe(2);
+  } finally { release(); }
+});
 for (const width of [390, 1440]) test(`composição mantém critérios e resumo acessíveis em ${width}px`, async ({ page }, info) => {
   await page.setViewportSize({ width, height: 900 }); await page.goto('/');
   await page.getByRole('button', { name: 'Montar um simulado' }).click();
@@ -69,7 +96,8 @@ for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem c
     const name = decodeURIComponent(new URL(route.request().url()).pathname).replace('/concurso-simulator/', '');
     const file = resolve(root, name);expect(file.startsWith(root + sep)).toBe(true);
     if (!known.has(name) && !name.startsWith('assets/')) return route.abort('blockedbyclient');
-    return route.fulfill({ contentType: name.endsWith('.svg') ? 'image/svg+xml' : 'text/html; charset=utf-8', body: readFileSync(file) });
+    const contentType = name.endsWith('.css') ? 'text/css; charset=utf-8' : name.endsWith('.svg') ? 'image/svg+xml' : 'text/html; charset=utf-8';
+    return route.fulfill({ contentType, body: readFileSync(file) });
   });
   await page.setViewportSize({ width, height: 900 });await page.goto('/');
   await page.getByRole('button', { name: 'Explorar as aulas' }).click();
@@ -82,6 +110,7 @@ for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem c
   await expect(page.getByRole('heading', { name: 'Operações com Números Reais', exact: true })).toBeFocused();
   const frame = page.frameLocator('iframe[title="Aula completa: Operações com Números Reais"]');
   await expect(frame.getByRole('heading', { name: 'Matemática 01 - Operações com Números Reais', exact: true })).toBeVisible();
+  await expect(frame.getByRole('navigation', { name: 'Navegação do módulo', exact: true })).toHaveCSS('display', 'flex');
   await expect(frame.locator('#s5')).toContainText('Estimativa');await expect(frame.locator('img').first()).toBeVisible();
   expect(await frame.locator('img').first().evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
   expect(await frame.locator('html').evaluate(el => el.scrollWidth <= innerWidth)).toBe(true);

@@ -36,11 +36,11 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 - [x] 4.3 Verificar teclado/foco, navegação, estados de erro e regressões de resultado.
 - [ ] 4.4 Revisão independente SOL 6.1 xHigh e autorização própria dos PRs.
 
-## 5. Aulas — depende de 2, lote autorizado pelo usuário
+## 5. Aulas — integração com navegação, composição e realização de 2–4, lote autorizado pelo usuário
 
-- [ ] 5.1 Integrar a biblioteca e busca/filtros com o mapa público versionado de51 aulas.
-- [ ] 5.2 Integrar a leitura aprovada e navegação preservando o conteúdo completo, fórmulas/figuras e URLs; preservar tentativa ativa ao acionar prática.
-- [ ] 5.3 Verificar teclado/foco, estado vazio, responsividade, conteúdo e links; atualizar documentação.
+- [x] 5.1 Integrar a biblioteca e busca/filtros com o mapa público versionado de51 aulas.
+- [x] 5.2 Integrar a leitura aprovada e navegação preservando o conteúdo completo, fórmulas/figuras e URLs; preservar tentativa ativa ao acionar prática.
+- [x] 5.3 Verificar teclado/foco, estado vazio, responsividade, conteúdo e links; atualizar documentação.
 - [ ] 5.4 Revisão independente SOL 6.1 xHigh e autorização própria dos PRs.
 
 ## 6. Combinação e aceite — depende de 2–5, lote autorizado pelo usuário

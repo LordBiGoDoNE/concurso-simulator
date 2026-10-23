@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useImperativeHandle, useLayoutEffect, useRef, useState, type Ref } from 'react';
 import type { CurrentIdentity } from './identity-api';
 import { AttemptApiError, readAttempt, type AttemptView } from './attempt-api';
 import AttemptComposer from './AttemptComposer';
@@ -8,7 +8,8 @@ import SubjectReviewPanel from './SubjectReviewPanel';
 
 import type { DirectedPractice } from './directed-practice';
 
-export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true, onRunActiveChange }: { onRunActiveChange?: (active: boolean) => void; reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
+export interface AttemptWorkspaceHandle { practice: (selection: DirectedPractice) => boolean }
+export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true, contextActive = true, ref, onRunActiveChange }: { onRunActiveChange?: (active: boolean) => void; ref?: Ref<AttemptWorkspaceHandle>; contextActive?: boolean; reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
   const [directed, setDirected] = useState<DirectedPractice | null>(null); const [composerVersion, setComposerVersion] = useState(0); const [composing, setComposing] = useState(false);
   const [selected, setSelected] = useState<AttemptView | null>(null); const [loading, setLoading] = useState(false); const [message, setMessage] = useState('');
   const [historyRefresh, setHistoryRefresh] = useState(0); const generation = useRef(0); const request = useRef<AbortController | null>(null);
@@ -30,11 +31,13 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
   useLayoutEffect(() => () => onRunActiveChange?.(false), [onRunActiveChange]);
   const finished = useCallback(() => { setHistoryRefresh(v => v + 1); onRunActiveChange?.(false); }, [onRunActiveChange]);
   function clearDirected() { if (directed) { setDirected(null); setComposerVersion(v => v + 1); } }
-  function practice(selection: DirectedPractice) {
-    if (!reviewActive || composing || loading || access !== 'ready') return;
-    if (selected && !window.confirm('Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.')) return;
+  useImperativeHandle(ref, () => ({ practice: selection => practice(selection, true) }));
+  function practice(selection: DirectedPractice, fromLesson = false): boolean {
+    if (!contextActive || (!reviewActive && !fromLesson) || composing || loading || access !== 'ready') return false;
+    if (selected && !window.confirm('Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.')) return false;
     generation.current++; request.current?.abort(); setSelected(null); setLoading(false); setMessage('');
     setDirected(selection); setComposerVersion(v => v + 1);
+    return true;
   }
   function created(view: AttemptView) { setDirected(null); onGuestActive(!identity.connected); setSelected(view); setAccess('ready'); setMessage(''); setHistoryRefresh(v => v + 1); }
   async function open(id: string) {

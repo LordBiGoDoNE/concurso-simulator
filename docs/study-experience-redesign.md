@@ -23,3 +23,13 @@ Enunciado e alternativas ficam no cartão principal, com progresso e mapa naveg�
 A máquina de fila/versão/idempotência não foi alterada. Estados de salvamento confirmado, pendente, falha, conflito e escolhas preservadas continuam distintos, com as mesmas ações de retry/recarga. Resultado e revisão individual continuam a depender do servidor após conclusão. Os testes existentes de realização/resultado/contexto passaram; regressão específica do mapa/contagens adicionada. Revisão do conjunto e gate cumulativo pendentes.
 
 Mapa/contagens: 10 testes de realização passaram e dois testes Chromium (390px/1440px) conferiram escolha, salvamento, navegação por teclado, foco e cancelamento via Escape. Capturas locais conferidas. O resumo de sessão foi compactado, com orientações completas em expansão; controles e mensagens de acesso permanecem disponíveis.
+
+## Aulas — grupo 5
+
+Biblioteca local das 51 aulas com busca normalizada e filtros combináveis, independente da disponibilidade da API. Catálogo público gerado a partir da seleção aprovada, testado contra manifesto e mapa de teoria. Nenhum trecho parcial do protótipo substitui a aula: o leitor incorpora o HTML completo no endereço canônico conhecido, em iframe sem execução de scripts, com link ao original, navegação da disciplina, anterior/próxima e seleção de cargo elegível. Figuras/fórmulas/exercícios/links continuam na origem; não há importação do HTML para o bundle nem alteração das fontes.
+
+A moldura do leitor segue o layout aprovado; a página incorporada conserva sua apresentação original e rolagem própria. Navegadores não permitem confirmar status HTTP de iframe remoto: há fallback explícito para abrir o original e retry se a carga demorar. Isso não certifica disponibilidade de hospedagem externa.
+
+O atalho usa a fronteira de composição da realização existente. A camada depende da navegação/composição e do contexto de realização que preserva: cancelar troca mantém escolha/fila/comando; confirmar apenas preenche uma questão do assunto, sem POST automático e sem variações selecionadas. Operação em andamento ou verificação de identidade bloqueiam a substituição.
+
+Verificação: 171 unitários passaram; 9 testes Chromium de início/composição/realização/aulas passaram (390px e 1280px/1440px), incluindo fontes completas locais, imagem original carregada, teclado/foco e ausência de corte lateral. Capturas do leitor/biblioteca conferidas. Não representa auditoria WCAG completa ou gate final.

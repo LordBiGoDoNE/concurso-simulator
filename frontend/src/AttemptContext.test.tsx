@@ -103,3 +103,19 @@ it('troca de conta durante outra área descarta a tentativa oculta e ignora resp
   await act(async () => fixture.finishWrite());fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   expect(await screen.findByRole('button', { name: 'Iniciar simulado' })).toBeInTheDocument();expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();
 });
+it('atalho da aula preserva tentativa ao cancelar e só preenche composição ao confirmar', async () => {
+  const fixture = api(userA);const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false);
+  render(<App />);await start();
+  fixture.fetchMock.mockImplementationOnce(async () => response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' })).mockImplementationOnce(async () => { throw new TypeError('network'); });
+  fireEvent.click(screen.getAllByRole('radio')[0]);await screen.findByRole('button', { name: 'Repetir salvamento' });
+  fireEvent.click(screen.getByRole('button', { name: 'Aulas' }));
+  fireEvent.click(screen.getByRole('button', { name: /P01.*Interpretação de Textos/ }));
+  fireEvent.click(screen.getByRole('button', { name: 'Praticar este assunto' }));
+  expect(confirm).toHaveBeenCalledTimes(1);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
+  expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.getByRole('button', { name: 'Repetir salvamento' })).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Aulas' }));confirm.mockReturnValue(true);
+  fireEvent.click(screen.getByRole('button', { name: 'Praticar este assunto' }));
+  await waitFor(() => expect(screen.getByLabelText('Quantidade de Português')).toHaveValue(1));
+  expect(screen.getByLabelText('Interpretação')).toBeChecked();expect(screen.getByLabelText('Usar variações numéricas quando disponíveis')).not.toBeChecked();
+  expect(fixture.fetchMock.mock.calls.filter(([url, options]) => url.endsWith('/attempts') && options?.method === 'POST')).toHaveLength(1);
+});

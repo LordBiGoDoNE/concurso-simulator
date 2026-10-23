@@ -20,6 +20,10 @@ completa não usa Pages nesta entrega; sua execução continua local com Docker.
 - Montador, enriquecimento e verificadores vêm de stable. A branch de preview fornece
   dados/arquivos públicos, sem executar seus scripts antigos. Checkouts não persistem
   credenciais; acesso Git autenticado usa o helper gh somente nos passos que precisam.
+- A montagem recusa links simbólicos, reparse points e arquivos especiais nas
+  entradas públicas e nos previews armazenados antes de copiar. As fontes são
+  checkouts imutáveis durante o job; essa validação não promete proteção contra
+  outro processo modificando o filesystem local durante uma montagem.
 - O workflow permanece também na branch padrão para ser descoberto pelo Actions,
   mas seu job de publicação exige `refs/heads/stable` e não roda em main.
 

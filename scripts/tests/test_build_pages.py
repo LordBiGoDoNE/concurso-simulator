@@ -97,6 +97,55 @@ class BuildPagesTests(unittest.TestCase):
             pages.build_site(self.root, self.stored, self.output, "pages-store", "stable")
         self.assertFalse(self.output.exists())
 
+    def link(self, path, target, directory=False):
+        try:
+            path.symlink_to(target, target_is_directory=directory)
+        except (OSError, NotImplementedError) as error:
+            self.skipTest(f"Platform cannot create symlinks: {error}")
+
+    def test_root_file_link_cannot_publish_an_outside_sentinel(self):
+        sentinel = self.home / "outside.txt"
+        sentinel.write_text("not publishable", encoding="utf-8")
+        index = self.root / "index.html"
+        index.unlink()
+        self.link(index, sentinel)
+        with self.assertRaises(ValueError):
+            pages.build_site(self.root, self.stored, self.output, "stable", "stable")
+        self.assertFalse(self.output.exists())
+
+    def test_nested_asset_link_is_rejected_before_copying(self):
+        sentinel = self.home / "outside.txt"
+        sentinel.write_text("not publishable", encoding="utf-8")
+        self.link(self.root / "assets" / "leak.txt", sentinel)
+        with self.assertRaises(ValueError):
+            pages.build_site(self.root, self.stored, self.output, "stable", "stable")
+        self.assertFalse(self.output.exists())
+
+    def test_public_directory_link_is_rejected(self):
+        outside = self.home / "outside"
+        outside.mkdir()
+        (outside / "sentinel.txt").write_text("not publishable", encoding="utf-8")
+        self.link(self.root / "02_Outside", outside, directory=True)
+        with self.assertRaises(ValueError):
+            pages.build_site(self.root, self.stored, self.output, "stable", "stable")
+        self.assertFalse(self.output.exists())
+
+    def test_stored_preview_link_is_rejected(self):
+        self.stored_preview("old", "preserved")
+        sentinel = self.home / "outside.txt"
+        sentinel.write_text("not publishable", encoding="utf-8")
+        self.link(self.stored / "previews/old/leak.txt", sentinel)
+        with self.assertRaises(ValueError):
+            pages.build_site(self.root, self.stored, self.output, "stable", "stable")
+        self.assertFalse(self.output.exists())
+
+    @unittest.skipUnless(hasattr(os, "mkfifo"), "POSIX special-file regression")
+    def test_fifo_is_rejected_without_trying_to_read_it(self):
+        os.mkfifo(self.root / "assets" / "pipe")
+        with self.assertRaises(ValueError):
+            pages.build_site(self.root, self.stored, self.output, "stable", "stable")
+        self.assertFalse(self.output.exists())
+
 
 if __name__ == "__main__":
     unittest.main()

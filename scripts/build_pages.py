@@ -5,19 +5,50 @@ import hashlib
 import os
 import re
 import shutil
+import stat
 import subprocess
 import sys
 from pathlib import Path
 
 
-def copy_site(source, target, tools_source=None):
-    tools_source = tools_source if tools_source is not None else source
-    target.mkdir(parents=True, exist_ok=True)
+def validate_public_path(path, recursive=True):
+    info = path.lstat()
+    reparse = getattr(stat, "FILE_ATTRIBUTE_REPARSE_POINT", 0)
+    if stat.S_ISLNK(info.st_mode) or getattr(info, "st_file_attributes", 0) & reparse:
+        raise ValueError(f"Links are not allowed in public material: {path}")
+    if stat.S_ISDIR(info.st_mode):
+        if recursive:
+            for child in path.iterdir():
+                validate_public_path(child)
+    elif not stat.S_ISREG(info.st_mode):
+        raise ValueError(f"Special files are not allowed in public material: {path}")
+    return info.st_mode
+
+
+def public_paths(source):
+    if not stat.S_ISDIR(validate_public_path(source, recursive=False)):
+        raise ValueError("Material source must be a directory")
     files = [source / "index.html", source / ".nojekyll"]
     files += sorted(source.glob("00_*.html"))
     files += [source / "manifesto_v3.json", source / "catalogo_fontes_questoes.csv"]
     directories = [source / "assets"]
-    directories += sorted(p for p in source.iterdir() if p.is_dir() and re.match(r"^0[1-5]_", p.name))
+    for path in sorted(source.iterdir()):
+        if re.match(r"^0[1-5]_", path.name):
+            if stat.S_ISDIR(validate_public_path(path, recursive=False)):
+                directories.append(path)
+    for file in files:
+        if not stat.S_ISREG(validate_public_path(file, recursive=False)):
+            raise ValueError(f"Public file must be regular: {file}")
+    for directory in directories:
+        if not stat.S_ISDIR(validate_public_path(directory)):
+            raise ValueError(f"Public directory required: {directory}")
+    return files, directories
+
+
+def copy_site(source, target, tools_source=None):
+    tools_source = tools_source if tools_source is not None else source
+    files, directories = public_paths(source)
+    target.mkdir(parents=True, exist_ok=True)
     for file in files:
         shutil.copy2(file, target / file.name)
     for directory in directories:
@@ -44,10 +75,15 @@ def build_site(root, stored, output, branch, production_branch="main", productio
         raise ValueError("Unsupported production branch")
     if branch == "pages-store" or (production_branch == "stable" and branch == "main"):
         raise ValueError("This branch cannot be published")
-    stored_previews = stored / "previews"
-    if stored_previews.exists():
-        shutil.copytree(stored_previews, output / "previews")
     production = root if branch == production_branch else (production_source or root / "approved")
+    public_paths(production)
+    if branch != production_branch:
+        public_paths(root)
+    stored_previews = stored / "previews"
+    if stored_previews.exists() or stored_previews.is_symlink():
+        if not stat.S_ISDIR(validate_public_path(stored_previews)):
+            raise ValueError("Stored previews must be a directory")
+        shutil.copytree(stored_previews, output / "previews")
     copy_site(production, output, tools_source)
     if branch != production_branch:
         slug = preview_slug(branch)

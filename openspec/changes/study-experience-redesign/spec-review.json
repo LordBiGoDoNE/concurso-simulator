@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "status": "pending-revalidation",
+  "spec": "study-experience-redesign",
+  "pr": null,
+  "integration_state": "candidate-local-before-task-merges-and-spec-pr",
+  "base_sha": "181767332d5178f576a5e3853a557be90c16afa8",
+  "reviewed_head_sha": "0c52cf1411b8a45724ddc65e97996f815b3b4cc3",
+  "diff_sha256": "3f219be24d736638fe68302166559f4f0e405208864fdd10c8577e9d482e04a8",
+  "diff_bytes": 2029298,
+  "reviewed_at": "2026-10-23T15:14:15-03:00",
+  "risk": "critical",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/study_layout_final_sol",
+    "independent_context": true
+  },
+  "coverage": {
+    "requirements": "Full proposal/design/brief/spec/tasks/prototype and production groups1–6 examined.",
+    "architecture": "AGENTS/profile/ADR0001/HTTP checklist, UI ownership and unchanged backend/contracts examined.",
+    "integration": "Shell, mounted run, practice handoff, composer/result/history/review and focus/menu/responsive examined.",
+    "security": "Identity checking/logout/late responses, 401/403/404, no new storage, correction boundary, known map and sandbox examined.",
+    "persistence": "No backend/schema changes; queue/version/commands/retry/conflict/reload/finish and live replacement guard examined.",
+    "tests": "Unit and browser regression source examined; no execution by reviewer.",
+    "maintenance": "55 changed files,5/51/2 catalogs,51 source hashes,360 text nodes,517 local refs and22 images examined."
+  },
+  "findings": [
+    {
+      "id": "CUM-SOL-001",
+      "severity": "recommended",
+      "location": "frontend/src/LessonLibrary.tsx:30",
+      "evidence": "Internal M01→M02 links change iframe document, while external selected/topic and generic practice CTA retain M01.",
+      "reference": "Full production lessons; reading/practice link; task5.2.",
+      "impact": "Student may expect practice of visible embedded M02 but get M01; explicit composition still permits checking before POST.",
+      "suggestion": "Make selected code/title and document-navigation independence explicit, or synchronize selection; browser regression M01→internalM02→practice.",
+      "disposition": "pending-fix",
+      "resolution": "Coordinator accepts explicit selected-topic label and browser regression; not yet fixed/revalidated in this commit."
+    }
+  ],
+  "triage_complete": false,
+  "limitations": [
+    "Read-only: no tests/build/product/project scripts/network/DB/writes/delegation by reviewer.",
+    "Snapshot/captures do not certify interactions, CI, Google real, external availability or complete WCAG/assistive coverage.",
+    "Incidental references to prior LAYOUT-SOL findings seen in product docs before semantic conclusion; prior reports examined only afterward for documentary coherence, no conclusions derived from them.",
+    "Quota5h/weekly and tokens unavailable before/after; no attributed delta or model comparison.",
+    "Candidate local only: no actual SPEC PR number, check certification, merge/archive/publication authorization."
+  ],
+  "verification": [
+    {
+      "command": "Canonical cumulative git diff and source/hash/image reads",
+      "result": "2029298bytes/digest/merge-base match;55files,10versioned PNGs plus12runtime images; product/test files equal fabb593.",
+      "executed_by": "independent spec-reviewer, read-only"
+    }
+  ]
+}

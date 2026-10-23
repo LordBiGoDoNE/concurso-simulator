@@ -45,11 +45,13 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 
 ## 6. Combinação e aceite — depende de 2–5, lote autorizado pelo usuário
 
-- [ ] 6.1 Conferir fluxos de visitante/conta e regressão das áreas ainda não redesenhadas.
-- [ ] 6.2 Validar a combinação desktop/celular, aulas e acervo em ambiente isolado.
+- [x] 6.1 Conferir fluxos de visitante/conta e regressão das áreas ainda não redesenhadas.
+- [x] 6.2 Validar a combinação desktop/celular, aulas e acervo em ambiente isolado.
 - [ ] 6.3 Consolidar evidências e executar gate cumulativo independente em contexto próprio.
 - [ ] 6.4 Solicitar aceite e integração específica; atualizar a issue após cada mudança de PR.
 
 O usuário escolheu explicitamente todos os grupos2–6 em2026-10-23. A autorização cobre
 o lote completo, sem merges presumidos. Registrar implementação, revisão e integração
 separadamente; não encerrar antes das regressões e do gate do grupo6.
+
+Este checklist separa a implementação verificada das tarefas que também exigem revisão/merge. O estado atualizado das revisões e do gate fica nos relatórios próprios e na issue #139; campos de integração aguardam autorização específica.

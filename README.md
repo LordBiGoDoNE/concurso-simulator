@@ -27,7 +27,7 @@ Depois acesse http://localhost:8000.
 
 ## Atualizar e publicar
 
-Edite os arquivos HTML, CSS e JavaScript e envie as alterações para a branch `main`. O GitHub Actions verifica os caminhos internos e publica o site no GitHub Pages automaticamente.
+Edite o material HTML, CSS e JavaScript por branches/PRs para `stable`. Push nessa branch publica o site estático no GitHub Pages. `main` recebe a aplicação completa e não publica no Pages; veja [a separação de publicação](docs/pages-stable.md).
 
 Preserve os nomes de arquivos e os caminhos relativos. Ao alterar teoria ou questões, confira também os gabaritos e as referências correspondentes. Veja `CONTEXTO_PARA_CONTINUAR_V3.md` para as orientações editoriais do material original.
 
@@ -41,13 +41,13 @@ python3 scripts/check_links.py
 
 **Padrão do projeto:** uma spec usa `epic/<nome-da-spec>`; tarefas ou grupos coesos usam `task/<nome-da-spec>/<assunto>` e abrem PRs para a épica. Após revisão dos PRs menores, a épica abre PR para `main`. Regras e dependências estão em `AGENTS.md`.
 
-Mantenha `main` como versão aprovada. Crie uma branch para cada melhoria e abra um Pull Request; faça merge apenas após aprovação.
+Mantenha `stable` como versão aprovada do site estático. Crie uma branch para cada melhoria e abra um Pull Request; faça merge apenas após aprovação. A aplicação completa evolui em `main`.
 
-Previews são **exclusivamente manuais**, não fazem parte do CI: Actions → Publish GitHub Pages → Run workflow. Execute o workflow de `main` e informe a branch desejada no campo `branch`. Antes do merge desta automação, execute a referência `infra/spec-task-workflow`, já autorizada no ambiente Pages. O preview fica em `previews/<nome-da-branch>-<hash>/`, com aviso de versão não aprovada; o link aparece no resumo do Actions. São públicos e não devem conter dados privados. Apenas push em `main` publica produção automaticamente. O preview serve o material estático, não a aplicação Java/React.
+Previews são **exclusivamente manuais**, não fazem parte do CI: Actions → Publish GitHub Pages → Run workflow. Execute o workflow de `stable` e informe a branch de material no campo `branch`. `main` e `pages-store` são recusadas. O preview fica em `previews/<nome-da-branch>-<hash>/`, com aviso de versão não aprovada; o link aparece no resumo do Actions. São públicos e não devem conter dados privados. Apenas push em `stable` publica produção automaticamente. O preview serve o material estático, não a aplicação Java/React.
 
-Durante uma publicação de preview, a raiz do site é montada exclusivamente a partir de `main`. A branch `pages-store` guarda os arquivos publicados e preserva os outros previews entre publicações; não edite essa branch como código-fonte. Todas as publicações usam a mesma fila para evitar sobreposições.
+Durante uma publicação de preview, a raiz do site e as ferramentas de montagem vêm exclusivamente de `stable`; a branch escolhida fornece somente o material. Isso mantém previews de revisões anteriores sem exigir atualizar seus scripts. A branch `pages-store` guarda os arquivos publicados e preserva os outros previews; não edite essa branch como código-fonte. Todas as publicações usam a mesma fila para evitar sobreposições.
 
-Até a infraestrutura ser aprovada e mesclada, branches de melhorias precisam partir desta branch para utilizar o workflow novo. A automação antiga de `main` ainda não preserva previews; não envie mudanças para `main` antes dessa aprovação.
+O ambiente `github-pages` autoriza somente a referência `stable`. A cópia do workflow em `main` permite sua descoberta no Actions, mas não publica a partir dessa referência.
 
 Previews ficam disponíveis após o merge ou fechamento do PR até serem removidos explicitamente. A limpeza automática pode ser adicionada depois; o fechamento de PRs não executa código de forks nesta configuração.
 

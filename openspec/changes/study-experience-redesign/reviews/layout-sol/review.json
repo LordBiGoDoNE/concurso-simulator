@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "pending-revalidation",
+  "status": "completed",
   "spec": "study-experience-redesign",
   "batch": "groups-2-6",
   "risk": "critical",
@@ -9,16 +9,12 @@
     "session": "/root/study_layout_batch_sol",
     "independent_context": true
   },
-  "reviewed_at": "2026-10-23T18:03:59.033447+00:00",
+  "reviewed_at": "2026-10-23T18:30:43.556655+00:00",
   "snapshot": {
     "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
-    "head_sha": "58cb5fb2644b6512345b97766aa4eee17d0942ab",
-    "diff_sha256": "d5f2b6db510f34970294e10471613b568007dffefc051d190631d1e72b2f74c6",
-    "bytes": 180962,
-    "excluded_paths": [
-      "openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
-      "openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
-    ],
+    "head_sha": "d0addfc80d880b2d18ed08d831b46fbe4488d25e",
+    "diff_sha256": "50ec58960db035a1b3dc7a06a91e7abbae6e4c890b5571a272a94ab7a720df3d",
+    "bytes": 189917,
     "prs": [
       {
         "pr": 141,
@@ -44,16 +40,16 @@
       {
         "pr": 145,
         "base_sha": "4f178e52f6655d852439c1c5f2c57c2fd34f2c00",
-        "head_sha": "49e8782148e5fc631658568a6a6338c35f14931d",
-        "diff_sha256": "d1d1b813b9e30ea29294d21da9d648caba4e3bcc381f42557d7886127f384ebb",
-        "bytes": 63714
+        "head_sha": "1e3c167c939d9c9f5056f5e96ff5fcfda88d246f",
+        "diff_sha256": "4e0c42e8402c3942a73d8db6e0912b3c74545dee0976851eb9839f3f570fdee9",
+        "bytes": 65126
       },
       {
         "pr": 146,
-        "base_sha": "49e8782148e5fc631658568a6a6338c35f14931d",
-        "head_sha": "58cb5fb2644b6512345b97766aa4eee17d0942ab",
-        "diff_sha256": "a585bafc7ea7bbc2543f478eafa761629f0bd18414128d70788a9ab43c1613f0",
-        "bytes": 22232
+        "base_sha": "1e3c167c939d9c9f5056f5e96ff5fcfda88d246f",
+        "head_sha": "d0addfc80d880b2d18ed08d831b46fbe4488d25e",
+        "diff_sha256": "298fc8111d69c13d6522d913d925f15660f6763f6bdfbdae72fd306ad63ea27b",
+        "bytes": 29775
       }
     ],
     "git_arguments": [
@@ -81,7 +77,7 @@
       "--output-indicator-new=+",
       "--output-indicator-old=-",
       "--output-indicator-context= ",
-      "2e33071640eabaa5eeb36146a8dcb9585c254195...58cb5fb2644b6512345b97766aa4eee17d0942ab",
+      "2e33071640eabaa5eeb36146a8dcb9585c254195...d0addfc80d880b2d18ed08d831b46fbe4488d25e",
       "--",
       ".",
       ":(exclude)openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
@@ -273,11 +269,11 @@
     "same_independent_context_as_initial": true,
     "new_findings": [],
     "all_pr_and_combined_snapshots_recomputed": true,
-    "all_twelve_screenshot_hashes_verified": true,
-    "four_new_practice_reader_captures_visually_inspected": true,
+    "all_eight_round3_capture_hashes_verified": true,
     "working_tree_clean": true,
-    "product_and_tests_identical_to_verified_fabb593": true,
-    "executed_tests_by_reviewer": false
+    "product_and_tests_identical_to_verified_65f7900": true,
+    "executed_tests_by_reviewer": false,
+    "reader_selection": "Explicit code/title/CTA/accessibility description; internal M01→M02 does not silently alter announced selection. Browser regression source examined, not executed by reviewer."
   },
   "quota": {
     "initial": {
@@ -291,7 +287,13 @@
     "validated_with": "scripts/review_quota.py",
     "isolation_declared": false,
     "tokens": "unavailable",
-    "comparison_between_models": "not performed"
+    "comparison_between_models": "not performed",
+    "reader_clarification_revalidation": {
+      "5h": "unavailable",
+      "weekly": "unavailable",
+      "tokens": "unavailable",
+      "validated_with": "scripts/review_quota.py"
+    }
   },
   "revalidation_history": [
     {
@@ -388,11 +390,20 @@
       "findings": "LAYOUT-SOL-001/002/003 fixed; no new findings"
     }
   ],
-  "pending_update": "Explicit selected practice code/title and native M01→M02 navigation regression, product/test source65f7900c39ccdbfc5608fc9c28540c81426b099b.",
   "latest_coordinator_checks": {
     "unit": 174,
     "build": "passed",
     "general_browser_with_offline": 14,
     "clean_delivery_source_65f7900": "in progress; previous full fabb593 preserved as history"
+  },
+  "verification_current": {
+    "product_test_source_sha": "65f7900c39ccdbfc5608fc9c28540c81426b099b",
+    "unit": 174,
+    "build": "passed",
+    "general_browser_with_offline": 14,
+    "clean_delivery": "all eight stages passed",
+    "packaged_browser": 7,
+    "identity_and_parameterized": "24/5 passed at prior runtime fabb593; no change to their source/underlying operations in selected-topic label update",
+    "executed_by": "coordinator"
   }
 }

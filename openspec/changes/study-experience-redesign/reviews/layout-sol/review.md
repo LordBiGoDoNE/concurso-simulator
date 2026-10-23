@@ -33,3 +33,11 @@ Snapshots mínimos antes/depois comparados por review_quota.py: janelas5h/semana
 ## Nova alteração de leitor para revalidação
 
 Código/título do assunto selecionado agora aparecem explicitamente junto ao botão e em sua descrição acessível. O teste navega M01→M02 dentro do material e confere que a prática anunciada como M01 preenche M01.174 unitários,build e14 Chromium gerais passaram. A mudança invalida a aplicação do parecer anterior ao novo snapshot; estado pending-revalidation até nova conferência independente. O gate cumulativo mantém seu próprio contexto/evidência.
+
+## Revalidação do leitor concluída
+
+Mesmo SOL6.1xHigh/contexto independente original: LAYOUT-SOL-001/002/003 permanecem fixed; nenhum novo blocking/recommended/optional. Reexaminou os cinco diffs e a combinação no headd0addfc80d880b2d18ed08d831b46fbe4488d25e, base2e330716,189917bytes,digest `50ec58960db035a1b3dc7a06a91e7abbae6e4c890b5571a272a94ab7a720df3d`. Excluídos somente estes dois arquivos; os relatórios cumulativos estavam incluídos e foram lidos apenas documentalmente após análise própria.
+
+Código/título/CTA/descrição e instrução da seleção externa conferidos, assim como as regressões M01→M02→M01 e a preservação das guardas. Oito hashes de capturas da rodada conferidos; leitor desktop/celular e composição/realização celular inspecionados. Confirmou igualdade de produto/testes com65f7900; não executou testes nem autenticou resultados operacionais.
+
+Após esse parecer, o coordenador confirmou a nova execução limpa1–8 aprovada no produto/testes65f7900, com7 cenários de navegador;174 unitários/build/14 gerais já tinham passado. Esses resultados pertencem ao coordenador. Cota5h/semanal/tokens indisponíveis nessa revalidação, observações comparadas/validadas sem atribuição. O gate cumulativo segue separado, sem autorização de merge.

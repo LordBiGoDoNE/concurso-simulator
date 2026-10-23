@@ -17,3 +17,5 @@ Sem testes/build/scripts/rede/DB/escritas/delegação/Graphify pelo revisor. Cap
 ## Revalidação
 
 Qualquer mudança relevante exige novo snapshot e conferência. O candidato é local antes dos merges de tarefas e do futuro PR[SPEC]; pr=null é intencional e não certifica metadados/check de um PR inexistente. Nenhum merge,arquivamento ou publicação autorizado por este parecer.
+
+Correção preparada em1e3c167/65f7900: assunto/código explícitos no painel/CTA/descrição e regressão M01→M02→prática M01.174 unitários,build e14 cenários gerais passaram; estes resultados não substituem a revalidação cumulativa independente do novo snapshot.

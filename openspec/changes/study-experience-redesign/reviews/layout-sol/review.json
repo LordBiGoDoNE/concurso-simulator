@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "status": "completed",
+  "status": "pending-revalidation",
   "spec": "study-experience-redesign",
   "batch": "groups-2-6",
   "risk": "critical",
@@ -292,5 +292,107 @@
     "isolation_declared": false,
     "tokens": "unavailable",
     "comparison_between_models": "not performed"
+  },
+  "revalidation_history": [
+    {
+      "snapshot": {
+        "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+        "head_sha": "58cb5fb2644b6512345b97766aa4eee17d0942ab",
+        "diff_sha256": "d5f2b6db510f34970294e10471613b568007dffefc051d190631d1e72b2f74c6",
+        "bytes": 180962,
+        "excluded_paths": [
+          "openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+          "openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+        ],
+        "prs": [
+          {
+            "pr": 141,
+            "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+            "head_sha": "1c2b08d45a6684dc9db057c4ef29bab17c1a709e",
+            "diff_sha256": "8dd6b91b68a1d994e5f4dac269458bbc967dd8a50b8060e26e988b1973f6f694",
+            "bytes": 77498
+          },
+          {
+            "pr": 142,
+            "base_sha": "1c2b08d45a6684dc9db057c4ef29bab17c1a709e",
+            "head_sha": "3a7a9efb83ed7639038120025a8b0a772cb40d30",
+            "diff_sha256": "f120b809bb11eb99e1b99df7c78857144ba4b30f076c5f9cb0c65b38840d061b",
+            "bytes": 19574
+          },
+          {
+            "pr": 144,
+            "base_sha": "3a7a9efb83ed7639038120025a8b0a772cb40d30",
+            "head_sha": "4f178e52f6655d852439c1c5f2c57c2fd34f2c00",
+            "diff_sha256": "6636e944e8626716c34c81a43a41907932de789c70ba0341bf73aa1f251a99de",
+            "bytes": 28497
+          },
+          {
+            "pr": 145,
+            "base_sha": "4f178e52f6655d852439c1c5f2c57c2fd34f2c00",
+            "head_sha": "49e8782148e5fc631658568a6a6338c35f14931d",
+            "diff_sha256": "d1d1b813b9e30ea29294d21da9d648caba4e3bcc381f42557d7886127f384ebb",
+            "bytes": 63714
+          },
+          {
+            "pr": 146,
+            "base_sha": "49e8782148e5fc631658568a6a6338c35f14931d",
+            "head_sha": "58cb5fb2644b6512345b97766aa4eee17d0942ab",
+            "diff_sha256": "a585bafc7ea7bbc2543f478eafa761629f0bd18414128d70788a9ab43c1613f0",
+            "bytes": 22232
+          }
+        ],
+        "git_arguments": [
+          "-c",
+          "core.quotePath=true",
+          "-c",
+          "diff.suppressBlankEmpty=false",
+          "diff",
+          "--binary",
+          "--full-index",
+          "--no-ext-diff",
+          "--no-textconv",
+          "--unified=3",
+          "--inter-hunk-context=0",
+          "--no-indent-heuristic",
+          "--no-relative",
+          "-O/dev/null",
+          "--ignore-submodules=none",
+          "--submodule=short",
+          "--no-renames",
+          "--diff-algorithm=myers",
+          "--no-color",
+          "--src-prefix=a/",
+          "--dst-prefix=b/",
+          "--output-indicator-new=+",
+          "--output-indicator-old=-",
+          "--output-indicator-context= ",
+          "2e33071640eabaa5eeb36146a8dcb9585c254195...58cb5fb2644b6512345b97766aa4eee17d0942ab",
+          "--",
+          ".",
+          ":(exclude)openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+          ":(exclude)openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+        ]
+      },
+      "result": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/study_layout_batch_sol",
+        "same_independent_context_as_initial": true,
+        "new_findings": [],
+        "all_pr_and_combined_snapshots_recomputed": true,
+        "all_twelve_screenshot_hashes_verified": true,
+        "four_new_practice_reader_captures_visually_inspected": true,
+        "working_tree_clean": true,
+        "product_and_tests_identical_to_verified_fabb593": true,
+        "executed_tests_by_reviewer": false
+      },
+      "findings": "LAYOUT-SOL-001/002/003 fixed; no new findings"
+    }
+  ],
+  "pending_update": "Explicit selected practice code/title and native M01→M02 navigation regression, product/test source65f7900c39ccdbfc5608fc9c28540c81426b099b.",
+  "latest_coordinator_checks": {
+    "unit": 174,
+    "build": "passed",
+    "general_browser_with_offline": 14,
+    "clean_delivery_source_65f7900": "in progress; previous full fabb593 preserved as history"
   }
 }

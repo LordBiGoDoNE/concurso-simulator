@@ -33,8 +33,8 @@
       "reference": "Full production lessons; reading/practice link; task5.2.",
       "impact": "Student may expect practice of visible embedded M02 but get M01; explicit composition still permits checking before POST.",
       "suggestion": "Make selected code/title and document-navigation independence explicit, or synchronize selection; browser regression M01→internalM02→practice.",
-      "disposition": "pending-fix",
-      "resolution": "Coordinator accepts explicit selected-topic label and browser regression; not yet fixed/revalidated in this commit."
+      "disposition": "pending-revalidation",
+      "resolution": "Implemented explicit selection/description and internal-document navigation regression; independent cumulative revalidation pending."
     }
   ],
   "triage_complete": false,
@@ -51,5 +51,11 @@
       "result": "2029298bytes/digest/merge-base match;55files,10versioned PNGs plus12runtime images; product/test files equal fabb593.",
       "executed_by": "independent spec-reviewer, read-only"
     }
-  ]
+  ],
+  "coordinator_correction": {
+    "commit": "1e3c167",
+    "regression_test_source": "65f7900c39ccdbfc5608fc9c28540c81426b099b",
+    "description": "Selected code/title visible and accessible; CTA Praticar M01 and explanation that material links do not change external selection. Native M01→M02→explicit M01 composition tested.",
+    "checks": "174 unit tests/build/14 general browser passed; clean packaged run in progress."
+  }
 }

@@ -29,3 +29,7 @@ A guarda consulta referências operacionais vivas e antecede confirmação/desmo
 O diff entre fabb593 e o head analisado contém somente documentação/evidências, conferido por Git; isso não certifica a execução dos testes do coordenador. Revisor não fez testes/build/scripts/rede/DB/escrita/delegação. Não usou Graphify nesta rodada. Worktree limpo.
 
 Snapshots mínimos antes/depois comparados por review_quota.py: janelas5h/semanal e tokens indisponíveis, sem estimativa/delta atribuível/isolamento garantido; nenhum outro modelo executado para comparação. Este parecer não autoriza merge nem substitui gate cumulativo em outro contexto. O registro inicial de1 bloqueador/2 recomendações permanece histórico verdadeiro.
+
+## Nova alteração de leitor para revalidação
+
+Código/título do assunto selecionado agora aparecem explicitamente junto ao botão e em sua descrição acessível. O teste navega M01→M02 dentro do material e confere que a prática anunciada como M01 preenche M01.174 unitários,build e14 Chromium gerais passaram. A mudança invalida a aplicação do parecer anterior ao novo snapshot; estado pending-revalidation até nova conferência independente. O gate cumulativo mantém seu próprio contexto/evidência.

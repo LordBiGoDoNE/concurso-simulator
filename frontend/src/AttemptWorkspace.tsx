@@ -46,7 +46,7 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
     catch (error) { if (current !== generation.current || controller.signal.aborted) return; if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) onUnavailable(); else setMessage('Tentativa indisponível. Tente abri-la novamente pelo histórico.'); }
     finally { if (current === generation.current && !controller.signal.aborted) setLoading(false); }
   }
-  return <section aria-labelledby="mock-exam-title"><h2 id="mock-exam-title">Simulados</h2>
+  return <section className="attempt-workspace" aria-labelledby="mock-exam-title"><h2 id="mock-exam-title" className="sr-only">Simulados</h2>
     <details className="attempt-session-note" open={!selected}><summary>Sobre esta tentativa</summary><p>{identity.connected ? 'Respostas confirmadas ficam salvas na sua conta para retomar em outra sessão.' : 'Modo visitante: tentativa temporária por até 24 horas, acessível somente nesta sessão válida. Não há histórico permanente; entrar na conta não transfere esta tentativa.'}</p></details>
     {message && <p role="alert">{message}</p>}
     {loading ? <p role="status">Retomando tentativa…</p> : selected ? <>

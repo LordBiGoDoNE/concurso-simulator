@@ -15,3 +15,11 @@ Verificação inicial: 62 testes de entrada, identidade, contexto e questões pa
 Configuração organizada em cargo, distribuição/assuntos e variações opcionais. Resumo lateral com total e composição efetiva; em celular, total e início permanecem disponíveis em barra inferior. Sem alteração do contrato, critérios, operação idempotente ou tratamento de insuficiência/retry.
 
 Build e 11 testes unitários de composição/prática dirigida passaram. Dois testes Chromium (390px/1440px) conferiram validação, total, seleção de assunto/variações, preservação ao navegar e ausência de corte lateral. Revisão independente ao fim do lote e integração permanecem pendentes.
+
+## Realização — grupo 4
+
+Enunciado e alternativas ficam no cartão principal, com progresso e mapa navegável de questões. Seleção/ausência de resposta são indicadas por texto e estado acessível; não representam correção ou confirmação do salvamento. O diálogo de conclusão informa respondidas/brancos e devolve o foco ao cancelar.
+
+A máquina de fila/versão/idempotência não foi alterada. Estados de salvamento confirmado, pendente, falha, conflito e escolhas preservadas continuam distintos, com as mesmas ações de retry/recarga. Resultado e revisão individual continuam a depender do servidor após conclusão. Os testes existentes de realização/resultado/contexto passaram; regressão específica do mapa/contagens adicionada. Revisão do conjunto e gate cumulativo pendentes.
+
+Mapa/contagens: 10 testes de realização passaram e dois testes Chromium (390px/1440px) conferiram escolha, salvamento, navegação por teclado, foco e cancelamento via Escape. Capturas locais conferidas. O resumo de sessão foi compactado, com orientações completas em expansão; controles e mensagens de acesso permanecem disponíveis.

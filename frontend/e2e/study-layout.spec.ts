@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { catalog, emptyPage } from '../test/question-fixtures';
+import { view } from '../test/attempt-fixtures';
 
 test.beforeEach(async ({ page }) => {
   await page.route('**/api/v1/**', route => {
@@ -11,6 +12,31 @@ test.beforeEach(async ({ page }) => {
     if (path.includes('/question-bank/questions')) return route.fulfill({ json: emptyPage });
     return route.fulfill({ status: 503, json: { error: 'unavailable' } });
   });
+});
+for (const width of [390, 1440]) test(`realização, mapa e confirmação por teclado em ${width}px`, async ({ page }, info) => {
+  let current = { ...view, items: [...view.items, { ...view.items[0], id: '80000000-0000-0000-0000-000000000002', questionId: '10000000-0000-0000-0000-000000000002' }] };
+  await page.route('**/api/v1/csrf', route => route.fulfill({ json: { token: 'test', headerName: 'X-CSRF-TOKEN' } }));
+  await page.route('**/api/v1/attempts**', route => {
+    if (route.request().method() === 'PUT') {
+      const answer = route.request().postDataJSON(); const id = new URL(route.request().url()).pathname.split('/').at(-1);
+      current = { ...current, version: current.version + 1, items: current.items.map(item => item.id === id ? { ...item, selectedAlternativeId: answer.alternativeId } : item) };
+    }
+    return route.fulfill({ status: route.request().method() === 'POST' ? 201 : 200, json: current });
+  });
+  await page.setViewportSize({ width, height: 900 });await page.goto('/');
+  await page.getByRole('button', { name: 'Montar um simulado' }).click();
+  await page.getByLabel('Quantidade de Português').fill('2');await page.getByRole('button', { name: 'Iniciar simulado' }).click();
+  await expect(page.getByRole('heading', { name: 'Questão 1 de 2' })).toBeFocused();
+  await page.getByRole('radio').first().focus();await page.keyboard.press('Space');
+  await expect(page.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
+  await page.getByRole('button', { name: 'Ir para questão 2: sem resposta' }).focus();await page.keyboard.press('Enter');
+  await expect(page.getByRole('heading', { name: 'Questão 2 de 2' })).toBeFocused();
+  await page.getByRole('button', { name: 'Concluir simulado', exact: true }).click();
+  await expect(page.getByRole('dialog')).toContainText('1 de 2 questões respondidas; 1 em branco.');
+  await page.keyboard.press('Escape');await expect(page.getByRole('button', { name: 'Concluir simulado', exact: true })).toBeFocused();
+  await expect(page.getByRole('button', { name: 'Ir para questão 1: respondida' })).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  await page.screenshot({ path: info.outputPath(`practice-${width}.png`), fullPage: true });
 });
 for (const width of [390, 1440]) test(`composição mantém critérios e resumo acessíveis em ${width}px`, async ({ page }, info) => {
   await page.setViewportSize({ width, height: 900 }); await page.goto('/');

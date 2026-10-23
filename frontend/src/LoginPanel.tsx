@@ -76,9 +76,8 @@ export default function LoginPanel({ onIdentity, onChecking, onBeforeLogin }: { 
   }
 
   return (
-    <section aria-labelledby="identity-title">
-      <h2 id="identity-title">Login opcional</h2>
-      <p>Estude sem entrar. Com a conta, salve e retome simulados; como visitante, a tentativa é temporária e não será transferida no login.</p>
+    <section className="session-card" aria-labelledby="identity-title">
+      <h2 id="identity-title" className="sr-only">Login opcional</h2>
       <p role="status" aria-live="polite">
         {state === 'loading' ? 'Consultando sessão…' : state === 'unavailable'
           ? 'Consulta de sessão indisponível. Continue acessando as aulas sem login.'
@@ -89,8 +88,10 @@ export default function LoginPanel({ onIdentity, onChecking, onBeforeLogin }: { 
       {state === 'ready' && !identity?.connected && identity?.googleEnabled && (
         <a className="material-link" href={`${identityApiUrl}/oauth2/authorization/google`} onClick={event => { if (onBeforeLogin && !onBeforeLogin()) event.preventDefault(); }}>Entrar com Google</a>
       )}
-      {state === 'ready' && !identity?.googleEnabled && !identity?.connected && <p>Login Google desativado neste ambiente.</p>}
       <button className="session-refresh" disabled={state === 'loading' || exiting} onClick={refreshSession}>Atualizar sessão</button>
+      <details className="session-help"><summary>Sobre sua sessão</summary><p>Estude sem entrar. Com a conta, salve e retome simulados; como visitante, a tentativa é temporária e não será transferida no login.</p>
+        {state === 'ready' && !identity?.googleEnabled && !identity?.connected && <p>Login Google desativado neste ambiente.</p>}
+      </details>
     </section>
   );
 }

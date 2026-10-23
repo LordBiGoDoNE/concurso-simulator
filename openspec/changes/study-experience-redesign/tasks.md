@@ -31,9 +31,9 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 
 ## 4. Realização — depende de 2 e 3, lote autorizado pelo usuário
 
-- [ ] 4.1 Integrar a realização visual aprovada sem alterar a máquina de estados.
-- [ ] 4.2 Preservar salvamento confirmado, conflitos, conclusão e contextos de identidade.
-- [ ] 4.3 Verificar teclado/foco, navegação, estados de erro e regressões de resultado.
+- [x] 4.1 Integrar a realização visual aprovada sem alterar a máquina de estados.
+- [x] 4.2 Preservar salvamento confirmado, conflitos, conclusão e contextos de identidade.
+- [x] 4.3 Verificar teclado/foco, navegação, estados de erro e regressões de resultado.
 - [ ] 4.4 Revisão independente SOL 6.1 xHigh e autorização própria dos PRs.
 
 ## 5. Aulas — depende de 2, lote autorizado pelo usuário

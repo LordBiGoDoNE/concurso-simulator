@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "local-application-delivery",
+  "pr": 130,
+  "base_sha": "3715219a02dfe77262ce0af4bcbb858fbc08fca7",
+  "reviewed_head_sha": "52bf248aec27f91c9772c31975bc652f12ba3eff",
+  "diff_sha256": "8c864580189f184a6ab419064faaefb1277b96b8207486cfcdcdd07c28b72a5a",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer_local_delivery",
+    "independent_context": true
+  },
+  "reviewed_at": "2026-10-18T22:02:57.084737+00:00",
+  "risk": "critical",
+  "risk_justification": "Session/CSRF/secrets and proxy configuration,persistent volumes,backup/restore/concurrency and executable CI controls.",
+  "coverage": {
+    "requirements": "Approved proposal/design/three spec deltas and tasks confronted with complete implementation;local delivery distinguished from later public preparation.",
+    "architecture": "ADR0001 and HTTP checklist applied;core unchanged;proxy/readiness in infrastructure,session/CSRF in Spring Security;test harness outside runtime.",
+    "integration": "Complete cumulative48-file diff,build allowlist/pins/images/Compose/proxy and existing frontend configuration consumers examined.",
+    "security": "Non-root API/web,file secrets,loopback-only published web,no API/PG host ports,Host/forwarded headers,existing profile/CSRF/OAuth/ownership boundaries and runtime fixture exclusion examined.",
+    "persistence": "Exact-name/project/owner checks,operation locks,quiesced dump,new-empty-target confirmation,transactional restore,recovery marker,session invalidation,business fingerprints and compatible V10/mixed capture readers examined;no migration changes.",
+    "tests": "All new Python checks,Java fixture,real-image Playwright and CI wiring read;existing relevant consumers examined.No reviewer execution of tests or CI.",
+    "maintenance": "Operator runbook,Windows/Linux paths/port probes,private dumps,public-stage limitations and historical/documentary evidence examined;11 historical snapshots recalculated and approved-top/merge tree equality checked by Git."
+  },
+  "limitations": [
+    "Static read-only review:no tests/build/application/Docker/network/DB or remote CI executed by reviewer;coordinator results are separately attributed.",
+    "Initial product analysis preceded reading historical findings;subsequent documentary phase exposed LAD-SOL-001,B1,R1,B2 as historical objects,not proof of current product correctness.Context isolation reduces but does not eliminate bias.",
+    "No private ignored state,secrets,dumps,cookies,quota or build logs read by reviewer.No independent authentication of historical reviewer identities or runtime results.",
+    "Current compatible-image recovery only;synthetic sessions/harness outside runtime do not prove real Google login,public TLS/hosting,availability or host-loss recovery.",
+    "Signature gate verifies report freshness/structure,not semantic quality or model identity.Current remote checks and explicit spec merge approval remain separate.",
+    "Quota5h/weekly unavailable before/after in each phase;isolation not declared,no attributable delta.Coordinator consumption and all token categories not supplied;no zero-consumption or subscription-cost inference."
+  ],
+  "verification": [
+    {
+      "command": "python -m unittest discover -s scripts -p test_local_app*.py",
+      "result": "17 tests passed in isolated Linux;Windows16 passed/1 Unix TIME_WAIT skipped;corrective ownership volume scenario refused before containers and preserved sentinel.",
+      "executed_by": "coordinator;not reviewer"
+    },
+    {
+      "command": "backend/gradlew --offline --no-daemon --console=plain build;frontend npm test/build/test:e2e/test:identity",
+      "result": "Windows Java246 tests(245 passed/1 symlink skipped),frontend164/build and6 browser/offline passed;OIDC23/24 initially and isolated retry1/1 passed.Complete CI suites green on approved task heads.",
+      "executed_by": "coordinator and GitHub Actions;not reviewer"
+    },
+    {
+      "command": "Python legacy/material/content checks in isolated Linux",
+      "result": "63 legacy tests passed;108 pages/51 lessons,9 modules/90 resolutions and111/111 variants audited;no editorial approval inferred.",
+      "executed_by": "coordinator;not reviewer"
+    },
+    {
+      "command": "python scripts/check_local_delivery.py",
+      "result": "8 phases passed on committed-source891d8df export in Windows and approved-topa060427 CI Linux:build,helper,dependencies,image inspection,foreign-volume refusal,runtime,recovery,browser.",
+      "executed_by": "coordinator and GitHub Actions;not reviewer"
+    },
+    {
+      "command": "gh pr checks125–128;git merge-base --is-ancestor;git rev-parse <ref>^{tree}",
+      "result": "All approved heads/checks confirmed before authorized atomic merge0ae60a4.All heads preserved as ancestors;merge tree identical to approveda060427.Tree equality independently rechecked by reviewer;no stack sync/rebase/retarget.",
+      "executed_by": "coordinator;tree/hash read separately by reviewer"
+    },
+    {
+      "command": "python -B scripts/check_spec_review.py --snapshot --base 3715219a02dfe77262ce0af4bcbb858fbc08fca7 --head 52bf248aec27f91c9772c31975bc652f12ba3eff --spec local-application-delivery",
+      "result": "Canonical diff digest 8c864580189f184a6ab419064faaefb1277b96b8207486cfcdcdd07c28b72a5a;base is merge-base;complete current semantic coverage,no findings.",
+      "executed_by": "independent reviewer and coordinator separately"
+    }
+  ],
+  "findings": [],
+  "triage_complete": true,
+  "review_phases": [
+    {
+      "phase": "initial-product",
+      "reviewed_head_sha": "7a4c2584fcd59e8a4935843024c72e6bbb68a1ac",
+      "coverage": "37/48 files;documentary evidence reserved",
+      "elapsed_seconds": 269,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied by harness"
+    },
+    {
+      "phase": "documentary-revalidation",
+      "reviewed_head_sha": "7a4c2584fcd59e8a4935843024c72e6bbb68a1ac",
+      "coverage": "48/48 files cumulatively",
+      "elapsed_seconds": 117,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied by harness"
+    },
+    {
+      "phase": "metadata-revalidation",
+      "reviewed_head_sha": "52bf248aec27f91c9772c31975bc652f12ba3eff",
+      "coverage": "48/48 files cumulatively,current snapshot",
+      "elapsed_seconds": 87,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied by harness"
+    }
+  ],
+  "historical_findings": "Batch findings remain truthful separate history,not new findings of this independent cumulative gate.",
+  "merge_authorization": "Tasks125–128 authorized/integrated.Spec130 merge into general epic still requires explicit approval;no main/deploy/archive authorization."
+}

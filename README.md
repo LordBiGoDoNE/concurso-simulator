@@ -4,6 +4,9 @@ Material de estudo para o Concurso Público de Limeira 01/2026, voltado aos carg
 
 **Acesse o site:** https://lordbigodone.github.io/concurso-simulator/
 
+**Aplicação completa em main:** execução local com Docker conforme
+[o procedimento local](infra/local-app/README.md). O site do Pages continua em `stable`.
+
 ## Conteúdo
 
 - 51 módulos organizados em cinco disciplinas.
@@ -40,6 +43,8 @@ python3 scripts/check_links.py
 ## Revisão por branch e previews
 
 **Padrão do projeto:** uma spec usa `epic/<nome-da-spec>`; tarefas ou grupos coesos usam `task/<nome-da-spec>/<assunto>` e abrem PRs para a épica. Após revisão dos PRs menores, a épica abre PR para `main`. Regras e dependências estão em `AGENTS.md`.
+
+**Reformulação completa:** neste pacote, as épicas das specs abrem PR para `epic/application-reformulation`, e não para main. Somente após concluir e aprovar todas as etapas, a épica geral segue para main em uma entrega única. O site atual permanece em produção. Veja `docs/application-reformulation.md`.
 
 Mantenha `stable` como versão aprovada do site estático. Crie uma branch para cada melhoria e abra um Pull Request; faça merge apenas após aprovação. A aplicação completa evolui em `main`.
 

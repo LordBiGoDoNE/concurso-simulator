@@ -1,0 +1,79 @@
+# Épica geral: reformulação da aplicação
+
+## Objetivo
+
+Entregar a reformulação completa de uma vez, mantendo o site atual utilizável. A épica geral é **`epic/application-reformulation`**. As specs permanecem pequenas e revisáveis, mas não são publicadas individualmente em main. Na transição aprovada em 2026-10-23, `stable` preserva o site estático e `main` recebe a aplicação completa.
+
+**Escopo acordado em 2026-10-20:** a entrega atual será somente local, com Docker.
+O usuário adiou a publicação externa para o futuro. Hospedagem, domínio, TLS e
+operação pública deixam de ser pendências desta entrega; serão tratados em uma
+proposta futura, se solicitada. Os requisitos de segurança para uma eventual
+publicação permanecem válidos. O gate cumulativo da épica geral e a aprovação
+expressa do PR final para `main` continuam necessários.
+
+**Publicação separada em 2026-10-23:** por solicitação explícita do usuário, a main
+estática anterior foi preservada em `stable`. Pages, produção e previews manuais
+passam a usar o workflow dessa referência; `main` não publica a stack no Pages.
+Infraestrutura e validação operacional em [Pages stable](pages-stable.md), issue #134.
+O gate cumulativo é revalidado após sincronizar essa infraestrutura e antes do #133.
+
+```text
+stable (site estático / GitHub Pages)
+main (destino da aplicação completa, execução local)
+└── epic/application-reformulation
+    ├── epic/bootstrap-application-stack
+    │   └── task/bootstrap-application-stack/<assunto>
+    ├── epic/<spec-identidade>
+    ├── epic/<spec-banco-questoes>
+    └── epic/<demais-specs>
+```
+
+Tarefa → branch da spec → épica geral → main apenas na entrega final. Nomes entre `<...>` são exemplos, não specs já criadas. PRs exigem aprovação em cada nível; não há merge automático.
+
+PRs de integração de spec usam `[SPEC] <Título>` e passam por revisão independente do conjunto antes da aprovação de merge. Processo, relatório rastreável e gate estão em [Revisão de spec](architecture/spec-review.md). Desde a decisão do usuário de **2026-10-15**, `openai/gpt-6.1-sol#xhigh` é o modelo de referência de todas as revisões, revalidações e gates cumulativos, inclusive da épica geral; não é exceção de uma spec. #26 instalou o processo; #25 foi aprovado e integrado após revisão cumulativa independente, correções #27/#28/#29, seis achados revalidados como corrigidos e gate aprovado. A revisão Astra do gate de identidade e a exceção SOL do #63 permanecem histórico das execuções daquele momento. Revisão/gate não autorizam merge sem decisão explícita do usuário.
+
+## Roadmap acordado
+
+1. **Base da aplicação**: Java 25, Gradle, Spring Boot, PostgreSQL 18, Flyway, segurança inicial, React/TypeScript/Vite, ambiente local e testes. Implementada e integrada na épica geral pelo PR #14.
+2. **Identidade e acesso**: login opcional Google/OIDC/PKCE e sessão JDBC integrados na épica geral pelo #25, merge `f72fcc5d9c92c326ad789e5cf72eef54665913cf`, após aprovações de tarefas e revisão independente. Sem publicação ou arquivamento. Smoke Google real depende de credenciais e continua obrigatório antes do deployment público; histórico/sincronização ficam para specs seguintes.
+3. **Banco de questões**: concluído e integrado na épica geral pelo **#63**, merge `d65006eb29a733c13c4f2a9f3741147d235dcd5b`, após gate cumulativo SOL6.1 xhigh excepcional aprovado pelo usuário, correções/revalidação e checks verdes. 44/44 tarefas; 250 revisões elegíveis verificadas em PostgreSQL local isolado, 50 por disciplina/51 assuntos. Catálogo, versões/editorial, importação controlada e consulta pública sem gabaritos. Limeira01/2026/dois cargos; evidência local não publica nem popula outros bancos. Sem main/deploy/arquivamento.
+4. **Simulados e tentativas**: `mock-exam-attempts`, issue #64, **concluído e integrado na épica geral pelo #84**, merge `0d0fc4848f55fc93c736aa76dcfbb73a7269eb39`, autorizado pelo usuário em 2026-10-15. 24/24 tarefas aprovadas/integradas; correção de recursos #85 e regra permanente SOL #83 incluídas. Gate cumulativo independente SOL 6.1 xhigh concluído, nenhum achado aberto e checks verdes no head aprovado `8418063`. Conta salva/retoma/histórico; visitante temporário sem transferência, HTTP seguro, interface e verificação integrada/rollback. Evidências/limitações na issue e `openspec/changes/mock-exam-attempts/spec-review.md`. Sem main/deploy/arquivamento.
+
+5. **Questões parametrizadas**: concluída e integrada na épica geral pelo **#103**, merge `119ec25afe6ca1859ca615c95632096badcc9dd0`, autorizado pelo usuário em 2026-10-16. 24/24 tarefas, gate cumulativo e revalidação SOL 6.1 xhigh sem achados abertos, checks e CI pós-merge aprovados. Três famílias/111 variantes, captura imutável e opção desligada por padrão; aprovação editorial específica exclusiva da cópia local. Acompanhamento #86. Sem main/deploy/arquivamento.
+6. **Revisão por conceito**: concluída e integrada na épica geral pelo **#121**, merge `3715219a02dfe77262ce0af4bcbb858fbc08fca7`, autorizado em2026-10-18. 24/24 tarefas,gate cumulativo e revalidações SOL6.1xHigh sem achados abertos,correção#122 incluída e CI pós-merge39099797203 aprovado. Os51 assuntos existentes orientam painel privado por cargo,revisão individual,aulas e prática dirigida (janela100/última base/mínimo3). Acompanhamento#104. Sem main,deploy ou arquivamento.
+7. **Preparação da entrega local**: concluída no escopo escolhido pelo usuário em 2026-10-20. A spec `local-application-delivery`, acompanhamento #123, foi integrada na épica geral pelo **#130**, merge `da1c0a538c992fd9f638fb132e5cb46dd8e6740d`: 16/16 tarefas, revisão cumulativa independente SOL 6.1 xHigh sem achados abertos e CI pós-merge [39194174589](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/39194174589) aprovado. Inclui imagens, origem local única em loopback, Compose isolado, material, persistência e recuperação de dados, com verificação dos artefatos no Windows/Linux. A decisão anterior de manter a etapa 7 aberta até preparar hospedagem pública foi substituída pelo escopo somente local. Publicação externa fica para uma proposta futura; gate cumulativo da épica geral e aprovação final para `main` permanecem pendentes.
+
+Cada etapa requer seus artefatos OpenSpec e aprovação antes da implementação. Não preparar de uma vez todos os detalhes futuros; dependências e novos requisitos devem ser discutidos por spec.
+
+Acervo original: 51 módulos/510 questões (Português100, Matemática/Raciocínio120, Informática100, Administrativo80, Escolar110), sujeito a revisão. Importação não aprova automaticamente conteúdo. A proposta do banco separa inventário, rascunhos, revisões e versões elegíveis; dificuldades de atingir a meta devem ser registradas, sem aprovação fictícia.
+
+GitHub Stacks: #32 e #36 aprovados/integrados somente na épica de question-bank (head `d04c6d7`), v0.2.1 fixada. Piloto remoto #33/#34 (stack #35, drafts) confirmou criação/diffs/rebase/CI; troca de base de membro foi bloqueada e `edited` foi testado por título. O usuário aprovou a abordagem como **padrão também para próximas specs**, registrada por PR de processo próprio. Depois de integrar esse registro, não repetir autorização do método por spec: dependências reais usam stack da mesma spec/repositório, trunk `epic/<change-name>`; independentes e PR `[SPEC]` separados. Propostas/pedidos de implementação e merges mantêm suas aprovações próprias, sem início automático de tarefas. Conferir refs/checks de cada stack, com fallback sequencial seguro; sem retargeting manual. Merge/fila/sync pós-merge não ensaiados exigem decisão explícita do caminho. Sintéticos não entram no produto nem têm encerramento autorizado. [Procedimento e limites](stacks-pilot.md). Stacks não substitui revisão cumulativa nem garante redução de tokens.
+
+Arquitetura/persistência revisadas pelo usuário em 2026-10-08: monólito modular, UseCases/domínio puro e JPA/Hibernate na infraestrutura, mantendo Flyway e Spring Session JDBC. Regras persistentes em `AGENTS.md` e [ADR 0001](architecture/adr/0001-domain-and-application-boundaries.md); PR #24 registra a decisão e precede a revisão dos PRs #19–#23. Implementação não significa integração aprovada.
+
+## Decisões abertas
+
+- Sincronização offline e eventual mescla de visitante com conta; salvar/retomar simulados pela conta já foi escolhido para a proposta da etapa 4.
+- Expansão além dos dois cargos atuais, fora da spec inicial do banco (quantidade por disciplina e escopo inicial já decididos).
+- Para uma futura publicação externa: hospedagem, domínio/TLS, disponibilidade,
+  backups externos, acesso público, smoke Google real e publicação/rollback.
+  Adiados em 2026-10-20, fora do escopo da entrega local atual. O procedimento de
+  persistência e backup/restauração local já faz parte da spec #123.
+
+Essas decisões não serão presumidas apenas por constarem no roadmap.
+
+## Critérios da entrega única
+
+- Todas as specs do escopo local atual aceitas, implementadas, revisadas e integradas na épica geral; a publicação externa foi adiada explicitamente em 2026-10-20.
+- Testes de integração, fluxos ponta a ponta e regressão das aulas aprovados na combinação final.
+- Execução local com Docker, acesso em loopback, persistência e recuperação de dados validados; GitHub Pages não executa Java/PostgreSQL. Hospedagem pública e smoke Google real não bloqueiam esta entrega local, com Google desligado por padrão; os requisitos da preparação pública, incluindo smoke Google real, permanecem para a publicação futura.
+- Material atual preservado até a transição, com URLs e acessibilidade verificadas.
+- Dados privados, senhas e gabaritos protegidos; migrações e rollback documentados.
+- Gate cumulativo independente SOL 6.1 xHigh da épica geral concluído sobre o conjunto final, incluindo o ajuste do escopo local. Gates de specs não o substituem.
+- PR final da épica geral para main aprovado expressamente antes do merge/publicação.
+
+## Preview e manutenção
+
+CI somente verifica. Preview estático é manual no Actions, executando o workflow de `stable` e informando a branch de material como input; `main` e `pages-store` não são publicáveis. A produção vem de `stable`, com previews armazenados preservados. A aplicação completa pode ser executada localmente conforme [o procedimento Docker](../infra/local-app/README.md). Preview funcional externo depende de proposta futura de deployment.
+
+PRs #6 e #8 foram integrados em main como preparação do processo e seu histórico permanece preservado em `stable`. O código da reformulação segue pela épica geral até a entrega final. Correções independentes do material seguem em `stable` por revisão normal; a aplicação completa evolui em `main` após integração autorizada.

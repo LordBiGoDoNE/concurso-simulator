@@ -1,0 +1,156 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "question-bank",
+  "pr": 63,
+  "base_sha": "f72fcc5d9c92c326ad789e5cf72eef54665913cf",
+  "reviewed_head_sha": "a871a21aac6024e20da75c2c48c2a8361e1146b1",
+  "diff_sha256": "64759630b855a75feaf10e5c93cd3c8d80b2a2d5a3dc646d1fd169c54dab4659",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer_sol",
+    "independent_context": true,
+    "harness": "Codex",
+    "dispatch_model": "gpt-6.1-sol",
+    "dispatch_effort": "xhigh",
+    "independent_provider_telemetry": false,
+    "profile": ".opencode/agents/spec-reviewer.md",
+    "profile_sha256": "1a99cd5d094895fa20865ea86089955657f57eb2841b8e30a23e8750d167c723",
+    "initial_codex_profile_sha256": "378c0cd216842c048fb511b2043f2cbb168d84830e78db0b53ce38b5c1df863a"
+  },
+  "reviewed_at": "2026-10-14T22:07:28Z",
+  "review_phase": "cumulative-revalidated",
+  "coverage": {
+    "requirements": "Todos os grupos 1-7 e 44 tarefas confrontados com proposta/design/spec/AGENTS/ADRs; 250 enunciados/alternativas/respostas/resolucoes e notas examinados.",
+    "architecture": "Domain/application Java puro; portas, adaptadores web/infraestrutura, DTOs, responsabilidades de seguranca e ArchUnit examinados.",
+    "integration": "Extracao/canonizacao/importacao/editorial/JPA/projecao HTTP/UI/CLI e preservacao das aulas, identidade/readiness/OIDC examinadas cumulativamente.",
+    "security": "Rotas exatas/stateless/bypass de sessao, CSRF/CORS/OIDC, no-store/DTOs, markup/URLs/assets e ausencia de campos corretivos; sem execucao HTTP pelo revisor.",
+    "persistence": "V4 aditiva, FKs/constraints/triggers, travas/rollback, idempotencia/conflitos conhecidos e retirada/ABA examinados; 104 hashes e 250 fingerprints/evidencias confrontados em memoria.",
+    "tests": "Fontes de testes/regressoes/fixtures/CI lidas; revisor nao executou testes. Coordenador confirmou probe Windows, 50 Python, 7 Java/PG Windows e CI clean backend112.",
+    "maintenance": "Documentacao/perfil temporario/roadmap atualizados e revalidados; JAR/bundle existentes inspecionados. 38 registros historicos lidos somente apos parecer tecnico inicial."
+  },
+  "limitations": [
+    "Modelo/effort registrados pelo dispatch Codex; sem telemetria independente do provider ou tokens.",
+    "Somente leitura seguida como orientacao; nao se afirma sandbox tecnicamente incapaz de escrever. Nenhum teste/build/aplicacao/rede/HTTP/DB/escrita executado pelo revisor.",
+    "Fontes externas nao abertas nesta revisao cumulativa; sem certificacao independente de disponibilidade/vigencia atual, leitura integral das obras, revisao humana ou cobertura integral do edital.",
+    "Sem benchmark de triggers, leitor de tela ou demonstracao de todos os interleavings. Artefatos existentes inspecionados nao equivalem a build executado pelo revisor.",
+    "Exposicao incidental a IDs/causas historicas nos padroes versionados; 38 arquivos de pareceres historicos somente na fase documental posterior, sem usa-los como certificacao do produto.",
+    "Proposta local da etapa4 fora do head e nao avaliada pelo revisor. Evidencia local250 nao publica nem popula outros bancos.",
+    "Commit posterior apenas dos dois arquivos deste registro e excluido do digest; revisor nao certificou a gravacao do proprio parecer."
+  ],
+  "verification": [
+    {
+      "command": "Inspecao de codigo/commits e SHA256 em memoria, com renderizacao canonica de check_spec_review.py",
+      "result": "163 paths iguais aos blobs do head; digest confirmado; 10 deltas examinados e 153 paths preservados na revalidacao; nenhum finding remanescente.",
+      "executed_by": "Revisor independente /root/spec_reviewer_sol, somente leitura"
+    },
+    {
+      "command": "python -B scripts/extract_questions.py --root . (Windows sem PYTHONUTF8/PYTHONIOENCODING, stdout redirecionado)",
+      "result": "Antes: cp1252/UnicodeEncodeError/exit1/zero JSON. Depois: exit0/UTF8 estrito/509 candidatos510inventario.",
+      "executed_by": "Coordenador; arquivos de probe ignorados"
+    },
+    {
+      "command": "python -m unittest discover -s scripts/tests (container python3.14-bookworm, repo readonly)",
+      "result": "50 testes PASS, zero falhas/erros/skips, incluindo subprocesso CP1252. Primeira tentativa sem engine Docker nao passou; executada novamente apos recuperar engine29.8.",
+      "executed_by": "Coordenador"
+    },
+    {
+      "command": "backend/gradlew.bat --no-daemon --console=plain test --tests br.com.concursosimulator.questionbank.QuestionLocalImportTests --rerun-tasks",
+      "result": "7 testes PASS/zero falhas/erros/skips no Windows, PG18.6 isolado e sem variaveis de encoding; nao clean build.",
+      "executed_by": "Coordenador"
+    },
+    {
+      "command": "npx --yes @fission-ai/openspec@1.14.1 validate --all --strict --no-interactive",
+      "result": "4 changes PASS: tres versionadas e um rascunho local da etapa4 fora do PR63.",
+      "executed_by": "Coordenador"
+    },
+    {
+      "command": "gh run view 38645196866 --job 116130199722 --log; gh pr view63 checks",
+      "result": "Head a871a21: clean backend112 PASS/zero skips; frontend/identity-browser/study-material SUCCESS. Gate entao falhou corretamente porque o parecer ainda estava pending; conferir gate do commit de registro.",
+      "executed_by": "Coordenador, logs publicos contados em memoria; CI executou os builds/testes"
+    }
+  ],
+  "findings": [
+    {
+      "id": "SOL-SPEC-QB-01",
+      "severity": "optional",
+      "location": "backend/README.md:7",
+      "evidence": "README dizia ainda sem endpoints/persistencia/conteudo aprovado embora a spec os entregasse.",
+      "reference": "Tarefas4.1/7.3 e documentacao operacional coerente com entrega.",
+      "impact": "Estado informado incorreto, sem defeito funcional/seguranca demonstrado.",
+      "suggestion": "Atualizar paragrafo e links, distinguindo elegibilidade local de publicacao/populacao.",
+      "disposition": "fixed",
+      "resolution": "Commit84b12b8 atualiza estado/links/limites; revisor confirmou no conjunto a871a21."
+    },
+    {
+      "id": "SOL-SPEC-QB-02",
+      "severity": "recommended",
+      "location": "scripts/extract_questions.py:283; scripts/tests/test_question_extraction.py:20",
+      "evidence": "HipoteseH1 confirmada pelo coordenador: stdoutCP1252 sem variaveis de encoding gerou UnicodeEncodeError/exit1/zeroJSON no Windows.",
+      "reference": "Importacao controlada/Unicode; tarefas3.1/3.3; protocoloUTF8 consumido pelo Java.",
+      "impact": "Extracao operacional falha com rejeicao segura; sem corrupcao persistida ou aprovacao indevida demonstradas.",
+      "suggestion": "Fixar UTF8/LF na entrada CLI e testar subprocesso sob defaultCP1252, alem do leitorJava real.",
+      "disposition": "fixed",
+      "resolution": "Commit84b12b8 fixa stdout e adiciona regressao. Probe corrigido,50Python e7JavaWindows/PG PASS; revisor revalidou causa/regressao/conjunto a871a21."
+    }
+  ],
+  "triage_complete": true,
+  "attempts": [
+    {
+      "at": "2026-10-14T21:36:00.922000+00:00",
+      "requested_model": "openai/gpt-6-astra#medium",
+      "agent": "spec-reviewer",
+      "outcome": "provider.auth HTTP 401: Missing bearer or basic authentication in header; no review completed"
+    }
+  ],
+  "temporary_user_override": "2026-10-14: usuario suspendeu Astra temporariamente para esta validacao e solicitou SOL xHigh no Codex",
+  "initial_review": {
+    "head_sha": "07c73e2ed772415d1a90e38f64c9c0e04f3619e8",
+    "diff_sha256": "4cf769cf0c3cd97ba62acb8dbd6979f24e42e5b41f81feb8001a8409df5dc537",
+    "started_at": "2026-10-14T21:49:12Z",
+    "technical_completed_at": "2026-10-14T21:56:47Z",
+    "documentary_started_at": "2026-10-14T21:57:02Z",
+    "completed_at": "2026-10-14T21:59:05Z",
+    "outcome": "No demonstrated blocking/recommended defect; optional stale README and unexecuted Windows hypothesis H1"
+  },
+  "revalidation": {
+    "started_at": "2026-10-14T22:06:13Z",
+    "completed_at": "2026-10-14T22:07:28Z",
+    "commits": [
+      "84b12b8538bc4a188b41fcb7613b2e6b23ce749a",
+      "a871a21aac6024e20da75c2c48c2a8361e1146b1"
+    ],
+    "changed_paths": 10,
+    "unchanged_previously_reviewed_paths": 153,
+    "outcome": "Both findings fixed; no new or remaining findings; complete new digest verified"
+  },
+  "quota": {
+    "initial": {
+      "5h_before": null,
+      "5h_after": null,
+      "weekly_before": null,
+      "weekly_after": null,
+      "status": "unavailable"
+    },
+    "revalidation": {
+      "5h_before": null,
+      "5h_after": null,
+      "weekly_before": null,
+      "weekly_after": null,
+      "status": "unavailable"
+    },
+    "coordinator": "unavailable; implementation interval separate",
+    "tokens": {
+      "new_input": null,
+      "cache_read": null,
+      "cache_write": null,
+      "output": null,
+      "reasoning": null
+    },
+    "private_minimal_observations_validated_and_compared": true,
+    "account_isolation_verified": false,
+    "coordinator_generated_during_review": false,
+    "astra_review_executed": false,
+    "new_model_comparison_executed": false
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "review_kind": "implementation-batch",
+  "spec": "question-bank",
+  "executed_by": "coordinator:ses_efda5be1effe9Zd0s86NlHxour",
+  "head_sha": "05518635fe160b92e8798dd78c03eff96f6234e5",
+  "verification": [
+    {"command": "JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk ./gradlew clean build", "directory": "backend", "result": "PASS: 91 testes; failures=0, errors=0, skipped=0; PostgreSQL18.6 isolado"},
+    {"command": "npm ci", "directory": "frontend", "result": "PASS: 114 pacotes auditados, zero vulnerabilidades reportadas"},
+    {"command": "npm test", "directory": "frontend", "result": "PASS: 47 testes em quatro arquivos"},
+    {"command": "npm run build", "directory": "frontend", "result": "PASS: TypeScript/Vite; hashes do frontend inalterados"},
+    {"command": "STUDY_ROOT=/tmp/opencode/question-bank-round1-study npm run test:e2e", "directory": "frontend", "result": "PASS: seis testes, incluindo nove módulos/90 resoluções offline"},
+    {"command": "JAVA_HOME=/usr/lib/jvm/java-25-temurin-jdk npm run test:identity", "directory": "frontend", "result": "PASS: três testes browser com backend/PostgreSQL/OIDC local isolados, não Google real"},
+    {"command": "python3 -B -m unittest discover -s scripts/tests -q", "directory": ".", "result": "PASS: 18 testes guard"},
+    {"command": "OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.14.1 validate --all --strict", "directory": ".", "result": "PASS: três mudanças"},
+    {"command": "git diff --check", "directory": ".", "result": "PASS; worktree limpo no head final"},
+    {"command": "gh pr view/checks e gh stack view --json", "directory": ".", "result": "PASS: refs de produto/processo preservadas, sete PRs de produto mais processo independente; checks verdes capturados em checks.json"}
+  ],
+  "negative_controls": {
+    "production_base_short_sha": "4209031",
+    "test_overlay": "três regressões acrescentadas localmente antes das correções de produção; testes ainda não commitados na base do controle negativo",
+    "command": "./gradlew test --tests '*QuestionContentTests.rejectsMalformedUtf16InsteadOfReplacingItInCanonicalUtf8' --tests '*QuestionStorageTests.rejectsAnApprovalPrepared*'",
+    "result_before_fix": "FALHA ESPERADA: tests=3, failures=3, errors=0, skipped=0; exceção esperada ausente em cada cenário",
+    "result_after_fix": "PASS no build completo final; mesmas expectativas de rejeição preservadas"
+  },
+  "limitations": [
+    "Revisores não executaram testes; revisão estática e execução do coordenador são distintas.",
+    "Testes usam fixtures identificadas; nenhum conteúdo/aprovação editorial real produzido.",
+    "Três repetições dos 11 testes de importação/storage ocorreram antes das correções ABA/UTF16; build final identificado separadamente.",
+    "Sem benchmark dos triggers globais de elegibilidade ou prova de todos os interleavings concorrentes.",
+    "Sem credenciais Google reais, banco remoto, deployment, merge ou arquivamento.",
+    "Links estáticos: 108 páginas/1661 referências na fonte; pacote gerado: 108/1757; fontes não alteradas.",
+    "Gate cumulativo final SPEC permanece pendente; checks de lote são spec-review-tests, não aprovação semântica."
+  ]
+}

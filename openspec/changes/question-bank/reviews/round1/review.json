@@ -1,0 +1,37 @@
+{
+  "version": 1,
+  "kind": "implementation-batch",
+  "spec": "question-bank",
+  "status": "revalidated-awaiting-user-decision",
+  "base_sha": "600cf6a59a608cec37c3cc22e4902de46ef5a46d",
+  "reviewed_head_sha": "05518635fe160b92e8798dd78c03eff96f6234e5",
+  "diff_sha256": "6dea8ab7292bbec0e7c19fad9398db3a0a452c5b587d9b3c820210068a92df45",
+  "product_prs": [38, 40, 42, 43, 44, 45, 46],
+  "process_pr": 39,
+  "stack": 41,
+  "trunk": "epic/question-bank",
+  "reviewers": [
+    {"model": "openai/gpt-6-astra#medium", "session": "ses_ed38086e0ffeKDMJMRIGZPndCj", "independent_initial_context": true, "effective_model_verified_from_all_messages": true, "initial_report": "astra-initial.md", "revalidation_report": "astra-revalidation.md", "usage": "astra-total-usage.json"},
+    {"model": "openai/gpt-6.1-sol#xhigh", "session": "ses_ed38086d7ffeiEB1AKGwTI4uFH", "independent_initial_context": true, "effective_model_verified_from_all_messages": true, "initial_report": "sol-initial.md", "revalidation_report": "sol-revalidation.md", "usage": "sol-total-usage.json"}
+  ],
+  "findings": [
+    {"ids": ["QB-ASTRA-01"], "severity": "recommended", "origin_prs": [44], "disposition": "fixed", "correction_pr": 46, "resolution": "Regressão de classificação elegível/histórica varia disciplina/assunto/cargos e recarrega do PostgreSQL. Ambos confirmaram cobertura corrigida na revalidação."},
+    {"ids": ["SOL-QB-001"], "severity": "recommended", "origin_prs": [42, 44], "disposition": "fixed", "correction_pr": 46, "resolution": "Sequência monotônica do histórico editorial conferida dentro da trava, além do ponteiro. Dois testes ABA reproduziram falha antes da correção e passaram depois; ambos revalidaram."},
+    {"ids": ["SOL-QB-002"], "severity": "recommended", "origin_prs": [40], "disposition": "fixed", "correction_pr": 46, "resolution": "Rejeitar UTF-16 malformado nos textos e URL sem normalização; preservar pares suplementares válidos. Controle negativo reproduzido e teste final passou; ambos revalidaram."},
+    {"ids": ["QB-ASTRA-02", "SOL-QB-003"], "severity": "optional", "origin_prs": [43], "disposition": "pending-user-decision", "proposed_disposition": "deferred", "resolution": "Consulta global por trigger por linha permanece. Sem degradação medida/limite aprovado violado; documentado custo potencial, proposta de medição antes do uso maior e eventual migração aditiva. Não registrar como corrigido."}
+  ],
+  "blocking_pending": 0,
+  "recommended_pending": 0,
+  "new_findings_in_revalidation": 0,
+  "triage_complete": false,
+  "pending_user_decisions": ["Aceitar ou não adiamento do opcional de custo dos triggers.", "Aprovação explícita dos PRs enumerados, sem presumir integração.", "Caminho operacional do primeiro merge/pós-merge de Stacks, ainda não ensaiado."],
+  "implemented_verified_tasks": ["1.1", "1.2", "1.3", "2.1", "2.2", "2.3"],
+  "implemented_verified_count": 6,
+  "approved_integrated_count": 0,
+  "total_tasks": 44,
+  "final_spec_review_completed": false,
+  "limitations": ["Revisão estática; revisores não executaram testes ou recalcularam digests.", "Cegamento não absoluto: documentos versionados contêm resumos/IDs anteriores; relatórios detalhados não foram compartilhados na análise inicial.", "Sem benchmark de triggers nem prova de todos os interleavings concorrentes.", "Extração/CLI/HTTP/UI/curadoria e gate cumulativo final permanecem pendentes.", "Sem aprovação editorial real, publicação, arquivamento ou merge."],
+  "verification": "verification.json",
+  "checks": "checks.json",
+  "comparison": "comparison.md"
+}

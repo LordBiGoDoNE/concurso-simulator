@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "phase": "revalidation-1",
+  "status": "blocking-finding",
+  "risk": "critical",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/local_delivery_batch_sol",
+    "independent_context": true
+  },
+  "recorded_at": "2026-10-18T21:21:58.501056+00:00",
+  "snapshots": {
+    "128": {
+      "base_sha": "ea45531a2408c107740340c158596f63d4bc6be2",
+      "reviewed_head_sha": "5f51152ca35e0d273430d2177ae718b6b2e21002",
+      "diff_sha256": "7b7206fea50bf9c73f2b03223462566c369599ffa25794df5cfc179b85c3f52b"
+    },
+    "combined": {
+      "base_sha": "6283c4dd9ac3c5daedfad42ab650629c266c5732",
+      "reviewed_head_sha": "5f51152ca35e0d273430d2177ae718b6b2e21002",
+      "diff_sha256": "1866aa5f223851a3aba3f7b53719069ff274f70a27e4172afca41421644d670f"
+    }
+  },
+  "findings": [
+    {
+      "id": "B1",
+      "status": "resolved-in-combination-including-128"
+    },
+    {
+      "id": "R1",
+      "status": "resolved-in-combination-including-128"
+    },
+    {
+      "id": "B2",
+      "severity": "blocking",
+      "location": "scripts/local_app_data.py:70",
+      "finding": "Missing subprocess import makes backup fail before pg_dump.",
+      "triage": "confirmed by coordinator integration run; restore import; new snapshot/revalidation required"
+    }
+  ],
+  "coverage": "Delta927d8d0..5f51152 fully examined with consumers and combination; lower diffs unchanged. Prior excluded verification/spec-review evidence now read as documentary objects, not product proof.",
+  "limitations": [
+    "No reviewer tests/build/Docker/network/DB or CI consultation.",
+    "Lower PRs retain original defects until combined with upper fixes.",
+    "Final cumulative gate and merges remain pending."
+  ],
+  "quota": {
+    "five_hour": "unavailable",
+    "weekly": "unavailable",
+    "attribution": "not determined"
+  },
+  "tokens": "not supplied by harness"
+}

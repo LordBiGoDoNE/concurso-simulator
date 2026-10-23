@@ -1,0 +1,83 @@
+name: concurso-simulator-app-local
+x-owner: &owner
+  com.concursosimulator.local.owner: ${LOCAL_OWNER:?Use scripts/local_app.py}
+services:
+  postgres:
+    image: ${LOCAL_POSTGRES_IMAGE:?Use scripts/local_app.py}
+    labels: *owner
+    environment:
+      POSTGRES_DB: concurso_simulator
+      POSTGRES_USER: concurso
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets: [db_password]
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    networks: [database]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U concurso -d concurso_simulator]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    mem_limit: 512m
+  api:
+    image: ${LOCAL_API_IMAGE:?Use scripts/local_app.py}
+    pull_policy: never
+    labels: *owner
+    environment:
+      SPRING_PROFILES_ACTIVE: local
+      SPRING_CONFIG_IMPORT: configtree:/run/secrets/
+      SERVER_ADDRESS: 0.0.0.0
+      SERVER_PORT: 8080
+      SERVER_FORWARD_HEADERS_STRATEGY: none
+      DB_URL: jdbc:postgresql://postgres:5432/concurso_simulator?connectTimeout=2&socketTimeout=3
+      DB_USERNAME: concurso
+      CORS_ORIGINS: ${LOCAL_ORIGIN:?Use scripts/local_app.py}
+      JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=70.0
+      PARAMETERIZATION_GENERATION_ENABLED: ${LOCAL_GENERATION_ENABLED:-true}
+    secrets:
+      - source: db_password
+        target: spring.datasource.password
+      - source: google_enabled
+        target: app.google.enabled
+      - source: google_client_id
+        target: app.google.client-id
+      - source: google_client_secret
+        target: app.google.client-secret
+      - source: google_callback
+        target: app.google.callback-url
+      - source: frontend_url
+        target: app.google.frontend-url
+    depends_on:
+      postgres: {condition: service_healthy}
+    networks: [edge, database]
+    read_only: true
+    tmpfs: ["/tmp:rw,nosuid,nodev,noexec,size=64m"]
+    mem_limit: 1024m
+  web:
+    image: ${LOCAL_WEB_IMAGE:?Use scripts/local_app.py}
+    pull_policy: never
+    labels: *owner
+    ports:
+      - 127.0.0.1:${LOCAL_HTTP_PORT:?Use scripts/local_app.py}:8080
+    depends_on:
+      api: {condition: service_started}
+    networks: [edge]
+    read_only: true
+    tmpfs: ["/tmp:rw,nosuid,nodev,noexec,size=32m"]
+    mem_limit: 128m
+networks:
+  edge:
+    labels: *owner
+  database:
+    internal: true
+    labels: *owner
+volumes:
+  postgres_data:
+    labels: *owner
+secrets:
+  db_password: {file: '${LOCAL_SECRET_DIR}/db_password'}
+  google_enabled: {file: '${LOCAL_SECRET_DIR}/google_enabled'}
+  google_client_id: {file: '${LOCAL_SECRET_DIR}/google_client_id'}
+  google_client_secret: {file: '${LOCAL_SECRET_DIR}/google_client_secret'}
+  google_callback: {file: '${LOCAL_SECRET_DIR}/google_callback'}
+  frontend_url: {file: '${LOCAL_SECRET_DIR}/frontend_url'}

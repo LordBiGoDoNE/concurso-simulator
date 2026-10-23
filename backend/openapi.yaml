@@ -1,0 +1,604 @@
+openapi: 3.1.0
+info:
+  title: Concurso Simulator — API de plataforma
+  version: 0.1.0
+  description: Contrato inicial público, sem dados de usuários ou gabaritos.
+paths:
+  /api/v1/status:
+    get:
+      summary: Verificar disponibilidade da aplicação e do banco
+      operationId: getStatus
+      responses:
+        '200':
+          description: Aplicação e banco disponíveis
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    const: UP
+        '503':
+          description: Banco indisponível após a inicialização
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [status]
+                properties:
+                  status:
+                    type: string
+                    const: DOWN
+  /api/v1/me:
+    get:
+      summary: Consultar a própria identidade (sessão necessária)
+      security: [{sessionCookie: []}]
+      responses:
+        '200':
+          description: Identidade atual; Cache-Control no-store
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [id]
+                properties:
+                  id: {type: string, format: uuid}
+        '401':
+          description: Visitante ou sessão expirada; sem redirect
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [error]
+                properties:
+                  error: {type: string, const: unauthenticated}
+  /api/v1/csrf:
+    get:
+      summary: Obter token CSRF da sessão; Cache-Control no-store
+      responses:
+        '200':
+          description: Token, também disponível a visitantes
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [token, headerName]
+                properties:
+                  token: {type: string}
+                  headerName: {type: string}
+  /api/v1/auth/logout:
+    post:
+      summary: Encerrar a sessão atual sem desconectar outros dispositivos
+      parameters:
+        - in: header
+          name: X-CSRF-TOKEN
+          required: true
+          schema: {type: string}
+      responses:
+        '204': {description: Sessão encerrada; também válido para visitante com CSRF}
+        '403': {description: Token CSRF ausente ou inválido}
+  /api/v1/auth/config:
+    get:
+      summary: Consultar disponibilidade do login Google, sem segredos
+      responses:
+        '200':
+          description: Login Google habilitado ou desativado
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [googleEnabled]
+                properties:
+                  googleEnabled: {type: boolean}
+  /api/v1/question-bank/catalog:
+    get:
+      summary: Consultar catálogo público fixo de Limeira 01/2026, sem sessão
+      security: []
+      responses:
+        '200':
+          description: Catálogo; Cache-Control no-store
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionCatalog'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+  /api/v1/question-bank/questions:
+    get:
+      summary: Listar revisões correntes elegíveis; filtros AND, ordem fixa por UUID
+      security: []
+      parameters:
+        - {in: query, name: disciplineId, schema: {type: string, enum: [portugues, matematica-raciocinio, informatica, conhecimentos-administrativos, conhecimentos-escolares]}}
+        - {in: query, name: topicId, schema: {type: string, pattern: '^[PMIAS][0-9]{2}$'}}
+        - {in: query, name: roleId, schema: {type: string, enum: [assistente-administrativo, secretario-de-escola]}}
+        - {in: query, name: page, schema: {type: integer, minimum: 0, default: 0}}
+        - {in: query, name: size, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
+      responses:
+        '200':
+          description: Página, inclusive vazia; sem alternativas/respostas/resoluções; no-store
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionPage'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/question-bank/questions/{questionId}:
+    get:
+      summary: Ler somente revisão elegível atual; sem acesso a rascunhos/versões antigas
+      security: []
+      parameters:
+        - {in: path, name: questionId, required: true, schema: {type: string, format: uuid}}
+      responses:
+        '200':
+          description: Texto acessível/opções/fontes; sem dados corretivos ou caminhos de gabarito; no-store
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionDetail'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '404':
+          description: ID desconhecido ou não elegível, indistinguíveis
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [error]
+                properties: {error: {type: string, const: not_found}}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts:
+    post:
+      summary: Compor tentativa do visitante ou conta; 1–100 questões, sem distribuição oficial
+      security: [{}, {sessionCookie: []}]
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptCreate'}
+      responses:
+        '201': {description: Criada; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '200': {description: Replay confirmado; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '409': {description: Payload divergente ou acervo insuficiente; error e available por disciplina, content: {application/json: {schema: {oneOf: [{$ref: '#/components/schemas/AttemptError'}, {$ref: '#/components/schemas/AttemptInsufficient'}]}}}}
+        '500': {description: Falha interna de integridade; sem captura parcial ou dados privados; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptError'}}}}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Consultar snapshot e respostas próprias, sem correção ou nota parcial
+      responses:
+        '200': {description: Tentativa do dono; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/answers/{item}:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+      - {in: path, name: item, required: true, schema: {type: string, format: uuid}}
+    put:
+      summary: Salvar ou limpar resposta por ID; versão esperada e comando idempotente
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptAnswer'}
+      responses:
+        '200': {description: Resposta confirmada ou replay; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/finish:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    post:
+      summary: Concluir irreversivelmente e corrigir snapshot privado; replay confirmado
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptFinish'}
+      responses:
+        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptFinished'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/result:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Consultar resultado fechado somente do dono
+      responses:
+        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptResult'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/me/attempts:
+    get:
+      summary: Histórico privado da conta; createdAt/id DESC, sem nota parcial
+      security: [{sessionCookie: []}]
+      parameters:
+        - {in: query, name: page, schema: {type: integer, minimum: 0, maximum: 100000, default: 0}}
+        - {in: query, name: size, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
+        - {in: query, name: finished, schema: {type: boolean}}
+      responses:
+        '200': {description: Página do owner, no-store; sem total prometido, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptHistory'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/me/subject-review:
+    get:
+      summary: Revisão privada dos 51 assuntos, conta e cargo selecionado
+      description: Filtros antes de 100 conclusões; finishedAt/UUID DESC, última base antes do agrupamento. Entrada fechada, somente roleId único obrigatório. no-store; não grava progresso.
+      security: [{sessionCookie: []}]
+      parameters:
+        - {in: query, name: roleId, required: true, schema: {type: string, enum: [assistente-administrativo, secretario-de-escola]}}
+      responses:
+        '200': {description: Janela consistente, métricas e prioridade; owner/capturas nunca serializados, content: {application/json: {schema: {$ref: '#/components/schemas/SubjectReviewOverview'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '500': {$ref: '#/components/responses/ReviewIntegrity'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/attempts/{id}/subject-review:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Revisão por assunto de tentativa própria concluída, visitante ou conta
+      description: Entrada fechada, nenhum query parameter aceito. Não consulta histórico implicitamente; no-store.
+      responses:
+        '200': {description: Somente contexto e métricas da tentativa solicitada, content: {application/json: {schema: {$ref: '#/components/schemas/SubjectReviewIndividual'}}}}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '500': {$ref: '#/components/responses/ReviewIntegrity'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+components:
+  responses:
+    ReviewIntegrity:
+      description: Evidência inconsistente; erro integral e genérico, sem resumo parcial; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: internal_error}}
+    QuestionInvalid:
+      description: UUID/filtro/paginação/parâmetro desconhecido, vazio ou repetido; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: invalid_request}}
+    QuestionUnavailable:
+      description: Indisponibilidade/conteúdo incompatível; não é acervo vazio; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: unavailable}}
+    AttemptUnauthenticated:
+      description: Contexto inválido ou histórico sem conta; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: unauthenticated}}
+    AttemptForbidden:
+      description: CSRF inválido ou acesso técnico negado; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: forbidden}}
+    AttemptNotFound:
+      description: Ausente, outro dono ou visitante expirado, indistinguíveis; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: not_found}}
+    AttemptConflict:
+      description: Estado, versão ou payload divergente; no-store
+      content:
+        application/json:
+          schema:
+            type: object
+            additionalProperties: false
+            required: [error]
+            properties: {error: {type: string, const: conflict}}
+  schemas:
+    QuestionNamed:
+      type: object
+      additionalProperties: false
+      required: [id, title]
+      properties: {id: {type: string}, title: {type: string}}
+    QuestionTopic:
+      type: object
+      additionalProperties: false
+      required: [id, disciplineId, title]
+      properties: {id: {type: string}, disciplineId: {type: string}, title: {type: string}}
+    QuestionCatalog:
+      type: object
+      additionalProperties: false
+      required: [contestId, disciplines, topics, roles]
+      properties:
+        contestId: {type: string, const: limeira-01-2026}
+        disciplines: {type: array, items: {$ref: '#/components/schemas/QuestionNamed'}}
+        topics: {type: array, items: {$ref: '#/components/schemas/QuestionTopic'}}
+        roles: {type: array, items: {$ref: '#/components/schemas/QuestionNamed'}}
+    QuestionClassification:
+      type: object
+      additionalProperties: false
+      required: [disciplineId, topicId, roleIds]
+      properties:
+        disciplineId: {type: string}
+        topicId: {type: string}
+        roleIds: {type: array, uniqueItems: true, items: {type: string}}
+    QuestionResource:
+      type: object
+      additionalProperties: false
+      required: [path, mediaType, sha256, description]
+      properties:
+        path: {type: string, pattern: '^assets/'}
+        mediaType: {type: string, enum: [image/png, image/jpeg, image/svg+xml]}
+        sha256: {type: string, pattern: '^[0-9a-f]{64}$'}
+        description: {type: string}
+    QuestionText:
+      type: object
+      additionalProperties: false
+      required: [text, resources]
+      properties:
+        text: {type: string}
+        resources: {type: array, items: {$ref: '#/components/schemas/QuestionResource'}}
+    QuestionSummary:
+      type: object
+      additionalProperties: false
+      required: [questionId, revisionId, classification, statementStart]
+      properties:
+        questionId: {type: string, format: uuid}
+        revisionId: {type: string, format: uuid}
+        classification: {$ref: '#/components/schemas/QuestionClassification'}
+        statementStart: {type: string, maxLength: 240}
+    QuestionPage:
+      type: object
+      additionalProperties: false
+      required: [items, page, size, total]
+      properties:
+        items: {type: array, items: {$ref: '#/components/schemas/QuestionSummary'}}
+        page: {type: integer, minimum: 0}
+        size: {type: integer, minimum: 1, maximum: 100}
+        total: {type: integer, minimum: 0}
+    QuestionAlternative:
+      type: object
+      additionalProperties: false
+      required: [id, content]
+      properties: {id: {type: string, format: uuid}, content: {$ref: '#/components/schemas/QuestionText'}}
+    QuestionReference:
+      type: object
+      additionalProperties: false
+      required: [name, url]
+      properties: {name: {type: string}, url: {type: string, format: uri}}
+    QuestionDetail:
+      type: object
+      additionalProperties: false
+      required: [questionId, revisionId, classification, statement, alternatives, references]
+      properties:
+        questionId: {type: string, format: uuid}
+        revisionId: {type: string, format: uuid}
+        classification: {$ref: '#/components/schemas/QuestionClassification'}
+        statement: {$ref: '#/components/schemas/QuestionText'}
+        alternatives: {type: array, minItems: 2, items: {$ref: '#/components/schemas/QuestionAlternative'}}
+        references: {type: array, minItems: 1, items: {$ref: '#/components/schemas/QuestionReference'}}
+    AttemptCreate:
+      type: object
+      additionalProperties: false
+      required: [commandId, roleId, disciplines]
+      properties:
+        commandId: {type: string, format: uuid}
+        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        useParameterizedQuestions:
+          type: boolean
+          default: false
+          description: Usa variações numéricas aprovadas quando disponíveis; pode misturar fixas e variações, sem garantir novidade. Ausente equivale a false; null e coerção de tipos não são aceitos.
+        disciplines:
+          type: array
+          minItems: 1
+          maxItems: 5
+          items:
+            type: object
+            additionalProperties: false
+            required: [disciplineId, quantity]
+            properties:
+              disciplineId: {type: string}
+              quantity: {type: integer, minimum: 1, maximum: 100}
+              topicIds: {type: array, uniqueItems: true, items: {type: string}}
+    AttemptAnswer:
+      type: object
+      additionalProperties: false
+      required: [commandId, expectedVersion, alternativeId]
+      properties:
+        commandId: {type: string, format: uuid}
+        expectedVersion: {type: integer, minimum: 0}
+        alternativeId: {type: [string, 'null'], format: uuid}
+    AttemptItem:
+      type: object
+      additionalProperties: false
+      required: [id, questionId, revisionId, classification, statement, alternatives, references, selectedAlternativeId]
+      properties:
+        id: {type: string, format: uuid}
+        questionId: {type: string, format: uuid}
+        revisionId: {type: string, format: uuid}
+        classification: {$ref: '#/components/schemas/QuestionClassification'}
+        statement: {$ref: '#/components/schemas/QuestionText'}
+        alternatives: {type: array, minItems: 2, items: {$ref: '#/components/schemas/QuestionAlternative'}}
+        references: {type: array, items: {$ref: '#/components/schemas/QuestionReference'}}
+        selectedAlternativeId: {type: [string, 'null'], format: uuid}
+    AttemptView:
+      type: object
+      additionalProperties: false
+      required: [id, roleId, createdAt, finishedAt, version, items]
+      properties:
+        id: {type: string, format: uuid}
+        roleId: {type: string}
+        createdAt: {type: string, format: date-time}
+        finishedAt: {type: [string, 'null'], format: date-time}
+        version: {type: integer, minimum: 0}
+        items: {type: array, minItems: 1, maxItems: 100, items: {$ref: '#/components/schemas/AttemptItem'}}
+    AttemptError:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties: {error: {type: string}}
+    AttemptInsufficient:
+      type: object
+      additionalProperties: false
+      required: [error, available]
+      properties:
+        error: {type: string, const: insufficient_pool}
+        available:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [disciplineId, available]
+            properties: {disciplineId: {type: string}, available: {type: integer, minimum: 0}}
+    AttemptFinish:
+      type: object
+      additionalProperties: false
+      required: [commandId, expectedVersion]
+      properties: {commandId: {type: string, format: uuid}, expectedVersion: {type: integer, minimum: 0}}
+    AttemptResult:
+      type: object
+      additionalProperties: false
+      required: [total, points, correct, wrong, blank, percentage, items]
+      properties:
+        total: {type: integer}
+        points: {type: integer}
+        correct: {type: integer}
+        wrong: {type: integer}
+        blank: {type: integer}
+        percentage: {type: number, minimum: 0, maximum: 100}
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [item, correctAlternativeId, resolution]
+            properties:
+              item: {$ref: '#/components/schemas/AttemptItem'}
+              correctAlternativeId: {type: string, format: uuid}
+              resolution: {$ref: '#/components/schemas/QuestionText'}
+    AttemptFinished:
+      type: object
+      additionalProperties: false
+      required: [attempt, result]
+      properties: {attempt: {$ref: '#/components/schemas/AttemptView'}, result: {$ref: '#/components/schemas/AttemptResult'}}
+    AttemptHistory:
+      type: object
+      additionalProperties: false
+      required: [items, page, size]
+      properties:
+        page: {type: integer}
+        size: {type: integer}
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, roleId, createdAt, finishedAt, total, percentage]
+            properties:
+              id: {type: string, format: uuid}
+              roleId: {type: string}
+              createdAt: {type: string, format: date-time}
+              finishedAt: {type: [string, 'null'], format: date-time}
+              total: {type: integer}
+              percentage: {type: [number, 'null']}
+    SubjectReviewSubject:
+      type: object
+      additionalProperties: false
+      required: [topicId, title, disciplineId, disciplineTitle, correct, wrong, blank, assessed, exposures, percentage, lastFinishedAt]
+      properties:
+        topicId: {type: string}
+        title: {type: string}
+        disciplineId: {type: string, enum: [portugues, matematica-raciocinio, informatica, conhecimentos-administrativos, conhecimentos-escolares]}
+        disciplineTitle: {type: string}
+        correct: {type: integer, minimum: 0, maximum: 10000}
+        wrong: {type: integer, minimum: 0, maximum: 10000}
+        blank: {type: integer, minimum: 0, maximum: 10000}
+        assessed: {type: integer, minimum: 0, maximum: 10000}
+        exposures: {type: integer, minimum: 0, maximum: 10000}
+        percentage: {type: [number, 'null'], minimum: 0, maximum: 100, multipleOf: 0.01}
+        lastFinishedAt: {type: [string, 'null'], format: date-time}
+    SubjectReviewWindow:
+      type: object
+      additionalProperties: false
+      required: [limit, attemptCount, hasOlder, latestFinishedAt, oldestFinishedAt]
+      properties:
+        limit: {type: integer, const: 100}
+        attemptCount: {type: integer, minimum: 0, maximum: 100}
+        hasOlder: {type: boolean}
+        latestFinishedAt: {type: [string, 'null'], format: date-time}
+        oldestFinishedAt: {type: [string, 'null'], format: date-time}
+    SubjectReviewOverview:
+      type: object
+      additionalProperties: false
+      required: [policy, roleId, minimumBases, window, subjects, priorityTopicIds]
+      properties:
+        policy: {type: string, const: subject-review/v1}
+        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        minimumBases: {type: integer, const: 3}
+        window: {$ref: '#/components/schemas/SubjectReviewWindow'}
+        subjects: {type: array, minItems: 51, maxItems: 51, items: {$ref: '#/components/schemas/SubjectReviewSubject'}}
+        priorityTopicIds: {type: array, uniqueItems: true, maxItems: 51, items: {type: string}}
+    SubjectReviewIndividual:
+      type: object
+      additionalProperties: false
+      required: [policy, roleId, minimumBases, attemptId, subjects, priorityTopicIds]
+      properties:
+        policy: {type: string, const: subject-review/v1}
+        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        minimumBases: {type: integer, const: 3}
+        attemptId: {type: string, format: uuid}
+        subjects: {type: array, minItems: 51, maxItems: 51, items: {$ref: '#/components/schemas/SubjectReviewSubject'}}
+        priorityTopicIds: {type: array, uniqueItems: true, maxItems: 51, items: {type: string}}
+  securitySchemes:
+    sessionCookie:
+      type: apiKey
+      in: cookie
+      name: SESSION

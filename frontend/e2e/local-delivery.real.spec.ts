@@ -22,6 +22,26 @@ async function finish(page: Page) {
   await page.getByRole('button', { name: 'Confirmar conclusão' }).click();
   await expect(area(page).getByRole('heading', { name: 'Resultado do simulado' })).toBeVisible();
 }
+test('prática de aula não substitui gravação real já confirmada no servidor com resposta suspensa', async ({ page }) => {
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
+  const view = await start(page);let release!: () => void;const paused = new Promise<void>(resolve => { release = resolve; });let committed = false, confirmations = 0, newAttempts = 0;
+  page.on('dialog', dialog => { confirmations++;void dialog.accept(); });
+  page.on('request', request => { if (request.method() === 'POST' && request.url().endsWith('/attempts')) newAttempts++; });
+  await page.route('**/api/v1/attempts/*/answers/*', async route => {
+    const response = await route.fetch();expect(response.status()).toBe(200);committed = true;await paused;await route.fulfill({ response });
+  });
+  try {
+    await area(page).getByRole('radio').first().check();await expect.poll(() => committed).toBe(true);
+    await page.getByText('Ir para outra área', { exact: true }).click();
+    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Aulas', exact: true }).click();
+    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar este assunto' }).click();
+    await expect(page.getByRole('status').filter({ hasText: 'Prática não iniciada.' })).toBeVisible();expect(confirmations).toBe(0);expect(newAttempts).toBe(0);
+    expect((await (await page.request.get('/api/v1/attempts/' + view.id)).json()).version).toBe(1);
+    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
+    await expect(area(page).getByRole('radio').first()).toBeChecked();await expect(area(page).getByRole('button', { name: 'Concluir simulado', exact: true })).toBeDisabled();
+    release();await expect(area(page).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect(newAttempts).toBe(0);
+  } finally { release(); }
+});
 for (const width of [390, 1280]) test(`biblioteca e leitura integral no pacote Docker em ${width}px`, async ({ page }, info) => {
   const paths: Record<string, string> = JSON.parse(readFileSync('src/lesson-paths.json', 'utf8'));
   for (const path of Object.values(paths)) {

@@ -33,7 +33,8 @@ it('leitura usa teoria completa conhecida e permite navegar e compor sem criar t
   expect(screen.getByRole('link', { name: 'Abrir aula original (nova aba)' })).toHaveAttribute('href', lessonUrl('S02'));
   expect(screen.getByLabelText('Cargo para praticar esta aula')).toHaveValue('secretario-de-escola');
   expect(within(screen.getByLabelText('Cargo para praticar esta aula')).getAllByRole('option')).toHaveLength(1);
-  expect(practice).not.toHaveBeenCalled();fireEvent.click(screen.getByRole('button', { name: 'Praticar este assunto' }));
+  expect(screen.getByRole('button', { name: 'Praticar S02' })).toHaveAccessibleDescription('Assunto da prática: S02 — Escrituração Escolar');
+  expect(practice).not.toHaveBeenCalled();fireEvent.click(screen.getByRole('button', { name: 'Praticar S02' }));
   expect(practice).toHaveBeenCalledWith({ roleId: 'secretario-de-escola', disciplineId: 'conhecimentos-escolares', topicId: 'S02' });
   fireEvent.click(screen.getByRole('button', { name: 'Próxima aula' }));
   expect(screen.getByRole('heading', { name: 'Registros Individuais, Ficha e Histórico Escolar' })).toHaveFocus();

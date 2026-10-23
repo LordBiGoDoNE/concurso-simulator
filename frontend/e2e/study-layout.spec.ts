@@ -62,7 +62,7 @@ for (const width of [390, 1440]) test(`aula recusa substituir gravação e prese
     const nav = page.getByRole('navigation', { name: 'Navegação principal' });await expect(nav.getByRole('button', { name: 'Aulas', exact: true })).toBeHidden();
     await page.getByText('Ir para outra área', { exact: true }).focus();await page.keyboard.press('Enter');
     await nav.getByRole('button', { name: 'Aulas', exact: true }).click();
-    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar este assunto' }).click();
+    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar P01', exact: true }).click();
     await expect(page.getByRole('status').filter({ hasText: 'Prática não iniciada.' })).toBeVisible();expect(confirmations).toBe(0);expect(creates).toBe(1);
     await nav.getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByRole('heading', { name: 'Questão 2 de 2' })).toBeVisible();
     await expect(page.getByRole('radio').first()).toBeChecked();release();await expect(page.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect(writes).toBe(2);
@@ -116,7 +116,11 @@ for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem c
   expect(await frame.locator('html').evaluate(el => el.scrollWidth <= innerWidth)).toBe(true);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath(`reader-${width}.png`), fullPage: true });
-  await page.getByRole('button', { name: 'Praticar este assunto' }).click();
+  await frame.getByRole('link', { name: 'Próximo módulo →', exact: true }).click();
+  await expect(frame.getByRole('heading', { name: 'Matemática 02 - MMC e MDC', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Praticar M01', exact: true })).toHaveAccessibleDescription('Assunto da prática: M01 — Operações com Números Reais');
+  await expect(page.getByText('Os links dentro do material não alteram essa seleção.', { exact: false })).toBeVisible();
+  await page.getByRole('button', { name: 'Praticar M01', exact: true }).click();
   await expect(page.getByLabel('Quantidade de Matemática', { exact: true })).toHaveValue('1');
   await expect(page.getByLabel('Quantidade de Português')).toHaveValue('0');
   await expect(page.getByLabel('Operações', { exact: true })).toBeChecked();expect(created).toBe(0);

@@ -41,3 +41,5 @@ LAYOUT-SOL-001: a fronteira de substituição consulta um getter vivo da realiza
 LAYOUT-SOL-003: o mock das aulas entrega CSS como text/css e confere display:flex da navegação definido na folha externa, além da imagem/HTML. As capturas foram regeneradas após essa correção; as antigas mantêm a limitação descrita no parecer inicial.
 
 Verificações locais das correções: 19 unitários de contexto/transição/prática dirigida e 8 testes Chromium de layout passaram; build passou. A revalidação independente do novo snapshot permanece necessária.
+
+CUM-SOL-001: o painel de prática identifica explicitamente código/título da aula selecionada e o botão usa “Praticar M01”, por exemplo, com descrição acessível. Os links do material podem navegar independentemente; o texto orienta usar a lista/setas externas para trocar o assunto da prática. Regressão Chromium navega M01→M02 dentro do HTML e confere que o botão/descrição anunciam M01 e compõem exatamente M01, sem POST automático.15 unitários focados, build e8 testes de layout passaram nessa correção; revalidações independentes continuam necessárias.

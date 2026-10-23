@@ -13,13 +13,13 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 - [x] 1.5 Acrescentar biblioteca e prévia de leitura das51 aulas, busca/filtros, navegação e atalho de prática; conferir desktop/celular e links.
 - [x] 1.6 Registrar o aceite do usuário para biblioteca/leitura e para seguir com o layout completo.
 - [x] 1.7 Revisão independente SOL 6.1 xHigh dos21 arquivos concluída sem achados; atualizar a revalidação ao mudar requisitos/diff.
-- [ ] 1.8 Obter autorização específica e integrar o PR de proposta/protótipo na épica.
+- [x] 1.8 PR #140 integrado à épica por autorização específica; merge 2e33071640eabaa5eeb36146a8dcb9585c254195.
 
 ## 2. Navegação e início — lote autorizado pelo usuário
 
-- [ ] 2.1 Definir navegação e preservar transições de identidade e tentativa ativa.
-- [ ] 2.2 Implementar componentes e tokens aprovados e a tela inicial.
-- [ ] 2.3 Verificar teclado, foco, responsividade e regressões; atualizar documentação.
+- [x] 2.1 Definir navegação e preservar transições de identidade e tentativa ativa.
+- [x] 2.2 Implementar componentes e tokens aprovados e a tela inicial.
+- [x] 2.3 Verificar teclado, foco, responsividade e regressões; atualizar documentação.
 - [ ] 2.4 Revisão independente SOL 6.1 xHigh e autorização própria dos PRs.
 
 ## 3. Composição — depende de 2, lote autorizado pelo usuário

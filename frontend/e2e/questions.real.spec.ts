@@ -18,7 +18,7 @@ for (const width of [390, 1280]) {
         reads.push(read);
       }
     });
-    await page.goto('/');
+    await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Banco de questões', exact: true }).click();
     await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();
     await expect(page.getByText('22 questões elegíveis. Página 1.')).toBeVisible();
     await page.getByLabel('Disciplina', { exact: true }).focus();
@@ -57,11 +57,11 @@ for (const width of [390, 1280]) {
 }
 
 test('mesmos filtros antes/depois de login OIDC real e aulas disponíveis durante falha de consulta', async ({ page, request }) => {
-  await page.goto('/');await page.getByLabel('Disciplina', { exact: true }).selectOption('matematica-raciocinio');
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Banco de questões', exact: true }).click();await page.getByLabel('Disciplina', { exact: true }).selectOption('matematica-raciocinio');
   await expect(page.getByText('1 questão elegível. Página 1.')).toBeVisible();
   const before = await page.getByRole('button', { name: /Consultar:/ }).allTextContents();
   expect((await request.post('http://127.0.0.1:18081/fixture/control', { form: { subject: 'question-browser-user', mode: 'valid' } })).ok()).toBe(true);
-  await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();
+  await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Banco de questões', exact: true }).click();
   await page.getByLabel('Disciplina', { exact: true }).selectOption('matematica-raciocinio');
   await expect(page.getByText('1 questão elegível. Página 1.')).toBeVisible();
   expect(await page.getByRole('button', { name: /Consultar:/ }).allTextContents()).toEqual(before);
@@ -69,7 +69,7 @@ test('mesmos filtros antes/depois de login OIDC real e aulas disponíveis durant
   await page.getByLabel('Disciplina', { exact: true }).selectOption('portugues');
   await expect(page.getByText('Consulta de questões indisponível. Não é um acervo vazio.')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toBeVisible();
-  await expect(page.getByText('Você está conectado.')).toBeVisible();
+  await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Banco de questões', exact: true }).click();
   await page.unroute(`${api}/**`);await page.getByRole('button', { name: 'Tentar questões novamente' }).click();
   await expect(page.getByText('21 questões elegíveis. Página 1.')).toBeVisible();
   const assets = resolve('dist/assets');

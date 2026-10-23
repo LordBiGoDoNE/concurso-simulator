@@ -8,7 +8,7 @@ function activeContract(value: unknown) {
   const visit = (v: unknown) => { if (Array.isArray(v)) v.forEach(visit);else if (v && typeof v === 'object') for (const [key, child] of Object.entries(v)) { expect(['correctAlternativeId', 'resolution', 'provenance', 'percentage']).not.toContain(key);visit(child); } };visit(value);
 }
 async function control(request: APIRequestContext, subject: string) { expect((await request.post(provider + '/fixture/control', { form: { subject, mode: 'valid' } })).ok()).toBe(true); }
-async function login(page: Page) { await page.goto('/');await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible(); }
+async function login(page: Page) { await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click(); }
 async function start(page: Page, quantity = 2): Promise<AttemptView> {
   const area = workspace(page);await area.getByLabel('Quantidade de Português').fill(String(quantity));
   const created = page.waitForResponse(r => r.url() === api + '/api/v1/attempts' && r.request().method() === 'POST');
@@ -27,7 +27,7 @@ async function storage(page: Page) {
 }
 test('resultado independe de novo download do renderer depois da conclusao', async ({ page }) => {
   const rendererRequests: string[] = [];
-  await page.goto('/');const view = await start(page, 1);let finishes = 0;
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const view = await start(page, 1);let finishes = 0;
   await page.route('**/*AttemptResult*', async route => { rendererRequests.push(route.request().url());await route.abort('failed'); });
   page.on('request', request => { if (request.url().endsWith('/finish') && request.method() === 'POST') finishes++; });
   await finish(page);await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toBeVisible();
@@ -35,7 +35,7 @@ test('resultado independe de novo download do renderer depois da conclusao', asy
   expect(finishes).toBe(1);expect((await (await page.request.get(`${api}/api/v1/attempts/${view.id}`)).json()).finishedAt).not.toBeNull();
 });
 for (const width of [390, 1280]) test(`visitante realiza por teclado, confirma e revisa sem vazamento antecipado em ${width}px`, async ({ page }, info) => {
-  await page.setViewportSize({ width, height: 850 });await page.goto('/');const area = workspace(page);const view = await start(page);
+  await page.setViewportSize({ width, height: 850 });await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const area = workspace(page);const view = await start(page);
   await expect(area.getByRole('heading', { name: 'Questão 1 de 2' })).toBeFocused();
   const radio = area.getByRole('radio').first();await radio.focus();await radio.press('Space');await expect(area.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
   const saved = await page.request.get(`${api}/api/v1/attempts/${view.id}`);activeContract(await saved.json());
@@ -53,7 +53,7 @@ for (const width of [390, 1280]) test(`visitante realiza por teclado, confirma e
   await page.screenshot({ path: info.outputPath(`result-${width}.png`), fullPage: true });
 });
 test('resposta confirmada no servidor com confirmação perdida é recuperada com mesmo comando', async ({ page }) => {
-  await page.goto('/');const view = await start(page, 1);const bodies: unknown[] = [];
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const view = await start(page, 1);const bodies: unknown[] = [];
   await page.route('**/api/v1/attempts/*/answers/*', async route => {
     bodies.push(route.request().postDataJSON());
     if (bodies.length === 1) { expect((await route.fetch()).status()).toBe(200);await route.abort('failed'); } else await route.continue();
@@ -85,7 +85,7 @@ test('mesma conta retoma após reinício, outra conta não acessa e mudança edi
   } finally { await first.close();await same.close();await other.close(); }
 });
 test('duas abas preservam escolha conflitante e só reenviam após recarga explícita', async ({ page, context, request }) => {
-  await control(request, 'attempt-two-tabs');await login(page);const view = await start(page, 1);const second = await context.newPage();await second.goto('/');
+  await control(request, 'attempt-two-tabs');await login(page);const view = await start(page, 1);const second = await context.newPage();await second.goto('/');await second.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
   await workspace(second).getByRole('button', { name: /Abrir simulado/ }).first().click();await expect(workspace(second).getByRole('heading', { name: 'Questão 1 de 1' })).toBeVisible();
   await workspace(page).getByRole('radio').first().check();await expect(workspace(page).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
   await workspace(second).getByRole('radio').last().check();await expect(workspace(second).getByRole('button', { name: 'Recarregar tentativa' })).toBeVisible();
@@ -94,15 +94,15 @@ test('duas abas preservam escolha conflitante e só reenviam após recarga expl�
   await expect(workspace(second).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect((await (await second.request.get(`${api}/api/v1/attempts/${view.id}`)).json()).version).toBe(2);await second.close();
 });
 test('login durante visitante exige aviso e não transfere a tentativa nem a recupera após logout', async ({ page, request }) => {
-  await control(request, 'attempt-no-transfer');await page.goto('/');const view = await start(page, 1);
+  await control(request, 'attempt-no-transfer');await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const view = await start(page, 1);
   page.once('dialog', async dialog => { expect(dialog.message()).toContain('não será transferida');await dialog.accept(); });
-  await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();
+  await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
   await expect(workspace(page).getByText('Nenhuma tentativa nesta página.')).toBeVisible();expect((await page.request.get(`${api}/api/v1/attempts/${view.id}`)).status()).toBe(404);
   await page.getByRole('button', { name: 'Sair', exact: true }).click();await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();
   expect((await page.request.get(`${api}/api/v1/attempts/${view.id}`)).status()).toBe(404);expect(await storage(page)).toEqual({ local: 0, session: 0, caches: [], workers: 0 });
 });
 test('expiração real da sessão visitante limpa a realização na revalidação e controle negativo detecta gabarito', async ({ page }) => {
-  await page.goto('/');const view = await start(page, 1);expect(() => activeContract({ ...view, correctAlternativeId: 'PRIVATE_NEGATIVE_CONTROL' })).toThrow();
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const view = await start(page, 1);expect(() => activeContract({ ...view, correctAlternativeId: 'PRIVATE_NEGATIVE_CONTROL' })).toThrow();
   await page.waitForTimeout(21500);await page.getByRole('button', { name: 'Atualizar sessão' }).click();
   await expect(workspace(page).getByRole('button', { name: 'Iniciar simulado' })).toBeVisible();expect((await page.request.get(`${api}/api/v1/attempts/${view.id}`)).status()).toBe(404);
 });

@@ -25,7 +25,7 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
   });vi.stubGlobal('fetch', fetchMock);
   return { change: (id: string | null) => { user = id; }, expire: () => { user = null; expired = true; }, finishWrite: () => resolveWrite?.({ ...privateView, version: 1, items: [{ ...privateView.items[0], selectedAlternativeId: privateView.items[0].alternatives[0].id }] }), fetchMock };
 }
-async function start() { const button = await screen.findByRole('button', { name: 'Iniciar simulado' });fireEvent.click(button);await screen.findByText('PRIVATE_CONTEXT_STATEMENT'); }
+async function start() { fireEvent.click(screen.getByRole('button', { name: 'Simulados' })); const button = await screen.findByRole('button', { name: 'Iniciar simulado' });fireEvent.click(button);await screen.findByText('PRIVATE_CONTEXT_STATEMENT'); }
 it('logout limpa tentativa imediatamente e resposta tardia não reaparece nem entra em storage', async () => {
   const fixture = api(userA);render(<App />);await start();fireEvent.click(screen.getAllByRole('radio')[0]);
   await waitFor(() => expect(fixture.fetchMock.mock.calls.some(([u]) => u.includes('/answers/'))).toBe(true));
@@ -51,7 +51,7 @@ it('abrir a tentativa atual preserva escolha e comando após falha de salvamento
   await act(async () => fixture.finishWrite());await screen.findByText('Respostas confirmadas.');expect(screen.getAllByRole('radio')[0]).toBeChecked();
 });
 it('trocar para outra conta no refresh desmonta o contexto anterior e ignora escrita tardia', async () => {
-  const fixture = api(userA);render(<App />);
+  const fixture = api(userA);render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   fireEvent.click(await screen.findByRole('checkbox', { name: 'Usar variações numéricas quando disponíveis' }));await start();fireEvent.click(screen.getAllByRole('radio')[0]);
   await waitFor(() => expect(fixture.fetchMock.mock.calls.some(([u]) => u.includes('/answers/'))).toBe(true));fixture.change(userB);
   fireEvent.click(screen.getByRole('button', { name: 'Atualizar sessão' }));await screen.findByRole('button', { name: 'Iniciar simulado' });
@@ -80,4 +80,26 @@ it('retorno de página restaurada pelo navegador revalida a conta antes de exibi
   const fixture = api(userA);render(<App />);await start();fixture.change(userB);
   const restored = new Event('pageshow');Object.defineProperty(restored, 'persisted', { value: true });fireEvent(window, restored);
   await screen.findByRole('button', { name: 'Iniciar simulado' });expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();
+});
+
+it('navegação preserva escolha pendente e retry idempotente sem criar outra tentativa', async () => {
+  const fixture = api(userA);render(<App />);await start();
+  fixture.fetchMock.mockImplementationOnce(async () => response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' })).mockImplementationOnce(async () => { throw new TypeError('network'); });
+  fireEvent.click(screen.getAllByRole('radio')[0]);await screen.findByRole('button', { name: 'Repetir salvamento' });
+  fireEvent.click(screen.getByRole('button', { name: 'Início' }));
+  expect(screen.queryByRole('radio')).not.toBeInTheDocument();expect(screen.getByRole('heading', { name: /Mais clareza/ })).toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
+  expect(screen.getAllByRole('radio')[0]).toBeChecked();fireEvent.click(screen.getByRole('button', { name: 'Repetir salvamento' }));
+  await waitFor(() => expect(fixture.fetchMock.mock.calls.filter(([url]) => url.includes('/answers/'))).toHaveLength(2));
+  const writes = fixture.fetchMock.mock.calls.filter(([url]) => url.includes('/answers/'));expect(writes[0][1]?.body).toEqual(writes[1][1]?.body);
+  await act(async () => fixture.finishWrite());expect(await screen.findByText('Respostas confirmadas.')).toBeInTheDocument();
+  expect(fixture.fetchMock.mock.calls.filter(([url, options]) => url.endsWith('/attempts') && options?.method === 'POST')).toHaveLength(1);
+});
+it('troca de conta durante outra área descarta a tentativa oculta e ignora resposta tardia', async () => {
+  const fixture = api(userA);render(<App />);await start();fireEvent.click(screen.getAllByRole('radio')[0]);
+  await waitFor(() => expect(fixture.fetchMock.mock.calls.some(([url]) => url.includes('/answers/'))).toBe(true));
+  fireEvent.click(screen.getByRole('button', { name: 'Aulas' }));fixture.change(userB);
+  fireEvent.click(screen.getByRole('button', { name: 'Atualizar sessão' }));await screen.findByText('Você está conectado.');
+  await act(async () => fixture.finishWrite());fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
+  expect(await screen.findByRole('button', { name: 'Iniciar simulado' })).toBeInTheDocument();expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();
 });

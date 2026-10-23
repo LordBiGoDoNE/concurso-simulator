@@ -66,7 +66,7 @@ it.each([false, true])('mesmos filtros com identidade conectada=%s e aulas/login
     if (url.endsWith('/auth/config')) return response({ googleEnabled: true });
     if (url.endsWith('/me')) return response(connected ? { id: questionId } : undefined, connected ? 200 : 401);
     return response(url.endsWith('/catalog') ? catalog : page);
-  });vi.stubGlobal('fetch', fetch);render(<App />);
+  });vi.stubGlobal('fetch', fetch);render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Banco de questões' }));
   expect(await screen.findByText(connected ? 'Você está conectado.' : 'Você está estudando como visitante.')).toBeInTheDocument();
   await screen.findByRole('button', { name: /Consultar:/ });
   fireEvent.change(screen.getByLabelText('Disciplina'), { target: { value: 'portugues' } });

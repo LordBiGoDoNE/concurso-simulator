@@ -2,14 +2,21 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import LoginPanel from './LoginPanel';
 import QuestionBrowser from './QuestionBrowser';
 import AttemptWorkspace from './AttemptWorkspace';
+import StudyHome from './StudyHome';
 import type { CurrentIdentity } from './identity-api';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 import { materialUrl } from './lesson-links';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
 const timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : 5000;
+type Area = 'home' | 'attempts' | 'lessons' | 'questions';
+const areaNames: Record<Area, string> = { home: 'Início', attempts: 'Simulados', lessons: 'Aulas', questions: 'Banco de questões' };
 
 export default function App() {
+  const [area, setArea] = useState<Area>('home');
+  const pageHeading = useRef<HTMLHeadingElement>(null); const navigated = useRef(false);
+  function navigate(next: Area) { if (next === area) return; navigated.current = true; setArea(next); }
+  useEffect(() => { if (navigated.current) { navigated.current = false; pageHeading.current?.focus(); } }, [area]);
   const [attempt, setAttempt] = useState(0);
   const [status, setStatus] = useState<'loading' | 'up' | 'down'>('loading');
   const [identity, setIdentity] = useState<CurrentIdentity | null>(null); const [checking, setChecking] = useState(true);
@@ -39,24 +46,32 @@ export default function App() {
   }, [attempt]);
 
   return (
-    <main>
-      <p className="eyebrow">Seu espaço de estudo</p>
-      <h1>Concurso Simulator</h1>
-      <p>Continue aprendendo com as aulas, questões e resoluções do material de estudo.</p>
-      <a className="material-link" href={materialUrl}>Acessar material de estudo</a>
+    <div className="app-layout">
+      <a className="skip-link" href="#study-content">Pular para o conteúdo</a>
+      <aside className="sidebar"><div className="brand"><span className="brand-symbol" aria-hidden="true">CS</span><span>Concurso Simulator<small>Seu espaço de estudo</small></span></div>
+        <nav aria-label="Navegação principal">{(Object.keys(areaNames) as Area[]).map(item => <button key={item} aria-current={area === item ? 'page' : undefined} onClick={() => navigate(item)}>{areaNames[item]}</button>)}</nav>
+        <div className="sidebar-foot"><p>Aprenda no seu ritmo.<br /><small>Aulas, prática e revisão.</small></p></div>
+      </aside>
+      <div className="workspace"><header className="topbar"><span>Seu espaço de estudo <span aria-hidden="true">/</span> <strong>{areaNames[area]}</strong></span><span className="identity-pill">{checking ? 'Conferindo sessão' : identity?.connected ? 'Conta conectada' : 'Acesso visitante'}</span></header>
+      <main id="study-content" tabIndex={-1}>
+      <h2 ref={pageHeading} tabIndex={-1} className="sr-only">{areaNames[area]}</h2>
+      <div hidden={area !== 'home'}><StudyHome onCompose={() => navigate('attempts')} onLessons={() => navigate('lessons')} /></div>
+      <div className="identity-panel">
       <LoginPanel onIdentity={changedIdentity} onChecking={checkingIdentity} onBeforeLogin={beforeLogin} />
+      </div>
       {privateNotice && <p role="status">{privateNotice}</p>}
-      {checking && <p role="status">Conferindo acesso aos simulados…</p>}
-      <div hidden={checking}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} reviewActive={!checking} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
-      <QuestionBrowser />
-      <section aria-labelledby="application-title">
-        <h2 id="application-title">Nova aplicação — ambiente local</h2>
-        <p>A base técnica está em desenvolvimento. O material de estudo continua independente da aplicação.</p>
+      {checking && area === 'attempts' && <p role="status">Conferindo acesso aos simulados…</p>}
+      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
+      {area === 'lessons' && <section aria-labelledby="lessons-title"><p className="eyebrow">Aprenda no seu ritmo</p><h1 id="lessons-title">Suas aulas, em um só lugar</h1><p>O material completo de todas as disciplinas está disponível para estudar.</p><a className="material-link" href={materialUrl}>Abrir biblioteca completa</a></section>}
+      <div hidden={area !== 'questions'}><QuestionBrowser /></div>
+      <footer className="availability">
+        <a href={materialUrl}>Acessar material de estudo</a>
         <p role="status" aria-live="polite">
           {status === 'loading' ? 'Verificando disponibilidade da API…' : status === 'up' ? 'API disponível.' : 'API indisponível. Você pode continuar acessando as aulas.'}
         </p>
         <button disabled={status === 'loading'} onClick={() => setAttempt(value => value + 1)}>Verificar novamente</button>
-      </section>
+      </footer>
     </main>
+    </div></div>
   );
 }

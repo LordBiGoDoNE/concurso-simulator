@@ -10,8 +10,13 @@ for (const width of [390, 1280]) {
     await expect(page.getByRole('status').filter({ hasText: 'API indisponível' })).toBeVisible();
     await expect(page.getByText(/Consulta de sessão indisponível/)).toBeVisible();
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toBeFocused();
-    await page.keyboard.press('Tab');
+    await expect(page.getByRole('link', { name: 'Pular para o conteúdo' })).toBeFocused();
+    await page.keyboard.press('Enter');
+    await expect(page.getByRole('main')).toBeFocused();
+    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Aulas', exact: true }).focus();
+    await page.keyboard.press('Enter');
+    await expect(page.getByRole('heading', { name: 'Aulas', exact: true })).toBeFocused();
+    await page.getByRole('button', { name: 'Atualizar sessão' }).focus();
     await expect(page.getByRole('button', { name: 'Atualizar sessão' })).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page.getByRole('status').filter({ hasText: 'API indisponível' })).toBeVisible();

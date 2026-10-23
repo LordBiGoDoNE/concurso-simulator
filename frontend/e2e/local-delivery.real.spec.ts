@@ -23,7 +23,7 @@ async function finish(page: Page) {
   await expect(area(page).getByRole('heading', { name: 'Resultado do simulado' })).toBeVisible();
 }
 test('visitante: CSRF, retry idempotente, conclusão e revisão no pacote real', async ({ page }) => {
-  await page.goto('/');await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();
   expect((await page.request.post('/api/v1/attempts', { data: {} })).status()).toBe(403);
   const view = await start(page);const bodies: unknown[] = [];
   await page.route('**/api/v1/attempts/*/answers/*', async route => {
@@ -40,12 +40,12 @@ test('visitante: CSRF, retry idempotente, conclusão e revisão no pacote real',
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0]);
 });
 test('conta: duas sessões retomam, conflito é explícito e outra conta recebe404', async ({ browser, page, context }) => {
-  await session(context, data.cookie);await page.goto('/');await expect(page.getByText('Você está conectado.')).toBeVisible();
+  await session(context, data.cookie);await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
   const view = await start(page);const second = await browser.newContext();const other = await browser.newContext();
   try {
     await session(second, data.sameCookie);await session(other, data.otherCookie);
     expect((await other.request.get(origin + '/api/v1/attempts/' + view.id)).status()).toBe(404);
-    const resumed = await second.newPage();await resumed.goto('/');
+    const resumed = await second.newPage();await resumed.goto('/');await resumed.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
     await area(resumed).getByRole('button', { name: /Abrir simulado/ }).first().click();
     await expect(area(resumed).getByRole('heading', { name: 'Questão 1 de 1' })).toBeVisible();
     await area(page).getByRole('radio').first().check();await expect(area(page).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
@@ -57,7 +57,7 @@ test('conta: duas sessões retomam, conflito é explícito e outra conta recebe4
   } finally { await second.close();await other.close(); }
 });
 for (const width of [390, 1280]) test(`51 assuntos, aula real e prática dirigida em ${width}px`, async ({ page, context }, info) => {
-  await session(context, data.cookie);await page.setViewportSize({ width, height: 900 });await page.goto('/');
+  await session(context, data.cookie);await page.setViewportSize({ width, height: 900 });await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
   const panel = page.getByRole('region', { name: 'Revisão por assunto', exact: true });
   await panel.getByLabel('Cargo para revisão').selectOption('assistente-administrativo');
   await expect(panel.getByRole('row')).toHaveCount(52);await expect(panel.getByRole('link', { name: /Rever aula de/ })).toHaveCount(51);

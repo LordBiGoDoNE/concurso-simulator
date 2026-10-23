@@ -34,7 +34,7 @@ test('prática de aula não substitui gravação real já confirmada no servidor
     await area(page).getByRole('radio').first().check();await expect.poll(() => committed).toBe(true);
     await page.getByText('Ir para outra área', { exact: true }).click();
     await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Aulas', exact: true }).click();
-    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar este assunto' }).click();
+    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar P01', exact: true }).click();
     await expect(page.getByRole('status').filter({ hasText: 'Prática não iniciada.' })).toBeVisible();expect(confirmations).toBe(0);expect(newAttempts).toBe(0);
     expect((await (await page.request.get('/api/v1/attempts/' + view.id)).json()).version).toBe(1);
     await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
@@ -65,7 +65,10 @@ for (const width of [390, 1280]) test(`biblioteca e leitura integral no pacote D
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath(`packaged-reader-${width}.png`), fullPage: true });
   let posts = 0;page.on('request', request => { if (request.method() === 'POST' && request.url().endsWith('/attempts')) posts++; });
-  await page.getByRole('button', { name: 'Praticar este assunto' }).click();
+  await frame.getByRole('link', { name: 'Próximo módulo →', exact: true }).click();
+  await expect(frame.getByRole('heading', { name: 'Matemática 02 - MMC e MDC', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Praticar M01', exact: true })).toHaveAccessibleDescription('Assunto da prática: M01 — Operações com Números Reais');
+  await page.getByRole('button', { name: 'Praticar M01', exact: true }).click();
   await expect(page.getByLabel('Quantidade de Matemática/Raciocínio Lógico')).toHaveValue('1');
   await expect(page.getByLabel('Quantidade de Português')).toHaveValue('0');
   await expect(area(page).getByLabel('Operações com Números Reais', { exact: true })).toBeChecked();expect(posts).toBe(0);

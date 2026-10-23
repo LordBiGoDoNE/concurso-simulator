@@ -39,3 +39,18 @@ recalculado inalterado. O aceite dos grupos2–6 e as atualizações de status e
 registrados posteriormente e serão revalidados pelo mesmo contexto,sem trocar
 somente o digest. Esta revisão de lote não substitui o gate cumulativo final,
 a revisão da implementação React ou autorização específica de merge.
+
+## Resultado da revalidação do escopo completo
+
+Concluída sem achados no head `e341ecb3f572e85937b6cfda11224f53b5441e9f`,
+mesma base. Digest `0a16ba4427f4c00a7fa67a4ecb81b214e9f730205408753a4fc5cee9613bbb45`,
+1.833.179bytes,recalculado independentemente. Sete documentos alterados relidos;
+HTML,JSONs,PNGs e spec preservados por comparação real. Dois relatórios próprios
+foram lidos e conferidos como coerentes;23arquivos locais iguais aos blobs.
+Todos os grupos2–6 explicitamente escolhidos e ainda não implementados nesse head.
+Sem bloqueadores/achados opcionais/recomendados. A atualização final destes dois
+relatórios segue a opinião recebida; somente eles são excluídos do snapshot.
+
+Cota5h/semanal indisponível antes/depois das três fases;tokens indisponíveis,sem
+isolamento garantido ou atribuição de consumo. Intervalos observados constam noJSON,
+sem custo financeiro inferido. O relatório não aprova merge ou implementação futura.

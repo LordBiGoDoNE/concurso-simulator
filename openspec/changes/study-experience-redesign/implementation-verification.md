@@ -31,3 +31,11 @@ Capturas reais de composição/realização/biblioteca/leitor em390px e1280/1440
 Aplicação do operador em8088 permaneceu UP com251 questões; seu PostgreSQL e suas sessões/tentativas não foram usados nos ensaios. Main/stable/Pages, publicação externa, arquivamento e integração não entram nesta verificação. Exportações, sessões sintéticas, diagnósticos e backups ficam ignorados/privados; nenhum dump é publicado.
 
 Os erros iniciais da navegação e sua regressão positiva estão em `docs/study-navigation-regression.md`. Revisões SOL6.1xHigh, triagem, base/head/digests e limites de cota/tokens ficam nos relatórios próprios; gate cumulativo exige contexto independente do revisor do lote. Implementado/verificado, revisado e integrado são estados distintos.
+
+## Regressão após corrigir a revisão independente
+
+Fonte de runtime/testes `fabb593752d769d74292129dec865d4c6699429e`, após correções de cabeçalho reduzido, guarda viva das operações e MIME CSS. A nova execução limpa **passou as oito fases integralmente**, com sete cenários Chromium do pacote. Inclui gravação real confirmada no PostgreSQL com retorno suspenso: visitar aula e pedir nova prática não desmonta a realização, não inicia confirmação/POST extra e permite receber a confirmação da gravação original ao retornar.
+
+Também passaram:174 unitários (três novas regressões de gravação/fila, recarga e conclusão suspensas), build,24 cenários Java/PostgreSQL/OIDC,5 de variações e14 da suíte Chromium geral, desta vez com material offline montado e sem skip. Os oito cenários de layout incluem dois percursos de aula durante PUT suspenso e verificam aplicação real da folha CSS do mock. Capturas posteriores às correções foram conferidas e preservadas separadamente das imagens iniciais. Captura de página inteira pode deslocar elementos fixos no raster; o comportamento de foco/viewport é verificado pelas asserções no navegador.
+
+Não transportar o parecer inicial para este snapshot: a revalidação independente deverá conferir os novos SHAs/digests e os três achados. O gate cumulativo seguirá em contexto próprio. A execução anterior fragmentada permanece somente como histórico; a afirmação de oito fases aprovadas refere-se exclusivamente a fabb593.

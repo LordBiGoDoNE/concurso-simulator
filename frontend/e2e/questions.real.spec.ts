@@ -38,8 +38,12 @@ for (const width of [390, 1280]) {
     await expect(page.locator('article em,article strong')).toHaveCount(0);
     await expect(page.locator('article')).toContainText('(1)/(2)');
     await expect(page.getByRole('radio')).toHaveCount(0);await expect(page.locator('article').getByRole('checkbox')).toHaveCount(0);
+    await expect(page.getByRole('checkbox')).toHaveCount(0);
+    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
     await expect(page.getByRole('checkbox')).toHaveCount(1);
     await expect(page.getByRole('region', { name: 'Simulados', exact: true }).getByRole('checkbox', { name: 'Usar variações numéricas quando disponíveis' })).not.toBeChecked();
+    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Banco de questões', exact: true }).click();
+    await expect(page.getByRole('heading', { name: 'Detalhe da questão' })).toBeVisible();
     await expect(page.locator('[data-correct], .correct, .answer, script[src*="gabarito"]')).toHaveCount(0);
     expect(await page.content()).not.toMatch(/correctAlternativeId|PRIVATE_BROWSER_RESOLUTION_SENTINEL|PRIVATE_DRAFT_SENTINEL/);
     await page.keyboard.press('Tab');await expect(page.getByRole('button', { name: 'Fechar detalhe' })).toBeFocused();

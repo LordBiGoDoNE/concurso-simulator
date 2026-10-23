@@ -21,9 +21,11 @@ for (const width of [390, 1280]) {
     await expect(page).not.toHaveURL(/auth=failed/);
     await expect(page.getByRole('link', { name: 'Entrar com Google' })).toBeVisible();
     await page.keyboard.press('Tab');
-    await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toBeFocused();
-    await page.keyboard.press('Tab');
+    await expect(page.getByRole('link', { name: 'Pular para o conteúdo' })).toBeFocused();
+    await page.keyboard.press('Enter');await expect(page.getByRole('main')).toBeFocused();
+    await page.getByRole('link', { name: 'Entrar com Google' }).focus();
     await expect(page.getByRole('link', { name: 'Entrar com Google' })).toBeFocused();
+    await page.keyboard.press('Tab');await expect(page.getByRole('button', { name: 'Atualizar sessão' })).toBeFocused();
     connected = true;
     await page.getByRole('button', { name: 'Atualizar sessão' }).click();
     await expect(page.getByText('Você está conectado.')).toBeVisible();

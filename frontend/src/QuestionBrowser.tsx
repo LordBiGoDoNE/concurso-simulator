@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { questionCatalog, questionDetail, questionList, type Catalog, type Content, type Detail, type Filters, type QuestionPage } from './question-api';
 
 type Load<T> = { key: string; state: 'loading' | 'error' } | { key: string; state: 'ready'; value: T };
@@ -45,7 +45,7 @@ export default function QuestionBrowser() {
     return () => { active = false; controller.abort(); };
   }, [selected, detailRetry]);
   useEffect(() => { if (selected) heading.current?.focus(); }, [selected]);
-  useEffect(() => { if (focusResults.current && list.state === 'ready' && list.key === queryKey) { resultsHeading.current?.focus(); focusResults.current = false; } }, [list, queryKey]);
+  useLayoutEffect(() => { if (focusResults.current && list.state === 'ready' && list.key === queryKey) { resultsHeading.current?.focus(); focusResults.current = false; } }, [list, queryKey]);
   function change(next: Partial<Filters>) { setSelected(''); setFilters(current => ({ ...current, ...next, page: next.page ?? 0 })); }
   const currentList = list.key === queryKey ? list : { state: 'loading' as const };
   const currentDetail = detail.key === selected ? detail : { state: 'loading' as const };

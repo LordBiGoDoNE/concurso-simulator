@@ -2,7 +2,7 @@
 
 ## Objetivo
 
-Entregar a reformulação completa de uma vez, mantendo `main` e o site atual utilizáveis durante o desenvolvimento. A épica geral é **`epic/application-reformulation`**. As specs permanecem pequenas e revisáveis, mas não são publicadas individualmente em main.
+Entregar a reformulação completa de uma vez, mantendo o site atual utilizável. A épica geral é **`epic/application-reformulation`**. As specs permanecem pequenas e revisáveis, mas não são publicadas individualmente em main. Na transição aprovada em 2026-10-23, `stable` preserva o site estático e `main` recebe a aplicação completa.
 
 **Escopo acordado em 2026-10-20:** a entrega atual será somente local, com Docker.
 O usuário adiou a publicação externa para o futuro. Hospedagem, domínio, TLS e
@@ -11,8 +11,15 @@ proposta futura, se solicitada. Os requisitos de segurança para uma eventual
 publicação permanecem válidos. O gate cumulativo da épica geral e a aprovação
 expressa do PR final para `main` continuam necessários.
 
+**Publicação separada em 2026-10-23:** por solicitação explícita do usuário, a main
+estática anterior foi preservada em `stable`. Pages, produção e previews manuais
+passam a usar o workflow dessa referência; `main` não publica a stack no Pages.
+Infraestrutura e validação operacional em [Pages stable](pages-stable.md), issue #134.
+O gate cumulativo é revalidado após sincronizar essa infraestrutura e antes do #133.
+
 ```text
-main (site atual)
+stable (site estático / GitHub Pages)
+main (destino da aplicação completa, execução local)
 └── epic/application-reformulation
     ├── epic/bootstrap-application-stack
     │   └── task/bootstrap-application-stack/<assunto>
@@ -67,6 +74,6 @@ Essas decisões não serão presumidas apenas por constarem no roadmap.
 
 ## Preview e manutenção
 
-CI somente verifica. Preview estático é manual no Actions, executando o workflow de main e informando a branch como input. Não interrompe o site oficial e não executa a aplicação completa. A aplicação completa pode ser executada localmente conforme [o procedimento Docker](../infra/local-app/README.md). Preview funcional externo depende de proposta futura de deployment.
+CI somente verifica. Preview estático é manual no Actions, executando o workflow de `stable` e informando a branch de material como input; `main` e `pages-store` não são publicáveis. A produção vem de `stable`, com previews armazenados preservados. A aplicação completa pode ser executada localmente conforme [o procedimento Docker](../infra/local-app/README.md). Preview funcional externo depende de proposta futura de deployment.
 
-PRs #6 e #8 já foram integrados em main como preparação do processo, sem substituir as aulas. Não serão revertidos. Daqui em diante, o código da reformulação será integrado exclusivamente na épica geral até a entrega final. Correções independentes do material podem seguir em main por revisão normal.
+PRs #6 e #8 foram integrados em main como preparação do processo e seu histórico permanece preservado em `stable`. O código da reformulação segue pela épica geral até a entrega final. Correções independentes do material seguem em `stable` por revisão normal; a aplicação completa evolui em `main` após integração autorizada.

@@ -14,7 +14,7 @@
 - Ao concluir cada lote, antes de pedir aprovação de merge, executar revisão independente do conjunto somente com `openai/gpt-6.1-sol#xhigh`, inclusive lotes críticos. Por decisão do usuário de 2026-10-15, este também é o modelo de referência para revalidações e gates cumulativos finais. Registrar classificação/justificativa de risco conforme `docs/architecture/spec-review.md`: orienta cobertura e regressões, sem acionar outro modelo automaticamente. Dúvida de risco adota crítico; PR documental não é automaticamente crítico nem automaticamente isento. Examinar diffs de cada PR e combinação, corrigir/revalidar e apresentar relatório único com SHAs/checks/triagem/cota/tokens. Preservar como histórico revisões/comparações de outros modelos já executadas, sem declarar execução nova ou equivalência entre modelos. Revisão de lote não substitui o gate cumulativo final, que exige contexto independente próprio. Aprovação do lote exige lista explícita dos PRs incluídos; não presume aprovação de inferiores pelo topo.
 - Durante a reformulação, a épica geral é `epic/application-reformulation`. Cada spec cria sua branch `epic/<change-name>` a partir da épica geral atualizada; tarefas independentes abrem PRs para a branch da spec e tarefas dependentes seguem o padrão Stacks abaixo. Ao concluir a spec, seu PR é destinado à épica geral, **não a main**.
 - Todas as specs da reformulação ficam fora de main até concluir o pacote e obter aprovação explícita da entrega final. Só então abra PR `epic/application-reformulation` → `main`. Merges de tarefas/specs não autorizam esse merge final. O diff final é cumulativo; os PRs menores são a evidência da revisão por partes.
-- Não congele correções independentes do site atual: podem continuar em main por PR aprovado, sem trazer a aplicação incompleta. Atualize a épica geral com main quando necessário, preservando o trabalho em andamento.
+- Não congele correções independentes do site atual: desde a decisão de 2026-10-23, seguem em `stable` por PR aprovado, sem trazer a stack para o site estático. Atualize a épica geral com main quando necessário, preservando o trabalho em andamento.
 - Nunca faça merge, feche PRs sem substituição documentada, arquive OpenSpec ou relaxe regras de deploy sem autorização.
 - Preserve branches/commits anteriores ao reorganizar trabalho. Não apague implementação existente.
 - Consulte `docs/application-reformulation.md` para o roadmap, critérios de entrega e decisões ainda abertas. Uma etapa do roadmap não autoriza implementar uma spec sem proposta e aprovação.
@@ -60,8 +60,8 @@
 ## CI e preview
 
 - CI verifica builds, testes e regressão; não publica previews.
-- Produção estática continua automática em push para `main`.
-- Preview é manual: Actions → Publish GitHub Pages → Run workflow, executar o workflow de `main` e informar a branch desejada no campo `branch`.
-- A referência do workflow é `main`, não a branch da tarefa: preserva as regras do ambiente github-pages. Antes do merge dessa automação, use a branch autorizada `infra/spec-task-workflow` como referência do workflow.
+- Desde a decisão do usuário de 2026-10-23, `stable` preserva o site estático anterior e publica automaticamente em push. `main` recebe a stack completa e não publica no Pages.
+- Preview estático é manual: Actions → Publish GitHub Pages → Run workflow, executar o workflow de `stable` e informar a branch de material desejada no campo `branch`. `main` e `pages-store` não são entradas publicáveis.
+- A referência do workflow e a única branch autorizada no ambiente `github-pages` são `stable`; previews usam o material de `stable` como produção. A cópia do workflow em `main` serve à descoberta pelo Actions e não executa publicação nessa referência.
 - Previews atuais são do material estático; não executam Java/PostgreSQL nem publicam a aplicação React. Deployment da aplicação completa terá spec própria.
 - Nunca publicar segredos, arquivos `.env` ou dados privados. Preserve as aulas e os previews já armazenados.

@@ -15,3 +15,7 @@ Nenhum desses itens está declarado resolvido neste commit. Merges bloqueados at
 Revisor conferiu cada diff/combinação e arquivos relacionados, requisitos/arquitetura, identidade/contexto privado, composição, fila/idempotência, resultado/histórico/revisão, aulas/cargos/URLs/recursos/sandbox e capturas/foco/CSS. IDs51 compatíveis com manifesto;51 fontes sem scripts/517 referências locais existentes. Leu verificações documentais após análise semântica, sem certificar sua execução.
 
 Não executou testes/build/rede/DB nem editou/delegou. Cota5h/semanal e tokens indisponíveis antes/depois; comparação mínima validada, sem delta atribuível ou isolamento garantido. Nenhuma comparação de modelos. Revisão do lote não substitui gate cumulativo em outro contexto nem aprovação do usuário.
+
+## Correções preparadas para revalidação
+
+O coordenador implementou os três itens (1c2b08d/49e8782, teste real no fabb593) e concluiu174 unitários,14 Chromium gerais,24 integrados OIDC/PG,5 de variações e nova execução Docker limpa1–8 com7 cenários de navegador. Cabeçalho reduzido e MIME/estilos conferidos nas novas capturas. Essa triagem não é conclusão independente: os itens aguardam revalidação de todos os novos diffs/combinação. O snapshot inicial e o resultado3 achados permanecem históricos.

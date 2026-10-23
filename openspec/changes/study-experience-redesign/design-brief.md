@@ -3,7 +3,8 @@
 ## Objetivo
 
 Tornar evidente onde estudar, como compor um simulado e como responder uma questão.
-As três telas formam um percurso com uma ação principal em cada etapa.
+As três telas iniciais formam um percurso com uma ação principal em cada etapa.
+A direção foi aprovada pelo usuário, que pediu a inclusão das aulas nesta rodada.
 
 ## Direção proposta
 
@@ -30,6 +31,21 @@ Contrato visual em `design/prototypes/study-experience/DESIGN.md`.
 - Alternativas, limpeza, mapa e confirmação de sair/concluir funcionam no protótipo.
 - A conclusão mostra somente um encerramento demonstrativo, sem pontuação inventada.
 
+## Extensão solicitada: aulas
+
+- **Biblioteca:** visão das cinco disciplinas e51 aulas, busca sem distinção de acentos,
+  filtro por disciplina, resultados e estado vazio, sem progresso pessoal inventado.
+- **Leitura:** títulos e trechos públicos existentes em um leitor com índice da disciplina,
+  anterior/próxima e abertura do material completo. A prévia é identificada e não promete
+  reproduzir figuras, tabelas, fórmulas ou exercícios omitidos da extração textual.
+- **Teoria → prática:** preenche cargo compatível quando específico, um assunto e uma
+  questão na composição demonstrativa; não cria tentativa ou resposta no servidor.
+- Menu Aulas e ação da página inicial agora abrem a biblioteca do próprio protótipo.
+  Links para conteúdo completo usam somente o mapa versionado de páginas de teoria.
+
+`lessons.json` mantém caminho e SHA-256 de cada uma das51 fontes públicas. Os trechos
+são derivados para desenho da leitura, não nova aprovação editorial ou reescrita do acervo.
+
 O protótipo não compõe questões reais segundo os filtros. Repete três exemplos para
 avaliar interação, não persiste nem chama serviços. A seleção inicial da tela isolada
 de realização contém três escolhas fictícias para mostrar estados do mapa.
@@ -45,7 +61,7 @@ de realização contém três escolhas fictícias para mostrar estados do mapa.
 
 ## Avaliação visual
 
-Rever as seis capturas reais exportadas pelo Chromium do OpenDesign: três telas em
+Rever as dez capturas reais exportadas pelo Chromium do OpenDesign: cinco estados em
 1440px e em 390px. O raster acompanha o DPI do Windows e pode ser maior que a largura
 CSS solicitada. Conferir leitura, hierarquia, quebra de linhas, opções de resposta,
 controles de toque e comportamento do resumo. Lint visual e captura não equivalem
@@ -53,6 +69,6 @@ a auditoria WCAG, teste integrado, revisão independente de lote ou aceite do us
 
 ## Decisões aguardando o usuário
 
-- A direção visual e o percurso das três telas atendem à expectativa?
+- Direção das três telas iniciais aprovada. A biblioteca e a leitura atendem à expectativa?
 - Há necessidade de outra composição visual antes de detalhar os demais espaços?
 - Após aprovação, quais grupos completos de implementação entram no primeiro lote?

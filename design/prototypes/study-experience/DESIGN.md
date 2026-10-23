@@ -1,7 +1,8 @@
 # Concurso Simulator — direção visual proposta
 
 Estudo em OpenDesign 0.21.1 a partir de `modern-minimal`; identidade própria do projeto.
-O usuário ainda avaliará a direção. Este documento não aprova implementação React.
+A direção das três telas iniciais foi aprovada; a extensão de aulas aguarda avaliação.
+Este documento não aprova implementação React.
 
 ## Paleta
 
@@ -30,6 +31,9 @@ cores literais dispersas; as cores de estado não indicam acerto durante a reali
 - No desktop, navegação lateral; na realização, cabeçalho reduzido.
 - No celular, conteúdo em uma coluna, mapa com cinco colunas e ações de toque maiores.
 - Resumo lateral na composição desktop; total e ação principal fixos no celular.
+- Biblioteca com cartões de disciplinas, busca e lista de aulas; leitor em superfície
+  branca, texto espaçado e índice lateral, passando a uma coluna no celular.
+- Trechos da leitura são identificados como prévia; acesso ao original permanece claro.
 
 ## Linguagem e confiança
 

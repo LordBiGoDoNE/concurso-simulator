@@ -4,13 +4,15 @@
 
 Entrega local concluída em main, com acervo no PostgreSQL da aplicação. O usuário
 solicitou melhorar a experiência após testar a interface. A fase atual cria somente
-um protótipo independente no OpenDesign, sem integrar componentes React.
+um protótipo independente no OpenDesign, sem integrar componentes React. Após aprovar
+a direção inicial, o usuário solicitou incluir a biblioteca e a leitura das aulas.
 
 ## Goals / Non-Goals
 
 Objetivos: separar início, composição e realização; tornar ações e hierarquia claras;
 conferir desktop/celular e recolher decisão visual. Não implementar novas regras,
-resultado, histórico, painel, navegação das demais áreas, autenticação ou backend.
+resultado, histórico, painel, autenticação ou backend. Aulas entram como extensão
+visual, mantendo conteúdo original e URLs existentes.
 
 ## Decisions
 
@@ -21,6 +23,10 @@ resultado, histórico, painel, navegação das demais áreas, autenticação ou 
   público; os exemplos da realização são fictícios e marcados como demonstrativos.
 - Manter limites de 1–100 questões, cargo, assuntos opcionais, variações opcionais,
   limpeza de resposta, navegação e confirmação; não inventar progresso permanente.
+- Biblioteca com busca e filtros locais; leitor com trechos textuais identificados,
+  índice de aulas e ligação com a composição demonstrativa por assunto.
+- Snapshots de leitura derivados das51 fontes públicas, com hashes. Nenhum HTML
+  original é injetado: títulos, parágrafos e listas são escapados no render.
 
 ## Risks / Trade-offs
 
@@ -38,5 +44,5 @@ Manter PR atual em rascunho, sem merges, arquivamento, deploy ou mudança de dad
 
 ## Open Questions
 
-Direção visual, ajustes do percurso e escopo do primeiro lote de integração ainda
-dependem da avaliação do usuário. As demais áreas não recebem aprovação implícita.
+Direção das três telas iniciais aprovada. Aceite das aulas e escopo do primeiro lote
+de integração ainda dependem do usuário. Não há aprovação implícita das demais áreas.

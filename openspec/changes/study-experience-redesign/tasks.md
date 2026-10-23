@@ -8,7 +8,9 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 - [x] 1.1 Mapear navegação atual, contratos visíveis e preservações; registrar proposta e direção.
 - [x] 1.2 Preparar início, configuração e realização interligados no OpenDesign.
 - [x] 1.3 Renderizar desktop/celular e conferir visualmente; organizar tokens e registrar limites.
-- [ ] 1.4 Apresentar o estudo, incorporar o feedback e registrar a decisão visual do usuário.
+- [x] 1.4 Apresentar o estudo e registrar o aceite visual das três telas iniciais; feedback solicitou aulas.
+- [x] 1.5 Acrescentar biblioteca e prévia de leitura das51 aulas, busca/filtros, navegação e atalho de prática; conferir desktop/celular e links.
+- [ ] 1.6 Recolher a decisão visual do usuário sobre a extensão de aulas e incorporar ajustes.
 
 ## 2. Navegação e início — proposta de lote futuro, não autorizado
 
@@ -31,9 +33,19 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 - [ ] 4.3 Verificar teclado/foco, navegação, estados de erro e regressões de resultado.
 - [ ] 4.4 Revisão independente SOL 6.1 xHigh e autorização própria dos PRs.
 
-## 5. Combinação e aceite — depende de 2–4, não autorizado
+## 5. Aulas — depende de 2, não autorizado
 
-- [ ] 5.1 Conferir fluxos de visitante/conta e regressão das áreas ainda não redesenhadas.
-- [ ] 5.2 Validar a combinação desktop/celular, aulas e acervo em ambiente isolado.
-- [ ] 5.3 Consolidar evidências e executar gate cumulativo independente em contexto próprio.
-- [ ] 5.4 Solicitar aceite e integração específica; atualizar a issue após cada mudança de PR.
+- [ ] 5.1 Integrar a biblioteca e busca/filtros com o mapa público versionado de51 aulas.
+- [ ] 5.2 Integrar a leitura aprovada e navegação preservando o conteúdo completo, fórmulas/figuras e URLs; preservar tentativa ativa ao acionar prática.
+- [ ] 5.3 Verificar teclado/foco, estado vazio, responsividade, conteúdo e links; atualizar documentação.
+- [ ] 5.4 Revisão independente SOL 6.1 xHigh e autorização própria dos PRs.
+
+## 6. Combinação e aceite — depende de 2–5, não autorizado
+
+- [ ] 6.1 Conferir fluxos de visitante/conta e regressão das áreas ainda não redesenhadas.
+- [ ] 6.2 Validar a combinação desktop/celular, aulas e acervo em ambiente isolado.
+- [ ] 6.3 Consolidar evidências e executar gate cumulativo independente em contexto próprio.
+- [ ] 6.4 Solicitar aceite e integração específica; atualizar a issue após cada mudança de PR.
+
+Os grupos futuros foram atualizados para incluir aulas a pedido do usuário. Nenhum
+grupo de implementação foi escolhido ou iniciado; esta numeração é planejamento.

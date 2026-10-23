@@ -56,3 +56,37 @@ analytics ou armazenamento persistente. Não deve representar aceite da UI de pr
 - **WHEN** o usuário configura e realiza um exemplo
 - **THEN** nenhuma tentativa, resposta ou decisão editorial é escrita na aplicação
 - **AND** os exemplos não representam seleção real do acervo conforme os filtros
+
+### Requirement: Biblioteca das aulas existentes
+
+A biblioteca SHALL apresentar as51 aulas do mapa público versionado, agrupadas nas
+cinco disciplinas, com busca por assunto/disciplina e filtros locais combináveis.
+
+#### Scenario: Buscar um assunto sem acento
+
+- **WHEN** o usuário procura "interpretacao" na biblioteca
+- **THEN** encontra a aula de Interpretação de Textos
+- **AND** os resultados respeitam a disciplina selecionada
+
+#### Scenario: Busca sem correspondência
+
+- **WHEN** busca e filtro não encontram aula
+- **THEN** a interface apresenta estado vazio e permite limpar busca/filtros
+
+### Requirement: Leitura e ligação com a prática
+
+O estudo visual SHALL incluir uma prévia textual identificada, índice da disciplina,
+navegação entre aulas e acesso ao material completo por seu caminho de teoria conhecido.
+Não deve inventar progresso pessoal nem substituir silenciosamente o conteúdo original.
+
+#### Scenario: Ler a aula completa
+
+- **WHEN** o usuário abre uma prévia e escolhe o material completo
+- **THEN** acessa a página pública de teoria correspondente ao mapa versionado
+- **AND** figuras, fórmulas e exercícios permanecem no material original
+
+#### Scenario: Levar um assunto para a composição
+
+- **WHEN** o usuário escolhe praticar um assunto da aula
+- **THEN** a composição demonstrativa recebe a disciplina, assunto e uma questão
+- **AND** nenhuma tentativa é criada no servidor antes de uma futura integração aprovada

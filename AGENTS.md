@@ -15,8 +15,8 @@
 ## CI e preview
 
 - CI verifica builds, testes e regressão; não publica previews.
-- Produção estática continua automática em push para `main`.
-- Preview é manual: Actions → Publish GitHub Pages → Run workflow, executar o workflow de `main` e informar a branch desejada no campo `branch`.
-- A referência do workflow é `main`, não a branch da tarefa: preserva as regras do ambiente github-pages. Antes do merge dessa automação, use a branch autorizada `infra/spec-task-workflow` como referência do workflow.
+- Desde a decisão do usuário de 2026-10-23, `stable` preserva o site estático anterior e publica automaticamente em push. `main` recebe a stack completa e não publica no Pages.
+- Preview estático é manual: Actions → Publish GitHub Pages → Run workflow, executar o workflow de `stable` e informar a branch de material desejada no campo `branch`. `main` e `pages-store` não são entradas publicáveis.
+- A referência do workflow e a única branch autorizada no ambiente `github-pages` são `stable`; previews usam o material de `stable` como produção. A cópia do workflow em `main` serve à descoberta pelo Actions e não executa publicação nessa referência.
 - Previews atuais são do material estático; não executam Java/PostgreSQL nem publicam a aplicação React. Deployment da aplicação completa terá spec própria.
 - Nunca publicar segredos, arquivos `.env` ou dados privados. Preserve as aulas e os previews já armazenados.

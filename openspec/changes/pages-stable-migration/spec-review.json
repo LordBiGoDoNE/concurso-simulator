@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "pages-stable-migration",
+  "review_scope": "Complete infrastructure change in two identical PRs; not a partial product-spec review or final application gate.",
+  "pr": 135,
+  "related_prs": [
+    135,
+    136
+  ],
+  "base_sha": "f5f30d64e0c968c4530504929c6d0d413f13eefc",
+  "reviewed_head_sha": "bc22cb94ac57c812525360e5df17e4a216dba0f4",
+  "diff_sha256": "c33510cbec5ef09716edc2bd0a95385cce70254efeaa1e31cb78487b16264c71",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/pages_stable_infra_review",
+    "independent_context": true
+  },
+  "reviewed_at": "2026-10-23T03:38:40.086635+00:00",
+  "risk": "critical",
+  "risk_justification": "Publication triggers, credentials, preview input trust, OIDC/Pages permissions and environment branch authorization.",
+  "coverage": {
+    "requirements": "User decision recorded in docs/pages-stable.md confronted with complete seven-file diff; stable preserves static site, main has no Pages publication, previews retained.",
+    "architecture": "No backend or business persistence changes; explicit publisher/material/production sources and trusted stable tools preserve local/CI/Docker build consumers.",
+    "integration": "Both PRs share exact base/head; complete diff and both corrective deltas examined. Final application integration remains separately gated after new main/base/head.",
+    "security": "Stable-only workflow ref, denied main/pages-store input, no persisted checkout credentials, scoped gh helper, trusted tools and lstat validation of public/stored preview inputs examined.",
+    "persistence": "pages-store archives and serial publication preserved; no business DB/schema/data changes.",
+    "tests": "Eleven regressions read, including legacy material and harmless outside sentinels/FIFO; reviewer executed none. Windows six passed/five platform skips, Linux all eleven passed.",
+    "maintenance": "README/AGENTS/runbook aligned to stable, static source unchanged, original main commit preserved, public URL/previews preserved by design."
+  },
+  "limitations": [
+    "Reviewer used read-only code/commit/diff/hash queries; no tests/build/scripts/network/DB/publication/writes/delegation.",
+    "Remote Pages/environment configuration, helper operation and deployments not verified by reviewer; coordinator will execute and record those separately.",
+    "Filesystem validation assumes stable checkouts during assembly; no guarantee against another local process racing filesystem changes.",
+    "All quota windows unavailable before/after every phase, token categories unavailable, no isolation/consumption attribution. Coordinator operational updates occurred during waiting; initial after observation includes coordinator triage delay."
+  ],
+  "verification": [
+    {
+      "command": "Canonical Git binary diff/hash over f5f30d6...bc22cb9",
+      "result": "Seven files,327 additions/49 removals,29975 canonical bytes; digest independently recalculated.",
+      "executed_by": "independent reviewer"
+    },
+    {
+      "command": "python -B -m unittest discover -s scripts/tests -p test_build_pages.py -v",
+      "result": "Linux11/11 passed; Windows6 passed/5 skips due unavailable symlink privilege/POSIX FIFO.",
+      "executed_by": "coordinator and GitHub Actions, not reviewer"
+    },
+    {
+      "command": "Local stable production and actual old-material preview assembly/link checks",
+      "result": "108 production pages/1757 refs; old revision eecda47 preview plus production216 pages/3622 refs passed, without executing old preview scripts.",
+      "executed_by": "coordinator, not reviewer"
+    },
+    {
+      "command": "git ls-tree -rz public source comparison",
+      "result": "Unicode-safe public material paths/modes/blobs unchanged from original main; exact count in coordinator private journal.",
+      "executed_by": "coordinator, not reviewer"
+    }
+  ],
+  "findings": [
+    {
+      "id": "PAGES-B1",
+      "severity": "blocking",
+      "location": ".github/workflows/pages.yml",
+      "evidence": "Initial workflow executed scripts from the selected preview branch with a new argument unsupported by old revisions.",
+      "reference": "Approved stable-only publication decision, AGENTS privacy rule and docs/pages-stable.md",
+      "impact": "Existing material previews failed before assembly.",
+      "suggestion": "Use stable publisher/tools with separate material/production sources.",
+      "disposition": "fixed",
+      "resolution": "Corrected in 4cb37c5f80d401f739aa1745c2a356e3147a2248; independently confirmed fixed in complete second revalidation of bc22cb9, no new findings."
+    },
+    {
+      "id": "PAGES-R1",
+      "severity": "recommended",
+      "location": "README.md",
+      "evidence": "Operational publication instructions still pointed to main and a temporary infra reference.",
+      "reference": "Approved stable-only publication decision, AGENTS privacy rule and docs/pages-stable.md",
+      "impact": "Operator following primary instructions would get skipped/denied publication.",
+      "suggestion": "Align active README with stable publication and preserve local legacy package command.",
+      "disposition": "fixed",
+      "resolution": "Corrected in 4cb37c5f80d401f739aa1745c2a356e3147a2248; independently confirmed fixed in complete second revalidation of bc22cb9, no new findings."
+    },
+    {
+      "id": "PAGES-B2",
+      "severity": "blocking",
+      "location": "scripts/build_pages.py",
+      "evidence": "Copy helpers followed symlinks and could read outside the public material checkout.",
+      "reference": "Approved stable-only publication decision, AGENTS privacy rule and docs/pages-stable.md",
+      "impact": "Runner files could enter pages-store/public artifacts through a preview symlink.",
+      "suggestion": "Reject symlinks/reparse/special files in public inputs and stored previews before copies, with harmless sentinel regressions.",
+      "disposition": "fixed",
+      "resolution": "Corrected in bc22cb94ac57c812525360e5df17e4a216dba0f4; independently confirmed fixed in complete second revalidation of bc22cb9, no new findings."
+    }
+  ],
+  "triage_complete": true,
+  "review_phases": [
+    {
+      "phase": "initial",
+      "observed_interval_seconds": 403,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied",
+      "isolation_declared": false
+    },
+    {
+      "phase": "revalidation-1",
+      "observed_interval_seconds": 238,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied",
+      "isolation_declared": false
+    },
+    {
+      "phase": "revalidation-2",
+      "observed_interval_seconds": 178,
+      "quota_5h": "unavailable-before-and-after",
+      "quota_weekly": "unavailable-before-and-after",
+      "tokens": "not supplied",
+      "isolation_declared": false
+    }
+  ],
+  "operational_status": "Code/review complete; actual environment/Pages migration, deployments and merges recorded separately in issue134. No product publication or archive approval inferred."
+}

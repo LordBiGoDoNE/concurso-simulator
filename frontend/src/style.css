@@ -66,6 +66,8 @@ h2 { font-size: 1.5rem; } h3 { font-size: 1.15rem; }
 .brand small { display: block; font-size: .72rem; font-weight: 400; margin-top: 5px; }
 .brand-symbol { display: grid; place-items: center; background: var(--ink); color: white; width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0; }
 .sidebar nav { display: grid; gap: 6px; }
+.study-menu > summary { display: none; }.attempt-session-note { margin: 14px 0; font-size: .75rem; color: var(--muted); }.attempt-session-note > summary { cursor: pointer; }
+.exam-mode { display: block; }.exam-mode .sidebar { flex-direction: row; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 28px; border-bottom: 1px solid var(--line); border-right: 0; }.exam-mode .brand { font-size: .85rem; }.exam-mode .brand small, .exam-mode .sidebar-foot, .exam-mode .topbar { display: none; }.exam-mode .workspace { max-width: 1200px; margin: auto; padding: 0 28px; }.exam-mode .study-menu { position: relative; }.exam-mode .study-menu > summary { display: list-item; cursor: pointer; font-size: .8rem; padding: 10px 0; }.exam-mode .study-menu nav { position: absolute; z-index: 8; top: 100%; right: 0; min-width: 210px; padding: 10px; border: 1px solid var(--line); border-radius: 10px; box-shadow: 0 8px 24px #15283b18; background: white; }.exam-mode .identity-panel section { margin-top: 10px; }.exam-mode .attempt-session-note { margin: 12px 0; }
 .sidebar nav button { text-align: left; color: var(--muted); background: transparent; }
 .sidebar nav button[aria-current="page"], .sidebar nav button:hover { color: var(--blue); background: var(--blue-soft); }
 .sidebar-foot { margin-top: auto; font-size: .8rem; overflow-wrap: anywhere; }

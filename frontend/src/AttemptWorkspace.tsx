@@ -8,7 +8,7 @@ import SubjectReviewPanel from './SubjectReviewPanel';
 
 import type { DirectedPractice } from './directed-practice';
 
-export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true }: { reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
+export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true, onRunActiveChange }: { onRunActiveChange?: (active: boolean) => void; reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
   const [directed, setDirected] = useState<DirectedPractice | null>(null); const [composerVersion, setComposerVersion] = useState(0); const [composing, setComposing] = useState(false);
   const [selected, setSelected] = useState<AttemptView | null>(null); const [loading, setLoading] = useState(false); const [message, setMessage] = useState('');
   const [historyRefresh, setHistoryRefresh] = useState(0); const generation = useRef(0); const request = useRef<AbortController | null>(null);
@@ -26,7 +26,9 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
   useEffect(() => () => { generation.current++; request.current?.abort(); }, []);
   useEffect(() => { onGuestActive(!identity.connected && selected !== null); }, [identity.connected, selected?.id, onGuestActive]);
   useEffect(() => () => onGuestActive(false), [onGuestActive]);
-  const finished = useCallback(() => setHistoryRefresh(v => v + 1), []);
+  useLayoutEffect(() => { onRunActiveChange?.(selected !== null && selected.finishedAt === null); }, [selected?.id, selected?.finishedAt, onRunActiveChange]);
+  useLayoutEffect(() => () => onRunActiveChange?.(false), [onRunActiveChange]);
+  const finished = useCallback(() => { setHistoryRefresh(v => v + 1); onRunActiveChange?.(false); }, [onRunActiveChange]);
   function clearDirected() { if (directed) { setDirected(null); setComposerVersion(v => v + 1); } }
   function practice(selection: DirectedPractice) {
     if (!reviewActive || composing || loading || access !== 'ready') return;
@@ -45,7 +47,7 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
     finally { if (current === generation.current && !controller.signal.aborted) setLoading(false); }
   }
   return <section aria-labelledby="mock-exam-title"><h2 id="mock-exam-title">Simulados</h2>
-    <p>{identity.connected ? 'Respostas confirmadas ficam salvas na sua conta para retomar em outra sessão.' : 'Modo visitante: tentativa temporária por até 24 horas, acessível somente nesta sessão válida. Não há histórico permanente; entrar na conta não transfere esta tentativa.'}</p>
+    <details className="attempt-session-note" open={!selected}><summary>Sobre esta tentativa</summary><p>{identity.connected ? 'Respostas confirmadas ficam salvas na sua conta para retomar em outra sessão.' : 'Modo visitante: tentativa temporária por até 24 horas, acessível somente nesta sessão válida. Não há histórico permanente; entrar na conta não transfere esta tentativa.'}</p></details>
     {message && <p role="alert">{message}</p>}
     {loading ? <p role="status">Retomando tentativa…</p> : selected ? <>
       {access === 'checking' && <p role="status">Conferindo acesso à tentativa…</p>}

@@ -37,6 +37,12 @@ test('resultado independe de novo download do renderer depois da conclusao', asy
 for (const width of [390, 1280]) test(`visitante realiza por teclado, confirma e revisa sem vazamento antecipado em ${width}px`, async ({ page }, info) => {
   await page.setViewportSize({ width, height: 850 });await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const area = workspace(page);const view = await start(page);
   await expect(area.getByRole('heading', { name: 'Questão 1 de 2' })).toBeFocused();
+  const navigation = page.getByRole('navigation', { name: 'Navegação principal' });
+  await expect(navigation.getByRole('button', { name: 'Início', exact: true })).toBeHidden();
+  await page.getByText('Ir para outra área', { exact: true }).click();
+  await expect(navigation.getByRole('button', { name: 'Aulas', exact: true })).toBeVisible();
+  await page.getByText('Ir para outra área', { exact: true }).click();
+  await expect(navigation.getByRole('button', { name: 'Aulas', exact: true })).toBeHidden();
   const radio = area.getByRole('radio').first();await radio.focus();await radio.press('Space');await expect(area.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
   const saved = await page.request.get(`${api}/api/v1/attempts/${view.id}`);activeContract(await saved.json());
   await area.getByRole('button', { name: 'Próxima questão' }).press('Enter');await expect(area.getByRole('heading', { name: 'Questão 2 de 2' })).toBeFocused();

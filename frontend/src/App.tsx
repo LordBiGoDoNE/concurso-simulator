@@ -14,6 +14,7 @@ const areaNames: Record<Area, string> = { home: 'Início', attempts: 'Simulados'
 
 export default function App() {
   const [area, setArea] = useState<Area>('home');
+  const [runActive, setRunActive] = useState(false);
   const pageHeading = useRef<HTMLHeadingElement>(null); const navigated = useRef(false);
   function navigate(next: Area) { if (next === area) return; navigated.current = true; setArea(next); }
   useEffect(() => { if (navigated.current) { navigated.current = false; pageHeading.current?.focus(); } }, [area]);
@@ -46,10 +47,10 @@ export default function App() {
   }, [attempt]);
 
   return (
-    <div className="app-layout">
+    <div className={`app-layout${area === 'attempts' && runActive && !checking ? ' exam-mode' : ''}`}>
       <a className="skip-link" href="#study-content">Pular para o conteúdo</a>
       <aside className="sidebar"><div className="brand"><span className="brand-symbol" aria-hidden="true">CS</span><span>Concurso Simulator<small>Seu espaço de estudo</small></span></div>
-        <nav aria-label="Navegação principal">{(Object.keys(areaNames) as Area[]).map(item => <button key={item} aria-current={area === item ? 'page' : undefined} onClick={() => navigate(item)}>{areaNames[item]}</button>)}</nav>
+        <details className="study-menu" open={!(area === 'attempts' && runActive && !checking)}><summary>Ir para outra área</summary><nav aria-label="Navegação principal">{(Object.keys(areaNames) as Area[]).map(item => <button key={item} aria-current={area === item ? 'page' : undefined} onClick={() => navigate(item)}>{areaNames[item]}</button>)}</nav></details>
         <div className="sidebar-foot"><p>Aprenda no seu ritmo.<br /><small>Aulas, prática e revisão.</small></p></div>
       </aside>
       <div className="workspace"><header className="topbar"><span>Seu espaço de estudo <span aria-hidden="true">/</span> <strong>{areaNames[area]}</strong></span><span className="identity-pill">{checking ? 'Conferindo sessão' : identity?.connected ? 'Conta conectada' : 'Acesso visitante'}</span></header>
@@ -61,7 +62,7 @@ export default function App() {
       </div>
       {privateNotice && <p role="status">{privateNotice}</p>}
       {checking && area === 'attempts' && <p role="status">Conferindo acesso aos simulados…</p>}
-      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} />}</div>
+      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} />}</div>
       {area === 'lessons' && <section aria-labelledby="lessons-title"><p className="eyebrow">Aprenda no seu ritmo</p><h1 id="lessons-title">Suas aulas, em um só lugar</h1><p>O material completo de todas as disciplinas está disponível para estudar.</p><a className="material-link" href={materialUrl}>Abrir biblioteca completa</a></section>}
       <div hidden={area !== 'questions'}><QuestionBrowser /></div>
       <footer className="availability">

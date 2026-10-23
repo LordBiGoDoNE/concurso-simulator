@@ -24,9 +24,9 @@ Estados de preparação não equivalem à aprovação visual, revisão ou integr
 
 ## 3. Composição — depende de 2, lote autorizado pelo usuário
 
-- [ ] 3.1 Integrar a composição visual aprovada aos contratos existentes.
-- [ ] 3.2 Preservar filtros, prática dirigida, insuficiência, retry e tentativa ativa.
-- [ ] 3.3 Verificar comportamento/responsividade e atualizar documentação.
+- [x] 3.1 Integrar a composição visual aprovada aos contratos existentes.
+- [x] 3.2 Preservar filtros, prática dirigida, insuficiência, retry e tentativa ativa.
+- [x] 3.3 Verificar comportamento/responsividade e atualizar documentação.
 - [ ] 3.4 Revisão independente SOL 6.1 xHigh e autorização própria dos PRs.
 
 ## 4. Realização — depende de 2 e 3, lote autorizado pelo usuário

@@ -2,13 +2,13 @@ name: Publish GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [stable]
   workflow_dispatch:
     inputs:
       branch:
-        description: 'Branch a publicar (main = produção; demais = preview estático)'
+        description: 'Material a publicar (stable = produção; main não é publicável)'
         required: true
-        default: main
+        default: stable
         type: string
 
 permissions:
@@ -22,6 +22,7 @@ concurrency:
 
 jobs:
   publish:
+    if: github.ref == 'refs/heads/stable'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
@@ -29,11 +30,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: ${{ inputs.branch || 'main' }}
+          ref: ${{ inputs.branch || 'stable' }}
       - name: Validate requested branch
         env:
-          BRANCH: ${{ inputs.branch || 'main' }}
+          BRANCH: ${{ inputs.branch || 'stable' }}
         run: |
+          test "$BRANCH" != main
           test "$BRANCH" != pages-store
           git check-ref-format "refs/heads/$BRANCH"
           git ls-remote --exit-code --heads origin "refs/heads/$BRANCH"
@@ -55,18 +57,18 @@ jobs:
             mkdir -p "$RUNNER_TEMP/stored"
           fi
       - name: Read approved production version
-        if: (inputs.branch || 'main') != 'main'
+        if: (inputs.branch || 'stable') != 'stable'
         uses: actions/checkout@v4
         with:
-          ref: main
+          ref: stable
           path: approved
       - name: Prepare production and preview
         env:
-          BRANCH: ${{ inputs.branch || 'main' }}
-        run: python3 scripts/build_pages.py --branch "$BRANCH" --stored "$RUNNER_TEMP/stored" --output "$RUNNER_TEMP/site"
+          BRANCH: ${{ inputs.branch || 'stable' }}
+        run: python3 scripts/build_pages.py --branch "$BRANCH" --production-branch stable --stored "$RUNNER_TEMP/stored" --output "$RUNNER_TEMP/site"
       - name: Save published versions
         env:
-          BRANCH: ${{ inputs.branch || 'main' }}
+          BRANCH: ${{ inputs.branch || 'stable' }}
         run: |
           cd "$RUNNER_TEMP/site"
           git init -b pages-store

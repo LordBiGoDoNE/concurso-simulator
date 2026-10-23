@@ -38,20 +38,18 @@ def preview_slug(branch):
     return f"{name}-{digest}"
 
 
-def main():
-    parser = argparse.ArgumentParser()
-    parser.add_argument("--branch", required=True)
-    parser.add_argument("--stored", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
-    args = parser.parse_args()
-    root = Path(__file__).resolve().parents[1]
-    stored_previews = args.stored / "previews"
+def build_site(root, stored, output, branch, production_branch="main"):
+    if production_branch not in ("main", "stable"):
+        raise ValueError("Unsupported production branch")
+    if branch == "pages-store" or (production_branch == "stable" and branch == "main"):
+        raise ValueError("This branch cannot be published")
+    stored_previews = stored / "previews"
     if stored_previews.exists():
-        shutil.copytree(stored_previews, args.output / "previews")
-    copy_site(root if args.branch == "main" else root / "approved", args.output)
-    if args.branch != "main":
-        slug = preview_slug(args.branch)
-        target = args.output / "previews" / slug
+        shutil.copytree(stored_previews, output / "previews")
+    copy_site(root if branch == production_branch else root / "approved", output)
+    if branch != production_branch:
+        slug = preview_slug(branch)
+        target = output / "previews" / slug
         if target.exists():
             shutil.rmtree(target)
         copy_site(root, target)
@@ -65,6 +63,18 @@ def main():
         if summary:
             with open(summary, "a", encoding="utf-8") as file:
                 file.write(f"## Preview\n\nhttps://lordbigodone.github.io/concurso-simulator/{path}\n")
+
+
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--branch", required=True)
+    # Default retained for local/CI callers assembling a package, not deploying it.
+    parser.add_argument("--production-branch", choices=("main", "stable"), default="main")
+    parser.add_argument("--stored", type=Path, required=True)
+    parser.add_argument("--output", type=Path, required=True)
+    args = parser.parse_args()
+    build_site(Path(__file__).resolve().parents[1], args.stored, args.output,
+               args.branch, args.production_branch)
 
 
 if __name__ == "__main__":

@@ -11,6 +11,14 @@ test.beforeEach(async ({ page }) => {
     if (path.endsWith('/status')) return route.fulfill({ json: { status: 'UP' } });
     if (path.endsWith('/auth/config')) return route.fulfill({ json: { googleEnabled: false } });
     if (path.endsWith('/me')) return route.fulfill({ status: 401, json: { error: 'unauthenticated' } });
+    if(path.endsWith('/csrf'))return route.fulfill({json:{token:'test',headerName:'X-CSRF-TOKEN'}});
+    if(path.includes('/lesson-practices')) {
+      const body=route.request().method()==='POST'?route.request().postDataJSON():{topicId:'P01',roleId:view.roleId};
+      const topicId=body.topicId;const disciplineId=topicId.startsWith('M')?'matematica-raciocinio':'portugues';
+      const practice={...view,id:'90000000-0000-0000-0000-000000000001',roleId:body.roleId,items:[{...view.items[0],classification:{...view.items[0].classification,topicId,disciplineId}}]};
+      // Preserve topic on the initial read used to recheck access.
+      return route.fulfill({status:route.request().method()==='POST'?201:200,json:practice});
+    }
     if (path.endsWith('/catalog')) return route.fulfill({ json: catalog });
     if (path.includes('/question-bank/questions')) return route.fulfill({ json: emptyPage });
     return route.fulfill({ status: 503, json: { error: 'unavailable' } });
@@ -41,7 +49,7 @@ for (const width of [390, 1440]) test(`realização, mapa e confirmação por te
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath(`practice-${width}.png`), fullPage: true });
 });
-for (const width of [390, 1440]) test(`aula recusa substituir gravação e preserva a fila em ${width}px`, async ({ page }) => {
+for (const width of [390, 1440]) test(`prática separada preserva gravação do simulado em ${width}px`, async ({ page }) => {
   let current = { ...view, items: [...view.items, { ...view.items[0], id: '80000000-0000-0000-0000-000000000002', questionId: '10000000-0000-0000-0000-000000000002' }] };
   let release!: () => void;const paused = new Promise<void>(resolve => { release = resolve; });let writes = 0, creates = 0, confirmations = 0;
   page.on('dialog', dialog => { confirmations++;void dialog.accept(); });
@@ -63,9 +71,9 @@ for (const width of [390, 1440]) test(`aula recusa substituir gravação e prese
     await page.getByText('Ir para outra área', { exact: true }).focus();await page.keyboard.press('Enter');
     await nav.getByRole('button', { name: 'Aulas', exact: true }).click();
     await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar P01', exact: true }).click();
-    await expect(page.getByRole('status').filter({ hasText: 'Prática não iniciada.' })).toBeVisible();expect(confirmations).toBe(0);expect(creates).toBe(1);
+    await expect(page.getByRole('heading', { name: 'Prática das aulas', exact: true })).toBeVisible();expect(confirmations).toBe(0);expect(creates).toBe(1);
     await nav.getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByRole('heading', { name: 'Questão 2 de 2' })).toBeVisible();
-    await expect(page.getByRole('radio').first()).toBeChecked();release();await expect(page.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect(writes).toBe(2);
+    await expect(page.getByRole('radio').first()).toBeChecked();release();await expect(page.getByRole('region',{name:'Simulados',exact:true}).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect(writes).toBe(2);
   } finally { release(); }
 });
 for (const width of [390, 1440]) test(`composição mantém critérios e resumo acessíveis em ${width}px`, async ({ page }, info) => {
@@ -121,7 +129,7 @@ for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem c
   await expect(page.getByRole('button', { name: 'Praticar M01', exact: true })).toHaveAccessibleDescription('Assunto da prática: M01 — Operações com Números Reais');
   await expect(page.getByText('Os links dentro do material não alteram essa seleção.', { exact: false })).toBeVisible();
   await page.getByRole('button', { name: 'Praticar M01', exact: true }).click();
-  await expect(page.getByLabel('Quantidade de Matemática', { exact: true })).toHaveValue('1');
-  await expect(page.getByLabel('Quantidade de Português')).toHaveValue('0');
-  await expect(page.getByLabel('Operações', { exact: true })).toBeChecked();expect(created).toBe(0);
+  await expect(page.getByRole('heading', { name:'Prática das aulas',exact:true })).toBeVisible();
+  await expect(page.getByRole('heading', { name:'Questão 1 de 1' })).toBeVisible();
+  await expect(page.getByRole('button', {name:'Encerrar prática'})).toBeVisible();expect(created).toBe(0);
 });

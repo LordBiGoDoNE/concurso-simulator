@@ -244,3 +244,12 @@ publicação/rollback ficam para uma proposta futura, mantendo seus requisitos.
 O gate cumulativo final da épica geral e a aprovação expressa do PR para main
 continuam necessários. Este pacote não publica a aplicação Java/PostgreSQL;
 o Pages do material estático mantém suas regras existentes.
+
+## Prática de aula — evolução local V11
+
+A spec `lesson-practice` preserva o acervo de simulados e acrescenta snapshots3 para
+prática. Backup aceita V10/V11 completos e registra a versão exata; restore mantém
+a exigência da mesma imagem e de destino vazio. Após criar práticas, não executar
+o binário anterior sobre esse banco. Ver `docs/lesson-practice.md`. Conteúdo de
+prática depende de seleção e aprovação editorial específica, sem importação no
+startup.

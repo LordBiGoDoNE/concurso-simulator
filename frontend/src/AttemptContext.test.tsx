@@ -1,9 +1,10 @@
-import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
 import App from './App';
 import { view } from '../test/attempt-fixtures';
 import { catalog, emptyPage, response } from '../test/question-fixtures';
 const userA = '90000000-0000-0000-0000-000000000001'; const userB = '90000000-0000-0000-0000-000000000002';
+const practiceView = { ...view, id: '80000000-0000-0000-0000-000000000001', items: [{ ...view.items[0], questionId: '80000000-0000-0000-0000-000000000002', statement: { text: 'OWN_PRACTICE_STATEMENT', resources: [] } }] };
 const privateView = { ...view, items: [{ ...view.items[0], statement: { text: 'PRIVATE_CONTEXT_STATEMENT', resources: [] } }] };
 afterEach(() => { vi.restoreAllMocks();vi.unstubAllGlobals(); });
 function api(initial: string | null, denied?: { status: number; stalled: boolean }, history = false) {
@@ -16,6 +17,9 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
     if (url.endsWith('/auth/logout')) { user = null;return response(null, 204); }
     if (url.endsWith('/question-bank/catalog')) return response(catalog);
     if (url.includes('/question-bank/questions')) return response(emptyPage);
+    if (url.includes('/me/lesson-practices')) return response({page:0,size:20,items:[]});
+    if (url.endsWith('/lesson-practices') && options?.method === 'POST') return response(practiceView,201);
+    if (url.endsWith(`/lesson-practices/${practiceView.id}`)) return response(practiceView);
     if (url.includes('/me/attempts')) return response({ page: 0, size: 20, items: history ? [{ id: view.id, roleId: view.roleId, createdAt: view.createdAt, finishedAt: null, total: 1, percentage: null }] : [] });
     if (url.endsWith('/attempts') && options?.method === 'POST') return response(privateView, 201);
     if (url.endsWith(`/attempts/${view.id}`)) return expired ? response({ error: 'not_found' }, 404) : response(privateView);
@@ -62,7 +66,7 @@ it('visitante vê duração/ausência de transferência e cancelar login preserv
   api(null);vi.spyOn(window, 'confirm').mockReturnValue(false);render(<App />);await start();
   expect(screen.getByText(/Modo visitante: tentativa temporária por até 24 horas/)).toBeInTheDocument();
   const event = new MouseEvent('click', { bubbles: true, cancelable: true });screen.getByRole('link', { name: 'Entrar com Google' }).dispatchEvent(event);
-  expect(window.confirm).toHaveBeenCalledWith(expect.stringContaining('não será transferida'));expect(event.defaultPrevented).toBe(true);
+  expect(window.confirm).toHaveBeenCalledWith(expect.stringContaining('não serão transferidas'));expect(event.defaultPrevented).toBe(true);
   expect(screen.getByText('PRIVATE_CONTEXT_STATEMENT')).toBeInTheDocument();
 });
 it('401 durante resposta limpa conteúdo e revalida identidade sem anunciar salvamento', async () => {
@@ -103,19 +107,20 @@ it('troca de conta durante outra área descarta a tentativa oculta e ignora resp
   await act(async () => fixture.finishWrite());fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
   expect(await screen.findByRole('button', { name: 'Iniciar simulado' })).toBeInTheDocument();expect(screen.queryByText('PRIVATE_CONTEXT_STATEMENT')).not.toBeInTheDocument();
 });
-it('atalho da aula preserva tentativa ao cancelar e só preenche composição ao confirmar', async () => {
-  const fixture = api(userA);const confirm = vi.spyOn(window, 'confirm').mockReturnValue(false);
-  render(<App />);await start();
-  fixture.fetchMock.mockImplementationOnce(async () => response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' })).mockImplementationOnce(async () => { throw new TypeError('network'); });
-  fireEvent.click(screen.getAllByRole('radio')[0]);await screen.findByRole('button', { name: 'Repetir salvamento' });
-  fireEvent.click(screen.getByRole('button', { name: 'Aulas' }));
-  fireEvent.click(screen.getByRole('button', { name: /P01.*Interpretação de Textos/ }));
-  fireEvent.click(screen.getByRole('button', { name: 'Praticar P01' }));
-  expect(confirm).toHaveBeenCalledTimes(1);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
-  expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.getByRole('button', { name: 'Repetir salvamento' })).toBeInTheDocument();
-  fireEvent.click(screen.getByRole('button', { name: 'Aulas' }));confirm.mockReturnValue(true);
-  fireEvent.click(screen.getByRole('button', { name: 'Praticar P01' }));
-  await waitFor(() => expect(screen.getByLabelText('Quantidade de Português')).toHaveValue(1));
-  expect(screen.getByLabelText('Interpretação')).toBeChecked();expect(screen.getByLabelText('Usar variações numéricas quando disponíveis')).not.toBeChecked();
-  expect(fixture.fetchMock.mock.calls.filter(([url, options]) => url.endsWith('/attempts') && options?.method === 'POST')).toHaveLength(1);
+it('prática de aula tem realização própria e preserva a fila pendente do simulado sem pedir substituição', async () => {
+  const fixture=api(userA);const confirm=vi.spyOn(window,'confirm').mockReturnValue(false);render(<App/>);await start();
+  fireEvent.click(screen.getAllByRole('radio')[0]);
+  await waitFor(()=>expect(fixture.fetchMock.mock.calls.some(([u])=>u.includes('/answers/'))).toBe(true));
+  fireEvent.click(screen.getByRole('button',{name:'Aulas'}));
+  fireEvent.click(screen.getByRole('button',{name:/P01.*Interpretação de Textos/}));
+  fireEvent.click(screen.getByRole('button',{name:'Praticar P01'}));
+  await screen.findByText('OWN_PRACTICE_STATEMENT');
+  expect(confirm).not.toHaveBeenCalled();expect(screen.queryByRole('button',{name:'Iniciar simulado'})).not.toBeInTheDocument();
+  expect(screen.getByRole('button',{name:'Encerrar prática'})).toBeVisible();
+  fireEvent.click(screen.getByRole('button',{name:'Simulados'}));
+  expect(screen.getByText('PRIVATE_CONTEXT_STATEMENT')).toBeVisible();expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.getByText('Salvando fila…')).toBeVisible();
+  await act(async()=>fixture.finishWrite());await within(screen.getByRole('region',{name:'Simulados'})).findByText('Respostas confirmadas.');
+  fireEvent.click(screen.getByRole('button',{name:'Práticas'}));expect(screen.getByText('OWN_PRACTICE_STATEMENT')).toBeVisible();
+  expect(fixture.fetchMock.mock.calls.filter(([u,o])=>u.endsWith('/attempts') && o?.method==='POST')).toHaveLength(1);
+  expect(fixture.fetchMock.mock.calls.filter(([u,o])=>u.endsWith('/lesson-practices') && o?.method==='POST')).toHaveLength(1);
 });

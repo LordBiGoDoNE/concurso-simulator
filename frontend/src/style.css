@@ -118,3 +118,8 @@ button.secondary:hover { background: var(--canvas); }
 @media (max-width: 1050px) { .app-layout { grid-template-columns: 190px minmax(0, 1fr); }.workspace { padding: 0 24px; }.welcome { padding: 26px; gap: 18px; }.study-paper { padding: 18px; }.home-lower { gap: 20px; } }
 @media (max-width: 800px) { .app-layout { display: block; }.sidebar { padding: 16px 20px 12px; gap: 14px; border-right: 0; border-bottom: 1px solid var(--line); }.sidebar nav { display: flex; flex-wrap: wrap; gap: 4px; }.sidebar nav button { padding: 8px 12px; font-size: .8rem; }.sidebar-foot { display: none; }.workspace { padding: 0 20px; }.topbar { min-height: 64px; margin-bottom: 24px; }.home-lower { grid-template-columns: 1fr; }.study-guide { margin-top: 4px; } }
 @media (max-width: 540px) { .welcome { grid-template-columns: 1fr; padding: 24px; }.study-visual { display: none; }.welcome h1 { font-size: 2.3rem; }.topbar > span:first-child { max-width: 55%; }.identity-pill { font-size: .65rem; }.availability { align-items: flex-start; } section { padding: 18px; }.identity-panel .session-refresh { display: inline-block; margin-left: 8px; } }
+
+.lesson-practice-workspace { padding: 0; border: 0; background: transparent; }
+.practice-context { margin: 20px 0; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
+.practice-context h2 { margin-top: 0; font-size: 1.1rem; }
+nav[aria-label="Navegação da prática"], nav[aria-label="Paginação das práticas"] { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }

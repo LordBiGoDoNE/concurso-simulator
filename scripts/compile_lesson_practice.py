@@ -107,7 +107,7 @@ def comparison_snapshot(root):
 
 def numeric_template(text):
     text = re.sub(r'Microsoft\s*365|Windows\s*11', '', text, flags=re.I)
-    text = re.sub(r'\b[A-Z]{1,3}[0-9]+\b', 'CELULA', text)
+    text = re.sub(r'\b[A-Z]{1,3}[0-9]+\b', 'CELULA', text, flags=re.I)
     return re.sub(r'\d+(?:[.,/]\d+)*', 'N', normalized(text))
 
 def direct_intent(text, topic):

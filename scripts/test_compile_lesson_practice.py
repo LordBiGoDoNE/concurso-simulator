@@ -49,6 +49,14 @@ class PracticeEditorialTests(unittest.TestCase):
             result=lp.audit_duplicates({'items':[item('own',topic,a)]},{'items':[item('old',topic,b)]})
             self.assertTrue(result['directIntentMatches'],topic)
 
+    def test_excel_references_are_canonicalized_after_casefold_in_real_audit(self):
+        def item(key,text):return {'origin':{'key':key},'content':{'statement':{'text':text},'classification':{'topicId':'I05'}}}
+        practice={'items':[item('own','Qual o conteúdo do endereço AZ123 nesta seleção?')]}
+        old={'items':[item('old','Qual o conteúdo do endereço B9 nesta seleção?')]}
+        audit=lp.audit_duplicates(practice,old)
+        self.assertIn(['own','old'],audit['numericTemplateMatches'])
+        self.assertEqual('celula',lp.numeric_template(lp.normalized('AZ123')))
+
     def test_duplicate_triage_finds_exact_and_similar_stems(self):
         pack,_,_=lp.compile_practice(ROOT);legacy=copy.deepcopy(pack);legacy['items']=legacy['items'][:1]
         self.assertEqual(1,len(lp.audit_duplicates(pack,legacy)['exactLegacy']))

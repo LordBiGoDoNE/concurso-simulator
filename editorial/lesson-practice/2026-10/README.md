@@ -47,3 +47,11 @@ de originalidade semântica.
 Seleção corrigida: `a47c4eae5b122b35cac8b9a51fb094e98a5e8bc0348d556ddfdf12b75014ecaf`. A seleção6b5054ab anterior
 é histórico da habilitação local inicial; a atualização dos fingerprints no operador
 usa a autorização permanente de teste local, sem modificar o acervo de simulados.
+
+Comparação ampliada posterior:41 equivalências remanescentes foram substituídas
+com mudanças concretas de pergunta/operação, registradas com hashes e o novo
+objetivo em replacement-review.json. A conferência incluiu pares entre disciplinas.
+Também foi corrigida a canonização de células Excel após casefold, com regressão
+pelo caminho real de audit_duplicates. Todos os itens mantêm os IDs de origem;
+novas revisões preservam as capturas anteriores. A seleção atual é
+`9f44d2652b71433dfe9edc3da9dd57cce797d105484a9b2bd726bf058fde3f4a`; os digests anteriores permanecem como histórico das rodadas.

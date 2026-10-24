@@ -120,3 +120,13 @@ Python editoriais. O registro da revalidação anterior é histórico; a rodada
 seguinte e o gate final não são presumidos. A sincronização de AttemptContext
 agora espera um botão acessível após conferência de acesso, mantendo todas as
 assertivas de preservação da fila e de criação única.
+
+A segunda revalidação confirmou as41 substituições e manteve três pares
+remanescentes, agora alterados conforme additionalReplacements no ledger. A
+seleção vigente é beee31e08d6348ae2cb86ca634f741e55fdb0e951885b73d5f6396e611d3c05b.
+O compilador passou a gerar IDs por chave/conteúdo, sem posição da alternativa;
+a regressão permuta a ordem e o índice correto e exige identidade estável por
+texto. Foram executados8 testes editoriais, com55 oráculos aritméticos no lote
+atual (uma subtração tornou-se uma tarefa de pertinência por elementos). Não se
+presume que fontes editoriais públicas sejam secretas. A nova rodada independente
+deve conferir essas alterações, além das correções já preservadas.

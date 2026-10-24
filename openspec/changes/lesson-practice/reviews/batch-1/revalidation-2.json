@@ -1,0 +1,33 @@
+{
+  "version": 1,
+  "phase": "revalidation-2",
+  "status": "historical-findings-confirmed",
+  "model": "openai/gpt-6.1-sol#xhigh",
+  "session": "/root/lesson_batch_sol_review",
+  "base_sha": "37b71a276003bdcec5e45d7af7e0a810a0d48de1",
+  "head_sha": "5312a32164a6330ff8d26553c3931508d803caed",
+  "diff_sha256": "2918428c48fe2939f6d9c0baa0b7a0e7a9b77bf87f848f4d7fd989e9f99adc99",
+  "findings": [
+    {
+      "id": "LP-B1",
+      "status_at_review": "open",
+      "resolution_at_review": "41 substituições confirmadas; restavam P05-P01/P05-Q03, P07-P02/P07-Q02 e M12-P05/M12-Q02.",
+      "followup": "Três tarefas substituídas por confronto de acentuação, análise do núcleo do sujeito e pertinência exclusiva em conjuntos. Nova revalidação requerida."
+    },
+    {
+      "id": "LP-B2",
+      "status_at_review": "fixed",
+      "evidence": "Proteção de retry e regressão de fila preservadas."
+    },
+    {
+      "id": "LP-R1",
+      "status_at_review": "fixed",
+      "evidence": "Canonização case-insensitive e regressão pelo caminho real de audit_duplicates."
+    }
+  ],
+  "limitations": [
+    "Somente leitura, sem testes/build/rede/DB.",
+    "Quota/tokens não observáveis; sem estimativas.",
+    "Registro histórico; não certifica correções posteriores nem gate cumulativo final."
+  ]
+}

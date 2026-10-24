@@ -28,7 +28,16 @@ Os arquivos gerados da ferramenta devem ser atualizados pela CLI; regras particu
 
 `changes/bootstrap-application-stack/` contém apenas o planejamento da base local Java/PostgreSQL e a preservação das aulas. Todas as tarefas de implementação permanecem pendentes.
 
-## Próximas mudanças, em incrementos
+## Ciclo atual após a entrega
+
+A reformulação foi entregue à main pelo #133 e o layout pelo #147. Novas specs
+partem de main atualizada e seguem tarefas → epic/<spec> → main, com proposta e
+grupo completo escolhidos antes da implementação, revisão cumulativa independente
+SOL6.1xHigh e autorização própria de merge. A antiga épica geral fica preservada
+como histórico. Stable publica apenas o material estático. AGENTS.md é a referência
+para o ciclo e os limites atuais do gate automatizado.
+
+## Registro histórico do planejamento inicial
 
 Os incrementos são revisados separadamente, mas a **entrega é única**: as branches das specs integram em `epic/application-reformulation`, não diretamente em main. A base inicial é a primeira spec desse pacote. Roadmap e critérios de entrega: `docs/application-reformulation.md`.
 

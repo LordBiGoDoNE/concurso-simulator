@@ -2,7 +2,8 @@
 
 ## Escopo e cobertura
 
-Proposta lesson-practice ainda não aprovada. Implementação e revisão não executadas.
+Proposta lesson-practice e volume255 aprovados pelo usuário em2026-10-24.
+Seleção de grupos do lote pendente. Implementação e revisão não executadas.
 Modelo de referência: openai/gpt-6.1-sol#xhigh; sessão ainda não disparada.
 
 ## Achados e triagem

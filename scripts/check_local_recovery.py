@@ -99,7 +99,7 @@ def check():
         finally:
             manifest.write_bytes(original)
         write_report(OUTPUT / "recovery-check.json", {"status": "passed", "source_sha": metadata["source_sha"],
-                     "checks": ["consistent-custom-dump", "all-business-table-fingerprints", "restore-new-empty-only", "backup-logout-restore-old-cookie-401", "new-session-history-resume", "formats-1-2-v10", "compatible-image-restart-generation-disabled", "failed-recovery-blocked"],
+                     "checks": ["consistent-custom-dump", "all-business-table-fingerprints", "restore-new-empty-only", "backup-logout-restore-old-cookie-401", "new-session-history-resume", "formats-1-2-v11", "compatible-image-restart-generation-disabled", "failed-recovery-blocked"],
                      "limits": "Synthetic accounts/sessions outside runtime; same compatible image, no schema downgrade or real operator data."})
         print("RECOVERY_CHECK_PASS: captures/history preserved, restored cookies revoked, compatible restart")
     except subprocess.CalledProcessError as failure:

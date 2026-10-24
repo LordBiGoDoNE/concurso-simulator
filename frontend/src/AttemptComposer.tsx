@@ -39,25 +39,32 @@ export default function AttemptComposer({ onCreated, onUnavailable, prefill, act
       setMessage(error instanceof AttemptApiError && error.available.length ? `Acervo insuficiente: ${error.available.map(a => `${catalog?.disciplines.find(d => d.id === a.disciplineId)?.title || a.disciplineId}: ${a.available} disponíveis`).join('; ')}.` : 'Criação não confirmada. Tente novamente com os mesmos critérios para recuperar a tentativa, se ela foi gravada.');
     } finally { pending.current = false; if (!controller.signal.aborted) { onBusy?.(false); setBusy(false); } }
   }
-  return <section aria-labelledby="compose-attempt-title">
-    <h3 id="compose-attempt-title" ref={heading} tabIndex={-1}>Compor simulado</h3>
-    <p>Escolha de 1 a 100 questões. Distribuição livre e um ponto por acerto; não são regras oficiais do edital.</p>
+  return <section className="composer" aria-labelledby="compose-attempt-title">
+    <header className="page-intro"><p className="eyebrow">Um treino do seu jeito</p>
+    <h1 id="compose-attempt-title" ref={heading} tabIndex={-1}>Compor simulado</h1>
+    <p>Escolha de 1 a 100 questões. Distribuição livre e um ponto por acerto; não são regras oficiais do edital.</p></header>
     {!catalog && !catalogFailed && <p role="status">Carregando composição…</p>}
     {catalogFailed && <><p role="alert">Composição indisponível. As aulas continuam acessíveis.</p><button onClick={() => setRetry(v => v + 1)}>Tentar composição novamente</button></>}
     {prefill && <p>Prática direcionada de {prefill.topicId}. Confira cargo, assunto e quantidade antes de iniciar. Não há garantia de questão nova.</p>}
-    {catalog && <form onSubmit={e => { e.preventDefault(); void submit(); }}>
+    {catalog && <form className="compose-layout" onSubmit={e => { e.preventDefault(); void submit(); }}>
+      <div className="settings-card"><div className="setting-block"><h2><span className="step-number" aria-hidden="true">01</span> Para qual cargo?</h2>
       <label htmlFor="attempt-role">Cargo do simulado</label><select id="attempt-role" value={role} disabled={busy || !active} onChange={e => changeCriteria(() => setRole(e.target.value))}>{catalog.roles.map(r => <option key={r.id} value={r.id}>{r.title}</option>)}</select>
+      </div><div className="setting-block"><h2><span className="step-number" aria-hidden="true">02</span> O que você quer praticar?</h2><p className="muted">Distribua as questões. Deixe zero para não incluir uma disciplina.</p>
       <div className="attempt-portions">{catalog.disciplines.map(d => <fieldset key={d.id} disabled={busy || !active}>
         <legend>{d.title}</legend><label htmlFor={`quantity-${d.id}`}>Quantidade de {d.title}</label>
         <input id={`quantity-${d.id}`} type="number" min="0" max="100" step="1" value={quantities[d.id] || ''} onChange={e => changeCriteria(() => setQuantities(v => ({ ...v, [d.id]: e.target.value })))} />
         <details><summary>Assuntos de {d.title} (opcional)</summary>{catalog.topics.filter(t => t.disciplineId === d.id).map(t => <label className="attempt-topic" key={t.id}><input type="checkbox" checked={(topics[d.id] || []).includes(t.id)} onChange={e => changeCriteria(() => setTopics(v => ({ ...v, [d.id]: e.target.checked ? [...(v[d.id] || []), t.id] : (v[d.id] || []).filter(id => id !== t.id) })))} />{t.title}</label>)}</details>
-      </fieldset>)}</div>
+      </fieldset>)}</div></div>
+      <div className="setting-block"><h2><span className="step-number" aria-hidden="true">03</span> Varie seu treino</h2>
       <label htmlFor="attempt-variations"><input id="attempt-variations" type="checkbox" checked={useParameterizedQuestions} disabled={busy || !active}
         aria-describedby="attempt-variations-help" onChange={e => changeCriteria(() => setUseParameterizedQuestions(e.target.checked))} />Usar variações numéricas quando disponíveis</label>
       <p id="attempt-variations-help">Pode misturar questões fixas e variações de regra de três direta, porcentagem e juros simples. Os valores podem se repetir entre simulados; não há garantia de questão nova.</p>
+      </div></div>
+      <aside className="summary-card" aria-labelledby="composition-summary-title"><div className="summary-head"><h2 id="composition-summary-title" className="eyebrow">Seu simulado</h2><p className="summary-total"><strong>{Number.isFinite(total) ? total : '—'}</strong> questões</p></div><div className="summary-body"><p className="summary-role">{catalog.roles.find(r => r.id === role)?.title}</p><ul>{portions.map(p => <li key={p.disciplineId}><span>{catalog.disciplines.find(d => d.id === p.disciplineId)?.title}</span><strong>{p.quantity}</strong></li>)}</ul>
       <p role="status">Total: {total} questões. {!valid && 'Informe quantidades inteiras que somem de 1 a 100.'}</p>
       {message && <p role="alert">{message}</p>}
-      <button disabled={!valid || busy || !active} type="submit">{busy ? 'Criando simulado…' : message ? 'Tentar criar novamente' : 'Iniciar simulado'}</button>
+      <div className="compose-start"><span aria-hidden="true">{Number.isFinite(total) ? total : '—'} questões</span><button disabled={!valid || busy || !active} type="submit">{busy ? 'Criando simulado…' : message ? 'Tentar criar novamente' : 'Iniciar simulado'}</button></div>
+      <p className="muted">Confira os critérios antes de iniciar. Assuntos sem seleção incluem toda a disciplina.</p></div></aside>
     </form>}
   </section>;
 }

@@ -1,5 +1,28 @@
 # Revisão independente de integração de spec
 
+## Integração após a entrega da reformulação
+
+A entrega inicial foi integrada à `main` pelo #133 em 2026-10-23. Novas specs
+partem de `main`; tarefas continuam em sua própria `epic/<spec>`, e o PR final
+`[SPEC]` segue diretamente para `main`. Não reutilizar a épica geral encerrada.
+As etapas e exigências semânticas abaixo continuam: revisão cumulativa própria,
+base/head imutáveis, digest, ancestralidade, triagem, CI e autorização de merge.
+Mudança do destino do PR exige revalidação, mesmo com árvores idênticas.
+
+A automação instalada abaixo continua limitada a `epic/application-reformulation`: em
+PRs para `main` publica `spec-review-tests` e informa não aplicabilidade do guard.
+Esse resultado não certifica a revisão cumulativa. Até uma alteração de automação
+aprovada em PR próprio, o coordenador executa `validate_report(report, explanation,
+base, head, spec, pr)` de `scripts/check_spec_review.py` nos commits reais, além de
+registrar revisão independente e conferir todos os checks antes do merge. A API
+consultada em 2026-10-24 não apresenta ruleset/proteção para `main`; não se declara
+proteção obrigatória inexistente. Este ajuste não altera workflows/rulesets/deploy
+nem dispensa o gate semântico. A regra estrita/ruleset documentada abaixo descreve
+a antiga épica geral e permanece intacta.
+
+O procedimento abaixo registra o fluxo usado na reformulação; para novas specs,
+substituir seu destino pela `main`, respeitando a limitação de automação acima.
+
 ## Quando e por quê
 
 ### Rodadas de implementação — antes da aprovação de merge

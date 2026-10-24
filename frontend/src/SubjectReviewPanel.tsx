@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { reviewOverview, reviewRoles } from './subject-review-api';
 import { useSubjectReview } from './useSubjectReview';
 import SubjectReviewSummary from './SubjectReviewSummary';
@@ -8,7 +8,7 @@ import type { DirectedPractice } from './directed-practice';
 export default function SubjectReviewPanel({ active, refresh, onUnavailable, onPractice, practiceEnabled = true, onRoleChange }: { active: boolean; refresh: number; onUnavailable: () => void; onPractice?: (selection: DirectedPractice) => void; practiceEnabled?: boolean; onRoleChange?: () => void }) {
   const [role, setRole] = useState('');const [retry, setRetry] = useState(0);const heading = useRef<HTMLHeadingElement>(null);const focus = useRef<{ role: string; refresh: number; retry: number } | null>(null);
   const state = useSubjectReview(role, active && role !== '', refresh + retry, signal => reviewOverview(role, signal), onUnavailable);
-  useEffect(() => {
+  useLayoutEffect(() => {
     const intent = focus.current;if (!intent) return;
     if (!active || intent.role !== role || intent.refresh !== refresh || intent.retry !== retry || state.phase === 'error' || state.phase === 'idle') { focus.current = null;return; }
     if (state.phase === 'ready') { focus.current = null;heading.current?.focus(); }

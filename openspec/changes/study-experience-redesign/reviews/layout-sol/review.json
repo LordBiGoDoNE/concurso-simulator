@@ -1,0 +1,409 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "study-experience-redesign",
+  "batch": "groups-2-6",
+  "risk": "critical",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/study_layout_batch_sol",
+    "independent_context": true
+  },
+  "reviewed_at": "2026-10-23T18:30:43.556655+00:00",
+  "snapshot": {
+    "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+    "head_sha": "d0addfc80d880b2d18ed08d831b46fbe4488d25e",
+    "diff_sha256": "50ec58960db035a1b3dc7a06a91e7abbae6e4c890b5571a272a94ab7a720df3d",
+    "bytes": 189917,
+    "prs": [
+      {
+        "pr": 141,
+        "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+        "head_sha": "1c2b08d45a6684dc9db057c4ef29bab17c1a709e",
+        "diff_sha256": "8dd6b91b68a1d994e5f4dac269458bbc967dd8a50b8060e26e988b1973f6f694",
+        "bytes": 77498
+      },
+      {
+        "pr": 142,
+        "base_sha": "1c2b08d45a6684dc9db057c4ef29bab17c1a709e",
+        "head_sha": "3a7a9efb83ed7639038120025a8b0a772cb40d30",
+        "diff_sha256": "f120b809bb11eb99e1b99df7c78857144ba4b30f076c5f9cb0c65b38840d061b",
+        "bytes": 19574
+      },
+      {
+        "pr": 144,
+        "base_sha": "3a7a9efb83ed7639038120025a8b0a772cb40d30",
+        "head_sha": "4f178e52f6655d852439c1c5f2c57c2fd34f2c00",
+        "diff_sha256": "6636e944e8626716c34c81a43a41907932de789c70ba0341bf73aa1f251a99de",
+        "bytes": 28497
+      },
+      {
+        "pr": 145,
+        "base_sha": "4f178e52f6655d852439c1c5f2c57c2fd34f2c00",
+        "head_sha": "1e3c167c939d9c9f5056f5e96ff5fcfda88d246f",
+        "diff_sha256": "4e0c42e8402c3942a73d8db6e0912b3c74545dee0976851eb9839f3f570fdee9",
+        "bytes": 65126
+      },
+      {
+        "pr": 146,
+        "base_sha": "1e3c167c939d9c9f5056f5e96ff5fcfda88d246f",
+        "head_sha": "d0addfc80d880b2d18ed08d831b46fbe4488d25e",
+        "diff_sha256": "298fc8111d69c13d6522d913d925f15660f6763f6bdfbdae72fd306ad63ea27b",
+        "bytes": 29775
+      }
+    ],
+    "git_arguments": [
+      "-c",
+      "core.quotePath=true",
+      "-c",
+      "diff.suppressBlankEmpty=false",
+      "diff",
+      "--binary",
+      "--full-index",
+      "--no-ext-diff",
+      "--no-textconv",
+      "--unified=3",
+      "--inter-hunk-context=0",
+      "--no-indent-heuristic",
+      "--no-relative",
+      "-O/dev/null",
+      "--ignore-submodules=none",
+      "--submodule=short",
+      "--no-renames",
+      "--diff-algorithm=myers",
+      "--no-color",
+      "--src-prefix=a/",
+      "--dst-prefix=b/",
+      "--output-indicator-new=+",
+      "--output-indicator-old=-",
+      "--output-indicator-context= ",
+      "2e33071640eabaa5eeb36146a8dcb9585c254195...d0addfc80d880b2d18ed08d831b46fbe4488d25e",
+      "--",
+      ".",
+      ":(exclude)openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+      ":(exclude)openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+    ]
+  },
+  "findings": [
+    {
+      "id": "LAYOUT-SOL-001",
+      "severity": "blocking",
+      "pr": 145,
+      "location": "frontend/src/AttemptWorkspace.tsx:34",
+      "evidence": "Prática da aula pode desmontar realização durante PUT/recarga/conclusão, sem consultar operações do run.",
+      "reference": "design.md: recusar durante operação; grupo5.2",
+      "impact": "Fila/comandos idempotentes podem ser descartados antes de resultado conhecido.",
+      "suggestion": "Bloquear substituição pela fronteira operacional viva e testar gravação/fila/conclusão suspensas.",
+      "disposition": "fixed",
+      "resolution": "Fixed revalidated: live operation getter prevents replacement during write/reload/finish, also for history/new composition. Tests cover two queued jobs, suspended reload/finish and a real committed write with suspended response."
+    },
+    {
+      "id": "LAYOUT-SOL-002",
+      "severity": "recommended",
+      "pr": [
+        141,
+        144
+      ],
+      "location": "frontend/src/App.tsx:59",
+      "evidence": "Shell completo permanece durante realização, divergindo do cabeçalho reduzido aprovado.",
+      "reference": "DESIGN.md: realização com cabeçalho reduzido",
+      "impact": "Navegação/orientações ocupam primeira tela, principalmente no celular.",
+      "suggestion": "Propagar estado de realização ao shell e reduzir navegação sem desmontar tentativa.",
+      "disposition": "fixed",
+      "resolution": "Fixed revalidated: run state controls reduced shell/menu and preserves mounted attempt; completion/unmount restores general shell."
+    },
+    {
+      "id": "LAYOUT-SOL-003",
+      "severity": "recommended",
+      "pr": 145,
+      "location": "frontend/e2e/study-layout.spec.ts:68",
+      "evidence": "Mock entrega assets/v3.css com MIME text/html.",
+      "reference": "Grupo5.3: apresentação e recursos preservados",
+      "impact": "Captura/largura da aula no mock não refletem CSS original.",
+      "suggestion": "MIME correto e asserção de aplicação da folha.",
+      "disposition": "fixed",
+      "resolution": "Fixed revalidated: text/css MIME, actual stylesheet assertion and new reader captures."
+    }
+  ],
+  "coverage": [
+    "Todos os diffs por PR e combinação recalculados e conferidos.",
+    "Navegação/identidade/fila/retry/conflito/conclusão/resultado/histórico/revisão.",
+    "Biblioteca/catálogo51/mapa/cargos/sandbox/foco/CSS/capturas.",
+    "51 fontes sem script e517 referências locais existentes conferidas pelo revisor."
+  ],
+  "limitations": [
+    "Somente leitura: revisor não executou testes/build/aplicação/rede/DB.",
+    "Interações e resultados operacionais são do coordenador; capturas são estáticas.",
+    "Cota5h/semanal e tokens indisponíveis; comparação validada por review_quota.py, sem atribuição.",
+    "Não autoriza merge nem substitui gate cumulativo final."
+  ],
+  "initial_snapshot": {
+    "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+    "head_sha": "65b53f7f646010b3c55aa046f4861835774e637c",
+    "diff_sha256": "2ab5226639f7b4f2d9379541e74570d0ef06a64d7dd7b80ca1eb88d22338181b",
+    "bytes": 157214,
+    "excluded_paths": [
+      "openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+      "openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+    ],
+    "prs": [
+      {
+        "pr": 141,
+        "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+        "head_sha": "4e09f37d0352cd9808caa9e27024f2ea989f353b",
+        "diff_sha256": "7eacd17211775a9b95812d998f8c2bf106d7a6e84304e2459b8284f0a03f7804",
+        "bytes": 71314
+      },
+      {
+        "pr": 142,
+        "base_sha": "4e09f37d0352cd9808caa9e27024f2ea989f353b",
+        "head_sha": "73e1737be8965de42f63519428c5a8c106265c22",
+        "diff_sha256": "05265653a7357336f2e76890227aafdeacb4f0b998ee0e18614f72442b18760a",
+        "bytes": 19574
+      },
+      {
+        "pr": 144,
+        "base_sha": "73e1737be8965de42f63519428c5a8c106265c22",
+        "head_sha": "3135ac013a2b1f1e7bfb39e9f57dfa2f40b461dd",
+        "diff_sha256": "c020fe5ca093bf123e817f1baea959638f458f7e42c5af585431a915e0604162",
+        "bytes": 28389
+      },
+      {
+        "pr": 145,
+        "base_sha": "3135ac013a2b1f1e7bfb39e9f57dfa2f40b461dd",
+        "head_sha": "3ac3277c562688e90d268265aad553906bc78589",
+        "diff_sha256": "54ce81915b0219ada2183bb1103df179f118002f842e2d6c1b321d461240c13b",
+        "bytes": 45843
+      },
+      {
+        "pr": 146,
+        "base_sha": "3ac3277c562688e90d268265aad553906bc78589",
+        "head_sha": "65b53f7f646010b3c55aa046f4861835774e637c",
+        "diff_sha256": "dfab080b92c6f40f49d701f7bc5d7a7708a3ad7e612d6c78e2ceec233bad4c17",
+        "bytes": 18575
+      }
+    ],
+    "created_at": "2026-10-23T17:29:05.672710+00:00"
+  },
+  "coordinator_corrections": {
+    "LAYOUT-SOL-001": {
+      "commit": "49e8782148e5fc631658568a6a6338c35f14931d",
+      "regressions": "Three suspended-operation unit cases, two browser queue cases, real committed write with suspended response."
+    },
+    "LAYOUT-SOL-002": {
+      "commit": "1c2b08d45a6684dc9db057c4ef29bab17c1a709e",
+      "regressions": "Reduced header/menu in mobile/desktop real identity flow."
+    },
+    "LAYOUT-SOL-003": {
+      "commit": "49e8782148e5fc631658568a6a6338c35f14931d",
+      "regressions": "text/css and stylesheet display assertion; new captures."
+    }
+  },
+  "verification_after_correction": {
+    "unit": 174,
+    "general_browser": 14,
+    "identity": 24,
+    "parameterized": 5,
+    "packaged_browser": 7,
+    "clean_delivery": "all eight stages passed at fabb593752d769d74292129dec865d4c6699429e",
+    "build": "passed"
+  },
+  "initial_review": {
+    "snapshot": {
+      "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+      "head_sha": "65b53f7f646010b3c55aa046f4861835774e637c",
+      "diff_sha256": "2ab5226639f7b4f2d9379541e74570d0ef06a64d7dd7b80ca1eb88d22338181b",
+      "bytes": 157214,
+      "excluded_paths": [
+        "openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+        "openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+      ],
+      "prs": [
+        {
+          "pr": 141,
+          "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+          "head_sha": "4e09f37d0352cd9808caa9e27024f2ea989f353b",
+          "diff_sha256": "7eacd17211775a9b95812d998f8c2bf106d7a6e84304e2459b8284f0a03f7804",
+          "bytes": 71314
+        },
+        {
+          "pr": 142,
+          "base_sha": "4e09f37d0352cd9808caa9e27024f2ea989f353b",
+          "head_sha": "73e1737be8965de42f63519428c5a8c106265c22",
+          "diff_sha256": "05265653a7357336f2e76890227aafdeacb4f0b998ee0e18614f72442b18760a",
+          "bytes": 19574
+        },
+        {
+          "pr": 144,
+          "base_sha": "73e1737be8965de42f63519428c5a8c106265c22",
+          "head_sha": "3135ac013a2b1f1e7bfb39e9f57dfa2f40b461dd",
+          "diff_sha256": "c020fe5ca093bf123e817f1baea959638f458f7e42c5af585431a915e0604162",
+          "bytes": 28389
+        },
+        {
+          "pr": 145,
+          "base_sha": "3135ac013a2b1f1e7bfb39e9f57dfa2f40b461dd",
+          "head_sha": "3ac3277c562688e90d268265aad553906bc78589",
+          "diff_sha256": "54ce81915b0219ada2183bb1103df179f118002f842e2d6c1b321d461240c13b",
+          "bytes": 45843
+        },
+        {
+          "pr": 146,
+          "base_sha": "3ac3277c562688e90d268265aad553906bc78589",
+          "head_sha": "65b53f7f646010b3c55aa046f4861835774e637c",
+          "diff_sha256": "dfab080b92c6f40f49d701f7bc5d7a7708a3ad7e612d6c78e2ceec233bad4c17",
+          "bytes": 18575
+        }
+      ],
+      "created_at": "2026-10-23T17:29:05.672710+00:00"
+    },
+    "blocking": 1,
+    "recommended": 2,
+    "optional": 0,
+    "result": "changes-requested, preserved as history"
+  },
+  "triage_complete": true,
+  "revalidation": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/study_layout_batch_sol",
+    "same_independent_context_as_initial": true,
+    "new_findings": [],
+    "all_pr_and_combined_snapshots_recomputed": true,
+    "all_eight_round3_capture_hashes_verified": true,
+    "working_tree_clean": true,
+    "product_and_tests_identical_to_verified_65f7900": true,
+    "executed_tests_by_reviewer": false,
+    "reader_selection": "Explicit code/title/CTA/accessibility description; internal M01→M02 does not silently alter announced selection. Browser regression source examined, not executed by reviewer."
+  },
+  "quota": {
+    "initial": {
+      "5h": "unavailable",
+      "weekly": "unavailable"
+    },
+    "revalidation": {
+      "5h": "unavailable",
+      "weekly": "unavailable"
+    },
+    "validated_with": "scripts/review_quota.py",
+    "isolation_declared": false,
+    "tokens": "unavailable",
+    "comparison_between_models": "not performed",
+    "reader_clarification_revalidation": {
+      "5h": "unavailable",
+      "weekly": "unavailable",
+      "tokens": "unavailable",
+      "validated_with": "scripts/review_quota.py"
+    }
+  },
+  "revalidation_history": [
+    {
+      "snapshot": {
+        "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+        "head_sha": "58cb5fb2644b6512345b97766aa4eee17d0942ab",
+        "diff_sha256": "d5f2b6db510f34970294e10471613b568007dffefc051d190631d1e72b2f74c6",
+        "bytes": 180962,
+        "excluded_paths": [
+          "openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+          "openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+        ],
+        "prs": [
+          {
+            "pr": 141,
+            "base_sha": "2e33071640eabaa5eeb36146a8dcb9585c254195",
+            "head_sha": "1c2b08d45a6684dc9db057c4ef29bab17c1a709e",
+            "diff_sha256": "8dd6b91b68a1d994e5f4dac269458bbc967dd8a50b8060e26e988b1973f6f694",
+            "bytes": 77498
+          },
+          {
+            "pr": 142,
+            "base_sha": "1c2b08d45a6684dc9db057c4ef29bab17c1a709e",
+            "head_sha": "3a7a9efb83ed7639038120025a8b0a772cb40d30",
+            "diff_sha256": "f120b809bb11eb99e1b99df7c78857144ba4b30f076c5f9cb0c65b38840d061b",
+            "bytes": 19574
+          },
+          {
+            "pr": 144,
+            "base_sha": "3a7a9efb83ed7639038120025a8b0a772cb40d30",
+            "head_sha": "4f178e52f6655d852439c1c5f2c57c2fd34f2c00",
+            "diff_sha256": "6636e944e8626716c34c81a43a41907932de789c70ba0341bf73aa1f251a99de",
+            "bytes": 28497
+          },
+          {
+            "pr": 145,
+            "base_sha": "4f178e52f6655d852439c1c5f2c57c2fd34f2c00",
+            "head_sha": "49e8782148e5fc631658568a6a6338c35f14931d",
+            "diff_sha256": "d1d1b813b9e30ea29294d21da9d648caba4e3bcc381f42557d7886127f384ebb",
+            "bytes": 63714
+          },
+          {
+            "pr": 146,
+            "base_sha": "49e8782148e5fc631658568a6a6338c35f14931d",
+            "head_sha": "58cb5fb2644b6512345b97766aa4eee17d0942ab",
+            "diff_sha256": "a585bafc7ea7bbc2543f478eafa761629f0bd18414128d70788a9ab43c1613f0",
+            "bytes": 22232
+          }
+        ],
+        "git_arguments": [
+          "-c",
+          "core.quotePath=true",
+          "-c",
+          "diff.suppressBlankEmpty=false",
+          "diff",
+          "--binary",
+          "--full-index",
+          "--no-ext-diff",
+          "--no-textconv",
+          "--unified=3",
+          "--inter-hunk-context=0",
+          "--no-indent-heuristic",
+          "--no-relative",
+          "-O/dev/null",
+          "--ignore-submodules=none",
+          "--submodule=short",
+          "--no-renames",
+          "--diff-algorithm=myers",
+          "--no-color",
+          "--src-prefix=a/",
+          "--dst-prefix=b/",
+          "--output-indicator-new=+",
+          "--output-indicator-old=-",
+          "--output-indicator-context= ",
+          "2e33071640eabaa5eeb36146a8dcb9585c254195...58cb5fb2644b6512345b97766aa4eee17d0942ab",
+          "--",
+          ".",
+          ":(exclude)openspec/changes/study-experience-redesign/reviews/layout-sol/review.json",
+          ":(exclude)openspec/changes/study-experience-redesign/reviews/layout-sol/review.md"
+        ]
+      },
+      "result": {
+        "model": "openai/gpt-6.1-sol#xhigh",
+        "session": "/root/study_layout_batch_sol",
+        "same_independent_context_as_initial": true,
+        "new_findings": [],
+        "all_pr_and_combined_snapshots_recomputed": true,
+        "all_twelve_screenshot_hashes_verified": true,
+        "four_new_practice_reader_captures_visually_inspected": true,
+        "working_tree_clean": true,
+        "product_and_tests_identical_to_verified_fabb593": true,
+        "executed_tests_by_reviewer": false
+      },
+      "findings": "LAYOUT-SOL-001/002/003 fixed; no new findings"
+    }
+  ],
+  "latest_coordinator_checks": {
+    "unit": 174,
+    "build": "passed",
+    "general_browser_with_offline": 14,
+    "clean_delivery_source_65f7900": "in progress; previous full fabb593 preserved as history"
+  },
+  "verification_current": {
+    "product_test_source_sha": "65f7900c39ccdbfc5608fc9c28540c81426b099b",
+    "unit": 174,
+    "build": "passed",
+    "general_browser_with_offline": 14,
+    "clean_delivery": "all eight stages passed",
+    "packaged_browser": 7,
+    "identity_and_parameterized": "24/5 passed at prior runtime fabb593; no change to their source/underlying operations in selected-topic label update",
+    "executed_by": "coordinator"
+  }
+}

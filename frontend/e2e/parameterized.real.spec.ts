@@ -28,7 +28,7 @@ async function finish(page: Page) {
   const value = await response.json();safe(value, false);await expect(area(page).getByRole('heading', { name: 'Resultado do simulado' })).toBeFocused();return value;
 }
 async function control(request: APIRequestContext, subject: string) { expect((await request.post(provider + '/fixture/control', { form: { subject, mode: 'valid' } })).ok()).toBe(true); }
-async function login(page: Page) { await page.goto('/');await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible(); }
+async function login(page: Page) { await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click(); }
 async function emptyStorage(page: Page) {
   expect(await page.evaluate(async () => [localStorage.length, sessionStorage.length, 'caches' in window ? (await caches.keys()).length : 0])).toEqual([0, 0, 0]);
 }
@@ -36,7 +36,7 @@ test.beforeAll(async ({ request }) => {
   await expect.poll(async () => (await (await request.get(api + '/api/v1/question-bank/questions?disciplineId=matematica-raciocinio&roleId=assistente-administrativo')).json()).total).toBe(4);
 });
 for (const width of [390, 1280]) test(`visitante mistura três geradas e uma fixa, recupera criação e revisa com teclado em ${width}px`, async ({ page }, info) => {
-  await page.setViewportSize({ width, height: 850 });await page.goto('/');await settings(page);
+  await page.setViewportSize({ width, height: 850 });await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await settings(page);
   const bodies: unknown[] = [];let committed!: AttemptView;
   await page.route('**/api/v1/attempts', async route => {
     if (route.request().method() !== 'POST') { await route.continue();return; }
@@ -82,7 +82,7 @@ test('conta retoma conteúdo gerado em outra sessão após restart e alteração
 test('duas abas recuperam conflito sem perder escolha numa tentativa com variações', async ({ page, context, request }) => {
   await control(request, 'numeric-two-tabs');await login(page);const view = await start(page);const second = await context.newPage();
   try {
-    await second.goto('/');await area(second).getByRole('button', { name: /Abrir simulado/ }).first().click();await expect(area(second).getByRole('heading', { name: 'Questão 1 de 4' })).toBeVisible();
+    await second.goto('/');await second.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await area(second).getByRole('button', { name: /Abrir simulado/ }).first().click();await expect(area(second).getByRole('heading', { name: 'Questão 1 de 4' })).toBeVisible();
     await area(page).getByRole('radio').first().check();await expect(area(page).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
     await area(second).getByRole('radio').last().check();await area(second).getByRole('button', { name: 'Recarregar tentativa' }).click();
     await expect(area(second).getByRole('radio').last()).toBeChecked();await area(second).getByRole('button', { name: 'Salvar escolhas preservadas' }).click();
@@ -90,7 +90,7 @@ test('duas abas recuperam conflito sem perder escolha numa tentativa com variaç
   } finally { await second.close(); }
 });
 test('expiração visitante limpa também o conteúdo numérico capturado', async ({ page }) => {
-  await page.goto('/');const view = await start(page);await page.waitForTimeout(21500);await page.getByRole('button', { name: 'Atualizar sessão' }).click();
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const view = await start(page);await page.waitForTimeout(21500);await page.getByRole('button', { name: 'Atualizar sessão' }).click();
   await expect(area(page).getByRole('button', { name: 'Iniciar simulado' })).toBeVisible();
   expect((await page.request.get(`${api}/api/v1/attempts/${view.id}`)).status()).toBe(404);await emptyStorage(page);
 });

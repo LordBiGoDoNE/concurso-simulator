@@ -1,5 +1,22 @@
 # Épica geral: reformulação da aplicação
 
+## Estado atual — entrega encerrada
+
+A reformulação local foi integrada à `main` pelo PR #133 em 2026-10-23, merge
+`c8efceb7bc10774902a4cfca1efb05165d9700b9`. O roadmap e os critérios abaixo
+descrevem essa entrega histórica; não são pendências para reutilizar sua épica.
+`epic/application-reformulation` permanece preservada como histórico.
+
+Evoluções posteriores seguem `task/<spec>/<assunto>` → `epic/<spec>` → `main`,
+com proposta/escopo aprovados, revisão cumulativa e aprovação própria de merge.
+As novas specs partem da `main` atualizada. O layout `study-experience-redesign`
+é a primeira correção desse encaminhamento: PR #147 destinado diretamente à
+`main`, com nova revisão da base, sem reorganizar a stack de tarefas já integrada.
+`stable` continua responsável pelo site estático/Pages; publicação externa da
+aplicação completa permanece adiada.
+
+## Registro histórico da entrega
+
 ## Objetivo
 
 Entregar a reformulação completa de uma vez, mantendo o site atual utilizável. A épica geral é **`epic/application-reformulation`**. As specs permanecem pequenas e revisáveis, mas não são publicadas individualmente em main. Na transição aprovada em 2026-10-23, `stable` preserva o site estático e `main` recebe a aplicação completa.

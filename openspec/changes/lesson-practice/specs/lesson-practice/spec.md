@@ -4,7 +4,8 @@
 
 ### Requirement: Início de prática vinculado à aula
 A aplicação SHALL oferecer prática própria para o assunto e cargo explicitamente
-selecionados na aula, anunciando um treino de até cinco questões fixas aprovadas.
+selecionados na aula, anunciando um treino de até cinco questões fixas aprovadas
+e destinadas exclusivamente a PRATICA_AULA. O acervo SIMULADO MUST NOT ser usado.
 Praticar SHALL ser a ação explícita de início. Abrir uma aula MUST NOT criar prática.
 
 #### Scenario: Acervo elegível pequeno

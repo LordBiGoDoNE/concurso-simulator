@@ -6,11 +6,17 @@ Main4ea49a9 contém o layout #147. App.practiceLesson chama
 AttemptWorkspace.practice e navega para Simulados; o compositor recebe uma questão
 pré-preenchida. AttemptRow/me_attempt não distingue a finalidade. O histórico
 privado e JpaCompletedAttempts consultam todas as tentativas elegíveis sem esse filtro.
-Somente mudar textos/tela manteria práticas misturadas aos simulados.
+Somente mudar textos/tela manteria práticas misturadas aos simulados. A seleção
+EligibleRevisionPool.capture e a consulta EligibleQuestions hoje não distinguem
+a destinação da questão; separar só as tentativas continuaria reutilizando o acervo.
 
 A decisão explícita do usuário é separar os percursos e corrigir somente ao encerrar.
 Quantidade até cinco, histórico próprio e isolamento das métricas são propostas
 adicionais deste documento, sujeitas ao mesmo aceite antes da implementação.
+O usuário também pediu acervos próprios por modo. A proposta preserva as251 bases
+atuais para simulados e prepara novas bases exclusivas de prática; o volume inicial
+está em escolha (cinco por aula255 ou uma por aula51). Isso não é autorização
+editorial concedida, nem decisão para mover/descartar questões já aprovadas.
 
 ## Goals / Non-Goals
 
@@ -23,6 +29,31 @@ publicar gabaritos antecipadamente ou alterar a semântica de simulados antigos.
 
 - A finalidade é imutável e protegida no domínio, não uma etiqueta arbitrária no
   frontend. Capturas e comandos preservam modalidade, assunto e elegibilidade.
+- A questão-base tem destinação exclusiva e imutável SIMULADO ou PRATICA_AULA,
+  independente da modalidade da tentativa. Revisões, proveniência e variantes de
+  uma mesma base herdam essa destinação; retirar/reaprovar/renumerar não permite
+  cruzar os modos. Não criar categoria AMBOS ou fallback ao acervo contrário.
+- Migração aditiva preserva todas as questões existentes como SIMULADO, sem mudar
+  conteúdo, decisões editoriais ou capturas. Novas questões de prática têm identidade
+  e resolução próprias. Importação/curadoria registra e confere destinação; não
+  reclassifica uma base por enviar outro pacote/namespace ou criar outra revisão.
+- Seleção e contagens de elegíveis aplicam destinação + aprovação + assunto/cargo
+  antes da contagem/amostragem/captura. Simulado fixo e parametrizado recebem só
+  SIMULADO; prática só PRATICA_AULA. Revalidar o acervo na transação de início.
+  Disponibilidade pequena/vazia nunca toma questões emprestadas de outro modo.
+- Consulta pública/compositor existentes conservam o acervo SIMULADO por padrão;
+  disponibilidade da prática é consultada no contexto próprio. Contagens de prática
+  não aumentam silenciosamente o total elegível do simulado. O cliente não escolhe
+  livremente a destinação e não injeta IDs do outro acervo na criação.
+- O conteúdo dedicado passa por checagem de duplicatas exatas/similaridade e revisão
+  editorial: não aceitar cópia renomeada nem mera troca de valores de uma questão
+  do simulado como nova questão de prática. Algoritmo é apoio, não prova de ausência
+  de semelhança conceitual. Questões podem ensinar o mesmo conceito por problemas
+  distintos. Registrar proveniência, referências e digests sem atribuição oficial falsa.
+- Nenhuma questão nova fica elegível por geração/importação/testes. Preparar lote
+  versionado e relatório por assunto, revisar resolução/alternativas/classificação,
+  apresentar seleção exata/digests ao usuário e só então executar eventual decisão
+  editorial especificamente autorizada no banco/destino combinado.
 - Reutilizar o motor de tentativa para invariantes comuns quando adequado. O início
   da prática é uma ação relevante própria: recebe assunto/cargo e commandId; o
   servidor controla política de até cinco, elegibilidade e captura transacional.
@@ -45,7 +76,8 @@ publicar gabaritos antecipadamente ou alterar a semântica de simulados antigos.
 - Listagens e métricas de simulados filtram a finalidade ANTES de ordenar/paginar/
   limitar. O histórico próprio de práticas mostra aula/cargo/status; a revisão de
   dificuldades de simulados não incorpora práticas nem exclui simulados históricos.
-- O card da aula informa até cinco questões fixas e cargo elegível. A ação Praticar
+- O card da aula informa até cinco questões fixas do acervo exclusivo de prática
+  e cargo elegível. A ação Praticar
   inicia o fluxo próprio, com carregamento/falha/retry/zero elegíveis claros. Não há
   quantidade por disciplina nem envio automático ao abrir/ler/trocar uma aula.
 - A realização mostra assunto/cargo/progresso e ações de responder/limpar/encerrar.
@@ -65,6 +97,10 @@ publicar gabaritos antecipadamente ou alterar a semântica de simulados antigos.
 Risco crítico: finalidade influencia posse/replay, consultas históricas/métricas,
 compatibilidade de capturas e persistência. Regressões devem demonstrar ausência de
 vazamento entre modos/contas, gabarito fechado até concluir e paginação correta.
+Os exercícios HTML já públicos são origem de parte das questões hoje usadas nos
+simulados. Os acervos exclusivos impedem repetição entre os dois modos novos, mas
+não tornam esse material anterior secreto ou inédito. Remover exercícios das aulas
+ou substituir todo o acervo de simulados não está autorizado nesta mudança.
 Acervo pequeno limita a prática; não duplicar base, usar assunto vizinho ou chamar
 falha de acervo de indisponibilidade genérica. Sessões técnicas não são entidades.
 A migração exige ensaio isolado e procedimento de atualização do operador antes de
@@ -84,7 +120,9 @@ O PR final `[SPEC]` integra diretamente em main, após revisão cumulativa indep
 SOL6.1xHigh e autorização específica. Não reutilizar a reformulação encerrada, não
 sincronizar a stack histórica do layout, não modificar stable/Pages.
 
-Primeiro aprovar proposta e escolher grupos completos1–4. Implementação/revisão de
+Primeiro aprovar a proposta atualizada, escolher o volume de conteúdo e os grupos
+completos1–5. O antigo grupo4 continua sendo verificação/gate, agora dependente
+também do novo grupo5 editorial para cobertura real completa. Implementação/revisão de
 cada grupo inclui seus testes/docs. O gate final permanece independente da revisão
 do lote. Evidências não executadas ficam pending. Atualizar a issue a cada PR
 alterado/integrado, fechar somente após resolver seu escopo. Sem merge, deploy,
@@ -93,5 +131,7 @@ arquivamento ou alteração do banco do operador por mera preparação desta pro
 ## Open Questions
 
 Correção ao encerrar foi escolhida pelo usuário. Proposta adicional a aprovar:
-até cinco questões fixas, separação do histórico/métricas e preservação simultânea
-do simulado. A implementação aguarda a aprovação e seleção dos grupos completos.
+até cinco questões fixas exclusivas, separação do histórico/métricas e preservação
+simultânea do simulado. Volume inicial de conteúdo pendente:255 ou51 questões novas.
+A implementação aguarda a aprovação e seleção dos grupos completos1–5; a redação
+e publicação editorial do conteúdo não são presumidas por esta atualização.

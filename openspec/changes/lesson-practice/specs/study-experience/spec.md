@@ -10,7 +10,7 @@ O acesso ao original SHALL continuar independente da API de questões.
 
 #### Scenario: Ler teoria e praticar o assunto
 - **WHEN** abre uma aula, confere cargo/assunto e escolhe Praticar
-- **THEN** inicia prática própria de até cinco questões fixas daquele assunto/cargo
+- **THEN** inicia prática própria de até cinco questões fixas exclusivas de PRATICA_AULA daquele assunto/cargo
 - **AND** a correção aparece somente ao encerrar a prática, sem substituir um simulado
 
 ### Requirement: Navegação de produção preserva a realização e a identidade

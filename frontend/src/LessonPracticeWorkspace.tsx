@@ -30,6 +30,10 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
   }
   async function create(){
     const work=job.current;if(!work || pending.current || !contextActive)return;
+    // O retry pode ocorrer após editar a prática anterior, depois de uma falha.
+    if(selectedRef.current && (access!=='ready' || run.current?.canReplace()!==true)){
+      setMessage('Aguarde o salvamento ou encerramento desta prática antes de repetir o início.');return;
+    }
     const c=new AbortController();request.current?.abort();request.current=c;pending.current=true;setBusy(true);setMessage('');setFailed(false);
     try{
       const value=await createLessonPractice(work.selection,work.commandId,c.signal);if(c.signal.aborted)return;

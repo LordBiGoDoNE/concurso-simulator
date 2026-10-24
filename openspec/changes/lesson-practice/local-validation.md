@@ -93,3 +93,20 @@ revisão independente SOL6.1xHigh e gate cumulativo separado, com riscos/triagem
 quando observáveis. Nenhuma revisão/modelo/sessão/cota/tokens foi inventada. A
 classificação de risco é crítica por persistência, privacidade e migração; não
 aciona outro modelo. Aprovação local não presume merge, publicação ou arquivamento.
+
+## Preparação do envio autorizado
+
+Depois do aceite local, o usuário autorizou envio e merge. A proposta#149 foi
+revisada e integrada à epic/lesson-practice em37b71a2; tarefas publicadas na
+stack#153, PRs#150/#151/#152, mantendo os commits locais originais. A revisão
+inicial crítica do lote confirmou dois bloqueadores, registrados historicamente
+em reviews/batch-1/initial.json, sem certificar o gate final.
+
+Correções:23 itens editoriais reescritos e comparação ampliada às250 revisões
+curadas atuais; seleção corrigida a47c4eae5b122b35cac8b9a51fb094e98a5e8bc0348d556ddfdf12b75014ecaf.
+A origem estável das bases é mantida. O retry de criação agora respeita o
+salvamento pendente da prática anterior.179 testes da interface e build passaram,
+incluindo regressão da fila; o teste real de login passou a conferir o aviso
+dos dois modos e a ausência de transferência, em vez do texto antigo singular.
+A revalidação do lote e o gate cumulativo continuam separados. A seleção6b5054ab
+anterior é histórico da primeira habilitação local, não prova da versão corrigida.

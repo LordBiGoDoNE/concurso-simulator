@@ -43,3 +43,23 @@ it('histórico próprio é reservado à conta e inclui o assunto',async()=>{
  const r=render(<Fixture/>);expect(lessonPracticeHistory).not.toHaveBeenCalled();r.unmount();render(<Fixture connected/>);
  fireEvent.click(await screen.findByRole('button',{name:/Abrir prática de P01/}));await screen.findByRole('heading',{name:'Questão 1 de 1'});expect(lessonPracticeTransport.read).toHaveBeenCalledWith(view.id,expect.any(AbortSignal));
 });
+
+it('retry de B após falha não desmonta A enquanto seu salvamento está pendente',async()=>{
+ setup();const confirm=vi.spyOn(window,'confirm').mockReturnValue(true);
+ const b={...view,id:'70000000-0000-0000-0000-000000000002',items:[{...view.items[0],statement:{text:'PRACTICE_B_AFTER_RETRY',resources:[]}}]};
+ vi.mocked(createLessonPractice).mockResolvedValueOnce(view).mockRejectedValueOnce(new TypeError('lost creation')).mockResolvedValueOnce(b);
+ vi.mocked(lessonPracticeTransport.read).mockImplementation(async id=>id===b.id?b:view);
+ let resolveSave!:(value:typeof view)=>void;
+ vi.mocked(lessonPracticeTransport.save).mockReturnValue(new Promise(resolve=>resolveSave=resolve));
+ render(<Fixture/>);fireEvent.click(screen.getByRole('button',{name:'Começar aula'}));await screen.findByRole('heading',{name:'Questão 1 de 1'});
+ await waitFor(()=>expect(lessonPracticeTransport.read).toHaveBeenCalled());
+ fireEvent.click(screen.getByRole('button',{name:'Começar aula'}));const retry=await screen.findByRole('button',{name:'Tentar iniciar prática novamente'});
+ fireEvent.click(screen.getAllByRole('radio')[0]);await waitFor(()=>expect(lessonPracticeTransport.save).toHaveBeenCalledTimes(1));
+ const signal=vi.mocked(lessonPracticeTransport.save).mock.calls[0][3];
+ fireEvent.click(retry);expect(createLessonPractice).toHaveBeenCalledTimes(2);expect(signal.aborted).toBe(false);
+ expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.queryByText('PRACTICE_B_AFTER_RETRY')).not.toBeInTheDocument();
+ await act(async()=>resolveSave({...view,version:1,items:[{...view.items[0],selectedAlternativeId:view.items[0].alternatives[0].id}]}));
+ await screen.findByText('Respostas confirmadas.');fireEvent.click(retry);await screen.findByText('PRACTICE_B_AFTER_RETRY');
+ expect(vi.mocked(createLessonPractice).mock.calls[1].slice(0,2)).toEqual(vi.mocked(createLessonPractice).mock.calls[2].slice(0,2));
+ expect(confirm).toHaveBeenCalledTimes(1);confirm.mockRestore();
+});

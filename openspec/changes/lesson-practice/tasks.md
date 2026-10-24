@@ -1,10 +1,11 @@
 # Tasks
 
-Proposta em preparação; nenhuma tarefa de implementação iniciada. Pedido do usuário:
+Proposta ampliada aprovada em2026-10-24; nenhuma tarefa de implementação iniciada. Pedido do usuário:
 separar prática de aula e simulado; decisão confirmada de correção somente ao encerrar.
 O usuário também solicitou questões próprias por modo; proposta ampliada para
-acervos exclusivos. Volume de conteúdo ainda em escolha (255 ou51). Escolher
-explicitamente a proposta atualizada e os grupos completos1–5 antes de implementar.
+acervos exclusivos, com cinco questões novas por aula255 no total aceitas. Falta
+escolher explicitamente os grupos completos1–5 do lote antes de implementar.
+Aceite da proposta não concede aprovação editorial a itens ainda não redigidos.
 
 ## 1. Núcleo e persistência — base dos demais grupos
 
@@ -34,9 +35,9 @@ explicitamente a proposta atualizada e os grupos completos1–5 antes de impleme
 - [ ] 4.3 Consolidar regressões/limites/procedimento de atualização e executar gate cumulativo independente SOL6.1xHigh.
 - [ ] 4.4 Conferir checks/SHAs/triagem/cota, solicitar merges específicos e atualizar a issue após cada mudança/integração.
 
-## 5. Acervo exclusivo de prática — conteúdo depende do volume escolhido; integração depende de1–2
+## 5. Acervo exclusivo de prática — volume255 aprovado; integração depende de1–2
 
-- [ ] 5.1 Fixar o lote solicitado por assunto/cargo após escolha do usuário, mapear fontes e preparar questões autorais distintas do acervo SIMULADO.
+- [ ] 5.1 Preparar cinco questões autorais novas por cada um dos51 assuntos (255), com cargos elegíveis/fontes mapeados e conteúdo distinto do acervo SIMULADO, após escolha deste grupo no lote.
 - [ ] 5.2 Revisar enunciados/alternativas/resoluções/referências e duplicatas/linhagem, registrar identidade/destinação/fingerprint e cobertura dos51 assuntos.
 - [ ] 5.3 Validar os pacotes/importação em banco isolado, sem aprovação automática, apresentar seleção exata/digests e obter decisão editorial específica antes de tornar elegível no destino acordado.
 - [ ] 5.4 Concluir testes/auditorias/editorial, documentação e revisão SOL6.1xHigh; verificar disponibilidade própria por aula sem modificar as251 bases atuais ou as aulas.

@@ -20,7 +20,8 @@ para prática e simulado, evitando treinar no mesmo acervo usado para avaliaçã
   PRATICA_AULA. Uma base, suas revisões e variantes nunca alimentam ambos os modos.
   Proposta de migração: preservar as251 questões atuais para simulados e preparar
   novas questões autorais de prática, com revisão/decisão editorial próprias.
-  O tamanho inicial está em escolha pelo usuário: cinco por aula255 ou uma por aula51.
+  O usuário aprovou em2026-10-24 cinco questões novas por aula:255 no total,
+  sujeitas à revisão e decisão editorial específica antes da elegibilidade.
   Não copiar questões do simulado nem apenas alterar números/nomes para a prática.
 - Manter escolhas e salvamento sem mostrar acerto, gabarito ou resolução durante
   a realização. Ao encerrar explicitamente, apresentar resultado e explicações.
@@ -63,5 +64,7 @@ prática, reclassificação de tentativas antigas, publicação ou arquivamento.
 presume aprovação editorial de questões novas por aprovar código ou esta proposta.
 Parte do acervo atual veio dos exercícios públicos das aulas; separar os modos
 não desfaz essa exposição e não é promessa de sigilo/ineditismo dos simulados.
-A implementação e o lote dependem da aprovação desta proposta e da escolha explícita
-dos grupos completos. O pedido não autoriza merges automaticamente.
+A proposta ampliada e o volume255 foram aprovados pelo usuário em2026-10-24.
+A escolha explícita dos grupos completos1–5 do lote está pendente; nenhuma
+implementação começou. O aceite não autoriza merges nem atos editoriais no banco
+automaticamente. Aprovação editorial continua vinculada à seleção/digests concretos.

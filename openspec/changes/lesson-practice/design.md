@@ -11,12 +11,13 @@ EligibleRevisionPool.capture e a consulta EligibleQuestions hoje não distinguem
 a destinação da questão; separar só as tentativas continuaria reutilizando o acervo.
 
 A decisão explícita do usuário é separar os percursos e corrigir somente ao encerrar.
-Quantidade até cinco, histórico próprio e isolamento das métricas são propostas
-adicionais deste documento, sujeitas ao mesmo aceite antes da implementação.
+Quantidade até cinco, histórico próprio e isolamento das métricas integram a
+proposta aprovada pelo usuário em2026-10-24.
 O usuário também pediu acervos próprios por modo. A proposta preserva as251 bases
-atuais para simulados e prepara novas bases exclusivas de prática; o volume inicial
-está em escolha (cinco por aula255 ou uma por aula51). Isso não é autorização
-editorial concedida, nem decisão para mover/descartar questões já aprovadas.
+atuais para simulados e prepara novas bases exclusivas de prática. O usuário aceitou
+cinco questões novas por aula255 no total. Isso aprova o planejamento do volume,
+sem conceder elegibilidade editorial a conteúdo ainda não redigido/revisado e sem
+autorizar mover/descartar questões já aprovadas.
 
 ## Goals / Non-Goals
 
@@ -120,8 +121,8 @@ O PR final `[SPEC]` integra diretamente em main, após revisão cumulativa indep
 SOL6.1xHigh e autorização específica. Não reutilizar a reformulação encerrada, não
 sincronizar a stack histórica do layout, não modificar stable/Pages.
 
-Primeiro aprovar a proposta atualizada, escolher o volume de conteúdo e os grupos
-completos1–5. O antigo grupo4 continua sendo verificação/gate, agora dependente
+Proposta atualizada e volume255 aprovados em2026-10-24; falta escolher os grupos
+completos1–5 antes da implementação. O antigo grupo4 continua sendo verificação/gate, agora dependente
 também do novo grupo5 editorial para cobertura real completa. Implementação/revisão de
 cada grupo inclui seus testes/docs. O gate final permanece independente da revisão
 do lote. Evidências não executadas ficam pending. Atualizar a issue a cada PR
@@ -130,8 +131,8 @@ arquivamento ou alteração do banco do operador por mera preparação desta pro
 
 ## Open Questions
 
-Correção ao encerrar foi escolhida pelo usuário. Proposta adicional a aprovar:
-até cinco questões fixas exclusivas, separação do histórico/métricas e preservação
-simultânea do simulado. Volume inicial de conteúdo pendente:255 ou51 questões novas.
-A implementação aguarda a aprovação e seleção dos grupos completos1–5; a redação
-e publicação editorial do conteúdo não são presumidas por esta atualização.
+Correção ao encerrar, até cinco questões fixas exclusivas por prática, separação de
+histórico/métricas, preservação simultânea do simulado e volume255 (cinco por aula)
+integram a proposta aprovada pelo usuário. Falta escolher os grupos completos1–5
+do lote. Nenhuma implementação/redação começou; seleção e digests concretos serão
+apresentados para a decisão editorial específica antes da elegibilidade no banco.

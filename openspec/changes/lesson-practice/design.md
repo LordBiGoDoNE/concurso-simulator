@@ -121,8 +121,8 @@ O PR final `[SPEC]` integra diretamente em main, após revisão cumulativa indep
 SOL6.1xHigh e autorização específica. Não reutilizar a reformulação encerrada, não
 sincronizar a stack histórica do layout, não modificar stable/Pages.
 
-Proposta atualizada e volume255 aprovados em2026-10-24; falta escolher os grupos
-completos1–5 antes da implementação. O antigo grupo4 continua sendo verificação/gate, agora dependente
+Proposta atualizada e volume255 aprovados em2026-10-24; todos os grupos
+completos1–5 foram escolhidos pelo usuário para desenvolvimento local primeiro. O antigo grupo4 continua sendo verificação/gate, agora dependente
 também do novo grupo5 editorial para cobertura real completa. Implementação/revisão de
 cada grupo inclui seus testes/docs. O gate final permanece independente da revisão
 do lote. Evidências não executadas ficam pending. Atualizar a issue a cada PR
@@ -133,6 +133,15 @@ arquivamento ou alteração do banco do operador por mera preparação desta pro
 
 Correção ao encerrar, até cinco questões fixas exclusivas por prática, separação de
 histórico/métricas, preservação simultânea do simulado e volume255 (cinco por aula)
-integram a proposta aprovada pelo usuário. Falta escolher os grupos completos1–5
-do lote. Nenhuma implementação/redação começou; seleção e digests concretos serão
+integram a proposta aprovada pelo usuário. Todos os grupos completos1–5
+do lote foram escolhidos; implementação/redação são feitas e testadas localmente; seleção e digests concretos serão
 apresentados para a decisão editorial específica antes da elegibilidade no banco.
+
+
+Decisão de execução em2026-10-24: todos os grupos1–5 autorizados. Desenvolver,
+testar e apresentar localmente antes de novos pushes/PRs/revisões com modelo.
+Commits locais são permitidos para proveniência/build. Revisões independentes e
+gates continuam pendentes até estabilizar o resultado local e autorização de envio;
+não presumir review check, integração remota ou elegibilidade editorial do conteúdo.
+
+Implementação local: destino derivado da identidade imutável do namespace de origem; coluna gerada por V11 e filtro antes de captura/contagem. Detalhes e limites em `docs/lesson-practice.md`.

@@ -1,9 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer, type Answer, type AttemptItem, type AttemptView, type Result } from './attempt-api';
+import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer, type AttemptTransport, type Answer, type AttemptItem, type AttemptView, type Result } from './attempt-api';
+
+const defaultTransport: AttemptTransport = {read:readAttempt,save:saveAnswer,finish:finishAttempt,result:attemptResult};
 
 type Phase = 'saved' | 'pending' | 'failed' | 'conflict' | 'unsaved';
 interface Job { itemId: string; alternativeId: string | null; commandId: string; expectedVersion?: number }
-export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
+export function useAttemptRun(initial: AttemptView, onUnavailable: () => void, transport: AttemptTransport = defaultTransport) {
   const [view, setView] = useState(initial); const server = useRef(initial);
   const [phase, setPhase] = useState<Phase>('saved'); const [message, setMessage] = useState('');
   const [result, setResult] = useState<Result | null>(null); const [resultFailed, setResultFailed] = useState(false);
@@ -17,7 +19,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
   async function loadResult() {
     const controller = lifetime.current; if (!controller || view.finishedAt === null) return;
     setResultFailed(false);
-    try { const value = await attemptResult(view.id, controller.signal); if (!controller.signal.aborted) setResult(value); }
+    try { const value = await transport.result(view.id, controller.signal); if (!controller.signal.aborted) setResult(value); }
     catch (error) { if (!controller.signal.aborted) { if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) unavailable.current(); else setResultFailed(true); } }
   }
   async function pump() {
@@ -27,7 +29,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
       while (queue.current.length) {
         const job = queue.current[0]; job.expectedVersion ??= server.current.version;
         const answer: Answer = { commandId: job.commandId, expectedVersion: job.expectedVersion, alternativeId: job.alternativeId };
-        const confirmed = await saveAnswer(server.current.id, job.itemId, answer, controller.signal);
+        const confirmed = await transport.save(server.current.id, job.itemId, answer, controller.signal);
         if (controller.signal.aborted) return;
         server.current = confirmed; setView(confirmed); queue.current.shift();
         if (drafts.current[job.itemId] === job.alternativeId && !queue.current.some(j => j.itemId === job.itemId)) delete drafts.current[job.itemId];
@@ -58,7 +60,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
     const controller = lifetime.current; if (!controller || controller.signal.aborted || working.current || closing.current) return;
     working.current = true; setPhase('pending');
     try {
-      const current = await readAttempt(server.current.id, controller.signal); if (controller.signal.aborted) return;
+      const current = await transport.read(server.current.id, controller.signal); if (controller.signal.aborted) return;
       server.current = current; setView(current); queue.current = []; blocked.current = true;
       closeOperation.current = null; setFinishFailed(false);
       const dirty = Object.keys(drafts.current).length > 0;
@@ -85,7 +87,7 @@ export function useAttemptRun(initial: AttemptView, onUnavailable: () => void) {
     }
     closing.current = true; setFinishing(true); setFinishFailed(false); setMessage('');
     try {
-      const closed = await finishAttempt(server.current.id, closeOperation.current.commandId, closeOperation.current.version, controller.signal);
+      const closed = await transport.finish(server.current.id, closeOperation.current.commandId, closeOperation.current.version, controller.signal);
       if (controller.signal.aborted) return;
       server.current = closed.attempt; setView(closed.attempt); setResult(closed.result);
     } catch (error) {

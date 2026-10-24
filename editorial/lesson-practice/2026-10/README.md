@@ -17,7 +17,12 @@ com fingerprints/resoluções ficam em `backend/build/lesson-practice/editorial/
 ignorados. O compilador verifica cobertura, alternativas, fontes, classificação,
 resoluções em etapas e56 oráculos aritméticos exatos. A triagem de enunciados compara
 os255 com509 candidatos válidos extraídos do legado510 (um inválido), e entre si,
-com limiar textual0,75 por assunto. Nenhum par sinalizado no lote atual. Essa medida
+com limiar textual0,75 por assunto e sinais adicionais de estrutura/valores normalizados.
+A comparação usa também as250 revisões curadas atuais, sobrepostas ao inventário
+legado, não apenas os HTML originais. As correspondências de estrutura numérica
+(limiar0,55) foram conferidas e registradas em comparison-review.json, com hashes
+dos enunciados e motivos específicos; nenhum sinal direto dos padrões conhecidos
+permanece no lote corrigido. Essa medida
 não prova originalidade semântica; a primeira versão sinalizou P06-P01, que foi
 reescrito antes da seleção atual. Números/identificadores novos, isoladamente,
 não seriam uma distinção editorial suficiente.
@@ -30,3 +35,15 @@ local para testar e validar antes do GitHub. A seleção de digest
 foi submetida/aprovada pelos UseCases existentes nesse destino. As251 bases de
 simulado foram preservadas. A autorização local não declara revisão humana
 independente, revisão SOL executada ou aceite para publicação.
+
+Correção editorial após revisão do lote:23 itens foram reescritos, incluindo os
+cinco exemplos de problemas equivalentes identificados pela revisão e outros
+casos apontados na comparação ampliada. Problemas de Matemática passaram a exigir
+etapas/decisões diferentes, e os demais itens alterados passaram a confrontar casos
+ou decisões diferentes. A regressão sinaliza os cinco padrões conhecidos e verifica
+a inclusão das revisões curadas. Isso é apoio de auditoria, sem garantia automática
+de originalidade semântica.
+
+Seleção corrigida: `a47c4eae5b122b35cac8b9a51fb094e98a5e8bc0348d556ddfdf12b75014ecaf`. A seleção6b5054ab anterior
+é histórico da habilitação local inicial; a atualização dos fingerprints no operador
+usa a autorização permanente de teste local, sem modificar o acervo de simulados.

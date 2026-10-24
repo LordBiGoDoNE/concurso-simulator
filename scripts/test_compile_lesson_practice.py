@@ -29,6 +29,26 @@ class PracticeEditorialTests(unittest.TestCase):
             with self.assertRaisesRegex(ValueError,'Cálculo divergente'):lp.compile_practice(root)
             file.write_text('\n'.join(original[1:]),encoding='utf-8')
             with self.assertRaisesRegex(ValueError,'cinco questões'):lp.compile_practice(root)
+    def test_current_curated_revisions_are_in_comparison_snapshot(self):
+        from curate_questions import compile_curation
+        _,curated,*_=compile_curation(ROOT)
+        snapshot=lp.comparison_snapshot(ROOT)
+        indexed={i['origin']['key']:i for i in snapshot['items']}
+        self.assertEqual(250,snapshot['curatedRevisions'])
+        for item in curated:self.assertEqual(item,indexed[item['origin']['key']])
+
+    def test_known_superficial_variants_are_signalled(self):
+        cases=[
+          ('M09','Uma horta retangular de7 por4 metros tem qual perímetro?','Qual é o perímetro de um retângulo de7 por4 centímetros?'),
+          ('M09','Qual a área de um triângulo de base10 e altura7?','Qual a área de um triângulo de base10 e altura6?'),
+          ('M10','Uma sequência começa em3 e cada termo é o dobro do anterior. Qual é o próximo termo?','Uma sequência começa em1 e cada termo é o dobro do anterior. Qual é o próximo termo?'),
+          ('I05','O endereço C7 indica qual linha e coluna?','O endereço C5 identifica qual linha e coluna?'),
+          ('M03','Quatro pessoas fazem um serviço em6 dias. Quantos dias levariam3 pessoas?','Cinco trabalhadores fazem um serviço em8 dias. Quantos dias levariam4 trabalhadores?')]
+        def item(key,topic,text):return {'origin':{'key':key},'content':{'statement':{'text':text},'classification':{'topicId':topic}}}
+        for topic,a,b in cases:
+            result=lp.audit_duplicates({'items':[item('own',topic,a)]},{'items':[item('old',topic,b)]})
+            self.assertTrue(result['directIntentMatches'],topic)
+
     def test_duplicate_triage_finds_exact_and_similar_stems(self):
         pack,_,_=lp.compile_practice(ROOT);legacy=copy.deepcopy(pack);legacy['items']=legacy['items'][:1]
         self.assertEqual(1,len(lp.audit_duplicates(pack,legacy)['exactLegacy']))

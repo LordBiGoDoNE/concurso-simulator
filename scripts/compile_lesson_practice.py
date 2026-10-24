@@ -97,27 +97,54 @@ def compile_practice(root):
           'items':items,'issues':[],'possibleDuplicates':[]}
     return pack,rows,numeric
 
+def comparison_snapshot(root):
+    """Compara também o conteúdo curado atual, não somente o HTML de origem."""
+    from curate_questions import compile_curation
+    original, curated, *_ = compile_curation(root)
+    current = {item['origin']['key']: item for item in original['items']}
+    current.update({item['origin']['key']: item for item in curated})
+    return {**original, 'items': list(current.values()), 'curatedRevisions': len(curated)}
+
+def numeric_template(text):
+    text = re.sub(r'Microsoft\s*365|Windows\s*11', '', text, flags=re.I)
+    text = re.sub(r'\b[A-Z]{1,3}[0-9]+\b', 'CELULA', text)
+    return re.sub(r'\d+(?:[.,/]\d+)*', 'N', normalized(text))
+
+def direct_intent(text, topic):
+    # Sinais de perguntas diretas conhecidas; não são um classificador semântico.
+    t = ''.join(c for c in unicodedata.normalize('NFKD',text.casefold()) if not unicodedata.combining(c))
+    if topic=='M09' and 'perimetro' in t and 'retang' in t: return 'rectangle-perimeter'
+    if topic=='M09' and 'area' in t and 'triang' in t and not any(w in t for w in ('retir','restant','remanesc')): return 'triangle-area'
+    if topic=='M10' and 'dobro' in t and 'proximo' in t: return 'double-next'
+    if topic=='I05' and 'endereco' in t and any(w in t for w in ('indica','identifica')): return 'cell-address'
+    if topic=='M03' and re.search(r'pesso|funcion|trabalhad|servidor|equipe',t) and re.search(r'dias?|horas?',t) and not any(w in t for w in ('apos','depois','adicion','saem','restant')):
+        return 'single-stage-work-time'
+    return None
+
 def audit_duplicates(pack, legacy):
     """Triagem textual, não certificado semântico de originalidade."""
-    exact=[];near=[]; internal=[]
+    exact=[];near=[]; internal=[];templates=[];intents=[]
     texts=[(i['origin']['key'],normalized(i['content']['statement']['text']), i['content']['classification']['topicId']) for i in pack['items']]
     old=[(i['origin']['key'],normalized(i['content']['statement']['text']), i['content']['classification']['topicId']) for i in legacy['items']]
     for k,s,t in texts:
         for oldk,olds,oldt in old:
             if s==olds:exact.append([k,oldk])
             elif t==oldt and SequenceMatcher(None,s,olds,autojunk=False).ratio()>=.75:near.append([k,oldk])
+            if t==oldt:
+                if SequenceMatcher(None,numeric_template(s),numeric_template(olds),autojunk=False).ratio()>=.55:templates.append([k,oldk])
+                intent=direct_intent(s,t)
+                if intent and intent==direct_intent(olds,t):intents.append([k,oldk,intent])
     for index,(k,s,t) in enumerate(texts):
         for other,others,othert in texts[:index]:
             if t==othert and SequenceMatcher(None,s,others,autojunk=False).ratio()>=.75:internal.append([k,other])
-    return {'exactLegacy':exact,'similarLegacy':near,'similarWithinPractice':internal,'threshold':.75,'legacyCandidates':len(old),
+    return {'exactLegacy':exact,'similarLegacy':near,'similarWithinPractice':internal,'threshold':.75,'legacyCandidates':len(old),'curatedRevisions':legacy.get('curatedRevisions',0),'numericTemplateMatches':templates,'numericTemplateThreshold':.55,'directIntentMatches':intents,
         'limits':'Triagem de texto; não prova ausência de equivalência semântica. Pares sinalizados exigem leitura editorial.'}
 
 def main():
     p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',default='.');p.add_argument('--output',default='backend/build/lesson-practice/editorial');args=p.parse_args()
     root=Path(args.root).resolve();out=root/args.output;out.mkdir(parents=True,exist_ok=True)
     pack,rows,numeric=compile_practice(root)
-    from extract_questions import extract
-    duplicates=audit_duplicates(pack,extract(root))
+    duplicates=audit_duplicates(pack,comparison_snapshot(root))
     if duplicates['exactLegacy']:raise ValueError('Questões iguais ao legado')
     selection=[{'key':i['origin']['key'],'fingerprint':i['fingerprint']} for i in pack['items']]
     report={'status':'draft-not-approved','count':len(rows),'coverage':dict(sorted(Counter(r['topicId'] for r in rows).items())),

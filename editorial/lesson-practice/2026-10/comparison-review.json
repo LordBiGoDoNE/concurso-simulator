@@ -1,0 +1,104 @@
+{
+  "version": 1,
+  "method": "Assistente: comparação direcionada com enunciados curados e amostra de variantes superficiais; sem certificação semântica exaustiva.",
+  "selectionDigest": "a47c4eae5b122b35cac8b9a51fb094e98a5e8bc0348d556ddfdf12b75014ecaf",
+  "numericTemplateThreshold": 0.55,
+  "comparisons": [
+    {
+      "practiceKey": "P05-P02",
+      "mockKey": "P05-Q09",
+      "practiceStatementSha256": "e4897ccfbea8c9d4da5605fe9f8b252a8714af0be951a10bf4f9a7a69fe61ed4",
+      "mockStatementSha256": "3cd1b90b33a85d001343bb9c8bfee046d9ce15da24255cff70dd1ae864774c83",
+      "disposition": "distinct-question",
+      "rationale": "Plural de cidadão versus acentuação de oxítona; operações linguísticas distintas."
+    },
+    {
+      "practiceKey": "P06-P03",
+      "mockKey": "P06-Q03",
+      "practiceStatementSha256": "4d9fabd6f362de9f80678e679fd69ddeb0b76865be0f26b69883e1814d7781e3",
+      "mockStatementSha256": "801aa6955d53cf818b7e0811896f5d495d478f373227428e753a1939e98d1afe",
+      "disposition": "distinct-question",
+      "rationale": "Conjunção aditiva ligando termos versus substantivação de infinitivo; classes e exemplos distintos."
+    },
+    {
+      "practiceKey": "P07-P01",
+      "mockKey": "P07-Q05",
+      "practiceStatementSha256": "77a74c17cb20e54d27a4f824b384a067378f10cbf6f9d6a226d8a4bdb563253f",
+      "mockStatementSha256": "8cda9ec607f25c187eaefe6b97afcd87362738004ee28f80b1d2a7c26167acff",
+      "disposition": "distinct-question",
+      "rationale": "Coincidência no comando genérico; o item exige julgar outras estruturas de concordância nas alternativas."
+    },
+    {
+      "practiceKey": "M06-P03",
+      "mockKey": "M06-Q08",
+      "practiceStatementSha256": "db8c1bf3cc1a3a64398ec6e365dae6dcb9473498a48485f2de7b0edfed95c752",
+      "mockStatementSha256": "d7757385b35cb73399040db9aa0c126569a9b24fb32b232e5b91c5d61863629f",
+      "disposition": "distinct-question",
+      "rationale": "Equação com termos de x nos dois membros versus subtração simples em um membro; exige reunir termos algébricos, não somente substituir valores."
+    },
+    {
+      "practiceKey": "I02-P04",
+      "mockKey": "I02-Q01",
+      "practiceStatementSha256": "e043f754a35d4d361f5bb67ba30f9383db9a4a405b5cf0071de61dc7c730a7fd",
+      "mockStatementSha256": "7aa45e819a2e40153930880ea716526981104c48c6d1507eb16cc970371961f4",
+      "disposition": "distinct-question",
+      "rationale": "Criar pasta com Ctrl+Shift+N versus copiar/recortar arquivo com Ctrl+C/Ctrl+X; ações e atalhos distintos."
+    },
+    {
+      "practiceKey": "I02-P04",
+      "mockKey": "I02-Q02",
+      "practiceStatementSha256": "e043f754a35d4d361f5bb67ba30f9383db9a4a405b5cf0071de61dc7c730a7fd",
+      "mockStatementSha256": "d1fc08fe90fb016e866c5fd400c5d30576fed06ea9236780abbac1ffd1bd3458",
+      "disposition": "distinct-question",
+      "rationale": "Criar pasta com Ctrl+Shift+N versus copiar/recortar arquivo com Ctrl+C/Ctrl+X; ações e atalhos distintos."
+    },
+    {
+      "practiceKey": "I06-P02",
+      "mockKey": "I06-Q02",
+      "practiceStatementSha256": "e7e3d7f07680faf7f1135f03f3d1a1acb7ea1087dca6111a722352c4064391af",
+      "mockStatementSha256": "d301c244a089a909e387ee42153f9a5c511a0d74e10d4333392feb975594e505",
+      "disposition": "distinct-question",
+      "rationale": "Construir fórmula com intervalo contíguo versus avaliar média de literais fornecidos."
+    },
+    {
+      "practiceKey": "I06-P03",
+      "mockKey": "I06-Q01",
+      "practiceStatementSha256": "3af1d10f0f0ede1bb09b83c4b4264c747b0b87b25f496de8465d3157d6ed8bb7",
+      "mockStatementSha256": "37e553b76fb4c928f0e4cb033dc3c366bff0a4916da7a3c7ce22b168e8e3c4f5",
+      "disposition": "distinct-question",
+      "rationale": "Avaliar condição da função SE versus funções de agregação SOMA/MÉDIA/MÁXIMO/MÍNIMO; operações distintas."
+    },
+    {
+      "practiceKey": "I06-P03",
+      "mockKey": "I06-Q02",
+      "practiceStatementSha256": "3af1d10f0f0ede1bb09b83c4b4264c747b0b87b25f496de8465d3157d6ed8bb7",
+      "mockStatementSha256": "d301c244a089a909e387ee42153f9a5c511a0d74e10d4333392feb975594e505",
+      "disposition": "distinct-question",
+      "rationale": "Avaliar condição da função SE versus funções de agregação SOMA/MÉDIA/MÁXIMO/MÍNIMO; operações distintas."
+    },
+    {
+      "practiceKey": "I06-P03",
+      "mockKey": "I06-Q03",
+      "practiceStatementSha256": "3af1d10f0f0ede1bb09b83c4b4264c747b0b87b25f496de8465d3157d6ed8bb7",
+      "mockStatementSha256": "4c41555b1d43efc240bd7a60c50052b88d9d7ebc7b2fae11c8bdfbf93bb28111",
+      "disposition": "distinct-question",
+      "rationale": "Avaliar condição da função SE versus funções de agregação SOMA/MÉDIA/MÁXIMO/MÍNIMO; operações distintas."
+    },
+    {
+      "practiceKey": "I06-P03",
+      "mockKey": "I06-Q04",
+      "practiceStatementSha256": "3af1d10f0f0ede1bb09b83c4b4264c747b0b87b25f496de8465d3157d6ed8bb7",
+      "mockStatementSha256": "e29a5e46466b6c02899f6611a93aadb143dd85f25f051e9252a69ae39bc99d7a",
+      "disposition": "distinct-question",
+      "rationale": "Avaliar condição da função SE versus funções de agregação SOMA/MÉDIA/MÁXIMO/MÍNIMO; operações distintas."
+    },
+    {
+      "practiceKey": "S07-P05",
+      "mockKey": "S07-Q08",
+      "practiceStatementSha256": "f8312803d08c6dc526d9e2243ea2d111581079fd313d2e7f4e0ac713fa5acc64",
+      "mockStatementSha256": "10534a41ba15ed55cedaaa90cc12aa6b9e6bb1dcb082ac06d4bad4d595d75034",
+      "disposition": "distinct-question",
+      "rationale": "Finalidade/articulação do PNE versus sua duração; comandos e fatos distintos."
+    }
+  ]
+}

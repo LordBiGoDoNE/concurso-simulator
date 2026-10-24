@@ -83,7 +83,7 @@ def compile_practice(root):
                 references.append({'name':ref['name'],'url':safe_url(ref['url']),'legalBasis':basis})
             roleids=list(ROLES) if prefix in 'PMI' else [ROLES[0 if prefix=='A' else 1]]
             rich=lambda value:{'text':value,'resources':[]}
-            options=[{'id':str(uuid.uuid5(uuid.NAMESPACE_URL,f'{NAMESPACE}/{key}/{i}')),'content':rich(x)} for i,x in enumerate(row['alternatives'])]
+            options=[{'id':str(uuid.uuid5(uuid.NAMESPACE_URL,f'{NAMESPACE}/{key}/text/{hashlib.sha256(x.encode("utf-8")).hexdigest()}')),'content':rich(x)} for x in row['alternatives']]
             content={'statement':rich(row['statement']),'alternatives':options,'correctAlternativeId':options[row['correctIndex']]['id'],'resolution':rich(row['resolution']),
                 'classification':{'disciplineId':CATALOG[topic],'topicId':topic,'roleIds':roleids},'references':references,
                 'provenance':{'author':AUTHOR,'contentPath':relative,'answerPath':relative,'contentSha256':sha,'answerSha256':sha}}

@@ -15,7 +15,7 @@ raciocínios são próprios, sem reproduzir questões de provas.
 Execute `python scripts/compile_lesson_practice.py`. O pacote e a seleção completa
 com fingerprints/resoluções ficam em `backend/build/lesson-practice/editorial/`,
 ignorados. O compilador verifica cobertura, alternativas, fontes, classificação,
-resoluções em etapas e56 oráculos aritméticos exatos. A triagem de enunciados compara
+resoluções em etapas e55 oráculos aritméticos exatos. A triagem de enunciados compara
 os255 com509 candidatos válidos extraídos do legado510 (um inválido), e entre si,
 com limiar textual0,75 por assunto e sinais adicionais de estrutura/valores normalizados.
 A comparação usa também as250 revisões curadas atuais, sobrepostas ao inventário
@@ -55,3 +55,15 @@ Também foi corrigida a canonização de células Excel após casefold, com regr
 pelo caminho real de audit_duplicates. Todos os itens mantêm os IDs de origem;
 novas revisões preservam as capturas anteriores. A seleção atual é
 `9f44d2652b71433dfe9edc3da9dd57cce797d105484a9b2bd726bf058fde3f4a`; os digests anteriores permanecem como histórico das rodadas.
+
+Os três pares adicionais P05-P01/P05-Q03, P07-P02/P07-Q02 e M12-P05/M12-Q02
+foram substituídos por confronto de regras de acentuação, análise de núcleo do
+sujeito e pertinência exclusiva em conjuntos. O último passou de subtração direta
+para decisão por elementos, ficando55 oráculos aritméticos na versão atual.
+
+Os UUIDs das alternativas agora derivam da chave e do conteúdo, sem usar posição
+ou índice correto. Permutar a ordem autoral e ajustar o índice da resposta não
+muda a identidade associada ao mesmo texto; essa propriedade tem regressão própria.
+Isso evita reconhecer a resposta por um ID posicional previsível. As fontes
+editoriais continuam públicas no repositório; não se promete sigilo do acervo.
+Seleção vigente: `beee31e08d6348ae2cb86ca634f741e55fdb0e951885b73d5f6396e611d3c05b`. Oito testes editoriais passaram.

@@ -249,5 +249,25 @@
       "changedTask": "Aplicar recorte temporal a três trajetórias de matrícula, em vez de indicar genericamente os registros que sustentam o Censo."
     }
   ],
-  "selectionDigest": "9f44d2652b71433dfe9edc3da9dd57cce797d105484a9b2bd726bf058fde3f4a"
+  "selectionDigest": "beee31e08d6348ae2cb86ca634f741e55fdb0e951885b73d5f6396e611d3c05b",
+  "additionalReplacements": [
+    {
+      "key": "M12-P05",
+      "previousStatementSha256": "d70b9a49c1bb1c47a6a0795b5eeb9f672cf326a13f5d115e052800a0e4e7611f",
+      "replacementStatementSha256": "89c0ede21c1c06088844625f41dd2f7c6981fc87a4d83c00c25de7622558dd0a",
+      "changedTask": "Determinar pertinência exclusiva por elemento em dois conjuntos, em vez da cardinalidade de um complemento por subtração."
+    },
+    {
+      "key": "P05-P01",
+      "previousStatementSha256": "35f5b27f19380db3c26e0448e8a5e2fb1271fb5da2287dff6b399a50c112ad58",
+      "replacementStatementSha256": "af65e8a568651142e9bae808fae7421b7c3857418523c3660e41a3ffccb8d034",
+      "changedTask": "Confrontar regras de proparoxítona, oxítona e paroxítona em uma revisão, em vez de reconhecer a grafia de ideia."
+    },
+    {
+      "key": "P07-P02",
+      "previousStatementSha256": "d720a512e934d5de5aa973bda81519a85a68c1600d64c52ec94dd487dfd3db56",
+      "replacementStatementSha256": "e7f779b698b6dafb39e6be2868e718f4c2b6d8e5a0ca60998975c0e6c614f9a4",
+      "changedTask": "Identificar o núcleo singular apesar de especificadores plurais e corrigir a concordância, em vez de aplicar fazer impessoal a um período."
+    }
+  ]
 }

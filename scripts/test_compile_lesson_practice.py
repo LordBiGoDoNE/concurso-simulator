@@ -11,7 +11,7 @@ class PracticeEditorialTests(unittest.TestCase):
     def test_full_coverage_numeric_oracles_and_deterministic_fingerprints(self):
         pack,rows,numeric=lp.compile_practice(ROOT)
         self.assertEqual(255,len(rows));self.assertEqual(51,len({r['topicId'] for r in rows}))
-        self.assertEqual(56,len(numeric));self.assertEqual(pack,lp.compile_practice(ROOT)[0])
+        self.assertEqual(55,len(numeric));self.assertEqual(pack,lp.compile_practice(ROOT)[0])
         self.assertTrue(all(i['origin']['namespace']==lp.NAMESPACE for i in pack['items']))
     def test_oracle_rejects_code_and_supports_exact_fraction_and_units(self):
         for expr in ['__import__("os")','(1).__class__','2**999','sqrt(2)','lcm(2,3,4)']:
@@ -56,6 +56,23 @@ class PracticeEditorialTests(unittest.TestCase):
         audit=lp.audit_duplicates(practice,old)
         self.assertIn(['own','old'],audit['numericTemplateMatches'])
         self.assertEqual('celula',lp.numeric_template(lp.normalized('AZ123')))
+
+    def test_alternative_ids_follow_text_when_authored_order_and_answer_index_change(self):
+        import shutil,uuid
+        original,_,_=lp.compile_practice(ROOT)
+        first=original['items'][0]
+        mapping=lambda item:{a['content']['text']:a['id'] for a in item['content']['alternatives']}
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);shutil.copytree(ROOT/lp.DIRECTORY,root/lp.DIRECTORY)
+            file=root/lp.DIRECTORY/'portugues.jsonl';rows=[json.loads(l) for l in file.read_text(encoding='utf-8').splitlines()]
+            row=rows[0];correct=row['alternatives'][row['correctIndex']]
+            row['alternatives']=[row['alternatives'][i] for i in [3,1,0,2]];row['correctIndex']=row['alternatives'].index(correct)
+            file.write_text(''.join(json.dumps(r,ensure_ascii=False)+'\n' for r in rows),encoding='utf-8')
+            rearranged,_,_=lp.compile_practice(root)
+        self.assertEqual(mapping(first),mapping(rearranged['items'][0]))
+        self.assertEqual(first['content']['correctAlternativeId'],rearranged['items'][0]['content']['correctAlternativeId'])
+        positional_guess=str(uuid.uuid5(uuid.NAMESPACE_URL,lp.NAMESPACE+'/'+first['origin']['key']+'/0'))
+        self.assertNotIn(positional_guess,mapping(first).values())
 
     def test_duplicate_triage_finds_exact_and_similar_stems(self):
         pack,_,_=lp.compile_practice(ROOT);legacy=copy.deepcopy(pack);legacy['items']=legacy['items'][:1]

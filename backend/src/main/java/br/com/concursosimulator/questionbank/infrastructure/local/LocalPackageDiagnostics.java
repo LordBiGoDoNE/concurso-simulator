@@ -10,5 +10,5 @@ final class LocalPackageDiagnostics {
         InvalidSelection(List<Diagnostic> diagnostics) { super("Item selecionado inválido: " + diagnostics.stream().map(Diagnostic::code).toList());this.diagnostics=List.copyOf(diagnostics); }
         List<Diagnostic> diagnostics() { return diagnostics; }
     }
-    static String key(String key) { return key!=null && key.matches("[PMIAS][0-9]{2}-Q[0-9]{2}")?key:"INVALID_KEY"; }
+    static String key(String key) { return key!=null && key.matches("[PMIAS][0-9]{2}-(Q[0-9]{2}|P0[1-5])")?key:"INVALID_KEY"; }
 }

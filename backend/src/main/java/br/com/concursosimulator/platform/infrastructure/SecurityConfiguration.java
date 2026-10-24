@@ -111,7 +111,7 @@ public class SecurityConfiguration {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.GET, "/api/v1/csrf", "/api/v1/auth/config",
                                 "/oauth2/authorization/google", "/login/oauth2/code/google").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/me/attempts").access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
+                        .requestMatchers(HttpMethod.GET, "/api/v1/me/attempts", "/api/v1/me/lesson-practices").access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
                         .requestMatchers(r -> SubjectReviewRoutes.permits(r) && SubjectReviewRoutes.overview(r)).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
                         .requestMatchers(SubjectReviewRoutes::permits).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
                         .requestMatchers(AttemptRoutes::permits).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
@@ -158,6 +158,9 @@ public class SecurityConfiguration {
         source.registerCorsConfiguration("/api/v1/attempts",attempts);
         source.registerCorsConfiguration("/api/v1/attempts/**",attempts);
         source.registerCorsConfiguration("/api/v1/me/attempts",attempts);
+        source.registerCorsConfiguration("/api/v1/lesson-practices",attempts);
+        source.registerCorsConfiguration("/api/v1/lesson-practices/**",attempts);
+        source.registerCorsConfiguration("/api/v1/me/lesson-practices",attempts);
         source.registerCorsConfiguration("/api/v1/me/subject-review",sessions);
         return source;
     }

@@ -35,7 +35,7 @@ def tables(path, config):
 
 def fingerprints(path, config):
     if tables(path, config) != TABLES:
-        raise ValueError("Conjunto de tabelas divergente; não é o schema V10 esperado")
+        raise ValueError("Conjunto de tabelas divergente; não é um schema local suportado")
     result = {}
     for table in sorted(TABLES - SESSIONS):
         rows = sql(path, config, f"set timezone='UTC';select row_to_json(r)::text from {table} r order by 1")
@@ -49,13 +49,19 @@ def private_json(path, value):
         stream.write("\n")
 
 
+def schema_version(path, config):
+    versions = sql(path, config, "select version from flyway_schema_history where success order by installed_rank").decode().splitlines()
+    if versions not in [[str(i) for i in range(1, 11)], [str(i) for i in range(1, 12)]]:
+        raise ValueError("Backup exige schema V10 ou V11 válido")
+    return int(versions[-1])
+
+
 def backup(path, config):
     owned(config)
     # Quiesce this application's writers; other operator writes must remain paused too.
     compose(path, config, "stop", "api")
     expected = fingerprints(path, config)
-    if sql(path, config, "select count(*) from flyway_schema_history where success").strip() != b"10":
-        raise ValueError("Backup exige schema V10 válido")
+    schema = schema_version(path, config)
     version = sql(path, config, "show server_version").decode().strip()
     if not version.startswith("18.6"):
         raise ValueError("Cliente/servidor devem ser PostgreSQL18.6")
@@ -75,7 +81,7 @@ def backup(path, config):
                 "source_owner": config["owner"], "source_sha": config["images"]["source_sha"],
                 "api_image": config["images"]["images"]["api"]["id"], "postgres_version": version,
                 "sha256": hashlib.sha256(partial.read_bytes()).hexdigest(), "tables": expected,
-                "sessions": session_count, "schema_version": 10}
+                "sessions": session_count, "schema_version": schema}
     partial.replace(dump)
     private_json(Path(str(dump) + ".json"), metadata)
     print("Backup privado criado: " + str(dump))
@@ -91,7 +97,7 @@ def verified_backup(file):
     if metadata_file.is_symlink():
         raise ValueError("Metadados não podem ser link")
     metadata = json.loads(metadata_file.read_text(encoding="utf-8"))
-    if (metadata.get("version") != 1 or metadata.get("kind") != "local-app-backup" or metadata.get("schema_version") != 10
+    if (metadata.get("version") != 1 or metadata.get("kind") != "local-app-backup" or metadata.get("schema_version") not in {10, 11}
             or set(metadata["tables"]) != TABLES - SESSIONS
             or not re.fullmatch(r"concurso-simulator-app-local(?:-[a-z0-9]{1,24})?", metadata["source_project"])
             or not re.fullmatch(r"[0-9a-f]{32}", metadata["source_owner"])
@@ -137,7 +143,7 @@ def restore_backup(path, config, file, confirm):
     sql(path, config, "begin;delete from spring_session_attributes;delete from spring_session;commit")
     if (fingerprints(path, config) != metadata["tables"]
             or sql(path, config, "select count(*) from spring_session").strip() != b"0"
-            or sql(path, config, "select count(*) from flyway_schema_history where success").strip() != b"10"
+            or schema_version(path, config) != metadata["schema_version"]
             or sql(path, config, "select count(*) from pg_indexes where schemaname='public' and indexname='me_completed_subject_window_idx'").strip() != b"1"):
         raise ValueError("Recuperação não validada; destino permanece bloqueado")
     marker.unlink()

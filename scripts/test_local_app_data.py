@@ -29,6 +29,15 @@ class RecoveryGuards(unittest.TestCase):
                     local_app_data.restore_backup(path, {"project": "target"}, dump, "yes")
                 command.assert_not_called()
 
+    def test_schema_backup_accepts_only_complete_v10_and_v11(self):
+        for count in (10, 11):
+            versions=("\n".join(str(i) for i in range(1,count+1))+"\n").encode()
+            with patch.object(local_app_data, "sql", return_value=versions):
+                self.assertEqual(count,local_app_data.schema_version(None,None))
+        for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,13))).encode()):
+            with patch.object(local_app_data,"sql",return_value=versions):
+                with self.assertRaises(ValueError):local_app_data.schema_version(None,None)
+
     def test_operation_lock_serializes_mutating_commands(self):
         directory = local_app.OUTPUT / "environments"
         directory.mkdir(parents=True, exist_ok=True)

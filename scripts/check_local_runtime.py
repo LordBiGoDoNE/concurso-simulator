@@ -63,7 +63,7 @@ def check():
             assert status == 403 and body == b"" and "Location" not in headers and "Set-Cookie" not in headers
         assert request(client, base, "/api/unknown")[0] == 403
         assert request(client, base, "/api/v1/status", headers={"Forwarded": "host=evil.invalid;proto=https", "X-Forwarded-Host": "evil.invalid"})[0] == 200
-        assert sql(path, config, "select count(*) from flyway_schema_history where success") == "10"
+        assert sql(path, config, "select count(*) from flyway_schema_history where success") == "11"
         assert sql(path, config, "select (select count(*) from qb_question)+(select count(*) from pq_version)+(select count(*) from me_attempt)") == "0"
         for service in ["api", "postgres"]:
             container = compose(path, config, "ps", "-q", service).decode().strip()
@@ -86,12 +86,12 @@ def check():
             time.sleep(.2)
         compose(path, config, "stop")
         start(path, config)
-        assert sql(path, config, "select count(*) from flyway_schema_history where success") == "10"
+        assert sql(path, config, "select count(*) from flyway_schema_history where success") == "11"
         assert sql(path, config, "select count(*) from qb_question") == "0"
         write_report(OUTPUT / "runtime-check.json", {"status": "passed", "source_sha": metadata["source_sha"],
-                     "checks": ["single-origin", "empty-schema-v10", "csrf-cookie", "oauth-methods", "no-host-api-db", "collision", "database-outage", "material-independent", "restart"],
+                     "checks": ["single-origin", "empty-schema-v11", "csrf-cookie", "oauth-methods", "no-host-api-db", "collision", "database-outage", "material-independent", "restart"],
                      "limits": "Synthetic empty database, no Google login; browser/account flows tested separately."})
-        print("RUNTIME_CHECK_PASS: isolated Compose, security, empty V10, outage and restart")
+        print("RUNTIME_CHECK_PASS: isolated Compose, security, empty V11, outage and restart")
     except subprocess.CalledProcessError as failure:
         (OUTPUT / "runtime-failure.log").write_bytes((failure.stdout or b"") + (failure.stderr or b""))
         (OUTPUT / "runtime-container-private.log").write_bytes(compose(path, config, "logs", "--no-color", "api", "postgres"))

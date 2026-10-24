@@ -21,7 +21,11 @@ public final class Attempt {
     }
     /** Somente persistência interna; contém material privado de correção. */
     public record Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt,
-                           Instant finishedAt, String policy, List<Item> items, Map<UUID,UUID> answers, long version, int format) {
+                           Instant finishedAt, String policy, List<Item> items, Map<UUID,UUID> answers, long version, int format, QuestionPurpose purpose, Topic practiceTopic) {
+        public Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt, Instant finishedAt,
+                        String policy, List<Item> items, Map<UUID,UUID> answers, long version, int format) {
+            this(id,owner,composition,createdAt,finishedAt,policy,items,answers,version,format,QuestionPurpose.SIMULADO,null);
+        }
         public Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt, Instant finishedAt,
                         String policy, List<Item> items, Map<UUID,UUID> answers, long version) {
             this(id,owner,composition,createdAt,finishedAt,policy,items,answers,version,2);
@@ -43,12 +47,23 @@ public final class Attempt {
     private Attempt(Snapshot state) {
         Objects.requireNonNull(state.id()); Objects.requireNonNull(state.owner());
         Objects.requireNonNull(state.composition()); Objects.requireNonNull(state.createdAt());
-        if ((state.format()!=1 && state.format()!=2) || state.format()==1 && state.composition().useParameterizedQuestions()
+        Objects.requireNonNull(state.purpose());
+        if (state.purpose()==QuestionPurpose.PRATICA_AULA) {
+            if (state.format()!=3 || state.practiceTopic()==null || state.composition().useParameterizedQuestions()
+                    || state.items().isEmpty() || state.items().size()>5 || state.composition().disciplines().size()!=1
+                    || (!state.composition().disciplines().containsKey(state.practiceTopic().discipline())
+                    || !state.composition().disciplines().get(state.practiceTopic().discipline()).topics().equals(Set.of(state.practiceTopic()))))
+                throw new IllegalArgumentException("Contexto de prática inválido");
+        } else if (state.practiceTopic()!=null || state.format()==3) throw new IllegalArgumentException("Modalidade divergente");
+        if ((state.format()!=1 && state.format()!=2 && state.format()!=3) || state.format()==1 && state.composition().useParameterizedQuestions()
                 || !POLICY.equals(state.policy()) || state.version() < 0 || state.items().size() != state.composition().total())
             throw new IllegalArgumentException("Snapshot de tentativa inválido");
         var itemIds = new HashSet<UUID>(); var questions = new HashSet<UUID>();
         var counts = new EnumMap<Discipline,Integer>(Discipline.class);
         for (var item : state.items()) {
+            if (item.question().purpose()!=state.purpose() || state.practiceTopic()!=null
+                    && item.question().content().classification().topic()!=state.practiceTopic())
+                throw new IllegalArgumentException("Questão fora do acervo/assunto da realização");
             if (!state.composition().useParameterizedQuestions() && item.question().source().kind()!=QuestionSource.Kind.FIXED)
                 throw new IllegalArgumentException("Geração não solicitada");
             if (!itemIds.add(item.id()) || !questions.add(item.question().questionId()) || !state.composition().accepts(item.question()))
@@ -67,6 +82,10 @@ public final class Attempt {
     public static Attempt start(UUID id, AttemptOwner owner, Composition composition, Instant at, List<Item> items) {
         return new Attempt(new Snapshot(id,owner,composition,at,null,POLICY,items,Map.of(),0));
     }
+    public static Attempt startPractice(UUID id, AttemptOwner owner, Composition composition, Topic topic, Instant at, List<Item> items) {
+        return new Attempt(new Snapshot(id,owner,composition,at,null,POLICY,items,Map.of(),0,3,QuestionPurpose.PRATICA_AULA,topic));
+    }
+    public void requirePurpose(QuestionPurpose purpose) { if (state.purpose()!=purpose) throw new Unavailable(); }
     public static Attempt restore(Snapshot snapshot) { return new Attempt(snapshot); }
     public Snapshot snapshot() { return state; }
     public Instant expiresAt() {
@@ -81,12 +100,12 @@ public final class Attempt {
         var answers = new HashMap<>(state.answers());
         if (alternativeId == null) answers.remove(itemId); else answers.put(itemId,alternativeId);
         state = new Snapshot(state.id(),state.owner(),state.composition(),state.createdAt(),null,POLICY,
-                state.items(),answers,Math.addExact(state.version(),1),state.format());
+                state.items(),answers,Math.addExact(state.version(),1),state.format(),state.purpose(),state.practiceTopic());
     }
     public void finish(AttemptOwner actor, Instant now, long expectedVersion) {
         editable(actor,now,expectedVersion);
         state = new Snapshot(state.id(),state.owner(),state.composition(),state.createdAt(),now,POLICY,
-                state.items(),state.answers(),Math.addExact(state.version(),1),state.format());
+                state.items(),state.answers(),Math.addExact(state.version(),1),state.format(),state.purpose(),state.practiceTopic());
     }
     private void editable(AttemptOwner actor, Instant now, long version) {
         requireAccessible(actor,now);
@@ -121,7 +140,7 @@ public final class Attempt {
                 state.items().stream().map(i -> new Correction(viewItem(i),i.question().content().correctAlternativeId(),i.question().content().resolution())).toList());
     }
     public CompletedAttempt evidence(AttemptOwner actor, Instant now) {
-        requireAccessible(actor,now); if (state.finishedAt()==null) throw new Conflict();
+        requireAccessible(actor,now); requirePurpose(QuestionPurpose.SIMULADO); if (state.finishedAt()==null) throw new Conflict();
         return new CompletedAttempt(state.id(),state.owner(),state.composition().role(),state.finishedAt(),
                 state.items().stream().map(i -> new CompletedAttempt.Item(i.question().questionId(),
                         i.question().content().classification(),outcome(i))).toList());

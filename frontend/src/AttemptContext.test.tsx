@@ -116,7 +116,7 @@ it('prática de aula tem realização própria e preserva a fila pendente do sim
   fireEvent.click(screen.getByRole('button',{name:'Praticar P01'}));
   await screen.findByText('OWN_PRACTICE_STATEMENT');
   expect(confirm).not.toHaveBeenCalled();expect(screen.queryByRole('button',{name:'Iniciar simulado'})).not.toBeInTheDocument();
-  expect(screen.getByRole('button',{name:'Encerrar prática'})).toBeVisible();
+  expect(await screen.findByRole('button',{name:'Encerrar prática'})).toBeVisible();
   fireEvent.click(screen.getByRole('button',{name:'Simulados'}));
   expect(screen.getByText('PRIVATE_CONTEXT_STATEMENT')).toBeVisible();expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(screen.getByText('Salvando fila…')).toBeVisible();
   await act(async()=>fixture.finishWrite());await within(screen.getByRole('region',{name:'Simulados'})).findByText('Respostas confirmadas.');

@@ -110,3 +110,13 @@ incluindo regressão da fila; o teste real de login passou a conferir o aviso
 dos dois modos e a ausência de transferência, em vez do texto antigo singular.
 A revalidação do lote e o gate cumulativo continuam separados. A seleção6b5054ab
 anterior é histórico da primeira habilitação local, não prova da versão corrigida.
+
+A comparação ampliada da primeira revalidação identificou41 pares remanescentes.
+Todos foram reescritos com nova pergunta/operação, registrados em
+editorial/lesson-practice/2026-10/replacement-review.json. A seleção atual é
+9f44d2652b71433dfe9edc3da9dd57cce797d105484a9b2bd726bf058fde3f4a.
+A triagem tem regressão de referências Excel após casefold, totalizando7 testes
+Python editoriais. O registro da revalidação anterior é histórico; a rodada
+seguinte e o gate final não são presumidos. A sincronização de AttemptContext
+agora espera um botão acessível após conferência de acesso, mantendo todas as
+assertivas de preservação da fila e de criação única.

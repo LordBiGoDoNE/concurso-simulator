@@ -40,3 +40,10 @@ O histórico acima descreve os snapshots e conclusões no momento da revisão. A
 O coordenador conferiu base atual `181767332d5178f576a5e3853a557be90c16afa8`, ancestralidade do head revisado `5d7a38da80233580c1f19f0c55e0a0e86d8afe1a` e digest cumulativo `33467d86ea17d6b67cdba7b93383f8ecc33132659e626fa0f046cca452715497`. A árvore do merge e do topo aprovado `4d2f79f0479ec2e359e4ac55d2079b3f8cd2428b` é `b6948b30aa1855f57ef77ee5d460dffd665bb3d9`. O conteúdo relevante permanece exatamente o revisado. Este registro altera somente os dois arquivos próprios excluídos do digest; não representa nova execução do modelo nem nova medição de cota/tokens.
 
 O JSON agora identifica o PR147 real. Os limites históricos de pr=null deixam de representar o estado atual; continuam preservados como cronologia. A primeira execução remota do gate, anterior à vinculação, falhou por ausência desse número; os demais checks daquele head passaram. Checks do novo commit de metadados serão acompanhados separadamente. Integração da spec exige aprovação própria do usuário após gate/checks atuais. Sem merge da spec, atualização da stack, alteração de main/stable, publicação ou arquivamento por este registro.
+
+
+## Correção do destino para main — revalidação pendente
+
+Em2026-10-24, o usuário apontou que a reformulação já havia sido entregue pelo #133 e autorizou corrigir o encaminhamento e integrar o PR147. O destino passa a ser `main`, base `c8efceb7bc10774902a4cfca1efb05165d9700b9`. As decisões de processo/proposta/checklist foram atualizadas, sem mudar runtime, testes, CI, rulesets, deploy ou membros da stack. As revisões e checks anteriores acima permanecem histórico, sem certificar o novo snapshot. O JSON volta a pending até a revisão independente do novo conjunto.
+
+O workflow atual publica `spec-review-tests` em main e não aplica seu guard à integração nesse destino. Isso não certifica revisão semântica. O coordenador deve executar `validate_report` diretamente nos commits e metadados reais, além de obter a revalidação independente SOL6.1xHigh e conferir CI antes do merge já autorizado. Não foi alterada nem declarada uma proteção remota inexistente em main.

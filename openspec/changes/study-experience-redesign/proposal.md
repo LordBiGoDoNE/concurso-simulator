@@ -51,12 +51,15 @@ as questões usadas na realização são exemplos demonstrativos repetidos. `les
 O aceite abrange as quatro áreas e cinco estados visuais do protótipo, incluindo aulas.
 A escolha posterior abrange todos os grupos2–6. Aceite e escopo não autorizam merges.
 
-Base: `epic/application-reformulation` em `1817673`; sua árvore é idêntica à entrega
-em `main` `c8efceb`. A tarefa visual usa branch própria e PR de rascunho para
-`epic/study-experience-redesign`. Integração futura exige conferir/sincronizar bases,
-revisões, autorização de merge e a sequência da épica, sem reorganização silenciosa.
+Base inicial histórica: `epic/application-reformulation` em `1817673`, de árvore
+idêntica à entrega em `main` `c8efceb`. A reformulação já foi entregue pelo #133;
+o layout é uma evolução posterior. Por decisão do usuário em 2026-10-24, o PR
+`[SPEC]` #147 de `epic/study-experience-redesign` passa a ter destino `main`
+`c8efceb7bc10774902a4cfca1efb05165d9700b9`. O merge está autorizado após revalidar
+base/head/digest, revisão independente e checks. Preservar os commits existentes;
+nenhum sync/rebase/retarget de membros da stack é necessário ou autorizado.
 
 Implementação em `frontend/src`, testes unitários/Chromium e verificações em pacote
 Docker isolado, mantendo as fontes completas das aulas. O site `stable`, Pages, o acervo
-e o banco da aplicação do operador em 8088 permanecem preservados. Não há publicação
-externa, arquivamento ou integração em main nesta fase.
+e o banco da aplicação do operador em 8088 permanecem preservados. A autorização atual cobre a integração do PR #147 na `main` após a revalidação.
+Publicação externa, arquivamento e alteração do banco do operador permanecem fora dela.

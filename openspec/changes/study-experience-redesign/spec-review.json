@@ -1,18 +1,18 @@
 {
   "version": 1,
-  "status": "completed",
+  "status": "pending",
   "spec": "study-experience-redesign",
   "pr": 147,
-  "integration_state": "SPEC PR #147 opened; task PRs integrated; own merge approval and current remote checks pending",
-  "base_sha": "181767332d5178f576a5e3853a557be90c16afa8",
-  "reviewed_head_sha": "5d7a38da80233580c1f19f0c55e0a0e86d8afe1a",
-  "diff_sha256": "33467d86ea17d6b67cdba7b93383f8ecc33132659e626fa0f046cca452715497",
-  "diff_bytes": 2037583,
-  "reviewed_at": "2026-10-23T15:34:20-03:00",
+  "integration_state": "PR147 retarget to main authorized; new base and process docs require independent revalidation",
+  "base_sha": "c8efceb7bc10774902a4cfca1efb05165d9700b9",
+  "reviewed_head_sha": null,
+  "diff_sha256": null,
+  "diff_bytes": null,
+  "reviewed_at": null,
   "risk": "critical",
   "reviewer": {
     "model": "openai/gpt-6.1-sol#xhigh",
-    "session": "/root/study_layout_final_sol",
+    "session": null,
     "independent_context": true
   },
   "coverage": {
@@ -37,7 +37,7 @@
       "resolution": "Independently revalidated: visible selected code/title, explicit Praticar M01 CTA, matching aria-describedby and explanation of embedded-document navigation independence. Native M01→M02→explicit M01 composition regressions examined."
     }
   ],
-  "triage_complete": true,
+  "triage_complete": false,
   "limitations": [
     "Read-only: no tests/build/product/project scripts/network/DB/writes/delegation by reviewer.",
     "Snapshot/captures do not certify interactions, CI, Google real, external availability or complete WCAG/assistive coverage.",
@@ -133,5 +133,142 @@
     "source_changes": "none; only spec-review.json and spec-review.md metadata updated",
     "authorization": "task PRs141/142/144/145/146 merged with explicit approval; SPEC merge not yet authorized",
     "remote_checks": "pending after metadata commit; no success inferred from prior task checks"
+  },
+  "pre_main_retarget_gate": {
+    "version": 1,
+    "status": "completed",
+    "spec": "study-experience-redesign",
+    "pr": 147,
+    "integration_state": "SPEC PR #147 opened; task PRs integrated; own merge approval and current remote checks pending",
+    "base_sha": "181767332d5178f576a5e3853a557be90c16afa8",
+    "reviewed_head_sha": "5d7a38da80233580c1f19f0c55e0a0e86d8afe1a",
+    "diff_sha256": "33467d86ea17d6b67cdba7b93383f8ecc33132659e626fa0f046cca452715497",
+    "diff_bytes": 2037583,
+    "reviewed_at": "2026-10-23T15:34:20-03:00",
+    "risk": "critical",
+    "reviewer": {
+      "model": "openai/gpt-6.1-sol#xhigh",
+      "session": "/root/study_layout_final_sol",
+      "independent_context": true
+    },
+    "coverage": {
+      "requirements": "Full proposal/design/brief/spec/tasks/prototype and production groups1–6 examined.",
+      "architecture": "AGENTS/profile/ADR0001/HTTP checklist, UI ownership and unchanged backend/contracts examined.",
+      "integration": "Shell, mounted run, practice handoff, composer/result/history/review and focus/menu/responsive examined.",
+      "security": "Identity checking/logout/late responses, 401/403/404, no new storage, correction boundary, known map and sandbox examined.",
+      "persistence": "No backend/schema changes; queue/version/commands/retry/conflict/reload/finish and live replacement guard examined.",
+      "tests": "Unit and browser regression source examined; no execution by reviewer.",
+      "maintenance": "55 changed files,5/51/2 catalogs,51 source hashes,360 text nodes,517 local refs and22 images examined."
+    },
+    "findings": [
+      {
+        "id": "CUM-SOL-001",
+        "severity": "recommended",
+        "location": "frontend/src/LessonLibrary.tsx:30",
+        "evidence": "Internal M01→M02 links change iframe document, while external selected/topic and generic practice CTA retain M01.",
+        "reference": "Full production lessons; reading/practice link; task5.2.",
+        "impact": "Student may expect practice of visible embedded M02 but get M01; explicit composition still permits checking before POST.",
+        "suggestion": "Make selected code/title and document-navigation independence explicit, or synchronize selection; browser regression M01→internalM02→practice.",
+        "disposition": "fixed",
+        "resolution": "Independently revalidated: visible selected code/title, explicit Praticar M01 CTA, matching aria-describedby and explanation of embedded-document navigation independence. Native M01→M02→explicit M01 composition regressions examined."
+      }
+    ],
+    "triage_complete": true,
+    "limitations": [
+      "Read-only: no tests/build/product/project scripts/network/DB/writes/delegation by reviewer.",
+      "Snapshot/captures do not certify interactions, CI, Google real, external availability or complete WCAG/assistive coverage.",
+      "Incidental references to prior LAYOUT-SOL findings seen in product docs before semantic conclusion; prior reports examined only afterward for documentary coherence, no conclusions derived from them.",
+      "Quota5h/weekly and tokens unavailable before/after; no attributed delta or model comparison.",
+      "Reader failure/timeout/retry and full assistive/other-browser behavior were not specifically certified.",
+      "Independent semantic review preceded actual SPEC PR creation. Coordinator bound PR147 after checking unchanged base, canonical digest and reviewed-head ancestry; this does not assert current CI or user merge approval."
+    ],
+    "verification": [
+      {
+        "command": "Canonical cumulative Git diff, blobs, hashes and static images",
+        "result": "2037583bytes/digest/merge-base match;55files,12current runtime captures; product/test files equal65f7900.",
+        "executed_by": "independent spec-reviewer, read-only"
+      },
+      {
+        "command": "npm test; npm run build; npm run test:e2e with STUDY_ROOT",
+        "result": "174 unit tests/build/14 general browser cases passed on product/test source65f7900, including explicit topic after native M01→M02.",
+        "executed_by": "coordinator"
+      },
+      {
+        "command": "scripts/check_local_delivery.py from clean committed export",
+        "result": "All eight stages passed at65f7900, including7 packaged browser cases,51 lesson URLs,MathML/images/ten resolutions,private-session isolation,recovery and committed-write suspended response.",
+        "executed_by": "coordinator"
+      },
+      {
+        "command": "npm run test:identity; npm run test:parameterized",
+        "result": "24/5 passed at prior product/test sourcefabb593; subsequent product change is lesson selection wording, and corresponding tests changed. Current CI is checked separately on exact published heads.",
+        "executed_by": "coordinator"
+      }
+    ],
+    "coordinator_correction": {
+      "commit": "1e3c167",
+      "regression_test_source": "65f7900c39ccdbfc5608fc9c28540c81426b099b",
+      "description": "Selected code/title visible and accessible; CTA Praticar M01 and explanation that material links do not change external selection. Native M01→M02→explicit M01 composition tested.",
+      "checks": "174 unit tests/build/14 general browser passed; clean packaged run in progress."
+    },
+    "initial_gate": {
+      "base_sha": "181767332d5178f576a5e3853a557be90c16afa8",
+      "reviewed_head_sha": "0c52cf1411b8a45724ddc65e97996f815b3b4cc3",
+      "diff_sha256": "3f219be24d736638fe68302166559f4f0e405208864fdd10c8577e9d482e04a8",
+      "diff_bytes": 2029298,
+      "reviewed_at": "2026-10-23T15:14:15-03:00",
+      "result": {
+        "blocking": 0,
+        "recommended": 1,
+        "optional": 0
+      },
+      "finding": "CUM-SOL-001, pending clarification at initial snapshot; preserved as history"
+    },
+    "revalidation": {
+      "model": "openai/gpt-6.1-sol#xhigh",
+      "session": "/root/study_layout_final_sol",
+      "same_independent_context_as_initial": true,
+      "new_findings": [],
+      "all_seven_coverage_areas_reexamined": true,
+      "canonical_diff_and_merge_base_verified": true,
+      "relevant_files": 55,
+      "unchanged_blobs_vs_initial": 47,
+      "changed_blobs_vs_initial": 8,
+      "runtime_capture_hashes_verified": 12,
+      "product_and_tests_identical_to": "65f7900c39ccdbfc5608fc9c28540c81426b099b",
+      "executed_tests_by_reviewer": false
+    },
+    "quota": {
+      "initial": {
+        "5h": "unavailable",
+        "weekly": "unavailable",
+        "tokens": "unavailable"
+      },
+      "revalidation": {
+        "5h": "unavailable",
+        "weekly": "unavailable",
+        "tokens": "unavailable"
+      },
+      "validated_with": "scripts/review_quota.py",
+      "isolation_declared": false,
+      "attribution": "not determined; coordinator overhead/external use not isolated",
+      "comparison_between_models": "not performed"
+    },
+    "pr_binding": {
+      "pr": 147,
+      "url": "https://github.com/LordBiGoDoNE/concurso-simulator/pull/147",
+      "recorded_at": "2026-10-24T03:48:01.504417+00:00",
+      "executed_by": "coordinator, metadata binding only; no new model review",
+      "base_sha": "181767332d5178f576a5e3853a557be90c16afa8",
+      "integrated_head_sha": "27a8c05f3d0d0803e7c1aa676fbecca2582bb57a",
+      "approved_task_head_sha": "4d2f79f0479ec2e359e4ac55d2079b3f8cd2428b",
+      "integrated_tree_sha": "b6948b30aa1855f57ef77ee5d460dffd665bb3d9",
+      "canonical_diff_sha256": "33467d86ea17d6b67cdba7b93383f8ecc33132659e626fa0f046cca452715497",
+      "reviewed_head_is_ancestor": true,
+      "integrated_tree_equals_approved_task_tree": true,
+      "stack": null,
+      "source_changes": "none; only spec-review.json and spec-review.md metadata updated",
+      "authorization": "task PRs141/142/144/145/146 merged with explicit approval; SPEC merge not yet authorized",
+      "remote_checks": "pending after metadata commit; no success inferred from prior task checks"
+    }
   }
 }

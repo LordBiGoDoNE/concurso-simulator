@@ -30,7 +30,7 @@ public class JpaCompletedAttempts implements CompletedAttemptReader {
         return read.execute(status -> {
             // SQL nativo: posse/cargo e criação acessível no instante capturado ANTES de ordenar/limitar.
             @SuppressWarnings("unchecked") List<UUID> headers=entities.createNativeQuery(
-                    "select id from me_attempt where owner_kind='ACCOUNT' and owner_id=:owner and created_at<=:now and finished_at is not null "
+                    "select id from me_attempt where owner_kind='ACCOUNT' and owner_id=:owner and created_at<=:now and finished_at is not null and coalesce(payload->>'purpose','SIMULADO')='SIMULADO' "
                     +"and payload->'composition'->>'role'=:role order by finished_at desc,id desc",UUID.class)
                     .setParameter("owner",account.id()).setParameter("now",cutoff).setParameter("role",role.name()).setMaxResults(limit+1).getResultList();
             var ids=headers.stream().limit(limit).toList();

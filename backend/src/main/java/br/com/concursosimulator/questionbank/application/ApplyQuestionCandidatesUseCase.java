@@ -33,7 +33,9 @@ public final class ApplyQuestionCandidatesUseCase {
                     var q=Question.draft(UUID.randomUUID(),candidate.origin(),UUID.randomUUID(),candidate.content());
                     session.insert(q);results.add(new Result(q.origin(),q.id(),q.latest().id(),false));continue;
                 }
-                var q=existing.get();var hash=candidate.content().fingerprint();
+                var q=existing.get();
+                if (!q.origin().equals(candidate.origin())) throw new IllegalArgumentException("Origem/destinação divergente");
+                var hash=candidate.content().fingerprint();
                 var same=q.revisions().stream().filter(r->r.fingerprint().equals(hash)).findFirst();
                 if(same.isPresent()) {
                     if(!same.get().content().equals(candidate.content())) throw new IllegalStateException("Fingerprint colidente");

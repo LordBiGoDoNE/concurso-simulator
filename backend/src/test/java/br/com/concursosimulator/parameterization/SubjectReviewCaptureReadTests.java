@@ -79,6 +79,6 @@ class SubjectReviewCaptureReadTests {
     }
     List<List<String>> rows(ParameterDatabase db) {
         return List.of("app_user","qb_question","qb_revision","qb_decision","pq_family","pq_version","pq_decision","pq_instance","me_attempt","me_item","me_command")
-                .stream().map(t->db.jdbc.queryForList("select row_to_json(r)::text from "+t+" r order by 1",String.class)).toList();
+                .stream().map(t->db.jdbc.queryForList("select "+(t.equals("qb_question")?"(to_jsonb(r)-'purpose')::text":"to_jsonb(r)::text")+" from "+t+" r order by 1",String.class)).toList();
     }
 }

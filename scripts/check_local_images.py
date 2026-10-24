@@ -36,6 +36,7 @@ def check(report):
             names = jar.namelist()
             assert any(n.endswith("ReviewController.class") for n in names)
             assert any(n.endswith("V10__completed_subject_window_index.sql") for n in names)
+            assert any(n.endswith("V11__dedicated_lesson_practice.sql") for n in names)
             assert not any(n.endswith(("Fixture.class", "Tests.class")) for n in names)
             assert not any(n.startswith("BOOT-INF/lib/") and any(t in n for t in ("junit", "mockito", "testcontainers")) for n in names)
         # Missing configuration must fail before serving; this isolated container has no network or secrets.

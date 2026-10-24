@@ -28,7 +28,8 @@ public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, 
         boolean attempts=br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.owns(request)
                 || br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.owns(request);
         if (!csrf && ("GET".equals(request.getMethod()) && ("/api/v1/me".equals(request.getServletPath())
-                || "/api/v1/me/attempts".equals(request.getServletPath()))
+                || "/api/v1/me/attempts".equals(request.getServletPath())
+                || "/api/v1/me/lesson-practices".equals(request.getServletPath()))
                 || br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.permits(request)
                 || br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.permits(request))) {
             response.setStatus(401);

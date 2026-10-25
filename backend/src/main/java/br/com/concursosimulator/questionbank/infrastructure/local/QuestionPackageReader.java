@@ -31,6 +31,8 @@ public final class QuestionPackageReader {
     }
     public Selected read(byte[] bytes, Path root, Set<String> keys) throws java.io.IOException {
         if (keys.isEmpty()) throw new IllegalArgumentException("Seleção de chaves obrigatória");
+        if ("lesson-practice-package/v1".equals(json.readTree(bytes).path("format").asString()))
+            return new PracticePackageReader().read(bytes,root,keys);
         var pack = json.readValue(bytes, Package.class);
         if (!"question-package/v1".equals(pack.format())) throw new IllegalArgumentException("Formato não suportado");
         var catalog = new HashMap<String, String>();

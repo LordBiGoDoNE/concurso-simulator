@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "lesson-practice",
+  "pr": 154,
+  "base_sha": "4ea49a90007ff6ac218ce55183cdde4be605eccf",
+  "reviewed_head_sha": "4393ba7941382480e005677940b7ef3b8e7c77c6",
+  "diff_sha256": "3a09c55554c2b35ad70ebbda8552d9580e9b86c15bdc75f397906c5e769f3f23",
+  "reviewed_at": "2026-10-25T04:55:24Z",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer",
+    "independent_context": true
+  },
+  "risk": {
+    "classification": "critical",
+    "reason": "Migração/persistência, snapshots e idempotência/transações, sessão/posse/privacidade e elegibilidade editorial."
+  },
+  "coverage": {
+    "requirements": "Proposta/design e deltas aprovados confrontados com o conjunto;255 itens/51 assuntos. Leitura editorial completa e comparação ampliada ao legado;32 pares da última rodada revalidados. Metadados finais coerentes com verificação versus integração.",
+    "architecture": "Núcleo Java puro, invariantes no domínio, UseCases/portas e transações nos adaptadores; contratos web concretos. Controller de prática incluído no teste arquitetural específico. Código preservado por identidade nas revalidações editoriais/documentais.",
+    "integration": "Fluxo aula→prática→salvamento→correção→histórico/retorno, modos/filas/transportes independentes, identidade/respostas tardias, filtros antes de paginação/métricas. Conjunto e diff corretivo de#155 examinados.",
+    "security": "Spring Security proprietário de sessão/CSRF/autorização técnica, posse/expiração antes do replay,404 entre modos, resultado somente após encerramento e limpeza dos contextos; sem achado adicional confirmado.",
+    "persistence": "V11 aditiva, origem imutável/finalidade gerada, snapshots1/2/3 e JSON legado preservado, replay/transações/rollback e consultas históricas. Sem mudanças nesses mecanismos no corretivo.",
+    "tests": "Leitura das asserções Java/HTTP/PostgreSQL/React/Chromium/editoriais e testes relacionados; contagem57 compatível com dois novos checkExpr; ArchUnit ampliado. Revisor não executou testes.",
+    "maintenance": "Importação de rascunhos/pacote/fontes/fingerprints, compilador, backup/restoreV10/V11, docs e limites conferidos. Hashes dos32 pares e11 comparações atuais conferidos. Atualização final somente em tasks/local-validation; restante integralmente idêntico ao snapshot sem achados."
+  },
+  "findings": [
+    {
+      "id": "LP-GATE-001",
+      "severity": "blocking",
+      "location": "editorial/lesson-practice/2026-10/*.jsonl; replacement-review.json",
+      "evidence": "Gate inicial apontou P09-P04/P09-Q02 e I02-P02/I02-Q05, I02-P03/I02-Q04. Ampliação confirmou32 outros itens equivalentes ao legado, inclusive fora do manifesto de elegibilidade.",
+      "reference": "openspec/changes/lesson-practice/specs/question-purpose/spec.md: Conteúdo e decisão editorial próprios; design.md:49-53; legado permanece SIMULADO.",
+      "impact": "IDs disjuntos não impedem reapresentar a mesma pergunta por paráfrase/inversão ou troca de valores.",
+      "suggestion": "Substituir por tarefas com operações/decisões diferentes, ampliar conferência e atualizar hashes/seleção, preservando bases/capturas.",
+      "disposition": "fixed",
+      "resolution": "PR155 substitui28 itens na primeira correção e32 na ampliação ao legado; ledgers registram hashes e mudança de tarefa. Revisor conferiu os32 pares e conteúdo anterior preservado em1d24ddb e revalidou atualidade em4393ba7. Seleção1c7ff1ad0a916d5edbfb9a58f1a6302484667ca86cc0748a8ec66cbce7125ae1,255 itens/51 assuntos/57 checkExpr. Sem garantia semântica exaustiva."
+    },
+    {
+      "id": "LP-GATE-002",
+      "severity": "recommended",
+      "location": "backend/src/test/java/br/com/concursosimulator/architecture/ArchitectureTests.java:63",
+      "evidence": "A lista do teste específico de controllers de tentativa não incluía LessonPracticeController. Não foi constatada violação atual no controller.",
+      "reference": "ADR0001 e docs/architecture/http-endpoint-review.md: proteção estrutural quando viável e limites explícitos.",
+      "impact": "O adaptador novo ficava fora da regressão conhecida contra autenticação/sessão brutas e contratos HTTP genéricos.",
+      "suggestion": "Incluir o controller na lista existente.",
+      "disposition": "fixed",
+      "resolution": "LessonPracticeController incluído na lista.15 testes de arquitetura passaram pelo coordenador; inclusão confirmada por inspeção nas revalidações do revisor. Protege fronteiras conhecidas, sem garantia de toda responsabilidade semântica."
+    }
+  ],
+  "triage_complete": true,
+  "limitations": [
+    "Revisor somente leitura: consultas de código/Git e hashes/snapshot; sem testes/build/compiler/aplicação/navegador/rede/DB/escritas/delegação/merge.",
+    "Contexto inicial independente do implementador e da revisão de lote; spec-review/local-validation/reviews fora do input inicial. Metadados finais lidos apenas como objeto documental de sua própria revalidação.",
+    "Revisor não certificou atualização externa das fontes, operador/CI remoto ou originalidade semântica exaustiva; verificações operacionais são do coordenador.",
+    "Cota5h/semanal e tokens indisponíveis em todas as fases; nenhuma estimativa, atribuição exata, cobrança ou comparação com outro modelo.",
+    "Checks spec-review-tests em main não certificam o gate semântico;validate_report manual e checks do head final continuam necessários."
+  ],
+  "verification": [
+    {
+      "command": "python -B scripts/check_spec_review.py --snapshot --base 4ea49a90007ff6ac218ce55183cdde4be605eccf --head 4393ba7941382480e005677940b7ef3b8e7c77c6 --spec lesson-practice",
+      "result": "Digest conferido pelo revisor;1d24ddb e base são ancestrais; desde1d24ddb mudaram somente tasks.md/local-validation.md,28 inserções e2 remoções.",
+      "executed_by": "spec_reviewer / openai/gpt-6.1-sol#xhigh"
+    },
+    {
+      "command": "python -m unittest discover -s scripts -p test_compile_lesson_practice.py",
+      "result": "8 testes passaram; pacote vigente255 itens/51 assuntos/57 oráculos, sem correspondências exatas ou diretas conhecidas. Triagem textual não é certificado semântico.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "backend/gradlew.bat -p backend --no-daemon --console=plain test --rerun --tests *ArchitectureTests --tests *LessonPracticePackageTests",
+      "result": "15 testes de arquitetura e2 de pacote passaram; pacote foi forçado novamente após a última seleção e ambos passaram. Gradle não declara fontes editoriais externas como inputs.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "CI Application checks / PR155 head1d24ddb02af64b02cc9aa1cfdb6d89a5618c5316",
+      "result": "13 checks verdes, incluindo backend/frontend/identity-browser/local-delivery/material/static/spec-review-tests. Head final posterior ainda exige nova conferência.",
+      "executed_by": "GitHub Actions; conferido pelo coordenador"
+    },
+    {
+      "command": "Habilitação pelos UseCases e Chromium real no operador8088",
+      "result": "Seleção1c7ff1ad habilitada após backup;255 práticas,251 simulados e capturas preservados.102 combinações e10 assuntos reais, correção final/retorno/mock preservado/celular. Journals privados.",
+      "executed_by": "coordenador"
+    }
+  ]
+}

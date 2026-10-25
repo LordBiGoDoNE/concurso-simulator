@@ -1,6 +1,7 @@
 package br.com.concursosimulator.mockexam.application;
 
 import br.com.concursosimulator.mockexam.domain.*;
+import br.com.concursosimulator.questionbank.domain.QuestionPurpose;
 import java.time.Instant;
 import java.util.*;
 import java.util.function.Function;
@@ -12,6 +13,9 @@ public interface AttemptStore {
         Optional<Attempt.Snapshot> find(UUID id);
         Optional<Command> command(AttemptOwner owner, UUID operation);
         List<AttemptQuestion> eligible();
+        default List<AttemptQuestion> eligible(QuestionPurpose purpose) {
+            return eligible().stream().filter(q -> q.purpose()==purpose).toList();
+        }
         default List<br.com.concursosimulator.parameterization.domain.TemplateVersion> templates() {
             throw new IllegalStateException("Captura de templates indisponível");
         }
@@ -22,8 +26,10 @@ public interface AttemptStore {
         int deleteExpired(Instant now);
     }
     record Command(String hash, Attempt.Snapshot outcome) {}
-    record HistoryQuery(int page, int size, Boolean finished) {
+    record HistoryQuery(int page, int size, Boolean finished, QuestionPurpose purpose) {
+        public HistoryQuery(int page, int size, Boolean finished) { this(page,size,finished,QuestionPurpose.SIMULADO); }
         public HistoryQuery {
+            Objects.requireNonNull(purpose);
             if (page < 0 || page > 100_000 || size < 1 || size > 100) throw new IllegalArgumentException("Página inválida");
         }
     }

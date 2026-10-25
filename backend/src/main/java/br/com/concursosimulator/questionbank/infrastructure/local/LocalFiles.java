@@ -14,7 +14,7 @@ final class LocalFiles {
         if (relative == null || relative.isEmpty() || relative.contains("\\") || relative.startsWith("/")) throw new IllegalArgumentException("Caminho inválido");
         var parts = relative.split("/", -1);
         for (var part : parts) if (part.isEmpty() || part.equals(".") || part.equals("..")) throw new IllegalArgumentException("Traversal/caminho não canônico");
-        if (!ROOTS.contains(parts[0]) && !Set.of("manifesto_v3.json", "catalogo_fontes_questoes.csv").contains(relative))
+        if (!ROOTS.contains(parts[0]) && !relative.matches("editorial/lesson-practice/[0-9]{4}-[0-9]{2}/(portugues|matematica|informatica|administrativo|escolar)\\.jsonl") && !Set.of("manifesto_v3.json", "catalogo_fontes_questoes.csv").contains(relative))
             throw new IllegalArgumentException("Raiz de fonte não permitida");
         var path = root.toRealPath();
         for (var part : parts) { path = path.resolve(part); if (Files.isSymbolicLink(path)) throw new IllegalArgumentException("Symlink recusado"); }

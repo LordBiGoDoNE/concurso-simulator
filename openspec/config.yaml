@@ -5,9 +5,9 @@ context: |
   All artifacts must be written in pt-BR.
   Keep OpenSpec structural headings and SHALL/MUST keywords in English.
   Projeto: concurso-simulator, material de estudo para concurso público.
-  Estado atual: site HTML/CSS estático no GitHub Pages, com geração Python,
-  nove módulos de Matemática enriquecidos, 90 resoluções recolhidas e
-  um catálogo original de 510 questões autorais ainda sujeito a revisão.
+  Estado atual: aplicação Java/PostgreSQL/React entregue na main pelo PR #133,
+  com execução local Docker e layout integrado pelo #147. O site estático anterior
+  permanece em stable/GitHub Pages; novas questões dependem da política editorial.
   Preserve aulas, links relativos, fórmulas acessíveis e funcionamento offline
   do material estático durante a migração. Não mova os arquivos-base agora.
   Evolução acordada: backend Java/Spring Boot, PostgreSQL, migrações Flyway,
@@ -19,13 +19,14 @@ context: |
   implementa uma tarefa ou grupo coeso com testes e PR destinado à épica.
   Dependências aguardam integração ou ficam em PR de rascunho explicitamente bloqueado.
   Issue da spec reúne checklist e PRs; revisão final da épica para main é integrada.
-  A reformulação completa integra em epic/application-reformulation, não main.
-  Cada branch de spec parte dessa épica geral e abre seu PR final para ela.
-  Todas as specs previstas no roadmap ficam na épica geral até entrega única
-  final explicitamente aprovada. Não publicar specs isoladas em main.
+  A reformulação foi entregue pelo #133; epic/application-reformulation é histórica.
+  Novas specs partem de main atualizada, integram tarefas em epic/<change-name>
+  e abrem PR final [SPEC] diretamente para main, com gate cumulativo independente
+  e autorização específica de merge. Não reutilizar a épica geral encerrada.
   Roadmap e decisões pendentes: docs/application-reformulation.md.
   CI não publica previews. Preview estático é workflow_dispatch manual com branch
-  informada como input e workflow executado a partir de main. Consulte AGENTS.md.
+  informada como input e workflow executado a partir de stable. main não publica
+  a stack no Pages. Consulte AGENTS.md para limites da automação e do gate.
   Questões parametrizadas e correções precisam ser calculadas no backend,
   com versão, parâmetros e ordem de alternativas preservados por tentativa.
   Não exponha gabaritos durante simulados nem atribua questões autorais às

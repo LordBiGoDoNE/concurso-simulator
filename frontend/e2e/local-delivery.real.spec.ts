@@ -35,7 +35,8 @@ test('prática de aula não substitui gravação real já confirmada no servidor
     await page.getByText('Ir para outra área', { exact: true }).click();
     await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Aulas', exact: true }).click();
     await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar P01', exact: true }).click();
-    await expect(page.getByRole('status').filter({ hasText: 'Prática não iniciada.' })).toBeVisible();expect(confirmations).toBe(0);expect(newAttempts).toBe(0);
+    await expect(page.getByRole('heading', { name:'Prática das aulas',exact:true })).toBeVisible();
+    await expect(page.getByRole('heading', {name:'Questão 1 de 5'})).toBeVisible();expect(confirmations).toBe(0);expect(newAttempts).toBe(0);
     expect((await (await page.request.get('/api/v1/attempts/' + view.id)).json()).version).toBe(1);
     await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
     await expect(area(page).getByRole('radio').first()).toBeChecked();await expect(area(page).getByRole('button', { name: 'Concluir simulado', exact: true })).toBeDisabled();
@@ -69,9 +70,9 @@ for (const width of [390, 1280]) test(`biblioteca e leitura integral no pacote D
   await expect(frame.getByRole('heading', { name: 'Matemática 02 - MMC e MDC', exact: true })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Praticar M01', exact: true })).toHaveAccessibleDescription('Assunto da prática: M01 — Operações com Números Reais');
   await page.getByRole('button', { name: 'Praticar M01', exact: true }).click();
-  await expect(page.getByLabel('Quantidade de Matemática/Raciocínio Lógico')).toHaveValue('1');
-  await expect(page.getByLabel('Quantidade de Português')).toHaveValue('0');
-  await expect(area(page).getByLabel('Operações com Números Reais', { exact: true })).toBeChecked();expect(posts).toBe(0);
+  await expect(page.getByRole('heading', {name:'Prática das aulas',exact:true})).toBeVisible();
+  await expect(page.getByRole('heading', {name:'Questão 1 de 5'})).toBeVisible();
+  await expect(page.getByRole('button', {name:'Encerrar prática'})).toBeVisible();expect(posts).toBe(0);
 });
 test('visitante: CSRF, retry idempotente, conclusão e revisão no pacote real', async ({ page }) => {
   await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();
@@ -119,4 +120,34 @@ for (const width of [390, 1280]) test(`51 assuntos, aula real e prática dirigid
   const view = await start(page);expect(view.items[0].classification.topicId).toBe('P01');await finish(page);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath(`local-${width}.png`), fullPage: true });
+});
+
+for(const width of [390,1280])test(`prática exclusiva: retry, correção final e retorno em ${width}px`,async({page,context},info)=>{
+  await page.setViewportSize({width,height:900});await session(context,data.cookie);await page.goto('/');
+  await page.getByRole('button',{name:'Explorar as aulas'}).click();await page.getByRole('button',{name:/P01.*Interpretação de Textos/}).click();
+  const bodies:unknown[]=[];let createdId='';
+  await page.route('**/api/v1/lesson-practices',async route=>{
+    bodies.push(route.request().postDataJSON());const response=await route.fetch();expect(response.status()).toBe(bodies.length===1?201:200);
+    if(bodies.length===1){createdId=(await response.json()).id;await route.abort('failed');}else await route.fulfill({response});
+  });
+  await page.getByRole('button',{name:'Praticar P01',exact:true}).click();
+  await page.getByRole('button',{name:'Tentar iniciar prática novamente'}).click();
+  await expect(page.getByRole('heading',{name:'Questão 1 de 5'})).toBeVisible();expect(bodies).toHaveLength(2);expect(bodies[0]).toEqual(bodies[1]);
+  const live=await(await page.request.get('/api/v1/lesson-practices/'+createdId)).json();activeContract(live);
+  expect(live.items).toHaveLength(5);expect(new Set(live.items.map((i:{questionId:string})=>i.questionId)).size).toBe(5);
+  expect((await page.request.get('/api/v1/attempts/'+createdId)).status()).toBe(404);
+  expect((await page.request.get('/api/v1/lesson-practices/'+data.activeId)).status()).toBe(404);
+  expect((await page.request.get('/api/v1/lesson-practices/'+createdId+'/result')).status()).toBe(409);
+  const mock=await(await page.request.get('/api/v1/attempts/'+data.activeId)).json();
+  expect(live.items.some((i:{questionId:string})=>mock.items.some((m:{questionId:string})=>m.questionId===i.questionId))).toBe(false);
+  await page.getByRole('radio').first().check();await expect(page.getByText('Respostas confirmadas.',{exact:true})).toBeVisible();
+  await expect(page.getByRole('heading',{name:'Resolução',exact:true})).toHaveCount(0);
+  await page.getByRole('button',{name:'Encerrar prática'}).click();await expect(page.getByRole('dialog')).toContainText('1 de 5 questões respondidas; 4 em branco.');
+  await page.keyboard.press('Escape');await expect(page.getByRole('button',{name:'Encerrar prática'})).toBeFocused();
+  await page.getByRole('button',{name:'Encerrar prática'}).click();await page.getByRole('button',{name:'Confirmar encerramento'}).click();
+  await expect(page.getByRole('heading',{name:'Resultado da prática'})).toBeVisible();await expect(page.getByRole('heading',{name:'Resolução',exact:true})).toHaveCount(5);
+  const own=await(await page.request.get('/api/v1/me/lesson-practices')).json();expect(own.items.some((i:{id:string})=>i.id===createdId)).toBe(true);
+  const history=await(await page.request.get('/api/v1/me/attempts')).json();expect(history.items.some((i:{id:string})=>i.id===createdId)).toBe(false);
+  expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.screenshot({path:info.outputPath(`lesson-practice-${width}.png`),fullPage:true});
+  await page.getByRole('button',{name:'Voltar à aula P01'}).click();await expect(page.getByRole('button',{name:'Praticar P01',exact:true})).toBeVisible();
 });

@@ -2,6 +2,7 @@ package br.com.concursosimulator.mockexam.infrastructure.persistence;
 
 import br.com.concursosimulator.mockexam.application.AttemptStore;
 import br.com.concursosimulator.mockexam.domain.*;
+import br.com.concursosimulator.questionbank.domain.QuestionPurpose;
 import br.com.concursosimulator.questionbank.application.port.EligibleRevisionPool;
 import br.com.concursosimulator.parameterization.application.EligibleTemplates;
 import br.com.concursosimulator.parameterization.domain.TemplateVersion;
@@ -65,15 +66,16 @@ public class JpaAttemptStore implements AttemptStore {
                         return new Command(row.payloadHash,snapshot);
                     });
         }
-        public List<AttemptQuestion> eligible() {
-            active(); return pool.capture().stream().map(e -> new AttemptQuestion(e.questionId(),e.revisionId(),e.fingerprint(),e.content())).toList();
+        public List<AttemptQuestion> eligible() { return eligible(QuestionPurpose.SIMULADO); }
+        public List<AttemptQuestion> eligible(QuestionPurpose purpose) {
+            active(); return pool.capture(purpose).stream().map(e -> new AttemptQuestion(e.questionId(),e.revisionId(),e.fingerprint(),e.content(),QuestionSource.fixed(),e.purpose())).toList();
         }
         public List<TemplateVersion> templates() { active(); return templates.capture(); }
         public void insert(Attempt.Snapshot snapshot) {
             active(); var attempt=Attempt.restore(snapshot); require(snapshot.version()==0 && snapshot.finishedAt()==null && snapshot.answers().isEmpty());
             var row=new AttemptRow(); row.id=snapshot.id(); row.ownerKind=snapshot.owner().kind().name(); row.ownerId=snapshot.owner().id();
             row.accountId=snapshot.owner().kind()==AttemptOwner.Kind.ACCOUNT?snapshot.owner().id():null;
-            require(snapshot.format()==2);
+            require(snapshot.format()==2 || snapshot.format()==3);
             row.createdAt=snapshot.createdAt(); row.expiresAt=attempt.expiresAt(); row.payload=codec.encode(snapshot,null);
             entities.persist(row); entities.flush(); // FK dos filhos independe da ordenação de inserts configurada.
             for (int i=0;i<snapshot.items().size();i++) {
@@ -96,7 +98,7 @@ public class JpaAttemptStore implements AttemptStore {
             require(snapshot.version()==Math.addExact(expectedVersion,1) && old.finishedAt()==null
                     && old.owner().equals(snapshot.owner()) && old.createdAt().equals(snapshot.createdAt())
                     && old.composition().equals(snapshot.composition()) && old.items().equals(snapshot.items()));
-            require(old.format()==snapshot.format());
+            require(old.format()==snapshot.format() && old.purpose()==snapshot.purpose() && old.practiceTopic()==snapshot.practiceTopic());
             row.payload=codec.encode(snapshot,row.payload); row.finishedAt=snapshot.finishedAt();
             // Hibernate emite UPDATE ... WHERE id=? AND version=?, incrementando @Version.
         }
@@ -109,10 +111,15 @@ public class JpaAttemptStore implements AttemptStore {
         }
         public List<Attempt.Snapshot> history(AttemptOwner owner, HistoryQuery query) {
             active(); if (owner.kind()!=AttemptOwner.Kind.ACCOUNT) throw new Attempt.Unavailable();
-            var suffix=query.finished()==null?"":query.finished()?" and a.finishedAt is not null":" and a.finishedAt is null";
-            return entities.createQuery("select a from AttemptRow a where a.ownerKind='ACCOUNT' and a.ownerId=:owner"+suffix+" order by a.createdAt desc,a.id desc",AttemptRow.class)
-                    .setParameter("owner",owner.id()).setFirstResult(Math.multiplyExact(query.page(),query.size())).setMaxResults(query.size())
-                    .getResultList().stream().map(JpaAttemptStore.this::read).toList();
+            var suffix=query.finished()==null?"":query.finished()?" and finished_at is not null":" and finished_at is null";
+            var ids=entities.createNativeQuery("select id from me_attempt where owner_kind='ACCOUNT' and owner_id=:owner "
+                    +"and coalesce(payload->>'purpose','SIMULADO')=:purpose"+suffix+" order by created_at desc,id desc",UUID.class)
+                    .setParameter("owner",owner.id()).setParameter("purpose",query.purpose().name())
+                    .setFirstResult(Math.multiplyExact(query.page(),query.size())).setMaxResults(query.size()).getResultList();
+            if (ids.isEmpty()) return List.of();
+            var rows=entities.createQuery("select a from AttemptRow a where a.id in :ids",AttemptRow.class).setParameter("ids",ids).getResultList();
+            var byId=new HashMap<UUID,AttemptRow>();for (var row:rows) byId.put(row.id,row);
+            return new AttemptSnapshotReader(entities).read(ids.stream().map(byId::get).toList());
         }
         public int deleteExpired(Instant now) {
             active(); entities.flush();

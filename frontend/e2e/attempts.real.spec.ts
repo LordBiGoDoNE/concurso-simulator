@@ -101,7 +101,7 @@ test('duas abas preservam escolha conflitante e só reenviam após recarga expl�
 });
 test('login durante visitante exige aviso e não transfere a tentativa nem a recupera após logout', async ({ page, request }) => {
   await control(request, 'attempt-no-transfer');await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();const view = await start(page, 1);
-  page.once('dialog', async dialog => { expect(dialog.message()).toContain('não será transferida');await dialog.accept(); });
+  page.once('dialog', async dialog => { expect(dialog.message()).toContain('não serão transferidas');expect(dialog.message()).toContain('simulado e a prática');await dialog.accept(); });
   await page.getByRole('link', { name: 'Entrar com Google' }).click();await expect(page.getByText('Você está conectado.')).toBeVisible();await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();
   await expect(workspace(page).getByText('Nenhuma tentativa nesta página.')).toBeVisible();expect((await page.request.get(`${api}/api/v1/attempts/${view.id}`)).status()).toBe(404);
   await page.getByRole('button', { name: 'Sair', exact: true }).click();await expect(page.getByText('Você está estudando como visitante.')).toBeVisible();

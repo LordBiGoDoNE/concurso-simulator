@@ -13,7 +13,7 @@ import java.util.*;
 /** SQL nativo restringe campos já no banco: resposta/resolução/proveniência nunca entram no resultado. */
 @Repository
 public class JpaEligibleQuestions implements EligibleQuestions {
-    private static final String FROM = " from qb_question q join qb_revision r on r.id=q.eligible_revision_id and r.question_id=q.id where r.status='APPROVED'";
+    private static final String FROM = " from qb_question q join qb_revision r on r.id=q.eligible_revision_id and r.question_id=q.id where r.status='APPROVED' and q.origin_namespace<>'lesson-practice-v1'";
     private static final String CLASSIFICATION = ",r.discipline_id,r.topic_id,(select string_agg(rr.role_id,',' order by rr.role_id) from qb_revision_role rr where rr.revision_id=r.id)";
     private final EntityManager entities;
     private final TransactionTemplate transactions;

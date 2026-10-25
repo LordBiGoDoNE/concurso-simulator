@@ -80,3 +80,13 @@ export const saveAnswer = (id: string, itemId: string, answer: Answer, signal: A
 export const finishAttempt = (id: string, commandId: string, expectedVersion: number, signal: AbortSignal) => request<Finished>(`${attemptPath(id)}/finish`, signal, async v => { const validator: typeof import('./attempt-result-api') = await import('./attempt-result-api'); return validator.finished(v, id, expectedVersion); }, 'POST', { commandId, expectedVersion });
 export const attemptResult = (id: string, signal: AbortSignal) => request<Result>(`${attemptPath(id)}/result`, signal, async v => { const validator: typeof import('./attempt-result-api') = await import('./attempt-result-api'); return validator.result(v); });
 export const attemptHistory = (page: number, signal: AbortSignal) => request<HistoryPage>(`/api/v1/me/attempts?page=${page}&size=20`, signal, v => { history(v); ensure(v.page === page && v.size === 20); });
+
+
+// Transporte substituível: mesma fila/invariantes, recursos HTTP próprios por modalidade.
+export interface AttemptTransport {
+  read: typeof readAttempt;
+  save: typeof saveAnswer;
+  finish: typeof finishAttempt;
+  result: typeof attemptResult;
+}
+export { request as attemptRequest };

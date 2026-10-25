@@ -6,13 +6,14 @@ import type { DirectedPractice } from './directed-practice';
 
 const normalize = (value: string) => value.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLocaleLowerCase('pt-BR');
 const lessons = catalog.topics.filter(topic => Object.hasOwn(paths, topic.id));
-export default function LessonLibrary({ initialDiscipline = '', onPractice }: { initialDiscipline?: string; onPractice: (selection: DirectedPractice) => void }) {
+export default function LessonLibrary({ initialDiscipline = '', onPractice, requestedLesson }: { requestedLesson?: {id:string;version:number}|null; initialDiscipline?: string; onPractice: (selection: DirectedPractice) => void }) {
   const [discipline, setDiscipline] = useState(initialDiscipline); const [search, setSearch] = useState('');
   const [selected, setSelected] = useState(''); const heading = useRef<HTMLHeadingElement>(null);
   const [role, setRole] = useState('assistente-administrativo');
   const [frameState, setFrameState] = useState<'loading' | 'loaded' | 'failed'>('loading');
   const [frameRetry, setFrameRetry] = useState(0); const frameTimer = useRef<number | undefined>(undefined);
   useEffect(() => { setDiscipline(initialDiscipline); setSelected(''); }, [initialDiscipline]);
+  useEffect(()=>{if(requestedLesson && lessons.some(t=>t.id===requestedLesson.id))setSelected(requestedLesson.id);},[requestedLesson]);
   const topic = lessons.find(t => t.id === selected);
   const neighbors = lessons.filter(t => t.disciplineId === topic?.disciplineId); const index = neighbors.findIndex(t => t.id === selected);
   useEffect(() => { if (!selected) return; setFrameState('loading'); heading.current?.focus(); frameTimer.current = window.setTimeout(() => setFrameState('failed'), 12000); return () => window.clearTimeout(frameTimer.current); }, [selected, frameRetry]);
@@ -30,7 +31,7 @@ export default function LessonLibrary({ initialDiscipline = '', onPractice }: { 
           <iframe key={`${topic.id}:${frameRetry}`} title={`Aula completa: ${topic.title}`} src={url} sandbox="allow-same-origin allow-popups allow-popups-to-escape-sandbox" referrerPolicy="no-referrer" onLoad={() => { window.clearTimeout(frameTimer.current); setFrameState('loaded'); }} onError={() => { window.clearTimeout(frameTimer.current); setFrameState('failed'); }} />
         </> : <p role="alert">Aula indisponível neste endereço. <a href={materialUrl}>Acessar material completo</a></p>}
       </div><aside className="reader-index"><h2>Nesta disciplina</h2><nav aria-label="Aulas da disciplina">{neighbors.map(t => <button key={t.id} aria-current={selected === t.id ? 'page' : undefined} onClick={() => read(t.id)}><small>{t.id}</small> {t.title}</button>)}</nav>
-        <div className="lesson-practice"><h2>Pratique a aula selecionada</h2><p id="lesson-practice-subject"><strong>Assunto da prática: {topic.id} — {topic.title}</strong></p><p>Os links dentro do material não alteram essa seleção. Para mudar o assunto da prática, escolha outra aula nesta página.</p><label htmlFor="lesson-role">Cargo para praticar esta aula</label><select id="lesson-role" value={chosenRole} onChange={e => setRole(e.target.value)}>{roles.map(r => <option key={r.id} value={r.id}>{r.title}</option>)}</select><button aria-describedby="lesson-practice-subject" onClick={() => onPractice({ roleId: chosenRole, disciplineId: topic.disciplineId, topicId: topic.id })}>Praticar {topic.id}</button></div>
+        <div className="lesson-practice"><h2>Pratique a aula selecionada</h2><p>Até cinco questões próprias deste assunto, separadas dos simulados. A correção aparece ao encerrar a prática.</p><p id="lesson-practice-subject"><strong>Assunto da prática: {topic.id} — {topic.title}</strong></p><p>Os links dentro do material não alteram essa seleção. Para mudar o assunto da prática, escolha outra aula nesta página.</p><label htmlFor="lesson-role">Cargo para praticar esta aula</label><select id="lesson-role" value={chosenRole} onChange={e => setRole(e.target.value)}>{roles.map(r => <option key={r.id} value={r.id}>{r.title}</option>)}</select><button aria-describedby="lesson-practice-subject" onClick={() => onPractice({ roleId: chosenRole, disciplineId: topic.disciplineId, topicId: topic.id })}>Praticar {topic.id}</button></div>
       </aside></div><nav className="lesson-pagination" aria-label="Navegação entre aulas"><button className="secondary" disabled={index <= 0} onClick={() => read(neighbors[index - 1].id)}>Aula anterior</button><button className="secondary" disabled={index >= neighbors.length - 1} onClick={() => read(neighbors[index + 1].id)}>Próxima aula</button></nav>
     </section>;
   }

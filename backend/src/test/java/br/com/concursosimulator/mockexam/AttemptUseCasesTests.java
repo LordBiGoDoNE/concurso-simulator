@@ -35,6 +35,7 @@ class AttemptUseCasesTests {
                 public void record(AttemptOwner o,UUID op,Command value) { c.put(o+":"+op,value); }
                 public List<Attempt.Snapshot> history(AttemptOwner o,HistoryQuery q) {
                     return a.values().stream().filter(s -> s.owner().equals(o))
+                            .filter(s -> s.purpose()==q.purpose())
                             .filter(s -> q.finished()==null || (s.finishedAt()!=null)==q.finished())
                             .sorted(Comparator.comparing(Attempt.Snapshot::createdAt).thenComparing(Attempt.Snapshot::id).reversed())
                             .skip((long)q.page()*q.size()).limit(q.size()).toList();

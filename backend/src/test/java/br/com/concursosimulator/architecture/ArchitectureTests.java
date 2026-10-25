@@ -62,7 +62,8 @@ class ArchitectureTests {
     }
     @Test void attemptControllersReceiveVerifiedActorsAndUseConcreteWebContracts() {
         for (var controller:java.util.List.of(br.com.concursosimulator.mockexam.web.AttemptController.class,
-                br.com.concursosimulator.mockexam.web.AttemptHistoryController.class)) {
+                br.com.concursosimulator.mockexam.web.AttemptHistoryController.class,
+                br.com.concursosimulator.mockexam.web.LessonPracticeController.class)) {
             noClasses().that().haveFullyQualifiedName(controller.getName()).should().dependOnClassesThat()
                     .resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..").check(CODE);
             for(var method:controller.getDeclaredMethods()) {

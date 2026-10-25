@@ -153,3 +153,30 @@ A revalidação independente do lote concluiu sem achados abertos no conjunto
 gate cumulativo final. PRs #150/#151/#152 integrados pela stack153 em8cdd977,
 com árvore idêntica à revisada e ancestralidade conferida. Todos os checks verdes.
 Cota/tokens indisponíveis, sem estimativas; nenhuma comparação com outro modelo.
+
+## Correções do gate cumulativo — 2026-10-25
+
+O gate independente inicial em68d40dc encontrou LP-GATE-001 (três pares
+editoriais equivalentes) e LP-GATE-002 (cobertura arquitetural recomendada).
+O registro inicial é histórico. Foram substituídos28 itens após conferência
+ampliada dos255 enunciados/respostas frente ao inventário atual curado, incluindo
+pares entre disciplinas. O ledger cumulativeGateReplacements registra hashes
+e a operação nova. Seleção vigente:
+fdf1c00e2959629d5f945846f4aa08dc70f76aefda4631f05136d6073fa96da8.
+Fontes primárias pertinentes consultadas; não há garantia semântica exaustiva.
+
+O controller de prática entrou no teste arquitetural específico já existente.
+Passaram15 testes de arquitetura,8 testes editoriais/55 oráculos e os dois
+LessonPracticePackageTests forçados novamente no pacote vigente. Os guardas
+estruturais protegem dependências/contratos conhecidos, não toda responsabilidade
+semântica. Revalidação cumulativa obrigatória após estas correções.
+
+A seleção corrigida foi habilitada no PostgreSQL do operador usando os UseCases
+existentes e expectativa da revisão anterior, após backup privado. Preservados
+as251 bases de simulado, todas as linhas antigas de revisões/capturas e255
+práticas elegíveis. O Chromium conferiu102 combinações assunto/cargo e conteúdo
+real em P01/P09/I02/M01/S01, incluindo IDs/revisões novos, correção final e
+preservação do simulado ativo. Journals gate-local-practice.json e
+enabled-browser-gate.json são privados e não versionados. Runtime permanece na
+imagem anterior: a correção altera conteúdo editorial e um teste, sem código de
+produção Java/React. Backup não substitui as credenciais/configurações locais.

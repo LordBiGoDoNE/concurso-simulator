@@ -249,7 +249,7 @@
       "changedTask": "Aplicar recorte temporal a três trajetórias de matrícula, em vez de indicar genericamente os registros que sustentam o Censo."
     }
   ],
-  "selectionDigest": "beee31e08d6348ae2cb86ca634f741e55fdb0e951885b73d5f6396e611d3c05b",
+  "selectionDigest": "fdf1c00e2959629d5f945846f4aa08dc70f76aefda4631f05136d6073fa96da8",
   "additionalReplacements": [
     {
       "key": "M12-P05",
@@ -269,5 +269,182 @@
       "replacementStatementSha256": "e7f779b698b6dafb39e6be2868e718f4c2b6d8e5a0ca60998975c0e6c614f9a4",
       "changedTask": "Identificar o núcleo singular apesar de especificadores plurais e corrigir a concordância, em vez de aplicar fazer impessoal a um período."
     }
-  ]
+  ],
+  "cumulativeGateReplacements": [
+    {
+      "key": "P04-P02",
+      "previousStatementSha256": "61794c0733548d0548c1a8f759d510aba285220d83f64c5a0404a8d9a310ce8c",
+      "replacementStatementSha256": "da2c466533acb718128a8ed639c7f57840ed2c1fb49ce9437980527b573e6b77",
+      "changedTask": "Interpretar hierarquia de separadores, em vez de reconhecer dois-pontos de enumeração."
+    },
+    {
+      "key": "P04-P04",
+      "previousStatementSha256": "39a5b1e91bf33cb33e03eb2f44d395091ca56d31e6d9f169c3507ac12d2aabeb",
+      "replacementStatementSha256": "2c99685ec42097c3350cc9bba540e9c97c31d455e4ac70537e8d23cd723d80d2",
+      "changedTask": "Comparar mudança de alcance por pontuação, em vez de inverter uma pergunta sobre separar sujeito e verbo."
+    },
+    {
+      "key": "P07-P04",
+      "previousStatementSha256": "1cf3a43adadebd9bebaa9117a3a534ff0c7eb8aeca76371596dff4161c659761",
+      "replacementStatementSha256": "2f1161e24c2400088a4df15d502ef25a920989071ada4b5d85faf78b4390f02c",
+      "changedTask": "Executar reescrita com concordância verbal e nominal e preservação de tempo, em vez de explicar um núcleo singular."
+    },
+    {
+      "key": "P09-P02",
+      "previousStatementSha256": "c73322426f024bc6d0385f3c1dd76a5837e8c27fca4d3a43259b643d14d9d5e2",
+      "replacementStatementSha256": "98597376a8d4de077e784185cd2c2b32492a92d20c8134fe256f0e63249ffdb4",
+      "changedTask": "Avaliar duas propostas de revisão em contextos diferentes, em vez de identificar a posição de um pronome."
+    },
+    {
+      "key": "P09-P04",
+      "previousStatementSha256": "e24a4d38af3f4795ebd9ee67322fb9b40bf763cac4b93474cffda5814dac930c",
+      "replacementStatementSha256": "5aae3ac4785274ffd0f9972915d80885bc514e242a1a0747709396218cc68709",
+      "changedTask": "Diagnosticar um erro e preservar uma construção adequada em outro período, em vez de nomear ênclise."
+    },
+    {
+      "key": "P10-P03",
+      "previousStatementSha256": "61971d3dffb5bfd8f3b5d02e84912d44bed0e4d45897443c5b084b07e95958d9",
+      "replacementStatementSha256": "307cddb558b684f55a43f42ca508a9e8b80b43664d15698de295b4c0100069de",
+      "changedTask": "Comparar determinação e sentido de dois grupos nominais, em vez de inverter a pergunta sobre a ela."
+    },
+    {
+      "key": "M03-P01",
+      "previousStatementSha256": "6ea7926a9545eb688414392bf9a016891085ffba8e947a08b56e71b429de46bf",
+      "replacementStatementSha256": "77ddb1365b0887fe40756cd7f2cc3b5f9e0a4ae4de8a90f0b99f28b96a9a53c9",
+      "changedTask": "Combinar taxa, tempo efetivo e rejeição, em vez de aplicar uma proporção direta em uma única etapa."
+    },
+    {
+      "key": "M04-P03",
+      "previousStatementSha256": "eb2f5ba7e36d805225f6283e5c74f7243ebe41b6f4a961838f473fcd5136d8e6",
+      "replacementStatementSha256": "ab1c47a12e5bc383de73cb936a647877dbde4870e642277d3cae05eac8bfba55",
+      "changedTask": "Determinar a taxa inversa necessária para recompor uma base alterada, em vez de calcular dois percentuais iguais sucessivos."
+    },
+    {
+      "key": "M08-P01",
+      "previousStatementSha256": "7bb629c49752a6b1cf6edc73820d7a97a8f1f0f9a5cff11e9fcb723382d92c13",
+      "replacementStatementSha256": "6d3826eb798bc5f1407ddadc5223e50320ad00769059c530b2fbe4e60de39abc",
+      "changedTask": "Conciliar unidades e calcular distância restante, em vez de trocar apenas a unidade de uma conversão direta."
+    },
+    {
+      "key": "M10-P03",
+      "previousStatementSha256": "e2e2fcc34f3fff16e4527786fb8e18fa62cccb59ce804610c635ab41b0707632",
+      "replacementStatementSha256": "81d2ca7dd31df5090f4681eea54c5b071c06aabb363b202e220641ed9b5b80a2",
+      "changedTask": "Resolver restrições de posição fixa e adjacência, em vez de aplicar apenas transitividade de antes de."
+    },
+    {
+      "key": "M11-P02",
+      "previousStatementSha256": "ff3d41523d8a319d54d5b42dae4fdbe4d67b4b422fed0311a7e402fd905684ae",
+      "replacementStatementSha256": "2a91e30f1c6b3d12ad14499c06b67fd72c3f1baefb8c4933896a2659c497894a",
+      "changedTask": "Combinar duas condicionais e selecionar pares admissíveis, em vez de recontar a linha falsa de uma única condicional."
+    },
+    {
+      "key": "M12-P03",
+      "previousStatementSha256": "0a229248a107a73e2ee92326f481946eeb246bd99e1a8f742f948be8f73e12b2",
+      "replacementStatementSha256": "760b453abc2cb763358c7fba464038ea28e6efaff84c120954581a96c4b42a15",
+      "changedTask": "Avaliar uma inferência não garantida envolvendo três conjuntos, em vez de traduzir uma inclusão em palavras."
+    },
+    {
+      "key": "I01-P04",
+      "previousStatementSha256": "a405c02b23c94f013264cc4c5b53253fa4bf99b1fc19b5df9dd6b2c2d0cff568",
+      "replacementStatementSha256": "c429b10082f114c56eef5403a582389facca2074c242c3e429367e557d106e1f",
+      "changedTask": "Reparar um vínculo quebrado após movimentação, em vez de perguntar o efeito de excluir um atalho."
+    },
+    {
+      "key": "I02-P02",
+      "previousStatementSha256": "89fda7ffa2e513403929e6cdd830ac50aba2ff8b4468630ed10daa2b3e4f5b75",
+      "replacementStatementSha256": "1baddae32489ffb8a2f3b03eaa7aaa33454d40fd8068de127db0af5ada6ee396",
+      "changedTask": "Adicionar área de trabalho virtual, em vez de inverter a associação Win+E/Explorador."
+    },
+    {
+      "key": "I02-P03",
+      "previousStatementSha256": "532d4e362e1e96498f4fb937cbd508e81ee19b98749bc45c988e8f4e0a979829",
+      "replacementStatementSha256": "bd6d3a258b22da94a199785443a1ffb7b3b8f994e16e5f52b3a3cdc55f51243a",
+      "changedTask": "Mover uma janela entre monitores, em vez de inverter a associação Alt+Tab/alternar janelas."
+    },
+    {
+      "key": "I04-P01",
+      "previousStatementSha256": "fb4c911a8a275e5da40fd908fa328c6c76330704bbfa0b09691e530b63eed66d",
+      "replacementStatementSha256": "ed71ea7376b12ee061a33e8c73cd93194a8b2fab5046bcdd68eda5dcc0ffca02",
+      "changedTask": "Manter cabeçalho de tabela em várias páginas, em vez de inverter a definição de quebra de página."
+    },
+    {
+      "key": "I05-P03",
+      "previousStatementSha256": "983dd3a8f730093d154636ef7e20e473ff62bfcb1556f0206c407530967668a8",
+      "replacementStatementSha256": "90b56c129eab98b4a69bf198f6d418e8a70bfcda0e33b02788c83f5acaf0fd95",
+      "changedTask": "Executar a cópia e avaliar o resultado com valores concorrentes, em vez de nomear uma referência absoluta."
+    },
+    {
+      "key": "I05-P05",
+      "previousStatementSha256": "7b38640ed410567493eceea01504e7d0369ed82a938cf68544ae32832cbcc5b8",
+      "replacementStatementSha256": "e03724412a6d427fd4218c3009b8add1daffd9dc519a43ae51644fc8eb50ef25",
+      "changedTask": "Determinar a união de intervalos sobrepostos sem contar duplicatas, em vez de traduzir a notação de um intervalo."
+    },
+    {
+      "key": "I10-P02",
+      "previousStatementSha256": "bfe7828979dc52b033999c148229d712b030282aa03b93ee7e49c03d06e4c299",
+      "replacementStatementSha256": "50533d93e4c329a59c9771260f5fa28ca1fe7fef474fb1a8482f4038aaf9ea36",
+      "changedTask": "Confrontar rótulo de link e destino real, em vez de identificar o host de uma URL."
+    },
+    {
+      "key": "I10-P03",
+      "previousStatementSha256": "8bd5f0f8473a6043941692d123b6ff60f9b52cd2c0c935945b1131a12655c1e6",
+      "replacementStatementSha256": "a8067680af3aece7452cde2bc3b2d7ac9a865a75d3bef4717ae48f623676445d",
+      "changedTask": "Distinguir ocultação de destinatários de autorização para compartilhar um anexo, em vez de definir Cco."
+    },
+    {
+      "key": "A01-P01",
+      "previousStatementSha256": "423bc22eebea43c2eca31016c7eba3f6df4513cff6a7e2e95ea98adcb33e8168",
+      "replacementStatementSha256": "9564803e9b9d970b57a79ceb3298437644792115ca14208396391089c1b3b623",
+      "changedTask": "Escolher como tratar alteração casuística de critérios após conhecer interessados, em vez de nomear impessoalidade."
+    },
+    {
+      "key": "A01-P02",
+      "previousStatementSha256": "4b477f147a1123ba6e9f09adc2696a5c16072b3524774cf9d1d73ad7be4c12ea",
+      "replacementStatementSha256": "2b55a92385570ab2b93ea36a8b82feb43adad19f7363541ea2a409c809ec4029",
+      "changedTask": "Aplicar o alcance da norma a um setor do Legislativo, em vez de classificar publicidade personalista."
+    },
+    {
+      "key": "A01-P03",
+      "previousStatementSha256": "c04b6a3ee8c7289bc68413ecb12eaa81ea1a33125da46afe96d0ac2612bf6f59",
+      "replacementStatementSha256": "e3cdb5451a1bd915ecfe47afa340a3cd8dbdfca3919bba790d1d52d274ea01db",
+      "changedTask": "Escolher medidas que distingam eficiência real de supressão do atendimento, em vez de nomear o princípio por uma descrição."
+    },
+    {
+      "key": "A01-P05",
+      "previousStatementSha256": "e0dca57394882fab9cbf4ef36e34f1b33fd708ee39447e359c6561ef660bb873",
+      "replacementStatementSha256": "27586aa2b760a283628f00aaf13c8c78ed265215ab4a7ff4d3a7ad8d34567146",
+      "changedTask": "Encaminhar apuração de possível conflito sem presumir resultado, em vez de associar honestidade à palavra moralidade."
+    },
+    {
+      "key": "A05-P01",
+      "previousStatementSha256": "1f5037193f838992fb1c73d90ae45932ddb5af2e5281f6a1ad1904f850cb7bf8",
+      "replacementStatementSha256": "4fb6f7590d21124c0ecf82fe9973ecb2f970c0eb2e993ca899ca6e3eec2fa161",
+      "changedTask": "Aplicar o marco temporal a dois expedientes, em vez de nomear o instrumento que define prazos."
+    },
+    {
+      "key": "A05-P03",
+      "previousStatementSha256": "71062b2405dabf1ef6760157a16adfeabd44cc0849687a33103727a6dcd355ab",
+      "replacementStatementSha256": "c2548393a377ec1361f7d46b480203ea512289fae41ecdb72330cc5a3840a66f",
+      "changedTask": "Resolver conflito entre formato comum e funções diferentes, em vez de repetir a definição de classificação."
+    },
+    {
+      "key": "A07-P03",
+      "previousStatementSha256": "775cb6b9af017e38d7a08298742137989e683e4c16661b656fb16ab7b6b20471",
+      "replacementStatementSha256": "f2caed88df2b3f3939215014e755cd583bd392af862b4fa4fa529884b745f383",
+      "changedTask": "Distinguir níveis de permissão e encaminhar uma demanda legítima, em vez de repetir que compartilhar senha é inadequado."
+    },
+    {
+      "key": "S08-P03",
+      "previousStatementSha256": "6b2103f1b2bfe8654aba1adccc115cb692a25d15d1bc1845438e8d5e3309e8af",
+      "replacementStatementSha256": "b1a580fa6174af8fe6658dda374d5bd35e918f5d7153d2a56bbeca104983e110",
+      "changedTask": "Conferir os dois direitos dos responsáveis no processo pedagógico, em vez de repetir o direito do aluno de recorrer de avaliação."
+    }
+  ],
+  "cumulativeComparison": {
+    "reviewedPracticeItems": 255,
+    "topics": 51,
+    "comparisonInventory": "509 candidatos válidos com sobreposição das250 revisões curadas; elegibilidade das251 bases atuais preservada.",
+    "method": "Leitura assistida de enunciados e respostas por assunto, confronto dos pares diretos e checagem de casos entre disciplinas;28 itens substituídos para evitar associação invertida, mero novo exemplo e operação idêntica.",
+    "limits": "Conferência humana assistida por IA e triagem textual não são classificadores semânticos exaustivos. Compartilhar conceito não implica pergunta idêntica; passos/decisões diferentes foram considerados. Nenhuma garantia de ineditismo absoluto."
+  }
 }

@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "phase": "revalidation-3",
+  "status": "completed-no-open-findings",
+  "model": "openai/gpt-6.1-sol#xhigh",
+  "session": "/root/lesson_batch_sol_review",
+  "base_sha": "37b71a276003bdcec5e45d7af7e0a810a0d48de1",
+  "heads": {
+    "150": "2440b44fa1bf094c45230a3de8bf09b3d89113cf",
+    "151": "4f2400e8f113d02794f52996a04a21b3a0c7929e",
+    "152": "7b7a787f2ad9dd2993068707a9f6dff62d21f036"
+  },
+  "diff_sha256": "cd06b37ee900ec85fbede057eaa5fb1499fb954a91c2d83ad273396e39f4cbcf",
+  "risk": "critical",
+  "findings": [
+    {"id": "LP-B1", "disposition": "fixed", "resolution": "Conferidas as 41 substituições e os três pares adicionais. O conjunto mantém tarefas distintas, sem garantia exaustiva de originalidade semântica."},
+    {"id": "LP-B2", "disposition": "fixed", "resolution": "Retry de criação passa pelo mesmo guarda de salvamento pendente, com regressão da fila preservada."},
+    {"id": "LP-R1", "disposition": "fixed", "resolution": "Canonização case-insensitive de referências de células e teste pelo caminho real de audit_duplicates preservados."}
+  ],
+  "additional_coverage": [
+    "IDs de alternativas novas derivados da chave e do conteúdo, removendo o sinal posicional; regressão permuta ordem e índice correto. Capturas históricas mantêm os IDs armazenados.",
+    "255 questões, 51 assuntos e 55 checkExpr; análise acumulada do núcleo, replay, V11, codec, posse, HTTP/CSRF, projeções, históricos/métricas, interface, filas/identidade e operação local."
+  ],
+  "coordinator_verification": {
+    "checks_before_merge": {"150": 14, "151": 20, "152": 21},
+    "all_successful": true,
+    "stack": 153,
+    "merged_prs": [150, 151, 152],
+    "merge_commit": "8cdd97787c4183279652eb3948b5e25d367b23ae",
+    "reviewed_tree_preserved": true,
+    "reviewed_head_is_ancestor": true
+  },
+  "limitations": [
+    "A tentativa anterior desta fase parou por limite de uso, sem parecer. O resultado aqui registrado foi emitido após a retomada e nova conferência dos mesmos commits/digest.",
+    "Revisor somente leitura: sem testes, build, rede, DB, navegador ou alterações. CI e operação real foram conferidos pelo coordenador.",
+    "Cota 5h/semanal e tokens não observáveis no harness; sem estimativas ou atribuição de consumo.",
+    "Revisão de lote não substitui o gate cumulativo em contexto independente."
+  ]
+}

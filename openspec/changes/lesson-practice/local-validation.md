@@ -130,3 +130,26 @@ texto. Foram executados8 testes editoriais, com55 oráculos aritméticos no lote
 atual (uma subtração tornou-se uma tarefa de pertinência por elementos). Não se
 presume que fontes editoriais públicas sejam secretas. A nova rodada independente
 deve conferir essas alterações, além das correções já preservadas.
+
+## Conferência da seleção vigente e integração das tarefas — 2026-10-25
+
+A seleção beee31e08d6348ae2cb86ca634f741e55fdb0e951885b73d5f6396e611d3c05b
+foi aplicada no PostgreSQL do operador por UseCases de importação/decisão, com
+novas revisões e preservação das capturas e dos dados anteriores. Backup privado
+anterior à atualização; sem atualização direta dos estados editoriais por SQL.
+Continuam255 práticas elegíveis e251 questões de simulado; nenhuma base SIMULADO
+foi alterada. O journal privado released-local-practice.json registra a seleção.
+
+Chromium na instância real8088 conferiu102 combinações assunto/cargo, fluxos
+P01/M01/S01, IDs/revisões correspondentes ao pacote vigente, ausência dos antigos
+UUIDs posicionais nas opções novas, correção somente ao encerrar, retorno à aula,
+preservação do simulado e largura móvel. Oito testes editoriais passaram, com55
+oráculos; os dois LessonPracticePackageTests foram forçados com --rerun e passaram,
+pois os arquivos editoriais externos não são inputs declarados do task Gradle.
+CI faz clean build. Os179 testes React e build também passaram.
+
+A revalidação independente do lote concluiu sem achados abertos no conjunto
+2440b44/4f2400e/7b7a787. Registro em reviews/batch-1/revalidation-3.json; não é o
+gate cumulativo final. PRs #150/#151/#152 integrados pela stack153 em8cdd977,
+com árvore idêntica à revisada e ancestralidade conferida. Todos os checks verdes.
+Cota/tokens indisponíveis, sem estimativas; nenhuma comparação com outro modelo.

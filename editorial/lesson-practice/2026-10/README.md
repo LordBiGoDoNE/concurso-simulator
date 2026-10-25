@@ -78,3 +78,14 @@ de cabeçalho Word pressupõe quebras automáticas, conforme a fonte específica
 A seleção vigente é `fdf1c00e2959629d5f945846f4aa08dc70f76aefda4631f05136d6073fa96da8`; os digests anteriores são históricos.
 Persistem255 itens/51 assuntos/55 oráculos. Nenhuma base de simulado alterada.
 A conferência não garante ausência exaustiva de equivalências semânticas.
+
+
+A ampliação do gate aos legados sem registro de elegibilidade confirmou32 pares
+adicionais. Todos foram substituídos; legacyGateReplacements preserva os hashes
+e a mudança de tarefa. A ausência em eligibility.jsonl não é tratada como DRAFT
+ou rejeição, nem como licença para reutilizar a pergunta. A seleção vigente é
+`1c7ff1ad0a916d5edbfb9a58f1a6302484667ca86cc0748a8ec66cbce7125ae1`. São255 itens,51 assuntos e57 oráculos: os dois novos verificam
+divergência de embalagens/unidades e despesas distintas após duplicação confirmada.
+Há11 pares de triagem textual/estrutural remanescentes com justificativas atuais;
+a comparação antiga de P07-P01 foi mantida como histórica, pois o item mudou.
+Conferência assistida não garante ausência exaustiva de equivalências semânticas.

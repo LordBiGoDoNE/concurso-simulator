@@ -180,3 +180,23 @@ preservação do simulado ativo. Journals gate-local-practice.json e
 enabled-browser-gate.json são privados e não versionados. Runtime permanece na
 imagem anterior: a correção altera conteúdo editorial e um teste, sem código de
 produção Java/React. Backup não substitui as credenciais/configurações locais.
+
+## Ampliação da correção ao inventário legado
+
+A revalidação emc8c9c7d confirmou LP-GATE-002 corrigido, mas encontrou32 outros
+pares em LP-GATE-001, registrados em reviews/cumulative/revalidation-1.json.
+As32 tarefas foram substituídas, incluindo os pares entre disciplinas. A regra
+de distinção editorial foi aplicada também às origens legadas sem elegibilidade
+registrada; não foi alterado seu estado nem qualquer base de simulado.
+Seleção vigente 1c7ff1ad0a916d5edbfb9a58f1a6302484667ca86cc0748a8ec66cbce7125ae1;255 itens/51 assuntos/57 oráculos.
+Passaram8 testes editoriais; dois testes Java de pacote executados com --rerun.
+Nova revalidação do conjunto necessária. Os registros anteriores são históricos.
+
+A seleção1c7ff1ad foi habilitada localmente pelos UseCases após novo backup.
+Preservados dados/capturas e251 bases de simulado;255 práticas elegíveis, cinco
+por assunto. Os dois testes Java de pacote foram forçados após a seleção final
+e passaram. Chromium conferiu102 combinações e conteúdo real em dez assuntos:
+P01/P04/P09/I02/I06/M01/M09/A04/S01/S10, incluindo versões/IDs atuais e celular.
+Journals final-local-practice.json e enabled-browser-final-gate.json são privados.
+A imagem de runtime permanece inalterada, pois esta rodada só altera conteúdo,
+documentação e o teste editorial que contabiliza os57 oráculos.

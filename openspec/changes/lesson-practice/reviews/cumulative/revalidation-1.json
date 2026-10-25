@@ -1,0 +1,69 @@
+{
+  "version": 1,
+  "status": "historical-blocking",
+  "model": "openai/gpt-6.1-sol#xhigh",
+  "session": "/root/spec_reviewer",
+  "reviewed_at": "2026-10-25T04:35:01Z",
+  "base_sha": "4ea49a90007ff6ac218ce55183cdde4be605eccf",
+  "head_sha": "c8c9c7db2b733db09ab49fe831547b05cb80b517",
+  "diff_sha256": "6616a6906fc3ba8d471f3793b1b7bef919e6d4eadf83aaaa74be08ac04953333",
+  "findings": [
+    {
+      "id": "LP-GATE-001",
+      "status_at_review": "open",
+      "resolution_at_review": "Três pares iniciais corrigidos.32 equivalências adicionais confirmadas, incluindo legados sem registro em eligibility.jsonl; não inferir status desses registros.",
+      "pairs": [
+        "P02-P01/P02-Q01",
+        "P04-P01/P04-Q02",
+        "P04-P02/P04-Q08",
+        "P07-P01/P07-Q10",
+        "P08-P01/P08-Q01",
+        "P09-P01/P09-Q01",
+        "P09-P03/P09-Q08",
+        "P09-P05/P09-Q08",
+        "M03-P04/M03-Q07",
+        "M05-P03/M05-Q05",
+        "M06-P02/M06-Q05/Q06",
+        "M07-P02/M07-Q09",
+        "M08-P02/M08-Q09",
+        "M09-P03/M09-Q10",
+        "M09-P04/M09-Q07",
+        "M11-P04/M11-Q06",
+        "I01-P03/I01-Q06",
+        "I03-P02/I03-Q07",
+        "I04-P04/I04-Q07",
+        "I04-P05/I04-Q09",
+        "I05-P02/I05-Q08",
+        "I06-P05/I05-Q07",
+        "I08-P05/I08-Q08",
+        "I10-P04/I10-Q07",
+        "A03-P04/S09-Q02",
+        "A04-P02/A04-Q07",
+        "A05-P04/S05-Q04",
+        "A08-P03/A08-Q08",
+        "S02-P01/S02-Q06",
+        "S05-P02/A05-Q05",
+        "S10-P04/S02-Q04",
+        "S10-P05/S10-Q05"
+      ],
+      "approved_counterparts": [
+        "P04-Q02",
+        "S09-Q02",
+        "S05-Q04",
+        "A05-Q05",
+        "S02-Q04"
+      ]
+    },
+    {
+      "id": "LP-GATE-002",
+      "status_at_review": "fixed",
+      "evidence": "LessonPracticeController incluído no teste arquitetural específico."
+    }
+  ],
+  "limitations": [
+    "Somente leitura, sem executar testes/build/compiler/rede/DB.",
+    "Lista confirmada não é inventário semântico exaustivo.",
+    "Cota e tokens indisponíveis.",
+    "Registro histórico não certifica correções posteriores."
+  ]
+}

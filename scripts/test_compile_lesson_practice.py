@@ -11,7 +11,7 @@ class PracticeEditorialTests(unittest.TestCase):
     def test_full_coverage_numeric_oracles_and_deterministic_fingerprints(self):
         pack,rows,numeric=lp.compile_practice(ROOT)
         self.assertEqual(255,len(rows));self.assertEqual(51,len({r['topicId'] for r in rows}))
-        self.assertEqual(55,len(numeric));self.assertEqual(pack,lp.compile_practice(ROOT)[0])
+        self.assertEqual(57,len(numeric));self.assertEqual(pack,lp.compile_practice(ROOT)[0])
         self.assertTrue(all(i['origin']['namespace']==lp.NAMESPACE for i in pack['items']))
     def test_oracle_rejects_code_and_supports_exact_fraction_and_units(self):
         for expr in ['__import__("os")','(1).__class__','2**999','sqrt(2)','lcm(2,3,4)']:

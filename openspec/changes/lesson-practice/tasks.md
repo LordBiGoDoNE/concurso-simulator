@@ -31,8 +31,8 @@ Aceite da proposta não concede aprovação editorial a itens ainda não redigid
 
 - [x] 4.1 Ensaiar migração/legado em PostgreSQL isolado, separação disjunta de bases/variantes/contagens, modos/contas/visitante e paginação de históricos/métricas.
 - [x] 4.2 Verificar Docker aula→prática→correção final com acervo próprio aprovado, zero empréstimos entre modos, simulado preservado e todas as51 aulas.
-- [ ] 4.3 Consolidar regressões/limites/procedimento de atualização e executar gate cumulativo independente SOL6.1xHigh.
-- [ ] 4.4 Conferir checks/SHAs/triagem/cota, solicitar merges específicos e atualizar a issue após cada mudança/integração.
+- [x] 4.3 Consolidar regressões/limites/procedimento de atualização e executar gate cumulativo independente SOL6.1xHigh.
+- [x] 4.4 Conferir checks/SHAs/triagem/cota, solicitar merges específicos e atualizar a issue após cada mudança/integração.
 
 ## 5. Acervo exclusivo de prática — volume255 aprovado; integração depende de1–2
 
@@ -76,3 +76,17 @@ Nenhuma troca manual de base ou sincronização pós-merge foi executada.
 As tarefas1.4/2.4/3.4/5.4 estão concluídas e integradas na épica. Os itens4.3/4.4
 continuam pendentes do gate cumulativo independente e da integração final à main.
 O bloco local anterior é histórico, não o estado atual da revisão.
+
+## Gate concluído; integração final preparada — 2026-10-25
+
+Os itens4.3/4.4 foram verificados: revisão cumulativa independente em contexto
+novo SOL6.1xHigh, achados LP-GATE-001/002 corrigidos e revalidados no conjunto
+1d24ddb,13 checks verdes do corretivo#155 e autorização vigente de envio/merge
+da entrega completa. A seleção local vigente é1c7ff1ad,255 itens/51 assuntos/
+57 oráculos, com251 simulados e dados anteriores preservados.
+
+As caixas representam trabalho verificado, sem antecipar o merge final. O PR#154
+e a issue#148 registram o estado vivo da integração. A conferência manual de
+validate_report nos commits reais e os checks do head final continuam condições
+para efetivar o merge autorizado à main; mudanças posteriores exigem revalidação.
+Sem publicação externa, alteração de stable ou arquivamento OpenSpec.

@@ -1,7 +1,7 @@
 {
   "version": 1,
   "method": "Assistente: comparação direcionada com enunciados curados e amostra de variantes superficiais; sem certificação semântica exaustiva.",
-  "selectionDigest": "beee31e08d6348ae2cb86ca634f741e55fdb0e951885b73d5f6396e611d3c05b",
+  "selectionDigest": "1c7ff1ad0a916d5edbfb9a58f1a6302484667ca86cc0748a8ec66cbce7125ae1",
   "numericTemplateThreshold": 0.55,
   "comparisons": [
     {
@@ -19,14 +19,6 @@
       "mockStatementSha256": "801aa6955d53cf818b7e0811896f5d495d478f373227428e753a1939e98d1afe",
       "disposition": "distinct-question",
       "rationale": "Conjunção aditiva ligando termos versus substantivação de infinitivo; classes e exemplos distintos."
-    },
-    {
-      "practiceKey": "P07-P01",
-      "mockKey": "P07-Q05",
-      "practiceStatementSha256": "77a74c17cb20e54d27a4f824b384a067378f10cbf6f9d6a226d8a4bdb563253f",
-      "mockStatementSha256": "8cda9ec607f25c187eaefe6b97afcd87362738004ee28f80b1d2a7c26167acff",
-      "disposition": "distinct-question",
-      "rationale": "Coincidência no comando genérico; o item exige julgar outras estruturas de concordância nas alternativas."
     },
     {
       "practiceKey": "M06-P03",
@@ -99,6 +91,16 @@
       "mockStatementSha256": "10534a41ba15ed55cedaaa90cc12aa6b9e6bb1dcb082ac06d4bad4d595d75034",
       "disposition": "distinct-question",
       "rationale": "Finalidade/articulação do PNE versus sua duração; comandos e fatos distintos."
+    }
+  ],
+  "historicalComparisons": [
+    {
+      "practiceKey": "P07-P01",
+      "mockKey": "P07-Q05",
+      "practiceStatementSha256": "77a74c17cb20e54d27a4f824b384a067378f10cbf6f9d6a226d8a4bdb563253f",
+      "mockStatementSha256": "8cda9ec607f25c187eaefe6b97afcd87362738004ee28f80b1d2a7c26167acff",
+      "disposition": "distinct-question",
+      "rationale": "Coincidência no comando genérico; o item exige julgar outras estruturas de concordância nas alternativas."
     }
   ]
 }

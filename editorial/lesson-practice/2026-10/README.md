@@ -67,3 +67,25 @@ muda a identidade associada ao mesmo texto; essa propriedade tem regressão pró
 Isso evita reconhecer a resposta por um ID posicional previsível. As fontes
 editoriais continuam públicas no repositório; não se promete sigilo do acervo.
 Seleção vigente: `beee31e08d6348ae2cb86ca634f741e55fdb0e951885b73d5f6396e611d3c05b`. Oito testes editoriais passaram.
+
+
+Correção do gate cumulativo:28 itens substituídos após conferência ampliada dos
+255 por assunto, incluindo os três pares confirmados P09-P04/P09-Q02,
+I02-P02/I02-Q05 e I02-P03/I02-Q04. O ledger cumulativeGateReplacements registra
+hashes antes/depois e a operação nova. As fontes Windows, Word e dispositivos
+CF37/ECA53 foram consultadas nos portais primários em2026-10-25. A repetição
+de cabeçalho Word pressupõe quebras automáticas, conforme a fonte específica.
+A seleção vigente é `fdf1c00e2959629d5f945846f4aa08dc70f76aefda4631f05136d6073fa96da8`; os digests anteriores são históricos.
+Persistem255 itens/51 assuntos/55 oráculos. Nenhuma base de simulado alterada.
+A conferência não garante ausência exaustiva de equivalências semânticas.
+
+
+A ampliação do gate aos legados sem registro de elegibilidade confirmou32 pares
+adicionais. Todos foram substituídos; legacyGateReplacements preserva os hashes
+e a mudança de tarefa. A ausência em eligibility.jsonl não é tratada como DRAFT
+ou rejeição, nem como licença para reutilizar a pergunta. A seleção vigente é
+`1c7ff1ad0a916d5edbfb9a58f1a6302484667ca86cc0748a8ec66cbce7125ae1`. São255 itens,51 assuntos e57 oráculos: os dois novos verificam
+divergência de embalagens/unidades e despesas distintas após duplicação confirmada.
+Há11 pares de triagem textual/estrutural remanescentes com justificativas atuais;
+a comparação antiga de P07-P01 foi mantida como histórica, pois o item mudou.
+Conferência assistida não garante ausência exaustiva de equivalências semânticas.

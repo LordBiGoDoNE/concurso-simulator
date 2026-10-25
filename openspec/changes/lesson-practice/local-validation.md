@@ -153,3 +153,62 @@ A revalidação independente do lote concluiu sem achados abertos no conjunto
 gate cumulativo final. PRs #150/#151/#152 integrados pela stack153 em8cdd977,
 com árvore idêntica à revisada e ancestralidade conferida. Todos os checks verdes.
 Cota/tokens indisponíveis, sem estimativas; nenhuma comparação com outro modelo.
+
+## Correções do gate cumulativo — 2026-10-25
+
+O gate independente inicial em68d40dc encontrou LP-GATE-001 (três pares
+editoriais equivalentes) e LP-GATE-002 (cobertura arquitetural recomendada).
+O registro inicial é histórico. Foram substituídos28 itens após conferência
+ampliada dos255 enunciados/respostas frente ao inventário atual curado, incluindo
+pares entre disciplinas. O ledger cumulativeGateReplacements registra hashes
+e a operação nova. Seleção vigente:
+fdf1c00e2959629d5f945846f4aa08dc70f76aefda4631f05136d6073fa96da8.
+Fontes primárias pertinentes consultadas; não há garantia semântica exaustiva.
+
+O controller de prática entrou no teste arquitetural específico já existente.
+Passaram15 testes de arquitetura,8 testes editoriais/55 oráculos e os dois
+LessonPracticePackageTests forçados novamente no pacote vigente. Os guardas
+estruturais protegem dependências/contratos conhecidos, não toda responsabilidade
+semântica. Revalidação cumulativa obrigatória após estas correções.
+
+A seleção corrigida foi habilitada no PostgreSQL do operador usando os UseCases
+existentes e expectativa da revisão anterior, após backup privado. Preservados
+as251 bases de simulado, todas as linhas antigas de revisões/capturas e255
+práticas elegíveis. O Chromium conferiu102 combinações assunto/cargo e conteúdo
+real em P01/P09/I02/M01/S01, incluindo IDs/revisões novos, correção final e
+preservação do simulado ativo. Journals gate-local-practice.json e
+enabled-browser-gate.json são privados e não versionados. Runtime permanece na
+imagem anterior: a correção altera conteúdo editorial e um teste, sem código de
+produção Java/React. Backup não substitui as credenciais/configurações locais.
+
+## Ampliação da correção ao inventário legado
+
+A revalidação emc8c9c7d confirmou LP-GATE-002 corrigido, mas encontrou32 outros
+pares em LP-GATE-001, registrados em reviews/cumulative/revalidation-1.json.
+As32 tarefas foram substituídas, incluindo os pares entre disciplinas. A regra
+de distinção editorial foi aplicada também às origens legadas sem elegibilidade
+registrada; não foi alterado seu estado nem qualquer base de simulado.
+Seleção vigente 1c7ff1ad0a916d5edbfb9a58f1a6302484667ca86cc0748a8ec66cbce7125ae1;255 itens/51 assuntos/57 oráculos.
+Passaram8 testes editoriais; dois testes Java de pacote executados com --rerun.
+Nova revalidação do conjunto necessária. Os registros anteriores são históricos.
+
+A seleção1c7ff1ad foi habilitada localmente pelos UseCases após novo backup.
+Preservados dados/capturas e251 bases de simulado;255 práticas elegíveis, cinco
+por assunto. Os dois testes Java de pacote foram forçados após a seleção final
+e passaram. Chromium conferiu102 combinações e conteúdo real em dez assuntos:
+P01/P04/P09/I02/I06/M01/M09/A04/S01/S10, incluindo versões/IDs atuais e celular.
+Journals final-local-practice.json e enabled-browser-final-gate.json são privados.
+A imagem de runtime permanece inalterada, pois esta rodada só altera conteúdo,
+documentação e o teste editorial que contabiliza os57 oráculos.
+
+## Resultado cumulativo e checks
+
+A revalidação independente em1d24ddb, base4ea49a9 e digest
+12665566139ebbc618f3cd0458f803320f7c46edffc09ffca3046edb7d5a2261, concluiu
+LP-GATE-001/002 corrigidos, sem novos achados. O revisor fez somente leitura,
+sem executar os testes do coordenador ou consultar CI/operador. Foram conferidos
+32 pares, hashes do ledger,255 itens/51 assuntos e57 checkExpr.
+Os13 checks de#155 passaram no mesmo head, incluindo local-delivery.
+O registro final será conferido com validate_report no PR#154 real;
+a revisão do lote anterior não foi usada como substituta deste gate.
+Cota5h/semanal e tokens indisponíveis; sem estimativa ou comparação com outro modelo.

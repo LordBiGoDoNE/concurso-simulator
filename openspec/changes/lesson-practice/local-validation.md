@@ -200,3 +200,15 @@ P01/P04/P09/I02/I06/M01/M09/A04/S01/S10, incluindo versões/IDs atuais e celular
 Journals final-local-practice.json e enabled-browser-final-gate.json são privados.
 A imagem de runtime permanece inalterada, pois esta rodada só altera conteúdo,
 documentação e o teste editorial que contabiliza os57 oráculos.
+
+## Resultado cumulativo e checks
+
+A revalidação independente em1d24ddb, base4ea49a9 e digest
+12665566139ebbc618f3cd0458f803320f7c46edffc09ffca3046edb7d5a2261, concluiu
+LP-GATE-001/002 corrigidos, sem novos achados. O revisor fez somente leitura,
+sem executar os testes do coordenador ou consultar CI/operador. Foram conferidos
+32 pares, hashes do ledger,255 itens/51 assuntos e57 checkExpr.
+Os13 checks de#155 passaram no mesmo head, incluindo local-delivery.
+O registro final será conferido com validate_report no PR#154 real;
+a revisão do lote anterior não foi usada como substituta deste gate.
+Cota5h/semanal e tokens indisponíveis; sem estimativa ou comparação com outro modelo.

@@ -30,15 +30,26 @@ final class CompletedEvidenceFixtures {
         for(var s:snapshots) {
             var expiry=Attempt.restore(s).expiresAt();
             parents.add(new Object[]{s.id(),s.owner().kind().name(),s.owner().id(),s.owner().kind()==AttemptOwner.Kind.ACCOUNT?s.owner().id():null,
-                    Timestamp.from(s.createdAt()),s.finishedAt()==null?null:Timestamp.from(s.finishedAt()),expiry==null?null:Timestamp.from(expiry),s.version(),JSON.writeValueAsString(s)});
+                    Timestamp.from(s.createdAt()),s.finishedAt()==null?null:Timestamp.from(s.finishedAt()),expiry==null?null:Timestamp.from(expiry),s.version(),legacySnapshot(s)});
             for(int i=0;i<s.items().size();i++) {
-                var item=s.items().get(i);items.add(new Object[]{item.id(),s.id(),i,item.question().questionId(),item.question().revisionId(),JSON.writeValueAsString(item)});
+                var item=s.items().get(i);items.add(new Object[]{item.id(),s.id(),i,item.question().questionId(),item.question().revisionId(),legacyItem(item)});
             }
         }
         new TransactionTemplate(db.manager).execute(status -> {
             db.jdbc.batchUpdate("insert into me_attempt(id,owner_kind,owner_id,account_id,created_at,finished_at,expires_at,version,payload) values (?,?,?,?,?,?,?,?,?::jsonb)",parents);
             db.jdbc.batchUpdate("insert into me_item(id,attempt_id,position,question_id,revision_id,payload) values (?,?,?,?,?,?::jsonb)",items);return null;
         });
+    }
+    // Fixture do formato2 congelado: campos de modalidade pertencem somente ao3.
+    private static String legacySnapshot(Attempt.Snapshot s) {
+        var node=(tools.jackson.databind.node.ObjectNode)JSON.valueToTree(s);
+        node.remove("purpose");node.remove("practiceTopic");
+        for(var item:node.get("items"))((tools.jackson.databind.node.ObjectNode)item.get("question")).remove("purpose");
+        return JSON.writeValueAsString(node);
+    }
+    private static String legacyItem(Attempt.Item item) {
+        var node=(tools.jackson.databind.node.ObjectNode)JSON.valueToTree(item);
+        ((tools.jackson.databind.node.ObjectNode)node.get("question")).remove("purpose");return JSON.writeValueAsString(node);
     }
     static List<List<String>> rows(AttemptDatabase db) {
         return List.of("app_user","qb_question","qb_revision","qb_decision","me_attempt","me_item","me_command","pq_instance")

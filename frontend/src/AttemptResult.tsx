@@ -2,10 +2,10 @@ import { useLayoutEffect, useRef } from 'react';
 import type { Result } from './attempt-api';
 import AttemptText from './AttemptText';
 
-export default function AttemptResult({ result }: { result: Result }) {
+export default function AttemptResult({ result, practice = false }: { result: Result; practice?: boolean }) {
   const heading = useRef<HTMLHeadingElement>(null); useLayoutEffect(() => heading.current?.focus(), []);
-  return <section aria-labelledby="attempt-result-title">
-    <h3 id="attempt-result-title" tabIndex={-1} ref={heading}>Resultado do simulado</h3>
+  return <section aria-labelledby={practice ? "lesson-result-title" : "attempt-result-title"}>
+    <h3 id={practice ? "lesson-result-title" : "attempt-result-title"} tabIndex={-1} ref={heading}>{practice ? "Resultado da prática" : "Resultado do simulado"}</h3>
     <p>{result.points}/{result.total} pontos — {result.percentage.toLocaleString('pt-BR', { maximumFractionDigits: 2 })}%.</p>
     <p>{result.correct} acertos, {result.wrong} erros e {result.blank} em branco. Correção do servidor sobre as versões capturadas.</p>
     {result.items.map((correction, i) => { const selected = correction.item.alternatives.find(a => a.id === correction.item.selectedAlternativeId);return <article key={correction.item.id}>

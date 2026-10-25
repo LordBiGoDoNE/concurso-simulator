@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "phase": "revalidation-1",
+  "status": "historical-findings-confirmed",
+  "model": "openai/gpt-6.1-sol#xhigh",
+  "session": "/root/lesson_batch_sol_review",
+  "base_sha": "37b71a276003bdcec5e45d7af7e0a810a0d48de1",
+  "head_sha": "0af3c1c13e2c63dc7d53c8e4eee9192c647327dd",
+  "diff_sha256": "a36bfc040aee2e665d3a14442a9384d0d86bd57fcce99439b78a64789f08e3a5",
+  "prs": [
+    150,
+    151,
+    152
+  ],
+  "findings": [
+    {
+      "id": "LP-B1",
+      "severity": "blocking",
+      "status_at_review": "open",
+      "evidence": "Comparação ampliada com250 revisões curadas encontrou41 equivalências remanescentes:5 Português,14 Matemática,7 Informática,6 Administrativo,9 Escolar, inclusive entre disciplinas. Os cinco exemplos iniciais estavam corrigidos.",
+      "followup": "41 substituições concretas registradas em editorial/lesson-practice/2026-10/replacement-review.json; próximo parecer deve confrontar novas perguntas/operações e o conjunto."
+    },
+    {
+      "id": "LP-B2",
+      "severity": "blocking",
+      "status_at_review": "fixed",
+      "evidence": "Guard de create cobre também retry e impede trocar A enquanto save está pendente; regressão preserva sinal e comando B. Verificado estaticamente pelo revisor; executado pelo coordenador na suíte179."
+    },
+    {
+      "id": "LP-R1",
+      "severity": "recommended",
+      "status_at_review": "open",
+      "evidence": "Canonização de células usa regex maiúscula após casefold.",
+      "followup": "Regex passou a aceitar caixa recebida; regressão passa pelo audit_duplicates real e exige a canonização de AZ123 para celula."
+    }
+  ],
+  "limitations": [
+    "Somente leitura; sem testes/build/rede/DB.",
+    "Sem introspecção adicional de modelo/tokens/quota; nenhuma estimativa.",
+    "Registro histórico da primeira revalidação; não atesta a rodada posterior nem gate cumulativo final."
+  ]
+}

@@ -1,0 +1,46 @@
+{
+  "version": 1,
+  "phase": "initial",
+  "status": "historical-findings-confirmed",
+  "model": "openai/gpt-6.1-sol#xhigh",
+  "session": "/root/lesson_batch_sol_review",
+  "risk": "critical",
+  "base_sha": "37b71a276003bdcec5e45d7af7e0a810a0d48de1",
+  "head_sha": "03c277a595c8cdc3ce5fd10c3a77ecee0b1c1e40",
+  "diff_sha256": "5c096db7c34aa073553132a67870ef4d694579bda09c59e9b7db5718666f4f64",
+  "prs": [
+    150,
+    151,
+    152
+  ],
+  "findings": [
+    {
+      "id": "LP-B1",
+      "severity": "blocking",
+      "location": "editorial/lesson-practice/2026-10/matematica.jsonl;informatica.jsonl",
+      "evidence": "M09-P01/M09-Q02, M09-P02/M09-Q04, M03-P03/M03-Q02, M10-P04/M10-Q02 e I05-P01/I05-Q01 equivalentes por substituições superficiais. A comparação original não incluía o conteúdo curado.",
+      "resolution": "23 itens reescritos; triagem inclui250 revisões curadas e sinais de estrutura/números, regressões dos cinco padrões;12 pares restantes de estrutura textual conferidos no comparison-review.json. Revalidação solicitada separadamente."
+    },
+    {
+      "id": "LP-B2",
+      "severity": "blocking",
+      "location": "frontend/src/LessonPracticeWorkspace.tsx:create",
+      "evidence": "Após falhar criação de B, retry poderia desmontar A com salvamento pendente.",
+      "resolution": "create verifica acesso e canReplace também no retry; regressão suspende save de A, impede nova criação até confirmar e preserva commandId de B. Revalidação solicitada separadamente."
+    }
+  ],
+  "coverage": [
+    "255 questões e comparação direcionada com acervo atual",
+    "core/replay/modalidade/posse/expiração",
+    "V11/codec1-2-3/histórico/métricas/transações",
+    "HTTP/CSRF/CORS/no-store/DTOs",
+    "UI/filas/identidade/history/retry",
+    "backup/restore e regressões escritas"
+  ],
+  "limitations": [
+    "Revisor somente leitura: sem testes/build/rede/DB.",
+    "Sem verificação externa das fontes ou equivalência semântica exaustiva.",
+    "Quota e tokens não observáveis; sem estimativas. Coordenador comunicou status e conferiu CI durante o intervalo, sem atribuição isolada de consumo.",
+    "Este arquivo registra a rodada inicial, não é atestado de revalidação nem gate cumulativo final."
+  ]
+}

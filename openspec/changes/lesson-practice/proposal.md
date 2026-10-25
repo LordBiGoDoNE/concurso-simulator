@@ -65,6 +65,13 @@ presume aprovação editorial de questões novas por aprovar código ou esta pro
 Parte do acervo atual veio dos exercícios públicos das aulas; separar os modos
 não desfaz essa exposição e não é promessa de sigilo/ineditismo dos simulados.
 A proposta ampliada e o volume255 foram aprovados pelo usuário em2026-10-24.
-A escolha explícita dos grupos completos1–5 do lote está pendente; nenhuma
-implementação começou. O aceite não autoriza merges nem atos editoriais no banco
+O usuário escolheu todos os grupos completos1–5 e autorizou desenvolvimento e
+testes locais antes de publicar alterações. A implementação começou localmente. O aceite não autoriza merges nem atos editoriais no banco
 automaticamente. Aprovação editorial continua vinculada à seleção/digests concretos.
+
+
+Decisão de execução em2026-10-24: todos os grupos1–5 autorizados. Desenvolver,
+testar e apresentar localmente antes de novos pushes/PRs/revisões com modelo.
+Commits locais são permitidos para proveniência/build. Revisões independentes e
+gates continuam pendentes até estabilizar o resultado local e autorização de envio;
+não presumir review check, integração remota ou elegibilidade editorial do conteúdo.

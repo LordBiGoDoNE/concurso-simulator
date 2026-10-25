@@ -20,6 +20,10 @@
 - Preserve branches/commits anteriores ao reorganizar trabalho. Não apague implementação existente.
 - Consulte `docs/application-reformulation.md` para o roadmap, critérios de entrega e decisões ainda abertas. Uma etapa do roadmap não autoriza implementar uma spec sem proposta e aprovação.
 
+## Desenvolvimento e validação local
+
+- Decisão do usuário em2026-10-24: entregar localmente todas as funcionalidades e conteúdos do escopo autorizado habilitados para teste, inclusive elegibilidade das questões preparadas/conferidas. A autorização de teste local dispensa nova pausa para aprovação editorial local; registrar seleção, fingerprints/digests e destino ao habilitar. Preservar os dados existentes. O usuário testa e valida antes de enviar ao GitHub ou disparar revisões por modelo; habilitação local não presume aceite final, merge ou publicação externa.
+
 ## Stacks — padrão para tarefas dependentes
 
 - Após o piloto remoto #33/#34 (issue #30) e adoção em question-bank (#36), o usuário aprovou Stacks como padrão também para as próximas specs. O registro desse padrão segue por PR próprio, sem merge presumido. Depois de integrado, novas specs não precisam de nova aprovação do método: usar somente tarefas realmente dependentes e previamente solicitadas, em `task/<change-name>/<assunto>`. Inferior parte da épica atualizada e abre PR para ela; superior parte da inferior e abre PR para essa tarefa. Mesma spec/repositório, trunk sempre `epic/<change-name>`, nunca main/épica geral/outra spec.

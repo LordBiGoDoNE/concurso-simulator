@@ -35,6 +35,13 @@ public final class LocalDeliveryFixture {
                 db.jdbc.update("insert into me_item values (?,?,0,?,?,?::jsonb)",UUID.fromString(item.get("id").asString()),legacyId,question.id(),question.latest().id(),item.toString());
                 db.jdbc.update("insert into me_command values (?,'ACCOUNT',?,?,?, ?,?::jsonb)",UUID.randomUUID(),user,UUID.fromString(fixture.get("operationId").asString()),legacyId,fixture.get("command").get("hash").asString(),fixture.get("command").get("outcome").toString());
                 db.seed("Questão sintética local adicional",true);
+                for(var topic:List.of(Topic.P01,Topic.M01))for(int n=1;n<=5;n++) {
+                    var c=br.com.concursosimulator.questionbank.QuestionFixtures.content("Prática sintética própria "+topic.id()+" "+n);
+                    var content=new QuestionContent(c.statement(),c.alternatives(),c.correctAlternativeId(),c.resolution(),
+                        new QuestionClassification(topic.discipline(),topic,Set.of(TargetRole.values())),c.references(),c.provenance());
+                    var practice=Question.draft(UUID.randomUUID(),new QuestionOrigin(QuestionPurpose.PRACTICE_NAMESPACE,topic.id()+"-P0"+n),UUID.randomUUID(),content);
+                    db.questions.transaction(s->{s.insert(practice);return null;});db.decide(practice.id(),EditorialDecision.Action.SUBMIT);db.decide(practice.id(),EditorialDecision.Action.APPROVE);
+                }
                 var cases=new AttemptUseCases(new JpaAttemptStore(db.entities,db.manager,db.pool),Clock.fixed(NOW.plusSeconds(1),ZoneOffset.UTC),UUID::randomUUID,()->new Random(1),false);
                 cases.finish(owner,legacyId,UUID.randomUUID(),0);
                 var fresh=cases.create(owner,UUID.randomUUID(),composition(1)).attempt();cases.finish(owner,fresh.id(),UUID.randomUUID(),0);

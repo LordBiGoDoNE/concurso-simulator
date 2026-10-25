@@ -16,7 +16,8 @@
   "findings": [],
   "triage_complete": false,
   "limitations": [
-    "Planejamento somente; implementação e revisão não executadas."
+    "Implementação e testes locais executados; revisão independente não executada por decisão de estabilização e aceite local antes de novos envios.",
+    "255 itens habilitados exclusivamente no banco local por autorização expressa do usuário; aceite final e revisão independente permanecem pendentes."
   ],
   "verification": [],
   "proposal_acceptance": {
@@ -25,8 +26,8 @@
     "practice_questions": 255,
     "per_topic": 5,
     "topic_count": 51,
-    "implementation_groups_selected": false,
-    "editorial_decisions_granted": false,
+    "implementation_groups_selected": true,
+    "editorial_decisions_granted": true,
     "merges_authorized": false
   }
 }

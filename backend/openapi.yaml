@@ -248,6 +248,115 @@ paths:
         '400': {$ref: '#/components/responses/QuestionInvalid'}
         '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/lesson-practices:
+    post:
+      summary: Iniciar prática de até cinco questões próprias da aula/cargo; correção ao encerrar
+      security: [{}, {sessionCookie: []}]
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/LessonPracticeCreate'}
+      responses:
+        '201': {description: Criada; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '200': {description: Replay confirmado; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '409': {description: Payload divergente ou acervo insuficiente; error e available por disciplina, content: {application/json: {schema: {oneOf: [{$ref: '#/components/schemas/AttemptError'}, {$ref: '#/components/schemas/AttemptInsufficient'}]}}}}
+        '500': {description: Falha interna de integridade; sem captura parcial ou dados privados; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptError'}}}}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/lesson-practices/{id}:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Consultar snapshot e respostas próprias, sem correção ou nota parcial
+      responses:
+        '200': {description: Tentativa do dono; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/lesson-practices/{id}/answers/{item}:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+      - {in: path, name: item, required: true, schema: {type: string, format: uuid}}
+    put:
+      summary: Salvar ou limpar resposta por ID; versão esperada e comando idempotente
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptAnswer'}
+      responses:
+        '200': {description: Resposta confirmada ou replay; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/lesson-practices/{id}/finish:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    post:
+      summary: Concluir irreversivelmente e corrigir snapshot privado; replay confirmado
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AttemptFinish'}
+      responses:
+        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptFinished'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/lesson-practices/{id}/result:
+    parameters:
+      - {in: path, name: id, required: true, schema: {type: string, format: uuid}}
+    get:
+      summary: Consultar resultado fechado somente do dono
+      responses:
+        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptResult'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '403': {$ref: '#/components/responses/AttemptForbidden'}
+        '404': {$ref: '#/components/responses/AttemptNotFound'}
+        '409': {$ref: '#/components/responses/AttemptConflict'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/me/lesson-practices:
+    get:
+      summary: Histórico privado exclusivo de práticas; filtro de modalidade antes da paginação
+      security: [{sessionCookie: []}]
+      parameters:
+        - {in: query, name: page, schema: {type: integer, minimum: 0, maximum: 100000, default: 0}}
+        - {in: query, name: size, schema: {type: integer, minimum: 1, maximum: 100, default: 20}}
+        - {in: query, name: finished, schema: {type: boolean}}
+      responses:
+        '200': {description: Página do owner, no-store; sem total prometido, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeHistory'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/lesson-practices/availability:
+    get:
+      summary: Quantidade aprovada exclusiva de prática por assunto e cargo
+      parameters:
+        - {in: query, name: topicId, required: true, schema: {type: string}}
+        - {in: query, name: roleId, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Acervo próprio; maximum cinco; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeAvailability'}}}}
+        '400': {$ref: '#/components/responses/QuestionInvalid'}
+        '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
+        '503': {$ref: '#/components/responses/QuestionUnavailable'}
   /api/v1/me/subject-review:
     get:
       summary: Revisão privada dos 51 assuntos, conta e cargo selecionado
@@ -425,6 +534,44 @@ components:
         statement: {$ref: '#/components/schemas/QuestionText'}
         alternatives: {type: array, minItems: 2, items: {$ref: '#/components/schemas/QuestionAlternative'}}
         references: {type: array, minItems: 1, items: {$ref: '#/components/schemas/QuestionReference'}}
+    LessonPracticeCreate:
+      type: object
+      additionalProperties: false
+      required: [commandId, roleId, topicId]
+      properties:
+        commandId: {type: string, format: uuid}
+        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
+        topicId: {type: string}
+    LessonPracticeAvailability:
+      type: object
+      additionalProperties: false
+      required: [topicId, roleId, available, maximum]
+      properties:
+        topicId: {type: string}
+        roleId: {type: string}
+        available: {type: integer, minimum: 0}
+        maximum: {type: integer, const: 5}
+    LessonPracticeHistory:
+      type: object
+      additionalProperties: false
+      required: [items, page, size]
+      properties:
+        page: {type: integer}
+        size: {type: integer}
+        items:
+          type: array
+          items:
+            type: object
+            additionalProperties: false
+            required: [id, roleId, topicId, createdAt, finishedAt, total, percentage]
+            properties:
+              id: {type: string, format: uuid}
+              roleId: {type: string}
+              topicId: {type: string}
+              createdAt: {type: string, format: date-time}
+              finishedAt: {type: [string, 'null'], format: date-time}
+              total: {type: integer, minimum: 1, maximum: 5}
+              percentage: {type: [number, 'null']}
     AttemptCreate:
       type: object
       additionalProperties: false

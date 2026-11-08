@@ -1,11 +1,15 @@
-import { test, expect } from '@playwright/test';
+import { test, expect, type Page } from '@playwright/test';
 import { view } from '../test/attempt-fixtures';
 import { catalog, emptyPage } from '../test/question-fixtures';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
+async function openPracticePanel(page:Page) {
+  const panel=page.locator('details.lesson-practice-panel');
+  if (!await panel.evaluate(element=>(element as HTMLDetailsElement).open)) await panel.locator('summary').click();
+}
+
 test.beforeEach(async ({ page }) => {
-    await page.route('https://lordbigodone.github.io/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: '<!doctype html><html lang="pt-BR"><title>Aula de teste</title><h1>Conteúdo da aula</h1></html>' }));
   await page.route('**/api/v1/**', async route => {
     const request = route.request(), url = new URL(request.url());
     const path = url.pathname;
@@ -40,19 +44,23 @@ for (const width of [390, 1440]) test(`cargo, aula, histórico e prática por te
   await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).focus();await page.keyboard.press('Enter');
   await expect(page).toHaveURL(/#\/aulas\/P01\?cargo=assistente-administrativo/);
   await expect(page.getByRole('heading', { name: 'Interpretação de Textos', exact: true })).toBeFocused();
-  await expect(page.getByRole('button', { name: 'Praticar P01' })).toBeEnabled();
+  await expect(page.locator('details.lesson-practice-panel')).not.toHaveAttribute('open');
+  await openPracticePanel(page);
+  await expect(page.getByRole('button', { name: 'Começar prática' })).toBeEnabled();
   expect(creates).toBe(0);
   await page.reload();
   await expect(page.getByRole('heading', { name: 'Interpretação de Textos', exact: true })).toBeVisible();
   await page.goBack();
   await expect(page.getByLabel('Buscar aula')).toHaveValue('interpretacao');
   await expect(page.getByLabel('Filtrar disciplina')).toHaveValue('portugues');
-  await page.goForward();await expect(page.getByRole('button', { name: 'Praticar P01' })).toBeEnabled();
+  await page.goForward();await openPracticePanel(page);await expect(page.getByRole('button', { name: 'Começar prática' })).toBeEnabled();
   expect(creates).toBe(0);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath(`lesson-${width}.png`), fullPage: true });
-  await page.getByRole('button', { name: 'Praticar P01' }).focus();await page.keyboard.press('Enter');
+  await page.getByRole('button', { name: 'Começar prática' }).focus();await page.keyboard.press('Enter');
   await expect(page.getByRole('heading', { name: 'Questão 1 de 1' })).toBeVisible();
+  await expect(page).toHaveURL(/#\/aulas\/P01\?/);
+  await expect(page.getByRole('button', { name: 'Prática em andamento' })).toBeVisible();
   expect(creates).toBe(1);
   expect(await page.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0,0]);
 });
@@ -65,9 +73,10 @@ test('sem API, o novo estudante chega à aula e recebe erro de consulta, sem fal
   await expect(page.getByText('43 aulas encontradas.')).toBeVisible();
   await page.getByRole('button', { name: /S02.*Escrituração Escolar/ }).click();
   await expect(page.getByRole('heading', { name: 'Escrituração Escolar', exact: true })).toBeVisible();
+  await openPracticePanel(page);
   await expect(page.getByText(/Isso não significa ausência de questões/)).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Praticar S02' })).toBeDisabled();
-  await expect(page.getByRole('link', { name: 'Abrir aula original (nova aba)' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
+  await expect(page.getByRole('article', { name: 'Conteúdo da aula: Escrituração Escolar' })).toBeVisible();
 });
 
 test('consulta vazia, falha e nova consulta não criam atividades', async ({ page }) => {
@@ -75,13 +84,42 @@ test('consulta vazia, falha e nova consulta não criam atividades', async ({ pag
   page.on('request', request => { if (request.method() === 'POST' && /\/api\/v1\/(?:lesson-practices|attempts)(?:\/|$)/.test(request.url())) creates++; });
   await page.route('**/lesson-practices/availability?**', route => phase === 'error' ? route.abort() : route.fulfill({ json: { topicId: 'P01', roleId: 'assistente-administrativo', available: phase === 'empty' ? 0 : 5, maximum: 5 } }));
   await page.goto('/#/aulas/P01?cargo=assistente-administrativo');
+  await openPracticePanel(page);
   await expect(page.getByText(/ainda não tem questões próprias/)).toBeVisible();
-  phase = 'error';await page.reload();
+  phase = 'error';await page.reload();await openPracticePanel(page);
   await expect(page.getByText(/Isso não significa ausência de questões/)).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
+  await expect(page.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   phase = 'ready';await page.getByRole('button', { name: 'Consultar prática novamente' }).click();
-  await expect(page.getByRole('button', { name: 'Praticar P01' })).toBeEnabled();
+  await expect(page.getByRole('button', { name: 'Começar prática' })).toBeEnabled();
   expect(creates).toBe(0);
+});
+
+for (const width of [390,1440]) test(`carrega abaixo do botão e recolhe durante salvamento em ${width}px`,async({page})=>{
+  const errors:string[]=[];page.on('pageerror',error=>errors.push(error.message));
+  let releaseCreate!:()=>void,releaseSave!:()=>void;
+  const creating=new Promise<void>(resolve=>releaseCreate=resolve),saving=new Promise<void>(resolve=>releaseSave=resolve);
+  let current={...view,items:[view.items[0]]},creates=0;
+  await page.route('**/api/v1/lesson-practices',async route=>{creates++;await creating;await route.fulfill({status:201,json:current});});
+  await page.route(/\/api\/v1\/lesson-practices\/[0-9a-f-]+\/answers\/[0-9a-f-]+$/,async route=>{
+    await saving;const answer=route.request().postDataJSON();current={...current,version:1,items:[{...current.items[0],selectedAlternativeId:answer.alternativeId}]};
+    await route.fulfill({json:current});
+  });
+  try {
+    await page.setViewportSize({width,height:900});await page.goto('/#/aulas/P01?cargo=assistente-administrativo');
+    await expect(page.locator('details.lesson-practice-panel')).not.toHaveAttribute('open');await openPracticePanel(page);
+    const start=page.getByRole('button',{name:'Começar prática',exact:true});await expect(start).toBeEnabled();
+    expect(creates).toBe(0);await expect(page.getByRole('radio')).toHaveCount(0);await start.click();
+    await expect(page.getByText('Carregando questões da prática…')).toBeVisible();await expect(page.getByRole('button',{name:'Carregando questões…',exact:true})).toBeDisabled();
+    await expect(page).toHaveURL(/#\/aulas\/P01\?/);releaseCreate();await expect(page.getByRole('heading',{name:'Questão 1 de 1'})).toBeVisible();
+    const button=await page.getByRole('button',{name:'Prática em andamento',exact:true}).boundingBox(),question=await page.getByRole('heading',{name:'Questão 1 de 1'}).boundingBox();
+    expect(question!.y).toBeGreaterThan(button!.y+button!.height);expect(creates).toBe(1);
+    await page.getByRole('radio').first().check();await expect(page.getByText('Salvando fila…',{exact:true})).toBeVisible();
+    await page.getByRole('button',{name:'Recolher prática e voltar à leitura'}).click();await expect(page.locator('details.lesson-practice-panel')).not.toHaveAttribute('open');
+    releaseSave();await openPracticePanel(page);await expect(page.getByText('Respostas confirmadas.',{exact:true})).toBeVisible();
+    await expect(page.getByRole('radio').first()).toBeChecked();expect(creates).toBe(1);
+    expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+    expect(errors).toEqual([]);
+  } finally {releaseCreate();releaseSave();}
 });
 
 test('link inválido orienta e nenhuma rota pública cria atividades', async ({ page }) => {

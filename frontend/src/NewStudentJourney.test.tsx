@@ -32,11 +32,12 @@ it('novo visitante escolhe cargo e encontra aulas sem API nem armazenamento', as
 it('compartilha/restaura aula e filtros, mantendo acervo vazio distinto de falha', async () => {
   window.history.replaceState(null, '', '#/aulas/P01?cargo=secretario-de-escola&disciplina=portugues&busca=interpretacao');
   const fetchMock = api();const first = render(<App />);
+  fireEvent.click(screen.getByText('Pratique esta aula'));
   await screen.findByText(/ainda não tem questões próprias/);
   expect(screen.getByRole('heading', { name: 'Interpretação de Textos' })).toBeVisible();
   expect(screen.getByLabelText('Cargo para praticar esta aula')).toHaveValue('secretario-de-escola');
-  expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
-  first.unmount();render(<App />);
+  expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
+  first.unmount();render(<App />);fireEvent.click(screen.getByText('Pratique esta aula'));
   await screen.findByText(/ainda não tem questões próprias/);
   fireEvent.click(screen.getByRole('button', { name: /Voltar às aulas/ }));
   expect(screen.getByLabelText('Buscar aula')).toHaveValue('interpretacao');

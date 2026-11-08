@@ -117,8 +117,9 @@ it('prática de aula tem realização própria e preserva a fila pendente do sim
   await waitFor(()=>expect(fixture.fetchMock.mock.calls.some(([u])=>u.includes('/answers/'))).toBe(true));
   fireEvent.click(screen.getByRole('button',{name:'Aulas'}));
   fireEvent.click(screen.getByRole('button',{name:/P01.*Interpretação de Textos/}));
-  await waitFor(()=>expect(screen.getByRole('button',{name:'Praticar P01'})).toBeEnabled());
-  fireEvent.click(screen.getByRole('button',{name:'Praticar P01'}));
+  fireEvent.click(screen.getByText('Pratique esta aula'));
+  await waitFor(()=>expect(screen.getByRole('button',{name:'Começar prática'})).toBeEnabled());
+  fireEvent.click(screen.getByRole('button',{name:'Começar prática'}));
   await screen.findByText('OWN_PRACTICE_STATEMENT');
   expect(confirm).not.toHaveBeenCalled();expect(screen.queryByRole('button',{name:'Iniciar simulado'})).not.toBeInTheDocument();
   expect(await screen.findByRole('button',{name:'Encerrar prática'})).toBeVisible();

@@ -37,6 +37,44 @@ A nova navegação altera apenas o contexto público; não remonta esses executo
   da identidade verificada. Isso evita carregamento eterno quando a API está fora.
 - Atualização restaura somente contexto público. Realizações continuam pelos
   mecanismos atuais de histórico; não prometer persistência de escolhas pendentes.
+- Refinamento solicitado pelo usuário em 2026-11-08: prática no final da aula,
+  em painel nativo recolhível. Abrir/recolher não inicia nem encerra a atividade;
+  Começar prática faz o POST explícito, com carregamento e questões abaixo do
+  botão, sem navegar para outra área. O resultado permanece nesse painel.
+- A única instância de `LessonPracticeWorkspace` continua montada no App, depois
+  do leitor e antes da navegação entre aulas. O contexto inline controla a
+  apresentação; fechar o painel ou mudar aula/cargo apenas oculta a realização
+  incompatível, sem remontar o executor ou cancelar sua fila. A área Práticas
+  continua disponível para a realização atual e o histórico da conta.
+- Disponibilidade pública continua por GET; o payload das questões só vem após
+  início explícito. Criação pendente bloqueia novos comandos; falha mantém o retry
+  idempotente existente. Troca de identidade remonta o contexto privado pela chave
+  da identidade, inclusive quando a aula pública está sendo exibida.
+- Refinamento de leitura solicitado em 2026-11-08: o índice fica antes do título
+  da aula, com cabeçalho Nesta Disciplina - nome da disciplina e opções
+  distribuídas em grade responsiva. O leitor usa
+  uma única coluna em toda a largura disponível; a biblioteca mantém seu layout
+  próprio. Identificação da aula atual, seleção e histórico usam as mesmas rotas.
+- Refinamento nativo autorizado em 2026-11-08 substitui o iframe e sua medição.
+  As 51 aulas são dados públicos compilados, carregados individualmente do próprio
+  bundle e renderizados por elementos React conhecidos. Não há HTML bruto, CSS
+  legado ou busca de documentos antigos em runtime. O título pertence ao layout.
+- `compile_native_lessons.py` seleciona teoria, exemplos resolvidos, tabelas,
+  esquemas e fontes. Reutiliza o enriquecimento didático existente de Matemática;
+  exclui navegação/cabeçalhos/rodapés e exercícios/resoluções do banco antigo.
+  A seleção não altera fontes estáticas ou elegibilidade/correção das questões.
+- Fontes e documentos têm hashes SHA-256 normalizados em LF no manifesto gerado.
+  `--check` e a regressão Python detectam divergências; geração é uma etapa de
+  autoria, sem Python necessário para servir ou compilar o frontend já preparado.
+- SVG e MathML são árvores de elementos permitidos, com IDs locais por aula e
+  figura. Marcas de edição são removidas dos esquemas; geometria e explicação
+  didática permanecem. Esquemas largos e tabelas oferecem rolagem própria com
+  teclado; a página preserva uma única rolagem vertical e largura responsiva.
+- Âncoras do sumário focam/rolam a seção sem alterar o hash da navegação.
+  Fontes externas abrem por ação explícita. Atalhos de revisão abrem a aula nativa
+  com cargo compatível. Na revisão dos 51 assuntos, aulas de outro cargo abrem
+  em exploração livre, sem mudar o cargo da tentativa atual. Falha do documento oferece retry; trocar aula cancela e
+  invalida respostas anteriores. O material local continua independente da API.
 
 ### Alternatives considered
 

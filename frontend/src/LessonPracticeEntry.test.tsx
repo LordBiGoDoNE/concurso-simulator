@@ -14,11 +14,11 @@ it('só permite início após disponibilidade confirmada e clique explícito', a
   const fetchMock = vi.fn(() => new Promise(resolve => { complete = resolve; }));
   vi.stubGlobal('fetch', fetchMock);
   const value = props();render(<LessonPracticeEntry {...value} />);
-  expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   await act(async () => complete(response(8)));
   expect(screen.getByRole('status')).toHaveTextContent('até 5 questões');
   expect(value.onPractice).not.toHaveBeenCalled();
-  fireEvent.click(screen.getByRole('button', { name: 'Praticar P01' }));
+  fireEvent.click(screen.getByRole('button', { name: 'Começar prática' }));
   expect(value.onPractice).toHaveBeenCalledWith({ roleId, topicId: 'P01', disciplineId: 'portugues' });
   expect(fetchMock).toHaveBeenCalledTimes(1);
   expect(fetchMock.mock.calls[0]).toEqual([expect.stringContaining('/availability?topicId=P01&roleId='), expect.objectContaining({ method: 'GET' })]);
@@ -27,7 +27,7 @@ it('acervo vazio é distinto de erro e não cria prática', async () => {
   vi.stubGlobal('fetch', vi.fn(async () => response(0)));
   const value = props();render(<LessonPracticeEntry {...value} />);
   expect(await screen.findByText(/ainda não tem questões/)).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   expect(value.onPractice).not.toHaveBeenCalled();
 });
 it.each([{ roleId: 'outro' }, { topicId: 'M01' }, { available: -1 }, { available: 1.5 }, { maximum: 10 }, { extra: true }])('contrato incompatível é erro, com nova consulta: %j', async patch => {
@@ -35,9 +35,9 @@ it.each([{ roleId: 'outro' }, { topicId: 'M01' }, { available: -1 }, { available
   vi.stubGlobal('fetch', fetchMock);
   const value = props();render(<LessonPracticeEntry {...value} />);
   expect(await screen.findByRole('alert')).toHaveTextContent('não significa ausência');
-  expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   fireEvent.click(screen.getByRole('button', { name: 'Consultar prática novamente' }));
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeEnabled());
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Começar prática' })).toBeEnabled());
   expect(value.onPractice).not.toHaveBeenCalled();
 });
 it('ignora consulta tardia de outro cargo e não inicia ao trocar cargo', async () => {
@@ -47,24 +47,24 @@ it('ignora consulta tardia de outro cargo e não inicia ao trocar cargo', async 
   mounted.rerender(<LessonPracticeEntry {...value} roleId="secretario-de-escola" />);
   await screen.findByText(/ainda não tem questões/);
   await act(async () => complete(response(5)));
-  expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   expect(value.onPractice).not.toHaveBeenCalled();
 });
 it('consulta confirmada não libera início enquanto a identidade está sendo conferida', async () => {
   vi.stubGlobal('fetch', vi.fn(async () => response()));
   const value = props();render(<LessonPracticeEntry {...value} startEnabled={false} />);
   await screen.findByText(/Confira sua sessão antes de iniciar/);
-  expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   expect(value.onPractice).not.toHaveBeenCalled();
 });
 it('sair da área aborta a consulta e voltar exige uma confirmação nova', async () => {
   const fetchMock = vi.fn().mockResolvedValueOnce(response()).mockImplementation(() => new Promise(() => {}));
   vi.stubGlobal('fetch', fetchMock);
   const value = props();const mounted = render(<LessonPracticeEntry {...value} />);
-  await waitFor(() => expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeEnabled());
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Começar prática' })).toBeEnabled());
   mounted.rerender(<LessonPracticeEntry {...value} active={false} />);
   mounted.rerender(<LessonPracticeEntry {...value} />);
-  expect(screen.getByRole('button', { name: 'Praticar P01' })).toBeDisabled();
+  expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   expect(fetchMock).toHaveBeenCalledTimes(2);
   mounted.unmount();
   expect(fetchMock.mock.calls[1][1].signal.aborted).toBe(true);

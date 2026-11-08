@@ -2,15 +2,14 @@ import { useCallback, useEffect, useRef, useState } from 'react';
 import LoginPanel from './LoginPanel';
 import QuestionBrowser from './QuestionBrowser';
 import AttemptWorkspace from './AttemptWorkspace';
-import LessonPracticeWorkspace, { type LessonPracticeHandle } from './LessonPracticeWorkspace';
+import LessonPracticeWorkspace from './LessonPracticeWorkspace';
 import StudyHome from './StudyHome';
-import LessonLibrary from './LessonLibrary';
-import type { DirectedPractice } from './directed-practice';
+import LessonLibrary, { LessonPagination } from './LessonLibrary';
+import { lessons } from './study-catalog';
 import type { CurrentIdentity } from './identity-api';
 import { useStudyNavigation, locationForRole, type Area } from './study-navigation';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
-import { materialUrl } from './lesson-links';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
 const timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : 5000;
 const areaNames: Record<Area, string> = { home: 'Início', attempts: 'Simulados', lessons: 'Aulas', practice: 'Práticas', questions: 'Banco de questões' };
@@ -20,8 +19,7 @@ export default function App() {
   const area = route.area;
   const [runActive, setRunActive] = useState(false);
   const [lessonsOpened, setLessonsOpened] = useState(area === 'lessons');
-  const [practiceNotice, setPracticeNotice] = useState('');
-  const practiceWorkspace = useRef<LessonPracticeHandle>(null);
+  const lesson = area === 'lessons' ? lessons.find(topic => topic.id === route.topicId) : undefined;
   const pageHeading = useRef<HTMLHeadingElement>(null); const previousArea = useRef(area);
   function navigate(next: Area) { updateRoute({ area: next }); }
   useEffect(() => {
@@ -31,10 +29,6 @@ export default function App() {
   }, [area]);
   function openLessons(discipline?: string, roleId?: string) {
     updateRoute({ ...(roleId === undefined ? {} : locationForRole(route, roleId)), area: 'lessons', ...(discipline === undefined ? {} : { disciplineId: discipline, topicId: '', search: '' }) });
-  }
-  function practiceLesson(selection: DirectedPractice) {
-    if (checking || !practiceWorkspace.current?.start(selection)) { setPracticeNotice('Prática não iniciada. A prática atual foi preservada; confira sua sessão ou aguarde uma operação em andamento.'); return; }
-    setPracticeNotice(''); navigate('practice');
   }
   const [attempt, setAttempt] = useState(0);
   const [status, setStatus] = useState<'loading' | 'up' | 'down'>('loading');
@@ -84,11 +78,12 @@ export default function App() {
       {privateNotice && <p role="status">{privateNotice}</p>}
       {checking && area === 'attempts' && <p role="status">Conferindo acesso aos simulados…</p>}
       <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} />}</div>
-      <div hidden={area !== 'lessons'}>{practiceNotice && <p role="status">{practiceNotice}</p>}{(lessonsOpened || area === 'lessons') && <LessonLibrary location={route} onLocationChange={(value, replace) => updateRoute({ ...value, area: 'lessons' }, replace)} active={area === 'lessons'} practiceEnabled={!checking} onPractice={practiceLesson} />}</div>
-      <div hidden={checking || area !== 'practice'}>{identity && <LessonPracticeWorkspace ref={practiceWorkspace} key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson}/>}</div>
+      <div hidden={area !== 'lessons'}>{(lessonsOpened || area === 'lessons') && <LessonLibrary location={route} onLocationChange={(value, replace) => updateRoute({ ...value, area: 'lessons' }, replace)} showPagination={false} />}</div>
+      <div hidden={lesson ? false : checking || area !== 'practice'}><LessonPracticeWorkspace key={identity ? identity.connected ? identity.id : 'visitor' : 'no-identity'} identity={identity} contextActive={!checking && identity !== null} inlineLesson={lesson ? { topic: lesson, roleId: route.roleId, onRoleChange: roleId => updateRoute(locationForRole(route, roleId)) } : undefined} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson}/></div>
+      {lesson && <LessonPagination topicId={lesson.id} roleId={route.roleId} onSelect={topicId => updateRoute({ topicId })} />}
       <div hidden={area !== 'questions'}><QuestionBrowser /></div>
       <footer className="availability">
-        <a href={materialUrl}>Acessar material de estudo</a>
+        <a href="#/aulas" onClick={event => { event.preventDefault(); updateRoute({ area: 'lessons', topicId: '', disciplineId: '', search: '' }); }}>Acessar material de estudo</a>
         <p role="status" aria-live="polite">
           {status === 'loading' ? 'Verificando disponibilidade da API…' : status === 'up' ? 'API disponível.' : 'API indisponível. Você pode continuar acessando as aulas.'}
         </p>

@@ -1,8 +1,7 @@
 import catalog from './lesson-catalog.json';
-import paths from './lesson-paths.json';
 
 export const studyCatalog = catalog;
-export const lessons = catalog.topics.filter(topic => Object.hasOwn(paths, topic.id));
+export const lessons = catalog.topics;
 export type Lesson = (typeof lessons)[number];
 export function lessonSupportsRole(topic: Lesson, roleId: string) {
   if (!roleId) return true;

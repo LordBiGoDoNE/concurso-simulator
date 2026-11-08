@@ -15,6 +15,10 @@ não permite compartilhar aulas nem restaurar o contexto ao atualizar.
 - Catálogo local, biblioteca por cargo e estados públicos no fragmento da URL.
 - Consulta de disponibilidade antes de oferecer o início explícito da prática.
 - Regressão de histórico do navegador, filas, privacidade, teclado e responsividade.
+- Refinamentos solicitados em 2026-11-08: prática recolhível ao final da aula,
+  índice acima do título e conversão das 51 aulas para conteúdo nativo do layout.
+  Teoria, exemplos resolvidos, esquemas e fontes permanecem na aula; exercícios
+  ficam exclusivamente no painel de prática, conforme escolha explícita do usuário.
 
 Plano e quatro grupos completos solicitados pelo usuário em2026-11-05.
 Implementação local não representa aceite visual, revisão independente ou integração.
@@ -32,7 +36,9 @@ Implementação local não representa aceite visual, revisão independente ou in
 ## Impact
 
 Frontend React, testes e documentação. Reutiliza HTTP existente, sem dependências
-novas, migrações, importações, alteração editorial, Google ou publicação.
+novas, migrações, importações no banco, curadoria das questões, Google ou publicação.
+Inclui compilação reproduzível de conteúdo público para dados inertes do frontend,
+sem modificar os arquivos estáticos preservados ou os registros editoriais.
 `stable`, Pages e aplicação publicada permanecem preservados.
 
 ## Workflow

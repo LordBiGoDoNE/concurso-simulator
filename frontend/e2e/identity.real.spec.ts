@@ -11,7 +11,7 @@ async function login(page: Page) {
   await page.goto('/');
   await page.getByRole('link', { name: 'Entrar com Google' }).click();
   await expect(page.getByText('Você está conectado.')).toBeVisible();
-  await expect(page).toHaveURL('http://127.0.0.1:5173/');
+  await expect(page).toHaveURL('http://127.0.0.1:5173/#/inicio');
   const me = await page.request.get(`${api}/api/v1/me`);
   expect(me.status()).toBe(200);
   const body = await me.json();

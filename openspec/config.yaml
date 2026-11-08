@@ -19,6 +19,14 @@ context: |
   implementa uma tarefa ou grupo coeso com testes e PR destinado à épica.
   Dependências aguardam integração ou ficam em PR de rascunho explicitamente bloqueado.
   Issue da spec reúne checklist e PRs; revisão final da épica para main é integrada.
+  Ao criar uma spec, criar também sua issue no GitHub, evitando duplicidade.
+  Proposta e tarefas apontam para a issue; a issue aponta para os artefatos na branch da spec.
+  Ao concluir um planejamento com escopo definido, formalizar primeiro spec e issue,
+  apresentar os links e grupos de tarefas e solicitar confirmação explícita antes
+  de iniciar a implementação, incluindo quais grupos estão autorizados.
+  Aprovar o planejamento ou autorizar criar/publicar spec, issue ou documentação
+  não autoriza implementar. Encerrar a etapa documental nesse ponto de confirmação,
+  sem iniciar código, migrações ou cargas de dados.
   A reformulação foi entregue pelo #133; epic/application-reformulation é histórica.
   Novas specs partem de main atualizada, integram tarefas em epic/<change-name>
   e abrem PR final [SPEC] diretamente para main, com gate cumulativo independente

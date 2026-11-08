@@ -12,6 +12,10 @@ test.beforeEach(async ({ page }) => {
     if (path.endsWith('/auth/config')) return route.fulfill({ json: { googleEnabled: false } });
     if (path.endsWith('/me')) return route.fulfill({ status: 401, json: { error: 'unauthenticated' } });
     if(path.endsWith('/csrf'))return route.fulfill({json:{token:'test',headerName:'X-CSRF-TOKEN'}});
+    if(path.endsWith('/lesson-practices/availability')) {
+      const params = new URL(route.request().url()).searchParams;
+      return route.fulfill({json:{topicId:params.get('topicId'),roleId:params.get('roleId'),available:5,maximum:5}});
+    }
     if(path.includes('/lesson-practices')) {
       const body=route.request().method()==='POST'?route.request().postDataJSON():{topicId:'P01',roleId:view.roleId};
       const topicId=body.topicId;const disciplineId=topicId.startsWith('M')?'matematica-raciocinio':'portugues';
@@ -108,7 +112,7 @@ for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem c
     return route.fulfill({ contentType, body: readFileSync(file) });
   });
   await page.setViewportSize({ width, height: 900 });await page.goto('/');
-  await page.getByRole('button', { name: 'Explorar as aulas' }).click();
+  await page.getByRole('button', { name: 'Explorar todas as aulas' }).click();
   await expect(page.getByRole('status').filter({ hasText: '51 aulas encontradas.' })).toBeVisible();
   await page.getByLabel('Buscar aula').fill('interpretacao');await expect(page.getByRole('status').filter({ hasText: '1 aula encontrada.' })).toBeVisible();
   await page.getByLabel('Filtrar disciplina').selectOption('informatica');await expect(page.getByRole('heading', { name: 'Nenhuma aula por aqui' })).toBeVisible();

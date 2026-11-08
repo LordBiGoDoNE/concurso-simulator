@@ -1,0 +1,69 @@
+# Design
+
+## Context
+
+A aplicação já mantém realizações montadas ao navegar e concentra gravações em
+`useAttemptRun`. A identidade invalida conteúdo privado mesmo em outra área.
+A nova navegação altera apenas o contexto público; não remonta esses executores.
+
+## Goals / Non-Goals
+
+**Goals:** manter contexto público restaurável sem reinicializar a realização privada.
+**Non-Goals:** persistir respostas na URL ou criar uma segunda máquina de execução.
+
+## Decisions
+
+- Catálogo local existente fornece cargos, disciplinas e51 aulas. A associação de
+  aulas segue a regra existente: comuns aos dois cargos e disciplinas específicas.
+- `StudyRoute` centraliza área, cargo, disciplina, busca e aula. Nenhum desses
+  valores autoriza acesso privado. URLs nunca recebem IDs de tentativas, respostas,
+  credenciais ou conteúdo de operações.
+- Rotas: `#/inicio`, `#/aulas`, `#/aulas/P01`, `#/simulados`, `#/praticas`,
+  `#/questoes`. Parâmetros: `cargo`, `disciplina`, `busca`; fora de Aulas, `aula`
+  conserva a seleção pública ao visitar outra área. Busca limitada a160 caracteres.
+- `pushState` registra transições; busca substitui a entrada atual para não criar
+  um passo por tecla. `popstate` e `hashchange` restauram a mesma representação.
+  Canonicalização preserva pathname/query, inclusive o retorno de autenticação.
+- Valores desconhecidos/duplicados/incompatíveis são descartados com aviso. Cargo
+  conhecido não muda silenciosamente para acomodar aula de outro cargo.
+- Área pública não causa POST. Somente o clique explícito de prática chama o
+  mecanismo já existente, com comando idempotente e confirmação de substituição.
+- Disponibilidade usa GET existente por assunto/cargo. O cliente valida os quatro
+  campos exatos, correspondência dos IDs, quantidade inteira não negativa e máximo5.
+  Quantidade disponível pode superar5; o início continua limitado a5 pelo contrato.
+- Consulta é abortada ao trocar contexto/sair da área. Resposta obsoleta não libera
+  botão de outro cargo/assunto. Falha mantém retry; zero confirmado mantém aula.
+- Consulta de disponibilidade independe da consulta de identidade; iniciar depende
+  da identidade verificada. Isso evita carregamento eterno quando a API está fora.
+- Atualização restaura somente contexto público. Realizações continuam pelos
+  mecanismos atuais de histórico; não prometer persistência de escolhas pendentes.
+
+### Alternatives considered
+
+Rotas por pathname exigiriam configuração adicional do proxy; hash mantém o contrato
+de implantação. Uma biblioteca de roteamento adicionaria dependência sem necessidade
+para cinco áreas. Estado apenas local não atenderia atualização e compartilhamento.
+Recriar as realizações a cada rota simplificaria renderização, mas descartaria filas.
+Consultar disponibilidade somente após POST manteria o primeiro contato confuso com
+acervo vazio; a consulta antecipada melhora a orientação sem substituir a validação do servidor.
+
+## Risks / Trade-offs
+
+Risco de implementação: crítico, conservadoramente, porque navegação toca contexto
+que convive com respostas privadas em andamento. Cobrir troca de identidade, filas,
+respostas tardias e navegação por histórico. Nenhuma regra de posse, transação,
+correção ou separação entre simulados e práticas será alterada.
+
+## Migration Plan
+
+Nenhuma migração de banco ou dependência. A futura publicação troca o bundle do
+frontend, preservando API e material. Rollback usa o bundle anterior; links hash
+novos serão ignorados pelo bundle antigo, sem alterar tentativas ou dados.
+
+## Delivery
+
+Protótipo navegável documental em `design/prototypes/new-student-experience/`.
+Validar implementação local antes de revisão independente SOL6.1xHigh, conforme
+AGENTS.md. Revisão de lote e gate cumulativo final são distintos; nenhum está
+certificado por esta documentação ou pelos testes. Integração/publicação dependem
+das respectivas autorizações.

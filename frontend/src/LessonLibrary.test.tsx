@@ -1,10 +1,12 @@
 import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
-import { expect, it, vi } from 'vitest';
+import { afterEach, expect, it, vi } from 'vitest';
 import LessonLibrary from './LessonLibrary';
 import catalog from './lesson-catalog.json';
 import paths from './lesson-paths.json';
 import manifest from '../../manifesto_v3.json';
 import { lessonUrl } from './lesson-links';
+
+afterEach(() => vi.unstubAllGlobals());
 
 it('catálogo de aulas cobre exatamente os 51 caminhos públicos do manifesto', () => {
   expect(catalog.topics.map(t => t.id)).toEqual(manifest.modulos.map(m => m.id));
@@ -26,6 +28,10 @@ it('busca sem acento combina disciplina, mantém estado vazio explícito e limpa
   expect(screen.getByRole('status')).toHaveTextContent('51 aulas encontradas.');
 });
 it('leitura usa teoria completa conhecida e permite navegar e compor sem criar tentativa', async () => {
+  vi.stubGlobal('fetch', vi.fn(async input => {
+    const url = new URL(String(input));
+    return { ok: true, json: async () => ({ topicId: url.searchParams.get('topicId'), roleId: url.searchParams.get('roleId'), available: 5, maximum: 5 }) };
+  }));
   const practice = vi.fn();render(<LessonLibrary initialDiscipline="conhecimentos-escolares" onPractice={practice} />);
   fireEvent.click(screen.getByRole('button', { name: /S02.*Escrituração Escolar/ }));
   await waitFor(() => expect(screen.getByRole('heading', { name: 'Escrituração Escolar' })).toHaveFocus());
@@ -34,6 +40,7 @@ it('leitura usa teoria completa conhecida e permite navegar e compor sem criar t
   expect(screen.getByLabelText('Cargo para praticar esta aula')).toHaveValue('secretario-de-escola');
   expect(within(screen.getByLabelText('Cargo para praticar esta aula')).getAllByRole('option')).toHaveLength(1);
   expect(screen.getByRole('button', { name: 'Praticar S02' })).toHaveAccessibleDescription('Assunto da prática: S02 — Escrituração Escolar');
+  await waitFor(() => expect(screen.getByRole('button', { name: 'Praticar S02' })).toBeEnabled());
   expect(practice).not.toHaveBeenCalled();fireEvent.click(screen.getByRole('button', { name: 'Praticar S02' }));
   expect(practice).toHaveBeenCalledWith({ roleId: 'secretario-de-escola', disciplineId: 'conhecimentos-escolares', topicId: 'S02' });
   fireEvent.click(screen.getByRole('button', { name: 'Próxima aula' }));

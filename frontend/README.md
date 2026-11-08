@@ -1,5 +1,22 @@
 # Frontend
 
+## Primeira experiência do estudante — implementação local
+
+Entrada por cargo, biblioteca e prática seguem a spec `new-student-experience`.
+Aulas e orientação inicial usam o catálogo local e funcionam sem API. A navegação
+usa `#/inicio`, `#/aulas/P01`, `#/simulados`, `#/praticas` e `#/questoes`;
+cargo, disciplina e busca são públicos. Abrir ou atualizar um link não inicia atividades.
+Atualização restaura contexto público; respostas pendentes não são persistidas na URL.
+
+Antes de oferecer a prática, a interface consulta a disponibilidade do assunto/cargo.
+Erro, carregamento e zero confirmado são distintos. Início exige clique e sessão
+verificada; login continua opcional. API/CSRF/idempotência mantêm os contratos atuais.
+
+Para conferir os cenários da jornada no Edge instalado:
+`npx playwright test --config playwright.edge.config.ts`.
+Protótipo em `../design/prototypes/new-student-experience/`; evidências e limites em
+`../openspec/changes/new-student-experience/verification.md`.
+
 Node **24 LTS**, React **19.3.0**, TypeScript **5.9.3**, Vite **8.3.3**, Vitest **5.0.3**. As versões resolvidas das dependências estão em `package-lock.json`.
 
 ```sh

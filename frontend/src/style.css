@@ -120,6 +120,13 @@ button.secondary:hover { background: var(--canvas); }
 @media (max-width: 540px) { .welcome { grid-template-columns: 1fr; padding: 24px; }.study-visual { display: none; }.welcome h1 { font-size: 2.3rem; }.topbar > span:first-child { max-width: 55%; }.identity-pill { font-size: .65rem; }.availability { align-items: flex-start; } section { padding: 18px; }.identity-panel .session-refresh { display: inline-block; margin-left: 8px; } }
 
 .lesson-practice-workspace { padding: 0; border: 0; background: transparent; }
+.study-entry { display: grid; gap: 10px; margin: 24px 0 14px; max-width: 440px; }
+.study-entry label, .lesson-role-filter label { font-size: .85rem; font-weight: 650; }
+.study-entry select, .lesson-role-filter select { width: 100%; min-width: 0; }
+.study-entry button { justify-self: start; }
+.independent-note { color: var(--muted); font-size: .8rem; line-height: 1.6; margin: 16px 0 28px; }
+.secondary-study-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+.lesson-role-filter { display: grid; gap: 8px; max-width: 440px; margin-top: 24px; }
 .practice-context { margin: 20px 0; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
 .practice-context h2 { margin-top: 0; font-size: 1.1rem; }
 nav[aria-label="Navegação da prática"], nav[aria-label="Paginação das práticas"] { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }

@@ -9,7 +9,7 @@ import { attemptRoleTitle } from './AttemptHistory';
 import catalog from './lesson-catalog.json';
 
 export interface LessonPracticeHandle {start:(selection:DirectedPractice)=>boolean}
-export default function LessonPracticeWorkspace({identity,contextActive,onUnavailable,onGuestActive,onBackToLesson,onChooseLesson,ref}:{identity:CurrentIdentity;contextActive:boolean;onUnavailable:()=>void;onGuestActive:(value:boolean)=>void;onBackToLesson:(topic:string)=>void;onChooseLesson:()=>void;ref?:Ref<LessonPracticeHandle>}) {
+export default function LessonPracticeWorkspace({identity,contextActive,onUnavailable,onGuestActive,onBackToLesson,onChooseLesson,ref}:{identity:CurrentIdentity;contextActive:boolean;onUnavailable:()=>void;onGuestActive:(value:boolean)=>void;onBackToLesson:(topic:string,roleId:string)=>void;onChooseLesson:()=>void;ref?:Ref<LessonPracticeHandle>}) {
   const [selected,setSelected]=useState<AttemptView|null>(null);const selectedRef=useRef(selected);selectedRef.current=selected;
   const [busy,setBusy]=useState(false);const pending=useRef(false);const request=useRef<AbortController|null>(null);
   const [message,setMessage]=useState('');const [failed,setFailed]=useState(false);const [refresh,setRefresh]=useState(0);
@@ -61,7 +61,7 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
     {busy && <p role="status">Preparando sua prática…</p>}{message && <p role="alert">{message}</p>}
     {failed && <button disabled={busy || !contextActive} onClick={()=>void create()}>Tentar iniciar prática novamente</button>}
     {!selected && !busy && <div className="study-guide"><h2>Qual assunto vamos praticar?</h2><p>Abra uma aula, confira o cargo e escolha Praticar. O treino reúne até cinco questões próprias daquele assunto.</p><button onClick={onChooseLesson}>Escolher uma aula</button></div>}
-    {selected && <><div className="practice-context"><h2>{topic} — {title}</h2><p>{attemptRoleTitle(selected.roleId)} · {selected.items.length} questões da aula</p><button className="secondary" onClick={()=>onBackToLesson(topic!)}>Voltar à aula {topic}</button></div>
+    {selected && <><div className="practice-context"><h2>{topic} — {title}</h2><p>{attemptRoleTitle(selected.roleId)} · {selected.items.length} questões da aula</p><button className="secondary" onClick={()=>onBackToLesson(topic!,selected.roleId)}>Voltar à aula {topic}</button></div>
       {access==='checking' && <p role="status">Conferindo acesso à prática…</p>}{access==='failed' && <><p role="alert">Não foi possível conferir o acesso. A prática fica oculta até confirmar.</p><button onClick={()=>setVerify(v=>v+1)}>Conferir prática novamente</button></>}
       <div hidden={busy || access!=='ready' || !contextActive}><AttemptPractice ref={run} key={selected.id} initial={selected} practice transport={lessonPracticeTransport} onUnavailable={onUnavailable} onFinished={finished}/></div>
     </>}

@@ -1,0 +1,141 @@
+{
+  "version": 1,
+  "kind": "implementation-batch-review",
+  "spec": "new-student-experience",
+  "batch": "groups-1-8-and-review-policy",
+  "recorded_at": "2026-11-09T16:28:51Z",
+  "status": "completed",
+  "risk": {
+    "classification": "critical",
+    "reason": "Navegação e prática convivem com identidade, filas, comandos idempotentes e conteúdo privado."
+  },
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "harness_model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "session": "/root/spec_reviewer",
+    "independent_context": true,
+    "read_only": true,
+    "provider_session_id": null
+  },
+  "composition": [
+    {
+      "pr": 159,
+      "range": "original-pr159"
+    },
+    {
+      "pr": null,
+      "branch": "task/new-student-experience/native-lessons-corrections",
+      "range": "corrections"
+    }
+  ],
+  "snapshots": {
+    "original-pr159": {
+      "base_sha": "f61d57d5d55d6d61609815a2faa4b415ed8dca4b",
+      "reviewed_head_sha": "37ccccf1563955d431591629f66c15bb7810a31a",
+      "diff_sha256": "a9ca7917cd5877ddd7b738e4196e97e281962bae49bec90d47637b73d58ccf4e"
+    },
+    "corrections": {
+      "base_sha": "37ccccf1563955d431591629f66c15bb7810a31a",
+      "reviewed_head_sha": "2e9949dbde31ae5cd6e9d3478ef1819aad533c57",
+      "diff_sha256": "cfbeed6960975ace703c07573aea6f1a8b54ef1f178031b86c8727176d13bdad"
+    },
+    "combined": {
+      "base_sha": "f61d57d5d55d6d61609815a2faa4b415ed8dca4b",
+      "reviewed_head_sha": "2e9949dbde31ae5cd6e9d3478ef1819aad533c57",
+      "diff_sha256": "7b3127f0ed3fdd89aec75522e908769ed25c86e44720aa074f16fa68eb69b343"
+    }
+  },
+  "triage_complete": true,
+  "open_findings": 0,
+  "findings": [
+    {
+      "id": "NSE-R01",
+      "severity": "recommended",
+      "range": "original-pr159",
+      "location": "scripts/compile_native_lessons.py:177 at 37ccccf",
+      "evidence": "compile_all usava backend/build antes de garantir sua existência; somente a CLI preparava a pasta.",
+      "reference": "Seleção reproduzível em checkout limpo, grupo 7/8.",
+      "impact": "Chamada direta e CI em checkout novo falhavam por diretório ausente.",
+      "suggestion": "Preparar o workspace na função que o utiliza e conferir cópia limpa.",
+      "disposition": "fixed",
+      "resolution": "Corrigido no head 2e9949d; confirmado por leitura independente, com reprodução/regressões executadas separadamente pelo coordenador."
+    },
+    {
+      "id": "NSE-R02",
+      "severity": "recommended",
+      "range": "original-pr159",
+      "location": "scripts/compile_native_lessons.py:40-41 and 51 generated lesson documents at 37ccccf",
+      "evidence": "Orientação mantinha gabarito em arquivo separado após a remoção da navegação legada.",
+      "reference": "Requisito de exercícios exclusivamente no painel de prática, grupos 7/8.",
+      "impact": "O leitor orientava procurar um recurso fora da experiência oferecida.",
+      "suggestion": "Adaptar a orientação nativa para o painel de prática e correção após encerrar.",
+      "disposition": "fixed",
+      "resolution": "Corrigido no head 2e9949d; revisor conferiu as 50+1 substituições e ausência de mudança estrutural."
+    }
+  ],
+  "coverage": {
+    "requirements": "Spec, design, tarefas e comportamento confrontados; ver sol.md.",
+    "architecture": "ADR 0001, fronteiras HTTP e reutilização de contratos existentes examinados.",
+    "integration": "App, navegação, biblioteca, workspace, executor e fila examinados.",
+    "security": "Chaves de identidade, invalidação, aborto/respostas tardias, contrato da disponibilidade e leitor inerte examinados.",
+    "persistence": "Sem diff de schema/repository/migrações; transporte e comandos existentes preservados.",
+    "tests": "Testes de código examinados pelo revisor; execução exclusivamente pelo coordenador.",
+    "maintenance": "Compilação, manifesto, dados gerados e política documental de revisão examinados."
+  },
+  "limitations": [
+    "Revisor não leu handoff, verification.md, relatórios de revisão ou logs; não há cobertura documental integral independente das evidências.",
+    "Revisor não executou testes, build, gerador, aplicação, rede ou banco, nem conferiu CI remoto.",
+    "Revisão de lote não é gate cumulativo final e não autoriza merge.",
+    "Totais de tokens, duração da sessão e identificador interno adicional do provedor não fornecidos pelo harness; não estimados."
+  ],
+  "coordinator_verification": {
+    "source_sha": "2e9949dbde31ae5cd6e9d3478ef1819aad533c57",
+    "image_delivery": {
+      "status": "passed",
+      "source": "backend/build/local-app/clean-delivery-check.json",
+      "checks": [
+        "image-check",
+        "ownership-check",
+        "runtime-check",
+        "recovery-check",
+        "browser-check"
+      ],
+      "browser_scenarios_passed": 9
+    },
+    "inline_identity": {
+      "status": "passed",
+      "checks": 4,
+      "widths": [
+        390,
+        1280
+      ],
+      "modes": [
+        "creation-response-suspended",
+        "answer-response-suspended"
+      ],
+      "old_private_run_removed_before_and_after_late_response": true,
+      "other_account_read_status": 404,
+      "no_automatic_additional_creation": true,
+      "method": "Ensaio adicional do coordenador contra imagens/PG e contas sintéticas em ambiente descartável; script/log/relatório privados e ignorados, não nova regressão permanente de CI."
+    },
+    "cleanup": {
+      "owned_test_states": 7,
+      "remaining_containers": 0,
+      "remaining_volumes": 0,
+      "remaining_networks": 0
+    },
+    "remote_ci": "Não executado para este head; nenhum push realizado."
+  },
+  "tokens": {
+    "available": false,
+    "input": null,
+    "cache_read": null,
+    "cache_write": null,
+    "output": null,
+    "reasoning": null
+  },
+  "duration_seconds": null,
+  "final_spec_gate_completed": false,
+  "merge_authorized": false
+}

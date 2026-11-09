@@ -77,10 +77,10 @@ describe('login opcional', () => {
   });
 
   it('consome falha genérica, remove só marcador da URL e permite tentar login', async () => {
-    window.history.replaceState(null, '', '/?auth=failed&other=value#section');
+    window.history.replaceState(null, '', '/?auth=failed&other=value#/aulas');
     api(); render(<App />);
     expect(await screen.findByRole('alert')).toHaveTextContent(/Não foi possível entrar com Google/);
-    expect(window.location.search).toBe('?other=value'); expect(window.location.hash).toBe('#section');
+    expect(window.location.search).toBe('?other=value'); expect(window.location.hash).toBe('#/aulas');
     expect(await screen.findByRole('link', { name: 'Entrar com Google' })).toBeInTheDocument();
   });
 });

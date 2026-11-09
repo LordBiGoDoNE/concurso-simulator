@@ -89,15 +89,17 @@ ou diff relevante invalidam a revisão do lote; relatórios isolados de evidênc
 autorizam alterar código sem revalidação. O check de tarefa continua `spec-review-tests`,
 não há novo gate automático nem mudança de workflow/ruleset nesta decisão.
 
-Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem e
-consumo separado por modelo/coordenador: cota 5h/semanal antes/depois, com limites de
-atribuição, e tokens (entrada nova, cache read/write, saída, raciocínio reportado).
-Comparações históricas de achados comuns/exclusivos e consumo só são válidas quando
-ambos realmente executaram. Nos lotes SOL-only, registrar que comparação não foi
-realizada, não que outro modelo teve zero achados/consumo; não dispará-lo para comparar.
-Seguir [protocolo de cota](../review-quota.md); não somar raciocínio à
-saída nem converter tokens em consumo da assinatura. Extrapolações exigem amostra e
-hipóteses explícitas. Zero achados não prova equivalência nem garante economia futura.
+Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem,
+tempo e tokens efetivamente disponibilizados pelo harness (entrada nova, cache,
+saída e raciocínio reportado), sem somar raciocínio à saída. Se a informação não
+estiver disponível, registrar essa limitação, sem estimar ou converter tokens em
+cobrança da assinatura. Comparações históricas só representam modelos realmente
+executados; não disparar outro modelo para comparar consumo.
+
+Por decisão do usuário de 2026-11-09, cota não é mais coletada ou registrada nas
+revisões; não há exigência de isolamento de outros usos para medi-la. O
+[procedimento anterior](../review-quota.md) permanece histórico. Essa retirada não
+altera modelo, independência, triagem, testes, gates ou autorização de merge.
 
 Aprovação do conjunto exige a lista explícita dos PRs/heads; não implica merges automáticos,
 aprovação editorial de conteúdo real, publicação ou arquivamento. Não iniciar outra rodada

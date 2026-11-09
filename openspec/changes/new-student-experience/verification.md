@@ -465,3 +465,32 @@ mantêm seus próprios escopos e não são substituídas por esse aceite.
 Revisão independente, autorização de commit/envio das correções, CI remoto,
 integração e publicação continuam pendentes. Não foi disparado revisor nem
 declarado gate aprovado por esta confirmação.
+
+## Integração na épica e preparação do gate final — 2026-11-09
+
+Após autorização específica do usuário, o PR #159, head
+f17e8d5bb66453ee6afa04c2188d48d2bd22930a, foi integrado somente em
+epic/new-student-experience pelo merge commit
+7e0e7bf5ee2984e1be525bfd5e7ba6d5471cb18f. Os checks do head aprovado e o check
+disparado ao retirar o rascunho passaram. A árvore do merge foi comparada por Git
+e é idêntica à do head aprovado; os commits anteriores foram preservados. Não houve
+rebase, retarget, sync/adoção de stack, fila, bypass, deleção de branch ou merge em main.
+
+O PR [SPEC] #163 foi aberto em rascunho, da épica para main, inicialmente com
+base f61d57d5d55d6d61609815a2faa4b415ed8dca4b e head 7e0e7bf. Os registros de
+integração e os arquivos pendentes do gate são preparados antes de fixar o
+snapshot da revisão cumulativa. Nenhuma mudança de código acompanha essa preparação.
+
+O gate usa outro contexto independente SOL 6.1 xhigh, com base/head/número reais;
+não reutiliza a conclusão da revisão de lote como certificação cumulativa. Somente
+spec-review.json e spec-review.md são excluídos do digest para registrar o parecer.
+Depois do parecer, alterações em requisitos, código, testes, CI ou outros documentos
+exigem revalidação. O coordenador valida validate_report explicitamente porque
+spec-review-tests em main não certifica esse gate semântico.
+
+Os testes locais e do GitHub mantêm os escopos registrados, incluindo imagens do
+código revisado e verificações adicionais de troca de conta. Acompanhar o CI do head
+final não significa executar novamente testes locais ou aprovar o merge em main.
+O estado atual do gate está em spec-review.json/md; este registro descreve sua
+preparação. A autorização recebida cobre integrar #159, abrir o PR final e executar
+o gate. Merge em main, deploy, acervo real e arquivamento continuam fora dela.

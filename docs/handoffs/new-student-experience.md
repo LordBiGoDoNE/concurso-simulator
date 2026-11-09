@@ -147,3 +147,21 @@ regra de cota. Risco conservador crítico: navegação e prática convivem com i
 filas e respostas privadas. Analisar separadamente a entrega do PR #159 e as
 correções locais, além da combinação desde a base f61d57d. Esta é revisão de lote,
 não o gate cumulativo final de epic/new-student-experience para main.
+
+## Integração da tarefa e PR final — 2026-11-09
+
+O usuário autorizou especificamente integrar #159 na épica e preparar o gate final.
+#159 foi integrado por merge commit 7e0e7bf5ee2984e1be525bfd5e7ba6d5471cb18f,
+preservando o head aprovado f17e8d5 e seus ancestrais. Os checks anteriores ao merge
+passaram. A main permanece f61d57d, sem integração autorizada nesta etapa.
+
+[PR [SPEC] #163](https://github.com/LordBiGoDoNE/concurso-simulator/pull/163),
+em rascunho: epic/new-student-experience → main. Registros de preparação são
+versionados antes de fixar o snapshot da revisão cumulativa SOL 6.1 xhigh, que usa
+contexto novo e não reaproveita o parecer do lote. Estado/evidência atuais do gate
+em openspec/changes/new-student-experience/spec-review.json e spec-review.md.
+
+Trabalho continua somente no worktree desta conversa, em checkout destacado da
+épica para preparar evidências; o checkout antigo e suas branches não são movidos.
+Não sincronizar/rebasear stacks. Preservar commits/refs, não arquivar a spec e não
+publicar a aplicação. O merge do PR #163 em main exige autorização própria posterior.

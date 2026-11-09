@@ -2,8 +2,10 @@
 
 Acompanhamento: [issue #158](https://github.com/LordBiGoDoNE/concurso-simulator/issues/158).
 
-Lote autorizado: quatro grupos completos do plano de2026-11-05.
-Checkboxes registram entregas locais verificadas; não significam integração.
+Lote inicial autorizado: quatro grupos completos do plano de2026-11-05, seguido
+dos refinamentos e correções explicitamente solicitados nos grupos 5–8.
+Grupos 1–8 implementados/verificados e integrados à épica pelo PR #159 em
+2026-11-09, merge 7e0e7bf. Integração em main continua pendente no PR [SPEC] #163.
 
 ## 1. Proposta e protótipo
 
@@ -60,9 +62,14 @@ Checkboxes registram entregas locais verificadas; não significam integração.
 
 - Aceite visual do preview de leitura e texto corrigido recebido em 2026-11-09.
   O preview estava sem API: não registrar aceite da prática funcional por essa confirmação.
-  Envio histórico de 2026-11-08 não autoriza commit/envio das correções atuais.
-- Executar revisão independente de lote SOL6.1xHigh e corrigir/revalidar achados.
-- Commits/envio autorizados em 2026-11-08; issue #158 registra spec e PR de rascunho.
-- Revisar integração cumulativa e obter autorização própria de merge; não arquivar automaticamente.
+  O aceite não é aprovação de login ou acervo real.
+- Revisão independente de lote SOL 6.1 xhigh concluída sobre 2e9949d; relatório e
+  triagem em reviews/acceptance-2026-11-09/, sem achados abertos. Não substitui gate final.
+- Commits/envio e integração do PR #159 explicitamente autorizados em 2026-11-09.
+  Head aprovado f17e8d5, merge na épica 7e0e7bf; histórico preservado, sem reorganizar stacks.
+- PR final [SPEC] #163: epic/new-student-experience → main. Gate cumulativo em
+  contexto independente próprio, com estado registrado exclusivamente em spec-review.json/md.
+  Acompanhar checks e validar o relatório com base/head/número reais antes de pedir
+  autorização específica de merge em main; sem deploy ou arquivamento implícitos.
 
 Importação, Google, TLS do concurso e deploy não pertencem ao lote.

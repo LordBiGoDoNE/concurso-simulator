@@ -38,6 +38,13 @@ def classes(node):
     return set(node.attrs.get('class', '').split())
 
 def clean_text(text):
+    practice = ('Para resolver questões, abra Pratique esta aula ao final da leitura. '
+                'A correção aparece após encerrar a prática.')
+    text = text.replace(
+        'leia uma seção por vez, refaça a conta no papel e tente a atividade curta. '
+        'As respostas das dez questões de concurso continuam no arquivo separado.',
+        'leia uma seção por vez e refaça os exemplos no papel. ' + practice)
+    text = text.replace('O gabarito comentado está em arquivo separado.', practice)
     return text.replace('para a V3', 'para este material').replace('da V3', 'deste material')
 
 class Compiler:
@@ -174,7 +181,9 @@ def compile_all(root):
     topics = {topic['id']: topic for topic in catalog['topics']}
     if len(modules) != 51 or set(topics) != {module['id'] for module in modules}:
         raise ValueError('Catálogo das 51 aulas divergente')
-    with tempfile.TemporaryDirectory(dir=root / 'backend/build', prefix='native-source-') as temporary:
+    workspace = root / 'backend/build'
+    workspace.mkdir(parents=True, exist_ok=True)
+    with tempfile.TemporaryDirectory(dir=workspace, prefix='native-source-') as temporary:
         enhanced = Path(temporary)
         enhance(root, enhanced)
         for module in modules:
@@ -209,7 +218,6 @@ def main():
     parser.add_argument('--check', action='store_true')
     args = parser.parse_args()
     root = args.root.resolve()
-    (root / 'backend/build').mkdir(parents=True, exist_ok=True)
     output = args.output or root / 'frontend/src/lesson-documents'
     documents = compile_all(root)
     if args.check:

@@ -377,3 +377,91 @@ volumes ou caches locais e não migra dados à VPS. Não há novo lote/revisão 
 modelo, migração, carga, merge, arquivamento ou publicação de aplicação nesta etapa.
 As verificações anteriores mantêm seus escopos; a conferência pré-envio atual
 valida OpenSpec, seleção gerada e diff, sem alegar nova execução de todas as suítes.
+
+## Correções locais após retomada — 2026-11-09
+
+Escopo explicitamente autorizado nesta conversa: corrigir Python/CI e ajustar o
+texto legado das aulas. Branch local nova
+`task/new-student-experience/native-lessons-corrections`, a partir do head publicado
+`37ccccf1563955d431591629f66c15bb7810a31a`. Alterações sem commit; não atribuir os
+resultados abaixo ao commit publicado ou ao CI remoto, que não foi executado
+novamente. A branch anterior, o PR #159 e as stacks não foram alterados.
+
+Causa da falha: o teste chama `compile_all` diretamente, mas somente a CLI criava
+`backend/build`. Num checkout novo, o diretório temporário não podia ser criado.
+Agora a função que usa o workspace garante sua existência. Regra positiva:
+entradas reutilizáveis cuidam dos pré-requisitos que possuem, sem depender de uma
+execução anterior de outra entrada. A regressão compila as fontes reais copiadas
+para uma pasta isolada sem backend/build, compara os 52 documentos e independe
+do estado de build do workspace do desenvolvedor. Não houve mudança de workflow.
+
+O texto legado estava nas 51 aulas, em duas variantes. O compilador nativo agora
+orienta abrir Pratique esta aula ao final da leitura e explica que a correção
+aparece após encerrar a prática. M04 também deixa de remeter à atividade curta e
+às dez questões do arquivo antigo. HTMLs/SVGs estáticos, exemplos, fontes, backend,
+questões e elegibilidade não foram alterados. A regressão Python cobre as duas
+variantes; a verificação do catálogo no frontend exige a orientação atual nas
+51 aulas e rejeita a referência antiga. Não equivale a auditoria editorial integral.
+
+Seleção regenerada e habilitada para teste somente neste worktree:
+`frontend/src/lesson-documents/`, 51 aulas mais manifesto, 748225 bytes LF.
+SHA-256 LF do manifesto:
+`dd06193b42c3ad3a52882cac694eec2b80f5546a961e7b3d5acccf5d733fbb6a`.
+Os JSONs foram produzidos pelo gerador, sem edição manual. O manifesto identifica
+os insumos e o novo gerador; nenhuma carga de banco foi feita.
+
+Verificações confirmadas desta correção:
+
+- Antes da correção, a regressão de cópia limpa falhou por diretório ausente e
+  as duas variantes de orientação falharam por manter o texto antigo.
+- Windows/Python 3.14: quatro testes de aulas aprovados; geração e --check aprovados.
+- Linux/Python 3.14 da imagem fixada em infra/local-app/images.lock.json:
+  quatro testes aprovados e --check aprovado, numa cópia das fontes atuais,
+  sem rede, portas ou volume persistente. Não é a suíte Python ampla completa.
+- Node 24: build TypeScript/Vite e 24 arquivos/212 testes aprovados, dois workers.
+- Chromium: 28 cenários aprovados, inclusive pacote estático offline, prática
+  recolhível/fila e retorno ao topo. Edge: 14 cenários aprovados. As 51 aulas
+  foram percorridas nas duas larguras com o conteúdo regenerado.
+- Captura de M04 em 1440px inspecionada: orientação atual presente no leitor.
+  Comparação estrutural dos 51 JSONs com HEAD confirmou somente um trecho textual
+  alterado por aula; demais conteúdos e estrutura permaneceram idênticos. Entre
+  os insumos do manifesto, mudou apenas o hash do compilador.
+- OpenSpec 1.14.1 strict, --check e git diff --check aprovados. Backend, infra,
+  workflows, AGENTS.md, openspec/config.yaml e material estático sem alterações.
+
+Logs locais ignorados: `backend/build/issue158-corrections-{red,python,linux}.log`,
+`frontend/test-results/issue158-corrections-{build,unit}.log`.
+Navegadores em `backend/build/issue158-corrections-{chromium,edge}.log`; capturas
+em `frontend/test-results/issue158-corrections-{chromium,edge}/`.
+
+Antes destas edições, o head publicado 37ccccf foi revalidado neste PC com
+24 cenários integrados em uma execução, cinco parametrizados e nove de navegador
+contra o pacote Docker; construção/isolamento/runtime/backup/restauração passaram.
+Esses resultados são do head publicado, não novas execuções das imagens com as
+correções sem commit. O construtor de imagens usa somente commits; não foi
+contornado para atribuir código local ao SHA anterior.
+
+Aceite visual de leitura/texto recebido em 2026-11-09, conforme registro abaixo;
+prática com API e revisão independente continuam pendentes. Não houve
+commit, push, comentário público, revisão por modelo, gate semântico, merge,
+arquivamento, alteração de acervo real ou deploy nesta rodada. A falha remota só
+poderá ser declarada resolvida no GitHub após envio autorizado e CI correspondente.
+
+## Aceite visual do usuário — 2026-11-09
+
+Após abrir o preview local, o usuário confirmou explicitamente: Aceito. O preview
+em `http://127.0.0.1:5186/` serve as 51 aulas nativas e as correções locais da branch
+`task/new-student-experience/native-lessons-corrections`, ainda sem commit, baseada
+em 37ccccf. Seleção aceita para leitura: manifesto SHA-256 LF
+`dd06193b42c3ad3a52882cac694eec2b80f5546a961e7b3d5acccf5d733fbb6a`.
+
+O aceite se refere ao preview visual de leitura, navegação/índice e orientação
+textual corrigida. Não se afirma que o usuário inspecionou individualmente todas
+as aulas. A API do preview está indisponível por configuração deliberada; a
+confirmação não é aceite de início/resposta/correção de prática funcional, acervo
+real, login Google ou backend conectado. As regressões automatizadas anteriores
+mantêm seus próprios escopos e não são substituídas por esse aceite.
+
+Revisão independente, autorização de commit/envio das correções, CI remoto,
+integração e publicação continuam pendentes. Não foi disparado revisor nem
+declarado gate aprovado por esta confirmação.

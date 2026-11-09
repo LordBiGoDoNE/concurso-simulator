@@ -1,6 +1,16 @@
-# Cota da assinatura ChatGPT/Codex nas revisões
+# Histórico da medição de cota nas revisões
 
-Decisão atual do usuário (2026-10-15): somente SOL 6.1 xhigh executa as revisões,
+**Procedimento retirado em 2026-11-09 por decisão explícita do usuário:** não
+medir nem registrar cota nas próximas revisões, nem pedir pausa de outros usos
+para essa finalidade. As instruções abaixo descrevem o procedimento anterior,
+sem obrigação ativa de coleta/comparação. Scripts, testes e observações antigas
+permanecem preservados; não reinterpretar sua ausência futura como consumo zero.
+Continuam válidas as exigências de revisão independente SOL 6.1 xhigh, triagem,
+testes, evidências e autorização de integração em docs/architecture/spec-review.md.
+
+## Procedimento anterior — preservado como histórico
+
+Decisão do usuário em 2026-10-15: somente SOL 6.1 xhigh executa as revisões,
 revalidações e gates cumulativos, inclusive mudanças críticas e a épica geral,
 conforme o [procedimento](architecture/spec-review.md). A política
 anterior de revisão dupla por risco foi substituída, sem apagar execuções históricas.

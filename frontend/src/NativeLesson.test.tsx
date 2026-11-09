@@ -25,7 +25,10 @@ it('cobre as 51 aulas com dados inertes e fontes reproduzíveis, sem exercícios
     expect(elements.some(node => 'attrs' in node && node.attrs?.href?.startsWith('https:'))).toBe(true);
     expect(elements.some(node => ['h1', 'iframe', 'script', 'style', 'img', 'nav', 'header', 'footer'].includes(node.tag))).toBe(false);
     expect(elements.some(node => 'attrs' in node && /(?:-q\d+|-exercicios)$/.test(node.attrs?.id ?? ''))).toBe(false);
-    expect(document.children.map(text).join(' ')).not.toMatch(/EDIÇÃO V3|Índice V3|Gabarito e revisão|ESQUEMA AUTORAL V3|Sua vez: tente antes de abrir/i);
+    const content = document.children.map(text).join(' ');
+    expect(content).not.toMatch(/EDIÇÃO V3|Índice V3|Gabarito e revisão|ESQUEMA AUTORAL V3|Sua vez: tente antes de abrir|arquivo separado/i);
+    expect(content).toContain('Pratique esta aula');
+    expect(content).toContain('A correção aparece após encerrar a prática.');
   }
   expect(nodes(documentFor('M01').children).some(node => node.tag === 'math')).toBe(true);
   expect(nodes(documentFor('I05').children).some(node => node.tag === 'table')).toBe(true);

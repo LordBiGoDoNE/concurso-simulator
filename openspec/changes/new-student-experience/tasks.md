@@ -50,10 +50,17 @@ Checkboxes registram entregas locais verificadas; não significam integração.
 - [x] 7.3 Direcionar atalhos à aula nativa e conferir responsividade, teclado, fontes, tabelas e fórmulas nas cinco disciplinas.
 - [x] 7.4 Validar build, seleção/hashes, unitários, navegadores e regressões integradas; registrar evidências para teste local do usuário.
 
+## 8. Correções locais — autorizado em 2026-11-09
+
+- [x] 8.1 Tornar a compilação independente de build anterior; reproduzir a falha e verificar a seleção em cópia limpa das fontes, em Windows e Linux.
+- [x] 8.2 Adaptar a orientação de arquivo separado nas 51 aulas nativas, preservar HTMLs estáticos e regenerar documentos/manifesto.
+- [x] 8.3 Concluir build, unitários, navegadores e registro da seleção para teste local, sem commit/envio ou revisão independente nesta rodada.
+
 ## Workflow follow-up
 
-- Usuário testar e validar localmente antes de revisão por modelo. Envio para
-  retomada no notebook autorizado explicitamente em 2026-11-08, sem declarar aceite local.
+- Aceite visual do preview de leitura e texto corrigido recebido em 2026-11-09.
+  O preview estava sem API: não registrar aceite da prática funcional por essa confirmação.
+  Envio histórico de 2026-11-08 não autoriza commit/envio das correções atuais.
 - Executar revisão independente de lote SOL6.1xHigh e corrigir/revalidar achados.
 - Commits/envio autorizados em 2026-11-08; issue #158 registra spec e PR de rascunho.
 - Revisar integração cumulativa e obter autorização própria de merge; não arquivar automaticamente.

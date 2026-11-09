@@ -66,6 +66,13 @@ A nova navegação altera apenas o contexto público; não remonta esses executo
 - Fontes e documentos têm hashes SHA-256 normalizados em LF no manifesto gerado.
   `--check` e a regressão Python detectam divergências; geração é uma etapa de
   autoria, sem Python necessário para servir ou compilar o frontend já preparado.
+- A compilação cria seu diretório temporário mesmo quando chamada diretamente,
+  sem exigir um build anterior do backend ou a execução prévia da CLI. A regressão
+  reproduz a seleção numa cópia das fontes sem diretório de build.
+- Orientações legadas sobre gabarito em arquivo separado são adaptadas somente
+  na compilação nativa: apontam para Pratique esta aula ao final da leitura e
+  explicam que a correção aparece após encerrar. Os HTMLs estáticos permanecem
+  preservados; a orientação não promete dez questões nem disponibilidade de acervo.
 - SVG e MathML são árvores de elementos permitidos, com IDs locais por aula e
   figura. Marcas de edição são removidas dos esquemas; geometria e explicação
   didática permanecem. Esquemas largos e tabelas oferecem rolagem própria com

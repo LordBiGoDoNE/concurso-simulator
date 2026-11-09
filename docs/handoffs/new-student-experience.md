@@ -108,3 +108,42 @@ práticas foram conferidas também no preview com acervo local; dados de smoke f
 somente naquele banco. Aceite final, revisão independente SOL, gate cumulativo,
 merge, arquivamento e deploy continuam pendentes. O envio atual é para retomada,
 sem iniciar novo lote, review por modelo ou implementação da #161.
+
+## Correções locais nesta conversa — 2026-11-09
+
+O usuário autorizou corrigir a preparação Python/CI e o texto legado das aulas.
+Trabalho sem commit na branch local nova
+`task/new-student-experience/native-lessons-corrections`, baseada em 37ccccf.
+A branch publicada student-journey e o PR #159 permanecem no estado anterior.
+
+`compile_all` agora prepara seu próprio workspace; a regressão usa uma cópia das
+fontes sem backend/build. A orientação de gabarito em arquivo separado foi
+substituída nas 51 aulas nativas por instrução de abrir Pratique esta aula e
+consultar a correção após encerrar. O material estático original foi preservado.
+Documentos regenerados: 52 JSONs, 748225 bytes LF; manifesto SHA-256 LF
+`dd06193b42c3ad3a52882cac694eec2b80f5546a961e7b3d5acccf5d733fbb6a`.
+
+Resultados e limites desta correção estão na seção de 2026-11-09 em
+`openspec/changes/new-student-experience/verification.md`: build, 212 unitários,
+quatro testes Python em Windows e Linux, 28 cenários Chromium e 14 Edge,
+OpenSpec strict e seleção reproduzível aprovados. As aprovações Docker
+anteriores são do head publicado, não das mudanças locais sem commit. O CI remoto
+ainda não recebeu a correção. Aceite visual do preview de leitura e texto corrigido
+recebido em 2026-11-09; API estava indisponível, portanto prática funcional não está
+incluída nesse aceite. Sem autorização de commit/envio, revisão independente,
+merge ou publicação. Snapshot imutável das correções e disparo do revisor dependem
+das respectivas autorizações; não reutilizar os testes das imagens anteriores
+como validação das alterações sem commit.
+
+## Preparação da revisão autorizada — 2026-11-09
+
+Após receber o estado da entrega e aceitar o preview visual, o usuário autorizou
+seguir com snapshot e revisão independente. Também retirou explicitamente a
+exigência de registrar cota; a regra está atualizada no AGENTS.md e no procedimento
+de revisão, preservando o histórico. Isso não autoriza merge, deploy ou arquivamento.
+
+O lote de revisão abrange a entrega dos grupos 1–8 e a atualização documental da
+regra de cota. Risco conservador crítico: navegação e prática convivem com identidade,
+filas e respostas privadas. Analisar separadamente a entrega do PR #159 e as
+correções locais, além da combinação desde a base f61d57d. Esta é revisão de lote,
+não o gate cumulativo final de epic/new-student-experience para main.

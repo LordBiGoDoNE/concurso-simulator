@@ -9,6 +9,15 @@ function view(value: unknown): asserts value is AttemptView {
   ensure(value.items.every(i=>i.classification.topicId===first.topicId && i.classification.disciplineId===first.disciplineId && i.classification.roleIds.includes(value.roleId)));
 }
 const base='/api/v1/lesson-practices';
+export interface PracticeAvailability { topicId: string; roleId: string; available: number; maximum: 5 }
+export function lessonPracticeAvailability(topicId: string, roleId: string, signal: AbortSignal) {
+  ensure(catalog.topics.some(topic => topic.id === topicId) && catalog.roles.some(role => role.id === roleId));
+  return attemptRequest<PracticeAvailability>(`${base}/availability?${new URLSearchParams({ topicId, roleId })}`, signal, value => {
+    const result = row(value, ['topicId', 'roleId', 'available', 'maximum']);
+    number(result.available);
+    ensure(result.topicId === topicId && result.roleId === roleId && result.maximum === 5);
+  });
+}
 const route=(value: string)=>{id(value);return `${base}/${value}`;};
 export const createLessonPractice=(selection: DirectedPractice,commandId:string,signal:AbortSignal)=>attemptRequest<AttemptView>(base,signal,v=>{
   view(v);ensure(v.roleId===selection.roleId && v.items.every(i=>i.classification.topicId===selection.topicId && i.classification.disciplineId===selection.disciplineId));

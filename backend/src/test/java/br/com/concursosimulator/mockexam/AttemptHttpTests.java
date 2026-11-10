@@ -56,7 +56,8 @@ class AttemptHttpTests {
         var cleared=send("PUT",url,browser,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":1,\"alternativeId\":null}");
         assertThat(cleared.statusCode()).isEqualTo(200);assertThat(json.readTree(cleared.body()).get("items").get(0).get("selectedAlternativeId").isNull()).isTrue();
         assertThat(send("PUT",url,browser,answer.replace(alt,UUID.randomUUID().toString())).statusCode()).isEqualTo(409);
-        assertThat(jdbc.queryForObject("select count(*) from app_user",Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("select count(*) from app_user",Integer.class)).isEqualTo(1);
+        assertThat(jdbc.queryForObject("select owner_id from admin_registration where id=1",UUID.class)).isNotNull();
     }
     @Test @Order(2) void invalidInputsCsrfAndInsufficientPoolNeverCreatePartialAttempts() throws Exception {
         var b=browser(null);int before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);

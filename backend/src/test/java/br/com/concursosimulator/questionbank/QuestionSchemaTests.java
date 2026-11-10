@@ -31,15 +31,17 @@ class QuestionSchemaTests {
         var users=jdbc.queryForList("SELECT id,created_at FROM app_user"); var identities=jdbc.queryForList("SELECT * FROM external_identity");
         var sessions=jdbc.queryForList("SELECT * FROM spring_session");
         var before=jdbc.queryForObject("SELECT encode(attribute_bytes,'hex') FROM spring_session_attributes",String.class);
-        assertThat(Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).load().migrate().migrationsExecuted).isEqualTo(9);
+        assertThat(Flyway.configure().dataSource(ds).schemas(schema).defaultSchema(schema).load().migrate().migrationsExecuted).isEqualTo(10);
         assertThat(jdbc.queryForList("SELECT id,created_at FROM app_user")).isEqualTo(users);
+        assertThat(jdbc.queryForObject("select active from app_user where id=?",Boolean.class,id)).isTrue();
+        assertThat(jdbc.queryForObject("select owner_id from admin_registration where id=1",UUID.class)).isNull();
         assertThat(jdbc.queryForList("SELECT * FROM external_identity")).isEqualTo(identities);
         assertThat(jdbc.queryForList("SELECT * FROM spring_session")).isEqualTo(sessions);
         assertThat(jdbc.queryForObject("SELECT encode(attribute_bytes,'hex') FROM spring_session_attributes",String.class)).isEqualTo(before);
         assertCatalogAndJpa(ds,jdbc);
         var fresh="qb_"+UUID.randomUUID().toString().replace("-", "");
         var empty=new DriverManagerDataSource(POSTGRES.getJdbcUrl()+"&currentSchema="+fresh,POSTGRES.getUsername(),POSTGRES.getPassword());
-        assertThat(Flyway.configure().dataSource(empty).schemas(fresh).defaultSchema(fresh).load().migrate().migrationsExecuted).isEqualTo(12);
+        assertThat(Flyway.configure().dataSource(empty).schemas(fresh).defaultSchema(fresh).load().migrate().migrationsExecuted).isEqualTo(13);
         for(var table:java.util.List.of("qb_import_receipt","qb_import_blob","qb_import_file","qb_import_revision")) {
             assertThat(jdbc.queryForObject("select count(*) from "+table,Integer.class)).isZero();
             assertThat(new JdbcTemplate(empty).queryForObject("select count(*) from "+table,Integer.class)).isZero();

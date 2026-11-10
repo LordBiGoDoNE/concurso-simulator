@@ -119,3 +119,14 @@ tasks.register<Sync>("localDeliveryFixtureClasses") {
     from(sourceSets.test.get().output) { into("classes") }
     from(configurations.testRuntimeClasspath) { into("lib") }
 }
+
+// Explicit local recovery; never executed by build, tests or normal application startup.
+tasks.register<JavaExec>("administrativeRecovery") {
+    group = "application"
+    description = "Deliberate password recovery for the existing ADM on an explicitly configured local PostgreSQL"
+    dependsOn(tasks.classes)
+    classpath = sourceSets.main.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.identity.infrastructure.AdministrativeRecovery")
+    standardInput = System.`in`
+    args("--recover-admin")
+}

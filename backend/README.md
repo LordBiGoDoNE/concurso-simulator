@@ -17,7 +17,7 @@ No Windows, use `gradlew.bat clean build`. Configure `JAVA_HOME` para o JDK 25 c
 
 Os testes requerem Docker disponível: Testcontainers cria bancos PostgreSQL **18.6** isolados e os encerra ao terminar, sem acessar o volume local.
 
-Identidade opcional Google e tentativas privadas com histórico/retomada pela conta. Modelo e privacidade: `docs/identity-storage.md`; sessões/CSRF/contratos: `docs/session-access.md`; configuração e smoke Google real: `docs/google-login.md`. Login desativado por padrão, sem credenciais nem chamadas externas no startup. Testes de login usam provedor OIDC local, nunca Google real.
+Identidade opcional Google e tentativas privadas com histórico/retomada pela conta. Modelo e privacidade: `docs/identity-storage.md`; sessões/CSRF/contratos: `docs/session-access.md`; configuração e smoke Google real: `docs/google-login.md`. Google desativado por padrão, sem chamadas externas no startup. O primeiro ADM é criado uma única vez com senha configurada ou temporária gerada no console privado; login por senha, vínculo Google e permissão persistente seguem o [guia administrativo](../docs/question-administrative-import.md) e o [ADR 0002](../docs/architecture/adr/0002-administrative-credential-and-google-link.md). Testes de login usam provedor OIDC local, nunca Google real.
 
 ## Executar localmente
 
@@ -36,6 +36,8 @@ curl -i http://127.0.0.1:8080/api/v1/status
 ```
 
 Resposta: HTTP 200 `{"status":"UP"}`. Se o banco ficar indisponível após o startup: HTTP 503 `{"status":"DOWN"}`. O contrato está em `openapi.yaml`, não em uma rota pública de documentação. Auth/config, csrf e entrada/callback Google são exceções explícitas. Me/histórico exigem conta; tentativas aceitam o ator verificado da conta ou visitante e verificam posse no núcleo. Escritas/logout exigem CSRF; consulta pública de questões continua stateless. Rotas/métodos restantes são negados.
+
+Configuração inicial ADM: `ADMIN_USERNAME` (padrão `admin`) e `ADMIN_PASSWORD` opcional; reinícios não redefinem a credencial. Importação exige destino/chave HMAC externos, distintos da senha. Não há lista de UUIDs.
 
 Configurações externas: `DB_URL`, `DB_USERNAME`, `DB_PASSWORD`, `DB_CONNECTION_TIMEOUT_MS`, `DB_QUERY_TIMEOUT_SECONDS`, `CORS_ORIGINS`, `SERVER_PORT`, `SERVER_ADDRESS` e `SESSION_TIMEOUT` (30m por padrão). Login usa as variáveis documentadas em `docs/google-login.md`. Os defaults estão em `src/main/resources/application.yaml`. `DB_PASSWORD` é obrigatório. Ao personalizar `DB_URL`, mantenha `connectTimeout=2&socketTimeout=3` para limitar falhas de conexão/socket. CORS usa origens explícitas, sem wildcard; não substitui autenticação.
 

@@ -386,8 +386,115 @@ paths:
         '403': {$ref: '#/components/responses/AttemptForbidden'}
         '500': {$ref: '#/components/responses/ReviewIntegrity'}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/admin/auth/login:
+    post:
+      operationId: loginAdministrativeAccount
+      summary: Entrar com a credencial local do ADM
+      description: >-
+        JSON UTF-8 estrito de até 8 KiB; exige CSRF da mesma sessão visitante ou autenticada.
+        Rotaciona sessão e CSRF. Nome/senha inválidos têm erro genérico; cinco falhas
+        em quinze minutos bloqueiam por quinze minutos, com limite técnico por origem.
+        A senha temporária só permite consultar a identidade/conta, trocar senha e sair.
+        Cache-Control no-store. Não há cadastro público.
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AdministrativeLoginRequest'}
+      responses:
+        '204': {description: Login confirmado; buscar novo CSRF e reconsultar /me e conta}
+        '400': {$ref: '#/components/responses/AdministrativeError'}
+        '401': {$ref: '#/components/responses/AdministrativeError'}
+        '403': {$ref: '#/components/responses/AdministrativeError'}
+        '413': {$ref: '#/components/responses/AdministrativeError'}
+        '415': {$ref: '#/components/responses/AdministrativeError'}
+        '429': {$ref: '#/components/responses/AdministrativeError'}
+        '500': {$ref: '#/components/responses/AdministrativeError'}
+        '503': {$ref: '#/components/responses/AdministrativeError'}
+  /api/v1/admin/account:
+    get:
+      operationId: getAdministrativeAccount
+      summary: Consultar estado administrativo privado
+      security: [{sessionCookie: []}]
+      responses:
+        '200':
+          description: Conta e capacidades atuais, sem hash, UUID de configuração ou segredos; no-store
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/AdministrativeAccount'}
+        '401': {$ref: '#/components/responses/AdministrativeError'}
+        '403': {$ref: '#/components/responses/AdministrativeError'}
+        '500': {$ref: '#/components/responses/AdministrativeError'}
+        '503': {$ref: '#/components/responses/AdministrativeError'}
+  /api/v1/admin/account/password:
+    post:
+      operationId: changeAdministrativePassword
+      summary: Trocar a senha atual e invalidar acessos administrativos anteriores
+      description: >-
+        Verifica senha atual, exige nova senha diferente de 15 a 128 caracteres,
+        rotaciona sessão/CSRF e versão persistente. Preserva Google e histórico.
+        Erro de senha participa da proteção de tentativas. JSON estrito de até 8 KiB, no-store.
+      security: [{sessionCookie: []}]
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AdministrativePasswordRequest'}
+      responses:
+        '204': {description: Troca confirmada; buscar novo CSRF e reconsultar identidade/conta}
+        '400': {$ref: '#/components/responses/AdministrativeError'}
+        '401': {$ref: '#/components/responses/AdministrativeError'}
+        '403': {$ref: '#/components/responses/AdministrativeError'}
+        '409': {$ref: '#/components/responses/AdministrativeError'}
+        '413': {$ref: '#/components/responses/AdministrativeError'}
+        '415': {$ref: '#/components/responses/AdministrativeError'}
+        '429': {$ref: '#/components/responses/AdministrativeError'}
+        '500': {$ref: '#/components/responses/AdministrativeError'}
+        '503': {$ref: '#/components/responses/AdministrativeError'}
+  /api/v1/admin/account/google-link:
+    post:
+      operationId: beginAdministrativeGoogleLink
+      summary: Comprovar a senha atual e iniciar intenção de vínculo Google
+      description: >-
+        Somente ADM sem troca pendente; Google deve estar habilitado. Intenção privada
+        de cinco minutos ligada à sessão, state OIDC e versão. O callback existente
+        realiza o vínculo após validar Google; conta existente mantém UUID/histórico.
+        Histórico local impede transferir ADM para outra conta. Retorno fixo, sem UUID alvo
+        ou returnTo do cliente. JSON estrito de até 8 KiB, no-store.
+      security: [{sessionCookie: []}]
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/AdministrativeGoogleLinkRequest'}
+      responses:
+        '200':
+          description: Navegar ao início OIDC fixo; callback retorna ao frontend configurado com resultado sanitizado
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/AdministrativeGoogleLink'}
+        '400': {$ref: '#/components/responses/AdministrativeError'}
+        '401': {$ref: '#/components/responses/AdministrativeError'}
+        '403': {$ref: '#/components/responses/AdministrativeError'}
+        '409': {$ref: '#/components/responses/AdministrativeError'}
+        '413': {$ref: '#/components/responses/AdministrativeError'}
+        '415': {$ref: '#/components/responses/AdministrativeError'}
+        '429': {$ref: '#/components/responses/AdministrativeError'}
+        '500': {$ref: '#/components/responses/AdministrativeError'}
+        '503': {$ref: '#/components/responses/AdministrativeError'}
 components:
   responses:
+    AdministrativeError:
+      description: Erro administrativo sanitizado, no-store; 429 inclui Retry-After de 900 segundos
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/AdministrativeError'}
     ReviewIntegrity:
       description: Evidência inconsistente; erro integral e genérico, sem resumo parcial; no-store
       content:
@@ -452,6 +559,49 @@ components:
             required: [error]
             properties: {error: {type: string, const: conflict}}
   schemas:
+    AdministrativeLoginRequest:
+      type: object
+      additionalProperties: false
+      required: [username, password]
+      properties:
+        username: {type: string, maxLength: 128}
+        password: {type: string, maxLength: 128, writeOnly: true}
+    AdministrativePasswordRequest:
+      type: object
+      additionalProperties: false
+      required: [currentPassword, newPassword]
+      properties:
+        currentPassword: {type: string, maxLength: 128, writeOnly: true}
+        newPassword: {type: string, minLength: 15, maxLength: 128, writeOnly: true}
+    AdministrativeGoogleLinkRequest:
+      type: object
+      additionalProperties: false
+      required: [currentPassword]
+      properties:
+        currentPassword: {type: string, maxLength: 128, writeOnly: true}
+    AdministrativeGoogleLink:
+      type: object
+      additionalProperties: false
+      required: [authorizationUrl]
+      properties:
+        authorizationUrl: {type: string, const: /oauth2/authorization/google}
+    AdministrativeAccount:
+      type: object
+      additionalProperties: false
+      required: [username, mustChangePassword, googleEnabled, googleLinked, questionImportAvailable]
+      properties:
+        username: {type: string, maxLength: 64}
+        mustChangePassword: {type: boolean}
+        googleEnabled: {type: boolean}
+        googleLinked: {type: boolean}
+        questionImportAvailable: {type: boolean}
+    AdministrativeError:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties:
+        error: {type: string}
+        correlationId: {type: string, format: uuid}
     QuestionNamed:
       type: object
       additionalProperties: false

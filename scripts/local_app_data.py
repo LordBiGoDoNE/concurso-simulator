@@ -14,8 +14,11 @@ SESSIONS = {"spring_session", "spring_session_attributes"}
 TABLES = {"application_marker", "app_user", "external_identity", "spring_session", "spring_session_attributes",
           "qb_discipline", "qb_role", "qb_topic", "qb_question", "qb_revision", "qb_alternative", "qb_revision_role",
           "qb_reference", "qb_decision", "me_attempt", "me_item", "me_command", "pq_family", "pq_version",
-          "pq_decision", "pq_instance", "flyway_schema_history"}
+          "pq_decision", "pq_instance", "flyway_schema_history",
+          "qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision", "admin_registration"}
 
+
+SUPPORTED_SCHEMA_VERSIONS = (10, 11, 12, 13)
 
 def postgres(path, config):
     container = compose(path, config, "ps", "-q", "postgres").decode().strip()
@@ -51,8 +54,8 @@ def private_json(path, value):
 
 def schema_version(path, config):
     versions = sql(path, config, "select version from flyway_schema_history where success order by installed_rank").decode().splitlines()
-    if versions not in [[str(i) for i in range(1, 11)], [str(i) for i in range(1, 12)]]:
-        raise ValueError("Backup exige schema V10 ou V11 válido")
+    if versions not in [[str(i) for i in range(1, version + 1)] for version in SUPPORTED_SCHEMA_VERSIONS]:
+        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V13)")
     return int(versions[-1])
 
 
@@ -97,7 +100,7 @@ def verified_backup(file):
     if metadata_file.is_symlink():
         raise ValueError("Metadados não podem ser link")
     metadata = json.loads(metadata_file.read_text(encoding="utf-8"))
-    if (metadata.get("version") != 1 or metadata.get("kind") != "local-app-backup" or metadata.get("schema_version") not in {10, 11}
+    if (metadata.get("version") != 1 or metadata.get("kind") != "local-app-backup" or metadata.get("schema_version") not in SUPPORTED_SCHEMA_VERSIONS
             or set(metadata["tables"]) != TABLES - SESSIONS
             or not re.fullmatch(r"concurso-simulator-app-local(?:-[a-z0-9]{1,24})?", metadata["source_project"])
             or not re.fullmatch(r"[0-9a-f]{32}", metadata["source_owner"])

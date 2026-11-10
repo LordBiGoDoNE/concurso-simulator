@@ -28,9 +28,9 @@ export async function identityRequest(path: string, options: RequestInit = {}, r
 }
 
 export type CurrentIdentity = { connected: false; googleEnabled: boolean } | { connected: true; googleEnabled: boolean; id: string };
-export async function currentIdentity(): Promise<CurrentIdentity> {
+export async function currentIdentity(signal?: AbortSignal): Promise<CurrentIdentity> {
   const [config, me] = await Promise.all([
-    identityRequest('/api/v1/auth/config'), identityRequest('/api/v1/me'),
+    identityRequest('/api/v1/auth/config', { signal }), identityRequest('/api/v1/me', { signal }),
   ]);
   if (!config.ok || (!me.ok && me.status !== 401)) throw new Error('identity unavailable');
   const settings = config.body;
@@ -41,4 +41,28 @@ export async function currentIdentity(): Promise<CurrentIdentity> {
     throw new Error('invalid identity');
   }
   return { connected: true, googleEnabled: settings.googleEnabled as boolean, id: user.id as string };
+}
+
+export type AdministrativeAccount = {
+  username: string; mustChangePassword: boolean; googleEnabled: boolean;
+  googleLinked: boolean; questionImportAvailable: boolean;
+};
+export async function administrativeAccount(): Promise<AdministrativeAccount | null> {
+  const result = await identityRequest('/api/v1/admin/account');
+  if (result.status === 401 || result.status === 403) return null;
+  const body = result.body;
+  if (!result.ok || typeof body?.username !== 'string' ||
+      ['mustChangePassword', 'googleEnabled', 'googleLinked', 'questionImportAvailable'].some(key => typeof body[key] !== 'boolean')) {
+    throw new Error('administrative account unavailable');
+  }
+  return body as AdministrativeAccount;
+}
+export async function administrativeMutation(path: '/auth/login' | '/account/password' | '/account/google-link', input: Record<string, string>) {
+  const csrf = await identityRequest('/api/v1/csrf');
+  if (!csrf.ok || csrf.body?.headerName !== 'X-CSRF-TOKEN' || typeof csrf.body.token !== 'string' || !csrf.body.token) {
+    throw new Error('csrf unavailable');
+  }
+  return identityRequest(`/api/v1/admin${path}`, {
+    method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrf.body.token }, body: JSON.stringify(input),
+  });
 }

@@ -24,7 +24,12 @@ public final class ApplyQuestionCandidatesUseCase {
         }
     }
     private List<Result> apply(List<Candidate> candidates) {
-        return store.transaction(session->{
+        return store.transaction(session->applyInSession(candidates,session));
+    }
+    static List<Result> applyInSession(List<Candidate> candidates,QuestionStore.Session session) {
+        var origins=new HashSet<QuestionOrigin>();
+        for(var c:candidates)if(!origins.add(c.origin()))throw new IllegalArgumentException("Origem repetida");
+        candidates=candidates.stream().sorted(Comparator.comparing((Candidate c)->c.origin().namespace()).thenComparing(c->c.origin().key())).toList();
             var results=new ArrayList<Result>();
             for(var candidate:candidates) {
                 var existing=session.findOriginForUpdate(candidate.origin());
@@ -46,6 +51,5 @@ public final class ApplyQuestionCandidatesUseCase {
                 results.add(new Result(q.origin(),q.id(),next.id(),false));
             }
             return List.copyOf(results);
-        });
     }
 }

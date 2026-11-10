@@ -130,3 +130,11 @@ tasks.register<JavaExec>("administrativeRecovery") {
     standardInput = System.`in`
     args("--recover-admin")
 }
+
+tasks.register<JavaExec>("administrativeBrowserFixture") {
+    group = "verification"
+    description = "Isolated ADM/OIDC browser fixture on dedicated ports; never packaged in bootJar"
+    dependsOn(tasks.testClasses)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.identity.AdministrativeBrowserFixture")
+}

@@ -37,7 +37,14 @@ export default function App() {
   const setGuestActive = useCallback((value: boolean) => { guestActive.current.attempt = value; }, []);
   const setPracticeGuestActive = useCallback((value: boolean) => { guestActive.current.practice = value; }, []);
   const backToLesson = useCallback((id:string, roleId:string) => { updateRoute({ area: 'lessons', topicId: id, roleId }); }, [updateRoute]);
-  const changedIdentity = useCallback((value: CurrentIdentity | null) => { setIdentity(value); setChecking(false); }, []);
+  const lastAccountId = useRef<string | null>(null);
+  const changedIdentity = useCallback((value: CurrentIdentity | null) => {
+    if (value?.connected) {
+      if (lastAccountId.current && lastAccountId.current !== value.id) setPrivateNotice('');
+      lastAccountId.current = value.id;
+    }
+    setIdentity(value); setChecking(false);
+  }, []);
   const checkingIdentity = useCallback(() => setChecking(true), []);
   const privateUnavailable = useCallback(() => { setIdentity(null); setChecking(true); setPrivateNotice('Tentativa ou sessão indisponível. O conteúdo privado foi limpo; confira sua sessão e o histórico da conta.'); window.dispatchEvent(new Event('identity-recheck')); }, []);
   const beforeLogin = useCallback(() => {

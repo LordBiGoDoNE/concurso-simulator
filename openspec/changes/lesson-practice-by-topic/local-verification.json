@@ -1,0 +1,146 @@
+{
+  "spec": "lesson-practice-by-topic",
+  "issue": 161,
+  "verified_on": "2026-11-10",
+  "timezone": "America/Sao_Paulo",
+  "base_commit": "16ca8aef382d64e7652b280b413122c357775ead",
+  "implementation_commit": "7a13eb9628ab3ff322a4c9f7d34ef7cd887756f1",
+  "branch": "task/lesson-practice-by-topic/topic-practice",
+  "status": "implemented-and-verified-locally",
+  "risk": "critical",
+  "scope_groups": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "code_manifest_sha256": "00c45e4e51af91cb4b18db16306a8a529e70782c799f8ad8a68f10c9e2c8cc3f",
+  "code_files_sha256": {
+    "backend/build.gradle.kts": "6fa49782d07d230a32ee560d7f33b4b5c52e8358906e34070e7aa1dc1523b0d0",
+    "backend/openapi.yaml": "4e0685b22e492edc9c78aefdb5c3aff280e4fc061e9e31026811ea274696dbfe",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/application/AttemptUseCases.java": "3626f06845343711e4bf947752d5ce94c9df68707a0de55a42d8653f626e6bca",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/domain/Attempt.java": "835739b3129333a47ea68457ea891caa21db84750f8bf98fb3c4ef9935c7c87a",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/infrastructure/persistence/AttemptCodec.java": "4edd8268d2eb4a23e3123f07e958de5f74e879b3a5251fecad5aad2c154f8ce2",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/infrastructure/persistence/JpaAttemptStore.java": "21b691eac16193211262671f6663c20f2c221e09a91ca0dc5f054f49e34d06e9",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/web/LessonPracticeController.java": "76619ed826b73f04d0bc17d0ffe7c81c524e83fc4b1a1cadb4a8b8049b762366",
+    "backend/src/main/resources/db/migration/V14__topic_lesson_practice.sql": "27078dcc922e361772bdfbe9f2070362bfa8d83e1262817f2d8d8437768a81b5",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/LessonPracticeHttpTests.java": "013d1a833d75c4af0c485b5919281f0b3b803595f41055edd9bb6907ac78163e",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/LessonPracticePersistenceTests.java": "1ff27fda1aa0466d7d15ebb7f38c466c7e5ebd7eb147c65c3f94b6c88819f1e6",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/LessonPracticeUseCasesTests.java": "c51915f337fbd19726fecbca465c8765e92438a9392ecaa087b76431e6cd1d97",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/TopicPracticeBrowserFixture.java": "854024df2b26853b86a5ebdcd95e8c180b2230b5f9982d05d0158623c8ea8715",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/TopicPracticeCompatibilityTests.java": "5c5db1b649474774f68783865af01cba49db9f583fc62277675542a64e64d0c1",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/TopicPracticeDomainTests.java": "f2191e386c9a5586865ecdd77ac84749397edca193328b67c48d287dbf2db2fd",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/AdministrativeImportHttpTests.java": "431718494f4ab8fca04676a8664709e68c0133506b0bede3ffaa21769476d346",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionSchemaTests.java": "7d3fe8b1ea897eb4988c66a9746e7f890c9c11f5d5a211b8cc42576050d2cedd",
+    "frontend/e2e/new-student.spec.ts": "dbf43b4200824e916412e10a34f048b7a6326b870c7a65f75540ebc19a59d58d",
+    "frontend/e2e/topic-practice.real.spec.ts": "b0c05869cdd8ae357b9bcd6f6a9c448f14fe63d5d57ffdda67b4653b188780ff",
+    "frontend/playwright.topic-practice.config.ts": "32d8b9efe98a356de7b145cd2da435fedd0b9120e72f80b4e019bc9816ac4ba3",
+    "frontend/src/App.tsx": "a156e7752927d81ab05640d579898c722f90f114755c1afec562ba56267849db",
+    "frontend/src/AttemptContext.test.tsx": "9c127b89426c2801a5a92975aa5a7827adfd269197fe740c94b22edfec8f4659",
+    "frontend/src/AttemptPractice.tsx": "5d28e79d45fcee1a9c5181c881285dd67324d8416f9ee7f460df520aa9ebe8fa",
+    "frontend/src/LessonPracticeEntry.test.tsx": "625f5edc8d85f11f535e8232ef810a3ec5b2f2a029976fe299670aa9ffdd1dec",
+    "frontend/src/LessonPracticeEntry.tsx": "6a0ceada897c63f6ce22bac81c01ce25a7f6d376fb1e26cd50abb58c7371b6f3",
+    "frontend/src/LessonPracticeHistory.tsx": "5921674545050f60c4b16d7a7550c899bb4625766ff9b7dc4ce07c077bd92fe9",
+    "frontend/src/LessonPracticeWorkspace.test.tsx": "0d329b580cb15b585a480a14878a170b035f1eadfc31f42d391c8cdffdffa879",
+    "frontend/src/LessonPracticeWorkspace.tsx": "244c88ea9b71adf7c81a53da47263c7359cd67bdbf0ef598dfe95c0440c458f8",
+    "frontend/src/NewStudentJourney.test.tsx": "a4046529cdbeff104068b4e6607152c23c12fbf56be61367d1bd8a4acac178f3",
+    "frontend/src/attempt-api.ts": "88ed93c61582d8ebe44b2af6969e3c81ebe5cddaf3372cad7947e52da251005c",
+    "frontend/src/lesson-practice-api.test.ts": "d867335dee43de55abd48807b0a81c80808e9c1d6b8762125af646ecc5292344",
+    "frontend/src/lesson-practice-api.ts": "6fd3c4902c1192a02d42f452b148fd1f82b7f897f51a33090bed8ed4f4b0d28f",
+    "frontend/src/useAttemptRun.ts": "4286be2069f0c13dbcac4ed6795c0ee850a37469b00260c01acdd21426e48dca",
+    "frontend/test/practice-fixtures.ts": "42e2b0dd44530cb68f2ebc9aa02874b11c5871f0ea73fa141aa224c120f82132",
+    "scripts/check_backup_schemas.py": "a1389ef3b89cd46ee564f898613691fad1fcbb652b58e6ac59e4ad3b913aac06",
+    "scripts/check_local_runtime.py": "c0baae1fa7f787901f3fee693b7cfa6e34cdd57175cb4e86fada31635d60b5ae",
+    "scripts/local_app_data.py": "9ef1731dc90e4a1d79d32962e59b45651deb79124f7db5ba91d57d5c7a129590",
+    "scripts/test_local_app_data.py": "3ef682904e392169b400f4e6d8a3ad87e56121d599b9bca9361e32e6bd1fe0fb"
+  },
+  "backend": {
+    "tests": 335,
+    "passed": 334,
+    "failed": 0,
+    "skipped": 1,
+    "skip_reason": "Windows sem permissão de symlink; teste exige rejeição em Linux CI",
+    "command": "backend/gradlew.bat -p backend --no-daemon --console=plain test bootJar",
+    "log": "backend/build/lesson-practice-by-topic/backend-final.log",
+    "bootjar_sha256": "0387e2fc7803e242657db91cdbc29e0963776c581730b2c0825fc02c366a999c",
+    "test_harness_packaged": false
+  },
+  "frontend": {
+    "tests": 230,
+    "passed": 230,
+    "failed": 0,
+    "build": "passed",
+    "commands": [
+      "npm run build --prefix frontend",
+      "npm test --prefix frontend -- --reporter=dot"
+    ]
+  },
+  "browser": {
+    "browsers": [
+      "Chromium",
+      "Microsoft Edge"
+    ],
+    "widths": [
+      390,
+      1440
+    ],
+    "public_and_real_scenarios_passed": 30,
+    "final_real_scenarios_repeated_passed": 12,
+    "config": "frontend/playwright.topic-practice.config.ts",
+    "logs": [
+      "backend/build/lesson-practice-by-topic/browser-public-test.log",
+      "backend/build/lesson-practice-by-topic/browser-final-test.log"
+    ],
+    "limits": "Conflito 409 injetado no transporte; concorrência real coberta também no PostgreSQL. Fixtures sintéticas, sem acervo do operador."
+  },
+  "python": {
+    "tests": 24,
+    "passed": 23,
+    "skipped": 1,
+    "skip_reason": "Semântica Unix TIME_WAIT; Windows usa bind exclusivo",
+    "command": "python -m unittest discover -s scripts -p 'test_local_app*.py'"
+  },
+  "backup_restore": {
+    "schemas": [
+      10,
+      11,
+      12,
+      13,
+      14
+    ],
+    "status": "passed",
+    "source_commit": "7a13eb9628ab3ff322a4c9f7d34ef7cd887756f1",
+    "command": "python scripts/check_backup_schemas.py",
+    "captured_formats_3_4_restore": "TopicPracticeCompatibilityTests: pg_dump/pg_restore em outro banco efêmero, leitura/correção/resposta/replay preservados"
+  },
+  "openspec": {
+    "version": "1.14.1",
+    "strict": "passed"
+  },
+  "editorial": {
+    "changed": false,
+    "practice_tree_git_oid": "ec1e61d1430f4d3916388b29d564d030da351142",
+    "real_editorial_approval": false
+  },
+  "local_test": {
+    "url": "http://127.0.0.1:5371/#/aulas/P01",
+    "api": "http://127.0.0.1:19160",
+    "fixture_control": "http://127.0.0.1:19161",
+    "data": "synthetic-ephemeral",
+    "available": 7,
+    "maximum": 5,
+    "operator_database_changed": false,
+    "vps_changed": false
+  },
+  "user_acceptance": "pending",
+  "batch_independent_review": "pending-user-local-test",
+  "cumulative_gate": "pending-separate-independent-context",
+  "published_implementation": false,
+  "merged": false,
+  "archived": false,
+  "deployed": false,
+  "handoff_173": {
+    "group_2_limit_25": "waits-for-authorized-integration-of-161",
+    "maximum_implemented": 5
+  }
+}

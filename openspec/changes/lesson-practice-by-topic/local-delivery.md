@@ -71,6 +71,14 @@ semântica. Visitantes mantêm acesso temporário, contas possuem histórico pr�
 ## Verificação executada
 
 Resultados finais e comandos estão também em `local-verification.json`.
+Código local: `7a13eb9628ab3ff322a4c9f7d34ef7cd887756f1`; artefatos posteriores
+registram somente verificação/entrega. Backend completo: **334 aprovados e um
+ignorado** (symlink indisponível no Windows), build/bootJar aprovados. React:
+**230 aprovados**, TypeScript/Vite aprovados. Testes Python locais: **23 aprovados
+e um ignorado** (semântica Unix de TIME_WAIT). OpenSpec 1.14.1 strict aprovado.
+Navegador: **30 cenários aprovados** (18 da jornada pública e 12 reais) em
+Chromium/Edge, com revalidação dos 12 reais sobre a V14 final. Backup/restore
+V10–V14 aprovado, relatório de origem no SHA do código local.
 Logs completos ignorados em `backend/build/lesson-practice-by-topic/`; capturas
 Playwright em `frontend/test-results/topic-practice/`. Não são CI remoto.
 
@@ -149,5 +157,18 @@ Após essa integração, os pontos para ampliar o teto são:
 Composição/contratos de simulados permanecem obrigatoriamente por cargo. Capturas
 3/4 e comandos v1/v2 exigem estratégia compatível se um novo formato for necessário
 para o teto ampliado; não relaxar histórico nem reinterpretar comandos existentes.
-O SHA da implementação é registrado na issue após o commit local; artefatos de
-verificação posteriores não representam nova execução da revisão por modelo.
+SHA da implementação: `7a13eb9628ab3ff322a4c9f7d34ef7cd887756f1`. A issue registra
+esse commit local; a branch não foi publicada. Artefatos de verificação posteriores
+não representam nova execução da revisão por modelo.
+
+## Correções encontradas na validação
+
+A primeira versão da nova trava SQL usava `<> '4'`; em SQL, NULL não satisfaz essa
+comparação, afetando inserções históricas sem campo format. A regra positiva é
+restringir a trava específica ao formato 4 com `IS DISTINCT FROM '4'`, preservando
+formatos sem versão. Backup/restore e regressões de ADM passaram após a correção.
+A trava também confere itens inseridos posteriormente, sem modificar as capturas.
+O teste de schema foi atualizado de 13 para 14 migrações (e de 10 para 11 no
+upgrade desde V3); nenhuma rejeição de integridade foi relaxada. Todos os achados
+de implementação encontrados nestes ensaios foram corrigidos e revalidados;
+isso não constitui revisão independente de lote/gate.

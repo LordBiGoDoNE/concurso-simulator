@@ -41,8 +41,12 @@ public class ImportRequestBodyAdvice extends RequestBodyAdviceAdapter {
                 boolean apply=parameter.getParameterType()==AdministrativeImportController.ApplyRequest.class;
                 var names=apply?java.util.Set.of("package","keys","confirmationToken"):java.util.Set.of("package","keys");
                 if(!root.isObject() || !root.propertyNames().equals(names))throw new IllegalArgumentException();
+                if(!root.get("keys").isArray() || apply && !root.get("confirmationToken").isString())throw new IllegalArgumentException();
+                for(var key:root.get("keys"))if(!key.isString())throw new IllegalArgumentException();
                 try{strict.treeToValue(root.get("package"),QuestionImportReader.Document.class);}
                 catch(RuntimeException e){throw new QuestionImportReader.InvalidPackage();}
+                // Apply the same strict textual coercion policy to keys and confirmation, not only package.
+                strict.treeToValue(root,parameter.getParameterType());
             }
         }catch(tools.jackson.core.exc.StreamConstraintsException error){throw new QuestionImportReader.InvalidPackage();}
         catch(QuestionImportReader.InvalidPackage error){throw error;}

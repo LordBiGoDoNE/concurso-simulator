@@ -156,4 +156,28 @@ class AdministrativeImportHttpTests {
         assertThat(practice.practiceAvailability(TargetRole.ADMINISTRATIVE_ASSISTANT,Topic.P02).available()).isZero();
         assertThat(jdbc.queryForObject("select count(*) from qb_question where id in (select question_id from qb_revision where status='APPROVED') and purpose='SIMULADO'",Integer.class)).isZero();
     }
+    @org.junit.jupiter.params.ParameterizedTest
+    @org.junit.jupiter.params.provider.ValueSource(strings={"nullKeys","numberKey","nullElement","nullToken"})
+    void invalidEnvelopeFieldTypesAre400(String mode)throws Exception {
+        var cookie=session(new UserPrincipal(OPERATOR));var token=csrf(cookie);var doc=document(QuestionPurpose.SIMULADO,"123");
+        String body=json.writeValueAsString(new PreviewRequest(doc,List.of("123")));
+        String path=prefix+"/preview";
+        if(mode.equals("nullKeys"))body=body.replace("\"keys\":[\"123\"]","\"keys\":null");
+        if(mode.equals("nullElement"))body=body.replace("\"keys\":[\"123\"]","\"keys\":[null]");
+        if(mode.equals("numberKey"))body=body.replace("\"keys\":[\"123\"]","\"keys\":[123]");
+        if(mode.equals("nullToken")){body=json.writeValueAsString(new ApplyRequest(doc,List.of("123"),null));path=prefix+"/apply";}
+        var response=send("POST",path,cookie,token,body,null);
+        assertThat(response.statusCode()).as(mode+": "+response.body()).isEqualTo(400);
+    }
+    @Test void otherJsonMediaTypesAre415()throws Exception {
+        var cookie=session(new UserPrincipal(OPERATOR));var token=csrf(cookie);var doc=document(QuestionPurpose.SIMULADO,"admin.media");
+        for(var mediaType:List.of("application/problem+json","application/json; charset=ISO-8859-1")){
+        var request=HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+prefix+"/preview"))
+            .header("Cookie",cookie).header("X-CSRF-TOKEN",token).header("Content-Type",mediaType)
+            .POST(HttpRequest.BodyPublishers.ofString(json.writeValueAsString(new PreviewRequest(doc,List.of("admin.media"))))).build();
+        var response=http.send(request,HttpResponse.BodyHandlers.ofString());
+        assertThat(response.statusCode()).as(mediaType).isEqualTo(415);assertThat(response.headers().firstValue("Cache-Control")).contains("no-store");
+        }
+    }
+
 }

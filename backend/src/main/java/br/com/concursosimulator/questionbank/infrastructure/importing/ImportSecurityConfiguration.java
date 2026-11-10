@@ -64,6 +64,10 @@ public class ImportSecurityConfiguration {
         Capacity(ImportSettings settings){this.settings=settings;}
         @Override protected void doFilterInternal(HttpServletRequest r,HttpServletResponse s,FilterChain chain)throws ServletException,IOException {
             if(settings!=null && !settings.configured()){s.setStatus(503);s.setContentType("application/json");s.getWriter().write("{\"error\":\"IMPORT_NOT_CONFIGURED\",\"correlationId\":\""+UUID.randomUUID()+"\"}");return;}
+            try {
+                var type=org.springframework.http.MediaType.parseMediaType(r.getContentType());
+                if(!"application".equals(type.getType()) || !"json".equals(type.getSubtype()) || type.getCharset()!=null && !java.nio.charset.StandardCharsets.UTF_8.equals(type.getCharset())){reject(s,415,"UNSUPPORTED_MEDIA_TYPE");return;}
+            }catch(IllegalArgumentException invalid){reject(s,415,"UNSUPPORTED_MEDIA_TYPE");return;}
             if(!"identity".equalsIgnoreCase(Optional.ofNullable(r.getHeader("Content-Encoding")).orElse("identity"))){reject(s,415,"UNSUPPORTED_CONTENT_ENCODING");return;}
             if(r.getContentLengthLong()>16_777_216){reject(s,413,"REQUEST_TOO_LARGE");return;}
             if(!capacity.tryAcquire()){s.setHeader("Retry-After","1");reject(s,429,"IMPORT_BUSY");return;}

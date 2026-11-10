@@ -12,7 +12,7 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/v1/admin/question-imports")
+@RequestMapping(value="/api/v1/admin/question-imports",consumes=org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
 public class AdministrativeImportController {
     private static final org.slf4j.Logger LOG=org.slf4j.LoggerFactory.getLogger(AdministrativeImportController.class);
     private final QuestionImportReader reader;private final PreviewQuestionCandidatesUseCase preview;

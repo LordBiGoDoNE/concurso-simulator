@@ -7,6 +7,9 @@ import java.util.UUID;
 /** Snapshot editorial privado, sem travas de escrita nem entidades de persistência. */
 public interface QuestionInventory {
     List<Entry> read();
+    default List<Entry> read(java.util.Set<QuestionOrigin> origins) {
+        return read().stream().filter(e->origins.contains(e.origin())).toList();
+    }
     record Entry(UUID questionId, QuestionOrigin origin, UUID eligibleRevisionId, int editorialSequence,
                  List<Revision> revisions) {
         public Entry { revisions = List.copyOf(revisions); }

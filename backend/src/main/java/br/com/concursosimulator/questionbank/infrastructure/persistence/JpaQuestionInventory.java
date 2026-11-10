@@ -19,14 +19,26 @@ public final class JpaQuestionInventory implements QuestionInventory {
         transactions.setIsolationLevel(TransactionDefinition.ISOLATION_REPEATABLE_READ);
     }
     public List<Entry> read() {
-        return transactions.execute(ignored -> entities.createQuery("select q from QuestionRow q order by q.id", QuestionRow.class)
-                .getResultList().stream().map(q -> {
+        return entries(null);
+    }
+    @Override public List<Entry> read(java.util.Set<QuestionOrigin> origins) {
+        if(origins.isEmpty())return List.of();
+        return entries(origins);
+    }
+    private List<Entry> entries(java.util.Set<QuestionOrigin> origins) {
+        return transactions.execute(ignored -> {
+            var rows=origins==null?entities.createQuery("select q from QuestionRow q order by q.id",QuestionRow.class).getResultList():
+                    origins.stream().sorted(java.util.Comparator.comparing(QuestionOrigin::namespace).thenComparing(QuestionOrigin::key))
+                    .flatMap(o->entities.createQuery("select q from QuestionRow q where q.namespace=:namespace and q.originKey=:key",QuestionRow.class)
+                            .setParameter("namespace",o.namespace()).setParameter("key",o.key()).getResultStream()).toList();
+            return rows.stream().map(q -> {
                     var revisions = entities.createQuery("select r from RevisionRow r where r.questionId=:id order by r.number", RevisionRow.class)
                             .setParameter("id", q.id).getResultList().stream().map(r -> new Revision(r.id, r.number, r.fingerprint,
                                     Question.Status.valueOf(r.status), QuestionClassification.fromIds(r.disciplineId, r.topicId, r.roles))).toList();
                     var sequence = entities.createQuery("select count(d) from DecisionRow d where d.questionId=:id", Long.class)
                             .setParameter("id", q.id).getSingleResult();
                     return new Entry(q.id, new QuestionOrigin(q.namespace, q.originKey), q.eligibleRevisionId, Math.toIntExact(sequence), revisions);
-                }).toList());
+                }).toList();
+        });
     }
 }

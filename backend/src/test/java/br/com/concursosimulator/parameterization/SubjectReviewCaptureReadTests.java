@@ -53,16 +53,22 @@ class SubjectReviewCaptureReadTests {
             assertThat(individual.summary().subjects().stream().filter(m->m.topic()==Topic.M04).findFirst().orElseThrow().blank()).isEqualTo(1);
             assertThat(reader.recent(owner,TargetRole.ADMINISTRATIVE_ASSISTANT,100,NOW.plusSeconds(3)).attempts()).isEmpty();
             // Fecha e abre a aplicação real duas vezes, mantendo somente o PostgreSQL sintético.
+            var bootstrapOwners=new ArrayList<UUID>();
             for(int restart=0;restart<2;restart++)try(var app=new SpringApplicationBuilder(ConcursoSimulatorApplication.class).run(
                     "--spring.profiles.active=local","--server.address=127.0.0.1","--server.port=0",
                     "--spring.datasource.url="+db.ds.getUrl(),"--spring.datasource.username="+PG.getUsername(),"--spring.datasource.password="+PG.getPassword(),
                     "--parameterization.generation-enabled=false")) {
+                bootstrapOwners.add(db.jdbc.queryForObject("select owner_id from admin_registration where id=1",UUID.class));
                 assertThat(app.getEnvironment().getProperty("parameterization.generation-enabled",Boolean.class)).isFalse();
                 var actual=app.getBean(ReviewUseCases.class).overview(owner,TargetRole.SCHOOL_SECRETARY);
                 assertThat(actual.window().attemptCount()).isEqualTo(3);assertThat(actual.summary().subjects()).isEqualTo(result.summary().subjects());
                 assertThat(app.getBean(AttemptUseCases.class).result(owner,generated.id()).blank()).isEqualTo(1);
             }
-            assertThat(rows(db)).isEqualTo(before);
+            var after=rows(db);
+            assertThat(after.subList(1,after.size())).isEqualTo(before.subList(1,before.size()));
+            assertThat(after.getFirst()).hasSize(before.getFirst().size()+1).containsAll(before.getFirst());
+            assertThat(bootstrapOwners).hasSize(2);assertThat(bootstrapOwners.get(0)).isNotNull().isEqualTo(bootstrapOwners.get(1)).isNotEqualTo(owner.id());
+            assertThat(db.jdbc.queryForObject("select active from app_user where id=?",Boolean.class,owner.id())).isTrue();
         }
     }
     @Test void instancePayloadDivergenceIsRejectedByTheSameBatchReader() {
@@ -79,6 +85,6 @@ class SubjectReviewCaptureReadTests {
     }
     List<List<String>> rows(ParameterDatabase db) {
         return List.of("app_user","qb_question","qb_revision","qb_decision","pq_family","pq_version","pq_decision","pq_instance","me_attempt","me_item","me_command")
-                .stream().map(t->db.jdbc.queryForList("select "+(t.equals("qb_question")?"(to_jsonb(r)-'purpose')::text":"to_jsonb(r)::text")+" from "+t+" r order by 1",String.class)).toList();
+                .stream().map(t->db.jdbc.queryForList("select "+(t.equals("qb_question")?"(to_jsonb(r)-'purpose')::text":t.equals("app_user")?"(to_jsonb(r)-'active')::text":"to_jsonb(r)::text")+" from "+t+" r order by 1",String.class)).toList();
     }
 }

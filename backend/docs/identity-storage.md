@@ -1,5 +1,7 @@
 # Identidade persistida — primeiro incremento
 
+> Registro histórico da identidade V2. A extensão ADM adiciona estado ativo em app_user e hash/permissão no cadastro separado V13; ver [ADR 0002](../../docs/architecture/adr/0002-administrative-credential-and-google-link.md) e [guia administrativo](../../docs/question-administrative-import.md). As garantias de privacidade da identidade Google permanecem.
+
 Migração `V2__user_identity.sql`: `app_user` guarda somente UUID e criação; `external_identity` guarda o vínculo Google (provider, issuer canônico e subject) com chave única e FK para o UUID. Não há nome, foto, e-mail, senha ou tokens. O subject é opaco: não é e-mail nem deve ser normalizado como um.
 
 `ResolveExternalIdentityUseCase.execute` resolve identidade externa em UUID, **não autentica**. Recebe `ExternalIdentity` somente de adaptador OIDC já validado, nunca de input HTTP público. O VO protege invariantes (limites/não vazio) e não normaliza subject. O UseCase depende de `IdentityRepository` e `UnitOfWork`, não de Google, SQL, Spring ou JPA. Não há endpoint público de criação de identidade neste incremento.

@@ -13,7 +13,8 @@ import org.xml.sax.ErrorHandler;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-final class PackageContentSafety {
+public final class PackageContentSafety {
+    @FunctionalInterface public interface Bytes { byte[] read(String path) throws java.io.IOException; }
     private static final Pattern CORRECTIVE = Pattern.compile("gabarito|answer|correct|corret[ao]|resolu[cç][aã]o", Pattern.CASE_INSENSITIVE);
     private static final String SVG_NAMESPACE = "http://www.w3.org/2000/svg";
     private static final String SVG_NUMBER = "[+-]?(?:[0-9]+(?:\\.[0-9]*)?|\\.[0-9]+)(?:[eE][+-]?[0-9]+)?";
@@ -43,20 +44,23 @@ final class PackageContentSafety {
         return java.util.Map.copyOf(patterns);
     }
     static void check(Path root, QuestionContent content) throws java.io.IOException {
-        text(root, content.statement(), true);
-        for (var option : content.alternatives()) text(root, option.content(), true);
-        text(root, content.resolution(), false);
+        check(path->LocalFiles.source(root,path),content);
+    }
+    public static void check(Bytes source, QuestionContent content) throws java.io.IOException {
+        text(source, content.statement(), true);
+        for (var option : content.alternatives()) text(source, option.content(), true);
+        text(source, content.resolution(), false);
         for (var ref : content.references()) {
             var url = URLDecoder.decode(ref.url().toString(), StandardCharsets.UTF_8);
             if (url.contains("\\") || CORRECTIVE.matcher(url).find()) throw new IllegalArgumentException("Link corretivo/inseguro não permitido");
         }
     }
-    private static void text(Path root, TextContent text, boolean publicContent) throws java.io.IOException {
+    private static void text(Bytes source, TextContent text, boolean publicContent) throws java.io.IOException {
         if (QuestionTextSafety.looksLikeMarkup(text.text())) throw new IllegalArgumentException("Conteúdo deve ser texto, não markup");
         for (var resource : text.resources()) {
             if (!resource.path().startsWith("assets/") || QuestionTextSafety.looksLikeMarkup(resource.description())
                     || (publicContent && CORRECTIVE.matcher(resource.path() + resource.description()).find())) throw new IllegalArgumentException("Recurso inseguro/corretivo");
-            var bytes = LocalFiles.source(root, resource.path());
+            var bytes = source.read(resource.path());
             if (!LocalFiles.sha(bytes).equals(resource.sha256())) throw new IllegalArgumentException("Hash de recurso divergente");
             switch (resource.mediaType()) {
                 case "image/png" -> { if (bytes.length < 8 || !java.util.Arrays.equals(java.util.Arrays.copyOf(bytes,8), new byte[]{(byte)137,80,78,71,13,10,26,10})) throw new IllegalArgumentException("PNG inválido"); }

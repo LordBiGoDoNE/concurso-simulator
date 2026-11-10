@@ -41,7 +41,7 @@ public class SecurityConfiguration {
     HttpSessionSecurityContextRepository securityContextRepository() {
         return new HttpSessionSecurityContextRepository();
     }
-    // Sem login por senha; impede a conta padrão gerada pelo Boot.
+    // Local ADM uses its dedicated authentication chain; suppress Boot's unrelated default user.
     @Bean
     UserDetailsService userDetailsService() {
         return username -> { throw new UsernameNotFoundException("Login não configurado"); };
@@ -94,17 +94,29 @@ public class SecurityConfiguration {
     SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository,
             GoogleLoginProperties google, ObjectProvider<ClientRegistrationRepository> registrations,
             GoogleLoginHandlers handlers, HttpSessionOAuth2AuthorizedClientRepository clients,
-            ApiAccessFailureHandler failures, AttemptAccess attempts) throws Exception {
+            ApiAccessFailureHandler failures, AttemptAccess attempts, br.com.concursosimulator.identity.application.AdministrativeAccessUseCases adminAccess) throws Exception {
         if (google.enabled()) {
             var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), "/oauth2/authorization");
-            resolver.setAuthorizationRequestCustomizer(OAuth2AuthorizationRequestCustomizers.withPkce());
+            resolver.setAuthorizationRequestCustomizer(builder -> {
+                OAuth2AuthorizationRequestCustomizers.withPkce().accept(builder);
+                var attrs=(org.springframework.web.context.request.ServletRequestAttributes)org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes();
+                var session=attrs.getRequest().getSession(false);
+                if(session!=null && session.getAttribute(br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LINK) instanceof br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LinkIntent intent) {
+                    if(java.time.Instant.now().isAfter(intent.expires()) || intent.state()!=null)
+                        throw new org.springframework.security.oauth2.core.OAuth2AuthenticationException("Invalid link intent");
+                    builder.additionalParameters(p->p.put("prompt","select_account"));
+                    session.setAttribute(br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LINK,
+                        new br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LinkIntent(intent.actor(),intent.version(),intent.expires(),builder.build().getState()));
+                }
+            });
             http.oauth2Login(login -> login.authorizedClientRepository(clients)
                     .loginProcessingUrl("/login/oauth2/code/google")
                     .authorizationEndpoint(endpoint -> endpoint.authorizationRequestResolver(resolver))
                     .successHandler(handlers).failureHandler(handlers));
         }
         var trust = new AuthenticationTrustResolverImpl();
-        return http.cors(Customizer.withDefaults())
+        return http.addFilterAfter(new br.com.concursosimulator.identity.infrastructure.ActiveAccountFilter(adminAccess), org.springframework.security.web.context.SecurityContextHolderFilter.class)
+                .cors(Customizer.withDefaults())
                 .securityContext(context -> context.securityContextRepository(repository))
                 .requestCache(cache -> cache.requestCache(new NullRequestCache()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
@@ -149,6 +161,9 @@ public class SecurityConfiguration {
         sessions.setAllowCredentials(true);
         sessions.setAllowedMethods(List.of("GET", "POST"));
         sessions.setAllowedHeaders(List.of("Accept", "Content-Type", "X-CSRF-TOKEN"));
+        source.registerCorsConfiguration("/api/v1/admin/auth/**", sessions);
+        source.registerCorsConfiguration("/api/v1/admin/account", sessions);
+        source.registerCorsConfiguration("/api/v1/admin/account/**", sessions);
         source.registerCorsConfiguration("/api/v1/me", sessions);
         source.registerCorsConfiguration("/api/v1/csrf", sessions);
         source.registerCorsConfiguration("/api/v1/auth/logout", sessions);

@@ -86,9 +86,11 @@ confirmação, importação e replay em PostgreSQL efêmero, mantendo todos os25
 rascunho. Fixtures de navegador são sintéticas e isoladas; suas decisões editoriais
 não aprovam conteúdo real nem escrevem no banco do operador.
 
-Backup/restore local aceita explicitamente schema10 ou11 completos, registra a
-versão real e mantém exigência da imagem exata e destino vazio. Schema desconhecido
-ou incompleto é recusado. Imagens continuam excluindo fontes editoriais, testes,
+Backup/restore local aceita schemas V10–V13 completos, registra a versão real e
+exige o inventário fechado daquela versão: V10/V11 preservam as tabelas originais;
+V12 acrescenta as quatro tabelas qb_import_*; V13 acrescenta admin_registration.
+Mantém exigência de checksum, imagem exata e destino vazio. Schema desconhecido,
+histórico incompleto e tabela ausente ou extra são recusados. Imagens continuam excluindo fontes editoriais, testes,
 pacotes, backups e segredos do contexto permitido.
 
 Para testar manualmente após atualização local: abrir uma aula e iniciar prática;

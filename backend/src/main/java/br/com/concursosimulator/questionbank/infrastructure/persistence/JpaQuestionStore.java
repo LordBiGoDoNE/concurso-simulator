@@ -1,6 +1,9 @@
 package br.com.concursosimulator.questionbank.infrastructure.persistence;
 
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
+import br.com.concursosimulator.questionbank.application.port.QuestionImportStore;
+import br.com.concursosimulator.questionbank.application.ImportReceipt;
+import br.com.concursosimulator.questionbank.application.QuestionImportPackage;
 import br.com.concursosimulator.questionbank.application.port.OriginAlreadyExistsException;
 import br.com.concursosimulator.questionbank.domain.*;
 import jakarta.persistence.EntityManager;
@@ -17,7 +20,7 @@ import org.hibernate.exception.ConstraintViolationException;
 
 /** Porta de escrita de questões: transação independente, bloqueio por agregado e retorno após commit. */
 @Repository
-public class JpaQuestionStore implements QuestionStore {
+public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
     private final EntityManager entities;
     private final TransactionTemplate transactions;
     private final JsonMapper json = JsonMapper.builder().build();
@@ -26,7 +29,13 @@ public class JpaQuestionStore implements QuestionStore {
         transactions.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRES_NEW);
         transactions.setTimeout(15);
     }
-    @Override public <T> T transaction(Function<Session,T> operation) {
+    @Override public <T> T transaction(Function<QuestionStore.Session,T> operation) {
+        return unit(operation::apply);
+    }
+    @Override public <T> T importTransaction(Function<QuestionImportStore.Session,T> operation) {
+        return unit(operation);
+    }
+    private <T> T unit(Function<QuestionImportStore.Session,T> operation) {
         try {
             return transactions.execute(status -> {
                 var session=new JpaSession();
@@ -39,14 +48,43 @@ public class JpaQuestionStore implements QuestionStore {
                 if(cause instanceof ConstraintViolationException violation && "qb_question_origin_key".equals(violation.getConstraintName())) {
                     throw new OriginAlreadyExistsException(exception);
                 }
+                if(cause instanceof ConstraintViolationException violation && "qb_import_receipt_pkey".equals(violation.getConstraintName()))
+                    throw new QuestionImportStore.Collision(exception);
             }
             throw exception; // FK, PK, validação e indisponibilidade nunca são sucesso/idempotência.
         }
     }
-    private final class JpaSession implements Session {
+    private final class JpaSession implements QuestionImportStore.Session {
         private boolean active=true;
         private final Map<UUID,Loaded> loaded=new HashMap<>();
         private void requireActive() { if (!active) throw new IllegalStateException("Unidade transacional encerrada"); }
+        @Override public Optional<ImportReceipt> receipt(UUID nonce) {
+            requireActive();
+            return entities.createNativeQuery("select cast(payload as text) from qb_import_receipt where nonce=:nonce",String.class)
+                    .setParameter("nonce",nonce).getResultStream().findFirst().map(payload->json.readValue((String)payload,ImportReceipt.class));
+        }
+        @Override public void saveImport(ImportReceipt receipt,List<QuestionImportPackage.Evidence> evidence) {
+            requireActive();
+            entities.flush(); // As FKs do manifesto referenciam revisões desta mesma unidade, ainda sem commit.
+            // Native SQL is confined to this repository: bytea/JSONB and ON CONFLICT share the question transaction.
+            entities.createNativeQuery("insert into qb_import_receipt(nonce,destination,actor,committed_at,payload) values (:nonce,:destination,:actor,:at,cast(:payload as jsonb))")
+                    .setParameter("nonce",receipt.confirmation().nonce()).setParameter("destination",receipt.confirmation().destination())
+                    .setParameter("actor",receipt.confirmation().actor()).setParameter("at",receipt.committedAt())
+                    .setParameter("payload",json.writeValueAsString(receipt)).executeUpdate();
+            for(var result:receipt.results())entities.createNativeQuery("insert into qb_import_revision(nonce,question_id,revision_id,reused) values (:nonce,:question,:revision,:reused)")
+                    .setParameter("nonce",receipt.confirmation().nonce()).setParameter("question",result.questionId())
+                    .setParameter("revision",result.revisionId()).setParameter("reused",result.reused()).executeUpdate();
+            for(var file:evidence.stream().sorted(Comparator.comparing(QuestionImportPackage.Evidence::sha256).thenComparing(QuestionImportPackage.Evidence::path)).toList()) {
+                entities.createNativeQuery("insert into qb_import_blob(sha256,content) values (:hash,:bytes) on conflict (sha256) do nothing")
+                        .setParameter("hash",file.sha256()).setParameter("bytes",file.bytes()).executeUpdate();
+                var bytes=(byte[])entities.createNativeQuery("select content from qb_import_blob where sha256=:hash",byte[].class)
+                        .setParameter("hash",file.sha256()).getSingleResult();
+                require(java.util.Arrays.equals(bytes,file.bytes()));
+                entities.createNativeQuery("insert into qb_import_file(nonce,path,media_type,sha256) values (:nonce,:path,:type,:hash)")
+                        .setParameter("nonce",receipt.confirmation().nonce()).setParameter("path",file.path())
+                        .setParameter("type",file.mediaType()).setParameter("hash",file.sha256()).executeUpdate();
+            }
+        }
         @Override public Optional<Question> loadForUpdate(UUID id) {
             requireActive(); if (loaded.containsKey(id)) return Optional.of(loaded.get(id).question);
             var row=entities.find(QuestionRow.class,id,LockModeType.PESSIMISTIC_WRITE);

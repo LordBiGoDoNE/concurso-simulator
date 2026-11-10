@@ -1,5 +1,7 @@
 # Google OIDC opcional
 
+> O login Google comum mantém o contrato abaixo. O vínculo deliberado ao ADM usa uma intenção de cinco minutos e pode preservar a conta original com resultado sanitizado `admin=...`; senha e Google continuam disponíveis. Ver [guia administrativo](../../docs/question-administrative-import.md).
+
 Revisão JPA/arquitetura de 2026-10-08: Google/OIDC é adaptador web; após validação fornece ExternalIdentity ao ResolveExternalIdentityUseCase genérico. Apenas esse adaptador conhece provider/issuer canônicos Google. O UseCase não recebe tokens nem depende do provedor/ORM. Wiring e propriedades secretas ficam na infraestrutura; a porta LoginOptions oferece à web somente disponibilidade/destino, sem expor o client secret. Modelos JPA nunca vão à sessão ou ao contrato me.
 
 Desativado por padrão (`AUTH_GOOGLE_ENABLED=false`): nenhuma discovery/chamada ao Google no startup, entradas retornam 404 e `/api/v1/auth/config` retorna somente `googleEnabled:false`. Não há login simulado em produção.

@@ -87,4 +87,48 @@ class AdministrativeImportPersistenceTests {
         var simulated=db.store.transaction(s->pool.capture(QuestionPurpose.SIMULADO));assertThat(simulated).isEmpty();
         assertThat(db.store.transaction(s->s.loadForUpdate(historical.questionId()).orElseThrow()).origin().key()).isEqualTo("P01-P01");
     }
+    static final List<String> IMPORT_TABLES=List.of("qb_question","qb_revision","qb_alternative","qb_revision_role","qb_reference","qb_decision","qb_import_receipt","qb_import_revision","qb_import_blob","qb_import_file");
+    Map<String,List<String>> snapshot(){
+        var rows=new LinkedHashMap<String,List<String>>();
+        for(var table:IMPORT_TABLES)rows.put(table,db.jdbc.queryForList("select to_jsonb(r)::text from "+table+" r order by 1",String.class));
+        return rows;
+    }
+    @org.junit.jupiter.params.ParameterizedTest
+    @org.junit.jupiter.params.provider.ValueSource(strings={"qb_question","qb_revision","qb_alternative","qb_revision_role","qb_reference","qb_import_receipt","qb_import_revision","qb_import_blob","qb_import_file"})
+    void everyWriteBoundaryRollsBackWithoutChangingExistingRows(String table){
+        var old=pack(QuestionPurpose.SIMULADO,"admin.existing");run(old,confirmation(old));var before=snapshot();
+        db.jdbc.execute("create function fail_write_fixture() returns trigger language plpgsql as $$ begin raise exception 'SYNTHETIC_WRITE_FAILURE'; end $$");
+        db.jdbc.execute("create trigger fail_write_fixture before insert on "+table+" for each row execute function fail_write_fixture()");
+        var p=pack(QuestionPurpose.PRATICA_AULA,"admin.new-a","admin.new-b");
+        assertThatThrownBy(()->run(p,confirmation(p))).as(table).isInstanceOf(RuntimeException.class);
+        assertThat(snapshot()).as(table).isEqualTo(before);
+    }
+    @Test void deferredCommitFailureRevertsAllWritesAndDoesNotLeaveAReplayReceipt(){
+        var old=pack(QuestionPurpose.SIMULADO,"admin.existing");run(old,confirmation(old));var before=snapshot();
+        db.jdbc.execute("create function fail_commit_fixture() returns trigger language plpgsql as $$ begin raise exception 'SYNTHETIC_COMMIT_FAILURE'; end $$");
+        db.jdbc.execute("create constraint trigger fail_commit_fixture after insert on qb_import_receipt deferrable initially deferred for each row execute function fail_commit_fixture()");
+        var reached=new java.util.concurrent.atomic.AtomicBoolean();
+        QuestionImportStore observed=new QuestionImportStore(){
+            public <T>T importTransaction(java.util.function.Function<Session,T> operation){
+                return db.store.importTransaction(session->{T result=operation.apply(session);
+                    assertThat(count("qb_import_receipt")).isEqualTo(before.get("qb_import_receipt").size()+1);
+                    assertThat(count("qb_import_file")).isEqualTo(before.get("qb_import_file").size()+1);
+                    reached.set(true);return result;});
+            }
+        };
+        var checked=new ApplyAdministrativeQuestionsUseCase(observed,clock);var p=pack(QuestionPurpose.PRATICA_AULA,"admin.commit-a","admin.commit-b");var c=confirmation(p);
+        assertThatThrownBy(()->checked.execute(p,c,c.actor(),c.destination())).isInstanceOf(RuntimeException.class);
+        assertThat(reached).isTrue();assertThat(snapshot()).isEqualTo(before);
+        db.jdbc.execute("drop trigger fail_commit_fixture on qb_import_receipt");
+        assertThat(run(p,c).replayed()).isFalse();assertThat(run(p,c).replayed()).isTrue();
+    }
+    @Test void divergentBytesUnderExistingBlobHashAreNotSilentlyDeduplicated(){
+        new ApplyQuestionCandidatesUseCase(db.store).execute(List.of(new ApplyQuestionCandidatesUseCase.Candidate(new QuestionOrigin("fixture","existing"),QuestionFixtures.content("Existing fixture"),null)));
+        var p=pack(QuestionPurpose.PRATICA_AULA,"admin.blob");var file=p.evidence().getFirst();
+        db.jdbc.update("insert into qb_import_blob(sha256,content) values (?,?)",file.sha256(),new byte[]{9,8,7});
+        var before=snapshot();
+        assertThatThrownBy(()->run(p,confirmation(p))).isInstanceOf(IllegalStateException.class);
+        assertThat(snapshot()).isEqualTo(before);assertThat(count("qb_import_receipt")).isZero();
+    }
+
 }

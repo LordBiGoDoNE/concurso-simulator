@@ -2,7 +2,7 @@ package br.com.concursosimulator.questionbank;
 
 import br.com.concursosimulator.questionbank.application.*;
 import br.com.concursosimulator.questionbank.domain.*;
-import br.com.concursosimulator.questionbank.infrastructure.importing.AdministrativePackageReader;
+import br.com.concursosimulator.questionbank.infrastructure.importing.*;
 import java.time.*;
 import java.util.*;
 import org.junit.jupiter.api.Test;
@@ -11,6 +11,24 @@ import static br.com.concursosimulator.questionbank.AdministrativeImportFixtures
 
 class AdministrativePackageTests {
     final AdministrativePackageReader reader=new AdministrativePackageReader();
+    @Test void documentedExampleIsAcceptedAndBodyGrammarIsBounded()throws Exception {
+        var bytes=java.nio.file.Files.readAllBytes(java.nio.file.Path.of("../docs/examples/administrative-question-import.json"));
+        var json=tools.jackson.databind.json.JsonMapper.builder().build();
+        var request=json.readValue(bytes,br.com.concursosimulator.questionbank.web.AdministrativeImportController.PreviewRequest.class);
+        assertThat(reader.read(request.document(),request.keys()).purpose()).isEqualTo(QuestionPurpose.PRATICA_AULA);
+        var parameter=new org.springframework.core.MethodParameter(br.com.concursosimulator.questionbank.web.AdministrativeImportController.class.getMethod("preview",request.getClass(),br.com.concursosimulator.identity.web.UserPrincipal.class),0);
+        var advice=new br.com.concursosimulator.questionbank.web.ImportRequestBodyAdvice();
+        byte[] max=new byte[16_777_216];java.util.Arrays.fill(max,(byte)' ');System.arraycopy(bytes,0,max,0,bytes.length);
+        var message=new org.springframework.mock.http.MockHttpInputMessage(max);
+        long heapBefore=java.lang.management.ManagementFactory.getMemoryMXBean().getHeapMemoryUsage().getUsed();
+        long begin=System.nanoTime();
+        var bounded=advice.beforeBodyRead(message,parameter,request.getClass(),org.springframework.http.converter.ByteArrayHttpMessageConverter.class);
+        assertThat(bounded.getBody().readAllBytes()).hasSize(16_777_216);
+        System.out.println("Synthetic max-body check bytes=16777216 elapsedMs="+(System.nanoTime()-begin)/1_000_000);
+        System.out.println("Synthetic max-body heapBefore="+heapBefore+" heapAfter="+java.lang.management.ManagementFactory.getMemoryMXBean().getHeapMemoryUsage().getUsed());
+        assertThatThrownBy(()->advice.beforeBodyRead(new org.springframework.mock.http.MockHttpInputMessage(new byte[16_777_217]),parameter,request.getClass(),org.springframework.http.converter.ByteArrayHttpMessageConverter.class))
+                .isInstanceOf(br.com.concursosimulator.questionbank.web.ImportRequestBodyAdvice.TooLarge.class);
+    }
     @Test void maximumDecodedEvidenceIsAcceptedAndExcessRejected(){
         var keys=java.util.stream.IntStream.range(0,100).mapToObj(n->"admin.max"+n).toArray(String[]::new);
         var d=document(QuestionPurpose.PRATICA_AULA,keys);byte[] bytes=new byte[1_048_576];Arrays.fill(bytes,(byte)'a');
@@ -74,5 +92,14 @@ class AdministrativePackageTests {
         var hundred=document(QuestionPurpose.PRATICA_AULA,Arrays.copyOf(keys,100));
         assertThat(reader.read(hundred,hundred.items().stream().map(i->i.origin().key()).toList()).candidates()).hasSize(100);
     }
-
+    @Test void confirmationIsSignedAndSettingsDefaultDeny(){
+        var clock=Clock.fixed(Instant.parse("2026-11-09T12:00:00Z"),ZoneOffset.UTC);
+        var tokens=new ImportConfirmationTokens(new byte[32],clock);var actor=UUID.randomUUID();var pack=reader.read(document(QuestionPurpose.PRATICA_AULA,"admin.a"),List.of("admin.a"));
+        var issued=tokens.issue(actor,"isolated",pack);var confirmed=tokens.verify(issued.token());
+        assertThat(confirmed.actor()).isEqualTo(actor);assertThat(confirmed.packageDigest()).isEqualTo(pack.digest());
+        assertThat(confirmed.expiresAt()).isEqualTo(clock.instant().plusSeconds(900));
+        assertThatThrownBy(()->tokens.verify("X"+issued.token())).isInstanceOf(ApplyAdministrativeQuestionsUseCase.ConfirmationFailure.class);
+        assertThat(new ImportSettings("","","").configured()).isFalse();
+        assertThatThrownBy(()->new ImportSettings(actor.toString(),"isolated","")).hasMessage("Configuração administrativa inválida");
+    }
 }

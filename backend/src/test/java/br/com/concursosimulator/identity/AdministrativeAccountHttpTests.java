@@ -99,6 +99,7 @@ class AdministrativeAccountHttpTests {
         assertThat(cors.statusCode()).isEqualTo(403);
         jdbc.update("update admin_registration set enabled=false");
         assertThat(get(c,"/api/v1/admin/account").statusCode()).isEqualTo(403);
+        assertThat(post(c,"/api/v1/admin/question-imports/preview","{broken",true).statusCode()).isEqualTo(403);
     }
     @Test void securityRejectsUntrustedAnonymousAndObsoleteEvidenceBeforeAccountController()throws Exception {
         var valid=new br.com.concursosimulator.identity.web.UserPrincipal(local);
@@ -121,10 +122,12 @@ class AdministrativeAccountHttpTests {
         access.recover("synthetic-temporary-password");var c=browser();
         assertThat(post(c,"/api/v1/admin/auth/login",json.writeValueAsString(Map.of("username","admin","password","synthetic-temporary-password")),true).statusCode()).isEqualTo(204);
         assertThat(get(c,"/api/v1/admin/account").body()).contains("\"mustChangePassword\":true");
+        assertThat(post(c,"/api/v1/admin/question-imports/preview","{broken",true).statusCode()).isEqualTo(403);
         assertThat(post(c,"/api/v1/attempts","{}",true).statusCode()).isEqualTo(403);
         assertThat(post(c,"/api/v1/admin/account/google-link",json.writeValueAsString(Map.of("currentPassword","synthetic-temporary-password")),true).statusCode()).isEqualTo(403);
         assertThat(post(c,"/api/v1/admin/account/password",json.writeValueAsString(Map.of("currentPassword","synthetic-temporary-password","newPassword",PASSWORD)),true).statusCode()).isEqualTo(204);
         assertThat(id(c)).isEqualTo(local.toString());assertThat(get(c,"/api/v1/admin/account").body()).contains("\"mustChangePassword\":false");
+        assertThat(post(c,"/api/v1/admin/question-imports/preview","{broken",true).statusCode()).isEqualTo(503);
         assertThat(get(old,"/api/v1/admin/account").statusCode()).isEqualTo(403);
         assertThat(get(old,"/api/v1/me").statusCode()).isEqualTo(200);
     }

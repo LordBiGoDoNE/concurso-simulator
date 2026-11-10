@@ -386,6 +386,69 @@ paths:
         '403': {$ref: '#/components/responses/AttemptForbidden'}
         '500': {$ref: '#/components/responses/ReviewIntegrity'}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
+  /api/v1/admin/question-imports/preview:
+    post:
+      summary: Conferir pacote administrativo sem persistir rascunhos ou arquivos
+      operationId: previewAdministrativeQuestions
+      security: [{sessionCookie: []}]
+      description: >-
+        Sessão ADM por senha ou Google vinculado, permissão persistente/versão vigente, troca inicial concluída e CSRF obrigatório. JSON UTF-8 até
+        16 MiB, sem compressão. Até 100 itens por pacote, sem limite cumulativo de acervo.
+        Confirmação válida por 15 minutos; respostas no-store. Uma execução por instância.
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/QuestionImportPreviewRequest'}
+      responses:
+        '200':
+          description: Prévia sem escrita; STALE informa confirmable=false e token null
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionImportPreview'}
+        '400': {$ref: '#/components/responses/QuestionImportError'}
+        '401': {$ref: '#/components/responses/QuestionImportAccessError'}
+        '403': {$ref: '#/components/responses/QuestionImportAccessError'}
+        '413': {$ref: '#/components/responses/QuestionImportEitherError'}
+        '415': {$ref: '#/components/responses/QuestionImportEitherError'}
+        '422': {$ref: '#/components/responses/QuestionImportError'}
+        '429': {$ref: '#/components/responses/QuestionImportAccessError'}
+        '500': {$ref: '#/components/responses/QuestionImportError'}
+        '503': {$ref: '#/components/responses/QuestionImportError'}
+  /api/v1/admin/question-imports/apply:
+    post:
+      summary: Aplicar seleção confirmada como rascunhos com recibo atômico
+      operationId: applyAdministrativeQuestions
+      security: [{sessionCookie: []}]
+      description: >-
+        Mesmos limites e segurança da prévia. Finalidade e origem são imutáveis.
+        Grava questões, evidência privada e recibo no mesmo commit; não aprova ou publica.
+        Retry da confirmação válida retorna recibo original. No-store, sem payload corretivo.
+      parameters:
+        - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: {$ref: '#/components/schemas/QuestionImportApplyRequest'}
+      responses:
+        '200':
+          description: Commit confirmado ou recibo original em replay
+          content:
+            application/json:
+              schema: {$ref: '#/components/schemas/QuestionImportApplied'}
+        '400': {$ref: '#/components/responses/QuestionImportError'}
+        '401': {$ref: '#/components/responses/QuestionImportAccessError'}
+        '403': {$ref: '#/components/responses/QuestionImportAccessError'}
+        '409': {$ref: '#/components/responses/QuestionImportError'}
+        '413': {$ref: '#/components/responses/QuestionImportEitherError'}
+        '415': {$ref: '#/components/responses/QuestionImportEitherError'}
+        '422': {$ref: '#/components/responses/QuestionImportError'}
+        '429': {$ref: '#/components/responses/QuestionImportAccessError'}
+        '500': {$ref: '#/components/responses/QuestionImportError'}
+        '503': {$ref: '#/components/responses/QuestionImportError'}
   /api/v1/admin/auth/login:
     post:
       operationId: loginAdministrativeAccount
@@ -495,6 +558,24 @@ components:
       content:
         application/json:
           schema: {$ref: '#/components/schemas/AdministrativeError'}
+    QuestionImportError:
+      description: Erro administrativo sanitizado, no-store; código fixo e correlação, sem detalhes privados
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/QuestionImportError'}
+    QuestionImportAccessError:
+      description: Rejeição de segurança/capacidade, no-store; 429 inclui Retry-After
+      content:
+        application/json:
+          schema: {$ref: '#/components/schemas/QuestionImportAccessError'}
+    QuestionImportEitherError:
+      description: Rejeição na entrada ou adaptador, no-store
+      content:
+        application/json:
+          schema:
+            oneOf:
+              - {$ref: '#/components/schemas/QuestionImportError'}
+              - {$ref: '#/components/schemas/QuestionImportAccessError'}
     ReviewIntegrity:
       description: Evidência inconsistente; erro integral e genérico, sem resumo parcial; no-store
       content:
@@ -894,6 +975,166 @@ components:
         attemptId: {type: string, format: uuid}
         subjects: {type: array, minItems: 51, maxItems: 51, items: {$ref: '#/components/schemas/SubjectReviewSubject'}}
         priorityTopicIds: {type: array, uniqueItems: true, maxItems: 51, items: {type: string}}
+    QuestionImportAccessError:
+      type: object
+      additionalProperties: false
+      required: [error]
+      properties: {error: {type: string}}
+    QuestionImportError:
+      type: object
+      additionalProperties: false
+      required: [error, correlationId]
+      properties: {error: {type: string}, correlationId: {type: string, format: uuid}}
+    QuestionImportOrigin:
+      type: object
+      additionalProperties: false
+      required: [namespace, key]
+      properties:
+        namespace: {type: string, enum: [admin-question-v1, lesson-practice-v1]}
+        key: {type: string, maxLength: 100, pattern: '^[A-Za-z0-9][A-Za-z0-9._-]*$'}
+    QuestionImportProvenance:
+      type: object
+      additionalProperties: false
+      required: [author, contentPath, answerPath, contentSha256, answerSha256]
+      properties:
+        author: {type: string, maxLength: 500}
+        contentPath: {type: string, pattern: '^sources/'}
+        answerPath: {type: string, pattern: '^sources/'}
+        contentSha256: {type: string, pattern: '^[0-9a-f]{64}$'}
+        answerSha256: {type: string, pattern: '^[0-9a-f]{64}$'}
+    QuestionImportReference:
+      type: object
+      additionalProperties: false
+      required: [name, url, legalBasis]
+      properties:
+        name: {type: string, maxLength: 1000}
+        url: {type: string, format: uri, maxLength: 4000}
+        legalBasis:
+          type: [object, 'null']
+          additionalProperties: false
+          required: [provision, checkedOn]
+          properties: {provision: {type: string, maxLength: 4000}, checkedOn: {type: string, format: date}}
+    QuestionImportContent:
+      type: object
+      additionalProperties: false
+      required: [statement, alternatives, correctAlternativeId, resolution, classification, references, provenance]
+      properties:
+        statement: {$ref: '#/components/schemas/QuestionText'}
+        alternatives: {type: array, minItems: 2, maxItems: 10, items: {$ref: '#/components/schemas/QuestionAlternative'}}
+        correctAlternativeId: {type: string, format: uuid}
+        resolution: {$ref: '#/components/schemas/QuestionText'}
+        classification: {$ref: '#/components/schemas/QuestionClassification'}
+        references: {type: array, minItems: 1, maxItems: 20, items: {$ref: '#/components/schemas/QuestionImportReference'}}
+        provenance: {$ref: '#/components/schemas/QuestionImportProvenance'}
+    QuestionImportItem:
+      type: object
+      additionalProperties: false
+      required: [origin, content, fingerprint, expectedLatestRevision]
+      properties:
+        origin: {$ref: '#/components/schemas/QuestionImportOrigin'}
+        content: {$ref: '#/components/schemas/QuestionImportContent'}
+        fingerprint: {type: string, pattern: '^[0-9a-f]{64}$'}
+        expectedLatestRevision: {type: [string, 'null'], format: uuid}
+    QuestionImportFile:
+      type: object
+      additionalProperties: false
+      required: [path, mediaType, sha256, base64]
+      properties:
+        path: {type: string, maxLength: 1000}
+        mediaType: {type: string, enum: [text/plain, application/json, image/png, image/jpeg, image/svg+xml]}
+        sha256: {type: string, pattern: '^[0-9a-f]{64}$'}
+        base64: {type: string, maxLength: 1398104, contentEncoding: base64}
+    QuestionImportPackage:
+      type: object
+      additionalProperties: false
+      required: [format, purpose, items, files]
+      properties:
+        format: {type: string, const: administrative-question-package/v1}
+        purpose: {type: string, enum: [SIMULADO, PRATICA_AULA]}
+        items: {type: array, minItems: 1, maxItems: 100, items: {$ref: '#/components/schemas/QuestionImportItem'}}
+        files: {type: array, maxItems: 100, items: {$ref: '#/components/schemas/QuestionImportFile'}}
+      description: >-
+        Uma finalidade por pacote. SIMULADO exige admin-question-v1; PRATICA_AULA exige
+        lesson-practice-v1 e chaves admin.*. Todos os arquivos referenciados, até 8 MiB
+        decodificados somados. Fontes não são publicadas. Finalidade participa do digest.
+    QuestionImportPreviewRequest:
+      type: object
+      additionalProperties: false
+      required: [package, keys]
+      properties:
+        package: {$ref: '#/components/schemas/QuestionImportPackage'}
+        keys: {type: array, minItems: 1, maxItems: 100, uniqueItems: true, items: {type: string}}
+    QuestionImportApplyRequest:
+      type: object
+      additionalProperties: false
+      required: [package, keys, confirmationToken]
+      properties:
+        package: {$ref: '#/components/schemas/QuestionImportPackage'}
+        keys: {type: array, minItems: 1, maxItems: 100, uniqueItems: true, items: {type: string}}
+        confirmationToken: {type: string, maxLength: 4096}
+    QuestionImportPreviewItem:
+      type: object
+      additionalProperties: false
+      required: [origin, fingerprint, expectedLatestRevision, change, questionId, latestRevisionId]
+      properties:
+        origin: {$ref: '#/components/schemas/QuestionImportOrigin'}
+        fingerprint: {type: string}
+        expectedLatestRevision: {type: [string, 'null'], format: uuid}
+        change: {type: string, enum: [NEW, IDENTICAL, CHANGED, STALE]}
+        questionId: {type: [string, 'null'], format: uuid}
+        latestRevisionId: {type: [string, 'null'], format: uuid}
+    QuestionImportPreview:
+      type: object
+      additionalProperties: false
+      required: [purpose, destinationId, packageDigest, selectionDigest, items, possibleDuplicates, confirmable, confirmationToken, expiresAt]
+      properties:
+        purpose: {type: string, enum: [SIMULADO, PRATICA_AULA]}
+        destinationId: {type: string}
+        packageDigest: {type: string}
+        selectionDigest: {type: string}
+        items: {type: array, items: {$ref: '#/components/schemas/QuestionImportPreviewItem'}}
+        possibleDuplicates: {type: array, items: {type: array, items: {type: string}}}
+        confirmable: {type: boolean}
+        confirmationToken: {type: [string, 'null']}
+        expiresAt: {type: [string, 'null'], format: date-time}
+    QuestionImportConfirmation:
+      type: object
+      additionalProperties: false
+      required: [nonce, actor, destination, packageDigest, selectionDigest, issuedAt, expiresAt]
+      properties:
+        nonce: {type: string, format: uuid}
+        actor: {type: string, format: uuid}
+        destination: {type: string}
+        packageDigest: {type: string}
+        selectionDigest: {type: string}
+        issuedAt: {type: string, format: date-time}
+        expiresAt: {type: string, format: date-time}
+    QuestionImportResult:
+      type: object
+      additionalProperties: false
+      required: [origin, questionId, revisionId, reused]
+      properties:
+        origin: {$ref: '#/components/schemas/QuestionImportOrigin'}
+        questionId: {type: string, format: uuid}
+        revisionId: {type: string, format: uuid}
+        reused: {type: boolean}
+    QuestionImportReceipt:
+      type: object
+      additionalProperties: false
+      required: [confirmation, committedAt, results]
+      properties:
+        confirmation: {$ref: '#/components/schemas/QuestionImportConfirmation'}
+        committedAt: {type: string, format: date-time}
+        results: {type: array, items: {$ref: '#/components/schemas/QuestionImportResult'}}
+    QuestionImportApplied:
+      type: object
+      additionalProperties: false
+      required: [purpose, destinationId, receipt, replayed]
+      properties:
+        purpose: {type: string, enum: [SIMULADO, PRATICA_AULA]}
+        destinationId: {type: string}
+        receipt: {$ref: '#/components/schemas/QuestionImportReceipt'}
+        replayed: {type: boolean}
   securitySchemes:
     sessionCookie:
       type: apiKey

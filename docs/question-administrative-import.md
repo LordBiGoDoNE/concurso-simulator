@@ -1,7 +1,118 @@
-# Pacote administrativo — camada de leitor
+# Importação administrativa — #160
 
-Esta camada implementa leitor/prévia do núcleo. HTTP, persistência e autenticação são
-camadas superiores do mesmo lote autorizado, ainda não integradas.
+Operação síncrona para ampliar os acervos **SIMULADO** e **PRATICA_AULA**, por JSON
+autossuficiente. Até 100 questões por pacote, sem teto acumulado de armazenamento.
+Tudo novo entra em DRAFT. A interface administrativa limita-se a login, senha e vínculo Google;
+não há upload/editorial na interface, aprovação HTTP, publicação de recursos, carga no startup ou suporte a templates. Os leitores locais antigos
+continuam aceitando seus próprios formatos sem conversão automática.
+
+## Acesso e operação local
+
+O primeiro ADM é criado uma única vez, atomicamente, após Flyway. `ADMIN_USERNAME`
+(opcional, padrão `admin`) e `ADMIN_PASSWORD` configuram apenas esse primeiro cadastro.
+Nome aceita 1–64 caracteres ASCII de letras, números, ponto, underscore e hífen.
+A senha escolhida deve ter de 15 a 128 caracteres Unicode, sem trim, normalização ou truncamento; UTF-16 malformado é recusado.
+Se a senha não for fornecida, são gerados 32 bytes aleatórios codificados em Base64url;
+a senha temporária aparece **uma vez no console privado do operador, após commit**.
+Essa saída contém um segredo: não a publicar em issue, relatório, captura ou logs de acesso.
+Reiniciar, mudar variáveis ou desabilitar o ADM não recria conta nem redefine sua senha.
+
+Na interface, abrir **Acesso administrativo**, entrar e trocar eventual senha temporária.
+Login por senha funciona com Google desativado e continua disponível após o vínculo.
+Senha temporária permite consultar identidade/conta, trocar senha e sair; não permite
+importar, vincular ou gravar tentativas autenticadas. Credenciais usam PBKDF2-HMAC-SHA256
+com sal aleatório de 16 bytes, 600.000 iterações e saída de 256 bits, em formato versionado.
+Senha/hash e tokens Google não são colocados no principal ou na sessão.
+
+Para vincular, confirmar a senha atual e escolher a conta no Google. A intenção privada
+expira em cinco minutos e é vinculada à sessão, state OIDC e versão da credencial.
+Não há associação por e-mail ou concessão pelo primeiro visitante. Se o Google ainda
+não possui conta, mantém-se o UUID ADM. Se já possui conta, seu UUID e histórico são
+preservados; somente credencial/permissão são transferidas, e apenas se o ADM local
+não tiver tentativas, comandos ou recibos. Nesse caso a fonte permanece cadastrada,
+inativa, e rejeita gravações atrasadas. Se houver histórico local, o vínculo retorna
+`LOCAL_ACCOUNT_HAS_HISTORY`, sem mesclagem. Concluir o vínculo antes de importar evita
+esse conflito quando já existe uma conta Google de estudo. Trocar/desvincular Google e
+gestão de vários administradores ficam para outra entrega.
+
+A autorização lê a permissão e a versão persistentes a cada requisição administrativa.
+Revogar via manutenção externa do cadastro (`enabled=false`) tem efeito sem reinício;
+reativar é uma operação deliberada do operador, não um endpoint público. Troca/recuperação
+de senha e vínculo incrementam a versão: acessos administrativos antigos são recusados,
+mesmo com cookie ainda válido para estudo. Sessões Google anteriores à concessão
+precisam autenticar novamente para obter acesso ADM. Não há fallback por UUID externo:
+remover `app.question-import.allowed-user-ids`; valor legado não vazio impede startup com
+diagnóstico genérico. A senha ADM não é a chave de confirmação de importação.
+
+Definir também `app.question-import.destination-id` (identificador lógico ASCII de
+até 100 caracteres, sem DSN) e `app.question-import.confirmation-key` (Base64 de 32–128
+bytes aleatórios externos). Configuração parcial/inválida falha sem imprimir valores. Se destino e chave estiverem
+ambos ausentes, cadastro/login ADM continuam disponíveis, e a importação retorna
+503 `IMPORT_NOT_CONFIGURED`, antes de ler o pacote.
+Usar configuração externa Spring, por exemplo `SPRING_APPLICATION_JSON` fornecido
+pelo ambiente, nunca segredo em argumentos, repositório ou `.env` versionado.
+Não reutilizar destino/chave entre bancos. Troca/restauração do banco lógico exige
+trocar o destino; rotação da chave invalida confirmações pendentes.
+
+1. Obter `/api/v1/csrf` na mesma sessão autenticada. Cookie continua HttpOnly.
+2. Enviar `POST /api/v1/admin/question-imports/preview` com `Content-Type:
+   application/json`, cookie e header CSRF informados pelo framework.
+3. Conferir coleção, destino, seleção, fingerprints, bases e relatório. A prévia
+   não persiste bytes, recibo, questão ou decisão, nem reserva IDs. STALE não emite token.
+4. Enviar a mesma estrutura acrescida de `confirmationToken` para
+   `POST /api/v1/admin/question-imports/apply` em até 15 minutos. Não renovar
+   confirmação automaticamente após conflito; revisar pacote/base e gerar nova prévia.
+5. Guardar o recibo e o pacote original em ambiente privado. Repetir a confirmação
+   válida após resposta perdida retorna o recibo original sem duplicação.
+
+O [exemplo de prévia](examples/administrative-question-import.json) é totalmente
+sintético e tem fingerprint verificável. Não o carregar em acervo real por este guia.
+Para simulado, usar `purpose=SIMULADO` e namespace `admin-question-v1`; para prática,
+`purpose=PRATICA_AULA`, namespace `lesson-practice-v1` e chave `admin.<identificador>`.
+Chaves têm até 100 caracteres ASCII alfanuméricos/ponto/hífen/underscore. As origens
+históricas de prática permanecem protegidas: a API não aceita suas chaves antigas.
+Cada pacote tem uma finalidade; importar ambos requer pacotes separados.
+
+## Sessão, contratos e recuperação
+
+Os novos contratos tipados estão em `backend/openapi.yaml`:
+
+| Rota | Operação |
+| --- | --- |
+| `POST /api/v1/admin/auth/login` | JSON `username`/`password`; 204 após rotação de sessão/CSRF |
+| `GET /api/v1/admin/account` | Estado privado: usuário, troca pendente, Google e disponibilidade da importação |
+| `POST /api/v1/admin/account/password` | JSON `currentPassword`/`newPassword`; 204, nova versão e sessão |
+| `POST /api/v1/admin/account/google-link` | JSON `currentPassword`; URL fixa para iniciar OIDC |
+
+Todos usam no-store; POST exige CSRF do framework, inclusive login. Buscar `/api/v1/csrf`
+na mesma sessão antes de cada mutação e novamente após login/troca. Corpos administrativos
+aceitam somente JSON UTF-8 estrito, até 8 KiB, sem compressão, campos extras, duplicados ou
+conteúdo depois do JSON. As rotas de importação mantêm o limite próprio de 16 MiB.
+`/me`, configuração pública Google, `/csrf` e logout mantêm os contratos anteriores.
+
+Cinco falhas de credencial em quinze minutos bloqueiam por quinze minutos no banco,
+inclusive entre instâncias. A origem de rede real recebe também um orçamento de trinta
+logins por quinze minutos/instância, incluindo tentativas bem-sucedidas; não se confia em
+X-Forwarded-For arbitrário. 429 inclui `Retry-After: 900`. A UI limpa senhas após uso,
+respeita o aviso de atividade visitante e não grava segredos em storage do navegador.
+
+Se perder a senha inicial ou a senha permanente, usar recuperação **local e deliberada**,
+com o schema V13 já aplicado. Fornecer `DB_URL`, `DB_USERNAME` e `DB_PASSWORD` externamente,
+sem argumentos com credenciais ou `.env` versionado. `DB_URL` deve apontar explicitamente
+para PostgreSQL no loopback, sem credenciais na URL; schema/timeouts admitidos seguem o
+validador do comando. Para banco remoto, usar o acesso local/túnel do operador, não
+relaxar a restrição do executável.
+
+```powershell
+./backend/gradlew.bat -p backend --offline --no-daemon administrativeRecovery
+```
+
+O comando apresenta destino e exige digitar `RESET ADM <DB_URL>` exatamente. Cancelar
+não abre o banco. Ele não executa Flyway/bootstrap, não cria conta ausente nem concede
+permissão a ADM desabilitado. Após commit, mostra nova senha temporária no console
+privado. Preserva Google e todo o histórico, incrementa a versão e exige nova troca;
+não existe reset por HTTP/e-mail. Uma falha depois do commit pode perder a saída: executar
+novamente o comando deliberado, sem interpretar ausência da mensagem como rollback.
 
 ## Formato e validação
 
@@ -49,8 +160,39 @@ invalida a confirmação. Ordem editorial de alternativas/referências/recursos 
 significativa. A confirmação HMAC vincula nonce, ator, destino, pacote, seleção e tempo;
 não substitui sessão, autorização ou CSRF. Token tem até 4 KiB e nunca é persistido.
 
-## Persistência atômica
+## Commit, falhas e dados privados
 
-V12 adiciona recibo, manifesto e blobs imutáveis. Rascunhos e evidências selecionadas
-compartilham o mesmo commit; conflitos conhecidos só permitem recuperação após rollback.
-A repetição da confirmação retorna o recibo original. Esta camada não aprova nem publica.
+Questões, revisões, evidências selecionadas e recibo compartilham um único commit.
+Erro de banco, evidência ou base provoca rollback integral. Uma resposta perdida pode
+ter ocorrido após commit; repetir resolve pelo nonce. Após expiração, nova prévia e
+reaplicação reutilizam conteúdo existente. Conteúdo histórico idêntico mantém sua revisão
+e não altera a última revisão, decisões ou elegibilidade, inclusive após retirada.
+
+Recibo contém ator, tempo do servidor, destino, digests e IDs/reutilização reais.
+Bytes privados são deduplicados por hash com verificação de igualdade e manifesto por
+recibo; não existe rota de download público. Não armazenar itens não selecionados ou
+token bruto. Evidência é imutável e sem limpeza automática; dimensionar backup restrito
+e crescimento de disco. Aprovação local posterior não distribui automaticamente assets.
+
+Erros: 400 envelope/JSON malformado; 401 sessão/principal inválido; 403 permissão/CSRF/
+origem; 409 confirmação/base; 413 corpo; 415 mediaType/encoding; 422 pacote inválido;
+429 capacidade; 503 indisponibilidade transitória conhecida; 500 erro técnico inesperado.
+Respostas são no-store e sanitizadas, sem gabaritos, bytes, stacktrace, segredo ou DSN.
+Falhas de entrada usam diagnóstico fixo INVALID_PACKAGE; conferir o pacote original
+privadamente. Não registrar body, cookies ou confirmationToken em proxy/log de acesso.
+
+Desabilitação operacional: revogar a permissão persistida (`enabled=false`), sem reinício; preservar tabelas,
+recibos e evidências. Não executar down migration ou apagar dados para rollback.
+
+## Responsabilidades e limites da verificação
+
+Spring Security decide autenticação, permissão técnica, CSRF e CORS antes do controller. A indisponibilidade de sessão é traduzida por filtro de infraestrutura anterior ao Spring Session, com 503/no-store e CORS para origens conhecidas.
+Adaptadores validam JSON/bytes/assinatura e traduzem HTTP; aplicação coordena seleção,
+confirmação e unidade atômica; domínio protege conteúdo/revisões; infraestrutura JPA
+persiste e conclui rollback/commit. SQL de recibos/bytea fica no repository e compartilha
+a transação de questões; native SQL evita mapeamento artificial de blobs como entidades.
+O controller não lê sessão/JPA, não cria token CSRF e não promove decisões editoriais.
+
+Testes usam fixtures e PostgreSQL isolado: não demonstram curadoria real, desempenho de
+produção ou revisão independente. Carga real, publicação e revisão por modelo exigem
+autorizações próprias. A proposta e a implementação local pertencem à issue #160.

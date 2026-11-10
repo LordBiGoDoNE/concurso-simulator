@@ -18,7 +18,7 @@ TABLES = {"application_marker", "app_user", "external_identity", "spring_session
           "qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision", "admin_registration"}
 
 
-SUPPORTED_SCHEMA_VERSIONS = (10, 11, 12)
+SUPPORTED_SCHEMA_VERSIONS = (10, 11, 12, 13)
 
 def postgres(path, config):
     container = compose(path, config, "ps", "-q", "postgres").decode().strip()
@@ -55,7 +55,7 @@ def private_json(path, value):
 def schema_version(path, config):
     versions = sql(path, config, "select version from flyway_schema_history where success order by installed_rank").decode().splitlines()
     if versions not in [[str(i) for i in range(1, version + 1)] for version in SUPPORTED_SCHEMA_VERSIONS]:
-        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V12)")
+        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V13)")
     return int(versions[-1])
 
 

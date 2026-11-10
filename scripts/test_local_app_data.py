@@ -30,11 +30,11 @@ class RecoveryGuards(unittest.TestCase):
                 command.assert_not_called()
 
     def test_schema_backup_accepts_only_complete_supported_histories(self):
-        for count in (10, 11, 12):
+        for count in (10, 11, 12, 13):
             versions=("\n".join(str(i) for i in range(1,count+1))+"\n").encode()
             with patch.object(local_app_data, "sql", return_value=versions):
                 self.assertEqual(count,local_app_data.schema_version(None,None))
-        for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,14))).encode()):
+        for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,15))).encode()):
             with patch.object(local_app_data,"sql",return_value=versions):
                 with self.assertRaises(ValueError):local_app_data.schema_version(None,None)
 
@@ -46,7 +46,7 @@ class RecoveryGuards(unittest.TestCase):
             self.assertTrue(path.is_relative_to(directory.resolve()))
             backups = path / "backups"; backups.mkdir()
             dump = backups / "synthetic.dump"; dump.write_bytes(b"synthetic-current-backup")
-            metadata = {"version": 1, "kind": "local-app-backup", "schema_version": 12,
+            metadata = {"version": 1, "kind": "local-app-backup", "schema_version": 13,
                         "source_project": "concurso-simulator-app-local-source", "source_owner": "a" * 32,
                         "source_sha": "b" * 40, "api_image": "sha256:" + "c" * 64,
                         "postgres_version": "18.6", "sessions": 1,
@@ -54,8 +54,8 @@ class RecoveryGuards(unittest.TestCase):
                         "sha256": hashlib.sha256(dump.read_bytes()).hexdigest()}
             manifest = Path(str(dump) + ".json")
             manifest.write_text(json.dumps(metadata))
-            self.assertEqual(12, local_app_data.verified_backup(dump)["schema_version"])
-            for table in ("qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision"):
+            self.assertEqual(13, local_app_data.verified_backup(dump)["schema_version"])
+            for table in ("qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision", "admin_registration"):
                 missing = dict(metadata); missing["tables"] = {t: v for t, v in metadata["tables"].items() if t != table}
                 manifest.write_text(json.dumps(missing))
                 with self.assertRaises(ValueError): local_app_data.verified_backup(dump)

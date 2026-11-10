@@ -48,3 +48,9 @@ conteúdo, finalidade, base ou bytes de qualquer arquivo, inclusive não selecio
 invalida a confirmação. Ordem editorial de alternativas/referências/recursos permanece
 significativa. A confirmação HMAC vincula nonce, ator, destino, pacote, seleção e tempo;
 não substitui sessão, autorização ou CSRF. Token tem até 4 KiB e nunca é persistido.
+
+## Persistência atômica
+
+V12 adiciona recibo, manifesto e blobs imutáveis. Rascunhos e evidências selecionadas
+compartilham o mesmo commit; conflitos conhecidos só permitem recuperação após rollback.
+A repetição da confirmação retorna o recibo original. Esta camada não aprova nem publica.

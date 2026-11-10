@@ -50,7 +50,7 @@ def migrate(container, version):
                    f"insert into spring_session_attributes values('{session}','synthetic',decode('01','hex'))")
     if version >= 12:
         sql(container, f"insert into qb_import_receipt values('{uuid.uuid4()}','synthetic','{actor}',now(),'{{}}')")
-    if version == 13:
+    if version >= 13:
         sql(container, f"update admin_registration set owner_id='{actor}',username='synthetic',password_hash='synthetic-noncredential'")
 
 
@@ -79,7 +79,7 @@ def check():
                     raise ValueError("PostgreSQL sintético não ficou pronto")
                 time.sleep(0.2)
         source_container, target_container = containers
-        for version in (10, 11, 12, 13):
+        for version in (10, 11, 12, 13, 14):
             reset(source_container, token)
             reset(target_container, token)
             migrate(source_container, version)
@@ -134,7 +134,7 @@ def check():
                  "checks": ["real-migrations", "custom-dump-restore", "business-fingerprints-preserved", "source-unchanged",
                             "read-only-preview", "restored-sessions-cleared", "occupied-destination-rejected", "schema-mismatch-blocked"],
                  "limits": "Synthetic PostgreSQL 18.6 without network/host ports. Lifecycle wiring substituted; no historical API image startup or operator data."})
-    print("BACKUP_SCHEMAS_PASS: V10/V11/V12/V13 dumps and restores validated")
+    print("BACKUP_SCHEMAS_PASS: V10/V11/V12/V13/V14 dumps and restores validated")
 
 
 if __name__ == "__main__":

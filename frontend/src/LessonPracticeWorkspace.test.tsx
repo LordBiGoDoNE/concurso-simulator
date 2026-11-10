@@ -4,19 +4,19 @@ import { useRef } from 'react';
 import LessonPracticeWorkspace, { type LessonPracticeHandle } from './LessonPracticeWorkspace';
 import { createLessonPractice, lessonPracticeTransport, lessonPracticeHistory, lessonPracticeAvailability } from './lesson-practice-api';
 import { lessons } from './study-catalog';
-import { view, result } from '../test/attempt-fixtures';
+import { view, result } from '../test/practice-fixtures';
 vi.mock('./lesson-practice-api',()=>({createLessonPractice:vi.fn(),lessonPracticeTransport:{read:vi.fn(),save:vi.fn(),finish:vi.fn(),result:vi.fn()},lessonPracticeHistory:vi.fn(),lessonPracticeAvailability:vi.fn()}));
 afterEach(()=>vi.resetAllMocks());
-const selection={topicId:'P01',disciplineId:'portugues',roleId:'assistente-administrativo'};
+const selection={topicId:'P01'};
 function Fixture({connected=false}:{connected?:boolean}) {
  const ref=useRef<LessonPracticeHandle>(null);
  return <><button onClick={()=>ref.current?.start(selection)}>Começar aula</button><LessonPracticeWorkspace ref={ref} identity={connected?{connected:true,googleEnabled:false,id:'90000000-0000-0000-0000-000000000001'}:{connected:false,googleEnabled:false}} contextActive onUnavailable={vi.fn()} onGuestActive={vi.fn()} onBackToLesson={vi.fn()} onChooseLesson={vi.fn()}/></>;
 }
-function setup(){vi.mocked(createLessonPractice).mockResolvedValue(view);vi.mocked(lessonPracticeTransport.read).mockResolvedValue(view);vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[]});vi.mocked(lessonPracticeAvailability).mockImplementation(async(topicId,roleId)=>({topicId,roleId,available:5,maximum:5}));}
+function setup(){vi.mocked(createLessonPractice).mockResolvedValue(view);vi.mocked(lessonPracticeTransport.read).mockResolvedValue(view);vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[]});vi.mocked(lessonPracticeAvailability).mockImplementation(async(topicId)=>({topicId,available:5,maximum:5}));}
 
 function inlineProps(topicId='P01') {
  return {identity:{connected:false as const,googleEnabled:false},contextActive:true,
-  inlineLesson:{topic:lessons.find(topic=>topic.id===topicId)!,roleId:view.roleId,onRoleChange:vi.fn()},
+  inlineLesson:{topic:lessons.find(topic=>topic.id===topicId)!},
   onUnavailable:vi.fn(),onGuestActive:vi.fn(),onBackToLesson:vi.fn(),onChooseLesson:vi.fn()};
 }
 function expand(){const summary=screen.getByText('Pratique esta aula');if(!summary.closest('details')!.open)fireEvent.click(summary);}
@@ -83,7 +83,7 @@ it('prática bloqueia sua troca durante salvamento e mostra correção somente a
  expect(screen.getByText('PRIVATE_ATTEMPT_RESOLUTION_SENTINEL')).toBeInTheDocument();expect(screen.queryByRole('radio')).not.toBeInTheDocument();
 });
 it('histórico próprio é reservado à conta e inclui o assunto',async()=>{
- setup();vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[{id:view.id,topicId:'P01',roleId:view.roleId,createdAt:view.createdAt,finishedAt:null,total:1,percentage:null}]});
+ setup();vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[{id:view.id,topicId:'P01',createdAt:view.createdAt,finishedAt:null,total:1,percentage:null}]});
  const r=render(<Fixture/>);expect(lessonPracticeHistory).not.toHaveBeenCalled();r.unmount();render(<Fixture connected/>);
  fireEvent.click(await screen.findByRole('button',{name:/Abrir prática de P01/}));await screen.findByRole('heading',{name:'Questão 1 de 1'});expect(lessonPracticeTransport.read).toHaveBeenCalledWith(view.id,expect.any(AbortSignal));
 });

@@ -5,7 +5,7 @@ import AttemptWorkspace from './AttemptWorkspace';
 import LessonPracticeWorkspace from './LessonPracticeWorkspace';
 import StudyHome from './StudyHome';
 import LessonLibrary, { LessonPagination } from './LessonLibrary';
-import { lessons } from './study-catalog';
+import { lessons, lessonSupportsRole } from './study-catalog';
 import type { CurrentIdentity } from './identity-api';
 import { useStudyNavigation, locationForRole, type Area } from './study-navigation';
 
@@ -36,7 +36,7 @@ export default function App() {
   const guestActive = useRef({attempt:false,practice:false}); const [privateNotice, setPrivateNotice] = useState('');
   const setGuestActive = useCallback((value: boolean) => { guestActive.current.attempt = value; }, []);
   const setPracticeGuestActive = useCallback((value: boolean) => { guestActive.current.practice = value; }, []);
-  const backToLesson = useCallback((id:string, roleId:string) => { updateRoute({ area: 'lessons', topicId: id, roleId }); }, [updateRoute]);
+  const backToLesson = useCallback((id:string) => { const topic=lessons.find(t=>t.id===id); updateRoute({ area: 'lessons', topicId: id, roleId: topic && lessonSupportsRole(topic,route.roleId) ? route.roleId : '' }); }, [updateRoute,route.roleId]);
   const lastAccountId = useRef<string | null>(null);
   const changedIdentity = useCallback((value: CurrentIdentity | null) => {
     if (value?.connected) {
@@ -86,7 +86,7 @@ export default function App() {
       {checking && area === 'attempts' && <p role="status">Conferindo acesso aos simulados…</p>}
       <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} />}</div>
       <div hidden={area !== 'lessons'}>{(lessonsOpened || area === 'lessons') && <LessonLibrary location={route} onLocationChange={(value, replace) => updateRoute({ ...value, area: 'lessons' }, replace)} showPagination={false} />}</div>
-      <div hidden={lesson ? false : checking || area !== 'practice'}><LessonPracticeWorkspace key={identity ? identity.connected ? identity.id : 'visitor' : 'no-identity'} identity={identity} contextActive={!checking && identity !== null} inlineLesson={lesson ? { topic: lesson, roleId: route.roleId, onRoleChange: roleId => updateRoute(locationForRole(route, roleId)) } : undefined} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson}/></div>
+      <div hidden={lesson ? false : checking || area !== 'practice'}><LessonPracticeWorkspace key={identity ? identity.connected ? identity.id : 'visitor' : 'no-identity'} identity={identity} contextActive={!checking && identity !== null} inlineLesson={lesson ? { topic: lesson } : undefined} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson}/></div>
       {lesson && <LessonPagination topicId={lesson.id} roleId={route.roleId} onSelect={topicId => updateRoute({ topicId })} />}
       <div hidden={area !== 'questions'}><QuestionBrowser /></div>
       <footer className="availability">

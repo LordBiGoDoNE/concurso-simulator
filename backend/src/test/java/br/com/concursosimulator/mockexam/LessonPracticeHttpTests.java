@@ -47,7 +47,7 @@ class LessonPracticeHttpTests {
     }
     @Test void arbitraryDestinationQuestionIdsAndQuantityAreRejectedBeforeWriting() throws Exception {
         var b=browser(null);var before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
-        for(var extra:List.of("\"purpose\":\"SIMULADO\"","\"questionIds\":[\""+UUID.randomUUID()+"\"]","\"quantity\":20")) {
+        for(var extra:List.of("\"roleId\":\"assistente-administrativo\"","\"purpose\":\"SIMULADO\"","\"questionIds\":[\""+UUID.randomUUID()+"\"]","\"quantity\":20")) {
             var original=start(UUID.randomUUID());var body=original.substring(0,original.length()-1)+","+extra+"}";
             var response=send("POST","/api/v1/lesson-practices",b,body);
             assertThat(response.statusCode()).isEqualTo(400);assertThat(response.body()).doesNotContain("PRACTICE_ONLY_","MOCK_ONLY_");
@@ -55,15 +55,19 @@ class LessonPracticeHttpTests {
         var mock="{\"commandId\":\""+UUID.randomUUID()+"\",\"roleId\":\"assistente-administrativo\",\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":1,\"topicIds\":[]}],\"purpose\":\"PRATICA_AULA\"}";
         assertThat(send("POST","/api/v1/attempts",b,mock).statusCode()).isEqualTo(400);
         assertThat(jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(before);
+        assertThat(send("GET","/api/v1/lesson-practices/availability?topicId=P01&roleId=assistente-administrativo",b,null).statusCode()).isEqualTo(400);
+        assertThat(send("GET","/api/v1/lesson-practices/availability?topicId=P01&topicId=P02",b,null).statusCode()).isEqualTo(400);
+        assertThat(send("POST","/api/v1/attempts",b,"{\"commandId\":\""+UUID.randomUUID()+"\",\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":1,\"topicIds\":[]}]}").statusCode()).isEqualTo(400);
     }
     @Test void visitorStartsDedicatedPracticeWithoutCompositionAndSeesCorrectionOnlyAfterFinish() throws Exception {
         var b=browser(null);var command=UUID.randomUUID();var payload=start(command);
         assertThat(send("POST","/api/v1/lesson-practices",new Browser(b.cookie(),null),payload).statusCode()).isEqualTo(403);
-        var availability=send("GET","/api/v1/lesson-practices/availability?roleId=assistente-administrativo&topicId=P01",b,null);
+        var availability=send("GET","/api/v1/lesson-practices/availability?topicId=P01",b,null);
         assertThat(availability.statusCode()).isEqualTo(200);assertThat(json.readTree(availability.body()).get("available").asInt()).isEqualTo(3);
         var created=send("POST","/api/v1/lesson-practices",b,payload);assertThat(created.statusCode()).isEqualTo(201);
         assertThat(created.body()).contains("PRACTICE_ONLY_").doesNotContain("MOCK_ONLY_","correctAlternativeId","resolution","percentage");
         var view=json.readTree(created.body());assertThat(view.get("items").size()).isEqualTo(3);
+        assertThat(view.has("roleId")).isFalse();assertThat(view.get("topicId").asString()).isEqualTo("P01");
         var again=send("POST","/api/v1/lesson-practices",b,payload);assertThat(again.statusCode()).isEqualTo(200);assertThat(again.body()).isEqualTo(created.body());
         var path="/api/v1/lesson-practices/"+view.get("id").asString();
         assertThat(send("GET",path+"/result",b,null).statusCode()).isEqualTo(409);
@@ -93,7 +97,33 @@ class LessonPracticeHttpTests {
         assertThat(publicPool.body()).doesNotContain("PRACTICE_ONLY_");
         assertThat(send("POST","/api/v1/lesson-practices",a,start(UUID.randomUUID()).replace("P01","P02")).statusCode()).isEqualTo(409);
     }
-    String start(UUID id) {return "{\"commandId\":\""+id+"\",\"roleId\":\"assistente-administrativo\",\"topicId\":\"P01\"}";}
+    @Test void historicalPracticeIsProjectedWithoutRoleAndCommandsRemainOperableThroughRealHttp() throws Exception {
+        var id=UUID.randomUUID();var b=account(id);var owner=new br.com.concursosimulator.mockexam.domain.AttemptOwner(br.com.concursosimulator.mockexam.domain.AttemptOwner.Kind.ACCOUNT,id);
+        var command=UUID.randomUUID();var old=TopicPracticeCompatibilityTests.legacy(context.getBean(br.com.concursosimulator.mockexam.application.AttemptStore.class),owner,command);
+        var path="/api/v1/lesson-practices/"+old.id();
+        var read=send("GET",path,b,null);assertThat(read.statusCode()).isEqualTo(200);
+        var projected=json.readTree(read.body());assertThat(projected.has("roleId")).isFalse();assertThat(projected.get("topicId").asString()).isEqualTo("P01");
+        assertThat(json.readTree(send("GET","/api/v1/me/lesson-practices",b,null).body()).get("items").get(0).has("roleId")).isFalse();
+        assertThat(send("POST","/api/v1/lesson-practices",b,start(command)).statusCode()).isEqualTo(409);
+        var item=old.items().getFirst();var answer="{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0,\"alternativeId\":\""+item.optionOrder().getFirst()+"\"}";
+        var saved=send("PUT",path+"/answers/"+item.id(),b,answer);assertThat(saved.statusCode()).isEqualTo(200);
+        assertThat(send("PUT",path+"/answers/"+item.id(),b,answer).body()).isEqualTo(saved.body());
+        var finish="{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":1}";
+        var result=send("POST",path+"/finish",b,finish);assertThat(result.statusCode()).isEqualTo(200);
+        assertThat(send("POST",path+"/finish",b,finish).body()).isEqualTo(result.body());
+        assertThat(json.readTree(result.body()).get("attempt").has("roleId")).isFalse();
+        var stored=json.readTree(jdbc.queryForObject("select payload::text from me_attempt where id=?",String.class,old.id()));
+        assertThat(stored.get("format").asInt()).isEqualTo(3);assertThat(stored.get("composition").isObject()).isTrue();
+        expire(b);
+        assertThat(send("GET",path,b,null).statusCode()).isEqualTo(404);
+        assertThat(send("POST",path+"/finish",b,finish).statusCode()).isEqualTo(403);
+    }
+    @SuppressWarnings({"unchecked","rawtypes"}) void expire(Browser b) {
+        SessionRepository<Session> repository=(SessionRepository)sessions;
+        var session=repository.findById(b.cookie().substring("SESSION=".length()));
+        session.setLastAccessedTime(Instant.now().minusSeconds(3600));repository.save(session);
+    }
+    String start(UUID id) {return "{\"commandId\":\""+id+"\",\"topicId\":\"P01\"}";}
     Browser browser(String cookie) throws Exception {
         var r=send("GET","/api/v1/csrf",new Browser(cookie,null),null);
         if(cookie==null)cookie=r.headers().firstValue("Set-Cookie").orElseThrow().split(";",2)[0];

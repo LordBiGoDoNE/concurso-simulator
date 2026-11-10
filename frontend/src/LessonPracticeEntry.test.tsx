@@ -4,9 +4,8 @@ import LessonPracticeEntry from './LessonPracticeEntry';
 import { lessons } from './study-catalog';
 
 const topic = lessons.find(t => t.id === 'P01')!;
-const roleId = 'assistente-administrativo';
-const response = (available = 5, patch = {}) => ({ ok: true, status: 200, json: async () => ({ topicId: topic.id, roleId, available, maximum: 5, ...patch }) });
-const props = () => ({ topic, roleId, onRoleChange: vi.fn(), onPractice: vi.fn(), active: true });
+const response = (available = 5, patch = {}) => ({ ok: true, status: 200, json: async () => ({ topicId: topic.id, available, maximum: 5, ...patch }) });
+const props = () => ({ topic, onPractice: vi.fn(), active: true });
 afterEach(() => vi.unstubAllGlobals());
 
 it('só permite início após disponibilidade confirmada e clique explícito', async () => {
@@ -19,9 +18,9 @@ it('só permite início após disponibilidade confirmada e clique explícito', a
   expect(screen.getByRole('status')).toHaveTextContent('até 5 questões');
   expect(value.onPractice).not.toHaveBeenCalled();
   fireEvent.click(screen.getByRole('button', { name: 'Começar prática' }));
-  expect(value.onPractice).toHaveBeenCalledWith({ roleId, topicId: 'P01', disciplineId: 'portugues' });
+  expect(value.onPractice).toHaveBeenCalledWith({ topicId: 'P01' });
   expect(fetchMock).toHaveBeenCalledTimes(1);
-  expect(fetchMock.mock.calls[0]).toEqual([expect.stringContaining('/availability?topicId=P01&roleId='), expect.objectContaining({ method: 'GET' })]);
+  expect(fetchMock.mock.calls[0]).toEqual([expect.stringContaining('/availability?topicId=P01'), expect.objectContaining({ method: 'GET' })]);
 });
 it('acervo vazio é distinto de erro e não cria prática', async () => {
   vi.stubGlobal('fetch', vi.fn(async () => response(0)));
@@ -40,11 +39,11 @@ it.each([{ roleId: 'outro' }, { topicId: 'M01' }, { available: -1 }, { available
   await waitFor(() => expect(screen.getByRole('button', { name: 'Começar prática' })).toBeEnabled());
   expect(value.onPractice).not.toHaveBeenCalled();
 });
-it('ignora consulta tardia de outro cargo e não inicia ao trocar cargo', async () => {
+it('ignora consulta tardia de outro assunto e não inicia ao trocar aula', async () => {
   let complete!: (value: unknown) => void;
-  vi.stubGlobal('fetch', vi.fn().mockImplementationOnce(() => new Promise(resolve => { complete = resolve; })).mockResolvedValue(response(0, { roleId: 'secretario-de-escola' })));
+  vi.stubGlobal('fetch', vi.fn().mockImplementationOnce(() => new Promise(resolve => { complete = resolve; })).mockResolvedValue(response(0, { topicId: 'M01' })));
   const value = props();const mounted = render(<LessonPracticeEntry {...value} />);
-  mounted.rerender(<LessonPracticeEntry {...value} roleId="secretario-de-escola" />);
+  mounted.rerender(<LessonPracticeEntry {...value} topic={lessons.find(t => t.id === 'M01')!} />);
   await screen.findByText(/ainda não tem questões/);
   await act(async () => complete(response(5)));
   expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();

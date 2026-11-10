@@ -15,7 +15,7 @@ TABLES = {"application_marker", "app_user", "external_identity", "spring_session
           "qb_discipline", "qb_role", "qb_topic", "qb_question", "qb_revision", "qb_alternative", "qb_revision_role",
           "qb_reference", "qb_decision", "me_attempt", "me_item", "me_command", "pq_family", "pq_version",
           "pq_decision", "pq_instance", "flyway_schema_history",
-          "qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision"}
+          "qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision", "admin_registration"}
 
 
 SUPPORTED_SCHEMA_VERSIONS = (10, 11, 12)

@@ -50,12 +50,11 @@ public class GoogleLoginHandlers implements AuthenticationSuccessHandler, Authen
                 return;
             }
             var external = new ExternalIdentity("google", "https://accounts.google.com", user.getSubject());
-            if(administrative.completeLink(request,response,external)) {
-                clients.removeAuthorizedClient("google",authentication,request,response);
-                return;
-            }
-            var minimal = administrative.googleAuthentication(identities.execute(external));
+            // A link completion may redirect, which commits Spring Session immediately.
+            // Remove provider credentials before entering any completion/response path.
             clients.removeAuthorizedClient("google", authentication, request, response);
+            if(administrative.completeLink(request,response,external)) return;
+            var minimal = administrative.googleAuthentication(identities.execute(external));
             var context = SecurityContextHolder.createEmptyContext();
             context.setAuthentication(minimal);
             SecurityContextHolder.setContext(context);

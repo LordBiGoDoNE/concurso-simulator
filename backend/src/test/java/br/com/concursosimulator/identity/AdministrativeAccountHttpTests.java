@@ -37,6 +37,22 @@ class AdministrativeAccountHttpTests {
     UUID local;
     final JsonMapper json=JsonMapper.builder().build();
     @BeforeEach void isolatedCredential(){
+        // Reject every intermediate JDBC write, including sendRedirect's early session commit.
+        // A final-row assertion misses tokens written and subsequently removed by the handler.
+        jdbc.execute("""
+                create or replace function reject_oauth_session_secrets() returns trigger language plpgsql as $$
+                begin
+                    if position('fixture-access-'::bytea in NEW.attribute_bytes)>0
+                        or position('fixture-refresh-'::bytea in NEW.attribute_bytes)>0
+                        or position('OAuth2AuthorizedClient'::bytea in NEW.attribute_bytes)>0
+                        or position('OidcIdToken'::bytea in NEW.attribute_bytes)>0 then
+                        raise exception 'OAuth secrets must never reach the session store' using errcode='23514';
+                    end if;
+                    return NEW;
+                end $$
+                """);
+        jdbc.execute("drop trigger if exists reject_oauth_session_secrets on spring_session_attributes");
+        jdbc.execute("create trigger reject_oauth_session_secrets before insert or update on spring_session_attributes for each row execute function reject_oauth_session_secrets()");
         local=UUID.randomUUID();jdbc.update("insert into app_user(id) values (?)",local);
         jdbc.update("update admin_registration set owner_id=?,password_hash=?,must_change=false,enabled=true,auth_version=auth_version+1,failed_attempts=0,failure_window=null,blocked_until=null",local,passwords.encode(PASSWORD));
         OIDC.mode="valid";OIDC.subject="http-"+UUID.randomUUID();

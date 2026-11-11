@@ -38,7 +38,8 @@ triagem editorial: a separação de IDs não prova originalidade de conteúdo.
 
 Consulta pública padrão e pool do compositor filtram antes de contar/paginar ou
 capturar. Histórico e janela de métricas filtram modalidade antes do limite. A
-prática captura modo/assunto em snapshot formato3 e aceita apenas fontes fixas;
+prática nova captura modo/assunto em snapshot formato4, com `composition: null`,
+e aceita apenas fontes fixas. Práticas históricas formato3 preservam sua composição;
 formatos1/2 continuam simulados. O codec preserva campos imutáveis do JSON antigo
 ao salvar resposta/conclusão, sem acrescentar modalidade nesses formatos.
 

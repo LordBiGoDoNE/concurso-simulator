@@ -145,13 +145,14 @@ Um backup que falhou não deve ser usado: somente `.dump` com `.dump.json` valid
 
 Artefatos em `.local/backups/` são privados: incluem capturas, contas e sessões.
 Não os publique como artefatos de CI, issues ou commits. Metadados registram origem,
-SHA, imagem API, schema V10–V13, versão PostgreSQL, contagens e hashes. Checksum detecta
+SHA, imagem API, schema V10–V14, versão PostgreSQL, contagens e hashes. Checksum detecta
 corrupção acidental; não autentica um dump de terceiro. Restaure somente backups
 confiáveis da ferramenta. Papéis globais, configurações, imagens e segredos ficam
 fora do dump. Preserve também o estado original e as imagens por ID.
 
 O inventário é fechado por versão: V10/V11 usam as tabelas originais; V12 inclui
-qb_import_receipt/blob/file/revision; V13 inclui também admin_registration. Banco e
+qb_import_receipt/blob/file/revision; V13 inclui também admin_registration; V14 preserva esse mesmo inventário e
+adiciona captura por assunto sem cargo. Banco e
 manifesto devem corresponder exatamente ao inventário e ao histórico Flyway completo.
 Não basta pertencer ao inventário da versão atual. Essa regra preserva a recuperação
 de backups anteriores sem aceitar tabelas ausentes, extras ou versões desconhecidas.

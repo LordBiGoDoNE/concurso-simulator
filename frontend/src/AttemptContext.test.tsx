@@ -2,9 +2,10 @@ import { act, fireEvent, render, screen, waitFor, within } from '@testing-librar
 import { afterEach, expect, it, vi } from 'vitest';
 import App from './App';
 import { view } from '../test/attempt-fixtures';
+import { view as practice } from '../test/practice-fixtures';
 import { catalog, emptyPage, response } from '../test/question-fixtures';
 const userA = '90000000-0000-0000-0000-000000000001'; const userB = '90000000-0000-0000-0000-000000000002';
-const practiceView = { ...view, id: '80000000-0000-0000-0000-000000000001', items: [{ ...view.items[0], questionId: '80000000-0000-0000-0000-000000000002', statement: { text: 'OWN_PRACTICE_STATEMENT', resources: [] } }] };
+const practiceView = { ...practice, id: '80000000-0000-0000-0000-000000000001', items: [{ ...view.items[0], questionId: '80000000-0000-0000-0000-000000000002', statement: { text: 'OWN_PRACTICE_STATEMENT', resources: [] } }] };
 const privateView = { ...view, items: [{ ...view.items[0], statement: { text: 'PRIVATE_CONTEXT_STATEMENT', resources: [] } }] };
 afterEach(() => { vi.restoreAllMocks();vi.unstubAllGlobals(); });
 function api(initial: string | null, denied?: { status: number; stalled: boolean }, history = false) {
@@ -19,7 +20,7 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
     if (url.includes('/question-bank/questions')) return response(emptyPage);
     if (url.includes('/lesson-practices/availability')) {
       const params = new URL(url).searchParams;
-      return response({topicId:params.get('topicId'),roleId:params.get('roleId'),available:5,maximum:5});
+      return response({topicId:params.get('topicId'),available:5,maximum:5});
     }
     if (url.includes('/me/lesson-practices')) return response({page:0,size:20,items:[]});
     if (url.endsWith('/lesson-practices') && options?.method === 'POST') return response(practiceView,201);

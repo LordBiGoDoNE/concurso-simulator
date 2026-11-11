@@ -30,10 +30,10 @@ class LessonPracticePersistenceTests {
             var old=new AttemptUseCases(store,Clock.fixed(NOW,ZoneOffset.UTC),UUID::randomUUID,()->new Random(17));
             var mock=old.create(ACCOUNT,UUID.randomUUID(),composition(1)).attempt();
             var payload=db.jdbc.queryForObject("select payload::text from me_attempt where id=?",String.class,mock.id());
-            db.migrate("11");seedPractice(db,6);
+            db.migrate("14");seedPractice(db,6);
             assertThat(db.jdbc.queryForObject("select payload::text from me_attempt where id=?",String.class,mock.id())).isEqualTo(payload);
             var practice=LessonPracticeUseCasesTests.practice(store,NOW.plusSeconds(1));
-            var started=practice.createPractice(ACCOUNT,UUID.randomUUID(),TargetRole.ADMINISTRATIVE_ASSISTANT,Topic.P01).attempt();
+            var started=practice.createPractice(ACCOUNT,UUID.randomUUID(),Topic.P01).attempt();
             assertThat(started.items()).hasSize(5);assertThat(practice.read(ACCOUNT,started.id())).isEqualTo(started);
             assertThat(old.history(ACCOUNT,new AttemptStore.HistoryQuery(0,1,null))).singleElement().satisfies(e->assertThat(e.id()).isEqualTo(mock.id()));
             assertThat(practice.history(ACCOUNT,new AttemptStore.HistoryQuery(0,1,null,QuestionPurpose.PRATICA_AULA))).singleElement().satisfies(e->assertThat(e.id()).isEqualTo(started.id()));
@@ -50,11 +50,11 @@ class LessonPracticePersistenceTests {
     }
     @Test void databaseRejectsChangingThePoolOrAStoredAttemptContext() {
         try(var db=new AttemptDatabase(PG)) {
-            db.migrate("11");seedPractice(db,1);
+            db.migrate("14");seedPractice(db,1);
             var q=db.jdbc.queryForObject("select id from qb_question where purpose='PRATICA_AULA'",UUID.class);
             assertThatThrownBy(()->db.jdbc.update("update qb_question set origin_namespace='legacy-v3' where id=?",q)).isInstanceOf(org.springframework.dao.DataAccessException.class);
             var practice=LessonPracticeUseCasesTests.practice(new JpaAttemptStore(db.entities,db.manager,db.pool),NOW);
-            var v=practice.createPractice(VISITOR,UUID.randomUUID(),TargetRole.ADMINISTRATIVE_ASSISTANT,Topic.P01).attempt();
+            var v=practice.createPractice(VISITOR,UUID.randomUUID(),Topic.P01).attempt();
             assertThatThrownBy(()->db.jdbc.update("update me_attempt set payload=jsonb_set(jsonb_set(payload,'{purpose}',to_jsonb('SIMULADO'::text)),'{version}',to_jsonb(version+1)),version=version+1 where id=?",v.id())).isInstanceOf(org.springframework.dao.DataAccessException.class);
             assertThat(practice.read(VISITOR,v.id())).isEqualTo(v);
         }

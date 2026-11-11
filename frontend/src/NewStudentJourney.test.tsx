@@ -8,7 +8,7 @@ function api(offline = false) {
     const url = new URL(input);
     const body = url.pathname.endsWith('/auth/config') ? { googleEnabled: false }
       : url.pathname.endsWith('/me') ? null
-      : url.pathname.endsWith('/availability') ? { topicId: url.searchParams.get('topicId'), roleId: url.searchParams.get('roleId'), available: 0, maximum: 5 }
+      : url.pathname.endsWith('/availability') ? { topicId: url.searchParams.get('topicId'), available: 0, maximum: 5 }
       : url.pathname.endsWith('/status') ? { status: 'UP' } : {};
     return { ok: body !== null, status: body === null ? 401 : 200, json: async () => body };
   });
@@ -35,7 +35,7 @@ it('compartilha/restaura aula e filtros, mantendo acervo vazio distinto de falha
   fireEvent.click(screen.getByText('Pratique esta aula'));
   await screen.findByText(/ainda não tem questões próprias/);
   expect(screen.getByRole('heading', { name: 'Interpretação de Textos' })).toBeVisible();
-  expect(screen.getByLabelText('Cargo para praticar esta aula')).toHaveValue('secretario-de-escola');
+  expect(screen.queryByLabelText('Cargo para praticar esta aula')).not.toBeInTheDocument();
   expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   first.unmount();render(<App />);fireEvent.click(screen.getByText('Pratique esta aula'));
   await screen.findByText(/ainda não tem questões próprias/);

@@ -138,3 +138,11 @@ tasks.register<JavaExec>("administrativeBrowserFixture") {
     classpath = sourceSets.test.get().runtimeClasspath
     mainClass.set("br.com.concursosimulator.identity.AdministrativeBrowserFixture")
 }
+
+tasks.register<JavaExec>("topicPracticeBrowserFixture") {
+    group = "verification"
+    description = "Isolated topic-practice fixture on ports 19160/19161; never packaged in bootJar"
+    dependsOn(tasks.testClasses)
+    classpath = sourceSets.test.get().runtimeClasspath
+    mainClass.set("br.com.concursosimulator.mockexam.TopicPracticeBrowserFixture")
+}

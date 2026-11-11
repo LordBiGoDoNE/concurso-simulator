@@ -250,7 +250,7 @@ paths:
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
   /api/v1/lesson-practices:
     post:
-      summary: Iniciar prática de até cinco questões próprias da aula/cargo; correção ao encerrar
+      summary: Iniciar prática de até cinco questões próprias da aula, sem cargo; correção ao encerrar
       security: [{}, {sessionCookie: []}]
       parameters:
         - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
@@ -260,8 +260,8 @@ paths:
           application/json:
             schema: {$ref: '#/components/schemas/LessonPracticeCreate'}
       responses:
-        '201': {description: Criada; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
-        '200': {description: Replay confirmado; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '201': {description: Criada; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeView'}}}}
+        '200': {description: Replay confirmado; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeView'}}}}
         '400': {$ref: '#/components/responses/QuestionInvalid'}
         '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
         '403': {$ref: '#/components/responses/AttemptForbidden'}
@@ -274,7 +274,7 @@ paths:
     get:
       summary: Consultar snapshot e respostas próprias, sem correção ou nota parcial
       responses:
-        '200': {description: Tentativa do dono; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '200': {description: Tentativa do dono; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeView'}}}}
         '400': {$ref: '#/components/responses/QuestionInvalid'}
         '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
         '404': {$ref: '#/components/responses/AttemptNotFound'}
@@ -293,7 +293,7 @@ paths:
           application/json:
             schema: {$ref: '#/components/schemas/AttemptAnswer'}
       responses:
-        '200': {description: Resposta confirmada ou replay; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptView'}}}}
+        '200': {description: Resposta confirmada ou replay; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeView'}}}}
         '400': {$ref: '#/components/responses/QuestionInvalid'}
         '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
         '403': {$ref: '#/components/responses/AttemptForbidden'}
@@ -313,7 +313,7 @@ paths:
           application/json:
             schema: {$ref: '#/components/schemas/AttemptFinish'}
       responses:
-        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptFinished'}}}}
+        '200': {description: Resultado do snapshot concluído; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeFinished'}}}}
         '400': {$ref: '#/components/responses/QuestionInvalid'}
         '401': {$ref: '#/components/responses/AttemptUnauthenticated'}
         '403': {$ref: '#/components/responses/AttemptForbidden'}
@@ -348,10 +348,9 @@ paths:
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
   /api/v1/lesson-practices/availability:
     get:
-      summary: Quantidade aprovada exclusiva de prática por assunto e cargo
+      summary: Quantidade aprovada exclusiva de prática por assunto, sem cargo
       parameters:
         - {in: query, name: topicId, required: true, schema: {type: string}}
-        - {in: query, name: roleId, required: true, schema: {type: string}}
       responses:
         '200': {description: Acervo próprio; maximum cinco; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/LessonPracticeAvailability'}}}}
         '400': {$ref: '#/components/responses/QuestionInvalid'}
@@ -765,21 +764,37 @@ components:
         statement: {$ref: '#/components/schemas/QuestionText'}
         alternatives: {type: array, minItems: 2, items: {$ref: '#/components/schemas/QuestionAlternative'}}
         references: {type: array, minItems: 1, items: {$ref: '#/components/schemas/QuestionReference'}}
+    LessonPracticeView:
+      type: object
+      additionalProperties: false
+      required: [id, topicId, createdAt, finishedAt, version, items]
+      properties:
+        id: {type: string, format: uuid}
+        topicId: {type: string}
+        createdAt: {type: string, format: date-time}
+        finishedAt: {type: [string, 'null'], format: date-time}
+        version: {type: integer, minimum: 0}
+        items: {type: array, minItems: 1, maxItems: 5, items: {$ref: '#/components/schemas/AttemptItem'}}
+    LessonPracticeFinished:
+      type: object
+      additionalProperties: false
+      required: [attempt, result]
+      properties:
+        attempt: {$ref: '#/components/schemas/LessonPracticeView'}
+        result: {$ref: '#/components/schemas/AttemptResult'}
     LessonPracticeCreate:
       type: object
       additionalProperties: false
-      required: [commandId, roleId, topicId]
+      required: [commandId, topicId]
       properties:
         commandId: {type: string, format: uuid}
-        roleId: {type: string, enum: [assistente-administrativo, secretario-de-escola]}
         topicId: {type: string}
     LessonPracticeAvailability:
       type: object
       additionalProperties: false
-      required: [topicId, roleId, available, maximum]
+      required: [topicId, available, maximum]
       properties:
         topicId: {type: string}
-        roleId: {type: string}
         available: {type: integer, minimum: 0}
         maximum: {type: integer, const: 5}
     LessonPracticeHistory:
@@ -794,10 +809,9 @@ components:
           items:
             type: object
             additionalProperties: false
-            required: [id, roleId, topicId, createdAt, finishedAt, total, percentage]
+            required: [id, topicId, createdAt, finishedAt, total, percentage]
             properties:
               id: {type: string, format: uuid}
-              roleId: {type: string}
               topicId: {type: string}
               createdAt: {type: string, format: date-time}
               finishedAt: {type: [string, 'null'], format: date-time}

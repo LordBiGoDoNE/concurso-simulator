@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import { view } from '../test/attempt-fixtures';
+import { view } from '../test/practice-fixtures';
 import { catalog, emptyPage } from '../test/question-fixtures';
 import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -18,7 +18,7 @@ test.beforeEach(async ({ page }) => {
     if (path.endsWith('/me')) return route.fulfill({ status: 401, json: {} });
     if (path.endsWith('/catalog')) return route.fulfill({ json: catalog });
     if (path.endsWith('/question-bank/questions')) return route.fulfill({ json: emptyPage });
-    if (path.endsWith('/availability')) return route.fulfill({ json: { topicId: url.searchParams.get('topicId'), roleId: url.searchParams.get('roleId'), available: 5, maximum: 5 } });
+    if (path.endsWith('/availability')) return route.fulfill({ json: { topicId: url.searchParams.get('topicId'), available: 5, maximum: 5 } });
     if (path.endsWith('/csrf')) return route.fulfill({ json: { token: 'fixture', headerName: 'X-CSRF-TOKEN' } });
     if (path.includes('/lesson-practices')) {
       const practice = { ...view, items: [view.items[0]] };
@@ -82,7 +82,7 @@ test('sem API, o novo estudante chega à aula e recebe erro de consulta, sem fal
 test('consulta vazia, falha e nova consulta não criam atividades', async ({ page }) => {
   let phase = 'empty', creates = 0;
   page.on('request', request => { if (request.method() === 'POST' && /\/api\/v1\/(?:lesson-practices|attempts)(?:\/|$)/.test(request.url())) creates++; });
-  await page.route('**/lesson-practices/availability?**', route => phase === 'error' ? route.abort() : route.fulfill({ json: { topicId: 'P01', roleId: 'assistente-administrativo', available: phase === 'empty' ? 0 : 5, maximum: 5 } }));
+  await page.route('**/lesson-practices/availability?**', route => phase === 'error' ? route.abort() : route.fulfill({ json: { topicId: 'P01', available: phase === 'empty' ? 0 : 5, maximum: 5 } }));
   await page.goto('/#/aulas/P01?cargo=assistente-administrativo');
   await openPracticePanel(page);
   await expect(page.getByText(/ainda não tem questões próprias/)).toBeVisible();

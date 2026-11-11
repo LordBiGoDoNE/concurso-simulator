@@ -31,11 +31,11 @@ class RecoveryGuards(unittest.TestCase):
                 command.assert_not_called()
 
     def test_schema_backup_accepts_only_complete_supported_histories(self):
-        for count in (10, 11, 12, 13):
+        for count in (10, 11, 12, 13, 14):
             versions=("\n".join(str(i) for i in range(1,count+1))+"\n").encode()
             with patch.object(local_app_data, "sql", return_value=versions):
                 self.assertEqual(count,local_app_data.schema_version(None,None))
-        for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,15))).encode()):
+        for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,16))).encode()):
             with patch.object(local_app_data,"sql",return_value=versions):
                 with self.assertRaises(ValueError):local_app_data.schema_version(None,None)
 
@@ -99,7 +99,8 @@ ORIGINAL_TABLES = {"application_marker", "app_user", "external_identity", "sprin
                    "pq_decision", "pq_instance", "flyway_schema_history"}
 IMPORT_EVIDENCE = {"qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision"}
 EXPECTED = {10: ORIGINAL_TABLES, 11: ORIGINAL_TABLES, 12: ORIGINAL_TABLES | IMPORT_EVIDENCE,
-            13: ORIGINAL_TABLES | IMPORT_EVIDENCE | {"admin_registration"}}
+            13: ORIGINAL_TABLES | IMPORT_EVIDENCE | {"admin_registration"},
+            14: ORIGINAL_TABLES | IMPORT_EVIDENCE | {"admin_registration"}}
 
 
 class HistoricalBackupSchemas(unittest.TestCase):
@@ -149,7 +150,7 @@ class HistoricalBackupSchemas(unittest.TestCase):
 
     def test_declared_schema_type_and_checksum_remain_strict(self):
         with self.manifest(11) as (_, dump, metadata):
-            for version in (9, 14, "11", 11.0, True, None):
+            for version in (9, 15, "11", 11.0, True, None):
                 with self.subTest(schema=version):
                     self.write_manifest(dump, dict(metadata, schema_version=version))
                     with self.assertRaises(ValueError): local_app_data.verified_backup(dump)

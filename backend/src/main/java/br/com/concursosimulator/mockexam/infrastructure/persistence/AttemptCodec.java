@@ -5,7 +5,7 @@ import br.com.concursosimulator.questionbank.domain.QuestionPurpose;
 import tools.jackson.databind.json.JsonMapper;
 import tools.jackson.databind.node.ObjectNode;
 
-/** Os formatos1/2 continuam com os bytes imutáveis de origem; prática utiliza formato3. */
+/** Os formatos1/2 continuam com os bytes imutáveis de origem; práticas novas utilizam formato4. */
 final class AttemptCodec {
     private final JsonMapper json=JsonMapper.builder().build();
     Attempt.Snapshot decode(String payload) {
@@ -18,7 +18,7 @@ final class AttemptCodec {
         } else {
             if (!node.get("format").isIntegralNumber()) throw new IllegalStateException("Formato inválido");
             format=node.get("format").asInt();
-            if (format!=2 && format!=3) throw new IllegalStateException("Formato de snapshot desconhecido");
+            if (format!=2 && format!=3 && format!=4) throw new IllegalStateException("Formato de snapshot desconhecido");
         }
         if (format<3) {
             if (node.has("purpose") || node.has("practiceTopic")) throw new IllegalStateException("Modalidade nova em formato antigo");
@@ -42,7 +42,7 @@ final class AttemptCodec {
         question.set("source",json.valueToTree(QuestionSource.fixed()));
     }
     String encode(Attempt.Snapshot snapshot,String original) {
-        if (snapshot.format()==3) return json.writeValueAsString(snapshot);
+        if (snapshot.format()>=3) return json.writeValueAsString(snapshot);
         ObjectNode node;
         if (original!=null) {
             if (decode(original).format()!=snapshot.format()) throw new IllegalStateException("Formato alterado");

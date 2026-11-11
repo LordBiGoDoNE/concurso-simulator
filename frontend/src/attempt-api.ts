@@ -2,11 +2,13 @@ import { identityApiUrl } from './identity-api';
 import type { Classification, Content, Detail } from './question-api';
 
 export interface AttemptItem extends Detail { id: string; selectedAlternativeId: string | null }
-export interface AttemptView { id: string; roleId: string; createdAt: string; finishedAt: string | null; version: number; items: AttemptItem[] }
+export interface RunView { id: string; createdAt: string; finishedAt: string | null; version: number; items: AttemptItem[] }
+export interface AttemptView extends RunView { roleId: string }
 export interface Composition { roleId: string; disciplines: { disciplineId: string; quantity: number; topicIds: string[] }[]; useParameterizedQuestions?: boolean }
 export interface Answer { commandId: string; expectedVersion: number; alternativeId: string | null }
 export interface Result { total: number; points: number; correct: number; wrong: number; blank: number; percentage: number; items: { item: AttemptItem; correctAnswer: Content; explanation: Content }[] }
-export interface Finished { attempt: AttemptView; result: Result }
+export interface RunFinished { attempt: RunView; result: Result }
+export interface Finished extends RunFinished { attempt: AttemptView }
 export interface HistoryItem { id: string; roleId: string; createdAt: string; finishedAt: string | null; total: number; percentage: number | null }
 export interface HistoryPage { items: HistoryItem[]; page: number; size: number }
 export class AttemptApiError extends Error {
@@ -37,11 +39,13 @@ export function item(v: unknown) {
   ensure(new Set(ids).size === ids.length && (r.selectedAlternativeId === null || ids.includes(r.selectedAlternativeId)));
   list(r.references); r.references.forEach(v => { const a = row(v, ['name', 'url']); text(a.name); text(a.url); const u = new URL(a.url); ensure(['http:', 'https:'].includes(u.protocol) && !u.username && !u.password); });
 }
-export function validateAttempt(v: unknown): asserts v is AttemptView {
-  const r = row(v, ['id', 'roleId', 'createdAt', 'finishedAt', 'version', 'items']); id(r.id); text(r.roleId); date(r.createdAt); if (r.finishedAt !== null) date(r.finishedAt); number(r.version);
+export function validateRun(v: unknown, context: 'roleId' | 'topicId'): asserts v is RunView {
+  const r = row(v, ['id', context, 'createdAt', 'finishedAt', 'version', 'items']); id(r.id); text(r[context]); date(r.createdAt); if (r.finishedAt !== null) date(r.finishedAt); number(r.version);
   list(r.items); ensure(r.items.length >= 1 && r.items.length <= 100); r.items.forEach(item);
   ensure(new Set(r.items.map(i => (i as AttemptItem).id)).size === r.items.length && new Set(r.items.map(i => (i as AttemptItem).questionId)).size === r.items.length);
 }
+export function validateAttempt(v: unknown): asserts v is AttemptView { validateRun(v, 'roleId'); }
+
 function history(v: unknown): asserts v is HistoryPage {
   const r = row(v, ['items', 'page', 'size']); number(r.page); number(r.size); ensure(Number(r.size) >= 1 && Number(r.size) <= 100); list(r.items);
   r.items.forEach(v => { const e = row(v, ['id', 'roleId', 'createdAt', 'finishedAt', 'total', 'percentage']); id(e.id); text(e.roleId); date(e.createdAt); number(e.total);
@@ -83,7 +87,13 @@ export const attemptHistory = (page: number, signal: AbortSignal) => request<His
 
 
 // Transporte substituível: mesma fila/invariantes, recursos HTTP próprios por modalidade.
-export interface AttemptTransport {
+export interface RunTransport {
+  read: (id: string, signal: AbortSignal) => Promise<RunView>;
+  save: (id: string, itemId: string, answer: Answer, signal: AbortSignal) => Promise<RunView>;
+  finish: (id: string, commandId: string, expectedVersion: number, signal: AbortSignal) => Promise<RunFinished>;
+  result: (id: string, signal: AbortSignal) => Promise<Result>;
+}
+export interface AttemptTransport extends RunTransport {
   read: typeof readAttempt;
   save: typeof saveAnswer;
   finish: typeof finishAttempt;

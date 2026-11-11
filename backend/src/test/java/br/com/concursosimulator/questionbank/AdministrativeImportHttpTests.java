@@ -149,11 +149,11 @@ class AdministrativeImportHttpTests {
         for(var id:ids)for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE))questions.transaction(s->{
             var q=s.loadForUpdate(id).orElseThrow();q.decide(new EditorialDecision(action,q.id(),q.latest().id(),q.latest().fingerprint(),"Synthetic test only",java.time.Instant.now(),Set.of(EditorialDecision.Check.values()),"Not editorial approval of real material"));s.save(q);return null;
         });
-        var available=practice.practiceAvailability(TargetRole.ADMINISTRATIVE_ASSISTANT,Topic.P01);
+        var available=practice.practiceAvailability(Topic.P01);
         assertThat(available.available()).isEqualTo(6);assertThat(available.maximum()).isEqualTo(5);
-        var started=practice.createPractice(new br.com.concursosimulator.mockexam.domain.AttemptOwner(br.com.concursosimulator.mockexam.domain.AttemptOwner.Kind.VISITOR,UUID.randomUUID()),UUID.randomUUID(),TargetRole.ADMINISTRATIVE_ASSISTANT,Topic.P01).attempt();
+        var started=practice.createPractice(new br.com.concursosimulator.mockexam.domain.AttemptOwner(br.com.concursosimulator.mockexam.domain.AttemptOwner.Kind.VISITOR,UUID.randomUUID()),UUID.randomUUID(),Topic.P01).attempt();
         assertThat(started.items()).hasSize(5).allSatisfy(i->assertThat(ids).contains(i.questionId()));
-        assertThat(practice.practiceAvailability(TargetRole.ADMINISTRATIVE_ASSISTANT,Topic.P02).available()).isZero();
+        assertThat(practice.practiceAvailability(Topic.P02).available()).isZero();
         assertThat(jdbc.queryForObject("select count(*) from qb_question where id in (select question_id from qb_revision where status='APPROVED') and purpose='SIMULADO'",Integer.class)).isZero();
     }
     @org.junit.jupiter.params.ParameterizedTest

@@ -18,7 +18,8 @@ BASE_TABLES = frozenset({"application_marker", "app_user", "external_identity", 
 IMPORT_TABLES = frozenset({"qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision"})
 TABLES_BY_SCHEMA = {10: BASE_TABLES, 11: BASE_TABLES,
                    12: BASE_TABLES | IMPORT_TABLES,
-                   13: BASE_TABLES | IMPORT_TABLES | {"admin_registration"}}
+                   13: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},
+                   14: BASE_TABLES | IMPORT_TABLES | {"admin_registration"}}
 
 
 SUPPORTED_SCHEMA_VERSIONS = tuple(TABLES_BY_SCHEMA)
@@ -59,7 +60,7 @@ def private_json(path, value):
 def schema_version(path, config):
     versions = sql(path, config, "select version from flyway_schema_history where success order by installed_rank").decode().splitlines()
     if versions not in [[str(i) for i in range(1, version + 1)] for version in SUPPORTED_SCHEMA_VERSIONS]:
-        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V13)")
+        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V14)")
     return int(versions[-1])
 
 

@@ -1,16 +1,17 @@
 # Prática independente das aulas
 
-Spec `lesson-practice`, issue #148. Implementação e testes locais; sem integração
-remota nem revisão independente nesta rodada. O usuário escolheu todos os grupos
-1–5 e pediu estabilização local antes de novos pushes/PRs/revisões.
+Spec original `lesson-practice`, issue #148, integrada à main pelo #154.
+A evolução local por assunto pertence à #161 (`lesson-practice-by-topic`), com
+grupos 1–4 autorizados em 2026-11-10; teste do usuário precede publicação/revisões.
 
 ## Comportamento
 
-Aulas → escolher cargo → **Praticar** inicia diretamente um treino do assunto, com
+Aulas → abrir assunto → **Começar prática** inicia diretamente um treino do assunto, com
 até cinco bases próprias, sem abrir a configuração de simulados. Se houver de uma
 a quatro bases elegíveis, usa essas bases; zero retorna insuficiência, sem buscar
 questões no outro acervo. Correção, gabarito e resolução aparecem ao encerrar.
-**Voltar à aula** retorna à seleção que originou o treino.
+**Voltar à aula** retorna ao assunto, preservando o cargo público atual se
+compatível ou abrindo exploração livre. Nenhum cargo é atribuído à nova prática.
 
 Simulado e prática possuem realização, fila de respostas, comando idempotente e
 histórico independentes. Iniciar prática não substitui um simulado. Trocar a própria
@@ -37,21 +38,22 @@ triagem editorial: a separação de IDs não prova originalidade de conteúdo.
 
 Consulta pública padrão e pool do compositor filtram antes de contar/paginar ou
 capturar. Histórico e janela de métricas filtram modalidade antes do limite. A
-prática captura modo/assunto em snapshot formato3 e aceita apenas fontes fixas;
+prática nova captura modo/assunto em snapshot formato4, com `composition: null`,
+e aceita apenas fontes fixas. Práticas históricas formato3 preservam sua composição;
 formatos1/2 continuam simulados. O codec preserva campos imutáveis do JSON antigo
 ao salvar resposta/conclusão, sem acrescentar modalidade nesses formatos.
 
-V1–V10 não foram reescritas. JPA continua `validate` e `open-in-view=false`.
-Após criar snapshots3, a versão antiga da aplicação não é um rollback de leitura
+V14 permite a captura por assunto; V1–V13 não foram reescritas. JPA continua `validate` e `open-in-view=false`.
+Após criar snapshots4, a versão antiga da aplicação não é um rollback de leitura
 compatível. Uma recuperação usa backup privado e sua imagem exata em destino
 novo; não iniciar binário anterior sobre registros de prática.
 
 ## HTTP e responsabilidades
 
-- `POST /api/v1/lesson-practices`: `{commandId,roleId,topicId}`. Não recebe quantidade
+- `POST /api/v1/lesson-practices`: `{commandId,topicId}`. Não recebe quantidade
   livre nem destinação. Comando repetido recupera a mesma tentativa; payload
   incompatível retorna409.
-- `GET /api/v1/lesson-practices/availability?roleId=...&topicId=...`: disponibilidade
+- `GET /api/v1/lesson-practices/availability?topicId=...`: disponibilidade
   própria e limite5, sem conteúdo de correção.
 - `GET /api/v1/lesson-practices/{id}`, `PUT /{id}/answers/{itemId}`,
   `POST /{id}/finish`, `GET /{id}/result`: mesma posse/expiração/controle de versão e
@@ -86,9 +88,9 @@ confirmação, importação e replay em PostgreSQL efêmero, mantendo todos os25
 rascunho. Fixtures de navegador são sintéticas e isoladas; suas decisões editoriais
 não aprovam conteúdo real nem escrevem no banco do operador.
 
-Backup/restore local aceita schemas V10–V13 completos, registra a versão real e
+Backup/restore local aceita schemas V10–V14 completos, registra a versão real e
 exige o inventário fechado daquela versão: V10/V11 preservam as tabelas originais;
-V12 acrescenta as quatro tabelas qb_import_*; V13 acrescenta admin_registration.
+V12 acrescenta as quatro tabelas qb_import_*; V13 acrescenta admin_registration; V14 mantém o mesmo inventário fechado.
 Mantém exigência de checksum, imagem exata e destino vazio. Schema desconhecido,
 histórico incompleto e tabela ausente ou extra são recusados. Imagens continuam excluindo fontes editoriais, testes,
 pacotes, backups e segredos do contexto permitido.
@@ -108,3 +110,22 @@ pelos UseCases editoriais; há cinco questões próprias por cada um dos51 assun
 Não é necessário pedir novamente aprovação local genérica para preparar o teste
 do escopo autorizado. Registrar fingerprints/digests/destino continua necessário;
 aceite final, revisão por modelo, merge e publicação seguem seus próprios marcos.
+
+## Prática por assunto — #161
+
+Implementação local dos grupos 1–4 em `lesson-practice-by-topic`. Novos inícios e
+disponibilidade recusam `roleId` com 400. Visualização, encerramento e histórico
+usam DTO próprio com `topicId`, sem cargo da realização; `roleIds` editoriais dos
+itens são preservados. Simulados continuam exigindo cargo. A seleção filtra
+PRATICA_AULA/aprovação/assunto/fonte fixa, sem filtrar cargo, com teto vigente 5.
+
+Criação nova usa identidade canônica `lesson-practice/v2` + assunto; não reinterpreta
+hash de criação v1. Comando antigo incompatível retorna 409. Respostas/conclusões
+antigas mantêm replay original, posse e expiração; não há regravação de capturas.
+`RunView`/`RunTransport` compartilham somente os campos da fila; `AttemptView`
+continua exigindo cargo e `PracticeView` exige assunto. Painel/chaves/seleção usam
+assunto. Metadados editoriais e métricas dos simulados permanecem separados.
+
+A #173 é responsável pela ampliação futura para 25 após integração autorizada da
+#161; nenhum acervo, compilador ou manifesto editorial foi alterado aqui.
+[Contratos, evidências, limites e teste local](../openspec/changes/lesson-practice-by-topic/local-delivery.md).

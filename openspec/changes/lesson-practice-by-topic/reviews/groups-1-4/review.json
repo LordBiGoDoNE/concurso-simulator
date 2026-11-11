@@ -1,0 +1,113 @@
+{
+  "version": 1,
+  "review_kind": "implementation-batch",
+  "status": "completed",
+  "result": "no-pending-findings",
+  "spec": "lesson-practice-by-topic",
+  "issue": 161,
+  "groups": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "pr": null,
+  "risk": {
+    "classification": "critical",
+    "reason": "Schema/captura persistida, replay/concorrência/idempotência, contratos privados e executor compartilhado."
+  },
+  "base_sha": "16ca8aef382d64e7652b280b413122c357775ead",
+  "reviewed_head_sha": "8e4b96d5fdbc9e0670e8e8150132d6bc7c6e705b",
+  "diff_sha256": "99eaabb9f9a29789b79d40330182a0231606e9d22ea96d8c1dc056c05347f7d4",
+  "initial_snapshot": {
+    "reviewed_head_sha": "020fea0a8f1080a1d7c730fa0711e40e80a4d4a5",
+    "diff_sha256": "33e6069bbb608f2e9cda4ff9bc12db9d6309d2501cc9816b32eac17a322a00c9",
+    "report": "initial-review.md"
+  },
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer_batch_161",
+    "independent_context": true,
+    "read_only": true,
+    "harness_model_selection": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "fork_turns": "none",
+    "additional_runtime_model_attestation_available": false,
+    "token_metrics_available": false,
+    "tokens": null
+  },
+  "reviewed_at": "2026-11-11T00:50:07.482193+00:00",
+  "coverage": {
+    "requirements": "Seleção por assunto sem cargo, pool aprovado PRATICA_AULA fixo, 1–5 bases distintas, zero sem persistência parcial e compatibilidade histórica.",
+    "architecture": "Núcleo Java puro; invariantes no domínio; coordenação por portas; JPA/transações na infraestrutura; DTOs concretos distintos.",
+    "integration": "OpenAPI/backend/frontend e fila/painel/histórico/retorno por assunto coerentes; contratos de simulados continuam exigindo cargo.",
+    "security": "Segurança técnica no Spring Security; posse, modalidade, expiração e replay conferidos; sem correção antecipada nas projeções.",
+    "persistence": "V14 aditiva e condições históricas preservadas; formato 4 sem Composition; vínculo diferido entre captura/itens; codec/JPA/recuperação compatíveis.",
+    "tests": "Inspeção estática de regressões de domínio/aplicação, HTTP, PostgreSQL/concorrência/legado/restore, React/navegador e ArchUnit. O revisor não executou testes.",
+    "maintenance": "Inventários fechados V10–V14, fixtures isoladas, documentação de formatos corrigida e árvore editorial sem alterações."
+  },
+  "limitations": [
+    "Revisão de lote somente: não aprova merge nem substitui o gate cumulativo final em contexto independente próprio.",
+    "Revisor não executou testes, build, aplicação, OpenSpec, DB/rede, CI ou consulta de refs remotas e não leu logs privados.",
+    "Relatos de execução/aceite foram conferidos documentalmente após análise semântica inicial; não constituem certificação independente de execução.",
+    "Modelo selecionado explicitamente na ferramenta gpt-6.1-sol/xhigh; harness não retornou atestado adicional do ID efetivo nem telemetria de tokens.",
+    "Publicação remota bloqueada pela revisão automática de aprovação; nenhuma atualização da épica, push de implementação ou criação de PR executada."
+  ],
+  "verification": [
+    {
+      "command": "Consulta local do diff completo base...head e código relacionado; nova consulta na revalidação",
+      "result": "47 arquivos conferidos; apenas docs/lesson-practice.md mudou desde head inicial, restante do diff idêntico byte a byte.",
+      "executed_by": "independent reviewer"
+    },
+    {
+      "command": "Conferência de 37 hashes, manifesto, ancestralidade, árvore editorial e jar por consultas locais de leitura",
+      "result": "Coerência confirmada; não certifica execução de testes.",
+      "executed_by": "independent reviewer"
+    },
+    {
+      "command": "python scripts/check_spec_review.py --snapshot --base 16ca8aef382d64e7652b280b413122c357775ead --head 8e4b96d5fdbc9e0670e8e8150132d6bc7c6e705b --spec lesson-practice-by-topic",
+      "result": "Digest coincide com o apurado independentemente pelo revisor.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "git diff --check; conferência do manifesto local aceito",
+      "result": "Aprovado; os 37 arquivos de código/testes permanecem idênticos à entrega testada. Não foram reexecutados testes de produto para a correção exclusivamente documental.",
+      "executed_by": "coordinator"
+    }
+  ],
+  "findings": [
+    {
+      "id": "T161-O1",
+      "severity": "optional",
+      "location": "docs/lesson-practice.md:41",
+      "evidence": "O texto inicial descrevia a prática genericamente como snapshot formato 3, enquanto requisito/código usam formato 4 sem Composition para novas práticas.",
+      "reference": "Requirement Compatibilidade histórica imutável; design Capturas, comandos e dados anteriores.",
+      "impact": "Ambiguidade exclusivamente documental entre formatos atual e histórico.",
+      "suggestion": "Distinguir novas práticas formato 4 com composition:null das práticas históricas formato 3.",
+      "disposition": "fixed",
+      "resolution": "Corrigido em 8e4b96d5fdbc9e0670e8e8150132d6bc7c6e705b e revalidado pelo mesmo revisor: documento inteiro confrontado com Attempt e o CHECK V14, novo diff completo conferido."
+    }
+  ],
+  "triage_complete": true,
+  "initial_analysis_before_documentary_reports": true,
+  "revalidation": {
+    "status": "completed",
+    "new_findings": [],
+    "fixed": [
+      "T161-O1"
+    ],
+    "whole_changed_set_rechecked": true
+  },
+  "publication": {
+    "status": "awaiting-explicit-authorization",
+    "epic_current_sha": "f61d57d5d55d6d61609815a2faa4b415ed8dca4b",
+    "epic_proposed_ff_sha": "16ca8aef382d64e7652b280b413122c357775ead",
+    "task_branch": "task/lesson-practice-by-topic/topic-practice",
+    "existing_proposal_pr": 162,
+    "remote_side_effects_executed": false
+  },
+  "cumulative_gate": "pending-separate-independent-context",
+  "merge_authorization": false,
+  "archived": false,
+  "deployed": false
+}

@@ -68,6 +68,11 @@
       "command": "gh pr view 175; gh pr checks 175; git ls-remote origin main e epic/lesson-practice-by-topic",
       "result": "Merge autorizado concluído em 850c81a, com todos os checks aprovados em dc45568; main permanece em 16ca8aef. PR final não criado.",
       "executed_by": "coordinator"
+    },
+    {
+      "command": "gh run view 42937309743 --json headSha,status,conclusion,jobs",
+      "result": "Run da épica em 850c81a concluído com sucesso: backend, frontend, study-material, identity-browser e local-delivery. https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/42937309743",
+      "executed_by": "coordinator"
     }
   ],
   "findings": [],
@@ -86,5 +91,17 @@
     "authorized": true,
     "merged": true
   },
-  "validate_report_status": "not-run-real-pr-required"
+  "validate_report_status": "not-run-real-pr-required",
+  "epic_ci": {
+    "head_sha": "850c81a858c5ed3fd6ef757ae97c9394ff342bfc",
+    "run_id": 42937309743,
+    "conclusion": "success",
+    "jobs": {
+      "frontend": "success",
+      "study-material": "success",
+      "local-delivery": "success",
+      "identity-browser": "success",
+      "backend": "success"
+    }
+  }
 }

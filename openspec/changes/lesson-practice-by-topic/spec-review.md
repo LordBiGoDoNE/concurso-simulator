@@ -60,3 +60,10 @@ publicação e criação do PR real, conferir novamente base/head/ancestralidade
 registrar seu número e executar validate_report com os valores reais, além dos
 checks atuais. Mudança em qualquer outro arquivo ou na base exige revalidação
 semântica, ainda que o diff pareça idêntico. Este registro não antecipa tal validação.
+
+
+Conferência final do coordenador: o [run da épica 42937309743](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/42937309743)
+concluiu com sucesso no head 850c81a: backend, frontend, material, identidade no
+navegador e entrega/recuperação local. Isso não substitui checks do futuro PR real
+nem validate_report com seu número. O código não mudou; só estes arquivos de
+evidência foram acrescentados localmente à árvore cumulativa analisada.

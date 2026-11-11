@@ -33,7 +33,7 @@ Checkboxes de implementação/verificação não representam aprovação ou inte
 - [x] 4.1 Verificar Chromium/Edge em 390/1440px: link direto, exploração livre, prática sem cargo, histórico antigo e retorno à aula.
 - [x] 4.2 Verificar fila pendente, conflito/retry, criação com confirmação perdida, encerramento, logout/expiração e simulado independente em backend/PG reais isolados.
 - [x] 4.3 Revalidar build, seleção editorial preservada, contratos e métricas de simulados, OpenSpec e migração com dados anteriores; registrar risco crítico e evidências locais.
-- [ ] 4.4 Aceite local do usuário pendente. Entrega preparada e disponibilizada para teste; somente após o aceite seguir revisões SOL/gates e envios de código conforme autorizações próprias.
+- [x] 4.4 Aceite local registrado em 2026-11-10: o usuário respondeu “aceito” à entrega fcb2bbc (implementação 7a13eb9). Revisões SOL/gates e envios de código seguem autorizações próprias.
 
 ## Dependências e fluxo
 
@@ -50,5 +50,5 @@ Aprofundamento por matéria, novas questões, cargas reais, VPS, deploy, arquiva
 push de implementação e merges continuam fora desta entrega local. O teto fica em
 cinco; ampliação para 25 pertence ao grupo 2 da #173, após integração autorizada.
 
-Evidências e conciliações: [entrega local](local-delivery.md). Aceite do usuário,
-revisões independentes e integração são estados separados e permanecem pendentes.
+Evidências e conciliações: [entrega local](local-delivery.md). Aceite local do usuário
+registrado; revisões independentes e integração permanecem pendentes.

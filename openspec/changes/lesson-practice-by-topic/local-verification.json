@@ -132,8 +132,8 @@
     "operator_database_changed": false,
     "vps_changed": false
   },
-  "user_acceptance": "pending",
-  "batch_independent_review": "pending-user-local-test",
+  "user_acceptance": "accepted",
+  "batch_independent_review": "pending-not-run",
   "cumulative_gate": "pending-separate-independent-context",
   "published_implementation": false,
   "merged": false,
@@ -142,5 +142,12 @@
   "handoff_173": {
     "group_2_limit_25": "waits-for-authorized-integration-of-161",
     "maximum_implemented": 5
+  },
+  "user_acceptance_record": {
+    "date": "2026-11-10",
+    "message": "aceito",
+    "accepted_delivery_commit": "fcb2bbcca6a133753597486c079e2dcddbcc9cfd",
+    "implementation_commit": "7a13eb9628ab3ff322a4c9f7d34ef7cd887756f1",
+    "scope": "local-delivery-only"
   }
 }

@@ -132,8 +132,10 @@ o endpoint GET `/fixture` retorna cookies sintéticos/legacyId somente no harnes
 os testes Playwright demonstram a instalação do cookie e a retomada. Não usar
 esse controle em qualquer aplicação/banco de produção.
 
-Aceite local do usuário ainda não registrado. Entrega para teste não significa
-aprovação, integração ou permissão de publicar. O harness deve ser encerrado por
+Aceite local registrado em 2026-11-10: o usuário respondeu **“aceito”** à entrega
+`fcb2bbcca6a133753597486c079e2dcddbcc9cfd`, cuja implementação é
+`7a13eb9628ab3ff322a4c9f7d34ef7cd887756f1`. O aceite da entrega local não representa
+revisão independente, aprovação de merge ou permissão de publicar. O harness deve ser encerrado por
 seus próprios terminais/processos, preservando os serviços das outras conversas.
 
 ## Handoff para #173

@@ -57,3 +57,24 @@ Este diretório registra somente a revisão de lote. O gate cumulativo final exi
 outro contexto independente, PR [SPEC] real e conferência de base/head/digest/checks.
 Nenhum merge, fechamento de PR, arquivamento ou deploy está autorizado por este
 relatório. O registro de evidência não modifica a implementação aceita.
+
+
+## Revalidação posterior à publicação do PR #175
+
+O bloqueio de publicação foi resolvido por autorização explícita do usuário. Épica
+avançada por fast-forward para 16ca8aef e PR #175 aberto em rascunho, mantendo
+#162/branch documental. Não houve merge. O estado de bloqueio acima é histórico.
+
+Nova revalidação independente do mesmo revisor: base
+`16ca8aef382d64e7652b280b413122c357775ead`, head
+`f0e951a26a11e127a4e5d51e902e85bf2fcee99d`, digest
+`fa08dc85c6b360a7e31a67492dab4a2d5856b17975f4756461e489f009f2d961`.
+São 52 arquivos; desde 8e4b96d mudaram somente a fixture pública e quatro arquivos
+de evidência. O restante do diff é idêntico byte a byte. A fixture usa PracticeView
+sem cargo, exige commandId/topicId e ausência de cargo na disponibilidade, conserva
+o assunto nas leituras e mantém estado/handlers/asserções de simulado separados.
+
+Nenhum novo achado; T161-O1 continua corrigido, sem triagem pendente. Os relatos de
+publicação e dos 28 testes públicos aprovados foram tratados como documentação,
+não prova independente de execução. Mesmos limites read-only/modelo/telemetria e
+gate cumulativo separado. publication.md documenta a validação adicional.

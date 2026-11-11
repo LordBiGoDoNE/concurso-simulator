@@ -11,14 +11,14 @@
     3,
     4
   ],
-  "pr": null,
+  "pr": 175,
   "risk": {
     "classification": "critical",
     "reason": "Schema/captura persistida, replay/concorrência/idempotência, contratos privados e executor compartilhado."
   },
   "base_sha": "16ca8aef382d64e7652b280b413122c357775ead",
-  "reviewed_head_sha": "8e4b96d5fdbc9e0670e8e8150132d6bc7c6e705b",
-  "diff_sha256": "99eaabb9f9a29789b79d40330182a0231606e9d22ea96d8c1dc056c05347f7d4",
+  "reviewed_head_sha": "f0e951a26a11e127a4e5d51e902e85bf2fcee99d",
+  "diff_sha256": "fa08dc85c6b360a7e31a67492dab4a2d5856b17975f4756461e489f009f2d961",
   "initial_snapshot": {
     "reviewed_head_sha": "020fea0a8f1080a1d7c730fa0711e40e80a4d4a5",
     "diff_sha256": "33e6069bbb608f2e9cda4ff9bc12db9d6309d2501cc9816b32eac17a322a00c9",
@@ -36,14 +36,14 @@
     "token_metrics_available": false,
     "tokens": null
   },
-  "reviewed_at": "2026-11-11T00:50:07.482193+00:00",
+  "reviewed_at": "2026-11-11T01:01:39.561093+00:00",
   "coverage": {
     "requirements": "Seleção por assunto sem cargo, pool aprovado PRATICA_AULA fixo, 1–5 bases distintas, zero sem persistência parcial e compatibilidade histórica.",
     "architecture": "Núcleo Java puro; invariantes no domínio; coordenação por portas; JPA/transações na infraestrutura; DTOs concretos distintos.",
-    "integration": "OpenAPI/backend/frontend e fila/painel/histórico/retorno por assunto coerentes; contratos de simulados continuam exigindo cargo.",
+    "integration": "OpenAPI/backend/frontend e fila/painel/histórico/retorno por assunto coerentes; contratos de simulados continuam exigindo cargo. Fixture pública study-layout reconferida contra validadores frontend e cenários de navegação/fila, com assunto preservado.",
     "security": "Segurança técnica no Spring Security; posse, modalidade, expiração e replay conferidos; sem correção antecipada nas projeções.",
     "persistence": "V14 aditiva e condições históricas preservadas; formato 4 sem Composition; vínculo diferido entre captura/itens; codec/JPA/recuperação compatíveis.",
-    "tests": "Inspeção estática de regressões de domínio/aplicação, HTTP, PostgreSQL/concorrência/legado/restore, React/navegador e ArchUnit. O revisor não executou testes.",
+    "tests": "Inspeção estática de regressões de domínio/aplicação, HTTP, PostgreSQL/concorrência/legado/restore, React/navegador e ArchUnit. O revisor não executou testes. Nova fixture pública integralmente inspecionada; mocks não certificam persistência/autenticação/replay.",
     "maintenance": "Inventários fechados V10–V14, fixtures isoladas, documentação de formatos corrigida e árvore editorial sem alterações."
   },
   "limitations": [
@@ -51,7 +51,7 @@
     "Revisor não executou testes, build, aplicação, OpenSpec, DB/rede, CI ou consulta de refs remotas e não leu logs privados.",
     "Relatos de execução/aceite foram conferidos documentalmente após análise semântica inicial; não constituem certificação independente de execução.",
     "Modelo selecionado explicitamente na ferramenta gpt-6.1-sol/xhigh; harness não retornou atestado adicional do ID efetivo nem telemetria de tokens.",
-    "Publicação remota bloqueada pela revisão automática de aprovação; nenhuma atualização da épica, push de implementação ou criação de PR executada."
+    "Bloqueio automático inicial foi resolvido por autorização explícita; PR #175 publicado em rascunho. Revisor não consultou CI/estado remoto."
   ],
   "verification": [
     {
@@ -72,6 +72,16 @@
     {
       "command": "git diff --check; conferência do manifesto local aceito",
       "result": "Aprovado; os 37 arquivos de código/testes permanecem idênticos à entrega testada. Não foram reexecutados testes de produto para a correção exclusivamente documental.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "Revalidação estática do diff completo contra base 16ca8aef no head f0e951a",
+      "result": "52 arquivos; desde 8e4b96d apenas fixture pública e quatro registros de evidência mudaram; restante do diff idêntico byte a byte. Nenhum novo achado.",
+      "executed_by": "independent reviewer"
+    },
+    {
+      "command": "STUDY_ROOT=<pacote local> npx playwright test --config test-results/topic-public.config.ts --reporter=line",
+      "result": "28 cenários da suíte pública completa aprovados localmente em porta exclusiva 5372, incluindo material offline.",
       "executed_by": "coordinator"
     }
   ],
@@ -99,15 +109,29 @@
     "whole_changed_set_rechecked": true
   },
   "publication": {
-    "status": "awaiting-explicit-authorization",
-    "epic_current_sha": "f61d57d5d55d6d61609815a2faa4b415ed8dca4b",
-    "epic_proposed_ff_sha": "16ca8aef382d64e7652b280b413122c357775ead",
+    "status": "published-draft",
+    "authorization": "explicit-user-authorization-after-initial-auto-review-block",
+    "epic_sha": "16ca8aef382d64e7652b280b413122c357775ead",
+    "epic_previous_sha": "f61d57d5d55d6d61609815a2faa4b415ed8dca4b",
     "task_branch": "task/lesson-practice-by-topic/topic-practice",
+    "pr": 175,
+    "url": "https://github.com/LordBiGoDoNE/concurso-simulator/pull/175",
+    "initial_published_head_sha": "7aab592e68f2028e9107de52b4d9e170989834e0",
+    "source_head_for_next_push_sha": "f0e951a26a11e127a4e5d51e902e85bf2fcee99d",
     "existing_proposal_pr": 162,
-    "remote_side_effects_executed": false
+    "remote_side_effects_executed": true,
+    "merged": false
   },
   "cumulative_gate": "pending-separate-independent-context",
   "merge_authorization": false,
   "archived": false,
-  "deployed": false
+  "deployed": false,
+  "previous_revalidated_snapshot": {
+    "reviewed_head_sha": "8e4b96d5fdbc9e0670e8e8150132d6bc7c6e705b",
+    "diff_sha256": "99eaabb9f9a29789b79d40330182a0231606e9d22ea96d8c1dc056c05347f7d4"
+  },
+  "reviewed_files": 52,
+  "additional_test_file_sha256": {
+    "frontend/e2e/study-layout.spec.ts": "f719d7b94f02a981f86118ed14573cc2686084ff36de8e4441eb39602c299e4b"
+  }
 }

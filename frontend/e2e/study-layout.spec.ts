@@ -1,8 +1,10 @@
 import { test, expect } from '@playwright/test';
 import { catalog, emptyPage } from '../test/question-fixtures';
 import { view } from '../test/attempt-fixtures';
+import { view as practiceView } from '../test/practice-fixtures';
 
 test.beforeEach(async ({ page }) => {
+  let practiceTopic = 'P01';
   await page.route('**/api/v1/**', route => {
     const path = new URL(route.request().url()).pathname;
     if (path.endsWith('/status')) return route.fulfill({ json: { status: 'UP' } });
@@ -11,12 +13,17 @@ test.beforeEach(async ({ page }) => {
     if(path.endsWith('/csrf'))return route.fulfill({json:{token:'test',headerName:'X-CSRF-TOKEN'}});
     if(path.endsWith('/lesson-practices/availability')) {
       const params = new URL(route.request().url()).searchParams;
-      return route.fulfill({json:{topicId:params.get('topicId'),roleId:params.get('roleId'),available:5,maximum:5}});
+      expect(params.has('roleId')).toBe(false);
+      return route.fulfill({json:{topicId:params.get('topicId'),available:5,maximum:5}});
     }
     if(path.includes('/lesson-practices')) {
-      const body=route.request().method()==='POST'?route.request().postDataJSON():{topicId:'P01',roleId:view.roleId};
-      const topicId=body.topicId;const disciplineId=topicId.startsWith('M')?'matematica-raciocinio':'portugues';
-      const practice={...view,id:'90000000-0000-0000-0000-000000000001',roleId:body.roleId,items:[{...view.items[0],classification:{...view.items[0].classification,topicId,disciplineId}}]};
+      if (route.request().method() === 'POST') {
+        const body = route.request().postDataJSON();
+        expect(Object.keys(body).sort()).toEqual(['commandId', 'topicId']);
+        practiceTopic = body.topicId;
+      }
+      const topicId=practiceTopic;const disciplineId=topicId.startsWith('M')?'matematica-raciocinio':'portugues';
+      const practice={...practiceView,id:'90000000-0000-0000-0000-000000000001',topicId,items:[{...practiceView.items[0],classification:{...practiceView.items[0].classification,topicId,disciplineId}}]};
       // Preserve topic on the initial read used to recheck access.
       return route.fulfill({status:route.request().method()==='POST'?201:200,json:practice});
     }

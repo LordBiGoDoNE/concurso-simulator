@@ -1,8 +1,9 @@
 # Gate cumulativo — lesson-practice-by-topic
 
-Estado do gate: **pending**, pois ainda não existe PR final real. A **revisão
-semântica cumulativa independente foi concluída, sem achados verificáveis**.
-Isso não autoriza merge nem permite declarar validate_report aprovado com PR fictício.
+Estado da evidência: **completed**, vinculada ao PR real **#176**. A revisão
+semântica cumulativa independente já foi concluída, sem achados verificáveis.
+O usuário autorizou explicitamente a abertura e o merge em main após conferir
+metadados, revisão existente e CI, sem nova rodada por modelo.
 
 ## Escopo e cobertura
 
@@ -44,12 +45,13 @@ PR #175 integrado por autorização explícita, merge commit 850c81a, head dc455
 com todos os checks aprovados. O coordenador conferiu árvore idêntica ao merge e
 main ainda em 16ca8aef. PR/branch documental #162 preservados, sem fechamento.
 
-A revisão automática de aprovação bloqueou abrir o PR final [SPEC] para main por
-considerar essa publicação separada da autorização de merge #175. Nenhum PR final
-foi criado; pr permanece null e validate_report não foi executado com número
-fictício. Os dois arquivos de gate estão preparados apenas localmente. Publicá-los
-na épica e abrir o PR final serão apresentados como ações concretas para autorização.
-Main, arquivamento e deploy continuam sem execução. #173, grupos 2/8, aguardam main.
+O bloqueio automático inicial de publicação foi resolvido pela autorização
+explícita do usuário para abrir o PR final e mergear na main. O PR [SPEC] real
+[#176](https://github.com/LordBiGoDoNE/concurso-simulator/pull/176) foi aberto com
+base main 16ca8aef e head inicial da épica 850c81a, ambos conferidos. Os dois
+arquivos de gate são os únicos acréscimos à árvore revisada. Nenhum número fictício
+foi usado. O merge autorizado será feito após validar os metadados e os checks
+atuais; arquivamento e deploy não estão incluídos.
 
 ## Revalidação
 
@@ -58,12 +60,14 @@ com o do coordenador. Nenhuma mudança de produto foi feita depois da revisão.
 Só estes dois arquivos podem mudar sem invalidar o digest. Após autorização da
 publicação e criação do PR real, conferir novamente base/head/ancestralidade/digest,
 registrar seu número e executar validate_report com os valores reais, além dos
-checks atuais. Mudança em qualquer outro arquivo ou na base exige revalidação
+checks atuais. O número real #176 foi registrado e a validação local passou na
+base 16ca8aef com o candidato fe2f2fd; será repetida no commit publicado antes do
+merge autorizado. Mudança em qualquer outro arquivo ou na base exige revalidação
 semântica, ainda que o diff pareça idêntico. Este registro não antecipa tal validação.
 
 
 Conferência final do coordenador: o [run da épica 42937309743](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/42937309743)
 concluiu com sucesso no head 850c81a: backend, frontend, material, identidade no
-navegador e entrega/recuperação local. Isso não substitui checks do futuro PR real
-nem validate_report com seu número. O código não mudou; só estes arquivos de
+navegador e entrega/recuperação local. Isso não substitui checks atuais do PR #176 nem a reconferência de validate_report
+com seu número e head publicado. O código não mudou; só estes arquivos de
 evidência foram acrescentados localmente à árvore cumulativa analisada.

@@ -11,10 +11,13 @@ sem PR nem integração.
 
 ## 1. Base do host e acesso
 
-- [ ] 1.1 Registrar inventário sanitizado do Ubuntu real (usuários, Docker rootless, limites, nginx, certbot, ufw, serviços) e o acesso SSH do assistente como `concurso-dev`.
-- [ ] 1.2 Preparar e aplicar, pela conta administrativa, a correção das permissões graváveis por todos em `/opt/vps-control`, sem remover os scripts.
-- [ ] 1.3 Conferir ufw (somente 22/80/443, IPv4/IPv6), sshd só por chave e conectividade IPv6 da VPS.
-- [ ] 1.4 Reboot controlado com persistência de nginx, Docker rootless e serviço do concurso; evidências e docs do grupo.
+Implementado e verificado em 2026-11-13 (#212); não integrado. Evidências: `verification/grupo-1.md`.
+
+
+- [x] 1.1 Registrar inventário sanitizado do Ubuntu real (usuários, Docker rootless, limites, nginx, certbot, ufw, serviços) e o acesso SSH do assistente como `concurso-dev`.
+- [x] 1.2 Preparar e aplicar, pela conta administrativa, a correção das permissões graváveis por todos em `/opt/vps-control`, sem remover os scripts.
+- [x] 1.3 Conferir ufw (somente 22/80/443, IPv4/IPv6), sshd só por chave e conectividade IPv6 da VPS.
+- [x] 1.4 Reboot controlado com persistência de nginx, Docker rootless e serviço do concurso; evidências e docs do grupo.
 
 ## 2. Runtime de produção — depende de 1
 

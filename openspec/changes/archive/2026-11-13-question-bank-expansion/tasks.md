@@ -1,12 +1,14 @@
 # Tasks
 
+Arquivamento em 2026-11-13, autorizado pelo usuário após o merge do `[SPEC]` #202 em `main` (471d3b1): requisitos consolidados em `openspec/specs/question-bank-coverage/` e `openspec/specs/lesson-practice-capacity/`. Publicação, deploy e carga na VPS não fazem parte deste arquivamento.
+
 Spec da [issue #173](https://github.com/LordBiGoDoNE/concurso-simulator/issues/173). Base: `main` `16ca8aef382d64e7652b280b413122c357775ead`; integração em `epic/question-bank-expansion`. [Proposta](proposal.md), [design](design.md), [cobertura](specs/question-bank-coverage/spec.md) e [prática](specs/lesson-practice-capacity/spec.md).
 
 **Implementação local dos grupos completos 1–8 autorizada pelo usuário em 2026-11-10**, na central “Automatizar projetos na VPS”, ao solicitar agentes para implementar #173 e #161. A entrega inicial documental/PR #174 permanece histórica e preservada. Publicação/revisão de implementação aguardam teste local do usuário; revisão/aprovação/integração são estados separados.
 
 Responsável desta implementação: conversa Codex exclusiva da #173, worktree `7ac1`, branch `task/question-bank-expansion/inventory-tooling`, base remota `16ca8aef382d64e7652b280b413122c357775ead`. [Registro de início](https://github.com/LordBiGoDoNE/concurso-simulator/issues/173#issuecomment-6778396819). Grupo 1 primeiro; conteúdo 3–7 depois. **Grupo 2 e validação integrada do grupo 8 aguardam #161 integrada à main por merge autorizado.** A #161 possui prioridade em mockexam/persistência/HTTP/OpenAPI/frontend; não tocar nesses contratos, empilhar specs ou fazer merge para desbloquear. Depois, conciliar teto 25 com prática por assunto sem cargo, sem reintroduzir cargo ou mudar formato/migração por quantidade. As referências abaixo a cargo descrevem a main histórica da proposta; a ordem autorizada prevalece.
 
-Estado real deste incremento: ferramentas implementadas/testadas, inventário offline e 79 candidatas reais preparadas em JSONs externos (57 células, 43 de simulado/36 de prática). Leitor/prévia isolados e cálculos têm verificações próprias; revisão editorial integral/diversidade/cotas permanecem pendentes. Nenhum grupo completo, importação/habilitação real, revisão independente ou integração. [Guia e limitações](../../../docs/question-bank-expansion.md) e [avaliação de reutilização](../../../docs/question-source-reuse-assessment.md). As tarefas marcadas abaixo indicam apenas implementação/verificação técnica local, sem revisão/aceite/integração presumidos.
+Estado real deste incremento: ferramentas implementadas/testadas, inventário offline e 79 candidatas reais preparadas em JSONs externos (57 células, 43 de simulado/36 de prática). Leitor/prévia isolados e cálculos têm verificações próprias; revisão editorial integral/diversidade/cotas permanecem pendentes. Nenhum grupo completo, importação/habilitação real, revisão independente ou integração. [Guia e limitações](../../../../docs/question-bank-expansion.md) e [avaliação de reutilização](../../../../docs/question-source-reuse-assessment.md). As tarefas marcadas abaixo indicam apenas implementação/verificação técnica local, sem revisão/aceite/integração presumidos.
 
 ## Checkpoint solicitado pelo usuário — 12/11/2026
 
@@ -16,7 +18,7 @@ usuário. A última consolidação contém 2.342 candidatas em arquivos externos
 cotas, diversidade ou conclusão dos grupos. O leitor/prévia validou um snapshot
 anterior de 2.270 candidatas/102 pacotes; a suíte Python atual passou 16 testes.
 A correção de operadores/pontuação no auditor exige nova auditoria global;
-a rodada v4 foi interrompida. [Retomada e caminhos preservados](../../../docs/question-bank-expansion-handoff.md).
+a rodada v4 foi interrompida. [Retomada e caminhos preservados](../../../../docs/question-bank-expansion-handoff.md).
 Os registros de 79 candidatas abaixo descrevem a etapa histórica, não o total atual.
 
 ## 1. Inventário, fontes e ferramentas
@@ -84,7 +86,7 @@ implementadas/verificadas localmente, sem revisão/aceite/integração presumido
 com identidades distintas); fingerprints recalculados, revisão individual atual 2.587/2.587,
 SHA-256 de prova/gabarito 530/530, auditoria v10 138/138 CURRENT, leitor/prévia Java
 102 pacotes/2.587 NEW sem escrita e Matemática 617/617 conferida às cegas. Revisões
-assistidas por IA, sem revisão humana. [Relatório](../../../docs/question-bank-expansion-content.md).
+assistidas por IA, sem revisão humana. [Relatório](../../../../docs/question-bank-expansion-content.md).
 
 ## 3. Português — depende de 1
 
@@ -174,14 +176,14 @@ desatualizada, seleção/digest alterados, rollback, concorrência); habilitaç�
 paralelo da épica combinada pelo fluxo em lote da #177 (decisão do usuário de 12/11), reconciliada com
 os 102 digests versionados; banco e HTTP com 2.587 elegíveis, 102/102 células ≥25 e ≥5 originais;
 backend 340/0 falhas (1 skip histórico), Python 22, frontend 238 + build, Playwright Chromium/Edge 30.
-[Relatório integrado](../../../docs/question-bank-expansion-integrated.md). Aceite do usuário, revisão
+[Relatório integrado](../../../../docs/question-bank-expansion-integrated.md). Aceite do usuário, revisão
 final, integração e publicação seguem pendentes.
 
 Correção de 13/11/2026 (achado A1 da revisão final, triagem aprovada pelo usuário): 27 referências
 públicas corretivas substituídas (camadas r7/r8), revisões individuais refeitas, auditoria v11 138/138
 CURRENT, pacotes e evidências regenerados e guarda automática `study_reference` adicionada. A
 habilitação do ambiente paralelo (8.3/8.4) refere-se aos pacotes de 12/11 e o ambiente foi perdido;
-a nova habilitação local com os pacotes corrigidos está pendente. [Detalhes](../../../docs/question-bank-expansion-content.md).
+a nova habilitação local com os pacotes corrigidos está pendente. [Detalhes](../../../../docs/question-bank-expansion-content.md).
 
 Nova habilitação de 13/11/2026 (achado M1 da revalidação final, triagem aprovada pelo usuário): ambiente
 paralelo reconstruído (UI 5371 / API 19160) a partir do backup pré-#177 pela ferramenta
@@ -189,7 +191,7 @@ paralelo reconstruído (UI 5371 / API 19160) a partir do backup pré-#177 pela f
 (2.587 SUBMIT + 2.587 APPROVE `AI_ONLY`). Banco: 2.587 elegíveis da expansão iguais aos fingerprints
 dos pacotes (0 ausentes/extras/divergências), 102/102 células ≥25 e ≥5 originais, 1.294 simulado /
 1.293 prática, 530 originais; HTTP em 51 assuntos com `maximum = 5` e `no-store`. 8.3/8.4 voltam a ter
-evidência atual ([destination-coverage-corrected.json](../../../editorial/question-bank-expansion/2026-11/final/integrated/destination-coverage-corrected.json)). O banco segue efêmero.
+evidência atual ([destination-coverage-corrected.json](../../../../editorial/question-bank-expansion/2026-11/final/integrated/destination-coverage-corrected.json)). O banco segue efêmero.
 
 ## Workflow follow-up
 

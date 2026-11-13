@@ -78,6 +78,14 @@ for (const width of [390, 1440]) test(`tema escuro em início, montagem e realiz
     await expect(mapTitle).toBeFocused(); await expect(mapTitle).toBeInViewport();
     await expect(page.getByRole('navigation', { name: 'Mapa de questões' })).toBeInViewport();
   } else await expect(jump).toBeHidden();
+
+  // O diálogo de encerramento usa a superfície do tema, não o fundo padrão do navegador (FVR4-L2).
+  const paper = await page.locator('.question-card').evaluate(element => getComputedStyle(element).backgroundColor);
+  await page.getByRole('button', { name: 'Concluir simulado' }).click();
+  const dialog = page.getByRole('dialog');
+  await expect(dialog).toBeVisible();
+  expect(await dialog.evaluate(element => getComputedStyle(element).backgroundColor)).toBe(paper);
+  expect(await lowContrast(page, 'dialog')).toEqual([]);
 });
 
 test('escolha manual de tema persiste e é aplicada antes do app carregar', async ({ page }) => {

@@ -183,6 +183,14 @@ CURRENT, pacotes e evidências regenerados e guarda automática `study_reference
 habilitação do ambiente paralelo (8.3/8.4) refere-se aos pacotes de 12/11 e o ambiente foi perdido;
 a nova habilitação local com os pacotes corrigidos está pendente. [Detalhes](../../../docs/question-bank-expansion-content.md).
 
+Nova habilitação de 13/11/2026 (achado M1 da revalidação final, triagem aprovada pelo usuário): ambiente
+paralelo reconstruído (UI 5371 / API 19160) a partir do backup pré-#177 pela ferramenta
+`QuestionExpansionLocalEnablement`; 102 pacotes corrigidos importados por HTTP e 204 lotes #177
+(2.587 SUBMIT + 2.587 APPROVE `AI_ONLY`). Banco: 2.587 elegíveis da expansão iguais aos fingerprints
+dos pacotes (0 ausentes/extras/divergências), 102/102 células ≥25 e ≥5 originais, 1.294 simulado /
+1.293 prática, 530 originais; HTTP em 51 assuntos com `maximum = 5` e `no-store`. 8.3/8.4 voltam a ter
+evidência atual ([destination-coverage-corrected.json](../../../editorial/question-bank-expansion/2026-11/final/integrated/destination-coverage-corrected.json)). O banco segue efêmero.
+
 ## Workflow follow-up
 
 - Início autorizado/registrado em 2026-11-10 conforme nota acima; a restrição da publicação documental inicial é histórica, não nova pausa genérica de implementação.

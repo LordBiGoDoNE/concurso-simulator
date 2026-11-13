@@ -31,7 +31,9 @@ python -X utf8 scripts/question_expansion_final.py --packages editorial/question
   --output editorial/question-bank-expansion/2026-11/final
 ```
 
-- `scripts/question_expansion_final.py` (22 testes Python no total): SHA-256 de cada
+- `scripts/question_expansion_final.py` (25 testes Python no total): referência pública
+  recusada por nome/URL/host/caminho de prova (`study_reference`) ou por coincidir com
+  qualquer URL de prova/gabarito da proveniência dos pacotes; SHA-256 de cada
   requisição contra o manifesto, digests, seleção = itens, namespace por finalidade,
   **fingerprint recalculado do conteúdo**, dossiê e proveniência coerentes, gabarito
   definitivo/questão válida, cotas por célula e disciplina, identidades únicas, revisão

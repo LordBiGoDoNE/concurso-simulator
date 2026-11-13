@@ -1,0 +1,1334 @@
+{
+  "format" : "question-expansion-destination-coverage/v2",
+  "observedAt" : "2026-11-13T14:07:19.943404Z",
+  "destination" : {
+    "operatorProvisionedInEphemeralCopy" : false,
+    "flyway" : [ "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15", "16", "17" ],
+    "logical" : "question-expansion-local-985dc2df43d94e46be2202c876b5e605",
+    "environment" : "ambiente local paralelo da épica combinada (UI 5371, API 19160), PostgreSQL 18.6 efêmero restaurado do backup privado pré-#177",
+    "sourceBackupSha256" : "5b7042dfb8ebea2d17d2034cc436aadeaccac1594bbfeb825c35de8170c6ef43"
+  },
+  "before" : {
+    "qb_question" : 54,
+    "qb_revision" : 54,
+    "qb_decision" : 107,
+    "qb_import_receipt" : 0,
+    "qb_decision_batch" : 0,
+    "app_user" : 1,
+    "me_attempt" : 0,
+    "eligible" : 52
+  },
+  "enablement" : {
+    "elapsedSeconds" : 181,
+    "packages" : 102,
+    "mechanism" : "#177: importação administrativa HTTP e decisões editoriais em lote HTTP (SUBMIT e APPROVE AI_ONLY)"
+  },
+  "database" : {
+    "eligibleTotal" : 2639,
+    "eligibleExpansion" : 2587,
+    "missingFromPackages" : 0,
+    "extraBeyondPackages" : 0,
+    "fingerprintOrStatusMismatches" : 0,
+    "cellMismatches" : 0,
+    "cells" : 102,
+    "minItemsPerCell" : 25,
+    "minOriginalsPerCell" : 5,
+    "simulado" : 1294,
+    "pratica" : 1293,
+    "originals" : 530
+  },
+  "http" : {
+    "availabilityNoStore" : true,
+    "endpoints" : [ "GET /api/v1/lesson-practices/availability?topicId=…", "GET /api/v1/question-bank/questions?topicId=…" ],
+    "topics" : 51,
+    "maximumMismatches" : 0,
+    "perTopic" : [ {
+      "topicId" : "A01",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "A02",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "A03",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "A04",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 27,
+      "simuladoTotal" : 27
+    }, {
+      "topicId" : "A05",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "A06",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "A07",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "A08",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 27
+    }, {
+      "topicId" : "I01",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I02",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I03",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I04",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I05",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I06",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I07",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I08",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I09",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "I10",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "M01",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 28,
+      "simuladoTotal" : 29
+    }, {
+      "topicId" : "M02",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "M03",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "M04",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 26
+    }, {
+      "topicId" : "M05",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "M06",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 26
+    }, {
+      "topicId" : "M07",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 26
+    }, {
+      "topicId" : "M08",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "M09",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "M10",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "M11",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 27,
+      "simuladoTotal" : 27
+    }, {
+      "topicId" : "M12",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 27,
+      "simuladoTotal" : 27
+    }, {
+      "topicId" : "P01",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 55,
+      "simuladoTotal" : 46
+    }, {
+      "topicId" : "P02",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P03",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P04",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P05",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P06",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P07",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P08",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P09",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "P10",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S01",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 33,
+      "simuladoTotal" : 29
+    }, {
+      "topicId" : "S02",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S03",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S04",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S05",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S06",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S07",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S08",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S09",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    }, {
+      "topicId" : "S10",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 26,
+      "simuladoTotal" : 26
+    }, {
+      "topicId" : "S11",
+      "practiceMaximum" : 5,
+      "practiceAvailable" : 25,
+      "simuladoTotal" : 25
+    } ]
+  },
+  "after" : {
+    "qb_question" : 2641,
+    "qb_revision" : 2641,
+    "qb_decision" : 5281,
+    "qb_import_receipt" : 102,
+    "qb_decision_batch" : 204,
+    "app_user" : 1,
+    "me_attempt" : 0,
+    "eligible" : 2639
+  },
+  "packages" : [ {
+    "topicId" : "A01",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "f1ddf42ba1328c6a86e27bc4796d27a15a4213399e0ec1607e0996d1a94ffd9a",
+    "packageDigest" : "647b5c682d28874fa6cad7fb87f158c6c5dac4e7e268159ade95cbf609fd822f",
+    "selectionDigest" : "db89874cca710e1ffd10436d7115135d95c6b93dc2872844f10b4b2f44676395",
+    "importReceipt" : "0ed3f769-2f07-4c99-9868-23e6884dae8e",
+    "submitBatch" : "03f0debd-e9c5-4d77-87f5-f3a8b54d9485",
+    "approveBatch" : "fd3bad4b-b9c9-4a8e-a925-ef2a8a4f15dd"
+  }, {
+    "topicId" : "A01",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "bddb0b3814dd7bc7dfae57407e130ade2d06cf3023844149d6d36aa9ded16dff",
+    "packageDigest" : "c0639b870901f9198f2f03a842f98dad9375f9a19a03c1faed8dd791851f76d8",
+    "selectionDigest" : "2cfe2699fc4d36c34d46f481460b05bb5d8f0472de364c035ea647ed9b6a1aae",
+    "importReceipt" : "24dc2c53-415f-4038-9711-497b3f654717",
+    "submitBatch" : "46e9c4cf-eb7e-48b6-96d1-edf189271f30",
+    "approveBatch" : "9b8e9471-14aa-43f5-b574-82f7587a33fe"
+  }, {
+    "topicId" : "A02",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "cc90a23821a706655dcf7cd12f53981f51640aa27f42907ec215a11d8610c8b0",
+    "packageDigest" : "1c70457ceba382c73a7a179d90eae5b9e8b68283919d81c519adc732d31f5b1f",
+    "selectionDigest" : "45d73b692669d037cb666a0f8a21d4431f3e542488b6e2d875a522d7e3b4b494",
+    "importReceipt" : "ff1d6855-1cca-404b-ab4f-f22d49418289",
+    "submitBatch" : "2a50df89-00d9-494d-8572-712875b672d6",
+    "approveBatch" : "c94f9ca9-6722-46b9-beeb-bfc6e0ad8f70"
+  }, {
+    "topicId" : "A02",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "ae7f8483fa9b4ff942362a1533723635799971dcdef3fbd8d8a3f499ac6cfad0",
+    "packageDigest" : "c0b51c16a008c327a22127c9733e0fd2524cae79e56b516206860dfb1f5aaed5",
+    "selectionDigest" : "70cd8525c7f402ce146ca3cf8ea55ef5d3903b9e3295866caac5119268cabaf0",
+    "importReceipt" : "839c5d94-6561-4899-a68b-55da6a11209f",
+    "submitBatch" : "8243c639-4e22-4e42-b9af-181b01b2e747",
+    "approveBatch" : "dea0345f-472a-45fe-b4cc-72735c2a530c"
+  }, {
+    "topicId" : "A03",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "bc835f34d5f00d2cb974453e711937dcc47b18eccd5adaf4c4a625ac4ad188c6",
+    "packageDigest" : "00c52492beb93b3b697d050b424785895da3371105e549c9040ac5f04d2d3456",
+    "selectionDigest" : "141224ba241262f9f3eb0b0afe09df40bb62870ae0780bd67269471d320fff73",
+    "importReceipt" : "49a65880-744e-401d-b37e-257ed98eca7d",
+    "submitBatch" : "fbf0dfc6-da50-4148-b4a0-39e6e3b7060c",
+    "approveBatch" : "caacbca8-5709-4713-a273-1356e912a385"
+  }, {
+    "topicId" : "A03",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "726ca7b8fb43e59cca1f93969b9deb5b7cc57420a4806e5ee061df5276bfc1f9",
+    "packageDigest" : "ea6161da7d28c143e8624645d27aff532724ed19ac3d2a386d671d63587f135f",
+    "selectionDigest" : "ed21a10a1cc18d87c7c0d6b9a232a200854cf78c09f4e5573ff385d9848713e9",
+    "importReceipt" : "89f3d860-2cfc-46cc-ab1b-a86a8bd74724",
+    "submitBatch" : "18f4c11c-dc61-43af-a47a-469e0824ebc6",
+    "approveBatch" : "4ed8c21f-58ef-45ec-9287-f43b45df70e7"
+  }, {
+    "topicId" : "A04",
+    "purpose" : "PRATICA_AULA",
+    "items" : 27,
+    "requestSha256" : "88b8eb2367af2e74540862b107c74af6570cabf8e5b6759817645bc316331fb2",
+    "packageDigest" : "bed114b394d1d706b6968687b4491e6e4544539456d6a63b393fae82509c2f4f",
+    "selectionDigest" : "0e305e21421fe47f3f4bda60e8b3b213f90588a2467414142fe571b49f891341",
+    "importReceipt" : "cd7081cc-f56e-4f7b-bbb8-c40271782df4",
+    "submitBatch" : "f50006ba-7cad-4f07-9a45-ec5e08bc85f0",
+    "approveBatch" : "09aa8114-3f15-480b-8dd7-5350d33478a0"
+  }, {
+    "topicId" : "A04",
+    "purpose" : "SIMULADO",
+    "items" : 27,
+    "requestSha256" : "0675083fb8c8c85934e2074315a9a90ad37e70fe370fb46566b55862305b0c57",
+    "packageDigest" : "f4b56c5b2c2a535a112804d12d506011b8515c46d7a4ea86782aa8463f0ca0e9",
+    "selectionDigest" : "6e60a1a99a443fcb302bd46c97164df0e3dd184fd35aef6c743d99c46ca4ead5",
+    "importReceipt" : "d99fec7c-91a7-4848-b347-e440c6d21ca4",
+    "submitBatch" : "24c618e0-1d1f-404e-9000-3bcaffd62f2a",
+    "approveBatch" : "f42436f9-2dac-4d24-955a-9b6958a315e4"
+  }, {
+    "topicId" : "A05",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "c7b348dd39b794075d23f470d7464b094b7b577d835e66e5bc3a8a5938422adc",
+    "packageDigest" : "1eb28dd977c6daf9c21282489920b50f2b5e975f2c80bc923674dc41bbd1798e",
+    "selectionDigest" : "6723644c217f171253dc4d06983fe51fbd3f23e2a2a37f8842772dc4018044cd",
+    "importReceipt" : "5c916d88-5974-48fa-ba1d-ace6f145b7ef",
+    "submitBatch" : "7e0d8329-35bd-4fcb-b15b-bd95337892d8",
+    "approveBatch" : "a8250b12-77a3-4893-b2b8-07741725d49c"
+  }, {
+    "topicId" : "A05",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "e95cd88a4e6347d9ae99019bcaa5bf0935802e6d2b6203b803cb8e8a2fb4deb3",
+    "packageDigest" : "463d1de9c84a5ea65a28a7fc71114fa2e66ec6ceedd9f0bc022f02de0329e73d",
+    "selectionDigest" : "29a6fc0d871cc43eeee7a91677fa34e58708f91d6b7b72a9e7a5d57148dba754",
+    "importReceipt" : "316660c4-bf5a-4466-b335-51f301cf52d6",
+    "submitBatch" : "13709496-82f7-472e-b7af-b6b28f4f77f2",
+    "approveBatch" : "26125477-22ca-44ae-8936-8074f307f3e2"
+  }, {
+    "topicId" : "A06",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "43896af25cefff05c782f9922c022856d62266f6a1ede59dd6d430dc56e2c72d",
+    "packageDigest" : "763b12a4fa2147dae4ac55fb6a32d1af9908af711cbf28e1d40aa25b92551554",
+    "selectionDigest" : "b017ea5712f4ead162cc65944c09d5fc9ba4bc4c6bb92374468b5039a1fda6bf",
+    "importReceipt" : "486888b7-393d-4016-aaca-1b422bd3938b",
+    "submitBatch" : "857d881e-7e12-4d8a-9026-cb286ff8562f",
+    "approveBatch" : "5ed67b28-c370-4260-8624-55c9f9391929"
+  }, {
+    "topicId" : "A06",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "f6f7316d6cf0fa3d0aeb004da6d8e7472c98bdc026f16f204c93dc49944355a1",
+    "packageDigest" : "0c55a38e22d5c08ed0d5a2d128c583e16297ba6eada162faabac3ca27f47164d",
+    "selectionDigest" : "8626330347d4b6112611ebb313a83b210700d0d0ba9410d060e2ca845589352f",
+    "importReceipt" : "d3e71f7c-e22e-47e8-84da-50a94645c130",
+    "submitBatch" : "981523f6-62f8-4f7f-bbd2-68ab96e1f281",
+    "approveBatch" : "9d9ef03f-11ad-4331-96b4-9172dbfa486c"
+  }, {
+    "topicId" : "A07",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "fb2fb908279085218b83a2ff6e1e472850ae27854f2ce90df1bf8a2f0c4182b8",
+    "packageDigest" : "6d9ee9c8448daf9f989614edcf1a1c53e1bcea153242be6bd4cdd450e6a1ce14",
+    "selectionDigest" : "610c57e2bb271a612d8d0a512913fedc4a74493009f980f23975e7254effa371",
+    "importReceipt" : "83590b43-be9e-494a-a69b-d40889abe031",
+    "submitBatch" : "346e208d-6622-4fb0-8b1a-a7f83c783f35",
+    "approveBatch" : "66943f1d-f96f-4be8-87df-f23b56f3c276"
+  }, {
+    "topicId" : "A07",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "1841afdce8bae06067e52b814ec07b78fa99ae73d826e004d8ef360509f17792",
+    "packageDigest" : "dbcb93e617b9dd9dc23e9f0fa8ee1571c70760b5ec457c37c9dc04fc3b78d053",
+    "selectionDigest" : "bdb4eede414124bf14bc89a0a73f74b0514159f98e392467a408556e82d805fb",
+    "importReceipt" : "d80c5e52-61c7-4d5e-af40-ed76d65d3af1",
+    "submitBatch" : "3c01d33c-3cb8-4b6d-8a1e-95a74fbd81f7",
+    "approveBatch" : "3a1a7b3f-080c-454d-b62e-a19f5145de8d"
+  }, {
+    "topicId" : "A08",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "0f979ac15a0a4a17bf964045bb426b5977379b91841d445fbe49008e66bfa901",
+    "packageDigest" : "db5c261a9d6f9ab6d27c3c82916b56e5718242948bd0160358a49ea1ce377b26",
+    "selectionDigest" : "b16fda3ee6181d099d8b6fb869f634bd0c2adabb9016c8fb70d695a799dee3e6",
+    "importReceipt" : "0776b34c-0cef-4cff-a91b-04692508b207",
+    "submitBatch" : "8817c6a8-eb93-41cb-8f38-c3c13a66e13c",
+    "approveBatch" : "0c4286d0-ec7d-423e-9652-f49c8e17a571"
+  }, {
+    "topicId" : "A08",
+    "purpose" : "SIMULADO",
+    "items" : 27,
+    "requestSha256" : "e7b35d467b76eef7971ac1a36837bc1093af39e3b771bf2f38e1b159350f2810",
+    "packageDigest" : "cb0c9130bb68d13ee98b5c5ce6e6cb494eee1076b342223cf8020d6804c2580e",
+    "selectionDigest" : "c0eb2096624aca1c29fa6efd37f42501a2d9f8d6d97fe33b93b993c9b03d6457",
+    "importReceipt" : "70fcd917-12fb-4b2c-b83d-0aa29108975c",
+    "submitBatch" : "9ae078bb-d06d-445d-bf27-7a08e9c7c33b",
+    "approveBatch" : "5cf295d2-277a-4871-85b0-545e33049f1e"
+  }, {
+    "topicId" : "I01",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "8c09a6e966337bc30f7d1a05ceeadfd234eb5112c229dcb69ad30e0c64408ed9",
+    "packageDigest" : "f5140b9e3ab51da185c0e312d62facbd93853367aa16a081d609b867b62c2adf",
+    "selectionDigest" : "9d4236d49049e150a523a2cb0b443e3d12b4e72b884f3c43b5fe6d0e08864433",
+    "importReceipt" : "21b78912-eb09-4d34-869f-2509cd656d8c",
+    "submitBatch" : "a92aec74-dcb0-4da2-a09f-aee921979d48",
+    "approveBatch" : "88fd9b0a-9fd8-43d4-8f01-842fb132a6d8"
+  }, {
+    "topicId" : "I01",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "4e256193a7ed490985d0d913a506c09e7da4c2d81c97586e2d43b6e9a0125021",
+    "packageDigest" : "2d8b60d392f6cc2091fea0514bfebbd365f29e67fee2d259d9a3509040e6ecb0",
+    "selectionDigest" : "4ce817eef40021a107a6b809abd1f1d2ec4deefc4413e9100e7f4f5d3dc0fc70",
+    "importReceipt" : "4f5dc5f6-9bc7-4864-8cfe-6a2a7be52d7f",
+    "submitBatch" : "976a786c-6072-447c-8361-0bf1533c10a2",
+    "approveBatch" : "a4cc9723-62d2-4d68-b622-89f37b69b0f2"
+  }, {
+    "topicId" : "I02",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "53c1ffd83f8386793372ea34e08789ea1b87af513d113bfe9cfe9bcb2f32a722",
+    "packageDigest" : "390ec64a4eb22990118e603f4bfdb7ee35658bd252712fff6216ddc0e3dfe6c9",
+    "selectionDigest" : "a553c7c962956abefa9c5e366729f34f7f271758f190ad92bbc5f178116b43c3",
+    "importReceipt" : "c56a675d-05bc-473a-b838-583d14f870d7",
+    "submitBatch" : "00c23d00-f94d-4c16-bb69-a2dc4c3d1246",
+    "approveBatch" : "b5f7c2a2-7c3a-4a68-9e8a-d39687c33e7c"
+  }, {
+    "topicId" : "I02",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "6e4e87c72cedfe42103a8fc9f2a31864c359644fe970f1044fe5b49530d5719b",
+    "packageDigest" : "99ed5d56e9018882feef8dede6fb495485779573d0a519fa2abbb1ec8e382272",
+    "selectionDigest" : "9d6b9e99e6bc55eeca520f0ee833b5c1c0eab8d7948528ccecfdd86b00a33e85",
+    "importReceipt" : "77ab992e-0342-4aa5-8573-9afb6186cfb7",
+    "submitBatch" : "3f9da713-a7e4-4427-9710-72c5765a4e8d",
+    "approveBatch" : "f04ba19b-5d43-4347-a98f-ef2e0de0b6c0"
+  }, {
+    "topicId" : "I03",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "968582bf48146b129cc2c21ea891259fd11a395a2b9a5b9ac8bbe903d8d5339f",
+    "packageDigest" : "5bc04a77184d1736b6f23862cb7c9edf0c6eea3b1151a061c51c959d37e6f53b",
+    "selectionDigest" : "3dca46e2124f1cdb676ca93da47eb445a18a28559c583462d50c0000a8a31724",
+    "importReceipt" : "a6c1e036-a56e-4a6c-bd89-489c4595370e",
+    "submitBatch" : "7293a2b3-de9d-4aed-bd09-868ca8d0532d",
+    "approveBatch" : "9fba07ec-11ea-414d-a58d-cbbbd55d4174"
+  }, {
+    "topicId" : "I03",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "135636948f2eb66eb53407bd890878d8749f96c1fbdf4d4ab1f420681c7b8c20",
+    "packageDigest" : "80face4186dfb83382c6a326c4f08519d326ad7e5ab892fc73044088f04d2f45",
+    "selectionDigest" : "d97a465ade2a63aabc4c227756b7066818ed8dce0636af4b2cb9e97139d5d745",
+    "importReceipt" : "a9b1ed48-cc86-4d59-98f3-7db0fd939ad8",
+    "submitBatch" : "788f1cf2-daae-4fb3-bb11-d63275da3d62",
+    "approveBatch" : "2dd007a1-6c1d-47e8-8b41-d9d06323f43e"
+  }, {
+    "topicId" : "I04",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "ab00514316d7cfdb8601823da132828b6c92073b69ef82d3c7c144c43ee7c4ee",
+    "packageDigest" : "59ce793f266b9a2bf2c4db35c598273392752643313787c9b80697b13fa51f92",
+    "selectionDigest" : "c1f9068cc4f5fb839efd1e97d4f9b3e4d2dca9fe7ca72e05a39e201568fa32e6",
+    "importReceipt" : "eeb46e64-a1b0-4da6-9f86-921ef7a189b8",
+    "submitBatch" : "4761d7f2-5d95-4a63-bebb-730ff3525a95",
+    "approveBatch" : "7e813536-76cf-42d4-ab17-0e88e55fd561"
+  }, {
+    "topicId" : "I04",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "5bf977b89c25bffffd2caa1b10058536289a12708d7ecc7474f95c852c44032d",
+    "packageDigest" : "81f630c2228c03b07e612d25d0512a60f32b335a56dcd92e3a0d4c7474d9d256",
+    "selectionDigest" : "f9dc47b470849c58c21cf4132eed4f7250eef72d325a7997fe37143c330384ad",
+    "importReceipt" : "6b6a9302-af75-4b59-a077-26c83653ec2d",
+    "submitBatch" : "81790b7f-598b-4948-95a9-6ee33331a0d5",
+    "approveBatch" : "59087393-9a1f-420d-8c5b-351602b7b8e0"
+  }, {
+    "topicId" : "I05",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "16638cb35d7793821537cd379e8f21ca4a210bb2ae8667a485c1344767c32f93",
+    "packageDigest" : "e76ad250001a9528a9ba052b764af7f11f0448369a1f58a77acc72b93a666bfa",
+    "selectionDigest" : "1f2a666b6310d5ea9c550c707cc6103d548d182e5000a7dfe5b0c7c91d6ff177",
+    "importReceipt" : "abf11a29-6f5f-4322-8a3e-c3b5b9eb8fc0",
+    "submitBatch" : "ba34f11a-c224-459d-a309-ee592f60981f",
+    "approveBatch" : "26d71a63-42f1-4274-915b-7693a8dd8207"
+  }, {
+    "topicId" : "I05",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "ae3ef54195fc3c4fc5f974165b293c990d2ed0a6df296a6853593ee079b1f2a0",
+    "packageDigest" : "745801200485d8257b527e0d39edbad75fbd38dbb7afae8dd755e4215ab7492e",
+    "selectionDigest" : "19a1bbad854d812af074db6200eb148b53d19fae3eafc547822e879ec4f92d9f",
+    "importReceipt" : "83175310-cdee-4054-a916-42f7c8314a3b",
+    "submitBatch" : "b2c520f8-049d-4fd1-a1c8-1bf40f0c9415",
+    "approveBatch" : "d1340f7e-aa23-4148-9828-55f54b5ebac5"
+  }, {
+    "topicId" : "I06",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "e86993d87acd13c8d03f04d868daf7193092295bab21bff473592116759d1ee7",
+    "packageDigest" : "061eb2f573e88a68df713993b1b9d90a44df8daa5e2b0c7f114f8ee6e5667467",
+    "selectionDigest" : "10c6a83a9ac6fb75a3554e831c0316c05cf4eba50cd43877474e098659e9bf21",
+    "importReceipt" : "3ace12b5-34a2-4e53-80a6-5c9b304bea45",
+    "submitBatch" : "253adca8-26af-44dc-892e-45ef1ab8fb8f",
+    "approveBatch" : "f600a744-6879-48b8-94d3-d7a5ae86ce03"
+  }, {
+    "topicId" : "I06",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "ddde349fa9e73e2a7e282ac24481173e97cfffb7e4975785367f63292d23da82",
+    "packageDigest" : "2ad36e51240aac23090957ac63ab9be774a3ce68f0ce76b31d57bb67a1ba426e",
+    "selectionDigest" : "fac71c4e8fe83f91ff8d95b425fee92606f44d1e9fe76ee030aa610bc4901091",
+    "importReceipt" : "fe3776d1-c870-4ccb-ac32-82799585c12f",
+    "submitBatch" : "243d2583-58eb-4554-9f14-82c69b68ed1e",
+    "approveBatch" : "dd4a4a51-4d97-4512-9b60-7e3486bd3d1a"
+  }, {
+    "topicId" : "I07",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "b200cf7a1a6d5ae38f88b275703a142696c8eabee4acca306d61918214949eb9",
+    "packageDigest" : "dc6b7d00d1b1911d249c9b37767d5f5ce58986abd28cb12eb9da79ec93886f78",
+    "selectionDigest" : "b5275064bd499dd2461cb90fa692857318024ad67da4d38ffdbc305ef4634923",
+    "importReceipt" : "f02790f0-e3e6-48f8-a275-5c2acea8e189",
+    "submitBatch" : "a1f4181d-7678-4b8f-bff5-de20f4d75f7c",
+    "approveBatch" : "9eb0ecd2-c61b-469d-ab2d-8644542b593f"
+  }, {
+    "topicId" : "I07",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "472cd05aa7393a2f72e4547b849b0efe5b8ed4a5703fac6c586bc556c34744a0",
+    "packageDigest" : "3b1ec683ee0205244bbfa38adf90ba819f75732124f2838e1d38a06174090c43",
+    "selectionDigest" : "7d0f299496a8e49eabe5fbebfeba69911404222bc5a0475092c6db466a21874f",
+    "importReceipt" : "5b9c2643-2a89-4bd7-a7c6-46345a3d5fa8",
+    "submitBatch" : "002f2fe6-17b0-4081-8f2d-9f55a438f69b",
+    "approveBatch" : "336b42cf-575e-4dd5-a29b-55789c109ebe"
+  }, {
+    "topicId" : "I08",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "7608c003b6406aed4e20ab771547ee4daac6604241287a7372845abe3c641fd3",
+    "packageDigest" : "6272d40822a9430b7c81fe602743fe3c02952578eb595cf082d8d46338065afd",
+    "selectionDigest" : "6daa8753994c47ac3e74dfc84c4a1d8a0c36dff8ddd29819da76f5a74ca8f7e2",
+    "importReceipt" : "4e8d000e-6d95-40e8-808b-399fa9c4fc19",
+    "submitBatch" : "161bac78-31aa-4b5a-8590-21989e9f835c",
+    "approveBatch" : "93b7a995-edbb-4d0e-8cfd-9d71e6d45cf0"
+  }, {
+    "topicId" : "I08",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "9ed88ee507a3c4096e0a9bf9dce9a301a14d7d530b013714b8219ba284dcb6f4",
+    "packageDigest" : "65a4f12071afaa4ea3ff9869a0dbc5accb0f6a979769bee3ce8ad6b7fecec3c5",
+    "selectionDigest" : "dc65a2f30020cad1c7468127d402341ffab6978504a4d4ce8138163a5e398b7f",
+    "importReceipt" : "1dd6addd-ed0f-428f-9716-043d5f03be66",
+    "submitBatch" : "266f42aa-eb5c-496b-8388-4c148021a1b5",
+    "approveBatch" : "b45c1f38-ef0f-47f9-81fb-46b3aba46477"
+  }, {
+    "topicId" : "I09",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "d2025ebaf9b0213a29cb375ad272a48c24b3b71ec8572a9cc5abfba5126dfe4b",
+    "packageDigest" : "9cf51ee867f9ab55b5a03aa27412b89fb28250a4528110030e5f60f16a91b505",
+    "selectionDigest" : "f1abffa7e87c630a4e818c634851708db555bf069176674d7b248f934567da10",
+    "importReceipt" : "da2d0f3e-cb5f-4916-bc20-25636da4767d",
+    "submitBatch" : "ed6ff24b-b8a1-4663-9a1a-12e154c8ec3c",
+    "approveBatch" : "0b12498a-0612-45f0-ac0c-d2b81ca71bfa"
+  }, {
+    "topicId" : "I09",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "26ddfd70ddf1bfd9ac62048b1f72d7a908ecefc7637145e3b19512b8df6c0b6e",
+    "packageDigest" : "e97404af1ffce5aeafee5cd73d2d665ffcbd6009e3c4080826db5b8f7b3e2fbc",
+    "selectionDigest" : "54ba76db945903afa0ea5d6f2be9f4b347448bc538159c4033f19116829ed3a3",
+    "importReceipt" : "c76185e3-3d8a-46b9-8a3f-1b9a31c0ac83",
+    "submitBatch" : "42707376-921c-4f27-8792-e6e3b06737a2",
+    "approveBatch" : "820e95ec-da9c-443c-9ef3-8fc004d8dc03"
+  }, {
+    "topicId" : "I10",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "b98f29e53179faf00fa72a89b0299bd6481191c7900fa105f559abfb579c7402",
+    "packageDigest" : "0b21ca70dd6284c961e3ef5542a4d7faa412202d2f27d25c89a68223df4c694b",
+    "selectionDigest" : "358ab552940de262f531f2bdd7a65684a46a10ef3408530c60b2f64eb4d3b087",
+    "importReceipt" : "59c66093-aea6-44f7-a1b8-1845f42561b3",
+    "submitBatch" : "02ad0023-b5cf-4a10-8b48-9f3d757c9e52",
+    "approveBatch" : "0649f08b-cb38-40b1-8fef-9aefd6dd9556"
+  }, {
+    "topicId" : "I10",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "3f8ab4e51ecd48642c0084073d5746b01588891fed1fb1e8400ad17fe387045f",
+    "packageDigest" : "db7029e89dab6bcec799620091f7a0e3d82e429b015c1d2feca79b68b6e60cf1",
+    "selectionDigest" : "0098ee3a970bf278b5d479d87b3d5e2833c6a76f77fe530d3042fa91a0859677",
+    "importReceipt" : "6ed387be-77b9-44d2-b4e0-27999a6de72d",
+    "submitBatch" : "bbbe44e3-dbae-4a44-9e75-87791b0f4da5",
+    "approveBatch" : "9b351ea5-ce95-4875-93b8-dc3da8fa77f3"
+  }, {
+    "topicId" : "M01",
+    "purpose" : "PRATICA_AULA",
+    "items" : 28,
+    "requestSha256" : "379991b239742c640ef9e327b790a87714c5a030e04a68ccc41279455af985ea",
+    "packageDigest" : "763fce663102e44dd5a638b0c6e15334a8da0e59e537fba20d0e0e7a78a63c3b",
+    "selectionDigest" : "e1ccd032f5da549eb751b343ae572a1ce8da0de68bd43e6ec1d3ba7564946169",
+    "importReceipt" : "ac425ec7-29e7-472d-9565-1429847a022a",
+    "submitBatch" : "adc02cd7-6125-430e-9170-4fadba79f18e",
+    "approveBatch" : "bd8bc1aa-9cac-47b6-a933-1db35cc47c9d"
+  }, {
+    "topicId" : "M01",
+    "purpose" : "SIMULADO",
+    "items" : 28,
+    "requestSha256" : "59d8344eac05770630e92938f71a91a87921e4666d9dc4c64f60de7145795852",
+    "packageDigest" : "d616ea93c4cbc050bd17aea7d0070810d556f29d044fdf4ed91aa5a2b59d30bc",
+    "selectionDigest" : "b13672f19b7fb2201d144b465dde87f342c890d1cdbcb143698a52c2462c2f30",
+    "importReceipt" : "f59d1fd0-3990-4810-b2c4-68ef4af4f41b",
+    "submitBatch" : "0a50da4b-e574-4d4a-9499-0f1754c1b924",
+    "approveBatch" : "1c2351aa-d144-423a-bca6-0f54954da032"
+  }, {
+    "topicId" : "M02",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "e54b271eb0ce66a1cb1e42778a26328c896d1690b9f6e34371889361814c3189",
+    "packageDigest" : "527b82e7ab5128c6eebf83793f4b841ecf455c085ec58014691705c7d8c1f862",
+    "selectionDigest" : "0c325c3aca9e83001fae9303806a9c2b048a254f9aed40a7f21be4976f4ab742",
+    "importReceipt" : "4e64ab21-b50f-420d-987e-be7eab44d86e",
+    "submitBatch" : "93de5374-69db-4414-9aa0-ad7a0595d4bb",
+    "approveBatch" : "5cda802a-7dd5-43fa-a41f-7754a59c86c0"
+  }, {
+    "topicId" : "M02",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "c60e076be6fb8ee65ab71bd4cc7581f4f6463fe9a020413ca4da3997749ad179",
+    "packageDigest" : "d77c140397091e746835b9eb40efca102dd05cdf08a61b8faebabe54ffd9fb12",
+    "selectionDigest" : "63a0a0b2a6f810fa0482229ded3167a61932060933edb3c9edb84769addfa905",
+    "importReceipt" : "39a86904-137f-400d-a133-e774200bf067",
+    "submitBatch" : "4298d387-0b5b-40ba-bc46-c4fb4252273e",
+    "approveBatch" : "87eaf081-2b90-4e44-abae-fef83f56995c"
+  }, {
+    "topicId" : "M03",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "f61c982f663e26d55d9b1afe1daeff4d6772213e8cc4178e2712710e9f554673",
+    "packageDigest" : "feb97f298b9a0717849eed25dfd9cc5cae842920f6556c3b958fefcdafcfadb9",
+    "selectionDigest" : "1a50941cc31cda9d30db6305422a9df50203a7b5089b02300bec25c5cb78d152",
+    "importReceipt" : "b85082d1-9e3f-4536-bda7-dbc7d3dd7764",
+    "submitBatch" : "d48d2926-c6cf-4dc0-aecc-898440041092",
+    "approveBatch" : "dc16d9f2-cefb-44c9-8422-d2f7ef1e862e"
+  }, {
+    "topicId" : "M03",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "7c0c1cf1bf7694af4323d5626964da4270f591280efd65bcc62daf309e895842",
+    "packageDigest" : "91f8ab284afdcfabb592c582251f52fbb2c197b64a7ff3668b7129b73d1d3fe5",
+    "selectionDigest" : "dccb6aa26954e5d99679b4726b94fc4f704bbf1b8b192116ad0470556bcbb12e",
+    "importReceipt" : "2b9503e5-65fe-453a-8b6c-ce261496d8ef",
+    "submitBatch" : "dc07805d-3e2b-44a3-b2b6-7a7bc238c172",
+    "approveBatch" : "67e7eee0-e6cc-45f1-a9bd-e66392f70d4b"
+  }, {
+    "topicId" : "M04",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "118330f282a0468161677713b16b56246eaadb39b2e9766feb0c71b8ecda8d19",
+    "packageDigest" : "9b51f544be75a1451676aacae52a6b8dace25fb931f8d2c25c1e886240d535d5",
+    "selectionDigest" : "e43bc2582f9840a48ae73488bc3c095e529840b72c3fee25805a047e89d67fdd",
+    "importReceipt" : "dee46705-6ff3-4950-9d17-abe2925f47c2",
+    "submitBatch" : "c57361c4-dc36-4540-861f-028e5777418e",
+    "approveBatch" : "431ec0e7-099f-44ac-ab45-4b7a54a9a8fa"
+  }, {
+    "topicId" : "M04",
+    "purpose" : "SIMULADO",
+    "items" : 26,
+    "requestSha256" : "551bf52e5ba88c48477f7645db1a0c4f940a77c78ce4035469b7c85a5388e5f8",
+    "packageDigest" : "ebd9ad95ba7a8c0254f9e07c10da286cfc91f1223096c9f5690837c9dee81e74",
+    "selectionDigest" : "0c47aff38247afa5bab066d1c40764fd77e0a0377187caaaef6de9801e39bd40",
+    "importReceipt" : "29c2e886-2b39-4068-9371-c186ecad8aa6",
+    "submitBatch" : "5a6d8486-d957-40b3-a0df-966161855659",
+    "approveBatch" : "a95c3801-0fd8-4ba0-94f3-4e8247829d0e"
+  }, {
+    "topicId" : "M05",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "92d9781962ee6899126798a28323f2084531f33ac361d319c51bf5afee801971",
+    "packageDigest" : "379fbc3e9c9beb7abe28239ab386d9901ebb1719449276d601d2d4242514e3bc",
+    "selectionDigest" : "2019d07a0e9d36a7a28e3227bea09ce5a2adbed3d9e2ae859deefbc68871e11a",
+    "importReceipt" : "f3fb0c31-62c8-47d4-bca8-2db8f7627bd4",
+    "submitBatch" : "51782be5-3a7c-4fc1-9457-7c43e261ed0a",
+    "approveBatch" : "3554778a-944a-49ed-83cf-73ac56c2deea"
+  }, {
+    "topicId" : "M05",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "ac0b7b280366d481f31bfae6029e303340c5ec6aa0edc87b800273c5cf88da19",
+    "packageDigest" : "9bcf19584b6a7ced1d5e083dd777e6d778baa28997d507060a563eaca579f75d",
+    "selectionDigest" : "bab04d8487b2611fef725928dea707316fd8e20506a20938148dfa744f67ec06",
+    "importReceipt" : "8d53e6c7-a7e4-4934-b3cc-9b8fc7c549b4",
+    "submitBatch" : "d0afbd5e-a6e9-4efc-b9f0-6a1cc61d7e9d",
+    "approveBatch" : "fe6ddbbc-c409-40ce-b294-76270a9c4ebb"
+  }, {
+    "topicId" : "M06",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "054a31ad4fcbd2937180e0f952359c3e46339a216cd3f1256244c83433a1d6ba",
+    "packageDigest" : "ee516a554542044afc6e75139b64fcd12f4c8ee70cacb29e6f40af842a9f6c76",
+    "selectionDigest" : "bd96ce129513ca8ee655d08da974f6a450d45737525879d074fb102e21696c39",
+    "importReceipt" : "bf80d266-184f-4b55-89f3-f3381b5e64ee",
+    "submitBatch" : "abd7ecba-3e73-4f64-b8d0-62b70dee6674",
+    "approveBatch" : "a1e55ebf-57f3-49c2-a3bc-20ed8121d123"
+  }, {
+    "topicId" : "M06",
+    "purpose" : "SIMULADO",
+    "items" : 26,
+    "requestSha256" : "44519cfa7e8935e13ae3dd8c6f626324e684ee1f6fcaf111f61b0636a141f2f6",
+    "packageDigest" : "82d8c7304d03afcee4c8005c5643c2b52f9aa5c7cc18366271b0a2fa1a31b7ef",
+    "selectionDigest" : "f942d11337f3420b6763813b748061a7f555837458cf33cb63a05a4ca61c08a5",
+    "importReceipt" : "376eb400-208d-45d9-9c28-42998e19ae65",
+    "submitBatch" : "232e5c2f-d1ff-40ee-a1e1-58ec974246e4",
+    "approveBatch" : "823ed59f-0356-4e08-9ce6-272824d724f2"
+  }, {
+    "topicId" : "M07",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "8869e660a8ed355c154e4694bc5dbe2f18cb22dc688c06dcf8086787a061ba1b",
+    "packageDigest" : "f5e62191f0b539000755927323ba2bfde4e3ddc34297d1ec637370ba38cfee59",
+    "selectionDigest" : "ec14d6c0b680737f3ee422cd6f856d4fb2c257a46adcdd498627a1de7ff90722",
+    "importReceipt" : "4cacdcc5-0fbb-4f9a-b251-8939224b6300",
+    "submitBatch" : "12e0e414-4a98-4e10-b1be-08b1f9b7311e",
+    "approveBatch" : "258c00b3-c52a-4c0f-9fc2-1a3f357d9947"
+  }, {
+    "topicId" : "M07",
+    "purpose" : "SIMULADO",
+    "items" : 26,
+    "requestSha256" : "403d61a4002219033d1109f95640f8721112d9cf5c89517e0019c3b1c4e32571",
+    "packageDigest" : "9b8c2fd105ced925c8ead740c0a96633178527ef546df8822daf1af7fa02063c",
+    "selectionDigest" : "cc67f03920776a38cc34806bf48433ab06825e058e9ad942629da63734897937",
+    "importReceipt" : "b2e07846-2e98-4185-86bb-bc79055b9f1c",
+    "submitBatch" : "800359f4-905b-4fe4-a3c2-8f01a4ed4aa3",
+    "approveBatch" : "fa6d596e-bd4b-4cfa-809d-4c9ae9268c01"
+  }, {
+    "topicId" : "M08",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "59f6e6c9ad623b3acbc28391a16bd85082dc888fb4083494562a3a435f185266",
+    "packageDigest" : "ddf9aa1ae073176a5ce59bc80551f78c8171a138b8ad90581c94519e499535a4",
+    "selectionDigest" : "6d01aeafa449376993990e1a350e4fbed04b53d675e41815f3a79b8e21106a8c",
+    "importReceipt" : "361ce7e5-da52-40df-b6a3-54437d7a2bb9",
+    "submitBatch" : "0170cca9-999c-42bd-b42e-c1fcca78cd75",
+    "approveBatch" : "737efbb1-62b6-43af-8924-5e957360e345"
+  }, {
+    "topicId" : "M08",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "d4969cadc310ebeede4c8d707219fccc3a2b359196bd0e7787c9f2bd282c1575",
+    "packageDigest" : "4c1c8a252823989cb94dca9dadd3d16fa6109ccf3a8498029be7b5217d33778d",
+    "selectionDigest" : "fe137ebee66cf9f05ecc2b84702fe1bff08ef7bd429e5ec7cd142903e2da3700",
+    "importReceipt" : "71aea938-7b7a-4be0-9b9b-f1a40c31578f",
+    "submitBatch" : "d21660f5-5c9b-4055-a003-d3a1dbc701ce",
+    "approveBatch" : "7f168c4d-bd9e-4eb7-a48d-1a423118925d"
+  }, {
+    "topicId" : "M09",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "c4eb6d52164812a95a2f0b7645101d1145340f32cf226280bbf21824b6baa2ec",
+    "packageDigest" : "1266bd153d4747571c4daaa2ef6b04f51ca32b5227d52baae991331e3126c106",
+    "selectionDigest" : "a1632e255e7c03dcb115b34930622a58ef9cf4ab0b69f3fc691a74eb35474755",
+    "importReceipt" : "36db5fed-535f-4dc4-92be-559100522224",
+    "submitBatch" : "ec1e75bc-b4a3-426b-bcdb-f812ed9dad79",
+    "approveBatch" : "93d09c37-6469-45bf-a8bc-cfebf54856fe"
+  }, {
+    "topicId" : "M09",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "eaaa426ece311e7a6867bc3ff53c84e271e074a1010d573efe902a402c809db2",
+    "packageDigest" : "4b8827031dea2f984d92f4899b639f8dcd39887691aa57e353425cbff38557a0",
+    "selectionDigest" : "6b3bba239bf79eef63ddde3d960aa55d987305f63e373dce74758ea854fe0c56",
+    "importReceipt" : "e90271f6-a86e-485d-be43-a89cb75d830b",
+    "submitBatch" : "d9693374-92a7-4d5e-9399-ea18eb570344",
+    "approveBatch" : "1addf012-2a3a-4357-8c9b-5ac5b7d8f306"
+  }, {
+    "topicId" : "M10",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "206daab5120b8fb161a419a2f4741a2764c3358228a10ced2744e9a8b42dd2fd",
+    "packageDigest" : "9aaeab36a4a9a3288c809e0fac9a76a1c521b94fad25486b639046949d1d2dbc",
+    "selectionDigest" : "43adfb079fa433bb689f20be1550c3428a59d3ce5fd20990769b5fbd4f2b5e72",
+    "importReceipt" : "3d51d6b1-e706-4d09-938e-972853bf498f",
+    "submitBatch" : "94995c69-43df-4acc-baa1-e8e1486e6756",
+    "approveBatch" : "e05d8b52-55a4-4b1d-992b-871cb163028f"
+  }, {
+    "topicId" : "M10",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "99369d732e71fa6e5f7b8f008ef6ccbe42e93e2266af02ad500768cb1609164d",
+    "packageDigest" : "4e82083a114f7bec69b7842aecd444d41169b448b555c97365106a125e67e58e",
+    "selectionDigest" : "525fbc8b37a81becf6878ab8b837cddab776946bec4729b86bba4a295aca547d",
+    "importReceipt" : "fc631131-462c-4fce-95ac-990ff9538d05",
+    "submitBatch" : "c25f911c-52e7-4927-8aed-2e0c568c3da5",
+    "approveBatch" : "af7c64ae-37df-4904-9680-0d84ca20fc9f"
+  }, {
+    "topicId" : "M11",
+    "purpose" : "PRATICA_AULA",
+    "items" : 27,
+    "requestSha256" : "510d458c49ebdbb7b62be2fe26058ab5e6807ac3fa8041e6d6535a7d1ce1a747",
+    "packageDigest" : "31eb102815b64d6026725488e1fad37c323dab80dce0072b34cdfd3dcbc0002a",
+    "selectionDigest" : "72032da6dac84ad0cf90acd16b3071afdd076126d75c8f2d423d21f96bd0f426",
+    "importReceipt" : "c0b73358-cba9-4625-b421-58b35aae894f",
+    "submitBatch" : "6062e21d-ffd7-4256-a337-0c84cfd46abf",
+    "approveBatch" : "26e791e5-9db0-4520-a714-ca0af38952ec"
+  }, {
+    "topicId" : "M11",
+    "purpose" : "SIMULADO",
+    "items" : 27,
+    "requestSha256" : "d9a33cbb4e5f4f06b65990e3408c1e7e250d358ce4ed0983640ea088a0f922df",
+    "packageDigest" : "e05e4b8352a376021533edfacdb7a934ffc0589fe9e0c77dc8027a7e1f7f22ed",
+    "selectionDigest" : "2f56a4212ba4602c762fc9c3102e8e2c5dddf79756af180e8296e4b1b2946d6f",
+    "importReceipt" : "5864929a-da68-40a7-a9b3-abd565cb2c12",
+    "submitBatch" : "c9e6b44d-46b5-422f-82bf-e44a0deac7da",
+    "approveBatch" : "bba4592f-193f-4968-9d4c-c2e9881c734a"
+  }, {
+    "topicId" : "M12",
+    "purpose" : "PRATICA_AULA",
+    "items" : 27,
+    "requestSha256" : "ad978cfaa5852e7356db59dd10e5fa2bc5d99f0a374ce723e22b265858e4bd88",
+    "packageDigest" : "6e92095895b5ee0d415bbd2ca5ebfa00d9e874192fd1b6fe9c83aa54ca9a534b",
+    "selectionDigest" : "f5867eec603401af1a8743da0413644a23371385cef53a93522ee52cca90f0ca",
+    "importReceipt" : "10e074a2-8be6-4c5f-a896-afe492bcee89",
+    "submitBatch" : "c563145c-98da-499f-bdd7-2582b8a55f35",
+    "approveBatch" : "a3a436ca-c246-40ce-91d4-90cbaa7eef4b"
+  }, {
+    "topicId" : "M12",
+    "purpose" : "SIMULADO",
+    "items" : 27,
+    "requestSha256" : "118f093495a9da7cc6dc6811a72d80d768b2bb2b53fa95979804da3e524bae72",
+    "packageDigest" : "d5f33d9a9e4c6d93c841e366c8eebf7c218a67a3226ab3c906ee621205e73816",
+    "selectionDigest" : "0c3160502d042490205819fae383718d7c5d36a90c48a8434892156356f691c0",
+    "importReceipt" : "660b3931-8f83-45c5-b8df-6c6c06f1e913",
+    "submitBatch" : "80daec7b-88e7-4bd0-96b1-4cee7bdccacb",
+    "approveBatch" : "39abff85-ca25-418b-9727-ecc5cea209c5"
+  }, {
+    "topicId" : "P01",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "174e60c4c6ff06a8c5af668891282d9b8cdc286861609e7dcf15e13eb83f7a0a",
+    "packageDigest" : "cc218f24ad9aefe3b79115a44ab10807ff7db3d25f6d5893baf62ea9f38cfafd",
+    "selectionDigest" : "7e508313a38df33f4f0e7eba53e2f4986a75c4668e05fe24193c9cae3050ddb2",
+    "importReceipt" : "5fb0843b-2dcd-4b94-8b7e-1af6d3913064",
+    "submitBatch" : "712b3285-3177-4d82-b60f-765c7b3f6d6f",
+    "approveBatch" : "c8731c94-8ffb-4143-af1e-92cb9a6a0e70"
+  }, {
+    "topicId" : "P01",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "654e877c5897982425cad940203ac477cd736ba993566c3c5ade467341bc966f",
+    "packageDigest" : "c3e00701226ab8c1ba3d1c8debb392d7262ad235c80b0219baa04e1e8254f91a",
+    "selectionDigest" : "2651e8d1fcd9f8e2621437986cd96b7759e398e89115524e7ac5b40640ff606c",
+    "importReceipt" : "ff547eeb-90b1-4d77-8498-dabaa093ec42",
+    "submitBatch" : "0ffca6a1-820e-4f88-bd9e-ffed89ccf144",
+    "approveBatch" : "feabae1b-38fe-4b14-a711-408ee7f944c2"
+  }, {
+    "topicId" : "P02",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "68d6cb224aa103d4e7292f9041407874a4a2a68dac7b5f784b8a5861f73bccff",
+    "packageDigest" : "5c379a4517f865e6856b335495382930e06782e97a1bd7defd29b90cb33ec124",
+    "selectionDigest" : "4aedab50dd67e6c6419b0858f36ffe888d072bf476dbb766b2364a41d51a3632",
+    "importReceipt" : "ae9709ee-f05b-4192-a7e4-5e470c320f2c",
+    "submitBatch" : "a39112ed-ac50-42a9-80e6-a1f8f99db272",
+    "approveBatch" : "a3ddccdc-bb25-4035-a96a-af51dd2a145a"
+  }, {
+    "topicId" : "P02",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "f068f0e366a719eb01a4f0775a349271bc6e2e65af21b21f0f9d7589c1fa2b79",
+    "packageDigest" : "ff38b67889a221a6837a5aa4bbc5868878cf4f7ff5b583068276170f9854909f",
+    "selectionDigest" : "60c19e13413db77657cb614e617440113bf80f96065408d79a14fc69651e42e0",
+    "importReceipt" : "2d30380a-dae2-407e-ad42-1a4462b4af7e",
+    "submitBatch" : "df4ef48d-0e4e-4cbd-82b5-8afd4a177e14",
+    "approveBatch" : "5e98d4ab-e8e7-4e3a-9462-800626410564"
+  }, {
+    "topicId" : "P03",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "33d9c76834f6d52756e5603d25394ca73143a72121a3b6bdc2d093e14efbd24a",
+    "packageDigest" : "a33c1a5c92b88aec7f7bf36483469a7786c1312f58b30dc25a2a344f217c6dfa",
+    "selectionDigest" : "31b8510b24f81d9dc06778d458c72123abacbd9275ba793f473c0b4612be6236",
+    "importReceipt" : "54291503-f120-4497-bf1b-1f6d23f71701",
+    "submitBatch" : "e774e7d5-5a6e-4a62-81cf-8a7be1875bbc",
+    "approveBatch" : "5c55d9ac-3d76-44ba-960c-26bace6125ca"
+  }, {
+    "topicId" : "P03",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "b20a66cf467f199d93526cfec8df474cd5150e89ee623e643010e61a3cd212eb",
+    "packageDigest" : "8dc55c0ec7f2e32c71752f6b7a4d4fa1f33dfa23c376ad4b4ddd0147b824199a",
+    "selectionDigest" : "1e66adc708a4f6323aec47e1ab30892ca1053ae93e890ecde4f9086fb6a284a5",
+    "importReceipt" : "897f21e3-f8f5-4564-8361-c9aba959f522",
+    "submitBatch" : "2090b899-47cf-43b3-95e6-38dceebf5024",
+    "approveBatch" : "daa890bd-3dc0-462d-a2b9-8f55d65fa7a0"
+  }, {
+    "topicId" : "P04",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "8d65b03c38af050a6b58309f7b921dc7836e592540ee8d7201e65f2b6bce8205",
+    "packageDigest" : "1acdfa83de671f2f5be7aa6c7cc0e9a90362e896a7ac033628f22587874d844a",
+    "selectionDigest" : "943267e812206bdce9158351d6e4cc1df2585d115e9b24ef557a568ca7160371",
+    "importReceipt" : "15ee885e-f67d-4ea9-88b2-cc748178889d",
+    "submitBatch" : "dca70bef-c059-49d5-bf03-0ea19210e63b",
+    "approveBatch" : "f04d067e-232e-4dec-b946-0dd7759087c1"
+  }, {
+    "topicId" : "P04",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "8b6f11ac4a87e8c842bd30d02d5ee39cc46486b11103e0f766021398f7ffa253",
+    "packageDigest" : "2420d068a5c6240ea139da33981a28c1ac4dfad784deea14edb05ea72fb1cd92",
+    "selectionDigest" : "871e4d067f19459ef18fce4587c482d28718b6bf78a7e5432c4b42a174fa2063",
+    "importReceipt" : "f446c73a-0360-407e-b19d-3871b5645f3b",
+    "submitBatch" : "5dfc53d8-8416-4478-9ea4-43ad4501fed4",
+    "approveBatch" : "95364426-8dbf-4f69-a13c-720f7d389dc8"
+  }, {
+    "topicId" : "P05",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "ee03e8e042e6aa66459f4256474c1d46250aa8363372abcac08964eabc4e6ce0",
+    "packageDigest" : "526975140f2965fd535cf8c7eacc83a6662cf45d3a060faef3a2f9b29e9e6582",
+    "selectionDigest" : "779f403886e7c1270e94fede8c4c1b244d12713a14e8a262206d1880d93f52b4",
+    "importReceipt" : "666fa97e-af8e-497f-9c8b-e3b93d784bed",
+    "submitBatch" : "24a43d12-a1e3-4d65-97db-eeb594fed6b2",
+    "approveBatch" : "561626f2-a0b9-4371-92de-361968e9705d"
+  }, {
+    "topicId" : "P05",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "841c2573291b6aeb3d4a186419c2281b1d4bdd25441c2e25e999d2fb20d22067",
+    "packageDigest" : "f458443629978fd8f09ddb66bbef5684d9d7effd13baec41de5c8e95aa4b96d2",
+    "selectionDigest" : "188cf1ebb346458de09f04e72d562c3b3e18331008f3830cdd6448fff1ffceb6",
+    "importReceipt" : "3703bffb-9941-4272-bbff-f31a3338598b",
+    "submitBatch" : "8f7fb1e6-d89b-4c69-b441-1f30248303ad",
+    "approveBatch" : "1113f81b-410e-48cf-8589-e760ad052d28"
+  }, {
+    "topicId" : "P06",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "c716c95ef7db34111c16e5cc22428e0c2660be2b34ef2986b1ea8bd403542252",
+    "packageDigest" : "8ceebfa07a2c841679cac181151d789f07fc14c066372ad17e723cde56e5b5fb",
+    "selectionDigest" : "ebb8ef2c83f583c4fc007d6af5968b468eb876f544071e2942635255ccf87aad",
+    "importReceipt" : "dccd9c44-4432-463d-98b6-0aec8d9edb3e",
+    "submitBatch" : "20b63f68-3870-4d6e-b4f6-1250fff0dc74",
+    "approveBatch" : "1091ddc8-197d-48e8-9b54-de2abdb86837"
+  }, {
+    "topicId" : "P06",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "d51ecc5fc87c670671df2bb3c7462ea9783ab4181ebcaa9687225b71a76e3af0",
+    "packageDigest" : "40359970051260d7898da0e5e8f49c9d43f624a60014b18de1a609d09b35daa4",
+    "selectionDigest" : "b4bf8ee7ccc84cae580752f39172965220505a64f761aaad125d7b237df9e9de",
+    "importReceipt" : "71676d81-c693-4ca8-a4dc-006e8014c2a6",
+    "submitBatch" : "c746068e-fe24-4977-83f3-ffc29a0432a3",
+    "approveBatch" : "b721ac65-1524-45dc-b4ae-aadd06e4bc43"
+  }, {
+    "topicId" : "P07",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "32b0c51f472779054cc15813d5c564b01cbdf42dd0109c8972f4afa8e8be434b",
+    "packageDigest" : "f882733ef47cd14c6bce460b5673751f2687f3ff17ac05634cdb8d5330924be1",
+    "selectionDigest" : "b79c7a2a7c9055707551fba0c9fa8ebec09a6b44b55f7ed9970a584ce33d9256",
+    "importReceipt" : "5fc8289b-7295-43d8-a2e7-da2d23b8ea3a",
+    "submitBatch" : "b7055d17-41aa-41ea-a502-4b21a6ad082b",
+    "approveBatch" : "e5bdc049-4fe4-48b3-90a1-fee896c1aacc"
+  }, {
+    "topicId" : "P07",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "0fd1189045897c9824352ef9a5d0accb64f18d599dcc602c955f8efdc87cf3d9",
+    "packageDigest" : "e39f39ec6381d8cb096b08c7dfc49bd859c94eeb9f96f66ea202bcd73f62cc16",
+    "selectionDigest" : "84e8761cb41d4ddd268a37515a3e7f9805bab55d9f585d470a673380f521e3d6",
+    "importReceipt" : "ec6aa85d-b2b0-4137-9248-cdcb4cd7ca82",
+    "submitBatch" : "8010f069-18a8-4b89-8765-1b0ba602db01",
+    "approveBatch" : "9bc90491-1b95-4eff-93b6-3047e2c5e944"
+  }, {
+    "topicId" : "P08",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "2a4e3e6e8b0ddc12d74dfde6360f280bcdd36d0c2af27c21c982c6fbafc1ca05",
+    "packageDigest" : "fb4b1a3c53a736f0260a7e21dca985207c1d227dc7c8ebd9f2500bfe0bb5fd14",
+    "selectionDigest" : "3784c6f50e7eab472a9074b1b9dc5939c50a93e10b39e184fc67a730dbd5bf6f",
+    "importReceipt" : "16d30151-256d-43b2-8b56-70d2827c693b",
+    "submitBatch" : "989a8c71-2f27-42a6-93ad-d5b73bec7e05",
+    "approveBatch" : "00c3be2d-7689-4988-b909-57dc10dcb001"
+  }, {
+    "topicId" : "P08",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "05586cbd5cef9864d61decd25a0531fc7fcfa4befa345830689637447e6ab7c3",
+    "packageDigest" : "d0cfb5332e08dcd22da8df2e15fe9d65003b97ce017332e01ec5f92abf1487fa",
+    "selectionDigest" : "6d68336da64cda62901c1839a738efa688a902fbe901d6c45ff4c6efdf677d2f",
+    "importReceipt" : "9d4923c5-f48e-4465-9a76-f21d31972e7e",
+    "submitBatch" : "f72d5b06-cdf9-4dad-b216-93d315570bcb",
+    "approveBatch" : "2345c08a-c245-44d1-8055-7a77d47a3f58"
+  }, {
+    "topicId" : "P09",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "46cf77289e7dda81fb598cddf43b363fd439fb9f9bb1870cb153f8ef6c4ffdae",
+    "packageDigest" : "ca4f3d968a32e15bee46fac7e21147f00ea1f02eb265578250c1d610637f2c5e",
+    "selectionDigest" : "5aaa6b298f3bbee5cad626b5ad8e9f47bc5880b901a94b3b182631cbfa5e2820",
+    "importReceipt" : "0f84fcb6-a920-48fe-b166-28d779be2b6f",
+    "submitBatch" : "b732b77e-f449-495d-ada9-574f37bfb750",
+    "approveBatch" : "836497bd-d256-4a1d-833e-c9aff6aa7732"
+  }, {
+    "topicId" : "P09",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "16d70c5e20a302cf37aedfcc7d2ab15e603a9537afd3f283a21ea5300819b4b8",
+    "packageDigest" : "c6296832ebf9648693e2fa819246c1875be8341539e70fa2b47f216cb84cc222",
+    "selectionDigest" : "e009923b31effbeba78d61a0a91c20005204ce30185b9fe20b132f451e072fe1",
+    "importReceipt" : "529f7ae1-f8c6-4298-be39-5dbee0277f92",
+    "submitBatch" : "981c5114-8b70-4e83-a97d-b0ffa887ab28",
+    "approveBatch" : "96801783-39a6-41f4-a9fd-abb82e531263"
+  }, {
+    "topicId" : "P10",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "29e50ff937bae42b25c04d1e74a9190153db14e4aa6636c51aae14003c6648b7",
+    "packageDigest" : "5a1f66b36cc1bbe1794a9b2b6b6bf5154e3bb6cde35fc1c9dddd6ff3ff7542bf",
+    "selectionDigest" : "59ef0572d1fc88c9a58f5147245d3778d8efc41b94b2b1258eee5e84011b4b1d",
+    "importReceipt" : "6af50a18-f48e-4161-9211-f36b26d6e8b6",
+    "submitBatch" : "7d9d2def-c093-446b-9ced-fb3cf5172377",
+    "approveBatch" : "2d1c06ce-fee5-416c-85a5-f1541f6121c7"
+  }, {
+    "topicId" : "P10",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "8a977d36f5cd5aaf58db380b136246d0aeeac7b35c2414f7aa14d4cc33482ed8",
+    "packageDigest" : "a39b965a683e5a647da5e966b5d08daeb0ce5994d5f47993133835116e4b093e",
+    "selectionDigest" : "12ec6ea260d3eac277200f680912a3db9804a932559edec1a793319780326ab7",
+    "importReceipt" : "d155f391-c127-4adf-8e7b-a2b285ba62c9",
+    "submitBatch" : "10422def-67be-4ff9-9be4-98aa2e6d7c63",
+    "approveBatch" : "a595cafe-942e-42a8-be6e-75bb7795e211"
+  }, {
+    "topicId" : "S01",
+    "purpose" : "PRATICA_AULA",
+    "items" : 33,
+    "requestSha256" : "b9a99e0eb4271790eb415adabc9aa4c0e19198446f772b82d170ad27bbd6e4bb",
+    "packageDigest" : "00022752c8fa2d9607fd412e5f1c882bd0dcd4c60a34494b69d78b151a7484de",
+    "selectionDigest" : "e7588f5b62d271d139d5fb06b51ee6d1e041423265be00574f927f0e9f9fd7de",
+    "importReceipt" : "96eb5611-a450-448c-af2a-411c5c395b6b",
+    "submitBatch" : "3e0a119d-fa81-462e-afc0-474d2ed5e140",
+    "approveBatch" : "557fa7ad-6d68-4d49-b37d-971e9b3f2f2e"
+  }, {
+    "topicId" : "S01",
+    "purpose" : "SIMULADO",
+    "items" : 29,
+    "requestSha256" : "a9ed2d92c5a91c37dcdcb29f5461f36465718777a2d763bf783034cc9074bc7f",
+    "packageDigest" : "9d80fae60a8ff6e50359a9d0884aa8765e0c293a6adcedf202d57561064b0e79",
+    "selectionDigest" : "9d516389d0a3e491d54472bbd472bdc3b07ede2d279534fc52836fe728cab897",
+    "importReceipt" : "1640a21c-b4c4-4807-9d84-b6903332a424",
+    "submitBatch" : "e5580cf3-e625-4bc1-9481-45c31743dc37",
+    "approveBatch" : "d123a7a3-55aa-4d9a-bc31-5425f358ce46"
+  }, {
+    "topicId" : "S02",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "a2fd7df80bd7af7a6452148ead8c532bf25101540b4fdb1d95ec000754c4c4ae",
+    "packageDigest" : "946e54eb19b6f930c89c4235639f1b63b374505543b0ec3066a8905b9f74fbd4",
+    "selectionDigest" : "fb85710eca1c8913965f76f0d2d018708fb0fefcdc45642b5594e52364c7d2c1",
+    "importReceipt" : "d0e2320b-39fe-4995-8c66-9e5ce5b28b77",
+    "submitBatch" : "2c2a2a79-66d0-48d5-9e1a-cb682fd9d6de",
+    "approveBatch" : "7855029d-0bdd-4153-9fe9-c8cbdac6539e"
+  }, {
+    "topicId" : "S02",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "f3e28b3973552ad48fae9504da4b757bfad4a6e539c068cee36f48248abd7dbb",
+    "packageDigest" : "658b7c93d872678e90bf9445bf36c062783e7c3a3c919f4e9e42c7f54e50c209",
+    "selectionDigest" : "ced989f42264629df1feccd6daf81e922c09c59f9472fe9eb832876f0d5a2da0",
+    "importReceipt" : "d7513e8f-00ea-4d61-b3a8-3e382742d2af",
+    "submitBatch" : "6121bcab-7b02-493b-9143-ff2045a4a4ed",
+    "approveBatch" : "75619420-b1ae-40ae-84e3-bb6f84331b8f"
+  }, {
+    "topicId" : "S03",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "fde84aa3765ba22b32e14cc5ae5682b109951aaeba492fda47945bea5a20f99b",
+    "packageDigest" : "4230e5527f4a5fc1e0d0bcc00dad2b0af8e2601ec29900a2e0457389585b5e01",
+    "selectionDigest" : "ecff455c584e23fcaf391276bf134ec71b856535b46e30bd636284710d4a009d",
+    "importReceipt" : "40875ab4-e21c-4c3c-b4ac-bbe05356a928",
+    "submitBatch" : "f54a3fd3-88ec-42cb-bf8a-5d679710ccc1",
+    "approveBatch" : "18fbfbc5-bd02-4300-b322-bac7e79065d7"
+  }, {
+    "topicId" : "S03",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "5e7cb6dd15b25926b3b5c9afde9faf9d4a8da18753cd2dc66ff9e30c897d2a97",
+    "packageDigest" : "f42fc7404dd638faccf58c040f17f49e275cd9fc4a794c0ecd13777f99a82ba1",
+    "selectionDigest" : "8309104cb8b887c81c2795a1787f9c561aadcb639f57aa561dc6206c7a864041",
+    "importReceipt" : "e1fabf15-26de-495e-8eeb-26861310a30b",
+    "submitBatch" : "cbe14e86-6527-40af-96ad-94202dc2b1ff",
+    "approveBatch" : "dfb62c43-b8be-4ab6-993e-e65564b93d80"
+  }, {
+    "topicId" : "S04",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "2744913a196b7b5ae8abf7beb6c49fc5f81a5ac7cfd2823807fa1350f9905d86",
+    "packageDigest" : "1534b41141ec2cede86b51dfcd759e93730a6879f0e2ac0c98ac9b968d9a7477",
+    "selectionDigest" : "698ea7f95c5a0bc7ac79535ed83bfebccc76e2ccd0eb5f35dbc48fdb26815a07",
+    "importReceipt" : "092476cd-9712-4a8b-9fb3-54f22f6bc9f5",
+    "submitBatch" : "33ed7b4f-c3a8-4a36-95c2-b913d8abdc03",
+    "approveBatch" : "83970278-a664-430b-a1f0-5bb7291644ed"
+  }, {
+    "topicId" : "S04",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "25b6bb08b279e0871e377ba41b744296453e7fef65bb3481e4d36600c5e29d08",
+    "packageDigest" : "f27fc064d2e4b4d8bc633525b1e8104b4fe569add6ae9b8e64d96143ce2ea0e6",
+    "selectionDigest" : "e63815d2b2b9ae4a7b4636838aaa0ddd202b14fc6785891f9d56cc1060eb33b4",
+    "importReceipt" : "f5278304-5e9d-4ab4-bb06-7539aba54711",
+    "submitBatch" : "055a3bbb-228a-4a70-8b2a-07c7dbe9b734",
+    "approveBatch" : "b18e3ae8-624a-4de3-90c2-8f75e59584e5"
+  }, {
+    "topicId" : "S05",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "09cf54acdfe8c3b67dca3639ba994024201b0ab6037668c9b0c79a4019fb3a0c",
+    "packageDigest" : "efb59fc30dc982e7fad1b404db2a215aa8a2e62e7a1d0893ee63da6d7a4837c3",
+    "selectionDigest" : "cf7c73e7b9a0bcbf5f3bf246963b93a3f85543c9713141256f18c73b793b416e",
+    "importReceipt" : "46eef931-0eb8-4edb-a1b5-646a21dbba4c",
+    "submitBatch" : "94cb02b3-68df-409c-9c86-70a44d23e971",
+    "approveBatch" : "120dd874-dae0-4653-a07e-6cd517de79cc"
+  }, {
+    "topicId" : "S05",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "f0ddce62712d65ef1a4ae332a12a70e3bc7a72aeaf0037ce50ea7f0732d36ec5",
+    "packageDigest" : "3286aeaef23f0317eef13a38d9198a7b61fed6eb0100ad4bd5e3bf0c4f859568",
+    "selectionDigest" : "d0682a85c665243c5675bd5eb62dbb7b69b60547a574662cef814e8a72776aaf",
+    "importReceipt" : "898f32ec-c6ea-4492-be73-e627115fd5c7",
+    "submitBatch" : "96ea19b3-47e7-4849-839d-da8b2fe1e65a",
+    "approveBatch" : "78753170-660f-4d4c-80c8-929e30aa3ae7"
+  }, {
+    "topicId" : "S06",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "ee56e02cd6739ecb7014ee9311a3ecaa07c658fcf778cb383f7f68f79a87e4d5",
+    "packageDigest" : "1a9a69b792094a56381114cc93edf38af8a14d86655d37263b9ee853340639cc",
+    "selectionDigest" : "2ea2a78d0a38865dc9e9f533e8c94760c2d8a3f2325e1dbaf139a13e069497f4",
+    "importReceipt" : "63abd161-fbc3-4e05-a423-4a315503f0c4",
+    "submitBatch" : "8350b326-e934-4585-a392-501cc193a4cd",
+    "approveBatch" : "9d1f1d37-39b2-470c-8f5c-be65ba567991"
+  }, {
+    "topicId" : "S06",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "ac35710b5b68025388e499e8f620b5e678964dcad3d4eef6101eaee47bbea792",
+    "packageDigest" : "cc46ba7483857b885ced05b28481db6eaa56633b8628f3b162a097ce3d91dbf4",
+    "selectionDigest" : "ff4117eaeac5923e2b7ee79ec1a41b70b92e07a6f7ad4f9b69bc29ad67f46f78",
+    "importReceipt" : "4f62978b-9521-40f8-a3d4-c6ed43c705e2",
+    "submitBatch" : "696aa55e-d60d-4b88-8a0d-6918f9b6aa45",
+    "approveBatch" : "33dbe484-855d-4f43-b9ee-473f6eef8281"
+  }, {
+    "topicId" : "S07",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "d2b288e44e019ffa5de6777258299d62e3b65a06a0d4ac9da564f1be4fea00e0",
+    "packageDigest" : "5136c30d934c2e1649ece7ac85dfb1702ff75b5f4b7c5cecf4dc29eb531b1488",
+    "selectionDigest" : "99802f50a6f76f7aeddea7b8b93e7453915822011566f056bb0d649d3185109b",
+    "importReceipt" : "8ce9c48e-fa78-4848-a496-24809003641d",
+    "submitBatch" : "110d1244-171f-478e-8ce7-9a570b7aa707",
+    "approveBatch" : "1075d8c6-8ae2-4692-b725-842f2bb377e0"
+  }, {
+    "topicId" : "S07",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "171189e54fd9f6e5239c2668f22118c61d1e175438b3f3047b8622e45400e3f4",
+    "packageDigest" : "4c8f818cc22b83da3187bb0b4cd206dcac02332a6924f77384b19c838520ae4f",
+    "selectionDigest" : "31d897a297bc5f873e7dc36890e32435d8c0f178c2a1ca68502461322ad91d4f",
+    "importReceipt" : "ebc77412-1187-47be-a2d3-f48ba7c276db",
+    "submitBatch" : "4633a535-2cfb-44c3-b125-99694d9003e1",
+    "approveBatch" : "bf948a8f-e2b8-4596-bccd-82dbccd81891"
+  }, {
+    "topicId" : "S08",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "7909525bfb0b80e934b018b8da575576dfd35a41bf428cb523e4cde212c3c18f",
+    "packageDigest" : "793bad6a09697c74cf2c12631925fb0730e7573a5384cb244ec5bddc139edf43",
+    "selectionDigest" : "bc7f0ca6aefe233127312fd5e327f3077faa0102162f1d3ac5389d1fc63f7660",
+    "importReceipt" : "1e3065a6-7461-41b5-847e-e056293179e3",
+    "submitBatch" : "2a98e4fe-1271-49bd-b3f0-97c3994ea402",
+    "approveBatch" : "29951fee-a953-4d95-8285-219221b89aaa"
+  }, {
+    "topicId" : "S08",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "bf3ff2f1378fae5664f023a13d25f272a17d7bf98c9cdad0f60194dbd9e6ee1c",
+    "packageDigest" : "28589d8484f0cba4e85fcf1fc6d8df60a50eb9f406522c54ac6f9f50421fefc6",
+    "selectionDigest" : "17a413d31afbfc93bcf2f2504ef389ad4b97d1222117023a1a900e8b2eda051e",
+    "importReceipt" : "e81f84d2-5fc1-49ca-9d45-22686917ccb0",
+    "submitBatch" : "6726c637-09b0-47cb-b4de-7c05b6d5f696",
+    "approveBatch" : "48447471-7717-4d3c-adee-77afaf299984"
+  }, {
+    "topicId" : "S09",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "b2a754467b14f053e8732d3cf6d0d2c05a190ead5ebcd6c9e4049b3f4b97bfc6",
+    "packageDigest" : "bc8ecfd41138a7cc1fc09f8cac4eb6282a22d339be91ea1543c6fe3419f3339c",
+    "selectionDigest" : "6cfbb06994e642673bdabf809c793fd4f96b073b4609c65db714fa5762bed0fb",
+    "importReceipt" : "01a9eafb-ecc5-4ca0-8689-12a0ccc6d309",
+    "submitBatch" : "f6fb7ad8-9ff8-4789-81f5-049d81a354dd",
+    "approveBatch" : "3dbd71d2-d6af-4ef9-b592-d95c43e009f9"
+  }, {
+    "topicId" : "S09",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "0f94b62a7fb102a02055274d3964fb160b987c67595ae5d6b292ec4a4cc4e279",
+    "packageDigest" : "ff81750c421e36676e6667dddefe78eebf2b6db1270b6dc75b2177b0983dfd79",
+    "selectionDigest" : "26f86f398104978c724cfc5ea5c6db6ae53e8e387ee8527b562c6160ce81dc2e",
+    "importReceipt" : "321350ff-9035-4b89-96ad-cf49f415b322",
+    "submitBatch" : "0434125c-aae3-4e7d-8dfd-b3ced8c759e2",
+    "approveBatch" : "2e6c4d54-a084-4238-a660-117847773a4d"
+  }, {
+    "topicId" : "S10",
+    "purpose" : "PRATICA_AULA",
+    "items" : 26,
+    "requestSha256" : "eba9f52b60827d497a3bcca86ba27fdeea2db5286a3e678206a5556395ebfad9",
+    "packageDigest" : "2c251749c15fe07b4f6a9d95bf41639268abed2fea78aae79b7fc6029671f886",
+    "selectionDigest" : "db5d62fb40bd375b4a59ad6ee983ef7b724613be628da550d5e557eef0a18056",
+    "importReceipt" : "0ed90b21-2027-4358-9a64-dcdf81664bc5",
+    "submitBatch" : "65fb0a98-dfc4-4042-af9e-74ea5e22c049",
+    "approveBatch" : "86bb0ef2-0194-450a-aa24-7dc93ef47af8"
+  }, {
+    "topicId" : "S10",
+    "purpose" : "SIMULADO",
+    "items" : 26,
+    "requestSha256" : "7ffddeaf63de5520f6f80234400d8fc1cb1318f0cf80d111bd4ce6332a40dac5",
+    "packageDigest" : "cb57f665c7e04168af6ff31f506db1b4849b0a57c62956ca86f1f8cab477c4a4",
+    "selectionDigest" : "ca15f4680ee6b4d5b8ae73d8c989512056b64a243cf8dd4cac90978785d83d51",
+    "importReceipt" : "7863a738-a793-4267-93dd-ed25912df06d",
+    "submitBatch" : "d1782605-24d8-46a0-983a-dd5dd94a2a1e",
+    "approveBatch" : "4da5749c-cccd-4cb7-8a64-ac079205ea6a"
+  }, {
+    "topicId" : "S11",
+    "purpose" : "PRATICA_AULA",
+    "items" : 25,
+    "requestSha256" : "22cb8ccf572ec42e523d1ab3dd95bce4dd141981395dba9eb71c61e5ac11a62c",
+    "packageDigest" : "a870bdec1fd74dfc1adf48138291b3d852630eb24042e329783f39f31a047397",
+    "selectionDigest" : "70403c72778c9b35775742697ba7d6faace1f683eb6250246d24e6f842e89ab7",
+    "importReceipt" : "34b6e634-09ed-4875-95c2-4ed5862fa83b",
+    "submitBatch" : "c216a672-e675-442f-bfae-f5dc2646ae38",
+    "approveBatch" : "fbf871e5-e0c5-4cde-88e2-c02107aa1843"
+  }, {
+    "topicId" : "S11",
+    "purpose" : "SIMULADO",
+    "items" : 25,
+    "requestSha256" : "46ff93bcd0a873f889d9f09d76f4655cec1f8e67e316863b873d20ea32c89e52",
+    "packageDigest" : "3c7bc04dcc5c9de845fd90196da90731a2ff7281afe8b75b669cd3af75a1a860",
+    "selectionDigest" : "c4e4cd58ee9c7ef0e6a05435b536a7a90b2a3fd8278a87b2fdc34dad5d2326ab",
+    "importReceipt" : "00490b88-7c4d-4474-a84f-7af2aa2ea20c",
+    "submitBatch" : "ea70ead9-53a8-4504-bd8c-0a7d7aea37cf",
+    "approveBatch" : "b3d15bb3-c5a1-40e8-9454-f8a4268d5c1f"
+  } ],
+  "notCounted" : "Questões sintéticas pré-existentes do backup; o banco do operador/VPS não foi consultado."
+}

@@ -58,7 +58,7 @@ def study_reference(name, url):
     safe_url(url)
     parsed = urlsplit(url)
     host, path = (parsed.hostname or "").lower(), unquote(parsed.path).lower()
-    if (EXAM_DOCUMENT.search(name) or EXAM_DOCUMENT.search(unquote(url)) or re.search(r"/concursos?/", path)
+    if (EXAM_DOCUMENT.search(name) or EXAM_DOCUMENT.search(unquote(url)) or re.search(r"/(?:concursos?|provas?|gabaritos?)/", path)
             or any(host == h or host.endswith("." + h) for h in EXAM_BOARD_HOSTS)):
         raise ValueError("Referência de prova/gabarito não pertence à projeção de questão")
     return url

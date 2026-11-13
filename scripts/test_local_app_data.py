@@ -35,8 +35,11 @@ class RecoveryGuards(unittest.TestCase):
             versions=("\n".join(str(i) for i in range(1,count+1))+"\n").encode()
             with patch.object(local_app_data, "sql", return_value=versions):
                 self.assertEqual(count,local_app_data.schema_version(None,None))
+        # Sem a V15 da #173 (até a épica combinada): histórico 1..14,16 também é completo.
+        with patch.object(local_app_data, "sql", return_value=("\n".join(str(i) for i in [*range(1,15),16])).encode()):
+            self.assertEqual(16,local_app_data.schema_version(None,None))
         for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,16))).encode(),
-                         ("\n".join(str(i) for i in [*range(1,15),16])).encode()):  # lacuna sem a V15 da #173
+                         ("\n".join(str(i) for i in [*range(1,14),16])).encode()):
             with patch.object(local_app_data,"sql",return_value=versions):
                 with self.assertRaises(ValueError):local_app_data.schema_version(None,None)
 

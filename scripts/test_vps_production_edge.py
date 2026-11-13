@@ -93,7 +93,7 @@ class InstallTests(unittest.TestCase):
         body = INSTALL.split("set -euo pipefail", 1)[1]
         self.assertNotIn("central.conf", body)
         removals = set(re.findall(r"rm -f -- (\S+)", INSTALL))
-        self.assertEqual(removals, {'"$enabled/$legacy"', '"$enabled/reemsoftworks-default.conf"'})
+        self.assertEqual(removals, {'"$enabled/$legacy"', '"$enabled/reemsoftworks-default.conf"', '"$admin_snippet";'})
         self.assertIsNone(re.search(r"rm[^\n]*\$available", INSTALL))
 
     def test_open_restores_previous_state_when_nginx_rejects(self):
@@ -105,8 +105,21 @@ class InstallTests(unittest.TestCase):
     def test_reload_always_validates_first(self):
         self.assertIn("nginx -t\n  systemctl reload nginx", INSTALL)
         bare = re.findall(r"^(?!.*nginx -t).*systemctl reload nginx", INSTALL, re.M)
-        # reload_nginx() and the open phase, both only after a successful nginx -t
-        self.assertEqual(bare, ["  systemctl reload nginx", "    systemctl reload nginx"])
+        # reload_nginx(), admin and open: always only after a successful nginx -t
+        self.assertEqual(bare, ["  systemctl reload nginx",
+                                "    if [[ -e $enabled/reemsoftworks-https.conf ]]; then systemctl reload nginx",
+                                "    systemctl reload nginx"])
+
+    def test_admin_phase_validates_and_restores_previous_allowlist(self):
+        body = INSTALL.split("  admin)", 1)[1].split(";;", 1)[0]
+        self.assertLess(body.index('cp -p "$admin_snippet" "$admin_backup"'), body.index('mv "$admin_snippet.new"'))
+        self.assertLess(body.index("if ! nginx -t"), body.index("systemctl reload nginx"))
+        self.assertIn('cp -p "$admin_backup" "$admin_snippet"', body)
+
+    def test_open_keeps_the_previous_allowlist_next_to_it_not_in_tmp(self):
+        body = INSTALL.split("  open)", 1)[1].split(";;", 1)[0]
+        self.assertIn('previous="$snippet.bak-', body)
+        self.assertNotIn("mktemp", body)
         self.assertIn("--deploy-hook 'nginx -t && systemctl reload nginx'", INSTALL)
 
     def test_certificate_requires_dns_and_existing_snippet_is_kept(self):

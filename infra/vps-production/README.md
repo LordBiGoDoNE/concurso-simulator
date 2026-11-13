@@ -114,8 +114,12 @@ python3 scripts/vps_question_load.py             # importa, SUBMIT e APPROVE AI_
 python3 scripts/vps_question_load.py --verify-only
 ```
 
-O diário privado `production/question-load.json` permite retomar sem duplicar
-recibos. Os conjuntos de outubro e o Google ficaram fora desta entrega (#221).
+O checkout precisa estar no commit da release em uso, e a carga segura o lock do
+operador (não roda junto com backup/release/restore). O diário privado
+`production/question-load.json` retoma a partir do último passo confirmado; se a
+resposta de um `apply` se perder depois de o servidor confirmar, a reexecução
+para em vez de adivinhar (limitação registrada na #221). Os conjuntos de outubro
+e o Google ficaram fora desta entrega (#221).
 
 ## Grupo 6 — backup, atualização e recuperação
 
@@ -144,7 +148,14 @@ Troca de release (somente commits de origin/main; backup automático antes):
 ```sh
 python3 scripts/vps_production.py release --images ~/.local/share/concurso-simulator/releases/<sha12>.json
 python3 scripts/vps_production.py rollback   # só se o schema não mudou; senão, restaure o backup prévio
+python3 scripts/vps_production.py promote    # uma vez: tira o estado do modo ensaio
 ```
+
+`release` e `rollback` conferem o compose fixado da release de destino antes de
+parar qualquer serviço. O estado usado no ensaio foi criado com `--rehearsal`;
+na abertura, depois da `release` de um commit da main com compose fixado,
+`promote` grava `rehearsal: false` e descarta como alvo de rollback uma release
+anterior que não seja da main. A partir daí só releases da main são aceitas.
 
 Backups, estado e segredos nunca vão para Git, CI ou issues. Volumes não são removidos pela ferramenta.
 
@@ -195,5 +206,7 @@ sudo bash install-edge.sh open                           # abertura (grupo 7)
 - Porta 443 sem `ssl_reject_handshake`: o `central`, acessado pelo IP sem SNI, é o
   padrão da 443. Hosts desconhecidos não chegam à aplicação (vhost só do nome
   canônico; nginx interno responde 421).
-- `concurso-public.conf` (acesso antigo por HTTP no IP) e `central.conf` não são
-  alterados; a remoção do acesso pelo IP é do corte no grupo 7.
+- `central.conf` nunca é alterado. De `concurso-public.conf` (acesso antigo por HTTP
+  no IP), só o link em `sites-enabled` é removido, e apenas na fase `open`.
+- As fases `admin` e `open` guardam a allowlist anterior ao lado
+  (`*.bak-<data>` em `/etc/nginx/snippets/`) e voltam a ela se `nginx -t` falhar.

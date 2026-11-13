@@ -85,10 +85,20 @@ case ${1:-} in
     [[ $admin_ip =~ ^[0-9a-fA-F:.]+(/[0-9]{1,3})?$ ]] || { echo 'Informe o IP público do administrador.' >&2; exit 1; }
     mkdir -p "$(dirname "$admin_snippet")"
     umask 022
+    admin_backup=""
+    if [[ -e $admin_snippet ]]; then
+      admin_backup="$admin_snippet.bak-$(date -u +%Y%m%dT%H%M%SZ)"
+      cp -p "$admin_snippet" "$admin_backup"
+    fi
     printf '# Área administrativa: somente estes IPs, também após a abertura.\nallow %s;\ndeny all;\n' "$admin_ip" > "$admin_snippet.new"
     mv "$admin_snippet.new" "$admin_snippet"
-    echo "Allowlist administrativa gravada em $admin_snippet"
-    if [[ -e $enabled/reemsoftworks-https.conf ]]; then reload_nginx; fi
+    if ! nginx -t; then
+      echo 'nginx -t falhou; restaurando a allowlist administrativa anterior.' >&2
+      if [[ -n $admin_backup ]]; then cp -p "$admin_backup" "$admin_snippet"; else rm -f -- "$admin_snippet"; fi
+      exit 1
+    fi
+    if [[ -e $enabled/reemsoftworks-https.conf ]]; then systemctl reload nginx; fi
+    echo "Allowlist administrativa gravada em $admin_snippet${admin_backup:+ (anterior: $admin_backup)}"
     ;;
   https)
     [[ -s /etc/letsencrypt/live/reemsoftworks/fullchain.pem ]] || { echo 'Certificado ausente; execute a fase cert.' >&2; exit 1; }
@@ -99,7 +109,7 @@ case ${1:-} in
     ;;
   open)
     [[ -e $enabled/reemsoftworks-https.conf && -e $admin_snippet ]] || { echo 'Execute antes as fases https e admin.' >&2; exit 1; }
-    previous=$(mktemp)
+    previous="$snippet.bak-$(date -u +%Y%m%dT%H%M%SZ)"
     cp -p "$snippet" "$previous"
     legacy_link=""
     if [[ -L $enabled/$legacy ]]; then legacy_link=$(readlink "$enabled/$legacy"); fi

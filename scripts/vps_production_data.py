@@ -165,6 +165,8 @@ def release(state, config, images_file):
     if metadata["images"]["api"]["id"] == config["images"]["images"]["api"]["id"] and \
             metadata["images"]["web"]["id"] == config["images"]["images"]["web"]["id"]:
         raise ValueError("Release já em uso")
+    # Validate the new release's pinned compose before stopping anything (review N1).
+    production.release_compose({"rehearsal": config["rehearsal"], "images": metadata})
     dump, saved = backup(state, config, restart=False)
     config["previous"] = {"images": config["images"], "backup": str(dump), "schema_version": saved["schema_version"]}
     config["images"] = metadata
@@ -177,6 +179,7 @@ def rollback(state, config):
     previous = config.get("previous")
     if not previous:
         raise ValueError("Não há release anterior registrada")
+    production.release_compose({"rehearsal": config["rehearsal"], "images": previous["images"]})
     production.compose(state, config, "stop", "api", "web")
     if schema_version(state, config) != previous["schema_version"]:
         raise ValueError("Schema mudou desde o backup; restaure o backup prévio em um alvo de recuperação")
@@ -184,3 +187,23 @@ def rollback(state, config):
     production.write_private_json(state / "state.json", config)
     production.compose(state, config, "up", "-d", "--no-build", "--wait", "--wait-timeout", "180")
     print(f"Release anterior {config['images']['source_sha'][:12]} restabelecida; schema inalterado.")
+
+
+def promote(state, config):
+    """Leave rehearsal mode for good: only a main release with a pinned compose can become production (review N2)."""
+    if not config["rehearsal"]:
+        raise ValueError("Estado já é de produção")
+    if config["project"] != production.PROJECT:
+        raise ValueError("Somente o projeto de produção pode ser promovido")
+    images = config["images"]
+    if not images.get("on_main") or not production.on_main(images["source_sha"]):
+        raise ValueError("Release em uso não está em origin/main")
+    if images.get("compose") is None:
+        raise ValueError("Release em uso sem compose fixado")
+    production.release_compose({"rehearsal": False, "images": images})
+    previous = config.get("previous")
+    if previous and (not previous["images"].get("on_main") or previous["images"].get("compose") is None):
+        config["previous"] = None  # a rehearsal release must never become a production rollback target
+    config["rehearsal"] = False
+    production.write_private_json(state / "state.json", config)
+    print(f"Estado promovido a produção com a release {images['source_sha'][:12]}; ensaios não são mais aceitos.")

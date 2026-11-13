@@ -95,6 +95,13 @@ class LoaderTests(unittest.TestCase):
         self.assertEqual(set(api.calls), {"/api/v1/admin/question-imports/preview"})
         self.assertFalse(self.journal.exists())
 
+    def test_checkout_must_be_at_the_release_commit(self):
+        import subprocess
+        head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=loader.ROOT, text=True).strip()
+        loader.require_release_checkout({"rehearsal": True, "images": {"source_sha": head}})
+        with self.assertRaises(RuntimeError):
+            loader.require_release_checkout({"rehearsal": True, "images": {"source_sha": "0" * 40}})
+
     def test_versioned_manifest_matches_its_requests(self):
         manifest = json.loads((loader.PACKAGES / "manifest.json").read_text(encoding="utf-8"))
         self.assertEqual(len(manifest["packages"]), 102)

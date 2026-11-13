@@ -322,7 +322,7 @@ def main():
     init.add_argument("--rehearsal", action="store_true")
     init.add_argument("--recovery", help="nome do alvo de recuperação separado (a-z0-9)")
     init.add_argument("--port", type=int, help="porta do alvo de recuperação (18091–18099)")
-    for action in ("start", "stop", "status", "backup", "rollback", "configure-google", "disable-google"):
+    for action in ("start", "stop", "status", "backup", "rollback", "promote", "configure-google", "disable-google"):
         actions.add_parser(action)
     restore_action = actions.add_parser("restore")
     restore_action.add_argument("--backup", type=Path, required=True)
@@ -360,6 +360,8 @@ def main():
                             data.restore(state, config, args.backup, args.confirm)
                         elif args.action == "release":
                             data.release(state, config, args.images)
+                        elif args.action == "promote":
+                            data.promote(state, config)
                         else:
                             data.rollback(state, config)
     except (ValueError, OSError, KeyError, subprocess.CalledProcessError):

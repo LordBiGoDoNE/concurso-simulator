@@ -126,7 +126,7 @@ conjuntos de outubro, que só entram pela CLI local, ficaram fora por decisão d
 
 Somente o acervo aprovado na main da release, carregado no banco novo pelas
 operações administrativas/editoriais existentes (importação e decisões em lote),
-autenticadas pelo admin bootstrap por HTTPS. Sem dump do PC, contas, identidades,
+autenticadas pelo admin bootstrap, pelo loopback do host (sem passar pela internet) e com o lock do operador. Sem dump do PC, contas, identidades,
 sessões, tentativas ou capturas. Contagens e digests são calculados a partir da
 main da release, não copiados deste documento. A recomendação R1 da revisão de
 2026-10-25 continua válida: importação cria IDs novos no destino; mapear por

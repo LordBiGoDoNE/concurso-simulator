@@ -129,12 +129,50 @@ class ReleaseTests(unittest.TestCase):
         self.calls.append(("backup", restart))
         return Path("/b/x.dump"), {"schema_version": 17}
 
-    def manifest(self, api="sha256:" + "4" * 64, on_main=True):
+    def pin(self, images):
+        compose = self.state / "release.compose.yaml"
+        compose.write_bytes(b"services: {}")
+        return images | {"compose": {"file": str(compose), "sha256": hashlib.sha256(b"services: {}").hexdigest()}}
+
+    def manifest(self, api="sha256:" + "4" * 64, on_main=True, pinned=True):
         value = config()["images"] | {"on_main": on_main}
         value["images"] = {"api": {"id": api}, "web": {"id": "sha256:" + "5" * 64}}
+        if pinned:
+            value = self.pin(value)
         path = self.state / "m.json"
         path.write_text(json.dumps(value), encoding="utf-8")
         return path
+
+    def test_release_without_pinned_compose_is_refused_before_any_change(self):
+        current = config()
+        with self.assertRaises(ValueError):
+            data.release(self.state, current, self.manifest(pinned=False))
+        self.assertEqual(self.calls, [])
+        self.assertFalse((self.state / "state.json").exists())
+
+    def test_rollback_refuses_previous_release_without_valid_compose_before_stopping(self):
+        current = config()
+        current["previous"] = {"images": config(api="sha256:" + "7" * 64)["images"], "backup": "/b/x.dump", "schema_version": 17}
+        with self.assertRaises(ValueError):
+            data.rollback(self.state, current)
+        self.assertEqual(self.calls, [])
+
+    def test_promote_requires_a_main_release_with_pinned_compose(self):
+        rehearsal = config(rehearsal=True)
+        with mock.patch.object(production, "on_main", return_value=True):
+            with self.assertRaises(ValueError):
+                data.promote(self.state, rehearsal)  # current release has no pinned compose
+            rehearsal["images"] = self.pin(rehearsal["images"])
+            rehearsal["previous"] = {"images": config()["images"] | {"on_main": False}, "backup": "/b", "schema_version": 17}
+            data.promote(self.state, rehearsal)
+        saved = json.loads((self.state / "state.json").read_text())
+        self.assertFalse(saved["rehearsal"])
+        self.assertIsNone(saved["previous"])  # rehearsal releases are not production rollback targets
+        with mock.patch.object(production, "on_main", return_value=False):
+            other = config(rehearsal=True)
+            other["images"] = self.pin(other["images"])
+            with self.assertRaises(ValueError):
+                data.promote(self.state, other)
 
     def test_release_backs_up_before_switching_and_keeps_previous(self):
         current = config()
@@ -161,7 +199,7 @@ class ReleaseTests(unittest.TestCase):
 
     def test_rollback_requires_unchanged_schema(self):
         current = config()
-        current["previous"] = {"images": config(api="sha256:" + "7" * 64)["images"], "backup": "/b/x.dump", "schema_version": 16}
+        current["previous"] = {"images": self.pin(config(api="sha256:" + "7" * 64)["images"]), "backup": "/b/x.dump", "schema_version": 16}
         with mock.patch.object(data, "schema_version", return_value=17):
             with self.assertRaises(ValueError):
                 data.rollback(self.state, current)

@@ -30,7 +30,7 @@ class LessonPracticePersistenceTests {
             var old=new AttemptUseCases(store,Clock.fixed(NOW,ZoneOffset.UTC),UUID::randomUUID,()->new Random(17));
             var mock=old.create(ACCOUNT,UUID.randomUUID(),composition(1)).attempt();
             var payload=db.jdbc.queryForObject("select payload::text from me_attempt where id=?",String.class,mock.id());
-            db.migrate("14");seedPractice(db,6);
+            db.migrate("15");seedPractice(db,6);
             assertThat(db.jdbc.queryForObject("select payload::text from me_attempt where id=?",String.class,mock.id())).isEqualTo(payload);
             var practice=LessonPracticeUseCasesTests.practice(store,NOW.plusSeconds(1));
             var started=practice.createPractice(ACCOUNT,UUID.randomUUID(),Topic.P01).attempt();

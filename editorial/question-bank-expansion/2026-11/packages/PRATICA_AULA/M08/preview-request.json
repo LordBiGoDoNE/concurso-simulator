@@ -1,0 +1,2107 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.cerq25-tes-q20"
+        },
+        "content": {
+          "statement": {
+            "text": "Um sistema de monitoramento espacial envia mensagens com dados geoespaciais para uma estação na Terra a cada 10 segundos. Quantas mensagens são enviadas em uma hora?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e5985102-e3fe-56cd-8719-3ad7af7be149",
+              "content": {
+                "text": "1000.",
+                "resources": []
+              }
+            },
+            {
+              "id": "64ec8dc4-8da4-50f1-b19b-4e0ace61df78",
+              "content": {
+                "text": "6000.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e362bfb8-3ef2-5e79-a3e8-2cebcf4c1528",
+              "content": {
+                "text": "60.",
+                "resources": []
+              }
+            },
+            {
+              "id": "eee4190e-e767-5e4d-8b0c-97b614316e0f",
+              "content": {
+                "text": "3600.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6c0f99c1-a0ee-5c72-8e76-b09d0efff5b3",
+              "content": {
+                "text": "360.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6c0f99c1-a0ee-5c72-8e76-b09d0efff5b3",
+          "resolution": {
+            "text": "1. 1 hora = 60 min = 3.600 s; com uma mensagem a cada 10 s, são 3.600 ÷ 10 = 360 mensagens. 2. 3600 é o número de segundos da hora; 60 corresponde a uma mensagem por minuto; 6000 e 1000 não decorrem da conversão. Resposta: alternativa E.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Cerquilho — Concurso Público 01/2025, TESOUREIRO GERAL DO MUNICÍPIO, questão 20. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M08.p.cerq25-tes-q20.json",
+            "answerPath": "sources/admin.2026-11.M08.p.cerq25-tes-q20.json",
+            "contentSha256": "c110f9fd49abc255bccf3cfb98efd3c6ab925b54fc33469934b9124d99d0d785",
+            "answerSha256": "c110f9fd49abc255bccf3cfb98efd3c6ab925b54fc33469934b9124d99d0d785"
+          }
+        },
+        "fingerprint": "06cf3bdc5190a937bfcb93b737aaea4f2c96ec602cbf3433cf07843fea8c5f8c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-calendario-bissexto"
+        },
+        "content": {
+          "statement": {
+            "text": "No calendário gregoriano, 2024 foi bissexto. Quantos dias decorreram do início de 28/02/2024 ao início de 01/03/2024?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "653150a4-786b-5090-830f-ca88ec66f927",
+              "content": {
+                "text": "1 dia.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4da95907-179e-5387-98b7-e525ec4f71df",
+              "content": {
+                "text": "3 dias.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7b48c2cb-5ede-5c9a-aebf-3780f6572228",
+              "content": {
+                "text": "29 dias.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ef8d3210-9129-5da3-89dc-26e513b650aa",
+              "content": {
+                "text": "2 dias.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ef8d3210-9129-5da3-89dc-26e513b650aa",
+          "resolution": {
+            "text": "1. Fevereiro de 2024 inclui o dia 29. 2. Passam um dia até 29/02 e outro até 01/03, totalizando dois dias; os instantes iniciais estão especificados.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-calendario-bissexto.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-calendario-bissexto.json",
+            "contentSha256": "ddb852efdece866dc42b351f2d6be85547aaaaed49c39bab0423c735be451797",
+            "answerSha256": "ddb852efdece866dc42b351f2d6be85547aaaaed49c39bab0423c735be451797"
+          }
+        },
+        "fingerprint": "1e0a28abbb6508c1ae2051f52dbacc4fbb6c0be2773713cae27b6327c67cf160",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-consumo-distancia-combustivel"
+        },
+        "content": {
+          "statement": {
+            "text": "Um veículo fictício percorre 15 km por litro. Qual é seu consumo em litros por 100 km?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d2cb97be-39d0-5324-b72a-8886d4e375ff",
+              "content": {
+                "text": "1.500 L/100 km.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a1df0a8c-f5db-5d64-a926-cee7efa3765c",
+              "content": {
+                "text": "3/20 L/100 km.",
+                "resources": []
+              }
+            },
+            {
+              "id": "17f1c77f-2f40-573e-824d-8fa2ac44027a",
+              "content": {
+                "text": "20/3 L/100 km.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fc5fb6d0-55f5-5ebd-9e39-060d18187497",
+              "content": {
+                "text": "15 L/100 km.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "17f1c77f-2f40-573e-824d-8fa2ac44027a",
+          "resolution": {
+            "text": "1. Para 100 km, divida a distância pela eficiência de 15 km/L. 2. O consumo é 100/15=20/3 L por 100 km; a unidade pedida inverte a eficiência.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-consumo-distancia-combustivel.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-consumo-distancia-combustivel.json",
+            "contentSha256": "8b4c81dcbc08416e34b2c4cabba6aa9a376be1e7b3f150886a1071d60ff069be",
+            "answerSha256": "8b4c81dcbc08416e34b2c4cabba6aa9a376be1e7b3f150886a1071d60ff069be"
+          }
+        },
+        "fingerprint": "6ad26e32cec58c3bdf8dcfbad0bbc505c122f88831135b4cca47dc701d2b99b4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-conversao-unidade-composta"
+        },
+        "content": {
+          "statement": {
+            "text": "Um consumo de 6 litros a cada 100 km equivale a quantos mililitros por quilômetro?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "410d949f-bded-576c-bd1e-9f07e3b91dae",
+              "content": {
+                "text": "16,67 mL/km.",
+                "resources": []
+              }
+            },
+            {
+              "id": "612e26ba-a680-5482-98cd-5ccf51772729",
+              "content": {
+                "text": "60 mL/km.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7f2972d0-38f2-5140-8664-9905ef5b9692",
+              "content": {
+                "text": "600 mL/km.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f1aaf614-159b-5315-9128-def3eddb9cf7",
+              "content": {
+                "text": "6 mL/km.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "612e26ba-a680-5482-98cd-5ccf51772729",
+          "resolution": {
+            "text": "1. Seis litros correspondem a 6.000 mL para 100 km. 2. Dividindo por 100, obtém-se 60 mL/km; inverter a razão produziria outra unidade.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-conversao-unidade-composta.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-conversao-unidade-composta.json",
+            "contentSha256": "958a67bb0c3aeb193143095491a0a09d0fc0f0386c8536ddecb40575dcaa0ef0",
+            "answerSha256": "958a67bb0c3aeb193143095491a0a09d0fc0f0386c8536ddecb40575dcaa0ef0"
+          }
+        },
+        "fingerprint": "a1b5fb4d731afa18d7cd6115835ac39159759bfa4280252b1646070b658d57ef",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-distancia-regua"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma régua, as extremidades de um objeto estão nas marcas 1,7 cm e 8,4 cm. Qual é o comprimento do objeto em milímetros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e80b8a3e-b556-55c2-aea8-b1a93b8e2cf6",
+              "content": {
+                "text": "6,7 mm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4dc0b802-500d-5a29-9add-658844de57d0",
+              "content": {
+                "text": "67 mm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a918966d-54ba-5f20-b274-7d96305e5033",
+              "content": {
+                "text": "84 mm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "117fe55a-7d94-57de-8b06-5c5e61118eb0",
+              "content": {
+                "text": "101 mm.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4dc0b802-500d-5a29-9add-658844de57d0",
+          "resolution": {
+            "text": "1. O comprimento é a diferença 8,4−1,7=6,7 cm. 2. Como 1 cm=10 mm, isso equivale a 67 mm; a marca final isolada não mede o objeto.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-distancia-regua.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-distancia-regua.json",
+            "contentSha256": "5677fa8d632117dbf62093f3967f59472f11497be69c91d83cb32c05ce5e6029",
+            "answerSha256": "5677fa8d632117dbf62093f3967f59472f11497be69c91d83cb32c05ce5e6029"
+          }
+        },
+        "fingerprint": "1bf5a879a65d1f441c8fd449d8ac77b040f977aca44ff5245a12258657e1860d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-energia-potencia-unidades-dadas"
+        },
+        "content": {
+          "statement": {
+            "text": "Um equipamento fictício tem potência constante de 500 W. Usando 1 kW=1.000 W, qual é o consumo em kWh durante 3 horas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6c64a9a6-8d7b-56fc-9146-f5e7f0738831",
+              "content": {
+                "text": "6 kWh.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8fd46d64-5886-54dd-acd7-74310cf71e54",
+              "content": {
+                "text": "1,5 kWh.",
+                "resources": []
+              }
+            },
+            {
+              "id": "579111ce-7c07-5d9d-853c-07401ae679e3",
+              "content": {
+                "text": "1.500 kWh.",
+                "resources": []
+              }
+            },
+            {
+              "id": "af6f0e90-f476-537f-9da0-00e40e8ae953",
+              "content": {
+                "text": "0,5 kWh.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8fd46d64-5886-54dd-acd7-74310cf71e54",
+          "resolution": {
+            "text": "1. A potência de 500 W equivale a 0,5 kW. 2. Energia é potência vezes tempo: 0,5×3=1,5 kWh; kW e kWh medem grandezas diferentes.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-energia-potencia-unidades-dadas.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-energia-potencia-unidades-dadas.json",
+            "contentSha256": "30bd3a86a9c9cddf71349375ad1aafb65a83858be9b8eb96ad3e327d42a7c23d",
+            "answerSha256": "30bd3a86a9c9cddf71349375ad1aafb65a83858be9b8eb96ad3e327d42a7c23d"
+          }
+        },
+        "fingerprint": "1e7ebeacdf0d11cb3fa4be9eacfa9c90413b7a00a8c5f1640a945d80e7a89470",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-erro-conversao-area"
+        },
+        "content": {
+          "statement": {
+            "text": "Um estudante converteu 1 m² em 100 cm² porque 1 m=100 cm. Qual é a correção?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "16187dd3-878e-5930-87d7-577eab0c0529",
+              "content": {
+                "text": "O valor 100 cm² já está correto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a8e63ce4-932e-5a5e-ac02-a4d61439c107",
+              "content": {
+                "text": "1 m²=1.000 cm², pois se usa fator cúbico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b03f001e-351b-55b9-a40a-2a1d3294d7d2",
+              "content": {
+                "text": "1 m²=10 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "7b17f72e-1564-59be-84f4-b51e8a5727fa",
+              "content": {
+                "text": "1 m²=10.000 cm², pois as duas dimensões são multiplicadas por 100.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7b17f72e-1564-59be-84f4-b51e8a5727fa",
+          "resolution": {
+            "text": "1. Área envolve duas dimensões lineares. 2. Um quadrado de 1 m de lado tem 100 cm em cada lado, logo 100×100=10.000 cm².",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-erro-conversao-area.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-erro-conversao-area.json",
+            "contentSha256": "be1ebcc2024a1e00d4db95130b9da1b1f345f42673daa51c364a381418e140f1",
+            "answerSha256": "be1ebcc2024a1e00d4db95130b9da1b1f345f42673daa51c364a381418e140f1"
+          }
+        },
+        "fingerprint": "81e1a59c8e791007d3f306e7db3ea569577d92e3d6ab700a6dabedc6f61edf33",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-escala-volume"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma maquete usa comprimentos na escala 1:10. Um reservatório real tem 8 m³. Qual é o volume correspondente na maquete?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a14fed99-9bb4-5b2a-9f5b-b0ccd579be8c",
+              "content": {
+                "text": "8 litros.",
+                "resources": []
+              }
+            },
+            {
+              "id": "790a94d0-82f8-5eb3-937d-fc5d8ff91c0f",
+              "content": {
+                "text": "800 litros.",
+                "resources": []
+              }
+            },
+            {
+              "id": "37fd21c1-b2da-526c-9097-9110e5f46746",
+              "content": {
+                "text": "80 litros.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2992cf38-0e5d-523f-9bb4-2fbc10aa6b3a",
+              "content": {
+                "text": "0,8 litro.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a14fed99-9bb4-5b2a-9f5b-b0ccd579be8c",
+          "resolution": {
+            "text": "1. O fator de volume é (1/10)³=1/1.000. 2. O volume reduzido é 0,008 m³, isto é, 8 litros; escala linear não pode ser aplicada diretamente ao volume.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-escala-volume.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-escala-volume.json",
+            "contentSha256": "c7eb246953084427ab014a92ab242abe3dc293cca202a50d8996749599bf9922",
+            "answerSha256": "c7eb246953084427ab014a92ab242abe3dc293cca202a50d8996749599bf9922"
+          }
+        },
+        "fingerprint": "bb9a465c66d4e41378ec7749481b0960ca39220806950d08a691bf2b796204b0",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-graus-minutos-angulares"
+        },
+        "content": {
+          "statement": {
+            "text": "Um ângulo mede 2°30′, usando 60 minutos de arco por grau. Qual é seu valor em graus decimais?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "483b728a-e99d-56ff-9a43-8248fcc706b2",
+              "content": {
+                "text": "2,03°",
+                "resources": []
+              }
+            },
+            {
+              "id": "084143af-2af3-5c19-a729-91ae2bacd0d3",
+              "content": {
+                "text": "2,05°",
+                "resources": []
+              }
+            },
+            {
+              "id": "cd05556d-7589-5b29-bc20-9612b576822a",
+              "content": {
+                "text": "2,5°",
+                "resources": []
+              }
+            },
+            {
+              "id": "e6cc338d-7e9a-5460-a844-9091eecbabb4",
+              "content": {
+                "text": "2,3°",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cd05556d-7589-5b29-bc20-9612b576822a",
+          "resolution": {
+            "text": "1. Trinta minutos de arco representam 30/60=0,5 grau. 2. Somando os dois graus inteiros, o ângulo mede 2,5°; minutos angulares não são centésimos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-graus-minutos-angulares.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-graus-minutos-angulares.json",
+            "contentSha256": "9a64dfbe1372b3179401a28670589cc7d0fa56c482ebf249cb7b561df1502fc2",
+            "answerSha256": "9a64dfbe1372b3179401a28670589cc7d0fa56c482ebf249cb7b561df1502fc2"
+          }
+        },
+        "fingerprint": "0c959b540d013f6f2eb5cfe053cc5806c65fe776c2e86a54a39a6f46bc9a6ab7",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-horas-somar-sexagesimal"
+        },
+        "content": {
+          "statement": {
+            "text": "Some as durações de 1 h 48 min e 2 h 37 min.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "56add7de-98d0-5e5e-937d-cb8d40fb49b8",
+              "content": {
+                "text": "3 h 25 min.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d3c1ea44-bd2b-5ef8-9a79-588d712a075d",
+              "content": {
+                "text": "4 h 15 min.",
+                "resources": []
+              }
+            },
+            {
+              "id": "11b0f8de-0cb9-5318-aa8b-46184018adfc",
+              "content": {
+                "text": "4 h 25 min.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ef78a663-4c77-5700-8903-987222c912fd",
+              "content": {
+                "text": "3 h 85 min como forma normalizada.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "11b0f8de-0cb9-5318-aa8b-46184018adfc",
+          "resolution": {
+            "text": "1. Os minutos somam 85, equivalentes a 1 h 25 min. 2. As três horas originais mais a hora transportada dão 4 h 25 min.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-horas-somar-sexagesimal.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-horas-somar-sexagesimal.json",
+            "contentSha256": "137153f87d61fbdafa7b87cc7d6fae9159486505604938cba1ced880de41037b",
+            "answerSha256": "137153f87d61fbdafa7b87cc7d6fae9159486505604938cba1ced880de41037b"
+          }
+        },
+        "fingerprint": "058263479cf83156685ef7997d1b68c114f654a0e827fa231250f638b1e1df7d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-inicio-a-partir-final"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma viagem dura 2 h 45 min e termina às 16h20 do mesmo dia. Qual foi o horário de saída?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6a229a52-eac3-5cd3-aaf4-5d45d0b3464e",
+              "content": {
+                "text": "14h35.",
+                "resources": []
+              }
+            },
+            {
+              "id": "32929bf3-c967-5283-ac5e-454da47b26dd",
+              "content": {
+                "text": "13h35.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8b0ce0f0-2647-5117-a6ec-e4b299093803",
+              "content": {
+                "text": "14h05.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e98abc95-7847-5fda-a7cb-f84787583112",
+              "content": {
+                "text": "13h45.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "32929bf3-c967-5283-ac5e-454da47b26dd",
+          "resolution": {
+            "text": "1. Retire duas horas de 16h20, chegando a 14h20. 2. Retire 45 minutos: 13h35; a subtração de minutos usa base 60.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-inicio-a-partir-final.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-inicio-a-partir-final.json",
+            "contentSha256": "a83767d3b5b0754333a23640fe1cd7df9ea48cdee6c90bd901766c11144f28b7",
+            "answerSha256": "a83767d3b5b0754333a23640fe1cd7df9ea48cdee6c90bd901766c11144f28b7"
+          }
+        },
+        "fingerprint": "74296a882e8ed4b848763bda469a178eb92dd1b2d1f3b58f1864f6ec0a1e1955",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-litros-vazao-composta"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma mangueira fornece 0,4 L por segundo. Quantos litros fornece em 2 min 15 s, com vazão constante?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3e4ae0a5-7ec8-50b5-916f-360c89981fe4",
+              "content": {
+                "text": "54",
+                "resources": []
+              }
+            },
+            {
+              "id": "efcd4d6d-fa28-5398-b31a-99438d9dbeb8",
+              "content": {
+                "text": "90",
+                "resources": []
+              }
+            },
+            {
+              "id": "1274c05e-c1ef-5ec2-8a85-84a84b7b4283",
+              "content": {
+                "text": "0,9",
+                "resources": []
+              }
+            },
+            {
+              "id": "8435ef48-71ff-5868-842f-fd7547c8e51b",
+              "content": {
+                "text": "540",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3e4ae0a5-7ec8-50b5-916f-360c89981fe4",
+          "resolution": {
+            "text": "1. Dois minutos e quinze segundos somam 135 segundos. 2. O volume é 0,4×135=54 L; a duração precisa estar na unidade da vazão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-litros-vazao-composta.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-litros-vazao-composta.json",
+            "contentSha256": "cbf09236496a1548c077ed27b146e41dc66c15966e890043d134703ef7199089",
+            "answerSha256": "cbf09236496a1548c077ed27b146e41dc66c15966e890043d134703ef7199089"
+          }
+        },
+        "fingerprint": "6acccc0b9edce5269179af4ebddfa3b3c5e87ed697a93725826a4611fa1767ec",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-massa-tara-liquida"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma caixa cheia pesa 4,8 kg; a embalagem vazia pesa 350 g. Qual é a massa líquida do conteúdo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fbeb1d3f-ff19-5951-a906-807751793752",
+              "content": {
+                "text": "4,15 kg.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0aa0afd7-244e-5685-8f57-47622e980d8f",
+              "content": {
+                "text": "5,15 kg.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7ab2da53-b1a9-5e75-98ec-4845ef52d5e9",
+              "content": {
+                "text": "4,765 kg.",
+                "resources": []
+              }
+            },
+            {
+              "id": "012a03ce-92e6-5b99-943b-bc50a12db9bb",
+              "content": {
+                "text": "4,45 kg.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "012a03ce-92e6-5b99-943b-bc50a12db9bb",
+          "resolution": {
+            "text": "1. Converta a tara: 350 g=0,35 kg. 2. Subtraia 4,8−0,35=4,45 kg; não se somam massas de embalagem e conteúdo para achar a massa líquida.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-massa-tara-liquida.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-massa-tara-liquida.json",
+            "contentSha256": "daab219c48b3c021ae25646923d6ff334f9ca9ac5da3e07bbf5372242cbb9992",
+            "answerSha256": "daab219c48b3c021ae25646923d6ff334f9ca9ac5da3e07bbf5372242cbb9992"
+          }
+        },
+        "fingerprint": "e588373221e83ad31a6f580ed3cb81f4878b2b4d6d8cbcf6c9c7d48517688779",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-prefixo-simbolo-caixa"
+        },
+        "content": {
+          "statement": {
+            "text": "Na notação do Sistema Internacional, qual símbolo representa um milhão de metros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a0ef7afe-ee4b-5f51-afc3-4eb5443b40de",
+              "content": {
+                "text": "mm, com as duas letras minúsculas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dd1df605-1a2a-57e4-b2d6-214b574b4ae6",
+              "content": {
+                "text": "µm, com símbolo inicial de micro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5dac45ac-17cc-5dfb-8477-b1ca91b622c1",
+              "content": {
+                "text": "nm, com símbolo inicial de nano.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bb250a18-f63c-5f05-b159-d4476e06efcf",
+              "content": {
+                "text": "Mm, com M inicial maiúsculo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bb250a18-f63c-5f05-b159-d4476e06efcf",
+          "resolution": {
+            "text": "1. O prefixo mega corresponde a 10⁶ e usa M maiúsculo; o símbolo do metro é m minúsculo. 2. A combinação é Mm; mm é milímetro, µm é micrômetro e nm é nanômetro, unidades muito menores.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-prefixo-simbolo-caixa.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-prefixo-simbolo-caixa.json",
+            "contentSha256": "171a1e25436a5942c82d4c8ed9b19ed24817086de4b39c88eb1ba2e7b0d7c588",
+            "answerSha256": "171a1e25436a5942c82d4c8ed9b19ed24817086de4b39c88eb1ba2e7b0d7c588"
+          }
+        },
+        "fingerprint": "471231cc70a5b81dbb043d47fea8efc5a8a4e044d5f94427728ad0908699a360",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-soma-unidades-mistas"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é o total de 1,2 km + 350 m + 45.000 cm, em metros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7ae3a93d-23d8-5419-bf8b-817869020da8",
+              "content": {
+                "text": "46.550",
+                "resources": []
+              }
+            },
+            {
+              "id": "63d5f329-2cbb-5b26-8943-e318152bf606",
+              "content": {
+                "text": "1.550",
+                "resources": []
+              }
+            },
+            {
+              "id": "bcf94fd3-52d5-50ee-837e-8c05966c922a",
+              "content": {
+                "text": "2.000",
+                "resources": []
+              }
+            },
+            {
+              "id": "93db2ecb-c593-584c-abe3-2fa7cc8063ae",
+              "content": {
+                "text": "1.595",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bcf94fd3-52d5-50ee-837e-8c05966c922a",
+          "resolution": {
+            "text": "1. As parcelas são 1.200 m, 350 m e 450 m. 2. A soma é 2.000 metros; somar os números antes de uniformizar as unidades é incorreto.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-soma-unidades-mistas.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-soma-unidades-mistas.json",
+            "contentSha256": "01ecab5a3a8e880aa432783fa1128dc82e3867968d350ea9f495d97584eba00c",
+            "answerSha256": "01ecab5a3a8e880aa432783fa1128dc82e3867968d350ea9f495d97584eba00c"
+          }
+        },
+        "fingerprint": "b5ae121d15148e14aebbd48c815f018cc4d63e32a044edc30394f488d96e3fea",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-tempo-fracao-dia"
+        },
+        "content": {
+          "statement": {
+            "text": "Que fração de um dia de 24 horas corresponde a 45 minutos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "45865545-4150-55d2-be08-96dde4ebd486",
+              "content": {
+                "text": "1/32",
+                "resources": []
+              }
+            },
+            {
+              "id": "384184fd-5662-5f5e-b12f-cfc3acdb7cc2",
+              "content": {
+                "text": "1/24",
+                "resources": []
+              }
+            },
+            {
+              "id": "e5b79547-f285-56de-899e-77dae1ddb77a",
+              "content": {
+                "text": "3/4",
+                "resources": []
+              }
+            },
+            {
+              "id": "da814f89-cf47-5eb8-a156-13e3a3337923",
+              "content": {
+                "text": "1/45",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "45865545-4150-55d2-be08-96dde4ebd486",
+          "resolution": {
+            "text": "1. Um dia possui 24 × 60 = 1.440 minutos. 2. A fração 45/1.440 simplifica para 1/32. 1/24 corresponde a 1 hora; 3/4 confunde 45 minutos com 3/4 de hora; 1/45 não decorre da razão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-tempo-fracao-dia.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-tempo-fracao-dia.json",
+            "contentSha256": "2c40ac663e19421c59e8ec7573bff9e281de6d102941da0913f3f008a7a128d1",
+            "answerSha256": "2c40ac663e19421c59e8ec7573bff9e281de6d102941da0913f3f008a7a128d1"
+          }
+        },
+        "fingerprint": "86308c863d4c9a7a5032c53b2dc03f52509c41f145d8ff1ab8830720b100e11b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-vazao-unidades-hora"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma vazão de 2 m³ por hora corresponde a quantos litros por minuto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "eeee2c15-4f75-50f9-9131-bf7caed931c3",
+              "content": {
+                "text": "100/3 L/min.",
+                "resources": []
+              }
+            },
+            {
+              "id": "90da5f6f-9378-5a2f-8390-c5ca0b037ff4",
+              "content": {
+                "text": "120 L/min.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bce62753-6da7-53cf-841a-62577aa79377",
+              "content": {
+                "text": "2.000 L/min.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cfad37f6-aa93-5213-ab93-50f0d9115299",
+              "content": {
+                "text": "1/30 L/min.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "eeee2c15-4f75-50f9-9131-bf7caed931c3",
+          "resolution": {
+            "text": "1. Dois metros cúbicos são 2.000 litros. 2. Dividindo pelos 60 minutos da hora: 2.000/60 = 100/3 L/min (≈ 33,3). 2.000 L/min ignora a conversão de hora; 120 L/min multiplica 2 por 60; 1/30 L/min esquece que 1 m³ = 1.000 L.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-vazao-unidades-hora.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-vazao-unidades-hora.json",
+            "contentSha256": "5ec767d5c8a9b83570a5706eb5c132bdab76342e5e57b28a4f1af30518142b42",
+            "answerSha256": "5ec767d5c8a9b83570a5706eb5c132bdab76342e5e57b28a4f1af30518142b42"
+          }
+        },
+        "fingerprint": "492cc2c18b5e43cb7aef39057cd4bc559ce3417ab7f2677b87e31d595d24bd09",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-velocidade-ms"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma velocidade de 72 km/h corresponde a:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "42428a5e-add4-5f53-a736-5f14e5a7bdcf",
+              "content": {
+                "text": "200 m/s.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a8dcc77c-0b68-5e43-a6a0-9a6bcaa91289",
+              "content": {
+                "text": "20 m/s.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8c66aea3-d406-5f81-855b-c76b0d49349d",
+              "content": {
+                "text": "25,92 m/s.",
+                "resources": []
+              }
+            },
+            {
+              "id": "81ee0368-6ebc-5258-ad99-e45473225788",
+              "content": {
+                "text": "72 m/s.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a8dcc77c-0b68-5e43-a6a0-9a6bcaa91289",
+          "resolution": {
+            "text": "1. Converta 72 km em 72.000 metros e uma hora em 3.600 segundos. 2. A razão é 72.000/3.600 = 20 m/s (equivale a dividir por 3,6). 72 m/s não converte; 200 m/s erra a potência de 10; 25,92 multiplica por 0,36 em vez de dividir por 3,6.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-velocidade-ms.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-velocidade-ms.json",
+            "contentSha256": "d6d96bc9dba6e1741f3e76624a05e141b23326c4831e2aff5b14c68158042285",
+            "answerSha256": "d6d96bc9dba6e1741f3e76624a05e141b23326c4831e2aff5b14c68158042285"
+          }
+        },
+        "fingerprint": "4870df19874582383142f826943248b07909e9e6ed9212f6291790851cdc298e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-volume-deslocamento"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao mergulhar completamente um objeto em uma proveta, o nível passa de 125 mL para 162 mL, sem transbordar. Qual é o volume do objeto, usando 1 mL=1 cm³?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "414a9eaf-c750-5f93-8863-820f48a11b90",
+              "content": {
+                "text": "287 cm³.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fcb922b5-26bc-5200-ada2-cd1fc2b0d76e",
+              "content": {
+                "text": "162 cm³.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b2d7a045-08f8-542b-9d06-d5aa0e5df78e",
+              "content": {
+                "text": "125 cm³.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d6d6fc0b-df20-5142-8304-307016f90028",
+              "content": {
+                "text": "37 cm³.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d6d6fc0b-df20-5142-8304-307016f90028",
+          "resolution": {
+            "text": "1. O objeto desloca volume igual ao seu volume submerso. 2. A elevação é 162 − 125 = 37 mL, equivalente a 37 cm³. 125 e 162 são apenas as leituras do nível; 287 soma as leituras em vez de subtrair.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-volume-deslocamento.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-volume-deslocamento.json",
+            "contentSha256": "1bc38fb60cfd121cb6155c2cbfab763540b0120e10388e1f94466c24815859c1",
+            "answerSha256": "1bc38fb60cfd121cb6155c2cbfab763540b0120e10388e1f94466c24815859c1"
+          }
+        },
+        "fingerprint": "0176c0c04f620fbcb4ae33d20d661275c9e35efa1bebc5a8b8fdd4cbf9acfb66",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-volume-mililitro-centimetro"
+        },
+        "content": {
+          "statement": {
+            "text": "Usando 1 mL=1 cm³, quantos centímetros cúbicos correspondem a 0,45 litro?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cce2d75c-7a78-57be-b3f3-80165dd5412e",
+              "content": {
+                "text": "4.500",
+                "resources": []
+              }
+            },
+            {
+              "id": "03e41090-9139-5733-9cac-90aa776dd053",
+              "content": {
+                "text": "0,45",
+                "resources": []
+              }
+            },
+            {
+              "id": "ac1e175d-b1f6-5bbc-872e-4b427c538dc0",
+              "content": {
+                "text": "450",
+                "resources": []
+              }
+            },
+            {
+              "id": "96712745-f4e0-563b-8dcf-0faa5f273081",
+              "content": {
+                "text": "45",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ac1e175d-b1f6-5bbc-872e-4b427c538dc0",
+          "resolution": {
+            "text": "1. Um litro tem 1.000 mililitros, então 0,45 L = 450 mL. 2. Pela equivalência dada, isso corresponde a 450 cm³. 0,45 não converte; 45 e 4.500 usam fatores 100 e 10.000 em vez de 1.000.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-volume-mililitro-centimetro.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-volume-mililitro-centimetro.json",
+            "contentSha256": "46520b47633339c00def10df665397373dc03ec9ccffdab5b6b02bad029e7bfb",
+            "answerSha256": "46520b47633339c00def10df665397373dc03ec9ccffdab5b6b02bad029e7bfb"
+          }
+        },
+        "fingerprint": "d9b892aef5a668e6ae33659a3ed6e9d8317f8c5b1e661ac8fead94571d356f38",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.mat-volume-prefixo-cubico"
+        },
+        "content": {
+          "statement": {
+            "text": "Um volume de 2.500 cm³ equivale a quantos decímetros cúbicos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "748484b5-c69d-5904-b33a-8e0cebb75350",
+              "content": {
+                "text": "2,5",
+                "resources": []
+              }
+            },
+            {
+              "id": "d833f480-cd64-57f6-84ea-9c5f916cc478",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            },
+            {
+              "id": "9abcb181-a034-5956-bccf-25031673cea6",
+              "content": {
+                "text": "250",
+                "resources": []
+              }
+            },
+            {
+              "id": "9699a27a-e1ad-5897-a170-a46513c4561f",
+              "content": {
+                "text": "0,25",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "748484b5-c69d-5904-b33a-8e0cebb75350",
+          "resolution": {
+            "text": "1. Um decímetro tem 10 centímetros e 1 dm³ contém 10 × 10 × 10 = 1.000 cm³. 2. Dividindo 2.500 por 1.000, obtém-se 2,5 dm³. 25 e 250 usam os fatores de área (100) ou de comprimento (10); 0,25 divide por 10.000.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M08.p.mat-volume-prefixo-cubico.json",
+            "answerPath": "sources/admin.2026-11.M08.p.mat-volume-prefixo-cubico.json",
+            "contentSha256": "73849f640ae37ae6907131fc1c14dd93b3ec368792b965ef9c8e8aae185f648b",
+            "answerSha256": "73849f640ae37ae6907131fc1c14dd93b3ec368792b965ef9c8e8aae185f648b"
+          }
+        },
+        "fingerprint": "fa963c6a2d702c571590e0f06dced078ad774395e65ac985c4fe52ffc6571ef2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.nova-apoio-q32"
+        },
+        "content": {
+          "statement": {
+            "text": "Joana leva 30 minutos para fazer um bolo. Considerando que ela leve o mesmo tempo para preparar cada bolo, quanto tempo Joana levará ao todo para preparar 4 bolos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3b0bb760-0ee1-5f7f-bb02-25d44de33f79",
+              "content": {
+                "text": "1 hora",
+                "resources": []
+              }
+            },
+            {
+              "id": "78bb5b17-b323-563c-bbd8-fc1c9855ea20",
+              "content": {
+                "text": "1 hora e 30 minutos",
+                "resources": []
+              }
+            },
+            {
+              "id": "73d9d961-ed3a-5278-9a11-f62abb5d1ef5",
+              "content": {
+                "text": "3 horas",
+                "resources": []
+              }
+            },
+            {
+              "id": "6b5635ac-dada-53b9-a2aa-138bdc32c686",
+              "content": {
+                "text": "3 horas e 30 minutos",
+                "resources": []
+              }
+            },
+            {
+              "id": "2cfbcb99-9bb7-5ee8-add9-2cdb909b10f2",
+              "content": {
+                "text": "2 horas",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2cfbcb99-9bb7-5ee8-add9-2cdb909b10f2",
+          "resolution": {
+            "text": "1. No modelo sequencial adotado pela questão, quatro bolos exigem 4 × 30 = 120 minutos. 2. Como 60 minutos equivalem a uma hora, 120 minutos são 2 horas, alternativa E. 1 hora e 1 hora e 30 minutos correspondem a 2 e 3 bolos; 3 horas e 3 horas e 30 minutos excedem o tempo de 4 bolos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Nova Odessa — Processo Seletivo 01/2026, AUXILIAR DE APOIO ESCOLAR, questão32. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M08.p.nova-apoio-q32.json",
+            "answerPath": "sources/admin.2026-11.M08.p.nova-apoio-q32.json",
+            "contentSha256": "e581aad434a2c6fbcea7b7d486c29146cd56ba2a1e746e43c399ecae7f7a5773",
+            "answerSha256": "e581aad434a2c6fbcea7b7d486c29146cd56ba2a1e746e43c399ecae7f7a5773"
+          }
+        },
+        "fingerprint": "9be39bb9964b5edd51568cc4e205951a50e1918559708fc49a802958a8dae6bc",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.nova-apoio-q35"
+        },
+        "content": {
+          "statement": {
+            "text": "Para cercar um pequeno canteiro, foi utilizada uma fita com 500 centímetros de comprimento. Sabendo que 100 centímetros correspondem a 1 metro, qual é o comprimento dessa fita em metros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ec3b247b-132f-5192-b879-4c2226fd81db",
+              "content": {
+                "text": "8 m",
+                "resources": []
+              }
+            },
+            {
+              "id": "698327f5-a809-5d76-91b9-715bf09d1b08",
+              "content": {
+                "text": "4 m",
+                "resources": []
+              }
+            },
+            {
+              "id": "d7f0714d-c8a4-5be4-9ba0-8c15280e6278",
+              "content": {
+                "text": "2 m",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0b848cd-35aa-56fa-aa8f-8309fb5faff5",
+              "content": {
+                "text": "5 m",
+                "resources": []
+              }
+            },
+            {
+              "id": "99f3111a-b5c0-52c7-8ed5-87c7a147c9de",
+              "content": {
+                "text": "7 m",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a0b848cd-35aa-56fa-aa8f-8309fb5faff5",
+          "resolution": {
+            "text": "1. Use a equivalência fornecida: 100 centímetros para cada metro. 2. Assim 500/100 = 5 metros, alternativa D; ao passar para uma unidade maior, o valor numérico diminui. 2, 4, 7 e 8 m não correspondem a 500 cm (seriam 200, 400, 700 e 800 cm).",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Nova Odessa — Processo Seletivo 01/2026, AUXILIAR DE APOIO ESCOLAR, questão35. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M08.p.nova-apoio-q35.json",
+            "answerPath": "sources/admin.2026-11.M08.p.nova-apoio-q35.json",
+            "contentSha256": "2da7ac190d3578e94fa8337dd1d70f7197a2c2481ff355ecc90fc5be3cf7c481",
+            "answerSha256": "2da7ac190d3578e94fa8337dd1d70f7197a2c2481ff355ecc90fc5be3cf7c481"
+          }
+        },
+        "fingerprint": "18ccdc7476f1dee98fb586eb6c4585bb90b5856c311a70f30b73ebc45ae7e1e8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.potim-aa-q15"
+        },
+        "content": {
+          "statement": {
+            "text": "Pedro Henrique, servidor público, realizou três tarefas em sequência e sem pausas entre elas. Todas as tarefas levaram o mesmo tempo para serem executadas. A primeira tarefa iniciou às 9h20min, e a segunda tarefa terminou às 13h24min. Em qual horário Pedro Henrique terminou a terceira tarefa? Assinale a alternativa correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "dfe03d65-e3f6-50b9-88ff-a8e4664921eb",
+              "content": {
+                "text": "13h53min",
+                "resources": []
+              }
+            },
+            {
+              "id": "52e4e841-43fa-5fb4-b42b-5fca20ed951a",
+              "content": {
+                "text": "14h23min",
+                "resources": []
+              }
+            },
+            {
+              "id": "076641c2-f81b-5769-9996-ddbd06c52bfb",
+              "content": {
+                "text": "15h26min",
+                "resources": []
+              }
+            },
+            {
+              "id": "781df5f9-3c8c-5e8d-95f0-0352a4461b6b",
+              "content": {
+                "text": "15h45min",
+                "resources": []
+              }
+            },
+            {
+              "id": "063af100-3320-5a8d-9a1d-804b70db91e7",
+              "content": {
+                "text": "21h12min",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "076641c2-f81b-5769-9996-ddbd06c52bfb",
+          "resolution": {
+            "text": "1. Entre 9h20 e 13h24 passaram 4h04, ou 244 minutos, correspondentes a duas tarefas; cada tarefa dura 122 minutos (2h02). 2. A terceira termina 122 minutos depois de 13h24, ou seja, às 15h26 (alternativa C). 13h53, 14h23, 15h45 e 21h12 não resultam de somar 2h02 ao fim da segunda tarefa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Agente Administrativo, questão 15. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M08.p.potim-aa-q15.json",
+            "answerPath": "sources/admin.2026-11.M08.p.potim-aa-q15.json",
+            "contentSha256": "bc263d6af9d06a7d9dbdfc01ce28854e38193775e139ff3378f0003582f7a751",
+            "answerSha256": "bc263d6af9d06a7d9dbdfc01ce28854e38193775e139ff3378f0003582f7a751"
+          }
+        },
+        "fingerprint": "90bf8b2f52ebe73520fd921d4bdd87b2966a5d737e6e99008e2629b940d3ba03",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M08.p.vinh25-aux-q22"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma ciclovia possui 2 km e 300 m de extensão.\nQual é esse comprimento em metros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5bc63bb2-541b-5ea0-a9ad-b8c1d9d5bb2b",
+              "content": {
+                "text": "2.030",
+                "resources": []
+              }
+            },
+            {
+              "id": "6bbc50e3-25f1-5863-b1c8-a5041b78123f",
+              "content": {
+                "text": "2.330",
+                "resources": []
+              }
+            },
+            {
+              "id": "be3edb57-aec0-5742-95c1-86fd49952398",
+              "content": {
+                "text": "2.600",
+                "resources": []
+              }
+            },
+            {
+              "id": "dc77e9d8-feec-5bc0-a930-4fe233a65a98",
+              "content": {
+                "text": "2.900",
+                "resources": []
+              }
+            },
+            {
+              "id": "bff2ec1c-a071-5ba8-927d-36312d8c28cf",
+              "content": {
+                "text": "2.300",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bff2ec1c-a071-5ba8-927d-36312d8c28cf",
+          "resolution": {
+            "text": "1. 1 km = 1.000 m, então 2 km = 2.000 m; somando os 300 m, a ciclovia tem 2.300 m. 2. 2.030 trata 300 m como 30 m; 2.330, 2.600 e 2.900 somam valores indevidos. Resposta: alternativa E.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M08",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, AUXILIAR ADMINISTRATIVO, questão 22. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M08.p.vinh25-aux-q22.json",
+            "answerPath": "sources/admin.2026-11.M08.p.vinh25-aux-q22.json",
+            "contentSha256": "e540eba3c36c70ac131d60c5da93d21b458e458d861d7724bb6fabfd4a697447",
+            "answerSha256": "e540eba3c36c70ac131d60c5da93d21b458e458d861d7724bb6fabfd4a697447"
+          }
+        },
+        "fingerprint": "5374d075ed46638b4196f27d0f33d106668d2e6e5f6da201195ec170d32ce8a0",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M08.p.cerq25-tes-q20.json",
+        "mediaType": "application/json",
+        "sha256": "c110f9fd49abc255bccf3cfb98efd3c6ab925b54fc33469934b9124d99d0d785",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTAwMC4ifSx7ImlkIjoiYiIsInRleHQiOiI2MDAwLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjYwLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjM2MDAuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiMzYwLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2VycXVpbGhvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1LCBURVNPVVJFSVJPIEdFUkFMIERPIE1VTklDw41QSU8sIHF1ZXN0w6NvIDIwLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJlIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2byBkYXMgcHJvdmFzIGRlIDI4LzA5LzIwMjU7IHDDoWdpbmEgNywgYmxvY28gZG8gY2FyZ28gVEVTT1VSRUlSTyBHRVJBTCBETyBNVU5JQ8ONUElPLCBxdWVzdMOjbyAyMCA9IEUgY29uZmVyaWRhIHZpc3VhbG1lbnRlOyBpdGVtIG7Do28gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk4LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI2NzdmMGE2MGIxMDgwYTRiNjY5ZTNiZGJjM2YwNTk5NDZhNzdmNDlkODZlNDE0YmIzYTg3Y2M3MjA3MWM0MGFmIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTgvYW5leG9zL2UxNDFiYmVlLWFmZjUtNDRmMC1hN2ZhLTNlNTExOWM4Zjg4MC5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENlcnF1aWxobyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLWNlcnF1aWxoby0yMDI1LXRlc291cmVpcm8vcTIwIiwibnVtYmVyIjoiMjAiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIFRFU09VUkVJUk8gR0VSQUwgRE8gTVVOSUPDjVBJTzsgcXVlc3TDo28gMjAgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNiByZW5kZXJpemFkYSAoZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKTsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS9oaWZlbml6YcOnw6NvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTgtcHJvdmEtdGVzb3VyZWlyby1nZXJhbC1kby1tdW5pY3Bpby5wZGYiLCJzaGEyNTYiOiI2NjgxNGQyYmU1NzEwYTFiMDIzYjIyOTRhMDdlZjljNzU3OGI1NWMxNWM0MjliYTI0M2UxMTg3YzMzZmE3MDc3IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTgvYW5leG9zLzgwMTQyNjkyLTU0YWItNDNkNy05MGM3LTAzMTE4NWM2NWMyNy5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJURVNPVVJFSVJPIEdFUkFMIERPIE1VTklDw41QSU8iLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjV9LCJpZCI6ImNlcnEyNS10ZXMtcTIwIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiAxIGhvcmEgPSA2MCBtaW4gPSAzLjYwMCBzOyBjb20gdW1hIG1lbnNhZ2VtIGEgY2FkYSAxMCBzLCBzw6NvIDMuNjAwIMO3IDEwID0gMzYwIG1lbnNhZ2Vucy4gMi4gMzYwMCDDqSBvIG7Dum1lcm8gZGUgc2VndW5kb3MgZGEgaG9yYTsgNjAgY29ycmVzcG9uZGUgYSB1bWEgbWVuc2FnZW0gcG9yIG1pbnV0bzsgNjAwMCBlIDEwMDAgbsOjbyBkZWNvcnJlbSBkYSBjb252ZXJzw6NvLiBSZXNwb3N0YTogYWx0ZXJuYXRpdmEgRS4iLCJzdGF0ZW1lbnQiOiJVbSBzaXN0ZW1hIGRlIG1vbml0b3JhbWVudG8gZXNwYWNpYWwgZW52aWEgbWVuc2FnZW5zIGNvbSBkYWRvcyBnZW9lc3BhY2lhaXMgcGFyYSB1bWEgZXN0YcOnw6NvIG5hIFRlcnJhIGEgY2FkYSAxMCBzZWd1bmRvcy4gUXVhbnRhcyBtZW5zYWdlbnMgc8OjbyBlbnZpYWRhcyBlbSB1bWEgaG9yYT8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-calendario-bissexto.json",
+        "mediaType": "application/json",
+        "sha256": "ddb852efdece866dc42b351f2d6be85547aaaaed49c39bab0423c735be451797",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMSBkaWEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMyBkaWFzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjI5IGRpYXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMiBkaWFzLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtY2FsZW5kYXJpby1iaXNzZXh0byIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBGZXZlcmVpcm8gZGUgMjAyNCBpbmNsdWkgbyBkaWEgMjkuIDIuIFBhc3NhbSB1bSBkaWEgYXTDqSAyOS8wMiBlIG91dHJvIGF0w6kgMDEvMDMsIHRvdGFsaXphbmRvIGRvaXMgZGlhczsgb3MgaW5zdGFudGVzIGluaWNpYWlzIGVzdMOjbyBlc3BlY2lmaWNhZG9zLiIsInN0YXRlbWVudCI6Ik5vIGNhbGVuZMOhcmlvIGdyZWdvcmlhbm8sIDIwMjQgZm9pIGJpc3NleHRvLiBRdWFudG9zIGRpYXMgZGVjb3JyZXJhbSBkbyBpbsOtY2lvIGRlIDI4LzAyLzIwMjQgYW8gaW7DrWNpbyBkZSAwMS8wMy8yMDI0PyIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn0sIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-consumo-distancia-combustivel.json",
+        "mediaType": "application/json",
+        "sha256": "8b4c81dcbc08416e34b2c4cabba6aa9a376be1e7b3f150886a1071d60ff069be",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMS41MDAgTC8xMDAga20uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMy8yMCBMLzEwMCBrbS4ifSx7ImlkIjoiYyIsInRleHQiOiIyMC8zIEwvMTAwIGttLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjE1IEwvMTAwIGttLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtY29uc3Vtby1kaXN0YW5jaWEtY29tYnVzdGl2ZWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gUGFyYSAxMDAga20sIGRpdmlkYSBhIGRpc3TDom5jaWEgcGVsYSBlZmljacOqbmNpYSBkZSAxNSBrbS9MLiAyLiBPIGNvbnN1bW8gw6kgMTAwLzE1PTIwLzMgTCBwb3IgMTAwIGttOyBhIHVuaWRhZGUgcGVkaWRhIGludmVydGUgYSBlZmljacOqbmNpYS4iLCJzdGF0ZW1lbnQiOiJVbSB2ZcOtY3VsbyBmaWN0w61jaW8gcGVyY29ycmUgMTUga20gcG9yIGxpdHJvLiBRdWFsIMOpIHNldSBjb25zdW1vIGVtIGxpdHJvcyBwb3IgMTAwIGttPyIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn0sIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-conversao-unidade-composta.json",
+        "mediaType": "application/json",
+        "sha256": "958a67bb0c3aeb193143095491a0a09d0fc0f0386c8536ddecb40575dcaa0ef0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTYsNjcgbUwva20uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNjAgbUwva20uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNjAwIG1ML2ttLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjYgbUwva20uIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1jb252ZXJzYW8tdW5pZGFkZS1jb21wb3N0YSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBTZWlzIGxpdHJvcyBjb3JyZXNwb25kZW0gYSA2LjAwMCBtTCBwYXJhIDEwMCBrbS4gMi4gRGl2aWRpbmRvIHBvciAxMDAsIG9idMOpbS1zZSA2MCBtTC9rbTsgaW52ZXJ0ZXIgYSByYXrDo28gcHJvZHV6aXJpYSBvdXRyYSB1bmlkYWRlLiIsInN0YXRlbWVudCI6IlVtIGNvbnN1bW8gZGUgNiBsaXRyb3MgYSBjYWRhIDEwMCBrbSBlcXVpdmFsZSBhIHF1YW50b3MgbWlsaWxpdHJvcyBwb3IgcXVpbMO0bWV0cm8/IiwidG9waWNJZCI6Ik0wOCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifSwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJCSVBNIOKAlCBCcm9jaHVyYSBkbyBTaXN0ZW1hIEludGVybmFjaW9uYWwgZGUgVW5pZGFkZXMsIDnCqiBlZGnDp8OjbywgYXR1YWxpemHDp8OjbyAyMDI2OyB1bmlkYWRlcyBlIHByZWZpeG9zIiwidXJsIjoiaHR0cHM6Ly93d3cuYmlwbS5vcmcvZW4vcHVibGljYXRpb25zL3NpLWJyb2NodXJlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-distancia-regua.json",
+        "mediaType": "application/json",
+        "sha256": "5677fa8d632117dbf62093f3967f59472f11497be69c91d83cb32c05ce5e6029",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNiw3IG1tLiJ9LHsiaWQiOiJiIiwidGV4dCI6IjY3IG1tLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ijg0IG1tLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjEwMSBtbS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LWRpc3RhbmNpYS1yZWd1YSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBPIGNvbXByaW1lbnRvIMOpIGEgZGlmZXJlbsOnYSA4LDTiiJIxLDc9Niw3IGNtLiAyLiBDb21vIDEgY209MTAgbW0sIGlzc28gZXF1aXZhbGUgYSA2NyBtbTsgYSBtYXJjYSBmaW5hbCBpc29sYWRhIG7Do28gbWVkZSBvIG9iamV0by4iLCJzdGF0ZW1lbnQiOiJFbSB1bWEgcsOpZ3VhLCBhcyBleHRyZW1pZGFkZXMgZGUgdW0gb2JqZXRvIGVzdMOjbyBuYXMgbWFyY2FzIDEsNyBjbSBlIDgsNCBjbS4gUXVhbCDDqSBvIGNvbXByaW1lbnRvIGRvIG9iamV0byBlbSBtaWzDrW1ldHJvcz8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-energia-potencia-unidades-dadas.json",
+        "mediaType": "application/json",
+        "sha256": "30bd3a86a9c9cddf71349375ad1aafb65a83858be9b8eb96ad3e327d42a7c23d",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNiBrV2guIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMSw1IGtXaC4ifSx7ImlkIjoiYyIsInRleHQiOiIxLjUwMCBrV2guIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMCw1IGtXaC4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LWVuZXJnaWEtcG90ZW5jaWEtdW5pZGFkZXMtZGFkYXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gQSBwb3TDqm5jaWEgZGUgNTAwIFcgZXF1aXZhbGUgYSAwLDUga1cuIDIuIEVuZXJnaWEgw6kgcG90w6puY2lhIHZlemVzIHRlbXBvOiAwLDXDlzM9MSw1IGtXaDsga1cgZSBrV2ggbWVkZW0gZ3JhbmRlemFzIGRpZmVyZW50ZXMuIiwic3RhdGVtZW50IjoiVW0gZXF1aXBhbWVudG8gZmljdMOtY2lvIHRlbSBwb3TDqm5jaWEgY29uc3RhbnRlIGRlIDUwMCBXLiBVc2FuZG8gMSBrVz0xLjAwMCBXLCBxdWFsIMOpIG8gY29uc3VtbyBlbSBrV2ggZHVyYW50ZSAzIGhvcmFzPyIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn0sIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-erro-conversao-area.json",
+        "mediaType": "application/json",
+        "sha256": "be1ebcc2024a1e00d4db95130b9da1b1f345f42673daa51c364a381418e140f1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyB2YWxvciAxMDAgY23CsiBqw6EgZXN0w6EgY29ycmV0by4ifSx7ImlkIjoiYiIsInRleHQiOiIxIG3Csj0xLjAwMCBjbcKyLCBwb2lzIHNlIHVzYSBmYXRvciBjw7piaWNvLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjEgbcKyPTEwIGNtwrIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMSBtwrI9MTAuMDAwIGNtwrIsIHBvaXMgYXMgZHVhcyBkaW1lbnPDtWVzIHPDo28gbXVsdGlwbGljYWRhcyBwb3IgMTAwLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtZXJyby1jb252ZXJzYW8tYXJlYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiDDgXJlYSBlbnZvbHZlIGR1YXMgZGltZW5zw7VlcyBsaW5lYXJlcy4gMi4gVW0gcXVhZHJhZG8gZGUgMSBtIGRlIGxhZG8gdGVtIDEwMCBjbSBlbSBjYWRhIGxhZG8sIGxvZ28gMTAww5cxMDA9MTAuMDAwIGNtwrIuIiwic3RhdGVtZW50IjoiVW0gZXN0dWRhbnRlIGNvbnZlcnRldSAxIG3CsiBlbSAxMDAgY23CsiBwb3JxdWUgMSBtPTEwMCBjbS4gUXVhbCDDqSBhIGNvcnJlw6fDo28/IiwidG9waWNJZCI6Ik0wOCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifSwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJCSVBNIOKAlCBCcm9jaHVyYSBkbyBTaXN0ZW1hIEludGVybmFjaW9uYWwgZGUgVW5pZGFkZXMsIDnCqiBlZGnDp8OjbywgYXR1YWxpemHDp8OjbyAyMDI2OyB1bmlkYWRlcyBlIHByZWZpeG9zIiwidXJsIjoiaHR0cHM6Ly93d3cuYmlwbS5vcmcvZW4vcHVibGljYXRpb25zL3NpLWJyb2NodXJlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-escala-volume.json",
+        "mediaType": "application/json",
+        "sha256": "c7eb246953084427ab014a92ab242abe3dc293cca202a50d8996749599bf9922",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCBsaXRyb3MuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiODAwIGxpdHJvcy4ifSx7ImlkIjoiYyIsInRleHQiOiI4MCBsaXRyb3MuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMCw4IGxpdHJvLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtZXNjYWxhLXZvbHVtZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBPIGZhdG9yIGRlIHZvbHVtZSDDqSAoMS8xMCnCsz0xLzEuMDAwLiAyLiBPIHZvbHVtZSByZWR1emlkbyDDqSAwLDAwOCBtwrMsIGlzdG8gw6ksIDggbGl0cm9zOyBlc2NhbGEgbGluZWFyIG7Do28gcG9kZSBzZXIgYXBsaWNhZGEgZGlyZXRhbWVudGUgYW8gdm9sdW1lLiIsInN0YXRlbWVudCI6IlVtYSBtYXF1ZXRlIHVzYSBjb21wcmltZW50b3MgbmEgZXNjYWxhIDE6MTAuIFVtIHJlc2VydmF0w7NyaW8gcmVhbCB0ZW0gOCBtwrMuIFF1YWwgw6kgbyB2b2x1bWUgY29ycmVzcG9uZGVudGUgbmEgbWFxdWV0ZT8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-graus-minutos-angulares.json",
+        "mediaType": "application/json",
+        "sha256": "9a64dfbe1372b3179401a28670589cc7d0fa56c482ebf249cb7b561df1502fc2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMiwwM8KwIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMiwwNcKwIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMiw1wrAifSx7ImlkIjoiZCIsInRleHQiOiIyLDPCsCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtZ3JhdXMtbWludXRvcy1hbmd1bGFyZXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gVHJpbnRhIG1pbnV0b3MgZGUgYXJjbyByZXByZXNlbnRhbSAzMC82MD0wLDUgZ3JhdS4gMi4gU29tYW5kbyBvcyBkb2lzIGdyYXVzIGludGVpcm9zLCBvIMOibmd1bG8gbWVkZSAyLDXCsDsgbWludXRvcyBhbmd1bGFyZXMgbsOjbyBzw6NvIGNlbnTDqXNpbW9zLiIsInN0YXRlbWVudCI6IlVtIMOibmd1bG8gbWVkZSAywrAzMOKAsiwgdXNhbmRvIDYwIG1pbnV0b3MgZGUgYXJjbyBwb3IgZ3JhdS4gUXVhbCDDqSBzZXUgdmFsb3IgZW0gZ3JhdXMgZGVjaW1haXM/IiwidG9waWNJZCI6Ik0wOCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifSwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJCSVBNIOKAlCBCcm9jaHVyYSBkbyBTaXN0ZW1hIEludGVybmFjaW9uYWwgZGUgVW5pZGFkZXMsIDnCqiBlZGnDp8OjbywgYXR1YWxpemHDp8OjbyAyMDI2OyB1bmlkYWRlcyBlIHByZWZpeG9zIiwidXJsIjoiaHR0cHM6Ly93d3cuYmlwbS5vcmcvZW4vcHVibGljYXRpb25zL3NpLWJyb2NodXJlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-horas-somar-sexagesimal.json",
+        "mediaType": "application/json",
+        "sha256": "137153f87d61fbdafa7b87cc7d6fae9159486505604938cba1ced880de41037b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMyBoIDI1IG1pbi4ifSx7ImlkIjoiYiIsInRleHQiOiI0IGggMTUgbWluLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjQgaCAyNSBtaW4uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMyBoIDg1IG1pbiBjb21vIGZvcm1hIG5vcm1hbGl6YWRhLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtaG9yYXMtc29tYXItc2V4YWdlc2ltYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgbWludXRvcyBzb21hbSA4NSwgZXF1aXZhbGVudGVzIGEgMSBoIDI1IG1pbi4gMi4gQXMgdHLDqnMgaG9yYXMgb3JpZ2luYWlzIG1haXMgYSBob3JhIHRyYW5zcG9ydGFkYSBkw6NvIDQgaCAyNSBtaW4uIiwic3RhdGVtZW50IjoiU29tZSBhcyBkdXJhw6fDtWVzIGRlIDEgaCA0OCBtaW4gZSAyIGggMzcgbWluLiIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn0sIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-inicio-a-partir-final.json",
+        "mediaType": "application/json",
+        "sha256": "a83767d3b5b0754333a23640fe1cd7df9ea48cdee6c90bd901766c11144f28b7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTRoMzUuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTNoMzUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTRoMDUuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTNoNDUuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1pbmljaW8tYS1wYXJ0aXItZmluYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gUmV0aXJlIGR1YXMgaG9yYXMgZGUgMTZoMjAsIGNoZWdhbmRvIGEgMTRoMjAuIDIuIFJldGlyZSA0NSBtaW51dG9zOiAxM2gzNTsgYSBzdWJ0cmHDp8OjbyBkZSBtaW51dG9zIHVzYSBiYXNlIDYwLiIsInN0YXRlbWVudCI6IlVtYSB2aWFnZW0gZHVyYSAyIGggNDUgbWluIGUgdGVybWluYSDDoHMgMTZoMjAgZG8gbWVzbW8gZGlhLiBRdWFsIGZvaSBvIGhvcsOhcmlvIGRlIHNhw61kYT8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-litros-vazao-composta.json",
+        "mediaType": "application/json",
+        "sha256": "cbf09236496a1548c077ed27b146e41dc66c15966e890043d134703ef7199089",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNTQifSx7ImlkIjoiYiIsInRleHQiOiI5MCJ9LHsiaWQiOiJjIiwidGV4dCI6IjAsOSJ9LHsiaWQiOiJkIiwidGV4dCI6IjU0MCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtbGl0cm9zLXZhemFvLWNvbXBvc3RhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIiwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiXSwicmVzb2x1dGlvbiI6IjEuIERvaXMgbWludXRvcyBlIHF1aW56ZSBzZWd1bmRvcyBzb21hbSAxMzUgc2VndW5kb3MuIDIuIE8gdm9sdW1lIMOpIDAsNMOXMTM1PTU0IEw7IGEgZHVyYcOnw6NvIHByZWNpc2EgZXN0YXIgbmEgdW5pZGFkZSBkYSB2YXrDo28uIiwic3RhdGVtZW50IjoiVW1hIG1hbmd1ZWlyYSBmb3JuZWNlIDAsNCBMIHBvciBzZWd1bmRvLiBRdWFudG9zIGxpdHJvcyBmb3JuZWNlIGVtIDIgbWluIDE1IHMsIGNvbSB2YXrDo28gY29uc3RhbnRlPyIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn0sIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-massa-tara-liquida.json",
+        "mediaType": "application/json",
+        "sha256": "daab219c48b3c021ae25646923d6ff334f9ca9ac5da3e07bbf5372242cbb9992",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNCwxNSBrZy4ifSx7ImlkIjoiYiIsInRleHQiOiI1LDE1IGtnLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjQsNzY1IGtnLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjQsNDUga2cuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1tYXNzYS10YXJhLWxpcXVpZGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gQ29udmVydGEgYSB0YXJhOiAzNTAgZz0wLDM1IGtnLiAyLiBTdWJ0cmFpYSA0LDjiiJIwLDM1PTQsNDUga2c7IG7Do28gc2Ugc29tYW0gbWFzc2FzIGRlIGVtYmFsYWdlbSBlIGNvbnRlw7pkbyBwYXJhIGFjaGFyIGEgbWFzc2EgbMOtcXVpZGEuIiwic3RhdGVtZW50IjoiVW1hIGNhaXhhIGNoZWlhIHBlc2EgNCw4IGtnOyBhIGVtYmFsYWdlbSB2YXppYSBwZXNhIDM1MCBnLiBRdWFsIMOpIGEgbWFzc2EgbMOtcXVpZGEgZG8gY29udGXDumRvPyIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn0sIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-prefixo-simbolo-caixa.json",
+        "mediaType": "application/json",
+        "sha256": "171a1e25436a5942c82d4c8ed9b19ed24817086de4b39c88eb1ba2e7b0d7c588",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoibW0sIGNvbSBhcyBkdWFzIGxldHJhcyBtaW7DunNjdWxhcy4ifSx7ImlkIjoiYiIsInRleHQiOiLCtW0sIGNvbSBzw61tYm9sbyBpbmljaWFsIGRlIG1pY3JvLiJ9LHsiaWQiOiJjIiwidGV4dCI6Im5tLCBjb20gc8OtbWJvbG8gaW5pY2lhbCBkZSBuYW5vLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik1tLCBjb20gTSBpbmljaWFsIG1hacO6c2N1bG8uIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1wcmVmaXhvLXNpbWJvbG8tY2FpeGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gTyBwcmVmaXhvIG1lZ2EgY29ycmVzcG9uZGUgYSAxMOKBtiBlIHVzYSBNIG1hacO6c2N1bG87IG8gc8OtbWJvbG8gZG8gbWV0cm8gw6kgbSBtaW7DunNjdWxvLiAyLiBBIGNvbWJpbmHDp8OjbyDDqSBNbTsgbW0gw6kgbWlsw61tZXRybywgwrVtIMOpIG1pY3LDtG1ldHJvIGUgbm0gw6kgbmFuw7RtZXRybywgdW5pZGFkZXMgbXVpdG8gbWVub3Jlcy4iLCJzdGF0ZW1lbnQiOiJOYSBub3Rhw6fDo28gZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsLCBxdWFsIHPDrW1ib2xvIHJlcHJlc2VudGEgdW0gbWlsaMOjbyBkZSBtZXRyb3M/IiwidG9waWNJZCI6Ik0wOCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifSwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJCSVBNIOKAlCBCcm9jaHVyYSBkbyBTaXN0ZW1hIEludGVybmFjaW9uYWwgZGUgVW5pZGFkZXMsIDnCqiBlZGnDp8OjbywgYXR1YWxpemHDp8OjbyAyMDI2OyB1bmlkYWRlcyBlIHByZWZpeG9zIiwidXJsIjoiaHR0cHM6Ly93d3cuYmlwbS5vcmcvZW4vcHVibGljYXRpb25zL3NpLWJyb2NodXJlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-soma-unidades-mistas.json",
+        "mediaType": "application/json",
+        "sha256": "01ecab5a3a8e880aa432783fa1128dc82e3867968d350ea9f495d97584eba00c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDYuNTUwIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMS41NTAifSx7ImlkIjoiYyIsInRleHQiOiIyLjAwMCJ9LHsiaWQiOiJkIiwidGV4dCI6IjEuNTk1In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1zb21hLXVuaWRhZGVzLW1pc3RhcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBBcyBwYXJjZWxhcyBzw6NvIDEuMjAwIG0sIDM1MCBtIGUgNDUwIG0uIDIuIEEgc29tYSDDqSAyLjAwMCBtZXRyb3M7IHNvbWFyIG9zIG7Dum1lcm9zIGFudGVzIGRlIHVuaWZvcm1pemFyIGFzIHVuaWRhZGVzIMOpIGluY29ycmV0by4iLCJzdGF0ZW1lbnQiOiJRdWFsIMOpIG8gdG90YWwgZGUgMSwyIGttICsgMzUwIG0gKyA0NS4wMDAgY20sIGVtIG1ldHJvcz8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-tempo-fracao-dia.json",
+        "mediaType": "application/json",
+        "sha256": "2c40ac663e19421c59e8ec7573bff9e281de6d102941da0913f3f008a7a128d1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMS8zMiJ9LHsiaWQiOiJiIiwidGV4dCI6IjEvMjQifSx7ImlkIjoiYyIsInRleHQiOiIzLzQifSx7ImlkIjoiZCIsInRleHQiOiIxLzQ1In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC10ZW1wby1mcmFjYW8tZGlhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIiwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiXSwicmVzb2x1dGlvbiI6IjEuIFVtIGRpYSBwb3NzdWkgMjQgw5cgNjAgPSAxLjQ0MCBtaW51dG9zLiAyLiBBIGZyYcOnw6NvIDQ1LzEuNDQwIHNpbXBsaWZpY2EgcGFyYSAxLzMyLiAxLzI0IGNvcnJlc3BvbmRlIGEgMSBob3JhOyAzLzQgY29uZnVuZGUgNDUgbWludXRvcyBjb20gMy80IGRlIGhvcmE7IDEvNDUgbsOjbyBkZWNvcnJlIGRhIHJhesOjby4iLCJzdGF0ZW1lbnQiOiJRdWUgZnJhw6fDo28gZGUgdW0gZGlhIGRlIDI0IGhvcmFzIGNvcnJlc3BvbmRlIGEgNDUgbWludXRvcz8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-vazao-unidades-hora.json",
+        "mediaType": "application/json",
+        "sha256": "5ec767d5c8a9b83570a5706eb5c132bdab76342e5e57b28a4f1af30518142b42",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTAwLzMgTC9taW4uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTIwIEwvbWluLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjIuMDAwIEwvbWluLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjEvMzAgTC9taW4uIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC12YXphby11bmlkYWRlcy1ob3JhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIiwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiXSwicmVzb2x1dGlvbiI6IjEuIERvaXMgbWV0cm9zIGPDumJpY29zIHPDo28gMi4wMDAgbGl0cm9zLiAyLiBEaXZpZGluZG8gcGVsb3MgNjAgbWludXRvcyBkYSBob3JhOiAyLjAwMC82MCA9IDEwMC8zIEwvbWluICjiiYggMzMsMykuIDIuMDAwIEwvbWluIGlnbm9yYSBhIGNvbnZlcnPDo28gZGUgaG9yYTsgMTIwIEwvbWluIG11bHRpcGxpY2EgMiBwb3IgNjA7IDEvMzAgTC9taW4gZXNxdWVjZSBxdWUgMSBtwrMgPSAxLjAwMCBMLiIsInN0YXRlbWVudCI6IlVtYSB2YXrDo28gZGUgMiBtwrMgcG9yIGhvcmEgY29ycmVzcG9uZGUgYSBxdWFudG9zIGxpdHJvcyBwb3IgbWludXRvPyIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn0sIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQklQTSDigJQgQnJvY2h1cmEgZG8gU2lzdGVtYSBJbnRlcm5hY2lvbmFsIGRlIFVuaWRhZGVzLCA5wqogZWRpw6fDo28sIGF0dWFsaXphw6fDo28gMjAyNjsgdW5pZGFkZXMgZSBwcmVmaXhvcyIsInVybCI6Imh0dHBzOi8vd3d3LmJpcG0ub3JnL2VuL3B1YmxpY2F0aW9ucy9zaS1icm9jaHVyZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-velocidade-ms.json",
+        "mediaType": "application/json",
+        "sha256": "d6d96bc9dba6e1741f3e76624a05e141b23326c4831e2aff5b14c68158042285",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjAwIG0vcy4ifSx7ImlkIjoiYiIsInRleHQiOiIyMCBtL3MuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjUsOTIgbS9zLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjcyIG0vcy4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LXZlbG9jaWRhZGUtbXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gQ29udmVydGEgNzIga20gZW0gNzIuMDAwIG1ldHJvcyBlIHVtYSBob3JhIGVtIDMuNjAwIHNlZ3VuZG9zLiAyLiBBIHJhesOjbyDDqSA3Mi4wMDAvMy42MDAgPSAyMCBtL3MgKGVxdWl2YWxlIGEgZGl2aWRpciBwb3IgMyw2KS4gNzIgbS9zIG7Do28gY29udmVydGU7IDIwMCBtL3MgZXJyYSBhIHBvdMOqbmNpYSBkZSAxMDsgMjUsOTIgbXVsdGlwbGljYSBwb3IgMCwzNiBlbSB2ZXogZGUgZGl2aWRpciBwb3IgMyw2LiIsInN0YXRlbWVudCI6IlVtYSB2ZWxvY2lkYWRlIGRlIDcyIGttL2ggY29ycmVzcG9uZGUgYToiLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-volume-deslocamento.json",
+        "mediaType": "application/json",
+        "sha256": "1bc38fb60cfd121cb6155c2cbfab763540b0120e10388e1f94466c24815859c1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjg3IGNtwrMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTYyIGNtwrMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTI1IGNtwrMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMzcgY23Csy4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXZvbHVtZS1kZXNsb2NhbWVudG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gTyBvYmpldG8gZGVzbG9jYSB2b2x1bWUgaWd1YWwgYW8gc2V1IHZvbHVtZSBzdWJtZXJzby4gMi4gQSBlbGV2YcOnw6NvIMOpIDE2MiDiiJIgMTI1ID0gMzcgbUwsIGVxdWl2YWxlbnRlIGEgMzcgY23Csy4gMTI1IGUgMTYyIHPDo28gYXBlbmFzIGFzIGxlaXR1cmFzIGRvIG7DrXZlbDsgMjg3IHNvbWEgYXMgbGVpdHVyYXMgZW0gdmV6IGRlIHN1YnRyYWlyLiIsInN0YXRlbWVudCI6IkFvIG1lcmd1bGhhciBjb21wbGV0YW1lbnRlIHVtIG9iamV0byBlbSB1bWEgcHJvdmV0YSwgbyBuw612ZWwgcGFzc2EgZGUgMTI1IG1MIHBhcmEgMTYyIG1MLCBzZW0gdHJhbnNib3JkYXIuIFF1YWwgw6kgbyB2b2x1bWUgZG8gb2JqZXRvLCB1c2FuZG8gMSBtTD0xIGNtwrM/IiwidG9waWNJZCI6Ik0wOCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifSwibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtc2kiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJCSVBNIOKAlCBCcm9jaHVyYSBkbyBTaXN0ZW1hIEludGVybmFjaW9uYWwgZGUgVW5pZGFkZXMsIDnCqiBlZGnDp8OjbywgYXR1YWxpemHDp8OjbyAyMDI2OyB1bmlkYWRlcyBlIHByZWZpeG9zIiwidXJsIjoiaHR0cHM6Ly93d3cuYmlwbS5vcmcvZW4vcHVibGljYXRpb25zL3NpLWJyb2NodXJlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-volume-mililitro-centimetro.json",
+        "mediaType": "application/json",
+        "sha256": "46520b47633339c00def10df665397373dc03ec9ccffdab5b6b02bad029e7bfb",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNC41MDAifSx7ImlkIjoiYiIsInRleHQiOiIwLDQ1In0seyJpZCI6ImMiLCJ0ZXh0IjoiNDUwIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNDUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXZvbHVtZS1taWxpbGl0cm8tY2VudGltZXRybyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBVbSBsaXRybyB0ZW0gMS4wMDAgbWlsaWxpdHJvcywgZW50w6NvIDAsNDUgTCA9IDQ1MCBtTC4gMi4gUGVsYSBlcXVpdmFsw6puY2lhIGRhZGEsIGlzc28gY29ycmVzcG9uZGUgYSA0NTAgY23Csy4gMCw0NSBuw6NvIGNvbnZlcnRlOyA0NSBlIDQuNTAwIHVzYW0gZmF0b3JlcyAxMDAgZSAxMC4wMDAgZW0gdmV6IGRlIDEuMDAwLiIsInN0YXRlbWVudCI6IlVzYW5kbyAxIG1MPTEgY23CsywgcXVhbnRvcyBjZW50w61tZXRyb3MgY8O6Ymljb3MgY29ycmVzcG9uZGVtIGEgMCw0NSBsaXRybz8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.mat-volume-prefixo-cubico.json",
+        "mediaType": "application/json",
+        "sha256": "73849f640ae37ae6907131fc1c14dd93b3ec368792b965ef9c8e8aae185f648b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMiw1In0seyJpZCI6ImIiLCJ0ZXh0IjoiMjUifSx7ImlkIjoiYyIsInRleHQiOiIyNTAifSx7ImlkIjoiZCIsInRleHQiOiIwLDI1In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC12b2x1bWUtcHJlZml4by1jdWJpY28iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSJdLCJyZXNvbHV0aW9uIjoiMS4gVW0gZGVjw61tZXRybyB0ZW0gMTAgY2VudMOtbWV0cm9zIGUgMSBkbcKzIGNvbnTDqW0gMTAgw5cgMTAgw5cgMTAgPSAxLjAwMCBjbcKzLiAyLiBEaXZpZGluZG8gMi41MDAgcG9yIDEuMDAwLCBvYnTDqW0tc2UgMiw1IGRtwrMuIDI1IGUgMjUwIHVzYW0gb3MgZmF0b3JlcyBkZSDDoXJlYSAoMTAwKSBvdSBkZSBjb21wcmltZW50byAoMTApOyAwLDI1IGRpdmlkZSBwb3IgMTAuMDAwLiIsInN0YXRlbWVudCI6IlVtIHZvbHVtZSBkZSAyLjUwMCBjbcKzIGVxdWl2YWxlIGEgcXVhbnRvcyBkZWPDrW1ldHJvcyBjw7piaWNvcz8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.nova-apoio-q32.json",
+        "mediaType": "application/json",
+        "sha256": "e581aad434a2c6fbcea7b7d486c29146cd56ba2a1e746e43c399ecae7f7a5773",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMSBob3JhIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMSBob3JhIGUgMzAgbWludXRvcyJ9LHsiaWQiOiJjIiwidGV4dCI6IjMgaG9yYXMifSx7ImlkIjoiZCIsInRleHQiOiIzIGhvcmFzIGUgMzAgbWludXRvcyJ9LHsiaWQiOiJlIiwidGV4dCI6IjIgaG9yYXMifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIE5vdmEgT2Rlc3NhIOKAlCBQcm9jZXNzbyBTZWxldGl2byAwMS8yMDI2LCBBVVhJTElBUiBERSBBUE9JTyBFU0NPTEFSLCBxdWVzdMOjbzMyLiBSZXNvbHXDp8OjbyBwcsOzcHJpYSBhc3Npc3RpZGEgcG9yIElBOkNvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJlIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgc2XDp8OjbyBlc3BlY8OtZmljYSBkbyBjYXJnbyBlIHJlc3Bvc3RhIGNvbmZlcmlkYXMsIGFudWxhZGFzIGV4Y2x1w61kYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL25vdmEtZ2FiYXJpdG8ucGRmIiwic2hhMjU2IjoiMDhmMzQ3YmViZDQ1YWYyNTA0ZjYyYjIyNjY2YmIxYzZkMGFkY2VhZmY4OTNmOGIzZGNmNTUzODJhZDY5YzI2YyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjQzL2FuZXhvcy8yMmFjMzI3Yi1mY2M5LTRmMDctYWFjYS0wOGM5MGFhODJhNDMucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBOb3ZhIE9kZXNzYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNiIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLW5vdmEtMjAyNi1hcG9pby9xMzIiLCJudW1iZXIiOiIzMiIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWw7IGNhcmdvIGUgbsO6bWVybyBjb25mZXJpZG9zOyBjYWJlw6dhbGhvcyBlIHF1ZWJyYXMgcmV0aXJhZG9zLiBGb3JtYXRvcyBtYXRlbcOhdGljb3MgcmVsZXZhbnRlcyBjb21wYXJhZG9zIGNvbSBww6FnaW5hcyByZW5kZXJpemFkYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL25vdmEtYXBvaW8ucGRmIiwic2hhMjU2IjoiNWI1NjIwMDhhMGM1MDdkNjExMzM3OGFlOTBlNmFhNzEyYzI4N2FlMjg1NDQ2Mzg1OGNlZDIzYzNjMTY2NmRlNiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjQzL2FuZXhvcy85NjJmNDU2Mi1mOTM5LTQ3NTktYTEwYS1jMmMxYTIwMjAyYmIucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEgcHJlZXhpc3RlbnRlLCBhcnQuOMK6LElWIGUgVEpQUiBBQzE0MzczMzItMyBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBuZW0gcmV1dGlsaXphIG9icmFzIGRlIHRlcmNlaXJvcyBuZWNlc3PDoXJpYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQVVYSUxJQVIgREUgQVBPSU8gRVNDT0xBUiIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoibm92YS1hcG9pby1xMzIiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIiwibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtc2kiXSwicmVzb2x1dGlvbiI6IjEuIE5vIG1vZGVsbyBzZXF1ZW5jaWFsIGFkb3RhZG8gcGVsYSBxdWVzdMOjbywgcXVhdHJvIGJvbG9zIGV4aWdlbSA0IMOXIDMwID0gMTIwIG1pbnV0b3MuIDIuIENvbW8gNjAgbWludXRvcyBlcXVpdmFsZW0gYSB1bWEgaG9yYSwgMTIwIG1pbnV0b3Mgc8OjbyAyIGhvcmFzLCBhbHRlcm5hdGl2YSBFLiAxIGhvcmEgZSAxIGhvcmEgZSAzMCBtaW51dG9zIGNvcnJlc3BvbmRlbSBhIDIgZSAzIGJvbG9zOyAzIGhvcmFzIGUgMyBob3JhcyBlIDMwIG1pbnV0b3MgZXhjZWRlbSBvIHRlbXBvIGRlIDQgYm9sb3MuIiwic3RhdGVtZW50IjoiSm9hbmEgbGV2YSAzMCBtaW51dG9zIHBhcmEgZmF6ZXIgdW0gYm9sby4gQ29uc2lkZXJhbmRvIHF1ZSBlbGEgbGV2ZSBvIG1lc21vIHRlbXBvIHBhcmEgcHJlcGFyYXIgY2FkYSBib2xvLCBxdWFudG8gdGVtcG8gSm9hbmEgbGV2YXLDoSBhbyB0b2RvIHBhcmEgcHJlcGFyYXIgNCBib2xvcz8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.nova-apoio-q35.json",
+        "mediaType": "application/json",
+        "sha256": "2da7ac190d3578e94fa8337dd1d70f7197a2c2481ff355ecc90fc5be3cf7c481",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCBtIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNCBtIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMiBtIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNSBtIn0seyJpZCI6ImUiLCJ0ZXh0IjoiNyBtIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBOb3ZhIE9kZXNzYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNiwgQVVYSUxJQVIgREUgQVBPSU8gRVNDT0xBUiwgcXVlc3TDo28zNS4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTpDb2RleC4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm87IHNlw6fDo28gZXNwZWPDrWZpY2EgZG8gY2FyZ28gZSByZXNwb3N0YSBjb25mZXJpZGFzLCBhbnVsYWRhcyBleGNsdcOtZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9ub3ZhLWdhYmFyaXRvLnBkZiIsInNoYTI1NiI6IjA4ZjM0N2JlYmQ0NWFmMjUwNGY2MmIyMjY2NmJiMWM2ZDBhZGNlYWZmODkzZjhiM2RjZjU1MzgyYWQ2OWMyNmMiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzI0My9hbmV4b3MvMjJhYzMyN2ItZmNjOS00ZjA3LWFhY2EtMDhjOTBhYTgyYTQzLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgTm92YSBPZGVzc2Eg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjYiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1ub3ZhLTIwMjYtYXBvaW8vcTM1IiwibnVtYmVyIjoiMzUiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsOyBjYXJnbyBlIG7Dum1lcm8gY29uZmVyaWRvczsgY2FiZcOnYWxob3MgZSBxdWVicmFzIHJldGlyYWRvcy4gRm9ybWF0b3MgbWF0ZW3DoXRpY29zIHJlbGV2YW50ZXMgY29tcGFyYWRvcyBjb20gcMOhZ2luYXMgcmVuZGVyaXphZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9ub3ZhLWFwb2lvLnBkZiIsInNoYTI1NiI6IjViNTYyMDA4YTBjNTA3ZDYxMTMzNzhhZTkwZTZhYTcxMmMyODdhZTI4NTQ0NjM4NThjZWQyM2MzYzE2NjZkZTYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzI0My9hbmV4b3MvOTYyZjQ1NjItZjkzOS00NzU5LWExMGEtYzJjMWEyMDIwMmJiLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSwgYXJ0LjjCuixJViBlIFRKUFIgQUMxNDM3MzMyLTMgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIHJldXRpbGl6YSBvYnJhcyBkZSB0ZXJjZWlyb3MgbmVjZXNzw6FyaWFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkFVWElMSUFSIERFIEFQT0lPIEVTQ09MQVIiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6Im5vdmEtYXBvaW8tcTM1Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCIsIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBVc2UgYSBlcXVpdmFsw6puY2lhIGZvcm5lY2lkYTogMTAwIGNlbnTDrW1ldHJvcyBwYXJhIGNhZGEgbWV0cm8uIDIuIEFzc2ltIDUwMC8xMDAgPSA1IG1ldHJvcywgYWx0ZXJuYXRpdmEgRDsgYW8gcGFzc2FyIHBhcmEgdW1hIHVuaWRhZGUgbWFpb3IsIG8gdmFsb3IgbnVtw6lyaWNvIGRpbWludWkuIDIsIDQsIDcgZSA4IG0gbsOjbyBjb3JyZXNwb25kZW0gYSA1MDAgY20gKHNlcmlhbSAyMDAsIDQwMCwgNzAwIGUgODAwIGNtKS4iLCJzdGF0ZW1lbnQiOiJQYXJhIGNlcmNhciB1bSBwZXF1ZW5vIGNhbnRlaXJvLCBmb2kgdXRpbGl6YWRhIHVtYSBmaXRhIGNvbSA1MDAgY2VudMOtbWV0cm9zIGRlIGNvbXByaW1lbnRvLiBTYWJlbmRvIHF1ZSAxMDAgY2VudMOtbWV0cm9zIGNvcnJlc3BvbmRlbSBhIDEgbWV0cm8sIHF1YWwgw6kgbyBjb21wcmltZW50byBkZXNzYSBmaXRhIGVtIG1ldHJvcz8iLCJ0b3BpY0lkIjoiTTA4In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9LCJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.potim-aa-q15.json",
+        "mediaType": "application/json",
+        "sha256": "bc263d6af9d06a7d9dbdfc01ce28854e38193775e139ff3378f0003582f7a751",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTNoNTNtaW4ifSx7ImlkIjoiYiIsInRleHQiOiIxNGgyM21pbiJ9LHsiaWQiOiJjIiwidGV4dCI6IjE1aDI2bWluIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTVoNDVtaW4ifSx7ImlkIjoiZSIsInRleHQiOiIyMWgxMm1pbiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSwgQWdlbnRlIEFkbWluaXN0cmF0aXZvLCBxdWVzdMOjbyAxNS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENvZGV4LCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvcG90aW0tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjA5OTc4ZWUzYTE4NGE0NDc4NTBkYWNhNzhlNGMxZjQzODYyOWNhYzY1ODExYzI2OTBiNWVmNWM1YjNiZWE3ODYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNzcyNWMyN2QtNjgyNS00NDBiLWI0YmYtNGJmZmQ5NzdjMzhlLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXBvdGltLTIwMjUtYWEvcTE1IiwibnVtYmVyIjoiMTUiLCJwcm9vZiI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9wb3RpbS1hYS1wcm9vZi5wZGYiLCJzaGEyNTYiOiJlMDRhMTE3OWQwMGI1Nzk5N2JlNjUyNTMzYzdmOWQwZTE1Nzg0NjM5ZDM5MzA2MjViZjJmZDg3MDIyMDBjNjdkIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zL2E1MTAyODY2LTE2NDYtNDdlYi05ZGQ3LWUwYjNjMTU2ZjdkYi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSwgYXJ0LiA4wrosIElWIGUgVEpQUiBBQyAxNDM3MzMyLTMsIGFwbGljYWRhIMOgIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLiBOw6NvIMOpIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIEF2YW7Dp2EgU1AgbmVtIGdhcmFudGlhIGp1csOtZGljYTsgZXhjbHVpIG9icmFzIGRlIHRlcmNlaXJvcyBlIG1hbnTDqW0gb3JpZ2VtL2dhYmFyaXRvLiIsInBhdGgiOiJkb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIEFkbWluaXN0cmF0aXZvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJwb3RpbS1hYS1xMTUiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EiXSwicmVzb2x1dGlvbiI6IjEuIEVudHJlIDloMjAgZSAxM2gyNCBwYXNzYXJhbSA0aDA0LCBvdSAyNDQgbWludXRvcywgY29ycmVzcG9uZGVudGVzIGEgZHVhcyB0YXJlZmFzOyBjYWRhIHRhcmVmYSBkdXJhIDEyMiBtaW51dG9zICgyaDAyKS4gMi4gQSB0ZXJjZWlyYSB0ZXJtaW5hIDEyMiBtaW51dG9zIGRlcG9pcyBkZSAxM2gyNCwgb3Ugc2VqYSwgw6BzIDE1aDI2IChhbHRlcm5hdGl2YSBDKS4gMTNoNTMsIDE0aDIzLCAxNWg0NSBlIDIxaDEyIG7Do28gcmVzdWx0YW0gZGUgc29tYXIgMmgwMiBhbyBmaW0gZGEgc2VndW5kYSB0YXJlZmEuIiwic3RhdGVtZW50IjoiUGVkcm8gSGVucmlxdWUsIHNlcnZpZG9yIHDDumJsaWNvLCByZWFsaXpvdSB0csOqcyB0YXJlZmFzIGVtIHNlcXXDqm5jaWEgZSBzZW0gcGF1c2FzIGVudHJlIGVsYXMuIFRvZGFzIGFzIHRhcmVmYXMgbGV2YXJhbSBvIG1lc21vIHRlbXBvIHBhcmEgc2VyZW0gZXhlY3V0YWRhcy4gQSBwcmltZWlyYSB0YXJlZmEgaW5pY2lvdSDDoHMgOWgyMG1pbiwgZSBhIHNlZ3VuZGEgdGFyZWZhIHRlcm1pbm91IMOgcyAxM2gyNG1pbi4gRW0gcXVhbCBob3LDoXJpbyBQZWRybyBIZW5yaXF1ZSB0ZXJtaW5vdSBhIHRlcmNlaXJhIHRhcmVmYT8gQXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBjb3JyZXRhLiIsInRvcGljSWQiOiJNMDgifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMC0xNCIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBNw7NkdWxvcyBkZSBNYXRlbcOhdGljYTogb3BlcmHDp8O1ZXMsIG1lZGlkYXMsIGdlb21ldHJpYSBlIGVzdGF0w61zdGljYSAoYXBvaW8gdGVtw6F0aWNvKSIsInVybCI6Imh0dHBzOi8vcG9ydGFsZGFvYm1lcC5pbXBhLmJyL2luZGV4LnBocC9tb2R1bG8vaW5kZXgifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M08.p.vinh25-aux-q22.json",
+        "mediaType": "application/json",
+        "sha256": "e540eba3c36c70ac131d60c5da93d21b458e458d861d7724bb6fabfd4a697447",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMi4wMzAifSx7ImlkIjoiYiIsInRleHQiOiIyLjMzMCJ9LHsiaWQiOiJjIiwidGV4dCI6IjIuNjAwIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMi45MDAifSx7ImlkIjoiZSIsInRleHQiOiIyLjMwMCJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmluaGVkbyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDMvMjAyNSwgQVVYSUxJQVIgQURNSU5JU1RSQVRJVk8sIHF1ZXN0w6NvIDIyLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJlIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgcHJvdmFzIG9iamV0aXZhcyBhcGxpY2FkYXMgZW0gMDEvMDIvMjAyNiBjb25mb3JtZSBlZGl0YWwgZGUgY29udm9jYcOnw6NvOyBww6FnaW5hIDEsIGJsb2NvIGRvIGNhcmdvIEFVWElMSUFSIEFETUlOSVNUUkFUSVZPLCBxdWVzdMOjbyAyMiA9IEUgY29uZmVyaWRhIHZpc3VhbG1lbnRlOyBpdGVtIG7Do28gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjI5LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI5MjNhY2FhZjlkMzhlNWM4ZjQ4M2IzY2U5ZmQyZDlkYzZjMjE1MDI3Y2ViMGE0ZWYzNWY3ZDBhYmUyNGNjMzhlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzI3OTUxNDEzLTA0YzYtNDRmOC05MjVhLWViMGIzOTIxMTczOS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12aW5oZWRvLTIwMjUtYXV4aWxpYXIvcTIyIiwibnVtYmVyIjoiMjIiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIEFVWElMSUFSIEFETUlOSVNUUkFUSVZPOyBxdWVzdMOjbyAyMiBjb25mZXJpZGEgdmlzdWFsbWVudGUgbmEgcMOhZ2luYSA3IHJlbmRlcml6YWRhIChlbnVuY2lhZG8sIGFsdGVybmF0aXZhcywgc8OtbWJvbG9zIGUgb3JkZW0pOyBjb3JyaWdpZGFzIGFwZW5hcyBxdWVicmFzIGRlIGxpbmhhL2hpZmVuaXphw6fDo28uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIyOS1wcm92YS1hdXhpbGlhci1hZG1pbmlzdHJhdGl2by5wZGYiLCJzaGEyNTYiOiI2ZmE5N2E3Njc5NTYyMGQ4YTNhOWUxYmQ4MTMyMThjNWNiMGY1MWMzMmE0MjM0NmEwZjM2MzU0NTQ1N2VmMGNlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzc4Y2VkNTM1LTA2NGItNGEzOS04MDU1LWUxMDNhOWRhYmE5Zi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJBVVhJTElBUiBBRE1JTklTVFJBVElWTyIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoidmluaDI1LWF1eC1xMjIiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtc2kiXSwicmVzb2x1dGlvbiI6IjEuIDEga20gPSAxLjAwMCBtLCBlbnTDo28gMiBrbSA9IDIuMDAwIG07IHNvbWFuZG8gb3MgMzAwIG0sIGEgY2ljbG92aWEgdGVtIDIuMzAwIG0uIDIuIDIuMDMwIHRyYXRhIDMwMCBtIGNvbW8gMzAgbTsgMi4zMzAsIDIuNjAwIGUgMi45MDAgc29tYW0gdmFsb3JlcyBpbmRldmlkb3MuIFJlc3Bvc3RhOiBhbHRlcm5hdGl2YSBFLiIsInN0YXRlbWVudCI6IlVtYSBjaWNsb3ZpYSBwb3NzdWkgMiBrbSBlIDMwMCBtIGRlIGV4dGVuc8Ojby5cblF1YWwgw6kgZXNzZSBjb21wcmltZW50byBlbSBtZXRyb3M/IiwidG9waWNJZCI6Ik0wOCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M08.p.cerq25-tes-q20",
+    "admin.2026-11.M08.p.mat-calendario-bissexto",
+    "admin.2026-11.M08.p.mat-consumo-distancia-combustivel",
+    "admin.2026-11.M08.p.mat-conversao-unidade-composta",
+    "admin.2026-11.M08.p.mat-distancia-regua",
+    "admin.2026-11.M08.p.mat-energia-potencia-unidades-dadas",
+    "admin.2026-11.M08.p.mat-erro-conversao-area",
+    "admin.2026-11.M08.p.mat-escala-volume",
+    "admin.2026-11.M08.p.mat-graus-minutos-angulares",
+    "admin.2026-11.M08.p.mat-horas-somar-sexagesimal",
+    "admin.2026-11.M08.p.mat-inicio-a-partir-final",
+    "admin.2026-11.M08.p.mat-litros-vazao-composta",
+    "admin.2026-11.M08.p.mat-massa-tara-liquida",
+    "admin.2026-11.M08.p.mat-prefixo-simbolo-caixa",
+    "admin.2026-11.M08.p.mat-soma-unidades-mistas",
+    "admin.2026-11.M08.p.mat-tempo-fracao-dia",
+    "admin.2026-11.M08.p.mat-vazao-unidades-hora",
+    "admin.2026-11.M08.p.mat-velocidade-ms",
+    "admin.2026-11.M08.p.mat-volume-deslocamento",
+    "admin.2026-11.M08.p.mat-volume-mililitro-centimetro",
+    "admin.2026-11.M08.p.mat-volume-prefixo-cubico",
+    "admin.2026-11.M08.p.nova-apoio-q32",
+    "admin.2026-11.M08.p.nova-apoio-q35",
+    "admin.2026-11.M08.p.potim-aa-q15",
+    "admin.2026-11.M08.p.vinh25-aux-q22"
+  ]
+}

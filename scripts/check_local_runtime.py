@@ -10,7 +10,7 @@ from local_app import initialize, load, start, compose, docker, owned
 from local_app_images import OUTPUT, write_report
 from pathlib import Path
 
-# Migrações versionadas da própria árvore: a contagem acompanha novas versões (inclusive lacunas, ex. V15 da #173).
+# Migrações versionadas da própria árvore: a contagem acompanha novas versões.
 MIGRATIONS = str(len(list((Path(__file__).resolve().parents[1] / "backend/src/main/resources/db/migration").glob("V*__*.sql"))))
 
 
@@ -96,9 +96,9 @@ def check():
         assert sql(path, config, "select count(*) from qb_question") == "0"
         assert sql(path, config, "select owner_id::text || ':' || auth_version::text || ':' || md5(password_hash) from admin_registration") == registration
         write_report(OUTPUT / "runtime-check.json", {"status": "passed", "source_sha": metadata["source_sha"],
-                     "checks": ["single-origin", "empty-schema-v14", "csrf-cookie", "oauth-methods", "no-host-api-db", "collision", "database-outage", "material-independent", "restart"],
+                     "checks": ["single-origin", "empty-schema-v17", "csrf-cookie", "oauth-methods", "no-host-api-db", "collision", "database-outage", "material-independent", "restart"],
                      "limits": "Synthetic empty database, no Google login; browser/account flows tested separately."})
-        print("RUNTIME_CHECK_PASS: isolated Compose, security, empty V14, outage and restart")
+        print("RUNTIME_CHECK_PASS: isolated Compose, security, empty V17, outage and restart")
     except subprocess.CalledProcessError as failure:
         (OUTPUT / "runtime-failure.log").write_bytes((failure.stdout or b"") + (failure.stderr or b""))
         (OUTPUT / "runtime-container-private.log").write_bytes(compose(path, config, "logs", "--no-color", "api", "postgres"))

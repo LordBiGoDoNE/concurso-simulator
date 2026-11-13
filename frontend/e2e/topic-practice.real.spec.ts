@@ -1,5 +1,8 @@
 import { test, expect, type Page, type BrowserContext } from '@playwright/test';
-const api = 'http://127.0.0.1:19160', control = 'http://127.0.0.1:19161';
+const expansion = process.env.PRACTICE_EXPANSION === '1';
+const custom = process.env.TOPIC_PRACTICE_PORTS?.split(',').map(Number);
+const [apiPort, controlPort] = custom?.length === 3 ? [custom[1], custom[2]] : expansion ? [19370, 19371] : [19160, 19161];
+const api = `http://127.0.0.1:${apiPort}`, control = `http://127.0.0.1:${controlPort}`;
 async function account(context: BrowserContext, cookie: string) { await context.addCookies([{ name: 'SESSION', value: cookie, url: api, httpOnly: true, sameSite: 'Lax' }]); }
 async function panel(page: Page) { const details = page.locator('details.lesson-practice-panel'); if (!await details.evaluate(e => (e as HTMLDetailsElement).open)) await details.locator('summary').click(); }
 async function route(page: Page, hash: string) { await page.evaluate(hash => { window.location.hash = hash; }, hash); }
@@ -13,6 +16,15 @@ for (const width of [390, 1440]) test(`visitante: assunto, cargo público e fila
   await panel(page); await expect(page.getByRole('button', { name: 'Começar prática', exact: true })).toBeEnabled();
   expect(bodies).toHaveLength(0); await expect(page.getByLabel('Cargo para praticar esta aula')).toHaveCount(0);
   await begin(page); expect(Object.keys(bodies[0]).sort()).toEqual(['commandId', 'topicId']);
+  const map = page.getByRole('navigation', { name: 'Mapa da prática' }).getByRole('button');
+  await expect(map).toHaveCount(5);
+  for (let n = 0; n < 4; n++) {
+    await map.nth(n).click(); await expect(page.getByRole('heading', { name: `Questão ${n + 1} de 5`, exact: true })).toBeVisible();
+  }
+  await map.nth(4).focus(); await page.keyboard.press('Enter');
+  await expect(page.getByRole('heading', { name: 'Questão 5 de 5', exact: true })).toBeFocused();
+  await expect(page.getByRole('button', { name: 'Próxima questão', exact: true })).toBeDisabled();
+  await page.screenshot({ path: info.outputPath(`five-last-${width}.png`) });
   let release!: () => void; const wait = new Promise<void>(r => release = r); let committed = false;
   await page.route('**/lesson-practices/*/answers/*', async r => { const response = await r.fetch(); expect(response.status()).toBe(200); committed = true; await wait; await r.fulfill({ response }); });
   try {
@@ -39,8 +51,16 @@ for (const width of [390, 1440]) test(`conta: replay perdido, legado e retorno �
   expect(bodies[0]).toEqual(bodies[1]); const captured = await (await page.request.get(api + '/api/v1/lesson-practices/' + createdId)).json();
   expect(captured.topicId).toBe('P01'); expect(captured).not.toHaveProperty('roleId'); expect(captured).not.toHaveProperty('composition');
   expect(JSON.stringify(captured)).not.toMatch(/correctAlternativeId|resolution/); expect(new Set(captured.items.map((i: { questionId: string }) => i.questionId)).size).toBe(5);
+  for (let n = 0; n < 5; n++) {
+    await page.getByRole('navigation', { name: 'Mapa da prática' }).getByRole('button').nth(n).click();
+    await page.getByRole('radio').first().check();
+    await expect(page.locator('.save-status:visible')).toHaveText('Respostas confirmadas.');
+  }
   await finish(page); await route(page, '#/praticas?cargo=secretario-de-escola');
+  const result = await (await page.request.get(api + '/api/v1/lesson-practices/' + createdId + '/result')).json();
+  expect(result.total).toBe(5); expect(result.blank).toBe(0);
   const own = await (await page.request.get(api + '/api/v1/me/lesson-practices')).json(); expect(own.items.every((i: object) => !('roleId' in i))).toBe(true);
+  expect(own.items.find((i: { id: string }) => i.id === createdId).total).toBe(5);
   const legacy = own.items.find((i: { id: string }) => i.id === fixture.legacyId); expect(legacy).toBeTruthy();
   await page.getByRole('button', { name: `Abrir prática de P01 de ${new Date(legacy.createdAt).toLocaleString('pt-BR')}` }).click();
   await expect(page.getByRole('heading', { name: 'Questão 1 de 1' })).toBeVisible();

@@ -1,13 +1,13 @@
 # Prática independente das aulas
 
 Spec original `lesson-practice`, issue #148, integrada à main pelo #154.
-A evolução local por assunto pertence à #161 (`lesson-practice-by-topic`), com
-grupos 1–4 autorizados em 2026-11-10; teste do usuário precede publicação/revisões.
+A evolução por assunto da #161 foi integrada pelo PR #176 (`226d2e5`). A #173
+amplia o acervo para25 por assunto/modalidade, com sorteio de até cinco por prática; teste do usuário precede publicação/revisões.
 
 ## Comportamento
 
 Aulas → abrir assunto → **Começar prática** inicia diretamente um treino do assunto, com
-até cinco bases próprias, sem abrir a configuração de simulados. Se houver de uma
+até cinco bases próprias sorteadas do acervo completo, sem abrir a configuração de simulados. Se houver de uma
 a quatro bases elegíveis, usa essas bases; zero retorna insuficiência, sem buscar
 questões no outro acervo. Correção, gabarito e resolução aparecem ao encerrar.
 **Voltar à aula** retorna ao assunto, preservando o cargo público atual se
@@ -43,7 +43,8 @@ e aceita apenas fontes fixas. Práticas históricas formato3 preservam sua compo
 formatos1/2 continuam simulados. O codec preserva campos imutáveis do JSON antigo
 ao salvar resposta/conclusão, sem acrescentar modalidade nesses formatos.
 
-V14 permite a captura por assunto; V1–V13 não foram reescritas. JPA continua `validate` e `open-in-view=false`.
+V14 permite a captura por assunto; V15 amplia somente seu teto de cinco para 25.
+V1–V14 não foram reescritas. JPA continua `validate` e `open-in-view=false`.
 Após criar snapshots4, a versão antiga da aplicação não é um rollback de leitura
 compatível. Uma recuperação usa backup privado e sua imagem exata em destino
 novo; não iniciar binário anterior sobre registros de prática.
@@ -54,7 +55,8 @@ novo; não iniciar binário anterior sobre registros de prática.
   livre nem destinação. Comando repetido recupera a mesma tentativa; payload
   incompatível retorna409.
 - `GET /api/v1/lesson-practices/availability?topicId=...`: disponibilidade
-  própria e limite5, sem conteúdo de correção.
+  própria e `maximum: 5`, sem conteúdo de correção. `available` informa todo o pool,
+  mesmo quando atinge ou ultrapassa25; uma nova captura escolhe no máximo cinco.
 - `GET /api/v1/lesson-practices/{id}`, `PUT /{id}/answers/{itemId}`,
   `POST /{id}/finish`, `GET /{id}/result`: mesma posse/expiração/controle de versão e
   projeção privada dos simulados. Resultado antecipado retorna409.
@@ -88,9 +90,11 @@ confirmação, importação e replay em PostgreSQL efêmero, mantendo todos os25
 rascunho. Fixtures de navegador são sintéticas e isoladas; suas decisões editoriais
 não aprovam conteúdo real nem escrevem no banco do operador.
 
-Backup/restore local aceita schemas V10–V14 completos (e V16/V17, com ou sem a V15 da #173 até a épica combinada `epic/question-bank-expansion-curation` reunir as duas; V17 acrescenta qb_decision_batch e qb_decision_batch_item), registra a versão real e
+Backup/restore local aceita schemas V10–V17 completos e contíguos (V15 da #173; V16 e V17 da #177, esta com qb_decision_batch e qb_decision_batch_item), registra a versão real e
 exige o inventário fechado daquela versão: V10/V11 preservam as tabelas originais;
-V12 acrescenta as quatro tabelas qb_import_*; V13 acrescenta admin_registration; V14 mantém o mesmo inventário fechado.
+V12 acrescenta as quatro tabelas qb_import_*; V13 acrescenta admin_registration;
+V14–V16 mantêm o mesmo inventário fechado. Histórico completo/checksum/imagem
+continuam obrigatórios; schema desconhecido não é aceito por ter tabelas parecidas.
 Mantém exigência de checksum, imagem exata e destino vazio. Schema desconhecido,
 histórico incompleto e tabela ausente ou extra são recusados. Imagens continuam excluindo fontes editoriais, testes,
 pacotes, backups e segredos do contexto permitido.
@@ -117,7 +121,7 @@ Implementação local dos grupos 1–4 em `lesson-practice-by-topic`. Novos iní
 disponibilidade recusam `roleId` com 400. Visualização, encerramento e histórico
 usam DTO próprio com `topicId`, sem cargo da realização; `roleIds` editoriais dos
 itens são preservados. Simulados continuam exigindo cargo. A seleção filtra
-PRATICA_AULA/aprovação/assunto/fonte fixa, sem filtrar cargo, com teto vigente 5.
+PRATICA_AULA/aprovação/assunto/fonte fixa, sem filtrar cargo, com até cinco sorteadas e meta de acervo25 na #173.
 
 Criação nova usa identidade canônica `lesson-practice/v2` + assunto; não reinterpreta
 hash de criação v1. Comando antigo incompatível retorna 409. Respostas/conclusões
@@ -126,6 +130,27 @@ antigas mantêm replay original, posse e expiração; não há regravação de c
 continua exigindo cargo e `PracticeView` exige assunto. Painel/chaves/seleção usam
 assunto. Metadados editoriais e métricas dos simulados permanecem separados.
 
-A #173 é responsável pela ampliação futura para 25 após integração autorizada da
-#161; nenhum acervo, compilador ou manifesto editorial foi alterado aqui.
+A #173 implementa a ampliação sobre a #161 integrada, sem formato novo. A V15
+autorizada altera exclusivamente o CHECK do teto de formato 4; não regrava dados.
+Capturas formato4 anteriores de1–25 permanecem legíveis; novas práticas ficam em1–5.
+Formato3 histórico conserva seu teto de cinco.
+Replay de criação v2 anterior recupera os cinco itens capturados, mesmo com pool
+atual maior. Criação v1 continua sem ser reinterpretada como v2; resposta/conclusão
+e leitura histórica permanecem operáveis conforme a #161. Não há truncamento.
+Atualizar frontend/API juntos: o cliente novo exige `maximum: 5` e aceita históricos
+até 25; um binário anterior de teto cinco não lê novas capturas maiores. Recuperar
+em destino novo com backup privado e a imagem exata, sem reescrever dados para
+fazer downgrade. [Execução da #173](question-bank-expansion.md).
 [Contratos, evidências, limites e teste local](../openspec/changes/lesson-practice-by-topic/local-delivery.md).
+
+## Esclarecimento: quantidade do acervo e quantidade por prática
+
+Decisão do usuário em2026-11-11: pelo menos25 questões por assunto/modalidade no
+acervo; cada prática sorteia até cinco sem repetição interna. Nova prática faz novo
+sorteio do pool completo, podendo coincidir com questões de práticas anteriores.
+Available informa o acervo e maximum5 informa o treino. A expansão editorial
+continua com suas cotas, revisão e originais exigidas.
+
+A etapa anterior criou capturas de25 no ambiente de teste. Elas permanecem legíveis
+e operáveis, sem truncamento; a V15 já aplicada não é reescrita. Somente novos
+inícios ficam limitados a cinco. A correção não introduz migração adicional.

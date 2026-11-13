@@ -250,7 +250,7 @@ paths:
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
   /api/v1/lesson-practices:
     post:
-      summary: Iniciar prática de até cinco questões próprias da aula, sem cargo; correção ao encerrar
+      summary: Sortear até cinco questões próprias do acervo do assunto, sem cargo; correção ao encerrar
       security: [{}, {sessionCookie: []}]
       parameters:
         - {in: header, name: X-CSRF-TOKEN, required: true, schema: {type: string}}
@@ -918,7 +918,7 @@ components:
         createdAt: {type: string, format: date-time}
         finishedAt: {type: [string, 'null'], format: date-time}
         version: {type: integer, minimum: 0}
-        items: {type: array, minItems: 1, maxItems: 5, items: {$ref: '#/components/schemas/AttemptItem'}}
+        items: {type: array, minItems: 1, maxItems: 25, items: {$ref: '#/components/schemas/AttemptItem'}}
     LessonPracticeFinished:
       type: object
       additionalProperties: false
@@ -959,7 +959,7 @@ components:
               topicId: {type: string}
               createdAt: {type: string, format: date-time}
               finishedAt: {type: [string, 'null'], format: date-time}
-              total: {type: integer, minimum: 1, maximum: 5}
+              total: {type: integer, minimum: 1, maximum: 25}
               percentage: {type: [number, 'null']}
     AttemptCreate:
       type: object

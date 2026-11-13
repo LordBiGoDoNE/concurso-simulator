@@ -1,0 +1,1997 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.cacapava-profmat-q12"
+        },
+        "content": {
+          "statement": {
+            "text": "Leonardo possui uma quantidade N de livros maior do que 60 e menor do que 70. Se os N livros fossem agrupados de 4 em 4 sobrariam três. Se houvesse um livro a mais, eles poderiam ser agrupados de 8 em 8 sem que sobrasse qualquer livro. A soma dos algarismos de N é:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "64f58220-08c0-5da7-8429-665d19233ac3",
+              "content": {
+                "text": "9",
+                "resources": []
+              }
+            },
+            {
+              "id": "9a50595f-4109-5c11-99cb-1cbc143bcc13",
+              "content": {
+                "text": "10",
+                "resources": []
+              }
+            },
+            {
+              "id": "80338fb1-1b9d-5e37-af8d-8843f0834c05",
+              "content": {
+                "text": "11",
+                "resources": []
+              }
+            },
+            {
+              "id": "f6daefd5-b812-5471-8645-b346837c516d",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "1279f794-7430-5d50-9a1a-45381d8d0024",
+              "content": {
+                "text": "13",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "64f58220-08c0-5da7-8429-665d19233ac3",
+          "resolution": {
+            "text": "1. Entre 61 e 69, N deve deixar resto 3 por 4 e N + 1 deve ser múltiplo de 8. O único valor é 63. 2. A soma de seus algarismos é 6 + 3 = 9; a resposta é A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Caçapava — Processo Seletivo 01/2025, PROFESSOR II (PII) - MATEMÁTICA, questão12. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M02.s.cacapava-profmat-q12.json",
+            "answerPath": "sources/admin.2026-11.M02.s.cacapava-profmat-q12.json",
+            "contentSha256": "fe5c01a92b7ba626e8dcec69f4acee9c3dd0cc344fcca1465f58df1f795def95",
+            "answerSha256": "fe5c01a92b7ba626e8dcec69f4acee9c3dd0cc344fcca1465f58df1f795def95"
+          }
+        },
+        "fingerprint": "ec232316b63ec73336d571e6e73c22fecfcd13df39ff485bf5e7f8fa34a7ad54",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.cacapava-profmat-q43"
+        },
+        "content": {
+          "statement": {
+            "text": "O conjunto dos divisores naturais positivos de 72 que são quadrados perfeitos é:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f7519a5a-b708-5d51-a9be-0e5451793d09",
+              "content": {
+                "text": "1, 4, 9, 36.",
+                "resources": []
+              }
+            },
+            {
+              "id": "822164e4-b317-5470-8d60-393ac057a949",
+              "content": {
+                "text": "1, 2, 4, 8.",
+                "resources": []
+              }
+            },
+            {
+              "id": "89ddb291-04cf-5ae2-9105-1289b8368abe",
+              "content": {
+                "text": "2, 3, 6, 9.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3c36b758-5388-5550-80d6-9ffba38d500c",
+              "content": {
+                "text": "4, 16, 36, 64.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fff4583a-9efe-56b0-84d4-3a268729e19c",
+              "content": {
+                "text": "9, 18, 36, 72.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f7519a5a-b708-5d51-a9be-0e5451793d09",
+          "resolution": {
+            "text": "1. Os quadrados perfeitos que dividem 72 são 1, 4, 9 e 36. Eles correspondem aos expoentes pares permitidos na fatoração 72=2³×3². 2. As demais listas incluem números que não são quadrados ou não dividem 72.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Caçapava — Processo Seletivo 01/2025, PROFESSOR II (PII) - MATEMÁTICA, questão43. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M02.s.cacapava-profmat-q43.json",
+            "answerPath": "sources/admin.2026-11.M02.s.cacapava-profmat-q43.json",
+            "contentSha256": "ce6ee0b1641e71ce73944778c761e00f09987a4b66257a7ffa3c4c61ffa391d7",
+            "answerSha256": "ce6ee0b1641e71ce73944778c761e00f09987a4b66257a7ffa3c4c61ffa391d7"
+          }
+        },
+        "fingerprint": "2f13f1a1236fbd7fae8e286f398cdee344fd23d8803aca161bfb2f1cf06ea057",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-contar-divisores"
+        },
+        "content": {
+          "statement": {
+            "text": "Quantos divisores positivos tem 2⁴×3²?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3da4adbb-034c-5d9c-975b-54e07b613fb6",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "3d681a53-a143-5890-9c2e-ac09bbffbe56",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "975fe297-f01e-5777-8bbb-61cb6a3ccbfc",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "058eb42d-9ccd-56b5-b1f0-3abade682b8a",
+              "content": {
+                "text": "15",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "058eb42d-9ccd-56b5-b1f0-3abade682b8a",
+          "resolution": {
+            "text": "1. Um divisor pode usar expoente 0 a 4 para 2 e 0 a 2 para 3. 2. São 5×3=15 escolhas independentes, incluindo 1 e o próprio número.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-contar-divisores.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-contar-divisores.json",
+            "contentSha256": "b33ada9feff19ea67d5d5e2d0356330da63ccf4176f651b915d933e0c9e2cb9e",
+            "answerSha256": "b33ada9feff19ea67d5d5e2d0356330da63ccf4176f651b915d933e0c9e2cb9e"
+          }
+        },
+        "fingerprint": "92e7e784daacd8a7eff5f3412e4a4cffddd451066c8333b1cd3636010207b858",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-coprimos-produto"
+        },
+        "content": {
+          "statement": {
+            "text": "Dois inteiros positivos têm MDC igual a 1 e produto 210. Qual é seu MMC?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6fa4c813-b1d3-575c-abfd-60c25669cf63",
+              "content": {
+                "text": "210",
+                "resources": []
+              }
+            },
+            {
+              "id": "0fe527f5-7334-529f-9623-561ea4e1a3cf",
+              "content": {
+                "text": "1",
+                "resources": []
+              }
+            },
+            {
+              "id": "373589b0-8b6e-580c-8d01-ef5e7cf4796c",
+              "content": {
+                "text": "105",
+                "resources": []
+              }
+            },
+            {
+              "id": "5a8378a1-bcd0-5f57-9124-ce15d5d571de",
+              "content": {
+                "text": "420",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6fa4c813-b1d3-575c-abfd-60c25669cf63",
+          "resolution": {
+            "text": "1. Para dois inteiros positivos, MDC×MMC é o produto. 2. Assim 1×MMC=210, logo MMC=210; não é necessário conhecer cada inteiro.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-coprimos-produto.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-coprimos-produto.json",
+            "contentSha256": "6cffc8c511e758ffd34b2e8caa57845edb154184599db01d90427fa17c76c1a0",
+            "answerSha256": "6cffc8c511e758ffd34b2e8caa57845edb154184599db01d90427fa17c76c1a0"
+          }
+        },
+        "fingerprint": "0d93f3fbae4e0a4a0ecf88e0a743d2ec94221ebf476fffb7c734a58a098fbaac",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-criterio-divisibilidade-onze"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual número é divisível por 11?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3cbd5aa3-3fba-5aed-bce8-773895b3aae5",
+              "content": {
+                "text": "1.241",
+                "resources": []
+              }
+            },
+            {
+              "id": "ea195433-c72a-5272-8d8b-a47b71165e55",
+              "content": {
+                "text": "1.251",
+                "resources": []
+              }
+            },
+            {
+              "id": "e8f0d47a-4c04-58f7-bd78-3cecda538189",
+              "content": {
+                "text": "1.221",
+                "resources": []
+              }
+            },
+            {
+              "id": "0562a149-0318-5395-944e-eb19b0a20535",
+              "content": {
+                "text": "1.231",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e8f0d47a-4c04-58f7-bd78-3cecda538189",
+          "resolution": {
+            "text": "1. No critério de 11, subtraia as somas de algarismos em posições alternadas. 2. Em 1.221, (1+2)−(2+1)=0, múltiplo de 11; os demais deixam diferenças não múltiplas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-criterio-divisibilidade-onze.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-criterio-divisibilidade-onze.json",
+            "contentSha256": "5a43bce900e03d943c06c95111abd2a2829b9ecd16babb019875f50041a8eef3",
+            "answerSha256": "5a43bce900e03d943c06c95111abd2a2829b9ecd16babb019875f50041a8eef3"
+          }
+        },
+        "fingerprint": "b9779230377981211aace8b3b140d0a42abc6a83391b8036f110804d265eb7d5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-divisibilidade-algarismo"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual algarismo x torna 43x divisível simultaneamente por 2 e por 9?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "040ca154-fb21-5fc7-be78-8d89684d7edf",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "f53ab618-c135-5267-9572-4dc161029924",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            },
+            {
+              "id": "7a449753-577c-5516-81d3-ec371900c1ed",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "e62dbacd-79a6-5854-b2b3-49b00f9d806f",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f53ab618-c135-5267-9572-4dc161029924",
+          "resolution": {
+            "text": "1. A divisibilidade por 9 exige 4+3+x ser múltiplo de 9; logo x=2. 2. O número 432 também termina em algarismo par, satisfazendo a divisibilidade por 2.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-divisibilidade-algarismo.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-divisibilidade-algarismo.json",
+            "contentSha256": "ad01b33dcf9ec371d03cc2b2a390ce85d52f6f6c160fa4ef21dba81f45df64b1",
+            "answerSha256": "ad01b33dcf9ec371d03cc2b2a390ce85d52f6f6c160fa4ef21dba81f45df64b1"
+          }
+        },
+        "fingerprint": "293f656758a26cdcad73c16857e342ad6fc92627e5960625e8bed1f7cdc8f598",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-entre-divisores-vinculados"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é o maior divisor de 360 que não é divisível por 3?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4a625db5-b01d-5495-b065-1b99997156d7",
+              "content": {
+                "text": "90",
+                "resources": []
+              }
+            },
+            {
+              "id": "03d817ed-3e1c-571d-81c4-e41b2ed3971d",
+              "content": {
+                "text": "40",
+                "resources": []
+              }
+            },
+            {
+              "id": "faef245c-fa28-507e-8e07-84681d0f60ec",
+              "content": {
+                "text": "120",
+                "resources": []
+              }
+            },
+            {
+              "id": "70780680-99b1-54e5-9525-4acce21f1fd3",
+              "content": {
+                "text": "60",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "03d817ed-3e1c-571d-81c4-e41b2ed3971d",
+          "resolution": {
+            "text": "1. A fatoração de 360 é 2³×3²×5. 2. Para não ser divisível por 3, retire todos os fatores 3 e mantenha os demais máximos: 2³×5=40.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-entre-divisores-vinculados.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-entre-divisores-vinculados.json",
+            "contentSha256": "ae2d08f20d296ef8b20d6cbd2242585328a0802ccb1dadb88edd203d4158b45e",
+            "answerSha256": "ae2d08f20d296ef8b20d6cbd2242585328a0802ccb1dadb88edd203d4158b45e"
+          }
+        },
+        "fingerprint": "c027f873845877389c61cdb7a898c9e0a4a3b7717f22a7ff7fa8cdab63c6094e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-euclides-resto"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao dividir 221 por 85, o resto é 51. Qual substituição preserva o MDC para continuar o algoritmo de Euclides?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b98a2ceb-9bf7-577f-b581-dd1a7051b1cb",
+              "content": {
+                "text": "MDC(221,85+51).",
+                "resources": []
+              }
+            },
+            {
+              "id": "34473e1a-263a-5d94-a19b-c48df3326f97",
+              "content": {
+                "text": "MDC(85,221+51).",
+                "resources": []
+              }
+            },
+            {
+              "id": "cd1e8f77-2d7e-5e51-9f7e-f1eee05fea32",
+              "content": {
+                "text": "MDC(85,51).",
+                "resources": []
+              }
+            },
+            {
+              "id": "dc2130bc-1fd9-56cf-a47c-012a3104e601",
+              "content": {
+                "text": "MDC(221,51).",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cd1e8f77-2d7e-5e51-9f7e-f1eee05fea32",
+          "resolution": {
+            "text": "1. Se a=bq+r, os divisores comuns de a e b são os mesmos de b e r. 2. Portanto MDC(221,85)=MDC(85,51); trocar só um número por outro resto arbitrário não é a regra.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-euclides-resto.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-euclides-resto.json",
+            "contentSha256": "b5ed2addb15f23462cdd4bc3d17eeaf7d96b2741ffc245f2b8ba0bd15c99de49",
+            "answerSha256": "b5ed2addb15f23462cdd4bc3d17eeaf7d96b2741ffc245f2b8ba0bd15c99de49"
+          }
+        },
+        "fingerprint": "d6dad4f5a6f5766014aeb662601b1217a8a21713b313c73b2d9432c8efdda848",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-expoentes-mdc"
+        },
+        "content": {
+          "statement": {
+            "text": "Se a=2³×3²×5 e b=2²×3×7, qual é MDC(a,b)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e8d2be86-fb37-5fe8-9f73-92dc35f4f486",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "f382d906-3199-5f31-b6e3-0932d393945d",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "6a83819c-7192-57b5-8648-3c70cfabe5a5",
+              "content": {
+                "text": "60",
+                "resources": []
+              }
+            },
+            {
+              "id": "e1a56886-124e-5d3d-af9e-f340ee960bbc",
+              "content": {
+                "text": "84",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f382d906-3199-5f31-b6e3-0932d393945d",
+          "resolution": {
+            "text": "1. O MDC usa apenas fatores comuns com os menores expoentes: 2² e 3. 2. O produto é 4×3=12; 5 e 7 não são comuns.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-expoentes-mdc.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-expoentes-mdc.json",
+            "contentSha256": "bd6ca49154a8a5d65033280ff57af6b8964beeabfbd3ef31ddd7d1d2c5bc4e08",
+            "answerSha256": "bd6ca49154a8a5d65033280ff57af6b8964beeabfbd3ef31ddd7d1d2c5bc4e08"
+          }
+        },
+        "fingerprint": "f2d6a8ba1406f3cfbc5c3d261106ac0523f7e8843af6556a33009ffda7f1208d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-fator-minimo-quadrado"
+        },
+        "content": {
+          "statement": {
+            "text": "Por qual menor inteiro positivo se deve multiplicar 72 para obter um quadrado perfeito?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7f59403a-00da-50d5-bdb4-f8b672d8125c",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            },
+            {
+              "id": "a91d7b5e-b5d9-55a0-9786-8b18a98851ee",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "c3315df7-b2e0-5a51-b548-527a85e177c1",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "5588d6b9-f3ec-525d-a3ec-e13e30826d7f",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5588d6b9-f3ec-525d-a3ec-e13e30826d7f",
+          "resolution": {
+            "text": "1. 72=2³×3²: o expoente ímpar do fator 2 precisa de mais uma unidade. 2. Multiplicar por 2 produz 144=12²; nenhum inteiro positivo menor resolve.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-fator-minimo-quadrado.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-fator-minimo-quadrado.json",
+            "contentSha256": "6af512dedaae0c773d82506e9e66ce522090fcf27e40a44ba5b9a2d4d92fda1a",
+            "answerSha256": "6af512dedaae0c773d82506e9e66ce522090fcf27e40a44ba5b9a2d4d92fda1a"
+          }
+        },
+        "fingerprint": "85958ce450de476dfb32f412d996f73c8ca8e8f3c0a44b8620dfccd218455306",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-fator-multiplo-minimo"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é o menor inteiro k positivo para que 18k seja divisível por 24?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9d7d31f3-6fdb-5a11-b98a-4d302240c1bc",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "b8165345-75ef-55a3-8248-d3476806ca1b",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "cf1fcf7e-71ec-5428-888b-8c99614ba41f",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            },
+            {
+              "id": "76fea9c0-f977-53bd-a3cb-4d1c8e055112",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b8165345-75ef-55a3-8248-d3476806ca1b",
+          "resolution": {
+            "text": "1. O menor número divisível por 18 e 24 é seu MMC, 72. 2. Assim 18k=72 e k=4; a fatoração mostra que faltam dois fatores 2.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-fator-multiplo-minimo.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-fator-multiplo-minimo.json",
+            "contentSha256": "76683f57894454f151eccb9afe72e9d948f86175f7246d96876d956fb4c66ba0",
+            "answerSha256": "76683f57894454f151eccb9afe72e9d948f86175f7246d96876d956fb4c66ba0"
+          }
+        },
+        "fingerprint": "d22858be71438654ca4009770ae2149f4ff8269f9f92e8aede55e94b0b3654c2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-mdc-consecutivos"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é o MDC de dois inteiros positivos consecutivos n e n+1?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ca7ebeaa-9501-59f2-9eb8-81cf12c69a91",
+              "content": {
+                "text": "n",
+                "resources": []
+              }
+            },
+            {
+              "id": "e3e11065-c107-5a89-9028-5f4fd6c5a430",
+              "content": {
+                "text": "n+1",
+                "resources": []
+              }
+            },
+            {
+              "id": "0dd44d72-725e-5218-aac3-76aeb4cba229",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            },
+            {
+              "id": "8ef49bb1-14fa-51b6-a766-51e64f76a5da",
+              "content": {
+                "text": "1",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8ef49bb1-14fa-51b6-a766-51e64f76a5da",
+          "resolution": {
+            "text": "1. Um divisor comum também divide a diferença (n+1)−n=1. 2. O único divisor positivo de 1 é 1, portanto o MDC é sempre 1.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-mdc-consecutivos.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-mdc-consecutivos.json",
+            "contentSha256": "4a17c69440188ec335a3f9600b467b6d6f44e7e896b13705b67ca992fc37e844",
+            "answerSha256": "4a17c69440188ec335a3f9600b467b6d6f44e7e896b13705b67ca992fc37e844"
+          }
+        },
+        "fingerprint": "07072501214db3a1f14c85a6d5d67a5a61f821b949f98feafa0e416f66025853",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-mdc-potencia-dois"
+        },
+        "content": {
+          "statement": {
+            "text": "Um número positivo tem fatoração 2ᵃ×3ᵇ, com a≥3 e b≥1. Qual é o maior divisor garantido do número entre as opções?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6cc5eb8a-94e0-54b7-ab71-1e7391a5a7b3",
+              "content": {
+                "text": "48",
+                "resources": []
+              }
+            },
+            {
+              "id": "16989582-4d81-596d-b000-71653ea84ede",
+              "content": {
+                "text": "72",
+                "resources": []
+              }
+            },
+            {
+              "id": "74e1f395-2054-52c9-ad92-fcffe74cc280",
+              "content": {
+                "text": "96",
+                "resources": []
+              }
+            },
+            {
+              "id": "45f9e31f-bdba-56ec-8894-257fb86953e3",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "45f9e31f-bdba-56ec-8894-257fb86953e3",
+          "resolution": {
+            "text": "1. As hipóteses garantem pelo menos 2³×3=24. 2. Não garantem a≥4 nem b≥2; o caso a=3 e b=1 resulta em 24 e refuta as opções maiores.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-mdc-potencia-dois.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-mdc-potencia-dois.json",
+            "contentSha256": "6f8ce54ea6decca461bd98b654f216408cb883c3055b7dc50027cc6a477f3fc8",
+            "answerSha256": "6f8ce54ea6decca461bd98b654f216408cb883c3055b7dc50027cc6a477f3fc8"
+          }
+        },
+        "fingerprint": "8bba398bc8ff26d555d056d680505d53e349198311388d8355328811328b77e6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-mdc-soma-produto-construcao"
+        },
+        "content": {
+          "statement": {
+            "text": "Dois inteiros positivos têm MDC 5 e soma 35. Qual par abaixo pode ser o par de números?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6b147db3-47bb-5034-a082-d73b3323bb5a",
+              "content": {
+                "text": "15 e 25.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3750671d-5f64-5f21-86d2-b4e588693ca6",
+              "content": {
+                "text": "5 e 35.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9d7faefa-ecf6-530c-b8b7-67e7dc005b62",
+              "content": {
+                "text": "20 e 25.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b00e15cc-c5ca-5527-88ec-495205bd3033",
+              "content": {
+                "text": "10 e 25.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b00e15cc-c5ca-5527-88ec-495205bd3033",
+          "resolution": {
+            "text": "1. O par 10 e 25 soma 35 e tem MDC 5. 2. Os outros pares não têm soma 35; atender apenas ao MDC não basta.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-mdc-soma-produto-construcao.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-mdc-soma-produto-construcao.json",
+            "contentSha256": "4dca29db007bf46b86abca330245ac8465ffbeedf39691c361e8f7ce1fde23bd",
+            "answerSha256": "4dca29db007bf46b86abca330245ac8465ffbeedf39691c361e8f7ce1fde23bd"
+          }
+        },
+        "fingerprint": "fdc3fd6a1cbc01f7b0518fcd18b7939b0ace5570e76f3e15d9054f4ec60f531b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-mdc-tres"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é o maior inteiro que divide simultaneamente 84, 126 e 210?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a7d6896c-d104-5b5b-8f8d-10f9ffd75c2e",
+              "content": {
+                "text": "14",
+                "resources": []
+              }
+            },
+            {
+              "id": "a8d23828-cedc-5de2-a980-8df712b18783",
+              "content": {
+                "text": "84",
+                "resources": []
+              }
+            },
+            {
+              "id": "29a989a5-402d-57c3-ba8e-385b89b15c56",
+              "content": {
+                "text": "42",
+                "resources": []
+              }
+            },
+            {
+              "id": "c0b2d832-4286-5c0d-b29e-8051d3f018c6",
+              "content": {
+                "text": "21",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "29a989a5-402d-57c3-ba8e-385b89b15c56",
+          "resolution": {
+            "text": "1. MDC(84,126)=42. 2. Como 210 também é múltiplo de 42, o MDC dos três continua 42; 84 não divide 126.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-mdc-tres.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-mdc-tres.json",
+            "contentSha256": "d9a30e8734eaa643dea68c340db2ce5a2d109ae626d5b7e20b420be691cb6280",
+            "answerSha256": "d9a30e8734eaa643dea68c340db2ce5a2d109ae626d5b7e20b420be691cb6280"
+          }
+        },
+        "fingerprint": "c66f6d3adc0f3b3bda51647e186d5220ea6759ae66df8b8b7ac04ad3d8f6306e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-multiplicar-ambos"
+        },
+        "content": {
+          "statement": {
+            "text": "Se MDC(a,b)=7 e MMC(a,b)=84, quais são MDC(3a,3b) e MMC(3a,3b)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3e769b23-0fda-5621-a59e-697ef0b6c300",
+              "content": {
+                "text": "9 e 87.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f2a47f2e-784a-5cad-8899-3d95c4d570ad",
+              "content": {
+                "text": "21 e 252.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a9c0bd3f-de4b-54ec-ae8e-2b4b899a4db5",
+              "content": {
+                "text": "7 e 252.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bc498719-5166-552c-b64e-e5781a09b034",
+              "content": {
+                "text": "21 e 84.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f2a47f2e-784a-5cad-8899-3d95c4d570ad",
+          "resolution": {
+            "text": "1. Multiplicar ambos os números pelo mesmo inteiro positivo multiplica MDC e MMC por esse fator. 2. Logo os resultados são 3×7=21 e 3×84=252; não se soma 3.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-multiplicar-ambos.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-multiplicar-ambos.json",
+            "contentSha256": "a9febc591547f42abd7c57e8bf80ba754fb77c3414fbaeffc802903ff75258ba",
+            "answerSha256": "a9febc591547f42abd7c57e8bf80ba754fb77c3414fbaeffc802903ff75258ba"
+          }
+        },
+        "fingerprint": "bc99f6b267324d90725934f50728086095836c3fb3a1de7cb788885284a8e7bf",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-numero-minimo-fatores"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é o menor inteiro positivo com exatamente três divisores positivos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "703e62c0-f12f-5fd8-9f30-4f3e9e2cb88c",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "37128d11-c25a-5dd1-bf34-74ddf8b4d005",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "3fcabcdb-a75a-5a4a-b926-df30f5c7ac75",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "e39327ba-3f1a-5a1f-9cec-26b63ac11b1c",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3fcabcdb-a75a-5a4a-b926-df30f5c7ac75",
+          "resolution": {
+            "text": "1. Um número com três divisores precisa ser o quadrado de um primo. 2. O menor caso é 2²=4, cujos divisores são 1, 2 e 4; 3 tem dois e 6 tem quatro.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-numero-minimo-fatores.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-numero-minimo-fatores.json",
+            "contentSha256": "0d21bb3b2d19d4eef6720fd6c74f19c55e22ab3b377afb3f5e64b053ce60efaa",
+            "answerSha256": "0d21bb3b2d19d4eef6720fd6c74f19c55e22ab3b377afb3f5e64b053ce60efaa"
+          }
+        },
+        "fingerprint": "548e20447a15f4b08731d9dd94207fe44ab639d94fb585f33ae7c921c3f2b05c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-primalidade-comprovacao"
+        },
+        "content": {
+          "statement": {
+            "text": "Para demonstrar por tentativa de divisão que 97 é primo, basta testar quais primos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3a87a780-cdd4-5e14-b03a-1c605a964633",
+              "content": {
+                "text": "2, 3, 5 e 7.",
+                "resources": []
+              }
+            },
+            {
+              "id": "425437e5-7334-5729-bfc5-72c56b912708",
+              "content": {
+                "text": "2, 3 e 5 apenas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "593590ee-8dfd-5aa7-a037-e9316623b7f5",
+              "content": {
+                "text": "Todos os inteiros de 2 a 96.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8f6120fe-b5ab-5265-b937-1ab82827ee55",
+              "content": {
+                "text": "Somente 7 e 11.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3a87a780-cdd4-5e14-b03a-1c605a964633",
+          "resolution": {
+            "text": "1. Se um número composto tem dois fatores maiores que sua raiz, o produto excede o número; logo existe fator primo até a raiz. 2. Como √97<10, basta testar os primos 2, 3, 5 e 7; nenhum divide 97.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-primalidade-comprovacao.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-primalidade-comprovacao.json",
+            "contentSha256": "8949d2715a576d90783d9d6a9e5d7862d8dd1ec683a2bb10270f5eebece82d6a",
+            "answerSha256": "8949d2715a576d90783d9d6a9e5d7862d8dd1ec683a2bb10270f5eebece82d6a"
+          }
+        },
+        "fingerprint": "e120f60ffe05c8df8a6efc50902ec3d3c297bcba1141cc7ad8688dad60ad60ff",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-primeiro-acima-limite"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é o menor múltiplo comum de 8 e 12 estritamente maior que 100?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e147a982-4351-54dc-8d96-bcede8b11aba",
+              "content": {
+                "text": "120",
+                "resources": []
+              }
+            },
+            {
+              "id": "3f1a84de-bfaa-5d8b-8363-05a81ad70231",
+              "content": {
+                "text": "104",
+                "resources": []
+              }
+            },
+            {
+              "id": "4408dadf-a6fd-5619-967c-5929863a1dca",
+              "content": {
+                "text": "108",
+                "resources": []
+              }
+            },
+            {
+              "id": "5618d709-79ed-5ecd-a226-9dca7c72ed16",
+              "content": {
+                "text": "96",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e147a982-4351-54dc-8d96-bcede8b11aba",
+          "resolution": {
+            "text": "1. MMC(8,12)=24. 2. Seus múltiplos próximos do limite são 96 e 120; o primeiro acima de 100 é 120.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-primeiro-acima-limite.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-primeiro-acima-limite.json",
+            "contentSha256": "e85a0c120ba78a50364a519577cc7922aa096970df0fc86d6356ccca7335d102",
+            "answerSha256": "e85a0c120ba78a50364a519577cc7922aa096970df0fc86d6356ccca7335d102"
+          }
+        },
+        "fingerprint": "80b58d6f182a4ea17836af7dd49642782e0070898640d7fb1ee511f9cb950014",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-quadrado-mmc"
+        },
+        "content": {
+          "statement": {
+            "text": "Se MMC(a,b)=30, com a e b inteiros positivos, qual é MMC(a²,b²)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "709dad14-6087-5b91-8f3d-102e155c72d3",
+              "content": {
+                "text": "900",
+                "resources": []
+              }
+            },
+            {
+              "id": "ec446db2-f200-5315-8156-f8430d8f38a5",
+              "content": {
+                "text": "60",
+                "resources": []
+              }
+            },
+            {
+              "id": "8b5fcf1a-5c2d-549b-9921-8c4ed14dcd4c",
+              "content": {
+                "text": "30",
+                "resources": []
+              }
+            },
+            {
+              "id": "f6b8f17f-2354-5a6a-87fe-1e435bd18036",
+              "content": {
+                "text": "150",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "709dad14-6087-5b91-8f3d-102e155c72d3",
+          "resolution": {
+            "text": "1. Nos quadrados, todos os expoentes primos de a e b duplicam. 2. O maior expoente de cada primo também duplica; o MMC vira 30²=900.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-quadrado-mmc.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-quadrado-mmc.json",
+            "contentSha256": "aaf5d33e6cf254641618e6c9aca4f3e3a4e70d4c5be50e9529c7f3a3ddece503",
+            "answerSha256": "aaf5d33e6cf254641618e6c9aca4f3e3a4e70d4c5be50e9529c7f3a3ddece503"
+          }
+        },
+        "fingerprint": "96e279ed3b53103b92e9652d5d20c9637f0db7360ef176d06ad4a8f209b2f7b0",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-resto-euclidiano-final"
+        },
+        "content": {
+          "statement": {
+            "text": "No algoritmo de Euclides para dois inteiros positivos, o último resto não nulo foi 7. Qual é o MDC desses inteiros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d2f1fb0f-cd27-5e25-9abc-c0de9307cdc8",
+              "content": {
+                "text": "1",
+                "resources": []
+              }
+            },
+            {
+              "id": "b663dfc5-7eaf-553a-8c4b-2e004f3252b4",
+              "content": {
+                "text": "14",
+                "resources": []
+              }
+            },
+            {
+              "id": "bb458b5e-aa20-5b76-a782-bb8e57e7e61e",
+              "content": {
+                "text": "7",
+                "resources": []
+              }
+            },
+            {
+              "id": "b31e12eb-250a-50c2-8f2a-2f825fccbf79",
+              "content": {
+                "text": "0",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bb458b5e-aa20-5b76-a782-bb8e57e7e61e",
+          "resolution": {
+            "text": "1. Cada etapa preserva o conjunto dos divisores comuns. 2. Quando o próximo resto é zero, o divisor da última etapa, igual ao último resto não nulo, é o MDC: 7.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-resto-euclidiano-final.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-resto-euclidiano-final.json",
+            "contentSha256": "1d3ba3b20dbbaad53897645d497d3e41bab80c1e85917c0a0c93f462c99f567f",
+            "answerSha256": "1d3ba3b20dbbaad53897645d497d3e41bab80c1e85917c0a0c93f462c99f567f"
+          }
+        },
+        "fingerprint": "ae524cea2549d5c8d993522fc1ed56ca85cee69f37c8b28908b0a9002a7882f9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.mat-restos-maior-divisor"
+        },
+        "content": {
+          "statement": {
+            "text": "Um divisor d deixa restos 4 e 7 ao dividir, respectivamente, 64 e 91. Qual é o maior valor possível de d?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a3073a44-cdd1-568f-81ea-6f2474bd2bf3",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "5a975674-cd09-5f2a-bdcb-62fa202b2938",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            },
+            {
+              "id": "86ece163-1839-5700-be64-d8fa209b931f",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "44d4cbb7-39e2-559e-b860-f7bdb82dfec9",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a3073a44-cdd1-568f-81ea-6f2474bd2bf3",
+          "resolution": {
+            "text": "1. d divide 64−4=60 e 91−7=84, e precisa ser maior que 7. 2. O MDC é 12, que satisfaz os restos; 24 não divide 60.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M02.s.mat-restos-maior-divisor.json",
+            "answerPath": "sources/admin.2026-11.M02.s.mat-restos-maior-divisor.json",
+            "contentSha256": "65a071bd09e044569687548dc06aa4ca3a6e5fe9c8bbc099be212bf4ef830626",
+            "answerSha256": "65a071bd09e044569687548dc06aa4ca3a6e5fe9c8bbc099be212bf4ef830626"
+          }
+        },
+        "fingerprint": "4850afbf5ed7c50ab5ef826b202c1b103b50db4771a09188690d6d5448412c0b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.nova-apoio-q40"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma colônia de férias, o recreador precisava dividir 30 crianças em equipes com a mesma quantidade de participantes, sem que sobrasse ninguém. Qual das alternativas abaixo indica uma quantidade de crianças por equipe que permite essa divisão exata?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c024496e-55d4-5137-a316-a1d042fcc32b",
+              "content": {
+                "text": "7",
+                "resources": []
+              }
+            },
+            {
+              "id": "f2cf53f6-40b7-53ab-a625-63feb2bbbde1",
+              "content": {
+                "text": "9",
+                "resources": []
+              }
+            },
+            {
+              "id": "f5513e55-fb31-5b92-b909-984c3a51a481",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "96d0fd18-3243-5ed3-bbe8-ef51b1e62236",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "056da035-d883-5b16-a0ba-b9316fc0b118",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "056da035-d883-5b16-a0ba-b9316fc0b118",
+          "resolution": {
+            "text": "1. A quantidade de crianças por equipe deve dividir 30 sem resto. 2. Entre 7, 9, 4, 8 e 5, somente 5 satisfaz: 30/5=6 equipes, alternativa E.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Nova Odessa — Processo Seletivo 01/2026, AUXILIAR DE APOIO ESCOLAR, questão40. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M02.s.nova-apoio-q40.json",
+            "answerPath": "sources/admin.2026-11.M02.s.nova-apoio-q40.json",
+            "contentSha256": "dd72beca311242dca06c82a0e6f73802a4427634d666bbb8db271cfe001fe8a9",
+            "answerSha256": "dd72beca311242dca06c82a0e6f73802a4427634d666bbb8db271cfe001fe8a9"
+          }
+        },
+        "fingerprint": "cbb2117e47a9bff7b7b5fb757757cba0ebba93c271b710d264f5571c28f7d7c5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.potim-aa-q12"
+        },
+        "content": {
+          "statement": {
+            "text": "Ricky Carmichael e Jeremy McGrath são dois pilotos famosos de motocross. Em um determinado evento, Carmichael e McGrath irão se apresentar correndo em sentido opostos e ao mesmo tempo. McGrath dá uma volta na pista a cada 3 minutos e Carmichael a cada 7 minutos. Em um determinado momento eles se cruzam em um ponto P da pista. Em quanto tempo eles voltarão a se cruzar pela primeira vez nesse mesmo ponto P? Assinale a alternativa que indica a resposta correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "dd242815-8349-5652-8da8-ea303c418716",
+              "content": {
+                "text": "15 minutos",
+                "resources": []
+              }
+            },
+            {
+              "id": "8c3b1065-51a0-5ab4-b786-ac40affcb808",
+              "content": {
+                "text": "18 minutos",
+                "resources": []
+              }
+            },
+            {
+              "id": "4c68cef4-36ab-500a-afe5-6294345b41a1",
+              "content": {
+                "text": "21 minutos",
+                "resources": []
+              }
+            },
+            {
+              "id": "f58da58e-65cd-590e-92e2-89f3f85fba92",
+              "content": {
+                "text": "24 minutos",
+                "resources": []
+              }
+            },
+            {
+              "id": "046954af-5492-5041-927d-2c62160b3c19",
+              "content": {
+                "text": "25 minutos",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4c68cef4-36ab-500a-afe5-6294345b41a1",
+          "resolution": {
+            "text": "1. Voltar ao mesmo ponto P simultaneamente exige um tempo múltiplo de 3 e de 7 minutos. 2. O menor múltiplo comum é 21 minutos. O fato de correrem em sentidos opostos não altera o primeiro retorno simultâneo ao próprio ponto P.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "OBMEP — Introdução à Aritmética (apoio teórico; questão transcrita de prova oficial)",
+              "url": "https://www.obmep.org.br/docs/aritmetica.pdf",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Agente Administrativo, questão 12. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M02.s.potim-aa-q12.json",
+            "answerPath": "sources/admin.2026-11.M02.s.potim-aa-q12.json",
+            "contentSha256": "ef29da0c7d82b4ba26d56f0fa069a3d8bc2f3ea6e25ce8bcc4cbd9d67ee353a2",
+            "answerSha256": "ef29da0c7d82b4ba26d56f0fa069a3d8bc2f3ea6e25ce8bcc4cbd9d67ee353a2"
+          }
+        },
+        "fingerprint": "67d54b1169c6fb9eee40b31cae11516b5e46dbc15fdf4495bc9d82031bd0d05f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M02.s.vinhedo-profmat-q13"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere os números inteiros: A=18, B=24 e C=30. Calcule o mínimo múltiplo comum MMC e o máximo divisor comum MDC de cada par de números (A,B), (B,C) e (A,C). Em seguida, determine o valor da razão r=[MMC(A,B)+MMC(B,C)+MMC(A,C)]/[MDC(A,B)+MDC(B,C)+MDC(A,C)]. Assinale a alternativa correta:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b1c3561b-a0da-55fc-96c3-f376f3d4a487",
+              "content": {
+                "text": "r=72",
+                "resources": []
+              }
+            },
+            {
+              "id": "1369bd2c-df43-5c1a-991e-b3a5e64a4313",
+              "content": {
+                "text": "r=15",
+                "resources": []
+              }
+            },
+            {
+              "id": "d7d0f638-b644-5b3a-9964-e8f3149b7077",
+              "content": {
+                "text": "r=16",
+                "resources": []
+              }
+            },
+            {
+              "id": "ca2f15f9-a9e6-5c01-a578-071848551c37",
+              "content": {
+                "text": "r=12/9",
+                "resources": []
+              }
+            },
+            {
+              "id": "51fdbbb5-1bd6-5be5-a7a3-67db5017c310",
+              "content": {
+                "text": "r=47/3",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "51fdbbb5-1bd6-5be5-a7a3-67db5017c310",
+          "resolution": {
+            "text": "1. Os MMC dos pares (18,24), (24,30) e (18,30) são 72, 120 e 90; os MDC são 6, 6 e 6. 2. A razão das somas é (72+120+90)/(6+6+6)=282/18=47/3, alternativa E. 15 e 16 são aproximações inteiras de 47/3 ≈ 15,67; 72 é só o primeiro MMC; 12/9 não corresponde às somas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M02",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, PROFESSOR DE EDUCAÇÃO BÁSICA II - MATEMÁTICA, questão13. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M02.s.vinhedo-profmat-q13.json",
+            "answerPath": "sources/admin.2026-11.M02.s.vinhedo-profmat-q13.json",
+            "contentSha256": "183228fbb62bafda9a0c36540a005e200c600a86e28afe930c77a57a61a86b03",
+            "answerSha256": "183228fbb62bafda9a0c36540a005e200c600a86e28afe930c77a57a61a86b03"
+          }
+        },
+        "fingerprint": "0cfeb54fc9a84cdaf927a16d8ebc90f6823ea05bd8fced13887dd58d3e8b6981",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M02.s.cacapava-profmat-q12.json",
+        "mediaType": "application/json",
+        "sha256": "fe5c01a92b7ba626e8dcec69f4acee9c3dd0cc344fcca1465f58df1f795def95",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOSJ9LHsiaWQiOiJiIiwidGV4dCI6IjEwIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTEifSx7ImlkIjoiZCIsInRleHQiOiIxMiJ9LHsiaWQiOiJlIiwidGV4dCI6IjEzIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYcOnYXBhdmEg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjUsIFBST0ZFU1NPUiBJSSAoUElJKSAtIE1BVEVNw4FUSUNBLCBxdWVzdMOjbzEyLiBSZXNvbHXDp8OjbyBwcsOzcHJpYSBhc3Npc3RpZGEgcG9yIElBOkNvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJhIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgc2XDp8OjbyBlc3BlY8OtZmljYSBkbyBjYXJnbyBlIHJlc3Bvc3RhIGNvbmZlcmlkYXMsIGFudWxhZGFzIGV4Y2x1w61kYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NhY2FwYXZhLWdhYmFyaXRvLnBkZiIsInNoYTI1NiI6ImE4YTZjMGQ4MGY1YmJiNjAyZmZkNzllY2U5NmNlYzVjM2QyMWVkYjc0NDczYWFmNDJkM2ZhNmQ0NDAyZDNkNjAiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzMC9hbmV4b3MvMjdkZjI1YzQtM2I1Ni00NDc2LWE0OWEtZmY2YzBkZjY3MTRmLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2HDp2FwYXZhIOKAlCBQcm9jZXNzbyBTZWxldGl2byAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtY2FjYXBhdmEtMjAyNS1wcm9mbWF0L3ExMiIsIm51bWJlciI6IjEyIiwicHJvb2YiOnsibm90ZSI6IkNhZGVybm8gb2ZpY2lhbDsgY2FyZ28gZSBuw7ptZXJvIGNvbmZlcmlkb3M7IGNhYmXDp2FsaG9zIGUgcXVlYnJhcyByZXRpcmFkb3MuIEZvcm1hdG9zIG1hdGVtw6F0aWNvcyByZWxldmFudGVzIGNvbXBhcmFkb3MgY29tIHDDoWdpbmFzIHJlbmRlcml6YWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2FjYXBhdmEtcHJvZm1hdC5wZGYiLCJzaGEyNTYiOiJiYmU5NmRiZGMzYWRlODAzMGNhZTMyY2FjOTgzODFiYmJlYTZiMTFkNzIyYjI1YmY0YTJhNjVhMTdiMDI4YzY2IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzAvYW5leG9zLzhiMmY1YjJmLTNmMjItNDcwZS1iZmFlLTRiZTU0NjcyZjFmMy5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUsIGFydC44wrosSVYgZSBUSlBSIEFDMTQzNzMzMi0zIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGU7IG7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSByZXV0aWxpemEgb2JyYXMgZGUgdGVyY2Vpcm9zIG5lY2Vzc8Ohcmlhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJQUk9GRVNTT1IgSUkgKFBJSSkgLSBNQVRFTcOBVElDQSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoiY2FjYXBhdmEtcHJvZm1hdC1xMTIiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBFbnRyZSA2MSBlIDY5LCBOIGRldmUgZGVpeGFyIHJlc3RvIDMgcG9yIDQgZSBOICsgMSBkZXZlIHNlciBtw7psdGlwbG8gZGUgOC4gTyDDum5pY28gdmFsb3Igw6kgNjMuIDIuIEEgc29tYSBkZSBzZXVzIGFsZ2FyaXNtb3Mgw6kgNiArIDMgPSA5OyBhIHJlc3Bvc3RhIMOpIEEuIiwic3RhdGVtZW50IjoiTGVvbmFyZG8gcG9zc3VpIHVtYSBxdWFudGlkYWRlIE4gZGUgbGl2cm9zIG1haW9yIGRvIHF1ZSA2MCBlIG1lbm9yIGRvIHF1ZSA3MC4gU2Ugb3MgTiBsaXZyb3MgZm9zc2VtIGFncnVwYWRvcyBkZSA0IGVtIDQgc29icmFyaWFtIHRyw6pzLiBTZSBob3V2ZXNzZSB1bSBsaXZybyBhIG1haXMsIGVsZXMgcG9kZXJpYW0gc2VyIGFncnVwYWRvcyBkZSA4IGVtIDggc2VtIHF1ZSBzb2JyYXNzZSBxdWFscXVlciBsaXZyby4gQSBzb21hIGRvcyBhbGdhcmlzbW9zIGRlIE4gw6k6IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.cacapava-profmat-q43.json",
+        "mediaType": "application/json",
+        "sha256": "ce6ee0b1641e71ce73944778c761e00f09987a4b66257a7ffa3c4c61ffa391d7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMSwgNCwgOSwgMzYuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMSwgMiwgNCwgOC4ifSx7ImlkIjoiYyIsInRleHQiOiIyLCAzLCA2LCA5LiJ9LHsiaWQiOiJkIiwidGV4dCI6IjQsIDE2LCAzNiwgNjQuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiOSwgMTgsIDM2LCA3Mi4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENhw6dhcGF2YSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSwgUFJPRkVTU09SIElJIChQSUkpIC0gTUFURU3DgVRJQ0EsIHF1ZXN0w6NvNDMuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6Q29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBzZcOnw6NvIGVzcGVjw61maWNhIGRvIGNhcmdvIGUgcmVzcG9zdGEgY29uZmVyaWRhcywgYW51bGFkYXMgZXhjbHXDrWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2FjYXBhdmEtZ2FiYXJpdG8ucGRmIiwic2hhMjU2IjoiYThhNmMwZDgwZjViYmI2MDJmZmQ3OWVjZTk2Y2VjNWMzZDIxZWRiNzQ0NzNhYWY0MmQzZmE2ZDQ0MDJkM2Q2MCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjMwL2FuZXhvcy8yN2RmMjVjNC0zYjU2LTQ0NzYtYTQ5YS1mZjZjMGRmNjcxNGYucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYcOnYXBhdmEg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1jYWNhcGF2YS0yMDI1LXByb2ZtYXQvcTQzIiwibnVtYmVyIjoiNDMiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsOyBjYXJnbyBlIG7Dum1lcm8gY29uZmVyaWRvczsgY2FiZcOnYWxob3MgZSBxdWVicmFzIHJldGlyYWRvcy4gRm9ybWF0b3MgbWF0ZW3DoXRpY29zIHJlbGV2YW50ZXMgY29tcGFyYWRvcyBjb20gcMOhZ2luYXMgcmVuZGVyaXphZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9jYWNhcGF2YS1wcm9mbWF0LnBkZiIsInNoYTI1NiI6ImJiZTk2ZGJkYzNhZGU4MDMwY2FlMzJjYWM5ODM4MWJiYmVhNmIxMWQ3MjJiMjViZjRhMmE2NWExN2IwMjhjNjYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzMC9hbmV4b3MvOGIyZjViMmYtM2YyMi00NzBlLWJmYWUtNGJlNTQ2NzJmMWYzLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSwgYXJ0LjjCuixJViBlIFRKUFIgQUMxNDM3MzMyLTMgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIHJldXRpbGl6YSBvYnJhcyBkZSB0ZXJjZWlyb3MgbmVjZXNzw6FyaWFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlBST0ZFU1NPUiBJSSAoUElJKSAtIE1BVEVNw4FUSUNBIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJjYWNhcGF2YS1wcm9mbWF0LXE0MyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE9zIHF1YWRyYWRvcyBwZXJmZWl0b3MgcXVlIGRpdmlkZW0gNzIgc8OjbyAxLCA0LCA5IGUgMzYuIEVsZXMgY29ycmVzcG9uZGVtIGFvcyBleHBvZW50ZXMgcGFyZXMgcGVybWl0aWRvcyBuYSBmYXRvcmHDp8OjbyA3Mj0ywrPDlzPCsi4gMi4gQXMgZGVtYWlzIGxpc3RhcyBpbmNsdWVtIG7Dum1lcm9zIHF1ZSBuw6NvIHPDo28gcXVhZHJhZG9zIG91IG7Do28gZGl2aWRlbSA3Mi4iLCJzdGF0ZW1lbnQiOiJPIGNvbmp1bnRvIGRvcyBkaXZpc29yZXMgbmF0dXJhaXMgcG9zaXRpdm9zIGRlIDcyIHF1ZSBzw6NvIHF1YWRyYWRvcyBwZXJmZWl0b3Mgw6k6IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-contar-divisores.json",
+        "mediaType": "application/json",
+        "sha256": "b33ada9feff19ea67d5d5e2d0356330da63ccf4176f651b915d933e0c9e2cb9e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJiIiwidGV4dCI6IjEyIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjQifSx7ImlkIjoiZCIsInRleHQiOiIxNSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtY29udGFyLWRpdmlzb3JlcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gVW0gZGl2aXNvciBwb2RlIHVzYXIgZXhwb2VudGUgMCBhIDQgcGFyYSAyIGUgMCBhIDIgcGFyYSAzLiAyLiBTw6NvIDXDlzM9MTUgZXNjb2xoYXMgaW5kZXBlbmRlbnRlcywgaW5jbHVpbmRvIDEgZSBvIHByw7NwcmlvIG7Dum1lcm8uIiwic3RhdGVtZW50IjoiUXVhbnRvcyBkaXZpc29yZXMgcG9zaXRpdm9zIHRlbSAy4oG0w5czwrI/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-coprimos-produto.json",
+        "mediaType": "application/json",
+        "sha256": "6cffc8c511e758ffd34b2e8caa57845edb154184599db01d90427fa17c76c1a0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjEwIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMSJ9LHsiaWQiOiJjIiwidGV4dCI6IjEwNSJ9LHsiaWQiOiJkIiwidGV4dCI6IjQyMCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtY29wcmltb3MtcHJvZHV0byIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gUGFyYSBkb2lzIGludGVpcm9zIHBvc2l0aXZvcywgTURDw5dNTUMgw6kgbyBwcm9kdXRvLiAyLiBBc3NpbSAxw5dNTUM9MjEwLCBsb2dvIE1NQz0yMTA7IG7Do28gw6kgbmVjZXNzw6FyaW8gY29uaGVjZXIgY2FkYSBpbnRlaXJvLiIsInN0YXRlbWVudCI6IkRvaXMgaW50ZWlyb3MgcG9zaXRpdm9zIHTDqm0gTURDIGlndWFsIGEgMSBlIHByb2R1dG8gMjEwLiBRdWFsIMOpIHNldSBNTUM/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-criterio-divisibilidade-onze.json",
+        "mediaType": "application/json",
+        "sha256": "5a43bce900e03d943c06c95111abd2a2829b9ecd16babb019875f50041a8eef3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMS4yNDEifSx7ImlkIjoiYiIsInRleHQiOiIxLjI1MSJ9LHsiaWQiOiJjIiwidGV4dCI6IjEuMjIxIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMS4yMzEifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LWNyaXRlcmlvLWRpdmlzaWJpbGlkYWRlLW9uemUiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE5vIGNyaXTDqXJpbyBkZSAxMSwgc3VidHJhaWEgYXMgc29tYXMgZGUgYWxnYXJpc21vcyBlbSBwb3Npw6fDtWVzIGFsdGVybmFkYXMuIDIuIEVtIDEuMjIxLCAoMSsyKeKIkigyKzEpPTAsIG3Dumx0aXBsbyBkZSAxMTsgb3MgZGVtYWlzIGRlaXhhbSBkaWZlcmVuw6dhcyBuw6NvIG3Dumx0aXBsYXMuIiwic3RhdGVtZW50IjoiUXVhbCBuw7ptZXJvIMOpIGRpdmlzw612ZWwgcG9yIDExPyIsInRvcGljSWQiOiJNMDIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-divisibilidade-algarismo.json",
+        "mediaType": "application/json",
+        "sha256": "ad01b33dcf9ec371d03cc2b2a390ce85d52f6f6c160fa4ef21dba81f45df64b1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJiIiwidGV4dCI6IjIifSx7ImlkIjoiYyIsInRleHQiOiI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiNiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtZGl2aXNpYmlsaWRhZGUtYWxnYXJpc21vIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIGRpdmlzaWJpbGlkYWRlIHBvciA5IGV4aWdlIDQrMyt4IHNlciBtw7psdGlwbG8gZGUgOTsgbG9nbyB4PTIuIDIuIE8gbsO6bWVybyA0MzIgdGFtYsOpbSB0ZXJtaW5hIGVtIGFsZ2FyaXNtbyBwYXIsIHNhdGlzZmF6ZW5kbyBhIGRpdmlzaWJpbGlkYWRlIHBvciAyLiIsInN0YXRlbWVudCI6IlF1YWwgYWxnYXJpc21vIHggdG9ybmEgNDN4IGRpdmlzw612ZWwgc2ltdWx0YW5lYW1lbnRlIHBvciAyIGUgcG9yIDk/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-entre-divisores-vinculados.json",
+        "mediaType": "application/json",
+        "sha256": "ae2d08f20d296ef8b20d6cbd2242585328a0802ccb1dadb88edd203d4158b45e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOTAifSx7ImlkIjoiYiIsInRleHQiOiI0MCJ9LHsiaWQiOiJjIiwidGV4dCI6IjEyMCJ9LHsiaWQiOiJkIiwidGV4dCI6IjYwIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1lbnRyZS1kaXZpc29yZXMtdmluY3VsYWRvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSBmYXRvcmHDp8OjbyBkZSAzNjAgw6kgMsKzw5czwrLDlzUuIDIuIFBhcmEgbsOjbyBzZXIgZGl2aXPDrXZlbCBwb3IgMywgcmV0aXJlIHRvZG9zIG9zIGZhdG9yZXMgMyBlIG1hbnRlbmhhIG9zIGRlbWFpcyBtw6F4aW1vczogMsKzw5c1PTQwLiIsInN0YXRlbWVudCI6IlF1YWwgw6kgbyBtYWlvciBkaXZpc29yIGRlIDM2MCBxdWUgbsOjbyDDqSBkaXZpc8OtdmVsIHBvciAzPyIsInRvcGljSWQiOiJNMDIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-euclides-resto.json",
+        "mediaType": "application/json",
+        "sha256": "b5ed2addb15f23462cdd4bc3d17eeaf7d96b2741ffc245f2b8ba0bd15c99de49",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTURDKDIyMSw4NSs1MSkuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTURDKDg1LDIyMSs1MSkuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTURDKDg1LDUxKS4ifSx7ImlkIjoiZCIsInRleHQiOiJNREMoMjIxLDUxKS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LWV1Y2xpZGVzLXJlc3RvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBhPWJxK3IsIG9zIGRpdmlzb3JlcyBjb211bnMgZGUgYSBlIGIgc8OjbyBvcyBtZXNtb3MgZGUgYiBlIHIuIDIuIFBvcnRhbnRvIE1EQygyMjEsODUpPU1EQyg4NSw1MSk7IHRyb2NhciBzw7MgdW0gbsO6bWVybyBwb3Igb3V0cm8gcmVzdG8gYXJiaXRyw6FyaW8gbsOjbyDDqSBhIHJlZ3JhLiIsInN0YXRlbWVudCI6IkFvIGRpdmlkaXIgMjIxIHBvciA4NSwgbyByZXN0byDDqSA1MS4gUXVhbCBzdWJzdGl0dWnDp8OjbyBwcmVzZXJ2YSBvIE1EQyBwYXJhIGNvbnRpbnVhciBvIGFsZ29yaXRtbyBkZSBFdWNsaWRlcz8iLCJ0b3BpY0lkIjoiTTAyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-expoentes-mdc.json",
+        "mediaType": "application/json",
+        "sha256": "bd6ca49154a8a5d65033280ff57af6b8964beeabfbd3ef31ddd7d1d2c5bc4e08",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjQifSx7ImlkIjoiYiIsInRleHQiOiIxMiJ9LHsiaWQiOiJjIiwidGV4dCI6IjYwIn0seyJpZCI6ImQiLCJ0ZXh0IjoiODQifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LWV4cG9lbnRlcy1tZGMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gTURDIHVzYSBhcGVuYXMgZmF0b3JlcyBjb211bnMgY29tIG9zIG1lbm9yZXMgZXhwb2VudGVzOiAywrIgZSAzLiAyLiBPIHByb2R1dG8gw6kgNMOXMz0xMjsgNSBlIDcgbsOjbyBzw6NvIGNvbXVucy4iLCJzdGF0ZW1lbnQiOiJTZSBhPTLCs8OXM8Kyw5c1IGUgYj0ywrLDlzPDlzcsIHF1YWwgw6kgTURDKGEsYik/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-fator-minimo-quadrado.json",
+        "mediaType": "application/json",
+        "sha256": "6af512dedaae0c773d82506e9e66ce522090fcf27e40a44ba5b9a2d4d92fda1a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMyJ9LHsiaWQiOiJiIiwidGV4dCI6IjYifSx7ImlkIjoiYyIsInRleHQiOiI4In0seyJpZCI6ImQiLCJ0ZXh0IjoiMiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtZmF0b3ItbWluaW1vLXF1YWRyYWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiA3Mj0ywrPDlzPCsjogbyBleHBvZW50ZSDDrW1wYXIgZG8gZmF0b3IgMiBwcmVjaXNhIGRlIG1haXMgdW1hIHVuaWRhZGUuIDIuIE11bHRpcGxpY2FyIHBvciAyIHByb2R1eiAxNDQ9MTLCsjsgbmVuaHVtIGludGVpcm8gcG9zaXRpdm8gbWVub3IgcmVzb2x2ZS4iLCJzdGF0ZW1lbnQiOiJQb3IgcXVhbCBtZW5vciBpbnRlaXJvIHBvc2l0aXZvIHNlIGRldmUgbXVsdGlwbGljYXIgNzIgcGFyYSBvYnRlciB1bSBxdWFkcmFkbyBwZXJmZWl0bz8iLCJ0b3BpY0lkIjoiTTAyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-fator-multiplo-minimo.json",
+        "mediaType": "application/json",
+        "sha256": "76683f57894454f151eccb9afe72e9d948f86175f7246d96876d956fb4c66ba0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJiIiwidGV4dCI6IjQifSx7ImlkIjoiYyIsInRleHQiOiIzIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtZmF0b3ItbXVsdGlwbG8tbWluaW1vIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIG1lbm9yIG7Dum1lcm8gZGl2aXPDrXZlbCBwb3IgMTggZSAyNCDDqSBzZXUgTU1DLCA3Mi4gMi4gQXNzaW0gMThrPTcyIGUgaz00OyBhIGZhdG9yYcOnw6NvIG1vc3RyYSBxdWUgZmFsdGFtIGRvaXMgZmF0b3JlcyAyLiIsInN0YXRlbWVudCI6IlF1YWwgw6kgbyBtZW5vciBpbnRlaXJvIGsgcG9zaXRpdm8gcGFyYSBxdWUgMThrIHNlamEgZGl2aXPDrXZlbCBwb3IgMjQ/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-mdc-consecutivos.json",
+        "mediaType": "application/json",
+        "sha256": "4a17c69440188ec335a3f9600b467b6d6f44e7e896b13705b67ca992fc37e844",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoibiJ9LHsiaWQiOiJiIiwidGV4dCI6Im4rMSJ9LHsiaWQiOiJjIiwidGV4dCI6IjIifSx7ImlkIjoiZCIsInRleHQiOiIxIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1tZGMtY29uc2VjdXRpdm9zIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBVbSBkaXZpc29yIGNvbXVtIHRhbWLDqW0gZGl2aWRlIGEgZGlmZXJlbsOnYSAobisxKeKIkm49MS4gMi4gTyDDum5pY28gZGl2aXNvciBwb3NpdGl2byBkZSAxIMOpIDEsIHBvcnRhbnRvIG8gTURDIMOpIHNlbXByZSAxLiIsInN0YXRlbWVudCI6IlF1YWwgw6kgbyBNREMgZGUgZG9pcyBpbnRlaXJvcyBwb3NpdGl2b3MgY29uc2VjdXRpdm9zIG4gZSBuKzE/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-mdc-potencia-dois.json",
+        "mediaType": "application/json",
+        "sha256": "6f8ce54ea6decca461bd98b654f216408cb883c3055b7dc50027cc6a477f3fc8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDgifSx7ImlkIjoiYiIsInRleHQiOiI3MiJ9LHsiaWQiOiJjIiwidGV4dCI6Ijk2In0seyJpZCI6ImQiLCJ0ZXh0IjoiMjQifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LW1kYy1wb3RlbmNpYS1kb2lzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBcyBoaXDDs3Rlc2VzIGdhcmFudGVtIHBlbG8gbWVub3MgMsKzw5czPTI0LiAyLiBOw6NvIGdhcmFudGVtIGHiiaU0IG5lbSBi4omlMjsgbyBjYXNvIGE9MyBlIGI9MSByZXN1bHRhIGVtIDI0IGUgcmVmdXRhIGFzIG9ww6fDtWVzIG1haW9yZXMuIiwic3RhdGVtZW50IjoiVW0gbsO6bWVybyBwb3NpdGl2byB0ZW0gZmF0b3Jhw6fDo28gMuG1g8OXM+G1hywgY29tIGHiiaUzIGUgYuKJpTEuIFF1YWwgw6kgbyBtYWlvciBkaXZpc29yIGdhcmFudGlkbyBkbyBuw7ptZXJvIGVudHJlIGFzIG9ww6fDtWVzPyIsInRvcGljSWQiOiJNMDIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-mdc-soma-produto-construcao.json",
+        "mediaType": "application/json",
+        "sha256": "4dca29db007bf46b86abca330245ac8465ffbeedf39691c361e8f7ce1fde23bd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTUgZSAyNS4ifSx7ImlkIjoiYiIsInRleHQiOiI1IGUgMzUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjAgZSAyNS4ifSx7ImlkIjoiZCIsInRleHQiOiIxMCBlIDI1LiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtbWRjLXNvbWEtcHJvZHV0by1jb25zdHJ1Y2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIHBhciAxMCBlIDI1IHNvbWEgMzUgZSB0ZW0gTURDIDUuIDIuIE9zIG91dHJvcyBwYXJlcyBuw6NvIHTDqm0gc29tYSAzNTsgYXRlbmRlciBhcGVuYXMgYW8gTURDIG7Do28gYmFzdGEuIiwic3RhdGVtZW50IjoiRG9pcyBpbnRlaXJvcyBwb3NpdGl2b3MgdMOqbSBNREMgNSBlIHNvbWEgMzUuIFF1YWwgcGFyIGFiYWl4byBwb2RlIHNlciBvIHBhciBkZSBuw7ptZXJvcz8iLCJ0b3BpY0lkIjoiTTAyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-mdc-tres.json",
+        "mediaType": "application/json",
+        "sha256": "d9a30e8734eaa643dea68c340db2ce5a2d109ae626d5b7e20b420be691cb6280",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTQifSx7ImlkIjoiYiIsInRleHQiOiI4NCJ9LHsiaWQiOiJjIiwidGV4dCI6IjQyIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjEifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LW1kYy10cmVzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBNREMoODQsMTI2KT00Mi4gMi4gQ29tbyAyMTAgdGFtYsOpbSDDqSBtw7psdGlwbG8gZGUgNDIsIG8gTURDIGRvcyB0csOqcyBjb250aW51YSA0MjsgODQgbsOjbyBkaXZpZGUgMTI2LiIsInN0YXRlbWVudCI6IlF1YWwgw6kgbyBtYWlvciBpbnRlaXJvIHF1ZSBkaXZpZGUgc2ltdWx0YW5lYW1lbnRlIDg0LCAxMjYgZSAyMTA/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-multiplicar-ambos.json",
+        "mediaType": "application/json",
+        "sha256": "a9febc591547f42abd7c57e8bf80ba754fb77c3414fbaeffc802903ff75258ba",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOSBlIDg3LiJ9LHsiaWQiOiJiIiwidGV4dCI6IjIxIGUgMjUyLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjcgZSAyNTIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjEgZSA4NC4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LW11bHRpcGxpY2FyLWFtYm9zIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBNdWx0aXBsaWNhciBhbWJvcyBvcyBuw7ptZXJvcyBwZWxvIG1lc21vIGludGVpcm8gcG9zaXRpdm8gbXVsdGlwbGljYSBNREMgZSBNTUMgcG9yIGVzc2UgZmF0b3IuIDIuIExvZ28gb3MgcmVzdWx0YWRvcyBzw6NvIDPDlzc9MjEgZSAzw5c4ND0yNTI7IG7Do28gc2Ugc29tYSAzLiIsInN0YXRlbWVudCI6IlNlIE1EQyhhLGIpPTcgZSBNTUMoYSxiKT04NCwgcXVhaXMgc8OjbyBNREMoM2EsM2IpIGUgTU1DKDNhLDNiKT8iLCJ0b3BpY0lkIjoiTTAyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-numero-minimo-fatores.json",
+        "mediaType": "application/json",
+        "sha256": "0d21bb3b2d19d4eef6720fd6c74f19c55e22ab3b377afb3f5e64b053ce60efaa",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNiJ9LHsiaWQiOiJiIiwidGV4dCI6IjgifSx7ImlkIjoiYyIsInRleHQiOiI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiMyJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtbnVtZXJvLW1pbmltby1mYXRvcmVzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBVbSBuw7ptZXJvIGNvbSB0csOqcyBkaXZpc29yZXMgcHJlY2lzYSBzZXIgbyBxdWFkcmFkbyBkZSB1bSBwcmltby4gMi4gTyBtZW5vciBjYXNvIMOpIDLCsj00LCBjdWpvcyBkaXZpc29yZXMgc8OjbyAxLCAyIGUgNDsgMyB0ZW0gZG9pcyBlIDYgdGVtIHF1YXRyby4iLCJzdGF0ZW1lbnQiOiJRdWFsIMOpIG8gbWVub3IgaW50ZWlybyBwb3NpdGl2byBjb20gZXhhdGFtZW50ZSB0csOqcyBkaXZpc29yZXMgcG9zaXRpdm9zPyIsInRvcGljSWQiOiJNMDIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-primalidade-comprovacao.json",
+        "mediaType": "application/json",
+        "sha256": "8949d2715a576d90783d9d6a9e5d7862d8dd1ec683a2bb10270f5eebece82d6a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMiwgMywgNSBlIDcuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMiwgMyBlIDUgYXBlbmFzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlRvZG9zIG9zIGludGVpcm9zIGRlIDIgYSA5Ni4ifSx7ImlkIjoiZCIsInRleHQiOiJTb21lbnRlIDcgZSAxMS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXByaW1hbGlkYWRlLWNvbXByb3ZhY2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSB1bSBuw7ptZXJvIGNvbXBvc3RvIHRlbSBkb2lzIGZhdG9yZXMgbWFpb3JlcyBxdWUgc3VhIHJhaXosIG8gcHJvZHV0byBleGNlZGUgbyBuw7ptZXJvOyBsb2dvIGV4aXN0ZSBmYXRvciBwcmltbyBhdMOpIGEgcmFpei4gMi4gQ29tbyDiiJo5NzwxMCwgYmFzdGEgdGVzdGFyIG9zIHByaW1vcyAyLCAzLCA1IGUgNzsgbmVuaHVtIGRpdmlkZSA5Ny4iLCJzdGF0ZW1lbnQiOiJQYXJhIGRlbW9uc3RyYXIgcG9yIHRlbnRhdGl2YSBkZSBkaXZpc8OjbyBxdWUgOTcgw6kgcHJpbW8sIGJhc3RhIHRlc3RhciBxdWFpcyBwcmltb3M/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-primeiro-acima-limite.json",
+        "mediaType": "application/json",
+        "sha256": "e85a0c120ba78a50364a519577cc7922aa096970df0fc86d6356ccca7335d102",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIwIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTA0In0seyJpZCI6ImMiLCJ0ZXh0IjoiMTA4In0seyJpZCI6ImQiLCJ0ZXh0IjoiOTYifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXByaW1laXJvLWFjaW1hLWxpbWl0ZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTU1DKDgsMTIpPTI0LiAyLiBTZXVzIG3Dumx0aXBsb3MgcHLDs3hpbW9zIGRvIGxpbWl0ZSBzw6NvIDk2IGUgMTIwOyBvIHByaW1laXJvIGFjaW1hIGRlIDEwMCDDqSAxMjAuIiwic3RhdGVtZW50IjoiUXVhbCDDqSBvIG1lbm9yIG3Dumx0aXBsbyBjb211bSBkZSA4IGUgMTIgZXN0cml0YW1lbnRlIG1haW9yIHF1ZSAxMDA/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-quadrado-mmc.json",
+        "mediaType": "application/json",
+        "sha256": "aaf5d33e6cf254641618e6c9aca4f3e3a4e70d4c5be50e9529c7f3a3ddece503",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOTAwIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNjAifSx7ImlkIjoiYyIsInRleHQiOiIzMCJ9LHsiaWQiOiJkIiwidGV4dCI6IjE1MCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtcXVhZHJhZG8tbW1jIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBOb3MgcXVhZHJhZG9zLCB0b2RvcyBvcyBleHBvZW50ZXMgcHJpbW9zIGRlIGEgZSBiIGR1cGxpY2FtLiAyLiBPIG1haW9yIGV4cG9lbnRlIGRlIGNhZGEgcHJpbW8gdGFtYsOpbSBkdXBsaWNhOyBvIE1NQyB2aXJhIDMwwrI9OTAwLiIsInN0YXRlbWVudCI6IlNlIE1NQyhhLGIpPTMwLCBjb20gYSBlIGIgaW50ZWlyb3MgcG9zaXRpdm9zLCBxdWFsIMOpIE1NQyhhwrIsYsKyKT8iLCJ0b3BpY0lkIjoiTTAyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-resto-euclidiano-final.json",
+        "mediaType": "application/json",
+        "sha256": "1d3ba3b20dbbaad53897645d497d3e41bab80c1e85917c0a0c93f462c99f567f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMSJ9LHsiaWQiOiJiIiwidGV4dCI6IjE0In0seyJpZCI6ImMiLCJ0ZXh0IjoiNyJ9LHsiaWQiOiJkIiwidGV4dCI6IjAifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXJlc3RvLWV1Y2xpZGlhbm8tZmluYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIENhZGEgZXRhcGEgcHJlc2VydmEgbyBjb25qdW50byBkb3MgZGl2aXNvcmVzIGNvbXVucy4gMi4gUXVhbmRvIG8gcHLDs3hpbW8gcmVzdG8gw6kgemVybywgbyBkaXZpc29yIGRhIMO6bHRpbWEgZXRhcGEsIGlndWFsIGFvIMO6bHRpbW8gcmVzdG8gbsOjbyBudWxvLCDDqSBvIE1EQzogNy4iLCJzdGF0ZW1lbnQiOiJObyBhbGdvcml0bW8gZGUgRXVjbGlkZXMgcGFyYSBkb2lzIGludGVpcm9zIHBvc2l0aXZvcywgbyDDumx0aW1vIHJlc3RvIG7Do28gbnVsbyBmb2kgNy4gUXVhbCDDqSBvIE1EQyBkZXNzZXMgaW50ZWlyb3M/IiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.mat-restos-maior-divisor.json",
+        "mediaType": "application/json",
+        "sha256": "65a071bd09e044569687548dc06aa4ca3a6e5fe9c8bbc099be212bf4ef830626",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIifSx7ImlkIjoiYiIsInRleHQiOiIzIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNiJ9LHsiaWQiOiJkIiwidGV4dCI6IjI0In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC1yZXN0b3MtbWFpb3ItZGl2aXNvciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gZCBkaXZpZGUgNjTiiJI0PTYwIGUgOTHiiJI3PTg0LCBlIHByZWNpc2Egc2VyIG1haW9yIHF1ZSA3LiAyLiBPIE1EQyDDqSAxMiwgcXVlIHNhdGlzZmF6IG9zIHJlc3RvczsgMjQgbsOjbyBkaXZpZGUgNjAuIiwic3RhdGVtZW50IjoiVW0gZGl2aXNvciBkIGRlaXhhIHJlc3RvcyA0IGUgNyBhbyBkaXZpZGlyLCByZXNwZWN0aXZhbWVudGUsIDY0IGUgOTEuIFF1YWwgw6kgbyBtYWlvciB2YWxvciBwb3Nzw612ZWwgZGUgZD8iLCJ0b3BpY0lkIjoiTTAyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.nova-apoio-q40.json",
+        "mediaType": "application/json",
+        "sha256": "dd72beca311242dca06c82a0e6f73802a4427634d666bbb8db271cfe001fe8a9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNyJ9LHsiaWQiOiJiIiwidGV4dCI6IjkifSx7ImlkIjoiYyIsInRleHQiOiI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJlIiwidGV4dCI6IjUifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIE5vdmEgT2Rlc3NhIOKAlCBQcm9jZXNzbyBTZWxldGl2byAwMS8yMDI2LCBBVVhJTElBUiBERSBBUE9JTyBFU0NPTEFSLCBxdWVzdMOjbzQwLiBSZXNvbHXDp8OjbyBwcsOzcHJpYSBhc3Npc3RpZGEgcG9yIElBOkNvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJlIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgc2XDp8OjbyBlc3BlY8OtZmljYSBkbyBjYXJnbyBlIHJlc3Bvc3RhIGNvbmZlcmlkYXMsIGFudWxhZGFzIGV4Y2x1w61kYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL25vdmEtZ2FiYXJpdG8ucGRmIiwic2hhMjU2IjoiMDhmMzQ3YmViZDQ1YWYyNTA0ZjYyYjIyNjY2YmIxYzZkMGFkY2VhZmY4OTNmOGIzZGNmNTUzODJhZDY5YzI2YyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjQzL2FuZXhvcy8yMmFjMzI3Yi1mY2M5LTRmMDctYWFjYS0wOGM5MGFhODJhNDMucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBOb3ZhIE9kZXNzYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNiIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLW5vdmEtMjAyNi1hcG9pby9xNDAiLCJudW1iZXIiOiI0MCIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWw7IGNhcmdvIGUgbsO6bWVybyBjb25mZXJpZG9zOyBjYWJlw6dhbGhvcyBlIHF1ZWJyYXMgcmV0aXJhZG9zLiBGb3JtYXRvcyBtYXRlbcOhdGljb3MgcmVsZXZhbnRlcyBjb21wYXJhZG9zIGNvbSBww6FnaW5hcyByZW5kZXJpemFkYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL25vdmEtYXBvaW8ucGRmIiwic2hhMjU2IjoiNWI1NjIwMDhhMGM1MDdkNjExMzM3OGFlOTBlNmFhNzEyYzI4N2FlMjg1NDQ2Mzg1OGNlZDIzYzNjMTY2NmRlNiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjQzL2FuZXhvcy85NjJmNDU2Mi1mOTM5LTQ3NTktYTEwYS1jMmMxYTIwMjAyYmIucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEgcHJlZXhpc3RlbnRlLCBhcnQuOMK6LElWIGUgVEpQUiBBQzE0MzczMzItMyBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBuZW0gcmV1dGlsaXphIG9icmFzIGRlIHRlcmNlaXJvcyBuZWNlc3PDoXJpYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQVVYSUxJQVIgREUgQVBPSU8gRVNDT0xBUiIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoibm92YS1hcG9pby1xNDAiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHF1YW50aWRhZGUgZGUgY3JpYW7Dp2FzIHBvciBlcXVpcGUgZGV2ZSBkaXZpZGlyIDMwIHNlbSByZXN0by4gMi4gRW50cmUgNywgOSwgNCwgOCBlIDUsIHNvbWVudGUgNSBzYXRpc2ZhejogMzAvNT02IGVxdWlwZXMsIGFsdGVybmF0aXZhIEUuIiwic3RhdGVtZW50IjoiRW0gdW1hIGNvbMO0bmlhIGRlIGbDqXJpYXMsIG8gcmVjcmVhZG9yIHByZWNpc2F2YSBkaXZpZGlyIDMwIGNyaWFuw6dhcyBlbSBlcXVpcGVzIGNvbSBhIG1lc21hIHF1YW50aWRhZGUgZGUgcGFydGljaXBhbnRlcywgc2VtIHF1ZSBzb2JyYXNzZSBuaW5ndcOpbS4gUXVhbCBkYXMgYWx0ZXJuYXRpdmFzIGFiYWl4byBpbmRpY2EgdW1hIHF1YW50aWRhZGUgZGUgY3JpYW7Dp2FzIHBvciBlcXVpcGUgcXVlIHBlcm1pdGUgZXNzYSBkaXZpc8OjbyBleGF0YT8iLCJ0b3BpY0lkIjoiTTAyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.potim-aa-q12.json",
+        "mediaType": "application/json",
+        "sha256": "ef29da0c7d82b4ba26d56f0fa069a3d8bc2f3ea6e25ce8bcc4cbd9d67ee353a2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTUgbWludXRvcyJ9LHsiaWQiOiJiIiwidGV4dCI6IjE4IG1pbnV0b3MifSx7ImlkIjoiYyIsInRleHQiOiIyMSBtaW51dG9zIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjQgbWludXRvcyJ9LHsiaWQiOiJlIiwidGV4dCI6IjI1IG1pbnV0b3MifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIDAxLzIwMjUsIEFnZW50ZSBBZG1pbmlzdHJhdGl2bywgcXVlc3TDo28gMTIuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjaGVja0V4cHIiOiJsY20oMyw3KSIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvcG90aW0tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjA5OTc4ZWUzYTE4NGE0NDc4NTBkYWNhNzhlNGMxZjQzODYyOWNhYzY1ODExYzI2OTBiNWVmNWM1YjNiZWE3ODYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNzcyNWMyN2QtNjgyNS00NDBiLWI0YmYtNGJmZmQ5NzdjMzhlLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXBvdGltLTIwMjUtYWEvcTEyIiwibnVtYmVyIjoiMTIiLCJwcm9vZiI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9wb3RpbS1hYS1wcm9vZi5wZGYiLCJzaGEyNTYiOiJlMDRhMTE3OWQwMGI1Nzk5N2JlNjUyNTMzYzdmOWQwZTE1Nzg0NjM5ZDM5MzA2MjViZjJmZDg3MDIyMDBjNjdkIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zL2E1MTAyODY2LTE2NDYtNDdlYi05ZGQ3LWUwYjNjMTU2ZjdkYi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSwgYXJ0LiA4wrosIElWIGUgVEpQUiBBQyAxNDM3MzMyLTMsIGFwbGljYWRhIMOgIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLiBOw6NvIMOpIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIEF2YW7Dp2EgU1AgbmVtIGdhcmFudGlhIGp1csOtZGljYTsgZXhjbHVpIG9icmFzIGRlIHRlcmNlaXJvcyBlIG1hbnTDqW0gb3JpZ2VtL2dhYmFyaXRvLiIsInBhdGgiOiJkb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIEFkbWluaXN0cmF0aXZvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJwb3RpbS1hYS1xMTIiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbInJldmlld3MtcjEtcnYtMDMyZmNlMmRlMCJdLCJyZXNvbHV0aW9uIjoiMS4gVm9sdGFyIGFvIG1lc21vIHBvbnRvIFAgc2ltdWx0YW5lYW1lbnRlIGV4aWdlIHVtIHRlbXBvIG3Dumx0aXBsbyBkZSAzIGUgZGUgNyBtaW51dG9zLiAyLiBPIG1lbm9yIG3Dumx0aXBsbyBjb211bSDDqSAyMSBtaW51dG9zLiBPIGZhdG8gZGUgY29ycmVyZW0gZW0gc2VudGlkb3Mgb3Bvc3RvcyBuw6NvIGFsdGVyYSBvIHByaW1laXJvIHJldG9ybm8gc2ltdWx0w6JuZW8gYW8gcHLDs3ByaW8gcG9udG8gUC4iLCJzdGF0ZW1lbnQiOiJSaWNreSBDYXJtaWNoYWVsIGUgSmVyZW15IE1jR3JhdGggc8OjbyBkb2lzIHBpbG90b3MgZmFtb3NvcyBkZSBtb3RvY3Jvc3MuIEVtIHVtIGRldGVybWluYWRvIGV2ZW50bywgQ2FybWljaGFlbCBlIE1jR3JhdGggaXLDo28gc2UgYXByZXNlbnRhciBjb3JyZW5kbyBlbSBzZW50aWRvIG9wb3N0b3MgZSBhbyBtZXNtbyB0ZW1wby4gTWNHcmF0aCBkw6EgdW1hIHZvbHRhIG5hIHBpc3RhIGEgY2FkYSAzIG1pbnV0b3MgZSBDYXJtaWNoYWVsIGEgY2FkYSA3IG1pbnV0b3MuIEVtIHVtIGRldGVybWluYWRvIG1vbWVudG8gZWxlcyBzZSBjcnV6YW0gZW0gdW0gcG9udG8gUCBkYSBwaXN0YS4gRW0gcXVhbnRvIHRlbXBvIGVsZXMgdm9sdGFyw6NvIGEgc2UgY3J1emFyIHBlbGEgcHJpbWVpcmEgdmV6IG5lc3NlIG1lc21vIHBvbnRvIFA/IEFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgcXVlIGluZGljYSBhIHJlc3Bvc3RhIGNvcnJldGEuIiwidG9waWNJZCI6Ik0wMiJ9LCJzdHVkeVNvdXJjZXMiOnsicmV2aWV3cy1yMS1ydi0wMzJmY2UyZGUwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTAiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiT0JNRVAg4oCUIEludHJvZHXDp8OjbyDDoCBBcml0bcOpdGljYSAoYXBvaW8gdGXDs3JpY287IHF1ZXN0w6NvIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCkiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvZG9jcy9hcml0bWV0aWNhLnBkZiJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M02.s.vinhedo-profmat-q13.json",
+        "mediaType": "application/json",
+        "sha256": "183228fbb62bafda9a0c36540a005e200c600a86e28afe930c77a57a61a86b03",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0Ijoicj03MiJ9LHsiaWQiOiJiIiwidGV4dCI6InI9MTUifSx7ImlkIjoiYyIsInRleHQiOiJyPTE2In0seyJpZCI6ImQiLCJ0ZXh0Ijoicj0xMi85In0seyJpZCI6ImUiLCJ0ZXh0Ijoicj00Ny8zIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBWaW5oZWRvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMy8yMDI1LCBQUk9GRVNTT1IgREUgRURVQ0HDh8ODTyBCw4FTSUNBIElJIC0gTUFURU3DgVRJQ0EsIHF1ZXN0w6NvMTMuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6Q29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBzZcOnw6NvIGVzcGVjw61maWNhIGRvIGNhcmdvIGUgcmVzcG9zdGEgY29uZmVyaWRhcywgYW51bGFkYXMgZXhjbHXDrWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvdmluaGVkby1nYWJhcml0by5wZGYiLCJzaGEyNTYiOiI5MjNhY2FhZjlkMzhlNWM4ZjQ4M2IzY2U5ZmQyZDlkYzZjMjE1MDI3Y2ViMGE0ZWYzNWY3ZDBhYmUyNGNjMzhlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzI3OTUxNDEzLTA0YzYtNDRmOC05MjVhLWViMGIzOTIxMTczOS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12aW5oZWRvLTIwMjUtcHJvZm1hdC9xMTMiLCJudW1iZXIiOiIxMyIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWw7IGNhcmdvIGUgbsO6bWVybyBjb25mZXJpZG9zOyBjYWJlw6dhbGhvcyBlIHF1ZWJyYXMgcmV0aXJhZG9zLiBGb3JtYXRvcyBtYXRlbcOhdGljb3MgcmVsZXZhbnRlcyBjb21wYXJhZG9zIGNvbSBww6FnaW5hcyByZW5kZXJpemFkYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3ZpbmhlZG8tcHJvZm1hdC5wZGYiLCJzaGEyNTYiOiJmZjgzM2ViMjAyNGZiZDk0NmRhMGQwZjI4OTA2ZmU3NzgzMjFiNGJmMTcxZWEwMTMxMThkMzk5NDYyZDg3MmJjIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzY4MzVlZGE0LWUwNTItNDc1Zi04MmRjLTA4MjE1NGIzMzNmNy5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUsIGFydC44wrosSVYgZSBUSlBSIEFDMTQzNzMzMi0zIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGU7IG7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSByZXV0aWxpemEgb2JyYXMgZGUgdGVyY2Vpcm9zIG5lY2Vzc8Ohcmlhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJQUk9GRVNTT1IgREUgRURVQ0HDh8ODTyBCw4FTSUNBIElJIC0gTUFURU3DgVRJQ0EiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InZpbmhlZG8tcHJvZm1hdC1xMTMiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPcyBNTUMgZG9zIHBhcmVzICgxOCwyNCksICgyNCwzMCkgZSAoMTgsMzApIHPDo28gNzIsIDEyMCBlIDkwOyBvcyBNREMgc8OjbyA2LCA2IGUgNi4gMi4gQSByYXrDo28gZGFzIHNvbWFzIMOpICg3MisxMjArOTApLyg2KzYrNik9MjgyLzE4PTQ3LzMsIGFsdGVybmF0aXZhIEUuIDE1IGUgMTYgc8OjbyBhcHJveGltYcOnw7VlcyBpbnRlaXJhcyBkZSA0Ny8zIOKJiCAxNSw2NzsgNzIgw6kgc8OzIG8gcHJpbWVpcm8gTU1DOyAxMi85IG7Do28gY29ycmVzcG9uZGUgw6BzIHNvbWFzLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBvcyBuw7ptZXJvcyBpbnRlaXJvczogQT0xOCwgQj0yNCBlIEM9MzAuIENhbGN1bGUgbyBtw61uaW1vIG3Dumx0aXBsbyBjb211bSBNTUMgZSBvIG3DoXhpbW8gZGl2aXNvciBjb211bSBNREMgZGUgY2FkYSBwYXIgZGUgbsO6bWVyb3MgKEEsQiksIChCLEMpIGUgKEEsQykuIEVtIHNlZ3VpZGEsIGRldGVybWluZSBvIHZhbG9yIGRhIHJhesOjbyByPVtNTUMoQSxCKStNTUMoQixDKStNTUMoQSxDKV0vW01EQyhBLEIpK01EQyhCLEMpK01EQyhBLEMpXS4gQXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBjb3JyZXRhOiIsInRvcGljSWQiOiJNMDIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBjb21wbGVtZW50YXIgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYSBxdWVzdMOjbyDDqSB0cmFuc2NyaXRhIGRlIHByb3ZhIG9maWNpYWwsIGN1amEgb3JpZ2VtIGNvbnN0YSBkYSBwcm92ZW5pw6puY2lhIGRvIGl0ZW0iLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M02.s.cacapava-profmat-q12",
+    "admin.2026-11.M02.s.cacapava-profmat-q43",
+    "admin.2026-11.M02.s.mat-contar-divisores",
+    "admin.2026-11.M02.s.mat-coprimos-produto",
+    "admin.2026-11.M02.s.mat-criterio-divisibilidade-onze",
+    "admin.2026-11.M02.s.mat-divisibilidade-algarismo",
+    "admin.2026-11.M02.s.mat-entre-divisores-vinculados",
+    "admin.2026-11.M02.s.mat-euclides-resto",
+    "admin.2026-11.M02.s.mat-expoentes-mdc",
+    "admin.2026-11.M02.s.mat-fator-minimo-quadrado",
+    "admin.2026-11.M02.s.mat-fator-multiplo-minimo",
+    "admin.2026-11.M02.s.mat-mdc-consecutivos",
+    "admin.2026-11.M02.s.mat-mdc-potencia-dois",
+    "admin.2026-11.M02.s.mat-mdc-soma-produto-construcao",
+    "admin.2026-11.M02.s.mat-mdc-tres",
+    "admin.2026-11.M02.s.mat-multiplicar-ambos",
+    "admin.2026-11.M02.s.mat-numero-minimo-fatores",
+    "admin.2026-11.M02.s.mat-primalidade-comprovacao",
+    "admin.2026-11.M02.s.mat-primeiro-acima-limite",
+    "admin.2026-11.M02.s.mat-quadrado-mmc",
+    "admin.2026-11.M02.s.mat-resto-euclidiano-final",
+    "admin.2026-11.M02.s.mat-restos-maior-divisor",
+    "admin.2026-11.M02.s.nova-apoio-q40",
+    "admin.2026-11.M02.s.potim-aa-q12",
+    "admin.2026-11.M02.s.vinhedo-profmat-q13"
+  ]
+}

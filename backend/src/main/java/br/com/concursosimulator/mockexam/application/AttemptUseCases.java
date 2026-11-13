@@ -55,14 +55,14 @@ public final class AttemptUseCases {
     }
     public PracticeAvailability practiceAvailability(Topic topic) {
         requirePractice(); Objects.requireNonNull(topic);
-        return store.transaction(s -> new PracticeAvailability(topic.id(),practicePool(s,topic).size(),5));
+        return store.transaction(s -> new PracticeAvailability(topic.id(),practicePool(s,topic).size(),Attempt.PRACTICE_MAXIMUM));
     }
     public Outcome createPractice(AttemptOwner actor, UUID operation, Topic topic) {
         requirePractice(); Objects.requireNonNull(topic);
         return execute(actor,operation,hash("lesson-practice/v2",topic.name()),null,session -> {
             var pool=practicePool(session,topic);
             if (pool.isEmpty()) throw new Composition.InsufficientPool(Map.of(topic.discipline(),0));
-            var rng=random.get();var selected=Composition.shuffle(pool,rng).subList(0,Math.min(5,pool.size()));
+            var rng=random.get();var selected=Composition.shuffle(pool,rng).subList(0,Math.min(Attempt.PRACTICE_MAXIMUM,pool.size()));
             var items=selected.stream().map(q -> new Attempt.Item(ids.get(),q,
                     Composition.shuffle(q.content().alternatives().stream().map(a -> a.id()).toList(),rng),Map.<String,String>of())).toList();
             var attempt=Attempt.startPractice(ids.get(),actor,topic,now(),items);

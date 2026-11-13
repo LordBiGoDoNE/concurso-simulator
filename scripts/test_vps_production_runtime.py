@@ -137,6 +137,35 @@ class StateTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             production.load(state)
 
+    def test_import_secrets_are_generated_and_missing_ones_added_without_rotation(self):
+        import base64
+        state = self.base / "state"
+        production.initialize(state, self.manifest(), rehearsal=False)
+        secrets_dir = state / "secrets"
+        self.assertEqual((secrets_dir / "question_import_destination").read_text(), production.PROJECT)
+        key = (secrets_dir / "question_import_key").read_text()
+        self.assertGreaterEqual(len(base64.b64decode(key)), 32)
+        (secrets_dir / "question_import_destination").unlink()
+        config = json.loads((state / "state.json").read_text())
+        with mock.patch("builtins.print"):
+            production.ensure_generated_secrets(state, config)
+        self.assertEqual((secrets_dir / "question_import_destination").read_text(), production.PROJECT)
+        self.assertEqual((secrets_dir / "question_import_key").read_text(), key)
+
+    def test_editorial_cli_stays_on_the_database_namespace_and_never_takes_secrets_as_args(self):
+        config = {"project": production.PROJECT, "images": {"images": {"api": {"id": "sha256:" + "1" * 64}}}}
+        command = production.editorial_cli_command(config, "questions", ["preview", "--editorial-local", "true"], self.base)
+        self.assertIn("container:concurso-simulator-prod-postgres-1", command)
+        self.assertIn("DB_PASSWORD", command)
+        self.assertFalse(any(part.startswith("DB_PASSWORD=") for part in command))
+        self.assertTrue(any("localhost:5432" in part for part in command))
+        self.assertNotIn("-p", command)
+        for launcher, args in (("questions", ["register"]), ("templates", ["import"]), ("outro", ["preview"]),
+                               ("questions", []), ("questions", ["import", "--yes"])):
+            with self.subTest(launcher=launcher, args=args):
+                with self.assertRaises(ValueError):
+                    production.editorial_cli_command(config, launcher, args, self.base)
+
     def test_operation_lock_is_exclusive(self):
         state = self.base / "state"
         state.mkdir()

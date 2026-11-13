@@ -1,3 +1,4 @@
+import './styles/attempt.css';
 import { useEffect, useImperativeHandle, useRef, useState, type Ref } from 'react';
 import type { RunView } from './attempt-api';
 import { useAttemptRun } from './useAttemptRun';

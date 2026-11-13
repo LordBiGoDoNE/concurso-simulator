@@ -9,7 +9,7 @@ Implementação local autorizada em 2026-11-10 para os grupos 1–8. A dependên
 O usuário pediu continuar e o grupo 2 está em implementação sobre essa base:
 prática por assunto sem cargo, captura formato4 preservada. O esclarecimento atual
 do usuário mantém25 no acervo e até cinco sorteadas por prática. A V14 também
-limitava o banco a cinco; o [ajuste V15 autorizado](../openspec/changes/question-bank-expansion/capacity-schema-amendment.md)
+limitava o banco a cinco; o [ajuste V15 autorizado](../openspec/changes/archive/2026-11-13-question-bank-expansion/capacity-schema-amendment.md)
 amplia apenas esse CHECK, sem regravar dados. Grupo 8 continua dependendo de 2–7.
 Não há stack, cópia de código ou merge entre specs.
 

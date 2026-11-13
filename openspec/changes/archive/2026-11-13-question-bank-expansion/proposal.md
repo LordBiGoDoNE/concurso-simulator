@@ -4,7 +4,7 @@ Issue: [#173 — Acervo e práticas com 25 questões](https://github.com/LordBiG
 
 Planejamento aprovado em 2026-11-10. Esta entrega publica somente documentação; nenhum grupo de implementação está iniciado. O próximo início exige confirmação explícita dos grupos completos, conforme o plano e o AGENTS.md.
 
-**Atualização de coordenação em 2026-11-10:** usuário autorizou implementação local dos grupos completos 1–8, em conversa própria da #173. A frase anterior descreve a publicação inicial #174, preservada. Grupo 1 primeiro e conteúdo 3–7 em seguida; grupo 2 e validação integrada 8 aguardam #161 integrada à main por merge autorizado. A #161 tem prioridade nos contratos de prática. Depois, conciliar teto 25 com prática por assunto sem cargo, sem restaurar cargo nem empilhar specs. [Estado e limites](tasks.md) e [guia técnico](../../../docs/question-bank-expansion.md); nenhuma publicação de implementação, revisão, integração ou expansão completa presumida.
+**Atualização de coordenação em 2026-11-10:** usuário autorizou implementação local dos grupos completos 1–8, em conversa própria da #173. A frase anterior descreve a publicação inicial #174, preservada. Grupo 1 primeiro e conteúdo 3–7 em seguida; grupo 2 e validação integrada 8 aguardam #161 integrada à main por merge autorizado. A #161 tem prioridade nos contratos de prática. Depois, conciliar teto 25 com prática por assunto sem cargo, sem restaurar cargo nem empilhar specs. [Estado e limites](tasks.md) e [guia técnico](../../../../docs/question-bank-expansion.md); nenhuma publicação de implementação, revisão, integração ou expansão completa presumida.
 
 ## Esclarecimento de escopo — 2026-11-11
 

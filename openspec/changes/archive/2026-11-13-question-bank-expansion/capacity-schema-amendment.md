@@ -23,7 +23,7 @@ com a ação explicitada ao usuário antes da execução.
 ## Proposta concreta
 
 [SQL proposto preservado](proposed/V15__expanded_topic_practice_capacity.sql) e
-[V15 executável](../../../backend/src/main/resources/db/migration/V15__expanded_topic_practice_capacity.sql).
+[V15 executável](../../../../backend/src/main/resources/db/migration/V15__expanded_topic_practice_capacity.sql).
 Recria a mesma constraint mudando exclusivamente o
 intervalo de formato 4 de 1–5 para 1–25. Mantém limite histórico cinco em formato 3,
 regras de simulado e nulidade da composição de formato 4. V1–V14 e todas as travas

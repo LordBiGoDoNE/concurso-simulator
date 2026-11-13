@@ -3,7 +3,9 @@
 Runs on the VPS as concurso-dev against the production web container on loopback (Host header = canonical
 origin). Reads the bootstrap admin password from the private secret file; never prints it. Each package goes
 through import preview (digests must match the versioned manifest), apply, editorial SUBMIT and APPROVE
-(AI_ONLY, as recorded in #173/#177). A private journal makes the run resumable without duplicating receipts.
+(AI_ONLY, as recorded in #173/#177). A private journal makes the run resumable after any step whose response
+arrived; if an apply response is lost after the server confirmed it, the rerun stops instead of guessing (#221).
+The checkout must be at the commit of the release in use, and the run holds the operator lock.
 """
 import argparse
 import hashlib
@@ -158,19 +160,31 @@ def main():
     parser.add_argument("--verify-only", action="store_true")
     args = parser.parse_args()
     state, config = production.load(args.state)
-    client = Client(f"http://127.0.0.1:{config['port']}")
-    password = (state / "secrets" / "admin_password").read_text(encoding="utf-8").strip()
     try:
-        client.login("admin", password)
-        del password
-        if args.verify_only:
-            manifest = json.loads((args.packages / "manifest.json").read_text(encoding="utf-8"))
-        else:
-            manifest, _ = load(client, args.packages, state / "question-load.json", args.dry_run)
-        if not args.dry_run:
-            sys.exit(0 if verify(client, manifest) else 2)
+        require_release_checkout(config)
+        with production.operation(state):  # never concurrent with backup/release/restore
+            client = Client(f"http://127.0.0.1:{config['port']}")
+            password = (state / "secrets" / "admin_password").read_text(encoding="utf-8").strip()
+            client.login("admin", password)
+            del password
+            if args.verify_only:
+                manifest = json.loads((args.packages / "manifest.json").read_text(encoding="utf-8"))
+            else:
+                manifest, _ = load(client, args.packages, state / "question-load.json", args.dry_run)
+            ok = args.dry_run or verify(client, manifest)
+        sys.exit(0 if ok else 2)
     except (RuntimeError, KeyError, ValueError, OSError) as error:
-        sys.exit(f"Carga interrompida: {error}. O diário privado permite retomar sem duplicar recibos.")
+        sys.exit(f"Carga interrompida: {error}. Veja o diário privado antes de repetir (#221: lote sem resposta).")
+
+
+def require_release_checkout(config, root=ROOT):
+    """The approved packages must come from the very commit of the release in use (review L3)."""
+    import subprocess
+    head = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=root, text=True).strip()
+    if head != config["images"]["source_sha"]:
+        raise RuntimeError("Checkout diferente do commit da release em uso; posicione-o no commit da release")
+    if not config["rehearsal"] and not production.on_main(head, root):
+        raise RuntimeError("Commit da release fora de origin/main")
 
 
 if __name__ == "__main__":

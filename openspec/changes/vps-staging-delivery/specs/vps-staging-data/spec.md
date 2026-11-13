@@ -15,7 +15,9 @@ das questões SHALL permanecer congelado nesta entrega.
 
 ### Requirement: Carga administrativa rastreável
 A carga SHALL usar a importação e as decisões editoriais administrativas existentes,
-por HTTPS e com destino identificado. IDs do destino SHALL ser mapeados por
+autenticadas como administrador e com destino identificado; o tráfego fica no
+loopback do host (sem passar pela internet) e a carga segura o lock do operador.
+O checkout dos pacotes SHALL estar no commit da release em uso. IDs do destino SHALL ser mapeados por
 origem/fingerprint, e digests derivados SHALL ser recalculados no destino.
 Aprovação no PC MUST NOT ser tratada como decisão já executada na produção.
 

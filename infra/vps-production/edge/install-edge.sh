@@ -1,12 +1,15 @@
 #!/bin/bash
 # Instala a borda nginx/TLS dos domínios reemsoftworks. Executar na conta administrativa,
-# a partir desta pasta, em três fases (cada uma é idempotente e roda nginx -t antes do reload):
+# a partir desta pasta, em fases (cada uma roda nginx -t antes do reload):
 #
 #   sudo bash install-edge.sh http <IP-do-usuário>   # porta 80 + allowlist de pré-lançamento
+#   sudo bash install-edge.sh admin <IP-do-usuário>  # allowlist da área administrativa (permanente)
 #   sudo bash install-edge.sh cert                   # certificado Let's Encrypt (DNS já propagado)
 #   sudo bash install-edge.sh https                  # vhosts HTTPS e redirecionamentos
+#   sudo bash install-edge.sh open                   # abertura: público, sem o acesso antigo pelo IP
 #
-# Não remove nem altera concurso-public.conf (acesso antigo pelo IP) nem central.conf.
+# central.conf nunca é alterado. concurso-public.conf (acesso antigo pelo IP) só tem o link
+# em sites-enabled removido na fase open; o arquivo em sites-available é preservado.
 set -euo pipefail
 [[ $EUID -eq 0 ]] || { echo 'Execute com sudo.' >&2; exit 1; }
 
@@ -14,6 +17,8 @@ here=$(cd "$(dirname "$0")" && pwd)
 available=/etc/nginx/sites-available
 enabled=/etc/nginx/sites-enabled
 snippet=/etc/nginx/snippets/concurso-simulator-access.conf
+admin_snippet=/etc/nginx/snippets/concurso-simulator-admin-access.conf
+legacy=concurso-public.conf
 webroot=/var/lib/central-acme
 certbot=/opt/central-certbot/bin/certbot
 names=(concurso-simulator.reemsoftworks.com reemsoftworks.com www.reemsoftworks.com
@@ -75,14 +80,54 @@ case ${1:-} in
     systemctl daemon-reload
     systemctl enable --now reemsoftworks-certificate.timer
     ;;
+  admin)
+    admin_ip=${2:-}
+    [[ $admin_ip =~ ^[0-9a-fA-F:.]+(/[0-9]{1,3})?$ ]] || { echo 'Informe o IP público do administrador.' >&2; exit 1; }
+    mkdir -p "$(dirname "$admin_snippet")"
+    umask 022
+    admin_backup=""
+    if [[ -e $admin_snippet ]]; then
+      admin_backup="$admin_snippet.bak-$(date -u +%Y%m%dT%H%M%SZ)"
+      cp -p "$admin_snippet" "$admin_backup"
+    fi
+    printf '# Área administrativa: somente estes IPs, também após a abertura.\nallow %s;\ndeny all;\n' "$admin_ip" > "$admin_snippet.new"
+    mv "$admin_snippet.new" "$admin_snippet"
+    if ! nginx -t; then
+      echo 'nginx -t falhou; restaurando a allowlist administrativa anterior.' >&2
+      if [[ -n $admin_backup ]]; then cp -p "$admin_backup" "$admin_snippet"; else rm -f -- "$admin_snippet"; fi
+      exit 1
+    fi
+    if [[ -e $enabled/reemsoftworks-https.conf ]]; then systemctl reload nginx; fi
+    echo "Allowlist administrativa gravada em $admin_snippet${admin_backup:+ (anterior: $admin_backup)}"
+    ;;
   https)
     [[ -s /etc/letsencrypt/live/reemsoftworks/fullchain.pem ]] || { echo 'Certificado ausente; execute a fase cert.' >&2; exit 1; }
     [[ -e $snippet ]] || { echo 'Allowlist ausente; execute a fase http.' >&2; exit 1; }
+    [[ -e $admin_snippet ]] || { echo 'Allowlist administrativa ausente; execute a fase admin.' >&2; exit 1; }
     install_site reemsoftworks-https.conf
     reload_nginx
     ;;
+  open)
+    [[ -e $enabled/reemsoftworks-https.conf && -e $admin_snippet ]] || { echo 'Execute antes as fases https e admin.' >&2; exit 1; }
+    previous="$snippet.bak-$(date -u +%Y%m%dT%H%M%SZ)"
+    cp -p "$snippet" "$previous"
+    legacy_link=""
+    if [[ -L $enabled/$legacy ]]; then legacy_link=$(readlink "$enabled/$legacy"); fi
+    printf '# Aberto ao público em %s. A área administrativa segue restrita.\n' "$(date -u +%Y-%m-%dT%H:%MZ)" > "$snippet"
+    [[ -z $legacy_link ]] || rm -f -- "$enabled/$legacy"
+    install_site reemsoftworks-default.conf
+    if ! nginx -t; then
+      echo 'nginx -t falhou; restaurando estado anterior.' >&2
+      rm -f -- "$enabled/reemsoftworks-default.conf"
+      [[ -z $legacy_link ]] || ln -s "$legacy_link" "$enabled/$legacy"
+      cp -p "$previous" "$snippet"
+      exit 1
+    fi
+    systemctl reload nginx
+    echo "Aberto ao público. Allowlist anterior preservada em $previous"
+    ;;
   *)
-    sed -n '2,9p' "$0"
+    sed -n '2,13p' "$0"
     exit 1
     ;;
 esac

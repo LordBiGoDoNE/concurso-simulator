@@ -66,12 +66,18 @@ def backup(state, config, restart=True, directory=None):
         stem = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ-") + config["project"] + "-" + uuid.uuid4().hex[:8]
         dump = directory / (stem + ".dump")
         partial = dump.with_suffix(".partial")
-        with os.fdopen(os.open(partial, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), "wb") as stream:
-            docker_run(["exec", postgres(state, config), "pg_dump", "-U", "concurso", "-d", "concurso_simulator",
-                        "--format=custom", "--no-owner", "--no-privileges", "--no-password"],
-                       stdout=stream, stderr=subprocess.PIPE, check=True)
-        if fingerprints(state, config) != expected:
-            raise ValueError("Dados mudaram durante o backup; o arquivo parcial não é válido")
+        try:
+            with os.fdopen(os.open(partial, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600), "wb") as stream:
+                docker_run(["exec", postgres(state, config), "pg_dump", "-U", "concurso", "-d", "concurso_simulator",
+                            "--format=custom", "--no-owner", "--no-privileges", "--no-password"],
+                           stdout=stream, stderr=subprocess.PIPE, check=True)
+            if fingerprints(state, config) != expected:
+                raise ValueError("Dados mudaram durante o backup; o arquivo parcial não é válido")
+            # The archive must be readable by pg_restore, not only checksummed.
+            docker("exec", "-i", postgres(state, config), "pg_restore", "--list", data=partial.read_bytes())
+        except BaseException:
+            partial.unlink(missing_ok=True)
+            raise
         metadata = {"version": 1, "kind": KIND, "source_project": config["project"], "source_owner": config["owner"],
                     "source_sha": config["images"]["source_sha"], "api_image": config["images"]["images"]["api"]["id"],
                     "rehearsal": config["rehearsal"], "postgres_version": version, "schema_version": schema,
@@ -154,9 +160,13 @@ def release(state, config, images_file):
     if not metadata.get("on_main") and not config["rehearsal"]:
         raise ValueError("Produção aceita somente releases de origin/main")
     production.validate_images(metadata)
+    if metadata["base_images"].get("postgres") != config["images"]["base_images"].get("postgres"):
+        raise ValueError("Troca da imagem do PostgreSQL exige restauração em alvo separado, não release")
     if metadata["images"]["api"]["id"] == config["images"]["images"]["api"]["id"] and \
             metadata["images"]["web"]["id"] == config["images"]["images"]["web"]["id"]:
         raise ValueError("Release já em uso")
+    # Validate the new release's pinned compose before stopping anything (review N1).
+    production.release_compose({"rehearsal": config["rehearsal"], "images": metadata})
     dump, saved = backup(state, config, restart=False)
     config["previous"] = {"images": config["images"], "backup": str(dump), "schema_version": saved["schema_version"]}
     config["images"] = metadata
@@ -169,6 +179,7 @@ def rollback(state, config):
     previous = config.get("previous")
     if not previous:
         raise ValueError("Não há release anterior registrada")
+    production.release_compose({"rehearsal": config["rehearsal"], "images": previous["images"]})
     production.compose(state, config, "stop", "api", "web")
     if schema_version(state, config) != previous["schema_version"]:
         raise ValueError("Schema mudou desde o backup; restaure o backup prévio em um alvo de recuperação")
@@ -176,3 +187,23 @@ def rollback(state, config):
     production.write_private_json(state / "state.json", config)
     production.compose(state, config, "up", "-d", "--no-build", "--wait", "--wait-timeout", "180")
     print(f"Release anterior {config['images']['source_sha'][:12]} restabelecida; schema inalterado.")
+
+
+def promote(state, config):
+    """Leave rehearsal mode for good: only a main release with a pinned compose can become production (review N2)."""
+    if not config["rehearsal"]:
+        raise ValueError("Estado já é de produção")
+    if config["project"] != production.PROJECT:
+        raise ValueError("Somente o projeto de produção pode ser promovido")
+    images = config["images"]
+    if not images.get("on_main") or not production.on_main(images["source_sha"]):
+        raise ValueError("Release em uso não está em origin/main")
+    if images.get("compose") is None:
+        raise ValueError("Release em uso sem compose fixado")
+    production.release_compose({"rehearsal": False, "images": images})
+    previous = config.get("previous")
+    if previous and (not previous["images"].get("on_main") or previous["images"].get("compose") is None):
+        config["previous"] = None  # a rehearsal release must never become a production rollback target
+    config["rehearsal"] = False
+    production.write_private_json(state / "state.json", config)
+    print(f"Estado promovido a produção com a release {images['source_sha'][:12]}; ensaios não são mais aceitos.")

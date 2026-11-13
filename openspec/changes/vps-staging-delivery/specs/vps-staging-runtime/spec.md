@@ -37,8 +37,10 @@ publicar portas no host. O operador local MUST conservar suas recusas atuais.
 
 ### Requirement: Sessão segura atrás do proxy
 Em produção, o cookie de sessão SHALL ser Secure, HttpOnly e SameSite=Lax, com CSRF
-atual e CORS restrito à origem canônica. A API SHALL reconhecer HTTPS a partir do
-proxy interno e MUST NOT confiar em `Forwarded`/`X-Forwarded-*` enviados pelo cliente.
+atual e CORS restrito à origem canônica. URLs de login e retorno SHALL ser absolutas
+e HTTPS por configuração, e a API MUST NOT confiar em `Forwarded`/`X-Forwarded-*`
+enviados pelo cliente. Limites de login por origem SHALL ser aplicados pelo IP real
+do cliente na borda, já que a API só enxerga o proxy interno.
 
 #### Scenario: Cabeçalho encaminhado forjado
 - **WHEN** um cliente envia `X-Forwarded-Host` ou `Forwarded` próprios

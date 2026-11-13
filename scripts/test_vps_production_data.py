@@ -95,6 +95,22 @@ class RestoreTests(BackupFileTests):
             data.restore(Path(self.directory.name), config(owner=OTHER), self.write(), "RESTORE qualquer", self.backups)
 
 
+class BackupFailureTests(unittest.TestCase):
+    def test_failed_dump_leaves_no_partial_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            backups = Path(directory) / "backups"
+            failure = data.subprocess.CalledProcessError(1, "pg_dump")
+            with mock.patch.object(production, "compose", return_value=b""), \
+                    mock.patch.object(data, "fingerprints", return_value={}), \
+                    mock.patch.object(data, "schema_version", return_value=17), \
+                    mock.patch.object(data, "sql", side_effect=[b"18.6", b"0"]), \
+                    mock.patch.object(data, "postgres", return_value="abc123"), \
+                    mock.patch.object(data, "docker_run", side_effect=failure):
+                with self.assertRaises(data.subprocess.CalledProcessError):
+                    data.backup(Path(directory), config(), directory=backups)
+            self.assertEqual(list(backups.iterdir()), [])
+
+
 class ReleaseTests(unittest.TestCase):
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory()
@@ -113,12 +129,50 @@ class ReleaseTests(unittest.TestCase):
         self.calls.append(("backup", restart))
         return Path("/b/x.dump"), {"schema_version": 17}
 
-    def manifest(self, api="sha256:" + "4" * 64, on_main=True):
+    def pin(self, images):
+        compose = self.state / "release.compose.yaml"
+        compose.write_bytes(b"services: {}")
+        return images | {"compose": {"file": str(compose), "sha256": hashlib.sha256(b"services: {}").hexdigest()}}
+
+    def manifest(self, api="sha256:" + "4" * 64, on_main=True, pinned=True):
         value = config()["images"] | {"on_main": on_main}
         value["images"] = {"api": {"id": api}, "web": {"id": "sha256:" + "5" * 64}}
+        if pinned:
+            value = self.pin(value)
         path = self.state / "m.json"
         path.write_text(json.dumps(value), encoding="utf-8")
         return path
+
+    def test_release_without_pinned_compose_is_refused_before_any_change(self):
+        current = config()
+        with self.assertRaises(ValueError):
+            data.release(self.state, current, self.manifest(pinned=False))
+        self.assertEqual(self.calls, [])
+        self.assertFalse((self.state / "state.json").exists())
+
+    def test_rollback_refuses_previous_release_without_valid_compose_before_stopping(self):
+        current = config()
+        current["previous"] = {"images": config(api="sha256:" + "7" * 64)["images"], "backup": "/b/x.dump", "schema_version": 17}
+        with self.assertRaises(ValueError):
+            data.rollback(self.state, current)
+        self.assertEqual(self.calls, [])
+
+    def test_promote_requires_a_main_release_with_pinned_compose(self):
+        rehearsal = config(rehearsal=True)
+        with mock.patch.object(production, "on_main", return_value=True):
+            with self.assertRaises(ValueError):
+                data.promote(self.state, rehearsal)  # current release has no pinned compose
+            rehearsal["images"] = self.pin(rehearsal["images"])
+            rehearsal["previous"] = {"images": config()["images"] | {"on_main": False}, "backup": "/b", "schema_version": 17}
+            data.promote(self.state, rehearsal)
+        saved = json.loads((self.state / "state.json").read_text())
+        self.assertFalse(saved["rehearsal"])
+        self.assertIsNone(saved["previous"])  # rehearsal releases are not production rollback targets
+        with mock.patch.object(production, "on_main", return_value=False):
+            other = config(rehearsal=True)
+            other["images"] = self.pin(other["images"])
+            with self.assertRaises(ValueError):
+                data.promote(self.state, other)
 
     def test_release_backs_up_before_switching_and_keeps_previous(self):
         current = config()
@@ -129,6 +183,15 @@ class ReleaseTests(unittest.TestCase):
         self.assertEqual(saved["previous"]["images"]["images"]["api"]["id"], API)
         self.assertEqual(saved["previous"]["schema_version"], 17)
 
+    def test_release_cannot_change_the_postgres_image(self):
+        path = self.manifest()
+        value = json.loads(path.read_text())
+        value["base_images"] = {"postgres": "postgres@sha256:" + "8" * 64}
+        path.write_text(json.dumps(value), encoding="utf-8")
+        with self.assertRaises(ValueError):
+            data.release(self.state, config(), path)
+        self.assertEqual(self.calls, [])
+
     def test_release_outside_main_is_refused_in_production(self):
         with self.assertRaises(ValueError):
             data.release(self.state, config(), self.manifest(on_main=False))
@@ -136,7 +199,7 @@ class ReleaseTests(unittest.TestCase):
 
     def test_rollback_requires_unchanged_schema(self):
         current = config()
-        current["previous"] = {"images": config(api="sha256:" + "7" * 64)["images"], "backup": "/b/x.dump", "schema_version": 16}
+        current["previous"] = {"images": self.pin(config(api="sha256:" + "7" * 64)["images"]), "backup": "/b/x.dump", "schema_version": 16}
         with mock.patch.object(data, "schema_version", return_value=17):
             with self.assertRaises(ValueError):
                 data.rollback(self.state, current)

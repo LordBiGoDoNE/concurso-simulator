@@ -55,15 +55,16 @@ def permitted(name):
             or path.parts[0] == "assets" or re.fullmatch(r"0[1-5]_[^/]+", path.parts[0]) is not None)
 
 
-def restricted_tar(raw):
+def restricted_tar(raw, allow=None):
     """Only regular allowlisted tracked files; links and traversal fail closed."""
+    allow = allow or permitted
     output = io.BytesIO()
     selected = {}
     with tarfile.open(fileobj=io.BytesIO(raw)) as source, tarfile.open(fileobj=output, mode="w") as target:
         for member in source:
             if member.isdir():
                 continue
-            if not permitted(member.name):
+            if not allow(member.name):
                 continue
             if not member.isfile():
                 raise ValueError("Link ou arquivo especial no contexto permitido")
@@ -76,12 +77,12 @@ def restricted_tar(raw):
     return output.getvalue(), selected
 
 
-def committed_context(revision="HEAD", root=ROOT):
+def committed_context(revision="HEAD", root=ROOT, allow=None):
     sha = subprocess.check_output(["git", "rev-parse", "--verify", "--end-of-options", revision + "^{commit}"], cwd=root, text=True).strip()
     if not re.fullmatch(r"[0-9a-f]{40}", sha):
         raise ValueError("Commit inválido")
     raw = subprocess.check_output(["git", "archive", "--format=tar", sha], cwd=root)
-    context, selected = restricted_tar(raw)
+    context, selected = restricted_tar(raw, allow)
     return sha, context, selected
 
 

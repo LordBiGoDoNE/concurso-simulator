@@ -31,9 +31,14 @@ recusados, e o serviço administrativo existente pelo IP SHALL ser preservado.
 - **THEN** não é encaminhada à aplicação
 
 ### Requirement: Google OAuth de produção
-O login Google SHALL estar ligado no lançamento, com client OAuth de produção,
-callback exato da origem canônica e segredos somente na VPS. A abertura pública
-MUST ser precedida de smoke real de login, sessão, logout e conta nova.
+O login Google SHALL poder ser ligado em produção com client OAuth próprio, callback
+exato da origem canônica e segredos somente na VPS, sem que credenciais passem por
+argumentos, conversa ou Git. Por decisão do usuário, o lançamento MAY ocorrer com o
+Google desligado; ligá-lo MUST ser seguido de smoke real de login, sessão, logout e conta nova.
+
+#### Scenario: Configuração recusada
+- **WHEN** a API não confirma o Google habilitado após a configuração
+- **THEN** o Google volta a ficar desligado e a aplicação segue disponível
 
 #### Scenario: Primeiro login real
 - **WHEN** um usuário entra com Google pela origem canônica

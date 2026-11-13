@@ -99,6 +99,9 @@ A publicação HTTP do concurso pelo IP é removida no corte (grupo 7).
 
 ### 4. Google OAuth de produção
 
+Atualização de 2026-11-13: o lançamento sai com o Google desligado, por decisão do
+usuário; o roteiro e o comando abaixo ficam prontos e a ativação segue na #221.
+
 O usuário cria o client OAuth web no Google Cloud com o callback exato da origem
 canônica (conforme `backend/docs/google-login.md`), escopos básicos
 (`openid`, `email`, `profile`) e tela de consentimento publicada em produção, para
@@ -106,6 +109,9 @@ não limitar o acesso a usuários de teste. Os segredos ficam só nos arquivos p
 da VPS. Smoke real (login, sessão, logout, retomada e conta nova) antes da abertura.
 
 ### 5. Acervo
+
+Atualização de 2026-11-13: carregada somente a expansão 2026-11 pelo fluxo HTTP; os
+conjuntos de outubro, que só entram pela CLI local, ficaram fora por decisão do usuário (#221).
 
 Somente o acervo aprovado na main da release, carregado no banco novo pelas
 operações administrativas/editoriais existentes (importação e decisões em lote),

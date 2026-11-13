@@ -73,6 +73,7 @@ nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da práti
 .question-map nav button { padding: 0; min-height: 40px; border: 1px dashed var(--control-border); border-radius: 10px; color: var(--muted); background: var(--paper); font-size: .85rem; font-variant-numeric: tabular-nums; }
 .question-map nav button:not(:disabled):hover { background: var(--canvas); color: var(--ink); }
 .question-map nav button.answered { color: var(--ink); background: var(--blue-soft); border: 1px solid var(--blue-border); }
+.question-map nav button.answered:not(:disabled):hover { background: var(--blue-soft); }
 .question-map nav button[aria-current] { outline: 2px solid var(--blue); outline-offset: 2px; font-weight: 700; color: var(--ink); }
 .question-map nav button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
 .question-map > button { width: 100%; margin-top: 14px; }

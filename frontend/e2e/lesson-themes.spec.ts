@@ -27,9 +27,11 @@ for (const colorScheme of ['light', 'dark'] as const) test(`51 aulas legíveis n
       const root = document.querySelector('.reader-index')!.parentElement!;
       const out: string[] = [];
       for (const element of root.querySelectorAll('*')) {
-        if (element.closest('svg, math')) continue;
+        // Figuras SVG ficam sobre a placa clara com cores próprias; fórmulas (MathML) são medidas como texto.
+        if (element.closest('svg')) continue;
         const own = [...element.childNodes].some(node => node.nodeType === Node.TEXT_NODE && node.textContent!.trim());
-        if (!own || !(element as HTMLElement).offsetParent) continue;
+        const visible = element instanceof HTMLElement ? !!element.offsetParent : element.getClientRects().length > 0;
+        if (!own || !visible) continue;
         const style = getComputedStyle(element);
         const [fg, bg] = [lum(rgb(style.color)), lum(background(element))];
         const ratio = (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);

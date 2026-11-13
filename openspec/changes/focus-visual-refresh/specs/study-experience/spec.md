@@ -67,7 +67,9 @@ estado em texto.
 
 Cada questão revisada SHALL oferecer "Rever a aula" e "Praticar este assunto" para o
 assunto da questão. Os atalhos MUST aparecer somente após o encerramento e MUST
-NOT encerrar ou substituir outra realização em andamento.
+NOT encerrar ou substituir outra realização em andamento. São exceções: a questão
+cujo assunto não tem aula nativa, que fica sem atalhos, e o resultado da prática
+exibido dentro da própria aula, em que os atalhos levariam à mesma aula.
 
 #### Scenario: Rever a aula de uma questão errada
 
@@ -79,3 +81,8 @@ NOT encerrar ou substituir outra realização em andamento.
 
 - **WHEN** o estudante escolhe "Praticar este assunto" tendo outra prática em andamento
 - **THEN** a interface segue a troca explícita de prática já definida, sem descartar respostas silenciosamente
+
+#### Scenario: Resultado da prática dentro da aula
+
+- **WHEN** o estudante encerra a prática no painel da própria aula
+- **THEN** o resultado não mostra "Rever a aula" nem "Praticar este assunto"

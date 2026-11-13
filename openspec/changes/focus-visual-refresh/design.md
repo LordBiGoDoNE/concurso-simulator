@@ -122,9 +122,11 @@ A escala fica entre 13 e 44px:
 ### Leitor de aulas nativas
 
 - Corpo da aula em 18px, entrelinha de 1,8 e largura de leitura de cerca de 70 caracteres.
-- Cada tom de bloco ganha tokens próprios nos dois temas (`lesson-attention`,
-  `lesson-summary`, `lesson-note` etc.). Os blocos de atenção e resumo mantêm o
-  rótulo textual que já trazem.
+- Os tons de bloco usam tokens dos dois temas: atenção com `lesson-attention` sobre
+  `canvas`; resumo com `teal` sobre `teal-soft`; nota, exemplo, fórmula e referência
+  sobre `canvas`; percentual com `lesson-percent-border`. Só o tom sem equivalente na
+  paleta (atenção) ganhou token próprio. Os blocos de atenção e resumo mantêm o
+  rótulo textual que já trazem. (Revisão final FVR5-L3, 2026-11-13.)
 - O índice das seções, a paginação entre aulas e o painel de prática seguem a
   direção Foco. O carregamento, o erro e a validação do documento não mudam.
 - Figuras SVG ficam sobre uma placa clara (`lesson-figure-plate`) também no tema

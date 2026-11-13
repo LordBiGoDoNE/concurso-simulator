@@ -49,18 +49,18 @@ function contrast(a: string, b: string): number {
 
 // [frente, fundo, mínimo]: 4,5 para texto; 3 para bordas de controle, foco e ícones.
 const pairs: [string, string, number][] = [
-  ['ink', 'canvas', 4.5], ['ink', 'paper', 4.5], ['ink', 'blue-soft', 4.5], ['ink', 'surface-tint', 4.5],
-  ['muted', 'canvas', 4.5], ['muted', 'paper', 4.5], ['muted', 'blue-soft', 4.5], ['muted', 'surface-tint', 4.5],
+  ['ink', 'canvas', 4.5], ['ink', 'paper', 4.5], ['ink', 'blue-soft', 4.5],
+  ['muted', 'canvas', 4.5], ['muted', 'paper', 4.5], ['muted', 'blue-soft', 4.5],
   ['blue', 'paper', 4.5], ['blue', 'canvas', 4.5], ['blue', 'blue-soft', 4.5],
   ['on-blue', 'blue', 4.5], ['on-blue', 'blue-hover', 4.5], ['on-blue', 'ink', 4.5],
-  ['teal', 'paper', 4.5], ['teal', 'canvas', 4.5], ['teal', 'blue-soft', 4.5], ['teal', 'surface-tint', 4.5],
-  ['warning', 'paper', 4.5], ['warning', 'canvas', 4.5], ['warning', 'blue-soft', 4.5], ['warning', 'surface-tint', 4.5],
+  ['teal', 'paper', 4.5], ['teal', 'canvas', 4.5], ['teal', 'blue-soft', 4.5],
+  ['warning', 'paper', 4.5], ['warning', 'canvas', 4.5], ['warning', 'blue-soft', 4.5],
   // Fundos das aulas (resumo e barra de percentual) também são superfície de texto.
   ['ink', 'teal-soft', 4.5], ['muted', 'teal-soft', 4.5], ['teal', 'teal-soft', 4.5], ['blue', 'teal-soft', 4.5],
   ['control-border', 'paper', 3], ['control-border', 'canvas', 3],
   // Contorno do estado "respondida" no mapa de questões: indicador de estado, não decoração.
   ['blue-border', 'paper', 3], ['blue-border', 'blue-soft', 3],
-  ['focus', 'canvas', 3], ['focus', 'paper', 3], ['focus', 'blue-soft', 3], ['focus', 'surface-tint', 3], ['focus', 'teal-soft', 3],
+  ['focus', 'canvas', 3], ['focus', 'paper', 3], ['focus', 'blue-soft', 3], ['focus', 'teal-soft', 3],
 ];
 
 describe('tokens visuais', () => {

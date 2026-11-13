@@ -42,6 +42,9 @@ Implementado e verificado em 2026-11-13 (#213); não integrado. Evidências: `ve
 
 ## 5. Acervo — depende de 2 e 3
 
+Expansão 2026-11 carregada e verificada em 2026-11-13 (#220); conjuntos de outubro aguardam decisão do usuário. Não integrado. Evidências: `verification/grupo-5.md`.
+
+
 - [ ] 5.1 Preparar o pacote do acervo aprovado a partir da main da release, com contagens/digests calculados e remapeamento R1.
 - [ ] 5.2 Carregar pelo fluxo administrativo existente (importação e decisões em lote) no banco de produção, por HTTPS.
 - [ ] 5.3 Conferir idempotência, linhagem, finalidade e ausência de contas/sessões/tentativas do PC.

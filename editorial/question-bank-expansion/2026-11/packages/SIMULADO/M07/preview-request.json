@@ -1,0 +1,2075 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.fgv-canaa25-ase-q20"
+        },
+        "content": {
+          "statement": {
+            "text": "O diretor de uma escola registrou o número de livros lidos pelos alunos de 5 turmas ao longo de 4 meses.\nA tabela abaixo apresenta os dados obtidos.\n\nTurma | Janeiro | Fevereiro | Março | Abril\nA | 18 | 21 | 23 | 18\nB | 15 | 13 | 12 | 20\nC | 16 | 19 | 25 | 25\nD | 17 | 20 | 23 | 19\nE | 19 | 22 | 24 | 21\n\nAo longo desses quatro meses, a maior mediana de livros lidos foi a da turma",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8d521e6f-6f5b-5da2-9220-b2a0beeb1036",
+              "content": {
+                "text": "A.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9d5ee845-6bc6-5905-b320-44942292cad7",
+              "content": {
+                "text": "B.",
+                "resources": []
+              }
+            },
+            {
+              "id": "af74cea7-e727-54ec-bcc6-85eaa5dec1c7",
+              "content": {
+                "text": "C.",
+                "resources": []
+              }
+            },
+            {
+              "id": "723010ba-a959-5193-a20a-b683c9e98b78",
+              "content": {
+                "text": "D.",
+                "resources": []
+              }
+            },
+            {
+              "id": "df05d37b-bbd8-5ca3-86f8-e9862ae9c96d",
+              "content": {
+                "text": "E.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "af74cea7-e727-54ec-bcc6-85eaa5dec1c7",
+          "resolution": {
+            "text": "1. Com quatro valores, a mediana é a média dos dois centrais depois de ordenar cada linha: A (18, 18, 21, 23) → 19,5; B (12, 13, 15, 20) → 14; C (16, 19, 25, 25) → 22; D (17, 19, 20, 23) → 19,5; E (19, 21, 22, 24) → 21,5. A maior é a da turma C. 2. A turma E tem a maior soma de leituras (86), mas mediana 21,5; A e D empatam em 19,5 e B tem a menor mediana. Resposta: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — Prefeitura Municipal de Canaã dos Carajás — Concurso Público, Edital 01/2024, Agente de Serviços Administrativos, questão 20. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M07.s.fgv-canaa25-ase-q20.json",
+            "answerPath": "sources/admin.2026-11.M07.s.fgv-canaa25-ase-q20.json",
+            "contentSha256": "c9e08dc5983d305a5afa12167bc28b4e4d192dcba014f7d1b9b7796613442ec0",
+            "answerSha256": "c9e08dc5983d305a5afa12167bc28b4e4d192dcba014f7d1b9b7796613442ec0"
+          }
+        },
+        "fingerprint": "b17cb8383ab10ea0b0754bbd2f6581cf9bf9b07101455eb10eb7f91177266b74",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.fgv-nav26-ptna-q30"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma empresa possui três filiais: uma no Rio de Janeiro, uma em São Paulo e a outra em Minas Gerais. A tabela a seguir mostra as quantidades de funcionários efetivos e terceirizados, nas filiais do Rio de Janeiro e São Paulo.\nOs dados referentes aos funcionários da filial de Minas Gerais não foram inseridos na tabela.\n\n | RJ | SP | MG\nEfetivos | 38 | 22 | \nTerceirizados | 14 | 81 | \n\nSabe-se que o total de funcionários efetivos e o total de funcionários terceirizados nas três filiais são iguais.\nNa filial de Minas Gerais, a diferença entre o número de funcionários efetivos e o número de funcionários terceirizados é igual a",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "029c558c-f3eb-55f3-a980-18c48c81a69b",
+              "content": {
+                "text": "35.",
+                "resources": []
+              }
+            },
+            {
+              "id": "73a35dd9-5a0e-5cc4-bb0a-01133b5fed9b",
+              "content": {
+                "text": "51.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9dd6de2c-ea7d-5aa6-8127-43ad17cfc1ac",
+              "content": {
+                "text": "52.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1bf5eb81-c6d1-5468-b81e-34c4fe030a35",
+              "content": {
+                "text": "60.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d3590a42-e3ac-5094-8d2a-0329e26c8525",
+              "content": {
+                "text": "95.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "029c558c-f3eb-55f3-a980-18c48c81a69b",
+          "resolution": {
+            "text": "1. Sejam x os efetivos e y os terceirizados de MG. Pela tabela, os totais são 38 + 22 + x = 60 + x efetivos e 14 + 81 + y = 95 + y terceirizados. Como os totais são iguais, 60 + x = 95 + y, logo x − y = 95 − 60 = 35. 2. 60 e 95 são apenas os subtotais conhecidos de efetivos e de terceirizados; 51 e 52 não resultam da comparação entre as linhas da tabela. Resposta: alternativa A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — NAV Brasil Serviços de Navegação Aérea S.A. — Concurso Público, Edital de Abertura nº 01/2026, Profissional Técnico de Navegação Aérea — Operador de Torre de Controle, questão 30. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M07.s.fgv-nav26-ptna-q30.json",
+            "answerPath": "sources/admin.2026-11.M07.s.fgv-nav26-ptna-q30.json",
+            "contentSha256": "b61728f1bf6444e78926f5e5f61dde4d34da2737bbac5a7b3d9682ebf8f37179",
+            "answerSha256": "b61728f1bf6444e78926f5e5f61dde4d34da2737bbac5a7b3d9682ebf8f37179"
+          }
+        },
+        "fingerprint": "e3006bdf665ec3694f5eb19031490fbc502863cc90592ab2fb72a3709c47f594",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.fgv-pmesp25-sd-q32"
+        },
+        "content": {
+          "statement": {
+            "text": "Rosilene faz flexões todo dia ao acordar. A tabela a seguir mostra o número de flexões que Rosilene fez em cada dia de uma determinada semana.\n\nDomingo | 89\nSegunda-feira | 63\nTerça-feira | 77\nQuarta-feira | 89\nQuinta-feira | 100\nSexta-feira | 104\nSábado | 99\n\nNessa semana, o número de dias em que Rosilene fez mais flexões do que a média da semana foi",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "53f1f323-7013-5ae3-abad-cdda3b57c95e",
+              "content": {
+                "text": "2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c5f83690-e0df-53d1-8530-f8a14b06adc6",
+              "content": {
+                "text": "3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8a114661-8251-573d-b64a-0412901281a0",
+              "content": {
+                "text": "4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c01a3f60-22f5-5241-b2f1-f32ce661743c",
+              "content": {
+                "text": "5.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b9906622-8026-536b-adeb-a94d881a8684",
+              "content": {
+                "text": "6.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c01a3f60-22f5-5241-b2f1-f32ce661743c",
+          "resolution": {
+            "text": "1. Somando os valores da tabela: 89 + 63 + 77 + 89 + 100 + 104 + 99 = 621; a média é 621 ÷ 7 ≈ 88,7 flexões. Ficam acima desse valor domingo (89), quarta (89), quinta (100), sexta (104) e sábado (99): 5 dias. 2. Só segunda (63) e terça (77) ficam abaixo da média; contar apenas os dias com 100 ou mais (2) ou excluir os dois dias com 89, que superam a média por pouco (3), leva às alternativas erradas; 4 e 6 também não correspondem à contagem. Resposta: alternativa D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — Polícia Militar do Estado de São Paulo — Concurso Público para Soldado PM de 2ª Classe, Edital nº DP-3/321/24, Soldado PM de 2ª Classe, questão 32. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M07.s.fgv-pmesp25-sd-q32.json",
+            "answerPath": "sources/admin.2026-11.M07.s.fgv-pmesp25-sd-q32.json",
+            "contentSha256": "8aa2dc40aed648e8c14892f86d1f5a3497acded8fb2771df75c2595f174ffc92",
+            "answerSha256": "8aa2dc40aed648e8c14892f86d1f5a3497acded8fb2771df75c2595f174ffc92"
+          }
+        },
+        "fingerprint": "4ef0cb5d9337d3de7eae0bd9968da1f0cf0204e8caef328e8f11008ab921fba3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-amplitude-tabela"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma série possui mínimo 14 e máximo 39. Qual é sua amplitude total?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e50fffa1-0ec1-50cd-9944-d62e6626a223",
+              "content": {
+                "text": "53",
+                "resources": []
+              }
+            },
+            {
+              "id": "bcbafbe0-5fca-52d1-8d41-2a3330efc45a",
+              "content": {
+                "text": "26,5",
+                "resources": []
+              }
+            },
+            {
+              "id": "0b25ecc8-7ecb-5b07-842a-1e4662640c76",
+              "content": {
+                "text": "39",
+                "resources": []
+              }
+            },
+            {
+              "id": "f4beb6ee-b29b-5ce6-b5ab-cd6f122ce15e",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f4beb6ee-b29b-5ce6-b5ab-cd6f122ce15e",
+          "resolution": {
+            "text": "1. Amplitude é máximo menos mínimo. 2. Assim 39−14=25; a média dos extremos corresponde a outra medida.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-amplitude-tabela.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-amplitude-tabela.json",
+            "contentSha256": "d1fe66866e9581524daa4e32ec339b4d97593109a038e2abb07c1ee870ea4b4b",
+            "answerSha256": "d1fe66866e9581524daa4e32ec339b4d97593109a038e2abb07c1ee870ea4b4b"
+          }
+        },
+        "fingerprint": "3bdff806ffe782bee9871ad601f02edfd2ddac4a642c191c8e4d675feefa905b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-barras-comparar-diferencas"
+        },
+        "content": {
+          "statement": {
+            "text": "As vendas de A, B e C são 72, 48 e 60, em unidades. Quantas unidades B precisa acrescentar para atingir a média de A e C, mantendo A e C fixas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9c533d05-f399-5a5a-878c-221239c3a89d",
+              "content": {
+                "text": "18",
+                "resources": []
+              }
+            },
+            {
+              "id": "aea84959-0ea5-573a-913a-31e087fa3336",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "0c5f7c37-bb62-55b7-8996-5d1ab6a56219",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "6696e16f-01c2-539b-ba28-397b1abfaed5",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9c533d05-f399-5a5a-878c-221239c3a89d",
+          "resolution": {
+            "text": "1. A média de A e C é (72 + 60)/2 = 66. 2. B tem 48 e precisa de 66 − 48 = 18 unidades. 12 é a distância de B até C; 24, até A; 6 é a distância de C até a média.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-barras-comparar-diferencas.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-barras-comparar-diferencas.json",
+            "contentSha256": "d2760f93434b7802e3551ca64efccf7642b840a3a967d37e65aee2cc34d45dd3",
+            "answerSha256": "d2760f93434b7802e3551ca64efccf7642b840a3a967d37e65aee2cc34d45dd3"
+          }
+        },
+        "fingerprint": "9529d7f6fb15946f53536dccd484787cc31ce235ccdcf24d91b02d80fa8dd3c4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-barras-empilhadas"
+        },
+        "content": {
+          "statement": {
+            "text": "Um gráfico de barras empilhadas mostra, para uma unidade, 30 casos concluídos e 20 pendentes. Que percentual da barra total corresponde aos pendentes?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "252f9794-77ec-5c66-aeef-b33d0f3bb73a",
+              "content": {
+                "text": "66⅔%",
+                "resources": []
+              }
+            },
+            {
+              "id": "75f9a888-cd25-582d-9606-6011a2ed51c3",
+              "content": {
+                "text": "40%",
+                "resources": []
+              }
+            },
+            {
+              "id": "d92546aa-4d32-5439-a9f7-2538d79f0a4f",
+              "content": {
+                "text": "20%",
+                "resources": []
+              }
+            },
+            {
+              "id": "3a892421-329e-5f09-b77c-cebefb181353",
+              "content": {
+                "text": "60%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "75f9a888-cd25-582d-9606-6011a2ed51c3",
+          "resolution": {
+            "text": "1. A altura total corresponde a 30+20=50 casos. 2. Os 20 pendentes são 20/50=40%; dividir por 30 compararia pendentes com concluídos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-barras-empilhadas.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-barras-empilhadas.json",
+            "contentSha256": "105d4d82b2c241d51e735c39fc834e2a9eddf6a61b45a9501698e29d1488f725",
+            "answerSha256": "105d4d82b2c241d51e735c39fc834e2a9eddf6a61b45a9501698e29d1488f725"
+          }
+        },
+        "fingerprint": "614ef2f4803bf28777a11e11a3fec037fcb9722bd34798f4c3d61ef6565dd905",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-dados-origem-nao-zero"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma linha começa no ponto (3 dias, 15 unidades) e termina em (7 dias, 35 unidades). Se a taxa é constante nesse trecho, qual é o crescimento por dia?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "dad1463d-b1e2-5528-8dad-b51e73529604",
+              "content": {
+                "text": "7 unidades/dia.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6ad1464c-1fff-531c-882f-9eea99c9d1c6",
+              "content": {
+                "text": "3 unidades/dia.",
+                "resources": []
+              }
+            },
+            {
+              "id": "733623be-dcc4-5e5d-bda1-4591483f7c78",
+              "content": {
+                "text": "5 unidades/dia.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3505257b-b4d5-54fb-9c94-4e87f17a3a1b",
+              "content": {
+                "text": "20 unidades/dia.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "733623be-dcc4-5e5d-bda1-4591483f7c78",
+          "resolution": {
+            "text": "1. A variação do valor é 35−15=20, em 7−3=4 dias. 2. A taxa é 20/4=5 unidades por dia; use diferenças entre coordenadas, não somente os valores finais.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-dados-origem-nao-zero.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-dados-origem-nao-zero.json",
+            "contentSha256": "f01a99508b764f2bd8e8e479d3da63372c8d82ad20073f26a8f00c0ada0934a3",
+            "answerSha256": "f01a99508b764f2bd8e8e479d3da63372c8d82ad20073f26a8f00c0ada0934a3"
+          }
+        },
+        "fingerprint": "9752662282c9f49d1953392c79801e130df058e7c0448a4e8ce692e954df7d11",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-duas-series-diferenca"
+        },
+        "content": {
+          "statement": {
+            "text": "Nos meses 1, 2 e 3, as receitas são 100, 130 e 150 e as despesas, 80, 110 e 140, respectivamente. Em qual mês o saldo receita menos despesa foi menor?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2e4046f2-5600-50fa-aa3a-70211c4dfa3c",
+              "content": {
+                "text": "No mês 1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bc9bea33-4375-5768-841c-eb10ef5d5a89",
+              "content": {
+                "text": "No mês 2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "837ff9f2-71d9-57ea-bf6b-61e884f4eeaf",
+              "content": {
+                "text": "Os três saldos são iguais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a2d7af6f-ed57-5fea-9c6b-78565e68c8ae",
+              "content": {
+                "text": "No mês 3.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a2d7af6f-ed57-5fea-9c6b-78565e68c8ae",
+          "resolution": {
+            "text": "1. Os saldos são 20, 20 e 10, respectivamente. 2. O menor é 10 no mês 3; receita mais alta não garante maior saldo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-duas-series-diferenca.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-duas-series-diferenca.json",
+            "contentSha256": "c6ab12d84d9b915a77405f0af34ae3b3b012a589fd78f2f1dd41a7aa5b1c6314",
+            "answerSha256": "c6ab12d84d9b915a77405f0af34ae3b3b012a589fd78f2f1dd41a7aa5b1c6314"
+          }
+        },
+        "fingerprint": "05a68b2d7e32ee43a01d8212e7874600b965bb1c31842d5e5e685cb0ab66ed2d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-dupla-entrada-condicional"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma tabela registra: turno manhã, 20 aprovados e 5 reprovados; tarde, 15 aprovados e 10 reprovados. Entre os estudantes da tarde, qual é o percentual de aprovados?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f55aaf58-43e2-5139-abcc-79d679cbb6d9",
+              "content": {
+                "text": "70%",
+                "resources": []
+              }
+            },
+            {
+              "id": "e11dcd9c-8f04-588c-99de-6a1d9b62bdf7",
+              "content": {
+                "text": "75%",
+                "resources": []
+              }
+            },
+            {
+              "id": "77ec8a4c-828a-5da5-86e0-d56203db9760",
+              "content": {
+                "text": "60%",
+                "resources": []
+              }
+            },
+            {
+              "id": "4697dd73-3e26-567b-b32c-9e78bdf1d97a",
+              "content": {
+                "text": "30%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "77ec8a4c-828a-5da5-86e0-d56203db9760",
+          "resolution": {
+            "text": "1. Restrinja o denominador ao turno solicitado: 15+10=25. 2. A aprovação da tarde é 15/25=60%; usar todos os 50 estudantes muda a condição.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-dupla-entrada-condicional.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-dupla-entrada-condicional.json",
+            "contentSha256": "0257e11a8dd3b732e92fe320edd9438a401d362970dd2dc55c96ba8e4624fc02",
+            "answerSha256": "0257e11a8dd3b732e92fe320edd9438a401d362970dd2dc55c96ba8e4624fc02"
+          }
+        },
+        "fingerprint": "978faec31c7f8dff4b18cd86ffc11a60895521edac31af66cba745196cc95df8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-escala-nao-uniforme"
+        },
+        "content": {
+          "statement": {
+            "text": "Em um gráfico, marcas igualmente espaçadas no eixo vertical são rotuladas 0, 10, 20 e 100. Sem indicação de quebra ou escala especial, qual é o problema?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "039f4f7a-3766-5e65-b480-a28388b797a0",
+              "content": {
+                "text": "O valor 100 não pode aparecer em gráfico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d92c31ee-6d22-5dd1-bc03-ca6938f86cfe",
+              "content": {
+                "text": "As distâncias iguais não correspondem a incrementos numéricos iguais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f4e1212b-2612-535a-ba9d-48924ac7a15d",
+              "content": {
+                "text": "O eixo começa em zero, o que é proibido.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4fc110d3-87b3-549e-b580-f211b9a21e9a",
+              "content": {
+                "text": "O gráfico necessariamente representa valores negativos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d92c31ee-6d22-5dd1-bc03-ca6938f86cfe",
+          "resolution": {
+            "text": "1. Em uma escala linear uniforme, intervalos visuais iguais devem representar diferenças iguais. 2. O salto de 20 para 100 quebra essa correspondência sem aviso; o problema está na escala, não no número 100.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-escala-nao-uniforme.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-escala-nao-uniforme.json",
+            "contentSha256": "9e3b972e7d66106ed94f59aad198ae3f62ad5b0167202ba9d936a1045dffa533",
+            "answerSha256": "9e3b972e7d66106ed94f59aad198ae3f62ad5b0167202ba9d936a1045dffa533"
+          }
+        },
+        "fingerprint": "9716bbb555e0360b70ea9cfa8add57ce9ffda5ff2edcc99fa1a0695e51d143f1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-frequencia-relativa-tabela"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma tabela informa as frequências: bicicleta 18, ônibus 12 e caminhada 10. Qual é a frequência relativa de bicicleta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "62f462d1-bf13-5368-8ba6-72a25ce5da1a",
+              "content": {
+                "text": "45%",
+                "resources": []
+              }
+            },
+            {
+              "id": "2b4472dd-acaa-5658-acb8-d0a43d58ed5b",
+              "content": {
+                "text": "18%",
+                "resources": []
+              }
+            },
+            {
+              "id": "8eba952b-4923-5eac-b01a-f692620e2471",
+              "content": {
+                "text": "30%",
+                "resources": []
+              }
+            },
+            {
+              "id": "108a48f4-7ac2-5995-976e-3142709cf02c",
+              "content": {
+                "text": "55%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "62f462d1-bf13-5368-8ba6-72a25ce5da1a",
+          "resolution": {
+            "text": "1. O total é 18+12+10=40. 2. Bicicleta representa 18/40=45%; 18 é frequência absoluta, não percentual.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-frequencia-relativa-tabela.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-frequencia-relativa-tabela.json",
+            "contentSha256": "2be90c777d393475f3896da7920afad9c421e8dc75d9bd04763571cc7a2fd4a7",
+            "answerSha256": "2be90c777d393475f3896da7920afad9c421e8dc75d9bd04763571cc7a2fd4a7"
+          }
+        },
+        "fingerprint": "496768935ceaaff8829bf6f959de60ad3c9ed62f977ef4f0d4c6be05afe4740a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-grafico-causalidade"
+        },
+        "content": {
+          "statement": {
+            "text": "Um gráfico de dispersão mostra associação entre duas variáveis observadas. Apenas isso demonstra que uma causa a outra?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "582dcd5b-a385-5bed-89bc-eaa5ca5b3547",
+              "content": {
+                "text": "Sim, se ambas forem medidas em números.",
+                "resources": []
+              }
+            },
+            {
+              "id": "156468dd-4a1e-5df9-b043-29b3024bbbae",
+              "content": {
+                "text": "Não; associação isolada não demonstra causalidade.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e8cf0ad4-1317-50de-8ad1-04977798364f",
+              "content": {
+                "text": "Sim, sempre que os pontos sobem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7affcf92-efb1-5821-addc-245241c95ace",
+              "content": {
+                "text": "Sim, se houver mais de dez pontos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "156468dd-4a1e-5df9-b043-29b3024bbbae",
+          "resolution": {
+            "text": "1. Uma tendência conjunta pode ter outras explicações, como fator comum ou seleção. 2. O gráfico descreve associação e não estabelece sozinho direção ou mecanismo causal.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-grafico-causalidade.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-grafico-causalidade.json",
+            "contentSha256": "3ebfdbaf8c63fcf6032bf622b399af9d699b454887b7b38d7aa1e0f704b2d3df",
+            "answerSha256": "3ebfdbaf8c63fcf6032bf622b399af9d699b454887b7b38d7aa1e0f704b2d3df"
+          }
+        },
+        "fingerprint": "d1ec5a6ec29d2641b133f05d7d4151b062c35622d591a16621ab3ecf6e53d35c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-grafico-linhas-escolha"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual representação é especialmente adequada para destacar a evolução mensal de uma mesma medida ao longo de dois anos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "15ba272d-c9f3-5933-82a9-0a7512b703bf",
+              "content": {
+                "text": "Gráfico de setores com 24 fatias sem ordem temporal.",
+                "resources": []
+              }
+            },
+            {
+              "id": "697f8cd6-5a24-5d0d-a86e-f7722d20947f",
+              "content": {
+                "text": "Uma única barra com o total dos dois anos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fa6b0a85-8ec2-5197-bf10-ce5cfd5ab349",
+              "content": {
+                "text": "Diagrama sem rótulos ou escala.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e26fdce1-c51c-5659-8dcb-c0489db3314d",
+              "content": {
+                "text": "Gráfico de linhas com o tempo no eixo horizontal.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e26fdce1-c51c-5659-8dcb-c0489db3314d",
+          "resolution": {
+            "text": "1. A variável de interesse está ordenada no tempo. 2. Linhas com eixo temporal permitem observar tendências e mudanças entre meses; um total único perde essa evolução.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-grafico-linhas-escolha.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-grafico-linhas-escolha.json",
+            "contentSha256": "fc2d05fc02882a897a8badcf1157eb1a017b1827ce83e5703501f72c09a33d3b",
+            "answerSha256": "fc2d05fc02882a897a8badcf1157eb1a017b1827ce83e5703501f72c09a33d3b"
+          }
+        },
+        "fingerprint": "2224cc6db003dab28dce1e1907ac6de9c93c7d45c30c83b5b8d22d6653d21427",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-histograma-larguras-distintas"
+        },
+        "content": {
+          "statement": {
+            "text": "Um histograma representa frequências por áreas das barras. A classe de 0 a menos de 5 tem frequência 20; a classe de 5 a menos de 15 tem frequência 30. Quais alturas preservam essas áreas, usando altura=frequência/largura?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "eb9da5b4-d258-5552-83ba-d8aa1790393e",
+              "content": {
+                "text": "4 e 3, respectivamente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4940b26c-9dc2-5f77-945b-d4b7a811d1b5",
+              "content": {
+                "text": "20 e 30, respectivamente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7b5a56b2-4aa3-5f40-993a-19ffedf9ea7f",
+              "content": {
+                "text": "4 e 6, respectivamente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "537889fd-2978-552a-a142-6d47a39840dc",
+              "content": {
+                "text": "5 e 10, respectivamente.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "eb9da5b4-d258-5552-83ba-d8aa1790393e",
+          "resolution": {
+            "text": "1. As larguras das classes são 5 e 10. 2. As alturas devem ser 20/5=4 e 30/10=3; assim as áreas reproduzem 20 e 30 apesar de a segunda barra ser mais larga.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-histograma-larguras-distintas.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-histograma-larguras-distintas.json",
+            "contentSha256": "998a649a26be8d8f43e27fc42d9cdf73b130b2c1931c03d60e5366e227204938",
+            "answerSha256": "998a649a26be8d8f43e27fc42d9cdf73b130b2c1931c03d60e5366e227204938"
+          }
+        },
+        "fingerprint": "be6573e1f0b0cf2d55319c971aa44cf214f9c2144f32b6e5d396a726714cbd04",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-interpolacao-linear-informada"
+        },
+        "content": {
+          "statement": {
+            "text": "Um gráfico declara crescimento linear entre os pontos (2 horas, 30 L) e (6 horas, 70 L). Qual volume corresponde a 4 horas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a21009bb-3150-5040-8de3-33dd918501e5",
+              "content": {
+                "text": "40 L.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5e900be0-23c7-52b8-9d30-899497771030",
+              "content": {
+                "text": "60 L.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f9e6d3a7-23cd-589f-a2a9-5f2fbcc047e3",
+              "content": {
+                "text": "100 L.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4ee1e061-1f1a-5332-9ee9-cc926ee77b7f",
+              "content": {
+                "text": "50 L.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4ee1e061-1f1a-5332-9ee9-cc926ee77b7f",
+          "resolution": {
+            "text": "1. Quatro horas é o ponto médio de 2 e 6. 2. Com linearidade explicitamente informada, o volume é a média dos extremos: (30+70)/2=50 L.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-interpolacao-linear-informada.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-interpolacao-linear-informada.json",
+            "contentSha256": "58a60f26006fe1d81dd6419a8b3809a83b18c4f71e5a1a624b3f11a6fe98c182",
+            "answerSha256": "58a60f26006fe1d81dd6419a8b3809a83b18c4f71e5a1a624b3f11a6fe98c182"
+          }
+        },
+        "fingerprint": "c39acf4a7d38b5b8022667f33adc20a6a7c6f228edfaaa52db3b73bd725ae4b1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-mediana-frequencias"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma tabela tem valores 1, 2 e 3 com frequências 2, 5 e 3, respectivamente. Qual é a mediana dos dez registros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "50a40dfe-35cc-5cb6-876e-a40f66a7ad1a",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            },
+            {
+              "id": "01121897-5f13-53c8-9098-90ed4f4c857a",
+              "content": {
+                "text": "2,1",
+                "resources": []
+              }
+            },
+            {
+              "id": "58f84eac-9d33-5cc2-8408-1e7e7788b51f",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            },
+            {
+              "id": "b49fb2df-f540-5f75-a528-333a59975625",
+              "content": {
+                "text": "1",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "58f84eac-9d33-5cc2-8408-1e7e7788b51f",
+          "resolution": {
+            "text": "1. Na lista ordenada, o valor 1 ocupa posições 1–2, o 2 ocupa 3–7 e o 3 ocupa 8–10. 2. As posições centrais 5 e 6 valem ambas 2; a mediana é 2.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-mediana-frequencias.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-mediana-frequencias.json",
+            "contentSha256": "d17c3438ac7ef0c40606676a953bd1c9f994aed85b74c1557349049784716a99",
+            "answerSha256": "d17c3438ac7ef0c40606676a953bd1c9f994aed85b74c1557349049784716a99"
+          }
+        },
+        "fingerprint": "c256baaa8d4d7f0abc0f4ea0f9a72d4d3ad21e5e86d83bade4e9290b0c10236f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-ordenar-mediana-par"
+        },
+        "content": {
+          "statement": {
+            "text": "Os cinco valores observados são 9, 2, 7, 5 e 20. Qual é a mediana?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ccff6fa4-7074-5371-b563-4d97bf519474",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "f5bce276-384a-58d1-b18e-647214fe58fb",
+              "content": {
+                "text": "9",
+                "resources": []
+              }
+            },
+            {
+              "id": "133b84ae-7d76-54b2-b1e6-29d5e7dbcbe4",
+              "content": {
+                "text": "8,6",
+                "resources": []
+              }
+            },
+            {
+              "id": "9922f00c-de25-5291-8168-877fa913bf59",
+              "content": {
+                "text": "7",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9922f00c-de25-5291-8168-877fa913bf59",
+          "resolution": {
+            "text": "1. Ordene os valores: 2, 5, 7, 9, 20. 2. O termo central é 7; a ordem de apresentação não determina o centro estatístico.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-ordenar-mediana-par.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-ordenar-mediana-par.json",
+            "contentSha256": "74a9848cebb8c4da656ceaef8c5ce393d378f85b7ec17e03d4d5dc05326682f9",
+            "answerSha256": "74a9848cebb8c4da656ceaef8c5ce393d378f85b7ec17e03d4d5dc05326682f9"
+          }
+        },
+        "fingerprint": "be338579095392b7eff157faa29960232e7ff78d9b37e4fd7c75f9a26ed5ecef",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-percentuais-total-parcial"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pesquisa de resposta única teve 200 participantes; um gráfico omitiu a categoria “outros”, de 15%. As demais fatias somam quantos participantes?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6e475f27-4b92-5f47-8389-b91688d3212f",
+              "content": {
+                "text": "30",
+                "resources": []
+              }
+            },
+            {
+              "id": "f3218719-6bcc-5007-92f8-7e66ca7bfcd7",
+              "content": {
+                "text": "200",
+                "resources": []
+              }
+            },
+            {
+              "id": "1ecc630e-9fd6-575b-a5da-84bb4aaea0e9",
+              "content": {
+                "text": "170",
+                "resources": []
+              }
+            },
+            {
+              "id": "0017bbe3-2241-541d-8859-b9a8ef2ba56c",
+              "content": {
+                "text": "185",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1ecc630e-9fd6-575b-a5da-84bb4aaea0e9",
+          "resolution": {
+            "text": "1. As categorias mostradas representam 100% − 15% = 85%. 2. Oitenta e cinco por cento de 200 são 170 participantes. 30 é a categoria omitida; 200 é o total; 185 subtrai 15 participantes em vez de 15%.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-percentuais-total-parcial.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-percentuais-total-parcial.json",
+            "contentSha256": "2dadcf0f96d031c064a765bc33e33d9ad51f7b6f62bc4b7e99dbf5501db7af8b",
+            "answerSha256": "2dadcf0f96d031c064a765bc33e33d9ad51f7b6f62bc4b7e99dbf5501db7af8b"
+          }
+        },
+        "fingerprint": "bfe413eaef4b62ea1fc91b023a3107525c1d638ae564580955a4191bf4f551a2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-percentual-incompativel"
+        },
+        "content": {
+          "statement": {
+            "text": "Um gráfico de setores de resposta única apresenta fatias rotuladas 40%, 35% e 30%, sem outras categorias nem arredondamento. Qual conclusão é correta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f67d2f88-8df5-52a5-a5ef-a949deb58ab0",
+              "content": {
+                "text": "Os rótulos são incompatíveis, pois somam 105%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "215635ac-97a8-58d7-b8a0-4bd9716b5b55",
+              "content": {
+                "text": "Os rótulos são obrigatoriamente corretos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "240cf322-c6cc-57eb-a429-ea01ae5eef86",
+              "content": {
+                "text": "Falta uma fatia de 5%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1dd403a6-f9f9-5023-a2e5-43f29d93f322",
+              "content": {
+                "text": "Os dados provam respostas múltiplas, embora a pergunta seja única.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f67d2f88-8df5-52a5-a5ef-a949deb58ab0",
+          "resolution": {
+            "text": "1. Partes exclusivas de um total devem somar exatamente 100% nas condições informadas. 2. Os rótulos somam 105%, portanto há inconsistência; uma fatia adicional agravaria o excesso.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-percentual-incompativel.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-percentual-incompativel.json",
+            "contentSha256": "77cac1fc7abe59ee6f4e869f8972a96e3132d084b31facf98bd53d95f889da3a",
+            "answerSha256": "77cac1fc7abe59ee6f4e869f8972a96e3132d084b31facf98bd53d95f889da3a"
+          }
+        },
+        "fingerprint": "d22e44c788ddee416e7382d26769ac7382af233dfd856c04ee8b4d671dd729aa",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-percentual-multiplas-respostas"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma pesquisa que permite marcar várias opções, 60% escolheram A e 55% escolheram B. Qual interpretação é correta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "455371b2-b61f-52a0-8c0d-5a2e64ca88c1",
+              "content": {
+                "text": "Nenhuma pessoa escolheu as duas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "02826d7c-a236-52a7-8e56-3994aed9ece6",
+              "content": {
+                "text": "A soma superior a 100% é possível porque uma pessoa pode escolher ambas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0e3eca2b-05ec-58bc-aa2c-2fb868858403",
+              "content": {
+                "text": "Há necessariamente erro no gráfico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1c64d335-02d4-5c5a-a727-be7505739eab",
+              "content": {
+                "text": "As categorias são necessariamente disjuntas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "02826d7c-a236-52a7-8e56-3994aed9ece6",
+          "resolution": {
+            "text": "1. Em respostas múltiplas, uma pessoa pode entrar nas duas contagens. 2. Portanto 60%+55% não precisa ser 100%; os percentuais não são partes exclusivas de um setor circular.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-percentual-multiplas-respostas.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-percentual-multiplas-respostas.json",
+            "contentSha256": "2a78428cbad336ac427450a219b602cbd6e8d74bdf692327f3f92497e5e90bf0",
+            "answerSha256": "2a78428cbad336ac427450a219b602cbd6e8d74bdf692327f3f92497e5e90bf0"
+          }
+        },
+        "fingerprint": "b9544aa622a6589782cd9e467e73215d88f1c74bcfa185cabc3f8724c1cc61d2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-serie-indice-base"
+        },
+        "content": {
+          "statement": {
+            "text": "Um índice de base 100 passa a 125 em um ano. Mantida a mesma base, isso representa:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ab009068-6db6-5f62-bac7-24ebf653e979",
+              "content": {
+                "text": "Queda de 25%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9c599ec6-9c6e-5bbe-a16e-a77b7a9df8de",
+              "content": {
+                "text": "Aumento de 5%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c44e6e23-0171-57e5-9339-47a7ad2f90f2",
+              "content": {
+                "text": "Aumento de 25% em relação ao período-base.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c8b1cb06-2425-5868-a1ff-242a80f6e98c",
+              "content": {
+                "text": "Aumento de 125%.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c44e6e23-0171-57e5-9339-47a7ad2f90f2",
+          "resolution": {
+            "text": "1. Na base 100, o valor 100 corresponde ao nível inicial. 2. O novo índice 125 representa fator 1,25 e crescimento de 25%; o índice não é o próprio percentual de aumento.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-serie-indice-base.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-serie-indice-base.json",
+            "contentSha256": "e4e69c8ad62ba1f6f3ec775b7d28299f27e078e5c57258494c69ec4f00f0e52e",
+            "answerSha256": "e4e69c8ad62ba1f6f3ec775b7d28299f27e078e5c57258494c69ec4f00f0e52e"
+          }
+        },
+        "fingerprint": "78cc3cdc79e3c3d99fbb9724819957bdfdc91eeb1bcf3933a6909b927f665f9c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-tabela-intervalo-total"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma tabela de tempos tem 6 ocorrências abaixo de 5 minutos, 11 entre 5 e menos de 10, e 8 com pelo menos 10. Quantas duraram menos de 10 minutos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "739a7a6e-4938-5202-a1ab-68f2a27d935c",
+              "content": {
+                "text": "17",
+                "resources": []
+              }
+            },
+            {
+              "id": "5e53030a-e12f-58e6-87b9-1c0103489e2b",
+              "content": {
+                "text": "11",
+                "resources": []
+              }
+            },
+            {
+              "id": "2f96d66f-c57d-56c9-a680-956d36f4b59a",
+              "content": {
+                "text": "19",
+                "resources": []
+              }
+            },
+            {
+              "id": "e8dabbb0-13de-522e-bfad-3d0098bb3efc",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "739a7a6e-4938-5202-a1ab-68f2a27d935c",
+          "resolution": {
+            "text": "1. O corte “menos de 10” reúne as duas primeiras faixas. 2. Some 6+11=17; a última faixa não atende à condição.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-tabela-intervalo-total.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-tabela-intervalo-total.json",
+            "contentSha256": "f9912f987024960f6311b72c402d2be57032324afb79fe06304c0b400a5d5303",
+            "answerSha256": "f9912f987024960f6311b72c402d2be57032324afb79fe06304c0b400a5d5303"
+          }
+        },
+        "fingerprint": "0f045c62b0ae135c873690fb1719485bc12625465a1b6803f1625d9cbbb1fb39",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-taxas-populacoes"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma tabela registra 40 ocorrências em população de 2.000 e 30 ocorrências em população de 1.000. Qual local tem maior taxa por habitante?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b2e3fc87-23c9-52eb-ab57-411e0dcdcc2c",
+              "content": {
+                "text": "O segundo, com 30%, contra 40%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9ec3599e-d595-5f56-88d2-b685888bb7dc",
+              "content": {
+                "text": "O segundo, com 3%, contra 2% do primeiro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "45e85407-2e8e-5dbf-a0e3-125d26274bff",
+              "content": {
+                "text": "O primeiro, pois 40 é maior que 30.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f92ad9dc-43b2-5b04-8212-8b77c4ff3941",
+              "content": {
+                "text": "Ambos têm a mesma taxa.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9ec3599e-d595-5f56-88d2-b685888bb7dc",
+          "resolution": {
+            "text": "1. Divida ocorrência pela respectiva população: 40/2.000=2% e 30/1.000=3%. 2. O segundo tem maior taxa, embora tenha menos ocorrências em números absolutos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-taxas-populacoes.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-taxas-populacoes.json",
+            "contentSha256": "c38e379156ce8a8904497fd9863c7a6997f3bd170f3a5e6c0f45c8ec6a35860f",
+            "answerSha256": "c38e379156ce8a8904497fd9863c7a6997f3bd170f3a5e6c0f45c8ec6a35860f"
+          }
+        },
+        "fingerprint": "b947289ebbfcf1164f2bf68d95dafe99f6deb04cf3c5c663d8a194366ef19076",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.mat-total-reconstruir-setor"
+        },
+        "content": {
+          "statement": {
+            "text": "Em um gráfico de setores, um setor de 72° representa 18 registros. Qual é o total de registros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c28d6781-ee02-56b3-87a7-84ba4d1efa57",
+              "content": {
+                "text": "90",
+                "resources": []
+              }
+            },
+            {
+              "id": "3120f897-fbdf-5c11-8716-953f17b12649",
+              "content": {
+                "text": "72",
+                "resources": []
+              }
+            },
+            {
+              "id": "35f86bf8-7131-52ce-828d-a8c44f4824ac",
+              "content": {
+                "text": "36",
+                "resources": []
+              }
+            },
+            {
+              "id": "b50920d2-2d5d-5579-934a-8c04d287db60",
+              "content": {
+                "text": "180",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c28d6781-ee02-56b3-87a7-84ba4d1efa57",
+          "resolution": {
+            "text": "1. O setor ocupa 72/360 = 1/5 do círculo. 2. Se um quinto vale 18, o total é 18 × 5 = 90. 72 confunde graus com registros; 36 e 180 corresponderiam a setores de 1/2 e 1/10 do círculo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M07.s.mat-total-reconstruir-setor.json",
+            "answerPath": "sources/admin.2026-11.M07.s.mat-total-reconstruir-setor.json",
+            "contentSha256": "0bc8efe0b08483a70136f86ff6011a58010292bfa1433c1ac23aeb9010c7aa58",
+            "answerSha256": "0bc8efe0b08483a70136f86ff6011a58010292bfa1433c1ac23aeb9010c7aa58"
+          }
+        },
+        "fingerprint": "03e34e99b8c40bf5d314edd040c441c501c05724e91c0d221eb55d8f92b2dc0c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.varg25-ti-q18"
+        },
+        "content": {
+          "statement": {
+            "text": "Um cliente está avaliando qual plano de internet escolher com base no seu consumo mensal de dados. Após orçar alguns planos, ele encontrou o seguinte:\n\nPlano | Franquia | Preço mensal R$ | Preço por MB excedente\nBásico | 2Gb | R$ 50,00 | R$ 0,80\nEssencial | 10Gb | R$ 89,99 | R$ 0,40\nPlatinum | 20Gb | R$ 101,00 | R$ 0,20\nPremium | 30Gb | R$ 129,90 | R$ 0,10\n\nO cliente estima que utilizará 15 GB de dados no mês. Sabendo que o custo total de cada plano é dado pela soma do preço mensal e do custo pelos dados excedentes, qual plano será mais econômico para esse cliente? Assinale a alternativa correta:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3635d0e3-9f61-5e1d-a72f-ec294b95f18b",
+              "content": {
+                "text": "Básico",
+                "resources": []
+              }
+            },
+            {
+              "id": "5fea3d26-09d1-5a86-988a-65266d097abd",
+              "content": {
+                "text": "Essencial",
+                "resources": []
+              }
+            },
+            {
+              "id": "fab144c7-1113-5d5b-811b-a83bb66a3ec9",
+              "content": {
+                "text": "Platinum",
+                "resources": []
+              }
+            },
+            {
+              "id": "5b3be885-3b64-5747-9427-a49b76985557",
+              "content": {
+                "text": "Premium",
+                "resources": []
+              }
+            },
+            {
+              "id": "ff0656c0-9703-50c8-8e61-808f71bcbc4f",
+              "content": {
+                "text": "Todos os planos têm o mesmo custo",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fab144c7-1113-5d5b-811b-a83bb66a3ec9",
+          "resolution": {
+            "text": "1. Lendo a tabela: Platinum (20 GB) e Premium (30 GB) cobrem os 15 GB sem excedente, custando R$ 101,00 e R$ 129,90; Essencial excede 5 GB (milhares de MB a R$ 0,40 cada) e Básico excede 13 GB a R$ 0,80 por MB, ambos muito acima de R$ 101,00. O mais barato é o Platinum. 2. Premium não tem excedente, mas sua mensalidade é maior; Básico e Essencial ficam caros pelo excedente; os custos não são iguais. Resposta: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Concurso Público 01/2025, TÉCNICO EM INFORMÁTICA, questão 18. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M07.s.varg25-ti-q18.json",
+            "answerPath": "sources/admin.2026-11.M07.s.varg25-ti-q18.json",
+            "contentSha256": "c6fcaa7d5e060cb1eb24da775ca01af3230bf80585870f91a42e2288f5178bff",
+            "answerSha256": "c6fcaa7d5e060cb1eb24da775ca01af3230bf80585870f91a42e2288f5178bff"
+          }
+        },
+        "fingerprint": "6a7d9b149e105122ffbfd9d383d2244555ae15081c073b51d4e4940927a78522",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M07.s.varg26-gest-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "Na tabela abaixo estão registradas as alturas da maioria dos estudantes de uma sala:\n\nIntervalo de altura em cm | Frequência (quantidade de estudantes)\n160 ├ 170 | 18\n170 ├ 180 | 11\n180 ├ 190 | 4\n\nSabendo que nessa sala há 38 estudantes e analisando as informações dadas na tabela, assinale a alternativa correta:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "49b59866-8951-52fc-b511-db70fe3a78db",
+              "content": {
+                "text": "Nessa sala há 5 estudantes com 190 cm ou mais de altura.",
+                "resources": []
+              }
+            },
+            {
+              "id": "15e72770-2d29-5bb3-82bc-543efa1c2a9b",
+              "content": {
+                "text": "Nessa sala há 5 estudantes com altura inferior a 160 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f2c991bc-7bda-5db8-87fb-d576b4082b9f",
+              "content": {
+                "text": "Não é possível afirmar as alturas dos estudantes que não estão inseridos na tabela.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1b5141c0-0264-5109-925b-bcf2916d8961",
+              "content": {
+                "text": "Se os estudantes que não estão inseridos na tabela tiverem altura igual ou maior que 170 cm e menor do que 180 cm, a quantidade nesse intervalo superará a quantidade do intervalo de 160 ├ 170.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b1777f35-f119-5ac5-ba6a-521b8776628d",
+              "content": {
+                "text": "A classe com maior frequência entre as alturas está no intervalo de 180 ├ 190.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f2c991bc-7bda-5db8-87fb-d576b4082b9f",
+          "resolution": {
+            "text": "1. A tabela soma 18 + 11 + 4 = 33 estudantes; os outros 5 não aparecem nela, e nada informa se medem menos de 160 cm ou 190 cm ou mais. Logo, não é possível afirmar suas alturas. 2. A e B afirmam algo que a tabela não permite saber; em D, a classe 170 ├ 180 passaria a 11 + 5 = 16, ainda menor que 18; em E, a maior frequência é a de 160 ├ 170 (18), não a de 180 ├ 190 (4). Resposta: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M07",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Exame Seletivo Interno 01/2026, COORDENADOR/ DIRETOR/ VICE-DIRETOR ESCOLAR, questão 19. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M07.s.varg26-gest-q19.json",
+            "answerPath": "sources/admin.2026-11.M07.s.varg26-gest-q19.json",
+            "contentSha256": "c7464b1aae83274adba4b1ac51e707255ae2bac9d772566b8ba00ef7077a9b0c",
+            "answerSha256": "c7464b1aae83274adba4b1ac51e707255ae2bac9d772566b8ba00ef7077a9b0c"
+          }
+        },
+        "fingerprint": "e2e70689dda7260667269a88eaa6f9c8ab2a01e1240ffc871a64efeacb172fec",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M07.s.fgv-canaa25-ase-q20.json",
+        "mediaType": "application/json",
+        "sha256": "c9e08dc5983d305a5afa12167bc28b4e4d192dcba014f7d1b9b7796613442ec0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQS4ifSx7ImlkIjoiYiIsInRleHQiOiJCLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRC4ifSx7ImlkIjoiZSIsInRleHQiOiJFLiJ9XSwiYXV0aG9yIjoiRkdWIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYW5hw6MgZG9zIENhcmFqw6FzIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDAxLzIwMjQsIEFnZW50ZSBkZSBTZXJ2acOnb3MgQWRtaW5pc3RyYXRpdm9zLCBxdWVzdMOjbyAyMC4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZGEgcHJvdmEgYXBsaWNhZGEgZW0gMTMvMDQvMjAyNSAoY29tcGlsYWRvKTsgcMOhZ2luYSAxLCBibG9jby90aXBvIGRvIGNhcmdvIGNvcnJlc3BvbmRlbnRlLCBxdWVzdMOjbyAyMCA9IEMgY29uZmVyaWRhIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTI7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9mZ3YtMjAyNi0xMS0xMi9mZ3YtY2FuYWEyMDI1LWdhYmFyaXRvLWRlZmluaXRpdm8tMTMtMDQucGRmIiwic2hhMjU2IjoiNmM4MmI1MDMzODIzNDA3NGY4YmU5NGJlM2E1OTY5NmUwMGUyZWNjYzA5ZTQ4YTIyZGE5ZDU4Nzk4Y2IyYjk0MSIsInVybCI6Imh0dHBzOi8vY29uaGVjaW1lbnRvLmZndi5ici9zaXRlcy9kZWZhdWx0L2ZpbGVzL2NvbmN1cnNvcy9jYW5hYS1kb3MtY2FyYWphcy1nYWJhcml0by1kZWZpbml0aXZvLWNvbXBpbGFkby0xMy4wNF8wLnBkZiJ9LCJib2FyZCI6IkZHViIsImJvb2tsZXQiOiJUaXBvIDEg4oCUIEJyYW5jYSDigJQgTWFuaMOjIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYW5hw6MgZG9zIENhcmFqw6FzIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDAxLzIwMjQiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImZndi1jYW5hYS0yMDI1LWFzZS9xMjAiLCJudW1iZXIiOiIyMCIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWwgKEFnZW50ZSBkZSBTZXJ2acOnb3MgQWRtaW5pc3RyYXRpdm9zKTsgcXVlc3TDo28gMjAgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNSByZW5kZXJpemFkYSAoZW51bmNpYWRvLCB0YWJlbGEsIGFsdGVybmF0aXZhcywgc8OtbWJvbG9zIGUgb3JkZW0pIGVtIDIwMjYtMTEtMTI7IHRhYmVsYSB0cmFuc2NyaXRhIGludGVncmFsbWVudGUgZW0gdGV4dG8sIHNlbSBwZXJkYSBkZSBkYWRvczsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvZmd2LTIwMjYtMTEtMTIvZmd2LWNhbmFhMjAyNS1hc2UtdGlwbzEucGRmIiwic2hhMjU2IjoiYjJiOTJjMzY1OTg3MDZmM2NjMjFmZmU5Y2FhNDY5ZmViZDQ3OWM1NWIzYzFmNGQ5MWE0YmJiYWIxNzkyYzQ5NyIsInVybCI6Imh0dHBzOi8vY29uaGVjaW1lbnRvLmZndi5ici9zaXRlcy9kZWZhdWx0L2ZpbGVzL2NvbmN1cnNvcy9hZ2VudGUtZGUtc2Vydmljb3MtYWRtaW5pc3RyYXRpdm9zY25tMTAxLXRpcG8tMS5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBlbSByZXVzZS1hc3Nlc3NtZW50Lm1kLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIChkYWRvcyBlbSB0YWJlbGEgZWxhYm9yYWRvcyBwZWxhIHByw7NwcmlhIGJhbmNhKSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJBZ2VudGUgZGUgU2VydmnDp29zIEFkbWluaXN0cmF0aXZvcyIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNX0sImlkIjoiZmd2LWNhbmFhMjUtYXNlLXEyMCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQ29tIHF1YXRybyB2YWxvcmVzLCBhIG1lZGlhbmEgw6kgYSBtw6lkaWEgZG9zIGRvaXMgY2VudHJhaXMgZGVwb2lzIGRlIG9yZGVuYXIgY2FkYSBsaW5oYTogQSAoMTgsIDE4LCAyMSwgMjMpIOKGkiAxOSw1OyBCICgxMiwgMTMsIDE1LCAyMCkg4oaSIDE0OyBDICgxNiwgMTksIDI1LCAyNSkg4oaSIDIyOyBEICgxNywgMTksIDIwLCAyMykg4oaSIDE5LDU7IEUgKDE5LCAyMSwgMjIsIDI0KSDihpIgMjEsNS4gQSBtYWlvciDDqSBhIGRhIHR1cm1hIEMuIDIuIEEgdHVybWEgRSB0ZW0gYSBtYWlvciBzb21hIGRlIGxlaXR1cmFzICg4NiksIG1hcyBtZWRpYW5hIDIxLDU7IEEgZSBEIGVtcGF0YW0gZW0gMTksNSBlIEIgdGVtIGEgbWVub3IgbWVkaWFuYS4gUmVzcG9zdGE6IGFsdGVybmF0aXZhIEMuIiwic3RhdGVtZW50IjoiTyBkaXJldG9yIGRlIHVtYSBlc2NvbGEgcmVnaXN0cm91IG8gbsO6bWVybyBkZSBsaXZyb3MgbGlkb3MgcGVsb3MgYWx1bm9zIGRlIDUgdHVybWFzIGFvIGxvbmdvIGRlIDQgbWVzZXMuXG5BIHRhYmVsYSBhYmFpeG8gYXByZXNlbnRhIG9zIGRhZG9zIG9idGlkb3MuXG5cblR1cm1hIHwgSmFuZWlybyB8IEZldmVyZWlybyB8IE1hcsOnbyB8IEFicmlsXG5BIHwgMTggfCAyMSB8IDIzIHwgMThcbkIgfCAxNSB8IDEzIHwgMTIgfCAyMFxuQyB8IDE2IHwgMTkgfCAyNSB8IDI1XG5EIHwgMTcgfCAyMCB8IDIzIHwgMTlcbkUgfCAxOSB8IDIyIHwgMjQgfCAyMVxuXG5BbyBsb25nbyBkZXNzZXMgcXVhdHJvIG1lc2VzLCBhIG1haW9yIG1lZGlhbmEgZGUgbGl2cm9zIGxpZG9zIGZvaSBhIGRhIHR1cm1hIiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.fgv-nav26-ptna-q30.json",
+        "mediaType": "application/json",
+        "sha256": "b61728f1bf6444e78926f5e5f61dde4d34da2737bbac5a7b3d9682ebf8f37179",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzUuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNTEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNTIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNjAuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiOTUuIn1dLCJhdXRob3IiOiJGR1Yg4oCUIE5BViBCcmFzaWwgU2VydmnDp29zIGRlIE5hdmVnYcOnw6NvIEHDqXJlYSBTLkEuIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIGRlIEFiZXJ0dXJhIG7CuiAwMS8yMDI2LCBQcm9maXNzaW9uYWwgVMOpY25pY28gZGUgTmF2ZWdhw6fDo28gQcOpcmVhIOKAlCBPcGVyYWRvciBkZSBUb3JyZSBkZSBDb250cm9sZSwgcXVlc3TDo28gMzAuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvIGRhIHByb3ZhIGFwbGljYWRhIGVtIDAyLzA4LzIwMjYsIHJldGlmaWNhZG8gZW0gMTAvMDkvMjAyNiAocmV0aWZpY2HDp8OjbyBhcGVuYXMgZGEgcXVlc3TDo28gNSBkZSBMw61uZ3VhIFBvcnR1Z3Vlc2EgZG8gbsOtdmVsIHN1cGVyaW9yKTsgcMOhZ2luYSAxMSwgYmxvY28vdGlwbyBkbyBjYXJnbyBjb3JyZXNwb25kZW50ZSwgcXVlc3TDo28gMzAgPSBBIGNvbmZlcmlkYSB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTEyOyBpdGVtIG7Do28gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvZmd2LTIwMjYtMTEtMTIvZmd2LW5hdmJyYXNpbDIwMjYtZ2FiYXJpdG8tZGVmaW5pdGl2by1yZXRpZmljYWRvLnBkZiIsInNoYTI1NiI6IjY3M2MxNzFhMTM2NzAwYTAyZjlhYTcyZWE4NWQ1ODY1MmMwM2U1YWE2MGUzOTc2MjRkMjM4OGI0MWMyZWFiZGIiLCJ1cmwiOiJodHRwczovL2NvbmhlY2ltZW50by5mZ3YuYnIvc2l0ZXMvZGVmYXVsdC9maWxlcy9jb25jdXJzb3MvZ2FiYXJpdG8tZGVmaW5pdGl2by1yZXRpZmljYWRvLW5hdi1icmFzaWwtMjAyNi5wZGYifSwiYm9hcmQiOiJGR1YiLCJib29rbGV0IjoiUHJvdmEgVGlwbyAxIOKAlCBNYW5ow6MiLCJjb21wZXRpdGlvbiI6Ik5BViBCcmFzaWwgU2VydmnDp29zIGRlIE5hdmVnYcOnw6NvIEHDqXJlYSBTLkEuIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIGRlIEFiZXJ0dXJhIG7CuiAwMS8yMDI2IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJmZ3YtbmF2YnJhc2lsLTIwMjYtcHRuYS9xMzAiLCJudW1iZXIiOiIzMCIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWwgKFByb2Zpc3Npb25hbCBUw6ljbmljbyBkZSBOYXZlZ2HDp8OjbyBBw6lyZWEg4oCUIE9wZXJhZG9yIGRlIFRvcnJlIGRlIENvbnRyb2xlKTsgcXVlc3TDo28gMzAgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgOSByZW5kZXJpemFkYSAoZW51bmNpYWRvLCB0YWJlbGEsIGFsdGVybmF0aXZhcywgc8OtbWJvbG9zIGUgb3JkZW0pIGVtIDIwMjYtMTEtMTI7IHRhYmVsYSB0cmFuc2NyaXRhIGludGVncmFsbWVudGUgZW0gdGV4dG8sIHNlbSBwZXJkYSBkZSBkYWRvczsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvZmd2LTIwMjYtMTEtMTIvZmd2LW5hdmJyYXNpbDIwMjYtcHRuYS10b3JyZS10aXBvMS5wZGYiLCJzaGEyNTYiOiI2NTExMzJlODczZjdhMDY4MDViMDU2MmI5ZWIxNmI1MGVjY2MxODA5N2VjOTY0YTMyOWYxYTI0ZDQ1NWE5ZDA1IiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL2NubTEwMS1wcm9maXNzaW9uYWwtdGVjbmljby1kZS1uYXZlZ2FjYW8tYWVyZWEtb3BlcmFkb3ItZGUtdG9ycmUtZGUtY29udHJvbGUtY25tMTAxLXRpcG8tMS5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBlbSByZXVzZS1hc3Nlc3NtZW50Lm1kLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIChkYWRvcyBlbSB0YWJlbGEgZWxhYm9yYWRvcyBwZWxhIHByw7NwcmlhIGJhbmNhKSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJQcm9maXNzaW9uYWwgVMOpY25pY28gZGUgTmF2ZWdhw6fDo28gQcOpcmVhIOKAlCBPcGVyYWRvciBkZSBUb3JyZSBkZSBDb250cm9sZSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoiZmd2LW5hdjI2LXB0bmEtcTMwIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZWphbSB4IG9zIGVmZXRpdm9zIGUgeSBvcyB0ZXJjZWlyaXphZG9zIGRlIE1HLiBQZWxhIHRhYmVsYSwgb3MgdG90YWlzIHPDo28gMzggKyAyMiArIHggPSA2MCArIHggZWZldGl2b3MgZSAxNCArIDgxICsgeSA9IDk1ICsgeSB0ZXJjZWlyaXphZG9zLiBDb21vIG9zIHRvdGFpcyBzw6NvIGlndWFpcywgNjAgKyB4ID0gOTUgKyB5LCBsb2dvIHgg4oiSIHkgPSA5NSDiiJIgNjAgPSAzNS4gMi4gNjAgZSA5NSBzw6NvIGFwZW5hcyBvcyBzdWJ0b3RhaXMgY29uaGVjaWRvcyBkZSBlZmV0aXZvcyBlIGRlIHRlcmNlaXJpemFkb3M7IDUxIGUgNTIgbsOjbyByZXN1bHRhbSBkYSBjb21wYXJhw6fDo28gZW50cmUgYXMgbGluaGFzIGRhIHRhYmVsYS4gUmVzcG9zdGE6IGFsdGVybmF0aXZhIEEuIiwic3RhdGVtZW50IjoiVW1hIGVtcHJlc2EgcG9zc3VpIHRyw6pzIGZpbGlhaXM6IHVtYSBubyBSaW8gZGUgSmFuZWlybywgdW1hIGVtIFPDo28gUGF1bG8gZSBhIG91dHJhIGVtIE1pbmFzIEdlcmFpcy4gQSB0YWJlbGEgYSBzZWd1aXIgbW9zdHJhIGFzIHF1YW50aWRhZGVzIGRlIGZ1bmNpb27DoXJpb3MgZWZldGl2b3MgZSB0ZXJjZWlyaXphZG9zLCBuYXMgZmlsaWFpcyBkbyBSaW8gZGUgSmFuZWlybyBlIFPDo28gUGF1bG8uXG5PcyBkYWRvcyByZWZlcmVudGVzIGFvcyBmdW5jaW9uw6FyaW9zIGRhIGZpbGlhbCBkZSBNaW5hcyBHZXJhaXMgbsOjbyBmb3JhbSBpbnNlcmlkb3MgbmEgdGFiZWxhLlxuXG4gfCBSSiB8IFNQIHwgTUdcbkVmZXRpdm9zIHwgMzggfCAyMiB8IFxuVGVyY2Vpcml6YWRvcyB8IDE0IHwgODEgfCBcblxuU2FiZS1zZSBxdWUgbyB0b3RhbCBkZSBmdW5jaW9uw6FyaW9zIGVmZXRpdm9zIGUgbyB0b3RhbCBkZSBmdW5jaW9uw6FyaW9zIHRlcmNlaXJpemFkb3MgbmFzIHRyw6pzIGZpbGlhaXMgc8OjbyBpZ3VhaXMuXG5OYSBmaWxpYWwgZGUgTWluYXMgR2VyYWlzLCBhIGRpZmVyZW7Dp2EgZW50cmUgbyBuw7ptZXJvIGRlIGZ1bmNpb27DoXJpb3MgZWZldGl2b3MgZSBvIG7Dum1lcm8gZGUgZnVuY2lvbsOhcmlvcyB0ZXJjZWlyaXphZG9zIMOpIGlndWFsIGEiLCJ0b3BpY0lkIjoiTTA3In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBjb21wbGVtZW50YXIgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYSBxdWVzdMOjbyDDqSB0cmFuc2NyaXRhIGRlIHByb3ZhIG9maWNpYWwsIGN1amEgb3JpZ2VtIGNvbnN0YSBkYSBwcm92ZW5pw6puY2lhIGRvIGl0ZW0iLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.fgv-pmesp25-sd-q32.json",
+        "mediaType": "application/json",
+        "sha256": "8aa2dc40aed648e8c14892f86d1f5a3497acded8fb2771df75c2595f174ffc92",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMi4ifSx7ImlkIjoiYiIsInRleHQiOiIzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjQuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNS4ifSx7ImlkIjoiZSIsInRleHQiOiI2LiJ9XSwiYXV0aG9yIjoiRkdWIOKAlCBQb2zDrWNpYSBNaWxpdGFyIGRvIEVzdGFkbyBkZSBTw6NvIFBhdWxvIOKAlCBDb25jdXJzbyBQw7pibGljbyBwYXJhIFNvbGRhZG8gUE0gZGUgMsKqIENsYXNzZSwgRWRpdGFsIG7CuiBEUC0zLzMyMS8yNCwgU29sZGFkbyBQTSBkZSAywqogQ2xhc3NlLCBxdWVzdMOjbyAzMi4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gKENvbXVuaWNhZG8gbsK6IERQLTA0LzMyMS8yNSwgRGnDoXJpbyBPZmljaWFsIGRvIEVzdGFkbyBkZSBTw6NvIFBhdWxvIGRlIDE0LzAzLzIwMjUpLCBwcm92YSBvYmpldGl2YSByZWFsaXphZGEgZW0gMTYvMDIvMjAyNTsgcMOhZ2luYSAxLCBibG9jby90aXBvIGRvIGNhcmdvIGNvcnJlc3BvbmRlbnRlLCBxdWVzdMOjbyAzMiA9IEQgY29uZmVyaWRhIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTI7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9mZ3YtMjAyNi0xMS0xMi9mZ3YtcG1lc3AyMDI1LWdhYmFyaXRvLWRlZmluaXRpdm8ucGRmIiwic2hhMjU2IjoiYmJmZDZlZTE3NjlmODYzNTZjODNkMGYxMTY4OGRjMTgzMGE0OWEwMDYzM2Y3ZjgxZWQ5ZjBmYWQ0N2FiMTg0MyIsInVybCI6Imh0dHBzOi8vY29uaGVjaW1lbnRvLmZndi5ici9zaXRlcy9kZWZhdWx0L2ZpbGVzL2NvbmN1cnNvcy9kb2Vjby0wNC4zMjEuMjUtZ2FiYXJpdG8tZGVmaW5pdGl2by1lZC4zLjMyMS4yNC5wZGYifSwiYm9hcmQiOiJGR1YiLCJib29rbGV0IjoiVGlwbyAxIOKAlCBCcmFuY2Eg4oCUIFRhcmRlIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBNaWxpdGFyIGRvIEVzdGFkbyBkZSBTw6NvIFBhdWxvIOKAlCBDb25jdXJzbyBQw7pibGljbyBwYXJhIFNvbGRhZG8gUE0gZGUgMsKqIENsYXNzZSwgRWRpdGFsIG7CuiBEUC0zLzMyMS8yNCIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiZmd2LXBtZXNwLTIwMjUtc29sZGFkby9xMzIiLCJudW1iZXIiOiIzMiIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWwgKFNvbGRhZG8gUE0gZGUgMsKqIENsYXNzZSk7IHF1ZXN0w6NvIDMyIGNvbmZlcmlkYSB2aXN1YWxtZW50ZSBuYSBww6FnaW5hIDUgcmVuZGVyaXphZGEgKGVudW5jaWFkbywgdGFiZWxhLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKSBlbSAyMDI2LTExLTEyOyB0YWJlbGEgdHJhbnNjcml0YSBpbnRlZ3JhbG1lbnRlIGVtIHRleHRvLCBzZW0gcGVyZGEgZGUgZGFkb3M7IGNvcnJpZ2lkYXMgYXBlbmFzIHF1ZWJyYXMgZGUgbGluaGEuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2Zndi0yMDI2LTExLTEyL2Zndi1wbWVzcDIwMjUtc29sZGFkby10aXBvMS5wZGYiLCJzaGEyNTYiOiIwNWNjNDc0M2ExODFjMGY0OTEwMjc1OWI3MzZiZDJlNzQyN2IyZDkyMmUyMzRmN2IzODRjNjA5N2Q0ZGJjNjVkIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL3NvbGRhZG8tcG0tZGUtMmEtY2xhc3NlLWNubTAwMS10aXBvLTFfMC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBlbSByZXVzZS1hc3Nlc3NtZW50Lm1kLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIChkYWRvcyBlbSB0YWJlbGEgZWxhYm9yYWRvcyBwZWxhIHByw7NwcmlhIGJhbmNhKSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJTb2xkYWRvIFBNIGRlIDLCqiBDbGFzc2UiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjV9LCJpZCI6ImZndi1wbWVzcDI1LXNkLXEzMiIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gU29tYW5kbyBvcyB2YWxvcmVzIGRhIHRhYmVsYTogODkgKyA2MyArIDc3ICsgODkgKyAxMDAgKyAxMDQgKyA5OSA9IDYyMTsgYSBtw6lkaWEgw6kgNjIxIMO3IDcg4omIIDg4LDcgZmxleMO1ZXMuIEZpY2FtIGFjaW1hIGRlc3NlIHZhbG9yIGRvbWluZ28gKDg5KSwgcXVhcnRhICg4OSksIHF1aW50YSAoMTAwKSwgc2V4dGEgKDEwNCkgZSBzw6FiYWRvICg5OSk6IDUgZGlhcy4gMi4gU8OzIHNlZ3VuZGEgKDYzKSBlIHRlcsOnYSAoNzcpIGZpY2FtIGFiYWl4byBkYSBtw6lkaWE7IGNvbnRhciBhcGVuYXMgb3MgZGlhcyBjb20gMTAwIG91IG1haXMgKDIpIG91IGV4Y2x1aXIgb3MgZG9pcyBkaWFzIGNvbSA4OSwgcXVlIHN1cGVyYW0gYSBtw6lkaWEgcG9yIHBvdWNvICgzKSwgbGV2YSDDoHMgYWx0ZXJuYXRpdmFzIGVycmFkYXM7IDQgZSA2IHRhbWLDqW0gbsOjbyBjb3JyZXNwb25kZW0gw6AgY29udGFnZW0uIFJlc3Bvc3RhOiBhbHRlcm5hdGl2YSBELiIsInN0YXRlbWVudCI6IlJvc2lsZW5lIGZheiBmbGV4w7VlcyB0b2RvIGRpYSBhbyBhY29yZGFyLiBBIHRhYmVsYSBhIHNlZ3VpciBtb3N0cmEgbyBuw7ptZXJvIGRlIGZsZXjDtWVzIHF1ZSBSb3NpbGVuZSBmZXogZW0gY2FkYSBkaWEgZGUgdW1hIGRldGVybWluYWRhIHNlbWFuYS5cblxuRG9taW5nbyB8IDg5XG5TZWd1bmRhLWZlaXJhIHwgNjNcblRlcsOnYS1mZWlyYSB8IDc3XG5RdWFydGEtZmVpcmEgfCA4OVxuUXVpbnRhLWZlaXJhIHwgMTAwXG5TZXh0YS1mZWlyYSB8IDEwNFxuU8OhYmFkbyB8IDk5XG5cbk5lc3NhIHNlbWFuYSwgbyBuw7ptZXJvIGRlIGRpYXMgZW0gcXVlIFJvc2lsZW5lIGZleiBtYWlzIGZsZXjDtWVzIGRvIHF1ZSBhIG3DqWRpYSBkYSBzZW1hbmEgZm9pIiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-amplitude-tabela.json",
+        "mediaType": "application/json",
+        "sha256": "d1fe66866e9581524daa4e32ec339b4d97593109a038e2abb07c1ee870ea4b4b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNTMifSx7ImlkIjoiYiIsInRleHQiOiIyNiw1In0seyJpZCI6ImMiLCJ0ZXh0IjoiMzkifSx7ImlkIjoiZCIsInRleHQiOiIyNSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtYW1wbGl0dWRlLXRhYmVsYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQW1wbGl0dWRlIMOpIG3DoXhpbW8gbWVub3MgbcOtbmltby4gMi4gQXNzaW0gMzniiJIxND0yNTsgYSBtw6lkaWEgZG9zIGV4dHJlbW9zIGNvcnJlc3BvbmRlIGEgb3V0cmEgbWVkaWRhLiIsInN0YXRlbWVudCI6IlVtYSBzw6lyaWUgcG9zc3VpIG3DrW5pbW8gMTQgZSBtw6F4aW1vIDM5LiBRdWFsIMOpIHN1YSBhbXBsaXR1ZGUgdG90YWw/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-barras-comparar-diferencas.json",
+        "mediaType": "application/json",
+        "sha256": "d2760f93434b7802e3551ca64efccf7642b840a3a967d37e65aee2cc34d45dd3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTgifSx7ImlkIjoiYiIsInRleHQiOiIxMiJ9LHsiaWQiOiJjIiwidGV4dCI6IjI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiNiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtYmFycmFzLWNvbXBhcmFyLWRpZmVyZW5jYXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgbcOpZGlhIGRlIEEgZSBDIMOpICg3MiArIDYwKS8yID0gNjYuIDIuIEIgdGVtIDQ4IGUgcHJlY2lzYSBkZSA2NiDiiJIgNDggPSAxOCB1bmlkYWRlcy4gMTIgw6kgYSBkaXN0w6JuY2lhIGRlIEIgYXTDqSBDOyAyNCwgYXTDqSBBOyA2IMOpIGEgZGlzdMOibmNpYSBkZSBDIGF0w6kgYSBtw6lkaWEuIiwic3RhdGVtZW50IjoiQXMgdmVuZGFzIGRlIEEsIEIgZSBDIHPDo28gNzIsIDQ4IGUgNjAsIGVtIHVuaWRhZGVzLiBRdWFudGFzIHVuaWRhZGVzIEIgcHJlY2lzYSBhY3Jlc2NlbnRhciBwYXJhIGF0aW5naXIgYSBtw6lkaWEgZGUgQSBlIEMsIG1hbnRlbmRvIEEgZSBDIGZpeGFzPyIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-barras-empilhadas.json",
+        "mediaType": "application/json",
+        "sha256": "105d4d82b2c241d51e735c39fc834e2a9eddf6a61b45a9501698e29d1488f725",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjbihZQlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNDAlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjAlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNjAlIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1iYXJyYXMtZW1waWxoYWRhcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSBhbHR1cmEgdG90YWwgY29ycmVzcG9uZGUgYSAzMCsyMD01MCBjYXNvcy4gMi4gT3MgMjAgcGVuZGVudGVzIHPDo28gMjAvNTA9NDAlOyBkaXZpZGlyIHBvciAzMCBjb21wYXJhcmlhIHBlbmRlbnRlcyBjb20gY29uY2x1w61kb3MuIiwic3RhdGVtZW50IjoiVW0gZ3LDoWZpY28gZGUgYmFycmFzIGVtcGlsaGFkYXMgbW9zdHJhLCBwYXJhIHVtYSB1bmlkYWRlLCAzMCBjYXNvcyBjb25jbHXDrWRvcyBlIDIwIHBlbmRlbnRlcy4gUXVlIHBlcmNlbnR1YWwgZGEgYmFycmEgdG90YWwgY29ycmVzcG9uZGUgYW9zIHBlbmRlbnRlcz8iLCJ0b3BpY0lkIjoiTTA3In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-dados-origem-nao-zero.json",
+        "mediaType": "application/json",
+        "sha256": "f01a99508b764f2bd8e8e479d3da63372c8d82ad20073f26a8f00c0ada0934a3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNyB1bmlkYWRlcy9kaWEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMyB1bmlkYWRlcy9kaWEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNSB1bmlkYWRlcy9kaWEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjAgdW5pZGFkZXMvZGlhLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtZGFkb3Mtb3JpZ2VtLW5hby16ZXJvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHZhcmlhw6fDo28gZG8gdmFsb3Igw6kgMzXiiJIxNT0yMCwgZW0gN+KIkjM9NCBkaWFzLiAyLiBBIHRheGEgw6kgMjAvND01IHVuaWRhZGVzIHBvciBkaWE7IHVzZSBkaWZlcmVuw6dhcyBlbnRyZSBjb29yZGVuYWRhcywgbsOjbyBzb21lbnRlIG9zIHZhbG9yZXMgZmluYWlzLiIsInN0YXRlbWVudCI6IlVtYSBsaW5oYSBjb21lw6dhIG5vIHBvbnRvICgzIGRpYXMsIDE1IHVuaWRhZGVzKSBlIHRlcm1pbmEgZW0gKDcgZGlhcywgMzUgdW5pZGFkZXMpLiBTZSBhIHRheGEgw6kgY29uc3RhbnRlIG5lc3NlIHRyZWNobywgcXVhbCDDqSBvIGNyZXNjaW1lbnRvIHBvciBkaWE/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-duas-series-diferenca.json",
+        "mediaType": "application/json",
+        "sha256": "c6ab12d84d9b915a77405f0af34ae3b3b012a589fd78f2f1dd41a7aa5b1c6314",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTm8gbcOqcyAxLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik5vIG3DqnMgMi4ifSx7ImlkIjoiYyIsInRleHQiOiJPcyB0csOqcyBzYWxkb3Mgc8OjbyBpZ3VhaXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTm8gbcOqcyAzLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtZHVhcy1zZXJpZXMtZGlmZXJlbmNhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPcyBzYWxkb3Mgc8OjbyAyMCwgMjAgZSAxMCwgcmVzcGVjdGl2YW1lbnRlLiAyLiBPIG1lbm9yIMOpIDEwIG5vIG3DqnMgMzsgcmVjZWl0YSBtYWlzIGFsdGEgbsOjbyBnYXJhbnRlIG1haW9yIHNhbGRvLiIsInN0YXRlbWVudCI6Ik5vcyBtZXNlcyAxLCAyIGUgMywgYXMgcmVjZWl0YXMgc8OjbyAxMDAsIDEzMCBlIDE1MCBlIGFzIGRlc3Blc2FzLCA4MCwgMTEwIGUgMTQwLCByZXNwZWN0aXZhbWVudGUuIEVtIHF1YWwgbcOqcyBvIHNhbGRvIHJlY2VpdGEgbWVub3MgZGVzcGVzYSBmb2kgbWVub3I/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-dupla-entrada-condicional.json",
+        "mediaType": "application/json",
+        "sha256": "0257e11a8dd3b732e92fe320edd9438a401d362970dd2dc55c96ba8e4624fc02",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNzAlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNzUlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNjAlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMzAlIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1kdXBsYS1lbnRyYWRhLWNvbmRpY2lvbmFsIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBSZXN0cmluamEgbyBkZW5vbWluYWRvciBhbyB0dXJubyBzb2xpY2l0YWRvOiAxNSsxMD0yNS4gMi4gQSBhcHJvdmHDp8OjbyBkYSB0YXJkZSDDqSAxNS8yNT02MCU7IHVzYXIgdG9kb3Mgb3MgNTAgZXN0dWRhbnRlcyBtdWRhIGEgY29uZGnDp8Ojby4iLCJzdGF0ZW1lbnQiOiJVbWEgdGFiZWxhIHJlZ2lzdHJhOiB0dXJubyBtYW5ow6MsIDIwIGFwcm92YWRvcyBlIDUgcmVwcm92YWRvczsgdGFyZGUsIDE1IGFwcm92YWRvcyBlIDEwIHJlcHJvdmFkb3MuIEVudHJlIG9zIGVzdHVkYW50ZXMgZGEgdGFyZGUsIHF1YWwgw6kgbyBwZXJjZW50dWFsIGRlIGFwcm92YWRvcz8iLCJ0b3BpY0lkIjoiTTA3In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-escala-nao-uniforme.json",
+        "mediaType": "application/json",
+        "sha256": "9e3b972e7d66106ed94f59aad198ae3f62ad5b0167202ba9d936a1045dffa533",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyB2YWxvciAxMDAgbsOjbyBwb2RlIGFwYXJlY2VyIGVtIGdyw6FmaWNvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFzIGRpc3TDom5jaWFzIGlndWFpcyBuw6NvIGNvcnJlc3BvbmRlbSBhIGluY3JlbWVudG9zIG51bcOpcmljb3MgaWd1YWlzLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik8gZWl4byBjb21lw6dhIGVtIHplcm8sIG8gcXVlIMOpIHByb2liaWRvLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik8gZ3LDoWZpY28gbmVjZXNzYXJpYW1lbnRlIHJlcHJlc2VudGEgdmFsb3JlcyBuZWdhdGl2b3MuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1lc2NhbGEtbmFvLXVuaWZvcm1lIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBFbSB1bWEgZXNjYWxhIGxpbmVhciB1bmlmb3JtZSwgaW50ZXJ2YWxvcyB2aXN1YWlzIGlndWFpcyBkZXZlbSByZXByZXNlbnRhciBkaWZlcmVuw6dhcyBpZ3VhaXMuIDIuIE8gc2FsdG8gZGUgMjAgcGFyYSAxMDAgcXVlYnJhIGVzc2EgY29ycmVzcG9uZMOqbmNpYSBzZW0gYXZpc287IG8gcHJvYmxlbWEgZXN0w6EgbmEgZXNjYWxhLCBuw6NvIG5vIG7Dum1lcm8gMTAwLiIsInN0YXRlbWVudCI6IkVtIHVtIGdyw6FmaWNvLCBtYXJjYXMgaWd1YWxtZW50ZSBlc3Bhw6dhZGFzIG5vIGVpeG8gdmVydGljYWwgc8OjbyByb3R1bGFkYXMgMCwgMTAsIDIwIGUgMTAwLiBTZW0gaW5kaWNhw6fDo28gZGUgcXVlYnJhIG91IGVzY2FsYSBlc3BlY2lhbCwgcXVhbCDDqSBvIHByb2JsZW1hPyIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-frequencia-relativa-tabela.json",
+        "mediaType": "application/json",
+        "sha256": "2be90c777d393475f3896da7920afad9c421e8dc75d9bd04763571cc7a2fd4a7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDUlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTglIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMzAlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNTUlIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC1mcmVxdWVuY2lhLXJlbGF0aXZhLXRhYmVsYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTyB0b3RhbCDDqSAxOCsxMisxMD00MC4gMi4gQmljaWNsZXRhIHJlcHJlc2VudGEgMTgvNDA9NDUlOyAxOCDDqSBmcmVxdcOqbmNpYSBhYnNvbHV0YSwgbsOjbyBwZXJjZW50dWFsLiIsInN0YXRlbWVudCI6IlVtYSB0YWJlbGEgaW5mb3JtYSBhcyBmcmVxdcOqbmNpYXM6IGJpY2ljbGV0YSAxOCwgw7RuaWJ1cyAxMiBlIGNhbWluaGFkYSAxMC4gUXVhbCDDqSBhIGZyZXF1w6puY2lhIHJlbGF0aXZhIGRlIGJpY2ljbGV0YT8iLCJ0b3BpY0lkIjoiTTA3In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-grafico-causalidade.json",
+        "mediaType": "application/json",
+        "sha256": "3ebfdbaf8c63fcf6032bf622b399af9d699b454887b7b38d7aa1e0f704b2d3df",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2ltLCBzZSBhbWJhcyBmb3JlbSBtZWRpZGFzIGVtIG7Dum1lcm9zLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik7Do287IGFzc29jaWHDp8OjbyBpc29sYWRhIG7Do28gZGVtb25zdHJhIGNhdXNhbGlkYWRlLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlNpbSwgc2VtcHJlIHF1ZSBvcyBwb250b3Mgc29iZW0uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2ltLCBzZSBob3V2ZXIgbWFpcyBkZSBkZXogcG9udG9zLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtZ3JhZmljby1jYXVzYWxpZGFkZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gVW1hIHRlbmTDqm5jaWEgY29uanVudGEgcG9kZSB0ZXIgb3V0cmFzIGV4cGxpY2HDp8O1ZXMsIGNvbW8gZmF0b3IgY29tdW0gb3Ugc2VsZcOnw6NvLiAyLiBPIGdyw6FmaWNvIGRlc2NyZXZlIGFzc29jaWHDp8OjbyBlIG7Do28gZXN0YWJlbGVjZSBzb3ppbmhvIGRpcmXDp8OjbyBvdSBtZWNhbmlzbW8gY2F1c2FsLiIsInN0YXRlbWVudCI6IlVtIGdyw6FmaWNvIGRlIGRpc3BlcnPDo28gbW9zdHJhIGFzc29jaWHDp8OjbyBlbnRyZSBkdWFzIHZhcmnDoXZlaXMgb2JzZXJ2YWRhcy4gQXBlbmFzIGlzc28gZGVtb25zdHJhIHF1ZSB1bWEgY2F1c2EgYSBvdXRyYT8iLCJ0b3BpY0lkIjoiTTA3In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-grafico-linhas-escolha.json",
+        "mediaType": "application/json",
+        "sha256": "fc2d05fc02882a897a8badcf1157eb1a017b1827ce83e5703501f72c09a33d3b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiR3LDoWZpY28gZGUgc2V0b3JlcyBjb20gMjQgZmF0aWFzIHNlbSBvcmRlbSB0ZW1wb3JhbC4ifSx7ImlkIjoiYiIsInRleHQiOiJVbWEgw7puaWNhIGJhcnJhIGNvbSBvIHRvdGFsIGRvcyBkb2lzIGFub3MuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiRGlhZ3JhbWEgc2VtIHLDs3R1bG9zIG91IGVzY2FsYS4ifSx7ImlkIjoiZCIsInRleHQiOiJHcsOhZmljbyBkZSBsaW5oYXMgY29tIG8gdGVtcG8gbm8gZWl4byBob3Jpem9udGFsLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtZ3JhZmljby1saW5oYXMtZXNjb2xoYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSB2YXJpw6F2ZWwgZGUgaW50ZXJlc3NlIGVzdMOhIG9yZGVuYWRhIG5vIHRlbXBvLiAyLiBMaW5oYXMgY29tIGVpeG8gdGVtcG9yYWwgcGVybWl0ZW0gb2JzZXJ2YXIgdGVuZMOqbmNpYXMgZSBtdWRhbsOnYXMgZW50cmUgbWVzZXM7IHVtIHRvdGFsIMO6bmljbyBwZXJkZSBlc3NhIGV2b2x1w6fDo28uIiwic3RhdGVtZW50IjoiUXVhbCByZXByZXNlbnRhw6fDo28gw6kgZXNwZWNpYWxtZW50ZSBhZGVxdWFkYSBwYXJhIGRlc3RhY2FyIGEgZXZvbHXDp8OjbyBtZW5zYWwgZGUgdW1hIG1lc21hIG1lZGlkYSBhbyBsb25nbyBkZSBkb2lzIGFub3M/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-histograma-larguras-distintas.json",
+        "mediaType": "application/json",
+        "sha256": "998a649a26be8d8f43e27fc42d9cdf73b130b2c1931c03d60e5366e227204938",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNCBlIDMsIHJlc3BlY3RpdmFtZW50ZS4ifSx7ImlkIjoiYiIsInRleHQiOiIyMCBlIDMwLCByZXNwZWN0aXZhbWVudGUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNCBlIDYsIHJlc3BlY3RpdmFtZW50ZS4ifSx7ImlkIjoiZCIsInRleHQiOiI1IGUgMTAsIHJlc3BlY3RpdmFtZW50ZS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LWhpc3RvZ3JhbWEtbGFyZ3VyYXMtZGlzdGludGFzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBcyBsYXJndXJhcyBkYXMgY2xhc3NlcyBzw6NvIDUgZSAxMC4gMi4gQXMgYWx0dXJhcyBkZXZlbSBzZXIgMjAvNT00IGUgMzAvMTA9MzsgYXNzaW0gYXMgw6FyZWFzIHJlcHJvZHV6ZW0gMjAgZSAzMCBhcGVzYXIgZGUgYSBzZWd1bmRhIGJhcnJhIHNlciBtYWlzIGxhcmdhLiIsInN0YXRlbWVudCI6IlVtIGhpc3RvZ3JhbWEgcmVwcmVzZW50YSBmcmVxdcOqbmNpYXMgcG9yIMOhcmVhcyBkYXMgYmFycmFzLiBBIGNsYXNzZSBkZSAwIGEgbWVub3MgZGUgNSB0ZW0gZnJlcXXDqm5jaWEgMjA7IGEgY2xhc3NlIGRlIDUgYSBtZW5vcyBkZSAxNSB0ZW0gZnJlcXXDqm5jaWEgMzAuIFF1YWlzIGFsdHVyYXMgcHJlc2VydmFtIGVzc2FzIMOhcmVhcywgdXNhbmRvIGFsdHVyYT1mcmVxdcOqbmNpYS9sYXJndXJhPyIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-interpolacao-linear-informada.json",
+        "mediaType": "application/json",
+        "sha256": "58a60f26006fe1d81dd6419a8b3809a83b18c4f71e5a1a624b3f11a6fe98c182",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDAgTC4ifSx7ImlkIjoiYiIsInRleHQiOiI2MCBMLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjEwMCBMLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjUwIEwuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1pbnRlcnBvbGFjYW8tbGluZWFyLWluZm9ybWFkYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gUXVhdHJvIGhvcmFzIMOpIG8gcG9udG8gbcOpZGlvIGRlIDIgZSA2LiAyLiBDb20gbGluZWFyaWRhZGUgZXhwbGljaXRhbWVudGUgaW5mb3JtYWRhLCBvIHZvbHVtZSDDqSBhIG3DqWRpYSBkb3MgZXh0cmVtb3M6ICgzMCs3MCkvMj01MCBMLiIsInN0YXRlbWVudCI6IlVtIGdyw6FmaWNvIGRlY2xhcmEgY3Jlc2NpbWVudG8gbGluZWFyIGVudHJlIG9zIHBvbnRvcyAoMiBob3JhcywgMzAgTCkgZSAoNiBob3JhcywgNzAgTCkuIFF1YWwgdm9sdW1lIGNvcnJlc3BvbmRlIGEgNCBob3Jhcz8iLCJ0b3BpY0lkIjoiTTA3In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-mediana-frequencias.json",
+        "mediaType": "application/json",
+        "sha256": "d17c3438ac7ef0c40606676a953bd1c9f994aed85b74c1557349049784716a99",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMyJ9LHsiaWQiOiJiIiwidGV4dCI6IjIsMSJ9LHsiaWQiOiJjIiwidGV4dCI6IjIifSx7ImlkIjoiZCIsInRleHQiOiIxIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1tZWRpYW5hLWZyZXF1ZW5jaWFzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBOYSBsaXN0YSBvcmRlbmFkYSwgbyB2YWxvciAxIG9jdXBhIHBvc2nDp8O1ZXMgMeKAkzIsIG8gMiBvY3VwYSAz4oCTNyBlIG8gMyBvY3VwYSA44oCTMTAuIDIuIEFzIHBvc2nDp8O1ZXMgY2VudHJhaXMgNSBlIDYgdmFsZW0gYW1iYXMgMjsgYSBtZWRpYW5hIMOpIDIuIiwic3RhdGVtZW50IjoiVW1hIHRhYmVsYSB0ZW0gdmFsb3JlcyAxLCAyIGUgMyBjb20gZnJlcXXDqm5jaWFzIDIsIDUgZSAzLCByZXNwZWN0aXZhbWVudGUuIFF1YWwgw6kgYSBtZWRpYW5hIGRvcyBkZXogcmVnaXN0cm9zPyIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-ordenar-mediana-par.json",
+        "mediaType": "application/json",
+        "sha256": "74a9848cebb8c4da656ceaef8c5ce393d378f85b7ec17e03d4d5dc05326682f9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNSJ9LHsiaWQiOiJiIiwidGV4dCI6IjkifSx7ImlkIjoiYyIsInRleHQiOiI4LDYifSx7ImlkIjoiZCIsInRleHQiOiI3In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1vcmRlbmFyLW1lZGlhbmEtcGFyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPcmRlbmUgb3MgdmFsb3JlczogMiwgNSwgNywgOSwgMjAuIDIuIE8gdGVybW8gY2VudHJhbCDDqSA3OyBhIG9yZGVtIGRlIGFwcmVzZW50YcOnw6NvIG7Do28gZGV0ZXJtaW5hIG8gY2VudHJvIGVzdGF0w61zdGljby4iLCJzdGF0ZW1lbnQiOiJPcyBjaW5jbyB2YWxvcmVzIG9ic2VydmFkb3Mgc8OjbyA5LCAyLCA3LCA1IGUgMjAuIFF1YWwgw6kgYSBtZWRpYW5hPyIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-percentuais-total-parcial.json",
+        "mediaType": "application/json",
+        "sha256": "2dadcf0f96d031c064a765bc33e33d9ad51f7b6f62bc4b7e99dbf5501db7af8b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzAifSx7ImlkIjoiYiIsInRleHQiOiIyMDAifSx7ImlkIjoiYyIsInRleHQiOiIxNzAifSx7ImlkIjoiZCIsInRleHQiOiIxODUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXBlcmNlbnR1YWlzLXRvdGFsLXBhcmNpYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEFzIGNhdGVnb3JpYXMgbW9zdHJhZGFzIHJlcHJlc2VudGFtIDEwMCUg4oiSIDE1JSA9IDg1JS4gMi4gT2l0ZW50YSBlIGNpbmNvIHBvciBjZW50byBkZSAyMDAgc8OjbyAxNzAgcGFydGljaXBhbnRlcy4gMzAgw6kgYSBjYXRlZ29yaWEgb21pdGlkYTsgMjAwIMOpIG8gdG90YWw7IDE4NSBzdWJ0cmFpIDE1IHBhcnRpY2lwYW50ZXMgZW0gdmV6IGRlIDE1JS4iLCJzdGF0ZW1lbnQiOiJVbWEgcGVzcXVpc2EgZGUgcmVzcG9zdGEgw7puaWNhIHRldmUgMjAwIHBhcnRpY2lwYW50ZXM7IHVtIGdyw6FmaWNvIG9taXRpdSBhIGNhdGVnb3JpYSDigJxvdXRyb3PigJ0sIGRlIDE1JS4gQXMgZGVtYWlzIGZhdGlhcyBzb21hbSBxdWFudG9zIHBhcnRpY2lwYW50ZXM/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-percentual-incompativel.json",
+        "mediaType": "application/json",
+        "sha256": "77cac1fc7abe59ee6f4e869f8972a96e3132d084b31facf98bd53d95f889da3a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiT3MgcsOzdHVsb3Mgc8OjbyBpbmNvbXBhdMOtdmVpcywgcG9pcyBzb21hbSAxMDUlLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik9zIHLDs3R1bG9zIHPDo28gb2JyaWdhdG9yaWFtZW50ZSBjb3JyZXRvcy4ifSx7ImlkIjoiYyIsInRleHQiOiJGYWx0YSB1bWEgZmF0aWEgZGUgNSUuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiT3MgZGFkb3MgcHJvdmFtIHJlc3Bvc3RhcyBtw7psdGlwbGFzLCBlbWJvcmEgYSBwZXJndW50YSBzZWphIMO6bmljYS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXBlcmNlbnR1YWwtaW5jb21wYXRpdmVsIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBQYXJ0ZXMgZXhjbHVzaXZhcyBkZSB1bSB0b3RhbCBkZXZlbSBzb21hciBleGF0YW1lbnRlIDEwMCUgbmFzIGNvbmRpw6fDtWVzIGluZm9ybWFkYXMuIDIuIE9zIHLDs3R1bG9zIHNvbWFtIDEwNSUsIHBvcnRhbnRvIGjDoSBpbmNvbnNpc3TDqm5jaWE7IHVtYSBmYXRpYSBhZGljaW9uYWwgYWdyYXZhcmlhIG8gZXhjZXNzby4iLCJzdGF0ZW1lbnQiOiJVbSBncsOhZmljbyBkZSBzZXRvcmVzIGRlIHJlc3Bvc3RhIMO6bmljYSBhcHJlc2VudGEgZmF0aWFzIHJvdHVsYWRhcyA0MCUsIDM1JSBlIDMwJSwgc2VtIG91dHJhcyBjYXRlZ29yaWFzIG5lbSBhcnJlZG9uZGFtZW50by4gUXVhbCBjb25jbHVzw6NvIMOpIGNvcnJldGE/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-percentual-multiplas-respostas.json",
+        "mediaType": "application/json",
+        "sha256": "2a78428cbad336ac427450a219b602cbd6e8d74bdf692327f3f92497e5e90bf0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTmVuaHVtYSBwZXNzb2EgZXNjb2xoZXUgYXMgZHVhcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBIHNvbWEgc3VwZXJpb3IgYSAxMDAlIMOpIHBvc3PDrXZlbCBwb3JxdWUgdW1hIHBlc3NvYSBwb2RlIGVzY29saGVyIGFtYmFzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkjDoSBuZWNlc3NhcmlhbWVudGUgZXJybyBubyBncsOhZmljby4ifSx7ImlkIjoiZCIsInRleHQiOiJBcyBjYXRlZ29yaWFzIHPDo28gbmVjZXNzYXJpYW1lbnRlIGRpc2p1bnRhcy4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LXBlcmNlbnR1YWwtbXVsdGlwbGFzLXJlc3Bvc3RhcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gRW0gcmVzcG9zdGFzIG3Dumx0aXBsYXMsIHVtYSBwZXNzb2EgcG9kZSBlbnRyYXIgbmFzIGR1YXMgY29udGFnZW5zLiAyLiBQb3J0YW50byA2MCUrNTUlIG7Do28gcHJlY2lzYSBzZXIgMTAwJTsgb3MgcGVyY2VudHVhaXMgbsOjbyBzw6NvIHBhcnRlcyBleGNsdXNpdmFzIGRlIHVtIHNldG9yIGNpcmN1bGFyLiIsInN0YXRlbWVudCI6IkVtIHVtYSBwZXNxdWlzYSBxdWUgcGVybWl0ZSBtYXJjYXIgdsOhcmlhcyBvcMOnw7VlcywgNjAlIGVzY29saGVyYW0gQSBlIDU1JSBlc2NvbGhlcmFtIEIuIFF1YWwgaW50ZXJwcmV0YcOnw6NvIMOpIGNvcnJldGE/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-serie-indice-base.json",
+        "mediaType": "application/json",
+        "sha256": "e4e69c8ad62ba1f6f3ec775b7d28299f27e078e5c57258494c69ec4f00f0e52e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUXVlZGEgZGUgMjUlLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkF1bWVudG8gZGUgNSUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQXVtZW50byBkZSAyNSUgZW0gcmVsYcOnw6NvIGFvIHBlcsOtb2RvLWJhc2UuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXVtZW50byBkZSAxMjUlLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtc2VyaWUtaW5kaWNlLWJhc2UiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE5hIGJhc2UgMTAwLCBvIHZhbG9yIDEwMCBjb3JyZXNwb25kZSBhbyBuw612ZWwgaW5pY2lhbC4gMi4gTyBub3ZvIMOtbmRpY2UgMTI1IHJlcHJlc2VudGEgZmF0b3IgMSwyNSBlIGNyZXNjaW1lbnRvIGRlIDI1JTsgbyDDrW5kaWNlIG7Do28gw6kgbyBwcsOzcHJpbyBwZXJjZW50dWFsIGRlIGF1bWVudG8uIiwic3RhdGVtZW50IjoiVW0gw61uZGljZSBkZSBiYXNlIDEwMCBwYXNzYSBhIDEyNSBlbSB1bSBhbm8uIE1hbnRpZGEgYSBtZXNtYSBiYXNlLCBpc3NvIHJlcHJlc2VudGE6IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-tabela-intervalo-total.json",
+        "mediaType": "application/json",
+        "sha256": "f9912f987024960f6311b72c402d2be57032324afb79fe06304c0b400a5d5303",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTcifSx7ImlkIjoiYiIsInRleHQiOiIxMSJ9LHsiaWQiOiJjIiwidGV4dCI6IjE5In0seyJpZCI6ImQiLCJ0ZXh0IjoiMjUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXRhYmVsYS1pbnRlcnZhbG8tdG90YWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gY29ydGUg4oCcbWVub3MgZGUgMTDigJ0gcmXDum5lIGFzIGR1YXMgcHJpbWVpcmFzIGZhaXhhcy4gMi4gU29tZSA2KzExPTE3OyBhIMO6bHRpbWEgZmFpeGEgbsOjbyBhdGVuZGUgw6AgY29uZGnDp8Ojby4iLCJzdGF0ZW1lbnQiOiJVbWEgdGFiZWxhIGRlIHRlbXBvcyB0ZW0gNiBvY29ycsOqbmNpYXMgYWJhaXhvIGRlIDUgbWludXRvcywgMTEgZW50cmUgNSBlIG1lbm9zIGRlIDEwLCBlIDggY29tIHBlbG8gbWVub3MgMTAuIFF1YW50YXMgZHVyYXJhbSBtZW5vcyBkZSAxMCBtaW51dG9zPyIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-taxas-populacoes.json",
+        "mediaType": "application/json",
+        "sha256": "c38e379156ce8a8904497fd9863c7a6997f3bd170f3a5e6c0f45c8ec6a35860f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBzZWd1bmRvLCBjb20gMzAlLCBjb250cmEgNDAlLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik8gc2VndW5kbywgY29tIDMlLCBjb250cmEgMiUgZG8gcHJpbWVpcm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTyBwcmltZWlybywgcG9pcyA0MCDDqSBtYWlvciBxdWUgMzAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQW1ib3MgdMOqbSBhIG1lc21hIHRheGEuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC10YXhhcy1wb3B1bGFjb2VzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBEaXZpZGEgb2NvcnLDqm5jaWEgcGVsYSByZXNwZWN0aXZhIHBvcHVsYcOnw6NvOiA0MC8yLjAwMD0yJSBlIDMwLzEuMDAwPTMlLiAyLiBPIHNlZ3VuZG8gdGVtIG1haW9yIHRheGEsIGVtYm9yYSB0ZW5oYSBtZW5vcyBvY29ycsOqbmNpYXMgZW0gbsO6bWVyb3MgYWJzb2x1dG9zLiIsInN0YXRlbWVudCI6IlVtYSB0YWJlbGEgcmVnaXN0cmEgNDAgb2NvcnLDqm5jaWFzIGVtIHBvcHVsYcOnw6NvIGRlIDIuMDAwIGUgMzAgb2NvcnLDqm5jaWFzIGVtIHBvcHVsYcOnw6NvIGRlIDEuMDAwLiBRdWFsIGxvY2FsIHRlbSBtYWlvciB0YXhhIHBvciBoYWJpdGFudGU/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.mat-total-reconstruir-setor.json",
+        "mediaType": "application/json",
+        "sha256": "0bc8efe0b08483a70136f86ff6011a58010292bfa1433c1ac23aeb9010c7aa58",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOTAifSx7ImlkIjoiYiIsInRleHQiOiI3MiJ9LHsiaWQiOiJjIiwidGV4dCI6IjM2In0seyJpZCI6ImQiLCJ0ZXh0IjoiMTgwIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC10b3RhbC1yZWNvbnN0cnVpci1zZXRvciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTyBzZXRvciBvY3VwYSA3Mi8zNjAgPSAxLzUgZG8gY8OtcmN1bG8uIDIuIFNlIHVtIHF1aW50byB2YWxlIDE4LCBvIHRvdGFsIMOpIDE4IMOXIDUgPSA5MC4gNzIgY29uZnVuZGUgZ3JhdXMgY29tIHJlZ2lzdHJvczsgMzYgZSAxODAgY29ycmVzcG9uZGVyaWFtIGEgc2V0b3JlcyBkZSAxLzIgZSAxLzEwIGRvIGPDrXJjdWxvLiIsInN0YXRlbWVudCI6IkVtIHVtIGdyw6FmaWNvIGRlIHNldG9yZXMsIHVtIHNldG9yIGRlIDcywrAgcmVwcmVzZW50YSAxOCByZWdpc3Ryb3MuIFF1YWwgw6kgbyB0b3RhbCBkZSByZWdpc3Ryb3M/IiwidG9waWNJZCI6Ik0wNyJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.varg25-ti-q18.json",
+        "mediaType": "application/json",
+        "sha256": "c6fcaa7d5e060cb1eb24da775ca01af3230bf80585870f91a42e2288f5178bff",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQsOhc2ljbyJ9LHsiaWQiOiJiIiwidGV4dCI6IkVzc2VuY2lhbCJ9LHsiaWQiOiJjIiwidGV4dCI6IlBsYXRpbnVtIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUHJlbWl1bSJ9LHsiaWQiOiJlIiwidGV4dCI6IlRvZG9zIG9zIHBsYW5vcyB0w6ptIG8gbWVzbW8gY3VzdG8ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZhcmdpbmhhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1LCBUw4lDTklDTyBFTSBJTkZPUk3DgVRJQ0EsIHF1ZXN0w6NvIDE4LiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2byBkYXMgcHJvdmFzIGRlIDE5LzEwLzIwMjU7IHDDoWdpbmEgNywgYmxvY28gZG8gY2FyZ28gVMOJQ05JQ08gRU0gSU5GT1JNw4FUSUNBLCBxdWVzdMOjbyAxOCA9IEMgY29uZmVyaWRhIHZpc3VhbG1lbnRlOyBpdGVtIG7Do28gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk3LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiJiOTA3ZDM1ZTE2ZWRiYzVhMmU5ODkzMjc1MzIwMjRlOWI5OTJkZGIwYjliZmRiYmU4MzVlMmI5YjcxOGYzNjc1IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTcvYW5leG9zL2EzODk4MjgzLTRkNGUtNDUxNi04NTdmLWVhMGZhYjRkYWE0Ni5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZhcmdpbmhhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtdmFyZ2luaGEtMjAyNS10ZWNpbmZvL3ExOCIsIm51bWJlciI6IjE4IiwicHJvb2YiOnsibm90ZSI6IkNhZGVybm8gb2ZpY2lhbCBkbyBjYXJnbyBUw4lDTklDTyBFTSBJTkZPUk3DgVRJQ0E7IHF1ZXN0w6NvIDE4IGNvbmZlcmlkYSB2aXN1YWxtZW50ZSBuYSBww6FnaW5hIDYgcmVuZGVyaXphZGEgKGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzLCBzw61tYm9sb3MgZSBvcmRlbSk7IGNvcnJpZ2lkYXMgYXBlbmFzIHF1ZWJyYXMgZGUgbGluaGEvaGlmZW5pemHDp8Ojby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk3LXByb3ZhLXRjbmljby1lbS1pbmZvcm10aWNhLnBkZiIsInNoYTI1NiI6Ijg2M2ViYjQxNjVlY2NmYWYwMTgxOTllYTFhMjI1YTdhZGVmOTc4MWJjMWE3NDIzNDM3YWNjNjU2ODJiYTNmNmMiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5Ny9hbmV4b3MvNDU5ZGVkMjgtZjM4NC00OTA5LWFmYTktMTE3OTY0MjIzZjczLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBMZWkgOS42MTAvMTk5OCwgYXJ0LiA4wrosIElWLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBuZWNlc3PDoXJpYTsgbsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIHNlIGFmaXJtYSBjb25zZW50aW1lbnRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlTDiUNOSUNPIEVNIElORk9STcOBVElDQSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNX0sImlkIjoidmFyZzI1LXRpLXExOCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTGVuZG8gYSB0YWJlbGE6IFBsYXRpbnVtICgyMCBHQikgZSBQcmVtaXVtICgzMCBHQikgY29icmVtIG9zIDE1IEdCIHNlbSBleGNlZGVudGUsIGN1c3RhbmRvIFIkIDEwMSwwMCBlIFIkIDEyOSw5MDsgRXNzZW5jaWFsIGV4Y2VkZSA1IEdCIChtaWxoYXJlcyBkZSBNQiBhIFIkIDAsNDAgY2FkYSkgZSBCw6FzaWNvIGV4Y2VkZSAxMyBHQiBhIFIkIDAsODAgcG9yIE1CLCBhbWJvcyBtdWl0byBhY2ltYSBkZSBSJCAxMDEsMDAuIE8gbWFpcyBiYXJhdG8gw6kgbyBQbGF0aW51bS4gMi4gUHJlbWl1bSBuw6NvIHRlbSBleGNlZGVudGUsIG1hcyBzdWEgbWVuc2FsaWRhZGUgw6kgbWFpb3I7IELDoXNpY28gZSBFc3NlbmNpYWwgZmljYW0gY2Fyb3MgcGVsbyBleGNlZGVudGU7IG9zIGN1c3RvcyBuw6NvIHPDo28gaWd1YWlzLiBSZXNwb3N0YTogYWx0ZXJuYXRpdmEgQy4iLCJzdGF0ZW1lbnQiOiJVbSBjbGllbnRlIGVzdMOhIGF2YWxpYW5kbyBxdWFsIHBsYW5vIGRlIGludGVybmV0IGVzY29saGVyIGNvbSBiYXNlIG5vIHNldSBjb25zdW1vIG1lbnNhbCBkZSBkYWRvcy4gQXDDs3Mgb3LDp2FyIGFsZ3VucyBwbGFub3MsIGVsZSBlbmNvbnRyb3UgbyBzZWd1aW50ZTpcblxuUGxhbm8gfCBGcmFucXVpYSB8IFByZcOnbyBtZW5zYWwgUiQgfCBQcmXDp28gcG9yIE1CIGV4Y2VkZW50ZVxuQsOhc2ljbyB8IDJHYiB8IFIkIDUwLDAwIHwgUiQgMCw4MFxuRXNzZW5jaWFsIHwgMTBHYiB8IFIkIDg5LDk5IHwgUiQgMCw0MFxuUGxhdGludW0gfCAyMEdiIHwgUiQgMTAxLDAwIHwgUiQgMCwyMFxuUHJlbWl1bSB8IDMwR2IgfCBSJCAxMjksOTAgfCBSJCAwLDEwXG5cbk8gY2xpZW50ZSBlc3RpbWEgcXVlIHV0aWxpemFyw6EgMTUgR0IgZGUgZGFkb3Mgbm8gbcOqcy4gU2FiZW5kbyBxdWUgbyBjdXN0byB0b3RhbCBkZSBjYWRhIHBsYW5vIMOpIGRhZG8gcGVsYSBzb21hIGRvIHByZcOnbyBtZW5zYWwgZSBkbyBjdXN0byBwZWxvcyBkYWRvcyBleGNlZGVudGVzLCBxdWFsIHBsYW5vIHNlcsOhIG1haXMgZWNvbsO0bWljbyBwYXJhIGVzc2UgY2xpZW50ZT8gQXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBjb3JyZXRhOiIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M07.s.varg26-gest-q19.json",
+        "mediaType": "application/json",
+        "sha256": "c7464b1aae83274adba4b1ac51e707255ae2bac9d772566b8ba00ef7077a9b0c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTmVzc2Egc2FsYSBow6EgNSBlc3R1ZGFudGVzIGNvbSAxOTAgY20gb3UgbWFpcyBkZSBhbHR1cmEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTmVzc2Egc2FsYSBow6EgNSBlc3R1ZGFudGVzIGNvbSBhbHR1cmEgaW5mZXJpb3IgYSAxNjAgY20uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTsOjbyDDqSBwb3Nzw612ZWwgYWZpcm1hciBhcyBhbHR1cmFzIGRvcyBlc3R1ZGFudGVzIHF1ZSBuw6NvIGVzdMOjbyBpbnNlcmlkb3MgbmEgdGFiZWxhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlNlIG9zIGVzdHVkYW50ZXMgcXVlIG7Do28gZXN0w6NvIGluc2VyaWRvcyBuYSB0YWJlbGEgdGl2ZXJlbSBhbHR1cmEgaWd1YWwgb3UgbWFpb3IgcXVlIDE3MCBjbSBlIG1lbm9yIGRvIHF1ZSAxODAgY20sIGEgcXVhbnRpZGFkZSBuZXNzZSBpbnRlcnZhbG8gc3VwZXJhcsOhIGEgcXVhbnRpZGFkZSBkbyBpbnRlcnZhbG8gZGUgMTYwIOKUnCAxNzAuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiQSBjbGFzc2UgY29tIG1haW9yIGZyZXF1w6puY2lhIGVudHJlIGFzIGFsdHVyYXMgZXN0w6Egbm8gaW50ZXJ2YWxvIGRlIDE4MCDilJwgMTkwLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIEV4YW1lIFNlbGV0aXZvIEludGVybm8gMDEvMjAyNiwgQ09PUkRFTkFET1IvIERJUkVUT1IvIFZJQ0UtRElSRVRPUiBFU0NPTEFSLCBxdWVzdMOjbyAxOS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZG8gUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNjsgcMOhZ2luYSAxLCBibG9jbyBkbyBjYXJnbyBDT09SREVOQURPUi8gRElSRVRPUi8gVklDRS1ESVJFVE9SIEVTQ09MQVIsIHF1ZXN0w6NvIDE5ID0gQyBjb25mZXJpZGEgdmlzdWFsbWVudGU7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMTktZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjExMjUwYzZjMmNmYzkzNTI2N2RlMjg1Mzc3OTMwYjk1MGQ1ZDQwM2M0Njk4Mzg2MDQ3N2YyY2FkZWRmZDkwNDgiLCJ1cmwiOiJodHRwczovL2FuZXhvcy1yMi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjE5L2FuZXhvcy84ZmZmMDk3Zi0yYWJkLTRhNjAtYjhmNi02ZjYzODViZGYxMmIucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBWYXJnaW5oYSDigJQgRXhhbWUgU2VsZXRpdm8gSW50ZXJubyAwMS8yMDI2IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtdmFyZ2luaGEtMjAyNi1nZXN0b3IvcTE5IiwibnVtYmVyIjoiMTkiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIENPT1JERU5BRE9SLyBESVJFVE9SLyBWSUNFLURJUkVUT1IgRVNDT0xBUjsgcXVlc3TDo28gMTkgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNiByZW5kZXJpemFkYSAoZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKTsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS9oaWZlbml6YcOnw6NvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMTktcHJvdmEtY29vcmRlbmFkb3ItZGlyZXRvci12aWNlLWRpcmV0b3ItZXNjb2xhci5wZGYiLCJzaGEyNTYiOiI2N2ZlM2U3OGUxMTg3YWMxODg2ZjM5OGE1OTM0OTVkYjQwNzQwNTY3NWRiMDE2Mzk0M2JiMTdlY2RhYzRlYzY0IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MtcjIuc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIxOS9hbmV4b3MvZTdmOTNjNWQtNTgwYS00YWI0LTg4ZDItYmZkMzdjOTBjM2RhLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBMZWkgOS42MTAvMTk5OCwgYXJ0LiA4wrosIElWLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBuZWNlc3PDoXJpYTsgbsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIHNlIGFmaXJtYSBjb25zZW50aW1lbnRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkNPT1JERU5BRE9SLyBESVJFVE9SLyBWSUNFLURJUkVUT1IgRVNDT0xBUiIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoidmFyZzI2LWdlc3QtcTE5Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHRhYmVsYSBzb21hIDE4ICsgMTEgKyA0ID0gMzMgZXN0dWRhbnRlczsgb3Mgb3V0cm9zIDUgbsOjbyBhcGFyZWNlbSBuZWxhLCBlIG5hZGEgaW5mb3JtYSBzZSBtZWRlbSBtZW5vcyBkZSAxNjAgY20gb3UgMTkwIGNtIG91IG1haXMuIExvZ28sIG7Do28gw6kgcG9zc8OtdmVsIGFmaXJtYXIgc3VhcyBhbHR1cmFzLiAyLiBBIGUgQiBhZmlybWFtIGFsZ28gcXVlIGEgdGFiZWxhIG7Do28gcGVybWl0ZSBzYWJlcjsgZW0gRCwgYSBjbGFzc2UgMTcwIOKUnCAxODAgcGFzc2FyaWEgYSAxMSArIDUgPSAxNiwgYWluZGEgbWVub3IgcXVlIDE4OyBlbSBFLCBhIG1haW9yIGZyZXF1w6puY2lhIMOpIGEgZGUgMTYwIOKUnCAxNzAgKDE4KSwgbsOjbyBhIGRlIDE4MCDilJwgMTkwICg0KS4gUmVzcG9zdGE6IGFsdGVybmF0aXZhIEMuIiwic3RhdGVtZW50IjoiTmEgdGFiZWxhIGFiYWl4byBlc3TDo28gcmVnaXN0cmFkYXMgYXMgYWx0dXJhcyBkYSBtYWlvcmlhIGRvcyBlc3R1ZGFudGVzIGRlIHVtYSBzYWxhOlxuXG5JbnRlcnZhbG8gZGUgYWx0dXJhIGVtIGNtIHwgRnJlcXXDqm5jaWEgKHF1YW50aWRhZGUgZGUgZXN0dWRhbnRlcylcbjE2MCDilJwgMTcwIHwgMThcbjE3MCDilJwgMTgwIHwgMTFcbjE4MCDilJwgMTkwIHwgNFxuXG5TYWJlbmRvIHF1ZSBuZXNzYSBzYWxhIGjDoSAzOCBlc3R1ZGFudGVzIGUgYW5hbGlzYW5kbyBhcyBpbmZvcm1hw6fDtWVzIGRhZGFzIG5hIHRhYmVsYSwgYXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBjb3JyZXRhOiIsInRvcGljSWQiOiJNMDcifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M07.s.fgv-canaa25-ase-q20",
+    "admin.2026-11.M07.s.fgv-nav26-ptna-q30",
+    "admin.2026-11.M07.s.fgv-pmesp25-sd-q32",
+    "admin.2026-11.M07.s.mat-amplitude-tabela",
+    "admin.2026-11.M07.s.mat-barras-comparar-diferencas",
+    "admin.2026-11.M07.s.mat-barras-empilhadas",
+    "admin.2026-11.M07.s.mat-dados-origem-nao-zero",
+    "admin.2026-11.M07.s.mat-duas-series-diferenca",
+    "admin.2026-11.M07.s.mat-dupla-entrada-condicional",
+    "admin.2026-11.M07.s.mat-escala-nao-uniforme",
+    "admin.2026-11.M07.s.mat-frequencia-relativa-tabela",
+    "admin.2026-11.M07.s.mat-grafico-causalidade",
+    "admin.2026-11.M07.s.mat-grafico-linhas-escolha",
+    "admin.2026-11.M07.s.mat-histograma-larguras-distintas",
+    "admin.2026-11.M07.s.mat-interpolacao-linear-informada",
+    "admin.2026-11.M07.s.mat-mediana-frequencias",
+    "admin.2026-11.M07.s.mat-ordenar-mediana-par",
+    "admin.2026-11.M07.s.mat-percentuais-total-parcial",
+    "admin.2026-11.M07.s.mat-percentual-incompativel",
+    "admin.2026-11.M07.s.mat-percentual-multiplas-respostas",
+    "admin.2026-11.M07.s.mat-serie-indice-base",
+    "admin.2026-11.M07.s.mat-tabela-intervalo-total",
+    "admin.2026-11.M07.s.mat-taxas-populacoes",
+    "admin.2026-11.M07.s.mat-total-reconstruir-setor",
+    "admin.2026-11.M07.s.varg25-ti-q18",
+    "admin.2026-11.M07.s.varg26-gest-q19"
+  ]
+}

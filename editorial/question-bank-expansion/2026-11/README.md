@@ -29,3 +29,14 @@ públicas, assets, migrações ou builds. A existência de um link não prova pe
 A #161 foi integrada à main pelo PR #176 e o grupo 2 retomou o teto 25 sobre esse
 contrato por assunto sem cargo, com V15 autorizada. Grupo 8 ainda depende de 2–7.
 Código/conteúdo ainda não publicado; revisão independente e integração pendentes.
+
+## Entrega final — 13/11/2026
+
+- `packages/`: 102 pacotes finais (2.587 itens) da auditoria v10, com `manifest.json`,
+  requisição de prévia, digests, seleção e dossiê por assunto/finalidade.
+- `final/`: conferência (`final-check.*`), inventário das 530 originais, revisões
+  individuais, auditoria v10, leitor/prévia e conferência às cegas de Matemática.
+- `local-files-manifest.json`: SHA-256 dos arquivos mantidos só no computador local.
+- Os JSONL e `reviews.json`/`pair-decisions.json` deste diretório continuam vazios: a
+  edição de trabalho fica no acervo local; os pacotes são o artefato versionado.
+  [Relatório](../../../docs/question-bank-expansion-content.md).

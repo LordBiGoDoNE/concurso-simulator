@@ -4,6 +4,8 @@ Spec da [issue #177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/1
 
 Estado: **proposta aprovada pelo usuário em 2026-11-12; grupos 1, 2, 3 e 5 autorizados para implementação** (grupo 4 opcional, não autorizado). Decisões das questões em aberto em [design.md](design.md#decisões-das-questões-em-aberto-usuário-2026-11-12). Autorização de implementação não autoriza merge, arquivamento ou publicação. Implementação: stack #180 ← #181 ← #182 (checklist e evidências na [issue #177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177)); as caixas abaixo só são marcadas após integração na épica. Cada grupo inclui código, testes e documentação. Risco previsto: crítico.
 
+Integração em 2026-11-13: grupos 1, 2, 3 e 5 integrados em `epic/administrative-question-curation` (#180–#182, #190) e na épica combinada pelo `[SPEC]` #191; caixas marcadas abaixo. Grupo 4 (opcional) não foi autorizado e permanece aberto. O ensaio 5.1 ocorreu no ambiente local paralelo (5371/19160), cujo banco efêmero foi perdido em 2026-11-13 após a parada do processo; a reconstrução usa o backup pré-#177 e os pacotes versionados.
+
 | Grupo | Dependência real | Áreas previstas | Critério de conclusão |
 | --- | --- | --- | --- |
 | 1. Origem da revisão | Domínio de decisão existente | `EditorialDecision`, migração, JPA, CLI local, docs | APPROVE exige origem; histórico não informado preservado; CLI compatível |
@@ -14,23 +16,23 @@ Estado: **proposta aprovada pelo usuário em 2026-11-12; grupos 1, 2, 3 e 5 auto
 
 ## 1. Origem da revisão
 
-- [ ] 1.1 Acrescentar `reviewKind` (`HUMAN_PEER`/`AI_ONLY`) à decisão no domínio, obrigatório em APPROVE novo; testes de domínio sem framework.
-- [ ] 1.2 Migração com `qb_decision.review_kind` anulável e CHECK; JPA; histórico preservado como nulo; teste com PostgreSQL isolado.
-- [ ] 1.3 CLI `decide` aceita o campo; recusa APPROVE sem origem antes de conectar; docs de operação.
+- [x] 1.1 Acrescentar `reviewKind` (`HUMAN_PEER`/`AI_ONLY`) à decisão no domínio, obrigatório em APPROVE novo; testes de domínio sem framework.
+- [x] 1.2 Migração com `qb_decision.review_kind` anulável e CHECK; JPA; histórico preservado como nulo; teste com PostgreSQL isolado.
+- [x] 1.3 CLI `decide` aceita o campo; recusa APPROVE sem origem antes de conectar; docs de operação.
 
 ## 2. Consulta administrativa
 
-- [ ] 2.1 Casos de uso de busca/detalhe/lookup/exportação com porta de leitura e projeções na infraestrutura.
-- [ ] 2.2 Rotas `/api/v1/admin/questions` com DTOs tipados, no-store, OpenAPI; revisão pelo checklist de endpoints.
-- [ ] 2.3 Testes de cadeia de segurança real (visitante, comum, ADM pendente, revogado, válido) e PostgreSQL isolado; rotas públicas inalteradas.
-- [ ] 2.4 Exportação validada pelo leitor de importação com fingerprints idênticos.
+- [x] 2.1 Casos de uso de busca/detalhe/lookup/exportação com porta de leitura e projeções na infraestrutura.
+- [x] 2.2 Rotas `/api/v1/admin/questions` com DTOs tipados, no-store, OpenAPI; revisão pelo checklist de endpoints.
+- [x] 2.3 Testes de cadeia de segurança real (visitante, comum, ADM pendente, revogado, válido) e PostgreSQL isolado; rotas públicas inalteradas.
+- [x] 2.4 Exportação validada pelo leitor de importação com fingerprints idênticos.
 
 ## 3. Decisões em lote
 
-- [ ] 3.1 Caso de uso de prévia e aplicação em lote reutilizando `DecideQuestionUseCase` por item, transação única, tudo-ou-nada.
-- [ ] 3.2 Token de confirmação e recibo idempotente no modelo da importação; migração do recibo.
-- [ ] 3.3 Rotas `/api/v1/admin/editorial-decisions/{preview,apply}`, CSRF, OpenAPI, testes de segurança, divergência, replay e rollback.
-- [ ] 3.4 Atualizar `docs/question-administrative-import.md` e `docs/question-local-operations.md`, registrando a substituição da restrição "sem decisões editoriais HTTP".
+- [x] 3.1 Caso de uso de prévia e aplicação em lote reutilizando `DecideQuestionUseCase` por item, transação única, tudo-ou-nada.
+- [x] 3.2 Token de confirmação e recibo idempotente no modelo da importação; migração do recibo.
+- [x] 3.3 Rotas `/api/v1/admin/editorial-decisions/{preview,apply}`, CSRF, OpenAPI, testes de segurança, divergência, replay e rollback.
+- [x] 3.4 Atualizar `docs/question-administrative-import.md` e `docs/question-local-operations.md`, registrando a substituição da restrição "sem decisões editoriais HTTP".
 
 ## 4. Interface administrativa mínima (opcional)
 
@@ -38,4 +40,4 @@ Estado: **proposta aprovada pelo usuário em 2026-11-12; grupos 1, 2, 3 e 5 auto
 
 ## 5. Operação e ensaio
 
-- [ ] 5.1 Ensaio local: importar e habilitar o acervo da #173 (origem `AI_ONLY`) pelo fluxo novo, registrando seleção, digests, destino e recibos, preservando dados existentes.
+- [x] 5.1 Ensaio local: importar e habilitar o acervo da #173 (origem `AI_ONLY`) pelo fluxo novo, registrando seleção, digests, destino e recibos, preservando dados existentes.

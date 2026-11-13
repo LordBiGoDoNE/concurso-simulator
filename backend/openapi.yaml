@@ -1469,8 +1469,8 @@ components:
     EditorialBatchPreviewRequest:
       type: object
       additionalProperties: false
-      required: [action, reviewKind, checklist, rationale]
-      description: Exatamente um entre items e importReceiptId
+      required: [action, checklist, rationale]
+      description: Exatamente um entre items e importReceiptId. reviewKind é opcional (ausente equivale a null) e obrigatório em APPROVE, recusado com 400 INVALID_BATCH quando faltar.
       properties:
         action: {type: string, enum: [SUBMIT, APPROVE]}
         reviewKind: {$ref: '#/components/schemas/ReviewKind'}
@@ -1522,7 +1522,8 @@ components:
     EditorialBatchApplyRequest:
       type: object
       additionalProperties: false
-      required: [action, reviewKind, checklist, rationale, items, confirmationToken]
+      required: [action, checklist, rationale, items, confirmationToken]
+      description: reviewKind é opcional (ausente equivale a null) e deve repetir o da prévia confirmada; obrigatório em APPROVE.
       properties:
         action: {type: string, enum: [SUBMIT, APPROVE]}
         reviewKind: {$ref: '#/components/schemas/ReviewKind'}

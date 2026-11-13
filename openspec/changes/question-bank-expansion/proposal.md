@@ -38,7 +38,7 @@ O estudante encontra pouca variedade: as evidências versionadas registram 255 q
 ### New Capabilities
 
 - `question-bank-coverage`: cobertura mínima por assunto/modalidade, diversidade de origens, evidência editorial e preparação/importação rastreável dos incrementos.
-- `lesson-practice-capacity`: limite 25 na composição, disponibilidade, leitura e histórico, com preservação das práticas anteriores.
+- `lesson-practice-capacity`: acervo de pelo menos 25 por assunto e práticas novas de até cinco sorteadas (esclarecimento do usuário de 2026-11-11), com leitura/histórico das capturas anteriores de até 25 preservados. A redação original "limite 25 na composição" é histórica.
 
 ### Modified Capabilities
 

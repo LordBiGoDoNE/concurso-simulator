@@ -24,7 +24,7 @@ ou regravação para corrigir a quantidade de novos sorteios.
 
 ## Goals / Non-Goals
 
-**Goals:** entregar cobertura rastreável nas 102 combinações, conteúdo original/autoral conferido, ferramentas incrementais, práticas de até 25 e validação local preservando dados e contratos privados.
+**Goals:** entregar cobertura rastreável nas 102 combinações, conteúdo original/autoral conferido, ferramentas incrementais, acervo de 25 por assunto com práticas de até cinco sorteadas (esclarecimento de 2026-11-11; a meta original "práticas de até 25" é histórica) e validação local preservando dados e contratos privados.
 
 **Non-Goals:** remover cargo (#161), alterar composição de simulados, ampliar templates, adicionar editor/upload PDF/aprovação HTTP, executar importação no startup/Flyway, distribuir fontes pelos builds públicos ou publicar na VPS. Esta entrega inicial é documental; conteúdo/código dependem da confirmação dos grupos.
 

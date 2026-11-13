@@ -1,3 +1,4 @@
+import './styles/attempt.css';
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { questionCatalog, type Catalog } from './question-api';
 import { AttemptApiError, createAttempt, type AttemptView, type Composition } from './attempt-api';

@@ -289,6 +289,42 @@ def disable_google(state, config):
     print("Login Google desligado; client ID/secret preservados nos arquivos privados.")
 
 
+LAUNCHERS = {"questions": "br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal",
+             "templates": "br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal"}
+CLI_ACTIONS = {"questions": {"preview", "import", "report", "decide"},
+               "templates": {"preview", "register", "decide"}}
+
+
+def editorial_cli_command(config, launcher, args, workdir):
+    """Run an existing nonweb editorial launcher from the production API image.
+
+    The helper joins the PostgreSQL container's network namespace, so the launcher's own loopback rule
+    (DB_URL on localhost) still holds and no database port is ever published. Typed confirmations stay
+    interactive; DB_PASSWORD is passed through the environment, never as an argument.
+    """
+    if launcher not in LAUNCHERS or not args or args[0] not in CLI_ACTIONS[launcher]:
+        raise ValueError("Launcher ou ação editorial não permitida")
+    if "--yes" in args or any("\n" in a for a in args):
+        raise ValueError("Argumento não permitido")
+    workdir = Path(workdir).resolve()
+    postgres = f"{config['project']}-postgres-1"
+    return ["run", "--rm", "-i", "--network", f"container:{postgres}", "--user", "0:0",
+            "--read-only", "--tmpfs", "/tmp:rw,nosuid,nodev,noexec,size=64m",
+            "-e", "DB_URL=jdbc:postgresql://localhost:5432/concurso_simulator?connectTimeout=2&socketTimeout=30",
+            "-e", "DB_USERNAME=concurso", "-e", "DB_PASSWORD", "-e", "CI=false", "-e", "GITHUB_ACTIONS=false",
+            "-v", f"{workdir}:/work:ro", "-w", "/work", "--entrypoint", "java",
+            config["images"]["images"]["api"]["id"],
+            f"-Dloader.main={LAUNCHERS[launcher]}", "-cp", "/app/application.jar",
+            "org.springframework.boot.loader.launch.PropertiesLauncher", *args]
+
+
+def editorial_cli(state, config, launcher, args, workdir):
+    command = editorial_cli_command(config, launcher, args, workdir)
+    env = dict(os.environ, DB_PASSWORD=(state / "secrets" / "db_password").read_text(encoding="utf-8").strip())
+    # Interactive: inherit the terminal so the operator types the launcher's own confirmation.
+    return docker_run(command, env=env).returncode
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE)
@@ -307,7 +343,18 @@ def main():
     restore_action.add_argument("--confirm")
     release_action = actions.add_parser("release")
     release_action.add_argument("--images", type=Path, required=True)
+    cli_action = actions.add_parser("editorial-cli", help="executa QuestionBankLocal/TemplateLocal contra este banco")
+    cli_action.add_argument("--launcher", choices=sorted(LAUNCHERS), required=True)
+    cli_action.add_argument("--workdir", type=Path, required=True, help="diretório montado somente leitura em /work")
+    cli_action.add_argument("cli_args", nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    if args.action == "editorial-cli":
+        try:
+            state, config = load(args.state)
+            cli_args = args.cli_args[1:] if args.cli_args[:1] == ["--"] else args.cli_args
+            raise SystemExit(editorial_cli(state, config, args.launcher, cli_args, args.workdir))
+        except (ValueError, OSError, KeyError):
+            parser.exit(1, "CLI editorial recusada; confira launcher, ação e estado.\n")
     try:
         if args.action == "build":
             build(args.revision, args.state)

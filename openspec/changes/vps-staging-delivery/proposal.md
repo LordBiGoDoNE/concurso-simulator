@@ -29,10 +29,13 @@ Acompanhamento: #156.
   publicação HTTP pelo IP.
 - **Borda:** nginx do host com TLS Let's Encrypt, redirecionamento HTTP→HTTPS,
   HSTS e recusa de hosts desconhecidos.
-- **Google:** login ligado no lançamento, com client OAuth de produção e smoke
-  real antes da abertura.
-- **Acervo:** somente o acervo aprovado da main, carregado pelas operações
-  editoriais/administrativas existentes. Sem contas, sessões ou tentativas do PC.
+- **Google:** configuração de produção preparada (`configure-google`), mas o
+  lançamento sai com o Google desligado por decisão do usuário em 2026-11-13;
+  ligar e fazer o smoke real ficou para a #221.
+- **Acervo:** a expansão 2026-11 aprovada (102 pacotes, 2.587 questões), carregada
+  pela importação administrativa por HTTP. Os conjuntos de outubro (250 simulado,
+  255 prática, famílias parametrizadas) ficaram fora por decisão do usuário (#221).
+  Sem contas, sessões ou tentativas do PC.
 - **Operação:** atualização com backup antes de migrar, backup manual com cópia
   no PC, restauração ensaiada em destino separado e rollback compatível.
 

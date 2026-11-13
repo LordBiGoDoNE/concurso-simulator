@@ -1,5 +1,6 @@
 """Operate the production runtime on the VPS (concurso-dev, rootless Docker). No secret is printed or passed as argument."""
 import argparse
+import base64
 import hashlib
 import io
 import json
@@ -19,13 +20,19 @@ from local_docker import run as docker_run, check_output as docker_output, endpo
 HOST = "concurso-simulator.reemsoftworks.com"
 ORIGIN = "https://" + HOST
 PROJECT = "concurso-simulator-prod"
-NAMESPACE = re.escape(PROJECT)
+NAMESPACE = re.escape(PROJECT) + r"(?:-recovery-[a-z0-9]{1,16})?"
 OWNER_LABEL = "com.concursosimulator.production.owner"
 PORT = 18090
-DEFAULT_STATE = Path.home() / ".local/share/concurso-simulator/production"
+RECOVERY_PORTS = range(18091, 18100)
+DATA_ROOT = Path.home() / ".local/share/concurso-simulator"
+DEFAULT_STATE = DATA_ROOT / "production"
 PRODUCTION_FILES = {"web.Dockerfile", "nginx.conf"}
 SECRET_NAMES = ("db_password", "admin_password", "google_enabled", "google_client_id",
-                "google_client_secret", "google_callback", "frontend_url")
+                "google_client_secret", "google_callback", "frontend_url",
+                "question_import_destination", "question_import_key")
+# Generated values that an older state may lack; created only when missing, never rotated here.
+GENERATED_SECRETS = {"question_import_destination": lambda config: config["project"],
+                     "question_import_key": lambda config: base64.b64encode(secrets.token_bytes(48)).decode()}
 
 
 def production_permitted(name):
@@ -102,9 +109,30 @@ def build(revision, state):
     print(f"Release {sha[:12]} construída (main={manifest['on_main']}); manifesto: {target}")
 
 
-def initialize(state, images_file, rehearsal):
+def target(recovery=None, port=None):
+    """Production serves 18090; recovery targets are separate projects on 18091–18099, never behind nginx."""
+    if recovery is None:
+        if port not in (None, PORT):
+            raise ValueError("Produção usa somente a porta 18090")
+        return PROJECT, PORT
+    if not re.fullmatch(r"[a-z0-9]{1,16}", recovery):
+        raise ValueError("Nome de recuperação inválido")
+    if port not in RECOVERY_PORTS:
+        raise ValueError("Recuperação exige --port entre 18091 e 18099")
+    return f"{PROJECT}-recovery-{recovery}", port
+
+
+def valid_target(config):
+    project, port = config.get("project"), config.get("port")
+    if project == PROJECT:
+        return port == PORT
+    return isinstance(project, str) and re.fullmatch(NAMESPACE, project) is not None and port in RECOVERY_PORTS
+
+
+def initialize(state, images_file, rehearsal, recovery=None, port=None):
     linux_engine()
     state = state_path(state)
+    project, port = target(recovery, port)
     metadata = json.loads(Path(images_file).read_text(encoding="utf-8"))
     if metadata.get("origin") != ORIGIN:
         raise ValueError("Manifesto construído para outra origem")
@@ -113,8 +141,8 @@ def initialize(state, images_file, rehearsal):
     validate_images(metadata)
     if (state / "state.json").exists() or state.exists() and any(state.iterdir()):
         raise ValueError("Estado já existe; não inicialize novamente")
-    port_available(PORT)
-    config = {"version": 1, "project": PROJECT, "owner": uuid.uuid4().hex, "port": PORT,
+    port_available(port)
+    config = {"version": 1, "project": project, "owner": uuid.uuid4().hex, "port": port,
               "origin": ORIGIN, "rehearsal": bool(rehearsal), "generation_enabled": True, "images": metadata}
     owned(config, NAMESPACE, OWNER_LABEL)
     state.mkdir(parents=True, exist_ok=True, mode=0o700)
@@ -122,8 +150,9 @@ def initialize(state, images_file, rehearsal):
     secret_dir = state / "secrets"
     secret_dir.mkdir(mode=0o700)
     values = (secrets.token_urlsafe(36), secrets.token_urlsafe(24), "false", "", "",
-              ORIGIN + "/login/oauth2/code/google", ORIGIN)
-    for name, value in zip(SECRET_NAMES, values):
+              ORIGIN + "/login/oauth2/code/google", ORIGIN,
+              GENERATED_SECRETS["question_import_destination"](config), GENERATED_SECRETS["question_import_key"](config))
+    for name, value in zip(SECRET_NAMES, values, strict=True):
         with (secret_dir / name).open("x", encoding="utf-8", newline="\n") as stream:
             stream.write(value)
         # Parent 0700 limits host access; non-root container users read explicit bind mounts.
@@ -137,7 +166,7 @@ def load(state):
     linux_engine()
     state = state_path(state)
     config = json.loads((state / "state.json").read_text(encoding="utf-8"))
-    if (config.get("version") != 1 or config.get("project") != PROJECT or config.get("port") != PORT
+    if (config.get("version") != 1 or not valid_target(config)
             or config.get("origin") != ORIGIN or not re.fullmatch(r"[0-9a-f]{32}", config.get("owner", ""))):
         raise ValueError("Estado inválido")
     if not isinstance(config.get("generation_enabled"), bool) or not isinstance(config.get("rehearsal"), bool):
@@ -176,16 +205,124 @@ def compose_env(state, config):
 
 def compose(state, config, *args):
     return docker_run(["compose", "--env-file", str(state / "empty.env"),
-                       "-f", str(ROOT / "infra/vps-production/compose.yaml"), "-p", PROJECT, *args],
+                       "-f", str(ROOT / "infra/vps-production/compose.yaml"), "-p", config["project"], *args],
                       env=compose_env(state, config), capture_output=True, check=True).stdout
 
 
+def ensure_generated_secrets(state, config):
+    created = []
+    for name, generate in GENERATED_SECRETS.items():
+        path = state / "secrets" / name
+        if path.is_symlink():
+            raise ValueError("Segredo não pode ser link")
+        if not path.exists():
+            with path.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(generate(config))
+            path.chmod(0o644)
+            created.append(name)
+    if created:
+        print("Segredos gerados que faltavam: " + ", ".join(created) + " (valores não impressos).")
+
+
 def start(state, config):
+    ensure_generated_secrets(state, config)
     validate_images(config["images"])
     if not compose(state, config, "ps", "-q", "web").decode().strip():
         port_available(config["port"])
     compose(state, config, "up", "-d", "--no-build", "--wait", "--wait-timeout", "180")
     print(f"Produção pronta em 127.0.0.1:{config['port']} (release {config['images']['source_sha'][:12]}).")
+
+
+GOOGLE_CLIENT_ID = re.compile(r"[0-9]{6,32}-[a-z0-9]{8,64}\.apps\.googleusercontent\.com")
+GOOGLE_SECRET = re.compile(r"[A-Za-z0-9_-]{20,128}")
+
+
+def rewrite_secret(state, name, value):
+    """Rewrite in place: Compose bind-mounts the file, and a rename would leave the container on the old inode."""
+    path = state / "secrets" / name
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("Arquivo de segredo ausente ou inválido")
+    with path.open("r+", encoding="utf-8", newline="\n") as stream:
+        stream.seek(0)
+        stream.write(value)
+        stream.truncate()
+
+
+def google_enabled_on_api(config):
+    import urllib.request
+    request = urllib.request.Request(f"http://127.0.0.1:{config['port']}/api/v1/auth/config", headers={"Host": HOST})
+    with urllib.request.urlopen(request, timeout=10) as response:
+        return json.load(response).get("googleEnabled") is True
+
+
+def restart_api(state, config):
+    compose(state, config, "restart", "api")
+    compose(state, config, "up", "-d", "--no-build", "--wait", "--wait-timeout", "180", "api")
+
+
+def configure_google(state, config, read_line=input, read_secret=None):
+    """Interactive only; values are never printed, logged or accepted as arguments."""
+    import getpass
+    read_secret = read_secret or getpass.getpass
+    client_id = read_line("Client ID do Google: ").strip()
+    secret = read_secret("Client secret (não aparece na tela): ").strip()
+    if not GOOGLE_CLIENT_ID.fullmatch(client_id) or not GOOGLE_SECRET.fullmatch(secret):
+        raise ValueError("Client ID ou secret em formato inesperado; nada foi alterado")
+    for name, value in (("google_client_id", client_id), ("google_client_secret", secret),
+                        ("google_callback", ORIGIN + "/login/oauth2/code/google"), ("frontend_url", ORIGIN)):
+        rewrite_secret(state, name, value)
+    rewrite_secret(state, "google_enabled", "true")
+    try:
+        restart_api(state, config)
+        if not google_enabled_on_api(config):
+            raise ValueError("API não confirmou googleEnabled")
+    except Exception:
+        rewrite_secret(state, "google_enabled", "false")
+        restart_api(state, config)
+        raise ValueError("Configuração Google recusada pela API; Google voltou a ficar desligado") from None
+    print("Login Google ligado. Callback: " + ORIGIN + "/login/oauth2/code/google")
+
+
+def disable_google(state, config):
+    rewrite_secret(state, "google_enabled", "false")
+    restart_api(state, config)
+    print("Login Google desligado; client ID/secret preservados nos arquivos privados.")
+
+
+LAUNCHERS = {"questions": "br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal",
+             "templates": "br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal"}
+CLI_ACTIONS = {"questions": {"preview", "import", "report", "decide"},
+               "templates": {"preview", "register", "decide"}}
+
+
+def editorial_cli_command(config, launcher, args, workdir):
+    """Run an existing nonweb editorial launcher from the production API image.
+
+    The helper joins the PostgreSQL container's network namespace, so the launcher's own loopback rule
+    (DB_URL on localhost) still holds and no database port is ever published. Typed confirmations stay
+    interactive; DB_PASSWORD is passed through the environment, never as an argument.
+    """
+    if launcher not in LAUNCHERS or not args or args[0] not in CLI_ACTIONS[launcher]:
+        raise ValueError("Launcher ou ação editorial não permitida")
+    if "--yes" in args or any("\n" in a for a in args):
+        raise ValueError("Argumento não permitido")
+    workdir = Path(workdir).resolve()
+    postgres = f"{config['project']}-postgres-1"
+    return ["run", "--rm", "-i", "--network", f"container:{postgres}", "--user", "0:0",
+            "--read-only", "--tmpfs", "/tmp:rw,nosuid,nodev,noexec,size=64m",
+            "-e", "DB_URL=jdbc:postgresql://localhost:5432/concurso_simulator?connectTimeout=2&socketTimeout=30",
+            "-e", "DB_USERNAME=concurso", "-e", "DB_PASSWORD", "-e", "CI=false", "-e", "GITHUB_ACTIONS=false",
+            "-v", f"{workdir}:/work:ro", "-w", "/work", "--entrypoint", "java",
+            config["images"]["images"]["api"]["id"],
+            f"-Dloader.main={LAUNCHERS[launcher]}", "-cp", "/app/application.jar",
+            "org.springframework.boot.loader.launch.PropertiesLauncher", *args]
+
+
+def editorial_cli(state, config, launcher, args, workdir):
+    command = editorial_cli_command(config, launcher, args, workdir)
+    env = dict(os.environ, DB_PASSWORD=(state / "secrets" / "db_password").read_text(encoding="utf-8").strip())
+    # Interactive: inherit the terminal so the operator types the launcher's own confirmation.
+    return docker_run(command, env=env).returncode
 
 
 def main():
@@ -197,14 +334,32 @@ def main():
     init = actions.add_parser("init")
     init.add_argument("--images", type=Path, required=True)
     init.add_argument("--rehearsal", action="store_true")
-    for action in ("start", "stop", "status"):
+    init.add_argument("--recovery", help="nome do alvo de recuperação separado (a-z0-9)")
+    init.add_argument("--port", type=int, help="porta do alvo de recuperação (18091–18099)")
+    for action in ("start", "stop", "status", "backup", "rollback", "configure-google", "disable-google"):
         actions.add_parser(action)
+    restore_action = actions.add_parser("restore")
+    restore_action.add_argument("--backup", type=Path, required=True)
+    restore_action.add_argument("--confirm")
+    release_action = actions.add_parser("release")
+    release_action.add_argument("--images", type=Path, required=True)
+    cli_action = actions.add_parser("editorial-cli", help="executa QuestionBankLocal/TemplateLocal contra este banco")
+    cli_action.add_argument("--launcher", choices=sorted(LAUNCHERS), required=True)
+    cli_action.add_argument("--workdir", type=Path, required=True, help="diretório montado somente leitura em /work")
+    cli_action.add_argument("cli_args", nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    if args.action == "editorial-cli":
+        try:
+            state, config = load(args.state)
+            cli_args = args.cli_args[1:] if args.cli_args[:1] == ["--"] else args.cli_args
+            raise SystemExit(editorial_cli(state, config, args.launcher, cli_args, args.workdir))
+        except (ValueError, OSError, KeyError):
+            parser.exit(1, "CLI editorial recusada; confira launcher, ação e estado.\n")
     try:
         if args.action == "build":
             build(args.revision, args.state)
         elif args.action == "init":
-            initialize(args.state, args.images, args.rehearsal)
+            initialize(args.state, args.images, args.rehearsal, args.recovery, args.port)
         else:
             state, config = load(args.state)
             if args.action == "status":
@@ -212,10 +367,26 @@ def main():
             else:
                 with operation(state):
                     if args.action == "start":
+                        if (state / "recovery.json").exists():
+                            raise ValueError("Recuperação incompleta; destino bloqueado")
                         start(state, config)
-                    else:
+                    elif args.action == "configure-google":
+                        configure_google(state, config)
+                    elif args.action == "disable-google":
+                        disable_google(state, config)
+                    elif args.action == "stop":
                         compose(state, config, "stop")
                         print("Containers parados; volume e segredos preservados.")
+                    else:
+                        import vps_production_data as data
+                        if args.action == "backup":
+                            data.backup(state, config)
+                        elif args.action == "restore":
+                            data.restore(state, config, args.backup, args.confirm)
+                        elif args.action == "release":
+                            data.release(state, config, args.images)
+                        else:
+                            data.rollback(state, config)
     except (ValueError, OSError, KeyError, subprocess.CalledProcessError):
         parser.exit(1, "Operação de produção recusada/falhou; confira estado, release e health. Nenhum segredo é impresso.\n")
 

@@ -56,11 +56,11 @@ const pairs: [string, string, number][] = [
   ['teal', 'paper', 4.5], ['teal', 'canvas', 4.5], ['teal', 'blue-soft', 4.5], ['teal', 'surface-tint', 4.5],
   ['warning', 'paper', 4.5], ['warning', 'canvas', 4.5], ['warning', 'blue-soft', 4.5], ['warning', 'surface-tint', 4.5],
   // Fundos das aulas (resumo e barra de percentual) também são superfície de texto.
-  ['ink', 'teal-soft', 4.5], ['muted', 'teal-soft', 4.5], ['teal', 'teal-soft', 4.5],
+  ['ink', 'teal-soft', 4.5], ['muted', 'teal-soft', 4.5], ['teal', 'teal-soft', 4.5], ['blue', 'teal-soft', 4.5],
   ['control-border', 'paper', 3], ['control-border', 'canvas', 3],
   // Contorno do estado "respondida" no mapa de questões: indicador de estado, não decoração.
   ['blue-border', 'paper', 3], ['blue-border', 'blue-soft', 3],
-  ['focus', 'canvas', 3], ['focus', 'paper', 3], ['focus', 'blue-soft', 3], ['focus', 'surface-tint', 3],
+  ['focus', 'canvas', 3], ['focus', 'paper', 3], ['focus', 'blue-soft', 3], ['focus', 'surface-tint', 3], ['focus', 'teal-soft', 3],
 ];
 
 describe('tokens visuais', () => {

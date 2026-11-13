@@ -41,7 +41,7 @@ nav[aria-label="Paginação de questões"] { display: flex; flex-wrap: wrap; gap
 .history-done .history-entry-status { color: var(--teal); }
 @media (max-width: 600px) { .attempt-history li { grid-template-columns: 1fr; } .attempt-history li > button { grid-column: 1; grid-row: auto; margin-top: 8px; } }
 #mock-exam-title ~ nav, nav[aria-label="Navegação do simulado"], nav[aria-label="Paginação do histórico"] { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
-dialog { border: 1px solid var(--line-strong); border-radius: 12px; padding: 24px; max-width: min(38rem, calc(100vw - 2rem)); color: inherit; }
+dialog { border: 1px solid var(--line-strong); border-radius: 12px; padding: 24px; max-width: min(38rem, calc(100vw - 2rem)); color: inherit; background: var(--paper); }
 dialog::backdrop { background: var(--backdrop); }
 dialog button { margin: 6px; }
 @media (max-width: 480px) { section section { padding: 12px; } #mock-exam-title ~ p { overflow-wrap: anywhere; } }

@@ -1,5 +1,6 @@
 """Operate the production runtime on the VPS (concurso-dev, rootless Docker). No secret is printed or passed as argument."""
 import argparse
+import base64
 import hashlib
 import io
 import json
@@ -27,7 +28,11 @@ DATA_ROOT = Path.home() / ".local/share/concurso-simulator"
 DEFAULT_STATE = DATA_ROOT / "production"
 PRODUCTION_FILES = {"web.Dockerfile", "nginx.conf"}
 SECRET_NAMES = ("db_password", "admin_password", "google_enabled", "google_client_id",
-                "google_client_secret", "google_callback", "frontend_url")
+                "google_client_secret", "google_callback", "frontend_url",
+                "question_import_destination", "question_import_key")
+# Generated values that an older state may lack; created only when missing, never rotated here.
+GENERATED_SECRETS = {"question_import_destination": lambda config: config["project"],
+                     "question_import_key": lambda config: base64.b64encode(secrets.token_bytes(48)).decode()}
 
 
 def production_permitted(name):
@@ -145,8 +150,9 @@ def initialize(state, images_file, rehearsal, recovery=None, port=None):
     secret_dir = state / "secrets"
     secret_dir.mkdir(mode=0o700)
     values = (secrets.token_urlsafe(36), secrets.token_urlsafe(24), "false", "", "",
-              ORIGIN + "/login/oauth2/code/google", ORIGIN)
-    for name, value in zip(SECRET_NAMES, values):
+              ORIGIN + "/login/oauth2/code/google", ORIGIN,
+              GENERATED_SECRETS["question_import_destination"](config), GENERATED_SECRETS["question_import_key"](config))
+    for name, value in zip(SECRET_NAMES, values, strict=True):
         with (secret_dir / name).open("x", encoding="utf-8", newline="\n") as stream:
             stream.write(value)
         # Parent 0700 limits host access; non-root container users read explicit bind mounts.
@@ -203,7 +209,23 @@ def compose(state, config, *args):
                       env=compose_env(state, config), capture_output=True, check=True).stdout
 
 
+def ensure_generated_secrets(state, config):
+    created = []
+    for name, generate in GENERATED_SECRETS.items():
+        path = state / "secrets" / name
+        if path.is_symlink():
+            raise ValueError("Segredo não pode ser link")
+        if not path.exists():
+            with path.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(generate(config))
+            path.chmod(0o644)
+            created.append(name)
+    if created:
+        print("Segredos gerados que faltavam: " + ", ".join(created) + " (valores não impressos).")
+
+
 def start(state, config):
+    ensure_generated_secrets(state, config)
     validate_images(config["images"])
     if not compose(state, config, "ps", "-q", "web").decode().strip():
         port_available(config["port"])
@@ -267,6 +289,42 @@ def disable_google(state, config):
     print("Login Google desligado; client ID/secret preservados nos arquivos privados.")
 
 
+LAUNCHERS = {"questions": "br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal",
+             "templates": "br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal"}
+CLI_ACTIONS = {"questions": {"preview", "import", "report", "decide"},
+               "templates": {"preview", "register", "decide"}}
+
+
+def editorial_cli_command(config, launcher, args, workdir):
+    """Run an existing nonweb editorial launcher from the production API image.
+
+    The helper joins the PostgreSQL container's network namespace, so the launcher's own loopback rule
+    (DB_URL on localhost) still holds and no database port is ever published. Typed confirmations stay
+    interactive; DB_PASSWORD is passed through the environment, never as an argument.
+    """
+    if launcher not in LAUNCHERS or not args or args[0] not in CLI_ACTIONS[launcher]:
+        raise ValueError("Launcher ou ação editorial não permitida")
+    if "--yes" in args or any("\n" in a for a in args):
+        raise ValueError("Argumento não permitido")
+    workdir = Path(workdir).resolve()
+    postgres = f"{config['project']}-postgres-1"
+    return ["run", "--rm", "-i", "--network", f"container:{postgres}", "--user", "0:0",
+            "--read-only", "--tmpfs", "/tmp:rw,nosuid,nodev,noexec,size=64m",
+            "-e", "DB_URL=jdbc:postgresql://localhost:5432/concurso_simulator?connectTimeout=2&socketTimeout=30",
+            "-e", "DB_USERNAME=concurso", "-e", "DB_PASSWORD", "-e", "CI=false", "-e", "GITHUB_ACTIONS=false",
+            "-v", f"{workdir}:/work:ro", "-w", "/work", "--entrypoint", "java",
+            config["images"]["images"]["api"]["id"],
+            f"-Dloader.main={LAUNCHERS[launcher]}", "-cp", "/app/application.jar",
+            "org.springframework.boot.loader.launch.PropertiesLauncher", *args]
+
+
+def editorial_cli(state, config, launcher, args, workdir):
+    command = editorial_cli_command(config, launcher, args, workdir)
+    env = dict(os.environ, DB_PASSWORD=(state / "secrets" / "db_password").read_text(encoding="utf-8").strip())
+    # Interactive: inherit the terminal so the operator types the launcher's own confirmation.
+    return docker_run(command, env=env).returncode
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE)
@@ -285,7 +343,18 @@ def main():
     restore_action.add_argument("--confirm")
     release_action = actions.add_parser("release")
     release_action.add_argument("--images", type=Path, required=True)
+    cli_action = actions.add_parser("editorial-cli", help="executa QuestionBankLocal/TemplateLocal contra este banco")
+    cli_action.add_argument("--launcher", choices=sorted(LAUNCHERS), required=True)
+    cli_action.add_argument("--workdir", type=Path, required=True, help="diretório montado somente leitura em /work")
+    cli_action.add_argument("cli_args", nargs=argparse.REMAINDER)
     args = parser.parse_args()
+    if args.action == "editorial-cli":
+        try:
+            state, config = load(args.state)
+            cli_args = args.cli_args[1:] if args.cli_args[:1] == ["--"] else args.cli_args
+            raise SystemExit(editorial_cli(state, config, args.launcher, cli_args, args.workdir))
+        except (ValueError, OSError, KeyError):
+            parser.exit(1, "CLI editorial recusada; confira launcher, ação e estado.\n")
     try:
         if args.action == "build":
             build(args.revision, args.state)

@@ -1,0 +1,128 @@
+/* Estrutura e início — direção Foco (focus-visual-refresh, grupo 2). Só tokens. */
+
+/* Estrutura geral */
+.skip-link { position: fixed; left: 16px; top: -100px; z-index: 20; padding: 12px; background: var(--paper); border: 1px solid var(--blue); border-radius: 10px; }
+.skip-link:focus { top: 12px; }
+.app-layout { display: grid; grid-template-columns: 232px minmax(0, 1fr); min-height: 100vh; }
+.workspace { min-width: 0; padding: 0 48px; }
+
+/* Navegação lateral */
+.sidebar { background: var(--paper); border-right: 1px solid var(--line); padding: 28px 20px; display: flex; flex-direction: column; gap: 32px; }
+.brand { display: flex; gap: 12px; align-items: center; font-size: .95rem; font-weight: 700; line-height: 1.25; }
+.brand small { display: block; font-size: .8rem; font-weight: 400; margin-top: 3px; }
+.brand-symbol { display: grid; place-items: center; background: var(--ink); color: var(--on-blue); width: 40px; height: 40px; border-radius: 12px; flex-shrink: 0; font-size: .95rem; font-weight: 700; }
+.sidebar nav { display: grid; gap: 4px; }
+.sidebar nav button { display: flex; align-items: center; min-height: 44px; padding: 0 14px; border: 0; border-radius: 10px; text-align: left; color: var(--muted); background: transparent; font-size: .95rem; font-weight: 500; }
+.sidebar nav button:not(:disabled):hover { color: var(--blue); background: var(--blue-soft); }
+.sidebar nav button[aria-current="page"] { color: var(--blue); background: var(--blue-soft); font-weight: 650; }
+.sidebar-foot { margin-top: auto; font-size: .85rem; color: var(--muted); overflow-wrap: anywhere; }
+.study-menu > summary { display: none; }
+.attempt-session-note { margin: 14px 0; font-size: .8rem; color: var(--muted); }
+.attempt-session-note > summary { cursor: pointer; }
+
+/* Modo prova: cabeçalho reduzido */
+.exam-mode { display: block; }
+.exam-mode .sidebar { flex-direction: row; align-items: center; justify-content: space-between; gap: 20px; padding: 12px 32px; border-bottom: 1px solid var(--line); border-right: 0; }
+.exam-mode .brand { font-size: .9rem; }
+.exam-mode .brand-symbol { width: 34px; height: 34px; border-radius: 10px; font-size: .8rem; }
+.exam-mode .brand small, .exam-mode .sidebar-foot, .exam-mode .topbar { display: none; }
+.exam-mode .workspace { max-width: 1200px; margin: auto; padding: 0 32px; }
+.exam-mode .study-menu { position: relative; }
+.exam-mode .study-menu > summary { display: list-item; cursor: pointer; font-size: .85rem; padding: 10px 0; }
+.exam-mode .study-menu nav { position: absolute; z-index: 8; top: 100%; right: 0; min-width: 220px; padding: 8px; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-menu); background: var(--paper); }
+.exam-mode .identity-panel section { margin-top: 10px; }
+.exam-mode .attempt-session-note { margin: 12px 0; }
+
+/* Barra superior */
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; border-bottom: 1px solid var(--line); min-height: 72px; margin-bottom: 32px; font-size: .85rem; color: var(--muted); }
+.topbar strong { color: var(--ink); margin-left: 8px; }
+.topbar-tools { display: flex; align-items: center; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+.theme-select { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); }
+.theme-select select { min-height: 40px; padding: 4px 10px; font-size: .85rem; }
+.identity-pill { border: 1px solid var(--line); border-radius: 999px; padding: 6px 12px; background: var(--paper); white-space: nowrap; }
+
+/* Painel de identidade e sessão */
+.identity-panel section { padding: 14px 0; font-size: .85rem; background: transparent; }
+.identity-panel h2 { font-size: .95rem; margin: 0; }
+.identity-panel p { margin: 6px 0; }
+.identity-panel button, .identity-panel .material-link { min-height: 40px; font-size: .85rem; padding: 8px 14px; }
+.identity-panel .session-card { display: flex; align-items: center; flex-wrap: wrap; gap: 8px 16px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; padding: 12px 0; }
+.session-card > p[role="status"] { margin-right: auto; }
+.session-card > p[role="alert"] { flex-basis: 100%; }
+.session-card .session-help { font-size: .8rem; }
+.session-help summary { cursor: pointer; }
+.session-help[open] { flex-basis: 100%; }
+.identity-panel .session-refresh { margin: 0; background: transparent; color: var(--ink); border-color: var(--control-border); }
+.identity-panel .session-refresh:not(:disabled):hover { color: var(--on-blue); }
+
+/* Rodapé de disponibilidade */
+.availability { margin-top: 40px; border-top: 1px solid var(--line); padding-top: 16px; color: var(--muted); font-size: .8rem; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+.availability button { min-height: 40px; background: transparent; border: 1px solid var(--control-border); color: var(--ink); font-size: .8rem; }
+.availability button:not(:disabled):hover { color: var(--on-blue); }
+
+/* Início */
+.welcome { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(220px, .8fr); align-items: center; gap: 32px; background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 40px; margin: 0 0 20px; }
+.welcome h1 { font-size: clamp(2.1rem, 3.6vw, 2.75rem); line-height: 1.1; letter-spacing: -.025em; margin: 12px 0 16px; font-weight: 700; }
+.welcome .intro { font-size: 1.05rem; line-height: 1.6; color: var(--muted); max-width: 520px; margin: 0 0 8px; }
+.welcome .eyebrow { font-size: .8rem; letter-spacing: .1em; }
+.study-entry { display: grid; gap: 10px; margin: 24px 0 14px; max-width: 440px; }
+.study-entry button { justify-self: start; }
+.home-facts { font-size: .85rem; color: var(--muted); margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 8px 18px; }
+.start-suggestion { display: grid; gap: 8px; align-content: start; padding: 24px; border-radius: 16px; background: var(--blue-soft); }
+.start-suggestion p { margin: 0; }
+.start-suggestion-label { font-size: .85rem; font-weight: 650; color: var(--blue); }
+.start-suggestion-topic { font-size: 1.2rem; font-weight: 700; line-height: 1.3; }
+.start-suggestion-meta { font-size: .9rem; color: var(--muted); }
+.start-suggestion button { justify-self: start; margin-top: 8px; }
+.independent-note { color: var(--muted); font-size: .85rem; line-height: 1.6; margin: 0 0 32px; }
+
+.home-lower { display: grid; grid-template-columns: minmax(0, 1.7fr) minmax(240px, 1fr); gap: 28px; align-items: start; }
+.home-subjects { background: transparent; padding: 0; border: 0; margin: 0; }
+.home-subjects h2 { margin: 10px 0; font-size: 1.4rem; }
+.home-subjects > p { font-size: .95rem; }
+.discipline-list { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 12px; margin-top: 20px; }
+.discipline-link { display: flex; flex-direction: column; align-items: flex-start; gap: 16px; min-height: 0; padding: 20px; background: var(--paper); color: var(--ink); text-align: left; border: 1px solid var(--line); border-radius: 16px; font-size: 1rem; }
+.discipline-link:not(:disabled):hover { background: var(--blue-soft); border-color: var(--blue-border); }
+.discipline-link strong { font-size: 1rem; }
+.discipline-link small { display: block; font-size: .85rem; font-weight: 400; margin-top: 4px; }
+.discipline-icon { display: grid; place-items: center; background: var(--blue-soft); color: var(--teal); width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0; font-size: .85rem; font-weight: 700; font-variant-numeric: tabular-nums; }
+.discipline-arrow { display: none; }
+
+.study-guide { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
+.study-guide h2 { font-size: 1.15rem; margin-top: 0; }
+.study-guide ol { padding-left: 22px; }
+.study-guide li { padding: 10px 0 10px 6px; font-size: .95rem; }
+.study-guide li p, .guest-note { color: var(--muted); font-size: .85rem; }
+.guest-note { border-top: 1px solid var(--line); padding-top: 18px; margin-top: 22px; }
+.secondary-study-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
+
+/* Larguras menores */
+@media (max-width: 1050px) {
+  .app-layout { grid-template-columns: 200px minmax(0, 1fr); }
+  .workspace { padding: 0 28px; }
+  .welcome { padding: 28px; gap: 20px; }
+  .home-lower { gap: 20px; }
+}
+@media (max-width: 800px) {
+  .app-layout { display: block; }
+  .sidebar { padding: 16px 20px 12px; gap: 14px; border-right: 0; border-bottom: 1px solid var(--line); }
+  .sidebar nav { display: flex; flex-wrap: wrap; gap: 4px; }
+  .sidebar nav button { min-height: 44px; padding: 0 14px; font-size: .9rem; }
+  .sidebar-foot { display: none; }
+  .workspace { padding: 0 20px; }
+  .topbar { min-height: 64px; margin-bottom: 24px; }
+  .home-lower { grid-template-columns: 1fr; }
+  .welcome { grid-template-columns: 1fr; }
+}
+@media (max-width: 540px) {
+  .welcome { padding: 22px; border-radius: 16px; }
+  .welcome h1 { font-size: 2rem; }
+  .topbar { flex-wrap: wrap; padding-block: 10px; }
+  .topbar > span:first-child { max-width: 100%; }
+  .topbar-tools { justify-content: flex-start; }
+  .identity-pill { font-size: .8rem; }
+  .availability { flex-direction: column; align-items: flex-start; }
+  .discipline-list { grid-template-columns: 1fr; }
+  .discipline-link { flex-direction: row; align-items: center; padding: 16px; }
+  section { padding: 18px; }
+}

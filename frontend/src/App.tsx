@@ -9,6 +9,7 @@ import { lessons, lessonSupportsRole } from './study-catalog';
 import type { CurrentIdentity } from './identity-api';
 import { useStudyNavigation, locationForRole, type Area } from './study-navigation';
 import ThemeSelect from './ThemeSelect';
+import './styles/shell.css';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
@@ -79,7 +80,7 @@ export default function App() {
       <main id="study-content" tabIndex={-1}>
       <h2 ref={pageHeading} tabIndex={-1} className="sr-only">{areaNames[area]}</h2>
       {navigationNotice && <p role="status">{navigationNotice}</p>}
-      <div hidden={area !== 'home'}><StudyHome roleId={route.roleId} onRoleChange={roleId => updateRoute(locationForRole(route, roleId))} onCompose={() => navigate('attempts')} onQuestions={() => navigate('questions')} onLessons={openLessons} /></div>
+      <div hidden={area !== 'home'}><StudyHome roleId={route.roleId} onRoleChange={roleId => updateRoute(locationForRole(route, roleId))} onCompose={() => navigate('attempts')} onQuestions={() => navigate('questions')} onLessons={openLessons} onOpenLesson={topicId => updateRoute({ area: 'lessons', topicId })} /></div>
       <div className="identity-panel">
       <LoginPanel onIdentity={changedIdentity} onChecking={checkingIdentity} onBeforeLogin={beforeLogin} />
       </div>

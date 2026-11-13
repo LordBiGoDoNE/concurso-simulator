@@ -6,7 +6,7 @@ o lote nem fazer merges. Esses estados ficam separados na issue da spec. As
 perguntas em aberto do design (Figtree ou fonte do sistema; posição do controle de
 tema) são decididas no grupo 1.
 
-Issue da spec: a vincular.
+Issue da spec: [#193](https://github.com/LordBiGoDoNE/concurso-simulator/issues/193).
 
 ## 1. Fundação visual (base dos demais grupos)
 

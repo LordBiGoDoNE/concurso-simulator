@@ -71,7 +71,8 @@ persistência, API, banco ou conteúdo das aulas e questões.
   - [Design system Concurso Simulator](https://claude.ai/artifact/NifjLGgW5EW8xUetL46JGY)
   - [Canvas de direções](https://claude.ai/artifact/7SrviGyn1AuW91QFCe5FkN), linha "B · Foco".
   Os números de resultado e progresso nessas telas são exemplos.
-- Fluxo: parte da `main` atualizada e integra em `epic/focus-visual-refresh`, com
+- Issue da spec: [#193](https://github.com/LordBiGoDoNE/concurso-simulator/issues/193).
+- Fluxo: parte da `main` atualizada (`bfcda06`) e integra em `epic/focus-visual-refresh`, com
   tarefas `task/focus-visual-refresh/<assunto>` e PR final `[SPEC]` para `main`.
   O fluxo exige a revisão final de código (Opus 5.5, esforço medium, em agente novo)
   e autorização própria de merge.

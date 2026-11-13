@@ -88,14 +88,18 @@ test('escolha manual de tema persiste e é aplicada antes do app carregar', asyn
   // Segura o módulo do app: o fundo escuro precisa vir do script inline do index.html, sem piscar claro.
   let release!: () => void; const held = new Promise<void>(resolve => { release = resolve; });
   await page.route('**/src/main.tsx', async route => { await held; await route.continue(); });
-  await page.reload({ waitUntil: 'domcontentloaded' });
-  expect(await page.evaluate(() => [document.documentElement.dataset.theme, getComputedStyle(document.body).backgroundColor])).toEqual(['dark', dark]);
+  // Script de módulo segura o DOMContentLoaded: espera só o commit e o #root analisado, com o app ainda não montado.
+  await page.reload({ waitUntil: 'commit' });
+  await page.waitForFunction(() => !!document.getElementById('root'));
+  expect(await page.evaluate(() => [document.documentElement.dataset.theme, getComputedStyle(document.body).backgroundColor, document.getElementById('root')!.childElementCount])).toEqual(['dark', dark, 0]);
   release(); await expect(page.getByLabel('Tema')).toHaveValue('dark');
 });
 
 for (const colorScheme of ['light', 'dark'] as const) test(`anel de foco do painel de prática não é recortado em ${colorScheme}`, async ({ page }) => {
   await api(page); await page.emulateMedia({ colorScheme }); await page.setViewportSize({ width: 1440, height: 900 }); await page.goto('/#/aulas/P07');
   await expect(page.getByRole('article', { name: /Conteúdo da aula/ })).toBeVisible();
+  // O painel remonta quando sessão e disponibilidade resolvem: espera o estado estável antes de focar.
+  await expect(page.getByText(/Prática disponível: até 5 questões/)).toBeAttached();
   const summary = page.locator('details.lesson-practice-panel > summary');
   await summary.scrollIntoViewIfNeeded();
   for (const open of [false, true]) {

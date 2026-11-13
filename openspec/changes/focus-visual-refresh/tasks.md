@@ -8,12 +8,16 @@ tema) são decididas no grupo 1.
 
 Issue da spec: [#193](https://github.com/LordBiGoDoNE/concurso-simulator/issues/193).
 
+Lote 1, escolhido pelo usuário em 2026-11-13: somente o grupo 1. Itens marcados
+abaixo estão implementados e verificados localmente em
+`task/focus-visual-refresh/visual-foundation`, ainda não integrados à épica.
+
 ## 1. Fundação visual (base dos demais grupos)
 
-- [ ] 1.1 Criar `tokens.css` com os temas claro e escuro, incluir Figtree WOFF2 empacotada com licença OFL e migrar `style.css` para usar só tokens.
-- [ ] 1.2 Aplicar o tema antes da primeira pintura e criar o controle claro/escuro/automático com preferência em `localStorage` protegida por `try/catch`.
-- [ ] 1.3 Adicionar a verificação de cores literais e o teste de contraste dos pares de tokens nos dois temas, incluindo anel de foco e bordas de controle.
-- [ ] 1.4 Atualizar o design system publicado para os tokens Foco e documentar os limites.
+- [x] 1.1 Criar `tokens.css` com os temas claro e escuro, incluir Figtree WOFF2 empacotada com licença OFL e migrar `style.css` para usar só tokens.
+- [x] 1.2 Aplicar o tema antes da primeira pintura e criar o controle claro/escuro/automático com preferência em `localStorage` protegida por `try/catch`.
+- [x] 1.3 Adicionar a verificação de cores literais e o teste de contraste dos pares de tokens nos dois temas, incluindo anel de foco e bordas de controle.
+- [x] 1.4 Atualizar o design system publicado para os tokens Foco e documentar os limites.
 
 ## 2. Estrutura e início (depende de 1)
 

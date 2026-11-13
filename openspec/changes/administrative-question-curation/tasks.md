@@ -2,7 +2,7 @@
 
 Spec da [issue #177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177). Base: `main` `226d2e5b07208887941811beff10ac29295b04b3`; integração em `epic/administrative-question-curation`. Referências: [proposta](proposal.md), [desenho](design.md), [requisitos](specs/administrative-question-curation/spec.md).
 
-Estado: **proposta aprovada pelo usuário em 2026-11-12; grupos 1, 2, 3 e 5 autorizados para implementação** (grupo 4 opcional, não autorizado). Decisões das questões em aberto em [design.md](design.md#decisões-das-questões-em-aberto-usuário-2026-11-12). Autorização de implementação não autoriza merge, arquivamento ou publicação. Cada grupo inclui código, testes e documentação. Risco previsto: crítico.
+Estado: **proposta aprovada pelo usuário em 2026-11-12; grupos 1, 2, 3 e 5 autorizados para implementação** (grupo 4 opcional, não autorizado). Decisões das questões em aberto em [design.md](design.md#decisões-das-questões-em-aberto-usuário-2026-11-12). Autorização de implementação não autoriza merge, arquivamento ou publicação. Implementação: stack #180 ← #181 ← #182 (checklist e evidências na [issue #177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177)); as caixas abaixo só são marcadas após integração na épica. Cada grupo inclui código, testes e documentação. Risco previsto: crítico.
 
 | Grupo | Dependência real | Áreas previstas | Critério de conclusão |
 | --- | --- | --- | --- |

@@ -29,6 +29,6 @@ Nenhuma capacidade consolidada em `openspec/specs/` (inventário vazio na base).
 
 - Base: `main` `226d2e5b07208887941811beff10ac29295b04b3`.
 - Áreas: `questionbank` (domínio de decisão, casos de uso de consulta/lote), infraestrutura JPA e nova migração (versão posterior à V15 da #173, a coordenar), segurança/rotas administrativas, OpenAPI, CLI local (origem da revisão), documentação de operação; interface administrativa mínima opcional.
-- Risco previsto: **crítico** (elegibilidade em lote, autorização, replay). Revisão independente `openai/gpt-6.1-sol#xhigh` conforme AGENTS.md.
+- Risco previsto: **crítico** (elegibilidade em lote, autorização, replay). Revisão: por decisão do usuário de 2026-11-12, somente a revisão final de código antes do merge em `main`, por agente autônomo novo com Claude Opus 5.5 (esforço medium), em contexto independente; a regra SOL anterior não se aplica.
 - Dependência operacional: a habilitação local do acervo da #173 usa esta capacidade depois de implementada e aprovada.
 - Esta entrega é documental (proposta). Implementação, commits de código, revisões, merges e publicação dependem de aprovação própria dos grupos em `tasks.md`.

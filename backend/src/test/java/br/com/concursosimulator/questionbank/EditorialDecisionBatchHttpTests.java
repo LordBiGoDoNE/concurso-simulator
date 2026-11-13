@@ -252,4 +252,43 @@ class EditorialDecisionBatchHttpTests {
         assertThat(json.readTree(response.body()).get("error").asString()).isEqualTo("CONFIRMATION_MISMATCH");
         assertThat(response.headers().firstValue("Cache-Control")).contains("no-store");
     }
+
+    @Test void concurrentReplayOfTheSameTokenReturnsTheReceiptInsteadOfDivergence() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie);
+        var receipt = imported(cookie, csrf, QuestionPurpose.SIMULADO, "batch.concurrent-a", "batch.concurrent-b");
+        var preview = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("SUBMIT", null, List.of(), "Envio concorrente"), receipt.path("confirmation").path("nonce").asString()))));
+        var body = applyBody(preview); int before = decisions();
+        var pool = java.util.concurrent.Executors.newFixedThreadPool(2);
+        try {
+            var first = pool.submit(() -> send(BASE + "/apply", cookie, csrf, body)); var second = pool.submit(() -> send(BASE + "/apply", cookie, csrf, body));
+            var responses = List.of(first.get(), second.get());
+            assertThat(responses).allSatisfy(r -> assertThat(r.statusCode()).as(r.body()).isEqualTo(200));
+            assertThat(responses).extracting(r -> json.readTree(r.body()).get("replayed").asBoolean()).containsExactlyInAnyOrder(false, true);
+            assertThat(json.readTree(responses.get(0).body()).path("receipt")).isEqualTo(json.readTree(responses.get(1).body()).path("receipt"));
+        } finally { pool.shutdownNow(); }
+        assertThat(decisions()).isEqualTo(before + 2);
+    }
+
+    @Test void explicitSelectionAppliesAndResponsesFollowOpenApiAndBatchTokenIsNotAnImportToken() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie);
+        var receipt = imported(cookie, csrf, QuestionPurpose.SIMULADO, "batch.explicit");
+        var item = receipt.path("results").get(0);
+        var fingerprint = jdbc.queryForObject("select fingerprint from qb_revision where id=?", String.class, UUID.fromString(item.path("revisionId").asString()));
+        var explicit = envelope("SUBMIT", null, List.of(), "Seleção explícita"); explicit.putNull("importReceiptId");
+        explicit.putArray("items").addObject().put("questionId", item.path("questionId").asString()).put("revisionId", item.path("revisionId").asString()).put("fingerprint", fingerprint);
+        var preview = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(explicit)));
+        AdministrativeQuestionHttpTests.contract("EditorialBatchPreview", preview);
+        AdministrativeQuestionHttpTests.contract("EditorialBatchPreviewItem", preview.get("items").get(0));
+        AdministrativeQuestionHttpTests.contract("EditorialBatchExpected", preview.get("expected").get(0));
+        // Token do lote não confirma importação (separação de domínio nos dois sentidos).
+        var doc = document(QuestionPurpose.SIMULADO, "batch.cross");
+        var importApply = send("/api/v1/admin/question-imports/apply", cookie, csrf, json.writeValueAsString(new ApplyRequest(doc, List.of("batch.cross"), preview.get("confirmationToken").asString())));
+        assertThat(importApply.statusCode()).isEqualTo(409);
+        var applied = ok(send(BASE + "/apply", cookie, csrf, applyBody(preview)));
+        AdministrativeQuestionHttpTests.contract("EditorialBatchApplied", applied);
+        AdministrativeQuestionHttpTests.contract("EditorialBatchReceipt", applied.get("receipt"));
+        var conflict = send(BASE + "/apply", cookie, csrf, applyBody(preview).replace("Seleção explícita", "Outra"));
+        AdministrativeQuestionHttpTests.contract("EditorialBatchConflict", json.readTree(conflict.body()));
+        assertThat(jdbc.queryForObject("select status from qb_revision where id=?", String.class, UUID.fromString(item.path("revisionId").asString()))).isEqualTo("IN_REVIEW");
+    }
 }

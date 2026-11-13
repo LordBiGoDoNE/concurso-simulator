@@ -121,6 +121,13 @@ public final class EditorialBatchUseCase {
                         || q.get().editorialSequence() != e.editorialSequence()) { diverged.add(e.questionId()); continue; }
                 loaded.put(e.questionId(), q.get());
             }
+            // Replay concorrente: a outra aplicação do mesmo token pode ter feito commit enquanto esperávamos as
+            // travas. Com as travas adquiridas, uma nova leitura enxerga esse commit e devolve o recibo original.
+            var committed = session.batchReceipt(confirmation.nonce());
+            if (committed.isPresent()) {
+                if (!committed.get().confirmation().equals(confirmation)) throw new ConfirmationFailure(false);
+                return new Outcome(committed.get(), true);
+            }
             if (!diverged.isEmpty()) throw new BatchDiverged(diverged);
             var at = clock.instant(); var responsible = "admin:" + actor;
             var rationale = envelope.rationale() + " [lote " + confirmation.nonce() + "]";

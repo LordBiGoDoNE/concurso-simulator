@@ -93,7 +93,7 @@ public final class AdministrativeQuestionQueries {
 
     /** Exatamente uma forma de seleção: questões (última revisão de cada) ou recibo de importação (revisões do recibo). */
     public record ExportSelection(List<UUID> questionIds, UUID importReceiptId) {}
-    public enum ExportFailure { NOT_FOUND, MIXED_PURPOSE, ORIGIN_NOT_EXPORTABLE, MISSING_EVIDENCE, LIMIT_EXCEEDED }
+    public enum ExportFailure { NOT_FOUND, MIXED_PURPOSE, ORIGIN_NOT_EXPORTABLE, MISSING_EVIDENCE, LIMIT_EXCEEDED, NOT_REIMPORTABLE }
     public static final class ExportRefused extends RuntimeException {
         private final ExportFailure failure; private final List<UUID> questionIds;
         public ExportRefused(ExportFailure failure, Collection<UUID> questionIds) {
@@ -154,7 +154,8 @@ public final class AdministrativeQuestionQueries {
             var pack = reader.read(document, keys);
             return new Export(document, keys, pack.digest(), pack.selectionDigest());
         } catch (QuestionImportReader.InvalidPackage invalid) {
-            throw new ExportRefused(ExportFailure.LIMIT_EXCEEDED, revisions.keySet());
+            // Limites de arquivos/bytes do pacote ou conteúdo que o leitor de importação não aceitaria.
+            throw new ExportRefused(ExportFailure.NOT_REIMPORTABLE, revisions.keySet());
         }
     }
 

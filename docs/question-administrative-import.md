@@ -3,7 +3,7 @@
 Operação síncrona para ampliar os acervos **SIMULADO** e **PRATICA_AULA**, por JSON
 autossuficiente. Até 100 questões por pacote, sem teto acumulado de armazenamento.
 Tudo novo entra em DRAFT. A interface administrativa limita-se a login, senha e vínculo Google;
-não há upload/editorial na interface nem publicação de recursos; decisões editoriais HTTP existem apenas em lote para o ADM ([#177](#decisões-editoriais-em-lote--177)), carga no startup ou suporte a templates. Os leitores locais antigos
+não há upload/editorial na interface, publicação de recursos, carga no startup ou suporte a templates. Decisões editoriais por HTTP existem somente em lote para o ADM ([#177](#decisões-editoriais-em-lote--177)). Os leitores locais antigos
 continuam aceitando seus próprios formatos sem conversão automática.
 
 ## Acesso e operação local
@@ -226,7 +226,8 @@ troca inicial concluída; CSRF em POST; respostas `no-store`. Não dependem de
   leitor de importação antes da resposta; reimportá-lo resulta em `IDENTICAL`. Recusa com 422
   `EXPORT_REFUSED` e motivo (`NOT_FOUND`, `MIXED_PURPOSE`, `ORIGIN_NOT_EXPORTABLE` para origens
   fora do formato administrativo, `MISSING_EVIDENCE` quando fontes/recursos não foram
-  armazenados por importação administrativa, `LIMIT_EXCEEDED`).
+  armazenados por importação administrativa, `LIMIT_EXCEEDED` para recibo vazio ou acima de 100,
+  `NOT_REIMPORTABLE` quando o pacote excederia os limites de arquivos/bytes ou seria recusado pelo leitor).
 
 Corpos POST: JSON UTF-8 sem compressão, até 2 MiB, sem chaves duplicadas, campos
 desconhecidos ou coerção de tipos (400 `INVALID_REQUEST`); filtros/limites inválidos
@@ -267,7 +268,11 @@ domínio própria: token de importação não confirma lote, nem o inverso.
    do servidor, checklist, origem da revisão e justificativa acrescida de `[lote <nonce>]`,
    e o recibo (`qb_decision_batch`, `qb_decision_batch_item`, V17), tudo no mesmo commit.
 5. Resposta perdida: reenviar a mesma aplicação devolve o recibo original com
-   `replayed: true`, sem decisões duplicadas.
+   `replayed: true`, sem decisões duplicadas — inclusive quando as duas aplicações chegam ao
+   mesmo tempo: a segunda espera as travas e relê o recibo antes de avaliar divergência.
+6. Importação e lote travam questões em ordens diferentes (origem × ID). Se rodarem ao mesmo
+   tempo sobre as mesmas questões, o PostgreSQL pode abortar uma delas por deadlock: rollback
+   integral e 503, sem efeito parcial; basta repetir.
 
 A plataforma não procura conflitos editoriais nem julga conteúdo ou semelhança: a única
 recusa automática além de forma, acesso e transições do domínio é a divergência entre a

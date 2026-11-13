@@ -14,9 +14,11 @@ import org.springframework.transaction.support.TransactionTemplate;
 /**
  * Projeções administrativas privadas (#177). SQL nativo confinado a esta porta, com parâmetros
  * vinculados; leitura repeatable-read sem travas. O agregado completo reutiliza a validação de carga
- * do {@link JpaQuestionStore}.
+ * do {@link JpaQuestionStore}. {@code @Repository}: falhas JPA (timeout de consulta, conexão) são traduzidas
+ * para a hierarquia DataAccess do Spring e chegam à web como indisponibilidade, sem a web conhecer JPA.
  */
-public final class JpaAdministrativeQuestionCatalog implements AdministrativeQuestionCatalog {
+@org.springframework.stereotype.Repository
+public class JpaAdministrativeQuestionCatalog implements AdministrativeQuestionCatalog {
     private final EntityManager entities;
     private final TransactionTemplate reads;
     private final JpaQuestionStore store;

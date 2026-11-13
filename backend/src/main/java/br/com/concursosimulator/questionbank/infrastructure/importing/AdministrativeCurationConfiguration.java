@@ -9,9 +9,7 @@ import org.springframework.transaction.PlatformTransactionManager;
 /** Wiring da curadoria administrativa (#177); núcleo permanece Java puro. */
 @Configuration
 public class AdministrativeCurationConfiguration {
-    @Bean JpaAdministrativeQuestionCatalog administrativeQuestionCatalog(EntityManager em, PlatformTransactionManager manager, JpaQuestionStore store) {
-        return new JpaAdministrativeQuestionCatalog(em, manager, store);
-    }
+    // JpaAdministrativeQuestionCatalog é @Repository (componente): tradução de exceções JPA pelo Spring.
     @Bean AdministrativeQuestionQueries administrativeQuestionQueries(JpaAdministrativeQuestionCatalog catalog, EntityManager em,
             PlatformTransactionManager manager, AdministrativePackageReader reader) {
         return new AdministrativeQuestionQueries(catalog, new JpaQuestionInventory(em, manager), reader);

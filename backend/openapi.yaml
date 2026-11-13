@@ -1449,7 +1449,7 @@ components:
       required: [error, reason, questionIds, correlationId]
       properties:
         error: {type: string, const: EXPORT_REFUSED}
-        reason: {type: string, enum: [NOT_FOUND, MIXED_PURPOSE, ORIGIN_NOT_EXPORTABLE, MISSING_EVIDENCE, LIMIT_EXCEEDED]}
+        reason: {type: string, enum: [NOT_FOUND, MIXED_PURPOSE, ORIGIN_NOT_EXPORTABLE, MISSING_EVIDENCE, LIMIT_EXCEEDED, NOT_REIMPORTABLE]}
         questionIds: {type: array, items: {type: string, format: uuid}}
         correlationId: {type: string, format: uuid}
     EditorialBatchChecklist:

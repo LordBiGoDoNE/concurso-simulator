@@ -36,7 +36,9 @@ const pairs: [string, string, number][] = [
   ['blue', 'paper', 4.5], ['blue', 'canvas', 4.5], ['blue', 'blue-soft', 4.5],
   ['on-blue', 'blue', 4.5], ['on-blue', 'blue-hover', 4.5], ['on-blue', 'ink', 4.5],
   ['teal', 'paper', 4.5], ['teal', 'canvas', 4.5], ['teal', 'blue-soft', 4.5], ['teal', 'surface-tint', 4.5],
-  ['warning', 'paper', 4.5], ['warning', 'canvas', 4.5],
+  ['warning', 'paper', 4.5], ['warning', 'canvas', 4.5], ['warning', 'blue-soft', 4.5], ['warning', 'surface-tint', 4.5],
+  // Fundos das aulas (resumo e barra de percentual) também são superfície de texto.
+  ['ink', 'teal-soft', 4.5], ['muted', 'teal-soft', 4.5], ['teal', 'teal-soft', 4.5],
   ['control-border', 'paper', 3], ['control-border', 'canvas', 3],
   ['focus', 'canvas', 3], ['focus', 'paper', 3], ['focus', 'blue-soft', 3], ['focus', 'surface-tint', 3],
 ];

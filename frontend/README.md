@@ -137,7 +137,8 @@ O seletor "Tema" da barra superior guarda só `light` ou `dark` na chave
 à de `src/theme.ts`. Sem armazenamento, o tema segue o sistema.
 
 A fonte Figtree vem empacotada pelo pacote `@fontsource-variable/figtree` (OFL),
-sem requisições externas. O Vitest processa só imports CSS com `?raw` (`test.css.include` no
+sem requisições externas. A licença OFL-1.1 do pacote (5.3.0) está copiada em
+`public/licenses/figtree-OFL.txt` e acompanha o build em `/licenses/figtree-OFL.txt`. O Vitest processa só imports CSS com `?raw` (`test.css.include` no
 `vite.config.ts`), usados pelos testes de tokens. Processar todo CSS deixava os
 testes que renderizam o `App` cerca de 50% mais lentos e estourava o tempo no CI.
 
@@ -166,3 +167,11 @@ biblioteca mostra os cartões das disciplinas e pede a escolha, sem listar aulas
 Com disciplina, lista só as aulas dela, sem repetir o nome da disciplina em cada
 cartão. A busca atravessa as disciplinas e mostra a disciplina de cada resultado.
 Os cartões de aula usam `grid-auto-rows: 1fr`, com a mesma altura em toda a lista.
+
+Correções da revisão final (6.3): o painel "Pratique esta aula" não recorta mais o
+anel de foco (o próprio summary arredonda o fundo); no celular, "Ver mapa de
+questões" no topo da realização leva ao mapa; cada pedido de "Praticar este
+assunto" abre o painel uma única vez; o validador tardio rejeita resultados cujos
+desfechos derivados não batem com os totais do servidor. `e2e/focus-review.spec.ts`
+cobre tema escuro sem gabarito em início/montagem/realização, tema manual aplicado
+antes do app e o anel de foco do painel nos dois temas.

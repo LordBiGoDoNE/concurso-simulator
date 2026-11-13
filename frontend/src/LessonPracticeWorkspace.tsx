@@ -27,7 +27,9 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
   const pendingMatches=!inlineLesson || job.current?.selection.topicId===inlineLesson.topic.id;
   useEffect(()=>()=>{request.current?.abort();pending.current=false;},[]);
   // Atalho do resultado: só abre o painel do assunto; iniciar ou trocar a prática continua explícito.
-  useEffect(()=>{if(practiceRequest && practiceRequest.topicId===inlineKey){setOpenKey(inlineKey);panel.current?.scrollIntoView?.({block:'start'});panel.current?.querySelector('summary')?.focus();}},[practiceRequest,inlineKey]);
+  // Cada pedido (nonce) abre o painel uma única vez: voltar depois à mesma aula, ou remontar ao trocar de conta, não reabre nem rouba o foco.
+  const handledRequest=useRef(practiceRequest?.nonce??0);
+  useEffect(()=>{if(practiceRequest && practiceRequest.topicId===inlineKey && practiceRequest.nonce!==handledRequest.current){handledRequest.current=practiceRequest.nonce;setOpenKey(inlineKey);panel.current?.scrollIntoView?.({block:'start'});panel.current?.querySelector('summary')?.focus();}},[practiceRequest,inlineKey]);
   useEffect(()=>{onGuestActive(!!identity && !identity.connected && selected!==null);return()=>onGuestActive(false);},[identity?.connected,selected?.id,onGuestActive]);
   useLayoutEffect(()=>{
     const current=selectedRef.current;if(!current || !contextActive)return;const c=new AbortController();setAccess('checking');

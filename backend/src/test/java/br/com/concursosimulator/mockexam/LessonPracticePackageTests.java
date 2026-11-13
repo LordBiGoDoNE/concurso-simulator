@@ -33,7 +33,7 @@ class LessonPracticePackageTests {
         var selected=new QuestionPackageReader().read(bytes,ROOT,keys);
         assertThat(selected.candidates()).hasSize(255).allSatisfy(c->{assertThat(c.origin().purpose()).isEqualTo(QuestionPurpose.PRATICA_AULA);assertThat(c.expectedLatestRevision()).isNull();});
         try(var db=new AttemptDatabase(PG)) {
-            db.migrate("11");var mock=db.seed("Simulado sintético preservado",true);
+            db.migrate("latest");var mock=db.seed("Simulado sintético preservado",true); // CLI exige banco já migrado
             var before=db.jdbc.queryForObject("select payload::text from qb_revision where question_id=?",String.class,mock.id());
             var url="jdbc:postgresql://127.0.0.1:"+PG.getMappedPort(5432)+"/"+PG.getDatabaseName()+"?currentSchema="+db.schema;
             var env=Map.of("DB_URL",url,"DB_USERNAME",PG.getUsername(),"DB_PASSWORD",PG.getPassword());

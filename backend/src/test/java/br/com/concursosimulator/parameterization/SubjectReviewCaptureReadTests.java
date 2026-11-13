@@ -67,6 +67,8 @@ class SubjectReviewCaptureReadTests {
             var after=rows(db);
             assertThat(after.subList(1,after.size())).isEqualTo(before.subList(1,before.size()));
             assertThat(after.getFirst()).hasSize(before.getFirst().size()+1).containsAll(before.getFirst());
+            // V16 (#177) acrescenta a origem da revisão sem inferir valor para decisões anteriores.
+            assertThat(db.jdbc.queryForObject("select count(*) from qb_decision where review_kind is not null",Integer.class)).isZero();
             assertThat(bootstrapOwners).hasSize(2);assertThat(bootstrapOwners.get(0)).isNotNull().isEqualTo(bootstrapOwners.get(1)).isNotEqualTo(owner.id());
             assertThat(db.jdbc.queryForObject("select active from app_user where id=?",Boolean.class,owner.id())).isTrue();
         }
@@ -85,6 +87,6 @@ class SubjectReviewCaptureReadTests {
     }
     List<List<String>> rows(ParameterDatabase db) {
         return List.of("app_user","qb_question","qb_revision","qb_decision","pq_family","pq_version","pq_decision","pq_instance","me_attempt","me_item","me_command")
-                .stream().map(t->db.jdbc.queryForList("select "+(t.equals("qb_question")?"(to_jsonb(r)-'purpose')::text":t.equals("app_user")?"(to_jsonb(r)-'active')::text":"to_jsonb(r)::text")+" from "+t+" r order by 1",String.class)).toList();
+                .stream().map(t->db.jdbc.queryForList("select "+(t.equals("qb_question")?"(to_jsonb(r)-'purpose')::text":t.equals("app_user")?"(to_jsonb(r)-'active')::text":t.equals("qb_decision")?"(to_jsonb(r)-'review_kind')::text":"to_jsonb(r)::text")+" from "+t+" r order by 1",String.class)).toList();
     }
 }

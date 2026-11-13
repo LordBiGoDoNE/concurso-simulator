@@ -15,11 +15,16 @@ public final class DecideQuestionUseCase {
         store.transaction(session -> {
             var question = session.loadForUpdate(decision.questionId())
                     .orElseThrow(() -> new IllegalArgumentException("Questão inexistente"));
-            var actual = question.eligible().map(r -> r.id()).orElse(null);
-            if (!Objects.equals(actual, expectedEligible) || question.editorialSequence() != expectedEditorialSequence) {
-                throw new StaleQuestionException();
-            }
-            question.decide(decision); session.save(question); return null;
+            decideInSession(session, question, decision, expectedEligible, expectedEditorialSequence); return null;
         });
+    }
+    /** Passo por item, reutilizado pelo lote (#177) dentro da unidade do chamador, com a questão já travada. */
+    public static void decideInSession(QuestionStore.Session session, br.com.concursosimulator.questionbank.domain.Question question,
+                                       EditorialDecision decision, UUID expectedEligible, int expectedEditorialSequence) {
+        var actual = question.eligible().map(r -> r.id()).orElse(null);
+        if (!Objects.equals(actual, expectedEligible) || question.editorialSequence() != expectedEditorialSequence) {
+            throw new StaleQuestionException();
+        }
+        question.decide(decision); session.save(question);
     }
 }

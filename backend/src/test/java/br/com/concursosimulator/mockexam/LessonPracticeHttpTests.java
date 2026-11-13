@@ -41,7 +41,7 @@ class LessonPracticeHttpTests {
             var q=Question.draft(UUID.randomUUID(),new QuestionOrigin(i<30?QuestionPurpose.PRACTICE_NAMESPACE:"http-mock-fixture","P01-P"+i),UUID.randomUUID(),c);
             store.transaction(s->{s.insert(q);return null;});
             for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE))store.transaction(s->{
-                var loaded=s.loadForUpdate(q.id()).orElseThrow();loaded.decide(new EditorialDecision(action,q.id(),q.latest().id(),c.fingerprint(),"Synthetic isolated fixture",Instant.now(),Set.of(EditorialDecision.Check.values()),"Synthetic test only"));s.save(loaded);return null;
+                var loaded=s.loadForUpdate(q.id()).orElseThrow();loaded.decide(new EditorialDecision(action,q.id(),q.latest().id(),c.fingerprint(),"Synthetic isolated fixture",Instant.now(),Set.of(EditorialDecision.Check.values()),"Synthetic test only",EditorialDecision.ReviewKind.HUMAN_PEER));s.save(loaded);return null;
             });
         }
     }

@@ -80,7 +80,7 @@ class AdministrativeImportPersistenceTests {
         for(var result:results) {
             for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE)){
                 var q=db.store.transaction(s->s.loadForUpdate(result.questionId()).orElseThrow());
-                new DecideQuestionUseCase(db.store).execute(new EditorialDecision(action,q.id(),q.latest().id(),q.latest().fingerprint(),"Synthetic fixture",clock.instant(),Set.of(EditorialDecision.Check.values()),"Fixture only"),null,q.editorialSequence());
+                new DecideQuestionUseCase(db.store).execute(new EditorialDecision(action,q.id(),q.latest().id(),q.latest().fingerprint(),"Synthetic fixture",clock.instant(),Set.of(EditorialDecision.Check.values()),"Fixture only",EditorialDecision.ReviewKind.HUMAN_PEER),null,q.editorialSequence());
             }
         }
         var practice=db.store.transaction(s->pool.capture(QuestionPurpose.PRATICA_AULA));assertThat(practice).hasSize(6).allSatisfy(e->assertThat(e.content().classification().topic()).isEqualTo(Topic.P01));

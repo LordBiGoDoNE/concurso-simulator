@@ -90,10 +90,10 @@ confirmação, importação e replay em PostgreSQL efêmero, mantendo todos os25
 rascunho. Fixtures de navegador são sintéticas e isoladas; suas decisões editoriais
 não aprovam conteúdo real nem escrevem no banco do operador.
 
-Backup/restore local aceita schemas V10–V15 completos, registra a versão real e
+Backup/restore local aceita schemas V10–V17 completos e contíguos (V15 da #173; V16 e V17 da #177, esta com qb_decision_batch e qb_decision_batch_item), registra a versão real e
 exige o inventário fechado daquela versão: V10/V11 preservam as tabelas originais;
 V12 acrescenta as quatro tabelas qb_import_*; V13 acrescenta admin_registration;
-V14/V15 mantêm o mesmo inventário fechado. Histórico completo/checksum/imagem
+V14–V16 mantêm o mesmo inventário fechado. Histórico completo/checksum/imagem
 continuam obrigatórios; schema desconhecido não é aceito por ter tabelas parecidas.
 Mantém exigência de checksum, imagem exata e destino vazio. Schema desconhecido,
 histórico incompleto e tabela ausente ou extra são recusados. Imagens continuam excluindo fontes editoriais, testes,

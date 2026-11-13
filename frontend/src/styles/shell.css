@@ -86,7 +86,7 @@
 .discipline-link strong { font-size: 1rem; }
 .discipline-link small { display: block; font-size: .85rem; font-weight: 400; margin-top: 4px; }
 .discipline-icon { display: grid; place-items: center; background: var(--blue-soft); color: var(--teal); width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0; font-size: .85rem; font-weight: 700; font-variant-numeric: tabular-nums; }
-.discipline-arrow { display: none; }
+.discipline-link .discipline-arrow { display: none; }
 
 .study-guide { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 24px; }
 .study-guide h2 { font-size: 1.15rem; margin-top: 0; }

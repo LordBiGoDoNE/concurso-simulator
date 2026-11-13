@@ -82,6 +82,7 @@ class EditorialDecisionBatchHttpTests {
         var array = node.putArray("checklist"); checks.forEach(array::add);
         node.put("rationale", rationale); return node;
     }
+    ObjectNode withoutField(ObjectNode node, String field) { var copy = node.deepCopy(); copy.remove(field); return copy; }
     ObjectNode byReceipt(ObjectNode envelope, String nonce) { var n = envelope.deepCopy(); n.putNull("items"); n.put("importReceiptId", nonce); return n; }
     /** Corpo de aplicação a partir da prévia: mesmo envelope, estado esperado e token. */
     String applyBody(JsonNode preview) {
@@ -217,6 +218,15 @@ class EditorialDecisionBatchHttpTests {
             var response = send(BASE + "/preview", cookie, csrf, json.writeValueAsString(invalid));
             assertThat(response.statusCode()).as(invalid.toString()).isEqualTo(400);
             assertThat(json.readTree(response.body()).get("error").asString()).isEqualTo("INVALID_BATCH");
+        }
+        // Contrato: reviewKind é opcional na requisição (ausente = null); APPROVE sem origem é recusado pelo domínio.
+        var submitWithout = byReceipt(envelope("SUBMIT", null, List.of(), "Envio sem origem declarada"), nonce); submitWithout.remove("reviewKind");
+        var submitted = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(submitWithout)));
+        assertThat(submitted.get("confirmable").asBoolean()).isTrue(); assertThat(submitted.get("reviewKind").isNull()).isTrue();
+        var approveWithout = byReceipt(envelope("APPROVE", null, ALL_CHECKS, "Sem origem"), nonce); approveWithout.remove("reviewKind");
+        for (var missing : List.of(approveWithout, withoutField(submitWithout, "checklist"), withoutField(submitWithout, "rationale"), withoutField(submitWithout, "action"))) {
+            var response = send(BASE + "/preview", cookie, csrf, json.writeValueAsString(missing));
+            assertThat(response.statusCode()).as(missing.toString()).isEqualTo(400);
         }
         var both = byReceipt(envelope("SUBMIT", null, List.of(), "Ambos"), nonce); both.putArray("items");
         assertThat(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(both)).statusCode()).isEqualTo(400);

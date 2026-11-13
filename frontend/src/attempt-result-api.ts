@@ -21,7 +21,7 @@ export function validateFinished(v: unknown, expectedId: string, expectedVersion
 
 export function result(v: unknown): Result {
   validateResult(v);
-  return { ...v, items: v.items.map(c => ({ item: c.item, correctAlternativeId: c.correctAlternativeId, correctAnswer: c.item.alternatives.find(a => a.id === c.correctAlternativeId)!.content, explanation: c.resolution })) };
+  return { ...v, items: v.items.map(c => ({ item: c.item, outcome: c.item.selectedAlternativeId === null ? 'blank' as const : c.item.selectedAlternativeId === c.correctAlternativeId ? 'correct' as const : 'wrong' as const, correctAnswer: c.item.alternatives.find(a => a.id === c.correctAlternativeId)!.content, explanation: c.resolution })) };
 }
 export function finished(v: unknown, expectedId: string, expectedVersion: number): Finished {
   validateFinished(v, expectedId, expectedVersion);return { attempt: v.attempt, result: result(v.result) };

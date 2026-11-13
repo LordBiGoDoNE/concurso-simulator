@@ -8,7 +8,7 @@ it('preserva texto e descrição da figura nas alternativas escolhida e correta'
   const resource = (name: string, description: string) => ({ path: `assets/${name}.svg`, mediaType: 'image/svg+xml', sha256: 'a'.repeat(64), description });
   const selected = { ...view.items[0].alternatives[0], content: { text: 'Observe o gráfico escolhido.', resources: [resource('chosen', 'Barras crescentes da escolha.')] } };
   const correct = { ...view.items[0].alternatives[1], content: { text: 'Observe o mapa correto.', resources: [resource('correct', 'Mapa com dois bairros conectados.')] } };
-  render(<AttemptResult result={{ ...result, wrong: 1, blank: 0, items: [{ item: { ...view.items[0], selectedAlternativeId: selected.id, alternatives: [selected, correct] }, correctAlternativeId: correct.id, correctAnswer: correct.content, explanation: result.items[0].explanation }] }} />);
+  render(<AttemptResult result={{ ...result, wrong: 1, blank: 0, items: [{ item: { ...view.items[0], selectedAlternativeId: selected.id, alternatives: [selected, correct] }, outcome: 'wrong', correctAnswer: correct.content, explanation: result.items[0].explanation }] }} />);
   expect(screen.getByText('Observe o gráfico escolhido.')).toBeInTheDocument();expect(screen.getByText('Descrição da figura: Barras crescentes da escolha.')).toBeInTheDocument();
   expect(screen.getByText('Observe o mapa correto.')).toBeInTheDocument();expect(screen.getByText('Descrição da figura: Mapa com dois bairros conectados.')).toBeInTheDocument();
   expect(screen.getByText('0/1 pontos — 0%.')).toBeInTheDocument();expect(screen.getByRole('heading', { name: 'Resultado do simulado' })).toHaveFocus();
@@ -18,7 +18,7 @@ it('preserva texto e descrição da figura nas alternativas escolhida e correta'
 const [a, b] = view.items[0].alternatives;
 const question = (n: number, topicId: string, selectedAlternativeId: string | null) => ({
   item: { ...view.items[0], id: `item-${n}`, classification: { ...view.items[0].classification, topicId }, statement: { text: `Enunciado ${n}`, resources: [] }, selectedAlternativeId },
-  correctAlternativeId: a.id, correctAnswer: a.content, explanation: { text: `Resolução ${n}`, resources: [] },
+  outcome: selectedAlternativeId === null ? 'blank' as const : selectedAlternativeId === a.id ? 'correct' as const : 'wrong' as const, correctAnswer: a.content, explanation: { text: `Resolução ${n}`, resources: [] },
 });
 const mixed: Result = { total: 3, points: 1, correct: 1, wrong: 1, blank: 1, percentage: 33.33, items: [question(1, 'P07', a.id), question(2, 'P01', b.id), question(3, 'SEM-AULA', null)] };
 

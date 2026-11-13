@@ -1,11 +1,10 @@
 import { useLayoutEffect, useRef, useState } from 'react';
-import type { Result } from './attempt-api';
+import type { Outcome, Result } from './attempt-api';
 import AttemptText from './AttemptText';
 import { lessons } from './study-catalog';
 
 /** Atalhos da revisão para o assunto de cada questão; só existem depois do encerramento. */
 export interface TopicShortcuts { review: (topicId: string) => void; practice: (topicId: string) => void }
-type Outcome = 'correct' | 'wrong' | 'blank';
 const outcomeLabel: Record<Outcome, string> = { correct: 'Correta', wrong: 'Errada', blank: 'Em branco' };
 const outcomeIcon: Record<Outcome, string> = { correct: '✓', wrong: '✕', blank: '–' };
 const share = (n: number, total: number) => total ? `${(n / total) * 100}%` : '0%';
@@ -15,9 +14,7 @@ export default function AttemptResult({ result, practice = false, shortcuts }: {
   const [onlyMissed, setOnlyMissed] = useState(false);
   const prefix = practice ? 'lesson-result' : 'attempt-result';
   const reviewed = result.items.map((correction, i) => {
-    const chosen = correction.item.selectedAlternativeId;
-    const outcome: Outcome = chosen === null ? 'blank' : chosen === correction.correctAlternativeId ? 'correct' : 'wrong';
-    return { correction, outcome, number: i + 1 };
+    return { correction, outcome: correction.outcome, number: i + 1 };
   });
   const visible = onlyMissed ? reviewed.filter(r => r.outcome !== 'correct') : reviewed;
   const missed = result.wrong + result.blank;

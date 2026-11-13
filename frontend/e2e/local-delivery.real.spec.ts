@@ -34,7 +34,7 @@ test('prática de aula não substitui gravação real já confirmada no servidor
     await area(page).getByRole('radio').first().check();await expect.poll(() => committed).toBe(true);
     await page.getByText('Ir para outra área', { exact: true }).click();
     await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Aulas', exact: true }).click();
-    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.locator('details.lesson-practice-panel > summary').click();await page.getByRole('button', { name: 'Começar prática', exact: true }).click();
+    await page.getByLabel('Filtrar disciplina').selectOption('portugues');await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.locator('details.lesson-practice-panel > summary').click();await page.getByRole('button', { name: 'Começar prática', exact: true }).click();
     await expect(page).toHaveURL(/#\/aulas\/P01/);
     await expect(page.getByRole('heading', {name:'Questão 1 de 5'})).toBeVisible();expect(confirmations).toBe(0);expect(newAttempts).toBe(0);
     expect((await (await page.request.get('/api/v1/attempts/' + view.id)).json()).version).toBe(1);

@@ -1,0 +1,87 @@
+/*
+  Concurso Simulator — tokens visuais da direção Foco (spec focus-visual-refresh).
+  Única fonte de cores, sombras e família tipográfica. Os componentes usam só var(--…).
+  Tema claro em :root; escuro pelo sistema (sem escolha manual) ou por data-theme="dark".
+*/
+:root {
+  --font-sans: 'Figtree Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  --canvas: #f4f6f9;
+  --paper: #ffffff;
+  --ink: #14243a;
+  --muted: #56657a;
+  --line: #e1e6ee;
+  --line-strong: #cfd7e2;
+  --control-border: #7d8a9e;
+  --blue: #2457d6;
+  --blue-hover: #1a44ad;
+  --on-blue: #ffffff;
+  --blue-soft: #e9f0ff;
+  --blue-border: #6a89c2;
+  --teal: #0f6f68;
+  --teal-soft: #e5f2ef;
+  --warning: #9a3f07;
+  --focus: #b35c00;
+  --backdrop: #172b3a99;
+  --shadow-menu: 0 8px 24px #14243a18;
+  --shadow-bar: 0 -4px 20px #14243a12;
+  --lesson-attention: #dba94f;
+  --lesson-percent-border: #b8d2ce;
+  --lesson-figure-plate: #ffffff;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --canvas: #0f1724;
+    --paper: #172233;
+    --ink: #e8eef7;
+    --muted: #9fb0c6;
+    --line: #2a3a52;
+    --line-strong: #33465f;
+    --control-border: #6b7d97;
+    --blue: #8fb0ff;
+    --blue-hover: #b5cbff;
+    --on-blue: #0f1724;
+    --blue-soft: #1d3157;
+    --blue-border: #6283bd;
+    --teal: #5fd0c3;
+    --teal-soft: #173a3a;
+    --warning: #f0a050;
+    --focus: #f0a050;
+    --backdrop: #050910b3;
+    --shadow-menu: 0 8px 24px #00000066;
+    --shadow-bar: 0 -4px 20px #00000055;
+    --lesson-attention: #d9a648;
+    --lesson-percent-border: #3d6b66;
+    --lesson-figure-plate: #eef2f7;
+    color-scheme: dark;
+  }
+}
+
+:root[data-theme="dark"] {
+  --canvas: #0f1724;
+  --paper: #172233;
+  --ink: #e8eef7;
+  --muted: #9fb0c6;
+  --line: #2a3a52;
+  --line-strong: #33465f;
+  --control-border: #6b7d97;
+  --blue: #8fb0ff;
+  --blue-hover: #b5cbff;
+  --on-blue: #0f1724;
+  --blue-soft: #1d3157;
+  --blue-border: #6283bd;
+  --teal: #5fd0c3;
+  --teal-soft: #173a3a;
+  --warning: #f0a050;
+  --focus: #f0a050;
+  --backdrop: #050910b3;
+  --shadow-menu: 0 8px 24px #00000066;
+  --shadow-bar: 0 -4px 20px #00000055;
+  --lesson-attention: #d9a648;
+  --lesson-percent-border: #3d6b66;
+  --lesson-figure-plate: #eef2f7;
+  color-scheme: dark;
+}

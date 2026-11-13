@@ -1,3 +1,4 @@
+import './styles/lessons.css';
 import { useCallback, useEffect, useImperativeHandle, useLayoutEffect, useRef, useState, type Ref } from 'react';
 import { AttemptApiError, type RunView } from './attempt-api';
 import type { CurrentIdentity } from './identity-api';
@@ -8,20 +9,42 @@ import LessonPracticeHistory from './LessonPracticeHistory';
 import catalog from './lesson-catalog.json';
 import LessonPracticeEntry from './LessonPracticeEntry';
 import { type Lesson } from './study-catalog';
+import type { TopicShortcuts } from './AttemptResult';
+/** Pedido do resultado para abrir o painel de prática de um assunto; `nonce` repete o mesmo assunto. */
+export interface PracticeRequest { topicId: string; nonce: number }
 
 export interface LessonPracticeHandle {start:(selection:LessonPracticeSelection)=>boolean}
 interface InlineLesson {topic:Lesson}
-export default function LessonPracticeWorkspace({identity,contextActive,onUnavailable,onGuestActive,onBackToLesson,onChooseLesson,inlineLesson,ref}:{identity:CurrentIdentity|null;contextActive:boolean;onUnavailable:()=>void;onGuestActive:(value:boolean)=>void;onBackToLesson:(topic:string)=>void;onChooseLesson:()=>void;inlineLesson?:InlineLesson;ref?:Ref<LessonPracticeHandle>}) {
+export default function LessonPracticeWorkspace({identity,contextActive,onUnavailable,onGuestActive,onBackToLesson,onChooseLesson,inlineLesson,ref,shortcuts,practiceRequest}:{shortcuts?:TopicShortcuts;practiceRequest?:PracticeRequest;identity:CurrentIdentity|null;contextActive:boolean;onUnavailable:()=>void;onGuestActive:(value:boolean)=>void;onBackToLesson:(topic:string)=>void;onChooseLesson:()=>void;inlineLesson?:InlineLesson;ref?:Ref<LessonPracticeHandle>}) {
   const [selected,setSelected]=useState<PracticeView|null>(null);const selectedRef=useRef(selected);selectedRef.current=selected;
   const [busy,setBusy]=useState(false);const pending=useRef(false);const request=useRef<AbortController|null>(null);
   const [message,setMessage]=useState('');const [failed,setFailed]=useState(false);const [refresh,setRefresh]=useState(0);
   const [access,setAccess]=useState<'ready'|'checking'|'failed'>('ready');const [verify,setVerify]=useState(0);
   const job=useRef<{selection:LessonPracticeSelection;commandId:string}|null>(null);const run=useRef<AttemptPracticeHandle>(null);
-  const [openKey,setOpenKey]=useState('');
+  const [openKey,setOpenKey]=useState('');const panel=useRef<HTMLDetailsElement>(null);
   const inlineKey=inlineLesson?.topic.id ?? '';
   const matches=!inlineLesson || selected?.topicId===inlineLesson.topic.id;
   const pendingMatches=!inlineLesson || job.current?.selection.topicId===inlineLesson.topic.id;
   useEffect(()=>()=>{request.current?.abort();pending.current=false;},[]);
+  // Dentro da aula, o resultado da prática é do próprio assunto: os atalhos levariam à mesma aula, então só a prática avulsa os recebe.
+  // Atalho do resultado: só abre o painel do assunto; iniciar ou trocar a prática continua explícito.
+  // Cada pedido (nonce) abre o painel uma única vez: voltar depois à mesma aula, ou remontar ao trocar de conta, não reabre nem rouba o foco.
+  const handledRequest=useRef(practiceRequest?.nonce??0);
+  // O documento da aula chega depois e empurra o painel: enquanto a página cresce, o painel focado continua em vista.
+  // Para ao primeiro gesto do estudante, quando o foco sai do painel ou após 3 s.
+  useEffect(()=>{
+    if(!practiceRequest || practiceRequest.topicId!==inlineKey || practiceRequest.nonce===handledRequest.current)return;
+    handledRequest.current=practiceRequest.nonce;setOpenKey(inlineKey);
+    const summary=panel.current?.querySelector('summary');const keep=()=>panel.current?.scrollIntoView?.({block:'start'});
+    keep();summary?.focus({preventScroll:true});
+    if(!summary || typeof ResizeObserver==='undefined')return;
+    const gestures=['wheel','touchstart','pointerdown','keydown'] as const;
+    const observer=new ResizeObserver(()=>{if(document.activeElement===summary)keep();else stop();});
+    const timer=setTimeout(()=>stop(),3000);
+    function stop(){observer.disconnect();clearTimeout(timer);gestures.forEach(g=>window.removeEventListener(g,stop));}
+    gestures.forEach(g=>window.addEventListener(g,stop,{passive:true}));observer.observe(document.body);
+    return stop;
+  },[practiceRequest,inlineKey]);
   useEffect(()=>{onGuestActive(!!identity && !identity.connected && selected!==null);return()=>onGuestActive(false);},[identity?.connected,selected?.id,onGuestActive]);
   useLayoutEffect(()=>{
     const current=selectedRef.current;if(!current || !contextActive)return;const c=new AbortController();setAccess('checking');
@@ -66,7 +89,7 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
   const topic=selected?.topicId;const title=catalog.topics.find(t=>t.id===topic)?.title;
   return <section className="lesson-practice-workspace" aria-labelledby={inlineLesson ? 'lesson-practice-panel-title' : 'practice-workspace-title'}>
     {!inlineLesson && <header className="page-intro"><p className="eyebrow">Aprender fazendo</p><h1 id="practice-workspace-title">Prática das aulas</h1><p>Questões próprias do assunto, sem usar o acervo de simulados. Correção e explicações somente ao encerrar.</p></header>}
-    <details className={inlineLesson ? 'lesson-practice-panel' : 'practice-standalone'} open={!inlineLesson || openKey===inlineKey} onToggle={event=>{if(inlineLesson && event.currentTarget.open!==(openKey===inlineKey))setOpenKey(event.currentTarget.open ? inlineKey : '');}}>
+    <details ref={panel} className={inlineLesson ? 'lesson-practice-panel' : 'practice-standalone'} open={!inlineLesson || openKey===inlineKey} onToggle={event=>{if(inlineLesson && event.currentTarget.open!==(openKey===inlineKey))setOpenKey(event.currentTarget.open ? inlineKey : '');}}>
     <summary hidden={!inlineLesson}><span><strong id="lesson-practice-panel-title">Pratique esta aula</strong><small>Opcional · até cinco questões{matches && selected ? selected.finishedAt ? ' · prática encerrada' : ' · prática em andamento' : ''}</small></span></summary>
     <div className="lesson-practice-panel-body">
     {inlineLesson && <LessonPracticeEntry topic={inlineLesson.topic} onPractice={start} active startEnabled={contextActive} startState={busy ? 'loading' : failed && job.current ? 'pending' : matches && selected ? selected.finishedAt ? 'finished' : 'running' : 'ready'} />}
@@ -77,7 +100,7 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
     {!inlineLesson && !selected && !busy && <div className="study-guide"><h2>Qual assunto vamos praticar?</h2><p>Abra uma aula e escolha Começar prática. O treino reúne até cinco questões próprias daquele assunto.</p><button onClick={onChooseLesson}>Escolher uma aula</button></div>}
     {selected && <div hidden={!matches || busy || !contextActive} className="inline-practice-run"><div className="practice-context"><h2>{topic} — {title}</h2><p>{selected.items.length} questões da aula</p>{!inlineLesson && <button className="secondary" onClick={()=>onBackToLesson(topic!)}>Voltar à aula {topic}</button>}</div>
       {access==='checking' && <p role="status">Conferindo acesso à prática…</p>}{access==='failed' && <><p role="alert">Não foi possível conferir o acesso. A prática fica oculta até confirmar.</p><button onClick={()=>setVerify(v=>v+1)}>Conferir prática novamente</button></>}
-      <div hidden={busy || access!=='ready' || !contextActive}><AttemptPractice ref={run} key={selected.id} initial={selected} practice transport={lessonPracticeTransport} onUnavailable={onUnavailable} onFinished={finished}/></div>
+      <div hidden={busy || access!=='ready' || !contextActive}><AttemptPractice ref={run} key={selected.id} initial={selected} practice transport={lessonPracticeTransport} onUnavailable={onUnavailable} onFinished={finished} shortcuts={inlineLesson ? undefined : shortcuts}/></div>
     </div>}
     {inlineLesson && matches && selected && <button className="secondary collapse-practice" onClick={()=>setOpenKey('')}>Recolher prática e voltar à leitura</button>}
     {!inlineLesson && identity?.connected && contextActive && <LessonPracticeHistory refresh={refresh} onOpen={id=>void open(id)} onUnavailable={onUnavailable}/>}

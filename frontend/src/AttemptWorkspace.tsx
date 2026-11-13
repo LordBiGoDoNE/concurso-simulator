@@ -5,11 +5,12 @@ import AttemptComposer from './AttemptComposer';
 import AttemptPractice, { type AttemptPracticeHandle } from './AttemptPractice';
 import AttemptHistory from './AttemptHistory';
 import SubjectReviewPanel from './SubjectReviewPanel';
+import type { TopicShortcuts } from './AttemptResult';
 
 import type { DirectedPractice } from './directed-practice';
 
 export interface AttemptWorkspaceHandle { practice: (selection: DirectedPractice) => boolean }
-export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true, contextActive = true, ref, onRunActiveChange }: { onRunActiveChange?: (active: boolean) => void; ref?: Ref<AttemptWorkspaceHandle>; contextActive?: boolean; reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
+export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true, contextActive = true, ref, onRunActiveChange, shortcuts }: { shortcuts?: TopicShortcuts; onRunActiveChange?: (active: boolean) => void; ref?: Ref<AttemptWorkspaceHandle>; contextActive?: boolean; reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
   const [directed, setDirected] = useState<DirectedPractice | null>(null); const [composerVersion, setComposerVersion] = useState(0); const [composing, setComposing] = useState(false);
   const [selected, setSelected] = useState<AttemptView | null>(null); const [loading, setLoading] = useState(false); const [message, setMessage] = useState('');
   const [historyRefresh, setHistoryRefresh] = useState(0); const generation = useRef(0); const request = useRef<AbortController | null>(null);
@@ -62,7 +63,7 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
     {loading ? <p role="status">Retomando tentativa…</p> : selected ? <>
       {access === 'checking' && <p role="status">Conferindo acesso à tentativa…</p>}
       {access === 'failed' && <><p role="alert">Não foi possível confirmar o acesso à tentativa. O conteúdo permanece oculto.</p><button onClick={() => setVerifyRetry(v => v + 1)}>Conferir tentativa novamente</button></>}
-      <div hidden={access !== 'ready'}><AttemptPractice ref={realization} key={selected.id} initial={selected} reviewActive={reviewActive && access === 'ready'} onUnavailable={onUnavailable} onFinished={finished} onPractice={practice} /></div>
+      <div hidden={access !== 'ready'}><AttemptPractice ref={realization} key={selected.id} initial={selected} reviewActive={reviewActive && access === 'ready'} onUnavailable={onUnavailable} onFinished={finished} onPractice={practice} shortcuts={shortcuts} /></div>
       <button onClick={() => { if (canReplaceSelected() && window.confirm('Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.')) { clearDirected(); setSelected(null); } }}>Compor outro simulado</button>
     </> : <AttemptComposer key={composerVersion} prefill={directed} active={reviewActive} onBusy={setComposing} onCreated={created} onUnavailable={onUnavailable} />}
     {identity.connected && <SubjectReviewPanel onPractice={practice} practiceEnabled={!composing && !loading && access === 'ready'} onRoleChange={clearDirected} active={reviewActive} refresh={historyRefresh} onUnavailable={onUnavailable} />}

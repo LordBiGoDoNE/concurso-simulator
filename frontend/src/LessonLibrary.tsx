@@ -1,3 +1,4 @@
+import './styles/lessons.css';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { studyCatalog as catalog, lessons, lessonSupportsRole } from './study-catalog';
 import NativeLesson from './NativeLesson';
@@ -39,16 +40,18 @@ export default function LessonLibrary({ initialDiscipline = '', location, onLoca
     </section>;
   }
   const query = normalize(search.trim());
-  const results = eligible.filter(t => (!discipline || t.disciplineId === discipline) && normalize(t.id + ' ' + t.title + ' ' + disciplineTitle(t.disciplineId)).includes(query));
+  // Sem disciplina escolhida nem busca, a biblioteca pede a escolha antes de listar aulas.
+  const choosing = !discipline && !query;
+  const results = choosing ? [] : eligible.filter(t => (!discipline || t.disciplineId === discipline) && normalize(t.id + ' ' + t.title + ' ' + disciplineTitle(t.disciplineId)).includes(query));
   return <section className="lesson-library" aria-labelledby="lesson-library-title">
     <header className="page-intro"><p className="eyebrow">Aprenda no seu ritmo</p><h1 id="lesson-library-title" ref={heading} tabIndex={-1}>Suas aulas, em um só lugar</h1><p>{eligible.length} assuntos para entender, revisar e colocar em prática. Escolha por onde começar.</p></header>
     <div className="lesson-role-filter"><label htmlFor="library-role">Cargo para encontrar aulas</label><select id="library-role" value={role} onChange={e => change(locationForRole(value, e.target.value))}><option value="">Todos os cargos</option>{catalog.roles.map(r => <option key={r.id} value={r.id}>{r.title}</option>)}</select></div>
     <div className="lesson-disciplines">{disciplines.map((d, i) => <button key={d.id} aria-pressed={discipline === d.id} onClick={() => change({ disciplineId: discipline === d.id ? '' : d.id })}><span className="discipline-icon" aria-hidden="true">{String(i + 1).padStart(2, '0')}</span><strong>{d.title}</strong><small>{eligible.filter(t => t.disciplineId === d.id).length} aulas</small></button>)}</div>
-    <div className="library-layout"><div><div className="lesson-filters"><label htmlFor="lesson-search">Buscar aula<input id="lesson-search" type="search" maxLength={160} placeholder="Qual assunto você quer estudar?" value={search} onChange={e => change({ search: e.target.value }, true)} /></label><label htmlFor="lesson-discipline">Filtrar disciplina<select id="lesson-discipline" value={discipline} onChange={e => change({ disciplineId: e.target.value })}><option value="">Todas as disciplinas</option>{disciplines.map(d => <option key={d.id} value={d.id}>{d.title}</option>)}</select></label></div>
-      <p role="status">{results.length} {results.length === 1 ? 'aula encontrada' : 'aulas encontradas'}.</p>
-      {!results.length && <div className="library-empty"><h2>Nenhuma aula por aqui</h2><p>Tente outro assunto ou remova os filtros.</p><button className="secondary" onClick={() => change({ search: '', disciplineId: '' })}>Limpar busca e filtros</button></div>}
-      <ul className="lesson-list">{results.map(t => <li key={t.id}><button onClick={() => change({ topicId: t.id })}><span className="lesson-code">{t.id}</span><span><strong>{t.title}</strong><small>{disciplineTitle(t.disciplineId)}</small></span><span className="discipline-arrow" aria-hidden="true">→</span></button></li>)}</ul>
-    </div><aside className="study-guide"><h2>Um assunto de cada vez</h2><p>Explore a teoria, acompanhe os exemplos e use os exercícios para conferir seu entendimento.</p><p className="guest-note">As aulas estão disponíveis sem login. Para treinar um assunto, abra a aula e confira o código do assunto antes de praticar.</p><button className="secondary" onClick={() => change({ search: '', disciplineId: '', roleId: '' })}>Ver todas as aulas</button></aside></div>
+    <div className="library-layout"><div><div className="lesson-filters"><label htmlFor="lesson-search">Buscar aula<input id="lesson-search" type="search" maxLength={160} placeholder="Qual assunto você quer estudar?" value={search} onChange={e => change({ search: e.target.value }, true)} /></label><label htmlFor="lesson-discipline">Filtrar disciplina<select id="lesson-discipline" value={discipline} onChange={e => change({ disciplineId: e.target.value })}><option value="">{query ? 'Todas as disciplinas' : 'Escolha uma disciplina'}</option>{disciplines.map(d => <option key={d.id} value={d.id}>{d.title}</option>)}</select></label></div>
+      <p role="status">{choosing ? 'Escolha uma disciplina ou busque um assunto para ver as aulas.' : `${results.length} ${results.length === 1 ? 'aula encontrada' : 'aulas encontradas'}.`}</p>
+      {!choosing && !results.length && <div className="library-empty"><h2>Nenhuma aula por aqui</h2><p>Tente outro assunto ou remova os filtros.</p><button className="secondary" onClick={() => change({ search: '', disciplineId: '' })}>Limpar busca e filtros</button></div>}
+      {!!results.length && <ul className="lesson-list">{results.map(t => <li key={t.id}><button onClick={() => change({ topicId: t.id })}><span className="lesson-code">{t.id}</span><span><strong>{t.title}</strong>{!discipline && <small>{disciplineTitle(t.disciplineId)}</small>}</span><span className="discipline-arrow" aria-hidden="true">→</span></button></li>)}</ul>}
+    </div><aside className="study-guide"><h2>Um assunto de cada vez</h2><p>Explore a teoria, acompanhe os exemplos e use os exercícios para conferir seu entendimento.</p><p className="guest-note">As aulas estão disponíveis sem login. Para treinar um assunto, abra a aula e confira o código do assunto antes de praticar.</p><button className="secondary" onClick={() => change({ search: '', disciplineId: '', roleId: '' })}>Recomeçar a escolha</button></aside></div>
   </section>;
 }
 

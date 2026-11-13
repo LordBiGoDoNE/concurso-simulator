@@ -1,13 +1,16 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import LoginPanel from './LoginPanel';
 import QuestionBrowser from './QuestionBrowser';
 import AttemptWorkspace from './AttemptWorkspace';
-import LessonPracticeWorkspace from './LessonPracticeWorkspace';
+import LessonPracticeWorkspace, { type PracticeRequest } from './LessonPracticeWorkspace';
+import type { TopicShortcuts } from './AttemptResult';
 import StudyHome from './StudyHome';
 import LessonLibrary, { LessonPagination } from './LessonLibrary';
 import { lessons, lessonSupportsRole } from './study-catalog';
 import type { CurrentIdentity } from './identity-api';
 import { useStudyNavigation, locationForRole, type Area } from './study-navigation';
+import ThemeSelect from './ThemeSelect';
+import './styles/shell.css';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
@@ -21,12 +24,18 @@ export default function App() {
   const [lessonsOpened, setLessonsOpened] = useState(area === 'lessons');
   const lesson = area === 'lessons' ? lessons.find(topic => topic.id === route.topicId) : undefined;
   const pageHeading = useRef<HTMLHeadingElement>(null); const previousArea = useRef(area);
+  // "Praticar este assunto" troca de área e entrega o foco ao painel da aula; o título da área não o retoma.
+  const practiceFocus = useRef(false);
   function navigate(next: Area) { updateRoute({ area: next }); }
   useEffect(() => {
     if (area === 'lessons') setLessonsOpened(true);
-    if (previousArea.current !== area) pageHeading.current?.focus();
+    if (previousArea.current !== area && !practiceFocus.current) pageHeading.current?.focus();
+    practiceFocus.current = false;
     previousArea.current = area;
   }, [area]);
+  // Se a rota não mudou de área (troca recusada ou já em Aulas), o sinal não pode suprimir um foco de área posterior.
+  const [practiceRequest, setPracticeRequest] = useState<PracticeRequest>();
+  useEffect(() => { practiceFocus.current = false; }, [practiceRequest]);
   function openLessons(discipline?: string, roleId?: string) {
     updateRoute({ ...(roleId === undefined ? {} : locationForRole(route, roleId)), area: 'lessons', ...(discipline === undefined ? {} : { disciplineId: discipline, topicId: '', search: '' }) });
   }
@@ -37,6 +46,7 @@ export default function App() {
   const setGuestActive = useCallback((value: boolean) => { guestActive.current.attempt = value; }, []);
   const setPracticeGuestActive = useCallback((value: boolean) => { guestActive.current.practice = value; }, []);
   const backToLesson = useCallback((id:string) => { const topic=lessons.find(t=>t.id===id); updateRoute({ area: 'lessons', topicId: id, roleId: topic && lessonSupportsRole(topic,route.roleId) ? route.roleId : '' }); }, [updateRoute,route.roleId]);
+  const shortcuts = useMemo<TopicShortcuts>(() => ({ review: backToLesson, practice: id => { practiceFocus.current = previousArea.current !== 'lessons'; backToLesson(id); setPracticeRequest(r => ({ topicId: id, nonce: (r?.nonce ?? 0) + 1 })); } }), [backToLesson]);
   const lastAccountId = useRef<string | null>(null);
   const changedIdentity = useCallback((value: CurrentIdentity | null) => {
     if (value?.connected) {
@@ -74,19 +84,19 @@ export default function App() {
         <details className="study-menu" open={!(area === 'attempts' && runActive && !checking)}><summary>Ir para outra área</summary><nav aria-label="Navegação principal">{(Object.keys(areaNames) as Area[]).map(item => <button key={item} aria-current={area === item ? 'page' : undefined} onClick={() => navigate(item)}>{areaNames[item]}</button>)}</nav></details>
         <div className="sidebar-foot"><p>Aprenda no seu ritmo.<br /><small>Aulas, prática e revisão.</small></p></div>
       </aside>
-      <div className="workspace"><header className="topbar"><span>Seu espaço de estudo <span aria-hidden="true">/</span> <strong>{areaNames[area]}</strong></span><span className="identity-pill">{checking ? 'Conferindo sessão' : identity?.connected ? 'Conta conectada' : 'Acesso visitante'}</span></header>
+      <div className="workspace"><header className="topbar"><span>Seu espaço de estudo <span aria-hidden="true">/</span> <strong>{areaNames[area]}</strong></span><span className="topbar-tools"><ThemeSelect /><span className="identity-pill">{checking ? 'Conferindo sessão' : identity?.connected ? 'Conta conectada' : 'Acesso visitante'}</span></span></header>
       <main id="study-content" tabIndex={-1}>
       <h2 ref={pageHeading} tabIndex={-1} className="sr-only">{areaNames[area]}</h2>
       {navigationNotice && <p role="status">{navigationNotice}</p>}
-      <div hidden={area !== 'home'}><StudyHome roleId={route.roleId} onRoleChange={roleId => updateRoute(locationForRole(route, roleId))} onCompose={() => navigate('attempts')} onQuestions={() => navigate('questions')} onLessons={openLessons} /></div>
+      <div hidden={area !== 'home'}><StudyHome roleId={route.roleId} onRoleChange={roleId => updateRoute(locationForRole(route, roleId))} onCompose={() => navigate('attempts')} onQuestions={() => navigate('questions')} onLessons={openLessons} onOpenLesson={topicId => updateRoute({ area: 'lessons', topicId })} /></div>
       <div className="identity-panel">
       <LoginPanel onIdentity={changedIdentity} onChecking={checkingIdentity} onBeforeLogin={beforeLogin} />
       </div>
       {privateNotice && <p role="status">{privateNotice}</p>}
       {checking && area === 'attempts' && <p role="status">Conferindo acesso aos simulados…</p>}
-      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} />}</div>
+      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} shortcuts={shortcuts} />}</div>
       <div hidden={area !== 'lessons'}>{(lessonsOpened || area === 'lessons') && <LessonLibrary location={route} onLocationChange={(value, replace) => updateRoute({ ...value, area: 'lessons' }, replace)} showPagination={false} />}</div>
-      <div hidden={lesson ? false : checking || area !== 'practice'}><LessonPracticeWorkspace key={identity ? identity.connected ? identity.id : 'visitor' : 'no-identity'} identity={identity} contextActive={!checking && identity !== null} inlineLesson={lesson ? { topic: lesson } : undefined} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson}/></div>
+      <div hidden={lesson ? false : checking || area !== 'practice'}><LessonPracticeWorkspace key={identity ? identity.connected ? identity.id : 'visitor' : 'no-identity'} identity={identity} contextActive={!checking && identity !== null} inlineLesson={lesson ? { topic: lesson } : undefined} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson} shortcuts={shortcuts} practiceRequest={practiceRequest}/></div>
       {lesson && <LessonPagination topicId={lesson.id} roleId={route.roleId} onSelect={topicId => updateRoute({ topicId })} />}
       <div hidden={area !== 'questions'}><QuestionBrowser /></div>
       <footer className="availability">

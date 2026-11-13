@@ -46,8 +46,8 @@ abaixo estão implementados e verificados localmente em
 
 ## 6. Verificação integrada e revisão final (depende de 1 a 5)
 
-- [ ] 6.1 Verificar no Docker local os fluxos início, aula, prática, simulado, resultado e histórico, nos dois temas, em desktop e celular, sem requisições externas.
-- [ ] 6.2 Consolidar as capturas antes e depois e os limites (figuras SVG em placa clara).
+- [x] 6.1 Verificar no Docker local os fluxos início, aula, prática, simulado, resultado e histórico, nos dois temas, em desktop e celular, sem requisições externas.
+- [x] 6.2 Consolidar as capturas antes e depois e os limites (figuras SVG em placa clara).
 - [ ] 6.3 Executar a revisão final de código com o `spec-reviewer` (Claude Opus 5.5, esforço medium) em contexto novo, registrar `spec-review.json` e `spec-review.md` e corrigir os achados.
 - [ ] 6.4 Conferir checks e SHAs e solicitar os merges específicos.
 

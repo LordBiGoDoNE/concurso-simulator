@@ -4,11 +4,14 @@ Executado em 2026-11-13 pelo assistente como `concurso-dev`, no banco de produç
 
 ## Escopo decidido pelo usuário
 
-Expansão 2026-11 e conjuntos de outubro. A expansão (102 pacotes, 2.587 itens) foi
-carregada pelo fluxo administrativo HTTP. Os conjuntos de outubro (250 simulado,
-255 prática, 3 famílias parametrizadas) só entram pela CLI local; a doc da CLI veda
-apontá-la para produção e as famílias exigem nova aprovação editorial com IDs novos.
-Pendente de decisão do usuário.
+Em 2026-11-13 o usuário escolheu primeiro carregar também os conjuntos de outubro
+(250 simulado, 255 prática, 3 famílias parametrizadas). Esses conjuntos só entram pela
+CLI local, com confirmação digitada por importação. O container auxiliar
+(`vps_production.py editorial-cli`) foi preparado e uma prévia sem escrita confirmou
+pacotes idênticos aos aprovados (250 fingerprints iguais a `eligibility.jsonl`;
+seleção de prática `1c7ff1ad…`). Em seguida o usuário decidiu **não carregar os
+conjuntos de outubro**: o acervo de produção é a expansão 2026-11 carregada pela API.
+Nenhuma importação de outubro foi feita.
 
 ## Carga da expansão
 

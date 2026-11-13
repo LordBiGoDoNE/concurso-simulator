@@ -107,3 +107,17 @@ it('retry de B após falha não desmonta A enquanto seu salvamento está pendent
  expect(vi.mocked(createLessonPractice).mock.calls[1].slice(0,2)).toEqual(vi.mocked(createLessonPractice).mock.calls[2].slice(0,2));
  expect(confirm).toHaveBeenCalledTimes(1);confirm.mockRestore();
 });
+
+it('pedido do resultado abre o painel do assunto sem iniciar nem trocar a prática em andamento',async()=>{
+ setup();const props=inlineProps('P01');const rendered=render(<LessonPracticeWorkspace {...props}/>);expand();
+ const start=await screen.findByRole('button',{name:'Começar prática'});await waitFor(()=>expect(start).toBeEnabled());fireEvent.click(start);
+ await screen.findByRole('heading',{name:'Questão 1 de 1'});
+ const other=inlineProps('P07');rendered.rerender(<LessonPracticeWorkspace {...props} inlineLesson={other.inlineLesson}/>);
+ expect(screen.getByText('Pratique esta aula').closest('details')).not.toHaveAttribute('open');
+ const confirm=vi.spyOn(window,'confirm');
+ rendered.rerender(<LessonPracticeWorkspace {...props} inlineLesson={other.inlineLesson} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ expect(screen.getByText('Pratique esta aula').closest('details')).toHaveAttribute('open');
+ expect(createLessonPractice).toHaveBeenCalledTimes(1);expect(confirm).not.toHaveBeenCalled();
+ rendered.rerender(<LessonPracticeWorkspace {...props} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ expect(await screen.findByRole('heading',{name:'Questão 1 de 1'})).toBeInTheDocument();confirm.mockRestore();
+});

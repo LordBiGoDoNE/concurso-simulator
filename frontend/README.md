@@ -148,3 +148,21 @@ Folhas por área (grupos 2, 3 e 5): `src/styles/shell.css` (navegação, barra
 superior, sessão e início) é importada pelo `App`. Regras globais de base
 (botões, campos, seções) continuam em `style.css`, que o `main.tsx` carrega antes
 do `App` para que as folhas de área prevaleçam.
+
+Resultado e histórico (grupo 4, em `src/styles/attempt.css` e `style.css`): o
+resumo mostra uma barra proporcional sempre acompanhada de legenda numérica, e
+cada questão revisada traz o estado em texto ("Correta", "Errada", "Em branco");
+a cor e o ícone só reforçam. O filtro "Erros e em branco" é estado local e mantém
+a numeração original. "Rever a aula" e "Praticar este assunto" usam o
+`classification.topicId` da questão e só aparecem quando há aula nativa do
+assunto. "Praticar" abre a aula com o painel de prática aberto, sem criar nem
+trocar prática: começar continua exigindo o botão e a confirmação de troca. Os
+cartões dos históricos de simulados e de práticas compartilham `.attempt-history`.
+`e2e/result-history.spec.ts` cobre resultado, filtro, atalhos e histórico nos dois
+temas, em 390px e 1440px, com medição de contraste do texto.
+
+Biblioteca (5.5, decisão do usuário em 2026-11-13): sem disciplina nem busca, a
+biblioteca mostra os cartões das disciplinas e pede a escolha, sem listar aulas.
+Com disciplina, lista só as aulas dela, sem repetir o nome da disciplina em cada
+cartão. A busca atravessa as disciplinas e mostra a disciplina de cada resultado.
+Os cartões de aula usam `grid-auto-rows: 1fr`, com a mesma altura em toda a lista.

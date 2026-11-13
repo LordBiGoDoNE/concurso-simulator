@@ -33,9 +33,9 @@ abaixo estão implementados e verificados localmente em
 
 ## 4. Resultado e histórico (depende de 1 e 3)
 
-- [ ] 4.1 Criar o resumo do resultado com barra proporcional e legenda numérica, e os rótulos "Correta", "Errada" e "Em branco" com ícone.
-- [ ] 4.2 Adicionar o filtro "Erros e em branco" e os atalhos "Rever a aula" e "Praticar este assunto" pelo `topicId`, respeitando realizações em andamento.
-- [ ] 4.3 Aplicar Foco ao histórico e à paginação, concluir as regressões e a documentação.
+- [x] 4.1 Criar o resumo do resultado com barra proporcional e legenda numérica, e os rótulos "Correta", "Errada" e "Em branco" com ícone.
+- [x] 4.2 Adicionar o filtro "Erros e em branco" e os atalhos "Rever a aula" e "Praticar este assunto" pelo `topicId`, respeitando realizações em andamento.
+- [x] 4.3 Aplicar Foco ao histórico e à paginação, concluir as regressões e a documentação.
 
 ## 5. Aulas e prática da aula (depende de 1)
 
@@ -43,11 +43,12 @@ abaixo estão implementados e verificados localmente em
 - [x] 5.2 Aplicar Foco ao leitor nativo: corpo em 18px, tokens por tom de bloco, tabelas, MathML, grades e barras de percentual, placa clara para SVG, índice e paginação. Preservar documentos, validação, carregamento e erro.
 - [x] 5.3 Aplicar Foco ao painel, à realização, à correção e ao histórico da prática da aula.
 - [x] 5.4 Verificar as 51 aulas nos dois temas (contraste dos blocos e legibilidade das figuras), concluir as regressões e a documentação.
+- [x] 5.5 Biblioteca pede a disciplina antes de listar as aulas; cartões de mesma altura; busca atravessa disciplinas (decisão do usuário em 2026-11-13, após teste local).
 
 ## 6. Verificação integrada e revisão final (depende de 1 a 5)
 
-- [ ] 6.1 Verificar no Docker local os fluxos início, aula, prática, simulado, resultado e histórico, nos dois temas, em desktop e celular, sem requisições externas.
-- [ ] 6.2 Consolidar as capturas antes e depois e os limites (figuras SVG em placa clara).
+- [x] 6.1 Verificar no Docker local os fluxos início, aula, prática, simulado, resultado e histórico, nos dois temas, em desktop e celular, sem requisições externas.
+- [x] 6.2 Consolidar as capturas antes e depois e os limites (figuras SVG em placa clara).
 - [ ] 6.3 Executar a revisão final de código com o `spec-reviewer` (Claude Opus 5.5, esforço medium) em contexto novo, registrar `spec-review.json` e `spec-review.md` e corrigir os achados.
 - [ ] 6.4 Conferir checks e SHAs e solicitar os merges específicos.
 

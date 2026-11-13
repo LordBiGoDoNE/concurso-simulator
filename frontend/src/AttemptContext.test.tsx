@@ -117,6 +117,7 @@ it('prática de aula tem realização própria e preserva a fila pendente do sim
   fireEvent.click(screen.getAllByRole('radio')[0]);
   await waitFor(()=>expect(fixture.fetchMock.mock.calls.some(([u])=>u.includes('/answers/'))).toBe(true));
   fireEvent.click(screen.getByRole('button',{name:'Aulas'}));
+  fireEvent.change(screen.getByLabelText('Filtrar disciplina'),{target:{value:'portugues'}});
   fireEvent.click(screen.getByRole('button',{name:/P01.*Interpretação de Textos/}));
   fireEvent.click(screen.getByText('Pratique esta aula'));
   await waitFor(()=>expect(screen.getByRole('button',{name:'Começar prática'})).toBeEnabled());

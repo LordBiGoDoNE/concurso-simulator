@@ -78,6 +78,37 @@ nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da práti
 .map-key { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--blue-border); background: var(--blue-soft); border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
 .map-key.blank { background: var(--paper); border: 1px dashed var(--control-border); margin-left: 10px; }
 
+/* Resultado: barra proporcional com legenda numérica; o rótulo textual de cada questão é o sinal principal. */
+.attempt-result { display: grid; gap: 20px; }
+.result-summary { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 28px 32px; }
+.result-summary h3 { margin: 0 0 4px; font-size: 1.6rem; letter-spacing: -.02em; }
+.result-score { margin: 0 0 18px; font-size: 1.15rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.result-bar { display: flex; height: 14px; border-radius: 999px; overflow: hidden; background: var(--canvas); border: 1px solid var(--line); }
+.result-bar span { display: block; min-width: 4px; }
+.result-bar-correct, .result-key-correct { background: var(--teal); }
+.result-bar-wrong, .result-key-wrong { background: var(--warning); }
+.result-bar-blank, .result-key-blank { background: var(--control-border); }
+.result-legend { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; padding: 0; margin: 14px 0 0; font-size: .95rem; color: var(--muted); }
+.result-legend strong { color: var(--ink); font-variant-numeric: tabular-nums; margin-right: 4px; }
+.result-key { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: -1px; }
+.result-note { margin: 14px 0 0; font-size: .85rem; color: var(--muted); }
+.result-filter { display: flex; flex-wrap: wrap; gap: 8px; }
+.result-filter button { background: var(--paper); color: var(--ink); border: 1px solid var(--control-border); border-radius: 999px; padding: 8px 16px; font-variant-numeric: tabular-nums; }
+.result-filter button:hover { background: var(--canvas); }
+.result-filter button[aria-pressed="true"] { background: var(--blue); color: var(--on-blue); border-color: var(--blue); }
+.result-item { background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--control-border); border-radius: 16px; padding: 24px 28px; min-width: 0; overflow-wrap: anywhere; }
+.result-item-correct { border-left-color: var(--teal); }
+.result-item-wrong { border-left-color: var(--warning); }
+.result-item-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; }
+.result-item h4 { margin: 0; font-size: 1.1rem; }
+.result-item h5 { margin: 18px 0 4px; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.result-outcome { margin: 0; font-weight: 700; font-size: .9rem; }
+.result-outcome span { display: inline-block; width: 1.2em; text-align: center; }
+.result-outcome-correct { color: var(--teal); }
+.result-outcome-wrong { color: var(--warning); }
+.result-outcome-blank { color: var(--muted); }
+.result-shortcuts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+
 /* Larguras menores */
 @media (max-width: 1050px) {
   .compose-layout { grid-template-columns: minmax(0, 1fr) 240px; gap: 18px; }
@@ -99,6 +130,8 @@ nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da práti
   /* Anterior e Próxima ficam no rodapé da tela, ao alcance do polegar. */
   nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da prática"] { position: sticky; bottom: 0; z-index: 4; flex-wrap: nowrap; margin: 20px -20px 16px; padding: 12px 20px max(12px, env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--line); box-shadow: var(--shadow-bar); }
   nav[aria-label="Navegação do simulado"] button, nav[aria-label="Navegação da prática"] button { flex: 1; min-height: 48px; }
+  .result-summary, .result-item { padding: 20px; border-radius: 16px; }
+  .result-shortcuts button { flex: 1 1 12rem; }
 }
 @media (max-width: 650px) {
   .compose-layout { display: block; padding-bottom: 92px; }

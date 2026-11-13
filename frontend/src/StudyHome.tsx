@@ -27,7 +27,7 @@ export default function StudyHome({ roleId, onRoleChange, onLessons, onCompose, 
           </select>
           <button type="submit" disabled={!roleId}>Encontrar aulas <span aria-hidden="true">→</span></button>
         </form>
-        <button className="secondary" onClick={() => onLessons('', '')}>Explorar todas as aulas</button>
+        <button className="secondary" onClick={() => onLessons('', '')}>Explorar as aulas</button>
         <p className="home-facts"><span>{lessons.length} aulas no material</span><span>{studyCatalog.roles.length} cargos</span><span>Comece sem login</span></p>
       </div>
       {suggestion && <aside className="start-suggestion" aria-labelledby="start-suggestion-title">

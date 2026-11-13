@@ -8,6 +8,7 @@ import LessonLibrary, { LessonPagination } from './LessonLibrary';
 import { lessons, lessonSupportsRole } from './study-catalog';
 import type { CurrentIdentity } from './identity-api';
 import { useStudyNavigation, locationForRole, type Area } from './study-navigation';
+import ThemeSelect from './ThemeSelect';
 
 const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
 const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
@@ -74,7 +75,7 @@ export default function App() {
         <details className="study-menu" open={!(area === 'attempts' && runActive && !checking)}><summary>Ir para outra área</summary><nav aria-label="Navegação principal">{(Object.keys(areaNames) as Area[]).map(item => <button key={item} aria-current={area === item ? 'page' : undefined} onClick={() => navigate(item)}>{areaNames[item]}</button>)}</nav></details>
         <div className="sidebar-foot"><p>Aprenda no seu ritmo.<br /><small>Aulas, prática e revisão.</small></p></div>
       </aside>
-      <div className="workspace"><header className="topbar"><span>Seu espaço de estudo <span aria-hidden="true">/</span> <strong>{areaNames[area]}</strong></span><span className="identity-pill">{checking ? 'Conferindo sessão' : identity?.connected ? 'Conta conectada' : 'Acesso visitante'}</span></header>
+      <div className="workspace"><header className="topbar"><span>Seu espaço de estudo <span aria-hidden="true">/</span> <strong>{areaNames[area]}</strong></span><span className="topbar-tools"><ThemeSelect /><span className="identity-pill">{checking ? 'Conferindo sessão' : identity?.connected ? 'Conta conectada' : 'Acesso visitante'}</span></span></header>
       <main id="study-content" tabIndex={-1}>
       <h2 ref={pageHeading} tabIndex={-1} className="sr-only">{areaNames[area]}</h2>
       {navigationNotice && <p role="status">{navigationNotice}</p>}

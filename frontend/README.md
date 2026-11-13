@@ -122,3 +122,23 @@ São 14 cenários reais no comando, incluindo ausência de download do renderer 
 A apresentação está no código inicial; o validador corretivo permanece em módulo tardio.
 Todos os chunks ficam sem payloads de fixtures. A inspeção do entry inicial e
 JSON/DOM ativos continua proibindo contrato/material corretivo antecipado.
+
+## Tokens visuais e tema (focus-visual-refresh)
+
+Cores, sombras e a família tipográfica vêm só de `src/tokens.css`, com tema claro
+em `:root` e escuro por `prefers-color-scheme` ou `data-theme="dark"`. Os
+componentes usam `var(--…)`; `src/visual-tokens.test.ts` falha com qualquer cor
+literal em outra folha de estilo e mede o contraste dos pares de tokens nos dois
+temas (texto ≥4,5:1; bordas de controle e foco ≥3:1).
+
+O seletor "Tema" da barra superior guarda só `light` ou `dark` na chave
+`concurso-simulator.theme` do `localStorage` (automático remove a chave). O
+`index.html` aplica essa chave antes da primeira pintura; mantenha a chave igual
+à de `src/theme.ts`. Sem armazenamento, o tema segue o sistema.
+
+A fonte Figtree vem empacotada pelo pacote `@fontsource-variable/figtree` (OFL),
+sem requisições externas. O Vitest processa CSS (`test.css.include` no
+`vite.config.ts`) só para que os testes leiam as folhas com `?raw`.
+
+Limite: diagramas SVG das aulas nativas mantêm as próprias cores e placa clara
+também no tema escuro.

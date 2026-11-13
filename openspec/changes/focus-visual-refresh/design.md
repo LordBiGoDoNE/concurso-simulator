@@ -78,9 +78,11 @@ falhar, o ajuste é de luminosidade, mantendo o matiz.
 
 ### Tipografia
 
-A fonte é Figtree (SIL OFL), em WOFF2 empacotado com pesos 400, 600 e 700 em
-`frontend/src/assets/fonts/`, com `font-display: swap` e fallback `system-ui`.
-Não há requisição ao Google Fonts, para manter a execução local e offline.
+A fonte é Figtree (SIL OFL), variável, pelo pacote `@fontsource-variable/figtree`
+5.3.0 fixado. O build copia os WOFF2 para `dist/assets` (latin com cerca de 20 KB;
+latin-ext só é baixado se um caractere precisar). Usa `font-display: swap` e
+fallback `system-ui`. Não há requisição ao Google Fonts, para manter a execução
+local e offline. *Decidido no grupo 1:* Figtree em vez da fonte do sistema.
 
 A escala fica entre 13 e 44px:
 
@@ -90,7 +92,10 @@ A escala fica entre 13 e 44px:
 ### Troca de tema
 
 - Por padrão o tema segue `prefers-color-scheme`.
-- Um controle na navegação alterna claro, escuro e automático.
+- Um seletor "Tema" na barra superior alterna automático, claro e escuro.
+  *Decidido no grupo 1:* a barra superior aparece em todas as larguras, enquanto o
+  rodapé da navegação some abaixo de 800px. No modo prova a barra fica oculta, e
+  a escolha anterior continua valendo.
 - A escolha é gravada em `localStorage` com chave própria, dentro de `try/catch`, e
   aplicada como `data-theme` no `<html>` antes da primeira pintura.
 - A chave guarda só a preferência visual. Isso respeita a regra de não guardar
@@ -144,5 +149,5 @@ A escala fica entre 13 e 44px:
 
 ## Open Questions
 
-- Manter Figtree ou usar só a fonte do sistema com a nova escala?
-- O controle de tema fica na navegação lateral ou no rodapé dela?
+Nenhuma. As duas perguntas originais (fonte e posição do controle de tema) foram
+decididas no grupo 1, conforme as seções acima.

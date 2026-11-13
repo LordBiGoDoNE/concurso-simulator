@@ -1,5 +1,6 @@
 """Operate the production runtime on the VPS (concurso-dev, rootless Docker). No secret is printed or passed as argument."""
 import argparse
+import base64
 import hashlib
 import io
 import json
@@ -27,7 +28,11 @@ DATA_ROOT = Path.home() / ".local/share/concurso-simulator"
 DEFAULT_STATE = DATA_ROOT / "production"
 PRODUCTION_FILES = {"web.Dockerfile", "nginx.conf"}
 SECRET_NAMES = ("db_password", "admin_password", "google_enabled", "google_client_id",
-                "google_client_secret", "google_callback", "frontend_url")
+                "google_client_secret", "google_callback", "frontend_url",
+                "question_import_destination", "question_import_key")
+# Generated values that an older state may lack; created only when missing, never rotated here.
+GENERATED_SECRETS = {"question_import_destination": lambda config: config["project"],
+                     "question_import_key": lambda config: base64.b64encode(secrets.token_bytes(48)).decode()}
 
 
 def production_permitted(name):
@@ -145,8 +150,9 @@ def initialize(state, images_file, rehearsal, recovery=None, port=None):
     secret_dir = state / "secrets"
     secret_dir.mkdir(mode=0o700)
     values = (secrets.token_urlsafe(36), secrets.token_urlsafe(24), "false", "", "",
-              ORIGIN + "/login/oauth2/code/google", ORIGIN)
-    for name, value in zip(SECRET_NAMES, values):
+              ORIGIN + "/login/oauth2/code/google", ORIGIN,
+              GENERATED_SECRETS["question_import_destination"](config), GENERATED_SECRETS["question_import_key"](config))
+    for name, value in zip(SECRET_NAMES, values, strict=True):
         with (secret_dir / name).open("x", encoding="utf-8", newline="\n") as stream:
             stream.write(value)
         # Parent 0700 limits host access; non-root container users read explicit bind mounts.
@@ -203,7 +209,23 @@ def compose(state, config, *args):
                       env=compose_env(state, config), capture_output=True, check=True).stdout
 
 
+def ensure_generated_secrets(state, config):
+    created = []
+    for name, generate in GENERATED_SECRETS.items():
+        path = state / "secrets" / name
+        if path.is_symlink():
+            raise ValueError("Segredo não pode ser link")
+        if not path.exists():
+            with path.open("x", encoding="utf-8", newline="\n") as stream:
+                stream.write(generate(config))
+            path.chmod(0o644)
+            created.append(name)
+    if created:
+        print("Segredos gerados que faltavam: " + ", ".join(created) + " (valores não impressos).")
+
+
 def start(state, config):
+    ensure_generated_secrets(state, config)
     validate_images(config["images"])
     if not compose(state, config, "ps", "-q", "web").decode().strip():
         port_available(config["port"])

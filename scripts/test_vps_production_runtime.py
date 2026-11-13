@@ -137,6 +137,21 @@ class StateTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             production.load(state)
 
+    def test_import_secrets_are_generated_and_missing_ones_added_without_rotation(self):
+        import base64
+        state = self.base / "state"
+        production.initialize(state, self.manifest(), rehearsal=False)
+        secrets_dir = state / "secrets"
+        self.assertEqual((secrets_dir / "question_import_destination").read_text(), production.PROJECT)
+        key = (secrets_dir / "question_import_key").read_text()
+        self.assertGreaterEqual(len(base64.b64decode(key)), 32)
+        (secrets_dir / "question_import_destination").unlink()
+        config = json.loads((state / "state.json").read_text())
+        with mock.patch("builtins.print"):
+            production.ensure_generated_secrets(state, config)
+        self.assertEqual((secrets_dir / "question_import_destination").read_text(), production.PROJECT)
+        self.assertEqual((secrets_dir / "question_import_key").read_text(), key)
+
     def test_operation_lock_is_exclusive(self):
         state = self.base / "state"
         state.mkdir()

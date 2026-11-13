@@ -52,6 +52,10 @@ services:
         target: app.google.callback-url
       - source: frontend_url
         target: app.google.frontend-url
+      - source: question_import_destination
+        target: app.question-import.destination-id
+      - source: question_import_key
+        target: app.question-import.confirmation-key
     depends_on:
       postgres: {condition: service_healthy}
     networks: [edge, database]
@@ -88,3 +92,5 @@ secrets:
   google_client_secret: {file: '${PROD_SECRET_DIR}/google_client_secret'}
   google_callback: {file: '${PROD_SECRET_DIR}/google_callback'}
   frontend_url: {file: '${PROD_SECRET_DIR}/frontend_url'}
+  question_import_destination: {file: '${PROD_SECRET_DIR}/question_import_destination'}
+  question_import_key: {file: '${PROD_SECRET_DIR}/question_import_key'}

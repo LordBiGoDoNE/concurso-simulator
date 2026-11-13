@@ -29,7 +29,13 @@ it('acervo vazio é distinto de erro e não cria prática', async () => {
   expect(screen.getByRole('button', { name: 'Começar prática' })).toBeDisabled();
   expect(value.onPractice).not.toHaveBeenCalled();
 });
-it.each([{ roleId: 'outro' }, { topicId: 'M01' }, { available: -1 }, { available: 1.5 }, { maximum: 10 }, { extra: true }])('contrato incompatível é erro, com nova consulta: %j', async patch => {
+it('mostra acervo de 30 com prática limitada a cinco e mantém início explícito', async () => {
+  vi.stubGlobal('fetch', vi.fn(async () => response(30)));
+  const value = props(); render(<LessonPracticeEntry {...value} />);
+  await waitFor(() => expect(screen.getByRole('status')).toHaveTextContent('até 5 questões'));
+  expect(value.onPractice).not.toHaveBeenCalled();
+});
+it.each([{ roleId: 'outro' }, { topicId: 'M01' }, { available: -1 }, { available: 1.5 }, { maximum: 25 }, { maximum: 10 }, { extra: true }])('contrato incompatível é erro, com nova consulta: %j', async patch => {
   const fetchMock = vi.fn().mockResolvedValueOnce(response(5, patch)).mockResolvedValue(response(2));
   vi.stubGlobal('fetch', fetchMock);
   const value = props();render(<LessonPracticeEntry {...value} />);

@@ -9,6 +9,8 @@ import java.util.*;
 
 public final class Attempt {
     public static final String POLICY = "uniform-v1";
+    public static final int PRACTICE_MAXIMUM = 5;
+    private static final int RESTORED_PRACTICE_MAXIMUM = 25;
     public record Item(UUID id, AttemptQuestion question, List<UUID> optionOrder, Map<String,String> parameters) {
         public Item {
             Objects.requireNonNull(id); Objects.requireNonNull(question);
@@ -52,7 +54,7 @@ public final class Attempt {
         boolean byTopic=state.format()==4;
         if (state.purpose()==QuestionPurpose.PRATICA_AULA) {
             if ((!byTopic && state.format()!=3) || state.practiceTopic()==null
-                    || state.items().isEmpty() || state.items().size()>5
+                    || state.items().isEmpty() || state.items().size()>(byTopic ? RESTORED_PRACTICE_MAXIMUM : 5)
                     || (byTopic ? composition!=null : composition==null || composition.useParameterizedQuestions()
                     || composition.disciplines().size()!=1
                     || !composition.disciplines().containsKey(state.practiceTopic().discipline())
@@ -87,6 +89,7 @@ public final class Attempt {
         return new Attempt(new Snapshot(id,owner,composition,at,null,POLICY,items,Map.of(),0));
     }
     public static Attempt startPractice(UUID id, AttemptOwner owner, Topic topic, Instant at, List<Item> items) {
+        if (items.size()>PRACTICE_MAXIMUM) throw new IllegalArgumentException("Uma nova prática admite até cinco questões");
         return new Attempt(new Snapshot(id,owner,null,at,null,POLICY,items,Map.of(),0,4,QuestionPurpose.PRATICA_AULA,topic));
     }
     public void requirePurpose(QuestionPurpose purpose) { if (state.purpose()!=purpose) throw new Unavailable(); }

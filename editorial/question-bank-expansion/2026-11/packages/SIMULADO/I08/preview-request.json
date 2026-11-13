@@ -1,0 +1,2016 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.cebra-caesb6-q66"
+        },
+        "content": {
+          "statement": {
+            "text": "Em relação à sintaxe dos comandos utilizados na linguagem VBA, assinale a opção correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3923d8f3-72af-5b04-a12a-90b2d232c89c",
+              "content": {
+                "text": "O operador Mod devolve o módulo de um número.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1d3532df-9a46-56b1-adaf-5a05a800e200",
+              "content": {
+                "text": "A função MsgBox serve para inserir uma informação na planilha em edição.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fe895936-c2e1-5ee5-82d3-79c6f1a5f821",
+              "content": {
+                "text": "A instrução Dim é utilizada para definir o valor de uma variável.",
+                "resources": []
+              }
+            },
+            {
+              "id": "500127e2-b96d-5aee-8cee-9d4c217fabe2",
+              "content": {
+                "text": "A seguinte função permite retornar os valores do intervalo das células A1 a G4 de uma planilha.\nFunction ObterIntervalo() as Range\n ObterIntervalo = Range(\"A1:G4\")\nEnd Function",
+                "resources": []
+              }
+            },
+            {
+              "id": "be539c42-f78d-54a5-8cf7-b2581a4d8741",
+              "content": {
+                "text": "A seguinte função permite percorrer as planilhas de uma pasta e exibi-las.\nSub ForEachPlanilhas()\n Dim ws As Worksheet\n For Each ws In Sheets\n  ws.Visible = True\n Next ws\nEnd Sub",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "be539c42-f78d-54a5-8cf7-b2581a4d8741",
+          "resolution": {
+            "text": "1. O procedimento da alternativa E percorre a coleção Sheets e atribui True à propriedade Visible de cada planilha, tornando-a visível; E coincide com o definitivo. A leitura pressupõe planilhas de cálculo compatíveis com Worksheet e uma estrutura que permita a alteração. O objeto Excel/VBA é de desktop; a prova não fixa versão exata. 2. A: Mod calcula o resto da divisão, não o valor absoluto. B: MsgBox exibe uma caixa de mensagem e retorna a escolha de botão, sem inserir diretamente um dado na célula. C: Dim declara a variável e seu tipo; a atribuição de valor é outra instrução. D: retornar uma referência Range exige Set no corpo da função. Sheets também pode conter folhas de gráfico; com uma delas a variável Worksheet pode causar erro, razão pela qual não se promete que o exemplo funcione sem restrições em toda pasta possível.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Dim statement (VBA, inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/dim-statement",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft Learn — For Each...Next statement (VBA, inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/for-eachnext-statement",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft Learn — Mod operator (VBA, inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/mod-operator",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft Learn — MsgBox function (VBA, inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/msgbox-function",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft Learn — Set statement (VBA, inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/set-statement",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft Learn — Worksheet.Visible (Excel VBA, inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.worksheet.visible",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Companhia de Saneamento Ambiental do Distrito Federal — Edital 1/2024, Cargo 6: Analista de Sistemas de Saneamento — Engenheiro Eletricista, item 66. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I08.s.cebra-caesb6-q66.json",
+            "answerPath": "sources/admin.2026-11.I08.s.cebra-caesb6-q66.json",
+            "contentSha256": "b08a4ebf3d4ed09650fceeeeba178f4d6ef364ed9f9aa6d4e7a3e575e92dc49a",
+            "answerSha256": "b08a4ebf3d4ed09650fceeeeba178f4d6ef364ed9f9aa6d4e7a3e575e92dc49a"
+          }
+        },
+        "fingerprint": "829b1a5fe9037255e48e51b6baf6703d70a3c200f6887016519d756063ae8422",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.cebra-dataprev9-q103"
+        },
+        "content": {
+          "statement": {
+            "text": "Julgue os itens a seguir, relativos ao Microsoft Word e ao Microsoft Excel avançado.\nJavaScript é a linguagem de programação utilizada para escrever macros no Microsoft Excel.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ba2463ea-2885-5d2e-929a-589fc5f3725b",
+              "content": {
+                "text": "Certo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "50b1feda-ac84-5017-91ba-33d0ddead3a4",
+              "content": {
+                "text": "Errado.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "50b1feda-ac84-5017-91ba-33d0ddead3a4",
+          "resolution": {
+            "text": "1. O item trata das macros tradicionais do Excel de desktop, escritas em VBA, e foi julgado Errado no definitivo de 2023. O gravador clássico produz código Visual Basic for Applications. 2. Certo confundiria VBA com JavaScript. Office Scripts usa um ambiente JavaScript/TypeScript e é uma tecnologia de automação distinta: sua existência não muda a linguagem das macros VBA. A prova não fixa versão exata; a distinção é documentada para Excel e Microsoft 365.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Automatizar tarefas com o gravador de macros",
+              "url": "https://support.microsoft.com/pt-br/excel/automate-tasks-with-the-macro-recorder",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft Learn — Differences between Office Scripts and VBA macros (inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/dev/scripts/resources/vba-differences",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — DATAPREV S.A. — Edital 1/2023, Cargo 9: Analista de Tecnologia da Informação — Perfil Engenharia Elétrica, item 103. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I08.s.cebra-dataprev9-q103.json",
+            "answerPath": "sources/admin.2026-11.I08.s.cebra-dataprev9-q103.json",
+            "contentSha256": "56831327e3d2352df4c21f71f77f2f09e49c78305782d1752443a48878a4c97a",
+            "answerSha256": "56831327e3d2352df4c21f71f77f2f09e49c78305782d1752443a48878a4c97a"
+          }
+        },
+        "fingerprint": "aa51a00042b2d84ec4f41c80a4ad9a2f0d9bf12157d2cb462df865d09ac1a438",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.fgv-aleam-educ2-q30"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma Macro (sequência de comandos gravada) é uma poderosa ferramenta de automação. No entanto, ela pode ser um vetor de segurança e requer proteção contra visualização e edição não autorizada em ambientes controlados.\nConsiderando o MS Word 2010 BR ou superior e a arquitetura VBA comum ao Excel, a medida de segurança mais adequada para evitar que um usuário não autorizado visualize ou altere o código fonte de uma Macro armazenada em um documento é:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3a3453c0-5a84-5092-bcaf-f34cf413c560",
+              "content": {
+                "text": "Definir uma senha de proteção para o documento na opção \"Proteger Documento\" na guia Revisão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c9ceb00f-2c3c-5247-8754-750093aaa830",
+              "content": {
+                "text": "Habilitar o recurso \"Controlar Alterações\" para que todas as modificações no código da Macro sejam registradas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8aa4a102-dd86-55d8-a63a-726ee0a9a674",
+              "content": {
+                "text": "Configurar a \"Proteção do Projeto VBA\" com uma senha específica, acessando as propriedades do projeto VBA no ambiente de edição.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c9e817b1-9420-5f13-b550-c84117a18b5b",
+              "content": {
+                "text": "Assinar digitalmente a Macro, garantindo apenas que sua origem seja confiável, mas não restringindo a visualização do código.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8536780f-b621-566f-a73e-992b70681f23",
+              "content": {
+                "text": "Marcar o arquivo como \"Final\" (Somente Leitura) nas propriedades do documento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8aa4a102-dd86-55d8-a63a-726ee0a9a674",
+          "resolution": {
+            "text": "1. Nas propriedades do projeto VBA, a guia Proteção permite bloquear o projeto para visualização e definir senha, restringindo a visualização/edição no editor. C corresponde ao definitivo. O conceito de projeto VBA também se aplica ao Excel de desktop, como explicita o enunciado. 2. A refere-se à proteção do documento; B não transforma Controlar Alterações em histórico de código VBA; D não restringe a leitura do código pela assinatura; E não bloqueia o projeto no editor. A senha do projeto não constitui promessa de inviolabilidade, criptografia forte de todo o arquivo ou proteção suficiente contra execução maliciosa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Project Properties dialog box, Protection tab (inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/project-properties-dialog-box",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — Assembleia Legislativa do Estado do Amazonas — Edital 1/2025, Analista Legislativo — Profissional de Educação Física, item 30. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I08.s.fgv-aleam-educ2-q30.json",
+            "answerPath": "sources/admin.2026-11.I08.s.fgv-aleam-educ2-q30.json",
+            "contentSha256": "ab5959e3e9c9ebdea2b61d952c092efc5e1d8e2d7ffae7c5958ed3777f51dd0c",
+            "answerSha256": "ab5959e3e9c9ebdea2b61d952c092efc5e1d8e2d7ffae7c5958ed3777f51dd0c"
+          }
+        },
+        "fingerprint": "a7d6c42fb10aef25889dfdc35303f6bcc704e5cb65517c85aa8c5977b4bb84af",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.fgv-taubate-q39"
+        },
+        "content": {
+          "statement": {
+            "text": "No MS Word, e também no MS Excel, é possível utilizar macros, tanto para automatizar tarefas repetitivas como para executar procedimentos complexos que seriam impraticáveis de modo normal.\nAssinale o atalho de teclado que permite o acesso ao código das macros embutidas numa planilha Excel ou num documento Word.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "bea28603-d3e8-5894-9b7a-9e04c32b4c3e",
+              "content": {
+                "text": "Alt+M",
+                "resources": []
+              }
+            },
+            {
+              "id": "b11efe9a-0070-51ff-b235-8c13d5db3953",
+              "content": {
+                "text": "Alt+F11",
+                "resources": []
+              }
+            },
+            {
+              "id": "256d4f23-3875-5068-b34f-befae65a8714",
+              "content": {
+                "text": "Ctrl+Alt+F1",
+                "resources": []
+              }
+            },
+            {
+              "id": "abe076bb-71da-5910-98c5-01f1f001091a",
+              "content": {
+                "text": "Ctrl+M",
+                "resources": []
+              }
+            },
+            {
+              "id": "59f60b7c-37bd-5700-a5a8-41202c6b346f",
+              "content": {
+                "text": "F12",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b11efe9a-0070-51ff-b235-8c13d5db3953",
+          "resolution": {
+            "text": "1. Nos aplicativos de desktop Word e Excel para Windows com atalhos padrão, Alt+F11 abre o Editor do Visual Basic for Applications para examinar ou editar código. A resposta B foi conferida no definitivo de 2022. 2. As outras combinações não são o atalho padrão desse editor; F12 abre Salvar como no Excel. Abrir o editor não significa executar automaticamente o código ou atestar que a macro é segura. A questão não se aplica ao Excel para a Web.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado do Excel para Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/excel/keyboard-shortcuts-in-excel",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Atalhos de teclado do Word para Windows; conferir layout/idioma",
+              "url": "https://support.microsoft.com/pt-br/accessibility/word/keyboard-shortcuts-in-word",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — Câmara Municipal de Taubaté — Edital 1/2022, Técnico Legislativo de Informática, Tipo 1 — Branca — Tarde, questão 39. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I08.s.fgv-taubate-q39.json",
+            "answerPath": "sources/admin.2026-11.I08.s.fgv-taubate-q39.json",
+            "contentSha256": "c04bbec3826ed6d0420fd0d958cc96726b11bec6b4c81eb4ffb9226b7086f783",
+            "answerSha256": "c04bbec3826ed6d0420fd0d958cc96726b11bec6b4c81eb4ffb9226b7086f783"
+          }
+        },
+        "fingerprint": "3cb07ad310b8cc206206cff9ee93864c2c061502ed15b512daa9d4d27925cbf6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-bloqueio-sem-aviso"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel de desktop, qual é o efeito da configuração Desativar macros VBA sem notificação?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "806e54ea-40be-5a96-95ff-7debce123311",
+              "content": {
+                "text": "Desativa as macros VBA e os avisos correspondentes sobre elas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "23eabfb2-b51e-5028-b884-f8f0838223a7",
+              "content": {
+                "text": "Executa macros VBA apenas por estarem sem assinatura.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c0804d4b-5f95-54e4-bdaf-ae7970ab9579",
+              "content": {
+                "text": "Transforma macros em fórmulas de célula.",
+                "resources": []
+              }
+            },
+            {
+              "id": "68af9eb7-3ee2-5716-9893-e21855718321",
+              "content": {
+                "text": "Desativa o salvamento de todos os arquivos sem macros.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "806e54ea-40be-5a96-95ff-7debce123311",
+          "resolution": {
+            "text": "1. A opção bloqueia macros VBA e não apresenta os alertas usados pela opção com notificação. 2. Não autoriza código sem assinatura, não converte linguagem e não é uma proibição geral de salvar documentos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Ativar ou desativar macros; configurações do Excel",
+              "url": "https://support.microsoft.com/pt-pt/office/vba/enable-or-disable-macros-in-microsoft-365-files",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-bloqueio-sem-aviso.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-bloqueio-sem-aviso.json",
+            "contentSha256": "96df73965b5c8e2f04faf73b5baed5d8e72a9e5fcf8c6c81772b1c0d56fe2e0c",
+            "answerSha256": "96df73965b5c8e2f04faf73b5baed5d8e72a9e5fcf8c6c81772b1c0d56fe2e0c"
+          }
+        },
+        "fingerprint": "e4d01ec3a9595ecac4164acd8419c64afa3e8201d717fc720fe088f2b48a4b1b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-desenvolvedor-exibir"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 para Windows, a guia Desenvolvedor não aparece na faixa de opções. Qual é a providência apropriada para usar as ferramentas de gravação de macros?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a3e10de2-8d3a-5217-b790-a8c5da24311a",
+              "content": {
+                "text": "Trocar a extensão de qualquer arquivo de dados para .exe.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cb726595-4a7e-5bfb-a8f9-0826dfcf44ac",
+              "content": {
+                "text": "Desativar o teclado numérico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1fd5a7b3-44d1-5290-a29f-e6a8b10f6b4c",
+              "content": {
+                "text": "Habilitar a guia Desenvolvedor na personalização da faixa de opções.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5ad9a99c-5e0e-5a5b-a26a-cc69274e70e8",
+              "content": {
+                "text": "Excluir todas as planilhas da pasta.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1fd5a7b3-44d1-5290-a29f-e6a8b10f6b4c",
+          "resolution": {
+            "text": "1. As ferramentas de macros ficam na guia Desenvolvedor, que pode estar oculta por padrão. 2. Excluir planilhas, alterar extensão para executável ou mexer no teclado não revela essa guia.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Automatizar tarefas com o gravador de macros",
+              "url": "https://support.microsoft.com/pt-br/excel/automate-tasks-with-the-macro-recorder",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-desenvolvedor-exibir.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-desenvolvedor-exibir.json",
+            "contentSha256": "c6dcc1d6e60ce6713f17a461b524ccba91f1a7353068c4d7ef6989270ddce3f4",
+            "answerSha256": "c6dcc1d6e60ce6713f17a461b524ccba91f1a7353068c4d7ef6989270ddce3f4"
+          }
+        },
+        "fingerprint": "c132702a315d04840eda6c92d959921b49ccd71b11c5a462c4ed0cda95bfdf84",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-macro-entre-aplicativos"
+        },
+        "content": {
+          "statement": {
+            "text": "Conforme a documentação do gravador de macros do Excel para desktop, uma automação VBA pode interagir com outros aplicativos compatíveis do Office?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fd066a07-f2f3-57c2-9e5e-c7144f5f6782",
+              "content": {
+                "text": "Sim; qualquer macro dispensa permissões de acesso e contas dos serviços usados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e9afcfa2-9f48-59b1-a643-31dab05397eb",
+              "content": {
+                "text": "Não; o gravador só produz imagens sem código.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3990e95b-dcdc-51a7-9dc9-1c9266a2ab8d",
+              "content": {
+                "text": "Sim; um processo pode envolver tarefas em outros aplicativos compatíveis, como enviar pelo Outlook uma tabela preparada no Excel.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b1730227-f444-5fa1-aa71-dcb5f8653322",
+              "content": {
+                "text": "Não; VBA só pode modificar a cor de uma única célula e nada mais.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3990e95b-dcdc-51a7-9dc9-1c9266a2ab8d",
+          "resolution": {
+            "text": "1. A automação VBA pode se estender a outros aplicativos que suportam essa tecnologia. 2. Essa capacidade não elimina permissões ou autenticação; macros não se limitam a uma cor nem são meras capturas de tela.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Automatizar tarefas com o gravador de macros",
+              "url": "https://support.microsoft.com/pt-br/excel/automate-tasks-with-the-macro-recorder",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-macro-entre-aplicativos.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-macro-entre-aplicativos.json",
+            "contentSha256": "14ef58da455bcf034039c093cce5eb52e9e19dfbf6db75e32134ec2e97f351e4",
+            "answerSha256": "14ef58da455bcf034039c093cce5eb52e9e19dfbf6db75e32134ec2e97f351e4"
+          }
+        },
+        "fingerprint": "b0163f058365310babc268aacbbf90042d3146173b9d6d6e5da2664d14f81408",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-macro-nome"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 para Windows, qual nome respeita a regra documentada para uma nova macro, sem representar uma referência de célula?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b7e235f3-abc7-56b5-9320-ce779517be0b",
+              "content": {
+                "text": "Formatar_Relatorio.",
+                "resources": []
+              }
+            },
+            {
+              "id": "91bf92b7-af6f-511d-adef-8f66321ba16f",
+              "content": {
+                "text": "1Formatar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b9975a08-60f7-51f3-81ea-509f0e1a6f57",
+              "content": {
+                "text": "Formatar Relatorio.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f09ee9ba-205d-5b9a-b643-e54c9b28f02c",
+              "content": {
+                "text": "A1.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b7e235f3-abc7-56b5-9320-ce779517be0b",
+          "resolution": {
+            "text": "1. O nome começa por letra e usa sublinhado, sem espaço ou conflito com endereço de célula. 2. Número inicial e espaço são inválidos; A1 coincide com uma referência de célula.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Automatizar tarefas com o gravador de macros",
+              "url": "https://support.microsoft.com/pt-br/excel/automate-tasks-with-the-macro-recorder",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-macro-nome.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-macro-nome.json",
+            "contentSha256": "a4f4d9a9f16c86947ad5a2eee7621fc878c0507442cb26f1123edc810bcbd427",
+            "answerSha256": "a4f4d9a9f16c86947ad5a2eee7621fc878c0507442cb26f1123edc810bcbd427"
+          }
+        },
+        "fingerprint": "2f023d194c37e823b9b7cd498f69ebe7c53d56b8b86d0e1afe820eb1c8b64e11",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-macro-web-limite"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para a Web, qual afirmação descreve o suporte a macros VBA conforme a documentação da Microsoft consultada em novembro de 2026?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ea1438ec-7c22-551d-9f9c-2c0dfb3a17e1",
+              "content": {
+                "text": "Ao abrir a pasta, todo código VBA é obrigatoriamente apagado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "571fd47c-a551-511b-850f-7b9f755c8332",
+              "content": {
+                "text": "A única forma de abrir uma pasta com macros é renomeá-la como PDF.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8fd66fb9-71a9-5b32-8098-96156ec502bb",
+              "content": {
+                "text": "É possível editar uma pasta que contém macros, mas não criar, executar ou editar o VBA nessa versão web.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ee63f23e-bc83-54cb-8fe2-b3e6a30a9e1e",
+              "content": {
+                "text": "Toda macro VBA passa a executar automaticamente no navegador.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8fd66fb9-71a9-5b32-8098-96156ec502bb",
+          "resolution": {
+            "text": "1. O Excel para a Web preserva macros existentes na pasta, mas o trabalho com VBA deve ser feito no aplicativo de desktop. 2. A versão web não executa automaticamente o VBA, não o apaga por simples abertura e não depende de uma renomeação inválida.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Work with VBA macros in Excel for the web",
+              "url": "https://support.microsoft.com/en-us/excel/work-with-vba-macros-in-excel-for-the-web",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-macro-web-limite.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-macro-web-limite.json",
+            "contentSha256": "24e98169c74e787cc51a9d52186cb8e2053914fb045843e98bce64cf6ac09138",
+            "answerSha256": "24e98169c74e787cc51a9d52186cb8e2053914fb045843e98bce64cf6ac09138"
+          }
+        },
+        "fingerprint": "5b731dd2c13e60e26f64409c19a04f7a5431ad820db875cb739bfdebc6449354",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-cells-indices"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Qual célula da planilha ws é indicada por ws.Cells(3, 2), usando índices de linha e coluna?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "49d3f47f-8b7c-5062-9edf-a95b8a9e49a8",
+              "content": {
+                "text": "B3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f32d433e-d1be-5a0e-91d9-982559a9749f",
+              "content": {
+                "text": "C2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b99a03ef-b455-5405-b647-cd2592857822",
+              "content": {
+                "text": "B2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "229ade5d-8a3f-569e-ba79-f01056b2da5a",
+              "content": {
+                "text": "C3.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "49d3f47f-8b7c-5062-9edf-a95b8a9e49a8",
+          "resolution": {
+            "text": "1. Cells recebe linha primeiro e coluna depois: linha 3, coluna 2 (B). 2. As outras respostas invertem índices ou alteram um deles.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Range.Cells (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.range.cells",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-cells-indices.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-cells-indices.json",
+            "contentSha256": "59304d9c6b921889862c865accfd556ae74aec1d30bc164cffbc1531d74cef47",
+            "answerSha256": "59304d9c6b921889862c865accfd556ae74aec1d30bc164cffbc1531d74cef47"
+          }
+        },
+        "fingerprint": "69762d474fbba0b8adbe9c90edc62d2d65854521198c0898502640ec29732b1d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-clearcontents"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Uma macro deve remover valores e fórmulas de um intervalo, preservando sua formatação. Qual método é adequado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7fc15450-c869-595d-b518-82e0c6eda47c",
+              "content": {
+                "text": "Copy, que apenas transfere dados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1823948f-d093-5655-b0b9-97252d373ec1",
+              "content": {
+                "text": "Save, que grava a pasta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "692c43e6-e9a7-54e6-b5f0-b7ea5a5a94c8",
+              "content": {
+                "text": "ClearContents.",
+                "resources": []
+              }
+            },
+            {
+              "id": "939da0ac-5889-5da6-b0e0-82e7d773609c",
+              "content": {
+                "text": "Delete, com deslocamento de células, como equivalente obrigatório.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "692c43e6-e9a7-54e6-b5f0-b7ea5a5a94c8",
+          "resolution": {
+            "text": "1. ClearContents limpa valores e fórmulas mantendo a formatação do intervalo. 2. Delete pode mudar estrutura; copiar e salvar têm finalidades diferentes.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Range.ClearContents (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.range.clearcontents",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-clearcontents.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-clearcontents.json",
+            "contentSha256": "9717caf533ba9a0a91f526951213d8e28abcf94fdb815d4f30bcbe8f03aa8780",
+            "answerSha256": "9717caf533ba9a0a91f526951213d8e28abcf94fdb815d4f30bcbe8f03aa8780"
+          }
+        },
+        "fingerprint": "dcfe85aab1a07f65764b6d787a240577c7c14687a44721cd7e58857a74ea5cab",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-close-sem-salvar"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Uma pasta válida, alterada e aberta em uma única janela é fechada com wb.Close SaveChanges:=False. Qual consequência deve ser considerada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7c560764-d5aa-5706-85e5-a9c6ee6839fd",
+              "content": {
+                "text": "A pasta sempre vira PDF sem perder nada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4c8e744a-f1ce-543b-a7e5-1c2aacf190a3",
+              "content": {
+                "text": "O comando fecha apenas a caixa de diálogo de fontes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4fbe31d6-a4ed-59fc-9e82-7e28efa08c74",
+              "content": {
+                "text": "Alterações ainda não salvas podem ser descartadas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "afec1459-2485-5bab-8b0c-4de5b0b33da0",
+              "content": {
+                "text": "Todas as mudanças são obrigatoriamente gravadas antes de fechar.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4fbe31d6-a4ed-59fc-9e82-7e28efa08c74",
+          "resolution": {
+            "text": "1. False instrui o fechamento sem salvar as alterações nesse cenário. 2. Não garante persistência nem conversão; o objeto é Workbook, não uma caixa de formatação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Workbook.Close (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.workbook.close",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-close-sem-salvar.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-close-sem-salvar.json",
+            "contentSha256": "334c9760bfa6f017ebaead9d37c39b897c93b5f6a1f578e60da90462a9874c27",
+            "answerSha256": "334c9760bfa6f017ebaead9d37c39b897c93b5f6a1f578e60da90462a9874c27"
+          }
+        },
+        "fingerprint": "ad169d015a803ce06cd68bb9c5a66d00f1d383496de2e4e73af06b46c4141016",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-error-desativar"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Qual efeito de On Error GoTo 0 é documentado no procedimento VBA atual?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "92d3ea15-edb9-5444-941d-fa92a9072871",
+              "content": {
+                "text": "Desabilitar o tratador de erros habilitado naquele procedimento.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9d3ce1f9-c451-519c-a219-3753746e0c96",
+              "content": {
+                "text": "Saltar obrigatoriamente para uma linha numerada zero.",
+                "resources": []
+              }
+            },
+            {
+              "id": "39cece9e-4a52-5750-9d50-cb8569721a45",
+              "content": {
+                "text": "Zerar todos os números da planilha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a2b4de09-b3f4-53b5-87a8-769a3acf3eb7",
+              "content": {
+                "text": "Gravar automaticamente uma cópia da pasta.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "92d3ea15-edb9-5444-941d-fa92a9072871",
+          "resolution": {
+            "text": "1. GoTo 0 encerra o tratamento habilitado; não especifica uma linha zero de destino. 2. Não é preenchimento de células nem salvamento.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — On Error (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/on-error-statement",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-error-desativar.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-error-desativar.json",
+            "contentSha256": "83bba6301b5a483b95cf6615e538d2ecccd9927c32c05520441994ef6e3b5dca",
+            "answerSha256": "83bba6301b5a483b95cf6615e538d2ecccd9927c32c05520441994ef6e3b5dca"
+          }
+        },
+        "fingerprint": "7cd231e9964dcaedd63b8c81734531dbaf99ff3690f675d003868ca0e50e0f8e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-events"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Qual efeito de Application.EnableEvents = False deve ser compreendido ao executar uma automação?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "673c5243-4b7d-5609-8559-88f2b22e3f01",
+              "content": {
+                "text": "Desabilita o disparo de eventos do aplicativo enquanto a configuração estiver nesse estado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0a9768e0-d2b7-576b-8e45-83bec12143b6",
+              "content": {
+                "text": "Desliga necessariamente toda a rede do computador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "24ac9845-2cf2-53f0-869a-bb2e6725aba4",
+              "content": {
+                "text": "Exclui permanentemente todos os manipuladores de eventos do código.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d1c1a0a8-c06a-5796-94bb-659c62b167d0",
+              "content": {
+                "text": "Transforma toda fórmula em texto fixo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "673c5243-4b7d-5609-8559-88f2b22e3f01",
+          "resolution": {
+            "text": "1. A propriedade controla se eventos estão habilitados, como os que podem ocorrer em um salvamento. 2. Não apaga o código, não administra a rede e não converte fórmulas. A restauração do estado precisa ser tratada.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Application.EnableEvents (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.application.enableevents",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-events.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-events.json",
+            "contentSha256": "e78bdbeb31a7efaa076b63f56d685f2b55a860058ddb651b1bcec4d27373c389",
+            "answerSha256": "e78bdbeb31a7efaa076b63f56d685f2b55a860058ddb651b1bcec4d27373c389"
+          }
+        },
+        "fingerprint": "b0eac9b5166a7dc35491b9f0b173c8bcaea0a9dc69ba3fb084aecbde8ac81c18",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-exit-for"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Ao encontrar o primeiro registro que satisfaz a busca, uma macro deve sair antecipadamente do laço For, continuando após ele. Qual instrução tem essa finalidade?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fc32a32e-e50e-55f1-97a4-beedd694b763",
+              "content": {
+                "text": "Exit For.",
+                "resources": []
+              }
+            },
+            {
+              "id": "56037400-1493-59c0-8dc1-5db4f9b87c4a",
+              "content": {
+                "text": "End If, como término de qualquer laço.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bd03ea67-21c1-505c-a89b-7bf391901676",
+              "content": {
+                "text": "Next, que sempre encerra imediatamente o procedimento inteiro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e7cffc50-408c-57b3-a769-4d2636b2fb2e",
+              "content": {
+                "text": "Save, que encerra a busca sem relação com persistência.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fc32a32e-e50e-55f1-97a4-beedd694b763",
+          "resolution": {
+            "text": "1. Exit For transfere a execução para a instrução seguinte ao Next correspondente. 2. End If fecha condição; Next controla a iteração e Save grava uma pasta, não expressa essa saída.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — For Each...Next (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/for-eachnext-statement",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft Learn — For...Next (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/fornext-statement",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-exit-for.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-exit-for.json",
+            "contentSha256": "2e47c355794d7fdbd5121f920d9a4354f45c444f23b1073e0d1673b3ea1969da",
+            "answerSha256": "2e47c355794d7fdbd5121f920d9a4354f45c444f23b1073e0d1673b3ea1969da"
+          }
+        },
+        "fingerprint": "7a8b7512efb45b0e18eec670bebdd34f3e1b9eafbbf0fa7657dfdc33f5917e32",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-for-contador"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Um trecho executa total = 0; For i = 1 To 3; total = total + i; Next i. Sem alterações adicionais, qual é o valor final de total?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "218f7925-0b3a-5474-8e75-13c391a81f3e",
+              "content": {
+                "text": "0.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2c37276d-127e-51c5-aff5-a733ce46c35a",
+              "content": {
+                "text": "9.",
+                "resources": []
+              }
+            },
+            {
+              "id": "faef5ba4-718e-50b6-b4ac-e36030e99d38",
+              "content": {
+                "text": "6.",
+                "resources": []
+              }
+            },
+            {
+              "id": "90c62ebd-0f10-5220-9c60-a42dcb648357",
+              "content": {
+                "text": "3.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "faef5ba4-718e-50b6-b4ac-e36030e99d38",
+          "resolution": {
+            "text": "1. O corpo soma 1, depois 2 e depois 3: 0+1+2+3=6. 2. 3 considera só o último contador; 0 ignora o laço e 9 soma repetidamente apenas o limite.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — For...Next (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/fornext-statement",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-for-contador.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-for-contador.json",
+            "contentSha256": "1879b24233824d7fbf9ace69b0a895db17373cefa36ac1a79e24fcd894bf6932",
+            "answerSha256": "1879b24233824d7fbf9ace69b0a895db17373cefa36ac1a79e24fcd894bf6932"
+          }
+        },
+        "fingerprint": "2cc523d285bcd47f4a1f766530aef781e72a60a04ff1c79804f59eaa45cd7493",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-msgbox-resposta"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Uma automação apresenta MsgBox(\"Continuar?\", vbYesNo). Como deve decidir se o usuário autorizou continuar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c674f50c-c20f-5468-af49-f30d9cdc1c99",
+              "content": {
+                "text": "Verificar apenas o tamanho da fonte da caixa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fd4a43f2-a013-548a-ae9a-8471b2cc7d6e",
+              "content": {
+                "text": "Salvar a pasta antes de qualquer decisão, ignorando a resposta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ce7a89a3-1e4c-5978-acce-2e4c57a4f9fa",
+              "content": {
+                "text": "Examinar o valor retornado e compará-lo à resposta esperada, como vbYes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7e83c6b2-937d-56f9-8a6b-4c48acdc3731",
+              "content": {
+                "text": "Presumir que a simples exibição da caixa sempre significa Sim.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ce7a89a3-1e4c-5978-acce-2e4c57a4f9fa",
+          "resolution": {
+            "text": "1. MsgBox retorna um código que identifica o botão escolhido. 2. Exibir uma pergunta não equivale a obter confirmação; aparência e salvamento não substituem sua leitura.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — MsgBox (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/msgbox-function",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-msgbox-resposta.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-msgbox-resposta.json",
+            "contentSha256": "ff972399d8211213b44fcd284339250089019cc669c82f851ec27c8b5a7aeba6",
+            "answerSha256": "ff972399d8211213b44fcd284339250089019cc669c82f851ec27c8b5a7aeba6"
+          }
+        },
+        "fingerprint": "d29a52398396af07a44d2a2dd9b5a2aaad77779bc9437a4f0180bbee4bde5d2d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-numformat"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Qual é o papel de NumberFormat em um objeto Range?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6a62b9bb-f1f9-52e1-ba6a-14f70b087788",
+              "content": {
+                "text": "Consultar ou definir o código de formato de apresentação dos valores.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d0682835-f85b-5c9a-a68e-8ad965bf6239",
+              "content": {
+                "text": "Somar automaticamente todos os números do intervalo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "300734c4-ac21-5b63-8404-851c69293801",
+              "content": {
+                "text": "Excluir todas as células que contêm texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e4c17d02-2a2a-53ba-80e2-78fd93bc0a22",
+              "content": {
+                "text": "Renomear o usuário do Windows.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6a62b9bb-f1f9-52e1-ba6a-14f70b087788",
+          "resolution": {
+            "text": "1. NumberFormat controla a formatação numérica. 2. Formato não é agregação, exclusão de dados ou administração de identidade do sistema.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Range.NumberFormat (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.range.numberformat",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-numformat.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-numformat.json",
+            "contentSha256": "aca8399c26e1c72b0ea1b4679cbbbbf4bf9ebacf1df9513e69f94e184d53177e",
+            "answerSha256": "aca8399c26e1c72b0ea1b4679cbbbbf4bf9ebacf1df9513e69f94e184d53177e"
+          }
+        },
+        "fingerprint": "b328666ea5743cbb70ed6be8fd4725ef80ffd3eee013b30bd25cb9306d309a9f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-paste-values"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Depois de copiar um intervalo, qual opção de PasteSpecial determina que apenas os resultados, sem as fórmulas de origem, sejam colados?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cc212f38-a884-5303-91f3-a70243320473",
+              "content": {
+                "text": "Paste:=xlPasteValues.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f0faae10-011f-5bce-9aca-b4c4a7f32337",
+              "content": {
+                "text": "Paste:=xlPasteAll, que sempre elimina fórmulas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d8bc62bc-f583-512c-ac3e-e90c9ba1a63c",
+              "content": {
+                "text": "Transpose:=True, que escolhe valores em vez de fórmulas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e24c5062-fe06-5146-b00d-471eb574f827",
+              "content": {
+                "text": "SkipBlanks:=False, que converte todo conteúdo em valor.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cc212f38-a884-5303-91f3-a70243320473",
+          "resolution": {
+            "text": "1. O argumento Paste escolhe quais atributos são colados; xlPasteValues indica valores. 2. Colar tudo pode trazer fórmulas; Transpose e SkipBlanks regulam outros aspectos da operação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Range.PasteSpecial (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.range.pastespecial",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-paste-values.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-paste-values.json",
+            "contentSha256": "d876c754a4360626a9b4c647884e74c9b88a8328a11d417ce3125ad4ef2387ff",
+            "answerSha256": "d876c754a4360626a9b4c647884e74c9b88a8328a11d417ce3125ad4ef2387ff"
+          }
+        },
+        "fingerprint": "112592110aeb5cd3af55455557b08be8f02fdbaef22abe69c0f772fc7baf5882",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-resize"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Qual intervalo é representado por ws.Range(\"B2\").Resize(3, 2)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "21e72033-1c73-584e-bf95-c8cd8f2ce9ce",
+              "content": {
+                "text": "C3:D4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5668df0e-8842-5c4a-83fa-46f87b31f159",
+              "content": {
+                "text": "B2:E5.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e4a87293-8ec4-5c20-a817-3b027750f3ab",
+              "content": {
+                "text": "B2:C4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bc67a6f1-e550-53b4-9967-a3f104789e91",
+              "content": {
+                "text": "B2:D3.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e4a87293-8ec4-5c20-a817-3b027750f3ab",
+          "resolution": {
+            "text": "1. Resize mantém o início B2 e define três linhas e duas colunas. 2. Não desloca o início e a ordem dos argumentos é quantidade de linhas, depois de colunas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Range.Resize (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.range.resize",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-resize.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-resize.json",
+            "contentSha256": "638c9e482a46c2038f043b861b80a691eb31ef087d0eeec897477368dc7889cc",
+            "answerSha256": "638c9e482a46c2038f043b861b80a691eb31ef087d0eeec897477368dc7889cc"
+          }
+        },
+        "fingerprint": "6e5ba3e890fd288e2edf1fb295f9c989cdee334f7c07379c3d78704f864dfc95",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-set-referencia"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. O que faz Set alvo = ws.Range(\"A1\") em uma variável de objeto compatível?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a9696cba-68b6-5019-8759-611cebe5d48c",
+              "content": {
+                "text": "Atribui à variável uma referência ao objeto Range.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5ea7d5ba-81a1-5409-b025-ca57f3b7fabc",
+              "content": {
+                "text": "Copia necessariamente o arquivo inteiro para outra pasta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a617bbe4-9481-5cea-8295-1826084f87d2",
+              "content": {
+                "text": "Atribui o texto literal Range ao conteúdo de todas as células.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0013c58c-8bb3-58b1-a20a-469e91bc0561",
+              "content": {
+                "text": "Cria sempre uma nova planilha independente.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a9696cba-68b6-5019-8759-611cebe5d48c",
+          "resolution": {
+            "text": "1. Set associa a variável a um objeto, sem criar por si só uma cópia desse objeto. 2. Não é cópia de arquivo, preenchimento de texto ou criação automática de aba.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Set (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/set-statement",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-set-referencia.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-set-referencia.json",
+            "contentSha256": "32c59da59042541af12d6c09c6fbfbd2f6459b1894fbd5fbcd2170009513348e",
+            "answerSha256": "32c59da59042541af12d6c09c6fbfbd2f6459b1894fbd5fbcd2170009513348e"
+          }
+        },
+        "fingerprint": "6dbdd63a31d5adeff5ee2e1322270c73db470fae9bba84fc1f2e9b518b881012",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-skipblanks"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Em PasteSpecial, qual finalidade tem SkipBlanks:=True?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "33c5138f-cc59-5bc4-aaa2-8cf1d62d7f0e",
+              "content": {
+                "text": "Excluir todas as células vazias de todas as planilhas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "438442e8-b3ed-5d53-89d6-f9302d2c11c7",
+              "content": {
+                "text": "Converter fórmulas em imagens.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1455a1a7-2063-5ce6-acce-31a7c7681291",
+              "content": {
+                "text": "Evitar que células vazias da origem copiada sejam coladas sobre o destino.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4bc7d58b-17bf-545e-9536-ee9b018b9af2",
+              "content": {
+                "text": "Pular qualquer erro de execução do VBA.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1455a1a7-2063-5ce6-acce-31a7c7681291",
+          "resolution": {
+            "text": "1. O argumento controla a colagem de vazios do intervalo que está na área de transferência. 2. Não é tratamento de exceções, exclusão geral ou conversão de fórmulas em imagem.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Range.PasteSpecial (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/api/excel.range.pastespecial",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-skipblanks.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-skipblanks.json",
+            "contentSha256": "29f67a9180dc4088e908789c82b8b9dd2050aa54532f5ec8468efe5d5aa0f110",
+            "answerSha256": "29f67a9180dc4088e908789c82b8b9dd2050aa54532f5ec8468efe5d5aa0f110"
+          }
+        },
+        "fingerprint": "b4570bb9f023c3e417b9540d798b002472fd2b875178707722a3af9e236f222d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-step-sinal"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Um laço For deve contar de 5 até 1, diminuindo uma unidade a cada passo. Qual parte da instrução precisa expressar essa direção?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9b8b3e7f-470d-5443-8519-afcfdd7c76e4",
+              "content": {
+                "text": "SaveChanges:=False.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b5f0ca84-af67-53a5-b9c2-3d2189e25cfd",
+              "content": {
+                "text": "Option Explicit como substituto de Step.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3572ca09-af4d-5fd1-8d01-853b21e621a3",
+              "content": {
+                "text": "Step -1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b8a7a515-d35c-5711-92d1-e2a59171ac2f",
+              "content": {
+                "text": "Step 1, porque qualquer For decresce sozinho.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3572ca09-af4d-5fd1-8d01-853b21e621a3",
+          "resolution": {
+            "text": "1. Um passo negativo faz o contador diminuir em direção ao limite inferior. 2. O padrão positivo não produz essa contagem; salvamento e declaração de variáveis não controlam o passo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — For...Next (VBA do Excel, sintaxe em inglês)",
+              "url": "https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/fornext-statement",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-step-sinal.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-step-sinal.json",
+            "contentSha256": "16f07d10d02ebaba6a6bb32243862465293d3d402b862aeeb9ec056cf64444bc",
+            "answerSha256": "16f07d10d02ebaba6a6bb32243862465293d3d402b862aeeb9ec056cf64444bc"
+          }
+        },
+        "fingerprint": "7f1d01572316182e14d093562a0695cc40539a46a7d160032c25afd5b637e240",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.it-vba-thisworkbook"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere macros VBA no Excel para Microsoft 365 de desktop no Windows, com identificadores da linguagem em inglês. Uma automação armazenada em um suplemento deve apontar para a pasta que contém seu próprio código, mesmo que outra pasta esteja ativa. Qual referência é apropriada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1429857e-c364-5528-9a76-02f0af91205f",
+              "content": {
+                "text": "ActiveCell, que representa a pasta inteira do código.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0f324377-0ad3-5986-9ae6-fe161fe2132f",
+              "content": {
+                "text": "Selection, que sempre contém todas as pastas abertas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "98bc8927-7cae-5982-92b4-24b7de9b1bc0",
+              "content": {
+                "text": "ThisWorkbook.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9e16de44-ae8a-5363-a59e-282320169afd",
+              "content": {
+                "text": "ActiveWorkbook, que sempre é obrigatoriamente o suplemento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "98bc8927-7cae-5982-92b4-24b7de9b1bc0",
+          "resolution": {
+            "text": "1. ThisWorkbook representa a pasta em que o código está em execução. 2. ActiveWorkbook pode ser a pasta chamadora; célula e seleção não representam obrigatoriamente a pasta do código.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Objeto Workbook e referências de pasta em VBA",
+              "url": "https://learn.microsoft.com/pt-br/office/vba/api/excel.workbook",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I08.s.it-vba-thisworkbook.json",
+            "answerPath": "sources/admin.2026-11.I08.s.it-vba-thisworkbook.json",
+            "contentSha256": "29c3769dee372f4ccd2485f9f300c75e876550c5bf2cf445b30862a3e074e9ce",
+            "answerSha256": "29c3769dee372f4ccd2485f9f300c75e876550c5bf2cf445b30862a3e074e9ce"
+          }
+        },
+        "fingerprint": "8f1e127718c4a298d5cc81703ce8c79c0d67dda9ec4eba63b9f1b881e212e837",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I08.s.pot25-acs-q18"
+        },
+        "content": {
+          "statement": {
+            "text": "O Microsoft Excel é uma ferramenta que permite a automação de tarefas repetitivas e a realização de cálculos complexos. A funcionalidade que se caracteriza por ser uma sequência de comandos gravados pelo usuário, armazenada em um módulo de programação, e que é essencialmente utilizada para automatizar processos sem exigir a reescrita manual de código, é denominada:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6567a7b7-727e-5432-a779-4a52901d5886",
+              "content": {
+                "text": "Referência Absoluta (com $).",
+                "resources": []
+              }
+            },
+            {
+              "id": "7d19abeb-a263-577a-aecc-7b23e4fdaf10",
+              "content": {
+                "text": "Tabela Dinâmica (Pivot Table).",
+                "resources": []
+              }
+            },
+            {
+              "id": "2465204e-262a-53ff-b886-5e6ad22a5857",
+              "content": {
+                "text": "Formatação Condicional.",
+                "resources": []
+              }
+            },
+            {
+              "id": "eab8e90b-91f3-583d-bd73-f27cff5f8e94",
+              "content": {
+                "text": "Função Lógica (Ex: SE ou E).",
+                "resources": []
+              }
+            },
+            {
+              "id": "ff5c7e79-100f-5278-ac62-a92cb3fcf999",
+              "content": {
+                "text": "Macro.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ff5c7e79-100f-5278-ac62-a92cb3fcf999",
+          "resolution": {
+            "text": "1. Macro é uma sequência de comandos que pode ser gravada pelo Gravador de Macros, guardada como código VBA em um módulo e executada para repetir a tarefa; alternativa E. 2. Referência absoluta fixa endereços em fórmulas; Tabela Dinâmica resume dados; Formatação Condicional altera a aparência por regra; SE e E são funções de planilha. Nenhum desses recursos grava e reproduz ações. Gabarito definitivo: alternativa E.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I08",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Automatizar tarefas com o gravador de macros",
+              "url": "https://support.microsoft.com/pt-br/excel/automate-tasks-with-the-macro-recorder",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim — Processo de Seleção Pública 09/2025, Agente Comunitário de Saúde (todos), questão 18. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I08.s.pot25-acs-q18.json",
+            "answerPath": "sources/admin.2026-11.I08.s.pot25-acs-q18.json",
+            "contentSha256": "80ecd67f442603f52c3cdff0d10cf1b61e4f34911496e4feb94b6e9b62cfc55f",
+            "answerSha256": "80ecd67f442603f52c3cdff0d10cf1b61e4f34911496e4feb94b6e9b62cfc55f"
+          }
+        },
+        "fingerprint": "56d10142bb6327b4488f59ef18f79e0a8ac7c7e17ab281b61082a69f440fa17f",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I08.s.cebra-caesb6-q66.json",
+        "mediaType": "application/json",
+        "sha256": "b08a4ebf3d4ed09650fceeeeba178f4d6ef364ed9f9aa6d4e7a3e575e92dc49a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBvcGVyYWRvciBNb2QgZGV2b2x2ZSBvIG3Ds2R1bG8gZGUgdW0gbsO6bWVyby4ifSx7ImlkIjoiYiIsInRleHQiOiJBIGZ1bsOnw6NvIE1zZ0JveCBzZXJ2ZSBwYXJhIGluc2VyaXIgdW1hIGluZm9ybWHDp8OjbyBuYSBwbGFuaWxoYSBlbSBlZGnDp8Ojby4ifSx7ImlkIjoiYyIsInRleHQiOiJBIGluc3RydcOnw6NvIERpbSDDqSB1dGlsaXphZGEgcGFyYSBkZWZpbmlyIG8gdmFsb3IgZGUgdW1hIHZhcmnDoXZlbC4ifSx7ImlkIjoiZCIsInRleHQiOiJBIHNlZ3VpbnRlIGZ1bsOnw6NvIHBlcm1pdGUgcmV0b3JuYXIgb3MgdmFsb3JlcyBkbyBpbnRlcnZhbG8gZGFzIGPDqWx1bGFzIEExIGEgRzQgZGUgdW1hIHBsYW5pbGhhLlxuRnVuY3Rpb24gT2J0ZXJJbnRlcnZhbG8oKSBhcyBSYW5nZVxuIE9idGVySW50ZXJ2YWxvID0gUmFuZ2UoXCJBMTpHNFwiKVxuRW5kIEZ1bmN0aW9uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiQSBzZWd1aW50ZSBmdW7Dp8OjbyBwZXJtaXRlIHBlcmNvcnJlciBhcyBwbGFuaWxoYXMgZGUgdW1hIHBhc3RhIGUgZXhpYmktbGFzLlxuU3ViIEZvckVhY2hQbGFuaWxoYXMoKVxuIERpbSB3cyBBcyBXb3Jrc2hlZXRcbiBGb3IgRWFjaCB3cyBJbiBTaGVldHNcbiAgd3MuVmlzaWJsZSA9IFRydWVcbiBOZXh0IHdzXG5FbmQgU3ViIn1dLCJhdXRob3IiOiJDZWJyYXNwZSDigJQgQ29tcGFuaGlhIGRlIFNhbmVhbWVudG8gQW1iaWVudGFsIGRvIERpc3RyaXRvIEZlZGVyYWwg4oCUIEVkaXRhbCAxLzIwMjQsIENhcmdvIDY6IEFuYWxpc3RhIGRlIFNpc3RlbWFzIGRlIFNhbmVhbWVudG8g4oCUIEVuZ2VuaGVpcm8gRWxldHJpY2lzdGEsIGl0ZW0gNjYuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBPZmljaWFsIERlZmluaXRpdm8gcMOhZ2luYTEsIHByb3ZhMjAyNS0wNi0yMiwgaXRlbTY2PUUsIHZpc3RvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9jZWJyYS1jYWVzYjYtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjI1Yzk2ZWRkYWI1NGYyNmQxOTY4ZGZiMTU4ZDgxZmRjMjE3YjBhNDM2YTk0OTY0NzI4YTgyMDkyMDIwYTE2M2MiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2NhZXNiXzI0L2FycXVpdm9zL0dhYl9EZWZpbml0aXZvX01BVFJJWl8wMzlfQ0FFU0JfMDA2XzAwLnBkZiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1BVFJJWl8wMzlfQ0FFU0JfMDA2XzAwIiwiY29tcGV0aXRpb24iOiJDb21wYW5oaWEgZGUgU2FuZWFtZW50byBBbWJpZW50YWwgZG8gRGlzdHJpdG8gRmVkZXJhbCDigJQgRWRpdGFsIDEvMjAyNCIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtbWF0cml6XzAzOV9jYWVzYl8wMDZfMDAvcTY2IiwibnVtYmVyIjoiNjYiLCJwcm9vZiI6eyJub3RlIjoiUMOhZ2luYSBmw61zaWNhIDExLCBlbnVuY2lhZG8gZSBhbHRlcm5hdGl2YXMgY290ZWphZG9zIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTIuIEVtIENBRVNCIG8gZG9jdW1lbnRvIGRlIHByb3ZhIHB1YmxpY2FkbyBpbmNsdWkganVzdGlmaWNhdGl2YXMgcHJlbGltaW5hcmVzLCBxdWUgbsOjbyBzdWJzdGl0dWVtIG8gZGVmaW5pdGl2byBzZXBhcmFkby4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2NlYnJhLWNhZXNiNi1tYXRyaXoucGRmIiwic2hhMjU2IjoiZmQzZjcyNzhiMTBhYjg5YjVlMDYxZmJjNTFiYWVjYzg3NzY4OWYyODQ0ZDNjMmM4Zjc3MzJjMjEyMmI0ZTBhZiIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvY2Flc2JfMjQvYXJxdWl2b3MvTUFUUklaXzAzOV9DQUVTQl8wMDZfMDBfQ29tJTIwSnVzdGlmaWNhdGl2YXNfT0sucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBcGxpY2HDp8OjbyBkb3MgZnVuZGFtZW50b3MgZSBsaW1pdGVzIGRhIGF2YWxpYcOnw6NvIGRvIHByb2pldG8gYSBkb2lzIGl0ZW5zIHTDqWNuaWNvcyBvZmljaWFpcywgc2VtIG9icmEgYWxoZWlhIGluY29ycG9yYWRhLiBTZW0gbGljZW7Dp2EgZXhwcmVzc2Egb3UgcGFyZWNlciBpbmRlcGVuZGVudGUgcHJlc3VtaWRvLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtbWFjcm9zLW1vcmUtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6IjYzNTYyYzllNTY4YTFjOTQwYzM1NTQxZWNlODAyZTBmMGRhZGI5OGM3MjRhM2UyN2NmN2FkZDExZmEyYjNiYmMiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJDYXJnbyA2OiBBbmFsaXN0YSBkZSBTaXN0ZW1hcyBkZSBTYW5lYW1lbnRvIOKAlCBFbmdlbmhlaXJvIEVsZXRyaWNpc3RhIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI1fSwiaWQiOiJjZWJyYS1jYWVzYjYtcTY2Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1tYWNyb3MtbWFpcy1pdC12YmEtZGltIiwiaW5mb3JtYXRpY2EtbWFjcm9zLW1haXMtaXQtdmJhLWZvcmVhY2giLCJpbmZvcm1hdGljYS1tYWNyb3MtbWFpcy1pdC12YmEtbW9kIiwiaW5mb3JtYXRpY2EtbWFjcm9zLW1haXMtaXQtdmJhLW1zZ2JveCIsImluZm9ybWF0aWNhLW1hY3Jvcy1tYWlzLWl0LXZiYS1zZXQiLCJpbmZvcm1hdGljYS1tYWNyb3MtbWFpcy1pdC12YmEtdmlzaWJsZSJdLCJyZXNvbHV0aW9uIjoiMS4gTyBwcm9jZWRpbWVudG8gZGEgYWx0ZXJuYXRpdmEgRSBwZXJjb3JyZSBhIGNvbGXDp8OjbyBTaGVldHMgZSBhdHJpYnVpIFRydWUgw6AgcHJvcHJpZWRhZGUgVmlzaWJsZSBkZSBjYWRhIHBsYW5pbGhhLCB0b3JuYW5kby1hIHZpc8OtdmVsOyBFIGNvaW5jaWRlIGNvbSBvIGRlZmluaXRpdm8uIEEgbGVpdHVyYSBwcmVzc3Vww7VlIHBsYW5pbGhhcyBkZSBjw6FsY3VsbyBjb21wYXTDrXZlaXMgY29tIFdvcmtzaGVldCBlIHVtYSBlc3RydXR1cmEgcXVlIHBlcm1pdGEgYSBhbHRlcmHDp8Ojby4gTyBvYmpldG8gRXhjZWwvVkJBIMOpIGRlIGRlc2t0b3A7IGEgcHJvdmEgbsOjbyBmaXhhIHZlcnPDo28gZXhhdGEuIDIuIEE6IE1vZCBjYWxjdWxhIG8gcmVzdG8gZGEgZGl2aXPDo28sIG7Do28gbyB2YWxvciBhYnNvbHV0by4gQjogTXNnQm94IGV4aWJlIHVtYSBjYWl4YSBkZSBtZW5zYWdlbSBlIHJldG9ybmEgYSBlc2NvbGhhIGRlIGJvdMOjbywgc2VtIGluc2VyaXIgZGlyZXRhbWVudGUgdW0gZGFkbyBuYSBjw6lsdWxhLiBDOiBEaW0gZGVjbGFyYSBhIHZhcmnDoXZlbCBlIHNldSB0aXBvOyBhIGF0cmlidWnDp8OjbyBkZSB2YWxvciDDqSBvdXRyYSBpbnN0cnXDp8Ojby4gRDogcmV0b3JuYXIgdW1hIHJlZmVyw6puY2lhIFJhbmdlIGV4aWdlIFNldCBubyBjb3JwbyBkYSBmdW7Dp8Ojby4gU2hlZXRzIHRhbWLDqW0gcG9kZSBjb250ZXIgZm9saGFzIGRlIGdyw6FmaWNvOyBjb20gdW1hIGRlbGFzIGEgdmFyacOhdmVsIFdvcmtzaGVldCBwb2RlIGNhdXNhciBlcnJvLCByYXrDo28gcGVsYSBxdWFsIG7Do28gc2UgcHJvbWV0ZSBxdWUgbyBleGVtcGxvIGZ1bmNpb25lIHNlbSByZXN0cmnDp8O1ZXMgZW0gdG9kYSBwYXN0YSBwb3Nzw612ZWwuIiwic3RhdGVtZW50IjoiRW0gcmVsYcOnw6NvIMOgIHNpbnRheGUgZG9zIGNvbWFuZG9zIHV0aWxpemFkb3MgbmEgbGluZ3VhZ2VtIFZCQSwgYXNzaW5hbGUgYSBvcMOnw6NvIGNvcnJldGEuIiwidG9waWNJZCI6IkkwOCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtbWFjcm9zLW1haXMtaXQtdmJhLWRpbSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgRGltIHN0YXRlbWVudCAoVkJBLCBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2xhbmd1YWdlL3JlZmVyZW5jZS91c2VyLWludGVyZmFjZS1oZWxwL2RpbS1zdGF0ZW1lbnQifSwiaW5mb3JtYXRpY2EtbWFjcm9zLW1haXMtaXQtdmJhLWZvcmVhY2giOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQgTGVhcm4g4oCUIEZvciBFYWNoLi4uTmV4dCBzdGF0ZW1lbnQgKFZCQSwgaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9sYW5ndWFnZS9yZWZlcmVuY2UvdXNlci1pbnRlcmZhY2UtaGVscC9mb3ItZWFjaG5leHQtc3RhdGVtZW50In0sImluZm9ybWF0aWNhLW1hY3Jvcy1tYWlzLWl0LXZiYS1tb2QiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQgTGVhcm4g4oCUIE1vZCBvcGVyYXRvciAoVkJBLCBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2xhbmd1YWdlL3JlZmVyZW5jZS91c2VyLWludGVyZmFjZS1oZWxwL21vZC1vcGVyYXRvciJ9LCJpbmZvcm1hdGljYS1tYWNyb3MtbWFpcy1pdC12YmEtbXNnYm94Ijp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBNc2dCb3ggZnVuY3Rpb24gKFZCQSwgaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9sYW5ndWFnZS9yZWZlcmVuY2UvdXNlci1pbnRlcmZhY2UtaGVscC9tc2dib3gtZnVuY3Rpb24ifSwiaW5mb3JtYXRpY2EtbWFjcm9zLW1haXMtaXQtdmJhLXNldCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgU2V0IHN0YXRlbWVudCAoVkJBLCBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2xhbmd1YWdlL3JlZmVyZW5jZS91c2VyLWludGVyZmFjZS1oZWxwL3NldC1zdGF0ZW1lbnQifSwiaW5mb3JtYXRpY2EtbWFjcm9zLW1haXMtaXQtdmJhLXZpc2libGUiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQgTGVhcm4g4oCUIFdvcmtzaGVldC5WaXNpYmxlIChFeGNlbCBWQkEsIGluZ2zDqnMpIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL2VuLXVzL29mZmljZS92YmEvYXBpL2V4Y2VsLndvcmtzaGVldC52aXNpYmxlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.cebra-dataprev9-q103.json",
+        "mediaType": "application/json",
+        "sha256": "56831327e3d2352df4c21f71f77f2f09e49c78305782d1752443a48878a4c97a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiRXJyYWRvLiJ9XSwiYXV0aG9yIjoiQ2VicmFzcGUg4oCUIERBVEFQUkVWIFMuQS4g4oCUIEVkaXRhbCAxLzIwMjMsIENhcmdvIDk6IEFuYWxpc3RhIGRlIFRlY25vbG9naWEgZGEgSW5mb3JtYcOnw6NvIOKAlCBQZXJmaWwgRW5nZW5oYXJpYSBFbMOpdHJpY2EsIGl0ZW0gMTAzLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gT2ZpY2lhbCBEZWZpbml0aXZvLCBww6FnaW5hIGbDrXNpY2EgMSwgcHJvdmEgMjAyMy0xMC0wMSwgaXRlbSAxMDM9RSwgaW5zcGXDp8OjbyB2aXN1YWwgZW0gMjAyNi0xMS0xMS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2NlYnJhLWRhdGFwcmV2OS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiZDI1YzkwMTY1YzNjM2ExYjYwNzFmODEwMzM1NGNmYTNlNWIxNTI3ZDg0MmVhNGNjYmNmZTQ0YzhkODI3YzZmMyIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvZGF0YXByZXZfMjMvYXJxdWl2b3MvR0FCX0RFRklOSVRJVk9fODkzX0RBVEFQUkVWXzAwOV8wMS5QREYifSwiYm9hcmQiOiJDZWJyYXNwZSIsImJvb2tsZXQiOiI4OTNfREFUQVBSRVZfMDA5XzAxIiwiY29tcGV0aXRpb24iOiJEQVRBUFJFViBTLkEuIOKAlCBFZGl0YWwgMS8yMDIzIiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJjZWJyYXNwZS1kYXRhcHJldjktMjAyMy9xMTAzIiwibnVtYmVyIjoiMTAzIiwicHJvb2YiOnsibm90ZSI6IlDDoWdpbmEgZsOtc2ljYSAyLCBjb250ZXh0by9lbnVuY2lhZG8vYWx0ZXJuYXRpdmFzIGNvbmZyb250YWRvcyB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvY2VicmEtZGF0YXByZXY5LXByb29mLnBkZiIsInNoYTI1NiI6ImI3N2NiMWI5N2NjNzUzN2FjMDI0N2JhMzhmOTdhMTA2OTM0N2UzN2VlYzFhNDE5NjU2MGI3MDMwYWU5N2JjYjgiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2RhdGFwcmV2XzIzL2FycXVpdm9zLzg5M19EQVRBUFJFVl8wMDlfMDEuUERGIn0sInJldXNlIjp7Im5vdGUiOiJBcGxpY2HDp8OjbyBkYSBhdmFsaWHDp8OjbyBkbyBwcm9qZXRvIGEgaXRlbnMgb2ZpY2lhaXMgdMOpY25pY29zIHNlbSBvYnJhIGFsaGVpYSBpbmNvcnBvcmFkYS4gTsOjbyBwcmVzdW1lIGxpY2Vuw6dhIGV4cHJlc3NhIG5lbSBwYXJlY2VyIGp1csOtZGljbyBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1tYWNyb3MtZ2FwLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiI1MDI0YTVmZDYyZWUwZDE3M2M3NjAxMjA3ZTMyZjFiMzJjMjg4MjRjYjM2OWIxYmM5NDRjODQwMDAwMDg1YjBiIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQ2FyZ28gOTogQW5hbGlzdGEgZGUgVGVjbm9sb2dpYSBkYSBJbmZvcm1hw6fDo28g4oCUIFBlcmZpbCBFbmdlbmhhcmlhIEVsw6l0cmljYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyM30sImlkIjoiY2VicmEtZGF0YXByZXY5LXExMDMiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLW1hY3Jvcy1pdC1ncmF2YWRvciIsImluZm9ybWF0aWNhLW1hY3Jvcy1pdC12YmEtdnMtc2NyaXB0cyJdLCJyZXNvbHV0aW9uIjoiMS4gTyBpdGVtIHRyYXRhIGRhcyBtYWNyb3MgdHJhZGljaW9uYWlzIGRvIEV4Y2VsIGRlIGRlc2t0b3AsIGVzY3JpdGFzIGVtIFZCQSwgZSBmb2kganVsZ2FkbyBFcnJhZG8gbm8gZGVmaW5pdGl2byBkZSAyMDIzLiBPIGdyYXZhZG9yIGNsw6Fzc2ljbyBwcm9kdXogY8OzZGlnbyBWaXN1YWwgQmFzaWMgZm9yIEFwcGxpY2F0aW9ucy4gMi4gQ2VydG8gY29uZnVuZGlyaWEgVkJBIGNvbSBKYXZhU2NyaXB0LiBPZmZpY2UgU2NyaXB0cyB1c2EgdW0gYW1iaWVudGUgSmF2YVNjcmlwdC9UeXBlU2NyaXB0IGUgw6kgdW1hIHRlY25vbG9naWEgZGUgYXV0b21hw6fDo28gZGlzdGludGE6IHN1YSBleGlzdMOqbmNpYSBuw6NvIG11ZGEgYSBsaW5ndWFnZW0gZGFzIG1hY3JvcyBWQkEuIEEgcHJvdmEgbsOjbyBmaXhhIHZlcnPDo28gZXhhdGE7IGEgZGlzdGluw6fDo28gw6kgZG9jdW1lbnRhZGEgcGFyYSBFeGNlbCBlIE1pY3Jvc29mdCAzNjUuIiwic3RhdGVtZW50IjoiSnVsZ3VlIG9zIGl0ZW5zIGEgc2VndWlyLCByZWxhdGl2b3MgYW8gTWljcm9zb2Z0IFdvcmQgZSBhbyBNaWNyb3NvZnQgRXhjZWwgYXZhbsOnYWRvLlxuSmF2YVNjcmlwdCDDqSBhIGxpbmd1YWdlbSBkZSBwcm9ncmFtYcOnw6NvIHV0aWxpemFkYSBwYXJhIGVzY3JldmVyIG1hY3JvcyBubyBNaWNyb3NvZnQgRXhjZWwuIiwidG9waWNJZCI6IkkwOCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtbWFjcm9zLWl0LWdyYXZhZG9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdXRvbWF0aXphciB0YXJlZmFzIGNvbSBvIGdyYXZhZG9yIGRlIG1hY3JvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2F1dG9tYXRlLXRhc2tzLXdpdGgtdGhlLW1hY3JvLXJlY29yZGVyIn0sImluZm9ybWF0aWNhLW1hY3Jvcy1pdC12YmEtdnMtc2NyaXB0cyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgRGlmZmVyZW5jZXMgYmV0d2VlbiBPZmZpY2UgU2NyaXB0cyBhbmQgVkJBIG1hY3JvcyAoaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL2Rldi9zY3JpcHRzL3Jlc291cmNlcy92YmEtZGlmZmVyZW5jZXMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.fgv-aleam-educ2-q30.json",
+        "mediaType": "application/json",
+        "sha256": "ab5959e3e9c9ebdea2b61d952c092efc5e1d8e2d7ffae7c5958ed3777f51dd0c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRGVmaW5pciB1bWEgc2VuaGEgZGUgcHJvdGXDp8OjbyBwYXJhIG8gZG9jdW1lbnRvIG5hIG9ww6fDo28gXCJQcm90ZWdlciBEb2N1bWVudG9cIiBuYSBndWlhIFJldmlzw6NvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkhhYmlsaXRhciBvIHJlY3Vyc28gXCJDb250cm9sYXIgQWx0ZXJhw6fDtWVzXCIgcGFyYSBxdWUgdG9kYXMgYXMgbW9kaWZpY2HDp8O1ZXMgbm8gY8OzZGlnbyBkYSBNYWNybyBzZWphbSByZWdpc3RyYWRhcy4ifSx7ImlkIjoiYyIsInRleHQiOiJDb25maWd1cmFyIGEgXCJQcm90ZcOnw6NvIGRvIFByb2pldG8gVkJBXCIgY29tIHVtYSBzZW5oYSBlc3BlY8OtZmljYSwgYWNlc3NhbmRvIGFzIHByb3ByaWVkYWRlcyBkbyBwcm9qZXRvIFZCQSBubyBhbWJpZW50ZSBkZSBlZGnDp8Ojby4ifSx7ImlkIjoiZCIsInRleHQiOiJBc3NpbmFyIGRpZ2l0YWxtZW50ZSBhIE1hY3JvLCBnYXJhbnRpbmRvIGFwZW5hcyBxdWUgc3VhIG9yaWdlbSBzZWphIGNvbmZpw6F2ZWwsIG1hcyBuw6NvIHJlc3RyaW5naW5kbyBhIHZpc3VhbGl6YcOnw6NvIGRvIGPDs2RpZ28uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiTWFyY2FyIG8gYXJxdWl2byBjb21vIFwiRmluYWxcIiAoU29tZW50ZSBMZWl0dXJhKSBuYXMgcHJvcHJpZWRhZGVzIGRvIGRvY3VtZW50by4ifV0sImF1dGhvciI6IkZHViDigJQgQXNzZW1ibGVpYSBMZWdpc2xhdGl2YSBkbyBFc3RhZG8gZG8gQW1hem9uYXMg4oCUIEVkaXRhbCAxLzIwMjUsIEFuYWxpc3RhIExlZ2lzbGF0aXZvIOKAlCBQcm9maXNzaW9uYWwgZGUgRWR1Y2HDp8OjbyBGw61zaWNhLCBpdGVtIDMwLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gT2ZpY2lhbCBEZWZpbml0aXZvLCBww6FnaW5hIGbDrXNpY2EgOSwgcHJvdmEgMjAyNS0xMi0xNCwgaXRlbSAzMD1DLCBpbnNwZcOnw6NvIHZpc3VhbCBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvZmd2LWFsZWFtLWFuc3dlci5wZGYiLCJzaGEyNTYiOiIyZWIyZjYyZWFiNzgyZmM3ZTNhOTAzZTdlZjhmMGU3NTkxZTBkZDJkNWI1ZjVkMjNmODJjMTZiMmU5YWIwMGY3IiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL2dhYmFyaXRvLWRlZmluaXRpdm8tYWxlLWFtLnBkZiJ9LCJib2FyZCI6IkZHViIsImJvb2tsZXQiOiJUaXBvIDIg4oCUIFZlcmRlIOKAlCBNYW5ow6MiLCJjb21wZXRpdGlvbiI6IkFzc2VtYmxlaWEgTGVnaXNsYXRpdmEgZG8gRXN0YWRvIGRvIEFtYXpvbmFzIOKAlCBFZGl0YWwgMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJmZ3YtYWxlYW0tZWR1YzItMjAyNS9xMzAiLCJudW1iZXIiOiIzMCIsInByb29mIjp7Im5vdGUiOiJQw6FnaW5hIGbDrXNpY2EgNiwgY29udGV4dG8vZW51bmNpYWRvL2FsdGVybmF0aXZhcyBjb25mcm9udGFkb3MgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2Zndi1hbGVhbS1lZHVjMi1wcm9vZi5wZGYiLCJzaGEyNTYiOiI0MmNlMTA1ODRlYTM2NjZhZTI4ODNjN2JiOTdkZDQ1NGFkN2NiMmE2ZmVmY2E1ZDRjY2ZmNjFkZjZmZjNjMzdmIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL2FuYWxpc3RhLWxlZ2lzbGF0aXZvLXByb2Zpc3Npb25hbC1kZS1lZHVjYWNhby1maXNpY2EtY25zMzEwLXRpcG8tMi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkFwbGljYcOnw6NvIGRhIGF2YWxpYcOnw6NvIGRvIHByb2pldG8gYSBpdGVucyBvZmljaWFpcyB0w6ljbmljb3Mgc2VtIG9icmEgYWxoZWlhIGluY29ycG9yYWRhLiBOw6NvIHByZXN1bWUgbGljZW7Dp2EgZXhwcmVzc2EgbmVtIHBhcmVjZXIganVyw61kaWNvIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLW1hY3Jvcy1nYXAtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6IjUwMjRhNWZkNjJlZTBkMTczYzc2MDEyMDdlMzJmMWIzMmMyODgyNGNiMzY5YjFiYzk0NGM4NDAwMDAwODViMGIiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJBbmFsaXN0YSBMZWdpc2xhdGl2byDigJQgUHJvZmlzc2lvbmFsIGRlIEVkdWNhw6fDo28gRsOtc2ljYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNX0sImlkIjoiZmd2LWFsZWFtLWVkdWMyLXEzMCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtbWFjcm9zLWl0LXZiYS1wcm9qZXRvIl0sInJlc29sdXRpb24iOiIxLiBOYXMgcHJvcHJpZWRhZGVzIGRvIHByb2pldG8gVkJBLCBhIGd1aWEgUHJvdGXDp8OjbyBwZXJtaXRlIGJsb3F1ZWFyIG8gcHJvamV0byBwYXJhIHZpc3VhbGl6YcOnw6NvIGUgZGVmaW5pciBzZW5oYSwgcmVzdHJpbmdpbmRvIGEgdmlzdWFsaXphw6fDo28vZWRpw6fDo28gbm8gZWRpdG9yLiBDIGNvcnJlc3BvbmRlIGFvIGRlZmluaXRpdm8uIE8gY29uY2VpdG8gZGUgcHJvamV0byBWQkEgdGFtYsOpbSBzZSBhcGxpY2EgYW8gRXhjZWwgZGUgZGVza3RvcCwgY29tbyBleHBsaWNpdGEgbyBlbnVuY2lhZG8uIDIuIEEgcmVmZXJlLXNlIMOgIHByb3Rlw6fDo28gZG8gZG9jdW1lbnRvOyBCIG7Do28gdHJhbnNmb3JtYSBDb250cm9sYXIgQWx0ZXJhw6fDtWVzIGVtIGhpc3TDs3JpY28gZGUgY8OzZGlnbyBWQkE7IEQgbsOjbyByZXN0cmluZ2UgYSBsZWl0dXJhIGRvIGPDs2RpZ28gcGVsYSBhc3NpbmF0dXJhOyBFIG7Do28gYmxvcXVlaWEgbyBwcm9qZXRvIG5vIGVkaXRvci4gQSBzZW5oYSBkbyBwcm9qZXRvIG7Do28gY29uc3RpdHVpIHByb21lc3NhIGRlIGludmlvbGFiaWxpZGFkZSwgY3JpcHRvZ3JhZmlhIGZvcnRlIGRlIHRvZG8gbyBhcnF1aXZvIG91IHByb3Rlw6fDo28gc3VmaWNpZW50ZSBjb250cmEgZXhlY3XDp8OjbyBtYWxpY2lvc2EuIiwic3RhdGVtZW50IjoiVW1hIE1hY3JvIChzZXF1w6puY2lhIGRlIGNvbWFuZG9zIGdyYXZhZGEpIMOpIHVtYSBwb2Rlcm9zYSBmZXJyYW1lbnRhIGRlIGF1dG9tYcOnw6NvLiBObyBlbnRhbnRvLCBlbGEgcG9kZSBzZXIgdW0gdmV0b3IgZGUgc2VndXJhbsOnYSBlIHJlcXVlciBwcm90ZcOnw6NvIGNvbnRyYSB2aXN1YWxpemHDp8OjbyBlIGVkacOnw6NvIG7Do28gYXV0b3JpemFkYSBlbSBhbWJpZW50ZXMgY29udHJvbGFkb3MuXG5Db25zaWRlcmFuZG8gbyBNUyBXb3JkIDIwMTAgQlIgb3Ugc3VwZXJpb3IgZSBhIGFycXVpdGV0dXJhIFZCQSBjb211bSBhbyBFeGNlbCwgYSBtZWRpZGEgZGUgc2VndXJhbsOnYSBtYWlzIGFkZXF1YWRhIHBhcmEgZXZpdGFyIHF1ZSB1bSB1c3XDoXJpbyBuw6NvIGF1dG9yaXphZG8gdmlzdWFsaXplIG91IGFsdGVyZSBvIGPDs2RpZ28gZm9udGUgZGUgdW1hIE1hY3JvIGFybWF6ZW5hZGEgZW0gdW0gZG9jdW1lbnRvIMOpOiIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLW1hY3Jvcy1pdC12YmEtcHJvamV0byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgUHJvamVjdCBQcm9wZXJ0aWVzIGRpYWxvZyBib3gsIFByb3RlY3Rpb24gdGFiIChpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2xhbmd1YWdlL3JlZmVyZW5jZS91c2VyLWludGVyZmFjZS1oZWxwL3Byb2plY3QtcHJvcGVydGllcy1kaWFsb2ctYm94In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.fgv-taubate-q39.json",
+        "mediaType": "application/json",
+        "sha256": "c04bbec3826ed6d0420fd0d958cc96726b11bec6b4c81eb4ffb9226b7086f783",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0K00ifSx7ImlkIjoiYiIsInRleHQiOiJBbHQrRjExIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ3RybCtBbHQrRjEifSx7ImlkIjoiZCIsInRleHQiOiJDdHJsK00ifSx7ImlkIjoiZSIsInRleHQiOiJGMTIifV0sImF1dGhvciI6IkZHViDigJQgQ8OibWFyYSBNdW5pY2lwYWwgZGUgVGF1YmF0w6kg4oCUIEVkaXRhbCAxLzIwMjIsIFTDqWNuaWNvIExlZ2lzbGF0aXZvIGRlIEluZm9ybcOhdGljYSwgVGlwbyAxIOKAlCBCcmFuY2Eg4oCUIFRhcmRlLCBxdWVzdMOjbyAzOS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENvZGV4LCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkRlZmluaXRpdm8gcHVibGljYWRvIGVtIDIwMjItMTEtMTcsIHDDoWdpbmEgZsOtc2ljYSA1IGRvIFBERiwgY2FyZ28vdGlwbyBjb3JyZXNwb25kZW50ZXM6IDM5PUIuIENvbmZlcmlkbyB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvZmd2LXRhdWJhdGUtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjgyZGQ5ODEyNWE0YzZkN2FjMWM5NzA1NWZjMDJhYTAyMDA0OWJlNTIyNjI3NzEwOWJjNThjYTg2OWRjOGFiOTIiLCJ1cmwiOiJodHRwczovL2NvbmhlY2ltZW50by5mZ3YuYnIvc2l0ZXMvZGVmYXVsdC9maWxlcy9jb25jdXJzb3MvZ2FiYXJpdG9fZGVmaW5pdGl2b19jbXRfLV9lZGl0YWwwMS5wZGYifSwiYm9hcmQiOiJGR1YiLCJib29rbGV0IjoiVGlwbyAxIOKAlCBCcmFuY2Eg4oCUIFRhcmRlIiwiY29tcGV0aXRpb24iOiJDw6JtYXJhIE11bmljaXBhbCBkZSBUYXViYXTDqSDigJQgRWRpdGFsIDEvMjAyMiIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiZmd2LXRhdWJhdGUtMjAyMi10aS9xMzkiLCJudW1iZXIiOiIzOSIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAzOSwgcMOhZ2luYSA4OyBjb25mZXLDqm5jaWEgdmlzdWFsIGRvIGNhZGVybm8gZW0gMjAyNi0xMS0xMS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2Zndi10YXViYXRlLXRpLXByb29mLnBkZiIsInNoYTI1NiI6IjVjNTU5NjU1NGE4ZDQyMjFkNjc4NzYwYzA2NTQzNWU1MjFlYTRjZDA4NTk3MmIxOWE4NjVkYTMwZGM5YjRlNjAiLCJ1cmwiOiJodHRwczovL2NvbmhlY2ltZW50by5mZ3YuYnIvc2l0ZXMvZGVmYXVsdC9maWxlcy9jb25jdXJzb3MvdGVjbmljb19sZWdpc2xhdGl2b19kZV9pbmZvcm1hdGljYV90YXJkZWUxdDJjbnMwMl90aXBvXzEucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBcGxpY2HDp8OjbyBhc3Npc3RpZGEgZGEgYXZhbGlhw6fDo28gZG8gcHJvamV0byBhIHNlaXMgcXVlc3TDtWVzIG9maWNpYWlzIGF1dG9zc3VmaWNpZW50ZXMgRkdWLCBzZW0gb2JyYXMgZGUgdGVyY2Vpcm9zIGluY29ycG9yYWRhcy4gTsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2Egb3UgcGFyZWNlciBqdXLDrWRpY28gaW5kZXBlbmRlbnRlLiBWZXIgdGFtYsOpbSByZXVzZS1hc3Nlc3NtZW50Lm1kLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtZmd2LWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJlNThkOWU4ODcyOTViNDRjY2Y5ODBkNjI0ZDZhMDhkY2EwZjZlM2I5ZjQ5NTM2YjI0ZTFlMDhhY2RmYzQ4Y2EzIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVMOpY25pY28gTGVnaXNsYXRpdm8gZGUgSW5mb3Jtw6F0aWNhIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDIyfSwiaWQiOiJmZ3YtdGF1YmF0ZS1xMzkiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWZndi1pdC1leGNlbC1hdGFsaG9zIiwiaW5mb3JtYXRpY2EtZmd2LWl0LXdvcmQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gTm9zIGFwbGljYXRpdm9zIGRlIGRlc2t0b3AgV29yZCBlIEV4Y2VsIHBhcmEgV2luZG93cyBjb20gYXRhbGhvcyBwYWRyw6NvLCBBbHQrRjExIGFicmUgbyBFZGl0b3IgZG8gVmlzdWFsIEJhc2ljIGZvciBBcHBsaWNhdGlvbnMgcGFyYSBleGFtaW5hciBvdSBlZGl0YXIgY8OzZGlnby4gQSByZXNwb3N0YSBCIGZvaSBjb25mZXJpZGEgbm8gZGVmaW5pdGl2byBkZSAyMDIyLiAyLiBBcyBvdXRyYXMgY29tYmluYcOnw7VlcyBuw6NvIHPDo28gbyBhdGFsaG8gcGFkcsOjbyBkZXNzZSBlZGl0b3I7IEYxMiBhYnJlIFNhbHZhciBjb21vIG5vIEV4Y2VsLiBBYnJpciBvIGVkaXRvciBuw6NvIHNpZ25pZmljYSBleGVjdXRhciBhdXRvbWF0aWNhbWVudGUgbyBjw7NkaWdvIG91IGF0ZXN0YXIgcXVlIGEgbWFjcm8gw6kgc2VndXJhLiBBIHF1ZXN0w6NvIG7Do28gc2UgYXBsaWNhIGFvIEV4Y2VsIHBhcmEgYSBXZWIuIiwic3RhdGVtZW50IjoiTm8gTVMgV29yZCwgZSB0YW1iw6ltIG5vIE1TIEV4Y2VsLCDDqSBwb3Nzw612ZWwgdXRpbGl6YXIgbWFjcm9zLCB0YW50byBwYXJhIGF1dG9tYXRpemFyIHRhcmVmYXMgcmVwZXRpdGl2YXMgY29tbyBwYXJhIGV4ZWN1dGFyIHByb2NlZGltZW50b3MgY29tcGxleG9zIHF1ZSBzZXJpYW0gaW1wcmF0aWPDoXZlaXMgZGUgbW9kbyBub3JtYWwuXG5Bc3NpbmFsZSBvIGF0YWxobyBkZSB0ZWNsYWRvIHF1ZSBwZXJtaXRlIG8gYWNlc3NvIGFvIGPDs2RpZ28gZGFzIG1hY3JvcyBlbWJ1dGlkYXMgbnVtYSBwbGFuaWxoYSBFeGNlbCBvdSBudW0gZG9jdW1lbnRvIFdvcmQuIiwidG9waWNJZCI6IkkwOCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtZmd2LWl0LWV4Y2VsLWF0YWxob3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF0YWxob3MgZGUgdGVjbGFkbyBkbyBFeGNlbCBwYXJhIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L2V4Y2VsL2tleWJvYXJkLXNob3J0Y3V0cy1pbi1leGNlbCJ9LCJpbmZvcm1hdGljYS1mZ3YtaXQtd29yZC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gZG8gV29yZCBwYXJhIFdpbmRvd3M7IGNvbmZlcmlyIGxheW91dC9pZGlvbWEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dvcmQva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdvcmQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-bloqueio-sem-aviso.json",
+        "mediaType": "application/json",
+        "sha256": "96df73965b5c8e2f04faf73b5baed5d8e72a9e5fcf8c6c81772b1c0d56fe2e0c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRGVzYXRpdmEgYXMgbWFjcm9zIFZCQSBlIG9zIGF2aXNvcyBjb3JyZXNwb25kZW50ZXMgc29icmUgZWxhcy4ifSx7ImlkIjoiYiIsInRleHQiOiJFeGVjdXRhIG1hY3JvcyBWQkEgYXBlbmFzIHBvciBlc3RhcmVtIHNlbSBhc3NpbmF0dXJhLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlRyYW5zZm9ybWEgbWFjcm9zIGVtIGbDs3JtdWxhcyBkZSBjw6lsdWxhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkRlc2F0aXZhIG8gc2FsdmFtZW50byBkZSB0b2RvcyBvcyBhcnF1aXZvcyBzZW0gbWFjcm9zLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LWJsb3F1ZWlvLXNlbS1hdmlzbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW1hY3JvLXNlZ3VyYW5jYSJdLCJyZXNvbHV0aW9uIjoiMS4gQSBvcMOnw6NvIGJsb3F1ZWlhIG1hY3JvcyBWQkEgZSBuw6NvIGFwcmVzZW50YSBvcyBhbGVydGFzIHVzYWRvcyBwZWxhIG9ww6fDo28gY29tIG5vdGlmaWNhw6fDo28uIDIuIE7Do28gYXV0b3JpemEgY8OzZGlnbyBzZW0gYXNzaW5hdHVyYSwgbsOjbyBjb252ZXJ0ZSBsaW5ndWFnZW0gZSBuw6NvIMOpIHVtYSBwcm9pYmnDp8OjbyBnZXJhbCBkZSBzYWx2YXIgZG9jdW1lbnRvcy4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCBkZSBkZXNrdG9wLCBxdWFsIMOpIG8gZWZlaXRvIGRhIGNvbmZpZ3VyYcOnw6NvIERlc2F0aXZhciBtYWNyb3MgVkJBIHNlbSBub3RpZmljYcOnw6NvPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtbWFjcm8tc2VndXJhbmNhIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGl2YXIgb3UgZGVzYXRpdmFyIG1hY3JvczsgY29uZmlndXJhw6fDtWVzIGRvIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtcHQvb2ZmaWNlL3ZiYS9lbmFibGUtb3ItZGlzYWJsZS1tYWNyb3MtaW4tbWljcm9zb2Z0LTM2NS1maWxlcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-desenvolvedor-exibir.json",
+        "mediaType": "application/json",
+        "sha256": "c6dcc1d6e60ce6713f17a461b524ccba91f1a7353068c4d7ef6989270ddce3f4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVHJvY2FyIGEgZXh0ZW5zw6NvIGRlIHF1YWxxdWVyIGFycXVpdm8gZGUgZGFkb3MgcGFyYSAuZXhlLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkRlc2F0aXZhciBvIHRlY2xhZG8gbnVtw6lyaWNvLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkhhYmlsaXRhciBhIGd1aWEgRGVzZW52b2x2ZWRvciBuYSBwZXJzb25hbGl6YcOnw6NvIGRhIGZhaXhhIGRlIG9ww6fDtWVzLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkV4Y2x1aXIgdG9kYXMgYXMgcGxhbmlsaGFzIGRhIHBhc3RhLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWRlc2Vudm9sdmVkb3ItZXhpYmlyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZ3JhdmFkb3IiXSwicmVzb2x1dGlvbiI6IjEuIEFzIGZlcnJhbWVudGFzIGRlIG1hY3JvcyBmaWNhbSBuYSBndWlhIERlc2Vudm9sdmVkb3IsIHF1ZSBwb2RlIGVzdGFyIG9jdWx0YSBwb3IgcGFkcsOjby4gMi4gRXhjbHVpciBwbGFuaWxoYXMsIGFsdGVyYXIgZXh0ZW5zw6NvIHBhcmEgZXhlY3V0w6F2ZWwgb3UgbWV4ZXIgbm8gdGVjbGFkbyBuw6NvIHJldmVsYSBlc3NhIGd1aWEuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgcGFyYSBNaWNyb3NvZnQgMzY1IHBhcmEgV2luZG93cywgYSBndWlhIERlc2Vudm9sdmVkb3IgbsOjbyBhcGFyZWNlIG5hIGZhaXhhIGRlIG9ww6fDtWVzLiBRdWFsIMOpIGEgcHJvdmlkw6puY2lhIGFwcm9wcmlhZGEgcGFyYSB1c2FyIGFzIGZlcnJhbWVudGFzIGRlIGdyYXZhw6fDo28gZGUgbWFjcm9zPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZ3JhdmFkb3IiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF1dG9tYXRpemFyIHRhcmVmYXMgY29tIG8gZ3JhdmFkb3IgZGUgbWFjcm9zIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvYXV0b21hdGUtdGFza3Mtd2l0aC10aGUtbWFjcm8tcmVjb3JkZXIifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-macro-entre-aplicativos.json",
+        "mediaType": "application/json",
+        "sha256": "14ef58da455bcf034039c093cce5eb52e9e19dfbf6db75e32134ec2e97f351e4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2ltOyBxdWFscXVlciBtYWNybyBkaXNwZW5zYSBwZXJtaXNzw7VlcyBkZSBhY2Vzc28gZSBjb250YXMgZG9zIHNlcnZpw6dvcyB1c2Fkb3MuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTsOjbzsgbyBncmF2YWRvciBzw7MgcHJvZHV6IGltYWdlbnMgc2VtIGPDs2RpZ28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU2ltOyB1bSBwcm9jZXNzbyBwb2RlIGVudm9sdmVyIHRhcmVmYXMgZW0gb3V0cm9zIGFwbGljYXRpdm9zIGNvbXBhdMOtdmVpcywgY29tbyBlbnZpYXIgcGVsbyBPdXRsb29rIHVtYSB0YWJlbGEgcHJlcGFyYWRhIG5vIEV4Y2VsLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik7Do287IFZCQSBzw7MgcG9kZSBtb2RpZmljYXIgYSBjb3IgZGUgdW1hIMO6bmljYSBjw6lsdWxhIGUgbmFkYSBtYWlzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LW1hY3JvLWVudHJlLWFwbGljYXRpdm9zIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZ3JhdmFkb3IiXSwicmVzb2x1dGlvbiI6IjEuIEEgYXV0b21hw6fDo28gVkJBIHBvZGUgc2UgZXN0ZW5kZXIgYSBvdXRyb3MgYXBsaWNhdGl2b3MgcXVlIHN1cG9ydGFtIGVzc2EgdGVjbm9sb2dpYS4gMi4gRXNzYSBjYXBhY2lkYWRlIG7Do28gZWxpbWluYSBwZXJtaXNzw7VlcyBvdSBhdXRlbnRpY2HDp8OjbzsgbWFjcm9zIG7Do28gc2UgbGltaXRhbSBhIHVtYSBjb3IgbmVtIHPDo28gbWVyYXMgY2FwdHVyYXMgZGUgdGVsYS4iLCJzdGF0ZW1lbnQiOiJDb25mb3JtZSBhIGRvY3VtZW50YcOnw6NvIGRvIGdyYXZhZG9yIGRlIG1hY3JvcyBkbyBFeGNlbCBwYXJhIGRlc2t0b3AsIHVtYSBhdXRvbWHDp8OjbyBWQkEgcG9kZSBpbnRlcmFnaXIgY29tIG91dHJvcyBhcGxpY2F0aXZvcyBjb21wYXTDrXZlaXMgZG8gT2ZmaWNlPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZ3JhdmFkb3IiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF1dG9tYXRpemFyIHRhcmVmYXMgY29tIG8gZ3JhdmFkb3IgZGUgbWFjcm9zIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvYXV0b21hdGUtdGFza3Mtd2l0aC10aGUtbWFjcm8tcmVjb3JkZXIifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-macro-nome.json",
+        "mediaType": "application/json",
+        "sha256": "a4f4d9a9f16c86947ad5a2eee7621fc878c0507442cb26f1123edc810bcbd427",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRm9ybWF0YXJfUmVsYXRvcmlvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IjFGb3JtYXRhci4ifSx7ImlkIjoiYyIsInRleHQiOiJGb3JtYXRhciBSZWxhdG9yaW8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQTEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtbWFjcm8tbm9tZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWdyYXZhZG9yIl0sInJlc29sdXRpb24iOiIxLiBPIG5vbWUgY29tZcOnYSBwb3IgbGV0cmEgZSB1c2Egc3VibGluaGFkbywgc2VtIGVzcGHDp28gb3UgY29uZmxpdG8gY29tIGVuZGVyZcOnbyBkZSBjw6lsdWxhLiAyLiBOw7ptZXJvIGluaWNpYWwgZSBlc3Bhw6dvIHPDo28gaW52w6FsaWRvczsgQTEgY29pbmNpZGUgY29tIHVtYSByZWZlcsOqbmNpYSBkZSBjw6lsdWxhLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBwYXJhIFdpbmRvd3MsIHF1YWwgbm9tZSByZXNwZWl0YSBhIHJlZ3JhIGRvY3VtZW50YWRhIHBhcmEgdW1hIG5vdmEgbWFjcm8sIHNlbSByZXByZXNlbnRhciB1bWEgcmVmZXLDqm5jaWEgZGUgY8OpbHVsYT8iLCJ0b3BpY0lkIjoiSTA4In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWdyYXZhZG9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdXRvbWF0aXphciB0YXJlZmFzIGNvbSBvIGdyYXZhZG9yIGRlIG1hY3JvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2F1dG9tYXRlLXRhc2tzLXdpdGgtdGhlLW1hY3JvLXJlY29yZGVyIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-macro-web-limite.json",
+        "mediaType": "application/json",
+        "sha256": "24e98169c74e787cc51a9d52186cb8e2053914fb045843e98bce64cf6ac09138",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQW8gYWJyaXIgYSBwYXN0YSwgdG9kbyBjw7NkaWdvIFZCQSDDqSBvYnJpZ2F0b3JpYW1lbnRlIGFwYWdhZG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQSDDum5pY2EgZm9ybWEgZGUgYWJyaXIgdW1hIHBhc3RhIGNvbSBtYWNyb3Mgw6kgcmVub21lw6EtbGEgY29tbyBQREYuIn0seyJpZCI6ImMiLCJ0ZXh0Ijoiw4kgcG9zc8OtdmVsIGVkaXRhciB1bWEgcGFzdGEgcXVlIGNvbnTDqW0gbWFjcm9zLCBtYXMgbsOjbyBjcmlhciwgZXhlY3V0YXIgb3UgZWRpdGFyIG8gVkJBIG5lc3NhIHZlcnPDo28gd2ViLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlRvZGEgbWFjcm8gVkJBIHBhc3NhIGEgZXhlY3V0YXIgYXV0b21hdGljYW1lbnRlIG5vIG5hdmVnYWRvci4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1tYWNyby13ZWItbGltaXRlIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtbWFjcm8td2ViIl0sInJlc29sdXRpb24iOiIxLiBPIEV4Y2VsIHBhcmEgYSBXZWIgcHJlc2VydmEgbWFjcm9zIGV4aXN0ZW50ZXMgbmEgcGFzdGEsIG1hcyBvIHRyYWJhbGhvIGNvbSBWQkEgZGV2ZSBzZXIgZmVpdG8gbm8gYXBsaWNhdGl2byBkZSBkZXNrdG9wLiAyLiBBIHZlcnPDo28gd2ViIG7Do28gZXhlY3V0YSBhdXRvbWF0aWNhbWVudGUgbyBWQkEsIG7Do28gbyBhcGFnYSBwb3Igc2ltcGxlcyBhYmVydHVyYSBlIG7Do28gZGVwZW5kZSBkZSB1bWEgcmVub21lYcOnw6NvIGludsOhbGlkYS4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCBwYXJhIGEgV2ViLCBxdWFsIGFmaXJtYcOnw6NvIGRlc2NyZXZlIG8gc3Vwb3J0ZSBhIG1hY3JvcyBWQkEgY29uZm9ybWUgYSBkb2N1bWVudGHDp8OjbyBkYSBNaWNyb3NvZnQgY29uc3VsdGFkYSBlbSBub3ZlbWJybyBkZSAyMDI2PyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtbWFjcm8td2ViIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBXb3JrIHdpdGggVkJBIG1hY3JvcyBpbiBFeGNlbCBmb3IgdGhlIHdlYiIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL2VuLXVzL2V4Y2VsL3dvcmstd2l0aC12YmEtbWFjcm9zLWluLWV4Y2VsLWZvci10aGUtd2ViIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-cells-indices.json",
+        "mediaType": "application/json",
+        "sha256": "59304d9c6b921889862c865accfd556ae74aec1d30bc164cffbc1531d74cef47",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQjMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQzIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQjIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQzMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtdmJhLWNlbGxzLWluZGljZXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtY2VsbHMiXSwicmVzb2x1dGlvbiI6IjEuIENlbGxzIHJlY2ViZSBsaW5oYSBwcmltZWlybyBlIGNvbHVuYSBkZXBvaXM6IGxpbmhhIDMsIGNvbHVuYSAyIChCKS4gMi4gQXMgb3V0cmFzIHJlc3Bvc3RhcyBpbnZlcnRlbSDDrW5kaWNlcyBvdSBhbHRlcmFtIHVtIGRlbGVzLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIFF1YWwgY8OpbHVsYSBkYSBwbGFuaWxoYSB3cyDDqSBpbmRpY2FkYSBwb3Igd3MuQ2VsbHMoMywgMiksIHVzYW5kbyDDrW5kaWNlcyBkZSBsaW5oYSBlIGNvbHVuYT8iLCJ0b3BpY0lkIjoiSTA4In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1jZWxscyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgUmFuZ2UuQ2VsbHMgKFZCQSBkbyBFeGNlbCwgc2ludGF4ZSBlbSBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2FwaS9leGNlbC5yYW5nZS5jZWxscyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-clearcontents.json",
+        "mediaType": "application/json",
+        "sha256": "9717caf533ba9a0a91f526951213d8e28abcf94fdb815d4f30bcbe8f03aa8780",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29weSwgcXVlIGFwZW5hcyB0cmFuc2ZlcmUgZGFkb3MuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU2F2ZSwgcXVlIGdyYXZhIGEgcGFzdGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ2xlYXJDb250ZW50cy4ifSx7ImlkIjoiZCIsInRleHQiOiJEZWxldGUsIGNvbSBkZXNsb2NhbWVudG8gZGUgY8OpbHVsYXMsIGNvbW8gZXF1aXZhbGVudGUgb2JyaWdhdMOzcmlvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXZiYS1jbGVhcmNvbnRlbnRzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLWNsZWFyIl0sInJlc29sdXRpb24iOiIxLiBDbGVhckNvbnRlbnRzIGxpbXBhIHZhbG9yZXMgZSBmw7NybXVsYXMgbWFudGVuZG8gYSBmb3JtYXRhw6fDo28gZG8gaW50ZXJ2YWxvLiAyLiBEZWxldGUgcG9kZSBtdWRhciBlc3RydXR1cmE7IGNvcGlhciBlIHNhbHZhciB0w6ptIGZpbmFsaWRhZGVzIGRpZmVyZW50ZXMuIiwic3RhdGVtZW50IjoiQ29uc2lkZXJlIG1hY3JvcyBWQkEgbm8gRXhjZWwgcGFyYSBNaWNyb3NvZnQgMzY1IGRlIGRlc2t0b3Agbm8gV2luZG93cywgY29tIGlkZW50aWZpY2Fkb3JlcyBkYSBsaW5ndWFnZW0gZW0gaW5nbMOqcy4gVW1hIG1hY3JvIGRldmUgcmVtb3ZlciB2YWxvcmVzIGUgZsOzcm11bGFzIGRlIHVtIGludGVydmFsbywgcHJlc2VydmFuZG8gc3VhIGZvcm1hdGHDp8Ojby4gUXVhbCBtw6l0b2RvIMOpIGFkZXF1YWRvPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLWNsZWFyIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBSYW5nZS5DbGVhckNvbnRlbnRzIChWQkEgZG8gRXhjZWwsIHNpbnRheGUgZW0gaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9hcGkvZXhjZWwucmFuZ2UuY2xlYXJjb250ZW50cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-close-sem-salvar.json",
+        "mediaType": "application/json",
+        "sha256": "334c9760bfa6f017ebaead9d37c39b897c93b5f6a1f578e60da90462a9874c27",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBwYXN0YSBzZW1wcmUgdmlyYSBQREYgc2VtIHBlcmRlciBuYWRhLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik8gY29tYW5kbyBmZWNoYSBhcGVuYXMgYSBjYWl4YSBkZSBkacOhbG9nbyBkZSBmb250ZXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQWx0ZXJhw6fDtWVzIGFpbmRhIG7Do28gc2FsdmFzIHBvZGVtIHNlciBkZXNjYXJ0YWRhcy4ifSx7ImlkIjoiZCIsInRleHQiOiJUb2RhcyBhcyBtdWRhbsOnYXMgc8OjbyBvYnJpZ2F0b3JpYW1lbnRlIGdyYXZhZGFzIGFudGVzIGRlIGZlY2hhci4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC12YmEtY2xvc2Utc2VtLXNhbHZhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1jbG9zZSJdLCJyZXNvbHV0aW9uIjoiMS4gRmFsc2UgaW5zdHJ1aSBvIGZlY2hhbWVudG8gc2VtIHNhbHZhciBhcyBhbHRlcmHDp8O1ZXMgbmVzc2UgY2Vuw6FyaW8uIDIuIE7Do28gZ2FyYW50ZSBwZXJzaXN0w6puY2lhIG5lbSBjb252ZXJzw6NvOyBvIG9iamV0byDDqSBXb3JrYm9vaywgbsOjbyB1bWEgY2FpeGEgZGUgZm9ybWF0YcOnw6NvLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIFVtYSBwYXN0YSB2w6FsaWRhLCBhbHRlcmFkYSBlIGFiZXJ0YSBlbSB1bWEgw7puaWNhIGphbmVsYSDDqSBmZWNoYWRhIGNvbSB3Yi5DbG9zZSBTYXZlQ2hhbmdlczo9RmFsc2UuIFF1YWwgY29uc2VxdcOqbmNpYSBkZXZlIHNlciBjb25zaWRlcmFkYT8iLCJ0b3BpY0lkIjoiSTA4In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1jbG9zZSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgV29ya2Jvb2suQ2xvc2UgKFZCQSBkbyBFeGNlbCwgc2ludGF4ZSBlbSBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2FwaS9leGNlbC53b3JrYm9vay5jbG9zZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-error-desativar.json",
+        "mediaType": "application/json",
+        "sha256": "83bba6301b5a483b95cf6615e538d2ecccd9927c32c05520441994ef6e3b5dca",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRGVzYWJpbGl0YXIgbyB0cmF0YWRvciBkZSBlcnJvcyBoYWJpbGl0YWRvIG5hcXVlbGUgcHJvY2VkaW1lbnRvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlNhbHRhciBvYnJpZ2F0b3JpYW1lbnRlIHBhcmEgdW1hIGxpbmhhIG51bWVyYWRhIHplcm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiWmVyYXIgdG9kb3Mgb3MgbsO6bWVyb3MgZGEgcGxhbmlsaGEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiR3JhdmFyIGF1dG9tYXRpY2FtZW50ZSB1bWEgY8OzcGlhIGRhIHBhc3RhLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LXZiYS1lcnJvci1kZXNhdGl2YXIiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtZXJyb3IiXSwicmVzb2x1dGlvbiI6IjEuIEdvVG8gMCBlbmNlcnJhIG8gdHJhdGFtZW50byBoYWJpbGl0YWRvOyBuw6NvIGVzcGVjaWZpY2EgdW1hIGxpbmhhIHplcm8gZGUgZGVzdGluby4gMi4gTsOjbyDDqSBwcmVlbmNoaW1lbnRvIGRlIGPDqWx1bGFzIG5lbSBzYWx2YW1lbnRvLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIFF1YWwgZWZlaXRvIGRlIE9uIEVycm9yIEdvVG8gMCDDqSBkb2N1bWVudGFkbyBubyBwcm9jZWRpbWVudG8gVkJBIGF0dWFsPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLWVycm9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBPbiBFcnJvciAoVkJBIGRvIEV4Y2VsLCBzaW50YXhlIGVtIGluZ2zDqnMpIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL2VuLXVzL29mZmljZS92YmEvbGFuZ3VhZ2UvcmVmZXJlbmNlL3VzZXItaW50ZXJmYWNlLWhlbHAvb24tZXJyb3Itc3RhdGVtZW50In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-events.json",
+        "mediaType": "application/json",
+        "sha256": "e78bdbeb31a7efaa076b63f56d685f2b55a860058ddb651b1bcec4d27373c389",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRGVzYWJpbGl0YSBvIGRpc3Bhcm8gZGUgZXZlbnRvcyBkbyBhcGxpY2F0aXZvIGVucXVhbnRvIGEgY29uZmlndXJhw6fDo28gZXN0aXZlciBuZXNzZSBlc3RhZG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiRGVzbGlnYSBuZWNlc3NhcmlhbWVudGUgdG9kYSBhIHJlZGUgZG8gY29tcHV0YWRvci4ifSx7ImlkIjoiYyIsInRleHQiOiJFeGNsdWkgcGVybWFuZW50ZW1lbnRlIHRvZG9zIG9zIG1hbmlwdWxhZG9yZXMgZGUgZXZlbnRvcyBkbyBjw7NkaWdvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlRyYW5zZm9ybWEgdG9kYSBmw7NybXVsYSBlbSB0ZXh0byBmaXhvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LXZiYS1ldmVudHMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtZXZlbnRzIl0sInJlc29sdXRpb24iOiIxLiBBIHByb3ByaWVkYWRlIGNvbnRyb2xhIHNlIGV2ZW50b3MgZXN0w6NvIGhhYmlsaXRhZG9zLCBjb21vIG9zIHF1ZSBwb2RlbSBvY29ycmVyIGVtIHVtIHNhbHZhbWVudG8uIDIuIE7Do28gYXBhZ2EgbyBjw7NkaWdvLCBuw6NvIGFkbWluaXN0cmEgYSByZWRlIGUgbsOjbyBjb252ZXJ0ZSBmw7NybXVsYXMuIEEgcmVzdGF1cmHDp8OjbyBkbyBlc3RhZG8gcHJlY2lzYSBzZXIgdHJhdGFkYS4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgbWFjcm9zIFZCQSBubyBFeGNlbCBwYXJhIE1pY3Jvc29mdCAzNjUgZGUgZGVza3RvcCBubyBXaW5kb3dzLCBjb20gaWRlbnRpZmljYWRvcmVzIGRhIGxpbmd1YWdlbSBlbSBpbmdsw6pzLiBRdWFsIGVmZWl0byBkZSBBcHBsaWNhdGlvbi5FbmFibGVFdmVudHMgPSBGYWxzZSBkZXZlIHNlciBjb21wcmVlbmRpZG8gYW8gZXhlY3V0YXIgdW1hIGF1dG9tYcOnw6NvPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLWV2ZW50cyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgQXBwbGljYXRpb24uRW5hYmxlRXZlbnRzIChWQkEgZG8gRXhjZWwsIHNpbnRheGUgZW0gaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9hcGkvZXhjZWwuYXBwbGljYXRpb24uZW5hYmxlZXZlbnRzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-exit-for.json",
+        "mediaType": "application/json",
+        "sha256": "2e47c355794d7fdbd5121f920d9a4354f45c444f23b1073e0d1673b3ea1969da",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhpdCBGb3IuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiRW5kIElmLCBjb21vIHTDqXJtaW5vIGRlIHF1YWxxdWVyIGxhw6dvLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik5leHQsIHF1ZSBzZW1wcmUgZW5jZXJyYSBpbWVkaWF0YW1lbnRlIG8gcHJvY2VkaW1lbnRvIGludGVpcm8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2F2ZSwgcXVlIGVuY2VycmEgYSBidXNjYSBzZW0gcmVsYcOnw6NvIGNvbSBwZXJzaXN0w6puY2lhLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LXZiYS1leGl0LWZvciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1lYWNoIiwiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtZm9yIl0sInJlc29sdXRpb24iOiIxLiBFeGl0IEZvciB0cmFuc2ZlcmUgYSBleGVjdcOnw6NvIHBhcmEgYSBpbnN0cnXDp8OjbyBzZWd1aW50ZSBhbyBOZXh0IGNvcnJlc3BvbmRlbnRlLiAyLiBFbmQgSWYgZmVjaGEgY29uZGnDp8OjbzsgTmV4dCBjb250cm9sYSBhIGl0ZXJhw6fDo28gZSBTYXZlIGdyYXZhIHVtYSBwYXN0YSwgbsOjbyBleHByZXNzYSBlc3NhIHNhw61kYS4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgbWFjcm9zIFZCQSBubyBFeGNlbCBwYXJhIE1pY3Jvc29mdCAzNjUgZGUgZGVza3RvcCBubyBXaW5kb3dzLCBjb20gaWRlbnRpZmljYWRvcmVzIGRhIGxpbmd1YWdlbSBlbSBpbmdsw6pzLiBBbyBlbmNvbnRyYXIgbyBwcmltZWlybyByZWdpc3RybyBxdWUgc2F0aXNmYXogYSBidXNjYSwgdW1hIG1hY3JvIGRldmUgc2FpciBhbnRlY2lwYWRhbWVudGUgZG8gbGHDp28gRm9yLCBjb250aW51YW5kbyBhcMOzcyBlbGUuIFF1YWwgaW5zdHJ1w6fDo28gdGVtIGVzc2EgZmluYWxpZGFkZT8iLCJ0b3BpY0lkIjoiSTA4In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1lYWNoIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBGb3IgRWFjaC4uLk5leHQgKFZCQSBkbyBFeGNlbCwgc2ludGF4ZSBlbSBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2xhbmd1YWdlL3JlZmVyZW5jZS91c2VyLWludGVyZmFjZS1oZWxwL2Zvci1lYWNobmV4dC1zdGF0ZW1lbnQifSwiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtZm9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBGb3IuLi5OZXh0IChWQkEgZG8gRXhjZWwsIHNpbnRheGUgZW0gaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9sYW5ndWFnZS9yZWZlcmVuY2UvdXNlci1pbnRlcmZhY2UtaGVscC9mb3JuZXh0LXN0YXRlbWVudCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-for-contador.json",
+        "mediaType": "application/json",
+        "sha256": "1879b24233824d7fbf9ace69b0a895db17373cefa36ac1a79e24fcd894bf6932",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMC4ifSx7ImlkIjoiYiIsInRleHQiOiI5LiJ9LHsiaWQiOiJjIiwidGV4dCI6IjYuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC12YmEtZm9yLWNvbnRhZG9yIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLWZvciJdLCJyZXNvbHV0aW9uIjoiMS4gTyBjb3JwbyBzb21hIDEsIGRlcG9pcyAyIGUgZGVwb2lzIDM6IDArMSsyKzM9Ni4gMi4gMyBjb25zaWRlcmEgc8OzIG8gw7psdGltbyBjb250YWRvcjsgMCBpZ25vcmEgbyBsYcOnbyBlIDkgc29tYSByZXBldGlkYW1lbnRlIGFwZW5hcyBvIGxpbWl0ZS4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgbWFjcm9zIFZCQSBubyBFeGNlbCBwYXJhIE1pY3Jvc29mdCAzNjUgZGUgZGVza3RvcCBubyBXaW5kb3dzLCBjb20gaWRlbnRpZmljYWRvcmVzIGRhIGxpbmd1YWdlbSBlbSBpbmdsw6pzLiBVbSB0cmVjaG8gZXhlY3V0YSB0b3RhbCA9IDA7IEZvciBpID0gMSBUbyAzOyB0b3RhbCA9IHRvdGFsICsgaTsgTmV4dCBpLiBTZW0gYWx0ZXJhw6fDtWVzIGFkaWNpb25haXMsIHF1YWwgw6kgbyB2YWxvciBmaW5hbCBkZSB0b3RhbD8iLCJ0b3BpY0lkIjoiSTA4In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1mb3IiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQgTGVhcm4g4oCUIEZvci4uLk5leHQgKFZCQSBkbyBFeGNlbCwgc2ludGF4ZSBlbSBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2xhbmd1YWdlL3JlZmVyZW5jZS91c2VyLWludGVyZmFjZS1oZWxwL2Zvcm5leHQtc3RhdGVtZW50In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-msgbox-resposta.json",
+        "mediaType": "application/json",
+        "sha256": "ff972399d8211213b44fcd284339250089019cc669c82f851ec27c8b5a7aeba6",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVmVyaWZpY2FyIGFwZW5hcyBvIHRhbWFuaG8gZGEgZm9udGUgZGEgY2FpeGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU2FsdmFyIGEgcGFzdGEgYW50ZXMgZGUgcXVhbHF1ZXIgZGVjaXPDo28sIGlnbm9yYW5kbyBhIHJlc3Bvc3RhLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkV4YW1pbmFyIG8gdmFsb3IgcmV0b3JuYWRvIGUgY29tcGFyw6EtbG8gw6AgcmVzcG9zdGEgZXNwZXJhZGEsIGNvbW8gdmJZZXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUHJlc3VtaXIgcXVlIGEgc2ltcGxlcyBleGliacOnw6NvIGRhIGNhaXhhIHNlbXByZSBzaWduaWZpY2EgU2ltLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXZiYS1tc2dib3gtcmVzcG9zdGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtbXNnYm94Il0sInJlc29sdXRpb24iOiIxLiBNc2dCb3ggcmV0b3JuYSB1bSBjw7NkaWdvIHF1ZSBpZGVudGlmaWNhIG8gYm90w6NvIGVzY29saGlkby4gMi4gRXhpYmlyIHVtYSBwZXJndW50YSBuw6NvIGVxdWl2YWxlIGEgb2J0ZXIgY29uZmlybWHDp8OjbzsgYXBhcsOqbmNpYSBlIHNhbHZhbWVudG8gbsOjbyBzdWJzdGl0dWVtIHN1YSBsZWl0dXJhLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIFVtYSBhdXRvbWHDp8OjbyBhcHJlc2VudGEgTXNnQm94KFwiQ29udGludWFyP1wiLCB2Ylllc05vKS4gQ29tbyBkZXZlIGRlY2lkaXIgc2UgbyB1c3XDoXJpbyBhdXRvcml6b3UgY29udGludWFyPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLW1zZ2JveCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgTXNnQm94IChWQkEgZG8gRXhjZWwsIHNpbnRheGUgZW0gaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9sYW5ndWFnZS9yZWZlcmVuY2UvdXNlci1pbnRlcmZhY2UtaGVscC9tc2dib3gtZnVuY3Rpb24ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-numformat.json",
+        "mediaType": "application/json",
+        "sha256": "aca8399c26e1c72b0ea1b4679cbbbbf4bf9ebacf1df9513e69f94e184d53177e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29uc3VsdGFyIG91IGRlZmluaXIgbyBjw7NkaWdvIGRlIGZvcm1hdG8gZGUgYXByZXNlbnRhw6fDo28gZG9zIHZhbG9yZXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU29tYXIgYXV0b21hdGljYW1lbnRlIHRvZG9zIG9zIG7Dum1lcm9zIGRvIGludGVydmFsby4ifSx7ImlkIjoiYyIsInRleHQiOiJFeGNsdWlyIHRvZGFzIGFzIGPDqWx1bGFzIHF1ZSBjb250w6ptIHRleHRvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlJlbm9tZWFyIG8gdXN1w6FyaW8gZG8gV2luZG93cy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC12YmEtbnVtZm9ybWF0Iiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLWZvcm1hdCJdLCJyZXNvbHV0aW9uIjoiMS4gTnVtYmVyRm9ybWF0IGNvbnRyb2xhIGEgZm9ybWF0YcOnw6NvIG51bcOpcmljYS4gMi4gRm9ybWF0byBuw6NvIMOpIGFncmVnYcOnw6NvLCBleGNsdXPDo28gZGUgZGFkb3Mgb3UgYWRtaW5pc3RyYcOnw6NvIGRlIGlkZW50aWRhZGUgZG8gc2lzdGVtYS4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgbWFjcm9zIFZCQSBubyBFeGNlbCBwYXJhIE1pY3Jvc29mdCAzNjUgZGUgZGVza3RvcCBubyBXaW5kb3dzLCBjb20gaWRlbnRpZmljYWRvcmVzIGRhIGxpbmd1YWdlbSBlbSBpbmdsw6pzLiBRdWFsIMOpIG8gcGFwZWwgZGUgTnVtYmVyRm9ybWF0IGVtIHVtIG9iamV0byBSYW5nZT8iLCJ0b3BpY0lkIjoiSTA4In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1mb3JtYXQiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQgTGVhcm4g4oCUIFJhbmdlLk51bWJlckZvcm1hdCAoVkJBIGRvIEV4Y2VsLCBzaW50YXhlIGVtIGluZ2zDqnMpIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL2VuLXVzL29mZmljZS92YmEvYXBpL2V4Y2VsLnJhbmdlLm51bWJlcmZvcm1hdCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-paste-values.json",
+        "mediaType": "application/json",
+        "sha256": "d876c754a4360626a9b4c647884e74c9b88a8328a11d417ce3125ad4ef2387ff",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUGFzdGU6PXhsUGFzdGVWYWx1ZXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUGFzdGU6PXhsUGFzdGVBbGwsIHF1ZSBzZW1wcmUgZWxpbWluYSBmw7NybXVsYXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVHJhbnNwb3NlOj1UcnVlLCBxdWUgZXNjb2xoZSB2YWxvcmVzIGVtIHZleiBkZSBmw7NybXVsYXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2tpcEJsYW5rczo9RmFsc2UsIHF1ZSBjb252ZXJ0ZSB0b2RvIGNvbnRlw7pkbyBlbSB2YWxvci4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC12YmEtcGFzdGUtdmFsdWVzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLXBhc3RlIl0sInJlc29sdXRpb24iOiIxLiBPIGFyZ3VtZW50byBQYXN0ZSBlc2NvbGhlIHF1YWlzIGF0cmlidXRvcyBzw6NvIGNvbGFkb3M7IHhsUGFzdGVWYWx1ZXMgaW5kaWNhIHZhbG9yZXMuIDIuIENvbGFyIHR1ZG8gcG9kZSB0cmF6ZXIgZsOzcm11bGFzOyBUcmFuc3Bvc2UgZSBTa2lwQmxhbmtzIHJlZ3VsYW0gb3V0cm9zIGFzcGVjdG9zIGRhIG9wZXJhw6fDo28uIiwic3RhdGVtZW50IjoiQ29uc2lkZXJlIG1hY3JvcyBWQkEgbm8gRXhjZWwgcGFyYSBNaWNyb3NvZnQgMzY1IGRlIGRlc2t0b3Agbm8gV2luZG93cywgY29tIGlkZW50aWZpY2Fkb3JlcyBkYSBsaW5ndWFnZW0gZW0gaW5nbMOqcy4gRGVwb2lzIGRlIGNvcGlhciB1bSBpbnRlcnZhbG8sIHF1YWwgb3DDp8OjbyBkZSBQYXN0ZVNwZWNpYWwgZGV0ZXJtaW5hIHF1ZSBhcGVuYXMgb3MgcmVzdWx0YWRvcywgc2VtIGFzIGbDs3JtdWxhcyBkZSBvcmlnZW0sIHNlamFtIGNvbGFkb3M/IiwidG9waWNJZCI6IkkwOCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtcGFzdGUiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQgTGVhcm4g4oCUIFJhbmdlLlBhc3RlU3BlY2lhbCAoVkJBIGRvIEV4Y2VsLCBzaW50YXhlIGVtIGluZ2zDqnMpIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL2VuLXVzL29mZmljZS92YmEvYXBpL2V4Y2VsLnJhbmdlLnBhc3Rlc3BlY2lhbCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-resize.json",
+        "mediaType": "application/json",
+        "sha256": "638c9e482a46c2038f043b861b80a691eb31ef087d0eeec897477368dc7889cc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQzM6RDQuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQjI6RTUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQjI6QzQuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQjI6RDMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtdmJhLXJlc2l6ZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1yZXNpemUiXSwicmVzb2x1dGlvbiI6IjEuIFJlc2l6ZSBtYW50w6ltIG8gaW7DrWNpbyBCMiBlIGRlZmluZSB0csOqcyBsaW5oYXMgZSBkdWFzIGNvbHVuYXMuIDIuIE7Do28gZGVzbG9jYSBvIGluw61jaW8gZSBhIG9yZGVtIGRvcyBhcmd1bWVudG9zIMOpIHF1YW50aWRhZGUgZGUgbGluaGFzLCBkZXBvaXMgZGUgY29sdW5hcy4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgbWFjcm9zIFZCQSBubyBFeGNlbCBwYXJhIE1pY3Jvc29mdCAzNjUgZGUgZGVza3RvcCBubyBXaW5kb3dzLCBjb20gaWRlbnRpZmljYWRvcmVzIGRhIGxpbmd1YWdlbSBlbSBpbmdsw6pzLiBRdWFsIGludGVydmFsbyDDqSByZXByZXNlbnRhZG8gcG9yIHdzLlJhbmdlKFwiQjJcIikuUmVzaXplKDMsIDIpPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLXJlc2l6ZSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgUmFuZ2UuUmVzaXplIChWQkEgZG8gRXhjZWwsIHNpbnRheGUgZW0gaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9hcGkvZXhjZWwucmFuZ2UucmVzaXplIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-set-referencia.json",
+        "mediaType": "application/json",
+        "sha256": "32c59da59042541af12d6c09c6fbfbd2f6459b1894fbd5fbcd2170009513348e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQXRyaWJ1aSDDoCB2YXJpw6F2ZWwgdW1hIHJlZmVyw6puY2lhIGFvIG9iamV0byBSYW5nZS4ifSx7ImlkIjoiYiIsInRleHQiOiJDb3BpYSBuZWNlc3NhcmlhbWVudGUgbyBhcnF1aXZvIGludGVpcm8gcGFyYSBvdXRyYSBwYXN0YS4ifSx7ImlkIjoiYyIsInRleHQiOiJBdHJpYnVpIG8gdGV4dG8gbGl0ZXJhbCBSYW5nZSBhbyBjb250ZcO6ZG8gZGUgdG9kYXMgYXMgY8OpbHVsYXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQ3JpYSBzZW1wcmUgdW1hIG5vdmEgcGxhbmlsaGEgaW5kZXBlbmRlbnRlLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LXZiYS1zZXQtcmVmZXJlbmNpYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXZiYS1zZXQiXSwicmVzb2x1dGlvbiI6IjEuIFNldCBhc3NvY2lhIGEgdmFyacOhdmVsIGEgdW0gb2JqZXRvLCBzZW0gY3JpYXIgcG9yIHNpIHPDsyB1bWEgY8OzcGlhIGRlc3NlIG9iamV0by4gMi4gTsOjbyDDqSBjw7NwaWEgZGUgYXJxdWl2bywgcHJlZW5jaGltZW50byBkZSB0ZXh0byBvdSBjcmlhw6fDo28gYXV0b23DoXRpY2EgZGUgYWJhLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIE8gcXVlIGZheiBTZXQgYWx2byA9IHdzLlJhbmdlKFwiQTFcIikgZW0gdW1hIHZhcmnDoXZlbCBkZSBvYmpldG8gY29tcGF0w612ZWw/IiwidG9waWNJZCI6IkkwOCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtc2V0Ijp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBTZXQgKFZCQSBkbyBFeGNlbCwgc2ludGF4ZSBlbSBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2xhbmd1YWdlL3JlZmVyZW5jZS91c2VyLWludGVyZmFjZS1oZWxwL3NldC1zdGF0ZW1lbnQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-skipblanks.json",
+        "mediaType": "application/json",
+        "sha256": "29f67a9180dc4088e908789c82b8b9dd2050aa54532f5ec8468efe5d5aa0f110",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhjbHVpciB0b2RhcyBhcyBjw6lsdWxhcyB2YXppYXMgZGUgdG9kYXMgYXMgcGxhbmlsaGFzLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkNvbnZlcnRlciBmw7NybXVsYXMgZW0gaW1hZ2Vucy4ifSx7ImlkIjoiYyIsInRleHQiOiJFdml0YXIgcXVlIGPDqWx1bGFzIHZhemlhcyBkYSBvcmlnZW0gY29waWFkYSBzZWphbSBjb2xhZGFzIHNvYnJlIG8gZGVzdGluby4ifSx7ImlkIjoiZCIsInRleHQiOiJQdWxhciBxdWFscXVlciBlcnJvIGRlIGV4ZWN1w6fDo28gZG8gVkJBLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXZiYS1za2lwYmxhbmtzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLXBhc3RlIl0sInJlc29sdXRpb24iOiIxLiBPIGFyZ3VtZW50byBjb250cm9sYSBhIGNvbGFnZW0gZGUgdmF6aW9zIGRvIGludGVydmFsbyBxdWUgZXN0w6EgbmEgw6FyZWEgZGUgdHJhbnNmZXLDqm5jaWEuIDIuIE7Do28gw6kgdHJhdGFtZW50byBkZSBleGNlw6fDtWVzLCBleGNsdXPDo28gZ2VyYWwgb3UgY29udmVyc8OjbyBkZSBmw7NybXVsYXMgZW0gaW1hZ2VtLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIEVtIFBhc3RlU3BlY2lhbCwgcXVhbCBmaW5hbGlkYWRlIHRlbSBTa2lwQmxhbmtzOj1UcnVlPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLXBhc3RlIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBSYW5nZS5QYXN0ZVNwZWNpYWwgKFZCQSBkbyBFeGNlbCwgc2ludGF4ZSBlbSBpbmdsw6pzKSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9lbi11cy9vZmZpY2UvdmJhL2FwaS9leGNlbC5yYW5nZS5wYXN0ZXNwZWNpYWwifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-step-sinal.json",
+        "mediaType": "application/json",
+        "sha256": "16f07d10d02ebaba6a6bb32243862465293d3d402b862aeeb9ec056cf64444bc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2F2ZUNoYW5nZXM6PUZhbHNlLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik9wdGlvbiBFeHBsaWNpdCBjb21vIHN1YnN0aXR1dG8gZGUgU3RlcC4ifSx7ImlkIjoiYyIsInRleHQiOiJTdGVwIC0xLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlN0ZXAgMSwgcG9ycXVlIHF1YWxxdWVyIEZvciBkZWNyZXNjZSBzb3ppbmhvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXZiYS1zdGVwLXNpbmFsIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLWZvciJdLCJyZXNvbHV0aW9uIjoiMS4gVW0gcGFzc28gbmVnYXRpdm8gZmF6IG8gY29udGFkb3IgZGltaW51aXIgZW0gZGlyZcOnw6NvIGFvIGxpbWl0ZSBpbmZlcmlvci4gMi4gTyBwYWRyw6NvIHBvc2l0aXZvIG7Do28gcHJvZHV6IGVzc2EgY29udGFnZW07IHNhbHZhbWVudG8gZSBkZWNsYXJhw6fDo28gZGUgdmFyacOhdmVpcyBuw6NvIGNvbnRyb2xhbSBvIHBhc3NvLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIFVtIGxhw6dvIEZvciBkZXZlIGNvbnRhciBkZSA1IGF0w6kgMSwgZGltaW51aW5kbyB1bWEgdW5pZGFkZSBhIGNhZGEgcGFzc28uIFF1YWwgcGFydGUgZGEgaW5zdHJ1w6fDo28gcHJlY2lzYSBleHByZXNzYXIgZXNzYSBkaXJlw6fDo28/IiwidG9waWNJZCI6IkkwOCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtZm9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBGb3IuLi5OZXh0IChWQkEgZG8gRXhjZWwsIHNpbnRheGUgZW0gaW5nbMOqcykiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvb2ZmaWNlL3ZiYS9sYW5ndWFnZS9yZWZlcmVuY2UvdXNlci1pbnRlcmZhY2UtaGVscC9mb3JuZXh0LXN0YXRlbWVudCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.it-vba-thisworkbook.json",
+        "mediaType": "application/json",
+        "sha256": "29c3769dee372f4ccd2485f9f300c75e876550c5bf2cf445b30862a3e074e9ce",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWN0aXZlQ2VsbCwgcXVlIHJlcHJlc2VudGEgYSBwYXN0YSBpbnRlaXJhIGRvIGPDs2RpZ28uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU2VsZWN0aW9uLCBxdWUgc2VtcHJlIGNvbnTDqW0gdG9kYXMgYXMgcGFzdGFzIGFiZXJ0YXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVGhpc1dvcmtib29rLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkFjdGl2ZVdvcmtib29rLCBxdWUgc2VtcHJlIMOpIG9icmlnYXRvcmlhbWVudGUgbyBzdXBsZW1lbnRvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXZiYS10aGlzd29ya2Jvb2siLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC12YmEtd29ya2Jvb2siXSwicmVzb2x1dGlvbiI6IjEuIFRoaXNXb3JrYm9vayByZXByZXNlbnRhIGEgcGFzdGEgZW0gcXVlIG8gY8OzZGlnbyBlc3TDoSBlbSBleGVjdcOnw6NvLiAyLiBBY3RpdmVXb3JrYm9vayBwb2RlIHNlciBhIHBhc3RhIGNoYW1hZG9yYTsgY8OpbHVsYSBlIHNlbGXDp8OjbyBuw6NvIHJlcHJlc2VudGFtIG9icmlnYXRvcmlhbWVudGUgYSBwYXN0YSBkbyBjw7NkaWdvLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBtYWNyb3MgVkJBIG5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIGNvbSBpZGVudGlmaWNhZG9yZXMgZGEgbGluZ3VhZ2VtIGVtIGluZ2zDqnMuIFVtYSBhdXRvbWHDp8OjbyBhcm1hemVuYWRhIGVtIHVtIHN1cGxlbWVudG8gZGV2ZSBhcG9udGFyIHBhcmEgYSBwYXN0YSBxdWUgY29udMOpbSBzZXUgcHLDs3ByaW8gY8OzZGlnbywgbWVzbW8gcXVlIG91dHJhIHBhc3RhIGVzdGVqYSBhdGl2YS4gUXVhbCByZWZlcsOqbmNpYSDDqSBhcHJvcHJpYWRhPyIsInRvcGljSWQiOiJJMDgifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdmJhLXdvcmtib29rIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBPYmpldG8gV29ya2Jvb2sgZSByZWZlcsOqbmNpYXMgZGUgcGFzdGEgZW0gVkJBIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL3B0LWJyL29mZmljZS92YmEvYXBpL2V4Y2VsLndvcmtib29rIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I08.s.pot25-acs-q18.json",
+        "mediaType": "application/json",
+        "sha256": "80ecd67f442603f52c3cdff0d10cf1b61e4f34911496e4feb94b6e9b62cfc55f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUmVmZXLDqm5jaWEgQWJzb2x1dGEgKGNvbSAkKS4ifSx7ImlkIjoiYiIsInRleHQiOiJUYWJlbGEgRGluw6JtaWNhIChQaXZvdCBUYWJsZSkuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiRm9ybWF0YcOnw6NvIENvbmRpY2lvbmFsLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkZ1bsOnw6NvIEzDs2dpY2EgKEV4OiBTRSBvdSBFKS4ifSx7ImlkIjoiZSIsInRleHQiOiJNYWNyby4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIOKAlCBQcm9jZXNzbyBkZSBTZWxlw6fDo28gUMO6YmxpY2EgMDkvMjAyNSwgQWdlbnRlIENvbXVuaXTDoXJpbyBkZSBTYcO6ZGUgKHRvZG9zKSwgcXVlc3TDo28gMTguIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvLCBww6FnaW5hIDEsIHF1YWRybyBkbyBjYXJnbyBBR0VOVEUgQ09NVU5JVMOBUklPIERFIFNBw5pERSDigJQgVUJTIEVRVUlQRVMgQSBhIEYgKHRvZGFzIDE4PUUpOiAxOD1FOyBjb25mZXLDqm5jaWEgdmlzdWFsIG5hIHJlbmRlcml6YcOnw6NvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMjEtZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjUxY2EwN2NjMjk0OGIxNjIwYjQzZTNkYzEyYTQ3ZjA0YjIyZWVhMjI1Njc2OGQxZWNjZTliYWFlY2MxNWZkN2MiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMS9hbmV4b3MvOWViOGNhMzctNjM3OC00OTg5LTljNmUtMTllOGVlZGRkYTU5LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0g4oCUIFByb2Nlc3NvIGRlIFNlbGXDp8OjbyBQw7pibGljYSAwOS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtcG90aW0tc2VsLTIwMjUtYWNzL3ExOCIsIm51bWJlciI6IjE4IiwicHJvb2YiOnsibm90ZSI6IlF1ZXN0w6NvIDE4LCBww6FnaW5hIGbDrXNpY2EgNSBkbyBQREY7IHRleHRvIGV4dHJhw61kbyBjb25mcm9udGFkbyBjb20gYSByZW5kZXJpemHDp8OjbyBkYSBww6FnaW5hOyBlbnVuY2lhZG8sIGFsdGVybmF0aXZhcyBlIG9yZGVtIGNvbmZlcmlkb3MgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIyMS1wcm92YS1hZ2VudGUtY29tdW5pdHJpby1kZS1zYWRlLXRvZG9zLnBkZiIsInNoYTI1NiI6IjM4YzM2MGI3YTlmOTcwYzMzNzZiNjNhNmNhZTliMTJiNGJiNGFlZWVhNjk0NTNiZGFmMTY2YzRmYzc0NDEzZTMiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMS9hbmV4b3MvNzE5ZGNlZGUtYmU4Ni00Y2VhLTg2N2MtOTIzYzM5NDY4MTVmLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBhcnQuIDjCuiwgSVYsIGRhIExlaSA5LjYxMC8xOTk4LCBjb25mb3JtZSBhIGF2YWxpYcOnw6NvIGRvY3VtZW50YWRhIG5vIHByb2pldG8sIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUgZGUgcHJvdmEgcMO6YmxpY2EsIHNlbSBvYnJhIGRlIHRlcmNlaXJvIGluY29ycG9yYWRhLiBOw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBuZW0gY29uc2VudGltZW50byBhZmlybWFkbzsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkFnZW50ZSBDb211bml0w6FyaW8gZGUgU2HDumRlICh0b2RvcykiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InBvdDI1LWFjcy1xMTgiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWNsYXVkZS1pdC1ncmF2YWRvciJdLCJyZXNvbHV0aW9uIjoiMS4gTWFjcm8gw6kgdW1hIHNlcXXDqm5jaWEgZGUgY29tYW5kb3MgcXVlIHBvZGUgc2VyIGdyYXZhZGEgcGVsbyBHcmF2YWRvciBkZSBNYWNyb3MsIGd1YXJkYWRhIGNvbW8gY8OzZGlnbyBWQkEgZW0gdW0gbcOzZHVsbyBlIGV4ZWN1dGFkYSBwYXJhIHJlcGV0aXIgYSB0YXJlZmE7IGFsdGVybmF0aXZhIEUuIDIuIFJlZmVyw6puY2lhIGFic29sdXRhIGZpeGEgZW5kZXJlw6dvcyBlbSBmw7NybXVsYXM7IFRhYmVsYSBEaW7Dom1pY2EgcmVzdW1lIGRhZG9zOyBGb3JtYXRhw6fDo28gQ29uZGljaW9uYWwgYWx0ZXJhIGEgYXBhcsOqbmNpYSBwb3IgcmVncmE7IFNFIGUgRSBzw6NvIGZ1bsOnw7VlcyBkZSBwbGFuaWxoYS4gTmVuaHVtIGRlc3NlcyByZWN1cnNvcyBncmF2YSBlIHJlcHJvZHV6IGHDp8O1ZXMuIEdhYmFyaXRvIGRlZmluaXRpdm86IGFsdGVybmF0aXZhIEUuIiwic3RhdGVtZW50IjoiTyBNaWNyb3NvZnQgRXhjZWwgw6kgdW1hIGZlcnJhbWVudGEgcXVlIHBlcm1pdGUgYSBhdXRvbWHDp8OjbyBkZSB0YXJlZmFzIHJlcGV0aXRpdmFzIGUgYSByZWFsaXphw6fDo28gZGUgY8OhbGN1bG9zIGNvbXBsZXhvcy4gQSBmdW5jaW9uYWxpZGFkZSBxdWUgc2UgY2FyYWN0ZXJpemEgcG9yIHNlciB1bWEgc2VxdcOqbmNpYSBkZSBjb21hbmRvcyBncmF2YWRvcyBwZWxvIHVzdcOhcmlvLCBhcm1hemVuYWRhIGVtIHVtIG3Ds2R1bG8gZGUgcHJvZ3JhbWHDp8OjbywgZSBxdWUgw6kgZXNzZW5jaWFsbWVudGUgdXRpbGl6YWRhIHBhcmEgYXV0b21hdGl6YXIgcHJvY2Vzc29zIHNlbSBleGlnaXIgYSByZWVzY3JpdGEgbWFudWFsIGRlIGPDs2RpZ28sIMOpIGRlbm9taW5hZGE6IiwidG9waWNJZCI6IkkwOCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWdyYXZhZG9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdXRvbWF0aXphciB0YXJlZmFzIGNvbSBvIGdyYXZhZG9yIGRlIG1hY3JvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2F1dG9tYXRlLXRhc2tzLXdpdGgtdGhlLW1hY3JvLXJlY29yZGVyIn19fQ=="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I08.s.cebra-caesb6-q66",
+    "admin.2026-11.I08.s.cebra-dataprev9-q103",
+    "admin.2026-11.I08.s.fgv-aleam-educ2-q30",
+    "admin.2026-11.I08.s.fgv-taubate-q39",
+    "admin.2026-11.I08.s.it-bloqueio-sem-aviso",
+    "admin.2026-11.I08.s.it-desenvolvedor-exibir",
+    "admin.2026-11.I08.s.it-macro-entre-aplicativos",
+    "admin.2026-11.I08.s.it-macro-nome",
+    "admin.2026-11.I08.s.it-macro-web-limite",
+    "admin.2026-11.I08.s.it-vba-cells-indices",
+    "admin.2026-11.I08.s.it-vba-clearcontents",
+    "admin.2026-11.I08.s.it-vba-close-sem-salvar",
+    "admin.2026-11.I08.s.it-vba-error-desativar",
+    "admin.2026-11.I08.s.it-vba-events",
+    "admin.2026-11.I08.s.it-vba-exit-for",
+    "admin.2026-11.I08.s.it-vba-for-contador",
+    "admin.2026-11.I08.s.it-vba-msgbox-resposta",
+    "admin.2026-11.I08.s.it-vba-numformat",
+    "admin.2026-11.I08.s.it-vba-paste-values",
+    "admin.2026-11.I08.s.it-vba-resize",
+    "admin.2026-11.I08.s.it-vba-set-referencia",
+    "admin.2026-11.I08.s.it-vba-skipblanks",
+    "admin.2026-11.I08.s.it-vba-step-sinal",
+    "admin.2026-11.I08.s.it-vba-thisworkbook",
+    "admin.2026-11.I08.s.pot25-acs-q18"
+  ]
+}

@@ -23,7 +23,7 @@ export default function LessonPracticeEntry({ topic, onPractice, active, startEn
   const current = active && state.key === key ? state : { phase: 'loading' as const };
   const canStart = startEnabled && ['ready', 'finished'].includes(startState) && current.phase === 'ready' && current.value.available > 0;
   return <div className="lesson-practice">
-    <p>Até cinco questões próprias deste assunto, separadas dos simulados. A correção aparece ao encerrar a prática.</p>
+    <p>Até cinco questões sorteadas do acervo deste assunto, separadas dos simulados. A correção aparece ao encerrar a prática.</p>
     <p id="lesson-practice-subject"><strong>Assunto da prática: {topic.id} — {topic.title}</strong></p>
     <p>Para mudar o assunto da prática, escolha outra aula no índice acima.</p>
     {current.phase === 'loading' && <p role="status">Consultando questões de prática…</p>}

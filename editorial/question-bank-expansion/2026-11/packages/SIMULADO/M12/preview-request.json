@@ -1,0 +1,2041 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.cacapava-profmat-q31"
+        },
+        "content": {
+          "statement": {
+            "text": "Em um sistema de cadastro, cada código é formado por 2 letras distintas (de A a Z) seguidas de 3 algarismos distintos (de 0 a 9). O número total de códigos possíveis é:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "aee18889-27c7-5c74-af47-5b9a4dc94e78",
+              "content": {
+                "text": "67 600.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f77068ed-19c3-5ad6-b442-09803fc82a68",
+              "content": {
+                "text": "468 000.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d273f24f-1765-569b-a01c-929780e3f5c8",
+              "content": {
+                "text": "260 000.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bac5dbaa-a508-50e6-813c-130c5db6b508",
+              "content": {
+                "text": "65 000.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7189ca2f-fcf9-57f1-98b5-c3fac7c29c31",
+              "content": {
+                "text": "520 000.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f77068ed-19c3-5ad6-b442-09803fc82a68",
+          "resolution": {
+            "text": "1. As letras distintas têm 26×25 possibilidades ordenadas. Os três algarismos distintos têm 10×9×8, permitindo zero porque são posições de código. 2. O produto é 26×25×720 = 468 000 códigos, alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Caçapava — Processo Seletivo 01/2025, PROFESSOR II (PII) - MATEMÁTICA, questão31. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M12.s.cacapava-profmat-q31.json",
+            "answerPath": "sources/admin.2026-11.M12.s.cacapava-profmat-q31.json",
+            "contentSha256": "7673e112895d63bccdb9ed48b34550ecac48771d1e91a39a05e34d781d0ed9dc",
+            "answerSha256": "7673e112895d63bccdb9ed48b34550ecac48771d1e91a39a05e34d781d0ed9dc"
+          }
+        },
+        "fingerprint": "c5247726a34487ee98eed050668599457845197086c6ff717b04031f1d0fa9c3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.inss-2022-comum-q47"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao realizar um levantamento de informações solicitado por seu chefe, um técnico do seguro social verificou que, entre os segurados que apresentaram suas demandas ao longo da semana anterior, 75% receberam algum atendimento remoto (por telefone, aplicativo ou Internet) e 35% receberam atendimento presencial. Houve casos em que os atendimentos foram iniciados no modo remoto, mas, devido às suas complexidades, precisaram ser concluídos presencialmente. Com base nessa situação hipotética, julgue os itens seguintes.\n\n47 Se havia somente as duas modalidades de atendimento descritas, é correto concluir que 10% dos segurados passaram pelas duas modalidades de atendimento em suas demandas.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c98a1533-9353-5209-ac38-2e1ea71db2c9",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "062fe474-b6dc-5199-ac2f-fe29aee7c75b",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c98a1533-9353-5209-ac38-2e1ea71db2c9",
+          "resolution": {
+            "text": "1. As duas modalidades cobrem 100% dos segurados. Pela inclusão-exclusão, remoto+presencial−ambos=100%. 2. Ambos=75%+35%−100%=10%. Julgamento: Certo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Cebraspe — INSS — Concurso Público, Edital 2022, aplicação 27/11/2022, prova e gabarito definitivo oficiais",
+              "url": "https://www.cebraspe.org.br/concursos/inss_22",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — INSS — Concurso Público, Edital 2022, aplicação 27/11/2022, item 47. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M12.s.inss-2022-comum-q47.json",
+            "answerPath": "sources/admin.2026-11.M12.s.inss-2022-comum-q47.json",
+            "contentSha256": "c3556a7f97eaa2fdfe8a2b958984860bc6cb1397e86c4f0eea555080fc470a05",
+            "answerSha256": "c3556a7f97eaa2fdfe8a2b958984860bc6cb1397e86c4f0eea555080fc470a05"
+          }
+        },
+        "fingerprint": "0eb53856a899ce0e3a52c9eef4b5ea8556e5cb99151089cf1a034ede367dac62",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-complemento-intersecao"
+        },
+        "content": {
+          "statement": {
+            "text": "No universo U de 100 elementos, 35 pertencem a A∩B. Quantos pertencem ao complemento de A∩B em U?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "39e0fe1f-bbb6-52f4-a6aa-7a5b5b9b8058",
+              "content": {
+                "text": "35",
+                "resources": []
+              }
+            },
+            {
+              "id": "7bf39d65-2915-5963-855f-da6d539868ca",
+              "content": {
+                "text": "100",
+                "resources": []
+              }
+            },
+            {
+              "id": "8f17591b-2b6c-51d7-8f6e-863e47777667",
+              "content": {
+                "text": "135",
+                "resources": []
+              }
+            },
+            {
+              "id": "2b068487-053d-59ca-8df6-9586804eb4bb",
+              "content": {
+                "text": "65",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2b068487-053d-59ca-8df6-9586804eb4bb",
+          "resolution": {
+            "text": "1. A interseção e seu complemento particionam o universo. 2. O complemento contém 100−35=65 elementos; não é necessário conhecer A e B separadamente.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-complemento-intersecao.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-complemento-intersecao.json",
+            "contentSha256": "de550eaec9d4bcc9d1b8c1ebf7a3e09847e2aa2aba0d22ff51ed9fece702e65b",
+            "answerSha256": "de550eaec9d4bcc9d1b8c1ebf7a3e09847e2aa2aba0d22ff51ed9fece702e65b"
+          }
+        },
+        "fingerprint": "aa47dec69bce2da49ef6c5781bd6442d4daccdfdf5aaaaae832852f1b49ddb15",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-complementos-diagrama"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual conjunto reúne os elementos que estão fora de A e fora de B ao mesmo tempo, dentro de U?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "32546cc1-eb93-573b-bd73-c29bba8ac889",
+              "content": {
+                "text": "A∪B.",
+                "resources": []
+              }
+            },
+            {
+              "id": "75e90efc-24fd-5e7b-a03d-f158608b4fcb",
+              "content": {
+                "text": "A menos B.",
+                "resources": []
+              }
+            },
+            {
+              "id": "80cce110-0284-5fd4-901c-9d11ca54dd1a",
+              "content": {
+                "text": "O complemento de A∪B.",
+                "resources": []
+              }
+            },
+            {
+              "id": "acdcd3f3-84ed-58bd-b363-d9179507ccc3",
+              "content": {
+                "text": "A∩B.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "80cce110-0284-5fd4-901c-9d11ca54dd1a",
+          "resolution": {
+            "text": "1. Estar fora dos dois exclui qualquer elemento que esteja em pelo menos um deles. 2. Portanto é o complemento da união, equivalente à interseção dos complementos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-complementos-diagrama.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-complementos-diagrama.json",
+            "contentSha256": "433700c8f0d52fe6405ad0ae3e8a89fbc0e74e88948f0d367f0a36f4a837686b",
+            "answerSha256": "433700c8f0d52fe6405ad0ae3e8a89fbc0e74e88948f0d367f0a36f4a837686b"
+          }
+        },
+        "fingerprint": "c5713926750ed90013e2d6adc20e15fdca63ee2ed62fe892dd167ee3dda32bd9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-conjunto-potencia"
+        },
+        "content": {
+          "statement": {
+            "text": "Um conjunto tem quatro elementos distintos. Quantos subconjuntos ele possui, incluindo o vazio e ele próprio?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cb63f2dd-4d59-504c-a397-307b8ecf3fc7",
+              "content": {
+                "text": "16",
+                "resources": []
+              }
+            },
+            {
+              "id": "f613d3d4-7ef8-5a9e-b3a8-b7b1a2a319a5",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "ae73fe7c-ecb9-52ad-bbfd-c028bbf45a19",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "6503a571-fa4e-521d-b055-89c8b30755ba",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cb63f2dd-4d59-504c-a397-307b8ecf3fc7",
+          "resolution": {
+            "text": "1. Para formar um subconjunto, cada elemento pode entrar ou não. 2. As quatro decisões independentes dão 2⁴=16 subconjuntos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-conjunto-potencia.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-conjunto-potencia.json",
+            "contentSha256": "2c1906ee21ff992b54fcbdd9688086d742fd09aabdfee3598005d7485ec160fc",
+            "answerSha256": "2c1906ee21ff992b54fcbdd9688086d742fd09aabdfee3598005d7485ec160fc"
+          }
+        },
+        "fingerprint": "e178f696dd53df8dd64ed7c263e816c2c7b05f238c717a178b3c761994fff8d5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-diagrama-afirmacao-universal"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual descrição de diagrama representa “todo A é B, mas nem todo B é A”?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8e17613a-a55b-51a7-88bb-c58875f221b9",
+              "content": {
+                "text": "Os círculos A e B são disjuntos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "af6a3ff7-6774-53c8-8d00-f140cc35e278",
+              "content": {
+                "text": "B está propriamente dentro de A.",
+                "resources": []
+              }
+            },
+            {
+              "id": "116592d2-7d10-511d-bc83-58e418ec5eba",
+              "content": {
+                "text": "Os círculos A e B são idênticos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d17b87e9-3df7-595f-a4de-72ae4bee1b57",
+              "content": {
+                "text": "O círculo A está propriamente dentro do círculo B.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d17b87e9-3df7-595f-a4de-72ae4bee1b57",
+          "resolution": {
+            "text": "1. “Todo A é B” exige A⊆B. 2. “Nem todo B é A” exige ao menos um membro em B fora de A, portanto a inclusão é própria.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-diagrama-afirmacao-universal.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-diagrama-afirmacao-universal.json",
+            "contentSha256": "e483d1220c32238e1a6361b4b8ed4cbf150b2a45837215c3389a8dac96dc5cb7",
+            "answerSha256": "e483d1220c32238e1a6361b4b8ed4cbf150b2a45837215c3389a8dac96dc5cb7"
+          }
+        },
+        "fingerprint": "8a77c4cf531727150c6d0f2d0302dc3fd49b3dd9f88489cd2f6e1bb1794f9383",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-duas-intersecao"
+        },
+        "content": {
+          "statement": {
+            "text": "Em 80 pessoas, 46 usam A, 38 usam B e todas usam ao menos um. Quantas usam ambos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1935bd8e-e92a-5b87-837c-dd34ecd26e53",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "2795b589-c3d0-5cba-81c8-df5e68d181a1",
+              "content": {
+                "text": "84",
+                "resources": []
+              }
+            },
+            {
+              "id": "b6ce85c3-8242-535e-a5b3-d11bcecae21c",
+              "content": {
+                "text": "34",
+                "resources": []
+              }
+            },
+            {
+              "id": "c300c007-162f-593f-a9a2-ac51bfbea9df",
+              "content": {
+                "text": "42",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1935bd8e-e92a-5b87-837c-dd34ecd26e53",
+          "resolution": {
+            "text": "1. A união é 80 e a soma dos grupos é 84. 2. A diferença 46+38−80=4 é a interseção, que foi contada duas vezes na soma.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-duas-intersecao.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-duas-intersecao.json",
+            "contentSha256": "18d63c4cdd3ca7714612860d6e1b6d225c61a8f1d5d1c72c3348ef3d84d861c5",
+            "answerSha256": "18d63c4cdd3ca7714612860d6e1b6d225c61a8f1d5d1c72c3348ef3d84d861c5"
+          }
+        },
+        "fingerprint": "c74e574aff1194ae3ffa7dae23c6dd49ef517e42a3fb59bb8b1543566a00191f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-elemento-conjunto-aninhado"
+        },
+        "content": {
+          "statement": {
+            "text": "Se A={{1},2}, qual afirmação é correta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "afd257bd-bbf9-58f5-a9f5-054fef1ead02",
+              "content": {
+                "text": "O número 1 é um elemento de A.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9425760e-694f-54f0-8f23-a55d482e9b8a",
+              "content": {
+                "text": "O conjunto {1,2} é um elemento de A.",
+                "resources": []
+              }
+            },
+            {
+              "id": "94fb6eff-76a6-532f-b815-0221e4f43108",
+              "content": {
+                "text": "A está contido no conjunto {1,2}.",
+                "resources": []
+              }
+            },
+            {
+              "id": "70835473-bb5c-56dd-93a0-3f2925435222",
+              "content": {
+                "text": "O conjunto {1} é um elemento de A.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "70835473-bb5c-56dd-93a0-3f2925435222",
+          "resolution": {
+            "text": "1. Os dois elementos de A são o conjunto {1} e o número 2. 2. Pertencer como elemento é diferente de estar contido; o número 1 não aparece diretamente como elemento de A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-elemento-conjunto-aninhado.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-elemento-conjunto-aninhado.json",
+            "contentSha256": "0748bdac9084ec91fffc97f486065b95aaf8754e17c893b51b9d00133a654d48",
+            "answerSha256": "0748bdac9084ec91fffc97f486065b95aaf8754e17c893b51b9d00133a654d48"
+          }
+        },
+        "fingerprint": "6ed79cc4c22bc77fd26dc310ebd0dfe3f87abaf69de27db4ec75e2909a1f7ab7",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-exatamente-dois-tres"
+        },
+        "content": {
+          "statement": {
+            "text": "Três conjuntos têm interseções duplas, incluindo a tripla, de tamanhos 12, 9 e 8. A interseção dos três tem 4 elementos. Quantos pertencem a exatamente dois conjuntos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f1471f2f-8348-5ccf-b0ef-e142034adb6d",
+              "content": {
+                "text": "29",
+                "resources": []
+              }
+            },
+            {
+              "id": "ecb12ccf-c429-5c63-81fe-9dffbfcbdee3",
+              "content": {
+                "text": "13",
+                "resources": []
+              }
+            },
+            {
+              "id": "84209c75-5929-554a-ab1c-b380a3f26985",
+              "content": {
+                "text": "17",
+                "resources": []
+              }
+            },
+            {
+              "id": "65722545-389c-5eac-93a4-57838411386f",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "84209c75-5929-554a-ab1c-b380a3f26985",
+          "resolution": {
+            "text": "1. Retire os quatro da tripla de cada interseção dupla: 8, 5 e 4. 2. Essas três regiões disjuntas somam 17; a tripla não conta como exatamente dois.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-exatamente-dois-tres.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-exatamente-dois-tres.json",
+            "contentSha256": "4c13893d4a124e1ac2cad255d8e17bcf4ad709ffa407440071c9b9f7d9a230a5",
+            "answerSha256": "4c13893d4a124e1ac2cad255d8e17bcf4ad709ffa407440071c9b9f7d9a230a5"
+          }
+        },
+        "fingerprint": "c483aec33db8b0d06c5b8d2438efa1cd33764f3eda25a6eab597232d30b1cb52",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-gavetas-garantir-par"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma gaveta há meias de três cores, em quantidade suficiente de cada cor. Quantas meias devem ser retiradas sem olhar para garantir duas da mesma cor?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "265ba3b9-c18d-5e07-a5e8-d90b15f96dbc",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "17e70fdd-d660-50eb-9905-8e8b41289723",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            },
+            {
+              "id": "d29948c8-e109-556a-b757-8f5429fd8e4e",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "8bf1e542-e057-5ed7-aba8-fc78ca7d26d4",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d29948c8-e109-556a-b757-8f5429fd8e4e",
+          "resolution": {
+            "text": "1. Três retiradas ainda podem dar uma de cada cor. 2. A quarta deve repetir alguma das três cores, garantindo o par; pares físicos anteriores não importam.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-gavetas-garantir-par.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-gavetas-garantir-par.json",
+            "contentSha256": "785ac5c997625a232279a7230d195c3e9693f9e015a43b838510c20332c5ac38",
+            "answerSha256": "785ac5c997625a232279a7230d195c3e9693f9e015a43b838510c20332c5ac38"
+          }
+        },
+        "fingerprint": "3eb9f1a68e3a72a2d3a08014704de05cccb6b0e1fc1554eff998ac7e9407eef2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-limite-intersecao"
+        },
+        "content": {
+          "statement": {
+            "text": "Num universo de 50 elementos, A tem 34 e B tem 31. Qual é o menor tamanho possível de A∩B?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c0810116-d1ea-53fc-83ce-ba93e59f8826",
+              "content": {
+                "text": "15",
+                "resources": []
+              }
+            },
+            {
+              "id": "de6d966c-7a5a-5aad-abb5-13aa640633a8",
+              "content": {
+                "text": "0",
+                "resources": []
+              }
+            },
+            {
+              "id": "d17ca4a1-1210-513e-8fe3-0f2e3c27dcf9",
+              "content": {
+                "text": "31",
+                "resources": []
+              }
+            },
+            {
+              "id": "5dbb01a0-7127-5ec8-84de-8fa38d7b6695",
+              "content": {
+                "text": "34",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c0810116-d1ea-53fc-83ce-ba93e59f8826",
+          "resolution": {
+            "text": "1. A união não pode ultrapassar 50. 2. Como |A∩B|=34+31−|A∪B|, o mínimo é 65−50=15, alcançado quando a união é todo o universo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-limite-intersecao.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-limite-intersecao.json",
+            "contentSha256": "f72b56e89d5c0fd4d9eb53bcc32badc03fbdcb882a7c646c2f74c016a9944bb2",
+            "answerSha256": "f72b56e89d5c0fd4d9eb53bcc32badc03fbdcb882a7c646c2f74c016a9944bb2"
+          }
+        },
+        "fingerprint": "5bc5122c68d0bb41c605bc8fdc62d31e9300675de899c4463db250f306e3e099",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-nenhum-dois"
+        },
+        "content": {
+          "statement": {
+            "text": "Em 70 pessoas, 30 falam inglês, 28 espanhol e 12 ambas as línguas. Quantas não falam nenhuma dessas duas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c8a8f1f2-6f0d-54e8-ac0a-548291dd3d9a",
+              "content": {
+                "text": "58",
+                "resources": []
+              }
+            },
+            {
+              "id": "e4e876f2-20d8-5f7c-ad0b-7bcddee24dd9",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "df1e87dd-ea5c-55f7-a77b-5e0062d58434",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "004e258b-6cf8-56a7-9496-c9fe033d38e7",
+              "content": {
+                "text": "46",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e4e876f2-20d8-5f7c-ad0b-7bcddee24dd9",
+          "resolution": {
+            "text": "1. A união contém 30+28−12=46 pessoas. 2. O complemento no grupo é 70−46=24; a interseção precisa ser descontada uma vez.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-nenhum-dois.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-nenhum-dois.json",
+            "contentSha256": "35b673ddc1480a62956a499ca8a18010f5df90af89fd966274216dddee866e7a",
+            "answerSha256": "35b673ddc1480a62956a499ca8a18010f5df90af89fd966274216dddee866e7a"
+          }
+        },
+        "fingerprint": "8fd52225c9569235ebc0fda8e23db94b0386fd33a233fb9daa68872c89e946b2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-particao-ambos-nenhum"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pesquisa com 60 pessoas obteve 18 que usam somente A, 14 somente B e 10 que não usam nenhum. Quantas usam ambos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d4f40744-b217-5d15-8d57-05c051a5556e",
+              "content": {
+                "text": "32",
+                "resources": []
+              }
+            },
+            {
+              "id": "477eff7f-6db0-5848-9416-c38004d4790a",
+              "content": {
+                "text": "42",
+                "resources": []
+              }
+            },
+            {
+              "id": "a524c498-39f2-5db8-b45b-aade2bcc1766",
+              "content": {
+                "text": "18",
+                "resources": []
+              }
+            },
+            {
+              "id": "93d9bbb3-0978-5391-9fa0-6a59aad06b53",
+              "content": {
+                "text": "28",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a524c498-39f2-5db8-b45b-aade2bcc1766",
+          "resolution": {
+            "text": "1. As quatro regiões do diagrama são disjuntas e totalizam 60. 2. A região ambos é 60−18−14−10=18; as informações já são de partes exclusivas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-particao-ambos-nenhum.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-particao-ambos-nenhum.json",
+            "contentSha256": "bba4c0bdff7ca897378b28a00933de3a4c4e1bbb3c80b3b9238a0f7e13bab7b2",
+            "answerSha256": "bba4c0bdff7ca897378b28a00933de3a4c4e1bbb3c80b3b9238a0f7e13bab7b2"
+          }
+        },
+        "fingerprint": "0f4f5c9858e9db3a2123a45be7b533eab6c5bfe3d296dc4107ac57ae9a8f3f6d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-particao-universo"
+        },
+        "content": {
+          "statement": {
+            "text": "A,B,C formam uma partição de um universo de 90 elementos. Se |A|=28 e |B|=37, qual é |C|?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2e2389c9-7e08-57f2-9b6e-146e19f9995c",
+              "content": {
+                "text": "118",
+                "resources": []
+              }
+            },
+            {
+              "id": "4fbb4ae5-d6f5-506e-b063-5606886939af",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            },
+            {
+              "id": "6061edaa-d531-5909-b925-0e31011133bc",
+              "content": {
+                "text": "65",
+                "resources": []
+              }
+            },
+            {
+              "id": "fc5a173e-17bb-53ef-aed7-2f38b558013d",
+              "content": {
+                "text": "53",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4fbb4ae5-d6f5-506e-b063-5606886939af",
+          "resolution": {
+            "text": "1. Partição significa partes disjuntas que cobrem o universo. 2. Portanto |C|=90−28−37=25; não há interseções a descontar.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-particao-universo.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-particao-universo.json",
+            "contentSha256": "2b6f4d92390c4aa17f0e7f51aaf442bc4b65dba44e22c3ba2d7213b5bb054501",
+            "answerSha256": "2b6f4d92390c4aa17f0e7f51aaf442bc4b65dba44e22c3ba2d7213b5bb054501"
+          }
+        },
+        "fingerprint": "f469b983f1c77f3d85d89c0ae52a29ed5cb87355f24c3c53b2b69bc26dc543cc",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-pertinencia-enumerada"
+        },
+        "content": {
+          "statement": {
+            "text": "Se A={1,2,3,4,5} e B={2,4,6}, qual é A menos B?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "16351834-d30b-5a55-a8f5-1ace4075b749",
+              "content": {
+                "text": "{6}",
+                "resources": []
+              }
+            },
+            {
+              "id": "5c424622-2795-5dcc-b3a9-6187b5bd13c7",
+              "content": {
+                "text": "{1,3,5}",
+                "resources": []
+              }
+            },
+            {
+              "id": "a04a1f37-cc45-5631-b617-a18e3108ae69",
+              "content": {
+                "text": "{2,4}",
+                "resources": []
+              }
+            },
+            {
+              "id": "24d2280a-c5b2-52e9-b3da-a9771fb7d248",
+              "content": {
+                "text": "{1,2,3,4,5,6}",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5c424622-2795-5dcc-b3a9-6187b5bd13c7",
+          "resolution": {
+            "text": "1. A diferença A menos B reúne os elementos de A que não pertencem a B. 2. Retirando 2 e 4 de A, restam 1, 3 e 5; a operação não é simétrica.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-pertinencia-enumerada.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-pertinencia-enumerada.json",
+            "contentSha256": "936e7986a0fe80f957276656fdbef7a5471e86eb1be731f4e6a4c7d795943b57",
+            "answerSha256": "936e7986a0fe80f957276656fdbef7a5471e86eb1be731f4e6a4c7d795943b57"
+          }
+        },
+        "fingerprint": "626d951966cd0fad6cd41c0585edc13c29b988da20f254959e4579262effc226",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-sobreposicao-limites-completos"
+        },
+        "content": {
+          "statement": {
+            "text": "Dois conjuntos A e B têm, respectivamente, 12 e 17 elementos. Qual é o maior tamanho possível de A∪B?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "eab4c422-c112-5d44-9778-0ebfb86f98a1",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "143118de-4cfd-5f77-b9a8-d96e0c4c6353",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "660f8f8f-2250-5c62-b508-9de09147cac1",
+              "content": {
+                "text": "29",
+                "resources": []
+              }
+            },
+            {
+              "id": "f1e80a38-dcb5-5a1a-abbe-96ca5e1141e8",
+              "content": {
+                "text": "17",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "660f8f8f-2250-5c62-b508-9de09147cac1",
+          "resolution": {
+            "text": "1. A união é maior quando não há sobreposição. 2. Nesse caso os tamanhos se somam: 12+17=29; qualquer interseção reduziria esse total.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-sobreposicao-limites-completos.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-sobreposicao-limites-completos.json",
+            "contentSha256": "78714d383152cb172a0dd1a35f26e9ca95b0e1489cbef13fdf5630ece8870edb",
+            "answerSha256": "78714d383152cb172a0dd1a35f26e9ca95b0e1489cbef13fdf5630ece8870edb"
+          }
+        },
+        "fingerprint": "8b88b3094973c95be1de6663832c075fcacbddf5b4dc856a1c4250797a9797c1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-subconjuntos-tamanho-fixo"
+        },
+        "content": {
+          "statement": {
+            "text": "Um conjunto tem cinco elementos distintos. Quantos de seus subconjuntos têm exatamente dois elementos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b93beee5-a58e-5f64-95aa-4193b744670c",
+              "content": {
+                "text": "10",
+                "resources": []
+              }
+            },
+            {
+              "id": "79d3fae7-9ee4-5113-a683-e0954fa54289",
+              "content": {
+                "text": "20",
+                "resources": []
+              }
+            },
+            {
+              "id": "5f50cf7a-0c08-5b15-ad1d-3e4d4f970954",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            },
+            {
+              "id": "41211d5b-822b-533a-9395-352eef36ecb7",
+              "content": {
+                "text": "32",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b93beee5-a58e-5f64-95aa-4193b744670c",
+          "resolution": {
+            "text": "1. Escolha um par sem ordem entre os cinco elementos. 2. Há 5×4/2=10 pares; 32 seria a quantidade de subconjuntos de todos os tamanhos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-subconjuntos-tamanho-fixo.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-subconjuntos-tamanho-fixo.json",
+            "contentSha256": "475c889fdc7bb9cedd0050d297be65d4f6a99ea6bc9f5a6594b5be4e699a845a",
+            "answerSha256": "475c889fdc7bb9cedd0050d297be65d4f6a99ea6bc9f5a6594b5be4e699a845a"
+          }
+        },
+        "fingerprint": "c6f3f2d3260bf9a408f5d5cd3ae67cedc7dc029a4ff8e6082e4e8b29e672204e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-tres-conjuntos-minimo-comum"
+        },
+        "content": {
+          "statement": {
+            "text": "Em um grupo de 30 pessoas, 26 pertencem a A, 25 a B e 24 a C. Qual é o menor tamanho possível da interseção A∩B∩C?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "85e8605e-25bf-5420-91f3-d0d40d317aec",
+              "content": {
+                "text": "0",
+                "resources": []
+              }
+            },
+            {
+              "id": "79af717c-012f-551c-b8b1-154d308f8b35",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "2b97388b-2203-5b26-be75-3df151d9d652",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "d388dcc4-1d6c-599e-acec-6e2fe3f5c340",
+              "content": {
+                "text": "15",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d388dcc4-1d6c-599e-acec-6e2fe3f5c340",
+          "resolution": {
+            "text": "1. Os complementos de A, B e C têm 4, 5 e 6 pessoas; no máximo 15 pessoas estão fora de algum conjunto. 2. Portanto pelo menos 30−15=15 pertencem aos três, e o limite é alcançável com complementos disjuntos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-tres-conjuntos-minimo-comum.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-tres-conjuntos-minimo-comum.json",
+            "contentSha256": "972ddee86730cbc899025e8a8f2b823331eead3b54cded81aaa135ae1f1539c0",
+            "answerSha256": "972ddee86730cbc899025e8a8f2b823331eead3b54cded81aaa135ae1f1539c0"
+          }
+        },
+        "fingerprint": "e42707b9dd4e236469ede89115cc8c9e390e07af1172903051c032115d0ed4b0",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-tres-regioes-dadas"
+        },
+        "content": {
+          "statement": {
+            "text": "Um diagrama de três conjuntos apresenta 5 elementos somente em A, 7 somente em B, 9 somente em C, 3 somente em A∩B, 4 somente em A∩C, 2 somente em B∩C e 1 nos três. Quantos pertencem a A?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "29dfd5f9-8c48-5357-b308-9358d0042cfc",
+              "content": {
+                "text": "9",
+                "resources": []
+              }
+            },
+            {
+              "id": "64233a0b-e4a7-5365-be98-896cb1f898c6",
+              "content": {
+                "text": "13",
+                "resources": []
+              }
+            },
+            {
+              "id": "eeeb1166-604f-5658-9ee2-a9217987746d",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "6536a16c-5272-5840-a027-0d182505594a",
+              "content": {
+                "text": "31",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "64233a0b-e4a7-5365-be98-896cb1f898c6",
+          "resolution": {
+            "text": "1. Some todas as regiões que estão dentro de A: 5,3,4 e 1. 2. O total é 13; “pertence a A” não significa “somente em A”.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-tres-regioes-dadas.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-tres-regioes-dadas.json",
+            "contentSha256": "4ac5265e1b8e87d10601199571f2dc13f951ef271b27cbba7070ff0d26fc8f4b",
+            "answerSha256": "4ac5265e1b8e87d10601199571f2dc13f951ef271b27cbba7070ff0d26fc8f4b"
+          }
+        },
+        "fingerprint": "a30885b53d9e3a7a014d0428638cd68979c512254bb38989acb3f49c087b5a09",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-tres-sem-tripla"
+        },
+        "content": {
+          "statement": {
+            "text": "Sessenta pessoas pertencem a pelo menos um de três clubes. Não há ninguém nos três clubes, e a soma dos tamanhos dos clubes é 92. Quantas pessoas pertencem a exatamente dois clubes?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "dbd5f498-7544-57d8-b4bd-66c205f3e1b6",
+              "content": {
+                "text": "28",
+                "resources": []
+              }
+            },
+            {
+              "id": "33238cee-e442-5185-a624-251e1e700695",
+              "content": {
+                "text": "46",
+                "resources": []
+              }
+            },
+            {
+              "id": "777480ed-80d1-5c47-820e-922986d0c462",
+              "content": {
+                "text": "16",
+                "resources": []
+              }
+            },
+            {
+              "id": "e37131c3-f066-5f15-8fcd-b28b54a71634",
+              "content": {
+                "text": "32",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e37131c3-f066-5f15-8fcd-b28b54a71634",
+          "resolution": {
+            "text": "1. Contar cada pessoa uma vez daria 60 inscrições. 2. Cada pessoa em exatamente dois acrescenta uma inscrição extra, e não há tripla; por isso são 92−60=32.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-tres-sem-tripla.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-tres-sem-tripla.json",
+            "contentSha256": "5bad457a9567b3b78ad77f176da19e448645e3eb25a207f965201601609fde2c",
+            "answerSha256": "5bad457a9567b3b78ad77f176da19e448645e3eb25a207f965201601609fde2c"
+          }
+        },
+        "fingerprint": "45722638ed726d346bddae5cbfa704e6d55dff703d85cd0048916dc74b4b09cd",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-uniao-subconjunto"
+        },
+        "content": {
+          "statement": {
+            "text": "Se A⊆B, a união A∪B é igual a:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "771f6a84-91d9-581f-8985-e4070cfeaf05",
+              "content": {
+                "text": "B",
+                "resources": []
+              }
+            },
+            {
+              "id": "cfa53b7a-08e7-5958-9905-052f25320c37",
+              "content": {
+                "text": "A",
+                "resources": []
+              }
+            },
+            {
+              "id": "7f62ff62-1690-5822-a05c-f6f980bfe116",
+              "content": {
+                "text": "Conjunto vazio.",
+                "resources": []
+              }
+            },
+            {
+              "id": "af6ac0ae-95c1-5d0a-90a1-8bfece041e92",
+              "content": {
+                "text": "A∩Bᶜ.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "771f6a84-91d9-581f-8985-e4070cfeaf05",
+          "resolution": {
+            "text": "1. Todos os elementos de A já estão em B. 2. Acrescentar A a B não adiciona nada, portanto a união coincide com B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-uniao-subconjunto.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-uniao-subconjunto.json",
+            "contentSha256": "ca4f53e15691646a62d57f24865e03914812dcb1867e91dc927903ab7ab69859",
+            "answerSha256": "ca4f53e15691646a62d57f24865e03914812dcb1867e91dc927903ab7ab69859"
+          }
+        },
+        "fingerprint": "f54f2777b94731f50ee19c233258299957de1f747dc8855554c99941328e9e13",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.mat-vazio-versus-unitario"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual afirmação distingue corretamente o conjunto vazio ∅ do conjunto {∅}?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f0b9f1cf-5877-5e6c-9292-b012dbf00e83",
+              "content": {
+                "text": "{∅} tem infinitos elementos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c2888aa3-3659-52bf-b573-0a6cbeed9401",
+              "content": {
+                "text": "∅ não tem elementos, enquanto {∅} tem um elemento.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e20c2db1-d197-5a76-bfc8-8e3add47f5e4",
+              "content": {
+                "text": "Os dois não têm elementos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "797ebe92-0295-5f73-93d6-d24047f7aff6",
+              "content": {
+                "text": "Os dois têm exatamente um elemento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c2888aa3-3659-52bf-b573-0a6cbeed9401",
+          "resolution": {
+            "text": "1. O conjunto vazio não possui qualquer elemento. 2. No conjunto {∅}, o próprio conjunto vazio aparece como um elemento; as chaves externas formam um conjunto unitário.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M12.s.mat-vazio-versus-unitario.json",
+            "answerPath": "sources/admin.2026-11.M12.s.mat-vazio-versus-unitario.json",
+            "contentSha256": "f547d6f27fb05e5904754a7fff096c91b4ce855eb1e40be04b60dd491e26bb23",
+            "answerSha256": "f547d6f27fb05e5904754a7fff096c91b4ce855eb1e40be04b60dd491e26bb23"
+          }
+        },
+        "fingerprint": "feee04b4e0de81957f3d95f7e954ef90d4db39ffa7aac6efef69d1c9fa919e40",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.pcdf-2021-basic-q43"
+        },
+        "content": {
+          "statement": {
+            "text": "Um agente, com o objetivo de mensurar o risco de propagação da covid-19 em uma investigação na qual averiguava um possível descumprimento do artigo 268 do Código Penal, que define como crime de infração de medida sanitária “infringir determinação do poder público, destinada a impedir introdução ou propagação de doença contagiosa”, obteve de uma testemunha as informações a seguir. • Houve, no local investigado, uma festa, com aglomeração de moças e rapazes; não havia álcool em gel e ninguém estava usando máscaras. • Cada rapaz cumprimentou exatamente uma vez a todos os outros rapazes com apertos de mão. • Cada moça cumprimentou exatamente uma vez a todas as outras pessoas presentes com um aceno. Considerando que são verdadeiras as informações prestadas pela testemunha da situação hipotética precedente, julgue os itens subsequentes.\n\n43 Se, na festa, havia 20 moças e 18 rapazes, o número de cumprimentos entre moças e rapazes com acenos foi superior a 350.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "af032e4b-4f24-59c9-8e9d-6c76313260a2",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "644a07ca-b955-5c99-bc46-48574c607092",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "af032e4b-4f24-59c9-8e9d-6c76313260a2",
+          "resolution": {
+            "text": "1. Cada uma das 20 moças cumprimenta cada um dos 18 rapazes, gerando um par distinto por cumprimento. 2. Há 20×18=360 acenos entre os dois grupos, quantidade superior a 350. Julgamento: Certo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Cebraspe — Polícia Civil do Distrito Federal — Agente, Edital 1/2020, aplicação 2021, prova e gabarito definitivo oficiais",
+              "url": "https://www.cebraspe.org.br/concursos/pc_df_20_agente",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Civil do Distrito Federal — Agente, Edital 1/2020, aplicação 2021, item 43. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M12.s.pcdf-2021-basic-q43.json",
+            "answerPath": "sources/admin.2026-11.M12.s.pcdf-2021-basic-q43.json",
+            "contentSha256": "9bd4969bd4d6ae63d82fd6c26bb0999a280496d5977c071dd1845ecfc91546a4",
+            "answerSha256": "9bd4969bd4d6ae63d82fd6c26bb0999a280496d5977c071dd1845ecfc91546a4"
+          }
+        },
+        "fingerprint": "41f24e1d3cbfcb35597f94e208ab4d80ccbf3865a8438570d415ce68fe6f5d78",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.pf-2018-basic-q50"
+        },
+        "content": {
+          "statement": {
+            "text": "Os indivíduos S1, S2, S3 e S4, suspeitos da prática de um ilícito penal, foram interrogados, isoladamente, nessa mesma ordem. No depoimento, com relação à responsabilização pela prática do ilícito, S1 disse que S2 mentiria; S2 disse que S3 mentiria; S3 disse que S4 mentiria. A partir dessa situação, julgue os itens a seguir.\n\n50 Se os quatro suspeitos tiverem nascido nos estados da Bahia, de Pernambuco, do Rio de Janeiro e de São Paulo, cada um em um estado diferente, e atualmente residirem nesses mesmos estados, ainda que alguns deles possam ter se mudado de um estado para outro, a quantidade de possibilidades de naturalidade e residência dos acusados é inferior a 100.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7eb7acd2-725d-5e1b-9b8d-a226e95acccf",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "75be2cf5-8e65-5e23-8df0-3c9e85b3cb5b",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "75be2cf5-8e65-5e23-8df0-3c9e85b3cb5b",
+          "resolution": {
+            "text": "1. Já basta considerar o subconjunto de cenários em que os quatro estados de residência também são todos distintos. Há 4! atribuições de naturalidade e 4! de residência, independentes. 2. São pelo menos 24×24=576 cenários, acima de 100. Mesmo se forem admitidas residências coincidentes, a conclusão continua falsa. Julgamento: Errado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Cebraspe — Polícia Federal — Concurso Público, aplicação 16/09/2018, prova e gabarito definitivo oficiais",
+              "url": "https://www.cebraspe.org.br/concursos/pf_18",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Federal — Concurso Público, aplicação 16/09/2018, item 50. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M12.s.pf-2018-basic-q50.json",
+            "answerPath": "sources/admin.2026-11.M12.s.pf-2018-basic-q50.json",
+            "contentSha256": "17bc3b08aaacc92d528b5d78a078da616d468b3c2d2b29c0d9d7ca8c38573752",
+            "answerSha256": "17bc3b08aaacc92d528b5d78a078da616d468b3c2d2b29c0d9d7ca8c38573752"
+          }
+        },
+        "fingerprint": "fc1319882d02935da8444f5f1b7914914f654491fcceef4d9784f4bea3eef2ae",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.pf-2021-agente-q49"
+        },
+        "content": {
+          "statement": {
+            "text": "Para realizar uma operação de busca e apreensão, em duas localidades diferentes, devem ser deslocadas duas equipes, cada uma delas composta por 1 delegado, 1 escrivão e 2 agentes. Tendo como base essas informações, julgue os itens seguintes.\n\n49 Se estiverem disponíveis, no momento de formação das equipes, exatamente, 2 delegados, 2 escrivães e 4 agentes, o número de maneiras distintas de se montar as duas equipes seria igual ao número de maneiras de se montar, escolhendo-se entre esses mesmos profissionais, uma única equipe para a realização de uma busca em uma única localidade.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5925dd3b-e417-59a1-a2c3-1d99cd0316f5",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "adea3cb4-a355-54d6-a3e2-3382ef69af7b",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5925dd3b-e417-59a1-a2c3-1d99cd0316f5",
+          "resolution": {
+            "text": "1. Fixadas as duas localidades distintas, escolher a equipe da primeira determina integralmente a outra, pois todos os profissionais serão usados. 2. Há 2×2×C(4,2)=24 escolhas tanto para a primeira equipe quanto para o par completo, em bijeção. Julgamento: Certo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, prova e gabarito definitivo oficiais",
+              "url": "https://www.cebraspe.org.br/concursos/pf_21",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, item 49. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M12.s.pf-2021-agente-q49.json",
+            "answerPath": "sources/admin.2026-11.M12.s.pf-2021-agente-q49.json",
+            "contentSha256": "ffc54999d7e71a2588d1363c85d33650b74374ff56288c806609eeba0e4c8f99",
+            "answerSha256": "ffc54999d7e71a2588d1363c85d33650b74374ff56288c806609eeba0e4c8f99"
+          }
+        },
+        "fingerprint": "8fb619dee9df8b6eecb20b930b63ec4fc8a6b20a2535d51c4e5649c69317c276",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.pf-2021-agente-q58"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere os seguintes conjuntos: P = {todos os policiais federais em efetivo exercício no país}; P₁ = {policiais federais em efetivo exercício no país e que têm até 1 ano de experiência no exercício do cargo}; P₂ = {policiais federais em efetivo exercício no país e que têm até 2 anos de experiência no exercício do cargo}; P₃ = {policiais federais em efetivo exercício no país e que têm até 3 anos de experiência no exercício do cargo}; e, assim, sucessivamente. Com base nessas informações, julgue os itens que se seguem.\n\n58 O conjunto P é igual à união infinita dos conjuntos P₁, P₂, P₃, ...",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3dd23a12-9d72-5350-8c81-92de8402b748",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "e31e8817-84fd-5cf7-89de-2c106e18178b",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3dd23a12-9d72-5350-8c81-92de8402b748",
+          "resolution": {
+            "text": "1. Cada Pₙ está contido em P. Cada policial em exercício tem um tempo finito de experiência, limitado por algum inteiro n. 2. Esse policial pertence a Pₙ; a união contém todo P e não contém elementos externos. Julgamento: Certo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, prova e gabarito definitivo oficiais",
+              "url": "https://www.cebraspe.org.br/concursos/pf_21",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, item 58. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M12.s.pf-2021-agente-q58.json",
+            "answerPath": "sources/admin.2026-11.M12.s.pf-2021-agente-q58.json",
+            "contentSha256": "dd9b3537394b620edcf75f9d73a11f19c8d3faa0421c544b3dffc33a20c79de2",
+            "answerSha256": "dd9b3537394b620edcf75f9d73a11f19c8d3faa0421c544b3dffc33a20c79de2"
+          }
+        },
+        "fingerprint": "958e69528fddec07fbceca3eca58b8567f90e51f261599f41503d6b4f1bc4344",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M12.s.pf-2021-agente-q60"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere os seguintes conjuntos: P = {todos os policiais federais em efetivo exercício no país}; P₁ = {policiais federais em efetivo exercício no país e que têm até 1 ano de experiência no exercício do cargo}; P₂ = {policiais federais em efetivo exercício no país e que têm até 2 anos de experiência no exercício do cargo}; P₃ = {policiais federais em efetivo exercício no país e que têm até 3 anos de experiência no exercício do cargo}; e, assim, sucessivamente. Com base nessas informações, julgue os itens que se seguem.\n\n60 Escolhendo-se aleatoriamente um integrante do conjunto P, a probabilidade de ele ter entre dois e três anos de experiência no exercício do cargo é dada por n(P₂ − P₃)/n(P₃), em que n(X) indica o número de elementos do conjunto X e P₂ − P₃ é o conjunto formado pelos indivíduos que estão em P₂, mas não estão em P₃.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2b381be9-d36d-5ea6-8d72-aa55a98e2898",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "d2aebfd6-f7f1-5286-98b3-05f22a93aed8",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d2aebfd6-f7f1-5286-98b3-05f22a93aed8",
+          "resolution": {
+            "text": "1. Como P₂⊆P₃, a diferença P₂−P₃ é vazia; ela não representa policiais entre dois e três anos. 2. Para a faixa acima de dois e até três anos seria usada P₃−P₂, dividindo sua cardinalidade por n(P), o espaço amostral. A fórmula proposta inverte a diferença e usa denominador inadequado. Julgamento: Errado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M12",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, prova e gabarito definitivo oficiais",
+              "url": "https://www.cebraspe.org.br/concursos/pf_21",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, item 60. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M12.s.pf-2021-agente-q60.json",
+            "answerPath": "sources/admin.2026-11.M12.s.pf-2021-agente-q60.json",
+            "contentSha256": "fd4fd5ccf6734555632682cccfe8ccd633c9b270e5a7e18307b72a69dffea054",
+            "answerSha256": "fd4fd5ccf6734555632682cccfe8ccd633c9b270e5a7e18307b72a69dffea054"
+          }
+        },
+        "fingerprint": "3098e5b3b108892a7c761ef5ef241be660fdd656decba38d4a360dc4fee6ec77",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M12.s.cacapava-profmat-q31.json",
+        "mediaType": "application/json",
+        "sha256": "7673e112895d63bccdb9ed48b34550ecac48771d1e91a39a05e34d781d0ed9dc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjcgNjAwLiJ9LHsiaWQiOiJiIiwidGV4dCI6IjQ2OCAwMDAuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjYwIDAwMC4ifSx7ImlkIjoiZCIsInRleHQiOiI2NSAwMDAuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiNTIwIDAwMC4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENhw6dhcGF2YSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSwgUFJPRkVTU09SIElJIChQSUkpIC0gTUFURU3DgVRJQ0EsIHF1ZXN0w6NvMzEuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6Q29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBzZcOnw6NvIGVzcGVjw61maWNhIGRvIGNhcmdvIGUgcmVzcG9zdGEgY29uZmVyaWRhcywgYW51bGFkYXMgZXhjbHXDrWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2FjYXBhdmEtZ2FiYXJpdG8ucGRmIiwic2hhMjU2IjoiYThhNmMwZDgwZjViYmI2MDJmZmQ3OWVjZTk2Y2VjNWMzZDIxZWRiNzQ0NzNhYWY0MmQzZmE2ZDQ0MDJkM2Q2MCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjMwL2FuZXhvcy8yN2RmMjVjNC0zYjU2LTQ0NzYtYTQ5YS1mZjZjMGRmNjcxNGYucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYcOnYXBhdmEg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1jYWNhcGF2YS0yMDI1LXByb2ZtYXQvcTMxIiwibnVtYmVyIjoiMzEiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsOyBjYXJnbyBlIG7Dum1lcm8gY29uZmVyaWRvczsgY2FiZcOnYWxob3MgZSBxdWVicmFzIHJldGlyYWRvcy4gRm9ybWF0b3MgbWF0ZW3DoXRpY29zIHJlbGV2YW50ZXMgY29tcGFyYWRvcyBjb20gcMOhZ2luYXMgcmVuZGVyaXphZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9jYWNhcGF2YS1wcm9mbWF0LnBkZiIsInNoYTI1NiI6ImJiZTk2ZGJkYzNhZGU4MDMwY2FlMzJjYWM5ODM4MWJiYmVhNmIxMWQ3MjJiMjViZjRhMmE2NWExN2IwMjhjNjYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzMC9hbmV4b3MvOGIyZjViMmYtM2YyMi00NzBlLWJmYWUtNGJlNTQ2NzJmMWYzLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSwgYXJ0LjjCuixJViBlIFRKUFIgQUMxNDM3MzMyLTMgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIHJldXRpbGl6YSBvYnJhcyBkZSB0ZXJjZWlyb3MgbmVjZXNzw6FyaWFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlBST0ZFU1NPUiBJSSAoUElJKSAtIE1BVEVNw4FUSUNBIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJjYWNhcGF2YS1wcm9mbWF0LXEzMSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEFzIGxldHJhcyBkaXN0aW50YXMgdMOqbSAyNsOXMjUgcG9zc2liaWxpZGFkZXMgb3JkZW5hZGFzLiBPcyB0csOqcyBhbGdhcmlzbW9zIGRpc3RpbnRvcyB0w6ptIDEww5c5w5c4LCBwZXJtaXRpbmRvIHplcm8gcG9ycXVlIHPDo28gcG9zacOnw7VlcyBkZSBjw7NkaWdvLiAyLiBPIHByb2R1dG8gw6kgMjbDlzI1w5c3MjAgPSA0NjggMDAwIGPDs2RpZ29zLCBhbHRlcm5hdGl2YSBCLiIsInN0YXRlbWVudCI6IkVtIHVtIHNpc3RlbWEgZGUgY2FkYXN0cm8sIGNhZGEgY8OzZGlnbyDDqSBmb3JtYWRvIHBvciAyIGxldHJhcyBkaXN0aW50YXMgKGRlIEEgYSBaKSBzZWd1aWRhcyBkZSAzIGFsZ2FyaXNtb3MgZGlzdGludG9zIChkZSAwIGEgOSkuIE8gbsO6bWVybyB0b3RhbCBkZSBjw7NkaWdvcyBwb3Nzw612ZWlzIMOpOiIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBjb21wbGVtZW50YXIgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYSBxdWVzdMOjbyDDqSB0cmFuc2NyaXRhIGRlIHByb3ZhIG9maWNpYWwsIGN1amEgb3JpZ2VtIGNvbnN0YSBkYSBwcm92ZW5pw6puY2lhIGRvIGl0ZW0iLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.inss-2022-comum-q47.json",
+        "mediaType": "application/json",
+        "sha256": "c3556a7f97eaa2fdfe8a2b958984860bc6cb1397e86c4f0eea555080fc470a05",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBJTlNTIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDIwMjIsIGFwbGljYcOnw6NvIDI3LzExLzIwMjIsIGl0ZW0gNDcuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6IENvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgY2FkZXJubywgbsO6bWVybyBlIHJlc3Bvc3RhIGNvbmZlcmlkb3MsIHNlbSBpbXBvcnRhciBpdGVtIGFudWxhZG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL2luc3MtMjAyMi1jb211bS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiMTllZDk1MmIxYjEwYjk5NjBhM2VjYTRhMmYyOTMwMDI5YWNkODI5OGQ1MmYwN2Y1OGNhN2JiZjU4MzFlZmZlZSIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvaW5zc18yMi9hcnF1aXZvcy9HQUJfREVGSU5JVElWT183NjBfSU5TU19DQjFfMDEuUERGIn0sImJvYXJkIjoiQ2VicmFzcGUiLCJib29rbGV0IjoiNzYwX0lOU1NfQ0IxXzAxIiwiY29tcGV0aXRpb24iOiJJTlNTIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDIwMjIsIGFwbGljYcOnw6NvIDI3LzExLzIwMjIiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImNlYnJhc3BlLWluc3MtMjAyMi1jb211bS9xNDciLCJudW1iZXIiOiI0NyIsInByb29mIjp7Im5vdGUiOiJQcm92YSBvZmljaWFsOyBjb21hbmRvLCBjb250ZXh0byBlIGp1bGdhbWVudG8gcHJlc2VydmFkb3MgZW0gQ2VydG8vRXJyYWRvLiBTw61tYm9sb3MgbWF0ZW3DoXRpY29zIGxpbmVhcml6YWRvcyBvbmRlIGluZGljYWRvIG5vIHJlZ2lzdHJvIGVkaXRvcmlhbC4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvaW5zcy0yMDIyLWNvbXVtLXByb29mLnBkZiIsInNoYTI1NiI6ImVjYWNmN2ZkODhkMGYzZjI4NDJhMzU1NTE5YmM2YzdmNGIzN2NiOTY1OTNjYjc4YWIwNDJiNjE3MTkwMzA5MDEiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2luc3NfMjIvYXJxdWl2b3MvNzYwX0lOU1NfQ0IxXzAxLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVMOpY25pY28gZG8gU2VndXJvIFNvY2lhbCIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyMn0sImlkIjoiaW5zcy0yMDIyLWNvbXVtLXE0NyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jZWJyYXNwZS1pbnNzLTIwMjItY29tdW0iXSwicmVzb2x1dGlvbiI6IjEuIEFzIGR1YXMgbW9kYWxpZGFkZXMgY29icmVtIDEwMCUgZG9zIHNlZ3VyYWRvcy4gUGVsYSBpbmNsdXPDo28tZXhjbHVzw6NvLCByZW1vdG8rcHJlc2VuY2lhbOKIkmFtYm9zPTEwMCUuIDIuIEFtYm9zPTc1JSszNSXiiJIxMDAlPTEwJS4gSnVsZ2FtZW50bzogQ2VydG8uIiwic3RhdGVtZW50IjoiQW8gcmVhbGl6YXIgdW0gbGV2YW50YW1lbnRvIGRlIGluZm9ybWHDp8O1ZXMgc29saWNpdGFkbyBwb3Igc2V1IGNoZWZlLCB1bSB0w6ljbmljbyBkbyBzZWd1cm8gc29jaWFsIHZlcmlmaWNvdSBxdWUsIGVudHJlIG9zIHNlZ3VyYWRvcyBxdWUgYXByZXNlbnRhcmFtIHN1YXMgZGVtYW5kYXMgYW8gbG9uZ28gZGEgc2VtYW5hIGFudGVyaW9yLCA3NSUgcmVjZWJlcmFtIGFsZ3VtIGF0ZW5kaW1lbnRvIHJlbW90byAocG9yIHRlbGVmb25lLCBhcGxpY2F0aXZvIG91IEludGVybmV0KSBlIDM1JSByZWNlYmVyYW0gYXRlbmRpbWVudG8gcHJlc2VuY2lhbC4gSG91dmUgY2Fzb3MgZW0gcXVlIG9zIGF0ZW5kaW1lbnRvcyBmb3JhbSBpbmljaWFkb3Mgbm8gbW9kbyByZW1vdG8sIG1hcywgZGV2aWRvIMOgcyBzdWFzIGNvbXBsZXhpZGFkZXMsIHByZWNpc2FyYW0gc2VyIGNvbmNsdcOtZG9zIHByZXNlbmNpYWxtZW50ZS4gQ29tIGJhc2UgbmVzc2Egc2l0dWHDp8OjbyBoaXBvdMOpdGljYSwganVsZ3VlIG9zIGl0ZW5zIHNlZ3VpbnRlcy5cblxuNDcgU2UgaGF2aWEgc29tZW50ZSBhcyBkdWFzIG1vZGFsaWRhZGVzIGRlIGF0ZW5kaW1lbnRvIGRlc2NyaXRhcywgw6kgY29ycmV0byBjb25jbHVpciBxdWUgMTAlIGRvcyBzZWd1cmFkb3MgcGFzc2FyYW0gcGVsYXMgZHVhcyBtb2RhbGlkYWRlcyBkZSBhdGVuZGltZW50byBlbSBzdWFzIGRlbWFuZGFzLiIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2VicmFzcGUtaW5zcy0yMDIyLWNvbXVtIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiQ2VicmFzcGUg4oCUIElOU1Mg4oCUIENvbmN1cnNvIFDDumJsaWNvLCBFZGl0YWwgMjAyMiwgYXBsaWNhw6fDo28gMjcvMTEvMjAyMiwgcHJvdmEgZSBnYWJhcml0byBkZWZpbml0aXZvIG9maWNpYWlzIiwidXJsIjoiaHR0cHM6Ly93d3cuY2VicmFzcGUub3JnLmJyL2NvbmN1cnNvcy9pbnNzXzIyIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-complemento-intersecao.json",
+        "mediaType": "application/json",
+        "sha256": "de550eaec9d4bcc9d1b8c1ebf7a3e09847e2aa2aba0d22ff51ed9fece702e65b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzUifSx7ImlkIjoiYiIsInRleHQiOiIxMDAifSx7ImlkIjoiYyIsInRleHQiOiIxMzUifSx7ImlkIjoiZCIsInRleHQiOiI2NSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtY29tcGxlbWVudG8taW50ZXJzZWNhbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSBpbnRlcnNlw6fDo28gZSBzZXUgY29tcGxlbWVudG8gcGFydGljaW9uYW0gbyB1bml2ZXJzby4gMi4gTyBjb21wbGVtZW50byBjb250w6ltIDEwMOKIkjM1PTY1IGVsZW1lbnRvczsgbsOjbyDDqSBuZWNlc3PDoXJpbyBjb25oZWNlciBBIGUgQiBzZXBhcmFkYW1lbnRlLiIsInN0YXRlbWVudCI6Ik5vIHVuaXZlcnNvIFUgZGUgMTAwIGVsZW1lbnRvcywgMzUgcGVydGVuY2VtIGEgQeKIqUIuIFF1YW50b3MgcGVydGVuY2VtIGFvIGNvbXBsZW1lbnRvIGRlIEHiiKlCIGVtIFU/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-complementos-diagrama.json",
+        "mediaType": "application/json",
+        "sha256": "433700c8f0d52fe6405ad0ae3e8a89fbc0e74e88948f0d367f0a36f4a837686b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQeKIqkIuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQSBtZW5vcyBCLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik8gY29tcGxlbWVudG8gZGUgQeKIqkIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQeKIqUIuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1jb21wbGVtZW50b3MtZGlhZ3JhbWEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEVzdGFyIGZvcmEgZG9zIGRvaXMgZXhjbHVpIHF1YWxxdWVyIGVsZW1lbnRvIHF1ZSBlc3RlamEgZW0gcGVsbyBtZW5vcyB1bSBkZWxlcy4gMi4gUG9ydGFudG8gw6kgbyBjb21wbGVtZW50byBkYSB1bmnDo28sIGVxdWl2YWxlbnRlIMOgIGludGVyc2XDp8OjbyBkb3MgY29tcGxlbWVudG9zLiIsInN0YXRlbWVudCI6IlF1YWwgY29uanVudG8gcmXDum5lIG9zIGVsZW1lbnRvcyBxdWUgZXN0w6NvIGZvcmEgZGUgQSBlIGZvcmEgZGUgQiBhbyBtZXNtbyB0ZW1wbywgZGVudHJvIGRlIFU/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-conjunto-potencia.json",
+        "mediaType": "application/json",
+        "sha256": "2c1906ee21ff992b54fcbdd9688086d742fd09aabdfee3598005d7485ec160fc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTYifSx7ImlkIjoiYiIsInRleHQiOiI0In0seyJpZCI6ImMiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJkIiwidGV4dCI6IjI0In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC1jb25qdW50by1wb3RlbmNpYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gUGFyYSBmb3JtYXIgdW0gc3ViY29uanVudG8sIGNhZGEgZWxlbWVudG8gcG9kZSBlbnRyYXIgb3UgbsOjby4gMi4gQXMgcXVhdHJvIGRlY2lzw7VlcyBpbmRlcGVuZGVudGVzIGTDo28gMuKBtD0xNiBzdWJjb25qdW50b3MuIiwic3RhdGVtZW50IjoiVW0gY29uanVudG8gdGVtIHF1YXRybyBlbGVtZW50b3MgZGlzdGludG9zLiBRdWFudG9zIHN1YmNvbmp1bnRvcyBlbGUgcG9zc3VpLCBpbmNsdWluZG8gbyB2YXppbyBlIGVsZSBwcsOzcHJpbz8iLCJ0b3BpY0lkIjoiTTEyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-diagrama-afirmacao-universal.json",
+        "mediaType": "application/json",
+        "sha256": "e483d1220c32238e1a6361b4b8ed4cbf150b2a45837215c3389a8dac96dc5cb7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiT3MgY8OtcmN1bG9zIEEgZSBCIHPDo28gZGlzanVudG9zLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkIgZXN0w6EgcHJvcHJpYW1lbnRlIGRlbnRybyBkZSBBLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik9zIGPDrXJjdWxvcyBBIGUgQiBzw6NvIGlkw6pudGljb3MuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTyBjw61yY3VsbyBBIGVzdMOhIHByb3ByaWFtZW50ZSBkZW50cm8gZG8gY8OtcmN1bG8gQi4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWRpYWdyYW1hLWFmaXJtYWNhby11bml2ZXJzYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIOKAnFRvZG8gQSDDqSBC4oCdIGV4aWdlIEHiioZCLiAyLiDigJxOZW0gdG9kbyBCIMOpIEHigJ0gZXhpZ2UgYW8gbWVub3MgdW0gbWVtYnJvIGVtIEIgZm9yYSBkZSBBLCBwb3J0YW50byBhIGluY2x1c8OjbyDDqSBwcsOzcHJpYS4iLCJzdGF0ZW1lbnQiOiJRdWFsIGRlc2NyacOnw6NvIGRlIGRpYWdyYW1hIHJlcHJlc2VudGEg4oCcdG9kbyBBIMOpIEIsIG1hcyBuZW0gdG9kbyBCIMOpIEHigJ0/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-duas-intersecao.json",
+        "mediaType": "application/json",
+        "sha256": "18d63c4cdd3ca7714612860d6e1b6d225c61a8f1d5d1c72c3348ef3d84d861c5",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNCJ9LHsiaWQiOiJiIiwidGV4dCI6Ijg0In0seyJpZCI6ImMiLCJ0ZXh0IjoiMzQifSx7ImlkIjoiZCIsInRleHQiOiI0MiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtZHVhcy1pbnRlcnNlY2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHVuacOjbyDDqSA4MCBlIGEgc29tYSBkb3MgZ3J1cG9zIMOpIDg0LiAyLiBBIGRpZmVyZW7Dp2EgNDYrMzjiiJI4MD00IMOpIGEgaW50ZXJzZcOnw6NvLCBxdWUgZm9pIGNvbnRhZGEgZHVhcyB2ZXplcyBuYSBzb21hLiIsInN0YXRlbWVudCI6IkVtIDgwIHBlc3NvYXMsIDQ2IHVzYW0gQSwgMzggdXNhbSBCIGUgdG9kYXMgdXNhbSBhbyBtZW5vcyB1bS4gUXVhbnRhcyB1c2FtIGFtYm9zPyIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-elemento-conjunto-aninhado.json",
+        "mediaType": "application/json",
+        "sha256": "0748bdac9084ec91fffc97f486065b95aaf8754e17c893b51b9d00133a654d48",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBuw7ptZXJvIDEgw6kgdW0gZWxlbWVudG8gZGUgQS4ifSx7ImlkIjoiYiIsInRleHQiOiJPIGNvbmp1bnRvIHsxLDJ9IMOpIHVtIGVsZW1lbnRvIGRlIEEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQSBlc3TDoSBjb250aWRvIG5vIGNvbmp1bnRvIHsxLDJ9LiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik8gY29uanVudG8gezF9IMOpIHVtIGVsZW1lbnRvIGRlIEEuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1lbGVtZW50by1jb25qdW50by1hbmluaGFkbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgZG9pcyBlbGVtZW50b3MgZGUgQSBzw6NvIG8gY29uanVudG8gezF9IGUgbyBuw7ptZXJvIDIuIDIuIFBlcnRlbmNlciBjb21vIGVsZW1lbnRvIMOpIGRpZmVyZW50ZSBkZSBlc3RhciBjb250aWRvOyBvIG7Dum1lcm8gMSBuw6NvIGFwYXJlY2UgZGlyZXRhbWVudGUgY29tbyBlbGVtZW50byBkZSBBLiIsInN0YXRlbWVudCI6IlNlIEE9e3sxfSwyfSwgcXVhbCBhZmlybWHDp8OjbyDDqSBjb3JyZXRhPyIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-exatamente-dois-tres.json",
+        "mediaType": "application/json",
+        "sha256": "4c13893d4a124e1ac2cad255d8e17bcf4ad709ffa407440071c9b9f7d9a230a5",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjkifSx7ImlkIjoiYiIsInRleHQiOiIxMyJ9LHsiaWQiOiJjIiwidGV4dCI6IjE3In0seyJpZCI6ImQiLCJ0ZXh0IjoiMjUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LWV4YXRhbWVudGUtZG9pcy10cmVzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBSZXRpcmUgb3MgcXVhdHJvIGRhIHRyaXBsYSBkZSBjYWRhIGludGVyc2XDp8OjbyBkdXBsYTogOCwgNSBlIDQuIDIuIEVzc2FzIHRyw6pzIHJlZ2nDtWVzIGRpc2p1bnRhcyBzb21hbSAxNzsgYSB0cmlwbGEgbsOjbyBjb250YSBjb21vIGV4YXRhbWVudGUgZG9pcy4iLCJzdGF0ZW1lbnQiOiJUcsOqcyBjb25qdW50b3MgdMOqbSBpbnRlcnNlw6fDtWVzIGR1cGxhcywgaW5jbHVpbmRvIGEgdHJpcGxhLCBkZSB0YW1hbmhvcyAxMiwgOSBlIDguIEEgaW50ZXJzZcOnw6NvIGRvcyB0csOqcyB0ZW0gNCBlbGVtZW50b3MuIFF1YW50b3MgcGVydGVuY2VtIGEgZXhhdGFtZW50ZSBkb2lzIGNvbmp1bnRvcz8iLCJ0b3BpY0lkIjoiTTEyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-gavetas-garantir-par.json",
+        "mediaType": "application/json",
+        "sha256": "785ac5c997625a232279a7230d195c3e9693f9e015a43b838510c20332c5ac38",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNiJ9LHsiaWQiOiJiIiwidGV4dCI6IjIifSx7ImlkIjoiYyIsInRleHQiOiI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiMyJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtZ2F2ZXRhcy1nYXJhbnRpci1wYXIiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFRyw6pzIHJldGlyYWRhcyBhaW5kYSBwb2RlbSBkYXIgdW1hIGRlIGNhZGEgY29yLiAyLiBBIHF1YXJ0YSBkZXZlIHJlcGV0aXIgYWxndW1hIGRhcyB0csOqcyBjb3JlcywgZ2FyYW50aW5kbyBvIHBhcjsgcGFyZXMgZsOtc2ljb3MgYW50ZXJpb3JlcyBuw6NvIGltcG9ydGFtLiIsInN0YXRlbWVudCI6IkVtIHVtYSBnYXZldGEgaMOhIG1laWFzIGRlIHRyw6pzIGNvcmVzLCBlbSBxdWFudGlkYWRlIHN1ZmljaWVudGUgZGUgY2FkYSBjb3IuIFF1YW50YXMgbWVpYXMgZGV2ZW0gc2VyIHJldGlyYWRhcyBzZW0gb2xoYXIgcGFyYSBnYXJhbnRpciBkdWFzIGRhIG1lc21hIGNvcj8iLCJ0b3BpY0lkIjoiTTEyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-limite-intersecao.json",
+        "mediaType": "application/json",
+        "sha256": "f72b56e89d5c0fd4d9eb53bcc32badc03fbdcb882a7c646c2f74c016a9944bb2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTUifSx7ImlkIjoiYiIsInRleHQiOiIwIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMzEifSx7ImlkIjoiZCIsInRleHQiOiIzNCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtbGltaXRlLWludGVyc2VjYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgdW5pw6NvIG7Do28gcG9kZSB1bHRyYXBhc3NhciA1MC4gMi4gQ29tbyB8QeKIqUJ8PTM0KzMx4oiSfEHiiKpCfCwgbyBtw61uaW1vIMOpIDY14oiSNTA9MTUsIGFsY2Fuw6dhZG8gcXVhbmRvIGEgdW5pw6NvIMOpIHRvZG8gbyB1bml2ZXJzby4iLCJzdGF0ZW1lbnQiOiJOdW0gdW5pdmVyc28gZGUgNTAgZWxlbWVudG9zLCBBIHRlbSAzNCBlIEIgdGVtIDMxLiBRdWFsIMOpIG8gbWVub3IgdGFtYW5obyBwb3Nzw612ZWwgZGUgQeKIqUI/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-nenhum-dois.json",
+        "mediaType": "application/json",
+        "sha256": "35b673ddc1480a62956a499ca8a18010f5df90af89fd966274216dddee866e7a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNTgifSx7ImlkIjoiYiIsInRleHQiOiIyNCJ9LHsiaWQiOiJjIiwidGV4dCI6IjEyIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNDYifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LW5lbmh1bS1kb2lzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHVuacOjbyBjb250w6ltIDMwKzI44oiSMTI9NDYgcGVzc29hcy4gMi4gTyBjb21wbGVtZW50byBubyBncnVwbyDDqSA3MOKIkjQ2PTI0OyBhIGludGVyc2XDp8OjbyBwcmVjaXNhIHNlciBkZXNjb250YWRhIHVtYSB2ZXouIiwic3RhdGVtZW50IjoiRW0gNzAgcGVzc29hcywgMzAgZmFsYW0gaW5nbMOqcywgMjggZXNwYW5ob2wgZSAxMiBhbWJhcyBhcyBsw61uZ3Vhcy4gUXVhbnRhcyBuw6NvIGZhbGFtIG5lbmh1bWEgZGVzc2FzIGR1YXM/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-particao-ambos-nenhum.json",
+        "mediaType": "application/json",
+        "sha256": "bba4c0bdff7ca897378b28a00933de3a4c4e1bbb3c80b3b9238a0f7e13bab7b2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzIifSx7ImlkIjoiYiIsInRleHQiOiI0MiJ9LHsiaWQiOiJjIiwidGV4dCI6IjE4In0seyJpZCI6ImQiLCJ0ZXh0IjoiMjgifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXBhcnRpY2FvLWFtYm9zLW5lbmh1bSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQXMgcXVhdHJvIHJlZ2nDtWVzIGRvIGRpYWdyYW1hIHPDo28gZGlzanVudGFzIGUgdG90YWxpemFtIDYwLiAyLiBBIHJlZ2nDo28gYW1ib3Mgw6kgNjDiiJIxOOKIkjE04oiSMTA9MTg7IGFzIGluZm9ybWHDp8O1ZXMgasOhIHPDo28gZGUgcGFydGVzIGV4Y2x1c2l2YXMuIiwic3RhdGVtZW50IjoiVW1hIHBlc3F1aXNhIGNvbSA2MCBwZXNzb2FzIG9idGV2ZSAxOCBxdWUgdXNhbSBzb21lbnRlIEEsIDE0IHNvbWVudGUgQiBlIDEwIHF1ZSBuw6NvIHVzYW0gbmVuaHVtLiBRdWFudGFzIHVzYW0gYW1ib3M/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-particao-universo.json",
+        "mediaType": "application/json",
+        "sha256": "2b6f4d92390c4aa17f0e7f51aaf442bc4b65dba44e22c3ba2d7213b5bb054501",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTE4In0seyJpZCI6ImIiLCJ0ZXh0IjoiMjUifSx7ImlkIjoiYyIsInRleHQiOiI2NSJ9LHsiaWQiOiJkIiwidGV4dCI6IjUzIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1wYXJ0aWNhby11bml2ZXJzbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gUGFydGnDp8OjbyBzaWduaWZpY2EgcGFydGVzIGRpc2p1bnRhcyBxdWUgY29icmVtIG8gdW5pdmVyc28uIDIuIFBvcnRhbnRvIHxDfD05MOKIkjI44oiSMzc9MjU7IG7Do28gaMOhIGludGVyc2XDp8O1ZXMgYSBkZXNjb250YXIuIiwic3RhdGVtZW50IjoiQSxCLEMgZm9ybWFtIHVtYSBwYXJ0acOnw6NvIGRlIHVtIHVuaXZlcnNvIGRlIDkwIGVsZW1lbnRvcy4gU2UgfEF8PTI4IGUgfEJ8PTM3LCBxdWFsIMOpIHxDfD8iLCJ0b3BpY0lkIjoiTTEyIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-pertinencia-enumerada.json",
+        "mediaType": "application/json",
+        "sha256": "936e7986a0fe80f957276656fdbef7a5471e86eb1be731f4e6a4c7d795943b57",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiezZ9In0seyJpZCI6ImIiLCJ0ZXh0IjoiezEsMyw1fSJ9LHsiaWQiOiJjIiwidGV4dCI6InsyLDR9In0seyJpZCI6ImQiLCJ0ZXh0IjoiezEsMiwzLDQsNSw2fSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtcGVydGluZW5jaWEtZW51bWVyYWRhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIGRpZmVyZW7Dp2EgQSBtZW5vcyBCIHJlw7puZSBvcyBlbGVtZW50b3MgZGUgQSBxdWUgbsOjbyBwZXJ0ZW5jZW0gYSBCLiAyLiBSZXRpcmFuZG8gMiBlIDQgZGUgQSwgcmVzdGFtIDEsIDMgZSA1OyBhIG9wZXJhw6fDo28gbsOjbyDDqSBzaW3DqXRyaWNhLiIsInN0YXRlbWVudCI6IlNlIEE9ezEsMiwzLDQsNX0gZSBCPXsyLDQsNn0sIHF1YWwgw6kgQSBtZW5vcyBCPyIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-sobreposicao-limites-completos.json",
+        "mediaType": "application/json",
+        "sha256": "78714d383152cb172a0dd1a35f26e9ca95b0e1489cbef13fdf5630ece8870edb",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIifSx7ImlkIjoiYiIsInRleHQiOiI1In0seyJpZCI6ImMiLCJ0ZXh0IjoiMjkifSx7ImlkIjoiZCIsInRleHQiOiIxNyJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtc29icmVwb3NpY2FvLWxpbWl0ZXMtY29tcGxldG9zIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHVuacOjbyDDqSBtYWlvciBxdWFuZG8gbsOjbyBow6Egc29icmVwb3Npw6fDo28uIDIuIE5lc3NlIGNhc28gb3MgdGFtYW5ob3Mgc2Ugc29tYW06IDEyKzE3PTI5OyBxdWFscXVlciBpbnRlcnNlw6fDo28gcmVkdXppcmlhIGVzc2UgdG90YWwuIiwic3RhdGVtZW50IjoiRG9pcyBjb25qdW50b3MgQSBlIEIgdMOqbSwgcmVzcGVjdGl2YW1lbnRlLCAxMiBlIDE3IGVsZW1lbnRvcy4gUXVhbCDDqSBvIG1haW9yIHRhbWFuaG8gcG9zc8OtdmVsIGRlIEHiiKpCPyIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-subconjuntos-tamanho-fixo.json",
+        "mediaType": "application/json",
+        "sha256": "475c889fdc7bb9cedd0050d297be65d4f6a99ea6bc9f5a6594b5be4e699a845a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTAifSx7ImlkIjoiYiIsInRleHQiOiIyMCJ9LHsiaWQiOiJjIiwidGV4dCI6IjI1In0seyJpZCI6ImQiLCJ0ZXh0IjoiMzIifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXN1YmNvbmp1bnRvcy10YW1hbmhvLWZpeG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEVzY29saGEgdW0gcGFyIHNlbSBvcmRlbSBlbnRyZSBvcyBjaW5jbyBlbGVtZW50b3MuIDIuIEjDoSA1w5c0LzI9MTAgcGFyZXM7IDMyIHNlcmlhIGEgcXVhbnRpZGFkZSBkZSBzdWJjb25qdW50b3MgZGUgdG9kb3Mgb3MgdGFtYW5ob3MuIiwic3RhdGVtZW50IjoiVW0gY29uanVudG8gdGVtIGNpbmNvIGVsZW1lbnRvcyBkaXN0aW50b3MuIFF1YW50b3MgZGUgc2V1cyBzdWJjb25qdW50b3MgdMOqbSBleGF0YW1lbnRlIGRvaXMgZWxlbWVudG9zPyIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-tres-conjuntos-minimo-comum.json",
+        "mediaType": "application/json",
+        "sha256": "972ddee86730cbc899025e8a8f2b823331eead3b54cded81aaa135ae1f1539c0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMCJ9LHsiaWQiOiJiIiwidGV4dCI6IjI0In0seyJpZCI6ImMiLCJ0ZXh0IjoiNSJ9LHsiaWQiOiJkIiwidGV4dCI6IjE1In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC10cmVzLWNvbmp1bnRvcy1taW5pbW8tY29tdW0iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE9zIGNvbXBsZW1lbnRvcyBkZSBBLCBCIGUgQyB0w6ptIDQsIDUgZSA2IHBlc3NvYXM7IG5vIG3DoXhpbW8gMTUgcGVzc29hcyBlc3TDo28gZm9yYSBkZSBhbGd1bSBjb25qdW50by4gMi4gUG9ydGFudG8gcGVsbyBtZW5vcyAzMOKIkjE1PTE1IHBlcnRlbmNlbSBhb3MgdHLDqnMsIGUgbyBsaW1pdGUgw6kgYWxjYW7Dp8OhdmVsIGNvbSBjb21wbGVtZW50b3MgZGlzanVudG9zLiIsInN0YXRlbWVudCI6IkVtIHVtIGdydXBvIGRlIDMwIHBlc3NvYXMsIDI2IHBlcnRlbmNlbSBhIEEsIDI1IGEgQiBlIDI0IGEgQy4gUXVhbCDDqSBvIG1lbm9yIHRhbWFuaG8gcG9zc8OtdmVsIGRhIGludGVyc2XDp8OjbyBB4oipQuKIqUM/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-tres-regioes-dadas.json",
+        "mediaType": "application/json",
+        "sha256": "4ac5265e1b8e87d10601199571f2dc13f951ef271b27cbba7070ff0d26fc8f4b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOSJ9LHsiaWQiOiJiIiwidGV4dCI6IjEzIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNSJ9LHsiaWQiOiJkIiwidGV4dCI6IjMxIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC10cmVzLXJlZ2lvZXMtZGFkYXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFNvbWUgdG9kYXMgYXMgcmVnacO1ZXMgcXVlIGVzdMOjbyBkZW50cm8gZGUgQTogNSwzLDQgZSAxLiAyLiBPIHRvdGFsIMOpIDEzOyDigJxwZXJ0ZW5jZSBhIEHigJ0gbsOjbyBzaWduaWZpY2Eg4oCcc29tZW50ZSBlbSBB4oCdLiIsInN0YXRlbWVudCI6IlVtIGRpYWdyYW1hIGRlIHRyw6pzIGNvbmp1bnRvcyBhcHJlc2VudGEgNSBlbGVtZW50b3Mgc29tZW50ZSBlbSBBLCA3IHNvbWVudGUgZW0gQiwgOSBzb21lbnRlIGVtIEMsIDMgc29tZW50ZSBlbSBB4oipQiwgNCBzb21lbnRlIGVtIEHiiKlDLCAyIHNvbWVudGUgZW0gQuKIqUMgZSAxIG5vcyB0csOqcy4gUXVhbnRvcyBwZXJ0ZW5jZW0gYSBBPyIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-tres-sem-tripla.json",
+        "mediaType": "application/json",
+        "sha256": "5bad457a9567b3b78ad77f176da19e448645e3eb25a207f965201601609fde2c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjgifSx7ImlkIjoiYiIsInRleHQiOiI0NiJ9LHsiaWQiOiJjIiwidGV4dCI6IjE2In0seyJpZCI6ImQiLCJ0ZXh0IjoiMzIifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXRyZXMtc2VtLXRyaXBsYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQ29udGFyIGNhZGEgcGVzc29hIHVtYSB2ZXogZGFyaWEgNjAgaW5zY3Jpw6fDtWVzLiAyLiBDYWRhIHBlc3NvYSBlbSBleGF0YW1lbnRlIGRvaXMgYWNyZXNjZW50YSB1bWEgaW5zY3Jpw6fDo28gZXh0cmEsIGUgbsOjbyBow6EgdHJpcGxhOyBwb3IgaXNzbyBzw6NvIDky4oiSNjA9MzIuIiwic3RhdGVtZW50IjoiU2Vzc2VudGEgcGVzc29hcyBwZXJ0ZW5jZW0gYSBwZWxvIG1lbm9zIHVtIGRlIHRyw6pzIGNsdWJlcy4gTsOjbyBow6EgbmluZ3XDqW0gbm9zIHRyw6pzIGNsdWJlcywgZSBhIHNvbWEgZG9zIHRhbWFuaG9zIGRvcyBjbHViZXMgw6kgOTIuIFF1YW50YXMgcGVzc29hcyBwZXJ0ZW5jZW0gYSBleGF0YW1lbnRlIGRvaXMgY2x1YmVzPyIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-uniao-subconjunto.json",
+        "mediaType": "application/json",
+        "sha256": "ca4f53e15691646a62d57f24865e03914812dcb1867e91dc927903ab7ab69859",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQiJ9LHsiaWQiOiJiIiwidGV4dCI6IkEifSx7ImlkIjoiYyIsInRleHQiOiJDb25qdW50byB2YXppby4ifSx7ImlkIjoiZCIsInRleHQiOiJB4oipQuG2nC4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXVuaWFvLXN1YmNvbmp1bnRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBUb2RvcyBvcyBlbGVtZW50b3MgZGUgQSBqw6EgZXN0w6NvIGVtIEIuIDIuIEFjcmVzY2VudGFyIEEgYSBCIG7Do28gYWRpY2lvbmEgbmFkYSwgcG9ydGFudG8gYSB1bmnDo28gY29pbmNpZGUgY29tIEIuIiwic3RhdGVtZW50IjoiU2UgQeKKhkIsIGEgdW5pw6NvIEHiiKpCIMOpIGlndWFsIGE6IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.mat-vazio-versus-unitario.json",
+        "mediaType": "application/json",
+        "sha256": "f547d6f27fb05e5904754a7fff096c91b4ce855eb1e40be04b60dd491e26bb23",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0Ijoie+KIhX0gdGVtIGluZmluaXRvcyBlbGVtZW50b3MuIn0seyJpZCI6ImIiLCJ0ZXh0Ijoi4oiFIG7Do28gdGVtIGVsZW1lbnRvcywgZW5xdWFudG8ge+KIhX0gdGVtIHVtIGVsZW1lbnRvLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik9zIGRvaXMgbsOjbyB0w6ptIGVsZW1lbnRvcy4ifSx7ImlkIjoiZCIsInRleHQiOiJPcyBkb2lzIHTDqm0gZXhhdGFtZW50ZSB1bSBlbGVtZW50by4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LXZhemlvLXZlcnN1cy11bml0YXJpbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTyBjb25qdW50byB2YXppbyBuw6NvIHBvc3N1aSBxdWFscXVlciBlbGVtZW50by4gMi4gTm8gY29uanVudG8ge+KIhX0sIG8gcHLDs3ByaW8gY29uanVudG8gdmF6aW8gYXBhcmVjZSBjb21vIHVtIGVsZW1lbnRvOyBhcyBjaGF2ZXMgZXh0ZXJuYXMgZm9ybWFtIHVtIGNvbmp1bnRvIHVuaXTDoXJpby4iLCJzdGF0ZW1lbnQiOiJRdWFsIGFmaXJtYcOnw6NvIGRpc3Rpbmd1ZSBjb3JyZXRhbWVudGUgbyBjb25qdW50byB2YXppbyDiiIUgZG8gY29uanVudG8ge+KIhX0/IiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.pcdf-2021-basic-q43.json",
+        "mediaType": "application/json",
+        "sha256": "9bd4969bd4d6ae63d82fd6c26bb0999a280496d5977c071dd1845ecfc91546a4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBDaXZpbCBkbyBEaXN0cml0byBGZWRlcmFsIOKAlCBBZ2VudGUsIEVkaXRhbCAxLzIwMjAsIGFwbGljYcOnw6NvIDIwMjEsIGl0ZW0gNDMuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6IENvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgY2FkZXJubywgbsO6bWVybyBlIHJlc3Bvc3RhIGNvbmZlcmlkb3MsIHNlbSBpbXBvcnRhciBpdGVtIGFudWxhZG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL3BjZGYtMjAyMS1iYXNpYy1hbnN3ZXIucGRmIiwic2hhMjU2IjoiMjFlOTA5YWQ4MGZhMjQ1YmM2N2ZiZTE2M2RjNWMzMjFhYjcxNDc5NWIwODJmMjhhYTlmMWFmMDJjZTkzM2NjMSIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvcGNfZGZfMjBfYWdlbnRlL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPX01BVFJJWl81NTBfUENERl9BR0VOVEVfQ0IxXzAwLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1hdHJpel81NTBfUENERl9BR0VOVEVfQ0IxXzAwIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBDaXZpbCBkbyBEaXN0cml0byBGZWRlcmFsIOKAlCBBZ2VudGUsIEVkaXRhbCAxLzIwMjAsIGFwbGljYcOnw6NvIDIwMjEiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImNlYnJhc3BlLXBjZGYtMjAyMS1iYXNpYy9xNDMiLCJudW1iZXIiOiI0MyIsInByb29mIjp7Im5vdGUiOiJQcm92YSBvZmljaWFsOyBjb21hbmRvLCBjb250ZXh0byBlIGp1bGdhbWVudG8gcHJlc2VydmFkb3MgZW0gQ2VydG8vRXJyYWRvLiBTw61tYm9sb3MgbWF0ZW3DoXRpY29zIGxpbmVhcml6YWRvcyBvbmRlIGluZGljYWRvIG5vIHJlZ2lzdHJvIGVkaXRvcmlhbC4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGNkZi0yMDIxLWJhc2ljLXByb29mLnBkZiIsInNoYTI1NiI6IjExNzhmZjFlMTA2OTFmNDM1ZGY3NWVlYmQwNmY2NGViNGU1MGJjMjg2NTBmZjUxZjY3MjZjYjUxMWEwZjExYTkiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BjX2RmXzIwX2FnZW50ZS9hcnF1aXZvcy9QQ0RGX0FHRU5URV9DQjFfQ09NSlVTVElGSUNBVElWQS5QREYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIGluY29ycG9yYSBvYnJhIGRlIHRlcmNlaXJvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkFnZW50ZSBkZSBQb2zDrWNpYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyMX0sImlkIjoicGNkZi0yMDIxLWJhc2ljLXE0MyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jZWJyYXNwZS1wY2RmLTIwMjEtYmFzaWMiXSwicmVzb2x1dGlvbiI6IjEuIENhZGEgdW1hIGRhcyAyMCBtb8OnYXMgY3VtcHJpbWVudGEgY2FkYSB1bSBkb3MgMTggcmFwYXplcywgZ2VyYW5kbyB1bSBwYXIgZGlzdGludG8gcG9yIGN1bXByaW1lbnRvLiAyLiBIw6EgMjDDlzE4PTM2MCBhY2Vub3MgZW50cmUgb3MgZG9pcyBncnVwb3MsIHF1YW50aWRhZGUgc3VwZXJpb3IgYSAzNTAuIEp1bGdhbWVudG86IENlcnRvLiIsInN0YXRlbWVudCI6IlVtIGFnZW50ZSwgY29tIG8gb2JqZXRpdm8gZGUgbWVuc3VyYXIgbyByaXNjbyBkZSBwcm9wYWdhw6fDo28gZGEgY292aWQtMTkgZW0gdW1hIGludmVzdGlnYcOnw6NvIG5hIHF1YWwgYXZlcmlndWF2YSB1bSBwb3Nzw612ZWwgZGVzY3VtcHJpbWVudG8gZG8gYXJ0aWdvIDI2OCBkbyBDw7NkaWdvIFBlbmFsLCBxdWUgZGVmaW5lIGNvbW8gY3JpbWUgZGUgaW5mcmHDp8OjbyBkZSBtZWRpZGEgc2FuaXTDoXJpYSDigJxpbmZyaW5naXIgZGV0ZXJtaW5hw6fDo28gZG8gcG9kZXIgcMO6YmxpY28sIGRlc3RpbmFkYSBhIGltcGVkaXIgaW50cm9kdcOnw6NvIG91IHByb3BhZ2HDp8OjbyBkZSBkb2Vuw6dhIGNvbnRhZ2lvc2HigJ0sIG9idGV2ZSBkZSB1bWEgdGVzdGVtdW5oYSBhcyBpbmZvcm1hw6fDtWVzIGEgc2VndWlyLiDigKIgSG91dmUsIG5vIGxvY2FsIGludmVzdGlnYWRvLCB1bWEgZmVzdGEsIGNvbSBhZ2xvbWVyYcOnw6NvIGRlIG1vw6dhcyBlIHJhcGF6ZXM7IG7Do28gaGF2aWEgw6FsY29vbCBlbSBnZWwgZSBuaW5ndcOpbSBlc3RhdmEgdXNhbmRvIG3DoXNjYXJhcy4g4oCiIENhZGEgcmFwYXogY3VtcHJpbWVudG91IGV4YXRhbWVudGUgdW1hIHZleiBhIHRvZG9zIG9zIG91dHJvcyByYXBhemVzIGNvbSBhcGVydG9zIGRlIG3Do28uIOKAoiBDYWRhIG1vw6dhIGN1bXByaW1lbnRvdSBleGF0YW1lbnRlIHVtYSB2ZXogYSB0b2RhcyBhcyBvdXRyYXMgcGVzc29hcyBwcmVzZW50ZXMgY29tIHVtIGFjZW5vLiBDb25zaWRlcmFuZG8gcXVlIHPDo28gdmVyZGFkZWlyYXMgYXMgaW5mb3JtYcOnw7VlcyBwcmVzdGFkYXMgcGVsYSB0ZXN0ZW11bmhhIGRhIHNpdHVhw6fDo28gaGlwb3TDqXRpY2EgcHJlY2VkZW50ZSwganVsZ3VlIG9zIGl0ZW5zIHN1YnNlcXVlbnRlcy5cblxuNDMgU2UsIG5hIGZlc3RhLCBoYXZpYSAyMCBtb8OnYXMgZSAxOCByYXBhemVzLCBvIG7Dum1lcm8gZGUgY3VtcHJpbWVudG9zIGVudHJlIG1vw6dhcyBlIHJhcGF6ZXMgY29tIGFjZW5vcyBmb2kgc3VwZXJpb3IgYSAzNTAuIiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jZWJyYXNwZS1wY2RmLTIwMjEtYmFzaWMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJDZWJyYXNwZSDigJQgUG9sw61jaWEgQ2l2aWwgZG8gRGlzdHJpdG8gRmVkZXJhbCDigJQgQWdlbnRlLCBFZGl0YWwgMS8yMDIwLCBhcGxpY2HDp8OjbyAyMDIxLCBwcm92YSBlIGdhYmFyaXRvIGRlZmluaXRpdm8gb2ZpY2lhaXMiLCJ1cmwiOiJodHRwczovL3d3dy5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BjX2RmXzIwX2FnZW50ZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.pf-2018-basic-q50.json",
+        "mediaType": "application/json",
+        "sha256": "17bc3b08aaacc92d528b5d78a078da616d468b3c2d2b29c0d9d7ca8c38573752",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgYXBsaWNhw6fDo28gMTYvMDkvMjAxOCwgaXRlbSA1MC4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGYtMjAxOC1iYXNpYy1hbnN3ZXIucGRmIiwic2hhMjU2IjoiZjZhMDAwZWY1NGZlZDY2ZGMzOTViNDRkMTYyM2RmNzMwMzVmMTgzMjM1YjI2YmU3MWU5Nzk0NGEwYmMzOGM0ZCIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvcGZfMTgvYXJxdWl2b3MvR0FCX0RFRklOSVRJVk9fNDA4X0RHUFBGQ0IxX19QQUdfNC5QREYifSwiYm9hcmQiOiJDZWJyYXNwZSIsImJvb2tsZXQiOiI0MDhfREdQUEZDQjFfIFBhZyA0IiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgYXBsaWNhw6fDo28gMTYvMDkvMjAxOCIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtcGYtMjAxOC1iYXNpYy9xNTAiLCJudW1iZXIiOiI1MCIsInByb29mIjp7Im5vdGUiOiJQcm92YSBvZmljaWFsOyBjb21hbmRvLCBjb250ZXh0byBlIGp1bGdhbWVudG8gcHJlc2VydmFkb3MgZW0gQ2VydG8vRXJyYWRvLiBTw61tYm9sb3MgbWF0ZW3DoXRpY29zIGxpbmVhcml6YWRvcyBvbmRlIGluZGljYWRvIG5vIHJlZ2lzdHJvIGVkaXRvcmlhbC4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGYtMjAxOC1iYXNpYy1wcm9vZi5wZGYiLCJzaGEyNTYiOiIyYWQwZTExYmVjYjhhYzk1MmJhMTVhYzkzMWUyOTAzOTYwNTFlMGRjMDhlMzNjNDc2ZmUxNzMxMDY0M2Q3YTk3IiwidXJsIjoiaHR0cHM6Ly9jZG4uY2VicmFzcGUub3JnLmJyL2NvbmN1cnNvcy9wZl8xOC9hcnF1aXZvcy9NQVRSSVpfNDA4X0RHUFBGQ0IxX19QQUdfNC5QREYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIGluY29ycG9yYSBvYnJhIGRlIHRlcmNlaXJvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlBlcml0byBDcmltaW5hbCBGZWRlcmFsIOKAlCB0b2RhcyBhcyDDoXJlYXMsIGNvbmhlY2ltZW50b3MgYsOhc2ljb3MiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMTh9LCJpZCI6InBmLTIwMTgtYmFzaWMtcTUwIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNlYnJhc3BlLXBmLTIwMTgtYmFzaWMiXSwicmVzb2x1dGlvbiI6IjEuIErDoSBiYXN0YSBjb25zaWRlcmFyIG8gc3ViY29uanVudG8gZGUgY2Vuw6FyaW9zIGVtIHF1ZSBvcyBxdWF0cm8gZXN0YWRvcyBkZSByZXNpZMOqbmNpYSB0YW1iw6ltIHPDo28gdG9kb3MgZGlzdGludG9zLiBIw6EgNCEgYXRyaWJ1acOnw7VlcyBkZSBuYXR1cmFsaWRhZGUgZSA0ISBkZSByZXNpZMOqbmNpYSwgaW5kZXBlbmRlbnRlcy4gMi4gU8OjbyBwZWxvIG1lbm9zIDI0w5cyND01NzYgY2Vuw6FyaW9zLCBhY2ltYSBkZSAxMDAuIE1lc21vIHNlIGZvcmVtIGFkbWl0aWRhcyByZXNpZMOqbmNpYXMgY29pbmNpZGVudGVzLCBhIGNvbmNsdXPDo28gY29udGludWEgZmFsc2EuIEp1bGdhbWVudG86IEVycmFkby4iLCJzdGF0ZW1lbnQiOiJPcyBpbmRpdsOtZHVvcyBTMSwgUzIsIFMzIGUgUzQsIHN1c3BlaXRvcyBkYSBwcsOhdGljYSBkZSB1bSBpbMOtY2l0byBwZW5hbCwgZm9yYW0gaW50ZXJyb2dhZG9zLCBpc29sYWRhbWVudGUsIG5lc3NhIG1lc21hIG9yZGVtLiBObyBkZXBvaW1lbnRvLCBjb20gcmVsYcOnw6NvIMOgIHJlc3BvbnNhYmlsaXphw6fDo28gcGVsYSBwcsOhdGljYSBkbyBpbMOtY2l0bywgUzEgZGlzc2UgcXVlIFMyIG1lbnRpcmlhOyBTMiBkaXNzZSBxdWUgUzMgbWVudGlyaWE7IFMzIGRpc3NlIHF1ZSBTNCBtZW50aXJpYS4gQSBwYXJ0aXIgZGVzc2Egc2l0dWHDp8OjbywganVsZ3VlIG9zIGl0ZW5zIGEgc2VndWlyLlxuXG41MCBTZSBvcyBxdWF0cm8gc3VzcGVpdG9zIHRpdmVyZW0gbmFzY2lkbyBub3MgZXN0YWRvcyBkYSBCYWhpYSwgZGUgUGVybmFtYnVjbywgZG8gUmlvIGRlIEphbmVpcm8gZSBkZSBTw6NvIFBhdWxvLCBjYWRhIHVtIGVtIHVtIGVzdGFkbyBkaWZlcmVudGUsIGUgYXR1YWxtZW50ZSByZXNpZGlyZW0gbmVzc2VzIG1lc21vcyBlc3RhZG9zLCBhaW5kYSBxdWUgYWxndW5zIGRlbGVzIHBvc3NhbSB0ZXIgc2UgbXVkYWRvIGRlIHVtIGVzdGFkbyBwYXJhIG91dHJvLCBhIHF1YW50aWRhZGUgZGUgcG9zc2liaWxpZGFkZXMgZGUgbmF0dXJhbGlkYWRlIGUgcmVzaWTDqm5jaWEgZG9zIGFjdXNhZG9zIMOpIGluZmVyaW9yIGEgMTAwLiIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2VicmFzcGUtcGYtMjAxOC1iYXNpYyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgYXBsaWNhw6fDo28gMTYvMDkvMjAxOCwgcHJvdmEgZSBnYWJhcml0byBkZWZpbml0aXZvIG9maWNpYWlzIiwidXJsIjoiaHR0cHM6Ly93d3cuY2VicmFzcGUub3JnLmJyL2NvbmN1cnNvcy9wZl8xOCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.pf-2021-agente-q49.json",
+        "mediaType": "application/json",
+        "sha256": "ffc54999d7e71a2588d1363c85d33650b74374ff56288c806609eeba0e4c8f99",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSwgaXRlbSA0OS4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGYtMjAyMS1hZ2VudGUtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjM2YzcwZTNhZDZiY2U3OWFlODcyMzMzYjBiYzRjYmI0ODQ4Y2Q4NDNiNmVkN2Y1NjUxNmI4YTE2OTAyZGJlM2IiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPX01BVFJJWl81NzdfUEZfMDAyXzAwLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1hdHJpel81NzdfUEZfMDAyXzAwIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtcGYtMjAyMS1hZ2VudGUvcTQ5IiwibnVtYmVyIjoiNDkiLCJwcm9vZiI6eyJub3RlIjoiUHJvdmEgb2ZpY2lhbDsgY29tYW5kbywgY29udGV4dG8gZSBqdWxnYW1lbnRvIHByZXNlcnZhZG9zIGVtIENlcnRvL0VycmFkby4gU8OtbWJvbG9zIG1hdGVtw6F0aWNvcyBsaW5lYXJpemFkb3Mgb25kZSBpbmRpY2FkbyBubyByZWdpc3RybyBlZGl0b3JpYWwuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL3BmLTIwMjEtYWdlbnRlLXByb29mLnBkZiIsInNoYTI1NiI6IjU0NjQ2NTRmMDJhYmZjYWZlOTIxZWFhNjVjNGYzMGJmOWMyNjdkODBlNjY3YjdiMzVhOGNhOWUzZjExNWI0MmYiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0NBUkdPXzJfQUdFTlRFX0RFX1BPTENJQV9GRURFUkFMLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIGRlIFBvbMOtY2lhIEZlZGVyYWwiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjF9LCJpZCI6InBmLTIwMjEtYWdlbnRlLXE0OSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jZWJyYXNwZS1wZi0yMDIxLWFnZW50ZSJdLCJyZXNvbHV0aW9uIjoiMS4gRml4YWRhcyBhcyBkdWFzIGxvY2FsaWRhZGVzIGRpc3RpbnRhcywgZXNjb2xoZXIgYSBlcXVpcGUgZGEgcHJpbWVpcmEgZGV0ZXJtaW5hIGludGVncmFsbWVudGUgYSBvdXRyYSwgcG9pcyB0b2RvcyBvcyBwcm9maXNzaW9uYWlzIHNlcsOjbyB1c2Fkb3MuIDIuIEjDoSAyw5cyw5dDKDQsMik9MjQgZXNjb2xoYXMgdGFudG8gcGFyYSBhIHByaW1laXJhIGVxdWlwZSBxdWFudG8gcGFyYSBvIHBhciBjb21wbGV0bywgZW0gYmlqZcOnw6NvLiBKdWxnYW1lbnRvOiBDZXJ0by4iLCJzdGF0ZW1lbnQiOiJQYXJhIHJlYWxpemFyIHVtYSBvcGVyYcOnw6NvIGRlIGJ1c2NhIGUgYXByZWVuc8OjbywgZW0gZHVhcyBsb2NhbGlkYWRlcyBkaWZlcmVudGVzLCBkZXZlbSBzZXIgZGVzbG9jYWRhcyBkdWFzIGVxdWlwZXMsIGNhZGEgdW1hIGRlbGFzIGNvbXBvc3RhIHBvciAxIGRlbGVnYWRvLCAxIGVzY3JpdsOjbyBlIDIgYWdlbnRlcy4gVGVuZG8gY29tbyBiYXNlIGVzc2FzIGluZm9ybWHDp8O1ZXMsIGp1bGd1ZSBvcyBpdGVucyBzZWd1aW50ZXMuXG5cbjQ5IFNlIGVzdGl2ZXJlbSBkaXNwb27DrXZlaXMsIG5vIG1vbWVudG8gZGUgZm9ybWHDp8OjbyBkYXMgZXF1aXBlcywgZXhhdGFtZW50ZSwgMiBkZWxlZ2Fkb3MsIDIgZXNjcml2w6NlcyBlIDQgYWdlbnRlcywgbyBuw7ptZXJvIGRlIG1hbmVpcmFzIGRpc3RpbnRhcyBkZSBzZSBtb250YXIgYXMgZHVhcyBlcXVpcGVzIHNlcmlhIGlndWFsIGFvIG7Dum1lcm8gZGUgbWFuZWlyYXMgZGUgc2UgbW9udGFyLCBlc2NvbGhlbmRvLXNlIGVudHJlIGVzc2VzIG1lc21vcyBwcm9maXNzaW9uYWlzLCB1bWEgw7puaWNhIGVxdWlwZSBwYXJhIGEgcmVhbGl6YcOnw6NvIGRlIHVtYSBidXNjYSBlbSB1bWEgw7puaWNhIGxvY2FsaWRhZGUuIiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jZWJyYXNwZS1wZi0yMDIxLWFnZW50ZSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSwgcHJvdmEgZSBnYWJhcml0byBkZWZpbml0aXZvIG9maWNpYWlzIiwidXJsIjoiaHR0cHM6Ly93d3cuY2VicmFzcGUub3JnLmJyL2NvbmN1cnNvcy9wZl8yMSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.pf-2021-agente-q58.json",
+        "mediaType": "application/json",
+        "sha256": "dd9b3537394b620edcf75f9d73a11f19c8d3faa0421c544b3dffc33a20c79de2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSwgaXRlbSA1OC4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGYtMjAyMS1hZ2VudGUtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjM2YzcwZTNhZDZiY2U3OWFlODcyMzMzYjBiYzRjYmI0ODQ4Y2Q4NDNiNmVkN2Y1NjUxNmI4YTE2OTAyZGJlM2IiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPX01BVFJJWl81NzdfUEZfMDAyXzAwLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1hdHJpel81NzdfUEZfMDAyXzAwIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtcGYtMjAyMS1hZ2VudGUvcTU4IiwibnVtYmVyIjoiNTgiLCJwcm9vZiI6eyJub3RlIjoiUHJvdmEgb2ZpY2lhbDsgY29tYW5kbywgY29udGV4dG8gZSBqdWxnYW1lbnRvIHByZXNlcnZhZG9zIGVtIENlcnRvL0VycmFkby4gU8OtbWJvbG9zIG1hdGVtw6F0aWNvcyBsaW5lYXJpemFkb3Mgb25kZSBpbmRpY2FkbyBubyByZWdpc3RybyBlZGl0b3JpYWwuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL3BmLTIwMjEtYWdlbnRlLXByb29mLnBkZiIsInNoYTI1NiI6IjU0NjQ2NTRmMDJhYmZjYWZlOTIxZWFhNjVjNGYzMGJmOWMyNjdkODBlNjY3YjdiMzVhOGNhOWUzZjExNWI0MmYiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0NBUkdPXzJfQUdFTlRFX0RFX1BPTENJQV9GRURFUkFMLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIGRlIFBvbMOtY2lhIEZlZGVyYWwiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjF9LCJpZCI6InBmLTIwMjEtYWdlbnRlLXE1OCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jZWJyYXNwZS1wZi0yMDIxLWFnZW50ZSJdLCJyZXNvbHV0aW9uIjoiMS4gQ2FkYSBQ4oKZIGVzdMOhIGNvbnRpZG8gZW0gUC4gQ2FkYSBwb2xpY2lhbCBlbSBleGVyY8OtY2lvIHRlbSB1bSB0ZW1wbyBmaW5pdG8gZGUgZXhwZXJpw6puY2lhLCBsaW1pdGFkbyBwb3IgYWxndW0gaW50ZWlybyBuLiAyLiBFc3NlIHBvbGljaWFsIHBlcnRlbmNlIGEgUOKCmTsgYSB1bmnDo28gY29udMOpbSB0b2RvIFAgZSBuw6NvIGNvbnTDqW0gZWxlbWVudG9zIGV4dGVybm9zLiBKdWxnYW1lbnRvOiBDZXJ0by4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgb3Mgc2VndWludGVzIGNvbmp1bnRvczogUCA9IHt0b2RvcyBvcyBwb2xpY2lhaXMgZmVkZXJhaXMgZW0gZWZldGl2byBleGVyY8OtY2lvIG5vIHBhw61zfTsgUOKCgSA9IHtwb2xpY2lhaXMgZmVkZXJhaXMgZW0gZWZldGl2byBleGVyY8OtY2lvIG5vIHBhw61zIGUgcXVlIHTDqm0gYXTDqSAxIGFubyBkZSBleHBlcmnDqm5jaWEgbm8gZXhlcmPDrWNpbyBkbyBjYXJnb307IFDigoIgPSB7cG9saWNpYWlzIGZlZGVyYWlzIGVtIGVmZXRpdm8gZXhlcmPDrWNpbyBubyBwYcOtcyBlIHF1ZSB0w6ptIGF0w6kgMiBhbm9zIGRlIGV4cGVyacOqbmNpYSBubyBleGVyY8OtY2lvIGRvIGNhcmdvfTsgUOKCgyA9IHtwb2xpY2lhaXMgZmVkZXJhaXMgZW0gZWZldGl2byBleGVyY8OtY2lvIG5vIHBhw61zIGUgcXVlIHTDqm0gYXTDqSAzIGFub3MgZGUgZXhwZXJpw6puY2lhIG5vIGV4ZXJjw61jaW8gZG8gY2FyZ299OyBlLCBhc3NpbSwgc3VjZXNzaXZhbWVudGUuIENvbSBiYXNlIG5lc3NhcyBpbmZvcm1hw6fDtWVzLCBqdWxndWUgb3MgaXRlbnMgcXVlIHNlIHNlZ3VlbS5cblxuNTggTyBjb25qdW50byBQIMOpIGlndWFsIMOgIHVuacOjbyBpbmZpbml0YSBkb3MgY29uanVudG9zIFDigoEsIFDigoIsIFDigoMsIC4uLiIsInRvcGljSWQiOiJNMTIifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2VicmFzcGUtcGYtMjAyMS1hZ2VudGUiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJDZWJyYXNwZSDigJQgUG9sw61jaWEgRmVkZXJhbCDigJQgQ29uY3Vyc28gUMO6YmxpY28sIEVkaXRhbCAxLzIwMjEsIHByb3ZhIGUgZ2FiYXJpdG8gZGVmaW5pdGl2byBvZmljaWFpcyIsInVybCI6Imh0dHBzOi8vd3d3LmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvcGZfMjEifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M12.s.pf-2021-agente-q60.json",
+        "mediaType": "application/json",
+        "sha256": "fd4fd5ccf6734555632682cccfe8ccd633c9b270e5a7e18307b72a69dffea054",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSwgaXRlbSA2MC4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGYtMjAyMS1hZ2VudGUtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjM2YzcwZTNhZDZiY2U3OWFlODcyMzMzYjBiYzRjYmI0ODQ4Y2Q4NDNiNmVkN2Y1NjUxNmI4YTE2OTAyZGJlM2IiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPX01BVFJJWl81NzdfUEZfMDAyXzAwLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1hdHJpel81NzdfUEZfMDAyXzAwIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtcGYtMjAyMS1hZ2VudGUvcTYwIiwibnVtYmVyIjoiNjAiLCJwcm9vZiI6eyJub3RlIjoiUHJvdmEgb2ZpY2lhbDsgY29tYW5kbywgY29udGV4dG8gZSBqdWxnYW1lbnRvIHByZXNlcnZhZG9zIGVtIENlcnRvL0VycmFkby4gU8OtbWJvbG9zIG1hdGVtw6F0aWNvcyBsaW5lYXJpemFkb3Mgb25kZSBpbmRpY2FkbyBubyByZWdpc3RybyBlZGl0b3JpYWwuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL3BmLTIwMjEtYWdlbnRlLXByb29mLnBkZiIsInNoYTI1NiI6IjU0NjQ2NTRmMDJhYmZjYWZlOTIxZWFhNjVjNGYzMGJmOWMyNjdkODBlNjY3YjdiMzVhOGNhOWUzZjExNWI0MmYiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0NBUkdPXzJfQUdFTlRFX0RFX1BPTENJQV9GRURFUkFMLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIGRlIFBvbMOtY2lhIEZlZGVyYWwiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjF9LCJpZCI6InBmLTIwMjEtYWdlbnRlLXE2MCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jZWJyYXNwZS1wZi0yMDIxLWFnZW50ZSJdLCJyZXNvbHV0aW9uIjoiMS4gQ29tbyBQ4oKC4oqGUOKCgywgYSBkaWZlcmVuw6dhIFDigoLiiJJQ4oKDIMOpIHZhemlhOyBlbGEgbsOjbyByZXByZXNlbnRhIHBvbGljaWFpcyBlbnRyZSBkb2lzIGUgdHLDqnMgYW5vcy4gMi4gUGFyYSBhIGZhaXhhIGFjaW1hIGRlIGRvaXMgZSBhdMOpIHRyw6pzIGFub3Mgc2VyaWEgdXNhZGEgUOKCg+KIklDigoIsIGRpdmlkaW5kbyBzdWEgY2FyZGluYWxpZGFkZSBwb3IgbihQKSwgbyBlc3Bhw6dvIGFtb3N0cmFsLiBBIGbDs3JtdWxhIHByb3Bvc3RhIGludmVydGUgYSBkaWZlcmVuw6dhIGUgdXNhIGRlbm9taW5hZG9yIGluYWRlcXVhZG8uIEp1bGdhbWVudG86IEVycmFkby4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgb3Mgc2VndWludGVzIGNvbmp1bnRvczogUCA9IHt0b2RvcyBvcyBwb2xpY2lhaXMgZmVkZXJhaXMgZW0gZWZldGl2byBleGVyY8OtY2lvIG5vIHBhw61zfTsgUOKCgSA9IHtwb2xpY2lhaXMgZmVkZXJhaXMgZW0gZWZldGl2byBleGVyY8OtY2lvIG5vIHBhw61zIGUgcXVlIHTDqm0gYXTDqSAxIGFubyBkZSBleHBlcmnDqm5jaWEgbm8gZXhlcmPDrWNpbyBkbyBjYXJnb307IFDigoIgPSB7cG9saWNpYWlzIGZlZGVyYWlzIGVtIGVmZXRpdm8gZXhlcmPDrWNpbyBubyBwYcOtcyBlIHF1ZSB0w6ptIGF0w6kgMiBhbm9zIGRlIGV4cGVyacOqbmNpYSBubyBleGVyY8OtY2lvIGRvIGNhcmdvfTsgUOKCgyA9IHtwb2xpY2lhaXMgZmVkZXJhaXMgZW0gZWZldGl2byBleGVyY8OtY2lvIG5vIHBhw61zIGUgcXVlIHTDqm0gYXTDqSAzIGFub3MgZGUgZXhwZXJpw6puY2lhIG5vIGV4ZXJjw61jaW8gZG8gY2FyZ299OyBlLCBhc3NpbSwgc3VjZXNzaXZhbWVudGUuIENvbSBiYXNlIG5lc3NhcyBpbmZvcm1hw6fDtWVzLCBqdWxndWUgb3MgaXRlbnMgcXVlIHNlIHNlZ3VlbS5cblxuNjAgRXNjb2xoZW5kby1zZSBhbGVhdG9yaWFtZW50ZSB1bSBpbnRlZ3JhbnRlIGRvIGNvbmp1bnRvIFAsIGEgcHJvYmFiaWxpZGFkZSBkZSBlbGUgdGVyIGVudHJlIGRvaXMgZSB0csOqcyBhbm9zIGRlIGV4cGVyacOqbmNpYSBubyBleGVyY8OtY2lvIGRvIGNhcmdvIMOpIGRhZGEgcG9yIG4oUOKCgiDiiJIgUOKCgykvbihQ4oKDKSwgZW0gcXVlIG4oWCkgaW5kaWNhIG8gbsO6bWVybyBkZSBlbGVtZW50b3MgZG8gY29uanVudG8gWCBlIFDigoIg4oiSIFDigoMgw6kgbyBjb25qdW50byBmb3JtYWRvIHBlbG9zIGluZGl2w61kdW9zIHF1ZSBlc3TDo28gZW0gUOKCgiwgbWFzIG7Do28gZXN0w6NvIGVtIFDigoMuIiwidG9waWNJZCI6Ik0xMiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jZWJyYXNwZS1wZi0yMDIxLWFnZW50ZSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSwgcHJvdmEgZSBnYWJhcml0byBkZWZpbml0aXZvIG9maWNpYWlzIiwidXJsIjoiaHR0cHM6Ly93d3cuY2VicmFzcGUub3JnLmJyL2NvbmN1cnNvcy9wZl8yMSJ9fX0="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M12.s.cacapava-profmat-q31",
+    "admin.2026-11.M12.s.inss-2022-comum-q47",
+    "admin.2026-11.M12.s.mat-complemento-intersecao",
+    "admin.2026-11.M12.s.mat-complementos-diagrama",
+    "admin.2026-11.M12.s.mat-conjunto-potencia",
+    "admin.2026-11.M12.s.mat-diagrama-afirmacao-universal",
+    "admin.2026-11.M12.s.mat-duas-intersecao",
+    "admin.2026-11.M12.s.mat-elemento-conjunto-aninhado",
+    "admin.2026-11.M12.s.mat-exatamente-dois-tres",
+    "admin.2026-11.M12.s.mat-gavetas-garantir-par",
+    "admin.2026-11.M12.s.mat-limite-intersecao",
+    "admin.2026-11.M12.s.mat-nenhum-dois",
+    "admin.2026-11.M12.s.mat-particao-ambos-nenhum",
+    "admin.2026-11.M12.s.mat-particao-universo",
+    "admin.2026-11.M12.s.mat-pertinencia-enumerada",
+    "admin.2026-11.M12.s.mat-sobreposicao-limites-completos",
+    "admin.2026-11.M12.s.mat-subconjuntos-tamanho-fixo",
+    "admin.2026-11.M12.s.mat-tres-conjuntos-minimo-comum",
+    "admin.2026-11.M12.s.mat-tres-regioes-dadas",
+    "admin.2026-11.M12.s.mat-tres-sem-tripla",
+    "admin.2026-11.M12.s.mat-uniao-subconjunto",
+    "admin.2026-11.M12.s.mat-vazio-versus-unitario",
+    "admin.2026-11.M12.s.pcdf-2021-basic-q43",
+    "admin.2026-11.M12.s.pf-2018-basic-q50",
+    "admin.2026-11.M12.s.pf-2021-agente-q49",
+    "admin.2026-11.M12.s.pf-2021-agente-q58",
+    "admin.2026-11.M12.s.pf-2021-agente-q60"
+  ]
+}

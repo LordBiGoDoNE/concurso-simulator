@@ -79,7 +79,7 @@ def check():
                     raise ValueError("PostgreSQL sintético não ficou pronto")
                 time.sleep(0.2)
         source_container, target_container = containers
-        for version in (10, 11, 12, 13, 14):
+        for version in (10, 11, 12, 13, 14, 15):
             reset(source_container, token)
             reset(target_container, token)
             migrate(source_container, version)
@@ -134,7 +134,7 @@ def check():
                  "checks": ["real-migrations", "custom-dump-restore", "business-fingerprints-preserved", "source-unchanged",
                             "read-only-preview", "restored-sessions-cleared", "occupied-destination-rejected", "schema-mismatch-blocked"],
                  "limits": "Synthetic PostgreSQL 18.6 without network/host ports. Lifecycle wiring substituted; no historical API image startup or operator data."})
-    print("BACKUP_SCHEMAS_PASS: V10/V11/V12/V13/V14 dumps and restores validated")
+    print("BACKUP_SCHEMAS_PASS: V10/V11/V12/V13/V14/V15 dumps and restores validated")
 
 
 if __name__ == "__main__":

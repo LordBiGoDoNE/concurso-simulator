@@ -1,0 +1,829 @@
+{
+  "format": "question-expansion-external-selection/v1",
+  "date": "2026-11-12",
+  "source": "work/aggregate-wip (auditoria v10)",
+  "items": 2587,
+  "cells": 102,
+  "packages": [
+    {
+      "topicId": "A01",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "647b5c682d28874fa6cad7fb87f158c6c5dac4e7e268159ade95cbf609fd822f",
+      "selectionDigest": "db89874cca710e1ffd10436d7115135d95c6b93dc2872844f10b4b2f44676395",
+      "requestSha256": "f1ddf42ba1328c6a86e27bc4796d27a15a4213399e0ec1607e0996d1a94ffd9a"
+    },
+    {
+      "topicId": "A01",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "c0639b870901f9198f2f03a842f98dad9375f9a19a03c1faed8dd791851f76d8",
+      "selectionDigest": "2cfe2699fc4d36c34d46f481460b05bb5d8f0472de364c035ea647ed9b6a1aae",
+      "requestSha256": "bddb0b3814dd7bc7dfae57407e130ade2d06cf3023844149d6d36aa9ded16dff"
+    },
+    {
+      "topicId": "A02",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "1c70457ceba382c73a7a179d90eae5b9e8b68283919d81c519adc732d31f5b1f",
+      "selectionDigest": "45d73b692669d037cb666a0f8a21d4431f3e542488b6e2d875a522d7e3b4b494",
+      "requestSha256": "cc90a23821a706655dcf7cd12f53981f51640aa27f42907ec215a11d8610c8b0"
+    },
+    {
+      "topicId": "A02",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "c0b51c16a008c327a22127c9733e0fd2524cae79e56b516206860dfb1f5aaed5",
+      "selectionDigest": "70cd8525c7f402ce146ca3cf8ea55ef5d3903b9e3295866caac5119268cabaf0",
+      "requestSha256": "ae7f8483fa9b4ff942362a1533723635799971dcdef3fbd8d8a3f499ac6cfad0"
+    },
+    {
+      "topicId": "A03",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "00c52492beb93b3b697d050b424785895da3371105e549c9040ac5f04d2d3456",
+      "selectionDigest": "141224ba241262f9f3eb0b0afe09df40bb62870ae0780bd67269471d320fff73",
+      "requestSha256": "bc835f34d5f00d2cb974453e711937dcc47b18eccd5adaf4c4a625ac4ad188c6"
+    },
+    {
+      "topicId": "A03",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "ea6161da7d28c143e8624645d27aff532724ed19ac3d2a386d671d63587f135f",
+      "selectionDigest": "ed21a10a1cc18d87c7c0d6b9a232a200854cf78c09f4e5573ff385d9848713e9",
+      "requestSha256": "726ca7b8fb43e59cca1f93969b9deb5b7cc57420a4806e5ee061df5276bfc1f9"
+    },
+    {
+      "topicId": "A04",
+      "purpose": "PRATICA_AULA",
+      "items": 27,
+      "packageDigest": "bed114b394d1d706b6968687b4491e6e4544539456d6a63b393fae82509c2f4f",
+      "selectionDigest": "0e305e21421fe47f3f4bda60e8b3b213f90588a2467414142fe571b49f891341",
+      "requestSha256": "88b8eb2367af2e74540862b107c74af6570cabf8e5b6759817645bc316331fb2"
+    },
+    {
+      "topicId": "A04",
+      "purpose": "SIMULADO",
+      "items": 27,
+      "packageDigest": "f4b56c5b2c2a535a112804d12d506011b8515c46d7a4ea86782aa8463f0ca0e9",
+      "selectionDigest": "6e60a1a99a443fcb302bd46c97164df0e3dd184fd35aef6c743d99c46ca4ead5",
+      "requestSha256": "0675083fb8c8c85934e2074315a9a90ad37e70fe370fb46566b55862305b0c57"
+    },
+    {
+      "topicId": "A05",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "1eb28dd977c6daf9c21282489920b50f2b5e975f2c80bc923674dc41bbd1798e",
+      "selectionDigest": "6723644c217f171253dc4d06983fe51fbd3f23e2a2a37f8842772dc4018044cd",
+      "requestSha256": "c7b348dd39b794075d23f470d7464b094b7b577d835e66e5bc3a8a5938422adc"
+    },
+    {
+      "topicId": "A05",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "463d1de9c84a5ea65a28a7fc71114fa2e66ec6ceedd9f0bc022f02de0329e73d",
+      "selectionDigest": "29a6fc0d871cc43eeee7a91677fa34e58708f91d6b7b72a9e7a5d57148dba754",
+      "requestSha256": "e95cd88a4e6347d9ae99019bcaa5bf0935802e6d2b6203b803cb8e8a2fb4deb3"
+    },
+    {
+      "topicId": "A06",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "763b12a4fa2147dae4ac55fb6a32d1af9908af711cbf28e1d40aa25b92551554",
+      "selectionDigest": "b017ea5712f4ead162cc65944c09d5fc9ba4bc4c6bb92374468b5039a1fda6bf",
+      "requestSha256": "43896af25cefff05c782f9922c022856d62266f6a1ede59dd6d430dc56e2c72d"
+    },
+    {
+      "topicId": "A06",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "0c55a38e22d5c08ed0d5a2d128c583e16297ba6eada162faabac3ca27f47164d",
+      "selectionDigest": "8626330347d4b6112611ebb313a83b210700d0d0ba9410d060e2ca845589352f",
+      "requestSha256": "f6f7316d6cf0fa3d0aeb004da6d8e7472c98bdc026f16f204c93dc49944355a1"
+    },
+    {
+      "topicId": "A07",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "6d9ee9c8448daf9f989614edcf1a1c53e1bcea153242be6bd4cdd450e6a1ce14",
+      "selectionDigest": "610c57e2bb271a612d8d0a512913fedc4a74493009f980f23975e7254effa371",
+      "requestSha256": "fb2fb908279085218b83a2ff6e1e472850ae27854f2ce90df1bf8a2f0c4182b8"
+    },
+    {
+      "topicId": "A07",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "dbcb93e617b9dd9dc23e9f0fa8ee1571c70760b5ec457c37c9dc04fc3b78d053",
+      "selectionDigest": "bdb4eede414124bf14bc89a0a73f74b0514159f98e392467a408556e82d805fb",
+      "requestSha256": "1841afdce8bae06067e52b814ec07b78fa99ae73d826e004d8ef360509f17792"
+    },
+    {
+      "topicId": "A08",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "db5c261a9d6f9ab6d27c3c82916b56e5718242948bd0160358a49ea1ce377b26",
+      "selectionDigest": "b16fda3ee6181d099d8b6fb869f634bd0c2adabb9016c8fb70d695a799dee3e6",
+      "requestSha256": "0f979ac15a0a4a17bf964045bb426b5977379b91841d445fbe49008e66bfa901"
+    },
+    {
+      "topicId": "A08",
+      "purpose": "SIMULADO",
+      "items": 27,
+      "packageDigest": "cb0c9130bb68d13ee98b5c5ce6e6cb494eee1076b342223cf8020d6804c2580e",
+      "selectionDigest": "c0eb2096624aca1c29fa6efd37f42501a2d9f8d6d97fe33b93b993c9b03d6457",
+      "requestSha256": "e7b35d467b76eef7971ac1a36837bc1093af39e3b771bf2f38e1b159350f2810"
+    },
+    {
+      "topicId": "I01",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "f5140b9e3ab51da185c0e312d62facbd93853367aa16a081d609b867b62c2adf",
+      "selectionDigest": "9d4236d49049e150a523a2cb0b443e3d12b4e72b884f3c43b5fe6d0e08864433",
+      "requestSha256": "8c09a6e966337bc30f7d1a05ceeadfd234eb5112c229dcb69ad30e0c64408ed9"
+    },
+    {
+      "topicId": "I01",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "2d8b60d392f6cc2091fea0514bfebbd365f29e67fee2d259d9a3509040e6ecb0",
+      "selectionDigest": "4ce817eef40021a107a6b809abd1f1d2ec4deefc4413e9100e7f4f5d3dc0fc70",
+      "requestSha256": "4e256193a7ed490985d0d913a506c09e7da4c2d81c97586e2d43b6e9a0125021"
+    },
+    {
+      "topicId": "I02",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "390ec64a4eb22990118e603f4bfdb7ee35658bd252712fff6216ddc0e3dfe6c9",
+      "selectionDigest": "a553c7c962956abefa9c5e366729f34f7f271758f190ad92bbc5f178116b43c3",
+      "requestSha256": "53c1ffd83f8386793372ea34e08789ea1b87af513d113bfe9cfe9bcb2f32a722"
+    },
+    {
+      "topicId": "I02",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "99ed5d56e9018882feef8dede6fb495485779573d0a519fa2abbb1ec8e382272",
+      "selectionDigest": "9d6b9e99e6bc55eeca520f0ee833b5c1c0eab8d7948528ccecfdd86b00a33e85",
+      "requestSha256": "6e4e87c72cedfe42103a8fc9f2a31864c359644fe970f1044fe5b49530d5719b"
+    },
+    {
+      "topicId": "I03",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "5bc04a77184d1736b6f23862cb7c9edf0c6eea3b1151a061c51c959d37e6f53b",
+      "selectionDigest": "3dca46e2124f1cdb676ca93da47eb445a18a28559c583462d50c0000a8a31724",
+      "requestSha256": "968582bf48146b129cc2c21ea891259fd11a395a2b9a5b9ac8bbe903d8d5339f"
+    },
+    {
+      "topicId": "I03",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "80face4186dfb83382c6a326c4f08519d326ad7e5ab892fc73044088f04d2f45",
+      "selectionDigest": "d97a465ade2a63aabc4c227756b7066818ed8dce0636af4b2cb9e97139d5d745",
+      "requestSha256": "135636948f2eb66eb53407bd890878d8749f96c1fbdf4d4ab1f420681c7b8c20"
+    },
+    {
+      "topicId": "I04",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "59ce793f266b9a2bf2c4db35c598273392752643313787c9b80697b13fa51f92",
+      "selectionDigest": "c1f9068cc4f5fb839efd1e97d4f9b3e4d2dca9fe7ca72e05a39e201568fa32e6",
+      "requestSha256": "ab00514316d7cfdb8601823da132828b6c92073b69ef82d3c7c144c43ee7c4ee"
+    },
+    {
+      "topicId": "I04",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "81f630c2228c03b07e612d25d0512a60f32b335a56dcd92e3a0d4c7474d9d256",
+      "selectionDigest": "f9dc47b470849c58c21cf4132eed4f7250eef72d325a7997fe37143c330384ad",
+      "requestSha256": "5bf977b89c25bffffd2caa1b10058536289a12708d7ecc7474f95c852c44032d"
+    },
+    {
+      "topicId": "I05",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "e76ad250001a9528a9ba052b764af7f11f0448369a1f58a77acc72b93a666bfa",
+      "selectionDigest": "1f2a666b6310d5ea9c550c707cc6103d548d182e5000a7dfe5b0c7c91d6ff177",
+      "requestSha256": "16638cb35d7793821537cd379e8f21ca4a210bb2ae8667a485c1344767c32f93"
+    },
+    {
+      "topicId": "I05",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "745801200485d8257b527e0d39edbad75fbd38dbb7afae8dd755e4215ab7492e",
+      "selectionDigest": "19a1bbad854d812af074db6200eb148b53d19fae3eafc547822e879ec4f92d9f",
+      "requestSha256": "ae3ef54195fc3c4fc5f974165b293c990d2ed0a6df296a6853593ee079b1f2a0"
+    },
+    {
+      "topicId": "I06",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "061eb2f573e88a68df713993b1b9d90a44df8daa5e2b0c7f114f8ee6e5667467",
+      "selectionDigest": "10c6a83a9ac6fb75a3554e831c0316c05cf4eba50cd43877474e098659e9bf21",
+      "requestSha256": "e86993d87acd13c8d03f04d868daf7193092295bab21bff473592116759d1ee7"
+    },
+    {
+      "topicId": "I06",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "2ad36e51240aac23090957ac63ab9be774a3ce68f0ce76b31d57bb67a1ba426e",
+      "selectionDigest": "fac71c4e8fe83f91ff8d95b425fee92606f44d1e9fe76ee030aa610bc4901091",
+      "requestSha256": "ddde349fa9e73e2a7e282ac24481173e97cfffb7e4975785367f63292d23da82"
+    },
+    {
+      "topicId": "I07",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "dc6b7d00d1b1911d249c9b37767d5f5ce58986abd28cb12eb9da79ec93886f78",
+      "selectionDigest": "b5275064bd499dd2461cb90fa692857318024ad67da4d38ffdbc305ef4634923",
+      "requestSha256": "b200cf7a1a6d5ae38f88b275703a142696c8eabee4acca306d61918214949eb9"
+    },
+    {
+      "topicId": "I07",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "3b1ec683ee0205244bbfa38adf90ba819f75732124f2838e1d38a06174090c43",
+      "selectionDigest": "7d0f299496a8e49eabe5fbebfeba69911404222bc5a0475092c6db466a21874f",
+      "requestSha256": "472cd05aa7393a2f72e4547b849b0efe5b8ed4a5703fac6c586bc556c34744a0"
+    },
+    {
+      "topicId": "I08",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "6272d40822a9430b7c81fe602743fe3c02952578eb595cf082d8d46338065afd",
+      "selectionDigest": "6daa8753994c47ac3e74dfc84c4a1d8a0c36dff8ddd29819da76f5a74ca8f7e2",
+      "requestSha256": "7608c003b6406aed4e20ab771547ee4daac6604241287a7372845abe3c641fd3"
+    },
+    {
+      "topicId": "I08",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "65a4f12071afaa4ea3ff9869a0dbc5accb0f6a979769bee3ce8ad6b7fecec3c5",
+      "selectionDigest": "dc65a2f30020cad1c7468127d402341ffab6978504a4d4ce8138163a5e398b7f",
+      "requestSha256": "9ed88ee507a3c4096e0a9bf9dce9a301a14d7d530b013714b8219ba284dcb6f4"
+    },
+    {
+      "topicId": "I09",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "9cf51ee867f9ab55b5a03aa27412b89fb28250a4528110030e5f60f16a91b505",
+      "selectionDigest": "f1abffa7e87c630a4e818c634851708db555bf069176674d7b248f934567da10",
+      "requestSha256": "d2025ebaf9b0213a29cb375ad272a48c24b3b71ec8572a9cc5abfba5126dfe4b"
+    },
+    {
+      "topicId": "I09",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "e97404af1ffce5aeafee5cd73d2d665ffcbd6009e3c4080826db5b8f7b3e2fbc",
+      "selectionDigest": "54ba76db945903afa0ea5d6f2be9f4b347448bc538159c4033f19116829ed3a3",
+      "requestSha256": "26ddfd70ddf1bfd9ac62048b1f72d7a908ecefc7637145e3b19512b8df6c0b6e"
+    },
+    {
+      "topicId": "I10",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "0b21ca70dd6284c961e3ef5542a4d7faa412202d2f27d25c89a68223df4c694b",
+      "selectionDigest": "358ab552940de262f531f2bdd7a65684a46a10ef3408530c60b2f64eb4d3b087",
+      "requestSha256": "b98f29e53179faf00fa72a89b0299bd6481191c7900fa105f559abfb579c7402"
+    },
+    {
+      "topicId": "I10",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "db7029e89dab6bcec799620091f7a0e3d82e429b015c1d2feca79b68b6e60cf1",
+      "selectionDigest": "0098ee3a970bf278b5d479d87b3d5e2833c6a76f77fe530d3042fa91a0859677",
+      "requestSha256": "3f8ab4e51ecd48642c0084073d5746b01588891fed1fb1e8400ad17fe387045f"
+    },
+    {
+      "topicId": "M01",
+      "purpose": "PRATICA_AULA",
+      "items": 28,
+      "packageDigest": "763fce663102e44dd5a638b0c6e15334a8da0e59e537fba20d0e0e7a78a63c3b",
+      "selectionDigest": "e1ccd032f5da549eb751b343ae572a1ce8da0de68bd43e6ec1d3ba7564946169",
+      "requestSha256": "379991b239742c640ef9e327b790a87714c5a030e04a68ccc41279455af985ea"
+    },
+    {
+      "topicId": "M01",
+      "purpose": "SIMULADO",
+      "items": 28,
+      "packageDigest": "d616ea93c4cbc050bd17aea7d0070810d556f29d044fdf4ed91aa5a2b59d30bc",
+      "selectionDigest": "b13672f19b7fb2201d144b465dde87f342c890d1cdbcb143698a52c2462c2f30",
+      "requestSha256": "59d8344eac05770630e92938f71a91a87921e4666d9dc4c64f60de7145795852"
+    },
+    {
+      "topicId": "M02",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "527b82e7ab5128c6eebf83793f4b841ecf455c085ec58014691705c7d8c1f862",
+      "selectionDigest": "0c325c3aca9e83001fae9303806a9c2b048a254f9aed40a7f21be4976f4ab742",
+      "requestSha256": "e54b271eb0ce66a1cb1e42778a26328c896d1690b9f6e34371889361814c3189"
+    },
+    {
+      "topicId": "M02",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "d77c140397091e746835b9eb40efca102dd05cdf08a61b8faebabe54ffd9fb12",
+      "selectionDigest": "63a0a0b2a6f810fa0482229ded3167a61932060933edb3c9edb84769addfa905",
+      "requestSha256": "c60e076be6fb8ee65ab71bd4cc7581f4f6463fe9a020413ca4da3997749ad179"
+    },
+    {
+      "topicId": "M03",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "f07cfb560055e5bcc5f735d19da84f4ef7de6fb2ae356cdabd93c14135c3d386",
+      "selectionDigest": "1a50941cc31cda9d30db6305422a9df50203a7b5089b02300bec25c5cb78d152",
+      "requestSha256": "bf5f690b52a0ad7e430f792230e7aac25ed6b189f41f319b08ff2e80afdc1b4d"
+    },
+    {
+      "topicId": "M03",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "9fb3ab9a69955106f8dc59e85165f1bc4451382d7347e3ef69d24ea3ed300611",
+      "selectionDigest": "dccb6aa26954e5d99679b4726b94fc4f704bbf1b8b192116ad0470556bcbb12e",
+      "requestSha256": "1d8967dd1e46c72b69889c3fcbd4298898888c0e25c01ad99fc956eab6ed99cd"
+    },
+    {
+      "topicId": "M04",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "9b51f544be75a1451676aacae52a6b8dace25fb931f8d2c25c1e886240d535d5",
+      "selectionDigest": "e43bc2582f9840a48ae73488bc3c095e529840b72c3fee25805a047e89d67fdd",
+      "requestSha256": "118330f282a0468161677713b16b56246eaadb39b2e9766feb0c71b8ecda8d19"
+    },
+    {
+      "topicId": "M04",
+      "purpose": "SIMULADO",
+      "items": 26,
+      "packageDigest": "ebd9ad95ba7a8c0254f9e07c10da286cfc91f1223096c9f5690837c9dee81e74",
+      "selectionDigest": "0c47aff38247afa5bab066d1c40764fd77e0a0377187caaaef6de9801e39bd40",
+      "requestSha256": "551bf52e5ba88c48477f7645db1a0c4f940a77c78ce4035469b7c85a5388e5f8"
+    },
+    {
+      "topicId": "M05",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "379fbc3e9c9beb7abe28239ab386d9901ebb1719449276d601d2d4242514e3bc",
+      "selectionDigest": "2019d07a0e9d36a7a28e3227bea09ce5a2adbed3d9e2ae859deefbc68871e11a",
+      "requestSha256": "92d9781962ee6899126798a28323f2084531f33ac361d319c51bf5afee801971"
+    },
+    {
+      "topicId": "M05",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "9bcf19584b6a7ced1d5e083dd777e6d778baa28997d507060a563eaca579f75d",
+      "selectionDigest": "bab04d8487b2611fef725928dea707316fd8e20506a20938148dfa744f67ec06",
+      "requestSha256": "ac0b7b280366d481f31bfae6029e303340c5ec6aa0edc87b800273c5cf88da19"
+    },
+    {
+      "topicId": "M06",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "ee516a554542044afc6e75139b64fcd12f4c8ee70cacb29e6f40af842a9f6c76",
+      "selectionDigest": "bd96ce129513ca8ee655d08da974f6a450d45737525879d074fb102e21696c39",
+      "requestSha256": "054a31ad4fcbd2937180e0f952359c3e46339a216cd3f1256244c83433a1d6ba"
+    },
+    {
+      "topicId": "M06",
+      "purpose": "SIMULADO",
+      "items": 26,
+      "packageDigest": "82d8c7304d03afcee4c8005c5643c2b52f9aa5c7cc18366271b0a2fa1a31b7ef",
+      "selectionDigest": "f942d11337f3420b6763813b748061a7f555837458cf33cb63a05a4ca61c08a5",
+      "requestSha256": "44519cfa7e8935e13ae3dd8c6f626324e684ee1f6fcaf111f61b0636a141f2f6"
+    },
+    {
+      "topicId": "M07",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "f5e62191f0b539000755927323ba2bfde4e3ddc34297d1ec637370ba38cfee59",
+      "selectionDigest": "ec14d6c0b680737f3ee422cd6f856d4fb2c257a46adcdd498627a1de7ff90722",
+      "requestSha256": "8869e660a8ed355c154e4694bc5dbe2f18cb22dc688c06dcf8086787a061ba1b"
+    },
+    {
+      "topicId": "M07",
+      "purpose": "SIMULADO",
+      "items": 26,
+      "packageDigest": "9b8c2fd105ced925c8ead740c0a96633178527ef546df8822daf1af7fa02063c",
+      "selectionDigest": "cc67f03920776a38cc34806bf48433ab06825e058e9ad942629da63734897937",
+      "requestSha256": "403d61a4002219033d1109f95640f8721112d9cf5c89517e0019c3b1c4e32571"
+    },
+    {
+      "topicId": "M08",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "ddf9aa1ae073176a5ce59bc80551f78c8171a138b8ad90581c94519e499535a4",
+      "selectionDigest": "6d01aeafa449376993990e1a350e4fbed04b53d675e41815f3a79b8e21106a8c",
+      "requestSha256": "59f6e6c9ad623b3acbc28391a16bd85082dc888fb4083494562a3a435f185266"
+    },
+    {
+      "topicId": "M08",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "4c1c8a252823989cb94dca9dadd3d16fa6109ccf3a8498029be7b5217d33778d",
+      "selectionDigest": "fe137ebee66cf9f05ecc2b84702fe1bff08ef7bd429e5ec7cd142903e2da3700",
+      "requestSha256": "d4969cadc310ebeede4c8d707219fccc3a2b359196bd0e7787c9f2bd282c1575"
+    },
+    {
+      "topicId": "M09",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "1266bd153d4747571c4daaa2ef6b04f51ca32b5227d52baae991331e3126c106",
+      "selectionDigest": "a1632e255e7c03dcb115b34930622a58ef9cf4ab0b69f3fc691a74eb35474755",
+      "requestSha256": "c4eb6d52164812a95a2f0b7645101d1145340f32cf226280bbf21824b6baa2ec"
+    },
+    {
+      "topicId": "M09",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "4b8827031dea2f984d92f4899b639f8dcd39887691aa57e353425cbff38557a0",
+      "selectionDigest": "6b3bba239bf79eef63ddde3d960aa55d987305f63e373dce74758ea854fe0c56",
+      "requestSha256": "eaaa426ece311e7a6867bc3ff53c84e271e074a1010d573efe902a402c809db2"
+    },
+    {
+      "topicId": "M10",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "9aaeab36a4a9a3288c809e0fac9a76a1c521b94fad25486b639046949d1d2dbc",
+      "selectionDigest": "43adfb079fa433bb689f20be1550c3428a59d3ce5fd20990769b5fbd4f2b5e72",
+      "requestSha256": "206daab5120b8fb161a419a2f4741a2764c3358228a10ced2744e9a8b42dd2fd"
+    },
+    {
+      "topicId": "M10",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "4e82083a114f7bec69b7842aecd444d41169b448b555c97365106a125e67e58e",
+      "selectionDigest": "525fbc8b37a81becf6878ab8b837cddab776946bec4729b86bba4a295aca547d",
+      "requestSha256": "99369d732e71fa6e5f7b8f008ef6ccbe42e93e2266af02ad500768cb1609164d"
+    },
+    {
+      "topicId": "M11",
+      "purpose": "PRATICA_AULA",
+      "items": 27,
+      "packageDigest": "bbe87f0522fcee7e1cf4b4e7f5e4e95bf084016dd8333ba9ab0d4764d7c551c2",
+      "selectionDigest": "72032da6dac84ad0cf90acd16b3071afdd076126d75c8f2d423d21f96bd0f426",
+      "requestSha256": "bdc2d75d6dc6bee08d131162e95c81265208e4137093fe3eb0a6e5357ba9ec40"
+    },
+    {
+      "topicId": "M11",
+      "purpose": "SIMULADO",
+      "items": 27,
+      "packageDigest": "2ad353aeb892ed8d4e91d4b97f673bdb57ffecef1e69cd062f184102c63fa4bc",
+      "selectionDigest": "2f56a4212ba4602c762fc9c3102e8e2c5dddf79756af180e8296e4b1b2946d6f",
+      "requestSha256": "1dbc1132402d9d6a881e6a684b356ff482be73e750878fb57646cd45b8f72d75"
+    },
+    {
+      "topicId": "M12",
+      "purpose": "PRATICA_AULA",
+      "items": 27,
+      "packageDigest": "129d5183cd28614f6521eddf81c54914e0b24449716775041be4e288afeccdef",
+      "selectionDigest": "f5867eec603401af1a8743da0413644a23371385cef53a93522ee52cca90f0ca",
+      "requestSha256": "b4f774d1db4d8d655dc44942806e4db91e62297bbc68beb3be48c65af474147e"
+    },
+    {
+      "topicId": "M12",
+      "purpose": "SIMULADO",
+      "items": 27,
+      "packageDigest": "1858c9a496e02e33f327f1fb3b1c225ab97179a5256be5d24b049fa296d90f63",
+      "selectionDigest": "0c3160502d042490205819fae383718d7c5d36a90c48a8434892156356f691c0",
+      "requestSha256": "d9d15939299f1e6e0c3906ecb7d6ded2325a64e973b28cc067bfed30e9881f88"
+    },
+    {
+      "topicId": "P01",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "cc218f24ad9aefe3b79115a44ab10807ff7db3d25f6d5893baf62ea9f38cfafd",
+      "selectionDigest": "7e508313a38df33f4f0e7eba53e2f4986a75c4668e05fe24193c9cae3050ddb2",
+      "requestSha256": "174e60c4c6ff06a8c5af668891282d9b8cdc286861609e7dcf15e13eb83f7a0a"
+    },
+    {
+      "topicId": "P01",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "c3e00701226ab8c1ba3d1c8debb392d7262ad235c80b0219baa04e1e8254f91a",
+      "selectionDigest": "2651e8d1fcd9f8e2621437986cd96b7759e398e89115524e7ac5b40640ff606c",
+      "requestSha256": "654e877c5897982425cad940203ac477cd736ba993566c3c5ade467341bc966f"
+    },
+    {
+      "topicId": "P02",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "5c379a4517f865e6856b335495382930e06782e97a1bd7defd29b90cb33ec124",
+      "selectionDigest": "4aedab50dd67e6c6419b0858f36ffe888d072bf476dbb766b2364a41d51a3632",
+      "requestSha256": "68d6cb224aa103d4e7292f9041407874a4a2a68dac7b5f784b8a5861f73bccff"
+    },
+    {
+      "topicId": "P02",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "ff38b67889a221a6837a5aa4bbc5868878cf4f7ff5b583068276170f9854909f",
+      "selectionDigest": "60c19e13413db77657cb614e617440113bf80f96065408d79a14fc69651e42e0",
+      "requestSha256": "f068f0e366a719eb01a4f0775a349271bc6e2e65af21b21f0f9d7589c1fa2b79"
+    },
+    {
+      "topicId": "P03",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "a33c1a5c92b88aec7f7bf36483469a7786c1312f58b30dc25a2a344f217c6dfa",
+      "selectionDigest": "31b8510b24f81d9dc06778d458c72123abacbd9275ba793f473c0b4612be6236",
+      "requestSha256": "33d9c76834f6d52756e5603d25394ca73143a72121a3b6bdc2d093e14efbd24a"
+    },
+    {
+      "topicId": "P03",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "8dc55c0ec7f2e32c71752f6b7a4d4fa1f33dfa23c376ad4b4ddd0147b824199a",
+      "selectionDigest": "1e66adc708a4f6323aec47e1ab30892ca1053ae93e890ecde4f9086fb6a284a5",
+      "requestSha256": "b20a66cf467f199d93526cfec8df474cd5150e89ee623e643010e61a3cd212eb"
+    },
+    {
+      "topicId": "P04",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "1acdfa83de671f2f5be7aa6c7cc0e9a90362e896a7ac033628f22587874d844a",
+      "selectionDigest": "943267e812206bdce9158351d6e4cc1df2585d115e9b24ef557a568ca7160371",
+      "requestSha256": "8d65b03c38af050a6b58309f7b921dc7836e592540ee8d7201e65f2b6bce8205"
+    },
+    {
+      "topicId": "P04",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "2420d068a5c6240ea139da33981a28c1ac4dfad784deea14edb05ea72fb1cd92",
+      "selectionDigest": "871e4d067f19459ef18fce4587c482d28718b6bf78a7e5432c4b42a174fa2063",
+      "requestSha256": "8b6f11ac4a87e8c842bd30d02d5ee39cc46486b11103e0f766021398f7ffa253"
+    },
+    {
+      "topicId": "P05",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "526975140f2965fd535cf8c7eacc83a6662cf45d3a060faef3a2f9b29e9e6582",
+      "selectionDigest": "779f403886e7c1270e94fede8c4c1b244d12713a14e8a262206d1880d93f52b4",
+      "requestSha256": "ee03e8e042e6aa66459f4256474c1d46250aa8363372abcac08964eabc4e6ce0"
+    },
+    {
+      "topicId": "P05",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "f458443629978fd8f09ddb66bbef5684d9d7effd13baec41de5c8e95aa4b96d2",
+      "selectionDigest": "188cf1ebb346458de09f04e72d562c3b3e18331008f3830cdd6448fff1ffceb6",
+      "requestSha256": "841c2573291b6aeb3d4a186419c2281b1d4bdd25441c2e25e999d2fb20d22067"
+    },
+    {
+      "topicId": "P06",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "8ceebfa07a2c841679cac181151d789f07fc14c066372ad17e723cde56e5b5fb",
+      "selectionDigest": "ebb8ef2c83f583c4fc007d6af5968b468eb876f544071e2942635255ccf87aad",
+      "requestSha256": "c716c95ef7db34111c16e5cc22428e0c2660be2b34ef2986b1ea8bd403542252"
+    },
+    {
+      "topicId": "P06",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "40359970051260d7898da0e5e8f49c9d43f624a60014b18de1a609d09b35daa4",
+      "selectionDigest": "b4bf8ee7ccc84cae580752f39172965220505a64f761aaad125d7b237df9e9de",
+      "requestSha256": "d51ecc5fc87c670671df2bb3c7462ea9783ab4181ebcaa9687225b71a76e3af0"
+    },
+    {
+      "topicId": "P07",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "f882733ef47cd14c6bce460b5673751f2687f3ff17ac05634cdb8d5330924be1",
+      "selectionDigest": "b79c7a2a7c9055707551fba0c9fa8ebec09a6b44b55f7ed9970a584ce33d9256",
+      "requestSha256": "32b0c51f472779054cc15813d5c564b01cbdf42dd0109c8972f4afa8e8be434b"
+    },
+    {
+      "topicId": "P07",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "e39f39ec6381d8cb096b08c7dfc49bd859c94eeb9f96f66ea202bcd73f62cc16",
+      "selectionDigest": "84e8761cb41d4ddd268a37515a3e7f9805bab55d9f585d470a673380f521e3d6",
+      "requestSha256": "0fd1189045897c9824352ef9a5d0accb64f18d599dcc602c955f8efdc87cf3d9"
+    },
+    {
+      "topicId": "P08",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "fb4b1a3c53a736f0260a7e21dca985207c1d227dc7c8ebd9f2500bfe0bb5fd14",
+      "selectionDigest": "3784c6f50e7eab472a9074b1b9dc5939c50a93e10b39e184fc67a730dbd5bf6f",
+      "requestSha256": "2a4e3e6e8b0ddc12d74dfde6360f280bcdd36d0c2af27c21c982c6fbafc1ca05"
+    },
+    {
+      "topicId": "P08",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "d0cfb5332e08dcd22da8df2e15fe9d65003b97ce017332e01ec5f92abf1487fa",
+      "selectionDigest": "6d68336da64cda62901c1839a738efa688a902fbe901d6c45ff4c6efdf677d2f",
+      "requestSha256": "05586cbd5cef9864d61decd25a0531fc7fcfa4befa345830689637447e6ab7c3"
+    },
+    {
+      "topicId": "P09",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "ca4f3d968a32e15bee46fac7e21147f00ea1f02eb265578250c1d610637f2c5e",
+      "selectionDigest": "5aaa6b298f3bbee5cad626b5ad8e9f47bc5880b901a94b3b182631cbfa5e2820",
+      "requestSha256": "46cf77289e7dda81fb598cddf43b363fd439fb9f9bb1870cb153f8ef6c4ffdae"
+    },
+    {
+      "topicId": "P09",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "c6296832ebf9648693e2fa819246c1875be8341539e70fa2b47f216cb84cc222",
+      "selectionDigest": "e009923b31effbeba78d61a0a91c20005204ce30185b9fe20b132f451e072fe1",
+      "requestSha256": "16d70c5e20a302cf37aedfcc7d2ab15e603a9537afd3f283a21ea5300819b4b8"
+    },
+    {
+      "topicId": "P10",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "5a1f66b36cc1bbe1794a9b2b6b6bf5154e3bb6cde35fc1c9dddd6ff3ff7542bf",
+      "selectionDigest": "59ef0572d1fc88c9a58f5147245d3778d8efc41b94b2b1258eee5e84011b4b1d",
+      "requestSha256": "29e50ff937bae42b25c04d1e74a9190153db14e4aa6636c51aae14003c6648b7"
+    },
+    {
+      "topicId": "P10",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "a39b965a683e5a647da5e966b5d08daeb0ce5994d5f47993133835116e4b093e",
+      "selectionDigest": "12ec6ea260d3eac277200f680912a3db9804a932559edec1a793319780326ab7",
+      "requestSha256": "8a977d36f5cd5aaf58db380b136246d0aeeac7b35c2414f7aa14d4cc33482ed8"
+    },
+    {
+      "topicId": "S01",
+      "purpose": "PRATICA_AULA",
+      "items": 33,
+      "packageDigest": "00022752c8fa2d9607fd412e5f1c882bd0dcd4c60a34494b69d78b151a7484de",
+      "selectionDigest": "e7588f5b62d271d139d5fb06b51ee6d1e041423265be00574f927f0e9f9fd7de",
+      "requestSha256": "b9a99e0eb4271790eb415adabc9aa4c0e19198446f772b82d170ad27bbd6e4bb"
+    },
+    {
+      "topicId": "S01",
+      "purpose": "SIMULADO",
+      "items": 29,
+      "packageDigest": "9d80fae60a8ff6e50359a9d0884aa8765e0c293a6adcedf202d57561064b0e79",
+      "selectionDigest": "9d516389d0a3e491d54472bbd472bdc3b07ede2d279534fc52836fe728cab897",
+      "requestSha256": "a9ed2d92c5a91c37dcdcb29f5461f36465718777a2d763bf783034cc9074bc7f"
+    },
+    {
+      "topicId": "S02",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "946e54eb19b6f930c89c4235639f1b63b374505543b0ec3066a8905b9f74fbd4",
+      "selectionDigest": "fb85710eca1c8913965f76f0d2d018708fb0fefcdc45642b5594e52364c7d2c1",
+      "requestSha256": "a2fd7df80bd7af7a6452148ead8c532bf25101540b4fdb1d95ec000754c4c4ae"
+    },
+    {
+      "topicId": "S02",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "658b7c93d872678e90bf9445bf36c062783e7c3a3c919f4e9e42c7f54e50c209",
+      "selectionDigest": "ced989f42264629df1feccd6daf81e922c09c59f9472fe9eb832876f0d5a2da0",
+      "requestSha256": "f3e28b3973552ad48fae9504da4b757bfad4a6e539c068cee36f48248abd7dbb"
+    },
+    {
+      "topicId": "S03",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "4230e5527f4a5fc1e0d0bcc00dad2b0af8e2601ec29900a2e0457389585b5e01",
+      "selectionDigest": "ecff455c584e23fcaf391276bf134ec71b856535b46e30bd636284710d4a009d",
+      "requestSha256": "fde84aa3765ba22b32e14cc5ae5682b109951aaeba492fda47945bea5a20f99b"
+    },
+    {
+      "topicId": "S03",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "f42fc7404dd638faccf58c040f17f49e275cd9fc4a794c0ecd13777f99a82ba1",
+      "selectionDigest": "8309104cb8b887c81c2795a1787f9c561aadcb639f57aa561dc6206c7a864041",
+      "requestSha256": "5e7cb6dd15b25926b3b5c9afde9faf9d4a8da18753cd2dc66ff9e30c897d2a97"
+    },
+    {
+      "topicId": "S04",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "1534b41141ec2cede86b51dfcd759e93730a6879f0e2ac0c98ac9b968d9a7477",
+      "selectionDigest": "698ea7f95c5a0bc7ac79535ed83bfebccc76e2ccd0eb5f35dbc48fdb26815a07",
+      "requestSha256": "2744913a196b7b5ae8abf7beb6c49fc5f81a5ac7cfd2823807fa1350f9905d86"
+    },
+    {
+      "topicId": "S04",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "f27fc064d2e4b4d8bc633525b1e8104b4fe569add6ae9b8e64d96143ce2ea0e6",
+      "selectionDigest": "e63815d2b2b9ae4a7b4636838aaa0ddd202b14fc6785891f9d56cc1060eb33b4",
+      "requestSha256": "25b6bb08b279e0871e377ba41b744296453e7fef65bb3481e4d36600c5e29d08"
+    },
+    {
+      "topicId": "S05",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "efb59fc30dc982e7fad1b404db2a215aa8a2e62e7a1d0893ee63da6d7a4837c3",
+      "selectionDigest": "cf7c73e7b9a0bcbf5f3bf246963b93a3f85543c9713141256f18c73b793b416e",
+      "requestSha256": "09cf54acdfe8c3b67dca3639ba994024201b0ab6037668c9b0c79a4019fb3a0c"
+    },
+    {
+      "topicId": "S05",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "3286aeaef23f0317eef13a38d9198a7b61fed6eb0100ad4bd5e3bf0c4f859568",
+      "selectionDigest": "d0682a85c665243c5675bd5eb62dbb7b69b60547a574662cef814e8a72776aaf",
+      "requestSha256": "f0ddce62712d65ef1a4ae332a12a70e3bc7a72aeaf0037ce50ea7f0732d36ec5"
+    },
+    {
+      "topicId": "S06",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "1a9a69b792094a56381114cc93edf38af8a14d86655d37263b9ee853340639cc",
+      "selectionDigest": "2ea2a78d0a38865dc9e9f533e8c94760c2d8a3f2325e1dbaf139a13e069497f4",
+      "requestSha256": "ee56e02cd6739ecb7014ee9311a3ecaa07c658fcf778cb383f7f68f79a87e4d5"
+    },
+    {
+      "topicId": "S06",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "cc46ba7483857b885ced05b28481db6eaa56633b8628f3b162a097ce3d91dbf4",
+      "selectionDigest": "ff4117eaeac5923e2b7ee79ec1a41b70b92e07a6f7ad4f9b69bc29ad67f46f78",
+      "requestSha256": "ac35710b5b68025388e499e8f620b5e678964dcad3d4eef6101eaee47bbea792"
+    },
+    {
+      "topicId": "S07",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "5136c30d934c2e1649ece7ac85dfb1702ff75b5f4b7c5cecf4dc29eb531b1488",
+      "selectionDigest": "99802f50a6f76f7aeddea7b8b93e7453915822011566f056bb0d649d3185109b",
+      "requestSha256": "d2b288e44e019ffa5de6777258299d62e3b65a06a0d4ac9da564f1be4fea00e0"
+    },
+    {
+      "topicId": "S07",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "4c8f818cc22b83da3187bb0b4cd206dcac02332a6924f77384b19c838520ae4f",
+      "selectionDigest": "31d897a297bc5f873e7dc36890e32435d8c0f178c2a1ca68502461322ad91d4f",
+      "requestSha256": "171189e54fd9f6e5239c2668f22118c61d1e175438b3f3047b8622e45400e3f4"
+    },
+    {
+      "topicId": "S08",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "793bad6a09697c74cf2c12631925fb0730e7573a5384cb244ec5bddc139edf43",
+      "selectionDigest": "bc7f0ca6aefe233127312fd5e327f3077faa0102162f1d3ac5389d1fc63f7660",
+      "requestSha256": "7909525bfb0b80e934b018b8da575576dfd35a41bf428cb523e4cde212c3c18f"
+    },
+    {
+      "topicId": "S08",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "28589d8484f0cba4e85fcf1fc6d8df60a50eb9f406522c54ac6f9f50421fefc6",
+      "selectionDigest": "17a413d31afbfc93bcf2f2504ef389ad4b97d1222117023a1a900e8b2eda051e",
+      "requestSha256": "bf3ff2f1378fae5664f023a13d25f272a17d7bf98c9cdad0f60194dbd9e6ee1c"
+    },
+    {
+      "topicId": "S09",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "bc8ecfd41138a7cc1fc09f8cac4eb6282a22d339be91ea1543c6fe3419f3339c",
+      "selectionDigest": "6cfbb06994e642673bdabf809c793fd4f96b073b4609c65db714fa5762bed0fb",
+      "requestSha256": "b2a754467b14f053e8732d3cf6d0d2c05a190ead5ebcd6c9e4049b3f4b97bfc6"
+    },
+    {
+      "topicId": "S09",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "ff81750c421e36676e6667dddefe78eebf2b6db1270b6dc75b2177b0983dfd79",
+      "selectionDigest": "26f86f398104978c724cfc5ea5c6db6ae53e8e387ee8527b562c6160ce81dc2e",
+      "requestSha256": "0f94b62a7fb102a02055274d3964fb160b987c67595ae5d6b292ec4a4cc4e279"
+    },
+    {
+      "topicId": "S10",
+      "purpose": "PRATICA_AULA",
+      "items": 26,
+      "packageDigest": "2c251749c15fe07b4f6a9d95bf41639268abed2fea78aae79b7fc6029671f886",
+      "selectionDigest": "db5d62fb40bd375b4a59ad6ee983ef7b724613be628da550d5e557eef0a18056",
+      "requestSha256": "eba9f52b60827d497a3bcca86ba27fdeea2db5286a3e678206a5556395ebfad9"
+    },
+    {
+      "topicId": "S10",
+      "purpose": "SIMULADO",
+      "items": 26,
+      "packageDigest": "cb57f665c7e04168af6ff31f506db1b4849b0a57c62956ca86f1f8cab477c4a4",
+      "selectionDigest": "ca15f4680ee6b4d5b8ae73d8c989512056b64a243cf8dd4cac90978785d83d51",
+      "requestSha256": "7ffddeaf63de5520f6f80234400d8fc1cb1318f0cf80d111bd4ce6332a40dac5"
+    },
+    {
+      "topicId": "S11",
+      "purpose": "PRATICA_AULA",
+      "items": 25,
+      "packageDigest": "a870bdec1fd74dfc1adf48138291b3d852630eb24042e329783f39f31a047397",
+      "selectionDigest": "70403c72778c9b35775742697ba7d6faace1f683eb6250246d24e6f842e89ab7",
+      "requestSha256": "22cb8ccf572ec42e523d1ab3dd95bce4dd141981395dba9eb71c61e5ac11a62c"
+    },
+    {
+      "topicId": "S11",
+      "purpose": "SIMULADO",
+      "items": 25,
+      "packageDigest": "3c7bc04dcc5c9de845fd90196da90731a2ff7281afe8b75b669cd3af75a1a860",
+      "selectionDigest": "c4e4cd58ee9c7ef0e6a05435b536a7a90b2a3fd8278a87b2fdc34dad5d2326ab",
+      "requestSha256": "46ff93bcd0a873f889d9f09d76f4655cec1f8e67e316863b873d20ea32c89e52"
+    }
+  ],
+  "imported": false,
+  "eligible": false,
+  "editoriallyVerified": 0,
+  "limits": "Pacotes candidatos. Nenhuma conferência de quantidade substitui revisão por fingerprint e adjudicação de pares; não representam cobertura elegível."
+}

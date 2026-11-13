@@ -79,4 +79,4 @@ Migrações V16 e V17 após a V15 da #173 (número final reconferido na integra�
 3. **Somente SUBMIT e APPROVE na primeira entrega.** RETURN_TO_DRAFT e WITHDRAW continuam disponíveis pela CLI local e podem entrar no lote depois, por proposta própria.
 4. **Acervo da #173 marcado `AI_ONLY`** na aprovação.
 
-Numeração das migrações: V16 (`qb_decision.review_kind`) e V17 (recibos de decisões em lote), após a V15 da #173; o número final é reconferido na integração com a `main`.
+Numeração das migrações: V16 (`qb_decision.review_kind`) e V17 (recibos de decisões em lote), após a V15 da #173. **Integração (decisão do usuário, 2026-11-12):** esta spec e a #173 seguem juntas pela épica combinada `epic/question-bank-expansion-curation`; cada épica de spec abre seu `[SPEC]` para a combinada e um único `[SPEC]` vai da combinada para `main`, com as migrações V15–V17 contíguas e uma revisão final do conjunto.

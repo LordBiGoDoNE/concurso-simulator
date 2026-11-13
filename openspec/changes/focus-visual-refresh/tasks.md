@@ -43,6 +43,7 @@ abaixo estão implementados e verificados localmente em
 - [x] 5.2 Aplicar Foco ao leitor nativo: corpo em 18px, tokens por tom de bloco, tabelas, MathML, grades e barras de percentual, placa clara para SVG, índice e paginação. Preservar documentos, validação, carregamento e erro.
 - [x] 5.3 Aplicar Foco ao painel, à realização, à correção e ao histórico da prática da aula.
 - [x] 5.4 Verificar as 51 aulas nos dois temas (contraste dos blocos e legibilidade das figuras), concluir as regressões e a documentação.
+- [x] 5.5 Biblioteca pede a disciplina antes de listar as aulas; cartões de mesma altura; busca atravessa disciplinas (decisão do usuário em 2026-11-13, após teste local).
 
 ## 6. Verificação integrada e revisão final (depende de 1 a 5)
 

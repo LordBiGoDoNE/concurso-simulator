@@ -1,4 +1,4 @@
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { fireEvent, render, screen, waitFor, within } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
 import LessonLibrary from './LessonLibrary';
 import catalog from './lesson-catalog.json';
@@ -18,15 +18,29 @@ it('catálogo de aulas cobre exatamente os 51 caminhos públicos do manifesto', 
     expect(Object.hasOwn(paths, topic.id)).toBe(true);
   }
 });
-it('busca sem acento combina disciplina, mantém estado vazio explícito e limpa filtros', () => {
+it('pede a escolha de disciplina antes de listar e mostra só as aulas dela', () => {
   render(<LessonLibrary />);
-  expect(screen.getByRole('status')).toHaveTextContent('51 aulas encontradas.');
+  expect(screen.getByRole('status')).toHaveTextContent('Escolha uma disciplina ou busque um assunto para ver as aulas.');
+  expect(screen.queryByRole('list')).not.toBeInTheDocument();
+  expect(screen.queryByRole('heading', { name: 'Nenhuma aula por aqui' })).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: /^Português/ }));
+  expect(screen.getByRole('status')).toHaveTextContent('10 aulas encontradas.');
+  const items = within(screen.getByRole('list')).getAllByRole('button');
+  expect(items).toHaveLength(10);
+  expect(items.every(item => /^P\d/.test(item.textContent || ''))).toBe(true);
+  expect(within(items[0]).queryByText('Português')).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole('button', { name: 'Recomeçar a escolha' }));
+  expect(screen.getByRole('status')).toHaveTextContent('Escolha uma disciplina ou busque um assunto para ver as aulas.');
+});
+it('busca sem acento atravessa disciplinas, mantém estado vazio explícito e limpa filtros', () => {
+  render(<LessonLibrary />);
   fireEvent.change(screen.getByLabelText('Buscar aula'), { target: { value: 'interpretacao' } });
   expect(screen.getByRole('status')).toHaveTextContent('1 aula encontrada.');
+  expect(screen.getByRole('button', { name: /P01.*Interpretação de Textos.*Português/ })).toBeInTheDocument();
   fireEvent.change(screen.getByLabelText('Filtrar disciplina'), { target: { value: 'informatica' } });
   expect(screen.getByRole('heading', { name: 'Nenhuma aula por aqui' })).toBeInTheDocument();
   fireEvent.click(screen.getByRole('button', { name: 'Limpar busca e filtros' }));
-  expect(screen.getByRole('status')).toHaveTextContent('51 aulas encontradas.');
+  expect(screen.getByRole('status')).toHaveTextContent('Escolha uma disciplina ou busque um assunto para ver as aulas.');
 });
 it('leitura usa teoria completa conhecida e navega sem criar tentativa', async () => {
   vi.stubGlobal('fetch', vi.fn(async input => ({ ok: true, json: async () => String(input).includes('S03') ? s03 : s02 })));

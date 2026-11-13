@@ -160,3 +160,9 @@ trocar prática: começar continua exigindo o botão e a confirmação de troca.
 cartões dos históricos de simulados e de práticas compartilham `.attempt-history`.
 `e2e/result-history.spec.ts` cobre resultado, filtro, atalhos e histórico nos dois
 temas, em 390px e 1440px, com medição de contraste do texto.
+
+Biblioteca (5.5, decisão do usuário em 2026-11-13): sem disciplina nem busca, a
+biblioteca mostra os cartões das disciplinas e pede a escolha, sem listar aulas.
+Com disciplina, lista só as aulas dela, sem repetir o nome da disciplina em cada
+cartão. A busca atravessa as disciplinas e mostra a disciplina de cada resultado.
+Os cartões de aula usam `grid-auto-rows: 1fr`, com a mesma altura em toda a lista.

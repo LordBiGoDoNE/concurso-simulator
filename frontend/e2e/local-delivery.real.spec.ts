@@ -45,8 +45,8 @@ test('prática de aula não substitui gravação real já confirmada no servidor
 });
 for (const width of [390, 1280]) test(`biblioteca e leitura integral no pacote Docker em ${width}px`, async ({ page }, info) => {
   await page.setViewportSize({ width, height: 900 });await page.goto('/');
-  await page.getByRole('button', { name: 'Explorar todas as aulas' }).click();
-  await expect(page.getByRole('status').filter({ hasText: '51 aulas encontradas.' })).toBeVisible();
+  await page.getByRole('button', { name: 'Explorar as aulas' }).click();
+  await expect(page.getByRole('status').filter({ hasText: 'Escolha uma disciplina ou busque um assunto para ver as aulas.' })).toBeVisible();
   await page.getByLabel('Buscar aula').fill('M01');
   await page.getByRole('button', { name: /M01.*Operações com Números Reais/ }).click();
   const article = page.getByRole('article', { name: 'Conteúdo da aula: Operações com Números Reais' });
@@ -117,7 +117,7 @@ for (const width of [390, 1280]) test(`51 assuntos, aula real e prática dirigid
 
 for(const width of [390,1280])test(`prática exclusiva: retry, correção final e retorno em ${width}px`,async({page,context},info)=>{
   await page.setViewportSize({width,height:900});await session(context,data.cookie);await page.goto('/');
-  await page.getByRole('button',{name:'Explorar todas as aulas'}).click();await page.getByRole('button',{name:/P01.*Interpretação de Textos/}).click();
+  await page.getByRole('button',{name:'Explorar as aulas'}).click();await page.getByLabel('Filtrar disciplina').selectOption('portugues');await page.getByRole('button',{name:/P01.*Interpretação de Textos/}).click();
   const bodies:unknown[]=[];let createdId='';
   await page.route('**/api/v1/lesson-practices',async route=>{
     bodies.push(route.request().postDataJSON());const response=await route.fetch();expect(response.status()).toBe(bodies.length===1?201:200);

@@ -21,6 +21,24 @@ anteriores MUST permanecer inalterados.
 - **WHEN** o estudante seleciona uma alternativa em qualquer tema
 - **THEN** a interface marca apenas a seleção, sem cor ou texto de acerto ou erro
 
+### Requirement: Biblioteca pede a disciplina antes de listar
+
+Decisão do usuário em 2026-11-13. Sem disciplina escolhida nem busca, a biblioteca
+SHALL pedir a escolha de uma disciplina e MUST NOT listar as aulas. Escolhida a
+disciplina, SHALL listar somente as aulas dela, em cartões de mesma altura. A busca
+continua atravessando as disciplinas e identifica a disciplina de cada resultado.
+As 51 aulas permanecem acessíveis por disciplina e pela busca.
+
+#### Scenario: Abrir a biblioteca sem filtro
+
+- **WHEN** o estudante abre a biblioteca sem disciplina nem busca
+- **THEN** vê os cartões das disciplinas e o pedido de escolha, sem lista de aulas
+
+#### Scenario: Escolher uma disciplina
+
+- **WHEN** o estudante escolhe Português
+- **THEN** vê apenas as aulas de Português, todas com a mesma altura de cartão
+
 ### Requirement: Aulas nativas legíveis nos dois temas
 
 O leitor SHALL exibir as aulas nativas com tokens nos dois temas, incluindo blocos de

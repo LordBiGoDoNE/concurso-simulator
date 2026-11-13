@@ -1,0 +1,73 @@
+# Gate cumulativo — lesson-practice-by-topic
+
+Estado da evidência: **completed**, vinculada ao PR real **#176**. A revisão
+semântica cumulativa independente já foi concluída, sem achados verificáveis.
+O usuário autorizou explicitamente a abertura e o merge em main após conferir
+metadados, revisão existente e CI, sem nova rodada por modelo.
+
+## Escopo e cobertura
+
+Spec #161, grupos 1–4, risco crítico. Base main
+`16ca8aef382d64e7652b280b413122c357775ead`; head real da épica
+`850c81a858c5ed3fd6ef757ae97c9394ff342bfc`; digest canônico
+`d32450e611c56536e2db8368abc4754ab49b7157aa26e761e9e0b593a90cd969`.
+52 arquivos do diff completo e combinação resultante.
+
+Revisor `/root/spec_reviewer_cumulative_161`, contexto novo (`fork_turns=none`),
+separado da implementação e do lote. Seleção explícita `gpt-6.1-sol`/`xhigh`,
+correspondente ao perfil aprovado `openai/gpt-6.1-sol#xhigh`, somente leitura.
+A análise semântica inicial terminou antes de ler relatos locais ou a revisão do lote.
+
+Conferidos requisitos (assunto sem cargo, pool aprovado/fixo/exclusivo e 1–5 bases),
+fronteiras Java puro/portas/JPA/transações, contratos HTTP/OpenAPI/frontend,
+segurança/CSRF/posse/modalidade/expiração/correção privada, V14/formatos/replay e
+compatibilidade, testes estáticos e manutenção/backup/editorial. Cobertura detalhada
+em spec-review.json. A revisão de lote não foi usada para certificar o gate final.
+
+## Achados e triagem
+
+Nenhum achado bloqueador, recomendado ou opcional verificável identificado.
+Triagem sem pendências. A conferência documental posterior não trouxe achados
+adicionais. Ausência de achados não é autorização de merge nem garantia de corretude.
+
+## Evidências e limitações
+
+O revisor conferiu 37 hashes do manifesto local, ancestralidade e git diff --check
+contra o conteúdo commitado. Não executou testes, build, app ou OpenSpec; não
+acessou rede/DB/CI/refs remotas/logs privados e não escreveu. Contagens de testes e
+aceite são relatos do coordenador, não execuções certificadas pelo revisor.
+O conflito 409 de navegador é injetado; concorrência real possui testes PG
+inspecionados. Retorno com cargo público incompatível está implementado, sem E2E
+específico dessa alternativa encontrado pelo revisor. A ferramenta não retornou
+atestado adicional de modelo efetivo nem telemetria de tokens; nada foi estimado.
+
+PR #175 integrado por autorização explícita, merge commit 850c81a, head dc45568
+com todos os checks aprovados. O coordenador conferiu árvore idêntica ao merge e
+main ainda em 16ca8aef. PR/branch documental #162 preservados, sem fechamento.
+
+O bloqueio automático inicial de publicação foi resolvido pela autorização
+explícita do usuário para abrir o PR final e mergear na main. O PR [SPEC] real
+[#176](https://github.com/LordBiGoDoNE/concurso-simulator/pull/176) foi aberto com
+base main 16ca8aef e head inicial da épica 850c81a, ambos conferidos. Os dois
+arquivos de gate são os únicos acréscimos à árvore revisada. Nenhum número fictício
+foi usado. O merge autorizado será feito após validar os metadados e os checks
+atuais; arquivamento e deploy não estão incluídos.
+
+## Revalidação
+
+O digest foi apurado independentemente no snapshot real base/head acima e confere
+com o do coordenador. Nenhuma mudança de produto foi feita depois da revisão.
+Só estes dois arquivos podem mudar sem invalidar o digest. Após autorização da
+publicação e criação do PR real, conferir novamente base/head/ancestralidade/digest,
+registrar seu número e executar validate_report com os valores reais, além dos
+checks atuais. O número real #176 foi registrado e a validação local passou na
+base 16ca8aef com o candidato fe2f2fd; será repetida no commit publicado antes do
+merge autorizado. Mudança em qualquer outro arquivo ou na base exige revalidação
+semântica, ainda que o diff pareça idêntico. Este registro não antecipa tal validação.
+
+
+Conferência final do coordenador: o [run da épica 42937309743](https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/42937309743)
+concluiu com sucesso no head 850c81a: backend, frontend, material, identidade no
+navegador e entrega/recuperação local. Isso não substitui checks atuais do PR #176 nem a reconferência de validate_report
+com seu número e head publicado. O código não mudou; só estes arquivos de
+evidência foram acrescentados localmente à árvore cumulativa analisada.

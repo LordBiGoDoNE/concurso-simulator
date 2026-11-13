@@ -75,7 +75,7 @@ public class JpaAttemptStore implements AttemptStore {
             active(); var attempt=Attempt.restore(snapshot); require(snapshot.version()==0 && snapshot.finishedAt()==null && snapshot.answers().isEmpty());
             var row=new AttemptRow(); row.id=snapshot.id(); row.ownerKind=snapshot.owner().kind().name(); row.ownerId=snapshot.owner().id();
             row.accountId=snapshot.owner().kind()==AttemptOwner.Kind.ACCOUNT?snapshot.owner().id():null;
-            require(snapshot.format()==2 || snapshot.format()==3);
+            require(snapshot.format()==2 || snapshot.format()==3 || snapshot.format()==4);
             row.createdAt=snapshot.createdAt(); row.expiresAt=attempt.expiresAt(); row.payload=codec.encode(snapshot,null);
             entities.persist(row); entities.flush(); // FK dos filhos independe da ordenação de inserts configurada.
             for (int i=0;i<snapshot.items().size();i++) {
@@ -97,7 +97,7 @@ public class JpaAttemptStore implements AttemptStore {
             var old=read(row); Attempt.restore(snapshot);
             require(snapshot.version()==Math.addExact(expectedVersion,1) && old.finishedAt()==null
                     && old.owner().equals(snapshot.owner()) && old.createdAt().equals(snapshot.createdAt())
-                    && old.composition().equals(snapshot.composition()) && old.items().equals(snapshot.items()));
+                    && Objects.equals(old.composition(),snapshot.composition()) && old.items().equals(snapshot.items()));
             require(old.format()==snapshot.format() && old.purpose()==snapshot.purpose() && old.practiceTopic()==snapshot.practiceTopic());
             row.payload=codec.encode(snapshot,row.payload); row.finishedAt=snapshot.finishedAt();
             // Hibernate emite UPDATE ... WHERE id=? AND version=?, incrementando @Version.

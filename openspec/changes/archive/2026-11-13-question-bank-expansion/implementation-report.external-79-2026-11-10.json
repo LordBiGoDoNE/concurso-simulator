@@ -1,0 +1,291 @@
+{
+  "format": "question-expansion-local-implementation/v1",
+  "date": "2026-11-10",
+  "issue": 173,
+  "branch": "task/question-bank-expansion/inventory-tooling",
+  "worktree": "7ac1",
+  "base": "16ca8aef382d64e7652b280b413122c357775ead",
+  "adoptedProposal": "ecb80c1ebd4b011c9f41c38283080ab56b88be21",
+  "authorization": "Grupos completos 1–8, implementação local; usuário testa antes de publicação/revisão de implementação.",
+  "implementedAndTechnicallyVerified": [
+    "1.3",
+    "1.4",
+    "1.5"
+  ],
+  "groupComplete": false,
+  "pending": [
+    "1.1 observação do destino real; matriz offline pronta",
+    "1.2 ampliar fontes e concluir conferência integral por item; 510 originais verificadas ainda faltantes",
+    "3–7 completar conteúdo/editorial/cotas das cinco disciplinas; 79 candidatas externas não concluem um grupo",
+    "2 e validação integrada 8 aguardam integração autorizada da #161 na main"
+  ],
+  "coordination": {
+    "issue161": "OPEN reconferida por gh issue view em 2026-11-10; não é o número de um PR",
+    "remoteMain": "16ca8aef382d64e7652b280b413122c357775ead",
+    "futurePracticeContract": "assunto sem cargo, teto 25, formato existente",
+    "crossSpecStackOrCodeCopy": false
+  },
+  "risk": {
+    "classification": "critical",
+    "reason": "Spec completa envolve captura persistida, replay, filas e elegibilidade/importação; incremento atual é offline e testes sem mudança de runtime."
+  },
+  "java": [
+    {
+      "suite": "br.com.concursosimulator.questionbank.AdministrativeDigestTests",
+      "timestamp": "2026-11-10T21:19:46.676Z",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "br.com.concursosimulator.questionbank.AdministrativeImportHttpTests",
+      "timestamp": "2026-11-10T21:19:48.099Z",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "br.com.concursosimulator.questionbank.AdministrativeImportPersistenceTests",
+      "timestamp": "2026-11-10T21:20:01.182Z",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "br.com.concursosimulator.questionbank.AdministrativePackageTests",
+      "timestamp": "2026-11-10T21:20:14.284Z",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "br.com.concursosimulator.questionbank.QuestionExpansionHttpTests",
+      "timestamp": "2026-11-10T21:20:14.523Z",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "br.com.concursosimulator.questionbank.QuestionExpansionPackageTests",
+      "timestamp": "2026-11-10T21:20:20.694Z",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "javaCommand": "./backend/gradlew.bat -p backend --offline --no-daemon test --tests '*QuestionExpansion*Tests' --tests '*AdministrativeImportHttpTests' --tests '*AdministrativePackageTests' --tests '*AdministrativeDigestTests' --tests '*AdministrativeImportPersistenceTests'",
+  "javaEnvironment": "JDK 25, Gradle 9.8.0 offline; PostgreSQL 18.6 Testcontainers exclusivo, schemas/portas aleatórios; HTTP RANDOM_PORT",
+  "python": [
+    {
+      "suite": "scripts/tests/test_question_expansion.py",
+      "tests": 12,
+      "status": "passed",
+      "environment": "Windows Python 3.14 -X utf8",
+      "execution": "rerun in continuation"
+    },
+    {
+      "suite": "scripts/tests/test_question_curation.py",
+      "tests": 6,
+      "status": "passed",
+      "environment": "Windows Python 3.14",
+      "execution": "observed in initial stage; not rerun in continuation, unchanged suites"
+    },
+    {
+      "suite": "scripts/test_compile_lesson_practice.py",
+      "tests": 8,
+      "status": "passed",
+      "environment": "Windows Python 3.14",
+      "execution": "observed in initial stage; not rerun in continuation, unchanged suites"
+    },
+    {
+      "suite": "scripts/test_local_app_images.py",
+      "tests": 4,
+      "status": "passed",
+      "environment": "Windows Python 3.14",
+      "execution": "observed in initial stage; not rerun in continuation, unchanged suites"
+    },
+    {
+      "suite": "scripts/tests/test_question_extraction.py",
+      "tests": 15,
+      "status": "passed",
+      "environment": "Container Linux Python fixado no projeto, sem rede, montagem read-only deste worktree, tmpfs exclusivo",
+      "windowsLimitation": "Primeira execução também teve cp1252; UTF-8 resolveu. Teste de symlink WinError 1314 persiste no Windows; suíte inteira passou em Linux sem alterar/relaxar teste.",
+      "execution": "observed in initial stage; not rerun in continuation, unchanged suites"
+    }
+  ],
+  "otherChecks": [
+    {
+      "check": "OpenSpec 1.14.1 validate question-bank-expansion --strict",
+      "status": "passed",
+      "stage": "initial-observed-result-preserved"
+    },
+    {
+      "check": "bootJar offline",
+      "status": "passed",
+      "stage": "initial-observed-result-preserved"
+    },
+    {
+      "check": "JAR inspection",
+      "status": "passed",
+      "entries": 629,
+      "editorialSourcesAndExpansionTestsAbsent": true,
+      "stage": "initial-observed-result-preserved"
+    },
+    {
+      "check": "Docker/material allowlist",
+      "status": "passed",
+      "editionFilesChecked": 18,
+      "stage": "initial-observed-result-preserved"
+    },
+    {
+      "check": "CLI plan and explicit compilation",
+      "status": "passed",
+      "implicitImportOrApproval": false,
+      "stage": "initial-observed-result-preserved"
+    },
+    {
+      "check": "102-cell offline inventory",
+      "status": "passed",
+      "historicalSimulado": 251,
+      "historicalPractice": 255,
+      "historicalReferenceDeficit": 2044,
+      "destinationEligible": null,
+      "stage": "initial-observed-result-preserved"
+    },
+    {
+      "check": "OpenSpec strict after continuation",
+      "status": "passed"
+    },
+    {
+      "check": "External edition CLI, copied edition CLI and audit",
+      "status": "passed",
+      "candidates": 79,
+      "cells": 57,
+      "pairs": 0
+    },
+    {
+      "check": "13 independent arithmetic oracles",
+      "status": "passed"
+    },
+    {
+      "check": "Ignored local corpus outside build, Docker and public-material allowlists",
+      "status": "passed"
+    }
+  ],
+  "content": {
+    "newCandidates": 79,
+    "purposeTotals": {
+      "SIMULADO": 43,
+      "PRATICA_AULA": 36
+    },
+    "cellsWithCandidates": 57,
+    "newImportedReal": 0,
+    "newEligibleReal": 0,
+    "originalsVerified": 0,
+    "originalDeficitAcrossPurposes": 510,
+    "externalMathOraclesPassed": 13,
+    "quarantined": 4,
+    "downloadedDocumentsWithActualHash": 7,
+    "download403UnknownHash": 2,
+    "initialPositionsProspected": 120,
+    "fullEditorialReviewPending": true,
+    "semanticDiversityNotCertified": true,
+    "durableLocalDirectory": "acervo-local/question-bank-expansion/2026-11",
+    "corpusVersionedOrEmbeddedInRuntime": false
+  },
+  "independentBatchReview": "not-run: aguarda teste local do usuário; somente SOL 6.1 xhigh quando autorizado neste fluxo",
+  "cumulativeSpecGate": "not-run, distinto da revisão de lote",
+  "publishedImplementation": false,
+  "merged": false,
+  "deployed": false,
+  "operatorOrVpsDatabaseAccessed": false,
+  "localFileHashes": {
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionContentCheck.java": "9f0f253a8fdcf08e670ab5efb460c2e501e270ffce68e830d1c32218a1269a45",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionHttpTests.java": "d7f05d6b8870d489c06cb832c089901d416f5f6717aac82a2cebe73410cdbae4",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionPackageTests.java": "374741aef9f7993252469a5e02959b222c2f82f90c623ed68f5c61a2794b167e",
+    "docs/question-bank-expansion.md": "494d5a547969d9c06d8d5e5461d65de3157a848a47d824140fd7fc1314b606f4",
+    "docs/question-source-reuse-assessment.md": "f520cec59be1ab9f36fe17cef1033e2e2307a147c02d0f97256a1d5fd7dd04dd",
+    "editorial/question-bank-expansion/2026-11/edition.json": "f0b5b344c7518dbd87324ceab6e2e6241d635d6c18847166b759ec718c79a90f",
+    "editorial/question-bank-expansion/2026-11/inventory-baseline.json": "62f425cd0382c2cf651edbaf4c62af6ee4dc8b6778c2ddcbd0df2e8b8d4bf295",
+    "editorial/question-bank-expansion/2026-11/inventory-baseline.md": "b63a4bc4f52f13bd84e9538e48419801f255879f905e4b0c396cbcffbda782b3",
+    "editorial/question-bank-expansion/2026-11/pair-decisions.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/administrativo.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/escolar.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/informatica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/matematica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/portugues.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/README.md": "fc7deadbcb52dd51cff92aa2f2f38dd212fc122a49b8169e8bd9f061e72a83e8",
+    "editorial/question-bank-expansion/2026-11/reviews.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "editorial/question-bank-expansion/2026-11/simulado/administrativo.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/escolar.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/informatica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/matematica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/portugues.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/source-inventory.json": "3bbfc4682cba42ca365867e50164c1b3b5132b150f8d2a68a7bbd9d74ce6a578",
+    "editorial/question-bank-expansion/2026-11/sources.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "openspec/changes/question-bank-expansion/.openspec.yaml": "519b5d2f2c95a5824a38a573c58ef1067b39bf77f183f2c01b55804de4c18bde",
+    "openspec/changes/question-bank-expansion/design.md": "6742c55af918452d98ba10a4338f234b12edbcfeb63c577aa76b9b78df1749cc",
+    "openspec/changes/question-bank-expansion/implementation-report.initial-2026-11-10.json": "cc93a352b2811695bee3614a3c79eaa3ad2fa9c65674ec68657501d838ebadde",
+    "openspec/changes/question-bank-expansion/proposal.md": "6b6fbb291ef2906f28b40ed86580988db74b9d0906a12e85c5b13e0f950a4635",
+    "openspec/changes/question-bank-expansion/specs/lesson-practice-capacity/spec.md": "723e49973b596331f4a7dc5907d0500fe60f1052e34a5f6ffb883f55462e7ad2",
+    "openspec/changes/question-bank-expansion/specs/question-bank-coverage/spec.md": "fb29aa13c8eb1c86877232ef52a43f97b3db75353c94690f9eabb58a0a3b1530",
+    "openspec/changes/question-bank-expansion/tasks.md": "f4386b0c5649bb3ba8b6f0c8a2a68a43e496c2c1524f641b0a8b1520038bd1ca",
+    "scripts/audit_question_expansion.py": "55465abb30d375b50fa8c3333643d7bb47fd3acb58fd77470ab5ea08fab3118f",
+    "scripts/question_expansion.py": "c1f21018478b0ad8125750173ee8b51f67eb869feee468bc4c2304dae79898d5",
+    "scripts/tests/test_question_expansion.py": "88a9f8e3de129b8aaa1fe5c45230e0f8b0e4f39464c62ff5be7c3eaca9920e24"
+  },
+  "limits": [
+    "Relatório técnico local não é aprovação editorial ou semântica nem evidência spec-review.",
+    "Frontend/Playwright e conjunto completo de backend não executados neste incremento; contratos de prática aguardam #161.",
+    "Nenhum grupo é declarado completo; conteúdo, observação do destino e dependências continuam pendentes.",
+    "Hashes dos arquivos são desta árvore local ainda sem commit; relatório exclui a si mesmo. Alterações posteriores exigem nova verificação.",
+    "Este relatório substitui o estado sem conteúdo do relatório inicial preservado. Não foi executada revisão independente por modelo.",
+    "Ausência de pares automatizados não prova diversidade; sete checks editoriais continuam sem registro válido.",
+    "A cópia externa não é backup de banco e o ZIP contém somente pacotes e leitura editorial, sem PDFs."
+  ],
+  "stage": "external-corpus-continuation",
+  "supersedes": "implementation-report.initial-2026-11-10.json",
+  "reuseAssessment": {
+    "path": "docs/question-source-reuse-assessment.md",
+    "basis": "Lei 9.610 art. 8º, IV e TJPR AC 1437332-3, com escopo/limites documentados",
+    "expressAvancaLicenseFound": false,
+    "userHasPriorLicense": false,
+    "externalJsonAloneEstablishesPermission": false,
+    "legalOpinionOrWarranty": false
+  },
+  "realReaderPreview": {
+    "destination": "isolated-new-postgres-173-preview",
+    "items": 79,
+    "packages": 57,
+    "questionWrites": 0,
+    "receiptWrites": 0,
+    "decisionWrites": 0,
+    "applied": false,
+    "eligible": false,
+    "testHelper": "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionContentCheck.java",
+    "reportSha256": "a5a79dec6a846ace31512d2d1e2922d7b16715149de8b2b5cf3e64acb001d0f9",
+    "selectionManifestSha256": "02f2d2968fed502286bdd5cf3674e47d281428f533cf022d501c790b311a1dc6"
+  },
+  "externalArchive": {
+    "name": "external-question-packages-2026-11.zip",
+    "sha256": "1e2a11976abf33343ee6bd0eb1327436ca7d3cc9163252e02fce5ede70d0ff86",
+    "bytes": 345224
+  },
+  "localDelivery": {
+    "manifestSha256": "7efc829cc4287178f531b1cce83701004091b828dad35a29974effe5f547007a",
+    "copiedFilesVerified": 208,
+    "copiedEditionRecompiled": true,
+    "copiedAudit": {
+      "cells": 102,
+      "candidates": 79,
+      "pairs": 0,
+      "databaseEligible": null
+    }
+  }
+}

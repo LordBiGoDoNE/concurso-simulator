@@ -2,60 +2,68 @@
 
 ## Why
 
-A aplicação completa está na main em f61d57d, com execução local e prática de aula
-entregues. O usuário dispõe de uma VPS Hostinger e quer preparar a publicação,
-começando por homologação privada. Em 2026-10-25 confirmou este escopo e pediu
-registrá-lo no backlog para continuar em outra máquina. Acompanhamento: #156.
+O usuário quer publicar o concurso-simulator na VPS Hostinger com domínio próprio.
+O plano registrado em 2026-10-25 previa só uma homologação privada por túnel, em
+Rocky Linux, operada exclusivamente pelo usuário. Em 2026-10-31 a VPS foi
+reinstalada com Ubuntu 24.04 e a main antiga (f61d57d) foi publicada por HTTP no
+IP, com banco vazio, perfil local e adaptação de URL no proxy. Esse arranjo
+funciona, mas não usa HTTPS, cookie Secure, domínio, Google nem o acervo.
 
-O usuário executará todos os comandos na VPS. Chaves, login e credenciais ficam
-exclusivamente sob seu controle; o assistente prepara arquivos e orientações.
+Em 2026-11-13 o usuário decidiu ampliar esta spec para o lançamento público.
+Acompanhamento: #156.
 
 ## What Changes
 
-- Especificar implantação guiada em Rocky Linux 10.2 x86_64, 4 vCPUs,
-  aproximadamente16 GB de RAM e194 GB livres, conforme inventário do usuário.
-- Preparar instalação/verificação de Docker Engine/Compose, preservando SELinux,
-  firewall e acesso SSH. Validar compatibilidade no Rocky real antes de alegá-la.
-- Criar runtime de homologação separado do local, com projeto/volumes/segredos
-  próprios e imagens identificadas, construídas fora da VPS.
-- Acessar http://localhost:18088 por túnel SSH operado pelo usuário, com porta
-  remota exclusivamente em loopback. API/PostgreSQL não publicam portas.
-- Levar somente o acervo atual:251 bases de simulado,255 práticas e conteúdo
-  parametrizado aprovado, sem contas, tentativas ou sessões locais. Preservar
-  perguntas/fingerprints; não iniciar nova redação ou auditoria semântica do acervo.
-- Definir importação editorial deliberada, sem seed ou aprovação no startup;
-  manifesto exato e destino identificados antes de qualquer escrita.
-- Entregar atualização, diagnóstico, backup manual com cópia no computador,
-  restauração em destino separado e rollback compatível com o schema.
-- Concluir com homologação privada funcional e recuperação demonstrada pelo
-  usuário; conservar execução local, aulas e publicação estática existentes.
+- **Acesso:** o assistente (Claude Code no PC do usuário) MAY operar a VPS por SSH
+  como `concurso-dev`, com a chave do usuário, sem agent forwarding. Operações
+  com sudo (nginx, certbot, firewall) são executadas pelo usuário ou com a senha
+  digitada por ele no prompt; o assistente não recebe senhas.
+- **Endereço:** `https://concurso-simulator.reemsoftworks.com`.
+  Os dois domínios apontam para a VPS. Qualquer host em `reemsoftworks.com.br`
+  redireciona com 301 para o mesmo host e caminho em `reemsoftworks.com`.
+  A raiz `reemsoftworks.com` (e `www`) fica reservada para outros projetos;
+  até lá, redireciona temporariamente (302) para o concurso. O DNS é gerenciado na Hostinger.
+- **Runtime de produção:** perfil não local (cookie Secure, HTTPS), release por
+  commit da main, imagens construídas no Docker rootless do `concurso-dev`,
+  sem portas de API/PG. Remove a substituição de URL (`sub_filter`) e a
+  publicação HTTP pelo IP.
+- **Borda:** nginx do host com TLS Let's Encrypt, redirecionamento HTTP→HTTPS,
+  HSTS e recusa de hosts desconhecidos.
+- **Google:** configuração de produção preparada (`configure-google`), mas o
+  lançamento sai com o Google desligado por decisão do usuário em 2026-11-13;
+  ligar e fazer o smoke real ficou para a #221.
+- **Acervo:** a expansão 2026-11 aprovada (102 pacotes, 2.587 questões), carregada
+  pela importação administrativa por HTTP. Os conjuntos de outubro (250 simulado,
+  255 prática, famílias parametrizadas) ficaram fora por decisão do usuário (#221).
+  Sem contas, sessões ou tentativas do PC.
+- **Operação:** atualização com backup antes de migrar, backup manual com cópia
+  no PC, restauração ensaiada em destino separado e rollback compatível.
 
 ## Capabilities
 
 ### New Capabilities
 
-- `vps-staging-runtime`: runtime privado, releases identificadas e operação guiada.
-- `vps-staging-data`: inicialização exclusiva do acervo e decisões rastreáveis.
-- `vps-staging-recovery`: backup manual, transferência, restauração e rollback.
+- `vps-staging-runtime`: runtime de produção, releases identificadas e operação.
+- `vps-staging-data`: carga do acervo sem dados pessoais.
+- `vps-staging-recovery`: backup, restauração, atualização e rollback.
+- `vps-public-edge`: domínio, TLS, redirecionamentos, Google e abertura pública.
+
+Os nomes `vps-staging-*` foram mantidos para preservar o histórico da #156.
 
 ### Modified Capabilities
 
-Nenhuma alteração normativa das capabilities existentes é proposta. Contratos de
-negócio e limites arquiteturais permanecem os atuais; configurações e contratos
-operacionais próprios serão detalhados na implementação autorizada.
+Nenhuma alteração normativa das capabilities de negócio existentes. Se a
+produção exigir mudança de código (por exemplo, cabeçalhos encaminhados),
+ela entra como tarefa própria com testes.
 
 ## Impact
 
-Futuros artefatos em infra/vps-staging, ferramentas de build/operação e roteiro
-para Windows/PowerShell e Rocky Linux. Testes de configuração, isolamento, pacote,
-recuperação e navegador complementam as regressões existentes. Sem nova migração
-de negócio prevista; Flyway continua único dono do schema.
+Novos artefatos em `infra/vps-production/` (Compose, nginx, roteiros e operador),
+scripts e testes. Configuração do host (nginx, certbot, ufw) fora do repositório,
+com versões de referência versionadas. Sem migração de negócio prevista; Flyway
+continua o único dono do schema.
 
-Implementação futura classificada como crítica por rede/segredos, elegibilidade,
-persistência e restauração. Revisões SOL6.1xHigh orientarão essas fronteiras; não
-foram executadas nesta preparação de backlog. Gates e merges mantêm suas regras.
-
-Domínio, HTTPS público, Google real, backup externo automático e abertura pública
-terão outra spec. Não instalar agente/runner na VPS nem dar acesso remoto ao
-assistente. CI apenas verifica. Sem promessa de HA, SLA ou frequência automática
-de backup. Proposta registrada não inicia nenhum dos grupos1–5 de implementação.
+Mudança crítica: rede pública, segredos, OAuth, persistência e restauração.
+A revisão final de código antes do merge `[SPEC]` segue `docs/architecture/spec-review.md`
+(Claude Opus 5.5, esforço medium, agente novo). HA, SLA, RPO/RTO e backup externo
+automático continuam fora de escopo.

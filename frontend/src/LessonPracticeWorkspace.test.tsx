@@ -2,16 +2,60 @@ import { fireEvent, render, screen, waitFor, act } from '@testing-library/react'
 import { afterEach, expect, it, vi } from 'vitest';
 import { useRef } from 'react';
 import LessonPracticeWorkspace, { type LessonPracticeHandle } from './LessonPracticeWorkspace';
-import { createLessonPractice, lessonPracticeTransport, lessonPracticeHistory } from './lesson-practice-api';
-import { view, result } from '../test/attempt-fixtures';
-vi.mock('./lesson-practice-api',()=>({createLessonPractice:vi.fn(),lessonPracticeTransport:{read:vi.fn(),save:vi.fn(),finish:vi.fn(),result:vi.fn()},lessonPracticeHistory:vi.fn()}));
+import { createLessonPractice, lessonPracticeTransport, lessonPracticeHistory, lessonPracticeAvailability } from './lesson-practice-api';
+import { lessons } from './study-catalog';
+import { view, result } from '../test/practice-fixtures';
+vi.mock('./lesson-practice-api',()=>({createLessonPractice:vi.fn(),lessonPracticeTransport:{read:vi.fn(),save:vi.fn(),finish:vi.fn(),result:vi.fn()},lessonPracticeHistory:vi.fn(),lessonPracticeAvailability:vi.fn()}));
 afterEach(()=>vi.resetAllMocks());
-const selection={topicId:'P01',disciplineId:'portugues',roleId:'assistente-administrativo'};
+const selection={topicId:'P01'};
 function Fixture({connected=false}:{connected?:boolean}) {
  const ref=useRef<LessonPracticeHandle>(null);
  return <><button onClick={()=>ref.current?.start(selection)}>Começar aula</button><LessonPracticeWorkspace ref={ref} identity={connected?{connected:true,googleEnabled:false,id:'90000000-0000-0000-0000-000000000001'}:{connected:false,googleEnabled:false}} contextActive onUnavailable={vi.fn()} onGuestActive={vi.fn()} onBackToLesson={vi.fn()} onChooseLesson={vi.fn()}/></>;
 }
-function setup(){vi.mocked(createLessonPractice).mockResolvedValue(view);vi.mocked(lessonPracticeTransport.read).mockResolvedValue(view);vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[]});}
+function setup(){vi.mocked(createLessonPractice).mockResolvedValue(view);vi.mocked(lessonPracticeTransport.read).mockResolvedValue(view);vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[]});vi.mocked(lessonPracticeAvailability).mockImplementation(async(topicId)=>({topicId,available:5,maximum:5}));}
+
+function inlineProps(topicId='P01') {
+ return {identity:{connected:false as const,googleEnabled:false},contextActive:true,
+  inlineLesson:{topic:lessons.find(topic=>topic.id===topicId)!},
+  onUnavailable:vi.fn(),onGuestActive:vi.fn(),onBackToLesson:vi.fn(),onChooseLesson:vi.fn()};
+}
+function expand(){const summary=screen.getByText('Pratique esta aula');if(!summary.closest('details')!.open)fireEvent.click(summary);}
+
+it('painel começa recolhido e só carrega questões abaixo do botão após o clique',async()=>{
+ setup();let resolve!:(value:typeof view)=>void;vi.mocked(createLessonPractice).mockReturnValue(new Promise(done=>resolve=done));
+ render(<LessonPracticeWorkspace {...inlineProps()}/>);
+ expect(screen.getByText('Pratique esta aula').closest('details')).not.toHaveAttribute('open');expect(createLessonPractice).not.toHaveBeenCalled();
+ expand();const button=await screen.findByRole('button',{name:'Começar prática'});await waitFor(()=>expect(button).toBeEnabled());
+ expect(screen.queryByRole('radio')).not.toBeInTheDocument();expect(createLessonPractice).not.toHaveBeenCalled();
+ fireEvent.click(button);expect(screen.getByRole('button',{name:'Carregando questões…'})).toBeDisabled();
+ const loading=screen.getByText('Carregando questões da prática…');expect(button.compareDocumentPosition(loading)&Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+ await act(async()=>resolve(view));await screen.findByRole('heading',{name:'Questão 1 de 1'});
+ expect(screen.getByRole('button',{name:'Prática em andamento'})).toBeVisible();expect(createLessonPractice).toHaveBeenCalledTimes(1);
+});
+
+it('recolher e mudar de aula preservam a fila da prática e não mostram questões de outro assunto',async()=>{
+ setup();let resolve!:(value:typeof view)=>void;vi.mocked(lessonPracticeTransport.save).mockReturnValue(new Promise(done=>resolve=done));
+ const props=inlineProps();const rendered=render(<LessonPracticeWorkspace {...props}/>);expand();
+ const start=await screen.findByRole('button',{name:'Começar prática'});await waitFor(()=>expect(start).toBeEnabled());fireEvent.click(start);
+ await screen.findByRole('heading',{name:'Questão 1 de 1'});await waitFor(()=>expect(lessonPracticeTransport.read).toHaveBeenCalled());
+ fireEvent.click(screen.getAllByRole('radio')[0]);await waitFor(()=>expect(lessonPracticeTransport.save).toHaveBeenCalledTimes(1));
+ const signal=vi.mocked(lessonPracticeTransport.save).mock.calls[0][3];
+ fireEvent.click(screen.getByRole('button',{name:'Recolher prática e voltar à leitura'}));expect(signal.aborted).toBe(false);
+ rendered.rerender(<LessonPracticeWorkspace {...props} inlineLesson={inlineProps('M01').inlineLesson}/>);expand();
+ expect(screen.queryByRole('radio')).not.toBeInTheDocument();expect(createLessonPractice).toHaveBeenCalledTimes(1);expect(signal.aborted).toBe(false);
+ await act(async()=>resolve({...view,version:1,items:[{...view.items[0],selectedAlternativeId:view.items[0].alternatives[0].id}]}));
+ rendered.rerender(<LessonPracticeWorkspace {...props}/>);expand();await screen.findByText('Respostas confirmadas.');
+ expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(createLessonPractice).toHaveBeenCalledTimes(1);
+});
+
+it('falha de início inline oferece retry do mesmo comando em vez de novo início',async()=>{
+ setup();vi.mocked(createLessonPractice).mockRejectedValueOnce(new TypeError('network'));
+ render(<LessonPracticeWorkspace {...inlineProps()}/>);expand();const start=await screen.findByRole('button',{name:'Começar prática'});
+ await waitFor(()=>expect(start).toBeEnabled());fireEvent.click(start);
+ const retry=await screen.findByRole('button',{name:'Tentar iniciar prática novamente'});expect(screen.getByRole('button',{name:'Início pendente'})).toBeDisabled();
+ fireEvent.click(retry);await screen.findByRole('heading',{name:'Questão 1 de 1'});
+ expect(vi.mocked(createLessonPractice).mock.calls[0].slice(0,2)).toEqual(vi.mocked(createLessonPractice).mock.calls[1].slice(0,2));
+});
 it('retry de criação mantém comando e não toca o compositor de simulados',async()=>{
  setup();vi.mocked(createLessonPractice).mockRejectedValueOnce(new TypeError('network'));
  render(<Fixture/>);fireEvent.click(screen.getByRole('button',{name:'Começar aula'}));fireEvent.click(await screen.findByRole('button',{name:'Tentar iniciar prática novamente'}));
@@ -39,7 +83,7 @@ it('prática bloqueia sua troca durante salvamento e mostra correção somente a
  expect(screen.getByText('PRIVATE_ATTEMPT_RESOLUTION_SENTINEL')).toBeInTheDocument();expect(screen.queryByRole('radio')).not.toBeInTheDocument();
 });
 it('histórico próprio é reservado à conta e inclui o assunto',async()=>{
- setup();vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[{id:view.id,topicId:'P01',roleId:view.roleId,createdAt:view.createdAt,finishedAt:null,total:1,percentage:null}]});
+ setup();vi.mocked(lessonPracticeHistory).mockResolvedValue({page:0,size:20,items:[{id:view.id,topicId:'P01',createdAt:view.createdAt,finishedAt:null,total:1,percentage:null}]});
  const r=render(<Fixture/>);expect(lessonPracticeHistory).not.toHaveBeenCalled();r.unmount();render(<Fixture connected/>);
  fireEvent.click(await screen.findByRole('button',{name:/Abrir prática de P01/}));await screen.findByRole('heading',{name:'Questão 1 de 1'});expect(lessonPracticeTransport.read).toHaveBeenCalledWith(view.id,expect.any(AbortSignal));
 });

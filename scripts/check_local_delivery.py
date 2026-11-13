@@ -34,6 +34,7 @@ def check():
         ([sys.executable, "scripts/check_local_ownership.py"], destination),
         ([sys.executable, "scripts/check_local_runtime.py"], destination),
         ([sys.executable, "scripts/check_local_recovery.py"], destination),
+        ([sys.executable, "scripts/check_backup_schemas.py"], destination),
         ([sys.executable, "scripts/check_local_browser.py"], destination),
     ]
     for number, (command, cwd) in enumerate(commands, 1):
@@ -57,7 +58,7 @@ def check():
                             print("Categoria de falha: " + category, flush=True)
                 raise
     reports = {name: json.loads((destination / "backend/build/local-app" / (name + ".json")).read_text(encoding="utf-8"))
-               for name in ("image-check", "ownership-check", "runtime-check", "recovery-check", "browser-check")}
+               for name in ("image-check", "ownership-check", "runtime-check", "recovery-check", "backup-schema-check", "browser-check")}
     assert all(report["status"] == "passed" and report["source_sha"] == sha for report in reports.values())
     write_report(OUTPUT / "clean-delivery-check.json", {"status": "passed", "source_sha": sha,
                  "export": str(destination.relative_to(ROOT)), "reports": reports,

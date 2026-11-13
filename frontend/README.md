@@ -1,5 +1,47 @@
 # Frontend
 
+## Primeira experiência do estudante — implementação local
+
+Entrada por cargo, biblioteca e prática seguem a spec `new-student-experience`.
+Aulas e orientação inicial usam o catálogo local e funcionam sem API. A navegação
+usa `#/inicio`, `#/aulas/P01`, `#/simulados`, `#/praticas` e `#/questoes`;
+cargo, disciplina e busca são públicos. Abrir ou atualizar um link não inicia atividades.
+Atualização restaura contexto público; respostas pendentes não são persistidas na URL.
+
+Antes de oferecer a prática, a interface consulta a disponibilidade do assunto/cargo.
+Erro, carregamento e zero confirmado são distintos. Início exige clique e sessão
+verificada; login continua opcional. API/CSRF/idempotência mantêm os contratos atuais.
+
+Para conferir os cenários da jornada no Edge instalado:
+`npx playwright test --config playwright.edge.config.ts`.
+Protótipo em `../design/prototypes/new-student-experience/`; evidências e limites em
+`../openspec/changes/new-student-experience/verification.md`.
+
+O índice aparece antes do título da aula, com cabeçalho Nesta Disciplina - nome
+da disciplina. O leitor ocupa toda a largura disponível, com opções de navegação
+distribuídas conforme o tamanho da tela. Ao trocar de aula, inclusive pelos
+botões Próxima aula/Aula anterior, a página retorna ao topo.
+
+A prática aparece em painel recolhido no final da aula. Abrir o painel consulta
+disponibilidade; somente Começar prática inicia a realização e carrega as questões
+abaixo do botão, mantendo a rota da aula. Recolher preserva respostas/fila; o resultado
+aparece no mesmo painel. A área Práticas mantém acesso à realização e ao histórico.
+As 51 aulas usam o leitor nativo: um título, teoria, exemplos resolvidos, tabelas,
+fórmulas, esquemas e fontes no layout atual. Não carregam HTML/CSS antigo nem
+iframe. Os exercícios antigos não aparecem no texto; use o painel de prática.
+Atalhos de revisão abrem a mesma aula nativa. A leitura independe da API.
+
+Conteúdo versionado em `src/lesson-documents/`, gerado a partir das fontes públicas
+preservadas por `python scripts/compile_native_lessons.py` (a partir da raiz).
+Para verificar reprodutibilidade: `python scripts/compile_native_lessons.py --check`
+e `python -m unittest discover -s scripts/tests -p test_native_lessons.py -v`.
+O manifesto registra hashes LF das fontes e de cada documento. Alterações nas
+fontes exigem regeneração e inspeção; não editar os JSONs manualmente. Python é
+necessário nessa autoria/verificação; o build e o runtime usam apenas os dados
+preparados. O renderer admite elementos conhecidos, sem HTML bruto ou scripts.
+Esquemas e tabelas largos podem ser percorridos na horizontal com teclado.
+Falha na leitura oferece retry; navegar cancela/ignora respostas anteriores.
+
 Node **24 LTS**, React **19.3.0**, TypeScript **5.9.3**, Vite **8.3.3**, Vitest **5.0.3**. As versões resolvidas das dependências estão em `package-lock.json`.
 
 ```sh
@@ -9,9 +51,9 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Abra http://127.0.0.1:5173. Se o backend estiver parado, o link das aulas continua acessível e a interface informa indisponibilidade. Use o botão para consultar novamente.
+Abra http://127.0.0.1:5173. Se o backend estiver parado, as aulas continuam acessíveis e a interface informa indisponibilidade. Use o botão para consultar novamente.
 
-`VITE_API_URL`, `VITE_MATERIAL_URL` e `VITE_STATUS_TIMEOUT_MS` são configurações **públicas**, incorporadas no build. Nunca coloque senhas ou tokens nelas. Para estudar offline, configure o link das aulas para um servidor local com o pacote estático montado; o material também pode ser aberto diretamente por arquivo.
+`VITE_API_URL` e `VITE_STATUS_TIMEOUT_MS` são configurações **públicas**, incorporadas no build. Nunca coloque senhas ou tokens nelas. O leitor nativo usa os documentos do próprio frontend; não depende de `VITE_MATERIAL_URL` ou de um servidor de material estático. O pacote HTML preservado continua disponível separadamente.
 
 ## Banco de questões — consulta livre
 

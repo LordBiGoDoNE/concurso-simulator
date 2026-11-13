@@ -1,0 +1,147 @@
+{
+  "version": 1,
+  "status": "completed",
+  "gate_status": "semantic-review-completed-awaiting-current-ci-and-user-merge-approval",
+  "review_execution_status": "completed",
+  "review_result": "no-new-actionable-findings",
+  "spec": "administrative-question-import",
+  "pr": 171,
+  "base_sha": "98f6f974110889ca6862a40d4e5d2fa9461dd536",
+  "reviewed_head_sha": "73b5377bb2b426c29d0644bdcc8b1ee44c93ec76",
+  "diff_sha256": "92e6b75d0b1924a7664ffe35f8d0886c141ea03c33402cb6bbd3a58155241c38",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer_final",
+    "independent_context": true,
+    "read_only": true,
+    "harness_model": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "token_metrics_available": false,
+    "tokens": null
+  },
+  "reviewed_at": "2026-11-10T15:20:56.803769+00:00",
+  "risk": {
+    "classification": "critical",
+    "reason": "Autentica\u00e7\u00e3o/autoriza\u00e7\u00e3o, credenciais, sess\u00e3o/CSRF/OIDC, entrada n\u00e3o confi\u00e1vel, persist\u00eancia/schema/transa\u00e7\u00f5es/concorr\u00eancia/idempot\u00eancia e privacidade."
+  },
+  "coverage": {
+    "requirements": "Revalida\u00e7\u00e3o confirma compatibilidade V10/V11 e suporte estrito V12/V13 coerentes com preserva\u00e7\u00e3o dos dados e documenta\u00e7\u00e3o.",
+    "architecture": "ADRs 0001/0002 e checklist HTTP: n\u00facleo Java puro, portas, controllers, seguran\u00e7a e SQL restrito \u00e0 infraestrutura.",
+    "integration": "Consumidores de backup/restore conferidos; ensaio hist\u00f3rico e relat\u00f3rio por SHA comp\u00f5em a entrega limpa. Restante do conjunto reconferido por Git e an\u00e1lise cumulativa.",
+    "security": "Login local, hash adaptativo, throttle, \u00e9poca persistente, sess\u00e3o/CSRF/CORS, inten\u00e7\u00e3o OIDC, remo\u00e7\u00e3o OAuth, limites e privacidade.",
+    "persistence": "Invent\u00e1rios confrontados com as migra\u00e7\u00f5es, sem alter\u00e1-las. Restore at\u00f4mico e bloqueio ap\u00f3s falha preservados; demais invariantes do conjunto mantidas.",
+    "tests": "Revisor leu regress\u00f5es hist\u00f3ricas independentes, negativos de tabela/tipo/corrup\u00e7\u00e3o/imagem e ensaio real. Execu\u00e7\u00f5es pelo coordenador/CI registradas separadamente.",
+    "maintenance": "Documenta\u00e7\u00e3o atualizada e limites expl\u00edcitos; FINAL-001 fixed no candidato. SQL das migra\u00e7\u00f5es com hist\u00f3rico Flyway sint\u00e9tico, sem startup de imagens API hist\u00f3ricas."
+  },
+  "limitations": [
+    "Revis\u00e3o est\u00e1tica somente leitura, sem testes/build/aplica\u00e7\u00e3o/rede/DB/escritas pelo revisor.",
+    "Reprodu\u00e7\u00e3o pelo coordenador com dump/manifesto sint\u00e9ticos; fingerprints exercitado com substitui\u00e7\u00e3o controlada, sem PostgreSQL real nesse cen\u00e1rio.",
+    "verification.md e verification-r2.md lidos apenas ap\u00f3s an\u00e1lise independente do produto, como documenta\u00e7\u00e3o hist\u00f3rica, sem adotar declara\u00e7\u00f5es como prova sem\u00e2ntica nova. Nenhuma revis\u00e3o independente anterior fornecida.",
+    "Google real, desempenho e aus\u00eancia total de defeitos n\u00e3o certificados.",
+    "Harness n\u00e3o forneceu contadores de tokens; nenhuma estimativa. Cota n\u00e3o coletada por decis\u00e3o do usu\u00e1rio.",
+    "Uma execu\u00e7\u00e3o auxiliar ampla no Windows teve78 testes,21 erros e5 ignorados por Git em fixtures/encoding/symlink, com erro secund\u00e1rio de cleanup. O guard isolado passou18 testes com UTF-8 e Git sint\u00e9tico sem assinatura; testes n\u00e3o alterados. Check Linux atual passou. N\u00e3o se afirma aprova\u00e7\u00e3o ampla dos78 no Windows."
+  ],
+  "verification": [
+    {
+      "command": "python scripts/check_spec_review.py --snapshot --base 98f6f974110889ca6862a40d4e5d2fa9461dd536 --head c1080d2676b42434665df68d7d562982387a958d --spec administrative-question-import",
+      "result": "Digest conferido no in\u00edcio e no encerramento, 98 arquivos +4821/-57.",
+      "executed_by": "spec-reviewer /root/spec_reviewer_final, somente consulta com PYTHONDONTWRITEBYTECODE=1"
+    },
+    {
+      "command": "verified_backup de manifesto V11 original na base e no head; fingerprints com invent\u00e1rio V11 substitu\u00eddo por mock",
+      "result": "Base aceita; head rejeita manifesto e invent\u00e1rio V11. Dados sint\u00e9ticos; nenhuma conex\u00e3o DB/rede.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "GitHub Actions PR #171 / statusCheckRollup",
+      "result": "12 checks verdes no head c1080d2, conferidos pelo coordenador; n\u00e3o certificam o gate sem\u00e2ntico.",
+      "executed_by": "GitHub Actions; estado consultado pelo coordenador"
+    },
+    {
+      "command": "python -m unittest discover -s scripts -p 'test_local_app*.py'",
+      "result": "24 casos, zero falhas, um symlink ignorado; c\u00f3digo testado no working tree subsequentemente commitado como73b5377.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "python scripts/check_backup_schemas.py",
+      "result": "PostgreSQL18.6 real V10/V11/V12/V13, dumps/restores e negativos aprovados; relat\u00f3rio source_sha73b5377.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "test_spec_review.py isolado, PYTHONUTF8=1 e Git de fixtures sem assinatura persistente",
+      "result": "18 testes aprovados; nenhuma altera\u00e7\u00e3o de testes/assertions/configura\u00e7\u00e3o persistente.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "GitHub Actions PR #172 statusCheckRollup",
+      "result": "13 checks verdes no head73b5377, incluindo entrega limpa com check_backup_schemas.py.",
+      "executed_by": "GitHub Actions, conferido pelo coordenador"
+    },
+    {
+      "command": "gh pr view172 e compara\u00e7\u00e3o Git do merge8c17835 com candidato73b5377",
+      "result": "PR172 MERGED; candidato ancestral do merge, \u00e1rvores id\u00eanticas e digest92e6b75... preservado.15 checks verdes conferidos antes do merge.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "validate_report(report, explanation, base98f6f97, head8c17835, administrative-question-import,171)",
+      "result": "Executado explicitamente e aprovado no head de produto integrado; commits posteriores restritos aos dois arquivos de evid\u00eancia exigem nova confer\u00eancia do head atual.",
+      "executed_by": "coordenador"
+    }
+  ],
+  "findings": [
+    {
+      "id": "FINAL-001",
+      "severity": "blocking",
+      "location": "scripts/local_app_data.py:18,39-43,103-104",
+      "evidence": "No head anterior c1080d2: SUPPORTED_SCHEMA_VERSIONS inclui V10\u2013V13, mas fingerprints e verified_backup exigem invent\u00e1rio global V13. Manifesto V11 aceito na base \u00e9 rejeitado no head; invent\u00e1rio V11 tamb\u00e9m \u00e9 recusado antes de SQL real. V12 n\u00e3o possui admin_registration. Backup antigo falha depois de parar API e pr\u00e9via de restore falha antes da checagem de imagem/destino.",
+      "reference": "docs/lesson-practice.md:89-91; openspec/changes/local-application-delivery/specs/local-data-recovery/spec.md; requisito de preserva\u00e7\u00e3o dos dados anteriores da spec atual.",
+      "impact": "Interrompe caminho documentado de backup/recupera\u00e7\u00e3o de schemas anteriores. N\u00e3o foi constatada destrui\u00e7\u00e3o de dados; exige ferramenta anterior ou corre\u00e7\u00e3o para restaurar o caminho.",
+      "suggestion": "Invent\u00e1rios fechados por vers\u00e3o: V10/V11 base, V12 com qb_import_*, V13 com admin_registration; aplicar em valida\u00e7\u00e3o/fingerprints/restore, mantendo checksum, imagem exata, destino vazio e igualdade estrita. Regress\u00f5es de manifestos originais e aus\u00eancia/excesso por vers\u00e3o.",
+      "disposition": "fixed",
+      "resolution": "Corrigido no candidato73b5377: invent\u00e1rios fechados por schema, consultas de fingerprint pelo hist\u00f3rico real e valida\u00e7\u00e3o estrita do manifesto. Regress\u00f5es independentes e ensaio PostgreSQL V10\u2013V13 passaram; checksum/imagem exata/destino vazio/recupera\u00e7\u00e3o incompleta preservados. Revisor conferiu os seis arquivos e a combina\u00e7\u00e3o. Integrado pelo PR#172 no merge8c17835; \u00e1rvore id\u00eantica ao candidato, ancestralidade e digest cumulativo conferidos no head efetivo."
+    }
+  ],
+  "triage_complete": true,
+  "quota_collection": "not-performed-per-user-decision-2026-11-09",
+  "merge_authorized": false,
+  "coordinator_reproduction": {
+    "base98f6f97": {
+      "result": "accepted",
+      "schema_version": 11
+    },
+    "headc1080d2": {
+      "result": "rejected",
+      "error": "Backup/vers\u00e3o/checksum inv\u00e1lidos"
+    },
+    "added_required_tables": [
+      "admin_registration",
+      "qb_import_blob",
+      "qb_import_file",
+      "qb_import_receipt",
+      "qb_import_revision"
+    ],
+    "current_v11_fingerprints": {
+      "result": "rejected",
+      "error": "Conjunto de tabelas divergente; n\u00e3o \u00e9 um schema local suportado"
+    }
+  },
+  "current_integration_gate": {
+    "pr": 171,
+    "product_head_sha": "8c17835109fb7feab7e9fab8e33d973eca0c6cd1",
+    "state": "semantic review validated on effective merged product"
+  },
+  "integration_verified_at": "2026-11-10T15:28:16.470845+00:00",
+  "corrective_integration": {
+    "pr": 172,
+    "merge_commit": "8c17835109fb7feab7e9fab8e33d973eca0c6cd1",
+    "reviewed_head_preserved_as_ancestor": true,
+    "tree_equal_to_reviewed_head": true
+  },
+  "validator_result": {
+    "passed": true,
+    "base_sha": "98f6f974110889ca6862a40d4e5d2fa9461dd536",
+    "head_sha": "8c17835109fb7feab7e9fab8e33d973eca0c6cd1",
+    "pr": 171,
+    "scope": "effective integrated product before report-only commit"
+  }
+}

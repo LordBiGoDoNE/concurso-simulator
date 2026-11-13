@@ -45,7 +45,7 @@ class QuestionPublicHttpTests {
     }
     void decision(UUID question,UUID revision,EditorialDecision.Action action) {
         var q=store.transaction(s -> s.loadForUpdate(question).orElseThrow());
-        new DecideQuestionUseCase(store).execute(new EditorialDecision(action,question,revision,q.revision(revision).fingerprint(),"Fixture HTTP only",Instant.now(),Set.of(EditorialDecision.Check.values()),"Teste sintético isolado, não aprovação real"),q.eligible().map(QuestionRevision::id).orElse(null),q.editorialSequence());
+        new DecideQuestionUseCase(store).execute(new EditorialDecision(action,question,revision,q.revision(revision).fingerprint(),"Fixture HTTP only",Instant.now(),Set.of(EditorialDecision.Check.values()),"Teste sintético isolado, não aprovação real",EditorialDecision.ReviewKind.HUMAN_PEER),q.eligible().map(QuestionRevision::id).orElse(null),q.editorialSequence());
     }
     @Test @Order(1) void catalogAndEmptyPageAreTypedPublicAndNoStore() throws Exception {
         var catalog=get("/catalog");assertThat(catalog.statusCode()).isEqualTo(200);

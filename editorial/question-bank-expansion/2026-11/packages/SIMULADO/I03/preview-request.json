@@ -1,0 +1,2007 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.amer25-enc-q23"
+        },
+        "content": {
+          "statement": {
+            "text": "Na elaboração de documentos oficiais, relatórios e outros textos no serviço público, frequentemente é necessário organizar informações em listas. O Microsoft Word oferece recursos automáticos para criar listas numeradas e com marcadores, agilizando a formatação e padronização dos documentos.\nConsiderando os procedimentos para criação automática de listas no Microsoft Word, assinale a alternativa CORRETA.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0aee1f3f-0e07-5812-a5ac-a473ad2dc523",
+              "content": {
+                "text": "Para criar uma lista com marcadores automaticamente, deve-se digitar o número 1 seguido de ponto e vírgula, espaço e texto, e o Word iniciará a lista.",
+                "resources": []
+              }
+            },
+            {
+              "id": "624e13b0-cbc7-58fd-b238-f42db74b8401",
+              "content": {
+                "text": "Para iniciar uma lista numerada automaticamente, deve-se digitar o asterisco (*) seguido de espaço antes do texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8715ecdc-b223-5410-9671-9e3ed19db956",
+              "content": {
+                "text": "Para criar automaticamente uma lista com marcadores, deve-se digitar * e um espaço antes do texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "264fb208-95a0-5664-9008-b81d48fcbd6b",
+              "content": {
+                "text": "O Word não possui recursos automáticos para criação de listas, sendo necessário aplicar a formatação manualmente através dos menus.",
+                "resources": []
+              }
+            },
+            {
+              "id": "11e4b60b-f0c0-52f4-9513-be6f551796b3",
+              "content": {
+                "text": "As listas numeradas e com marcadores devem ser criadas exclusivamente através do menu “Design”, não havendo atalhos de digitação para sua criação automática.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8715ecdc-b223-5410-9671-9e3ed19db956",
+          "resolution": {
+            "text": "1. Com a AutoFormatação ao digitar ativada (configuração padrão), digitar * seguido de espaço inicia uma lista com marcadores; digitar 1. seguido de espaço inicia lista numerada; alternativa C. 2. A troca o ponto por ponto e vírgula e atribui ao número uma lista de marcadores; B atribui ao asterisco a lista numerada; D e E negam o recurso automático, e os botões de lista ficam na guia Página Inicial, não em Design. Gabarito definitivo: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Ativar ou desativar marcadores ou numeração automáticos no Word",
+              "url": "https://support.microsoft.com/pt-br/office/ativar-ou-desativar-numera%C3%A7%C3%A3o-ou-marcadores-autom%C3%A1ticos-ac3d9d00-0bb6-4421-92a6-f73e564ce71e",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Guarda Municipal de Americana — Concurso Público 01/2025, Encarregado de Seção de Almoxarifado, questão 23. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I03.s.amer25-enc-q23.json",
+            "answerPath": "sources/admin.2026-11.I03.s.amer25-enc-q23.json",
+            "contentSha256": "d75ba0ae2656c30a0a5e8477cbf75b8d7138024e5d45b4e347860ea526254cf2",
+            "answerSha256": "d75ba0ae2656c30a0a5e8477cbf75b8d7138024e5d45b4e347860ea526254cf2"
+          }
+        },
+        "fingerprint": "2f2cbb44ff9e7d261121a605178f150a97864065c04f1e1e42ed2d3ff6d22f02",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.cerq25-cont-q23"
+        },
+        "content": {
+          "statement": {
+            "text": "Maria, sua líder imediata, solicitou que você fizesse uma edição em um longo documento do Word. Trata-se de um relatório com muitas páginas, que serve como termo de autorização para movimentação de carga. Ela pediu que você substituísse a palavra “Autorizado” por “Não autorizado pela Chefia”. O termo aparece aproximadamente 700 vezes ao longo do documento, e o prazo para a tarefa é curto. Para evitar o trabalho manual, você decide utilizar o comando Localizar e Substituir do Word. Nesse contexto, assinale a alternativa que representa o processo mais rápido e preciso para realizar essa edição no documento.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7dcca5cd-370e-55fd-9b0f-6b9f5c492a49",
+              "content": {
+                "text": "Acessar a guia Página Inicial, clicar em Substituir, digitar “Autorizado” no campo Localizar e “Não autorizado pela Chefia” no campo Substituir por, e clicar em “Substituir”. Repetir esse processo 700 vezes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5e5e33a4-17fe-5360-9f53-5c3979c8e67d",
+              "content": {
+                "text": "Acessar a guia Página Inicial, clicar em Substituir, digitar “Autorizado” no campo Localizar e “Não autorizado” no campo Substituir por, e clicar em “Substituir tudo” para realizar o procedimento uma única vez. Em seguida, repetir o processo localizando o novo texto “Não autorizado” e substituindo tudo por “Não autorizado pela Chefia”.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c64d68af-5d41-54fb-806f-fb905378bc1c",
+              "content": {
+                "text": "Primeiro, copiar o texto “Não autorizado pela Chefia”. Em seguida, acessar a guia Página Inicial, clicar em Localizar, digitar “Autorizado” e, a cada ocorrência encontrada, colar o texto copiado usando Ctrl + V. Repetir esse processo cerca de 700 vezes até concluir todas as edições.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1ec6784b-a52b-580b-ad8d-1b22d56c83d9",
+              "content": {
+                "text": "Acessar a guia Página Inicial, clicar em Substituir, digitar “Autorizado” no campo Localizar e “Não autorizado pela Chefia” no campo Substituir por, e clicar em “Substituir tudo” para realizar o procedimento uma única vez.",
+                "resources": []
+              }
+            },
+            {
+              "id": "84f13d8d-e651-5a56-9a83-949e04327984",
+              "content": {
+                "text": "Acessar guia Página Inicial, Substituir, digitar “Autorizado” no campo para localizar e digitar “Não autorizado Chefia” no campo substituir por e clicar em “Substituir tudo” para realizar o procedimento uma única vez.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1ec6784b-a52b-580b-ad8d-1b22d56c83d9",
+          "resolution": {
+            "text": "1. Em Página Inicial > Substituir (Ctrl+U no Word em português), informar o termo procurado e o texto final exato e acionar Substituir tudo troca todas as ocorrências de uma vez; alternativa D. 2. A e C exigem centenas de repetições manuais; B usa duas etapas desnecessárias e, na segunda, também alteraria qualquer “Não autorizado” já existente; E grava texto diferente do pedido (“Não autorizado Chefia”). Gabarito definitivo: alternativa D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Localizar e substituir texto no Word",
+              "url": "https://support.microsoft.com/pt-br/word/training/find-and-replace-text-in-word",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Cerquilho — Concurso Público 01/2025, Contador, questão 23. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I03.s.cerq25-cont-q23.json",
+            "answerPath": "sources/admin.2026-11.I03.s.cerq25-cont-q23.json",
+            "contentSha256": "5ade62c53df1921514ff5121095e27142ae98859466ff1e22ac70c59dd8deba7",
+            "answerSha256": "5ade62c53df1921514ff5121095e27142ae98859466ff1e22ac70c59dd8deba7"
+          }
+        },
+        "fingerprint": "77e1512285c0f9d2497427caa40cfe708e8f5923f09ab71d4fb22182a78f5087",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-antes-depois"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 para Windows, a equipe quer aumentar somente a distância entre dois parágrafos, preservando o espaçamento interno das linhas. Que ajuste deve usar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "91ca9420-2ed5-5987-a3cb-02f5eb7db5fd",
+              "content": {
+                "text": "Espaçamento Antes ou Depois do parágrafo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "76233266-dff6-5e0d-8b0f-3f5b62afb9bb",
+              "content": {
+                "text": "Aumentar o tamanho de todas as letras.",
+                "resources": []
+              }
+            },
+            {
+              "id": "51cf4b39-8fe3-5131-aadd-80ad2f672ad7",
+              "content": {
+                "text": "Alterar a orientação da página.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d06a9ac5-0118-5b71-8bea-184e6df88858",
+              "content": {
+                "text": "Inserir espaços entre todas as palavras.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "91ca9420-2ed5-5987-a3cb-02f5eb7db5fd",
+          "resolution": {
+            "text": "1. Antes e Depois controlam o espaço vertical entre parágrafos. 2. Fonte, orientação e espaços entre palavras não regulam diretamente a distância externa dos parágrafos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Alterar o espaçamento entre linhas e parágrafos no Word",
+              "url": "https://support.microsoft.com/pt-br/word/change-the-line-spacing-in-word",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Ajustar recuos e espaçamento no Word",
+              "url": "https://support.microsoft.com/pt-br/word/adjust-indents-and-spacing",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-antes-depois.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-antes-depois.json",
+            "contentSha256": "86598c2327b91b182a5f9241927d9979929eae8cc7c8331a114c400aedd84dc7",
+            "answerSha256": "86598c2327b91b182a5f9241927d9979929eae8cc7c8331a114c400aedd84dc7"
+          }
+        },
+        "fingerprint": "18ef21fa1ec47f0bc0a7112d101f99a5c3fd09bd0be4c1ef82a749dd0d8a598d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-espacamento-simples"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 de desktop no Windows, qual atalho insere um espaço incondicional entre duas partes de um nome que devem ficar juntas na mesma linha?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5c4ba5c0-6117-54ee-9a86-dcb82ac48398",
+              "content": {
+                "text": "Shift+Enter, inserindo uma quebra de linha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "15d7ce95-5d65-5b7c-ad5b-ffa45d6d930c",
+              "content": {
+                "text": "Ctrl+Shift+Enter, inserindo uma quebra de coluna.",
+                "resources": []
+              }
+            },
+            {
+              "id": "95d452d1-1988-59d3-b201-081c5eba95de",
+              "content": {
+                "text": "Ctrl+Shift+Barra de espaços.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a758a274-382d-59f6-808f-72fb3993b621",
+              "content": {
+                "text": "Ctrl+Enter, inserindo uma quebra de página.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "95d452d1-1988-59d3-b201-081c5eba95de",
+          "resolution": {
+            "text": "1. O espaço incondicional separa visualmente as palavras sem oferecer naquele ponto uma quebra normal de linha. 2. As outras combinações inserem quebras e não o tipo de espaço solicitado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Word",
+              "url": "https://support.microsoft.com/pt-br/accessibility/word/keyboard-shortcuts-in-word",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-espacamento-simples.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-espacamento-simples.json",
+            "contentSha256": "48ebf86e4a4f73bfc3f0b7174fa617d10df5e4559bcc1f8cd862573deece421e",
+            "answerSha256": "48ebf86e4a4f73bfc3f0b7174fa617d10df5e4559bcc1f8cd862573deece421e"
+          }
+        },
+        "fingerprint": "f57c1162aaad5e3ce19585ce3c4d3a18372a98f318c55fc493b53c2ff8324a5c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-estilo-local-versus-padrao"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word, uma pessoa usa Definir como Padrão na caixa Parágrafo e escolhe todos os documentos baseados no modelo Normal. Qual é o alcance pretendido?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "244e7182-a08a-55ac-b8f6-9337614ea625",
+              "content": {
+                "text": "Alterar a senha de login do Windows.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f6e470d6-4dac-5f70-be6b-ced0809e3025",
+              "content": {
+                "text": "Mudar o formato de arquivos Excel.",
+                "resources": []
+              }
+            },
+            {
+              "id": "40fe3f47-18ed-5c7e-8b9d-427db9afed98",
+              "content": {
+                "text": "Usar aquela configuração como padrão para novos documentos baseados nesse modelo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8fda032a-8da2-509c-ae8e-1303369b5cc9",
+              "content": {
+                "text": "Reescrever obrigatoriamente todos os arquivos Word já existentes no disco.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "40fe3f47-18ed-5c7e-8b9d-427db9afed98",
+          "resolution": {
+            "text": "1. A escolha de padrão do modelo orienta documentos criados com ele. 2. Não é uma edição em massa de todo arquivo salvo, nem configuração de senha ou de Excel.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Ajustar recuos e espaçamento no Word",
+              "url": "https://support.microsoft.com/pt-br/word/adjust-indents-and-spacing",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-estilo-local-versus-padrao.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-estilo-local-versus-padrao.json",
+            "contentSha256": "f58d061769953ff24b07c2b567785f81850bde0085b647229a2c3b33b199c576",
+            "answerSha256": "f58d061769953ff24b07c2b567785f81850bde0085b647229a2c3b33b199c576"
+          }
+        },
+        "fingerprint": "c02e13f1558170ed323aacf30c206427d468379d265068772c3966f7871095b5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-formato-caractere-conteudo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word, o texto foi colocado em negrito e itálico simultaneamente. Qual descrição é adequada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4eec7860-3bb0-5ebf-9b7b-6000085400bc",
+              "content": {
+                "text": "Word permite apenas uma propriedade de caractere por palavra.",
+                "resources": []
+              }
+            },
+            {
+              "id": "85e7cee5-351b-507e-ba42-b21fb28cb247",
+              "content": {
+                "text": "As duas propriedades exigem converter o documento para imagem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "43ac5c33-8680-57c8-8faa-aa5b95c95b60",
+              "content": {
+                "text": "As duas propriedades de formatação podem coexistir no mesmo trecho.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f3cef1ad-d1e5-511a-9ff0-3010b73d6a0b",
+              "content": {
+                "text": "Aplicar uma delas sempre apaga todas as palavras.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "43ac5c33-8680-57c8-8faa-aa5b95c95b60",
+          "resolution": {
+            "text": "1. As propriedades de aparência podem ser combinadas no texto. 2. Não há limitação geral a uma propriedade, exclusão obrigatória ou exigência de imagem.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Word para novos usuários",
+              "url": "https://support.microsoft.com/pt-br/word/word-for-new-users",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-formato-caractere-conteudo.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-formato-caractere-conteudo.json",
+            "contentSha256": "dfb4b4193655d107a9b5533b72b38ebd18ef848f57dea894a459db9b0a0e1893",
+            "answerSha256": "dfb4b4193655d107a9b5533b72b38ebd18ef848f57dea894a459db9b0a0e1893"
+          }
+        },
+        "fingerprint": "8034ef1edc9403347c5e47adc48e4a313fb1555fa10e5b1c303f490ced60ea19",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-italico-diferenca"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word, qual comando aplica uma aparência inclinada aos caracteres selecionados, sem significar mudança do texto escrito?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8219535b-ffb8-5837-823d-5a5975bb1754",
+              "content": {
+                "text": "Itálico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ec2d96cf-1ad3-5158-baa9-0694a3afc9da",
+              "content": {
+                "text": "Mesclar células.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f66260f5-c036-56de-8368-37fb354618ad",
+              "content": {
+                "text": "Quebra de página.",
+                "resources": []
+              }
+            },
+            {
+              "id": "77c03cc2-573b-57ba-a67c-efa9ffcfb550",
+              "content": {
+                "text": "Excluir comentário.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8219535b-ffb8-5837-823d-5a5975bb1754",
+          "resolution": {
+            "text": "1. Itálico é uma propriedade de aparência dos caracteres. 2. Os outros comandos atuam em tabela, paginação ou comentário, sem definir essa aparência tipográfica.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Word para novos usuários",
+              "url": "https://support.microsoft.com/pt-br/word/word-for-new-users",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-italico-diferenca.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-italico-diferenca.json",
+            "contentSha256": "7d3e74b015077c7060e86a68bb0f25787ffd439f3cf6cffb6dc26d311fdae1e1",
+            "answerSha256": "7d3e74b015077c7060e86a68bb0f25787ffd439f3cf6cffb6dc26d311fdae1e1"
+          }
+        },
+        "fingerprint": "758538942ed91c545dc366acffc77bd5ea5aab22c6d0a00365ea53320fce2acb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-limpar-formato"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 para Windows, um trecho recebeu manualmente cores e efeitos indesejados. Qual comando remove a formatação aplicada e permite voltar ao padrão do texto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "07fcdbd3-531d-5a64-b0de-93727f6e9922",
+              "content": {
+                "text": "Limpar Toda a Formatação.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1cbe30e3-6352-5533-b941-aaf4fd655aa8",
+              "content": {
+                "text": "Excluir todas as palavras.",
+                "resources": []
+              }
+            },
+            {
+              "id": "46c85181-26a9-5e3f-b3e6-454ceb7c5673",
+              "content": {
+                "text": "Quebra de coluna.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2b3ffc27-bd47-500e-8235-6d179aa196f7",
+              "content": {
+                "text": "Mesclar células.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "07fcdbd3-531d-5a64-b0de-93727f6e9922",
+          "resolution": {
+            "text": "1. O comando limpa propriedades de formatação do texto selecionado. 2. Não é necessário apagar conteúdo; quebra de coluna e mesclagem alteram outras estruturas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Limpar toda a formatação do texto",
+              "url": "https://support.microsoft.com/pt-br/powerpoint/clear-all-text-formatting",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-limpar-formato.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-limpar-formato.json",
+            "contentSha256": "6c5fb33de9d86580fd63ff967bc22e4edc17ebdfdee0ea49e1806f3e62b83070",
+            "answerSha256": "6c5fb33de9d86580fd63ff967bc22e4edc17ebdfdee0ea49e1806f3e62b83070"
+          }
+        },
+        "fingerprint": "1ea55c6d01eee188f1425c986739573f478f0d463120d09c11c3797e5955f649",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-linha-selecionar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Windows, conforme o procedimento de seleção com mouse documentado pela Microsoft, clicar à esquerda de uma linha pode servir para quê?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a036dead-e500-570e-80c0-4687173dcbbe",
+              "content": {
+                "text": "Selecionar o parágrafo inteiro com um único clique.",
+                "resources": []
+              }
+            },
+            {
+              "id": "92e75bbc-a319-5fd9-81f9-30d0fd236208",
+              "content": {
+                "text": "Posicionar o cursor no início da linha, sem selecionar nada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fecd54e4-e38e-50e8-b73d-2fe98e8c2980",
+              "content": {
+                "text": "Selecionar aquela linha de texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "68c8736f-ea67-5288-a878-e2ae64debe2f",
+              "content": {
+                "text": "Salvar o arquivo em PDF obrigatoriamente.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fecd54e4-e38e-50e8-b73d-2fe98e8c2980",
+          "resolution": {
+            "text": "1. Um clique na área de seleção, à esquerda da linha, seleciona aquela linha; alternativa C. 2. A erra porque um único clique seleciona a linha, não o parágrafo (o parágrafo exige duplo clique nessa área); B erra porque o clique nessa área seleciona, não apenas posiciona o cursor; D erra porque seleção não exporta o arquivo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Adicionar e editar texto no Word para Windows",
+              "url": "https://support.microsoft.com/pt-br/word/training/add-and-edit-text",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-linha-selecionar.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-linha-selecionar.json",
+            "contentSha256": "b1c2bcbab91fc110f1324864aa985e37157709b294145b597df4a49e344fb901",
+            "answerSha256": "b1c2bcbab91fc110f1324864aa985e37157709b294145b597df4a49e344fb901"
+          }
+        },
+        "fingerprint": "934dddf22ed5fba441cba07b471ab9f84ab949e09f1678dcd8e25c908dea4744",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-manter-linhas-juntas"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word, um parágrafo curto não deve ser dividido entre duas páginas. Qual opção própria de paginação é pertinente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3739e236-6109-535a-9e14-083030537425",
+              "content": {
+                "text": "Manter linhas juntas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9cdc078c-66d5-57f6-a4b1-911e5d41a6c0",
+              "content": {
+                "text": "Inserir uma quebra de seção contínua antes do parágrafo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a3b37628-6ea7-5d6e-8961-00904c6b0503",
+              "content": {
+                "text": "Reduzir para 0 pt o espaçamento Depois do parágrafo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "37b04a01-48ef-599e-803d-26b39ea3c424",
+              "content": {
+                "text": "Alinhar o parágrafo como justificado.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3739e236-6109-535a-9e14-083030537425",
+          "resolution": {
+            "text": "1. Manter linhas juntas impede que o parágrafo seja dividido entre duas páginas; alternativa A. 2. B erra porque a quebra de seção contínua não impede a divisão; C altera apenas o espaço após o parágrafo; D muda o alinhamento horizontal, não a paginação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Alterar o espaçamento entre linhas e parágrafos no Word",
+              "url": "https://support.microsoft.com/pt-br/word/change-the-line-spacing-in-word",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-manter-linhas-juntas.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-manter-linhas-juntas.json",
+            "contentSha256": "2136b3512143f2bff98ec152a47fb1a69f0390f1a0e19f19db5ecb99143673e6",
+            "answerSha256": "2136b3512143f2bff98ec152a47fb1a69f0390f1a0e19f19db5ecb99143673e6"
+          }
+        },
+        "fingerprint": "96d3a315368a9f5a93d2c5762944c86f8e3649c862efdf7966dd36ef93cdf0b4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-negrito-conceito"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 de desktop no Windows, um trecho em espanhol está sendo revisado como português e recebendo marcações inadequadas. Qual configuração deve ser conferida?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1d0e786a-c343-53a5-9418-54e78747dc3b",
+              "content": {
+                "text": "O idioma de revisão de texto do trecho selecionado e a disponibilidade das ferramentas desse idioma.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8e76013a-c8cc-5bdb-a9a9-026ef57ff26f",
+              "content": {
+                "text": "Somente a cor da fonte.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bae4eab5-4441-57b3-809e-3c95211f7011",
+              "content": {
+                "text": "Somente o nome do arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e19e9d9c-7d2b-5374-95ca-b4d96bace741",
+              "content": {
+                "text": "A orientação retrato ou paisagem da página.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1d0e786a-c343-53a5-9418-54e78747dc3b",
+          "resolution": {
+            "text": "1. O idioma de revisão precisa corresponder ao conteúdo para aplicar as ferramentas ortográficas apropriadas. 2. Aparência, nome e orientação não escolhem as regras de idioma usadas pelo revisor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Idiomas usados para verificar ortografia e gramática",
+              "url": "https://support.microsoft.com/pt-br/word/set-up-or-change-the-languages-used-to-check-spelling-and-grammar",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-negrito-conceito.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-negrito-conceito.json",
+            "contentSha256": "74858be66f3576b70249e267f25f5ef0d71c4e47530c05907e72c94bc64f5d7a",
+            "answerSha256": "74858be66f3576b70249e267f25f5ef0d71c4e47530c05907e72c94bc64f5d7a"
+          }
+        },
+        "fingerprint": "8af4c7b55021c028ce48e35837729b00f1e2c7ba61d7414256804a30d046c924",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-pincel-conteudo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 para Windows em português, qual recurso copia a aparência de um trecho para outro sem substituir as palavras do destino?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9cd030ea-ab9f-5404-91fc-ef4ad55f06f8",
+              "content": {
+                "text": "Pincel de Formatação.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d3261624-7b8b-585e-ac75-10fa4e84e7b8",
+              "content": {
+                "text": "Recortar o texto de destino.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d7d9e604-a211-5b1a-9721-ed990196bbf5",
+              "content": {
+                "text": "Substituir todas as ocorrências.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cc88fde8-cdd0-5127-b3be-d1c49361e114",
+              "content": {
+                "text": "Excluir o parágrafo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9cd030ea-ab9f-5404-91fc-ef4ad55f06f8",
+          "resolution": {
+            "text": "1. O Pincel transfere propriedades de formatação, mantendo o texto sobre o qual é aplicado. 2. Recorte, substituição e exclusão alteram conteúdo; não são o mecanismo de copiar apenas a aparência.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Usar o Pincel de Formatação",
+              "url": "https://support.microsoft.com/pt-br/word/use-the-format-painter",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-pincel-conteudo.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-pincel-conteudo.json",
+            "contentSha256": "9d9234c987fd667154cfe255a2a8748bbfdd09651866e6cc68906777f6e543d4",
+            "answerSha256": "9d9234c987fd667154cfe255a2a8748bbfdd09651866e6cc68906777f6e543d4"
+          }
+        },
+        "fingerprint": "3b12b2615d8ee8928ecd7ad666267c141b97a3ed97954f9c74d3d8118b6bddaf",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-pincel-interromper"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 de desktop no Windows, qual atalho documentado alterna o texto selecionado entre maiúsculas, minúsculas e capitalização de título?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "30f1b687-9192-5446-9f33-467372d6f02e",
+              "content": {
+                "text": "Shift+F3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "680a91bd-68d0-5174-bd0d-2be0e6418b62",
+              "content": {
+                "text": "Shift+Enter.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8c430359-d8ad-5100-a629-3cde025e552b",
+              "content": {
+                "text": "Ctrl+Enter.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3b26bda5-2bd6-57e7-b6ab-949aab14c9b5",
+              "content": {
+                "text": "F5 como comando de alteração de caixa.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "30f1b687-9192-5446-9f33-467372d6f02e",
+          "resolution": {
+            "text": "1. Shift+F3 percorre as formas de capitalização do texto selecionado. 2. Shift+Enter insere quebra de linha; Ctrl+Enter insere quebra de página e F5 não executa essa alternância.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado do Word para Windows; conferir layout/idioma",
+              "url": "https://support.microsoft.com/pt-br/accessibility/word/keyboard-shortcuts-in-word",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-pincel-interromper.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-pincel-interromper.json",
+            "contentSha256": "3edc2a9cdfe00b9535f007d38a065a7b78b173e463ca40e6c5f6021ac732c1f2",
+            "answerSha256": "3edc2a9cdfe00b9535f007d38a065a7b78b173e463ca40e6c5f6021ac732c1f2"
+          }
+        },
+        "fingerprint": "371ca6e5cddb8994b4d067258d85e480f893f4fad3852e128ab8aeac09d3a19f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-pincel-paragrafo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 para Windows, o Pincel deve copiar também a formatação do parágrafo. O que deve integrar a seleção de origem?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f038c963-a8ea-59a3-bdbe-afa8f8a50768",
+              "content": {
+                "text": "O parágrafo inteiro, inclusive a marca de parágrafo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3a5a7d06-0154-546e-adc9-2fbaa75d50d0",
+              "content": {
+                "text": "Somente uma letra sem a marca de parágrafo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5959d8d1-aa93-53f1-b4c5-81e27e50e5bd",
+              "content": {
+                "text": "Apenas o nome do arquivo no Explorador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b9cd645f-d95e-51f4-ae8e-67811a1edc78",
+              "content": {
+                "text": "Somente a miniatura da página na impressão.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f038c963-a8ea-59a3-bdbe-afa8f8a50768",
+          "resolution": {
+            "text": "1. A seleção que inclui a marca de parágrafo permite copiar também as propriedades de parágrafo. 2. Uma letra fornece somente um trecho de texto; nome de arquivo e miniatura de impressão não são a seleção de origem do Pincel.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Usar o Pincel de Formatação",
+              "url": "https://support.microsoft.com/pt-br/word/use-the-format-painter",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-pincel-paragrafo.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-pincel-paragrafo.json",
+            "contentSha256": "44d71c8c76f14962f17bf0c4ebeb2d78e32e9527c16cdbaebad565d57e0300c9",
+            "answerSha256": "44d71c8c76f14962f17bf0c4ebeb2d78e32e9527c16cdbaebad565d57e0300c9"
+          }
+        },
+        "fingerprint": "45379ee0c4b306649ebdbb73081c6f076ce74155f36d10b8ac35dad4b443a260",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-prever-paragrafo"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao ajustar recuos e espaçamento na caixa Parágrafo do Word, qual recurso permite observar uma amostra do efeito antes de confirmar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "34776e10-b892-5dc9-bc81-7a696f92e747",
+              "content": {
+                "text": "A área de Visualização da própria caixa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "73658cc2-03ce-51bd-bcba-7dcc6aba8a69",
+              "content": {
+                "text": "A Lixeira do Windows.",
+                "resources": []
+              }
+            },
+            {
+              "id": "de0edd8a-5e6c-5015-9a52-cd42430120d8",
+              "content": {
+                "text": "O catálogo de aplicativos instalados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1492f194-2a02-5ebd-9772-3c5d2a37e8ef",
+              "content": {
+                "text": "O histórico de navegação da Internet.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "34776e10-b892-5dc9-bc81-7a696f92e747",
+          "resolution": {
+            "text": "1. A caixa apresenta uma visualização da aparência esperada das configurações. 2. Lixeira, catálogo de aplicativos e histórico web não são essa prévia do parágrafo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Ajustar recuos e espaçamento no Word",
+              "url": "https://support.microsoft.com/pt-br/word/adjust-indents-and-spacing",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-prever-paragrafo.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-prever-paragrafo.json",
+            "contentSha256": "c7f7aeeeec195cb5fc2207e040fe81823bdad5c398f749ee0b14007785884e1f",
+            "answerSha256": "c7f7aeeeec195cb5fc2207e040fe81823bdad5c398f749ee0b14007785884e1f"
+          }
+        },
+        "fingerprint": "d5c1aabf9ec31ecbecadf7faddd31c9a139b2c690876fb2be4a11c1e3d9c90ae",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-primeira-linha"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 para Windows, um parágrafo deve ter apenas sua primeira linha recuada em 1,25 cm. Qual configuração é apropriada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3920a801-b38c-55c6-b806-6660fe209920",
+              "content": {
+                "text": "Usar espaçamento Depois de 1,25 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a20f89ec-8147-5c86-9292-127c1bd7436a",
+              "content": {
+                "text": "Centralizar o parágrafo inteiro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bc83270a-173f-50f1-b282-5783660e1bed",
+              "content": {
+                "text": "Parágrafo > Recuo especial > Primeira linha, com 1,25 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "94cf52e7-e393-576f-81f5-868ff5dd842d",
+              "content": {
+                "text": "Aumentar a margem esquerda de todo o documento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bc83270a-173f-50f1-b282-5783660e1bed",
+          "resolution": {
+            "text": "1. O recuo especial de primeira linha desloca somente a linha inicial do parágrafo. 2. Margem atua na página, espaçamento Depois é vertical e centralização altera alinhamento, não esse recuo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Ajustar recuos e espaçamento no Word",
+              "url": "https://support.microsoft.com/pt-br/word/adjust-indents-and-spacing",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-primeira-linha.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-primeira-linha.json",
+            "contentSha256": "0cdffa507f980c4c72032d3ba0671a7c77fe7c95f063a537ddd13684931d28c4",
+            "answerSha256": "0cdffa507f980c4c72032d3ba0671a7c77fe7c95f063a537ddd13684931d28c4"
+          }
+        },
+        "fingerprint": "82b0d4f09980ac5f8578b390aaafe942accc82e7aac8d7eda1041c0f919d1d23",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-realce-fundo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word, a equipe quer destacar um trecho como se tivesse usado uma caneta marca-texto, mantendo a cor das letras. Qual recurso é apropriado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fb8e341d-32ad-57a7-804a-6ca1a13f52e1",
+              "content": {
+                "text": "Cor do Realce do Texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e283c9a4-eb33-5863-b295-52dad730aed4",
+              "content": {
+                "text": "Somente Cor da Fonte.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0c6b7af7-21fb-54cc-9803-ec78f77c5e0e",
+              "content": {
+                "text": "Quebra de seção.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4d3e183b-970e-523b-9208-9a42c34a1523",
+              "content": {
+                "text": "Recuo à direita.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fb8e341d-32ad-57a7-804a-6ca1a13f52e1",
+          "resolution": {
+            "text": "1. O realce colore a região atrás do texto, como um marcador. 2. Cor da fonte muda os caracteres; quebra e recuo não aplicam esse destaque de fundo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Word para novos usuários",
+              "url": "https://support.microsoft.com/pt-br/word/word-for-new-users",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-realce-fundo.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-realce-fundo.json",
+            "contentSha256": "737ff5ca5a090d6f966605c56f1a386a6b5e797f4b45eba73e6b8175bb236b7a",
+            "answerSha256": "737ff5ca5a090d6f966605c56f1a386a6b5e797f4b45eba73e6b8175bb236b7a"
+          }
+        },
+        "fingerprint": "36c344ad92d0ed48e57e05456785f3d48ceaff34cb7549d5cf358732c0f5421d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-recuo-direito"
+        },
+        "content": {
+          "statement": {
+            "text": "Na caixa Parágrafo do Word, o recuo à direita desloca qual limite do texto do parágrafo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "13a30d83-4038-5515-9924-7a923843df31",
+              "content": {
+                "text": "O número de páginas do arquivo por definição.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2ddca3d9-27dc-525d-99a7-e1574dc10b8b",
+              "content": {
+                "text": "A posição do ícone do Word na barra de tarefas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fe73c154-9562-5244-a702-1aa98b447370",
+              "content": {
+                "text": "Seu limite direito em relação à margem direita.",
+                "resources": []
+              }
+            },
+            {
+              "id": "aeed2fe0-de1f-5e66-bc87-887e94d72df4",
+              "content": {
+                "text": "O tamanho físico da folha.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fe73c154-9562-5244-a702-1aa98b447370",
+          "resolution": {
+            "text": "1. O recuo direito muda a largura disponível do parágrafo a partir do lado direito. 2. Não redefine por si só o papel, não fixa uma quantidade de páginas e não atua na barra de tarefas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Ajustar recuos e espaçamento no Word",
+              "url": "https://support.microsoft.com/pt-br/word/adjust-indents-and-spacing",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-recuo-direito.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-recuo-direito.json",
+            "contentSha256": "a3c695aace06305e4c56bf5758260beb14429ade20cfbc905bf8aba41a68d8f2",
+            "answerSha256": "a3c695aace06305e4c56bf5758260beb14429ade20cfbc905bf8aba41a68d8f2"
+          }
+        },
+        "fingerprint": "5386e6f5791f3f7b871b1ac40e7a8183f1cb5f3b503a21568975a94ef0a618c4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-recuo-nao-espacos"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 de desktop no Windows, valores de comprimentos diferentes devem ficar alinhados pelo separador decimal numa lista. Qual tipo de parada de tabulação é apropriado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7fd8b9b2-7cf4-5f17-9c30-3e99cb6d44a8",
+              "content": {
+                "text": "Tabulação de barra, que insere uma linha vertical.",
+                "resources": []
+              }
+            },
+            {
+              "id": "85eee3e4-73aa-57a0-a76d-18ff9ad0e3d5",
+              "content": {
+                "text": "Espaçamento Depois, que regula a distância entre parágrafos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "89debc60-ed7d-57ab-9a3b-98da609deaf3",
+              "content": {
+                "text": "Tabulação decimal.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8b4a9061-7f1c-51cd-9feb-ee0330d06444",
+              "content": {
+                "text": "Tabulação à esquerda, alinhando apenas o início de cada número.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "89debc60-ed7d-57ab-9a3b-98da609deaf3",
+          "resolution": {
+            "text": "1. A tabulação decimal posiciona o separador decimal dos valores na mesma posição. 2. Alinhar inícios não garante alinhar separadores; barra e espaçamento entre parágrafos têm outras finalidades.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Usando a régua no Word",
+              "url": "https://support.microsoft.com/pt-br/word/using-the-ruler-in-word",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-recuo-nao-espacos.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-recuo-nao-espacos.json",
+            "contentSha256": "350a3567d813097d342296332f68616bfa7101f8527af270afd68166be8b966f",
+            "answerSha256": "350a3567d813097d342296332f68616bfa7101f8527af270afd68166be8b966f"
+          }
+        },
+        "fingerprint": "b092cf09cbe412e4a5e301f28101aba51d0dba4d895a8ea877b0ac674a80e42a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-sobrescrito-potencia"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word, o expoente em m² deve ser formatado acima da linha de base. Qual propriedade é apropriada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "35c58e83-6fb1-53c0-8ebf-25be191a900b",
+              "content": {
+                "text": "Espaçamento Depois.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ca71825e-ca97-5989-bbbf-cfeb9194596e",
+              "content": {
+                "text": "Alinhamento à esquerda.",
+                "resources": []
+              }
+            },
+            {
+              "id": "feb3b2e9-a664-59e2-a9fc-ec1a23bd829d",
+              "content": {
+                "text": "Sobrescrito.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c69e2129-44d7-5bde-bcad-cf37c7018016",
+              "content": {
+                "text": "Subscrito.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "feb3b2e9-a664-59e2-a9fc-ec1a23bd829d",
+          "resolution": {
+            "text": "1. Sobrescrito eleva caracteres em relação à linha de base. 2. Subscrito abaixa; espaçamento de parágrafo e alinhamento não fazem do algarismo um expoente visual.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Word para novos usuários",
+              "url": "https://support.microsoft.com/pt-br/word/word-for-new-users",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-sobrescrito-potencia.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-sobrescrito-potencia.json",
+            "contentSha256": "4ceddfaad3e960fe1bb060bd030cf6651ac5d858f621d04a92aab8b62fd7aa2f",
+            "answerSha256": "4ceddfaad3e960fe1bb060bd030cf6651ac5d858f621d04a92aab8b62fd7aa2f"
+          }
+        },
+        "fingerprint": "066a50cd4b590d4e2e7f740c74d29491dae9df47de64901a13b2646c8ecf338a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-substituir-selecao"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word para Microsoft 365 para Windows, uma palavra inteira está selecionada. Sem pressionar Delete, a pessoa digita outra palavra. Qual é o efeito padrão?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2ce56440-569a-5efd-97ff-b4013e49db82",
+              "content": {
+                "text": "A palavra antiga é movida para o cabeçalho.",
+                "resources": []
+              }
+            },
+            {
+              "id": "69cbfdcd-b490-5801-b4fb-dde44dc0b84f",
+              "content": {
+                "text": "O documento inteiro é convertido em imagem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ae137160-dd5b-56f2-9d89-605ab4061c06",
+              "content": {
+                "text": "A palavra selecionada é substituída pelo texto digitado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2524be3c-fb83-56b6-95e8-5540085e7758",
+              "content": {
+                "text": "As duas palavras ficam obrigatoriamente lado a lado.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ae137160-dd5b-56f2-9d89-605ab4061c06",
+          "resolution": {
+            "text": "1. Digitar sobre uma seleção substitui o conteúdo selecionado. 2. A ação não duplica obrigatoriamente o trecho nem o transfere para cabeçalho ou converte o documento.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Adicionar e editar texto no Word para Windows",
+              "url": "https://support.microsoft.com/pt-br/word/training/add-and-edit-text",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-substituir-selecao.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-substituir-selecao.json",
+            "contentSha256": "2ada9701c31478b0ef8d6e8e98d88571d5a107b5558c5997017557e11f5a7e88",
+            "answerSha256": "2ada9701c31478b0ef8d6e8e98d88571d5a107b5558c5997017557e11f5a7e88"
+          }
+        },
+        "fingerprint": "6fca4466f8ac28f97108bbf7460bd8db5bc2516ca068c6b276bdbc12f8d7e9aa",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.it-tamanho-pt"
+        },
+        "content": {
+          "statement": {
+            "text": "No Word, o campo de tamanho da fonte mostra 11. Em qual unidade tipográfica esse valor é normalmente expresso?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2c8e8733-787b-50d3-9965-b7b44eea8ed1",
+              "content": {
+                "text": "Pontos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1d3cf386-039f-5739-9503-77ae86aa5de5",
+              "content": {
+                "text": "Metros.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a58844de-7049-517e-9fcb-d6de9b9d2cae",
+              "content": {
+                "text": "Litros.",
+                "resources": []
+              }
+            },
+            {
+              "id": "27b3b130-b44c-527f-b093-a31ed8d3a163",
+              "content": {
+                "text": "Bytes.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2c8e8733-787b-50d3-9965-b7b44eea8ed1",
+          "resolution": {
+            "text": "1. O tamanho tipográfico da fonte é expresso em pontos. 2. Medidas de comprimento do papel, volume e armazenamento não são a unidade desse campo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Word para novos usuários",
+              "url": "https://support.microsoft.com/pt-br/word/word-for-new-users",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I03.s.it-tamanho-pt.json",
+            "answerPath": "sources/admin.2026-11.I03.s.it-tamanho-pt.json",
+            "contentSha256": "ccdbbf7cad0b38629003f069e267d9d6ad65e66bd6eff4defe2db698fbbbd44c",
+            "answerSha256": "ccdbbf7cad0b38629003f069e267d9d6ad65e66bd6eff4defe2db698fbbbd44c"
+          }
+        },
+        "fingerprint": "59c7a8e9cd238dbc8ba13f9862c6695676c3f166246918c965c90caa31ca4860",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.morato-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "No Microsoft Word, a organização visual de textos pode ser realizada por meio de recursos disponíveis na guia “Página Inicial ” do programa. Com base no exposto sobre a estrutura básica de documentos no Microsoft Word, assinale a alternativa CORRETA.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "822105d3-5fb3-5d82-968a-1f6669c0d024",
+              "content": {
+                "text": "O quadro de estilos, localizado na Página Inicial, é utilizado apenas para definir margens e orientação da página.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6a8c4a13-5a6b-5562-ab35-9def44b1f7ae",
+              "content": {
+                "text": "O quadro de estilos, localizado na Página Inicial, permite aplicar de forma consistente tipos de letra, tamanhos, cores e espaçamentos em títulos, parágrafos e cabeçalhos do documento.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f7e02092-c4b5-5d4b-91a9-bfafcc725bc2",
+              "content": {
+                "text": "O quadro de estilos, localizado na Página Inicial, tem como finalidade exclusiva inserir imagens e gráficos no texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "feed3fa0-891b-573d-a0d5-c2fc2bb12d26",
+              "content": {
+                "text": "O quadro de estilos, localizado na Página Inicial, serve somente para revisar a ortografia e a gramática do documento.",
+                "resources": []
+              }
+            },
+            {
+              "id": "99bcd4dd-9421-556a-83ad-e960f19e74ea",
+              "content": {
+                "text": "O quadro de estilos, localizado na Página Inicial, é utilizado apenas para salvar e exportar arquivos em diferentes formatos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6a8c4a13-5a6b-5562-ab35-9def44b1f7ae",
+          "resolution": {
+            "text": "1. Os estilos do Word aplicam conjuntos consistentes de formatação a títulos e parágrafos, incluindo fonte, tamanho e espaçamento. 2. Margens, exportação, figuras ou revisão ortográfica não são sua finalidade exclusiva. O contexto é Word para Windows em português, nas edições atuais de desktop.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Word para novos usuários: fonte, parágrafos e estilos para desktop",
+              "url": "https://support.microsoft.com/pt-br/word/word-for-new-users",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal de Francisco Morato 01/2025, Oficial Administrativo, questão 19. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I03.s.morato-q19.json",
+            "answerPath": "sources/admin.2026-11.I03.s.morato-q19.json",
+            "contentSha256": "3663990e31f11e58828ff88cd78ece8070cd55e6961dfb6a5708fa013e1dc496",
+            "answerSha256": "3663990e31f11e58828ff88cd78ece8070cd55e6961dfb6a5708fa013e1dc496"
+          }
+        },
+        "fingerprint": "1ddaf6df2e601da2f80d59ea5bf0b570cab8bd3c3d7e48db79b8a61db971cc1d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.var25-cont-q24"
+        },
+        "content": {
+          "statement": {
+            "text": "Utilizando o Microsoft Word para edição e formatação de textos, o atalho de teclado Ctrl+Alt+Z tem a função de:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e670abc3-2779-54e0-aa36-a1cda9c221ca",
+              "content": {
+                "text": "Inserir um elemento gráfico WordArt.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f78d2ed1-d465-585a-8e3c-89a7f8e52daf",
+              "content": {
+                "text": "Selecionar um bloco de texto vertical.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3af4078e-207e-5415-bed7-f0773a533cff",
+              "content": {
+                "text": "Navegar pela página de visualização quando ela está com menos zoom.",
+                "resources": []
+              }
+            },
+            {
+              "id": "382a36b5-6e88-56cf-85e4-3a2b36dcb6d8",
+              "content": {
+                "text": "Acessar o modo de visualização de impressão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f89fdf38-0f0f-5446-b462-55a35b0124ae",
+              "content": {
+                "text": "Percorrer os locais das últimas alterações realizadas no documento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f89fdf38-0f0f-5446-b462-55a35b0124ae",
+          "resolution": {
+            "text": "1. Na lista oficial de atalhos do Word para Windows, Ctrl+Alt+Z alterna entre os últimos locais em que foram feitas alterações no documento (comando Voltar); alternativa E. 2. WordArt é inserido pela guia Inserir, sem esse atalho (A); a seleção de bloco vertical usa Alt com arrasto do mouse ou Ctrl+Shift+F8 (B); a navegação em visualização reduzida e a Visualização de Impressão (Ctrl+F2/Ctrl+Alt+I) não correspondem a Ctrl+Alt+Z (C, D). Gabarito definitivo: alternativa E.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado do Word para Windows; conferir layout/idioma",
+              "url": "https://support.microsoft.com/pt-br/accessibility/word/keyboard-shortcuts-in-word",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Concurso Público 01/2025, Contador, questão 24. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I03.s.var25-cont-q24.json",
+            "answerPath": "sources/admin.2026-11.I03.s.var25-cont-q24.json",
+            "contentSha256": "89c0d50b7adc0cbeea6e6835cbdae954424b3fffe399216146ed74e911988e41",
+            "answerSha256": "89c0d50b7adc0cbeea6e6835cbdae954424b3fffe399216146ed74e911988e41"
+          }
+        },
+        "fingerprint": "d38ae52bbb5aa782bcd67cf908d189708f6ff60b3530bb0322c7c85b2cffa1e3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I03.s.vinh-aux-q37"
+        },
+        "content": {
+          "statement": {
+            "text": "O Microsoft Word permite definir o recuo da primeira linha do parágrafo como padrão, modificando o estilo “Normal”. Para isso o usuário deve seguir qual dos caminhos listados.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "25ba033e-7620-5b3d-8f62-6864a8a47623",
+              "content": {
+                "text": "Na guia Página Inicial, clique com o botão direito do mouse no estilo Normal e escolha Modificar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fd1d019c-335c-59a5-a01a-c59d745a7ca9",
+              "content": {
+                "text": "Na guia Referências, clique com o botão direito do mouse no estilo Normal e escolha Modificar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9af5100c-aea2-57be-bdb7-2fb67a104187",
+              "content": {
+                "text": "Na guia Outros, clique com o botão direito do mouse no estilo Normal e escolha Modificar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "36a4124d-bfdc-5dee-98f2-70f6f47ebea1",
+              "content": {
+                "text": "Na guia Números, clique com o botão direito do mouse no estilo Normal e escolha Modificar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "acdb6924-7505-56dc-bd9e-b5d3bc7a478f",
+              "content": {
+                "text": "Na guia Relação, clique com o botão direito do mouse no estilo Normal e escolha Modificar.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "25ba033e-7620-5b3d-8f62-6864a8a47623",
+          "resolution": {
+            "text": "1. A galeria de Estilos fica na guia Página Inicial; clicar com o botão direito em Normal > Modificar > Formatar > Parágrafo permite definir o recuo especial de primeira linha para o estilo; alternativa A. 2. Referências contém sumário, notas e citações, não a galeria de estilos (B); as guias Outros, Números e Relação não existem no Word (C, D, E). Gabarito definitivo: alternativa A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I03",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Ajustar recuos e espaçamento no Word",
+              "url": "https://support.microsoft.com/pt-br/word/adjust-indents-and-spacing",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Word para novos usuários",
+              "url": "https://support.microsoft.com/pt-br/word/word-for-new-users",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, Auxiliar Administrativo, questão 37. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I03.s.vinh-aux-q37.json",
+            "answerPath": "sources/admin.2026-11.I03.s.vinh-aux-q37.json",
+            "contentSha256": "0e3c0af4c7993bf12151c9fa34b16f8a6bc0ae05900ddeef3fbcf3424ab2e0c3",
+            "answerSha256": "0e3c0af4c7993bf12151c9fa34b16f8a6bc0ae05900ddeef3fbcf3424ab2e0c3"
+          }
+        },
+        "fingerprint": "408a056e7a5f1e7b0bbf56cb88ce8927956452bb07a822ad95bb8182361f2923",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I03.s.amer25-enc-q23.json",
+        "mediaType": "application/json",
+        "sha256": "d75ba0ae2656c30a0a5e8477cbf75b8d7138024e5d45b4e347860ea526254cf2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUGFyYSBjcmlhciB1bWEgbGlzdGEgY29tIG1hcmNhZG9yZXMgYXV0b21hdGljYW1lbnRlLCBkZXZlLXNlIGRpZ2l0YXIgbyBuw7ptZXJvIDEgc2VndWlkbyBkZSBwb250byBlIHbDrXJndWxhLCBlc3Bhw6dvIGUgdGV4dG8sIGUgbyBXb3JkIGluaWNpYXLDoSBhIGxpc3RhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlBhcmEgaW5pY2lhciB1bWEgbGlzdGEgbnVtZXJhZGEgYXV0b21hdGljYW1lbnRlLCBkZXZlLXNlIGRpZ2l0YXIgbyBhc3RlcmlzY28gKCopIHNlZ3VpZG8gZGUgZXNwYcOnbyBhbnRlcyBkbyB0ZXh0by4ifSx7ImlkIjoiYyIsInRleHQiOiJQYXJhIGNyaWFyIGF1dG9tYXRpY2FtZW50ZSB1bWEgbGlzdGEgY29tIG1hcmNhZG9yZXMsIGRldmUtc2UgZGlnaXRhciAqIGUgdW0gZXNwYcOnbyBhbnRlcyBkbyB0ZXh0by4ifSx7ImlkIjoiZCIsInRleHQiOiJPIFdvcmQgbsOjbyBwb3NzdWkgcmVjdXJzb3MgYXV0b23DoXRpY29zIHBhcmEgY3JpYcOnw6NvIGRlIGxpc3Rhcywgc2VuZG8gbmVjZXNzw6FyaW8gYXBsaWNhciBhIGZvcm1hdGHDp8OjbyBtYW51YWxtZW50ZSBhdHJhdsOpcyBkb3MgbWVudXMuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiQXMgbGlzdGFzIG51bWVyYWRhcyBlIGNvbSBtYXJjYWRvcmVzIGRldmVtIHNlciBjcmlhZGFzIGV4Y2x1c2l2YW1lbnRlIGF0cmF2w6lzIGRvIG1lbnUg4oCcRGVzaWdu4oCdLCBuw6NvIGhhdmVuZG8gYXRhbGhvcyBkZSBkaWdpdGHDp8OjbyBwYXJhIHN1YSBjcmlhw6fDo28gYXV0b23DoXRpY2EuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBHdWFyZGEgTXVuaWNpcGFsIGRlIEFtZXJpY2FuYSDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSwgRW5jYXJyZWdhZG8gZGUgU2XDp8OjbyBkZSBBbG1veGFyaWZhZG8sIHF1ZXN0w6NvIDIzLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bywgcMOhZ2luYSAxLCBxdWFkcm8gZG8gY2FyZ28gRU5DQVJSRUdBRE8gREUgU0XDh8ODTyBERSBBTE1PWEFSSUZBRE86IDIzPUM7IGNvbmZlcsOqbmNpYSB2aXN1YWwgbmEgcmVuZGVyaXphw6fDo28gZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIyNy1nYWJhcml0by1kZWZpbml0aXZvLTEucGRmIiwic2hhMjU2IjoiZGI2Zjk5ZTNkNDM1ZTY3YzA4NjQ4MjkxMjZlNjdhNmY3ZmQxZmY4NGEyZWNiMzA5NTFlNGRiMzlhZmM3MzVhMSIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjI3L2FuZXhvcy80YjMwYTk0Ny1hOTVlLTRhZmEtOGY4OC1hZjllMDBhMTY0OTUucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJHdWFyZGEgTXVuaWNpcGFsIGRlIEFtZXJpY2FuYSDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLWFtZXJpY2FuYS0yMDI1LWVuY2FycmVnYWRvL3EyMyIsIm51bWJlciI6IjIzIiwicHJvb2YiOnsibm90ZSI6IlF1ZXN0w6NvIDIzLCBww6FnaW5hIGbDrXNpY2EgNyBkbyBQREY7IHRleHRvIGV4dHJhw61kbyBjb25mcm9udGFkbyBjb20gYSByZW5kZXJpemHDp8OjbyBkYSBww6FnaW5hOyBlbnVuY2lhZG8sIGFsdGVybmF0aXZhcyBlIG9yZGVtIGNvbmZlcmlkb3MgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIyNy1wcm92YS1lbmNhcnJlZ2Fkby1kZS1zZW8tZGUtYWxtb3hhcmlmYWRvLnBkZiIsInNoYTI1NiI6IjdkMTY4NjZiNjZhNjBiNGM2OGU3NDA2OWM1NzU3ZDdlZjI1MjllOTc3Mjg5YWM4MzA4MzQ3MGI0YzUyNjA0YzUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyNy9hbmV4b3MvZWFiMzVkYjMtOThlMy00YzA3LTllNzUtMDQ2NDVlZGI1ZGU3LnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBhcnQuIDjCuiwgSVYsIGRhIExlaSA5LjYxMC8xOTk4LCBjb25mb3JtZSBhIGF2YWxpYcOnw6NvIGRvY3VtZW50YWRhIG5vIHByb2pldG8sIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUgZGUgcHJvdmEgcMO6YmxpY2EsIHNlbSBvYnJhIGRlIHRlcmNlaXJvIGluY29ycG9yYWRhLiBOw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBuZW0gY29uc2VudGltZW50byBhZmlybWFkbzsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkVuY2FycmVnYWRvIGRlIFNlw6fDo28gZGUgQWxtb3hhcmlmYWRvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJhbWVyMjUtZW5jLXEyMyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LXdvcmQtbGlzdGFzLWF1dG8iXSwicmVzb2x1dGlvbiI6IjEuIENvbSBhIEF1dG9Gb3JtYXRhw6fDo28gYW8gZGlnaXRhciBhdGl2YWRhIChjb25maWd1cmHDp8OjbyBwYWRyw6NvKSwgZGlnaXRhciAqIHNlZ3VpZG8gZGUgZXNwYcOnbyBpbmljaWEgdW1hIGxpc3RhIGNvbSBtYXJjYWRvcmVzOyBkaWdpdGFyIDEuIHNlZ3VpZG8gZGUgZXNwYcOnbyBpbmljaWEgbGlzdGEgbnVtZXJhZGE7IGFsdGVybmF0aXZhIEMuIDIuIEEgdHJvY2EgbyBwb250byBwb3IgcG9udG8gZSB2w61yZ3VsYSBlIGF0cmlidWkgYW8gbsO6bWVybyB1bWEgbGlzdGEgZGUgbWFyY2Fkb3JlczsgQiBhdHJpYnVpIGFvIGFzdGVyaXNjbyBhIGxpc3RhIG51bWVyYWRhOyBEIGUgRSBuZWdhbSBvIHJlY3Vyc28gYXV0b23DoXRpY28sIGUgb3MgYm90w7VlcyBkZSBsaXN0YSBmaWNhbSBuYSBndWlhIFDDoWdpbmEgSW5pY2lhbCwgbsOjbyBlbSBEZXNpZ24uIEdhYmFyaXRvIGRlZmluaXRpdm86IGFsdGVybmF0aXZhIEMuIiwic3RhdGVtZW50IjoiTmEgZWxhYm9yYcOnw6NvIGRlIGRvY3VtZW50b3Mgb2ZpY2lhaXMsIHJlbGF0w7NyaW9zIGUgb3V0cm9zIHRleHRvcyBubyBzZXJ2acOnbyBww7pibGljbywgZnJlcXVlbnRlbWVudGUgw6kgbmVjZXNzw6FyaW8gb3JnYW5pemFyIGluZm9ybWHDp8O1ZXMgZW0gbGlzdGFzLiBPIE1pY3Jvc29mdCBXb3JkIG9mZXJlY2UgcmVjdXJzb3MgYXV0b23DoXRpY29zIHBhcmEgY3JpYXIgbGlzdGFzIG51bWVyYWRhcyBlIGNvbSBtYXJjYWRvcmVzLCBhZ2lsaXphbmRvIGEgZm9ybWF0YcOnw6NvIGUgcGFkcm9uaXphw6fDo28gZG9zIGRvY3VtZW50b3MuXG5Db25zaWRlcmFuZG8gb3MgcHJvY2VkaW1lbnRvcyBwYXJhIGNyaWHDp8OjbyBhdXRvbcOhdGljYSBkZSBsaXN0YXMgbm8gTWljcm9zb2Z0IFdvcmQsIGFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgQ09SUkVUQS4iLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtd29yZC1saXN0YXMtYXV0byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRpdmFyIG91IGRlc2F0aXZhciBtYXJjYWRvcmVzIG91IG51bWVyYcOnw6NvIGF1dG9tw6F0aWNvcyBubyBXb3JkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvb2ZmaWNlL2F0aXZhci1vdS1kZXNhdGl2YXItbnVtZXJhJUMzJUE3JUMzJUEzby1vdS1tYXJjYWRvcmVzLWF1dG9tJUMzJUExdGljb3MtYWMzZDlkMDAtMGJiNi00NDIxLTkyYTYtZjczZTU2NGNlNzFlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.cerq25-cont-q23.json",
+        "mediaType": "application/json",
+        "sha256": "5ade62c53df1921514ff5121095e27142ae98859466ff1e22ac70c59dd8deba7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWNlc3NhciBhIGd1aWEgUMOhZ2luYSBJbmljaWFsLCBjbGljYXIgZW0gU3Vic3RpdHVpciwgZGlnaXRhciDigJxBdXRvcml6YWRv4oCdIG5vIGNhbXBvIExvY2FsaXphciBlIOKAnE7Do28gYXV0b3JpemFkbyBwZWxhIENoZWZpYeKAnSBubyBjYW1wbyBTdWJzdGl0dWlyIHBvciwgZSBjbGljYXIgZW0g4oCcU3Vic3RpdHVpcuKAnS4gUmVwZXRpciBlc3NlIHByb2Nlc3NvIDcwMCB2ZXplcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBY2Vzc2FyIGEgZ3VpYSBQw6FnaW5hIEluaWNpYWwsIGNsaWNhciBlbSBTdWJzdGl0dWlyLCBkaWdpdGFyIOKAnEF1dG9yaXphZG/igJ0gbm8gY2FtcG8gTG9jYWxpemFyIGUg4oCcTsOjbyBhdXRvcml6YWRv4oCdIG5vIGNhbXBvIFN1YnN0aXR1aXIgcG9yLCBlIGNsaWNhciBlbSDigJxTdWJzdGl0dWlyIHR1ZG/igJ0gcGFyYSByZWFsaXphciBvIHByb2NlZGltZW50byB1bWEgw7puaWNhIHZlei4gRW0gc2VndWlkYSwgcmVwZXRpciBvIHByb2Nlc3NvIGxvY2FsaXphbmRvIG8gbm92byB0ZXh0byDigJxOw6NvIGF1dG9yaXphZG/igJ0gZSBzdWJzdGl0dWluZG8gdHVkbyBwb3Ig4oCcTsOjbyBhdXRvcml6YWRvIHBlbGEgQ2hlZmlh4oCdLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlByaW1laXJvLCBjb3BpYXIgbyB0ZXh0byDigJxOw6NvIGF1dG9yaXphZG8gcGVsYSBDaGVmaWHigJ0uIEVtIHNlZ3VpZGEsIGFjZXNzYXIgYSBndWlhIFDDoWdpbmEgSW5pY2lhbCwgY2xpY2FyIGVtIExvY2FsaXphciwgZGlnaXRhciDigJxBdXRvcml6YWRv4oCdIGUsIGEgY2FkYSBvY29ycsOqbmNpYSBlbmNvbnRyYWRhLCBjb2xhciBvIHRleHRvIGNvcGlhZG8gdXNhbmRvIEN0cmwgKyBWLiBSZXBldGlyIGVzc2UgcHJvY2Vzc28gY2VyY2EgZGUgNzAwIHZlemVzIGF0w6kgY29uY2x1aXIgdG9kYXMgYXMgZWRpw6fDtWVzLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkFjZXNzYXIgYSBndWlhIFDDoWdpbmEgSW5pY2lhbCwgY2xpY2FyIGVtIFN1YnN0aXR1aXIsIGRpZ2l0YXIg4oCcQXV0b3JpemFkb+KAnSBubyBjYW1wbyBMb2NhbGl6YXIgZSDigJxOw6NvIGF1dG9yaXphZG8gcGVsYSBDaGVmaWHigJ0gbm8gY2FtcG8gU3Vic3RpdHVpciBwb3IsIGUgY2xpY2FyIGVtIOKAnFN1YnN0aXR1aXIgdHVkb+KAnSBwYXJhIHJlYWxpemFyIG8gcHJvY2VkaW1lbnRvIHVtYSDDum5pY2EgdmV6LiJ9LHsiaWQiOiJlIiwidGV4dCI6IkFjZXNzYXIgZ3VpYSBQw6FnaW5hIEluaWNpYWwsIFN1YnN0aXR1aXIsIGRpZ2l0YXIg4oCcQXV0b3JpemFkb+KAnSBubyBjYW1wbyBwYXJhIGxvY2FsaXphciBlIGRpZ2l0YXIg4oCcTsOjbyBhdXRvcml6YWRvIENoZWZpYeKAnSBubyBjYW1wbyBzdWJzdGl0dWlyIHBvciBlIGNsaWNhciBlbSDigJxTdWJzdGl0dWlyIHR1ZG/igJ0gcGFyYSByZWFsaXphciBvIHByb2NlZGltZW50byB1bWEgw7puaWNhIHZlei4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENlcnF1aWxobyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSwgQ29udGFkb3IsIHF1ZXN0w6NvIDIzLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bywgcMOhZ2luYSAzLCBxdWFkcm8gZG8gY2FyZ28gQ09OVEFET1I6IDIzPUQ7IGNvbmZlcsOqbmNpYSB2aXN1YWwgbmEgcmVuZGVyaXphw6fDo28gZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzE5OC1nYWJhcml0by1kZWZpbml0aXZvLTEucGRmIiwic2hhMjU2IjoiNjc3ZjBhNjBiMTA4MGE0YjY2OWUzYmRiYzNmMDU5OTQ2YTc3ZjQ5ZDg2ZTQxNGJiM2E4N2NjNzIwNzFjNDBhZiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk4L2FuZXhvcy9lMTQxYmJlZS1hZmY1LTQ0ZjAtYTdmYS0zZTUxMTljOGY4ODAucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDZXJxdWlsaG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1jZXJxdWlsaG8tMjAyNS1jb250YWRvci9xMjMiLCJudW1iZXIiOiIyMyIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAyMywgcMOhZ2luYSBmw61zaWNhIDggZG8gUERGOyB0ZXh0byBleHRyYcOtZG8gY29uZnJvbnRhZG8gY29tIGEgcmVuZGVyaXphw6fDo28gZGEgcMOhZ2luYTsgZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMgZSBvcmRlbSBjb25mZXJpZG9zIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTgtcHJvdmEtY29udGFkb3IucGRmIiwic2hhMjU2IjoiOTI0OTA0YjI0MDRiMGE5NWRiYmMyMGVlZjVjYTBmNGU4N2E0YmUzMjE1YjYxZGI1YjBmM2RiMzY2YzI3M2JmOSIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk4L2FuZXhvcy8wYjY2ODZiMC02MjBjLTQ0YTQtYjRkNS0wZDgxYjg2ZDYzMzIucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IGFydC4gOMK6LCBJViwgZGEgTGVpIDkuNjEwLzE5OTgsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgbm8gcHJvamV0bywgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSBkZSBwcm92YSBww7pibGljYSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gaW5jb3Jwb3JhZGEuIE7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSBjb25zZW50aW1lbnRvIGFmaXJtYWRvOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQ29udGFkb3IiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjV9LCJpZCI6ImNlcnEyNS1jb250LXEyMyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LXdvcmQtc3Vic3RpdHVpciJdLCJyZXNvbHV0aW9uIjoiMS4gRW0gUMOhZ2luYSBJbmljaWFsID4gU3Vic3RpdHVpciAoQ3RybCtVIG5vIFdvcmQgZW0gcG9ydHVndcOqcyksIGluZm9ybWFyIG8gdGVybW8gcHJvY3VyYWRvIGUgbyB0ZXh0byBmaW5hbCBleGF0byBlIGFjaW9uYXIgU3Vic3RpdHVpciB0dWRvIHRyb2NhIHRvZGFzIGFzIG9jb3Jyw6puY2lhcyBkZSB1bWEgdmV6OyBhbHRlcm5hdGl2YSBELiAyLiBBIGUgQyBleGlnZW0gY2VudGVuYXMgZGUgcmVwZXRpw6fDtWVzIG1hbnVhaXM7IEIgdXNhIGR1YXMgZXRhcGFzIGRlc25lY2Vzc8OhcmlhcyBlLCBuYSBzZWd1bmRhLCB0YW1iw6ltIGFsdGVyYXJpYSBxdWFscXVlciDigJxOw6NvIGF1dG9yaXphZG/igJ0gasOhIGV4aXN0ZW50ZTsgRSBncmF2YSB0ZXh0byBkaWZlcmVudGUgZG8gcGVkaWRvICjigJxOw6NvIGF1dG9yaXphZG8gQ2hlZmlh4oCdKS4gR2FiYXJpdG8gZGVmaW5pdGl2bzogYWx0ZXJuYXRpdmEgRC4iLCJzdGF0ZW1lbnQiOiJNYXJpYSwgc3VhIGzDrWRlciBpbWVkaWF0YSwgc29saWNpdG91IHF1ZSB2b2PDqiBmaXplc3NlIHVtYSBlZGnDp8OjbyBlbSB1bSBsb25nbyBkb2N1bWVudG8gZG8gV29yZC4gVHJhdGEtc2UgZGUgdW0gcmVsYXTDs3JpbyBjb20gbXVpdGFzIHDDoWdpbmFzLCBxdWUgc2VydmUgY29tbyB0ZXJtbyBkZSBhdXRvcml6YcOnw6NvIHBhcmEgbW92aW1lbnRhw6fDo28gZGUgY2FyZ2EuIEVsYSBwZWRpdSBxdWUgdm9jw6ogc3Vic3RpdHXDrXNzZSBhIHBhbGF2cmEg4oCcQXV0b3JpemFkb+KAnSBwb3Ig4oCcTsOjbyBhdXRvcml6YWRvIHBlbGEgQ2hlZmlh4oCdLiBPIHRlcm1vIGFwYXJlY2UgYXByb3hpbWFkYW1lbnRlIDcwMCB2ZXplcyBhbyBsb25nbyBkbyBkb2N1bWVudG8sIGUgbyBwcmF6byBwYXJhIGEgdGFyZWZhIMOpIGN1cnRvLiBQYXJhIGV2aXRhciBvIHRyYWJhbGhvIG1hbnVhbCwgdm9jw6ogZGVjaWRlIHV0aWxpemFyIG8gY29tYW5kbyBMb2NhbGl6YXIgZSBTdWJzdGl0dWlyIGRvIFdvcmQuIE5lc3NlIGNvbnRleHRvLCBhc3NpbmFsZSBhIGFsdGVybmF0aXZhIHF1ZSByZXByZXNlbnRhIG8gcHJvY2Vzc28gbWFpcyByw6FwaWRvIGUgcHJlY2lzbyBwYXJhIHJlYWxpemFyIGVzc2EgZWRpw6fDo28gbm8gZG9jdW1lbnRvLiIsInRvcGljSWQiOiJJMDMifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWNsYXVkZS1pdC13b3JkLXN1YnN0aXR1aXIiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIExvY2FsaXphciBlIHN1YnN0aXR1aXIgdGV4dG8gbm8gV29yZCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvdHJhaW5pbmcvZmluZC1hbmQtcmVwbGFjZS10ZXh0LWluLXdvcmQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-antes-depois.json",
+        "mediaType": "application/json",
+        "sha256": "86598c2327b91b182a5f9241927d9979929eae8cc7c8331a114c400aedd84dc7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXNwYcOnYW1lbnRvIEFudGVzIG91IERlcG9pcyBkbyBwYXLDoWdyYWZvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkF1bWVudGFyIG8gdGFtYW5obyBkZSB0b2RhcyBhcyBsZXRyYXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQWx0ZXJhciBhIG9yaWVudGHDp8OjbyBkYSBww6FnaW5hLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ikluc2VyaXIgZXNwYcOnb3MgZW50cmUgdG9kYXMgYXMgcGFsYXZyYXMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtYW50ZXMtZGVwb2lzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZXNwYWNhbWVudG8iLCJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXBhcmFncmFmbyJdLCJyZXNvbHV0aW9uIjoiMS4gQW50ZXMgZSBEZXBvaXMgY29udHJvbGFtIG8gZXNwYcOnbyB2ZXJ0aWNhbCBlbnRyZSBwYXLDoWdyYWZvcy4gMi4gRm9udGUsIG9yaWVudGHDp8OjbyBlIGVzcGHDp29zIGVudHJlIHBhbGF2cmFzIG7Do28gcmVndWxhbSBkaXJldGFtZW50ZSBhIGRpc3TDom5jaWEgZXh0ZXJuYSBkb3MgcGFyw6FncmFmb3MuIiwic3RhdGVtZW50IjoiTm8gV29yZCBwYXJhIE1pY3Jvc29mdCAzNjUgcGFyYSBXaW5kb3dzLCBhIGVxdWlwZSBxdWVyIGF1bWVudGFyIHNvbWVudGUgYSBkaXN0w6JuY2lhIGVudHJlIGRvaXMgcGFyw6FncmFmb3MsIHByZXNlcnZhbmRvIG8gZXNwYcOnYW1lbnRvIGludGVybm8gZGFzIGxpbmhhcy4gUXVlIGFqdXN0ZSBkZXZlIHVzYXI/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1lc3BhY2FtZW50byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQWx0ZXJhciBvIGVzcGHDp2FtZW50byBlbnRyZSBsaW5oYXMgZSBwYXLDoWdyYWZvcyBubyBXb3JkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC9jaGFuZ2UtdGhlLWxpbmUtc3BhY2luZy1pbi13b3JkIn0sImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGFyYWdyYWZvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBanVzdGFyIHJlY3VvcyBlIGVzcGHDp2FtZW50byBubyBXb3JkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC9hZGp1c3QtaW5kZW50cy1hbmQtc3BhY2luZyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-espacamento-simples.json",
+        "mediaType": "application/json",
+        "sha256": "48ebf86e4a4f73bfc3f0b7174fa617d10df5e4559bcc1f8cd862573deece421e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2hpZnQrRW50ZXIsIGluc2VyaW5kbyB1bWEgcXVlYnJhIGRlIGxpbmhhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkN0cmwrU2hpZnQrRW50ZXIsIGluc2VyaW5kbyB1bWEgcXVlYnJhIGRlIGNvbHVuYS4ifSx7ImlkIjoiYyIsInRleHQiOiJDdHJsK1NoaWZ0K0JhcnJhIGRlIGVzcGHDp29zLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkN0cmwrRW50ZXIsIGluc2VyaW5kbyB1bWEgcXVlYnJhIGRlIHDDoWdpbmEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtZXNwYWNhbWVudG8tc2ltcGxlcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJyZXZpZXdzLXIxLXJ2LTAzYjdjMjk5OWUiXSwicmVzb2x1dGlvbiI6IjEuIE8gZXNwYcOnbyBpbmNvbmRpY2lvbmFsIHNlcGFyYSB2aXN1YWxtZW50ZSBhcyBwYWxhdnJhcyBzZW0gb2ZlcmVjZXIgbmFxdWVsZSBwb250byB1bWEgcXVlYnJhIG5vcm1hbCBkZSBsaW5oYS4gMi4gQXMgb3V0cmFzIGNvbWJpbmHDp8O1ZXMgaW5zZXJlbSBxdWVicmFzIGUgbsOjbyBvIHRpcG8gZGUgZXNwYcOnbyBzb2xpY2l0YWRvLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQgcGFyYSBNaWNyb3NvZnQgMzY1IGRlIGRlc2t0b3Agbm8gV2luZG93cywgcXVhbCBhdGFsaG8gaW5zZXJlIHVtIGVzcGHDp28gaW5jb25kaWNpb25hbCBlbnRyZSBkdWFzIHBhcnRlcyBkZSB1bSBub21lIHF1ZSBkZXZlbSBmaWNhciBqdW50YXMgbmEgbWVzbWEgbGluaGE/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsicmV2aWV3cy1yMS1ydi0wM2I3YzI5OTllIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV29yZCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd29yZC9rZXlib2FyZC1zaG9ydGN1dHMtaW4td29yZCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-estilo-local-versus-padrao.json",
+        "mediaType": "application/json",
+        "sha256": "f58d061769953ff24b07c2b567785f81850bde0085b647229a2c3b33b199c576",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0ZXJhciBhIHNlbmhhIGRlIGxvZ2luIGRvIFdpbmRvd3MuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTXVkYXIgbyBmb3JtYXRvIGRlIGFycXVpdm9zIEV4Y2VsLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlVzYXIgYXF1ZWxhIGNvbmZpZ3VyYcOnw6NvIGNvbW8gcGFkcsOjbyBwYXJhIG5vdm9zIGRvY3VtZW50b3MgYmFzZWFkb3MgbmVzc2UgbW9kZWxvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlJlZXNjcmV2ZXIgb2JyaWdhdG9yaWFtZW50ZSB0b2RvcyBvcyBhcnF1aXZvcyBXb3JkIGrDoSBleGlzdGVudGVzIG5vIGRpc2NvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWVzdGlsby1sb2NhbC12ZXJzdXMtcGFkcmFvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGFyYWdyYWZvIl0sInJlc29sdXRpb24iOiIxLiBBIGVzY29saGEgZGUgcGFkcsOjbyBkbyBtb2RlbG8gb3JpZW50YSBkb2N1bWVudG9zIGNyaWFkb3MgY29tIGVsZS4gMi4gTsOjbyDDqSB1bWEgZWRpw6fDo28gZW0gbWFzc2EgZGUgdG9kbyBhcnF1aXZvIHNhbHZvLCBuZW0gY29uZmlndXJhw6fDo28gZGUgc2VuaGEgb3UgZGUgRXhjZWwuIiwic3RhdGVtZW50IjoiTm8gV29yZCwgdW1hIHBlc3NvYSB1c2EgRGVmaW5pciBjb21vIFBhZHLDo28gbmEgY2FpeGEgUGFyw6FncmFmbyBlIGVzY29saGUgdG9kb3Mgb3MgZG9jdW1lbnRvcyBiYXNlYWRvcyBubyBtb2RlbG8gTm9ybWFsLiBRdWFsIMOpIG8gYWxjYW5jZSBwcmV0ZW5kaWRvPyIsInRvcGljSWQiOiJJMDMifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGFyYWdyYWZvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBanVzdGFyIHJlY3VvcyBlIGVzcGHDp2FtZW50byBubyBXb3JkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC9hZGp1c3QtaW5kZW50cy1hbmQtc3BhY2luZyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-formato-caractere-conteudo.json",
+        "mediaType": "application/json",
+        "sha256": "dfb4b4193655d107a9b5533b72b38ebd18ef848f57dea894a459db9b0a0e1893",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV29yZCBwZXJtaXRlIGFwZW5hcyB1bWEgcHJvcHJpZWRhZGUgZGUgY2FyYWN0ZXJlIHBvciBwYWxhdnJhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFzIGR1YXMgcHJvcHJpZWRhZGVzIGV4aWdlbSBjb252ZXJ0ZXIgbyBkb2N1bWVudG8gcGFyYSBpbWFnZW0uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQXMgZHVhcyBwcm9wcmllZGFkZXMgZGUgZm9ybWF0YcOnw6NvIHBvZGVtIGNvZXhpc3RpciBubyBtZXNtbyB0cmVjaG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXBsaWNhciB1bWEgZGVsYXMgc2VtcHJlIGFwYWdhIHRvZGFzIGFzIHBhbGF2cmFzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWZvcm1hdG8tY2FyYWN0ZXJlLWNvbnRldWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtd29yZC1pbmljaWFsIl0sInJlc29sdXRpb24iOiIxLiBBcyBwcm9wcmllZGFkZXMgZGUgYXBhcsOqbmNpYSBwb2RlbSBzZXIgY29tYmluYWRhcyBubyB0ZXh0by4gMi4gTsOjbyBow6EgbGltaXRhw6fDo28gZ2VyYWwgYSB1bWEgcHJvcHJpZWRhZGUsIGV4Y2x1c8OjbyBvYnJpZ2F0w7NyaWEgb3UgZXhpZ8OqbmNpYSBkZSBpbWFnZW0uIiwic3RhdGVtZW50IjoiTm8gV29yZCwgbyB0ZXh0byBmb2kgY29sb2NhZG8gZW0gbmVncml0byBlIGl0w6FsaWNvIHNpbXVsdGFuZWFtZW50ZS4gUXVhbCBkZXNjcmnDp8OjbyDDqSBhZGVxdWFkYT8iLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXdvcmQtaW5pY2lhbCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgV29yZCBwYXJhIG5vdm9zIHVzdcOhcmlvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvd29yZC1mb3ItbmV3LXVzZXJzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-italico-diferenca.json",
+        "mediaType": "application/json",
+        "sha256": "7d3e74b015077c7060e86a68bb0f25787ffd439f3cf6cffb6dc26d311fdae1e1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSXTDoWxpY28uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTWVzY2xhciBjw6lsdWxhcy4ifSx7ImlkIjoiYyIsInRleHQiOiJRdWVicmEgZGUgcMOhZ2luYS4ifSx7ImlkIjoiZCIsInRleHQiOiJFeGNsdWlyIGNvbWVudMOhcmlvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LWl0YWxpY28tZGlmZXJlbmNhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtd29yZC1pbmljaWFsIl0sInJlc29sdXRpb24iOiIxLiBJdMOhbGljbyDDqSB1bWEgcHJvcHJpZWRhZGUgZGUgYXBhcsOqbmNpYSBkb3MgY2FyYWN0ZXJlcy4gMi4gT3Mgb3V0cm9zIGNvbWFuZG9zIGF0dWFtIGVtIHRhYmVsYSwgcGFnaW5hw6fDo28gb3UgY29tZW50w6FyaW8sIHNlbSBkZWZpbmlyIGVzc2EgYXBhcsOqbmNpYSB0aXBvZ3LDoWZpY2EuIiwic3RhdGVtZW50IjoiTm8gV29yZCwgcXVhbCBjb21hbmRvIGFwbGljYSB1bWEgYXBhcsOqbmNpYSBpbmNsaW5hZGEgYW9zIGNhcmFjdGVyZXMgc2VsZWNpb25hZG9zLCBzZW0gc2lnbmlmaWNhciBtdWRhbsOnYSBkbyB0ZXh0byBlc2NyaXRvPyIsInRvcGljSWQiOiJJMDMifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtd29yZC1pbmljaWFsIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBXb3JkIHBhcmEgbm92b3MgdXN1w6FyaW9zIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC93b3JkLWZvci1uZXctdXNlcnMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-limpar-formato.json",
+        "mediaType": "application/json",
+        "sha256": "6c5fb33de9d86580fd63ff967bc22e4edc17ebdfdee0ea49e1806f3e62b83070",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTGltcGFyIFRvZGEgYSBGb3JtYXRhw6fDo28uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiRXhjbHVpciB0b2RhcyBhcyBwYWxhdnJhcy4ifSx7ImlkIjoiYyIsInRleHQiOiJRdWVicmEgZGUgY29sdW5hLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik1lc2NsYXIgY8OpbHVsYXMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtbGltcGFyLWZvcm1hdG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1saW1wYXItZm9ybWF0byJdLCJyZXNvbHV0aW9uIjoiMS4gTyBjb21hbmRvIGxpbXBhIHByb3ByaWVkYWRlcyBkZSBmb3JtYXRhw6fDo28gZG8gdGV4dG8gc2VsZWNpb25hZG8uIDIuIE7Do28gw6kgbmVjZXNzw6FyaW8gYXBhZ2FyIGNvbnRlw7pkbzsgcXVlYnJhIGRlIGNvbHVuYSBlIG1lc2NsYWdlbSBhbHRlcmFtIG91dHJhcyBlc3RydXR1cmFzLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQgcGFyYSBNaWNyb3NvZnQgMzY1IHBhcmEgV2luZG93cywgdW0gdHJlY2hvIHJlY2ViZXUgbWFudWFsbWVudGUgY29yZXMgZSBlZmVpdG9zIGluZGVzZWphZG9zLiBRdWFsIGNvbWFuZG8gcmVtb3ZlIGEgZm9ybWF0YcOnw6NvIGFwbGljYWRhIGUgcGVybWl0ZSB2b2x0YXIgYW8gcGFkcsOjbyBkbyB0ZXh0bz8iLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWxpbXBhci1mb3JtYXRvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBMaW1wYXIgdG9kYSBhIGZvcm1hdGHDp8OjbyBkbyB0ZXh0byIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3Bvd2VycG9pbnQvY2xlYXItYWxsLXRleHQtZm9ybWF0dGluZyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-linha-selecionar.json",
+        "mediaType": "application/json",
+        "sha256": "b1c2bcbab91fc110f1324864aa985e37157709b294145b597df4a49e344fb901",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2VsZWNpb25hciBvIHBhcsOhZ3JhZm8gaW50ZWlybyBjb20gdW0gw7puaWNvIGNsaXF1ZS4ifSx7ImlkIjoiYiIsInRleHQiOiJQb3NpY2lvbmFyIG8gY3Vyc29yIG5vIGluw61jaW8gZGEgbGluaGEsIHNlbSBzZWxlY2lvbmFyIG5hZGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU2VsZWNpb25hciBhcXVlbGEgbGluaGEgZGUgdGV4dG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2FsdmFyIG8gYXJxdWl2byBlbSBQREYgb2JyaWdhdG9yaWFtZW50ZS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1saW5oYS1zZWxlY2lvbmFyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGV4dG8iXSwicmVzb2x1dGlvbiI6IjEuIFVtIGNsaXF1ZSBuYSDDoXJlYSBkZSBzZWxlw6fDo28sIMOgIGVzcXVlcmRhIGRhIGxpbmhhLCBzZWxlY2lvbmEgYXF1ZWxhIGxpbmhhOyBhbHRlcm5hdGl2YSBDLiAyLiBBIGVycmEgcG9ycXVlIHVtIMO6bmljbyBjbGlxdWUgc2VsZWNpb25hIGEgbGluaGEsIG7Do28gbyBwYXLDoWdyYWZvIChvIHBhcsOhZ3JhZm8gZXhpZ2UgZHVwbG8gY2xpcXVlIG5lc3NhIMOhcmVhKTsgQiBlcnJhIHBvcnF1ZSBvIGNsaXF1ZSBuZXNzYSDDoXJlYSBzZWxlY2lvbmEsIG7Do28gYXBlbmFzIHBvc2ljaW9uYSBvIGN1cnNvcjsgRCBlcnJhIHBvcnF1ZSBzZWxlw6fDo28gbsOjbyBleHBvcnRhIG8gYXJxdWl2by4iLCJzdGF0ZW1lbnQiOiJObyBXb3JkIHBhcmEgV2luZG93cywgY29uZm9ybWUgbyBwcm9jZWRpbWVudG8gZGUgc2VsZcOnw6NvIGNvbSBtb3VzZSBkb2N1bWVudGFkbyBwZWxhIE1pY3Jvc29mdCwgY2xpY2FyIMOgIGVzcXVlcmRhIGRlIHVtYSBsaW5oYSBwb2RlIHNlcnZpciBwYXJhIHF1w6o/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10ZXh0byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQWRpY2lvbmFyIGUgZWRpdGFyIHRleHRvIG5vIFdvcmQgcGFyYSBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC90cmFpbmluZy9hZGQtYW5kLWVkaXQtdGV4dCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-manter-linhas-juntas.json",
+        "mediaType": "application/json",
+        "sha256": "2136b3512143f2bff98ec152a47fb1a69f0390f1a0e19f19db5ecb99143673e6",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTWFudGVyIGxpbmhhcyBqdW50YXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiSW5zZXJpciB1bWEgcXVlYnJhIGRlIHNlw6fDo28gY29udMOtbnVhIGFudGVzIGRvIHBhcsOhZ3JhZm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUmVkdXppciBwYXJhIDAgcHQgbyBlc3Bhw6dhbWVudG8gRGVwb2lzIGRvIHBhcsOhZ3JhZm8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQWxpbmhhciBvIHBhcsOhZ3JhZm8gY29tbyBqdXN0aWZpY2Fkby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1tYW50ZXItbGluaGFzLWp1bnRhcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWVzcGFjYW1lbnRvIl0sInJlc29sdXRpb24iOiIxLiBNYW50ZXIgbGluaGFzIGp1bnRhcyBpbXBlZGUgcXVlIG8gcGFyw6FncmFmbyBzZWphIGRpdmlkaWRvIGVudHJlIGR1YXMgcMOhZ2luYXM7IGFsdGVybmF0aXZhIEEuIDIuIEIgZXJyYSBwb3JxdWUgYSBxdWVicmEgZGUgc2XDp8OjbyBjb250w61udWEgbsOjbyBpbXBlZGUgYSBkaXZpc8OjbzsgQyBhbHRlcmEgYXBlbmFzIG8gZXNwYcOnbyBhcMOzcyBvIHBhcsOhZ3JhZm87IEQgbXVkYSBvIGFsaW5oYW1lbnRvIGhvcml6b250YWwsIG7Do28gYSBwYWdpbmHDp8Ojby4iLCJzdGF0ZW1lbnQiOiJObyBXb3JkLCB1bSBwYXLDoWdyYWZvIGN1cnRvIG7Do28gZGV2ZSBzZXIgZGl2aWRpZG8gZW50cmUgZHVhcyBww6FnaW5hcy4gUXVhbCBvcMOnw6NvIHByw7NwcmlhIGRlIHBhZ2luYcOnw6NvIMOpIHBlcnRpbmVudGU/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1lc3BhY2FtZW50byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQWx0ZXJhciBvIGVzcGHDp2FtZW50byBlbnRyZSBsaW5oYXMgZSBwYXLDoWdyYWZvcyBubyBXb3JkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC9jaGFuZ2UtdGhlLWxpbmUtc3BhY2luZy1pbi13b3JkIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-negrito-conceito.json",
+        "mediaType": "application/json",
+        "sha256": "74858be66f3576b70249e267f25f5ef0d71c4e47530c05907e72c94bc64f5d7a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBpZGlvbWEgZGUgcmV2aXPDo28gZGUgdGV4dG8gZG8gdHJlY2hvIHNlbGVjaW9uYWRvIGUgYSBkaXNwb25pYmlsaWRhZGUgZGFzIGZlcnJhbWVudGFzIGRlc3NlIGlkaW9tYS4ifSx7ImlkIjoiYiIsInRleHQiOiJTb21lbnRlIGEgY29yIGRhIGZvbnRlLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlNvbWVudGUgbyBub21lIGRvIGFycXVpdm8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQSBvcmllbnRhw6fDo28gcmV0cmF0byBvdSBwYWlzYWdlbSBkYSBww6FnaW5hLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LW5lZ3JpdG8tY29uY2VpdG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC13b3JkLWlkaW9tYSJdLCJyZXNvbHV0aW9uIjoiMS4gTyBpZGlvbWEgZGUgcmV2aXPDo28gcHJlY2lzYSBjb3JyZXNwb25kZXIgYW8gY29udGXDumRvIHBhcmEgYXBsaWNhciBhcyBmZXJyYW1lbnRhcyBvcnRvZ3LDoWZpY2FzIGFwcm9wcmlhZGFzLiAyLiBBcGFyw6puY2lhLCBub21lIGUgb3JpZW50YcOnw6NvIG7Do28gZXNjb2xoZW0gYXMgcmVncmFzIGRlIGlkaW9tYSB1c2FkYXMgcGVsbyByZXZpc29yLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQgcGFyYSBNaWNyb3NvZnQgMzY1IGRlIGRlc2t0b3Agbm8gV2luZG93cywgdW0gdHJlY2hvIGVtIGVzcGFuaG9sIGVzdMOhIHNlbmRvIHJldmlzYWRvIGNvbW8gcG9ydHVndcOqcyBlIHJlY2ViZW5kbyBtYXJjYcOnw7VlcyBpbmFkZXF1YWRhcy4gUXVhbCBjb25maWd1cmHDp8OjbyBkZXZlIHNlciBjb25mZXJpZGE/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC13b3JkLWlkaW9tYSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgSWRpb21hcyB1c2Fkb3MgcGFyYSB2ZXJpZmljYXIgb3J0b2dyYWZpYSBlIGdyYW3DoXRpY2EiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93b3JkL3NldC11cC1vci1jaGFuZ2UtdGhlLWxhbmd1YWdlcy11c2VkLXRvLWNoZWNrLXNwZWxsaW5nLWFuZC1ncmFtbWFyIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-pincel-conteudo.json",
+        "mediaType": "application/json",
+        "sha256": "9d9234c987fd667154cfe255a2a8748bbfdd09651866e6cc68906777f6e543d4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUGluY2VsIGRlIEZvcm1hdGHDp8Ojby4ifSx7ImlkIjoiYiIsInRleHQiOiJSZWNvcnRhciBvIHRleHRvIGRlIGRlc3Rpbm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU3Vic3RpdHVpciB0b2RhcyBhcyBvY29ycsOqbmNpYXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRXhjbHVpciBvIHBhcsOhZ3JhZm8uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtcGluY2VsLWNvbnRldWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGluY2VsIl0sInJlc29sdXRpb24iOiIxLiBPIFBpbmNlbCB0cmFuc2ZlcmUgcHJvcHJpZWRhZGVzIGRlIGZvcm1hdGHDp8OjbywgbWFudGVuZG8gbyB0ZXh0byBzb2JyZSBvIHF1YWwgw6kgYXBsaWNhZG8uIDIuIFJlY29ydGUsIHN1YnN0aXR1acOnw6NvIGUgZXhjbHVzw6NvIGFsdGVyYW0gY29udGXDumRvOyBuw6NvIHPDo28gbyBtZWNhbmlzbW8gZGUgY29waWFyIGFwZW5hcyBhIGFwYXLDqm5jaWEuIiwic3RhdGVtZW50IjoiTm8gV29yZCBwYXJhIE1pY3Jvc29mdCAzNjUgcGFyYSBXaW5kb3dzIGVtIHBvcnR1Z3XDqnMsIHF1YWwgcmVjdXJzbyBjb3BpYSBhIGFwYXLDqm5jaWEgZGUgdW0gdHJlY2hvIHBhcmEgb3V0cm8gc2VtIHN1YnN0aXR1aXIgYXMgcGFsYXZyYXMgZG8gZGVzdGlubz8iLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXBpbmNlbCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgVXNhciBvIFBpbmNlbCBkZSBGb3JtYXRhw6fDo28iLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93b3JkL3VzZS10aGUtZm9ybWF0LXBhaW50ZXIifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-pincel-interromper.json",
+        "mediaType": "application/json",
+        "sha256": "3edc2a9cdfe00b9535f007d38a065a7b78b173e463ca40e6c5f6021ac732c1f2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2hpZnQrRjMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU2hpZnQrRW50ZXIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ3RybCtFbnRlci4ifSx7ImlkIjoiZCIsInRleHQiOiJGNSBjb21vIGNvbWFuZG8gZGUgYWx0ZXJhw6fDo28gZGUgY2FpeGEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtcGluY2VsLWludGVycm9tcGVyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtd29yZC1hdGFsaG9zIl0sInJlc29sdXRpb24iOiIxLiBTaGlmdCtGMyBwZXJjb3JyZSBhcyBmb3JtYXMgZGUgY2FwaXRhbGl6YcOnw6NvIGRvIHRleHRvIHNlbGVjaW9uYWRvLiAyLiBTaGlmdCtFbnRlciBpbnNlcmUgcXVlYnJhIGRlIGxpbmhhOyBDdHJsK0VudGVyIGluc2VyZSBxdWVicmEgZGUgcMOhZ2luYSBlIEY1IG7Do28gZXhlY3V0YSBlc3NhIGFsdGVybsOibmNpYS4iLCJzdGF0ZW1lbnQiOiJObyBXb3JkIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MsIHF1YWwgYXRhbGhvIGRvY3VtZW50YWRvIGFsdGVybmEgbyB0ZXh0byBzZWxlY2lvbmFkbyBlbnRyZSBtYWnDunNjdWxhcywgbWluw7pzY3VsYXMgZSBjYXBpdGFsaXphw6fDo28gZGUgdMOtdHVsbz8iLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXdvcmQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIGRvIFdvcmQgcGFyYSBXaW5kb3dzOyBjb25mZXJpciBsYXlvdXQvaWRpb21hIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvYWNjZXNzaWJpbGl0eS93b3JkL2tleWJvYXJkLXNob3J0Y3V0cy1pbi13b3JkIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-pincel-paragrafo.json",
+        "mediaType": "application/json",
+        "sha256": "44d71c8c76f14962f17bf0c4ebeb2d78e32e9527c16cdbaebad565d57e0300c9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBwYXLDoWdyYWZvIGludGVpcm8sIGluY2x1c2l2ZSBhIG1hcmNhIGRlIHBhcsOhZ3JhZm8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU29tZW50ZSB1bWEgbGV0cmEgc2VtIGEgbWFyY2EgZGUgcGFyw6FncmFmby4ifSx7ImlkIjoiYyIsInRleHQiOiJBcGVuYXMgbyBub21lIGRvIGFycXVpdm8gbm8gRXhwbG9yYWRvci4ifSx7ImlkIjoiZCIsInRleHQiOiJTb21lbnRlIGEgbWluaWF0dXJhIGRhIHDDoWdpbmEgbmEgaW1wcmVzc8Ojby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1waW5jZWwtcGFyYWdyYWZvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGluY2VsIl0sInJlc29sdXRpb24iOiIxLiBBIHNlbGXDp8OjbyBxdWUgaW5jbHVpIGEgbWFyY2EgZGUgcGFyw6FncmFmbyBwZXJtaXRlIGNvcGlhciB0YW1iw6ltIGFzIHByb3ByaWVkYWRlcyBkZSBwYXLDoWdyYWZvLiAyLiBVbWEgbGV0cmEgZm9ybmVjZSBzb21lbnRlIHVtIHRyZWNobyBkZSB0ZXh0bzsgbm9tZSBkZSBhcnF1aXZvIGUgbWluaWF0dXJhIGRlIGltcHJlc3PDo28gbsOjbyBzw6NvIGEgc2VsZcOnw6NvIGRlIG9yaWdlbSBkbyBQaW5jZWwuIiwic3RhdGVtZW50IjoiTm8gV29yZCBwYXJhIE1pY3Jvc29mdCAzNjUgcGFyYSBXaW5kb3dzLCBvIFBpbmNlbCBkZXZlIGNvcGlhciB0YW1iw6ltIGEgZm9ybWF0YcOnw6NvIGRvIHBhcsOhZ3JhZm8uIE8gcXVlIGRldmUgaW50ZWdyYXIgYSBzZWxlw6fDo28gZGUgb3JpZ2VtPyIsInRvcGljSWQiOiJJMDMifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGluY2VsIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBVc2FyIG8gUGluY2VsIGRlIEZvcm1hdGHDp8OjbyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvdXNlLXRoZS1mb3JtYXQtcGFpbnRlciJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-prever-paragrafo.json",
+        "mediaType": "application/json",
+        "sha256": "c7f7aeeeec195cb5fc2207e040fe81823bdad5c398f749ee0b14007785884e1f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSDDoXJlYSBkZSBWaXN1YWxpemHDp8OjbyBkYSBwcsOzcHJpYSBjYWl4YS4ifSx7ImlkIjoiYiIsInRleHQiOiJBIExpeGVpcmEgZG8gV2luZG93cy4ifSx7ImlkIjoiYyIsInRleHQiOiJPIGNhdMOhbG9nbyBkZSBhcGxpY2F0aXZvcyBpbnN0YWxhZG9zLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik8gaGlzdMOzcmljbyBkZSBuYXZlZ2HDp8OjbyBkYSBJbnRlcm5ldC4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1wcmV2ZXItcGFyYWdyYWZvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGFyYWdyYWZvIl0sInJlc29sdXRpb24iOiIxLiBBIGNhaXhhIGFwcmVzZW50YSB1bWEgdmlzdWFsaXphw6fDo28gZGEgYXBhcsOqbmNpYSBlc3BlcmFkYSBkYXMgY29uZmlndXJhw6fDtWVzLiAyLiBMaXhlaXJhLCBjYXTDoWxvZ28gZGUgYXBsaWNhdGl2b3MgZSBoaXN0w7NyaWNvIHdlYiBuw6NvIHPDo28gZXNzYSBwcsOpdmlhIGRvIHBhcsOhZ3JhZm8uIiwic3RhdGVtZW50IjoiQW8gYWp1c3RhciByZWN1b3MgZSBlc3Bhw6dhbWVudG8gbmEgY2FpeGEgUGFyw6FncmFmbyBkbyBXb3JkLCBxdWFsIHJlY3Vyc28gcGVybWl0ZSBvYnNlcnZhciB1bWEgYW1vc3RyYSBkbyBlZmVpdG8gYW50ZXMgZGUgY29uZmlybWFyPyIsInRvcGljSWQiOiJJMDMifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGFyYWdyYWZvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBanVzdGFyIHJlY3VvcyBlIGVzcGHDp2FtZW50byBubyBXb3JkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC9hZGp1c3QtaW5kZW50cy1hbmQtc3BhY2luZyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-primeira-linha.json",
+        "mediaType": "application/json",
+        "sha256": "0cdffa507f980c4c72032d3ba0671a7c77fe7c95f063a537ddd13684931d28c4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVXNhciBlc3Bhw6dhbWVudG8gRGVwb2lzIGRlIDEsMjUgY20uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQ2VudHJhbGl6YXIgbyBwYXLDoWdyYWZvIGludGVpcm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUGFyw6FncmFmbyA+IFJlY3VvIGVzcGVjaWFsID4gUHJpbWVpcmEgbGluaGEsIGNvbSAxLDI1IGNtLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkF1bWVudGFyIGEgbWFyZ2VtIGVzcXVlcmRhIGRlIHRvZG8gbyBkb2N1bWVudG8uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtcHJpbWVpcmEtbGluaGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1wYXJhZ3JhZm8iXSwicmVzb2x1dGlvbiI6IjEuIE8gcmVjdW8gZXNwZWNpYWwgZGUgcHJpbWVpcmEgbGluaGEgZGVzbG9jYSBzb21lbnRlIGEgbGluaGEgaW5pY2lhbCBkbyBwYXLDoWdyYWZvLiAyLiBNYXJnZW0gYXR1YSBuYSBww6FnaW5hLCBlc3Bhw6dhbWVudG8gRGVwb2lzIMOpIHZlcnRpY2FsIGUgY2VudHJhbGl6YcOnw6NvIGFsdGVyYSBhbGluaGFtZW50bywgbsOjbyBlc3NlIHJlY3VvLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQgcGFyYSBNaWNyb3NvZnQgMzY1IHBhcmEgV2luZG93cywgdW0gcGFyw6FncmFmbyBkZXZlIHRlciBhcGVuYXMgc3VhIHByaW1laXJhIGxpbmhhIHJlY3VhZGEgZW0gMSwyNSBjbS4gUXVhbCBjb25maWd1cmHDp8OjbyDDqSBhcHJvcHJpYWRhPyIsInRvcGljSWQiOiJJMDMifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGFyYWdyYWZvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBanVzdGFyIHJlY3VvcyBlIGVzcGHDp2FtZW50byBubyBXb3JkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd29yZC9hZGp1c3QtaW5kZW50cy1hbmQtc3BhY2luZyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-realce-fundo.json",
+        "mediaType": "application/json",
+        "sha256": "737ff5ca5a090d6f966605c56f1a386a6b5e797f4b45eba73e6b8175bb236b7a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29yIGRvIFJlYWxjZSBkbyBUZXh0by4ifSx7ImlkIjoiYiIsInRleHQiOiJTb21lbnRlIENvciBkYSBGb250ZS4ifSx7ImlkIjoiYyIsInRleHQiOiJRdWVicmEgZGUgc2XDp8Ojby4ifSx7ImlkIjoiZCIsInRleHQiOiJSZWN1byDDoCBkaXJlaXRhLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LXJlYWxjZS1mdW5kbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXdvcmQtaW5pY2lhbCJdLCJyZXNvbHV0aW9uIjoiMS4gTyByZWFsY2UgY29sb3JlIGEgcmVnacOjbyBhdHLDoXMgZG8gdGV4dG8sIGNvbW8gdW0gbWFyY2Fkb3IuIDIuIENvciBkYSBmb250ZSBtdWRhIG9zIGNhcmFjdGVyZXM7IHF1ZWJyYSBlIHJlY3VvIG7Do28gYXBsaWNhbSBlc3NlIGRlc3RhcXVlIGRlIGZ1bmRvLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQsIGEgZXF1aXBlIHF1ZXIgZGVzdGFjYXIgdW0gdHJlY2hvIGNvbW8gc2UgdGl2ZXNzZSB1c2FkbyB1bWEgY2FuZXRhIG1hcmNhLXRleHRvLCBtYW50ZW5kbyBhIGNvciBkYXMgbGV0cmFzLiBRdWFsIHJlY3Vyc28gw6kgYXByb3ByaWFkbz8iLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXdvcmQtaW5pY2lhbCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgV29yZCBwYXJhIG5vdm9zIHVzdcOhcmlvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvd29yZC1mb3ItbmV3LXVzZXJzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-recuo-direito.json",
+        "mediaType": "application/json",
+        "sha256": "a3c695aace06305e4c56bf5758260beb14429ade20cfbc905bf8aba41a68d8f2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBuw7ptZXJvIGRlIHDDoWdpbmFzIGRvIGFycXVpdm8gcG9yIGRlZmluacOnw6NvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkEgcG9zacOnw6NvIGRvIMOtY29uZSBkbyBXb3JkIG5hIGJhcnJhIGRlIHRhcmVmYXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU2V1IGxpbWl0ZSBkaXJlaXRvIGVtIHJlbGHDp8OjbyDDoCBtYXJnZW0gZGlyZWl0YS4ifSx7ImlkIjoiZCIsInRleHQiOiJPIHRhbWFuaG8gZsOtc2ljbyBkYSBmb2xoYS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1yZWN1by1kaXJlaXRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcGFyYWdyYWZvIl0sInJlc29sdXRpb24iOiIxLiBPIHJlY3VvIGRpcmVpdG8gbXVkYSBhIGxhcmd1cmEgZGlzcG9uw612ZWwgZG8gcGFyw6FncmFmbyBhIHBhcnRpciBkbyBsYWRvIGRpcmVpdG8uIDIuIE7Do28gcmVkZWZpbmUgcG9yIHNpIHPDsyBvIHBhcGVsLCBuw6NvIGZpeGEgdW1hIHF1YW50aWRhZGUgZGUgcMOhZ2luYXMgZSBuw6NvIGF0dWEgbmEgYmFycmEgZGUgdGFyZWZhcy4iLCJzdGF0ZW1lbnQiOiJOYSBjYWl4YSBQYXLDoWdyYWZvIGRvIFdvcmQsIG8gcmVjdW8gw6AgZGlyZWl0YSBkZXNsb2NhIHF1YWwgbGltaXRlIGRvIHRleHRvIGRvIHBhcsOhZ3JhZm8/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1wYXJhZ3JhZm8iOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEFqdXN0YXIgcmVjdW9zIGUgZXNwYcOnYW1lbnRvIG5vIFdvcmQiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93b3JkL2FkanVzdC1pbmRlbnRzLWFuZC1zcGFjaW5nIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-recuo-nao-espacos.json",
+        "mediaType": "application/json",
+        "sha256": "350a3567d813097d342296332f68616bfa7101f8527af270afd68166be8b966f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVGFidWxhw6fDo28gZGUgYmFycmEsIHF1ZSBpbnNlcmUgdW1hIGxpbmhhIHZlcnRpY2FsLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkVzcGHDp2FtZW50byBEZXBvaXMsIHF1ZSByZWd1bGEgYSBkaXN0w6JuY2lhIGVudHJlIHBhcsOhZ3JhZm9zLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlRhYnVsYcOnw6NvIGRlY2ltYWwuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiVGFidWxhw6fDo28gw6AgZXNxdWVyZGEsIGFsaW5oYW5kbyBhcGVuYXMgbyBpbsOtY2lvIGRlIGNhZGEgbsO6bWVyby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1yZWN1by1uYW8tZXNwYWNvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXdvcmQtcmVndWEiXSwicmVzb2x1dGlvbiI6IjEuIEEgdGFidWxhw6fDo28gZGVjaW1hbCBwb3NpY2lvbmEgbyBzZXBhcmFkb3IgZGVjaW1hbCBkb3MgdmFsb3JlcyBuYSBtZXNtYSBwb3Npw6fDo28uIDIuIEFsaW5oYXIgaW7DrWNpb3MgbsOjbyBnYXJhbnRlIGFsaW5oYXIgc2VwYXJhZG9yZXM7IGJhcnJhIGUgZXNwYcOnYW1lbnRvIGVudHJlIHBhcsOhZ3JhZm9zIHTDqm0gb3V0cmFzIGZpbmFsaWRhZGVzLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQgcGFyYSBNaWNyb3NvZnQgMzY1IGRlIGRlc2t0b3Agbm8gV2luZG93cywgdmFsb3JlcyBkZSBjb21wcmltZW50b3MgZGlmZXJlbnRlcyBkZXZlbSBmaWNhciBhbGluaGFkb3MgcGVsbyBzZXBhcmFkb3IgZGVjaW1hbCBudW1hIGxpc3RhLiBRdWFsIHRpcG8gZGUgcGFyYWRhIGRlIHRhYnVsYcOnw6NvIMOpIGFwcm9wcmlhZG8/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC13b3JkLXJlZ3VhIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBVc2FuZG8gYSByw6lndWEgbm8gV29yZCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvdXNpbmctdGhlLXJ1bGVyLWluLXdvcmQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-sobrescrito-potencia.json",
+        "mediaType": "application/json",
+        "sha256": "4ceddfaad3e960fe1bb060bd030cf6651ac5d858f621d04a92aab8b62fd7aa2f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXNwYcOnYW1lbnRvIERlcG9pcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBbGluaGFtZW50byDDoCBlc3F1ZXJkYS4ifSx7ImlkIjoiYyIsInRleHQiOiJTb2JyZXNjcml0by4ifSx7ImlkIjoiZCIsInRleHQiOiJTdWJzY3JpdG8uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtc29icmVzY3JpdG8tcG90ZW5jaWEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC13b3JkLWluaWNpYWwiXSwicmVzb2x1dGlvbiI6IjEuIFNvYnJlc2NyaXRvIGVsZXZhIGNhcmFjdGVyZXMgZW0gcmVsYcOnw6NvIMOgIGxpbmhhIGRlIGJhc2UuIDIuIFN1YnNjcml0byBhYmFpeGE7IGVzcGHDp2FtZW50byBkZSBwYXLDoWdyYWZvIGUgYWxpbmhhbWVudG8gbsOjbyBmYXplbSBkbyBhbGdhcmlzbW8gdW0gZXhwb2VudGUgdmlzdWFsLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQsIG8gZXhwb2VudGUgZW0gbcKyIGRldmUgc2VyIGZvcm1hdGFkbyBhY2ltYSBkYSBsaW5oYSBkZSBiYXNlLiBRdWFsIHByb3ByaWVkYWRlIMOpIGFwcm9wcmlhZGE/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC13b3JkLWluaWNpYWwiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFdvcmQgcGFyYSBub3ZvcyB1c3XDoXJpb3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93b3JkL3dvcmQtZm9yLW5ldy11c2VycyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-substituir-selecao.json",
+        "mediaType": "application/json",
+        "sha256": "2ada9701c31478b0ef8d6e8e98d88571d5a107b5558c5997017557e11f5a7e88",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBwYWxhdnJhIGFudGlnYSDDqSBtb3ZpZGEgcGFyYSBvIGNhYmXDp2FsaG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTyBkb2N1bWVudG8gaW50ZWlybyDDqSBjb252ZXJ0aWRvIGVtIGltYWdlbS4ifSx7ImlkIjoiYyIsInRleHQiOiJBIHBhbGF2cmEgc2VsZWNpb25hZGEgw6kgc3Vic3RpdHXDrWRhIHBlbG8gdGV4dG8gZGlnaXRhZG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXMgZHVhcyBwYWxhdnJhcyBmaWNhbSBvYnJpZ2F0b3JpYW1lbnRlIGxhZG8gYSBsYWRvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXN1YnN0aXR1aXItc2VsZWNhbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXRleHRvIl0sInJlc29sdXRpb24iOiIxLiBEaWdpdGFyIHNvYnJlIHVtYSBzZWxlw6fDo28gc3Vic3RpdHVpIG8gY29udGXDumRvIHNlbGVjaW9uYWRvLiAyLiBBIGHDp8OjbyBuw6NvIGR1cGxpY2Egb2JyaWdhdG9yaWFtZW50ZSBvIHRyZWNobyBuZW0gbyB0cmFuc2ZlcmUgcGFyYSBjYWJlw6dhbGhvIG91IGNvbnZlcnRlIG8gZG9jdW1lbnRvLiIsInN0YXRlbWVudCI6Ik5vIFdvcmQgcGFyYSBNaWNyb3NvZnQgMzY1IHBhcmEgV2luZG93cywgdW1hIHBhbGF2cmEgaW50ZWlyYSBlc3TDoSBzZWxlY2lvbmFkYS4gU2VtIHByZXNzaW9uYXIgRGVsZXRlLCBhIHBlc3NvYSBkaWdpdGEgb3V0cmEgcGFsYXZyYS4gUXVhbCDDqSBvIGVmZWl0byBwYWRyw6NvPyIsInRvcGljSWQiOiJJMDMifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGV4dG8iOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEFkaWNpb25hciBlIGVkaXRhciB0ZXh0byBubyBXb3JkIHBhcmEgV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvdHJhaW5pbmcvYWRkLWFuZC1lZGl0LXRleHQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.it-tamanho-pt.json",
+        "mediaType": "application/json",
+        "sha256": "ccdbbf7cad0b38629003f069e267d9d6ad65e66bd6eff4defe2db698fbbbd44c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUG9udG9zLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik1ldHJvcy4ifSx7ImlkIjoiYyIsInRleHQiOiJMaXRyb3MuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQnl0ZXMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtdGFtYW5oby1wdCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXdvcmQtaW5pY2lhbCJdLCJyZXNvbHV0aW9uIjoiMS4gTyB0YW1hbmhvIHRpcG9ncsOhZmljbyBkYSBmb250ZSDDqSBleHByZXNzbyBlbSBwb250b3MuIDIuIE1lZGlkYXMgZGUgY29tcHJpbWVudG8gZG8gcGFwZWwsIHZvbHVtZSBlIGFybWF6ZW5hbWVudG8gbsOjbyBzw6NvIGEgdW5pZGFkZSBkZXNzZSBjYW1wby4iLCJzdGF0ZW1lbnQiOiJObyBXb3JkLCBvIGNhbXBvIGRlIHRhbWFuaG8gZGEgZm9udGUgbW9zdHJhIDExLiBFbSBxdWFsIHVuaWRhZGUgdGlwb2dyw6FmaWNhIGVzc2UgdmFsb3Igw6kgbm9ybWFsbWVudGUgZXhwcmVzc28/IiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC13b3JkLWluaWNpYWwiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFdvcmQgcGFyYSBub3ZvcyB1c3XDoXJpb3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93b3JkL3dvcmQtZm9yLW5ldy11c2VycyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.morato-q19.json",
+        "mediaType": "application/json",
+        "sha256": "3663990e31f11e58828ff88cd78ece8070cd55e6961dfb6a5708fa013e1dc496",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBxdWFkcm8gZGUgZXN0aWxvcywgbG9jYWxpemFkbyBuYSBQw6FnaW5hIEluaWNpYWwsIMOpIHV0aWxpemFkbyBhcGVuYXMgcGFyYSBkZWZpbmlyIG1hcmdlbnMgZSBvcmllbnRhw6fDo28gZGEgcMOhZ2luYS4ifSx7ImlkIjoiYiIsInRleHQiOiJPIHF1YWRybyBkZSBlc3RpbG9zLCBsb2NhbGl6YWRvIG5hIFDDoWdpbmEgSW5pY2lhbCwgcGVybWl0ZSBhcGxpY2FyIGRlIGZvcm1hIGNvbnNpc3RlbnRlIHRpcG9zIGRlIGxldHJhLCB0YW1hbmhvcywgY29yZXMgZSBlc3Bhw6dhbWVudG9zIGVtIHTDrXR1bG9zLCBwYXLDoWdyYWZvcyBlIGNhYmXDp2FsaG9zIGRvIGRvY3VtZW50by4ifSx7ImlkIjoiYyIsInRleHQiOiJPIHF1YWRybyBkZSBlc3RpbG9zLCBsb2NhbGl6YWRvIG5hIFDDoWdpbmEgSW5pY2lhbCwgdGVtIGNvbW8gZmluYWxpZGFkZSBleGNsdXNpdmEgaW5zZXJpciBpbWFnZW5zIGUgZ3LDoWZpY29zIG5vIHRleHRvLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik8gcXVhZHJvIGRlIGVzdGlsb3MsIGxvY2FsaXphZG8gbmEgUMOhZ2luYSBJbmljaWFsLCBzZXJ2ZSBzb21lbnRlIHBhcmEgcmV2aXNhciBhIG9ydG9ncmFmaWEgZSBhIGdyYW3DoXRpY2EgZG8gZG9jdW1lbnRvLiJ9LHsiaWQiOiJlIiwidGV4dCI6Ik8gcXVhZHJvIGRlIGVzdGlsb3MsIGxvY2FsaXphZG8gbmEgUMOhZ2luYSBJbmljaWFsLCDDqSB1dGlsaXphZG8gYXBlbmFzIHBhcmEgc2FsdmFyIGUgZXhwb3J0YXIgYXJxdWl2b3MgZW0gZGlmZXJlbnRlcyBmb3JtYXRvcy4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIEPDom1hcmEgTXVuaWNpcGFsIGRlIEZyYW5jaXNjbyBNb3JhdG8gMDEvMjAyNSwgT2ZpY2lhbCBBZG1pbmlzdHJhdGl2bywgcXVlc3TDo28gMTkuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJGb250ZSBwcmltw6FyaWEgb2ZpY2lhbDsgY2FkZXJuby9jYXJnby9uw7ptZXJvIGUgZ2FiYXJpdG8gZGVmaW5pdGl2byBjb25mZXJpZG9zIHBhcmEgZXN0YSBzZWxlw6fDo28gYXNzaXN0aWRhLiIsInBhdGgiOiJkb3NzaWVyL21vcmF0by1hbnN3ZXIucGRmIiwic2hhMjU2IjoiODEyMTA2Mzg5YmNhZjBlNWExZmM2MjRmZjMwMTY3NjEwMDUxMGUxMTk2OTUzMmJkNjA1ZmRmYTQ3ZDY5YjRmZCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjM0L2FuZXhvcy84MjU4MTI0Yi1kODY3LTRkMzEtOWUxZC1lZDk3MWY5OTczMTUucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJDw6JtYXJhIE11bmljaXBhbCBkZSBGcmFuY2lzY28gTW9yYXRvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1tb3JhdG8tMjAyNS1hYS9xMTkiLCJudW1iZXIiOiIxOSIsInByb29mIjp7Im5vdGUiOiJGb250ZSBwcmltw6FyaWEgb2ZpY2lhbDsgY2FkZXJuby9jYXJnby9uw7ptZXJvIGUgZ2FiYXJpdG8gZGVmaW5pdGl2byBjb25mZXJpZG9zIHBhcmEgZXN0YSBzZWxlw6fDo28gYXNzaXN0aWRhLiIsInBhdGgiOiJkb3NzaWVyL21vcmF0by1hYS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI3MDc1ZmZiZDg4YzlhNDZmM2NkYjFkMzgzYWIxNmMzMzZkOTI1ZmVmN2JhZTliNGZkODZkYmFhYWUxYTc3MWU2IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzQvYW5leG9zL2RmY2FlNTQwLTdhYjUtNDZmYy1hN2I5LTU4ZTFjYWU5MzI3MC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSwgYXJ0LiA4wrosIElWIGUgVEpQUiBBQyAxNDM3MzMyLTMsIGFwbGljYWRhIMOgIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLiBOw6NvIMOpIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIEF2YW7Dp2EgU1AgbmVtIGdhcmFudGlhIGp1csOtZGljYTsgZXhjbHVpIG9icmFzIGRlIHRlcmNlaXJvcyBlIG1hbnTDqW0gb3JpZ2VtL2dhYmFyaXRvLiIsInBhdGgiOiJkb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiT2ZpY2lhbCBBZG1pbmlzdHJhdGl2byIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoibW9yYXRvLXExOSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsid29yZCJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgZXN0aWxvcyBkbyBXb3JkIGFwbGljYW0gY29uanVudG9zIGNvbnNpc3RlbnRlcyBkZSBmb3JtYXRhw6fDo28gYSB0w610dWxvcyBlIHBhcsOhZ3JhZm9zLCBpbmNsdWluZG8gZm9udGUsIHRhbWFuaG8gZSBlc3Bhw6dhbWVudG8uIDIuIE1hcmdlbnMsIGV4cG9ydGHDp8OjbywgZmlndXJhcyBvdSByZXZpc8OjbyBvcnRvZ3LDoWZpY2EgbsOjbyBzw6NvIHN1YSBmaW5hbGlkYWRlIGV4Y2x1c2l2YS4gTyBjb250ZXh0byDDqSBXb3JkIHBhcmEgV2luZG93cyBlbSBwb3J0dWd1w6pzLCBuYXMgZWRpw6fDtWVzIGF0dWFpcyBkZSBkZXNrdG9wLiIsInN0YXRlbWVudCI6Ik5vIE1pY3Jvc29mdCBXb3JkLCBhIG9yZ2FuaXphw6fDo28gdmlzdWFsIGRlIHRleHRvcyBwb2RlIHNlciByZWFsaXphZGEgcG9yIG1laW8gZGUgcmVjdXJzb3MgZGlzcG9uw612ZWlzIG5hIGd1aWEg4oCcUMOhZ2luYSBJbmljaWFsIOKAnSBkbyBwcm9ncmFtYS4gQ29tIGJhc2Ugbm8gZXhwb3N0byBzb2JyZSBhIGVzdHJ1dHVyYSBiw6FzaWNhIGRlIGRvY3VtZW50b3Mgbm8gTWljcm9zb2Z0IFdvcmQsIGFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgQ09SUkVUQS4iLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJ3b3JkIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTAiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBXb3JkIHBhcmEgbm92b3MgdXN1w6FyaW9zOiBmb250ZSwgcGFyw6FncmFmb3MgZSBlc3RpbG9zIHBhcmEgZGVza3RvcCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvd29yZC1mb3ItbmV3LXVzZXJzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.var25-cont-q24.json",
+        "mediaType": "application/json",
+        "sha256": "89c0d50b7adc0cbeea6e6835cbdae954424b3fffe399216146ed74e911988e41",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSW5zZXJpciB1bSBlbGVtZW50byBncsOhZmljbyBXb3JkQXJ0LiJ9LHsiaWQiOiJiIiwidGV4dCI6IlNlbGVjaW9uYXIgdW0gYmxvY28gZGUgdGV4dG8gdmVydGljYWwuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTmF2ZWdhciBwZWxhIHDDoWdpbmEgZGUgdmlzdWFsaXphw6fDo28gcXVhbmRvIGVsYSBlc3TDoSBjb20gbWVub3Mgem9vbS4ifSx7ImlkIjoiZCIsInRleHQiOiJBY2Vzc2FyIG8gbW9kbyBkZSB2aXN1YWxpemHDp8OjbyBkZSBpbXByZXNzw6NvLiJ9LHsiaWQiOiJlIiwidGV4dCI6IlBlcmNvcnJlciBvcyBsb2NhaXMgZGFzIMO6bHRpbWFzIGFsdGVyYcOnw7VlcyByZWFsaXphZGFzIG5vIGRvY3VtZW50by4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZhcmdpbmhhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1LCBDb250YWRvciwgcXVlc3TDo28gMjQuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvLCBww6FnaW5hIDIsIHF1YWRybyBkbyBjYXJnbyBDT05UQURPUjogMjQ9RTsgY29uZmVyw6puY2lhIHZpc3VhbCBuYSByZW5kZXJpemHDp8OjbyBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk3LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiJiOTA3ZDM1ZTE2ZWRiYzVhMmU5ODkzMjc1MzIwMjRlOWI5OTJkZGIwYjliZmRiYmU4MzVlMmI5YjcxOGYzNjc1IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTcvYW5leG9zL2EzODk4MjgzLTRkNGUtNDUxNi04NTdmLWVhMGZhYjRkYWE0Ni5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZhcmdpbmhhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtdmFyZ2luaGEtMjAyNS1jb250YWRvci9xMjQiLCJudW1iZXIiOiIyNCIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAyNCwgcMOhZ2luYSBmw61zaWNhIDcgZG8gUERGOyB0ZXh0byBleHRyYcOtZG8gY29uZnJvbnRhZG8gY29tIGEgcmVuZGVyaXphw6fDo28gZGEgcMOhZ2luYTsgZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMgZSBvcmRlbSBjb25mZXJpZG9zIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTctcHJvdmEtY29udGFkb3IucGRmIiwic2hhMjU2IjoiYTY0YzJhZGUwN2EzMmVkMzZlMDUwMzU3MWZiOGUwYTg3YWU3NjZmNzU3ZmFkMDQ1Y2E1Yjk1MzIwNTQ3NWE1MCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk3L2FuZXhvcy82MjMzN2EwOS0wNDdlLTQ3YzYtYjVhMC0xYjA2ZTk0ODg0ZWQucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IGFydC4gOMK6LCBJViwgZGEgTGVpIDkuNjEwLzE5OTgsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgbm8gcHJvamV0bywgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSBkZSBwcm92YSBww7pibGljYSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gaW5jb3Jwb3JhZGEuIE7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSBjb25zZW50aW1lbnRvIGFmaXJtYWRvOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQ29udGFkb3IiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjV9LCJpZCI6InZhcjI1LWNvbnQtcTI0Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtd29yZC1hdGFsaG9zIl0sInJlc29sdXRpb24iOiIxLiBOYSBsaXN0YSBvZmljaWFsIGRlIGF0YWxob3MgZG8gV29yZCBwYXJhIFdpbmRvd3MsIEN0cmwrQWx0K1ogYWx0ZXJuYSBlbnRyZSBvcyDDumx0aW1vcyBsb2NhaXMgZW0gcXVlIGZvcmFtIGZlaXRhcyBhbHRlcmHDp8O1ZXMgbm8gZG9jdW1lbnRvIChjb21hbmRvIFZvbHRhcik7IGFsdGVybmF0aXZhIEUuIDIuIFdvcmRBcnQgw6kgaW5zZXJpZG8gcGVsYSBndWlhIEluc2VyaXIsIHNlbSBlc3NlIGF0YWxobyAoQSk7IGEgc2VsZcOnw6NvIGRlIGJsb2NvIHZlcnRpY2FsIHVzYSBBbHQgY29tIGFycmFzdG8gZG8gbW91c2Ugb3UgQ3RybCtTaGlmdCtGOCAoQik7IGEgbmF2ZWdhw6fDo28gZW0gdmlzdWFsaXphw6fDo28gcmVkdXppZGEgZSBhIFZpc3VhbGl6YcOnw6NvIGRlIEltcHJlc3PDo28gKEN0cmwrRjIvQ3RybCtBbHQrSSkgbsOjbyBjb3JyZXNwb25kZW0gYSBDdHJsK0FsdCtaIChDLCBEKS4gR2FiYXJpdG8gZGVmaW5pdGl2bzogYWx0ZXJuYXRpdmEgRS4iLCJzdGF0ZW1lbnQiOiJVdGlsaXphbmRvIG8gTWljcm9zb2Z0IFdvcmQgcGFyYSBlZGnDp8OjbyBlIGZvcm1hdGHDp8OjbyBkZSB0ZXh0b3MsIG8gYXRhbGhvIGRlIHRlY2xhZG8gQ3RybCtBbHQrWiB0ZW0gYSBmdW7Dp8OjbyBkZToiLCJ0b3BpY0lkIjoiSTAzIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtd29yZC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gZG8gV29yZCBwYXJhIFdpbmRvd3M7IGNvbmZlcmlyIGxheW91dC9pZGlvbWEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dvcmQva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdvcmQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I03.s.vinh-aux-q37.json",
+        "mediaType": "application/json",
+        "sha256": "0e3c0af4c7993bf12151c9fa34b16f8a6bc0ae05900ddeef3fbcf3424ab2e0c3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTmEgZ3VpYSBQw6FnaW5hIEluaWNpYWwsIGNsaXF1ZSBjb20gbyBib3TDo28gZGlyZWl0byBkbyBtb3VzZSBubyBlc3RpbG8gTm9ybWFsIGUgZXNjb2xoYSBNb2RpZmljYXIuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTmEgZ3VpYSBSZWZlcsOqbmNpYXMsIGNsaXF1ZSBjb20gbyBib3TDo28gZGlyZWl0byBkbyBtb3VzZSBubyBlc3RpbG8gTm9ybWFsIGUgZXNjb2xoYSBNb2RpZmljYXIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTmEgZ3VpYSBPdXRyb3MsIGNsaXF1ZSBjb20gbyBib3TDo28gZGlyZWl0byBkbyBtb3VzZSBubyBlc3RpbG8gTm9ybWFsIGUgZXNjb2xoYSBNb2RpZmljYXIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTmEgZ3VpYSBOw7ptZXJvcywgY2xpcXVlIGNvbSBvIGJvdMOjbyBkaXJlaXRvIGRvIG1vdXNlIG5vIGVzdGlsbyBOb3JtYWwgZSBlc2NvbGhhIE1vZGlmaWNhci4ifSx7ImlkIjoiZSIsInRleHQiOiJOYSBndWlhIFJlbGHDp8OjbywgY2xpcXVlIGNvbSBvIGJvdMOjbyBkaXJlaXRvIGRvIG1vdXNlIG5vIGVzdGlsbyBOb3JtYWwgZSBlc2NvbGhhIE1vZGlmaWNhci4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUsIEF1eGlsaWFyIEFkbWluaXN0cmF0aXZvLCBxdWVzdMOjbyAzNy4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgMSwgcXVhZHJvIGRvIGNhcmdvIEFVWElMSUFSIEFETUlOSVNUUkFUSVZPOiAzNz1BOyBjb25mZXLDqm5jaWEgdmlzdWFsIG5hIHJlbmRlcml6YcOnw6NvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMjktZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjkyM2FjYWFmOWQzOGU1YzhmNDgzYjNjZTlmZDJkOWRjNmMyMTUwMjdjZWIwYTRlZjM1ZjdkMGFiZTI0Y2MzOGUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyOS9hbmV4b3MvMjc5NTE0MTMtMDRjNi00NGY4LTkyNWEtZWIwYjM5MjExNzM5LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmluaGVkbyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDMvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXZpbmhlZG8tMjAyNS1hdXhpbGlhci9xMzciLCJudW1iZXIiOiIzNyIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAzNywgcMOhZ2luYSBmw61zaWNhIDkgZG8gUERGOyB0ZXh0byBleHRyYcOtZG8gY29uZnJvbnRhZG8gY29tIGEgcmVuZGVyaXphw6fDo28gZGEgcMOhZ2luYTsgZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMgZSBvcmRlbSBjb25mZXJpZG9zIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMjktcHJvdmEtYXV4aWxpYXItYWRtaW5pc3RyYXRpdm8ucGRmIiwic2hhMjU2IjoiNmZhOTdhNzY3OTU2MjBkOGEzYTllMWJkODEzMjE4YzVjYjBmNTFjMzJhNDIzNDZhMGYzNjM1NDU0NTdlZjBjZSIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjI5L2FuZXhvcy83OGNlZDUzNS0wNjRiLTRhMzktODA1NS1lMTAzYTlkYWJhOWYucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IGFydC4gOMK6LCBJViwgZGEgTGVpIDkuNjEwLzE5OTgsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgbm8gcHJvamV0bywgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSBkZSBwcm92YSBww7pibGljYSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gaW5jb3Jwb3JhZGEuIE7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSBjb25zZW50aW1lbnRvIGFmaXJtYWRvOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQXV4aWxpYXIgQWRtaW5pc3RyYXRpdm8iLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InZpbmgtYXV4LXEzNyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LXBhcmFncmFmbyIsImluZm9ybWF0aWNhLWNsYXVkZS1pdC13b3JkLWluaWNpYWwiXSwicmVzb2x1dGlvbiI6IjEuIEEgZ2FsZXJpYSBkZSBFc3RpbG9zIGZpY2EgbmEgZ3VpYSBQw6FnaW5hIEluaWNpYWw7IGNsaWNhciBjb20gbyBib3TDo28gZGlyZWl0byBlbSBOb3JtYWwgPiBNb2RpZmljYXIgPiBGb3JtYXRhciA+IFBhcsOhZ3JhZm8gcGVybWl0ZSBkZWZpbmlyIG8gcmVjdW8gZXNwZWNpYWwgZGUgcHJpbWVpcmEgbGluaGEgcGFyYSBvIGVzdGlsbzsgYWx0ZXJuYXRpdmEgQS4gMi4gUmVmZXLDqm5jaWFzIGNvbnTDqW0gc3Vtw6FyaW8sIG5vdGFzIGUgY2l0YcOnw7VlcywgbsOjbyBhIGdhbGVyaWEgZGUgZXN0aWxvcyAoQik7IGFzIGd1aWFzIE91dHJvcywgTsO6bWVyb3MgZSBSZWxhw6fDo28gbsOjbyBleGlzdGVtIG5vIFdvcmQgKEMsIEQsIEUpLiBHYWJhcml0byBkZWZpbml0aXZvOiBhbHRlcm5hdGl2YSBBLiIsInN0YXRlbWVudCI6Ik8gTWljcm9zb2Z0IFdvcmQgcGVybWl0ZSBkZWZpbmlyIG8gcmVjdW8gZGEgcHJpbWVpcmEgbGluaGEgZG8gcGFyw6FncmFmbyBjb21vIHBhZHLDo28sIG1vZGlmaWNhbmRvIG8gZXN0aWxvIOKAnE5vcm1hbOKAnS4gUGFyYSBpc3NvIG8gdXN1w6FyaW8gZGV2ZSBzZWd1aXIgcXVhbCBkb3MgY2FtaW5ob3MgbGlzdGFkb3MuIiwidG9waWNJZCI6IkkwMyJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LXBhcmFncmFmbyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQWp1c3RhciByZWN1b3MgZSBlc3Bhw6dhbWVudG8gbm8gV29yZCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvYWRqdXN0LWluZGVudHMtYW5kLXNwYWNpbmcifSwiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LXdvcmQtaW5pY2lhbCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgV29yZCBwYXJhIG5vdm9zIHVzdcOhcmlvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dvcmQvd29yZC1mb3ItbmV3LXVzZXJzIn19fQ=="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I03.s.amer25-enc-q23",
+    "admin.2026-11.I03.s.cerq25-cont-q23",
+    "admin.2026-11.I03.s.it-antes-depois",
+    "admin.2026-11.I03.s.it-espacamento-simples",
+    "admin.2026-11.I03.s.it-estilo-local-versus-padrao",
+    "admin.2026-11.I03.s.it-formato-caractere-conteudo",
+    "admin.2026-11.I03.s.it-italico-diferenca",
+    "admin.2026-11.I03.s.it-limpar-formato",
+    "admin.2026-11.I03.s.it-linha-selecionar",
+    "admin.2026-11.I03.s.it-manter-linhas-juntas",
+    "admin.2026-11.I03.s.it-negrito-conceito",
+    "admin.2026-11.I03.s.it-pincel-conteudo",
+    "admin.2026-11.I03.s.it-pincel-interromper",
+    "admin.2026-11.I03.s.it-pincel-paragrafo",
+    "admin.2026-11.I03.s.it-prever-paragrafo",
+    "admin.2026-11.I03.s.it-primeira-linha",
+    "admin.2026-11.I03.s.it-realce-fundo",
+    "admin.2026-11.I03.s.it-recuo-direito",
+    "admin.2026-11.I03.s.it-recuo-nao-espacos",
+    "admin.2026-11.I03.s.it-sobrescrito-potencia",
+    "admin.2026-11.I03.s.it-substituir-selecao",
+    "admin.2026-11.I03.s.it-tamanho-pt",
+    "admin.2026-11.I03.s.morato-q19",
+    "admin.2026-11.I03.s.var25-cont-q24",
+    "admin.2026-11.I03.s.vinh-aux-q37"
+  ]
+}

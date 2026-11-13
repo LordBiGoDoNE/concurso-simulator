@@ -1,11 +1,11 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer, type AttemptTransport, type Answer, type AttemptItem, type AttemptView, type Result } from './attempt-api';
+import { AttemptApiError, attemptResult, finishAttempt, readAttempt, saveAnswer, type RunTransport, type Answer, type AttemptItem, type RunView, type Result } from './attempt-api';
 
-const defaultTransport: AttemptTransport = {read:readAttempt,save:saveAnswer,finish:finishAttempt,result:attemptResult};
+const defaultTransport: RunTransport = {read:readAttempt,save:saveAnswer,finish:finishAttempt,result:attemptResult};
 
 type Phase = 'saved' | 'pending' | 'failed' | 'conflict' | 'unsaved';
 interface Job { itemId: string; alternativeId: string | null; commandId: string; expectedVersion?: number }
-export function useAttemptRun(initial: AttemptView, onUnavailable: () => void, transport: AttemptTransport = defaultTransport) {
+export function useAttemptRun(initial: RunView, onUnavailable: () => void, transport: RunTransport = defaultTransport) {
   const [view, setView] = useState(initial); const server = useRef(initial);
   const [phase, setPhase] = useState<Phase>('saved'); const [message, setMessage] = useState('');
   const [result, setResult] = useState<Result | null>(null); const [resultFailed, setResultFailed] = useState(false);

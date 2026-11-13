@@ -1,0 +1,2002 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.cerq25-tes-q25"
+        },
+        "content": {
+          "statement": {
+            "text": "Você está confeccionando uma planilha chamada “Valores totais” para calcular os valores médios de algumas receitas. Em uma determinada célula dessa planilha, deseja calcular a média dos salários entre os meses de janeiro a maio, cujos dados estão localizados na planilha chamada “Receitas”, no intervalo B2:B6. Para isso, você utilizará uma fórmula que faz referência a outra planilha.\nQual fórmula deve ser utilizada na célula da planilha “Valores totais” para calcular corretamente essa média? Assinale a alternativa correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d9dfa945-7282-5175-bc1a-2acc88a2feaa",
+              "content": {
+                "text": "=MÉDIA(B2:B6)",
+                "resources": []
+              }
+            },
+            {
+              "id": "2878ffc1-ae01-5688-b9e1-fab965e40d3d",
+              "content": {
+                "text": "=MÉDIA(“Receitas!”,B2:B6)",
+                "resources": []
+              }
+            },
+            {
+              "id": "d7eb6a25-4bd3-5754-91ba-dae8ccd5a91f",
+              "content": {
+                "text": "=MÉDIA(Receitas!B2:B6)",
+                "resources": []
+              }
+            },
+            {
+              "id": "f8de7c9d-88a1-5e5f-913a-70f8ba043d30",
+              "content": {
+                "text": "=MÉDIA(Receitas!,B3:B6)",
+                "resources": []
+              }
+            },
+            {
+              "id": "92132622-abb6-5e70-9416-0474ce382a49",
+              "content": {
+                "text": "=MÉDIA(‘Receitas!’,B2:B6)",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d7eb6a25-4bd3-5754-91ba-dae8ccd5a91f",
+          "resolution": {
+            "text": "1. A referência a outra planilha da mesma pasta usa NomeDaPlanilha!Intervalo; assim, =MÉDIA(Receitas!B2:B6) calcula a média dos cinco valores; alternativa C. 2. A calcularia B2:B6 da própria planilha Valores totais; B e E colocam o nome entre aspas como texto separado por vírgula, sintaxe inválida para referência (aspas simples só envolvem nomes com espaços, como 'Minha planilha'!B2); D separa nome e intervalo e ainda omite B2. Gabarito definitivo: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Cerquilho — Concurso Público 01/2025, Tesoureiro Geral do Município, questão 25. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I05.p.cerq25-tes-q25.json",
+            "answerPath": "sources/admin.2026-11.I05.p.cerq25-tes-q25.json",
+            "contentSha256": "07239d315431874fbfea7073f5c980d33a188248e73d305cb2a34bf9fee3cb52",
+            "answerSha256": "07239d315431874fbfea7073f5c980d33a188248e73d305cb2a34bf9fee3cb52"
+          }
+        },
+        "fingerprint": "e732739e0482ba3c408a96f54c03e6f09bc7e1e5f333a63892ba3aaae0e385fa",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.fgv-taubate-q37"
+        },
+        "content": {
+          "statement": {
+            "text": "Maria preparou uma planilha no MS Excel, com fórmulas, mesclagem de células e trechos destacados por preenchimentos coloridos e gravou o arquivo como Pasta de Trabalho do Excel, .xlsx. Em seguida, gravou a mesma planilha como CSV (separado por vírgulas), .csv, num segundo arquivo, e fechou o Excel.\nAssinale o que Maria encontrou com relação às fórmulas, à mesclagem de células e à coloração de fundo, nessa ordem, quando abriu o segundo arquivo por meio do Excel.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "53b17c8f-1423-5d24-bc0c-c69efae4303d",
+              "content": {
+                "text": "Perdidas; perdida; preservada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "273c8eb4-eea5-5ed3-8a4a-eee2f6ef3754",
+              "content": {
+                "text": "Perdidas; perdida; perdida.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2a7282c0-4b00-5dc4-88e2-6f5e5913e13b",
+              "content": {
+                "text": "Perdidas; preservada; perdida.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3be832ed-7825-51a3-8042-8cfa378eca53",
+              "content": {
+                "text": "Preservadas; perdida; perdida.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c5ee8a31-abda-5ea2-8070-c2871b7e40a9",
+              "content": {
+                "text": "Preservadas; perdida; preservada.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "273c8eb4-eea5-5ed3-8a4a-eee2f6ef3754",
+          "resolution": {
+            "text": "1. O CSV registra dados textuais/valores da planilha e não a estrutura completa de uma pasta .xlsx; nesse salvamento, não preserva fórmulas como fórmulas, mesclagem ou preenchimento. A sequência é B, conforme o definitivo. 2. As outras sequências atribuem ao CSV preservação de fórmulas, mesclagem ou cores que o formato não oferece nesse fluxo. Reabrir o CSV no Excel não restaura esses recursos da pasta original. A resposta pressupõe o fluxo de salvamento descrito, sem exportar manualmente texto de fórmulas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Recursos do Excel não transferidos para outros formatos",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-formatting-and-features-that-are-not-transferred-to-other-file-formats",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — Câmara Municipal de Taubaté — Edital 1/2022, Técnico Legislativo de Informática, Tipo 1 — Branca — Tarde, questão 37. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I05.p.fgv-taubate-q37.json",
+            "answerPath": "sources/admin.2026-11.I05.p.fgv-taubate-q37.json",
+            "contentSha256": "93b37b0e9a0abe22a5bfcbb39cdd5c55763ba27a1a35393b4cb63042817a086d",
+            "answerSha256": "93b37b0e9a0abe22a5bfcbb39cdd5c55763ba27a1a35393b4cb63042817a086d"
+          }
+        },
+        "fingerprint": "87d03c6f24d5c2178cfc0aa04008e5493d94bab946f418e99551899741393379",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.hol26-cont-q21"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao trabalhar com planilhas eletrônicas no Microsoft Excel, alguns recursos permitem ajustar a forma como os números são exibidos nas células.\nSobre a alteração da quantidade de casas decimais no Excel, assinale a alternativa correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "36b261b2-5836-5623-a7d9-e6d57e875a4f",
+              "content": {
+                "text": "A quantidade de casas decimais pode ser ajustada por meio das opções de formatação numérica da célula.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b60ff26e-6cd4-5af2-8a8c-58d78d3e4618",
+              "content": {
+                "text": "O Excel permite alterar casas decimais apenas em células que contenham fórmulas matemáticas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "eaa2d427-8e24-56b2-9307-a07cc4007156",
+              "content": {
+                "text": "A exibição de casas decimais depende exclusivamente do tamanho da coluna utilizada na planilha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4f3ebed2-9993-5a65-b171-1c29cf0bb2ad",
+              "content": {
+                "text": "Após inserir um número em uma célula, não é possível modificar sua quantidade de casas decimais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4b1935f3-6f0f-57c0-b005-1a9faaacf671",
+              "content": {
+                "text": "O ajuste de casas decimais altera automaticamente o idioma configurado no Microsoft Excel.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "36b261b2-5836-5623-a7d9-e6d57e875a4f",
+          "resolution": {
+            "text": "1. Os botões Aumentar/Diminuir Casas Decimais (Página Inicial > Número) e a caixa Formatar Células > Número controlam quantas casas são exibidas; alternativa A. 2. O ajuste vale para constantes e fórmulas (B); a largura da coluna pode arredondar a exibição, mas não é o único fator (C); a formatação pode ser alterada a qualquer momento (D); formato numérico não muda o idioma (E). Gabarito definitivo: alternativa A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Inserir e formatar dados",
+              "url": "https://support.microsoft.com/pt-br/excel/enter-and-format-data",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal da Estância Turística de Holambra — Concurso Público 01/2026, Contador, questão 21. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I05.p.hol26-cont-q21.json",
+            "answerPath": "sources/admin.2026-11.I05.p.hol26-cont-q21.json",
+            "contentSha256": "5cbf11ae5425cb14a370ba31e2ca7da65ab521be0741b7d26c3645a4ae794b00",
+            "answerSha256": "5cbf11ae5425cb14a370ba31e2ca7da65ab521be0741b7d26c3645a4ae794b00"
+          }
+        },
+        "fingerprint": "c540ce11af21d061115faf9cfa1a78949c5f4a8002c9041ae0d715617ae6baf4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-aba-nome-invalido"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual nome pode ser usado em uma aba do Excel, respeitando as regras documentadas para caracteres?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8521f1f3-038e-5ece-9ba6-944ccfa955ee",
+              "content": {
+                "text": "Relatório/2026.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c6506787-6573-5109-bacd-e3a1fd327979",
+              "content": {
+                "text": "Relatório:2026.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c69004c7-5e7c-5a6b-b7d5-a26c40759468",
+              "content": {
+                "text": "Relatório[2026].",
+                "resources": []
+              }
+            },
+            {
+              "id": "e4142b6c-7b93-5c19-a79c-d3f5601f315d",
+              "content": {
+                "text": "Relatório-2026.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e4142b6c-7b93-5c19-a79c-d3f5601f315d",
+          "resolution": {
+            "text": "1. Hífen é permitido nesse nome; barra, dois-pontos e colchetes estão entre os caracteres vedados. 2. Os três nomes com caracteres reservados não são válidos para a aba.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Renomear uma planilha",
+              "url": "https://support.microsoft.com/pt-br/excel/rename-a-worksheet",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-aba-nome-invalido.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-aba-nome-invalido.json",
+            "contentSha256": "9ab6066115893206a88676b941e1f39b6478559dd6f76126a813473d9e0b0276",
+            "answerSha256": "9ab6066115893206a88676b941e1f39b6478559dd6f76126a813473d9e0b0276"
+          }
+        },
+        "fingerprint": "d78b9b6f8f8b5707d0c940786fb17285a48d1317d50108a8dc7789ab9fc636e9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-colar-formatos"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, a célula de destino já tem um número correto. É necessário aplicar somente a aparência de outra célula, sem trocar o número ou criar uma fórmula. Qual opção é adequada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5d89ae56-5be3-5725-9f4d-5911c95a11df",
+              "content": {
+                "text": "Colar vínculo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bf1bae54-36a8-5523-a65f-1b581a55ed89",
+              "content": {
+                "text": "Colar somente Formatação.",
+                "resources": []
+              }
+            },
+            {
+              "id": "aee5f9c4-a1e4-57f2-8d5f-e131ed849eb3",
+              "content": {
+                "text": "Colar Valores.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f5b090c8-1348-569a-bfe8-43355e9f943b",
+              "content": {
+                "text": "Colar Fórmulas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bf1bae54-36a8-5523-a65f-1b581a55ed89",
+          "resolution": {
+            "text": "1. A colagem de formatação altera a aparência, preservando o conteúdo existente. 2. Valores substitui dados, Fórmulas pode substituir o cálculo e vínculo cria referência; não são colagem exclusiva de aparência.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Opções de Colagem no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/paste-options",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-colar-formatos.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-colar-formatos.json",
+            "contentSha256": "ed46010014bd1a51f483334cd1548713987bd603c0cc5bb14114b3a63aeb76bd",
+            "answerSha256": "ed46010014bd1a51f483334cd1548713987bd603c0cc5bb14114b3a63aeb76bd"
+          }
+        },
+        "fingerprint": "f1e459c25d01f7ec7abc88df641fb6aa99eacc0b2eefe1af8dd350826fc8e8e5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-colar-resultados"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma planilha Excel contém fórmulas já calculadas, mas o destinatário deve receber nas células apenas seus resultados numéricos. Qual opção de colagem atende ao pedido?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "84ca4f7b-6dc1-5563-8f7a-a03b8b89b0b7",
+              "content": {
+                "text": "Fórmulas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b315c06f-9425-5059-83ee-46b04ec285a5",
+              "content": {
+                "text": "Colar vínculo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "816f49f2-8b39-5df1-a0f1-ecb4bff90226",
+              "content": {
+                "text": "Somente formatação.",
+                "resources": []
+              }
+            },
+            {
+              "id": "81b8d0fd-17de-5404-bc6a-a03b43ca73dd",
+              "content": {
+                "text": "Valores.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "81b8d0fd-17de-5404-bc6a-a03b43ca73dd",
+          "resolution": {
+            "text": "1. Colar Valores insere os resultados em vez das fórmulas de origem. 2. Fórmulas preserva os cálculos, vínculo mantém referência à origem e formatação não leva os números.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Opções de Colagem no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/paste-options",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-colar-resultados.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-colar-resultados.json",
+            "contentSha256": "dbc6dec66d6e3e22bcb846b0fdcb2fdda14249c4452c2820ebe9bb7831f3c618",
+            "answerSha256": "dbc6dec66d6e3e22bcb846b0fdcb2fdda14249c4452c2820ebe9bb7831f3c618"
+          }
+        },
+        "fingerprint": "39f9f85afd27c7ac26b2d11456da2a0ff43df57b9dd0a5b37eec3a86c683b78b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-colar-vinculo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, uma área de destino deve referenciar células de origem, em vez de receber uma cópia estática de seus valores. Qual opção de colagem tem essa finalidade?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b431a8b0-155c-5c8d-a087-ee9045c2bd0a",
+              "content": {
+                "text": "Colar como imagem não vinculada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "80ba699d-c2bf-5a8f-ab79-0b0f64b5b045",
+              "content": {
+                "text": "Colar vínculo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8b01872f-4d31-51b3-9b78-7628f4ff1c7d",
+              "content": {
+                "text": "Colar somente valores.",
+                "resources": []
+              }
+            },
+            {
+              "id": "22bbd636-b83b-5e6f-90e9-d2823c91b433",
+              "content": {
+                "text": "Colar apenas largura da coluna.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "80ba699d-c2bf-5a8f-ab79-0b0f64b5b045",
+          "resolution": {
+            "text": "1. Colar vínculo insere referências às células de origem. 2. Valores é estático; largura não leva o conteúdo e imagem não vinculada não acompanha a origem.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Opções de Colagem no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/paste-options",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-colar-vinculo.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-colar-vinculo.json",
+            "contentSha256": "9005cd1c68a9b213178b3254b5cb762c06faabf3cbb083691d7531374518bf7b",
+            "answerSha256": "9005cd1c68a9b213178b3254b5cb762c06faabf3cbb083691d7531374518bf7b"
+          }
+        },
+        "fingerprint": "0ce427004540b5c8fe2bb9cea642f0e0c051c6ba14a720c9f2d3f38b6f61d67b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-descongelar"
+        },
+        "content": {
+          "statement": {
+            "text": "Após uma revisão no Excel, os cabeçalhos não precisam mais ficar fixos durante a rolagem. Qual comando desfaz essa configuração?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c14fe129-d656-550c-af29-0b419cc0d3fd",
+              "content": {
+                "text": "Trocar fórmulas por texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6f457ba6-2841-5ea1-ae95-2d7267d0bda1",
+              "content": {
+                "text": "Descongelar Painéis.",
+                "resources": []
+              }
+            },
+            {
+              "id": "43d1df51-b4dd-5bfc-90ec-c328ca549a82",
+              "content": {
+                "text": "Excluir os cabeçalhos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "889a93c3-b926-54ff-a950-78e13c6ec425",
+              "content": {
+                "text": "Apagar a planilha.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6f457ba6-2841-5ea1-ae95-2d7267d0bda1",
+          "resolution": {
+            "text": "1. O comando remove a configuração de congelamento sem exigir modificar o conteúdo. 2. Excluir títulos ou planilha e converter fórmulas são alterações desnecessárias dos dados.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Congelar painéis para bloquear linhas e colunas",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/freeze-panes-to-lock-rows-and-columns",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-descongelar.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-descongelar.json",
+            "contentSha256": "ef50a2acb817c2a9d45fc9719a4126559270a20cefd5b9354257fcb94bbc914a",
+            "answerSha256": "ef50a2acb817c2a9d45fc9719a4126559270a20cefd5b9354257fcb94bbc914a"
+          }
+        },
+        "fingerprint": "8bff631c29c80b2bb16a27bdc5b771fee39b4424924a1a4e4672e0d214623c68",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-dividir-celula-excel"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, uma única célula não mesclada deve ser cortada fisicamente em duas células menores, como numa tabela Word. Qual limite existe?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "865a0cd4-dfd5-5e6b-9edc-34fdaa3ebcb3",
+              "content": {
+                "text": "A divisão exige renomear a aba para Word.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9cccdfa0-98cb-5dab-8c38-99feb95d2b5a",
+              "content": {
+                "text": "A célula é unidade da grade; pode-se separar o conteúdo em células adjacentes, mas não dividir sua estrutura dessa forma.",
+                "resources": []
+              }
+            },
+            {
+              "id": "48f294c5-6381-5c83-b72a-aac9509f3f46",
+              "content": {
+                "text": "Qualquer célula pode ser cortada livremente em cinco subcélulas com novos endereços independentes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "77e5838d-dad4-5260-8027-29cb6cafe10c",
+              "content": {
+                "text": "Só é necessário mudar a cor da borda.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9cccdfa0-98cb-5dab-8c38-99feb95d2b5a",
+          "resolution": {
+            "text": "1. O Excel distingue a grade de células da divisão de texto ou inserção de linhas e colunas. 2. Cor e nome de aba não criam subcélulas; não há esse corte livre de uma célula não mesclada.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Dividir uma célula no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/split-a-cell-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-dividir-celula-excel.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-dividir-celula-excel.json",
+            "contentSha256": "9c8f71867304b195d9884dd1abcbdf9bb85c3f004cdfa77b9d89905ebcfc07b7",
+            "answerSha256": "9c8f71867304b195d9884dd1abcbdf9bb85c3f004cdfa77b9d89905ebcfc07b7"
+          }
+        },
+        "fingerprint": "02958480a63891bb210b7a79aba40b7b33a61ec7df08de44b48bab07f3a22d7f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-dividir-paineis"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, uma pessoa quer rolar duas áreas da mesma planilha em painéis separados para comparar partes distantes. Qual recurso é pertinente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e0201809-2ee3-5c72-ad3a-e3dfcd6d0200",
+              "content": {
+                "text": "Apenas renomear a planilha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e33b8442-46c4-503b-be00-026700b171dc",
+              "content": {
+                "text": "Mesclar todas as células.",
+                "resources": []
+              }
+            },
+            {
+              "id": "790fc0c6-22b4-53db-9f97-2248963df522",
+              "content": {
+                "text": "Excluir a primeira linha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "253375cb-41c3-5e86-9b00-f228ffdb4bcb",
+              "content": {
+                "text": "Dividir painéis.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "253375cb-41c3-5e86-9b00-f228ffdb4bcb",
+          "resolution": {
+            "text": "1. A divisão cria áreas de visualização separadas da mesma planilha. 2. Renomeação, mesclagem ou exclusão não criam painéis de comparação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Congelar painéis para bloquear linhas e colunas",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/freeze-panes-to-lock-rows-and-columns",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Inserir e formatar dados",
+              "url": "https://support.microsoft.com/pt-br/excel/enter-and-format-data",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-dividir-paineis.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-dividir-paineis.json",
+            "contentSha256": "20184fc65ec21bb8d7daef67ea0e3e53cad3dfd19a8792da85cdc9fb5700d8e4",
+            "answerSha256": "20184fc65ec21bb8d7daef67ea0e3e53cad3dfd19a8792da85cdc9fb5700d8e4"
+          }
+        },
+        "fingerprint": "704754b0b71d2736dc25237514b2914b75754257f92b562876fa91e69ed2bd6a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-editar-bloqueada"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma célula de uma planilha protegida do Excel pode ser selecionada, mas não editada. Qual explicação é compatível com a documentação?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "14d26cf4-62be-528b-bfe0-b8db8d82fd77",
+              "content": {
+                "text": "Selecionar qualquer célula garante permissão para gravar nela.",
+                "resources": []
+              }
+            },
+            {
+              "id": "38ba93df-5e9a-529d-9fb2-b41728f1f210",
+              "content": {
+                "text": "A planilha está no modo de exibição Layout da Página, que impede a digitação em células.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a59029bd-e4c5-5c9a-bdcc-8d22db5c559c",
+              "content": {
+                "text": "A célula contém uma fórmula, e células com fórmula nunca podem ser editadas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "df2d4431-d569-5f79-9967-1b3c383bc8fc",
+              "content": {
+                "text": "A célula pode estar bloqueada pela proteção da planilha.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "df2d4431-d569-5f79-9967-1b3c383bc8fc",
+          "resolution": {
+            "text": "1. Com a planilha protegida, células bloqueadas podem continuar selecionáveis, mas não podem ser modificadas; alternativa D. 2. A erra porque seleção não equivale a autorização de edição; B erra porque o modo Layout da Página permite editar células; C erra porque células com fórmula podem ser editadas quando não estão bloqueadas por proteção.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Proteger uma planilha",
+              "url": "https://support.microsoft.com/pt-br/office/proteger-uma-planilha-3179efdb-1285-4d49-a9c3-f4ca36276de6",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-editar-bloqueada.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-editar-bloqueada.json",
+            "contentSha256": "17f335190988e1b73203d93f91aed94d1efb7984cfa1bfdfba6fafc49c3cd879",
+            "answerSha256": "17f335190988e1b73203d93f91aed94d1efb7984cfa1bfdfba6fafc49c3cd879"
+          }
+        },
+        "fingerprint": "7750ea1d1b08bd99ec1a3c8c595f09b3cc0682421278591c2857751f2a956c53",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-entrada-multiplas-abas"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, várias abas foram agrupadas durante uma edição. Antes de digitar algo que deve alterar apenas uma planilha, qual cuidado é pertinente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1a0e2ee6-b231-5b4a-aedb-b504b8220005",
+              "content": {
+                "text": "Salvar somente uma captura de tela.",
+                "resources": []
+              }
+            },
+            {
+              "id": "de6431c3-a14c-509e-bd39-cf9ae7bbd973",
+              "content": {
+                "text": "Desagrupar as planilhas e conferir a aba ativa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "20a47b29-1958-5a63-923f-67bb6701453d",
+              "content": {
+                "text": "Mudar apenas o tamanho da fonte.",
+                "resources": []
+              }
+            },
+            {
+              "id": "87985a6f-d381-57c1-8f6c-583754a10814",
+              "content": {
+                "text": "Presumir que agrupamento nunca influencia entradas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "de6431c3-a14c-509e-bd39-cf9ae7bbd973",
+          "resolution": {
+            "text": "1. A entrada em planilhas agrupadas pode alcançar mais de uma aba. 2. Formatação visual e captura não retiram o agrupamento; ele não deve ser ignorado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Inserir dados manualmente em células",
+              "url": "https://support.microsoft.com/pt-br/excel/enter-data-manually-in-worksheet-cells",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-entrada-multiplas-abas.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-entrada-multiplas-abas.json",
+            "contentSha256": "521f930adde0ab2b82fe6283c831f6d0901802766cf256dc554f5f10b20280ef",
+            "answerSha256": "521f930adde0ab2b82fe6283c831f6d0901802766cf256dc554f5f10b20280ef"
+          }
+        },
+        "fingerprint": "9f4ede44c80099eb04d563545e57e7edb94b8ac453f675936b5889b2c428d5da",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-formatacao-insercao"
+        },
+        "content": {
+          "statement": {
+            "text": "Após inserir uma coluna no Excel, ela recebeu a aparência da coluna vizinha. Qual recurso documentado permite escolher outra origem de formatação?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "07203cb3-f0b1-5aa5-9a4a-8f12d66d3aa7",
+              "content": {
+                "text": "Central de Segurança de Macros.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7bd0f6d4-cc5f-5b20-adeb-10207ba022c6",
+              "content": {
+                "text": "Apenas Congelar Painéis.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e092e0f1-238e-532e-8988-1df5286029aa",
+              "content": {
+                "text": "Apenas Renomear Planilha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "94615e37-438e-555b-8850-3c5f9da1a15b",
+              "content": {
+                "text": "Opções de Inserção exibidas após a operação.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "94615e37-438e-555b-8850-3c5f9da1a15b",
+          "resolution": {
+            "text": "1. O Excel pode herdar formatação adjacente e oferece opções após a inserção para alterá-la. 2. Macros, congelamento e nome da planilha não são esse controle de herança de formatação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Inserir ou excluir linhas e colunas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/insert-or-delete-rows-and-columns-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-formatacao-insercao.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-formatacao-insercao.json",
+            "contentSha256": "4f9d89e89ab066119336bebf79e19b51b49a43d8ec78d030dec5ed74b60b2bb9",
+            "answerSha256": "4f9d89e89ab066119336bebf79e19b51b49a43d8ec78d030dec5ed74b60b2bb9"
+          }
+        },
+        "fingerprint": "9d7342719c6bd3eec385df2999a193699b1b20a2c0a80f6fa983f867d6bfdbaf",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-formato-nao-valor"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, a célula contém 0,25 e recebe o formato Porcentagem, sem alteração do valor. Como deve ser interpretado o dado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f814b0bd-db13-5a02-9d5a-f3bdef1d95c0",
+              "content": {
+                "text": "O valor armazenado passa obrigatoriamente a 25.",
+                "resources": []
+              }
+            },
+            {
+              "id": "edf16460-145c-5ba1-9fd6-02afafdd7466",
+              "content": {
+                "text": "O número vira automaticamente texto sem possibilidade de cálculo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4bbe949d-5006-5de1-a3a9-5f7081ce6c36",
+              "content": {
+                "text": "O valor armazenado passa a 0,0025, pois o formato divide o número por 100.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9efd412b-ce52-5ea5-aa5b-d71eeef1588f",
+              "content": {
+                "text": "A apresentação pode mostrar 25%, mantendo o valor numérico equivalente a 0,25.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9efd412b-ce52-5ea5-aa5b-d71eeef1588f",
+          "resolution": {
+            "text": "1. O formato Porcentagem altera apenas a exibição: 0,25 aparece como 25%, e o valor usado nos cálculos continua 0,25; alternativa D. 2. A e C erram porque aplicar formato não altera o valor armazenado (nem para 25 nem para 0,0025); B erra porque o número continua numérico e pode ser usado em cálculos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Suporte — Formatos de número disponíveis no Excel (introdução e formato Porcentagem)",
+              "url": "https://support.microsoft.com/pt-br/office/formatos-de-n%C3%BAmero-dispon%C3%ADveis-no-excel-0afe8f52-97db-41f1-b972-4b46e9f1e8d2",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-formato-nao-valor.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-formato-nao-valor.json",
+            "contentSha256": "40e4b21f711c505ec64612a47f1d9ecd7050cbd1c770eb9cff84664cf2205b60",
+            "answerSha256": "40e4b21f711c505ec64612a47f1d9ecd7050cbd1c770eb9cff84664cf2205b60"
+          }
+        },
+        "fingerprint": "02acc2cdab407fe14bab65b20d537407033321a09402711a7a9aea8fb5ea9b82",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-formula-aspas-aba"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em estilo A1, qual fórmula referencia A1 de uma aba chamada Dados Gerais na mesma pasta de trabalho?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d5cc8a3f-ae32-5230-9d6b-6303c76ea59b",
+              "content": {
+                "text": "=Dados Gerais:A1",
+                "resources": []
+              }
+            },
+            {
+              "id": "c00de838-f0cf-5b49-bd30-0679576e704b",
+              "content": {
+                "text": "=A1!Dados Gerais",
+                "resources": []
+              }
+            },
+            {
+              "id": "c0d3ebb8-7683-5128-ab50-68a89e4fbc44",
+              "content": {
+                "text": "=Dados/Gerais/A1",
+                "resources": []
+              }
+            },
+            {
+              "id": "cf43547b-6ce3-57d8-a748-624bedf4987a",
+              "content": {
+                "text": "='Dados Gerais'!A1",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cf43547b-6ce3-57d8-a748-624bedf4987a",
+          "resolution": {
+            "text": "1. O nome da planilha vem antes de !; nomes com espaços são delimitados por apóstrofos. 2. Dois-pontos é operador de intervalo, a ordem não é invertida e barras não formam essa referência de aba.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-formula-aspas-aba.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-formula-aspas-aba.json",
+            "contentSha256": "56b631e53ca15a413ccede4d78f371cae7cbc9a15305cb17bd098813a57f483e",
+            "answerSha256": "56b631e53ca15a413ccede4d78f371cae7cbc9a15305cb17bd098813a57f483e"
+          }
+        },
+        "fingerprint": "4b6ac0b8f873f0578e6d66fd8eb32f32a92c202615d4e7a7750f4984cd81d54b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-imagem-vinculada"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, uma imagem inserida por colagem deve refletir alterações nas células de origem. Qual opção oferece essa vinculação?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3192149e-5e95-59c5-9af5-31bffcfa3ef3",
+              "content": {
+                "text": "Largura da coluna original.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a43b4cbd-7351-542d-9210-9f53e518032c",
+              "content": {
+                "text": "Imagem Vinculada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "672991f7-3816-5152-b005-adbf2a12e65e",
+              "content": {
+                "text": "Imagem estática comum.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2446c26c-7500-5225-aea6-dcb58203deeb",
+              "content": {
+                "text": "Somente formatação.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a43b4cbd-7351-542d-9210-9f53e518032c",
+          "resolution": {
+            "text": "1. A imagem vinculada mantém um vínculo com as células usadas como origem. 2. Imagem estática não oferece essa atualização, e as outras opções não criam imagem ligada aos dados.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Opções de Colagem no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/paste-options",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-imagem-vinculada.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-imagem-vinculada.json",
+            "contentSha256": "301c16559a205b36f7366ec4032a7642f29970f24553fca69f541f81098e2c91",
+            "answerSha256": "301c16559a205b36f7366ec4032a7642f29970f24553fca69f541f81098e2c91"
+          }
+        },
+        "fingerprint": "cfd4da878e3e07171414022fb72c437bd031a524564f3faa8fa43cfeeff01efa",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-inserir-celulas-deslocar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, novos campos precisam entrar em apenas parte de uma linha, deslocando para a direita as células daquele trecho. Qual escolha é pertinente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e611a9af-410e-5a63-8781-261cecfec807",
+              "content": {
+                "text": "Inserir obrigatoriamente uma planilha inteira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fc2b0335-2457-5c99-a5e2-bbbe83e0f2a9",
+              "content": {
+                "text": "Aplicar somente fonte em negrito.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dfed4efb-d1d1-535c-b2e3-708dbfa6842c",
+              "content": {
+                "text": "Ocultar todas as linhas existentes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c43a3a51-2e3a-5c9b-9cf9-c28d5964d531",
+              "content": {
+                "text": "Inserir células com deslocamento para a direita.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c43a3a51-2e3a-5c9b-9cf9-c28d5964d531",
+          "resolution": {
+            "text": "1. Inserir células permite escolher o deslocamento das vizinhas sem exigir uma coluna inteira. 2. Nova planilha, negrito e ocultação não inserem o espaço estrutural solicitado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Inserir ou excluir linhas e colunas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/insert-or-delete-rows-and-columns-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-inserir-celulas-deslocar.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-inserir-celulas-deslocar.json",
+            "contentSha256": "fe29fd91d72754c26382bf6a83f7f616b0ab08d211412dbd5e4cae939a5e0688",
+            "answerSha256": "fe29fd91d72754c26382bf6a83f7f616b0ab08d211412dbd5e4cae939a5e0688"
+          }
+        },
+        "fingerprint": "9ed9205c5622947ce085b267ca0a714dc41a016b0f6d3bc5a65666c79d1260d3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-intervalo-coluna-inteira"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em estilo A1, o que significa a referência B:B em uma fórmula?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9e5fbb19-c456-5759-a253-3cb1bc2ea07d",
+              "content": {
+                "text": "Somente a célula B1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f94158c3-d4df-50c2-9db2-ada9389ec1cd",
+              "content": {
+                "text": "Somente a linha 2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "680843d4-d06d-55e6-883e-3e75d5d56a60",
+              "content": {
+                "text": "Todas as abas cujo nome começa por B.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9ff9b73b-086e-5128-9221-f3daecbdc4c9",
+              "content": {
+                "text": "Toda a coluna B.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9ff9b73b-086e-5128-9221-f3daecbdc4c9",
+          "resolution": {
+            "text": "1. A notação com a mesma letra nos extremos refere-se à coluna inteira. 2. Não limita a primeira célula nem seleciona linha ou aba.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-intervalo-coluna-inteira.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-intervalo-coluna-inteira.json",
+            "contentSha256": "8ba3ab3327127bc1b783cc1bbc01f7484c2093c3717df79805235c7b1bcba4f8",
+            "answerSha256": "8ba3ab3327127bc1b783cc1bbc01f7484c2093c3717df79805235c7b1bcba4f8"
+          }
+        },
+        "fingerprint": "8613528c760fae5c128ab9a389b3511401c934ce2afe4ed95ca47761f66a684f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-largura-altura"
+        },
+        "content": {
+          "statement": {
+            "text": "Na planilha Excel, a coluna está estreita e o texto não aparece integralmente. Qual ajuste de estrutura da grade é pertinente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b200ec53-c0ce-587b-915d-b2d819cd79fd",
+              "content": {
+                "text": "Excluir o arquivo de origem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "48bf067c-8cc8-55b3-ac58-c7f038aa3dd1",
+              "content": {
+                "text": "Ajustar a largura da coluna.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8ecceb53-3154-5f1d-a0eb-ca84fad24e34",
+              "content": {
+                "text": "Mudar somente o nome da aba.",
+                "resources": []
+              }
+            },
+            {
+              "id": "db1bf962-b460-5585-b207-6c999a0564fc",
+              "content": {
+                "text": "Aplicar um som à pasta.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "48bf067c-8cc8-55b3-ac58-c7f038aa3dd1",
+          "resolution": {
+            "text": "1. A largura controla o espaço horizontal disponível na coluna. 2. Nome, som e exclusão não ampliam esse espaço. Conforme a necessidade, também se pode considerar quebra de texto ou altura de linha.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Inserir e formatar dados",
+              "url": "https://support.microsoft.com/pt-br/excel/enter-and-format-data",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-largura-altura.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-largura-altura.json",
+            "contentSha256": "e215460921e78036339e7d986c0d55fde8e624216c82326aee1fdab692769db3",
+            "answerSha256": "e215460921e78036339e7d986c0d55fde8e624216c82326aee1fdab692769db3"
+          }
+        },
+        "fingerprint": "0b6f45469ba55111621a655bfddc77936f2122a7fda2f7e57900a22cd44df8c8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-operador-intervalo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, em uma fórmula com estilo A1, que função exerce o símbolo : entre A1 e C3?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5df48064-6bd6-5288-baff-a82c43ba9329",
+              "content": {
+                "text": "Excluir as células intermediárias.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ee451c57-86d9-5e19-9602-fe7089a4f8db",
+              "content": {
+                "text": "Indicar o intervalo retangular inclusivo de A1 até C3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ba62b4fc-4b1f-5fa1-aa75-11489386ab0c",
+              "content": {
+                "text": "Multiplicar somente os valores de A1 e C3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6e2569b3-7675-57c3-8ec2-09254cf478a8",
+              "content": {
+                "text": "Renomear a planilha como A1C3.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ee451c57-86d9-5e19-9602-fe7089a4f8db",
+          "resolution": {
+            "text": "1. Dois-pontos é operador de referência de intervalo e inclui as células entre os extremos. 2. Não é multiplicação, renomeação ou exclusão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-operador-intervalo.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-operador-intervalo.json",
+            "contentSha256": "33ed4673d6ab7352d3d3e198d3db4c21ca42fe9026a79ba22e79527307d426bc",
+            "answerSha256": "33ed4673d6ab7352d3d3e198d3db4c21ca42fe9026a79ba22e79527307d426bc"
+          }
+        },
+        "fingerprint": "662469405aa7f6b0a2c795abd71a03977cdaef1fc76016c83c19bc6a0edcf528",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-texto-colunas-destino"
+        },
+        "content": {
+          "statement": {
+            "text": "Antes de usar Texto para Colunas no Excel, por que conferir o espaço à direita da célula de origem?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "db2f7ed6-1f1b-5d33-9d3f-e5e4574c0bae",
+              "content": {
+                "text": "Porque a ferramenta depende da cor do monitor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "74636984-5644-5680-8fd4-2b5ca4ec5f92",
+              "content": {
+                "text": "Porque ela cria obrigatoriamente uma pasta de trabalho vazia.",
+                "resources": []
+              }
+            },
+            {
+              "id": "eb26abbb-d493-5240-9f16-0477ca24b0c8",
+              "content": {
+                "text": "Porque texto só pode ser dividido se toda a planilha estiver apagada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "75d23d0c-c95c-5a8e-9bc7-c0db2872e996",
+              "content": {
+                "text": "Os campos distribuídos podem substituir conteúdo nas células de destino.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "75d23d0c-c95c-5a8e-9bc7-c0db2872e996",
+          "resolution": {
+            "text": "1. A saída ocupa células adjacentes e exige preservar dados que já estejam nesse destino. 2. Não há dependência de cor nem exigência geral de nova pasta ou planilha toda vazia.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Dividir uma célula no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/split-a-cell-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-texto-colunas-destino.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-texto-colunas-destino.json",
+            "contentSha256": "2ff9751d17d9343007fecf260854fb2295495c3b777ded784da7ce782f2f0cfe",
+            "answerSha256": "2ff9751d17d9343007fecf260854fb2295495c3b777ded784da7ce782f2f0cfe"
+          }
+        },
+        "fingerprint": "4694c049aa201190a07eaa04ced0a4884054c41cca55254aa8ee25e6ac143696",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-transpor-versus-concatenar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 de desktop no Windows, várias células foram selecionadas para receber simultaneamente o mesmo texto. Após digitá-lo na célula ativa, qual combinação conclui essa entrada nas selecionadas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b4ece7b3-6545-52e7-a08e-9b5e13d2c709",
+              "content": {
+                "text": "Alt+Enter, que insere quebra de linha dentro de uma célula.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f97ff456-edd0-5e81-9b20-9c49aff14d4e",
+              "content": {
+                "text": "Esc, que cancela a entrada em edição.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7a1f76fe-dbb1-5833-b393-90c2852f427e",
+              "content": {
+                "text": "Delete, que limpa conteúdo conforme a seleção.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7c1dcece-3a82-5ee8-9c04-f7ecf4207962",
+              "content": {
+                "text": "Ctrl+Enter.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7c1dcece-3a82-5ee8-9c04-f7ecf4207962",
+          "resolution": {
+            "text": "1. Ctrl+Enter insere os dados digitados no conjunto de células selecionadas. 2. Quebra de linha, cancelamento e limpeza não concluem esse preenchimento simultâneo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Inserir dados manualmente em células",
+              "url": "https://support.microsoft.com/pt-br/excel/enter-data-manually-in-worksheet-cells",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-transpor-versus-concatenar.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-transpor-versus-concatenar.json",
+            "contentSha256": "47c489ad86900e1e764fba1c74a0c41e2b6e2545dc2475f5ab4f9685c5c75114",
+            "answerSha256": "47c489ad86900e1e764fba1c74a0c41e2b6e2545dc2475f5ab4f9685c5c75114"
+          }
+        },
+        "fingerprint": "782b2a960266d8faf2bdc9e8ad1dd932222924b52dcd02d626ed8cd2fdbdf47f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.it-ultima-coluna-grade"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao conferir a capacidade de uma planilha moderna do Excel, qual quantidade de colunas é documentada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fce249d4-55db-589d-9eb5-f95ebc3e104b",
+              "content": {
+                "text": "256 colunas em qualquer pasta moderna.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e2803794-363f-5611-af06-377e8bb36be6",
+              "content": {
+                "text": "16.384 colunas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "13c761c2-4380-5d21-a6fe-468929288fe2",
+              "content": {
+                "text": "1.048.576 colunas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5672f40f-f209-5833-9b25-95b2a646a209",
+              "content": {
+                "text": "31 colunas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e2803794-363f-5611-af06-377e8bb36be6",
+          "resolution": {
+            "text": "1. A especificação da Microsoft lista 1.048.576 linhas por 16.384 colunas por planilha; alternativa B. 2. C (1.048.576) é o limite de linhas, não de colunas; A (256) era o limite de colunas do antigo formato .xls, não da grade moderna; D (31) é o máximo de caracteres do nome de uma planilha, não um limite de colunas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Especificações e limites do Microsoft Excel",
+              "url": "https://support.microsoft.com/pt-br/office/especifica%C3%A7%C3%B5es-e-limites-do-excel-1672b34d-7043-467e-8e27-269d656771c3",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I05.p.it-ultima-coluna-grade.json",
+            "answerPath": "sources/admin.2026-11.I05.p.it-ultima-coluna-grade.json",
+            "contentSha256": "214c5f0342ecf4368cf29e65d680f1eded166d7280249169c3dc3902812680d1",
+            "answerSha256": "214c5f0342ecf4368cf29e65d680f1eded166d7280249169c3dc3902812680d1"
+          }
+        },
+        "fingerprint": "9cf677a170e275454edee6131e92a2f2a3b9bff0c94e81bf6358325e6fec63e4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.potim-se-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "No Microsoft Excel as células são referenciadas por sua localização na linha e na coluna da planilha, portanto, a célula A1 fica na primeira linha da coluna:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "770f833c-5992-5129-b215-537f35422f3f",
+              "content": {
+                "text": "A",
+                "resources": []
+              }
+            },
+            {
+              "id": "4d293fd8-5765-5b77-93f5-d4206ac46730",
+              "content": {
+                "text": "D",
+                "resources": []
+              }
+            },
+            {
+              "id": "4cfc77b6-287d-5e12-9629-02790c7d048d",
+              "content": {
+                "text": "E",
+                "resources": []
+              }
+            },
+            {
+              "id": "7ef0e1b3-e8bf-5aa3-ac34-a80e5a2e11ff",
+              "content": {
+                "text": "0",
+                "resources": []
+              }
+            },
+            {
+              "id": "ed6b3a21-80cc-58a6-9ed4-06451d144575",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "770f833c-5992-5129-b215-537f35422f3f",
+          "resolution": {
+            "text": "1. No padrão A1, as letras identificam colunas e os números identificam linhas. 2. A1 representa coluna A e linha 1; D e E são outras colunas, enquanto 0 e 2 não identificam a coluna dessa referência.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Referências relativas, absolutas e mistas do Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/switch-between-relative-absolute-and-mixed-references",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Secretário de Escola, questão 19. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I05.p.potim-se-q19.json",
+            "answerPath": "sources/admin.2026-11.I05.p.potim-se-q19.json",
+            "contentSha256": "9e243a6f5baa432243bf0ac6a3f42d04b20ad707edafa5475db715dd6a4e838c",
+            "answerSha256": "9e243a6f5baa432243bf0ac6a3f42d04b20ad707edafa5475db715dd6a4e838c"
+          }
+        },
+        "fingerprint": "e1c4c7ec979f997af76ce33a4a48abb00631f87871a8577bb28ede1f996a36cf",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I05.p.vinh-aux-q33"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é um dos elementos básicos de uma planilha do Microsoft Excel são identificados com números no canto esquerdo da tela:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1dc47299-4373-5bfa-bccf-5c42fd37d6e0",
+              "content": {
+                "text": "Imagens.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fb343f9b-f760-5d7b-b711-92fb33a95fba",
+              "content": {
+                "text": "Linhas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "505ef8b1-717f-5eb9-876c-1c440968a2f7",
+              "content": {
+                "text": "Páginas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1062a3d5-dc1a-56c5-91af-b0b361b18605",
+              "content": {
+                "text": "Sumário.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0c8e131e-e3cc-59f0-adae-f4bfcd07f03c",
+              "content": {
+                "text": "Nota de fim.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fb343f9b-f760-5d7b-b711-92fb33a95fba",
+          "resolution": {
+            "text": "1. Os cabeçalhos numéricos (1, 2, 3...) à esquerda da grade identificam as linhas; com as letras das colunas, formam o endereço da célula (A1, B2...); alternativa B. 2. Imagens, páginas, sumário e nota de fim não são numerados na borda esquerda da planilha; sumário e nota de fim são recursos do Word. O enunciado tem a redação truncada da prova, preservada sem correção. Gabarito definitivo: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I05",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Inserir e formatar dados",
+              "url": "https://support.microsoft.com/pt-br/excel/enter-and-format-data",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, Auxiliar Administrativo, questão 33. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I05.p.vinh-aux-q33.json",
+            "answerPath": "sources/admin.2026-11.I05.p.vinh-aux-q33.json",
+            "contentSha256": "dc054c53ab79358e94b5878df3d06860fc06b251b0e37b0ce467e7def9a2250b",
+            "answerSha256": "dc054c53ab79358e94b5878df3d06860fc06b251b0e37b0ce467e7def9a2250b"
+          }
+        },
+        "fingerprint": "b02fc14f8dda69d8cd60424cd9614ea34fd44011907034b396ef539a1443aea1",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I05.p.cerq25-tes-q25.json",
+        "mediaType": "application/json",
+        "sha256": "07239d315431874fbfea7073f5c980d33a188248e73d305cb2a34bf9fee3cb52",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiPU3DiURJQShCMjpCNikifSx7ImlkIjoiYiIsInRleHQiOiI9TcOJRElBKOKAnFJlY2VpdGFzIeKAnSxCMjpCNikifSx7ImlkIjoiYyIsInRleHQiOiI9TcOJRElBKFJlY2VpdGFzIUIyOkI2KSJ9LHsiaWQiOiJkIiwidGV4dCI6Ij1Nw4lESUEoUmVjZWl0YXMhLEIzOkI2KSJ9LHsiaWQiOiJlIiwidGV4dCI6Ij1Nw4lESUEo4oCYUmVjZWl0YXMh4oCZLEIyOkI2KSJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2VycXVpbGhvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1LCBUZXNvdXJlaXJvIEdlcmFsIGRvIE11bmljw61waW8sIHF1ZXN0w6NvIDI1LiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bywgcMOhZ2luYSA3LCBxdWFkcm8gZG8gY2FyZ28gVEVTT1VSRUlSTyBHRVJBTCBETyBNVU5JQ8ONUElPOiAyNT1DOyBjb25mZXLDqm5jaWEgdmlzdWFsIG5hIHJlbmRlcml6YcOnw6NvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTgtZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjY3N2YwYTYwYjEwODBhNGI2NjllM2JkYmMzZjA1OTk0NmE3N2Y0OWQ4NmU0MTRiYjNhODdjYzcyMDcxYzQwYWYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5OC9hbmV4b3MvZTE0MWJiZWUtYWZmNS00NGYwLWE3ZmEtM2U1MTE5YzhmODgwLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2VycXVpbGhvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtY2VycXVpbGhvLTIwMjUtdGVzb3VyZWlyby9xMjUiLCJudW1iZXIiOiIyNSIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAyNSwgcMOhZ2luYSBmw61zaWNhIDggZG8gUERGOyB0ZXh0byBleHRyYcOtZG8gY29uZnJvbnRhZG8gY29tIGEgcmVuZGVyaXphw6fDo28gZGEgcMOhZ2luYTsgZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMgZSBvcmRlbSBjb25mZXJpZG9zIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTIuIEEgY2FwdHVyYSBkYSBwbGFuaWxoYSDigJxSZWNlaXRhc+KAnSBxdWUgYWNvbXBhbmhhIG8gaXRlbSBmb2kgb21pdGlkYSBwb3Igc2VyIHJlZHVuZGFudGU6IG8gZW51bmNpYWRvIGrDoSBpbmZvcm1hIG8gbm9tZSBkYSBwbGFuaWxoYSBlIG8gaW50ZXJ2YWxvIEIyOkI2LiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk4LXByb3ZhLXRlc291cmVpcm8tZ2VyYWwtZG8tbXVuaWNwaW8ucGRmIiwic2hhMjU2IjoiNjY4MTRkMmJlNTcxMGExYjAyM2IyMjk0YTA3ZWY5Yzc1NzhiNTVjMTVjNDI5YmEyNDNlMTE4N2MzM2ZhNzA3NyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk4L2FuZXhvcy84MDE0MjY5Mi01NGFiLTQzZDctOTBjNy0wMzExODVjNjVjMjcucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IGFydC4gOMK6LCBJViwgZGEgTGVpIDkuNjEwLzE5OTgsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgbm8gcHJvamV0bywgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSBkZSBwcm92YSBww7pibGljYSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gaW5jb3Jwb3JhZGEuIE7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSBjb25zZW50aW1lbnRvIGFmaXJtYWRvOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVGVzb3VyZWlybyBHZXJhbCBkbyBNdW5pY8OtcGlvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI1fSwiaWQiOiJjZXJxMjUtdGVzLXEyNSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWZvcm11bGFzIl0sInJlc29sdXRpb24iOiIxLiBBIHJlZmVyw6puY2lhIGEgb3V0cmEgcGxhbmlsaGEgZGEgbWVzbWEgcGFzdGEgdXNhIE5vbWVEYVBsYW5pbGhhIUludGVydmFsbzsgYXNzaW0sID1Nw4lESUEoUmVjZWl0YXMhQjI6QjYpIGNhbGN1bGEgYSBtw6lkaWEgZG9zIGNpbmNvIHZhbG9yZXM7IGFsdGVybmF0aXZhIEMuIDIuIEEgY2FsY3VsYXJpYSBCMjpCNiBkYSBwcsOzcHJpYSBwbGFuaWxoYSBWYWxvcmVzIHRvdGFpczsgQiBlIEUgY29sb2NhbSBvIG5vbWUgZW50cmUgYXNwYXMgY29tbyB0ZXh0byBzZXBhcmFkbyBwb3IgdsOtcmd1bGEsIHNpbnRheGUgaW52w6FsaWRhIHBhcmEgcmVmZXLDqm5jaWEgKGFzcGFzIHNpbXBsZXMgc8OzIGVudm9sdmVtIG5vbWVzIGNvbSBlc3Bhw6dvcywgY29tbyAnTWluaGEgcGxhbmlsaGEnIUIyKTsgRCBzZXBhcmEgbm9tZSBlIGludGVydmFsbyBlIGFpbmRhIG9taXRlIEIyLiBHYWJhcml0byBkZWZpbml0aXZvOiBhbHRlcm5hdGl2YSBDLiIsInN0YXRlbWVudCI6IlZvY8OqIGVzdMOhIGNvbmZlY2Npb25hbmRvIHVtYSBwbGFuaWxoYSBjaGFtYWRhIOKAnFZhbG9yZXMgdG90YWlz4oCdIHBhcmEgY2FsY3VsYXIgb3MgdmFsb3JlcyBtw6lkaW9zIGRlIGFsZ3VtYXMgcmVjZWl0YXMuIEVtIHVtYSBkZXRlcm1pbmFkYSBjw6lsdWxhIGRlc3NhIHBsYW5pbGhhLCBkZXNlamEgY2FsY3VsYXIgYSBtw6lkaWEgZG9zIHNhbMOhcmlvcyBlbnRyZSBvcyBtZXNlcyBkZSBqYW5laXJvIGEgbWFpbywgY3Vqb3MgZGFkb3MgZXN0w6NvIGxvY2FsaXphZG9zIG5hIHBsYW5pbGhhIGNoYW1hZGEg4oCcUmVjZWl0YXPigJ0sIG5vIGludGVydmFsbyBCMjpCNi4gUGFyYSBpc3NvLCB2b2PDqiB1dGlsaXphcsOhIHVtYSBmw7NybXVsYSBxdWUgZmF6IHJlZmVyw6puY2lhIGEgb3V0cmEgcGxhbmlsaGEuXG5RdWFsIGbDs3JtdWxhIGRldmUgc2VyIHV0aWxpemFkYSBuYSBjw6lsdWxhIGRhIHBsYW5pbGhhIOKAnFZhbG9yZXMgdG90YWlz4oCdIHBhcmEgY2FsY3VsYXIgY29ycmV0YW1lbnRlIGVzc2EgbcOpZGlhPyBBc3NpbmFsZSBhIGFsdGVybmF0aXZhIGNvcnJldGEuIiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWZvcm11bGFzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBWaXPDo28gZ2VyYWwgZGUgZsOzcm11bGFzIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZ2V0LXN0YXJ0ZWQvb3ZlcnZpZXctb2YtZm9ybXVsYXMtaW4tZXhjZWwifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.fgv-taubate-q37.json",
+        "mediaType": "application/json",
+        "sha256": "93b37b0e9a0abe22a5bfcbb39cdd5c55763ba27a1a35393b4cb63042817a086d",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUGVyZGlkYXM7IHBlcmRpZGE7IHByZXNlcnZhZGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUGVyZGlkYXM7IHBlcmRpZGE7IHBlcmRpZGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUGVyZGlkYXM7IHByZXNlcnZhZGE7IHBlcmRpZGEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUHJlc2VydmFkYXM7IHBlcmRpZGE7IHBlcmRpZGEuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiUHJlc2VydmFkYXM7IHBlcmRpZGE7IHByZXNlcnZhZGEuIn1dLCJhdXRob3IiOiJGR1Yg4oCUIEPDom1hcmEgTXVuaWNpcGFsIGRlIFRhdWJhdMOpIOKAlCBFZGl0YWwgMS8yMDIyLCBUw6ljbmljbyBMZWdpc2xhdGl2byBkZSBJbmZvcm3DoXRpY2EsIFRpcG8gMSDigJQgQnJhbmNhIOKAlCBUYXJkZSwgcXVlc3TDo28gMzcuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJEZWZpbml0aXZvIHB1YmxpY2FkbyBlbSAyMDIyLTExLTE3LCBww6FnaW5hIGbDrXNpY2EgNSBkbyBQREYsIGNhcmdvL3RpcG8gY29ycmVzcG9uZGVudGVzOiAzNz1CLiBDb25mZXJpZG8gdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2Zndi10YXViYXRlLWFuc3dlci5wZGYiLCJzaGEyNTYiOiI4MmRkOTgxMjVhNGM2ZDdhYzFjOTcwNTVmYzAyYWEwMjAwNDliZTUyMjYyNzcxMDliYzU4Y2E4NjlkYzhhYjkyIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL2dhYmFyaXRvX2RlZmluaXRpdm9fY210Xy1fZWRpdGFsMDEucGRmIn0sImJvYXJkIjoiRkdWIiwiYm9va2xldCI6IlRpcG8gMSDigJQgQnJhbmNhIOKAlCBUYXJkZSIsImNvbXBldGl0aW9uIjoiQ8OibWFyYSBNdW5pY2lwYWwgZGUgVGF1YmF0w6kg4oCUIEVkaXRhbCAxLzIwMjIiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImZndi10YXViYXRlLTIwMjItdGkvcTM3IiwibnVtYmVyIjoiMzciLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMzcsIHDDoWdpbmEgNzsgY29uZmVyw6puY2lhIHZpc3VhbCBkbyBjYWRlcm5vIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9mZ3YtdGF1YmF0ZS10aS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI1YzU1OTY1NTRhOGQ0MjIxZDY3ODc2MGMwNjU0MzVlNTIxZWE0Y2QwODU5NzJiMTlhODY1ZGEzMGRjOWI0ZTYwIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL3RlY25pY29fbGVnaXNsYXRpdm9fZGVfaW5mb3JtYXRpY2FfdGFyZGVlMXQyY25zMDJfdGlwb18xLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXBsaWNhw6fDo28gYXNzaXN0aWRhIGRhIGF2YWxpYcOnw6NvIGRvIHByb2pldG8gYSBzZWlzIHF1ZXN0w7VlcyBvZmljaWFpcyBhdXRvc3N1ZmljaWVudGVzIEZHViwgc2VtIG9icmFzIGRlIHRlcmNlaXJvcyBpbmNvcnBvcmFkYXMuIE7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIG91IHBhcmVjZXIganVyw61kaWNvIGluZGVwZW5kZW50ZS4gVmVyIHRhbWLDqW0gcmV1c2UtYXNzZXNzbWVudC5tZC4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWZndi1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZTU4ZDllODg3Mjk1YjQ0Y2NmOTgwZDYyNGQ2YTA4ZGNhMGY2ZTNiOWY0OTUzNmIyNGUxZTA4YWNkZmM0OGNhMyIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlTDqWNuaWNvIExlZ2lzbGF0aXZvIGRlIEluZm9ybcOhdGljYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyMn0sImlkIjoiZmd2LXRhdWJhdGUtcTM3Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1mZ3YtaXQtZm9ybWF0b3MiXSwicmVzb2x1dGlvbiI6IjEuIE8gQ1NWIHJlZ2lzdHJhIGRhZG9zIHRleHR1YWlzL3ZhbG9yZXMgZGEgcGxhbmlsaGEgZSBuw6NvIGEgZXN0cnV0dXJhIGNvbXBsZXRhIGRlIHVtYSBwYXN0YSAueGxzeDsgbmVzc2Ugc2FsdmFtZW50bywgbsOjbyBwcmVzZXJ2YSBmw7NybXVsYXMgY29tbyBmw7NybXVsYXMsIG1lc2NsYWdlbSBvdSBwcmVlbmNoaW1lbnRvLiBBIHNlcXXDqm5jaWEgw6kgQiwgY29uZm9ybWUgbyBkZWZpbml0aXZvLiAyLiBBcyBvdXRyYXMgc2VxdcOqbmNpYXMgYXRyaWJ1ZW0gYW8gQ1NWIHByZXNlcnZhw6fDo28gZGUgZsOzcm11bGFzLCBtZXNjbGFnZW0gb3UgY29yZXMgcXVlIG8gZm9ybWF0byBuw6NvIG9mZXJlY2UgbmVzc2UgZmx1eG8uIFJlYWJyaXIgbyBDU1Ygbm8gRXhjZWwgbsOjbyByZXN0YXVyYSBlc3NlcyByZWN1cnNvcyBkYSBwYXN0YSBvcmlnaW5hbC4gQSByZXNwb3N0YSBwcmVzc3Vww7VlIG8gZmx1eG8gZGUgc2FsdmFtZW50byBkZXNjcml0bywgc2VtIGV4cG9ydGFyIG1hbnVhbG1lbnRlIHRleHRvIGRlIGbDs3JtdWxhcy4iLCJzdGF0ZW1lbnQiOiJNYXJpYSBwcmVwYXJvdSB1bWEgcGxhbmlsaGEgbm8gTVMgRXhjZWwsIGNvbSBmw7NybXVsYXMsIG1lc2NsYWdlbSBkZSBjw6lsdWxhcyBlIHRyZWNob3MgZGVzdGFjYWRvcyBwb3IgcHJlZW5jaGltZW50b3MgY29sb3JpZG9zIGUgZ3Jhdm91IG8gYXJxdWl2byBjb21vIFBhc3RhIGRlIFRyYWJhbGhvIGRvIEV4Y2VsLCAueGxzeC4gRW0gc2VndWlkYSwgZ3Jhdm91IGEgbWVzbWEgcGxhbmlsaGEgY29tbyBDU1YgKHNlcGFyYWRvIHBvciB2w61yZ3VsYXMpLCAuY3N2LCBudW0gc2VndW5kbyBhcnF1aXZvLCBlIGZlY2hvdSBvIEV4Y2VsLlxuQXNzaW5hbGUgbyBxdWUgTWFyaWEgZW5jb250cm91IGNvbSByZWxhw6fDo28gw6BzIGbDs3JtdWxhcywgw6AgbWVzY2xhZ2VtIGRlIGPDqWx1bGFzIGUgw6AgY29sb3Jhw6fDo28gZGUgZnVuZG8sIG5lc3NhIG9yZGVtLCBxdWFuZG8gYWJyaXUgbyBzZWd1bmRvIGFycXVpdm8gcG9yIG1laW8gZG8gRXhjZWwuIiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtZmd2LWl0LWZvcm1hdG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBSZWN1cnNvcyBkbyBFeGNlbCBuw6NvIHRyYW5zZmVyaWRvcyBwYXJhIG91dHJvcyBmb3JtYXRvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2V4Y2VsLWZvcm1hdHRpbmctYW5kLWZlYXR1cmVzLXRoYXQtYXJlLW5vdC10cmFuc2ZlcnJlZC10by1vdGhlci1maWxlLWZvcm1hdHMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.hol26-cont-q21.json",
+        "mediaType": "application/json",
+        "sha256": "5cbf11ae5425cb14a370ba31e2ca7da65ab521be0741b7d26c3645a4ae794b00",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBxdWFudGlkYWRlIGRlIGNhc2FzIGRlY2ltYWlzIHBvZGUgc2VyIGFqdXN0YWRhIHBvciBtZWlvIGRhcyBvcMOnw7VlcyBkZSBmb3JtYXRhw6fDo28gbnVtw6lyaWNhIGRhIGPDqWx1bGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTyBFeGNlbCBwZXJtaXRlIGFsdGVyYXIgY2FzYXMgZGVjaW1haXMgYXBlbmFzIGVtIGPDqWx1bGFzIHF1ZSBjb250ZW5oYW0gZsOzcm11bGFzIG1hdGVtw6F0aWNhcy4ifSx7ImlkIjoiYyIsInRleHQiOiJBIGV4aWJpw6fDo28gZGUgY2FzYXMgZGVjaW1haXMgZGVwZW5kZSBleGNsdXNpdmFtZW50ZSBkbyB0YW1hbmhvIGRhIGNvbHVuYSB1dGlsaXphZGEgbmEgcGxhbmlsaGEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXDDs3MgaW5zZXJpciB1bSBuw7ptZXJvIGVtIHVtYSBjw6lsdWxhLCBuw6NvIMOpIHBvc3PDrXZlbCBtb2RpZmljYXIgc3VhIHF1YW50aWRhZGUgZGUgY2FzYXMgZGVjaW1haXMuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiTyBhanVzdGUgZGUgY2FzYXMgZGVjaW1haXMgYWx0ZXJhIGF1dG9tYXRpY2FtZW50ZSBvIGlkaW9tYSBjb25maWd1cmFkbyBubyBNaWNyb3NvZnQgRXhjZWwuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBDw6JtYXJhIE11bmljaXBhbCBkYSBFc3TDom5jaWEgVHVyw61zdGljYSBkZSBIb2xhbWJyYSDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNiwgQ29udGFkb3IsIHF1ZXN0w6NvIDIxLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bywgcMOhZ2luYSAxLCBxdWFkcm8gZG8gY2FyZ28gQ09OVEFET1I6IDIxPUE7IGNvbmZlcsOqbmNpYSB2aXN1YWwgbmEgcmVuZGVyaXphw6fDo28gZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzI1NS1nYWJhcml0by1kZWZpbml0aXZvLTEucGRmIiwic2hhMjU2IjoiNDljZWU1MWE5NzdkMTVlMTM2NDk1M2JiZmQ0Mjc3MDk1YzMwOWVjZWM0YzRmZjZlN2ZjNzcwMDBkZjFhYWU0MiIsInVybCI6Imh0dHBzOi8vYW5leG9zLXIyLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yNTUvYW5leG9zL2FjNzdkMGMwLWNmZWQtNDE5Yy05NGZiLTZjYjQ2MmYwMGM5My5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IkPDom1hcmEgTXVuaWNpcGFsIGRhIEVzdMOibmNpYSBUdXLDrXN0aWNhIGRlIEhvbGFtYnJhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI2IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtaG9sYW1icmEtMjAyNi1jb250YWRvci9xMjEiLCJudW1iZXIiOiIyMSIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAyMSwgcMOhZ2luYSBmw61zaWNhIDcgZG8gUERGOyBjYWRlcm5vIGRpZ2l0YWxpemFkbyAoc2VtIGNhbWFkYSBkZSB0ZXh0byksIGxpZG8gbmEgcmVuZGVyaXphw6fDo28gZGEgcMOhZ2luYTsgZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMgZSBvcmRlbSBjb25mZXJpZG9zIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yNTUtcHJvdmEtY29udGFkb3IucGRmIiwic2hhMjU2IjoiYzZkYmIwZDc1NWI4YTVkZTc3MGJkZGU1MjVhYzNlNGEzNzk2NzhlMTIzNGU0NDE2NWI1MTJiNzBlYzhlMzMxMSIsInVybCI6Imh0dHBzOi8vYW5leG9zLXIyLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yNTUvYW5leG9zL2NkZmE2OTBjLTJhOTUtNDE4NC1iMDZhLWY1NDNjNzYyZDY2MC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogYXJ0LiA4wrosIElWLCBkYSBMZWkgOS42MTAvMTk5OCwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBubyBwcm9qZXRvLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIGRlIHByb3ZhIHDDumJsaWNhLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBpbmNvcnBvcmFkYS4gTsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIGNvbnNlbnRpbWVudG8gYWZpcm1hZG87IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJDb250YWRvciIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoiaG9sMjYtY29udC1xMjEiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWNsYXVkZS1pdC1leGNlbC1kYWRvcyJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgYm90w7VlcyBBdW1lbnRhci9EaW1pbnVpciBDYXNhcyBEZWNpbWFpcyAoUMOhZ2luYSBJbmljaWFsID4gTsO6bWVybykgZSBhIGNhaXhhIEZvcm1hdGFyIEPDqWx1bGFzID4gTsO6bWVybyBjb250cm9sYW0gcXVhbnRhcyBjYXNhcyBzw6NvIGV4aWJpZGFzOyBhbHRlcm5hdGl2YSBBLiAyLiBPIGFqdXN0ZSB2YWxlIHBhcmEgY29uc3RhbnRlcyBlIGbDs3JtdWxhcyAoQik7IGEgbGFyZ3VyYSBkYSBjb2x1bmEgcG9kZSBhcnJlZG9uZGFyIGEgZXhpYmnDp8OjbywgbWFzIG7Do28gw6kgbyDDum5pY28gZmF0b3IgKEMpOyBhIGZvcm1hdGHDp8OjbyBwb2RlIHNlciBhbHRlcmFkYSBhIHF1YWxxdWVyIG1vbWVudG8gKEQpOyBmb3JtYXRvIG51bcOpcmljbyBuw6NvIG11ZGEgbyBpZGlvbWEgKEUpLiBHYWJhcml0byBkZWZpbml0aXZvOiBhbHRlcm5hdGl2YSBBLiIsInN0YXRlbWVudCI6IkFvIHRyYWJhbGhhciBjb20gcGxhbmlsaGFzIGVsZXRyw7RuaWNhcyBubyBNaWNyb3NvZnQgRXhjZWwsIGFsZ3VucyByZWN1cnNvcyBwZXJtaXRlbSBhanVzdGFyIGEgZm9ybWEgY29tbyBvcyBuw7ptZXJvcyBzw6NvIGV4aWJpZG9zIG5hcyBjw6lsdWxhcy5cblNvYnJlIGEgYWx0ZXJhw6fDo28gZGEgcXVhbnRpZGFkZSBkZSBjYXNhcyBkZWNpbWFpcyBubyBFeGNlbCwgYXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBjb3JyZXRhLiIsInRvcGljSWQiOiJJMDUifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWNsYXVkZS1pdC1leGNlbC1kYWRvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgSW5zZXJpciBlIGZvcm1hdGFyIGRhZG9zIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZW50ZXItYW5kLWZvcm1hdC1kYXRhIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-aba-nome-invalido.json",
+        "mediaType": "application/json",
+        "sha256": "9ab6066115893206a88676b941e1f39b6478559dd6f76126a813473d9e0b0276",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUmVsYXTDs3Jpby8yMDI2LiJ9LHsiaWQiOiJiIiwidGV4dCI6IlJlbGF0w7NyaW86MjAyNi4ifSx7ImlkIjoiYyIsInRleHQiOiJSZWxhdMOzcmlvWzIwMjZdLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlJlbGF0w7NyaW8tMjAyNi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1hYmEtbm9tZS1pbnZhbGlkbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWFiYS1leGNlbCJdLCJyZXNvbHV0aW9uIjoiMS4gSMOtZmVuIMOpIHBlcm1pdGlkbyBuZXNzZSBub21lOyBiYXJyYSwgZG9pcy1wb250b3MgZSBjb2xjaGV0ZXMgZXN0w6NvIGVudHJlIG9zIGNhcmFjdGVyZXMgdmVkYWRvcy4gMi4gT3MgdHLDqnMgbm9tZXMgY29tIGNhcmFjdGVyZXMgcmVzZXJ2YWRvcyBuw6NvIHPDo28gdsOhbGlkb3MgcGFyYSBhIGFiYS4iLCJzdGF0ZW1lbnQiOiJRdWFsIG5vbWUgcG9kZSBzZXIgdXNhZG8gZW0gdW1hIGFiYSBkbyBFeGNlbCwgcmVzcGVpdGFuZG8gYXMgcmVncmFzIGRvY3VtZW50YWRhcyBwYXJhIGNhcmFjdGVyZXM/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hYmEtZXhjZWwiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFJlbm9tZWFyIHVtYSBwbGFuaWxoYSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL3JlbmFtZS1hLXdvcmtzaGVldCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-colar-formatos.json",
+        "mediaType": "application/json",
+        "sha256": "ed46010014bd1a51f483334cd1548713987bd603c0cc5bb14114b3a63aeb76bd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29sYXIgdsOtbmN1bG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQ29sYXIgc29tZW50ZSBGb3JtYXRhw6fDo28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ29sYXIgVmFsb3Jlcy4ifSx7ImlkIjoiZCIsInRleHQiOiJDb2xhciBGw7NybXVsYXMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtY29sYXItZm9ybWF0b3MiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jb2xhciJdLCJyZXNvbHV0aW9uIjoiMS4gQSBjb2xhZ2VtIGRlIGZvcm1hdGHDp8OjbyBhbHRlcmEgYSBhcGFyw6puY2lhLCBwcmVzZXJ2YW5kbyBvIGNvbnRlw7pkbyBleGlzdGVudGUuIDIuIFZhbG9yZXMgc3Vic3RpdHVpIGRhZG9zLCBGw7NybXVsYXMgcG9kZSBzdWJzdGl0dWlyIG8gY8OhbGN1bG8gZSB2w61uY3VsbyBjcmlhIHJlZmVyw6puY2lhOyBuw6NvIHPDo28gY29sYWdlbSBleGNsdXNpdmEgZGUgYXBhcsOqbmNpYS4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCwgYSBjw6lsdWxhIGRlIGRlc3Rpbm8gasOhIHRlbSB1bSBuw7ptZXJvIGNvcnJldG8uIMOJIG5lY2Vzc8OhcmlvIGFwbGljYXIgc29tZW50ZSBhIGFwYXLDqm5jaWEgZGUgb3V0cmEgY8OpbHVsYSwgc2VtIHRyb2NhciBvIG7Dum1lcm8gb3UgY3JpYXIgdW1hIGbDs3JtdWxhLiBRdWFsIG9ww6fDo28gw6kgYWRlcXVhZGE/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jb2xhciI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgT3DDp8O1ZXMgZGUgQ29sYWdlbSBubyBFeGNlbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL3Bhc3RlLW9wdGlvbnMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-colar-resultados.json",
+        "mediaType": "application/json",
+        "sha256": "dbc6dec66d6e3e22bcb846b0fdcb2fdda14249c4452c2820ebe9bb7831f3c618",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRsOzcm11bGFzLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkNvbGFyIHbDrW5jdWxvLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlNvbWVudGUgZm9ybWF0YcOnw6NvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlZhbG9yZXMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtY29sYXItcmVzdWx0YWRvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvbGFyIl0sInJlc29sdXRpb24iOiIxLiBDb2xhciBWYWxvcmVzIGluc2VyZSBvcyByZXN1bHRhZG9zIGVtIHZleiBkYXMgZsOzcm11bGFzIGRlIG9yaWdlbS4gMi4gRsOzcm11bGFzIHByZXNlcnZhIG9zIGPDoWxjdWxvcywgdsOtbmN1bG8gbWFudMOpbSByZWZlcsOqbmNpYSDDoCBvcmlnZW0gZSBmb3JtYXRhw6fDo28gbsOjbyBsZXZhIG9zIG7Dum1lcm9zLiIsInN0YXRlbWVudCI6IlVtYSBwbGFuaWxoYSBFeGNlbCBjb250w6ltIGbDs3JtdWxhcyBqw6EgY2FsY3VsYWRhcywgbWFzIG8gZGVzdGluYXTDoXJpbyBkZXZlIHJlY2ViZXIgbmFzIGPDqWx1bGFzIGFwZW5hcyBzZXVzIHJlc3VsdGFkb3MgbnVtw6lyaWNvcy4gUXVhbCBvcMOnw6NvIGRlIGNvbGFnZW0gYXRlbmRlIGFvIHBlZGlkbz8iLCJ0b3BpY0lkIjoiSTA1In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvbGFyIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBPcMOnw7VlcyBkZSBDb2xhZ2VtIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvcGFzdGUtb3B0aW9ucyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-colar-vinculo.json",
+        "mediaType": "application/json",
+        "sha256": "9005cd1c68a9b213178b3254b5cb762c06faabf3cbb083691d7531374518bf7b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29sYXIgY29tbyBpbWFnZW0gbsOjbyB2aW5jdWxhZGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQ29sYXIgdsOtbmN1bG8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ29sYXIgc29tZW50ZSB2YWxvcmVzLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkNvbGFyIGFwZW5hcyBsYXJndXJhIGRhIGNvbHVuYS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1jb2xhci12aW5jdWxvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29sYXIiXSwicmVzb2x1dGlvbiI6IjEuIENvbGFyIHbDrW5jdWxvIGluc2VyZSByZWZlcsOqbmNpYXMgw6BzIGPDqWx1bGFzIGRlIG9yaWdlbS4gMi4gVmFsb3JlcyDDqSBlc3TDoXRpY287IGxhcmd1cmEgbsOjbyBsZXZhIG8gY29udGXDumRvIGUgaW1hZ2VtIG7Do28gdmluY3VsYWRhIG7Do28gYWNvbXBhbmhhIGEgb3JpZ2VtLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsLCB1bWEgw6FyZWEgZGUgZGVzdGlubyBkZXZlIHJlZmVyZW5jaWFyIGPDqWx1bGFzIGRlIG9yaWdlbSwgZW0gdmV6IGRlIHJlY2ViZXIgdW1hIGPDs3BpYSBlc3TDoXRpY2EgZGUgc2V1cyB2YWxvcmVzLiBRdWFsIG9ww6fDo28gZGUgY29sYWdlbSB0ZW0gZXNzYSBmaW5hbGlkYWRlPyIsInRvcGljSWQiOiJJMDUifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29sYXIiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIE9ww6fDtWVzIGRlIENvbGFnZW0gbm8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9wYXN0ZS1vcHRpb25zIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-descongelar.json",
+        "mediaType": "application/json",
+        "sha256": "ef50a2acb817c2a9d45fc9719a4126559270a20cefd5b9354257fcb94bbc914a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVHJvY2FyIGbDs3JtdWxhcyBwb3IgdGV4dG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiRGVzY29uZ2VsYXIgUGFpbsOpaXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiRXhjbHVpciBvcyBjYWJlw6dhbGhvcy4ifSx7ImlkIjoiZCIsInRleHQiOiJBcGFnYXIgYSBwbGFuaWxoYS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1kZXNjb25nZWxhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvbmdlbGFyIl0sInJlc29sdXRpb24iOiIxLiBPIGNvbWFuZG8gcmVtb3ZlIGEgY29uZmlndXJhw6fDo28gZGUgY29uZ2VsYW1lbnRvIHNlbSBleGlnaXIgbW9kaWZpY2FyIG8gY29udGXDumRvLiAyLiBFeGNsdWlyIHTDrXR1bG9zIG91IHBsYW5pbGhhIGUgY29udmVydGVyIGbDs3JtdWxhcyBzw6NvIGFsdGVyYcOnw7VlcyBkZXNuZWNlc3PDoXJpYXMgZG9zIGRhZG9zLiIsInN0YXRlbWVudCI6IkFww7NzIHVtYSByZXZpc8OjbyBubyBFeGNlbCwgb3MgY2FiZcOnYWxob3MgbsOjbyBwcmVjaXNhbSBtYWlzIGZpY2FyIGZpeG9zIGR1cmFudGUgYSByb2xhZ2VtLiBRdWFsIGNvbWFuZG8gZGVzZmF6IGVzc2EgY29uZmlndXJhw6fDo28/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jb25nZWxhciI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQ29uZ2VsYXIgcGFpbsOpaXMgcGFyYSBibG9xdWVhciBsaW5oYXMgZSBjb2x1bmFzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZ2V0LXN0YXJ0ZWQvZnJlZXplLXBhbmVzLXRvLWxvY2stcm93cy1hbmQtY29sdW1ucyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-dividir-celula-excel.json",
+        "mediaType": "application/json",
+        "sha256": "9c8f71867304b195d9884dd1abcbdf9bb85c3f004cdfa77b9d89905ebcfc07b7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBkaXZpc8OjbyBleGlnZSByZW5vbWVhciBhIGFiYSBwYXJhIFdvcmQuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQSBjw6lsdWxhIMOpIHVuaWRhZGUgZGEgZ3JhZGU7IHBvZGUtc2Ugc2VwYXJhciBvIGNvbnRlw7pkbyBlbSBjw6lsdWxhcyBhZGphY2VudGVzLCBtYXMgbsOjbyBkaXZpZGlyIHN1YSBlc3RydXR1cmEgZGVzc2EgZm9ybWEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUXVhbHF1ZXIgY8OpbHVsYSBwb2RlIHNlciBjb3J0YWRhIGxpdnJlbWVudGUgZW0gY2luY28gc3ViY8OpbHVsYXMgY29tIG5vdm9zIGVuZGVyZcOnb3MgaW5kZXBlbmRlbnRlcy4ifSx7ImlkIjoiZCIsInRleHQiOiJTw7Mgw6kgbmVjZXNzw6FyaW8gbXVkYXIgYSBjb3IgZGEgYm9yZGEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtZGl2aWRpci1jZWx1bGEtZXhjZWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1kaXZpZGlyLWV4Y2VsIl0sInJlc29sdXRpb24iOiIxLiBPIEV4Y2VsIGRpc3Rpbmd1ZSBhIGdyYWRlIGRlIGPDqWx1bGFzIGRhIGRpdmlzw6NvIGRlIHRleHRvIG91IGluc2Vyw6fDo28gZGUgbGluaGFzIGUgY29sdW5hcy4gMi4gQ29yIGUgbm9tZSBkZSBhYmEgbsOjbyBjcmlhbSBzdWJjw6lsdWxhczsgbsOjbyBow6EgZXNzZSBjb3J0ZSBsaXZyZSBkZSB1bWEgY8OpbHVsYSBuw6NvIG1lc2NsYWRhLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsLCB1bWEgw7puaWNhIGPDqWx1bGEgbsOjbyBtZXNjbGFkYSBkZXZlIHNlciBjb3J0YWRhIGZpc2ljYW1lbnRlIGVtIGR1YXMgY8OpbHVsYXMgbWVub3JlcywgY29tbyBudW1hIHRhYmVsYSBXb3JkLiBRdWFsIGxpbWl0ZSBleGlzdGU/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1kaXZpZGlyLWV4Y2VsIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBEaXZpZGlyIHVtYSBjw6lsdWxhIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvc3BsaXQtYS1jZWxsLWluLWV4Y2VsIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-dividir-paineis.json",
+        "mediaType": "application/json",
+        "sha256": "20184fc65ec21bb8d7daef67ea0e3e53cad3dfd19a8792da85cdc9fb5700d8e4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQXBlbmFzIHJlbm9tZWFyIGEgcGxhbmlsaGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTWVzY2xhciB0b2RhcyBhcyBjw6lsdWxhcy4ifSx7ImlkIjoiYyIsInRleHQiOiJFeGNsdWlyIGEgcHJpbWVpcmEgbGluaGEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRGl2aWRpciBwYWluw6lpcy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1kaXZpZGlyLXBhaW5laXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jb25nZWxhciIsImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZXhjZWwtZGFkb3MiXSwicmVzb2x1dGlvbiI6IjEuIEEgZGl2aXPDo28gY3JpYSDDoXJlYXMgZGUgdmlzdWFsaXphw6fDo28gc2VwYXJhZGFzIGRhIG1lc21hIHBsYW5pbGhhLiAyLiBSZW5vbWVhw6fDo28sIG1lc2NsYWdlbSBvdSBleGNsdXPDo28gbsOjbyBjcmlhbSBwYWluw6lpcyBkZSBjb21wYXJhw6fDo28uIiwic3RhdGVtZW50IjoiTm8gRXhjZWwsIHVtYSBwZXNzb2EgcXVlciByb2xhciBkdWFzIMOhcmVhcyBkYSBtZXNtYSBwbGFuaWxoYSBlbSBwYWluw6lpcyBzZXBhcmFkb3MgcGFyYSBjb21wYXJhciBwYXJ0ZXMgZGlzdGFudGVzLiBRdWFsIHJlY3Vyc28gw6kgcGVydGluZW50ZT8iLCJ0b3BpY0lkIjoiSTA1In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvbmdlbGFyIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBDb25nZWxhciBwYWluw6lpcyBwYXJhIGJsb3F1ZWFyIGxpbmhhcyBlIGNvbHVuYXMiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9nZXQtc3RhcnRlZC9mcmVlemUtcGFuZXMtdG8tbG9jay1yb3dzLWFuZC1jb2x1bW5zIn0sImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZXhjZWwtZGFkb3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEluc2VyaXIgZSBmb3JtYXRhciBkYWRvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2VudGVyLWFuZC1mb3JtYXQtZGF0YSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-editar-bloqueada.json",
+        "mediaType": "application/json",
+        "sha256": "17f335190988e1b73203d93f91aed94d1efb7984cfa1bfdfba6fafc49c3cd879",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2VsZWNpb25hciBxdWFscXVlciBjw6lsdWxhIGdhcmFudGUgcGVybWlzc8OjbyBwYXJhIGdyYXZhciBuZWxhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkEgcGxhbmlsaGEgZXN0w6Egbm8gbW9kbyBkZSBleGliacOnw6NvIExheW91dCBkYSBQw6FnaW5hLCBxdWUgaW1wZWRlIGEgZGlnaXRhw6fDo28gZW0gY8OpbHVsYXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQSBjw6lsdWxhIGNvbnTDqW0gdW1hIGbDs3JtdWxhLCBlIGPDqWx1bGFzIGNvbSBmw7NybXVsYSBudW5jYSBwb2RlbSBzZXIgZWRpdGFkYXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQSBjw6lsdWxhIHBvZGUgZXN0YXIgYmxvcXVlYWRhIHBlbGEgcHJvdGXDp8OjbyBkYSBwbGFuaWxoYS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1lZGl0YXItYmxvcXVlYWRhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbInJldmlld3MtcjEtcnYtZDg3ODhkMzJiNyJdLCJyZXNvbHV0aW9uIjoiMS4gQ29tIGEgcGxhbmlsaGEgcHJvdGVnaWRhLCBjw6lsdWxhcyBibG9xdWVhZGFzIHBvZGVtIGNvbnRpbnVhciBzZWxlY2lvbsOhdmVpcywgbWFzIG7Do28gcG9kZW0gc2VyIG1vZGlmaWNhZGFzOyBhbHRlcm5hdGl2YSBELiAyLiBBIGVycmEgcG9ycXVlIHNlbGXDp8OjbyBuw6NvIGVxdWl2YWxlIGEgYXV0b3JpemHDp8OjbyBkZSBlZGnDp8OjbzsgQiBlcnJhIHBvcnF1ZSBvIG1vZG8gTGF5b3V0IGRhIFDDoWdpbmEgcGVybWl0ZSBlZGl0YXIgY8OpbHVsYXM7IEMgZXJyYSBwb3JxdWUgY8OpbHVsYXMgY29tIGbDs3JtdWxhIHBvZGVtIHNlciBlZGl0YWRhcyBxdWFuZG8gbsOjbyBlc3TDo28gYmxvcXVlYWRhcyBwb3IgcHJvdGXDp8Ojby4iLCJzdGF0ZW1lbnQiOiJVbWEgY8OpbHVsYSBkZSB1bWEgcGxhbmlsaGEgcHJvdGVnaWRhIGRvIEV4Y2VsIHBvZGUgc2VyIHNlbGVjaW9uYWRhLCBtYXMgbsOjbyBlZGl0YWRhLiBRdWFsIGV4cGxpY2HDp8OjbyDDqSBjb21wYXTDrXZlbCBjb20gYSBkb2N1bWVudGHDp8Ojbz8iLCJ0b3BpY0lkIjoiSTA1In0sInN0dWR5U291cmNlcyI6eyJyZXZpZXdzLXIxLXJ2LWQ4Nzg4ZDMyYjciOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFByb3RlZ2VyIHVtYSBwbGFuaWxoYSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL29mZmljZS9wcm90ZWdlci11bWEtcGxhbmlsaGEtMzE3OWVmZGItMTI4NS00ZDQ5LWE5YzMtZjRjYTM2Mjc2ZGU2In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-entrada-multiplas-abas.json",
+        "mediaType": "application/json",
+        "sha256": "521f930adde0ab2b82fe6283c831f6d0901802766cf256dc554f5f10b20280ef",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2FsdmFyIHNvbWVudGUgdW1hIGNhcHR1cmEgZGUgdGVsYS4ifSx7ImlkIjoiYiIsInRleHQiOiJEZXNhZ3J1cGFyIGFzIHBsYW5pbGhhcyBlIGNvbmZlcmlyIGEgYWJhIGF0aXZhLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik11ZGFyIGFwZW5hcyBvIHRhbWFuaG8gZGEgZm9udGUuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUHJlc3VtaXIgcXVlIGFncnVwYW1lbnRvIG51bmNhIGluZmx1ZW5jaWEgZW50cmFkYXMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtZW50cmFkYS1tdWx0aXBsYXMtYWJhcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWVudHJhZGEtZXhjZWwiXSwicmVzb2x1dGlvbiI6IjEuIEEgZW50cmFkYSBlbSBwbGFuaWxoYXMgYWdydXBhZGFzIHBvZGUgYWxjYW7Dp2FyIG1haXMgZGUgdW1hIGFiYS4gMi4gRm9ybWF0YcOnw6NvIHZpc3VhbCBlIGNhcHR1cmEgbsOjbyByZXRpcmFtIG8gYWdydXBhbWVudG87IGVsZSBuw6NvIGRldmUgc2VyIGlnbm9yYWRvLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsLCB2w6FyaWFzIGFiYXMgZm9yYW0gYWdydXBhZGFzIGR1cmFudGUgdW1hIGVkacOnw6NvLiBBbnRlcyBkZSBkaWdpdGFyIGFsZ28gcXVlIGRldmUgYWx0ZXJhciBhcGVuYXMgdW1hIHBsYW5pbGhhLCBxdWFsIGN1aWRhZG8gw6kgcGVydGluZW50ZT8iLCJ0b3BpY0lkIjoiSTA1In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWVudHJhZGEtZXhjZWwiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEluc2VyaXIgZGFkb3MgbWFudWFsbWVudGUgZW0gY8OpbHVsYXMiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9lbnRlci1kYXRhLW1hbnVhbGx5LWluLXdvcmtzaGVldC1jZWxscyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-formatacao-insercao.json",
+        "mediaType": "application/json",
+        "sha256": "4f9d89e89ab066119336bebf79e19b51b49a43d8ec78d030dec5ed74b60b2bb9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ2VudHJhbCBkZSBTZWd1cmFuw6dhIGRlIE1hY3Jvcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBcGVuYXMgQ29uZ2VsYXIgUGFpbsOpaXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQXBlbmFzIFJlbm9tZWFyIFBsYW5pbGhhLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik9ww6fDtWVzIGRlIEluc2Vyw6fDo28gZXhpYmlkYXMgYXDDs3MgYSBvcGVyYcOnw6NvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWZvcm1hdGFjYW8taW5zZXJjYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1pbnNlcmlyLWV4Y2VsIl0sInJlc29sdXRpb24iOiIxLiBPIEV4Y2VsIHBvZGUgaGVyZGFyIGZvcm1hdGHDp8OjbyBhZGphY2VudGUgZSBvZmVyZWNlIG9ww6fDtWVzIGFww7NzIGEgaW5zZXLDp8OjbyBwYXJhIGFsdGVyw6EtbGEuIDIuIE1hY3JvcywgY29uZ2VsYW1lbnRvIGUgbm9tZSBkYSBwbGFuaWxoYSBuw6NvIHPDo28gZXNzZSBjb250cm9sZSBkZSBoZXJhbsOnYSBkZSBmb3JtYXRhw6fDo28uIiwic3RhdGVtZW50IjoiQXDDs3MgaW5zZXJpciB1bWEgY29sdW5hIG5vIEV4Y2VsLCBlbGEgcmVjZWJldSBhIGFwYXLDqm5jaWEgZGEgY29sdW5hIHZpemluaGEuIFF1YWwgcmVjdXJzbyBkb2N1bWVudGFkbyBwZXJtaXRlIGVzY29saGVyIG91dHJhIG9yaWdlbSBkZSBmb3JtYXRhw6fDo28/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1pbnNlcmlyLWV4Y2VsIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBJbnNlcmlyIG91IGV4Y2x1aXIgbGluaGFzIGUgY29sdW5hcyBubyBFeGNlbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2dldC1zdGFydGVkL2luc2VydC1vci1kZWxldGUtcm93cy1hbmQtY29sdW1ucy1pbi1leGNlbCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-formato-nao-valor.json",
+        "mediaType": "application/json",
+        "sha256": "40e4b21f711c505ec64612a47f1d9ecd7050cbd1c770eb9cff84664cf2205b60",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyB2YWxvciBhcm1hemVuYWRvIHBhc3NhIG9icmlnYXRvcmlhbWVudGUgYSAyNS4ifSx7ImlkIjoiYiIsInRleHQiOiJPIG7Dum1lcm8gdmlyYSBhdXRvbWF0aWNhbWVudGUgdGV4dG8gc2VtIHBvc3NpYmlsaWRhZGUgZGUgY8OhbGN1bG8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTyB2YWxvciBhcm1hemVuYWRvIHBhc3NhIGEgMCwwMDI1LCBwb2lzIG8gZm9ybWF0byBkaXZpZGUgbyBuw7ptZXJvIHBvciAxMDAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQSBhcHJlc2VudGHDp8OjbyBwb2RlIG1vc3RyYXIgMjUlLCBtYW50ZW5kbyBvIHZhbG9yIG51bcOpcmljbyBlcXVpdmFsZW50ZSBhIDAsMjUuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtZm9ybWF0by1uYW8tdmFsb3IiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsicmV2aWV3cy1yMy1ydjMtM2E2NTI1NzlhZCJdLCJyZXNvbHV0aW9uIjoiMS4gTyBmb3JtYXRvIFBvcmNlbnRhZ2VtIGFsdGVyYSBhcGVuYXMgYSBleGliacOnw6NvOiAwLDI1IGFwYXJlY2UgY29tbyAyNSUsIGUgbyB2YWxvciB1c2FkbyBub3MgY8OhbGN1bG9zIGNvbnRpbnVhIDAsMjU7IGFsdGVybmF0aXZhIEQuIDIuIEEgZSBDIGVycmFtIHBvcnF1ZSBhcGxpY2FyIGZvcm1hdG8gbsOjbyBhbHRlcmEgbyB2YWxvciBhcm1hemVuYWRvIChuZW0gcGFyYSAyNSBuZW0gcGFyYSAwLDAwMjUpOyBCIGVycmEgcG9ycXVlIG8gbsO6bWVybyBjb250aW51YSBudW3DqXJpY28gZSBwb2RlIHNlciB1c2FkbyBlbSBjw6FsY3Vsb3MuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwsIGEgY8OpbHVsYSBjb250w6ltIDAsMjUgZSByZWNlYmUgbyBmb3JtYXRvIFBvcmNlbnRhZ2VtLCBzZW0gYWx0ZXJhw6fDo28gZG8gdmFsb3IuIENvbW8gZGV2ZSBzZXIgaW50ZXJwcmV0YWRvIG8gZGFkbz8iLCJ0b3BpY0lkIjoiSTA1In0sInN0dWR5U291cmNlcyI6eyJyZXZpZXdzLXIzLXJ2My0zYTY1MjU3OWFkIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IFN1cG9ydGUg4oCUIEZvcm1hdG9zIGRlIG7Dum1lcm8gZGlzcG9uw612ZWlzIG5vIEV4Y2VsIChpbnRyb2R1w6fDo28gZSBmb3JtYXRvIFBvcmNlbnRhZ2VtKSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL29mZmljZS9mb3JtYXRvcy1kZS1uJUMzJUJBbWVyby1kaXNwb24lQzMlQUR2ZWlzLW5vLWV4Y2VsLTBhZmU4ZjUyLTk3ZGItNDFmMS1iOTcyLTRiNDZlOWYxZThkMiJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-formula-aspas-aba.json",
+        "mediaType": "application/json",
+        "sha256": "56b631e53ca15a413ccede4d78f371cae7cbc9a15305cb17bd098813a57f483e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiPURhZG9zIEdlcmFpczpBMSJ9LHsiaWQiOiJiIiwidGV4dCI6Ij1BMSFEYWRvcyBHZXJhaXMifSx7ImlkIjoiYyIsInRleHQiOiI9RGFkb3MvR2VyYWlzL0ExIn0seyJpZCI6ImQiLCJ0ZXh0IjoiPSdEYWRvcyBHZXJhaXMnIUExIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtZm9ybXVsYS1hc3Bhcy1hYmEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mb3JtdWxhcyJdLCJyZXNvbHV0aW9uIjoiMS4gTyBub21lIGRhIHBsYW5pbGhhIHZlbSBhbnRlcyBkZSAhOyBub21lcyBjb20gZXNwYcOnb3Mgc8OjbyBkZWxpbWl0YWRvcyBwb3IgYXDDs3N0cm9mb3MuIDIuIERvaXMtcG9udG9zIMOpIG9wZXJhZG9yIGRlIGludGVydmFsbywgYSBvcmRlbSBuw6NvIMOpIGludmVydGlkYSBlIGJhcnJhcyBuw6NvIGZvcm1hbSBlc3NhIHJlZmVyw6puY2lhIGRlIGFiYS4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCBlbSBlc3RpbG8gQTEsIHF1YWwgZsOzcm11bGEgcmVmZXJlbmNpYSBBMSBkZSB1bWEgYWJhIGNoYW1hZGEgRGFkb3MgR2VyYWlzIG5hIG1lc21hIHBhc3RhIGRlIHRyYWJhbGhvPyIsInRvcGljSWQiOiJJMDUifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZm9ybXVsYXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFZpc8OjbyBnZXJhbCBkZSBmw7NybXVsYXMgbm8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9nZXQtc3RhcnRlZC9vdmVydmlldy1vZi1mb3JtdWxhcy1pbi1leGNlbCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-imagem-vinculada.json",
+        "mediaType": "application/json",
+        "sha256": "301c16559a205b36f7366ec4032a7642f29970f24553fca69f541f81098e2c91",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTGFyZ3VyYSBkYSBjb2x1bmEgb3JpZ2luYWwuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiSW1hZ2VtIFZpbmN1bGFkYS4ifSx7ImlkIjoiYyIsInRleHQiOiJJbWFnZW0gZXN0w6F0aWNhIGNvbXVtLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlNvbWVudGUgZm9ybWF0YcOnw6NvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWltYWdlbS12aW5jdWxhZGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jb2xhciJdLCJyZXNvbHV0aW9uIjoiMS4gQSBpbWFnZW0gdmluY3VsYWRhIG1hbnTDqW0gdW0gdsOtbmN1bG8gY29tIGFzIGPDqWx1bGFzIHVzYWRhcyBjb21vIG9yaWdlbS4gMi4gSW1hZ2VtIGVzdMOhdGljYSBuw6NvIG9mZXJlY2UgZXNzYSBhdHVhbGl6YcOnw6NvLCBlIGFzIG91dHJhcyBvcMOnw7VlcyBuw6NvIGNyaWFtIGltYWdlbSBsaWdhZGEgYW9zIGRhZG9zLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsLCB1bWEgaW1hZ2VtIGluc2VyaWRhIHBvciBjb2xhZ2VtIGRldmUgcmVmbGV0aXIgYWx0ZXJhw6fDtWVzIG5hcyBjw6lsdWxhcyBkZSBvcmlnZW0uIFF1YWwgb3DDp8OjbyBvZmVyZWNlIGVzc2EgdmluY3VsYcOnw6NvPyIsInRvcGljSWQiOiJJMDUifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29sYXIiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIE9ww6fDtWVzIGRlIENvbGFnZW0gbm8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9wYXN0ZS1vcHRpb25zIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-inserir-celulas-deslocar.json",
+        "mediaType": "application/json",
+        "sha256": "fe29fd91d72754c26382bf6a83f7f616b0ab08d211412dbd5e4cae939a5e0688",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSW5zZXJpciBvYnJpZ2F0b3JpYW1lbnRlIHVtYSBwbGFuaWxoYSBpbnRlaXJhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFwbGljYXIgc29tZW50ZSBmb250ZSBlbSBuZWdyaXRvLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik9jdWx0YXIgdG9kYXMgYXMgbGluaGFzIGV4aXN0ZW50ZXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiSW5zZXJpciBjw6lsdWxhcyBjb20gZGVzbG9jYW1lbnRvIHBhcmEgYSBkaXJlaXRhLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWluc2VyaXItY2VsdWxhcy1kZXNsb2NhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWluc2VyaXItZXhjZWwiXSwicmVzb2x1dGlvbiI6IjEuIEluc2VyaXIgY8OpbHVsYXMgcGVybWl0ZSBlc2NvbGhlciBvIGRlc2xvY2FtZW50byBkYXMgdml6aW5oYXMgc2VtIGV4aWdpciB1bWEgY29sdW5hIGludGVpcmEuIDIuIE5vdmEgcGxhbmlsaGEsIG5lZ3JpdG8gZSBvY3VsdGHDp8OjbyBuw6NvIGluc2VyZW0gbyBlc3Bhw6dvIGVzdHJ1dHVyYWwgc29saWNpdGFkby4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCwgbm92b3MgY2FtcG9zIHByZWNpc2FtIGVudHJhciBlbSBhcGVuYXMgcGFydGUgZGUgdW1hIGxpbmhhLCBkZXNsb2NhbmRvIHBhcmEgYSBkaXJlaXRhIGFzIGPDqWx1bGFzIGRhcXVlbGUgdHJlY2hvLiBRdWFsIGVzY29saGEgw6kgcGVydGluZW50ZT8iLCJ0b3BpY0lkIjoiSTA1In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWluc2VyaXItZXhjZWwiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEluc2VyaXIgb3UgZXhjbHVpciBsaW5oYXMgZSBjb2x1bmFzIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZ2V0LXN0YXJ0ZWQvaW5zZXJ0LW9yLWRlbGV0ZS1yb3dzLWFuZC1jb2x1bW5zLWluLWV4Y2VsIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-intervalo-coluna-inteira.json",
+        "mediaType": "application/json",
+        "sha256": "8ba3ab3327127bc1b783cc1bbc01f7484c2093c3717df79805235c7b1bcba4f8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU29tZW50ZSBhIGPDqWx1bGEgQjEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU29tZW50ZSBhIGxpbmhhIDIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVG9kYXMgYXMgYWJhcyBjdWpvIG5vbWUgY29tZcOnYSBwb3IgQi4ifSx7ImlkIjoiZCIsInRleHQiOiJUb2RhIGEgY29sdW5hIEIuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtaW50ZXJ2YWxvLWNvbHVuYS1pbnRlaXJhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZm9ybXVsYXMiXSwicmVzb2x1dGlvbiI6IjEuIEEgbm90YcOnw6NvIGNvbSBhIG1lc21hIGxldHJhIG5vcyBleHRyZW1vcyByZWZlcmUtc2Ugw6AgY29sdW5hIGludGVpcmEuIDIuIE7Do28gbGltaXRhIGEgcHJpbWVpcmEgY8OpbHVsYSBuZW0gc2VsZWNpb25hIGxpbmhhIG91IGFiYS4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCBlbSBlc3RpbG8gQTEsIG8gcXVlIHNpZ25pZmljYSBhIHJlZmVyw6puY2lhIEI6QiBlbSB1bWEgZsOzcm11bGE/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mb3JtdWxhcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgVmlzw6NvIGdlcmFsIGRlIGbDs3JtdWxhcyBubyBFeGNlbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2dldC1zdGFydGVkL292ZXJ2aWV3LW9mLWZvcm11bGFzLWluLWV4Y2VsIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-largura-altura.json",
+        "mediaType": "application/json",
+        "sha256": "e215460921e78036339e7d986c0d55fde8e624216c82326aee1fdab692769db3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhjbHVpciBvIGFycXVpdm8gZGUgb3JpZ2VtLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFqdXN0YXIgYSBsYXJndXJhIGRhIGNvbHVuYS4ifSx7ImlkIjoiYyIsInRleHQiOiJNdWRhciBzb21lbnRlIG8gbm9tZSBkYSBhYmEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXBsaWNhciB1bSBzb20gw6AgcGFzdGEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtbGFyZ3VyYS1hbHR1cmEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leGNlbC1kYWRvcyJdLCJyZXNvbHV0aW9uIjoiMS4gQSBsYXJndXJhIGNvbnRyb2xhIG8gZXNwYcOnbyBob3Jpem9udGFsIGRpc3BvbsOtdmVsIG5hIGNvbHVuYS4gMi4gTm9tZSwgc29tIGUgZXhjbHVzw6NvIG7Do28gYW1wbGlhbSBlc3NlIGVzcGHDp28uIENvbmZvcm1lIGEgbmVjZXNzaWRhZGUsIHRhbWLDqW0gc2UgcG9kZSBjb25zaWRlcmFyIHF1ZWJyYSBkZSB0ZXh0byBvdSBhbHR1cmEgZGUgbGluaGEuIiwic3RhdGVtZW50IjoiTmEgcGxhbmlsaGEgRXhjZWwsIGEgY29sdW5hIGVzdMOhIGVzdHJlaXRhIGUgbyB0ZXh0byBuw6NvIGFwYXJlY2UgaW50ZWdyYWxtZW50ZS4gUXVhbCBhanVzdGUgZGUgZXN0cnV0dXJhIGRhIGdyYWRlIMOpIHBlcnRpbmVudGU/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leGNlbC1kYWRvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgSW5zZXJpciBlIGZvcm1hdGFyIGRhZG9zIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZW50ZXItYW5kLWZvcm1hdC1kYXRhIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-operador-intervalo.json",
+        "mediaType": "application/json",
+        "sha256": "33ed4673d6ab7352d3d3e198d3db4c21ca42fe9026a79ba22e79527307d426bc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhjbHVpciBhcyBjw6lsdWxhcyBpbnRlcm1lZGnDoXJpYXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiSW5kaWNhciBvIGludGVydmFsbyByZXRhbmd1bGFyIGluY2x1c2l2byBkZSBBMSBhdMOpIEMzLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik11bHRpcGxpY2FyIHNvbWVudGUgb3MgdmFsb3JlcyBkZSBBMSBlIEMzLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlJlbm9tZWFyIGEgcGxhbmlsaGEgY29tbyBBMUMzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LW9wZXJhZG9yLWludGVydmFsbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZvcm11bGFzIl0sInJlc29sdXRpb24iOiIxLiBEb2lzLXBvbnRvcyDDqSBvcGVyYWRvciBkZSByZWZlcsOqbmNpYSBkZSBpbnRlcnZhbG8gZSBpbmNsdWkgYXMgY8OpbHVsYXMgZW50cmUgb3MgZXh0cmVtb3MuIDIuIE7Do28gw6kgbXVsdGlwbGljYcOnw6NvLCByZW5vbWVhw6fDo28gb3UgZXhjbHVzw6NvLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsLCBlbSB1bWEgZsOzcm11bGEgY29tIGVzdGlsbyBBMSwgcXVlIGZ1bsOnw6NvIGV4ZXJjZSBvIHPDrW1ib2xvIDogZW50cmUgQTEgZSBDMz8iLCJ0b3BpY0lkIjoiSTA1In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZvcm11bGFzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBWaXPDo28gZ2VyYWwgZGUgZsOzcm11bGFzIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZ2V0LXN0YXJ0ZWQvb3ZlcnZpZXctb2YtZm9ybXVsYXMtaW4tZXhjZWwifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-texto-colunas-destino.json",
+        "mediaType": "application/json",
+        "sha256": "2ff9751d17d9343007fecf260854fb2295495c3b777ded784da7ce782f2f0cfe",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUG9ycXVlIGEgZmVycmFtZW50YSBkZXBlbmRlIGRhIGNvciBkbyBtb25pdG9yLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlBvcnF1ZSBlbGEgY3JpYSBvYnJpZ2F0b3JpYW1lbnRlIHVtYSBwYXN0YSBkZSB0cmFiYWxobyB2YXppYS4ifSx7ImlkIjoiYyIsInRleHQiOiJQb3JxdWUgdGV4dG8gc8OzIHBvZGUgc2VyIGRpdmlkaWRvIHNlIHRvZGEgYSBwbGFuaWxoYSBlc3RpdmVyIGFwYWdhZGEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiT3MgY2FtcG9zIGRpc3RyaWJ1w61kb3MgcG9kZW0gc3Vic3RpdHVpciBjb250ZcO6ZG8gbmFzIGPDqWx1bGFzIGRlIGRlc3Rpbm8uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtdGV4dG8tY29sdW5hcy1kZXN0aW5vIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZGl2aWRpci1leGNlbCJdLCJyZXNvbHV0aW9uIjoiMS4gQSBzYcOtZGEgb2N1cGEgY8OpbHVsYXMgYWRqYWNlbnRlcyBlIGV4aWdlIHByZXNlcnZhciBkYWRvcyBxdWUgasOhIGVzdGVqYW0gbmVzc2UgZGVzdGluby4gMi4gTsOjbyBow6EgZGVwZW5kw6puY2lhIGRlIGNvciBuZW0gZXhpZ8OqbmNpYSBnZXJhbCBkZSBub3ZhIHBhc3RhIG91IHBsYW5pbGhhIHRvZGEgdmF6aWEuIiwic3RhdGVtZW50IjoiQW50ZXMgZGUgdXNhciBUZXh0byBwYXJhIENvbHVuYXMgbm8gRXhjZWwsIHBvciBxdWUgY29uZmVyaXIgbyBlc3Bhw6dvIMOgIGRpcmVpdGEgZGEgY8OpbHVsYSBkZSBvcmlnZW0/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1kaXZpZGlyLWV4Y2VsIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBEaXZpZGlyIHVtYSBjw6lsdWxhIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvc3BsaXQtYS1jZWxsLWluLWV4Y2VsIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-transpor-versus-concatenar.json",
+        "mediaType": "application/json",
+        "sha256": "47c489ad86900e1e764fba1c74a0c41e2b6e2545dc2475f5ab4f9685c5c75114",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0K0VudGVyLCBxdWUgaW5zZXJlIHF1ZWJyYSBkZSBsaW5oYSBkZW50cm8gZGUgdW1hIGPDqWx1bGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiRXNjLCBxdWUgY2FuY2VsYSBhIGVudHJhZGEgZW0gZWRpw6fDo28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiRGVsZXRlLCBxdWUgbGltcGEgY29udGXDumRvIGNvbmZvcm1lIGEgc2VsZcOnw6NvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkN0cmwrRW50ZXIuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtdHJhbnNwb3ItdmVyc3VzLWNvbmNhdGVuYXIiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1lbnRyYWRhLWV4Y2VsIl0sInJlc29sdXRpb24iOiIxLiBDdHJsK0VudGVyIGluc2VyZSBvcyBkYWRvcyBkaWdpdGFkb3Mgbm8gY29uanVudG8gZGUgY8OpbHVsYXMgc2VsZWNpb25hZGFzLiAyLiBRdWVicmEgZGUgbGluaGEsIGNhbmNlbGFtZW50byBlIGxpbXBlemEgbsOjbyBjb25jbHVlbSBlc3NlIHByZWVuY2hpbWVudG8gc2ltdWx0w6JuZW8uIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgcGFyYSBNaWNyb3NvZnQgMzY1IGRlIGRlc2t0b3Agbm8gV2luZG93cywgdsOhcmlhcyBjw6lsdWxhcyBmb3JhbSBzZWxlY2lvbmFkYXMgcGFyYSByZWNlYmVyIHNpbXVsdGFuZWFtZW50ZSBvIG1lc21vIHRleHRvLiBBcMOzcyBkaWdpdMOhLWxvIG5hIGPDqWx1bGEgYXRpdmEsIHF1YWwgY29tYmluYcOnw6NvIGNvbmNsdWkgZXNzYSBlbnRyYWRhIG5hcyBzZWxlY2lvbmFkYXM/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1lbnRyYWRhLWV4Y2VsIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBJbnNlcmlyIGRhZG9zIG1hbnVhbG1lbnRlIGVtIGPDqWx1bGFzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZW50ZXItZGF0YS1tYW51YWxseS1pbi13b3Jrc2hlZXQtY2VsbHMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.it-ultima-coluna-grade.json",
+        "mediaType": "application/json",
+        "sha256": "214c5f0342ecf4368cf29e65d680f1eded166d7280249169c3dc3902812680d1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjU2IGNvbHVuYXMgZW0gcXVhbHF1ZXIgcGFzdGEgbW9kZXJuYS4ifSx7ImlkIjoiYiIsInRleHQiOiIxNi4zODQgY29sdW5hcy4ifSx7ImlkIjoiYyIsInRleHQiOiIxLjA0OC41NzYgY29sdW5hcy4ifSx7ImlkIjoiZCIsInRleHQiOiIzMSBjb2x1bmFzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXVsdGltYS1jb2x1bmEtZ3JhZGUiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsicmV2aWV3cy1yMS1ydi0wM2QwNmM1ODU4Il0sInJlc29sdXRpb24iOiIxLiBBIGVzcGVjaWZpY2HDp8OjbyBkYSBNaWNyb3NvZnQgbGlzdGEgMS4wNDguNTc2IGxpbmhhcyBwb3IgMTYuMzg0IGNvbHVuYXMgcG9yIHBsYW5pbGhhOyBhbHRlcm5hdGl2YSBCLiAyLiBDICgxLjA0OC41NzYpIMOpIG8gbGltaXRlIGRlIGxpbmhhcywgbsOjbyBkZSBjb2x1bmFzOyBBICgyNTYpIGVyYSBvIGxpbWl0ZSBkZSBjb2x1bmFzIGRvIGFudGlnbyBmb3JtYXRvIC54bHMsIG7Do28gZGEgZ3JhZGUgbW9kZXJuYTsgRCAoMzEpIMOpIG8gbcOheGltbyBkZSBjYXJhY3RlcmVzIGRvIG5vbWUgZGUgdW1hIHBsYW5pbGhhLCBuw6NvIHVtIGxpbWl0ZSBkZSBjb2x1bmFzLiIsInN0YXRlbWVudCI6IkFvIGNvbmZlcmlyIGEgY2FwYWNpZGFkZSBkZSB1bWEgcGxhbmlsaGEgbW9kZXJuYSBkbyBFeGNlbCwgcXVhbCBxdWFudGlkYWRlIGRlIGNvbHVuYXMgw6kgZG9jdW1lbnRhZGE/IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsicmV2aWV3cy1yMS1ydi0wM2QwNmM1ODU4Ijp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBFc3BlY2lmaWNhw6fDtWVzIGUgbGltaXRlcyBkbyBNaWNyb3NvZnQgRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9vZmZpY2UvZXNwZWNpZmljYSVDMyVBNyVDMyVCNWVzLWUtbGltaXRlcy1kby1leGNlbC0xNjcyYjM0ZC03MDQzLTQ2N2UtOGUyNy0yNjlkNjU2NzcxYzMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.potim-se-q19.json",
+        "mediaType": "application/json",
+        "sha256": "9e243a6f5baa432243bf0ac6a3f42d04b20ad707edafa5475db715dd6a4e838c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSJ9LHsiaWQiOiJiIiwidGV4dCI6IkQifSx7ImlkIjoiYyIsInRleHQiOiJFIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMCJ9LHsiaWQiOiJlIiwidGV4dCI6IjIifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIDAxLzIwMjUsIFNlY3JldMOhcmlvIGRlIEVzY29sYSwgcXVlc3TDo28gMTkuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJGb250ZSBwcmltw6FyaWEgb2ZpY2lhbDsgY2FkZXJuby9jYXJnby9uw7ptZXJvIGUgZ2FiYXJpdG8gZGVmaW5pdGl2byBjb25mZXJpZG9zIHBhcmEgZXN0YSBzZWxlw6fDo28gYXNzaXN0aWRhLiIsInBhdGgiOiJkb3NzaWVyL3BvdGltLWFuc3dlci5wZGYiLCJzaGEyNTYiOiIwOTk3OGVlM2ExODRhNDQ3ODUwZGFjYTc4ZTRjMWY0Mzg2MjljYWM2NTgxMWMyNjkwYjVlZjVjNWIzYmVhNzg2IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zLzc3MjVjMjdkLTY4MjUtNDQwYi1iNGJmLTRiZmZkOTc3YzM4ZS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1wb3RpbS0yMDI1LXNlL3ExOSIsIm51bWJlciI6IjE5IiwicHJvb2YiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvcG90aW0tc2UtcHJvb2YucGRmIiwic2hhMjU2IjoiMGE0MmMxMTcyMDEyZDc1MjQ5ZjJiZDIyODE2YzhlNzBjMjAzZmQ1Mzc3NzlmMjNhZTUwZmZkOTZlMDhmYzk0YyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjIwL2FuZXhvcy8zMTE1OGQxYy0xYWYyLTQ5NzEtYjgzMy0yOTI0NmZmNGNlYzQucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEsIGFydC4gOMK6LCBJViBlIFRKUFIgQUMgMTQzNzMzMi0zLCBhcGxpY2FkYSDDoCBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZS4gTsOjbyDDqSBsaWNlbsOnYSBleHByZXNzYSBkYSBBdmFuw6dhIFNQIG5lbSBnYXJhbnRpYSBqdXLDrWRpY2E7IGV4Y2x1aSBvYnJhcyBkZSB0ZXJjZWlyb3MgZSBtYW50w6ltIG9yaWdlbS9nYWJhcml0by4iLCJwYXRoIjoiZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlNlY3JldMOhcmlvIGRlIEVzY29sYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoicG90aW0tc2UtcTE5Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJyZWZlcmVuY2lhcyJdLCJyZXNvbHV0aW9uIjoiMS4gTm8gcGFkcsOjbyBBMSwgYXMgbGV0cmFzIGlkZW50aWZpY2FtIGNvbHVuYXMgZSBvcyBuw7ptZXJvcyBpZGVudGlmaWNhbSBsaW5oYXMuIDIuIEExIHJlcHJlc2VudGEgY29sdW5hIEEgZSBsaW5oYSAxOyBEIGUgRSBzw6NvIG91dHJhcyBjb2x1bmFzLCBlbnF1YW50byAwIGUgMiBuw6NvIGlkZW50aWZpY2FtIGEgY29sdW5hIGRlc3NhIHJlZmVyw6puY2lhLiIsInN0YXRlbWVudCI6Ik5vIE1pY3Jvc29mdCBFeGNlbCBhcyBjw6lsdWxhcyBzw6NvIHJlZmVyZW5jaWFkYXMgcG9yIHN1YSBsb2NhbGl6YcOnw6NvIG5hIGxpbmhhIGUgbmEgY29sdW5hIGRhIHBsYW5pbGhhLCBwb3J0YW50bywgYSBjw6lsdWxhIEExIGZpY2EgbmEgcHJpbWVpcmEgbGluaGEgZGEgY29sdW5hOiIsInRvcGljSWQiOiJJMDUifSwic3R1ZHlTb3VyY2VzIjp7InJlZmVyZW5jaWFzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTAiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBSZWZlcsOqbmNpYXMgcmVsYXRpdmFzLCBhYnNvbHV0YXMgZSBtaXN0YXMgZG8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9zd2l0Y2gtYmV0d2Vlbi1yZWxhdGl2ZS1hYnNvbHV0ZS1hbmQtbWl4ZWQtcmVmZXJlbmNlcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I05.p.vinh-aux-q33.json",
+        "mediaType": "application/json",
+        "sha256": "dc054c53ab79358e94b5878df3d06860fc06b251b0e37b0ce467e7def9a2250b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSW1hZ2Vucy4ifSx7ImlkIjoiYiIsInRleHQiOiJMaW5oYXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUMOhZ2luYXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU3Vtw6FyaW8uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiTm90YSBkZSBmaW0uIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBWaW5oZWRvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMy8yMDI1LCBBdXhpbGlhciBBZG1pbmlzdHJhdGl2bywgcXVlc3TDo28gMzMuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvLCBww6FnaW5hIDEsIHF1YWRybyBkbyBjYXJnbyBBVVhJTElBUiBBRE1JTklTVFJBVElWTzogMzM9QjsgY29uZmVyw6puY2lhIHZpc3VhbCBuYSByZW5kZXJpemHDp8OjbyBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjI5LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI5MjNhY2FhZjlkMzhlNWM4ZjQ4M2IzY2U5ZmQyZDlkYzZjMjE1MDI3Y2ViMGE0ZWYzNWY3ZDBhYmUyNGNjMzhlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzI3OTUxNDEzLTA0YzYtNDRmOC05MjVhLWViMGIzOTIxMTczOS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12aW5oZWRvLTIwMjUtYXV4aWxpYXIvcTMzIiwibnVtYmVyIjoiMzMiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMzMsIHDDoWdpbmEgZsOtc2ljYSA4IGRvIFBERjsgdGV4dG8gZXh0cmHDrWRvIGNvbmZyb250YWRvIGNvbSBhIHJlbmRlcml6YcOnw6NvIGRhIHDDoWdpbmE7IGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzIGUgb3JkZW0gY29uZmVyaWRvcyB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjI5LXByb3ZhLWF1eGlsaWFyLWFkbWluaXN0cmF0aXZvLnBkZiIsInNoYTI1NiI6IjZmYTk3YTc2Nzk1NjIwZDhhM2E5ZTFiZDgxMzIxOGM1Y2IwZjUxYzMyYTQyMzQ2YTBmMzYzNTQ1NDU3ZWYwY2UiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyOS9hbmV4b3MvNzhjZWQ1MzUtMDY0Yi00YTM5LTgwNTUtZTEwM2E5ZGFiYTlmLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBhcnQuIDjCuiwgSVYsIGRhIExlaSA5LjYxMC8xOTk4LCBjb25mb3JtZSBhIGF2YWxpYcOnw6NvIGRvY3VtZW50YWRhIG5vIHByb2pldG8sIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUgZGUgcHJvdmEgcMO6YmxpY2EsIHNlbSBvYnJhIGRlIHRlcmNlaXJvIGluY29ycG9yYWRhLiBOw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBuZW0gY29uc2VudGltZW50byBhZmlybWFkbzsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkF1eGlsaWFyIEFkbWluaXN0cmF0aXZvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJ2aW5oLWF1eC1xMzMiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWNsYXVkZS1pdC1leGNlbC1kYWRvcyJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgY2FiZcOnYWxob3MgbnVtw6lyaWNvcyAoMSwgMiwgMy4uLikgw6AgZXNxdWVyZGEgZGEgZ3JhZGUgaWRlbnRpZmljYW0gYXMgbGluaGFzOyBjb20gYXMgbGV0cmFzIGRhcyBjb2x1bmFzLCBmb3JtYW0gbyBlbmRlcmXDp28gZGEgY8OpbHVsYSAoQTEsIEIyLi4uKTsgYWx0ZXJuYXRpdmEgQi4gMi4gSW1hZ2VucywgcMOhZ2luYXMsIHN1bcOhcmlvIGUgbm90YSBkZSBmaW0gbsOjbyBzw6NvIG51bWVyYWRvcyBuYSBib3JkYSBlc3F1ZXJkYSBkYSBwbGFuaWxoYTsgc3Vtw6FyaW8gZSBub3RhIGRlIGZpbSBzw6NvIHJlY3Vyc29zIGRvIFdvcmQuIE8gZW51bmNpYWRvIHRlbSBhIHJlZGHDp8OjbyB0cnVuY2FkYSBkYSBwcm92YSwgcHJlc2VydmFkYSBzZW0gY29ycmXDp8Ojby4gR2FiYXJpdG8gZGVmaW5pdGl2bzogYWx0ZXJuYXRpdmEgQi4iLCJzdGF0ZW1lbnQiOiJRdWFsIMOpIHVtIGRvcyBlbGVtZW50b3MgYsOhc2ljb3MgZGUgdW1hIHBsYW5pbGhhIGRvIE1pY3Jvc29mdCBFeGNlbCBzw6NvIGlkZW50aWZpY2Fkb3MgY29tIG7Dum1lcm9zIG5vIGNhbnRvIGVzcXVlcmRvIGRhIHRlbGE6IiwidG9waWNJZCI6IkkwNSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWV4Y2VsLWRhZG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBJbnNlcmlyIGUgZm9ybWF0YXIgZGFkb3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9lbnRlci1hbmQtZm9ybWF0LWRhdGEifX19"
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I05.p.cerq25-tes-q25",
+    "admin.2026-11.I05.p.fgv-taubate-q37",
+    "admin.2026-11.I05.p.hol26-cont-q21",
+    "admin.2026-11.I05.p.it-aba-nome-invalido",
+    "admin.2026-11.I05.p.it-colar-formatos",
+    "admin.2026-11.I05.p.it-colar-resultados",
+    "admin.2026-11.I05.p.it-colar-vinculo",
+    "admin.2026-11.I05.p.it-descongelar",
+    "admin.2026-11.I05.p.it-dividir-celula-excel",
+    "admin.2026-11.I05.p.it-dividir-paineis",
+    "admin.2026-11.I05.p.it-editar-bloqueada",
+    "admin.2026-11.I05.p.it-entrada-multiplas-abas",
+    "admin.2026-11.I05.p.it-formatacao-insercao",
+    "admin.2026-11.I05.p.it-formato-nao-valor",
+    "admin.2026-11.I05.p.it-formula-aspas-aba",
+    "admin.2026-11.I05.p.it-imagem-vinculada",
+    "admin.2026-11.I05.p.it-inserir-celulas-deslocar",
+    "admin.2026-11.I05.p.it-intervalo-coluna-inteira",
+    "admin.2026-11.I05.p.it-largura-altura",
+    "admin.2026-11.I05.p.it-operador-intervalo",
+    "admin.2026-11.I05.p.it-texto-colunas-destino",
+    "admin.2026-11.I05.p.it-transpor-versus-concatenar",
+    "admin.2026-11.I05.p.it-ultima-coluna-grade",
+    "admin.2026-11.I05.p.potim-se-q19",
+    "admin.2026-11.I05.p.vinh-aux-q33"
+  ]
+}

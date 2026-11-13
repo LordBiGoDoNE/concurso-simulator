@@ -20,7 +20,7 @@ describe('entrada da aplicação', () => {
       : vi.fn().mockResolvedValue({ ok: failure !== '503', json: async () => ({ status: failure === '503' ? 'DOWN' : 'UNKNOWN' }) }));
     render(<App />);
     expect(await screen.findByText(/API indisponível/)).toBeInTheDocument();
-    expect(screen.getByRole('link', { name: 'Acessar material de estudo' })).toHaveAttribute('href', 'https://lordbigodone.github.io/concurso-simulator/');
+    expect(screen.getByRole('link', { name: 'Acessar material de estudo' })).toHaveAttribute('href', '#/aulas');
     expect(screen.getByRole('button', { name: 'Verificar novamente' })).toBeEnabled();
   });
 

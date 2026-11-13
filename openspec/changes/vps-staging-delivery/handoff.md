@@ -1,47 +1,32 @@
-# Retomada — backlog #156
+# Retomada — #156
 
 ## Status
 
-Planejamento confirmado e registro/envio autorizados em2026-10-25.
-Somente documentos: sem implementação, acesso remoto, alterações na VPS ou carga
-de dados. Revisão documental e gate cumulativo ainda não executados. Nenhum grupo
-de implementação escolhido; não iniciar lote automaticamente.
+Escopo ampliado em 2026-11-13: lançamento público em
+`https://concurso-simulator.reemsoftworks.com`, com Google e acervo aprovado.
+Somente documentos; nenhum grupo de implementação autorizado.
 
 Issue: https://github.com/LordBiGoDoNE/concurso-simulator/issues/156
-Ela reúne o PR em rascunho, commit e próximos passos. Main de origem:f61d57d.
 
-## Decisões que continuam válidas
+## Decisões do usuário em 2026-11-13
 
-- Usuário opera a VPS e conserva acesso exclusivo; assistente não recebe chaves/login.
-- Rocky10.2 x86_64,4 vCPUs,15Gi RAM,194G livres; VPS nova, ainda sem domínio.
-- Concluir na homologação privada via túnel SSH, usando localhost:18088.
-- Somente acervo atual; não migrar contas/histórico/sessões do computador.
-- Backup manual com cópia no computador; sem frequência automática prometida.
-- Questões congeladas. Ler manifests/fingerprints necessários à carga não reabre
-  rodadas de redação ou auditoria semântica do conteúdo já entregue.
-- Local127.0.0.1:8088 e stable/pages-store permanecem preservados.
-- Domínio/HTTPS público/Google real/backup automático/abertura serão outra spec.
+- O assistente acessa a VPS por SSH como `concurso-dev`, com a chave do PC,
+  sem agent forwarding. Sudo só com senha digitada pelo usuário.
+- Endereço `concurso-simulator.reemsoftworks.com`; `.com.br` redireciona para `.com`;
+  DNS na Hostinger.
+- Lançamento público com Google ligado e smoke real antes da abertura.
+- Somente o acervo atual aprovado; sem contas/sessões/tentativas do PC.
+- Esta spec é ampliada em vez de criar outra.
 
-## Como continuar em outra máquina
+## Histórico preservado
 
-No clone do repositório, buscar e selecionar a branch de proposta:
+- Proposta original (privada, Rocky Linux) integrada por #157 em 5dc237c.
+- `task/vps-staging-delivery/server-preparation` (local, não enviada): grupo 1 de
+  Rocky, superado pela reinstalação Ubuntu de 2026-10-31.
+- Publicação HTTP pelo IP feita em 2026-10-31 fora desta spec, documentada em
+  `/opt/vps-control` na VPS. Continua ativa até o corte do grupo 7.
 
-```sh
-git fetch origin
-git switch --track origin/task/vps-staging-delivery/proposal
-```
+## Como continuar
 
-Se a branch já existir localmente, usar git switch com o nome local e conferir
-status/commit antes de atualizá-la. Não sobrescrever alterações existentes.
-Ler AGENTS.md, proposal.md, design.md, tasks.md e os três deltas desta pasta.
-Consultar a issue#156 para o estado mais recente dos PRs/checks.
-
-Próxima decisão do usuário: quais grupos completos1–5 entram na implementação.
-Proposta usa task/vps-staging-delivery/proposal → epic/vps-staging-delivery;
-integração final futura [SPEC] da épica → main. Dependências reais seguem Stacks
-conforme AGENTS, com aprovação própria dos merges. Rascunho não é revisão concluída.
-
-Os comandos da VPS serão fornecidos em passos curtos para o usuário executar.
-Docker/Compose, SELinux/firewall, conta operacional e conectividade ainda precisam
-ser levantados por ele. IP, usuário SSH e segredos são parâmetros locais do roteiro,
-nunca requisitos para dar acesso ao assistente ou conteúdo a publicar no GitHub.
+Ler AGENTS.md, proposal.md, design.md, tasks.md e os deltas desta pasta. Conferir
+a chave do host antes de conectar. Pedir ao usuário quais grupos completos entram.

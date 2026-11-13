@@ -115,13 +115,30 @@ class FinalPackagesTests(unittest.TestCase):
         problems = final.check(self.temp)[0]['problems']
         self.assertTrue(any('referência pública aponta para prova/gabarito' in p for p in problems))
 
+    def test_reference_equal_to_any_provenance_exam_url_is_reported(self):
+        dossier = json.loads((self.temp / 'PRATICA_AULA/A01/dossier.json').read_bytes())
+        original = next(d for d in dossier if d['officialIdentity'])
+        request = json.loads(self.request('PRATICA_AULA').read_bytes())
+        source = next(f for f in request['package']['files'] if f['path'] == f"sources/{original['key']}.json")
+        proof_url = json.loads(base64.b64decode(source['base64']))['editorial']['exam']['proof']['url']
+        disguised = proof_url.replace('https://', 'http://', 1).replace('://www.', '://', 1) + '/'
+
+        def same_as_proof(request):
+            # A referência fica em outro pacote/modalidade e não segue nenhum padrão conhecido.
+            request['package']['items'][0]['content']['references'].append(
+                {'name': 'Material complementar', 'url': disguised, 'legalBasis': None})
+        self.rewrite('SIMULADO', same_as_proof)
+        problems = final.check(self.temp)[0]['problems']
+        self.assertTrue(any('coincide com prova/gabarito da proveniência' in p for p in problems), problems)
+
     def test_study_reference_rejects_exam_pages_by_name_url_or_board_host(self):
         from question_package import study_reference
         for name, url in (('Prova e gabarito definitivo', 'https://example.org/estudo'),
                           ('Material de estudo', 'https://www.cebraspe.org.br/concursos/inss_22'),
                           ('Página do concurso', 'https://example.org/concursos/2026'),
                           ('Caderno de prova oficial', 'https://example.org/a.pdf'),
-                          ('Edital', 'https://anexos.cdn.selecao.net.br/uploads/301/x.pdf')):
+                          ('Edital', 'https://anexos.cdn.selecao.net.br/uploads/301/x.pdf'),
+                          ('Arquivo municipal', 'https://pss.crato.ce.gov.br/uploads/arquivos/provas/PROVA%20X.pdf')):
             with self.assertRaises(ValueError, msg=name):
                 study_reference(name, url)
         for name, url in (('IMPA/OBMEP — Banco de Questões; questão transcrita de prova oficial', 'https://www.obmep.org.br/banco.htm'),

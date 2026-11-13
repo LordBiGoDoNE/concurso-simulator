@@ -103,5 +103,32 @@ o leitor/prévia e o ensaio de composição (8.2) foram repetidos sobre os novos
 resultado: 102 pacotes, 2.587 itens DRAFT, replay, base desatualizada, seleção/digest alterados,
 rollback e concorrência aprovados, nada habilitado. A evidência de destino (8.3/8.4) em
 `destination-coverage.json` refere-se aos pacotes de 12/11 e é **histórica**: o ambiente paralelo foi
-perdido em 13/11, quando o processo terminou e o banco efêmero foi descartado. Uma nova habilitação local
-com os pacotes corrigidos é etapa separada, ainda não feita.
+perdido em 13/11, quando o processo terminou e o banco efêmero foi descartado.
+
+## Nova habilitação local — pacotes corrigidos (13/11/2026, achado M1)
+
+O ambiente paralelo foi reconstruído e habilitado com os pacotes versionados atuais pela ferramenta
+`QuestionExpansionLocalEnablement` (classpath de teste, fora da CI e do bootJar):
+
+```powershell
+./backend/gradlew.bat -p backend --offline --no-daemon -I <init com JavaExec do classpath de teste> `
+  -DtoolMain=br.com.concursosimulator.questionbank.QuestionExpansionLocalEnablement `
+  "-DtoolArgs=--dump;<backup pré-#177>;--sha256;<sha256>;--packages;editorial/question-bank-expansion/2026-11/packages;--report;<relatório>.json" runTestTool
+# UI: VITE_API_URL=http://127.0.0.1:19160 npx vite --host 127.0.0.1 --port 5371 --strictPort (em frontend/)
+```
+
+- Backup privado pré-#177 (SHA-256 `5b7042df…c6ef43`, fora do Git) restaurado em PostgreSQL 18.6 efêmero;
+  Flyway V1–V17. A ferramenta confere o SHA-256 de cada requisição contra o manifesto e os digests
+  devolvidos pela prévia HTTP antes de confirmar. Chave de confirmação gerada em memória; sessão ADM
+  do operador existente criada no repositório de sessões, sem senha; nada disso vai ao relatório.
+- 102 recibos de importação; 204 lotes da #177 (2.587 `SUBMIT` + 2.587 `APPROVE` `AI_ONLY`, checklist
+  completa) em 181 s. Antes: 54 questões (52 elegíveis); depois: 2.641 questões, 2.639 elegíveis.
+- Banco (conexão somente leitura): 2.587 elegíveis da expansão, exatamente os fingerprints dos pacotes
+  (0 ausentes, 0 extras, 0 divergências de fingerprint/estado/célula); 102/102 células com ≥25 itens e
+  ≥5 originais; 1.294 simulado / 1.293 prática; 530 originais.
+- HTTP, 51 assuntos: mínimo de 25 em prática e simulado; `maximum = 5`; `Cache-Control: no-store`. Os
+  totais HTTP incluem as 52 sintéticas pré-existentes (30 prática + 22 simulado).
+
+Evidência: [destination-coverage-corrected.json](../editorial/question-bank-expansion/2026-11/final/integrated/destination-coverage-corrected.json).
+O ambiente é efêmero: parar o processo descarta o banco; recuperação = repetir o comando acima.
+O ambiente original (5393/19370) não foi alterado.

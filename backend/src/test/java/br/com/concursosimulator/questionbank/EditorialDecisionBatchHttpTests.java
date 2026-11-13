@@ -275,15 +275,52 @@ class EditorialDecisionBatchHttpTests {
         var receipt = imported(cookie, csrf, QuestionPurpose.SIMULADO, "batch.concurrent-a", "batch.concurrent-b");
         var preview = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("SUBMIT", null, List.of(), "Envio concorrente"), receipt.path("confirmation").path("nonce").asString()))));
         var body = applyBody(preview); int before = decisions();
+        var responses = simultaneously(cookie, csrf, body, body);
+        assertThat(responses).allSatisfy(r -> assertThat(r.statusCode()).as(r.body()).isEqualTo(200));
+        assertThat(responses).extracting(r -> json.readTree(r.body()).get("replayed").asBoolean()).containsExactlyInAnyOrder(false, true);
+        assertThat(json.readTree(responses.get(0).body()).path("receipt")).isEqualTo(json.readTree(responses.get(1).body()).path("receipt"));
+        assertThat(decisions()).isEqualTo(before + 2);
+        assertThat(batchItems(ids(receipt))).isEqualTo(2); // um único recibo com os dois itens
+    }
+
+    @Test void concurrentDifferentBatchesOverTheSameQuestionsCommitOnceAndDivergeTheOther() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie);
+        var receipt = imported(cookie, csrf, QuestionPurpose.SIMULADO, "batch.overlap-a", "batch.overlap-b");
+        var nonce = receipt.path("confirmation").path("nonce").asString();
+        var left = applyBody(ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("SUBMIT", null, List.of(), "Lote sobreposto A"), nonce)))));
+        var right = applyBody(ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("SUBMIT", null, List.of(), "Lote sobreposto B"), nonce)))));
+        int before = decisions();
+        var responses = simultaneously(cookie, csrf, left, right);
+        assertThat(responses).extracting(HttpResponse::statusCode).as(responses.toString()).containsExactlyInAnyOrder(200, 409);
+        var refused = responses.stream().filter(r -> r.statusCode() == 409).findFirst().orElseThrow();
+        assertThat(json.readTree(refused.body()).get("error").asString()).isEqualTo("BATCH_DIVERGED");
+        assertThat(json.readTree(refused.body()).get("questionIds")).hasSize(2);
+        // Um único lote gravado: duas decisões, um recibo, nenhuma sequência duplicada.
+        assertThat(decisions()).isEqualTo(before + 2);
+        assertThat(batchItems(ids(receipt))).isEqualTo(2);
+        assertThat(jdbc.queryForObject("select count(distinct nonce) from qb_decision_batch_item where question_id=?", Integer.class, ids(receipt).getFirst())).isEqualTo(1);
+        for (var id : ids(receipt))
+            assertThat(jdbc.queryForObject("select count(*) from qb_decision where question_id=? and action='SUBMIT'", Integer.class, id)).isEqualTo(1);
+    }
+
+    /** Dispara as duas aplicações juntas, liberadas por uma barreira, e devolve as respostas na ordem dos corpos. */
+    int batchItems(List<UUID> ids) {
+        int total = 0;
+        for (var id : ids) total += jdbc.queryForObject("select count(*) from qb_decision_batch_item where question_id=?", Integer.class, id);
+        return total;
+    }
+
+    List<HttpResponse<String>> simultaneously(String cookie, String csrf, String first, String second) throws Exception {
+        var barrier = new java.util.concurrent.CyclicBarrier(2);
         var pool = java.util.concurrent.Executors.newFixedThreadPool(2);
         try {
-            var first = pool.submit(() -> send(BASE + "/apply", cookie, csrf, body)); var second = pool.submit(() -> send(BASE + "/apply", cookie, csrf, body));
-            var responses = List.of(first.get(), second.get());
-            assertThat(responses).allSatisfy(r -> assertThat(r.statusCode()).as(r.body()).isEqualTo(200));
-            assertThat(responses).extracting(r -> json.readTree(r.body()).get("replayed").asBoolean()).containsExactlyInAnyOrder(false, true);
-            assertThat(json.readTree(responses.get(0).body()).path("receipt")).isEqualTo(json.readTree(responses.get(1).body()).path("receipt"));
+            java.util.function.Function<String, java.util.concurrent.Future<HttpResponse<String>>> start = body -> pool.submit(() -> {
+                barrier.await(10, java.util.concurrent.TimeUnit.SECONDS);
+                return send(BASE + "/apply", cookie, csrf, body);
+            });
+            var a = start.apply(first); var b = start.apply(second);
+            return List.of(a.get(30, java.util.concurrent.TimeUnit.SECONDS), b.get(30, java.util.concurrent.TimeUnit.SECONDS));
         } finally { pool.shutdownNow(); }
-        assertThat(decisions()).isEqualTo(before + 2);
     }
 
     @Test void explicitSelectionAppliesAndResponsesFollowOpenApiAndBatchTokenIsNotAnImportToken() throws Exception {

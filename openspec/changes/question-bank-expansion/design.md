@@ -26,7 +26,7 @@ ou regravação para corrigir a quantidade de novos sorteios.
 
 **Goals:** entregar cobertura rastreável nas 102 combinações, conteúdo original/autoral conferido, ferramentas incrementais, acervo de 25 por assunto com práticas de até cinco sorteadas (esclarecimento de 2026-11-11; a meta original "práticas de até 25" é histórica) e validação local preservando dados e contratos privados.
 
-**Non-Goals:** remover cargo (#161), alterar composição de simulados, ampliar templates, adicionar editor/upload PDF/aprovação HTTP, executar importação no startup/Flyway, distribuir fontes pelos builds públicos ou publicar na VPS. Esta entrega inicial é documental; conteúdo/código dependem da confirmação dos grupos.
+**Non-Goals:** remover cargo (#161), alterar composição de simulados, ampliar templates, adicionar editor/upload PDF/aprovação HTTP, executar importação no startup/Flyway, distribuir fontes pelos builds públicos ou publicar na VPS. Esta entrega inicial é documental; conteúdo/código dependem da confirmação dos grupos. (Nota de 13/11/2026: a exclusão de "aprovação HTTP" é histórica; a decisão do usuário de 12/11 adotou as decisões editoriais em lote por HTTP administrativo da #177 — `administrative-question-curation` — para a habilitação local.)
 
 ## Decisions
 
@@ -99,7 +99,7 @@ ou regravação. Os dois limites não devem compartilhar a mesma constante de ne
 
 Após autorização do grupo correspondente, reconciliar o destino local e preservar backup privado. Usar a prévia/aplicação da #160 com sessão ADM/CSRF/configuração existentes, seleção explícita e digest conferido. Manter dados e recibos privados fora do Git. Um pacote contém um assunto/finalidade e até 100 itens; erros/retry/confirmação seguem os contratos atuais.
 
-Importar apenas como DRAFT. Submissão/aprovação usam as operações editoriais locais existentes com revisão, fingerprint, ponteiro e sequência esperados, responsável e destino exatos. A autorização permanente de teste local registrada no AGENTS.md dispensa nova aprovação local genérica para conteúdo conferido do grupo autorizado; não dispensa evidência nem autoriza aprovação pelo startup/CI/HTTP.
+Importar apenas como DRAFT. Submissão/aprovação usam as operações editoriais locais existentes com revisão, fingerprint, ponteiro e sequência esperados, responsável e destino exatos. A autorização permanente de teste local registrada no AGENTS.md dispensa nova aprovação local genérica para conteúdo conferido do grupo autorizado; não dispensa evidência nem autoriza aprovação pelo startup/CI/HTTP. (Nota de 13/11/2026: a vedação a HTTP é histórica; desde a decisão do usuário de 12/11 as decisões locais usam o lote administrativo autenticado da #177, com prévia, token e recibo. Startup e CI continuam sem aprovar conteúdo.)
 
 Conferir pós-condições no banco e pelos contratos públicos. Versionar apenas evidências públicas apropriadas; não publicar credenciais, atores privados, recibos ou backups. Conteúdo pronto no Git não é cobertura habilitada. Se uma original ficar pendente, mostrar o déficit e manter a combinação incompleta.
 
@@ -120,7 +120,7 @@ Usar `epic/question-bank-expansion`, com tarefas em `task/question-bank-expansio
 - [Binário anterior não lê novas práticas acima de cinco] → atualização coordenada e recuperação com backup/imagem exatos em destino separado; nunca truncar registros para fazer rollback.
 - [Paralelismo altera contratos/manifestos comuns] → proprietários explícitos, worktrees/recursos isolados e consolidação única no grupo 8; nenhuma stack entre specs.
 
-Risco previsto crítico pela captura persistida, replay, filas/identidade, importação e elegibilidade. ADR 0001 e checklist HTTP continuam obrigatórios. Revisão editorial não substitui revisão independente de lote; esta não substitui o gate cumulativo final SOL 6.1 xhigh, em contexto novo e somente leitura. Não foram executadas revisões ou testes de implementação nesta proposta; não coletar cota nem estimar tokens ausentes.
+Risco previsto crítico pela captura persistida, replay, filas/identidade, importação e elegibilidade. ADR 0001 e checklist HTTP continuam obrigatórios. Revisão editorial não substitui revisão independente de lote; esta não substitui o gate cumulativo final SOL 6.1 xhigh, em contexto novo e somente leitura. (Nota de 13/11/2026: o gate SOL é histórico; a decisão do usuário de 12/11 no AGENTS.md substitui as revisões por lote e o modelo SOL por uma única revisão final de código com Claude Opus 5.5, esforço medium, em agente novo e somente leitura, antes do `[SPEC]` para `main`.) Não foram executadas revisões ou testes de implementação nesta proposta; não coletar cota nem estimar tokens ausentes.
 
 ## Migration Plan
 

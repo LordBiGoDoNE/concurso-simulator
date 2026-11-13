@@ -95,6 +95,10 @@ exige o inventário fechado daquela versão: V10/V11 preservam as tabelas origin
 V12 acrescenta as quatro tabelas qb_import_*; V13 acrescenta admin_registration;
 V14–V16 mantêm o mesmo inventário fechado. Histórico completo/checksum/imagem
 continuam obrigatórios; schema desconhecido não é aceito por ter tabelas parecidas.
+Um banco local migrado apenas pela branch isolada da #177 (V14 → V16 → V17, sem V15)
+não sobe com o binário integrado (Flyway sem `outOfOrder`) nem é aceito pelo backup:
+recrie-o a partir de um backup V14 ou V15 e deixe o binário integrado aplicar V15–V17
+em ordem. Não renumerar nem reescrever migrações para acomodar esse banco.
 Mantém exigência de checksum, imagem exata e destino vazio. Schema desconhecido,
 histórico incompleto e tabela ausente ou extra são recusados. Imagens continuam excluindo fontes editoriais, testes,
 pacotes, backups e segredos do contexto permitido.

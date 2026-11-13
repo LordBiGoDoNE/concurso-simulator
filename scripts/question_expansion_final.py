@@ -12,6 +12,7 @@ import hashlib
 import json
 from collections import Counter, defaultdict
 from pathlib import Path, PurePosixPath
+from urllib.parse import unquote, urlsplit
 
 from question_package import CATALOG, fingerprint, study_reference
 
@@ -26,6 +27,12 @@ DISCIPLINE_NAMES = {'portugues': 'Português', 'matematica-raciocinio': 'Matemá
 
 def sha256(data):
     return hashlib.sha256(data).hexdigest()
+
+
+def normalized_url(url):
+    """Compara URLs sem esquema, maiúsculas no host, codificação percentual e barra final."""
+    parts = urlsplit(url.strip())
+    return ((parts.hostname or '').lower().removeprefix('www.'), unquote(parts.path).rstrip('/'), parts.query)
 
 
 def load(path):
@@ -56,6 +63,7 @@ def check(packages_root, edition_root=None, reviews_path=None):
     if reviews_path:
         reviews = {r['key']: r for r in load(reviews_path)}
     total_items = 0
+    public_refs, exam_urls = [], set()
     for entry in manifest['packages']:
         topic, purpose = entry['topicId'], entry['purpose']
         directory = root / purpose / topic
@@ -90,6 +98,7 @@ def check(packages_root, edition_root=None, reviews_path=None):
             if fingerprint(item['content']) != item['fingerprint']:
                 problems.append(f'{key}: fingerprint não corresponde ao conteúdo')
             for reference in item['content']['references']:
+                public_refs.append((key, reference['url']))
                 try:
                     study_reference(reference['name'], reference['url'])
                 except ValueError:
@@ -111,6 +120,10 @@ def check(packages_root, edition_root=None, reviews_path=None):
             if sha256(raw) != source_file['sha256']:
                 problems.append(f'{key}: SHA-256 da proveniência divergente')
             editorial = json.loads(raw)['editorial']
+            for part in ('proof', 'answer'):
+                url = ((editorial.get('exam') or {}).get(part) or {}).get('url')
+                if url:
+                    exam_urls.add(normalized_url(url))
             if editorial['topicId'] != topic or editorial['originKind'] != info['originKind']:
                 problems.append(f'{key}: assunto/origem da proveniência divergente')
             if info['originKind'] != 'ORIGINAL_DE_PROVA':
@@ -147,6 +160,9 @@ def check(packages_root, edition_root=None, reviews_path=None):
                       'items': len(items), 'originals': origin_count,
                       'authored': len(items) - origin_count,
                       'packageDigest': entry['packageDigest'], 'selectionDigest': entry['selectionDigest']})
+    for key, url in public_refs:
+        if normalized_url(url) in exam_urls:
+            problems.append(f'{key}: referência pública coincide com prova/gabarito da proveniência ({url})')
     for key, count in keys.items():
         if count > 1:
             problems.append(f'Chave repetida entre pacotes: {key}')

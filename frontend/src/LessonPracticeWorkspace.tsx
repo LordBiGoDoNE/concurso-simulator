@@ -1,3 +1,4 @@
+import './styles/lessons.css';
 import { useCallback, useEffect, useImperativeHandle, useLayoutEffect, useRef, useState, type Ref } from 'react';
 import { AttemptApiError, type RunView } from './attempt-api';
 import type { CurrentIdentity } from './identity-api';

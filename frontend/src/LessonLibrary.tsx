@@ -1,3 +1,4 @@
+import './styles/lessons.css';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { studyCatalog as catalog, lessons, lessonSupportsRole } from './study-catalog';
 import NativeLesson from './NativeLesson';

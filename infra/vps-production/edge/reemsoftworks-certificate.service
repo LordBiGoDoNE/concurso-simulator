@@ -1,0 +1,8 @@
+[Unit]
+Description=Renovação do certificado Let's Encrypt reemsoftworks
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/opt/central-certbot/bin/certbot renew --cert-name reemsoftworks --quiet --deploy-hook "nginx -t && systemctl reload nginx"

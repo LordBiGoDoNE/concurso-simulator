@@ -7,7 +7,7 @@ Executado em 2026-11-13 pelo assistente como `concurso-dev`, no banco de produç
 Em 2026-11-13 o usuário escolheu primeiro carregar também os conjuntos de outubro
 (250 simulado, 255 prática, 3 famílias parametrizadas). Esses conjuntos só entram pela
 CLI local, com confirmação digitada por importação. O container auxiliar
-(`vps_production.py editorial-cli`) foi preparado e uma prévia sem escrita confirmou
+(`vps_production.py editorial-cli`) foi preparado — e depois removido da entrega pela revisão final (M3), seguindo para a #221 — e uma prévia sem escrita confirmou
 pacotes idênticos aos aprovados (250 fingerprints iguais a `eligibility.jsonl`;
 seleção de prática `1c7ff1ad…`). Em seguida o usuário decidiu **não carregar os
 conjuntos de outubro**: o acervo de produção é a expansão 2026-11 carregada pela API.

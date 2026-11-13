@@ -102,7 +102,7 @@ jobs:
         with:
           python-version: '3.14'
       - run: python3 -m unittest discover -s scripts -p 'test_local_app*.py'
-      - run: python3 -m unittest discover -s scripts -p 'test_vps_production*.py'
+      - run: python3 -m unittest discover -s scripts -p 'test_vps_*.py'
       - run: npm ci
         working-directory: frontend
       - run: npx playwright install --with-deps chromium

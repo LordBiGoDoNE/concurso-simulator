@@ -19,8 +19,10 @@ exceto o desafio ACME. A resposta SHALL incluir HSTS. Somente as portas 22, 80 e
 ### Requirement: Domínios secundários e hosts desconhecidos
 Hosts de `reemsoftworks.com.br` SHALL redirecionar com 301 para o mesmo host e
 caminho em `reemsoftworks.com`. Raiz e `www` de `reemsoftworks.com` SHALL
-redirecionar temporariamente para o concurso. Hosts desconhecidos MUST ser
-recusados, e o serviço administrativo existente pelo IP SHALL ser preservado.
+redirecionar temporariamente para o concurso. Hosts desconhecidos MUST NOT chegar
+à aplicação; na porta 80 SHALL ser recusados pelo `default_server` versionado após a
+abertura, e o serviço administrativo existente pelo IP SHALL ser preservado.
+A área administrativa SHALL ficar restrita a IPs autorizados, inclusive após a abertura.
 
 #### Scenario: Domínio .com.br
 - **WHEN** alguém acessa `https://concurso-simulator.reemsoftworks.com.br/x`
@@ -29,6 +31,10 @@ recusados, e o serviço administrativo existente pelo IP SHALL ser preservado.
 #### Scenario: Host desconhecido
 - **WHEN** uma requisição chega com Host não configurado
 - **THEN** não é encaminhada à aplicação
+
+#### Scenario: Área administrativa pela internet
+- **WHEN** um IP fora da allowlist administrativa chama `/api/v1/admin/`
+- **THEN** recebe 403 da borda e não consome o orçamento de login da API
 
 ### Requirement: Google OAuth de produção
 O login Google SHALL poder ser ligado em produção com client OAuth próprio, callback

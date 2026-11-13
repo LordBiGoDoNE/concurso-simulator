@@ -31,7 +31,7 @@ SECRET_NAMES = ("db_password", "admin_password", "google_enabled", "google_clien
                 "google_client_secret", "google_callback", "frontend_url",
                 "question_import_destination", "question_import_key")
 # Generated values that an older state may lack; created only when missing, never rotated here.
-GENERATED_SECRETS = {"question_import_destination": lambda config: config["project"],
+GENERATED_SECRETS = {"question_import_destination": lambda config: f'{config["project"]}-{config["owner"][:12]}',
                      "question_import_key": lambda config: base64.b64encode(secrets.token_bytes(48)).decode()}
 
 
@@ -101,10 +101,19 @@ def build(revision, state):
         if identity[1].split(":")[0] in ("", "0", "root"):
             raise ValueError("Runtime não pode executar como root")
         images[service] = {"tag": tag, "id": identity[0], "user": identity[1]}
+    # The runtime configuration belongs to the release too: pin the compose file of the same commit.
+    compose_bytes = subprocess.check_output(["git", "show", f"{sha}:infra/vps-production/compose.yaml"], cwd=ROOT)
+    releases = state.parent / "releases"
+    compose_file = releases / f"{sha[:12]}.compose.yaml"
+    releases.mkdir(parents=True, exist_ok=True, mode=0o700)
+    with compose_file.open("wb") as stream:
+        stream.write(compose_bytes)
+    compose_file.chmod(0o600)
     manifest = {"version": 1, "source_sha": sha, "origin": ORIGIN, "on_main": on_main(sha),
                 "images": images, "base_images": lock["images"],
-                "context_sha256": hashlib.sha256(context).hexdigest(), "files": selected}
-    target = state.parent / "releases" / f"{sha[:12]}.json"
+                "context_sha256": hashlib.sha256(context).hexdigest(), "files": selected,
+                "compose": {"file": str(compose_file), "sha256": hashlib.sha256(compose_bytes).hexdigest()}}
+    target = releases / f"{sha[:12]}.json"
     write_private_json(target, manifest)
     print(f"Release {sha[:12]} construída (main={manifest['on_main']}); manifesto: {target}")
 
@@ -203,9 +212,22 @@ def compose_env(state, config):
     return env
 
 
+def release_compose(config):
+    """Compose file pinned by the release; older rehearsal manifests fall back to the checkout."""
+    pinned = config["images"].get("compose")
+    if pinned is None:
+        if not config.get("rehearsal"):
+            raise ValueError("Release sem compose fixado; reconstrua a release")
+        return ROOT / "infra/vps-production/compose.yaml"
+    path = Path(pinned["file"])
+    if path.is_symlink() or not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != pinned["sha256"]:
+        raise ValueError("Compose da release ausente ou alterado")
+    return path
+
+
 def compose(state, config, *args):
     return docker_run(["compose", "--env-file", str(state / "empty.env"),
-                       "-f", str(ROOT / "infra/vps-production/compose.yaml"), "-p", config["project"], *args],
+                       "-f", str(release_compose(config)), "-p", config["project"], *args],
                       env=compose_env(state, config), capture_output=True, check=True).stdout
 
 
@@ -289,42 +311,6 @@ def disable_google(state, config):
     print("Login Google desligado; client ID/secret preservados nos arquivos privados.")
 
 
-LAUNCHERS = {"questions": "br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal",
-             "templates": "br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal"}
-CLI_ACTIONS = {"questions": {"preview", "import", "report", "decide"},
-               "templates": {"preview", "register", "decide"}}
-
-
-def editorial_cli_command(config, launcher, args, workdir):
-    """Run an existing nonweb editorial launcher from the production API image.
-
-    The helper joins the PostgreSQL container's network namespace, so the launcher's own loopback rule
-    (DB_URL on localhost) still holds and no database port is ever published. Typed confirmations stay
-    interactive; DB_PASSWORD is passed through the environment, never as an argument.
-    """
-    if launcher not in LAUNCHERS or not args or args[0] not in CLI_ACTIONS[launcher]:
-        raise ValueError("Launcher ou ação editorial não permitida")
-    if "--yes" in args or any("\n" in a for a in args):
-        raise ValueError("Argumento não permitido")
-    workdir = Path(workdir).resolve()
-    postgres = f"{config['project']}-postgres-1"
-    return ["run", "--rm", "-i", "--network", f"container:{postgres}", "--user", "0:0",
-            "--read-only", "--tmpfs", "/tmp:rw,nosuid,nodev,noexec,size=64m",
-            "-e", "DB_URL=jdbc:postgresql://localhost:5432/concurso_simulator?connectTimeout=2&socketTimeout=30",
-            "-e", "DB_USERNAME=concurso", "-e", "DB_PASSWORD", "-e", "CI=false", "-e", "GITHUB_ACTIONS=false",
-            "-v", f"{workdir}:/work:ro", "-w", "/work", "--entrypoint", "java",
-            config["images"]["images"]["api"]["id"],
-            f"-Dloader.main={LAUNCHERS[launcher]}", "-cp", "/app/application.jar",
-            "org.springframework.boot.loader.launch.PropertiesLauncher", *args]
-
-
-def editorial_cli(state, config, launcher, args, workdir):
-    command = editorial_cli_command(config, launcher, args, workdir)
-    env = dict(os.environ, DB_PASSWORD=(state / "secrets" / "db_password").read_text(encoding="utf-8").strip())
-    # Interactive: inherit the terminal so the operator types the launcher's own confirmation.
-    return docker_run(command, env=env).returncode
-
-
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE)
@@ -343,18 +329,7 @@ def main():
     restore_action.add_argument("--confirm")
     release_action = actions.add_parser("release")
     release_action.add_argument("--images", type=Path, required=True)
-    cli_action = actions.add_parser("editorial-cli", help="executa QuestionBankLocal/TemplateLocal contra este banco")
-    cli_action.add_argument("--launcher", choices=sorted(LAUNCHERS), required=True)
-    cli_action.add_argument("--workdir", type=Path, required=True, help="diretório montado somente leitura em /work")
-    cli_action.add_argument("cli_args", nargs=argparse.REMAINDER)
     args = parser.parse_args()
-    if args.action == "editorial-cli":
-        try:
-            state, config = load(args.state)
-            cli_args = args.cli_args[1:] if args.cli_args[:1] == ["--"] else args.cli_args
-            raise SystemExit(editorial_cli(state, config, args.launcher, cli_args, args.workdir))
-        except (ValueError, OSError, KeyError):
-            parser.exit(1, "CLI editorial recusada; confira launcher, ação e estado.\n")
     try:
         if args.action == "build":
             build(args.revision, args.state)

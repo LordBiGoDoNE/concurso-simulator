@@ -61,14 +61,19 @@ do `concurso-dev`. O volume do projeto atual é preservado até a decisão do us
 
 - Release = commit da main conferido, construído no Docker rootless da própria VPS
   a partir do clone do GitHub, com contexto filtrado (`git archive`) e manifesto
-  de imagens. Sem push nem credenciais do GitHub na VPS.
+  de imagens. Sem push nem credenciais do GitHub na VPS. O `compose.yaml` do mesmo
+  commit é copiado para o diretório de releases e fixado por SHA-256 no manifesto;
+  `start`, `release` e `rollback` usam essa cópia, não o checkout de trabalho.
 - Web com origem `https://concurso-simulator.reemsoftworks.com` embutida no build;
   sem `sub_filter`. Web publica somente em 127.0.0.1; API e PG sem portas no host.
 - Perfil de produção: cookie `SESSION` Secure/HttpOnly/SameSite=Lax, CSRF atual,
-  CORS somente com a origem canônica. A API precisa reconhecer HTTPS atrás do
-  nginx para montar URLs de OAuth; usar cabeçalhos encaminhados confiando somente
-  no proxy interno, sem aceitar `Forwarded`/`X-Forwarded-*` vindos do cliente.
-  Se isso exigir código, entra com testes da cadeia de segurança real.
+  CORS somente com a origem canônica. Decisão de implementação: a API não lê
+  cabeçalhos encaminhados (`SERVER_FORWARD_HEADERS_STRATEGY: none`) e os dois nginx
+  os apagam. O HTTPS é garantido por configuração estática: cookie Secure fora do
+  perfil `local`, callback OAuth absoluto validado como HTTPS e retorno para
+  `frontend-url` fixo. Por isso o orçamento de login por origem da API vê só o
+  container web; o limite por IP real fica no nginx do host (`limit_req` no login
+  administrativo), e `/api/v1/admin/` é restrito a uma allowlist administrativa.
 - Segredos por arquivos (configtree / `*_FILE`) montados apenas no serviço que os
   consome: senha do PG, senha do admin bootstrap, client Google.
 - Serviço systemd de usuário com linger para subir após reboot; prontidão real
@@ -80,9 +85,9 @@ DNS na Hostinger (painel ou MCP, com confirmação do usuário): registros A (e 
 se a VPS tiver IPv6 roteável) para `concurso-simulator`, raiz e `www` dos dois
 domínios. TTL baixo durante a troca.
 
-nginx do host, com arquivos de referência versionados em `infra/vps-production/nginx/`:
+nginx do host, com arquivos de referência versionados em `infra/vps-production/edge/`:
 
-- `concurso-simulator.reemsoftworks.com`: TLS, proxy para 127.0.0.1:18088 com
+- `concurso-simulator.reemsoftworks.com`: TLS, proxy para 127.0.0.1:18090 com
   `Host` canônico, limpeza de `Forwarded`/`X-Forwarded-*` do cliente e definição
   pelo proxy, HSTS (sem preload inicialmente), `client_max_body_size` compatível
   com a importação administrativa, timeouts finitos, sem logar cookies/query do callback.
@@ -90,8 +95,14 @@ nginx do host, com arquivos de referência versionados em `infra/vps-production/
   e caminho em `.com`.
 - Raiz e `www` de `.com`: 302 temporário para o concurso até existir outro site.
 - HTTP 80: 301 para HTTPS, exceto `/.well-known/acme-challenge/`.
-- Host desconhecido: 80 responde 421/444 e 443 usa `ssl_reject_handshake`.
-  O vhost `central` (IP) é preservado.
+- Host desconhecido: na abertura, `reemsoftworks-default.conf` vira o `default_server`
+  da porta 80 (444, mantendo só o desafio ACME usado pelo certificado de IP do
+  `central`). Na 443 não há `ssl_reject_handshake`: o vhost `central`, acessado
+  pelo IP sem SNI, é o padrão e seria derrubado. Hosts desconhecidos não chegam à
+  aplicação: o vhost do concurso só atende o nome canônico e o nginx interno
+  responde 421. O vhost `central` é preservado.
+- Área administrativa `/api/v1/admin/`: somente IPs da allowlist administrativa
+  (arquivo fora do Git), inclusive após a abertura; login com `limit_req` por IP.
 - Certificados Let's Encrypt via certbot existente (webroot), com renovação
   pelo timer existente e `nginx -t` + reload no hook.
 
@@ -104,7 +115,7 @@ usuário; o roteiro e o comando abaixo ficam prontos e a ativação segue na #22
 
 O usuário cria o client OAuth web no Google Cloud com o callback exato da origem
 canônica (conforme `backend/docs/google-login.md`), escopos básicos
-(`openid`, `email`, `profile`) e tela de consentimento publicada em produção, para
+(`openid`, `profile`, os únicos que a aplicação solicita) e tela de consentimento publicada em produção, para
 não limitar o acesso a usuários de teste. Os segredos ficam só nos arquivos privados
 da VPS. Smoke real (login, sessão, logout, retomada e conta nova) antes da abertura.
 

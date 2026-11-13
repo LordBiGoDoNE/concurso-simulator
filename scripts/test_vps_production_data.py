@@ -95,6 +95,22 @@ class RestoreTests(BackupFileTests):
             data.restore(Path(self.directory.name), config(owner=OTHER), self.write(), "RESTORE qualquer", self.backups)
 
 
+class BackupFailureTests(unittest.TestCase):
+    def test_failed_dump_leaves_no_partial_file(self):
+        with tempfile.TemporaryDirectory() as directory:
+            backups = Path(directory) / "backups"
+            failure = data.subprocess.CalledProcessError(1, "pg_dump")
+            with mock.patch.object(production, "compose", return_value=b""), \
+                    mock.patch.object(data, "fingerprints", return_value={}), \
+                    mock.patch.object(data, "schema_version", return_value=17), \
+                    mock.patch.object(data, "sql", side_effect=[b"18.6", b"0"]), \
+                    mock.patch.object(data, "postgres", return_value="abc123"), \
+                    mock.patch.object(data, "docker_run", side_effect=failure):
+                with self.assertRaises(data.subprocess.CalledProcessError):
+                    data.backup(Path(directory), config(), directory=backups)
+            self.assertEqual(list(backups.iterdir()), [])
+
+
 class ReleaseTests(unittest.TestCase):
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory()
@@ -128,6 +144,15 @@ class ReleaseTests(unittest.TestCase):
         saved = json.loads((self.state / "state.json").read_text())
         self.assertEqual(saved["previous"]["images"]["images"]["api"]["id"], API)
         self.assertEqual(saved["previous"]["schema_version"], 17)
+
+    def test_release_cannot_change_the_postgres_image(self):
+        path = self.manifest()
+        value = json.loads(path.read_text())
+        value["base_images"] = {"postgres": "postgres@sha256:" + "8" * 64}
+        path.write_text(json.dumps(value), encoding="utf-8")
+        with self.assertRaises(ValueError):
+            data.release(self.state, config(), path)
+        self.assertEqual(self.calls, [])
 
     def test_release_outside_main_is_refused_in_production(self):
         with self.assertRaises(ValueError):

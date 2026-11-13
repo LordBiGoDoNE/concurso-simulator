@@ -56,6 +56,13 @@ executa `sudo reboot` na conta administrativa. Depois, o assistente confere:
 `check-project-user.sh`, containers saudáveis, `curl` local na porta da web e
 nginx respondendo. Nenhum serviço deve exigir intervenção manual.
 
+Se o host reiniciar durante `backup`, `release` ou `restore`, fica um
+`operation.lock` no estado e o serviço `concurso-production` não sobe (a API
+parada por `compose stop` não volta sozinha). A ferramenta nunca quebra o lock:
+confira que nenhum processo `vps_production.py` está vivo (`pgrep -af vps_production`),
+que não há `.partial` em `backups/` e o estado dos containers; só então remova o
+lock deliberadamente e rode `start`.
+
 ## Grupo 2 — runtime de produção
 
 Checkout dedicado do operador em `~/projects/production` (clone do GitHub, sem
@@ -67,7 +74,7 @@ credenciais). O checkout antigo `~/projects/repository` e o projeto
 | Projeto Docker | `concurso-simulator-prod` |
 | Web (loopback) | `127.0.0.1:18090` |
 | Estado e segredos | `~/.local/share/concurso-simulator/production/` (0700) |
-| Manifestos de release | `~/.local/share/concurso-simulator/releases/<sha12>.json` |
+| Manifestos de release | `~/.local/share/concurso-simulator/releases/<sha12>.json` e `<sha12>.compose.yaml` |
 | Perfil Spring | `production` (sem `local`: cookie Secure, login só HTTPS) |
 
 ```sh
@@ -80,12 +87,14 @@ python3 scripts/vps_production.py start | status | stop
 
 - `build` usa o mesmo contexto filtrado do operador local (`git archive` +
   allowlist), acrescentando apenas `infra/vps-production/{web.Dockerfile,nginx.conf}`.
-  O manifesto registra se o commit está em `origin/main`.
+  O manifesto registra se o commit está em `origin/main` e fixa por SHA-256 o
+  `compose.yaml` daquele commit; o runtime sempre usa essa cópia, nunca o checkout.
 - `init` recusa estado existente, origem diferente e commit fora da main.
   `--rehearsal` permite ensaiar uma branch de tarefa; o estado fica marcado como ensaio.
 - Segredos gerados em arquivos: senha do PostgreSQL, senha inicial do admin
   (`secrets/admin_password`, nunca impressa) e configuração Google desligada.
-  Leia a senha do admin diretamente na VPS e troque-a após o primeiro login.
+  A senha do admin vem desse arquivo e não é temporária. Se for trocada pela
+  interface, atualize o arquivo, porque `vps_question_load.py` o usa para entrar.
 - `start` exige prontidão real dos três serviços (`--wait`). Containers usam
   `restart: unless-stopped`; o serviço de usuário `systemd/concurso-production.service`
   sobe a aplicação no boot.
@@ -93,6 +102,20 @@ python3 scripts/vps_production.py start | status | stop
   e libera 20 MB/120 s apenas em `/api/v1/admin/`. TLS e HSTS ficam no nginx do host.
 
 Atualização de release, backup e restauração pertencem ao grupo 6.
+
+## Grupo 5 — acervo
+
+Carga da expansão 2026-11 aprovada (102 pacotes, 2.587 questões) pela importação
+administrativa HTTP, no loopback do host. Faça um backup antes.
+
+```sh
+python3 scripts/vps_question_load.py --dry-run   # só prévias, digests conferidos com o manifesto versionado
+python3 scripts/vps_question_load.py             # importa, SUBMIT e APPROVE AI_ONLY por pacote; confere no fim
+python3 scripts/vps_question_load.py --verify-only
+```
+
+O diário privado `production/question-load.json` permite retomar sem duplicar
+recibos. Os conjuntos de outubro e o Google ficaram fora desta entrega (#221).
 
 ## Grupo 6 — backup, atualização e recuperação
 
@@ -146,8 +169,10 @@ Copie a pasta `edge/` para a conta administrativa e execute, nesta ordem:
 
 ```sh
 sudo bash install-edge.sh http <IP-público-do-usuário>   # porta 80 + allowlist de pré-lançamento
+sudo bash install-edge.sh admin <IP-público-do-usuário>  # allowlist da área administrativa
 sudo bash install-edge.sh cert                           # após o DNS propagar
 sudo bash install-edge.sh https
+sudo bash install-edge.sh open                           # abertura (grupo 7)
 ```
 
 - Um certificado `reemsoftworks` cobre os seis nomes; renovação pelo timer
@@ -159,5 +184,16 @@ sudo bash install-edge.sh https
   raiz e `www` de `.com` → 302 para o concurso.
 - Até a abertura (grupo 7), `/etc/nginx/snippets/concurso-simulator-access.conf`
   permite só o IP do usuário; demais recebem 403. O arquivo fica fora do Git.
+- `/api/v1/admin/` só aceita IPs de `concurso-simulator-admin-access.conf`, também
+  após a abertura; o login administrativo tem `limit_req` pelo IP real (a API
+  atrás dos proxies só vê o container web). Se o IP do administrador mudar, repita
+  a fase `admin`.
+- `open`: esvazia a allowlist de pré-lançamento (cópia anterior preservada),
+  remove só o link `sites-enabled/concurso-public.conf` (acesso antigo pelo IP) e
+  instala `reemsoftworks-default.conf` (porta 80: 444 para Host desconhecido,
+  mantendo o desafio ACME do `central`). Se `nginx -t` falhar, tudo volta como estava.
+- Porta 443 sem `ssl_reject_handshake`: o `central`, acessado pelo IP sem SNI, é o
+  padrão da 443. Hosts desconhecidos não chegam à aplicação (vhost só do nome
+  canônico; nginx interno responde 421).
 - `concurso-public.conf` (acesso antigo por HTTP no IP) e `central.conf` não são
   alterados; a remoção do acesso pelo IP é do corte no grupo 7.

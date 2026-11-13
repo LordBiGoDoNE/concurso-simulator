@@ -3,7 +3,7 @@
 Operação síncrona para ampliar os acervos **SIMULADO** e **PRATICA_AULA**, por JSON
 autossuficiente. Até 100 questões por pacote, sem teto acumulado de armazenamento.
 Tudo novo entra em DRAFT. A interface administrativa limita-se a login, senha e vínculo Google;
-não há upload/editorial na interface, aprovação HTTP, publicação de recursos, carga no startup ou suporte a templates. Os leitores locais antigos
+não há upload/editorial na interface nem publicação de recursos; decisões editoriais HTTP existem apenas em lote para o ADM ([#177](#decisões-editoriais-em-lote--177)), carga no startup ou suporte a templates. Os leitores locais antigos
 continuam aceitando seus próprios formatos sem conversão automática.
 
 ## Acesso e operação local
@@ -232,3 +232,44 @@ Corpos POST: JSON UTF-8 sem compressão, até 2 MiB, sem chaves duplicadas, camp
 desconhecidos ou coerção de tipos (400 `INVALID_REQUEST`); filtros/limites inválidos
 retornam 400 `INVALID_QUERY`. A plataforma não julga conteúdo nem semelhança entre questões:
 a conferência de concorrência e de curadoria é do operador.
+
+## Decisões editoriais em lote — #177
+
+**Decisão alterada:** a #160 registrava "sem decisões editoriais HTTP". Por decisão do
+usuário de 2026-11-12 ([#177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177)),
+o ADM autenticado pode decidir em lote pela API. A CLI local `decide` continua disponível,
+inclusive para RETURN_TO_DRAFT e WITHDRAW, que ficaram fora do lote nesta entrega.
+
+Mesmo modelo da importação: prévia sem escrita, token de confirmação e aplicação atômica com
+recibo. Exige a mesma configuração (`destination-id` e `confirmation-key`); sem ela, as rotas
+respondem 503 `DECISIONS_NOT_CONFIGURED` antes de ler o corpo. O token é HMAC com separação de
+domínio própria: token de importação não confirma lote, nem o inverso.
+
+1. `POST /api/v1/admin/editorial-decisions/preview` com `action` (`SUBMIT` ou `APPROVE`),
+   `reviewKind` (`HUMAN_PEER`/`AI_ONLY`, obrigatório em APPROVE), `checklist`, `rationale`
+   (até 3.500 caracteres) e a seleção: `items` (`questionId`, `revisionId`, `fingerprint`) ou
+   `importReceiptId` (as revisões gravadas por aquele recibo), nunca ambos. Até 100 questões,
+   sem repetição — um recibo de importação sempre cabe.
+2. A prévia devolve, por item, estado atual, estado resultante ou motivo de recusa
+   (`QUESTION_NOT_FOUND`, `REVISION_NOT_FOUND`, `FINGERPRINT_MISMATCH`, `INVALID_TRANSITION`,
+   `CHECKLIST_INCOMPLETE`), calculados aplicando a decisão a uma cópia do agregado pelas
+   próprias regras do domínio. Se todos os itens forem válidos, devolve `expected` (ponteiro
+   elegível e sequência observados por questão), `digest` e `confirmationToken` válido por
+   15 minutos. Nada é gravado.
+3. `POST /api/v1/admin/editorial-decisions/apply` com o mesmo envelope, `items` = `expected`
+   da prévia e o token. O token vincula ator, destino e o digest do envelope e do estado
+   confirmado; qualquer alteração retorna 409 `CONFIRMATION_MISMATCH` (ou
+   `CONFIRMATION_EXPIRED`).
+4. A aplicação trava as questões em ordem fixa e confere que o estado de **todas** é igual ao
+   confirmado. Divergência recusa o lote inteiro com 409 `BATCH_DIVERGED` e a lista de
+   questões, sem efeito parcial; refaça a prévia. Depois grava cada decisão pelo domínio
+   (mesma regra do `DecideQuestionUseCase`), com `responsible = admin:<UUID do ADM>`, horário
+   do servidor, checklist, origem da revisão e justificativa acrescida de `[lote <nonce>]`,
+   e o recibo (`qb_decision_batch`, `qb_decision_batch_item`, V17), tudo no mesmo commit.
+5. Resposta perdida: reenviar a mesma aplicação devolve o recibo original com
+   `replayed: true`, sem decisões duplicadas.
+
+A plataforma não procura conflitos editoriais nem julga conteúdo ou semelhança: a única
+recusa automática além de forma, acesso e transições do domínio é a divergência entre a
+prévia confirmada e o estado atual. Conferir revisão esperada e mudanças concorrentes é
+responsabilidade do operador (ADM ou IA que o auxilia), apoiado pela consulta administrativa.

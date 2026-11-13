@@ -16,4 +16,10 @@ public class AdministrativeCurationConfiguration {
             PlatformTransactionManager manager, AdministrativePackageReader reader) {
         return new AdministrativeQuestionQueries(catalog, new JpaQuestionInventory(em, manager), reader);
     }
+    @Bean br.com.concursosimulator.questionbank.application.EditorialBatchUseCase editorialBatchUseCase(JpaAdministrativeQuestionCatalog catalog, JpaQuestionStore store) {
+        return new br.com.concursosimulator.questionbank.application.EditorialBatchUseCase(catalog, store, java.time.Clock.systemUTC());
+    }
+    @Bean EditorialBatchTokens editorialBatchTokens(ImportSettings settings) {
+        return new EditorialBatchTokens(settings.secret(), java.time.Clock.systemUTC());
+    }
 }

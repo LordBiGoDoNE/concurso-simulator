@@ -33,7 +33,7 @@ public class AdministrativeCurationSecurityConfiguration {
             "/api/v1/admin/editorial-decisions/preview", "/api/v1/admin/editorial-decisions/apply");
 
     @Bean @Order(0)
-    SecurityFilterChain administrativeCurationSecurity(HttpSecurity http, AdministrativeImportPermission permission,
+    SecurityFilterChain administrativeCurationSecurity(HttpSecurity http, AdministrativeImportPermission permission, ImportSettings settings,
             HttpSessionSecurityContextRepository repository, @Value("${app.cors-origins}") String origins) throws Exception {
         var cors = new CorsConfiguration();
         cors.setAllowedOrigins(Arrays.stream(origins.split(",")).map(String::trim).filter(s -> !s.isEmpty()).toList());
@@ -59,7 +59,7 @@ public class AdministrativeCurationSecurityConfiguration {
                             ImportSecurityConfiguration.reject(s, status, status == 401 ? "unauthenticated" : "forbidden");
                         }))
                 .addFilterBefore(new ImportSecurityConfiguration.NoStore(), org.springframework.web.filter.CorsFilter.class)
-                .addFilterAfter(new BodyLimits(), AuthorizationFilter.class).build();
+                .addFilterAfter(new BodyLimits(settings), AuthorizationFilter.class).build();
     }
 
     static boolean allowedRoute(HttpServletRequest request) {
@@ -71,10 +71,17 @@ public class AdministrativeCurationSecurityConfiguration {
         };
     }
 
-    /** Depois da autorização: só JSON UTF-8 sem compressão e corpo declarado até 2 MiB em POST. */
+    /** Depois da autorização: configuração das decisões em lote; só JSON UTF-8 sem compressão e corpo declarado até 2 MiB em POST. */
     static final class BodyLimits extends OncePerRequestFilter {
+        private final ImportSettings settings;
+        BodyLimits(ImportSettings settings) { this.settings = settings; }
         @Override protected boolean shouldNotFilter(HttpServletRequest r) { return !"POST".equals(r.getMethod()); }
         @Override protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain) throws ServletException, IOException {
+            // Decisões em lote dependem do destino e da chave de confirmação; consultas não.
+            if (r.getServletPath().startsWith("/api/v1/admin/editorial-decisions/") && !settings.configured()) {
+                s.setStatus(503); s.setContentType("application/json"); s.setHeader("Cache-Control", "no-store");
+                s.getWriter().write("{\"error\":\"DECISIONS_NOT_CONFIGURED\",\"correlationId\":\"" + UUID.randomUUID() + "\"}"); return;
+            }
             try {
                 var type = org.springframework.http.MediaType.parseMediaType(r.getContentType());
                 if (!"application".equals(type.getType()) || !"json".equals(type.getSubtype())

@@ -20,7 +20,7 @@ import org.hibernate.exception.ConstraintViolationException;
 
 /** Porta de escrita de questões: transação independente, bloqueio por agregado e retorno após commit. */
 @Repository
-public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
+public class JpaQuestionStore implements QuestionStore, QuestionImportStore, br.com.concursosimulator.questionbank.application.port.EditorialBatchStore {
     private final EntityManager entities;
     private final TransactionTemplate transactions;
     private final TransactionTemplate reads;
@@ -45,9 +45,12 @@ public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
         return unit(operation::apply);
     }
     @Override public <T> T importTransaction(Function<QuestionImportStore.Session,T> operation) {
-        return unit(operation);
+        return unit(operation::apply);
     }
-    private <T> T unit(Function<QuestionImportStore.Session,T> operation) {
+    @Override public <T> T batchTransaction(Function<br.com.concursosimulator.questionbank.application.port.EditorialBatchStore.Session,T> operation) {
+        return unit(operation::apply);
+    }
+    private <T> T unit(Function<JpaSession,T> operation) {
         try {
             return transactions.execute(status -> {
                 var session=new JpaSession();
@@ -62,11 +65,13 @@ public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
                 }
                 if(cause instanceof ConstraintViolationException violation && "qb_import_receipt_pkey".equals(violation.getConstraintName()))
                     throw new QuestionImportStore.Collision(exception);
+                if(cause instanceof ConstraintViolationException violation && "qb_decision_batch_pkey".equals(violation.getConstraintName()))
+                    throw new br.com.concursosimulator.questionbank.application.port.EditorialBatchStore.Collision(exception);
             }
             throw exception; // FK, PK, validação e indisponibilidade nunca são sucesso/idempotência.
         }
     }
-    private final class JpaSession implements QuestionImportStore.Session {
+    private final class JpaSession implements QuestionImportStore.Session, br.com.concursosimulator.questionbank.application.port.EditorialBatchStore.Session {
         private boolean active=true;
         private final Map<UUID,Loaded> loaded=new HashMap<>();
         private void requireActive() { if (!active) throw new IllegalStateException("Unidade transacional encerrada"); }
@@ -96,6 +101,24 @@ public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
                         .setParameter("nonce",receipt.confirmation().nonce()).setParameter("path",file.path())
                         .setParameter("type",file.mediaType()).setParameter("hash",file.sha256()).executeUpdate();
             }
+        }
+        @Override public Optional<br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Receipt> batchReceipt(UUID nonce) {
+            requireActive();
+            return entities.createNativeQuery("select cast(payload as text) from qb_decision_batch where nonce=:nonce",String.class)
+                    .setParameter("nonce",nonce).getResultStream().findFirst()
+                    .map(payload->json.readValue((String)payload,br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Receipt.class));
+        }
+        @Override public void saveBatch(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Receipt receipt) {
+            requireActive();
+            entities.flush(); // Itens referenciam decisões desta mesma unidade, ainda sem commit.
+            var c=receipt.confirmation();
+            entities.createNativeQuery("insert into qb_decision_batch(nonce,destination,actor,committed_at,action,review_kind,digest,payload) values (:nonce,:destination,:actor,:at,:action,:kind,:digest,cast(:payload as jsonb))")
+                    .setParameter("nonce",c.nonce()).setParameter("destination",c.destination()).setParameter("actor",c.actor())
+                    .setParameter("at",receipt.committedAt()).setParameter("action",receipt.action().name())
+                    .setParameter("kind",receipt.reviewKind()==null?null:receipt.reviewKind().name()).setParameter("digest",c.digest())
+                    .setParameter("payload",json.writeValueAsString(receipt)).executeUpdate();
+            for(var d:receipt.decisions())entities.createNativeQuery("insert into qb_decision_batch_item(nonce,question_id,decision_sequence) values (:nonce,:question,:sequence)")
+                    .setParameter("nonce",c.nonce()).setParameter("question",d.questionId()).setParameter("sequence",d.decisionSequence()).executeUpdate();
         }
         @Override public Optional<Question> loadForUpdate(UUID id) {
             requireActive(); if (loaded.containsKey(id)) return Optional.of(loaded.get(id).question);

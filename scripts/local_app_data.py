@@ -16,12 +16,14 @@ BASE_TABLES = frozenset({"application_marker", "app_user", "external_identity", 
           "qb_reference", "qb_decision", "me_attempt", "me_item", "me_command", "pq_family", "pq_version",
           "pq_decision", "pq_instance", "flyway_schema_history"})
 IMPORT_TABLES = frozenset({"qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision"})
+BATCH_TABLES = frozenset({"qb_decision_batch", "qb_decision_batch_item"})  # V17 (#177)
 TABLES_BY_SCHEMA = {10: BASE_TABLES, 11: BASE_TABLES,
                    12: BASE_TABLES | IMPORT_TABLES,
                    13: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},
                    14: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},
                    # V16 (#177) só acrescenta coluna; histórico com ou sem a V15 da #173 (épica combinada).
-                   16: BASE_TABLES | IMPORT_TABLES | {"admin_registration"}}
+                   16: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},
+                   17: BASE_TABLES | IMPORT_TABLES | {"admin_registration"} | BATCH_TABLES}
 
 
 SUPPORTED_SCHEMA_VERSIONS = tuple(TABLES_BY_SCHEMA)
@@ -70,7 +72,7 @@ def supported_histories():
 def schema_version(path, config):
     versions = sql(path, config, "select version from flyway_schema_history where success order by installed_rank").decode().splitlines()
     if versions not in supported_histories():
-        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V14 ou V16)")
+        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V14, V16 ou V17)")
     return int(versions[-1])
 
 

@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 /** Erros sanitizados e no-store da curadoria administrativa; nunca ecoam conteúdo, SQL ou exceção. */
-@RestControllerAdvice(assignableTypes = AdministrativeQuestionController.class)
+@RestControllerAdvice(assignableTypes = {AdministrativeQuestionController.class, EditorialDecisionBatchController.class})
 public class AdministrativeCurationFailureAdvice {
     public record ErrorResponse(String error, String correlationId) {}
     public record ExportErrorResponse(String error, String reason, List<UUID> questionIds, String correlationId) {}
@@ -34,6 +34,18 @@ public class AdministrativeCurationFailureAdvice {
     @ExceptionHandler(ExportRefused.class) ResponseEntity<ExportErrorResponse> refused(ExportRefused refused) {
         return ResponseEntity.status(422).header("Cache-Control", "no-store")
                 .body(new ExportErrorResponse("EXPORT_REFUSED", refused.failure().name(), refused.questionIds(), correlation("EXPORT_REFUSED")));
+    }
+    public record ConflictResponse(String error, List<UUID> questionIds, String correlationId) {}
+    @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.InvalidBatch.class) ResponseEntity<ErrorResponse> invalidBatch() { return error(400, "INVALID_BATCH"); }
+    @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.ConfirmationFailure.class)
+    ResponseEntity<ConflictResponse> confirmation(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.ConfirmationFailure failure) {
+        var code = failure.expired() ? "CONFIRMATION_EXPIRED" : "CONFIRMATION_MISMATCH";
+        return ResponseEntity.status(409).header("Cache-Control", "no-store").body(new ConflictResponse(code, null, correlation(code)));
+    }
+    @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.BatchDiverged.class)
+    ResponseEntity<ConflictResponse> diverged(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.BatchDiverged diverged) {
+        return ResponseEntity.status(409).header("Cache-Control", "no-store")
+                .body(new ConflictResponse("BATCH_DIVERGED", diverged.questionIds(), correlation("BATCH_DIVERGED")));
     }
     @ExceptionHandler({org.springframework.dao.TransientDataAccessException.class, org.springframework.dao.DataAccessResourceFailureException.class,
             org.springframework.transaction.CannotCreateTransactionException.class, org.springframework.transaction.TransactionTimedOutException.class})

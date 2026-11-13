@@ -2,8 +2,9 @@
 
 Launcher separado `QuestionBankLocal`, pela tarefa Gradle `questionBankLocal`.
 Não é runner nem perfil do startup web; build/startup normal não importa, envia
-para revisão, aprova ou retira questões. Não existe API administrativa ou permissão
-Google editorial. O acesso de escrita pertence ao operador local que controla o banco.
+para revisão, aprova ou retira questões. Decisões
+editoriais por HTTP existem somente em lote para o ADM autenticado ([#177](question-administrative-import.md#decisões-editoriais-em-lote--177));
+não há permissão Google editorial. O acesso de escrita pertence ao operador local que controla o banco.
 
 ## Prévia e importação
 

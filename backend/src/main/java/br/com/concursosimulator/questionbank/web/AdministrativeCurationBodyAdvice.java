@@ -19,7 +19,7 @@ import tools.jackson.databind.type.LogicalType;
  * Corpo JSON da curadoria administrativa: até 2 MiB, UTF-8, sem chaves duplicadas, campos
  * desconhecidos, conteúdo após o objeto ou coerção de escalares. Mesma política da importação.
  */
-@ControllerAdvice(assignableTypes = AdministrativeQuestionController.class)
+@ControllerAdvice(assignableTypes = {AdministrativeQuestionController.class, EditorialDecisionBatchController.class})
 public class AdministrativeCurationBodyAdvice extends RequestBodyAdviceAdapter {
     static final int LIMIT = 2_097_152;
     private final JsonMapper strict = JsonMapper.builder(JsonFactory.builder().enable(StreamReadFeature.STRICT_DUPLICATE_DETECTION)

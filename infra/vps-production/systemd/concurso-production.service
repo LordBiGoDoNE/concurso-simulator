@@ -1,0 +1,19 @@
+# Serviço de usuário do concurso-dev. Instalar em ~/.config/systemd/user/ e
+# habilitar com: systemctl --user daemon-reload && systemctl --user enable concurso-production.service
+[Unit]
+Description=concurso-simulator em produção (Docker rootless)
+After=docker.service
+Wants=docker.service
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+WorkingDirectory=%h/projects/production
+Environment=DOCKER_CONTEXT=rootless
+ExecStart=/usr/bin/python3 scripts/vps_production.py start
+ExecStop=/usr/bin/python3 scripts/vps_production.py stop
+TimeoutStartSec=300
+TimeoutStopSec=120
+
+[Install]
+WantedBy=default.target

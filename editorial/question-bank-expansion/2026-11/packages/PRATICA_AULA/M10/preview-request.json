@@ -1,0 +1,1997 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.cerq25-alm-q17"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma fazenda, o número de ovos coletados cresce a cada dia segundo a sequência: 4, 8, 14, 22, 32, (...). Considerando essa sequência, quantos ovos serão coletados no próximo dia?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9769d8fc-df6a-57ee-bd6a-a824e6a49cbb",
+              "content": {
+                "text": "42",
+                "resources": []
+              }
+            },
+            {
+              "id": "0d9e5ee1-581a-5a73-b25f-5fc74f8b1dc6",
+              "content": {
+                "text": "40",
+                "resources": []
+              }
+            },
+            {
+              "id": "6fa1f311-4d2e-5e06-a1ba-82a0dc086d1f",
+              "content": {
+                "text": "46",
+                "resources": []
+              }
+            },
+            {
+              "id": "e1c12dc0-4823-56b1-95c7-b4448c0ab3c2",
+              "content": {
+                "text": "44",
+                "resources": []
+              }
+            },
+            {
+              "id": "2811bd3e-d0fe-5c74-9367-237a7407eaae",
+              "content": {
+                "text": "50",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e1c12dc0-4823-56b1-95c7-b4448c0ab3c2",
+          "resolution": {
+            "text": "1. As diferenças entre termos consecutivos são 4, 6, 8 e 10, crescendo de 2 em 2; a próxima diferença é 12, logo o próximo termo é 32 + 12 = 44. 2. 42 repete a diferença 10; 40, 46 e 50 não seguem o padrão das diferenças. Resposta: alternativa D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Cerquilho — Concurso Público 01/2025, ALMOXARIFE, questão 17. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M10.p.cerq25-alm-q17.json",
+            "answerPath": "sources/admin.2026-11.M10.p.cerq25-alm-q17.json",
+            "contentSha256": "9291ee0edfa90c36791838ae019c0d1c17c25c2476bef0077778e91fd056fc74",
+            "answerSha256": "9291ee0edfa90c36791838ae019c0d1c17c25c2476bef0077778e91fd056fc74"
+          }
+        },
+        "fingerprint": "b087bb235321482212c6293319e001bfe8efa073250d4960cb4047bc4ccc42fb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-agenda-restricoes"
+        },
+        "content": {
+          "statement": {
+            "text": "Três atividades, P, Q e R, ocorrerão de segunda a quarta, uma por dia. P não pode ocorrer na segunda; Q ocorre antes de P; R não ocorre na quarta. Qual é a atividade da quarta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8345180a-f895-5e5b-87b3-c27a56f38eae",
+              "content": {
+                "text": "Q",
+                "resources": []
+              }
+            },
+            {
+              "id": "2ef80c88-4a80-5814-887f-f5b38256716f",
+              "content": {
+                "text": "R",
+                "resources": []
+              }
+            },
+            {
+              "id": "4cca617d-feda-5f9f-9d78-1f996391165c",
+              "content": {
+                "text": "Não é determinada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "86ebe8c0-3153-5647-adfd-1edfc55c8c58",
+              "content": {
+                "text": "P",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "86ebe8c0-3153-5647-adfd-1edfc55c8c58",
+          "resolution": {
+            "text": "1. Se P fosse na terça, Q seria na segunda e R na quarta, o que é proibido. 2. Logo P ocorre na quarta; Q e R ocupam segunda e terça em alguma ordem. Por isso Q e R não podem estar na quarta, e a atividade da quarta é determinada, embora a ordem de Q e R não seja.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-agenda-restricoes.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-agenda-restricoes.json",
+            "contentSha256": "385b9e29560a7fd17a76da612180e897a86e6197c0aaf4889a4e3482d2093dea",
+            "answerSha256": "385b9e29560a7fd17a76da612180e897a86e6197c0aaf4889a4e3482d2093dea"
+          }
+        },
+        "fingerprint": "6198cced3623b9c5a3e0bb22af42756eb4de3e10218a4869966b3a8c4abff89b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-blocos-soma-impares"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma construção acrescenta, nas etapas 1,2,3,..., respectivamente 1,3,5,... peças, os ímpares positivos em ordem. Quantas peças foram acrescentadas ao todo nas seis primeiras etapas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b3c61265-2c00-5a5c-9b79-a0bdd291236a",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "7d8f38e7-00a3-5e3c-b15f-c8f12f9cfe6c",
+              "content": {
+                "text": "30",
+                "resources": []
+              }
+            },
+            {
+              "id": "b865141f-5c58-5536-975a-588cf10868a3",
+              "content": {
+                "text": "42",
+                "resources": []
+              }
+            },
+            {
+              "id": "1ae806ca-9b11-5e3e-8300-aa482119fbf0",
+              "content": {
+                "text": "36",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1ae806ca-9b11-5e3e-8300-aa482119fbf0",
+          "resolution": {
+            "text": "1. As parcelas são 1+3+5+7+9+11. 2. A soma é 36, igual a 6²; seis é o número de etapas, não o último ímpar.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-blocos-soma-impares.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-blocos-soma-impares.json",
+            "contentSha256": "100b08b0bcd511c88b88b5344993f0701fa46cfe10b72bc90de482f863f85c68",
+            "answerSha256": "100b08b0bcd511c88b88b5344993f0701fa46cfe10b72bc90de482f863f85c68"
+          }
+        },
+        "fingerprint": "9d92b4f6aa8e256803367aada48b6e7dcd6a96449eca0dc697624364f3631073",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-calendario-semanas-dias"
+        },
+        "content": {
+          "statement": {
+            "text": "Um trabalho começa em uma segunda-feira às 9 h e dura exatamente 23 dias (23 períodos de 24 horas). Em que dia da semana termina?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "91756529-4187-5f82-aa47-7686fa0b865a",
+              "content": {
+                "text": "Quarta-feira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "803233a6-9b13-5e1a-8d11-743bf2107ebb",
+              "content": {
+                "text": "Terça-feira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "06231f3a-9427-5231-a8ef-a870b8f7674a",
+              "content": {
+                "text": "Quinta-feira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f50852ec-f990-59fd-b355-edd27e473982",
+              "content": {
+                "text": "Segunda-feira.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "91756529-4187-5f82-aa47-7686fa0b865a",
+          "resolution": {
+            "text": "1. Vinte e três dias equivalem a três semanas e dois dias. 2. Dois dias após segunda-feira é quarta-feira; 23 períodos completos de 24 horas terminam na quarta-feira às 9 h; terça-feira resultaria de contar a própria segunda como primeiro dia.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-calendario-semanas-dias.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-calendario-semanas-dias.json",
+            "contentSha256": "8bf468f27873601709120a0350dc582b9e273721b80ba2bddf7e9629c6c38b13",
+            "answerSha256": "8bf468f27873601709120a0350dc582b9e273721b80ba2bddf7e9629c6c38b13"
+          }
+        },
+        "fingerprint": "3e728f9262c7208a933b2f2717651ddf062af42309bffbfa45eebc44041c0105",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-codigo-regra-posicional"
+        },
+        "content": {
+          "statement": {
+            "text": "Um código transforma cada algarismo d em 9−d, preservando a ordem. Qual código resulta de 4072?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "11f9c5b3-4874-5631-96ec-640b48e42fa9",
+              "content": {
+                "text": "6279",
+                "resources": []
+              }
+            },
+            {
+              "id": "dd33c8c1-e2da-5fef-ad26-68f8cbe54203",
+              "content": {
+                "text": "5927",
+                "resources": []
+              }
+            },
+            {
+              "id": "c3396b2d-0869-5c3c-a04b-642d1ee6cc92",
+              "content": {
+                "text": "2957",
+                "resources": []
+              }
+            },
+            {
+              "id": "57602fad-5814-5961-8239-2e42a8dc9471",
+              "content": {
+                "text": "5937",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "dd33c8c1-e2da-5fef-ad26-68f8cbe54203",
+          "resolution": {
+            "text": "1. Transforme individualmente: 4→5,0→9,7→2,2→7. 2. Sem inverter a ordem, o resultado é 5927.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-codigo-regra-posicional.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-codigo-regra-posicional.json",
+            "contentSha256": "99450602a12af5eb24a198b04824b67c4bbec29148c269d46c4bb2a5d19abc8e",
+            "answerSha256": "99450602a12af5eb24a198b04824b67c4bbec29148c269d46c4bb2a5d19abc8e"
+          }
+        },
+        "fingerprint": "6a78de853c3bb0e1c9a6345a51de808258c25360757255029eca6fbcf01c93ed",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-fila-duas-posicoes"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pessoa é a nona da frente e a décima segunda do fim de uma fila. Quantas pessoas há na fila?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cdeb7a60-b408-54f4-8dce-be18ec1dce00",
+              "content": {
+                "text": "22",
+                "resources": []
+              }
+            },
+            {
+              "id": "729ad294-ac95-5cf9-9a31-b0c0d5e3af66",
+              "content": {
+                "text": "20",
+                "resources": []
+              }
+            },
+            {
+              "id": "41cc777b-8d12-51ad-b8bb-0676d87774b2",
+              "content": {
+                "text": "21",
+                "resources": []
+              }
+            },
+            {
+              "id": "176f05c7-a15e-5301-88b3-23b3d75ce86e",
+              "content": {
+                "text": "19",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "729ad294-ac95-5cf9-9a31-b0c0d5e3af66",
+          "resolution": {
+            "text": "1. Some as posições: 9+12=21, mas a própria pessoa foi contada nas duas. 2. Retire uma contagem: 21−1=20 pessoas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-fila-duas-posicoes.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-fila-duas-posicoes.json",
+            "contentSha256": "bb6da0d18a46cdacc48047bb422853a08ea8e264c0c5b324e57d706ce53169ea",
+            "answerSha256": "bb6da0d18a46cdacc48047bb422853a08ea8e264c0c5b324e57d706ce53169ea"
+          }
+        },
+        "fingerprint": "4d5a73af3c2c1a8aa8bbfefbdeddc2246104b6d51f2db46a51f1966213067dd5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-fila-insercao"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma fila há 12 pessoas. Iara é a quinta a partir da frente. Três pessoas entram antes dela e duas pessoas que estavam depois dela saem. Qual é sua nova posição a partir do fim?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5ce1dade-be7e-57a7-9131-c3e1084ed58e",
+              "content": {
+                "text": "5ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "8a59f2b8-bba0-553a-81d1-c0c21bccdae7",
+              "content": {
+                "text": "8ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "00254928-f9dc-5681-82f4-56809e2f88da",
+              "content": {
+                "text": "6ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "d61ede25-04ad-542c-8f7f-2312797b81fb",
+              "content": {
+                "text": "10ª",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "00254928-f9dc-5681-82f4-56809e2f88da",
+          "resolution": {
+            "text": "1. Iara passa à oitava posição da frente, e o total passa a 13 pessoas. 2. Sua posição do fim é 13−8+1=6. A contagem inclui a própria Iara.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-fila-insercao.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-fila-insercao.json",
+            "contentSha256": "87c55834d3cae3a65760be0a8f95b862160509039d71d9a4f8b9b0719f0179f7",
+            "answerSha256": "87c55834d3cae3a65760be0a8f95b862160509039d71d9a4f8b9b0719f0179f7"
+          }
+        },
+        "fingerprint": "1e9d77162ba4da7a3089029b83ce1f1c43ddae00bf544b33e28ab1ae5aecb4c6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-invariante-paridade"
+        },
+        "content": {
+          "statement": {
+            "text": "Um contador começa em 8. Em cada passo, soma-se 6 ou subtrai-se 4. Qual valor é impossível alcançar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "db4aa67c-67f8-5632-bef0-901a0d373bd1",
+              "content": {
+                "text": "0",
+                "resources": []
+              }
+            },
+            {
+              "id": "d5b6a578-9168-5622-ac85-bdad5d7e5661",
+              "content": {
+                "text": "15",
+                "resources": []
+              }
+            },
+            {
+              "id": "65b20dde-fed4-5521-bacd-2a99eae27fc9",
+              "content": {
+                "text": "14",
+                "resources": []
+              }
+            },
+            {
+              "id": "a27dea51-22f8-5fb0-8c4e-5785bc2f94fe",
+              "content": {
+                "text": "10",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d5b6a578-9168-5622-ac85-bdad5d7e5661",
+          "resolution": {
+            "text": "1. O valor inicial é par e as duas alterações são pares. 2. A paridade permanece par em qualquer sequência de passos; 15 é ímpar, enquanto os outros são alcançáveis.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-invariante-paridade.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-invariante-paridade.json",
+            "contentSha256": "8e582871df67de78afaa4db5c512240d7aea28bb20aeee1f0fed3c5671ad8f40",
+            "answerSha256": "8e582871df67de78afaa4db5c512240d7aea28bb20aeee1f0fed3c5671ad8f40"
+          }
+        },
+        "fingerprint": "e9cee632df4559a8f98ada1eae0389fc7c0673da1a4bc3d330fa47c7f58ba6f8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-invariante-soma-troca"
+        },
+        "content": {
+          "statement": {
+            "text": "Duas caixas começam com 7 e 13 fichas. Em cada passo, duas fichas são transferidas de uma caixa para a outra. Qual afirmação permanece verdadeira em todo passo permitido?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2844b9d6-d058-5a01-86e4-87a3a1c64dac",
+              "content": {
+                "text": "A primeira caixa tem sempre menos fichas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4509cb57-168f-524b-87ec-7b39fec4d1e6",
+              "content": {
+                "text": "A soma das fichas é 20.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fbeca734-b724-5606-adb6-12c104589c73",
+              "content": {
+                "text": "As duas caixas ficam sempre com quantidades ímpares e iguais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1ccf8ace-6787-5b88-8152-ecf1ec25f5d8",
+              "content": {
+                "text": "A diferença das quantidades é sempre 6.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4509cb57-168f-524b-87ec-7b39fec4d1e6",
+          "resolution": {
+            "text": "1. Transferir fichas retira e acrescenta a mesma quantidade em caixas diferentes. 2. A soma permanece 7+13=20; a diferença e a ordem das quantidades podem mudar.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-invariante-soma-troca.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-invariante-soma-troca.json",
+            "contentSha256": "18918ff25320c8315f0c1efa10f504596b734813540207df4394d47aabe35baa",
+            "answerSha256": "18918ff25320c8315f0c1efa10f504596b734813540207df4394d47aabe35baa"
+          }
+        },
+        "fingerprint": "91631aa4c242026224e99a78300043f0ac5f5a1ec1fa1adf06997a8596d2ac9b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-numeros-consecutivos-paridade"
+        },
+        "content": {
+          "statement": {
+            "text": "Três inteiros consecutivos somam 96. Qual é o maior?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e3563805-c218-59b0-9d6f-ed0e1b02d30f",
+              "content": {
+                "text": "33",
+                "resources": []
+              }
+            },
+            {
+              "id": "5d899cd5-24f5-5654-8929-755b8015cf85",
+              "content": {
+                "text": "32",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0671103-b2a2-5e06-be1d-75bff0d104dc",
+              "content": {
+                "text": "31",
+                "resources": []
+              }
+            },
+            {
+              "id": "e91b9533-6b4c-5ec4-9cc2-0cb34e131a9a",
+              "content": {
+                "text": "34",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e3563805-c218-59b0-9d6f-ed0e1b02d30f",
+          "resolution": {
+            "text": "1. Se o termo central é n, a soma é (n−1)+n+(n+1)=3n. 2. Logo n=32 e o maior é 33.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-numeros-consecutivos-paridade.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-numeros-consecutivos-paridade.json",
+            "contentSha256": "6652aa4409dbbbcde3e8d6a3a5411289eb24b249e0a3d1ac7acada07f7772715",
+            "answerSha256": "6652aa4409dbbbcde3e8d6a3a5411289eb24b249e0a3d1ac7acada07f7772715"
+          }
+        },
+        "fingerprint": "3fdc34a6712296496272c0914e2507017fb53d94862b1439089441443bf0038d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-orientacao-giros"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pessoa está voltada para o norte. Gira 90° à direita, depois 180° à esquerda e, por fim, 90° à direita. Para onde fica voltada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6832f764-68ae-559a-9e4a-0b89be6abde9",
+              "content": {
+                "text": "Norte.",
+                "resources": []
+              }
+            },
+            {
+              "id": "edb35c8f-52d6-591a-97e9-a0dcedb37a24",
+              "content": {
+                "text": "Sul.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b8943675-a2c9-5d64-a85b-bc8b9bcafbd5",
+              "content": {
+                "text": "Leste.",
+                "resources": []
+              }
+            },
+            {
+              "id": "15b16e0c-b777-5c69-a69c-65270be811b0",
+              "content": {
+                "text": "Oeste.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6832f764-68ae-559a-9e4a-0b89be6abde9",
+          "resolution": {
+            "text": "1. Do norte, o primeiro giro leva ao leste; o segundo leva ao oeste. 2. Do oeste, 90° à direita levam ao norte, a direção inicial. Sul, leste e oeste resultam de parar em um giro intermediário ou de inverter o sentido de algum giro.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-orientacao-giros.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-orientacao-giros.json",
+            "contentSha256": "16ee5fff5d197d891b217e4cd4ae1c26cd00a0ecbdca4ad9b3d08d9457256807",
+            "answerSha256": "16ee5fff5d197d891b217e4cd4ae1c26cd00a0ecbdca4ad9b3d08d9457256807"
+          }
+        },
+        "fingerprint": "5ae560bfeb0d0cd2d118ca6e0b288427aab29bf81445663b949483fc606d975c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-pa-decrescente-limite"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma sequência aritmética começa em 50 e diminui 4 a cada termo. Qual é a posição do primeiro termo negativo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e8d61c8f-d461-5947-8a50-e46adfc9fa25",
+              "content": {
+                "text": "12ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "3b7796fe-8915-57f5-95ce-27993cd133ea",
+              "content": {
+                "text": "15ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "36596c18-2c5c-5955-b923-f644d9ca4dd4",
+              "content": {
+                "text": "14ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "3f8927e1-3f0c-5336-a994-e0deea434fd3",
+              "content": {
+                "text": "13ª",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "36596c18-2c5c-5955-b923-f644d9ca4dd4",
+          "resolution": {
+            "text": "1. O termo n é 50−4(n−1). 2. O décimo terceiro vale 2 e o décimo quarto vale −2; portanto a primeira posição negativa é a 14ª.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-pa-decrescente-limite.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-pa-decrescente-limite.json",
+            "contentSha256": "61cb406981fb0a2afd7fcf6fde68d69c3b7092760b8ed635159164cea4db99bb",
+            "answerSha256": "61cb406981fb0a2afd7fcf6fde68d69c3b7092760b8ed635159164cea4db99bb"
+          }
+        },
+        "fingerprint": "6c62bec9a3b587b72fe001af3bf3f477037c030abfe0a796575a700ec1440b54",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-percurso-malha"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pessoa caminha 4 quadras ao norte, 7 a leste, 4 ao sul e 2 a oeste. Quantas quadras em linha reta, paralela às ruas, a separam do ponto inicial?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "be45d4a3-f531-55af-bb1d-f6dc61dd5e69",
+              "content": {
+                "text": "9",
+                "resources": []
+              }
+            },
+            {
+              "id": "da3f8f5d-ce74-5373-8357-e0f5d4b91de4",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            },
+            {
+              "id": "20a6893b-7606-5845-8a87-d611cb65f6d6",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "9991e95f-3d3c-5261-a95d-24255bf7ba80",
+              "content": {
+                "text": "17",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "20a6893b-7606-5845-8a87-d611cb65f6d6",
+          "resolution": {
+            "text": "1. Os deslocamentos norte e sul se anulam. 2. No eixo leste-oeste restam 7−2=5 quadras a leste; 17 é o percurso total caminhado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-percurso-malha.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-percurso-malha.json",
+            "contentSha256": "13cef43435d07f3c2413bf671a14b87743e6dd1bacb6013952c8cd64885eecd1",
+            "answerSha256": "13cef43435d07f3c2413bf671a14b87743e6dd1bacb6013952c8cd64885eecd1"
+          }
+        },
+        "fingerprint": "506894a478245e22901b33be890a864ef7219f27a26e17e67b87e555534bcbcb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-posicao-dos-multiplos"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma lista contém os múltiplos positivos de 7 em ordem crescente. Qual é a posição do número 301 nessa lista?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "051702dc-fef3-52ee-9eb4-25363ddb8d77",
+              "content": {
+                "text": "43ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "da11509a-eb8f-56e3-a8a3-0789883e6a70",
+              "content": {
+                "text": "42ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "a96ad54f-8d5f-5185-ab18-028e301c4e69",
+              "content": {
+                "text": "44ª",
+                "resources": []
+              }
+            },
+            {
+              "id": "d09f5238-18b7-550a-95bc-74dbf53dabaa",
+              "content": {
+                "text": "49ª",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "051702dc-fef3-52ee-9eb4-25363ddb8d77",
+          "resolution": {
+            "text": "1. O termo de posição n vale 7n. 2. Como 301/7=43, esse número ocupa a 43ª posição. As posições 42ª e 44ª correspondem a 294 e 308, e a 49ª a 343.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-posicao-dos-multiplos.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-posicao-dos-multiplos.json",
+            "contentSha256": "4e69ab2b051c6840b214b0c1a44f999fae42e89118c4fea8bd2dabaf5a560c61",
+            "answerSha256": "4e69ab2b051c6840b214b0c1a44f999fae42e89118c4fea8bd2dabaf5a560c61"
+          }
+        },
+        "fingerprint": "0e9940b315cb49a1d316c3e7755b94d3ae1d8ea6c4e663f01bde44d61ea1c176",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-programa-paridade"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma regra manda somar 1 se o número for ímpar e dividir por 2 se for par. Partindo de 7, qual é o resultado após quatro aplicações?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "66de6192-2af4-57ea-b7ea-004daca92574",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "eec61c87-e3ba-58de-b479-1333ce04ff4e",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "6879850d-6922-59d2-bbd1-8dbed23c68aa",
+              "content": {
+                "text": "1",
+                "resources": []
+              }
+            },
+            {
+              "id": "c16db23d-a0f7-554f-990a-bbf5edd1ba8f",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6879850d-6922-59d2-bbd1-8dbed23c68aa",
+          "resolution": {
+            "text": "1. As aplicações produzem 7→8→4→2. 2. A quarta transforma 2 em 1; cada aplicação usa a paridade do valor atual.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-programa-paridade.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-programa-paridade.json",
+            "contentSha256": "8fcbe41ed559e3c71bbb720976e20e9e9c916d79364ea2efabff958ad7773281",
+            "answerSha256": "8fcbe41ed559e3c71bbb720976e20e9e9c916d79364ea2efabff958ad7773281"
+          }
+        },
+        "fingerprint": "261c740608272671ca1c42fd4c193472c3a4e85c58278558327093c205a699b9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-restricao-assentos-lado"
+        },
+        "content": {
+          "statement": {
+            "text": "Em três assentos em linha, Ana, Beto e Caio se sentam um por assento. Ana não fica nas pontas, e Beto fica à direita de Ana. Quem fica no assento da esquerda?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8daadedb-52c6-586f-a7cd-ac17608f49cc",
+              "content": {
+                "text": "Ana.",
+                "resources": []
+              }
+            },
+            {
+              "id": "59aa4b26-8fdb-5f93-99ef-18f754fe1e01",
+              "content": {
+                "text": "Beto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "46b0807a-f241-5000-9619-8ca3d7e67049",
+              "content": {
+                "text": "Não se pode determinar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8f40b724-d7b0-554c-a9ae-2b9f64e1e5f6",
+              "content": {
+                "text": "Caio.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8f40b724-d7b0-554c-a9ae-2b9f64e1e5f6",
+          "resolution": {
+            "text": "1. Ana precisa ocupar o assento central. 2. Beto fica à direita, restando o assento da esquerda para Caio. Como as restrições fixam todos os lugares, 'não se pode determinar' erra; Ana fica no centro e Beto à direita.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-restricao-assentos-lado.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-restricao-assentos-lado.json",
+            "contentSha256": "4cf274b534a852c253532839ab5173267bd4b3c383471177e9b7d305a15ae1e1",
+            "answerSha256": "4cf274b534a852c253532839ab5173267bd4b3c383471177e9b7d305a15ae1e1"
+          }
+        },
+        "fingerprint": "bb1afd60c3a48e2ff6bcd8cf78814fac753638f4a6af65283ef0bde5b25a4fa2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-sequencia-alternada-regras"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma sequência começa em 10. Alternam-se as operações “somar 3” e “multiplicar por 2”, começando pela soma. Qual é o quinto termo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a3ba6297-f822-5801-818f-ec3e24108f89",
+              "content": {
+                "text": "58",
+                "resources": []
+              }
+            },
+            {
+              "id": "b08ce293-c890-5cff-ac04-fc386822369a",
+              "content": {
+                "text": "52",
+                "resources": []
+              }
+            },
+            {
+              "id": "100fe79f-d3d4-5f5f-b330-db6a650e7842",
+              "content": {
+                "text": "29",
+                "resources": []
+              }
+            },
+            {
+              "id": "4856d9d4-c711-5419-be99-112f2734e031",
+              "content": {
+                "text": "32",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a3ba6297-f822-5801-818f-ec3e24108f89",
+          "resolution": {
+            "text": "1. Os quatro primeiros termos são 10, 13, 26 e 29. 2. A próxima operação é multiplicar por 2, obtendo 58. 29 é o quarto termo, 32 soma 3 em vez de multiplicar e 52 dobra o terceiro termo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-sequencia-alternada-regras.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-sequencia-alternada-regras.json",
+            "contentSha256": "45bca4e142569396174a3b5d8a40d7b1c02b175a343c3fa3720e8e55b6f399be",
+            "answerSha256": "45bca4e142569396174a3b5d8a40d7b1c02b175a343c3fa3720e8e55b6f399be"
+          }
+        },
+        "fingerprint": "4063f7813eb8e042b79b22d2c6c991eaee9b7b668f3ea62aca1d13ae7c203c04",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-sequencia-dois-subgrupos"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma lista intercala números pares crescentes e potências de 2: na posição 2k−1 fica 2k, e na posição 2k fica 2ᵏ. Qual é o oitavo termo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e1e11945-b6d2-58d5-b1a7-c5f1fd5c96ee",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "a6a42ad1-d677-51f8-a4c1-e5e50caef7ba",
+              "content": {
+                "text": "10",
+                "resources": []
+              }
+            },
+            {
+              "id": "5c2c4f4f-ef67-5132-9cca-e322aaa113fd",
+              "content": {
+                "text": "32",
+                "resources": []
+              }
+            },
+            {
+              "id": "bee3ba82-ed18-5c98-8c1d-8899eb0907e6",
+              "content": {
+                "text": "16",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bee3ba82-ed18-5c98-8c1d-8899eb0907e6",
+          "resolution": {
+            "text": "1. A posição oito é par e tem 2k=8, logo k=4. 2. Sua regra é 2ᵏ, dando 2⁴=16; a regra dos termos ímpares não se aplica.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-sequencia-dois-subgrupos.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-sequencia-dois-subgrupos.json",
+            "contentSha256": "f964a28fae003c6b4d96841601e51b28f32fd215bcdcf8abf2a46378c564c761",
+            "answerSha256": "f964a28fae003c6b4d96841601e51b28f32fd215bcdcf8abf2a46378c564c761"
+          }
+        },
+        "fingerprint": "b93253dc80b3154d494c348616bea098a87a740aa69ace3e6ac3a6348dd29cb7",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-sequencia-fibonacci-regra"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma sequência começa com 2 e 3; cada termo posterior é a soma dos dois anteriores. Qual é o sexto termo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7f39b132-7126-526f-83e4-790ed9de3fbf",
+              "content": {
+                "text": "18",
+                "resources": []
+              }
+            },
+            {
+              "id": "8e25ad0b-4684-5144-9cce-e0717cc2f7c0",
+              "content": {
+                "text": "34",
+                "resources": []
+              }
+            },
+            {
+              "id": "7038a462-9aef-5f2a-b700-c65c74d0921e",
+              "content": {
+                "text": "21",
+                "resources": []
+              }
+            },
+            {
+              "id": "c4a990d8-b59b-539c-9f0a-0309c9ce4435",
+              "content": {
+                "text": "13",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7038a462-9aef-5f2a-b700-c65c74d0921e",
+          "resolution": {
+            "text": "1. Os termos seguintes são 5, 8 e 13. 2. O sexto é 8+13=21; 13 é o quinto termo, 34 é o sétimo (13 + 21) e 18 não pertence à sequência.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-sequencia-fibonacci-regra.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-sequencia-fibonacci-regra.json",
+            "contentSha256": "9b5baccb39b428ff7106387076f3e2eec22c3df63419ffdb534c02b90c85e985",
+            "answerSha256": "9b5baccb39b428ff7106387076f3e2eec22c3df63419ffdb534c02b90c85e985"
+          }
+        },
+        "fingerprint": "c46f96745cc3ce4b2eac4b5339d9750e1b37ca899f29e1e07af98540291ae8d4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-sequencia-inversa-operacoes"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma sequência é formada pela repetição das operações “multiplicar por 3” e “subtrair 2”, nessa ordem. O primeiro termo é 4. Qual é o sexto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3f213b40-81ee-51f1-9650-6bd98f230a0e",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "5e7c7702-11fa-5f43-ae2a-807957e5d1bf",
+              "content": {
+                "text": "78",
+                "resources": []
+              }
+            },
+            {
+              "id": "b8ee574e-9350-5a0c-b182-54d0b3bed6b9",
+              "content": {
+                "text": "70",
+                "resources": []
+              }
+            },
+            {
+              "id": "622b29e3-9150-551c-8696-d426277142b5",
+              "content": {
+                "text": "84",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "622b29e3-9150-551c-8696-d426277142b5",
+          "resolution": {
+            "text": "1. Os termos são 4, 12, 10, 30 e 28. 2. A sexta posição aplica multiplicação por 3 a 28, resultando em 84; a contagem precisa acompanhar cada operação separadamente. 78 aplica a subtração antes da multiplicação (26 × 3); 24 e 70 não resultam da alternância correta.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-sequencia-inversa-operacoes.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-sequencia-inversa-operacoes.json",
+            "contentSha256": "b3bdd478639526ecb43c2a72374dbe7af3b6dd59ec045caf70d5b324be44e91c",
+            "answerSha256": "b3bdd478639526ecb43c2a72374dbe7af3b6dd59ec045caf70d5b324be44e91c"
+          }
+        },
+        "fingerprint": "445914b07aec80f67b0bae93cef78dc4948a78c269dc144d03728e85998ba284",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.mat-soma-pa"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma sequência aritmética começa em 5, tem razão 3 e possui 10 termos. Qual é a soma desses termos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7d2f946a-f4bb-5bbb-bea4-159287372beb",
+              "content": {
+                "text": "170",
+                "resources": []
+              }
+            },
+            {
+              "id": "4438aadf-6f6b-56f8-b10f-8afb2a85e27d",
+              "content": {
+                "text": "185",
+                "resources": []
+              }
+            },
+            {
+              "id": "8d5d0dc5-ae27-52e2-8ad9-341c6f0c9bfc",
+              "content": {
+                "text": "320",
+                "resources": []
+              }
+            },
+            {
+              "id": "23862ab8-a8b1-5071-b1c6-f0829c262894",
+              "content": {
+                "text": "50",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4438aadf-6f6b-56f8-b10f-8afb2a85e27d",
+          "resolution": {
+            "text": "1. O décimo termo é 5+9×3=32. 2. A soma é 10×(5+32)/2=185; há nove intervalos entre dez termos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M10.p.mat-soma-pa.json",
+            "answerPath": "sources/admin.2026-11.M10.p.mat-soma-pa.json",
+            "contentSha256": "129481e91c15fc3cf9c2345becc677bb8ecb8aa930d5cc12ec7d0b6b721cb0d3",
+            "answerSha256": "129481e91c15fc3cf9c2345becc677bb8ecb8aa930d5cc12ec7d0b6b721cb0d3"
+          }
+        },
+        "fingerprint": "d5cb4eb3aa8f5362c51cdeafd8a64a010f54a3971aae27e6753d575c1149900f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.nova-apoio-q33"
+        },
+        "content": {
+          "statement": {
+            "text": "Durante a organização de um estoque em um armazém, as caixas foram numeradas em sequência. Um funcionário precisava localizar a caixa correspondente ao 5º antecessor par do número 428, pois nela estavam armazenadas peças específicas. Qual alternativa corresponde corretamente a essa numeração?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ebe1b482-cb82-5e34-82b7-f0f673442562",
+              "content": {
+                "text": "420",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0569b6b-c86c-5677-ac2f-785e133cd8a2",
+              "content": {
+                "text": "418",
+                "resources": []
+              }
+            },
+            {
+              "id": "762d5fb1-c30e-585b-aa75-7b22e8db47c6",
+              "content": {
+                "text": "422",
+                "resources": []
+              }
+            },
+            {
+              "id": "8f482aee-cd4d-57ab-ab35-9b7a1c425cd8",
+              "content": {
+                "text": "406",
+                "resources": []
+              }
+            },
+            {
+              "id": "130c3b4e-2d68-5db2-adca-a154c3e16d90",
+              "content": {
+                "text": "416",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a0569b6b-c86c-5677-ac2f-785e133cd8a2",
+          "resolution": {
+            "text": "1. Os antecessores pares de 428 são 426, 424, 422, 420 e 418. 2. O quinto é 428 − 5 × 2 = 418, alternativa B; o 428 não é contado como seu próprio antecessor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Nova Odessa — Processo Seletivo 01/2026, AUXILIAR DE APOIO ESCOLAR, questão33. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M10.p.nova-apoio-q33.json",
+            "answerPath": "sources/admin.2026-11.M10.p.nova-apoio-q33.json",
+            "contentSha256": "28aecb37c19fb15c02b170905cfc46e82d4410d610a0641606644c329993b057",
+            "answerSha256": "28aecb37c19fb15c02b170905cfc46e82d4410d610a0641606644c329993b057"
+          }
+        },
+        "fingerprint": "5329ff2f625977ce99fec902afa665bf92b6ae56eac59ef43e3b591e846bb130",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.varg25-ti-q11"
+        },
+        "content": {
+          "statement": {
+            "text": "Em 2024, quatro grandes rodeios ocorreram em meses consecutivos: The American, no Texas; Rodeio de Americana, em São Paulo; Rodeio de Barretos, em São Paulo; Rodeio de Jaguariúna, em São Paulo.\nCada evento recebeu um número diferente de visitantes: 120 mil, 150 mil, 180 mil e 210 mil. Sabe-se que:\n• O evento com menos visitantes ocorreu antes do Rodeio de Barretos.\n• O Rodeio de Jaguariúna teve 30 mil visitantes a mais que o Rodeio de Americana.\n• O Rodeio de Barretos não foi o último evento.\n• The American teve mais visitantes que o Rodeio de Barretos.\nAssinale a alternativa que indica a ordem correta dos eventos, do menor para o maior número de visitantes:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "997334ce-da5e-59c2-a88c-3f913a375e3b",
+              "content": {
+                "text": "Rodeio de Americana, Rodeio de Barretos, Rodeio de Jaguariúna, The American.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7617ebe1-3dfd-5e8b-b9bf-09b1cba110fc",
+              "content": {
+                "text": "Rodeio de Americana, Rodeio de Jaguariúna, Rodeio de Barretos, The American.",
+                "resources": []
+              }
+            },
+            {
+              "id": "44cd5911-483d-5d32-99bf-2599420855a7",
+              "content": {
+                "text": "The American, Rodeio de Americana, Rodeio de Barretos, Rodeio de Jaguariúna.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d511fcbb-4602-5afa-81a2-b896e981db04",
+              "content": {
+                "text": "Rodeio de Americana, The American, Rodeio de Barretos, Rodeio de Jaguariúna.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3ddaf8bc-971c-5a0b-95c3-3cfe5191836b",
+              "content": {
+                "text": "Rodeio de Barretos, Rodeio de Americana, Rodeio de Jaguariúna, The American.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7617ebe1-3dfd-5e8b-b9bf-09b1cba110fc",
+          "resolution": {
+            "text": "1. Barretos não é o de menor público (o menor ocorreu antes dele) e The American supera Barretos. Jaguariúna = Americana + 30 mil. Testando: Americana 120, Jaguariúna 150, Barretos 180 e The American 210 satisfazem tudo, e a verificação exaustiva mostra que é a única ordem possível. 2. A tem Jaguariúna com 60 mil a mais que Americana; C e D põem The American abaixo de Barretos; E dá a Barretos o menor público. Resposta: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Concurso Público 01/2025, TÉCNICO EM INFORMÁTICA, questão 11. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M10.p.varg25-ti-q11.json",
+            "answerPath": "sources/admin.2026-11.M10.p.varg25-ti-q11.json",
+            "contentSha256": "92bbb123f26aa13aea13f770f512e64c5106a2a4af8d42c93fc23cca3d776ccb",
+            "answerSha256": "92bbb123f26aa13aea13f770f512e64c5106a2a4af8d42c93fc23cca3d776ccb"
+          }
+        },
+        "fingerprint": "e9f0c8716ffbcc80f1eaa8f79dc29f41924ee0f97e71d3da63a26cfdd5056109",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.varg26-gest-q15"
+        },
+        "content": {
+          "statement": {
+            "text": "Em determinado ano, o dia 1º de janeiro caiu em uma quarta-feira. Sabendo que esse ano em questão não é bissexto, em que dia da semana caiu o feriado de 21 de abril?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6720ee34-be4c-56e9-a016-83276339ef81",
+              "content": {
+                "text": "Domingo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f931d686-da49-534d-8543-8e99f266aca7",
+              "content": {
+                "text": "Segunda-feira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d3e05dea-2bf7-5a63-82cb-4a68da8163ee",
+              "content": {
+                "text": "Terça-feira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e393454d-e89d-512f-b4ca-a6b51ccfcb52",
+              "content": {
+                "text": "Quarta-feira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "05f8d2cd-824f-577f-b841-fe5002aa56b0",
+              "content": {
+                "text": "Quinta-feira.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f931d686-da49-534d-8543-8e99f266aca7",
+          "resolution": {
+            "text": "1. De 1º de janeiro a 21 de abril passam 31 (jan) + 28 (fev, ano não bissexto) + 31 (mar) + 20 = 110 dias. Como 110 = 15 · 7 + 5, o dia da semana avança 5 posições a partir de quarta-feira: quinta, sexta, sábado, domingo, segunda. 2. Domingo, terça, quarta e quinta-feira resultam de contar errado os dias de fevereiro ou o resto da divisão por 7. Resposta: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Exame Seletivo Interno 01/2026, COORDENADOR/ DIRETOR/ VICE-DIRETOR ESCOLAR, questão 15. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M10.p.varg26-gest-q15.json",
+            "answerPath": "sources/admin.2026-11.M10.p.varg26-gest-q15.json",
+            "contentSha256": "c15af4a8b2a9da93d50439892e133f24778bf8d648f08dac2132b7040741e0f1",
+            "answerSha256": "c15af4a8b2a9da93d50439892e133f24778bf8d648f08dac2132b7040741e0f1"
+          }
+        },
+        "fingerprint": "137d32dae610e958fd4822c0e8bf085f3ccb4f6e04bf129cd20230eb039672af",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M10.p.vinhedo-profmat-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere a sequência numérica abaixo: 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, … Essa sequência é formada apenas por números pares positivos, dispostos em ordem crescente e seguindo um padrão regular. Qual é o 175º termo dessa sequência? Assinale a alternativa correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f45ac523-eb45-59bb-bc78-378a0eb723f0",
+              "content": {
+                "text": "352",
+                "resources": []
+              }
+            },
+            {
+              "id": "5bcaeaa7-8468-5c2e-aac4-57be0ca4307e",
+              "content": {
+                "text": "350",
+                "resources": []
+              }
+            },
+            {
+              "id": "8fefd056-bc94-5b2f-85ac-fee4696df851",
+              "content": {
+                "text": "348",
+                "resources": []
+              }
+            },
+            {
+              "id": "dbf05659-2b6d-5643-87c3-9e9b642808ec",
+              "content": {
+                "text": "346",
+                "resources": []
+              }
+            },
+            {
+              "id": "400157a8-7b3d-5727-bba8-5cebb9f43007",
+              "content": {
+                "text": "344",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5bcaeaa7-8468-5c2e-aac4-57be0ca4307e",
+          "resolution": {
+            "text": "1. O n-ésimo par positivo é 2n. 2. Para n = 175, resulta 2 × 175 = 350, alternativa B; não há termo zero no início da lista.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M10",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, PROFESSOR DE EDUCAÇÃO BÁSICA II - MATEMÁTICA, questão19. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M10.p.vinhedo-profmat-q19.json",
+            "answerPath": "sources/admin.2026-11.M10.p.vinhedo-profmat-q19.json",
+            "contentSha256": "fb38a6c7d889be8e0dfea944504b63a8b6037eab6bc4a01c1464cfe9bfcfbf97",
+            "answerSha256": "fb38a6c7d889be8e0dfea944504b63a8b6037eab6bc4a01c1464cfe9bfcfbf97"
+          }
+        },
+        "fingerprint": "75be61e119e3cc6346a335ae91d4d830969b898b4d33af3d2fa00df20e912ee2",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M10.p.cerq25-alm-q17.json",
+        "mediaType": "application/json",
+        "sha256": "9291ee0edfa90c36791838ae019c0d1c17c25c2476bef0077778e91fd056fc74",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDIifSx7ImlkIjoiYiIsInRleHQiOiI0MCJ9LHsiaWQiOiJjIiwidGV4dCI6IjQ2In0seyJpZCI6ImQiLCJ0ZXh0IjoiNDQifSx7ImlkIjoiZSIsInRleHQiOiI1MCJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2VycXVpbGhvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1LCBBTE1PWEFSSUZFLCBxdWVzdMOjbyAxNy4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZGFzIHByb3ZhcyBkZSAyOC8wOS8yMDI1OyBww6FnaW5hIDEsIGJsb2NvIGRvIGNhcmdvIEFMTU9YQVJJRkUsIHF1ZXN0w6NvIDE3ID0gRCBjb25mZXJpZGEgdmlzdWFsbWVudGU7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTgtZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjY3N2YwYTYwYjEwODBhNGI2NjllM2JkYmMzZjA1OTk0NmE3N2Y0OWQ4NmU0MTRiYjNhODdjYzcyMDcxYzQwYWYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5OC9hbmV4b3MvZTE0MWJiZWUtYWZmNS00NGYwLWE3ZmEtM2U1MTE5YzhmODgwLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2VycXVpbGhvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtY2VycXVpbGhvLTIwMjUtYWxtb3hhcmlmZS9xMTciLCJudW1iZXIiOiIxNyIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWwgZG8gY2FyZ28gQUxNT1hBUklGRTsgcXVlc3TDo28gMTcgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNSByZW5kZXJpemFkYSAoZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKTsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS9oaWZlbml6YcOnw6NvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTgtcHJvdmEtYWxtb3hhcmlmZS5wZGYiLCJzaGEyNTYiOiI0ZTQzYzYwMDk3ZmI2NDk1ZDIwZDg1MmEyOGRjOTYzOGUzY2UyMTg3OTlhNDg2ODVhNGFjMzQ1NzQ4MTE2MmI5IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTgvYW5leG9zL2I2ODFmNTYxLWM3NmUtNDg5Yy1hOGE5LTIyZDJiYzBhMjY5OC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJBTE1PWEFSSUZFIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI1fSwiaWQiOiJjZXJxMjUtYWxtLXExNyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQXMgZGlmZXJlbsOnYXMgZW50cmUgdGVybW9zIGNvbnNlY3V0aXZvcyBzw6NvIDQsIDYsIDggZSAxMCwgY3Jlc2NlbmRvIGRlIDIgZW0gMjsgYSBwcsOzeGltYSBkaWZlcmVuw6dhIMOpIDEyLCBsb2dvIG8gcHLDs3hpbW8gdGVybW8gw6kgMzIgKyAxMiA9IDQ0LiAyLiA0MiByZXBldGUgYSBkaWZlcmVuw6dhIDEwOyA0MCwgNDYgZSA1MCBuw6NvIHNlZ3VlbSBvIHBhZHLDo28gZGFzIGRpZmVyZW7Dp2FzLiBSZXNwb3N0YTogYWx0ZXJuYXRpdmEgRC4iLCJzdGF0ZW1lbnQiOiJFbSB1bWEgZmF6ZW5kYSwgbyBuw7ptZXJvIGRlIG92b3MgY29sZXRhZG9zIGNyZXNjZSBhIGNhZGEgZGlhIHNlZ3VuZG8gYSBzZXF1w6puY2lhOiA0LCA4LCAxNCwgMjIsIDMyLCAoLi4uKS4gQ29uc2lkZXJhbmRvIGVzc2Egc2VxdcOqbmNpYSwgcXVhbnRvcyBvdm9zIHNlcsOjbyBjb2xldGFkb3Mgbm8gcHLDs3hpbW8gZGlhPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-agenda-restricoes.json",
+        "mediaType": "application/json",
+        "sha256": "385b9e29560a7fd17a76da612180e897a86e6197c0aaf4889a4e3482d2093dea",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUSJ9LHsiaWQiOiJiIiwidGV4dCI6IlIifSx7ImlkIjoiYyIsInRleHQiOiJOw6NvIMOpIGRldGVybWluYWRhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlAifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWFnZW5kYS1yZXN0cmljb2VzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBQIGZvc3NlIG5hIHRlcsOnYSwgUSBzZXJpYSBuYSBzZWd1bmRhIGUgUiBuYSBxdWFydGEsIG8gcXVlIMOpIHByb2liaWRvLiAyLiBMb2dvIFAgb2NvcnJlIG5hIHF1YXJ0YTsgUSBlIFIgb2N1cGFtIHNlZ3VuZGEgZSB0ZXLDp2EgZW0gYWxndW1hIG9yZGVtLiBQb3IgaXNzbyBRIGUgUiBuw6NvIHBvZGVtIGVzdGFyIG5hIHF1YXJ0YSwgZSBhIGF0aXZpZGFkZSBkYSBxdWFydGEgw6kgZGV0ZXJtaW5hZGEsIGVtYm9yYSBhIG9yZGVtIGRlIFEgZSBSIG7Do28gc2VqYS4iLCJzdGF0ZW1lbnQiOiJUcsOqcyBhdGl2aWRhZGVzLCBQLCBRIGUgUiwgb2NvcnJlcsOjbyBkZSBzZWd1bmRhIGEgcXVhcnRhLCB1bWEgcG9yIGRpYS4gUCBuw6NvIHBvZGUgb2NvcnJlciBuYSBzZWd1bmRhOyBRIG9jb3JyZSBhbnRlcyBkZSBQOyBSIG7Do28gb2NvcnJlIG5hIHF1YXJ0YS4gUXVhbCDDqSBhIGF0aXZpZGFkZSBkYSBxdWFydGE/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-blocos-soma-impares.json",
+        "mediaType": "application/json",
+        "sha256": "100b08b0bcd511c88b88b5344993f0701fa46cfe10b72bc90de482f863f85c68",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIifSx7ImlkIjoiYiIsInRleHQiOiIzMCJ9LHsiaWQiOiJjIiwidGV4dCI6IjQyIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMzYifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWJsb2Nvcy1zb21hLWltcGFyZXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEFzIHBhcmNlbGFzIHPDo28gMSszKzUrNys5KzExLiAyLiBBIHNvbWEgw6kgMzYsIGlndWFsIGEgNsKyOyBzZWlzIMOpIG8gbsO6bWVybyBkZSBldGFwYXMsIG7Do28gbyDDumx0aW1vIMOtbXBhci4iLCJzdGF0ZW1lbnQiOiJVbWEgY29uc3RydcOnw6NvIGFjcmVzY2VudGEsIG5hcyBldGFwYXMgMSwyLDMsLi4uLCByZXNwZWN0aXZhbWVudGUgMSwzLDUsLi4uIHBlw6dhcywgb3Mgw61tcGFyZXMgcG9zaXRpdm9zIGVtIG9yZGVtLiBRdWFudGFzIHBlw6dhcyBmb3JhbSBhY3Jlc2NlbnRhZGFzIGFvIHRvZG8gbmFzIHNlaXMgcHJpbWVpcmFzIGV0YXBhcz8iLCJ0b3BpY0lkIjoiTTEwIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-calendario-semanas-dias.json",
+        "mediaType": "application/json",
+        "sha256": "8bf468f27873601709120a0350dc582b9e273721b80ba2bddf7e9629c6c38b13",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUXVhcnRhLWZlaXJhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlRlcsOnYS1mZWlyYS4ifSx7ImlkIjoiYyIsInRleHQiOiJRdWludGEtZmVpcmEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2VndW5kYS1mZWlyYS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LWNhbGVuZGFyaW8tc2VtYW5hcy1kaWFzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBWaW50ZSBlIHRyw6pzIGRpYXMgZXF1aXZhbGVtIGEgdHLDqnMgc2VtYW5hcyBlIGRvaXMgZGlhcy4gMi4gRG9pcyBkaWFzIGFww7NzIHNlZ3VuZGEtZmVpcmEgw6kgcXVhcnRhLWZlaXJhOyAyMyBwZXLDrW9kb3MgY29tcGxldG9zIGRlIDI0IGhvcmFzIHRlcm1pbmFtIG5hIHF1YXJ0YS1mZWlyYSDDoHMgOSBoOyB0ZXLDp2EtZmVpcmEgcmVzdWx0YXJpYSBkZSBjb250YXIgYSBwcsOzcHJpYSBzZWd1bmRhIGNvbW8gcHJpbWVpcm8gZGlhLiIsInN0YXRlbWVudCI6IlVtIHRyYWJhbGhvIGNvbWXDp2EgZW0gdW1hIHNlZ3VuZGEtZmVpcmEgw6BzIDkgaCBlIGR1cmEgZXhhdGFtZW50ZSAyMyBkaWFzICgyMyBwZXLDrW9kb3MgZGUgMjQgaG9yYXMpLiBFbSBxdWUgZGlhIGRhIHNlbWFuYSB0ZXJtaW5hPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-codigo-regra-posicional.json",
+        "mediaType": "application/json",
+        "sha256": "99450602a12af5eb24a198b04824b67c4bbec29148c269d46c4bb2a5d19abc8e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjI3OSJ9LHsiaWQiOiJiIiwidGV4dCI6IjU5MjcifSx7ImlkIjoiYyIsInRleHQiOiIyOTU3In0seyJpZCI6ImQiLCJ0ZXh0IjoiNTkzNyJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtY29kaWdvLXJlZ3JhLXBvc2ljaW9uYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFRyYW5zZm9ybWUgaW5kaXZpZHVhbG1lbnRlOiA04oaSNSww4oaSOSw34oaSMiwy4oaSNy4gMi4gU2VtIGludmVydGVyIGEgb3JkZW0sIG8gcmVzdWx0YWRvIMOpIDU5MjcuIiwic3RhdGVtZW50IjoiVW0gY8OzZGlnbyB0cmFuc2Zvcm1hIGNhZGEgYWxnYXJpc21vIGQgZW0gOeKIkmQsIHByZXNlcnZhbmRvIGEgb3JkZW0uIFF1YWwgY8OzZGlnbyByZXN1bHRhIGRlIDQwNzI/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-fila-duas-posicoes.json",
+        "mediaType": "application/json",
+        "sha256": "bb6da0d18a46cdacc48047bb422853a08ea8e264c0c5b324e57d706ce53169ea",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjIifSx7ImlkIjoiYiIsInRleHQiOiIyMCJ9LHsiaWQiOiJjIiwidGV4dCI6IjIxIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTkifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LWZpbGEtZHVhcy1wb3NpY29lcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gU29tZSBhcyBwb3Npw6fDtWVzOiA5KzEyPTIxLCBtYXMgYSBwcsOzcHJpYSBwZXNzb2EgZm9pIGNvbnRhZGEgbmFzIGR1YXMuIDIuIFJldGlyZSB1bWEgY29udGFnZW06IDIx4oiSMT0yMCBwZXNzb2FzLiIsInN0YXRlbWVudCI6IlVtYSBwZXNzb2Egw6kgYSBub25hIGRhIGZyZW50ZSBlIGEgZMOpY2ltYSBzZWd1bmRhIGRvIGZpbSBkZSB1bWEgZmlsYS4gUXVhbnRhcyBwZXNzb2FzIGjDoSBuYSBmaWxhPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-fila-insercao.json",
+        "mediaType": "application/json",
+        "sha256": "87c55834d3cae3a65760be0a8f95b862160509039d71d9a4f8b9b0719f0179f7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNcKqIn0seyJpZCI6ImIiLCJ0ZXh0IjoiOMKqIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNsKqIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTDCqiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtZmlsYS1pbnNlcmNhbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gSWFyYSBwYXNzYSDDoCBvaXRhdmEgcG9zacOnw6NvIGRhIGZyZW50ZSwgZSBvIHRvdGFsIHBhc3NhIGEgMTMgcGVzc29hcy4gMi4gU3VhIHBvc2nDp8OjbyBkbyBmaW0gw6kgMTPiiJI4KzE9Ni4gQSBjb250YWdlbSBpbmNsdWkgYSBwcsOzcHJpYSBJYXJhLiIsInN0YXRlbWVudCI6IkVtIHVtYSBmaWxhIGjDoSAxMiBwZXNzb2FzLiBJYXJhIMOpIGEgcXVpbnRhIGEgcGFydGlyIGRhIGZyZW50ZS4gVHLDqnMgcGVzc29hcyBlbnRyYW0gYW50ZXMgZGVsYSBlIGR1YXMgcGVzc29hcyBxdWUgZXN0YXZhbSBkZXBvaXMgZGVsYSBzYWVtLiBRdWFsIMOpIHN1YSBub3ZhIHBvc2nDp8OjbyBhIHBhcnRpciBkbyBmaW0/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-invariante-paridade.json",
+        "mediaType": "application/json",
+        "sha256": "8e582871df67de78afaa4db5c512240d7aea28bb20aeee1f0fed3c5671ad8f40",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMCJ9LHsiaWQiOiJiIiwidGV4dCI6IjE1In0seyJpZCI6ImMiLCJ0ZXh0IjoiMTQifSx7ImlkIjoiZCIsInRleHQiOiIxMCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtaW52YXJpYW50ZS1wYXJpZGFkZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTyB2YWxvciBpbmljaWFsIMOpIHBhciBlIGFzIGR1YXMgYWx0ZXJhw6fDtWVzIHPDo28gcGFyZXMuIDIuIEEgcGFyaWRhZGUgcGVybWFuZWNlIHBhciBlbSBxdWFscXVlciBzZXF1w6puY2lhIGRlIHBhc3NvczsgMTUgw6kgw61tcGFyLCBlbnF1YW50byBvcyBvdXRyb3Mgc8OjbyBhbGNhbsOnw6F2ZWlzLiIsInN0YXRlbWVudCI6IlVtIGNvbnRhZG9yIGNvbWXDp2EgZW0gOC4gRW0gY2FkYSBwYXNzbywgc29tYS1zZSA2IG91IHN1YnRyYWktc2UgNC4gUXVhbCB2YWxvciDDqSBpbXBvc3PDrXZlbCBhbGNhbsOnYXI/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-invariante-soma-troca.json",
+        "mediaType": "application/json",
+        "sha256": "18918ff25320c8315f0c1efa10f504596b734813540207df4394d47aabe35baa",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBwcmltZWlyYSBjYWl4YSB0ZW0gc2VtcHJlIG1lbm9zIGZpY2hhcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBIHNvbWEgZGFzIGZpY2hhcyDDqSAyMC4ifSx7ImlkIjoiYyIsInRleHQiOiJBcyBkdWFzIGNhaXhhcyBmaWNhbSBzZW1wcmUgY29tIHF1YW50aWRhZGVzIMOtbXBhcmVzIGUgaWd1YWlzLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkEgZGlmZXJlbsOnYSBkYXMgcXVhbnRpZGFkZXMgw6kgc2VtcHJlIDYuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1pbnZhcmlhbnRlLXNvbWEtdHJvY2EiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFRyYW5zZmVyaXIgZmljaGFzIHJldGlyYSBlIGFjcmVzY2VudGEgYSBtZXNtYSBxdWFudGlkYWRlIGVtIGNhaXhhcyBkaWZlcmVudGVzLiAyLiBBIHNvbWEgcGVybWFuZWNlIDcrMTM9MjA7IGEgZGlmZXJlbsOnYSBlIGEgb3JkZW0gZGFzIHF1YW50aWRhZGVzIHBvZGVtIG11ZGFyLiIsInN0YXRlbWVudCI6IkR1YXMgY2FpeGFzIGNvbWXDp2FtIGNvbSA3IGUgMTMgZmljaGFzLiBFbSBjYWRhIHBhc3NvLCBkdWFzIGZpY2hhcyBzw6NvIHRyYW5zZmVyaWRhcyBkZSB1bWEgY2FpeGEgcGFyYSBhIG91dHJhLiBRdWFsIGFmaXJtYcOnw6NvIHBlcm1hbmVjZSB2ZXJkYWRlaXJhIGVtIHRvZG8gcGFzc28gcGVybWl0aWRvPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-numeros-consecutivos-paridade.json",
+        "mediaType": "application/json",
+        "sha256": "6652aa4409dbbbcde3e8d6a3a5411289eb24b249e0a3d1ac7acada07f7772715",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzMifSx7ImlkIjoiYiIsInRleHQiOiIzMiJ9LHsiaWQiOiJjIiwidGV4dCI6IjMxIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMzQifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LW51bWVyb3MtY29uc2VjdXRpdm9zLXBhcmlkYWRlIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBvIHRlcm1vIGNlbnRyYWwgw6kgbiwgYSBzb21hIMOpIChu4oiSMSkrbisobisxKT0zbi4gMi4gTG9nbyBuPTMyIGUgbyBtYWlvciDDqSAzMy4iLCJzdGF0ZW1lbnQiOiJUcsOqcyBpbnRlaXJvcyBjb25zZWN1dGl2b3Mgc29tYW0gOTYuIFF1YWwgw6kgbyBtYWlvcj8iLCJ0b3BpY0lkIjoiTTEwIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-orientacao-giros.json",
+        "mediaType": "application/json",
+        "sha256": "16ee5fff5d197d891b217e4cd4ae1c26cd00a0ecbdca4ad9b3d08d9457256807",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTm9ydGUuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU3VsLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ikxlc3RlLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik9lc3RlLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtb3JpZW50YWNhby1naXJvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gRG8gbm9ydGUsIG8gcHJpbWVpcm8gZ2lybyBsZXZhIGFvIGxlc3RlOyBvIHNlZ3VuZG8gbGV2YSBhbyBvZXN0ZS4gMi4gRG8gb2VzdGUsIDkwwrAgw6AgZGlyZWl0YSBsZXZhbSBhbyBub3J0ZSwgYSBkaXJlw6fDo28gaW5pY2lhbC4gU3VsLCBsZXN0ZSBlIG9lc3RlIHJlc3VsdGFtIGRlIHBhcmFyIGVtIHVtIGdpcm8gaW50ZXJtZWRpw6FyaW8gb3UgZGUgaW52ZXJ0ZXIgbyBzZW50aWRvIGRlIGFsZ3VtIGdpcm8uIiwic3RhdGVtZW50IjoiVW1hIHBlc3NvYSBlc3TDoSB2b2x0YWRhIHBhcmEgbyBub3J0ZS4gR2lyYSA5MMKwIMOgIGRpcmVpdGEsIGRlcG9pcyAxODDCsCDDoCBlc3F1ZXJkYSBlLCBwb3IgZmltLCA5MMKwIMOgIGRpcmVpdGEuIFBhcmEgb25kZSBmaWNhIHZvbHRhZGE/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-pa-decrescente-limite.json",
+        "mediaType": "application/json",
+        "sha256": "61cb406981fb0a2afd7fcf6fde68d69c3b7092760b8ed635159164cea4db99bb",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTLCqiJ9LHsiaWQiOiJiIiwidGV4dCI6IjE1wqoifSx7ImlkIjoiYyIsInRleHQiOiIxNMKqIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTPCqiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtcGEtZGVjcmVzY2VudGUtbGltaXRlIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIHRlcm1vIG4gw6kgNTDiiJI0KG7iiJIxKS4gMi4gTyBkw6ljaW1vIHRlcmNlaXJvIHZhbGUgMiBlIG8gZMOpY2ltbyBxdWFydG8gdmFsZSDiiJIyOyBwb3J0YW50byBhIHByaW1laXJhIHBvc2nDp8OjbyBuZWdhdGl2YSDDqSBhIDE0wqouIiwic3RhdGVtZW50IjoiVW1hIHNlcXXDqm5jaWEgYXJpdG3DqXRpY2EgY29tZcOnYSBlbSA1MCBlIGRpbWludWkgNCBhIGNhZGEgdGVybW8uIFF1YWwgw6kgYSBwb3Npw6fDo28gZG8gcHJpbWVpcm8gdGVybW8gbmVnYXRpdm8/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-percurso-malha.json",
+        "mediaType": "application/json",
+        "sha256": "13cef43435d07f3c2413bf671a14b87743e6dd1bacb6013952c8cd64885eecd1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOSJ9LHsiaWQiOiJiIiwidGV4dCI6IjMifSx7ImlkIjoiYyIsInRleHQiOiI1In0seyJpZCI6ImQiLCJ0ZXh0IjoiMTcifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXBlcmN1cnNvLW1hbGhhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPcyBkZXNsb2NhbWVudG9zIG5vcnRlIGUgc3VsIHNlIGFudWxhbS4gMi4gTm8gZWl4byBsZXN0ZS1vZXN0ZSByZXN0YW0gN+KIkjI9NSBxdWFkcmFzIGEgbGVzdGU7IDE3IMOpIG8gcGVyY3Vyc28gdG90YWwgY2FtaW5oYWRvLiIsInN0YXRlbWVudCI6IlVtYSBwZXNzb2EgY2FtaW5oYSA0IHF1YWRyYXMgYW8gbm9ydGUsIDcgYSBsZXN0ZSwgNCBhbyBzdWwgZSAyIGEgb2VzdGUuIFF1YW50YXMgcXVhZHJhcyBlbSBsaW5oYSByZXRhLCBwYXJhbGVsYSDDoHMgcnVhcywgYSBzZXBhcmFtIGRvIHBvbnRvIGluaWNpYWw/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-posicao-dos-multiplos.json",
+        "mediaType": "application/json",
+        "sha256": "4e69ab2b051c6840b214b0c1a44f999fae42e89118c4fea8bd2dabaf5a560c61",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDPCqiJ9LHsiaWQiOiJiIiwidGV4dCI6IjQywqoifSx7ImlkIjoiYyIsInRleHQiOiI0NMKqIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNDnCqiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtcG9zaWNhby1kb3MtbXVsdGlwbG9zIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIHRlcm1vIGRlIHBvc2nDp8OjbyBuIHZhbGUgN24uIDIuIENvbW8gMzAxLzc9NDMsIGVzc2UgbsO6bWVybyBvY3VwYSBhIDQzwqogcG9zacOnw6NvLiBBcyBwb3Npw6fDtWVzIDQywqogZSA0NMKqIGNvcnJlc3BvbmRlbSBhIDI5NCBlIDMwOCwgZSBhIDQ5wqogYSAzNDMuIiwic3RhdGVtZW50IjoiVW1hIGxpc3RhIGNvbnTDqW0gb3MgbcO6bHRpcGxvcyBwb3NpdGl2b3MgZGUgNyBlbSBvcmRlbSBjcmVzY2VudGUuIFF1YWwgw6kgYSBwb3Npw6fDo28gZG8gbsO6bWVybyAzMDEgbmVzc2EgbGlzdGE/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-programa-paridade.json",
+        "mediaType": "application/json",
+        "sha256": "8fcbe41ed559e3c71bbb720976e20e9e9c916d79364ea2efabff958ad7773281",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNCJ9LHsiaWQiOiJiIiwidGV4dCI6IjgifSx7ImlkIjoiYyIsInRleHQiOiIxIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtcHJvZ3JhbWEtcGFyaWRhZGUiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEFzIGFwbGljYcOnw7VlcyBwcm9kdXplbSA34oaSOOKGkjTihpIyLiAyLiBBIHF1YXJ0YSB0cmFuc2Zvcm1hIDIgZW0gMTsgY2FkYSBhcGxpY2HDp8OjbyB1c2EgYSBwYXJpZGFkZSBkbyB2YWxvciBhdHVhbC4iLCJzdGF0ZW1lbnQiOiJVbWEgcmVncmEgbWFuZGEgc29tYXIgMSBzZSBvIG7Dum1lcm8gZm9yIMOtbXBhciBlIGRpdmlkaXIgcG9yIDIgc2UgZm9yIHBhci4gUGFydGluZG8gZGUgNywgcXVhbCDDqSBvIHJlc3VsdGFkbyBhcMOzcyBxdWF0cm8gYXBsaWNhw6fDtWVzPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-restricao-assentos-lado.json",
+        "mediaType": "application/json",
+        "sha256": "4cf274b534a852c253532839ab5173267bd4b3c383471177e9b7d305a15ae1e1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQW5hLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkJldG8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTsOjbyBzZSBwb2RlIGRldGVybWluYXIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQ2Fpby4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXJlc3RyaWNhby1hc3NlbnRvcy1sYWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBbmEgcHJlY2lzYSBvY3VwYXIgbyBhc3NlbnRvIGNlbnRyYWwuIDIuIEJldG8gZmljYSDDoCBkaXJlaXRhLCByZXN0YW5kbyBvIGFzc2VudG8gZGEgZXNxdWVyZGEgcGFyYSBDYWlvLiBDb21vIGFzIHJlc3RyacOnw7VlcyBmaXhhbSB0b2RvcyBvcyBsdWdhcmVzLCAnbsOjbyBzZSBwb2RlIGRldGVybWluYXInIGVycmE7IEFuYSBmaWNhIG5vIGNlbnRybyBlIEJldG8gw6AgZGlyZWl0YS4iLCJzdGF0ZW1lbnQiOiJFbSB0csOqcyBhc3NlbnRvcyBlbSBsaW5oYSwgQW5hLCBCZXRvIGUgQ2FpbyBzZSBzZW50YW0gdW0gcG9yIGFzc2VudG8uIEFuYSBuw6NvIGZpY2EgbmFzIHBvbnRhcywgZSBCZXRvIGZpY2Egw6AgZGlyZWl0YSBkZSBBbmEuIFF1ZW0gZmljYSBubyBhc3NlbnRvIGRhIGVzcXVlcmRhPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-sequencia-alternada-regras.json",
+        "mediaType": "application/json",
+        "sha256": "45bca4e142569396174a3b5d8a40d7b1c02b175a343c3fa3720e8e55b6f399be",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNTgifSx7ImlkIjoiYiIsInRleHQiOiI1MiJ9LHsiaWQiOiJjIiwidGV4dCI6IjI5In0seyJpZCI6ImQiLCJ0ZXh0IjoiMzIifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXNlcXVlbmNpYS1hbHRlcm5hZGEtcmVncmFzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPcyBxdWF0cm8gcHJpbWVpcm9zIHRlcm1vcyBzw6NvIDEwLCAxMywgMjYgZSAyOS4gMi4gQSBwcsOzeGltYSBvcGVyYcOnw6NvIMOpIG11bHRpcGxpY2FyIHBvciAyLCBvYnRlbmRvIDU4LiAyOSDDqSBvIHF1YXJ0byB0ZXJtbywgMzIgc29tYSAzIGVtIHZleiBkZSBtdWx0aXBsaWNhciBlIDUyIGRvYnJhIG8gdGVyY2Vpcm8gdGVybW8uIiwic3RhdGVtZW50IjoiVW1hIHNlcXXDqm5jaWEgY29tZcOnYSBlbSAxMC4gQWx0ZXJuYW0tc2UgYXMgb3BlcmHDp8O1ZXMg4oCcc29tYXIgM+KAnSBlIOKAnG11bHRpcGxpY2FyIHBvciAy4oCdLCBjb21lw6dhbmRvIHBlbGEgc29tYS4gUXVhbCDDqSBvIHF1aW50byB0ZXJtbz8iLCJ0b3BpY0lkIjoiTTEwIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-sequencia-dois-subgrupos.json",
+        "mediaType": "application/json",
+        "sha256": "f964a28fae003c6b4d96841601e51b28f32fd215bcdcf8abf2a46378c564c761",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJiIiwidGV4dCI6IjEwIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMzIifSx7ImlkIjoiZCIsInRleHQiOiIxNiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtc2VxdWVuY2lhLWRvaXMtc3ViZ3J1cG9zIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHBvc2nDp8OjbyBvaXRvIMOpIHBhciBlIHRlbSAyaz04LCBsb2dvIGs9NC4gMi4gU3VhIHJlZ3JhIMOpIDLhtY8sIGRhbmRvIDLigbQ9MTY7IGEgcmVncmEgZG9zIHRlcm1vcyDDrW1wYXJlcyBuw6NvIHNlIGFwbGljYS4iLCJzdGF0ZW1lbnQiOiJVbWEgbGlzdGEgaW50ZXJjYWxhIG7Dum1lcm9zIHBhcmVzIGNyZXNjZW50ZXMgZSBwb3TDqm5jaWFzIGRlIDI6IG5hIHBvc2nDp8OjbyAya+KIkjEgZmljYSAyaywgZSBuYSBwb3Npw6fDo28gMmsgZmljYSAy4bWPLiBRdWFsIMOpIG8gb2l0YXZvIHRlcm1vPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-sequencia-fibonacci-regra.json",
+        "mediaType": "application/json",
+        "sha256": "9b5baccb39b428ff7106387076f3e2eec22c3df63419ffdb534c02b90c85e985",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTgifSx7ImlkIjoiYiIsInRleHQiOiIzNCJ9LHsiaWQiOiJjIiwidGV4dCI6IjIxIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTMifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXNlcXVlbmNpYS1maWJvbmFjY2ktcmVncmEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE9zIHRlcm1vcyBzZWd1aW50ZXMgc8OjbyA1LCA4IGUgMTMuIDIuIE8gc2V4dG8gw6kgOCsxMz0yMTsgMTMgw6kgbyBxdWludG8gdGVybW8sIDM0IMOpIG8gc8OpdGltbyAoMTMgKyAyMSkgZSAxOCBuw6NvIHBlcnRlbmNlIMOgIHNlcXXDqm5jaWEuIiwic3RhdGVtZW50IjoiVW1hIHNlcXXDqm5jaWEgY29tZcOnYSBjb20gMiBlIDM7IGNhZGEgdGVybW8gcG9zdGVyaW9yIMOpIGEgc29tYSBkb3MgZG9pcyBhbnRlcmlvcmVzLiBRdWFsIMOpIG8gc2V4dG8gdGVybW8/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-sequencia-inversa-operacoes.json",
+        "mediaType": "application/json",
+        "sha256": "b3bdd478639526ecb43c2a72374dbe7af3b6dd59ec045caf70d5b324be44e91c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjQifSx7ImlkIjoiYiIsInRleHQiOiI3OCJ9LHsiaWQiOiJjIiwidGV4dCI6IjcwIn0seyJpZCI6ImQiLCJ0ZXh0IjoiODQifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXNlcXVlbmNpYS1pbnZlcnNhLW9wZXJhY29lcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgdGVybW9zIHPDo28gNCwgMTIsIDEwLCAzMCBlIDI4LiAyLiBBIHNleHRhIHBvc2nDp8OjbyBhcGxpY2EgbXVsdGlwbGljYcOnw6NvIHBvciAzIGEgMjgsIHJlc3VsdGFuZG8gZW0gODQ7IGEgY29udGFnZW0gcHJlY2lzYSBhY29tcGFuaGFyIGNhZGEgb3BlcmHDp8OjbyBzZXBhcmFkYW1lbnRlLiA3OCBhcGxpY2EgYSBzdWJ0cmHDp8OjbyBhbnRlcyBkYSBtdWx0aXBsaWNhw6fDo28gKDI2IMOXIDMpOyAyNCBlIDcwIG7Do28gcmVzdWx0YW0gZGEgYWx0ZXJuw6JuY2lhIGNvcnJldGEuIiwic3RhdGVtZW50IjoiVW1hIHNlcXXDqm5jaWEgw6kgZm9ybWFkYSBwZWxhIHJlcGV0acOnw6NvIGRhcyBvcGVyYcOnw7VlcyDigJxtdWx0aXBsaWNhciBwb3IgM+KAnSBlIOKAnHN1YnRyYWlyIDLigJ0sIG5lc3NhIG9yZGVtLiBPIHByaW1laXJvIHRlcm1vIMOpIDQuIFF1YWwgw6kgbyBzZXh0bz8iLCJ0b3BpY0lkIjoiTTEwIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.mat-soma-pa.json",
+        "mediaType": "application/json",
+        "sha256": "129481e91c15fc3cf9c2345becc677bb8ecb8aa930d5cc12ec7d0b6b721cb0d3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTcwIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTg1In0seyJpZCI6ImMiLCJ0ZXh0IjoiMzIwIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNTAifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LXNvbWEtcGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gZMOpY2ltbyB0ZXJtbyDDqSA1KznDlzM9MzIuIDIuIEEgc29tYSDDqSAxMMOXKDUrMzIpLzI9MTg1OyBow6Egbm92ZSBpbnRlcnZhbG9zIGVudHJlIGRleiB0ZXJtb3MuIiwic3RhdGVtZW50IjoiVW1hIHNlcXXDqm5jaWEgYXJpdG3DqXRpY2EgY29tZcOnYSBlbSA1LCB0ZW0gcmF6w6NvIDMgZSBwb3NzdWkgMTAgdGVybW9zLiBRdWFsIMOpIGEgc29tYSBkZXNzZXMgdGVybW9zPyIsInRvcGljSWQiOiJNMTAifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.nova-apoio-q33.json",
+        "mediaType": "application/json",
+        "sha256": "28aecb37c19fb15c02b170905cfc46e82d4410d610a0641606644c329993b057",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDIwIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNDE4In0seyJpZCI6ImMiLCJ0ZXh0IjoiNDIyIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNDA2In0seyJpZCI6ImUiLCJ0ZXh0IjoiNDE2In1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBOb3ZhIE9kZXNzYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNiwgQVVYSUxJQVIgREUgQVBPSU8gRVNDT0xBUiwgcXVlc3TDo28zMy4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTpDb2RleC4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm87IHNlw6fDo28gZXNwZWPDrWZpY2EgZG8gY2FyZ28gZSByZXNwb3N0YSBjb25mZXJpZGFzLCBhbnVsYWRhcyBleGNsdcOtZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9ub3ZhLWdhYmFyaXRvLnBkZiIsInNoYTI1NiI6IjA4ZjM0N2JlYmQ0NWFmMjUwNGY2MmIyMjY2NmJiMWM2ZDBhZGNlYWZmODkzZjhiM2RjZjU1MzgyYWQ2OWMyNmMiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzI0My9hbmV4b3MvMjJhYzMyN2ItZmNjOS00ZjA3LWFhY2EtMDhjOTBhYTgyYTQzLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgTm92YSBPZGVzc2Eg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjYiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1ub3ZhLTIwMjYtYXBvaW8vcTMzIiwibnVtYmVyIjoiMzMiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsOyBjYXJnbyBlIG7Dum1lcm8gY29uZmVyaWRvczsgY2FiZcOnYWxob3MgZSBxdWVicmFzIHJldGlyYWRvcy4gRm9ybWF0b3MgbWF0ZW3DoXRpY29zIHJlbGV2YW50ZXMgY29tcGFyYWRvcyBjb20gcMOhZ2luYXMgcmVuZGVyaXphZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9ub3ZhLWFwb2lvLnBkZiIsInNoYTI1NiI6IjViNTYyMDA4YTBjNTA3ZDYxMTMzNzhhZTkwZTZhYTcxMmMyODdhZTI4NTQ0NjM4NThjZWQyM2MzYzE2NjZkZTYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzI0My9hbmV4b3MvOTYyZjQ1NjItZjkzOS00NzU5LWExMGEtYzJjMWEyMDIwMmJiLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSwgYXJ0LjjCuixJViBlIFRKUFIgQUMxNDM3MzMyLTMgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIHJldXRpbGl6YSBvYnJhcyBkZSB0ZXJjZWlyb3MgbmVjZXNzw6FyaWFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkFVWElMSUFSIERFIEFQT0lPIEVTQ09MQVIiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6Im5vdmEtYXBvaW8tcTMzIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgYW50ZWNlc3NvcmVzIHBhcmVzIGRlIDQyOCBzw6NvIDQyNiwgNDI0LCA0MjIsIDQyMCBlIDQxOC4gMi4gTyBxdWludG8gw6kgNDI4IOKIkiA1IMOXIDIgPSA0MTgsIGFsdGVybmF0aXZhIEI7IG8gNDI4IG7Do28gw6kgY29udGFkbyBjb21vIHNldSBwcsOzcHJpbyBhbnRlY2Vzc29yLiIsInN0YXRlbWVudCI6IkR1cmFudGUgYSBvcmdhbml6YcOnw6NvIGRlIHVtIGVzdG9xdWUgZW0gdW0gYXJtYXrDqW0sIGFzIGNhaXhhcyBmb3JhbSBudW1lcmFkYXMgZW0gc2VxdcOqbmNpYS4gVW0gZnVuY2lvbsOhcmlvIHByZWNpc2F2YSBsb2NhbGl6YXIgYSBjYWl4YSBjb3JyZXNwb25kZW50ZSBhbyA1wrogYW50ZWNlc3NvciBwYXIgZG8gbsO6bWVybyA0MjgsIHBvaXMgbmVsYSBlc3RhdmFtIGFybWF6ZW5hZGFzIHBlw6dhcyBlc3BlY8OtZmljYXMuIFF1YWwgYWx0ZXJuYXRpdmEgY29ycmVzcG9uZGUgY29ycmV0YW1lbnRlIGEgZXNzYSBudW1lcmHDp8Ojbz8iLCJ0b3BpY0lkIjoiTTEwIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.varg25-ti-q11.json",
+        "mediaType": "application/json",
+        "sha256": "92bbb123f26aa13aea13f770f512e64c5106a2a4af8d42c93fc23cca3d776ccb",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUm9kZWlvIGRlIEFtZXJpY2FuYSwgUm9kZWlvIGRlIEJhcnJldG9zLCBSb2RlaW8gZGUgSmFndWFyacO6bmEsIFRoZSBBbWVyaWNhbi4ifSx7ImlkIjoiYiIsInRleHQiOiJSb2RlaW8gZGUgQW1lcmljYW5hLCBSb2RlaW8gZGUgSmFndWFyacO6bmEsIFJvZGVpbyBkZSBCYXJyZXRvcywgVGhlIEFtZXJpY2FuLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlRoZSBBbWVyaWNhbiwgUm9kZWlvIGRlIEFtZXJpY2FuYSwgUm9kZWlvIGRlIEJhcnJldG9zLCBSb2RlaW8gZGUgSmFndWFyacO6bmEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUm9kZWlvIGRlIEFtZXJpY2FuYSwgVGhlIEFtZXJpY2FuLCBSb2RlaW8gZGUgQmFycmV0b3MsIFJvZGVpbyBkZSBKYWd1YXJpw7puYS4ifSx7ImlkIjoiZSIsInRleHQiOiJSb2RlaW8gZGUgQmFycmV0b3MsIFJvZGVpbyBkZSBBbWVyaWNhbmEsIFJvZGVpbyBkZSBKYWd1YXJpw7puYSwgVGhlIEFtZXJpY2FuLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUsIFTDiUNOSUNPIEVNIElORk9STcOBVElDQSwgcXVlc3TDo28gMTEuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvIGRhcyBwcm92YXMgZGUgMTkvMTAvMjAyNTsgcMOhZ2luYSA3LCBibG9jbyBkbyBjYXJnbyBUw4lDTklDTyBFTSBJTkZPUk3DgVRJQ0EsIHF1ZXN0w6NvIDExID0gQiBjb25mZXJpZGEgdmlzdWFsbWVudGU7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTctZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6ImI5MDdkMzVlMTZlZGJjNWEyZTk4OTMyNzUzMjAyNGU5Yjk5MmRkYjBiOWJmZGJiZTgzNWUyYjliNzE4ZjM2NzUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5Ny9hbmV4b3MvYTM4OTgyODMtNGQ0ZS00NTE2LTg1N2YtZWEwZmFiNGRhYTQ2LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12YXJnaW5oYS0yMDI1LXRlY2luZm8vcTExIiwibnVtYmVyIjoiMTEiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIFTDiUNOSUNPIEVNIElORk9STcOBVElDQTsgcXVlc3TDo28gMTEgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNSByZW5kZXJpemFkYSAoZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKTsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS9oaWZlbml6YcOnw6NvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTctcHJvdmEtdGNuaWNvLWVtLWluZm9ybXRpY2EucGRmIiwic2hhMjU2IjoiODYzZWJiNDE2NWVjY2ZhZjAxODE5OWVhMWEyMjVhN2FkZWY5NzgxYmMxYTc0MjM0MzdhY2M2NTY4MmJhM2Y2YyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk3L2FuZXhvcy80NTlkZWQyOC1mMzg0LTQ5MDktYWZhOS0xMTc5NjQyMjNmNzMucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IExlaSA5LjYxMC8xOTk4LCBhcnQuIDjCuiwgSVYsIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUsIHNlbSBvYnJhIGRlIHRlcmNlaXJvIG5lY2Vzc8OhcmlhOyBuw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gc2UgYWZpcm1hIGNvbnNlbnRpbWVudG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVMOJQ05JQ08gRU0gSU5GT1JNw4FUSUNBIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI1fSwiaWQiOiJ2YXJnMjUtdGktcTExIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBCYXJyZXRvcyBuw6NvIMOpIG8gZGUgbWVub3IgcMO6YmxpY28gKG8gbWVub3Igb2NvcnJldSBhbnRlcyBkZWxlKSBlIFRoZSBBbWVyaWNhbiBzdXBlcmEgQmFycmV0b3MuIEphZ3VhcmnDum5hID0gQW1lcmljYW5hICsgMzAgbWlsLiBUZXN0YW5kbzogQW1lcmljYW5hIDEyMCwgSmFndWFyacO6bmEgMTUwLCBCYXJyZXRvcyAxODAgZSBUaGUgQW1lcmljYW4gMjEwIHNhdGlzZmF6ZW0gdHVkbywgZSBhIHZlcmlmaWNhw6fDo28gZXhhdXN0aXZhIG1vc3RyYSBxdWUgw6kgYSDDum5pY2Egb3JkZW0gcG9zc8OtdmVsLiAyLiBBIHRlbSBKYWd1YXJpw7puYSBjb20gNjAgbWlsIGEgbWFpcyBxdWUgQW1lcmljYW5hOyBDIGUgRCBww7VlbSBUaGUgQW1lcmljYW4gYWJhaXhvIGRlIEJhcnJldG9zOyBFIGTDoSBhIEJhcnJldG9zIG8gbWVub3IgcMO6YmxpY28uIFJlc3Bvc3RhOiBhbHRlcm5hdGl2YSBCLiIsInN0YXRlbWVudCI6IkVtIDIwMjQsIHF1YXRybyBncmFuZGVzIHJvZGVpb3Mgb2NvcnJlcmFtIGVtIG1lc2VzIGNvbnNlY3V0aXZvczogVGhlIEFtZXJpY2FuLCBubyBUZXhhczsgUm9kZWlvIGRlIEFtZXJpY2FuYSwgZW0gU8OjbyBQYXVsbzsgUm9kZWlvIGRlIEJhcnJldG9zLCBlbSBTw6NvIFBhdWxvOyBSb2RlaW8gZGUgSmFndWFyacO6bmEsIGVtIFPDo28gUGF1bG8uXG5DYWRhIGV2ZW50byByZWNlYmV1IHVtIG7Dum1lcm8gZGlmZXJlbnRlIGRlIHZpc2l0YW50ZXM6IDEyMCBtaWwsIDE1MCBtaWwsIDE4MCBtaWwgZSAyMTAgbWlsLiBTYWJlLXNlIHF1ZTpcbuKAoiBPIGV2ZW50byBjb20gbWVub3MgdmlzaXRhbnRlcyBvY29ycmV1IGFudGVzIGRvIFJvZGVpbyBkZSBCYXJyZXRvcy5cbuKAoiBPIFJvZGVpbyBkZSBKYWd1YXJpw7puYSB0ZXZlIDMwIG1pbCB2aXNpdGFudGVzIGEgbWFpcyBxdWUgbyBSb2RlaW8gZGUgQW1lcmljYW5hLlxu4oCiIE8gUm9kZWlvIGRlIEJhcnJldG9zIG7Do28gZm9pIG8gw7psdGltbyBldmVudG8uXG7igKIgVGhlIEFtZXJpY2FuIHRldmUgbWFpcyB2aXNpdGFudGVzIHF1ZSBvIFJvZGVpbyBkZSBCYXJyZXRvcy5cbkFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgcXVlIGluZGljYSBhIG9yZGVtIGNvcnJldGEgZG9zIGV2ZW50b3MsIGRvIG1lbm9yIHBhcmEgbyBtYWlvciBuw7ptZXJvIGRlIHZpc2l0YW50ZXM6IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.varg26-gest-q15.json",
+        "mediaType": "application/json",
+        "sha256": "c15af4a8b2a9da93d50439892e133f24778bf8d648f08dac2132b7040741e0f1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRG9taW5nby4ifSx7ImlkIjoiYiIsInRleHQiOiJTZWd1bmRhLWZlaXJhLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlRlcsOnYS1mZWlyYS4ifSx7ImlkIjoiZCIsInRleHQiOiJRdWFydGEtZmVpcmEuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiUXVpbnRhLWZlaXJhLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIEV4YW1lIFNlbGV0aXZvIEludGVybm8gMDEvMjAyNiwgQ09PUkRFTkFET1IvIERJUkVUT1IvIFZJQ0UtRElSRVRPUiBFU0NPTEFSLCBxdWVzdMOjbyAxNS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZG8gUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNjsgcMOhZ2luYSAxLCBibG9jbyBkbyBjYXJnbyBDT09SREVOQURPUi8gRElSRVRPUi8gVklDRS1ESVJFVE9SIEVTQ09MQVIsIHF1ZXN0w6NvIDE1ID0gQiBjb25mZXJpZGEgdmlzdWFsbWVudGU7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMTktZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjExMjUwYzZjMmNmYzkzNTI2N2RlMjg1Mzc3OTMwYjk1MGQ1ZDQwM2M0Njk4Mzg2MDQ3N2YyY2FkZWRmZDkwNDgiLCJ1cmwiOiJodHRwczovL2FuZXhvcy1yMi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjE5L2FuZXhvcy84ZmZmMDk3Zi0yYWJkLTRhNjAtYjhmNi02ZjYzODViZGYxMmIucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBWYXJnaW5oYSDigJQgRXhhbWUgU2VsZXRpdm8gSW50ZXJubyAwMS8yMDI2IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtdmFyZ2luaGEtMjAyNi1nZXN0b3IvcTE1IiwibnVtYmVyIjoiMTUiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIENPT1JERU5BRE9SLyBESVJFVE9SLyBWSUNFLURJUkVUT1IgRVNDT0xBUjsgcXVlc3TDo28gMTUgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNSByZW5kZXJpemFkYSAoZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKTsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS9oaWZlbml6YcOnw6NvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMTktcHJvdmEtY29vcmRlbmFkb3ItZGlyZXRvci12aWNlLWRpcmV0b3ItZXNjb2xhci5wZGYiLCJzaGEyNTYiOiI2N2ZlM2U3OGUxMTg3YWMxODg2ZjM5OGE1OTM0OTVkYjQwNzQwNTY3NWRiMDE2Mzk0M2JiMTdlY2RhYzRlYzY0IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MtcjIuc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIxOS9hbmV4b3MvZTdmOTNjNWQtNTgwYS00YWI0LTg4ZDItYmZkMzdjOTBjM2RhLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBMZWkgOS42MTAvMTk5OCwgYXJ0LiA4wrosIElWLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBuZWNlc3PDoXJpYTsgbsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIHNlIGFmaXJtYSBjb25zZW50aW1lbnRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkNPT1JERU5BRE9SLyBESVJFVE9SLyBWSUNFLURJUkVUT1IgRVNDT0xBUiIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoidmFyZzI2LWdlc3QtcTE1Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBEZSAxwrogZGUgamFuZWlybyBhIDIxIGRlIGFicmlsIHBhc3NhbSAzMSAoamFuKSArIDI4IChmZXYsIGFubyBuw6NvIGJpc3NleHRvKSArIDMxIChtYXIpICsgMjAgPSAxMTAgZGlhcy4gQ29tbyAxMTAgPSAxNSDCtyA3ICsgNSwgbyBkaWEgZGEgc2VtYW5hIGF2YW7Dp2EgNSBwb3Npw6fDtWVzIGEgcGFydGlyIGRlIHF1YXJ0YS1mZWlyYTogcXVpbnRhLCBzZXh0YSwgc8OhYmFkbywgZG9taW5nbywgc2VndW5kYS4gMi4gRG9taW5nbywgdGVyw6dhLCBxdWFydGEgZSBxdWludGEtZmVpcmEgcmVzdWx0YW0gZGUgY29udGFyIGVycmFkbyBvcyBkaWFzIGRlIGZldmVyZWlybyBvdSBvIHJlc3RvIGRhIGRpdmlzw6NvIHBvciA3LiBSZXNwb3N0YTogYWx0ZXJuYXRpdmEgQi4iLCJzdGF0ZW1lbnQiOiJFbSBkZXRlcm1pbmFkbyBhbm8sIG8gZGlhIDHCuiBkZSBqYW5laXJvIGNhaXUgZW0gdW1hIHF1YXJ0YS1mZWlyYS4gU2FiZW5kbyBxdWUgZXNzZSBhbm8gZW0gcXVlc3TDo28gbsOjbyDDqSBiaXNzZXh0bywgZW0gcXVlIGRpYSBkYSBzZW1hbmEgY2FpdSBvIGZlcmlhZG8gZGUgMjEgZGUgYWJyaWw/IiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M10.p.vinhedo-profmat-q19.json",
+        "mediaType": "application/json",
+        "sha256": "fb38a6c7d889be8e0dfea944504b63a8b6037eab6bc4a01c1464cfe9bfcfbf97",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzUyIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMzUwIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMzQ4In0seyJpZCI6ImQiLCJ0ZXh0IjoiMzQ2In0seyJpZCI6ImUiLCJ0ZXh0IjoiMzQ0In1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBWaW5oZWRvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMy8yMDI1LCBQUk9GRVNTT1IgREUgRURVQ0HDh8ODTyBCw4FTSUNBIElJIC0gTUFURU3DgVRJQ0EsIHF1ZXN0w6NvMTkuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6Q29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBzZcOnw6NvIGVzcGVjw61maWNhIGRvIGNhcmdvIGUgcmVzcG9zdGEgY29uZmVyaWRhcywgYW51bGFkYXMgZXhjbHXDrWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvdmluaGVkby1nYWJhcml0by5wZGYiLCJzaGEyNTYiOiI5MjNhY2FhZjlkMzhlNWM4ZjQ4M2IzY2U5ZmQyZDlkYzZjMjE1MDI3Y2ViMGE0ZWYzNWY3ZDBhYmUyNGNjMzhlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzI3OTUxNDEzLTA0YzYtNDRmOC05MjVhLWViMGIzOTIxMTczOS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12aW5oZWRvLTIwMjUtcHJvZm1hdC9xMTkiLCJudW1iZXIiOiIxOSIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWw7IGNhcmdvIGUgbsO6bWVybyBjb25mZXJpZG9zOyBjYWJlw6dhbGhvcyBlIHF1ZWJyYXMgcmV0aXJhZG9zLiBGb3JtYXRvcyBtYXRlbcOhdGljb3MgcmVsZXZhbnRlcyBjb21wYXJhZG9zIGNvbSBww6FnaW5hcyByZW5kZXJpemFkYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3ZpbmhlZG8tcHJvZm1hdC5wZGYiLCJzaGEyNTYiOiJmZjgzM2ViMjAyNGZiZDk0NmRhMGQwZjI4OTA2ZmU3NzgzMjFiNGJmMTcxZWEwMTMxMThkMzk5NDYyZDg3MmJjIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzY4MzVlZGE0LWUwNTItNDc1Zi04MmRjLTA4MjE1NGIzMzNmNy5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUsIGFydC44wrosSVYgZSBUSlBSIEFDMTQzNzMzMi0zIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGU7IG7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSByZXV0aWxpemEgb2JyYXMgZGUgdGVyY2Vpcm9zIG5lY2Vzc8Ohcmlhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJQUk9GRVNTT1IgREUgRURVQ0HDh8ODTyBCw4FTSUNBIElJIC0gTUFURU3DgVRJQ0EiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InZpbmhlZG8tcHJvZm1hdC1xMTkiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIG4tw6lzaW1vIHBhciBwb3NpdGl2byDDqSAybi4gMi4gUGFyYSBuID0gMTc1LCByZXN1bHRhIDIgw5cgMTc1ID0gMzUwLCBhbHRlcm5hdGl2YSBCOyBuw6NvIGjDoSB0ZXJtbyB6ZXJvIG5vIGluw61jaW8gZGEgbGlzdGEuIiwic3RhdGVtZW50IjoiQ29uc2lkZXJlIGEgc2VxdcOqbmNpYSBudW3DqXJpY2EgYWJhaXhvOiAyLCA0LCA2LCA4LCAxMCwgMTIsIDE0LCAxNiwgMTgsIDIwLCDigKYgRXNzYSBzZXF1w6puY2lhIMOpIGZvcm1hZGEgYXBlbmFzIHBvciBuw7ptZXJvcyBwYXJlcyBwb3NpdGl2b3MsIGRpc3Bvc3RvcyBlbSBvcmRlbSBjcmVzY2VudGUgZSBzZWd1aW5kbyB1bSBwYWRyw6NvIHJlZ3VsYXIuIFF1YWwgw6kgbyAxNzXCuiB0ZXJtbyBkZXNzYSBzZXF1w6puY2lhPyBBc3NpbmFsZSBhIGFsdGVybmF0aXZhIGNvcnJldGEuIiwidG9waWNJZCI6Ik0xMCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M10.p.cerq25-alm-q17",
+    "admin.2026-11.M10.p.mat-agenda-restricoes",
+    "admin.2026-11.M10.p.mat-blocos-soma-impares",
+    "admin.2026-11.M10.p.mat-calendario-semanas-dias",
+    "admin.2026-11.M10.p.mat-codigo-regra-posicional",
+    "admin.2026-11.M10.p.mat-fila-duas-posicoes",
+    "admin.2026-11.M10.p.mat-fila-insercao",
+    "admin.2026-11.M10.p.mat-invariante-paridade",
+    "admin.2026-11.M10.p.mat-invariante-soma-troca",
+    "admin.2026-11.M10.p.mat-numeros-consecutivos-paridade",
+    "admin.2026-11.M10.p.mat-orientacao-giros",
+    "admin.2026-11.M10.p.mat-pa-decrescente-limite",
+    "admin.2026-11.M10.p.mat-percurso-malha",
+    "admin.2026-11.M10.p.mat-posicao-dos-multiplos",
+    "admin.2026-11.M10.p.mat-programa-paridade",
+    "admin.2026-11.M10.p.mat-restricao-assentos-lado",
+    "admin.2026-11.M10.p.mat-sequencia-alternada-regras",
+    "admin.2026-11.M10.p.mat-sequencia-dois-subgrupos",
+    "admin.2026-11.M10.p.mat-sequencia-fibonacci-regra",
+    "admin.2026-11.M10.p.mat-sequencia-inversa-operacoes",
+    "admin.2026-11.M10.p.mat-soma-pa",
+    "admin.2026-11.M10.p.nova-apoio-q33",
+    "admin.2026-11.M10.p.varg25-ti-q11",
+    "admin.2026-11.M10.p.varg26-gest-q15",
+    "admin.2026-11.M10.p.vinhedo-profmat-q19"
+  ]
+}

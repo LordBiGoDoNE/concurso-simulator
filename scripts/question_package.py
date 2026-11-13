@@ -46,6 +46,24 @@ def safe_url(value):
     return value
 
 
+# Páginas/hosts de bancas e documentos de prova/gabarito: evidência de curadoria, nunca referência de
+# estudo exibida durante a realização aberta (#173, achado A1 da revisão final de 13/11/2026).
+EXAM_BOARD_HOSTS = ("cebraspe.org.br", "selecao.net.br", "fundatec.org.br", "conhecimento.fgv.br",
+                    "vunesp.com.br", "institutoaocp.org.br", "ibfc.org.br", "consulplan.net", "quadrix.org.br")
+EXAM_DOCUMENT = re.compile(r"gabarito|caderno de (?:prova|quest)|folha de respostas|prova e gabarito", re.I)
+
+
+def study_reference(name, url):
+    """Recusa referência pública que aponte para prova/gabarito, pelo nome ou pela URL."""
+    safe_url(url)
+    parsed = urlsplit(url)
+    host, path = (parsed.hostname or "").lower(), unquote(parsed.path).lower()
+    if (EXAM_DOCUMENT.search(name) or EXAM_DOCUMENT.search(unquote(url)) or re.search(r"/(?:concursos?|provas?|gabaritos?)/", path)
+            or any(host == h or host.endswith("." + h) for h in EXAM_BOARD_HOSTS)):
+        raise ValueError("Referência de prova/gabarito não pertence à projeção de questão")
+    return url
+
+
 def fingerprint(content):
     """Mesmo enquadramento binário UTF-8 v1 de QuestionContent, sem normalização."""
     chunks = []

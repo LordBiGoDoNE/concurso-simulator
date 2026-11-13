@@ -9,6 +9,8 @@ import java.util.*;
 
 public final class Attempt {
     public static final String POLICY = "uniform-v1";
+    public static final int PRACTICE_MAXIMUM = 5;
+    private static final int RESTORED_PRACTICE_MAXIMUM = 25;
     public record Item(UUID id, AttemptQuestion question, List<UUID> optionOrder, Map<String,String> parameters) {
         public Item {
             Objects.requireNonNull(id); Objects.requireNonNull(question);
@@ -36,7 +38,7 @@ public final class Attempt {
     public record ItemView(UUID id, UUID questionId, UUID revisionId, QuestionClassification classification,
                            TextContent statement, List<QuestionContent.Alternative> alternatives,
                            List<Reference> references, UUID selectedAlternativeId) {}
-    public record View(UUID id, TargetRole role, Instant createdAt, Instant finishedAt, long version, List<ItemView> items) {}
+    public record View(UUID id, TargetRole role, Topic practiceTopic, Instant createdAt, Instant finishedAt, long version, List<ItemView> items) {}
     public record Correction(ItemView item, UUID correctAlternativeId, TextContent resolution) {}
     public record Result(int total, int correct, int wrong, int blank, BigDecimal percentage, List<Correction> items) {}
     public static final class Unavailable extends RuntimeException {}
@@ -46,17 +48,21 @@ public final class Attempt {
     private Snapshot state;
     private Attempt(Snapshot state) {
         Objects.requireNonNull(state.id()); Objects.requireNonNull(state.owner());
-        Objects.requireNonNull(state.composition()); Objects.requireNonNull(state.createdAt());
+        Objects.requireNonNull(state.createdAt());
         Objects.requireNonNull(state.purpose());
+        var composition=state.composition();
+        boolean byTopic=state.format()==4;
         if (state.purpose()==QuestionPurpose.PRATICA_AULA) {
-            if (state.format()!=3 || state.practiceTopic()==null || state.composition().useParameterizedQuestions()
-                    || state.items().isEmpty() || state.items().size()>5 || state.composition().disciplines().size()!=1
-                    || (!state.composition().disciplines().containsKey(state.practiceTopic().discipline())
-                    || !state.composition().disciplines().get(state.practiceTopic().discipline()).topics().equals(Set.of(state.practiceTopic()))))
+            if ((!byTopic && state.format()!=3) || state.practiceTopic()==null
+                    || state.items().isEmpty() || state.items().size()>(byTopic ? RESTORED_PRACTICE_MAXIMUM : 5)
+                    || (byTopic ? composition!=null : composition==null || composition.useParameterizedQuestions()
+                    || composition.disciplines().size()!=1
+                    || !composition.disciplines().containsKey(state.practiceTopic().discipline())
+                    || !composition.disciplines().get(state.practiceTopic().discipline()).topics().equals(Set.of(state.practiceTopic()))))
                 throw new IllegalArgumentException("Contexto de prática inválido");
-        } else if (state.practiceTopic()!=null || state.format()==3) throw new IllegalArgumentException("Modalidade divergente");
-        if ((state.format()!=1 && state.format()!=2 && state.format()!=3) || state.format()==1 && state.composition().useParameterizedQuestions()
-                || !POLICY.equals(state.policy()) || state.version() < 0 || state.items().size() != state.composition().total())
+        } else if (state.practiceTopic()!=null || state.format()==3 || byTopic || composition==null) throw new IllegalArgumentException("Modalidade divergente");
+        if ((state.format()<1 || state.format()>4) || state.format()==1 && composition.useParameterizedQuestions()
+                || !POLICY.equals(state.policy()) || state.version() < 0 || !byTopic && state.items().size()!=composition.total())
             throw new IllegalArgumentException("Snapshot de tentativa inválido");
         var itemIds = new HashSet<UUID>(); var questions = new HashSet<UUID>();
         var counts = new EnumMap<Discipline,Integer>(Discipline.class);
@@ -64,13 +70,13 @@ public final class Attempt {
             if (item.question().purpose()!=state.purpose() || state.practiceTopic()!=null
                     && item.question().content().classification().topic()!=state.practiceTopic())
                 throw new IllegalArgumentException("Questão fora do acervo/assunto da realização");
-            if (!state.composition().useParameterizedQuestions() && item.question().source().kind()!=QuestionSource.Kind.FIXED)
+            if ((byTopic || !composition.useParameterizedQuestions()) && item.question().source().kind()!=QuestionSource.Kind.FIXED)
                 throw new IllegalArgumentException("Geração não solicitada");
-            if (!itemIds.add(item.id()) || !questions.add(item.question().questionId()) || !state.composition().accepts(item.question()))
+            if (!itemIds.add(item.id()) || !questions.add(item.question().questionId()) || !byTopic && !composition.accepts(item.question()))
                 throw new IllegalArgumentException("Itens da composição inválidos");
             counts.merge(item.question().content().classification().discipline(), 1, Integer::sum);
         }
-        state.composition().disciplines().forEach((d,p) -> {
+        if (!byTopic) composition.disciplines().forEach((d,p) -> {
             if (counts.getOrDefault(d,0) != p.quantity()) throw new IllegalArgumentException("Quantidade divergente");
         });
         this.state = state;
@@ -82,8 +88,9 @@ public final class Attempt {
     public static Attempt start(UUID id, AttemptOwner owner, Composition composition, Instant at, List<Item> items) {
         return new Attempt(new Snapshot(id,owner,composition,at,null,POLICY,items,Map.of(),0));
     }
-    public static Attempt startPractice(UUID id, AttemptOwner owner, Composition composition, Topic topic, Instant at, List<Item> items) {
-        return new Attempt(new Snapshot(id,owner,composition,at,null,POLICY,items,Map.of(),0,3,QuestionPurpose.PRATICA_AULA,topic));
+    public static Attempt startPractice(UUID id, AttemptOwner owner, Topic topic, Instant at, List<Item> items) {
+        if (items.size()>PRACTICE_MAXIMUM) throw new IllegalArgumentException("Uma nova prática admite até cinco questões");
+        return new Attempt(new Snapshot(id,owner,null,at,null,POLICY,items,Map.of(),0,4,QuestionPurpose.PRATICA_AULA,topic));
     }
     public void requirePurpose(QuestionPurpose purpose) { if (state.purpose()!=purpose) throw new Unavailable(); }
     public static Attempt restore(Snapshot snapshot) { return new Attempt(snapshot); }
@@ -119,7 +126,7 @@ public final class Attempt {
     }
     public View view(AttemptOwner actor, Instant now) {
         requireAccessible(actor,now);
-        return new View(state.id(),state.composition().role(),state.createdAt(),state.finishedAt(),state.version(),
+        return new View(state.id(),state.purpose()==QuestionPurpose.SIMULADO?state.composition().role():null,state.practiceTopic(),state.createdAt(),state.finishedAt(),state.version(),
                 state.items().stream().map(this::viewItem).toList());
     }
     private ItemView viewItem(Item item) {

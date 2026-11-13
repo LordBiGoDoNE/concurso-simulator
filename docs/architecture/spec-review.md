@@ -34,6 +34,15 @@ implementar. Não encerrar num prefixo de grupo; PRs pequenos/coerentes não aut
 deixar sua última subtarefa para outro lote. Comunicar bloqueios reais sem fingir
 conclusão nem incluir dependências fora do escopo por iniciativa própria. Implementação
 sem pausas por subtarefa, PRs em rascunho e nenhuma integração presumida permanecem.
+> **Decisão vigente do usuário (2026-11-12):** não há revisão por modelo a cada lote. A única
+> revisão por modelo é a **revisão final de código antes do merge `[SPEC]` em `main`**, feita por
+> agente autônomo novo (`.claude/agents/spec-reviewer.md`) com **Claude Opus 5.5, esforço
+> medium**, em contexto independente e sem viés (mesmas entradas, isolamento, triagem,
+> atualidade e evidência descritos abaixo). As menções a `openai/gpt-6.1-sol#xhigh` e Astra
+> nas seções seguintes descrevem a regra anterior e ficam como histórico; onde o texto exige
+> SOL, leia-se a revisão final Opus 5.5 medium. Lotes seguem com testes, triagem própria e
+> relatório com SHAs/checks antes da aprovação de merge na épica.
+
 Ao fim da implementação,
 **antes de solicitar aprovação de merge**, um agente novo com
 `openai/gpt-6.1-sol#xhigh` revisa o conjunto como **único revisor do lote**, inclusive
@@ -89,21 +98,25 @@ ou diff relevante invalidam a revisão do lote; relatórios isolados de evidênc
 autorizam alterar código sem revalidação. O check de tarefa continua `spec-review-tests`,
 não há novo gate automático nem mudança de workflow/ruleset nesta decisão.
 
-Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem e
-consumo separado por modelo/coordenador: cota 5h/semanal antes/depois, com limites de
-atribuição, e tokens (entrada nova, cache read/write, saída, raciocínio reportado).
-Comparações históricas de achados comuns/exclusivos e consumo só são válidas quando
-ambos realmente executaram. Nos lotes SOL-only, registrar que comparação não foi
-realizada, não que outro modelo teve zero achados/consumo; não dispará-lo para comparar.
-Seguir [protocolo de cota](../review-quota.md); não somar raciocínio à
-saída nem converter tokens em consumo da assinatura. Extrapolações exigem amostra e
-hipóteses explícitas. Zero achados não prova equivalência nem garante economia futura.
+Apresentar relatório único com risco/justificativa, PRs/SHAs/checks, achados/triagem,
+tempo e tokens efetivamente disponibilizados pelo harness (entrada nova, cache,
+saída e raciocínio reportado), sem somar raciocínio à saída. Se a informação não
+estiver disponível, registrar essa limitação, sem estimar ou converter tokens em
+cobrança da assinatura. Comparações históricas só representam modelos realmente
+executados; não disparar outro modelo para comparar consumo.
+
+Por decisão do usuário de 2026-11-09, cota não é mais coletada ou registrada nas
+revisões; não há exigência de isolamento de outros usos para medi-la. O
+[procedimento anterior](../review-quota.md) permanece histórico. Essa retirada não
+altera modelo, independência, triagem, testes, gates ou autorização de merge.
 
 Aprovação do conjunto exige a lista explícita dos PRs/heads; não implica merges automáticos,
 aprovação editorial de conteúdo real, publicação ou arquivamento. Não iniciar outra rodada
 automaticamente. A primeira rodada autorizada é question-bank 1.2, 1.3, 2.1–2.3, sobre #38.
 
 ### Integração final da spec
+
+**Vigente desde 2026-11-12:** revisão final de código com Claude Opus 5.5, esforço medium, em agente autônomo novo (`.claude/agents/spec-reviewer.md`). O parágrafo seguinte é histórico.
 
 **Padrão aprovado em 2026-10-15:** `openai/gpt-6.1-sol#xhigh` para todas as revisões,
 revalidações e gates cumulativos, inclusive da épica geral. Não há exigência ativa

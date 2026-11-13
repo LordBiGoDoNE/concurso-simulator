@@ -1,0 +1,1991 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.amp26-dir-q21"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao organizar documentos digitais em um computador, é comum que os arquivos possuam uma parte principal do nome e outra que identifica seu formato.\nCom relação à forma de escrita dos nomes de arquivos, assinale a alternativa correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b3448836-ec25-5b8f-8dcf-692a2a580694",
+              "content": {
+                "text": "O ponto é utilizado para separar o nome principal do arquivo de sua extensão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "eb615eda-2266-59a5-9640-4b108b006e86",
+              "content": {
+                "text": "O ponto é utilizado apenas em nomes de pastas, não sendo empregado em arquivos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7c619aca-5987-59db-ac58-df53c1061993",
+              "content": {
+                "text": "A extensão de um arquivo deve ser escrita antes do nome principal.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a51b9432-643b-5547-9c51-78824a1cf7f9",
+              "content": {
+                "text": "O ponto deve ser utilizado somente quando o arquivo não possui extensão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "14871741-caa2-5fb3-ae96-daca0e16b125",
+              "content": {
+                "text": "O nome principal do arquivo deve ser separado da extensão por uma barra (/).",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b3448836-ec25-5b8f-8dcf-692a2a580694",
+          "resolution": {
+            "text": "1. Em nomes como relatorio.docx, o ponto separa o nome principal da extensão, que fica depois dele e indica o tipo do arquivo; alternativa A. 2. B e D invertem o uso do ponto, que é justamente o separador da extensão em arquivos; C inverte a ordem (a extensão vem ao final); E erra porque a barra é caractere reservado no Windows e separa níveis de caminho, não nome e extensão. Gabarito definitivo: alternativa A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Extensões de nome de arquivo comuns no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/common-file-name-extensions-in-windows",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Nomeação de arquivos, diretórios e namespaces",
+              "url": "https://learn.microsoft.com/pt-br/windows/win32/fileio/naming-a-file",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Amparo — Concurso Público 01/2026, Diretor de Escola, questão 21. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I01.p.amp26-dir-q21.json",
+            "answerPath": "sources/admin.2026-11.I01.p.amp26-dir-q21.json",
+            "contentSha256": "3063c4dafc23fd2a3eb845091e0429e30b15aeb86e8dcea32678ccc12c75a191",
+            "answerSha256": "3063c4dafc23fd2a3eb845091e0429e30b15aeb86e8dcea32678ccc12c75a191"
+          }
+        },
+        "fingerprint": "f3f1193a0913e1d4c1bd765a409526211ded87e1426657d8c8c3ce1a54cc0876",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.cebra-cachoeiro-q25"
+        },
+        "content": {
+          "statement": {
+            "text": "Acerca de redes de computadores e de ferramentas disponíveis para comunicação na Internet, julgue os itens que se seguem.\nPara se utilizar o OneDrive da Microsoft de forma sincronizada, é necessário que haja uma conta pessoal, corporativa ou de estudante configurada para uso.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6336492a-b17f-54bd-bfba-23ccd774c164",
+              "content": {
+                "text": "Certo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "31f3672f-3d17-55ea-aa20-86b1f63b022a",
+              "content": {
+                "text": "Errado.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6336492a-b17f-54bd-bfba-23ccd774c164",
+          "resolution": {
+            "text": "1. A sincronização do OneDrive identifica a conta pessoal ou organizacional configurada no cliente; Certo foi confirmado no definitivo. 2. Errado eliminaria indevidamente essa condição. A simples existência de uma pasta com o nome OneDrive ou de arquivos no computador não comprova que a sincronização de uma conta esteja configurada e ativa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Arquivos Sob Demanda para Windows",
+              "url": "https://support.microsoft.com/pt-br/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Prefeitura de Cachoeiro de Itapemirim/ES — Edital 2024, Conhecimentos Básicos para os cargos de nível superior, item 25. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I01.p.cebra-cachoeiro-q25.json",
+            "answerPath": "sources/admin.2026-11.I01.p.cebra-cachoeiro-q25.json",
+            "contentSha256": "d7e0c4be6d003276594f2b46cf8be07caea26b10f38c72d65f1329115804a9d2",
+            "answerSha256": "d7e0c4be6d003276594f2b46cf8be07caea26b10f38c72d65f1329115804a9d2"
+          }
+        },
+        "fingerprint": "d25e804860fdf349a973d0c4063e16d9262346027726bede1554e2364c0000c6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.fgv-taubate-q33"
+        },
+        "content": {
+          "statement": {
+            "text": "Com referência ao Prompt de comando do Windows 10, assinale a função do comando cd:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c74040a4-b18f-5e2f-8b67-24fc807ec991",
+              "content": {
+                "text": "Estabelecer as permissões de acesso de um arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9e416824-6fe8-5939-8ab0-4b1823086761",
+              "content": {
+                "text": "Exibir o conteúdo de um arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7a350870-4fb1-5833-ba2d-58474d20c90a",
+              "content": {
+                "text": "Exibir o nome do diretório atual ou mudar o diretório atual.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b73bc81c-603e-5bfb-be43-c58bb60b095b",
+              "content": {
+                "text": "Renomear um diretório ou arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4290f9b2-801e-5a2b-89f0-db8953508085",
+              "content": {
+                "text": "Trocar o usuário.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7a350870-4fb1-5833-ba2d-58474d20c90a",
+          "resolution": {
+            "text": "1. No Prompt de Comando do Windows 10, cd sem parâmetros exibe o diretório atual; com caminho permite mudá-lo. A opção C coincide com o definitivo. 2. Não é comando de concessão de permissões, leitura do conteúdo de arquivo, renomeação ou troca de usuário. O contexto é o comando cd do Windows, não uma tecla de atalho de aplicativo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — cd, Windows 10/11",
+              "url": "https://learn.microsoft.com/pt-br/windows-server/administration/windows-commands/cd",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — Câmara Municipal de Taubaté — Edital 1/2022, Técnico Legislativo de Informática, Tipo 1 — Branca — Tarde, questão 33. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I01.p.fgv-taubate-q33.json",
+            "answerPath": "sources/admin.2026-11.I01.p.fgv-taubate-q33.json",
+            "contentSha256": "2230db1c80b417f449f95b3e6e10c384ec3790bb09c6a50904a9a422ad564690",
+            "answerSha256": "2230db1c80b417f449f95b3e6e10c384ec3790bb09c6a50904a9a422ad564690"
+          }
+        },
+        "fingerprint": "282ca82ad5eda66582ae1fa6c16e57707d028622bf5011c5475ef4d87587ce66",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-arquivo-fixado-isolado"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pasta OneDrive é somente online, mas apenas um documento dela precisa ficar sempre disponível no computador Windows. É necessário baixar todos os documentos da pasta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7c670cc6-f9a4-5885-8d98-149d07aadcca",
+              "content": {
+                "text": "Sim, não existe disponibilidade por arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4ac8f4a6-ecc7-5d25-88c8-209d8e1f85cd",
+              "content": {
+                "text": "Sim, e todos os arquivos do disco precisam virar cópias da pasta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6f22d900-3145-5879-967a-07217d8aa8ed",
+              "content": {
+                "text": "Não, basta mudar o nome do monitor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cb42ecee-f6c9-5f31-b414-28e1f8a27f48",
+              "content": {
+                "text": "Não; é possível marcar individualmente o documento como Sempre manter neste dispositivo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cb42ecee-f6c9-5f31-b414-28e1f8a27f48",
+          "resolution": {
+            "text": "1. A disponibilidade pode ser definida para arquivos individuais dentro de uma pasta somente online. 2. A configuração não exige download de toda a pasta ou do disco e não depende do nome do monitor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Arquivos Sob Demanda para Windows",
+              "url": "https://support.microsoft.com/pt-br/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-arquivo-fixado-isolado.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-arquivo-fixado-isolado.json",
+            "contentSha256": "05df1d94336b5e5dbe40c3b3348f93df4ea453a257877ce228d3693b236367a8",
+            "answerSha256": "05df1d94336b5e5dbe40c3b3348f93df4ea453a257877ce228d3693b236367a8"
+          }
+        },
+        "fingerprint": "962d13844d6d29a86c1e5efc2921bb9b10827102d2de22e16941ba961d315e16",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-associacao-formato"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows, a extensão de um documento é .docx. Qual conclusão é adequada ao decidir com que programa abri-lo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b998c10e-66fa-5629-aaaf-0a6fc78abcd8",
+              "content": {
+                "text": "A extensão garante que o arquivo está livre de código ou conteúdo malicioso.",
+                "resources": []
+              }
+            },
+            {
+              "id": "da2197f0-4978-5dfa-a261-d703ed0a33db",
+              "content": {
+                "text": "A extensão ajuda a identificar o formato e aplicativos compatíveis, embora o conteúdo real também importe.",
+                "resources": []
+              }
+            },
+            {
+              "id": "96c5cba7-2d59-52a2-9a9e-daf08f6a7950",
+              "content": {
+                "text": "Todo arquivo .docx é necessariamente executável nativo do Windows.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e58d4702-0b65-507d-93f8-e84cfd99460b",
+              "content": {
+                "text": "A extensão identifica o usuário que escreveu o documento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "da2197f0-4978-5dfa-a261-d703ed0a33db",
+          "resolution": {
+            "text": "1. A extensão é usada na identificação de formatos e nas associações de programas. 2. Ela não prova autoria, não transforma um documento em executável nativo e não é um certificado de segurança.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Extensões de nome de arquivo comuns no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/common-file-name-extensions-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-associacao-formato.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-associacao-formato.json",
+            "contentSha256": "01433b69d271b1e1797b809e064ebbbff960fd0d7ecc45f6724a4e07aca4e622",
+            "answerSha256": "01433b69d271b1e1797b809e064ebbbff960fd0d7ecc45f6724a4e07aca4e622"
+          }
+        },
+        "fingerprint": "d44578d9cea4325525252d0f1941716a77f42fb9889c2e5b3774c94d86dc51b3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-compartilhar-especificos"
+        },
+        "content": {
+          "statement": {
+            "text": "Um setor precisa compartilhar uma pasta local pela rede Windows apenas com pessoas determinadas. Qual opção do fluxo de compartilhamento é apropriada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e0ea9615-e518-54b4-ad32-d6e8b532a2db",
+              "content": {
+                "text": "Selecionar Todos para restringir automaticamente a uma única pessoa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "18d8e282-28c5-5a31-8839-50449e08940e",
+              "content": {
+                "text": "Conceder acesso a Todos e informar o caminho da pasta apenas às pessoas determinadas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fd81c64f-a83a-5567-964e-d081f96e75bd",
+              "content": {
+                "text": "Mapear a pasta como unidade de rede no próprio computador, o que limita o acesso a quem conhece a letra.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4a8ef8b5-b3ac-528c-bb88-70220538738a",
+              "content": {
+                "text": "Conceder acesso a Pessoas específicas e conferir os usuários escolhidos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4a8ef8b5-b3ac-528c-bb88-70220538738a",
+          "resolution": {
+            "text": "1. Em Conceder acesso a > Pessoas específicas, escolhem-se e conferem-se os usuários que poderão acessar a pasta; alternativa D. 2. A erra porque Todos amplia o acesso em vez de restringi-lo; B erra porque conhecer ou não o caminho não é controle de acesso quando a permissão foi dada a Todos; C erra porque mapear uma unidade apenas cria um acesso por letra e não define quem pode usar o compartilhamento.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Compartilhamento de arquivos por uma rede no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/connectivity-networking/file-sharing-over-a-network-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-compartilhar-especificos.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-compartilhar-especificos.json",
+            "contentSha256": "5077a49f0eba7b53492e6add85c8919267e1cf9a184edbd93658c05ec2af574e",
+            "answerSha256": "5077a49f0eba7b53492e6add85c8919267e1cf9a184edbd93658c05ec2af574e"
+          }
+        },
+        "fingerprint": "77c4fd2d8fba72774d0316fd7a1ea492401e76a90ce024b0d432dac15d264105",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-desafixar-preserva"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pasta de trabalho foi desafixada do Acesso rápido do Explorador de Arquivos do Windows 11. Ela ainda abre pelo caminho original. O que ocorreu?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "070744db-6c4d-51ec-ac18-2ccf6c04a42d",
+              "content": {
+                "text": "Os arquivos viraram temporários e serão sempre apagados no próximo reinício.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0ceff49b-6125-5617-903f-e9d6eca3be3f",
+              "content": {
+                "text": "A pasta foi convertida em arquivo ZIP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "810842fd-697d-59f2-9e31-d1a9f01d467f",
+              "content": {
+                "text": "A operação removeu as permissões de todos os usuários.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bf09986d-608a-59d3-ab8f-4d82abbc6979",
+              "content": {
+                "text": "Foi removido o acesso fixado, preservando a pasta original.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bf09986d-608a-59d3-ab8f-4d82abbc6979",
+          "resolution": {
+            "text": "1. Desafixar altera a lista de acessos rápidos, não a existência do diretório. 2. Não é comando de exclusão agendada, compressão ou administração de permissões.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Explorador de Arquivos no Windows 11",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/fileexplorer/file-explorer-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-desafixar-preserva.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-desafixar-preserva.json",
+            "contentSha256": "621309752b8badd460aaa72309f5ee90c91192db2847f7113ab30937101eaa2e",
+            "answerSha256": "621309752b8badd460aaa72309f5ee90c91192db2847f7113ab30937101eaa2e"
+          }
+        },
+        "fingerprint": "1c9cef51834cef0e4336f4d84e6b47e88cf62982615ef2b8dd2e9cbee1c89007",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-indice-atualizacao"
+        },
+        "content": {
+          "statement": {
+            "text": "Após a indexação inicial, o Windows precisa necessariamente reconstruir do zero todo o índice sempre que um único documento muda?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4feda248-3e3d-5017-96fd-d738a67b5022",
+              "content": {
+                "text": "Não, porque o índice jamais pode ser atualizado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6efd5b54-ff07-59d6-b43b-eacc61ed9bb9",
+              "content": {
+                "text": "Não; ele acompanha alterações e reindexa os dados atualizados em segundo plano.",
+                "resources": []
+              }
+            },
+            {
+              "id": "01301bce-dd1b-57d2-a505-4eb9e70c05a6",
+              "content": {
+                "text": "Sim, e por isso exclui todos os documentos antigos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b766630a-e626-5c89-a49a-b89df4a2d1d0",
+              "content": {
+                "text": "Sim, e desliga permanentemente o Explorador.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6efd5b54-ff07-59d6-b43b-eacc61ed9bb9",
+          "resolution": {
+            "text": "1. A indexação contínua acompanha alterações e atualiza as informações correspondentes. 2. Não apaga documentos nem desliga o Explorador; o índice não é uma fotografia imutável de toda a vida do computador.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Indexação de pesquisa no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/performance-optimization/search-indexing-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-indice-atualizacao.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-indice-atualizacao.json",
+            "contentSha256": "e504f9b179352d3f3993df72ed52be7ae679d5dc8b4f1aee7144a3eadc697a08",
+            "answerSha256": "e504f9b179352d3f3993df72ed52be7ae679d5dc8b4f1aee7144a3eadc697a08"
+          }
+        },
+        "fingerprint": "c2814b28b71f41bbb29b6c7e86aaffbdbca282f3738aaf5f7b57602278a9d46a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-indice-incompleto"
+        },
+        "content": {
+          "statement": {
+            "text": "Um grande conjunto de documentos foi acrescentado a um local indexado do Windows e a indexação inicial ainda está em andamento. Qual cuidado ao avaliar a busca é adequado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3347b32a-d839-513c-a80a-c1a4f4870844",
+              "content": {
+                "text": "Concluir que todo documento ausente na busca foi apagado do disco.",
+                "resources": []
+              }
+            },
+            {
+              "id": "64bea061-b1c4-5b73-95e8-59d95cb8d3c5",
+              "content": {
+                "text": "Apagar os originais para que a busca fique correta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "30789ec3-140a-5d6b-a1e6-f9f04c0790b8",
+              "content": {
+                "text": "Trocar a extensão dos arquivos para o nome do índice.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ebbafd55-780e-5232-89be-8d7900dc926b",
+              "content": {
+                "text": "Considerar que resultados podem não refletir ainda todo o material enquanto a indexação não termina.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ebbafd55-780e-5232-89be-8d7900dc926b",
+          "resolution": {
+            "text": "1. Construir ou atualizar o índice pode levar tempo, conforme o volume e os recursos. 2. Ausência momentânea no resultado não prova exclusão; apagar ou renomear os originais não é a correção dessa espera.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Indexação de pesquisa no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/performance-optimization/search-indexing-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-indice-incompleto.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-indice-incompleto.json",
+            "contentSha256": "7fb65e97611ad5df5463712ee683444a60481e5d0e7440e55f7fd2b9a6f72d60",
+            "answerSha256": "7fb65e97611ad5df5463712ee683444a60481e5d0e7440e55f7fd2b9a6f72d60"
+          }
+        },
+        "fingerprint": "d5dc63ea5ee172112399a73be3bc3aeb8d53d99e68d18636a3ac7429b5238da8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-indice-metadata"
+        },
+        "content": {
+          "statement": {
+            "text": "Um usuário lembra a data de criação de um documento, mas não seu título. Qual característica da pesquisa indexada do Windows pode ajudar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c534a6d5-467b-5975-aed2-b750f1ef373e",
+              "content": {
+                "text": "Toda data vira automaticamente parte do nome do arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6560b70b-5505-54a2-b8f8-341260cb723e",
+              "content": {
+                "text": "O índice pode catalogar propriedades dos arquivos, permitindo usar metadados como data na localização.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0ed40644-65e3-56e1-bf78-eaf213317235",
+              "content": {
+                "text": "O índice guarda apenas imagens do papel de parede.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a9add223-ad9f-5939-a1df-c42484e672d0",
+              "content": {
+                "text": "A indexação impede qualquer busca por propriedades.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6560b70b-5505-54a2-b8f8-341260cb723e",
+          "resolution": {
+            "text": "1. Além de termos de conteúdo, a indexação trabalha com nomes, caminhos e outras propriedades. 2. Não se limita ao papel de parede, não proíbe metadados e não exige renomear arquivos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Indexação de pesquisa no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/performance-optimization/search-indexing-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-indice-metadata.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-indice-metadata.json",
+            "contentSha256": "aafa6e6078ee30ea859504e95a0c802957d739b773e3858f05be05e36c6f437c",
+            "answerSha256": "aafa6e6078ee30ea859504e95a0c802957d739b773e3858f05be05e36c6f437c"
+          }
+        },
+        "fingerprint": "a15e528f21e0ca9fad1a37ad222f089204a40c1b0fc7171d401d9257b1a2e6ba",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-liberar-espaco-nuvem"
+        },
+        "content": {
+          "statement": {
+            "text": "No OneDrive para Windows, Liberar espaço tornou um arquivo somente online. Isso significa que o arquivo foi excluído do OneDrive?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1e6945c7-3109-5e2d-b186-20dcf9a0e3f1",
+              "content": {
+                "text": "Não, porque o comando duplica obrigatoriamente o arquivo em cada pasta local.",
+                "resources": []
+              }
+            },
+            {
+              "id": "76f1d219-66c9-530e-8ed2-7f84b4e74d70",
+              "content": {
+                "text": "Não; a cópia local é liberada, e o arquivo continua na nuvem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a75c1611-6904-5870-b97c-ddf45883feb9",
+              "content": {
+                "text": "Sim, inclusive todas as lixeiras e backups remotos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d733dd83-021c-508f-96d8-e0d8c36d97b2",
+              "content": {
+                "text": "Sim, porque somente online significa inexistente.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "76f1d219-66c9-530e-8ed2-7f84b4e74d70",
+          "resolution": {
+            "text": "1. O estado somente online reduz uso de disco local sem apagar o arquivo da nuvem. 2. Não se trata de exclusão definitiva nem de multiplicação de cópias por todas as pastas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Arquivos Sob Demanda para Windows",
+              "url": "https://support.microsoft.com/pt-br/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-liberar-espaco-nuvem.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-liberar-espaco-nuvem.json",
+            "contentSha256": "0ce45ce7eca8925496d5340c423a6226a0a9778470e0ddb4a911358bcf3672e8",
+            "answerSha256": "0ce45ce7eca8925496d5340c423a6226a0a9778470e0ddb4a911358bcf3672e8"
+          }
+        },
+        "fingerprint": "598c377360f5c0452815d9c1c16a1f3c5916bcd442d6dcc9cd0b7656cad6a3c2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-mapa-nao-copia"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows, uma pasta compartilhada foi mapeada como Z:. A equipe afirma que isso garante uma cópia offline de todos os arquivos. Qual avaliação é correta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "dcf7d641-1e1c-5f01-aee9-fd270b96da51",
+              "content": {
+                "text": "Uma letra de unidade garante que o servidor nunca será desligado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "700028d1-cf7a-5177-8fe2-fd9ce44cd5c1",
+              "content": {
+                "text": "O mapeamento fornece acesso ao compartilhamento e não é, por si só, uma cópia offline.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e59fcec7-0f14-5935-983b-f8a83868864b",
+              "content": {
+                "text": "A letra Z transforma todos os arquivos remotos em memória permanente local.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3dd2615e-6453-548b-8650-3c6e547fb06b",
+              "content": {
+                "text": "O mapeamento dispensa permissões do compartilhamento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "700028d1-cf7a-5177-8fe2-fd9ce44cd5c1",
+          "resolution": {
+            "text": "1. A associação de letra é uma forma de acessar o recurso de rede. 2. Ela não equivale a backup ou sincronização offline e não elimina permissões ou dependência da disponibilidade do servidor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Compartilhamento de arquivos por uma rede no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/connectivity-networking/file-sharing-over-a-network-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-mapa-nao-copia.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-mapa-nao-copia.json",
+            "contentSha256": "d2e36597448fb06291959b5398a8bb3db67181fd942e353b422edf13e17580ef",
+            "answerSha256": "d2e36597448fb06291959b5398a8bb3db67181fd942e353b422edf13e17580ef"
+          }
+        },
+        "fingerprint": "c5956fa9a88a76c05885e1cd8b7b0704585eafc48c4d4a667e7c699393637a3a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-menu-antigo"
+        },
+        "content": {
+          "statement": {
+            "text": "Um comando de extensão do Explorador não aparece no menu de contexto simplificado do Windows 11, mas existe no menu tradicional instalado. Qual opção deve ser consultada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7976c182-949b-5d81-bde7-a43aa75882c7",
+              "content": {
+                "text": "Pressionar F5 para atualizar a pasta até o comando aparecer.",
+                "resources": []
+              }
+            },
+            {
+              "id": "63bc5091-cd98-5f63-9d4f-d57ec6001a85",
+              "content": {
+                "text": "Abrir Configurações > Personalização para ativar o comando no menu.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e2a17745-10fb-523a-b8e6-832ec1423443",
+              "content": {
+                "text": "Mudar o modo de exibição da pasta para Detalhes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "790e7869-05a3-55f7-8bc2-1991b820b30b",
+              "content": {
+                "text": "Mostrar mais opções.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "790e7869-05a3-55f7-8bc2-1991b820b30b",
+          "resolution": {
+            "text": "1. Mostrar mais opções (ou Shift+F10) abre o menu de contexto tradicional, onde comandos de extensões antigas podem estar disponíveis; alternativa D. 2. A erra porque atualizar a janela não troca o menu exibido; B erra porque Personalização não acrescenta comandos de extensões ao menu simplificado; C erra porque o modo de exibição da pasta não altera os comandos do menu de contexto.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Explorador de Arquivos no Windows 11",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/fileexplorer/file-explorer-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-menu-antigo.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-menu-antigo.json",
+            "contentSha256": "812618d6b9e8a38e973dc3d69ce35593debbbaef116bba7e0f166d4bdbb15bae",
+            "answerSha256": "812618d6b9e8a38e973dc3d69ce35593debbbaef116bba7e0f166d4bdbb15bae"
+          }
+        },
+        "fingerprint": "111fd9be734fe7c987abf62c4197cf5c13cb4f6313d8858cc0de6a437ddffe5d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-nome-caso-cuidado"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao organizar arquivos em ambientes Windows, qual orientação da documentação evita uma suposição incorreta sobre letras maiúsculas e minúsculas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6e4f697b-537e-5b67-b573-830deee9b0e8",
+              "content": {
+                "text": "Trocar maiúsculas por números altera necessariamente os bytes do conteúdo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ab28877e-2f80-505a-b87f-0660af57b8d7",
+              "content": {
+                "text": "Não presumir que nomes diferentes apenas por maiúsculas sempre serão tratados como arquivos distintos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5cd90361-73b6-5d48-972a-24e14cf42ce2",
+              "content": {
+                "text": "Presumir que ATA.docx e ata.docx serão sempre arquivos distintos em qualquer configuração.",
+                "resources": []
+              }
+            },
+            {
+              "id": "406b7af1-544f-5cca-98e0-d576e7149e27",
+              "content": {
+                "text": "Presumir que toda letra maiúscula torna o arquivo executável.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ab28877e-2f80-505a-b87f-0660af57b8d7",
+          "resolution": {
+            "text": "1. A documentação recomenda não presumir diferenciação de caixa; há comportamentos e configurações de sistema de arquivos a considerar. 2. Caixa não define executabilidade e nome não se confunde com os bytes do documento.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Nomeação de arquivos, diretórios e namespaces",
+              "url": "https://learn.microsoft.com/pt-br/windows/win32/fileio/naming-a-file",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-nome-caso-cuidado.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-nome-caso-cuidado.json",
+            "contentSha256": "e387f1da2160b99f9f6690d464068203d80734e869be205a6b575ea27391ab5d",
+            "answerSha256": "e387f1da2160b99f9f6690d464068203d80734e869be205a6b575ea27391ab5d"
+          }
+        },
+        "fingerprint": "7ad9737069af2408ff687feba009ebfec24aa8be63a77abe6c4a265aada6538b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-oculto-nao-apagado"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pasta local no Windows 11 recebeu o atributo Oculto e deixou de aparecer com Itens ocultos desativado. Qual diagnóstico é correto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "db59977a-69fc-5b08-ba82-374cec1f382a",
+              "content": {
+                "text": "Ela foi automaticamente enviada à Lixeira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "09e5842d-0ae8-5b13-86c5-6d16ac34dbc7",
+              "content": {
+                "text": "Seu conteúdo foi criptografado pelo atributo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e354dcab-fd19-5085-b668-d146843772bc",
+              "content": {
+                "text": "Ela se transformou em um atalho sem conteúdo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e93e8b29-39aa-59a4-a4c6-cd996e9f1b32",
+              "content": {
+                "text": "Ela pode continuar no disco; habilitar Itens ocultos permite localizá-la.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e93e8b29-39aa-59a4-a4c6-cd996e9f1b32",
+          "resolution": {
+            "text": "1. Ocultar afeta a visualização; não equivale a apagar. 2. O atributo não executa exclusão, criptografia nem conversão em atalho. Permissões continuam sendo uma questão separada.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Explorador de Arquivos no Windows 11",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/fileexplorer/file-explorer-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-oculto-nao-apagado.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-oculto-nao-apagado.json",
+            "contentSha256": "91a309e69c72a27d72a6dc3b4621b2c69f48d11c251a68725aad510d9fe09b87",
+            "answerSha256": "91a309e69c72a27d72a6dc3b4621b2c69f48d11c251a68725aad510d9fe09b87"
+          }
+        },
+        "fingerprint": "8b29974cd2d22069f3ca0df0a7c5871cbe9c33b863caefb29067ab59ec305d20",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-onedrive-excluir-sincroniza"
+        },
+        "content": {
+          "statement": {
+            "text": "No OneDrive para Windows com sincronização ativa, uma pessoa excluiu um arquivo dentro da pasta sincronizada. Qual consequência deve conferir antes de tratar a cópia da nuvem como backup intacto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f4080756-87f3-5ab1-b0fe-8524f31c73e0",
+              "content": {
+                "text": "A exclusão afeta somente a cor do ícone, sem remover conteúdo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "61b3491f-3707-5115-969f-c42537ff5ebf",
+              "content": {
+                "text": "A nuvem mantém obrigatoriamente uma cópia imutável e eterna fora de qualquer lixeira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "44180400-9fe4-5a0f-9e58-0ff9b60ffbd3",
+              "content": {
+                "text": "O arquivo excluído transforma-se automaticamente em um PDF de segurança.",
+                "resources": []
+              }
+            },
+            {
+              "id": "01102874-9c2d-58cb-bc24-cb9876018722",
+              "content": {
+                "text": "A exclusão pode ser propagada ao OneDrive e aos outros dispositivos sincronizados.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "01102874-9c2d-58cb-bc24-cb9876018722",
+          "resolution": {
+            "text": "1. Sincronização pode refletir a exclusão nos outros locais vinculados; a recuperação segue as condições de retenção e lixeira do serviço. 2. Não é efeito visual ou conversão de formato, nem promessa de retenção imutável permanente.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Excluir arquivos ou pastas no OneDrive",
+              "url": "https://support.microsoft.com/pt-br/onedrive/delete-files-or-folders-in-onedrive",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-onedrive-excluir-sincroniza.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-onedrive-excluir-sincroniza.json",
+            "contentSha256": "30bc97e94dbcd89ec0abdda80d6957c19262625aec572311d5a6db491b1f96b3",
+            "answerSha256": "30bc97e94dbcd89ec0abdda80d6957c19262625aec572311d5a6db491b1f96b3"
+          }
+        },
+        "fingerprint": "b35f71a275e7d9496ecaf27c3b0fe2e5c91dc9e587e4360a7b49e4196b66d940",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-pasta-abrir-antes-cortar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Acesso rápido do Explorador do Windows 11, uma pasta fixada deve ter seu conteúdo movido por Cortar e Colar. Qual orientação do material da Microsoft evita operar apenas no acesso de navegação?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "861eaba4-2f50-5e6f-a0a5-8ddd64b15390",
+              "content": {
+                "text": "Mudar somente o modo de exibição para Ícones grandes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2e162cf6-1e78-5988-b7fe-33e146936e51",
+              "content": {
+                "text": "Abrir a pasta antes de executar as operações sobre seus arquivos e pastas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "152a2ace-9ef0-54d6-a13e-13d4f199fb15",
+              "content": {
+                "text": "Desafixar todas as pastas do computador e apagar seus conteúdos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4ff6bbb2-e44a-59fb-8440-cb681b1b9adc",
+              "content": {
+                "text": "Renomear o acesso fixado para .exe.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2e162cf6-1e78-5988-b7fe-33e146936e51",
+          "resolution": {
+            "text": "1. A documentação diferencia acessar a pasta fixada e manipular seus itens no local aberto. 2. Não exige exclusão geral, conversão em executável ou tamanho de ícone específico.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Explorador de Arquivos no Windows 11",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/fileexplorer/file-explorer-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-pasta-abrir-antes-cortar.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-pasta-abrir-antes-cortar.json",
+            "contentSha256": "e4e6cff35fdc1931fedef6350b2ab7bdb351ee4b909a91a69eed08abe3cf5447",
+            "answerSha256": "e4e6cff35fdc1931fedef6350b2ab7bdb351ee4b909a91a69eed08abe3cf5447"
+          }
+        },
+        "fingerprint": "97f834e8ba2b8a3601560fa9306514a062ecd1dbdc3784a40a326017e3521f6c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-permissao-efeito-app"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pessoa negou a um aplicativo acesso à biblioteca de imagens do Windows. Qual consequência deve considerar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8668b74f-7631-5cfc-8de5-42060483ae9b",
+              "content": {
+                "text": "Todas as imagens do disco são obrigatoriamente apagadas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3aeb2080-7cdd-58c3-81ee-d4bf591e2f67",
+              "content": {
+                "text": "A tela passa a funcionar somente em preto e branco.",
+                "resources": []
+              }
+            },
+            {
+              "id": "56668997-b409-5128-907c-0b151afd054c",
+              "content": {
+                "text": "O aplicativo ganha automaticamente acesso a todas as bibliotecas restantes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "35bc518f-3b31-52e2-b4bc-8598cfeacf45",
+              "content": {
+                "text": "Recursos que dependem dessa biblioteca podem não funcionar como antes.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "35bc518f-3b31-52e2-b4bc-8598cfeacf45",
+          "resolution": {
+            "text": "1. A restrição pode limitar operações do aplicativo que precisam desses arquivos. 2. Negar acesso não é exclusão física, alteração de vídeo ou concessão compensatória irrestrita a outros dados.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Acesso a bibliotecas de documentos e privacidade",
+              "url": "https://support.microsoft.com/pt-br/windows/privacy/pictures-videos-and-documents-library-access-and-privacy",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-permissao-efeito-app.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-permissao-efeito-app.json",
+            "contentSha256": "8e1749dac29a56d780f143e3ffb25bf3f2c44de8c667f2a3c1ee42719ecc10c5",
+            "answerSha256": "8e1749dac29a56d780f143e3ffb25bf3f2c44de8c667f2a3c1ee42719ecc10c5"
+          }
+        },
+        "fingerprint": "a7318b9b91583b33048e514ca789f5db4ef2c766dcfa109831df701bcd77bc0e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-reconectar-mapa"
+        },
+        "content": {
+          "statement": {
+            "text": "Durante o mapeamento de uma unidade de rede no Windows, qual opção solicita tentar restabelecer o acesso ao entrar novamente no sistema?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f3054ab1-7b66-50a6-b0c4-4073a9686216",
+              "content": {
+                "text": "Conectar usando credenciais diferentes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "43ab54b5-2b6e-5cc0-ac39-932f0805f47c",
+              "content": {
+                "text": "Reconectar-se na entrada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "03bc4484-1fd6-5574-9866-ddd3ec3333c2",
+              "content": {
+                "text": "Disponibilizar sempre offline.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3a12b033-dfa1-550c-877e-29aee3f6b2ed",
+              "content": {
+                "text": "Fixar no Acesso rápido.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "43ab54b5-2b6e-5cc0-ac39-932f0805f47c",
+          "resolution": {
+            "text": "1. Na janela Mapear unidade de rede, a opção Reconectar-se na entrada guarda o mapeamento para que o Windows tente restabelecê-lo a cada nova entrada do usuário; alternativa B. 2. A erra porque apenas permite informar outra conta para a conexão; C erra porque trata de cópias offline de arquivos, não da reconexão da letra; D erra porque fixar cria um atalho de navegação, não um mapeamento persistente. A reconexão não dispensa rede disponível nem permissões.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Compartilhamento de arquivos por uma rede no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/connectivity-networking/file-sharing-over-a-network-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-reconectar-mapa.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-reconectar-mapa.json",
+            "contentSha256": "80671c85e77f90c9227760fd5d218070c35251fd77a297ef385a26d5dc622a65",
+            "answerSha256": "80671c85e77f90c9227760fd5d218070c35251fd77a297ef385a26d5dc622a65"
+          }
+        },
+        "fingerprint": "f0038785281a2be20cfff75af258405df3128eb2bb1c41eb64b8d84765332b8a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-separador-reservado"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows, uma pessoa tenta criar um único nome de arquivo que contém a barra invertida, como atas\\reunião.docx, sem querer indicar uma subpasta. Qual problema existe?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0fa027da-3c9f-52bd-b437-15c2aa314df2",
+              "content": {
+                "text": "Nenhum; a barra invertida é aceita em nomes de arquivo como qualquer letra.",
+                "resources": []
+              }
+            },
+            {
+              "id": "63811427-78c4-5b79-a033-fcdd97cefc3a",
+              "content": {
+                "text": "Nenhum, desde que a extensão .docx seja mantida ao final do nome.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5ed25329-f259-58dc-b426-be6ec619eeb9",
+              "content": {
+                "text": "A barra invertida só é proibida em nomes de pastas, não em nomes de arquivos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "60c9bcab-ae97-5afb-ab9e-8a7d98ea9cee",
+              "content": {
+                "text": "A barra invertida é separador de componentes do caminho e não pode integrar livremente o nome de um único arquivo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "60c9bcab-ae97-5afb-ab9e-8a7d98ea9cee",
+          "resolution": {
+            "text": "1. No Windows, a barra invertida é o separador de componentes do caminho (pasta\\subpasta\\arquivo) e está entre os caracteres reservados que não podem integrar o nome de um único arquivo; alternativa D. 2. A e B erram porque o caractere é reservado, com ou sem extensão; C erra porque a restrição vale para qualquer componente do caminho, inclusive nomes de arquivos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Nomeação de arquivos, diretórios e namespaces",
+              "url": "https://learn.microsoft.com/pt-br/windows/win32/fileio/naming-a-file",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-separador-reservado.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-separador-reservado.json",
+            "contentSha256": "10b8faa89017aa5d7818bc3dac2d307a1b3a955d5064bfd2bed88e6e9691a0bd",
+            "answerSha256": "10b8faa89017aa5d7818bc3dac2d307a1b3a955d5064bfd2bed88e6e9691a0bd"
+          }
+        },
+        "fingerprint": "5364916088e1f6fecf2bab0422072d871cba4bf0fde1300bfd01b1d00d43c212",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-somente-online-offline"
+        },
+        "content": {
+          "statement": {
+            "text": "Um arquivo do OneDrive aparece no Explorador do Windows com ícone de nuvem azul e nunca foi baixado no dispositivo. O computador ficará sem Internet. Qual providência antecedente é necessária para usá-lo offline?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b7fec422-b2d4-5ae8-9946-81d934973a5c",
+              "content": {
+                "text": "Confiar apenas na presença do nome na lista.",
+                "resources": []
+              }
+            },
+            {
+              "id": "819c6367-7c38-5b29-ac78-e48fa440715b",
+              "content": {
+                "text": "Ocultar a coluna Status.",
+                "resources": []
+              }
+            },
+            {
+              "id": "240fb48d-eafa-540a-afa2-0b755bcf96b3",
+              "content": {
+                "text": "Renomear a extensão para .local.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3a87ed79-9b72-5824-b01f-38c110af698d",
+              "content": {
+                "text": "Baixar o arquivo enquanto houver conexão, verificando sua disponibilidade local.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3a87ed79-9b72-5824-b01f-38c110af698d",
+          "resolution": {
+            "text": "1. O ícone de nuvem indica arquivo somente online; o conteúdo precisa ser obtido para uso sem conexão. 2. Listagem, coluna oculta e nome alterado não transferem os bytes da nuvem.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Arquivos Sob Demanda para Windows",
+              "url": "https://support.microsoft.com/pt-br/onedrive/save-disk-space-with-onedrive-files-on-demand-for-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-somente-online-offline.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-somente-online-offline.json",
+            "contentSha256": "bb5665c853d5c52fec21534f391238a73560dd7133e67a2252e5ee181752b202",
+            "answerSha256": "bb5665c853d5c52fec21534f391238a73560dd7133e67a2252e5ee181752b202"
+          }
+        },
+        "fingerprint": "e38bc5449287a513fb513a02653470584167090221beba29198bbe046a004454",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-zip-adicionar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows, um ZIP já criado precisa receber mais um documento. Qual operação é documentada para acrescentar itens?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0bebabbc-72d2-5a7e-ba3a-7eecb144036e",
+              "content": {
+                "text": "Extrair todo o ZIP, apagar o original e compactar tudo de novo, pois um ZIP existente não aceita novos itens.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c29598da-215a-5da6-a00c-519ea0749dd4",
+              "content": {
+                "text": "Usar Enviar para > Pasta compactada no novo documento, o que o insere automaticamente no ZIP já existente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cbd5d5fb-4e46-518c-be40-b76cb9210af6",
+              "content": {
+                "text": "Copiar o ZIP para a pasta do novo documento, o que o acrescenta automaticamente ao pacote.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cb9f30ca-7b01-59be-b5db-34a07ad0d40a",
+              "content": {
+                "text": "Arrastar o novo arquivo para a pasta compactada.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cb9f30ca-7b01-59be-b5db-34a07ad0d40a",
+          "resolution": {
+            "text": "1. O Explorador permite acrescentar itens a um ZIP existente arrastando-os (ou copiando e colando) para a pasta compactada; alternativa D. 2. A erra porque não é preciso recriar o pacote; B erra porque Enviar para > Pasta compactada cria um novo ZIP, separado; C erra porque copiar o ZIP não inclui nele arquivos da pasta de destino.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Compactar e descompactar arquivos no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/zip-and-unzip-files",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-zip-adicionar.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-zip-adicionar.json",
+            "contentSha256": "70f90e80e01ed02538147c6b8fe2bfe49df33a10d5d91ad4bb7feac350d5d5c4",
+            "answerSha256": "70f90e80e01ed02538147c6b8fe2bfe49df33a10d5d91ad4bb7feac350d5d5c4"
+          }
+        },
+        "fingerprint": "7ea514fad3f9fc71eaad68d6f84e8e612c78fd2116e9ce1d24096d4ca4b23793",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.it-zip-jpeg"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma servidora compactou em ZIP fotografias JPEG já comprimidas, e o resultado quase não reduziu o tamanho. Qual explicação é adequada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ae5e3331-1293-5561-baec-7a12aa67b46e",
+              "content": {
+                "text": "A ausência de redução prova que os arquivos foram apagados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5dddd652-bf2e-567e-9e85-76dcd313cbe9",
+              "content": {
+                "text": "Arquivos já comprimidos podem ter pouca redução adicional ao serem colocados em ZIP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "701c9d66-299e-50af-96f5-c50efd9c8470",
+              "content": {
+                "text": "ZIP sempre divide o tamanho exatamente pela metade.",
+                "resources": []
+              }
+            },
+            {
+              "id": "23d3190c-3b3d-55da-9cbc-1bdd4b2bbb2e",
+              "content": {
+                "text": "A extensão JPEG proíbe reunir arquivos em ZIP.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5dddd652-bf2e-567e-9e85-76dcd313cbe9",
+          "resolution": {
+            "text": "1. JPEG já usa compressão; um ZIP pode agrupar imagens sem obter redução expressiva. 2. A compressão não tem fator fixo; JPEG pode integrar ZIP e o tamanho final não demonstra exclusão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Compactar e descompactar arquivos no Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/storage-filemanagement/zip-and-unzip-files",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I01.p.it-zip-jpeg.json",
+            "answerPath": "sources/admin.2026-11.I01.p.it-zip-jpeg.json",
+            "contentSha256": "410fe1f0b55b57a5e294698b90f0f3830b63750f422947be1c1ee386864109a2",
+            "answerSha256": "410fe1f0b55b57a5e294698b90f0f3830b63750f422947be1c1ee386864109a2"
+          }
+        },
+        "fingerprint": "77c51f5218ba2fcfc42ff24eef7272445cd8f70e8df6cebcda7142efb2b08bea",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.jeri-mon-q16"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao salvar relatórios, formulários ou textos elaborados no computador institucional, o servidor público pode optar por diferentes locais de armazenamento. Considerando o conceito de pastas no Windows e sua utilização no dia a dia profissional, assinale a alternativa correta:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5284e1b8-c78f-5c91-bd75-8cb05bcee8b3",
+              "content": {
+                "text": "As pastas disponibilizadas ao usuário no Windows são criadas manualmente sempre que um novo arquivo é salvo pela primeira vez.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0b08b2d2-d5fb-5f00-b730-951e753468ac",
+              "content": {
+                "text": "A pasta denominada “Área de Trabalho” tem uso exclusivo do sistema operacional, não permitindo o armazenamento de arquivos criados pelo usuário.",
+                "resources": []
+              }
+            },
+            {
+              "id": "901fcd80-0644-5af2-a2ea-2e734dbab7da",
+              "content": {
+                "text": "A pasta “Documentos” é um dos diretórios criados automaticamente para cada usuário e pode ser utilizada como local padrão para o armazenamento de arquivos de texto e materiais similares.",
+                "resources": []
+              }
+            },
+            {
+              "id": "41a8ae69-655b-5a14-bbf5-257f0732272e",
+              "content": {
+                "text": "Arquivos só podem ser salvos no local previamente indicado pelo sistema, não sendo possível escolher outra pasta no momento do salvamento.",
+                "resources": []
+              }
+            },
+            {
+              "id": "556c3126-3865-5b88-ae35-7df1d803d45d",
+              "content": {
+                "text": "As pastas “Imagens”, “Músicas” e “Vídeos” existem apenas quando o usuário instala programas específicos para esse tipo de arquivo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "901fcd80-0644-5af2-a2ea-2e734dbab7da",
+          "resolution": {
+            "text": "1. Ao criar o perfil de um usuário, o Windows cria pastas pessoais como Documentos, Imagens, Músicas, Vídeos, Downloads e Área de Trabalho; Documentos é o destino sugerido por muitos programas para textos; alternativa C. 2. A erra: essas pastas já existem e não são recriadas a cada salvamento; B erra: o usuário pode guardar arquivos na Área de Trabalho; D erra: a caixa Salvar como permite escolher outra pasta; E erra: Imagens, Músicas e Vídeos fazem parte do perfil padrão, independentemente de programas instalados. Gabarito definitivo: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Explorador de Arquivos no Windows 11",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/fileexplorer/file-explorer-in-windows",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Acesso a bibliotecas de documentos e privacidade",
+              "url": "https://support.microsoft.com/pt-br/windows/privacy/pictures-videos-and-documents-library-access-and-privacy",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Jeriquara — Processo Seletivo 01/2025, Monitor Escolar, questão 16. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I01.p.jeri-mon-q16.json",
+            "answerPath": "sources/admin.2026-11.I01.p.jeri-mon-q16.json",
+            "contentSha256": "e8713d3fc78574c27d090dd98ec7cc37a3fbb284b484f7d554e7d66b24712084",
+            "answerSha256": "e8713d3fc78574c27d090dd98ec7cc37a3fbb284b484f7d554e7d66b24712084"
+          }
+        },
+        "fingerprint": "c7b7bf99c34700e4120cc5f8c18ea64dcee4916b2b35f9ec8684b54a863e3785",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I01.p.vinh-aux-q31"
+        },
+        "content": {
+          "statement": {
+            "text": "Entre as alternativas apresentadas abaixo, assinale aquela que melhor define o que é uma pasta do sistema operacional Windows:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "79891d7b-9d2e-507c-b53b-1698885b30c2",
+              "content": {
+                "text": "Um tipo de memória responsável por armazenar temporariamente dados durante a execução de programas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "741589d1-98a9-58b1-bccd-66c67b5de1e0",
+              "content": {
+                "text": "Um tipo de arquivo que contém apenas texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e009374e-8ad7-5743-9199-3ccc58a47c21",
+              "content": {
+                "text": "Um dispositivo físico de entrada conectado ao computador para restringir a navegação na internet.",
+                "resources": []
+              }
+            },
+            {
+              "id": "42a30bc9-5b66-59d4-8ca8-70d45031edfa",
+              "content": {
+                "text": "É um lugar onde arquivos e pastas podem ser guardados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a39ab1b2-5830-5a6f-b35e-cbd95e5b74a8",
+              "content": {
+                "text": "Um programa responsável por executar tarefas no computador.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "42a30bc9-5b66-59d4-8ca8-70d45031edfa",
+          "resolution": {
+            "text": "1. Pasta (diretório) é um contêiner lógico do sistema de arquivos que agrupa arquivos e outras pastas (subpastas), formando a hierarquia mostrada no Explorador; alternativa D. 2. A descreve a memória RAM; B confunde pasta com arquivo de texto; C descreve hardware, que nada tem a ver com pasta; E descreve programa/aplicativo. Gabarito definitivo: alternativa D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I01",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Explorador de Arquivos no Windows 11",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/fileexplorer/file-explorer-in-windows",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Nomeação de arquivos, diretórios e namespaces",
+              "url": "https://learn.microsoft.com/pt-br/windows/win32/fileio/naming-a-file",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, Auxiliar Administrativo, questão 31. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I01.p.vinh-aux-q31.json",
+            "answerPath": "sources/admin.2026-11.I01.p.vinh-aux-q31.json",
+            "contentSha256": "8636b883157730ffd1448b19d21bd6edc1b4c510d21ccc21407cf56a8db52975",
+            "answerSha256": "8636b883157730ffd1448b19d21bd6edc1b4c510d21ccc21407cf56a8db52975"
+          }
+        },
+        "fingerprint": "d7155a7ab1e2a11ebb5e1bb64cae5812cf705610351a59b0825e4466790e9f02",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I01.p.amp26-dir-q21.json",
+        "mediaType": "application/json",
+        "sha256": "3063c4dafc23fd2a3eb845091e0429e30b15aeb86e8dcea32678ccc12c75a191",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBwb250byDDqSB1dGlsaXphZG8gcGFyYSBzZXBhcmFyIG8gbm9tZSBwcmluY2lwYWwgZG8gYXJxdWl2byBkZSBzdWEgZXh0ZW5zw6NvLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik8gcG9udG8gw6kgdXRpbGl6YWRvIGFwZW5hcyBlbSBub21lcyBkZSBwYXN0YXMsIG7Do28gc2VuZG8gZW1wcmVnYWRvIGVtIGFycXVpdm9zLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkEgZXh0ZW5zw6NvIGRlIHVtIGFycXVpdm8gZGV2ZSBzZXIgZXNjcml0YSBhbnRlcyBkbyBub21lIHByaW5jaXBhbC4ifSx7ImlkIjoiZCIsInRleHQiOiJPIHBvbnRvIGRldmUgc2VyIHV0aWxpemFkbyBzb21lbnRlIHF1YW5kbyBvIGFycXVpdm8gbsOjbyBwb3NzdWkgZXh0ZW5zw6NvLiJ9LHsiaWQiOiJlIiwidGV4dCI6Ik8gbm9tZSBwcmluY2lwYWwgZG8gYXJxdWl2byBkZXZlIHNlciBzZXBhcmFkbyBkYSBleHRlbnPDo28gcG9yIHVtYSBiYXJyYSAoLykuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBBbXBhcm8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjYsIERpcmV0b3IgZGUgRXNjb2xhLCBxdWVzdMOjbyAyMS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgNCwgcXVhZHJvIGRvIGNhcmdvIERJUkVUT1IgREUgRVNDT0xBOiAyMT1BOyBjb25mZXLDqm5jaWEgdmlzdWFsIG5hIHJlbmRlcml6YcOnw6NvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yNTktZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6ImFmYzM2Zjk5Njg0ODIzZjY0YmQ4MjJlNjdiNGVlY2ZlNjlmYzc2ZTExNmZhYjI1YjM5N2MwNDUzODNlOTRlMmEiLCJ1cmwiOiJodHRwczovL2FuZXhvcy1yMi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjU5L2FuZXhvcy9hM2FjMzI3OC01ZWIyLTQxOGItYjlhOC0zMTI5M2U2MzdiYjMucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBBbXBhcm8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjYiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1hbXBhcm8tMjAyNi1kaXJldG9yL3EyMSIsIm51bWJlciI6IjIxIiwicHJvb2YiOnsibm90ZSI6IlF1ZXN0w6NvIDIxLCBww6FnaW5hIGbDrXNpY2EgNyBkbyBQREY7IGNhZGVybm8gZGlnaXRhbGl6YWRvIChzZW0gY2FtYWRhIGRlIHRleHRvKSwgbGlkbyBuYSByZW5kZXJpemHDp8OjbyBkYSBww6FnaW5hOyBlbnVuY2lhZG8sIGFsdGVybmF0aXZhcyBlIG9yZGVtIGNvbmZlcmlkb3MgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzI1OS1wcm92YS1kaXJldG9yLWRlLWVzY29sYS5wZGYiLCJzaGEyNTYiOiJiNDFmNmYzMWRlNDlhZDM2OTVmY2FhZTk3YjI1NDMzYjhkNWI0MjUwYWQ4MmEyYTI0YjM2Y2E1NmJhN2RmYzJlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MtcjIuc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzI1OS9hbmV4b3MvYjU0MGQwYWMtMTViNi00MTljLTliNmMtZDgzZmY5MzNkZWU3LnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBhcnQuIDjCuiwgSVYsIGRhIExlaSA5LjYxMC8xOTk4LCBjb25mb3JtZSBhIGF2YWxpYcOnw6NvIGRvY3VtZW50YWRhIG5vIHByb2pldG8sIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUgZGUgcHJvdmEgcMO6YmxpY2EsIHNlbSBvYnJhIGRlIHRlcmNlaXJvIGluY29ycG9yYWRhLiBOw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBuZW0gY29uc2VudGltZW50byBhZmlybWFkbzsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkRpcmV0b3IgZGUgRXNjb2xhIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJhbXAyNi1kaXItcTIxIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtZXh0ZW5zb2VzIiwiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LW5vbWVzLXdpbmRvd3MiXSwicmVzb2x1dGlvbiI6IjEuIEVtIG5vbWVzIGNvbW8gcmVsYXRvcmlvLmRvY3gsIG8gcG9udG8gc2VwYXJhIG8gbm9tZSBwcmluY2lwYWwgZGEgZXh0ZW5zw6NvLCBxdWUgZmljYSBkZXBvaXMgZGVsZSBlIGluZGljYSBvIHRpcG8gZG8gYXJxdWl2bzsgYWx0ZXJuYXRpdmEgQS4gMi4gQiBlIEQgaW52ZXJ0ZW0gbyB1c28gZG8gcG9udG8sIHF1ZSDDqSBqdXN0YW1lbnRlIG8gc2VwYXJhZG9yIGRhIGV4dGVuc8OjbyBlbSBhcnF1aXZvczsgQyBpbnZlcnRlIGEgb3JkZW0gKGEgZXh0ZW5zw6NvIHZlbSBhbyBmaW5hbCk7IEUgZXJyYSBwb3JxdWUgYSBiYXJyYSDDqSBjYXJhY3RlcmUgcmVzZXJ2YWRvIG5vIFdpbmRvd3MgZSBzZXBhcmEgbsOtdmVpcyBkZSBjYW1pbmhvLCBuw6NvIG5vbWUgZSBleHRlbnPDo28uIEdhYmFyaXRvIGRlZmluaXRpdm86IGFsdGVybmF0aXZhIEEuIiwic3RhdGVtZW50IjoiQW8gb3JnYW5pemFyIGRvY3VtZW50b3MgZGlnaXRhaXMgZW0gdW0gY29tcHV0YWRvciwgw6kgY29tdW0gcXVlIG9zIGFycXVpdm9zIHBvc3N1YW0gdW1hIHBhcnRlIHByaW5jaXBhbCBkbyBub21lIGUgb3V0cmEgcXVlIGlkZW50aWZpY2Egc2V1IGZvcm1hdG8uXG5Db20gcmVsYcOnw6NvIMOgIGZvcm1hIGRlIGVzY3JpdGEgZG9zIG5vbWVzIGRlIGFycXVpdm9zLCBhc3NpbmFsZSBhIGFsdGVybmF0aXZhIGNvcnJldGEuIiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWV4dGVuc29lcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgRXh0ZW5zw7VlcyBkZSBub21lIGRlIGFycXVpdm8gY29tdW5zIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2Uvc3RvcmFnZS1maWxlbWFuYWdlbWVudC9jb21tb24tZmlsZS1uYW1lLWV4dGVuc2lvbnMtaW4td2luZG93cyJ9LCJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtbm9tZXMtd2luZG93cyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgTm9tZWHDp8OjbyBkZSBhcnF1aXZvcywgZGlyZXTDs3Jpb3MgZSBuYW1lc3BhY2VzIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3Mvd2luMzIvZmlsZWlvL25hbWluZy1hLWZpbGUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.cebra-cachoeiro-q25.json",
+        "mediaType": "application/json",
+        "sha256": "d7e0c4be6d003276594f2b46cf8be07caea26b10f38c72d65f1329115804a9d2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiRXJyYWRvLiJ9XSwiYXV0aG9yIjoiQ2VicmFzcGUg4oCUIFByZWZlaXR1cmEgZGUgQ2FjaG9laXJvIGRlIEl0YXBlbWlyaW0vRVMg4oCUIEVkaXRhbCAyMDI0LCBDb25oZWNpbWVudG9zIELDoXNpY29zIHBhcmEgb3MgY2FyZ29zIGRlIG7DrXZlbCBzdXBlcmlvciwgaXRlbSAyNS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENvZGV4LCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIE9maWNpYWwgRGVmaW5pdGl2bywgcMOhZ2luYSAxLCBjw7NkaWdvL2NhcmdvIGNvcnJlc3BvbmRlbnRlcywgcHJvdmEgMjAyNC0wNC0wNywgaXRlbSAyNT1DOyBpbnNwZcOnw6NvIHZpc3VhbCBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvY2VicmEtY2FjaG9laXJvLWNiMS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiZDY4MjAwMzVjYjhiYzUzZjhhOTVkMGIzYzkwYjlkMjMwYjlkN2IwZThlM2Y3NTI1NjJkMTYyYTU3MDRjYmU1NiIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvcHJlZl9jYWNob2Vpcm9fMjRfYWRtL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPXzkzN19QQ0lfQURNSU5JU1RSQVRJVk9fQ0IxXzAxLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6IjkzN19QQ0lfQURNSU5JU1RSQVRJVk9fQ0IxXzAxIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIGRlIENhY2hvZWlybyBkZSBJdGFwZW1pcmltL0VTIOKAlCBFZGl0YWwgMjAyNCIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtY2FjaG9laXJvLTIwMjQtOTM3X3BjaV9hZG1pbmlzdHJhdGl2b19jYjFfMDEvcTI1IiwibnVtYmVyIjoiMjUiLCJwcm9vZiI6eyJub3RlIjoiUMOhZ2luYSBmw61zaWNhIDIgZG8gUERGLCBjb250ZXh0byBlIGl0ZW0gY29uZnJvbnRhZG9zIGNvbSByZW5kZXJpemHDp8OjbyBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvY2VicmEtY2FjaG9laXJvLWNiMS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI1YmZkZmU2ODJhN2Y1NjY0OTZiMWUwZmRkOGY2Y2U2OGM3YTM5Y2RjYTQwZmM1YTQzZDkxZDljZGZhOTk2NWNmIiwidXJsIjoiaHR0cHM6Ly9jZG4uY2VicmFzcGUub3JnLmJyL2NvbmN1cnNvcy9wcmVmX2NhY2hvZWlyb18yNF9hZG0vYXJxdWl2b3MvOTM3X1BDSV9BRE1JTklTVFJBVElWT19DQjFfMDEuUERGIn0sInJldXNlIjp7Im5vdGUiOiJBcGxpY2HDp8OjbyBhc3Npc3RpZGEgZGEgYXZhbGlhw6fDo28gZG8gcHJvamV0byBhIG9pdG8gaXRlbnMgdMOpY25pY29zIG9maWNpYWlzIGF1dG9zc3VmaWNpZW50ZXMgQ2VicmFzcGUsIHNlbSBvYnJhcyBkZSB0ZXJjZWlyb3MgaW5jb3Jwb3JhZGFzLiBTZW0gbGljZW7Dp2EgZXhwcmVzc2EgcHJlc3VtaWRhIG91IHBhcmVjZXIganVyw61kaWNvIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWNlYnJhc3BlLW1vcmUtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6IjE0YWEzOWUwMWRjYzQ1MDZmNGNjNmE4ZjU5ZWMyOTExOGU0YTYzMzE1ZDhiMTNmM2U1NDkzN2FhMmVhMzcxNTkiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJDb25oZWNpbWVudG9zIELDoXNpY29zIHBhcmEgb3MgY2FyZ29zIGRlIG7DrXZlbCBzdXBlcmlvciIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNH0sImlkIjoiY2VicmEtY2FjaG9laXJvLXEyNSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2VicmFzcGUtbWFpcy1pdC1vbmVkcml2ZSJdLCJyZXNvbHV0aW9uIjoiMS4gQSBzaW5jcm9uaXphw6fDo28gZG8gT25lRHJpdmUgaWRlbnRpZmljYSBhIGNvbnRhIHBlc3NvYWwgb3Ugb3JnYW5pemFjaW9uYWwgY29uZmlndXJhZGEgbm8gY2xpZW50ZTsgQ2VydG8gZm9pIGNvbmZpcm1hZG8gbm8gZGVmaW5pdGl2by4gMi4gRXJyYWRvIGVsaW1pbmFyaWEgaW5kZXZpZGFtZW50ZSBlc3NhIGNvbmRpw6fDo28uIEEgc2ltcGxlcyBleGlzdMOqbmNpYSBkZSB1bWEgcGFzdGEgY29tIG8gbm9tZSBPbmVEcml2ZSBvdSBkZSBhcnF1aXZvcyBubyBjb21wdXRhZG9yIG7Do28gY29tcHJvdmEgcXVlIGEgc2luY3Jvbml6YcOnw6NvIGRlIHVtYSBjb250YSBlc3RlamEgY29uZmlndXJhZGEgZSBhdGl2YS4iLCJzdGF0ZW1lbnQiOiJBY2VyY2EgZGUgcmVkZXMgZGUgY29tcHV0YWRvcmVzIGUgZGUgZmVycmFtZW50YXMgZGlzcG9uw612ZWlzIHBhcmEgY29tdW5pY2HDp8OjbyBuYSBJbnRlcm5ldCwganVsZ3VlIG9zIGl0ZW5zIHF1ZSBzZSBzZWd1ZW0uXG5QYXJhIHNlIHV0aWxpemFyIG8gT25lRHJpdmUgZGEgTWljcm9zb2Z0IGRlIGZvcm1hIHNpbmNyb25pemFkYSwgw6kgbmVjZXNzw6FyaW8gcXVlIGhhamEgdW1hIGNvbnRhIHBlc3NvYWwsIGNvcnBvcmF0aXZhIG91IGRlIGVzdHVkYW50ZSBjb25maWd1cmFkYSBwYXJhIHVzby4iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1jZWJyYXNwZS1tYWlzLWl0LW9uZWRyaXZlIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBcnF1aXZvcyBTb2IgRGVtYW5kYSBwYXJhIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9vbmVkcml2ZS9zYXZlLWRpc2stc3BhY2Utd2l0aC1vbmVkcml2ZS1maWxlcy1vbi1kZW1hbmQtZm9yLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.fgv-taubate-q33.json",
+        "mediaType": "application/json",
+        "sha256": "2230db1c80b417f449f95b3e6e10c384ec3790bb09c6a50904a9a422ad564690",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXN0YWJlbGVjZXIgYXMgcGVybWlzc8O1ZXMgZGUgYWNlc3NvIGRlIHVtIGFycXVpdm8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiRXhpYmlyIG8gY29udGXDumRvIGRlIHVtIGFycXVpdm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiRXhpYmlyIG8gbm9tZSBkbyBkaXJldMOzcmlvIGF0dWFsIG91IG11ZGFyIG8gZGlyZXTDs3JpbyBhdHVhbC4ifSx7ImlkIjoiZCIsInRleHQiOiJSZW5vbWVhciB1bSBkaXJldMOzcmlvIG91IGFycXVpdm8uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiVHJvY2FyIG8gdXN1w6FyaW8uIn1dLCJhdXRob3IiOiJGR1Yg4oCUIEPDom1hcmEgTXVuaWNpcGFsIGRlIFRhdWJhdMOpIOKAlCBFZGl0YWwgMS8yMDIyLCBUw6ljbmljbyBMZWdpc2xhdGl2byBkZSBJbmZvcm3DoXRpY2EsIFRpcG8gMSDigJQgQnJhbmNhIOKAlCBUYXJkZSwgcXVlc3TDo28gMzMuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJEZWZpbml0aXZvIHB1YmxpY2FkbyBlbSAyMDIyLTExLTE3LCBww6FnaW5hIGbDrXNpY2EgNSBkbyBQREYsIGNhcmdvL3RpcG8gY29ycmVzcG9uZGVudGVzOiAzMz1DLiBDb25mZXJpZG8gdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2Zndi10YXViYXRlLWFuc3dlci5wZGYiLCJzaGEyNTYiOiI4MmRkOTgxMjVhNGM2ZDdhYzFjOTcwNTVmYzAyYWEwMjAwNDliZTUyMjYyNzcxMDliYzU4Y2E4NjlkYzhhYjkyIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL2dhYmFyaXRvX2RlZmluaXRpdm9fY210Xy1fZWRpdGFsMDEucGRmIn0sImJvYXJkIjoiRkdWIiwiYm9va2xldCI6IlRpcG8gMSDigJQgQnJhbmNhIOKAlCBUYXJkZSIsImNvbXBldGl0aW9uIjoiQ8OibWFyYSBNdW5pY2lwYWwgZGUgVGF1YmF0w6kg4oCUIEVkaXRhbCAxLzIwMjIiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImZndi10YXViYXRlLTIwMjItdGkvcTMzIiwibnVtYmVyIjoiMzMiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMzMsIHDDoWdpbmEgNzsgY29uZmVyw6puY2lhIHZpc3VhbCBkbyBjYWRlcm5vIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9mZ3YtdGF1YmF0ZS10aS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI1YzU1OTY1NTRhOGQ0MjIxZDY3ODc2MGMwNjU0MzVlNTIxZWE0Y2QwODU5NzJiMTlhODY1ZGEzMGRjOWI0ZTYwIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL3RlY25pY29fbGVnaXNsYXRpdm9fZGVfaW5mb3JtYXRpY2FfdGFyZGVlMXQyY25zMDJfdGlwb18xLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXBsaWNhw6fDo28gYXNzaXN0aWRhIGRhIGF2YWxpYcOnw6NvIGRvIHByb2pldG8gYSBzZWlzIHF1ZXN0w7VlcyBvZmljaWFpcyBhdXRvc3N1ZmljaWVudGVzIEZHViwgc2VtIG9icmFzIGRlIHRlcmNlaXJvcyBpbmNvcnBvcmFkYXMuIE7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIG91IHBhcmVjZXIganVyw61kaWNvIGluZGVwZW5kZW50ZS4gVmVyIHRhbWLDqW0gcmV1c2UtYXNzZXNzbWVudC5tZC4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWZndi1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZTU4ZDllODg3Mjk1YjQ0Y2NmOTgwZDYyNGQ2YTA4ZGNhMGY2ZTNiOWY0OTUzNmIyNGUxZTA4YWNkZmM0OGNhMyIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlTDqWNuaWNvIExlZ2lzbGF0aXZvIGRlIEluZm9ybcOhdGljYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyMn0sImlkIjoiZmd2LXRhdWJhdGUtcTMzIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1mZ3YtaXQtY2QiXSwicmVzb2x1dGlvbiI6IjEuIE5vIFByb21wdCBkZSBDb21hbmRvIGRvIFdpbmRvd3MgMTAsIGNkIHNlbSBwYXLDom1ldHJvcyBleGliZSBvIGRpcmV0w7NyaW8gYXR1YWw7IGNvbSBjYW1pbmhvIHBlcm1pdGUgbXVkw6EtbG8uIEEgb3DDp8OjbyBDIGNvaW5jaWRlIGNvbSBvIGRlZmluaXRpdm8uIDIuIE7Do28gw6kgY29tYW5kbyBkZSBjb25jZXNzw6NvIGRlIHBlcm1pc3PDtWVzLCBsZWl0dXJhIGRvIGNvbnRlw7pkbyBkZSBhcnF1aXZvLCByZW5vbWVhw6fDo28gb3UgdHJvY2EgZGUgdXN1w6FyaW8uIE8gY29udGV4dG8gw6kgbyBjb21hbmRvIGNkIGRvIFdpbmRvd3MsIG7Do28gdW1hIHRlY2xhIGRlIGF0YWxobyBkZSBhcGxpY2F0aXZvLiIsInN0YXRlbWVudCI6IkNvbSByZWZlcsOqbmNpYSBhbyBQcm9tcHQgZGUgY29tYW5kbyBkbyBXaW5kb3dzIDEwLCBhc3NpbmFsZSBhIGZ1bsOnw6NvIGRvIGNvbWFuZG8gY2Q6IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtZmd2LWl0LWNkIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBjZCwgV2luZG93cyAxMC8xMSIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzLXNlcnZlci9hZG1pbmlzdHJhdGlvbi93aW5kb3dzLWNvbW1hbmRzL2NkIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-arquivo-fixado-isolado.json",
+        "mediaType": "application/json",
+        "sha256": "05df1d94336b5e5dbe40c3b3348f93df4ea453a257877ce228d3693b236367a8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2ltLCBuw6NvIGV4aXN0ZSBkaXNwb25pYmlsaWRhZGUgcG9yIGFycXVpdm8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU2ltLCBlIHRvZG9zIG9zIGFycXVpdm9zIGRvIGRpc2NvIHByZWNpc2FtIHZpcmFyIGPDs3BpYXMgZGEgcGFzdGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTsOjbywgYmFzdGEgbXVkYXIgbyBub21lIGRvIG1vbml0b3IuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTsOjbzsgw6kgcG9zc8OtdmVsIG1hcmNhciBpbmRpdmlkdWFsbWVudGUgbyBkb2N1bWVudG8gY29tbyBTZW1wcmUgbWFudGVyIG5lc3RlIGRpc3Bvc2l0aXZvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWFycXVpdm8tZml4YWRvLWlzb2xhZG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1vbmVkcml2ZSJdLCJyZXNvbHV0aW9uIjoiMS4gQSBkaXNwb25pYmlsaWRhZGUgcG9kZSBzZXIgZGVmaW5pZGEgcGFyYSBhcnF1aXZvcyBpbmRpdmlkdWFpcyBkZW50cm8gZGUgdW1hIHBhc3RhIHNvbWVudGUgb25saW5lLiAyLiBBIGNvbmZpZ3VyYcOnw6NvIG7Do28gZXhpZ2UgZG93bmxvYWQgZGUgdG9kYSBhIHBhc3RhIG91IGRvIGRpc2NvIGUgbsOjbyBkZXBlbmRlIGRvIG5vbWUgZG8gbW9uaXRvci4iLCJzdGF0ZW1lbnQiOiJVbWEgcGFzdGEgT25lRHJpdmUgw6kgc29tZW50ZSBvbmxpbmUsIG1hcyBhcGVuYXMgdW0gZG9jdW1lbnRvIGRlbGEgcHJlY2lzYSBmaWNhciBzZW1wcmUgZGlzcG9uw612ZWwgbm8gY29tcHV0YWRvciBXaW5kb3dzLiDDiSBuZWNlc3PDoXJpbyBiYWl4YXIgdG9kb3Mgb3MgZG9jdW1lbnRvcyBkYSBwYXN0YT8iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW9uZWRyaXZlIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBcnF1aXZvcyBTb2IgRGVtYW5kYSBwYXJhIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9vbmVkcml2ZS9zYXZlLWRpc2stc3BhY2Utd2l0aC1vbmVkcml2ZS1maWxlcy1vbi1kZW1hbmQtZm9yLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-associacao-formato.json",
+        "mediaType": "application/json",
+        "sha256": "01433b69d271b1e1797b809e064ebbbff960fd0d7ecc45f6724a4e07aca4e622",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBleHRlbnPDo28gZ2FyYW50ZSBxdWUgbyBhcnF1aXZvIGVzdMOhIGxpdnJlIGRlIGPDs2RpZ28gb3UgY29udGXDumRvIG1hbGljaW9zby4ifSx7ImlkIjoiYiIsInRleHQiOiJBIGV4dGVuc8OjbyBhanVkYSBhIGlkZW50aWZpY2FyIG8gZm9ybWF0byBlIGFwbGljYXRpdm9zIGNvbXBhdMOtdmVpcywgZW1ib3JhIG8gY29udGXDumRvIHJlYWwgdGFtYsOpbSBpbXBvcnRlLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlRvZG8gYXJxdWl2byAuZG9jeCDDqSBuZWNlc3NhcmlhbWVudGUgZXhlY3V0w6F2ZWwgbmF0aXZvIGRvIFdpbmRvd3MuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQSBleHRlbnPDo28gaWRlbnRpZmljYSBvIHVzdcOhcmlvIHF1ZSBlc2NyZXZldSBvIGRvY3VtZW50by4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1hc3NvY2lhY2FvLWZvcm1hdG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leHRlbnNvZXMiXSwicmVzb2x1dGlvbiI6IjEuIEEgZXh0ZW5zw6NvIMOpIHVzYWRhIG5hIGlkZW50aWZpY2HDp8OjbyBkZSBmb3JtYXRvcyBlIG5hcyBhc3NvY2lhw6fDtWVzIGRlIHByb2dyYW1hcy4gMi4gRWxhIG7Do28gcHJvdmEgYXV0b3JpYSwgbsOjbyB0cmFuc2Zvcm1hIHVtIGRvY3VtZW50byBlbSBleGVjdXTDoXZlbCBuYXRpdm8gZSBuw6NvIMOpIHVtIGNlcnRpZmljYWRvIGRlIHNlZ3VyYW7Dp2EuIiwic3RhdGVtZW50IjoiTm8gV2luZG93cywgYSBleHRlbnPDo28gZGUgdW0gZG9jdW1lbnRvIMOpIC5kb2N4LiBRdWFsIGNvbmNsdXPDo28gw6kgYWRlcXVhZGEgYW8gZGVjaWRpciBjb20gcXVlIHByb2dyYW1hIGFicmktbG8/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leHRlbnNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEV4dGVuc8O1ZXMgZGUgbm9tZSBkZSBhcnF1aXZvIGNvbXVucyBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy9leHBlcmllbmNlL3N0b3JhZ2UtZmlsZW1hbmFnZW1lbnQvY29tbW9uLWZpbGUtbmFtZS1leHRlbnNpb25zLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-compartilhar-especificos.json",
+        "mediaType": "application/json",
+        "sha256": "5077a49f0eba7b53492e6add85c8919267e1cf9a184edbd93658c05ec2af574e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2VsZWNpb25hciBUb2RvcyBwYXJhIHJlc3RyaW5naXIgYXV0b21hdGljYW1lbnRlIGEgdW1hIMO6bmljYSBwZXNzb2EuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQ29uY2VkZXIgYWNlc3NvIGEgVG9kb3MgZSBpbmZvcm1hciBvIGNhbWluaG8gZGEgcGFzdGEgYXBlbmFzIMOgcyBwZXNzb2FzIGRldGVybWluYWRhcy4ifSx7ImlkIjoiYyIsInRleHQiOiJNYXBlYXIgYSBwYXN0YSBjb21vIHVuaWRhZGUgZGUgcmVkZSBubyBwcsOzcHJpbyBjb21wdXRhZG9yLCBvIHF1ZSBsaW1pdGEgbyBhY2Vzc28gYSBxdWVtIGNvbmhlY2UgYSBsZXRyYS4ifSx7ImlkIjoiZCIsInRleHQiOiJDb25jZWRlciBhY2Vzc28gYSBQZXNzb2FzIGVzcGVjw61maWNhcyBlIGNvbmZlcmlyIG9zIHVzdcOhcmlvcyBlc2NvbGhpZG9zLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWNvbXBhcnRpbGhhci1lc3BlY2lmaWNvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvbXBhcnRpbGhhciJdLCJyZXNvbHV0aW9uIjoiMS4gRW0gQ29uY2VkZXIgYWNlc3NvIGEgPiBQZXNzb2FzIGVzcGVjw61maWNhcywgZXNjb2xoZW0tc2UgZSBjb25mZXJlbS1zZSBvcyB1c3XDoXJpb3MgcXVlIHBvZGVyw6NvIGFjZXNzYXIgYSBwYXN0YTsgYWx0ZXJuYXRpdmEgRC4gMi4gQSBlcnJhIHBvcnF1ZSBUb2RvcyBhbXBsaWEgbyBhY2Vzc28gZW0gdmV6IGRlIHJlc3RyaW5naS1sbzsgQiBlcnJhIHBvcnF1ZSBjb25oZWNlciBvdSBuw6NvIG8gY2FtaW5obyBuw6NvIMOpIGNvbnRyb2xlIGRlIGFjZXNzbyBxdWFuZG8gYSBwZXJtaXNzw6NvIGZvaSBkYWRhIGEgVG9kb3M7IEMgZXJyYSBwb3JxdWUgbWFwZWFyIHVtYSB1bmlkYWRlIGFwZW5hcyBjcmlhIHVtIGFjZXNzbyBwb3IgbGV0cmEgZSBuw6NvIGRlZmluZSBxdWVtIHBvZGUgdXNhciBvIGNvbXBhcnRpbGhhbWVudG8uIiwic3RhdGVtZW50IjoiVW0gc2V0b3IgcHJlY2lzYSBjb21wYXJ0aWxoYXIgdW1hIHBhc3RhIGxvY2FsIHBlbGEgcmVkZSBXaW5kb3dzIGFwZW5hcyBjb20gcGVzc29hcyBkZXRlcm1pbmFkYXMuIFF1YWwgb3DDp8OjbyBkbyBmbHV4byBkZSBjb21wYXJ0aWxoYW1lbnRvIMOpIGFwcm9wcmlhZGE/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jb21wYXJ0aWxoYXIiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIENvbXBhcnRpbGhhbWVudG8gZGUgYXJxdWl2b3MgcG9yIHVtYSByZWRlIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2UvY29ubmVjdGl2aXR5LW5ldHdvcmtpbmcvZmlsZS1zaGFyaW5nLW92ZXItYS1uZXR3b3JrLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-desafixar-preserva.json",
+        "mediaType": "application/json",
+        "sha256": "621309752b8badd460aaa72309f5ee90c91192db2847f7113ab30937101eaa2e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiT3MgYXJxdWl2b3MgdmlyYXJhbSB0ZW1wb3LDoXJpb3MgZSBzZXLDo28gc2VtcHJlIGFwYWdhZG9zIG5vIHByw7N4aW1vIHJlaW7DrWNpby4ifSx7ImlkIjoiYiIsInRleHQiOiJBIHBhc3RhIGZvaSBjb252ZXJ0aWRhIGVtIGFycXVpdm8gWklQLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkEgb3BlcmHDp8OjbyByZW1vdmV1IGFzIHBlcm1pc3PDtWVzIGRlIHRvZG9zIG9zIHVzdcOhcmlvcy4ifSx7ImlkIjoiZCIsInRleHQiOiJGb2kgcmVtb3ZpZG8gbyBhY2Vzc28gZml4YWRvLCBwcmVzZXJ2YW5kbyBhIHBhc3RhIG9yaWdpbmFsLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWRlc2FmaXhhci1wcmVzZXJ2YSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWV4cGxvcmFkb3IiXSwicmVzb2x1dGlvbiI6IjEuIERlc2FmaXhhciBhbHRlcmEgYSBsaXN0YSBkZSBhY2Vzc29zIHLDoXBpZG9zLCBuw6NvIGEgZXhpc3TDqm5jaWEgZG8gZGlyZXTDs3Jpby4gMi4gTsOjbyDDqSBjb21hbmRvIGRlIGV4Y2x1c8OjbyBhZ2VuZGFkYSwgY29tcHJlc3PDo28gb3UgYWRtaW5pc3RyYcOnw6NvIGRlIHBlcm1pc3PDtWVzLiIsInN0YXRlbWVudCI6IlVtYSBwYXN0YSBkZSB0cmFiYWxobyBmb2kgZGVzYWZpeGFkYSBkbyBBY2Vzc28gcsOhcGlkbyBkbyBFeHBsb3JhZG9yIGRlIEFycXVpdm9zIGRvIFdpbmRvd3MgMTEuIEVsYSBhaW5kYSBhYnJlIHBlbG8gY2FtaW5obyBvcmlnaW5hbC4gTyBxdWUgb2NvcnJldT8iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWV4cGxvcmFkb3IiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEV4cGxvcmFkb3IgZGUgQXJxdWl2b3Mgbm8gV2luZG93cyAxMSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3MvZXhwZXJpZW5jZS9maWxlZXhwbG9yZXIvZmlsZS1leHBsb3Jlci1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-indice-atualizacao.json",
+        "mediaType": "application/json",
+        "sha256": "e504f9b179352d3f3993df72ed52be7ae679d5dc8b4f1aee7144a3eadc697a08",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbywgcG9ycXVlIG8gw61uZGljZSBqYW1haXMgcG9kZSBzZXIgYXR1YWxpemFkby4ifSx7ImlkIjoiYiIsInRleHQiOiJOw6NvOyBlbGUgYWNvbXBhbmhhIGFsdGVyYcOnw7VlcyBlIHJlaW5kZXhhIG9zIGRhZG9zIGF0dWFsaXphZG9zIGVtIHNlZ3VuZG8gcGxhbm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU2ltLCBlIHBvciBpc3NvIGV4Y2x1aSB0b2RvcyBvcyBkb2N1bWVudG9zIGFudGlnb3MuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2ltLCBlIGRlc2xpZ2EgcGVybWFuZW50ZW1lbnRlIG8gRXhwbG9yYWRvci4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1pbmRpY2UtYXR1YWxpemFjYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1pbmRpY2Utd2luZG93cyJdLCJyZXNvbHV0aW9uIjoiMS4gQSBpbmRleGHDp8OjbyBjb250w61udWEgYWNvbXBhbmhhIGFsdGVyYcOnw7VlcyBlIGF0dWFsaXphIGFzIGluZm9ybWHDp8O1ZXMgY29ycmVzcG9uZGVudGVzLiAyLiBOw6NvIGFwYWdhIGRvY3VtZW50b3MgbmVtIGRlc2xpZ2EgbyBFeHBsb3JhZG9yOyBvIMOtbmRpY2UgbsOjbyDDqSB1bWEgZm90b2dyYWZpYSBpbXV0w6F2ZWwgZGUgdG9kYSBhIHZpZGEgZG8gY29tcHV0YWRvci4iLCJzdGF0ZW1lbnQiOiJBcMOzcyBhIGluZGV4YcOnw6NvIGluaWNpYWwsIG8gV2luZG93cyBwcmVjaXNhIG5lY2Vzc2FyaWFtZW50ZSByZWNvbnN0cnVpciBkbyB6ZXJvIHRvZG8gbyDDrW5kaWNlIHNlbXByZSBxdWUgdW0gw7puaWNvIGRvY3VtZW50byBtdWRhPyIsInRvcGljSWQiOiJJMDEifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtaW5kaWNlLXdpbmRvd3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEluZGV4YcOnw6NvIGRlIHBlc3F1aXNhIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2UvcGVyZm9ybWFuY2Utb3B0aW1pemF0aW9uL3NlYXJjaC1pbmRleGluZy1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-indice-incompleto.json",
+        "mediaType": "application/json",
+        "sha256": "7fb65e97611ad5df5463712ee683444a60481e5d0e7440e55f7fd2b9a6f72d60",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29uY2x1aXIgcXVlIHRvZG8gZG9jdW1lbnRvIGF1c2VudGUgbmEgYnVzY2EgZm9pIGFwYWdhZG8gZG8gZGlzY28uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQXBhZ2FyIG9zIG9yaWdpbmFpcyBwYXJhIHF1ZSBhIGJ1c2NhIGZpcXVlIGNvcnJldGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVHJvY2FyIGEgZXh0ZW5zw6NvIGRvcyBhcnF1aXZvcyBwYXJhIG8gbm9tZSBkbyDDrW5kaWNlLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkNvbnNpZGVyYXIgcXVlIHJlc3VsdGFkb3MgcG9kZW0gbsOjbyByZWZsZXRpciBhaW5kYSB0b2RvIG8gbWF0ZXJpYWwgZW5xdWFudG8gYSBpbmRleGHDp8OjbyBuw6NvIHRlcm1pbmEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtaW5kaWNlLWluY29tcGxldG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1pbmRpY2Utd2luZG93cyJdLCJyZXNvbHV0aW9uIjoiMS4gQ29uc3RydWlyIG91IGF0dWFsaXphciBvIMOtbmRpY2UgcG9kZSBsZXZhciB0ZW1wbywgY29uZm9ybWUgbyB2b2x1bWUgZSBvcyByZWN1cnNvcy4gMi4gQXVzw6puY2lhIG1vbWVudMOibmVhIG5vIHJlc3VsdGFkbyBuw6NvIHByb3ZhIGV4Y2x1c8OjbzsgYXBhZ2FyIG91IHJlbm9tZWFyIG9zIG9yaWdpbmFpcyBuw6NvIMOpIGEgY29ycmXDp8OjbyBkZXNzYSBlc3BlcmEuIiwic3RhdGVtZW50IjoiVW0gZ3JhbmRlIGNvbmp1bnRvIGRlIGRvY3VtZW50b3MgZm9pIGFjcmVzY2VudGFkbyBhIHVtIGxvY2FsIGluZGV4YWRvIGRvIFdpbmRvd3MgZSBhIGluZGV4YcOnw6NvIGluaWNpYWwgYWluZGEgZXN0w6EgZW0gYW5kYW1lbnRvLiBRdWFsIGN1aWRhZG8gYW8gYXZhbGlhciBhIGJ1c2NhIMOpIGFkZXF1YWRvPyIsInRvcGljSWQiOiJJMDEifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtaW5kaWNlLXdpbmRvd3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEluZGV4YcOnw6NvIGRlIHBlc3F1aXNhIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2UvcGVyZm9ybWFuY2Utb3B0aW1pemF0aW9uL3NlYXJjaC1pbmRleGluZy1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-indice-metadata.json",
+        "mediaType": "application/json",
+        "sha256": "aafa6e6078ee30ea859504e95a0c802957d739b773e3858f05be05e36c6f437c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVG9kYSBkYXRhIHZpcmEgYXV0b21hdGljYW1lbnRlIHBhcnRlIGRvIG5vbWUgZG8gYXJxdWl2by4ifSx7ImlkIjoiYiIsInRleHQiOiJPIMOtbmRpY2UgcG9kZSBjYXRhbG9nYXIgcHJvcHJpZWRhZGVzIGRvcyBhcnF1aXZvcywgcGVybWl0aW5kbyB1c2FyIG1ldGFkYWRvcyBjb21vIGRhdGEgbmEgbG9jYWxpemHDp8Ojby4ifSx7ImlkIjoiYyIsInRleHQiOiJPIMOtbmRpY2UgZ3VhcmRhIGFwZW5hcyBpbWFnZW5zIGRvIHBhcGVsIGRlIHBhcmVkZS4ifSx7ImlkIjoiZCIsInRleHQiOiJBIGluZGV4YcOnw6NvIGltcGVkZSBxdWFscXVlciBidXNjYSBwb3IgcHJvcHJpZWRhZGVzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWluZGljZS1tZXRhZGF0YSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWluZGljZS13aW5kb3dzIl0sInJlc29sdXRpb24iOiIxLiBBbMOpbSBkZSB0ZXJtb3MgZGUgY29udGXDumRvLCBhIGluZGV4YcOnw6NvIHRyYWJhbGhhIGNvbSBub21lcywgY2FtaW5ob3MgZSBvdXRyYXMgcHJvcHJpZWRhZGVzLiAyLiBOw6NvIHNlIGxpbWl0YSBhbyBwYXBlbCBkZSBwYXJlZGUsIG7Do28gcHJvw61iZSBtZXRhZGFkb3MgZSBuw6NvIGV4aWdlIHJlbm9tZWFyIGFycXVpdm9zLiIsInN0YXRlbWVudCI6IlVtIHVzdcOhcmlvIGxlbWJyYSBhIGRhdGEgZGUgY3JpYcOnw6NvIGRlIHVtIGRvY3VtZW50bywgbWFzIG7Do28gc2V1IHTDrXR1bG8uIFF1YWwgY2FyYWN0ZXLDrXN0aWNhIGRhIHBlc3F1aXNhIGluZGV4YWRhIGRvIFdpbmRvd3MgcG9kZSBhanVkYXI/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1pbmRpY2Utd2luZG93cyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgSW5kZXhhw6fDo28gZGUgcGVzcXVpc2Egbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3MvZXhwZXJpZW5jZS9wZXJmb3JtYW5jZS1vcHRpbWl6YXRpb24vc2VhcmNoLWluZGV4aW5nLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-liberar-espaco-nuvem.json",
+        "mediaType": "application/json",
+        "sha256": "0ce45ce7eca8925496d5340c423a6226a0a9778470e0ddb4a911358bcf3672e8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbywgcG9ycXVlIG8gY29tYW5kbyBkdXBsaWNhIG9icmlnYXRvcmlhbWVudGUgbyBhcnF1aXZvIGVtIGNhZGEgcGFzdGEgbG9jYWwuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTsOjbzsgYSBjw7NwaWEgbG9jYWwgw6kgbGliZXJhZGEsIGUgbyBhcnF1aXZvIGNvbnRpbnVhIG5hIG51dmVtLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlNpbSwgaW5jbHVzaXZlIHRvZGFzIGFzIGxpeGVpcmFzIGUgYmFja3VwcyByZW1vdG9zLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlNpbSwgcG9ycXVlIHNvbWVudGUgb25saW5lIHNpZ25pZmljYSBpbmV4aXN0ZW50ZS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1saWJlcmFyLWVzcGFjby1udXZlbSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW9uZWRyaXZlIl0sInJlc29sdXRpb24iOiIxLiBPIGVzdGFkbyBzb21lbnRlIG9ubGluZSByZWR1eiB1c28gZGUgZGlzY28gbG9jYWwgc2VtIGFwYWdhciBvIGFycXVpdm8gZGEgbnV2ZW0uIDIuIE7Do28gc2UgdHJhdGEgZGUgZXhjbHVzw6NvIGRlZmluaXRpdmEgbmVtIGRlIG11bHRpcGxpY2HDp8OjbyBkZSBjw7NwaWFzIHBvciB0b2RhcyBhcyBwYXN0YXMuIiwic3RhdGVtZW50IjoiTm8gT25lRHJpdmUgcGFyYSBXaW5kb3dzLCBMaWJlcmFyIGVzcGHDp28gdG9ybm91IHVtIGFycXVpdm8gc29tZW50ZSBvbmxpbmUuIElzc28gc2lnbmlmaWNhIHF1ZSBvIGFycXVpdm8gZm9pIGV4Y2x1w61kbyBkbyBPbmVEcml2ZT8iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW9uZWRyaXZlIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBcnF1aXZvcyBTb2IgRGVtYW5kYSBwYXJhIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9vbmVkcml2ZS9zYXZlLWRpc2stc3BhY2Utd2l0aC1vbmVkcml2ZS1maWxlcy1vbi1kZW1hbmQtZm9yLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-mapa-nao-copia.json",
+        "mediaType": "application/json",
+        "sha256": "d2e36597448fb06291959b5398a8bb3db67181fd942e353b422edf13e17580ef",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVW1hIGxldHJhIGRlIHVuaWRhZGUgZ2FyYW50ZSBxdWUgbyBzZXJ2aWRvciBudW5jYSBzZXLDoSBkZXNsaWdhZG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTyBtYXBlYW1lbnRvIGZvcm5lY2UgYWNlc3NvIGFvIGNvbXBhcnRpbGhhbWVudG8gZSBuw6NvIMOpLCBwb3Igc2kgc8OzLCB1bWEgY8OzcGlhIG9mZmxpbmUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQSBsZXRyYSBaIHRyYW5zZm9ybWEgdG9kb3Mgb3MgYXJxdWl2b3MgcmVtb3RvcyBlbSBtZW3Ds3JpYSBwZXJtYW5lbnRlIGxvY2FsLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik8gbWFwZWFtZW50byBkaXNwZW5zYSBwZXJtaXNzw7VlcyBkbyBjb21wYXJ0aWxoYW1lbnRvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LW1hcGEtbmFvLWNvcGlhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29tcGFydGlsaGFyIl0sInJlc29sdXRpb24iOiIxLiBBIGFzc29jaWHDp8OjbyBkZSBsZXRyYSDDqSB1bWEgZm9ybWEgZGUgYWNlc3NhciBvIHJlY3Vyc28gZGUgcmVkZS4gMi4gRWxhIG7Do28gZXF1aXZhbGUgYSBiYWNrdXAgb3Ugc2luY3Jvbml6YcOnw6NvIG9mZmxpbmUgZSBuw6NvIGVsaW1pbmEgcGVybWlzc8O1ZXMgb3UgZGVwZW5kw6puY2lhIGRhIGRpc3BvbmliaWxpZGFkZSBkbyBzZXJ2aWRvci4iLCJzdGF0ZW1lbnQiOiJObyBXaW5kb3dzLCB1bWEgcGFzdGEgY29tcGFydGlsaGFkYSBmb2kgbWFwZWFkYSBjb21vIFo6LiBBIGVxdWlwZSBhZmlybWEgcXVlIGlzc28gZ2FyYW50ZSB1bWEgY8OzcGlhIG9mZmxpbmUgZGUgdG9kb3Mgb3MgYXJxdWl2b3MuIFF1YWwgYXZhbGlhw6fDo28gw6kgY29ycmV0YT8iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvbXBhcnRpbGhhciI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQ29tcGFydGlsaGFtZW50byBkZSBhcnF1aXZvcyBwb3IgdW1hIHJlZGUgbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3MvZXhwZXJpZW5jZS9jb25uZWN0aXZpdHktbmV0d29ya2luZy9maWxlLXNoYXJpbmctb3Zlci1hLW5ldHdvcmstaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-menu-antigo.json",
+        "mediaType": "application/json",
+        "sha256": "812618d6b9e8a38e973dc3d69ce35593debbbaef116bba7e0f166d4bdbb15bae",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUHJlc3Npb25hciBGNSBwYXJhIGF0dWFsaXphciBhIHBhc3RhIGF0w6kgbyBjb21hbmRvIGFwYXJlY2VyLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFicmlyIENvbmZpZ3VyYcOnw7VlcyA+IFBlcnNvbmFsaXphw6fDo28gcGFyYSBhdGl2YXIgbyBjb21hbmRvIG5vIG1lbnUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTXVkYXIgbyBtb2RvIGRlIGV4aWJpw6fDo28gZGEgcGFzdGEgcGFyYSBEZXRhbGhlcy4ifSx7ImlkIjoiZCIsInRleHQiOiJNb3N0cmFyIG1haXMgb3DDp8O1ZXMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtbWVudS1hbnRpZ28iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leHBsb3JhZG9yIl0sInJlc29sdXRpb24iOiIxLiBNb3N0cmFyIG1haXMgb3DDp8O1ZXMgKG91IFNoaWZ0K0YxMCkgYWJyZSBvIG1lbnUgZGUgY29udGV4dG8gdHJhZGljaW9uYWwsIG9uZGUgY29tYW5kb3MgZGUgZXh0ZW5zw7VlcyBhbnRpZ2FzIHBvZGVtIGVzdGFyIGRpc3BvbsOtdmVpczsgYWx0ZXJuYXRpdmEgRC4gMi4gQSBlcnJhIHBvcnF1ZSBhdHVhbGl6YXIgYSBqYW5lbGEgbsOjbyB0cm9jYSBvIG1lbnUgZXhpYmlkbzsgQiBlcnJhIHBvcnF1ZSBQZXJzb25hbGl6YcOnw6NvIG7Do28gYWNyZXNjZW50YSBjb21hbmRvcyBkZSBleHRlbnPDtWVzIGFvIG1lbnUgc2ltcGxpZmljYWRvOyBDIGVycmEgcG9ycXVlIG8gbW9kbyBkZSBleGliacOnw6NvIGRhIHBhc3RhIG7Do28gYWx0ZXJhIG9zIGNvbWFuZG9zIGRvIG1lbnUgZGUgY29udGV4dG8uIiwic3RhdGVtZW50IjoiVW0gY29tYW5kbyBkZSBleHRlbnPDo28gZG8gRXhwbG9yYWRvciBuw6NvIGFwYXJlY2Ugbm8gbWVudSBkZSBjb250ZXh0byBzaW1wbGlmaWNhZG8gZG8gV2luZG93cyAxMSwgbWFzIGV4aXN0ZSBubyBtZW51IHRyYWRpY2lvbmFsIGluc3RhbGFkby4gUXVhbCBvcMOnw6NvIGRldmUgc2VyIGNvbnN1bHRhZGE/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leHBsb3JhZG9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBFeHBsb3JhZG9yIGRlIEFycXVpdm9zIG5vIFdpbmRvd3MgMTEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2UvZmlsZWV4cGxvcmVyL2ZpbGUtZXhwbG9yZXItaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-nome-caso-cuidado.json",
+        "mediaType": "application/json",
+        "sha256": "e387f1da2160b99f9f6690d464068203d80734e869be205a6b575ea27391ab5d",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVHJvY2FyIG1hacO6c2N1bGFzIHBvciBuw7ptZXJvcyBhbHRlcmEgbmVjZXNzYXJpYW1lbnRlIG9zIGJ5dGVzIGRvIGNvbnRlw7pkby4ifSx7ImlkIjoiYiIsInRleHQiOiJOw6NvIHByZXN1bWlyIHF1ZSBub21lcyBkaWZlcmVudGVzIGFwZW5hcyBwb3IgbWFpw7pzY3VsYXMgc2VtcHJlIHNlcsOjbyB0cmF0YWRvcyBjb21vIGFycXVpdm9zIGRpc3RpbnRvcy4ifSx7ImlkIjoiYyIsInRleHQiOiJQcmVzdW1pciBxdWUgQVRBLmRvY3ggZSBhdGEuZG9jeCBzZXLDo28gc2VtcHJlIGFycXVpdm9zIGRpc3RpbnRvcyBlbSBxdWFscXVlciBjb25maWd1cmHDp8Ojby4ifSx7ImlkIjoiZCIsInRleHQiOiJQcmVzdW1pciBxdWUgdG9kYSBsZXRyYSBtYWnDunNjdWxhIHRvcm5hIG8gYXJxdWl2byBleGVjdXTDoXZlbC4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1ub21lLWNhc28tY3VpZGFkbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW5vbWVzLXdpbmRvd3MiXSwicmVzb2x1dGlvbiI6IjEuIEEgZG9jdW1lbnRhw6fDo28gcmVjb21lbmRhIG7Do28gcHJlc3VtaXIgZGlmZXJlbmNpYcOnw6NvIGRlIGNhaXhhOyBow6EgY29tcG9ydGFtZW50b3MgZSBjb25maWd1cmHDp8O1ZXMgZGUgc2lzdGVtYSBkZSBhcnF1aXZvcyBhIGNvbnNpZGVyYXIuIDIuIENhaXhhIG7Do28gZGVmaW5lIGV4ZWN1dGFiaWxpZGFkZSBlIG5vbWUgbsOjbyBzZSBjb25mdW5kZSBjb20gb3MgYnl0ZXMgZG8gZG9jdW1lbnRvLiIsInN0YXRlbWVudCI6IkFvIG9yZ2FuaXphciBhcnF1aXZvcyBlbSBhbWJpZW50ZXMgV2luZG93cywgcXVhbCBvcmllbnRhw6fDo28gZGEgZG9jdW1lbnRhw6fDo28gZXZpdGEgdW1hIHN1cG9zacOnw6NvIGluY29ycmV0YSBzb2JyZSBsZXRyYXMgbWFpw7pzY3VsYXMgZSBtaW7DunNjdWxhcz8iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW5vbWVzLXdpbmRvd3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIE5vbWVhw6fDo28gZGUgYXJxdWl2b3MsIGRpcmV0w7NyaW9zIGUgbmFtZXNwYWNlcyIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL3dpbjMyL2ZpbGVpby9uYW1pbmctYS1maWxlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-oculto-nao-apagado.json",
+        "mediaType": "application/json",
+        "sha256": "91a309e69c72a27d72a6dc3b4621b2c69f48d11c251a68725aad510d9fe09b87",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRWxhIGZvaSBhdXRvbWF0aWNhbWVudGUgZW52aWFkYSDDoCBMaXhlaXJhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlNldSBjb250ZcO6ZG8gZm9pIGNyaXB0b2dyYWZhZG8gcGVsbyBhdHJpYnV0by4ifSx7ImlkIjoiYyIsInRleHQiOiJFbGEgc2UgdHJhbnNmb3Jtb3UgZW0gdW0gYXRhbGhvIHNlbSBjb250ZcO6ZG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRWxhIHBvZGUgY29udGludWFyIG5vIGRpc2NvOyBoYWJpbGl0YXIgSXRlbnMgb2N1bHRvcyBwZXJtaXRlIGxvY2FsaXrDoS1sYS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1vY3VsdG8tbmFvLWFwYWdhZG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leHBsb3JhZG9yIl0sInJlc29sdXRpb24iOiIxLiBPY3VsdGFyIGFmZXRhIGEgdmlzdWFsaXphw6fDo287IG7Do28gZXF1aXZhbGUgYSBhcGFnYXIuIDIuIE8gYXRyaWJ1dG8gbsOjbyBleGVjdXRhIGV4Y2x1c8OjbywgY3JpcHRvZ3JhZmlhIG5lbSBjb252ZXJzw6NvIGVtIGF0YWxoby4gUGVybWlzc8O1ZXMgY29udGludWFtIHNlbmRvIHVtYSBxdWVzdMOjbyBzZXBhcmFkYS4iLCJzdGF0ZW1lbnQiOiJVbWEgcGFzdGEgbG9jYWwgbm8gV2luZG93cyAxMSByZWNlYmV1IG8gYXRyaWJ1dG8gT2N1bHRvIGUgZGVpeG91IGRlIGFwYXJlY2VyIGNvbSBJdGVucyBvY3VsdG9zIGRlc2F0aXZhZG8uIFF1YWwgZGlhZ27Ds3N0aWNvIMOpIGNvcnJldG8/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leHBsb3JhZG9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBFeHBsb3JhZG9yIGRlIEFycXVpdm9zIG5vIFdpbmRvd3MgMTEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2UvZmlsZWV4cGxvcmVyL2ZpbGUtZXhwbG9yZXItaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-onedrive-excluir-sincroniza.json",
+        "mediaType": "application/json",
+        "sha256": "30bc97e94dbcd89ec0abdda80d6957c19262625aec572311d5a6db491b1f96b3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBleGNsdXPDo28gYWZldGEgc29tZW50ZSBhIGNvciBkbyDDrWNvbmUsIHNlbSByZW1vdmVyIGNvbnRlw7pkby4ifSx7ImlkIjoiYiIsInRleHQiOiJBIG51dmVtIG1hbnTDqW0gb2JyaWdhdG9yaWFtZW50ZSB1bWEgY8OzcGlhIGltdXTDoXZlbCBlIGV0ZXJuYSBmb3JhIGRlIHF1YWxxdWVyIGxpeGVpcmEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTyBhcnF1aXZvIGV4Y2x1w61kbyB0cmFuc2Zvcm1hLXNlIGF1dG9tYXRpY2FtZW50ZSBlbSB1bSBQREYgZGUgc2VndXJhbsOnYS4ifSx7ImlkIjoiZCIsInRleHQiOiJBIGV4Y2x1c8OjbyBwb2RlIHNlciBwcm9wYWdhZGEgYW8gT25lRHJpdmUgZSBhb3Mgb3V0cm9zIGRpc3Bvc2l0aXZvcyBzaW5jcm9uaXphZG9zLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LW9uZWRyaXZlLWV4Y2x1aXItc2luY3Jvbml6YSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW9uZWRyaXZlLWV4Y2x1aXIiXSwicmVzb2x1dGlvbiI6IjEuIFNpbmNyb25pemHDp8OjbyBwb2RlIHJlZmxldGlyIGEgZXhjbHVzw6NvIG5vcyBvdXRyb3MgbG9jYWlzIHZpbmN1bGFkb3M7IGEgcmVjdXBlcmHDp8OjbyBzZWd1ZSBhcyBjb25kacOnw7VlcyBkZSByZXRlbsOnw6NvIGUgbGl4ZWlyYSBkbyBzZXJ2acOnby4gMi4gTsOjbyDDqSBlZmVpdG8gdmlzdWFsIG91IGNvbnZlcnPDo28gZGUgZm9ybWF0bywgbmVtIHByb21lc3NhIGRlIHJldGVuw6fDo28gaW11dMOhdmVsIHBlcm1hbmVudGUuIiwic3RhdGVtZW50IjoiTm8gT25lRHJpdmUgcGFyYSBXaW5kb3dzIGNvbSBzaW5jcm9uaXphw6fDo28gYXRpdmEsIHVtYSBwZXNzb2EgZXhjbHVpdSB1bSBhcnF1aXZvIGRlbnRybyBkYSBwYXN0YSBzaW5jcm9uaXphZGEuIFF1YWwgY29uc2VxdcOqbmNpYSBkZXZlIGNvbmZlcmlyIGFudGVzIGRlIHRyYXRhciBhIGPDs3BpYSBkYSBudXZlbSBjb21vIGJhY2t1cCBpbnRhY3RvPyIsInRvcGljSWQiOiJJMDEifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtb25lZHJpdmUtZXhjbHVpciI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgRXhjbHVpciBhcnF1aXZvcyBvdSBwYXN0YXMgbm8gT25lRHJpdmUiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9vbmVkcml2ZS9kZWxldGUtZmlsZXMtb3ItZm9sZGVycy1pbi1vbmVkcml2ZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-pasta-abrir-antes-cortar.json",
+        "mediaType": "application/json",
+        "sha256": "e4e6cff35fdc1931fedef6350b2ab7bdb351ee4b909a91a69eed08abe3cf5447",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTXVkYXIgc29tZW50ZSBvIG1vZG8gZGUgZXhpYmnDp8OjbyBwYXJhIMONY29uZXMgZ3JhbmRlcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBYnJpciBhIHBhc3RhIGFudGVzIGRlIGV4ZWN1dGFyIGFzIG9wZXJhw6fDtWVzIHNvYnJlIHNldXMgYXJxdWl2b3MgZSBwYXN0YXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiRGVzYWZpeGFyIHRvZGFzIGFzIHBhc3RhcyBkbyBjb21wdXRhZG9yIGUgYXBhZ2FyIHNldXMgY29udGXDumRvcy4ifSx7ImlkIjoiZCIsInRleHQiOiJSZW5vbWVhciBvIGFjZXNzbyBmaXhhZG8gcGFyYSAuZXhlLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXBhc3RhLWFicmlyLWFudGVzLWNvcnRhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWV4cGxvcmFkb3IiXSwicmVzb2x1dGlvbiI6IjEuIEEgZG9jdW1lbnRhw6fDo28gZGlmZXJlbmNpYSBhY2Vzc2FyIGEgcGFzdGEgZml4YWRhIGUgbWFuaXB1bGFyIHNldXMgaXRlbnMgbm8gbG9jYWwgYWJlcnRvLiAyLiBOw6NvIGV4aWdlIGV4Y2x1c8OjbyBnZXJhbCwgY29udmVyc8OjbyBlbSBleGVjdXTDoXZlbCBvdSB0YW1hbmhvIGRlIMOtY29uZSBlc3BlY8OtZmljby4iLCJzdGF0ZW1lbnQiOiJObyBBY2Vzc28gcsOhcGlkbyBkbyBFeHBsb3JhZG9yIGRvIFdpbmRvd3MgMTEsIHVtYSBwYXN0YSBmaXhhZGEgZGV2ZSB0ZXIgc2V1IGNvbnRlw7pkbyBtb3ZpZG8gcG9yIENvcnRhciBlIENvbGFyLiBRdWFsIG9yaWVudGHDp8OjbyBkbyBtYXRlcmlhbCBkYSBNaWNyb3NvZnQgZXZpdGEgb3BlcmFyIGFwZW5hcyBubyBhY2Vzc28gZGUgbmF2ZWdhw6fDo28/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1leHBsb3JhZG9yIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBFeHBsb3JhZG9yIGRlIEFycXVpdm9zIG5vIFdpbmRvd3MgMTEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2UvZmlsZWV4cGxvcmVyL2ZpbGUtZXhwbG9yZXItaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-permissao-efeito-app.json",
+        "mediaType": "application/json",
+        "sha256": "8e1749dac29a56d780f143e3ffb25bf3f2c44de8c667f2a3c1ee42719ecc10c5",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVG9kYXMgYXMgaW1hZ2VucyBkbyBkaXNjbyBzw6NvIG9icmlnYXRvcmlhbWVudGUgYXBhZ2FkYXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQSB0ZWxhIHBhc3NhIGEgZnVuY2lvbmFyIHNvbWVudGUgZW0gcHJldG8gZSBicmFuY28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTyBhcGxpY2F0aXZvIGdhbmhhIGF1dG9tYXRpY2FtZW50ZSBhY2Vzc28gYSB0b2RhcyBhcyBiaWJsaW90ZWNhcyByZXN0YW50ZXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUmVjdXJzb3MgcXVlIGRlcGVuZGVtIGRlc3NhIGJpYmxpb3RlY2EgcG9kZW0gbsOjbyBmdW5jaW9uYXIgY29tbyBhbnRlcy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1wZXJtaXNzYW8tZWZlaXRvLWFwcCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXByaXZhY2lkYWRlLWFycXVpdm9zIl0sInJlc29sdXRpb24iOiIxLiBBIHJlc3RyacOnw6NvIHBvZGUgbGltaXRhciBvcGVyYcOnw7VlcyBkbyBhcGxpY2F0aXZvIHF1ZSBwcmVjaXNhbSBkZXNzZXMgYXJxdWl2b3MuIDIuIE5lZ2FyIGFjZXNzbyBuw6NvIMOpIGV4Y2x1c8OjbyBmw61zaWNhLCBhbHRlcmHDp8OjbyBkZSB2w61kZW8gb3UgY29uY2Vzc8OjbyBjb21wZW5zYXTDs3JpYSBpcnJlc3RyaXRhIGEgb3V0cm9zIGRhZG9zLiIsInN0YXRlbWVudCI6IlVtYSBwZXNzb2EgbmVnb3UgYSB1bSBhcGxpY2F0aXZvIGFjZXNzbyDDoCBiaWJsaW90ZWNhIGRlIGltYWdlbnMgZG8gV2luZG93cy4gUXVhbCBjb25zZXF1w6puY2lhIGRldmUgY29uc2lkZXJhcj8iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXByaXZhY2lkYWRlLWFycXVpdm9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBY2Vzc28gYSBiaWJsaW90ZWNhcyBkZSBkb2N1bWVudG9zIGUgcHJpdmFjaWRhZGUiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL3ByaXZhY3kvcGljdHVyZXMtdmlkZW9zLWFuZC1kb2N1bWVudHMtbGlicmFyeS1hY2Nlc3MtYW5kLXByaXZhY3kifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-reconectar-mapa.json",
+        "mediaType": "application/json",
+        "sha256": "80671c85e77f90c9227760fd5d218070c35251fd77a297ef385a26d5dc622a65",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29uZWN0YXIgdXNhbmRvIGNyZWRlbmNpYWlzIGRpZmVyZW50ZXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUmVjb25lY3Rhci1zZSBuYSBlbnRyYWRhLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkRpc3BvbmliaWxpemFyIHNlbXByZSBvZmZsaW5lLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkZpeGFyIG5vIEFjZXNzbyByw6FwaWRvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXJlY29uZWN0YXItbWFwYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvbXBhcnRpbGhhciJdLCJyZXNvbHV0aW9uIjoiMS4gTmEgamFuZWxhIE1hcGVhciB1bmlkYWRlIGRlIHJlZGUsIGEgb3DDp8OjbyBSZWNvbmVjdGFyLXNlIG5hIGVudHJhZGEgZ3VhcmRhIG8gbWFwZWFtZW50byBwYXJhIHF1ZSBvIFdpbmRvd3MgdGVudGUgcmVzdGFiZWxlY8OqLWxvIGEgY2FkYSBub3ZhIGVudHJhZGEgZG8gdXN1w6FyaW87IGFsdGVybmF0aXZhIEIuIDIuIEEgZXJyYSBwb3JxdWUgYXBlbmFzIHBlcm1pdGUgaW5mb3JtYXIgb3V0cmEgY29udGEgcGFyYSBhIGNvbmV4w6NvOyBDIGVycmEgcG9ycXVlIHRyYXRhIGRlIGPDs3BpYXMgb2ZmbGluZSBkZSBhcnF1aXZvcywgbsOjbyBkYSByZWNvbmV4w6NvIGRhIGxldHJhOyBEIGVycmEgcG9ycXVlIGZpeGFyIGNyaWEgdW0gYXRhbGhvIGRlIG5hdmVnYcOnw6NvLCBuw6NvIHVtIG1hcGVhbWVudG8gcGVyc2lzdGVudGUuIEEgcmVjb25leMOjbyBuw6NvIGRpc3BlbnNhIHJlZGUgZGlzcG9uw612ZWwgbmVtIHBlcm1pc3PDtWVzLiIsInN0YXRlbWVudCI6IkR1cmFudGUgbyBtYXBlYW1lbnRvIGRlIHVtYSB1bmlkYWRlIGRlIHJlZGUgbm8gV2luZG93cywgcXVhbCBvcMOnw6NvIHNvbGljaXRhIHRlbnRhciByZXN0YWJlbGVjZXIgbyBhY2Vzc28gYW8gZW50cmFyIG5vdmFtZW50ZSBubyBzaXN0ZW1hPyIsInRvcGljSWQiOiJJMDEifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29tcGFydGlsaGFyIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBDb21wYXJ0aWxoYW1lbnRvIGRlIGFycXVpdm9zIHBvciB1bWEgcmVkZSBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy9leHBlcmllbmNlL2Nvbm5lY3Rpdml0eS1uZXR3b3JraW5nL2ZpbGUtc2hhcmluZy1vdmVyLWEtbmV0d29yay1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-separador-reservado.json",
+        "mediaType": "application/json",
+        "sha256": "10b8faa89017aa5d7818bc3dac2d307a1b3a955d5064bfd2bed88e6e9691a0bd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTmVuaHVtOyBhIGJhcnJhIGludmVydGlkYSDDqSBhY2VpdGEgZW0gbm9tZXMgZGUgYXJxdWl2byBjb21vIHF1YWxxdWVyIGxldHJhLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik5lbmh1bSwgZGVzZGUgcXVlIGEgZXh0ZW5zw6NvIC5kb2N4IHNlamEgbWFudGlkYSBhbyBmaW5hbCBkbyBub21lLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkEgYmFycmEgaW52ZXJ0aWRhIHPDsyDDqSBwcm9pYmlkYSBlbSBub21lcyBkZSBwYXN0YXMsIG7Do28gZW0gbm9tZXMgZGUgYXJxdWl2b3MuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQSBiYXJyYSBpbnZlcnRpZGEgw6kgc2VwYXJhZG9yIGRlIGNvbXBvbmVudGVzIGRvIGNhbWluaG8gZSBuw6NvIHBvZGUgaW50ZWdyYXIgbGl2cmVtZW50ZSBvIG5vbWUgZGUgdW0gw7puaWNvIGFycXVpdm8uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtc2VwYXJhZG9yLXJlc2VydmFkbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW5vbWVzLXdpbmRvd3MiXSwicmVzb2x1dGlvbiI6IjEuIE5vIFdpbmRvd3MsIGEgYmFycmEgaW52ZXJ0aWRhIMOpIG8gc2VwYXJhZG9yIGRlIGNvbXBvbmVudGVzIGRvIGNhbWluaG8gKHBhc3RhXFxzdWJwYXN0YVxcYXJxdWl2bykgZSBlc3TDoSBlbnRyZSBvcyBjYXJhY3RlcmVzIHJlc2VydmFkb3MgcXVlIG7Do28gcG9kZW0gaW50ZWdyYXIgbyBub21lIGRlIHVtIMO6bmljbyBhcnF1aXZvOyBhbHRlcm5hdGl2YSBELiAyLiBBIGUgQiBlcnJhbSBwb3JxdWUgbyBjYXJhY3RlcmUgw6kgcmVzZXJ2YWRvLCBjb20gb3Ugc2VtIGV4dGVuc8OjbzsgQyBlcnJhIHBvcnF1ZSBhIHJlc3RyacOnw6NvIHZhbGUgcGFyYSBxdWFscXVlciBjb21wb25lbnRlIGRvIGNhbWluaG8sIGluY2x1c2l2ZSBub21lcyBkZSBhcnF1aXZvcy4iLCJzdGF0ZW1lbnQiOiJObyBXaW5kb3dzLCB1bWEgcGVzc29hIHRlbnRhIGNyaWFyIHVtIMO6bmljbyBub21lIGRlIGFycXVpdm8gcXVlIGNvbnTDqW0gYSBiYXJyYSBpbnZlcnRpZGEsIGNvbW8gYXRhc1xccmV1bmnDo28uZG9jeCwgc2VtIHF1ZXJlciBpbmRpY2FyIHVtYSBzdWJwYXN0YS4gUXVhbCBwcm9ibGVtYSBleGlzdGU/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1ub21lcy13aW5kb3dzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBOb21lYcOnw6NvIGRlIGFycXVpdm9zLCBkaXJldMOzcmlvcyBlIG5hbWVzcGFjZXMiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy93aW4zMi9maWxlaW8vbmFtaW5nLWEtZmlsZSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-somente-online-offline.json",
+        "mediaType": "application/json",
+        "sha256": "bb5665c853d5c52fec21534f391238a73560dd7133e67a2252e5ee181752b202",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29uZmlhciBhcGVuYXMgbmEgcHJlc2Vuw6dhIGRvIG5vbWUgbmEgbGlzdGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiT2N1bHRhciBhIGNvbHVuYSBTdGF0dXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUmVub21lYXIgYSBleHRlbnPDo28gcGFyYSAubG9jYWwuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQmFpeGFyIG8gYXJxdWl2byBlbnF1YW50byBob3V2ZXIgY29uZXjDo28sIHZlcmlmaWNhbmRvIHN1YSBkaXNwb25pYmlsaWRhZGUgbG9jYWwuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtc29tZW50ZS1vbmxpbmUtb2ZmbGluZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LW9uZWRyaXZlIl0sInJlc29sdXRpb24iOiIxLiBPIMOtY29uZSBkZSBudXZlbSBpbmRpY2EgYXJxdWl2byBzb21lbnRlIG9ubGluZTsgbyBjb250ZcO6ZG8gcHJlY2lzYSBzZXIgb2J0aWRvIHBhcmEgdXNvIHNlbSBjb25leMOjby4gMi4gTGlzdGFnZW0sIGNvbHVuYSBvY3VsdGEgZSBub21lIGFsdGVyYWRvIG7Do28gdHJhbnNmZXJlbSBvcyBieXRlcyBkYSBudXZlbS4iLCJzdGF0ZW1lbnQiOiJVbSBhcnF1aXZvIGRvIE9uZURyaXZlIGFwYXJlY2Ugbm8gRXhwbG9yYWRvciBkbyBXaW5kb3dzIGNvbSDDrWNvbmUgZGUgbnV2ZW0gYXp1bCBlIG51bmNhIGZvaSBiYWl4YWRvIG5vIGRpc3Bvc2l0aXZvLiBPIGNvbXB1dGFkb3IgZmljYXLDoSBzZW0gSW50ZXJuZXQuIFF1YWwgcHJvdmlkw6puY2lhIGFudGVjZWRlbnRlIMOpIG5lY2Vzc8OhcmlhIHBhcmEgdXPDoS1sbyBvZmZsaW5lPyIsInRvcGljSWQiOiJJMDEifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtb25lZHJpdmUiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEFycXVpdm9zIFNvYiBEZW1hbmRhIHBhcmEgV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL29uZWRyaXZlL3NhdmUtZGlzay1zcGFjZS13aXRoLW9uZWRyaXZlLWZpbGVzLW9uLWRlbWFuZC1mb3Itd2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-zip-adicionar.json",
+        "mediaType": "application/json",
+        "sha256": "70f90e80e01ed02538147c6b8fe2bfe49df33a10d5d91ad4bb7feac350d5d5c4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXh0cmFpciB0b2RvIG8gWklQLCBhcGFnYXIgbyBvcmlnaW5hbCBlIGNvbXBhY3RhciB0dWRvIGRlIG5vdm8sIHBvaXMgdW0gWklQIGV4aXN0ZW50ZSBuw6NvIGFjZWl0YSBub3ZvcyBpdGVucy4ifSx7ImlkIjoiYiIsInRleHQiOiJVc2FyIEVudmlhciBwYXJhID4gUGFzdGEgY29tcGFjdGFkYSBubyBub3ZvIGRvY3VtZW50bywgbyBxdWUgbyBpbnNlcmUgYXV0b21hdGljYW1lbnRlIG5vIFpJUCBqw6EgZXhpc3RlbnRlLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkNvcGlhciBvIFpJUCBwYXJhIGEgcGFzdGEgZG8gbm92byBkb2N1bWVudG8sIG8gcXVlIG8gYWNyZXNjZW50YSBhdXRvbWF0aWNhbWVudGUgYW8gcGFjb3RlLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkFycmFzdGFyIG8gbm92byBhcnF1aXZvIHBhcmEgYSBwYXN0YSBjb21wYWN0YWRhLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LXppcC1hZGljaW9uYXIiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC16aXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gRXhwbG9yYWRvciBwZXJtaXRlIGFjcmVzY2VudGFyIGl0ZW5zIGEgdW0gWklQIGV4aXN0ZW50ZSBhcnJhc3RhbmRvLW9zIChvdSBjb3BpYW5kbyBlIGNvbGFuZG8pIHBhcmEgYSBwYXN0YSBjb21wYWN0YWRhOyBhbHRlcm5hdGl2YSBELiAyLiBBIGVycmEgcG9ycXVlIG7Do28gw6kgcHJlY2lzbyByZWNyaWFyIG8gcGFjb3RlOyBCIGVycmEgcG9ycXVlIEVudmlhciBwYXJhID4gUGFzdGEgY29tcGFjdGFkYSBjcmlhIHVtIG5vdm8gWklQLCBzZXBhcmFkbzsgQyBlcnJhIHBvcnF1ZSBjb3BpYXIgbyBaSVAgbsOjbyBpbmNsdWkgbmVsZSBhcnF1aXZvcyBkYSBwYXN0YSBkZSBkZXN0aW5vLiIsInN0YXRlbWVudCI6Ik5vIFdpbmRvd3MsIHVtIFpJUCBqw6EgY3JpYWRvIHByZWNpc2EgcmVjZWJlciBtYWlzIHVtIGRvY3VtZW50by4gUXVhbCBvcGVyYcOnw6NvIMOpIGRvY3VtZW50YWRhIHBhcmEgYWNyZXNjZW50YXIgaXRlbnM/IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC16aXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIENvbXBhY3RhciBlIGRlc2NvbXBhY3RhciBhcnF1aXZvcyBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy9leHBlcmllbmNlL3N0b3JhZ2UtZmlsZW1hbmFnZW1lbnQvemlwLWFuZC11bnppcC1maWxlcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.it-zip-jpeg.json",
+        "mediaType": "application/json",
+        "sha256": "410fe1f0b55b57a5e294698b90f0f3830b63750f422947be1c1ee386864109a2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBhdXPDqm5jaWEgZGUgcmVkdcOnw6NvIHByb3ZhIHF1ZSBvcyBhcnF1aXZvcyBmb3JhbSBhcGFnYWRvcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBcnF1aXZvcyBqw6EgY29tcHJpbWlkb3MgcG9kZW0gdGVyIHBvdWNhIHJlZHXDp8OjbyBhZGljaW9uYWwgYW8gc2VyZW0gY29sb2NhZG9zIGVtIFpJUC4ifSx7ImlkIjoiYyIsInRleHQiOiJaSVAgc2VtcHJlIGRpdmlkZSBvIHRhbWFuaG8gZXhhdGFtZW50ZSBwZWxhIG1ldGFkZS4ifSx7ImlkIjoiZCIsInRleHQiOiJBIGV4dGVuc8OjbyBKUEVHIHByb8OtYmUgcmV1bmlyIGFycXVpdm9zIGVtIFpJUC4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC16aXAtanBlZyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXppcCJdLCJyZXNvbHV0aW9uIjoiMS4gSlBFRyBqw6EgdXNhIGNvbXByZXNzw6NvOyB1bSBaSVAgcG9kZSBhZ3J1cGFyIGltYWdlbnMgc2VtIG9idGVyIHJlZHXDp8OjbyBleHByZXNzaXZhLiAyLiBBIGNvbXByZXNzw6NvIG7Do28gdGVtIGZhdG9yIGZpeG87IEpQRUcgcG9kZSBpbnRlZ3JhciBaSVAgZSBvIHRhbWFuaG8gZmluYWwgbsOjbyBkZW1vbnN0cmEgZXhjbHVzw6NvLiIsInN0YXRlbWVudCI6IlVtYSBzZXJ2aWRvcmEgY29tcGFjdG91IGVtIFpJUCBmb3RvZ3JhZmlhcyBKUEVHIGrDoSBjb21wcmltaWRhcywgZSBvIHJlc3VsdGFkbyBxdWFzZSBuw6NvIHJlZHV6aXUgbyB0YW1hbmhvLiBRdWFsIGV4cGxpY2HDp8OjbyDDqSBhZGVxdWFkYT8iLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXppcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQ29tcGFjdGFyIGUgZGVzY29tcGFjdGFyIGFycXVpdm9zIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2Uvc3RvcmFnZS1maWxlbWFuYWdlbWVudC96aXAtYW5kLXVuemlwLWZpbGVzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.jeri-mon-q16.json",
+        "mediaType": "application/json",
+        "sha256": "e8713d3fc78574c27d090dd98ec7cc37a3fbb284b484f7d554e7d66b24712084",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQXMgcGFzdGFzIGRpc3BvbmliaWxpemFkYXMgYW8gdXN1w6FyaW8gbm8gV2luZG93cyBzw6NvIGNyaWFkYXMgbWFudWFsbWVudGUgc2VtcHJlIHF1ZSB1bSBub3ZvIGFycXVpdm8gw6kgc2Fsdm8gcGVsYSBwcmltZWlyYSB2ZXouIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQSBwYXN0YSBkZW5vbWluYWRhIOKAnMOBcmVhIGRlIFRyYWJhbGhv4oCdIHRlbSB1c28gZXhjbHVzaXZvIGRvIHNpc3RlbWEgb3BlcmFjaW9uYWwsIG7Do28gcGVybWl0aW5kbyBvIGFybWF6ZW5hbWVudG8gZGUgYXJxdWl2b3MgY3JpYWRvcyBwZWxvIHVzdcOhcmlvLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkEgcGFzdGEg4oCcRG9jdW1lbnRvc+KAnSDDqSB1bSBkb3MgZGlyZXTDs3Jpb3MgY3JpYWRvcyBhdXRvbWF0aWNhbWVudGUgcGFyYSBjYWRhIHVzdcOhcmlvIGUgcG9kZSBzZXIgdXRpbGl6YWRhIGNvbW8gbG9jYWwgcGFkcsOjbyBwYXJhIG8gYXJtYXplbmFtZW50byBkZSBhcnF1aXZvcyBkZSB0ZXh0byBlIG1hdGVyaWFpcyBzaW1pbGFyZXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXJxdWl2b3Mgc8OzIHBvZGVtIHNlciBzYWx2b3Mgbm8gbG9jYWwgcHJldmlhbWVudGUgaW5kaWNhZG8gcGVsbyBzaXN0ZW1hLCBuw6NvIHNlbmRvIHBvc3PDrXZlbCBlc2NvbGhlciBvdXRyYSBwYXN0YSBubyBtb21lbnRvIGRvIHNhbHZhbWVudG8uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiQXMgcGFzdGFzIOKAnEltYWdlbnPigJ0sIOKAnE3DunNpY2Fz4oCdIGUg4oCcVsOtZGVvc+KAnSBleGlzdGVtIGFwZW5hcyBxdWFuZG8gbyB1c3XDoXJpbyBpbnN0YWxhIHByb2dyYW1hcyBlc3BlY8OtZmljb3MgcGFyYSBlc3NlIHRpcG8gZGUgYXJxdWl2by4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIEplcmlxdWFyYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSwgTW9uaXRvciBFc2NvbGFyLCBxdWVzdMOjbyAxNi4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgMiwgcXVhZHJvIGRvIGNhcmdvIE1PTklUT1IgRVNDT0xBUjogMTY9QzsgY29uZmVyw6puY2lhIHZpc3VhbCBuYSByZW5kZXJpemHDp8OjbyBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjMzLWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI4MjA4NTI4ZjdlNmU5YTJkZWE1NDEzYWFhNDcxYjMwZWUzNjZlNmJhZjUyNDFiZWQ2NGY1MjQ4ODk2YTUyZjM5IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzMvYW5leG9zLzE1MTRkODNjLWQ3N2UtNDZkMi1hNGQwLWQ1ZmY0MDNkMzQ0NS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIEplcmlxdWFyYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLWplcmlxdWFyYS0yMDI1LW1vbml0b3IvcTE2IiwibnVtYmVyIjoiMTYiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMTYsIHDDoWdpbmEgZsOtc2ljYSA1IGRvIFBERjsgdGV4dG8gZXh0cmHDrWRvIGNvbmZyb250YWRvIGNvbSBhIHJlbmRlcml6YcOnw6NvIGRhIHDDoWdpbmE7IGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzIGUgb3JkZW0gY29uZmVyaWRvcyB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjMzLXByb3ZhLW1vbml0b3ItZXNjb2xhci5wZGYiLCJzaGEyNTYiOiI3NTc4MmM5ZjRiNGI2MjQ1Mjc1NDczMDgwM2IwZjQxNjA3MWJmYjYyMzE0NjJjZDE4ZTUwMzZlZDEyYTQzZjllIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzMvYW5leG9zLzNhNjFmMjEzLWEyOGEtNGIzOS05ZWJlLTg0MTk2YjhlZTkyZi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogYXJ0LiA4wrosIElWLCBkYSBMZWkgOS42MTAvMTk5OCwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBubyBwcm9qZXRvLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIGRlIHByb3ZhIHDDumJsaWNhLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBpbmNvcnBvcmFkYS4gTsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIGNvbnNlbnRpbWVudG8gYWZpcm1hZG87IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJNb25pdG9yIEVzY29sYXIiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6ImplcmktbW9uLXExNiIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWV4cGxvcmFkb3IiLCJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtcHJpdmFjaWRhZGUtYXJxdWl2b3MiXSwicmVzb2x1dGlvbiI6IjEuIEFvIGNyaWFyIG8gcGVyZmlsIGRlIHVtIHVzdcOhcmlvLCBvIFdpbmRvd3MgY3JpYSBwYXN0YXMgcGVzc29haXMgY29tbyBEb2N1bWVudG9zLCBJbWFnZW5zLCBNw7pzaWNhcywgVsOtZGVvcywgRG93bmxvYWRzIGUgw4FyZWEgZGUgVHJhYmFsaG87IERvY3VtZW50b3Mgw6kgbyBkZXN0aW5vIHN1Z2VyaWRvIHBvciBtdWl0b3MgcHJvZ3JhbWFzIHBhcmEgdGV4dG9zOyBhbHRlcm5hdGl2YSBDLiAyLiBBIGVycmE6IGVzc2FzIHBhc3RhcyBqw6EgZXhpc3RlbSBlIG7Do28gc8OjbyByZWNyaWFkYXMgYSBjYWRhIHNhbHZhbWVudG87IEIgZXJyYTogbyB1c3XDoXJpbyBwb2RlIGd1YXJkYXIgYXJxdWl2b3MgbmEgw4FyZWEgZGUgVHJhYmFsaG87IEQgZXJyYTogYSBjYWl4YSBTYWx2YXIgY29tbyBwZXJtaXRlIGVzY29saGVyIG91dHJhIHBhc3RhOyBFIGVycmE6IEltYWdlbnMsIE3DunNpY2FzIGUgVsOtZGVvcyBmYXplbSBwYXJ0ZSBkbyBwZXJmaWwgcGFkcsOjbywgaW5kZXBlbmRlbnRlbWVudGUgZGUgcHJvZ3JhbWFzIGluc3RhbGFkb3MuIEdhYmFyaXRvIGRlZmluaXRpdm86IGFsdGVybmF0aXZhIEMuIiwic3RhdGVtZW50IjoiQW8gc2FsdmFyIHJlbGF0w7NyaW9zLCBmb3JtdWzDoXJpb3Mgb3UgdGV4dG9zIGVsYWJvcmFkb3Mgbm8gY29tcHV0YWRvciBpbnN0aXR1Y2lvbmFsLCBvIHNlcnZpZG9yIHDDumJsaWNvIHBvZGUgb3B0YXIgcG9yIGRpZmVyZW50ZXMgbG9jYWlzIGRlIGFybWF6ZW5hbWVudG8uIENvbnNpZGVyYW5kbyBvIGNvbmNlaXRvIGRlIHBhc3RhcyBubyBXaW5kb3dzIGUgc3VhIHV0aWxpemHDp8OjbyBubyBkaWEgYSBkaWEgcHJvZmlzc2lvbmFsLCBhc3NpbmFsZSBhIGFsdGVybmF0aXZhIGNvcnJldGE6IiwidG9waWNJZCI6IkkwMSJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWV4cGxvcmFkb3IiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEV4cGxvcmFkb3IgZGUgQXJxdWl2b3Mgbm8gV2luZG93cyAxMSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3MvZXhwZXJpZW5jZS9maWxlZXhwbG9yZXIvZmlsZS1leHBsb3Jlci1pbi13aW5kb3dzIn0sImluZm9ybWF0aWNhLWNsYXVkZS1pdC1wcml2YWNpZGFkZS1hcnF1aXZvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQWNlc3NvIGEgYmlibGlvdGVjYXMgZGUgZG9jdW1lbnRvcyBlIHByaXZhY2lkYWRlIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy9wcml2YWN5L3BpY3R1cmVzLXZpZGVvcy1hbmQtZG9jdW1lbnRzLWxpYnJhcnktYWNjZXNzLWFuZC1wcml2YWN5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I01.p.vinh-aux-q31.json",
+        "mediaType": "application/json",
+        "sha256": "8636b883157730ffd1448b19d21bd6edc1b4c510d21ccc21407cf56a8db52975",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVW0gdGlwbyBkZSBtZW3Ds3JpYSByZXNwb25zw6F2ZWwgcG9yIGFybWF6ZW5hciB0ZW1wb3JhcmlhbWVudGUgZGFkb3MgZHVyYW50ZSBhIGV4ZWN1w6fDo28gZGUgcHJvZ3JhbWFzLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlVtIHRpcG8gZGUgYXJxdWl2byBxdWUgY29udMOpbSBhcGVuYXMgdGV4dG8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVW0gZGlzcG9zaXRpdm8gZsOtc2ljbyBkZSBlbnRyYWRhIGNvbmVjdGFkbyBhbyBjb21wdXRhZG9yIHBhcmEgcmVzdHJpbmdpciBhIG5hdmVnYcOnw6NvIG5hIGludGVybmV0LiJ9LHsiaWQiOiJkIiwidGV4dCI6IsOJIHVtIGx1Z2FyIG9uZGUgYXJxdWl2b3MgZSBwYXN0YXMgcG9kZW0gc2VyIGd1YXJkYWRvcy4ifSx7ImlkIjoiZSIsInRleHQiOiJVbSBwcm9ncmFtYSByZXNwb25zw6F2ZWwgcG9yIGV4ZWN1dGFyIHRhcmVmYXMgbm8gY29tcHV0YWRvci4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUsIEF1eGlsaWFyIEFkbWluaXN0cmF0aXZvLCBxdWVzdMOjbyAzMS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgMSwgcXVhZHJvIGRvIGNhcmdvIEFVWElMSUFSIEFETUlOSVNUUkFUSVZPOiAzMT1EOyBjb25mZXLDqm5jaWEgdmlzdWFsIG5hIHJlbmRlcml6YcOnw6NvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMjktZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjkyM2FjYWFmOWQzOGU1YzhmNDgzYjNjZTlmZDJkOWRjNmMyMTUwMjdjZWIwYTRlZjM1ZjdkMGFiZTI0Y2MzOGUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyOS9hbmV4b3MvMjc5NTE0MTMtMDRjNi00NGY4LTkyNWEtZWIwYjM5MjExNzM5LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmluaGVkbyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDMvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXZpbmhlZG8tMjAyNS1hdXhpbGlhci9xMzEiLCJudW1iZXIiOiIzMSIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAzMSwgcMOhZ2luYSBmw61zaWNhIDggZG8gUERGOyB0ZXh0byBleHRyYcOtZG8gY29uZnJvbnRhZG8gY29tIGEgcmVuZGVyaXphw6fDo28gZGEgcMOhZ2luYTsgZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMgZSBvcmRlbSBjb25mZXJpZG9zIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMjktcHJvdmEtYXV4aWxpYXItYWRtaW5pc3RyYXRpdm8ucGRmIiwic2hhMjU2IjoiNmZhOTdhNzY3OTU2MjBkOGEzYTllMWJkODEzMjE4YzVjYjBmNTFjMzJhNDIzNDZhMGYzNjM1NDU0NTdlZjBjZSIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjI5L2FuZXhvcy83OGNlZDUzNS0wNjRiLTRhMzktODA1NS1lMTAzYTlkYWJhOWYucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IGFydC4gOMK6LCBJViwgZGEgTGVpIDkuNjEwLzE5OTgsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgbm8gcHJvamV0bywgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSBkZSBwcm92YSBww7pibGljYSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gaW5jb3Jwb3JhZGEuIE7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSBjb25zZW50aW1lbnRvIGFmaXJtYWRvOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQXV4aWxpYXIgQWRtaW5pc3RyYXRpdm8iLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InZpbmgtYXV4LXEzMSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWV4cGxvcmFkb3IiLCJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtbm9tZXMtd2luZG93cyJdLCJyZXNvbHV0aW9uIjoiMS4gUGFzdGEgKGRpcmV0w7NyaW8pIMOpIHVtIGNvbnTDqmluZXIgbMOzZ2ljbyBkbyBzaXN0ZW1hIGRlIGFycXVpdm9zIHF1ZSBhZ3J1cGEgYXJxdWl2b3MgZSBvdXRyYXMgcGFzdGFzIChzdWJwYXN0YXMpLCBmb3JtYW5kbyBhIGhpZXJhcnF1aWEgbW9zdHJhZGEgbm8gRXhwbG9yYWRvcjsgYWx0ZXJuYXRpdmEgRC4gMi4gQSBkZXNjcmV2ZSBhIG1lbcOzcmlhIFJBTTsgQiBjb25mdW5kZSBwYXN0YSBjb20gYXJxdWl2byBkZSB0ZXh0bzsgQyBkZXNjcmV2ZSBoYXJkd2FyZSwgcXVlIG5hZGEgdGVtIGEgdmVyIGNvbSBwYXN0YTsgRSBkZXNjcmV2ZSBwcm9ncmFtYS9hcGxpY2F0aXZvLiBHYWJhcml0byBkZWZpbml0aXZvOiBhbHRlcm5hdGl2YSBELiIsInN0YXRlbWVudCI6IkVudHJlIGFzIGFsdGVybmF0aXZhcyBhcHJlc2VudGFkYXMgYWJhaXhvLCBhc3NpbmFsZSBhcXVlbGEgcXVlIG1lbGhvciBkZWZpbmUgbyBxdWUgw6kgdW1hIHBhc3RhIGRvIHNpc3RlbWEgb3BlcmFjaW9uYWwgV2luZG93czoiLCJ0b3BpY0lkIjoiSTAxIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtZXhwbG9yYWRvciI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgRXhwbG9yYWRvciBkZSBBcnF1aXZvcyBubyBXaW5kb3dzIDExIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy9leHBlcmllbmNlL2ZpbGVleHBsb3Jlci9maWxlLWV4cGxvcmVyLWluLXdpbmRvd3MifSwiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LW5vbWVzLXdpbmRvd3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIE5vbWVhw6fDo28gZGUgYXJxdWl2b3MsIGRpcmV0w7NyaW9zIGUgbmFtZXNwYWNlcyIsInVybCI6Imh0dHBzOi8vbGVhcm4ubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL3dpbjMyL2ZpbGVpby9uYW1pbmctYS1maWxlIn19fQ=="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I01.p.amp26-dir-q21",
+    "admin.2026-11.I01.p.cebra-cachoeiro-q25",
+    "admin.2026-11.I01.p.fgv-taubate-q33",
+    "admin.2026-11.I01.p.it-arquivo-fixado-isolado",
+    "admin.2026-11.I01.p.it-associacao-formato",
+    "admin.2026-11.I01.p.it-compartilhar-especificos",
+    "admin.2026-11.I01.p.it-desafixar-preserva",
+    "admin.2026-11.I01.p.it-indice-atualizacao",
+    "admin.2026-11.I01.p.it-indice-incompleto",
+    "admin.2026-11.I01.p.it-indice-metadata",
+    "admin.2026-11.I01.p.it-liberar-espaco-nuvem",
+    "admin.2026-11.I01.p.it-mapa-nao-copia",
+    "admin.2026-11.I01.p.it-menu-antigo",
+    "admin.2026-11.I01.p.it-nome-caso-cuidado",
+    "admin.2026-11.I01.p.it-oculto-nao-apagado",
+    "admin.2026-11.I01.p.it-onedrive-excluir-sincroniza",
+    "admin.2026-11.I01.p.it-pasta-abrir-antes-cortar",
+    "admin.2026-11.I01.p.it-permissao-efeito-app",
+    "admin.2026-11.I01.p.it-reconectar-mapa",
+    "admin.2026-11.I01.p.it-separador-reservado",
+    "admin.2026-11.I01.p.it-somente-online-offline",
+    "admin.2026-11.I01.p.it-zip-adicionar",
+    "admin.2026-11.I01.p.it-zip-jpeg",
+    "admin.2026-11.I01.p.jeri-mon-q16",
+    "admin.2026-11.I01.p.vinh-aux-q31"
+  ]
+}

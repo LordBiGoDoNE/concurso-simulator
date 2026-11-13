@@ -15,7 +15,7 @@ public final class AttemptUseCases {
     public record Finished(Attempt.View attempt, Attempt.Result result, boolean replayed) {}
     public record HistoryEntry(UUID id, String role, Instant createdAt, Instant finishedAt, int total,
                                java.math.BigDecimal percentage, String topicId) {}
-    public record PracticeAvailability(String topicId, String roleId, int available, int maximum) {}
+    public record PracticeAvailability(String topicId, int available, int maximum) {}
     private final AttemptStore store;
     private final Clock clock;
     private final Supplier<UUID> ids;
@@ -53,27 +53,29 @@ public final class AttemptUseCases {
             session.insert(attempt.snapshot()); return attempt;
         });
     }
-    public PracticeAvailability practiceAvailability(TargetRole role, Topic topic) {
-        requirePractice(); Objects.requireNonNull(role); Objects.requireNonNull(topic);
-        return store.transaction(s -> new PracticeAvailability(topic.id(),role.id(),practicePool(s,role,topic).size(),5));
+    public PracticeAvailability practiceAvailability(Topic topic) {
+        requirePractice(); Objects.requireNonNull(topic);
+        return store.transaction(s -> new PracticeAvailability(topic.id(),practicePool(s,topic).size(),Attempt.PRACTICE_MAXIMUM));
     }
-    public Outcome createPractice(AttemptOwner actor, UUID operation, TargetRole role, Topic topic) {
-        requirePractice(); Objects.requireNonNull(role); Objects.requireNonNull(topic);
-        return execute(actor,operation,hash("lesson-practice/v1",role.name(),topic.name()),null,session -> {
-            var pool=practicePool(session,role,topic);
+    public Outcome createPractice(AttemptOwner actor, UUID operation, Topic topic) {
+        requirePractice(); Objects.requireNonNull(topic);
+        return execute(actor,operation,hash("lesson-practice/v2",topic.name()),null,session -> {
+            var pool=practicePool(session,topic);
             if (pool.isEmpty()) throw new Composition.InsufficientPool(Map.of(topic.discipline(),0));
-            var composition=new Composition(role,Map.of(topic.discipline(),new Composition.Portion(Math.min(5,pool.size()),Set.of(topic))));
-            var rng=random.get();var selected=composition.select(pool,rng);
+            var rng=random.get();var selected=Composition.shuffle(pool,rng).subList(0,Math.min(Attempt.PRACTICE_MAXIMUM,pool.size()));
             var items=selected.stream().map(q -> new Attempt.Item(ids.get(),q,
                     Composition.shuffle(q.content().alternatives().stream().map(a -> a.id()).toList(),rng),Map.<String,String>of())).toList();
-            var attempt=Attempt.startPractice(ids.get(),actor,composition,topic,now(),items);
+            var attempt=Attempt.startPractice(ids.get(),actor,topic,now(),items);
             session.insert(attempt.snapshot());return attempt;
         });
     }
-    private List<AttemptQuestion> practicePool(AttemptStore.Session session,TargetRole role,Topic topic) {
-        return session.eligible(QuestionPurpose.PRATICA_AULA).stream()
+    private List<AttemptQuestion> practicePool(AttemptStore.Session session,Topic topic) {
+        var pool=session.eligible(QuestionPurpose.PRATICA_AULA).stream()
                 .filter(q -> q.purpose()==QuestionPurpose.PRATICA_AULA && q.content().classification().topic()==topic
-                        && q.content().classification().roles().contains(role)).toList();
+                        && q.source().kind()==QuestionSource.Kind.FIXED).toList();
+        if (pool.stream().map(AttemptQuestion::questionId).distinct().count()!=pool.size())
+            throw new IllegalStateException("Identidade duplicada no pool");
+        return pool;
     }
     private void requirePractice() {
         if (purpose!=QuestionPurpose.PRATICA_AULA) throw new IllegalArgumentException("Operação de prática indisponível neste contexto");
@@ -105,7 +107,7 @@ public final class AttemptUseCases {
         if (query.purpose()!=purpose) throw new IllegalArgumentException("Histórico de outra modalidade");
         return store.transaction(s -> s.history(actor,query).stream().map(snapshot -> {
             var a=Attempt.restore(snapshot); a.requireAccessible(actor,now()); a.requirePurpose(purpose);
-            return new HistoryEntry(snapshot.id(),snapshot.composition().role().name(),snapshot.createdAt(),snapshot.finishedAt(),
+            return new HistoryEntry(snapshot.id(),purpose==QuestionPurpose.SIMULADO?snapshot.composition().role().name():null,snapshot.createdAt(),snapshot.finishedAt(),
                     snapshot.items().size(),snapshot.finishedAt()==null?null:a.result(actor,now()).percentage(),
                     snapshot.practiceTopic()==null?null:snapshot.practiceTopic().id());
         }).toList());

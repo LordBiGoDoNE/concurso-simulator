@@ -1,21 +1,29 @@
 import { test, expect } from '@playwright/test';
 import { catalog, emptyPage } from '../test/question-fixtures';
 import { view } from '../test/attempt-fixtures';
-import { readFileSync } from 'node:fs';
-import { resolve, sep } from 'node:path';
-const paths: Record<string, string> = JSON.parse(readFileSync(resolve('src/lesson-paths.json'), 'utf8'));
+import { view as practiceView } from '../test/practice-fixtures';
 
 test.beforeEach(async ({ page }) => {
+  let practiceTopic = 'P01';
   await page.route('**/api/v1/**', route => {
     const path = new URL(route.request().url()).pathname;
     if (path.endsWith('/status')) return route.fulfill({ json: { status: 'UP' } });
     if (path.endsWith('/auth/config')) return route.fulfill({ json: { googleEnabled: false } });
     if (path.endsWith('/me')) return route.fulfill({ status: 401, json: { error: 'unauthenticated' } });
     if(path.endsWith('/csrf'))return route.fulfill({json:{token:'test',headerName:'X-CSRF-TOKEN'}});
+    if(path.endsWith('/lesson-practices/availability')) {
+      const params = new URL(route.request().url()).searchParams;
+      expect(params.has('roleId')).toBe(false);
+      return route.fulfill({json:{topicId:params.get('topicId'),available:5,maximum:5}});
+    }
     if(path.includes('/lesson-practices')) {
-      const body=route.request().method()==='POST'?route.request().postDataJSON():{topicId:'P01',roleId:view.roleId};
-      const topicId=body.topicId;const disciplineId=topicId.startsWith('M')?'matematica-raciocinio':'portugues';
-      const practice={...view,id:'90000000-0000-0000-0000-000000000001',roleId:body.roleId,items:[{...view.items[0],classification:{...view.items[0].classification,topicId,disciplineId}}]};
+      if (route.request().method() === 'POST') {
+        const body = route.request().postDataJSON();
+        expect(Object.keys(body).sort()).toEqual(['commandId', 'topicId']);
+        practiceTopic = body.topicId;
+      }
+      const topicId=practiceTopic;const disciplineId=topicId.startsWith('M')?'matematica-raciocinio':'portugues';
+      const practice={...practiceView,id:'90000000-0000-0000-0000-000000000001',topicId,items:[{...practiceView.items[0],classification:{...practiceView.items[0].classification,topicId,disciplineId}}]};
       // Preserve topic on the initial read used to recheck access.
       return route.fulfill({status:route.request().method()==='POST'?201:200,json:practice});
     }
@@ -70,8 +78,8 @@ for (const width of [390, 1440]) test(`prática separada preserva gravação do 
     const nav = page.getByRole('navigation', { name: 'Navegação principal' });await expect(nav.getByRole('button', { name: 'Aulas', exact: true })).toBeHidden();
     await page.getByText('Ir para outra área', { exact: true }).focus();await page.keyboard.press('Enter');
     await nav.getByRole('button', { name: 'Aulas', exact: true }).click();
-    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.getByRole('button', { name: 'Praticar P01', exact: true }).click();
-    await expect(page.getByRole('heading', { name: 'Prática das aulas', exact: true })).toBeVisible();expect(confirmations).toBe(0);expect(creates).toBe(1);
+    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.locator('details.lesson-practice-panel > summary').click();await page.getByRole('button', { name: 'Começar prática', exact: true }).click();
+    await expect(page.locator('details.lesson-practice-panel')).toHaveAttribute('open');await expect(page).toHaveURL(/#\/aulas\/P01/);expect(confirmations).toBe(0);expect(creates).toBe(1);
     await nav.getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByRole('heading', { name: 'Questão 2 de 2' })).toBeVisible();
     await expect(page.getByRole('radio').first()).toBeChecked();release();await expect(page.getByRole('region',{name:'Simulados',exact:true}).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect(writes).toBe(2);
   } finally { release(); }
@@ -98,17 +106,10 @@ for (const width of [390, 1440]) test(`composição mantém critérios e resumo 
   await page.screenshot({ path: info.outputPath(`composition-${width}.png`), fullPage: true });
 });
 for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem criação automática em ${width}px`, async ({ page }, info) => {
-  const root = resolve('..');const known = new Set(Object.values(paths));let created = 0;
+  let created = 0;
   page.on('request', request => { if (request.method() === 'POST' && request.url().endsWith('/attempts')) created++; });
-  await page.route('https://lordbigodone.github.io/concurso-simulator/**', route => {
-    const name = decodeURIComponent(new URL(route.request().url()).pathname).replace('/concurso-simulator/', '');
-    const file = resolve(root, name);expect(file.startsWith(root + sep)).toBe(true);
-    if (!known.has(name) && !name.startsWith('assets/')) return route.abort('blockedbyclient');
-    const contentType = name.endsWith('.css') ? 'text/css; charset=utf-8' : name.endsWith('.svg') ? 'image/svg+xml' : 'text/html; charset=utf-8';
-    return route.fulfill({ contentType, body: readFileSync(file) });
-  });
   await page.setViewportSize({ width, height: 900 });await page.goto('/');
-  await page.getByRole('button', { name: 'Explorar as aulas' }).click();
+  await page.getByRole('button', { name: 'Explorar todas as aulas' }).click();
   await expect(page.getByRole('status').filter({ hasText: '51 aulas encontradas.' })).toBeVisible();
   await page.getByLabel('Buscar aula').fill('interpretacao');await expect(page.getByRole('status').filter({ hasText: '1 aula encontrada.' })).toBeVisible();
   await page.getByLabel('Filtrar disciplina').selectOption('informatica');await expect(page.getByRole('heading', { name: 'Nenhuma aula por aqui' })).toBeVisible();
@@ -116,20 +117,24 @@ for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem c
   await page.screenshot({ path: info.outputPath(`lessons-${width}.png`), fullPage: true });
   await page.getByLabel('Buscar aula').fill('M01');await page.getByRole('button', { name: /M01.*Operações com Números Reais/ }).click();
   await expect(page.getByRole('heading', { name: 'Operações com Números Reais', exact: true })).toBeFocused();
-  const frame = page.frameLocator('iframe[title="Aula completa: Operações com Números Reais"]');
-  await expect(frame.getByRole('heading', { name: 'Matemática 01 - Operações com Números Reais', exact: true })).toBeVisible();
-  await expect(frame.getByRole('navigation', { name: 'Navegação do módulo', exact: true })).toHaveCSS('display', 'flex');
-  await expect(frame.locator('#s5')).toContainText('Estimativa');await expect(frame.locator('img').first()).toBeVisible();
-  expect(await frame.locator('img').first().evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
-  expect(await frame.locator('html').evaluate(el => el.scrollWidth <= innerWidth)).toBe(true);
+  const article = page.getByRole('article', { name: 'Conteúdo da aula: Operações com Números Reais' });
+  await expect(article).toBeVisible();
+  await expect(article.getByRole('heading', { name: '1. Números e sinais, sem decorar primeiro' })).toBeVisible();
+  await expect(article.getByRole('img')).toBeVisible();
+  expect(await article.locator('math').count()).toBeGreaterThan(0);
+  await expect(page.locator('iframe')).toHaveCount(0);
+  await expect(page.locator('h1:visible')).toHaveCount(1);
+  await expect(article.getByRole('link', { name: /^(← Índice V3|Gabarito e revisão|Próximo módulo →)$/ })).toHaveCount(0);
+  const before = page.url();
+  await article.getByRole('button', { name: '2. Frações e decimais: partes do mesmo tamanho' }).click();
+  await expect(article.locator('#lesson-M01-s2')).toBeFocused();expect(page.url()).toBe(before);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: info.outputPath(`reader-${width}.png`), fullPage: true });
-  await frame.getByRole('link', { name: 'Próximo módulo →', exact: true }).click();
-  await expect(frame.getByRole('heading', { name: 'Matemática 02 - MMC e MDC', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Praticar M01', exact: true })).toHaveAccessibleDescription('Assunto da prática: M01 — Operações com Números Reais');
-  await expect(page.getByText('Os links dentro do material não alteram essa seleção.', { exact: false })).toBeVisible();
-  await page.getByRole('button', { name: 'Praticar M01', exact: true }).click();
-  await expect(page.getByRole('heading', { name:'Prática das aulas',exact:true })).toBeVisible();
+  await page.locator('details.lesson-practice-panel > summary').click();
+  await expect(page.getByRole('button', { name: 'Começar prática', exact: true })).toHaveAccessibleDescription('Assunto da prática: M01 — Operações com Números Reais');
+  await expect(page.getByText('Para mudar o assunto da prática, escolha outra aula no índice acima.')).toBeVisible();
+  await page.getByRole('button', { name: 'Começar prática', exact: true }).click();
+  await expect(page).toHaveURL(/#\/aulas\/M01/);
   await expect(page.getByRole('heading', { name:'Questão 1 de 1' })).toBeVisible();
   await expect(page.getByRole('button', {name:'Encerrar prática'})).toBeVisible();expect(created).toBe(0);
 });

@@ -20,7 +20,8 @@ public final class LocalDeliveryFixture {
         try(var db=new AttemptDatabase("jdbc:postgresql://postgres:5432/concurso_simulator","concurso",password)) {
             UUID user;
             if(args[0].equals("seed")) {
-                assertThat(db.jdbc.queryForObject("select count(*) from app_user",Integer.class)).isZero();
+                assertThat(db.jdbc.queryForObject("select count(*) from app_user",Integer.class)).isEqualTo(1);
+                assertThat(db.jdbc.queryForObject("select owner_id from admin_registration where id=1",UUID.class)).isNotNull();
                 var json=SubjectReviewOperationalFixture.JSON;
                 var fixture=json.readTree(LocalDeliveryFixture.class.getResourceAsStream("/mockexam/v5-creation.json"));
                 var snapshot=fixture.get("snapshot");var item=snapshot.get("items").get(0);var source=item.get("question");

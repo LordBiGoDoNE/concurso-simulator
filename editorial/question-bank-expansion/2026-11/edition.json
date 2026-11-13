@@ -1,0 +1,70 @@
+{
+  "format": "question-expansion/v1",
+  "edition": "2026-11",
+  "sources": {
+    "path": "sources.json",
+    "sha256": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356"
+  },
+  "inputs": [
+    {
+      "path": "simulado/portugues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "SIMULADO",
+      "discipline": "portugues"
+    },
+    {
+      "path": "simulado/matematica.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "SIMULADO",
+      "discipline": "matematica"
+    },
+    {
+      "path": "simulado/informatica.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "SIMULADO",
+      "discipline": "informatica"
+    },
+    {
+      "path": "simulado/administrativo.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "SIMULADO",
+      "discipline": "administrativo"
+    },
+    {
+      "path": "simulado/escolar.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "SIMULADO",
+      "discipline": "escolar"
+    },
+    {
+      "path": "pratica_aula/portugues.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "PRATICA_AULA",
+      "discipline": "portugues"
+    },
+    {
+      "path": "pratica_aula/matematica.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "PRATICA_AULA",
+      "discipline": "matematica"
+    },
+    {
+      "path": "pratica_aula/informatica.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "PRATICA_AULA",
+      "discipline": "informatica"
+    },
+    {
+      "path": "pratica_aula/administrativo.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "PRATICA_AULA",
+      "discipline": "administrativo"
+    },
+    {
+      "path": "pratica_aula/escolar.jsonl",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "purpose": "PRATICA_AULA",
+      "discipline": "escolar"
+    }
+  ]
+}

@@ -1,0 +1,4955 @@
+{
+ "format": "question-expansion-math-blind-check/v1",
+ "checkedOn": "2026-11-13",
+ "responsible": "Claude Opus 5.5 — seis subagentes em contexto próprio, sem acesso ao gabarito; resolveram cada enunciado vigente (Python/Fraction para cálculos) e o coordenador comparou a letra escolhida com a alternativa correta do pacote final",
+ "items": 617,
+ "agree": 617,
+ "statuses": {
+  "AMBIGUOUS": 1,
+  "SOLVED": 616
+ },
+ "notes": [
+  "admin.2026-11.M11.p.inss-2022-guar-q46: item interpretativo CEBRASPE (sentença aberta) marcado AMBIGUOUS pelo verificador; letra escolhida coincide com o gabarito definitivo oficial.",
+  "Oráculos anteriores (488 itens) ficaram vinculados a fingerprints anteriores às correções r1–r6; esta conferência substitui o vínculo para os fingerprints atuais.",
+  "2026-11-13: 27 itens (camadas r7/r8, achado A1) mudaram só referências/resolução; enunciado, alternativas e alternativa correta conferidos idênticos, vínculo atualizado para o fingerprint atual. As 27 foram também refeitas pelas revisões r7/r8."
+ ],
+ "limits": "Conferência assistida por IA, sem revisão humana; confirma a resposta, não a qualidade de distratores, clareza ou fontes.",
+ "results": [
+  {
+   "key": "admin.2026-11.M01.p.cacapava-profmat-q47",
+   "fingerprint": "0a8000abe99696ce3f15a77cec0cfde0de985f7f04a70fa42cee1609812269ce",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "irracional = decimal infinita nao periodica"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-decimal-finito-criterio",
+   "fingerprint": "3fc26ef4287ce6077975e16f7df440590d554be4a406d3e268dbeec9b11a09fd",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "7/40: denominador 2^3*5"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-divisao-zero",
+   "fingerprint": "90c79f80c4e6324afd533def91c3e1b95232960805a14b480a7c1cfa6a18fb21",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "5/0 indefinido"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-estimativa-quociente",
+   "fingerprint": "8444f81c883e7464e119fbabcaa0d0c051f3ad4d3dfdf2969eaf132b1ac80822",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "101/9 = 11.22"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-expoente-negativo",
+   "fingerprint": "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "(3/2)^2 = 9/4"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-fracao-complexa",
+   "fingerprint": "7de7f27f8f9e5aa7bf67c2072fefcc9c54f434aec6b993d66e37beb2a4efd703",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(5/6)/(1/6) = 5"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-fracao-de-fracao",
+   "fingerprint": "06fdd28c6bbc22e7a8c243d300104578f9f5ab08ce473595df559953ed92c8fb",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "x/(2/5)*(2/5) = x"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-intervalo-produto-zero",
+   "fingerprint": "48bb0d1d2b55ad2305aa4af4f8a8dc8a00e0679d1064d207b285b751464c603e",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "raizes 2 e -5"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-irracional-produto",
+   "fingerprint": "f05d89abe856d47d1b3245c4030d1f1415afc8f4acb0da6cd432d374b25936bf",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "sqrt(16) = 4"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-irracional-soma-racional",
+   "fingerprint": "2c03936bad9f40aff9151d57b3a9721ca54c92fafaf208875a3be3bb30b70092",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "racional + irracional e irracional"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-media-fracoes-limite",
+   "fingerprint": "73ad293f0cbcfaab222cbc586d7fa2e48fc71d588eb1fc05529b348302b79540",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "9/20 = 0.45 entre 0.4 e 0.5"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-menor-inteiro-intervalo",
+   "fingerprint": "25386900010b9c6b81f26dbe46847d0d014f045dd65c2dc0ed2d7d6610236ae9",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "-17/4 = -4.25 -> -4"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-notacao-cientifica-produto",
+   "fingerprint": "0f4feabd00e731ecdd39b84cb348964e5bd1ff891e82f15588b105f8e952dadb",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "6x10^2"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-oposto-versus-inverso",
+   "fingerprint": "801d9cb43229739b3195ba60e1d4ff2c63b564e6cdb005af1f17c92154d8b2c0",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "-3/4 + 4/3 = 7/12"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-ordem-fracoes-negativas",
+   "fingerprint": "e66d46977fc6c97a2e67bd7fb357e0de6455fa54a82ff3b93cf5f6bad6e7163e",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "-5/6 = -0.833 < -0.75"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-periodo-com-parte-inteira",
+   "fingerprint": "ad5afce85d3d86e153c45af9885399f092f47df07d36ed7618117879921165f9",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "2.1666... = 13/6"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-potencia-mesma-base-divisao",
+   "fingerprint": "e9ede8662f33b6b709db2a969104d7ce66053693f6716ffc9bc4b7e79399f096",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "5^3 = 125"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-potencia-sinal",
+   "fingerprint": "a2a3823cade1834d211a7f2e69d50304af9820fc9540b7f09397676fb95c2d1e",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "-(16) = -16"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-produto-conjugados",
+   "fingerprint": "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "5 - 4 = 1"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-produto-sinais-varios",
+   "fingerprint": "dc2f789fdecc01787073fac5ab4451d04dd385ce520fd26f7c5f3b17dc7a7a2b",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "7 fatores negativos -> negativo"
+  },
+  {
+   "key": "admin.2026-11.M01.p.mat-raiz-quadrado-modulo",
+   "fingerprint": "b74c2afa1103dee04db448ecbcf76c4020fa3fcb7409519ad9a6acfc35837042",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "sqrt(x^2) = |x|"
+  },
+  {
+   "key": "admin.2026-11.M01.p.morato-q11",
+   "fingerprint": "082bf82c93256b399c52545285c2c7c88725acbd0a50e2f1b1b6048646f243ef",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3^4/3^3 = 3"
+  },
+  {
+   "key": "admin.2026-11.M01.p.nova-apoio-q22",
+   "fingerprint": "ea2bc570c652baeefa30a1250906f95e11f3851f4cc03f7284019180c5aa465a",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "12*28 = 336"
+  },
+  {
+   "key": "admin.2026-11.M01.p.nova-apoio-q28",
+   "fingerprint": "6a4fe919cdedfa2b9a08f315a81dbb72014f8bbf905a304b1d408e468a239762",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "I, III, IV verdadeiras -> 3"
+  },
+  {
+   "key": "admin.2026-11.M01.p.nova-apoio-q39",
+   "fingerprint": "b3f74f7769560ab810d7c56ebe1379e39ef097d48f3ab25d4748ce68b886a4a0",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "5 na casa das centenas -> 500"
+  },
+  {
+   "key": "admin.2026-11.M01.p.potim-profmat-q17",
+   "fingerprint": "70787e4d9a225eaa7f5d57140bde65b9053b32f7477e9806f372a81eae984337",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "(25/3)/(5/3) = 5"
+  },
+  {
+   "key": "admin.2026-11.M01.p.potim-profmat-q38",
+   "fingerprint": "8586e85b7276f88559d75c130439cc4c25b937bdec1ede8e26e39a1f6d7683e9",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "I correta; II e III falsas"
+  },
+  {
+   "key": "admin.2026-11.M01.p.potim-profmat-q48",
+   "fingerprint": "46767df5eea7fd1be0d2689164a467e001f63177d290993835a9c77f6eb98a6c",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "2/3 < 13/15 < 4/3 < 9/5"
+  },
+  {
+   "key": "admin.2026-11.M01.s.cacapava-profmat-q46",
+   "fingerprint": "70328cba6c82dcc5b62bcef81b49c057eb2e2a326dd0f462f295fd86654d7770",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "definicao de racional"
+  },
+  {
+   "key": "admin.2026-11.M01.s.cacapava-profmat-q48",
+   "fingerprint": "34f9906c2d4a897c0f22e018d0274d9ab580091bc40901f393db840fdf741169",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "3,25x10^-6"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-comparar-quadrado-fracao",
+   "fingerprint": "1a4aaf70c59bfdcfb0fd1e993b82244629c4e656ef893f79fc4ea47184eacddd",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "x^2 < x em (0,1)"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-decimal-periodico",
+   "fingerprint": "64b5a100703e53b48df4934cc0cfa42f90ed310ba2ee5e059f7ac9c462f01c4c",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "1/3 + 2/3 = 1"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-densidade-racionais",
+   "fingerprint": "e048f0e26d83abaf4de3431287b9acb80145e8716db21364f2f84b4e19ab85cd",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "media (a+b)/2"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-distancia-reta",
+   "fingerprint": "a68cf8701766dd687bbea0f6d265a360d2477c8992c10d038cbae8f78f8c02e1",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "7/2 - (-9/2) = 8"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-distributiva-decimal",
+   "fingerprint": "37d3c854d21e6dddba179cdc8b918f5e55b6e41ac403eba080973e32319a04a8",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "12,5*8 = 100"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-erro-cancelamento",
+   "fingerprint": "f370ae4431ec5bb2e58f3bc3ee7a71e1f474a8f14a54c1f8765db66f2d35fa0f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(x+2)/(x+2) = 1 para x != -2"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-estimativa-raiz",
+   "fingerprint": "bb63b5024b62f58585feef4be146f8e83bb558591b5f65ee0e54fbf878422040",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "7 < sqrt50 < 8"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-inverso-negativo",
+   "fingerprint": "af726cde434b58f4d855dbf2fec139b971de9832a8a3f77ad1435810a74ef8c0",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "inverso de -5/3 = -3/5"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-modulo-comparacao",
+   "fingerprint": "e8d2c0c2b27df45e9d33395ad15315fa57c99a81e9de44e65180d9d59c622cb1",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "7 - 8 = -1"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-ordem-inversos-positivos",
+   "fingerprint": "5e27778b7980d67714dcef17c9fab5a6d441d9437bf1da6d1b5784f4cc24260a",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "1/a > 1/b"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-ordem-operacoes-mista",
+   "fingerprint": "9f0bcfcdd767e9141d44e66ed4d0d6efd5e860a3911512f480c1c141b2c8224c",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "18 - 16 + 4 = 6"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-periodo-duas-casas",
+   "fingerprint": "b3cee57e478e5803d4e540302d10eabf5462728d91d7d3ad67b46d5c6869aaf9",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "27/99 = 3/11"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-potencia-de-potencia",
+   "fingerprint": "3c30782926360b7f400ccf43b61af0734604455f661bee080672a04aa41cf27f",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3^6/3^4 = 9"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-potencia-zero-base",
+   "fingerprint": "c39b0135e4d8aa5d2edbd5272a7225412f0f3c82b5581fcdea02988ee28b2496",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "a^0 = 1"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-quadrado-diferenca",
+   "fingerprint": "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "(101-99)(101+99) = 400"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-racionalizar-denominador",
+   "fingerprint": "47be82282ff1a089da2814da479834dc3a24d5d996caf73eb65a43bbe380673e",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "(sqrt3+1)/2"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-radical-simplificacao",
+   "fingerprint": "3b9612a1cd4f8ba07cb59c8830ca7a2dba62faa8fff75b3e5628f1474f2f7d56",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "6sqrt2 - 2sqrt2 = 4sqrt2"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-raiz-cubica-negativa",
+   "fingerprint": "56430ee79e3a7cfc1a5c081b4089f5bb45d3512b8c096392d1828f27a69c465e",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "cbrt(-216) = -6"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-raiz-soma-nao-distribui",
+   "fingerprint": "eb7f2a139704a54eabb9d55c92ef54c731dadeb3e8de59ad191670dc5d8d9d0e",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "sqrt25 = 5 vs 3+4 = 7"
+  },
+  {
+   "key": "admin.2026-11.M01.s.mat-zero-sobre-numero",
+   "fingerprint": "d71e7ca91c5b0be55e7d911084fb51aba0876054a114e2bbfa73c743ad3769ad",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "x = 4 anula denominador"
+  },
+  {
+   "key": "admin.2026-11.M01.s.nova-apoio-q21",
+   "fingerprint": "642ab37de7c2aaa96ca4bc98923606d18226ef14207fd81485d15c49250002f6",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "620 - 48 = 572"
+  },
+  {
+   "key": "admin.2026-11.M01.s.nova-apoio-q24",
+   "fingerprint": "399ee6ba30fd0c0e021bd555fdcbee9d44a0631cf6e3e6ad0a8c73a0bffb30b3",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "impares 11,17,23,29 -> 4"
+  },
+  {
+   "key": "admin.2026-11.M01.s.nova-apoio-q30",
+   "fingerprint": "0e7f92c93684f7dabb51cadb58be5a1d95602bd29c499f5ca3af87f184b302dc",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "124 - 64 = 60"
+  },
+  {
+   "key": "admin.2026-11.M01.s.potim-aa-q14",
+   "fingerprint": "5737e7f710d1cb818c39ddfde526cc14316d4b2e066fd94339d60f8db25cc31d",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "2500*16 = 40000"
+  },
+  {
+   "key": "admin.2026-11.M01.s.potim-profmat-q36",
+   "fingerprint": "98a53a1e6d5a69371f135288cfb3bd457cb96b2735eedcd33a9ef172b4c64ef4",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "34075: unidade de milhar = 4"
+  },
+  {
+   "key": "admin.2026-11.M01.s.potim-profmat-q42",
+   "fingerprint": "6f6299c2dbc9cb2244221ea96ad8f4b6c5b0c97f3e2ac5b941050472f4454469",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "3/4 - 2/5 = 7/20"
+  },
+  {
+   "key": "admin.2026-11.M02.p.cacapava-profmat-q13",
+   "fingerprint": "a5216870f6b5aa916462ce01dffc796813869aac7cae51e9101ec5502d651c66",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "P=30, Q=12 (4*3), MDC=6; demais opcoes violam condicoes ou valor errado"
+  },
+  {
+   "key": "admin.2026-11.M02.p.cacapava-profmat-q45",
+   "fingerprint": "db4c1e2f8274c869483c02e24dce4d70a6001229ebb263b62abacaa0a57d9623",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "(2+1)(3+1) = 12"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-complementar-divisor",
+   "fingerprint": "15511e5d915a3d399d22ac7503952105a9e01a494cd9cdb579f0822c779aff45",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "420/15 = 28"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-comuns-intervalo",
+   "fingerprint": "5ed40e28c99b8a680f3f27e12ddfb0e0ad56f9c19caac3aaa97d96bee070f026",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "MMC 30; floor(200/30) = 6"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-contagem-coprimos",
+   "fingerprint": "ff8bee5aa9486408bd4ad5b86804d5324bd92b71645c0bafd478e399fedf6f82",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "phi(18) = 6"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-divisor-retirar-quadrado",
+   "fingerprint": "0e39a4f51240aa0229edff2e7330f8784d6f72eb04e7996028f81d4cfd0f3024",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "300 = 2^2*3*5^2 -> dividir por 3"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-divisores-comuns-quantidade",
+   "fingerprint": "96d73b644b3345c2fe82562737c73cf935132f0a1d93e5981052f50a6ce685a2",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "MDC(60,84)=12 tem 6 divisores"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-expoentes-mmc",
+   "fingerprint": "c5892588f13f0b81f5c720723240cc1e20f2cdae737ad9687fb21bbf5cf742bf",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2^2*3^2*5 = 180"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-fracao-irredutivel",
+   "fingerprint": "032ca7a7628af07e430046c1be1423574bdaed7bf8123a4ee5eedbeae8444876",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "MDC 42 -> 3/5"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-mdc-diferenca",
+   "fingerprint": "b125983481ac0b83d2447a814dde3565a5acb43ddd3318c47e1faf4a1adda5e7",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "MDC(a+b,b) = MDC(a,b) = 9"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-mdc-impares-consecutivos",
+   "fingerprint": "65f145993df9875059958c8e7891bd9a269877b8d79b4613462a0a345a6ed141",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "impares consecutivos diferem 2 -> MDC 1"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-mdc-um-divide-outro",
+   "fingerprint": "22af092b2d765cee60f209e32c2670bbdf3f760fbfa8f2f57c324b02045c1ad9",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "MDC = a, MMC = b"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-mmc-com-primo-novo",
+   "fingerprint": "f5556f5120b52085c1dd1f2785922c4596a35d95776bde21d8b94ba675a61123",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "p nao divide a nem b -> MMC = pm"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-mmc-mdc-igualdade",
+   "fingerprint": "2d9ad525188faa0c50c1fd98426ca0db964bc26d0a802c97ffda2620fdb517ca",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "MDC = MMC sse a = b"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-mmc-possibilidade",
+   "fingerprint": "2556bb27d05b63e3df17f2cec35c99459ae7b953b522f6a32dad03ad6b62fdfa",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "MMC deve ser multiplo de 8; 28 nao e"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-mmc-tres",
+   "fingerprint": "e3d5f3225d8681265e534358100763b6540bf317bc0203eed6b4ed2a85708414",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "MMC(4,9,10) = 180"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-numero-divisores-impar",
+   "fingerprint": "b8344c247813a31ddc4f8be80c2a27fa9a186b3223a0196fe8da9fefe7736f7b",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "divisores em numero impar sse quadrado perfeito"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-primos-potencias-comuns",
+   "fingerprint": "36e5a464c6784530cbfdd1575b8c8f800f1edd6aadf0702cd31699b88ad3ae83",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "MDC(8,81) = 1"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-produto-divisibilidade",
+   "fingerprint": "929cd3f9b2433a2b8152481d2e2c87607a3578f42fe1b17ae9986858a1ffd3bc",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "MMC(4,6) = 12"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-recuperar-numero",
+   "fingerprint": "e8b0ce8da7b39d6b8949d1b4c12c4db5b1ba87c3b813afbf6182be2e13b88bd0",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "18b = 6*90 -> b = 30"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-restos-diferentes",
+   "fingerprint": "bd8e68198e16ae294b77ac965ecb5daef2609099d7f726ae14718c4473b5d29c",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "N=22: 22 mod 5 = 2, 22 mod 3 = 1"
+  },
+  {
+   "key": "admin.2026-11.M02.p.mat-sincronia-deslocada",
+   "fingerprint": "6e6fa8452bb5b9079d8c8089b4604ffb3b02079f90a6cc780ec603f765858b4c",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "8: multiplo de 4 e 8 mod 6 = 2"
+  },
+  {
+   "key": "admin.2026-11.M02.p.potim-se-q13",
+   "fingerprint": "b595a44510b964058f68609e20de34c239ba3c766c2dceed53b8373eda92443f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "MMC(15,30,60) = 60 min -> 10h"
+  },
+  {
+   "key": "admin.2026-11.M02.p.rio26-agesc-q14",
+   "fingerprint": "4eb0ce9a80876cf4b49e5245c35527098b0a58d967d892f4c04173afa845cfc7",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "MDC(164,256) = 4"
+  },
+  {
+   "key": "admin.2026-11.M02.p.vinhedo-profmat-q42",
+   "fingerprint": "510b13dfa5b876c72a3da2b0d3c186b56b9b405a8d5d3076b31af54d73aa3243",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "181 primo; demais 7*17,7*19,7*23,3*59"
+  },
+  {
+   "key": "admin.2026-11.M02.s.cacapava-profmat-q12",
+   "fingerprint": "ec232316b63ec73336d571e6e73c22fecfcd13df39ff485bf5e7f8fa34a7ad54",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "N = 63 -> 6+3 = 9"
+  },
+  {
+   "key": "admin.2026-11.M02.s.cacapava-profmat-q43",
+   "fingerprint": "2f13f1a1236fbd7fae8e286f398cdee344fd23d8803aca161bfb2f1cf06ea057",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "divisores quadrados de 72: 1,4,9,36"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-contar-divisores",
+   "fingerprint": "92e7e784daacd8a7eff5f3412e4a4cffddd451066c8333b1cd3636010207b858",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "5*3 = 15"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-coprimos-produto",
+   "fingerprint": "0d93f3fbae4e0a4a0ecf88e0a743d2ec94221ebf476fffb7c734a58a098fbaac",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "coprimos: MMC = produto = 210"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-criterio-divisibilidade-onze",
+   "fingerprint": "b9779230377981211aace8b3b140d0a42abc6a83391b8036f110804d265eb7d5",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1221 = 11*111"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-divisibilidade-algarismo",
+   "fingerprint": "293f656758a26cdcad73c16857e342ad6fc92627e5960625e8bed1f7cdc8f598",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "432: par e soma 9"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-entre-divisores-vinculados",
+   "fingerprint": "c027f873845877389c61cdb7a898c9e0a4a3b7717f22a7ff7fa8cdab63c6094e",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "360 = 2^3*3^2*5 -> 40"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-euclides-resto",
+   "fingerprint": "d6dad4f5a6f5766014aeb662601b1217a8a21713b313c73b2d9432c8efdda848",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "MDC(221,85) = MDC(85,51)"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-expoentes-mdc",
+   "fingerprint": "f2d6a8ba1406f3cfbc5c3d261106ac0523f7e8843af6556a33009ffda7f1208d",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2^2*3 = 12"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-fator-minimo-quadrado",
+   "fingerprint": "85958ce450de476dfb32f412d996f73c8ca8e8f3c0a44b8620dfccd218455306",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "72 = 2^3*3^2 -> multiplicar por 2"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-fator-multiplo-minimo",
+   "fingerprint": "d22858be71438654ca4009770ae2149f4ff8269f9f92e8aede55e94b0b3654c2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "MMC(18,24)=72 -> k = 4"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-mdc-consecutivos",
+   "fingerprint": "07072501214db3a1f14c85a6d5d67a5a61f821b949f98feafa0e416f66025853",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "consecutivos sao coprimos"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-mdc-potencia-dois",
+   "fingerprint": "8bba398bc8ff26d555d056d680505d53e349198311388d8355328811328b77e6",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "minimo garantido 2^3*3 = 24"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-mdc-soma-produto-construcao",
+   "fingerprint": "fdc3fd6a1cbc01f7b0518fcd18b7939b0ace5570e76f3e15d9054f4ec60f531b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "10+25 = 35, MDC 5"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-mdc-tres",
+   "fingerprint": "c66f6d3adc0f3b3bda51647e186d5220ea6759ae66df8b8b7ac04ad3d8f6306e",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "MDC(84,126,210) = 42"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-multiplicar-ambos",
+   "fingerprint": "bc99f6b267324d90725934f50728086095836c3fb3a1de7cb788885284a8e7bf",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "3*7 = 21; 3*84 = 252"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-numero-minimo-fatores",
+   "fingerprint": "548e20447a15f4b08731d9dd94207fe44ab639d94fb585f33ae7c921c3f2b05c",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "p^2 menor: 4"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-primalidade-comprovacao",
+   "fingerprint": "e120f60ffe05c8df8a6efc50902ec3d3c297bcba1141cc7ad8688dad60ad60ff",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "sqrt97 < 10 -> testar 2,3,5,7"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-primeiro-acima-limite",
+   "fingerprint": "80b58d6f182a4ea17836af7dd49642782e0070898640d7fb1ee511f9cb950014",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "MMC 24 -> 120"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-quadrado-mmc",
+   "fingerprint": "96e279ed3b53103b92e9652d5d20c9637f0db7360ef176d06ad4a8f209b2f7b0",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "MMC(a^2,b^2) = 30^2 = 900"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-resto-euclidiano-final",
+   "fingerprint": "ae524cea2549d5c8d993522fc1ed56ca85cee69f37c8b28908b0a9002a7882f9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "ultimo resto nao nulo = MDC = 7"
+  },
+  {
+   "key": "admin.2026-11.M02.s.mat-restos-maior-divisor",
+   "fingerprint": "4850afbf5ed7c50ab5ef826b202c1b103b50db4771a09188690d6d5448412c0b",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "d | 60 e d | 84, d > 7 -> 12"
+  },
+  {
+   "key": "admin.2026-11.M02.s.nova-apoio-q40",
+   "fingerprint": "cbb2117e47a9bff7b7b5fb757757cba0ebba93c271b710d264f5571c28f7d7c5",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "30%5=0; 7,9,4,8 don't divide 30"
+  },
+  {
+   "key": "admin.2026-11.M02.s.potim-aa-q12",
+   "fingerprint": "67d54b1169c6fb9eee40b31cae11516b5e46dbc15fdf4495bc9d82031bd0d05f",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "lcm(3,7)=21 min (both at P simultaneously)"
+  },
+  {
+   "key": "admin.2026-11.M02.s.vinhedo-profmat-q13",
+   "fingerprint": "0cfeb54fc9a84cdaf927a16d8ebc90f6823ea05bd8fced13887dd58d3e8b6981",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "(72+120+90)/(6+6+6)=47/3"
+  },
+  {
+   "key": "admin.2026-11.M03.p.cerq25-tes-q13",
+   "fingerprint": "f83cc96cae8aae244bde543bbe4f4660249eed7b2f291001d10af1f8b4daa2fd",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "12*40/30=16 km"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-constante-inversa",
+   "fingerprint": "e3143a4261f7174e3f5743eca69103ee6843c7d5d1d4ab707787c780c8bb3ce6",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "6*14/21=4"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-densidade-massa-volume",
+   "fingerprint": "04db8cbfcd1d25c63b87ece053508654092ba05d26942cfcd371f00f49fca262",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "same mass: density inversely ∝ volume -> 5:2"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-divisao-com-minimo",
+   "fingerprint": "80e6b8eaf5e635db8cdf32676af88fe72add2471a57b1ce596bec15e4637c3a5",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "k=60: 120,180,300; 300-180=120"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-equivalencia-razoes",
+   "fingerprint": "60d92ca1cb38b04316600dfdbf0cc78c40dd2463e61ffdfff7f638da5fd7c643",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "0.6/1.5=2/5 -> 2:5"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-escala-inversa-medida",
+   "fingerprint": "970b05595a93180a9930953c624db3d742597b9949533db7358943a6708bcdde",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "4*50000/20000=10 cm"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-escala-reducao-sucessiva",
+   "fingerprint": "05530d028923775995698e7b6b339c04d033e7192ae314e1f7130799315fe7e6",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "200*2=400 -> 1:400"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-maquinas-troca-eficiencia",
+   "fingerprint": "9f0aba35cafbe02f03bb1e7b458b0161fd527a5a93405492710b1a2c2aaf6bd1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "old=200/(2*5)=20/h; new 30/h; 2*30*4=240"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-mistura-remover-soluto",
+   "fingerprint": "d38b89a3d440818464ad2a2a1f728d5247d3e35d437b4a04eb10cf1b74b754fe",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "8-5*8/20=6"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-objetos-embalagens-multietapa",
+   "fingerprint": "448ccca99f9a3afe5091bbad55425697937c70a45329d5b51c4a99aff4d670a2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "(7*8*15-60)/12=65"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-producao-ineficiencia",
+   "fingerprint": "8ef9d9bf5211ce6fa891c7790cd5597bed81b19232366fa00f6f51d39e55fc23",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "64*3/8=24, 64*5/8=40; diff 16"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-proporcao-algebraica",
+   "fingerprint": "fb17edb09cbe2d43b6fc2cdaaa74d5ff1a5f6e57d843c289f4a276530f0cb2f8",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "10x=6x+24 -> x=6"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-proporcionalidade-criterio",
+   "fingerprint": "f347ebaf8c7f07be49c4d6b6d934a2a92c371c9755cbe4933b5d4d71f550b3ad",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "y=3x fits all pairs"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-razao-apos-adicao",
+   "fingerprint": "9e7667634090090ae51a884703307e69a78b78c84e64b85b237b5f2cb6327423",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(3k+5)/(2k)=2 -> k=5; 15+10=25"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-razao-area-semelhante",
+   "fingerprint": "3f0432af29209f9f93becc4471e0e996c80697da9435b182819d69e8d29c253a",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "(2/3)^2=4/9"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-razao-total-complemento",
+   "fingerprint": "b68af6ef005e721ce1eb97d84be37038bfa86ee3be71a4bc0ce7216c37277092",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "50*3/10=15"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-razoes-diferenca-produtos",
+   "fingerprint": "ae29a93d6741b29c18b8ec686f50e56bffbae4ba8cf3d88ec2151018b8ad57b2",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "(a+b)/c=(3/4+1)*(2/5)=7/10"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-razoes-encadeadas",
+   "fingerprint": "15e193f2ce2ae3e0f14e80bbc438e944145c15ecbed6b5cfd5b1f1ead72672e5",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "A:B:C=8:12:15 -> 8:15"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-reparticao-apos-reducao",
+   "fingerprint": "7cda3dd6b55c2b9416b9bb7a3161cdd253090d37dbb25e255081a27623052937",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "2k=250, k=125, total 8k=1000"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-tempo-mesma-distancia",
+   "fingerprint": "96fc7200e45a068b46bacae4848a5465831df17a4750f7cd8043076219ca65b4",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "t∝1/v: 60:45=4:3"
+  },
+  {
+   "key": "admin.2026-11.M03.p.mat-velocidade-media-percurso",
+   "fingerprint": "9499f9fcd1941649f2ad7457ff94e2c60ceb04c30ba7025888c80c9eed9e4038",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "harmonic mean 2*30*60/90=40 km/h"
+  },
+  {
+   "key": "admin.2026-11.M03.p.pcdf-2021-basic-q46",
+   "fingerprint": "a50859dd95907a4a32967dc4053d9b0623016cbe04fac21150a3e9b5fd797af6",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "total=C(r,2)+m(r+m-1), not k*(r+m) in general -> Errado"
+  },
+  {
+   "key": "admin.2026-11.M03.p.varg25-sup-q17",
+   "fingerprint": "df11e504e24170817cbed584663b1342fe4a3b54f63f1e9d7cc82e9a98e86e0b",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "9000/500=18 cm"
+  },
+  {
+   "key": "admin.2026-11.M03.p.varg25-ti-q15",
+   "fingerprint": "507f2506d884de296233483b561df60468308d953132715bf3ac8646e5b13ccb",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "10*(1800/1500)*(6/4)=18"
+  },
+  {
+   "key": "admin.2026-11.M03.p.vinhedo-profmat-q15",
+   "fingerprint": "d2984870f3cc15a71b80b73bf226226c930ce1e306a7a0fec27f0de35aac137f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "5*60/20=15 mg"
+  },
+  {
+   "key": "admin.2026-11.M03.s.amparo26-dir-q15",
+   "fingerprint": "03b35b5f3b3195d9562420d245aed3e892a2921d807223e80f3a13e2e8bdda24",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "min(1.8/3.2*80, 1.5/2.4*80)=min(45,50)=45"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-composicao-materiais",
+   "fingerprint": "dd4de767a4c9a6e23ea11d4c79248a53307690acd3d8bcd67c445725cb54bf31",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "10kg: X4,Y6; +4X -> 8:6=4:3"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-constante-direta",
+   "fingerprint": "86f5aeadc18cc09b9cccd441fd1c675f7f6f74ca8c14376afee6da1684787cd8",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "18*12/8=27"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-consumo-com-tarifa-fixa",
+   "fingerprint": "d0df7b1f8633876dd5d25c726df11f8c006e5d674a2b30b515b5d206958927b9",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "18+4*6=42"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-custo-unitario-lotes",
+   "fingerprint": "eefb86574105fa1e07844594e05f7a31739b70e85ed28586a07471ff41e4302b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "96/12=8, 105/15=7; second R$1 less"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-divisao-inversa",
+   "fingerprint": "f628f4cfab8b763423f7cab8b49e2c355a476e30eff37973d2cd9bf2a39e35a5",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "parts ∝3,2: 660*3/5=396"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-engrenagens-dentes",
+   "fingerprint": "48f8e81f4f54a35f70b438b924e1b315d88f26de7a38eead5cc0d9ea644d1d07",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "10*24/40=6"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-mistura-duas-concentracoes",
+   "fingerprint": "7453ffb32efa16893315c63f496696ee029fb1a8a634dcdd0bd36239111c6b00",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(0.8+3)/10 = 19/50 -> 38%"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-mistura-substituicao",
+   "fingerprint": "774cec8dab73c79d409e35d5095be92c4c2e5bab8a854e5505c56ed167fbbde1",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "salt 6*15/20=4.5; 4.5/20=9/40 -> 22.5%"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-mistura-volume-desconhecido",
+   "fingerprint": "6f605050a3597033cc378b62be2d7fadfe902fb264fdd0bc2ee9e1d495f8814f",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "6/0.15=40 L"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-produtividades-distintas",
+   "fingerprint": "a1915bd89f201a1cd4fb5cbb2af19d08d4ffcc846a5e6fef9432a792b53b9097",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1/(1/6+1/3)=2 h"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-proporcao-perda-constante",
+   "fingerprint": "3ec2103ca3cfc2d9876608b9014ebaf328553ac8b6c17a5d973226c5cfbb7c40",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(15-3)*10=120"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-rate-comparacao-cocientes",
+   "fingerprint": "350046162d8f59fdea0d867d3eec5a041db8077a70a026e3bf5692caee9b59fb",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "3/h vs 4/h -> 3:4"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-razao-fracoes-todo",
+   "fingerprint": "cffc2fad026addca2ba3f5989cac96cb23b0319c5caac9596eee84488a4563c4",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "green 3/5 : blue 2/5 = 3:2"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-razao-producao-apos-defeito",
+   "fingerprint": "0fde137559226607b3b61f7b6b2578cf27d4e214a58b4fda82cad9daf390e228",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "40*20=800"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-reducao-equipes-horas",
+   "fingerprint": "4711ba82ac4ecf94ec9943323e25f35b9da03a46b1763fc514b86f236151a9af",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "(72-24)/6=8"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-reducao-funcionarios-compensa",
+   "fingerprint": "79e665eb494e253bde2a115eb5839199eebfc4da759f0c4570c084c7fbfbf103",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "8*9*5/(6*6)=10"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-regra-tres-tempo-parcial",
+   "fingerprint": "bfa625398976a16a9e8950d3274e7512d5003f9506d996f3044c9d28771ee191",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "6/(2/5)*(3/5)=9"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-sombra-proporcao",
+   "fingerprint": "61524cd3cdcfcff1f9225fc8349592688d503a31c13bff1418574bac931b4706",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2/1.5*9=12"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-torneiras-com-vazamento",
+   "fingerprint": "d0cfcd28d2b249d5f6b5bf9a5d548ad0f73176e879946735941b2b6833f0eaab",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1/(1/6-1/12)=12 h"
+  },
+  {
+   "key": "admin.2026-11.M03.s.mat-trabalho-folgados",
+   "fingerprint": "33e56691eb8f5978bde615e5714f8b088d46f7dcc1c3a9a63b0620c9387e9df8",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(96-3*6)/4=39/2 h of full team (4 ppl)"
+  },
+  {
+   "key": "admin.2026-11.M03.s.morato-q14",
+   "fingerprint": "f9827955dc379304235b721ddd3e59b9380f851139ee6fba94de743969ca6359",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "700:600=7:6"
+  },
+  {
+   "key": "admin.2026-11.M03.s.pcdf-2021-basic-q45",
+   "fingerprint": "94a932512f4391ae11b891d052c48100b3d62071f39f2ffec153e0d6df4b4a7e",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "boy-girl greetings=r*m; for fixed m it is m*r, proportional to r (CESPE functional reading)"
+  },
+  {
+   "key": "admin.2026-11.M03.s.potim-profmat-q16",
+   "fingerprint": "005af4c260e5b3fba2acb746ba097505099287a8df684791cc724a850ee4b2fa",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "40:10=4:1"
+  },
+  {
+   "key": "admin.2026-11.M03.s.varg25-cont-q18",
+   "fingerprint": "758ac7fc2e0c94277bf29072847c1f223a670265bfa561acbcb0c12b4667c9b4",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "5*(720/360)*(6/12)=5"
+  },
+  {
+   "key": "admin.2026-11.M04.p.cacapava-profmat-q16",
+   "fingerprint": "b29082ca542770080bf440520b51de4ee1484a8210bd735d69f8962cd875eb06",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "2700/90=30 boxes>25: 30*198*0.92=27324/5"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-capital-duas-aplicacoes",
+   "fingerprint": "992a3955c53f922568145b9efb940c59453001b41cd1ceb064bd10ee1c794354",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "1000*0.06+2000*0.09=60+180=240"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-comissao-faixas",
+   "fingerprint": "ac95bc576412250217942216f481775f920dd1fd91d669b75f6ec7d8c4ada9be",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "0.05*2000+0.08*1500=100+120=220"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-desconto-valor-anterior",
+   "fingerprint": "8a4738e3a22f55de6b08ee100ae804b5778181d2ccba878964358e002776c742",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "P=36/0.12=300; final 264"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-descontos-sucessivos",
+   "fingerprint": "3d356dffcd5ad9de063de28e730c3d95478ff9eb92122fe0b67cd34909200c67",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "1-0.9*0.8=0.28"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-diferenca-percentual-duas-bases",
+   "fingerprint": "979b83d602cdc7b0cd9537e684ca2c44242a049b4684a94bda184275ea6dd67f",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "60/40=1.5 -> 50%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-juros-com-capital-encontrar",
+   "fingerprint": "818ecb0c440ed2b40403ef8ed2a94c3728c4ba0440cdd31af888c43139b496d7",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "2300/1.15=2000"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-juros-dias-comerciais",
+   "fingerprint": "1a42de3afd8f545975284f73b5aa030769101e0b815331a2ad8dc02aa8104839",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1200*0.02*1.5=36"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-juros-parcela-capital-extra",
+   "fingerprint": "7184e0f9319158f5ba033034ed2906176c528d5616ea7512cb8bdba48bf24f48",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1500*(1+0.06)=1590"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-juros-tempo-para-dobrar",
+   "fingerprint": "83cedcb12aff5338e33897d829edbd9bbb249f72bac71263d86973055e38595c",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "1/0.025=40 months"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-lucro-receita",
+   "fingerprint": "3bf831183612d21288e09543526ea6892f2502cc7a4d0dcd6c930558a979f906",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "20/100=20%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-participacao-apos-crescimento",
+   "fingerprint": "ae70807188c942ee4c6c3562baafc5a0af4e3904a82a90ed70bcdb204ef468b8",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "80/400=100/500=20%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-percentual-maior-menor",
+   "fingerprint": "8239d64594bf723ab1fa4eff449761caa13c33b4cd4f3af0c790c3906c91e1ae",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "(1.5-1)/1.5=1/3 -> 33 1/3%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-percentual-salarios-desiguais",
+   "fingerprint": "82053a0bda61fcbcc790844138b10a263bdcac60646a7b9e4225049fbb0a31d0",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "300/1000=30%, 300/3000=10%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-porcentagem-restante-duas-etapas",
+   "fingerprint": "28071f075b665d1176407fe3fbc276b704d46e1e25fcb513894e7ca527d9f860",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "0.9*(2/3)=3/5 -> 60%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-porcentagem-total-misto",
+   "fingerprint": "7e37d6aed2dfd260c17d02ce9df30c54ea9e84f1d98ecf4c9c2c679e89a64bfa",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "38/100=38%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-prestacao-vs-total",
+   "fingerprint": "e293d06ef4dd1b0692eb968ab76aeb9abd3dc743563e2ee5d8370193a8010986",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "(300+660-900)/900=1/15 -> 6 2/3%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-reajuste-teto-minimo",
+   "fingerprint": "293f7aab30e9f65a95cb2f33f2af10f6a4f6baa36370f14a1392106292de0d9f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "8% of 1000=80<120 -> 1120"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-reducao-perimetro-area",
+   "fingerprint": "a662c751fe7c9b984ed93ad4482b2c422f32f46b6c95c495518ce8b75d4f2526",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "sqrt(0.64)=0.8 -> side -20%"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-taxa-contribuicoes-soma",
+   "fingerprint": "2c10e282f0765e783436b668a337faeccf912811f24b903f474775d84a545271",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "18000/0.20=90000"
+  },
+  {
+   "key": "admin.2026-11.M04.p.mat-taxa-total-variacao-nula",
+   "fingerprint": "d684a78c0c9af7ceb5364f35cec2be599b2c0aa62ce0380b7794d5d6ba3a8a41",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "1-1/1.32=8/33"
+  },
+  {
+   "key": "admin.2026-11.M04.p.potim-aa-q13",
+   "fingerprint": "724d16387657cc0bfa2faf5d507414a97bc0a9f9caeea6f1d28057ef562dc4d6",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "200*0.85*0.6=102"
+  },
+  {
+   "key": "admin.2026-11.M04.p.potim-profmat-q19",
+   "fingerprint": "32a1ffe2d25900d16b97f63e4cacfdfdaf268dc50ee50243bf7a93ac255a9406",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "5000*0.03*6=900"
+  },
+  {
+   "key": "admin.2026-11.M04.p.potim-profmat-q47",
+   "fingerprint": "3fb708d4ad9806563fc817e63f3c60835ca649a360e554217a00131600228e08",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "200/0.8=250"
+  },
+  {
+   "key": "admin.2026-11.M04.p.vinhedo-profmat-q16",
+   "fingerprint": "1869372276707bfc08c7e374a55938bb8069962963182f91df1e6c0242574568",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "0.15*25,000,000=3,750,000"
+  },
+  {
+   "key": "admin.2026-11.M04.s.cacapava-profmat-q14",
+   "fingerprint": "4c0f37a8ff1df934c23e3c7040c621ef87b794d8963432a9a278f9b449af6760",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "Danilo 189, Samuel 210; diff 21"
+  },
+  {
+   "key": "admin.2026-11.M04.s.cacapava-profmat-q20",
+   "fingerprint": "5d171eeba4e12cd17d36b4c914e94af4ca186ee697944c76e23a1d08e52916c4",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "Ariane 240000; K=60000; 60000*0.1*t=180000 -> t=30"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-aumento-e-volta",
+   "fingerprint": "44843112c4eb796d3ff5f295fd8da544b0e3838c354d686859ea40996c72ec81",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "1.25*0.8=1"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-desconto-ou-valor-fixo",
+   "fingerprint": "2a42bbfde563eb91f9ce8ad22d223d1e77a83c9791c3e23c705bde241e488161",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "15% of 180=27; fixed 30 is 3 more"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-desconto-receita-fixa",
+   "fingerprint": "52cffe2ee8e4b881b4d7edd0ee5075f27758dfbde6772315761f20c61822a80d",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1/0.8=1.25 -> +25%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-erro-percentual-medida",
+   "fingerprint": "8308de879f7799877461a18fc52faa819beb528e688b09c29566d4b7114a8b1a",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "10/250=4%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-estoque-perda-base-remanescente",
+   "fingerprint": "1ac82cb85c1e4cd9ecdb6fa531a7f3325c1ca45001091fbe2ee506041b7ce523",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "0.75*1.2=0.90"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-imposto-embutido",
+   "fingerprint": "56b32951aa3daf494b8a7e2088e2683924b6de35e022956610c954f60d7922bd",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "120/1.2=100; tax 20"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-inflacao-salario-real",
+   "fingerprint": "ce2379e9d7546a8121f109f4d6c16eca2bd786124995c3b1533fbca05f215489",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1.1/1.25=22/25 -> -12%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-juros-compara-prazos",
+   "fingerprint": "e358f018daf0f2ad6010ad46b9b85a893bdafbf2fd577c95fb1d52785af2f8f9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "12% = 12% equal"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-juros-taxa-anual",
+   "fingerprint": "095d96ef5a837f7a4f537c77b4deb5e589979dd932959928dd88b6abd1298afb",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "1.5*12=18%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-juros-taxa-proporcional-dia",
+   "fingerprint": "ccd27c2063468bbbd5fd9bca5e99f7aeccfccb499c67e3cd0eafd0f79b35b5de",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "18*20/360=1%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-markup-margem",
+   "fingerprint": "e1606a1cbc9b8174aa4378faf85295ae5b46654e5776063bad37c11138ec50c9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "P-80=0.2P -> P=100"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-percentual-area",
+   "fingerprint": "0010a07ef9961dc9eb071d84ccf259c186962443cf2fd1d5ad1417251c623282",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "1.2^2=1.44 -> 44%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-percentual-erro-em-cadeia",
+   "fingerprint": "2d77446e4711cb9b2d330afb74c1e356d0c24b3882f38f6c782ef963df881cb0",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "150/1.25=120"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-pontos-percentuais",
+   "fingerprint": "173556469b780e3fd6bb6f79f05ee9c7f371ab5791e5eda3acb6aa12f9eccd53",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "3/12=25%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-porcentagem-por-conversao",
+   "fingerprint": "a92a775eb438d7c0c5317feaca5e02e21d9493e47a2cbba9d8bf7706e63c8a9a",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "7/20=0.35"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-prejuizo-recompor",
+   "fingerprint": "6c156d67ba131fb7b5f14966be63f5d4cbdb07e942f90b0ff64c9ecf78e39046",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1/0.6-1=2/3 -> 66 2/3%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-residuo-percentual",
+   "fingerprint": "6139be21cb855c0c4aae78f13404fb3c3b6325c74db194b7a6a4e51c5b5b04c1",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "900/0.45=2000"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-taxa-a-partir-montante",
+   "fingerprint": "9812d177ad10f9eef961a03606c38bfcdaa47847cb78bbfeb00d5c5eb0dfaa25",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "360/(2000*9)=1/50 -> 2%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-valor-absoluto-de-queda",
+   "fingerprint": "d8eb50c05123bab3cbb14b793e576aba0ac6add31e6ad849fe77d65afbf59a3c",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "75/500=15%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.mat-votos-validos-base",
+   "fingerprint": "56ce8a38a5404885226b1e33fb5ee2dfdaec4a5a9b97e19a0180560639ca46a5",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "450/750=3/5 -> 60%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.morato-q12",
+   "fingerprint": "caa592faa7ee50b7dd6e073e507ff1c72f3c20eab38c6f66b7d0bde7bf6daa8b",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "I 6.6 ok; II 105609/100≠1050; III 3096/5≠620; IV 0.95*1.2=1.14 ok"
+  },
+  {
+   "key": "admin.2026-11.M04.s.potim-profmat-q20",
+   "fingerprint": "f600dde597bec4094345ce2d703635c0ac8918f3169486981bb82a40d3e36010",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "0.84S=0.70S' -> S'=1.2S -> 20%"
+  },
+  {
+   "key": "admin.2026-11.M04.s.potim-profmat-q46",
+   "fingerprint": "273d72df0b340729e084b1eb302347acc4b4bbe68ff09643e8314c658a2e2d46",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "90*0.9=81"
+  },
+  {
+   "key": "admin.2026-11.M04.s.potim-se-q11",
+   "fingerprint": "b52ae1df271f4a00a1e4cba4664f4f76e06f0419b19a82ea556c9676e0926ca1",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "3/1.15=260.87%"
+  },
+  {
+   "key": "admin.2026-11.M05.p.cacapava-profmat-q36",
+   "fingerprint": "56827c68d27003e3129f08d6238619b985ffcb0b05229427fcd6dfc7c58caf85",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 3.2"
+  },
+  {
+   "key": "admin.2026-11.M05.p.cerq25-tes-q14",
+   "fingerprint": "4133c4a5a1a545f7e58b7fb6d7e67ceeb0b08e80d5cf57ef4708ce1772842a5f",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "computed 32.5"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-comparacao-adicionar-media",
+   "fingerprint": "c0f2b5a8bc2a6adaceed928ba87699f42d133c82d646a7337dcaf42dced46074",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-corrigir-registro",
+   "fingerprint": "03ede6d3501fe65ba21d45a6d4322a0349b92a7332d9849299d1ab125cd57eb1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 22.0"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-custo-medio-compra",
+   "fingerprint": "7cd69dc869c53f1a70146f6fead97f3b1527c3f423aa876894a1110477b8d2de",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 15.0"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-desvio-em-relacao-media",
+   "fingerprint": "19ce56db94b0e596ae6bd8f0e2e6f36a484db28165d48e0f1b72e51f6f9ed342",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 13"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-duas-medias-mesmo-total",
+   "fingerprint": "7d1b84f9651d1c8f06252b38a8797da0c1a96a13dbb4060d9dbea721acca149c",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 1.3333333333333333"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-duas-notas-vinculadas",
+   "fingerprint": "c8e62c2c89a9c022c6198ec8cd527e9d22144583c7a9675a41a4bc2ffabb19a1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 6.0"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-limite-maximo-media",
+   "fingerprint": "3653d700de3abe159d64c7b32c37ea1b2b0713b11f6a52c00b2e7e9ceda0c77a",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 8.5"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-cargas-horarias",
+   "fingerprint": "61e5f1eb8a4391b793fa21bddde814b92097f5344ec6bdf7f7f1b30aae0bc717",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 76.0"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-de-somas",
+   "fingerprint": "0c4a12059b378f3d84e3964a67d83acf49a491ee17829cf292fbe173b88103b4",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 11"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-dos-extremos-insuficiente",
+   "fingerprint": "b550b7228d8869916d95854ac8a58d4f791142a56800bfe5cbad11f7032b5937",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-escalar-negativo",
+   "fingerprint": "1154728b42f5e29f8d1f93449980a0d0298c451daee78af70e5c9264ded5f9d4",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "6*(-3)"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-frequencias",
+   "fingerprint": "e11138415aad9647f97cd271fb0b2acb4b4b7e24ecb18e494bdcfa6f93e7823b",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 4.25"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-grupo-igualacao",
+   "fingerprint": "194253afe94b749369ff0943db13d17a4e8b6d05274237cd8ed2080ae66b4f8e",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 2.0"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-negativos",
+   "fingerprint": "e97e6a1578511973bb717961cb99fb6f04d054fa701f00ad269624fdd0928ca2",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 1.0"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-pesos-dobrados-parcial",
+   "fingerprint": "7a056931d27389c84d66e7bc1132ddb2e6a938a8f46f13fd6442ee516606ebef",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 1.0"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-pesos-escalados",
+   "fingerprint": "6eea504ee47e473c3e52fee61a81e9739ba029f5beea97249c60b0ffc87787b6",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-media-pesos-inferir-razao",
+   "fingerprint": "26d8b60a12d9ae185de17fe6861dbf5608b497bb47e08ddc0a56c33192d63674",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "5w1+11w2=9(w1+w2) => w1:w2=1:2"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-nota-minima-com-peso",
+   "fingerprint": "521034e86af1fd66f6e4758b1d1fbbcdb6187b5b54f9c782688bfbec067643b8",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 9.5"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-peso-percentual",
+   "fingerprint": "66508f8381d0d50929e88ee1441b50e50f870d25c8cb6aec1f6e537cba30b591",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 7.1"
+  },
+  {
+   "key": "admin.2026-11.M05.p.mat-substituir-termo",
+   "fingerprint": "06fea88866ff194ae231d8a78005532417b3ec9f6735b0266bced457f4072ebc",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 16"
+  },
+  {
+   "key": "admin.2026-11.M05.p.nova-se-q14",
+   "fingerprint": "935b580cc9a58bfc75d8f5675de5d21b5b3e14a2a13fd9b639c42ae4571ac599",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 8"
+  },
+  {
+   "key": "admin.2026-11.M05.p.potim-aa-q11",
+   "fingerprint": "32a7bb60e13c525e32a1e78d18c4b83eac9729206bf224a4027bede178e6c3ea",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 180"
+  },
+  {
+   "key": "admin.2026-11.M05.p.tai26-cont-q15",
+   "fingerprint": "fce888ad3ce0187bd8730c706c3bc7e60254771e6a5d390b4a74ff820817fd6a",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 150.0"
+  },
+  {
+   "key": "admin.2026-11.M05.s.cacapava-profmat-q18",
+   "fingerprint": "f57873aceae1e457521d15a558f8ddde659c0e78d123bb0a0da8b2aedaf5c80f",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 13.5"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-alvo-inclusao",
+   "fingerprint": "c71aedaf51a7983b0403046032d8f1897729b3c8a72f233ba2e6893f65a13ba3",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 23"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-arredondada",
+   "fingerprint": "09c3a13ad1f7623fd4c692b167c49ba86b30c78f0e552d42d6f4531ac1783dfb",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-de-produtos-limite",
+   "fingerprint": "c0d98e7f71902b397630d82362c6249340c1aed47c6f1444d64c78a4dbdfa4a1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-desvios-assimetricos",
+   "fingerprint": "bf15ccd6b1a0ee15130c89966c5cf22d41ce0691ad1190b583b0c5630aa12d24",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 49"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-incluir-par",
+   "fingerprint": "71cdea8e424be71ef8ab6c94861cb04e2947418a8eee160cc3a6a510ddf4f252",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-mudanca-constante",
+   "fingerprint": "faa9aa0c92fe779ed06184b1b2949d8ba5ea27fc033c8b8becd6b106e686d1a6",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 22"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-multiplicidade",
+   "fingerprint": "1d670781f4f83e73f266993e2b83000d1c0fb7f741b4053626959d9c40062a00",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 9"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-notas-descartada",
+   "fingerprint": "4a9db298b6ad7f375aea70bbb70fa7df9b2a3098e8a0d585f5b5b200950ce055",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 8"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-pares-simetricos",
+   "fingerprint": "18e50abb9763596620db8b5c5e2a3a1b533c8208fd97911b12cff89670d53ca9",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 11"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-peso-zero",
+   "fingerprint": "2936cfcf1d56e25158e582b9dfb9ad9f2f3c6b6b954da9e4ea084fd267f403e5",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 7"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-ponderada-intervalos",
+   "fingerprint": "3198aa836ed0f39c4cbc2eae68bde33e934908a4db998bc87fba312549eeeb37",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 11.0"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-precisao-dados",
+   "fingerprint": "7995325d2f42644a0aba9fa6d6c8b3750c93c7d31cdfcbce67c89de32b8f1319",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-sem-valores-individuais",
+   "fingerprint": "fe53189a50401d1f633fe7bcfb16d694ba8caa65e45882651c129c62b8ec8317",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 17.0"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-semestral-pesos",
+   "fingerprint": "0fbae0e659230164badb6003c7b977f060ef0136a85a4913119ce78dbd52ca2e",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 8.0"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-media-zero-desvios",
+   "fingerprint": "daa9c7669bf54275972a084bcaae9e25e6ed3551b386e4fc29db70b958b2ef64",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 0"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-medias-dos-grupos",
+   "fingerprint": "10a17ec0b74b5a28dd86ff1db9bcd3887eb9c4564b93aadd2b192e06c2c91cb6",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 7.6"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-numero-termos-pela-media",
+   "fingerprint": "e591e6ff88f94ab7f63fcf0b58b19bb30c5a40f630ed6e9e62dc4ede121d8155",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 5"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-peso-desconhecido",
+   "fingerprint": "b9c634a26ce5d1d720789ebb8bbc4a644d42fc838be0cf9bb1881390b2482f40",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 4"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-restricao-media-pesos",
+   "fingerprint": "61dfcf2bddf3133005005d4ef666cd5405cfe42a554082d51734a31735c810bc",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "strictly between 4 and 10"
+  },
+  {
+   "key": "admin.2026-11.M05.s.mat-retirada-termo",
+   "fingerprint": "9371ae7b6aadd4ac2e438a852e9791183f9511aed7b83ff8c6031f9794ff1739",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 13.0"
+  },
+  {
+   "key": "admin.2026-11.M05.s.potim-se-q14",
+   "fingerprint": "5f9c8ce3a57fb61ae29ecb5466bfa264227a964d712ef9fc49c3c371872bfa24",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 2"
+  },
+  {
+   "key": "admin.2026-11.M05.s.varg25-sup-q15",
+   "fingerprint": "2b8e3502fcd713091bd2f3c85916693f3d88f3f636e9e080d5ab192a8c7667c8",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "1352/51=26.51"
+  },
+  {
+   "key": "admin.2026-11.M05.s.vinh25-cont-q17",
+   "fingerprint": "950728007f61a4f524656b41ad4b9afacce9594c0f12a2b9893e948f1aa14ba0",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 12"
+  },
+  {
+   "key": "admin.2026-11.M05.s.vinhedo-profmat-q18",
+   "fingerprint": "43c351fd0cf7b837b5c46012d3060d0d81cecff271f434dd6aba7ef80e73eb43",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 9"
+  },
+  {
+   "key": "admin.2026-11.M06.p.amer26-pes-q18",
+   "fingerprint": "d6155ea707748134c47438ccc46e6b38d0a1345ee2f5e1711d94cc2ffb665f98",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.p.cerq25-cont-q19",
+   "fingerprint": "3a419a4a6f47e71ef94745a4ab5e01cce1dedc0ef1eccba7a41db0e30f5a813b",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 50"
+  },
+  {
+   "key": "admin.2026-11.M06.p.garca26-dir-q12",
+   "fingerprint": "8d988f26bbbf9b8e33bef20b7b6647f1aae7842a48917300d063225c3d50c90b",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "x=8,y=3"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-capacidade-assentos",
+   "fingerprint": "2dbb5a0a983f670a152dd957c32cd1e36d1361bce4c9bc87eb3f6cf2895c051f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 9"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-coeficiente-nulo",
+   "fingerprint": "f99f6c1c4b470960824a25f159a634646e6e5c60ba1302ebb502f6d4ce9c8c0e",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-distancias-encontro",
+   "fingerprint": "31a6fc854a65fc8eaab7b3b481eedf04de4ba008751ddedf45bbdfc824d46199",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 3"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-duas-balancas-substituicao",
+   "fingerprint": "a49f8ee87ff190fe36e594f18daa2d20914a80743e738984eecd77f930edf6ee",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed (5, 6)"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-duas-tarifas-encontro",
+   "fingerprint": "ae34aa3a15dfe33898cdc10ef657ddfdd931e6ac0f54cd15dedf2128daeea058",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 6"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-equacao-denominadores",
+   "fingerprint": "40c105c7812fd2391fd10ce67e08e0fec90b4ce1cadb3780900d80e981a91f23",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 6.4"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos",
+   "fingerprint": "4b094b6a729a80f0d02d819133afee01ff6c101449767716eb61a5cd5fc813b4",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 36"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-equacao-impossivel",
+   "fingerprint": "0d2447ff166467fcea7c1327125f475787082542418c5840c032fde5af57c9dc",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-equacao-interpreta-dominio",
+   "fingerprint": "cbf89e93ab90a69981b13eaa0a12bf1f50babd02265694903f77d6221d70a6f6",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-fracao-numero-restante",
+   "fingerprint": "71feef84ad11e1481206cafe3b8e2bc97c561abc3f096a5ce152758590bf7e9a",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 42"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-ingressos-dois-precos",
+   "fingerprint": "f2062e70b9d74a14eda88845ce164d1a0612959ed934d0d53b28729ad28b36c7",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 10"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-mistura-moedas-tres-relacao",
+   "fingerprint": "59d185e57b4c837d8de59bbecffb35e89e24973e3311d68b1d037748d01dd74d",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 4"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-moedas-contagem",
+   "fingerprint": "4691ae37e98491353eaa5e1cfdd81770daedf660ed1a8256baf019999fae9716",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 8"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-numero-algarismos",
+   "fingerprint": "758a3a42c8e46cf02190fad9f281debd0e0116be1e0e40c26664df6df5727db3",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 36"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-parametro-indeterminacao",
+   "fingerprint": "1e2da22d31478e404b6ef69bcda8dc0f23d530620152148a1b4fc46e4e86ca2d",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 8"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-porcentagem-equacao-saldo",
+   "fingerprint": "5535a5d5683f1080c85f5073297c35ba83fdede25dbba89555c256d539961a08",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 135"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-sistema-congelar-variavel",
+   "fingerprint": "aa9b2e24ac22a6a692287156b90dcb5ac63552ef845706403f2559103d591ddc",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 6"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-sistema-proporcional",
+   "fingerprint": "69d5eac91e4da3e9fd886dcfd7841742f74233c4b06f28269ee08436a9a18535",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-solucao-inteira-restrita",
+   "fingerprint": "49a68008ef05c8c7e3f8d496aba5c43a63255911c4bbca0785324fad87311c8e",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 5.5"
+  },
+  {
+   "key": "admin.2026-11.M06.p.mat-soma-diferenca-quantidades",
+   "fingerprint": "f2e623455d47f3960f8730ecc732452b5f2dbd823b17bbe536d3a9f4d4529cba",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 28"
+  },
+  {
+   "key": "admin.2026-11.M06.p.varg25-sup-q12",
+   "fingerprint": "cc27ccb1c8204e5e2a61b8a13dc1335597449e13aac8a55ffd26ddda53f6f5e2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "Ana 37500"
+  },
+  {
+   "key": "admin.2026-11.M06.p.vinh25-cont-q11",
+   "fingerprint": "8dc686fe7f3dfc970b4a21228ec7be2df202a900efb637fab96a8bc264d2e66e",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed (-2, 5)"
+  },
+  {
+   "key": "admin.2026-11.M06.s.cacapava-profmat-q44",
+   "fingerprint": "7d564682a6eca9fc4186a6681c717b9f95e2098acacf4ec527ceb9b7586860e3",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "computed (8, -2)"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-balanca-tara",
+   "fingerprint": "8887d0ca741586e8b0f694ab767ae61c1c7a1e6820ab7c1a0fa0aa93f5d174cb",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 7"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-cabecas-patas",
+   "fingerprint": "444be16681762921781b77f791b0b4c001ebc38cc43b084a3837ef90f664f8ed",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 8"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-calibracao-linear",
+   "fingerprint": "17bdc1b65fabad13891cd59163e36f73bda6d8dc19394efca426b5f36e92dded",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 10"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-determinante-unico",
+   "fingerprint": "67324b397a010c959ad02bfa17cd6ae41e93f52f514722163940b1a5fdf95f2d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-distributiva-incognita",
+   "fingerprint": "6da41871060b5225e86fe08e9709f16f5f628b0fc0a4260cda9a67c3f797dffd",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 12"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-equacao-decimal",
+   "fingerprint": "201e592307990fc06a1427761e1134bb4bd4c9b01bf9dd798e38cf3001b5f6ce",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 6"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-idades-futuras",
+   "fingerprint": "9c9edb71aea3e6c0b18a9f368bc52a0519c08d20c1d39b9f02eac709a9d9ba52",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 8"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-identidade-linear",
+   "fingerprint": "6ca536368d61b1a8414893f75a1ab66150e49aa9e14a4cbc9f11adb6a5469e1a",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-lucro-fixo-ponto-equilibrio",
+   "fingerprint": "9171fe1e333d5149b429584283e353a1515b9cb0c7628e036d827bdc9ad9ac2f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 60"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-media-sistema-duas-condicoes",
+   "fingerprint": "4b05e3e30ba73bbfa72fda61d263582b1c2c541e66ad4e24fc94f283b45d6274",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 25"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-mistura-precos-linear",
+   "fingerprint": "2cb884ebf07d776bdc4844bfd63f4c37446f3b7983205d15fa7064173512db59",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 15"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-numero-inversao-operacoes",
+   "fingerprint": "9a9ec82cd78a7414e7fb04d42f4ba014b52d7137c618253acad0fbd81c99515b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed 16"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-parametro-impossibilidade",
+   "fingerprint": "2b7a39e328b24a24ff9dd8e35ceda26f4f489c114f1df19ac164985d40d79ee2",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "x+y=5/k; k=2 inconsistent; k=5/2 coincident"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-parametro-solucao",
+   "fingerprint": "70af5ae1df1a0a8bfc5eb883c31eab3ff93bc9f2639b1697f5e48f154123ac0d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed 4"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-perimetro-equacao",
+   "fingerprint": "e42c8e54b725a06628292101ff5cae1d4b9faf85a7841d0b264c981a41c98380",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 9"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-perseguicao-diferenca",
+   "fingerprint": "eedc8de7c6212d8273c53969af87dd2e31e55959ac58b7d088c9924b5f0620cb",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 2"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-racional-com-restricao",
+   "fingerprint": "51cd01fb178ec4a2f9a31e8c92e5c2653a4949a0e29a06f17f4616d8b567c87f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 2"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-sistema-eliminacao",
+   "fingerprint": "4916d7140d16d958c207bc748f2bf2ba96e32f6604d8c5ba55d21f7f93a446e9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 7"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-sistema-inconsistente",
+   "fingerprint": "7b884896943b283afc799eab9e156d3ca93f1568202a12f9dc578afbd30a9193",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "reasoning (conceptual)"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-sistema-tres-valores",
+   "fingerprint": "148de3d8897c24a1de1e7f96e57fd1936118b10d672589e45811f2aecddabe96",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed 8"
+  },
+  {
+   "key": "admin.2026-11.M06.s.mat-soma-inversoes-sinal",
+   "fingerprint": "b74839e0d04ae5a9022296ca66015637b6b3f63815bc98e7e6e68af00a636f92",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed 3"
+  },
+  {
+   "key": "admin.2026-11.M06.s.rio26-agesc-q13",
+   "fingerprint": "c1f314918d54f4fcef3d304e8d3339ef7c3f7a8f0a1170a27b0b62ea9ae00e02",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "x=2,y=13: total 4 marcadores, 19 chaveiros"
+  },
+  {
+   "key": "admin.2026-11.M06.s.tai26-cont-q20",
+   "fingerprint": "c880ce5b4db9893880d586c7503646c4d276b6d96ed6876ad0a929bfad125e02",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed (2, 7)"
+  },
+  {
+   "key": "admin.2026-11.M06.s.varg25-cont-q11",
+   "fingerprint": "0322fa5052e38d5404c23101d898260dc63cbbcb06b78f03be1a6255d6001453",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "doce 18/kg, mel 22/kg"
+  },
+  {
+   "key": "admin.2026-11.M06.s.varg25-sup-q14",
+   "fingerprint": "43df723e42b5f36edba21ea6d540c86b8ed3a8977ae3282ed739e7098862e7e9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "p=25 -> 2015"
+  },
+  {
+   "key": "admin.2026-11.M07.p.amer26-enc-q19",
+   "fingerprint": "ef79a8735256d1d301eddf2b7d0c54c3654b93900e75f1b92357b8df5d4675b1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "Historia 11/4=2.75 menor"
+  },
+  {
+   "key": "admin.2026-11.M07.p.amer26-pes-q15",
+   "fingerprint": "8886e03e8c8e0d7b09b7af370070453afdb8f586df2428f37f52b90ad0667828",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "(390000-210000)/2=90000"
+  },
+  {
+   "key": "admin.2026-11.M07.p.fgv-pmsjc24-gcm-q20",
+   "fingerprint": "053df43a7be922d7dd60ab2820857085d0a14d3dfbc57fb786ed8662ed8d4afa",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": ">=2 present 8:24-17:50 = 9h26"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-acumulada-recuperar-classe",
+   "fingerprint": "0599b717e5346d09a1895c13a064621c671f1b85a910f8a44e2d2d5aff0fc21f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-agrupamento-nao-exato",
+   "fingerprint": "c609c3b6be35ac62ad9f37cf8d4b6ddaa276a1fe9310054fe94bd34f6048e16c",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-amostra-generalizacao",
+   "fingerprint": "cd0c7a2d81241a00e0e0f8c22757d07461ff571c35d0a53a84f31e91cddb6850",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-barras-empilhadas-composicao",
+   "fingerprint": "9546a8f65ea5725437a262eccba4b132ffc95a5d35167e72910ab913fbf28126",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-comparacao-taxas-base",
+   "fingerprint": "fefc55c4c638c4cabab39da1e05c86e5eb921d9b467d1f724614079cec598c4c",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-dado-extremo-efeito",
+   "fingerprint": "2c7dc9383178e5fff746a754c81f81fe4cf89d9fa8f38e354c10f6be02c4216a",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-dados-ausentes-denominador",
+   "fingerprint": "8ef89d8fd8cbbd735694386d84b6e101d182ec0883d870fcf43a596874a66ebe",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-dupla-contagem-categorias",
+   "fingerprint": "6388bfa56b4150e3731acd6aa915bbc3ed796f3a7fad06355b4669605b8b616c",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-frequencia-classes-disjuntas",
+   "fingerprint": "2742c53564c42ca5d03517f8618a544b0dd0c7d5140bd86a1ce3e6b299095dca",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-frequencia-de-relativa",
+   "fingerprint": "0c13d64a3348026fb30cb4d373cf1612129d8bd32f6c2d6cb3b9458ad8197894",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-grafico-inicio-cortado",
+   "fingerprint": "1f52e8513a424402b3cf24311413be28e3450c3947f4509efe9c0f481b9a417b",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-histograma-intervalos",
+   "fingerprint": "5b84ba060153c59c5ba23deadef4bf6faffdfc8e8affffc29b32c37b6049c2c1",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-moda-tabela",
+   "fingerprint": "521253f595acb7d83544d2ba8c49df905600c44092ee76c45c304d55e224226c",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-mudanca-unidade-eixo",
+   "fingerprint": "00c72ce38b8303c7a1c216af8739920c1e9416d887d5648806725439e351655c",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-percentual-acumulado",
+   "fingerprint": "c43d721e3bd6580e108b6781a95013d2ca201d57d65c3dca8d08e855647068c0",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-pictograma-meio-simbolo",
+   "fingerprint": "f5c19bde60a6c7489447f433c6821e487d5ef37e3d2b31ffbb081957a01807a7",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-series-variacao-absoluta",
+   "fingerprint": "1e098e3b4624a2c6b760c9ca2d916719719a192367dfaf4aa400656877d62fcb",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-setor-angulo",
+   "fingerprint": "20f5cf887ea7064be9f0889446285cd28384d658536978c7e6d52aefaaf537e2",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-tabela-ordem-classificacao",
+   "fingerprint": "ba8de6d853519f4e225ae35e9ce9b68630814edfee759cc57ae655ae6cf8157c",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.mat-tabela-saldo-fluxos",
+   "fingerprint": "ddb694cf35a49b3cabeb05b77b81bed06c65f399364c9c22645e557691d70491",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.potim25-alm-q12",
+   "fingerprint": "92c65c48fa8c4b7303f882d7590d43330062faa02c96e3ea80c007a6d553bc62",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.p.vinhedo-profmat-q45",
+   "fingerprint": "4c5804bc3a2b29fb064bc64a71ea4b545fc30a496b4fc7b010bb9724b2b4fb0a",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "122/380=32.1%"
+  },
+  {
+   "key": "admin.2026-11.M07.s.fgv-canaa25-ase-q20",
+   "fingerprint": "b17cb8383ab10ea0b0754bbd2f6581cf9bf9b07101455eb10eb7f91177266b74",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "medians A19.5 B14 C22 D19.5 E21.5"
+  },
+  {
+   "key": "admin.2026-11.M07.s.fgv-nav26-ptna-q30",
+   "fingerprint": "e3006bdf665ec3694f5eb19031490fbc502863cc90592ab2fb72a3709c47f594",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.fgv-pmesp25-sd-q32",
+   "fingerprint": "4ef0cb5d9337d3de7eae0bd9968da1f0cf0204e8caef328e8f11008ab921fba3",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "mean 88.71; 5 days above"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-amplitude-tabela",
+   "fingerprint": "3bdff806ffe782bee9871ad601f02edfd2ddac4a642c191c8e4d675feefa905b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-barras-comparar-diferencas",
+   "fingerprint": "9529d7f6fb15946f53536dccd484787cc31ce235ccdcf24d91b02d80fa8dd3c4",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-barras-empilhadas",
+   "fingerprint": "614ef2f4803bf28777a11e11a3fec037fcb9722bd34798f4c3d61ef6565dd905",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-dados-origem-nao-zero",
+   "fingerprint": "9752662282c9f49d1953392c79801e130df058e7c0448a4e8ce692e954df7d11",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-duas-series-diferenca",
+   "fingerprint": "05a68b2d7e32ee43a01d8212e7874600b965bb1c31842d5e5e685cb0ab66ed2d",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-dupla-entrada-condicional",
+   "fingerprint": "978faec31c7f8dff4b18cd86ffc11a60895521edac31af66cba745196cc95df8",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-escala-nao-uniforme",
+   "fingerprint": "9716bbb555e0360b70ea9cfa8add57ce9ffda5ff2edcc99fa1a0695e51d143f1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-frequencia-relativa-tabela",
+   "fingerprint": "496768935ceaaff8829bf6f959de60ad3c9ed62f977ef4f0d4c6be05afe4740a",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-grafico-causalidade",
+   "fingerprint": "d1ec5a6ec29d2641b133f05d7d4151b062c35622d591a16621ab3ecf6e53d35c",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-grafico-linhas-escolha",
+   "fingerprint": "2224cc6db003dab28dce1e1907ac6de9c93c7d45c30c83b5b8d22d6653d21427",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-histograma-larguras-distintas",
+   "fingerprint": "be6573e1f0b0cf2d55319c971aa44cf214f9c2144f32b6e5d396a726714cbd04",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-interpolacao-linear-informada",
+   "fingerprint": "c39acf4a7d38b5b8022667f33adc20a6a7c6f228edfaaa52db3b73bd725ae4b1",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-mediana-frequencias",
+   "fingerprint": "c256baaa8d4d7f0abc0f4ea0f9a72d4d3ad21e5e86d83bade4e9290b0c10236f",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-ordenar-mediana-par",
+   "fingerprint": "be338579095392b7eff157faa29960232e7ff78d9b37e4fd7c75f9a26ed5ecef",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-percentuais-total-parcial",
+   "fingerprint": "bfe413eaef4b62ea1fc91b023a3107525c1d638ae564580955a4191bf4f551a2",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-percentual-incompativel",
+   "fingerprint": "d22e44c788ddee416e7382d26769ac7382af233dfd856c04ee8b4d671dd729aa",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-percentual-multiplas-respostas",
+   "fingerprint": "b9544aa622a6589782cd9e467e73215d88f1c74bcfa185cabc3f8724c1cc61d2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-serie-indice-base",
+   "fingerprint": "78cc3cdc79e3c3d99fbb9724819957bdfdc91eeb1bcf3933a6909b927f665f9c",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-tabela-intervalo-total",
+   "fingerprint": "0f045c62b0ae135c873690fb1719485bc12625465a1b6803f1625d9cbbb1fb39",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-taxas-populacoes",
+   "fingerprint": "b947289ebbfcf1164f2bf68d95dafe99f6deb04cf3c5c663d8a194366ef19076",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.mat-total-reconstruir-setor",
+   "fingerprint": "03e34e99b8c40bf5d314edd040c441c501c05724e91c0d221eb55d8f92b2dc0c",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M07.s.varg25-ti-q18",
+   "fingerprint": "6a7d9b149e105122ffbfd9d383d2244555ae15081c073b51d4e4940927a78522",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "Platinum 101 < others"
+  },
+  {
+   "key": "admin.2026-11.M07.s.varg26-gest-q19",
+   "fingerprint": "e2e70689dda7260667269a88eaa6f9c8ab2a01e1240ffc871a64efeacb172fec",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "5 students unknown; D gives 16<18"
+  },
+  {
+   "key": "admin.2026-11.M08.p.cerq25-tes-q20",
+   "fingerprint": "06cf3bdc5190a937bfcb93b737aaea4f2c96ec602cbf3433cf07843fea8c5f8c",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-calendario-bissexto",
+   "fingerprint": "1e0a28abbb6508c1ae2051f52dbacc4fbb6c0be2773713cae27b6327c67cf160",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-consumo-distancia-combustivel",
+   "fingerprint": "6ad26e32cec58c3bdf8dcfbad0bbc505c122f88831135b4cca47dc701d2b99b4",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-conversao-unidade-composta",
+   "fingerprint": "a1b5fb4d731afa18d7cd6115835ac39159759bfa4280252b1646070b658d57ef",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-distancia-regua",
+   "fingerprint": "1bf5a879a65d1f441c8fd449d8ac77b040f977aca44ff5245a12258657e1860d",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-energia-potencia-unidades-dadas",
+   "fingerprint": "1e7ebeacdf0d11cb3fa4be9eacfa9c90413b7a00a8c5f1640a945d80e7a89470",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-erro-conversao-area",
+   "fingerprint": "81e1a59c8e791007d3f306e7db3ea569577d92e3d6ab700a6dabedc6f61edf33",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-escala-volume",
+   "fingerprint": "bb9a465c66d4e41378ec7749481b0960ca39220806950d08a691bf2b796204b0",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-graus-minutos-angulares",
+   "fingerprint": "0c959b540d013f6f2eb5cfe053cc5806c65fe776c2e86a54a39a6f46bc9a6ab7",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-horas-somar-sexagesimal",
+   "fingerprint": "058263479cf83156685ef7997d1b68c114f654a0e827fa231250f638b1e1df7d",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-inicio-a-partir-final",
+   "fingerprint": "74296a882e8ed4b848763bda469a178eb92dd1b2d1f3b58f1864f6ec0a1e1955",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-litros-vazao-composta",
+   "fingerprint": "6acccc0b9edce5269179af4ebddfa3b3c5e87ed697a93725826a4611fa1767ec",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-massa-tara-liquida",
+   "fingerprint": "e588373221e83ad31a6f580ed3cb81f4878b2b4d6d8cbcf6c9c7d48517688779",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-prefixo-simbolo-caixa",
+   "fingerprint": "471231cc70a5b81dbb043d47fea8efc5a8a4e044d5f94427728ad0908699a360",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-soma-unidades-mistas",
+   "fingerprint": "b5ae121d15148e14aebbd48c815f018cc4d63e32a044edc30394f488d96e3fea",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-tempo-fracao-dia",
+   "fingerprint": "86308c863d4c9a7a5032c53b2dc03f52509c41f145d8ff1ab8830720b100e11b",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-vazao-unidades-hora",
+   "fingerprint": "492cc2c18b5e43cb7aef39057cd4bc559ce3417ab7f2677b87e31d595d24bd09",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-velocidade-ms",
+   "fingerprint": "4870df19874582383142f826943248b07909e9e6ed9212f6291790851cdc298e",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-volume-deslocamento",
+   "fingerprint": "0176c0c04f620fbcb4ae33d20d661275c9e35efa1bebc5a8b8fdd4cbf9acfb66",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-volume-mililitro-centimetro",
+   "fingerprint": "d9b892aef5a668e6ae33659a3ed6e9d8317f8c5b1e661ac8fead94571d356f38",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.mat-volume-prefixo-cubico",
+   "fingerprint": "fa963c6a2d702c571590e0f06dced078ad774395e65ac985c4fe52ffc6571ef2",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.nova-apoio-q32",
+   "fingerprint": "9be39bb9964b5edd51568cc4e205951a50e1918559708fc49a802958a8dae6bc",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.nova-apoio-q35",
+   "fingerprint": "18ccdc7476f1dee98fb586eb6c4585bb90b5856c311a70f30b73ebc45ae7e1e8",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.p.potim-aa-q15",
+   "fingerprint": "90bf8b2f52ebe73520fd921d4bdd87b2966a5d737e6e99008e2629b940d3ba03",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "each task 2h02 -> 15:26"
+  },
+  {
+   "key": "admin.2026-11.M08.p.vinh25-aux-q22",
+   "fingerprint": "5374d075ed46638b4196f27d0f33d106668d2e6e5f6da201195ec170d32ce8a0",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.cacapava-profmat-q19",
+   "fingerprint": "ddc84584f965797615fcd3b9b9799540f411fa08559ff5224bce6ef97448d2fa",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.cerq25-tes-q12",
+   "fingerprint": "e5d0a10f5fa5cd94cbaaf323190df986463f44384389ff94e9b6aafab2749b8f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "20000 drops*3s=16.67h"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-area-agraria-divisao",
+   "fingerprint": "685058f17053ae76f27aed06e7416f591a1845844e5bb7275b1d04559ea02fe4",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-area-prefixo-quadrado",
+   "fingerprint": "5064644afd7a3c233ac90cbb3d761cf1c36457deb6c23701b1d7e2129ad2d0bc",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-capacidade-frascos",
+   "fingerprint": "30ecc1c211780ce668b54d50f3d623a7567f89be74ee29e09a97008044990c9c",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-densidade-kg-m3",
+   "fingerprint": "3efd4b3ce4996b56a23b1bfec7f40de4e791d6bcfe523b511968e07e8d47aee6",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-densidade-unidades",
+   "fingerprint": "1220891aea31e353b43001af32185ca48018f5786bf74e9f9a15413a7a5c336f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-duracao-tres-intervalos",
+   "fingerprint": "ea6bb147bcf5f755c0fefa01b23c8290f62345a657f04baad0d5066d36cb0735",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-escala-unidades-distintas",
+   "fingerprint": "d12f979d4d3d0e71ecab7aec69c79625297c0e25d7cfef857e088921edf4a085",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-hectare-area",
+   "fingerprint": "312430952778d28817082ab064cd11548abfb0a980917005eb16064f57cbce6c",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-litro-preco-volume",
+   "fingerprint": "4ebb0c619ec397400453557115606cbd1c8e82c68791798f53f307c530481ef8",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-miligrama-micrograma",
+   "fingerprint": "a515f6731f71a72ae829f3c76f5a73133dd2832bf2046611e022ff4e16f5fae4",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-precisao-arredondamento",
+   "fingerprint": "efee115dcd8a1da68c1b701c70d51330f632288f7c1276919d024e3fbc6bee9a",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-prefixo-micro-metro",
+   "fingerprint": "d0023cc0da8b6d8fa3719a4ee1246bd258f3275a6d0f081961a52c013974575a",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-relogio-adianta-compensar",
+   "fingerprint": "42a75984efb4a62e800190dbbfc2b53879d5fdcd615bf6ec2fb6ee5e5a1537b0",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-relogio-atraso",
+   "fingerprint": "650c90fb7152960b8437b7b3a35f5befa098f6b2976ca5579b3d64bbe98c2e20",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-tarefas-ciclos-segundos",
+   "fingerprint": "b04895534d1369ab159d33be8eb8265056e8f0c71e62579d662265c30849f291",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-tempo-decimal",
+   "fingerprint": "2eb848eb810bf1be8889daaddb19175ed2cd2ec323b0da20508599bf61d9c7db",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-tempo-limites-sobrepostos",
+   "fingerprint": "51c6fc7ca32521aa9a30d2b2b86dd6d6ad819a7644c2d6ea6e147c7ed743f1be",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-tonelada-kg-resto",
+   "fingerprint": "cc20593a8e0d3221b22f1775a408eb6bf9d22e81c840e7a38ee152a3d75b4de1",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-velocidade-tempo-segundos",
+   "fingerprint": "c9d0f5dc283c61407b36c47d64cde3c64216bc9af43d7e5bf5116297bf43360d",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.mat-volume-para-lamina",
+   "fingerprint": "d439576ed3c89cb278b318ee16be399b06486b32e91876c04ab826c2b2101c5d",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.morato-q15",
+   "fingerprint": "2c72dfdad466027da90e4cd066fc5e9a43da8f85dd83450f16f5161e9091b5c8",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "55.6 mi/h*12*1.61=1074.19"
+  },
+  {
+   "key": "admin.2026-11.M08.s.nova-apoio-q34",
+   "fingerprint": "5912e095b9d38c4f1fa34bd6efdba3aefca78e0a77ac7e8fda3e45aa1c2dcfd8",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M08.s.vinh25-cont-q19",
+   "fingerprint": "f3c985960eac02a6e828b2eb64f889bd68c7a572a343959a49555bb29319d9f2",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M09.p.cacapava-profmat-q38",
+   "fingerprint": "691b02eec5760377952d559da8d86e4cdc8d847c847d38393fad72de776e92d3",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-anel-circular",
+   "fingerprint": "3b2c680a4d184bc3b805d19a0ee6d3f287d7cee789f7f4f2312448bf4816e335",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-angulos-paralelas",
+   "fingerprint": "f39c6b3cb503f6b088e15f180d657a40bc66c4f675f78564fc671e9588fa7f2a",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "computed directly from statement"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-cilindro-lateral",
+   "fingerprint": "027351091aaeb22d3170ab1fda2980ad9dc080531b6ac39ab8941c28556111c2",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "2*3*2*5=60"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-cilindro-volume-conservar",
+   "fingerprint": "65d862a87e8060f121d47831a493efbdb8c5f42860e2260b88967858b4654090",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "r doubled -> r^2 x4 -> h/4"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-circulo-inscrito-quadrado",
+   "fingerprint": "fae354ab687a6ab63c2a0994c4c255f1017b5b155a84c650ee0ad7d338e1e248",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "64-3*16=16"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-circunferencia-area-inversa",
+   "fingerprint": "c889a452b3f113d956370584abec9ed95fb8369ae4f1d92516216035b47d56a5",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "3r^2=108,r=6,C=36"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-cubo-volume-aresta",
+   "fingerprint": "34cb35833fd8da45c97c485136602d68caf77403c797b8eab772cec053ce7df2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "a=5,6*25=150"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-escada-parede",
+   "fingerprint": "71f34bc184ec2dc92743d16a0e3d17a853520f58ab8d50f6ac2d78da99282deb",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "sqrt(169-25)=12"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-externo-regular",
+   "fingerprint": "d05b0827daec172bf8b5b7ec47967ff6af08192ca467e1fcc8abb7a445b9aee9",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "360/24=15"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-hexagono-divisao-triangulos",
+   "fingerprint": "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "6*12=72"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-losango-diagonal",
+   "fingerprint": "bcec0f01ecdb438ab5cb83b217e9006cbba577ea2c430a4c136225c327bf41b1",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "2*84/14=12"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-mediana-hipotenusa",
+   "fingerprint": "1600ac1651ef9ab35a33b09579e4d0906c8c7d9399effe451063a0d9d178ca20",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "18/2=9"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-pavimentacao-sem-perda",
+   "fingerprint": "b4d85058c74220058db1c3795bc5e31d869fddd061a5ef9e2dbe3df372aa35a9",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "12 m2 / 0.25 m2=48"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-prisma-base-triangular",
+   "fingerprint": "8483b3757b6086a62cdd40118afc4f43b6b8843d1074b55965ad944ca18c9613",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "(6*4/2)*9=108"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-quadrilatero-angulo-faltante",
+   "fingerprint": "6fd75afa407e12060d89bbe16f530b3488b20b4970e601ad43971e4fee7172b8",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "360-285=75"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-regular-angulo-interno",
+   "fingerprint": "145e071e64c43cf17258d0e13411a1f37d843f0858bbcb866ae0d6e1c3da14de",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "ext 45, 360/45=8"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-retirar-cubo-canto-area",
+   "fingerprint": "65c08ec05dff1e8e31df90a5719b9cb25e49136b9fb3ad9c431bdc9e841b20f6",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "removing corner cube leaves area unchanged: 216"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-setor-area",
+   "fingerprint": "b27a0b074fddd2b27da36ebf1ee4be14c37806d64f4390c6f74c5f5add54382d",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3*16/4=12"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-triangulo-exterior",
+   "fingerprint": "45b722641757b3b7e9586d44eeb0ccf3c9d2aaa5b65258ecc74a2413a18d69dd",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "125-55=70"
+  },
+  {
+   "key": "admin.2026-11.M09.p.mat-triangulos-base-comum",
+   "fingerprint": "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "6:15=2:5"
+  },
+  {
+   "key": "admin.2026-11.M09.p.potim25-dir-q17",
+   "fingerprint": "781e14fc285366e6ad29d2ffb7d8976744dd01e015e4b8eba6a4a539f45572d7",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "side 4, area 16"
+  },
+  {
+   "key": "admin.2026-11.M09.p.tai26-cont-q13",
+   "fingerprint": "99ed0142404359661647410ae400b701c0cba3077d00082f9edd2af296cd506f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "3.14*2^2*100=1256 mm3"
+  },
+  {
+   "key": "admin.2026-11.M09.p.varg25-ti-q20",
+   "fingerprint": "2a4f9835c1063f582fae419d52f7b86d933889fd3ff222dea829a051911ad452",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "sqrt(169-25)=12"
+  },
+  {
+   "key": "admin.2026-11.M09.p.vinhedo-profmat-q17",
+   "fingerprint": "85bf2224834573afc0902d25a216d244b879220258977248d952806d38f6c867",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "3*4=12"
+  },
+  {
+   "key": "admin.2026-11.M09.s.amer26-enc-q16",
+   "fingerprint": "7311e3c6c93b5bae8154a9028cb1c14ec26e15f99ecf6e39c7f9e7659c5dcd40",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "6*sqrt2"
+  },
+  {
+   "key": "admin.2026-11.M09.s.cacapava-profmat-q17",
+   "fingerprint": "41c7b05d16853dd75ce4a742a7982f252d64ca46d86e2a0d437c7865450ef3d0",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "x=15, sides 16,12,20, perim 48"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-arco-setor",
+   "fingerprint": "908e19f2f9fe7832c42c302c58bbf97cefffb3d9d8e79a6a9e775e9d09a2b0dc",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "2*3*9/6=9"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-area-figura-l",
+   "fingerprint": "8f37660509c58e3da22c3c3d585dbe3e1acb30bee35f48b726551b86ca7b20d1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "80-12=68"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-base-altura-area-invariante",
+   "fingerprint": "a08f0ca490756522a73071e1fb1189be07c2791f93a25bae283bb43fcc9b7deb",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "3b*(h/3)/2 same"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-bissetriz-divide-angulo",
+   "fingerprint": "2e45ccf1f1f74c4bc9a1432546c753190a2817a035f2184c634b1d18231f6571",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "74/2=37"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-cilindro-volume",
+   "fingerprint": "b4de56c016dfd19ad1e35a2bd8e3b91357b954ebfb3825f3e5720bb82076b212",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3*9*7=189"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-cone-geratriz",
+   "fingerprint": "c834c62182cc8eab43ec9df6d96b44583a6823c11c51f26539c25ad59ff78d19",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "sqrt(25+144)=13"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-cone-volume",
+   "fingerprint": "de202a569854e9f121586c8da1178a8c8f177af2daa8db46f9f323241fe77751",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "96/3=32"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-contorno-com-furo",
+   "fingerprint": "ab463c860f2f4530d07221bb20d61eefe8af597ba9756f70467f481ec4529311",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "40+8=48"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-cubinhos-pintados",
+   "fingerprint": "fe4e97dfcfd553c88ef240849c636e6b57c41ee148189d2b6d8cdf818d89d6c0",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "8 corners"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-diagonais-poligono",
+   "fingerprint": "19e1cfc5a1f6cd169ebb4269737e12f7f51d258755e3e0d6a0e58123f3afdd28",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "8*5/2=20"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-diagonal-cubo",
+   "fingerprint": "5b45982abaf7ddb51eb0d7fab14cd752f90c1959017f39176d4421a1987308c2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2*sqrt3"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-distancia-cartesiana",
+   "fingerprint": "329c2bdb812a24b64f9604e12d1dd35112baee57ceb3255f35664e7bd9425ef2",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "sqrt(36+64)=10"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-esferas-raios-volume",
+   "fingerprint": "7c06280ced4f900e82ea8d4a39e753e8463b251040484265c261a624d4b2cb24",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "1:27"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-piramide-volume-altura",
+   "fingerprint": "8be032be70e4c9b746f103e2f80883b780e1233304eb7e65090f4390f31a61e9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3*90/45=6"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-poligono-angulos",
+   "fingerprint": "fde00d7af059ee8bdbc9997e1d4152a3f5006036fc38f1ccbcdda72e4c60a3f9",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(n-2)180=900, n=7"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-retangulos-mesmo-perimetro",
+   "fingerprint": "148bef08d1be9fdf78df335f9ebdba1c8344da0c1211e93fc863c222d5947ce6",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "5x5=25 max"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-trapezio-altura",
+   "fingerprint": "942e19a7410768bc34a31caf035991bc1df80cd1f3b1df971f4f93a65daefa64",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "2*60/20=6"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-triangulo-desigualdade",
+   "fingerprint": "33f3b90f5befcba006e9fa9fc5fa105b9d9437d4dc43c520553725faa9163ff4",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "4+7<12, inequality fails"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-triangulo-isosceles",
+   "fingerprint": "69a1882168075381aeb51f786781320a0a93930626db0496442bdbb523e5a945",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "(180-40)/2=70"
+  },
+  {
+   "key": "admin.2026-11.M09.s.mat-triangulo-semelhante-area",
+   "fingerprint": "bb015b636eb1c53fd80b1f96af66c1e51c1027dfb7613bfd0e2104c6147bb62e",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "27*(5/3)^2=75"
+  },
+  {
+   "key": "admin.2026-11.M09.s.potim-profmat-q37",
+   "fingerprint": "b4c1989fdf15b365fda1d8fda65dcc7f17ea62cb014aa49c4cedd2fe321a5a22",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2*3.14*3.5=21.98"
+  },
+  {
+   "key": "admin.2026-11.M09.s.potim25-dir-q20",
+   "fingerprint": "d54f9a41908d779b3f16933402d247a92bfb28b8609c82b523ccaa19ab1de695",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "111<120 and 57.48<80 so fits: I true, II false"
+  },
+  {
+   "key": "admin.2026-11.M09.s.varg25-sup-q13",
+   "fingerprint": "a04b6259c8559ef517231e399d68d3ce4667e597f67127d7b79c0c41d0568702",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "side 1->1.5; 20*40=800"
+  },
+  {
+   "key": "admin.2026-11.M10.p.cerq25-alm-q17",
+   "fingerprint": "b087bb235321482212c6293319e001bfe8efa073250d4960cb4047bc4ccc42fb",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "diffs 4,6,8,10,12 -> 44"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-agenda-restricoes",
+   "fingerprint": "6198cced3623b9c5a3e0bb22af42756eb4de3e10218a4869966b3a8c4abff89b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "Q before P, R not Wed -> P Wed"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-blocos-soma-impares",
+   "fingerprint": "9d92b4f6aa8e256803367aada48b6e7dcd6a96449eca0dc697624364f3631073",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "6^2=36"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-calendario-semanas-dias",
+   "fingerprint": "3e728f9262c7208a933b2f2717651ddf062af42309bffbfa45eebc44041c0105",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "23 mod 7=2, Mon+2=Wed"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-codigo-regra-posicional",
+   "fingerprint": "6a78de853c3bb0e1c9a6345a51de808258c25360757255029eca6fbcf01c93ed",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "9-d: 5927"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-fila-duas-posicoes",
+   "fingerprint": "4d5a73af3c2c1a8aa8bbfefbdeddc2246104b6d51f2db46a51f1966213067dd5",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "9+12-1=20"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-fila-insercao",
+   "fingerprint": "1e9d77162ba4da7a3089029b83ce1f1c43ddae00bf544b33e28ab1ae5aecb4c6",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "13 people, 5 behind her -> 6th from end"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-invariante-paridade",
+   "fingerprint": "e9cee632df4559a8f98ada1eae0389fc7c0673da1a4bc3d330fa47c7f58ba6f8",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "steps even, parity of 8 kept; 15 odd"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-invariante-soma-troca",
+   "fingerprint": "91631aa4c242026224e99a78300043f0ac5f5a1ec1fa1adf06997a8596d2ac9b",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "total invariant 20"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-numeros-consecutivos-paridade",
+   "fingerprint": "3fdc34a6712296496272c0914e2507017fb53d94862b1439089441443bf0038d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "31+32+33, max 33"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-orientacao-giros",
+   "fingerprint": "5ae560bfeb0d0cd2d118ca6e0b288427aab29bf81445663b949483fc606d975c",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "E,W,N -> North"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-pa-decrescente-limite",
+   "fingerprint": "6c62bec9a3b587b72fe001af3bf3f477037c030abfe0a796575a700ec1440b54",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "50-4(n-1)<0 -> n=14"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-percurso-malha",
+   "fingerprint": "506894a478245e22901b33be890a864ef7219f27a26e17e67b87e555534bcbcb",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "net 5 east"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-posicao-dos-multiplos",
+   "fingerprint": "0e9940b315cb49a1d316c3e7755b94d3ae1d8ea6c4e663f01bde44d61ea1c176",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "301/7=43"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-programa-paridade",
+   "fingerprint": "261c740608272671ca1c42fd4c193472c3a4e85c58278558327093c205a699b9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "7->8->4->2->1"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-restricao-assentos-lado",
+   "fingerprint": "bb1afd60c3a48e2ff6bcd8cf78814fac753638f4a6af65283ef0bde5b25a4fa2",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "Ana middle, Beto right, Caio left"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-sequencia-alternada-regras",
+   "fingerprint": "4063f7813eb8e042b79b22d2c6c991eaee9b7b668f3ea62aca1d13ae7c203c04",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "10,13,26,29,58"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-sequencia-dois-subgrupos",
+   "fingerprint": "b93253dc80b3154d494c348616bea098a87a740aa69ace3e6ac3a6348dd29cb7",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "pos 8=2k, k=4 -> 16"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-sequencia-fibonacci-regra",
+   "fingerprint": "c46f96745cc3ce4b2eac4b5339d9750e1b37ca899f29e1e07af98540291ae8d4",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "2,3,5,8,13,21"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-sequencia-inversa-operacoes",
+   "fingerprint": "445914b07aec80f67b0bae93cef78dc4948a78c269dc144d03728e85998ba284",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "4,12,10,30,28,84"
+  },
+  {
+   "key": "admin.2026-11.M10.p.mat-soma-pa",
+   "fingerprint": "d5cb4eb3aa8f5362c51cdeafd8a64a010f54a3971aae27e6753d575c1149900f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "5*(5+32)=185"
+  },
+  {
+   "key": "admin.2026-11.M10.p.nova-apoio-q33",
+   "fingerprint": "5329ff2f625977ce99fec902afa665bf92b6ae56eac59ef43e3b591e846bb130",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "426,424,422,420,418"
+  },
+  {
+   "key": "admin.2026-11.M10.p.varg25-ti-q11",
+   "fingerprint": "e9f0c8716ffbcc80f1eaa8f79dc29f41924ee0f97e71d3da63a26cfdd5056109",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "unique: Ame120,Jag150,Bar180,Tam210"
+  },
+  {
+   "key": "admin.2026-11.M10.p.varg26-gest-q15",
+   "fingerprint": "137d32dae610e958fd4822c0e8bf085f3ccb4f6e04bf129cd20230eb039672af",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "110 days later, 110 mod 7=5, Wed+5=Mon"
+  },
+  {
+   "key": "admin.2026-11.M10.p.vinhedo-profmat-q19",
+   "fingerprint": "75be61e119e3cc6346a335ae91d4d830969b898b4d33af3d2fa00df20e912ee2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2*175=350"
+  },
+  {
+   "key": "admin.2026-11.M10.s.cerq25-tes-q18",
+   "fingerprint": "8267449f257336277f29e4de4eb9251558e874538cbbcc9cce8d82a46bbcc210",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "A1,C2,D before B: ACDB"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-ciclo-com-resto",
+   "fingerprint": "2b139b8a8880ac6f2986c175bc112e71f6c6f46ca86fa1094f2971d56b99decc",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "103 mod 5=3 -> C"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-ciclo-letras-invertido",
+   "fingerprint": "02c041b0aee97e890d16446da23b31cbcc01ac64fc1f1adf966256c33e00b363",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "C+11 -> index 13 mod 4=1 -> B"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-comparacao-alturas",
+   "fingerprint": "7a189567a06f5acc40b67b01ddd73b31231c1bf5c4093dd75911ce5b3ceefe31",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "Jo>Lu>Mi>Na"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-dia-antes-atras",
+   "fingerprint": "285fa6fdeda2e9b41b6db41688b81866a4e12a0e17fbd44499f44832d8e94cfe",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "today Fri, yesterday Thu"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-dias-ciclo",
+   "fingerprint": "4f9f6f5ad784986ea0e6fab6157a78309340a2e6375566881b626a4491d83bd8",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "100 mod 7=2, Tue+2=Thu"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-duas-frases-culpado",
+   "fingerprint": "ca5b391d983d98f57d25c40029e515835d3e3c53ca191c731abd5608dea59391",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "A lie -> B did not lose -> A lost"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-maquinas-operacoes",
+   "fingerprint": "5fb5256338e1d33284a85b630a58c27562f4fc68368a3d96982fdf024c0c25a1",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3x-2+5=24 -> x=7"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-ordem-sem-adjacencia",
+   "fingerprint": "72c9ff0db3e801d4edb1fc3cf33ea526b46a4732ee768a007f806ca9072f3fe2",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "D,A,B,C -> B third"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-ordem-total-pontos",
+   "fingerprint": "2339706c31beb0c5eee3a4d1abe949064d02c04ff89a51bdaf95b53c6b5fa71a",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "D>A>C>B -> A second"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-ordem-transitiva",
+   "fingerprint": "a9ba471b8ad0871831003b2e130d683f15b4c8053d08e039b695d6258cd895cf",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "E,C,A,D,B -> A"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-pa-termo-omisso",
+   "fingerprint": "a9fc8355974680dce59ac528624779191a69db6560844c6e020beaf62d8149b3",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "(11+23)/2=17"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-parentesco-explicito",
+   "fingerprint": "f636555c374c8feaf6dfc76d1c657cdd82ac548f58d13205772a1afe0499bfc8",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "aunt"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-pg-sinal-alternado",
+   "fingerprint": "7c81e4262495f7010c495891aa533768f99c760d5629693d59684c2c48ee4e4b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "3*(-2)^4=48"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-recorrencia-explicita",
+   "fingerprint": "dc1cffca32321e27bb939f726aad9e6868acb3780a08dacd3a1ef27705359a51",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "3,7,15,31"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-recorrencia-quantidade-acumulada",
+   "fingerprint": "5c01f0374f2d67e9503b38d1215125ff309a05534a0563abfdca9b3306060fbc",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "tripling: 1,3,9,27"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-rotacao-sentidos-composta",
+   "fingerprint": "24ee40d980545244c9f338fac20ffc81d476387bcfb602ca6924ff7503b9fc1f",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "W +270cw=S, 90ccw=E"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-sequencia-diferencas",
+   "fingerprint": "466ed6470da614078bc4a2a51450bc7ef0a7271550cedc4fddc876dd56b79132",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "1,3,6,10,15"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-sequencia-quadrados-explicita",
+   "fingerprint": "56736699af7817699a85f6852e3cbe417ebbeeb7ae60db1cd7f5913bcd8248da",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "110-90=20"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-sequencia-soma-digitos",
+   "fingerprint": "9efb8b79bbc4ad2b1529a23b9a381db790c4bba2d3464a03c2e54a2de9e24617",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "68->14->5"
+  },
+  {
+   "key": "admin.2026-11.M10.s.mat-torneio-todos-contra-todos",
+   "fingerprint": "49ff51b1361a1e868a49a058a2b62d509fc75413fbc5a7589e62ed02e1046eda",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "C(6,2)=15"
+  },
+  {
+   "key": "admin.2026-11.M10.s.potim-profmat-q49",
+   "fingerprint": "a28496fc0ec80101508511e90ed9ff88a9a72f8fb4abb61390de09adedd43033",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "x2+1: 95"
+  },
+  {
+   "key": "admin.2026-11.M10.s.potim25-dir-q19",
+   "fingerprint": "6623a5d34770550d5fe53b804e8ae75e6c9dab3468d1d2a0cd60a73bf2082046",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "a=198,b=202,r=4; a11..13=182,186,190"
+  },
+  {
+   "key": "admin.2026-11.M10.s.varg25-sup-q19",
+   "fingerprint": "307446a6b46ed47ed27a0a2ed0d90133d2ad48dbfe0a8f14c5c2155c4d274eb5",
+   "status": "SOLVED",
+   "chosen": "E",
+   "agrees": true,
+   "computed": "enumeration: only extra edge A-D satisfies condition"
+  },
+  {
+   "key": "admin.2026-11.M10.s.vinhedo-profmat-q20",
+   "fingerprint": "8ac6ebcb06e70b73e5db830f3390977aba8216c2c9290b16b2328ed0055cc5b0",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "12th even -> circle"
+  },
+  {
+   "key": "admin.2026-11.M11.p.ebserh-2018-basic-q37",
+   "fingerprint": "e108a4de25ec2297487cd93a98e66a19c615765e25741e48d971d470334b9ebf",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "P v Q v R does not imply P v (Q^R); e.g. P=F,Q=T,R=F"
+  },
+  {
+   "key": "admin.2026-11.M11.p.inss-2022-guar-q46",
+   "fingerprint": "b77fb1ccc946b3058e39fc49c6bb3b9a6e1a1edcfdaf3e7e7f357e3a0a0de35e",
+   "status": "AMBIGUOUS",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "interpretive CESPE item on open sentences; not formally decidable, Certo is plausible reading"
+  },
+  {
+   "key": "admin.2026-11.M11.p.inss-2022-guar-q48",
+   "fingerprint": "bb400ebc05ba595898eb68bc0647448d3bf9681c32ebc1e29aff698e4c5f80a3",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "neg of (L and Q) is notL or notQ, not 'nem...nem'"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-absorvencia",
+   "fingerprint": "cfb257c63efd3f04f1e40a498d79b433f41a5135eab1015ada13028477f5ead0",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "absorption: p"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-afirmacao-consequente",
+   "fingerprint": "38172ec3b3276d6894c87d780ab0683822db2b643dbaa81ca6f24dc0aa136551",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "affirming consequent invalid"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-algum-intersecao",
+   "fingerprint": "a3fc11ddf95954ae2a7807e7bc3c87959e4fb9fc0992bfd4a531a086e473c222",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "some A are P(rof), all P are Pesq -> some A are Pesq"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-bicondicionais-transitivas",
+   "fingerprint": "9e60fd6ea35d72fb014ca8e0d6e068c13e9a9a7c8ef66fc0a484da89ee8e7550",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "biconditional transitive"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-cadeia-implicacoes",
+   "fingerprint": "c00637e8b17a9c36e0ac6dff16ebd975c70fcd8d82b32b838615c72e73c5c5e3",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "modus ponens chain"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-condicao-necessaria",
+   "fingerprint": "0adc0a87c6571c5529a54d22965973da31e12e2a6945a4f6fecd2c31f1ee7225",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "'só se' = necessary: aceito->assinado"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-contradicao",
+   "fingerprint": "5af267581f86dbcdffdbd1ae7618ddc4debbc231bb674b4a922e2cb8a839dd0e",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "p and not p"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-contraexemplo-implicacao",
+   "fingerprint": "4e4ad19b20cbd2f9fc47ec6a51c53b921d9b3678c74ed2228cd001ad99631851",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "6 even not mult of 4"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-contrapositiva",
+   "fingerprint": "d4db89d1b0e351c5975505c6d65791556c0b06dc0cbb833fa634d9746db34479",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "contrapositive"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-demorgan-disjuncao",
+   "fingerprint": "7403e80ca88bd286bbbb7524ec357d0ed9fc49aa566559ae012ab3673026ebfb",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "De Morgan"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-disjuncao-eliminacao",
+   "fingerprint": "f79b58ef0dace4814b936bccbbd1207fa97b44007622c23a79f02132b036b990",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "disjunctive syllogism"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-exportacao-condicional",
+   "fingerprint": "2b98d15616b666ee50ee05dff24d2765d3466616ef21feb56b8ec794dd459602",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "exportation"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-implicacao-disjuncao",
+   "fingerprint": "cfbdeed6a795a9c0e9300586ed0abeed095b3f06d1e9bbfa8c0e22d43b73126a",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "p->q == ~p or q"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-nega-existencia-universal",
+   "fingerprint": "b94a2318888d27f1a10b656373a51bd5799c2a7362e32124ba5e4063c8c152d9",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "neg of exists-forall = forall-exists-not"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-negacao-antecedente",
+   "fingerprint": "8283a8fd4a21154a3a27bd889773bba38a49a8ca4cd86b999cfb873e17aec47a",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "denying antecedent invalid"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-negacao-existencial",
+   "fingerprint": "9d8ad70dec140ecccb77bce2be9bddbd5837771cd81ebb457f87a45c76522aeb",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "none delivered"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-ou-exclusivo",
+   "fingerprint": "84307e3085695c092f9512c95296a61fcb39ef1830e22ec3065b6252f0781b9d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "exactly one"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-premissas-insuficientes",
+   "fingerprint": "47a0c71e442df8696fc9d4bf74112d851c141c472ff6516dd136b96557f20379",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "undistributed middle"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-tabela-linhas-condicional",
+   "fingerprint": "d838c5e0cf6122f8a8d0f05a5e20517891b0811adf55950506dd1cbba2ccefa5",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3 of 4 rows true"
+  },
+  {
+   "key": "admin.2026-11.M11.p.mat-universal-vazio",
+   "fingerprint": "387a9ef558a058afe5ff5d5a1666823adaa925138cb6ade036b6d9f20f912f46",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "vacuous truth"
+  },
+  {
+   "key": "admin.2026-11.M11.p.pcdf-2021-basic-q48",
+   "fingerprint": "65e0fa6bc04fc12692cab3f630b804c7c85cbe6b2e089f8bd18fd30a1451158f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "M->(~P v ~C) vs (P v C)->~M not equivalent (fails e.g. M,P guilty)"
+  },
+  {
+   "key": "admin.2026-11.M11.p.pf-2018-basic-q45",
+   "fingerprint": "0ed0ea3043bc012032fa60022aba1ff6aa2020255a277d626f53b6485b40705a",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "unique consistent: S1,S3 true; S2,S4 liars"
+  },
+  {
+   "key": "admin.2026-11.M11.p.pf-2021-agente-q53",
+   "fingerprint": "0c35753b8e8385c81bbaa4c14b77f70dd23c58bf6af866dbd92403613f2e6902",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "negation of conditional is D and F, not a conditional"
+  },
+  {
+   "key": "admin.2026-11.M11.p.pf-2021-agente-q57",
+   "fingerprint": "ebe738dd9a7cb47f802fe35619ffa6125d573adfe3318e91fccc2b2d63c8dea1",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "P1,P3 give ~F; Pr undetermined -> invalid"
+  },
+  {
+   "key": "admin.2026-11.M11.s.ebserh-2018-basic-q36",
+   "fingerprint": "26e665cdade40906a35b25af6dcfaef21004b58b5a45c821a7683375c4df4018",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "~P->(Q v R) means 'se NAO receber alta, Q ou R'"
+  },
+  {
+   "key": "admin.2026-11.M11.s.ebserh-2018-basic-q38",
+   "fingerprint": "a7248051b58a959b358c1d7934c258d782de57e45fb44fd14bc8ad64e3b42b4f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "Q,R true -> R->~Q false"
+  },
+  {
+   "key": "admin.2026-11.M11.s.inss-2022-comum-q48",
+   "fingerprint": "e649a2a1c08194da74e5d4f9dfc42ed24dd593021486649fa29db31428151da9",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2 simple propositions -> 4 lines"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-bicondicional-tabela",
+   "fingerprint": "7dfbd7976bbd5301c9937c6cd0ee42e083f6de77622c594f884fd3ffa14d0c7d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "same truth value"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-cadeia-refutacao-final",
+   "fingerprint": "23f1cc04c0694dfc5e49115f2e2548fd07457f98f0d0d769234d33b7f790b470",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "modus tollens chain"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-conclusao-por-casos",
+   "fingerprint": "7010ce5b7c940f289c670b7c516dbc8ff80b1e8e5e6a29252d15c7f5aefbe418",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "proof by cases"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-condicional-falsa",
+   "fingerprint": "aabb8e6d77aa0a60d346ce68f68d4a1951c8ac001bc0b88b9d1875de1f1b55c5",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "V->F"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-contar-linhas-tabela",
+   "fingerprint": "97b4b25258f2c017552940b575fcd559236c2d2e9dee70ac9d538531aa60544b",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "2^4=16"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-demorgan-conjuncao",
+   "fingerprint": "41501a75899496e8f2bf64a05a27d62c11b24d0919d33e975b589c526e53d32f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "De Morgan"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-distributiva-logica",
+   "fingerprint": "682b14412294edbbda5269e8280538f8643d66de07b79c9b677e141822918ba6",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "distributive"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-dupla-negacao",
+   "fingerprint": "36dd4f78527e2c8c09f6b88ba1aea73ff32a2b84110032bde00e8f2ec588f2af",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "double negation"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-existenciais-nao-se-unem",
+   "fingerprint": "bdf2d21aa3c4cc27f2c42d61dd88376b5034bf63756122b56f9b0390a9548427",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "no syllogism from particulars"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-inconsistencia-premissas",
+   "fingerprint": "38a31339b9594ec6b7bfd4a145f067320eb78395c667a2e0a9941e451eb4ef44",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "p, p->q, ~q inconsistent"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-modus-ponens",
+   "fingerprint": "395dda322dbe44ad34d802ab0137a7feb8366e065a347331f57a34549c2d2a70",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "modus ponens"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-modus-tollens",
+   "fingerprint": "8c681959a544353e33b8c591c2dfbff11dc9978d1c2d5745348e6bd225632739",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "modus tollens"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-necessaria-suficiente",
+   "fingerprint": "1729adb1c8b28b799c9d6238311d05abafe6bccd7c7b87825e380c396a6886a7",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "sufficient"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-negacao-bicondicional",
+   "fingerprint": "52a7166a5010f8bd24b46f79f3664cc231bf03db5a7879c31f6d750bbbe12e3d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "xor"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-negacao-condicional",
+   "fingerprint": "ed29168334c42ce0a9272ef1ef938d9a69f179ebe5815fb3f0294e086308cd76",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "p and not q"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-negacao-universal",
+   "fingerprint": "75ac449aea1361c3ddfbe9993e574a2adbf71c354169a46e999be5b248c486b7",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "exists not complete"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-proposicao-comando",
+   "fingerprint": "23df4003b27c1f1645478a2dbaf14913a3f6fd5659e74537bd77b6ee5de19fd3",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "imperative"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-silogismo-categorico",
+   "fingerprint": "a314273d718247231d55641a603921c3100935e19fb2193595435c1a99aa7376",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "Celarent"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-tautologia",
+   "fingerprint": "dff2caec584388230af9af77c1b4b1ebbfdf448a489a213734a891bc37c64a15",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "p or not p tautology"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-troca-quantificadores",
+   "fingerprint": "4e8b34a45ec8c0c36e3bd3f88f0c58007e97df4e7e3e32442a75817ec588cf77",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "exists-forall implies forall-exists"
+  },
+  {
+   "key": "admin.2026-11.M11.s.mat-valor-formula-composta",
+   "fingerprint": "b7c156585cfb9cb08ff7c7136f72d230530e16f503a91316ae7d85df8a8d0cdf",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "F or T = T"
+  },
+  {
+   "key": "admin.2026-11.M11.s.pcdf-2021-basic-q47",
+   "fingerprint": "0caff2d344744248c690db0d2c519c754954ab31a30f0e78425672b8e6f810ad",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "all lied -> M,C,F innocent -> L,P guilty"
+  },
+  {
+   "key": "admin.2026-11.M11.s.pf-2021-agente-q52",
+   "fingerprint": "cd7cf8c11ef36b03353d974f909ce0f3c70b1d9aa51d18db514ccdf0fc39cb1f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "inverse not equivalent"
+  },
+  {
+   "key": "admin.2026-11.M11.s.pf-2021-agente-q55",
+   "fingerprint": "3c344471e1816eb3afb7421106258eaa7a8654116b663b5747003e272a798180",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "D->~F == ~(D and F)"
+  },
+  {
+   "key": "admin.2026-11.M12.p.ebserh-2018-basic-q39",
+   "fingerprint": "6666a4a513741e5cd7553760c22082987c66bf98fb0c1fcd04bedee01c2a5f6f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "not in A -> in B or C"
+  },
+  {
+   "key": "admin.2026-11.M12.p.inss-2022-guar-q49",
+   "fingerprint": "d52033052c86c8942320877cc46ef3eb157186cac50e483c221e9235ed5d3f9d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "both=19.5%; admin>=54.5%>30%"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-condicional-sobre-conjunto",
+   "fingerprint": "f1c0884a8881262d598232e1fb2b9d73122a333bba7f4f3dcff294d5a82b5eac",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "9/24=3/8"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-diferenca-complemento",
+   "fingerprint": "4de9fe67a00d95b61f5226df44f52b32dd9401e00f804d4ec7063be814e0d7a1",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "A minus B=A∩B^c"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-diferenca-simetrica",
+   "fingerprint": "a43ead0852bbd09aab27be7448429dd605a9354e52918996c4134d3f675b8013",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "sym diff {a,d}"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-elementos-fora-uniao-tres",
+   "fingerprint": "7b1aa587a453918a4bdd7355f6e039047639ddb181ae652aba4454069e69b8dc",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "120-87=33"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-gavetas-mes-aniversario",
+   "fingerprint": "16e87578cba754a8d543ee71155b2ff4e83a8e77855397c09916c1f91bc2260b",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "2*12+1=25"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-inclusao-transitiva",
+   "fingerprint": "bc07c216c9591b2b990af2095d70a9af5df7dbc8cd8b546a78f649904f31ba83",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "transitivity"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-intersecao-subconjunto",
+   "fingerprint": "f0bfca38d1eb8532dd7058ac85e7dfc5b9f6bfdf2fc041085ae177e6c4291ed8",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "A"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-intersecao-vazia-inferencia",
+   "fingerprint": "9650184012482a10a8aa4d77d85c503553e13c07d6a7bd3e54c2723f65e480e5",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "disjoint"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-intersecoes-disjuntas-contradicao",
+   "fingerprint": "f2429fee0243326a5e6b0e96206c2318e6e3b1c06fe6e90171fce2194fcad6db",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "incompatible"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-maximo-intersecao",
+   "fingerprint": "19f4783a0ff4d570906903510bc3567fe05a9fc285f0982c65a8c279835e68b7",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "min(14,22)"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-pares-cartesianos",
+   "fingerprint": "a79a0fe22f16e310cb0bc7f93b8dcd1619bd07e8848e979111c5d1edf16c34a7",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "3*5=15"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-principio-gavetas-minimo",
+   "fingerprint": "6accc904e97599297e85a83b148fd2ac767200344e67277e9c50540948a2a62e",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "ceil(13/4)=4"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-somente-a-tres",
+   "fingerprint": "0a41f17996c6d017dd1132db3bfec9340c86884affc7eae0f0c216c0bf39834d",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "40-15-12+5=18"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-somente-um-conjunto",
+   "fingerprint": "d25f9729ecdb28d1c440b93a36ef4657e52ac65b2db36b9649d1e864433465ba",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "16+11=27"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-subconjunto-contagem",
+   "fingerprint": "4037089f71d865cc3b821609baa2218a8c4a7a685bd0a121283c61cf12f0b823",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "29-18=11"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-subconjuntos-elemento-obrigatorio",
+   "fingerprint": "e63973692186c490836fb06f1177088d2828ed07fb0af275b2d3b48602365019",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "2^5=32"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-tres-inclusao-exclusao",
+   "fingerprint": "ad20b5c1a7805b1028666b706b817756540c8165ee033bfbbe6782921542695a",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "30+25+20-10-8-7+3=53"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-uniao-complementos",
+   "fingerprint": "8a115657e1f15491a821821b8bc4d93d0705d8ba4fc9febc59325fd601ade2a2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "{5,6}"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-uniao-multiplos",
+   "fingerprint": "6477f3e0254c0652023cd761e30102bd6308d062a56325657a412469ea9c3a4b",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "15+10-5=20"
+  },
+  {
+   "key": "admin.2026-11.M12.p.mat-uniao-por-inclusoes",
+   "fingerprint": "9c5916016f163d235f860b4e9a24e31908a3cd7d94c6d2147a65d42096259dee",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "A∪B⊆C"
+  },
+  {
+   "key": "admin.2026-11.M12.p.pcdf-2021-basic-q49",
+   "fingerprint": "81d9ef89be00f04e1561cc08cdea2329cfa168d4f7400fe1bdcd287ccbd43ca7",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "1/C(5,2)=1/10"
+  },
+  {
+   "key": "admin.2026-11.M12.p.pf-2018-basic-q48",
+   "fingerprint": "1b18fb341e3e0612d6e5d3b7a80cb0fb93ae107551f445ba5a6a74e480102bbc",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "liars alternate; P(exactly one liar among 2 chosen)=4/6>0.5"
+  },
+  {
+   "key": "admin.2026-11.M12.p.pf-2021-agente-q51",
+   "fingerprint": "a384628a6d42788358e80dc0437a2875ef9ef2626f35d5be617346eacd3bc0d2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "6*12*15*6=6480<6500"
+  },
+  {
+   "key": "admin.2026-11.M12.p.pf-2021-agente-q59",
+   "fingerprint": "249a9fee663b5cdc8470289be6cfaa3650756ce68267f3d76b59511858a133f1",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "P1⊆P2, not converse"
+  },
+  {
+   "key": "admin.2026-11.M12.p.potim-profmat-q43",
+   "fingerprint": "f41e64c66f04fb17bb9ba212640bb4e80458fae36ea8a5782b9864051e1f159f",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "1/36"
+  },
+  {
+   "key": "admin.2026-11.M12.s.cacapava-profmat-q31",
+   "fingerprint": "c5247726a34487ee98eed050668599457845197086c6ff717b04031f1d0fa9c3",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "26*25*10*9*8=468000"
+  },
+  {
+   "key": "admin.2026-11.M12.s.inss-2022-comum-q47",
+   "fingerprint": "d2f7ae3c8cfcbb083e5ad2a29c70b5c389844f3588eca1cadde1d12daeac25bf",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "75+35-100=10%"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-complemento-intersecao",
+   "fingerprint": "aa47dec69bce2da49ef6c5781bd6442d4daccdfdf5aaaaae832852f1b49ddb15",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "100-35=65"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-complementos-diagrama",
+   "fingerprint": "c5713926750ed90013e2d6adc20e15fdca63ee2ed62fe892dd167ee3dda32bd9",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "complement of union"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-conjunto-potencia",
+   "fingerprint": "e178f696dd53df8dd64ed7c263e816c2c7b05f238c717a178b3c761994fff8d5",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "2^4=16"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-diagrama-afirmacao-universal",
+   "fingerprint": "8a77c4cf531727150c6d0f2d0302dc3fd49b3dd9f88489cd2f6e1bb1794f9383",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "A proper subset of B"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-duas-intersecao",
+   "fingerprint": "c74e574aff1194ae3ffa7dae23c6dd49ef517e42a3fb59bb8b1543566a00191f",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "46+38-80=4"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-elemento-conjunto-aninhado",
+   "fingerprint": "6ed79cc4c22bc77fd26dc310ebd0dfe3f87abaf69de27db4ec75e2909a1f7ab7",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "{1} ∈ A"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-exatamente-dois-tres",
+   "fingerprint": "c483aec33db8b0d06c5b8d2438efa1cd33764f3eda25a6eab597232d30b1cb52",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "8+5+4=17"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-gavetas-garantir-par",
+   "fingerprint": "3eb9f1a68e3a72a2d3a08014704de05cccb6b0e1fc1554eff998ac7e9407eef2",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "3 colors +1=4"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-limite-intersecao",
+   "fingerprint": "5bc5122c68d0bb41c605bc8fdc62d31e9300675de899c4463db250f306e3e099",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "34+31-50=15"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-nenhum-dois",
+   "fingerprint": "8fd52225c9569235ebc0fda8e23db94b0386fd33a233fb9daa68872c89e946b2",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "70-46=24"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-particao-ambos-nenhum",
+   "fingerprint": "0f4f5c9858e9db3a2123a45be7b533eab6c5bfe3d296dc4107ac57ae9a8f3f6d",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "60-42=18"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-particao-universo",
+   "fingerprint": "f469b983f1c77f3d85d89c0ae52a29ed5cb87355f24c3c53b2b69bc26dc543cc",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "90-65=25"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-pertinencia-enumerada",
+   "fingerprint": "626d951966cd0fad6cd41c0585edc13c29b988da20f254959e4579262effc226",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "{1,3,5}"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-sobreposicao-limites-completos",
+   "fingerprint": "8b88b3094973c95be1de6663832c075fcacbddf5b4dc856a1c4250797a9797c1",
+   "status": "SOLVED",
+   "chosen": "C",
+   "agrees": true,
+   "computed": "12+17=29"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-subconjuntos-tamanho-fixo",
+   "fingerprint": "c6f3f2d3260bf9a408f5d5cd3ae67cedc7dc029a4ff8e6082e4e8b29e672204e",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "C(5,2)=10"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-tres-conjuntos-minimo-comum",
+   "fingerprint": "e42707b9dd4e236469ede89115cc8c9e390e07af1172903051c032115d0ed4b0",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "26+25+24-2*30=15, achievable"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-tres-regioes-dadas",
+   "fingerprint": "a30885b53d9e3a7a014d0428638cd68979c512254bb38989acb3f49c087b5a09",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "5+3+4+1=13"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-tres-sem-tripla",
+   "fingerprint": "45722638ed726d346bddae5cbfa704e6d55dff703d85cd0048916dc74b4b09cd",
+   "status": "SOLVED",
+   "chosen": "D",
+   "agrees": true,
+   "computed": "92-60=32"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-uniao-subconjunto",
+   "fingerprint": "f54f2777b94731f50ee19c233258299957de1f747dc8855554c99941328e9e13",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "B"
+  },
+  {
+   "key": "admin.2026-11.M12.s.mat-vazio-versus-unitario",
+   "fingerprint": "feee04b4e0de81957f3d95f7e954ef90d4db39ffa7aac6efef69d1c9fa919e40",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "∅ vs {∅}"
+  },
+  {
+   "key": "admin.2026-11.M12.s.pcdf-2021-basic-q43",
+   "fingerprint": "aa15d7691227f4df62f27c89b62b4e2332827cf4e40289fc6d8c548a3829313d",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "20 girls wave to 18 boys: 360>350"
+  },
+  {
+   "key": "admin.2026-11.M12.s.pf-2018-basic-q50",
+   "fingerprint": "0c788da09696a274fa164ce4e80c3167b2a2aff11868d7d7f3bf3cbadb374ef8",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "birthplace 4!=24 times residence >=24 -> >=576>100"
+  },
+  {
+   "key": "admin.2026-11.M12.s.pf-2021-agente-q49",
+   "fingerprint": "ca7f3c05f3f88271a24da76e2f78b8647bc5ffe6a33595319270706597212453",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "2*2*C(4,2)=24 both cases (ordered localities)"
+  },
+  {
+   "key": "admin.2026-11.M12.s.pf-2021-agente-q58",
+   "fingerprint": "eaa697afd7d144efc5546c504f18e2336254986db6678983c440b2ea4592ec46",
+   "status": "SOLVED",
+   "chosen": "A",
+   "agrees": true,
+   "computed": "every officer has finite experience, in some Pn"
+  },
+  {
+   "key": "admin.2026-11.M12.s.pf-2021-agente-q60",
+   "fingerprint": "0c5ae6bc5d5796cb846af4de5c9b9548455a2c4edffd51da6a266f26266681ef",
+   "status": "SOLVED",
+   "chosen": "B",
+   "agrees": true,
+   "computed": "P2⊆P3 so P2−P3 empty; formula wrong"
+  }
+ ]
+}

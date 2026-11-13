@@ -1,0 +1,76 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.example-001"
+        },
+        "content": {
+          "statement": {
+            "text": "Quanto é 2 + 2? (exemplo sintético)",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "10000000-0000-0000-0000-000000000001",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "10000000-0000-0000-0000-000000000002",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "10000000-0000-0000-0000-000000000001",
+          "resolution": {
+            "text": "2 + 2 = 4. Exemplo sintético, sujeito à revisão editorial.",
+            "resources": []
+          },
+          "classification": {
+            "disciplineId": "matematica-raciocinio",
+            "topicId": "M01",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Referência sintética",
+              "url": "https://example.test/study",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Fixture de documentação",
+            "contentPath": "sources/example.txt",
+            "answerPath": "sources/example.txt",
+            "contentSha256": "597ebfded2017f5206466b1b724664dfaec2e514586f8f671a1f70e63d50c21a",
+            "answerSha256": "597ebfded2017f5206466b1b724664dfaec2e514586f8f671a1f70e63d50c21a"
+          }
+        },
+        "fingerprint": "c4c7a4f28cab7611eabe1f5f76dc66fc1b53428f31ba5dd61adde0406c0f7e89",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/example.txt",
+        "mediaType": "text/plain",
+        "sha256": "597ebfded2017f5206466b1b724664dfaec2e514586f8f671a1f70e63d50c21a",
+        "base64": "RXhlbXBsbyBzaW50w6l0aWNvIGRlIGRvY3VtZW50YcOnw6NvOyBuw6NvIMOpIG1hdGVyaWFsIGVkaXRvcmlhbCBhcHJvdmFkby4="
+      }
+    ]
+  },
+  "keys": [
+    "admin.example-001"
+  ]
+}

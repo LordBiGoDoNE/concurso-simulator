@@ -12,7 +12,7 @@ public final class PreviewQuestionCandidatesUseCase {
     public record Result(QuestionOrigin origin, Change change, UUID questionId, UUID latestRevisionId) {}
     public List<Result> execute(List<ApplyQuestionCandidatesUseCase.Candidate> candidates) {
         var existing = new HashMap<QuestionOrigin, QuestionInventory.Entry>();
-        for (var entry : inventory.read()) existing.put(entry.origin(), entry);
+        for (var entry : inventory.read(candidates.stream().map(ApplyQuestionCandidatesUseCase.Candidate::origin).collect(java.util.stream.Collectors.toSet()))) existing.put(entry.origin(), entry);
         var seen = new HashSet<QuestionOrigin>(); var results = new ArrayList<Result>();
         for (var candidate : List.copyOf(candidates)) {
             if (!seen.add(candidate.origin())) throw new IllegalArgumentException("Origem repetida na seleção");

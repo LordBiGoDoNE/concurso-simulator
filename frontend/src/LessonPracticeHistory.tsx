@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { AttemptApiError } from './attempt-api';
 import { lessonPracticeHistory, type PracticeHistoryPage } from './lesson-practice-api';
-import { attemptRoleTitle } from './AttemptHistory';
 import catalog from './lesson-catalog.json';
 
 export default function LessonPracticeHistory({ refresh, onOpen, onUnavailable }: {refresh:number;onOpen:(id:string)=>void;onUnavailable:()=>void}) {
@@ -20,7 +19,7 @@ export default function LessonPracticeHistory({ refresh, onOpen, onUnavailable }
     <button className="secondary" onClick={()=>setRetry(v=>v+1)}>Atualizar práticas</button>
     {!current && <p role="status">Carregando práticas…</p>}{current?.failed && <p role="alert">Histórico de práticas indisponível. Tente atualizar.</p>}
     {current?.value && <>{!current.value.items.length && <p>Nenhuma prática nesta página. Comece por uma aula.</p>}<ul className="attempt-history">{current.value.items.map(e=><li key={e.id}>
-      <p><strong>{e.topicId} — {catalog.topics.find(t=>t.id===e.topicId)?.title}</strong></p><p>{attemptRoleTitle(e.roleId)} · {e.total} questões · {new Date(e.createdAt).toLocaleString('pt-BR')}</p>
+      <p><strong>{e.topicId} — {catalog.topics.find(t=>t.id===e.topicId)?.title}</strong></p><p>{e.total} questões · {new Date(e.createdAt).toLocaleString('pt-BR')}</p>
       <p>{e.finishedAt===null?'Em andamento — correção ao encerrar.':`Encerrada — ${e.percentage?.toLocaleString('pt-BR')}%.`}</p>
       <button onClick={()=>onOpen(e.id)}>Abrir prática de {e.topicId} de {new Date(e.createdAt).toLocaleString('pt-BR')}</button>
     </li>)}</ul></>}

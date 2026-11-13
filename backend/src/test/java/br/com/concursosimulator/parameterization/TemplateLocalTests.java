@@ -36,7 +36,7 @@ class TemplateLocalTests {
         try(var files=Files.list(root)){assertThat(files.map(Path::getFileName).toList()).containsExactly(Path.of("template.json"));}
     }
     @Test void exactConfirmationRegistersOnlyDraftAndExplicitDecisionsApproveAndWithdrawInIsolatedPostgres()throws Exception{
-        try(var db=new ParameterDatabase(PG)){
+        try(var db=new ParameterDatabase(PG,"latest")){ // CLI exige banco já migrado (Flyway atual)
             var d=db.seed(Family.PERCENTAGE);var env=env(db);var f=file("template.json",new TemplateLocal.DefinitionInput("parameter-template/v1",d,0));
             assertThat(run("register","template.json",env,"yes\n")).isEqualTo(2);
             assertThat(db.jdbc.queryForObject("select count(*) from pq_family",Integer.class)).isZero();

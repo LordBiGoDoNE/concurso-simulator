@@ -26,7 +26,7 @@ class QuestionEditorialCliTests {
                 "DB_USERNAME",POSTGRES.getUsername(),"DB_PASSWORD",POSTGRES.getPassword());
     }
     Path command(Question q, EditorialDecision.Action action, Set<EditorialDecision.Check> checklist, String fingerprint, int sequence, UUID expected) throws Exception {
-        var decision = new EditorialDecision(action,q.id(),q.latest().id(),fingerprint,"Responsável sintético de teste",Instant.now(),checklist,"Fixture isolada, sem aprovação do conteúdo real");
+        var decision = new EditorialDecision(action,q.id(),q.latest().id(),fingerprint,"Responsável sintético de teste",Instant.now(),checklist,"Fixture isolada, sem aprovação do conteúdo real",EditorialDecision.ReviewKind.HUMAN_PEER);
         var file = Files.createTempFile(temp,"decision-", ".json"); Files.writeString(file,json.writeValueAsString(new FixtureCommand("question-decision/v1",decision,expected,sequence)));return file;
     }
     String confirm(Map<String,String> env, Path file) throws Exception {
@@ -78,5 +78,26 @@ class QuestionEditorialCliTests {
         assertThatThrownBy(() -> QuestionBankLocal.run(new String[]{"decide","--editorial-local","false","--decision",approve.toString()},env,new BufferedReader(new StringReader("")),new PrintStream(output))).isInstanceOf(IllegalArgumentException.class);
         var tree=(tools.jackson.databind.node.ObjectNode)json.readTree(Files.readString(approve));tree.remove("expectedEditorialSequence");Files.writeString(approve,json.writeValueAsString(tree));
         assertThatThrownBy(() -> decide(approve,env,"" )).isInstanceOf(RuntimeException.class);
+    }
+    @Test void legacyFileWithoutReviewKindIsAcceptedOnlyOutsideApproveAndApprovalWithoutItIsRefusedBeforeConnecting() throws Exception {
+        try(var db=new QuestionDatabase(POSTGRES)) {
+            var q=Question.draft(UUID.randomUUID(),new QuestionOrigin("fixture-editorial-cli","review-kind"),UUID.randomUUID(),QuestionFixtures.content("Fixture origem CLI"));
+            db.store.transaction(s -> {s.insert(q);return null;});var env=env(db);
+            var submit=command(q,EditorialDecision.Action.SUBMIT,Set.of(),q.latest().fingerprint(),0,null);
+            var tree=(tools.jackson.databind.node.ObjectNode)json.readTree(Files.readString(submit));
+            ((tools.jackson.databind.node.ObjectNode)tree.get("decision")).remove("reviewKind");Files.writeString(submit,json.writeValueAsString(tree));
+            assertThat(decide(submit,env,confirm(env,submit))).isZero();
+            var approve=command(q,EditorialDecision.Action.APPROVE,Set.of(EditorialDecision.Check.values()),q.latest().fingerprint(),1,null);
+            tree=(tools.jackson.databind.node.ObjectNode)json.readTree(Files.readString(approve));
+            ((tools.jackson.databind.node.ObjectNode)tree.get("decision")).remove("reviewKind");Files.writeString(approve,json.writeValueAsString(tree));
+            output.reset();
+            assertThatThrownBy(() -> decide(approve,env,confirm(env,approve))).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("reviewKind");
+            assertThat(output.size()).isZero(); // recusado antes da confirmação e do banco
+            assertThat(db.jdbc.queryForObject("select count(*) from qb_decision",Integer.class)).isEqualTo(1);
+            ((tools.jackson.databind.node.ObjectNode)tree.get("decision")).put("reviewKind","AI_ONLY");Files.writeString(approve,json.writeValueAsString(tree));
+            assertThat(decide(approve,env,confirm(env,approve))).isZero();
+            assertThat(output.toString()).contains("Origem da revisão: AI_ONLY");
+            assertThat(db.jdbc.queryForList("select review_kind from qb_decision order by sequence",String.class)).containsExactly(null,"AI_ONLY");
+        }
     }
 }

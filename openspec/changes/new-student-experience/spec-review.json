@@ -1,0 +1,68 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "new-student-experience",
+  "pr": 163,
+  "base_sha": "f61d57d5d55d6d61609815a2faa4b415ed8dca4b",
+  "reviewed_head_sha": "dd2086e5cbd0b93b18f54c4641252b1041db5df0",
+  "diff_sha256": "524253d4ef586a755689f4b52e9310c045b0a7cea562b6b1a71351bfc7a001d5",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_final_reviewer",
+    "independent_context": true
+  },
+  "reviewed_at": "2026-11-09T18:50:32Z",
+  "risk": {
+    "classification": "critical",
+    "reason": "Navegação pública e prática convivem com identidade, filas, idempotência e respostas privadas."
+  },
+  "coverage": {
+    "requirements": "Proposta/design/requisitos/grupos 1–8 confrontados com entrada, exploração, filtros, restauração de rotas, disponibilidade, início explícito, painel, índice e leitor; sem divergência funcional confirmada.",
+    "architecture": "ADR 0001 e checklist HTTP consultados; navegação pública separada dos executores privados, transportes/useAttemptRun reutilizados, sem alteração Java ou transferência de responsabilidades de segurança.",
+    "integration": "App, biblioteca, executor inline/standalone e histórico examinados conjuntamente; instância/fila preservadas, contexto incompatível oculto, retry e substituição mantidos.",
+    "security": "Parâmetros/canonicalização, rotas sem IDs privados, chave por identidade/respostas obsoletas, contrato exato da disponibilidade, leitor inerte e links isolados conferidos.",
+    "persistence": "Sem migrações/schema/repositories/elegibilidade/importação; continuidade dos contratos de posse/CSRF/idempotência e separação de acervos examinada; nenhum banco acessado pelo revisor.",
+    "tests": "Testes de contratos, zero/erro/retry, respostas tardias, navegação/histórico, filas/identidade, conteúdo/layout e descoberta Python inspecionados, sem execução pelo revisor.",
+    "maintenance": "Compilador/manifesto/renderer, documentação de uso/protótipo/processo examinados; sem mudanças de dependências/workflows/deploy. Conferência de 51 documentos e hashes de 115 fontes sem divergência."
+  },
+  "limitations": [
+    "Revisor não executou testes/build/gerador/aplicação/navegador/rede/GitHub/DB; estado remoto e regressões foram conferidos pelo coordenador.",
+    "Handoff, verification.md, reviews/ e arquivos do gate não foram lidos pelo revisor; não há cobertura semântica independente integral desses documentos de evidência.",
+    "Menções incidentais a revisões anteriores em requisitos/processo foram tratadas como histórico e não fundamentaram o parecer.",
+    "Preservação/conversão não é reauditoria editorial/jurídica, inspeção visual real ou disponibilidade dos links externos.",
+    "Aceite do usuário foi visual de leitura/texto sem API; prática/identidade foram verificadas com fixtures sintéticas, sem acervo ou Google real.",
+    "Harness não forneceu UUID adicional de sessão do provedor, telemetria independente do modelo, tokens ou tempo total; não estimados.",
+    "spec-review-tests em main não certifica semântica; validate_report é conferido explicitamente pelo coordenador."
+  ],
+  "verification": [
+    {
+      "command": "Consultas Git e recálculo independente do snapshot canônico",
+      "result": "Base/head/merge-base e digest conferidos; somente spec-review.json/md excluídos.",
+      "executed_by": "spec_final_reviewer, somente leitura"
+    },
+    {
+      "command": "Conferência somente leitura dos dados gerados e suas fontes",
+      "result": "51 documentos/115 fontes com hashes LF corretos; referências internas e 50 SVGs preservados; conversão textual/MathML conferida conforme spec-review.md.",
+      "executed_by": "spec_final_reviewer, sem executar código do produto"
+    },
+    {
+      "command": "python scripts/compile_native_lessons.py --check; OpenSpec 1.14.1 validate new-student-experience --strict; git diff --check",
+      "result": "Aprovados na preparação do snapshot; nenhum código mudou desde a tarefa integrada.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "GitHub Actions, checks do PR #163 no head dd2086e5cbd0b93b18f54c4641252b1041db5df0",
+      "result": "12 checks concluídos com SUCCESS; backend/frontend/identity-browser/local-delivery e material/gate técnico conferidos.",
+      "executed_by": "GitHub Actions; resultados consultados pelo coordenador"
+    },
+    {
+      "command": "validate_report(report, explanation, base, head revisado, new-student-experience, 163)",
+      "result": "Aprovado antes de persistir esta evidência; requer nova conferência do commit final e metadados reais após o envio.",
+      "executed_by": "coordenador"
+    }
+  ],
+  "findings": [],
+  "triage_complete": true,
+  "token_usage": null,
+  "session_duration_seconds": null
+}

@@ -1,0 +1,1981 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.amp26-tes-q22"
+        },
+        "content": {
+          "statement": {
+            "text": "No sistema operacional Microsoft Windows, ao trabalhar com vários programas e pastas, o atalho de teclado Tecla Windows + M tem a função de:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "83f5919f-cd4b-571d-8d74-437a4c6ba625",
+              "content": {
+                "text": "Bloquear o computador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "db2e5e78-4f56-5617-9bb8-943778fd4a2b",
+              "content": {
+                "text": "Reiniciar o computador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0d9a7acb-4af5-576e-8457-5b26a129c85f",
+              "content": {
+                "text": "Ativar o Modo Tela Cheia.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e48d32a3-483c-5f39-8f06-b5d5fc5cf388",
+              "content": {
+                "text": "Minimizar todas as janelas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "00277ec0-dd8a-56e9-b088-a965e05c98a0",
+              "content": {
+                "text": "Abrir o Prompt de Comando.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e48d32a3-483c-5f39-8f06-b5d5fc5cf388",
+          "resolution": {
+            "text": "1. Windows + M minimiza todas as janelas abertas, deixando a área de trabalho visível; alternativa D. 2. Bloquear o computador é Windows + L (A); reiniciar não tem esse atalho (B); tela cheia costuma ser F11 em navegadores (C); o Prompt de Comando não é aberto por Windows + M (E). Gabarito definitivo: alternativa D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Amparo — Concurso Público 01/2026, Tesoureiro, questão 22. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I02.s.amp26-tes-q22.json",
+            "answerPath": "sources/admin.2026-11.I02.s.amp26-tes-q22.json",
+            "contentSha256": "2193e5e45fa14569b61213f9809d6f89772f6a7e9d1a049f3d6bb4aea1959c61",
+            "answerSha256": "2193e5e45fa14569b61213f9809d6f89772f6a7e9d1a049f3d6bb4aea1959c61"
+          }
+        },
+        "fingerprint": "8eacd0d4cfdabbb73cf82ddbec8e41b942bebd3e301c4cdc4b4eb26b343913aa",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.cebra-cachoeiro-q17"
+        },
+        "content": {
+          "statement": {
+            "text": "A respeito de Windows 10, de edição de textos e apresentações com o MS Office 365 e de aplicativos para segurança, julgue os próximos itens.\nNo Windows, por meio do botão Reiniciar, é possível desligar o computador, mantendo-se abertos e salvos os arquivos em uso, para retornar a eles após uma pausa rápida.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "afe13044-9e61-5f91-b4b9-1f167bcc8712",
+              "content": {
+                "text": "Certo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a9dcf112-041a-5aee-8f72-ec637094ddea",
+              "content": {
+                "text": "Errado.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a9dcf112-041a-5aee-8f72-ec637094ddea",
+          "resolution": {
+            "text": "1. Reiniciar encerra e inicia novamente o sistema; não é o comando destinado a uma pausa rápida mantendo a sessão suspensa. No Windows 10, a descrição se aproxima de Suspender, e o definitivo marca Errado. 2. Certo prometeria preservação e salvamento universais de arquivos pelo reinício. Aplicativos podem oferecer recuperação ou reabertura, mas isso não faz Reiniciar equivaler a Suspender nem elimina a necessidade de salvar o trabalho.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Desligar, suspender ou hibernar o computador",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/power-battery/shut-down-sleep-or-hibernate-your-pc",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Prefeitura de Cachoeiro de Itapemirim/ES — Edital 2024, Conhecimentos Básicos para os cargos de nível superior, item 17. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I02.s.cebra-cachoeiro-q17.json",
+            "answerPath": "sources/admin.2026-11.I02.s.cebra-cachoeiro-q17.json",
+            "contentSha256": "e8b10f7d44b9e4164514676fb503be33b0dc9a083f0e9150ea2a910cfab21004",
+            "answerSha256": "e8b10f7d44b9e4164514676fb503be33b0dc9a083f0e9150ea2a910cfab21004"
+          }
+        },
+        "fingerprint": "0e3b01887ccf88b2d8a204b5831b2d9f19e2b68994bb12e8a6104bda6ab74635",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.cerq25-tes-q21"
+        },
+        "content": {
+          "statement": {
+            "text": "Fernanda estava transferindo dados de um documento para outro, utilizando os comandos copiar (Ctrl + C) e colar (Ctrl + V). Como o conteúdo era confidencial, ela decidiu limpar o histórico da Área de Transferência por segurança. Sendo assim, qual caminho Fernanda seguiu para limpar o histórico da Área de Transferência, dentre as opções abaixo? Assinale a alternativa que representa esse caminho.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c2f5f626-84c9-56d6-ab06-17b413c348ef",
+              "content": {
+                "text": "Selecionar Iniciar, acessar Configurações > Privacidade > Área de Transferência > Limpar dados da Área de Transferência e clicar em Limpar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "99d5e782-cb5c-5d07-ba40-41f2afc90a56",
+              "content": {
+                "text": "Em sistemas com configuração padrão, na área de trabalho, é possível clicar no botão \"Limpar dados da Área de Transferência\".",
+                "resources": []
+              }
+            },
+            {
+              "id": "8a8309be-1b7f-56f7-bd49-73bd938ad9bc",
+              "content": {
+                "text": "Selecionar Iniciar, acessar Configurações > Sistema > Área de Transferência > Limpar dados da Área de Transferência e clicar em Limpar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3db382e7-fa34-512a-b5df-efec3469dc17",
+              "content": {
+                "text": "Selecionar Iniciar, acessar Configurações > Sistema > Área de Trabalho Remota > Limpar dados da Área de Transferência e clicar em Limpar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "847a5445-07d0-5d6c-917b-fb9015b04167",
+              "content": {
+                "text": "Selecionar Iniciar, acessar Transferência de Área e clicar em Limpar.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8a8309be-1b7f-56f7-bd49-73bd938ad9bc",
+          "resolution": {
+            "text": "1. No Windows 10 e no Windows 11, a opção Limpar dados da área de transferência fica em Configurações > Sistema > Área de Transferência; a questão não fixa a versão, e o caminho é o mesmo nas duas versões atuais; alternativa C. 2. A coloca o item em Privacidade; B inventa um botão na área de trabalho; D o coloca em Área de Trabalho Remota, recurso de conexão remota; E cita um menu inexistente. O histórico também pode ser aberto com Windows + V, mas a pergunta pede o caminho nas Configurações. Gabarito definitivo: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Usando a área de transferência",
+              "url": "https://support.microsoft.com/pt-br/windows/apps/using-the-clipboard",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Cerquilho — Concurso Público 01/2025, Tesoureiro Geral do Município, questão 21. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I02.s.cerq25-tes-q21.json",
+            "answerPath": "sources/admin.2026-11.I02.s.cerq25-tes-q21.json",
+            "contentSha256": "dccc6c20e247afb19017591d04012fb20247dd915e25643a089f3c02e29f43d8",
+            "answerSha256": "dccc6c20e247afb19017591d04012fb20247dd915e25643a089f3c02e29f43d8"
+          }
+        },
+        "fingerprint": "e3604c90d6c3c83860638871a3f3bac5b347bf7b9a64e0ad4cd56ae24e9b820a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-acessibilidade-config"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual atalho padrão abre as configurações de acessibilidade do Windows 11?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6c99ab7c-886e-5a69-b85e-eeb3065b1aa7",
+              "content": {
+                "text": "Windows+E.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c75daa93-8b4e-5dc7-8660-e1e88fab2324",
+              "content": {
+                "text": "Alt+F9.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c0366ad2-189c-54fb-8336-8311aada62fa",
+              "content": {
+                "text": "Windows+U.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f752feba-8250-54c1-a7a5-86421283f2de",
+              "content": {
+                "text": "Ctrl+Alt+V.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c0366ad2-189c-54fb-8336-8311aada62fa",
+          "resolution": {
+            "text": "1. Windows+U dá acesso às configurações de acessibilidade. 2. Explorador e atalhos próprios de aplicativos não substituem esse comando do Windows.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-acessibilidade-config.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-acessibilidade-config.json",
+            "contentSha256": "0bf2455d5812c2e695504d97e4dea3f6f8ba61951dd307a2fefd28d07cde99c8",
+            "answerSha256": "0bf2455d5812c2e695504d97e4dea3f6f8ba61951dd307a2fefd28d07cde99c8"
+          }
+        },
+        "fingerprint": "b33a30de6040b0c263dde5576619dac7b25b9c56b4fa9ca0f9701cd2ec97d1d9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-barra-percorrer"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows 11, qual atalho padrão percorre os aplicativos na barra de tarefas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "90b4ac37-8532-576b-bbf1-010919ae39f4",
+              "content": {
+                "text": "Windows+T.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1a3a60e9-de4f-5594-90cf-a56296a9b850",
+              "content": {
+                "text": "Windows+R.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a4005b2c-4853-59b1-8edc-eec98c8b9b7a",
+              "content": {
+                "text": "Windows+L.",
+                "resources": []
+              }
+            },
+            {
+              "id": "306f9d94-0948-5d5d-b0d2-1a018c8dcd62",
+              "content": {
+                "text": "Ctrl+Z.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "90b4ac37-8532-576b-bbf1-010919ae39f4",
+          "resolution": {
+            "text": "1. Windows+T direciona a navegação aos aplicativos da barra de tarefas. 2. Executar, bloquear e desfazer são ações distintas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-barra-percorrer.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-barra-percorrer.json",
+            "contentSha256": "ada00ae6a6ae1faf02190e3a408b923d3802e55d8e7594faeaecde9aed07f972",
+            "answerSha256": "ada00ae6a6ae1faf02190e3a408b923d3802e55d8e7594faeaecde9aed07f972"
+          }
+        },
+        "fingerprint": "d4c26e508362c40fa2896253148b619ed7f5e71df686dfcad19619c7e940c94b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-busca-explorador"
+        },
+        "content": {
+          "statement": {
+            "text": "No Explorador do Windows 11, qual tecla padrão direciona a busca por arquivo ou pasta, segundo a lista de atalhos da Microsoft?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "01b453d3-81a5-5fd6-8596-6b9bce87ab53",
+              "content": {
+                "text": "Alt+F4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5750b10c-3361-54bf-8bb4-066d57d7a47f",
+              "content": {
+                "text": "Windows+L.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e943c707-f180-58ab-b08c-022fc913e96f",
+              "content": {
+                "text": "F3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "63807e0e-d071-52e3-a6ca-2209c1c3c2a5",
+              "content": {
+                "text": "F2.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e943c707-f180-58ab-b08c-022fc913e96f",
+          "resolution": {
+            "text": "1. F3 chama a pesquisa no contexto do Explorador. 2. F2 renomeia; Alt+F4 fecha e Windows+L bloqueia a sessão. Não confundir busca na pasta com pesquisa geral aberta por Windows+S.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-busca-explorador.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-busca-explorador.json",
+            "contentSha256": "737d1501e2b467c0707478d322456933793ec08f6431a35587b7422d1bda04ef",
+            "answerSha256": "737d1501e2b467c0707478d322456933793ec08f6431a35587b7422d1bda04ef"
+          }
+        },
+        "fingerprint": "f6b91810ab9e3e4e1a4ad76a57c85ac8aff18a092e10c7c4d203908ff08d261f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-clipboard-ativar"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao pressionar Windows+V pela primeira vez, uma pessoa vê que o histórico da área de transferência está desativado. Qual ação do próprio recurso é necessária para usá-lo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "66b8d9f3-477f-559c-8846-02f8b7420c42",
+              "content": {
+                "text": "Ativar a sincronização entre dispositivos, sem a qual o histórico local não funciona.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7114b877-b517-55b2-b6f8-0776dc01084a",
+              "content": {
+                "text": "Reiniciar o computador, que ativa o histórico automaticamente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "959dca45-ce83-53b1-bf58-c3551e5532b0",
+              "content": {
+                "text": "Ativar o histórico da área de transferência.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d0890005-d53a-5fa4-93ab-5dec244872a3",
+              "content": {
+                "text": "Formatar o disco do Windows.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "959dca45-ce83-53b1-bf58-c3551e5532b0",
+          "resolution": {
+            "text": "1. Ao pressionar Windows+V com o histórico desativado, o próprio painel oferece Ativar; também é possível ligá-lo em Configurações > Sistema > Área de transferência; alternativa C. 2. A erra porque a sincronização é opcional e independente do histórico local; B erra porque reiniciar não ativa o recurso; D erra porque formatar o disco não tem relação com o recurso.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Usando a área de transferência",
+              "url": "https://support.microsoft.com/pt-br/windows/apps/using-the-clipboard",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-clipboard-ativar.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-clipboard-ativar.json",
+            "contentSha256": "b3391938a4737b79c40b72331b4f7a48061ad0c5ed4463820475649a8dc1eba0",
+            "answerSha256": "b3391938a4737b79c40b72331b4f7a48061ad0c5ed4463820475649a8dc1eba0"
+          }
+        },
+        "fingerprint": "6ff2d31f2fa055b43f1bfaae2e9a3b99fd31f871af357b43e3703a05ddfc4b9b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-configuracoes"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual atalho padrão do Windows 11 abre o aplicativo Configurações?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ad3d8e93-a366-5d5b-8e1a-c7d5350ddb03",
+              "content": {
+                "text": "Windows+D.",
+                "resources": []
+              }
+            },
+            {
+              "id": "22cbc103-93b3-5642-9322-471d2ea39be3",
+              "content": {
+                "text": "Alt+Enter.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6209cac8-501b-5478-a99e-ba2f1650d1ad",
+              "content": {
+                "text": "Windows+I.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7fcf2fdb-0e2d-5860-84d2-bad2d7f49354",
+              "content": {
+                "text": "Windows+E.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6209cac8-501b-5478-a99e-ba2f1650d1ad",
+          "resolution": {
+            "text": "1. Windows+I abre Configurações. 2. Windows+E abre o Explorador, Windows+D mostra ou oculta a Área de Trabalho e Alt+Enter exibe propriedades do item selecionado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-configuracoes.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-configuracoes.json",
+            "contentSha256": "6e926030a18e2a57bef3c8bf70b764b639984d46741ca5736050e380950b1559",
+            "answerSha256": "6e926030a18e2a57bef3c8bf70b764b639984d46741ca5736050e380950b1559"
+          }
+        },
+        "fingerprint": "9f30597575e8cafd275141cc866df9e8c9a22ea6a15850ea38864a71d718e1cd",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-desktop-alternar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows 11, já existem duas áreas de trabalho virtuais. Qual atalho padrão muda para a área virtual à direita, sem criar outra?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "42b0b549-18b7-5a22-b08d-d9f864ef1ddb",
+              "content": {
+                "text": "Windows+Ctrl+Seta para a direita.",
+                "resources": []
+              }
+            },
+            {
+              "id": "be56fa06-1d0d-5dde-9f4e-a3640a0ad0d6",
+              "content": {
+                "text": "Windows+Ctrl+D.",
+                "resources": []
+              }
+            },
+            {
+              "id": "eab8750e-6a0a-5795-999d-af4698c8521a",
+              "content": {
+                "text": "Windows+Shift+Seta para a direita.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7cc578a4-e11a-5639-832a-bd80518abe69",
+              "content": {
+                "text": "Ctrl+Shift+N.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "42b0b549-18b7-5a22-b08d-d9f864ef1ddb",
+          "resolution": {
+            "text": "1. Windows+Ctrl+Seta alterna entre áreas virtuais existentes. 2. Windows+Ctrl+D cria outra área; Windows+Shift+Seta move janela entre monitores; criar pasta é outra operação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-desktop-alternar.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-desktop-alternar.json",
+            "contentSha256": "34056018378955615a4974e9d4349e0ee28457f251d787142e7bf516ec29c0a4",
+            "answerSha256": "34056018378955615a4974e9d4349e0ee28457f251d787142e7bf516ec29c0a4"
+          }
+        },
+        "fingerprint": "96f0aac99e9c1a3b41dc254d7545b5cb365409d5027c008c080183d20d103af6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-executar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows 11 com atalhos padrão, qual combinação abre a caixa Executar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7ecdcde8-855d-5ae5-acc0-8bd23c2f2485",
+              "content": {
+                "text": "Ctrl+C.",
+                "resources": []
+              }
+            },
+            {
+              "id": "000867b6-6afc-541c-b9ca-7fca72643a00",
+              "content": {
+                "text": "Alt+Tab.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ba74f8aa-564c-5df5-a3b8-82050c9844b1",
+              "content": {
+                "text": "Windows+R.",
+                "resources": []
+              }
+            },
+            {
+              "id": "310b9e63-9d57-5f25-bfd9-6f7d240bcf5e",
+              "content": {
+                "text": "Windows+E.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ba74f8aa-564c-5df5-a3b8-82050c9844b1",
+          "resolution": {
+            "text": "1. Windows+R abre Executar para informar um comando ou localização. 2. Explorador, cópia e alternância de janelas correspondem aos outros atalhos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-executar.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-executar.json",
+            "contentSha256": "faf057ffa7e420ec00664986a3e8fd7c55db9fad986eba0ab048317ea1322b93",
+            "answerSha256": "faf057ffa7e420ec00664986a3e8fd7c55db9fad986eba0ab048317ea1322b93"
+          }
+        },
+        "fingerprint": "e52eec63cbe9292301d05555ba6af3a212b38d996ac0dd4b4e83bc0ff3dae105",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-exibir-previsualizacao"
+        },
+        "content": {
+          "statement": {
+            "text": "No Explorador do Windows 11, com atalhos padrão, Alt+P alterna qual painel?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "190f3988-135c-55b4-af17-157e887a46bc",
+              "content": {
+                "text": "Painel de visualização.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ba6efb4c-1fe8-5aa3-9a5b-ae594df6560d",
+              "content": {
+                "text": "Painel de detalhes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9f0aaad3-d62b-5943-8fcf-3dafcecd90bf",
+              "content": {
+                "text": "Painel de navegação.",
+                "resources": []
+              }
+            },
+            {
+              "id": "01907421-ac76-5ef5-8776-d90a0e443d52",
+              "content": {
+                "text": "Barra de endereços.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "190f3988-135c-55b4-af17-157e887a46bc",
+          "resolution": {
+            "text": "1. No Explorador, Alt+P mostra ou oculta o painel de visualização; alternativa A. 2. B erra porque o painel de detalhes usa Alt+Shift+P; C erra porque o painel de navegação não é alternado por Alt+P; D erra porque a barra de endereços é selecionada com Alt+D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-exibir-previsualizacao.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-exibir-previsualizacao.json",
+            "contentSha256": "76ac44b4ca177ae994147f4853bae7f5bccb2ac5ad70d156e661cb92ca3a6301",
+            "answerSha256": "76ac44b4ca177ae994147f4853bae7f5bccb2ac5ad70d156e661cb92ca3a6301"
+          }
+        },
+        "fingerprint": "25952c1f875f5c3631c861ee607209372e6e67a22619d9f44ef9be9881be869b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-fechar-janela"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows 11 com atalhos padrão, qual combinação fecha a janela ativa de um aplicativo, podendo haver solicitação para salvar alterações?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ff116463-6798-54e3-a848-fb5d8d7d773a",
+              "content": {
+                "text": "Alt+F4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5dcaad35-af75-5c66-b11a-4fab535d4ae6",
+              "content": {
+                "text": "Alt+Tab.",
+                "resources": []
+              }
+            },
+            {
+              "id": "87597abd-b653-5127-b2bd-3943a934630c",
+              "content": {
+                "text": "Windows+Tab.",
+                "resources": []
+              }
+            },
+            {
+              "id": "19a089db-34cc-50f8-85b0-388907371f91",
+              "content": {
+                "text": "Windows+V.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ff116463-6798-54e3-a848-fb5d8d7d773a",
+          "resolution": {
+            "text": "1. Alt+F4 solicita o fechamento do item ou aplicativo ativo. 2. Alt+Tab alterna aplicativos; Windows+Tab abre a Visão de tarefas e Windows+V abre a área de transferência.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-fechar-janela.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-fechar-janela.json",
+            "contentSha256": "36622247a7a1113d9b3c6c706cc8da258e5f26e40008356220f3c9a0fbd72ebc",
+            "answerSha256": "36622247a7a1113d9b3c6c706cc8da258e5f26e40008356220f3c9a0fbd72ebc"
+          }
+        },
+        "fingerprint": "4fff10748965813c82b5fad3659915d31c9ca4446a1f6505e2bd8790939ab930",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-foco-propriedades"
+        },
+        "content": {
+          "statement": {
+            "text": "No Explorador do Windows 11, com arquivo selecionado, qual atalho padrão abre as propriedades do item?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b08ea65b-9f50-56f7-b7ef-4a2857e9fe19",
+              "content": {
+                "text": "Ctrl+Shift+Esc.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a4cfc405-7f61-56a5-87ad-b42f875be1de",
+              "content": {
+                "text": "Windows+V.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d628b613-d5f3-5e26-bf7d-5f53d546579e",
+              "content": {
+                "text": "Alt+Enter.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fb8c393c-3762-503f-9582-89af8fcbe998",
+              "content": {
+                "text": "Windows+Tab.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d628b613-d5f3-5e26-bf7d-5f53d546579e",
+          "resolution": {
+            "text": "1. Alt+Enter mostra propriedades da seleção. 2. Visão de tarefas, Gerenciador de Tarefas e histórico da área de transferência são outros recursos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-foco-propriedades.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-foco-propriedades.json",
+            "contentSha256": "cabbbe141551a45468268913a5e802d39cc8aa97c757e4092b078aacd99c5269",
+            "answerSha256": "cabbbe141551a45468268913a5e802d39cc8aa97c757e4092b078aacd99c5269"
+          }
+        },
+        "fingerprint": "d183516bad12fdd0918a8ad60f0f9bbb8e515b12b48001706b646dfcfba9ea9a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-historico-clipboard"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows 11, com o histórico da área de transferência habilitado, qual atalho abre a lista de itens copiados anteriormente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d8920c14-9668-55c4-baab-e1ef2506e2f3",
+              "content": {
+                "text": "Alt+F4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "32ef5218-b928-54f8-83d0-ee68ef957b49",
+              "content": {
+                "text": "Windows+L.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9a06c370-8356-5825-a5f2-29e23a9d5d14",
+              "content": {
+                "text": "Windows+V.",
+                "resources": []
+              }
+            },
+            {
+              "id": "328a1f35-fde7-50bd-9269-14338540a5f0",
+              "content": {
+                "text": "Windows+E.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9a06c370-8356-5825-a5f2-29e23a9d5d14",
+          "resolution": {
+            "text": "1. Windows+V abre o histórico da área de transferência. 2. Windows+E abre o Explorador, Alt+F4 fecha o item ativo e Windows+L bloqueia a sessão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Usando a área de transferência",
+              "url": "https://support.microsoft.com/pt-br/windows/apps/using-the-clipboard",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-historico-clipboard.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-historico-clipboard.json",
+            "contentSha256": "fa79d6782935e2ef7301cb390328360533c9d856166280817f963e9e502884ec",
+            "answerSha256": "fa79d6782935e2ef7301cb390328360533c9d856166280817f963e9e502884ec"
+          }
+        },
+        "fingerprint": "b04752be8644c8a6febcecc2b53d452f85aa9139034dc242fe49b19e22afcd27",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-lupa"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows 11, com atalhos padrão, Windows e a tecla de adição (+) permitem iniciar qual recurso?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fc2742f0-3c25-59b3-9c1f-5fe8c40898b2",
+              "content": {
+                "text": "Lupa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7b07f9c2-b0ae-5ea2-9ce8-7a340b15955b",
+              "content": {
+                "text": "Lixeira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9f13673e-4e57-5759-90a0-dc7cfff3a415",
+              "content": {
+                "text": "Histórico da área de transferência.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2ea30bd8-759f-5edb-bef4-7b6fe9ff54a8",
+              "content": {
+                "text": "Gerenciador de impressão.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fc2742f0-3c25-59b3-9c1f-5fe8c40898b2",
+          "resolution": {
+            "text": "1. Windows+Mais abre a Lupa para ampliar a visualização. 2. O atalho não limpa arquivos, não abre o histórico de cópia e não administra impressoras.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-lupa.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-lupa.json",
+            "contentSha256": "0ca78baf2a6aca032e34c812551f9abcf3c9357787d390900acf626306355675",
+            "answerSha256": "0ca78baf2a6aca032e34c812551f9abcf3c9357787d390900acf626306355675"
+          }
+        },
+        "fingerprint": "8805d833da054a09e3a39cb8d398b241d84edbf5752d859e044d31884a51dbca",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-maximizar-janela"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows 11, com atalhos padrão e uma janela que aceita maximização, qual combinação a maximiza?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "961800ed-a74b-5731-9b77-27c56b00667c",
+              "content": {
+                "text": "Windows+Seta para cima.",
+                "resources": []
+              }
+            },
+            {
+              "id": "481ef5fc-4edf-54df-bfd2-3ef8e0530529",
+              "content": {
+                "text": "Windows+V.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8b830134-adc5-5277-852e-db140b22803b",
+              "content": {
+                "text": "Ctrl+C.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dec95c22-8353-5641-9cf2-25f40648080c",
+              "content": {
+                "text": "Windows+R.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "961800ed-a74b-5731-9b77-27c56b00667c",
+          "resolution": {
+            "text": "1. Windows+Seta para cima maximiza a janela compatível. 2. Área de transferência, cópia e Executar não definem o tamanho da janela.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-maximizar-janela.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-maximizar-janela.json",
+            "contentSha256": "1fe49fe4e9e66a05ca23e321f9efb92583d7a931d8fbf318c6bfbe71b6368293",
+            "answerSha256": "1fe49fe4e9e66a05ca23e321f9efb92583d7a931d8fbf318c6bfbe71b6368293"
+          }
+        },
+        "fingerprint": "977eb70c698a0b48ff89780dda7f12cc7fbfbf68e805de33c74674c4e46029c8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-modo-projecao"
+        },
+        "content": {
+          "statement": {
+            "text": "Em um computador Windows 11 ligado a projetor, qual atalho padrão permite escolher entre opções como duplicar e estender a exibição?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cbb16e5e-4b58-5a77-a069-7be8cb5bc5da",
+              "content": {
+                "text": "Windows+P.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9ec79d05-aa9d-5f0e-bf56-572cf0d38b85",
+              "content": {
+                "text": "Ctrl+X.",
+                "resources": []
+              }
+            },
+            {
+              "id": "db3738c4-c36d-5efe-8eda-2ceba9dc3750",
+              "content": {
+                "text": "Windows+L.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3b0d9df0-fad8-5761-8fd5-d42f6400eea0",
+              "content": {
+                "text": "F2.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cbb16e5e-4b58-5a77-a069-7be8cb5bc5da",
+          "resolution": {
+            "text": "1. Windows+P abre as opções de projeção e múltiplas telas. 2. Recortar, bloquear sessão e renomear não escolhem o modo das telas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-modo-projecao.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-modo-projecao.json",
+            "contentSha256": "2015ea685a508cc1e58f82fc222a961c75331b1fad5501c43ef434451482a6ba",
+            "answerSha256": "2015ea685a508cc1e58f82fc222a961c75331b1fad5501c43ef434451482a6ba"
+          }
+        },
+        "fingerprint": "182ff305db426de59bd2be9bbfb3287a8f60c49c3b16197bef5437309d178fc0",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-mudar-entrada"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma estação Windows 11 possui dois layouts de teclado instalados. Qual atalho padrão percorre as opções de idioma de entrada e layout?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8e642475-dca4-55ba-8590-be0176283080",
+              "content": {
+                "text": "Windows+E.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0e1536c-8d07-5f85-a208-cbd9bb5ff778",
+              "content": {
+                "text": "Alt+Enter.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4ea2a9e5-20cc-590e-999c-c7a8c62a5a1f",
+              "content": {
+                "text": "Windows+Barra de espaços.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fc8f713b-5889-55ab-91d2-2d7c25126494",
+              "content": {
+                "text": "Ctrl+Shift+N.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4ea2a9e5-20cc-590e-999c-c7a8c62a5a1f",
+          "resolution": {
+            "text": "1. Windows+Barra de espaços alterna entre opções de entrada instaladas. 2. Os demais atalhos criam pasta, abrem o Explorador ou exibem propriedades; não escolhem layout.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-mudar-entrada.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-mudar-entrada.json",
+            "contentSha256": "538ec95709135eb20594eb29a8f7890ca1a67c61da620fe1885fe8ecb7286961",
+            "answerSha256": "538ec95709135eb20594eb29a8f7890ca1a67c61da620fe1885fe8ecb7286961"
+          }
+        },
+        "fingerprint": "440cbcf1fe42055b72cde85016a507400f0c3cf3729bc0dd8e27ccd86e599cc5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-narrador"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual atalho padrão do Windows 11 inicia ou alterna o Narrador, recurso de leitura da interface?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f72b80a4-a0fc-58f7-82fd-7d44fa086610",
+              "content": {
+                "text": "Alt+Tab.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f2b36a0b-d02e-5ce1-8756-309fc4f8bd2d",
+              "content": {
+                "text": "Windows+R.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3ae5f85c-7fda-5b74-b43c-e7bcb2f2f11e",
+              "content": {
+                "text": "Windows+Ctrl+Enter.",
+                "resources": []
+              }
+            },
+            {
+              "id": "86ffe03a-d7ee-5390-811a-2fb0ee3a910d",
+              "content": {
+                "text": "Ctrl+Shift+N.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3ae5f85c-7fda-5b74-b43c-e7bcb2f2f11e",
+          "resolution": {
+            "text": "1. Windows+Ctrl+Enter controla o Narrador. 2. Criar pasta, alternar janelas e abrir Executar são ações diferentes.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-narrador.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-narrador.json",
+            "contentSha256": "20c33c42e1e947ac3113bec3b98dabcf2e8d77ce11c0fae900fbbc575c9b0ec6",
+            "answerSha256": "20c33c42e1e947ac3113bec3b98dabcf2e8d77ce11c0fae900fbbc575c9b0ec6"
+          }
+        },
+        "fingerprint": "d206fa979084823dfc01d0b69633f5e489145be6705100c79ce61a7b4a55415f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-pesquisa-windows"
+        },
+        "content": {
+          "statement": {
+            "text": "Com atalhos padrão no Windows 11, Windows+S abre qual recurso?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "07d854ea-401e-5791-9938-a4dafe234bd3",
+              "content": {
+                "text": "Pesquisa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e599fa2b-8cb4-5ece-9391-e9a66d75bd00",
+              "content": {
+                "text": "Configurações.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ba9c9740-6be2-5090-b5a5-1158aee8ccb1",
+              "content": {
+                "text": "Visão de tarefas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "574a704f-874d-5c51-b907-2dcbd809f56c",
+              "content": {
+                "text": "Histórico da área de transferência.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "07d854ea-401e-5791-9938-a4dafe234bd3",
+          "resolution": {
+            "text": "1. Windows+S abre a pesquisa do Windows; alternativa A. 2. Configurações abre com Windows+I (B); a Visão de tarefas, com Windows+Tab (C); o histórico da área de transferência, com Windows+V (D).",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-pesquisa-windows.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-pesquisa-windows.json",
+            "contentSha256": "40818a162c92f483a3c6ddcafaa12e20f057819a49a68f6181c0d97f18825caf",
+            "answerSha256": "40818a162c92f483a3c6ddcafaa12e20f057819a49a68f6181c0d97f18825caf"
+          }
+        },
+        "fingerprint": "8a5561a3f0e5853bd6b0cf0e22c7442f4c245f913ee28d79dac12c70e59595f9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-selecao-texto-palavra"
+        },
+        "content": {
+          "statement": {
+            "text": "No Windows, em um editor que usa atalhos padrão de edição de texto, qual combinação expande a seleção por blocos de texto na direção indicada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ee2d62bc-ea0a-523d-83dd-a80e7a21a27d",
+              "content": {
+                "text": "Alt+F4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8ca1095e-1137-5dc2-9692-3070b871a739",
+              "content": {
+                "text": "Print Screen.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dae1b3b4-1dd8-5721-b2c9-6d25a3f644a2",
+              "content": {
+                "text": "Ctrl+Shift+tecla de direção.",
+                "resources": []
+              }
+            },
+            {
+              "id": "039f177d-b8a1-5beb-9076-4d0024932ff1",
+              "content": {
+                "text": "Windows+P.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "dae1b3b4-1dd8-5721-b2c9-6d25a3f644a2",
+          "resolution": {
+            "text": "1. Ctrl+Shift com a direção estende a seleção por blocos, como palavras. 2. Projetar telas, fechar aplicativo ou capturar imagem não seleciona texto desse modo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-selecao-texto-palavra.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-selecao-texto-palavra.json",
+            "contentSha256": "98292bea01b4cd1636bec35aeff6ed3c278898821a7de03e09f41c7bf0b67154",
+            "answerSha256": "98292bea01b4cd1636bec35aeff6ed3c278898821a7de03e09f41c7bf0b67154"
+          }
+        },
+        "fingerprint": "e8cc6b73b43d1948709086240949963cf3ab82fa273431af670d2cc7f6fbbaf3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-subir-pasta"
+        },
+        "content": {
+          "statement": {
+            "text": "No Explorador do Windows 11, qual atalho padrão navega um nível acima na hierarquia da pasta atual?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "36281854-8bc1-5a39-bc8d-d77cdb7f49dd",
+              "content": {
+                "text": "Windows+I.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ec4b45a6-cc52-5c4f-8a59-fcef33494d3c",
+              "content": {
+                "text": "Ctrl+Shift+Esc.",
+                "resources": []
+              }
+            },
+            {
+              "id": "25de342d-8158-5b06-b610-2208d52f9230",
+              "content": {
+                "text": "Alt+Seta para cima.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8306addb-3897-5bd8-afaa-c8f42f1cd68f",
+              "content": {
+                "text": "Alt+Tab.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "25de342d-8158-5b06-b610-2208d52f9230",
+          "resolution": {
+            "text": "1. Alt+Seta para cima abre a pasta pai. 2. Alternar janelas, abrir Configurações ou Gerenciador de Tarefas não sobem na árvore de diretórios.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-subir-pasta.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-subir-pasta.json",
+            "contentSha256": "25aff9f796948b36f08e77891542670d699594c3ae5bd1ebe74982b1d7343bbd",
+            "answerSha256": "25aff9f796948b36f08e77891542670d699594c3ae5bd1ebe74982b1d7343bbd"
+          }
+        },
+        "fingerprint": "864c98d02e63464745a804882fa7e3ea29494dd24e334a63007345e0e0db8037",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.it-tab-dialogo"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma caixa de diálogo do Windows, com navegação padrão, qual tecla normalmente avança o foco entre controles?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4a10d648-1635-5d34-9c79-a962fab0fbf6",
+              "content": {
+                "text": "Tab.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e2f1573b-ae95-522d-82fc-5f1e9cd25248",
+              "content": {
+                "text": "Delete.",
+                "resources": []
+              }
+            },
+            {
+              "id": "01a2572e-c1a0-5dc1-8f7e-0ddd88f2e096",
+              "content": {
+                "text": "Print Screen.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3f54982f-b2c8-5653-9f7b-fff998a762a6",
+              "content": {
+                "text": "Caps Lock.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4a10d648-1635-5d34-9c79-a962fab0fbf6",
+          "resolution": {
+            "text": "1. Tab percorre os controles na sequência de foco. 2. Excluir, capturar tela e alternar caixa das letras não são navegação de foco entre opções.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Atalhos de teclado no Windows",
+              "url": "https://support.microsoft.com/pt-br/accessibility/windows/keyboard-shortcuts-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I02.s.it-tab-dialogo.json",
+            "answerPath": "sources/admin.2026-11.I02.s.it-tab-dialogo.json",
+            "contentSha256": "e77b23dbbe7db2a2c5869ee44dd3f51ba6ac43f360be1b8339fecc4fd429fd1c",
+            "answerSha256": "e77b23dbbe7db2a2c5869ee44dd3f51ba6ac43f360be1b8339fecc4fd429fd1c"
+          }
+        },
+        "fingerprint": "813ae8134b829861ca0114d35d8707bffc7494d1e6fc95ac92d743a0bec67eba",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.potim-aa-q16"
+        },
+        "content": {
+          "statement": {
+            "text": "Considerando as funções presentes na área de trabalho do Windows e em sua barra de tarefas, assinale a alternativa que completa corretamente a lacuna a seguir: “O ___________ do Windows constitui um elemento central do sistema operativo, que permite o acesso aos programas, configurações e documentos do usuário. Integra ainda um motor de busca eficaz e a possibilidade de fixar aplicações.”",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5612a737-3f84-5c49-b1f5-9cc6c357f36e",
+              "content": {
+                "text": "menu Iniciar",
+                "resources": []
+              }
+            },
+            {
+              "id": "53cb7773-7251-54a8-8371-f70fbf0936c0",
+              "content": {
+                "text": "Mozilla",
+                "resources": []
+              }
+            },
+            {
+              "id": "61206512-a347-5840-8822-4dde26010bbb",
+              "content": {
+                "text": "Paint",
+                "resources": []
+              }
+            },
+            {
+              "id": "abb8ac2f-11ff-5332-9202-c06556274ef2",
+              "content": {
+                "text": "Spotfi",
+                "resources": []
+              }
+            },
+            {
+              "id": "cb23d625-16e4-5090-bda8-17dd309e4f92",
+              "content": {
+                "text": "Cartoon",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5612a737-3f84-5c49-b1f5-9cc6c357f36e",
+          "resolution": {
+            "text": "1. O menu Iniciar reúne acesso a aplicativos, pesquisa e configurações do Windows. 2. Os demais nomes não designam esse componente do sistema. A descrição é compatível com Windows 10/11, embora a organização visual varie entre versões.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Personalizar o Menu Iniciar do Windows",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/personalization/customize-the-windows-start-menu",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Agente Administrativo, questão 16. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I02.s.potim-aa-q16.json",
+            "answerPath": "sources/admin.2026-11.I02.s.potim-aa-q16.json",
+            "contentSha256": "7a0c1875c3568ab52bca9c4be29a4ca517271d892620cb93fc95fe11423ccc1c",
+            "answerSha256": "7a0c1875c3568ab52bca9c4be29a4ca517271d892620cb93fc95fe11423ccc1c"
+          }
+        },
+        "fingerprint": "685331e3c183f6719350cd180e37bb96f28de312faba8f7505b18ba6216e792a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I02.s.potim-se-q16"
+        },
+        "content": {
+          "statement": {
+            "text": "Assinale a alternativa que apresenta uma afirmação correta sobre a área de trabalho no sistema operacional Windows:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9ce3b8da-3004-56d5-8a34-31a3ed50dd0e",
+              "content": {
+                "text": "A área de trabalho do Windows não permite nenhuma personalização por parte do usuário.",
+                "resources": []
+              }
+            },
+            {
+              "id": "765a2fd8-d65d-53c6-81a9-ef0647c18c80",
+              "content": {
+                "text": "Somente o usuário administrador pode adicionar atalhos e arquivos na área de trabalho.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c88488b1-3c5b-58a0-8e53-c807ba1e1dba",
+              "content": {
+                "text": "A área de trabalho do Windows permite apenas a criação de atalhos de programas, não sendo possível inserir pastas ou arquivos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "29e146a2-94f3-541e-96e1-b54a8c0c7aab",
+              "content": {
+                "text": "Um mesmo usuário pode configurar diferentes áreas de trabalho de acordo com suas preferências.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9bd9fb84-3f00-5784-8260-e85a8f509ef4",
+              "content": {
+                "text": "O único atalho nativo presente na área de trabalho é o Gerenciador de Dispositivos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "29e146a2-94f3-541e-96e1-b54a8c0c7aab",
+          "resolution": {
+            "text": "1. O Windows oferece personalização e múltiplas áreas de trabalho virtuais para organizar janelas. 2. Usuários comuns podem criar atalhos/arquivos onde tenham permissão; não há exclusividade administrativa geral, nem limitação a atalhos. O contexto é Windows 10/11.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I02",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Como realizar multitarefas no Windows, incluindo áreas de trabalho",
+              "url": "https://support.microsoft.com/pt-br/windows/experience/how-to-multitask-in-windows",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Secretário de Escola, questão 16. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I02.s.potim-se-q16.json",
+            "answerPath": "sources/admin.2026-11.I02.s.potim-se-q16.json",
+            "contentSha256": "8deab0ed52b49fad4ba2f09f596bac1ab93798fbec4f154d45f6e950e0d73dbc",
+            "answerSha256": "8deab0ed52b49fad4ba2f09f596bac1ab93798fbec4f154d45f6e950e0d73dbc"
+          }
+        },
+        "fingerprint": "366a643baeb50b22e7ad8db286aaaf99ef4e98d7ea1b7f176afea539410d870d",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I02.s.amp26-tes-q22.json",
+        "mediaType": "application/json",
+        "sha256": "2193e5e45fa14569b61213f9809d6f89772f6a7e9d1a049f3d6bb4aea1959c61",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQmxvcXVlYXIgbyBjb21wdXRhZG9yLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlJlaW5pY2lhciBvIGNvbXB1dGFkb3IuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQXRpdmFyIG8gTW9kbyBUZWxhIENoZWlhLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik1pbmltaXphciB0b2RhcyBhcyBqYW5lbGFzLiJ9LHsiaWQiOiJlIiwidGV4dCI6IkFicmlyIG8gUHJvbXB0IGRlIENvbWFuZG8uIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBBbXBhcm8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjYsIFRlc291cmVpcm8sIHF1ZXN0w6NvIDIyLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bywgcMOhZ2luYSAxMCwgcXVhZHJvIGRvIGNhcmdvIFRFU09VUkVJUk86IDIyPUQ7IGNvbmZlcsOqbmNpYSB2aXN1YWwgbmEgcmVuZGVyaXphw6fDo28gZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzI1OS1nYWJhcml0by1kZWZpbml0aXZvLTEucGRmIiwic2hhMjU2IjoiYWZjMzZmOTk2ODQ4MjNmNjRiZDgyMmU2N2I0ZWVjZmU2OWZjNzZlMTE2ZmFiMjViMzk3YzA0NTM4M2U5NGUyYSIsInVybCI6Imh0dHBzOi8vYW5leG9zLXIyLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yNTkvYW5leG9zL2EzYWMzMjc4LTVlYjItNDE4Yi1iOWE4LTMxMjkzZTYzN2JiMy5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIEFtcGFybyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNiIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLWFtcGFyby0yMDI2LXRlc291cmVpcm8vcTIyIiwibnVtYmVyIjoiMjIiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMjIsIHDDoWdpbmEgZsOtc2ljYSA2IGRvIFBERjsgY2FkZXJubyBkaWdpdGFsaXphZG8gKHNlbSBjYW1hZGEgZGUgdGV4dG8pLCBsaWRvIG5hIHJlbmRlcml6YcOnw6NvIGRhIHDDoWdpbmE7IGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzIGUgb3JkZW0gY29uZmVyaWRvcyB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjU5LXByb3ZhLXRlc291cmVpcm8ucGRmIiwic2hhMjU2IjoiN2M0ZGIxNWNkYTQ4MjYyZmMwZWYzMTY4ZGNlMTk2MWNmN2QzMDMwMzcwMDRmMjM3N2FmZmZkNDE4ZTYyNWZiOCIsInVybCI6Imh0dHBzOi8vYW5leG9zLXIyLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yNTkvYW5leG9zLzAyYWY4ZDAwLWU0NTYtNDE1Yy1hNGMzLTMzYTJkYWUyMDBmNS5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogYXJ0LiA4wrosIElWLCBkYSBMZWkgOS42MTAvMTk5OCwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBubyBwcm9qZXRvLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIGRlIHByb3ZhIHDDumJsaWNhLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBpbmNvcnBvcmFkYS4gTsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIGNvbnNlbnRpbWVudG8gYWZpcm1hZG87IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJUZXNvdXJlaXJvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJhbXAyNi10ZXMtcTIyIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gV2luZG93cyArIE0gbWluaW1pemEgdG9kYXMgYXMgamFuZWxhcyBhYmVydGFzLCBkZWl4YW5kbyBhIMOhcmVhIGRlIHRyYWJhbGhvIHZpc8OtdmVsOyBhbHRlcm5hdGl2YSBELiAyLiBCbG9xdWVhciBvIGNvbXB1dGFkb3Igw6kgV2luZG93cyArIEwgKEEpOyByZWluaWNpYXIgbsOjbyB0ZW0gZXNzZSBhdGFsaG8gKEIpOyB0ZWxhIGNoZWlhIGNvc3R1bWEgc2VyIEYxMSBlbSBuYXZlZ2Fkb3JlcyAoQyk7IG8gUHJvbXB0IGRlIENvbWFuZG8gbsOjbyDDqSBhYmVydG8gcG9yIFdpbmRvd3MgKyBNIChFKS4gR2FiYXJpdG8gZGVmaW5pdGl2bzogYWx0ZXJuYXRpdmEgRC4iLCJzdGF0ZW1lbnQiOiJObyBzaXN0ZW1hIG9wZXJhY2lvbmFsIE1pY3Jvc29mdCBXaW5kb3dzLCBhbyB0cmFiYWxoYXIgY29tIHbDoXJpb3MgcHJvZ3JhbWFzIGUgcGFzdGFzLCBvIGF0YWxobyBkZSB0ZWNsYWRvIFRlY2xhIFdpbmRvd3MgKyBNIHRlbSBhIGZ1bsOnw6NvIGRlOiIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWNsYXVkZS1pdC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd2luZG93cy9rZXlib2FyZC1zaG9ydGN1dHMtaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.cebra-cachoeiro-q17.json",
+        "mediaType": "application/json",
+        "sha256": "e8b10f7d44b9e4164514676fb503be33b0dc9a083f0e9150ea2a910cfab21004",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8uIn0seyJpZCI6ImUiLCJ0ZXh0IjoiRXJyYWRvLiJ9XSwiYXV0aG9yIjoiQ2VicmFzcGUg4oCUIFByZWZlaXR1cmEgZGUgQ2FjaG9laXJvIGRlIEl0YXBlbWlyaW0vRVMg4oCUIEVkaXRhbCAyMDI0LCBDb25oZWNpbWVudG9zIELDoXNpY29zIHBhcmEgb3MgY2FyZ29zIGRlIG7DrXZlbCBzdXBlcmlvciwgaXRlbSAxNy4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENvZGV4LCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJlIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIE9maWNpYWwgRGVmaW5pdGl2bywgcMOhZ2luYSAxLCBjw7NkaWdvL2NhcmdvIGNvcnJlc3BvbmRlbnRlcywgcHJvdmEgMjAyNC0wNC0wNywgaXRlbSAxNz1FOyBpbnNwZcOnw6NvIHZpc3VhbCBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvY2VicmEtY2FjaG9laXJvLWNiMS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiZDY4MjAwMzVjYjhiYzUzZjhhOTVkMGIzYzkwYjlkMjMwYjlkN2IwZThlM2Y3NTI1NjJkMTYyYTU3MDRjYmU1NiIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvcHJlZl9jYWNob2Vpcm9fMjRfYWRtL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPXzkzN19QQ0lfQURNSU5JU1RSQVRJVk9fQ0IxXzAxLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6IjkzN19QQ0lfQURNSU5JU1RSQVRJVk9fQ0IxXzAxIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIGRlIENhY2hvZWlybyBkZSBJdGFwZW1pcmltL0VTIOKAlCBFZGl0YWwgMjAyNCIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtY2FjaG9laXJvLTIwMjQtOTM3X3BjaV9hZG1pbmlzdHJhdGl2b19jYjFfMDEvcTE3IiwibnVtYmVyIjoiMTciLCJwcm9vZiI6eyJub3RlIjoiUMOhZ2luYSBmw61zaWNhIDIgZG8gUERGLCBjb250ZXh0byBlIGl0ZW0gY29uZnJvbnRhZG9zIGNvbSByZW5kZXJpemHDp8OjbyBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvY2VicmEtY2FjaG9laXJvLWNiMS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI1YmZkZmU2ODJhN2Y1NjY0OTZiMWUwZmRkOGY2Y2U2OGM3YTM5Y2RjYTQwZmM1YTQzZDkxZDljZGZhOTk2NWNmIiwidXJsIjoiaHR0cHM6Ly9jZG4uY2VicmFzcGUub3JnLmJyL2NvbmN1cnNvcy9wcmVmX2NhY2hvZWlyb18yNF9hZG0vYXJxdWl2b3MvOTM3X1BDSV9BRE1JTklTVFJBVElWT19DQjFfMDEuUERGIn0sInJldXNlIjp7Im5vdGUiOiJBcGxpY2HDp8OjbyBhc3Npc3RpZGEgZGEgYXZhbGlhw6fDo28gZG8gcHJvamV0byBhIG9pdG8gaXRlbnMgdMOpY25pY29zIG9maWNpYWlzIGF1dG9zc3VmaWNpZW50ZXMgQ2VicmFzcGUsIHNlbSBvYnJhcyBkZSB0ZXJjZWlyb3MgaW5jb3Jwb3JhZGFzLiBTZW0gbGljZW7Dp2EgZXhwcmVzc2EgcHJlc3VtaWRhIG91IHBhcmVjZXIganVyw61kaWNvIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWNlYnJhc3BlLW1vcmUtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6IjE0YWEzOWUwMWRjYzQ1MDZmNGNjNmE4ZjU5ZWMyOTExOGU0YTYzMzE1ZDhiMTNmM2U1NDkzN2FhMmVhMzcxNTkiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJDb25oZWNpbWVudG9zIELDoXNpY29zIHBhcmEgb3MgY2FyZ29zIGRlIG7DrXZlbCBzdXBlcmlvciIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNH0sImlkIjoiY2VicmEtY2FjaG9laXJvLXExNyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2VicmFzcGUtbWFpcy1pdC13aW5kb3dzLWVuZXJnaWEiXSwicmVzb2x1dGlvbiI6IjEuIFJlaW5pY2lhciBlbmNlcnJhIGUgaW5pY2lhIG5vdmFtZW50ZSBvIHNpc3RlbWE7IG7Do28gw6kgbyBjb21hbmRvIGRlc3RpbmFkbyBhIHVtYSBwYXVzYSByw6FwaWRhIG1hbnRlbmRvIGEgc2Vzc8OjbyBzdXNwZW5zYS4gTm8gV2luZG93cyAxMCwgYSBkZXNjcmnDp8OjbyBzZSBhcHJveGltYSBkZSBTdXNwZW5kZXIsIGUgbyBkZWZpbml0aXZvIG1hcmNhIEVycmFkby4gMi4gQ2VydG8gcHJvbWV0ZXJpYSBwcmVzZXJ2YcOnw6NvIGUgc2FsdmFtZW50byB1bml2ZXJzYWlzIGRlIGFycXVpdm9zIHBlbG8gcmVpbsOtY2lvLiBBcGxpY2F0aXZvcyBwb2RlbSBvZmVyZWNlciByZWN1cGVyYcOnw6NvIG91IHJlYWJlcnR1cmEsIG1hcyBpc3NvIG7Do28gZmF6IFJlaW5pY2lhciBlcXVpdmFsZXIgYSBTdXNwZW5kZXIgbmVtIGVsaW1pbmEgYSBuZWNlc3NpZGFkZSBkZSBzYWx2YXIgbyB0cmFiYWxoby4iLCJzdGF0ZW1lbnQiOiJBIHJlc3BlaXRvIGRlIFdpbmRvd3MgMTAsIGRlIGVkacOnw6NvIGRlIHRleHRvcyBlIGFwcmVzZW50YcOnw7VlcyBjb20gbyBNUyBPZmZpY2UgMzY1IGUgZGUgYXBsaWNhdGl2b3MgcGFyYSBzZWd1cmFuw6dhLCBqdWxndWUgb3MgcHLDs3hpbW9zIGl0ZW5zLlxuTm8gV2luZG93cywgcG9yIG1laW8gZG8gYm90w6NvIFJlaW5pY2lhciwgw6kgcG9zc8OtdmVsIGRlc2xpZ2FyIG8gY29tcHV0YWRvciwgbWFudGVuZG8tc2UgYWJlcnRvcyBlIHNhbHZvcyBvcyBhcnF1aXZvcyBlbSB1c28sIHBhcmEgcmV0b3JuYXIgYSBlbGVzIGFww7NzIHVtYSBwYXVzYSByw6FwaWRhLiIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWNlYnJhc3BlLW1haXMtaXQtd2luZG93cy1lbmVyZ2lhIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBEZXNsaWdhciwgc3VzcGVuZGVyIG91IGhpYmVybmFyIG8gY29tcHV0YWRvciIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3MvZXhwZXJpZW5jZS9wb3dlci1iYXR0ZXJ5L3NodXQtZG93bi1zbGVlcC1vci1oaWJlcm5hdGUteW91ci1wYyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.cerq25-tes-q21.json",
+        "mediaType": "application/json",
+        "sha256": "dccc6c20e247afb19017591d04012fb20247dd915e25643a089f3c02e29f43d8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2VsZWNpb25hciBJbmljaWFyLCBhY2Vzc2FyIENvbmZpZ3VyYcOnw7VlcyA+IFByaXZhY2lkYWRlID4gw4FyZWEgZGUgVHJhbnNmZXLDqm5jaWEgPiBMaW1wYXIgZGFkb3MgZGEgw4FyZWEgZGUgVHJhbnNmZXLDqm5jaWEgZSBjbGljYXIgZW0gTGltcGFyLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkVtIHNpc3RlbWFzIGNvbSBjb25maWd1cmHDp8OjbyBwYWRyw6NvLCBuYSDDoXJlYSBkZSB0cmFiYWxobywgw6kgcG9zc8OtdmVsIGNsaWNhciBubyBib3TDo28gXCJMaW1wYXIgZGFkb3MgZGEgw4FyZWEgZGUgVHJhbnNmZXLDqm5jaWFcIi4ifSx7ImlkIjoiYyIsInRleHQiOiJTZWxlY2lvbmFyIEluaWNpYXIsIGFjZXNzYXIgQ29uZmlndXJhw6fDtWVzID4gU2lzdGVtYSA+IMOBcmVhIGRlIFRyYW5zZmVyw6puY2lhID4gTGltcGFyIGRhZG9zIGRhIMOBcmVhIGRlIFRyYW5zZmVyw6puY2lhIGUgY2xpY2FyIGVtIExpbXBhci4ifSx7ImlkIjoiZCIsInRleHQiOiJTZWxlY2lvbmFyIEluaWNpYXIsIGFjZXNzYXIgQ29uZmlndXJhw6fDtWVzID4gU2lzdGVtYSA+IMOBcmVhIGRlIFRyYWJhbGhvIFJlbW90YSA+IExpbXBhciBkYWRvcyBkYSDDgXJlYSBkZSBUcmFuc2ZlcsOqbmNpYSBlIGNsaWNhciBlbSBMaW1wYXIuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiU2VsZWNpb25hciBJbmljaWFyLCBhY2Vzc2FyIFRyYW5zZmVyw6puY2lhIGRlIMOBcmVhIGUgY2xpY2FyIGVtIExpbXBhci4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENlcnF1aWxobyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSwgVGVzb3VyZWlybyBHZXJhbCBkbyBNdW5pY8OtcGlvLCBxdWVzdMOjbyAyMS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgNywgcXVhZHJvIGRvIGNhcmdvIFRFU09VUkVJUk8gR0VSQUwgRE8gTVVOSUPDjVBJTzogMjE9QzsgY29uZmVyw6puY2lhIHZpc3VhbCBuYSByZW5kZXJpemHDp8OjbyBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk4LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI2NzdmMGE2MGIxMDgwYTRiNjY5ZTNiZGJjM2YwNTk5NDZhNzdmNDlkODZlNDE0YmIzYTg3Y2M3MjA3MWM0MGFmIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTgvYW5leG9zL2UxNDFiYmVlLWFmZjUtNDRmMC1hN2ZhLTNlNTExOWM4Zjg4MC5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENlcnF1aWxobyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLWNlcnF1aWxoby0yMDI1LXRlc291cmVpcm8vcTIxIiwibnVtYmVyIjoiMjEiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMjEsIHDDoWdpbmEgZsOtc2ljYSA2IGRvIFBERjsgdGV4dG8gZXh0cmHDrWRvIGNvbmZyb250YWRvIGNvbSBhIHJlbmRlcml6YcOnw6NvIGRhIHDDoWdpbmE7IGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzIGUgb3JkZW0gY29uZmVyaWRvcyB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk4LXByb3ZhLXRlc291cmVpcm8tZ2VyYWwtZG8tbXVuaWNwaW8ucGRmIiwic2hhMjU2IjoiNjY4MTRkMmJlNTcxMGExYjAyM2IyMjk0YTA3ZWY5Yzc1NzhiNTVjMTVjNDI5YmEyNDNlMTE4N2MzM2ZhNzA3NyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk4L2FuZXhvcy84MDE0MjY5Mi01NGFiLTQzZDctOTBjNy0wMzExODVjNjVjMjcucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IGFydC4gOMK6LCBJViwgZGEgTGVpIDkuNjEwLzE5OTgsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgbm8gcHJvamV0bywgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSBkZSBwcm92YSBww7pibGljYSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gaW5jb3Jwb3JhZGEuIE7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSBjb25zZW50aW1lbnRvIGFmaXJtYWRvOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVGVzb3VyZWlybyBHZXJhbCBkbyBNdW5pY8OtcGlvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI1fSwiaWQiOiJjZXJxMjUtdGVzLXEyMSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWNsaXBib2FyZCJdLCJyZXNvbHV0aW9uIjoiMS4gTm8gV2luZG93cyAxMCBlIG5vIFdpbmRvd3MgMTEsIGEgb3DDp8OjbyBMaW1wYXIgZGFkb3MgZGEgw6FyZWEgZGUgdHJhbnNmZXLDqm5jaWEgZmljYSBlbSBDb25maWd1cmHDp8O1ZXMgPiBTaXN0ZW1hID4gw4FyZWEgZGUgVHJhbnNmZXLDqm5jaWE7IGEgcXVlc3TDo28gbsOjbyBmaXhhIGEgdmVyc8OjbywgZSBvIGNhbWluaG8gw6kgbyBtZXNtbyBuYXMgZHVhcyB2ZXJzw7VlcyBhdHVhaXM7IGFsdGVybmF0aXZhIEMuIDIuIEEgY29sb2NhIG8gaXRlbSBlbSBQcml2YWNpZGFkZTsgQiBpbnZlbnRhIHVtIGJvdMOjbyBuYSDDoXJlYSBkZSB0cmFiYWxobzsgRCBvIGNvbG9jYSBlbSDDgXJlYSBkZSBUcmFiYWxobyBSZW1vdGEsIHJlY3Vyc28gZGUgY29uZXjDo28gcmVtb3RhOyBFIGNpdGEgdW0gbWVudSBpbmV4aXN0ZW50ZS4gTyBoaXN0w7NyaWNvIHRhbWLDqW0gcG9kZSBzZXIgYWJlcnRvIGNvbSBXaW5kb3dzICsgViwgbWFzIGEgcGVyZ3VudGEgcGVkZSBvIGNhbWluaG8gbmFzIENvbmZpZ3VyYcOnw7Vlcy4gR2FiYXJpdG8gZGVmaW5pdGl2bzogYWx0ZXJuYXRpdmEgQy4iLCJzdGF0ZW1lbnQiOiJGZXJuYW5kYSBlc3RhdmEgdHJhbnNmZXJpbmRvIGRhZG9zIGRlIHVtIGRvY3VtZW50byBwYXJhIG91dHJvLCB1dGlsaXphbmRvIG9zIGNvbWFuZG9zIGNvcGlhciAoQ3RybCArIEMpIGUgY29sYXIgKEN0cmwgKyBWKS4gQ29tbyBvIGNvbnRlw7pkbyBlcmEgY29uZmlkZW5jaWFsLCBlbGEgZGVjaWRpdSBsaW1wYXIgbyBoaXN0w7NyaWNvIGRhIMOBcmVhIGRlIFRyYW5zZmVyw6puY2lhIHBvciBzZWd1cmFuw6dhLiBTZW5kbyBhc3NpbSwgcXVhbCBjYW1pbmhvIEZlcm5hbmRhIHNlZ3VpdSBwYXJhIGxpbXBhciBvIGhpc3TDs3JpY28gZGEgw4FyZWEgZGUgVHJhbnNmZXLDqm5jaWEsIGRlbnRyZSBhcyBvcMOnw7VlcyBhYmFpeG8/IEFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgcXVlIHJlcHJlc2VudGEgZXNzZSBjYW1pbmhvLiIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWNsYXVkZS1pdC1jbGlwYm9hcmQiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFVzYW5kbyBhIMOhcmVhIGRlIHRyYW5zZmVyw6puY2lhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy9hcHBzL3VzaW5nLXRoZS1jbGlwYm9hcmQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-acessibilidade-config.json",
+        "mediaType": "application/json",
+        "sha256": "0bf2455d5812c2e695504d97e4dea3f6f8ba61951dd307a2fefd28d07cde99c8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytFLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFsdCtGOS4ifSx7ImlkIjoiYyIsInRleHQiOiJXaW5kb3dzK1UuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQ3RybCtBbHQrVi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1hY2Vzc2liaWxpZGFkZS1jb25maWciLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIl0sInJlc29sdXRpb24iOiIxLiBXaW5kb3dzK1UgZMOhIGFjZXNzbyDDoHMgY29uZmlndXJhw6fDtWVzIGRlIGFjZXNzaWJpbGlkYWRlLiAyLiBFeHBsb3JhZG9yIGUgYXRhbGhvcyBwcsOzcHJpb3MgZGUgYXBsaWNhdGl2b3MgbsOjbyBzdWJzdGl0dWVtIGVzc2UgY29tYW5kbyBkbyBXaW5kb3dzLiIsInN0YXRlbWVudCI6IlF1YWwgYXRhbGhvIHBhZHLDo28gYWJyZSBhcyBjb25maWd1cmHDp8O1ZXMgZGUgYWNlc3NpYmlsaWRhZGUgZG8gV2luZG93cyAxMT8iLCJ0b3BpY0lkIjoiSTAyIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF0YWxob3MgZGUgdGVjbGFkbyBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvYWNjZXNzaWJpbGl0eS93aW5kb3dzL2tleWJvYXJkLXNob3J0Y3V0cy1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-barra-percorrer.json",
+        "mediaType": "application/json",
+        "sha256": "ada00ae6a6ae1faf02190e3a408b923d3802e55d8e7594faeaecde9aed07f972",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytULiJ9LHsiaWQiOiJiIiwidGV4dCI6IldpbmRvd3MrUi4ifSx7ImlkIjoiYyIsInRleHQiOiJXaW5kb3dzK0wuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQ3RybCtaLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LWJhcnJhLXBlcmNvcnJlciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiXSwicmVzb2x1dGlvbiI6IjEuIFdpbmRvd3MrVCBkaXJlY2lvbmEgYSBuYXZlZ2HDp8OjbyBhb3MgYXBsaWNhdGl2b3MgZGEgYmFycmEgZGUgdGFyZWZhcy4gMi4gRXhlY3V0YXIsIGJsb3F1ZWFyIGUgZGVzZmF6ZXIgc8OjbyBhw6fDtWVzIGRpc3RpbnRhcy4iLCJzdGF0ZW1lbnQiOiJObyBXaW5kb3dzIDExLCBxdWFsIGF0YWxobyBwYWRyw6NvIHBlcmNvcnJlIG9zIGFwbGljYXRpdm9zIG5hIGJhcnJhIGRlIHRhcmVmYXM/IiwidG9waWNJZCI6IkkwMiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd2luZG93cy9rZXlib2FyZC1zaG9ydGN1dHMtaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-busca-explorador.json",
+        "mediaType": "application/json",
+        "sha256": "737d1501e2b467c0707478d322456933793ec08f6431a35587b7422d1bda04ef",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0K0Y0LiJ9LHsiaWQiOiJiIiwidGV4dCI6IldpbmRvd3MrTC4ifSx7ImlkIjoiYyIsInRleHQiOiJGMy4ifSx7ImlkIjoiZCIsInRleHQiOiJGMi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1idXNjYS1leHBsb3JhZG9yIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gRjMgY2hhbWEgYSBwZXNxdWlzYSBubyBjb250ZXh0byBkbyBFeHBsb3JhZG9yLiAyLiBGMiByZW5vbWVpYTsgQWx0K0Y0IGZlY2hhIGUgV2luZG93cytMIGJsb3F1ZWlhIGEgc2Vzc8Ojby4gTsOjbyBjb25mdW5kaXIgYnVzY2EgbmEgcGFzdGEgY29tIHBlc3F1aXNhIGdlcmFsIGFiZXJ0YSBwb3IgV2luZG93cytTLiIsInN0YXRlbWVudCI6Ik5vIEV4cGxvcmFkb3IgZG8gV2luZG93cyAxMSwgcXVhbCB0ZWNsYSBwYWRyw6NvIGRpcmVjaW9uYSBhIGJ1c2NhIHBvciBhcnF1aXZvIG91IHBhc3RhLCBzZWd1bmRvIGEgbGlzdGEgZGUgYXRhbGhvcyBkYSBNaWNyb3NvZnQ/IiwidG9waWNJZCI6IkkwMiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd2luZG93cy9rZXlib2FyZC1zaG9ydGN1dHMtaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-clipboard-ativar.json",
+        "mediaType": "application/json",
+        "sha256": "b3391938a4737b79c40b72331b4f7a48061ad0c5ed4463820475649a8dc1eba0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQXRpdmFyIGEgc2luY3Jvbml6YcOnw6NvIGVudHJlIGRpc3Bvc2l0aXZvcywgc2VtIGEgcXVhbCBvIGhpc3TDs3JpY28gbG9jYWwgbsOjbyBmdW5jaW9uYS4ifSx7ImlkIjoiYiIsInRleHQiOiJSZWluaWNpYXIgbyBjb21wdXRhZG9yLCBxdWUgYXRpdmEgbyBoaXN0w7NyaWNvIGF1dG9tYXRpY2FtZW50ZS4ifSx7ImlkIjoiYyIsInRleHQiOiJBdGl2YXIgbyBoaXN0w7NyaWNvIGRhIMOhcmVhIGRlIHRyYW5zZmVyw6puY2lhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkZvcm1hdGFyIG8gZGlzY28gZG8gV2luZG93cy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1jbGlwYm9hcmQtYXRpdmFyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY2xpcGJvYXJkIl0sInJlc29sdXRpb24iOiIxLiBBbyBwcmVzc2lvbmFyIFdpbmRvd3MrViBjb20gbyBoaXN0w7NyaWNvIGRlc2F0aXZhZG8sIG8gcHLDs3ByaW8gcGFpbmVsIG9mZXJlY2UgQXRpdmFyOyB0YW1iw6ltIMOpIHBvc3PDrXZlbCBsaWfDoS1sbyBlbSBDb25maWd1cmHDp8O1ZXMgPiBTaXN0ZW1hID4gw4FyZWEgZGUgdHJhbnNmZXLDqm5jaWE7IGFsdGVybmF0aXZhIEMuIDIuIEEgZXJyYSBwb3JxdWUgYSBzaW5jcm9uaXphw6fDo28gw6kgb3BjaW9uYWwgZSBpbmRlcGVuZGVudGUgZG8gaGlzdMOzcmljbyBsb2NhbDsgQiBlcnJhIHBvcnF1ZSByZWluaWNpYXIgbsOjbyBhdGl2YSBvIHJlY3Vyc287IEQgZXJyYSBwb3JxdWUgZm9ybWF0YXIgbyBkaXNjbyBuw6NvIHRlbSByZWxhw6fDo28gY29tIG8gcmVjdXJzby4iLCJzdGF0ZW1lbnQiOiJBbyBwcmVzc2lvbmFyIFdpbmRvd3MrViBwZWxhIHByaW1laXJhIHZleiwgdW1hIHBlc3NvYSB2w6ogcXVlIG8gaGlzdMOzcmljbyBkYSDDoXJlYSBkZSB0cmFuc2ZlcsOqbmNpYSBlc3TDoSBkZXNhdGl2YWRvLiBRdWFsIGHDp8OjbyBkbyBwcsOzcHJpbyByZWN1cnNvIMOpIG5lY2Vzc8OhcmlhIHBhcmEgdXPDoS1sbz8iLCJ0b3BpY0lkIjoiSTAyIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNsaXBib2FyZCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgVXNhbmRvIGEgw6FyZWEgZGUgdHJhbnNmZXLDqm5jaWEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2FwcHMvdXNpbmctdGhlLWNsaXBib2FyZCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-configuracoes.json",
+        "mediaType": "application/json",
+        "sha256": "6e926030a18e2a57bef3c8bf70b764b639984d46741ca5736050e380950b1559",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytELiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFsdCtFbnRlci4ifSx7ImlkIjoiYyIsInRleHQiOiJXaW5kb3dzK0kuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiV2luZG93cytFLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWNvbmZpZ3VyYWNvZXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIl0sInJlc29sdXRpb24iOiIxLiBXaW5kb3dzK0kgYWJyZSBDb25maWd1cmHDp8O1ZXMuIDIuIFdpbmRvd3MrRSBhYnJlIG8gRXhwbG9yYWRvciwgV2luZG93cytEIG1vc3RyYSBvdSBvY3VsdGEgYSDDgXJlYSBkZSBUcmFiYWxobyBlIEFsdCtFbnRlciBleGliZSBwcm9wcmllZGFkZXMgZG8gaXRlbSBzZWxlY2lvbmFkby4iLCJzdGF0ZW1lbnQiOiJRdWFsIGF0YWxobyBwYWRyw6NvIGRvIFdpbmRvd3MgMTEgYWJyZSBvIGFwbGljYXRpdm8gQ29uZmlndXJhw6fDtWVzPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-desktop-alternar.json",
+        "mediaType": "application/json",
+        "sha256": "34056018378955615a4974e9d4349e0ee28457f251d787142e7bf516ec29c0a4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytDdHJsK1NldGEgcGFyYSBhIGRpcmVpdGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiV2luZG93cytDdHJsK0QuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiV2luZG93cytTaGlmdCtTZXRhIHBhcmEgYSBkaXJlaXRhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkN0cmwrU2hpZnQrTi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1kZXNrdG9wLWFsdGVybmFyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gV2luZG93cytDdHJsK1NldGEgYWx0ZXJuYSBlbnRyZSDDoXJlYXMgdmlydHVhaXMgZXhpc3RlbnRlcy4gMi4gV2luZG93cytDdHJsK0QgY3JpYSBvdXRyYSDDoXJlYTsgV2luZG93cytTaGlmdCtTZXRhIG1vdmUgamFuZWxhIGVudHJlIG1vbml0b3JlczsgY3JpYXIgcGFzdGEgw6kgb3V0cmEgb3BlcmHDp8Ojby4iLCJzdGF0ZW1lbnQiOiJObyBXaW5kb3dzIDExLCBqw6EgZXhpc3RlbSBkdWFzIMOhcmVhcyBkZSB0cmFiYWxobyB2aXJ0dWFpcy4gUXVhbCBhdGFsaG8gcGFkcsOjbyBtdWRhIHBhcmEgYSDDoXJlYSB2aXJ0dWFsIMOgIGRpcmVpdGEsIHNlbSBjcmlhciBvdXRyYT8iLCJ0b3BpY0lkIjoiSTAyIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF0YWxob3MgZGUgdGVjbGFkbyBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvYWNjZXNzaWJpbGl0eS93aW5kb3dzL2tleWJvYXJkLXNob3J0Y3V0cy1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-executar.json",
+        "mediaType": "application/json",
+        "sha256": "faf057ffa7e420ec00664986a3e8fd7c55db9fad986eba0ab048317ea1322b93",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ3RybCtDLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFsdCtUYWIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiV2luZG93cytSLiJ9LHsiaWQiOiJkIiwidGV4dCI6IldpbmRvd3MrRS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1leGVjdXRhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiXSwicmVzb2x1dGlvbiI6IjEuIFdpbmRvd3MrUiBhYnJlIEV4ZWN1dGFyIHBhcmEgaW5mb3JtYXIgdW0gY29tYW5kbyBvdSBsb2NhbGl6YcOnw6NvLiAyLiBFeHBsb3JhZG9yLCBjw7NwaWEgZSBhbHRlcm7Dom5jaWEgZGUgamFuZWxhcyBjb3JyZXNwb25kZW0gYW9zIG91dHJvcyBhdGFsaG9zLiIsInN0YXRlbWVudCI6Ik5vIFdpbmRvd3MgMTEgY29tIGF0YWxob3MgcGFkcsOjbywgcXVhbCBjb21iaW5hw6fDo28gYWJyZSBhIGNhaXhhIEV4ZWN1dGFyPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-exibir-previsualizacao.json",
+        "mediaType": "application/json",
+        "sha256": "76ac44b4ca177ae994147f4853bae7f5bccb2ac5ad70d156e661cb92ca3a6301",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUGFpbmVsIGRlIHZpc3VhbGl6YcOnw6NvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlBhaW5lbCBkZSBkZXRhbGhlcy4ifSx7ImlkIjoiYyIsInRleHQiOiJQYWluZWwgZGUgbmF2ZWdhw6fDo28uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQmFycmEgZGUgZW5kZXJlw6dvcy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1leGliaXItcHJldmlzdWFsaXphY2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gTm8gRXhwbG9yYWRvciwgQWx0K1AgbW9zdHJhIG91IG9jdWx0YSBvIHBhaW5lbCBkZSB2aXN1YWxpemHDp8OjbzsgYWx0ZXJuYXRpdmEgQS4gMi4gQiBlcnJhIHBvcnF1ZSBvIHBhaW5lbCBkZSBkZXRhbGhlcyB1c2EgQWx0K1NoaWZ0K1A7IEMgZXJyYSBwb3JxdWUgbyBwYWluZWwgZGUgbmF2ZWdhw6fDo28gbsOjbyDDqSBhbHRlcm5hZG8gcG9yIEFsdCtQOyBEIGVycmEgcG9ycXVlIGEgYmFycmEgZGUgZW5kZXJlw6dvcyDDqSBzZWxlY2lvbmFkYSBjb20gQWx0K0QuIiwic3RhdGVtZW50IjoiTm8gRXhwbG9yYWRvciBkbyBXaW5kb3dzIDExLCBjb20gYXRhbGhvcyBwYWRyw6NvLCBBbHQrUCBhbHRlcm5hIHF1YWwgcGFpbmVsPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-fechar-janela.json",
+        "mediaType": "application/json",
+        "sha256": "36622247a7a1113d9b3c6c706cc8da258e5f26e40008356220f3c9a0fbd72ebc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0K0Y0LiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFsdCtUYWIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiV2luZG93cytUYWIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiV2luZG93cytWLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LWZlY2hhci1qYW5lbGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIl0sInJlc29sdXRpb24iOiIxLiBBbHQrRjQgc29saWNpdGEgbyBmZWNoYW1lbnRvIGRvIGl0ZW0gb3UgYXBsaWNhdGl2byBhdGl2by4gMi4gQWx0K1RhYiBhbHRlcm5hIGFwbGljYXRpdm9zOyBXaW5kb3dzK1RhYiBhYnJlIGEgVmlzw6NvIGRlIHRhcmVmYXMgZSBXaW5kb3dzK1YgYWJyZSBhIMOhcmVhIGRlIHRyYW5zZmVyw6puY2lhLiIsInN0YXRlbWVudCI6Ik5vIFdpbmRvd3MgMTEgY29tIGF0YWxob3MgcGFkcsOjbywgcXVhbCBjb21iaW5hw6fDo28gZmVjaGEgYSBqYW5lbGEgYXRpdmEgZGUgdW0gYXBsaWNhdGl2bywgcG9kZW5kbyBoYXZlciBzb2xpY2l0YcOnw6NvIHBhcmEgc2FsdmFyIGFsdGVyYcOnw7Vlcz8iLCJ0b3BpY0lkIjoiSTAyIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF0YWxob3MgZGUgdGVjbGFkbyBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvYWNjZXNzaWJpbGl0eS93aW5kb3dzL2tleWJvYXJkLXNob3J0Y3V0cy1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-foco-propriedades.json",
+        "mediaType": "application/json",
+        "sha256": "cabbbe141551a45468268913a5e802d39cc8aa97c757e4092b078aacd99c5269",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ3RybCtTaGlmdCtFc2MuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiV2luZG93cytWLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkFsdCtFbnRlci4ifSx7ImlkIjoiZCIsInRleHQiOiJXaW5kb3dzK1RhYi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1mb2NvLXByb3ByaWVkYWRlcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiXSwicmVzb2x1dGlvbiI6IjEuIEFsdCtFbnRlciBtb3N0cmEgcHJvcHJpZWRhZGVzIGRhIHNlbGXDp8Ojby4gMi4gVmlzw6NvIGRlIHRhcmVmYXMsIEdlcmVuY2lhZG9yIGRlIFRhcmVmYXMgZSBoaXN0w7NyaWNvIGRhIMOhcmVhIGRlIHRyYW5zZmVyw6puY2lhIHPDo28gb3V0cm9zIHJlY3Vyc29zLiIsInN0YXRlbWVudCI6Ik5vIEV4cGxvcmFkb3IgZG8gV2luZG93cyAxMSwgY29tIGFycXVpdm8gc2VsZWNpb25hZG8sIHF1YWwgYXRhbGhvIHBhZHLDo28gYWJyZSBhcyBwcm9wcmllZGFkZXMgZG8gaXRlbT8iLCJ0b3BpY0lkIjoiSTAyIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF0YWxob3MgZGUgdGVjbGFkbyBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvYWNjZXNzaWJpbGl0eS93aW5kb3dzL2tleWJvYXJkLXNob3J0Y3V0cy1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-historico-clipboard.json",
+        "mediaType": "application/json",
+        "sha256": "fa79d6782935e2ef7301cb390328360533c9d856166280817f963e9e502884ec",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0K0Y0LiJ9LHsiaWQiOiJiIiwidGV4dCI6IldpbmRvd3MrTC4ifSx7ImlkIjoiYyIsInRleHQiOiJXaW5kb3dzK1YuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiV2luZG93cytFLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWhpc3Rvcmljby1jbGlwYm9hcmQiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIiwiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jbGlwYm9hcmQiXSwicmVzb2x1dGlvbiI6IjEuIFdpbmRvd3MrViBhYnJlIG8gaGlzdMOzcmljbyBkYSDDoXJlYSBkZSB0cmFuc2ZlcsOqbmNpYS4gMi4gV2luZG93cytFIGFicmUgbyBFeHBsb3JhZG9yLCBBbHQrRjQgZmVjaGEgbyBpdGVtIGF0aXZvIGUgV2luZG93cytMIGJsb3F1ZWlhIGEgc2Vzc8Ojby4iLCJzdGF0ZW1lbnQiOiJObyBXaW5kb3dzIDExLCBjb20gbyBoaXN0w7NyaWNvIGRhIMOhcmVhIGRlIHRyYW5zZmVyw6puY2lhIGhhYmlsaXRhZG8sIHF1YWwgYXRhbGhvIGFicmUgYSBsaXN0YSBkZSBpdGVucyBjb3BpYWRvcyBhbnRlcmlvcm1lbnRlPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifSwiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jbGlwYm9hcmQiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFVzYW5kbyBhIMOhcmVhIGRlIHRyYW5zZmVyw6puY2lhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvd2luZG93cy9hcHBzL3VzaW5nLXRoZS1jbGlwYm9hcmQifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-lupa.json",
+        "mediaType": "application/json",
+        "sha256": "0ca78baf2a6aca032e34c812551f9abcf3c9357787d390900acf626306355675",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTHVwYS4ifSx7ImlkIjoiYiIsInRleHQiOiJMaXhlaXJhLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ikhpc3TDs3JpY28gZGEgw6FyZWEgZGUgdHJhbnNmZXLDqm5jaWEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiR2VyZW5jaWFkb3IgZGUgaW1wcmVzc8Ojby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1sdXBhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gV2luZG93cytNYWlzIGFicmUgYSBMdXBhIHBhcmEgYW1wbGlhciBhIHZpc3VhbGl6YcOnw6NvLiAyLiBPIGF0YWxobyBuw6NvIGxpbXBhIGFycXVpdm9zLCBuw6NvIGFicmUgbyBoaXN0w7NyaWNvIGRlIGPDs3BpYSBlIG7Do28gYWRtaW5pc3RyYSBpbXByZXNzb3Jhcy4iLCJzdGF0ZW1lbnQiOiJObyBXaW5kb3dzIDExLCBjb20gYXRhbGhvcyBwYWRyw6NvLCBXaW5kb3dzIGUgYSB0ZWNsYSBkZSBhZGnDp8OjbyAoKykgcGVybWl0ZW0gaW5pY2lhciBxdWFsIHJlY3Vyc28/IiwidG9waWNJZCI6IkkwMiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd2luZG93cy9rZXlib2FyZC1zaG9ydGN1dHMtaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-maximizar-janela.json",
+        "mediaType": "application/json",
+        "sha256": "1fe49fe4e9e66a05ca23e321f9efb92583d7a931d8fbf318c6bfbe71b6368293",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytTZXRhIHBhcmEgY2ltYS4ifSx7ImlkIjoiYiIsInRleHQiOiJXaW5kb3dzK1YuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ3RybCtDLiJ9LHsiaWQiOiJkIiwidGV4dCI6IldpbmRvd3MrUi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1tYXhpbWl6YXItamFuZWxhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gV2luZG93cytTZXRhIHBhcmEgY2ltYSBtYXhpbWl6YSBhIGphbmVsYSBjb21wYXTDrXZlbC4gMi4gw4FyZWEgZGUgdHJhbnNmZXLDqm5jaWEsIGPDs3BpYSBlIEV4ZWN1dGFyIG7Do28gZGVmaW5lbSBvIHRhbWFuaG8gZGEgamFuZWxhLiIsInN0YXRlbWVudCI6Ik5vIFdpbmRvd3MgMTEsIGNvbSBhdGFsaG9zIHBhZHLDo28gZSB1bWEgamFuZWxhIHF1ZSBhY2VpdGEgbWF4aW1pemHDp8OjbywgcXVhbCBjb21iaW5hw6fDo28gYSBtYXhpbWl6YT8iLCJ0b3BpY0lkIjoiSTAyIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEF0YWxob3MgZGUgdGVjbGFkbyBubyBXaW5kb3dzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvYWNjZXNzaWJpbGl0eS93aW5kb3dzL2tleWJvYXJkLXNob3J0Y3V0cy1pbi13aW5kb3dzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-modo-projecao.json",
+        "mediaType": "application/json",
+        "sha256": "2015ea685a508cc1e58f82fc222a961c75331b1fad5501c43ef434451482a6ba",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytQLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkN0cmwrWC4ifSx7ImlkIjoiYyIsInRleHQiOiJXaW5kb3dzK0wuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRjIuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtbW9kby1wcm9qZWNhbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiXSwicmVzb2x1dGlvbiI6IjEuIFdpbmRvd3MrUCBhYnJlIGFzIG9ww6fDtWVzIGRlIHByb2plw6fDo28gZSBtw7psdGlwbGFzIHRlbGFzLiAyLiBSZWNvcnRhciwgYmxvcXVlYXIgc2Vzc8OjbyBlIHJlbm9tZWFyIG7Do28gZXNjb2xoZW0gbyBtb2RvIGRhcyB0ZWxhcy4iLCJzdGF0ZW1lbnQiOiJFbSB1bSBjb21wdXRhZG9yIFdpbmRvd3MgMTEgbGlnYWRvIGEgcHJvamV0b3IsIHF1YWwgYXRhbGhvIHBhZHLDo28gcGVybWl0ZSBlc2NvbGhlciBlbnRyZSBvcMOnw7VlcyBjb21vIGR1cGxpY2FyIGUgZXN0ZW5kZXIgYSBleGliacOnw6NvPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-mudar-entrada.json",
+        "mediaType": "application/json",
+        "sha256": "538ec95709135eb20594eb29a8f7890ca1a67c61da620fe1885fe8ecb7286961",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytFLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFsdCtFbnRlci4ifSx7ImlkIjoiYyIsInRleHQiOiJXaW5kb3dzK0JhcnJhIGRlIGVzcGHDp29zLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkN0cmwrU2hpZnQrTi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1tdWRhci1lbnRyYWRhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gV2luZG93cytCYXJyYSBkZSBlc3Bhw6dvcyBhbHRlcm5hIGVudHJlIG9ww6fDtWVzIGRlIGVudHJhZGEgaW5zdGFsYWRhcy4gMi4gT3MgZGVtYWlzIGF0YWxob3MgY3JpYW0gcGFzdGEsIGFicmVtIG8gRXhwbG9yYWRvciBvdSBleGliZW0gcHJvcHJpZWRhZGVzOyBuw6NvIGVzY29saGVtIGxheW91dC4iLCJzdGF0ZW1lbnQiOiJVbWEgZXN0YcOnw6NvIFdpbmRvd3MgMTEgcG9zc3VpIGRvaXMgbGF5b3V0cyBkZSB0ZWNsYWRvIGluc3RhbGFkb3MuIFF1YWwgYXRhbGhvIHBhZHLDo28gcGVyY29ycmUgYXMgb3DDp8O1ZXMgZGUgaWRpb21hIGRlIGVudHJhZGEgZSBsYXlvdXQ/IiwidG9waWNJZCI6IkkwMiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd2luZG93cy9rZXlib2FyZC1zaG9ydGN1dHMtaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-narrador.json",
+        "mediaType": "application/json",
+        "sha256": "20c33c42e1e947ac3113bec3b98dabcf2e8d77ce11c0fae900fbbc575c9b0ec6",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0K1RhYi4ifSx7ImlkIjoiYiIsInRleHQiOiJXaW5kb3dzK1IuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiV2luZG93cytDdHJsK0VudGVyLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkN0cmwrU2hpZnQrTi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1uYXJyYWRvciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiXSwicmVzb2x1dGlvbiI6IjEuIFdpbmRvd3MrQ3RybCtFbnRlciBjb250cm9sYSBvIE5hcnJhZG9yLiAyLiBDcmlhciBwYXN0YSwgYWx0ZXJuYXIgamFuZWxhcyBlIGFicmlyIEV4ZWN1dGFyIHPDo28gYcOnw7VlcyBkaWZlcmVudGVzLiIsInN0YXRlbWVudCI6IlF1YWwgYXRhbGhvIHBhZHLDo28gZG8gV2luZG93cyAxMSBpbmljaWEgb3UgYWx0ZXJuYSBvIE5hcnJhZG9yLCByZWN1cnNvIGRlIGxlaXR1cmEgZGEgaW50ZXJmYWNlPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-pesquisa-windows.json",
+        "mediaType": "application/json",
+        "sha256": "40818a162c92f483a3c6ddcafaa12e20f057819a49a68f6181c0d97f18825caf",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUGVzcXVpc2EuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQ29uZmlndXJhw6fDtWVzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlZpc8OjbyBkZSB0YXJlZmFzLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ikhpc3TDs3JpY28gZGEgw6FyZWEgZGUgdHJhbnNmZXLDqm5jaWEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtcGVzcXVpc2Etd2luZG93cyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWF0YWxob3MiXSwicmVzb2x1dGlvbiI6IjEuIFdpbmRvd3MrUyBhYnJlIGEgcGVzcXVpc2EgZG8gV2luZG93czsgYWx0ZXJuYXRpdmEgQS4gMi4gQ29uZmlndXJhw6fDtWVzIGFicmUgY29tIFdpbmRvd3MrSSAoQik7IGEgVmlzw6NvIGRlIHRhcmVmYXMsIGNvbSBXaW5kb3dzK1RhYiAoQyk7IG8gaGlzdMOzcmljbyBkYSDDoXJlYSBkZSB0cmFuc2ZlcsOqbmNpYSwgY29tIFdpbmRvd3MrViAoRCkuIiwic3RhdGVtZW50IjoiQ29tIGF0YWxob3MgcGFkcsOjbyBubyBXaW5kb3dzIDExLCBXaW5kb3dzK1MgYWJyZSBxdWFsIHJlY3Vyc28/IiwidG9waWNJZCI6IkkwMiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd2luZG93cy9rZXlib2FyZC1zaG9ydGN1dHMtaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-selecao-texto-palavra.json",
+        "mediaType": "application/json",
+        "sha256": "98292bea01b4cd1636bec35aeff6ed3c278898821a7de03e09f41c7bf0b67154",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0K0Y0LiJ9LHsiaWQiOiJiIiwidGV4dCI6IlByaW50IFNjcmVlbi4ifSx7ImlkIjoiYyIsInRleHQiOiJDdHJsK1NoaWZ0K3RlY2xhIGRlIGRpcmXDp8Ojby4ifSx7ImlkIjoiZCIsInRleHQiOiJXaW5kb3dzK1AuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtc2VsZWNhby10ZXh0by1wYWxhdnJhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gQ3RybCtTaGlmdCBjb20gYSBkaXJlw6fDo28gZXN0ZW5kZSBhIHNlbGXDp8OjbyBwb3IgYmxvY29zLCBjb21vIHBhbGF2cmFzLiAyLiBQcm9qZXRhciB0ZWxhcywgZmVjaGFyIGFwbGljYXRpdm8gb3UgY2FwdHVyYXIgaW1hZ2VtIG7Do28gc2VsZWNpb25hIHRleHRvIGRlc3NlIG1vZG8uIiwic3RhdGVtZW50IjoiTm8gV2luZG93cywgZW0gdW0gZWRpdG9yIHF1ZSB1c2EgYXRhbGhvcyBwYWRyw6NvIGRlIGVkacOnw6NvIGRlIHRleHRvLCBxdWFsIGNvbWJpbmHDp8OjbyBleHBhbmRlIGEgc2VsZcOnw6NvIHBvciBibG9jb3MgZGUgdGV4dG8gbmEgZGlyZcOnw6NvIGluZGljYWRhPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-subir-pasta.json",
+        "mediaType": "application/json",
+        "sha256": "25aff9f796948b36f08e77891542670d699594c3ae5bd1ebe74982b1d7343bbd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiV2luZG93cytJLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkN0cmwrU2hpZnQrRXNjLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkFsdCtTZXRhIHBhcmEgY2ltYS4ifSx7ImlkIjoiZCIsInRleHQiOiJBbHQrVGFiLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXN1YmlyLXBhc3RhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gQWx0K1NldGEgcGFyYSBjaW1hIGFicmUgYSBwYXN0YSBwYWkuIDIuIEFsdGVybmFyIGphbmVsYXMsIGFicmlyIENvbmZpZ3VyYcOnw7VlcyBvdSBHZXJlbmNpYWRvciBkZSBUYXJlZmFzIG7Do28gc29iZW0gbmEgw6Fydm9yZSBkZSBkaXJldMOzcmlvcy4iLCJzdGF0ZW1lbnQiOiJObyBFeHBsb3JhZG9yIGRvIFdpbmRvd3MgMTEsIHF1YWwgYXRhbGhvIHBhZHLDo28gbmF2ZWdhIHVtIG7DrXZlbCBhY2ltYSBuYSBoaWVyYXJxdWlhIGRhIHBhc3RhIGF0dWFsPyIsInRvcGljSWQiOiJJMDIifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQXRhbGhvcyBkZSB0ZWNsYWRvIG5vIFdpbmRvd3MiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9hY2Nlc3NpYmlsaXR5L3dpbmRvd3Mva2V5Ym9hcmQtc2hvcnRjdXRzLWluLXdpbmRvd3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.it-tab-dialogo.json",
+        "mediaType": "application/json",
+        "sha256": "e77b23dbbe7db2a2c5869ee44dd3f51ba6ac43f360be1b8339fecc4fd429fd1c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVGFiLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkRlbGV0ZS4ifSx7ImlkIjoiYyIsInRleHQiOiJQcmludCBTY3JlZW4uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQ2FwcyBMb2NrLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LXRhYi1kaWFsb2dvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtYXRhbGhvcyJdLCJyZXNvbHV0aW9uIjoiMS4gVGFiIHBlcmNvcnJlIG9zIGNvbnRyb2xlcyBuYSBzZXF1w6puY2lhIGRlIGZvY28uIDIuIEV4Y2x1aXIsIGNhcHR1cmFyIHRlbGEgZSBhbHRlcm5hciBjYWl4YSBkYXMgbGV0cmFzIG7Do28gc8OjbyBuYXZlZ2HDp8OjbyBkZSBmb2NvIGVudHJlIG9ww6fDtWVzLiIsInN0YXRlbWVudCI6IkVtIHVtYSBjYWl4YSBkZSBkacOhbG9nbyBkbyBXaW5kb3dzLCBjb20gbmF2ZWdhw6fDo28gcGFkcsOjbywgcXVhbCB0ZWNsYSBub3JtYWxtZW50ZSBhdmFuw6dhIG8gZm9jbyBlbnRyZSBjb250cm9sZXM/IiwidG9waWNJZCI6IkkwMiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1hdGFsaG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBdGFsaG9zIGRlIHRlY2xhZG8gbm8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2FjY2Vzc2liaWxpdHkvd2luZG93cy9rZXlib2FyZC1zaG9ydGN1dHMtaW4td2luZG93cyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.potim-aa-q16.json",
+        "mediaType": "application/json",
+        "sha256": "7a0c1875c3568ab52bca9c4be29a4ca517271d892620cb93fc95fe11423ccc1c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoibWVudSBJbmljaWFyIn0seyJpZCI6ImIiLCJ0ZXh0IjoiTW96aWxsYSJ9LHsiaWQiOiJjIiwidGV4dCI6IlBhaW50In0seyJpZCI6ImQiLCJ0ZXh0IjoiU3BvdGZpIn0seyJpZCI6ImUiLCJ0ZXh0IjoiQ2FydG9vbiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSwgQWdlbnRlIEFkbWluaXN0cmF0aXZvLCBxdWVzdMOjbyAxNi4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENvZGV4LCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvcG90aW0tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjA5OTc4ZWUzYTE4NGE0NDc4NTBkYWNhNzhlNGMxZjQzODYyOWNhYzY1ODExYzI2OTBiNWVmNWM1YjNiZWE3ODYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNzcyNWMyN2QtNjgyNS00NDBiLWI0YmYtNGJmZmQ5NzdjMzhlLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXBvdGltLTIwMjUtYWEvcTE2IiwibnVtYmVyIjoiMTYiLCJwcm9vZiI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9wb3RpbS1hYS1wcm9vZi5wZGYiLCJzaGEyNTYiOiJlMDRhMTE3OWQwMGI1Nzk5N2JlNjUyNTMzYzdmOWQwZTE1Nzg0NjM5ZDM5MzA2MjViZjJmZDg3MDIyMDBjNjdkIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zL2E1MTAyODY2LTE2NDYtNDdlYi05ZGQ3LWUwYjNjMTU2ZjdkYi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSwgYXJ0LiA4wrosIElWIGUgVEpQUiBBQyAxNDM3MzMyLTMsIGFwbGljYWRhIMOgIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLiBOw6NvIMOpIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIEF2YW7Dp2EgU1AgbmVtIGdhcmFudGlhIGp1csOtZGljYTsgZXhjbHVpIG9icmFzIGRlIHRlcmNlaXJvcyBlIG1hbnTDqW0gb3JpZ2VtL2dhYmFyaXRvLiIsInBhdGgiOiJkb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIEFkbWluaXN0cmF0aXZvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJwb3RpbS1hYS1xMTYiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluaWNpYXIiXSwicmVzb2x1dGlvbiI6IjEuIE8gbWVudSBJbmljaWFyIHJlw7puZSBhY2Vzc28gYSBhcGxpY2F0aXZvcywgcGVzcXVpc2EgZSBjb25maWd1cmHDp8O1ZXMgZG8gV2luZG93cy4gMi4gT3MgZGVtYWlzIG5vbWVzIG7Do28gZGVzaWduYW0gZXNzZSBjb21wb25lbnRlIGRvIHNpc3RlbWEuIEEgZGVzY3Jpw6fDo28gw6kgY29tcGF0w612ZWwgY29tIFdpbmRvd3MgMTAvMTEsIGVtYm9yYSBhIG9yZ2FuaXphw6fDo28gdmlzdWFsIHZhcmllIGVudHJlIHZlcnPDtWVzLiIsInN0YXRlbWVudCI6IkNvbnNpZGVyYW5kbyBhcyBmdW7Dp8O1ZXMgcHJlc2VudGVzIG5hIMOhcmVhIGRlIHRyYWJhbGhvIGRvIFdpbmRvd3MgZSBlbSBzdWEgYmFycmEgZGUgdGFyZWZhcywgYXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBxdWUgY29tcGxldGEgY29ycmV0YW1lbnRlIGEgbGFjdW5hIGEgc2VndWlyOiDigJxPIF9fX19fX19fX19fIGRvIFdpbmRvd3MgY29uc3RpdHVpIHVtIGVsZW1lbnRvIGNlbnRyYWwgZG8gc2lzdGVtYSBvcGVyYXRpdm8sIHF1ZSBwZXJtaXRlIG8gYWNlc3NvIGFvcyBwcm9ncmFtYXMsIGNvbmZpZ3VyYcOnw7VlcyBlIGRvY3VtZW50b3MgZG8gdXN1w6FyaW8uIEludGVncmEgYWluZGEgdW0gbW90b3IgZGUgYnVzY2EgZWZpY2F6IGUgYSBwb3NzaWJpbGlkYWRlIGRlIGZpeGFyIGFwbGljYcOnw7Vlcy7igJ0iLCJ0b3BpY0lkIjoiSTAyIn0sInN0dWR5U291cmNlcyI6eyJpbmljaWFyIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTAiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBQZXJzb25hbGl6YXIgbyBNZW51IEluaWNpYXIgZG8gV2luZG93cyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3MvZXhwZXJpZW5jZS9wZXJzb25hbGl6YXRpb24vY3VzdG9taXplLXRoZS13aW5kb3dzLXN0YXJ0LW1lbnUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I02.s.potim-se-q16.json",
+        "mediaType": "application/json",
+        "sha256": "8deab0ed52b49fad4ba2f09f596bac1ab93798fbec4f154d45f6e950e0d73dbc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSDDoXJlYSBkZSB0cmFiYWxobyBkbyBXaW5kb3dzIG7Do28gcGVybWl0ZSBuZW5odW1hIHBlcnNvbmFsaXphw6fDo28gcG9yIHBhcnRlIGRvIHVzdcOhcmlvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlNvbWVudGUgbyB1c3XDoXJpbyBhZG1pbmlzdHJhZG9yIHBvZGUgYWRpY2lvbmFyIGF0YWxob3MgZSBhcnF1aXZvcyBuYSDDoXJlYSBkZSB0cmFiYWxoby4ifSx7ImlkIjoiYyIsInRleHQiOiJBIMOhcmVhIGRlIHRyYWJhbGhvIGRvIFdpbmRvd3MgcGVybWl0ZSBhcGVuYXMgYSBjcmlhw6fDo28gZGUgYXRhbGhvcyBkZSBwcm9ncmFtYXMsIG7Do28gc2VuZG8gcG9zc8OtdmVsIGluc2VyaXIgcGFzdGFzIG91IGFycXVpdm9zLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlVtIG1lc21vIHVzdcOhcmlvIHBvZGUgY29uZmlndXJhciBkaWZlcmVudGVzIMOhcmVhcyBkZSB0cmFiYWxobyBkZSBhY29yZG8gY29tIHN1YXMgcHJlZmVyw6puY2lhcy4ifSx7ImlkIjoiZSIsInRleHQiOiJPIMO6bmljbyBhdGFsaG8gbmF0aXZvIHByZXNlbnRlIG5hIMOhcmVhIGRlIHRyYWJhbGhvIMOpIG8gR2VyZW5jaWFkb3IgZGUgRGlzcG9zaXRpdm9zLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSwgU2VjcmV0w6FyaW8gZGUgRXNjb2xhLCBxdWVzdMOjbyAxNi4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENvZGV4LCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvcG90aW0tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjA5OTc4ZWUzYTE4NGE0NDc4NTBkYWNhNzhlNGMxZjQzODYyOWNhYzY1ODExYzI2OTBiNWVmNWM1YjNiZWE3ODYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNzcyNWMyN2QtNjgyNS00NDBiLWI0YmYtNGJmZmQ5NzdjMzhlLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXBvdGltLTIwMjUtc2UvcTE2IiwibnVtYmVyIjoiMTYiLCJwcm9vZiI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9wb3RpbS1zZS1wcm9vZi5wZGYiLCJzaGEyNTYiOiIwYTQyYzExNzIwMTJkNzUyNDlmMmJkMjI4MTZjOGU3MGMyMDNmZDUzNzc3OWYyM2FlNTBmZmQ5NmUwOGZjOTRjIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zLzMxMTU4ZDFjLTFhZjItNDk3MS1iODMzLTI5MjQ2ZmY0Y2VjNC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSwgYXJ0LiA4wrosIElWIGUgVEpQUiBBQyAxNDM3MzMyLTMsIGFwbGljYWRhIMOgIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLiBOw6NvIMOpIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIEF2YW7Dp2EgU1AgbmVtIGdhcmFudGlhIGp1csOtZGljYTsgZXhjbHVpIG9icmFzIGRlIHRlcmNlaXJvcyBlIG1hbnTDqW0gb3JpZ2VtL2dhYmFyaXRvLiIsInBhdGgiOiJkb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiU2VjcmV0w6FyaW8gZGUgRXNjb2xhIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJwb3RpbS1zZS1xMTYiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm11bHRpdGFyZWZhIl0sInJlc29sdXRpb24iOiIxLiBPIFdpbmRvd3Mgb2ZlcmVjZSBwZXJzb25hbGl6YcOnw6NvIGUgbcO6bHRpcGxhcyDDoXJlYXMgZGUgdHJhYmFsaG8gdmlydHVhaXMgcGFyYSBvcmdhbml6YXIgamFuZWxhcy4gMi4gVXN1w6FyaW9zIGNvbXVucyBwb2RlbSBjcmlhciBhdGFsaG9zL2FycXVpdm9zIG9uZGUgdGVuaGFtIHBlcm1pc3PDo287IG7Do28gaMOhIGV4Y2x1c2l2aWRhZGUgYWRtaW5pc3RyYXRpdmEgZ2VyYWwsIG5lbSBsaW1pdGHDp8OjbyBhIGF0YWxob3MuIE8gY29udGV4dG8gw6kgV2luZG93cyAxMC8xMS4iLCJzdGF0ZW1lbnQiOiJBc3NpbmFsZSBhIGFsdGVybmF0aXZhIHF1ZSBhcHJlc2VudGEgdW1hIGFmaXJtYcOnw6NvIGNvcnJldGEgc29icmUgYSDDoXJlYSBkZSB0cmFiYWxobyBubyBzaXN0ZW1hIG9wZXJhY2lvbmFsIFdpbmRvd3M6IiwidG9waWNJZCI6IkkwMiJ9LCJzdHVkeVNvdXJjZXMiOnsibXVsdGl0YXJlZmEiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMCIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIENvbW8gcmVhbGl6YXIgbXVsdGl0YXJlZmFzIG5vIFdpbmRvd3MsIGluY2x1aW5kbyDDoXJlYXMgZGUgdHJhYmFsaG8iLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici93aW5kb3dzL2V4cGVyaWVuY2UvaG93LXRvLW11bHRpdGFzay1pbi13aW5kb3dzIn19fQ=="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I02.s.amp26-tes-q22",
+    "admin.2026-11.I02.s.cebra-cachoeiro-q17",
+    "admin.2026-11.I02.s.cerq25-tes-q21",
+    "admin.2026-11.I02.s.it-acessibilidade-config",
+    "admin.2026-11.I02.s.it-barra-percorrer",
+    "admin.2026-11.I02.s.it-busca-explorador",
+    "admin.2026-11.I02.s.it-clipboard-ativar",
+    "admin.2026-11.I02.s.it-configuracoes",
+    "admin.2026-11.I02.s.it-desktop-alternar",
+    "admin.2026-11.I02.s.it-executar",
+    "admin.2026-11.I02.s.it-exibir-previsualizacao",
+    "admin.2026-11.I02.s.it-fechar-janela",
+    "admin.2026-11.I02.s.it-foco-propriedades",
+    "admin.2026-11.I02.s.it-historico-clipboard",
+    "admin.2026-11.I02.s.it-lupa",
+    "admin.2026-11.I02.s.it-maximizar-janela",
+    "admin.2026-11.I02.s.it-modo-projecao",
+    "admin.2026-11.I02.s.it-mudar-entrada",
+    "admin.2026-11.I02.s.it-narrador",
+    "admin.2026-11.I02.s.it-pesquisa-windows",
+    "admin.2026-11.I02.s.it-selecao-texto-palavra",
+    "admin.2026-11.I02.s.it-subir-pasta",
+    "admin.2026-11.I02.s.it-tab-dialogo",
+    "admin.2026-11.I02.s.potim-aa-q16",
+    "admin.2026-11.I02.s.potim-se-q16"
+  ]
+}

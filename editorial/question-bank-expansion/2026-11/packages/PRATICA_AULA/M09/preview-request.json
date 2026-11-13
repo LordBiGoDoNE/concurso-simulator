@@ -1,0 +1,2002 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.cacapava-profmat-q38"
+        },
+        "content": {
+          "statement": {
+            "text": "O Tangram é um quebra-cabeça de dissecção composto por sete peças poligonais (tans) que podem formar milhares de figuras. Do ponto de vista da geometria plana, a manipulação dessas peças para compor diferentes figuras permite ao aluno compreender empiricamente o princípio da:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2e154e71-c895-5326-8b9f-b7c1bb506291",
+              "content": {
+                "text": "conservação da área.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2bbc8301-0a42-5fd7-af04-8934237a3bbd",
+              "content": {
+                "text": "semelhança de triângulos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "61b6e508-e828-5eb2-8649-7de153cd2e38",
+              "content": {
+                "text": "triseção angular.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9dd4c488-ccf7-58a8-9ccc-5067e4d4293f",
+              "content": {
+                "text": "projeção ortogonal.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8bc1805b-3534-5e50-97a2-56fc5761b3d2",
+              "content": {
+                "text": "homotetia inversa.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2e154e71-c895-5326-8b9f-b7c1bb506291",
+          "resolution": {
+            "text": "1. Reorganizar as mesmas peças, sem sobreposição nem retirar material, preserva a soma de suas áreas. 2. Assim o Tangram ilustra conservação da área; não é preciso que a figura externa permaneça semelhante à anterior.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Caçapava — Processo Seletivo 01/2025, PROFESSOR II (PII) - MATEMÁTICA, questão38. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M09.p.cacapava-profmat-q38.json",
+            "answerPath": "sources/admin.2026-11.M09.p.cacapava-profmat-q38.json",
+            "contentSha256": "dab39bb5c4f2d712f92bb00b8f1339bd655dabb7f2a97159c0f037638670a9c1",
+            "answerSha256": "dab39bb5c4f2d712f92bb00b8f1339bd655dabb7f2a97159c0f037638670a9c1"
+          }
+        },
+        "fingerprint": "691b02eec5760377952d559da8d86e4cdc8d847c847d38393fad72de776e92d3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-anel-circular"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma região circular tem raio externo 5 m e um recorte circular concêntrico de raio 3 m. Usando π=3, qual é a área restante?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ec30caf9-5975-55e2-8bb4-9e639bb4682b",
+              "content": {
+                "text": "24 m².",
+                "resources": []
+              }
+            },
+            {
+              "id": "52fdbd4a-f8e1-5f62-b4b2-5ee3be179346",
+              "content": {
+                "text": "48 m².",
+                "resources": []
+              }
+            },
+            {
+              "id": "54eaa76c-8c51-5969-9560-111d76452b74",
+              "content": {
+                "text": "12 m².",
+                "resources": []
+              }
+            },
+            {
+              "id": "e9d5ab00-c006-57be-a5ab-abac5febcf94",
+              "content": {
+                "text": "75 m².",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "52fdbd4a-f8e1-5f62-b4b2-5ee3be179346",
+          "resolution": {
+            "text": "1. A área do anel é π(R²−r²). 2. Com os valores dados, 3×(25−9)=48 m²; subtrair raios antes de elevar ao quadrado altera a figura.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-anel-circular.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-anel-circular.json",
+            "contentSha256": "e1295d62531a2f70d3e2165af53af65d4c390d499d64fb19d0a63c8aeda3f4d7",
+            "answerSha256": "e1295d62531a2f70d3e2165af53af65d4c390d499d64fb19d0a63c8aeda3f4d7"
+          }
+        },
+        "fingerprint": "3b2c680a4d184bc3b805d19a0ee6d3f287d7cee789f7f4f2312448bf4816e335",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-angulos-paralelas"
+        },
+        "content": {
+          "statement": {
+            "text": "Duas retas paralelas são cortadas por uma transversal. Um ângulo interno mede 65°. Quanto mede o ângulo interno do mesmo lado da transversal?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d3284146-a1fa-5a4f-8f9b-c8f7f10cbe79",
+              "content": {
+                "text": "65°",
+                "resources": []
+              }
+            },
+            {
+              "id": "8e789596-3a2e-56ce-a195-04a34218f0ee",
+              "content": {
+                "text": "25°",
+                "resources": []
+              }
+            },
+            {
+              "id": "8890d13e-4729-53b3-9b10-dc591ce390f4",
+              "content": {
+                "text": "130°",
+                "resources": []
+              }
+            },
+            {
+              "id": "05eb1f1e-0123-591b-a141-ffa1bfd153f7",
+              "content": {
+                "text": "115°",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "05eb1f1e-0123-591b-a141-ffa1bfd153f7",
+          "resolution": {
+            "text": "1. Ângulos colaterais internos entre paralelas são suplementares. 2. O outro mede 180−65=115°; os alternos internos, em outra posição, seriam iguais.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-angulos-paralelas.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-angulos-paralelas.json",
+            "contentSha256": "3e2bd9f3b185151aa388e1822a1670418a23b8302f88c99d5b09e16ee58a636b",
+            "answerSha256": "3e2bd9f3b185151aa388e1822a1670418a23b8302f88c99d5b09e16ee58a636b"
+          }
+        },
+        "fingerprint": "f39c6b3cb503f6b088e15f180d657a40bc66c4f675f78564fc671e9588fa7f2a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-cilindro-lateral"
+        },
+        "content": {
+          "statement": {
+            "text": "Um cilindro de raio 2 cm e altura 5 cm terá apenas a superfície lateral revestida. Usando π=3, qual área será revestida?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e6c7843d-3fe8-5639-a9ef-b0d3ed621112",
+              "content": {
+                "text": "30 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "2fb7675f-eb0f-59e1-9b39-7bf8d1f77a08",
+              "content": {
+                "text": "20 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "5c28ea01-0412-5544-83b4-b17a5a581fd4",
+              "content": {
+                "text": "60 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "cafb3c0e-d374-5fdf-951c-aefe60830ae2",
+              "content": {
+                "text": "84 cm².",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5c28ea01-0412-5544-83b4-b17a5a581fd4",
+          "resolution": {
+            "text": "1. Desenrolada, a lateral é um retângulo de largura 2πr=12 e altura 5. 2. A área lateral é 12×5=60 cm²; as bases não foram incluídas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-cilindro-lateral.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-cilindro-lateral.json",
+            "contentSha256": "fb08e6eba693b56b3a5371c4f3b8fb08a67c6454ba394ab6fb43608b51943a12",
+            "answerSha256": "fb08e6eba693b56b3a5371c4f3b8fb08a67c6454ba394ab6fb43608b51943a12"
+          }
+        },
+        "fingerprint": "027351091aaeb22d3170ab1fda2980ad9dc080531b6ac39ab8941c28556111c2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-cilindro-volume-conservar"
+        },
+        "content": {
+          "statement": {
+            "text": "Um cilindro terá o raio dobrado, mantendo o mesmo volume. Como deve mudar a altura?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ca86df3d-64d0-5314-9b27-1cbb1e8db47f",
+              "content": {
+                "text": "Deve permanecer igual.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4f6a65c4-ea93-55b5-b334-5bac95075248",
+              "content": {
+                "text": "Deve ser dividida por quatro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c063c8f6-f89c-5fdc-9414-83ee20c4add2",
+              "content": {
+                "text": "Deve ser dividida por dois.",
+                "resources": []
+              }
+            },
+            {
+              "id": "969e7313-f60c-57a8-ac6e-797a9cbf9277",
+              "content": {
+                "text": "Deve dobrar.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4f6a65c4-ea93-55b5-b334-5bac95075248",
+          "resolution": {
+            "text": "1. A base circular terá área multiplicada por 2²=4. 2. Como V=área da base×altura deve permanecer igual, a altura precisa ser dividida por quatro. Dividir por dois compensaria apenas o dobro do raio, não o seu quadrado; manter ou dobrar a altura aumentaria o volume.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-cilindro-volume-conservar.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-cilindro-volume-conservar.json",
+            "contentSha256": "e02886c2750e1e8c35c414a41b7118fb7d3cf97199d2f0ee145836635b50c72e",
+            "answerSha256": "e02886c2750e1e8c35c414a41b7118fb7d3cf97199d2f0ee145836635b50c72e"
+          }
+        },
+        "fingerprint": "65d862a87e8060f121d47831a493efbdb8c5f42860e2260b88967858b4654090",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-circulo-inscrito-quadrado"
+        },
+        "content": {
+          "statement": {
+            "text": "Um círculo está inscrito em um quadrado de lado 8 cm. Usando π=3, qual é a área do quadrado fora do círculo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "75e48bad-fabd-5085-926c-fd6cbc776411",
+              "content": {
+                "text": "48 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "137fe327-1a56-5ded-82e7-0193d98e44b6",
+              "content": {
+                "text": "40 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "f0679fe9-5583-53ce-b298-002377a11142",
+              "content": {
+                "text": "64 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "957c9822-6e73-5015-ae63-f2c1f85f80ba",
+              "content": {
+                "text": "16 cm².",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "957c9822-6e73-5015-ae63-f2c1f85f80ba",
+          "resolution": {
+            "text": "1. O diâmetro do círculo é 8 e seu raio é 4 cm; a área circular é 3×16=48 cm². 2. O quadrado tem 64 cm²; a diferença é 16 cm². 48 cm² é a área do círculo e 64 cm² a do quadrado; 40 cm² não resulta da subtração.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-circulo-inscrito-quadrado.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-circulo-inscrito-quadrado.json",
+            "contentSha256": "cca58ec30a6398dd29fd89b72ab73b8f2543078bea4e4c982919fbe38cb0bf4a",
+            "answerSha256": "cca58ec30a6398dd29fd89b72ab73b8f2543078bea4e4c982919fbe38cb0bf4a"
+          }
+        },
+        "fingerprint": "fae354ab687a6ab63c2a0994c4c255f1017b5b155a84c650ee0ad7d338e1e248",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-circunferencia-area-inversa"
+        },
+        "content": {
+          "statement": {
+            "text": "Um círculo tem área 108 cm². Usando π=3, qual é seu comprimento de circunferência?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4329d6fc-8fb0-5edb-9f94-6cf3b31e0161",
+              "content": {
+                "text": "36 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d7661b82-d08a-59b6-87a3-c5a18bb57902",
+              "content": {
+                "text": "18 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a390b931-b8c4-594a-8504-f356791a33e8",
+              "content": {
+                "text": "54 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8fe5081c-26cd-5721-86df-8fde223cf1b6",
+              "content": {
+                "text": "108 cm.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4329d6fc-8fb0-5edb-9f94-6cf3b31e0161",
+          "resolution": {
+            "text": "1. De 3r²=108, vem r²=36 e r=6 cm. 2. O comprimento é 2×3×6=36 cm; área e comprimento têm unidades diferentes.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-circunferencia-area-inversa.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-circunferencia-area-inversa.json",
+            "contentSha256": "bc350a119caceb4da83fbe2c01596e02a5503603041abeed23c348f3fb016a35",
+            "answerSha256": "bc350a119caceb4da83fbe2c01596e02a5503603041abeed23c348f3fb016a35"
+          }
+        },
+        "fingerprint": "c889a452b3f113d956370584abec9ed95fb8369ae4f1d92516216035b47d56a5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-cubo-volume-aresta"
+        },
+        "content": {
+          "statement": {
+            "text": "Um cubo tem volume 125 cm³. Qual é sua área superficial total?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8f0ad102-aa17-5640-980a-9aa642c1a00a",
+              "content": {
+                "text": "30 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "883b888c-27f2-56f7-b7cf-0c87c8b458d4",
+              "content": {
+                "text": "150 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "12971589-b43c-5c77-91f6-a74993189c2f",
+              "content": {
+                "text": "125 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "98a52b57-f380-5b11-9835-dbff6f98eae8",
+              "content": {
+                "text": "25 cm².",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "883b888c-27f2-56f7-b7cf-0c87c8b458d4",
+          "resolution": {
+            "text": "1. A aresta é 5 cm porque 5³=125. 2. São seis faces quadradas de área 25: total 6×25=150 cm². 125 é o volume, 25 é a área de uma só face e 30 soma seis vezes a aresta.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-cubo-volume-aresta.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-cubo-volume-aresta.json",
+            "contentSha256": "a89f5d4b5010641e8bad4a40e4cecec3b8d2255a964c8825316e8e68b06b24d0",
+            "answerSha256": "a89f5d4b5010641e8bad4a40e4cecec3b8d2255a964c8825316e8e68b06b24d0"
+          }
+        },
+        "fingerprint": "34cb35833fd8da45c97c485136602d68caf77403c797b8eab772cec053ce7df2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-escada-parede"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma escada de 13 m apoia-se em parede vertical, com sua base a 5 m da parede. Qual é a altura alcançada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d21603db-9716-5885-a0fd-60b61201b2e4",
+              "content": {
+                "text": "12 m.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e2f731b1-ba89-5595-acb2-c600b3236142",
+              "content": {
+                "text": "8 m.",
+                "resources": []
+              }
+            },
+            {
+              "id": "919b051b-480f-5b70-b09a-409ed43532f6",
+              "content": {
+                "text": "18 m.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b773e4a2-e7ce-5c25-b980-41751dc9356c",
+              "content": {
+                "text": "√194 m.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d21603db-9716-5885-a0fd-60b61201b2e4",
+          "resolution": {
+            "text": "1. Escada, chão e parede formam triângulo retângulo, com hipotenusa 13. 2. h²=13²−5²=144, então h=12 m; não se somam os quadrados para achar um cateto.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-escada-parede.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-escada-parede.json",
+            "contentSha256": "5462073bad99dae0a40d7d22d6b21d614006831dda0453473cbcd49d59eca3cd",
+            "answerSha256": "5462073bad99dae0a40d7d22d6b21d614006831dda0453473cbcd49d59eca3cd"
+          }
+        },
+        "fingerprint": "71f34bc184ec2dc92743d16a0e3d17a853520f58ab8d50f6ac2d78da99282deb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-externo-regular"
+        },
+        "content": {
+          "statement": {
+            "text": "Cada ângulo externo de um polígono regular mede 24°. Quantos lados ele tem?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6d0d0bcd-9450-5bfd-9d2a-2a016a5322c0",
+              "content": {
+                "text": "15",
+                "resources": []
+              }
+            },
+            {
+              "id": "cecc9b82-74ab-5af4-90ba-f4bc42e9a7aa",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "19582179-e2b6-5387-ac1e-f7e2b91c2f23",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "d0e084dc-cf22-57fe-af0a-da792ea7bebb",
+              "content": {
+                "text": "30",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6d0d0bcd-9450-5bfd-9d2a-2a016a5322c0",
+          "resolution": {
+            "text": "1. Uma volta completa pelos ângulos externos soma 360°. 2. Divida 360 por 24: 15 lados; não se usa a soma dos ângulos internos nessa divisão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-externo-regular.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-externo-regular.json",
+            "contentSha256": "4c43995fc96d58a1ace7cca0f72baa017b597e1259ca6af674c64c3d7d215f7a",
+            "answerSha256": "4c43995fc96d58a1ace7cca0f72baa017b597e1259ca6af674c64c3d7d215f7a"
+          }
+        },
+        "fingerprint": "d05b0827daec172bf8b5b7ec47967ff6af08192ca467e1fcc8abb7a445b9aee9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-hexagono-divisao-triangulos"
+        },
+        "content": {
+          "statement": {
+            "text": "Um hexágono regular é dividido, ligando seu centro aos vértices, em seis triângulos congruentes. Se cada triângulo tem área 12 cm², qual é a área do hexágono?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8d2ae58d-16b3-5cce-9c91-408953808719",
+              "content": {
+                "text": "24 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "641e8ee6-92d1-5ed7-bc91-cf29da15b80b",
+              "content": {
+                "text": "144 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "bad2cf50-d02f-5170-a957-5a01faff6993",
+              "content": {
+                "text": "72 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "0c77b118-f1cf-56f4-b1d9-e352729ccd7f",
+              "content": {
+                "text": "36 cm².",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bad2cf50-d02f-5170-a957-5a01faff6993",
+          "resolution": {
+            "text": "1. Os seis triângulos cobrem o hexágono sem sobreposição interna. 2. Some suas áreas: 6×12=72 cm²; o número de lados determina aqui a quantidade de partes.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-hexagono-divisao-triangulos.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-hexagono-divisao-triangulos.json",
+            "contentSha256": "bb3e162b34af493de73e01b9587a216afeba7cfb09e496af2626143e08e39738",
+            "answerSha256": "bb3e162b34af493de73e01b9587a216afeba7cfb09e496af2626143e08e39738"
+          }
+        },
+        "fingerprint": "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-losango-diagonal"
+        },
+        "content": {
+          "statement": {
+            "text": "Um losango tem área 84 cm² e uma diagonal de 14 cm. Quanto mede a outra diagonal?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "efda1f59-6179-5802-b6c3-6f9e6c1e19e8",
+              "content": {
+                "text": "6 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "52fbb60d-1329-5964-9d66-fec8f35b1bfd",
+              "content": {
+                "text": "24 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ea883286-bd27-59ed-98bb-28377c9c3f25",
+              "content": {
+                "text": "70 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "828ee6f1-3ea1-5818-91c2-f64194bf6ce8",
+              "content": {
+                "text": "12 cm.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "828ee6f1-3ea1-5818-91c2-f64194bf6ce8",
+          "resolution": {
+            "text": "1. A área do losango é o produto das diagonais dividido por 2. 2. A diagonal desconhecida é 2×84/14=12 cm. 6 cm esquece de multiplicar por 2; 24 cm e 70 cm dariam áreas de 168 cm² e 490 cm².",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-losango-diagonal.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-losango-diagonal.json",
+            "contentSha256": "23494580242fd350bf88cfebca636095e923e56b8e0d28e0e468f256764029a4",
+            "answerSha256": "23494580242fd350bf88cfebca636095e923e56b8e0d28e0e468f256764029a4"
+          }
+        },
+        "fingerprint": "bcec0f01ecdb438ab5cb83b217e9006cbba577ea2c430a4c136225c327bf41b1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-mediana-hipotenusa"
+        },
+        "content": {
+          "statement": {
+            "text": "Em um triângulo retângulo, a mediana relativa à hipotenusa mede metade da hipotenusa. Se a hipotenusa mede 18 cm, quanto mede essa mediana?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e7f40ea1-5dfe-53f4-8dd5-129948e58eef",
+              "content": {
+                "text": "36 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f0a2e4c0-7125-5bb5-b9b1-f9434f79c8a5",
+              "content": {
+                "text": "9 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "39a17ed7-d1f7-5429-8d6a-2c48f6b7bdf5",
+              "content": {
+                "text": "18 cm.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ecf2a331-1845-502e-831f-0109926282bc",
+              "content": {
+                "text": "6 cm.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f0a2e4c0-7125-5bb5-b9b1-f9434f79c8a5",
+          "resolution": {
+            "text": "1. A propriedade necessária já foi informada no enunciado. 2. A metade de 18 é 9 cm; uma mediana liga o vértice ao ponto médio do lado oposto.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-mediana-hipotenusa.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-mediana-hipotenusa.json",
+            "contentSha256": "6d6ab88e9e88b5f66e8e6c9e5fb18a12ac5af224f943a2a31ed550c03e73ab28",
+            "answerSha256": "6d6ab88e9e88b5f66e8e6c9e5fb18a12ac5af224f943a2a31ed550c03e73ab28"
+          }
+        },
+        "fingerprint": "1600ac1651ef9ab35a33b09579e4d0906c8c7d9399effe451063a0d9d178ca20",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-pavimentacao-sem-perda"
+        },
+        "content": {
+          "statement": {
+            "text": "Um piso de 3 m por 4 m receberá placas quadradas de 50 cm de lado, sem juntas nem cortes. Quantas placas são necessárias?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8791c6f2-6050-510d-885b-1ab67395f1b4",
+              "content": {
+                "text": "96",
+                "resources": []
+              }
+            },
+            {
+              "id": "9a1bc3b5-2cad-53a3-a3cb-7fe0758c5185",
+              "content": {
+                "text": "48",
+                "resources": []
+              }
+            },
+            {
+              "id": "bd4bb121-9da2-5217-9dd0-59bc9bcced40",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "51f330e8-788a-5db1-8b71-3b3384d81427",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9a1bc3b5-2cad-53a3-a3cb-7fe0758c5185",
+          "resolution": {
+            "text": "1. Cada lado da placa mede 0,5 m e sua área é 0,25 m². 2. A área do piso é 12 m²: 12/0,25=48 placas, formando 6 por 8. 24 divide a área pelo lado (0,5 m) em vez da área da placa; 96 e 12 não correspondem a 6 × 8.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-pavimentacao-sem-perda.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-pavimentacao-sem-perda.json",
+            "contentSha256": "d23ea9445610bf49ea743f66ead913699e328f654ab269f88b5339ba1b67ee49",
+            "answerSha256": "d23ea9445610bf49ea743f66ead913699e328f654ab269f88b5339ba1b67ee49"
+          }
+        },
+        "fingerprint": "b4d85058c74220058db1c3795bc5e31d869fddd061a5ef9e2dbe3df372aa35a9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-prisma-base-triangular"
+        },
+        "content": {
+          "statement": {
+            "text": "Um prisma reto tem base triangular de base 6 cm e altura relativa 4 cm. A distância entre as bases é 9 cm. Qual é seu volume?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6bbae81b-4e61-5405-9c09-d0a8340abe84",
+              "content": {
+                "text": "54 cm³.",
+                "resources": []
+              }
+            },
+            {
+              "id": "55a36148-a750-5937-9b58-ae64c69bfb67",
+              "content": {
+                "text": "24 cm³.",
+                "resources": []
+              }
+            },
+            {
+              "id": "044ec37e-f885-5f5e-b1b3-34526735854f",
+              "content": {
+                "text": "108 cm³.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e23eb3ab-c75f-5048-a4ad-c1bc407826a1",
+              "content": {
+                "text": "216 cm³.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "044ec37e-f885-5f5e-b1b3-34526735854f",
+          "resolution": {
+            "text": "1. A área da base triangular é 6×4/2=12 cm². 2. O volume do prisma é 12×9=108 cm³; o fator 1/3 de pirâmides não se aplica.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-prisma-base-triangular.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-prisma-base-triangular.json",
+            "contentSha256": "f7a8659cb96d99c7237270e69cdbdcab7905d8e0985340e77a8ed380b187f879",
+            "answerSha256": "f7a8659cb96d99c7237270e69cdbdcab7905d8e0985340e77a8ed380b187f879"
+          }
+        },
+        "fingerprint": "8483b3757b6086a62cdd40118afc4f43b6b8843d1074b55965ad944ca18c9613",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-quadrilatero-angulo-faltante"
+        },
+        "content": {
+          "statement": {
+            "text": "Três ângulos internos de um quadrilátero convexo medem 80°, 95° e 110°. Quanto mede o quarto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1a12c10d-d6cf-547d-a230-ffed26848687",
+              "content": {
+                "text": "65°",
+                "resources": []
+              }
+            },
+            {
+              "id": "6ef15281-fffc-53f9-b7ee-4d30357dd6b2",
+              "content": {
+                "text": "105°",
+                "resources": []
+              }
+            },
+            {
+              "id": "d036b5da-8c45-5f48-be0c-63a5c245d1bd",
+              "content": {
+                "text": "255°",
+                "resources": []
+              }
+            },
+            {
+              "id": "cd8f03a2-20a3-5652-b401-11bba09887b7",
+              "content": {
+                "text": "75°",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cd8f03a2-20a3-5652-b401-11bba09887b7",
+          "resolution": {
+            "text": "1. A soma dos ângulos internos de um quadrilátero é 360°. 2. Os três conhecidos somam 285°; restam 360−285=75°. 255° e 105° não completam 360° com 285°; 65° resulta de erro na soma dos três ângulos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-quadrilatero-angulo-faltante.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-quadrilatero-angulo-faltante.json",
+            "contentSha256": "4be213db17cc1d73c9da3840d3b87bef4c85c9368fda690626fc64490072f454",
+            "answerSha256": "4be213db17cc1d73c9da3840d3b87bef4c85c9368fda690626fc64490072f454"
+          }
+        },
+        "fingerprint": "6fd75afa407e12060d89bbe16f530b3488b20b4970e601ad43971e4fee7172b8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-regular-angulo-interno"
+        },
+        "content": {
+          "statement": {
+            "text": "Cada ângulo interno de um polígono regular convexo mede 135°. Quantos lados ele tem?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e5ed4476-2627-5e70-9d0b-64b171df4410",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "085e3afa-ef47-58ea-996e-acf60851bf8c",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "f1bd430e-430d-51e2-8b67-8c1bf0a0e609",
+              "content": {
+                "text": "9",
+                "resources": []
+              }
+            },
+            {
+              "id": "3fa79333-0437-502b-a172-6d9c0be76974",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e5ed4476-2627-5e70-9d0b-64b171df4410",
+          "resolution": {
+            "text": "1. O ângulo externo correspondente mede 180−135=45°. 2. Os externos somam 360°, então há 360/45=8 lados. Com 6, 9 e 12 lados, os ângulos internos seriam 120°, 140° e 150°.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-regular-angulo-interno.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-regular-angulo-interno.json",
+            "contentSha256": "905a5d300ef9b5cfbb2d79f5efa291f48434ad1fae84a0caf3193aa3b8bddae4",
+            "answerSha256": "905a5d300ef9b5cfbb2d79f5efa291f48434ad1fae84a0caf3193aa3b8bddae4"
+          }
+        },
+        "fingerprint": "145e071e64c43cf17258d0e13411a1f37d843f0858bbcb866ae0d6e1c3da14de",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-retirar-cubo-canto-area"
+        },
+        "content": {
+          "statement": {
+            "text": "De um cubo de aresta 6 cm retira-se um cubinho de aresta 1 cm em um de seus cantos. Qual é a área superficial total do sólido restante?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4f767088-11d9-5889-8514-b8cdb56aa1d1",
+              "content": {
+                "text": "213 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "476b0234-33a6-5abf-8963-f06b2036d065",
+              "content": {
+                "text": "222 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "7d19ef9c-aa6e-5695-a0c9-db3e9df05a95",
+              "content": {
+                "text": "216 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "74e940a3-9d44-591c-b9af-80ecdc608947",
+              "content": {
+                "text": "210 cm².",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7d19ef9c-aa6e-5695-a0c9-db3e9df05a95",
+          "resolution": {
+            "text": "1. O cubo inicial tem área 6×6²=216 cm². 2. O recorte retira três quadradinhos externos de área 1 e expõe três novos quadradinhos da mesma área; a área total permanece 216. 213 cm² só desconta os três quadradinhos retirados; 222 cm² e 210 cm² somam ou subtraem seis unidades sem correspondência com o recorte.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-retirar-cubo-canto-area.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-retirar-cubo-canto-area.json",
+            "contentSha256": "57632c554ff7e5449a81885c24b5456c19f3844980028ae9f48e0ebd0eb211f9",
+            "answerSha256": "57632c554ff7e5449a81885c24b5456c19f3844980028ae9f48e0ebd0eb211f9"
+          }
+        },
+        "fingerprint": "65c08ec05dff1e8e31df90a5719b9cb25e49136b9fb3ad9c431bdc9e841b20f6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-setor-area"
+        },
+        "content": {
+          "statement": {
+            "text": "Um setor de 90° pertence a um círculo de raio 4 cm. Usando π=3, qual é a área desse setor?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9a604833-c905-51eb-b5d6-9f1a6e35094d",
+              "content": {
+                "text": "48 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "14e00eeb-1925-5a93-84c4-9c5a937396ee",
+              "content": {
+                "text": "6 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "2d95cc21-5dad-5b43-9878-bba0fc95c92a",
+              "content": {
+                "text": "12 cm².",
+                "resources": []
+              }
+            },
+            {
+              "id": "e5f3dc03-66bc-5d1b-90f8-a5a4a88f839f",
+              "content": {
+                "text": "24 cm².",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2d95cc21-5dad-5b43-9878-bba0fc95c92a",
+          "resolution": {
+            "text": "1. A área total do círculo é 3×4²=48 cm². 2. Noventa graus representam um quarto do círculo, então o setor tem 12 cm². 48 cm² é o círculo inteiro, 24 cm² seria meio círculo e 6 cm² um oitavo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-setor-area.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-setor-area.json",
+            "contentSha256": "a8a1b704975acbd8b08a15b58588492bb99d558d01696e14ffe543e6d4bd3b3a",
+            "answerSha256": "a8a1b704975acbd8b08a15b58588492bb99d558d01696e14ffe543e6d4bd3b3a"
+          }
+        },
+        "fingerprint": "b27a0b074fddd2b27da36ebf1ee4be14c37806d64f4390c6f74c5f5add54382d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-triangulo-exterior"
+        },
+        "content": {
+          "statement": {
+            "text": "Um ângulo externo de um triângulo mede 125°. Um dos ângulos internos não adjacentes a ele mede 55°. Quanto mede o outro?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "50a3ae3d-af8e-53d4-a10f-5f2cb8cd84ad",
+              "content": {
+                "text": "70°",
+                "resources": []
+              }
+            },
+            {
+              "id": "8ffc2b2f-358e-579a-b8c0-d9dcc780e30a",
+              "content": {
+                "text": "55°",
+                "resources": []
+              }
+            },
+            {
+              "id": "e87a63d6-3a72-58bd-bdb1-404ab7198218",
+              "content": {
+                "text": "125°",
+                "resources": []
+              }
+            },
+            {
+              "id": "c9a2b2bb-c764-58bd-aa13-912a9bdb93ef",
+              "content": {
+                "text": "180°",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "50a3ae3d-af8e-53d4-a10f-5f2cb8cd84ad",
+          "resolution": {
+            "text": "1. Um ângulo externo é a soma dos dois internos não adjacentes. 2. Assim o desconhecido é 125−55=70°; 180−125 daria o interno adjacente.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-triangulo-exterior.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-triangulo-exterior.json",
+            "contentSha256": "ba9b771f0c7c308460c807ea3624f8ce7d0cbcc81a767be00094853e61871873",
+            "answerSha256": "ba9b771f0c7c308460c807ea3624f8ce7d0cbcc81a767be00094853e61871873"
+          }
+        },
+        "fingerprint": "45b722641757b3b7e9586d44eeb0ccf3c9d2aaa5b65258ecc74a2413a18d69dd",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.mat-triangulos-base-comum"
+        },
+        "content": {
+          "statement": {
+            "text": "Dois triângulos têm a mesma base, e as alturas relativas a ela medem 6 cm e 15 cm. Qual é a razão entre as áreas, primeira:segunda?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "07882fbe-fa95-51fc-bbbf-0848c49bb179",
+              "content": {
+                "text": "5:2",
+                "resources": []
+              }
+            },
+            {
+              "id": "e3a5f859-4379-5b0c-a35c-2dcceb9c1b7a",
+              "content": {
+                "text": "4:25",
+                "resources": []
+              }
+            },
+            {
+              "id": "c44ba93d-b2fd-54a2-858d-158b2ba4ae01",
+              "content": {
+                "text": "1:1",
+                "resources": []
+              }
+            },
+            {
+              "id": "643b1403-3493-5d6a-9143-fffcf8fc80f9",
+              "content": {
+                "text": "2:5",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "643b1403-3493-5d6a-9143-fffcf8fc80f9",
+          "resolution": {
+            "text": "1. A área é proporcional à altura quando a base é mantida. 2. A razão é 6/15=2/5; não se elevam as alturas ao quadrado, pois não foi dada semelhança.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M09.p.mat-triangulos-base-comum.json",
+            "answerPath": "sources/admin.2026-11.M09.p.mat-triangulos-base-comum.json",
+            "contentSha256": "19c7e49752cdba7963d168e1940f13ebc82acc004a30681e2d6e7d55e68393e0",
+            "answerSha256": "19c7e49752cdba7963d168e1940f13ebc82acc004a30681e2d6e7d55e68393e0"
+          }
+        },
+        "fingerprint": "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.potim25-dir-q17"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere o quadrado ABCD, cujos vértices são A(1, 1), B(5, 1), C(5, 5) e D(1, 5), expressos em metros.\nA área desse quadrado é igual a: ______ m².\nCom base nesse contexto, assinale a alternativa correta que preenche a lacuna acima.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ddaee658-d82c-5719-bf50-7a928fd198ba",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "0eaa8ca1-f632-5e6d-a6a9-b831562d2dab",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "ed0a817d-1e5b-5b63-97e7-8a4b752b620e",
+              "content": {
+                "text": "15",
+                "resources": []
+              }
+            },
+            {
+              "id": "f3a7aac1-3628-5df2-9e54-52e0b1079c56",
+              "content": {
+                "text": "16",
+                "resources": []
+              }
+            },
+            {
+              "id": "68dd7707-8d30-507d-85bf-446fcc4e7d1c",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f3a7aac1-3628-5df2-9e54-52e0b1079c56",
+          "resolution": {
+            "text": "1. O lado AB vai de x = 1 a x = 5, medindo 4 m (o mesmo vale para BC, de y = 1 a y = 5). A área é 4 · 4 = 16 m². 2. 8 é a soma de dois lados; 12 não é quadrado de nenhum lado; 15 e 25 usam medidas incorretas (25 usaria lado 5, a coordenada e não a distância). Resposta: alternativa D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim — Concurso Público 01/2025, DIRETOR DE ESCOLA, questão 17. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M09.p.potim25-dir-q17.json",
+            "answerPath": "sources/admin.2026-11.M09.p.potim25-dir-q17.json",
+            "contentSha256": "ab00ccad7586077b6bc7864d59f6ddf927337f27e6245c655ef3a5cb3f25b38f",
+            "answerSha256": "ab00ccad7586077b6bc7864d59f6ddf927337f27e6245c655ef3a5cb3f25b38f"
+          }
+        },
+        "fingerprint": "781e14fc285366e6ad29d2ffb7d8976744dd01e015e4b8eba6a4a539f45572d7",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.tai26-cont-q13"
+        },
+        "content": {
+          "statement": {
+            "text": "Durante um exame especializado de hemodinâmica, a médica Roberta, especialista em fluxo sanguíneo, está analisando o volume de sangue que passa por um determinado vaso sanguíneo em um curto intervalo de tempo. Para simplificar o modelo, ela considera que o trecho analisado desse vaso pode ser aproximado por um cilindro de comprimento 10 cm e diâmetro 4 mm.\n\nSabendo que todo o interior desse cilindro está preenchido por sangue, qual é o volume de sangue contido nesse trecho do vaso, aproximadamente, em milímetros cúbicos?\n\nUse π ≈ 3,14 nos cálculos e assinale a alternativa correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c88d71b5-3180-5df6-a449-bd9faf4d6b6f",
+              "content": {
+                "text": "1.256 mm³",
+                "resources": []
+              }
+            },
+            {
+              "id": "3bede24b-930a-5ec7-8b87-cb6788bcec80",
+              "content": {
+                "text": "2.512 mm³",
+                "resources": []
+              }
+            },
+            {
+              "id": "d87e6959-ed9e-5a88-927a-cfa956021d8b",
+              "content": {
+                "text": "12.560 mm³",
+                "resources": []
+              }
+            },
+            {
+              "id": "bace54df-c67d-5155-8b05-4b61a40fca92",
+              "content": {
+                "text": "25.120 mm³",
+                "resources": []
+              }
+            },
+            {
+              "id": "34b62527-6356-5e41-a929-3d35d965132c",
+              "content": {
+                "text": "31.400 mm³",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c88d71b5-3180-5df6-a449-bd9faf4d6b6f",
+          "resolution": {
+            "text": "1. Antes de calcular, as medidas precisam estar na mesma unidade: o comprimento é 10 cm = 100 mm e o raio é metade do diâmetro, 4 ÷ 2 = 2 mm. O volume do cilindro é área da base vezes altura: V = π · r² · h ≈ 3,14 · 2² · 100 = 3,14 · 400 = 1.256 mm³. 2. 2.512 mm³ é o dobro do volume correto; 12.560 mm³ é dez vezes o valor correto, típico de erro na conversão de 10 cm para milímetros; 25.120 mm³ e 31.400 mm³ também não correspondem a π · r² · h com r = 2 mm e h = 100 mm. Resposta: alternativa A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            },
+            {
+              "name": "BIPM — Brochura do Sistema Internacional de Unidades, 9ª edição, atualização 2026; unidades e prefixos",
+              "url": "https://www.bipm.org/en/publications/si-brochure",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Taiúva — Concurso Público 01/2026, CONTADOR, questão 13. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M09.p.tai26-cont-q13.json",
+            "answerPath": "sources/admin.2026-11.M09.p.tai26-cont-q13.json",
+            "contentSha256": "1ba60e278cab5199e429a672e9bd404fecaf8105354520f11deadf4b161a1731",
+            "answerSha256": "1ba60e278cab5199e429a672e9bd404fecaf8105354520f11deadf4b161a1731"
+          }
+        },
+        "fingerprint": "99ed0142404359661647410ae400b701c0cba3077d00082f9edd2af296cd506f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.varg25-ti-q20"
+        },
+        "content": {
+          "statement": {
+            "text": "Durante uma expedição em uma floresta, uma equipe de resgate precisa atravessar de um ponto A até um ponto C, passando por um desnível. Eles sobem verticalmente 5 metros até o ponto B, e depois seguem em linha reta por 13 metros até o ponto C, que está no mesmo nível do ponto A.\nUse o Teorema de Pitágoras:\nC² = B² + A²\nQual é a distância horizontal entre os pontos A e C? Assinale a alternativa correta:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "151e75d1-065a-5015-b78f-7e328a33c52d",
+              "content": {
+                "text": "5 metros",
+                "resources": []
+              }
+            },
+            {
+              "id": "e43c071c-30cc-50fb-b61a-b5f45ca2cf34",
+              "content": {
+                "text": "8 metros",
+                "resources": []
+              }
+            },
+            {
+              "id": "95eb21b3-b0a7-50cc-8a09-96b4f972b281",
+              "content": {
+                "text": "10 metros",
+                "resources": []
+              }
+            },
+            {
+              "id": "e4a020cb-8018-55fb-b3b7-80998933d1b8",
+              "content": {
+                "text": "11 metros",
+                "resources": []
+              }
+            },
+            {
+              "id": "0a8c7f73-c554-5799-8712-0d8e3daf68d5",
+              "content": {
+                "text": "12 metros",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "0a8c7f73-c554-5799-8712-0d8e3daf68d5",
+          "resolution": {
+            "text": "1. AB = 5 m é vertical e AC é horizontal, então o triângulo ABC é retângulo em A e BC = 13 m é a hipotenusa: 13² = 5² + AC², AC² = 169 − 25 = 144 e AC = 12 m. 2. 8 m é a diferença 13 − 5; 5 m repete o cateto vertical; 10 m e 11 m não satisfazem o teorema. Resposta: alternativa E.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Concurso Público 01/2025, TÉCNICO EM INFORMÁTICA, questão 20. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M09.p.varg25-ti-q20.json",
+            "answerPath": "sources/admin.2026-11.M09.p.varg25-ti-q20.json",
+            "contentSha256": "01f9ed35c558d86cd5587b7fea7f59059a6fe4b1dd3264a5fdbdeb4f5c097941",
+            "answerSha256": "01f9ed35c558d86cd5587b7fea7f59059a6fe4b1dd3264a5fdbdeb4f5c097941"
+          }
+        },
+        "fingerprint": "2a4f9835c1063f582fae419d52f7b86d933889fd3ff222dea829a051911ad452",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M09.p.vinhedo-profmat-q17"
+        },
+        "content": {
+          "statement": {
+            "text": "Na escola municipal Omega, a professora de matemática Aurora preparou uma atividade prática para seus alunos do 9º ano. Ela pediu que calculassem a área de um círculo que representa o pátio da escola, cujo raio mede 2 m, considerando que π ≈ 3. Assinale a alternativa que apresenta o valor correto da área em m2, que os alunos devem obter.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c6d2110b-dba3-536c-aaa4-6f1cbdc052bd",
+              "content": {
+                "text": "9 m2",
+                "resources": []
+              }
+            },
+            {
+              "id": "b215c1cd-7356-570d-bf60-7f48413c87d0",
+              "content": {
+                "text": "10 m2",
+                "resources": []
+              }
+            },
+            {
+              "id": "41ca7fd2-583d-5dd3-8e6d-8a9e59605469",
+              "content": {
+                "text": "11 m2",
+                "resources": []
+              }
+            },
+            {
+              "id": "d81ee5f7-28d9-5f79-8107-4a7441f24db9",
+              "content": {
+                "text": "12 m2",
+                "resources": []
+              }
+            },
+            {
+              "id": "a055b10c-043f-5901-9f1a-da40a4e0e29c",
+              "content": {
+                "text": "13 m2",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d81ee5f7-28d9-5f79-8107-4a7441f24db9",
+          "resolution": {
+            "text": "1. A área circular é πr². 2. Usando exatamente a aproximação fornecida, 3 × 2² = 12 m², alternativa D; comprimento de circunferência e área são grandezas diferentes. 9, 10, 11 e 13 m² não resultam de 3 × 2².",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M09",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, PROFESSOR DE EDUCAÇÃO BÁSICA II - MATEMÁTICA, questão17. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M09.p.vinhedo-profmat-q17.json",
+            "answerPath": "sources/admin.2026-11.M09.p.vinhedo-profmat-q17.json",
+            "contentSha256": "36dacc261802bac4d0219c3eb6d3340ebb23a190a40cff8139beb5d0a9ae7e65",
+            "answerSha256": "36dacc261802bac4d0219c3eb6d3340ebb23a190a40cff8139beb5d0a9ae7e65"
+          }
+        },
+        "fingerprint": "85bf2224834573afc0902d25a216d244b879220258977248d952806d38f6c867",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M09.p.cacapava-profmat-q38.json",
+        "mediaType": "application/json",
+        "sha256": "dab39bb5c4f2d712f92bb00b8f1339bd655dabb7f2a97159c0f037638670a9c1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiY29uc2VydmHDp8OjbyBkYSDDoXJlYS4ifSx7ImlkIjoiYiIsInRleHQiOiJzZW1lbGhhbsOnYSBkZSB0cmnDom5ndWxvcy4ifSx7ImlkIjoiYyIsInRleHQiOiJ0cmlzZcOnw6NvIGFuZ3VsYXIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoicHJvamXDp8OjbyBvcnRvZ29uYWwuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiaG9tb3RldGlhIGludmVyc2EuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYcOnYXBhdmEg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjUsIFBST0ZFU1NPUiBJSSAoUElJKSAtIE1BVEVNw4FUSUNBLCBxdWVzdMOjbzM4LiBSZXNvbHXDp8OjbyBwcsOzcHJpYSBhc3Npc3RpZGEgcG9yIElBOkNvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJhIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgc2XDp8OjbyBlc3BlY8OtZmljYSBkbyBjYXJnbyBlIHJlc3Bvc3RhIGNvbmZlcmlkYXMsIGFudWxhZGFzIGV4Y2x1w61kYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NhY2FwYXZhLWdhYmFyaXRvLnBkZiIsInNoYTI1NiI6ImE4YTZjMGQ4MGY1YmJiNjAyZmZkNzllY2U5NmNlYzVjM2QyMWVkYjc0NDczYWFmNDJkM2ZhNmQ0NDAyZDNkNjAiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzMC9hbmV4b3MvMjdkZjI1YzQtM2I1Ni00NDc2LWE0OWEtZmY2YzBkZjY3MTRmLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2HDp2FwYXZhIOKAlCBQcm9jZXNzbyBTZWxldGl2byAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtY2FjYXBhdmEtMjAyNS1wcm9mbWF0L3EzOCIsIm51bWJlciI6IjM4IiwicHJvb2YiOnsibm90ZSI6IkNhZGVybm8gb2ZpY2lhbDsgY2FyZ28gZSBuw7ptZXJvIGNvbmZlcmlkb3M7IGNhYmXDp2FsaG9zIGUgcXVlYnJhcyByZXRpcmFkb3MuIEZvcm1hdG9zIG1hdGVtw6F0aWNvcyByZWxldmFudGVzIGNvbXBhcmFkb3MgY29tIHDDoWdpbmFzIHJlbmRlcml6YWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2FjYXBhdmEtcHJvZm1hdC5wZGYiLCJzaGEyNTYiOiJiYmU5NmRiZGMzYWRlODAzMGNhZTMyY2FjOTgzODFiYmJlYTZiMTFkNzIyYjI1YmY0YTJhNjVhMTdiMDI4YzY2IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzAvYW5leG9zLzhiMmY1YjJmLTNmMjItNDcwZS1iZmFlLTRiZTU0NjcyZjFmMy5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUsIGFydC44wrosSVYgZSBUSlBSIEFDMTQzNzMzMi0zIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGU7IG7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSByZXV0aWxpemEgb2JyYXMgZGUgdGVyY2Vpcm9zIG5lY2Vzc8Ohcmlhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJQUk9GRVNTT1IgSUkgKFBJSSkgLSBNQVRFTcOBVElDQSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoiY2FjYXBhdmEtcHJvZm1hdC1xMzgiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBSZW9yZ2FuaXphciBhcyBtZXNtYXMgcGXDp2FzLCBzZW0gc29icmVwb3Npw6fDo28gbmVtIHJldGlyYXIgbWF0ZXJpYWwsIHByZXNlcnZhIGEgc29tYSBkZSBzdWFzIMOhcmVhcy4gMi4gQXNzaW0gbyBUYW5ncmFtIGlsdXN0cmEgY29uc2VydmHDp8OjbyBkYSDDoXJlYTsgbsOjbyDDqSBwcmVjaXNvIHF1ZSBhIGZpZ3VyYSBleHRlcm5hIHBlcm1hbmXDp2Egc2VtZWxoYW50ZSDDoCBhbnRlcmlvci4iLCJzdGF0ZW1lbnQiOiJPIFRhbmdyYW0gw6kgdW0gcXVlYnJhLWNhYmXDp2EgZGUgZGlzc2Vjw6fDo28gY29tcG9zdG8gcG9yIHNldGUgcGXDp2FzIHBvbGlnb25haXMgKHRhbnMpIHF1ZSBwb2RlbSBmb3JtYXIgbWlsaGFyZXMgZGUgZmlndXJhcy4gRG8gcG9udG8gZGUgdmlzdGEgZGEgZ2VvbWV0cmlhIHBsYW5hLCBhIG1hbmlwdWxhw6fDo28gZGVzc2FzIHBlw6dhcyBwYXJhIGNvbXBvciBkaWZlcmVudGVzIGZpZ3VyYXMgcGVybWl0ZSBhbyBhbHVubyBjb21wcmVlbmRlciBlbXBpcmljYW1lbnRlIG8gcHJpbmPDrXBpbyBkYToiLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-anel-circular.json",
+        "mediaType": "application/json",
+        "sha256": "e1295d62531a2f70d3e2165af53af65d4c390d499d64fb19d0a63c8aeda3f4d7",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjQgbcKyLiJ9LHsiaWQiOiJiIiwidGV4dCI6IjQ4IG3Csi4ifSx7ImlkIjoiYyIsInRleHQiOiIxMiBtwrIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNzUgbcKyLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtYW5lbC1jaXJjdWxhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSDDoXJlYSBkbyBhbmVsIMOpIM+AKFLCsuKIknLCsikuIDIuIENvbSBvcyB2YWxvcmVzIGRhZG9zLCAzw5coMjXiiJI5KT00OCBtwrI7IHN1YnRyYWlyIHJhaW9zIGFudGVzIGRlIGVsZXZhciBhbyBxdWFkcmFkbyBhbHRlcmEgYSBmaWd1cmEuIiwic3RhdGVtZW50IjoiVW1hIHJlZ2nDo28gY2lyY3VsYXIgdGVtIHJhaW8gZXh0ZXJubyA1IG0gZSB1bSByZWNvcnRlIGNpcmN1bGFyIGNvbmPDqm50cmljbyBkZSByYWlvIDMgbS4gVXNhbmRvIM+APTMsIHF1YWwgw6kgYSDDoXJlYSByZXN0YW50ZT8iLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-angulos-paralelas.json",
+        "mediaType": "application/json",
+        "sha256": "3e2bd9f3b185151aa388e1822a1670418a23b8302f88c99d5b09e16ee58a636b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjXCsCJ9LHsiaWQiOiJiIiwidGV4dCI6IjI1wrAifSx7ImlkIjoiYyIsInRleHQiOiIxMzDCsCJ9LHsiaWQiOiJkIiwidGV4dCI6IjExNcKwIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1hbmd1bG9zLXBhcmFsZWxhcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gw4JuZ3Vsb3MgY29sYXRlcmFpcyBpbnRlcm5vcyBlbnRyZSBwYXJhbGVsYXMgc8OjbyBzdXBsZW1lbnRhcmVzLiAyLiBPIG91dHJvIG1lZGUgMTgw4oiSNjU9MTE1wrA7IG9zIGFsdGVybm9zIGludGVybm9zLCBlbSBvdXRyYSBwb3Npw6fDo28sIHNlcmlhbSBpZ3VhaXMuIiwic3RhdGVtZW50IjoiRHVhcyByZXRhcyBwYXJhbGVsYXMgc8OjbyBjb3J0YWRhcyBwb3IgdW1hIHRyYW5zdmVyc2FsLiBVbSDDom5ndWxvIGludGVybm8gbWVkZSA2NcKwLiBRdWFudG8gbWVkZSBvIMOibmd1bG8gaW50ZXJubyBkbyBtZXNtbyBsYWRvIGRhIHRyYW5zdmVyc2FsPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-cilindro-lateral.json",
+        "mediaType": "application/json",
+        "sha256": "fb08e6eba693b56b3a5371c4f3b8fb08a67c6454ba394ab6fb43608b51943a12",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzAgY23Csi4ifSx7ImlkIjoiYiIsInRleHQiOiIyMCBjbcKyLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjYwIGNtwrIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiODQgY23Csi4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LWNpbGluZHJvLWxhdGVyYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIERlc2Vucm9sYWRhLCBhIGxhdGVyYWwgw6kgdW0gcmV0w6JuZ3VsbyBkZSBsYXJndXJhIDLPgHI9MTIgZSBhbHR1cmEgNS4gMi4gQSDDoXJlYSBsYXRlcmFsIMOpIDEyw5c1PTYwIGNtwrI7IGFzIGJhc2VzIG7Do28gZm9yYW0gaW5jbHXDrWRhcy4iLCJzdGF0ZW1lbnQiOiJVbSBjaWxpbmRybyBkZSByYWlvIDIgY20gZSBhbHR1cmEgNSBjbSB0ZXLDoSBhcGVuYXMgYSBzdXBlcmbDrWNpZSBsYXRlcmFsIHJldmVzdGlkYS4gVXNhbmRvIM+APTMsIHF1YWwgw6FyZWEgc2Vyw6EgcmV2ZXN0aWRhPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-cilindro-volume-conservar.json",
+        "mediaType": "application/json",
+        "sha256": "e02886c2750e1e8c35c414a41b7118fb7d3cf97199d2f0ee145836635b50c72e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRGV2ZSBwZXJtYW5lY2VyIGlndWFsLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkRldmUgc2VyIGRpdmlkaWRhIHBvciBxdWF0cm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiRGV2ZSBzZXIgZGl2aWRpZGEgcG9yIGRvaXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRGV2ZSBkb2JyYXIuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1jaWxpbmRyby12b2x1bWUtY29uc2VydmFyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIGJhc2UgY2lyY3VsYXIgdGVyw6Egw6FyZWEgbXVsdGlwbGljYWRhIHBvciAywrI9NC4gMi4gQ29tbyBWPcOhcmVhIGRhIGJhc2XDl2FsdHVyYSBkZXZlIHBlcm1hbmVjZXIgaWd1YWwsIGEgYWx0dXJhIHByZWNpc2Egc2VyIGRpdmlkaWRhIHBvciBxdWF0cm8uIERpdmlkaXIgcG9yIGRvaXMgY29tcGVuc2FyaWEgYXBlbmFzIG8gZG9icm8gZG8gcmFpbywgbsOjbyBvIHNldSBxdWFkcmFkbzsgbWFudGVyIG91IGRvYnJhciBhIGFsdHVyYSBhdW1lbnRhcmlhIG8gdm9sdW1lLiIsInN0YXRlbWVudCI6IlVtIGNpbGluZHJvIHRlcsOhIG8gcmFpbyBkb2JyYWRvLCBtYW50ZW5kbyBvIG1lc21vIHZvbHVtZS4gQ29tbyBkZXZlIG11ZGFyIGEgYWx0dXJhPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-circulo-inscrito-quadrado.json",
+        "mediaType": "application/json",
+        "sha256": "cca58ec30a6398dd29fd89b72ab73b8f2543078bea4e4c982919fbe38cb0bf4a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDggY23Csi4ifSx7ImlkIjoiYiIsInRleHQiOiI0MCBjbcKyLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjY0IGNtwrIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTYgY23Csi4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWNpcmN1bG8taW5zY3JpdG8tcXVhZHJhZG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gZGnDom1ldHJvIGRvIGPDrXJjdWxvIMOpIDggZSBzZXUgcmFpbyDDqSA0IGNtOyBhIMOhcmVhIGNpcmN1bGFyIMOpIDPDlzE2PTQ4IGNtwrIuIDIuIE8gcXVhZHJhZG8gdGVtIDY0IGNtwrI7IGEgZGlmZXJlbsOnYSDDqSAxNiBjbcKyLiA0OCBjbcKyIMOpIGEgw6FyZWEgZG8gY8OtcmN1bG8gZSA2NCBjbcKyIGEgZG8gcXVhZHJhZG87IDQwIGNtwrIgbsOjbyByZXN1bHRhIGRhIHN1YnRyYcOnw6NvLiIsInN0YXRlbWVudCI6IlVtIGPDrXJjdWxvIGVzdMOhIGluc2NyaXRvIGVtIHVtIHF1YWRyYWRvIGRlIGxhZG8gOCBjbS4gVXNhbmRvIM+APTMsIHF1YWwgw6kgYSDDoXJlYSBkbyBxdWFkcmFkbyBmb3JhIGRvIGPDrXJjdWxvPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-circunferencia-area-inversa.json",
+        "mediaType": "application/json",
+        "sha256": "bc350a119caceb4da83fbe2c01596e02a5503603041abeed23c348f3fb016a35",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzYgY20uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTggY20uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNTQgY20uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTA4IGNtLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtY2lyY3VuZmVyZW5jaWEtYXJlYS1pbnZlcnNhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBEZSAzcsKyPTEwOCwgdmVtIHLCsj0zNiBlIHI9NiBjbS4gMi4gTyBjb21wcmltZW50byDDqSAyw5czw5c2PTM2IGNtOyDDoXJlYSBlIGNvbXByaW1lbnRvIHTDqm0gdW5pZGFkZXMgZGlmZXJlbnRlcy4iLCJzdGF0ZW1lbnQiOiJVbSBjw61yY3VsbyB0ZW0gw6FyZWEgMTA4IGNtwrIuIFVzYW5kbyDPgD0zLCBxdWFsIMOpIHNldSBjb21wcmltZW50byBkZSBjaXJjdW5mZXLDqm5jaWE/IiwidG9waWNJZCI6Ik0wOSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-cubo-volume-aresta.json",
+        "mediaType": "application/json",
+        "sha256": "a89f5d4b5010641e8bad4a40e4cecec3b8d2255a964c8825316e8e68b06b24d0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzAgY23Csi4ifSx7ImlkIjoiYiIsInRleHQiOiIxNTAgY23Csi4ifSx7ImlkIjoiYyIsInRleHQiOiIxMjUgY23Csi4ifSx7ImlkIjoiZCIsInRleHQiOiIyNSBjbcKyLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtY3Viby12b2x1bWUtYXJlc3RhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIGFyZXN0YSDDqSA1IGNtIHBvcnF1ZSA1wrM9MTI1LiAyLiBTw6NvIHNlaXMgZmFjZXMgcXVhZHJhZGFzIGRlIMOhcmVhIDI1OiB0b3RhbCA2w5cyNT0xNTAgY23Csi4gMTI1IMOpIG8gdm9sdW1lLCAyNSDDqSBhIMOhcmVhIGRlIHVtYSBzw7MgZmFjZSBlIDMwIHNvbWEgc2VpcyB2ZXplcyBhIGFyZXN0YS4iLCJzdGF0ZW1lbnQiOiJVbSBjdWJvIHRlbSB2b2x1bWUgMTI1IGNtwrMuIFF1YWwgw6kgc3VhIMOhcmVhIHN1cGVyZmljaWFsIHRvdGFsPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-escada-parede.json",
+        "mediaType": "application/json",
+        "sha256": "5462073bad99dae0a40d7d22d6b21d614006831dda0453473cbcd49d59eca3cd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIgbS4ifSx7ImlkIjoiYiIsInRleHQiOiI4IG0uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTggbS4ifSx7ImlkIjoiZCIsInRleHQiOiLiiJoxOTQgbS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LWVzY2FkYS1wYXJlZGUiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEVzY2FkYSwgY2jDo28gZSBwYXJlZGUgZm9ybWFtIHRyacOibmd1bG8gcmV0w6JuZ3VsbywgY29tIGhpcG90ZW51c2EgMTMuIDIuIGjCsj0xM8Ky4oiSNcKyPTE0NCwgZW50w6NvIGg9MTIgbTsgbsOjbyBzZSBzb21hbSBvcyBxdWFkcmFkb3MgcGFyYSBhY2hhciB1bSBjYXRldG8uIiwic3RhdGVtZW50IjoiVW1hIGVzY2FkYSBkZSAxMyBtIGFwb2lhLXNlIGVtIHBhcmVkZSB2ZXJ0aWNhbCwgY29tIHN1YSBiYXNlIGEgNSBtIGRhIHBhcmVkZS4gUXVhbCDDqSBhIGFsdHVyYSBhbGNhbsOnYWRhPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-externo-regular.json",
+        "mediaType": "application/json",
+        "sha256": "4c43995fc96d58a1ace7cca0f72baa017b597e1259ca6af674c64c3d7d215f7a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTUifSx7ImlkIjoiYiIsInRleHQiOiIxMiJ9LHsiaWQiOiJjIiwidGV4dCI6IjI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiMzAifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LWV4dGVybm8tcmVndWxhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gVW1hIHZvbHRhIGNvbXBsZXRhIHBlbG9zIMOibmd1bG9zIGV4dGVybm9zIHNvbWEgMzYwwrAuIDIuIERpdmlkYSAzNjAgcG9yIDI0OiAxNSBsYWRvczsgbsOjbyBzZSB1c2EgYSBzb21hIGRvcyDDom5ndWxvcyBpbnRlcm5vcyBuZXNzYSBkaXZpc8Ojby4iLCJzdGF0ZW1lbnQiOiJDYWRhIMOibmd1bG8gZXh0ZXJubyBkZSB1bSBwb2zDrWdvbm8gcmVndWxhciBtZWRlIDI0wrAuIFF1YW50b3MgbGFkb3MgZWxlIHRlbT8iLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-hexagono-divisao-triangulos.json",
+        "mediaType": "application/json",
+        "sha256": "bb3e162b34af493de73e01b9587a216afeba7cfb09e496af2626143e08e39738",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjQgY23Csi4ifSx7ImlkIjoiYiIsInRleHQiOiIxNDQgY23Csi4ifSx7ImlkIjoiYyIsInRleHQiOiI3MiBjbcKyLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjM2IGNtwrIuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1oZXhhZ29uby1kaXZpc2FvLXRyaWFuZ3Vsb3MiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE9zIHNlaXMgdHJpw6JuZ3Vsb3MgY29icmVtIG8gaGV4w6Fnb25vIHNlbSBzb2JyZXBvc2nDp8OjbyBpbnRlcm5hLiAyLiBTb21lIHN1YXMgw6FyZWFzOiA2w5cxMj03MiBjbcKyOyBvIG7Dum1lcm8gZGUgbGFkb3MgZGV0ZXJtaW5hIGFxdWkgYSBxdWFudGlkYWRlIGRlIHBhcnRlcy4iLCJzdGF0ZW1lbnQiOiJVbSBoZXjDoWdvbm8gcmVndWxhciDDqSBkaXZpZGlkbywgbGlnYW5kbyBzZXUgY2VudHJvIGFvcyB2w6lydGljZXMsIGVtIHNlaXMgdHJpw6JuZ3Vsb3MgY29uZ3J1ZW50ZXMuIFNlIGNhZGEgdHJpw6JuZ3VsbyB0ZW0gw6FyZWEgMTIgY23CsiwgcXVhbCDDqSBhIMOhcmVhIGRvIGhleMOhZ29ubz8iLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-losango-diagonal.json",
+        "mediaType": "application/json",
+        "sha256": "23494580242fd350bf88cfebca636095e923e56b8e0d28e0e468f256764029a4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNiBjbS4ifSx7ImlkIjoiYiIsInRleHQiOiIyNCBjbS4ifSx7ImlkIjoiYyIsInRleHQiOiI3MCBjbS4ifSx7ImlkIjoiZCIsInRleHQiOiIxMiBjbS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWxvc2FuZ28tZGlhZ29uYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgw6FyZWEgZG8gbG9zYW5nbyDDqSBvIHByb2R1dG8gZGFzIGRpYWdvbmFpcyBkaXZpZGlkbyBwb3IgMi4gMi4gQSBkaWFnb25hbCBkZXNjb25oZWNpZGEgw6kgMsOXODQvMTQ9MTIgY20uIDYgY20gZXNxdWVjZSBkZSBtdWx0aXBsaWNhciBwb3IgMjsgMjQgY20gZSA3MCBjbSBkYXJpYW0gw6FyZWFzIGRlIDE2OCBjbcKyIGUgNDkwIGNtwrIuIiwic3RhdGVtZW50IjoiVW0gbG9zYW5nbyB0ZW0gw6FyZWEgODQgY23CsiBlIHVtYSBkaWFnb25hbCBkZSAxNCBjbS4gUXVhbnRvIG1lZGUgYSBvdXRyYSBkaWFnb25hbD8iLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-mediana-hipotenusa.json",
+        "mediaType": "application/json",
+        "sha256": "6d6ab88e9e88b5f66e8e6c9e5fb18a12ac5af224f943a2a31ed550c03e73ab28",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzYgY20uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiOSBjbS4ifSx7ImlkIjoiYyIsInRleHQiOiIxOCBjbS4ifSx7ImlkIjoiZCIsInRleHQiOiI2IGNtLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtbWVkaWFuYS1oaXBvdGVudXNhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHByb3ByaWVkYWRlIG5lY2Vzc8OhcmlhIGrDoSBmb2kgaW5mb3JtYWRhIG5vIGVudW5jaWFkby4gMi4gQSBtZXRhZGUgZGUgMTggw6kgOSBjbTsgdW1hIG1lZGlhbmEgbGlnYSBvIHbDqXJ0aWNlIGFvIHBvbnRvIG3DqWRpbyBkbyBsYWRvIG9wb3N0by4iLCJzdGF0ZW1lbnQiOiJFbSB1bSB0cmnDom5ndWxvIHJldMOibmd1bG8sIGEgbWVkaWFuYSByZWxhdGl2YSDDoCBoaXBvdGVudXNhIG1lZGUgbWV0YWRlIGRhIGhpcG90ZW51c2EuIFNlIGEgaGlwb3RlbnVzYSBtZWRlIDE4IGNtLCBxdWFudG8gbWVkZSBlc3NhIG1lZGlhbmE/IiwidG9waWNJZCI6Ik0wOSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-pavimentacao-sem-perda.json",
+        "mediaType": "application/json",
+        "sha256": "d23ea9445610bf49ea743f66ead913699e328f654ab269f88b5339ba1b67ee49",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOTYifSx7ImlkIjoiYiIsInRleHQiOiI0OCJ9LHsiaWQiOiJjIiwidGV4dCI6IjI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiMTIifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LXBhdmltZW50YWNhby1zZW0tcGVyZGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIENhZGEgbGFkbyBkYSBwbGFjYSBtZWRlIDAsNSBtIGUgc3VhIMOhcmVhIMOpIDAsMjUgbcKyLiAyLiBBIMOhcmVhIGRvIHBpc28gw6kgMTIgbcKyOiAxMi8wLDI1PTQ4IHBsYWNhcywgZm9ybWFuZG8gNiBwb3IgOC4gMjQgZGl2aWRlIGEgw6FyZWEgcGVsbyBsYWRvICgwLDUgbSkgZW0gdmV6IGRhIMOhcmVhIGRhIHBsYWNhOyA5NiBlIDEyIG7Do28gY29ycmVzcG9uZGVtIGEgNiDDlyA4LiIsInN0YXRlbWVudCI6IlVtIHBpc28gZGUgMyBtIHBvciA0IG0gcmVjZWJlcsOhIHBsYWNhcyBxdWFkcmFkYXMgZGUgNTAgY20gZGUgbGFkbywgc2VtIGp1bnRhcyBuZW0gY29ydGVzLiBRdWFudGFzIHBsYWNhcyBzw6NvIG5lY2Vzc8Ohcmlhcz8iLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-prisma-base-triangular.json",
+        "mediaType": "application/json",
+        "sha256": "f7a8659cb96d99c7237270e69cdbdcab7905d8e0985340e77a8ed380b187f879",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNTQgY23Csy4ifSx7ImlkIjoiYiIsInRleHQiOiIyNCBjbcKzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjEwOCBjbcKzLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjIxNiBjbcKzLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtcHJpc21hLWJhc2UtdHJpYW5ndWxhciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSDDoXJlYSBkYSBiYXNlIHRyaWFuZ3VsYXIgw6kgNsOXNC8yPTEyIGNtwrIuIDIuIE8gdm9sdW1lIGRvIHByaXNtYSDDqSAxMsOXOT0xMDggY23CszsgbyBmYXRvciAxLzMgZGUgcGlyw6JtaWRlcyBuw6NvIHNlIGFwbGljYS4iLCJzdGF0ZW1lbnQiOiJVbSBwcmlzbWEgcmV0byB0ZW0gYmFzZSB0cmlhbmd1bGFyIGRlIGJhc2UgNiBjbSBlIGFsdHVyYSByZWxhdGl2YSA0IGNtLiBBIGRpc3TDom5jaWEgZW50cmUgYXMgYmFzZXMgw6kgOSBjbS4gUXVhbCDDqSBzZXUgdm9sdW1lPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-quadrilatero-angulo-faltante.json",
+        "mediaType": "application/json",
+        "sha256": "4be213db17cc1d73c9da3840d3b87bef4c85c9368fda690626fc64490072f454",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjXCsCJ9LHsiaWQiOiJiIiwidGV4dCI6IjEwNcKwIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjU1wrAifSx7ImlkIjoiZCIsInRleHQiOiI3NcKwIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Im1hdC1xdWFkcmlsYXRlcm8tYW5ndWxvLWZhbHRhbnRlIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHNvbWEgZG9zIMOibmd1bG9zIGludGVybm9zIGRlIHVtIHF1YWRyaWzDoXRlcm8gw6kgMzYwwrAuIDIuIE9zIHRyw6pzIGNvbmhlY2lkb3Mgc29tYW0gMjg1wrA7IHJlc3RhbSAzNjDiiJIyODU9NzXCsC4gMjU1wrAgZSAxMDXCsCBuw6NvIGNvbXBsZXRhbSAzNjDCsCBjb20gMjg1wrA7IDY1wrAgcmVzdWx0YSBkZSBlcnJvIG5hIHNvbWEgZG9zIHRyw6pzIMOibmd1bG9zLiIsInN0YXRlbWVudCI6IlRyw6pzIMOibmd1bG9zIGludGVybm9zIGRlIHVtIHF1YWRyaWzDoXRlcm8gY29udmV4byBtZWRlbSA4MMKwLCA5NcKwIGUgMTEwwrAuIFF1YW50byBtZWRlIG8gcXVhcnRvPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-regular-angulo-interno.json",
+        "mediaType": "application/json",
+        "sha256": "905a5d300ef9b5cfbb2d79f5efa291f48434ad1fae84a0caf3193aa3b8bddae4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJiIiwidGV4dCI6IjYifSx7ImlkIjoiYyIsInRleHQiOiI5In0seyJpZCI6ImQiLCJ0ZXh0IjoiMTIifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXJlZ3VsYXItYW5ndWxvLWludGVybm8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gw6JuZ3VsbyBleHRlcm5vIGNvcnJlc3BvbmRlbnRlIG1lZGUgMTgw4oiSMTM1PTQ1wrAuIDIuIE9zIGV4dGVybm9zIHNvbWFtIDM2MMKwLCBlbnTDo28gaMOhIDM2MC80NT04IGxhZG9zLiBDb20gNiwgOSBlIDEyIGxhZG9zLCBvcyDDom5ndWxvcyBpbnRlcm5vcyBzZXJpYW0gMTIwwrAsIDE0MMKwIGUgMTUwwrAuIiwic3RhdGVtZW50IjoiQ2FkYSDDom5ndWxvIGludGVybm8gZGUgdW0gcG9sw61nb25vIHJlZ3VsYXIgY29udmV4byBtZWRlIDEzNcKwLiBRdWFudG9zIGxhZG9zIGVsZSB0ZW0/IiwidG9waWNJZCI6Ik0wOSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-retirar-cubo-canto-area.json",
+        "mediaType": "application/json",
+        "sha256": "57632c554ff7e5449a81885c24b5456c19f3844980028ae9f48e0ebd0eb211f9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjEzIGNtwrIuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMjIyIGNtwrIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjE2IGNtwrIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjEwIGNtwrIuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1yZXRpcmFyLWN1Ym8tY2FudG8tYXJlYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTyBjdWJvIGluaWNpYWwgdGVtIMOhcmVhIDbDlzbCsj0yMTYgY23Csi4gMi4gTyByZWNvcnRlIHJldGlyYSB0csOqcyBxdWFkcmFkaW5ob3MgZXh0ZXJub3MgZGUgw6FyZWEgMSBlIGV4cMO1ZSB0csOqcyBub3ZvcyBxdWFkcmFkaW5ob3MgZGEgbWVzbWEgw6FyZWE7IGEgw6FyZWEgdG90YWwgcGVybWFuZWNlIDIxNi4gMjEzIGNtwrIgc8OzIGRlc2NvbnRhIG9zIHRyw6pzIHF1YWRyYWRpbmhvcyByZXRpcmFkb3M7IDIyMiBjbcKyIGUgMjEwIGNtwrIgc29tYW0gb3Ugc3VidHJhZW0gc2VpcyB1bmlkYWRlcyBzZW0gY29ycmVzcG9uZMOqbmNpYSBjb20gbyByZWNvcnRlLiIsInN0YXRlbWVudCI6IkRlIHVtIGN1Ym8gZGUgYXJlc3RhIDYgY20gcmV0aXJhLXNlIHVtIGN1YmluaG8gZGUgYXJlc3RhIDEgY20gZW0gdW0gZGUgc2V1cyBjYW50b3MuIFF1YWwgw6kgYSDDoXJlYSBzdXBlcmZpY2lhbCB0b3RhbCBkbyBzw7NsaWRvIHJlc3RhbnRlPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-setor-area.json",
+        "mediaType": "application/json",
+        "sha256": "a8a1b704975acbd8b08a15b58588492bb99d558d01696e14ffe543e6d4bd3b3a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDggY23Csi4ifSx7ImlkIjoiYiIsInRleHQiOiI2IGNtwrIuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTIgY23Csi4ifSx7ImlkIjoiZCIsInRleHQiOiIyNCBjbcKyLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtc2V0b3ItYXJlYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSDDoXJlYSB0b3RhbCBkbyBjw61yY3VsbyDDqSAzw5c0wrI9NDggY23Csi4gMi4gTm92ZW50YSBncmF1cyByZXByZXNlbnRhbSB1bSBxdWFydG8gZG8gY8OtcmN1bG8sIGVudMOjbyBvIHNldG9yIHRlbSAxMiBjbcKyLiA0OCBjbcKyIMOpIG8gY8OtcmN1bG8gaW50ZWlybywgMjQgY23CsiBzZXJpYSBtZWlvIGPDrXJjdWxvIGUgNiBjbcKyIHVtIG9pdGF2by4iLCJzdGF0ZW1lbnQiOiJVbSBzZXRvciBkZSA5MMKwIHBlcnRlbmNlIGEgdW0gY8OtcmN1bG8gZGUgcmFpbyA0IGNtLiBVc2FuZG8gz4A9MywgcXVhbCDDqSBhIMOhcmVhIGRlc3NlIHNldG9yPyIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-triangulo-exterior.json",
+        "mediaType": "application/json",
+        "sha256": "ba9b771f0c7c308460c807ea3624f8ce7d0cbcc81a767be00094853e61871873",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNzDCsCJ9LHsiaWQiOiJiIiwidGV4dCI6IjU1wrAifSx7ImlkIjoiYyIsInRleHQiOiIxMjXCsCJ9LHsiaWQiOiJkIiwidGV4dCI6IjE4MMKwIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC10cmlhbmd1bG8tZXh0ZXJpb3IiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFVtIMOibmd1bG8gZXh0ZXJubyDDqSBhIHNvbWEgZG9zIGRvaXMgaW50ZXJub3MgbsOjbyBhZGphY2VudGVzLiAyLiBBc3NpbSBvIGRlc2NvbmhlY2lkbyDDqSAxMjXiiJI1NT03MMKwOyAxODDiiJIxMjUgZGFyaWEgbyBpbnRlcm5vIGFkamFjZW50ZS4iLCJzdGF0ZW1lbnQiOiJVbSDDom5ndWxvIGV4dGVybm8gZGUgdW0gdHJpw6JuZ3VsbyBtZWRlIDEyNcKwLiBVbSBkb3Mgw6JuZ3Vsb3MgaW50ZXJub3MgbsOjbyBhZGphY2VudGVzIGEgZWxlIG1lZGUgNTXCsC4gUXVhbnRvIG1lZGUgbyBvdXRybz8iLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.mat-triangulos-base-comum.json",
+        "mediaType": "application/json",
+        "sha256": "19c7e49752cdba7963d168e1940f13ebc82acc004a30681e2d6e7d55e68393e0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNToyIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNDoyNSJ9LHsiaWQiOiJjIiwidGV4dCI6IjE6MSJ9LHsiaWQiOiJkIiwidGV4dCI6IjI6NSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtdHJpYW5ndWxvcy1iYXNlLWNvbXVtIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIMOhcmVhIMOpIHByb3BvcmNpb25hbCDDoCBhbHR1cmEgcXVhbmRvIGEgYmFzZSDDqSBtYW50aWRhLiAyLiBBIHJhesOjbyDDqSA2LzE1PTIvNTsgbsOjbyBzZSBlbGV2YW0gYXMgYWx0dXJhcyBhbyBxdWFkcmFkbywgcG9pcyBuw6NvIGZvaSBkYWRhIHNlbWVsaGFuw6dhLiIsInN0YXRlbWVudCI6IkRvaXMgdHJpw6JuZ3Vsb3MgdMOqbSBhIG1lc21hIGJhc2UsIGUgYXMgYWx0dXJhcyByZWxhdGl2YXMgYSBlbGEgbWVkZW0gNiBjbSBlIDE1IGNtLiBRdWFsIMOpIGEgcmF6w6NvIGVudHJlIGFzIMOhcmVhcywgcHJpbWVpcmE6c2VndW5kYT8iLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.potim25-dir-q17.json",
+        "mediaType": "application/json",
+        "sha256": "ab00ccad7586077b6bc7864d59f6ddf927337f27e6245c655ef3a5cb3f25b38f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJiIiwidGV4dCI6IjEyIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTUifSx7ImlkIjoiZCIsInRleHQiOiIxNiJ9LHsiaWQiOiJlIiwidGV4dCI6IjI1In1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSwgRElSRVRPUiBERSBFU0NPTEEsIHF1ZXN0w6NvIDE3LiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgcHJvdmFzIG9iamV0aXZhcyBhcGxpY2FkYXMgZW0gMjUvMDEvMjAyNiBjb25mb3JtZSBlZGl0YWwgZGUgY29udm9jYcOnw6NvOyBww6FnaW5hIDIsIGJsb2NvIGRvIGNhcmdvIERJUkVUT1IgREUgRVNDT0xBLCBxdWVzdMOjbyAxNyA9IEQgY29uZmVyaWRhIHZpc3VhbG1lbnRlOyBpdGVtIG7Do28gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjIwLWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiIwOTk3OGVlM2ExODRhNDQ3ODUwZGFjYTc4ZTRjMWY0Mzg2MjljYWM2NTgxMWMyNjkwYjVlZjVjNWIzYmVhNzg2IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zLzc3MjVjMjdkLTY4MjUtNDQwYi1iNGJmLTRiZmZkOTc3YzM4ZS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtcG90aW0tMjAyNS1kaXIvcTE3IiwibnVtYmVyIjoiMTciLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIERJUkVUT1IgREUgRVNDT0xBOyBxdWVzdMOjbyAxNyBjb25mZXJpZGEgdmlzdWFsbWVudGUgbmEgcMOhZ2luYSA1IHJlbmRlcml6YWRhIChlbnVuY2lhZG8sIGFsdGVybmF0aXZhcywgc8OtbWJvbG9zIGUgb3JkZW0pOyBjb3JyaWdpZGFzIGFwZW5hcyBxdWVicmFzIGRlIGxpbmhhL2hpZmVuaXphw6fDo28uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIyMC1wcm92YS1kaXJldG9yLWRlLWVzY29sYS5wZGYiLCJzaGEyNTYiOiI5MTRjNGM2N2NhMjljMGYwZjY0N2U3MDE5ZDA2ZjQ5OTY1NWI4NDAyYzU4M2EwZDkxYTkzNzFmYjVhNzY5YjQ3IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zLzFhZGM5OTJiLTY4MzUtNDA1OS04ZThjLWQzOGRmZTcwOWEyNC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJESVJFVE9SIERFIEVTQ09MQSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoicG90aW0yNS1kaXItcTE3Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIGxhZG8gQUIgdmFpIGRlIHggPSAxIGEgeCA9IDUsIG1lZGluZG8gNCBtIChvIG1lc21vIHZhbGUgcGFyYSBCQywgZGUgeSA9IDEgYSB5ID0gNSkuIEEgw6FyZWEgw6kgNCDCtyA0ID0gMTYgbcKyLiAyLiA4IMOpIGEgc29tYSBkZSBkb2lzIGxhZG9zOyAxMiBuw6NvIMOpIHF1YWRyYWRvIGRlIG5lbmh1bSBsYWRvOyAxNSBlIDI1IHVzYW0gbWVkaWRhcyBpbmNvcnJldGFzICgyNSB1c2FyaWEgbGFkbyA1LCBhIGNvb3JkZW5hZGEgZSBuw6NvIGEgZGlzdMOibmNpYSkuIFJlc3Bvc3RhOiBhbHRlcm5hdGl2YSBELiIsInN0YXRlbWVudCI6IkNvbnNpZGVyZSBvIHF1YWRyYWRvIEFCQ0QsIGN1am9zIHbDqXJ0aWNlcyBzw6NvIEEoMSwgMSksIEIoNSwgMSksIEMoNSwgNSkgZSBEKDEsIDUpLCBleHByZXNzb3MgZW0gbWV0cm9zLlxuQSDDoXJlYSBkZXNzZSBxdWFkcmFkbyDDqSBpZ3VhbCBhOiBfX19fX18gbcKyLlxuQ29tIGJhc2UgbmVzc2UgY29udGV4dG8sIGFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgY29ycmV0YSBxdWUgcHJlZW5jaGUgYSBsYWN1bmEgYWNpbWEuIiwidG9waWNJZCI6Ik0wOSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.tai26-cont-q13.json",
+        "mediaType": "application/json",
+        "sha256": "1ba60e278cab5199e429a672e9bd404fecaf8105354520f11deadf4b161a1731",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMS4yNTYgbW3CsyJ9LHsiaWQiOiJiIiwidGV4dCI6IjIuNTEyIG1twrMifSx7ImlkIjoiYyIsInRleHQiOiIxMi41NjAgbW3CsyJ9LHsiaWQiOiJkIiwidGV4dCI6IjI1LjEyMCBtbcKzIn0seyJpZCI6ImUiLCJ0ZXh0IjoiMzEuNDAwIG1twrMifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFRhacO6dmEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjYsIENPTlRBRE9SLCBxdWVzdMOjbyAxMy4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZG8gQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNjsgcMOhZ2luYSAxLCBibG9jby90aXBvIGRvIGNhcmdvIGNvcnJlc3BvbmRlbnRlLCBxdWVzdMOjbyAxMyA9IEEgY29uZmVyaWRhIHZpc3VhbG1lbnRlIGVtIDIwMjYtMTEtMTI7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yNDgtZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjIzYzNmNmRhM2VkM2U2OTRkNzUxZjk2NjNlNWFhZThhMzNhNDRiZmIzYjI5MGVlOWUyM2M3MTI4NzhjYTYxYzYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy1yMi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjQ4L2FuZXhvcy9jOGFjMmExMi0xNWU5LTQxMDktYTAyOC04ZmI5ZGE2NzJiY2YucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBUYWnDunZhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI2IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtdGFpdXZhLTIwMjYtY29udGFkb3IvcTEzIiwibnVtYmVyIjoiMTMiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIChDT05UQURPUik7IHF1ZXN0w6NvIDEzIGNvbmZlcmlkYSB2aXN1YWxtZW50ZSBuYSBww6FnaW5hIDUgcmVuZGVyaXphZGEgKGVudW5jaWFkbywgdGFiZWxhLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKSBlbSAyMDI2LTExLTEyOyB0YWJlbGEgdHJhbnNjcml0YSBpbnRlZ3JhbG1lbnRlIGVtIHRleHRvLCBzZW0gcGVyZGEgZGUgZGFkb3M7IGNvcnJpZ2lkYXMgYXBlbmFzIHF1ZWJyYXMgZGUgbGluaGEuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzI0OC1wcm92YS1jb250YWRvci5wZGYiLCJzaGEyNTYiOiI3OWFlMjYxMTc1YTE3MjYwZDRjNWIxOTVkNTNhZDkzODM2MTE0MTBlNzUxNWRlMWYyOTFlOGVmOWRlZDQzMmI5IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yNDgvYW5leG9zLzgxOWUyODU2LWFlZDktNDM3ZS05OGQwLTgyMjMwMmQ2YjUwZi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBlbSByZXVzZS1hc3Nlc3NtZW50Lm1kLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIChkYWRvcyBlbSB0YWJlbGEgZWxhYm9yYWRvcyBwZWxhIHByw7NwcmlhIGJhbmNhKSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJDT05UQURPUiIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoidGFpMjYtY29udC1xMTMiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiLCJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLXNpIl0sInJlc29sdXRpb24iOiIxLiBBbnRlcyBkZSBjYWxjdWxhciwgYXMgbWVkaWRhcyBwcmVjaXNhbSBlc3RhciBuYSBtZXNtYSB1bmlkYWRlOiBvIGNvbXByaW1lbnRvIMOpIDEwIGNtID0gMTAwIG1tIGUgbyByYWlvIMOpIG1ldGFkZSBkbyBkacOibWV0cm8sIDQgw7cgMiA9IDIgbW0uIE8gdm9sdW1lIGRvIGNpbGluZHJvIMOpIMOhcmVhIGRhIGJhc2UgdmV6ZXMgYWx0dXJhOiBWID0gz4AgwrcgcsKyIMK3IGgg4omIIDMsMTQgwrcgMsKyIMK3IDEwMCA9IDMsMTQgwrcgNDAwID0gMS4yNTYgbW3Csy4gMi4gMi41MTIgbW3CsyDDqSBvIGRvYnJvIGRvIHZvbHVtZSBjb3JyZXRvOyAxMi41NjAgbW3CsyDDqSBkZXogdmV6ZXMgbyB2YWxvciBjb3JyZXRvLCB0w61waWNvIGRlIGVycm8gbmEgY29udmVyc8OjbyBkZSAxMCBjbSBwYXJhIG1pbMOtbWV0cm9zOyAyNS4xMjAgbW3CsyBlIDMxLjQwMCBtbcKzIHRhbWLDqW0gbsOjbyBjb3JyZXNwb25kZW0gYSDPgCDCtyBywrIgwrcgaCBjb20gciA9IDIgbW0gZSBoID0gMTAwIG1tLiBSZXNwb3N0YTogYWx0ZXJuYXRpdmEgQS4iLCJzdGF0ZW1lbnQiOiJEdXJhbnRlIHVtIGV4YW1lIGVzcGVjaWFsaXphZG8gZGUgaGVtb2RpbsOibWljYSwgYSBtw6lkaWNhIFJvYmVydGEsIGVzcGVjaWFsaXN0YSBlbSBmbHV4byBzYW5ndcOtbmVvLCBlc3TDoSBhbmFsaXNhbmRvIG8gdm9sdW1lIGRlIHNhbmd1ZSBxdWUgcGFzc2EgcG9yIHVtIGRldGVybWluYWRvIHZhc28gc2FuZ3XDrW5lbyBlbSB1bSBjdXJ0byBpbnRlcnZhbG8gZGUgdGVtcG8uIFBhcmEgc2ltcGxpZmljYXIgbyBtb2RlbG8sIGVsYSBjb25zaWRlcmEgcXVlIG8gdHJlY2hvIGFuYWxpc2FkbyBkZXNzZSB2YXNvIHBvZGUgc2VyIGFwcm94aW1hZG8gcG9yIHVtIGNpbGluZHJvIGRlIGNvbXByaW1lbnRvIDEwIGNtIGUgZGnDom1ldHJvIDQgbW0uXG5cblNhYmVuZG8gcXVlIHRvZG8gbyBpbnRlcmlvciBkZXNzZSBjaWxpbmRybyBlc3TDoSBwcmVlbmNoaWRvIHBvciBzYW5ndWUsIHF1YWwgw6kgbyB2b2x1bWUgZGUgc2FuZ3VlIGNvbnRpZG8gbmVzc2UgdHJlY2hvIGRvIHZhc28sIGFwcm94aW1hZGFtZW50ZSwgZW0gbWlsw61tZXRyb3MgY8O6Ymljb3M/XG5cblVzZSDPgCDiiYggMywxNCBub3MgY8OhbGN1bG9zIGUgYXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBjb3JyZXRhLiIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifSwibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1zaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IkJJUE0g4oCUIEJyb2NodXJhIGRvIFNpc3RlbWEgSW50ZXJuYWNpb25hbCBkZSBVbmlkYWRlcywgOcKqIGVkacOnw6NvLCBhdHVhbGl6YcOnw6NvIDIwMjY7IHVuaWRhZGVzIGUgcHJlZml4b3MiLCJ1cmwiOiJodHRwczovL3d3dy5iaXBtLm9yZy9lbi9wdWJsaWNhdGlvbnMvc2ktYnJvY2h1cmUifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.varg25-ti-q20.json",
+        "mediaType": "application/json",
+        "sha256": "01f9ed35c558d86cd5587b7fea7f59059a6fe4b1dd3264a5fdbdeb4f5c097941",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNSBtZXRyb3MifSx7ImlkIjoiYiIsInRleHQiOiI4IG1ldHJvcyJ9LHsiaWQiOiJjIiwidGV4dCI6IjEwIG1ldHJvcyJ9LHsiaWQiOiJkIiwidGV4dCI6IjExIG1ldHJvcyJ9LHsiaWQiOiJlIiwidGV4dCI6IjEyIG1ldHJvcyJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUsIFTDiUNOSUNPIEVNIElORk9STcOBVElDQSwgcXVlc3TDo28gMjAuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvIGRhcyBwcm92YXMgZGUgMTkvMTAvMjAyNTsgcMOhZ2luYSA3LCBibG9jbyBkbyBjYXJnbyBUw4lDTklDTyBFTSBJTkZPUk3DgVRJQ0EsIHF1ZXN0w6NvIDIwID0gRSBjb25mZXJpZGEgdmlzdWFsbWVudGU7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTctZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6ImI5MDdkMzVlMTZlZGJjNWEyZTk4OTMyNzUzMjAyNGU5Yjk5MmRkYjBiOWJmZGJiZTgzNWUyYjliNzE4ZjM2NzUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5Ny9hbmV4b3MvYTM4OTgyODMtNGQ0ZS00NTE2LTg1N2YtZWEwZmFiNGRhYTQ2LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12YXJnaW5oYS0yMDI1LXRlY2luZm8vcTIwIiwibnVtYmVyIjoiMjAiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIFTDiUNOSUNPIEVNIElORk9STcOBVElDQTsgcXVlc3TDo28gMjAgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNyByZW5kZXJpemFkYSAoZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKTsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS9oaWZlbml6YcOnw6NvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTctcHJvdmEtdGNuaWNvLWVtLWluZm9ybXRpY2EucGRmIiwic2hhMjU2IjoiODYzZWJiNDE2NWVjY2ZhZjAxODE5OWVhMWEyMjVhN2FkZWY5NzgxYmMxYTc0MjM0MzdhY2M2NTY4MmJhM2Y2YyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk3L2FuZXhvcy80NTlkZWQyOC1mMzg0LTQ5MDktYWZhOS0xMTc5NjQyMjNmNzMucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IExlaSA5LjYxMC8xOTk4LCBhcnQuIDjCuiwgSVYsIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUsIHNlbSBvYnJhIGRlIHRlcmNlaXJvIG5lY2Vzc8OhcmlhOyBuw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gc2UgYWZpcm1hIGNvbnNlbnRpbWVudG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVMOJQ05JQ08gRU0gSU5GT1JNw4FUSUNBIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI1fSwiaWQiOiJ2YXJnMjUtdGktcTIwIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBQiA9IDUgbSDDqSB2ZXJ0aWNhbCBlIEFDIMOpIGhvcml6b250YWwsIGVudMOjbyBvIHRyacOibmd1bG8gQUJDIMOpIHJldMOibmd1bG8gZW0gQSBlIEJDID0gMTMgbSDDqSBhIGhpcG90ZW51c2E6IDEzwrIgPSA1wrIgKyBBQ8KyLCBBQ8KyID0gMTY5IOKIkiAyNSA9IDE0NCBlIEFDID0gMTIgbS4gMi4gOCBtIMOpIGEgZGlmZXJlbsOnYSAxMyDiiJIgNTsgNSBtIHJlcGV0ZSBvIGNhdGV0byB2ZXJ0aWNhbDsgMTAgbSBlIDExIG0gbsOjbyBzYXRpc2ZhemVtIG8gdGVvcmVtYS4gUmVzcG9zdGE6IGFsdGVybmF0aXZhIEUuIiwic3RhdGVtZW50IjoiRHVyYW50ZSB1bWEgZXhwZWRpw6fDo28gZW0gdW1hIGZsb3Jlc3RhLCB1bWEgZXF1aXBlIGRlIHJlc2dhdGUgcHJlY2lzYSBhdHJhdmVzc2FyIGRlIHVtIHBvbnRvIEEgYXTDqSB1bSBwb250byBDLCBwYXNzYW5kbyBwb3IgdW0gZGVzbsOtdmVsLiBFbGVzIHNvYmVtIHZlcnRpY2FsbWVudGUgNSBtZXRyb3MgYXTDqSBvIHBvbnRvIEIsIGUgZGVwb2lzIHNlZ3VlbSBlbSBsaW5oYSByZXRhIHBvciAxMyBtZXRyb3MgYXTDqSBvIHBvbnRvIEMsIHF1ZSBlc3TDoSBubyBtZXNtbyBuw612ZWwgZG8gcG9udG8gQS5cblVzZSBvIFRlb3JlbWEgZGUgUGl0w6Fnb3JhczpcbkPCsiA9IELCsiArIEHCslxuUXVhbCDDqSBhIGRpc3TDom5jaWEgaG9yaXpvbnRhbCBlbnRyZSBvcyBwb250b3MgQSBlIEM/IEFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgY29ycmV0YToiLCJ0b3BpY0lkIjoiTTA5In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBjb21wbGVtZW50YXIgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYSBxdWVzdMOjbyDDqSB0cmFuc2NyaXRhIGRlIHByb3ZhIG9maWNpYWwsIGN1amEgb3JpZ2VtIGNvbnN0YSBkYSBwcm92ZW5pw6puY2lhIGRvIGl0ZW0iLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M09.p.vinhedo-profmat-q17.json",
+        "mediaType": "application/json",
+        "sha256": "36dacc261802bac4d0219c3eb6d3340ebb23a190a40cff8139beb5d0a9ae7e65",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOSBtMiJ9LHsiaWQiOiJiIiwidGV4dCI6IjEwIG0yIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTEgbTIifSx7ImlkIjoiZCIsInRleHQiOiIxMiBtMiJ9LHsiaWQiOiJlIiwidGV4dCI6IjEzIG0yIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBWaW5oZWRvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMy8yMDI1LCBQUk9GRVNTT1IgREUgRURVQ0HDh8ODTyBCw4FTSUNBIElJIC0gTUFURU3DgVRJQ0EsIHF1ZXN0w6NvMTcuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6Q29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBzZcOnw6NvIGVzcGVjw61maWNhIGRvIGNhcmdvIGUgcmVzcG9zdGEgY29uZmVyaWRhcywgYW51bGFkYXMgZXhjbHXDrWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvdmluaGVkby1nYWJhcml0by5wZGYiLCJzaGEyNTYiOiI5MjNhY2FhZjlkMzhlNWM4ZjQ4M2IzY2U5ZmQyZDlkYzZjMjE1MDI3Y2ViMGE0ZWYzNWY3ZDBhYmUyNGNjMzhlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzI3OTUxNDEzLTA0YzYtNDRmOC05MjVhLWViMGIzOTIxMTczOS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12aW5oZWRvLTIwMjUtcHJvZm1hdC9xMTciLCJudW1iZXIiOiIxNyIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWw7IGNhcmdvIGUgbsO6bWVybyBjb25mZXJpZG9zOyBjYWJlw6dhbGhvcyBlIHF1ZWJyYXMgcmV0aXJhZG9zLiBGb3JtYXRvcyBtYXRlbcOhdGljb3MgcmVsZXZhbnRlcyBjb21wYXJhZG9zIGNvbSBww6FnaW5hcyByZW5kZXJpemFkYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3ZpbmhlZG8tcHJvZm1hdC5wZGYiLCJzaGEyNTYiOiJmZjgzM2ViMjAyNGZiZDk0NmRhMGQwZjI4OTA2ZmU3NzgzMjFiNGJmMTcxZWEwMTMxMThkMzk5NDYyZDg3MmJjIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzY4MzVlZGE0LWUwNTItNDc1Zi04MmRjLTA4MjE1NGIzMzNmNy5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUsIGFydC44wrosSVYgZSBUSlBSIEFDMTQzNzMzMi0zIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGU7IG7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSByZXV0aWxpemEgb2JyYXMgZGUgdGVyY2Vpcm9zIG5lY2Vzc8Ohcmlhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJQUk9GRVNTT1IgREUgRURVQ0HDh8ODTyBCw4FTSUNBIElJIC0gTUFURU3DgVRJQ0EiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InZpbmhlZG8tcHJvZm1hdC1xMTciLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIMOhcmVhIGNpcmN1bGFyIMOpIM+AcsKyLiAyLiBVc2FuZG8gZXhhdGFtZW50ZSBhIGFwcm94aW1hw6fDo28gZm9ybmVjaWRhLCAzIMOXIDLCsiA9IDEyIG3CsiwgYWx0ZXJuYXRpdmEgRDsgY29tcHJpbWVudG8gZGUgY2lyY3VuZmVyw6puY2lhIGUgw6FyZWEgc8OjbyBncmFuZGV6YXMgZGlmZXJlbnRlcy4gOSwgMTAsIDExIGUgMTMgbcKyIG7Do28gcmVzdWx0YW0gZGUgMyDDlyAywrIuIiwic3RhdGVtZW50IjoiTmEgZXNjb2xhIG11bmljaXBhbCBPbWVnYSwgYSBwcm9mZXNzb3JhIGRlIG1hdGVtw6F0aWNhIEF1cm9yYSBwcmVwYXJvdSB1bWEgYXRpdmlkYWRlIHByw6F0aWNhIHBhcmEgc2V1cyBhbHVub3MgZG8gOcK6IGFuby4gRWxhIHBlZGl1IHF1ZSBjYWxjdWxhc3NlbSBhIMOhcmVhIGRlIHVtIGPDrXJjdWxvIHF1ZSByZXByZXNlbnRhIG8gcMOhdGlvIGRhIGVzY29sYSwgY3VqbyByYWlvIG1lZGUgMiBtLCBjb25zaWRlcmFuZG8gcXVlIM+AIOKJiCAzLiBBc3NpbmFsZSBhIGFsdGVybmF0aXZhIHF1ZSBhcHJlc2VudGEgbyB2YWxvciBjb3JyZXRvIGRhIMOhcmVhIGVtIG0yLCBxdWUgb3MgYWx1bm9zIGRldmVtIG9idGVyLiIsInRvcGljSWQiOiJNMDkifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBjb21wbGVtZW50YXIgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYSBxdWVzdMOjbyDDqSB0cmFuc2NyaXRhIGRlIHByb3ZhIG9maWNpYWwsIGN1amEgb3JpZ2VtIGNvbnN0YSBkYSBwcm92ZW5pw6puY2lhIGRvIGl0ZW0iLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M09.p.cacapava-profmat-q38",
+    "admin.2026-11.M09.p.mat-anel-circular",
+    "admin.2026-11.M09.p.mat-angulos-paralelas",
+    "admin.2026-11.M09.p.mat-cilindro-lateral",
+    "admin.2026-11.M09.p.mat-cilindro-volume-conservar",
+    "admin.2026-11.M09.p.mat-circulo-inscrito-quadrado",
+    "admin.2026-11.M09.p.mat-circunferencia-area-inversa",
+    "admin.2026-11.M09.p.mat-cubo-volume-aresta",
+    "admin.2026-11.M09.p.mat-escada-parede",
+    "admin.2026-11.M09.p.mat-externo-regular",
+    "admin.2026-11.M09.p.mat-hexagono-divisao-triangulos",
+    "admin.2026-11.M09.p.mat-losango-diagonal",
+    "admin.2026-11.M09.p.mat-mediana-hipotenusa",
+    "admin.2026-11.M09.p.mat-pavimentacao-sem-perda",
+    "admin.2026-11.M09.p.mat-prisma-base-triangular",
+    "admin.2026-11.M09.p.mat-quadrilatero-angulo-faltante",
+    "admin.2026-11.M09.p.mat-regular-angulo-interno",
+    "admin.2026-11.M09.p.mat-retirar-cubo-canto-area",
+    "admin.2026-11.M09.p.mat-setor-area",
+    "admin.2026-11.M09.p.mat-triangulo-exterior",
+    "admin.2026-11.M09.p.mat-triangulos-base-comum",
+    "admin.2026-11.M09.p.potim25-dir-q17",
+    "admin.2026-11.M09.p.tai26-cont-q13",
+    "admin.2026-11.M09.p.varg25-ti-q20",
+    "admin.2026-11.M09.p.vinhedo-profmat-q17"
+  ]
+}

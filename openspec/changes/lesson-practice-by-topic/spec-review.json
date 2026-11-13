@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "status": "completed",
+  "review_execution_status": "completed",
+  "gate_status": "evidence-validated-awaiting-final-ci-and-authorized-main-merge",
+  "spec": "lesson-practice-by-topic",
+  "issue": 161,
+  "pr": 176,
+  "base_sha": "16ca8aef382d64e7652b280b413122c357775ead",
+  "reviewed_head_sha": "850c81a858c5ed3fd6ef757ae97c9394ff342bfc",
+  "diff_sha256": "d32450e611c56536e2db8368abc4754ab49b7157aa26e761e9e0b593a90cd969",
+  "reviewer": {
+    "model": "openai/gpt-6.1-sol#xhigh",
+    "session": "/root/spec_reviewer_cumulative_161",
+    "independent_context": true,
+    "read_only": true,
+    "harness_model_selection": "gpt-6.1-sol",
+    "reasoning_effort": "xhigh",
+    "fork_turns": "none",
+    "token_metrics_available": false,
+    "tokens": null,
+    "additional_runtime_model_attestation_available": false
+  },
+  "risk": {
+    "classification": "critical",
+    "reason": "Persistência/capturas/schema/idempotência/concorrência, contratos privados e executor compartilhado."
+  },
+  "coverage": {
+    "requirements": "Seleção por assunto sem cargo substituto, pool fixo aprovado exclusivo PRATICA_AULA, 1–5 bases distintas e insuficiência sem persistência parcial.",
+    "architecture": "Núcleo Java puro, invariantes no domínio, aplicação coordenando portas, persistência/transações na infraestrutura, DTOs concretos de prática.",
+    "integration": "HTTP/OpenAPI/frontend coerentes; simulados mantêm cargo obrigatório; painel/histórico/correspondência/retorno da prática por assunto.",
+    "security": "Identidade técnica e CSRF permanecem na infraestrutura; posse/modalidade/expiração verificadas antes de acesso/replay; sem correção antecipada.",
+    "persistence": "V14 preserva condições anteriores e introduz formato 4 sem Composition; captura/itens vinculados por verificação diferida; formatos e hashes históricos compatíveis.",
+    "tests": "Inspeção estática de domínio/aplicação, PostgreSQL/concorrência/legado/restore, HTTP com segurança real, React/navegador e ArchUnit; sem execução de testes pelo revisor.",
+    "maintenance": "Inventários de backup V10–V14, fixtures restritas aos testes, ausência de alterações editoriais e coerência documental conferidas após análise semântica inicial."
+  },
+  "limitations": [
+    "Revisor cumulativo não executou testes/build/aplicação/OpenSpec nem acessou DB/rede/CI/refs remotas/logs privados; não escreveu arquivos.",
+    "Resultados de testes e aceite são relatos do coordenador; a conferência documental posterior não certifica execução.",
+    "Conflito 409 de navegador é injetado; concorrência real possui testes PostgreSQL inspecionados.",
+    "Retorno à aula com cargo público incompatível está implementado, mas o revisor não encontrou E2E específico dessa alternativa.",
+    "Seleção explícita gpt-6.1-sol/xhigh; harness não retornou atestado adicional do ID efetivo ou telemetria de tokens. Sem estimativas.",
+    "PR final real #176 registrado; checks atuais e base/head/digest serão reconferidos antes do merge autorizado. spec-review-tests não certifica semântica."
+  ],
+  "verification": [
+    {
+      "command": "Consultas locais do diff cumulativo completo e código relacionado, base 16ca8aef...head 850c81a",
+      "result": "52 arquivos e combinação analisados em contexto novo, antes de ler relatos de execução ou revisão do lote; nenhum achado verificável.",
+      "executed_by": "independent cumulative reviewer"
+    },
+    {
+      "command": "Conferência posterior de evidências documentais, 37 hashes do manifesto, ancestralidade e git diff --check",
+      "result": "Coerentes com o conteúdo commitado; nenhum achado adicional. Arquivos spec-review.* não rastreados não foram lidos nem usados pelo revisor.",
+      "executed_by": "independent cumulative reviewer"
+    },
+    {
+      "command": "git diff --exit-code dc4556858a57e9abf73d18badff66ce8619b5102 850c81a858c5ed3fd6ef757ae97c9394ff342bfc",
+      "result": "Árvores idênticas; merge do #175 preservou a árvore da tarefa revisada e testada.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "python scripts/check_spec_review.py --snapshot --base 16ca8aef382d64e7652b280b413122c357775ead --head 850c81a858c5ed3fd6ef757ae97c9394ff342bfc --spec lesson-practice-by-topic",
+      "result": "Digest d32450e611c56536e2db8368abc4754ab49b7157aa26e761e9e0b593a90cd969 coincide com o apurado independentemente.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "gh pr view 175; gh pr checks 175; git ls-remote origin main e epic/lesson-practice-by-topic",
+      "result": "Merge autorizado concluído em 850c81a, com todos os checks aprovados em dc45568; main permanece em 16ca8aef. PR final não criado.",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "gh run view 42937309743 --json headSha,status,conclusion,jobs",
+      "result": "Run da épica em 850c81a concluído com sucesso: backend, frontend, study-material, identity-browser e local-delivery. https://github.com/LordBiGoDoNE/concurso-simulator/actions/runs/42937309743",
+      "executed_by": "coordinator"
+    },
+    {
+      "command": "validate_report(report, explanation, base=16ca8aef382d64e7652b280b413122c357775ead, head=fe2f2fd9f1a674ab302dd462a947f4976fbe835c, spec=lesson-practice-by-topic, pr=176)",
+      "result": "PASS: número/base/head reais do PR reconferidos; snapshot e ancestralidade compatíveis. Somente os dois arquivos de evidência diferem do head revisado.",
+      "executed_by": "coordinator"
+    }
+  ],
+  "findings": [],
+  "triage_complete": true,
+  "main_merge_authorized": true,
+  "archived": false,
+  "deployed": false,
+  "review_result": "no-actionable-findings",
+  "reviewed_at": "2026-11-11T01:20:53.493194+00:00",
+  "reviewed_files": 52,
+  "initial_analysis_before_local_and_batch_reports": true,
+  "task_integration": {
+    "pr": 175,
+    "head_sha": "dc4556858a57e9abf73d18badff66ce8619b5102",
+    "merge_sha": "850c81a858c5ed3fd6ef757ae97c9394ff342bfc",
+    "authorized": true,
+    "merged": true
+  },
+  "validate_report_status": "passed-local-candidate",
+  "epic_ci": {
+    "head_sha": "850c81a858c5ed3fd6ef757ae97c9394ff342bfc",
+    "run_id": 42937309743,
+    "conclusion": "success",
+    "jobs": {
+      "frontend": "success",
+      "study-material": "success",
+      "local-delivery": "success",
+      "identity-browser": "success",
+      "backend": "success"
+    }
+  },
+  "user_merge_authorization": "Usuário autorizou explicitamente abrir o PR e mergear na main usando a revisão cumulativa já concluída, sem nova rodada por modelo.",
+  "publication": {
+    "pr": 176,
+    "url": "https://github.com/LordBiGoDoNE/concurso-simulator/pull/176",
+    "base_ref": "main",
+    "head_ref": "epic/lesson-practice-by-topic",
+    "base_sha": "16ca8aef382d64e7652b280b413122c357775ead",
+    "initial_head_sha": "850c81a858c5ed3fd6ef757ae97c9394ff342bfc",
+    "authorization": "explicit-create-pr-and-merge-main-after-checks"
+  }
+}

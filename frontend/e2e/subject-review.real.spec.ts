@@ -1,7 +1,4 @@
 import { test, expect, type Page, type APIRequestContext } from '@playwright/test';
-import { resolve, sep } from 'node:path';
-import { existsSync } from 'node:fs';
-import { fileURLToPath } from 'node:url';
 const api = 'http://127.0.0.1:18080', provider = 'http://127.0.0.1:18081';
 const panel = (page: Page) => page.getByRole('region', { name: 'Revisão por assunto', exact: true });
 const individual = (page: Page) => page.getByRole('region', { name: 'Revisão por assunto deste simulado', exact: true });
@@ -33,7 +30,7 @@ for (const width of [390, 1280]) test(`painel e revisão real por teclado com 51
   await area.getByRole('button', { name: 'Atualizar revisão' }).focus();await page.keyboard.press('Enter');await expect(area.getByRole('heading', { name: 'Revisão por assunto', exact: true })).toBeFocused();
   await page.screenshot({ path: info.outputPath(`review-panel-${width}.png`) });
   await individual(page).getByRole('heading', { name: 'Revisão por assunto deste simulado', exact: true }).scrollIntoViewIfNeeded();await page.screenshot({ path: info.outputPath(`review-individual-${width}.png`) });
-  await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toHaveAttribute('href', /concurso-simulator/);
+  await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toHaveAttribute('href', '#/aulas');
   expect(await storage(page)).toEqual({ local: 0, session: 0, caches: [], workers: 0 });
 });
 test('visitante revisa somente tentativa concluída sem painel nem histórico implícito', async ({ page }) => {
@@ -67,16 +64,6 @@ test('falha explícita seguida de conclusão preserva foco no resultado durante 
   await expect(page.getByRole('heading', { name: 'Resultado do simulado' })).toBeFocused();
 });
 
-// Hosting is substituted with the actual public HTML/assets; API, browser and PostgreSQL remain real.
-async function lessonHosting(page: Page) {
-  const root = fileURLToPath(new URL('../../', import.meta.url)).replace(/[\\/]$/, '');
-  await page.context().route('https://lordbigodone.github.io/concurso-simulator/**', async route => {
-    const path = decodeURIComponent(new URL(route.request().url()).pathname.replace('/concurso-simulator/', ''));
-    const file = resolve(root, path);
-    if (!file.startsWith(root + sep) || !/^(0[1-5]_[^/]+|assets)\//.test(path) || !existsSync(file)) { await route.abort();return; }
-    await route.fulfill({ path: file });
-  });
-}
 async function closeCurrent(page: Page) {
   await page.getByRole('button', { name: 'Concluir simulado', exact: true }).click();
   const closed = page.waitForResponse(r => r.url().endsWith('/finish') && r.request().method() === 'POST');
@@ -89,11 +76,11 @@ async function startDirected(page: Page) {
   await expect(page.getByRole('heading', { name: 'Questão 1 de 1' })).toBeVisible();return response.json();
 }
 for (const width of [390, 1280]) test(`conta estuda e pratica a última base, recupera criação e retoma resultado em outra sessão (${width}px)`, async ({ page, request, browser }, info) => {
-  const subject = `directed-flow-${width}`;await page.setViewportSize({ width, height: 900 });await login(page, request, subject);await lessonHosting(page);
+  const subject = `directed-flow-${width}`;await page.setViewportSize({ width, height: 900 });await login(page, request, subject);
   const area = panel(page);await area.getByLabel('Cargo para revisão').selectOption('secretario-de-escola');await expect(area.getByRole('row')).toHaveCount(52);
   await expect(area.getByRole('link', { name: /Rever aula de/ })).toHaveCount(51);
   const opened = page.waitForEvent('popup');await area.getByRole('link', { name: 'Rever aula de M01 (nova aba)', exact: true }).click();const lesson = await opened;
-  await expect(lesson.locator('h1')).toContainText('Operações');expect(lesson.url()).not.toContain('Gabarito');await lesson.close();
+  await expect(lesson.getByRole('article', { name: 'Conteúdo da aula: Operações com Números Reais' })).toBeVisible();expect(lesson.url()).toContain('/#/aulas/M01?cargo=secretario-de-escola');await lesson.close();
   let posts = 0;page.on('request', r => { if (r.url() === api + '/api/v1/attempts' && r.method() === 'POST') posts++; });
   await area.getByRole('button', { name: 'Praticar M01', exact: true }).focus();await page.keyboard.press('Enter');
   await expect(page.getByRole('heading', { name: 'Compor simulado' })).toBeFocused();expect(posts).toBe(0);
@@ -127,20 +114,20 @@ for (const width of [390, 1280]) test(`conta estuda e pratica a última base, re
   } finally { await another.close(); }
 });
 test('visitante estuda e compõe outro assunto pelo resultado, sem criar histórico nem tentativa no clique', async ({ page }) => {
-  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await lessonHosting(page);await finish(page, 1);await expect(individual(page).getByRole('button', { name: 'Praticar P01', exact: true })).toBeVisible();
+  await page.goto('/');await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await finish(page, 1);await expect(individual(page).getByRole('button', { name: 'Praticar P01', exact: true })).toBeVisible();
   const opened = page.waitForEvent('popup');await individual(page).getByRole('link', { name: 'Rever aula de P01 (nova aba)', exact: true }).click();const lesson = await opened;
-  await expect(lesson.locator('h1')).toContainText('Interpretação');await lesson.close();let posts = 0;page.on('request', r => { if (r.url() === api + '/api/v1/attempts' && r.method() === 'POST') posts++; });
+  await expect(lesson.getByRole('article', { name: 'Conteúdo da aula: Interpretação de Textos' })).toBeVisible();await lesson.close();let posts = 0;page.on('request', r => { if (r.url() === api + '/api/v1/attempts' && r.method() === 'POST') posts++; });
   page.once('dialog', dialog => dialog.accept());await individual(page).getByRole('button', { name: 'Praticar P01', exact: true }).click();await expect(page.getByRole('heading', { name: 'Compor simulado' })).toBeFocused();expect(posts).toBe(0);
   const next = await startDirected(page);expect(next.items[0].classification.topicId).toBe('P01');await closeCurrent(page);await expect(individual(page).getByRole('table')).toBeVisible();
   await expect(panel(page)).toHaveCount(0);await expect(page.getByRole('heading', { name: 'Histórico de simulados' })).toHaveCount(0);expect(await storage(page)).toEqual({ local: 0, session: 0, caches: [], workers: 0 });
 });
 test('atalho cancelado e aula preservam rascunho; duas abas exigem recuperação explícita de conflito', async ({ page, request, context }) => {
-  await login(page, request, 'directed-draft-two-tabs');await lessonHosting(page);await panel(page).getByLabel('Cargo para revisão').selectOption('assistente-administrativo');
+  await login(page, request, 'directed-draft-two-tabs');await panel(page).getByLabel('Cargo para revisão').selectOption('assistente-administrativo');
   await panel(page).getByRole('button', { name: 'Praticar P01', exact: true }).click();const attempt = await startDirected(page);
   let failed = true;await page.route('**/api/v1/attempts/*/answers/*', async route => { if (failed) { await route.abort('failed'); } else await route.continue(); });
   await page.getByRole('radio').first().check();await expect(page.getByRole('button', { name: 'Repetir salvamento' })).toBeVisible();
   page.once('dialog', dialog => dialog.dismiss());await panel(page).getByRole('button', { name: 'Praticar M01', exact: true }).click();await expect(page.getByRole('radio').first()).toBeChecked();
-  const opened = page.waitForEvent('popup');await panel(page).getByRole('link', { name: 'Rever aula de P01 (nova aba)', exact: true }).click();const lesson = await opened;await expect(lesson.locator('h1')).toBeVisible();await lesson.close();await expect(page.getByRole('radio').first()).toBeChecked();
+  const opened = page.waitForEvent('popup');await panel(page).getByRole('link', { name: 'Rever aula de P01 (nova aba)', exact: true }).click();const lesson = await opened;await expect(lesson.getByRole('article', { name: 'Conteúdo da aula: Interpretação de Textos' })).toBeVisible();await lesson.close();await expect(page.getByRole('radio').first()).toBeChecked();
   const second = await context.newPage();try {
     await second.goto('/');await second.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();await second.getByRole('button', { name: /Abrir simulado/ }).first().click();await second.getByRole('radio').last().check();await expect(second.getByText('Respostas confirmadas.', { exact: true })).toBeVisible();
     failed = false;await page.getByRole('button', { name: 'Repetir salvamento' }).click();await page.getByRole('button', { name: 'Recarregar tentativa' }).click();

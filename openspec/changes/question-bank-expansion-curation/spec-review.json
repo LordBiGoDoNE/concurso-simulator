@@ -1,0 +1,169 @@
+{
+  "version": 1,
+  "status": "completed",
+  "gate_status": "semantic-review-completed-awaiting-current-ci-and-user-merge-approval",
+  "review_execution_status": "completed",
+  "review_result": "no-blocking-high-or-medium-findings",
+  "spec": "question-bank-expansion-curation",
+  "pr": 202,
+  "combined_specs": [
+    "question-bank-expansion (#173)",
+    "administrative-question-curation (#177)"
+  ],
+  "base_sha": "bfcda06b2a2fb7bfb9aeaf3b25f819b2e7ed7bca",
+  "reviewed_head_sha": "d1ea518648048f489513ce937cba18ff934f322f",
+  "diff_sha256": "d19b6a46e0ed7d1b65e5678025a43aa0714fba3ae511a2ae4b782cfe3cfe602d",
+  "reviewer": {
+    "model": "anthropic/claude-opus-5-5#medium",
+    "session": "Claude Code, subagente general-purpose novo da sessão coordenadora 1ccee821 (4ª rodada, revalidação após #200)",
+    "independent_context": true,
+    "read_only": true,
+    "harness_model": "claude-opus-5-5",
+    "reasoning_effort": "medium",
+    "token_metrics_available": false,
+    "tokens": null
+  },
+  "reviewed_at": "2026-11-13T15:47:21Z",
+  "risk": {
+    "classification": "critical",
+    "reason": "Elegibilidade em lote, autorização ADM, replay/recibos, captura persistida de práticas e migrações Flyway V15–V17."
+  },
+  "coverage": {
+    "requirements": "Specs question-bank-expansion e administrative-question-curation (proposal, design, tasks, specs, emenda de capacidade); decisões versionadas no AGENTS.md; evidência de entrega local versus estado das tarefas.",
+    "architecture": "ADR 0001: domínio/aplicação Java puro, portas na aplicação, JPA/SQL nativo e wiring na infraestrutura, controllers só traduzem HTTP; ferramentas manuais restritas ao classpath de teste.",
+    "integration": "Composição das duas specs na épica combinada: V15 (#173) seguida de V16/V17 (#177); fluxo importação → lote SUBMIT/APPROVE; OpenAPI versus DTOs; cliente frontend (maximum 5, histórico até 25).",
+    "security": "Cadeia @Order(0) com allowlist e denyAll, sessão ADM com versão persistida, troca inicial, CSRF, no-store, limites de corpo, token HMAC com separação de domínio/ator/destino/TTL, erros sanitizados, rotas públicas sem gabarito/fingerprint/reviewKind, referências públicas sem prova/gabarito.",
+    "persistence": "V15–V17 contíguas, V1–V14 intactas, constraints/FK/imutabilidade dos recibos, travas em ordem fixa, tudo-ou-nada, replay concorrente, codec que preserva capturas antigas, backup/restore V10–V17.",
+    "tests": "Testes de cadeia real, PostgreSQL isolado, concorrência com barreira, contratos OpenAPI, compatibilidade de codec/capacidade, Python de pacotes e backup; contagens reexecutadas pelo coordenador no head.",
+    "maintenance": "Docs operacionais (recriação de bancos sem V15, procedimento de habilitação local), notas históricas no design, pacotes gerados conferidos por estrutura/hash, sem caminhos pessoais."
+  },
+  "limitations": [
+    "Revisão estática somente leitura: o revisor não executou testes, build, aplicação, banco nem rede; concorrência, deadlock e rollback avaliados por leitura do código e dos testes.",
+    "Sem revisão editorial das 2.587 questões nem recálculo de fingerprints pelo revisor: ~345 mil linhas geradas conferidas por estrutura, amostragem e hashes; a conferência completa é do coordenador (question_expansion_final.py).",
+    "Na primeira leitura o revisor não consultou relatórios de verificação, docs de handoff/integrado/conteúdo, descrições de PR nem revisões anteriores.",
+    "Conteúdo aprovado como AI_ONLY, sem revisão humana; habilitação local em PostgreSQL efêmero (ambiente paralelo 5371/19160).",
+    "Em main o workflow emite apenas spec-review-tests; este relatório e validate_report não certificam qualidade semântica."
+  ],
+  "verification": [
+    {
+      "command": "python scripts/check_spec_review.py --snapshot --base bfcda06b2a2fb7bfb9aeaf3b25f819b2e7ed7bca --head d1ea518648048f489513ce937cba18ff934f322f --spec question-bank-expansion-curation",
+      "result": "diff_sha256 d19b6a46e0ed7d1b65e5678025a43aa0714fba3ae511a2ae4b782cfe3cfe602d; merge-base com main = bfcda06; 561 arquivos.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "git diff bf538407a2d99d8003f0086bbba981f4bc4d8f20 d1ea518648048f489513ce937cba18ff934f322f",
+      "result": "Sem diferenças de árvore; os resultados abaixo valem para d1ea518.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "backend: gradlew test (Testcontainers PostgreSQL 18.6, inclui ArchUnit)",
+      "result": "362 aprovados, 0 falhas, 1 ignorado histórico (symlink).",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "frontend: npx vitest run && npm run build",
+      "result": "238/238; build ok.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "python -m unittest discover -s scripts/tests -p 'test_question_expansion*.py'; python scripts/test_local_app_data.py",
+      "result": "25/25; 11/11. Demais testes Python: 21 erros ambientais do Windows (arquivo travado/symlink) em test_spec_review e test_question_extraction, arquivos inalterados no diff; passam no CI.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "python scripts/check_backup_schemas.py",
+      "result": "BACKUP_SCHEMAS_PASS: V10–V17 dumps e restores validados.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "python scripts/question_expansion_final.py --packages editorial/question-bank-expansion/2026-11/packages --edition-root <acervo-local> --reviews <reviews.json>",
+      "result": "102 células, 2.587 itens, 530 originais; 0 problemas; relatórios byte a byte iguais aos versionados.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "gradlew bootJar; unzip -l (classes de teste/fixtures/ferramentas)",
+      "result": "0 ocorrências de QuestionExpansionLocalEnablement, fixtures, ensaio ou ContentCheck no bootJar.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "QuestionExpansionLocalEnablement (backup pré-#177 5b7042df…c6ef43, pacotes do head)",
+      "result": "102 recibos, 204 lotes, 2.587 elegíveis iguais aos fingerprints, 102/102 células ≥25/≥5, HTTP 51 assuntos maximum 5 no-store (destination-coverage-corrected.json).",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "CI do PR #200 (mesma árvore)",
+      "result": "12/12 checks SUCCESS.",
+      "executed_by": "GitHub Actions"
+    }
+  ],
+  "triage_complete": true,
+  "triage_approved_by_user_at": "2026-11-13",
+  "findings": [
+    {
+      "id": "L1",
+      "severity": "optional",
+      "location": "scripts/question_package.py:49-64; scripts/question_expansion_final.py:163-165",
+      "evidence": "Hosts de prova da proveniência (concursos-publicacoes.s3.amazonaws.com, pss.crato.ce.gov.br) fora de EXAM_BOARD_HOSTS; igualdade exata de URL e caminho /provas/ atenuam; 0 referências públicas atuais em hosts de prova.",
+      "reference": "question-bank-coverage: evidências corretivas permanecem fora da prática aberta",
+      "impact": "Edição futura poderia citar outra página do mesmo host de prova.",
+      "suggestion": "Recusar referência pública cujo host coincida com host de exam.proof/answer das proveniências.",
+      "disposition": "deferred",
+      "resolution": "Adiado como melhoria; sem violação atual e com duas guardas ativas. Registrado na issue #173."
+    },
+    {
+      "id": "L2",
+      "severity": "optional",
+      "location": "editorial/question-bank-expansion/2026-11/final/integrated/destination-coverage-corrected.json (packages[].importReceipt/submitBatch/approveBatch)",
+      "evidence": "Nonces dos recibos de importação e de lote versionados; sem conteúdo, ator nem credenciais.",
+      "reference": "design #173 decisão 6 (não publicar recibos/backups)",
+      "impact": "Baixo: nonces não permitem replay (exige token HMAC).",
+      "suggestion": "Confirmar com o usuário ou substituir por contagens.",
+      "disposition": "rejected",
+      "resolution": "Usuário aprovou manter: são identificadores de um banco local efêmero, não recibos com conteúdo; nenhum segredo ou dado pessoal."
+    },
+    {
+      "id": "L3",
+      "severity": "optional",
+      "location": "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionLocalEnablement.java:68,144-147; tasks 5.1/8.3/8.4",
+      "evidence": "Habilitação em PostgreSQL Testcontainers, descartado ao encerrar; banco do operador não habilitado.",
+      "reference": "Entrega local verificável; AGENTS (entrega local habilitada para teste)",
+      "impact": "Teste do usuário depende do processo no ar; reprodutível pela ferramenta.",
+      "suggestion": "Confirmar com o usuário que o modelo efêmero atende 5.1/8.3/8.4.",
+      "disposition": "rejected",
+      "resolution": "Usuário aprovou o modelo: é o ambiente paralelo decidido em 12/11; caixas marcam implementado/verificado, não aceite."
+    },
+    {
+      "id": "L4",
+      "severity": "optional",
+      "location": "AdministrativeCurationSecurityConfiguration.BodyLimits; AdministrativeQuestionQueries.export:131-146",
+      "evidence": "Rotas POST de curadoria sem semáforo; export monta até 100 questões com evidências em memória.",
+      "reference": "Robustez operacional",
+      "impact": "Somente ADM autenticado pode provocar uso excessivo de memória.",
+      "suggestion": "Aplicar Semaphore(1) como na importação.",
+      "disposition": "deferred",
+      "resolution": "Adiado como opcional; superfície restrita ao ADM local."
+    },
+    {
+      "id": "L5",
+      "severity": "optional",
+      "location": "openspec/changes/question-bank-expansion/tasks.md (grupo 8)",
+      "evidence": "Contagens de testes anteriores a f8f08e5/bf53840.",
+      "reference": "Gate de integração: evidências atuais",
+      "impact": "Evidência possivelmente desatualizada.",
+      "suggestion": "Reexecutar suítes no head e registrar SHA/contagens.",
+      "disposition": "fixed",
+      "resolution": "Reexecutadas pelo coordenador na árvore de d1ea518 e registradas em verification deste relatório."
+    },
+    {
+      "id": "L6",
+      "severity": "optional",
+      "location": "backend/src/test/java/br/com/concursosimulator/mockexam/TopicPracticeBrowserFixture.java (--restore)",
+      "evidence": "Fixture de teste restaura dump arbitrário e expõe /fixture em loopback.",
+      "reference": "Privacidade de dados locais",
+      "impact": "Somente classpath de teste e 127.0.0.1.",
+      "suggestion": "Documentar ou impedir uso com dump real do operador.",
+      "disposition": "deferred",
+      "resolution": "Adiado como opcional."
+    }
+  ]
+}

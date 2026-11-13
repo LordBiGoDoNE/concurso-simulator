@@ -175,3 +175,10 @@ assunto" abre o painel uma única vez; o validador tardio rejeita resultados cuj
 desfechos derivados não batem com os totais do servidor. `e2e/focus-review.spec.ts`
 cobre tema escuro sem gabarito em início/montagem/realização, tema manual aplicado
 antes do app e o anel de foco do painel nos dois temas.
+
+Rodada 3 da revisão final: "Praticar este assunto" vindo de Simulados ou Práticas
+deixa o foco no painel da aula, sem que o título oculto da área o retome, e mantém
+o painel em vista enquanto o documento da aula carrega (até o primeiro gesto do
+estudante, a saída do foco ou 3 s). O resultado da prática dentro da própria aula
+não mostra atalhos, que levariam à mesma aula. Com busca e sem disciplina, o filtro
+mostra "Todas as disciplinas".

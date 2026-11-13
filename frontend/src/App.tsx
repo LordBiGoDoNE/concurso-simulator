@@ -24,12 +24,18 @@ export default function App() {
   const [lessonsOpened, setLessonsOpened] = useState(area === 'lessons');
   const lesson = area === 'lessons' ? lessons.find(topic => topic.id === route.topicId) : undefined;
   const pageHeading = useRef<HTMLHeadingElement>(null); const previousArea = useRef(area);
+  // "Praticar este assunto" troca de área e entrega o foco ao painel da aula; o título da área não o retoma.
+  const practiceFocus = useRef(false);
   function navigate(next: Area) { updateRoute({ area: next }); }
   useEffect(() => {
     if (area === 'lessons') setLessonsOpened(true);
-    if (previousArea.current !== area) pageHeading.current?.focus();
+    if (previousArea.current !== area && !practiceFocus.current) pageHeading.current?.focus();
+    practiceFocus.current = false;
     previousArea.current = area;
   }, [area]);
+  // Se a rota não mudou de área (troca recusada ou já em Aulas), o sinal não pode suprimir um foco de área posterior.
+  const [practiceRequest, setPracticeRequest] = useState<PracticeRequest>();
+  useEffect(() => { practiceFocus.current = false; }, [practiceRequest]);
   function openLessons(discipline?: string, roleId?: string) {
     updateRoute({ ...(roleId === undefined ? {} : locationForRole(route, roleId)), area: 'lessons', ...(discipline === undefined ? {} : { disciplineId: discipline, topicId: '', search: '' }) });
   }
@@ -40,8 +46,7 @@ export default function App() {
   const setGuestActive = useCallback((value: boolean) => { guestActive.current.attempt = value; }, []);
   const setPracticeGuestActive = useCallback((value: boolean) => { guestActive.current.practice = value; }, []);
   const backToLesson = useCallback((id:string) => { const topic=lessons.find(t=>t.id===id); updateRoute({ area: 'lessons', topicId: id, roleId: topic && lessonSupportsRole(topic,route.roleId) ? route.roleId : '' }); }, [updateRoute,route.roleId]);
-  const [practiceRequest, setPracticeRequest] = useState<PracticeRequest>();
-  const shortcuts = useMemo<TopicShortcuts>(() => ({ review: backToLesson, practice: id => { backToLesson(id); setPracticeRequest(r => ({ topicId: id, nonce: (r?.nonce ?? 0) + 1 })); } }), [backToLesson]);
+  const shortcuts = useMemo<TopicShortcuts>(() => ({ review: backToLesson, practice: id => { practiceFocus.current = previousArea.current !== 'lessons'; backToLesson(id); setPracticeRequest(r => ({ topicId: id, nonce: (r?.nonce ?? 0) + 1 })); } }), [backToLesson]);
   const lastAccountId = useRef<string | null>(null);
   const changedIdentity = useCallback((value: CurrentIdentity | null) => {
     if (value?.connected) {

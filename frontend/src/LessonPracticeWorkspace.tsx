@@ -26,10 +26,25 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
   const matches=!inlineLesson || selected?.topicId===inlineLesson.topic.id;
   const pendingMatches=!inlineLesson || job.current?.selection.topicId===inlineLesson.topic.id;
   useEffect(()=>()=>{request.current?.abort();pending.current=false;},[]);
+  // Dentro da aula, o resultado da prática é do próprio assunto: os atalhos levariam à mesma aula, então só a prática avulsa os recebe.
   // Atalho do resultado: só abre o painel do assunto; iniciar ou trocar a prática continua explícito.
   // Cada pedido (nonce) abre o painel uma única vez: voltar depois à mesma aula, ou remontar ao trocar de conta, não reabre nem rouba o foco.
   const handledRequest=useRef(practiceRequest?.nonce??0);
-  useEffect(()=>{if(practiceRequest && practiceRequest.topicId===inlineKey && practiceRequest.nonce!==handledRequest.current){handledRequest.current=practiceRequest.nonce;setOpenKey(inlineKey);panel.current?.scrollIntoView?.({block:'start'});panel.current?.querySelector('summary')?.focus();}},[practiceRequest,inlineKey]);
+  // O documento da aula chega depois e empurra o painel: enquanto a página cresce, o painel focado continua em vista.
+  // Para ao primeiro gesto do estudante, quando o foco sai do painel ou após 3 s.
+  useEffect(()=>{
+    if(!practiceRequest || practiceRequest.topicId!==inlineKey || practiceRequest.nonce===handledRequest.current)return;
+    handledRequest.current=practiceRequest.nonce;setOpenKey(inlineKey);
+    const summary=panel.current?.querySelector('summary');const keep=()=>panel.current?.scrollIntoView?.({block:'start'});
+    keep();summary?.focus({preventScroll:true});
+    if(!summary || typeof ResizeObserver==='undefined')return;
+    const gestures=['wheel','touchstart','pointerdown','keydown'] as const;
+    const observer=new ResizeObserver(()=>{if(document.activeElement===summary)keep();else stop();});
+    const timer=setTimeout(()=>stop(),3000);
+    function stop(){observer.disconnect();clearTimeout(timer);gestures.forEach(g=>window.removeEventListener(g,stop));}
+    gestures.forEach(g=>window.addEventListener(g,stop,{passive:true}));observer.observe(document.body);
+    return stop;
+  },[practiceRequest,inlineKey]);
   useEffect(()=>{onGuestActive(!!identity && !identity.connected && selected!==null);return()=>onGuestActive(false);},[identity?.connected,selected?.id,onGuestActive]);
   useLayoutEffect(()=>{
     const current=selectedRef.current;if(!current || !contextActive)return;const c=new AbortController();setAccess('checking');
@@ -85,7 +100,7 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
     {!inlineLesson && !selected && !busy && <div className="study-guide"><h2>Qual assunto vamos praticar?</h2><p>Abra uma aula e escolha Começar prática. O treino reúne até cinco questões próprias daquele assunto.</p><button onClick={onChooseLesson}>Escolher uma aula</button></div>}
     {selected && <div hidden={!matches || busy || !contextActive} className="inline-practice-run"><div className="practice-context"><h2>{topic} — {title}</h2><p>{selected.items.length} questões da aula</p>{!inlineLesson && <button className="secondary" onClick={()=>onBackToLesson(topic!)}>Voltar à aula {topic}</button>}</div>
       {access==='checking' && <p role="status">Conferindo acesso à prática…</p>}{access==='failed' && <><p role="alert">Não foi possível conferir o acesso. A prática fica oculta até confirmar.</p><button onClick={()=>setVerify(v=>v+1)}>Conferir prática novamente</button></>}
-      <div hidden={busy || access!=='ready' || !contextActive}><AttemptPractice ref={run} key={selected.id} initial={selected} practice transport={lessonPracticeTransport} onUnavailable={onUnavailable} onFinished={finished} shortcuts={shortcuts}/></div>
+      <div hidden={busy || access!=='ready' || !contextActive}><AttemptPractice ref={run} key={selected.id} initial={selected} practice transport={lessonPracticeTransport} onUnavailable={onUnavailable} onFinished={finished} shortcuts={inlineLesson ? undefined : shortcuts}/></div>
     </div>}
     {inlineLesson && matches && selected && <button className="secondary collapse-practice" onClick={()=>setOpenKey('')}>Recolher prática e voltar à leitura</button>}
     {!inlineLesson && identity?.connected && contextActive && <LessonPracticeHistory refresh={refresh} onOpen={id=>void open(id)} onUnavailable={onUnavailable}/>}

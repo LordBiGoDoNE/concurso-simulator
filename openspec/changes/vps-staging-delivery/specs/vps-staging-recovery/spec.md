@@ -2,36 +2,37 @@
 
 ## ADDED Requirements
 
-### Requirement: Backup manual com cópia independente da VPS
-O procedimento SHALL produzir backup consistente e manifesto antes de atualizar
-ou importar, e após validar a carga inicial. O usuário SHALL guardar cópia completa
-no computador por transferência privada. Falha MUST NOT produzir backup validado.
+### Requirement: Backup consistente com cópia fora da VPS
+O operador SHALL produzir backup consistente com manifesto (release, schema,
+PostgreSQL, hashes) antes de cada atualização e sob demanda. O usuário SHALL
+manter cópia privada no PC. Backups MUST NOT ir para Git, CI ou issues. Falha
+MUST NOT produzir backup validado.
 
 #### Scenario: Backup deliberado
-- **WHEN** o usuário pausa os escritores necessários e executa o backup
-- **THEN** recebe artefato e manifesto com release/schema/PG/checksum verificáveis
-- **AND** é orientado sobre parada/retomada da API e cópia no computador
+- **WHEN** o backup é executado
+- **THEN** a API é parada, o dump é conferido e o manifesto é gravado
+- **AND** a API volta somente após o término e a cópia pode ser transferida ao PC
 
-### Requirement: Restauração isolada e sessões invalidadas
-A restauração SHALL aceitar somente backup confiável validado e destino novo/vazio
-com imagem/schema compatíveis. SHALL preservar a origem e invalidar sessões
-restauradas antes de liberar a API, sem apagar histórico de negócio válido.
+### Requirement: Restauração isolada
+A restauração SHALL aceitar somente backup validado, em projeto/volume novos e
+com imagem/schema compatíveis. SHALL invalidar sessões restauradas antes de liberar
+a API e preservar a origem.
 
 #### Scenario: Ensaio de recuperação
-- **WHEN** o usuário restaura a cópia transferida em ambiente separado
-- **THEN** confere conteúdo, acervo e funcionamento antes de liberar o destino
-- **AND** cookies anteriores do backup não recuperam autenticação automaticamente
+- **WHEN** a cópia do PC é restaurada em destino separado
+- **THEN** conteúdo e acervo conferem antes da liberação
+- **AND** cookies anteriores não recuperam autenticação
 
 #### Scenario: Artefato inválido ou destino ocupado
-- **WHEN** checksum/manifesto diverge ou o destino contém estado existente
-- **THEN** a operação recusa sem sobrescrever dados nem remover volumes
+- **WHEN** checksum/manifesto diverge ou o destino tem estado
+- **THEN** a operação é recusada sem sobrescrever dados nem remover volumes
 
 ### Requirement: Atualização e rollback compatíveis
-Atualização/backup/restauração SHALL ser mutuamente exclusivos. O roteiro SHALL
-exigir imagem/schema compatíveis ou recuperação separada para retorno. MUST NOT
-tratar troca de imagem como reversão automática de Flyway ou prometer RPO/RTO.
+Atualização, backup e restauração SHALL ser mutuamente exclusivos. Toda troca de
+release SHALL ser precedida de backup. Rollback MUST usar imagem/schema compatíveis
+ou restauração separada; Flyway MUST NOT ser desfeito.
 
 #### Scenario: Falha na atualização
-- **WHEN** a release nova falha após uma mudança de schema
-- **THEN** o usuário avalia compatibilidade ou restaura separadamente pelo roteiro
-- **AND** mantém imagens, dados e backup anteriores para recuperação deliberada
+- **WHEN** a nova release falha após migração
+- **THEN** imagem, volume e backup anteriores ficam disponíveis
+- **AND** o retorno segue o roteiro de compatibilidade ou restauração separada

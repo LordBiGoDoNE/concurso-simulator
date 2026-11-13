@@ -147,6 +147,7 @@ public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
             var d=q.decisions().get(i); var r=new DecisionRow(); r.id=UUID.randomUUID(); r.questionId=q.id(); r.sequence=i;
             r.revisionId=d.revisionId(); r.action=d.action().name(); r.fingerprint=d.fingerprint(); r.responsible=d.responsible();
             r.at=d.at(); r.checklist=String.join(",",d.checklist().stream().map(Enum::name).sorted().toList()); r.rationale=d.rationale();
+            r.reviewKind=d.reviewKind()==null?null:d.reviewKind().name();
             entities.persist(r);
         }
         row.eligibleRevisionId=q.eligible().map(QuestionRevision::id).orElse(null);
@@ -164,7 +165,8 @@ public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
     private EditorialDecision readDecision(DecisionRow r) {
         var checks=new HashSet<EditorialDecision.Check>();
         if (!r.checklist.isEmpty()) for (var value:r.checklist.split(",")) checks.add(EditorialDecision.Check.valueOf(value));
-        return new EditorialDecision(EditorialDecision.Action.valueOf(r.action),r.questionId,r.revisionId,r.fingerprint,r.responsible,r.at,checks,r.rationale);
+        return new EditorialDecision(EditorialDecision.Action.valueOf(r.action),r.questionId,r.revisionId,r.fingerprint,r.responsible,r.at,checks,r.rationale,
+                r.reviewKind==null?null:EditorialDecision.ReviewKind.valueOf(r.reviewKind));
     }
     private static void require(boolean condition) {
         if (!condition) throw new IllegalStateException("Conteúdo/histórico/metadados de persistência inconsistentes");

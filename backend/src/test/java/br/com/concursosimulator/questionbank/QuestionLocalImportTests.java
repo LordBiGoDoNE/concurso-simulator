@@ -90,7 +90,7 @@ class QuestionLocalImportTests {
             for (var action : List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE,EditorialDecision.Action.WITHDRAW)) {
                 var current = read.read().getFirst();
                 decide.execute(new EditorialDecision(action,current.questionId(),revision.id(),revision.fingerprint(),"Responsável fixture sintética",
-                        java.time.Instant.now(),Set.of(EditorialDecision.Check.values()),"Teste isolado, não aprovação do acervo"),current.eligibleRevisionId(),current.editorialSequence());
+                        java.time.Instant.now(),Set.of(EditorialDecision.Check.values()),"Teste isolado, não aprovação do acervo",EditorialDecision.ReviewKind.HUMAN_PEER),current.eligibleRevisionId(),current.editorialSequence());
             }
             assertThat(QuestionBankLocal.run(args("import",file,"P01-Q01"),env,new BufferedReader(new StringReader(confirmation(env,file))),new PrintStream(output))).isZero();
             assertThat(read.read().getFirst().eligibleRevisionId()).isNull();
@@ -267,7 +267,7 @@ class QuestionLocalImportTests {
             var result=new ApplyQuestionCandidatesUseCase(db.store).execute(selected.candidates()).getFirst();
             for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE)) {
                 var q=db.store.transaction(s -> s.loadForUpdate(result.questionId()).orElseThrow());
-                new DecideQuestionUseCase(db.store).execute(new EditorialDecision(action,q.id(),q.latest().id(),q.latest().fingerprint(),"Fixture reclassificação",java.time.Instant.now(),Set.of(EditorialDecision.Check.values()),"Teste isolado, não curadoria real"),q.eligible().map(QuestionRevision::id).orElse(null),q.editorialSequence());
+                new DecideQuestionUseCase(db.store).execute(new EditorialDecision(action,q.id(),q.latest().id(),q.latest().fingerprint(),"Fixture reclassificação",java.time.Instant.now(),Set.of(EditorialDecision.Check.values()),"Teste isolado, não curadoria real",EditorialDecision.ReviewKind.HUMAN_PEER),q.eligible().map(QuestionRevision::id).orElse(null),q.editorialSequence());
             }
             var tree=(ObjectNode)JSON.readTree(Files.readString(file));var item=(ObjectNode)tree.get("items").get(0);
             ((ObjectNode)item.get("content").get("classification")).put("topicId","P02");

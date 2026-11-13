@@ -31,11 +31,12 @@ class RecoveryGuards(unittest.TestCase):
                 command.assert_not_called()
 
     def test_schema_backup_accepts_only_complete_supported_histories(self):
-        for count in (10, 11, 12, 13, 14):
+        for count in (10, 11, 12, 13, 14, 16):
             versions=("\n".join(str(i) for i in range(1,count+1))+"\n").encode()
             with patch.object(local_app_data, "sql", return_value=versions):
                 self.assertEqual(count,local_app_data.schema_version(None,None))
-        for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,16))).encode()):
+        for versions in (b"1\n11\n",b"1\n2\n",("\n".join(str(i) for i in range(1,16))).encode(),
+                         ("\n".join(str(i) for i in [*range(1,15),16])).encode()):  # lacuna sem a V15 da #173
             with patch.object(local_app_data,"sql",return_value=versions):
                 with self.assertRaises(ValueError):local_app_data.schema_version(None,None)
 
@@ -100,7 +101,8 @@ ORIGINAL_TABLES = {"application_marker", "app_user", "external_identity", "sprin
 IMPORT_EVIDENCE = {"qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision"}
 EXPECTED = {10: ORIGINAL_TABLES, 11: ORIGINAL_TABLES, 12: ORIGINAL_TABLES | IMPORT_EVIDENCE,
             13: ORIGINAL_TABLES | IMPORT_EVIDENCE | {"admin_registration"},
-            14: ORIGINAL_TABLES | IMPORT_EVIDENCE | {"admin_registration"}}
+            14: ORIGINAL_TABLES | IMPORT_EVIDENCE | {"admin_registration"},
+            16: ORIGINAL_TABLES | IMPORT_EVIDENCE | {"admin_registration"}}
 
 
 class HistoricalBackupSchemas(unittest.TestCase):

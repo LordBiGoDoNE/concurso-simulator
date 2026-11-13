@@ -71,7 +71,14 @@ Ausência de questões é 0 importadas, não curadoria/meta cumprida.
 Arquivo JSON `question-decision/v1` tem campos obrigatórios `format`, `decision`,
 `expectedEligible` (UUID/null **explícito**) e `expectedEditorialSequence` (inteiro).
 `decision`: `action` (SUBMIT/RETURN_TO_DRAFT/APPROVE/WITHDRAW), `questionId`, `revisionId`,
-`fingerprint`, `responsible`, `at` (ISO-8601 UTC), `checklist` e `rationale`.
+`fingerprint`, `responsible`, `at` (ISO-8601 UTC), `checklist`, `rationale` e `reviewKind`.
+`reviewKind` (origem da revisão, [#177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177))
+é `HUMAN_PEER` (revisão por par humano) ou `AI_ONLY` (revisada somente por IA) e é
+**obrigatório em APPROVE**: a CLI recusa aprovação sem origem antes da confirmação e de
+abrir o banco. Nas demais ações é opcional; arquivos anteriores ao campo continuam válidos
+fora de APPROVE (ausência equivale a `null`). A origem é gravada em `qb_decision.review_kind`
+(V16); decisões anteriores ficam com `null` = "não informado", sem inferência. A
+plataforma registra a origem declarada pelo operador; não a verifica nem decide curadoria.
 APPROVE exige checklist CORRECTNESS, DISTRACTORS, CLARITY, STEP_BY_STEP, ACCESSIBILITY,
 SOURCES e CLASSIFICATION; o domínio exige a revisão/conteúdo exatos e transição válida.
 SUBMIT envia rascunho à revisão; RETURN_TO_DRAFT retorna com motivo; WITHDRAW retira

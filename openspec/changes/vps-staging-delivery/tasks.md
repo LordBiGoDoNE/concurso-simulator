@@ -18,10 +18,13 @@ sem PR nem integração.
 
 ## 2. Runtime de produção — depende de 1
 
-- [ ] 2.1 Builder de imagens com origem HTTPS de produção explícita, contexto filtrado e manifesto; recusas e testes, sem afrouxar o operador local.
-- [ ] 2.2 Perfil de produção: cookie Secure, CORS canônico, cabeçalhos encaminhados só do proxy interno; testes da cadeia de segurança real.
-- [ ] 2.3 `infra/vps-production`: Compose, operador (init/start/stop/status/update), segredos por arquivo, serviço systemd de usuário, lock e verificação de ownership/colisão.
-- [ ] 2.4 Ensaio na VPS em projeto `concurso-simulator-prod` sem acesso público; regressões, recusas e docs do grupo.
+Implementado e verificado em 2026-11-13 (#213); não integrado. Evidências: `verification/grupo-2.md`.
+
+
+- [x] 2.1 Builder de imagens com origem HTTPS de produção explícita, contexto filtrado e manifesto; recusas e testes, sem afrouxar o operador local.
+- [x] 2.2 Perfil de produção: cookie Secure, CORS canônico, cabeçalhos encaminhados só do proxy interno; testes da cadeia de segurança real.
+- [x] 2.3 `infra/vps-production`: Compose, operador (init/start/stop/status/update), segredos por arquivo, serviço systemd de usuário, lock e verificação de ownership/colisão.
+- [x] 2.4 Ensaio na VPS em projeto `concurso-simulator-prod` sem acesso público; regressões, recusas e docs do grupo.
 
 ## 3. Domínio e TLS — depende de 1
 

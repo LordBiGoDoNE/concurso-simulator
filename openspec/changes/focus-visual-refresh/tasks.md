@@ -21,9 +21,9 @@ abaixo estão implementados e verificados localmente em
 
 ## 2. Estrutura e início (depende de 1)
 
-- [ ] 2.1 Aplicar a direção Foco à navegação lateral, à faixa superior no celular, à topbar e ao painel de identidade e sessão.
-- [ ] 2.2 Redesenhar o início com boas-vindas, sugestão de primeira aula e cartões das cinco disciplinas com contagens reais.
-- [ ] 2.3 Concluir as regressões React e Chromium (claro, escuro, desktop e 390px), teclado, foco e documentação.
+- [x] 2.1 Aplicar a direção Foco à navegação lateral, à faixa superior no celular, à topbar e ao painel de identidade e sessão.
+- [x] 2.2 Redesenhar o início com boas-vindas, sugestão de primeira aula e cartões das cinco disciplinas com contagens reais.
+- [x] 2.3 Concluir as regressões React e Chromium (claro, escuro, desktop e 390px), teclado, foco e documentação.
 
 ## 3. Montagem e realização (depende de 1)
 

@@ -142,3 +142,8 @@ sem requisições externas. O Vitest processa CSS (`test.css.include` no
 
 Limite: diagramas SVG das aulas nativas mantêm as próprias cores e placa clara
 também no tema escuro.
+
+Folhas por área (grupos 2, 3 e 5): `src/styles/shell.css` (navegação, barra
+superior, sessão e início) é importada pelo `App`. Regras globais de base
+(botões, campos, seções) continuam em `style.css`, que o `main.tsx` carrega antes
+do `App` para que as folhas de área prevaleçam.

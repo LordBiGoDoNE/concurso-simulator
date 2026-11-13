@@ -1,0 +1,57 @@
+# Produção na VPS Hostinger
+
+Spec `vps-staging-delivery` (#156). Destino:
+`https://concurso-simulator.reemsoftworks.com`. IP, chaves e segredos nunca
+entram neste repositório; use `<VPS>` como marcador.
+
+## Papéis
+
+| Conta | Uso | Privilégio |
+| --- | --- | --- |
+| `concurso-dev` | runtime da aplicação (Docker rootless), operador, builds | sem sudo |
+| conta administrativa do usuário | nginx, certbot, ufw, permissões do host, reboot | sudo com senha |
+
+O assistente acessa somente `concurso-dev`, a partir do PC do usuário:
+
+```sh
+ssh -a -i ~/.ssh/hostingerVPS -o IdentitiesOnly=yes -o ForwardAgent=no concurso-dev@<VPS>
+```
+
+A chave do host é verificada (`StrictHostKeyChecking`). Se ela mudar, pare e
+confira a impressão digital no console da Hostinger
+(`ssh-keygen -lf /etc/ssh/ssh_host_ed25519_key.pub`) antes de aceitar.
+
+Passos com sudo são executados pelo usuário na conta administrativa. Os scripts
+abaixo são revisáveis e não pedem nem imprimem segredos.
+
+## Grupo 1 — base do host
+
+Copie a pasta `host/` para a conta administrativa e execute:
+
+```sh
+sudo bash host-audit.sh                    # somente leitura
+sudo bash fix-vps-control-permissions.sh   # remove escrita de grupo/outros em /opt/vps-control
+```
+
+`fix-vps-control-permissions.sh` grava as permissões originais em
+`/root/vps-control-permissions-<data>.txt` antes de alterar e não apaga arquivos.
+Para reverter um item: `chmod <modo> <caminho>` com os valores do registro.
+
+Na conta `concurso-dev` (o assistente executa):
+
+```sh
+bash host/check-project-user.sh
+```
+
+Esperado: sem sudo, Docker rootless ativo e habilitado, linger ligado e
+serviços do concurso habilitados.
+
+Firewall esperado: entrada somente em 22, 80 e 443 (IPv4/IPv6). As portas
+internas (18088, 18090, 18100, 5432) ficam em loopback ou em redes Docker.
+
+### Reboot controlado
+
+Antes: confirmar que não há operação do operador em andamento. O usuário
+executa `sudo reboot` na conta administrativa. Depois, o assistente confere:
+`check-project-user.sh`, containers saudáveis, `curl` local na porta da web e
+nginx respondendo. Nenhum serviço deve exigir intervenção manual.

@@ -34,8 +34,12 @@ it('pede a escolha de disciplina antes de listar e mostra só as aulas dela', ()
 });
 it('busca sem acento atravessa disciplinas, mantém estado vazio explícito e limpa filtros', () => {
   render(<LessonLibrary />);
+  const filter = () => screen.getByLabelText('Filtrar disciplina') as HTMLSelectElement;
+  expect(filter().selectedOptions[0]).toHaveTextContent('Escolha uma disciplina');
   fireEvent.change(screen.getByLabelText('Buscar aula'), { target: { value: 'interpretacao' } });
   expect(screen.getByRole('status')).toHaveTextContent('1 aula encontrada.');
+  // Com busca e sem disciplina, a lista atravessa disciplinas e o filtro diz isso.
+  expect(filter().selectedOptions[0]).toHaveTextContent('Todas as disciplinas');
   expect(screen.getByRole('button', { name: /P01.*Interpretação de Textos.*Português/ })).toBeInTheDocument();
   fireEvent.change(screen.getByLabelText('Filtrar disciplina'), { target: { value: 'informatica' } });
   expect(screen.getByRole('heading', { name: 'Nenhuma aula por aqui' })).toBeInTheDocument();

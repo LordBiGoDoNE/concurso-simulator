@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
-import { useRef } from 'react';
+import { createRef, useRef } from 'react';
 import LessonPracticeWorkspace, { type LessonPracticeHandle } from './LessonPracticeWorkspace';
 import { createLessonPractice, lessonPracticeTransport, lessonPracticeHistory, lessonPracticeAvailability } from './lesson-practice-api';
 import { lessons } from './study-catalog';
@@ -133,4 +133,19 @@ it('um pedido já atendido não reabre o painel ao voltar depois à mesma aula',
  expect(panel()).not.toHaveAttribute('open');
  rendered.rerender(<LessonPracticeWorkspace {...p01} inlineLesson={p07.inlineLesson} practiceRequest={{topicId:'P07',nonce:2}}/>);
  expect(panel()).toHaveAttribute('open');
+});
+it('resultado da prática dentro da aula não repete atalhos para a própria aula; a prática avulsa os mantém',async()=>{
+ const shortcuts={review:vi.fn(),practice:vi.fn()};const finished={...view,version:1,finishedAt:'2026-10-24T12:00:00Z'};
+ for(const inline of [true,false]){
+  setup();vi.mocked(lessonPracticeTransport.finish).mockResolvedValue({attempt:finished,result});vi.mocked(lessonPracticeTransport.result).mockResolvedValue(result);
+  const ref=createRef<LessonPracticeHandle>();
+  const rendered=render(inline?<LessonPracticeWorkspace {...inlineProps('P01')} shortcuts={shortcuts}/>:<LessonPracticeWorkspace ref={ref} {...inlineProps('P01')} inlineLesson={undefined} shortcuts={shortcuts}/>);
+  if(inline){expand();const start=await screen.findByRole('button',{name:'Começar prática'});await waitFor(()=>expect(start).toBeEnabled());fireEvent.click(start);}
+  else await act(async()=>{ref.current?.start(selection);});
+  await screen.findByRole('heading',{name:'Questão 1 de 1'});
+  fireEvent.click(screen.getByRole('button',{name:'Encerrar prática'}));fireEvent.click(screen.getByRole('button',{name:'Confirmar encerramento'}));
+  await screen.findByRole('heading',{name:'Resultado da prática'});
+  expect(screen.queryAllByRole('button',{name:/Rever a aula|Praticar este assunto/})).toHaveLength(inline?0:2);
+  rendered.unmount();
+ }
 });

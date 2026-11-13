@@ -79,6 +79,9 @@ for (const colorScheme of ['light', 'dark'] as const) for (const width of [390, 
   await expect(page.getByRole('heading', { name: 'Revisão da questão 2' })).toBeVisible();
   await page.getByRole('button', { name: 'Praticar este assunto, P01, questão 3' }).click();
   await expect(page).toHaveURL(/#\/aulas\/P01/); await expect(page.locator('details.lesson-practice-panel')).toHaveAttribute('open');
+  // O foco e a rolagem ficam no painel aberto, não no título oculto da área (FVR3-L1).
+  const practiceSummary = page.locator('details.lesson-practice-panel > summary');
+  await expect(practiceSummary).toBeFocused(); await expect(practiceSummary).toBeInViewport();
   await expect(page.getByRole('button', { name: 'Começar prática', exact: true })).toBeVisible(); expect(practiceCreates()).toBe(0);
 
   await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Simulados', exact: true }).click();

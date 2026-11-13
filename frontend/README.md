@@ -122,3 +122,63 @@ São 14 cenários reais no comando, incluindo ausência de download do renderer 
 A apresentação está no código inicial; o validador corretivo permanece em módulo tardio.
 Todos os chunks ficam sem payloads de fixtures. A inspeção do entry inicial e
 JSON/DOM ativos continua proibindo contrato/material corretivo antecipado.
+
+## Tokens visuais e tema (focus-visual-refresh)
+
+Cores, sombras e a família tipográfica vêm só de `src/tokens.css`, com tema claro
+em `:root` e escuro por `prefers-color-scheme` ou `data-theme="dark"`. Os
+componentes usam `var(--…)`; `src/visual-tokens.test.ts` falha com qualquer cor
+literal em outra folha de estilo e mede o contraste dos pares de tokens nos dois
+temas (texto ≥4,5:1; bordas de controle e foco ≥3:1).
+
+O seletor "Tema" da barra superior guarda só `light` ou `dark` na chave
+`concurso-simulator.theme` do `localStorage` (automático remove a chave). O
+`index.html` aplica essa chave antes da primeira pintura; mantenha a chave igual
+à de `src/theme.ts`. Sem armazenamento, o tema segue o sistema.
+
+A fonte Figtree vem empacotada pelo pacote `@fontsource-variable/figtree` (OFL),
+sem requisições externas. A licença OFL-1.1 do pacote (5.3.0) está copiada em
+`public/licenses/figtree-OFL.txt` e acompanha o build em `/licenses/figtree-OFL.txt`. O Vitest processa só imports CSS com `?raw` (`test.css.include` no
+`vite.config.ts`), usados pelos testes de tokens. Processar todo CSS deixava os
+testes que renderizam o `App` cerca de 50% mais lentos e estourava o tempo no CI.
+
+Limite: diagramas SVG das aulas nativas mantêm as próprias cores e placa clara
+também no tema escuro.
+
+Folhas por área (grupos 2, 3 e 5): `src/styles/shell.css` (navegação, barra
+superior, sessão e início) é importada pelo `App`. Regras globais de base
+(botões, campos, seções) continuam em `style.css`, que o `main.tsx` carrega antes
+do `App` para que as folhas de área prevaleçam.
+
+Resultado e histórico (grupo 4, em `src/styles/attempt.css` e `style.css`): o
+resumo mostra uma barra proporcional sempre acompanhada de legenda numérica, e
+cada questão revisada traz o estado em texto ("Correta", "Errada", "Em branco");
+a cor e o ícone só reforçam. O filtro "Erros e em branco" é estado local e mantém
+a numeração original. "Rever a aula" e "Praticar este assunto" usam o
+`classification.topicId` da questão e só aparecem quando há aula nativa do
+assunto. "Praticar" abre a aula com o painel de prática aberto, sem criar nem
+trocar prática: começar continua exigindo o botão e a confirmação de troca. Os
+cartões dos históricos de simulados e de práticas compartilham `.attempt-history`.
+`e2e/result-history.spec.ts` cobre resultado, filtro, atalhos e histórico nos dois
+temas, em 390px e 1440px, com medição de contraste do texto.
+
+Biblioteca (5.5, decisão do usuário em 2026-11-13): sem disciplina nem busca, a
+biblioteca mostra os cartões das disciplinas e pede a escolha, sem listar aulas.
+Com disciplina, lista só as aulas dela, sem repetir o nome da disciplina em cada
+cartão. A busca atravessa as disciplinas e mostra a disciplina de cada resultado.
+Os cartões de aula usam `grid-auto-rows: 1fr`, com a mesma altura em toda a lista.
+
+Correções da revisão final (6.3): o painel "Pratique esta aula" não recorta mais o
+anel de foco (o próprio summary arredonda o fundo); no celular, "Ver mapa de
+questões" no topo da realização leva ao mapa; cada pedido de "Praticar este
+assunto" abre o painel uma única vez; o validador tardio rejeita resultados cujos
+desfechos derivados não batem com os totais do servidor. `e2e/focus-review.spec.ts`
+cobre tema escuro sem gabarito em início/montagem/realização, tema manual aplicado
+antes do app e o anel de foco do painel nos dois temas.
+
+Rodada 3 da revisão final: "Praticar este assunto" vindo de Simulados ou Práticas
+deixa o foco no painel da aula, sem que o título oculto da área o retome, e mantém
+o painel em vista enquanto o documento da aula carrega (até o primeiro gesto do
+estudante, a saída do foco ou 3 s). O resultado da prática dentro da própria aula
+não mostra atalhos, que levariam à mesma aula. Com busca e sem disciplina, o filtro
+mostra "Todas as disciplinas".

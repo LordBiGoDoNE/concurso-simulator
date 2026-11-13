@@ -1,6 +1,6 @@
 .session-card > .admin-access[open] { flex-basis: 100%; min-width: 0; }
 .admin-access > summary { cursor: pointer; padding: 8px 0; }
-.admin-account { max-width: 38rem; padding: 16px; margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; background: white; }
+.admin-account { max-width: 38rem; padding: 16px; margin-top: 8px; border: 1px solid var(--line); border-radius: 10px; background: var(--paper); }
 .admin-account p { line-height: 1.6; }
 .admin-account form { display: grid; gap: 12px; }
 .admin-account label { display: grid; gap: 6px; font-weight: 600; }

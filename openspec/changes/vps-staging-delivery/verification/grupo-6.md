@@ -26,9 +26,21 @@ rollback recusado quando o schema mudou. Testes locais (`test_local_app*`) sem r
 - Produção seguiu saudável durante todo o ensaio. O alvo de ensaio foi parado,
   volume preservado até decisão do usuário.
 
+## Troca de release e rollback reais (2026-11-13)
+
+Release de ensaio `9d3510970e5c` (branch `task/vps-staging-delivery/release-rehearsal`:
+topo da stack + main `3bc2d93`, redesign `focus-visual-refresh`, sem migrações).
+
+- Primeira tentativa recusada pela trava do operador: havia um `configure-google`
+  interativo aberto pelo usuário. Encerrado com SIGINT por autorização do usuário;
+  trava liberada pelo próprio operador, Google seguiu desligado.
+- `release`: backup automático e troca em 22 s; bundle novo servido; status UP; 2.587 elegíveis.
+- `rollback`: schema conferido (V17 inalterado) e release anterior restabelecida em 14 s.
+- `release` de novo: backup automático e volta à versão com o redesign.
+- Conferido de fora por HTTPS (navegador, IP liberado): nova interface servida.
+
 ## Limites
 
-- Troca de release e rollback foram exercitados só por testes: ainda não existe
-  uma segunda release com imagens diferentes (os commits desta spec não mudam o
-  contexto das imagens). O primeiro uso real será a release da main no corte (grupo 7).
+- Rollback com mudança de schema continua coberto só por teste (recusa e
+  orientação de restaurar em alvo separado).
 - Backup manual, sem agendamento nem cópia externa automática; a cópia no PC é responsabilidade do usuário.

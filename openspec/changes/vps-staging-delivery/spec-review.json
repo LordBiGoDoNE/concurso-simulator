@@ -1,0 +1,340 @@
+{
+  "version": 1,
+  "status": "completed",
+  "spec": "vps-staging-delivery",
+  "pr": 224,
+  "base_sha": "3bc2d93053e2909c9fb0306ae83c0bf50374aed8",
+  "reviewed_head_sha": "a5fe1d33fe6526d8782f38e61d754daefd27c1d1",
+  "diff_sha256": "25b9560a266198cdb97af629aaca4e30f0a733d88745517265dbd23e7c9e4509",
+  "reviewed_at": "2026-11-13T22:30:00-03:00",
+  "reviewer": {
+    "model": "anthropic/claude-opus-5-5#medium",
+    "session": "spec-reviewer (Claude Code), três rodadas independentes em 2026-11-13 sobre 2c0f491, 96e444b e a5fe1d3",
+    "independent_context": true
+  },
+  "coverage": {
+    "requirements": "Quatro deltas (runtime, data, recovery, public-edge), proposta, design e tasks comparados com o código em cada rodada.",
+    "architecture": "Sem mudança de backend ou migração; ADR 0001 e http-endpoint-review não afetados; local_app parametrizado sem relaxar os padrões locais.",
+    "integration": "Builder, operador, compose, systemd, borda nginx (http, https, default), loader HTTP e CI test_vps_*.py.",
+    "security": "Segredos só em arquivos via configtree, nunca impressos; Host canônico com 421; X-Forwarded-* limpos; HSTS; log sem query; allowlists de pré-lançamento e administrativa; limit_req no login admin; Google desligado com reversão automática.",
+    "persistence": "Backup com API parada, fingerprints e pg_restore --list; restauração só em alvo vazio com sessões invalidadas; release com backup prévio, compose fixado e mesma imagem PG; rollback por schema; promote.",
+    "tests": "Testes Python estáticos e com mocks (67) cobrindo ordem de operações, recusas e textos de configuração; sem teste de integração automatizado contra Docker ou nginx.",
+    "maintenance": "README e roteiros por grupo, lock órfão documentado, decisões registradas no design, pendências na #221."
+  },
+  "limitations": [
+    "Revisores somente leitura: não executaram testes, build, Docker, nginx, banco nem VPS.",
+    "O esforço medium vem do perfil spec-reviewer; o modelo confirmou ser Claude Opus 5.5 e não pôde confirmar o esforço por introspecção.",
+    "O estado real do host (central.conf, default_server efetivo, ufw) não está no repositório; foi conferido pelo coordenador nas evidências dos grupos 1 e 3.",
+    "Os testes de configuração são estruturais; o comportamento real da borda e da restauração foi ensaiado na VPS e registrado em verification/."
+  ],
+  "verification": [
+    {
+      "command": "python -m unittest discover -s scripts -p 'test_vps_*.py'",
+      "result": "67 testes OK em a5fe1d3",
+      "executed_by": "coordenador (Claude Code)"
+    },
+    {
+      "command": "python -m unittest discover -s scripts -p 'test_local_app*.py'",
+      "result": "OK, 1 ignorado no Windows",
+      "executed_by": "coordenador (Claude Code)"
+    },
+    {
+      "command": "npx @fission-ai/openspec@1.15.0 validate vps-staging-delivery --strict",
+      "result": "válido",
+      "executed_by": "coordenador (Claude Code)"
+    },
+    {
+      "command": "nginx -t (imagem nginx-unprivileged fixada) com edge/*.conf, certificado e snippets sintéticos",
+      "result": "syntax ok, test successful",
+      "executed_by": "coordenador (Claude Code), container descartável na VPS"
+    },
+    {
+      "command": "python scripts/check_spec_review.py --snapshot --base 3bc2d93 --head a5fe1d3 --spec vps-staging-delivery",
+      "result": "diff_sha256 25b9560a...4509",
+      "executed_by": "coordenador (Claude Code)"
+    },
+    {
+      "command": "Ensaios na VPS: build, init, start, backup e restauração em alvo separado, release e rollback reais, carga de 2.587 questões",
+      "result": "aprovados; ver verification/grupo-*.md",
+      "executed_by": "coordenador (Claude Code) via SSH como concurso-dev; passos com sudo pelo usuário"
+    }
+  ],
+  "triage_complete": true,
+  "findings": [
+    {
+      "id": "M1",
+      "severity": "recommended",
+      "disposition": "fixed",
+      "location": "infra/vps-production/compose.yaml; edge/reemsoftworks-https.conf; AdministrativeHttpSecurity.java:90-101",
+      "evidence": "Orçamento de 30 logins/15 min por getRemoteAddr vira global atrás de nginx host, nginx web e API.",
+      "reference": "docs/question-administrative-import.md; design §2",
+      "impact": "Anônimo bloqueia o login administrativo.",
+      "suggestion": "Restringir /api/v1/admin/ na borda e limitar por IP real.",
+      "resolution": "96e444b: allowlist administrativa permanente na borda e limit_req no login por $binary_remote_addr; confirmado pela revalidação 1."
+    },
+    {
+      "id": "M2",
+      "severity": "recommended",
+      "disposition": "fixed",
+      "location": "edge/*.conf; scripts/test_vps_production_edge.py",
+      "evidence": "Recusa de Host desconhecido não versionada e um teste impedia adicioná-la.",
+      "reference": "spec vps-public-edge; design §3",
+      "impact": "Comportamento dependia de estado do host fora do Git.",
+      "suggestion": "Versionar default_server ou registrar decisão.",
+      "resolution": "96e444b: reemsoftworks-default.conf (80 com 444, ACME do central mantido) pela fase open com reversão; 443 fica no central por decisão registrada; requisito ajustado."
+    },
+    {
+      "id": "M3",
+      "severity": "recommended",
+      "disposition": "fixed",
+      "location": "scripts/vps_production.py (editorial-cli)",
+      "evidence": "Comando que roda os launchers locais contra o banco de produção, fora do escopo e do lock.",
+      "reference": "spec vps-staging-data; vps-staging-recovery",
+      "impact": "Escrita direta em produção sem trilha administrativa.",
+      "suggestion": "Remover ou especificar.",
+      "resolution": "96e444b: removido da entrega; segue na #221."
+    },
+    {
+      "id": "M4",
+      "severity": "recommended",
+      "disposition": "fixed",
+      "location": "scripts/vps_production.py compose(); systemd unit",
+      "evidence": "Compose de runtime lido do checkout de trabalho, não da release.",
+      "reference": "spec vps-staging-recovery (rollback compatível)",
+      "impact": "Atualizar o checkout mudaria a configuração da release em uso; rollback com compose novo.",
+      "suggestion": "Fixar compose por release.",
+      "resolution": "96e444b: compose do commit copiado e fixado por SHA-256 no manifesto; a5fe1d3 completou com N1/N2."
+    },
+    {
+      "id": "B1",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": ".github/workflows/application.yml:105",
+      "evidence": "test_vps_question_load.py fora do padrão do CI.",
+      "reference": "AGENTS.md (testes no PR)",
+      "impact": "Regressões do loader sem CI.",
+      "suggestion": "Padrão test_vps_*.py.",
+      "resolution": "96e444b."
+    },
+    {
+      "id": "B2",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "specs/vps-staging-runtime/spec.md",
+      "evidence": "Texto exigia reconhecer HTTPS pelo proxy; a implementação usa estratégia none e URLs fixas.",
+      "reference": "spec vps-staging-runtime",
+      "impact": "Requisito divergente.",
+      "suggestion": "Alinhar texto.",
+      "resolution": "96e444b: spec e design descrevem none, URLs HTTPS estáticas e limite na borda."
+    },
+    {
+      "id": "B3",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "scripts/vps_production_data.py release()",
+      "evidence": "release permitia trocar a imagem do PostgreSQL.",
+      "reference": "spec vps-staging-recovery",
+      "impact": "Troca de major quebraria o PG e o rollback.",
+      "suggestion": "Recusar.",
+      "resolution": "96e444b, com teste."
+    },
+    {
+      "id": "B4",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "scripts/vps_production_data.py backup()",
+      "evidence": "Arquivo .partial restante e dump sem pg_restore --list.",
+      "reference": "spec vps-staging-recovery",
+      "impact": "Artefato parcial; dump ilegível só detectado na restauração.",
+      "suggestion": "Limpar e testar leitura.",
+      "resolution": "96e444b, com teste."
+    },
+    {
+      "id": "B5",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "scripts/vps_question_load.py",
+      "evidence": "Retomada falha se a resposta de um apply de lote se perde.",
+      "reference": "docstring do loader",
+      "impact": "Reexecução para e exige intervenção.",
+      "suggestion": "Consultar o estado do recibo.",
+      "resolution": "Adiado para a #221; limitação documentada no README e na docstring em a5fe1d3 (L5)."
+    },
+    {
+      "id": "B6",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "design.md; README; vps_production.py",
+      "evidence": "Portas, caminhos e escopos divergentes; senha do admin; destino de importação reutilizado.",
+      "reference": "docs/question-administrative-import.md:54",
+      "impact": "Documentação incorreta; destino lógico repetido após restauração.",
+      "suggestion": "Corrigir.",
+      "resolution": "96e444b: documentação alinhada; destino <projeto>-<owner[:12]> para estados novos."
+    },
+    {
+      "id": "B7",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "README",
+      "evidence": "Lock órfão após reboot não documentado.",
+      "reference": "spec vps-staging-recovery",
+      "impact": "Serviço não sobe sem orientação.",
+      "suggestion": "Documentar.",
+      "resolution": "96e444b."
+    },
+    {
+      "id": "N1",
+      "severity": "recommended",
+      "disposition": "fixed",
+      "location": "scripts/vps_production_data.py release()/rollback()",
+      "evidence": "Estado gravado antes de validar o compose da nova release.",
+      "reference": "spec vps-staging-recovery (falha na atualização)",
+      "impact": "Produção parada sem saída pela ferramenta.",
+      "suggestion": "Validar antes do backup; validar o compose anterior no rollback.",
+      "resolution": "a5fe1d3, com testes; confirmado pela revalidação 2."
+    },
+    {
+      "id": "N2",
+      "severity": "recommended",
+      "disposition": "fixed",
+      "location": "scripts/vps_production_data.py",
+      "evidence": "Estado de produção criado com --rehearsal e sem promoção.",
+      "reference": "spec vps-staging-runtime (release da main)",
+      "impact": "Produção aberta aceitaria releases fora da main.",
+      "suggestion": "Comando promote.",
+      "resolution": "a5fe1d3: promote exige release da main com compose fixado; execução registrada no corte (7.3)."
+    },
+    {
+      "id": "L1",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "edge/install-edge.sh admin",
+      "evidence": "Allowlist gravada antes de validar, sem reversão.",
+      "reference": "spec vps-public-edge (preservar central)",
+      "impact": "Configuração inválida em disco.",
+      "suggestion": "Validar e restaurar.",
+      "resolution": "a5fe1d3."
+    },
+    {
+      "id": "L2",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "edge/install-edge.sh open; README",
+      "evidence": "Cópia em /tmp e frase contraditória no README.",
+      "reference": "README",
+      "impact": "Cópia efêmera e documentação inconsistente.",
+      "suggestion": "Guardar em snippets e corrigir o texto.",
+      "resolution": "a5fe1d3."
+    },
+    {
+      "id": "L3",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "scripts/vps_question_load.py",
+      "evidence": "Não conferia que o acervo vem do commit da release.",
+      "reference": "spec vps-staging-data",
+      "impact": "Carga de pacotes não aprovados em reexecução.",
+      "suggestion": "Conferir HEAD e origin/main.",
+      "resolution": "a5fe1d3 confere HEAD igual a source_sha e main fora do ensaio; o restante (pacotes e árvore) virou R2."
+    },
+    {
+      "id": "L4",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "scripts/vps_question_load.py; spec e design",
+      "evidence": "Loader fora do lock; texto dizia HTTPS.",
+      "reference": "spec vps-staging-data/recovery",
+      "impact": "Concorrência com backup ou release.",
+      "suggestion": "Lock e texto.",
+      "resolution": "a5fe1d3: lock do operador; spec e design dizem loopback; o resíduo em tasks.md virou R1."
+    },
+    {
+      "id": "L5",
+      "severity": "optional",
+      "disposition": "fixed",
+      "location": "README; loader",
+      "evidence": "Adiamento do B5 sem registro; documentação prometia retomada.",
+      "reference": "README",
+      "impact": "Expectativa errada do operador.",
+      "suggestion": "Documentar.",
+      "resolution": "a5fe1d3."
+    },
+    {
+      "id": "R1",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "openspec/changes/vps-staging-delivery/tasks.md:57",
+      "evidence": "Item 5.2 ainda diz por HTTPS.",
+      "reference": "spec vps-staging-data",
+      "impact": "Documentação contraditória.",
+      "suggestion": "Reescrever o 5.2.",
+      "resolution": "Adiado para manter o diff revisado; spec e design são a referência; corrigido na atualização pós-corte de tasks.md (#221)."
+    },
+    {
+      "id": "R2",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "scripts/vps_question_load.py",
+      "evidence": "Pacotes e manifest não comprovadamente do commit (árvore suja ou --packages).",
+      "reference": "spec vps-staging-data",
+      "impact": "Garantia mais fraca que o texto da spec.",
+      "suggestion": "Ler via git show ou exigir árvore limpa.",
+      "resolution": "Adiado para a #221; a carga executada usou checkout limpo no commit da release."
+    },
+    {
+      "id": "R3",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "tasks.md 7.3/7.4",
+      "evidence": "promote não está no checklist do corte.",
+      "reference": "spec vps-staging-runtime",
+      "impact": "Esquecer o promote reabriria N2.",
+      "suggestion": "Incluir no checklist.",
+      "resolution": "Cumprido operacionalmente no corte (promote e conferência de rehearsal false nas evidências do grupo 7); texto em tasks.md após o corte."
+    },
+    {
+      "id": "R4",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "scripts/vps_production_data.py rollback()",
+      "evidence": "stop antes da checagem de schema.",
+      "reference": "spec vps-staging-recovery",
+      "impact": "Recusa deixa api/web parados até start.",
+      "suggestion": "Checar o schema antes de parar.",
+      "resolution": "Adiado para a #221 com prioridade; mitigação: start manual."
+    },
+    {
+      "id": "R5",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "scripts/vps_question_load.py:162-177",
+      "evidence": "load fora do try, CalledProcessError não tratado e lock ocupado com mensagem errada.",
+      "reference": "README",
+      "impact": "Traceback ou orientação errada; sem exposição de segredo.",
+      "suggestion": "Tratar as exceções.",
+      "resolution": "Adiado para a #221."
+    },
+    {
+      "id": "R6",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "edge/install-edge.sh http/https",
+      "evidence": "Fases não revertem o link se nginx -t falhar.",
+      "reference": "spec vps-public-edge (preservar central)",
+      "impact": "Configuração inválida habilitada até correção manual.",
+      "suggestion": "Reverter como em open.",
+      "resolution": "Adiado para a #221 com prioridade; as fases já foram executadas com sucesso na VPS."
+    },
+    {
+      "id": "S1",
+      "severity": "optional",
+      "disposition": "deferred",
+      "location": "scripts/vps_production_data.py release()",
+      "evidence": "release confia no on_main do manifesto privado.",
+      "reference": "spec vps-staging-runtime",
+      "impact": "Baixo: o manifesto é privado do operador.",
+      "suggestion": "Reconferir com git.",
+      "resolution": "Adiado para a #221."
+    }
+  ]
+}

@@ -17,6 +17,9 @@ permissions:
     effect: allow
 ---
 
+Histórico: perfil OpenCode da regra SOL de 2026-10-15. Desde 2026-11-12 a revisão final usa
+Claude Opus 5.5 medium pelo perfil `.claude/agents/spec-reviewer.md`; não disparar este perfil.
+
 Você é revisor independente, não implementador. Siga docs/architecture/spec-review.md.
 Pode revisar um lote de PRs antes da aprovação de merge, identificando achados por PR
 e na combinação. Essa revisão não conclui o gate cumulativo final. O modelo fixado no

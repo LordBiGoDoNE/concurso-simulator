@@ -177,6 +177,12 @@ backend 340/0 falhas (1 skip histórico), Python 22, frontend 238 + build, Playw
 [Relatório integrado](../../../docs/question-bank-expansion-integrated.md). Aceite do usuário, revisão
 final, integração e publicação seguem pendentes.
 
+Correção de 13/11/2026 (achado A1 da revisão final, triagem aprovada pelo usuário): 27 referências
+públicas corretivas substituídas (camadas r7/r8), revisões individuais refeitas, auditoria v11 138/138
+CURRENT, pacotes e evidências regenerados e guarda automática `study_reference` adicionada. A
+habilitação do ambiente paralelo (8.3/8.4) refere-se aos pacotes de 12/11 e o ambiente foi perdido;
+a nova habilitação local com os pacotes corrigidos está pendente. [Detalhes](../../../docs/question-bank-expansion-content.md).
+
 ## Workflow follow-up
 
 - Início autorizado/registrado em 2026-11-10 conforme nota acima; a restrição da publicação documental inicial é histórica, não nova pausa genérica de implementação.

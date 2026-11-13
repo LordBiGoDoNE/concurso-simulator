@@ -90,7 +90,7 @@ O ambiente local pode estar parado. Para retomá-lo com o backup validado, há
 `restart_local_environment.ps1` e `verify_current_restore.py`; conferir portas
 5393/19370/19371 antes, preservar dados e não usar bancos de outros projetos.
 Não presumir que processos anteriores continuem ativos. JDK necessário:
-`C:/Users/Rafael/.local/share/java/temurin-25.0.4.1_1` (PATH padrão pode ter Java21).
+Temurin 25 instalado localmente, indicado em `JAVA_HOME` (o PATH padrão pode ter Java 21).
 
 ## Retomada no Claude — 12/11/2026
 
@@ -159,7 +159,7 @@ déficits, downloads e geradores). O consolidador incorpora `claude-originals-*`
   salvou os cinco PDFs. Datas de aplicação pelos editais de data/local (704 aplicada em 08/01/2023).
   Escolar +10; letras conferidas uma a uma contra os gabaritos salvos.
 - Correção de transcrição: Redentora q30, alternativa C ("e da filha").
-- Tesseract 5.4 + `por.traineddata` (4.1.0) em `C:\Users\Rafael\.local\share\tessdata`.
+- Tesseract 5.4 + `por.traineddata` (4.1.0) instalados localmente (diretório `tessdata` indicado por `TESSDATA_PREFIX`).
   `ocr_scanned.py` (triagem) e `check_transcription_ocr.py` (segunda checagem): 49 itens de cadernos
   digitalizados, 10 sinalizados e todos relidos sem correção. Checagem por texto: 171 coincidem,
   5 falsos positivos já relidos.

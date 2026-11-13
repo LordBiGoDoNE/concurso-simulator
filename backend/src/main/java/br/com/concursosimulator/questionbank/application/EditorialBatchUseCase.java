@@ -54,7 +54,7 @@ public final class EditorialBatchUseCase {
     }
     public record Target(UUID questionId, UUID revisionId, String fingerprint) {}
     /** Estado observado na prévia e confirmado pelo operador; base da verificação na aplicação. */
-    public record Expected(UUID questionId, UUID revisionId, String fingerprint, UUID eligibleRevisionId, int editorialSequence) {}
+    public record Expected(UUID questionId, UUID revisionId, String fingerprint, UUID eligibleRevisionId, Integer editorialSequence) {}
 
     public enum Refusal { QUESTION_NOT_FOUND, REVISION_NOT_FOUND, FINGERPRINT_MISMATCH, INVALID_TRANSITION, CHECKLIST_INCOMPLETE }
     public record PreviewItem(UUID questionId, QuestionOrigin origin, UUID revisionId, String fingerprint, Question.Status currentStatus,
@@ -95,7 +95,7 @@ public final class EditorialBatchUseCase {
         if (expected == null || expected.isEmpty() || expected.size() > MAX_ITEMS) throw new InvalidBatch();
         var ids = new HashSet<UUID>();
         for (var e : expected) if (e == null || e.questionId() == null || e.revisionId() == null || e.fingerprint() == null
-                || e.editorialSequence() < 0 || !ids.add(e.questionId())) throw new InvalidBatch();
+                || e.editorialSequence() == null || e.editorialSequence() < 0 || !ids.add(e.questionId())) throw new InvalidBatch();
         if (!confirmation.actor().equals(actor) || !confirmation.destination().equals(destination)
                 || !confirmation.digest().equals(digest(envelope, expected))) throw new ConfirmationFailure(false);
         var now = clock.instant();
@@ -118,7 +118,7 @@ public final class EditorialBatchUseCase {
             for (var e : ordered) {
                 var q = session.loadForUpdate(e.questionId());
                 if (q.isEmpty() || !Objects.equals(q.get().eligible().map(QuestionRevision::id).orElse(null), e.eligibleRevisionId())
-                        || q.get().editorialSequence() != e.editorialSequence()) { diverged.add(e.questionId()); continue; }
+                        || q.get().editorialSequence() != e.editorialSequence().intValue()) { diverged.add(e.questionId()); continue; }
                 loaded.put(e.questionId(), q.get());
             }
             // Replay concorrente: a outra aplicação do mesmo token pode ter feito commit enquanto esperávamos as

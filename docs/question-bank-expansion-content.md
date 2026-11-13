@@ -78,3 +78,32 @@ credenciais e logs privados nunca entraram nesses commits.
   foram adjudicadas pelo próprio preparador.
 - Fontes de concordância/regência sem manual oficial público usam dicionários (Aulete/Michaelis),
   indicado na nota da referência.
+
+## Correção após a revisão final — 13/11/2026 (achado A1)
+
+A revalidação independente da revisão final (Opus 5.5 medium, head `13cc3be`) encontrou 27
+originais Cebraspe (M03, M11, M12) cuja referência pública de estudo, exibida durante a
+realização aberta, era a página do concurso com nome "prova e gabarito definitivo oficiais".
+Isso viola o requisito "Evidências corretivas permanecem fora da prática aberta". Triagem aprovada pelo usuário:
+
+- **Camada r7** (`reviews-r7`, acervo local): as 27 passam a citar a referência de estudo das
+  demais originais de Matemática (OBMEP, Banco de Questões); prova e gabarito ficam só na proveniência.
+- **Revisão individual independente** das 27 (12 PASS, 15 FIX) e **camada r8**: 11 itens de
+  lógica formal de M11 passam a citar `logica` (OBMEP, Introdução à Lógica Matemática), 3 itens de
+  conjuntos de M12 ("Diagramas Lógicos e Situações-Problema") passam a citar `conjuntos`, e duas
+  resoluções foram corrigidas. A reclassificação sugerida para os itens de conjuntos foi rejeitada:
+  o pedido ao revisor descrevia M12 de forma errada, e o título real cobre diagramas de conjuntos.
+- **Segunda conferência** dos 15 itens: 14 PASS e 1 FIX. Essa FIX (referência específica de razão
+  e proporção em M03) foi rejeitada pelo coordenador: as outras 49 questões de M03 usam a mesma
+  referência OBMEP, que não é corretiva. O limite fica registrado na revisão do item.
+- **Pares:** 20 decisões ficaram STALE e foram mantidas (v7, todas DISTINCT); enunciado e
+  alternativas estavam inalterados. Auditoria v11: 138/138 CURRENT, zero bloqueios.
+- **Pacotes:** mudaram só 6 (M03, M11, M12 nas duas finalidades) e 27 fingerprints; contagens e
+  originais inalterados (2.587; 530). Conferência final: 0 problemas. Leitor/prévia Java: 102
+  pacotes NEW, sem escrita. Matemática às cegas: vínculo dos 27 atualizado após conferir enunciado,
+  alternativas e gabarito idênticos.
+- **Guarda nova:** `study_reference` (`scripts/question_package.py`) recusa no compilador e na
+  conferência final referência pública cujo nome ou URL indique prova/gabarito, página `/concursos/`
+  ou host de banca. Recusa as 27 antigas e nenhuma das 2.786 referências atuais.
+- Evidências em `final/review-r7-r8/` e `final/audit-v11/`; `audit-v10/` fica como histórico.
+  Arquivos locais novos/alterados: `local-files-manifest-2026-11-13.json`.

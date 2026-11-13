@@ -9,7 +9,7 @@ import uuid
 from datetime import date
 from pathlib import Path, PurePosixPath
 
-from question_package import CATALOG, ROLES, fingerprint, safe_url
+from question_package import CATALOG, ROLES, fingerprint, safe_url, study_reference
 
 EDITION = Path('editorial/question-bank-expansion/2026-11')
 PURPOSES = {'SIMULADO': 'admin-question-v1', 'PRATICA_AULA': 'lesson-practice-v1'}
@@ -150,7 +150,7 @@ def compile_row(row, refs, purpose, directory):
         require(refid in refs, 'Fonte ausente: ' + refid)
         ref = refs[refid]
         require(set(ref) == {'name', 'url', 'checkedOn', 'legalBasis'}, 'Registro de fonte inválido')
-        text(ref['name'], 1000); safe_url(ref['url']); date.fromisoformat(ref['checkedOn'])
+        text(ref['name'], 1000); study_reference(ref['name'], ref['url']); date.fromisoformat(ref['checkedOn'])
         basis = ref['legalBasis']
         if basis is not None:
             require(set(basis) == {'provision', 'checkedOn'}, 'Dispositivo inválido')

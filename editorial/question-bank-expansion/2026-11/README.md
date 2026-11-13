@@ -40,3 +40,6 @@ Código/conteúdo ainda não publicado; revisão independente e integração pen
 - Os JSONL e `reviews.json`/`pair-decisions.json` deste diretório continuam vazios: a
   edição de trabalho fica no acervo local; os pacotes são o artefato versionado.
   [Relatório](../../../docs/question-bank-expansion-content.md).
+- 13/11/2026: pacotes regenerados após o achado A1 (27 referências corretivas removidas, camadas
+  r7/r8); evidências em `final/review-r7-r8/` e `final/audit-v11/` e manifesto complementar
+  `local-files-manifest-2026-11-13.json`.

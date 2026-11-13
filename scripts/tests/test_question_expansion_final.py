@@ -106,6 +106,28 @@ class FinalPackagesTests(unittest.TestCase):
         self.assertTrue(any('arquivo local de proof' in p for p in report['problems']))
         self.assertTrue(any('sem revisão individual' in p for p in report['problems']))
 
+    def test_exam_or_answer_key_reference_in_open_projection_is_reported(self):
+        def corrective(request):
+            item = request['package']['items'][0]
+            item['content']['references'].append({'name': 'Banca — Concurso, prova e gabarito definitivo oficiais',
+                                                  'url': 'https://www.cebraspe.org.br/concursos/pf_21', 'legalBasis': None})
+        self.rewrite('SIMULADO', corrective)
+        problems = final.check(self.temp)[0]['problems']
+        self.assertTrue(any('referência pública aponta para prova/gabarito' in p for p in problems))
+
+    def test_study_reference_rejects_exam_pages_by_name_url_or_board_host(self):
+        from question_package import study_reference
+        for name, url in (('Prova e gabarito definitivo', 'https://example.org/estudo'),
+                          ('Material de estudo', 'https://www.cebraspe.org.br/concursos/inss_22'),
+                          ('Página do concurso', 'https://example.org/concursos/2026'),
+                          ('Caderno de prova oficial', 'https://example.org/a.pdf'),
+                          ('Edital', 'https://anexos.cdn.selecao.net.br/uploads/301/x.pdf')):
+            with self.assertRaises(ValueError, msg=name):
+                study_reference(name, url)
+        for name, url in (('IMPA/OBMEP — Banco de Questões; questão transcrita de prova oficial', 'https://www.obmep.org.br/banco.htm'),
+                          ('Resolução CNE/CEB nº 4/2010', 'https://www.planalto.gov.br/ccivil_03/leis/l9394.htm')):
+            self.assertEqual(url, study_reference(name, url))
+
     def test_path_escape_is_not_resolved(self):
         self.assertIsNone(final.local_file(self.temp, '../manifest.json'))
         self.assertIsNone(final.local_file(self.temp, 'C:/Windows/win.ini'))

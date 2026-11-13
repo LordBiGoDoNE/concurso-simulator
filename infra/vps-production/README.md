@@ -124,3 +124,40 @@ python3 scripts/vps_production.py rollback   # só se o schema não mudou; senã
 ```
 
 Backups, estado e segredos nunca vão para Git, CI ou issues. Volumes não são removidos pela ferramenta.
+
+## Grupo 3 — domínio e TLS
+
+### DNS (Hostinger)
+
+Nas zonas `reemsoftworks.com` e `reemsoftworks.com.br`, TTL 300:
+
+| Nome | Tipo | Valor |
+| --- | --- | --- |
+| `@` | A / AAAA | IPv4 / IPv6 da VPS (substitui o estacionamento da Hostinger) |
+| `concurso-simulator` | A / AAAA | IPv4 / IPv6 da VPS |
+| `www` | CNAME | mantido (aponta para `@`) |
+
+Cada alteração é confirmada pelo usuário antes. A Hostinger guarda snapshots da
+zona (`dns_snapshots_list`/`restore`) para desfazer.
+
+### nginx e certificado
+
+Copie a pasta `edge/` para a conta administrativa e execute, nesta ordem:
+
+```sh
+sudo bash install-edge.sh http <IP-público-do-usuário>   # porta 80 + allowlist de pré-lançamento
+sudo bash install-edge.sh cert                           # após o DNS propagar
+sudo bash install-edge.sh https
+```
+
+- Um certificado `reemsoftworks` cobre os seis nomes; renovação pelo timer
+  `reemsoftworks-certificate.timer` com `nginx -t` antes do reload.
+- `concurso-simulator.reemsoftworks.com` encaminha para `127.0.0.1:18090` com
+  Host fixo, cabeçalhos encaminhados limpos, HSTS de um ano (sem `includeSubDomains`
+  nem preload) e log sem query string.
+- `*.reemsoftworks.com.br` → 301 para o mesmo host/caminho em `.com`;
+  raiz e `www` de `.com` → 302 para o concurso.
+- Até a abertura (grupo 7), `/etc/nginx/snippets/concurso-simulator-access.conf`
+  permite só o IP do usuário; demais recebem 403. O arquivo fica fora do Git.
+- `concurso-public.conf` (acesso antigo por HTTP no IP) e `central.conf` não são
+  alterados; a remoção do acesso pelo IP é do corte no grupo 7.

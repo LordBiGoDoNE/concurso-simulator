@@ -31,10 +31,13 @@ Implementado e verificado em 2026-11-13 (#213); não integrado. Evidências: `ve
 
 ## 3. Domínio e TLS — depende de 1
 
-- [ ] 3.1 Registros DNS na Hostinger (subdomínio, raiz e `www` dos dois domínios), com confirmação do usuário antes de cada alteração.
-- [ ] 3.2 Certificados Let's Encrypt pelo certbot existente (webroot) e hook de renovação com `nginx -t` + reload.
-- [ ] 3.3 Vhosts nginx versionados: canônico com proxy e HSTS, 301 `.com.br`→`.com`, 302 da raiz, HTTP→HTTPS, hosts desconhecidos recusados, `central` preservado; acesso restrito até a abertura.
-- [ ] 3.4 Testes externos de TLS, redirecionamentos, cabeçalhos e recusas; docs do grupo.
+Implementado e verificado em 2026-11-13 (#214); não integrado. Evidências: `verification/grupo-3.md`.
+
+
+- [x] 3.1 Registros DNS na Hostinger (subdomínio, raiz e `www` dos dois domínios), com confirmação do usuário antes de cada alteração.
+- [x] 3.2 Certificados Let's Encrypt pelo certbot existente (webroot) e hook de renovação com `nginx -t` + reload.
+- [x] 3.3 Vhosts nginx versionados: canônico com proxy e HSTS, 301 `.com.br`→`.com`, 302 da raiz, HTTP→HTTPS, hosts desconhecidos recusados, `central` preservado; acesso restrito até a abertura.
+- [x] 3.4 Testes externos de TLS, redirecionamentos, cabeçalhos e recusas; docs do grupo.
 
 ## 4. Google OAuth de produção — depende de 2 e 3
 

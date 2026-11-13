@@ -1,0 +1,822 @@
+{
+  "format": "question-expansion-local-implementation/v4",
+  "date": "2026-11-12",
+  "issue": 173,
+  "branch": "task/question-bank-expansion/practice-capacity",
+  "base": "226d2e5b07208887941811beff10ac29295b04b3",
+  "worktree": "7ac1",
+  "adoptedDependency": {
+    "issue": 161,
+    "pr": 176,
+    "merge": "226d2e5b07208887941811beff10ac29295b04b3"
+  },
+  "preservedStages": [
+    "implementation-report.initial-2026-11-10.json",
+    "implementation-report.external-79-2026-11-10.json",
+    "implementation-report.practice-25-2026-11-11.json",
+    "history/implementation-report-before-checkpoint-2026-11-12.json"
+  ],
+  "implementedAndTechnicallyVerified": [
+    "1.3",
+    "1.4",
+    "1.5",
+    "2.1",
+    "2.2",
+    "2.3",
+    "2.4",
+    "2.5",
+    "2.6"
+  ],
+  "userAccepted": false,
+  "independentBatchReview": "not-run; content incomplete, user requested checkpoint and handoff",
+  "cumulativeSpecGate": "not-run: etapa independente própria, somente SOL 6.1 xhigh quando disponível/autorizado",
+  "publishedImplementation": false,
+  "merged": false,
+  "deployed": false,
+  "operatorOrVpsDatabaseAccessed": false,
+  "risk": {
+    "classification": "critical",
+    "reason": "captura persistida, comandos/replay, codec compartilhado, segurança/fila e recuperação"
+  },
+  "schemaAmendment": {
+    "version": 15,
+    "status": "preserved from prior locally applied stage",
+    "newMigrationForFiveItemCorrection": false,
+    "historicalMigrationEdits": false,
+    "dataRewriting": false,
+    "reason": "Keep captures already created with25 readable; enforce five on new starts in domain/application."
+  },
+  "confirmedRestartFinding": {
+    "cause": "Reserialização integral dos formatos 3/4 reordenava Set de cargos editoriais entre JVMs e acionava trava de captura imutável.",
+    "fix": "Preservar JSON original imutável; alterar somente answers, finishedAt e version e validar decode.",
+    "regressions": [
+      "ordem oposta forçada em formato 3",
+      "ordem oposta forçada em formato 4",
+      "gravação após reinício em segundo processo real do JAR"
+    ],
+    "databaseGuardsRelaxed": false
+  },
+  "java": {
+    "totals": {
+      "tests": 341,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 1
+    },
+    "passed": 340,
+    "fullRunTests": 341,
+    "affectedSuitesRevalidatedTests": 13,
+    "executionNote": "Complete run passed; after fixture-only historical-role selection correction, affected suites passed again.",
+    "skipped": [
+      "br.com.concursosimulator.parameterization.TemplateLocalTests.symbolicLinkIsRejectedWhenTheFilesystemSupportsCreatingOne()"
+    ],
+    "suites": [
+      {
+        "suite": "br.com.concursosimulator.architecture.AdministrativeAccessArchitectureTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.architecture.AdministrativeImportArchitectureTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.architecture.ArchitectureTests",
+        "tests": 15,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.ConcursoSimulatorApplicationTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.AdministrativeAccessPersistenceTests",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.AdministrativeAccountHttpTests",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.AdministrativeAccountTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.AdministrativeSessionOutageTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.ExternalIdentityTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.GoogleConfigurationTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.GoogleOidcTests",
+        "tests": 17,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.IdentityStorageTests",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.infrastructure.AdministrativeBootstrapTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.infrastructure.SessionCookieTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.ResolveExternalIdentityUseCaseTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.identity.SessionAccessTests",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.MigrationFailureTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.AttemptActorHttpTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.AttemptDomainTests",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.AttemptHistoryExpiryTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.AttemptHttpTests",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.AttemptPersistenceTests",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.AttemptSchemaCaptureTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.AttemptUseCasesTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.CompletedAttemptPersistenceTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.CompletedAttemptTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.CompletedEvidenceConsistencyTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.infrastructure.persistence.PracticeCodecCompatibilityTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.LessonPracticeHttpTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.LessonPracticePackageTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.LessonPracticePersistenceTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.LessonPracticeUseCasesTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.ParameterizedAttemptTests",
+        "tests": 9,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.PracticeCapacityMigrationTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.TopicPracticeCompatibilityTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.TopicPracticeDomainTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.mockexam.V5AttemptCompatibilityTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.CapturedOutputIntegrityTests",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.NumericGenerationTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.ParameterizedPersistenceTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.SubjectReviewCaptureReadTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.TemplateEditorialTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.TemplateLocalTests",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 1
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.TemplatePersistenceTests",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.TemplateSchemaTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.parameterization.VariantManifestTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.AdministrativeDigestTests",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.AdministrativeImportHttpTests",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.AdministrativeImportPersistenceTests",
+        "tests": 16,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.AdministrativePackageTests",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.CuratedPackageTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.ImportSessionOutageTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.infrastructure.importing.ImportSecurityBoundaryTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionCatalogTests",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionContentTests",
+        "tests": 5,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionEditorialCliTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionEditorialTests",
+        "tests": 4,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionExpansionHttpTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionExpansionPackageTests",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionImportTests",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionLocalImportTests",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionPublicHttpTests",
+        "tests": 8,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionSchemaTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionStorageTests",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.questionbank.QuestionTextSafetyTests",
+        "tests": 2,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.subjectreview.ReviewHttpTests",
+        "tests": 10,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.subjectreview.ReviewSummaryTests",
+        "tests": 7,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      {
+        "suite": "br.com.concursosimulator.subjectreview.ReviewUseCasesTests",
+        "tests": 6,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    ]
+  },
+  "frontend": {
+    "tests": 238,
+    "passed": 238,
+    "workers": 2,
+    "build": "passed",
+    "jsonSha256": "f58428f341ab23535ce6c8660513048856ba5468f6be8036abaa19783d83fe00"
+  },
+  "browsers": {
+    "passed": 30,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "projects": [
+      "chromium",
+      "edge"
+    ],
+    "widths": [
+      390,
+      1440
+    ],
+    "reportSha256": "3d5ca55e84d76f944beb7935aaa68867f3055d3cc697cd63775b5967e8267ced",
+    "isolatedPorts": [
+      5371,
+      19160,
+      19161
+    ]
+  },
+  "python": [
+    {
+      "suite": "test_local_app_data.py",
+      "passed": 11,
+      "execution": "Previously passed; see prior evidence for date/scope."
+    },
+    {
+      "suite": "test_question_expansion.py",
+      "passed": 16,
+      "execution": "2026-11-12; includes preservation of operators/exponents/punctuation and blocking actual numeric variants."
+    }
+  ],
+  "restart": {
+    "completedAnswers": 5,
+    "schemaVersion": 15,
+    "oldCommandItems": 5,
+    "status": "passed",
+    "resumedAnswers": 2,
+    "newCaptureItems": 5,
+    "jarSha256": "aedc0bbcde5e093ff47d523044ed655c165e9a57fbc46e88c42fe6d02ea74e28",
+    "historicalFormats": [
+      3,
+      4
+    ],
+    "separateJarProcesses": 2
+  },
+  "backupRecovery": {
+    "status": "passed",
+    "source_sha": "226d2e5b07208887941811beff10ac29295b04b3",
+    "schemas": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15
+    ],
+    "checks": [
+      "real-migrations",
+      "custom-dump-restore",
+      "business-fingerprints-preserved",
+      "source-unchanged",
+      "read-only-preview",
+      "restored-sessions-cleared",
+      "occupied-destination-rejected",
+      "schema-mismatch-blocked"
+    ],
+    "limits": "Synthetic PostgreSQL 18.6 without network/host ports. Lifecycle wiring substituted; no historical API image startup or operator data."
+  },
+  "manualEnvironment": {
+    "destination": "capacity-synthetic-local-check",
+    "ui": "http://127.0.0.1:5393/#/aulas/P01",
+    "syntheticPracticeBases": 30,
+    "maximum": 5,
+    "restoredBusinessTablesVerified": 25,
+    "priorAttemptsPreservedAtRestore": 1,
+    "realCandidatesLoaded": 0,
+    "operatorOrVpsDatabaseAccessed": false
+  },
+  "jar": {
+    "sha256": "aedc0bbcde5e093ff47d523044ed655c165e9a57fbc46e88c42fe6d02ea74e28",
+    "bytes": 59805274
+  },
+  "externalCorpus": {
+    "items": 79,
+    "cells": 57,
+    "purposeTotals": {
+      "SIMULADO": 43,
+      "PRATICA_AULA": 36
+    },
+    "editoriallyVerified": 0,
+    "imported": 0,
+    "eligible": 0,
+    "verifiedCandidateOriginalDeficit": 510,
+    "observedDatabaseCoverage": {
+      "asOf": "2026-11-11T14:17:23.476894+00:00",
+      "realEligible": 0,
+      "syntheticQuestions": 54,
+      "syntheticEligible": 52,
+      "currentLiveState": "Not presumed; runtime may be stopped."
+    },
+    "copiedFilesHashesPreserved": 208,
+    "newReaderPreviewItems": 79,
+    "newReaderPreviewWrites": 0,
+    "selectionManifestSha256": "02f2d2968fed502286bdd5cf3674e47d281428f533cf022d501c790b311a1dc6",
+    "archive": {
+      "name": "external-question-packages-2026-11.zip",
+      "sha256": "1e2a11976abf33343ee6bd0eb1327436ca7d3cc9163252e02fce5ede70d0ff86",
+      "bytes": 345224
+    },
+    "latestPreparedSnapshot": {
+      "prepared": 2342,
+      "cells": 102,
+      "contributions": {
+        "portugues-autoral": 400,
+        "portugues-oficial": 23,
+        "portugues-oficial-nova": 36,
+        "matematica-autoral": 483,
+        "matematica-oficial": 50,
+        "matematica-cebraspe": 27,
+        "informatica-autoral": 400,
+        "informatica-oficial-ti": 6,
+        "informatica-fgv": 6,
+        "informatica-cebraspe": 4,
+        "informatica-cebraspe-mais": 8,
+        "informatica-macros": 7,
+        "informatica-macros-mais": 2,
+        "administrativo-autoral": 320,
+        "administrativo-oficial": 25,
+        "administrativo-digitalizada": 9,
+        "escolar-autoral": 440,
+        "escolar-oficial": 12,
+        "escolar-digitalizada": 5
+      },
+      "originals": 299,
+      "imported": false,
+      "eligible": false,
+      "coverageIsNotCertified": true
+    },
+    "readerValidatedSnapshot": {
+      "items": 2270,
+      "packages": 102,
+      "imported": false,
+      "eligible": false,
+      "reportSha256": "4a5bb2480d0ff19b331e2568d8d3916d1c4afa093c76951e8b3fb520c8c7dfb1",
+      "snapshotManifestSha256": "dc8f89cb920f593cab104d7ec7c39364d39a3229279c5f236e853af8e01f8d60"
+    }
+  },
+  "pending": [
+    "Sources/original quotas and full editorial/diversity checks for groups3–7",
+    "Re-run corrected global auditor; v4 interrupted, v3 decisions partly stale",
+    "Group8 real-content import/eligibility and user test, preserving current attempts",
+    "Independent batch review and cumulative spec gate; no push/merge/deploy authorized by checkpoint"
+  ],
+  "limits": [
+    "Dados de teste sintéticos não contam nas cotas editoriais.",
+    "Um teste histórico de symlink foi ignorado no Windows; nenhuma assertion foi relaxada.",
+    "Uma rodada paralela do frontend teve timeouts; execução final com dois workers passou sem alterar timeouts/assertions.",
+    "Backup testado em dois containers sem rede; wiring de lifecycle substituído, SQL/dump/restore reais; sem startup de imagem histórica.",
+    "SHA do JAR não é imagem Docker; nenhuma imagem/deploy declarados.",
+    "Hashes identificam os arquivos do checkpoint local. Relatório técnico não é spec-review, aceite, prova semântica ou autorização de merge.",
+    "The earlier25-per-practice evidence is historical; pool25/new practice5 is the current requirement.",
+    "Initial browser readiness failed due to a historical-role fixture; corrected fixture and final30 browser tests passed.",
+    "Checkpoint requested by user on2026-11-12. Latest prepared aggregate is not imported or eligible; corpus and working artifacts are now included in Git at the user request; private backups, credentials, runtime logs and caches remain local. Current globals require fresh audit after normalizer correction."
+  ],
+  "localFileHashes": {
+    "backend/openapi.yaml": "329b7ee28ae8b7aff86bde2f3d64e2f9ada839820c99ca9c34dc255da8abf715",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/application/AttemptUseCases.java": "74802042e62d91b714da2f2fe2a669a2b3bd878aecc9b51ea0b6120582a909ff",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/domain/Attempt.java": "1a94ead1fae77219d7ed26e07bb6eeec121c5732b25bb436f25bf58b2259cecf",
+    "backend/src/main/java/br/com/concursosimulator/mockexam/infrastructure/persistence/AttemptCodec.java": "981a0ad4288aaa5ea18f9dcfb4e28f27d1226fd89d6812b632acf39b45950abf",
+    "backend/src/main/resources/db/migration/V15__expanded_topic_practice_capacity.sql": "dec885f8523071aeb83c985a7b1a68b3f537330c025915617d06308e33eb2a90",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/LessonPracticeHttpTests.java": "f99e2994d87fa58e9047089a58a83c5a52af8cd5072e8c631c666729a6601258",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/LessonPracticePersistenceTests.java": "602316fc2ebb2604bb6285bc036f4784290ba2aec573fd1abb69ec72e3afdc8c",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/PracticeCapacityMigrationTests.java": "19c1565c4d8ca0a38c5016c791d1c410b63354832b655b465af2eab02a2084e9",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/PracticeCapacityOperationalFixture.java": "4adf7bcb9871bcf92ce6bb2d9fb696e5f9cb6eff5cb53ad2afa3671bc6ccb074",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/TopicPracticeBrowserFixture.java": "f5f235e7304d9262c0055d22c9fa63d02bc2481fafcdf2336c43181da63f8728",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/TopicPracticeCompatibilityTests.java": "8f8a2076d105a2446a85ffdecb2ebe7203fbf070500224cf2c5756cc73da3385",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/TopicPracticeDomainTests.java": "3108c6d64daf26c5a34c542cfc2421b4aeddc3921ee78d43a9e8a22731430d02",
+    "backend/src/test/java/br/com/concursosimulator/mockexam/infrastructure/persistence/PracticeCodecCompatibilityTests.java": "4618baf513ad3687055820e54dd5ad0a729a15c6fe507ffd427dd39d2bad3f4b",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionContentCheck.java": "9f0f253a8fdcf08e670ab5efb460c2e501e270ffce68e830d1c32218a1269a45",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionHttpTests.java": "d7f05d6b8870d489c06cb832c089901d416f5f6717aac82a2cebe73410cdbae4",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionExpansionPackageTests.java": "374741aef9f7993252469a5e02959b222c2f82f90c623ed68f5c61a2794b167e",
+    "backend/src/test/java/br/com/concursosimulator/questionbank/QuestionSchemaTests.java": "2248b2a9a072d307f48745b0571cd102e49a0c81a34558555b1f9ffa551788a7",
+    "docs/lesson-practice.md": "777ce7fef2d4ed906c85c59a915ea75b34c49843a22db172e383718c60dfb839",
+    "docs/question-bank-expansion-handoff.md": "bdb6c5e2b38419dc068b7c4b933588007200f334cda9d2e29c7b6ca9e3605fcd",
+    "docs/question-bank-expansion.md": "7c8a1f974a1a98e8c2945ce5bd48855deb299ac83169739a46f9a48524731359",
+    "docs/question-source-reuse-assessment.md": "711661e5b5b54f98400fd7de6e8b04b23583576958849ff17d8e6aca6c0de0e7",
+    "editorial/question-bank-expansion/2026-11/README.md": "4e55dccc6878646ad2c3105e7717ec2e0fb6c3b34cadf06ef46d9ad33c78abe4",
+    "editorial/question-bank-expansion/2026-11/edition.json": "f0b5b344c7518dbd87324ceab6e2e6241d635d6c18847166b759ec718c79a90f",
+    "editorial/question-bank-expansion/2026-11/inventory-baseline.json": "7d5a05ecd8e029aabdde827eb9bddeeea2ad0b88504bbab1bbe95d490fa8852f",
+    "editorial/question-bank-expansion/2026-11/inventory-baseline.md": "bd56c954a30a9cb87f3260eff48a525cb96830b3f47a4dd91b66d4932b765151",
+    "editorial/question-bank-expansion/2026-11/inventory-observed-local-2026-11-11.json": "1df742591c9283b8f10bb540faf4f7be136ee024d0104ad99ea77d9fe0a88e99",
+    "editorial/question-bank-expansion/2026-11/pair-decisions.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/administrativo.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/escolar.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/informatica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/matematica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/pratica_aula/portugues.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/reviews.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "editorial/question-bank-expansion/2026-11/simulado/administrativo.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/escolar.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/informatica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/matematica.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/simulado/portugues.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "editorial/question-bank-expansion/2026-11/source-inventory.json": "4379246dd84e0180664f966bb6733699fe0bfe543a08f5565a39354493bdd687",
+    "editorial/question-bank-expansion/2026-11/sources.json": "ca3d163bab055381827226140568f3bef7eaac187cebd76878e0b63e9e442356",
+    "frontend/e2e/topic-practice.real.spec.ts": "ef4e4d47d9e6e0ee8cfd32684dab97f3751d7a605b9799bbf2d27a48470eee20",
+    "frontend/playwright.topic-practice.config.ts": "2c1a0d8cd13cf37526fb6e977dc8bac7c2e69e93772caea888753cbeefd8e6cd",
+    "frontend/src/LessonPracticeEntry.test.tsx": "f6a00a1795078e38f6af78b0c6e47985a1893fdea1ea946395eb517485c15720",
+    "frontend/src/LessonPracticeEntry.tsx": "6a1b2104914d5452229247200c10d74167038c25add62fafcd4b542a3bba2ad0",
+    "frontend/src/lesson-practice-api.test.ts": "a5e5e7abb072ec0cf5b794649b438a434a3fad1f98a5bef08382c64fc6fddddb",
+    "frontend/src/lesson-practice-api.ts": "b54309f736ec7f65888d8ee1c32070fa63c63f222be62b8f8769a0e15af5b4d1",
+    "openspec/changes/question-bank-expansion/.openspec.yaml": "519b5d2f2c95a5824a38a573c58ef1067b39bf77f183f2c01b55804de4c18bde",
+    "openspec/changes/question-bank-expansion/capacity-schema-amendment.md": "bab390a40a38d3f5e72dcd8f2a2dbc318755d2a0718cab7224f149018f8f5378",
+    "openspec/changes/question-bank-expansion/design.md": "461a5716957674f9076baaecc8ec04b999a3ab8a66bf4ebe789f63af29bd2846",
+    "openspec/changes/question-bank-expansion/history/implementation-report-before-checkpoint-2026-11-12.json": "2ad1de2890a2a26c7d36c20fcd71f49f3d57c66ca16e214b1802917d090c3734",
+    "openspec/changes/question-bank-expansion/history/practice-capacity-before-five-clarification.md": "9fc8ed37b454542ac803a1d9858304678fbd2a666cb8cdd576d44f35c9620e4d",
+    "openspec/changes/question-bank-expansion/implementation-report.external-79-2026-11-10.json": "61778186d6001ec2b0a701a140230d55f0b17aa387fd7539e591fec704792d2d",
+    "openspec/changes/question-bank-expansion/implementation-report.initial-2026-11-10.json": "cc93a352b2811695bee3614a3c79eaa3ad2fa9c65674ec68657501d838ebadde",
+    "openspec/changes/question-bank-expansion/implementation-report.practice-25-2026-11-11.json": "92dcb5debc15bf96b8962d42948d9fd8bff6a7618f5a370b43fb7e49ff9f90b6",
+    "openspec/changes/question-bank-expansion/practice-capacity-verification.md": "b9807ad83cd3dead6f7c16a4d9759a57c1b784003d53fd413aa0a8a26708ecfc",
+    "openspec/changes/question-bank-expansion/practice-sampling-five-verification.md": "4839b9f8dfaf97d667d892e0546296de2a418eaf5002744655c8fe838e146614",
+    "openspec/changes/question-bank-expansion/proposal.md": "e06d84b59dfce33f618d294f2347df34ee5c603e0e19145fd27d9bb734a9d7cb",
+    "openspec/changes/question-bank-expansion/proposed/V15__expanded_topic_practice_capacity.sql": "741bfe48653beca96af0a17a6b9810613a8603d02c7d22b032052a36956d227f",
+    "openspec/changes/question-bank-expansion/specs/lesson-practice-capacity/spec.md": "3f6677efc4be74cbca3851d0391987d1da704b7b575a4770043ff57f92323ed8",
+    "openspec/changes/question-bank-expansion/specs/question-bank-coverage/spec.md": "fb29aa13c8eb1c86877232ef52a43f97b3db75353c94690f9eabb58a0a3b1530",
+    "openspec/changes/question-bank-expansion/tasks.md": "f9fee454d29ba435056f3100592c6a35c5da75390876da71a31e19df48f7be51",
+    "scripts/audit_question_expansion.py": "c8187519b082afb340ebec346b92575a81372017f45cdd97d3422d5baf7df411",
+    "scripts/check_backup_schemas.py": "9b36be561ec8a7388315778965082f4700e96f79a468ca145702e4057f9b6f1e",
+    "scripts/check_local_runtime.py": "c38c37895c5bd0f97641c7e557c803eb6c2672384ed205a3cbe89026c622c05a",
+    "scripts/local_app_data.py": "dc8e0e5bb686e21dbadb14ac35efcf9a3a433b2b97958f46578af1dc1de37d58",
+    "scripts/question_expansion.py": "c1f21018478b0ad8125750173ee8b51f67eb869feee468bc4c2304dae79898d5",
+    "scripts/test_local_app_data.py": "c736a1569074ebfac0f5438c1e5cdc6e79af92de60fd3bf2f09df2b658816956",
+    "scripts/tests/test_question_expansion.py": "318b8f4e74e040d5a2f8cc3500dd06c6ba55f567fb404d6432950e8c5c8d3c22",
+    "docs/question-bank-expansion-git-checkpoint-2026-11-12.json": "0f705313673efba22d0e338dcae156131f68254578127febe59d3fcc015d0afd"
+  },
+  "clarifiedGoal": {
+    "poolMinimumPerTopicAndPurpose": 25,
+    "newPracticeMaximum": 5,
+    "sampleFromWholeEligiblePool": true,
+    "repeatWithinPractice": false,
+    "crossPracticeOverlapPermitted": true
+  },
+  "fixtureCorrection": {
+    "cause": "Historical format3 fixture chose a question incompatible with its historical role, making readiness nondeterministic.",
+    "fix": "Filter that fixture by its historical role; new practices remain role-free.",
+    "assertionsRelaxed": false
+  },
+  "checkpoint": {
+    "requestedByUser": true,
+    "implementationIncomplete": true,
+    "agentsInterrupted": true,
+    "handoff": "docs/question-bank-expansion-handoff.md",
+    "externalCheckpointSha256": "cc71d8f9e2858ca3cc3f43847b2689d3a32922a0219971af34217f666f685886",
+    "externalFilesPreserved": 1909,
+    "gitContainsExternalCorpus": true,
+    "textLineEndings": "Tracked application code LF; corpus and temporary artifacts preserve original bytes through .gitattributes.",
+    "gitArtifactManifest": "docs/question-bank-expansion-git-checkpoint-2026-11-12.json",
+    "gitArtifactManifestSha256": "0f705313673efba22d0e338dcae156131f68254578127febe59d3fcc015d0afd",
+    "gitArtifactFiles": 2448,
+    "gitArtifactBytes": 435402906
+  },
+  "practiceUserAccepted": true
+}

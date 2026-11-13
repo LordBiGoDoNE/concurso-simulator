@@ -42,7 +42,9 @@ final class AttemptCodec {
         question.set("source",json.valueToTree(QuestionSource.fixed()));
     }
     String encode(Attempt.Snapshot snapshot,String original) {
-        if (snapshot.format()>=3) return json.writeValueAsString(snapshot);
+        // On update preserve the captured JSON, including order-sensitive arrays
+        // serialized from sets. Their iteration order can change across JVMs.
+        if (snapshot.format()>=3 && original==null) return json.writeValueAsString(snapshot);
         ObjectNode node;
         if (original!=null) {
             if (decode(original).format()!=snapshot.format()) throw new IllegalStateException("Formato alterado");

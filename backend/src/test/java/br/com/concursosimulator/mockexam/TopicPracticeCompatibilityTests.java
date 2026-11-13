@@ -29,7 +29,9 @@ class TopicPracticeCompatibilityTests {
     }
     static Attempt.Snapshot legacy(AttemptStore store,AttemptOwner owner,UUID command) {
         return store.transaction(s -> {
-            var q=s.eligible(QuestionPurpose.PRATICA_AULA).getFirst();
+            var q=s.eligible(QuestionPurpose.PRATICA_AULA).stream()
+                    .filter(i->i.content().classification().roles().contains(TargetRole.ADMINISTRATIVE_ASSISTANT))
+                    .findFirst().orElseThrow();
             var item=new Attempt.Item(UUID.randomUUID(),q,q.content().alternatives().stream().map(QuestionContent.Alternative::id).toList(),Map.of());
             var c=new Composition(TargetRole.ADMINISTRATIVE_ASSISTANT,Map.of(Topic.P01.discipline(),new Composition.Portion(1,Set.of(Topic.P01))));
             var snapshot=Attempt.restore(new Attempt.Snapshot(UUID.randomUUID(),owner,c,NOW,null,Attempt.POLICY,List.of(item),Map.of(),0,3,QuestionPurpose.PRATICA_AULA,Topic.P01)).snapshot();
@@ -39,7 +41,7 @@ class TopicPracticeCompatibilityTests {
     }
     @Test void migrationPreservesLegacyCapturesCommandsAndAnswersAndNewCodeCanFinishAndReplayThem() throws Exception {
         try(var db=new AttemptDatabase(PG)) {
-            db.migrate("11");new LessonPracticePersistenceTests().seedPractice(db,2);
+            db.migrate("11");new LessonPracticePersistenceTests().seedPractice(db,30);
             var store=new JpaAttemptStore(db.entities,db.manager,db.pool);var op=UUID.randomUUID();
             var old=legacy(store,VISITOR,op);var p=practice(store,NOW);var item=old.items().getFirst();
             var answerOp=UUID.randomUUID();var selected=item.optionOrder().getFirst();
@@ -47,6 +49,8 @@ class TopicPracticeCompatibilityTests {
             var tables=List.of("qb_question","qb_revision","qb_decision","me_attempt","me_item","me_command");
             var before=tables.stream().map(t->db.jdbc.queryForList("select * from "+t+" order by id")).toList();
             db.migrate("14");
+            assertThat(tables.stream().map(t->db.jdbc.queryForList("select * from "+t+" order by id")).toList()).isEqualTo(before);
+            db.migrate("15");
             assertThat(tables.stream().map(t->db.jdbc.queryForList("select * from "+t+" order by id")).toList()).isEqualTo(before);
             assertThat(p.read(VISITOR,old.id())).isEqualTo(answered);
             assertThat(p.answer(VISITOR,old.id(),answerOp,0,item.id(),selected).attempt()).isEqualTo(answered);
@@ -58,6 +62,7 @@ class TopicPracticeCompatibilityTests {
             assertThat(store.transaction(s->s.find(old.id()).orElseThrow()).format()).isEqualTo(3);
             assertThat(p.read(VISITOR,old.id()).role()).isNull();
             var fresh=p.createPractice(VISITOR,UUID.randomUUID(),Topic.P01).attempt();
+            assertThat(fresh.items()).hasSize(5);
             var snapshot=store.transaction(s->s.find(fresh.id()).orElseThrow());
             assertThat(snapshot.format()).isEqualTo(4);assertThat(snapshot.composition()).isNull();
             assertThat(fresh.practiceTopic()).isEqualTo(Topic.P01);assertThat(fresh.role()).isNull();
@@ -90,13 +95,14 @@ class TopicPracticeCompatibilityTests {
     }
     @Test void concurrentCreationUsesOneCapturedSelectionAndRejectsAnIncompatibleTopic() throws Exception {
         try(var db=new AttemptDatabase(PG)) {
-            db.migrate("14");new LessonPracticePersistenceTests().seedPractice(db,6);
+            db.migrate("15");new LessonPracticePersistenceTests().seedPractice(db,30);
             var store=new JpaAttemptStore(db.entities,db.manager,db.pool);var p=practice(store,NOW);var command=UUID.randomUUID();
             try(var executor=Executors.newFixedThreadPool(2)) {
                 var barrier=new CyclicBarrier(2);
                 Callable<AttemptUseCases.Outcome> start=()->{barrier.await(10,TimeUnit.SECONDS);return p.createPractice(VISITOR,command,Topic.P01);};
                 var a=executor.submit(start);var b=executor.submit(start);
                 var first=a.get(30,TimeUnit.SECONDS);var second=b.get(30,TimeUnit.SECONDS);
+                assertThat(first.attempt().items()).hasSize(5);
                 assertThat(first.attempt()).isEqualTo(second.attempt());assertThat(first.replayed()).isNotEqualTo(second.replayed());
             }
             assertThat(db.jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(1);
@@ -106,7 +112,7 @@ class TopicPracticeCompatibilityTests {
     }
     @Test void newDatabaseConstraintsRejectHiddenCompositionMissingItemsAndImmutableContextChanges() {
         try(var db=new AttemptDatabase(PG)) {
-            db.migrate("14");new LessonPracticePersistenceTests().seedPractice(db,1);
+            db.migrate("15");new LessonPracticePersistenceTests().seedPractice(db,1);
             var p=practice(new JpaAttemptStore(db.entities,db.manager,db.pool),NOW);
             var view=p.createPractice(VISITOR,UUID.randomUUID(),Topic.P01).attempt();
             assertThatThrownBy(()->db.jdbc.update("update me_attempt set payload=jsonb_set(jsonb_set(payload,'{composition}','{}'),'{version}',to_jsonb(version+1)),version=version+1 where id=?",view.id())).isInstanceOf(org.springframework.dao.DataAccessException.class);

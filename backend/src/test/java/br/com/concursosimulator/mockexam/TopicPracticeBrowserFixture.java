@@ -22,16 +22,30 @@ import java.util.*;
 /** Somente teste/manual isolado da #161, sem fixtures nem rotas no bootJar de produção. */
 public final class TopicPracticeBrowserFixture {
     public static void main(String[] args) throws Exception {
+        boolean restoring=args.length==3 && args[0].equals("--restore");
+        if(args.length!=0 && !restoring)throw new IllegalArgumentException("Uso: --restore dump-local sha256");
+        boolean expansion="1".equals(System.getenv("PRACTICE_EXPANSION"));
+        int apiPort=expansion?19370:19160, controlPort=expansion?19371:19161, uiPort=expansion?5393:5371;
         var pg=new PostgreSQLContainer("postgres:18.6");pg.start();
         ConfigurableApplicationContext app=null;HttpServer control=null;
         try {
+            if(restoring) {
+                var dump=java.nio.file.Path.of(args[1]).toAbsolutePath().normalize();
+                if(!java.nio.file.Files.isRegularFile(dump) || java.nio.file.Files.size(dump)>67108864
+                        || !HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(java.nio.file.Files.readAllBytes(dump))).equals(args[2]))
+                    throw new IllegalArgumentException("Dump local ausente, grande ou hash divergente");
+                pg.copyFileToContainer(org.testcontainers.utility.MountableFile.forHostPath(dump.toString()),"/tmp/practice-local-restore.dump");
+                var restored=pg.execInContainer("pg_restore","-U",pg.getUsername(),"-d",pg.getDatabaseName(),"--exit-on-error","--no-owner","--no-privileges","/tmp/practice-local-restore.dump");
+                if(restored.getExitCode()!=0)throw new IllegalStateException("Restauração do ambiente sintético falhou");
+                pg.execInContainer("rm","--","/tmp/practice-local-restore.dump");
+            }
             app=new SpringApplicationBuilder(ConcursoSimulatorApplication.class).run(
-                    "--spring.profiles.active=local","--server.port=19160","--server.address=127.0.0.1",
+                    "--spring.profiles.active=local","--server.port="+apiPort,"--server.address=127.0.0.1",
                     "--spring.datasource.url="+pg.getJdbcUrl(),"--spring.datasource.username="+pg.getUsername(),"--spring.datasource.password="+pg.getPassword(),
-                    "--app.cors-origins=http://127.0.0.1:5371","--spring.session.timeout=30m","--app.google.enabled=false");
-            br.com.concursosimulator.questionbank.QuestionBrowserFixtures.seed(app);
+                    "--app.cors-origins=http://127.0.0.1:"+uiPort,"--spring.session.timeout=30m","--app.google.enabled=false");
+            if(!restoring)br.com.concursosimulator.questionbank.QuestionBrowserFixtures.seed(app);
             try(var db=new AttemptDatabase(pg.getJdbcUrl(),pg.getUsername(),pg.getPassword())) {
-                for(int i=0;i<7;i++) {
+                for(int i=0;!restoring && i<30;i++) {
                     var c=TopicPracticeDomainTests.classified(i,i%2==0?TargetRole.ADMINISTRATIVE_ASSISTANT:TargetRole.SCHOOL_SECRETARY,Topic.P01).content();
                     var q=Question.draft(UUID.randomUUID(),new QuestionOrigin(QuestionPurpose.PRACTICE_NAMESPACE,"topic-browser-"+i),UUID.randomUUID(),c);
                     db.questions.transaction(s->{s.insert(q);return null;});
@@ -39,7 +53,7 @@ public final class TopicPracticeBrowserFixture {
                 }
                 var repository=repository(app);var issued=java.util.concurrent.ConcurrentHashMap.<String>newKeySet();
                 var jdbc=app.getBean(org.springframework.jdbc.core.JdbcTemplate.class);var store=app.getBean(AttemptStore.class);
-                control=HttpServer.create(new InetSocketAddress("127.0.0.1",19161),0);
+                control=HttpServer.create(new InetSocketAddress("127.0.0.1",controlPort),0);
                 var json=JsonMapper.builder().build();
                 control.createContext("/fixture",exchange->{
                     if(!exchange.getRequestMethod().equals("GET")) { exchange.sendResponseHeaders(405,-1);exchange.close();return; }
@@ -60,7 +74,7 @@ public final class TopicPracticeBrowserFixture {
         } catch(Exception failure) { if(control!=null)control.stop(0);if(app!=null)app.close();pg.stop();throw failure; }
         var running=app;var server=control;
         Runtime.getRuntime().addShutdownHook(new Thread(()->{server.stop(0);running.close();pg.stop();}));
-        System.out.println("TOPIC_PRACTICE_READY: UI 5371 / API 19160 / fixture 19161 / PostgreSQL efêmero");
+        System.out.println("TOPIC_PRACTICE_READY: UI "+uiPort+" / API "+apiPort+" / fixture "+controlPort+" / PostgreSQL efêmero");
         new java.util.concurrent.CountDownLatch(1).await();
     }
     @SuppressWarnings({"unchecked","rawtypes"}) static SessionRepository<Session> repository(ConfigurableApplicationContext app) {

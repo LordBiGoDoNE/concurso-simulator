@@ -6,10 +6,13 @@ interface Props {
   onLessons: (discipline?: string, roleId?: string) => void;
   onCompose: () => void;
   onQuestions: () => void;
+  onOpenLesson: (topicId: string) => void;
 }
 
-export default function StudyHome({ roleId, onRoleChange, onLessons, onCompose, onQuestions }: Props) {
+export default function StudyHome({ roleId, onRoleChange, onLessons, onCompose, onQuestions, onOpenLesson }: Props) {
   const available = lessons.filter(topic => lessonSupportsRole(topic, roleId));
+  const suggestion = available[0];
+  const suggestionDiscipline = studyCatalog.disciplines.find(d => d.id === suggestion?.disciplineId)?.title;
   return <>
     <section className="welcome" aria-labelledby="welcome-title">
       <div>
@@ -27,7 +30,12 @@ export default function StudyHome({ roleId, onRoleChange, onLessons, onCompose, 
         <button className="secondary" onClick={() => onLessons('', '')}>Explorar todas as aulas</button>
         <p className="home-facts"><span>{lessons.length} aulas no material</span><span>{studyCatalog.roles.length} cargos</span><span>Comece sem login</span></p>
       </div>
-      <div className="study-visual" aria-hidden="true"><div className="study-paper"><small>UM PASSO DE CADA VEZ</small><p>Entenda.<br />Pratique.<br />Revise.</p><div className="paper-line" /><div className="paper-line short" /><p>Uma aula é um bom começo.</p></div></div>
+      {suggestion && <aside className="start-suggestion" aria-labelledby="start-suggestion-title">
+        <p id="start-suggestion-title" className="start-suggestion-label">Sugestão para começar</p>
+        <p className="start-suggestion-topic">{suggestion.id} · {suggestion.title}</p>
+        <p className="start-suggestion-meta">{suggestionDiscipline} · aula e prática</p>
+        <button className="secondary" onClick={() => onOpenLesson(suggestion.id)}>Abrir aula <span aria-hidden="true">→</span></button>
+      </aside>}
     </section>
     <p className="independent-note">Material independente de estudo. Não é um site oficial do concurso. Confira o edital e as fontes de cada aula.</p>
     <div className="home-lower">

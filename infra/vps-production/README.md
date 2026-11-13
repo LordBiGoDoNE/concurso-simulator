@@ -93,3 +93,34 @@ python3 scripts/vps_production.py start | status | stop
   e libera 20 MB/120 s apenas em `/api/v1/admin/`. TLS e HSTS ficam no nginx do host.
 
 Atualização de release, backup e restauração pertencem ao grupo 6.
+
+## Grupo 6 — backup, atualização e recuperação
+
+```sh
+python3 scripts/vps_production.py backup        # API parada por segundos; dump + manifesto em ~/.local/share/concurso-simulator/backups/
+```
+
+Copie para o PC (no PC):
+
+```sh
+scp -i ~/.ssh/hostingerVPS concurso-dev@<VPS>:.local/share/concurso-simulator/backups/<arquivo>.dump* <pasta-privada>/
+```
+
+Restauração sempre em alvo separado e vazio, com a mesma imagem de API do backup:
+
+```sh
+R=~/.local/share/concurso-simulator/recoveries/<nome>
+python3 scripts/vps_production.py --state $R init --images <manifesto-da-release> --recovery <nome> --port 18091
+python3 scripts/vps_production.py --state $R restore --backup <dump>                 # prévia + texto de confirmação
+python3 scripts/vps_production.py --state $R restore --backup <dump> --confirm "<texto>"
+python3 scripts/vps_production.py --state $R start
+```
+
+Troca de release (somente commits de origin/main; backup automático antes):
+
+```sh
+python3 scripts/vps_production.py release --images ~/.local/share/concurso-simulator/releases/<sha12>.json
+python3 scripts/vps_production.py rollback   # só se o schema não mudou; senão, restaure o backup prévio
+```
+
+Backups, estado e segredos nunca vão para Git, CI ou issues. Volumes não são removidos pela ferramenta.

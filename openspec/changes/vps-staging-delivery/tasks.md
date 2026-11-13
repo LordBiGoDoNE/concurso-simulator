@@ -49,10 +49,13 @@ Implementado e verificado em 2026-11-13 (#213); não integrado. Evidências: `ve
 
 ## 6. Backup, atualização e recuperação — depende de 2; ensaio final usa 5
 
-- [ ] 6.1 Backup consistente com manifesto e cópia privada para o PC.
-- [ ] 6.2 Restauração em projeto/volume novo com sessões invalidadas e conferência.
+Implementado em 2026-11-13; 6.1, 6.2 e 6.4 verificados na VPS; 6.3 coberta por testes, uso real no corte. Não integrado. Evidências: `verification/grupo-6.md`.
+
+
+- [x] 6.1 Backup consistente com manifesto e cópia privada para o PC.
+- [x] 6.2 Restauração em projeto/volume novo com sessões invalidadas e conferência.
 - [ ] 6.3 Atualização de release com backup obrigatório, falha de migração e rollback compatível.
-- [ ] 6.4 Ensaio completo na VPS, com artefato inválido e destino ocupado recusados; docs do grupo.
+- [x] 6.4 Ensaio completo na VPS, com artefato inválido e destino ocupado recusados; docs do grupo.
 
 ## 7. Abertura e gate — depende de 1–6
 

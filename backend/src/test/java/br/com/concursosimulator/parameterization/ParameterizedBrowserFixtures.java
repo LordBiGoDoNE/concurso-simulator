@@ -32,7 +32,7 @@ public final class ParameterizedBrowserFixtures {
         store.transaction(s->{s.insert(q);return null;});
         for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE))store.transaction(s->{
             var loaded=s.loadForUpdate(id).orElseThrow();loaded.decide(new EditorialDecision(action,id,revision,content.fingerprint(),
-                    "Fixture sem validade editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente PostgreSQL isolado de testes"));s.save(loaded);return null;
+                    "Fixture sem validade editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente PostgreSQL isolado de testes",EditorialDecision.ReviewKind.HUMAN_PEER));s.save(loaded);return null;
         });
     }
 }

@@ -18,7 +18,7 @@ class QuestionEditorialTests {
     Question question() { return Question.draft(UUID.randomUUID(), new QuestionOrigin("fixture", "editorial"), UUID.randomUUID(), content("Fixture")); }
     public static EditorialDecision decision(Question q, UUID revision, EditorialDecision.Action action) {
         return new EditorialDecision(action, q.id(), revision, q.revision(revision).fingerprint(), "Revisor sintético de teste",
-                Instant.parse("2026-10-11T00:00:00Z"), Set.of(EditorialDecision.Check.values()), "Checklist somente de fixture");
+                Instant.parse("2026-10-11T00:00:00Z"), Set.of(EditorialDecision.Check.values()), "Checklist somente de fixture",EditorialDecision.ReviewKind.HUMAN_PEER);
     }
     @Test void requiresExplicitReviewAndExactCompleteEvidence() {
         var q = question(); var id = q.latest().id();
@@ -26,9 +26,9 @@ class QuestionEditorialTests {
         assertThatThrownBy(() -> q.decide(decision(q, id, APPROVE))).isInstanceOf(IllegalStateException.class);
         q.decide(decision(q, id, SUBMIT));
         var good = decision(q, id, APPROVE);
-        var wrong = new EditorialDecision(APPROVE, q.id(), id, "f".repeat(64), good.responsible(), good.at(), good.checklist(), good.rationale());
+        var wrong = new EditorialDecision(APPROVE, q.id(), id, "f".repeat(64), good.responsible(), good.at(), good.checklist(), good.rationale(),EditorialDecision.ReviewKind.HUMAN_PEER);
         assertThatThrownBy(() -> q.decide(wrong)).isInstanceOf(IllegalArgumentException.class);
-        var incomplete = new EditorialDecision(APPROVE, q.id(), id, good.fingerprint(), good.responsible(), good.at(), Set.of(), good.rationale());
+        var incomplete = new EditorialDecision(APPROVE, q.id(), id, good.fingerprint(), good.responsible(), good.at(), Set.of(), good.rationale(),EditorialDecision.ReviewKind.HUMAN_PEER);
         assertThatThrownBy(() -> q.decide(incomplete)).isInstanceOf(IllegalArgumentException.class);
         assertThat(q.status(id)).isEqualTo(Question.Status.IN_REVIEW); assertThat(q.eligible()).isEmpty();
         q.decide(good); assertThat(q.eligible()).contains(q.latest());
@@ -53,7 +53,7 @@ class QuestionEditorialTests {
         q.decide(decision(q, old.id(), SUBMIT)); q.decide(decision(q, next.id(), SUBMIT)); q.decide(decision(q, next.id(), APPROVE));
         assertThatThrownBy(() -> q.decide(decision(q, old.id(), APPROVE))).isInstanceOf(IllegalStateException.class);
         var good = decision(q, old.id(), APPROVE);
-        var other = new EditorialDecision(APPROVE, UUID.randomUUID(), old.id(), good.fingerprint(), good.responsible(), good.at(), good.checklist(), good.rationale());
+        var other = new EditorialDecision(APPROVE, UUID.randomUUID(), old.id(), good.fingerprint(), good.responsible(), good.at(), good.checklist(), good.rationale(),EditorialDecision.ReviewKind.HUMAN_PEER);
         assertThatThrownBy(() -> q.decide(other)).isInstanceOf(IllegalArgumentException.class);
         assertThat(q.eligible()).contains(next);
     }

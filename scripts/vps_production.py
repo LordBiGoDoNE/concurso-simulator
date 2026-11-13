@@ -211,6 +211,62 @@ def start(state, config):
     print(f"Produção pronta em 127.0.0.1:{config['port']} (release {config['images']['source_sha'][:12]}).")
 
 
+GOOGLE_CLIENT_ID = re.compile(r"[0-9]{6,32}-[a-z0-9]{8,64}\.apps\.googleusercontent\.com")
+GOOGLE_SECRET = re.compile(r"[A-Za-z0-9_-]{20,128}")
+
+
+def rewrite_secret(state, name, value):
+    """Rewrite in place: Compose bind-mounts the file, and a rename would leave the container on the old inode."""
+    path = state / "secrets" / name
+    if path.is_symlink() or not path.is_file():
+        raise ValueError("Arquivo de segredo ausente ou inválido")
+    with path.open("r+", encoding="utf-8", newline="\n") as stream:
+        stream.seek(0)
+        stream.write(value)
+        stream.truncate()
+
+
+def google_enabled_on_api(config):
+    import urllib.request
+    request = urllib.request.Request(f"http://127.0.0.1:{config['port']}/api/v1/auth/config", headers={"Host": HOST})
+    with urllib.request.urlopen(request, timeout=10) as response:
+        return json.load(response).get("googleEnabled") is True
+
+
+def restart_api(state, config):
+    compose(state, config, "restart", "api")
+    compose(state, config, "up", "-d", "--no-build", "--wait", "--wait-timeout", "180", "api")
+
+
+def configure_google(state, config, read_line=input, read_secret=None):
+    """Interactive only; values are never printed, logged or accepted as arguments."""
+    import getpass
+    read_secret = read_secret or getpass.getpass
+    client_id = read_line("Client ID do Google: ").strip()
+    secret = read_secret("Client secret (não aparece na tela): ").strip()
+    if not GOOGLE_CLIENT_ID.fullmatch(client_id) or not GOOGLE_SECRET.fullmatch(secret):
+        raise ValueError("Client ID ou secret em formato inesperado; nada foi alterado")
+    for name, value in (("google_client_id", client_id), ("google_client_secret", secret),
+                        ("google_callback", ORIGIN + "/login/oauth2/code/google"), ("frontend_url", ORIGIN)):
+        rewrite_secret(state, name, value)
+    rewrite_secret(state, "google_enabled", "true")
+    try:
+        restart_api(state, config)
+        if not google_enabled_on_api(config):
+            raise ValueError("API não confirmou googleEnabled")
+    except Exception:
+        rewrite_secret(state, "google_enabled", "false")
+        restart_api(state, config)
+        raise ValueError("Configuração Google recusada pela API; Google voltou a ficar desligado") from None
+    print("Login Google ligado. Callback: " + ORIGIN + "/login/oauth2/code/google")
+
+
+def disable_google(state, config):
+    rewrite_secret(state, "google_enabled", "false")
+    restart_api(state, config)
+    print("Login Google desligado; client ID/secret preservados nos arquivos privados.")
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--state", type=Path, default=DEFAULT_STATE)
@@ -222,7 +278,7 @@ def main():
     init.add_argument("--rehearsal", action="store_true")
     init.add_argument("--recovery", help="nome do alvo de recuperação separado (a-z0-9)")
     init.add_argument("--port", type=int, help="porta do alvo de recuperação (18091–18099)")
-    for action in ("start", "stop", "status", "backup", "rollback"):
+    for action in ("start", "stop", "status", "backup", "rollback", "configure-google", "disable-google"):
         actions.add_parser(action)
     restore_action = actions.add_parser("restore")
     restore_action.add_argument("--backup", type=Path, required=True)
@@ -245,6 +301,10 @@ def main():
                         if (state / "recovery.json").exists():
                             raise ValueError("Recuperação incompleta; destino bloqueado")
                         start(state, config)
+                    elif args.action == "configure-google":
+                        configure_google(state, config)
+                    elif args.action == "disable-google":
+                        disable_google(state, config)
                     elif args.action == "stop":
                         compose(state, config, "stop")
                         print("Containers parados; volume e segredos preservados.")

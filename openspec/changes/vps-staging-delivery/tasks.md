@@ -1,45 +1,63 @@
 # Tasks
 
-Backlog #156. Decisões de planejamento confirmadas em2026-10-25; registro e envio
-autorizados para retomada em outra máquina. Nenhum grupo de implementação escolhido.
-Caixas vazias não significam falta de planejamento: toda implementação está futura.
+Issue #156. Escopo ampliado em 2026-11-13 para lançamento público em
+`https://concurso-simulator.reemsoftworks.com`. Nenhum grupo autorizado para
+implementação; o usuário escolhe os grupos completos antes de começar.
 
-## 1. Preparação guiada do servidor
+O antigo grupo 1 (preparação de Rocky Linux 10.2) foi superado pela reinstalação
+da VPS com Ubuntu 24.04 em 2026-10-31. Seus commits locais na branch
+`task/vps-staging-delivery/server-preparation` são preservados como histórico,
+sem PR nem integração.
 
-- [ ] 1.1 Consolidar inventário, pré-requisitos e verificações de acesso administrativo, sem acesso do assistente à VPS.
-- [ ] 1.2 Preparar procedimento Rocky10.2 para Docker Engine/Compose, versões verificáveis e conta operacional.
-- [ ] 1.3 Documentar SSH, firewall/IPv6, SELinux e permissões/mounts preservando o acesso existente.
-- [ ] 1.4 Validar roteiro, riscos, recuperação de acesso e evidências executadas pelo usuário; incluir testes/docs/revisão do grupo.
+## 1. Base do host e acesso
 
-## 2. Runtime e releases — depende de1
+- [ ] 1.1 Registrar inventário sanitizado do Ubuntu real (usuários, Docker rootless, limites, nginx, certbot, ufw, serviços) e o acesso SSH do assistente como `concurso-dev`.
+- [ ] 1.2 Preparar e aplicar, pela conta administrativa, a correção das permissões graváveis por todos em `/opt/vps-control`, sem remover os scripts.
+- [ ] 1.3 Conferir ufw (somente 22/80/443, IPv4/IPv6), sshd só por chave e conectividade IPv6 da VPS.
+- [ ] 1.4 Reboot controlado com persistência de nginx, Docker rootless e serviço do concurso; evidências e docs do grupo.
 
-- [ ] 2.1 Preparar build/exportação por commit e manifesto de imagens linux/amd64 sem segredos.
-- [ ] 2.2 Implementar Compose/estado/segredos próprios e comandos operacionais com verificação de destino/ownership/colisão.
-- [ ] 2.3 Configurar localhost:18088, túnel manual, proxy, sessão/CSRF e coexistência com a aplicação local; sem portas API/PG públicas.
-- [ ] 2.4 Concluir regressões de imagens/runtime/recusa e roteiro de transferência manual; incluir docs/revisão do grupo.
+## 2. Runtime de produção — depende de 1
 
-## 3. Acervo inicial — depende de2
+- [ ] 2.1 Builder de imagens com origem HTTPS de produção explícita, contexto filtrado e manifesto; recusas e testes, sem afrouxar o operador local.
+- [ ] 2.2 Perfil de produção: cookie Secure, CORS canônico, cabeçalhos encaminhados só do proxy interno; testes da cadeia de segurança real.
+- [ ] 2.3 `infra/vps-production`: Compose, operador (init/start/stop/status/update), segredos por arquivo, serviço systemd de usuário, lock e verificação de ownership/colisão.
+- [ ] 2.4 Ensaio na VPS em projeto `concurso-simulator-prod` sem acesso público; regressões, recusas e docs do grupo.
 
-- [ ] 3.1 Preparar pacote congelado com251 simulados/255 práticas/3 famílias/111 variantes e respectivas seleções/digests.
-- [ ] 3.2 Implementar/verificar carga por operações editoriais existentes, destino explícito e ausência de seed/aprovação no startup.
-- [ ] 3.3 Conferir idempotência, linhagem/finalidade e ausência de contas/sessões/tentativas/capturas/comandos do computador.
-- [ ] 3.4 Validar disponibilidade por assunto/cargo e fluxos dos dois acervos; incluir testes/docs/revisão do grupo.
+## 3. Domínio e TLS — depende de 1
 
-## 4. Operação e recuperação — depende de2; ensaio final usa3
+- [ ] 3.1 Registros DNS na Hostinger (subdomínio, raiz e `www` dos dois domínios), com confirmação do usuário antes de cada alteração.
+- [ ] 3.2 Certificados Let's Encrypt pelo certbot existente (webroot) e hook de renovação com `nginx -t` + reload.
+- [ ] 3.3 Vhosts nginx versionados: canônico com proxy e HSTS, 301 `.com.br`→`.com`, 302 da raiz, HTTP→HTTPS, hosts desconhecidos recusados, `central` preservado; acesso restrito até a abertura.
+- [ ] 3.4 Testes externos de TLS, redirecionamentos, cabeçalhos e recusas; docs do grupo.
 
-- [ ] 4.1 Preparar backup manual consistente e manifesto, pausa de escritores e cópia privada no computador.
-- [ ] 4.2 Preparar restauração em destino novo/vazio, conferência de conteúdo e invalidação de sessões restauradas.
-- [ ] 4.3 Documentar atualização, exclusão mútua, falha e rollback por imagem/schema compatíveis, preservando origem e volumes.
-- [ ] 4.4 Ensaiar backup/transferência/restauração/rollback com falhas e artefatos inválidos; incluir testes/docs/revisão do grupo.
+## 4. Google OAuth de produção — depende de 2 e 3
 
-## 5. Validação integrada e gate — depende de1–4
+- [ ] 4.1 Roteiro para o usuário criar o client web e publicar a tela de consentimento, com callback exato.
+- [ ] 4.2 Configurar segredos Google na VPS sem expô-los; startup recusa client incompleto.
+- [ ] 4.3 Smoke real: login, sessão, logout, conta nova, retomada e rejeições CSRF/origem.
+- [ ] 4.4 Evidências sanitizadas e docs do grupo.
 
-- [ ] 5.1 Consolidar regressões de aulas/simulado/prática, visitante, correção final, reinício e indisponibilidade do banco.
-- [ ] 5.2 Guiar validação real do usuário no Rocky: túnel, portas IPv4/IPv6, SELinux/firewall, reboot, acervo e recuperação.
-- [ ] 5.3 Consolidar evidências sanitizadas/limites, revisão de lote e gate cumulativo independente SOL6.1xHigh com triagem/cota quando observável.
-- [ ] 5.4 Conferir SHAs/checks/relatório e autorizações próprias de merge; atualizar issue com verificado versus integrado e concluir handoff operacional.
+## 5. Acervo — depende de 2 e 3
 
-Cada grupo inclui suas subtarefas inteiras, testes e documentação. O usuário
-escolhe o lote antes de implementar; dependências reais seguem o fluxo do AGENTS.
-Domínio/HTTPS público/Google real/backup externo automático/abertura pública são
-de outra spec e não bloqueiam a conclusão desta homologação privada.
+- [ ] 5.1 Preparar o pacote do acervo aprovado a partir da main da release, com contagens/digests calculados e remapeamento R1.
+- [ ] 5.2 Carregar pelo fluxo administrativo existente (importação e decisões em lote) no banco de produção, por HTTPS.
+- [ ] 5.3 Conferir idempotência, linhagem, finalidade e ausência de contas/sessões/tentativas do PC.
+- [ ] 5.4 Validar simulado, prática por assunto e revisão nos dois cargos; docs do grupo.
+
+## 6. Backup, atualização e recuperação — depende de 2; ensaio final usa 5
+
+- [ ] 6.1 Backup consistente com manifesto e cópia privada para o PC.
+- [ ] 6.2 Restauração em projeto/volume novo com sessões invalidadas e conferência.
+- [ ] 6.3 Atualização de release com backup obrigatório, falha de migração e rollback compatível.
+- [ ] 6.4 Ensaio completo na VPS, com artefato inválido e destino ocupado recusados; docs do grupo.
+
+## 7. Abertura e gate — depende de 1–6
+
+- [ ] 7.1 Revisão final de código (Opus 5.5 medium, `spec-reviewer`), triagem e evidências em `spec-review.json`/`spec-review.md`.
+- [ ] 7.2 PR `[SPEC]` da épica para `main` com autorização específica de merge.
+- [ ] 7.3 Corte: release da main em produção, remoção do acesso HTTP pelo IP e da restrição do vhost; volume antigo preservado até decisão do usuário.
+- [ ] 7.4 Checklist público (portas, TLS, fluxos em 390/1280 px, Google, acervo, reboot) e issue atualizada com verificado × integrado.
+
+Cada grupo inclui testes e documentação. Dependências reais seguem Stacks
+conforme AGENTS.md. Nenhum merge, publicação ou exclusão de dados é autorizado
+por este documento.

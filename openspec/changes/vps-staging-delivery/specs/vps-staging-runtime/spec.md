@@ -2,41 +2,50 @@
 
 ## ADDED Requirements
 
-### Requirement: Implantação guiada com acesso exclusivo do usuário
-A implantação SHALL ser executada pelo usuário, com comandos, efeitos esperados
-e verificações documentados. O assistente MUST NOT acessar a VPS por SSH/login,
-ler/receber chaves privadas ou configurar agente/runner para operar remotamente.
+### Requirement: Operação assistida por SSH sob controle do usuário
+O assistente MAY operar a VPS por SSH como `concurso-dev`, com a chave do usuário
+no PC, sem agent forwarding e com verificação estrita da chave do host. Senhas,
+tokens e segredos MUST NOT passar pela conversa, pelo Git ou por logs. Ações que
+exigem root SHALL ser executadas pela conta administrativa com senha digitada pelo
+usuário. Exclusão de volumes, imagens ou estado MUST exigir confirmação explícita.
 
-#### Scenario: Retomada em outro computador
-- **WHEN** o usuário retoma a issue e a branch da spec
-- **THEN** encontra decisões, pré-requisitos, etapas e estado de execução explícitos
-- **AND** fornece somente resultados mínimos de verificação, sem credenciais
+#### Scenario: Chave do host divergente
+- **WHEN** a chave apresentada pelo host diverge da registrada no PC
+- **THEN** a conexão é interrompida sem aceitar a nova chave automaticamente
+- **AND** a nova chave só é aceita após o usuário confirmá-la pelo console do provedor
 
-### Requirement: Runtime privado e independente
-O runtime SHALL usar projeto/volumes/segredos próprios e releases por commit e
-imagens identificados. Web SHALL publicar somente em loopback; API/PG MUST NOT
-publicar portas. SELinux/firewall e serviços/dados existentes SHALL ser preservados.
+#### Scenario: Operação privilegiada
+- **WHEN** uma etapa altera nginx, certbot, firewall ou arquivos de root
+- **THEN** o assistente apresenta os arquivos/comandos antes da execução
+- **AND** a senha do sudo é digitada somente pelo usuário
 
-#### Scenario: Acesso à homologação
-- **WHEN** o usuário abre o túnel SSH e acessa http://localhost:18088
-- **THEN** usa SPA, API e material pela origem prevista, com sessão/CSRF atuais
-- **AND** acesso direto à web/API/PG pela internet falha em IPv4 e IPv6
+### Requirement: Runtime de produção isolado
+O runtime SHALL usar projeto Docker, volume, estado e segredos próprios no Docker
+rootless do `concurso-dev`, com release identificada por commit da main e manifesto
+de imagens. A web SHALL publicar somente em loopback; API e PostgreSQL MUST NOT
+publicar portas no host. O operador local MUST conservar suas recusas atuais.
 
-#### Scenario: Configuração ou recursos conflitantes
+#### Scenario: Conflito de recursos
 - **WHEN** existe colisão de porta, ownership inesperado ou imagem/origem divergente
-- **THEN** a operação falha antes de adotar/sobrescrever recursos
-- **AND** mantém o acesso SSH existente e não desabilita SELinux/firewall
+- **THEN** a operação falha antes de adotar ou sobrescrever recursos
+- **AND** o projeto antigo e seu volume permanecem intactos
 
-### Requirement: Coexistência e evidências reais
-A homologação SHALL preservar execução local e isolar suas sessões. Evidências
-do Rocky real SHALL ser registradas pelo usuário separadamente das de CI.
+#### Scenario: Reinício do host
+- **WHEN** a VPS é reiniciada
+- **THEN** nginx, Docker rootless e a aplicação voltam sem intervenção
+- **AND** os dados persistem e a prontidão reflete o estado real dos três serviços
 
-#### Scenario: Navegação nos dois ambientes
-- **WHEN** local127.0.0.1:8088 e homologação localhost:18088 são usados no computador
-- **THEN** cookies/dados de um ambiente não substituem a sessão do outro
-- **AND** os containers da homologação mantêm dados após reinício
+### Requirement: Sessão segura atrás do proxy
+Em produção, o cookie de sessão SHALL ser Secure, HttpOnly e SameSite=Lax, com CSRF
+atual e CORS restrito à origem canônica. A API SHALL reconhecer HTTPS a partir do
+proxy interno e MUST NOT confiar em `Forwarded`/`X-Forwarded-*` enviados pelo cliente.
 
-#### Scenario: Falha do banco ou API
-- **WHEN** a dependência fica indisponível
-- **THEN** a API apresenta erro/prontidão em prazo finito, sem HTML de falso sucesso
-- **AND** o material estático continua acessível sem expor dados de diagnóstico
+#### Scenario: Cabeçalho encaminhado forjado
+- **WHEN** um cliente envia `X-Forwarded-Host` ou `Forwarded` próprios
+- **THEN** o proxy os descarta e a API usa somente os valores definidos pelo nginx
+- **AND** URLs de OAuth e redirecionamentos usam a origem canônica
+
+#### Scenario: Falha do banco ou da API
+- **WHEN** uma dependência fica indisponível
+- **THEN** a API responde erro/prontidão em prazo finito, sem HTML de falso sucesso
+- **AND** o material estático continua acessível sem expor diagnóstico

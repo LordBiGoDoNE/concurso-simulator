@@ -2,28 +2,28 @@
 
 ## ADDED Requirements
 
-### Requirement: Inicialização somente com o acervo congelado
-O pacote inicial SHALL conter251 bases SIMULADO,255 PRATICA_AULA e conteúdo
-parametrizado atual de3 famílias/111 variantes, mantendo as51 aulas. MUST NOT
-copiar contas, identidades externas, sessões, tentativas, capturas ou comandos locais.
-O conteúdo das questões SHALL permanecer congelado nesta entrega.
+### Requirement: Somente o acervo aprovado da release
+O banco de produção SHALL receber somente o acervo aprovado na main da release,
+com contagens e digests calculados a partir dessa main. MUST NOT copiar contas,
+identidades externas, sessões, tentativas, capturas ou dumps do PC. O conteúdo
+das questões SHALL permanecer congelado nesta entrega.
 
-#### Scenario: Preparação do destino novo
-- **WHEN** o banco da homologação é inicializado
-- **THEN** Flyway e validação preparam o schema sem importar/aprovar conteúdo
-- **AND** a carga posterior usa pacote explícito do acervo, sem dump completo local
+#### Scenario: Banco novo
+- **WHEN** o banco de produção é inicializado
+- **THEN** Flyway prepara o schema sem importar ou aprovar conteúdo no startup
+- **AND** a carga posterior usa pacote explícito do acervo, sem dump do PC
 
-### Requirement: Operação editorial deliberada e rastreável
-Carga e elegibilidade SHALL usar contratos/UseCases existentes com manifesto,
-fingerprints e destino identificados. Aprovação no computador MUST NOT ser tratada
-como decisão já executada no banco da VPS. CLIs MUST NOT exigir exposição do PG.
+### Requirement: Carga administrativa rastreável
+A carga SHALL usar a importação e as decisões editoriais administrativas existentes,
+por HTTPS e com destino identificado. IDs do destino SHALL ser mapeados por
+origem/fingerprint, e digests derivados SHALL ser recalculados no destino.
+Aprovação no PC MUST NOT ser tratada como decisão já executada na produção.
 
-#### Scenario: Decisão sobre a seleção no destino
-- **WHEN** o usuário verifica manifesto e destino e executa a operação acordada
-- **THEN** as decisões se vinculam às revisões/fingerprints selecionados
-- **AND** finalidade, catálogo, dependências e contagens são conferidos no destino
+#### Scenario: Conferência no destino
+- **WHEN** a carga termina
+- **THEN** contagens, finalidade, catálogo e dependências conferem com o pacote
+- **AND** simulados e práticas mantêm acervos e correção separados
 
 #### Scenario: Reexecução ou divergência
-- **WHEN** a carga é repetida ou detecta revisão/conteúdo inesperado
+- **WHEN** a carga é repetida ou encontra revisão inesperada
 - **THEN** a repetição válida é idempotente e a divergência é recusada sem sobrescrita
-- **AND** simulados/práticas continuam com acervos e correção final separados

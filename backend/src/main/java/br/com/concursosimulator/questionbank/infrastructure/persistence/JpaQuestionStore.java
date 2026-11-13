@@ -23,11 +23,23 @@ import org.hibernate.exception.ConstraintViolationException;
 public class JpaQuestionStore implements QuestionStore, QuestionImportStore {
     private final EntityManager entities;
     private final TransactionTemplate transactions;
+    private final TransactionTemplate reads;
     private final JsonMapper json = JsonMapper.builder().build();
     public JpaQuestionStore(EntityManager entities, PlatformTransactionManager manager) {
         this.entities=entities; transactions=new TransactionTemplate(manager);
         transactions.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRES_NEW);
         transactions.setTimeout(15);
+        reads=new TransactionTemplate(manager); reads.setReadOnly(true); reads.setTimeout(15);
+        reads.setPropagationBehavior(TransactionDefinition.PROPAGATION_REQUIRES_NEW);
+        reads.setIsolationLevel(TransactionDefinition.ISOLATION_REPEATABLE_READ);
+    }
+    /** Leitura administrativa sem trava (#177), com as mesmas verificações de consistência da carga para escrita. */
+    public Optional<Question> read(UUID id) {
+        return reads.execute(status -> {
+            var session=new JpaSession();
+            try { return Optional.ofNullable(entities.find(QuestionRow.class,id)).map(session::load); }
+            finally { session.active=false; }
+        });
     }
     @Override public <T> T transaction(Function<QuestionStore.Session,T> operation) {
         return unit(operation::apply);

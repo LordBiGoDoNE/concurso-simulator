@@ -196,3 +196,39 @@ O controller não lê sessão/JPA, não cria token CSRF e não promove decisões
 Testes usam fixtures e PostgreSQL isolado: não demonstram curadoria real, desempenho de
 produção ou revisão independente. Carga real, publicação e revisão por modelo exigem
 autorizações próprias. A proposta e a implementação local pertencem à issue #160.
+
+## Consulta administrativa do acervo — #177
+
+Para o ADM (ou a IA que o auxilia) conferir o acervo antes de importar ou decidir, há
+rotas **somente leitura** sob `/api/v1/admin/questions` ([#177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177)).
+Mesma exigência de acesso da importação: sessão ADM, permissão e versão persistentes,
+troca inicial concluída; CSRF em POST; respostas `no-store`. Não dependem de
+`destination-id`/`confirmation-key`. Nada é gravado nem reservado. As rotas públicas
+`/api/v1/question-bank/questions` continuam sem gabarito, resolução, estado e fingerprint.
+
+- `GET /api/v1/admin/questions`: página (`page`, `size` até 100, padrão 50) ordenada por
+  namespace, chave e ID, com total. Filtros por AND: `purpose`, `namespace`, `keyPrefix`
+  (prefixo literal da chave), `disciplineId`/`topicId`/`latestStatus` (da última revisão),
+  `hasEligible`, `reviewKind` (`HUMAN_PEER`/`AI_ONLY` da aprovação elegível) e
+  `activityFrom`/`activityTo` (última decisão ou importação registrada). Aprovações
+  históricas sem origem aparecem com `reviewKind: null` e não entram no filtro.
+- `GET /api/v1/admin/questions/{id}`: todas as revisões com conteúdo integral, inclusive
+  gabarito e resolução, no formato de conteúdo do pacote; decisões com sequência, responsável,
+  checklist, justificativa e origem da revisão; recibos de importação relacionados.
+- `POST /api/v1/admin/questions/lookup`: até 1.000 pares `{origin, fingerprint}` de um pacote
+  local. Resultado por par, na ordem enviada: `ABSENT`, `PRESENT` (sem fingerprint),
+  `SAME_AS_LATEST`, `SAME_AS_ELIGIBLE` ou `DIFFERENT`, com IDs/fingerprints atuais e
+  `matchingRevisionId` quando alguma revisão tem o fingerprint informado. POST apenas
+  pelo tamanho do corpo; sem efeitos.
+- `POST /api/v1/admin/questions/export`: `questionIds` (última revisão de cada, até 100) ou
+  `importReceiptId` (revisões do recibo), nunca ambos. Devolve `administrative-question-package/v1`
+  com `expectedLatestRevision: null`, digests e chaves. O pacote é conferido pelo próprio
+  leitor de importação antes da resposta; reimportá-lo resulta em `IDENTICAL`. Recusa com 422
+  `EXPORT_REFUSED` e motivo (`NOT_FOUND`, `MIXED_PURPOSE`, `ORIGIN_NOT_EXPORTABLE` para origens
+  fora do formato administrativo, `MISSING_EVIDENCE` quando fontes/recursos não foram
+  armazenados por importação administrativa, `LIMIT_EXCEEDED`).
+
+Corpos POST: JSON UTF-8 sem compressão, até 2 MiB, sem chaves duplicadas, campos
+desconhecidos ou coerção de tipos (400 `INVALID_REQUEST`); filtros/limites inválidos
+retornam 400 `INVALID_QUERY`. A plataforma não julga conteúdo nem semelhança entre questões:
+a conferência de concorrência e de curadoria é do operador.

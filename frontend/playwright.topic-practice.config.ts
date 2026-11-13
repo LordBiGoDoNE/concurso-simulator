@@ -1,6 +1,7 @@
 import { defineConfig } from '@playwright/test';
 const expansion = process.env.PRACTICE_EXPANSION === '1';
-const uiPort = expansion ? 5393 : 5371, apiPort = expansion ? 19370 : 19160, fixturePort = expansion ? 19371 : 19161;
+const custom = process.env.TOPIC_PRACTICE_PORTS?.split(',').map(Number); // opcional "ui,api,controle"
+const [uiPort, apiPort, fixturePort] = custom?.length === 3 ? custom : expansion ? [5393, 19370, 19371] : [5371, 19160, 19161];
 export default defineConfig({
   testDir: './e2e', testMatch: ['**/topic-practice.real.spec.ts', '**/new-student.spec.ts'], workers: 1, timeout: 60000,
   outputDir: expansion ? 'test-results/practice-expansion' : 'test-results/topic-practice',

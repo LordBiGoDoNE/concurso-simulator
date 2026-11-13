@@ -1,6 +1,8 @@
 import { test, expect, type Page, type BrowserContext } from '@playwright/test';
 const expansion = process.env.PRACTICE_EXPANSION === '1';
-const api = `http://127.0.0.1:${expansion ? 19370 : 19160}`, control = `http://127.0.0.1:${expansion ? 19371 : 19161}`;
+const custom = process.env.TOPIC_PRACTICE_PORTS?.split(',').map(Number);
+const [apiPort, controlPort] = custom?.length === 3 ? [custom[1], custom[2]] : expansion ? [19370, 19371] : [19160, 19161];
+const api = `http://127.0.0.1:${apiPort}`, control = `http://127.0.0.1:${controlPort}`;
 async function account(context: BrowserContext, cookie: string) { await context.addCookies([{ name: 'SESSION', value: cookie, url: api, httpOnly: true, sameSite: 'Lax' }]); }
 async function panel(page: Page) { const details = page.locator('details.lesson-practice-panel'); if (!await details.evaluate(e => (e as HTMLDetailsElement).open)) await details.locator('summary').click(); }
 async function route(page: Page, hash: string) { await page.evaluate(hash => { window.location.hash = hash; }, hash); }

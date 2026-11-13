@@ -21,11 +21,20 @@ import java.util.*;
 
 /** Somente teste/manual isolado da #161, sem fixtures nem rotas no bootJar de produção. */
 public final class TopicPracticeBrowserFixture {
+    /** Portas ui, api e controle; TOPIC_PRACTICE_PORTS="ui,api,controle" evita ambientes locais em uso. */
+    static int[] ports(boolean expansion){
+        var configured=System.getenv("TOPIC_PRACTICE_PORTS");
+        if(configured==null || configured.isBlank())return expansion?new int[]{5393,19370,19371}:new int[]{5371,19160,19161};
+        var p=configured.split(",");
+        if(p.length!=3)throw new IllegalArgumentException("TOPIC_PRACTICE_PORTS=ui,api,controle");
+        return new int[]{Integer.parseInt(p[0].trim()),Integer.parseInt(p[1].trim()),Integer.parseInt(p[2].trim())};
+    }
     public static void main(String[] args) throws Exception {
         boolean restoring=args.length==3 && args[0].equals("--restore");
         if(args.length!=0 && !restoring)throw new IllegalArgumentException("Uso: --restore dump-local sha256");
         boolean expansion="1".equals(System.getenv("PRACTICE_EXPANSION"));
-        int apiPort=expansion?19370:19160, controlPort=expansion?19371:19161, uiPort=expansion?5393:5371;
+        int[] chosen=ports(expansion);
+        int uiPort=chosen[0], apiPort=chosen[1], controlPort=chosen[2];
         var pg=new PostgreSQLContainer("postgres:18.6");pg.start();
         ConfigurableApplicationContext app=null;HttpServer control=null;
         try {

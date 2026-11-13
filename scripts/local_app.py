@@ -47,17 +47,20 @@ def port_available(port):
         check.bind(("127.0.0.1", port))
 
 
-def owned(config):
+LOCAL_PROJECT = r"concurso-simulator-app-local(?:-[a-z0-9]{1,24})?"
+
+
+def owned(config, namespace=LOCAL_PROJECT, owner_label=OWNER_LABEL):
     """Fail before mutations if a project label points at any foreign resource."""
     project = config["project"]
-    if not re.fullmatch(r"concurso-simulator-app-local(?:-[a-z0-9]{1,24})?", project):
-        raise ValueError("Nome de projeto fora do namespace local")
+    if not re.fullmatch(namespace, project):
+        raise ValueError("Nome de projeto fora do namespace esperado")
     for kind, listing, field in [("container", ("ps", "-aq"), ".Config.Labels"),
                                  ("volume", ("volume", "ls", "-q"), ".Labels"),
                                  ("network", ("network", "ls", "-q"), ".Labels")]:
         resources = docker(*listing, "--filter", "label=com.docker.compose.project=" + project).decode().split()
         for resource in resources:
-            token = docker(kind, "inspect", resource, "--format", '{{index ' + field + ' "' + OWNER_LABEL + '"}}').decode().strip()
+            token = docker(kind, "inspect", resource, "--format", '{{index ' + field + ' "' + owner_label + '"}}').decode().strip()
             if token != config["owner"]:
                 raise ValueError("Recurso existente não pertence a este estado; nenhuma adoção automática")
     # Compose may adopt an existing name even if its project label is absent/different.
@@ -69,7 +72,7 @@ def owned(config):
         present = set(docker(*listing).decode().splitlines())
         for name in sorted(expected & present):
             labels = json.loads(docker(kind, "inspect", name, "--format", "{{json " + field + "}}").decode()) or {}
-            if labels.get("com.docker.compose.project") != project or labels.get(OWNER_LABEL) != config["owner"]:
+            if labels.get("com.docker.compose.project") != project or labels.get(owner_label) != config["owner"]:
                 raise ValueError("Nome Docker já ocupado por recurso sem a identidade esperada; nenhuma adoção")
 
 

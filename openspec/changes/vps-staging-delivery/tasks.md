@@ -21,10 +21,13 @@ Implementado e verificado em 2026-11-13 (#212); não integrado. Evidências: `ve
 
 ## 2. Runtime de produção — depende de 1
 
-- [ ] 2.1 Builder de imagens com origem HTTPS de produção explícita, contexto filtrado e manifesto; recusas e testes, sem afrouxar o operador local.
-- [ ] 2.2 Perfil de produção: cookie Secure, CORS canônico, cabeçalhos encaminhados só do proxy interno; testes da cadeia de segurança real.
-- [ ] 2.3 `infra/vps-production`: Compose, operador (init/start/stop/status/update), segredos por arquivo, serviço systemd de usuário, lock e verificação de ownership/colisão.
-- [ ] 2.4 Ensaio na VPS em projeto `concurso-simulator-prod` sem acesso público; regressões, recusas e docs do grupo.
+Implementado e verificado em 2026-11-13 (#213); não integrado. Evidências: `verification/grupo-2.md`.
+
+
+- [x] 2.1 Builder de imagens com origem HTTPS de produção explícita, contexto filtrado e manifesto; recusas e testes, sem afrouxar o operador local.
+- [x] 2.2 Perfil de produção: cookie Secure, CORS canônico, cabeçalhos encaminhados só do proxy interno; testes da cadeia de segurança real.
+- [x] 2.3 `infra/vps-production`: Compose, operador (init/start/stop/status/update), segredos por arquivo, serviço systemd de usuário, lock e verificação de ownership/colisão.
+- [x] 2.4 Ensaio na VPS em projeto `concurso-simulator-prod` sem acesso público; regressões, recusas e docs do grupo.
 
 ## 3. Domínio e TLS — depende de 1
 
@@ -35,24 +38,32 @@ Implementado e verificado em 2026-11-13 (#212); não integrado. Evidências: `ve
 
 ## 4. Google OAuth de produção — depende de 2 e 3
 
-- [ ] 4.1 Roteiro para o usuário criar o client web e publicar a tela de consentimento, com callback exato.
-- [ ] 4.2 Configurar segredos Google na VPS sem expô-los; startup recusa client incompleto.
-- [ ] 4.3 Smoke real: login, sessão, logout, conta nova, retomada e rejeições CSRF/origem.
-- [ ] 4.4 Evidências sanitizadas e docs do grupo.
+Implementado em 2026-11-13 (#219); ativação e smoke adiados pelo usuário para a #221. Não integrado.
+
+- [x] 4.1 Roteiro para o usuário criar o client web e publicar a tela de consentimento, com callback exato.
+- [x] 4.2 Configurar segredos Google na VPS sem expô-los; startup recusa client incompleto.
+- [ ] 4.3 Smoke real: login, sessão, logout, conta nova, retomada e rejeições CSRF/origem. Adiado para a #221.
+- [x] 4.4 Evidências sanitizadas e docs do grupo.
 
 ## 5. Acervo — depende de 2 e 3
 
-- [ ] 5.1 Preparar o pacote do acervo aprovado a partir da main da release, com contagens/digests calculados e remapeamento R1.
-- [ ] 5.2 Carregar pelo fluxo administrativo existente (importação e decisões em lote) no banco de produção, por HTTPS.
-- [ ] 5.3 Conferir idempotência, linhagem, finalidade e ausência de contas/sessões/tentativas do PC.
-- [ ] 5.4 Validar simulado, prática por assunto e revisão nos dois cargos; docs do grupo.
+Expansão 2026-11 carregada e verificada em 2026-11-13 (#220); conjuntos de outubro fora do escopo por decisão do usuário. Não integrado. Evidências: `verification/grupo-5.md`.
+
+
+- [x] 5.1 Preparar o pacote do acervo aprovado a partir da main da release, com contagens/digests calculados e remapeamento R1.
+- [x] 5.2 Carregar pelo fluxo administrativo existente (importação e decisões em lote) no banco de produção, por HTTPS.
+- [x] 5.3 Conferir idempotência, linhagem, finalidade e ausência de contas/sessões/tentativas do PC.
+- [x] 5.4 Validar simulado, prática por assunto e revisão nos dois cargos; docs do grupo.
 
 ## 6. Backup, atualização e recuperação — depende de 2; ensaio final usa 5
 
-- [ ] 6.1 Backup consistente com manifesto e cópia privada para o PC.
-- [ ] 6.2 Restauração em projeto/volume novo com sessões invalidadas e conferência.
-- [ ] 6.3 Atualização de release com backup obrigatório, falha de migração e rollback compatível.
-- [ ] 6.4 Ensaio completo na VPS, com artefato inválido e destino ocupado recusados; docs do grupo.
+Implementado em 2026-11-13; 6.1–6.4 verificados na VPS, inclusive troca de release e rollback reais. Não integrado. Evidências: `verification/grupo-6.md`.
+
+
+- [x] 6.1 Backup consistente com manifesto e cópia privada para o PC.
+- [x] 6.2 Restauração em projeto/volume novo com sessões invalidadas e conferência.
+- [x] 6.3 Atualização de release com backup obrigatório, falha de migração e rollback compatível.
+- [x] 6.4 Ensaio completo na VPS, com artefato inválido e destino ocupado recusados; docs do grupo.
 
 ## 7. Abertura e gate — depende de 1–6
 

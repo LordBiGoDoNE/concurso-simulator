@@ -1,8 +1,9 @@
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import LoginPanel from './LoginPanel';
 import QuestionBrowser from './QuestionBrowser';
 import AttemptWorkspace from './AttemptWorkspace';
-import LessonPracticeWorkspace from './LessonPracticeWorkspace';
+import LessonPracticeWorkspace, { type PracticeRequest } from './LessonPracticeWorkspace';
+import type { TopicShortcuts } from './AttemptResult';
 import StudyHome from './StudyHome';
 import LessonLibrary, { LessonPagination } from './LessonLibrary';
 import { lessons, lessonSupportsRole } from './study-catalog';
@@ -39,6 +40,8 @@ export default function App() {
   const setGuestActive = useCallback((value: boolean) => { guestActive.current.attempt = value; }, []);
   const setPracticeGuestActive = useCallback((value: boolean) => { guestActive.current.practice = value; }, []);
   const backToLesson = useCallback((id:string) => { const topic=lessons.find(t=>t.id===id); updateRoute({ area: 'lessons', topicId: id, roleId: topic && lessonSupportsRole(topic,route.roleId) ? route.roleId : '' }); }, [updateRoute,route.roleId]);
+  const [practiceRequest, setPracticeRequest] = useState<PracticeRequest>();
+  const shortcuts = useMemo<TopicShortcuts>(() => ({ review: backToLesson, practice: id => { backToLesson(id); setPracticeRequest(r => ({ topicId: id, nonce: (r?.nonce ?? 0) + 1 })); } }), [backToLesson]);
   const lastAccountId = useRef<string | null>(null);
   const changedIdentity = useCallback((value: CurrentIdentity | null) => {
     if (value?.connected) {
@@ -86,9 +89,9 @@ export default function App() {
       </div>
       {privateNotice && <p role="status">{privateNotice}</p>}
       {checking && area === 'attempts' && <p role="status">Conferindo acesso aos simulados…</p>}
-      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} />}</div>
+      <div hidden={checking || area !== 'attempts'}>{identity && <AttemptWorkspace key={identity.connected ? identity.id : 'visitor'} identity={identity} contextActive={!checking} reviewActive={!checking && area === 'attempts'} onUnavailable={privateUnavailable} onGuestActive={setGuestActive} onRunActiveChange={setRunActive} shortcuts={shortcuts} />}</div>
       <div hidden={area !== 'lessons'}>{(lessonsOpened || area === 'lessons') && <LessonLibrary location={route} onLocationChange={(value, replace) => updateRoute({ ...value, area: 'lessons' }, replace)} showPagination={false} />}</div>
-      <div hidden={lesson ? false : checking || area !== 'practice'}><LessonPracticeWorkspace key={identity ? identity.connected ? identity.id : 'visitor' : 'no-identity'} identity={identity} contextActive={!checking && identity !== null} inlineLesson={lesson ? { topic: lesson } : undefined} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson}/></div>
+      <div hidden={lesson ? false : checking || area !== 'practice'}><LessonPracticeWorkspace key={identity ? identity.connected ? identity.id : 'visitor' : 'no-identity'} identity={identity} contextActive={!checking && identity !== null} inlineLesson={lesson ? { topic: lesson } : undefined} onUnavailable={privateUnavailable} onGuestActive={setPracticeGuestActive} onChooseLesson={()=>openLessons()} onBackToLesson={backToLesson} shortcuts={shortcuts} practiceRequest={practiceRequest}/></div>
       {lesson && <LessonPagination topicId={lesson.id} roleId={route.roleId} onSelect={topicId => updateRoute({ topicId })} />}
       <div hidden={area !== 'questions'}><QuestionBrowser /></div>
       <footer className="availability">

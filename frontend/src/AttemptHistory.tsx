@@ -14,16 +14,17 @@ export default function AttemptHistory({ refresh, onOpen, onUnavailable }: { ref
     return () => { active = false; controller.abort(); };
   }, [key, page, onUnavailable]);
   const current = data?.key === key ? data : null;
-  return <section aria-labelledby="attempt-history-title"><h3 id="attempt-history-title">Histórico de simulados</h3>
-    <p>Somente respostas confirmadas são retomadas pela conta. Página {page + 1}.</p>
-    <button onClick={() => setRetry(v => v + 1)}>Atualizar histórico</button>
+  return <section className="history-panel" aria-labelledby="attempt-history-title">
+    <header className="history-head"><div><h3 id="attempt-history-title">Histórico de simulados</h3>
+      <p>Somente respostas confirmadas são retomadas pela conta. Página {page + 1}.</p></div>
+      <button className="secondary" onClick={() => setRetry(v => v + 1)}>Atualizar histórico</button></header>
     {!current && <p role="status">Carregando histórico…</p>}
     {current?.failed && <p role="alert">Histórico indisponível. Tente atualizar; não é uma lista vazia confirmada.</p>}
-    {current?.value && <>{!current.value.items.length && <p>Nenhuma tentativa nesta página.</p>}<ul className="attempt-history">{current.value.items.map(e => <li key={e.id}>
-      <p>{attemptRoleTitle(e.roleId)} — {new Date(e.createdAt).toLocaleString('pt-BR')} — {e.total} questões.</p>
-      <p>{e.finishedAt === null ? 'Em andamento — sem nota parcial.' : `Concluído — ${e.percentage?.toLocaleString('pt-BR')}%.`}</p>
-      <button onClick={() => onOpen(e.id)}>Abrir simulado de {new Date(e.createdAt).toLocaleString('pt-BR')}</button>
+    {current?.value && <>{!current.value.items.length && <p>Nenhuma tentativa nesta página.</p>}<ul className="attempt-history">{current.value.items.map(e => <li key={e.id} className={e.finishedAt === null ? 'history-open' : 'history-done'}>
+      <p className="history-entry-title">{attemptRoleTitle(e.roleId)} — {new Date(e.createdAt).toLocaleString('pt-BR')} — {e.total} questões.</p>
+      <p className="history-entry-status">{e.finishedAt === null ? 'Em andamento — sem nota parcial.' : `Concluído — ${e.percentage?.toLocaleString('pt-BR')}%.`}</p>
+      <button className="secondary" onClick={() => onOpen(e.id)}>Abrir simulado de {new Date(e.createdAt).toLocaleString('pt-BR')}</button>
     </li>)}</ul></>}
-    <nav aria-label="Paginação do histórico"><button disabled={!current?.value || page === 0} onClick={() => setPage(v => v - 1)}>Página anterior do histórico</button><button disabled={!current?.value || current.value.items.length < current.value.size} onClick={() => setPage(v => v + 1)}>Próxima página do histórico</button></nav>
+    <nav className="history-pagination" aria-label="Paginação do histórico"><button disabled={!current?.value || page === 0} onClick={() => setPage(v => v - 1)}>Página anterior do histórico</button><button disabled={!current?.value || current.value.items.length < current.value.size} onClick={() => setPage(v => v + 1)}>Próxima página do histórico</button></nav>
   </section>;
 }

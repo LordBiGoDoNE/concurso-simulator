@@ -77,3 +77,16 @@ it('consulta coerente após criação concorrente preserva escolha local e coman
   fireEvent.click(screen.getByRole('button', { name: 'Repetir salvamento' }));await waitFor(() => expect(writes()).toHaveLength(2));expect(writes()[1][1]?.body).toBe(firstBody);
   expect(screen.getAllByRole('radio')[0]).toBeChecked();expect(localStorage.length).toBe(0);expect(sessionStorage.length).toBe(0);
 });
+
+it('atalhos do resultado abrem a aula e o painel de prática do assunto sem perder o resultado nem iniciar prática', async () => {
+  api(null);vi.mocked(individualReview).mockResolvedValue(individual());render(<App />);fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));
+  fireEvent.click(await screen.findByRole('button', { name: 'Iniciar simulado' }));await screen.findByRole('heading', { name: 'Questão 1 de 1' });
+  fireEvent.click(screen.getByRole('button', { name: 'Concluir simulado' }));fireEvent.click(screen.getByRole('button', { name: 'Confirmar conclusão' }));await screen.findByRole('heading', { name: 'Resultado do simulado' });
+  fireEvent.click(screen.getByRole('button', { name: 'Rever a aula P01, questão 1' }));
+  await waitFor(() => expect(window.location.hash).toBe('#/aulas/P01'));
+  expect(screen.getByText('Pratique esta aula').closest('details')).not.toHaveAttribute('open');
+  fireEvent.click(screen.getByRole('button', { name: 'Simulados' }));expect(screen.getByRole('heading', { name: 'Resultado do simulado' })).toBeVisible();
+  fireEvent.click(screen.getByRole('button', { name: 'Praticar este assunto, P01, questão 1' }));
+  await waitFor(() => expect(screen.getByText('Pratique esta aula').closest('details')).toHaveAttribute('open'));
+  expect(vi.mocked(fetch).mock.calls.some(([url, options]) => String(url).includes('lesson-practice') && options?.method === 'POST')).toBe(false);
+});

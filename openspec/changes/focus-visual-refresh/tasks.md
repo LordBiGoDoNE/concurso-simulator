@@ -33,9 +33,9 @@ abaixo estão implementados e verificados localmente em
 
 ## 4. Resultado e histórico (depende de 1 e 3)
 
-- [ ] 4.1 Criar o resumo do resultado com barra proporcional e legenda numérica, e os rótulos "Correta", "Errada" e "Em branco" com ícone.
-- [ ] 4.2 Adicionar o filtro "Erros e em branco" e os atalhos "Rever a aula" e "Praticar este assunto" pelo `topicId`, respeitando realizações em andamento.
-- [ ] 4.3 Aplicar Foco ao histórico e à paginação, concluir as regressões e a documentação.
+- [x] 4.1 Criar o resumo do resultado com barra proporcional e legenda numérica, e os rótulos "Correta", "Errada" e "Em branco" com ícone.
+- [x] 4.2 Adicionar o filtro "Erros e em branco" e os atalhos "Rever a aula" e "Praticar este assunto" pelo `topicId`, respeitando realizações em andamento.
+- [x] 4.3 Aplicar Foco ao histórico e à paginação, concluir as regressões e a documentação.
 
 ## 5. Aulas e prática da aula (depende de 1)
 

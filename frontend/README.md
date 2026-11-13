@@ -148,3 +148,15 @@ Folhas por área (grupos 2, 3 e 5): `src/styles/shell.css` (navegação, barra
 superior, sessão e início) é importada pelo `App`. Regras globais de base
 (botões, campos, seções) continuam em `style.css`, que o `main.tsx` carrega antes
 do `App` para que as folhas de área prevaleçam.
+
+Resultado e histórico (grupo 4, em `src/styles/attempt.css` e `style.css`): o
+resumo mostra uma barra proporcional sempre acompanhada de legenda numérica, e
+cada questão revisada traz o estado em texto ("Correta", "Errada", "Em branco");
+a cor e o ícone só reforçam. O filtro "Erros e em branco" é estado local e mantém
+a numeração original. "Rever a aula" e "Praticar este assunto" usam o
+`classification.topicId` da questão e só aparecem quando há aula nativa do
+assunto. "Praticar" abre a aula com o painel de prática aberto, sem criar nem
+trocar prática: começar continua exigindo o botão e a confirmação de troca. Os
+cartões dos históricos de simulados e de práticas compartilham `.attempt-history`.
+`e2e/result-history.spec.ts` cobre resultado, filtro, atalhos e histórico nos dois
+temas, em 390px e 1440px, com medição de contraste do texto.

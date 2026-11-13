@@ -29,9 +29,17 @@ nav[aria-label="Paginação de questões"] { display: flex; flex-wrap: wrap; gap
 #attempt-role { display: block; max-width: 100%; font: inherit; padding: 10px; }
 .attempt-topic, .attempt-options label { display: flex; align-items: start; gap: 10px; padding: 8px 0; overflow-wrap: anywhere; }
 .attempt-options input, .attempt-topic input { flex-shrink: 0; margin-top: .6em; }
-.attempt-history { padding-left: 20px; }
-.attempt-history li { margin: 20px 0; overflow-wrap: anywhere; }
-.attempt-history button { max-width: 100%; white-space: normal; }
+/* Históricos de simulados e de práticas: lista de cartões com estado em texto. */
+.history-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: start; gap: 12px 20px; }
+.history-head p { margin: 4px 0 0; color: var(--muted); font-size: .9rem; }
+.attempt-history { list-style: none; padding: 0; margin: 16px 0; display: grid; gap: 10px; }
+.attempt-history li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 16px; padding: 16px 20px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); overflow-wrap: anywhere; }
+.attempt-history li p { margin: 0; grid-column: 1; }
+.attempt-history li > button { grid-column: 2; grid-row: 1 / span 3; max-width: 100%; white-space: normal; }
+.history-entry-title { font-weight: 650; }
+.history-entry-status { font-size: .9rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.history-done .history-entry-status { color: var(--teal); }
+@media (max-width: 600px) { .attempt-history li { grid-template-columns: 1fr; } .attempt-history li > button { grid-column: 1; grid-row: auto; margin-top: 8px; } }
 #mock-exam-title ~ nav, nav[aria-label="Navegação do simulado"], nav[aria-label="Paginação do histórico"] { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }
 dialog { border: 1px solid var(--line-strong); border-radius: 12px; padding: 24px; max-width: min(38rem, calc(100vw - 2rem)); color: inherit; }
 dialog::backdrop { background: var(--backdrop); }

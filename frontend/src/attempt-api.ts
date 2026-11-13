@@ -6,7 +6,7 @@ export interface RunView { id: string; createdAt: string; finishedAt: string | n
 export interface AttemptView extends RunView { roleId: string }
 export interface Composition { roleId: string; disciplines: { disciplineId: string; quantity: number; topicIds: string[] }[]; useParameterizedQuestions?: boolean }
 export interface Answer { commandId: string; expectedVersion: number; alternativeId: string | null }
-export interface Result { total: number; points: number; correct: number; wrong: number; blank: number; percentage: number; items: { item: AttemptItem; correctAnswer: Content; explanation: Content }[] }
+export interface Result { total: number; points: number; correct: number; wrong: number; blank: number; percentage: number; items: { item: AttemptItem; correctAlternativeId: string; correctAnswer: Content; explanation: Content }[] }
 export interface RunFinished { attempt: RunView; result: Result }
 export interface Finished extends RunFinished { attempt: AttemptView }
 export interface HistoryItem { id: string; roleId: string; createdAt: string; finishedAt: string | null; total: number; percentage: number | null }

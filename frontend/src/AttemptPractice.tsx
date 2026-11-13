@@ -4,7 +4,7 @@ import type { RunView } from './attempt-api';
 import { useAttemptRun } from './useAttemptRun';
 import ConfirmAttemptFinish from './ConfirmAttemptFinish';
 import AttemptText from './AttemptText';
-import AttemptResult from './AttemptResult';
+import AttemptResult, { type TopicShortcuts } from './AttemptResult';
 import IndividualSubjectReview from './IndividualSubjectReview';
 
 
@@ -12,7 +12,7 @@ import { type RunTransport } from './attempt-api';
 import type { DirectedPractice } from './directed-practice';
 
 export interface AttemptPracticeHandle { canReplace: () => boolean }
-export default function AttemptPractice({ initial, onUnavailable, onFinished, reviewActive = true, onPractice, ref, practice = false, transport }: { practice?: boolean; transport?: RunTransport; ref?: Ref<AttemptPracticeHandle>; reviewActive?: boolean; initial: RunView; onUnavailable: () => void; onFinished?: (view: RunView) => void; onPractice?: (selection: DirectedPractice) => void }) {
+export default function AttemptPractice({ initial, onUnavailable, onFinished, reviewActive = true, onPractice, ref, practice = false, transport, shortcuts }: { shortcuts?: TopicShortcuts; practice?: boolean; transport?: RunTransport; ref?: Ref<AttemptPracticeHandle>; reviewActive?: boolean; initial: RunView; onUnavailable: () => void; onFinished?: (view: RunView) => void; onPractice?: (selection: DirectedPractice) => void }) {
   const run = useAttemptRun(initial, onUnavailable, transport); const [position, setPosition] = useState(0); const heading = useRef<HTMLHeadingElement>(null);
   useImperativeHandle(ref, () => ({ canReplace: run.canReplace }));
   const [confirm, setConfirm] = useState(false); const finishButton = useRef<HTMLButtonElement>(null);
@@ -24,7 +24,7 @@ export default function AttemptPractice({ initial, onUnavailable, onFinished, re
   const answered = run.view.items.filter(i => run.selected(i) !== null).length;
   if (run.view.finishedAt !== null) return <>
     {run.message && <p role="alert">{run.message}</p>}
-    {run.result ? <AttemptResult result={run.result} practice={practice} /> : <p role="status">Carregando resultado do servidor…</p>}
+    {run.result ? <AttemptResult result={run.result} practice={practice} shortcuts={shortcuts} /> : <p role="status">Carregando resultado do servidor…</p>}
     {!practice && 'roleId' in initial && typeof initial.roleId === 'string' && run.result && <IndividualSubjectReview attemptId={run.view.id} roleId={initial.roleId} active={reviewActive} onPractice={onPractice} onUnavailable={onUnavailable} />}
     {run.resultFailed && <><p role="alert">Resultado indisponível. A tentativa continua concluída no servidor.</p><button onClick={() => void run.loadResult()}>Tentar resultado novamente</button></>}
   </>;

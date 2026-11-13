@@ -38,9 +38,10 @@ respostas, identidade ou dados de tentativa.
 ### Requirement: Contraste e foco nos dois temas
 
 Texto SHALL ter contraste de pelo menos 4,5:1 sobre as superfícies em que é usado,
-ou 3:1 a partir de 24px ou de 19px em negrito. Bordas de controles, ícones com
-significado e o anel de foco SHALL ter pelo menos 3:1 em todas as superfícies,
-nos dois temas.
+ou 3:1 a partir de 24px ou de 19px em negrito. Bordas de campos, contornos que
+indicam estado, ícones com significado e o anel de foco SHALL ter pelo menos 3:1
+em todas as superfícies, nos dois temas. Botões e cartões identificados pelo
+próprio texto podem usar borda decorativa, conforme a WCAG 1.4.11.
 
 #### Scenario: Navegação por teclado no tema escuro
 
@@ -52,6 +53,12 @@ nos dois temas.
 - **WHEN** a suíte do frontend é executada
 - **THEN** cada par de texto ou controle declarado é medido nos dois temas
 - **AND** qualquer par abaixo do mínimo falha o teste
+
+#### Scenario: Questão respondida no mapa
+
+- **WHEN** uma questão aparece como respondida no mapa de questões
+- **THEN** o contorno que marca esse estado tem pelo menos 3:1 sobre o cartão e
+  sobre o próprio preenchimento, nos dois temas
 
 ### Requirement: Fonte empacotada e local
 

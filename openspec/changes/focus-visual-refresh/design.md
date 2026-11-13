@@ -69,12 +69,19 @@ Os tokens preservam os nomes semânticos atuais e ajustam os valores:
 | `blue` | `#2457d6` | `#8fb0ff` | ação principal |
 | `on-blue` | `#ffffff` | `#0f1724` | texto sobre `blue` |
 | `blue-soft` | `#e9f0ff` | `#1d3157` | seleção e item ativo |
+| `blue-border` | `#6a89c2` | `#6283bd` | contorno do estado "respondida" no mapa (≥3:1 em `paper` e `blue-soft`) |
 | `teal` | `#0f6f68` | `#5fd0c3` | eyebrow, salvo, acerto |
 | `warning` | `#9a3f07` | `#f0a050` | erro de resposta, falha ao salvar |
 | `focus` | `#b35c00` | `#f0a050` | anel de foco (≥3:1 em `canvas` e `paper`) |
 
 Os valores finais são confirmados pelo teste de contraste do grupo 1. Se um par
 falhar, o ajuste é de luminosidade, mantendo o matiz.
+
+O mínimo de 3:1 vale para bordas de campos, contornos que indicam estado (como
+"respondida" no mapa de questões) e o anel de foco. Botões e cartões que se
+identificam pelo próprio texto (cartões de disciplina e de aula) podem usar a
+borda decorativa `line`, como permite a WCAG 1.4.11; o foco e o texto continuam
+com os mínimos normais. Revisão final FVR2-L3, 2026-11-13.
 
 ### Tipografia
 

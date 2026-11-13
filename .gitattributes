@@ -1,0 +1,9 @@
+# Preserve os bytes dos snapshots: manifestos e evidências usam SHA-256.
+acervo-local/** -text whitespace=cr-at-eol
+backend/build/question-expansion/** -text whitespace=cr-at-eol
+acervo-local/**/*.pdf binary
+acervo-local/**/*.png binary
+acervo-local/**/*.zip binary
+backend/build/question-expansion/**/*.pdf binary
+backend/build/question-expansion/**/*.png binary
+backend/build/question-expansion/**/*.zip binary

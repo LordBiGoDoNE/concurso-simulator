@@ -1,0 +1,2007 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-busca-formato-pdf"
+        },
+        "content": {
+          "statement": {
+            "text": "Na Pesquisa Google, a equipe procura manuais em PDF. Qual operador restringe o formato indicado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "eefa4e90-789b-534b-958e-42433cef5566",
+              "content": {
+                "text": "manual site:pdf, como se pdf fosse necessariamente o domínio desejado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ab8920e9-cad6-52b7-82d6-4897d7cc0b0f",
+              "content": {
+                "text": "manual before:pdf, usando um formato como data.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a81b7d41-ddef-5781-9394-44c98f98e72c",
+              "content": {
+                "text": "manual filetype:pdf.",
+                "resources": []
+              }
+            },
+            {
+              "id": "874b07b0-f84c-5bc0-852f-85705ff4ad82",
+              "content": {
+                "text": "manual -pdf, que exclui o termo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a81b7d41-ddef-5781-9394-44c98f98e72c",
+          "resolution": {
+            "text": "1. filetype: seleciona o tipo de arquivo informado. 2. Menos é exclusão, site: trata domínio e before: trabalha com data, não formato.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Google Search Central — Operadores de pesquisa do Google (filetype: e site:)",
+              "url": "https://developers.google.com/search/docs/monitor-debug/search-operators",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-busca-formato-pdf.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-busca-formato-pdf.json",
+            "contentSha256": "46652ce7a925fe43517265c6251d2b38fc0e8c27b9c2bf6f90ec1063eec78d26",
+            "answerSha256": "46652ce7a925fe43517265c6251d2b38fc0e8c27b9c2bf6f90ec1063eec78d26"
+          }
+        },
+        "fingerprint": "4b6d680d640dc9fb0128d50ed81f03685d2c0a01b0141f3f59957a4d3cd69fd6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-busca-site-sintaxe"
+        },
+        "content": {
+          "statement": {
+            "text": "Na Pesquisa Google, qual consulta aplica corretamente a restrição ao domínio exemplo.gov.br?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c6a9f8c7-6e70-58b9-a502-d5708f84fb2a",
+              "content": {
+                "text": "edital site:exemplo.gov.br.",
+                "resources": []
+              }
+            },
+            {
+              "id": "47e975ef-0d21-5507-85ee-d9f937bd8d3d",
+              "content": {
+                "text": "edital site: exemplo.gov.br, separando o operador de seu valor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b1547e3a-e828-59ce-9cb0-c788aca3f194",
+              "content": {
+                "text": "edital -exemplo.gov.br, como se menos fosse o operador de restrição a domínio.",
+                "resources": []
+              }
+            },
+            {
+              "id": "27819fd4-91f5-5608-a758-9d08fa7797e6",
+              "content": {
+                "text": "edital \"site\" sem o domínio.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c6a9f8c7-6e70-58b9-a502-d5708f84fb2a",
+          "resolution": {
+            "text": "1. site: deve ser seguido pelo domínio sem espaço entre os dois. 2. Espaço rompe a sintaxe solicitada; menos exclui um termo e a palavra site isolada não seleciona o domínio.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Google Search Central — Operador de pesquisa site:",
+              "url": "https://developers.google.com/search/docs/monitor-debug/search-operators/all-search-site",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-busca-site-sintaxe.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-busca-site-sintaxe.json",
+            "contentSha256": "ae2cd825fcdbc5044e3ebe13937415445107b2ee2f4738dbd3ccd561e397d474",
+            "answerSha256": "ae2cd825fcdbc5044e3ebe13937415445107b2ee2f4738dbd3ccd561e397d474"
+          }
+        },
+        "fingerprint": "27092216dfcd876c3c9b1a27dbd144646dd4ab508d9c395bccff55d84ccf2c42",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-cache-proposito"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox, qual é uma finalidade do cache de conteúdo web?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e5665088-4cf2-5920-8052-943f5b8f2a58",
+              "content": {
+                "text": "Servir como substituto universal do servidor do site.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a7270e3a-7474-5c37-88cf-f24b60c61e0e",
+              "content": {
+                "text": "Impedir qualquer atualização de páginas para sempre.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0afe912a-259c-5895-b8ce-1789735fca16",
+              "content": {
+                "text": "Guardar alguns recursos de sites localmente para evitar baixá-los novamente em todo acesso.",
+                "resources": []
+              }
+            },
+            {
+              "id": "efb76dad-8a61-5e6b-af2c-a2e5aedaebc5",
+              "content": {
+                "text": "Guardar obrigatoriamente todas as senhas em texto visível na página.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "0afe912a-259c-5895-b8ce-1789735fca16",
+          "resolution": {
+            "text": "1. O cache reutiliza recursos já obtidos e pode reduzir transferências repetidas. 2. Ele não é definido como depósito obrigatório de senhas, não substitui todo serviço remoto e pode ser atualizado ou limpo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sites exibidos errados ou que não funcionam como deveriam",
+              "url": "https://support.mozilla.org/pt-BR/kb/sites-exibidos-errados-ou-nao-funcionam-como-deveriam",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-cache-proposito.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-cache-proposito.json",
+            "contentSha256": "d5b3775b399b61529a2d76b8affb4aecf1c21d2201ec3324d1f28db9ed4ed035",
+            "answerSha256": "d5b3775b399b61529a2d76b8affb4aecf1c21d2201ec3324d1f28db9ed4ed035"
+          }
+        },
+        "fingerprint": "0b01feb95d4a53e7f413d36232eef9f2bd916bbdd7796824249eb39436f2a34b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-cookies-funcao"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox, cookies podem armazenar que tipo de informação associada a um site?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7b7421ac-ba11-59c6-b92f-e65170d101e3",
+              "content": {
+                "text": "Preferências do site e estado de acesso da sessão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c0c37f50-9c0a-5aaf-8dc8-17c6a71f2cd8",
+              "content": {
+                "text": "Obrigatoriamente o conteúdo completo de todo arquivo do computador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "92f7bb0a-09dd-516a-9a0e-3bd12ac81429",
+              "content": {
+                "text": "Somente o número de série físico do monitor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f917dbf5-65da-52e2-9ae6-d6e52f66e989",
+              "content": {
+                "text": "Apenas o histórico de impressão, sem relação com sites.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7b7421ac-ba11-59c6-b92f-e65170d101e3",
+          "resolution": {
+            "text": "1. Cookies são dados armazenados por sites e podem manter preferências e informações de sessão. 2. Não se definem como cópia integral de arquivos pessoais, número do monitor ou histórico exclusivo de impressora.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Limpe cookies e dados de sites no Firefox",
+              "url": "https://support.mozilla.org/pt-BR/kb/limpe-cookies-e-dados-de-sites-no-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-cookies-funcao.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-cookies-funcao.json",
+            "contentSha256": "33992ef00cc0f16e7b09c34b5e8e1f4fe9d3b50dcba96b34aba720eec065b581",
+            "answerSha256": "33992ef00cc0f16e7b09c34b5e8e1f4fe9d3b50dcba96b34aba720eec065b581"
+          }
+        },
+        "fingerprint": "a0982e41ea33e95f5736e9655a466ac9aa5643c0f22ad5ed866de774d7f9ef74",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-ctrlf-pagina-atual"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox de desktop para Windows, o usuário quer encontrar uma palavra dentro da página já aberta, sem iniciar uma pesquisa geral na Web. Qual recurso deve usar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fd886973-2bc7-5781-98eb-bf7112db97ac",
+              "content": {
+                "text": "Exportar todos os favoritos para HTML.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bba1c70e-1ad7-5db8-b750-b1dcbd8ef984",
+              "content": {
+                "text": "Abrir a fila de mensagens do cliente de e-mail.",
+                "resources": []
+              }
+            },
+            {
+              "id": "00e0130a-9014-5809-8deb-cea3ba746b1d",
+              "content": {
+                "text": "Localizar na página, com Ctrl+F.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e0d173a9-199c-50b2-86cd-67587a3163bd",
+              "content": {
+                "text": "Digitar uma consulta no buscador como se isso examinasse apenas a página atual.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "00e0130a-9014-5809-8deb-cea3ba746b1d",
+          "resolution": {
+            "text": "1. Ctrl+F abre a busca no conteúdo da página corrente. 2. Busca Web pode consultar outras páginas; exportação de favoritos e fila de e-mail não localizam texto da página.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Procurar conteúdo na página atual",
+              "url": "https://support.mozilla.org/pt-PT/kb/procurar-conteudos-pagina-atual-texto-links",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-ctrlf-pagina-atual.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-ctrlf-pagina-atual.json",
+            "contentSha256": "cc53cbbbc3480180d6dc097baa2718da3e3dd0f51a2986d5e1835a14eca6e8d8",
+            "answerSha256": "cc53cbbbc3480180d6dc097baa2718da3e3dd0f51a2986d5e1835a14eca6e8d8"
+          }
+        },
+        "fingerprint": "18fcd2013806836988773196805adfc6f51294b037c05dc14d5d80ff465a02ff",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-diagnostico-navegador"
+        },
+        "content": {
+          "statement": {
+            "text": "Um site não carrega corretamente no Firefox. Qual teste simples ajuda a distinguir problema específico do navegador de uma falha mais ampla do próprio site?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6680658e-dbbc-5dc9-9022-405e45f96d10",
+              "content": {
+                "text": "Mudar o nome de um arquivo sem relação com o site.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2ddb9f23-e8f8-59c7-b672-e9464cdd1928",
+              "content": {
+                "text": "Imprimir uma página em branco.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8f7b541a-7472-5971-b464-1bcbac8d0f67",
+              "content": {
+                "text": "Abrir o mesmo site em outro navegador e comparar o resultado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "084e6ea7-d0be-56f2-bc9c-47ef71698e28",
+              "content": {
+                "text": "Alterar somente a velocidade do ponteiro do mouse.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8f7b541a-7472-5971-b464-1bcbac8d0f67",
+          "resolution": {
+            "text": "1. A comparação entre navegadores ajuda a delimitar se a falha é específica de uma configuração local. 2. Ponteiro, nome de arquivo alheio e impressão em branco não exercitam o carregamento do site. O teste sugere a origem, não prova sozinho toda a causa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sites exibidos errados ou que não funcionam como deveriam",
+              "url": "https://support.mozilla.org/pt-BR/kb/sites-exibidos-errados-ou-nao-funcionam-como-deveriam",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-diagnostico-navegador.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-diagnostico-navegador.json",
+            "contentSha256": "69271bf238f010289dd2abc73fe5c9e031022e60bce2fb40157193be2ae27d7b",
+            "answerSha256": "69271bf238f010289dd2abc73fe5c9e031022e60bce2fb40157193be2ae27d7b"
+          }
+        },
+        "fingerprint": "1339af13643f8704ab4d58299727742b50ef219fee8ee7bbb463dbcdca51d7d1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-download-abrir-aplicativo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox de desktop, escolher abrir um arquivo com outro aplicativo significa que nenhum arquivo será baixado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f06967ac-c5f7-5ee1-a00f-e0bdd551d567",
+              "content": {
+                "text": "Não; o arquivo também é baixado para poder ser aberto no aplicativo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bd5a4ee7-7656-5a8a-9a59-b7c869adfe63",
+              "content": {
+                "text": "Sim; o aplicativo recebe apenas o nome do arquivo e nunca seu conteúdo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6cdeb707-dc20-51b3-86f8-820540ee1a64",
+              "content": {
+                "text": "Sim; abrir com outro aplicativo apaga automaticamente a origem no servidor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7ea0a18b-ddea-543f-b2eb-f87d150959d7",
+              "content": {
+                "text": "Não; isso obriga a instalar um novo navegador para cada arquivo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f06967ac-c5f7-5ee1-a00f-e0bdd551d567",
+          "resolution": {
+            "text": "1. Abrir em um aplicativo continua exigindo a transferência do conteúdo. 2. Não é mera transmissão de nome, exclusão remota nem instalação obrigatória de navegador.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Tipos de conteúdo e ações de download",
+              "url": "https://support.mozilla.org/pt-BR/kb/gerencie-tipos-de-conteudo-e-acoes-de-download-no-",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-download-abrir-aplicativo.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-download-abrir-aplicativo.json",
+            "contentSha256": "237afa3102fe855ad87da0472c2c971aaf07aca83eb367dbe327b0372aba15bf",
+            "answerSha256": "237afa3102fe855ad87da0472c2c971aaf07aca83eb367dbe327b0372aba15bf"
+          }
+        },
+        "fingerprint": "f2d4f250e79f5a77e063dc23790af0ea43c5200101ec64cdec1722e75b081383",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-downloads-andamento"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox para desktop, qual informação deve ser conferida antes de concluir que um arquivo solicitado foi baixado por inteiro?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1f69152e-d97c-5077-a2c3-311bd4f08f35",
+              "content": {
+                "text": "Somente o título da aba, que prova a integridade de todo arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f41c715c-d56a-576b-8393-d0cf4e44226c",
+              "content": {
+                "text": "Somente a existência do botão Downloads, independentemente do status.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d51b0f50-767c-5573-9b69-087f988a27de",
+              "content": {
+                "text": "O status do item no painel de Downloads, distinguindo andamento, falha e conclusão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "638a064a-261a-57cc-a59b-f6771e56d5cb",
+              "content": {
+                "text": "Somente o fato de ter clicado no link, que garante conclusão.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d51b0f50-767c-5573-9b69-087f988a27de",
+          "resolution": {
+            "text": "1. O painel informa o estado da transferência; iniciar o pedido não equivale a completá-lo. 2. Clique, título e presença de botão não demonstram que a transferência terminou.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Encontrar e gerenciar arquivos baixados",
+              "url": "https://support.mozilla.org/pt-BR/kb/gerenciador-de-downloads",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-downloads-andamento.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-downloads-andamento.json",
+            "contentSha256": "e7576fa05b71ad0b73bef85ea10c9cef1fe02fb399de44ba74b3c37eea889aff",
+            "answerSha256": "e7576fa05b71ad0b73bef85ea10c9cef1fe02fb399de44ba74b3c37eea889aff"
+          }
+        },
+        "fingerprint": "d1c7e5e64ca141a21e6a03013df5f07c1bd01e30db35b0adc578b1d00095a90b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-email-falha-smtp"
+        },
+        "content": {
+          "statement": {
+            "text": "No Thunderbird para desktop em português, uma conta recebe mensagens, mas não envia. Qual conjunto de configurações deve ser conferido especificamente para a saída?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5caef7d5-185d-5c39-ba27-0113c44ff5a6",
+              "content": {
+                "text": "Somente a pasta visual de favoritos do navegador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "aa85750c-4b61-537f-a79c-1353d79c2f85",
+              "content": {
+                "text": "Apenas o nome exibido no atalho do programa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2364168d-6efb-5cb7-8d71-ae829679bccb",
+              "content": {
+                "text": "O servidor SMTP, incluindo autenticação e segurança exigidas pelo provedor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c3ac4648-4cef-5af5-8705-5ca4ef4c1aef",
+              "content": {
+                "text": "Apenas o servidor IMAP, presumindo que ele envia qualquer mensagem.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2364168d-6efb-5cb7-8d71-ae829679bccb",
+          "resolution": {
+            "text": "1. Recebimento e envio usam configurações de servidor distintas; SMTP é o serviço de saída. 2. IMAP é recepção/sincronização; favoritos e atalhos não configuram o envio de correio.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Configuração manual de uma conta de e-mail",
+              "url": "https://support.mozilla.org/pt-BR/kb/configuracao-manual-de-conta",
+              "legalBasis": null
+            },
+            {
+              "name": "Mozilla — Glossário de termos e tipos de contas",
+              "url": "https://support.mozilla.org/pt-BR/kb/glossario-termos-tipos-contas",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-email-falha-smtp.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-email-falha-smtp.json",
+            "contentSha256": "a5058769342c459d821a796b86b9aa14e7da3af9b69eaaa21da945c68ec6906f",
+            "answerSha256": "a5058769342c459d821a796b86b9aa14e7da3af9b69eaaa21da945c68ec6906f"
+          }
+        },
+        "fingerprint": "6b6f1f4ce4c71200beae7f4b1ae024d7c5c09056708a40683e952d5342d4043c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-email-offline-fila"
+        },
+        "content": {
+          "statement": {
+            "text": "Um cliente de e-mail está offline e informa que uma mensagem foi colocada na fila de saída. Que conclusão é correta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5416d7df-886a-54e4-908b-93832a965cdc",
+              "content": {
+                "text": "A mensagem ainda precisa ser transmitida quando houver conexão e envio; estar na fila não comprova recebimento.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6c46e185-7f64-55b9-a3de-42e3edff16eb",
+              "content": {
+                "text": "O destinatário já leu a mensagem necessariamente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4d9ff067-f0cb-536f-b426-054de13f9b17",
+              "content": {
+                "text": "O envio pela Internet terminou obrigatoriamente sem conexão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "623d6a26-803a-5d65-b9df-920f58714205",
+              "content": {
+                "text": "Não será mais necessário um servidor de envio em nenhuma circunstância.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5416d7df-886a-54e4-908b-93832a965cdc",
+          "resolution": {
+            "text": "1. A fila registra uma operação pendente de comunicação, distinta da entrega. 2. Não há prova de transmissão ou leitura, e o envio posterior continua dependendo da infraestrutura de correio.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Glossário de termos e tipos de contas",
+              "url": "https://support.mozilla.org/pt-BR/kb/glossario-termos-tipos-contas",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-email-offline-fila.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-email-offline-fila.json",
+            "contentSha256": "16c9126d2e9ca908a0912fe0fa6db4e72440984c5f0265a5489d84b884cc809d",
+            "answerSha256": "16c9126d2e9ca908a0912fe0fa6db4e72440984c5f0265a5489d84b884cc809d"
+          }
+        },
+        "fingerprint": "4ab345863891c383af4c4c48996840adac78fb67d8eb862ba9d7c1d50282d66a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-extensao-conflito"
+        },
+        "content": {
+          "statement": {
+            "text": "Um site funciona em outro navegador, mas apresenta falhas somente no Firefox com várias extensões instaladas. Qual teste ajuda a identificar interferência de uma extensão?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5501b461-4b02-51b7-a317-3e3769a6026f",
+              "content": {
+                "text": "Desativar as extensões uma por vez, recarregando e verificando o efeito.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2d9ffcf2-b70a-5624-b8cb-96b0e30f5c17",
+              "content": {
+                "text": "Excluir imediatamente a conta de usuário do sistema operacional.",
+                "resources": []
+              }
+            },
+            {
+              "id": "601e6e97-4270-5777-a22b-bd94fcdbf25c",
+              "content": {
+                "text": "Concluir sem teste que o servidor está necessariamente fora do ar.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f79554f6-af7e-506e-a765-1bd3815d2a5a",
+              "content": {
+                "text": "Apagar todas as planilhas salvas no computador.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5501b461-4b02-51b7-a317-3e3769a6026f",
+          "resolution": {
+            "text": "1. Extensões podem modificar ou bloquear recursos; o teste gradual ajuda a localizar a interferência. 2. Funcionamento em outro navegador enfraquece a conclusão automática de indisponibilidade geral; excluir conta e planilhas não testa a extensão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sites exibidos errados ou que não funcionam como deveriam",
+              "url": "https://support.mozilla.org/pt-BR/kb/sites-exibidos-errados-ou-nao-funcionam-como-deveriam",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-extensao-conflito.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-extensao-conflito.json",
+            "contentSha256": "9498b76a29d9bbd557bef4e98b4aa0f0fdb071939516e198e033c5b48faf0423",
+            "answerSha256": "9498b76a29d9bbd557bef4e98b4aa0f0fdb071939516e198e033c5b48faf0423"
+          }
+        },
+        "fingerprint": "cc6ba4395998201c4ab68e185139a606cc0c0965259661ed0055289018836bdb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-favoritos-exportacao-html"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox para desktop em português do Brasil, a lista de favoritos deve ser transferida para outro navegador por arquivo. Qual formato é oferecido para esse intercâmbio?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cf1d811f-2706-59e4-a546-3f4bf8f6a60b",
+              "content": {
+                "text": "Um arquivo de áudio com a leitura dos títulos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4990bb7e-f858-5f8e-9fba-03f3ffa008e6",
+              "content": {
+                "text": "Uma lista contendo apenas as senhas, sem os endereços.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c8fc5914-1678-57b5-81eb-0199211d2a6a",
+              "content": {
+                "text": "HTML de favoritos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8cc67c32-a355-5aa3-80df-ee55fc2b55e6",
+              "content": {
+                "text": "Uma captura de tela da barra de favoritos como arquivo de importação equivalente.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c8fc5914-1678-57b5-81eb-0199211d2a6a",
+          "resolution": {
+            "text": "1. A exportação HTML registra os favoritos em formato de intercâmbio aceito por navegadores. 2. Imagem e áudio não preservam a estrutura importável; senhas não são a lista de favoritos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Exportar favoritos do Firefox em HTML",
+              "url": "https://support.mozilla.org/pt-BR/kb/como-exportar-os-favoritos-do-firefox-em-html",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-favoritos-exportacao-html.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-favoritos-exportacao-html.json",
+            "contentSha256": "c57c583550507f8bc1adc76f8c38db9171437d103fdb69fc0a3b63e08f7eaf37",
+            "answerSha256": "c57c583550507f8bc1adc76f8c38db9171437d103fdb69fc0a3b63e08f7eaf37"
+          }
+        },
+        "fingerprint": "6ebb986a97fd88f3066fb5d5eccf1c566cd41142247828e395ca11d41dfdf7d4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-imap-busca-corpo-local"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma busca local no corpo de mensagens IMAP do Thunderbird não encontra texto de uma mensagem cujo corpo ainda não foi baixado. Qual verificação é pertinente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f6fca6f2-cf66-5573-992d-c40fe0ad96bb",
+              "content": {
+                "text": "Alterar apenas a cor da pasta e presumir que o corpo foi transferido.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ecf63f40-54d0-5271-882b-a5a86b024f47",
+              "content": {
+                "text": "Renomear o computador como substituto do download do conteúdo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ea045642-52a4-55f5-bdd4-14c693b2ba30",
+              "content": {
+                "text": "Conferir a sincronização e o download local do conteúdo pesquisado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3fdf551b-09ab-5647-bd58-070a78902466",
+              "content": {
+                "text": "Concluir que o texto nunca existiu somente porque a busca local não o encontrou.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ea045642-52a4-55f5-bdd4-14c693b2ba30",
+          "resolution": {
+            "text": "1. A pesquisa no conteúdo local depende de ele estar disponível para indexação e busca. 2. Ausência de resultado não prova ausência no servidor; aparência e nome do computador não transferem o corpo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sincronização IMAP",
+              "url": "https://support.mozilla.org/pt-BR/kb/sincronizacao-IMAP",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-imap-busca-corpo-local.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-imap-busca-corpo-local.json",
+            "contentSha256": "b6cab39ef721fe501c627139d767dcfbbbd60df4dec8e75f1d354f5d53ffc66d",
+            "answerSha256": "b6cab39ef721fe501c627139d767dcfbbbd60df4dec8e75f1d354f5d53ffc66d"
+          }
+        },
+        "fingerprint": "9bc213872c8375ea739a3c7d9813c1c81eb830b4df686580e4325ebc7e4ea002",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-navegador-importar-selecao"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao importar dados de outro navegador no Firefox para desktop, como evitar trazer categorias de dados que o usuário não deseja migrar?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "18450526-424c-5e95-8c35-05b3c1597d2e",
+              "content": {
+                "text": "Conferir o navegador ou perfil de origem e selecionar as categorias desejadas no processo de importação.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fd32bd50-a900-55cd-a0b2-9fb96a7edfdd",
+              "content": {
+                "text": "Presumir que trocar a cor do tema seleciona automaticamente as categorias certas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "044c7afc-96b7-5df6-886d-fae4f93837dd",
+              "content": {
+                "text": "Apagar a origem antes de conferir o que será transferido.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3fb142b3-68d6-5b0b-ae82-dbb53d415bd1",
+              "content": {
+                "text": "Concluir que importar favoritos obriga sempre a importar todas as demais categorias.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "18450526-424c-5e95-8c35-05b3c1597d2e",
+          "resolution": {
+            "text": "1. O fluxo de importação permite escolher a origem e os tipos de dados que serão trazidos. 2. Tema não seleciona dados; apagar antecipadamente arrisca a origem e não se deve presumir migração obrigatória de tudo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Importar dados de outro navegador",
+              "url": "https://support.mozilla.org/pt-BR/kb/importe-dados-de-outro-navegador",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-navegador-importar-selecao.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-navegador-importar-selecao.json",
+            "contentSha256": "0c29b312de52766d981fe883e1566de8aac80b7c64afd02c2a2e98badb3e6a7e",
+            "answerSha256": "0c29b312de52766d981fe883e1566de8aac80b7c64afd02c2a2e98badb3e6a7e"
+          }
+        },
+        "fingerprint": "31439085216526d309c4279c83bfd38a467caaa87dcc39634b603004546fa59b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-pop-reter-servidor"
+        },
+        "content": {
+          "statement": {
+            "text": "No Thunderbird para desktop, foi escolhida uma conta POP. Qual afirmação evita uma generalização incorreta sobre o que ocorre no servidor depois de baixar mensagens?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b9f536b6-2c94-5308-9835-a0011023fcb5",
+              "content": {
+                "text": "É necessário conferir a configuração de retenção no servidor; POP pode ser configurado para deixar uma cópia.",
+                "resources": []
+              }
+            },
+            {
+              "id": "318ccada-1966-54b9-ab0f-b54c9ff9acc5",
+              "content": {
+                "text": "Toda conta POP sempre apaga imediatamente qualquer mensagem do servidor, sem opção.",
+                "resources": []
+              }
+            },
+            {
+              "id": "546952fe-378c-5355-905b-a5f165923d8a",
+              "content": {
+                "text": "POP obriga a sincronizar todas as pastas de todos os dispositivos como o IMAP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "38b02e67-a647-5063-be9d-5766ffe40408",
+              "content": {
+                "text": "O tipo POP impede o download local de mensagens.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b9f536b6-2c94-5308-9835-a0011023fcb5",
+          "resolution": {
+            "text": "1. A permanência de cópias no servidor depende das opções de retenção adotadas. 2. Não há exclusão imediata universal e POP não equivale à sincronização de pastas do IMAP nem proíbe cópia local.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Glossário de termos e tipos de contas",
+              "url": "https://support.mozilla.org/pt-BR/kb/glossario-termos-tipos-contas",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-pop-reter-servidor.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-pop-reter-servidor.json",
+            "contentSha256": "bbb1e5a8c1d003d566d09d30dc751483574a7c98e3d2302a49b3125dc292322d",
+            "answerSha256": "bbb1e5a8c1d003d566d09d30dc751483574a7c98e3d2302a49b3125dc292322d"
+          }
+        },
+        "fingerprint": "0834a951e86084903578917b503a0833b3cbb0af2436298e6667ac3d3ae857d8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-privativo-ip"
+        },
+        "content": {
+          "statement": {
+            "text": "Segundo a documentação do Firefox consultada em novembro de 2026, abrir uma janela privativa torna a pessoa anônima na Internet e oculta seu endereço IP?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b43cddca-0ac5-5942-ae83-412a6fa0363e",
+              "content": {
+                "text": "Sim, elimina todos os registros existentes nos servidores visitados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "84def152-9dba-5e10-af8d-4fd4bdc26058",
+              "content": {
+                "text": "Sim, dispensa qualquer autenticação nos sites.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f97e8e6f-a716-545a-b108-d344dbd4fe88",
+              "content": {
+                "text": "Não; a janela privativa não oferece, por si só, anonimato nem ocultação do IP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0b8cb77-0cdc-53cd-9f3f-7d12f92363da",
+              "content": {
+                "text": "Sim, sempre substitui o endereço IP por um endereço aleatório sem conexão adicional.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f97e8e6f-a716-545a-b108-d344dbd4fe88",
+          "resolution": {
+            "text": "1. A proteção da sessão privada trata de rastros e dados locais, sem prometer ocultação do IP. 2. Ela não troca automaticamente o IP, não apaga servidores de terceiros e não substitui login.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Lendas comuns sobre navegação privativa",
+              "url": "https://support.mozilla.org/pt-BR/kb/mitos-comuns-sobre-navegacao-privativa",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-privativo-ip.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-privativo-ip.json",
+            "contentSha256": "23b060f439db70e51104c3b9fcbf4716be33a2f797d758cd1a74c216087f1ecd",
+            "answerSha256": "23b060f439db70e51104c3b9fcbf4716be33a2f797d758cd1a74c216087f1ecd"
+          }
+        },
+        "fingerprint": "76becea5dff30c10e4f0882c55f5305a00903a1f2d163b87c2f1da80654996b5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-push-revogar-site"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox de desktop, um site antes autorizado está enviando notificações indesejadas. Qual ação trata a permissão desse site?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "257430b3-fb4a-5c40-9d4a-6115252ab4ff",
+              "content": {
+                "text": "Mudar o título de uma aba como se fosse uma configuração de permissão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9a903e56-707d-5b6b-994e-ec1fcb39614f",
+              "content": {
+                "text": "Desativar a exibição de extensões sem examinar a permissão do site.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c45246af-6dd6-5d00-82ef-2adf4cf90d36",
+              "content": {
+                "text": "Rever e revogar ou bloquear sua permissão de notificações.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3681bb54-a626-518f-a476-39a70c6381b9",
+              "content": {
+                "text": "Excluir apenas um favorito e presumir que toda permissão foi revogada.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c45246af-6dd6-5d00-82ef-2adf4cf90d36",
+          "resolution": {
+            "text": "1. As notificações Web Push dependem de permissão do site, que pode ser alterada. 2. Favorito, título e exibição de extensões não são essa permissão de notificações.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Notificações Web Push",
+              "url": "https://support.mozilla.org/pt-BR/kb/notificacoes-web-push-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-push-revogar-site.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-push-revogar-site.json",
+            "contentSha256": "3b5ff6c304da84fe83e6b9cf21ddabe07639d687bdd1bda11e2e0d51324658d2",
+            "answerSha256": "3b5ff6c304da84fe83e6b9cf21ddabe07639d687bdd1bda11e2e0d51324658d2"
+          }
+        },
+        "fingerprint": "4f6b15498274fef3ffa5fa0ddb855521dd2e4aad93d43be14690d064a6ffcc3d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-site-permissao-microfone"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma página conhecida não deve mais acessar o microfone no Firefox de desktop. Qual controle deve ser examinado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2671c1f6-c168-57bc-88dd-23f0f6942629",
+              "content": {
+                "text": "A permissão de microfone atribuída ao site nas informações ou configurações de permissões.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5bcdb2f8-cb96-5142-919e-f7ef62a0c26d",
+              "content": {
+                "text": "Somente a posição do favorito na barra.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bab2841f-333e-5318-8f50-8d493ac578f1",
+              "content": {
+                "text": "Somente o número de resultados em uma pesquisa Web.",
+                "resources": []
+              }
+            },
+            {
+              "id": "604d8aa3-9925-5a08-a159-e713a24a9a1c",
+              "content": {
+                "text": "A impressão da página como substituta da revogação de permissão.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2671c1f6-c168-57bc-88dd-23f0f6942629",
+          "resolution": {
+            "text": "1. A autorização de acesso ao microfone é uma permissão do site. 2. Organizar favoritos, pesquisar e imprimir não revogam essa autorização.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Janela de informações da página",
+              "url": "https://support.mozilla.org/pt-BR/kb/janela-de-informacoes-da-pagina-do-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-site-permissao-microfone.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-site-permissao-microfone.json",
+            "contentSha256": "6335842f106d9670af0084f32f9b3ddf965e8ad37a610b7aa1033b3e9aedb0c9",
+            "answerSha256": "6335842f106d9670af0084f32f9b3ddf965e8ad37a610b7aa1033b3e9aedb0c9"
+          }
+        },
+        "fingerprint": "3fb76f1dcc05408cdb7694367ad6355e72236714a5b65340aa83ad6ffa7e0a59",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-url-absoluto-relativo"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual par diferencia um endereço absoluto de um link relativo usado em uma página Web?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "812367ae-6a3c-5116-a2bc-d4e7fe9ac108",
+              "content": {
+                "text": "https://exemplo.org/ajuda.html é absoluto; ajuda.html depende do endereço base para resolução.",
+                "resources": []
+              }
+            },
+            {
+              "id": "83b2b03a-84a6-513d-8939-ff2dd365b970",
+              "content": {
+                "text": "Ambos sempre apontam para qualquer domínio escolhido aleatoriamente pelo navegador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2963535c-1670-5d2d-8cef-ed7c4c29b158",
+              "content": {
+                "text": "ajuda.html contém necessariamente esquema e domínio explícitos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4b6e948a-67fa-5c74-90e0-d95a69b0c660",
+              "content": {
+                "text": "Um endereço com https:// deixa de ter domínio e passa a ser apenas fragmento.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "812367ae-6a3c-5116-a2bc-d4e7fe9ac108",
+          "resolution": {
+            "text": "1. O endereço absoluto explicita esquema e domínio; o relativo é interpretado em relação à base. 2. As alternativas negam a resolução por base ou confundem caminho, domínio e fragmento.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla MDN — Criando hiperlinks",
+              "url": "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-url-absoluto-relativo.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-url-absoluto-relativo.json",
+            "contentSha256": "98273ea5ce74bd8c97bc5b6e5afff5a8f154f25b5020456afe0f8c78acb25765",
+            "answerSha256": "98273ea5ce74bd8c97bc5b6e5afff5a8f154f25b5020456afe0f8c78acb25765"
+          }
+        },
+        "fingerprint": "fbe25fdabded38500c4a8f7ed317b1b76f8a8062aaa8fbfc4269b6fdc5bcd3e0",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.it-url-fragmento"
+        },
+        "content": {
+          "statement": {
+            "text": "No endereço https://exemplo.org/manual#instalacao, qual elemento é o fragmento que pode identificar uma parte do documento?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "976a440f-3df0-5b85-a9ab-f4400ab815b7",
+              "content": {
+                "text": "https.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ced5878c-60ac-5613-b7f9-280e1f426cbf",
+              "content": {
+                "text": "/manual como se fosse o domínio.",
+                "resources": []
+              }
+            },
+            {
+              "id": "64a1b314-8f48-5bde-9e7e-b25ebe830e6f",
+              "content": {
+                "text": "#instalacao.",
+                "resources": []
+              }
+            },
+            {
+              "id": "35e7bd63-33e5-5a09-b295-90954e82add3",
+              "content": {
+                "text": "exemplo.org.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "64a1b314-8f48-5bde-9e7e-b25ebe830e6f",
+          "resolution": {
+            "text": "1. O sinal # introduz o identificador de fragmento. 2. Domínio, esquema e caminho não são esse identificador.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla MDN — URL.hash",
+              "url": "https://developer.mozilla.org/pt-BR/docs/Web/API/URL/hash",
+              "legalBasis": null
+            },
+            {
+              "name": "Mozilla MDN — Criando hiperlinks",
+              "url": "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.s.it-url-fragmento.json",
+            "answerPath": "sources/admin.2026-11.I10.s.it-url-fragmento.json",
+            "contentSha256": "a8c641651addbf9ab59c3be666b6434a57b427ed74ce73e64080d31cc164a029",
+            "answerSha256": "a8c641651addbf9ab59c3be666b6434a57b427ed74ce73e64080d31cc164a029"
+          }
+        },
+        "fingerprint": "1cade48cc845c8677bc8adad5df7a0190acd0da980b44a4e734e6513620d5bf3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.morato-q18"
+        },
+        "content": {
+          "statement": {
+            "text": "No ambiente Windows, alguns programas permitem ao usuário organizar atividades digitais do cotidiano em um único local. Com base no exposto sobre programas e aplicativos do Windows, assinale a alternativa CORRETA.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6c798a0a-1743-543f-bc6e-01bc22de3ed8",
+              "content": {
+                "text": "O Outlook é um aplicativo destinado exclusivamente à edição de textos simples, sem recursos de comunicação.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6a05f47c-cb89-519d-9ee2-a9d7a71ae179",
+              "content": {
+                "text": "O Outlook permite o gerenciamento de emails, calendários e contatos, reunindo essas informações em um único local.",
+                "resources": []
+              }
+            },
+            {
+              "id": "731cf98f-f215-5134-bc79-dec5bb8e0c39",
+              "content": {
+                "text": "O Outlook é um programa utilizado apenas para navegação na internet, sem suporte a contas de email.",
+                "resources": []
+              }
+            },
+            {
+              "id": "37959d7e-7d68-536b-b424-1aa8cce30f1b",
+              "content": {
+                "text": "O Outlook funciona somente em computadores de mesa, não estando disponível para dispositivos móveis ou acesso pela web.",
+                "resources": []
+              }
+            },
+            {
+              "id": "83f9bbc8-171d-54f0-be5c-0b76f7cd79fe",
+              "content": {
+                "text": "O Outlook tem como única função o armazenamento de arquivos do sistema operacional Windows.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6a05f47c-cb89-519d-9ee2-a9d7a71ae179",
+          "resolution": {
+            "text": "1. O Outlook reúne gerenciamento de mensagens, calendário e contatos. 2. Não é apenas editor de texto, navegador ou armazenamento do sistema, e possui modalidades para desktop, web e dispositivos móveis. O comando trata das funções gerais do produto, não de um recurso exclusivo de uma edição.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Alternar entre email, calendário, contatos e tarefas no Outlook",
+              "url": "https://support.microsoft.com/pt-br/outlook/switch-between-your-email-calendar-contacts-and-tasks",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal de Francisco Morato 01/2025, Oficial Administrativo, questão 18. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.s.morato-q18.json",
+            "answerPath": "sources/admin.2026-11.I10.s.morato-q18.json",
+            "contentSha256": "6da731377571c2a4c2dc27b915788e483b04114b758389160bea9a60357006e9",
+            "answerSha256": "6da731377571c2a4c2dc27b915788e483b04114b758389160bea9a60357006e9"
+          }
+        },
+        "fingerprint": "4eb8da89589be2b8f4fdd2cd418e8a14ecae99dd0f5f2eef94243bd5097f3669",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.morato-ti-q36"
+        },
+        "content": {
+          "statement": {
+            "text": "Ameaças aos sistemas de informação são condições, agentes ou acontecimentos que podem prejudicar, de forma temporária ou permanente, o funcionamento de um sistema de informação. Uma ameaça do tipo spam é caraterizada",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c0012cd0-6c1a-5e5a-a29b-2a618ac28e07",
+              "content": {
+                "text": "por usuários experientes que quebram sistemas de segurança (como acesso) ou quebram sistemas de proteção a softwares (senhas e números de série dos programas).",
+                "resources": []
+              }
+            },
+            {
+              "id": "7c9a2448-3212-5579-be13-53029a698781",
+              "content": {
+                "text": "por programas desatualizados",
+                "resources": []
+              }
+            },
+            {
+              "id": "be72d324-1656-592d-84d2-90e46d592a76",
+              "content": {
+                "text": "pelos usuários descontentes ou leigos que podem causar problemas com ou sem intenção.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f5e91353-b4ff-5537-a96f-760b5398f396",
+              "content": {
+                "text": "pelas técnicas que se utilizam da ingenuidade ou do estado emocional dos usuários para permitir a obtenção de dados privados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "10b07109-9374-5c7c-84a2-fde1d77b2d34",
+              "content": {
+                "text": "pelo envio de mensagens de e-mail em grande número e sem autorização dos destinatários.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "10b07109-9374-5c7c-84a2-fde1d77b2d34",
+          "resolution": {
+            "text": "1. Spam caracteriza mensagens eletrônicas não solicitadas, geralmente enviadas em massa; a alternativa E coincide com o gabarito definitivo. 2. A descreve invasão ou quebra de proteção; B é desatualização, C uma possível origem humana de incidentes e D engenharia social. Esses conceitos não definem spam. Mensagens não solicitadas não precisam ter conteúdo exclusivamente comercial.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "CERT.br — Cartilha de Segurança para Internet, capítulo Spam",
+              "url": "https://cartilha.cert.br/livro/cartilha-seguranca-internet.pdf",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal de Francisco Morato 01/2025, Técnico em Informática, questão 36. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.s.morato-ti-q36.json",
+            "answerPath": "sources/admin.2026-11.I10.s.morato-ti-q36.json",
+            "contentSha256": "7b3dd0068d9856701cf46aea36add27d7dd51887a96f73b29188be7d88864455",
+            "answerSha256": "7b3dd0068d9856701cf46aea36add27d7dd51887a96f73b29188be7d88864455"
+          }
+        },
+        "fingerprint": "2965a3318fa98a80c7a6a0ce54b5b5559c5730431e1f5e4b081517c650e71b3b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.potim-aa-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "O que é um anexo em um e-mail?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8a99b6c2-02ae-5918-9801-bae17efc115b",
+              "content": {
+                "text": "Um arquivo que pode ser enviado junto com uma mensagem de e-mail. Esses arquivos podem incluir documentos, imagens, vídeos, apresentações e outros tipos de conteúdo digital.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b9ce44e7-ee02-5cff-b436-bf8fcf3cdfb4",
+              "content": {
+                "text": "Um programa de computador que protege contra vírus em mensagens de e-mail.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5e910e03-fc08-5b8c-8402-bce068486694",
+              "content": {
+                "text": "O endereço eletrônico do remetente da mensagem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2b352e64-d159-586d-a7d5-95532f51ba84",
+              "content": {
+                "text": "O tamanho máximo permitido para uma caixa de entrada de e-mail.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8f26cd8e-0013-5d9f-b9e9-528f6b0906c4",
+              "content": {
+                "text": "Um tipo de servidor de e-mail que armazena mensagens antigas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8a99b6c2-02ae-5918-9801-bae17efc115b",
+          "resolution": {
+            "text": "1. Um anexo é um arquivo enviado junto com a mensagem de correio eletrônico. 2. Ele não é o endereço do remetente, um antivírus, um limite de caixa postal ou um servidor. Tipos e tamanho aceitos dependem do serviço, mas essa definição é geral.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Adicionar imagens ou anexar arquivos a emails no Outlook",
+              "url": "https://support.microsoft.com/pt-br/outlook/mail/add-pictures-or-attach-files-to-emails-in-outlook",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Agente Administrativo, questão 19. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.s.potim-aa-q19.json",
+            "answerPath": "sources/admin.2026-11.I10.s.potim-aa-q19.json",
+            "contentSha256": "1324b1612c36e2f59b3bcfe3ee74d7c99203f85489435c121f8a5067b0e61475",
+            "answerSha256": "1324b1612c36e2f59b3bcfe3ee74d7c99203f85489435c121f8a5067b0e61475"
+          }
+        },
+        "fingerprint": "569052a563a0c86028a9f9890cbc9bbf008ee50593254a01475723cb55756e68",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.potim-ti-q23"
+        },
+        "content": {
+          "statement": {
+            "text": "Escolha a alternativa que representa uma rede privada interna acessada apenas por usuários autorizados:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a003b16f-41fa-5786-b31d-ce8dcf1c7151",
+              "content": {
+                "text": "Internet.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2e09b4eb-51cd-505d-948d-c41e5586e64e",
+              "content": {
+                "text": "VPN aberta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "67b46537-8e98-5bea-b5b0-53df26e07a7f",
+              "content": {
+                "text": "Wi-Fi público.",
+                "resources": []
+              }
+            },
+            {
+              "id": "79f0c1ea-d8ec-5463-b3d3-b146da3aef60",
+              "content": {
+                "text": "Intranet.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dd9ed8c2-a300-5058-ab97-4a3acd354291",
+              "content": {
+                "text": "Extranet.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "79f0c1ea-d8ec-5463-b3d3-b146da3aef60",
+          "resolution": {
+            "text": "1. Intranet é o ambiente de rede interno da organização com acesso controlado; D coincide com o gabarito definitivo. 2. Internet é a rede global; Wi-Fi público e VPN aberta não definem esse ambiente privado interno. Extranet caracteriza extensão controlada a usuários externos, distinção ausente no enunciado desta questão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Web Services: intranet, extranet e Internet",
+              "url": "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/aa966281(v=bts.10)",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Técnico em Informática, questão 23. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.s.potim-ti-q23.json",
+            "answerPath": "sources/admin.2026-11.I10.s.potim-ti-q23.json",
+            "contentSha256": "bee9cf98b62601458fc062b95295409765f6ce1d5de5acafb337871a1c69e745",
+            "answerSha256": "bee9cf98b62601458fc062b95295409765f6ce1d5de5acafb337871a1c69e745"
+          }
+        },
+        "fingerprint": "f2c031819c9226f678e7210eaa92513f7207bdb76632d9dc7226ed3e9fc75645",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.I10.s.potim-ti-q31"
+        },
+        "content": {
+          "statement": {
+            "text": "O protocolo de rede que traduz nomes de domínio legíveis por humanos em endereços IP numéricos é o:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b09c8841-2287-5775-82ab-80ea624a8e7e",
+              "content": {
+                "text": "SMTP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "34177911-88c8-5f36-a8d8-16d8db8de562",
+              "content": {
+                "text": "DNS.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f1625b2e-d4a1-5bf2-88d5-3e4c4d467599",
+              "content": {
+                "text": "DHCP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "77402f62-d2ca-5713-b2c9-6c48611ba7f6",
+              "content": {
+                "text": "UDP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fdf8821a-e242-5c05-92d1-626b653e4a61",
+              "content": {
+                "text": "HTTPS.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "34177911-88c8-5f36-a8d8-16d8db8de562",
+          "resolution": {
+            "text": "1. DNS resolve nomes de domínio para registros como os que fornecem endereços IP; B é o gabarito definitivo. 2. SMTP trata de correio; DHCP distribui configurações como endereços; UDP é um protocolo de transporte e HTTPS protege a comunicação HTTP. Eles não substituem a função de resolução de nomes descrita.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Consultas e pesquisas DNS",
+              "url": "https://learn.microsoft.com/pt-br/windows-server/networking/dns/queries-lookups",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Técnico em Informática, questão 31. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.s.potim-ti-q31.json",
+            "answerPath": "sources/admin.2026-11.I10.s.potim-ti-q31.json",
+            "contentSha256": "54ffb2410d7606e8b9710374748eda0b9b94fd803ffd94dd8be49cf0c95b685f",
+            "answerSha256": "54ffb2410d7606e8b9710374748eda0b9b94fd803ffd94dd8be49cf0c95b685f"
+          }
+        },
+        "fingerprint": "5640c62462be00470d88e3c9493c828382a72987e7f0290804c0339094519a42",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I10.s.it-busca-formato-pdf.json",
+        "mediaType": "application/json",
+        "sha256": "46652ce7a925fe43517265c6251d2b38fc0e8c27b9c2bf6f90ec1063eec78d26",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoibWFudWFsIHNpdGU6cGRmLCBjb21vIHNlIHBkZiBmb3NzZSBuZWNlc3NhcmlhbWVudGUgbyBkb23DrW5pbyBkZXNlamFkby4ifSx7ImlkIjoiYiIsInRleHQiOiJtYW51YWwgYmVmb3JlOnBkZiwgdXNhbmRvIHVtIGZvcm1hdG8gY29tbyBkYXRhLiJ9LHsiaWQiOiJjIiwidGV4dCI6Im1hbnVhbCBmaWxldHlwZTpwZGYuIn0seyJpZCI6ImQiLCJ0ZXh0IjoibWFudWFsIC1wZGYsIHF1ZSBleGNsdWkgbyB0ZXJtby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1idXNjYS1mb3JtYXRvLXBkZiIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJyZXZpZXdzLXIzLXJ2My0wOTVjOWNlZWM1Il0sInJlc29sdXRpb24iOiIxLiBmaWxldHlwZTogc2VsZWNpb25hIG8gdGlwbyBkZSBhcnF1aXZvIGluZm9ybWFkby4gMi4gTWVub3Mgw6kgZXhjbHVzw6NvLCBzaXRlOiB0cmF0YSBkb23DrW5pbyBlIGJlZm9yZTogdHJhYmFsaGEgY29tIGRhdGEsIG7Do28gZm9ybWF0by4iLCJzdGF0ZW1lbnQiOiJOYSBQZXNxdWlzYSBHb29nbGUsIGEgZXF1aXBlIHByb2N1cmEgbWFudWFpcyBlbSBQREYuIFF1YWwgb3BlcmFkb3IgcmVzdHJpbmdlIG8gZm9ybWF0byBpbmRpY2Fkbz8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJyZXZpZXdzLXIzLXJ2My0wOTVjOWNlZWM1Ijp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiR29vZ2xlIFNlYXJjaCBDZW50cmFsIOKAlCBPcGVyYWRvcmVzIGRlIHBlc3F1aXNhIGRvIEdvb2dsZSAoZmlsZXR5cGU6IGUgc2l0ZTopIiwidXJsIjoiaHR0cHM6Ly9kZXZlbG9wZXJzLmdvb2dsZS5jb20vc2VhcmNoL2RvY3MvbW9uaXRvci1kZWJ1Zy9zZWFyY2gtb3BlcmF0b3JzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-busca-site-sintaxe.json",
+        "mediaType": "application/json",
+        "sha256": "ae2cd825fcdbc5044e3ebe13937415445107b2ee2f4738dbd3ccd561e397d474",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiZWRpdGFsIHNpdGU6ZXhlbXBsby5nb3YuYnIuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiZWRpdGFsIHNpdGU6IGV4ZW1wbG8uZ292LmJyLCBzZXBhcmFuZG8gbyBvcGVyYWRvciBkZSBzZXUgdmFsb3IuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiZWRpdGFsIC1leGVtcGxvLmdvdi5iciwgY29tbyBzZSBtZW5vcyBmb3NzZSBvIG9wZXJhZG9yIGRlIHJlc3RyacOnw6NvIGEgZG9tw61uaW8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiZWRpdGFsIFwic2l0ZVwiIHNlbSBvIGRvbcOtbmlvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LWJ1c2NhLXNpdGUtc2ludGF4ZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJyZXZpZXdzLXIzLXJ2My03Zjk1MjJlMDA4Il0sInJlc29sdXRpb24iOiIxLiBzaXRlOiBkZXZlIHNlciBzZWd1aWRvIHBlbG8gZG9tw61uaW8gc2VtIGVzcGHDp28gZW50cmUgb3MgZG9pcy4gMi4gRXNwYcOnbyByb21wZSBhIHNpbnRheGUgc29saWNpdGFkYTsgbWVub3MgZXhjbHVpIHVtIHRlcm1vIGUgYSBwYWxhdnJhIHNpdGUgaXNvbGFkYSBuw6NvIHNlbGVjaW9uYSBvIGRvbcOtbmlvLiIsInN0YXRlbWVudCI6Ik5hIFBlc3F1aXNhIEdvb2dsZSwgcXVhbCBjb25zdWx0YSBhcGxpY2EgY29ycmV0YW1lbnRlIGEgcmVzdHJpw6fDo28gYW8gZG9tw61uaW8gZXhlbXBsby5nb3YuYnI/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsicmV2aWV3cy1yMy1ydjMtN2Y5NTIyZTAwOCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ikdvb2dsZSBTZWFyY2ggQ2VudHJhbCDigJQgT3BlcmFkb3IgZGUgcGVzcXVpc2Egc2l0ZToiLCJ1cmwiOiJodHRwczovL2RldmVsb3BlcnMuZ29vZ2xlLmNvbS9zZWFyY2gvZG9jcy9tb25pdG9yLWRlYnVnL3NlYXJjaC1vcGVyYXRvcnMvYWxsLXNlYXJjaC1zaXRlIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-cache-proposito.json",
+        "mediaType": "application/json",
+        "sha256": "d5b3775b399b61529a2d76b8affb4aecf1c21d2201ec3324d1f28db9ed4ed035",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2VydmlyIGNvbW8gc3Vic3RpdHV0byB1bml2ZXJzYWwgZG8gc2Vydmlkb3IgZG8gc2l0ZS4ifSx7ImlkIjoiYiIsInRleHQiOiJJbXBlZGlyIHF1YWxxdWVyIGF0dWFsaXphw6fDo28gZGUgcMOhZ2luYXMgcGFyYSBzZW1wcmUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiR3VhcmRhciBhbGd1bnMgcmVjdXJzb3MgZGUgc2l0ZXMgbG9jYWxtZW50ZSBwYXJhIGV2aXRhciBiYWl4w6EtbG9zIG5vdmFtZW50ZSBlbSB0b2RvIGFjZXNzby4ifSx7ImlkIjoiZCIsInRleHQiOiJHdWFyZGFyIG9icmlnYXRvcmlhbWVudGUgdG9kYXMgYXMgc2VuaGFzIGVtIHRleHRvIHZpc8OtdmVsIG5hIHDDoWdpbmEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtY2FjaGUtcHJvcG9zaXRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY2FjaGUiXSwicmVzb2x1dGlvbiI6IjEuIE8gY2FjaGUgcmV1dGlsaXphIHJlY3Vyc29zIGrDoSBvYnRpZG9zIGUgcG9kZSByZWR1emlyIHRyYW5zZmVyw6puY2lhcyByZXBldGlkYXMuIDIuIEVsZSBuw6NvIMOpIGRlZmluaWRvIGNvbW8gZGVww7NzaXRvIG9icmlnYXTDs3JpbyBkZSBzZW5oYXMsIG7Do28gc3Vic3RpdHVpIHRvZG8gc2VydmnDp28gcmVtb3RvIGUgcG9kZSBzZXIgYXR1YWxpemFkbyBvdSBsaW1wby4iLCJzdGF0ZW1lbnQiOiJObyBGaXJlZm94LCBxdWFsIMOpIHVtYSBmaW5hbGlkYWRlIGRvIGNhY2hlIGRlIGNvbnRlw7pkbyB3ZWI/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jYWNoZSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIFNpdGVzIGV4aWJpZG9zIGVycmFkb3Mgb3UgcXVlIG7Do28gZnVuY2lvbmFtIGNvbW8gZGV2ZXJpYW0iLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2Ivc2l0ZXMtZXhpYmlkb3MtZXJyYWRvcy1vdS1uYW8tZnVuY2lvbmFtLWNvbW8tZGV2ZXJpYW0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-cookies-funcao.json",
+        "mediaType": "application/json",
+        "sha256": "33992ef00cc0f16e7b09c34b5e8e1f4fe9d3b50dcba96b34aba720eec065b581",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUHJlZmVyw6puY2lhcyBkbyBzaXRlIGUgZXN0YWRvIGRlIGFjZXNzbyBkYSBzZXNzw6NvLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik9icmlnYXRvcmlhbWVudGUgbyBjb250ZcO6ZG8gY29tcGxldG8gZGUgdG9kbyBhcnF1aXZvIGRvIGNvbXB1dGFkb3IuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU29tZW50ZSBvIG7Dum1lcm8gZGUgc8OpcmllIGbDrXNpY28gZG8gbW9uaXRvci4ifSx7ImlkIjoiZCIsInRleHQiOiJBcGVuYXMgbyBoaXN0w7NyaWNvIGRlIGltcHJlc3PDo28sIHNlbSByZWxhw6fDo28gY29tIHNpdGVzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LWNvb2tpZXMtZnVuY2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29va2llcyJdLCJyZXNvbHV0aW9uIjoiMS4gQ29va2llcyBzw6NvIGRhZG9zIGFybWF6ZW5hZG9zIHBvciBzaXRlcyBlIHBvZGVtIG1hbnRlciBwcmVmZXLDqm5jaWFzIGUgaW5mb3JtYcOnw7VlcyBkZSBzZXNzw6NvLiAyLiBOw6NvIHNlIGRlZmluZW0gY29tbyBjw7NwaWEgaW50ZWdyYWwgZGUgYXJxdWl2b3MgcGVzc29haXMsIG7Dum1lcm8gZG8gbW9uaXRvciBvdSBoaXN0w7NyaWNvIGV4Y2x1c2l2byBkZSBpbXByZXNzb3JhLiIsInN0YXRlbWVudCI6Ik5vIEZpcmVmb3gsIGNvb2tpZXMgcG9kZW0gYXJtYXplbmFyIHF1ZSB0aXBvIGRlIGluZm9ybWHDp8OjbyBhc3NvY2lhZGEgYSB1bSBzaXRlPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29va2llcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIExpbXBlIGNvb2tpZXMgZSBkYWRvcyBkZSBzaXRlcyBubyBGaXJlZm94IiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2xpbXBlLWNvb2tpZXMtZS1kYWRvcy1kZS1zaXRlcy1uby1maXJlZm94In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-ctrlf-pagina-atual.json",
+        "mediaType": "application/json",
+        "sha256": "cc53cbbbc3480180d6dc097baa2718da3e3dd0f51a2986d5e1835a14eca6e8d8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhwb3J0YXIgdG9kb3Mgb3MgZmF2b3JpdG9zIHBhcmEgSFRNTC4ifSx7ImlkIjoiYiIsInRleHQiOiJBYnJpciBhIGZpbGEgZGUgbWVuc2FnZW5zIGRvIGNsaWVudGUgZGUgZS1tYWlsLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkxvY2FsaXphciBuYSBww6FnaW5hLCBjb20gQ3RybCtGLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkRpZ2l0YXIgdW1hIGNvbnN1bHRhIG5vIGJ1c2NhZG9yIGNvbW8gc2UgaXNzbyBleGFtaW5hc3NlIGFwZW5hcyBhIHDDoWdpbmEgYXR1YWwuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtY3RybGYtcGFnaW5hLWF0dWFsIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtYnVzY2FyLXBhZ2luYSJdLCJyZXNvbHV0aW9uIjoiMS4gQ3RybCtGIGFicmUgYSBidXNjYSBubyBjb250ZcO6ZG8gZGEgcMOhZ2luYSBjb3JyZW50ZS4gMi4gQnVzY2EgV2ViIHBvZGUgY29uc3VsdGFyIG91dHJhcyBww6FnaW5hczsgZXhwb3J0YcOnw6NvIGRlIGZhdm9yaXRvcyBlIGZpbGEgZGUgZS1tYWlsIG7Do28gbG9jYWxpemFtIHRleHRvIGRhIHDDoWdpbmEuIiwic3RhdGVtZW50IjoiTm8gRmlyZWZveCBkZSBkZXNrdG9wIHBhcmEgV2luZG93cywgbyB1c3XDoXJpbyBxdWVyIGVuY29udHJhciB1bWEgcGFsYXZyYSBkZW50cm8gZGEgcMOhZ2luYSBqw6EgYWJlcnRhLCBzZW0gaW5pY2lhciB1bWEgcGVzcXVpc2EgZ2VyYWwgbmEgV2ViLiBRdWFsIHJlY3Vyc28gZGV2ZSB1c2FyPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtYnVzY2FyLXBhZ2luYSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIFByb2N1cmFyIGNvbnRlw7pkbyBuYSBww6FnaW5hIGF0dWFsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LVBUL2tiL3Byb2N1cmFyLWNvbnRldWRvcy1wYWdpbmEtYXR1YWwtdGV4dG8tbGlua3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-diagnostico-navegador.json",
+        "mediaType": "application/json",
+        "sha256": "69271bf238f010289dd2abc73fe5c9e031022e60bce2fb40157193be2ae27d7b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTXVkYXIgbyBub21lIGRlIHVtIGFycXVpdm8gc2VtIHJlbGHDp8OjbyBjb20gbyBzaXRlLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkltcHJpbWlyIHVtYSBww6FnaW5hIGVtIGJyYW5jby4ifSx7ImlkIjoiYyIsInRleHQiOiJBYnJpciBvIG1lc21vIHNpdGUgZW0gb3V0cm8gbmF2ZWdhZG9yIGUgY29tcGFyYXIgbyByZXN1bHRhZG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQWx0ZXJhciBzb21lbnRlIGEgdmVsb2NpZGFkZSBkbyBwb250ZWlybyBkbyBtb3VzZS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1kaWFnbm9zdGljby1uYXZlZ2Fkb3IiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jYWNoZSJdLCJyZXNvbHV0aW9uIjoiMS4gQSBjb21wYXJhw6fDo28gZW50cmUgbmF2ZWdhZG9yZXMgYWp1ZGEgYSBkZWxpbWl0YXIgc2UgYSBmYWxoYSDDqSBlc3BlY8OtZmljYSBkZSB1bWEgY29uZmlndXJhw6fDo28gbG9jYWwuIDIuIFBvbnRlaXJvLCBub21lIGRlIGFycXVpdm8gYWxoZWlvIGUgaW1wcmVzc8OjbyBlbSBicmFuY28gbsOjbyBleGVyY2l0YW0gbyBjYXJyZWdhbWVudG8gZG8gc2l0ZS4gTyB0ZXN0ZSBzdWdlcmUgYSBvcmlnZW0sIG7Do28gcHJvdmEgc296aW5obyB0b2RhIGEgY2F1c2EuIiwic3RhdGVtZW50IjoiVW0gc2l0ZSBuw6NvIGNhcnJlZ2EgY29ycmV0YW1lbnRlIG5vIEZpcmVmb3guIFF1YWwgdGVzdGUgc2ltcGxlcyBhanVkYSBhIGRpc3Rpbmd1aXIgcHJvYmxlbWEgZXNwZWPDrWZpY28gZG8gbmF2ZWdhZG9yIGRlIHVtYSBmYWxoYSBtYWlzIGFtcGxhIGRvIHByw7NwcmlvIHNpdGU/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jYWNoZSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIFNpdGVzIGV4aWJpZG9zIGVycmFkb3Mgb3UgcXVlIG7Do28gZnVuY2lvbmFtIGNvbW8gZGV2ZXJpYW0iLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2Ivc2l0ZXMtZXhpYmlkb3MtZXJyYWRvcy1vdS1uYW8tZnVuY2lvbmFtLWNvbW8tZGV2ZXJpYW0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-download-abrir-aplicativo.json",
+        "mediaType": "application/json",
+        "sha256": "237afa3102fe855ad87da0472c2c971aaf07aca83eb367dbe327b0372aba15bf",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbzsgbyBhcnF1aXZvIHRhbWLDqW0gw6kgYmFpeGFkbyBwYXJhIHBvZGVyIHNlciBhYmVydG8gbm8gYXBsaWNhdGl2by4ifSx7ImlkIjoiYiIsInRleHQiOiJTaW07IG8gYXBsaWNhdGl2byByZWNlYmUgYXBlbmFzIG8gbm9tZSBkbyBhcnF1aXZvIGUgbnVuY2Egc2V1IGNvbnRlw7pkby4ifSx7ImlkIjoiYyIsInRleHQiOiJTaW07IGFicmlyIGNvbSBvdXRybyBhcGxpY2F0aXZvIGFwYWdhIGF1dG9tYXRpY2FtZW50ZSBhIG9yaWdlbSBubyBzZXJ2aWRvci4ifSx7ImlkIjoiZCIsInRleHQiOiJOw6NvOyBpc3NvIG9icmlnYSBhIGluc3RhbGFyIHVtIG5vdm8gbmF2ZWdhZG9yIHBhcmEgY2FkYSBhcnF1aXZvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LWRvd25sb2FkLWFicmlyLWFwbGljYXRpdm8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mZi1hY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gQWJyaXIgZW0gdW0gYXBsaWNhdGl2byBjb250aW51YSBleGlnaW5kbyBhIHRyYW5zZmVyw6puY2lhIGRvIGNvbnRlw7pkby4gMi4gTsOjbyDDqSBtZXJhIHRyYW5zbWlzc8OjbyBkZSBub21lLCBleGNsdXPDo28gcmVtb3RhIG5lbSBpbnN0YWxhw6fDo28gb2JyaWdhdMOzcmlhIGRlIG5hdmVnYWRvci4iLCJzdGF0ZW1lbnQiOiJObyBGaXJlZm94IGRlIGRlc2t0b3AsIGVzY29saGVyIGFicmlyIHVtIGFycXVpdm8gY29tIG91dHJvIGFwbGljYXRpdm8gc2lnbmlmaWNhIHF1ZSBuZW5odW0gYXJxdWl2byBzZXLDoSBiYWl4YWRvPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtYWNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIOKAlCBUaXBvcyBkZSBjb250ZcO6ZG8gZSBhw6fDtWVzIGRlIGRvd25sb2FkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2dlcmVuY2llLXRpcG9zLWRlLWNvbnRldWRvLWUtYWNvZXMtZGUtZG93bmxvYWQtbm8tIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-downloads-andamento.json",
+        "mediaType": "application/json",
+        "sha256": "e7576fa05b71ad0b73bef85ea10c9cef1fe02fb399de44ba74b3c37eea889aff",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU29tZW50ZSBvIHTDrXR1bG8gZGEgYWJhLCBxdWUgcHJvdmEgYSBpbnRlZ3JpZGFkZSBkZSB0b2RvIGFycXVpdm8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU29tZW50ZSBhIGV4aXN0w6puY2lhIGRvIGJvdMOjbyBEb3dubG9hZHMsIGluZGVwZW5kZW50ZW1lbnRlIGRvIHN0YXR1cy4ifSx7ImlkIjoiYyIsInRleHQiOiJPIHN0YXR1cyBkbyBpdGVtIG5vIHBhaW5lbCBkZSBEb3dubG9hZHMsIGRpc3Rpbmd1aW5kbyBhbmRhbWVudG8sIGZhbGhhIGUgY29uY2x1c8Ojby4ifSx7ImlkIjoiZCIsInRleHQiOiJTb21lbnRlIG8gZmF0byBkZSB0ZXIgY2xpY2FkbyBubyBsaW5rLCBxdWUgZ2FyYW50ZSBjb25jbHVzw6NvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWRvd25sb2Fkcy1hbmRhbWVudG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mZi1kb3dubG9hZHMiXSwicmVzb2x1dGlvbiI6IjEuIE8gcGFpbmVsIGluZm9ybWEgbyBlc3RhZG8gZGEgdHJhbnNmZXLDqm5jaWE7IGluaWNpYXIgbyBwZWRpZG8gbsOjbyBlcXVpdmFsZSBhIGNvbXBsZXTDoS1sby4gMi4gQ2xpcXVlLCB0w610dWxvIGUgcHJlc2Vuw6dhIGRlIGJvdMOjbyBuw6NvIGRlbW9uc3RyYW0gcXVlIGEgdHJhbnNmZXLDqm5jaWEgdGVybWlub3UuIiwic3RhdGVtZW50IjoiTm8gRmlyZWZveCBwYXJhIGRlc2t0b3AsIHF1YWwgaW5mb3JtYcOnw6NvIGRldmUgc2VyIGNvbmZlcmlkYSBhbnRlcyBkZSBjb25jbHVpciBxdWUgdW0gYXJxdWl2byBzb2xpY2l0YWRvIGZvaSBiYWl4YWRvIHBvciBpbnRlaXJvPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtZG93bmxvYWRzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgRW5jb250cmFyIGUgZ2VyZW5jaWFyIGFycXVpdm9zIGJhaXhhZG9zIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2dlcmVuY2lhZG9yLWRlLWRvd25sb2FkcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-email-falha-smtp.json",
+        "mediaType": "application/json",
+        "sha256": "a5058769342c459d821a796b86b9aa14e7da3af9b69eaaa21da945c68ec6906f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU29tZW50ZSBhIHBhc3RhIHZpc3VhbCBkZSBmYXZvcml0b3MgZG8gbmF2ZWdhZG9yLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFwZW5hcyBvIG5vbWUgZXhpYmlkbyBubyBhdGFsaG8gZG8gcHJvZ3JhbWEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTyBzZXJ2aWRvciBTTVRQLCBpbmNsdWluZG8gYXV0ZW50aWNhw6fDo28gZSBzZWd1cmFuw6dhIGV4aWdpZGFzIHBlbG8gcHJvdmVkb3IuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXBlbmFzIG8gc2Vydmlkb3IgSU1BUCwgcHJlc3VtaW5kbyBxdWUgZWxlIGVudmlhIHF1YWxxdWVyIG1lbnNhZ2VtLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWVtYWlsLWZhbGhhLXNtdHAiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10Yi1jb25maWciLCJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXRiLWdsb3NzYXJpbyJdLCJyZXNvbHV0aW9uIjoiMS4gUmVjZWJpbWVudG8gZSBlbnZpbyB1c2FtIGNvbmZpZ3VyYcOnw7VlcyBkZSBzZXJ2aWRvciBkaXN0aW50YXM7IFNNVFAgw6kgbyBzZXJ2acOnbyBkZSBzYcOtZGEuIDIuIElNQVAgw6kgcmVjZXDDp8Ojby9zaW5jcm9uaXphw6fDo287IGZhdm9yaXRvcyBlIGF0YWxob3MgbsOjbyBjb25maWd1cmFtIG8gZW52aW8gZGUgY29ycmVpby4iLCJzdGF0ZW1lbnQiOiJObyBUaHVuZGVyYmlyZCBwYXJhIGRlc2t0b3AgZW0gcG9ydHVndcOqcywgdW1hIGNvbnRhIHJlY2ViZSBtZW5zYWdlbnMsIG1hcyBuw6NvIGVudmlhLiBRdWFsIGNvbmp1bnRvIGRlIGNvbmZpZ3VyYcOnw7VlcyBkZXZlIHNlciBjb25mZXJpZG8gZXNwZWNpZmljYW1lbnRlIHBhcmEgYSBzYcOtZGE/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10Yi1jb25maWciOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIOKAlCBDb25maWd1cmHDp8OjbyBtYW51YWwgZGUgdW1hIGNvbnRhIGRlIGUtbWFpbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5tb3ppbGxhLm9yZy9wdC1CUi9rYi9jb25maWd1cmFjYW8tbWFudWFsLWRlLWNvbnRhIn0sImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGItZ2xvc3NhcmlvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgR2xvc3PDoXJpbyBkZSB0ZXJtb3MgZSB0aXBvcyBkZSBjb250YXMiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2IvZ2xvc3NhcmlvLXRlcm1vcy10aXBvcy1jb250YXMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-email-offline-fila.json",
+        "mediaType": "application/json",
+        "sha256": "16c9126d2e9ca908a0912fe0fa6db4e72440984c5f0265a5489d84b884cc809d",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBtZW5zYWdlbSBhaW5kYSBwcmVjaXNhIHNlciB0cmFuc21pdGlkYSBxdWFuZG8gaG91dmVyIGNvbmV4w6NvIGUgZW52aW87IGVzdGFyIG5hIGZpbGEgbsOjbyBjb21wcm92YSByZWNlYmltZW50by4ifSx7ImlkIjoiYiIsInRleHQiOiJPIGRlc3RpbmF0w6FyaW8gasOhIGxldSBhIG1lbnNhZ2VtIG5lY2Vzc2FyaWFtZW50ZS4ifSx7ImlkIjoiYyIsInRleHQiOiJPIGVudmlvIHBlbGEgSW50ZXJuZXQgdGVybWlub3Ugb2JyaWdhdG9yaWFtZW50ZSBzZW0gY29uZXjDo28uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTsOjbyBzZXLDoSBtYWlzIG5lY2Vzc8OhcmlvIHVtIHNlcnZpZG9yIGRlIGVudmlvIGVtIG5lbmh1bWEgY2lyY3Vuc3TDom5jaWEuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtZW1haWwtb2ZmbGluZS1maWxhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGItZ2xvc3NhcmlvIl0sInJlc29sdXRpb24iOiIxLiBBIGZpbGEgcmVnaXN0cmEgdW1hIG9wZXJhw6fDo28gcGVuZGVudGUgZGUgY29tdW5pY2HDp8OjbywgZGlzdGludGEgZGEgZW50cmVnYS4gMi4gTsOjbyBow6EgcHJvdmEgZGUgdHJhbnNtaXNzw6NvIG91IGxlaXR1cmEsIGUgbyBlbnZpbyBwb3N0ZXJpb3IgY29udGludWEgZGVwZW5kZW5kbyBkYSBpbmZyYWVzdHJ1dHVyYSBkZSBjb3JyZWlvLiIsInN0YXRlbWVudCI6IlVtIGNsaWVudGUgZGUgZS1tYWlsIGVzdMOhIG9mZmxpbmUgZSBpbmZvcm1hIHF1ZSB1bWEgbWVuc2FnZW0gZm9pIGNvbG9jYWRhIG5hIGZpbGEgZGUgc2HDrWRhLiBRdWUgY29uY2x1c8OjbyDDqSBjb3JyZXRhPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGItZ2xvc3NhcmlvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgR2xvc3PDoXJpbyBkZSB0ZXJtb3MgZSB0aXBvcyBkZSBjb250YXMiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2IvZ2xvc3NhcmlvLXRlcm1vcy10aXBvcy1jb250YXMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-extensao-conflito.json",
+        "mediaType": "application/json",
+        "sha256": "9498b76a29d9bbd557bef4e98b4aa0f0fdb071939516e198e033c5b48faf0423",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRGVzYXRpdmFyIGFzIGV4dGVuc8O1ZXMgdW1hIHBvciB2ZXosIHJlY2FycmVnYW5kbyBlIHZlcmlmaWNhbmRvIG8gZWZlaXRvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkV4Y2x1aXIgaW1lZGlhdGFtZW50ZSBhIGNvbnRhIGRlIHVzdcOhcmlvIGRvIHNpc3RlbWEgb3BlcmFjaW9uYWwuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ29uY2x1aXIgc2VtIHRlc3RlIHF1ZSBvIHNlcnZpZG9yIGVzdMOhIG5lY2Vzc2FyaWFtZW50ZSBmb3JhIGRvIGFyLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkFwYWdhciB0b2RhcyBhcyBwbGFuaWxoYXMgc2FsdmFzIG5vIGNvbXB1dGFkb3IuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtZXh0ZW5zYW8tY29uZmxpdG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jYWNoZSJdLCJyZXNvbHV0aW9uIjoiMS4gRXh0ZW5zw7VlcyBwb2RlbSBtb2RpZmljYXIgb3UgYmxvcXVlYXIgcmVjdXJzb3M7IG8gdGVzdGUgZ3JhZHVhbCBhanVkYSBhIGxvY2FsaXphciBhIGludGVyZmVyw6puY2lhLiAyLiBGdW5jaW9uYW1lbnRvIGVtIG91dHJvIG5hdmVnYWRvciBlbmZyYXF1ZWNlIGEgY29uY2x1c8OjbyBhdXRvbcOhdGljYSBkZSBpbmRpc3BvbmliaWxpZGFkZSBnZXJhbDsgZXhjbHVpciBjb250YSBlIHBsYW5pbGhhcyBuw6NvIHRlc3RhIGEgZXh0ZW5zw6NvLiIsInN0YXRlbWVudCI6IlVtIHNpdGUgZnVuY2lvbmEgZW0gb3V0cm8gbmF2ZWdhZG9yLCBtYXMgYXByZXNlbnRhIGZhbGhhcyBzb21lbnRlIG5vIEZpcmVmb3ggY29tIHbDoXJpYXMgZXh0ZW5zw7VlcyBpbnN0YWxhZGFzLiBRdWFsIHRlc3RlIGFqdWRhIGEgaWRlbnRpZmljYXIgaW50ZXJmZXLDqm5jaWEgZGUgdW1hIGV4dGVuc8Ojbz8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNhY2hlIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgU2l0ZXMgZXhpYmlkb3MgZXJyYWRvcyBvdSBxdWUgbsOjbyBmdW5jaW9uYW0gY29tbyBkZXZlcmlhbSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5tb3ppbGxhLm9yZy9wdC1CUi9rYi9zaXRlcy1leGliaWRvcy1lcnJhZG9zLW91LW5hby1mdW5jaW9uYW0tY29tby1kZXZlcmlhbSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-favoritos-exportacao-html.json",
+        "mediaType": "application/json",
+        "sha256": "c57c583550507f8bc1adc76f8c38db9171437d103fdb69fc0a3b63e08f7eaf37",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVW0gYXJxdWl2byBkZSDDoXVkaW8gY29tIGEgbGVpdHVyYSBkb3MgdMOtdHVsb3MuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiVW1hIGxpc3RhIGNvbnRlbmRvIGFwZW5hcyBhcyBzZW5oYXMsIHNlbSBvcyBlbmRlcmXDp29zLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkhUTUwgZGUgZmF2b3JpdG9zLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlVtYSBjYXB0dXJhIGRlIHRlbGEgZGEgYmFycmEgZGUgZmF2b3JpdG9zIGNvbW8gYXJxdWl2byBkZSBpbXBvcnRhw6fDo28gZXF1aXZhbGVudGUuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtZmF2b3JpdG9zLWV4cG9ydGFjYW8taHRtbCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZmLWV4cG9ydGFyIl0sInJlc29sdXRpb24iOiIxLiBBIGV4cG9ydGHDp8OjbyBIVE1MIHJlZ2lzdHJhIG9zIGZhdm9yaXRvcyBlbSBmb3JtYXRvIGRlIGludGVyY8OibWJpbyBhY2VpdG8gcG9yIG5hdmVnYWRvcmVzLiAyLiBJbWFnZW0gZSDDoXVkaW8gbsOjbyBwcmVzZXJ2YW0gYSBlc3RydXR1cmEgaW1wb3J0w6F2ZWw7IHNlbmhhcyBuw6NvIHPDo28gYSBsaXN0YSBkZSBmYXZvcml0b3MuIiwic3RhdGVtZW50IjoiTm8gRmlyZWZveCBwYXJhIGRlc2t0b3AgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIGEgbGlzdGEgZGUgZmF2b3JpdG9zIGRldmUgc2VyIHRyYW5zZmVyaWRhIHBhcmEgb3V0cm8gbmF2ZWdhZG9yIHBvciBhcnF1aXZvLiBRdWFsIGZvcm1hdG8gw6kgb2ZlcmVjaWRvIHBhcmEgZXNzZSBpbnRlcmPDom1iaW8/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mZi1leHBvcnRhciI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIEV4cG9ydGFyIGZhdm9yaXRvcyBkbyBGaXJlZm94IGVtIEhUTUwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2IvY29tby1leHBvcnRhci1vcy1mYXZvcml0b3MtZG8tZmlyZWZveC1lbS1odG1sIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-imap-busca-corpo-local.json",
+        "mediaType": "application/json",
+        "sha256": "b6cab39ef721fe501c627139d767dcfbbbd60df4dec8e75f1d354f5d53ffc66d",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWx0ZXJhciBhcGVuYXMgYSBjb3IgZGEgcGFzdGEgZSBwcmVzdW1pciBxdWUgbyBjb3JwbyBmb2kgdHJhbnNmZXJpZG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUmVub21lYXIgbyBjb21wdXRhZG9yIGNvbW8gc3Vic3RpdHV0byBkbyBkb3dubG9hZCBkbyBjb250ZcO6ZG8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ29uZmVyaXIgYSBzaW5jcm9uaXphw6fDo28gZSBvIGRvd25sb2FkIGxvY2FsIGRvIGNvbnRlw7pkbyBwZXNxdWlzYWRvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkNvbmNsdWlyIHF1ZSBvIHRleHRvIG51bmNhIGV4aXN0aXUgc29tZW50ZSBwb3JxdWUgYSBidXNjYSBsb2NhbCBuw6NvIG8gZW5jb250cm91LiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LWltYXAtYnVzY2EtY29ycG8tbG9jYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10Yi1pbWFwIl0sInJlc29sdXRpb24iOiIxLiBBIHBlc3F1aXNhIG5vIGNvbnRlw7pkbyBsb2NhbCBkZXBlbmRlIGRlIGVsZSBlc3RhciBkaXNwb27DrXZlbCBwYXJhIGluZGV4YcOnw6NvIGUgYnVzY2EuIDIuIEF1c8OqbmNpYSBkZSByZXN1bHRhZG8gbsOjbyBwcm92YSBhdXPDqm5jaWEgbm8gc2Vydmlkb3I7IGFwYXLDqm5jaWEgZSBub21lIGRvIGNvbXB1dGFkb3IgbsOjbyB0cmFuc2ZlcmVtIG8gY29ycG8uIiwic3RhdGVtZW50IjoiVW1hIGJ1c2NhIGxvY2FsIG5vIGNvcnBvIGRlIG1lbnNhZ2VucyBJTUFQIGRvIFRodW5kZXJiaXJkIG7Do28gZW5jb250cmEgdGV4dG8gZGUgdW1hIG1lbnNhZ2VtIGN1am8gY29ycG8gYWluZGEgbsOjbyBmb2kgYmFpeGFkby4gUXVhbCB2ZXJpZmljYcOnw6NvIMOpIHBlcnRpbmVudGU/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10Yi1pbWFwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgU2luY3Jvbml6YcOnw6NvIElNQVAiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2Ivc2luY3Jvbml6YWNhby1JTUFQIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-navegador-importar-selecao.json",
+        "mediaType": "application/json",
+        "sha256": "0c29b312de52766d981fe883e1566de8aac80b7c64afd02c2a2e98badb3e6a7e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29uZmVyaXIgbyBuYXZlZ2Fkb3Igb3UgcGVyZmlsIGRlIG9yaWdlbSBlIHNlbGVjaW9uYXIgYXMgY2F0ZWdvcmlhcyBkZXNlamFkYXMgbm8gcHJvY2Vzc28gZGUgaW1wb3J0YcOnw6NvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlByZXN1bWlyIHF1ZSB0cm9jYXIgYSBjb3IgZG8gdGVtYSBzZWxlY2lvbmEgYXV0b21hdGljYW1lbnRlIGFzIGNhdGVnb3JpYXMgY2VydGFzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkFwYWdhciBhIG9yaWdlbSBhbnRlcyBkZSBjb25mZXJpciBvIHF1ZSBzZXLDoSB0cmFuc2Zlcmlkby4ifSx7ImlkIjoiZCIsInRleHQiOiJDb25jbHVpciBxdWUgaW1wb3J0YXIgZmF2b3JpdG9zIG9icmlnYSBzZW1wcmUgYSBpbXBvcnRhciB0b2RhcyBhcyBkZW1haXMgY2F0ZWdvcmlhcy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJpdC1uYXZlZ2Fkb3ItaW1wb3J0YXItc2VsZWNhbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZmLWltcG9ydGFyIl0sInJlc29sdXRpb24iOiIxLiBPIGZsdXhvIGRlIGltcG9ydGHDp8OjbyBwZXJtaXRlIGVzY29saGVyIGEgb3JpZ2VtIGUgb3MgdGlwb3MgZGUgZGFkb3MgcXVlIHNlcsOjbyB0cmF6aWRvcy4gMi4gVGVtYSBuw6NvIHNlbGVjaW9uYSBkYWRvczsgYXBhZ2FyIGFudGVjaXBhZGFtZW50ZSBhcnJpc2NhIGEgb3JpZ2VtIGUgbsOjbyBzZSBkZXZlIHByZXN1bWlyIG1pZ3Jhw6fDo28gb2JyaWdhdMOzcmlhIGRlIHR1ZG8uIiwic3RhdGVtZW50IjoiQW8gaW1wb3J0YXIgZGFkb3MgZGUgb3V0cm8gbmF2ZWdhZG9yIG5vIEZpcmVmb3ggcGFyYSBkZXNrdG9wLCBjb21vIGV2aXRhciB0cmF6ZXIgY2F0ZWdvcmlhcyBkZSBkYWRvcyBxdWUgbyB1c3XDoXJpbyBuw6NvIGRlc2VqYSBtaWdyYXI/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mZi1pbXBvcnRhciI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIEltcG9ydGFyIGRhZG9zIGRlIG91dHJvIG5hdmVnYWRvciIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5tb3ppbGxhLm9yZy9wdC1CUi9rYi9pbXBvcnRlLWRhZG9zLWRlLW91dHJvLW5hdmVnYWRvciJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-pop-reter-servidor.json",
+        "mediaType": "application/json",
+        "sha256": "bbb1e5a8c1d003d566d09d30dc751483574a7c98e3d2302a49b3125dc292322d",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0Ijoiw4kgbmVjZXNzw6FyaW8gY29uZmVyaXIgYSBjb25maWd1cmHDp8OjbyBkZSByZXRlbsOnw6NvIG5vIHNlcnZpZG9yOyBQT1AgcG9kZSBzZXIgY29uZmlndXJhZG8gcGFyYSBkZWl4YXIgdW1hIGPDs3BpYS4ifSx7ImlkIjoiYiIsInRleHQiOiJUb2RhIGNvbnRhIFBPUCBzZW1wcmUgYXBhZ2EgaW1lZGlhdGFtZW50ZSBxdWFscXVlciBtZW5zYWdlbSBkbyBzZXJ2aWRvciwgc2VtIG9ww6fDo28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUE9QIG9icmlnYSBhIHNpbmNyb25pemFyIHRvZGFzIGFzIHBhc3RhcyBkZSB0b2RvcyBvcyBkaXNwb3NpdGl2b3MgY29tbyBvIElNQVAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTyB0aXBvIFBPUCBpbXBlZGUgbyBkb3dubG9hZCBsb2NhbCBkZSBtZW5zYWdlbnMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtcG9wLXJldGVyLXNlcnZpZG9yIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGItZ2xvc3NhcmlvIl0sInJlc29sdXRpb24iOiIxLiBBIHBlcm1hbsOqbmNpYSBkZSBjw7NwaWFzIG5vIHNlcnZpZG9yIGRlcGVuZGUgZGFzIG9ww6fDtWVzIGRlIHJldGVuw6fDo28gYWRvdGFkYXMuIDIuIE7Do28gaMOhIGV4Y2x1c8OjbyBpbWVkaWF0YSB1bml2ZXJzYWwgZSBQT1AgbsOjbyBlcXVpdmFsZSDDoCBzaW5jcm9uaXphw6fDo28gZGUgcGFzdGFzIGRvIElNQVAgbmVtIHByb8OtYmUgY8OzcGlhIGxvY2FsLiIsInN0YXRlbWVudCI6Ik5vIFRodW5kZXJiaXJkIHBhcmEgZGVza3RvcCwgZm9pIGVzY29saGlkYSB1bWEgY29udGEgUE9QLiBRdWFsIGFmaXJtYcOnw6NvIGV2aXRhIHVtYSBnZW5lcmFsaXphw6fDo28gaW5jb3JyZXRhIHNvYnJlIG8gcXVlIG9jb3JyZSBubyBzZXJ2aWRvciBkZXBvaXMgZGUgYmFpeGFyIG1lbnNhZ2Vucz8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXRiLWdsb3NzYXJpbyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIEdsb3Nzw6FyaW8gZGUgdGVybW9zIGUgdGlwb3MgZGUgY29udGFzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2dsb3NzYXJpby10ZXJtb3MtdGlwb3MtY29udGFzIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-privativo-ip.json",
+        "mediaType": "application/json",
+        "sha256": "23b060f439db70e51104c3b9fcbf4716be33a2f797d758cd1a74c216087f1ecd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2ltLCBlbGltaW5hIHRvZG9zIG9zIHJlZ2lzdHJvcyBleGlzdGVudGVzIG5vcyBzZXJ2aWRvcmVzIHZpc2l0YWRvcy4ifSx7ImlkIjoiYiIsInRleHQiOiJTaW0sIGRpc3BlbnNhIHF1YWxxdWVyIGF1dGVudGljYcOnw6NvIG5vcyBzaXRlcy4ifSx7ImlkIjoiYyIsInRleHQiOiJOw6NvOyBhIGphbmVsYSBwcml2YXRpdmEgbsOjbyBvZmVyZWNlLCBwb3Igc2kgc8OzLCBhbm9uaW1hdG8gbmVtIG9jdWx0YcOnw6NvIGRvIElQLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlNpbSwgc2VtcHJlIHN1YnN0aXR1aSBvIGVuZGVyZcOnbyBJUCBwb3IgdW0gZW5kZXJlw6dvIGFsZWF0w7NyaW8gc2VtIGNvbmV4w6NvIGFkaWNpb25hbC4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJpdC1wcml2YXRpdm8taXAiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1wcml2YXRpdm8iXSwicmVzb2x1dGlvbiI6IjEuIEEgcHJvdGXDp8OjbyBkYSBzZXNzw6NvIHByaXZhZGEgdHJhdGEgZGUgcmFzdHJvcyBlIGRhZG9zIGxvY2Fpcywgc2VtIHByb21ldGVyIG9jdWx0YcOnw6NvIGRvIElQLiAyLiBFbGEgbsOjbyB0cm9jYSBhdXRvbWF0aWNhbWVudGUgbyBJUCwgbsOjbyBhcGFnYSBzZXJ2aWRvcmVzIGRlIHRlcmNlaXJvcyBlIG7Do28gc3Vic3RpdHVpIGxvZ2luLiIsInN0YXRlbWVudCI6IlNlZ3VuZG8gYSBkb2N1bWVudGHDp8OjbyBkbyBGaXJlZm94IGNvbnN1bHRhZGEgZW0gbm92ZW1icm8gZGUgMjAyNiwgYWJyaXIgdW1hIGphbmVsYSBwcml2YXRpdmEgdG9ybmEgYSBwZXNzb2EgYW7DtG5pbWEgbmEgSW50ZXJuZXQgZSBvY3VsdGEgc2V1IGVuZGVyZcOnbyBJUD8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXByaXZhdGl2byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIExlbmRhcyBjb211bnMgc29icmUgbmF2ZWdhw6fDo28gcHJpdmF0aXZhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL21pdG9zLWNvbXVucy1zb2JyZS1uYXZlZ2FjYW8tcHJpdmF0aXZhIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-push-revogar-site.json",
+        "mediaType": "application/json",
+        "sha256": "3b5ff6c304da84fe83e6b9cf21ddabe07639d687bdd1bda11e2e0d51324658d2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTXVkYXIgbyB0w610dWxvIGRlIHVtYSBhYmEgY29tbyBzZSBmb3NzZSB1bWEgY29uZmlndXJhw6fDo28gZGUgcGVybWlzc8Ojby4ifSx7ImlkIjoiYiIsInRleHQiOiJEZXNhdGl2YXIgYSBleGliacOnw6NvIGRlIGV4dGVuc8O1ZXMgc2VtIGV4YW1pbmFyIGEgcGVybWlzc8OjbyBkbyBzaXRlLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlJldmVyIGUgcmV2b2dhciBvdSBibG9xdWVhciBzdWEgcGVybWlzc8OjbyBkZSBub3RpZmljYcOnw7Vlcy4ifSx7ImlkIjoiZCIsInRleHQiOiJFeGNsdWlyIGFwZW5hcyB1bSBmYXZvcml0byBlIHByZXN1bWlyIHF1ZSB0b2RhIHBlcm1pc3PDo28gZm9pIHJldm9nYWRhLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Iml0LXB1c2gtcmV2b2dhci1zaXRlIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtcHVzaCJdLCJyZXNvbHV0aW9uIjoiMS4gQXMgbm90aWZpY2HDp8O1ZXMgV2ViIFB1c2ggZGVwZW5kZW0gZGUgcGVybWlzc8OjbyBkbyBzaXRlLCBxdWUgcG9kZSBzZXIgYWx0ZXJhZGEuIDIuIEZhdm9yaXRvLCB0w610dWxvIGUgZXhpYmnDp8OjbyBkZSBleHRlbnPDtWVzIG7Do28gc8OjbyBlc3NhIHBlcm1pc3PDo28gZGUgbm90aWZpY2HDp8O1ZXMuIiwic3RhdGVtZW50IjoiTm8gRmlyZWZveCBkZSBkZXNrdG9wLCB1bSBzaXRlIGFudGVzIGF1dG9yaXphZG8gZXN0w6EgZW52aWFuZG8gbm90aWZpY2HDp8O1ZXMgaW5kZXNlamFkYXMuIFF1YWwgYcOnw6NvIHRyYXRhIGEgcGVybWlzc8OjbyBkZXNzZSBzaXRlPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtcHVzaCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIE5vdGlmaWNhw6fDtWVzIFdlYiBQdXNoIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL25vdGlmaWNhY29lcy13ZWItcHVzaC1maXJlZm94In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-site-permissao-microfone.json",
+        "mediaType": "application/json",
+        "sha256": "6335842f106d9670af0084f32f9b3ddf965e8ad37a610b7aa1033b3e9aedb0c9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBwZXJtaXNzw6NvIGRlIG1pY3JvZm9uZSBhdHJpYnXDrWRhIGFvIHNpdGUgbmFzIGluZm9ybWHDp8O1ZXMgb3UgY29uZmlndXJhw6fDtWVzIGRlIHBlcm1pc3PDtWVzLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlNvbWVudGUgYSBwb3Npw6fDo28gZG8gZmF2b3JpdG8gbmEgYmFycmEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU29tZW50ZSBvIG7Dum1lcm8gZGUgcmVzdWx0YWRvcyBlbSB1bWEgcGVzcXVpc2EgV2ViLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkEgaW1wcmVzc8OjbyBkYSBww6FnaW5hIGNvbW8gc3Vic3RpdHV0YSBkYSByZXZvZ2HDp8OjbyBkZSBwZXJtaXNzw6NvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Iml0LXNpdGUtcGVybWlzc2FvLW1pY3JvZm9uZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZmLWluZm8iXSwicmVzb2x1dGlvbiI6IjEuIEEgYXV0b3JpemHDp8OjbyBkZSBhY2Vzc28gYW8gbWljcm9mb25lIMOpIHVtYSBwZXJtaXNzw6NvIGRvIHNpdGUuIDIuIE9yZ2FuaXphciBmYXZvcml0b3MsIHBlc3F1aXNhciBlIGltcHJpbWlyIG7Do28gcmV2b2dhbSBlc3NhIGF1dG9yaXphw6fDo28uIiwic3RhdGVtZW50IjoiVW1hIHDDoWdpbmEgY29uaGVjaWRhIG7Do28gZGV2ZSBtYWlzIGFjZXNzYXIgbyBtaWNyb2ZvbmUgbm8gRmlyZWZveCBkZSBkZXNrdG9wLiBRdWFsIGNvbnRyb2xlIGRldmUgc2VyIGV4YW1pbmFkbz8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZmLWluZm8iOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIOKAlCBKYW5lbGEgZGUgaW5mb3JtYcOnw7VlcyBkYSBww6FnaW5hIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2phbmVsYS1kZS1pbmZvcm1hY29lcy1kYS1wYWdpbmEtZG8tZmlyZWZveCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-url-absoluto-relativo.json",
+        "mediaType": "application/json",
+        "sha256": "98273ea5ce74bd8c97bc5b6e5afff5a8f154f25b5020456afe0f8c78acb25765",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiaHR0cHM6Ly9leGVtcGxvLm9yZy9hanVkYS5odG1sIMOpIGFic29sdXRvOyBhanVkYS5odG1sIGRlcGVuZGUgZG8gZW5kZXJlw6dvIGJhc2UgcGFyYSByZXNvbHXDp8Ojby4ifSx7ImlkIjoiYiIsInRleHQiOiJBbWJvcyBzZW1wcmUgYXBvbnRhbSBwYXJhIHF1YWxxdWVyIGRvbcOtbmlvIGVzY29saGlkbyBhbGVhdG9yaWFtZW50ZSBwZWxvIG5hdmVnYWRvci4ifSx7ImlkIjoiYyIsInRleHQiOiJhanVkYS5odG1sIGNvbnTDqW0gbmVjZXNzYXJpYW1lbnRlIGVzcXVlbWEgZSBkb23DrW5pbyBleHBsw61jaXRvcy4ifSx7ImlkIjoiZCIsInRleHQiOiJVbSBlbmRlcmXDp28gY29tIGh0dHBzOi8vIGRlaXhhIGRlIHRlciBkb23DrW5pbyBlIHBhc3NhIGEgc2VyIGFwZW5hcyBmcmFnbWVudG8uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoiaXQtdXJsLWFic29sdXRvLXJlbGF0aXZvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdXJsLXJlbGF0aXZvIl0sInJlc29sdXRpb24iOiIxLiBPIGVuZGVyZcOnbyBhYnNvbHV0byBleHBsaWNpdGEgZXNxdWVtYSBlIGRvbcOtbmlvOyBvIHJlbGF0aXZvIMOpIGludGVycHJldGFkbyBlbSByZWxhw6fDo28gw6AgYmFzZS4gMi4gQXMgYWx0ZXJuYXRpdmFzIG5lZ2FtIGEgcmVzb2x1w6fDo28gcG9yIGJhc2Ugb3UgY29uZnVuZGVtIGNhbWluaG8sIGRvbcOtbmlvIGUgZnJhZ21lbnRvLiIsInN0YXRlbWVudCI6IlF1YWwgcGFyIGRpZmVyZW5jaWEgdW0gZW5kZXJlw6dvIGFic29sdXRvIGRlIHVtIGxpbmsgcmVsYXRpdm8gdXNhZG8gZW0gdW1hIHDDoWdpbmEgV2ViPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdXJsLXJlbGF0aXZvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSBNRE4g4oCUIENyaWFuZG8gaGlwZXJsaW5rcyIsInVybCI6Imh0dHBzOi8vZGV2ZWxvcGVyLm1vemlsbGEub3JnL3B0LUJSL2RvY3MvTGVhcm5fd2ViX2RldmVsb3BtZW50L0NvcmUvU3RydWN0dXJpbmdfY29udGVudC9DcmVhdGluZ19saW5rcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.it-url-fragmento.json",
+        "mediaType": "application/json",
+        "sha256": "a8c641651addbf9ab59c3be666b6434a57b427ed74ce73e64080d31cc164a029",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiaHR0cHMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiL21hbnVhbCBjb21vIHNlIGZvc3NlIG8gZG9tw61uaW8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiI2luc3RhbGFjYW8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiZXhlbXBsby5vcmcuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoiaXQtdXJsLWZyYWdtZW50byIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXVybC1mcmFnbWVudG8iLCJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXVybC1yZWxhdGl2byJdLCJyZXNvbHV0aW9uIjoiMS4gTyBzaW5hbCAjIGludHJvZHV6IG8gaWRlbnRpZmljYWRvciBkZSBmcmFnbWVudG8uIDIuIERvbcOtbmlvLCBlc3F1ZW1hIGUgY2FtaW5obyBuw6NvIHPDo28gZXNzZSBpZGVudGlmaWNhZG9yLiIsInN0YXRlbWVudCI6Ik5vIGVuZGVyZcOnbyBodHRwczovL2V4ZW1wbG8ub3JnL21hbnVhbCNpbnN0YWxhY2FvLCBxdWFsIGVsZW1lbnRvIMOpIG8gZnJhZ21lbnRvIHF1ZSBwb2RlIGlkZW50aWZpY2FyIHVtYSBwYXJ0ZSBkbyBkb2N1bWVudG8/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC11cmwtZnJhZ21lbnRvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSBNRE4g4oCUIFVSTC5oYXNoIiwidXJsIjoiaHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvcHQtQlIvZG9jcy9XZWIvQVBJL1VSTC9oYXNoIn0sImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdXJsLXJlbGF0aXZvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSBNRE4g4oCUIENyaWFuZG8gaGlwZXJsaW5rcyIsInVybCI6Imh0dHBzOi8vZGV2ZWxvcGVyLm1vemlsbGEub3JnL3B0LUJSL2RvY3MvTGVhcm5fd2ViX2RldmVsb3BtZW50L0NvcmUvU3RydWN0dXJpbmdfY29udGVudC9DcmVhdGluZ19saW5rcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.morato-q18.json",
+        "mediaType": "application/json",
+        "sha256": "6da731377571c2a4c2dc27b915788e483b04114b758389160bea9a60357006e9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBPdXRsb29rIMOpIHVtIGFwbGljYXRpdm8gZGVzdGluYWRvIGV4Y2x1c2l2YW1lbnRlIMOgIGVkacOnw6NvIGRlIHRleHRvcyBzaW1wbGVzLCBzZW0gcmVjdXJzb3MgZGUgY29tdW5pY2HDp8Ojby4ifSx7ImlkIjoiYiIsInRleHQiOiJPIE91dGxvb2sgcGVybWl0ZSBvIGdlcmVuY2lhbWVudG8gZGUgZW1haWxzLCBjYWxlbmTDoXJpb3MgZSBjb250YXRvcywgcmV1bmluZG8gZXNzYXMgaW5mb3JtYcOnw7VlcyBlbSB1bSDDum5pY28gbG9jYWwuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTyBPdXRsb29rIMOpIHVtIHByb2dyYW1hIHV0aWxpemFkbyBhcGVuYXMgcGFyYSBuYXZlZ2HDp8OjbyBuYSBpbnRlcm5ldCwgc2VtIHN1cG9ydGUgYSBjb250YXMgZGUgZW1haWwuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTyBPdXRsb29rIGZ1bmNpb25hIHNvbWVudGUgZW0gY29tcHV0YWRvcmVzIGRlIG1lc2EsIG7Do28gZXN0YW5kbyBkaXNwb27DrXZlbCBwYXJhIGRpc3Bvc2l0aXZvcyBtw7N2ZWlzIG91IGFjZXNzbyBwZWxhIHdlYi4ifSx7ImlkIjoiZSIsInRleHQiOiJPIE91dGxvb2sgdGVtIGNvbW8gw7puaWNhIGZ1bsOnw6NvIG8gYXJtYXplbmFtZW50byBkZSBhcnF1aXZvcyBkbyBzaXN0ZW1hIG9wZXJhY2lvbmFsIFdpbmRvd3MuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBDw6JtYXJhIE11bmljaXBhbCBkZSBGcmFuY2lzY28gTW9yYXRvIDAxLzIwMjUsIE9maWNpYWwgQWRtaW5pc3RyYXRpdm8sIHF1ZXN0w6NvIDE4LiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9tb3JhdG8tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjgxMjEwNjM4OWJjYWYwZTVhMWZjNjI0ZmYzMDE2NzYxMDA1MTBlMTE5Njk1MzJiZDYwNWZkZmE0N2Q2OWI0ZmQiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzNC9hbmV4b3MvODI1ODEyNGItZDg2Ny00ZDMxLTllMWQtZWQ5NzFmOTk3MzE1LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiQ8OibWFyYSBNdW5pY2lwYWwgZGUgRnJhbmNpc2NvIE1vcmF0byAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtbW9yYXRvLTIwMjUtYWEvcTE4IiwibnVtYmVyIjoiMTgiLCJwcm9vZiI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9tb3JhdG8tYWEtcHJvb2YucGRmIiwic2hhMjU2IjoiNzA3NWZmYmQ4OGM5YTQ2ZjNjZGIxZDM4M2FiMTZjMzM2ZDkyNWZlZjdiYWU5YjRmZDg2ZGJhYWFlMWE3NzFlNiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjM0L2FuZXhvcy9kZmNhZTU0MC03YWI1LTQ2ZmMtYTdiOS01OGUxY2FlOTMyNzAucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEsIGFydC4gOMK6LCBJViBlIFRKUFIgQUMgMTQzNzMzMi0zLCBhcGxpY2FkYSDDoCBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZS4gTsOjbyDDqSBsaWNlbsOnYSBleHByZXNzYSBkYSBBdmFuw6dhIFNQIG5lbSBnYXJhbnRpYSBqdXLDrWRpY2E7IGV4Y2x1aSBvYnJhcyBkZSB0ZXJjZWlyb3MgZSBtYW50w6ltIG9yaWdlbS9nYWJhcml0by4iLCJwYXRoIjoiZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6Ik9maWNpYWwgQWRtaW5pc3RyYXRpdm8iLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6Im1vcmF0by1xMTgiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImVtYWlsIl0sInJlc29sdXRpb24iOiIxLiBPIE91dGxvb2sgcmXDum5lIGdlcmVuY2lhbWVudG8gZGUgbWVuc2FnZW5zLCBjYWxlbmTDoXJpbyBlIGNvbnRhdG9zLiAyLiBOw6NvIMOpIGFwZW5hcyBlZGl0b3IgZGUgdGV4dG8sIG5hdmVnYWRvciBvdSBhcm1hemVuYW1lbnRvIGRvIHNpc3RlbWEsIGUgcG9zc3VpIG1vZGFsaWRhZGVzIHBhcmEgZGVza3RvcCwgd2ViIGUgZGlzcG9zaXRpdm9zIG3Ds3ZlaXMuIE8gY29tYW5kbyB0cmF0YSBkYXMgZnVuw6fDtWVzIGdlcmFpcyBkbyBwcm9kdXRvLCBuw6NvIGRlIHVtIHJlY3Vyc28gZXhjbHVzaXZvIGRlIHVtYSBlZGnDp8Ojby4iLCJzdGF0ZW1lbnQiOiJObyBhbWJpZW50ZSBXaW5kb3dzLCBhbGd1bnMgcHJvZ3JhbWFzIHBlcm1pdGVtIGFvIHVzdcOhcmlvIG9yZ2FuaXphciBhdGl2aWRhZGVzIGRpZ2l0YWlzIGRvIGNvdGlkaWFubyBlbSB1bSDDum5pY28gbG9jYWwuIENvbSBiYXNlIG5vIGV4cG9zdG8gc29icmUgcHJvZ3JhbWFzIGUgYXBsaWNhdGl2b3MgZG8gV2luZG93cywgYXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBDT1JSRVRBLiIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImVtYWlsIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTAiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBBbHRlcm5hciBlbnRyZSBlbWFpbCwgY2FsZW5kw6FyaW8sIGNvbnRhdG9zIGUgdGFyZWZhcyBubyBPdXRsb29rIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvb3V0bG9vay9zd2l0Y2gtYmV0d2Vlbi15b3VyLWVtYWlsLWNhbGVuZGFyLWNvbnRhY3RzLWFuZC10YXNrcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.morato-ti-q36.json",
+        "mediaType": "application/json",
+        "sha256": "7b3dd0068d9856701cf46aea36add27d7dd51887a96f73b29188be7d88864455",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicG9yIHVzdcOhcmlvcyBleHBlcmllbnRlcyBxdWUgcXVlYnJhbSBzaXN0ZW1hcyBkZSBzZWd1cmFuw6dhIChjb21vIGFjZXNzbykgb3UgcXVlYnJhbSBzaXN0ZW1hcyBkZSBwcm90ZcOnw6NvIGEgc29mdHdhcmVzIChzZW5oYXMgZSBuw7ptZXJvcyBkZSBzw6lyaWUgZG9zIHByb2dyYW1hcykuIn0seyJpZCI6ImIiLCJ0ZXh0IjoicG9yIHByb2dyYW1hcyBkZXNhdHVhbGl6YWRvcyJ9LHsiaWQiOiJjIiwidGV4dCI6InBlbG9zIHVzdcOhcmlvcyBkZXNjb250ZW50ZXMgb3UgbGVpZ29zIHF1ZSBwb2RlbSBjYXVzYXIgcHJvYmxlbWFzIGNvbSBvdSBzZW0gaW50ZW7Dp8Ojby4ifSx7ImlkIjoiZCIsInRleHQiOiJwZWxhcyB0w6ljbmljYXMgcXVlIHNlIHV0aWxpemFtIGRhIGluZ2VudWlkYWRlIG91IGRvIGVzdGFkbyBlbW9jaW9uYWwgZG9zIHVzdcOhcmlvcyBwYXJhIHBlcm1pdGlyIGEgb2J0ZW7Dp8OjbyBkZSBkYWRvcyBwcml2YWRvcy4ifSx7ImlkIjoiZSIsInRleHQiOiJwZWxvIGVudmlvIGRlIG1lbnNhZ2VucyBkZSBlLW1haWwgZW0gZ3JhbmRlIG7Dum1lcm8gZSBzZW0gYXV0b3JpemHDp8OjbyBkb3MgZGVzdGluYXTDoXJpb3MuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBDw6JtYXJhIE11bmljaXBhbCBkZSBGcmFuY2lzY28gTW9yYXRvIDAxLzIwMjUsIFTDqWNuaWNvIGVtIEluZm9ybcOhdGljYSwgcXVlc3TDo28gMzYuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZGUgMjAyNi0wMy0yMywgcMOhZ2luYSAxLCBsaW5oYSBkbyBjYXJnbyBUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2E6IDM2PUU7IGNvbmZlcsOqbmNpYSB2aXN1YWwgYXNzaXN0aWRhIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9tb3JhdG8tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjgxMjEwNjM4OWJjYWYwZTVhMWZjNjI0ZmYzMDE2NzYxMDA1MTBlMTE5Njk1MzJiZDYwNWZkZmE0N2Q2OWI0ZmQiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzNC9hbmV4b3MvODI1ODEyNGItZDg2Ny00ZDMxLTllMWQtZWQ5NzFmOTk3MzE1LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiQ8OibWFyYSBNdW5pY2lwYWwgZGUgRnJhbmNpc2NvIE1vcmF0byAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtbW9yYXRvLTIwMjUtdGkvcTM2IiwibnVtYmVyIjoiMzYiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMzYsIHDDoWdpbmEgOCBkbyBjYWRlcm5vOyBleHRyYcOnw6NvIGNvbmZyb250YWRhIHZpc3VhbG1lbnRlIGNvbSBhIHJlbmRlcml6YcOnw6NvIGxvY2FsIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9tb3JhdG8tdGktcHJvb2YucGRmIiwic2hhMjU2IjoiZGJmZWY0MWJjZmM3MzQ1OWJiN2IxMmUzZDhkNDY5YWNkMmJmNzBlYzNlZjgzMmJiMjM4MDBiYjU4YWM1ZmFmMCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjM0L2FuZXhvcy81MzY4NjFiYy0xZmI4LTQ2MDktOWYwYy0xMWVlY2QwY2YzY2EucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEgZG9jdW1lbnRhZGEgbm8gcHJvamV0byBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLCBzZW0gaW1hZ2VtIG91IHRleHRvIGRlIHRlcmNlaXJvLiBOw6NvIMOpIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhLiBGb250ZSwgcmVkYcOnw6NvIGUgZ2FiYXJpdG8gcHJlc2VydmFkb3M7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2EiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6Im1vcmF0by10aS1xMzYiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLW9maWNpYWwtdGktaXQtc3BhbSJdLCJyZXNvbHV0aW9uIjoiMS4gU3BhbSBjYXJhY3Rlcml6YSBtZW5zYWdlbnMgZWxldHLDtG5pY2FzIG7Do28gc29saWNpdGFkYXMsIGdlcmFsbWVudGUgZW52aWFkYXMgZW0gbWFzc2E7IGEgYWx0ZXJuYXRpdmEgRSBjb2luY2lkZSBjb20gbyBnYWJhcml0byBkZWZpbml0aXZvLiAyLiBBIGRlc2NyZXZlIGludmFzw6NvIG91IHF1ZWJyYSBkZSBwcm90ZcOnw6NvOyBCIMOpIGRlc2F0dWFsaXphw6fDo28sIEMgdW1hIHBvc3PDrXZlbCBvcmlnZW0gaHVtYW5hIGRlIGluY2lkZW50ZXMgZSBEIGVuZ2VuaGFyaWEgc29jaWFsLiBFc3NlcyBjb25jZWl0b3MgbsOjbyBkZWZpbmVtIHNwYW0uIE1lbnNhZ2VucyBuw6NvIHNvbGljaXRhZGFzIG7Do28gcHJlY2lzYW0gdGVyIGNvbnRlw7pkbyBleGNsdXNpdmFtZW50ZSBjb21lcmNpYWwuIiwic3RhdGVtZW50IjoiQW1lYcOnYXMgYW9zIHNpc3RlbWFzIGRlIGluZm9ybWHDp8OjbyBzw6NvIGNvbmRpw6fDtWVzLCBhZ2VudGVzIG91IGFjb250ZWNpbWVudG9zIHF1ZSBwb2RlbSBwcmVqdWRpY2FyLCBkZSBmb3JtYSB0ZW1wb3LDoXJpYSBvdSBwZXJtYW5lbnRlLCBvIGZ1bmNpb25hbWVudG8gZGUgdW0gc2lzdGVtYSBkZSBpbmZvcm1hw6fDo28uIFVtYSBhbWVhw6dhIGRvIHRpcG8gc3BhbSDDqSBjYXJhdGVyaXphZGEiLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1vZmljaWFsLXRpLWl0LXNwYW0iOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJDRVJULmJyIOKAlCBDYXJ0aWxoYSBkZSBTZWd1cmFuw6dhIHBhcmEgSW50ZXJuZXQsIGNhcMOtdHVsbyBTcGFtIiwidXJsIjoiaHR0cHM6Ly9jYXJ0aWxoYS5jZXJ0LmJyL2xpdnJvL2NhcnRpbGhhLXNlZ3VyYW5jYS1pbnRlcm5ldC5wZGYifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.potim-aa-q19.json",
+        "mediaType": "application/json",
+        "sha256": "1324b1612c36e2f59b3bcfe3ee74d7c99203f85489435c121f8a5067b0e61475",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVW0gYXJxdWl2byBxdWUgcG9kZSBzZXIgZW52aWFkbyBqdW50byBjb20gdW1hIG1lbnNhZ2VtIGRlIGUtbWFpbC4gRXNzZXMgYXJxdWl2b3MgcG9kZW0gaW5jbHVpciBkb2N1bWVudG9zLCBpbWFnZW5zLCB2w61kZW9zLCBhcHJlc2VudGHDp8O1ZXMgZSBvdXRyb3MgdGlwb3MgZGUgY29udGXDumRvIGRpZ2l0YWwuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiVW0gcHJvZ3JhbWEgZGUgY29tcHV0YWRvciBxdWUgcHJvdGVnZSBjb250cmEgdsOtcnVzIGVtIG1lbnNhZ2VucyBkZSBlLW1haWwuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTyBlbmRlcmXDp28gZWxldHLDtG5pY28gZG8gcmVtZXRlbnRlIGRhIG1lbnNhZ2VtLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik8gdGFtYW5obyBtw6F4aW1vIHBlcm1pdGlkbyBwYXJhIHVtYSBjYWl4YSBkZSBlbnRyYWRhIGRlIGUtbWFpbC4ifSx7ImlkIjoiZSIsInRleHQiOiJVbSB0aXBvIGRlIHNlcnZpZG9yIGRlIGUtbWFpbCBxdWUgYXJtYXplbmEgbWVuc2FnZW5zIGFudGlnYXMuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSAwMS8yMDI1LCBBZ2VudGUgQWRtaW5pc3RyYXRpdm8sIHF1ZXN0w6NvIDE5LiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9wb3RpbS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiMDk5NzhlZTNhMTg0YTQ0Nzg1MGRhY2E3OGU0YzFmNDM4NjI5Y2FjNjU4MTFjMjY5MGI1ZWY1YzViM2JlYTc4NiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjIwL2FuZXhvcy83NzI1YzI3ZC02ODI1LTQ0MGItYjRiZi00YmZmZDk3N2MzOGUucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtcG90aW0tMjAyNS1hYS9xMTkiLCJudW1iZXIiOiIxOSIsInByb29mIjp7Im5vdGUiOiJGb250ZSBwcmltw6FyaWEgb2ZpY2lhbDsgY2FkZXJuby9jYXJnby9uw7ptZXJvIGUgZ2FiYXJpdG8gZGVmaW5pdGl2byBjb25mZXJpZG9zIHBhcmEgZXN0YSBzZWxlw6fDo28gYXNzaXN0aWRhLiIsInBhdGgiOiJkb3NzaWVyL3BvdGltLWFhLXByb29mLnBkZiIsInNoYTI1NiI6ImUwNGExMTc5ZDAwYjU3OTk3YmU2NTI1MzNjN2Y5ZDBlMTU3ODQ2MzlkMzkzMDYyNWJmMmZkODcwMjIwMGM2N2QiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvYTUxMDI4NjYtMTY0Ni00N2ViLTlkZDctZTBiM2MxNTZmN2RiLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhLCBhcnQuIDjCuiwgSVYgZSBUSlBSIEFDIDE0MzczMzItMywgYXBsaWNhZGEgw6AgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUuIE7Do28gw6kgbGljZW7Dp2EgZXhwcmVzc2EgZGEgQXZhbsOnYSBTUCBuZW0gZ2FyYW50aWEganVyw61kaWNhOyBleGNsdWkgb2JyYXMgZGUgdGVyY2Vpcm9zIGUgbWFudMOpbSBvcmlnZW0vZ2FiYXJpdG8uIiwicGF0aCI6ImRvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJBZ2VudGUgQWRtaW5pc3RyYXRpdm8iLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InBvdGltLWFhLXExOSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsiYW5leG9zIl0sInJlc29sdXRpb24iOiIxLiBVbSBhbmV4byDDqSB1bSBhcnF1aXZvIGVudmlhZG8ganVudG8gY29tIGEgbWVuc2FnZW0gZGUgY29ycmVpbyBlbGV0csO0bmljby4gMi4gRWxlIG7Do28gw6kgbyBlbmRlcmXDp28gZG8gcmVtZXRlbnRlLCB1bSBhbnRpdsOtcnVzLCB1bSBsaW1pdGUgZGUgY2FpeGEgcG9zdGFsIG91IHVtIHNlcnZpZG9yLiBUaXBvcyBlIHRhbWFuaG8gYWNlaXRvcyBkZXBlbmRlbSBkbyBzZXJ2acOnbywgbWFzIGVzc2EgZGVmaW5pw6fDo28gw6kgZ2VyYWwuIiwic3RhdGVtZW50IjoiTyBxdWUgw6kgdW0gYW5leG8gZW0gdW0gZS1tYWlsPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImFuZXhvcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEwIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgQWRpY2lvbmFyIGltYWdlbnMgb3UgYW5leGFyIGFycXVpdm9zIGEgZW1haWxzIG5vIE91dGxvb2siLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9vdXRsb29rL21haWwvYWRkLXBpY3R1cmVzLW9yLWF0dGFjaC1maWxlcy10by1lbWFpbHMtaW4tb3V0bG9vayJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.potim-ti-q23.json",
+        "mediaType": "application/json",
+        "sha256": "bee9cf98b62601458fc062b95295409765f6ce1d5de5acafb337871a1c69e745",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSW50ZXJuZXQuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiVlBOIGFiZXJ0YS4ifSx7ImlkIjoiYyIsInRleHQiOiJXaS1GaSBww7pibGljby4ifSx7ImlkIjoiZCIsInRleHQiOiJJbnRyYW5ldC4ifSx7ImlkIjoiZSIsInRleHQiOiJFeHRyYW5ldC4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIDAxLzIwMjUsIFTDqWNuaWNvIGVtIEluZm9ybcOhdGljYSwgcXVlc3TDo28gMjMuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZGUgMjAyNi0wMi0yMywgcMOhZ2luYSA3LCBsaW5oYSBkbyBjYXJnbyBUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2E6IDIzPUQ7IGNvbmZlcsOqbmNpYSB2aXN1YWwgYXNzaXN0aWRhIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9wb3RpbS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiMDk5NzhlZTNhMTg0YTQ0Nzg1MGRhY2E3OGU0YzFmNDM4NjI5Y2FjNjU4MTFjMjY5MGI1ZWY1YzViM2JlYTc4NiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjIwL2FuZXhvcy83NzI1YzI3ZC02ODI1LTQ0MGItYjRiZi00YmZmZDk3N2MzOGUucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtcG90aW0tMjAyNS10aS9xMjMiLCJudW1iZXIiOiIyMyIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAyMywgcMOhZ2luYSA3IGRvIGNhZGVybm87IGV4dHJhw6fDo28gY29uZnJvbnRhZGEgdmlzdWFsbWVudGUgY29tIGEgcmVuZGVyaXphw6fDo28gbG9jYWwgZW0gMjAyNi0xMS0xMS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3BvdGltLXRpLXByb29mLnBkZiIsInNoYTI1NiI6IjcwOWUzMGY1NDEzZTVmYmFkMmY4Njg2M2ExMDcyMmJlMzY4NWUwYzE4YzgzY2ExMjkxY2RhNTgxYmVhMzNkNGMiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvYWEzYWZlZjMtYzE0OS00NmYyLTgwY2QtYzliN2NkMDk3YzI0LnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIGRvY3VtZW50YWRhIG5vIHByb2pldG8gYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIGltYWdlbSBvdSB0ZXh0byBkZSB0ZXJjZWlyby4gTsOjbyDDqSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYS4gRm9udGUsIHJlZGHDp8OjbyBlIGdhYmFyaXRvIHByZXNlcnZhZG9zOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVMOpY25pY28gZW0gSW5mb3Jtw6F0aWNhIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJwb3RpbS10aS1xMjMiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLW9maWNpYWwtdGktaXQtcmVkZXMtYWxjYW5jZSJdLCJyZXNvbHV0aW9uIjoiMS4gSW50cmFuZXQgw6kgbyBhbWJpZW50ZSBkZSByZWRlIGludGVybm8gZGEgb3JnYW5pemHDp8OjbyBjb20gYWNlc3NvIGNvbnRyb2xhZG87IEQgY29pbmNpZGUgY29tIG8gZ2FiYXJpdG8gZGVmaW5pdGl2by4gMi4gSW50ZXJuZXQgw6kgYSByZWRlIGdsb2JhbDsgV2ktRmkgcMO6YmxpY28gZSBWUE4gYWJlcnRhIG7Do28gZGVmaW5lbSBlc3NlIGFtYmllbnRlIHByaXZhZG8gaW50ZXJuby4gRXh0cmFuZXQgY2FyYWN0ZXJpemEgZXh0ZW5zw6NvIGNvbnRyb2xhZGEgYSB1c3XDoXJpb3MgZXh0ZXJub3MsIGRpc3RpbsOnw6NvIGF1c2VudGUgbm8gZW51bmNpYWRvIGRlc3RhIHF1ZXN0w6NvLiIsInN0YXRlbWVudCI6IkVzY29saGEgYSBhbHRlcm5hdGl2YSBxdWUgcmVwcmVzZW50YSB1bWEgcmVkZSBwcml2YWRhIGludGVybmEgYWNlc3NhZGEgYXBlbmFzIHBvciB1c3XDoXJpb3MgYXV0b3JpemFkb3M6IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2Etb2ZpY2lhbC10aS1pdC1yZWRlcy1hbGNhbmNlIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBXZWIgU2VydmljZXM6IGludHJhbmV0LCBleHRyYW5ldCBlIEludGVybmV0IiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL2VuLXVzL3ByZXZpb3VzLXZlcnNpb25zL3dpbmRvd3MvZGVza3RvcC9hYTk2NjI4MSh2PWJ0cy4xMCkifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.s.potim-ti-q31.json",
+        "mediaType": "application/json",
+        "sha256": "54ffb2410d7606e8b9710374748eda0b9b94fd803ffd94dd8be49cf0c95b685f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU01UUC4ifSx7ImlkIjoiYiIsInRleHQiOiJETlMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiREhDUC4ifSx7ImlkIjoiZCIsInRleHQiOiJVRFAuIn0seyJpZCI6ImUiLCJ0ZXh0IjoiSFRUUFMuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSAwMS8yMDI1LCBUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2EsIHF1ZXN0w6NvIDMxLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvIGRlIDIwMjYtMDItMjMsIHDDoWdpbmEgNywgbGluaGEgZG8gY2FyZ28gVMOpY25pY28gZW0gSW5mb3Jtw6F0aWNhOiAzMT1COyBjb25mZXLDqm5jaWEgdmlzdWFsIGFzc2lzdGlkYSBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcG90aW0tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjA5OTc4ZWUzYTE4NGE0NDc4NTBkYWNhNzhlNGMxZjQzODYyOWNhYzY1ODExYzI2OTBiNWVmNWM1YjNiZWE3ODYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNzcyNWMyN2QtNjgyNS00NDBiLWI0YmYtNGJmZmQ5NzdjMzhlLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXBvdGltLTIwMjUtdGkvcTMxIiwibnVtYmVyIjoiMzEiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMzEsIHDDoWdpbmEgOCBkbyBjYWRlcm5vOyBleHRyYcOnw6NvIGNvbmZyb250YWRhIHZpc3VhbG1lbnRlIGNvbSBhIHJlbmRlcml6YcOnw6NvIGxvY2FsIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9wb3RpbS10aS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI3MDllMzBmNTQxM2U1ZmJhZDJmODY4NjNhMTA3MjJiZTM2ODVlMGMxOGM4M2NhMTI5MWNkYTU4MWJlYTMzZDRjIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zL2FhM2FmZWYzLWMxNDktNDZmMi04MGNkLWM5YjdjZDA5N2MyNC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBkb2N1bWVudGFkYSBubyBwcm9qZXRvIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUsIHNlbSBpbWFnZW0gb3UgdGV4dG8gZGUgdGVyY2Vpcm8uIE7Do28gw6kgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EuIEZvbnRlLCByZWRhw6fDo28gZSBnYWJhcml0byBwcmVzZXJ2YWRvczsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlTDqWNuaWNvIGVtIEluZm9ybcOhdGljYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoicG90aW0tdGktcTMxIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1vZmljaWFsLXRpLWl0LWRucyJdLCJyZXNvbHV0aW9uIjoiMS4gRE5TIHJlc29sdmUgbm9tZXMgZGUgZG9tw61uaW8gcGFyYSByZWdpc3Ryb3MgY29tbyBvcyBxdWUgZm9ybmVjZW0gZW5kZXJlw6dvcyBJUDsgQiDDqSBvIGdhYmFyaXRvIGRlZmluaXRpdm8uIDIuIFNNVFAgdHJhdGEgZGUgY29ycmVpbzsgREhDUCBkaXN0cmlidWkgY29uZmlndXJhw6fDtWVzIGNvbW8gZW5kZXJlw6dvczsgVURQIMOpIHVtIHByb3RvY29sbyBkZSB0cmFuc3BvcnRlIGUgSFRUUFMgcHJvdGVnZSBhIGNvbXVuaWNhw6fDo28gSFRUUC4gRWxlcyBuw6NvIHN1YnN0aXR1ZW0gYSBmdW7Dp8OjbyBkZSByZXNvbHXDp8OjbyBkZSBub21lcyBkZXNjcml0YS4iLCJzdGF0ZW1lbnQiOiJPIHByb3RvY29sbyBkZSByZWRlIHF1ZSB0cmFkdXogbm9tZXMgZGUgZG9tw61uaW8gbGVnw612ZWlzIHBvciBodW1hbm9zIGVtIGVuZGVyZcOnb3MgSVAgbnVtw6lyaWNvcyDDqSBvOiIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLW9maWNpYWwtdGktaXQtZG5zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IExlYXJuIOKAlCBDb25zdWx0YXMgZSBwZXNxdWlzYXMgRE5TIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL3B0LWJyL3dpbmRvd3Mtc2VydmVyL25ldHdvcmtpbmcvZG5zL3F1ZXJpZXMtbG9va3VwcyJ9fX0="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I10.s.it-busca-formato-pdf",
+    "admin.2026-11.I10.s.it-busca-site-sintaxe",
+    "admin.2026-11.I10.s.it-cache-proposito",
+    "admin.2026-11.I10.s.it-cookies-funcao",
+    "admin.2026-11.I10.s.it-ctrlf-pagina-atual",
+    "admin.2026-11.I10.s.it-diagnostico-navegador",
+    "admin.2026-11.I10.s.it-download-abrir-aplicativo",
+    "admin.2026-11.I10.s.it-downloads-andamento",
+    "admin.2026-11.I10.s.it-email-falha-smtp",
+    "admin.2026-11.I10.s.it-email-offline-fila",
+    "admin.2026-11.I10.s.it-extensao-conflito",
+    "admin.2026-11.I10.s.it-favoritos-exportacao-html",
+    "admin.2026-11.I10.s.it-imap-busca-corpo-local",
+    "admin.2026-11.I10.s.it-navegador-importar-selecao",
+    "admin.2026-11.I10.s.it-pop-reter-servidor",
+    "admin.2026-11.I10.s.it-privativo-ip",
+    "admin.2026-11.I10.s.it-push-revogar-site",
+    "admin.2026-11.I10.s.it-site-permissao-microfone",
+    "admin.2026-11.I10.s.it-url-absoluto-relativo",
+    "admin.2026-11.I10.s.it-url-fragmento",
+    "admin.2026-11.I10.s.morato-q18",
+    "admin.2026-11.I10.s.morato-ti-q36",
+    "admin.2026-11.I10.s.potim-aa-q19",
+    "admin.2026-11.I10.s.potim-ti-q23",
+    "admin.2026-11.I10.s.potim-ti-q31"
+  ]
+}

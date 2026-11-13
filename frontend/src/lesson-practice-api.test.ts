@@ -5,6 +5,15 @@ import { view, result } from '../test/practice-fixtures';
 import { response } from '../test/question-fixtures';
 const signal = () => new AbortController().signal;
 afterEach(() => vi.unstubAllGlobals());
+function sized(count: number) {
+  return { ...view, items: Array.from({ length: count }, (_, n) => ({ ...view.items[0],
+    id: `10000000-0000-4000-8000-${String(n).padStart(12, '0')}`,
+    questionId: `20000000-0000-4000-8000-${String(n).padStart(12, '0')}` })) };
+}
+function wireResult(count: number) {
+  return { ...result, total: count, blank: count, items: sized(count).items.map(item => ({ item,
+    correctAlternativeId: item.alternatives[0].id, resolution: result.items[0].explanation })) };
+}
 function api(value: unknown) {
   const fetchMock = vi.fn(async (url: string, _options?: RequestInit) => url.endsWith('/csrf') ? response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' }) : response(value));
   vi.stubGlobal('fetch', fetchMock); return fetchMock;
@@ -41,4 +50,17 @@ it('encerramento valida contrato por assunto e conserva correção calculada pel
   const wire = { ...result, items: [{ item: view.items[0], correctAlternativeId: view.items[0].alternatives[0].id, resolution: result.items[0].explanation }] };
   api({ attempt: closed, result: wire });
   expect(await lessonPracticeTransport.finish(view.id, 'command', 0, signal())).toEqual({ attempt: closed, result });
+});
+it.each([1, 5, 24, 25])('aceita captura e histórico com %i itens sem criar cargo', async count => {
+  const value = sized(count); api(value);
+  expect(await lessonPracticeTransport.read(view.id, signal())).toEqual(value);
+  const history = { page: 0, size: 20, items: [{ id: view.id, topicId: 'P01', createdAt: view.createdAt, finishedAt: null, total: count, percentage: null }] };
+  api(history); expect(await lessonPracticeHistory(0, signal())).toEqual(history);
+  api(wireResult(count)); expect((await lessonPracticeTransport.result(view.id, signal())).total).toBe(count);
+});
+it.each([0, 26])('recusa captura e histórico fora do teto: %i itens', async count => {
+  api(sized(count)); await expect(lessonPracticeTransport.read(view.id, signal())).rejects.toThrow();
+  api({ page: 0, size: 20, items: [{ id: view.id, topicId: 'P01', createdAt: view.createdAt, finishedAt: null, total: count, percentage: null }] });
+  await expect(lessonPracticeHistory(0, signal())).rejects.toThrow();
+  api(wireResult(count)); await expect(lessonPracticeTransport.result(view.id, signal())).rejects.toThrow();
 });

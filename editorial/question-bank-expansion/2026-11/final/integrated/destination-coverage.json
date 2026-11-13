@@ -1,0 +1,555 @@
+{
+ "format": "question-expansion-destination-coverage/v1",
+ "observedAt": "2026-11-13",
+ "destination": {
+  "logical": "question-expansion-local-61470635a4ff4912b5ce24964f19a2d7",
+  "environment": "ambiente local paralelo (UI 5371, API 19160) com #173 + #177 (épica combinada), PostgreSQL 18.6 efêmero restaurado do backup privado pré-#177 (SHA-256 5b7042df…c6ef43)",
+  "flyway": "V1–V17"
+ },
+ "enablement": {
+  "mechanism": "#177: importação administrativa (102 recibos) e decisões editoriais em lote (204 lotes: SUBMIT e APPROVE)",
+  "packagesMatchingVersionedManifest": "102/102 (requestSha256, packageDigest, selectionDigest)",
+  "submitDecisions": 2587,
+  "approveDecisions": 2587,
+  "reviewKind": "AI_ONLY"
+ },
+ "database": {
+  "eligibleTotal": 2639,
+  "eligibleExpansion": 2587,
+  "eligibleOtherSyntheticFixtures": 52,
+  "missingFromPackages": 0,
+  "extraBeyondPackages": 0,
+  "fingerprintMismatches": 0,
+  "cellMismatches": 0,
+  "cells": 102,
+  "minItemsPerCell": 25,
+  "minOriginalsPerCell": 5,
+  "simulado": 1294,
+  "pratica": 1293,
+  "originals": 530
+ },
+ "http": {
+  "endpoints": [
+   "GET /api/v1/lesson-practices/availability?topicId=…",
+   "GET /api/v1/question-bank/questions?topicId=…"
+  ],
+  "topics": 51,
+  "mismatchesWithDatabase": 0,
+  "maximum": 5,
+  "cacheControl": "no-store",
+  "perTopic": [
+   {
+    "topicId": "A01",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "A02",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "A03",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "A04",
+    "practiceAvailable": 27,
+    "practiceMaximum": 5,
+    "simuladoTotal": 27,
+    "dbPractice": 27,
+    "dbSimulado": 27,
+    "expansionPractice": 27,
+    "expansionSimulado": 27
+   },
+   {
+    "topicId": "A05",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "A06",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "A07",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "A08",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 27,
+    "dbPractice": 25,
+    "dbSimulado": 27,
+    "expansionPractice": 25,
+    "expansionSimulado": 27
+   },
+   {
+    "topicId": "I01",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I02",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I03",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I04",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I05",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I06",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I07",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I08",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I09",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "I10",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "M01",
+    "practiceAvailable": 28,
+    "practiceMaximum": 5,
+    "simuladoTotal": 29,
+    "dbPractice": 28,
+    "dbSimulado": 29,
+    "expansionPractice": 28,
+    "expansionSimulado": 28
+   },
+   {
+    "topicId": "M02",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "M03",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "M04",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 26,
+    "dbPractice": 25,
+    "dbSimulado": 26,
+    "expansionPractice": 25,
+    "expansionSimulado": 26
+   },
+   {
+    "topicId": "M05",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "M06",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 26,
+    "dbPractice": 25,
+    "dbSimulado": 26,
+    "expansionPractice": 25,
+    "expansionSimulado": 26
+   },
+   {
+    "topicId": "M07",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 26,
+    "dbPractice": 25,
+    "dbSimulado": 26,
+    "expansionPractice": 25,
+    "expansionSimulado": 26
+   },
+   {
+    "topicId": "M08",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "M09",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "M10",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "M11",
+    "practiceAvailable": 27,
+    "practiceMaximum": 5,
+    "simuladoTotal": 27,
+    "dbPractice": 27,
+    "dbSimulado": 27,
+    "expansionPractice": 27,
+    "expansionSimulado": 27
+   },
+   {
+    "topicId": "M12",
+    "practiceAvailable": 27,
+    "practiceMaximum": 5,
+    "simuladoTotal": 27,
+    "dbPractice": 27,
+    "dbSimulado": 27,
+    "expansionPractice": 27,
+    "expansionSimulado": 27
+   },
+   {
+    "topicId": "P01",
+    "practiceAvailable": 55,
+    "practiceMaximum": 5,
+    "simuladoTotal": 46,
+    "dbPractice": 55,
+    "dbSimulado": 46,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P02",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P03",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P04",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P05",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P06",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P07",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P08",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P09",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "P10",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S01",
+    "practiceAvailable": 33,
+    "practiceMaximum": 5,
+    "simuladoTotal": 29,
+    "dbPractice": 33,
+    "dbSimulado": 29,
+    "expansionPractice": 33,
+    "expansionSimulado": 29
+   },
+   {
+    "topicId": "S02",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S03",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S04",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S05",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S06",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S07",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S08",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S09",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   },
+   {
+    "topicId": "S10",
+    "practiceAvailable": 26,
+    "practiceMaximum": 5,
+    "simuladoTotal": 26,
+    "dbPractice": 26,
+    "dbSimulado": 26,
+    "expansionPractice": 26,
+    "expansionSimulado": 26
+   },
+   {
+    "topicId": "S11",
+    "practiceAvailable": 25,
+    "practiceMaximum": 5,
+    "simuladoTotal": 25,
+    "dbPractice": 25,
+    "dbSimulado": 25,
+    "expansionPractice": 25,
+    "expansionSimulado": 25
+   }
+  ]
+ },
+ "notCounted": "As 52 questões sintéticas do ambiente aparecem nos totais HTTP por assunto, mas não contam na cota; os mínimos ≥25 por célula valem só com as 2.587 da expansão.",
+ "limits": "Destino local de teste; banco do operador/VPS não consultado. Aprovação AI_ONLY não é revisão humana nem aceite do usuário."
+}

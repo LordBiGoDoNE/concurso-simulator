@@ -1,0 +1,2007 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.cerq25-aesc-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "Em planilhas de dados financeiros, é comum encontrar valores médios citados. Para calcular a média dos valores de uma coluna no Excel, pode-se utilizar uma fórmula pronta. Assim, para o exemplo abaixo, qual seria a fórmula correta?\n[Planilha da prova, transcrita em texto: A1 = Contrato; B1 = Valor de Contrato; A2 = A e B2 = R$ 3.000,00; A3 = B e B3 = R$ 4.000,00; A4 = C e B4 = R$ 5.000,00; A5 = Total e B5 em branco.]\nAssinale a alternativa que contém a fórmula correta para calcular a média no Excel:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4d012860-6926-5caa-b6ad-936a301020dd",
+              "content": {
+                "text": "=MED(B2:B4)",
+                "resources": []
+              }
+            },
+            {
+              "id": "4eb3b00c-8fa0-5547-a656-0c21216a9ecf",
+              "content": {
+                "text": "=MÉDIA(B2:B4)",
+                "resources": []
+              }
+            },
+            {
+              "id": "94659f58-294e-57c2-8265-794ca24cf475",
+              "content": {
+                "text": "=MÉDIA(B1:B4)",
+                "resources": []
+              }
+            },
+            {
+              "id": "b61f4cf0-b8e2-5de6-8335-580e186ae3b8",
+              "content": {
+                "text": "MÉDIA(B2:B4)",
+                "resources": []
+              }
+            },
+            {
+              "id": "674a2956-813a-55ad-beaa-da2d3ae5e756",
+              "content": {
+                "text": "MED(B2:B4)",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4eb3b00c-8fa0-5547-a656-0c21216a9ecf",
+          "resolution": {
+            "text": "1. A média aritmética dos valores B2:B4 é obtida com =MÉDIA(B2:B4), que resulta R$ 4.000,00; alternativa B. 2. MED calcula a mediana, outra medida (A, E); B1:B4 incluiria o cabeçalho; MÉDIA ignora textos, então daria o mesmo valor, mas o intervalo está incorreto para os dados (C); D e E não começam com =, de modo que o Excel as trataria como texto. Os nomes são do Excel em português (AVERAGE e MEDIAN em inglês). Gabarito definitivo: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Cerquilho — Concurso Público 01/2025, Auxiliar de Escritório, questão 19. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I06.p.cerq25-aesc-q19.json",
+            "answerPath": "sources/admin.2026-11.I06.p.cerq25-aesc-q19.json",
+            "contentSha256": "d0cf9a46a43ee129d56e3dab67b2377c4355771fb56833795eca721f93ad1e46",
+            "answerSha256": "d0cf9a46a43ee129d56e3dab67b2377c4355771fb56833795eca721f93ad1e46"
+          }
+        },
+        "fingerprint": "50dc836cbaa2cb260a520800e9c72340b8813351c4a232c55e574aa78c396204",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.fgv-taubate-q36"
+        },
+        "content": {
+          "statement": {
+            "text": "Analise as fórmulas MS Excel exibidas a seguir.\n=AB1^AB2\n=A[C1]\n=(A+B)1\n=SOMA(A1:C3) + SOMA(B2)\nEstão corretamente formuladas todas as fórmulas, à exceção da",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "33875d3e-44d2-59cd-823a-e39ea86b340c",
+              "content": {
+                "text": "primeira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4a206cf8-b118-506a-bd7f-5f2bfd02ae39",
+              "content": {
+                "text": "primeira e da segunda.",
+                "resources": []
+              }
+            },
+            {
+              "id": "479d308b-bd84-50aa-8934-4a84bc3abf4e",
+              "content": {
+                "text": "segunda e da terceira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1a2c44ed-edbc-5230-8bf7-882c00a0a970",
+              "content": {
+                "text": "terceira e da quarta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "89b554a2-fe86-50ac-a83e-6aafb83fe587",
+              "content": {
+                "text": "quarta.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "479d308b-bd84-50aa-8934-4a84bc3abf4e",
+          "resolution": {
+            "text": "1. Na notação A1 do Excel em português, AB1 e AB2 são referências válidas e ^ é potência; SOMA aceita os intervalos indicados. Já A[C1] e (A+B)1 não constituem as referências ou operações válidas apresentadas. O definitivo marca C. 2. A primeira e a quarta têm sintaxe adequada ao contexto; alternativas que as excluem erram o diagnóstico. A questão não define Tabela ou nomes estruturados que dessem outro significado à segunda expressão.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "FGV — Câmara Municipal de Taubaté — Edital 1/2022, Técnico Legislativo de Informática, Tipo 1 — Branca — Tarde, questão 36. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I06.p.fgv-taubate-q36.json",
+            "answerPath": "sources/admin.2026-11.I06.p.fgv-taubate-q36.json",
+            "contentSha256": "c294b27db3e4d5af093b69100ac6a5fa9f13296bde5290d4574167c63a74409b",
+            "answerSha256": "c294b27db3e4d5af093b69100ac6a5fa9f13296bde5290d4574167c63a74409b"
+          }
+        },
+        "fingerprint": "209f93da8c79f766d79a33445bb9b8dea3d9fe1f27f3e9599d0dfbd40a90e357",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-arrumar"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, a função ARRUMAR aplicada a texto com espaços comuns excedentes é usada principalmente para quê?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "222ca032-9183-5f97-95ef-2715f0443de7",
+              "content": {
+                "text": "Ordenar alfabeticamente todas as linhas da planilha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0cef9764-c495-54c4-a76a-99e9e4aca11e",
+              "content": {
+                "text": "Apagar todas as letras maiúsculas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "40d86b5f-c800-58e1-ab8a-1ef8b58fddc9",
+              "content": {
+                "text": "Criar uma nova aba para cada palavra.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4c000473-137f-5472-a348-344541274177",
+              "content": {
+                "text": "Remover espaços excedentes, preservando espaços simples entre palavras.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4c000473-137f-5472-a348-344541274177",
+          "resolution": {
+            "text": "1. ARRUMAR trata o espaçamento textual excedente. 2. Não é classificação de registros, remoção de maiúsculas ou criação de planilhas. Espaços especiais podem exigir tratamento adicional.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-arrumar.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-arrumar.json",
+            "contentSha256": "ecd1486086d84a13cc93a4b6cbd5a0a662ae40787e8b828b4db0ff1855fdad47",
+            "answerSha256": "ecd1486086d84a13cc93a4b6cbd5a0a662ae40787e8b828b4db0ff1855fdad47"
+          }
+        },
+        "fingerprint": "e4f7b3df1780478ac8c320c9232ee5d28673fdf9cc53c5759e1f28a82bc97914",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-concatenar-operador"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, A1 contém Ana e B1 contém Silva. Qual fórmula produz Ana Silva com um único espaço entre os nomes?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4a201606-43d0-5ad6-8ede-118aab2778cd",
+              "content": {
+                "text": "=A1/B1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a79dc692-9642-5e6f-9cd8-cfa3e6fdb221",
+              "content": {
+                "text": "=A1&\" \"&B1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2040e3d4-84cd-5501-b31a-83b8a1d690f7",
+              "content": {
+                "text": "=A1+B1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "be9084e5-5fad-58bf-b6c8-de7937980749",
+              "content": {
+                "text": "=A1*B1.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a79dc692-9642-5e6f-9cd8-cfa3e6fdb221",
+          "resolution": {
+            "text": "1. O operador & concatena textos; \" \" fornece o espaço entre eles. 2. Os operadores +, * e / são aritméticos e não constroem essa combinação textual de nomes.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            },
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-concatenar-operador.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-concatenar-operador.json",
+            "contentSha256": "e025985339991a7853646c30c8c0fab420468710eb33a84fcdaaf06368048262",
+            "answerSha256": "e025985339991a7853646c30c8c0fab420468710eb33a84fcdaaf06368048262"
+          }
+        },
+        "fingerprint": "6b1b82abfbd13b069b5d9a8774178e1fe167572d862e3ee599b2a51735d034f1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-contagem-valores"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 em português do Brasil, B1 contém o número 0, B2 contém o texto recebido e B3 está realmente vazia. Qual resultado produz =CONT.VALORES(B1:B3)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0a5226cc-17ca-5553-b6bb-815375881e85",
+              "content": {
+                "text": "3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2d62166a-96fd-5852-91f3-f55b16f11be6",
+              "content": {
+                "text": "2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ebc23df1-4070-5649-a361-9e591cd60ab3",
+              "content": {
+                "text": "0.",
+                "resources": []
+              }
+            },
+            {
+              "id": "25dbe94c-8ceb-5c5f-b4bf-37388a9ab09f",
+              "content": {
+                "text": "1.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2d62166a-96fd-5852-91f3-f55b16f11be6",
+          "resolution": {
+            "text": "1. CONT.VALORES conta as duas células não vazias, inclusive a que tem número zero. 2. Zero é conteúdo; texto também é conteúdo. Apenas B3, realmente vazia, fica fora.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-contagem-valores.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-contagem-valores.json",
+            "contentSha256": "ffbfd52a855b21b8ee30e3cfa7a57898b480253ffd0f4ff18d439fcf7163174f",
+            "answerSha256": "ffbfd52a855b21b8ee30e3cfa7a57898b480253ffd0f4ff18d439fcf7163174f"
+          }
+        },
+        "fingerprint": "dfe02ac4ed15d161f7cd53023ce60fdd31e8b4286de95412f95f67f97afec1ee",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-contar-multicriterio"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 em português do Brasil, A1:A3 contém A, A, B e B1:B3 contém 4, 7, 9. Quanto retorna =CONT.SES(A1:A3;\"A\";B1:B3;\">=5\")?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f970e886-0cb7-5762-a9c7-a2817cfbfce5",
+              "content": {
+                "text": "16.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c35d7166-ddce-56fe-a7ec-c08ef178786b",
+              "content": {
+                "text": "1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "026347c8-1dad-59b8-bb97-981313ca19c4",
+              "content": {
+                "text": "2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9aa6f2ee-2818-5fcb-aa61-66ca4abf5007",
+              "content": {
+                "text": "3.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c35d7166-ddce-56fe-a7ec-c08ef178786b",
+          "resolution": {
+            "text": "1. Os dois critérios precisam valer na mesma linha; somente a segunda contém A e número pelo menos 5. 2. Contar A isoladamente daria 2; 3 é o total de linhas e 16 é uma soma que não corresponde à contagem por dois critérios.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-contar-multicriterio.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-contar-multicriterio.json",
+            "contentSha256": "78fe326cb7b797c62b109ea85564f894e71a25cf53a557708ab551d61007ebca",
+            "answerSha256": "78fe326cb7b797c62b109ea85564f894e71a25cf53a557708ab551d61007ebca"
+          }
+        },
+        "fingerprint": "1e98a975927981e90e769f7c7eeb893993b50c64f4ccec68b7c426252f320e9c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-contar-vazio"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, A1 contém 0, A2 está realmente vazia e A3 contém texto. Qual resultado tem =CONTAR.VAZIO(A1:A3)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "12909b1f-f5b7-598a-bf2a-685bf0f3e613",
+              "content": {
+                "text": "0.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6f3d89c1-161d-5249-a447-c95e5e57370c",
+              "content": {
+                "text": "2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "32fb8e8e-23b1-5581-abeb-7a2d1d55e65e",
+              "content": {
+                "text": "3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "398949df-5b68-572e-872a-796974f9807e",
+              "content": {
+                "text": "1.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "398949df-5b68-572e-872a-796974f9807e",
+          "resolution": {
+            "text": "1. Só A2 está vazia. 2. Zero é conteúdo numérico e texto também ocupa a célula, portanto não são contados como vazios neste cenário.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-contar-vazio.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-contar-vazio.json",
+            "contentSha256": "2d8043063443db4ca5ae21f6df52df0a2fe486512441681f4de9b5531d228999",
+            "answerSha256": "2d8043063443db4ca5ae21f6df52df0a2fe486512441681f4de9b5531d228999"
+          }
+        },
+        "fingerprint": "e551d378a9e0601946e13e576b008e698859b90d4f0d1546d722deb81af43c57",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-e-logico"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 em português do Brasil, que resultado tem =E(4>2;3<1)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c6237c6a-2584-51a6-a825-d7383acbf72a",
+              "content": {
+                "text": "VERDADEIRO.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b814b9ec-2ac3-51c2-9317-bce7a3c76696",
+              "content": {
+                "text": "7.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f1e00c39-f083-51c1-b60d-f7b08477df88",
+              "content": {
+                "text": "O texto literal E.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c9a44222-122a-5f1f-b629-cdbc3b3b30b8",
+              "content": {
+                "text": "FALSO.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c9a44222-122a-5f1f-b629-cdbc3b3b30b8",
+          "resolution": {
+            "text": "1. E exige que todos os argumentos sejam verdadeiros; 3<1 é falso. 2. Uma condição verdadeira isolada não basta; comparações lógicas não são somadas nem devolvem o nome da função.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-e-logico.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-e-logico.json",
+            "contentSha256": "b09f6e943ad3aa20eab64c1390048e3c923d7604a671efa2c92d3509f099efaf",
+            "answerSha256": "b09f6e943ad3aa20eab64c1390048e3c923d7604a671efa2c92d3509f099efaf"
+          }
+        },
+        "fingerprint": "e74cf3b4efc83bcc9fa55b9d06cbc175d62e6fb4176c4917a6b66c187cef7757",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-ext-texto"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, quanto retorna =EXT.TEXTO(\"AB123CD\";3;3)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4a86991e-90cd-5dac-8c64-f2e9a3b5ac6c",
+              "content": {
+                "text": "3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "68763c59-dc51-5be0-86fd-fdde4d05094b",
+              "content": {
+                "text": "123.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9fe347d1-671c-57fc-9b6b-d604c7ce4342",
+              "content": {
+                "text": "AB1.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4cba76b8-e5b4-5f9f-85fa-8f70a8523771",
+              "content": {
+                "text": "CD.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "68763c59-dc51-5be0-86fd-fdde4d05094b",
+          "resolution": {
+            "text": "1. A partir do terceiro caractere são extraídos três: 1, 2 e 3. 2. AB1 começa na primeira posição, CD pertence ao fim e 3 é parâmetro, não a cadeia extraída.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-ext-texto.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-ext-texto.json",
+            "contentSha256": "dbee57744cf0576623d38170fe750702e32e5dcf93a534e73f313a04df8c10b8",
+            "answerSha256": "dbee57744cf0576623d38170fe750702e32e5dcf93a534e73f313a04df8c10b8"
+          }
+        },
+        "fingerprint": "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-formula-circular"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, A1 contém =A1+1. Qual problema essa fórmula apresenta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e822bdaf-9af6-522d-8259-17c5f02bbefb",
+              "content": {
+                "text": "Nenhum; ela sempre retorna 1 em toda configuração.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dd6d49e9-f583-53e0-bbb8-4bc2a669ae06",
+              "content": {
+                "text": "Apenas uma troca de cor da célula.",
+                "resources": []
+              }
+            },
+            {
+              "id": "36b3f1dd-1d31-5605-9b85-4fff5fb12dc8",
+              "content": {
+                "text": "Uma referência obrigatória ao arquivo de outro usuário.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1b9c1474-198c-517d-b66a-1336591353eb",
+              "content": {
+                "text": "Referência circular, pois depende do próprio resultado.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1b9c1474-198c-517d-b66a-1336591353eb",
+          "resolution": {
+            "text": "1. A fórmula de A1 usa A1 como entrada, criando uma dependência circular. 2. Não se deve presumir um resultado universal; cálculo iterativo é configuração específica, não prova de fórmula apropriada.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-formula-circular.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-formula-circular.json",
+            "contentSha256": "a468c859211541eeaafff36effeb07b57d2a4a8c088bae976776e13b14ce822e",
+            "answerSha256": "a468c859211541eeaafff36effeb07b57d2a4a8c088bae976776e13b14ce822e"
+          }
+        },
+        "fingerprint": "3dfd494a3a369a09f01101364a0f73d5d68949250e5ea9ca4ff410b84b0b49bc",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-formula-recalculo"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma fórmula Excel depende de células que foram alteradas. Com o cálculo definido como manual, qual conferência explica um resultado que ainda parece antigo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8ecfb33b-4ef0-52d6-a0f4-73f73da92a5a",
+              "content": {
+                "text": "Mudar somente a cor do resultado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "73b8a7a4-0400-5399-9d98-ac3ec4076efa",
+              "content": {
+                "text": "Verificar o modo de cálculo e executar o recálculo necessário.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d71bbd9f-4a29-5e04-8230-aedd2ffc6aa4",
+              "content": {
+                "text": "Renomear o arquivo para forçar qualquer fórmula a virar texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6d6f71bf-6fcc-5640-8036-66687963c7f2",
+              "content": {
+                "text": "Excluir todas as abas de origem sem backup.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "73b8a7a4-0400-5399-9d98-ac3ec4076efa",
+          "resolution": {
+            "text": "1. O modo de cálculo pode adiar a atualização dos resultados até um recálculo. 2. Nome e cor não corrigem a dependência; apagar dados não é uma atualização da fórmula.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-formula-recalculo.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-formula-recalculo.json",
+            "contentSha256": "5df7001f07eb8c2f2b5dc44d25b68615919fa382c144c2f439cc25590a95f2e6",
+            "answerSha256": "5df7001f07eb8c2f2b5dc44d25b68615919fa382c144c2f439cc25590a95f2e6"
+          }
+        },
+        "fingerprint": "10d3d0995ce05e7a7b1323048476160cae9c45300b1a52b9c4393795192e7dc4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-hoje-agora"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, qual distinção entre HOJE() e AGORA() é adequada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8e2fb204-86b2-5be2-a4f4-76071355a570",
+              "content": {
+                "text": "HOJE soma dias e AGORA conta textos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ee02d4ae-1354-5572-ada8-b21bcb24737a",
+              "content": {
+                "text": "As duas funções sempre retornam somente o ano como texto.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6d856107-6597-5371-a15c-013344e5469d",
+              "content": {
+                "text": "AGORA é uma macro VBA e não pode ser fórmula.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c612118a-a2b1-5e3a-9d19-e9b6931ab74b",
+              "content": {
+                "text": "HOJE retorna a data atual; AGORA inclui data e hora atuais.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c612118a-a2b1-5e3a-9d19-e9b6931ab74b",
+          "resolution": {
+            "text": "1. As funções diferem na inclusão da parte de hora do valor temporal. 2. Não são funções de soma/contagem, nem devolvem necessariamente só o ano; AGORA pode ser usada em fórmula.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-hoje-agora.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-hoje-agora.json",
+            "contentSha256": "7d1c382d9151c46d4ad091cc94391a1b96e652445b750de4ad2dec430a32c437",
+            "answerSha256": "7d1c382d9151c46d4ad091cc94391a1b96e652445b750de4ad2dec430a32c437"
+          }
+        },
+        "fingerprint": "eac115ee2aac781f48ed4cd647cfd963101a7c5a349adff8cda6904ae4dc21ed",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-igualdade-vs-atribuicao"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, qual operador compara dois valores quanto à igualdade dentro de um teste lógico de fórmula?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "da543e92-35d1-5ef1-97a0-406eecbbe7a4",
+              "content": {
+                "text": "<>.",
+                "resources": []
+              }
+            },
+            {
+              "id": "99b45e34-2294-5206-9097-c1e9b6e6e2ca",
+              "content": {
+                "text": "&.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b67b005a-34c9-5609-bfb3-8190207e2ad0",
+              "content": {
+                "text": "^.",
+                "resources": []
+              }
+            },
+            {
+              "id": "287e15b3-84fe-54ac-9529-3bbefb692144",
+              "content": {
+                "text": "=.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "287e15b3-84fe-54ac-9529-3bbefb692144",
+          "resolution": {
+            "text": "1. O sinal = entre duas expressões testa igualdade. 2. <> testa diferença, & concatena e ^ calcula potência. O primeiro = da fórmula indica início, mas o uso interno pode ser uma comparação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-igualdade-vs-atribuicao.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-igualdade-vs-atribuicao.json",
+            "contentSha256": "fa58a32d30a95cdd8b7400445ad64df7f3433ebcd799a32b73b68d0b661a22f2",
+            "answerSha256": "fa58a32d30a95cdd8b7400445ad64df7f3433ebcd799a32b73b68d0b661a22f2"
+          }
+        },
+        "fingerprint": "be84c5afbc70b4740e0f57e9dd85fa26c464ae7e23f8ae9d609134a434e4dddb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-maiuscula-funcao"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, a função MAIÚSCULA aplicada a \"Setor\" retorna o quê?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6cbedb90-9f31-533f-b5c6-56ce8ad991ee",
+              "content": {
+                "text": "5.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d5f4327c-fdb3-575e-b50d-eb0694f491d2",
+              "content": {
+                "text": "SETOR.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6d031aad-f8ca-5ed5-9364-db0d18282556",
+              "content": {
+                "text": "R.",
+                "resources": []
+              }
+            },
+            {
+              "id": "af0c2788-cbe1-50ff-8520-bea9c54c9358",
+              "content": {
+                "text": "S e t o r.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d5f4327c-fdb3-575e-b50d-eb0694f491d2",
+          "resolution": {
+            "text": "1. MAIÚSCULA converte as letras da cadeia para caixa alta. 2. Não extrai apenas a última letra, não insere espaços entre letras e não conta caracteres.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-maiuscula-funcao.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-maiuscula-funcao.json",
+            "contentSha256": "ca201b4bed65366e50b4fff905313914a843010c42626b8c7cbf32a83d2f07ca",
+            "answerSha256": "ca201b4bed65366e50b4fff905313914a843010c42626b8c7cbf32a83d2f07ca"
+          }
+        },
+        "fingerprint": "73b7e936589e1ce2ed1d78e969585a48e6a5003b0a876f4bb4ebbc47ed34e5f0",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-menor-posicao"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 de desktop no Windows em português do Brasil, A1 contém Nome, B1 contém Pontos, A2 contém Ana e B2 contém 12. Que conteúdo retorna =ÍNDICE(A1:B2;2;1)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c3ca7cf0-e30a-5892-98cf-65e9c8a1c1f0",
+              "content": {
+                "text": "Nome.",
+                "resources": []
+              }
+            },
+            {
+              "id": "968b01ec-ae07-5ffa-803f-977051b5c46d",
+              "content": {
+                "text": "Pontos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "427ead42-833c-5a67-9375-073096126cfe",
+              "content": {
+                "text": "12.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9d2b998e-93c8-5556-8819-1f8744fdb2bc",
+              "content": {
+                "text": "Ana.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9d2b998e-93c8-5556-8819-1f8744fdb2bc",
+          "resolution": {
+            "text": "1. ÍNDICE usa a segunda linha e a primeira coluna da matriz A1:B2, chegando a A2, cujo conteúdo é Ana. 2. Nome e Pontos estão na primeira linha; 12 está na segunda coluna da segunda linha. Não é ordenação por maior ou menor valor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-menor-posicao.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-menor-posicao.json",
+            "contentSha256": "2384c23b49f23bb69b65fae2c464b4ef87f857f2aeb40e7e3feadd8fd1dcc957",
+            "answerSha256": "2384c23b49f23bb69b65fae2c464b4ef87f857f2aeb40e7e3feadd8fd1dcc957"
+          }
+        },
+        "fingerprint": "184590606d95e07bd9ebc2e810a4cb1ebe6de51329e834fccb465c3c7ab467c5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-mod-resto"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, qual é o resultado de =MOD(17;5)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d4c7a1aa-bd2d-5403-8e6d-bac42a9ba02c",
+              "content": {
+                "text": "3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cf68d71e-9ad7-586f-a6eb-7dbcaa85d4aa",
+              "content": {
+                "text": "3,4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "960ca9d5-e4fc-5599-9452-1c1acc69f710",
+              "content": {
+                "text": "22.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ab78865b-6fdc-5a35-9a30-b0e533fb339f",
+              "content": {
+                "text": "2.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ab78865b-6fdc-5a35-9a30-b0e533fb339f",
+          "resolution": {
+            "text": "1. 17=3×5+2, portanto o resto é 2. 2. 3 é o quociente inteiro e 3,4 a divisão completa; 22 é soma, não resto.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-mod-resto.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-mod-resto.json",
+            "contentSha256": "4f65116b5c318f499f1d17dffb40b1f4fcfd6bf085974a1ab50a9908723a9d6a",
+            "answerSha256": "4f65116b5c318f499f1d17dffb40b1f4fcfd6bf085974a1ab50a9908723a9d6a"
+          }
+        },
+        "fingerprint": "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-percentual-operador"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel, sem outras operações, qual é o resultado numérico de =200*15%?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e7e17a34-d34b-5993-8922-ff8393072210",
+              "content": {
+                "text": "215.",
+                "resources": []
+              }
+            },
+            {
+              "id": "932317e9-d0e5-59db-b1f8-7ad4db61b293",
+              "content": {
+                "text": "30.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6fae6d67-6835-5fc8-9e50-a77c4235cd00",
+              "content": {
+                "text": "3000.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1547bc00-a0e6-57fe-bf3a-f4f9d0058954",
+              "content": {
+                "text": "15.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "932317e9-d0e5-59db-b1f8-7ad4db61b293",
+          "resolution": {
+            "text": "1. 15%=0,15; 200×0,15=30. 2. 3000 ignora o divisor 100; 15 é a taxa numérica apresentada e 215 soma em vez de aplicar a porcentagem.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-percentual-operador.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-percentual-operador.json",
+            "contentSha256": "112fd761f2dbe6ffab92a5463e467595aee7e6c4d0991f250bcdb6ae27ab0eae",
+            "answerSha256": "112fd761f2dbe6ffab92a5463e467595aee7e6c4d0991f250bcdb6ae27ab0eae"
+          }
+        },
+        "fingerprint": "a2c14be09ea8d8460bbba67b75e8ab88a7241f0bedbf5f9276761484b16f814d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-procv-exata"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, uma busca PROCV deve exigir correspondência exata do código. Qual valor do último argumento expressa essa exigência?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "26941be3-a0d1-5f4f-90a1-e23b50912cc6",
+              "content": {
+                "text": "O número de linhas da planilha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a2586eec-6563-50cc-97cf-3c79b7872625",
+              "content": {
+                "text": "FALSO.",
+                "resources": []
+              }
+            },
+            {
+              "id": "833577d5-6b1d-5ab5-aebb-7cb991aa9126",
+              "content": {
+                "text": "VERDADEIRO.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cd17059a-60ea-5437-a54c-4734831ade8c",
+              "content": {
+                "text": "O texto \"qualquer\".",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a2586eec-6563-50cc-97cf-3c79b7872625",
+          "resolution": {
+            "text": "1. FALSO solicita correspondência exata no PROCV. 2. VERDADEIRO representa busca aproximada; texto arbitrário e total de linhas não substituem esse argumento lógico.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-procv-exata.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-procv-exata.json",
+            "contentSha256": "3579821551a4d29b65f664b7381966a8fda326f9d0441d4e6e5f8cd9da27f14a",
+            "answerSha256": "3579821551a4d29b65f664b7381966a8fda326f9d0441d4e6e5f8cd9da27f14a"
+          }
+        },
+        "fingerprint": "b1f47381fb7625b7209c4edef9bf890c934676129066129830d3c83460afabdd",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-produto"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, quanto retorna =PRODUTO(2;3;4)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a7be3adc-d075-5b99-9962-097f487e8d56",
+              "content": {
+                "text": "6.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3f444146-f60f-527a-982b-88491e4e82cf",
+              "content": {
+                "text": "24.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0a7cde2-e63d-57a4-9870-44be5111ea87",
+              "content": {
+                "text": "9.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b0bf7419-470f-501f-b515-10bea02a1851",
+              "content": {
+                "text": "12.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3f444146-f60f-527a-982b-88491e4e82cf",
+          "resolution": {
+            "text": "1. PRODUTO multiplica todos os argumentos: 2×3×4=24. 2. 9 é a soma; 12 e 6 deixam de multiplicar um dos fatores.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-produto.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-produto.json",
+            "contentSha256": "68836acf937b9922ab0ed82eed0f52179145049e929ec6b653b738aec7c060e0",
+            "answerSha256": "68836acf937b9922ab0ed82eed0f52179145049e929ec6b653b738aec7c060e0"
+          }
+        },
+        "fingerprint": "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-raiz"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, qual valor retorna =RAIZ(81)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3f2b40d9-ccce-5226-8c35-6ef1553abe82",
+              "content": {
+                "text": "6561.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2353baf0-0b14-56d0-b6e1-09243748d189",
+              "content": {
+                "text": "9.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8e6b412b-7001-56c1-a7ca-3d58f61a91c7",
+              "content": {
+                "text": "-9.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5a5b141f-49e0-5705-838f-975bb7378b37",
+              "content": {
+                "text": "40,5.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2353baf0-0b14-56d0-b6e1-09243748d189",
+          "resolution": {
+            "text": "1. RAIZ devolve a raiz quadrada principal não negativa: 9×9=81. 2. Embora -9 também ao quadrado dê 81, não é a raiz principal retornada; metade e quadrado são operações distintas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-raiz.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-raiz.json",
+            "contentSha256": "15643e1a15bff4c2e69b44bfadcd23e0a0ba4d39aa4eb593582d221b67b611ef",
+            "answerSha256": "15643e1a15bff4c2e69b44bfadcd23e0a0ba4d39aa4eb593582d221b67b611ef"
+          }
+        },
+        "fingerprint": "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-somases-duplo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel em português do Brasil, A1:A3 contém Sul, Sul, Norte; B1:B3 contém Pago, Pendente, Pago; C1:C3 contém 10, 20, 30. Quanto retorna =SOMASES(C1:C3;A1:A3;\"Sul\";B1:B3;\"Pago\")?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "edafd6b3-dafa-5980-bf39-75e0528bc04e",
+              "content": {
+                "text": "60.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dc4c27b7-abb2-528e-b30a-8b54d61ecb49",
+              "content": {
+                "text": "10.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c2f81659-8eff-5f92-bb10-74bf673e750c",
+              "content": {
+                "text": "30.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fd051d87-792e-5031-9f67-43eb7c40ca3a",
+              "content": {
+                "text": "40.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "dc4c27b7-abb2-528e-b30a-8b54d61ecb49",
+          "resolution": {
+            "text": "1. Somente a primeira linha satisfaz simultaneamente Sul e Pago; seu valor é 10. 2. 30 soma Sul sem considerar situação, 40 soma Pago sem considerar região e 60 ignora todos os critérios.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-somases-duplo.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-somases-duplo.json",
+            "contentSha256": "9f4bdc1b2df5720e56fbf3cb95a93718bd32839ba4931149c3fdee24eb956914",
+            "answerSha256": "9f4bdc1b2df5720e56fbf3cb95a93718bd32839ba4931149c3fdee24eb956914"
+          }
+        },
+        "fingerprint": "c7dcaa64fdb90dd6f00cd9c13ff5b77e69c37f5a6e21d8a734ff3fa863107e2d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.it-subtotal-filtrado"
+        },
+        "content": {
+          "statement": {
+            "text": "No Excel para Microsoft 365 em português do Brasil, que função foi projetada para calcular um subtotal em uma lista e desconsiderar linhas removidas da visualização por filtro?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6d1a1603-32e8-5448-ae9f-af90c5749018",
+              "content": {
+                "text": "SOMA.",
+                "resources": []
+              }
+            },
+            {
+              "id": "95320141-7505-57a4-8a6c-89083ecdf12f",
+              "content": {
+                "text": "SOMASE.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f11ac038-6266-5f68-85b8-f6fb83318da1",
+              "content": {
+                "text": "CONT.VALORES.",
+                "resources": []
+              }
+            },
+            {
+              "id": "64779be8-a0c7-5eab-8796-d228f61ce34f",
+              "content": {
+                "text": "SUBTOTAL.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "64779be8-a0c7-5eab-8796-d228f61ce34f",
+          "resolution": {
+            "text": "1. SUBTOTAL tem comportamento próprio para listas filtradas, conforme o código de agregação escolhido. 2. SOMA, SOMASE e CONT.VALORES calculam sobre todas as células do intervalo, inclusive as linhas ocultas pelo filtro. O código também determina o tratamento de ocultação manual.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Funções do Excel por categoria",
+              "url": "https://support.microsoft.com/pt-br/excel/excel-functions-by-category",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I06.p.it-subtotal-filtrado.json",
+            "answerPath": "sources/admin.2026-11.I06.p.it-subtotal-filtrado.json",
+            "contentSha256": "dd59203492bbe42db54822593302f675e9b88c8e71a94530d86f6e98ec8c9987",
+            "answerSha256": "dd59203492bbe42db54822593302f675e9b88c8e71a94530d86f6e98ec8c9987"
+          }
+        },
+        "fingerprint": "1637b1fb07940e1e5ef1c436c2a0b87bb118e51a4c3b850a532487b34bd02ef2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.jeri-insp-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "Um servidor utiliza o Microsoft Excel para elaborar uma planilha contendo nome e sobrenome de servidores em colunas distintas, com a finalidade de gerar um único campo de identificação. Considerando o uso de fórmulas no Excel, assinale a alternativa correta quanto ao recurso empregado para unir textos de células diferentes:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0aa1d7be-dc61-5241-b040-8a0c4deec7b5",
+              "content": {
+                "text": "A junção de textos em células distintas é realizada exclusivamente por meio de atalhos de teclado, sem utilização de fórmulas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "649da7ed-ee08-5ef8-b543-23bd352220ef",
+              "content": {
+                "text": "O Excel utiliza operadores matemáticos, como soma e subtração, para unir conteúdos textuais em uma única célula.",
+                "resources": []
+              }
+            },
+            {
+              "id": "04f8141f-1ad2-5a82-bdc6-418665b2d699",
+              "content": {
+                "text": "O operador & permite associar valores de texto provenientes de uma ou mais células, resultando em uma única sequência textual.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3138dc79-2919-5add-84da-05efc288c26f",
+              "content": {
+                "text": "A combinação de textos só é possível quando as células envolvidas contêm exclusivamente valores numéricos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "079f8c1b-6aa3-5394-b592-783ec8e3db64",
+              "content": {
+                "text": "Para unir textos no Excel, é obrigatório converter previamente as células em formato de data.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "04f8141f-1ad2-5a82-bdc6-418665b2d699",
+          "resolution": {
+            "text": "1. O operador de concatenação & une textos: =A2&\" \"&B2 junta nome e sobrenome com espaço; alternativa C (as funções CONCAT e CONCATENAR fazem o mesmo). 2. A junção pode ser feita por fórmula, não só por atalho (A); + e − são aritméticos e retornam erro com texto (B); a concatenação funciona com textos (D); não há exigência de formato de data (E). Gabarito definitivo: alternativa C.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Jeriquara — Processo Seletivo 01/2025, Inspetor de Alunos, questão 19. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I06.p.jeri-insp-q19.json",
+            "answerPath": "sources/admin.2026-11.I06.p.jeri-insp-q19.json",
+            "contentSha256": "4d6cd79211ef802f44e2cbdc12c54577e3558f728ae8353a537fc84ffdc22c4b",
+            "answerSha256": "4d6cd79211ef802f44e2cbdc12c54577e3558f728ae8353a537fc84ffdc22c4b"
+          }
+        },
+        "fingerprint": "86b9a2e74df063a23e7767fee73a815181bce8217fdaf0685bb542b050aecafe",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.var25-cont-q25"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma fórmula no Microsoft Excel é uma sequência de valores constantes, referências de células (o endereço da célula), nomes, funções ou operadores que produzem um novo valor a partir dos valores existentes. As fórmulas sempre começam com um sinal de:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0a33be76-4dab-5673-ae39-fe845793e073",
+              "content": {
+                "text": "Mais (+).",
+                "resources": []
+              }
+            },
+            {
+              "id": "dc1e6325-8cda-5ff5-a8b5-037594a4ddfd",
+              "content": {
+                "text": "Igual (=).",
+                "resources": []
+              }
+            },
+            {
+              "id": "4867d6d0-8eee-5532-9596-5d38996b59db",
+              "content": {
+                "text": "Menos (–).",
+                "resources": []
+              }
+            },
+            {
+              "id": "f0112690-53f0-5bf1-9ea4-1f29e33b0167",
+              "content": {
+                "text": "Porcentagem (%).",
+                "resources": []
+              }
+            },
+            {
+              "id": "02dfdffc-7900-55ee-86b6-87bd64883d07",
+              "content": {
+                "text": "Divisão (÷).",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "dc1e6325-8cda-5ff5-a8b5-037594a4ddfd",
+          "resolution": {
+            "text": "1. A documentação do Excel define que uma fórmula começa com o sinal de igual (=), como em =A1+B1; alternativa B. 2. O Excel ainda converte entradas iniciadas por + ou − por compatibilidade, mas a convenção pedida é o =; % é operador de porcentagem e ÷ não é operador do Excel (a divisão usa /). Gabarito definitivo: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Concurso Público 01/2025, Contador, questão 25. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I06.p.var25-cont-q25.json",
+            "answerPath": "sources/admin.2026-11.I06.p.var25-cont-q25.json",
+            "contentSha256": "7075e87e485480c7f3b807402a004f0e696346093f41226a10ffb45627bc9982",
+            "answerSha256": "7075e87e485480c7f3b807402a004f0e696346093f41226a10ffb45627bc9982"
+          }
+        },
+        "fingerprint": "26b4797530c52a662fd1f7be34fc77c9999fa1679d40fa302b105f11d19d5144",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I06.p.vinh-aux-q38"
+        },
+        "content": {
+          "statement": {
+            "text": "Assinale a alternativa que descreve corretamente qual é operador matemático utilizado pelo Microsoft Excel para fazer divisões:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8245ce91-4283-5f1b-a8f5-40d8d31a3915",
+              "content": {
+                "text": "*",
+                "resources": []
+              }
+            },
+            {
+              "id": "858ae648-f0f5-5fbb-a311-9d1636c8aabd",
+              "content": {
+                "text": "^",
+                "resources": []
+              }
+            },
+            {
+              "id": "8281b6eb-09d5-5dc5-882d-89f9340e8be5",
+              "content": {
+                "text": "}",
+                "resources": []
+              }
+            },
+            {
+              "id": "15e87d4f-e038-5dc9-a314-9922d371d243",
+              "content": {
+                "text": "/",
+                "resources": []
+              }
+            },
+            {
+              "id": "739cfc0e-7303-53dd-873a-0cf963ccdc24",
+              "content": {
+                "text": "]",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "15e87d4f-e038-5dc9-a314-9922d371d243",
+          "resolution": {
+            "text": "1. A barra / é o operador de divisão: =A1/B1; alternativa D. 2. * multiplica; ^ eleva à potência; chaves e colchetes não são operadores aritméticos no Excel (aparecem em constantes de matriz ou referências estruturadas de tabela). Gabarito definitivo: alternativa D.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I06",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Visão geral de fórmulas no Excel",
+              "url": "https://support.microsoft.com/pt-br/excel/get-started/overview-of-formulas-in-excel",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, Auxiliar Administrativo, questão 38. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I06.p.vinh-aux-q38.json",
+            "answerPath": "sources/admin.2026-11.I06.p.vinh-aux-q38.json",
+            "contentSha256": "169ad65f1d1120ca7c0ab7695f2dfc46dc9b80ec3cd118d511fb00ce7e7a290c",
+            "answerSha256": "169ad65f1d1120ca7c0ab7695f2dfc46dc9b80ec3cd118d511fb00ce7e7a290c"
+          }
+        },
+        "fingerprint": "7477a175c5971c1f9a8eed73c437d50eaa1b262d57a12a1659f976877661b7f5",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I06.p.cerq25-aesc-q19.json",
+        "mediaType": "application/json",
+        "sha256": "d0cf9a46a43ee129d56e3dab67b2377c4355771fb56833795eca721f93ad1e46",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiPU1FRChCMjpCNCkifSx7ImlkIjoiYiIsInRleHQiOiI9TcOJRElBKEIyOkI0KSJ9LHsiaWQiOiJjIiwidGV4dCI6Ij1Nw4lESUEoQjE6QjQpIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTcOJRElBKEIyOkI0KSJ9LHsiaWQiOiJlIiwidGV4dCI6Ik1FRChCMjpCNCkifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENlcnF1aWxobyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSwgQXV4aWxpYXIgZGUgRXNjcml0w7NyaW8sIHF1ZXN0w6NvIDE5LiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bywgcMOhZ2luYSAyLCBxdWFkcm8gZG8gY2FyZ28gQVVYSUxJQVIgREUgRVNDUklUw5NSSU86IDE5PUI7IGNvbmZlcsOqbmNpYSB2aXN1YWwgbmEgcmVuZGVyaXphw6fDo28gZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzE5OC1nYWJhcml0by1kZWZpbml0aXZvLTEucGRmIiwic2hhMjU2IjoiNjc3ZjBhNjBiMTA4MGE0YjY2OWUzYmRiYzNmMDU5OTQ2YTc3ZjQ5ZDg2ZTQxNGJiM2E4N2NjNzIwNzFjNDBhZiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk4L2FuZXhvcy9lMTQxYmJlZS1hZmY1LTQ0ZjAtYTdmYS0zZTUxMTljOGY4ODAucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDZXJxdWlsaG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1jZXJxdWlsaG8tMjAyNS1hdXhlc2NyaXRvcmlvL3ExOSIsIm51bWJlciI6IjE5IiwicHJvb2YiOnsibm90ZSI6IlF1ZXN0w6NvIDE5LCBww6FnaW5hIGbDrXNpY2EgNiBkbyBQREY7IHRleHRvIGV4dHJhw61kbyBjb25mcm9udGFkbyBjb20gYSByZW5kZXJpemHDp8OjbyBkYSBww6FnaW5hOyBlbnVuY2lhZG8sIGFsdGVybmF0aXZhcyBlIG9yZGVtIGNvbmZlcmlkb3MgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMi4gQSBwbGFuaWxoYSAoY2FwdHVyYSBkYSBiYW5jYSkgZm9pIHRyYW5zY3JpdGEgZW0gdGV4dG8gZW50cmUgY29sY2hldGVzLCBzZW0gcGVyZGEgZG9zIHZhbG9yZXMgZSBlbmRlcmXDp29zLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk4LXByb3ZhLWF1eGlsaWFyLWRlLWVzY3JpdHJpby5wZGYiLCJzaGEyNTYiOiI2MmUyN2FhOGIxODE5Zjc1MzNiOWIxNTE3YTE5MTEzMTQ1MjYwMWE3NjA2Y2Q4MzVmMDgyZDAxNjliNWViMTUyIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTgvYW5leG9zLzg0ZTdlZDRjLTYzNTgtNDBlOC05NWE0LWMxN2VkZWFhNTlhYi5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogYXJ0LiA4wrosIElWLCBkYSBMZWkgOS42MTAvMTk5OCwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBubyBwcm9qZXRvLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIGRlIHByb3ZhIHDDumJsaWNhLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBpbmNvcnBvcmFkYS4gTsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIGNvbnNlbnRpbWVudG8gYWZpcm1hZG87IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJBdXhpbGlhciBkZSBFc2NyaXTDs3JpbyIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNX0sImlkIjoiY2VycTI1LWFlc2MtcTE5Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtZm9ybXVsYXMiLCJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gQSBtw6lkaWEgYXJpdG3DqXRpY2EgZG9zIHZhbG9yZXMgQjI6QjQgw6kgb2J0aWRhIGNvbSA9TcOJRElBKEIyOkI0KSwgcXVlIHJlc3VsdGEgUiQgNC4wMDAsMDA7IGFsdGVybmF0aXZhIEIuIDIuIE1FRCBjYWxjdWxhIGEgbWVkaWFuYSwgb3V0cmEgbWVkaWRhIChBLCBFKTsgQjE6QjQgaW5jbHVpcmlhIG8gY2FiZcOnYWxobzsgTcOJRElBIGlnbm9yYSB0ZXh0b3MsIGVudMOjbyBkYXJpYSBvIG1lc21vIHZhbG9yLCBtYXMgbyBpbnRlcnZhbG8gZXN0w6EgaW5jb3JyZXRvIHBhcmEgb3MgZGFkb3MgKEMpOyBEIGUgRSBuw6NvIGNvbWXDp2FtIGNvbSA9LCBkZSBtb2RvIHF1ZSBvIEV4Y2VsIGFzIHRyYXRhcmlhIGNvbW8gdGV4dG8uIE9zIG5vbWVzIHPDo28gZG8gRXhjZWwgZW0gcG9ydHVndcOqcyAoQVZFUkFHRSBlIE1FRElBTiBlbSBpbmdsw6pzKS4gR2FiYXJpdG8gZGVmaW5pdGl2bzogYWx0ZXJuYXRpdmEgQi4iLCJzdGF0ZW1lbnQiOiJFbSBwbGFuaWxoYXMgZGUgZGFkb3MgZmluYW5jZWlyb3MsIMOpIGNvbXVtIGVuY29udHJhciB2YWxvcmVzIG3DqWRpb3MgY2l0YWRvcy4gUGFyYSBjYWxjdWxhciBhIG3DqWRpYSBkb3MgdmFsb3JlcyBkZSB1bWEgY29sdW5hIG5vIEV4Y2VsLCBwb2RlLXNlIHV0aWxpemFyIHVtYSBmw7NybXVsYSBwcm9udGEuIEFzc2ltLCBwYXJhIG8gZXhlbXBsbyBhYmFpeG8sIHF1YWwgc2VyaWEgYSBmw7NybXVsYSBjb3JyZXRhP1xuW1BsYW5pbGhhIGRhIHByb3ZhLCB0cmFuc2NyaXRhIGVtIHRleHRvOiBBMSA9IENvbnRyYXRvOyBCMSA9IFZhbG9yIGRlIENvbnRyYXRvOyBBMiA9IEEgZSBCMiA9IFIkIDMuMDAwLDAwOyBBMyA9IEIgZSBCMyA9IFIkIDQuMDAwLDAwOyBBNCA9IEMgZSBCNCA9IFIkIDUuMDAwLDAwOyBBNSA9IFRvdGFsIGUgQjUgZW0gYnJhbmNvLl1cbkFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgcXVlIGNvbnTDqW0gYSBmw7NybXVsYSBjb3JyZXRhIHBhcmEgY2FsY3VsYXIgYSBtw6lkaWEgbm8gRXhjZWw6IiwidG9waWNJZCI6IkkwNiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWZvcm11bGFzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBWaXPDo28gZ2VyYWwgZGUgZsOzcm11bGFzIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZ2V0LXN0YXJ0ZWQvb3ZlcnZpZXctb2YtZm9ybXVsYXMtaW4tZXhjZWwifSwiaW5mb3JtYXRpY2EtY2xhdWRlLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.fgv-taubate-q36.json",
+        "mediaType": "application/json",
+        "sha256": "c294b27db3e4d5af093b69100ac6a5fa9f13296bde5290d4574167c63a74409b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicHJpbWVpcmEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoicHJpbWVpcmEgZSBkYSBzZWd1bmRhLiJ9LHsiaWQiOiJjIiwidGV4dCI6InNlZ3VuZGEgZSBkYSB0ZXJjZWlyYS4ifSx7ImlkIjoiZCIsInRleHQiOiJ0ZXJjZWlyYSBlIGRhIHF1YXJ0YS4ifSx7ImlkIjoiZSIsInRleHQiOiJxdWFydGEuIn1dLCJhdXRob3IiOiJGR1Yg4oCUIEPDom1hcmEgTXVuaWNpcGFsIGRlIFRhdWJhdMOpIOKAlCBFZGl0YWwgMS8yMDIyLCBUw6ljbmljbyBMZWdpc2xhdGl2byBkZSBJbmZvcm3DoXRpY2EsIFRpcG8gMSDigJQgQnJhbmNhIOKAlCBUYXJkZSwgcXVlc3TDo28gMzYuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJEZWZpbml0aXZvIHB1YmxpY2FkbyBlbSAyMDIyLTExLTE3LCBww6FnaW5hIGbDrXNpY2EgNSBkbyBQREYsIGNhcmdvL3RpcG8gY29ycmVzcG9uZGVudGVzOiAzNj1DLiBDb25mZXJpZG8gdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2Zndi10YXViYXRlLWFuc3dlci5wZGYiLCJzaGEyNTYiOiI4MmRkOTgxMjVhNGM2ZDdhYzFjOTcwNTVmYzAyYWEwMjAwNDliZTUyMjYyNzcxMDliYzU4Y2E4NjlkYzhhYjkyIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL2dhYmFyaXRvX2RlZmluaXRpdm9fY210Xy1fZWRpdGFsMDEucGRmIn0sImJvYXJkIjoiRkdWIiwiYm9va2xldCI6IlRpcG8gMSDigJQgQnJhbmNhIOKAlCBUYXJkZSIsImNvbXBldGl0aW9uIjoiQ8OibWFyYSBNdW5pY2lwYWwgZGUgVGF1YmF0w6kg4oCUIEVkaXRhbCAxLzIwMjIiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImZndi10YXViYXRlLTIwMjItdGkvcTM2IiwibnVtYmVyIjoiMzYiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMzYsIHDDoWdpbmEgNzsgY29uZmVyw6puY2lhIHZpc3VhbCBkbyBjYWRlcm5vIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9mZ3YtdGF1YmF0ZS10aS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI1YzU1OTY1NTRhOGQ0MjIxZDY3ODc2MGMwNjU0MzVlNTIxZWE0Y2QwODU5NzJiMTlhODY1ZGEzMGRjOWI0ZTYwIiwidXJsIjoiaHR0cHM6Ly9jb25oZWNpbWVudG8uZmd2LmJyL3NpdGVzL2RlZmF1bHQvZmlsZXMvY29uY3Vyc29zL3RlY25pY29fbGVnaXNsYXRpdm9fZGVfaW5mb3JtYXRpY2FfdGFyZGVlMXQyY25zMDJfdGlwb18xLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXBsaWNhw6fDo28gYXNzaXN0aWRhIGRhIGF2YWxpYcOnw6NvIGRvIHByb2pldG8gYSBzZWlzIHF1ZXN0w7VlcyBvZmljaWFpcyBhdXRvc3N1ZmljaWVudGVzIEZHViwgc2VtIG9icmFzIGRlIHRlcmNlaXJvcyBpbmNvcnBvcmFkYXMuIE7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIG91IHBhcmVjZXIganVyw61kaWNvIGluZGVwZW5kZW50ZS4gVmVyIHRhbWLDqW0gcmV1c2UtYXNzZXNzbWVudC5tZC4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWZndi1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZTU4ZDllODg3Mjk1YjQ0Y2NmOTgwZDYyNGQ2YTA4ZGNhMGY2ZTNiOWY0OTUzNmIyNGUxZTA4YWNkZmM0OGNhMyIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlTDqWNuaWNvIExlZ2lzbGF0aXZvIGRlIEluZm9ybcOhdGljYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyMn0sImlkIjoiZmd2LXRhdWJhdGUtcTM2Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1mZ3YtaXQtZm9ybXVsYXMiXSwicmVzb2x1dGlvbiI6IjEuIE5hIG5vdGHDp8OjbyBBMSBkbyBFeGNlbCBlbSBwb3J0dWd1w6pzLCBBQjEgZSBBQjIgc8OjbyByZWZlcsOqbmNpYXMgdsOhbGlkYXMgZSBeIMOpIHBvdMOqbmNpYTsgU09NQSBhY2VpdGEgb3MgaW50ZXJ2YWxvcyBpbmRpY2Fkb3MuIErDoSBBW0MxXSBlIChBK0IpMSBuw6NvIGNvbnN0aXR1ZW0gYXMgcmVmZXLDqm5jaWFzIG91IG9wZXJhw6fDtWVzIHbDoWxpZGFzIGFwcmVzZW50YWRhcy4gTyBkZWZpbml0aXZvIG1hcmNhIEMuIDIuIEEgcHJpbWVpcmEgZSBhIHF1YXJ0YSB0w6ptIHNpbnRheGUgYWRlcXVhZGEgYW8gY29udGV4dG87IGFsdGVybmF0aXZhcyBxdWUgYXMgZXhjbHVlbSBlcnJhbSBvIGRpYWduw7NzdGljby4gQSBxdWVzdMOjbyBuw6NvIGRlZmluZSBUYWJlbGEgb3Ugbm9tZXMgZXN0cnV0dXJhZG9zIHF1ZSBkZXNzZW0gb3V0cm8gc2lnbmlmaWNhZG8gw6Agc2VndW5kYSBleHByZXNzw6NvLiIsInN0YXRlbWVudCI6IkFuYWxpc2UgYXMgZsOzcm11bGFzIE1TIEV4Y2VsIGV4aWJpZGFzIGEgc2VndWlyLlxuPUFCMV5BQjJcbj1BW0MxXVxuPShBK0IpMVxuPVNPTUEoQTE6QzMpICsgU09NQShCMilcbkVzdMOjbyBjb3JyZXRhbWVudGUgZm9ybXVsYWRhcyB0b2RhcyBhcyBmw7NybXVsYXMsIMOgIGV4Y2XDp8OjbyBkYSIsInRvcGljSWQiOiJJMDYifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWZndi1pdC1mb3JtdWxhcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgVmlzw6NvIGdlcmFsIGRlIGbDs3JtdWxhcyBubyBFeGNlbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2dldC1zdGFydGVkL292ZXJ2aWV3LW9mLWZvcm11bGFzLWluLWV4Y2VsIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-arrumar.json",
+        "mediaType": "application/json",
+        "sha256": "ecd1486086d84a13cc93a4b6cbd5a0a662ae40787e8b828b4db0ff1855fdad47",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiT3JkZW5hciBhbGZhYmV0aWNhbWVudGUgdG9kYXMgYXMgbGluaGFzIGRhIHBsYW5pbGhhLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFwYWdhciB0b2RhcyBhcyBsZXRyYXMgbWFpw7pzY3VsYXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ3JpYXIgdW1hIG5vdmEgYWJhIHBhcmEgY2FkYSBwYWxhdnJhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlJlbW92ZXIgZXNwYcOnb3MgZXhjZWRlbnRlcywgcHJlc2VydmFuZG8gZXNwYcOnb3Mgc2ltcGxlcyBlbnRyZSBwYWxhdnJhcy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1hcnJ1bWFyIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gQVJSVU1BUiB0cmF0YSBvIGVzcGHDp2FtZW50byB0ZXh0dWFsIGV4Y2VkZW50ZS4gMi4gTsOjbyDDqSBjbGFzc2lmaWNhw6fDo28gZGUgcmVnaXN0cm9zLCByZW1vw6fDo28gZGUgbWFpw7pzY3VsYXMgb3UgY3JpYcOnw6NvIGRlIHBsYW5pbGhhcy4gRXNwYcOnb3MgZXNwZWNpYWlzIHBvZGVtIGV4aWdpciB0cmF0YW1lbnRvIGFkaWNpb25hbC4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCBlbSBwb3J0dWd1w6pzIGRvIEJyYXNpbCwgYSBmdW7Dp8OjbyBBUlJVTUFSIGFwbGljYWRhIGEgdGV4dG8gY29tIGVzcGHDp29zIGNvbXVucyBleGNlZGVudGVzIMOpIHVzYWRhIHByaW5jaXBhbG1lbnRlIHBhcmEgcXXDqj8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-concatenar-operador.json",
+        "mediaType": "application/json",
+        "sha256": "e025985339991a7853646c30c8c0fab420468710eb33a84fcdaaf06368048262",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiPUExL0IxLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ij1BMSZcIiBcIiZCMS4ifSx7ImlkIjoiYyIsInRleHQiOiI9QTErQjEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiPUExKkIxLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWNvbmNhdGVuYXItb3BlcmFkb3IiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mb3JtdWxhcyIsImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gTyBvcGVyYWRvciAmIGNvbmNhdGVuYSB0ZXh0b3M7IFwiIFwiIGZvcm5lY2UgbyBlc3Bhw6dvIGVudHJlIGVsZXMuIDIuIE9zIG9wZXJhZG9yZXMgKywgKiBlIC8gc8OjbyBhcml0bcOpdGljb3MgZSBuw6NvIGNvbnN0cm9lbSBlc3NhIGNvbWJpbmHDp8OjbyB0ZXh0dWFsIGRlIG5vbWVzLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsLCBBMSBjb250w6ltIEFuYSBlIEIxIGNvbnTDqW0gU2lsdmEuIFF1YWwgZsOzcm11bGEgcHJvZHV6IEFuYSBTaWx2YSBjb20gdW0gw7puaWNvIGVzcGHDp28gZW50cmUgb3Mgbm9tZXM/IiwidG9waWNJZCI6IkkwNiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mb3JtdWxhcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgVmlzw6NvIGdlcmFsIGRlIGbDs3JtdWxhcyBubyBFeGNlbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2dldC1zdGFydGVkL292ZXJ2aWV3LW9mLWZvcm11bGFzLWluLWV4Y2VsIn0sImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgRnVuw6fDtWVzIGRvIEV4Y2VsIHBvciBjYXRlZ29yaWEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9leGNlbC1mdW5jdGlvbnMtYnktY2F0ZWdvcnkifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-contagem-valores.json",
+        "mediaType": "application/json",
+        "sha256": "ffbfd52a855b21b8ee30e3cfa7a57898b480253ffd0f4ff18d439fcf7163174f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMy4ifSx7ImlkIjoiYiIsInRleHQiOiIyLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1jb250YWdlbS12YWxvcmVzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gQ09OVC5WQUxPUkVTIGNvbnRhIGFzIGR1YXMgY8OpbHVsYXMgbsOjbyB2YXppYXMsIGluY2x1c2l2ZSBhIHF1ZSB0ZW0gbsO6bWVybyB6ZXJvLiAyLiBaZXJvIMOpIGNvbnRlw7pkbzsgdGV4dG8gdGFtYsOpbSDDqSBjb250ZcO6ZG8uIEFwZW5hcyBCMywgcmVhbG1lbnRlIHZhemlhLCBmaWNhIGZvcmEuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgcGFyYSBNaWNyb3NvZnQgMzY1IGVtIHBvcnR1Z3XDqnMgZG8gQnJhc2lsLCBCMSBjb250w6ltIG8gbsO6bWVybyAwLCBCMiBjb250w6ltIG8gdGV4dG8gcmVjZWJpZG8gZSBCMyBlc3TDoSByZWFsbWVudGUgdmF6aWEuIFF1YWwgcmVzdWx0YWRvIHByb2R1eiA9Q09OVC5WQUxPUkVTKEIxOkIzKT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-contar-multicriterio.json",
+        "mediaType": "application/json",
+        "sha256": "78fe326cb7b797c62b109ea85564f894e71a25cf53a557708ab551d61007ebca",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTYuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMS4ifSx7ImlkIjoiYyIsInRleHQiOiIyLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjMuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtY29udGFyLW11bHRpY3JpdGVyaW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIl0sInJlc29sdXRpb24iOiIxLiBPcyBkb2lzIGNyaXTDqXJpb3MgcHJlY2lzYW0gdmFsZXIgbmEgbWVzbWEgbGluaGE7IHNvbWVudGUgYSBzZWd1bmRhIGNvbnTDqW0gQSBlIG7Dum1lcm8gcGVsbyBtZW5vcyA1LiAyLiBDb250YXIgQSBpc29sYWRhbWVudGUgZGFyaWEgMjsgMyDDqSBvIHRvdGFsIGRlIGxpbmhhcyBlIDE2IMOpIHVtYSBzb21hIHF1ZSBuw6NvIGNvcnJlc3BvbmRlIMOgIGNvbnRhZ2VtIHBvciBkb2lzIGNyaXTDqXJpb3MuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgcGFyYSBNaWNyb3NvZnQgMzY1IGVtIHBvcnR1Z3XDqnMgZG8gQnJhc2lsLCBBMTpBMyBjb250w6ltIEEsIEEsIEIgZSBCMTpCMyBjb250w6ltIDQsIDcsIDkuIFF1YW50byByZXRvcm5hID1DT05ULlNFUyhBMTpBMztcIkFcIjtCMTpCMztcIj49NVwiKT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-contar-vazio.json",
+        "mediaType": "application/json",
+        "sha256": "2d8043063443db4ca5ae21f6df52df0a2fe486512441681f4de9b5531d228999",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMC4ifSx7ImlkIjoiYiIsInRleHQiOiIyLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMS4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1jb250YXItdmF6aW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIl0sInJlc29sdXRpb24iOiIxLiBTw7MgQTIgZXN0w6EgdmF6aWEuIDIuIFplcm8gw6kgY29udGXDumRvIG51bcOpcmljbyBlIHRleHRvIHRhbWLDqW0gb2N1cGEgYSBjw6lsdWxhLCBwb3J0YW50byBuw6NvIHPDo28gY29udGFkb3MgY29tbyB2YXppb3MgbmVzdGUgY2Vuw6FyaW8uIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIEExIGNvbnTDqW0gMCwgQTIgZXN0w6EgcmVhbG1lbnRlIHZhemlhIGUgQTMgY29udMOpbSB0ZXh0by4gUXVhbCByZXN1bHRhZG8gdGVtID1DT05UQVIuVkFaSU8oQTE6QTMpPyIsInRvcGljSWQiOiJJMDYifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgRnVuw6fDtWVzIGRvIEV4Y2VsIHBvciBjYXRlZ29yaWEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9leGNlbC1mdW5jdGlvbnMtYnktY2F0ZWdvcnkifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-e-logico.json",
+        "mediaType": "application/json",
+        "sha256": "b09f6e943ad3aa20eab64c1390048e3c923d7604a671efa2c92d3509f099efaf",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVkVSREFERUlSTy4ifSx7ImlkIjoiYiIsInRleHQiOiI3LiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik8gdGV4dG8gbGl0ZXJhbCBFLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkZBTFNPLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWUtbG9naWNvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gRSBleGlnZSBxdWUgdG9kb3Mgb3MgYXJndW1lbnRvcyBzZWphbSB2ZXJkYWRlaXJvczsgMzwxIMOpIGZhbHNvLiAyLiBVbWEgY29uZGnDp8OjbyB2ZXJkYWRlaXJhIGlzb2xhZGEgbsOjbyBiYXN0YTsgY29tcGFyYcOnw7VlcyBsw7NnaWNhcyBuw6NvIHPDo28gc29tYWRhcyBuZW0gZGV2b2x2ZW0gbyBub21lIGRhIGZ1bsOnw6NvLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBlbSBwb3J0dWd1w6pzIGRvIEJyYXNpbCwgcXVlIHJlc3VsdGFkbyB0ZW0gPUUoND4yOzM8MSk/IiwidG9waWNJZCI6IkkwNiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBGdW7Dp8O1ZXMgZG8gRXhjZWwgcG9yIGNhdGVnb3JpYSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2V4Y2VsLWZ1bmN0aW9ucy1ieS1jYXRlZ29yeSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-ext-texto.json",
+        "mediaType": "application/json",
+        "sha256": "dbee57744cf0576623d38170fe750702e32e5dcf93a534e73f313a04df8c10b8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMy4ifSx7ImlkIjoiYiIsInRleHQiOiIxMjMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQUIxLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkNELiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWV4dC10ZXh0byIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiXSwicmVzb2x1dGlvbiI6IjEuIEEgcGFydGlyIGRvIHRlcmNlaXJvIGNhcmFjdGVyZSBzw6NvIGV4dHJhw61kb3MgdHLDqnM6IDEsIDIgZSAzLiAyLiBBQjEgY29tZcOnYSBuYSBwcmltZWlyYSBwb3Npw6fDo28sIENEIHBlcnRlbmNlIGFvIGZpbSBlIDMgw6kgcGFyw6JtZXRybywgbsOjbyBhIGNhZGVpYSBleHRyYcOtZGEuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIHF1YW50byByZXRvcm5hID1FWFQuVEVYVE8oXCJBQjEyM0NEXCI7MzszKT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-formula-circular.json",
+        "mediaType": "application/json",
+        "sha256": "a468c859211541eeaafff36effeb07b57d2a4a8c088bae976776e13b14ce822e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTmVuaHVtOyBlbGEgc2VtcHJlIHJldG9ybmEgMSBlbSB0b2RhIGNvbmZpZ3VyYcOnw6NvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkFwZW5hcyB1bWEgdHJvY2EgZGUgY29yIGRhIGPDqWx1bGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVW1hIHJlZmVyw6puY2lhIG9icmlnYXTDs3JpYSBhbyBhcnF1aXZvIGRlIG91dHJvIHVzdcOhcmlvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlJlZmVyw6puY2lhIGNpcmN1bGFyLCBwb2lzIGRlcGVuZGUgZG8gcHLDs3ByaW8gcmVzdWx0YWRvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWZvcm11bGEtY2lyY3VsYXIiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mb3JtdWxhcyJdLCJyZXNvbHV0aW9uIjoiMS4gQSBmw7NybXVsYSBkZSBBMSB1c2EgQTEgY29tbyBlbnRyYWRhLCBjcmlhbmRvIHVtYSBkZXBlbmTDqm5jaWEgY2lyY3VsYXIuIDIuIE7Do28gc2UgZGV2ZSBwcmVzdW1pciB1bSByZXN1bHRhZG8gdW5pdmVyc2FsOyBjw6FsY3VsbyBpdGVyYXRpdm8gw6kgY29uZmlndXJhw6fDo28gZXNwZWPDrWZpY2EsIG7Do28gcHJvdmEgZGUgZsOzcm11bGEgYXByb3ByaWFkYS4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCwgQTEgY29udMOpbSA9QTErMS4gUXVhbCBwcm9ibGVtYSBlc3NhIGbDs3JtdWxhIGFwcmVzZW50YT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZvcm11bGFzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBWaXPDo28gZ2VyYWwgZGUgZsOzcm11bGFzIG5vIEV4Y2VsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZ2V0LXN0YXJ0ZWQvb3ZlcnZpZXctb2YtZm9ybXVsYXMtaW4tZXhjZWwifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-formula-recalculo.json",
+        "mediaType": "application/json",
+        "sha256": "5df7001f07eb8c2f2b5dc44d25b68615919fa382c144c2f439cc25590a95f2e6",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTXVkYXIgc29tZW50ZSBhIGNvciBkbyByZXN1bHRhZG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiVmVyaWZpY2FyIG8gbW9kbyBkZSBjw6FsY3VsbyBlIGV4ZWN1dGFyIG8gcmVjw6FsY3VsbyBuZWNlc3PDoXJpby4ifSx7ImlkIjoiYyIsInRleHQiOiJSZW5vbWVhciBvIGFycXVpdm8gcGFyYSBmb3LDp2FyIHF1YWxxdWVyIGbDs3JtdWxhIGEgdmlyYXIgdGV4dG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRXhjbHVpciB0b2RhcyBhcyBhYmFzIGRlIG9yaWdlbSBzZW0gYmFja3VwLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWZvcm11bGEtcmVjYWxjdWxvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZm9ybXVsYXMiXSwicmVzb2x1dGlvbiI6IjEuIE8gbW9kbyBkZSBjw6FsY3VsbyBwb2RlIGFkaWFyIGEgYXR1YWxpemHDp8OjbyBkb3MgcmVzdWx0YWRvcyBhdMOpIHVtIHJlY8OhbGN1bG8uIDIuIE5vbWUgZSBjb3IgbsOjbyBjb3JyaWdlbSBhIGRlcGVuZMOqbmNpYTsgYXBhZ2FyIGRhZG9zIG7Do28gw6kgdW1hIGF0dWFsaXphw6fDo28gZGEgZsOzcm11bGEuIiwic3RhdGVtZW50IjoiVW1hIGbDs3JtdWxhIEV4Y2VsIGRlcGVuZGUgZGUgY8OpbHVsYXMgcXVlIGZvcmFtIGFsdGVyYWRhcy4gQ29tIG8gY8OhbGN1bG8gZGVmaW5pZG8gY29tbyBtYW51YWwsIHF1YWwgY29uZmVyw6puY2lhIGV4cGxpY2EgdW0gcmVzdWx0YWRvIHF1ZSBhaW5kYSBwYXJlY2UgYW50aWdvPyIsInRvcGljSWQiOiJJMDYifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZm9ybXVsYXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFZpc8OjbyBnZXJhbCBkZSBmw7NybXVsYXMgbm8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9nZXQtc3RhcnRlZC9vdmVydmlldy1vZi1mb3JtdWxhcy1pbi1leGNlbCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-hoje-agora.json",
+        "mediaType": "application/json",
+        "sha256": "7d1c382d9151c46d4ad091cc94391a1b96e652445b750de4ad2dec430a32c437",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSE9KRSBzb21hIGRpYXMgZSBBR09SQSBjb250YSB0ZXh0b3MuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQXMgZHVhcyBmdW7Dp8O1ZXMgc2VtcHJlIHJldG9ybmFtIHNvbWVudGUgbyBhbm8gY29tbyB0ZXh0by4ifSx7ImlkIjoiYyIsInRleHQiOiJBR09SQSDDqSB1bWEgbWFjcm8gVkJBIGUgbsOjbyBwb2RlIHNlciBmw7NybXVsYS4ifSx7ImlkIjoiZCIsInRleHQiOiJIT0pFIHJldG9ybmEgYSBkYXRhIGF0dWFsOyBBR09SQSBpbmNsdWkgZGF0YSBlIGhvcmEgYXR1YWlzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWhvamUtYWdvcmEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIl0sInJlc29sdXRpb24iOiIxLiBBcyBmdW7Dp8O1ZXMgZGlmZXJlbSBuYSBpbmNsdXPDo28gZGEgcGFydGUgZGUgaG9yYSBkbyB2YWxvciB0ZW1wb3JhbC4gMi4gTsOjbyBzw6NvIGZ1bsOnw7VlcyBkZSBzb21hL2NvbnRhZ2VtLCBuZW0gZGV2b2x2ZW0gbmVjZXNzYXJpYW1lbnRlIHPDsyBvIGFubzsgQUdPUkEgcG9kZSBzZXIgdXNhZGEgZW0gZsOzcm11bGEuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIHF1YWwgZGlzdGluw6fDo28gZW50cmUgSE9KRSgpIGUgQUdPUkEoKSDDqSBhZGVxdWFkYT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-igualdade-vs-atribuicao.json",
+        "mediaType": "application/json",
+        "sha256": "fa58a32d30a95cdd8b7400445ad64df7f3433ebcd799a32b73b68d0b661a22f2",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiPD4uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiJi4ifSx7ImlkIjoiYyIsInRleHQiOiJeLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ij0uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtaWd1YWxkYWRlLXZzLWF0cmlidWljYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mb3JtdWxhcyJdLCJyZXNvbHV0aW9uIjoiMS4gTyBzaW5hbCA9IGVudHJlIGR1YXMgZXhwcmVzc8O1ZXMgdGVzdGEgaWd1YWxkYWRlLiAyLiA8PiB0ZXN0YSBkaWZlcmVuw6dhLCAmIGNvbmNhdGVuYSBlIF4gY2FsY3VsYSBwb3TDqm5jaWEuIE8gcHJpbWVpcm8gPSBkYSBmw7NybXVsYSBpbmRpY2EgaW7DrWNpbywgbWFzIG8gdXNvIGludGVybm8gcG9kZSBzZXIgdW1hIGNvbXBhcmHDp8Ojby4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCwgcXVhbCBvcGVyYWRvciBjb21wYXJhIGRvaXMgdmFsb3JlcyBxdWFudG8gw6AgaWd1YWxkYWRlIGRlbnRybyBkZSB1bSB0ZXN0ZSBsw7NnaWNvIGRlIGbDs3JtdWxhPyIsInRvcGljSWQiOiJJMDYifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZm9ybXVsYXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFZpc8OjbyBnZXJhbCBkZSBmw7NybXVsYXMgbm8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9nZXQtc3RhcnRlZC9vdmVydmlldy1vZi1mb3JtdWxhcy1pbi1leGNlbCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-maiuscula-funcao.json",
+        "mediaType": "application/json",
+        "sha256": "ca201b4bed65366e50b4fff905313914a843010c42626b8c7cbf32a83d2f07ca",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNS4ifSx7ImlkIjoiYiIsInRleHQiOiJTRVRPUi4ifSx7ImlkIjoiYyIsInRleHQiOiJSLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlMgZSB0IG8gci4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1tYWl1c2N1bGEtZnVuY2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gTUFJw5pTQ1VMQSBjb252ZXJ0ZSBhcyBsZXRyYXMgZGEgY2FkZWlhIHBhcmEgY2FpeGEgYWx0YS4gMi4gTsOjbyBleHRyYWkgYXBlbmFzIGEgw7psdGltYSBsZXRyYSwgbsOjbyBpbnNlcmUgZXNwYcOnb3MgZW50cmUgbGV0cmFzIGUgbsOjbyBjb250YSBjYXJhY3RlcmVzLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsIGVtIHBvcnR1Z3XDqnMgZG8gQnJhc2lsLCBhIGZ1bsOnw6NvIE1BScOaU0NVTEEgYXBsaWNhZGEgYSBcIlNldG9yXCIgcmV0b3JuYSBvIHF1w6o/IiwidG9waWNJZCI6IkkwNiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBGdW7Dp8O1ZXMgZG8gRXhjZWwgcG9yIGNhdGVnb3JpYSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2V4Y2VsLWZ1bmN0aW9ucy1ieS1jYXRlZ29yeSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-menor-posicao.json",
+        "mediaType": "application/json",
+        "sha256": "2384c23b49f23bb69b65fae2c464b4ef87f857f2aeb40e7e3feadd8fd1dcc957",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTm9tZS4ifSx7ImlkIjoiYiIsInRleHQiOiJQb250b3MuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQW5hLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LW1lbm9yLXBvc2ljYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIl0sInJlc29sdXRpb24iOiIxLiDDjU5ESUNFIHVzYSBhIHNlZ3VuZGEgbGluaGEgZSBhIHByaW1laXJhIGNvbHVuYSBkYSBtYXRyaXogQTE6QjIsIGNoZWdhbmRvIGEgQTIsIGN1am8gY29udGXDumRvIMOpIEFuYS4gMi4gTm9tZSBlIFBvbnRvcyBlc3TDo28gbmEgcHJpbWVpcmEgbGluaGE7IDEyIGVzdMOhIG5hIHNlZ3VuZGEgY29sdW5hIGRhIHNlZ3VuZGEgbGluaGEuIE7Do28gw6kgb3JkZW5hw6fDo28gcG9yIG1haW9yIG91IG1lbm9yIHZhbG9yLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBkZSBkZXNrdG9wIG5vIFdpbmRvd3MgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIEExIGNvbnTDqW0gTm9tZSwgQjEgY29udMOpbSBQb250b3MsIEEyIGNvbnTDqW0gQW5hIGUgQjIgY29udMOpbSAxMi4gUXVlIGNvbnRlw7pkbyByZXRvcm5hID3DjU5ESUNFKEExOkIyOzI7MSk/IiwidG9waWNJZCI6IkkwNiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBGdW7Dp8O1ZXMgZG8gRXhjZWwgcG9yIGNhdGVnb3JpYSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2V4Y2VsLWZ1bmN0aW9ucy1ieS1jYXRlZ29yeSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-mod-resto.json",
+        "mediaType": "application/json",
+        "sha256": "4f65116b5c318f499f1d17dffb40b1f4fcfd6bf085974a1ab50a9908723a9d6a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMy4ifSx7ImlkIjoiYiIsInRleHQiOiIzLDQuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMi4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1tb2QtcmVzdG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIl0sInJlc29sdXRpb24iOiIxLiAxNz0zw5c1KzIsIHBvcnRhbnRvIG8gcmVzdG8gw6kgMi4gMi4gMyDDqSBvIHF1b2NpZW50ZSBpbnRlaXJvIGUgMyw0IGEgZGl2aXPDo28gY29tcGxldGE7IDIyIMOpIHNvbWEsIG7Do28gcmVzdG8uIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIHF1YWwgw6kgbyByZXN1bHRhZG8gZGUgPU1PRCgxNzs1KT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-percentual-operador.json",
+        "mediaType": "application/json",
+        "sha256": "112fd761f2dbe6ffab92a5463e467595aee7e6c4d0991f250bcdb6ae27ab0eae",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjE1LiJ9LHsiaWQiOiJiIiwidGV4dCI6IjMwLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjMwMDAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTUuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtcGVyY2VudHVhbC1vcGVyYWRvciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZvcm11bGFzIl0sInJlc29sdXRpb24iOiIxLiAxNSU9MCwxNTsgMjAww5cwLDE1PTMwLiAyLiAzMDAwIGlnbm9yYSBvIGRpdmlzb3IgMTAwOyAxNSDDqSBhIHRheGEgbnVtw6lyaWNhIGFwcmVzZW50YWRhIGUgMjE1IHNvbWEgZW0gdmV6IGRlIGFwbGljYXIgYSBwb3JjZW50YWdlbS4iLCJzdGF0ZW1lbnQiOiJObyBFeGNlbCwgc2VtIG91dHJhcyBvcGVyYcOnw7VlcywgcXVhbCDDqSBvIHJlc3VsdGFkbyBudW3DqXJpY28gZGUgPTIwMCoxNSU/IiwidG9waWNJZCI6IkkwNiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mb3JtdWxhcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgVmlzw6NvIGdlcmFsIGRlIGbDs3JtdWxhcyBubyBFeGNlbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2dldC1zdGFydGVkL292ZXJ2aWV3LW9mLWZvcm11bGFzLWluLWV4Y2VsIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-procv-exata.json",
+        "mediaType": "application/json",
+        "sha256": "3579821551a4d29b65f664b7381966a8fda326f9d0441d4e6e5f8cd9da27f14a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBuw7ptZXJvIGRlIGxpbmhhcyBkYSBwbGFuaWxoYS4ifSx7ImlkIjoiYiIsInRleHQiOiJGQUxTTy4ifSx7ImlkIjoiYyIsInRleHQiOiJWRVJEQURFSVJPLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik8gdGV4dG8gXCJxdWFscXVlclwiLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXByb2N2LWV4YXRhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gRkFMU08gc29saWNpdGEgY29ycmVzcG9uZMOqbmNpYSBleGF0YSBubyBQUk9DVi4gMi4gVkVSREFERUlSTyByZXByZXNlbnRhIGJ1c2NhIGFwcm94aW1hZGE7IHRleHRvIGFyYml0csOhcmlvIGUgdG90YWwgZGUgbGluaGFzIG7Do28gc3Vic3RpdHVlbSBlc3NlIGFyZ3VtZW50byBsw7NnaWNvLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsIGVtIHBvcnR1Z3XDqnMgZG8gQnJhc2lsLCB1bWEgYnVzY2EgUFJPQ1YgZGV2ZSBleGlnaXIgY29ycmVzcG9uZMOqbmNpYSBleGF0YSBkbyBjw7NkaWdvLiBRdWFsIHZhbG9yIGRvIMO6bHRpbW8gYXJndW1lbnRvIGV4cHJlc3NhIGVzc2EgZXhpZ8OqbmNpYT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-produto.json",
+        "mediaType": "application/json",
+        "sha256": "68836acf937b9922ab0ed82eed0f52179145049e929ec6b653b738aec7c060e0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNi4ifSx7ImlkIjoiYiIsInRleHQiOiIyNC4ifSx7ImlkIjoiYyIsInRleHQiOiI5LiJ9LHsiaWQiOiJkIiwidGV4dCI6IjEyLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXByb2R1dG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIl0sInJlc29sdXRpb24iOiIxLiBQUk9EVVRPIG11bHRpcGxpY2EgdG9kb3Mgb3MgYXJndW1lbnRvczogMsOXM8OXND0yNC4gMi4gOSDDqSBhIHNvbWE7IDEyIGUgNiBkZWl4YW0gZGUgbXVsdGlwbGljYXIgdW0gZG9zIGZhdG9yZXMuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIHF1YW50byByZXRvcm5hID1QUk9EVVRPKDI7Mzs0KT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-raiz.json",
+        "mediaType": "application/json",
+        "sha256": "15643e1a15bff4c2e69b44bfadcd23e0a0ba4d39aa4eb593582d221b67b611ef",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjU2MS4ifSx7ImlkIjoiYiIsInRleHQiOiI5LiJ9LHsiaWQiOiJjIiwidGV4dCI6Ii05LiJ9LHsiaWQiOiJkIiwidGV4dCI6IjQwLDUuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtcmFpeiIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiXSwicmVzb2x1dGlvbiI6IjEuIFJBSVogZGV2b2x2ZSBhIHJhaXogcXVhZHJhZGEgcHJpbmNpcGFsIG7Do28gbmVnYXRpdmE6IDnDlzk9ODEuIDIuIEVtYm9yYSAtOSB0YW1iw6ltIGFvIHF1YWRyYWRvIGTDqiA4MSwgbsOjbyDDqSBhIHJhaXogcHJpbmNpcGFsIHJldG9ybmFkYTsgbWV0YWRlIGUgcXVhZHJhZG8gc8OjbyBvcGVyYcOnw7VlcyBkaXN0aW50YXMuIiwic3RhdGVtZW50IjoiTm8gRXhjZWwgZW0gcG9ydHVndcOqcyBkbyBCcmFzaWwsIHF1YWwgdmFsb3IgcmV0b3JuYSA9UkFJWig4MSk/IiwidG9waWNJZCI6IkkwNiJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mdW5jb2VzIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBGdW7Dp8O1ZXMgZG8gRXhjZWwgcG9yIGNhdGVnb3JpYSIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2V4Y2VsLWZ1bmN0aW9ucy1ieS1jYXRlZ29yeSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-somases-duplo.json",
+        "mediaType": "application/json",
+        "sha256": "9f4bdc1b2df5720e56fbf3cb95a93718bd32839ba4931149c3fdee24eb956914",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjAuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTAuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMzAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNDAuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtc29tYXNlcy1kdXBsbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiXSwicmVzb2x1dGlvbiI6IjEuIFNvbWVudGUgYSBwcmltZWlyYSBsaW5oYSBzYXRpc2ZheiBzaW11bHRhbmVhbWVudGUgU3VsIGUgUGFnbzsgc2V1IHZhbG9yIMOpIDEwLiAyLiAzMCBzb21hIFN1bCBzZW0gY29uc2lkZXJhciBzaXR1YcOnw6NvLCA0MCBzb21hIFBhZ28gc2VtIGNvbnNpZGVyYXIgcmVnacOjbyBlIDYwIGlnbm9yYSB0b2RvcyBvcyBjcml0w6lyaW9zLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsIGVtIHBvcnR1Z3XDqnMgZG8gQnJhc2lsLCBBMTpBMyBjb250w6ltIFN1bCwgU3VsLCBOb3J0ZTsgQjE6QjMgY29udMOpbSBQYWdvLCBQZW5kZW50ZSwgUGFnbzsgQzE6QzMgY29udMOpbSAxMCwgMjAsIDMwLiBRdWFudG8gcmV0b3JuYSA9U09NQVNFUyhDMTpDMztBMTpBMztcIlN1bFwiO0IxOkIzO1wiUGFnb1wiKT8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.it-subtotal-filtrado.json",
+        "mediaType": "application/json",
+        "sha256": "dd59203492bbe42db54822593302f675e9b88c8e71a94530d86f6e98ec8c9987",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU09NQS4ifSx7ImlkIjoiYiIsInRleHQiOiJTT01BU0UuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQ09OVC5WQUxPUkVTLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlNVQlRPVEFMLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LXN1YnRvdGFsLWZpbHRyYWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZnVuY29lcyJdLCJyZXNvbHV0aW9uIjoiMS4gU1VCVE9UQUwgdGVtIGNvbXBvcnRhbWVudG8gcHLDs3ByaW8gcGFyYSBsaXN0YXMgZmlsdHJhZGFzLCBjb25mb3JtZSBvIGPDs2RpZ28gZGUgYWdyZWdhw6fDo28gZXNjb2xoaWRvLiAyLiBTT01BLCBTT01BU0UgZSBDT05ULlZBTE9SRVMgY2FsY3VsYW0gc29icmUgdG9kYXMgYXMgY8OpbHVsYXMgZG8gaW50ZXJ2YWxvLCBpbmNsdXNpdmUgYXMgbGluaGFzIG9jdWx0YXMgcGVsbyBmaWx0cm8uIE8gY8OzZGlnbyB0YW1iw6ltIGRldGVybWluYSBvIHRyYXRhbWVudG8gZGUgb2N1bHRhw6fDo28gbWFudWFsLiIsInN0YXRlbWVudCI6Ik5vIEV4Y2VsIHBhcmEgTWljcm9zb2Z0IDM2NSBlbSBwb3J0dWd1w6pzIGRvIEJyYXNpbCwgcXVlIGZ1bsOnw6NvIGZvaSBwcm9qZXRhZGEgcGFyYSBjYWxjdWxhciB1bSBzdWJ0b3RhbCBlbSB1bWEgbGlzdGEgZSBkZXNjb25zaWRlcmFyIGxpbmhhcyByZW1vdmlkYXMgZGEgdmlzdWFsaXphw6fDo28gcG9yIGZpbHRybz8iLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZ1bmNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIEZ1bsOnw7VlcyBkbyBFeGNlbCBwb3IgY2F0ZWdvcmlhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vcHQtYnIvZXhjZWwvZXhjZWwtZnVuY3Rpb25zLWJ5LWNhdGVnb3J5In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.jeri-insp-q19.json",
+        "mediaType": "application/json",
+        "sha256": "4d6cd79211ef802f44e2cbdc12c54577e3558f728ae8353a537fc84ffdc22c4b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSBqdW7Dp8OjbyBkZSB0ZXh0b3MgZW0gY8OpbHVsYXMgZGlzdGludGFzIMOpIHJlYWxpemFkYSBleGNsdXNpdmFtZW50ZSBwb3IgbWVpbyBkZSBhdGFsaG9zIGRlIHRlY2xhZG8sIHNlbSB1dGlsaXphw6fDo28gZGUgZsOzcm11bGFzLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik8gRXhjZWwgdXRpbGl6YSBvcGVyYWRvcmVzIG1hdGVtw6F0aWNvcywgY29tbyBzb21hIGUgc3VidHJhw6fDo28sIHBhcmEgdW5pciBjb250ZcO6ZG9zIHRleHR1YWlzIGVtIHVtYSDDum5pY2EgY8OpbHVsYS4ifSx7ImlkIjoiYyIsInRleHQiOiJPIG9wZXJhZG9yICYgcGVybWl0ZSBhc3NvY2lhciB2YWxvcmVzIGRlIHRleHRvIHByb3ZlbmllbnRlcyBkZSB1bWEgb3UgbWFpcyBjw6lsdWxhcywgcmVzdWx0YW5kbyBlbSB1bWEgw7puaWNhIHNlcXXDqm5jaWEgdGV4dHVhbC4ifSx7ImlkIjoiZCIsInRleHQiOiJBIGNvbWJpbmHDp8OjbyBkZSB0ZXh0b3Mgc8OzIMOpIHBvc3PDrXZlbCBxdWFuZG8gYXMgY8OpbHVsYXMgZW52b2x2aWRhcyBjb250w6ptIGV4Y2x1c2l2YW1lbnRlIHZhbG9yZXMgbnVtw6lyaWNvcy4ifSx7ImlkIjoiZSIsInRleHQiOiJQYXJhIHVuaXIgdGV4dG9zIG5vIEV4Y2VsLCDDqSBvYnJpZ2F0w7NyaW8gY29udmVydGVyIHByZXZpYW1lbnRlIGFzIGPDqWx1bGFzIGVtIGZvcm1hdG8gZGUgZGF0YS4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIEplcmlxdWFyYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSwgSW5zcGV0b3IgZGUgQWx1bm9zLCBxdWVzdMOjbyAxOS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYyIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgMiwgcXVhZHJvIGRvIGNhcmdvIElOU1BFVE9SIERFIEFMVU5PUzogMTk9QzsgY29uZmVyw6puY2lhIHZpc3VhbCBuYSByZW5kZXJpemHDp8OjbyBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjMzLWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI4MjA4NTI4ZjdlNmU5YTJkZWE1NDEzYWFhNDcxYjMwZWUzNjZlNmJhZjUyNDFiZWQ2NGY1MjQ4ODk2YTUyZjM5IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzMvYW5leG9zLzE1MTRkODNjLWQ3N2UtNDZkMi1hNGQwLWQ1ZmY0MDNkMzQ0NS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIEplcmlxdWFyYSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLWplcmlxdWFyYS0yMDI1LWluc3BldG9yL3ExOSIsIm51bWJlciI6IjE5IiwicHJvb2YiOnsibm90ZSI6IlF1ZXN0w6NvIDE5LCBww6FnaW5hIGbDrXNpY2EgNiBkbyBQREY7IHRleHRvIGV4dHJhw61kbyBjb25mcm9udGFkbyBjb20gYSByZW5kZXJpemHDp8OjbyBkYSBww6FnaW5hOyBlbnVuY2lhZG8sIGFsdGVybmF0aXZhcyBlIG9yZGVtIGNvbmZlcmlkb3MgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIzMy1wcm92YS1pbnNwZXRvci1kZS1hbHVub3MucGRmIiwic2hhMjU2IjoiZWEyNTVmOTgxOThiYzI1YzA2MjQzN2YyNzkyMDc2YWI4M2NkMzBjM2IzNmI0NWJlMGZjNjZmMGE2MDY0YWViOCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjMzL2FuZXhvcy80MTNkYjU1Yi0xYTUzLTRhMWQtOTQwZS0xN2JlYjI4YjdjZWEucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IGFydC4gOMK6LCBJViwgZGEgTGVpIDkuNjEwLzE5OTgsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgbm8gcHJvamV0bywgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSBkZSBwcm92YSBww7pibGljYSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gaW5jb3Jwb3JhZGEuIE7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSBjb25zZW50aW1lbnRvIGFmaXJtYWRvOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiSW5zcGV0b3IgZGUgQWx1bm9zIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJqZXJpLWluc3AtcTE5Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtZm9ybXVsYXMiXSwicmVzb2x1dGlvbiI6IjEuIE8gb3BlcmFkb3IgZGUgY29uY2F0ZW5hw6fDo28gJiB1bmUgdGV4dG9zOiA9QTImXCIgXCImQjIganVudGEgbm9tZSBlIHNvYnJlbm9tZSBjb20gZXNwYcOnbzsgYWx0ZXJuYXRpdmEgQyAoYXMgZnVuw6fDtWVzIENPTkNBVCBlIENPTkNBVEVOQVIgZmF6ZW0gbyBtZXNtbykuIDIuIEEganVuw6fDo28gcG9kZSBzZXIgZmVpdGEgcG9yIGbDs3JtdWxhLCBuw6NvIHPDsyBwb3IgYXRhbGhvIChBKTsgKyBlIOKIkiBzw6NvIGFyaXRtw6l0aWNvcyBlIHJldG9ybmFtIGVycm8gY29tIHRleHRvIChCKTsgYSBjb25jYXRlbmHDp8OjbyBmdW5jaW9uYSBjb20gdGV4dG9zIChEKTsgbsOjbyBow6EgZXhpZ8OqbmNpYSBkZSBmb3JtYXRvIGRlIGRhdGEgKEUpLiBHYWJhcml0byBkZWZpbml0aXZvOiBhbHRlcm5hdGl2YSBDLiIsInN0YXRlbWVudCI6IlVtIHNlcnZpZG9yIHV0aWxpemEgbyBNaWNyb3NvZnQgRXhjZWwgcGFyYSBlbGFib3JhciB1bWEgcGxhbmlsaGEgY29udGVuZG8gbm9tZSBlIHNvYnJlbm9tZSBkZSBzZXJ2aWRvcmVzIGVtIGNvbHVuYXMgZGlzdGludGFzLCBjb20gYSBmaW5hbGlkYWRlIGRlIGdlcmFyIHVtIMO6bmljbyBjYW1wbyBkZSBpZGVudGlmaWNhw6fDo28uIENvbnNpZGVyYW5kbyBvIHVzbyBkZSBmw7NybXVsYXMgbm8gRXhjZWwsIGFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgY29ycmV0YSBxdWFudG8gYW8gcmVjdXJzbyBlbXByZWdhZG8gcGFyYSB1bmlyIHRleHRvcyBkZSBjw6lsdWxhcyBkaWZlcmVudGVzOiIsInRvcGljSWQiOiJJMDYifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWNsYXVkZS1pdC1mb3JtdWxhcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTEyIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCDigJQgVmlzw6NvIGdlcmFsIGRlIGbDs3JtdWxhcyBubyBFeGNlbCIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5taWNyb3NvZnQuY29tL3B0LWJyL2V4Y2VsL2dldC1zdGFydGVkL292ZXJ2aWV3LW9mLWZvcm11bGFzLWluLWV4Y2VsIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.var25-cont-q25.json",
+        "mediaType": "application/json",
+        "sha256": "7075e87e485480c7f3b807402a004f0e696346093f41226a10ffb45627bc9982",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTWFpcyAoKykuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiSWd1YWwgKD0pLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik1lbm9zICjigJMpLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlBvcmNlbnRhZ2VtICglKS4ifSx7ImlkIjoiZSIsInRleHQiOiJEaXZpc8OjbyAow7cpLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUsIENvbnRhZG9yLCBxdWVzdMOjbyAyNS4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgMiwgcXVhZHJvIGRvIGNhcmdvIENPTlRBRE9SOiAyNT1COyBjb25mZXLDqm5jaWEgdmlzdWFsIG5hIHJlbmRlcml6YcOnw6NvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTctZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6ImI5MDdkMzVlMTZlZGJjNWEyZTk4OTMyNzUzMjAyNGU5Yjk5MmRkYjBiOWJmZGJiZTgzNWUyYjliNzE4ZjM2NzUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5Ny9hbmV4b3MvYTM4OTgyODMtNGQ0ZS00NTE2LTg1N2YtZWEwZmFiNGRhYTQ2LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12YXJnaW5oYS0yMDI1LWNvbnRhZG9yL3EyNSIsIm51bWJlciI6IjI1IiwicHJvb2YiOnsibm90ZSI6IlF1ZXN0w6NvIDI1LCBww6FnaW5hIGbDrXNpY2EgNyBkbyBQREY7IHRleHRvIGV4dHJhw61kbyBjb25mcm9udGFkbyBjb20gYSByZW5kZXJpemHDp8OjbyBkYSBww6FnaW5hOyBlbnVuY2lhZG8sIGFsdGVybmF0aXZhcyBlIG9yZGVtIGNvbmZlcmlkb3MgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMi4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzE5Ny1wcm92YS1jb250YWRvci5wZGYiLCJzaGEyNTYiOiJhNjRjMmFkZTA3YTMyZWQzNmUwNTAzNTcxZmI4ZTBhODdhZTc2NmY3NTdmYWQwNDVjYTViOTUzMjA1NDc1YTUwIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8xOTcvYW5leG9zLzYyMzM3YTA5LTA0N2UtNDdjNi1iNWEwLTFiMDZlOTQ4ODRlZC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogYXJ0LiA4wrosIElWLCBkYSBMZWkgOS42MTAvMTk5OCwgY29uZm9ybWUgYSBhdmFsaWHDp8OjbyBkb2N1bWVudGFkYSBubyBwcm9qZXRvLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlIGRlIHByb3ZhIHDDumJsaWNhLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBpbmNvcnBvcmFkYS4gTsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIGNvbnNlbnRpbWVudG8gYWZpcm1hZG87IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJDb250YWRvciIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNX0sImlkIjoidmFyMjUtY29udC1xMjUiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWNsYXVkZS1pdC1mb3JtdWxhcyJdLCJyZXNvbHV0aW9uIjoiMS4gQSBkb2N1bWVudGHDp8OjbyBkbyBFeGNlbCBkZWZpbmUgcXVlIHVtYSBmw7NybXVsYSBjb21lw6dhIGNvbSBvIHNpbmFsIGRlIGlndWFsICg9KSwgY29tbyBlbSA9QTErQjE7IGFsdGVybmF0aXZhIEIuIDIuIE8gRXhjZWwgYWluZGEgY29udmVydGUgZW50cmFkYXMgaW5pY2lhZGFzIHBvciArIG91IOKIkiBwb3IgY29tcGF0aWJpbGlkYWRlLCBtYXMgYSBjb252ZW7Dp8OjbyBwZWRpZGEgw6kgbyA9OyAlIMOpIG9wZXJhZG9yIGRlIHBvcmNlbnRhZ2VtIGUgw7cgbsOjbyDDqSBvcGVyYWRvciBkbyBFeGNlbCAoYSBkaXZpc8OjbyB1c2EgLykuIEdhYmFyaXRvIGRlZmluaXRpdm86IGFsdGVybmF0aXZhIEIuIiwic3RhdGVtZW50IjoiVW1hIGbDs3JtdWxhIG5vIE1pY3Jvc29mdCBFeGNlbCDDqSB1bWEgc2VxdcOqbmNpYSBkZSB2YWxvcmVzIGNvbnN0YW50ZXMsIHJlZmVyw6puY2lhcyBkZSBjw6lsdWxhcyAobyBlbmRlcmXDp28gZGEgY8OpbHVsYSksIG5vbWVzLCBmdW7Dp8O1ZXMgb3Ugb3BlcmFkb3JlcyBxdWUgcHJvZHV6ZW0gdW0gbm92byB2YWxvciBhIHBhcnRpciBkb3MgdmFsb3JlcyBleGlzdGVudGVzLiBBcyBmw7NybXVsYXMgc2VtcHJlIGNvbWXDp2FtIGNvbSB1bSBzaW5hbCBkZToiLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtZm9ybXVsYXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFZpc8OjbyBnZXJhbCBkZSBmw7NybXVsYXMgbm8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9nZXQtc3RhcnRlZC9vdmVydmlldy1vZi1mb3JtdWxhcy1pbi1leGNlbCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I06.p.vinh-aux-q38.json",
+        "mediaType": "application/json",
+        "sha256": "169ad65f1d1120ca7c0ab7695f2dfc46dc9b80ec3cd118d511fb00ce7e7a290c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiKiJ9LHsiaWQiOiJiIiwidGV4dCI6Il4ifSx7ImlkIjoiYyIsInRleHQiOiJ9In0seyJpZCI6ImQiLCJ0ZXh0IjoiLyJ9LHsiaWQiOiJlIiwidGV4dCI6Il0ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUsIEF1eGlsaWFyIEFkbWluaXN0cmF0aXZvLCBxdWVzdMOjbyAzOC4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8sIHDDoWdpbmEgMSwgcXVhZHJvIGRvIGNhcmdvIEFVWElMSUFSIEFETUlOSVNUUkFUSVZPOiAzOD1EOyBjb25mZXLDqm5jaWEgdmlzdWFsIG5hIHJlbmRlcml6YcOnw6NvIGVtIDIwMjYtMTEtMTIuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMjktZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6IjkyM2FjYWFmOWQzOGU1YzhmNDgzYjNjZTlmZDJkOWRjNmMyMTUwMjdjZWIwYTRlZjM1ZjdkMGFiZTI0Y2MzOGUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyOS9hbmV4b3MvMjc5NTE0MTMtMDRjNi00NGY4LTkyNWEtZWIwYjM5MjExNzM5LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmluaGVkbyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDMvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXZpbmhlZG8tMjAyNS1hdXhpbGlhci9xMzgiLCJudW1iZXIiOiIzOCIsInByb29mIjp7Im5vdGUiOiJRdWVzdMOjbyAzOCwgcMOhZ2luYSBmw61zaWNhIDEwIGRvIFBERjsgdGV4dG8gZXh0cmHDrWRvIGNvbmZyb250YWRvIGNvbSBhIHJlbmRlcml6YcOnw6NvIGRhIHDDoWdpbmE7IGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzIGUgb3JkZW0gY29uZmVyaWRvcyB2aXN1YWxtZW50ZSBlbSAyMDI2LTExLTEyLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjI5LXByb3ZhLWF1eGlsaWFyLWFkbWluaXN0cmF0aXZvLnBkZiIsInNoYTI1NiI6IjZmYTk3YTc2Nzk1NjIwZDhhM2E5ZTFiZDgxMzIxOGM1Y2IwZjUxYzMyYTQyMzQ2YTBmMzYzNTQ1NDU3ZWYwY2UiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyOS9hbmV4b3MvNzhjZWQ1MzUtMDY0Yi00YTM5LTgwNTUtZTEwM2E5ZGFiYTlmLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBhcnQuIDjCuiwgSVYsIGRhIExlaSA5LjYxMC8xOTk4LCBjb25mb3JtZSBhIGF2YWxpYcOnw6NvIGRvY3VtZW50YWRhIG5vIHByb2pldG8sIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUgZGUgcHJvdmEgcMO6YmxpY2EsIHNlbSBvYnJhIGRlIHRlcmNlaXJvIGluY29ycG9yYWRhLiBOw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBuZW0gY29uc2VudGltZW50byBhZmlybWFkbzsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkF1eGlsaWFyIEFkbWluaXN0cmF0aXZvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJ2aW5oLWF1eC1xMzgiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWNsYXVkZS1pdC1mb3JtdWxhcyJdLCJyZXNvbHV0aW9uIjoiMS4gQSBiYXJyYSAvIMOpIG8gb3BlcmFkb3IgZGUgZGl2aXPDo286ID1BMS9CMTsgYWx0ZXJuYXRpdmEgRC4gMi4gKiBtdWx0aXBsaWNhOyBeIGVsZXZhIMOgIHBvdMOqbmNpYTsgY2hhdmVzIGUgY29sY2hldGVzIG7Do28gc8OjbyBvcGVyYWRvcmVzIGFyaXRtw6l0aWNvcyBubyBFeGNlbCAoYXBhcmVjZW0gZW0gY29uc3RhbnRlcyBkZSBtYXRyaXogb3UgcmVmZXLDqm5jaWFzIGVzdHJ1dHVyYWRhcyBkZSB0YWJlbGEpLiBHYWJhcml0byBkZWZpbml0aXZvOiBhbHRlcm5hdGl2YSBELiIsInN0YXRlbWVudCI6IkFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgcXVlIGRlc2NyZXZlIGNvcnJldGFtZW50ZSBxdWFsIMOpIG9wZXJhZG9yIG1hdGVtw6F0aWNvIHV0aWxpemFkbyBwZWxvIE1pY3Jvc29mdCBFeGNlbCBwYXJhIGZhemVyIGRpdmlzw7VlczoiLCJ0b3BpY0lkIjoiSTA2In0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1jbGF1ZGUtaXQtZm9ybXVsYXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQg4oCUIFZpc8OjbyBnZXJhbCBkZSBmw7NybXVsYXMgbm8gRXhjZWwiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubWljcm9zb2Z0LmNvbS9wdC1ici9leGNlbC9nZXQtc3RhcnRlZC9vdmVydmlldy1vZi1mb3JtdWxhcy1pbi1leGNlbCJ9fX0="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I06.p.cerq25-aesc-q19",
+    "admin.2026-11.I06.p.fgv-taubate-q36",
+    "admin.2026-11.I06.p.it-arrumar",
+    "admin.2026-11.I06.p.it-concatenar-operador",
+    "admin.2026-11.I06.p.it-contagem-valores",
+    "admin.2026-11.I06.p.it-contar-multicriterio",
+    "admin.2026-11.I06.p.it-contar-vazio",
+    "admin.2026-11.I06.p.it-e-logico",
+    "admin.2026-11.I06.p.it-ext-texto",
+    "admin.2026-11.I06.p.it-formula-circular",
+    "admin.2026-11.I06.p.it-formula-recalculo",
+    "admin.2026-11.I06.p.it-hoje-agora",
+    "admin.2026-11.I06.p.it-igualdade-vs-atribuicao",
+    "admin.2026-11.I06.p.it-maiuscula-funcao",
+    "admin.2026-11.I06.p.it-menor-posicao",
+    "admin.2026-11.I06.p.it-mod-resto",
+    "admin.2026-11.I06.p.it-percentual-operador",
+    "admin.2026-11.I06.p.it-procv-exata",
+    "admin.2026-11.I06.p.it-produto",
+    "admin.2026-11.I06.p.it-raiz",
+    "admin.2026-11.I06.p.it-somases-duplo",
+    "admin.2026-11.I06.p.it-subtotal-filtrado",
+    "admin.2026-11.I06.p.jeri-insp-q19",
+    "admin.2026-11.I06.p.var25-cont-q25",
+    "admin.2026-11.I06.p.vinh-aux-q38"
+  ]
+}

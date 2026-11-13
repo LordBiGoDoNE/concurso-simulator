@@ -6,7 +6,7 @@ export interface PracticeView extends RunView { topicId: string }
 function view(value: unknown): asserts value is PracticeView {
   validateRun(value, 'topicId');
   const r = value as PracticeView;
-  ensure(r.items.length <= 5);
+  ensure(r.items.length <= 25);
   const topic = catalog.topics.find(t => t.id === r.topicId);
   ensure(topic && r.items.every(i => i.classification.topicId === topic.id && i.classification.disciplineId === topic.disciplineId));
 }
@@ -43,7 +43,8 @@ export const lessonPracticeTransport: PracticeTransport = {
     return { attempt, result };
   }, 'POST', { commandId, expectedVersion }),
   result: (value, signal) => attemptRequest<Result>(`${route(value)}/result`, signal, async v => {
-    const validator = await import('./attempt-result-api'); return validator.result(v);
+    const validator = await import('./attempt-result-api'); const result = validator.result(v);
+    ensure(result.total >= 1 && result.total <= 25); return result;
   }),
 };
 export interface PracticeHistoryItem { id: string; topicId: string; createdAt: string; finishedAt: string | null; total: number; percentage: number | null }
@@ -51,7 +52,7 @@ export interface PracticeHistoryPage { items: PracticeHistoryItem[]; page: numbe
 export const lessonPracticeHistory = (page: number, signal: AbortSignal) => attemptRequest<PracticeHistoryPage>(`/api/v1/me/lesson-practices?page=${page}&size=20`, signal, v => {
   const r = row(v, ['items', 'page', 'size']); ensure(r.page === page && r.size === 20); list(r.items);
   r.items.forEach(value => {
-    const e = row(value, ['id', 'topicId', 'createdAt', 'finishedAt', 'total', 'percentage']); id(e.id); number(e.total); ensure(Number(e.total) >= 1 && Number(e.total) <= 5);
+    const e = row(value, ['id', 'topicId', 'createdAt', 'finishedAt', 'total', 'percentage']); id(e.id); number(e.total); ensure(Number(e.total) >= 1 && Number(e.total) <= 25);
     ensure(catalog.topics.some(t => t.id === e.topicId));
     ensure(typeof e.createdAt === 'string' && Number.isFinite(Date.parse(e.createdAt)));
     if (e.finishedAt === null) ensure(e.percentage === null);

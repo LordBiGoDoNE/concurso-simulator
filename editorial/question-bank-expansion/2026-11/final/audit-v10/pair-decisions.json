@@ -1,0 +1,2844 @@
+[
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I02.s.it-barra-percorrer",
+      "admin-question-v1:admin.2026-11.I02.s.it-configuracoes"
+    ],
+    "fingerprints": [
+      "d4c26e508362c40fa2896253148b619ed7f5e71df686dfcad19619c7e940c94b",
+      "9f30597575e8cafd275141cc866df9e8c9a22ea6a15850ea38864a71d718e1cd"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Atalhos diferentes do Windows 11 com finalidades distintas: Windows+T percorre a barra de tarefas; Windows+I abre Configurações. A semelhança é apenas estrutural.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802844+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "ed6922d6a4b945ad24d61aa08e9bf87e0685e1b60ac38c6734322b4995993ba3",
+      "5985018541ebd0bc895c5367005fcb8346c0ae44a82ae71e50d29840cfa75c41"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I04.s.it-coluna-nao-pagina",
+      "legacy-v3:I03-Q04"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, Ctrl+Shift+Enter insere quebra de coluna, levando o texto à próxima coluna; no segundo, Shift+Enter insere quebra manual de linha, sem criar nova coluna. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802860+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "b0b267645d5d2c93633c2a8746ad4cd78ae197a697b582ad350fcb811e41a79e"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "admin-question-v1:admin.2026-11.I06.s.it-esquerda"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, ESQUERDA extrai o prefixo PRO de PROTOCOLO pelo comprimento 3. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802866+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802870+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, NÃO nega a condição verdadeira 5=5 e retorna FALSO. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802873+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802877+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "b8a7b5002c4cfea085d6f77828ff2806684e0008affdc12941c4eb124a921004"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "admin-question-v1:admin.2026-11.I06.s.it-ou-logico"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, OU avalia disjunção: basta a condição 6=6 ser verdadeira para o resultado ser VERDADEIRO. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802881+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802884+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, EXT.TEXTO extrai 123 a partir de posição inicial e comprimento na cadeia AB123CD. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802888+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, MOD(17;5) retorna o resto 2, em vez do quociente 3 ou da divisão 3,4. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802892+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802895+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "63736b636eac30c5c79f74be0a15b345f2e08d61bd531fac3a4c5b20134aa1fb",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-abs",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ABS(-13) obtém a distância a zero e retorna 13; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802899+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "0638b8380fd067f2eee49437000dc343d38d5dba572b5201b3aa57e71d71f09f",
+      "dfe02ac4ed15d161f7cd53023ce60fdd31e8b4286de95412f95f67f97afec1ee"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-contagem-numeros",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contagem-valores"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, CONT.NÚM conta só o número 7, excluindo texto e célula vazia; no segundo, CONT.VALORES conta o zero e o texto recebido como duas células não vazias. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802903+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "0638b8380fd067f2eee49437000dc343d38d5dba572b5201b3aa57e71d71f09f",
+      "1e98a975927981e90e769f7c7eeb893993b50c64f4ccec68b7c426252f320e9c"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-contagem-numeros",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contar-multicriterio"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, CONT.NÚM conta só o número 7, excluindo texto e célula vazia; no segundo, CONT.SES conta registros que satisfazem simultaneamente categoria A e limite >=5. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802906+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "b0b267645d5d2c93633c2a8746ad4cd78ae197a697b582ad350fcb811e41a79e",
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-esquerda",
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ESQUERDA extrai o prefixo PRO de PROTOCOLO pelo comprimento 3; no segundo, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802909+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "b0b267645d5d2c93633c2a8746ad4cd78ae197a697b582ad350fcb811e41a79e",
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-esquerda",
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ESQUERDA extrai o prefixo PRO de PROTOCOLO pelo comprimento 3; no segundo, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802913+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "b0b267645d5d2c93633c2a8746ad4cd78ae197a697b582ad350fcb811e41a79e",
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-esquerda",
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ESQUERDA extrai o prefixo PRO de PROTOCOLO pelo comprimento 3; no segundo, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-esquerda",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto"
+    ],
+    "fingerprints": [
+      "b0b267645d5d2c93633c2a8746ad4cd78ae197a697b582ad350fcb811e41a79e",
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Funções de texto diferentes: ESQUERDA extrai prefixo; EXT.TEXTO extrai trecho a partir de posição. Resultados e conhecimentos distintos.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802916+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "b0b267645d5d2c93633c2a8746ad4cd78ae197a697b582ad350fcb811e41a79e",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-esquerda",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, ESQUERDA extrai o prefixo PRO de PROTOCOLO pelo comprimento 3; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-esquerda",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "fingerprints": [
+      "b0b267645d5d2c93633c2a8746ad4cd78ae197a697b582ad350fcb811e41a79e",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "ESQUERDA (texto) e RAIZ (matemática) são funções sem relação; sinal só estrutural.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802927+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "7177234b5dc26fe3c5a218a905a6729bc0e91bb0da9b88b8540ee49f1bd186d9",
+      "be61ade3d5e4aee7b38b48b3551971a9bc867e7c581a1a3114aeaa53a8f9205c"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-maior-posicao",
+      "admin-question-v1:admin.2026-11.I06.s.it-media-condicional"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MAIOR seleciona o segundo elemento 7 da ordenação decrescente de uma lista; no segundo, MÉDIASE filtra as linhas de categoria A e divide a soma de 4 e 8 pela contagem 2, obtendo 6. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-maior-posicao",
+      "admin-question-v1:admin.2026-11.I06.s.it-produto-pares"
+    ],
+    "fingerprints": [
+      "7177234b5dc26fe3c5a218a905a6729bc0e91bb0da9b88b8540ee49f1bd186d9",
+      "73265ab1f76e7d299662e2c6c4a5c5c93a23ea33023aaebf012756b0ef2b6507"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "SOMARPRODUTO (soma de produtos de pares) versus MAIOR/MÉDIASE/SOMASE/CONT.SES/SOMASES: funções e operações distintas; só o distrator mudou (600→1200).",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802935+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "7177234b5dc26fe3c5a218a905a6729bc0e91bb0da9b88b8540ee49f1bd186d9",
+      "a6e518ec455ac500546280f03e308731444bee40ff8229a8febcc501ce8489ba"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-maior-posicao",
+      "lesson-practice-v1:I06-P03"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MAIOR seleciona o segundo elemento 7 da ordenação decrescente de uma lista; no segundo, SE compara 8 com o limite 10 e escolhe o ramo textual Abaixo. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802938+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "7177234b5dc26fe3c5a218a905a6729bc0e91bb0da9b88b8540ee49f1bd186d9",
+      "1e98a975927981e90e769f7c7eeb893993b50c64f4ccec68b7c426252f320e9c"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-maior-posicao",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contar-multicriterio"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MAIOR seleciona o segundo elemento 7 da ordenação decrescente de uma lista; no segundo, CONT.SES conta registros que satisfazem simultaneamente categoria A e limite >=5. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-media-condicional",
+      "admin-question-v1:admin.2026-11.I06.s.it-produto-pares"
+    ],
+    "fingerprints": [
+      "be61ade3d5e4aee7b38b48b3551971a9bc867e7c581a1a3114aeaa53a8f9205c",
+      "73265ab1f76e7d299662e2c6c4a5c5c93a23ea33023aaebf012756b0ef2b6507"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "SOMARPRODUTO (soma de produtos de pares) versus MAIOR/MÉDIASE/SOMASE/CONT.SES/SOMASES: funções e operações distintas; só o distrator mudou (600→1200).",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802945+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "be61ade3d5e4aee7b38b48b3551971a9bc867e7c581a1a3114aeaa53a8f9205c",
+      "2ecc303dbc6b9e1ede793ccb49f3aa23b362226519ee21c64f810a09378c9518"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-media-condicional",
+      "admin-question-v1:admin.2026-11.I06.s.it-somase-criterio"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MÉDIASE filtra as linhas de categoria A e divide a soma de 4 e 8 pela contagem 2, obtendo 6; no segundo, SOMASE agrega valores das linhas da categoria A, somando 10 e 30 em 40. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802948+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "be61ade3d5e4aee7b38b48b3551971a9bc867e7c581a1a3114aeaa53a8f9205c",
+      "1e98a975927981e90e769f7c7eeb893993b50c64f4ccec68b7c426252f320e9c"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-media-condicional",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contar-multicriterio"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MÉDIASE filtra as linhas de categoria A e divide a soma de 4 e 8 pela contagem 2, obtendo 6; no segundo, CONT.SES conta registros que satisfazem simultaneamente categoria A e limite >=5. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802951+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "be61ade3d5e4aee7b38b48b3551971a9bc867e7c581a1a3114aeaa53a8f9205c",
+      "c7dcaa64fdb90dd6f00cd9c13ff5b77e69c37f5a6e21d8a734ff3fa863107e2d"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-media-condicional",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-somases-duplo"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MÉDIASE filtra as linhas de categoria A e divide a soma de 4 e 8 pela contagem 2, obtendo 6; no segundo, SOMASES soma valores monetários das linhas que satisfazem Sul e Pago simultaneamente. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802955+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, NÃO nega a condição verdadeira 5=5 e retorna FALSO. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802958+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802962+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "b8a7b5002c4cfea085d6f77828ff2806684e0008affdc12941c4eb124a921004"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "admin-question-v1:admin.2026-11.I06.s.it-ou-logico"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, OU avalia disjunção: basta a condição 6=6 ser verdadeira para o resultado ser VERDADEIRO. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802965+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802968+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, EXT.TEXTO extrai 123 a partir de posição inicial e comprimento na cadeia AB123CD. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802972+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, MOD(17;5) retorna o resto 2, em vez do quociente 3 ou da divisão 3,4. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802975+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802978+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6eddb037014c311184aac7a4647c989d713db4e7548a55b87afab9221b2c349f",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-mediana",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MED seleciona o valor central 4 da amostra 1,4,9, sem calcular sua média; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802982+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802985+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "b8a7b5002c4cfea085d6f77828ff2806684e0008affdc12941c4eb124a921004"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "admin-question-v1:admin.2026-11.I06.s.it-ou-logico"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, OU avalia disjunção: basta a condição 6=6 ser verdadeira para o resultado ser VERDADEIRO. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802988+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802992+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "e74cf3b4efc83bcc9fa55b9d06cbc175d62e6fb4176c4917a6b66c187cef7757"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-e-logico"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, E exige simultaneamente as duas condições; como 3<1 é falsa, retorna FALSO. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802995+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, EXT.TEXTO extrai 123 a partir de posição inicial e comprimento na cadeia AB123CD. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.802999+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, MOD(17;5) retorna o resto 2, em vez do quociente 3 ou da divisão 3,4. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803002+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803005+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "786c58975b61ef1d800e487f5d10212938b9dfc155997d924122b14aba985de8",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-nao-logico",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÃO nega a condição verdadeira 5=5 e retorna FALSO; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803008+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad",
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract",
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço; no segundo, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803012+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad",
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço; no segundo, EXT.TEXTO extrai 123 a partir de posição inicial e comprimento na cadeia AB123CD. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto"
+    ],
+    "fingerprints": [
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad",
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "NÚM.CARACT conta caracteres incluindo espaço (5); MOD calcula resto (2). Funções distintas.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803015+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803018+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "15f4b21a11f0c05d379036e361806dcea31048295aa57f4ef13aa727e2c090ad",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-num-caract",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, NÚM.CARACT conta os cinco caracteres de Ata 1, incluindo espaço; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803021+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "b8a7b5002c4cfea085d6f77828ff2806684e0008affdc12941c4eb124a921004",
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-ou-logico",
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, OU avalia disjunção: basta a condição 6=6 ser verdadeira para o resultado ser VERDADEIRO; no segundo, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803024+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "b8a7b5002c4cfea085d6f77828ff2806684e0008affdc12941c4eb124a921004",
+      "e74cf3b4efc83bcc9fa55b9d06cbc175d62e6fb4176c4917a6b66c187cef7757"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-ou-logico",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-e-logico"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, OU avalia disjunção: basta a condição 6=6 ser verdadeira para o resultado ser VERDADEIRO; no segundo, E exige simultaneamente as duas condições; como 3<1 é falsa, retorna FALSO. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803028+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "b8a7b5002c4cfea085d6f77828ff2806684e0008affdc12941c4eb124a921004",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-ou-logico",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, OU avalia disjunção: basta a condição 6=6 ser verdadeira para o resultado ser VERDADEIRO; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-produto-pares",
+      "admin-question-v1:admin.2026-11.I06.s.it-somase-criterio"
+    ],
+    "fingerprints": [
+      "73265ab1f76e7d299662e2c6c4a5c5c93a23ea33023aaebf012756b0ef2b6507",
+      "2ecc303dbc6b9e1ede793ccb49f3aa23b362226519ee21c64f810a09378c9518"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "SOMARPRODUTO (soma de produtos de pares) versus MAIOR/MÉDIASE/SOMASE/CONT.SES/SOMASES: funções e operações distintas; só o distrator mudou (600→1200).",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-produto-pares",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contar-multicriterio"
+    ],
+    "fingerprints": [
+      "73265ab1f76e7d299662e2c6c4a5c5c93a23ea33023aaebf012756b0ef2b6507",
+      "1e98a975927981e90e769f7c7eeb893993b50c64f4ccec68b7c426252f320e9c"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "SOMARPRODUTO (soma de produtos de pares) versus MAIOR/MÉDIASE/SOMASE/CONT.SES/SOMASES: funções e operações distintas; só o distrator mudou (600→1200).",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-produto-pares",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-somases-duplo"
+    ],
+    "fingerprints": [
+      "73265ab1f76e7d299662e2c6c4a5c5c93a23ea33023aaebf012756b0ef2b6507",
+      "c7dcaa64fdb90dd6f00cd9c13ff5b77e69c37f5a6e21d8a734ff3fa863107e2d"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "SOMARPRODUTO (soma de produtos de pares) versus MAIOR/MÉDIASE/SOMASE/CONT.SES/SOMASES: funções e operações distintas; só o distrator mudou (600→1200).",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803041+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4",
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto; no segundo, EXT.TEXTO extrai 123 a partir de posição inicial e comprimento na cadeia AB123CD. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803044+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4",
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto; no segundo, MOD(17;5) retorna o resto 2, em vez do quociente 3 ou da divisão 3,4. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803048+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803051+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "f800199124b6a921828519787754a615c4183295eb2c9fa01045b3c2fea441c4",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-quociente-inteiro",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, QUOCIENTE(17;5) retorna a parte inteira 3 da divisão, descartando o resto; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803054+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "2ecc303dbc6b9e1ede793ccb49f3aa23b362226519ee21c64f810a09378c9518",
+      "1e98a975927981e90e769f7c7eeb893993b50c64f4ccec68b7c426252f320e9c"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-somase-criterio",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contar-multicriterio"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, SOMASE agrega valores das linhas da categoria A, somando 10 e 30 em 40; no segundo, CONT.SES conta registros que satisfazem simultaneamente categoria A e limite >=5. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.I06.s.it-somase-criterio",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-somases-duplo"
+    ],
+    "fingerprints": [
+      "2ecc303dbc6b9e1ede793ccb49f3aa23b362226519ee21c64f810a09378c9518",
+      "c7dcaa64fdb90dd6f00cd9c13ff5b77e69c37f5a6e21d8a734ff3fa863107e2d"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "SOMASE com um critério e argumento de soma por último versus SOMASES com dois critérios e intervalo de soma primeiro; ordem de argumentos e lógica diferentes.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803057+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "69762d474fbba0b8adbe9c90edc62d2d65854521198c0898502640ec29732b1d",
+      "6e5ba3e890fd288e2edf1fb295f9c989cdee334f7c07379c3d78704f864dfc95"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I08.s.it-vba-cells-indices",
+      "admin-question-v1:admin.2026-11.I08.s.it-vba-resize"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, Cells(3,2) usa índices absolutos linha/coluna para referenciar B3; no segundo, Resize(3,2) conserva a âncora B2 e define a extensão retangular B2:C4. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803061+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "69762d474fbba0b8adbe9c90edc62d2d65854521198c0898502640ec29732b1d",
+      "230f09ac924b9b6df0bb4e52271577ba47da0f73ae3ce04ce59d2f487764b0fb"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I08.s.it-vba-cells-indices",
+      "lesson-practice-v1:admin.2026-11.I08.p.it-vba-offset"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, Cells(3,2) usa índices absolutos linha/coluna para referenciar B3; no segundo, Offset(-1,2) desloca a âncora C4 em uma linha para cima e duas colunas à direita, chegando a E3. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803064+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "6e5ba3e890fd288e2edf1fb295f9c989cdee334f7c07379c3d78704f864dfc95",
+      "230f09ac924b9b6df0bb4e52271577ba47da0f73ae3ce04ce59d2f487764b0fb"
+    ],
+    "pair": [
+      "admin-question-v1:admin.2026-11.I08.s.it-vba-resize",
+      "lesson-practice-v1:admin.2026-11.I08.p.it-vba-offset"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, Resize(3,2) conserva a âncora B2 e define a extensão retangular B2:C4; no segundo, Offset(-1,2) desloca a âncora C4 em uma linha para cima e duas colunas à direita, chegando a E3. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-distributiva-decimal",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-expoente-negativo"
+    ],
+    "fingerprints": [
+      "37d3c854d21e6dddba179cdc8b918f5e55b6e41ac403eba080973e32319a04a8",
+      "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Distribuição de fator decimal em diferença versus inversão de fração com expoente negativo e quadrado; não são a mesma operação com valores trocados. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-inverso-negativo",
+      "admin-question-v1:admin.2026-11.M01.s.mat-radical-simplificacao"
+    ],
+    "fingerprints": [
+      "af726cde434b58f4d855dbf2fec139b971de9832a8a3f77ad1435810a74ef8c0",
+      "3b9612a1cd4f8ba07cb59c8830ca7a2dba62faa8fff75b3e5628f1474f2f7d56"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Identificar inverso multiplicativo versus decompor radicais e subtrair termos semelhantes; objetos e regras diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-inverso-negativo",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-expoente-negativo"
+    ],
+    "fingerprints": [
+      "af726cde434b58f4d855dbf2fec139b971de9832a8a3f77ad1435810a74ef8c0",
+      "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Recíproco simples versus potência negativa de expoente dois: além de inverter, a segunda exige elevar ao quadrado. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-modulo-comparacao",
+      "admin-question-v1:admin.2026-11.M01.s.mat-potencia-de-potencia"
+    ],
+    "fingerprints": [
+      "e8d2c0c2b27df45e9d33395ad15315fa57c99a81e9de44e65180d9d59c622cb1",
+      "3c30782926360b7f400ccf43b61af0734604455f661bee080672a04aa41cf27f"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Módulos de números negativos com subtração externa versus composição de regras de expoentes em quociente. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-modulo-comparacao",
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca"
+    ],
+    "fingerprints": [
+      "e8d2c0c2b27df45e9d33395ad15315fa57c99a81e9de44e65180d9d59c622cb1",
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Módulo e sinais versus identidade algébrica da diferença de quadrados; a segunda não envolve módulo. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-modulo-comparacao",
+      "legacy-v3:M01-Q01"
+    ],
+    "fingerprints": [
+      "e8d2c0c2b27df45e9d33395ad15315fa57c99a81e9de44e65180d9d59c622cb1",
+      "6aaebb84cac1c179d047fc7346be32ddcfe21d33f25cc1b23407f006805f4af5"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "O legado pede prioridade de multiplicação em subtração; o novo exige dois módulos e distinguir sinal interno de operação externa. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-modulo-comparacao",
+      "legacy-v3:M01-Q10"
+    ],
+    "fingerprints": [
+      "e8d2c0c2b27df45e9d33395ad15315fa57c99a81e9de44e65180d9d59c622cb1",
+      "a00bbcd620e52d1b7d682664b1dbf98c56eb3ec03dc17e81e672586b3015fb70"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Parênteses com divisão no legado versus valor absoluto de soma negativa e comparação de módulos no novo. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-modulo-comparacao",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-expoente-negativo"
+    ],
+    "fingerprints": [
+      "e8d2c0c2b27df45e9d33395ad15315fa57c99a81e9de44e65180d9d59c622cb1",
+      "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Calcular módulos e sua diferença versus inverter uma base fracionária e aplicar expoente par; não há correspondência por nomes ou números. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-modulo-comparacao",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "e8d2c0c2b27df45e9d33395ad15315fa57c99a81e9de44e65180d9d59c622cb1",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Diferença de módulos versus produto de conjugados com radicais, com cancelamento de termos mistos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-ordem-operacoes-mista",
+      "legacy-v3:M01-Q04"
+    ],
+    "fingerprints": [
+      "9f0bcfcdd767e9141d44e66ed4d0d6efd5e860a3911512f480c1c141b2c8224c",
+      "7aebe3af500d4d15f2d5b5fc07f6a9590081c2e0dd15130a8963e25c6c164f79"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "O legado é soma decimal; o novo combina potência,multiplicação,divisão e adição com prioridades distintas. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-ordem-operacoes-mista",
+      "legacy-v3:M01-Q05"
+    ],
+    "fingerprints": [
+      "9f0bcfcdd767e9141d44e66ed4d0d6efd5e860a3911512f480c1c141b2c8224c",
+      "14ca16be79f717c81db39c9f0437dc0f006c9b14ac93bf48193ae5dd07da7152"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Divisão de duas frações no legado versus expressão mista com potência e operações de prioridades diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-ordem-operacoes-mista",
+      "legacy-v3:M01-Q10"
+    ],
+    "fingerprints": [
+      "9f0bcfcdd767e9141d44e66ed4d0d6efd5e860a3911512f480c1c141b2c8224c",
+      "a00bbcd620e52d1b7d682664b1dbf98c56eb3ec03dc17e81e672586b3015fb70"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "O legado contém agrupamento e divisão; o novo introduz potência e duas operações de segundo nível, sem mera troca de valores da mesma expressão. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-ordem-operacoes-mista",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-fracao-complexa"
+    ],
+    "fingerprints": [
+      "9f0bcfcdd767e9141d44e66ed4d0d6efd5e860a3911512f480c1c141b2c8224c",
+      "7de7f27f8f9e5aa7bf67c2072fefcc9c54f434aec6b993d66e37beb2a4efd703"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Expressão de operações inteiras versus quociente entre soma e diferença de frações, que requer dois denominadores comuns e inversão. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-ordem-operacoes-mista",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "9f0bcfcdd767e9141d44e66ed4d0d6efd5e860a3911512f480c1c141b2c8224c",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Prioridades aritméticas versus identidade de conjugados e eliminação de radicais por quadrados; estratégias diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-periodo-duas-casas",
+      "legacy-v3:M01-Q08"
+    ],
+    "fingerprints": [
+      "b3cee57e478e5803d4e540302d10eabf5462728d91d7d3ad67b46d5c6869aaf9",
+      "c83653e6a566f5792f2c9d28040a54ffd1049880c6a049d84c0bdd5d2dcc97ff"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Converter decimal finito por potência de dez no legado versus converter período de duas casas usando99 e redução. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-potencia-de-potencia",
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca"
+    ],
+    "fingerprints": [
+      "3c30782926360b7f400ccf43b61af0734604455f661bee080672a04aa41cf27f",
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Regras de potência de potência e quociente versus diferença de quadrados de dois números; produtos algébricos distintos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-potencia-de-potencia",
+      "legacy-v3:M01-Q01"
+    ],
+    "fingerprints": [
+      "3c30782926360b7f400ccf43b61af0734604455f661bee080672a04aa41cf27f",
+      "6aaebb84cac1c179d047fc7346be32ddcfe21d33f25cc1b23407f006805f4af5"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Prioridade multiplicativa do legado versus multiplicação e subtração de expoentes em bases iguais. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-potencia-de-potencia",
+      "legacy-v3:M01-Q10"
+    ],
+    "fingerprints": [
+      "3c30782926360b7f400ccf43b61af0734604455f661bee080672a04aa41cf27f",
+      "a00bbcd620e52d1b7d682664b1dbf98c56eb3ec03dc17e81e672586b3015fb70"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "A expressão do legado agrupa soma e divisão; a nova exige regras específicas de expoentes encadeados. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-potencia-de-potencia",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-expoente-negativo"
+    ],
+    "fingerprints": [
+      "3c30782926360b7f400ccf43b61af0734604455f661bee080672a04aa41cf27f",
+      "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Quociente de potências inteiras versus base fracionária com expoente negativo, que exige inversão da base antes da potenciação. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-potencia-de-potencia",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "3c30782926360b7f400ccf43b61af0734604455f661bee080672a04aa41cf27f",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Operações de expoentes na mesma base versus produto de radicais conjugados, com uso de diferença de quadrados. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca",
+      "legacy-v3:M01-Q01"
+    ],
+    "fingerprints": [
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391",
+      "6aaebb84cac1c179d047fc7346be32ddcfe21d33f25cc1b23407f006805f4af5"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Prioridade de multiplicação no legado versus fatoração da diferença de quadrados para evitar quadrados extensos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca",
+      "legacy-v3:M01-Q02"
+    ],
+    "fingerprints": [
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391",
+      "317eb5cb99098af959f5fe89abf5cb55f2d4b84b25fe87a8e22f03a958aba416"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Soma de frações com denominadores diferentes versus identidade da diferença de quadrados de inteiros. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca",
+      "legacy-v3:M01-Q03"
+    ],
+    "fingerprints": [
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391",
+      "a4583f77918ceacf0a2597dcd7d2773d9d19b77cb1ed294e0f3f9fb369fe707a"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Regra de sinal de produto de negativos versus fatoração de diferença de quadrados; não são variantes numéricas. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca",
+      "legacy-v3:M01-Q09"
+    ],
+    "fingerprints": [
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391",
+      "17be3cf6dad4271ae0025b455cc0d624f64e49bb80386d4d44c0b818360a8e58"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Divisão com sinal no legado versus decomposição algébrica de dois quadrados em soma e diferença. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca",
+      "legacy-v3:M01-Q10"
+    ],
+    "fingerprints": [
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391",
+      "a00bbcd620e52d1b7d682664b1dbf98c56eb3ec03dc17e81e672586b3015fb70"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Agrupamento e divisão aritmética no legado versus diferença de quadrados; sinais textuais genéricos não demonstram mesma estrutura. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-quadrado-diferenca",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "1959c7abd12503c01aee8f06a1135e456356ca355afe71588a11b71a020f2391",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Diferença de quadrados de inteiros versus produto de conjugados radicais; a segunda exige compreender quadrado de raiz e cancelamento de termos mistos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M01.s.mat-raiz-principal",
+      "legacy-v3:M01-Q06"
+    ],
+    "fingerprints": [
+      "dace74bff343d8f784a570da9334df12be1bbe091ca61d8ae22f25d9cdf564c0",
+      "e00c0493558b0eb44335256a704692d9e480a009e3bb03152589665356c5147c"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "A pergunta pede a mesma operação com os mesmos valores do legado: raiz principal de81. Candidato preservado em quarentena e substituído por outra tarefa; não contar duas vezes.",
+    "responsible": "Codex — conferência manual assistida por IA, sem revisão independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M02.s.cacapava-profmat-q43",
+      "lesson-practice-v1:admin.2026-11.M02.p.mat-divisores-quadrados"
+    ],
+    "fingerprints": [
+      "339ae4ac95b2c8c7515009f1d92c5c2896863aa578d530303b7bc0673135e281",
+      "7bb88ad2d452b9ef816a9b90fcebb5035719006b12b148a3d67bed41160e53bc"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "Ambos solicitam exatamente listar os divisores positivos que são quadrados perfeitos. Em 72 e 180 os expoentes pares permitidos dão a mesma lista 1,4,9,36; mudar número, finalidade e alternativas não produz outra base. Preservar a original Caçapava43 e substituir a autoral mat-divisores-quadrados na preparação. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M02.s.mat-contar-divisores",
+      "lesson-practice-v1:admin.2026-11.M02.p.mat-divisores-comuns-quantidade"
+    ],
+    "fingerprints": [
+      "92e7e784daacd8a7eff5f3412e4a4cffddd451066c8333b1cd3636010207b858",
+      "96d73b644b3345c2fe82562737c73cf935132f0a1d93e5981052f50a6ce685a2"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Contar divisores de um número fatorado versus primeiro calcular MDC de dois e depois contar seus divisores comuns. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M02.s.mat-fator-minimo-quadrado",
+      "lesson-practice-v1:admin.2026-11.M02.p.mat-divisor-retirar-quadrado"
+    ],
+    "fingerprints": [
+      "85958ce450de476dfb32f412d996f73c8ca8e8f3c0a44b8620dfccd218455306",
+      "0e39a4f51240aa0229edff2e7330f8784d6f72eb04e7996028f81d4cfd0f3024"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Buscar menor multiplicador que complete expoentes pares versus menor divisor a retirar para obter quadrado; operações inversas com restrições de divisibilidade distintas. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M03.s.mat-produtividades-distintas",
+      "admin-question-v1:admin.2026-11.M03.s.mat-reducao-funcionarios-compensa"
+    ],
+    "fingerprints": [
+      "a1915bd89f201a1cd4fb5cbb2af19d08d4ffcc846a5e6fef9432a792b53b9097",
+      "79e665eb494e253bde2a115eb5839199eebfc4da759f0c4570c084c7fbfbf103"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Somar taxas de dois trabalhadores de produtividades diferentes versus conservar trabalho com mudanças simultâneas de equipe e jornada diária. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M03.s.mat-produtividades-distintas",
+      "legacy-v3:M03-Q02"
+    ],
+    "fingerprints": [
+      "a1915bd89f201a1cd4fb5cbb2af19d08d4ffcc846a5e6fef9432a792b53b9097",
+      "70f32cce79e423d1188a335fdf2efd6bf9f69498372e9140340421fc4c8f2dd3"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Duas taxas individuais distintas trabalhando juntas versus produtividade individual igual e relação inversa entre tamanho de equipe e dias. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M03.s.mat-produtividades-distintas",
+      "lesson-practice-v1:admin.2026-11.M03.p.varg25-ti-q15"
+    ],
+    "fingerprints": [
+      "a1915bd89f201a1cd4fb5cbb2af19d08d4ffcc846a5e6fef9432a792b53b9097",
+      "507f2506d884de296233483b561df60468308d953132715bf3ac8646e5b13ccb"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Rendimento conjunto (1/6+1/3) versus regra de três composta com produção, dias e funcionários; operações distintas.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M03.s.mat-reducao-funcionarios-compensa",
+      "legacy-v3:M03-Q02"
+    ],
+    "fingerprints": [
+      "79e665eb494e253bde2a115eb5839199eebfc4da759f0c4570c084c7fbfbf103",
+      "70f32cce79e423d1188a335fdf2efd6bf9f69498372e9140340421fc4c8f2dd3"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "O novo compara simultaneamente equipe e horas por dia; o legado muda só a equipe com jornada fixa. A segunda variável exige regra composta, não apenas novos valores. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M03.s.mat-reducao-funcionarios-compensa",
+      "lesson-practice-v1:admin.2026-11.M03.p.varg25-ti-q15"
+    ],
+    "fingerprints": [
+      "79e665eb494e253bde2a115eb5839199eebfc4da759f0c4570c084c7fbfbf103",
+      "507f2506d884de296233483b561df60468308d953132715bf3ac8646e5b13ccb"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Ambas compostas, mas a autoral relaciona pessoas/horas/dias com incógnita em dias; a original inclui quantidade produzida e pede funcionários. Estruturas e grandezas diferentes.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M03.s.pcdf-2021-basic-q45",
+      "admin-question-v1:admin.2026-11.M12.s.pcdf-2021-basic-q43"
+    ],
+    "fingerprints": [
+      "5ca95f921a88cb8535fb71e140e75c202db34434aa0953a40f6ce9a103b3478e",
+      "41f24e1d3cbfcb35597f94e208ab4d80ccbf3865a8438570d415ce68fe6f5d78"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q45 julga proporcionalidade dos acenos moças–rapazes ao número de rapazes; q43 calcula 20·18 = 360 > 350.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M03.s.pcdf-2021-basic-q45",
+      "lesson-practice-v1:admin.2026-11.M03.p.pcdf-2021-basic-q46"
+    ],
+    "fingerprints": [
+      "5ca95f921a88cb8535fb71e140e75c202db34434aa0953a40f6ce9a103b3478e",
+      "856f3f200f6dee01447042ba13b6882e4ed29b7016a1b74838a8fb60839984b1"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q45 trata só dos cumprimentos moças–rapazes (m·r); q46 do total C(r,2)+C(m,2)+m·r, não proporcional ao total de pessoas.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M06.s.mat-distributiva-incognita",
+      "admin-question-v1:admin.2026-11.M06.s.mat-equacao-decimal"
+    ],
+    "fingerprints": [
+      "6da41871060b5225e86fe08e9709f16f5f628b0fc0a4260cda9a67c3f797dffd",
+      "201e592307990fc06a1427761e1134bb4bd4c9b01bf9dd798e38cf3001b5f6ce"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Distribuir coeficiente e reunir incógnitas nos dois lados versus isolar termo decimal em um lado; a estrutura operacional não se obtém só por trocar constantes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M06.s.mat-distributiva-incognita",
+      "admin-question-v1:admin.2026-11.M06.s.mat-soma-inversoes-sinal"
+    ],
+    "fingerprints": [
+      "a745bf688d7d25e516fa913409cbe8f5ad2d180eb32f9e8b593b1096f90a32df",
+      "b74839e0d04ae5a9022296ca66015637b6b3f63815bc98e7e6e68af00a636f92"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Distribuição de fator positivo sobre expressão versus subtração de parênteses que troca sinais antes de reunir incógnitas; habilidades operacionais específicas distintas. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M06.s.mat-sistema-eliminacao",
+      "admin-question-v1:admin.2026-11.M06.s.mat-sistema-racional"
+    ],
+    "fingerprints": [
+      "5fc80e86b727b91ff46b293f3c687569add230c2f3421116a0ffafc90906ef68",
+      "588149ff01c46583bf1debf1ad0038edbfb7e52056b56002fe448ded15d91275"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "Ambos pedem resolver sistema de duas equações lineares com a segunda do tipo x−y=constante. Alterar coeficiente para fração e pedir x em vez de x+y não justifica outra base; candidato racional substituído.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M06.s.mat-sistema-eliminacao",
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-sistema-congelar-variavel"
+    ],
+    "fingerprints": [
+      "4916d7140d16d958c207bc748f2bf2ba96e32f6604d8c5ba55d21f7f93a446e9",
+      "aa9b2e24ac22a6a692287156b90dcb5ac63552ef845706403f2559103d591ddc"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Sistema genuíno de duas incógnitas versus uma variável explicitamente fixada em zero, reduzindo a substituição a uma equação de uma incógnita. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M06.s.mat-sistema-racional",
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-sistema-congelar-variavel"
+    ],
+    "fingerprints": [
+      "588149ff01c46583bf1debf1ad0038edbfb7e52056b56002fe448ded15d91275",
+      "aa9b2e24ac22a6a692287156b90dcb5ac63552ef845706403f2559103d591ddc"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "O sistema fracionário antigo conserva duas incógnitas efetivas; no outro,y=0 elimina a liberdade de y antes da resolução. O primeiro foi retirado por equivalência com outro sistema.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M08.s.mat-prefixo-micro-metro",
+      "lesson-practice-v1:admin.2026-11.M08.p.mat-prefixo-nano-micro"
+    ],
+    "fingerprints": [
+      "d0023cc0da8b6d8fa3719a4ee1246bd258f3275a6d0f081961a52c013974575a",
+      "b9f57de06322ba65c9803db885c27486ea481016b43c33fcd3a1a7e4fbc2ae58"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "Conversões lineares de comprimento por fator1000, com troca de prefixos e valores, mantêm a mesma tarefa e raciocínio. Candidato nano/micro substituído por distinção de símbolos SI.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.cacapava-profmat-q17",
+      "admin-question-v1:admin.2026-11.M09.s.mat-retangulos-mesmo-perimetro"
+    ],
+    "fingerprints": [
+      "41c7b05d16853dd75ce4a742a7982f252d64ca46d86e2a0d437c7865450ef3d0",
+      "148bef08d1be9fdf78df335f9ebdba1c8344da0c1211e93fc863c222d5947ce6"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Perímetro de triângulo retângulo via Pitágoras com lados algébricos; a mudança foi só a notação (𝑃𝑄→PQ). Distinto de maximização de área de retângulos e da questão legada.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.cacapava-profmat-q17",
+      "legacy-v3:M09-Q02"
+    ],
+    "fingerprints": [
+      "41c7b05d16853dd75ce4a742a7982f252d64ca46d86e2a0d437c7865450ef3d0",
+      "3988c4ba48ea803131dcb4115316fd7634c63a32deeef17c1e04572dd9c3d364"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Perímetro de triângulo retângulo via Pitágoras com lados algébricos; a mudança foi só a notação (𝑃𝑄→PQ). Distinto de maximização de área de retângulos e da questão legada.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-base-altura-area-invariante",
+      "admin-question-v1:admin.2026-11.M09.s.mat-equilatero-altura-dada"
+    ],
+    "fingerprints": [
+      "c32b3b8d7d934b8737b50bf401d6f0d5f6adb697d12e2e9e9f984d67f8147863",
+      "2623add7036a3026f4b8a4e038211b08efca248dd00ad6d24fc9178cd3bb5981"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Verificar invariância da área sob alterações inversas de base e altura versus calcular uma área numérica; a primeira é relação de transformação.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-base-altura-area-invariante",
+      "admin-question-v1:admin.2026-11.M09.s.mat-triangulo-semelhante-area"
+    ],
+    "fingerprints": [
+      "a08f0ca490756522a73071e1fb1189be07c2791f93a25bae283bb43fcc9b7deb",
+      "bb015b636eb1c53fd80b1f96af66c1e51c1027dfb7613bfd0e2104c6147bb62e"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Invariância por fatores compensados versus deduzir razão quadrática de áreas por semelhança; no segundo,ambas as dimensões mudam proporcionalmente. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-base-altura-area-invariante",
+      "legacy-v3:M09-Q04"
+    ],
+    "fingerprints": [
+      "a08f0ca490756522a73071e1fb1189be07c2791f93a25bae283bb43fcc9b7deb",
+      "cf64ed83731f8314a8dc4c17c0cc8a5240fc0a5f37f5fca9ba8f6142140d0cdc"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Provar conservação da área por triplicar base e dividir altura versus cálculo direto de área do legado com dimensões fixas. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-base-altura-area-invariante",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-hexagono-divisao-triangulos"
+    ],
+    "fingerprints": [
+      "a08f0ca490756522a73071e1fb1189be07c2791f93a25bae283bb43fcc9b7deb",
+      "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Transformação multiplicativa inversa de base/altura versus somar áreas dadas de seis partes de hexágono; operações diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-base-altura-area-invariante",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-triangulos-base-comum"
+    ],
+    "fingerprints": [
+      "a08f0ca490756522a73071e1fb1189be07c2791f93a25bae283bb43fcc9b7deb",
+      "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Invariância com base e altura alteradas versus comparar duas áreas de base fixa pelas alturas; as relações solicitadas são diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-base-altura-area-invariante",
+      "lesson-practice-v1:admin.2026-11.M09.p.tai26-alm-q12"
+    ],
+    "fingerprints": [
+      "c32b3b8d7d934b8737b50bf401d6f0d5f6adb697d12e2e9e9f984d67f8147863",
+      "73e353c42cad56283fe968d94e1b11e8c5c0ca2f53ad79109796a9a3c7ac9a8b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Raciocínio de invariância da área sob escalas opostas versus cálculo direto de b·h/2.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T22:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-cilindro-volume",
+      "admin-question-v1:admin.2026-11.M09.s.mat-equilatero-altura-dada"
+    ],
+    "fingerprints": [
+      "b4de56c016dfd19ad1e35a2bd8e3b91357b954ebfb3825f3e5720bb82076b212",
+      "2623add7036a3026f4b8a4e038211b08efca248dd00ad6d24fc9178cd3bb5981"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Volume cilíndrico usa área circular e altura; área triangular usa base e altura divididas por dois. Grandeza e sólido distintos.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-cilindro-volume",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-cilindro-lateral"
+    ],
+    "fingerprints": [
+      "b4de56c016dfd19ad1e35a2bd8e3b91357b954ebfb3825f3e5720bb82076b212",
+      "027351091aaeb22d3170ab1fda2980ad9dc080531b6ac39ab8941c28556111c2"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Volume do cilindro versus apenas área lateral a revestir; fórmulas,unidades e superfícies consideradas são diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-equilatero-altura-dada",
+      "admin-question-v1:admin.2026-11.M09.s.mat-triangulo-semelhante-area"
+    ],
+    "fingerprints": [
+      "2623add7036a3026f4b8a4e038211b08efca248dd00ad6d24fc9178cd3bb5981",
+      "6b86e446221d81443a09bcfc8b97d0e65b14fc2a6d285c5a0e85771c60d71f63"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Área triangular com base e altura dadas versus recuperar área por razão quadrática de semelhança. O primeiro foi retirado por equivalência com o legado.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-equilatero-altura-dada",
+      "legacy-v3:M09-Q04"
+    ],
+    "fingerprints": [
+      "2623add7036a3026f4b8a4e038211b08efca248dd00ad6d24fc9178cd3bb5981",
+      "cf64ed83731f8314a8dc4c17c0cc8a5240fc0a5f37f5fca9ba8f6142140d0cdc"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "Calcular área triangular por base e altura dadas é a mesma tarefa do legado; chamar o triângulo de equilátero e usar altura radical muda os valores, não a decisão. Substituído por desigualdade de existência triangular.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-equilatero-altura-dada",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-hexagono-divisao-triangulos"
+    ],
+    "fingerprints": [
+      "2623add7036a3026f4b8a4e038211b08efca248dd00ad6d24fc9178cd3bb5981",
+      "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Calcular área a partir de dimensões versus somar seis áreas de partes já informadas; decomposição de figura exige outra organização dos dados. O primeiro foi retirado por equivalência com o legado.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-equilatero-altura-dada",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-triangulos-base-comum"
+    ],
+    "fingerprints": [
+      "2623add7036a3026f4b8a4e038211b08efca248dd00ad6d24fc9178cd3bb5981",
+      "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Área numérica com base/altura versus razão de duas áreas com base comum; a segunda permite cancelar base desconhecida. O primeiro foi retirado por equivalência com o legado.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-poligono-angulos",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-externo-regular"
+    ],
+    "fingerprints": [
+      "fde00d7af059ee8bdbc9997e1d4152a3f5006036fc38f1ccbcdda72e4c60a3f9",
+      "d05b0827daec172bf8b5b7ec47967ff6af08192ca467e1fcc8abb7a445b9aee9"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Número de lados a partir da soma dos ângulos internos versus a partir de um ângulo externo regular; dados e relações geométricas distintos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-poligono-angulos",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-regular-angulo-interno"
+    ],
+    "fingerprints": [
+      "fde00d7af059ee8bdbc9997e1d4152a3f5006036fc38f1ccbcdda72e4c60a3f9",
+      "145e071e64c43cf17258d0e13411a1f37d843f0858bbcb866ae0d6e1c3da14de"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Soma interna900° leva a(n−2)180°; ângulo interno individual135° exige regularidade e conversão para externo. Não é só troca do valor na mesma fórmula. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-retangulos-mesmo-perimetro",
+      "legacy-v3:M09-Q02"
+    ],
+    "fingerprints": [
+      "148bef08d1be9fdf78df335f9ebdba1c8344da0c1211e93fc863c222d5947ce6",
+      "3988c4ba48ea803131dcb4115316fd7634c63a32deeef17c1e04572dd9c3d364"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Otimizar área entre retângulos de perímetro fixo versus calcular perímetro de um retângulo dado; variável buscada e raciocínio de comparação distintos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-triangulo-semelhante-area",
+      "legacy-v3:M09-Q04"
+    ],
+    "fingerprints": [
+      "bb015b636eb1c53fd80b1f96af66c1e51c1027dfb7613bfd0e2104c6147bb62e",
+      "cf64ed83731f8314a8dc4c17c0cc8a5240fc0a5f37f5fca9ba8f6142140d0cdc"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Escala de semelhança entre triângulos e razão quadrática de áreas versus aplicar bh/2 com medidas fixas no legado. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-triangulo-semelhante-area",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-hexagono-divisao-triangulos"
+    ],
+    "fingerprints": [
+      "bb015b636eb1c53fd80b1f96af66c1e51c1027dfb7613bfd0e2104c6147bb62e",
+      "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Inferir área por razão de lados de semelhantes versus somar seis áreas já dadas de peças congruentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-triangulo-semelhante-area",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-triangulos-base-comum"
+    ],
+    "fingerprints": [
+      "bb015b636eb1c53fd80b1f96af66c1e51c1027dfb7613bfd0e2104c6147bb62e",
+      "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Semelhança altera base e altura simultaneamente e pede área desconhecida; base comum cancela e pede razão de áreas, sem semelhança declarada. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M09.s.mat-triangulo-semelhante-area",
+      "lesson-practice-v1:admin.2026-11.M09.p.tai26-alm-q12"
+    ],
+    "fingerprints": [
+      "6b86e446221d81443a09bcfc8b97d0e65b14fc2a6d285c5a0e85771c60d71f63",
+      "73e353c42cad56283fe968d94e1b11e8c5c0ca2f53ad79109796a9a3c7ac9a8b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Área de semelhantes pela razão ao quadrado versus cálculo direto de b·h/2.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T22:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M10.s.mat-pg-sinal-alternado",
+      "lesson-practice-v1:admin.2026-11.M10.p.mat-soma-pa"
+    ],
+    "fingerprints": [
+      "7c81e4262495f7010c495891aa533768f99c760d5629693d59684c2c48ee4e4b",
+      "d5cb4eb3aa8f5362c51cdeafd8a64a010f54a3971aae27e6753d575c1149900f"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Termo de progressão geométrica com sinal alternado versus soma de vários termos de progressão aritmética; operação e regra de formação diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M10.s.mat-recorrencia-explicita",
+      "admin-question-v1:admin.2026-11.M10.s.mat-sequencia-diferencas"
+    ],
+    "fingerprints": [
+      "dc1cffca32321e27bb939f726aad9e6868acb3780a08dacd3a1ef27705359a51",
+      "466ed6470da614078bc4a2a51450bc7ef0a7271550cedc4fddc876dd56b79132"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Recorrência afim2a+1 versus incremento dependente do índice n+1; uma cresce geometricamente e a outra acumula incrementos crescentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.ebserh-2018-basic-q36",
+      "admin-question-v1:admin.2026-11.M11.s.ebserh-2018-basic-q38"
+    ],
+    "fingerprints": [
+      "0dc4cf230d6ce9b05ff412e1c270e10cc48f7145510415898ee4b3712abae8bc",
+      "7fecb992b1443e34af3ef4578c7b278e44600b764ffd80565549f47e609868a5"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q36 julga tradução de ~P→(Q∨R) (Errado); q38 deduz valores de Q→~R falsa e avalia R→~Q (Certo).",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.ebserh-2018-basic-q36",
+      "lesson-practice-v1:admin.2026-11.M11.p.ebserh-2018-basic-q37"
+    ],
+    "fingerprints": [
+      "0dc4cf230d6ce9b05ff412e1c270e10cc48f7145510415898ee4b3712abae8bc",
+      "8c591814a076c0a4042580201a6a30256dbfddbbfd7d5c90e6d3a52f6bcc145a"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q36 é tradução para linguagem natural; q37 é implicação lógica ~(Q∧R)→P, refutada por P=F, Q=V, R=F.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.ebserh-2018-basic-q38",
+      "lesson-practice-v1:admin.2026-11.M11.p.ebserh-2018-basic-q37"
+    ],
+    "fingerprints": [
+      "7fecb992b1443e34af3ef4578c7b278e44600b764ffd80565549f47e609868a5",
+      "8c591814a076c0a4042580201a6a30256dbfddbbfd7d5c90e6d3a52f6bcc145a"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q38 parte de condicional falsa; q37 de condicional verdadeira e compara com outra condicional.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.mat-cadeia-refutacao-final",
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-cadeia-implicacoes"
+    ],
+    "fingerprints": [
+      "23f1cc04c0694dfc5e49115f2e2548fd07457f98f0d0d769234d33b7f790b470",
+      "c00637e8b17a9c36e0ac6dff16ebd975c70fcd8d82b32b838615c72e73c5c5e3"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Encadear modus tollens a partir de consequente final falso versus encadear modus ponens a partir de antecedente verdadeiro; direções e regra inferencial diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.mat-distributiva-logica",
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-exportacao-condicional"
+    ],
+    "fingerprints": [
+      "682b14412294edbbda5269e8280538f8643d66de07b79c9b677e141822918ba6",
+      "3049d408c47096d56ad527210cb15cefc3b7fd0fea0d6e05ba1285964c9324a0"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Distributividade de conjunção sobre disjunção versus exportação de condicional aninhada; leis e tabelas lógicas diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.pcdf-2021-basic-q47",
+      "lesson-practice-v1:admin.2026-11.M11.p.pcdf-2021-basic-q48"
+    ],
+    "fingerprints": [
+      "eaf990b22b7599405972fcad57ae6789ac0f1cd381e328978aca2a42a4b566f0",
+      "0f54027b1cdfeb9a8209e35b15b31c8a474cf9f37d6af61cd9fc586bd5536b7a"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q47 resolve culpados se todos mentem (Luís e Paulo); q48 compara M→(~P∨~C) com (P∨C)→~M, não equivalentes.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.pcdf-2021-basic-q47",
+      "lesson-practice-v1:admin.2026-11.M12.p.pcdf-2021-basic-q49"
+    ],
+    "fingerprints": [
+      "eaf990b22b7599405972fcad57ae6789ac0f1cd381e328978aca2a42a4b566f0",
+      "120bb0115e745d72db1d643f00f605747afd3e70ca215e6424dd23d273f00c69"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q47 é dedução lógica; q49 é probabilidade 1/C(5,2) = 1/10, em outro assunto (M12).",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.pf-2021-agente-q52",
+      "admin-question-v1:admin.2026-11.M11.s.pf-2021-agente-q55"
+    ],
+    "fingerprints": [
+      "f0e9c3d8461ff053d3905fb44074053d398b59593419383a9d16c3052384ee66",
+      "8b19d96aeb34d3b8129e82f67d3a2ab2751549ed11fa15ffe5a88c1ba5c313f6"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q52 confunde condicional com sua inversa (Errado); q55 usa D→~F ≡ ~(D∧F) (Certo).",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.pf-2021-agente-q52",
+      "lesson-practice-v1:admin.2026-11.M11.p.pf-2021-agente-q53"
+    ],
+    "fingerprints": [
+      "f0e9c3d8461ff053d3905fb44074053d398b59593419383a9d16c3052384ee66",
+      "b4d87425644e5d25452f614fef4c854d077ff371bbc198e901fb9d148dd5333d"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q52 é equivalência de P2; q53 é negação de P1 (D∧F), não condicional.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.pf-2021-agente-q52",
+      "lesson-practice-v1:admin.2026-11.M11.p.pf-2021-agente-q57"
+    ],
+    "fingerprints": [
+      "f0e9c3d8461ff053d3905fb44074053d398b59593419383a9d16c3052384ee66",
+      "ffc8480b1b60de25838535251c89049874eba3533085818ff89d9123b4b0834b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q52 é equivalência de P2; q57 é validade do argumento (inválido: ~F não aciona P2).",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.pf-2021-agente-q55",
+      "lesson-practice-v1:admin.2026-11.M11.p.pf-2021-agente-q53"
+    ],
+    "fingerprints": [
+      "8b19d96aeb34d3b8129e82f67d3a2ab2751549ed11fa15ffe5a88c1ba5c313f6",
+      "b4d87425644e5d25452f614fef4c854d077ff371bbc198e901fb9d148dd5333d"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q55 é equivalência de P1; q53 é negação de P1.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M11.s.pf-2021-agente-q55",
+      "lesson-practice-v1:admin.2026-11.M11.p.pf-2021-agente-q57"
+    ],
+    "fingerprints": [
+      "8b19d96aeb34d3b8129e82f67d3a2ab2751549ed11fa15ffe5a88c1ba5c313f6",
+      "ffc8480b1b60de25838535251c89049874eba3533085818ff89d9123b4b0834b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q55 é equivalência de P1; q57 é validade do argumento.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.mat-duas-intersecao",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-somente-um-conjunto"
+    ],
+    "fingerprints": [
+      "c74e574aff1194ae3ffa7dae23c6dd49ef517e42a3fb59bb8b1543566a00191f",
+      "d25f9729ecdb28d1c440b93a36ef4657e52ac65b2db36b9649d1e864433465ba"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Recuperar interseção usando união total versus contar exatamente um excluindo ambas as cópias da interseção; regiões pedidas distintas. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.mat-intersecao-com-complemento",
+      "admin-question-v1:admin.2026-11.M12.s.mat-pertinencia-enumerada"
+    ],
+    "fingerprints": [
+      "9844d72fc294fb8c62672308ceec81fdce5cbb7fff48802b42e2eae20b88dbe7",
+      "f6da1733609881fb79d8444bfd2d3a52b18e1db604b3ae16db665565304ac624"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "A∩Bᶜ e A menos B são a mesma operação de retirar de A os elementos de B. Trocar valores e notação não cria outra base; candidato substituído por pertinência de conjunto aninhado.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.mat-intersecao-com-complemento",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-uniao-complementos"
+    ],
+    "fingerprints": [
+      "9844d72fc294fb8c62672308ceec81fdce5cbb7fff48802b42e2eae20b88dbe7",
+      "8a115657e1f15491a821821b8bc4d93d0705d8ba4fc9febc59325fd601ade2a2"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Complemento de B intersectado com A versus complemento da união no universo; as regiões do diagrama são distintas. O primeiro foi retirado por equivalência com A menos B.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.mat-pertinencia-enumerada",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-uniao-complementos"
+    ],
+    "fingerprints": [
+      "626d951966cd0fad6cd41c0585edc13c29b988da20f254959e4579262effc226",
+      "8a115657e1f15491a821821b8bc4d93d0705d8ba4fc9febc59325fd601ade2a2"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Diferença A menos B versus complemento da união; o primeiro está dentro de A e o segundo fora de ambos os conjuntos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.mat-sobreposicao-limites-completos",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-maximo-intersecao"
+    ],
+    "fingerprints": [
+      "8b88b3094973c95be1de6663832c075fcacbddf5b4dc856a1c4250797a9797c1",
+      "19f4783a0ff4d570906903510bc3567fe05a9fc285f0982c65a8c279835e68b7"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Maximizar união pede soma de tamanhos com disjunção; maximizar interseção pede tamanho do menor conjunto com inclusão. Objetivos e configurações extremas opostos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.mat-subconjuntos-incluir-excluir",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-subconjuntos-elemento-obrigatorio"
+    ],
+    "fingerprints": [
+      "35a33846e7aa48537bab8ed1a6aee04f9142c4b19cc98cc415c2a593e9101057",
+      "e63973692186c490836fb06f1177088d2828ed07fb0af275b2d3b48602365019"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "Ambos fixam pertinências e contam escolhas binárias dos elementos livres; variar quantos devem entrar ou sair mantém o raciocínio fundamental. Candidato com três restrições substituído por distinção entre vazio e unitário.",
+    "responsible": "Codex — triagem editorial assistida por IA por conteúdo; sem revisão humana/independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.mat-uniao-subconjunto",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-intersecao-subconjunto"
+    ],
+    "fingerprints": [
+      "f54f2777b94731f50ee19c233258299957de1f747dc8855554c99941328e9e13",
+      "f0bfca38d1eb8532dd7058ac85e7dfc5b9f6bfdf2fc041085ae177e6c4291ed8"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "União de conjuntos sob inclusão retorna o maior; interseção sob a mesma inclusão retorna o menor. São operações distintas, ainda que usem o mesmo dado relacional. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.pcdf-2021-basic-q43",
+      "lesson-practice-v1:admin.2026-11.M03.p.pcdf-2021-basic-q46"
+    ],
+    "fingerprints": [
+      "41f24e1d3cbfcb35597f94e208ab4d80ccbf3865a8438570d415ce68fe6f5d78",
+      "856f3f200f6dee01447042ba13b6882e4ed29b7016a1b74838a8fb60839984b1"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q43 calcula m·r para valores dados; q46 analisa a forma do total de cumprimentos.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.pf-2021-agente-q49",
+      "lesson-practice-v1:admin.2026-11.M12.p.pf-2021-agente-q51"
+    ],
+    "fingerprints": [
+      "8fb619dee9df8b6eecb20b930b63ec4fc8a6b20a2535d51c4e5649c69317c276",
+      "ae4e1ac8f3ead305a7cc7cbbeaa67279496ac5af0ec1ad81e04eb312ab9aa486"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q49 compara 2·2·C(4,2) = 24 com uma equipe 24 (Certo); q51 calcula 6·12·15·6 = 6.480 < 6.500 (Errado).",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.pf-2021-agente-q58",
+      "admin-question-v1:admin.2026-11.M12.s.pf-2021-agente-q60"
+    ],
+    "fingerprints": [
+      "958e69528fddec07fbceca3eca58b8567f90e51f261599f41503d6b4f1bc4344",
+      "3098e5b3b108892a7c761ef5ef241be660fdd656decba38d4a360dc4fee6ec77"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q58 é união crescente igual a P; q60 é probabilidade, correta n(P3−P2)/n(P), não a fórmula dada.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.pf-2021-agente-q58",
+      "lesson-practice-v1:admin.2026-11.M12.p.pf-2021-agente-q59"
+    ],
+    "fingerprints": [
+      "958e69528fddec07fbceca3eca58b8567f90e51f261599f41503d6b4f1bc4344",
+      "0f8cb747bdc1dfa32177441ccad8cef3344d5f5eecbb99d6bb8a14623191b4c4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q58 é união; q59 é inclusão (P1 ⊂ P2, não o inverso).",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.M12.s.pf-2021-agente-q60",
+      "lesson-practice-v1:admin.2026-11.M12.p.pf-2021-agente-q59"
+    ],
+    "fingerprints": [
+      "3098e5b3b108892a7c761ef5ef241be660fdd656decba38d4a360dc4fee6ec77",
+      "0f8cb747bdc1dfa32177441ccad8cef3344d5f5eecbb99d6bb8a14623191b4c4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q60 é probabilidade por diferença de conjuntos; q59 é inclusão.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.P08.s.pt-p08-11",
+      "lesson-practice-v1:admin.2026-11.P08.p.pt-p08-10"
+    ],
+    "fingerprints": [
+      "f4cc1f06438850f4f5b7cd2eaa5710588c349a51f50e79dae5fe96a77b388fb1",
+      "c39b9fff8a617dc2ae1627b50ca4f9cecdf916071ac5df1f260ebc1f9a196f21"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Releitura v4 do conteúdo atual: as duas construções de \"informar\" invertem as funções dos complementos (algo a alguém versus alguém de algo), com respostas \"aos\" e \"da\"; cada uma testa uma regência própria. Mantida a decisão anterior com fingerprints atuais.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.P10.s.pt-p10-03",
+      "lesson-practice-v1:admin.2026-11.P10.p.pt-p10-26"
+    ],
+    "fingerprints": [
+      "a88085d1a56506370ad5217f5e66518f3108a44b561958a1ee0a41317aa18f29",
+      "0c83270119e15cfa9d9b4c80b30d57171ad132091d9b85d9b228bfb40a04af7f"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Crase diante de nome de lugar que admite artigo (\"à Bahia\") versus ausência de crase antes de verbo (\"disposta a revisar\"); pontos distintos.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "admin-question-v1:admin.2026-11.P10.s.pt-p10-19",
+      "lesson-practice-v1:admin.2026-11.P10.p.pt-p10-20"
+    ],
+    "fingerprints": [
+      "ad9e55dc7c2b06980d7c45166109d37a8b0a537536e2312c32bad59f1ce7cc33",
+      "e5422be26b9ed125eb02cea7af0d6e79a0ccc8bd302949c7fa91199605e08873"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Releitura v4 do conteúdo atual: \"das nove às onze\" (horas determinadas, com artigo e crase) versus \"de segunda a sexta\" (paralelismo sem artigo, sem crase). Regras e respostas distintas. Mantida a decisão anterior com fingerprints atuais.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q01",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "6aaebb84cac1c179d047fc7346be32ddcfe21d33f25cc1b23407f006805f4af5",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Prioridade de multiplicação/subtração no legado versus produto de conjugados radicais com diferença de quadrados. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q02",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-expoente-negativo"
+    ],
+    "fingerprints": [
+      "317eb5cb99098af959f5fe89abf5cb55f2d4b84b25fe87a8e22f03a958aba416",
+      "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Soma de frações do legado versus potência negativa de fração; denominador comum e inversão com expoente são regras diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q02",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-fracao-complexa"
+    ],
+    "fingerprints": [
+      "317eb5cb99098af959f5fe89abf5cb55f2d4b84b25fe87a8e22f03a958aba416",
+      "7de7f27f8f9e5aa7bf67c2072fefcc9c54f434aec6b993d66e37beb2a4efd703"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Uma soma de duas frações versus quociente entre soma e diferença de frações; o novo requer construir numerador e denominador antes de dividir. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q02",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "317eb5cb99098af959f5fe89abf5cb55f2d4b84b25fe87a8e22f03a958aba416",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Soma de frações versus conjugados com raízes; o alerta é semelhança formal de expressões curtas, sem equivalência de operação. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q03",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "a4583f77918ceacf0a2597dcd7d2773d9d19b77cb1ed294e0f3f9fb369fe707a",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Produto de números inteiros negativos versus produto de expressões conjugadas com radicais; os termos mistos e a diferença de quadrados são essenciais no novo. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q04",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-fracao-complexa"
+    ],
+    "fingerprints": [
+      "7aebe3af500d4d15f2d5b5fc07f6a9590081c2e0dd15130a8963e25c6c164f79",
+      "7de7f27f8f9e5aa7bf67c2072fefcc9c54f434aec6b993d66e37beb2a4efd703"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Soma decimal simples versus fração complexa formada por soma e diferença de racionais; há operações adicionais e hierarquia de frações. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q05",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-fracao-complexa"
+    ],
+    "fingerprints": [
+      "14ca16be79f717c81db39c9f0437dc0f006c9b14ac93bf48193ae5dd07da7152",
+      "7de7f27f8f9e5aa7bf67c2072fefcc9c54f434aec6b993d66e37beb2a4efd703"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Divisão direta de duas frações versus razão entre resultados de duas operações fracionárias distintas; a preparação de numerador e denominador muda a tarefa. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q08",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-decimal-fracao-exata"
+    ],
+    "fingerprints": [
+      "c83653e6a566f5792f2c9d28040a54ffd1049880c6a049d84c0bdd5d2dcc97ff",
+      "f7f7465cf6093d6b317135beb21c2a602b8613310afff55e295b534951f5e3d8"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "A pergunta pede a mesma operação com os mesmos valores do legado: fração correspondente ao decimal finito0,125. Candidato preservado em quarentena e substituído por outra tarefa; não contar duas vezes.",
+    "responsible": "Codex — conferência manual assistida por IA, sem revisão independente presumida",
+    "at": "2026-11-11T20:19:50.837080+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q09",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "17be3cf6dad4271ae0025b455cc0d624f64e49bb80386d4d44c0b818360a8e58",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Quociente inteiro com sinal versus produto de conjugados radicais; não são a mesma estrutura numérica. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q10",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-expoente-negativo"
+    ],
+    "fingerprints": [
+      "a00bbcd620e52d1b7d682664b1dbf98c56eb3ec03dc17e81e672586b3015fb70",
+      "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Expressão aritmética com agrupamento versus expoente negativo sobre fração e quadrado; regra de potenciação não existe no legado. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M01-Q10",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "a00bbcd620e52d1b7d682664b1dbf98c56eb3ec03dc17e81e672586b3015fb70",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Agrupamento e divisão versus identidade algébrica de conjugados; as duas expressões curtas só compartilham símbolos aritméticos genéricos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M03-Q02",
+      "lesson-practice-v1:admin.2026-11.M03.p.varg25-ti-q15"
+    ],
+    "fingerprints": [
+      "70f32cce79e423d1188a335fdf2efd6bf9f69498372e9140340421fc4c8f2dd3",
+      "507f2506d884de296233483b561df60468308d953132715bf3ac8646e5b13ccb"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Inversa simples (pessoas × dias) versus composta com três grandezas e produção.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M06-Q04",
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos"
+    ],
+    "fingerprints": [
+      "e098297ffdd9cda838196075d9b6ec7b48d0eba16dd3cf066db377135b6a4bbf",
+      "4b094b6a729a80f0d02d819133afee01ff6c101449767716eb61a5cd5fc813b4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Equação com distribuição inteira de um lado versus parcelas x/4 e x/6 em lados opostos; a segunda exige combinar coeficientes racionais. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M06-Q09",
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos"
+    ],
+    "fingerprints": [
+      "dcef126bc8ff35ed9d42cfd908bb45f46242eea899c26cad0c47f007dbcd2865",
+      "4b094b6a729a80f0d02d819133afee01ff6c101449767716eb61a5cd5fc813b4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Equação de coeficiente inteiro em um único lado versus incógnita em frações nos dois lados e denominadores diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M09-Q04",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-hexagono-divisao-triangulos"
+    ],
+    "fingerprints": [
+      "cf64ed83731f8314a8dc4c17c0cc8a5240fc0a5f37f5fca9ba8f6142140d0cdc",
+      "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Cálculo bh/2 do legado versus soma de áreas dadas de seis regiões triangulares congruentes que compõem um hexágono. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M09-Q04",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-triangulos-base-comum"
+    ],
+    "fingerprints": [
+      "cf64ed83731f8314a8dc4c17c0cc8a5240fc0a5f37f5fca9ba8f6142140d0cdc",
+      "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Área numérica de um triângulo versus razão entre duas áreas de base comum, que cancela uma dimensão não fornecida. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M09-Q04",
+      "lesson-practice-v1:admin.2026-11.M09.p.tai26-alm-q12"
+    ],
+    "fingerprints": [
+      "cf64ed83731f8314a8dc4c17c0cc8a5240fc0a5f37f5fca9ba8f6142140d0cdc",
+      "73e353c42cad56283fe968d94e1b11e8c5c0ca2f53ad79109796a9a3c7ac9a8b"
+    ],
+    "decision": "EQUIVALENT",
+    "rationale": "Mesma operação (área = b·h/2) com outros valores e contexto narrativo; não é base distinta. A original tai26-alm-q12 vai para quarentena.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T22:00:00+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M10-Q01",
+      "lesson-practice-v1:admin.2026-11.M10.p.mat-sequencia-fibonacci-regra"
+    ],
+    "fingerprints": [
+      "f5546b34748bccb249d946f9429bf2dc99cc773a480a3aaa23bb732e28e33998",
+      "c46f96745cc3ce4b2eac4b5339d9750e1b37ca899f29e1e07af98540291ae8d4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Progressão aritmética de incremento constante versus recorrência que soma os dois termos anteriores; dependência de dois estados não é troca de valores. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "legacy-v3:M10-Q02",
+      "lesson-practice-v1:admin.2026-11.M10.p.mat-sequencia-fibonacci-regra"
+    ],
+    "fingerprints": [
+      "1857d726f331ae28636df22a747945167f006aa270f53aa9b0a3ca152b93fcf6",
+      "c46f96745cc3ce4b2eac4b5339d9750e1b37ca899f29e1e07af98540291ae8d4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Progressão geométrica de dobro versus recorrência de soma de dois anteriores; regras de formação fundamentalmente diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:M06-P03",
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-equacao-denominadores"
+    ],
+    "fingerprints": [
+      "f166cead1ff246d724a3cdd6344d4c369132de4388a55c5c7ce0f733edf34378",
+      "40c105c7812fd2391fd10ce67e08e0fec90b4ce1cadb3780900d80e981a91f23"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Equação inteira linear nos dois lados versus soma de frações de numeradores afins, exigindo denominador comum e distribuição nos numeradores. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:M06-P03",
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos"
+    ],
+    "fingerprints": [
+      "f166cead1ff246d724a3cdd6344d4c369132de4388a55c5c7ce0f733edf34378",
+      "4b094b6a729a80f0d02d819133afee01ff6c101449767716eb61a5cd5fc813b4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Coeficientes inteiros nos dois lados versus coeficientes fracionários de denominadores diferentes; o novo trabalha combinação racional explícita, não só novos números na escrita inteira. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803068+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "dfe02ac4ed15d161f7cd53023ce60fdd31e8b4286de95412f95f67f97afec1ee",
+      "e551d378a9e0601946e13e576b008e698859b90d4f0d1546d722deb81af43c57"
+    ],
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contagem-valores",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contar-vazio"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, CONT.VALORES conta o zero e o texto recebido como duas células não vazias; no segundo, CONTAR.VAZIO considera a única célula realmente vazia, sem contar o zero ou o texto. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803072+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "1e98a975927981e90e769f7c7eeb893993b50c64f4ccec68b7c426252f320e9c",
+      "c7dcaa64fdb90dd6f00cd9c13ff5b77e69c37f5a6e21d8a734ff3fa863107e2d"
+    ],
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-contar-multicriterio",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-somases-duplo"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, CONT.SES conta registros que satisfazem simultaneamente categoria A e limite >=5; no segundo, SOMASES soma valores monetários das linhas que satisfazem Sul e Pago simultaneamente. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto"
+    ],
+    "fingerprints": [
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe",
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "EXT.TEXTO (texto) e MOD (resto) são funções distintas; sinal só estrutural.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803078+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, EXT.TEXTO extrai 123 a partir de posição inicial e comprimento na cadeia AB123CD; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803084+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "3c5a9918bd39d5d09d8ccc285ef334a0639613b0830666407f0af4224e4f21fe",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-ext-texto",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, EXT.TEXTO extrai 123 a partir de posição inicial e comprimento na cadeia AB123CD; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-percentual-operador"
+    ],
+    "fingerprints": [
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d",
+      "a2c14be09ea8d8460bbba67b75e8ab88a7241f0bedbf5f9276761484b16f814d"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "MOD (resto da divisão) versus operador % (200·0,15 = 30); conhecimentos distintos.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803089+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d",
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5"
+    ],
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MOD(17;5) retorna o resto 2, em vez do quociente 3 ou da divisão 3,4; no segundo, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803095+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "ea90976fcf60fb8b8939593dc19b3066e455b1ec41496f4df9575dd409bfb56d",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-mod-resto",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, MOD(17;5) retorna o resto 2, em vez do quociente 3 ou da divisão 3,4; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "at": "2026-11-12T13:16:13.803101+00:00",
+    "decision": "DISTINCT",
+    "fingerprints": [
+      "d133ae5f1c229865ef775d35f1a7ea2bf2a5c7a3337f759f6a88e43f97fcc5d5",
+      "9378d132e5fccb3579d1586bf4201c96d49638001c257b32cd7d534970dd4f84"
+    ],
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.I06.p.it-produto",
+      "lesson-practice-v1:admin.2026-11.I06.p.it-raiz"
+    ],
+    "rationale": "Revalidação em 12/11/2026 do enunciado, alternativas, resposta e resolução compilados: no primeiro, PRODUTO multiplica diretamente os argumentos 2,3,4, obtendo 24; no segundo, RAIZ obtém a raiz quadrada principal 9 de 81, sem reduzir ao módulo ou elevar ao quadrado. São regras/operações distintas, não variações somente numéricas ou de nomes. As referências primárias e os bytes normalizados foram cotejados; nos itens autorais a mudança em relação ao preparado anterior está restrita aos hashes de provenance, após prefixação das chaves de fonte, preservando textos, alternativas, chave e URLs de estudo. As referências de funções não transformam extração, contagem, agregação ou lógica em uma única intenção.",
+    "responsible": "Codex — autor/preparador assistido por IA; triagem semântica não independente"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-expoente-negativo",
+      "lesson-practice-v1:admin.2026-11.M01.p.mat-produto-conjugados"
+    ],
+    "fingerprints": [
+      "feca3299c2d220af5634c949adfd249b15c417d10455b17bbf06d034d37da663",
+      "876c7dd61d86fcb53b729b4fe693daa128afeee7cc072c6da84040560febfb3b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Potência de expoente negativo em fração versus produto de radicais conjugados; inversão de base e identidade algébrica são estratégias diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M03.p.mat-razoes-diferenca-produtos",
+      "lesson-practice-v1:admin.2026-11.M03.p.mat-razoes-encadeadas"
+    ],
+    "fingerprints": [
+      "ae29a93d6741b29c18b8ec686f50e56bffbae4ba8cf3d88ec2151018b8ad57b2",
+      "15e193f2ce2ae3e0f14e80bbc438e944145c15ecbed6b5cfd5b1f1ead72672e5"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Compor razões A/B e B/C para obter A/C versus obter(A+B)/C, que exige compor a primeira razão e depois somar outra parcela relativa a C. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-equacao-denominadores",
+      "lesson-practice-v1:admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos"
+    ],
+    "fingerprints": [
+      "40c105c7812fd2391fd10ce67e08e0fec90b4ce1cadb3780900d80e981a91f23",
+      "4b094b6a729a80f0d02d819133afee01ff6c101449767716eb61a5cd5fc813b4"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Soma de duas frações com numeradores afins igualada a constante versus incógnita fracionária simples em lados opostos; há estrutura adicional de numeradores e denominador comum. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-externo-regular",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-regular-angulo-interno"
+    ],
+    "fingerprints": [
+      "d05b0827daec172bf8b5b7ec47967ff6af08192ca467e1fcc8abb7a445b9aee9",
+      "145e071e64c43cf17258d0e13411a1f37d843f0858bbcb866ae0d6e1c3da14de"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Dado um externo regular versus dado um interno regular e necessidade de suplementá-lo antes de usar volta completa; relações angulares diferentes, não só outro valor da mesma entrada. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-hexagono-divisao-triangulos",
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-triangulos-base-comum"
+    ],
+    "fingerprints": [
+      "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f",
+      "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Área de hexágono por soma de partes com áreas dadas versus razão entre áreas triangulares por alturas com base comum. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-hexagono-divisao-triangulos",
+      "lesson-practice-v1:admin.2026-11.M09.p.tai26-alm-q12"
+    ],
+    "fingerprints": [
+      "d5a0e73f59ca186cac020b0f31f954ca38a0976de22b34fcbdbcba1c017e218f",
+      "73e353c42cad56283fe968d94e1b11e8c5c0ca2f53ad79109796a9a3c7ac9a8b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Composição de área por seis triângulos congruentes versus cálculo direto de um triângulo.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T22:00:00+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M09.p.mat-triangulos-base-comum",
+      "lesson-practice-v1:admin.2026-11.M09.p.tai26-alm-q12"
+    ],
+    "fingerprints": [
+      "6750542de4370e50936e446ab6d96b952c2eb9d476eacdb53985857869fa06a1",
+      "73e353c42cad56283fe968d94e1b11e8c5c0ca2f53ad79109796a9a3c7ac9a8b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Razão entre áreas com base comum versus cálculo direto de b·h/2.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T22:00:00+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-absorvencia",
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-exportacao-condicional"
+    ],
+    "fingerprints": [
+      "cfb257c63efd3f04f1e40a498d79b433f41a5135eab1015ada13028477f5ead0",
+      "2b98d15616b666ee50ee05dff24d2765d3466616ef21feb56b8ec794dd459602"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Absorção p ou(p e q)=p versus exportação p→(q→r)=(p e q)→r; operações,quantidade de variáveis e lei lógica diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-absorvencia",
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-implicacao-disjuncao"
+    ],
+    "fingerprints": [
+      "cfb257c63efd3f04f1e40a498d79b433f41a5135eab1015ada13028477f5ead0",
+      "cfbdeed6a795a9c0e9300586ed0abeed095b3f06d1e9bbfa8c0e22d43b73126a"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Lei de absorção versus reescrita de implicação como disjunção com negação; tabelas-verdade e conectivos distintos. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-exportacao-condicional",
+      "lesson-practice-v1:admin.2026-11.M11.p.mat-implicacao-disjuncao"
+    ],
+    "fingerprints": [
+      "2b98d15616b666ee50ee05dff24d2765d3466616ef21feb56b8ec794dd459602",
+      "cfbdeed6a795a9c0e9300586ed0abeed095b3f06d1e9bbfa8c0e22d43b73126a"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Problema (enunciado e alternativas) inalterado desde a decisão anterior; mudaram só resolução/fontes/pontuação nas revisões individuais. Decisão anterior: Exportação de duas condicionais aninhadas versus representação de uma condicional por disjunção; não são fórmulas variantes só pelos nomes das letras. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M11.p.pcdf-2021-basic-q48",
+      "lesson-practice-v1:admin.2026-11.M12.p.pcdf-2021-basic-q49"
+    ],
+    "fingerprints": [
+      "0f54027b1cdfeb9a8209e35b15b31c8a474cf9f37d6af61cd9fc586bd5536b7a",
+      "120bb0115e745d72db1d643f00f605747afd3e70ca215e6424dd23d273f00c69"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q48 é equivalência de condicionais; q49 é probabilidade 1/10.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M11.p.pf-2018-basic-q45",
+      "lesson-practice-v1:admin.2026-11.M12.p.pf-2018-basic-q48"
+    ],
+    "fingerprints": [
+      "d68a909f15b681f8558f25a880b2c40ae78d023e8853dccb6815cecb6a0bb8b1",
+      "d843cc6612803c088624e3e7a3eb162629664b4007217e77eca706b4347aed17"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q45 deduz mentirosos a partir da fala de S4; q48 calcula probabilidade 4/6 > 0,5, em outro assunto (M12).",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M11.p.pf-2021-agente-q53",
+      "lesson-practice-v1:admin.2026-11.M11.p.pf-2021-agente-q57"
+    ],
+    "fingerprints": [
+      "b4d87425644e5d25452f614fef4c854d077ff371bbc198e901fb9d148dd5333d",
+      "ffc8480b1b60de25838535251c89049874eba3533085818ff89d9123b4b0834b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Itens diferentes do mesmo texto-base oficial CEBRASPE: cada item exige um julgamento próprio e tem identidade oficial própria; gabaritos definitivos conferidos por raciocínio. q53 é negação de P1; q57 é validade do argumento.",
+    "responsible": "Claude (Anthropic) — releitura editorial assistida por IA na retomada da #173; sem revisão humana independente ou aceite",
+    "at": "2026-11-12T18:00:00+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-inclusao-transitiva",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-uniao-por-inclusoes"
+    ],
+    "fingerprints": [
+      "bc07c216c9591b2b990af2095d70a9af5df7dbc8cd8b546a78f649904f31ba83",
+      "9c5916016f163d235f860b4e9a24e31908a3cd7d94c6d2147a65d42096259dee"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Transitividade de inclusões A⊆B⊆C versus união de dois subconjuntos de C; no primeiro há cadeia,e no segundo fechamento da união no conjunto maior. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-somente-a-tres",
+      "lesson-practice-v1:admin.2026-11.M12.p.mat-tres-inclusao-exclusao"
+    ],
+    "fingerprints": [
+      "0a41f17996c6d017dd1132db3bfec9340c86884affc7eae0f0c216c0bf39834d",
+      "ad20b5c1a7805b1028666b706b817756540c8165ee033bfbbe6782921542695a"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Contar somente A exclui suas duas sobreposições; contar união dos três soma todos e aplica inclusão-exclusão. As regiões solicitadas e os dados necessários são diferentes. Releitura v3 de enunciados, alternativas e resoluções; fontes resolvidas por conteúdo e proveniência normalizada conferidas, sem inferir distinção pela mudança de fingerprint.",
+    "responsible": "Codex — releitura editorial assistida por IA; próprio preparador, sem revisão independente ou aceite humano",
+    "at": "2026-11-12T13:16:06.802045+00:00"
+  },
+  {
+    "pair": [
+      "lesson-practice-v1:admin.2026-11.P10.p.pt-p10-12",
+      "lesson-practice-v1:admin.2026-11.P10.p.pt-p10-14"
+    ],
+    "fingerprints": [
+      "d62d6c49bc2c6b58fbf5a0205be5ef0d9845736dd3a72f9a55ae8fa868527b1f",
+      "b557e5e88aacf7df7a666afd86fa556c0b24920d2e292ef3e03fbdcb20c50b8b"
+    ],
+    "decision": "DISTINCT",
+    "rationale": "Crase em \"à qual\" (preposição + artigo do relativo o/a qual) versus \"a que\" sem crase (preposição antes de \"que\"); regras distintas.",
+    "responsible": "Claude (Anthropic) — readjudicação após as revisões individuais r1–r6 da #173; assistida por IA, sem revisão humana independente",
+    "at": "2026-11-12T20:44:25.133203+00:00"
+  }
+]

@@ -22,12 +22,16 @@ it('novo visitante escolhe cargo e encontra aulas sem API nem armazenamento', as
   expect(screen.getByRole('button', { name: 'Encontrar aulas' })).toBeDisabled();
   fireEvent.change(screen.getByLabelText('Para qual cargo você vai estudar?'), { target: { value: 'secretario-de-escola' } });
   fireEvent.click(screen.getByRole('button', { name: 'Encontrar aulas' }));
-  expect(await screen.findByText('43 aulas encontradas.')).toBeVisible();
+  expect(await screen.findByText('Escolha uma disciplina ou busque um assunto para ver as aulas.')).toBeVisible();
+  expect(screen.queryByRole('list')).not.toBeInTheDocument();
   expect(screen.queryByRole('button', { name: /A01.*Princípios/ })).not.toBeInTheDocument();
   expect(screen.getByLabelText('Cargo para encontrar aulas')).toHaveValue('secretario-de-escola');
   expect(window.location.hash).toBe('#/aulas?cargo=secretario-de-escola');
   expect(fetchMock.mock.calls.some(([, options]) => options?.method === 'POST')).toBe(false);
   expect(localStorage.length).toBe(0);expect(sessionStorage.length).toBe(0);
+  fireEvent.click(screen.getByRole('button', { name: /Conhecimentos Escolares/ }));
+  expect(screen.getByText(/^\d+ aulas encontradas\.$/)).toBeVisible();
+  expect(screen.getByRole('button', { name: /S02.*Escrituração Escolar/ })).toBeVisible();
 });
 it('compartilha/restaura aula e filtros, mantendo acervo vazio distinto de falha', async () => {
   window.history.replaceState(null, '', '#/aulas/P01?cargo=secretario-de-escola&disciplina=portugues&busca=interpretacao');
@@ -61,11 +65,11 @@ it('cargo incompatível e parâmetro privado são descartados com orientação',
   await waitFor(() => expect(window.location.hash).toBe('#/aulas?cargo=assistente-administrativo'));
   expect(screen.getByLabelText('Cargo para encontrar aulas')).toHaveValue('assistente-administrativo');
 });
-it('explorar todas as aulas limpa uma busca anterior sem criar atividades', async () => {
+it('explorar as aulas limpa uma busca anterior sem criar atividades', async () => {
   window.history.replaceState(null, '', '#/inicio?cargo=assistente-administrativo&busca=interpretacao&aula=P01');
   const fetchMock = api();render(<App />);
-  fireEvent.click(screen.getByRole('button', { name: 'Explorar todas as aulas' }));
-  expect(screen.getByText('51 aulas encontradas.')).toBeVisible();
+  fireEvent.click(screen.getByRole('button', { name: 'Explorar as aulas' }));
+  expect(screen.getByText('Escolha uma disciplina ou busque um assunto para ver as aulas.')).toBeVisible();
   expect(screen.getByLabelText('Buscar aula')).toHaveValue('');
   expect(window.location.hash).toBe('#/aulas');
   expect(fetchMock.mock.calls.some(([, options]) => options?.method === 'POST')).toBe(false);

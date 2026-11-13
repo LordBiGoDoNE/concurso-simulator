@@ -37,7 +37,7 @@ for (const width of [390, 1440]) test(`cargo, aula, histórico e prática por te
   await page.getByLabel('Para qual cargo você vai estudar?').selectOption('assistente-administrativo');
   await page.screenshot({ path: info.outputPath(`entry-${width}.png`), fullPage: true });
   await page.getByRole('button', { name: 'Encontrar aulas' }).focus();await page.keyboard.press('Enter');
-  await expect(page.getByText('40 aulas encontradas.')).toBeVisible();
+  await expect(page.getByText('Escolha uma disciplina ou busque um assunto para ver as aulas.')).toBeVisible();
   await expect(page.getByRole('button', { name: /S01.*LDB/ })).toHaveCount(0);
   await page.getByLabel('Filtrar disciplina').selectOption('portugues');
   await page.getByLabel('Buscar aula').fill('interpretacao');
@@ -70,7 +70,8 @@ test('sem API, o novo estudante chega à aula e recebe erro de consulta, sem fal
   await page.goto('/');
   await page.getByLabel('Para qual cargo você vai estudar?').selectOption('secretario-de-escola');
   await page.getByRole('button', { name: 'Encontrar aulas' }).click();
-  await expect(page.getByText('43 aulas encontradas.')).toBeVisible();
+  await expect(page.getByText('Escolha uma disciplina ou busque um assunto para ver as aulas.')).toBeVisible();
+  await page.getByLabel('Filtrar disciplina').selectOption('conhecimentos-escolares');
   await page.getByRole('button', { name: /S02.*Escrituração Escolar/ }).click();
   await expect(page.getByRole('heading', { name: 'Escrituração Escolar', exact: true })).toBeVisible();
   await openPracticePanel(page);

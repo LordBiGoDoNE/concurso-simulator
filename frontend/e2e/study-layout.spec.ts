@@ -78,7 +78,7 @@ for (const width of [390, 1440]) test(`prática separada preserva gravação do 
     const nav = page.getByRole('navigation', { name: 'Navegação principal' });await expect(nav.getByRole('button', { name: 'Aulas', exact: true })).toBeHidden();
     await page.getByText('Ir para outra área', { exact: true }).focus();await page.keyboard.press('Enter');
     await nav.getByRole('button', { name: 'Aulas', exact: true }).click();
-    await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.locator('details.lesson-practice-panel > summary').click();await page.getByRole('button', { name: 'Começar prática', exact: true }).click();
+    await page.getByLabel('Filtrar disciplina').selectOption('portugues');await page.getByRole('button', { name: /P01.*Interpretação de Textos/ }).click();await page.locator('details.lesson-practice-panel > summary').click();await page.getByRole('button', { name: 'Começar prática', exact: true }).click();
     await expect(page.locator('details.lesson-practice-panel')).toHaveAttribute('open');await expect(page).toHaveURL(/#\/aulas\/P01/);expect(confirmations).toBe(0);expect(creates).toBe(1);
     await nav.getByRole('button', { name: 'Simulados', exact: true }).click();await expect(page.getByRole('heading', { name: 'Questão 2 de 2' })).toBeVisible();
     await expect(page.getByRole('radio').first()).toBeChecked();release();await expect(page.getByRole('region',{name:'Simulados',exact:true}).getByText('Respostas confirmadas.', { exact: true })).toBeVisible();expect(writes).toBe(2);
@@ -109,8 +109,8 @@ for (const width of [390, 1440]) test(`aulas completas e prática dirigida sem c
   let created = 0;
   page.on('request', request => { if (request.method() === 'POST' && request.url().endsWith('/attempts')) created++; });
   await page.setViewportSize({ width, height: 900 });await page.goto('/');
-  await page.getByRole('button', { name: 'Explorar todas as aulas' }).click();
-  await expect(page.getByRole('status').filter({ hasText: '51 aulas encontradas.' })).toBeVisible();
+  await page.getByRole('button', { name: 'Explorar as aulas' }).click();
+  await expect(page.getByRole('status').filter({ hasText: 'Escolha uma disciplina ou busque um assunto para ver as aulas.' })).toBeVisible();
   await page.getByLabel('Buscar aula').fill('interpretacao');await expect(page.getByRole('status').filter({ hasText: '1 aula encontrada.' })).toBeVisible();
   await page.getByLabel('Filtrar disciplina').selectOption('informatica');await expect(page.getByRole('heading', { name: 'Nenhuma aula por aqui' })).toBeVisible();
   await page.getByRole('button', { name: 'Limpar busca e filtros' }).click();

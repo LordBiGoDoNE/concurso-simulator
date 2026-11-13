@@ -1,0 +1,149 @@
+/* Montagem e realização — direção Foco (focus-visual-refresh, grupo 3). Só tokens.
+   Também vale para a realização da prática da aula, que usa o mesmo AttemptPractice. */
+
+/* Montagem do simulado */
+.composer { border: 0; padding: 0; background: transparent; margin-top: 0; }
+.compose-layout { display: grid; grid-template-columns: minmax(0, 1fr) 280px; gap: 24px; align-items: start; }
+.settings-card, .summary-card { border: 1px solid var(--line); border-radius: 20px; background: var(--paper); overflow: hidden; }
+.setting-block { padding: 28px; }
+.setting-block + .setting-block { border-top: 1px solid var(--line); }
+.setting-block h2 { font-size: 1.15rem; display: flex; align-items: center; gap: 12px; margin: 0 0 18px; letter-spacing: -.015em; }
+.setting-block > p, .setting-block > label { font-size: .95rem; }
+.step-number { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--blue-soft); color: var(--blue); font-size: .8rem; font-weight: 700; flex-shrink: 0; font-variant-numeric: tabular-nums; }
+.composer #attempt-role { width: 100%; margin-top: 8px; font-size: .95rem; }
+.composer .attempt-portions { grid-template-columns: 1fr; gap: 0; margin: 0; }
+.composer .attempt-portions fieldset { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 16px; border: 0; border-radius: 0; padding: 14px 0; border-top: 1px solid var(--line); font-size: .9rem; }
+.composer .attempt-portions legend { float: left; font-weight: 650; font-size: 1rem; padding: 0; }
+.composer .attempt-portions label { grid-column: 1; font-size: .85rem; color: var(--muted); }
+.composer .attempt-portions input[type="number"] { grid-column: 2; grid-row: 1 / span 2; width: 6rem; margin: 0; text-align: right; font-variant-numeric: tabular-nums; }
+.composer .attempt-portions details { grid-column: 1 / -1; margin-top: 8px; }
+.composer summary { cursor: pointer; color: var(--blue); font-weight: 600; font-size: .9rem; }
+.composer .attempt-topic { padding: 6px 0; font-size: .9rem; }
+.composer .attempt-topic input { margin-top: .3em; }
+#attempt-variations { margin-right: 8px; }
+
+.summary-card { position: sticky; top: 24px; }
+.summary-head { background: var(--blue-soft); padding: 24px; }
+.summary-head h2 { margin: 0; color: var(--blue); }
+.summary-total { color: var(--muted); font-size: .95rem; margin: 6px 0 0; }
+.summary-total strong { font-size: 3rem; line-height: 1.1; color: var(--ink); font-weight: 700; margin-right: 6px; font-variant-numeric: tabular-nums; letter-spacing: -.03em; }
+.summary-body { padding: 20px 24px; font-size: .9rem; }
+.summary-role { font-weight: 700; margin: 0 0 14px; }
+.summary-body ul { list-style: none; padding: 0; margin: 0 0 12px; }
+.summary-body li { display: flex; justify-content: space-between; gap: 14px; margin: 10px 0; color: var(--muted); }
+.summary-body li strong { color: var(--ink); font-variant-numeric: tabular-nums; }
+.compose-start button { width: 100%; margin: 12px 0; min-height: 48px; font-size: 1rem; }
+.compose-start > span { display: none; }
+
+/* Realização */
+.attempt-workspace { border: 0; padding: 0; background: transparent; margin-top: 0; }
+.attempt-workspace > p { font-size: .85rem; color: var(--muted); }
+.practice { background: transparent; padding: 0; border: 0; }
+.practice-header { display: flex; justify-content: space-between; align-items: center; gap: 24px; font-size: .9rem; color: var(--muted); margin-bottom: 24px; }
+.practice-header > div:first-child { max-width: 600px; }
+.practice-progress { flex-shrink: 0; }
+.practice-progress label { display: block; font-size: .8rem; }
+progress { width: 160px; max-width: 100%; height: 8px; accent-color: var(--blue); }
+
+.practice-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 28px; align-items: start; }
+.question-card, .question-map { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 36px 40px; min-width: 0; }
+.question-card h3 { margin: 0 0 8px; font-size: 1.6rem; letter-spacing: -.02em; }
+.question-card > .question-text { font-size: 1.2rem; line-height: 1.75; margin: 28px 0; max-width: 42rem; }
+.question-card > p:last-child { font-size: .85rem; color: var(--muted); }
+.save-status { font-size: .85rem; color: var(--muted); margin: 0; }
+.save-saved { color: var(--teal); }
+.save-failed, .save-conflict, .save-unsaved { color: var(--warning); }
+
+.question-card .attempt-options { border: 0; padding: 0; margin: 0; display: grid; gap: 10px; }
+.attempt-options legend { font-size: .9rem; color: var(--muted); margin-bottom: 12px; padding: 0; }
+.attempt-options label { align-items: center; gap: 14px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 14px; margin: 0; font-size: 1.05rem; line-height: 1.5; cursor: pointer; background: var(--paper); }
+.attempt-options label:hover { border-color: var(--blue-border); }
+.attempt-options label.selected { border: 2px solid var(--blue); padding: 13px 15px; background: var(--blue-soft); }
+.attempt-options input { margin-top: 0; }
+.option-letter { display: grid; place-items: center; width: 32px; height: 32px; background: var(--canvas); border-radius: 9px; flex-shrink: 0; font-weight: 700; font-size: .85rem; }
+.attempt-options label.selected .option-letter { background: var(--blue); color: var(--on-blue); }
+.attempt-options .secondary { justify-self: start; margin-top: 6px; }
+nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da prática"] { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin: 24px 0 16px; }
+
+/* Mapa: respondida = preenchida; sem resposta = contorno tracejado; atual = anel sólido. */
+.map-jump { display: none; }
+.question-map { position: sticky; top: 24px; padding: 24px; font-size: .85rem; color: var(--muted); }
+.question-map h2 { font-size: 1.05rem; color: var(--ink); margin: 0 0 4px; }
+.question-map nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; margin: 18px 0; }
+.question-map nav button { padding: 0; min-height: 40px; border: 1px dashed var(--control-border); border-radius: 10px; color: var(--muted); background: var(--paper); font-size: .85rem; font-variant-numeric: tabular-nums; }
+.question-map nav button:not(:disabled):hover { background: var(--canvas); color: var(--ink); }
+.question-map nav button.answered { color: var(--ink); background: var(--blue-soft); border: 1px solid var(--blue-border); }
+.question-map nav button.answered:not(:disabled):hover { background: var(--blue-soft); }
+.question-map nav button[aria-current] { outline: 2px solid var(--blue); outline-offset: 2px; font-weight: 700; color: var(--ink); }
+.question-map nav button:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+.question-map > button { width: 100%; margin-top: 14px; }
+.map-key { display: inline-block; width: 12px; height: 12px; border: 1px solid var(--blue-border); background: var(--blue-soft); border-radius: 3px; margin-right: 4px; vertical-align: -1px; }
+.map-key.blank { background: var(--paper); border: 1px dashed var(--control-border); margin-left: 10px; }
+
+/* Resultado: barra proporcional com legenda numérica; o rótulo textual de cada questão é o sinal principal. */
+.attempt-result { display: grid; gap: 20px; }
+.result-summary { background: var(--paper); border: 1px solid var(--line); border-radius: 20px; padding: 28px 32px; }
+.result-summary h3 { margin: 0 0 4px; font-size: 1.6rem; letter-spacing: -.02em; }
+.result-score { margin: 0 0 18px; font-size: 1.15rem; font-weight: 650; font-variant-numeric: tabular-nums; }
+.result-bar { display: flex; height: 14px; border-radius: 999px; overflow: hidden; background: var(--canvas); border: 1px solid var(--line); }
+.result-bar span { display: block; min-width: 4px; }
+.result-bar-correct, .result-key-correct { background: var(--teal); }
+.result-bar-wrong, .result-key-wrong { background: var(--warning); }
+.result-bar-blank, .result-key-blank { background: var(--control-border); }
+.result-legend { display: flex; flex-wrap: wrap; gap: 8px 24px; list-style: none; padding: 0; margin: 14px 0 0; font-size: .95rem; color: var(--muted); }
+.result-legend strong { color: var(--ink); font-variant-numeric: tabular-nums; margin-right: 4px; }
+.result-key { display: inline-block; width: 12px; height: 12px; border-radius: 3px; margin-right: 8px; vertical-align: -1px; }
+.result-note { margin: 14px 0 0; font-size: .85rem; color: var(--muted); }
+.result-filter { display: flex; flex-wrap: wrap; gap: 8px; }
+.result-filter button { background: var(--paper); color: var(--ink); border: 1px solid var(--control-border); border-radius: 999px; padding: 8px 16px; font-variant-numeric: tabular-nums; }
+.result-filter button:hover { background: var(--canvas); }
+.result-filter button[aria-pressed="true"] { background: var(--blue); color: var(--on-blue); border-color: var(--blue); }
+.result-item { background: var(--paper); border: 1px solid var(--line); border-left: 4px solid var(--control-border); border-radius: 16px; padding: 24px 28px; min-width: 0; overflow-wrap: anywhere; }
+.result-item-correct { border-left-color: var(--teal); }
+.result-item-wrong { border-left-color: var(--warning); }
+.result-item-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 8px 16px; }
+.result-item h4 { margin: 0; font-size: 1.1rem; }
+.result-item h5 { margin: 18px 0 4px; font-size: .8rem; text-transform: uppercase; letter-spacing: .06em; color: var(--muted); }
+.result-outcome { margin: 0; font-weight: 700; font-size: .9rem; }
+.result-outcome span { display: inline-block; width: 1.2em; text-align: center; }
+.result-outcome-correct { color: var(--teal); }
+.result-outcome-wrong { color: var(--warning); }
+.result-outcome-blank { color: var(--muted); }
+.result-shortcuts { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+
+/* Larguras menores */
+@media (max-width: 1050px) {
+  .compose-layout { grid-template-columns: minmax(0, 1fr) 240px; gap: 18px; }
+  .setting-block { padding: 22px; }
+}
+@media (max-width: 1000px) {
+  .practice-layout { grid-template-columns: minmax(0, 1fr) 220px; gap: 18px; }
+  .question-card { padding: 26px; }
+}
+@media (max-width: 700px) {
+  .practice-layout { grid-template-columns: 1fr; }
+  .question-map { position: static; }
+  .map-jump { display: inline-flex; margin-top: 12px; }
+  .question-map { scroll-margin-top: 16px; }
+  .practice-header { display: block; }
+  .practice-progress { display: flex; gap: 12px; align-items: center; }
+  .question-card { padding: 20px; border-radius: 16px; }
+  .question-card > .question-text { font-size: 1.125rem; }
+  .attempt-options label { padding: 12px; font-size: 1rem; }
+  .attempt-options label.selected { padding: 11px; }
+  /* Anterior e Próxima ficam no rodapé da tela, ao alcance do polegar. */
+  nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da prática"] { position: sticky; bottom: 0; z-index: 4; flex-wrap: nowrap; margin: 20px -20px 16px; padding: 12px 20px max(12px, env(safe-area-inset-bottom)); background: var(--paper); border-top: 1px solid var(--line); box-shadow: var(--shadow-bar); }
+  nav[aria-label="Navegação do simulado"] button, nav[aria-label="Navegação da prática"] button { flex: 1; min-height: 48px; }
+  .result-summary, .result-item { padding: 20px; border-radius: 16px; }
+  .result-shortcuts button { flex: 1 1 12rem; }
+}
+@media (max-width: 650px) {
+  .compose-layout { display: block; padding-bottom: 92px; }
+  .summary-card { position: static; margin-top: 20px; }
+  .summary-head { padding: 18px; }
+  .compose-start { position: fixed; z-index: 5; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 20px max(12px, env(safe-area-inset-bottom)); background: var(--paper); box-shadow: var(--shadow-bar); border-top: 1px solid var(--line); }
+  .compose-start > span { display: inline; font-size: 1rem; font-weight: 700; }
+  .compose-start button { width: auto; margin: 0; flex-shrink: 0; }
+  .composer .attempt-portions fieldset { grid-template-columns: 1fr; }
+  .composer .attempt-portions input[type="number"] { grid-column: 1; grid-row: auto; margin: 6px 0 0; }
+}

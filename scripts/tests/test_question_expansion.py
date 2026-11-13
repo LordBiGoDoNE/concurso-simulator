@@ -127,6 +127,12 @@ class ExpansionTests(unittest.TestCase):
                 cell([{**row(), **patch}])
         refs = copy.deepcopy(REFS); refs['synthetic']['url'] = 'https://example.test/gabarito.pdf'
         with self.assertRaises(ValueError): compile_row(row(), refs, 'SIMULADO', ROOT)
+        # Nome de prova/gabarito ou página de banca também é recusado na projeção (achado A1).
+        for name, url in (('Concurso X, prova e gabarito definitivo oficiais', 'https://example.test/study'),
+                          ('Fonte de estudo', 'https://www.cebraspe.org.br/concursos/pf_21')):
+            refs = copy.deepcopy(REFS); refs['synthetic'].update(name=name, url=url)
+            with self.subTest(name=name), self.assertRaisesRegex(ValueError, 'prova/gabarito'):
+                compile_row(row(), refs, 'SIMULADO', ROOT)
         with tempfile.TemporaryDirectory() as tmp:
             directory = edition(tmp, [row()])
             self.assertEqual(len(compile_edition(tmp)), 1)

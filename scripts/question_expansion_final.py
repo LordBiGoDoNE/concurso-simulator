@@ -13,7 +13,7 @@ import json
 from collections import Counter, defaultdict
 from pathlib import Path, PurePosixPath
 
-from question_package import CATALOG, fingerprint
+from question_package import CATALOG, fingerprint, study_reference
 
 PURPOSES = ('SIMULADO', 'PRATICA_AULA')
 NAMESPACES = {'SIMULADO': 'admin-question-v1', 'PRATICA_AULA': 'lesson-practice-v1'}
@@ -89,6 +89,11 @@ def check(packages_root, edition_root=None, reviews_path=None):
                 problems.append(f'{key}: chave fora do assunto')
             if fingerprint(item['content']) != item['fingerprint']:
                 problems.append(f'{key}: fingerprint não corresponde ao conteúdo')
+            for reference in item['content']['references']:
+                try:
+                    study_reference(reference['name'], reference['url'])
+                except ValueError:
+                    problems.append(f'{key}: referência pública aponta para prova/gabarito ({reference["url"]})')
             info = dossier.get(key)
             if info is None or info['fingerprint'] != item['fingerprint']:
                 problems.append(f'{key}: dossiê ausente ou com fingerprint divergente')

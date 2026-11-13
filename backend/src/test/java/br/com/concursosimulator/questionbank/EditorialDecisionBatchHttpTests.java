@@ -223,6 +223,13 @@ class EditorialDecisionBatchHttpTests {
         var submitWithout = byReceipt(envelope("SUBMIT", null, List.of(), "Envio sem origem declarada"), nonce); submitWithout.remove("reviewKind");
         var submitted = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(submitWithout)));
         assertThat(submitted.get("confirmable").asBoolean()).isTrue(); assertThat(submitted.get("reviewKind").isNull()).isTrue();
+        // editorialSequence ausente no apply é corpo inválido (400), não divergência de estado (409).
+        var noSequence = (ObjectNode) json.readTree(applyBody(submitted));
+        ((ObjectNode) noSequence.get("items").get(0)).remove("editorialSequence");
+        var refused = send(BASE + "/apply", cookie, csrf, json.writeValueAsString(noSequence));
+        assertThat(refused.statusCode()).as(refused.body()).isEqualTo(400);
+        assertThat(json.readTree(refused.body()).get("error").asString()).isEqualTo("INVALID_BATCH");
+        assertThat(decisions()).isEqualTo(before);
         var approveWithout = byReceipt(envelope("APPROVE", null, ALL_CHECKS, "Sem origem"), nonce); approveWithout.remove("reviewKind");
         for (var missing : List.of(approveWithout, withoutField(submitWithout, "checklist"), withoutField(submitWithout, "rationale"), withoutField(submitWithout, "action"))) {
             var response = send(BASE + "/preview", cookie, csrf, json.writeValueAsString(missing));

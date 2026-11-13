@@ -95,3 +95,13 @@ substitui revisão editorial ou semântica.
 Revisões de conteúdo assistidas por IA (Claude), sem revisão humana; aprovação `AI_ONLY`
 registrada como tal. Distratores fracos em A04 permanecem. A cobertura vale para o destino local
 observado em 13/11/2026.
+
+## Atualização de 13/11/2026 — pacotes corrigidos (achado A1)
+
+Depois das camadas r7/r8 ([relatório de conteúdo](question-bank-expansion-content.md#correção-após-a-revisão-final--13112026-achado-a1)),
+o leitor/prévia e o ensaio de composição (8.2) foram repetidos sobre os novos pacotes, com o mesmo
+resultado: 102 pacotes, 2.587 itens DRAFT, replay, base desatualizada, seleção/digest alterados,
+rollback e concorrência aprovados, nada habilitado. A evidência de destino (8.3/8.4) em
+`destination-coverage.json` refere-se aos pacotes de 12/11 e é **histórica**: o ambiente paralelo foi
+perdido em 13/11, quando o processo terminou e o banco efêmero foi descartado. Uma nova habilitação local
+com os pacotes corrigidos é etapa separada, ainda não feita.

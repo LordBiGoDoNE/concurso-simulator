@@ -53,6 +53,8 @@ Criar, quando o grupo 1 for autorizado, uma edição `2026-11` com arquivos e fo
 
 Um compilador incremental reutiliza a canonização/fingerprint existentes e produz pacotes administrativos separados por assunto/finalidade, contendo apenas a seleção nova. Saída ordenada e determinística para a mesma entrada; chaves estáveis com prefixo `admin.` e identificador da edição/assunto, nunca derivadas de posição de alternativa ou do gabarito. SIMULADO usa `admin-question-v1`; PRATICA_AULA usa `lesson-practice-v1`, conforme #160. Preservar UUIDs de alternativas por conteúdo/identidade, não pela posição correta.
 
+**Artefato versionado (decisão do usuário de 2026-11-13).** Os JSONL da edição no repositório ficam vazios: a edição de trabalho (entradas, fontes, camadas de correção `reviews-r*`, decisões de pares) vive em `acervo-local/question-bank-expansion/2026-11/`, fora do Git por conter provas/gabaritos de terceiros. O artefato versionado são os pacotes finais compilados em `editorial/question-bank-expansion/2026-11/packages/` (manifesto com SHA-256 e digests), conferidos por `scripts/question_expansion_final.py` e pelo leitor Java; `local-files-manifest.json` registra o SHA-256 dos arquivos locais. Reprodução: com o acervo local, `consolidate_work_edition.py` reconstrói o agregado e o exportador gera os mesmos pacotes byte a byte. Sem o acervo, os pacotes não são recompiláveis a partir do Git, apenas verificáveis.
+
 Não duplicar fontes antigas para gerar novas identidades. Não colocar pacotes, provas, gabaritos ou relatórios privados no JAR, frontend, assets estáticos, contexto Docker público ou migrações. Preferir conteúdo textual acessível; recursos novos só entram pelos formatos e validações já suportados.
 
 ### 3. Tornar a mistura de origens auditável

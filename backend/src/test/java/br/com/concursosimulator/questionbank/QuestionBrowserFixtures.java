@@ -28,7 +28,7 @@ public final class QuestionBrowserFixtures {
     private static void decide(QuestionStore store,ApplyQuestionCandidatesUseCase.Result result,EditorialDecision.Action action) {
         var q=store.transaction(s -> s.loadForUpdate(result.questionId()).orElseThrow());
         new DecideQuestionUseCase(store).execute(new EditorialDecision(action,q.id(),result.revisionId(),q.revision(result.revisionId()).fingerprint(),
-                "Fixture de navegador, sem validade editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Banco Testcontainers exclusivo, não aprovação do acervo"),
+                "Fixture de navegador, sem validade editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Banco Testcontainers exclusivo, não aprovação do acervo",EditorialDecision.ReviewKind.HUMAN_PEER),
                 q.eligible().map(QuestionRevision::id).orElse(null),q.editorialSequence());
     }
     /** Mutação editorial exclusivamente no harness local de testes, com nova revisão. */
@@ -42,7 +42,7 @@ public final class QuestionBrowserFixtures {
         });
         for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE)) store.transaction(s -> {
             var q=s.loadForUpdate(id).orElseThrow();q.decide(new EditorialDecision(action,id,revision.id(),revision.fingerprint(),
-                    "Fixture de mudança editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente banco sintético de navegador"));s.save(q);return null;
+                    "Fixture de mudança editorial",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente banco sintético de navegador",EditorialDecision.ReviewKind.HUMAN_PEER));s.save(q);return null;
         });
     }
     /** Retirada exclusivamente sintética; não existe rota editorial no produto. */
@@ -51,7 +51,7 @@ public final class QuestionBrowserFixtures {
         store.transaction(s -> {
             var q=s.loadForUpdate(id).orElseThrow();var revision=q.eligible().orElseThrow();
             q.decide(new EditorialDecision(EditorialDecision.Action.WITHDRAW,id,revision.id(),revision.fingerprint(),
-                    "Fixture de retirada",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente banco descartável do navegador"));
+                    "Fixture de retirada",Instant.now(),Set.of(EditorialDecision.Check.values()),"Somente banco descartável do navegador",EditorialDecision.ReviewKind.HUMAN_PEER));
             s.save(q);return null;
         });
     }

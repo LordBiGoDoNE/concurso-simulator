@@ -11,11 +11,22 @@ from local_app import ROOT, compose, docker, owned
 from local_docker import run as docker_run
 
 SESSIONS = {"spring_session", "spring_session_attributes"}
-TABLES = {"application_marker", "app_user", "external_identity", "spring_session", "spring_session_attributes",
+BASE_TABLES = frozenset({"application_marker", "app_user", "external_identity", "spring_session", "spring_session_attributes",
           "qb_discipline", "qb_role", "qb_topic", "qb_question", "qb_revision", "qb_alternative", "qb_revision_role",
           "qb_reference", "qb_decision", "me_attempt", "me_item", "me_command", "pq_family", "pq_version",
-          "pq_decision", "pq_instance", "flyway_schema_history"}
+          "pq_decision", "pq_instance", "flyway_schema_history"})
+IMPORT_TABLES = frozenset({"qb_import_receipt", "qb_import_blob", "qb_import_file", "qb_import_revision"})
+BATCH_TABLES = frozenset({"qb_decision_batch", "qb_decision_batch_item"})  # V17 (#177)
+TABLES_BY_SCHEMA = {10: BASE_TABLES, 11: BASE_TABLES,
+                   12: BASE_TABLES | IMPORT_TABLES,
+                   13: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},
+                   14: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},
+                   15: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},
+                   16: BASE_TABLES | IMPORT_TABLES | {"admin_registration"},  # V16 (#177) só acrescenta coluna
+                   17: BASE_TABLES | IMPORT_TABLES | {"admin_registration"} | BATCH_TABLES}
 
+
+SUPPORTED_SCHEMA_VERSIONS = tuple(TABLES_BY_SCHEMA)
 
 def postgres(path, config):
     container = compose(path, config, "ps", "-q", "postgres").decode().strip()
@@ -34,10 +45,11 @@ def tables(path, config):
 
 
 def fingerprints(path, config):
-    if tables(path, config) != TABLES:
+    expected = TABLES_BY_SCHEMA[schema_version(path, config)]
+    if tables(path, config) != expected:
         raise ValueError("Conjunto de tabelas divergente; não é um schema local suportado")
     result = {}
-    for table in sorted(TABLES - SESSIONS):
+    for table in sorted(expected - SESSIONS):
         rows = sql(path, config, f"set timezone='UTC';select row_to_json(r)::text from {table} r order by 1")
         result[table] = {"rows": len(rows.splitlines()), "sha256": hashlib.sha256(rows).hexdigest()}
     return result
@@ -51,8 +63,8 @@ def private_json(path, value):
 
 def schema_version(path, config):
     versions = sql(path, config, "select version from flyway_schema_history where success order by installed_rank").decode().splitlines()
-    if versions not in [[str(i) for i in range(1, 11)], [str(i) for i in range(1, 12)]]:
-        raise ValueError("Backup exige schema V10 ou V11 válido")
+    if versions not in [[str(i) for i in range(1, version + 1)] for version in SUPPORTED_SCHEMA_VERSIONS]:
+        raise ValueError("Backup exige histórico completo de schema suportado (V10 a V17)")
     return int(versions[-1])
 
 
@@ -97,8 +109,10 @@ def verified_backup(file):
     if metadata_file.is_symlink():
         raise ValueError("Metadados não podem ser link")
     metadata = json.loads(metadata_file.read_text(encoding="utf-8"))
-    if (metadata.get("version") != 1 or metadata.get("kind") != "local-app-backup" or metadata.get("schema_version") not in {10, 11}
-            or set(metadata["tables"]) != TABLES - SESSIONS
+    version = metadata.get("schema_version")
+    expected = TABLES_BY_SCHEMA.get(version) if type(version) is int else None
+    if (metadata.get("version") != 1 or metadata.get("kind") != "local-app-backup" or expected is None
+            or set(metadata["tables"]) != expected - SESSIONS
             or not re.fullmatch(r"concurso-simulator-app-local(?:-[a-z0-9]{1,24})?", metadata["source_project"])
             or not re.fullmatch(r"[0-9a-f]{32}", metadata["source_owner"])
             or not re.fullmatch(r"[0-9a-f]{40}", metadata["source_sha"])

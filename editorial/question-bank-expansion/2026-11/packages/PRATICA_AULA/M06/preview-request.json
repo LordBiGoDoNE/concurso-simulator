@@ -1,0 +1,1997 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.amer26-pes-q18"
+        },
+        "content": {
+          "statement": {
+            "text": "Em relação a representação gráfica de um sistema de equações do 1º grau, se um sistema apresenta duas retas coincidentes em um plano cartesiano podemos classificar esse sistema como:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f5164396-3090-5a55-8bce-175eed67cdcd",
+              "content": {
+                "text": "Possível e determinado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5d24db22-2ea4-59c9-9260-e40c6fe86af7",
+              "content": {
+                "text": "Possível e indeterminado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e378a50a-c985-5116-bc4e-ddf5522b8b97",
+              "content": {
+                "text": "Impossível.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f9402468-05ca-5c92-9d52-c252805c35ee",
+              "content": {
+                "text": "Exato.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3d15bfbc-f0c5-5353-b072-2a2c45ed32b8",
+              "content": {
+                "text": "Incompatível.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5d24db22-2ea4-59c9-9260-e40c6fe86af7",
+          "resolution": {
+            "text": "1. Cada equação do 1º grau com duas incógnitas é representada por uma reta, e as soluções do sistema são os pontos comuns às retas. Retas coincidentes têm todos os pontos em comum: há solução (sistema possível) e há infinitas soluções (indeterminado). 2. Possível e determinado corresponde a retas concorrentes, com um único ponto comum; impossível (ou incompatível) corresponde a retas paralelas distintas, sem ponto comum; “exato” não é classificação de sistema linear. Resposta: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Guarda Municipal de Americana — Concurso Público 01/2025, ENCARREGADO DE SEÇÃO DE PESSOAL, questão 18. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M06.p.amer26-pes-q18.json",
+            "answerPath": "sources/admin.2026-11.M06.p.amer26-pes-q18.json",
+            "contentSha256": "ee8f22809e6cc6b9c6e786ada80c312230aaa723bbf512d376af458263bf8672",
+            "answerSha256": "ee8f22809e6cc6b9c6e786ada80c312230aaa723bbf512d376af458263bf8672"
+          }
+        },
+        "fingerprint": "d6155ea707748134c47438ccc46e6b38d0a1345ee2f5e1711d94cc2ffb665f98",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.cerq25-cont-q19"
+        },
+        "content": {
+          "statement": {
+            "text": "Um cinema vende ingressos para adultos a R$ 20,00 e para crianças a R$ 10,00. Em uma sessão, foram vendidos 120 ingressos no total, resultando em R$ 1.700,00 de arrecadação. Nesta situação, quantos ingressos para adultos foram vendidos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "08c74499-e3d8-51cb-92fd-04a187758ab2",
+              "content": {
+                "text": "50.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ea6ba732-6194-58c3-93d5-911aa8a31296",
+              "content": {
+                "text": "100.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6f882103-74cc-5a5e-b160-d0f1111dfb08",
+              "content": {
+                "text": "20.",
+                "resources": []
+              }
+            },
+            {
+              "id": "78155a19-e419-5005-811c-210bd63f6af3",
+              "content": {
+                "text": "40.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d4330045-d861-50b7-8a22-a061e792cdc7",
+              "content": {
+                "text": "70.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "08c74499-e3d8-51cb-92fd-04a187758ab2",
+          "resolution": {
+            "text": "1. Com a adultos e c crianças: a + c = 120 e 20a + 10c = 1.700. Substituindo c = 120 − a: 20a + 1.200 − 10a = 1.700, logo 10a = 500 e a = 50 (c = 70). 2. 70 é o número de ingressos infantis; 100, 20 e 40 não fecham simultaneamente o total de ingressos e a arrecadação. Resposta: alternativa A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Cerquilho — Concurso Público 01/2025, CONTADOR, questão 19. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M06.p.cerq25-cont-q19.json",
+            "answerPath": "sources/admin.2026-11.M06.p.cerq25-cont-q19.json",
+            "contentSha256": "e69278ef9710e6db6e0f7b36c34723d15f7f743f9736cf3cae94ab45443af6ed",
+            "answerSha256": "e69278ef9710e6db6e0f7b36c34723d15f7f743f9736cf3cae94ab45443af6ed"
+          }
+        },
+        "fingerprint": "3a419a4a6f47e71ef94745a4ab5e01cce1dedc0ef1eccba7a41db0e30f5a813b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.garca26-dir-q12"
+        },
+        "content": {
+          "statement": {
+            "text": "Para que a igualdade 2/x = 2y/24 = 8/32 seja verdadeira, quais devem ser os valores de x e y, respectivamente? Assinale a alternativa que apresenta o valor CORRETO.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4dc18c28-e6db-583a-ba8f-a8e91435c374",
+              "content": {
+                "text": "5 e 2.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3210ebb7-224e-5b80-a9ea-a7bbcb09eba3",
+              "content": {
+                "text": "8 e 3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "26bb2cbb-a403-5988-a6a3-6d6c76d27c88",
+              "content": {
+                "text": "9 e 4.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e86fb7c7-9f7a-58d7-9d8a-1f934b2d8137",
+              "content": {
+                "text": "26 e 11.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7122b6c1-2476-53c3-83d2-922f1c231e26",
+              "content": {
+                "text": "21 e 21.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3210ebb7-224e-5b80-a9ea-a7bbcb09eba3",
+          "resolution": {
+            "text": "1. Como 8/32 = 1/4, basta resolver 2/x = 1/4, que dá x = 8, e 2y/24 = 1/4, que dá 2y = 6 e y = 3. 2. Com 5 e 2, 9 e 4, 26 e 11 ou 21 e 21, pelo menos uma das frações deixa de valer 1/4 (por exemplo, 2/5 = 0,4). Resposta: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Garça — Concurso Público 01/2026, DIRETOR DE ESCOLA, questão 12. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M06.p.garca26-dir-q12.json",
+            "answerPath": "sources/admin.2026-11.M06.p.garca26-dir-q12.json",
+            "contentSha256": "0409ac430e989d545999fbb7860b81afc36631e05259c4af12fb56b2653b3eff",
+            "answerSha256": "0409ac430e989d545999fbb7860b81afc36631e05259c4af12fb56b2653b3eff"
+          }
+        },
+        "fingerprint": "8d988f26bbbf9b8e33bef20b7b6647f1aae7842a48917300d063225c3d50c90b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-capacidade-assentos"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma sala tem mesas para 2 e para 4 pessoas. São 16 mesas, com 50 lugares no total. Quantas mesas são para quatro pessoas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f7fa6fe4-aaa5-57cf-b529-a26583dec13e",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "bb345ef7-ecc8-5125-9447-504f8ba241df",
+              "content": {
+                "text": "9",
+                "resources": []
+              }
+            },
+            {
+              "id": "f152eaa1-0601-50cc-bdfa-886846986f82",
+              "content": {
+                "text": "7",
+                "resources": []
+              }
+            },
+            {
+              "id": "6aaaeabc-3b14-57cf-81c9-691497a21521",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bb345ef7-ecc8-5125-9447-504f8ba241df",
+          "resolution": {
+            "text": "1. Se todas fossem para duas pessoas, haveria 32 lugares. 2. Os 18 lugares extras correspondem a duas vagas adicionais por mesa maior, então são nove mesas para quatro.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-capacidade-assentos.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-capacidade-assentos.json",
+            "contentSha256": "060e2c640accf961a87efd9606ddf527e7debc5f5758d87b992307e3e8bf0107",
+            "answerSha256": "060e2c640accf961a87efd9606ddf527e7debc5f5758d87b992307e3e8bf0107"
+          }
+        },
+        "fingerprint": "2dbb5a0a983f670a152dd957c32cd1e36d1361bce4c9bc87eb3f6cf2895c051f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-coeficiente-nulo"
+        },
+        "content": {
+          "statement": {
+            "text": "Para a equação (a−2)x=6, qual afirmação é correta quando a=2?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "40dda6f5-b504-5acb-acc9-a18a3ab9ffac",
+              "content": {
+                "text": "x=0.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9efa9543-6356-58c4-bc53-3de6873c8e94",
+              "content": {
+                "text": "x=3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cf4c6372-4d26-57a6-ae12-2e4c4b6677a3",
+              "content": {
+                "text": "Todo real é solução.",
+                "resources": []
+              }
+            },
+            {
+              "id": "bc948fb8-097c-5cbd-9df9-b0fdf8843f7e",
+              "content": {
+                "text": "Não há solução.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bc948fb8-097c-5cbd-9df9-b0fdf8843f7e",
+          "resolution": {
+            "text": "1. Substituir a=2 zera o coeficiente de x. 2. A equação torna-se 0x=6, impossível; dividir por a−2 seria dividir por zero.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-coeficiente-nulo.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-coeficiente-nulo.json",
+            "contentSha256": "2d750f416e2532c6e564d86e071f68b37369abe7baf1cd8b0e2386e64c7051fc",
+            "answerSha256": "2d750f416e2532c6e564d86e071f68b37369abe7baf1cd8b0e2386e64c7051fc"
+          }
+        },
+        "fingerprint": "f99f6c1c4b470960824a25f159a634646e6e5c60ba1302ebb502f6d4ce9c8c0e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-distancias-encontro"
+        },
+        "content": {
+          "statement": {
+            "text": "Dois ciclistas fictícios partem simultaneamente de pontos separados por 90 km e seguem um em direção ao outro a 12 e 18 km/h. Em quantas horas se encontram?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9dacd9dc-f4df-501a-9689-cf6af3788099",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            },
+            {
+              "id": "b782d647-ab7d-5808-b2a8-410bb5b66c73",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "34d53acb-a33d-5c4a-9d0c-c0568ca6eb25",
+              "content": {
+                "text": "7,5",
+                "resources": []
+              }
+            },
+            {
+              "id": "7ac16318-eb59-5f35-bc88-a39b3f6bd0f1",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9dacd9dc-f4df-501a-9689-cf6af3788099",
+          "resolution": {
+            "text": "1. A distância entre eles diminui a 12+18=30 km/h. 2. O tempo satisfaz 30t=90, dando 3 horas; subtrair velocidades seria usar perseguição no mesmo sentido.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-distancias-encontro.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-distancias-encontro.json",
+            "contentSha256": "00b6012a9b3b37a3c7456f66b4f31c63f90b6958c9f3ea4431c64da6aed40c9f",
+            "answerSha256": "00b6012a9b3b37a3c7456f66b4f31c63f90b6958c9f3ea4431c64da6aed40c9f"
+          }
+        },
+        "fingerprint": "31a6fc854a65fc8eaab7b3b481eedf04de4ba008751ddedf45bbdfc824d46199",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-duas-balancas-substituicao"
+        },
+        "content": {
+          "statement": {
+            "text": "Duas caixas e um saco pesam 17 kg; uma caixa e um saco pesam 11 kg. Quanto pesa o saco?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "de4a4c7b-3c8e-5b70-b44c-cd15224fc19c",
+              "content": {
+                "text": "5 kg.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7070f337-4d83-59e5-9fc8-9825d92b9290",
+              "content": {
+                "text": "6 kg.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e158ff20-b330-596f-962a-cf2f921adaab",
+              "content": {
+                "text": "11 kg.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5b050797-f7b2-5f21-bb68-afdda0de1ecf",
+              "content": {
+                "text": "3 kg.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "de4a4c7b-3c8e-5b70-b44c-cd15224fc19c",
+          "resolution": {
+            "text": "1. Subtraindo as equações, uma caixa pesa 6 kg. 2. Da segunda pesagem, o saco pesa 11−6=5 kg.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-duas-balancas-substituicao.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-duas-balancas-substituicao.json",
+            "contentSha256": "512927ebdaa8393e3f5deb641ca93a7b81cd86f23feda28f30c6010e4c2a8779",
+            "answerSha256": "512927ebdaa8393e3f5deb641ca93a7b81cd86f23feda28f30c6010e4c2a8779"
+          }
+        },
+        "fingerprint": "a49f8ee87ff190fe36e594f18daa2d20914a80743e738984eecd77f930edf6ee",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-duas-tarifas-encontro"
+        },
+        "content": {
+          "statement": {
+            "text": "A empresa A cobra R$20 fixos mais R$3 por hora; B cobra R$8 fixos mais R$5 por hora. Em quantas horas os custos são iguais?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fda5dfd0-a86f-5892-be6c-54b0f45da8c4",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            },
+            {
+              "id": "39de67fe-cebe-5e90-a635-750b02fa9eb8",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            },
+            {
+              "id": "3b4b0b6d-5f80-5e94-a1a1-22b726e81247",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "cba2e96f-3080-5a10-9565-bc603c320197",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3b4b0b6d-5f80-5e94-a1a1-22b726e81247",
+          "resolution": {
+            "text": "1. Igualam-se as funções: 20+3h=8+5h. 2. A diferença fixa de 12 é compensada por 2 reais por hora, logo h=6.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-duas-tarifas-encontro.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-duas-tarifas-encontro.json",
+            "contentSha256": "e328308a6a3d706c47934112b3203ea69b8b899978586d49a94f42c656a6b495",
+            "answerSha256": "e328308a6a3d706c47934112b3203ea69b8b899978586d49a94f42c656a6b495"
+          }
+        },
+        "fingerprint": "ae34aa3a15dfe33898cdc10ef657ddfdd931e6ac0f54cd15dedf2128daeea058",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-equacao-denominadores"
+        },
+        "content": {
+          "statement": {
+            "text": "Resolva (x−1)/3+(x+2)/2=6.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5edb7799-fc66-5a7b-b2fa-91b703bd377b",
+              "content": {
+                "text": "32/5",
+                "resources": []
+              }
+            },
+            {
+              "id": "662f904a-80b2-58c0-85d8-c54f763b604f",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "56a8b92c-653b-501c-a137-a7a1eeb96390",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "eb832258-c487-51ec-8a58-eca3643a9731",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5edb7799-fc66-5a7b-b2fa-91b703bd377b",
+          "resolution": {
+            "text": "1. Multiplique por 6: 2x−2+3x+6=36. 2. Isso dá 5x+4=36 e x=32/5; os denominadores precisam multiplicar todos os termos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-equacao-denominadores.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-equacao-denominadores.json",
+            "contentSha256": "32f216b0e1b6cbd3faa1f54b09b7d2a2bce1f785dcb010fe21c167838f3b0f18",
+            "answerSha256": "32f216b0e1b6cbd3faa1f54b09b7d2a2bce1f785dcb010fe21c167838f3b0f18"
+          }
+        },
+        "fingerprint": "40c105c7812fd2391fd10ce67e08e0fec90b4ce1cadb3780900d80e981a91f23",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos"
+        },
+        "content": {
+          "statement": {
+            "text": "Resolva x/4−2=x/6+1.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "412aa01f-23e1-5ebd-a0a4-5074b13a0e51",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "1041466d-e23c-580a-90fe-04f47373f931",
+              "content": {
+                "text": "18",
+                "resources": []
+              }
+            },
+            {
+              "id": "df2bf2b4-79b5-52b2-b506-3eebde7dac1d",
+              "content": {
+                "text": "36",
+                "resources": []
+              }
+            },
+            {
+              "id": "1d84a012-9744-51a6-8105-a6f2b2d17537",
+              "content": {
+                "text": "12",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "df2bf2b4-79b5-52b2-b506-3eebde7dac1d",
+          "resolution": {
+            "text": "1. Reúna as parcelas de x: x(1/4−1/6)=3. 2. Como 1/4−1/6=1/12, segue x=36.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos.json",
+            "contentSha256": "38e6f2c13e14522de693912e9303af4a2d5d70bb237c3e36d9cf65637b940d6e",
+            "answerSha256": "38e6f2c13e14522de693912e9303af4a2d5d70bb237c3e36d9cf65637b940d6e"
+          }
+        },
+        "fingerprint": "4b094b6a729a80f0d02d819133afee01ff6c101449767716eb61a5cd5fc813b4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-equacao-impossivel"
+        },
+        "content": {
+          "statement": {
+            "text": "A equação 5x−2=5x+1 tem:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4f8bca2a-e65a-556a-8a66-fe0ff6ff637f",
+              "content": {
+                "text": "Solução x=0.",
+                "resources": []
+              }
+            },
+            {
+              "id": "99d31eeb-4a39-54a1-8f3e-934d07e6484a",
+              "content": {
+                "text": "Nenhuma solução real.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f62386a4-ea7a-5f3b-b910-3c609bf85ab9",
+              "content": {
+                "text": "Solução x=3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "03bc4669-e3eb-5793-ad38-b49c725f1c23",
+              "content": {
+                "text": "Todos os números reais como soluções.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "99d31eeb-4a39-54a1-8f3e-934d07e6484a",
+          "resolution": {
+            "text": "1. Subtraia 5x dos dois lados: fica −2=1. 2. Essa igualdade é falsa, logo não existe valor real de x que satisfaça a equação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-equacao-impossivel.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-equacao-impossivel.json",
+            "contentSha256": "8880e6bad1832df874aac1a1cbd4939c7008c5d99ffe004f218b89b2acd51c84",
+            "answerSha256": "8880e6bad1832df874aac1a1cbd4939c7008c5d99ffe004f218b89b2acd51c84"
+          }
+        },
+        "fingerprint": "0d2447ff166467fcea7c1327125f475787082542418c5840c032fde5af57c9dc",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-equacao-interpreta-dominio"
+        },
+        "content": {
+          "statement": {
+            "text": "Ao resolver a equação que modela uma idade, obtém-se x=−3. Se x deve ser uma idade atual não negativa, qual conclusão é correta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "73ee3862-76ea-5fef-8502-c5a48d96a1a4",
+              "content": {
+                "text": "Qualquer solução negativa deve ser aceita.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1addbce3-fb2a-5254-935b-db2790a296f0",
+              "content": {
+                "text": "A solução algébrica não atende ao domínio do problema.",
+                "resources": []
+              }
+            },
+            {
+              "id": "064dcba0-c781-5d14-9fc0-173fcdca4188",
+              "content": {
+                "text": "A idade deve ser arredondada para 0.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2050c641-e13a-5e5b-aff6-f7bef9ec3206",
+              "content": {
+                "text": "A idade é obrigatoriamente 3.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1addbce3-fb2a-5254-935b-db2790a296f0",
+          "resolution": {
+            "text": "1. Resolver uma equação nos reais não garante adequação à situação representada. 2. O valor −3 está fora do domínio declarado; trocar sinal ou arredondar modificaria o problema.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-equacao-interpreta-dominio.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-equacao-interpreta-dominio.json",
+            "contentSha256": "fa0f8e22f75761b3a72601d6af79106667aa8fff81abe93f758c6b90fb19aa14",
+            "answerSha256": "fa0f8e22f75761b3a72601d6af79106667aa8fff81abe93f758c6b90fb19aa14"
+          }
+        },
+        "fingerprint": "cbf89e93ab90a69981b13eaa0a12bf1f50babd02265694903f77d6221d70a6f6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-fracao-numero-restante"
+        },
+        "content": {
+          "statement": {
+            "text": "A metade de um número somada a seu terço é igual a esse número menos 7. Qual é o número?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cec5a0e4-c1fc-5de6-8ed6-0d64691b82b7",
+              "content": {
+                "text": "42",
+                "resources": []
+              }
+            },
+            {
+              "id": "9dcdd970-97e9-55cc-b63d-cd6359193617",
+              "content": {
+                "text": "21",
+                "resources": []
+              }
+            },
+            {
+              "id": "f3b7ceae-5322-5b04-948a-f481b26cc537",
+              "content": {
+                "text": "14",
+                "resources": []
+              }
+            },
+            {
+              "id": "56ecfcfd-091c-5e63-be96-744b70b9ccd7",
+              "content": {
+                "text": "84",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "cec5a0e4-c1fc-5de6-8ed6-0d64691b82b7",
+          "resolution": {
+            "text": "1. A equação é x/2+x/3=x−7, logo 5x/6=x−7. 2. Portanto x/6=7 e x=42.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-fracao-numero-restante.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-fracao-numero-restante.json",
+            "contentSha256": "81b043e205e8f46fe9f21931df49df2d7c291fa6eef42d3bb33654768c9aa4b1",
+            "answerSha256": "81b043e205e8f46fe9f21931df49df2d7c291fa6eef42d3bb33654768c9aa4b1"
+          }
+        },
+        "fingerprint": "71feef84ad11e1481206cafe3b8e2bc97c561abc3f096a5ce152758590bf7e9a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-ingressos-dois-precos"
+        },
+        "content": {
+          "statement": {
+            "text": "Foram vendidos 30 ingressos, alguns a R$ 12 e outros a R$ 8, totalizando R$ 280. Quantos ingressos de R$ 12 foram vendidos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "04d82388-ac1d-5ce5-a2d3-e004308ec149",
+              "content": {
+                "text": "20",
+                "resources": []
+              }
+            },
+            {
+              "id": "95f0d83b-3f02-5b4b-916f-277ec51d39b3",
+              "content": {
+                "text": "15",
+                "resources": []
+              }
+            },
+            {
+              "id": "cfbf44de-b21f-59df-bf34-8f497fcb3038",
+              "content": {
+                "text": "25",
+                "resources": []
+              }
+            },
+            {
+              "id": "ad8e3ef6-b165-598f-9c94-776a6df5bf59",
+              "content": {
+                "text": "10",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ad8e3ef6-b165-598f-9c94-776a6df5bf59",
+          "resolution": {
+            "text": "1. Se todos os 30 ingressos custassem R$ 8, o total seria R$ 240. 2. Os R$ 40 restantes vêm de R$ 4 a mais por ingresso de R$ 12: 40/4 = 10 ingressos de R$ 12 (e 20 de R$ 8; conferência: 120 + 160 = 280). 20 é a quantidade de ingressos de R$ 8; 15 e 25 não fecham o total de R$ 280.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-ingressos-dois-precos.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-ingressos-dois-precos.json",
+            "contentSha256": "a32132354613ee4eaf123343e77724756b68b263a0bb673b0e25718e9d86eea1",
+            "answerSha256": "a32132354613ee4eaf123343e77724756b68b263a0bb673b0e25718e9d86eea1"
+          }
+        },
+        "fingerprint": "f2062e70b9d74a14eda88845ce164d1a0612959ed934d0d53b28729ad28b36c7",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-mistura-moedas-tres-relacao"
+        },
+        "content": {
+          "statement": {
+            "text": "Há moedas de R$ 1, R$ 0,50 e R$ 0,25. Há o dobro de moedas de 50 centavos em relação às de 1 real, e quatro moedas de 25 centavos. O total é R$ 9. Quantas moedas de 1 real há?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "20e914e9-3184-524b-a896-25e2b75353f7",
+              "content": {
+                "text": "3",
+                "resources": []
+              }
+            },
+            {
+              "id": "9c7b9bdb-f6d2-54af-a2bc-86552cee8241",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            },
+            {
+              "id": "d7cc270c-23d8-5e83-be4c-b844c6d2d47a",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "91e74082-d289-5f38-becf-48cf1bd166d4",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d7cc270c-23d8-5e83-be4c-b844c6d2d47a",
+          "resolution": {
+            "text": "1. Se são x moedas de 1 real, há 2x moedas de 50 centavos, que somam x reais; as quatro de 25 centavos somam 1 real. 2. Assim x + x + 1 = 9, isto é, 2x + 1 = 9 e x = 4. 8 é a quantidade de moedas de 50 centavos; 3 e 5 não fecham R$ 9 (dariam R$ 7 e R$ 11).",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-mistura-moedas-tres-relacao.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-mistura-moedas-tres-relacao.json",
+            "contentSha256": "274ad1b1d1c0dbb1829f4ee901c8860b65c492456594d7bea486dc3f1e4e5fb0",
+            "answerSha256": "274ad1b1d1c0dbb1829f4ee901c8860b65c492456594d7bea486dc3f1e4e5fb0"
+          }
+        },
+        "fingerprint": "59d185e57b4c837d8de59bbecffb35e89e24973e3311d68b1d037748d01dd74d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-moedas-contagem"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma caixa tem 18 moedas, apenas de R$ 1 e R$ 0,50, somando R$ 13. Quantas moedas de R$ 1 há?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "237f032b-38ce-5a93-80af-099dbd40e359",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "cc4bc7b3-bb9a-5022-be34-6ec873ecdac9",
+              "content": {
+                "text": "10",
+                "resources": []
+              }
+            },
+            {
+              "id": "581ac990-7183-5dc4-9f5e-9b9f08cedd1d",
+              "content": {
+                "text": "13",
+                "resources": []
+              }
+            },
+            {
+              "id": "920e511e-47ce-51b6-84d1-d072e0dd5f9b",
+              "content": {
+                "text": "5",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "237f032b-38ce-5a93-80af-099dbd40e359",
+          "resolution": {
+            "text": "1. Dezoito moedas de 50 centavos somariam R$ 9. 2. Faltam R$ 4, ou oito acréscimos de 50 centavos: há oito moedas de R$ 1 (e 10 de R$ 0,50; conferência: 8 + 5 = 13). 10 é a quantidade de moedas de 50 centavos; 13 é o valor total; 5 não fecha a soma.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-moedas-contagem.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-moedas-contagem.json",
+            "contentSha256": "6a51978d07acb10e77b0da832d7dad08840bb01c0d512fb803fc458036961ffd",
+            "answerSha256": "6a51978d07acb10e77b0da832d7dad08840bb01c0d512fb803fc458036961ffd"
+          }
+        },
+        "fingerprint": "4691ae37e98491353eaa5e1cfdd81770daedf660ed1a8256baf019999fae9716",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-numero-algarismos"
+        },
+        "content": {
+          "statement": {
+            "text": "Um número de dois algarismos tem soma dos algarismos 9. Ao inverter sua ordem, o número aumenta 27. Qual é o número original?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e9f3aee8-6d18-5b19-94da-2116b457c96d",
+              "content": {
+                "text": "54",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0607229-86f1-52c9-9e79-ccb3c3305d9d",
+              "content": {
+                "text": "36",
+                "resources": []
+              }
+            },
+            {
+              "id": "765ea16f-79e5-5598-8494-bd7acef75afb",
+              "content": {
+                "text": "63",
+                "resources": []
+              }
+            },
+            {
+              "id": "dceab147-5a38-5b53-8d51-cfb193f99d11",
+              "content": {
+                "text": "45",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a0607229-86f1-52c9-9e79-ccb3c3305d9d",
+          "resolution": {
+            "text": "1. Com dezena a e unidade b, a + b = 9 e (10b + a) − (10a + b) = 27, logo b − a = 3. 2. Somando, 2b = 12, b = 6 e a = 3; o original é 36 (invertido, 63 = 36 + 27). 63 é o número já invertido; 54 e 45 têm soma 9, mas a inversão diminui ou aumenta só 9, não 27.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-numero-algarismos.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-numero-algarismos.json",
+            "contentSha256": "9c378bfc8c6d39c8e99b3b9ba933abc450b0a6bbbcc15f7f06aa5f95db529a29",
+            "answerSha256": "9c378bfc8c6d39c8e99b3b9ba933abc450b0a6bbbcc15f7f06aa5f95db529a29"
+          }
+        },
+        "fingerprint": "758a3a42c8e46cf02190fad9f281debd0e0116be1e0e40c26664df6df5727db3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-parametro-indeterminacao"
+        },
+        "content": {
+          "statement": {
+            "text": "Para qual valor de a as equações x+3y=4 e 2x+6y=a representam a mesma reta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d549e012-11d4-586a-924a-38bc3eb3a55a",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            },
+            {
+              "id": "52f34844-54bc-5b97-b8d7-7efeaafe7ebc",
+              "content": {
+                "text": "6",
+                "resources": []
+              }
+            },
+            {
+              "id": "2b3ac801-6f93-52f8-a3fb-acaf59045e16",
+              "content": {
+                "text": "2",
+                "resources": []
+              }
+            },
+            {
+              "id": "8274955f-5ddf-5a31-952c-e14f0e445dc8",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8274955f-5ddf-5a31-952c-e14f0e445dc8",
+          "resolution": {
+            "text": "1. O lado esquerdo da segunda equação, 2x + 6y, é o dobro do da primeira. 2. Para que as equações sejam equivalentes (mesma reta), o termo independente também deve dobrar: a = 2 · 4 = 8. Com a = 4, 2 ou 6, as retas seriam paralelas distintas, sem pontos em comum.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-parametro-indeterminacao.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-parametro-indeterminacao.json",
+            "contentSha256": "548ab788c36f1ce60fdaf053baef1f62aa356d91a366d907a3e8a756662cb61c",
+            "answerSha256": "548ab788c36f1ce60fdaf053baef1f62aa356d91a366d907a3e8a756662cb61c"
+          }
+        },
+        "fingerprint": "1e2da22d31478e404b6ef69bcda8dc0f23d530620152148a1b4fc46e4e86ca2d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-porcentagem-equacao-saldo"
+        },
+        "content": {
+          "statement": {
+            "text": "Após gastar 2/3 de uma quantia e depois R$ 18, uma pessoa fica com R$ 27. Quanto tinha inicialmente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "563934be-498d-5d53-8f27-692385938ceb",
+              "content": {
+                "text": "R$ 81.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3d6fc1e8-cc23-5717-8da1-3e0a15107fda",
+              "content": {
+                "text": "R$ 45.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3d3c2ab0-87a2-5b9d-b3ca-17c9206bcbcb",
+              "content": {
+                "text": "R$ 90.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6bf12b0f-9da6-5f43-803d-3a812853f154",
+              "content": {
+                "text": "R$ 135.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6bf12b0f-9da6-5f43-803d-3a812853f154",
+          "resolution": {
+            "text": "1. Depois de gastar 2/3, resta x/3. 2. A equação x/3 − 18 = 27 dá x/3 = 45, portanto x = 135 (conferência: 135 − 90 − 18 = 27). 45 é apenas o terço restante; 81 e 90 não deixam R$ 27 após os dois gastos (sobrariam R$ 9 e R$ 12).",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-porcentagem-equacao-saldo.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-porcentagem-equacao-saldo.json",
+            "contentSha256": "9e9abbd97bafe4e7a49b0961b8163360f35d806ea66a67c33c31504a9fe78633",
+            "answerSha256": "9e9abbd97bafe4e7a49b0961b8163360f35d806ea66a67c33c31504a9fe78633"
+          }
+        },
+        "fingerprint": "5535a5d5683f1080c85f5073297c35ba83fdede25dbba89555c256d539961a08",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-sistema-congelar-variavel"
+        },
+        "content": {
+          "statement": {
+            "text": "No sistema 3x+2y=18 e y=0, qual é o par ordenado (x,y)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5d3c4cc3-2720-5d07-b097-bd65c9b62656",
+              "content": {
+                "text": "(0,6)",
+                "resources": []
+              }
+            },
+            {
+              "id": "567ccd2a-4c3e-5e73-94a0-3a70a3a6e6ca",
+              "content": {
+                "text": "(3,0)",
+                "resources": []
+              }
+            },
+            {
+              "id": "a9ac5b76-025a-55d3-87e4-1f7681c6290b",
+              "content": {
+                "text": "(6,0)",
+                "resources": []
+              }
+            },
+            {
+              "id": "ce9caacf-9f98-57e0-9c00-3881c56c559d",
+              "content": {
+                "text": "(0,9)",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a9ac5b76-025a-55d3-87e4-1f7681c6290b",
+          "resolution": {
+            "text": "1. A segunda equação fixa y=0. 2. Substituindo na primeira, 3x=18 e x=6; o par respeita a ordem x,y.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-sistema-congelar-variavel.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-sistema-congelar-variavel.json",
+            "contentSha256": "d9d416f819c69e85995361f5382e85bb842e6687d273f5f0c767e6cc150ef340",
+            "answerSha256": "d9d416f819c69e85995361f5382e85bb842e6687d273f5f0c767e6cc150ef340"
+          }
+        },
+        "fingerprint": "aa9b2e24ac22a6a692287156b90dcb5ac63552ef845706403f2559103d591ddc",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-sistema-proporcional"
+        },
+        "content": {
+          "statement": {
+            "text": "As equações x+2y=7 e 2x+4y=14 formam um sistema com:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "125aa9ee-1622-5e1a-8f4e-428e34072f91",
+              "content": {
+                "text": "Nenhum par como solução.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7666d010-8140-5307-91b3-b4147a78f344",
+              "content": {
+                "text": "Exatamente dois pares reais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5ebeae8b-b57b-552e-9847-1fb2bffafee5",
+              "content": {
+                "text": "Infinitos pares reais como soluções.",
+                "resources": []
+              }
+            },
+            {
+              "id": "334317d2-14d9-5b80-8f82-9b820cef6d19",
+              "content": {
+                "text": "Um único par, (7,0).",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5ebeae8b-b57b-552e-9847-1fb2bffafee5",
+          "resolution": {
+            "text": "1. A segunda equação é o dobro da primeira. 2. Ambas representam a mesma reta, com infinitos pares; (7,0) é apenas um deles.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-sistema-proporcional.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-sistema-proporcional.json",
+            "contentSha256": "e60710314722e957200a382f480809b0febc08314088c347576fbd02a5067745",
+            "answerSha256": "e60710314722e957200a382f480809b0febc08314088c347576fbd02a5067745"
+          }
+        },
+        "fingerprint": "69d5eac91e4da3e9fd886dcfd7841742f74233c4b06f28269ee08436a9a18535",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-solucao-inteira-restrita"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma equação modela o número x de caixas: 4x+3=25. Considerando que só se admitem caixas inteiras, qual conclusão vale?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9f141c60-f20a-5ab7-945f-ad0030763045",
+              "content": {
+                "text": "Há 22 caixas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "791fa469-2c5e-5e31-b85d-4c72a28a3143",
+              "content": {
+                "text": "A equação dá 5,5 e o modelo não tem solução inteira exata.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8d395e9a-e61f-5c27-b911-96b96190a942",
+              "content": {
+                "text": "Há exatamente 5 caixas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6a5e5788-5fd8-5130-9a0b-172dac3c5eea",
+              "content": {
+                "text": "Há exatamente 6 caixas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "791fa469-2c5e-5e31-b85d-4c72a28a3143",
+          "resolution": {
+            "text": "1. Resolver dá 4x=22, isto é, x=5,5. 2. Como o domínio exige inteiro, não há solução exata; arredondar violaria a igualdade inicial.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-solucao-inteira-restrita.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-solucao-inteira-restrita.json",
+            "contentSha256": "f6e0a2209145c2fcaa56591bde1b33b88ce984486f5e50408beb62ad9dfa348c",
+            "answerSha256": "f6e0a2209145c2fcaa56591bde1b33b88ce984486f5e50408beb62ad9dfa348c"
+          }
+        },
+        "fingerprint": "49a68008ef05c8c7e3f8d496aba5c43a63255911c4bbca0785324fad87311c8e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.mat-soma-diferenca-quantidades"
+        },
+        "content": {
+          "statement": {
+            "text": "Duas quantidades somam 74 e sua diferença, maior menos menor, é 18. Qual é a menor?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "bfc8e3d2-efb7-5646-ad42-1749913a6536",
+              "content": {
+                "text": "46",
+                "resources": []
+              }
+            },
+            {
+              "id": "52413903-a2ca-5fe5-a942-1572ff9e0fad",
+              "content": {
+                "text": "37",
+                "resources": []
+              }
+            },
+            {
+              "id": "efe8f56d-4ce4-527d-9b8c-e0d0bdb09924",
+              "content": {
+                "text": "56",
+                "resources": []
+              }
+            },
+            {
+              "id": "73e9ccde-4f0c-509b-815a-7565303150bf",
+              "content": {
+                "text": "28",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "73e9ccde-4f0c-509b-815a-7565303150bf",
+          "resolution": {
+            "text": "1. Se maior = M e menor = m, M + m = 74 e M − m = 18. 2. Subtraindo as equações, 2m = 56 e m = 28 (e M = 46). 46 é a maior; 37 é metade da soma; 56 é o dobro da menor, não a menor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M06.p.mat-soma-diferenca-quantidades.json",
+            "answerPath": "sources/admin.2026-11.M06.p.mat-soma-diferenca-quantidades.json",
+            "contentSha256": "cd2d4a3676c02b71d0f49c6f298b9a9d758bcbcc54fe31522484695cfbcc64f3",
+            "answerSha256": "cd2d4a3676c02b71d0f49c6f298b9a9d758bcbcc54fe31522484695cfbcc64f3"
+          }
+        },
+        "fingerprint": "f2e623455d47f3960f8730ecc732452b5f2dbd823b17bbe536d3a9f4d4529cba",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.varg25-sup-q12"
+        },
+        "content": {
+          "statement": {
+            "text": "Um casal, Ana e Bruno, decide comprar um carro que custa R$ 60.000,00. Cada um tem um uma quantia guardada na poupança e comprarão o carro à vista, cada um pagando uma determinada quantia. Sabe-se que Ana tem R$65.000,00 guardados e Bruno tem R$50.000,00. A quantia que cada um pagará será tal que, após a compra, os dois ficarão com os mesmos valores guardados na poupança. Nesta situação, qual o valor que Ana pagará pelo carro?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "44d6c271-d6b9-546a-988e-8ad98b057a5d",
+              "content": {
+                "text": "R$ 39.000,00.",
+                "resources": []
+              }
+            },
+            {
+              "id": "96ea72b7-cc28-5a61-b4c9-86c331497071",
+              "content": {
+                "text": "R$ 37.500,00.",
+                "resources": []
+              }
+            },
+            {
+              "id": "671f2481-8547-5be1-a979-4b82b2363f38",
+              "content": {
+                "text": "R$ 31.500,00.",
+                "resources": []
+              }
+            },
+            {
+              "id": "94f84ae4-e4fb-5a52-a8e6-41fd0cab918a",
+              "content": {
+                "text": "R$ 27.500,00.",
+                "resources": []
+              }
+            },
+            {
+              "id": "30a3544f-1064-5964-9455-12a6f9076e08",
+              "content": {
+                "text": "R$ 22.500,00.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "96ea72b7-cc28-5a61-b4c9-86c331497071",
+          "resolution": {
+            "text": "1. Se Ana paga a, Bruno paga 60.000 − a. Igualando os saldos: 65.000 − a = 50.000 − (60.000 − a), isto é, 65.000 − a = a − 10.000, logo 2a = 75.000 e a = R$ 37.500,00 (Bruno paga R$ 22.500,00 e ambos ficam com R$ 27.500,00). 2. R$ 22.500,00 é a parte de Bruno e R$ 27.500,00 é o saldo final; R$ 39.000,00 e R$ 31.500,00 deixam saldos diferentes. Resposta: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Varginha — Concurso Público 01/2025, SUPERVISOR PEDAGÓGICO, questão 12. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M06.p.varg25-sup-q12.json",
+            "answerPath": "sources/admin.2026-11.M06.p.varg25-sup-q12.json",
+            "contentSha256": "65ffc018cdb1083d82f2d2371ae12229d9f31c8aeaad57953dcdc23252ad7daf",
+            "answerSha256": "65ffc018cdb1083d82f2d2371ae12229d9f31c8aeaad57953dcdc23252ad7daf"
+          }
+        },
+        "fingerprint": "cc27ccb1c8204e5e2a61b8a13dc1335597449e13aac8a55ffd26ddda53f6f5e2",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.M06.p.vinh25-cont-q11"
+        },
+        "content": {
+          "statement": {
+            "text": "Você está estudando matemática para concursos públicos e, em meio aos diversos exercícios que estava resolvendo, se deparou com o seguinte problema:\n\nDado o sistema de equações abaixo, encontre todas as soluções do sistema:\n\n2x + y = 1\n3x + 4y = 14\n\nAssinale a alternativa que indica o par ordenado que representa a solução desse sistema de equações.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e5558f8d-85bf-5217-a7e3-1c0a2f832ffb",
+              "content": {
+                "text": "x = 0,5 e y = 0",
+                "resources": []
+              }
+            },
+            {
+              "id": "16352c26-e613-53c8-b265-a5849ebd1fe8",
+              "content": {
+                "text": "x = −2 e y = 5",
+                "resources": []
+              }
+            },
+            {
+              "id": "1eda293f-710d-5c5f-980c-9f8dd4e75a78",
+              "content": {
+                "text": "x = 2 e y = −5",
+                "resources": []
+              }
+            },
+            {
+              "id": "658f2e22-4029-53ea-aa03-effbd9b93d7a",
+              "content": {
+                "text": "x = 0 e y = 1",
+                "resources": []
+              }
+            },
+            {
+              "id": "ea3d6a9b-c96a-588a-8e73-0f22109e6ef7",
+              "content": {
+                "text": "x = 5 e y = −0,25",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "16352c26-e613-53c8-b265-a5849ebd1fe8",
+          "resolution": {
+            "text": "1. Da primeira equação, y = 1 − 2x. Substituindo na segunda: 3x + 4(1 − 2x) = 14, então −5x = 10 e x = −2; logo y = 1 − 2(−2) = 5. Conferência: 3(−2) + 4 · 5 = 14. 2. x = 0,5 e y = 0 e x = 0 e y = 1 satisfazem só a primeira equação; x = 2 e y = −5 troca os sinais; x = 5 e y = −0,25 satisfaz só a segunda equação (15 − 1 = 14), mas não a primeira (10 − 0,25 ≠ 1). Resposta: alternativa B.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M06",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Vinhedo — Concurso Público 03/2025, CONTADOR, questão 11. Resolução própria: Claude, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M06.p.vinh25-cont-q11.json",
+            "answerPath": "sources/admin.2026-11.M06.p.vinh25-cont-q11.json",
+            "contentSha256": "8e00518496067a361ce47d3ae428ed9f6053e6f3dc010f6b7919e948ded6aa6a",
+            "answerSha256": "8e00518496067a361ce47d3ae428ed9f6053e6f3dc010f6b7919e948ded6aa6a"
+          }
+        },
+        "fingerprint": "8dc686fe7f3dfc970b4a21228ec7be2df202a900efb637fab96a8bc264d2e66e",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M06.p.amer26-pes-q18.json",
+        "mediaType": "application/json",
+        "sha256": "ee8f22809e6cc6b9c6e786ada80c312230aaa723bbf512d376af458263bf8672",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUG9zc8OtdmVsIGUgZGV0ZXJtaW5hZG8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUG9zc8OtdmVsIGUgaW5kZXRlcm1pbmFkby4ifSx7ImlkIjoiYyIsInRleHQiOiJJbXBvc3PDrXZlbC4ifSx7ImlkIjoiZCIsInRleHQiOiJFeGF0by4ifSx7ImlkIjoiZSIsInRleHQiOiJJbmNvbXBhdMOtdmVsLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgR3VhcmRhIE11bmljaXBhbCBkZSBBbWVyaWNhbmEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUsIEVOQ0FSUkVHQURPIERFIFNFw4fDg08gREUgUEVTU09BTCwgcXVlc3TDo28gMTguIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBwcm92YXMgb2JqZXRpdmFzIGFwbGljYWRhcyBlbSAyNS8wMS8yMDI2IGNvbmZvcm1lIGVkaXRhbCBkZSBjb252b2Nhw6fDo28gKGRvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjI3LWNvbnZvY2FjYW8tcHJvdmFzLW9iamV0aXZhcy5wZGYpOyBww6FnaW5hIDEsIGJsb2NvL3RpcG8gZG8gY2FyZ28gY29ycmVzcG9uZGVudGUsIHF1ZXN0w6NvIDE4ID0gQiBjb25mZXJpZGEgdmlzdWFsbWVudGUgZW0gMjAyNi0xMS0xMjsgaXRlbSBuw6NvIGFudWxhZG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIyNy1nYWJhcml0by1kZWZpbml0aXZvLTEucGRmIiwic2hhMjU2IjoiZGI2Zjk5ZTNkNDM1ZTY3YzA4NjQ4MjkxMjZlNjdhNmY3ZmQxZmY4NGEyZWNiMzA5NTFlNGRiMzlhZmM3MzVhMSIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjI3L2FuZXhvcy80YjMwYTk0Ny1hOTVlLTRhZmEtOGY4OC1hZjllMDBhMTY0OTUucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJHdWFyZGEgTXVuaWNpcGFsIGRlIEFtZXJpY2FuYSDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLWFtZXJpY2FuYS0yMDI1LXBlc3NvYWwvcTE4IiwibnVtYmVyIjoiMTgiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIChFTkNBUlJFR0FETyBERSBTRcOHw4NPIERFIFBFU1NPQUwpOyBxdWVzdMOjbyAxOCBjb25mZXJpZGEgdmlzdWFsbWVudGUgbmEgcMOhZ2luYSA2IHJlbmRlcml6YWRhIChlbnVuY2lhZG8sIHRhYmVsYSwgYWx0ZXJuYXRpdmFzLCBzw61tYm9sb3MgZSBvcmRlbSkgZW0gMjAyNi0xMS0xMjsgdGFiZWxhIHRyYW5zY3JpdGEgaW50ZWdyYWxtZW50ZSBlbSB0ZXh0bywgc2VtIHBlcmRhIGRlIGRhZG9zOyBjb3JyaWdpZGFzIGFwZW5hcyBxdWVicmFzIGRlIGxpbmhhLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yMjctcHJvdmEtZW5jYXJyZWdhZG8tZGUtc2VvLWRlLXBlc3NvYWwucGRmIiwic2hhMjU2IjoiYmI0ZDUzMzIxNDZhMmQxYmRmYTY2OTJlNjRkNTg5MTc1OTQ5MmM3NzViM2Y4YjkwZTE3MjFhOWVlODAwMmU1MSIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjI3L2FuZXhvcy9kYWM4ZmU3OC01ZTIzLTQ3YWYtYTY1Zi00ZjdhZjk3YTgwMGMucGRmIn0sInJldXNlIjp7Im5vdGUiOiJCYXNlIGFkb3RhZGE6IExlaSA5LjYxMC8xOTk4LCBhcnQuIDjCuiwgSVYsIGNvbmZvcm1lIGEgYXZhbGlhw6fDo28gZG9jdW1lbnRhZGEgZW0gcmV1c2UtYXNzZXNzbWVudC5tZCwgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSAoZGFkb3MgZW0gdGFiZWxhIGVsYWJvcmFkb3MgcGVsYSBwcsOzcHJpYSBiYW5jYSksIHNlbSBvYnJhIGRlIHRlcmNlaXJvIG5lY2Vzc8OhcmlhOyBuw6NvIGjDoSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gc2UgYWZpcm1hIGNvbnNlbnRpbWVudG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiRU5DQVJSRUdBRE8gREUgU0XDh8ODTyBERSBQRVNTT0FMIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJhbWVyMjYtcGVzLXExOCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQ2FkYSBlcXVhw6fDo28gZG8gMcK6IGdyYXUgY29tIGR1YXMgaW5jw7Nnbml0YXMgw6kgcmVwcmVzZW50YWRhIHBvciB1bWEgcmV0YSwgZSBhcyBzb2x1w6fDtWVzIGRvIHNpc3RlbWEgc8OjbyBvcyBwb250b3MgY29tdW5zIMOgcyByZXRhcy4gUmV0YXMgY29pbmNpZGVudGVzIHTDqm0gdG9kb3Mgb3MgcG9udG9zIGVtIGNvbXVtOiBow6Egc29sdcOnw6NvIChzaXN0ZW1hIHBvc3PDrXZlbCkgZSBow6EgaW5maW5pdGFzIHNvbHXDp8O1ZXMgKGluZGV0ZXJtaW5hZG8pLiAyLiBQb3Nzw612ZWwgZSBkZXRlcm1pbmFkbyBjb3JyZXNwb25kZSBhIHJldGFzIGNvbmNvcnJlbnRlcywgY29tIHVtIMO6bmljbyBwb250byBjb211bTsgaW1wb3Nzw612ZWwgKG91IGluY29tcGF0w612ZWwpIGNvcnJlc3BvbmRlIGEgcmV0YXMgcGFyYWxlbGFzIGRpc3RpbnRhcywgc2VtIHBvbnRvIGNvbXVtOyDigJxleGF0b+KAnSBuw6NvIMOpIGNsYXNzaWZpY2HDp8OjbyBkZSBzaXN0ZW1hIGxpbmVhci4gUmVzcG9zdGE6IGFsdGVybmF0aXZhIEIuIiwic3RhdGVtZW50IjoiRW0gcmVsYcOnw6NvIGEgcmVwcmVzZW50YcOnw6NvIGdyw6FmaWNhIGRlIHVtIHNpc3RlbWEgZGUgZXF1YcOnw7VlcyBkbyAxwrogZ3JhdSwgc2UgdW0gc2lzdGVtYSBhcHJlc2VudGEgZHVhcyByZXRhcyBjb2luY2lkZW50ZXMgZW0gdW0gcGxhbm8gY2FydGVzaWFubyBwb2RlbW9zIGNsYXNzaWZpY2FyIGVzc2Ugc2lzdGVtYSBjb21vOiIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.cerq25-cont-q19.json",
+        "mediaType": "application/json",
+        "sha256": "e69278ef9710e6db6e0f7b36c34723d15f7f743f9736cf3cae94ab45443af6ed",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNTAuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTAwLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjIwLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjQwLiJ9LHsiaWQiOiJlIiwidGV4dCI6IjcwLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgQ2VycXVpbGhvIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1LCBDT05UQURPUiwgcXVlc3TDo28gMTkuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvIGRhcyBwcm92YXMgZGUgMjgvMDkvMjAyNTsgcMOhZ2luYSAzLCBibG9jbyBkbyBjYXJnbyBDT05UQURPUiwgcXVlc3TDo28gMTkgPSBBIGNvbmZlcmlkYSB2aXN1YWxtZW50ZTsgaXRlbSBuw6NvIGFudWxhZG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzE5OC1nYWJhcml0by1kZWZpbml0aXZvLTEucGRmIiwic2hhMjU2IjoiNjc3ZjBhNjBiMTA4MGE0YjY2OWUzYmRiYzNmMDU5OTQ2YTc3ZjQ5ZDg2ZTQxNGJiM2E4N2NjNzIwNzFjNDBhZiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMTk4L2FuZXhvcy9lMTQxYmJlZS1hZmY1LTQ0ZjAtYTdmYS0zZTUxMTljOGY4ODAucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDZXJxdWlsaG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1jZXJxdWlsaG8tMjAyNS1jb250YWRvci9xMTkiLCJudW1iZXIiOiIxOSIsInByb29mIjp7Im5vdGUiOiJDYWRlcm5vIG9maWNpYWwgZG8gY2FyZ28gQ09OVEFET1I7IHF1ZXN0w6NvIDE5IGNvbmZlcmlkYSB2aXN1YWxtZW50ZSBuYSBww6FnaW5hIDcgcmVuZGVyaXphZGEgKGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzLCBzw61tYm9sb3MgZSBvcmRlbSk7IGNvcnJpZ2lkYXMgYXBlbmFzIHF1ZWJyYXMgZGUgbGluaGEvaGlmZW5pemHDp8Ojby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk4LXByb3ZhLWNvbnRhZG9yLnBkZiIsInNoYTI1NiI6IjkyNDkwNGIyNDA0YjBhOTVkYmJjMjBlZWY1Y2EwZjRlODdhNGJlMzIxNWI2MWRiNWIwZjNkYjM2NmMyNzNiZjkiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5OC9hbmV4b3MvMGI2Njg2YjAtNjIwYy00NGE0LWI0ZDUtMGQ4MWI4NmQ2MzMyLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBMZWkgOS42MTAvMTk5OCwgYXJ0LiA4wrosIElWLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBuZWNlc3PDoXJpYTsgbsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIHNlIGFmaXJtYSBjb25zZW50aW1lbnRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkNPTlRBRE9SIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI1fSwiaWQiOiJjZXJxMjUtY29udC1xMTkiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIENvbSBhIGFkdWx0b3MgZSBjIGNyaWFuw6dhczogYSArIGMgPSAxMjAgZSAyMGEgKyAxMGMgPSAxLjcwMC4gU3Vic3RpdHVpbmRvIGMgPSAxMjAg4oiSIGE6IDIwYSArIDEuMjAwIOKIkiAxMGEgPSAxLjcwMCwgbG9nbyAxMGEgPSA1MDAgZSBhID0gNTAgKGMgPSA3MCkuIDIuIDcwIMOpIG8gbsO6bWVybyBkZSBpbmdyZXNzb3MgaW5mYW50aXM7IDEwMCwgMjAgZSA0MCBuw6NvIGZlY2hhbSBzaW11bHRhbmVhbWVudGUgbyB0b3RhbCBkZSBpbmdyZXNzb3MgZSBhIGFycmVjYWRhw6fDo28uIFJlc3Bvc3RhOiBhbHRlcm5hdGl2YSBBLiIsInN0YXRlbWVudCI6IlVtIGNpbmVtYSB2ZW5kZSBpbmdyZXNzb3MgcGFyYSBhZHVsdG9zIGEgUiQgMjAsMDAgZSBwYXJhIGNyaWFuw6dhcyBhIFIkIDEwLDAwLiBFbSB1bWEgc2Vzc8OjbywgZm9yYW0gdmVuZGlkb3MgMTIwIGluZ3Jlc3NvcyBubyB0b3RhbCwgcmVzdWx0YW5kbyBlbSBSJCAxLjcwMCwwMCBkZSBhcnJlY2FkYcOnw6NvLiBOZXN0YSBzaXR1YcOnw6NvLCBxdWFudG9zIGluZ3Jlc3NvcyBwYXJhIGFkdWx0b3MgZm9yYW0gdmVuZGlkb3M/IiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.garca26-dir-q12.json",
+        "mediaType": "application/json",
+        "sha256": "0409ac430e989d545999fbb7860b81afc36631e05259c4af12fb56b2653b3eff",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNSBlIDIuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiOCBlIDMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiOSBlIDQuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjYgZSAxMS4ifSx7ImlkIjoiZSIsInRleHQiOiIyMSBlIDIxLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgR2Fyw6dhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI2LCBESVJFVE9SIERFIEVTQ09MQSwgcXVlc3TDo28gMTIuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDbGF1ZGUsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBww6FnaW5hIDEsIGJsb2NvIGRvIGNhcmdvIERJUkVUT1IgREUgRVNDT0xBLCBxdWVzdMOjbyAxMiA9IEIgY29uZmVyaWRhIHZpc3VhbG1lbnRlOyBpdGVtIG7Do28gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjU2LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI3YTkwOTNjMDc2Y2I4MzQ4Y2U1OWEwZjE2MzNlZmY5ODg0ZTNhMTcyYzRhMTAwM2I3Y2Q5OTFiMGRlNTI1YmJkIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MtcjIuc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzI1Ni9hbmV4b3MvODQ1MWM1NjEtZjk0Yy00NTZmLWFkODItMTNhZjE2OGMyY2IyLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgR2Fyw6dhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI2IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtZ2FyY2EtMjAyNi1kaXJldG9yL3ExMiIsIm51bWJlciI6IjEyIiwicHJvb2YiOnsibm90ZSI6IkNhZGVybm8gb2ZpY2lhbCBkbyBjYXJnbyBESVJFVE9SIERFIEVTQ09MQTsgcXVlc3TDo28gMTIgY29uZmVyaWRhIHZpc3VhbG1lbnRlIG5hIHDDoWdpbmEgNCByZW5kZXJpemFkYSAoZW51bmNpYWRvLCBhbHRlcm5hdGl2YXMsIHPDrW1ib2xvcyBlIG9yZGVtKTsgY29ycmlnaWRhcyBhcGVuYXMgcXVlYnJhcyBkZSBsaW5oYS9oaWZlbml6YcOnw6NvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8yNTYtcHJvdmEtZGlyZXRvci1kZS1lc2NvbGEucGRmIiwic2hhMjU2IjoiNmE1NGI4MDJkMDFhZjAyZmMwYmRjNWFmNjYyYTZkM2ViZWFmZWJkNjdjZTU2ZWEzMTY1ZDI2N2ZmMWRiMTUzZSIsInVybCI6Imh0dHBzOi8vYW5leG9zLXIyLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yNTYvYW5leG9zLzdkZTlkMzJiLWI3OWItNGI0Mi1iNGZlLTVjMGM0MzNmYWUxOS5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJESVJFVE9SIERFIEVTQ09MQSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoiZ2FyY2EyNi1kaXItcTEyIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBDb21vIDgvMzIgPSAxLzQsIGJhc3RhIHJlc29sdmVyIDIveCA9IDEvNCwgcXVlIGTDoSB4ID0gOCwgZSAyeS8yNCA9IDEvNCwgcXVlIGTDoSAyeSA9IDYgZSB5ID0gMy4gMi4gQ29tIDUgZSAyLCA5IGUgNCwgMjYgZSAxMSBvdSAyMSBlIDIxLCBwZWxvIG1lbm9zIHVtYSBkYXMgZnJhw6fDtWVzIGRlaXhhIGRlIHZhbGVyIDEvNCAocG9yIGV4ZW1wbG8sIDIvNSA9IDAsNCkuIFJlc3Bvc3RhOiBhbHRlcm5hdGl2YSBCLiIsInN0YXRlbWVudCI6IlBhcmEgcXVlIGEgaWd1YWxkYWRlIDIveCA9IDJ5LzI0ID0gOC8zMiBzZWphIHZlcmRhZGVpcmEsIHF1YWlzIGRldmVtIHNlciBvcyB2YWxvcmVzIGRlIHggZSB5LCByZXNwZWN0aXZhbWVudGU/IEFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgcXVlIGFwcmVzZW50YSBvIHZhbG9yIENPUlJFVE8uIiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-capacidade-assentos.json",
+        "mediaType": "application/json",
+        "sha256": "060e2c640accf961a87efd9606ddf527e7debc5f5758d87b992307e3e8bf0107",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIifSx7ImlkIjoiYiIsInRleHQiOiI5In0seyJpZCI6ImMiLCJ0ZXh0IjoiNyJ9LHsiaWQiOiJkIiwidGV4dCI6IjgifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LWNhcGFjaWRhZGUtYXNzZW50b3MiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFNlIHRvZGFzIGZvc3NlbSBwYXJhIGR1YXMgcGVzc29hcywgaGF2ZXJpYSAzMiBsdWdhcmVzLiAyLiBPcyAxOCBsdWdhcmVzIGV4dHJhcyBjb3JyZXNwb25kZW0gYSBkdWFzIHZhZ2FzIGFkaWNpb25haXMgcG9yIG1lc2EgbWFpb3IsIGVudMOjbyBzw6NvIG5vdmUgbWVzYXMgcGFyYSBxdWF0cm8uIiwic3RhdGVtZW50IjoiVW1hIHNhbGEgdGVtIG1lc2FzIHBhcmEgMiBlIHBhcmEgNCBwZXNzb2FzLiBTw6NvIDE2IG1lc2FzLCBjb20gNTAgbHVnYXJlcyBubyB0b3RhbC4gUXVhbnRhcyBtZXNhcyBzw6NvIHBhcmEgcXVhdHJvIHBlc3NvYXM/IiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-coeficiente-nulo.json",
+        "mediaType": "application/json",
+        "sha256": "2d750f416e2532c6e564d86e071f68b37369abe7baf1cd8b0e2386e64c7051fc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoieD0wLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ing9My4ifSx7ImlkIjoiYyIsInRleHQiOiJUb2RvIHJlYWwgw6kgc29sdcOnw6NvLiJ9LHsiaWQiOiJkIiwidGV4dCI6Ik7Do28gaMOhIHNvbHXDp8Ojby4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWNvZWZpY2llbnRlLW51bG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFN1YnN0aXR1aXIgYT0yIHplcmEgbyBjb2VmaWNpZW50ZSBkZSB4LiAyLiBBIGVxdWHDp8OjbyB0b3JuYS1zZSAweD02LCBpbXBvc3PDrXZlbDsgZGl2aWRpciBwb3IgYeKIkjIgc2VyaWEgZGl2aWRpciBwb3IgemVyby4iLCJzdGF0ZW1lbnQiOiJQYXJhIGEgZXF1YcOnw6NvIChh4oiSMil4PTYsIHF1YWwgYWZpcm1hw6fDo28gw6kgY29ycmV0YSBxdWFuZG8gYT0yPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-distancias-encontro.json",
+        "mediaType": "application/json",
+        "sha256": "00b6012a9b3b37a3c7456f66b4f31c63f90b6958c9f3ea4431c64da6aed40c9f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMyJ9LHsiaWQiOiJiIiwidGV4dCI6IjUifSx7ImlkIjoiYyIsInRleHQiOiI3LDUifSx7ImlkIjoiZCIsInRleHQiOiI2In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC1kaXN0YW5jaWFzLWVuY29udHJvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIGRpc3TDom5jaWEgZW50cmUgZWxlcyBkaW1pbnVpIGEgMTIrMTg9MzAga20vaC4gMi4gTyB0ZW1wbyBzYXRpc2ZheiAzMHQ9OTAsIGRhbmRvIDMgaG9yYXM7IHN1YnRyYWlyIHZlbG9jaWRhZGVzIHNlcmlhIHVzYXIgcGVyc2VndWnDp8OjbyBubyBtZXNtbyBzZW50aWRvLiIsInN0YXRlbWVudCI6IkRvaXMgY2ljbGlzdGFzIGZpY3TDrWNpb3MgcGFydGVtIHNpbXVsdGFuZWFtZW50ZSBkZSBwb250b3Mgc2VwYXJhZG9zIHBvciA5MCBrbSBlIHNlZ3VlbSB1bSBlbSBkaXJlw6fDo28gYW8gb3V0cm8gYSAxMiBlIDE4IGttL2guIEVtIHF1YW50YXMgaG9yYXMgc2UgZW5jb250cmFtPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-duas-balancas-substituicao.json",
+        "mediaType": "application/json",
+        "sha256": "512927ebdaa8393e3f5deb641ca93a7b81cd86f23feda28f30c6010e4c2a8779",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNSBrZy4ifSx7ImlkIjoiYiIsInRleHQiOiI2IGtnLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjExIGtnLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjMga2cuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC1kdWFzLWJhbGFuY2FzLXN1YnN0aXR1aWNhbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gU3VidHJhaW5kbyBhcyBlcXVhw6fDtWVzLCB1bWEgY2FpeGEgcGVzYSA2IGtnLiAyLiBEYSBzZWd1bmRhIHBlc2FnZW0sIG8gc2FjbyBwZXNhIDEx4oiSNj01IGtnLiIsInN0YXRlbWVudCI6IkR1YXMgY2FpeGFzIGUgdW0gc2FjbyBwZXNhbSAxNyBrZzsgdW1hIGNhaXhhIGUgdW0gc2FjbyBwZXNhbSAxMSBrZy4gUXVhbnRvIHBlc2EgbyBzYWNvPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-duas-tarifas-encontro.json",
+        "mediaType": "application/json",
+        "sha256": "e328308a6a3d706c47934112b3203ea69b8b899978586d49a94f42c656a6b495",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIifSx7ImlkIjoiYiIsInRleHQiOiIyIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNiJ9LHsiaWQiOiJkIiwidGV4dCI6IjQifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LWR1YXMtdGFyaWZhcy1lbmNvbnRybyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gSWd1YWxhbS1zZSBhcyBmdW7Dp8O1ZXM6IDIwKzNoPTgrNWguIDIuIEEgZGlmZXJlbsOnYSBmaXhhIGRlIDEyIMOpIGNvbXBlbnNhZGEgcG9yIDIgcmVhaXMgcG9yIGhvcmEsIGxvZ28gaD02LiIsInN0YXRlbWVudCI6IkEgZW1wcmVzYSBBIGNvYnJhIFIkMjAgZml4b3MgbWFpcyBSJDMgcG9yIGhvcmE7IEIgY29icmEgUiQ4IGZpeG9zIG1haXMgUiQ1IHBvciBob3JhLiBFbSBxdWFudGFzIGhvcmFzIG9zIGN1c3RvcyBzw6NvIGlndWFpcz8iLCJ0b3BpY0lkIjoiTTA2In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-equacao-denominadores.json",
+        "mediaType": "application/json",
+        "sha256": "32f216b0e1b6cbd3faa1f54b09b7d2a2bce1f785dcb010fe21c167838f3b0f18",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzIvNSJ9LHsiaWQiOiJiIiwidGV4dCI6IjYifSx7ImlkIjoiYyIsInRleHQiOiI1In0seyJpZCI6ImQiLCJ0ZXh0IjoiOCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtZXF1YWNhby1kZW5vbWluYWRvcmVzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBNdWx0aXBsaXF1ZSBwb3IgNjogMnjiiJIyKzN4KzY9MzYuIDIuIElzc28gZMOhIDV4KzQ9MzYgZSB4PTMyLzU7IG9zIGRlbm9taW5hZG9yZXMgcHJlY2lzYW0gbXVsdGlwbGljYXIgdG9kb3Mgb3MgdGVybW9zLiIsInN0YXRlbWVudCI6IlJlc29sdmEgKHjiiJIxKS8zKyh4KzIpLzI9Ni4iLCJ0b3BpY0lkIjoiTTA2In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos.json",
+        "mediaType": "application/json",
+        "sha256": "38e6f2c13e14522de693912e9303af4a2d5d70bb237c3e36d9cf65637b940d6e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjQifSx7ImlkIjoiYiIsInRleHQiOiIxOCJ9LHsiaWQiOiJjIiwidGV4dCI6IjM2In0seyJpZCI6ImQiLCJ0ZXh0IjoiMTIifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LWVxdWFjYW8tZnJhY2FvLWluY29nbml0YS1hbWJvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gUmXDum5hIGFzIHBhcmNlbGFzIGRlIHg6IHgoMS804oiSMS82KT0zLiAyLiBDb21vIDEvNOKIkjEvNj0xLzEyLCBzZWd1ZSB4PTM2LiIsInN0YXRlbWVudCI6IlJlc29sdmEgeC804oiSMj14LzYrMS4iLCJ0b3BpY0lkIjoiTTA2In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-equacao-impossivel.json",
+        "mediaType": "application/json",
+        "sha256": "8880e6bad1832df874aac1a1cbd4939c7008c5d99ffe004f218b89b2acd51c84",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU29sdcOnw6NvIHg9MC4ifSx7ImlkIjoiYiIsInRleHQiOiJOZW5odW1hIHNvbHXDp8OjbyByZWFsLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlNvbHXDp8OjbyB4PTMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiVG9kb3Mgb3MgbsO6bWVyb3MgcmVhaXMgY29tbyBzb2x1w6fDtWVzLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtZXF1YWNhby1pbXBvc3NpdmVsIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTdWJ0cmFpYSA1eCBkb3MgZG9pcyBsYWRvczogZmljYSDiiJIyPTEuIDIuIEVzc2EgaWd1YWxkYWRlIMOpIGZhbHNhLCBsb2dvIG7Do28gZXhpc3RlIHZhbG9yIHJlYWwgZGUgeCBxdWUgc2F0aXNmYcOnYSBhIGVxdWHDp8Ojby4iLCJzdGF0ZW1lbnQiOiJBIGVxdWHDp8OjbyA1eOKIkjI9NXgrMSB0ZW06IiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-equacao-interpreta-dominio.json",
+        "mediaType": "application/json",
+        "sha256": "fa0f8e22f75761b3a72601d6af79106667aa8fff81abe93f758c6b90fb19aa14",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUXVhbHF1ZXIgc29sdcOnw6NvIG5lZ2F0aXZhIGRldmUgc2VyIGFjZWl0YS4ifSx7ImlkIjoiYiIsInRleHQiOiJBIHNvbHXDp8OjbyBhbGfDqWJyaWNhIG7Do28gYXRlbmRlIGFvIGRvbcOtbmlvIGRvIHByb2JsZW1hLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkEgaWRhZGUgZGV2ZSBzZXIgYXJyZWRvbmRhZGEgcGFyYSAwLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkEgaWRhZGUgw6kgb2JyaWdhdG9yaWFtZW50ZSAzLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtZXF1YWNhby1pbnRlcnByZXRhLWRvbWluaW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFJlc29sdmVyIHVtYSBlcXVhw6fDo28gbm9zIHJlYWlzIG7Do28gZ2FyYW50ZSBhZGVxdWHDp8OjbyDDoCBzaXR1YcOnw6NvIHJlcHJlc2VudGFkYS4gMi4gTyB2YWxvciDiiJIzIGVzdMOhIGZvcmEgZG8gZG9tw61uaW8gZGVjbGFyYWRvOyB0cm9jYXIgc2luYWwgb3UgYXJyZWRvbmRhciBtb2RpZmljYXJpYSBvIHByb2JsZW1hLiIsInN0YXRlbWVudCI6IkFvIHJlc29sdmVyIGEgZXF1YcOnw6NvIHF1ZSBtb2RlbGEgdW1hIGlkYWRlLCBvYnTDqW0tc2UgeD3iiJIzLiBTZSB4IGRldmUgc2VyIHVtYSBpZGFkZSBhdHVhbCBuw6NvIG5lZ2F0aXZhLCBxdWFsIGNvbmNsdXPDo28gw6kgY29ycmV0YT8iLCJ0b3BpY0lkIjoiTTA2In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-fracao-numero-restante.json",
+        "mediaType": "application/json",
+        "sha256": "81b043e205e8f46fe9f21931df49df2d7c291fa6eef42d3bb33654768c9aa4b1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDIifSx7ImlkIjoiYiIsInRleHQiOiIyMSJ9LHsiaWQiOiJjIiwidGV4dCI6IjE0In0seyJpZCI6ImQiLCJ0ZXh0IjoiODQifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LWZyYWNhby1udW1lcm8tcmVzdGFudGUiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgZXF1YcOnw6NvIMOpIHgvMit4LzM9eOKIkjcsIGxvZ28gNXgvNj144oiSNy4gMi4gUG9ydGFudG8geC82PTcgZSB4PTQyLiIsInN0YXRlbWVudCI6IkEgbWV0YWRlIGRlIHVtIG7Dum1lcm8gc29tYWRhIGEgc2V1IHRlcsOnbyDDqSBpZ3VhbCBhIGVzc2UgbsO6bWVybyBtZW5vcyA3LiBRdWFsIMOpIG8gbsO6bWVybz8iLCJ0b3BpY0lkIjoiTTA2In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-ingressos-dois-precos.json",
+        "mediaType": "application/json",
+        "sha256": "a32132354613ee4eaf123343e77724756b68b263a0bb673b0e25718e9d86eea1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjAifSx7ImlkIjoiYiIsInRleHQiOiIxNSJ9LHsiaWQiOiJjIiwidGV4dCI6IjI1In0seyJpZCI6ImQiLCJ0ZXh0IjoiMTAifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWluZ3Jlc3Nvcy1kb2lzLXByZWNvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gU2UgdG9kb3Mgb3MgMzAgaW5ncmVzc29zIGN1c3Rhc3NlbSBSJCA4LCBvIHRvdGFsIHNlcmlhIFIkIDI0MC4gMi4gT3MgUiQgNDAgcmVzdGFudGVzIHbDqm0gZGUgUiQgNCBhIG1haXMgcG9yIGluZ3Jlc3NvIGRlIFIkIDEyOiA0MC80ID0gMTAgaW5ncmVzc29zIGRlIFIkIDEyIChlIDIwIGRlIFIkIDg7IGNvbmZlcsOqbmNpYTogMTIwICsgMTYwID0gMjgwKS4gMjAgw6kgYSBxdWFudGlkYWRlIGRlIGluZ3Jlc3NvcyBkZSBSJCA4OyAxNSBlIDI1IG7Do28gZmVjaGFtIG8gdG90YWwgZGUgUiQgMjgwLiIsInN0YXRlbWVudCI6IkZvcmFtIHZlbmRpZG9zIDMwIGluZ3Jlc3NvcywgYWxndW5zIGEgUiQgMTIgZSBvdXRyb3MgYSBSJCA4LCB0b3RhbGl6YW5kbyBSJCAyODAuIFF1YW50b3MgaW5ncmVzc29zIGRlIFIkIDEyIGZvcmFtIHZlbmRpZG9zPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-mistura-moedas-tres-relacao.json",
+        "mediaType": "application/json",
+        "sha256": "274ad1b1d1c0dbb1829f4ee901c8860b65c492456594d7bea486dc3f1e4e5fb0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMyJ9LHsiaWQiOiJiIiwidGV4dCI6IjUifSx7ImlkIjoiYyIsInRleHQiOiI0In0seyJpZCI6ImQiLCJ0ZXh0IjoiOCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtbWlzdHVyYS1tb2VkYXMtdHJlcy1yZWxhY2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBzw6NvIHggbW9lZGFzIGRlIDEgcmVhbCwgaMOhIDJ4IG1vZWRhcyBkZSA1MCBjZW50YXZvcywgcXVlIHNvbWFtIHggcmVhaXM7IGFzIHF1YXRybyBkZSAyNSBjZW50YXZvcyBzb21hbSAxIHJlYWwuIDIuIEFzc2ltIHggKyB4ICsgMSA9IDksIGlzdG8gw6ksIDJ4ICsgMSA9IDkgZSB4ID0gNC4gOCDDqSBhIHF1YW50aWRhZGUgZGUgbW9lZGFzIGRlIDUwIGNlbnRhdm9zOyAzIGUgNSBuw6NvIGZlY2hhbSBSJCA5IChkYXJpYW0gUiQgNyBlIFIkIDExKS4iLCJzdGF0ZW1lbnQiOiJIw6EgbW9lZGFzIGRlIFIkIDEsIFIkIDAsNTAgZSBSJCAwLDI1LiBIw6EgbyBkb2JybyBkZSBtb2VkYXMgZGUgNTAgY2VudGF2b3MgZW0gcmVsYcOnw6NvIMOgcyBkZSAxIHJlYWwsIGUgcXVhdHJvIG1vZWRhcyBkZSAyNSBjZW50YXZvcy4gTyB0b3RhbCDDqSBSJCA5LiBRdWFudGFzIG1vZWRhcyBkZSAxIHJlYWwgaMOhPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-moedas-contagem.json",
+        "mediaType": "application/json",
+        "sha256": "6a51978d07acb10e77b0da832d7dad08840bb01c0d512fb803fc458036961ffd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOCJ9LHsiaWQiOiJiIiwidGV4dCI6IjEwIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTMifSx7ImlkIjoiZCIsInRleHQiOiI1In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC1tb2VkYXMtY29udGFnZW0iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIERlem9pdG8gbW9lZGFzIGRlIDUwIGNlbnRhdm9zIHNvbWFyaWFtIFIkIDkuIDIuIEZhbHRhbSBSJCA0LCBvdSBvaXRvIGFjcsOpc2NpbW9zIGRlIDUwIGNlbnRhdm9zOiBow6Egb2l0byBtb2VkYXMgZGUgUiQgMSAoZSAxMCBkZSBSJCAwLDUwOyBjb25mZXLDqm5jaWE6IDggKyA1ID0gMTMpLiAxMCDDqSBhIHF1YW50aWRhZGUgZGUgbW9lZGFzIGRlIDUwIGNlbnRhdm9zOyAxMyDDqSBvIHZhbG9yIHRvdGFsOyA1IG7Do28gZmVjaGEgYSBzb21hLiIsInN0YXRlbWVudCI6IlVtYSBjYWl4YSB0ZW0gMTggbW9lZGFzLCBhcGVuYXMgZGUgUiQgMSBlIFIkIDAsNTAsIHNvbWFuZG8gUiQgMTMuIFF1YW50YXMgbW9lZGFzIGRlIFIkIDEgaMOhPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-numero-algarismos.json",
+        "mediaType": "application/json",
+        "sha256": "9c378bfc8c6d39c8e99b3b9ba933abc450b0a6bbbcc15f7f06aa5f95db529a29",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNTQifSx7ImlkIjoiYiIsInRleHQiOiIzNiJ9LHsiaWQiOiJjIiwidGV4dCI6IjYzIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNDUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LW51bWVyby1hbGdhcmlzbW9zIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBDb20gZGV6ZW5hIGEgZSB1bmlkYWRlIGIsIGEgKyBiID0gOSBlICgxMGIgKyBhKSDiiJIgKDEwYSArIGIpID0gMjcsIGxvZ28gYiDiiJIgYSA9IDMuIDIuIFNvbWFuZG8sIDJiID0gMTIsIGIgPSA2IGUgYSA9IDM7IG8gb3JpZ2luYWwgw6kgMzYgKGludmVydGlkbywgNjMgPSAzNiArIDI3KS4gNjMgw6kgbyBuw7ptZXJvIGrDoSBpbnZlcnRpZG87IDU0IGUgNDUgdMOqbSBzb21hIDksIG1hcyBhIGludmVyc8OjbyBkaW1pbnVpIG91IGF1bWVudGEgc8OzIDksIG7Do28gMjcuIiwic3RhdGVtZW50IjoiVW0gbsO6bWVybyBkZSBkb2lzIGFsZ2FyaXNtb3MgdGVtIHNvbWEgZG9zIGFsZ2FyaXNtb3MgOS4gQW8gaW52ZXJ0ZXIgc3VhIG9yZGVtLCBvIG7Dum1lcm8gYXVtZW50YSAyNy4gUXVhbCDDqSBvIG7Dum1lcm8gb3JpZ2luYWw/IiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-parametro-indeterminacao.json",
+        "mediaType": "application/json",
+        "sha256": "548ab788c36f1ce60fdaf053baef1f62aa356d91a366d907a3e8a756662cb61c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNCJ9LHsiaWQiOiJiIiwidGV4dCI6IjYifSx7ImlkIjoiYyIsInRleHQiOiIyIn0seyJpZCI6ImQiLCJ0ZXh0IjoiOCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtcGFyYW1ldHJvLWluZGV0ZXJtaW5hY2FvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIGxhZG8gZXNxdWVyZG8gZGEgc2VndW5kYSBlcXVhw6fDo28sIDJ4ICsgNnksIMOpIG8gZG9icm8gZG8gZGEgcHJpbWVpcmEuIDIuIFBhcmEgcXVlIGFzIGVxdWHDp8O1ZXMgc2VqYW0gZXF1aXZhbGVudGVzIChtZXNtYSByZXRhKSwgbyB0ZXJtbyBpbmRlcGVuZGVudGUgdGFtYsOpbSBkZXZlIGRvYnJhcjogYSA9IDIgwrcgNCA9IDguIENvbSBhID0gNCwgMiBvdSA2LCBhcyByZXRhcyBzZXJpYW0gcGFyYWxlbGFzIGRpc3RpbnRhcywgc2VtIHBvbnRvcyBlbSBjb211bS4iLCJzdGF0ZW1lbnQiOiJQYXJhIHF1YWwgdmFsb3IgZGUgYSBhcyBlcXVhw6fDtWVzIHgrM3k9NCBlIDJ4KzZ5PWEgcmVwcmVzZW50YW0gYSBtZXNtYSByZXRhPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-porcentagem-equacao-saldo.json",
+        "mediaType": "application/json",
+        "sha256": "9e9abbd97bafe4e7a49b0961b8163360f35d806ea66a67c33c31504a9fe78633",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUiQgODEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUiQgNDUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiUiQgOTAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUiQgMTM1LiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtcG9yY2VudGFnZW0tZXF1YWNhby1zYWxkbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gRGVwb2lzIGRlIGdhc3RhciAyLzMsIHJlc3RhIHgvMy4gMi4gQSBlcXVhw6fDo28geC8zIOKIkiAxOCA9IDI3IGTDoSB4LzMgPSA0NSwgcG9ydGFudG8geCA9IDEzNSAoY29uZmVyw6puY2lhOiAxMzUg4oiSIDkwIOKIkiAxOCA9IDI3KS4gNDUgw6kgYXBlbmFzIG8gdGVyw6dvIHJlc3RhbnRlOyA4MSBlIDkwIG7Do28gZGVpeGFtIFIkIDI3IGFww7NzIG9zIGRvaXMgZ2FzdG9zIChzb2JyYXJpYW0gUiQgOSBlIFIkIDEyKS4iLCJzdGF0ZW1lbnQiOiJBcMOzcyBnYXN0YXIgMi8zIGRlIHVtYSBxdWFudGlhIGUgZGVwb2lzIFIkIDE4LCB1bWEgcGVzc29hIGZpY2EgY29tIFIkIDI3LiBRdWFudG8gdGluaGEgaW5pY2lhbG1lbnRlPyIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-sistema-congelar-variavel.json",
+        "mediaType": "application/json",
+        "sha256": "d9d416f819c69e85995361f5382e85bb842e6687d273f5f0c767e6cc150ef340",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiKDAsNikifSx7ImlkIjoiYiIsInRleHQiOiIoMywwKSJ9LHsiaWQiOiJjIiwidGV4dCI6Iig2LDApIn0seyJpZCI6ImQiLCJ0ZXh0IjoiKDAsOSkifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXNpc3RlbWEtY29uZ2VsYXItdmFyaWF2ZWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgc2VndW5kYSBlcXVhw6fDo28gZml4YSB5PTAuIDIuIFN1YnN0aXR1aW5kbyBuYSBwcmltZWlyYSwgM3g9MTggZSB4PTY7IG8gcGFyIHJlc3BlaXRhIGEgb3JkZW0geCx5LiIsInN0YXRlbWVudCI6Ik5vIHNpc3RlbWEgM3grMnk9MTggZSB5PTAsIHF1YWwgw6kgbyBwYXIgb3JkZW5hZG8gKHgseSk/IiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-sistema-proporcional.json",
+        "mediaType": "application/json",
+        "sha256": "e60710314722e957200a382f480809b0febc08314088c347576fbd02a5067745",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTmVuaHVtIHBhciBjb21vIHNvbHXDp8Ojby4ifSx7ImlkIjoiYiIsInRleHQiOiJFeGF0YW1lbnRlIGRvaXMgcGFyZXMgcmVhaXMuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiSW5maW5pdG9zIHBhcmVzIHJlYWlzIGNvbW8gc29sdcOnw7Vlcy4ifSx7ImlkIjoiZCIsInRleHQiOiJVbSDDum5pY28gcGFyLCAoNywwKS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXNpc3RlbWEtcHJvcG9yY2lvbmFsIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIHNlZ3VuZGEgZXF1YcOnw6NvIMOpIG8gZG9icm8gZGEgcHJpbWVpcmEuIDIuIEFtYmFzIHJlcHJlc2VudGFtIGEgbWVzbWEgcmV0YSwgY29tIGluZmluaXRvcyBwYXJlczsgKDcsMCkgw6kgYXBlbmFzIHVtIGRlbGVzLiIsInN0YXRlbWVudCI6IkFzIGVxdWHDp8O1ZXMgeCsyeT03IGUgMngrNHk9MTQgZm9ybWFtIHVtIHNpc3RlbWEgY29tOiIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-solucao-inteira-restrita.json",
+        "mediaType": "application/json",
+        "sha256": "f6e0a2209145c2fcaa56591bde1b33b88ce984486f5e50408beb62ad9dfa348c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSMOhIDIyIGNhaXhhcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBIGVxdWHDp8OjbyBkw6EgNSw1IGUgbyBtb2RlbG8gbsOjbyB0ZW0gc29sdcOnw6NvIGludGVpcmEgZXhhdGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiSMOhIGV4YXRhbWVudGUgNSBjYWl4YXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiSMOhIGV4YXRhbWVudGUgNiBjYWl4YXMuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1zb2x1Y2FvLWludGVpcmEtcmVzdHJpdGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFJlc29sdmVyIGTDoSA0eD0yMiwgaXN0byDDqSwgeD01LDUuIDIuIENvbW8gbyBkb23DrW5pbyBleGlnZSBpbnRlaXJvLCBuw6NvIGjDoSBzb2x1w6fDo28gZXhhdGE7IGFycmVkb25kYXIgdmlvbGFyaWEgYSBpZ3VhbGRhZGUgaW5pY2lhbC4iLCJzdGF0ZW1lbnQiOiJVbWEgZXF1YcOnw6NvIG1vZGVsYSBvIG7Dum1lcm8geCBkZSBjYWl4YXM6IDR4KzM9MjUuIENvbnNpZGVyYW5kbyBxdWUgc8OzIHNlIGFkbWl0ZW0gY2FpeGFzIGludGVpcmFzLCBxdWFsIGNvbmNsdXPDo28gdmFsZT8iLCJ0b3BpY0lkIjoiTTA2In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.mat-soma-diferenca-quantidades.json",
+        "mediaType": "application/json",
+        "sha256": "cd2d4a3676c02b71d0f49c6f298b9a9d758bcbcc54fe31522484695cfbcc64f3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDYifSx7ImlkIjoiYiIsInRleHQiOiIzNyJ9LHsiaWQiOiJjIiwidGV4dCI6IjU2In0seyJpZCI6ImQiLCJ0ZXh0IjoiMjgifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXNvbWEtZGlmZXJlbmNhLXF1YW50aWRhZGVzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBtYWlvciA9IE0gZSBtZW5vciA9IG0sIE0gKyBtID0gNzQgZSBNIOKIkiBtID0gMTguIDIuIFN1YnRyYWluZG8gYXMgZXF1YcOnw7VlcywgMm0gPSA1NiBlIG0gPSAyOCAoZSBNID0gNDYpLiA0NiDDqSBhIG1haW9yOyAzNyDDqSBtZXRhZGUgZGEgc29tYTsgNTYgw6kgbyBkb2JybyBkYSBtZW5vciwgbsOjbyBhIG1lbm9yLiIsInN0YXRlbWVudCI6IkR1YXMgcXVhbnRpZGFkZXMgc29tYW0gNzQgZSBzdWEgZGlmZXJlbsOnYSwgbWFpb3IgbWVub3MgbWVub3IsIMOpIDE4LiBRdWFsIMOpIGEgbWVub3I/IiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.varg25-sup-q12.json",
+        "mediaType": "application/json",
+        "sha256": "65ffc018cdb1083d82f2d2371ae12229d9f31c8aeaad57953dcdc23252ad7daf",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUiQgMzkuMDAwLDAwLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlIkIDM3LjUwMCwwMC4ifSx7ImlkIjoiYyIsInRleHQiOiJSJCAzMS41MDAsMDAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUiQgMjcuNTAwLDAwLiJ9LHsiaWQiOiJlIiwidGV4dCI6IlIkIDIyLjUwMCwwMC4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZhcmdpbmhhIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1LCBTVVBFUlZJU09SIFBFREFHw5NHSUNPLCBxdWVzdMOjbyAxMi4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENsYXVkZSwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZGFzIHByb3ZhcyBkZSAxOS8xMC8yMDI1OyBww6FnaW5hIDcsIGJsb2NvIGRvIGNhcmdvIFNVUEVSVklTT1IgUEVEQUfDk0dJQ08sIHF1ZXN0w6NvIDEyID0gQiBjb25mZXJpZGEgdmlzdWFsbWVudGU7IGl0ZW0gbsOjbyBhbnVsYWRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9hdmFuY2EtMjAyNi0xMS0xMi8xOTctZ2FiYXJpdG8tZGVmaW5pdGl2by0xLnBkZiIsInNoYTI1NiI6ImI5MDdkMzVlMTZlZGJjNWEyZTk4OTMyNzUzMjAyNGU5Yjk5MmRkYjBiOWJmZGJiZTgzNWUyYjliNzE4ZjM2NzUiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5Ny9hbmV4b3MvYTM4OTgyODMtNGQ0ZS00NTE2LTg1N2YtZWEwZmFiNGRhYTQ2LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmFyZ2luaGEg4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12YXJnaW5oYS0yMDI1LXN1cGVydmlzb3IvcTEyIiwibnVtYmVyIjoiMTIiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIFNVUEVSVklTT1IgUEVEQUfDk0dJQ087IHF1ZXN0w6NvIDEyIGNvbmZlcmlkYSB2aXN1YWxtZW50ZSBuYSBww6FnaW5hIDQgcmVuZGVyaXphZGEgKGVudW5jaWFkbywgYWx0ZXJuYXRpdmFzLCBzw61tYm9sb3MgZSBvcmRlbSk7IGNvcnJpZ2lkYXMgYXBlbmFzIHF1ZWJyYXMgZGUgbGluaGEvaGlmZW5pemHDp8Ojby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMTk3LXByb3ZhLXN1cGVydmlzb3ItcGVkYWdnaWNvLnBkZiIsInNoYTI1NiI6IjQwOWU0ZTgxNjRlZGM4Zjk3MjRiZTAyODU3ZmY3NDdlY2ZkMDNmOGJhOTViYTEyMGI4MDk0NWY2NTU4YzA2ZDgiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzE5Ny9hbmV4b3MvNGJlZWYxNDItMGVhNS00OGY2LTk4YzctNTAyNzUxYWY4ZmM2LnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQmFzZSBhZG90YWRhOiBMZWkgOS42MTAvMTk5OCwgYXJ0LiA4wrosIElWLCBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLCBzZW0gb2JyYSBkZSB0ZXJjZWlybyBuZWNlc3PDoXJpYTsgbsOjbyBow6EgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIHNlIGFmaXJtYSBjb25zZW50aW1lbnRvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlNVUEVSVklTT1IgUEVEQUfDk0dJQ08iLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjV9LCJpZCI6InZhcmcyNS1zdXAtcTEyIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBBbmEgcGFnYSBhLCBCcnVubyBwYWdhIDYwLjAwMCDiiJIgYS4gSWd1YWxhbmRvIG9zIHNhbGRvczogNjUuMDAwIOKIkiBhID0gNTAuMDAwIOKIkiAoNjAuMDAwIOKIkiBhKSwgaXN0byDDqSwgNjUuMDAwIOKIkiBhID0gYSDiiJIgMTAuMDAwLCBsb2dvIDJhID0gNzUuMDAwIGUgYSA9IFIkIDM3LjUwMCwwMCAoQnJ1bm8gcGFnYSBSJCAyMi41MDAsMDAgZSBhbWJvcyBmaWNhbSBjb20gUiQgMjcuNTAwLDAwKS4gMi4gUiQgMjIuNTAwLDAwIMOpIGEgcGFydGUgZGUgQnJ1bm8gZSBSJCAyNy41MDAsMDAgw6kgbyBzYWxkbyBmaW5hbDsgUiQgMzkuMDAwLDAwIGUgUiQgMzEuNTAwLDAwIGRlaXhhbSBzYWxkb3MgZGlmZXJlbnRlcy4gUmVzcG9zdGE6IGFsdGVybmF0aXZhIEIuIiwic3RhdGVtZW50IjoiVW0gY2FzYWwsIEFuYSBlIEJydW5vLCBkZWNpZGUgY29tcHJhciB1bSBjYXJybyBxdWUgY3VzdGEgUiQgNjAuMDAwLDAwLiBDYWRhIHVtIHRlbSB1bSB1bWEgcXVhbnRpYSBndWFyZGFkYSBuYSBwb3VwYW7Dp2EgZSBjb21wcmFyw6NvIG8gY2Fycm8gw6AgdmlzdGEsIGNhZGEgdW0gcGFnYW5kbyB1bWEgZGV0ZXJtaW5hZGEgcXVhbnRpYS4gU2FiZS1zZSBxdWUgQW5hIHRlbSBSJDY1LjAwMCwwMCBndWFyZGFkb3MgZSBCcnVubyB0ZW0gUiQ1MC4wMDAsMDAuIEEgcXVhbnRpYSBxdWUgY2FkYSB1bSBwYWdhcsOhIHNlcsOhIHRhbCBxdWUsIGFww7NzIGEgY29tcHJhLCBvcyBkb2lzIGZpY2Fyw6NvIGNvbSBvcyBtZXNtb3MgdmFsb3JlcyBndWFyZGFkb3MgbmEgcG91cGFuw6dhLiBOZXN0YSBzaXR1YcOnw6NvLCBxdWFsIG8gdmFsb3IgcXVlIEFuYSBwYWdhcsOhIHBlbG8gY2Fycm8/IiwidG9waWNJZCI6Ik0wNiJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1jbGF1ZGUtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M06.p.vinh25-cont-q11.json",
+        "mediaType": "application/json",
+        "sha256": "8e00518496067a361ce47d3ae428ed9f6053e6f3dc010f6b7919e948ded6aa6a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoieCA9IDAsNSBlIHkgPSAwIn0seyJpZCI6ImIiLCJ0ZXh0IjoieCA9IOKIkjIgZSB5ID0gNSJ9LHsiaWQiOiJjIiwidGV4dCI6InggPSAyIGUgeSA9IOKIkjUifSx7ImlkIjoiZCIsInRleHQiOiJ4ID0gMCBlIHkgPSAxIn0seyJpZCI6ImUiLCJ0ZXh0IjoieCA9IDUgZSB5ID0g4oiSMCwyNSJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgVmluaGVkbyDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDMvMjAyNSwgQ09OVEFET1IsIHF1ZXN0w6NvIDExLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ2xhdWRlLCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgcHJvdmFzIG9iamV0aXZhcyBhcGxpY2FkYXMgZW0gMDEvMDIvMjAyNiBjb25mb3JtZSBlZGl0YWwgZGUgY29udm9jYcOnw6NvOyBww6FnaW5hIDEsIGJsb2NvIGRvIGNhcmdvIENPTlRBRE9SLCBxdWVzdMOjbyAxMSA9IEIgY29uZmVyaWRhIHZpc3VhbG1lbnRlOyBpdGVtIG7Do28gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvYXZhbmNhLTIwMjYtMTEtMTIvMjI5LWdhYmFyaXRvLWRlZmluaXRpdm8tMS5wZGYiLCJzaGEyNTYiOiI5MjNhY2FhZjlkMzhlNWM4ZjQ4M2IzY2U5ZmQyZDlkYzZjMjE1MDI3Y2ViMGE0ZWYzNWY3ZDBhYmUyNGNjMzhlIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzI3OTUxNDEzLTA0YzYtNDRmOC05MjVhLWViMGIzOTIxMTczOS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFZpbmhlZG8g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAzLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS12aW5oZWRvLTIwMjUtY29udGFkb3IvcTExIiwibnVtYmVyIjoiMTEiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsIGRvIGNhcmdvIENPTlRBRE9SOyBxdWVzdMOjbyAxMSBjb25mZXJpZGEgdmlzdWFsbWVudGUgbmEgcMOhZ2luYSA0IHJlbmRlcml6YWRhIChlbnVuY2lhZG8sIGFsdGVybmF0aXZhcywgc8OtbWJvbG9zIGUgb3JkZW0pOyBjb3JyaWdpZGFzIGFwZW5hcyBxdWVicmFzIGRlIGxpbmhhL2hpZmVuaXphw6fDo28uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2F2YW5jYS0yMDI2LTExLTEyLzIyOS1wcm92YS1jb250YWRvci5wZGYiLCJzaGEyNTYiOiJmOTA5ZTljOGM1MTE1YmU0OGI2MTgxYTlmODBhY2ZiYjRjMTBhY2I4NmUyNDY4OTE0ZjExNGRiYWUzOWJkNTEyIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjkvYW5leG9zLzk3NjA2OWVjLTBiMTctNDhhOS05MGQzLTM0YzAzMzc2YTgzYS5wZGYifSwicmV1c2UiOnsibm90ZSI6IkJhc2UgYWRvdGFkYTogTGVpIDkuNjEwLzE5OTgsIGFydC4gOMK6LCBJViwgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIG9icmEgZGUgdGVyY2Vpcm8gbmVjZXNzw6FyaWE7IG7Do28gaMOhIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIGUgbsOjbyBzZSBhZmlybWEgY29uc2VudGltZW50by4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJDT05UQURPUiIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoidmluaDI1LWNvbnQtcTExIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWNsYXVkZS1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBEYSBwcmltZWlyYSBlcXVhw6fDo28sIHkgPSAxIOKIkiAyeC4gU3Vic3RpdHVpbmRvIG5hIHNlZ3VuZGE6IDN4ICsgNCgxIOKIkiAyeCkgPSAxNCwgZW50w6NvIOKIkjV4ID0gMTAgZSB4ID0g4oiSMjsgbG9nbyB5ID0gMSDiiJIgMijiiJIyKSA9IDUuIENvbmZlcsOqbmNpYTogMyjiiJIyKSArIDQgwrcgNSA9IDE0LiAyLiB4ID0gMCw1IGUgeSA9IDAgZSB4ID0gMCBlIHkgPSAxIHNhdGlzZmF6ZW0gc8OzIGEgcHJpbWVpcmEgZXF1YcOnw6NvOyB4ID0gMiBlIHkgPSDiiJI1IHRyb2NhIG9zIHNpbmFpczsgeCA9IDUgZSB5ID0g4oiSMCwyNSBzYXRpc2ZheiBzw7MgYSBzZWd1bmRhIGVxdWHDp8OjbyAoMTUg4oiSIDEgPSAxNCksIG1hcyBuw6NvIGEgcHJpbWVpcmEgKDEwIOKIkiAwLDI1IOKJoCAxKS4gUmVzcG9zdGE6IGFsdGVybmF0aXZhIEIuIiwic3RhdGVtZW50IjoiVm9jw6ogZXN0w6EgZXN0dWRhbmRvIG1hdGVtw6F0aWNhIHBhcmEgY29uY3Vyc29zIHDDumJsaWNvcyBlLCBlbSBtZWlvIGFvcyBkaXZlcnNvcyBleGVyY8OtY2lvcyBxdWUgZXN0YXZhIHJlc29sdmVuZG8sIHNlIGRlcGFyb3UgY29tIG8gc2VndWludGUgcHJvYmxlbWE6XG5cbkRhZG8gbyBzaXN0ZW1hIGRlIGVxdWHDp8O1ZXMgYWJhaXhvLCBlbmNvbnRyZSB0b2RhcyBhcyBzb2x1w6fDtWVzIGRvIHNpc3RlbWE6XG5cbjJ4ICsgeSA9IDFcbjN4ICsgNHkgPSAxNFxuXG5Bc3NpbmFsZSBhIGFsdGVybmF0aXZhIHF1ZSBpbmRpY2EgbyBwYXIgb3JkZW5hZG8gcXVlIHJlcHJlc2VudGEgYSBzb2x1w6fDo28gZGVzc2Ugc2lzdGVtYSBkZSBlcXVhw6fDtWVzLiIsInRvcGljSWQiOiJNMDYifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtY2xhdWRlLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M06.p.amer26-pes-q18",
+    "admin.2026-11.M06.p.cerq25-cont-q19",
+    "admin.2026-11.M06.p.garca26-dir-q12",
+    "admin.2026-11.M06.p.mat-capacidade-assentos",
+    "admin.2026-11.M06.p.mat-coeficiente-nulo",
+    "admin.2026-11.M06.p.mat-distancias-encontro",
+    "admin.2026-11.M06.p.mat-duas-balancas-substituicao",
+    "admin.2026-11.M06.p.mat-duas-tarifas-encontro",
+    "admin.2026-11.M06.p.mat-equacao-denominadores",
+    "admin.2026-11.M06.p.mat-equacao-fracao-incognita-ambos",
+    "admin.2026-11.M06.p.mat-equacao-impossivel",
+    "admin.2026-11.M06.p.mat-equacao-interpreta-dominio",
+    "admin.2026-11.M06.p.mat-fracao-numero-restante",
+    "admin.2026-11.M06.p.mat-ingressos-dois-precos",
+    "admin.2026-11.M06.p.mat-mistura-moedas-tres-relacao",
+    "admin.2026-11.M06.p.mat-moedas-contagem",
+    "admin.2026-11.M06.p.mat-numero-algarismos",
+    "admin.2026-11.M06.p.mat-parametro-indeterminacao",
+    "admin.2026-11.M06.p.mat-porcentagem-equacao-saldo",
+    "admin.2026-11.M06.p.mat-sistema-congelar-variavel",
+    "admin.2026-11.M06.p.mat-sistema-proporcional",
+    "admin.2026-11.M06.p.mat-solucao-inteira-restrita",
+    "admin.2026-11.M06.p.mat-soma-diferenca-quantidades",
+    "admin.2026-11.M06.p.varg25-sup-q12",
+    "admin.2026-11.M06.p.vinh25-cont-q11"
+  ]
+}

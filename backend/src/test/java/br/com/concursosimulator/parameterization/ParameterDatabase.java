@@ -31,7 +31,7 @@ final class ParameterDatabase implements AutoCloseable {
         if(factory!=null)factory.close();var bean=new LocalContainerEntityManagerFactoryBean();bean.setDataSource(ds);
         bean.setPackagesToScan(templates?new String[]{"br.com.concursosimulator.questionbank.infrastructure.persistence","br.com.concursosimulator.mockexam.infrastructure.persistence","br.com.concursosimulator.parameterization.infrastructure.persistence"}
                 :new String[]{"br.com.concursosimulator.questionbank.infrastructure.persistence","br.com.concursosimulator.mockexam.infrastructure.persistence"});
-        bean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());bean.setJpaPropertyMap(Map.of("hibernate.hbm2ddl.auto","validate"));bean.afterPropertiesSet();
+        bean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());br.com.concursosimulator.questionbank.LegacySchemaMapping.apply(bean,jdbc);bean.setJpaPropertyMap(Map.of("hibernate.hbm2ddl.auto","validate"));bean.afterPropertiesSet();
         factory=bean.getObject();entities=SharedEntityManagerCreator.createSharedEntityManager(factory);manager=new JpaTransactionManager(factory);questions=new JpaQuestionStore(entities,manager);
         if(templates){store=new JpaTemplateStore(entities,manager);eligible=new JpaEligibleTemplates(entities);}
     }
@@ -45,7 +45,7 @@ final class ParameterDatabase implements AutoCloseable {
     }
     void bankDecision(UUID qid,EditorialDecision.Action action) {
         questions.transaction(s -> {var q=s.loadForUpdate(qid).orElseThrow();var r=q.latest();
-            q.decide(new EditorialDecision(action,q.id(),r.id(),r.fingerprint(),"Fixture",Instant.parse("2026-10-15T00:00:00Z"),Set.of(EditorialDecision.Check.values()),"Teste isolado"));s.save(q);return null;});
+            q.decide(new EditorialDecision(action,q.id(),r.id(),r.fingerprint(),"Fixture",Instant.parse("2026-10-15T00:00:00Z"),Set.of(EditorialDecision.Check.values()),"Teste isolado",EditorialDecision.ReviewKind.HUMAN_PEER));s.save(q);return null;});
     }
     TemplateVersion approve(TemplateDefinition d) {
         var uc=new TemplateUseCases(store);var v=uc.register(d,0).version();

@@ -56,7 +56,8 @@ class AttemptHttpTests {
         var cleared=send("PUT",url,browser,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":1,\"alternativeId\":null}");
         assertThat(cleared.statusCode()).isEqualTo(200);assertThat(json.readTree(cleared.body()).get("items").get(0).get("selectedAlternativeId").isNull()).isTrue();
         assertThat(send("PUT",url,browser,answer.replace(alt,UUID.randomUUID().toString())).statusCode()).isEqualTo(409);
-        assertThat(jdbc.queryForObject("select count(*) from app_user",Integer.class)).isZero();
+        assertThat(jdbc.queryForObject("select count(*) from app_user",Integer.class)).isEqualTo(1);
+        assertThat(jdbc.queryForObject("select owner_id from admin_registration where id=1",UUID.class)).isNotNull();
     }
     @Test @Order(2) void invalidInputsCsrfAndInsufficientPoolNeverCreatePartialAttempts() throws Exception {
         var b=browser(null);int before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
@@ -185,14 +186,14 @@ class AttemptHttpTests {
         var q=br.com.concursosimulator.questionbank.domain.Question.draft(UUID.randomUUID(),new br.com.concursosimulator.questionbank.domain.QuestionOrigin("negative-attempt",UUID.randomUUID().toString()),UUID.randomUUID(),c);
         store.transaction(s -> {s.insert(q);return null;});
         for (var action:List.of(br.com.concursosimulator.questionbank.domain.EditorialDecision.Action.SUBMIT,br.com.concursosimulator.questionbank.domain.EditorialDecision.Action.APPROVE)) {
-            store.transaction(s -> {var loaded=s.loadForUpdate(q.id()).orElseThrow(); loaded.decide(new br.com.concursosimulator.questionbank.domain.EditorialDecision(action,q.id(),q.latest().id(),c.fingerprint(),"Fixture",java.time.Instant.now(),Set.of(br.com.concursosimulator.questionbank.domain.EditorialDecision.Check.values()),"Controle negativo sintético"));s.save(loaded);return null;});
+            store.transaction(s -> {var loaded=s.loadForUpdate(q.id()).orElseThrow(); loaded.decide(new br.com.concursosimulator.questionbank.domain.EditorialDecision(action,q.id(),q.latest().id(),c.fingerprint(),"Fixture",java.time.Instant.now(),Set.of(br.com.concursosimulator.questionbank.domain.EditorialDecision.Check.values()),"Controle negativo sintético",br.com.concursosimulator.questionbank.domain.EditorialDecision.ReviewKind.HUMAN_PEER));s.save(loaded);return null;});
         }
         int before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
         try {
             var r=send("POST","/api/v1/attempts",browser(null),createBody(UUID.randomUUID(),1));
             assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
             assertThat(jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(before);
-        } finally { store.transaction(s -> {var loaded=s.loadForUpdate(q.id()).orElseThrow();loaded.decide(new br.com.concursosimulator.questionbank.domain.EditorialDecision(br.com.concursosimulator.questionbank.domain.EditorialDecision.Action.WITHDRAW,q.id(),q.latest().id(),c.fingerprint(),"Fixture",java.time.Instant.now(),Set.of(),"Remover controle negativo"));s.save(loaded);return null;}); }
+        } finally { store.transaction(s -> {var loaded=s.loadForUpdate(q.id()).orElseThrow();loaded.decide(new br.com.concursosimulator.questionbank.domain.EditorialDecision(br.com.concursosimulator.questionbank.domain.EditorialDecision.Action.WITHDRAW,q.id(),q.latest().id(),c.fingerprint(),"Fixture",java.time.Instant.now(),Set.of(),"Remover controle negativo",null));s.save(loaded);return null;}); }
     }
     @Test @Order(99) void unavailableSessionDatabaseReturns503BeforeMvcAndReadinessStillWorks() throws Exception {
         var b=browser(null);PG.stop();

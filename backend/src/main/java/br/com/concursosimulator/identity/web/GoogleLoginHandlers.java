@@ -25,13 +25,15 @@ import org.springframework.stereotype.Component;
 @Component
 public class GoogleLoginHandlers implements AuthenticationSuccessHandler, AuthenticationFailureHandler {
     private final ResolveExternalIdentityUseCase identities;
+    private final AdministrativeGoogleCompletion administrative;
     private final LoginOptions properties;
     private final HttpSessionSecurityContextRepository contexts;
     private final HttpSessionOAuth2AuthorizedClientRepository clients;
 
     public GoogleLoginHandlers(ResolveExternalIdentityUseCase identities, LoginOptions properties,
-                              HttpSessionSecurityContextRepository contexts, HttpSessionOAuth2AuthorizedClientRepository clients) {
+                              HttpSessionSecurityContextRepository contexts, HttpSessionOAuth2AuthorizedClientRepository clients, AdministrativeGoogleCompletion administrative) {
         this.identities = identities;
+        this.administrative = administrative;
         this.properties = properties;
         this.contexts = contexts;
         this.clients = clients;
@@ -48,10 +50,11 @@ public class GoogleLoginHandlers implements AuthenticationSuccessHandler, Authen
                 return;
             }
             var external = new ExternalIdentity("google", "https://accounts.google.com", user.getSubject());
-            var principal = new UserPrincipal(identities.execute(external));
-            var minimal = UsernamePasswordAuthenticationToken.authenticated(principal, null,
-                    List.of(new SimpleGrantedAuthority("ROLE_USER")));
+            // A link completion may redirect, which commits Spring Session immediately.
+            // Remove provider credentials before entering any completion/response path.
             clients.removeAuthorizedClient("google", authentication, request, response);
+            if(administrative.completeLink(request,response,external)) return;
+            var minimal = administrative.googleAuthentication(identities.execute(external));
             var context = SecurityContextHolder.createEmptyContext();
             context.setAuthentication(minimal);
             SecurityContextHolder.setContext(context);

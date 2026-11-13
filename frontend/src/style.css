@@ -59,58 +59,10 @@ h2 { font-size: 1.5rem; } h3 { font-size: 1.15rem; }
 .muted, small { color: var(--muted); }
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
 .actions { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+
+.study-entry label, .lesson-role-filter label { font-size: .85rem; font-weight: 650; }
+.study-entry select, .lesson-role-filter select { width: 100%; min-width: 0; }
 .page-intro { margin-bottom: 28px; }.page-intro h1 { margin: 10px 0 12px; font-size: clamp(1.9rem, 3vw, 2.4rem); letter-spacing: -.025em; }.page-intro > p:last-child { color: var(--muted); font-size: 1rem; max-width: 46rem; }
 button.secondary { background: var(--paper); color: var(--ink); border-color: var(--control-border); }
 button.secondary:not(:disabled):hover { background: var(--canvas); }
-.lesson-library, .lesson-reader { background: transparent; border: 0; padding: 0; }.lesson-disciplines { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 12px; margin: 26px 0 32px; }.lesson-disciplines button { background: var(--paper); color: var(--ink); border-color: var(--line); text-align: left; padding: 18px; font-size: .8rem; }.lesson-disciplines button strong, .lesson-disciplines button small { display: block; margin-top: 10px; }.lesson-disciplines button small { font-size: .72rem; font-weight: 400; }.lesson-disciplines button[aria-pressed="true"], .lesson-disciplines button:hover { background: var(--blue-soft); border-color: var(--blue-border); }
-.library-layout { display: grid; grid-template-columns: minmax(0, 1fr) 270px; align-items: start; gap: 28px; }.reader-layout { display: grid; grid-template-columns: minmax(0, 1fr); gap: 20px; }.library-layout > div { min-width: 0; }.library-layout > .study-guide { font-size: .85rem; }.lesson-filters { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr); gap: 16px; }.lesson-filters label { display: grid; gap: 6px; font-size: .75rem; font-weight: 600; }.lesson-filters input, .lesson-filters select { width: 100%; min-width: 0; }.library-layout > div > p { color: var(--muted); font-size: .75rem; margin: 20px 0; }
-.lesson-list { padding: 0; margin: 0; list-style: none; border-top: 1px solid var(--line); }.lesson-list button { display: flex; align-items: center; gap: 16px; width: 100%; text-align: left; color: var(--ink); background: var(--paper); padding: 18px; border: 0; border-bottom: 1px solid var(--line); border-radius: 0; font-size: .85rem; }.lesson-list button:hover { background: var(--blue-soft); }.lesson-list small { display: block; font-weight: 400; font-size: .72rem; margin-top: 4px; }.lesson-code { color: var(--teal); font-size: .7rem; font-variant-numeric: tabular-nums; flex-shrink: 0; }.library-empty { border: 1px dashed var(--control-border); border-radius: 14px; padding: 28px; background: var(--paper); }
-.lesson-reader > .reader-index { margin-top: 24px; }.lesson-reader > .page-intro { margin-top: 24px; }.reader-index { border: 1px solid var(--line); border-radius: 14px; padding: 22px; background: var(--paper); }.reader-index h2 { font-size: 1rem; margin-top: 0; }.reader-index nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }.reader-index nav button { text-align: left; background: transparent; color: var(--muted); border-radius: 7px; padding: 8px 10px; font-size: .75rem; font-weight: 500; }.reader-index nav button small { color: var(--teal); }.reader-index nav button[aria-current], .reader-index nav button:hover { background: var(--blue-soft); color: var(--blue); }.lesson-practice { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); font-size: .75rem; }.lesson-practice select { display: block; width: 100%; margin: 6px 0 14px; }.lesson-practice button { width: 100%; }.lesson-pagination { display: flex; justify-content: space-between; gap: 12px; margin: 24px 0; }
-@media (max-width: 1100px) { .lesson-disciplines { grid-template-columns: repeat(3, minmax(0, 1fr)); }.library-layout { grid-template-columns: minmax(0, 1fr) 230px; gap: 20px; } }
-@media (max-width: 750px) { .lesson-disciplines { grid-template-columns: repeat(2, minmax(0, 1fr)); }.library-layout, .reader-layout { grid-template-columns: 1fr; }.lesson-filters { grid-template-columns: 1fr; }.lesson-disciplines button { padding: 16px; }.reader-index nav { grid-template-columns: repeat(2, minmax(0, 1fr)); }.reader-index nav button { overflow-wrap: anywhere; } }
-
-.lesson-practice-workspace { padding: 0; border: 0; background: transparent; }
-.native-lesson { margin: 0; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); padding: 8px clamp(18px, 3vw, 40px); min-width: 0; font-size: 1rem; line-height: 1.8; overflow-wrap: anywhere; }
-.native-lesson > section, .native-lesson > div { margin: 0; padding: 28px 0; border: 0; border-radius: 0; background: transparent; }
-.native-lesson > section + *, .native-lesson > div + * { border-top: 1px solid var(--line); }
-.native-lesson h2 { font-size: clamp(1.25rem, 2vw, 1.55rem); margin: 0 0 20px; line-height: 1.35; }
-.native-lesson h3 { margin: 22px 0 12px; line-height: 1.4; }.native-lesson h4 { margin: 18px 0 10px; }
-.native-lesson p { margin: 12px 0; }.native-lesson li { padding: 4px 0; }.native-lesson ul, .native-lesson ol { padding-left: 24px; }
-.native-lesson .native-note, .native-lesson .native-example, .native-lesson .native-formula, .native-lesson .native-reference { background: var(--canvas); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; margin: 20px 0; }
-.native-lesson .native-solution { margin: 12px 0 0; border-top: 1px solid var(--line); padding-top: 12px; }
-.native-lesson .native-label { display: block; color: var(--teal); text-transform: uppercase; letter-spacing: .09em; font-size: .7rem; font-weight: 750; margin-bottom: 12px; }
-.native-lesson .native-attention { border-left: 3px solid var(--lesson-attention); padding-left: 22px; margin: 24px 0; }
-.native-lesson .native-summary { border-left: 3px solid var(--teal); padding-left: 22px; margin: 24px 0; }
-.native-lesson .native-description { color: var(--muted); font-size: .88rem; }.native-lesson .native-sources { font-size: .9rem; }
-.native-lesson figure { margin: 24px 0; max-width: 100%; }.native-lesson figcaption { color: var(--muted); font-size: .8rem; margin-top: 12px; }
-.native-lesson svg { display: block; width: 100%; height: auto; border-radius: 10px; }.native-lesson figure[aria-label="Caminho do exemplo"] { display: grid; gap: 8px; justify-items: stretch; text-align: center; }.native-lesson figure[aria-label="Caminho do exemplo"] > div { border: 1px solid var(--line); border-radius: 8px; padding: 16px; background: var(--canvas); }
-.native-lesson .native-anchor { border: 0; background: transparent; color: var(--blue); font: inherit; text-align: left; text-decoration: underline; padding: 3px 0; }.native-lesson .native-anchor:hover { color: var(--ink); background: transparent; }
-.native-lesson [id] { scroll-margin-top: 24px; }.native-lesson details { border: 1px solid var(--line); border-radius: 10px; padding: 16px; margin: 18px 0; }.native-lesson summary { cursor: pointer; font-weight: 650; }
-.native-lesson .native-table { max-width: 100%; overflow-x: auto; margin: 20px 0; }.native-lesson table { width: 100%; border-collapse: collapse; font-size: .9rem; }.native-lesson th, .native-lesson td { padding: 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; min-width: 100px; }.native-lesson th { background: var(--blue-soft); }.native-lesson caption { text-align: left; font-weight: 650; }
-.native-lesson math { max-width: 100%; overflow-x: auto; padding: 14px 4px; font-size: 1.3em; }.native-lesson var { color: var(--teal); font-family: Georgia, serif; font-weight: 600; }
-.native-percentage-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 4px; max-width: 380px; padding: 16px; background: var(--canvas); border-radius: 10px; }.native-percentage-grid > span { aspect-ratio: 1; background: var(--paper); border: 1px solid var(--lesson-percent-border); border-radius: 3px; }.native-percentage-grid > .filled { background: var(--teal); }
-.native-percentage-bar > div { display: grid; height: 36px; overflow: hidden; border-radius: 8px; border: 1px solid var(--lesson-percent-border); }.native-percentage-bar span:first-child { background: var(--teal); }.native-percentage-bar span:last-child { background: var(--teal-soft); }.native-percentage-bar p { font-size: .85rem; color: var(--muted); }
-.native-load-error { padding: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
-.native-lesson .native-contents { list-style: none; padding-left: 0; }.native-lesson .native-contents li { padding: 4px 0; }
-.native-diagram-view { max-width: 100%; overflow-x: auto; }.native-lesson .native-diagram-view svg { min-width: 640px; }.native-diagram-help { display: none; }
-@media (max-width: 700px) { .native-diagram-help { display: block; font-size: .8rem; color: var(--muted); } }
-.lesson-practice-panel { margin-top: 24px; border: 1px solid var(--line); border-radius: 14px; background: var(--paper); }
-.lesson-practice-panel > summary { padding: 20px 24px; cursor: pointer; }
-.lesson-practice-panel > summary > span { display: inline-grid; gap: 4px; vertical-align: middle; margin-left: 6px; }
-.lesson-practice-panel > summary small { font-size: .8rem; color: var(--muted); font-weight: 400; }
-.lesson-practice-panel[open] > summary { border-bottom: 1px solid var(--line); }
-.lesson-practice-panel-body { padding: 24px; }
-.practice-standalone > .lesson-practice-panel-body { padding: 0; }
-.lesson-practice-panel .lesson-practice { margin: 0; padding: 0; border: 0; font-size: .9rem; }
-.lesson-practice-panel .lesson-practice select { max-width: 440px; }
-.lesson-practice-panel .lesson-practice button { width: auto; }
-.inline-practice-run { margin-top: 24px; }
-.lesson-practice-panel .inline-practice-run { padding-top: 24px; border-top: 1px solid var(--line); }
-.collapse-practice { margin-top: 20px; }
-@media (max-width: 540px) { .lesson-practice-panel > summary, .lesson-practice-panel-body { padding: 18px; } }
-.study-entry label, .lesson-role-filter label { font-size: .85rem; font-weight: 650; }
-.study-entry select, .lesson-role-filter select { width: 100%; min-width: 0; }
-.lesson-role-filter { display: grid; gap: 8px; max-width: 440px; margin-top: 24px; }
-.practice-context { margin: 20px 0; padding: 20px; border: 1px solid var(--line); border-radius: 12px; background: var(--paper); }
-.practice-context h2 { margin-top: 0; font-size: 1.1rem; }
 nav[aria-label="Navegação da prática"], nav[aria-label="Paginação das práticas"] { display: flex; flex-wrap: wrap; gap: 10px; margin: 16px 0; }

@@ -39,10 +39,10 @@ abaixo estão implementados e verificados localmente em
 
 ## 5. Aulas e prática da aula (depende de 1)
 
-- [ ] 5.1 Aplicar Foco à biblioteca: busca, filtro por disciplina em pílulas com contagem e lista de assuntos.
-- [ ] 5.2 Aplicar Foco ao leitor nativo: corpo em 18px, tokens por tom de bloco, tabelas, MathML, grades e barras de percentual, placa clara para SVG, índice e paginação. Preservar documentos, validação, carregamento e erro.
-- [ ] 5.3 Aplicar Foco ao painel, à realização, à correção e ao histórico da prática da aula.
-- [ ] 5.4 Verificar as 51 aulas nos dois temas (contraste dos blocos e legibilidade das figuras), concluir as regressões e a documentação.
+- [x] 5.1 Aplicar Foco à biblioteca: busca, filtro por disciplina em pílulas com contagem e lista de assuntos.
+- [x] 5.2 Aplicar Foco ao leitor nativo: corpo em 18px, tokens por tom de bloco, tabelas, MathML, grades e barras de percentual, placa clara para SVG, índice e paginação. Preservar documentos, validação, carregamento e erro.
+- [x] 5.3 Aplicar Foco ao painel, à realização, à correção e ao histórico da prática da aula.
+- [x] 5.4 Verificar as 51 aulas nos dois temas (contraste dos blocos e legibilidade das figuras), concluir as regressões e a documentação.
 
 ## 6. Verificação integrada e revisão final (depende de 1 a 5)
 

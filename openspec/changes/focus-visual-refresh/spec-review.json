@@ -1,0 +1,397 @@
+{
+  "version": 1,
+  "status": "completed",
+  "gate_status": "semantic-review-completed-awaiting-user-merge-approval",
+  "review_execution_status": "completed",
+  "review_result": "no-blocking-high-or-medium-findings",
+  "spec": "focus-visual-refresh",
+  "pr": 204,
+  "base_sha": "cf8741f64b1852180e7a3737cd31a1743d6840f9",
+  "reviewed_head_sha": "1623e3c67ac0c9027b52de680dfffee4ea8f19d9",
+  "diff_sha256": "eafb12faf37db75735144a119784ea54fcbda261ed8ae387d5735534e27fd899",
+  "reviewer": {
+    "model": "anthropic/claude-opus-5-5#medium",
+    "session": "Claude Code: um subagente general-purpose novo por rodada, disparado pela sessão coordenadora c2b92b8e com o texto do perfil spec-reviewer inline (o perfil não estava carregado na sessão; escolha do usuário: agente genérico com as mesmas regras). A rodada 6 é a vigente.",
+    "independent_context": true,
+    "read_only": true,
+    "harness_model": "claude-opus-5-5",
+    "reasoning_effort": "medium",
+    "token_metrics_available": false,
+    "tokens": null
+  },
+  "reviewed_at": "2026-11-13T20:20:00Z",
+  "risk": {
+    "classification": "critical",
+    "reason": "Só frontend, mas toca a fronteira de exposição antecipada do gabarito: derivação do desfecho e checagem de totais no validador tardio (attempt-result-api.ts), tipo Result e conteúdo do bundle inicial."
+  },
+  "review_rounds": [
+    {
+      "round": 1,
+      "base_sha": "471d3b11b05183fed9987bc42badd6073d9b9c65",
+      "head_sha": "fe34d8a",
+      "diff_sha256": "3d80ced0c1c66a659e737439f933215a38b576cf3f89912c38f4f02f4580c7ef",
+      "result": "0 bloqueadores e altos; 2 médios; 6 baixos",
+      "fixes": "#206"
+    },
+    {
+      "round": 2,
+      "base_sha": "cf8741f64b1852180e7a3737cd31a1743d6840f9",
+      "head_sha": "8b1245b626f999c0eb352d62f89bfb911f2bd03d",
+      "diff_sha256": "73988d3fcd0a4a96609abfcb9e0739dd56edc4782bc236061a7bd6dc622dc18e",
+      "result": "4 baixos",
+      "fixes": "#207"
+    },
+    {
+      "round": 3,
+      "base_sha": "cf8741f64b1852180e7a3737cd31a1743d6840f9",
+      "head_sha": "29321f3d9d3aaddfb9931acee9f6207838db4a9c",
+      "diff_sha256": "b0c57f30fe580717be4852c4269155c35cfc84b6b3b431871586a7d53922bc19",
+      "result": "3 baixos",
+      "fixes": "#208"
+    },
+    {
+      "round": 4,
+      "base_sha": "cf8741f64b1852180e7a3737cd31a1743d6840f9",
+      "head_sha": "e0a5dacad266ea4894263a5fd11c176f916b9557",
+      "diff_sha256": "a227f96de5a1aef607c7089fd9f47b2c2521eafd4cebdb3549a2c728fa8a6a72",
+      "result": "3 baixos (L3 aceito como limite)",
+      "fixes": "#211"
+    },
+    {
+      "round": 5,
+      "base_sha": "cf8741f64b1852180e7a3737cd31a1743d6840f9",
+      "head_sha": "b1b2e0c87569f814dd865a87c7cc54ad1d124294",
+      "diff_sha256": "924b213e96a5d0c0179917a76e13ebbce6c815c53fb10e6b4c1c7b95064a16c0",
+      "result": "5 baixos",
+      "fixes": "#215"
+    },
+    {
+      "round": 6,
+      "base_sha": "cf8741f64b1852180e7a3737cd31a1743d6840f9",
+      "head_sha": "1623e3c67ac0c9027b52de680dfffee4ea8f19d9",
+      "diff_sha256": "eafb12faf37db75735144a119784ea54fcbda261ed8ae387d5735534e27fd899",
+      "result": "0 bloqueadores, altos e médios; 2 baixos adiados (#216)",
+      "fixes": null
+    }
+  ],
+  "triage_criterion": "Decisão do usuário em 2026-11-13, após a rodada 5: na rodada 6 só bloqueiam achados bloqueadores, altos ou médios, ou regressões das correções; achados baixos novos vão para issue própria (#216).",
+  "coverage": {
+    "requirements": "Specs visual-foundation e study-experience do delta, proposal, design e tasks; decisão 5.5 da biblioteca; requisitos anteriores de biblioteca e atalhos.",
+    "architecture": "Mudança só de frontend; ADR 0001/0002 e checklist de endpoints não se aplicam; CSS por área sem camadas artificiais.",
+    "integration": "Épica com merge-base bfcda06 e base cf8741f; merge-tree sem conflitos; lesson-practice-api (teto de 25) e fixtures de main compatíveis com a checagem de desfechos; e2e topic-practice de main independente da biblioteca.",
+    "security": "correctAlternativeId só no validador carregado por import() tardio; Result sem id corretivo; realização sem desfecho; tema guarda só light/dark; sem CSP afetada nem requisição externa de fonte.",
+    "persistence": "Sem banco, migração ou transação; apenas a preferência de tema no localStorage.",
+    "tests": "Unitários de tokens, contraste e cores literais, tema, resultado, validador tardio, workspace e biblioteca; e2e focus-review, result-history e lesson-themes (51 aulas nos dois temas, com fórmulas).",
+    "maintenance": "README com tokens, chave do tema, folhas por área e limites; listeners e observer liberados no cleanup."
+  },
+  "limitations": [
+    "Revisão estática somente leitura: o revisor não executou testes, build, aplicação, rede nem banco; contraste avaliado por tokens, CSS e amostragem manual.",
+    "O perfil .claude/agents/spec-reviewer.md não estava carregado na sessão; foi usado subagente general-purpose com modelo opus, esforço medium e o texto do perfil inline, por escolha do usuário.",
+    "Rodada 4: o revisor gravou um arquivo temporário em /tmp durante uma consulta, fora do repositório. A partir da rodada 5 a instrução proibiu qualquer escrita; nas rodadas 5 e 6 só o harness salvou saídas longas de git diff.",
+    "Rodadas 2 a 6 em contexto novo, sem relatórios anteriores; cada rodada revisou o diff completo do seu snapshot.",
+    "O design system publicado (tarefa 1.4) e a legibilidade visual das figuras SVG no tema escuro não foram verificados pelo revisor.",
+    "Em main o workflow emite apenas spec-review-tests; este relatório e validate_report não certificam qualidade semântica.",
+    "tasks.md não marca 6.3/6.4 para não alterar o diff revisado; o estado fica na issue #193."
+  ],
+  "verification": [
+    {
+      "command": "py -3 scripts/check_spec_review.py --snapshot --base cf8741f64b1852180e7a3737cd31a1743d6840f9 --head 1623e3c67ac0c9027b52de680dfffee4ea8f19d9 --spec focus-visual-refresh",
+      "result": "diff_sha256 eafb12faf37db75735144a119784ea54fcbda261ed8ae387d5735534e27fd899; 50 arquivos (+2045/-197).",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "CI do PR #204 no head 1623e3c: run pull_request 43499709891 (merge com main, 8c40565) e run push 43499702188",
+      "result": "12/12 checks SUCCESS: backend, frontend, identity-browser, local-delivery (inclui inspeção do bundle inicial sem correctAlternativeId), study-material, static-pages e spec-review-tests.",
+      "executed_by": "GitHub Actions"
+    },
+    {
+      "command": "frontend: npx tsc -b; npx vitest run; npx playwright test (árvore de frontend do #215, igual à do head 1623e3c)",
+      "result": "tsc ok; 29 arquivos e 314 testes; 38 aprovados e 1 ignorado por design.",
+      "executed_by": "coordenador"
+    },
+    {
+      "command": "Testes de regressão das correções executados sem a correção",
+      "result": "Falharam como esperado: anel de foco (FVR-M1), pedido único (FVR-L1), foco do painel (FVR3-L1), atalhos inline (FVR3-L2), rótulo do filtro (FVR3-L3), fundo do dialog (FVR4-L2) e detector de cores (FVR2-L4).",
+      "executed_by": "coordenador"
+    }
+  ],
+  "triage_complete": true,
+  "triage_approved_by_user_at": "2026-11-13",
+  "findings": [
+    {
+      "id": "FVR-M1",
+      "severity": "recommended",
+      "location": "frontend/src/styles/lessons.css (.lesson-practice-panel overflow: hidden)",
+      "evidence": "O overflow do painel recortava o anel de foco do summary (outline-offset global).",
+      "reference": "visual-foundation: anel de foco visível com 3:1",
+      "impact": "Foco por teclado parcialmente invisível no painel de prática.",
+      "suggestion": "Remover o overflow e arredondar o próprio summary.",
+      "disposition": "fixed",
+      "resolution": "#206 (0979066); e2e focus-review mede recorte em claro/escuro, aberto e fechado; falha sem a correção."
+    },
+    {
+      "id": "FVR-M2",
+      "severity": "recommended",
+      "location": "frontend/src/AttemptPractice.tsx; styles/attempt.css (<700px)",
+      "evidence": "No celular o mapa de questões fica abaixo da questão, sem acesso no topo.",
+      "reference": "study-experience: realização no celular",
+      "impact": "Navegação pelo mapa exigia rolar a questão inteira.",
+      "suggestion": "Atalho no topo que leva o foco ao mapa.",
+      "disposition": "fixed",
+      "resolution": "#206: botão \"Ver mapa de questões\" abaixo de 700px; e2e confirma posição e foco em 390px e ocultação em 1440px."
+    },
+    {
+      "id": "FVR-L1",
+      "severity": "optional",
+      "location": "frontend/src/LessonPracticeWorkspace.tsx (practiceRequest)",
+      "evidence": "Pedido de prática já atendido reabria o painel ao voltar à aula.",
+      "reference": "study-experience: atalhos não alteram práticas",
+      "impact": "Painel reaberto e foco roubado sem ação do estudante.",
+      "suggestion": "Tratar cada pedido (nonce) uma única vez.",
+      "disposition": "fixed",
+      "resolution": "#206; teste unitário falha sem a correção."
+    },
+    {
+      "id": "FVR-L2",
+      "severity": "optional",
+      "location": "frontend/src/attempt-result-api.ts",
+      "evidence": "Desfechos derivados não eram conferidos com os totais do servidor.",
+      "reference": "Integridade do contrato corretivo tardio",
+      "impact": "Resultado inconsistente poderia ser exibido.",
+      "suggestion": "Rejeitar quando as contagens divergem.",
+      "disposition": "fixed",
+      "resolution": "#206; mesma regra do backend (Attempt.java); teste de rejeição."
+    },
+    {
+      "id": "FVR-L3",
+      "severity": "optional",
+      "location": "frontend/e2e",
+      "evidence": "Sem e2e de tema escuro sem gabarito e de tema manual antes do app.",
+      "reference": "visual-foundation: tema antes da primeira pintura; privacidade do gabarito",
+      "impact": "Regressões sem detecção automática.",
+      "suggestion": "Cobrir em e2e.",
+      "disposition": "fixed",
+      "resolution": "#206 (estabilizado em 5b143bb para o CI): e2e/focus-review.spec.ts."
+    },
+    {
+      "id": "FVR-L4",
+      "severity": "optional",
+      "location": "frontend/src/visual-tokens.test.ts",
+      "evidence": "Pares de contraste não cobriam teal-soft e warning sobre fundos claros de destaque.",
+      "reference": "visual-foundation: teste de pares",
+      "impact": "Ajustes futuros sem detecção.",
+      "suggestion": "Acrescentar os pares.",
+      "disposition": "fixed",
+      "resolution": "#206."
+    },
+    {
+      "id": "FVR-L5",
+      "severity": "optional",
+      "location": "12 arquivos do frontend",
+      "evidence": "Finais de linha CRLF introduzidos por escrita em modo texto no Windows.",
+      "reference": "Manutenção",
+      "impact": "Diffs ruidosos.",
+      "suggestion": "Restaurar LF.",
+      "disposition": "fixed",
+      "resolution": "#206 (d76217c), conteúdo idêntico com --ignore-cr-at-eol."
+    },
+    {
+      "id": "FVR-L6",
+      "severity": "optional",
+      "location": "frontend/public/licenses",
+      "evidence": "A licença OFL da Figtree não era distribuída com o build.",
+      "reference": "visual-foundation: fonte empacotada com licença OFL",
+      "impact": "Distribuição sem a licença exigida.",
+      "suggestion": "Copiar a OFL para public/licenses.",
+      "disposition": "fixed",
+      "resolution": "#206: figtree-OFL.txt."
+    },
+    {
+      "id": "FVR2-L1",
+      "severity": "optional",
+      "location": "openspec/changes/focus-visual-refresh/tasks.md:9-11",
+      "evidence": "Cabeçalho dizia \"somente o grupo 1\", ainda não integrado.",
+      "reference": "AGENTS: estados implementado/integrado separados",
+      "impact": "Documentação enganosa.",
+      "suggestion": "Atualizar o cabeçalho.",
+      "disposition": "fixed",
+      "resolution": "#207 (99ceacf): lotes reais e remissão à issue #193."
+    },
+    {
+      "id": "FVR2-L2",
+      "severity": "optional",
+      "location": "openspec/changes/focus-visual-refresh/proposal.md (Impact)",
+      "evidence": "Impact citava arquivos de fonte locais; a implementação usa o pacote e toca index.html, vite.config.ts e e2e.",
+      "reference": "Coerência documental",
+      "impact": "Divergência documental.",
+      "suggestion": "Alinhar ao design.",
+      "disposition": "fixed",
+      "resolution": "#207."
+    },
+    {
+      "id": "FVR2-L3",
+      "severity": "optional",
+      "location": "frontend/src/tokens.css (--blue-border); styles/attempt.css; styles/lessons.css",
+      "evidence": "Borda do estado \"respondida\" com cerca de 1,9:1; a spec pedia 3:1 em bordas de controles.",
+      "reference": "visual-foundation: contraste",
+      "impact": "Estado com contorno de baixo contraste; ambiguidade entre spec e design.",
+      "suggestion": "Escurecer --blue-border e esclarecer o alcance do 3:1.",
+      "disposition": "fixed",
+      "resolution": "#207: #6a89c2/#6283bd (>=3,08:1) e pares no teste; spec e design delimitam o 3:1 (WCAG 1.4.11)."
+    },
+    {
+      "id": "FVR2-L4",
+      "severity": "optional",
+      "location": "frontend/src/visual-tokens.test.ts",
+      "evidence": "Detector de cores literais com lista curta de nomes e sem estilos inline.",
+      "reference": "visual-foundation: nova cor falha a verificação",
+      "impact": "Cores fixas poderiam passar.",
+      "suggestion": "Lista completa de nomes CSS e estilos inline.",
+      "disposition": "fixed",
+      "resolution": "#207; teste do detector; injeções navy/teal reprovadas."
+    },
+    {
+      "id": "FVR3-L1",
+      "severity": "optional",
+      "location": "frontend/src/App.tsx (efeito de área); frontend/src/LessonPracticeWorkspace.tsx",
+      "evidence": "Após \"Praticar este assunto\", o foco voltava ao título oculto da área e a página ficava no topo.",
+      "reference": "Acessibilidade; design dos atalhos",
+      "impact": "Teclado e leitor de tela ficavam longe do painel aberto.",
+      "suggestion": "Não focar o título da área nesse caso e manter o painel em vista.",
+      "disposition": "fixed",
+      "resolution": "#208 (823fbe0); confirmado no navegador antes da correção; e2e verifica foco e viewport."
+    },
+    {
+      "id": "FVR3-L2",
+      "severity": "optional",
+      "location": "frontend/src/LessonPracticeWorkspace.tsx",
+      "evidence": "\"Rever a aula\" sem efeito no resultado da prática dentro da própria aula.",
+      "reference": "UX/WCAG",
+      "impact": "Botão visível sem efeito.",
+      "suggestion": "Não exibir atalhos nesse contexto.",
+      "disposition": "fixed",
+      "resolution": "#208; teste unitário."
+    },
+    {
+      "id": "FVR3-L3",
+      "severity": "optional",
+      "location": "frontend/src/LessonLibrary.tsx",
+      "evidence": "Com busca e sem disciplina, o filtro dizia \"Escolha uma disciplina\".",
+      "reference": "Clareza de rótulo",
+      "impact": "Ambiguidade.",
+      "suggestion": "Mostrar \"Todas as disciplinas\" com busca.",
+      "disposition": "fixed",
+      "resolution": "#208; teste unitário."
+    },
+    {
+      "id": "FVR4-L1",
+      "severity": "optional",
+      "location": "frontend/src/visual-tokens.test.ts",
+      "evidence": "Pares blue e focus sobre teal-soft fora do teste (já passavam).",
+      "reference": "visual-foundation: foco 3:1 em todas as superfícies",
+      "impact": "Ajuste futuro sem detecção.",
+      "suggestion": "Acrescentar os pares.",
+      "disposition": "fixed",
+      "resolution": "#211 (ab7d57b)."
+    },
+    {
+      "id": "FVR4-L2",
+      "severity": "optional",
+      "location": "frontend/src/style.css (dialog)",
+      "evidence": "Diálogo com fundo padrão do navegador (#121212) no tema escuro.",
+      "reference": "Direção Foco nos dois temas",
+      "impact": "Inconsistência visual.",
+      "suggestion": "background: var(--paper).",
+      "disposition": "fixed",
+      "resolution": "#211; e2e confere fundo e contraste; falha sem a correção."
+    },
+    {
+      "id": "FVR4-L3",
+      "severity": "optional",
+      "location": "frontend/src/LessonPracticeWorkspace.tsx (practiceRequest)",
+      "evidence": "Arrastar a barra de rolagem não encerra os 3 s de manutenção do painel em vista.",
+      "reference": "UX",
+      "impact": "Incômodo curto.",
+      "suggestion": "Encerrar também em rolagem do usuário.",
+      "disposition": "deferred",
+      "resolution": "Aceito como limite pelo usuário na rodada 4; registrado na issue #216."
+    },
+    {
+      "id": "FVR5-L1",
+      "severity": "optional",
+      "location": "frontend/src/styles/shell.css:89; frontend/src/styles/lessons.css:26",
+      "evidence": "Seta dos cartões de aula sempre oculta; a regra própria virava código morto.",
+      "reference": "Manutenção",
+      "impact": "Regressão visual pequena.",
+      "suggestion": "Restringir o display: none ao início.",
+      "disposition": "fixed",
+      "resolution": "#215 (f654a7d)."
+    },
+    {
+      "id": "FVR5-L2",
+      "severity": "optional",
+      "location": "openspec/changes/focus-visual-refresh/specs/study-experience/spec.md",
+      "evidence": "Exceções dos atalhos registradas só no README.",
+      "reference": "Requisitos versionados",
+      "impact": "Spec mais estrita que o comportamento.",
+      "suggestion": "Registrar as exceções na spec.",
+      "disposition": "fixed",
+      "resolution": "#215, com cenário novo."
+    },
+    {
+      "id": "FVR5-L3",
+      "severity": "optional",
+      "location": "openspec/changes/focus-visual-refresh/design.md; frontend/src/tokens.css",
+      "evidence": "Design prometia tokens por tom de bloco; surface-tint sem uso.",
+      "reference": "Coerência documental e manutenção",
+      "impact": "Divergência e tokens mortos.",
+      "suggestion": "Alinhar o design e remover tokens sem uso.",
+      "disposition": "fixed",
+      "resolution": "#215."
+    },
+    {
+      "id": "FVR5-L4",
+      "severity": "optional",
+      "location": "frontend/e2e/lesson-themes.spec.ts",
+      "evidence": "E2E das 51 aulas excluía as fórmulas MathML.",
+      "reference": "study-experience: fórmulas com contraste mínimo",
+      "impact": "Lacuna de cobertura.",
+      "suggestion": "Medir math e excluir só svg.",
+      "disposition": "fixed",
+      "resolution": "#215; contagem temporária confirmou fórmulas medidas (ex.: 33 elementos em M04)."
+    },
+    {
+      "id": "FVR5-L5",
+      "severity": "optional",
+      "location": "frontend/src/styles/attempt.css",
+      "evidence": "Questão respondida perdia o preenchimento no hover do mapa.",
+      "reference": "Estados não dependem só de cor",
+      "impact": "Pequena inconsistência.",
+      "suggestion": "Manter o preenchimento no hover.",
+      "disposition": "fixed",
+      "resolution": "#215."
+    },
+    {
+      "id": "FVR6-L1",
+      "severity": "optional",
+      "location": "frontend/src/styles/attempt.css; frontend/src/AttemptResult.tsx",
+      "evidence": "Enunciado no resultado herda 16px; 18-19px só na realização. Requisito ambíguo entre spec e design.",
+      "reference": "study-experience: Direção visual Foco nas telas de estudo",
+      "impact": "Possível descumprimento se o requisito valer para o resultado.",
+      "suggestion": "Definir o alcance; ajustar o CSS ou o design.",
+      "disposition": "deferred",
+      "resolution": "Critério do usuário: achados baixos novos na rodada 6 não bloqueiam; issue #216."
+    },
+    {
+      "id": "FVR6-L2",
+      "severity": "optional",
+      "location": "frontend/src/LessonPracticeWorkspace.tsx (practiceRequest)",
+      "evidence": "Mesmo limite de FVR4-L3.",
+      "reference": "UX",
+      "impact": "Incômodo curto.",
+      "suggestion": "Encerrar em rolagem do usuário.",
+      "disposition": "deferred",
+      "resolution": "Duplicata do limite aceito em FVR4-L3; issue #216."
+    }
+  ]
+}

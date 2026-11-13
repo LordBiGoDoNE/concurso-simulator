@@ -1,0 +1,96 @@
+name: concurso-simulator-prod
+x-owner: &owner
+  com.concursosimulator.production.owner: ${PROD_OWNER:?Use scripts/vps_production.py}
+services:
+  postgres:
+    image: ${PROD_POSTGRES_IMAGE:?Use scripts/vps_production.py}
+    labels: *owner
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: concurso_simulator
+      POSTGRES_USER: concurso
+      POSTGRES_PASSWORD_FILE: /run/secrets/db_password
+    secrets: [db_password]
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    networks: [database]
+    healthcheck:
+      test: [CMD-SHELL, pg_isready -U concurso -d concurso_simulator]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+    mem_limit: 768m
+  api:
+    image: ${PROD_API_IMAGE:?Use scripts/vps_production.py}
+    pull_policy: never
+    labels: *owner
+    restart: unless-stopped
+    environment:
+      # Sem o perfil local: cookie SESSION Secure e URLs de login somente HTTPS.
+      SPRING_PROFILES_ACTIVE: production
+      SPRING_CONFIG_IMPORT: configtree:/run/secrets/
+      SERVER_ADDRESS: 0.0.0.0
+      SERVER_PORT: 8080
+      SERVER_FORWARD_HEADERS_STRATEGY: none
+      DB_URL: jdbc:postgresql://postgres:5432/concurso_simulator?connectTimeout=2&socketTimeout=3
+      DB_USERNAME: concurso
+      CORS_ORIGINS: https://concurso-simulator.reemsoftworks.com
+      JAVA_TOOL_OPTIONS: -XX:MaxRAMPercentage=70.0
+      PARAMETERIZATION_GENERATION_ENABLED: ${PROD_GENERATION_ENABLED:-true}
+    secrets:
+      - source: db_password
+        target: spring.datasource.password
+      - source: admin_password
+        target: app.admin.bootstrap.password
+      - source: google_enabled
+        target: app.google.enabled
+      - source: google_client_id
+        target: app.google.client-id
+      - source: google_client_secret
+        target: app.google.client-secret
+      - source: google_callback
+        target: app.google.callback-url
+      - source: frontend_url
+        target: app.google.frontend-url
+      - source: question_import_destination
+        target: app.question-import.destination-id
+      - source: question_import_key
+        target: app.question-import.confirmation-key
+    depends_on:
+      postgres: {condition: service_healthy}
+    networks: [edge, database]
+    read_only: true
+    tmpfs: ["/tmp:rw,nosuid,nodev,noexec,size=64m"]
+    mem_limit: 1280m
+  web:
+    image: ${PROD_WEB_IMAGE:?Use scripts/vps_production.py}
+    pull_policy: never
+    labels: *owner
+    restart: unless-stopped
+    ports:
+      - 127.0.0.1:${PROD_HTTP_PORT:?Use scripts/vps_production.py}:8080
+    depends_on:
+      api: {condition: service_started}
+    networks: [edge]
+    read_only: true
+    tmpfs: ["/tmp:rw,nosuid,nodev,noexec,size=32m"]
+    mem_limit: 128m
+networks:
+  edge:
+    labels: *owner
+  database:
+    internal: true
+    labels: *owner
+volumes:
+  postgres_data:
+    labels: *owner
+secrets:
+  db_password: {file: '${PROD_SECRET_DIR}/db_password'}
+  admin_password: {file: '${PROD_SECRET_DIR}/admin_password'}
+  google_enabled: {file: '${PROD_SECRET_DIR}/google_enabled'}
+  google_client_id: {file: '${PROD_SECRET_DIR}/google_client_id'}
+  google_client_secret: {file: '${PROD_SECRET_DIR}/google_client_secret'}
+  google_callback: {file: '${PROD_SECRET_DIR}/google_callback'}
+  frontend_url: {file: '${PROD_SECRET_DIR}/frontend_url'}
+  question_import_destination: {file: '${PROD_SECRET_DIR}/question_import_destination'}
+  question_import_key: {file: '${PROD_SECRET_DIR}/question_import_key'}

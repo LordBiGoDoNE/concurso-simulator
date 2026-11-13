@@ -56,6 +56,75 @@ executa `sudo reboot` na conta administrativa. Depois, o assistente confere:
 `check-project-user.sh`, containers saudáveis, `curl` local na porta da web e
 nginx respondendo. Nenhum serviço deve exigir intervenção manual.
 
+## Grupo 2 — runtime de produção
+
+Checkout dedicado do operador em `~/projects/production` (clone do GitHub, sem
+credenciais). O checkout antigo `~/projects/repository` e o projeto
+`concurso-simulator-app-local-vps` não são tocados.
+
+| Item | Valor |
+| --- | --- |
+| Projeto Docker | `concurso-simulator-prod` |
+| Web (loopback) | `127.0.0.1:18090` |
+| Estado e segredos | `~/.local/share/concurso-simulator/production/` (0700) |
+| Manifestos de release | `~/.local/share/concurso-simulator/releases/<sha12>.json` |
+| Perfil Spring | `production` (sem `local`: cookie Secure, login só HTTPS) |
+
+```sh
+export DOCKER_CONTEXT=rootless
+cd ~/projects/production && git fetch origin
+python3 scripts/vps_production.py build --revision <commit>
+python3 scripts/vps_production.py init --images ~/.local/share/concurso-simulator/releases/<sha12>.json
+python3 scripts/vps_production.py start | status | stop
+```
+
+- `build` usa o mesmo contexto filtrado do operador local (`git archive` +
+  allowlist), acrescentando apenas `infra/vps-production/{web.Dockerfile,nginx.conf}`.
+  O manifesto registra se o commit está em `origin/main`.
+- `init` recusa estado existente, origem diferente e commit fora da main.
+  `--rehearsal` permite ensaiar uma branch de tarefa; o estado fica marcado como ensaio.
+- Segredos gerados em arquivos: senha do PostgreSQL, senha inicial do admin
+  (`secrets/admin_password`, nunca impressa) e configuração Google desligada.
+  Leia a senha do admin diretamente na VPS e troque-a após o primeiro login.
+- `start` exige prontidão real dos três serviços (`--wait`). Containers usam
+  `restart: unless-stopped`; o serviço de usuário `systemd/concurso-production.service`
+  sobe a aplicação no boot.
+- O nginx interno aceita somente o Host canônico, limpa `Forwarded`/`X-Forwarded-*`
+  e libera 20 MB/120 s apenas em `/api/v1/admin/`. TLS e HSTS ficam no nginx do host.
+
+Atualização de release, backup e restauração pertencem ao grupo 6.
+
+## Grupo 6 — backup, atualização e recuperação
+
+```sh
+python3 scripts/vps_production.py backup        # API parada por segundos; dump + manifesto em ~/.local/share/concurso-simulator/backups/
+```
+
+Copie para o PC (no PC):
+
+```sh
+scp -i ~/.ssh/hostingerVPS concurso-dev@<VPS>:.local/share/concurso-simulator/backups/<arquivo>.dump* <pasta-privada>/
+```
+
+Restauração sempre em alvo separado e vazio, com a mesma imagem de API do backup:
+
+```sh
+R=~/.local/share/concurso-simulator/recoveries/<nome>
+python3 scripts/vps_production.py --state $R init --images <manifesto-da-release> --recovery <nome> --port 18091
+python3 scripts/vps_production.py --state $R restore --backup <dump>                 # prévia + texto de confirmação
+python3 scripts/vps_production.py --state $R restore --backup <dump> --confirm "<texto>"
+python3 scripts/vps_production.py --state $R start
+```
+
+Troca de release (somente commits de origin/main; backup automático antes):
+
+```sh
+python3 scripts/vps_production.py release --images ~/.local/share/concurso-simulator/releases/<sha12>.json
+python3 scripts/vps_production.py rollback   # só se o schema não mudou; senão, restaure o backup prévio
+```
+
+Backups, estado e segredos nunca vão para Git, CI ou issues. Volumes não são removidos pela ferramenta.
+
 ## Grupo 3 — domínio e TLS
 
 ### DNS (Hostinger)

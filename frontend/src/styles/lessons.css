@@ -91,11 +91,12 @@
 
 /* Prática da aula */
 .lesson-practice-workspace { padding: 0; border: 0; background: transparent; margin-top: 0; }
-.lesson-practice-panel { margin-top: 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); overflow: hidden; }
-.lesson-practice-panel > summary { padding: 22px 28px; cursor: pointer; font-size: 1.05rem; font-weight: 650; }
+.lesson-practice-panel { margin-top: 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); }
+/* Sem overflow no painel: o anel de foco do summary (outline-offset global) ficaria cortado. O summary arredonda o próprio fundo. */
+.lesson-practice-panel > summary { border-radius: 19px; padding: 22px 28px; cursor: pointer; font-size: 1.05rem; font-weight: 650; }
 .lesson-practice-panel > summary > span { display: inline-grid; gap: 4px; vertical-align: middle; margin-left: 6px; }
 .lesson-practice-panel > summary small { font-size: .9rem; color: var(--muted); font-weight: 400; }
-.lesson-practice-panel[open] > summary { border-bottom: 1px solid var(--line); background: var(--blue-soft); }
+.lesson-practice-panel[open] > summary { border-radius: 19px 19px 0 0; border-bottom: 1px solid var(--line); background: var(--blue-soft); }
 .lesson-practice-panel-body { padding: 28px; }
 .practice-standalone > .lesson-practice-panel-body { padding: 0; }
 .lesson-practice { margin-top: 24px; padding-top: 24px; border-top: 1px solid var(--line); font-size: .95rem; }

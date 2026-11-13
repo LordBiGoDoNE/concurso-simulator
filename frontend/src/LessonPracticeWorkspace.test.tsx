@@ -121,3 +121,16 @@ it('pedido do resultado abre o painel do assunto sem iniciar nem trocar a práti
  rendered.rerender(<LessonPracticeWorkspace {...props} practiceRequest={{topicId:'P07',nonce:1}}/>);
  expect(await screen.findByRole('heading',{name:'Questão 1 de 1'})).toBeInTheDocument();confirm.mockRestore();
 });
+it('um pedido já atendido não reabre o painel ao voltar depois à mesma aula',async()=>{
+ setup();const p01=inlineProps('P01');const p07=inlineProps('P07');
+ const rendered=render(<LessonPracticeWorkspace {...p01}/>);
+ rendered.rerender(<LessonPracticeWorkspace {...p01} inlineLesson={p07.inlineLesson} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ const panel=()=>screen.getByText('Pratique esta aula').closest('details')!;
+ expect(panel()).toHaveAttribute('open');
+ fireEvent.click(screen.getByText('Pratique esta aula'));await act(async()=>{await new Promise(r=>setTimeout(r,0));});expect(panel()).not.toHaveAttribute('open');
+ rendered.rerender(<LessonPracticeWorkspace {...p01} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ rendered.rerender(<LessonPracticeWorkspace {...p01} inlineLesson={p07.inlineLesson} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ expect(panel()).not.toHaveAttribute('open');
+ rendered.rerender(<LessonPracticeWorkspace {...p01} inlineLesson={p07.inlineLesson} practiceRequest={{topicId:'P07',nonce:2}}/>);
+ expect(panel()).toHaveAttribute('open');
+});

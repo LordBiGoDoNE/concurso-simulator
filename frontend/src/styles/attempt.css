@@ -66,6 +66,7 @@ progress { width: 160px; max-width: 100%; height: 8px; accent-color: var(--blue)
 nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da prática"] { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; margin: 24px 0 16px; }
 
 /* Mapa: respondida = preenchida; sem resposta = contorno tracejado; atual = anel sólido. */
+.map-jump { display: none; }
 .question-map { position: sticky; top: 24px; padding: 24px; font-size: .85rem; color: var(--muted); }
 .question-map h2 { font-size: 1.05rem; color: var(--ink); margin: 0 0 4px; }
 .question-map nav { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 6px; margin: 18px 0; }
@@ -121,6 +122,8 @@ nav[aria-label="Navegação do simulado"], nav[aria-label="Navegação da práti
 @media (max-width: 700px) {
   .practice-layout { grid-template-columns: 1fr; }
   .question-map { position: static; }
+  .map-jump { display: inline-flex; margin-top: 12px; }
+  .question-map { scroll-margin-top: 16px; }
   .practice-header { display: block; }
   .practice-progress { display: flex; gap: 12px; align-items: center; }
   .question-card { padding: 20px; border-radius: 16px; }

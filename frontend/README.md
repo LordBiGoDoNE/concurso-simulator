@@ -137,8 +137,9 @@ O seletor "Tema" da barra superior guarda só `light` ou `dark` na chave
 à de `src/theme.ts`. Sem armazenamento, o tema segue o sistema.
 
 A fonte Figtree vem empacotada pelo pacote `@fontsource-variable/figtree` (OFL),
-sem requisições externas. O Vitest processa CSS (`test.css.include` no
-`vite.config.ts`) só para que os testes leiam as folhas com `?raw`.
+sem requisições externas. O Vitest processa só imports CSS com `?raw` (`test.css.include` no
+`vite.config.ts`), usados pelos testes de tokens. Processar todo CSS deixava os
+testes que renderizam o `App` cerca de 50% mais lentos e estourava o tempo no CI.
 
 Limite: diagramas SVG das aulas nativas mantêm as próprias cores e placa clara
 também no tema escuro.

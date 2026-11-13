@@ -58,8 +58,12 @@ persistência, API, banco ou conteúdo das aulas e questões.
 
 ## Impact
 
-- Código: somente `frontend/src` (CSS, componentes de apresentação e testes) e os
-  arquivos de fonte em `frontend/src/assets/fonts/`, com a licença OFL.
+- Código: somente o frontend. `frontend/src` (CSS, componentes de apresentação e
+  testes), `frontend/index.html` (tema antes da primeira pintura),
+  `frontend/vite.config.ts`, `frontend/e2e/` e a dependência
+  `@fontsource-variable/figtree` em `package.json`/lockfile, com a licença OFL em
+  `frontend/public/licenses/`. A troca dos arquivos de fonte locais pelo pacote foi
+  decidida no grupo 1 (ver `design.md`).
 - Backend, migrações, contratos HTTP e acervo não mudam.
 - O leitor usa as aulas nativas já integradas (`lesson-documents/*.json` e
   `NativeLesson`). Esta spec muda só a apresentação: os documentos, o vocabulário

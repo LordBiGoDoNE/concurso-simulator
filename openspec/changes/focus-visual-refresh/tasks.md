@@ -8,9 +8,11 @@ tema) são decididas no grupo 1.
 
 Issue da spec: [#193](https://github.com/LordBiGoDoNE/concurso-simulator/issues/193).
 
-Lote 1, escolhido pelo usuário em 2026-11-13: somente o grupo 1. Itens marcados
-abaixo estão implementados e verificados localmente em
-`task/focus-visual-refresh/visual-foundation`, ainda não integrados à épica.
+Lotes escolhidos pelo usuário em 2026-11-13: lote 1 (grupo 1), lote 2 (grupos 2,
+3 e 5) e lote 3 (grupos 4 e 6). Itens marcados abaixo estão implementados e
+verificados. A integração à épica é registrada separadamente na issue
+[#193](https://github.com/LordBiGoDoNE/concurso-simulator/issues/193), com os PRs
+e SHAs de cada grupo; o merge em `main` exige autorização própria.
 
 ## 1. Fundação visual (base dos demais grupos)
 

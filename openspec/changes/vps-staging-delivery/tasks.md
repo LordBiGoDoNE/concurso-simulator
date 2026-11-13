@@ -35,10 +35,12 @@ Implementado e verificado em 2026-11-13 (#213); não integrado. Evidências: `ve
 
 ## 4. Google OAuth de produção — depende de 2 e 3
 
-- [ ] 4.1 Roteiro para o usuário criar o client web e publicar a tela de consentimento, com callback exato.
-- [ ] 4.2 Configurar segredos Google na VPS sem expô-los; startup recusa client incompleto.
-- [ ] 4.3 Smoke real: login, sessão, logout, conta nova, retomada e rejeições CSRF/origem.
-- [ ] 4.4 Evidências sanitizadas e docs do grupo.
+Implementado em 2026-11-13 (#219); ativação e smoke adiados pelo usuário para a #221. Não integrado.
+
+- [x] 4.1 Roteiro para o usuário criar o client web e publicar a tela de consentimento, com callback exato.
+- [x] 4.2 Configurar segredos Google na VPS sem expô-los; startup recusa client incompleto.
+- [ ] 4.3 Smoke real: login, sessão, logout, conta nova, retomada e rejeições CSRF/origem. Adiado para a #221.
+- [x] 4.4 Evidências sanitizadas e docs do grupo.
 
 ## 5. Acervo — depende de 2 e 3
 

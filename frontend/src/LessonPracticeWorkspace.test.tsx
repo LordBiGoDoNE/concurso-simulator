@@ -1,6 +1,6 @@
 import { fireEvent, render, screen, waitFor, act } from '@testing-library/react';
 import { afterEach, expect, it, vi } from 'vitest';
-import { useRef } from 'react';
+import { createRef, useRef } from 'react';
 import LessonPracticeWorkspace, { type LessonPracticeHandle } from './LessonPracticeWorkspace';
 import { createLessonPractice, lessonPracticeTransport, lessonPracticeHistory, lessonPracticeAvailability } from './lesson-practice-api';
 import { lessons } from './study-catalog';
@@ -106,4 +106,46 @@ it('retry de B após falha não desmonta A enquanto seu salvamento está pendent
  await screen.findByText('Respostas confirmadas.');fireEvent.click(retry);await screen.findByText('PRACTICE_B_AFTER_RETRY');
  expect(vi.mocked(createLessonPractice).mock.calls[1].slice(0,2)).toEqual(vi.mocked(createLessonPractice).mock.calls[2].slice(0,2));
  expect(confirm).toHaveBeenCalledTimes(1);confirm.mockRestore();
+});
+
+it('pedido do resultado abre o painel do assunto sem iniciar nem trocar a prática em andamento',async()=>{
+ setup();const props=inlineProps('P01');const rendered=render(<LessonPracticeWorkspace {...props}/>);expand();
+ const start=await screen.findByRole('button',{name:'Começar prática'});await waitFor(()=>expect(start).toBeEnabled());fireEvent.click(start);
+ await screen.findByRole('heading',{name:'Questão 1 de 1'});
+ const other=inlineProps('P07');rendered.rerender(<LessonPracticeWorkspace {...props} inlineLesson={other.inlineLesson}/>);
+ expect(screen.getByText('Pratique esta aula').closest('details')).not.toHaveAttribute('open');
+ const confirm=vi.spyOn(window,'confirm');
+ rendered.rerender(<LessonPracticeWorkspace {...props} inlineLesson={other.inlineLesson} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ expect(screen.getByText('Pratique esta aula').closest('details')).toHaveAttribute('open');
+ expect(createLessonPractice).toHaveBeenCalledTimes(1);expect(confirm).not.toHaveBeenCalled();
+ rendered.rerender(<LessonPracticeWorkspace {...props} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ expect(await screen.findByRole('heading',{name:'Questão 1 de 1'})).toBeInTheDocument();confirm.mockRestore();
+});
+it('um pedido já atendido não reabre o painel ao voltar depois à mesma aula',async()=>{
+ setup();const p01=inlineProps('P01');const p07=inlineProps('P07');
+ const rendered=render(<LessonPracticeWorkspace {...p01}/>);
+ rendered.rerender(<LessonPracticeWorkspace {...p01} inlineLesson={p07.inlineLesson} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ const panel=()=>screen.getByText('Pratique esta aula').closest('details')!;
+ expect(panel()).toHaveAttribute('open');
+ fireEvent.click(screen.getByText('Pratique esta aula'));await act(async()=>{await new Promise(r=>setTimeout(r,0));});expect(panel()).not.toHaveAttribute('open');
+ rendered.rerender(<LessonPracticeWorkspace {...p01} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ rendered.rerender(<LessonPracticeWorkspace {...p01} inlineLesson={p07.inlineLesson} practiceRequest={{topicId:'P07',nonce:1}}/>);
+ expect(panel()).not.toHaveAttribute('open');
+ rendered.rerender(<LessonPracticeWorkspace {...p01} inlineLesson={p07.inlineLesson} practiceRequest={{topicId:'P07',nonce:2}}/>);
+ expect(panel()).toHaveAttribute('open');
+});
+it('resultado da prática dentro da aula não repete atalhos para a própria aula; a prática avulsa os mantém',async()=>{
+ const shortcuts={review:vi.fn(),practice:vi.fn()};const finished={...view,version:1,finishedAt:'2026-10-24T12:00:00Z'};
+ for(const inline of [true,false]){
+  setup();vi.mocked(lessonPracticeTransport.finish).mockResolvedValue({attempt:finished,result});vi.mocked(lessonPracticeTransport.result).mockResolvedValue(result);
+  const ref=createRef<LessonPracticeHandle>();
+  const rendered=render(inline?<LessonPracticeWorkspace {...inlineProps('P01')} shortcuts={shortcuts}/>:<LessonPracticeWorkspace ref={ref} {...inlineProps('P01')} inlineLesson={undefined} shortcuts={shortcuts}/>);
+  if(inline){expand();const start=await screen.findByRole('button',{name:'Começar prática'});await waitFor(()=>expect(start).toBeEnabled());fireEvent.click(start);}
+  else await act(async()=>{ref.current?.start(selection);});
+  await screen.findByRole('heading',{name:'Questão 1 de 1'});
+  fireEvent.click(screen.getByRole('button',{name:'Encerrar prática'}));fireEvent.click(screen.getByRole('button',{name:'Confirmar encerramento'}));
+  await screen.findByRole('heading',{name:'Resultado da prática'});
+  expect(screen.queryAllByRole('button',{name:/Rever a aula|Praticar este assunto/})).toHaveLength(inline?0:2);
+  rendered.unmount();
+ }
 });

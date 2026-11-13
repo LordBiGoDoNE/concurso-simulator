@@ -5,6 +5,22 @@ import { response } from '../test/question-fixtures';
 const signal = () => new AbortController().signal;
 const composition = { roleId: 'assistente-administrativo', disciplines: [{ disciplineId: 'portugues', quantity: 1, topicIds: [] }] };
 
+it('deriva o desfecho no validador tardio, sem expor o id corretivo ao resultado', async () => {
+  const [a, b] = view.items[0].alternatives;
+  const wire = (selected: string | null) => ({ total: 1, points: selected === a.id ? 1 : 0, correct: selected === a.id ? 1 : 0, wrong: selected === b.id ? 1 : 0,
+    blank: selected === null ? 1 : 0, percentage: selected === a.id ? 100 : 0,
+    items: [{ item: { ...view.items[0], selectedAlternativeId: selected }, correctAlternativeId: a.id, resolution: result.items[0].explanation }] });
+  const { result: project } = await import('./attempt-result-api');
+  expect([a.id, b.id, null].map(selected => project(wire(selected)).items[0].outcome)).toEqual(['correct', 'wrong', 'blank']);
+  expect(Object.keys(project(wire(a.id)).items[0])).not.toContain('correctAlternativeId');
+});
+it('rejeita resultado cujos desfechos derivados não batem com os totais do servidor', async () => {
+  const [a, b] = view.items[0].alternatives;
+  const wire = { total: 1, points: 1, correct: 1, wrong: 0, blank: 0, percentage: 100,
+    items: [{ item: { ...view.items[0], selectedAlternativeId: b.id }, correctAlternativeId: a.id, resolution: result.items[0].explanation }] };
+  const { result: project } = await import('./attempt-result-api');
+  expect(() => project(wire)).toThrow();
+});
 it('valida contrato corretivo tardio e projeta apresentação sem recalcular a nota', async () => {
   const wire = { ...result, items: [{ item: view.items[0], correctAlternativeId: view.items[0].alternatives[0].id, resolution: result.items[0].explanation }] };
   const closed = { ...view, finishedAt: '2026-10-14T12:05:00Z', version: 1 };

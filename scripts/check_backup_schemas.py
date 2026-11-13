@@ -52,6 +52,21 @@ def migrate(container, version):
         sql(container, f"insert into qb_import_receipt values('{uuid.uuid4()}','synthetic','{actor}',now(),'{{}}')")
     if version >= 13:
         sql(container, f"update admin_registration set owner_id='{actor}',username='synthetic',password_hash='synthetic-noncredential'")
+    if version >= 16:
+        # Decisão com origem da revisão (V16) e, na V17, recibo de lote com item ligado à decisão por FK composta.
+        question, revision, option, decision = (str(uuid.uuid4()) for _ in range(4))
+        statements = ["begin",
+            f"insert into qb_question(id,origin_namespace,origin_key) values('{question}','synthetic','backup-check')",
+            f"insert into qb_revision(id,question_id,revision_number,fingerprint,payload,discipline_id,topic_id,correct_alternative_id,status) "
+            f"values('{revision}','{question}',1,'{'e' * 64}','{{}}','portugues','P01','{option}','IN_REVIEW')",
+            f"insert into qb_alternative values('{revision}','{option}',0)",
+            f"insert into qb_decision(id,question_id,sequence,revision_id,action,fingerprint,responsible,decided_at,checklist,rationale,review_kind) "
+            f"values('{decision}','{question}',0,'{revision}','SUBMIT','{'e' * 64}','synthetic',now(),'CORRECTNESS','synthetic','AI_ONLY')"]
+        if version >= 17:
+            batch = str(uuid.uuid4())
+            statements += [f"insert into qb_decision_batch values('{batch}','synthetic','{actor}',now(),'SUBMIT','AI_ONLY','{'f' * 64}','{{}}')",
+                           f"insert into qb_decision_batch_item values('{batch}','{question}',0)"]
+        sql(container, ";".join(statements + ["commit"]))
 
 
 def check():
@@ -79,7 +94,7 @@ def check():
                     raise ValueError("PostgreSQL sintético não ficou pronto")
                 time.sleep(0.2)
         source_container, target_container = containers
-        for version in (10, 11, 12, 13, 14):
+        for version in (10, 11, 12, 13, 14, 15, 16, 17):
             reset(source_container, token)
             reset(target_container, token)
             migrate(source_container, version)
@@ -134,7 +149,7 @@ def check():
                  "checks": ["real-migrations", "custom-dump-restore", "business-fingerprints-preserved", "source-unchanged",
                             "read-only-preview", "restored-sessions-cleared", "occupied-destination-rejected", "schema-mismatch-blocked"],
                  "limits": "Synthetic PostgreSQL 18.6 without network/host ports. Lifecycle wiring substituted; no historical API image startup or operator data."})
-    print("BACKUP_SCHEMAS_PASS: V10/V11/V12/V13/V14 dumps and restores validated")
+    print("BACKUP_SCHEMAS_PASS: V10/V11/V12/V13/V14/V15/V16/V17 dumps and restores validated")
 
 
 if __name__ == "__main__":

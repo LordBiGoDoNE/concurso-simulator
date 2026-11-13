@@ -1,0 +1,2007 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "PRATICA_AULA",
+    "items": [
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-busca-excluir-termo"
+        },
+        "content": {
+          "statement": {
+            "text": "Na Pesquisa Google, uma consulta sobre jaguar deve excluir resultados associados à palavra carro. Qual sintaxe expressa essa exclusão?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2250e79a-4800-5ea5-ac54-e83e6a6ea42d",
+              "content": {
+                "text": "jaguar \"carro\", exigindo a palavra que deveria ser excluída.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dec7b2d6-416e-594b-bdf4-4814a96376d8",
+              "content": {
+                "text": "jaguar site:carro, confundindo termo excluído com domínio.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c8ab6664-782b-59b2-884b-3c0ccc3730c4",
+              "content": {
+                "text": "jaguar filetype:carro, confundindo palavra com tipo de arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "33b41633-cd90-50a2-a124-61fd9dff9b0f",
+              "content": {
+                "text": "jaguar -carro.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "33b41633-cd90-50a2-a124-61fd9dff9b0f",
+          "resolution": {
+            "text": "1. O sinal de menos junto ao termo pede sua exclusão dos resultados. 2. Aspas não excluem; site: é restrição de domínio e filetype: se refere ao formato de arquivo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Google — Pesquisa avançada (dica do campo 'nenhuma destas palavras': sinal de menos antes das palavras indesejadas)",
+              "url": "https://www.google.com/advanced_search?hl=pt-BR",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-busca-excluir-termo.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-busca-excluir-termo.json",
+            "contentSha256": "89fa229b1af0ea6a4936691cfee5c48dd63866920dc1faaf18acb84d22531198",
+            "answerSha256": "89fa229b1af0ea6a4936691cfee5c48dd63866920dc1faaf18acb84d22531198"
+          }
+        },
+        "fingerprint": "f9086d03c973e7addb741b10a635533c8180e9241ac173e76851d179b4afcd73",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-busca-frase-exata"
+        },
+        "content": {
+          "statement": {
+            "text": "Na Pesquisa Google, como pedir correspondência de uma expressão exata, como plano de cargos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c111d725-4f77-5c5e-b371-2fd7cd35cdf5",
+              "content": {
+                "text": "Usar site: sem informar qualquer domínio como substituto das aspas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ffe966a9-3f66-52e8-950b-fd811c14f20d",
+              "content": {
+                "text": "Pesquisar \"plano de cargos\", com aspas envolvendo a expressão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2c43db13-240f-5b82-8a34-5601ed4cbad4",
+              "content": {
+                "text": "Pesquisar apenas cargos e presumir que toda ocorrência inclua a frase completa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "73cd96fc-5fd7-58b9-b7af-f007c3f161a0",
+              "content": {
+                "text": "Usar -plano para exigir obrigatoriamente a palavra plano.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "ffe966a9-3f66-52e8-950b-fd811c14f20d",
+          "resolution": {
+            "text": "1. Aspas solicitam correspondência para a expressão indicada. 2. Uma palavra isolada não exige a frase; sinal de menos exclui termo e site: restringe domínio quando completo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Google — Pesquisa avançada (dica do campo 'esta expressão ou frase exata': palavras exatas entre aspas)",
+              "url": "https://www.google.com/advanced_search?hl=pt-BR",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-busca-frase-exata.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-busca-frase-exata.json",
+            "contentSha256": "cfab5147a43ee4f1295aad380684befda662be861ac8104c9287685bb12b25c4",
+            "answerSha256": "cfab5147a43ee4f1295aad380684befda662be861ac8104c9287685bb12b25c4"
+          }
+        },
+        "fingerprint": "b4f015d2b5156971aa0bb938c8b4534ba088f7d9936c3cb761fe389902a5a705",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-busca-intervalo-data"
+        },
+        "content": {
+          "statement": {
+            "text": "Na Pesquisa Google, a equipe procura cobertura publicada em determinado período histórico. Qual refinamento corresponde a esse objetivo?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "54a13052-9dab-5bd7-a6ec-614a1171146a",
+              "content": {
+                "text": "Selecionar um único domínio e presumir que todos os documentos dele são da mesma data.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c8c1beac-848e-59e8-a993-ed528815d0fa",
+              "content": {
+                "text": "Aplicar um filtro de intervalo de datas e conferir a data real dos documentos encontrados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7534d0b2-d651-5035-a413-fed304cbc157",
+              "content": {
+                "text": "Restringir apenas o formato PDF e concluir que isso define qualquer período.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9b6882aa-fa42-50d6-a351-c7e6c4b0def3",
+              "content": {
+                "text": "Excluir as palavras antigo e novo como se isso comprovasse a data de publicação.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c8c1beac-848e-59e8-a993-ed528815d0fa",
+          "resolution": {
+            "text": "1. A pesquisa permite restringir resultados a um período; conferir o documento evita tomar o filtro como prova suficiente de sua data. 2. Formato, palavras excluídas e domínio não especificam por si sós um intervalo temporal de publicação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Google (blog oficial The Keyword) — 20 things you didn't know you could do with Search, item 18 (intervalo de datas), Lara Levin, 11/09/2018",
+              "url": "https://blog.google/products-and-platforms/products/search/20-things-you-didnt-know-you-could-do-search/",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-busca-intervalo-data.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-busca-intervalo-data.json",
+            "contentSha256": "1a2110fa6b8eeb9b2427e8efd3aa84dc4484e59964ee469a209cb06357b8b771",
+            "answerSha256": "1a2110fa6b8eeb9b2427e8efd3aa84dc4484e59964ee469a209cb06357b8b771"
+          }
+        },
+        "fingerprint": "3dd5ba8c81e93e72bd4ebcbda1bec1b01f54cbc020b2e39ea39229c118c88f90",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-cache-versao-antiga"
+        },
+        "content": {
+          "statement": {
+            "text": "Um site foi atualizado, mas o Firefox parece misturar arquivos antigos e novos na apresentação da página. Qual hipótese e providência são documentadas?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "aaffeacb-6889-5e8c-9e48-411a5b1a4eab",
+              "content": {
+                "text": "Trocar a cor do gabinete atualiza o conteúdo da página.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f5e0f3a2-fa60-5757-8fed-0a22b318abc9",
+              "content": {
+                "text": "Recursos antigos no cache podem contribuir; limpar os dados desse site e recarregar é uma etapa de diagnóstico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "84ddcb80-06f5-56aa-a11d-43eee4b8a41c",
+              "content": {
+                "text": "É obrigatório formatar todo o disco antes de testar novamente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "74715f46-c0aa-545a-bc71-1ba8ad2b3318",
+              "content": {
+                "text": "O problema prova que a página nunca existiu.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f5e0f3a2-fa60-5757-8fed-0a22b318abc9",
+          "resolution": {
+            "text": "1. O cache pode manter arquivos antigos que interagem mal com os novos recursos do site. 2. Uma etapa de limpeza direcionada não exige formatar o disco; aparência defeituosa não prova inexistência e não depende da cor do gabinete.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sites exibidos errados ou que não funcionam como deveriam",
+              "url": "https://support.mozilla.org/pt-BR/kb/sites-exibidos-errados-ou-nao-funcionam-como-deveriam",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-cache-versao-antiga.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-cache-versao-antiga.json",
+            "contentSha256": "a080f7ec79702601b2f1fe7e1ffb6626402fb488979fc1f493afacca4135c064",
+            "answerSha256": "a080f7ec79702601b2f1fe7e1ffb6626402fb488979fc1f493afacca4135c064"
+          }
+        },
+        "fingerprint": "819f45a1f773e6db1430231fd5d99441c09ae996d91799d255cf6f60445a4f96",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-cookies-sair"
+        },
+        "content": {
+          "statement": {
+            "text": "Após limpar cookies e dados de um site no Firefox, uma pessoa precisa entrar novamente na conta. Qual explicação é adequada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6d7cca1a-675f-56d3-b26e-b7905bc398f3",
+              "content": {
+                "text": "O navegador necessariamente apagou a conta no servidor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e510f59a-6e7c-506d-9d7e-f3d82008fefc",
+              "content": {
+                "text": "A limpeza mudou o nome civil do titular da conta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dcfd6663-7147-5836-b96b-6c7e8d5e26e2",
+              "content": {
+                "text": "O site deixou de usar Internet e passou a funcionar somente por Bluetooth.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e96aaeea-649c-52f8-9c70-37e69cecaa10",
+              "content": {
+                "text": "Dados usados para manter o estado de acesso podem ter sido removidos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e96aaeea-649c-52f8-9c70-37e69cecaa10",
+          "resolution": {
+            "text": "1. A sessão pode depender de cookies ou dados locais que foram apagados. 2. Precisar de novo login não prova exclusão da conta remota; não altera identidade nem o protocolo do serviço para Bluetooth.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sites exibidos errados ou que não funcionam como deveriam",
+              "url": "https://support.mozilla.org/pt-BR/kb/sites-exibidos-errados-ou-nao-funcionam-como-deveriam",
+              "legalBasis": null
+            },
+            {
+              "name": "Mozilla — Limpe cookies e dados de sites no Firefox",
+              "url": "https://support.mozilla.org/pt-BR/kb/limpe-cookies-e-dados-de-sites-no-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-cookies-sair.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-cookies-sair.json",
+            "contentSha256": "2a7d11b118d32ed80e2fe96375a50bc4272519d72c5126647e9ef7cd69fd7bd6",
+            "answerSha256": "2a7d11b118d32ed80e2fe96375a50bc4272519d72c5126647e9ef7cd69fd7bd6"
+          }
+        },
+        "fingerprint": "df9b8e8350e770e226cc8fdbd448a685d4877d5fcfbb55071f811b864255b334",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-download-acao-tipo"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox de desktop, PDFs devem solicitar uma decisão a cada download, enquanto outros tipos podem manter suas ações próprias. Qual ajuste deve ser conferido?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cf93eef9-c386-507d-9c8e-a5d0ac84a874",
+              "content": {
+                "text": "Somente o nome de um favorito que contém a palavra PDF.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c147ef32-15f8-5fdc-ba4a-8d488233aea6",
+              "content": {
+                "text": "A cor do papel de parede como controle de todos os tipos de arquivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1f67e2f6-470c-5730-9879-02e09fda08b3",
+              "content": {
+                "text": "A exclusão de todos os outros tipos de arquivo do computador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0dc5c1e-65e9-50d2-b2fb-e3cd3cd33c92",
+              "content": {
+                "text": "A ação Sempre perguntar para o tipo de conteúdo PDF nas configurações de aplicativos/downloads.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a0dc5c1e-65e9-50d2-b2fb-e3cd3cd33c92",
+          "resolution": {
+            "text": "1. Ações por tipo de conteúdo permitem controlar o tratamento desse tipo específico. 2. Favorito, papel de parede e exclusão geral não configuram essa decisão de abertura ou salvamento.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Tipos de conteúdo e ações de download",
+              "url": "https://support.mozilla.org/pt-BR/kb/gerencie-tipos-de-conteudo-e-acoes-de-download-no-",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-download-acao-tipo.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-download-acao-tipo.json",
+            "contentSha256": "bafb31d5f5653c45ac0b0c8ba2764e146a0c2740cb207974b59ebdb64bee3f4f",
+            "answerSha256": "bafb31d5f5653c45ac0b0c8ba2764e146a0c2740cb207974b59ebdb64bee3f4f"
+          }
+        },
+        "fingerprint": "91b47f1a9d7b1624bf1fee92813e138a14e9f5e7e8e8503176f6bbe79a0f4e96",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-downloads-remover-historico"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox de desktop, o usuário escolheu Remover do histórico em um item de download. O que distingue isso de Excluir arquivo baixado?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "48c580fb-bbd4-5d71-929d-d7aa3281d900",
+              "content": {
+                "text": "Excluir arquivo baixado apaga somente o texto de uma pesquisa Web.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b7a22fc0-43b6-586c-9647-d3b1d93a58e8",
+              "content": {
+                "text": "Remover do histórico tira o registro da lista; Excluir arquivo baixado remove o arquivo do disco.",
+                "resources": []
+              }
+            },
+            {
+              "id": "18b219a9-5cb3-5465-a94d-8956f92c2a67",
+              "content": {
+                "text": "Ambos apenas mudam o nome do arquivo, sem qualquer outra diferença.",
+                "resources": []
+              }
+            },
+            {
+              "id": "30515255-702a-5c98-96d1-c28ed007900c",
+              "content": {
+                "text": "Remover do histórico apaga obrigatoriamente toda a pasta do usuário.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b7a22fc0-43b6-586c-9647-d3b1d93a58e8",
+          "resolution": {
+            "text": "1. A documentação distingue a lista de registros do arquivo armazenado. 2. Renomeação, exclusão de toda a pasta e limpeza de pesquisa não descrevem os alcances desses comandos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Encontrar e gerenciar arquivos baixados",
+              "url": "https://support.mozilla.org/pt-BR/kb/gerenciador-de-downloads",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-downloads-remover-historico.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-downloads-remover-historico.json",
+            "contentSha256": "022bf84b3f9667f963a57d6737887f47c48de078d6ccae6678678e1425d24f2c",
+            "answerSha256": "022bf84b3f9667f963a57d6737887f47c48de078d6ccae6678678e1425d24f2c"
+          }
+        },
+        "fingerprint": "aa19641387a09f23a9696a1b37d9a6b346c18f401666292cdca6e07dfcae3f4e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-email-enviar-depois"
+        },
+        "content": {
+          "statement": {
+            "text": "No Thunderbird para desktop em português, uma mensagem foi preparada com Enviar depois. Onde fica aguardando o envio, em vez de comprovar entrega ao destinatário?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f564c9e8-e8ec-5842-94b4-f9764c992a6e",
+              "content": {
+                "text": "No lixo do sistema operacional como forma normal de agendamento.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5f7ecdc2-330a-5c31-ad2a-818498205a17",
+              "content": {
+                "text": "Na Caixa de saída.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6b3774d6-28a7-50a5-a6dd-b40809a9f993",
+              "content": {
+                "text": "Obrigatoriamente em Enviados como prova de entrega já concluída.",
+                "resources": []
+              }
+            },
+            {
+              "id": "67085c70-6d32-596d-b3d7-d4c7122cd2dc",
+              "content": {
+                "text": "Em uma pasta de favoritos HTML do navegador.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "5f7ecdc2-330a-5c31-ad2a-818498205a17",
+          "resolution": {
+            "text": "1. A Caixa de saída contém mensagens que ainda serão enviadas. 2. Preparar ou enfileirar não comprova entrega; favoritos e lixo do sistema não são a fila normal de saída.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Glossário de termos e tipos de contas",
+              "url": "https://support.mozilla.org/pt-BR/kb/glossario-termos-tipos-contas",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-email-enviar-depois.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-email-enviar-depois.json",
+            "contentSha256": "6d543d1b34b1f7e2c237caf1a7c878a67b66a750645c048b6c66960d3fef1e08",
+            "answerSha256": "6d543d1b34b1f7e2c237caf1a7c878a67b66a750645c048b6c66960d3fef1e08"
+          }
+        },
+        "fingerprint": "8dde2e2f34e2bb6c1a4ffb050b66044b7152b9375c22784c2b1757dcf820b481",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-email-servidor-compartilhado"
+        },
+        "content": {
+          "statement": {
+            "text": "Na configuração manual do Thunderbird, duas contas de entrada podem usar o mesmo servidor SMTP de saída, quando isso é permitido pelo provedor?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d466ff18-68fc-527a-91ac-b26965ccfe4a",
+              "content": {
+                "text": "Não; cada pasta local exige obrigatoriamente um servidor SMTP exclusivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d45faebc-f045-56a7-b70e-625039a7b7db",
+              "content": {
+                "text": "Não; o número de favoritos do navegador determina quantos servidores podem existir.",
+                "resources": []
+              }
+            },
+            {
+              "id": "84453a3d-f04a-5989-b4e5-57e8ceb99cfb",
+              "content": {
+                "text": "Sim, e isso elimina qualquer exigência de autenticação do provedor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "28d1246b-ea6d-5e82-afe3-ae97f3848167",
+              "content": {
+                "text": "Sim; as configurações de SMTP são separadas das contas de entrada e podem ser compartilhadas conforme a configuração.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "28d1246b-ea6d-5e82-afe3-ae97f3848167",
+          "resolution": {
+            "text": "1. A documentação permite associar contas a configurações de servidor de saída, respeitando seus requisitos. 2. Pasta e favoritos não impõem exclusividade; compartilhamento não dispensa autenticação nem autorizações do serviço.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Configuração manual de uma conta de e-mail",
+              "url": "https://support.mozilla.org/pt-BR/kb/configuracao-manual-de-conta",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-email-servidor-compartilhado.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-email-servidor-compartilhado.json",
+            "contentSha256": "8f0e3c0bc925cd75d2730a0e5ef862d87c315c32e1197d4c84f8a6fe45b3a705",
+            "answerSha256": "8f0e3c0bc925cd75d2730a0e5ef862d87c315c32e1197d4c84f8a6fe45b3a705"
+          }
+        },
+        "fingerprint": "c4864c16b8f5af94856fd5c26e4fd43ede0625c6426991a31f875010322eec19",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-favorito-nao-offline"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma página foi adicionada aos favoritos do Firefox de desktop. Isso, por si só, garante acesso ao conteúdo completo da página sem Internet?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "acb5d046-cee3-5587-a9cc-172364e23b88",
+              "content": {
+                "text": "Não; favoritos servem somente para excluir automaticamente o histórico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1afb0dca-92ef-5b51-bed4-4ab220fb1d1c",
+              "content": {
+                "text": "Não; o favorito guarda a referência ao endereço, sem garantir uma cópia completa para leitura offline.",
+                "resources": []
+              }
+            },
+            {
+              "id": "456623a0-22af-53f7-b382-8c96d4c7ffaa",
+              "content": {
+                "text": "Sim; todo favorito necessariamente baixa também todos os vídeos e arquivos vinculados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "99c32898-a7d7-5f96-9f6f-007b32b2384a",
+              "content": {
+                "text": "Sim; o favorito substitui integralmente qualquer conexão com o servidor.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1afb0dca-92ef-5b51-bed4-4ab220fb1d1c",
+          "resolution": {
+            "text": "1. Favoritos permitem retornar a endereços; salvar uma referência não é baixar todo o conteúdo. 2. Não existe garantia de cópia integral ou de funcionamento offline; favoritos também não são um comando de limpeza de histórico.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Favoritos no Firefox",
+              "url": "https://support.mozilla.org/pt-BR/kb/favoritos-no-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-favorito-nao-offline.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-favorito-nao-offline.json",
+            "contentSha256": "5e80c491e5af25862cbe3019d7a68f593f0886b4c341ef58c1efc6c1c2b10a15",
+            "answerSha256": "5e80c491e5af25862cbe3019d7a68f593f0886b4c341ef58c1efc6c1c2b10a15"
+          }
+        },
+        "fingerprint": "4c86baccd1199577286531563da38254102340347d1d1e03e40bba130dd1abf8",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-imap-cabecalho-offline"
+        },
+        "content": {
+          "statement": {
+            "text": "No Thunderbird, foram obtidos apenas os cabeçalhos de certas mensagens IMAP. Sem conexão, por que o corpo de uma delas pode não abrir?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "ace7068a-19e9-511c-a0a1-08506fc21300",
+              "content": {
+                "text": "Porque o assunto, por si só, contém obrigatoriamente todo o corpo da mensagem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "84ba4c13-22b0-5ea6-9e45-c428a8507ed3",
+              "content": {
+                "text": "Porque qualquer cabeçalho garante uma cópia local integral de todos os anexos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f780e6ef-e4c6-580d-b247-757e7597a786",
+              "content": {
+                "text": "Porque a conta deve apagar a mensagem antes de poder lê-la.",
+                "resources": []
+              }
+            },
+            {
+              "id": "21c2014b-bcce-5473-b8d4-cdfd6c821292",
+              "content": {
+                "text": "Porque seu conteúdo completo ainda não foi baixado para acesso local.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "21c2014b-bcce-5473-b8d4-cdfd6c821292",
+          "resolution": {
+            "text": "1. Cabeçalho e corpo são componentes diferentes, e a disponibilidade offline exige o conteúdo local. 2. Ver assunto ou remetente não comprova download integral; exclusão não é requisito de leitura.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sincronização IMAP",
+              "url": "https://support.mozilla.org/pt-BR/kb/sincronizacao-IMAP",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-imap-cabecalho-offline.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-imap-cabecalho-offline.json",
+            "contentSha256": "b60cd5c59775fa96aafd873b615162c72ef0b0612bc005ff53dcc34a7551409e",
+            "answerSha256": "b60cd5c59775fa96aafd873b615162c72ef0b0612bc005ff53dcc34a7551409e"
+          }
+        },
+        "fingerprint": "6a5afb9cc15ca7eccbc82b27140cba852b93ebcc7b181bd9c4d8b449efdd6d55",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-imap-exclusao-sincronizada"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma conta IMAP é acessada pelo Thunderbird e por outro dispositivo. Ao excluir uma mensagem com sincronização ativa, que cuidado é correto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "cb321403-217b-5921-8d41-08b329c84b00",
+              "content": {
+                "text": "Concluir que IMAP desativa necessariamente qualquer acesso por outro dispositivo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "125144d3-0589-5877-8047-0f6ddb08cc7b",
+              "content": {
+                "text": "A exclusão pode ser sincronizada no servidor e refletida nos outros dispositivos; sincronização não substitui cópia de segurança independente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "da85a38c-95f0-53e9-aef9-546cbe25ede4",
+              "content": {
+                "text": "Presumir que IMAP sempre cria uma cópia de segurança imutável de tudo que foi apagado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b485e72e-a019-572f-88e7-6a05369b9e4b",
+              "content": {
+                "text": "Presumir que toda exclusão só muda a cor da mensagem.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "125144d3-0589-5877-8047-0f6ddb08cc7b",
+          "resolution": {
+            "text": "1. O estado sincronizado pode propagar a remoção entre os acessos à mesma conta. 2. Replicação de estado não é retenção imutável; exclusão não é cor nem impedimento universal a múltiplos acessos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Sincronização IMAP",
+              "url": "https://support.mozilla.org/pt-BR/kb/sincronizacao-IMAP",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-imap-exclusao-sincronizada.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-imap-exclusao-sincronizada.json",
+            "contentSha256": "397ad7d1354b39537ce9fe62621db4168ec7604eb7f9ebc9c031cecbae4d37fc",
+            "answerSha256": "397ad7d1354b39537ce9fe62621db4168ec7604eb7f9ebc9c031cecbae4d37fc"
+          }
+        },
+        "fingerprint": "82332716e6622dcaa37c7b364340c99b104dd644cdc812098f51754f1c210cbb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-limpar-um-site"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pessoa quer limpar cookies de um único site no Firefox e preservar os dos demais. Qual abordagem é apropriada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "78a11bbb-e2d1-5261-8b7f-ca1f9e4af1d3",
+              "content": {
+                "text": "Excluir obrigatoriamente todos os cookies de todos os sites.",
+                "resources": []
+              }
+            },
+            {
+              "id": "58f817a4-0bb4-5e5c-a854-84cd003ac5d8",
+              "content": {
+                "text": "Apagar a pasta de documentos do Windows.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4d47742a-bd92-55ec-b8ad-b7f5e6bddf60",
+              "content": {
+                "text": "Desinstalar o processador do computador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "62be85d8-4ac6-5707-aa39-eb7df03ac228",
+              "content": {
+                "text": "Selecionar o site no gerenciamento de cookies e dados de sites e remover apenas os dados correspondentes.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "62be85d8-4ac6-5707-aa39-eb7df03ac228",
+          "resolution": {
+            "text": "1. O gerenciamento de dados permite pesquisar sites e remover os selecionados. 2. Não é necessário limpar tudo nem agir sobre documentos pessoais ou hardware para apagar dados de um site específico.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Limpe cookies e dados de sites no Firefox",
+              "url": "https://support.mozilla.org/pt-BR/kb/limpe-cookies-e-dados-de-sites-no-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-limpar-um-site.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-limpar-um-site.json",
+            "contentSha256": "d1d291bd990fde1f48a1beb3abf663cf31b23f85b930ca714df79cc9b3567943",
+            "answerSha256": "d1d291bd990fde1f48a1beb3abf663cf31b23f85b930ca714df79cc9b3567943"
+          }
+        },
+        "fingerprint": "de1264ebd31077c9312014d4b323b16e3c71cd468112061fbef4bb8a8d607a86",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-privativo-dispositivo"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma pessoa usa janela privativa do Firefox em um computador compartilhado. Qual limite permanece relevante?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "54d12246-1c5d-5fa2-8e54-82f433da7ece",
+              "content": {
+                "text": "Ela torna impossível que o empregador observe tráfego de sua rede.",
+                "resources": []
+              }
+            },
+            {
+              "id": "44cd6855-feeb-5846-8310-81dd17d42e53",
+              "content": {
+                "text": "A navegação privativa não substitui a proteção do próprio dispositivo e não elimina tudo o que existe nele.",
+                "resources": []
+              }
+            },
+            {
+              "id": "04ad744a-8fc0-56f6-aa0b-aad1608a49ff",
+              "content": {
+                "text": "Ela apaga automaticamente todos os documentos do usuário anterior.",
+                "resources": []
+              }
+            },
+            {
+              "id": "70145fc5-89eb-590d-af07-5eb4fa95cb23",
+              "content": {
+                "text": "Ela remove todos os programas de monitoramento do sistema operacional.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "44cd6855-feeb-5846-8310-81dd17d42e53",
+          "resolution": {
+            "text": "1. A proteção do modo privado tem escopo limitado; não é limpeza completa nem blindagem de dispositivo ou rede. 2. Apagar arquivos de terceiros, desinstalar monitoramento e impedir toda observação de rede não são garantias desse recurso.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Lendas comuns sobre navegação privativa",
+              "url": "https://support.mozilla.org/pt-BR/kb/mitos-comuns-sobre-navegacao-privativa",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-privativo-dispositivo.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-privativo-dispositivo.json",
+            "contentSha256": "6705ac3a3fa1a3ad8a14c4614a24dfa182ccbb441ad3cbed009454b5d65e16c4",
+            "answerSha256": "6705ac3a3fa1a3ad8a14c4614a24dfa182ccbb441ad3cbed009454b5d65e16c4"
+          }
+        },
+        "fingerprint": "c90ea1f967f2d987689850005fa4f5671a911821d78dfb2aa93607189453ba85",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-privativo-final"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma sessão do Firefox contém várias janelas privativas. Quando todas elas são fechadas, o que acontece com os cookies e dados de sites dessa sessão, conforme a documentação consultada?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2d359e53-3b53-572d-afef-3924f79767bb",
+              "content": {
+                "text": "Todos os arquivos pessoais do dispositivo são apagados.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c65c7aeb-9a5b-5cff-a0a2-3a2daadf6f0e",
+              "content": {
+                "text": "São descartados com os dados de navegação privada daquela sessão.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3a49cce7-2189-5a51-abba-11cdb20dfa3c",
+              "content": {
+                "text": "São automaticamente enviados por email ao titular do computador.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dc7924ef-e275-596e-ab44-cfe4edac62d5",
+              "content": {
+                "text": "São convertidos em documentos Word na Área de Trabalho.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c65c7aeb-9a5b-5cff-a0a2-3a2daadf6f0e",
+          "resolution": {
+            "text": "1. Encerrar todas as janelas privativas encerra a sessão e elimina esses dados de navegação privada. 2. O mecanismo não envia emails nem converte cookies em Word ou apaga indiscriminadamente arquivos pessoais.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Lendas comuns sobre navegação privativa",
+              "url": "https://support.mozilla.org/pt-BR/kb/mitos-comuns-sobre-navegacao-privativa",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-privativo-final.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-privativo-final.json",
+            "contentSha256": "c77936091fb92f3ab37e8059a63823a12afc36e62bb69d639bf0b9beb657c09e",
+            "answerSha256": "c77936091fb92f3ab37e8059a63823a12afc36e62bb69d639bf0b9beb657c09e"
+          }
+        },
+        "fingerprint": "195dff350fcb2c847f509d9a675dc9176ef0146f337f5fab9d58a1aa46b27468",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-push-aba-fechada"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox de desktop, fechar a aba de um site autorizado a enviar notificações Web Push garante, por si só, que ele não possa enviar novas notificações?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3fbaef38-a6d1-53fb-93ef-ee7f23f4b9f7",
+              "content": {
+                "text": "Não; por isso é obrigatório permitir notificações de todos os sites.",
+                "resources": []
+              }
+            },
+            {
+              "id": "003658d4-bf59-59cf-9481-490ae5d90a7c",
+              "content": {
+                "text": "Não; Web Push pode entregar notificações sem manter a página aberta, observadas as permissões e condições de execução.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e0e5fd43-1bd4-5bfb-a14d-126f5620e5a1",
+              "content": {
+                "text": "Sim; qualquer aba fechada revoga permanentemente todas as permissões do site.",
+                "resources": []
+              }
+            },
+            {
+              "id": "af173a81-2058-5105-8ef1-62f99decec98",
+              "content": {
+                "text": "Sim; fechar a aba exclui automaticamente a conta do usuário no serviço.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "003658d4-bf59-59cf-9481-490ae5d90a7c",
+          "resolution": {
+            "text": "1. O mecanismo foi projetado para não depender de uma página continuamente aberta. 2. Fechar aba não equivale a revogar permissão ou excluir conta; o usuário continua podendo negar ou revogar notificações.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Notificações Web Push",
+              "url": "https://support.mozilla.org/pt-BR/kb/notificacoes-web-push-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-push-aba-fechada.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-push-aba-fechada.json",
+            "contentSha256": "05641c2e27eda446cbb47d97d7d3b0137c94804ef17dfd392fc289e1d337a197",
+            "answerSha256": "05641c2e27eda446cbb47d97d7d3b0137c94804ef17dfd392fc289e1d337a197"
+          }
+        },
+        "fingerprint": "6ef63feff82e08b2500d8a147e3061e48a7ba7728414e36618db8131c5e80047",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-site-informacoes-permissoes"
+        },
+        "content": {
+          "statement": {
+            "text": "No Firefox de desktop, para que serve examinar a seção Permissões nas informações de uma página?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "22e79001-f5c0-5ee0-8936-736855dcb8fd",
+              "content": {
+                "text": "Provar automaticamente que todo conteúdo publicado é verdadeiro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f08c6475-bdde-59cb-a59e-563ffe85dbbc",
+              "content": {
+                "text": "Garantir que o autor possui qualquer direito sobre qualquer imagem da página.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d3c184d4-6f27-58c1-8ad4-72df1f689e1e",
+              "content": {
+                "text": "Substituir o histórico de versões de todos os documentos da Internet.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1ff78cd9-28bd-5b32-8cb4-89b9e8b73247",
+              "content": {
+                "text": "Conferir e ajustar ações permitidas àquele site, como notificações e acesso a dispositivos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1ff78cd9-28bd-5b32-8cb4-89b9e8b73247",
+          "resolution": {
+            "text": "1. Essa seção controla permissões técnicas relacionadas ao site. 2. Permissão técnica não é certificação de veracidade, titularidade de conteúdo ou histórico documental universal.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Janela de informações da página",
+              "url": "https://support.mozilla.org/pt-BR/kb/janela-de-informacoes-da-pagina-do-firefox",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-site-informacoes-permissoes.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-site-informacoes-permissoes.json",
+            "contentSha256": "bf2a2b0b0c8a63a5c6e736ddd3fc5ab755cc97b4cae3b7a744e68f5e6c7bb4d9",
+            "answerSha256": "bf2a2b0b0c8a63a5c6e736ddd3fc5ab755cc97b4cae3b7a744e68f5e6c7bb4d9"
+          }
+        },
+        "fingerprint": "4a81847b0a47f9e36890e6104dce6e2c825c83d60e789768d21474703d9d0c9e",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-url-consulta"
+        },
+        "content": {
+          "statement": {
+            "text": "No endereço https://exemplo.org/busca?q=atas&ano=2026, qual parte representa os parâmetros de consulta?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0d0da4f4-56a2-5d9e-a243-d39367456c8f",
+              "content": {
+                "text": "exemplo.org, como se fosse toda a consulta.",
+                "resources": []
+              }
+            },
+            {
+              "id": "63663c4f-d77a-5924-aa2d-e1aa5230c63b",
+              "content": {
+                "text": "https, como se fosse o termo buscado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b4c8eca9-49f9-57f1-b88c-5bea67f9d3ca",
+              "content": {
+                "text": "/busca, como se contivesse os dois pares de parâmetros.",
+                "resources": []
+              }
+            },
+            {
+              "id": "52f5eadc-5fad-5b3f-b41a-d39e8077e90f",
+              "content": {
+                "text": "q=atas&ano=2026, depois do ponto de interrogação.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "52f5eadc-5fad-5b3f-b41a-d39e8077e90f",
+          "resolution": {
+            "text": "1. O ponto de interrogação introduz a consulta, aqui com dois pares nome e valor. 2. Domínio, esquema e caminho têm funções próprias e não são os pares apresentados após ?.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla MDN — API URL",
+              "url": "https://developer.mozilla.org/pt-BR/docs/Web/API/URL",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-url-consulta.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-url-consulta.json",
+            "contentSha256": "f5561762f9ca1f12da45b34f83b2998e15b5480ee4f291c21cec3b05c9ad927e",
+            "answerSha256": "f5561762f9ca1f12da45b34f83b2998e15b5480ee4f291c21cec3b05c9ad927e"
+          }
+        },
+        "fingerprint": "256c03ddfb456758b5d7075b40a61ba336f8922eb1c4380144e680e499a5a739",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-url-espaco-codificado"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma URL, um valor aparece como nome=Ana%20Silva. Na codificação usual de percentuais, a que corresponde %20 nesse valor?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fc0a4668-745c-591c-ad6e-1cd6c6daf62e",
+              "content": {
+                "text": "A uma senha obrigatória do servidor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8f043741-ee78-51c0-b995-b05fad5cee49",
+              "content": {
+                "text": "À confirmação de que a pessoa é proprietária do domínio.",
+                "resources": []
+              }
+            },
+            {
+              "id": "433c1450-7139-5f40-9a73-5c32e0a4062c",
+              "content": {
+                "text": "Ao início do fragmento, que usa #.",
+                "resources": []
+              }
+            },
+            {
+              "id": "64ac409f-f89d-5baf-a270-3302cc4b03d4",
+              "content": {
+                "text": "A um espaço.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "64ac409f-f89d-5baf-a270-3302cc4b03d4",
+          "resolution": {
+            "text": "1. %20 é a representação codificada do caractere espaço. 2. Codificação de caracteres não comprova identidade ou propriedade; fragmento é introduzido por outro delimitador.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla MDN — API URL",
+              "url": "https://developer.mozilla.org/pt-BR/docs/Web/API/URL",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-url-espaco-codificado.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-url-espaco-codificado.json",
+            "contentSha256": "85f348c201ab3c1bfd38e6ed98cc69302e86500d6342f7cedce491351f57d8ba",
+            "answerSha256": "85f348c201ab3c1bfd38e6ed98cc69302e86500d6342f7cedce491351f57d8ba"
+          }
+        },
+        "fingerprint": "def081aa1c21f03e3b47a824dcc21701eee87b568f5a69b7cc5284ceca571e7f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.it-url-relativo-diretorio"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma página tem como endereço base https://exemplo.org/cursos/aula1.html. Sem outra base definida, o link relativo ../ajuda.html aponta para qual endereço?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "7f4744f1-f526-5530-a390-98f89f211e3b",
+              "content": {
+                "text": "https://exemplo.org/cursos/aula1.html/ajuda.html.",
+                "resources": []
+              }
+            },
+            {
+              "id": "36d4298a-bb94-5011-a853-da67f407fb30",
+              "content": {
+                "text": "https://exemplo.org/ajuda.html.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8001db88-8546-5b01-808f-54e6e6d75162",
+              "content": {
+                "text": "https://exemplo.org/cursos/ajuda.html.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c8770e88-1a5e-5601-9a56-e6c008aa6e4f",
+              "content": {
+                "text": "https://ajuda.html/cursos/.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "36d4298a-bb94-5011-a853-da67f407fb30",
+          "resolution": {
+            "text": "1. ../ sobe um nível a partir do diretório cursos, e ajuda.html é resolvido na raiz indicada. 2. Não se mantém o diretório cursos, não se converte o nome do arquivo em domínio e não se trata aula1.html como diretório.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla MDN — API URL",
+              "url": "https://developer.mozilla.org/pt-BR/docs/Web/API/URL",
+              "legalBasis": null
+            },
+            {
+              "name": "Mozilla MDN — Criando hiperlinks",
+              "url": "https://developer.mozilla.org/pt-BR/docs/Learn_web_development/Core/Structuring_content/Creating_links",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Elaboração e conferência assistidas por IA: Codex. Sem revisão humana independente.",
+            "contentPath": "sources/admin.2026-11.I10.p.it-url-relativo-diretorio.json",
+            "answerPath": "sources/admin.2026-11.I10.p.it-url-relativo-diretorio.json",
+            "contentSha256": "97eb518b008ffbff98c35d864333746c6f0aaabd1775334a71423cb16a035d7c",
+            "answerSha256": "97eb518b008ffbff98c35d864333746c6f0aaabd1775334a71423cb16a035d7c"
+          }
+        },
+        "fingerprint": "cdedbc884981060932fb32eb6c92c834534176808b24fb1a6fd9a1685d9ef512",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.morato-q20"
+        },
+        "content": {
+          "statement": {
+            "text": "Assinale a alternativa que contém o nome de um navegador da internet:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "dfd7ffd5-4a41-5140-a093-827a026aaef5",
+              "content": {
+                "text": "Microsoft Edge.",
+                "resources": []
+              }
+            },
+            {
+              "id": "375f61a2-49a7-5628-94ad-5baabc49f24d",
+              "content": {
+                "text": "Alfa One.",
+                "resources": []
+              }
+            },
+            {
+              "id": "49d4378a-c421-5e68-984e-f46d3b5a751e",
+              "content": {
+                "text": "Adobe.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3d313b82-756f-5371-8ef8-f3c434b57039",
+              "content": {
+                "text": "Printer.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e52c9e55-fef9-5ad2-bee2-cb0aa816ed1a",
+              "content": {
+                "text": "Pop up.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "dfd7ffd5-4a41-5140-a093-827a026aaef5",
+          "resolution": {
+            "text": "1. Microsoft Edge é um navegador de páginas da web. 2. Adobe é o nome de uma empresa de software, Printer significa impressora e pop-up designa uma janela que se abre sobre a página; Alfa One não é um navegador conhecido. Gabarito definitivo: alternativa A.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft — Navegador Microsoft Edge",
+              "url": "https://www.microsoft.com/pt-br/edge",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal de Francisco Morato 01/2025, Oficial Administrativo, questão 20. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.p.morato-q20.json",
+            "answerPath": "sources/admin.2026-11.I10.p.morato-q20.json",
+            "contentSha256": "cb1a7cf18564bab7469a89b275211d307ebd79b2480d0ef8a7497dae590498e0",
+            "answerSha256": "cb1a7cf18564bab7469a89b275211d307ebd79b2480d0ef8a7497dae590498e0"
+          }
+        },
+        "fingerprint": "96f8543d8c3b8ce894a051c69092e53be78337ee375e8e6dc0e93b9a5849c869",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.morato-ti-q42"
+        },
+        "content": {
+          "statement": {
+            "text": "O protocolo FTP (File Transfer Protocol) é usado para:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "286b5e85-3ab3-548c-ac12-5cf5f946f6b0",
+              "content": {
+                "text": "realizar o acesso à internet de forma mais segura.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8559a9a4-ddaf-5198-839f-2de995dc1f00",
+              "content": {
+                "text": "realizar a conexão entre dois computadores para que um deles “finja” ser terminal do outro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "33298464-cffa-5be4-a681-0082bde959aa",
+              "content": {
+                "text": "tradução dos nomes de domínios",
+                "resources": []
+              }
+            },
+            {
+              "id": "fabba8f5-f0db-551f-a4ad-0333dc76c154",
+              "content": {
+                "text": "realizar a transferência de arquivos entre dois computadores através da internet.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a53b21a1-a4ad-5af8-8381-a832fbb2d210",
+              "content": {
+                "text": "o “controle remoto” de vários dispositivos da rede.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fabba8f5-f0db-551f-a4ad-0333dc76c154",
+          "resolution": {
+            "text": "1. FTP é um protocolo de transferência de arquivos entre cliente e servidor, inclusive através da Internet; D corresponde ao gabarito definitivo. 2. A não é uma garantia geral do FTP comum; B e E tratam de acesso ou controle remoto e C remete à resolução DNS. Não se deve confundir FTP comum com variantes protegidas por criptografia.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Protocolo e conector FTP",
+              "url": "https://learn.microsoft.com/pt-br/connectors/ftp/",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal de Francisco Morato 01/2025, Técnico em Informática, questão 42. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.p.morato-ti-q42.json",
+            "answerPath": "sources/admin.2026-11.I10.p.morato-ti-q42.json",
+            "contentSha256": "f837f0a98d7ecd6c1e82b57af6081ce380819e2bb785dca61158ec902b9fdeb3",
+            "answerSha256": "f837f0a98d7ecd6c1e82b57af6081ce380819e2bb785dca61158ec902b9fdeb3"
+          }
+        },
+        "fingerprint": "fe8586bfffa5ca6497c1cdf2efb72f674cced5b4b16786f9141d71d4112fecf6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.morato-ti-q43"
+        },
+        "content": {
+          "statement": {
+            "text": "Quando parte do sistema de informação de uma empresa é liberado por meio da internet para alguns usuários externos, de forma restrita, tem-se uma:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d211913d-6a94-52b7-82b8-b9aa997f0489",
+              "content": {
+                "text": "Extranet",
+                "resources": []
+              }
+            },
+            {
+              "id": "37d0b7cb-bb7c-5e7a-a72c-03b388823efe",
+              "content": {
+                "text": "Intranet",
+                "resources": []
+              }
+            },
+            {
+              "id": "91dc0427-bf31-5408-8982-a0a04ea6094e",
+              "content": {
+                "text": "BAN (Body Area Network – Rede Corporal)",
+                "resources": []
+              }
+            },
+            {
+              "id": "170f6533-75a2-5912-bcad-dc7c9814f1f4",
+              "content": {
+                "text": "PAN (Personal Area Network – Rede Pessoal)",
+                "resources": []
+              }
+            },
+            {
+              "id": "3ce91936-a38f-5140-aa3c-dbc884ca2e23",
+              "content": {
+                "text": "Rede Wi-fi",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d211913d-6a94-52b7-82b8-b9aa997f0489",
+          "resolution": {
+            "text": "1. Extranet estende recursos organizacionais a usuários externos determinados com acesso controlado; a alternativa A é a resposta definitiva. 2. Intranet indica o ambiente interno; BAN e PAN classificam redes por proximidade pessoal ou corporal, e Wi-Fi descreve uma tecnologia de acesso sem fio. Nenhum desses termos, isoladamente, define a liberação restrita a parceiros externos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Microsoft Learn — Web Services: intranet, extranet e Internet",
+              "url": "https://learn.microsoft.com/en-us/previous-versions/windows/desktop/aa966281(v=bts.10)",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal de Francisco Morato 01/2025, Técnico em Informática, questão 43. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.p.morato-ti-q43.json",
+            "answerPath": "sources/admin.2026-11.I10.p.morato-ti-q43.json",
+            "contentSha256": "3799c4d35cb823b24db7ccf1854cb3e5d54905750d48215799a30334123f57cd",
+            "answerSha256": "3799c4d35cb823b24db7ccf1854cb3e5d54905750d48215799a30334123f57cd"
+          }
+        },
+        "fingerprint": "759df73632858fd150c29e2d52db92a1037e1eb23d7341cdb70fdd7056440087",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.potim-se-q20"
+        },
+        "content": {
+          "statement": {
+            "text": "O correio eletrônico (e -mail) é o serviço básico de:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f53ebd7d-c85d-5d27-825d-5b3d8be7b7e3",
+              "content": {
+                "text": "Impressão remota de documentos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0c0cfef2-2c1a-5439-9d70-87f40912154d",
+              "content": {
+                "text": "Armazenamento local de arquivos.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2c72bc71-d427-5a3a-9e10-3371b817e6ba",
+              "content": {
+                "text": "Comunicação na rede de internet.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2e8dc41c-acd0-51e0-b4f4-eb889fbc41be",
+              "content": {
+                "text": "Monitoramento de dispositivos móveis.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d736aff9-b1c0-5884-94a7-9cfcc38f70b4",
+              "content": {
+                "text": "Execução de programas em segundo plano.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2c72bc71-d427-5a3a-9e10-3371b817e6ba",
+          "resolution": {
+            "text": "1. O e-mail é um serviço de comunicação em rede, permitindo enviar e receber mensagens. 2. Impressão, execução local de programas, rastreamento e armazenamento somente local não definem esse serviço.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Glossário de termos e tipos de contas",
+              "url": "https://support.mozilla.org/pt-BR/kb/glossario-termos-tipos-contas",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Secretário de Escola, questão 20. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.p.potim-se-q20.json",
+            "answerPath": "sources/admin.2026-11.I10.p.potim-se-q20.json",
+            "contentSha256": "6d25a9e8524b19f4d0eaa0d86c3f6bc00ecd4dc84972f0b04c315c3a5a1d0413",
+            "answerSha256": "6d25a9e8524b19f4d0eaa0d86c3f6bc00ecd4dc84972f0b04c315c3a5a1d0413"
+          }
+        },
+        "fingerprint": "22831e3c9a570a2ef7c379f32c98532e18452edbdbb1718bbef06897cd41b6b1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "lesson-practice-v1",
+          "key": "admin.2026-11.I10.p.potim-ti-q32"
+        },
+        "content": {
+          "statement": {
+            "text": "No modelo cliente-servidor, o protocolo utilizado para enviar e-mails de um cliente para um servidor de é o:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "40c85b91-3df8-5a57-95f1-9efa6712dea1",
+              "content": {
+                "text": "POP3.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e602c48a-4799-5371-ad7b-238111898502",
+              "content": {
+                "text": "IMAP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "48348fb2-75a4-59c2-8643-16983226f100",
+              "content": {
+                "text": "HTTP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e25765d8-853b-5c66-a6a1-8ac8eb907679",
+              "content": {
+                "text": "FTP.",
+                "resources": []
+              }
+            },
+            {
+              "id": "65486516-a716-56a3-bd59-9ef506137d0f",
+              "content": {
+                "text": "SMTP.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "65486516-a716-56a3-bd59-9ef506137d0f",
+          "resolution": {
+            "text": "1. SMTP é o protocolo de envio de correio eletrônico, inclusive a submissão do cliente ao servidor; E foi confirmada no gabarito definitivo. 2. POP3 e IMAP são associados ao recebimento ou acesso à caixa de mensagens; HTTP atende a recursos Web e FTP à transferência de arquivos. A redação incompleta de é foi preservada do caderno, sem alterar a pergunta nem as opções.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "I10",
+            "disciplineId": "informatica",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "Mozilla — Glossário de termos e tipos de contas",
+              "url": "https://support.mozilla.org/pt-BR/kb/glossario-termos-tipos-contas",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Técnico em Informática, questão 32. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.I10.p.potim-ti-q32.json",
+            "answerPath": "sources/admin.2026-11.I10.p.potim-ti-q32.json",
+            "contentSha256": "508d1c6a3b1417e91261a83b97e34a8c3e2bb71e04246f57668a3c0d1fa57362",
+            "answerSha256": "508d1c6a3b1417e91261a83b97e34a8c3e2bb71e04246f57668a3c0d1fa57362"
+          }
+        },
+        "fingerprint": "469bd4d90ccdf0ed093b36c8da0fca6a61500929fdc8ef98d53c0c0b192107d2",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.I10.p.it-busca-excluir-termo.json",
+        "mediaType": "application/json",
+        "sha256": "89fa229b1af0ea6a4936691cfee5c48dd63866920dc1faaf18acb84d22531198",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiamFndWFyIFwiY2Fycm9cIiwgZXhpZ2luZG8gYSBwYWxhdnJhIHF1ZSBkZXZlcmlhIHNlciBleGNsdcOtZGEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiamFndWFyIHNpdGU6Y2Fycm8sIGNvbmZ1bmRpbmRvIHRlcm1vIGV4Y2x1w61kbyBjb20gZG9tw61uaW8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiamFndWFyIGZpbGV0eXBlOmNhcnJvLCBjb25mdW5kaW5kbyBwYWxhdnJhIGNvbSB0aXBvIGRlIGFycXVpdm8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiamFndWFyIC1jYXJyby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1idXNjYS1leGNsdWlyLXRlcm1vIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbInJldmlld3MtcjMtcnYzLThmZmVjMTRmMWEiXSwicmVzb2x1dGlvbiI6IjEuIE8gc2luYWwgZGUgbWVub3MganVudG8gYW8gdGVybW8gcGVkZSBzdWEgZXhjbHVzw6NvIGRvcyByZXN1bHRhZG9zLiAyLiBBc3BhcyBuw6NvIGV4Y2x1ZW07IHNpdGU6IMOpIHJlc3RyacOnw6NvIGRlIGRvbcOtbmlvIGUgZmlsZXR5cGU6IHNlIHJlZmVyZSBhbyBmb3JtYXRvIGRlIGFycXVpdm8uIiwic3RhdGVtZW50IjoiTmEgUGVzcXVpc2EgR29vZ2xlLCB1bWEgY29uc3VsdGEgc29icmUgamFndWFyIGRldmUgZXhjbHVpciByZXN1bHRhZG9zIGFzc29jaWFkb3Mgw6AgcGFsYXZyYSBjYXJyby4gUXVhbCBzaW50YXhlIGV4cHJlc3NhIGVzc2EgZXhjbHVzw6NvPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7InJldmlld3MtcjMtcnYzLThmZmVjMTRmMWEiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMiIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJHb29nbGUg4oCUIFBlc3F1aXNhIGF2YW7Dp2FkYSAoZGljYSBkbyBjYW1wbyAnbmVuaHVtYSBkZXN0YXMgcGFsYXZyYXMnOiBzaW5hbCBkZSBtZW5vcyBhbnRlcyBkYXMgcGFsYXZyYXMgaW5kZXNlamFkYXMpIiwidXJsIjoiaHR0cHM6Ly93d3cuZ29vZ2xlLmNvbS9hZHZhbmNlZF9zZWFyY2g/aGw9cHQtQlIifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-busca-frase-exata.json",
+        "mediaType": "application/json",
+        "sha256": "cfab5147a43ee4f1295aad380684befda662be861ac8104c9287685bb12b25c4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVXNhciBzaXRlOiBzZW0gaW5mb3JtYXIgcXVhbHF1ZXIgZG9tw61uaW8gY29tbyBzdWJzdGl0dXRvIGRhcyBhc3Bhcy4ifSx7ImlkIjoiYiIsInRleHQiOiJQZXNxdWlzYXIgXCJwbGFubyBkZSBjYXJnb3NcIiwgY29tIGFzcGFzIGVudm9sdmVuZG8gYSBleHByZXNzw6NvLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlBlc3F1aXNhciBhcGVuYXMgY2FyZ29zIGUgcHJlc3VtaXIgcXVlIHRvZGEgb2NvcnLDqm5jaWEgaW5jbHVhIGEgZnJhc2UgY29tcGxldGEuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiVXNhciAtcGxhbm8gcGFyYSBleGlnaXIgb2JyaWdhdG9yaWFtZW50ZSBhIHBhbGF2cmEgcGxhbm8uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtYnVzY2EtZnJhc2UtZXhhdGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsicmV2aWV3cy1yMy1ydjMtYTYyMDRmNDUzMCJdLCJyZXNvbHV0aW9uIjoiMS4gQXNwYXMgc29saWNpdGFtIGNvcnJlc3BvbmTDqm5jaWEgcGFyYSBhIGV4cHJlc3PDo28gaW5kaWNhZGEuIDIuIFVtYSBwYWxhdnJhIGlzb2xhZGEgbsOjbyBleGlnZSBhIGZyYXNlOyBzaW5hbCBkZSBtZW5vcyBleGNsdWkgdGVybW8gZSBzaXRlOiByZXN0cmluZ2UgZG9tw61uaW8gcXVhbmRvIGNvbXBsZXRvLiIsInN0YXRlbWVudCI6Ik5hIFBlc3F1aXNhIEdvb2dsZSwgY29tbyBwZWRpciBjb3JyZXNwb25kw6puY2lhIGRlIHVtYSBleHByZXNzw6NvIGV4YXRhLCBjb21vIHBsYW5vIGRlIGNhcmdvcz8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJyZXZpZXdzLXIzLXJ2My1hNjIwNGY0NTMwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiR29vZ2xlIOKAlCBQZXNxdWlzYSBhdmFuw6dhZGEgKGRpY2EgZG8gY2FtcG8gJ2VzdGEgZXhwcmVzc8OjbyBvdSBmcmFzZSBleGF0YSc6IHBhbGF2cmFzIGV4YXRhcyBlbnRyZSBhc3BhcykiLCJ1cmwiOiJodHRwczovL3d3dy5nb29nbGUuY29tL2FkdmFuY2VkX3NlYXJjaD9obD1wdC1CUiJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-busca-intervalo-data.json",
+        "mediaType": "application/json",
+        "sha256": "1a2110fa6b8eeb9b2427e8efd3aa84dc4484e59964ee469a209cb06357b8b771",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2VsZWNpb25hciB1bSDDum5pY28gZG9tw61uaW8gZSBwcmVzdW1pciBxdWUgdG9kb3Mgb3MgZG9jdW1lbnRvcyBkZWxlIHPDo28gZGEgbWVzbWEgZGF0YS4ifSx7ImlkIjoiYiIsInRleHQiOiJBcGxpY2FyIHVtIGZpbHRybyBkZSBpbnRlcnZhbG8gZGUgZGF0YXMgZSBjb25mZXJpciBhIGRhdGEgcmVhbCBkb3MgZG9jdW1lbnRvcyBlbmNvbnRyYWRvcy4ifSx7ImlkIjoiYyIsInRleHQiOiJSZXN0cmluZ2lyIGFwZW5hcyBvIGZvcm1hdG8gUERGIGUgY29uY2x1aXIgcXVlIGlzc28gZGVmaW5lIHF1YWxxdWVyIHBlcsOtb2RvLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkV4Y2x1aXIgYXMgcGFsYXZyYXMgYW50aWdvIGUgbm92byBjb21vIHNlIGlzc28gY29tcHJvdmFzc2UgYSBkYXRhIGRlIHB1YmxpY2HDp8Ojby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1idXNjYS1pbnRlcnZhbG8tZGF0YSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJyZXZpZXdzLXIzLXJ2My02YjcxMjQ1ZmVjIl0sInJlc29sdXRpb24iOiIxLiBBIHBlc3F1aXNhIHBlcm1pdGUgcmVzdHJpbmdpciByZXN1bHRhZG9zIGEgdW0gcGVyw61vZG87IGNvbmZlcmlyIG8gZG9jdW1lbnRvIGV2aXRhIHRvbWFyIG8gZmlsdHJvIGNvbW8gcHJvdmEgc3VmaWNpZW50ZSBkZSBzdWEgZGF0YS4gMi4gRm9ybWF0bywgcGFsYXZyYXMgZXhjbHXDrWRhcyBlIGRvbcOtbmlvIG7Do28gZXNwZWNpZmljYW0gcG9yIHNpIHPDs3MgdW0gaW50ZXJ2YWxvIHRlbXBvcmFsIGRlIHB1YmxpY2HDp8Ojby4iLCJzdGF0ZW1lbnQiOiJOYSBQZXNxdWlzYSBHb29nbGUsIGEgZXF1aXBlIHByb2N1cmEgY29iZXJ0dXJhIHB1YmxpY2FkYSBlbSBkZXRlcm1pbmFkbyBwZXLDrW9kbyBoaXN0w7NyaWNvLiBRdWFsIHJlZmluYW1lbnRvIGNvcnJlc3BvbmRlIGEgZXNzZSBvYmpldGl2bz8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJyZXZpZXdzLXIzLXJ2My02YjcxMjQ1ZmVjIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiR29vZ2xlIChibG9nIG9maWNpYWwgVGhlIEtleXdvcmQpIOKAlCAyMCB0aGluZ3MgeW91IGRpZG4ndCBrbm93IHlvdSBjb3VsZCBkbyB3aXRoIFNlYXJjaCwgaXRlbSAxOCAoaW50ZXJ2YWxvIGRlIGRhdGFzKSwgTGFyYSBMZXZpbiwgMTEvMDkvMjAxOCIsInVybCI6Imh0dHBzOi8vYmxvZy5nb29nbGUvcHJvZHVjdHMtYW5kLXBsYXRmb3Jtcy9wcm9kdWN0cy9zZWFyY2gvMjAtdGhpbmdzLXlvdS1kaWRudC1rbm93LXlvdS1jb3VsZC1kby1zZWFyY2gvIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-cache-versao-antiga.json",
+        "mediaType": "application/json",
+        "sha256": "a080f7ec79702601b2f1fe7e1ffb6626402fb488979fc1f493afacca4135c064",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVHJvY2FyIGEgY29yIGRvIGdhYmluZXRlIGF0dWFsaXphIG8gY29udGXDumRvIGRhIHDDoWdpbmEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUmVjdXJzb3MgYW50aWdvcyBubyBjYWNoZSBwb2RlbSBjb250cmlidWlyOyBsaW1wYXIgb3MgZGFkb3MgZGVzc2Ugc2l0ZSBlIHJlY2FycmVnYXIgw6kgdW1hIGV0YXBhIGRlIGRpYWduw7NzdGljby4ifSx7ImlkIjoiYyIsInRleHQiOiLDiSBvYnJpZ2F0w7NyaW8gZm9ybWF0YXIgdG9kbyBvIGRpc2NvIGFudGVzIGRlIHRlc3RhciBub3ZhbWVudGUuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTyBwcm9ibGVtYSBwcm92YSBxdWUgYSBww6FnaW5hIG51bmNhIGV4aXN0aXUuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtY2FjaGUtdmVyc2FvLWFudGlnYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNhY2hlIl0sInJlc29sdXRpb24iOiIxLiBPIGNhY2hlIHBvZGUgbWFudGVyIGFycXVpdm9zIGFudGlnb3MgcXVlIGludGVyYWdlbSBtYWwgY29tIG9zIG5vdm9zIHJlY3Vyc29zIGRvIHNpdGUuIDIuIFVtYSBldGFwYSBkZSBsaW1wZXphIGRpcmVjaW9uYWRhIG7Do28gZXhpZ2UgZm9ybWF0YXIgbyBkaXNjbzsgYXBhcsOqbmNpYSBkZWZlaXR1b3NhIG7Do28gcHJvdmEgaW5leGlzdMOqbmNpYSBlIG7Do28gZGVwZW5kZSBkYSBjb3IgZG8gZ2FiaW5ldGUuIiwic3RhdGVtZW50IjoiVW0gc2l0ZSBmb2kgYXR1YWxpemFkbywgbWFzIG8gRmlyZWZveCBwYXJlY2UgbWlzdHVyYXIgYXJxdWl2b3MgYW50aWdvcyBlIG5vdm9zIG5hIGFwcmVzZW50YcOnw6NvIGRhIHDDoWdpbmEuIFF1YWwgaGlww7N0ZXNlIGUgcHJvdmlkw6puY2lhIHPDo28gZG9jdW1lbnRhZGFzPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY2FjaGUiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIOKAlCBTaXRlcyBleGliaWRvcyBlcnJhZG9zIG91IHF1ZSBuw6NvIGZ1bmNpb25hbSBjb21vIGRldmVyaWFtIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL3NpdGVzLWV4aWJpZG9zLWVycmFkb3Mtb3UtbmFvLWZ1bmNpb25hbS1jb21vLWRldmVyaWFtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-cookies-sair.json",
+        "mediaType": "application/json",
+        "sha256": "2a7d11b118d32ed80e2fe96375a50bc4272519d72c5126647e9ef7cd69fd7bd6",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBuYXZlZ2Fkb3IgbmVjZXNzYXJpYW1lbnRlIGFwYWdvdSBhIGNvbnRhIG5vIHNlcnZpZG9yLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkEgbGltcGV6YSBtdWRvdSBvIG5vbWUgY2l2aWwgZG8gdGl0dWxhciBkYSBjb250YS4ifSx7ImlkIjoiYyIsInRleHQiOiJPIHNpdGUgZGVpeG91IGRlIHVzYXIgSW50ZXJuZXQgZSBwYXNzb3UgYSBmdW5jaW9uYXIgc29tZW50ZSBwb3IgQmx1ZXRvb3RoLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkRhZG9zIHVzYWRvcyBwYXJhIG1hbnRlciBvIGVzdGFkbyBkZSBhY2Vzc28gcG9kZW0gdGVyIHNpZG8gcmVtb3ZpZG9zLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWNvb2tpZXMtc2FpciIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNhY2hlIiwiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1jb29raWVzIl0sInJlc29sdXRpb24iOiIxLiBBIHNlc3PDo28gcG9kZSBkZXBlbmRlciBkZSBjb29raWVzIG91IGRhZG9zIGxvY2FpcyBxdWUgZm9yYW0gYXBhZ2Fkb3MuIDIuIFByZWNpc2FyIGRlIG5vdm8gbG9naW4gbsOjbyBwcm92YSBleGNsdXPDo28gZGEgY29udGEgcmVtb3RhOyBuw6NvIGFsdGVyYSBpZGVudGlkYWRlIG5lbSBvIHByb3RvY29sbyBkbyBzZXJ2acOnbyBwYXJhIEJsdWV0b290aC4iLCJzdGF0ZW1lbnQiOiJBcMOzcyBsaW1wYXIgY29va2llcyBlIGRhZG9zIGRlIHVtIHNpdGUgbm8gRmlyZWZveCwgdW1hIHBlc3NvYSBwcmVjaXNhIGVudHJhciBub3ZhbWVudGUgbmEgY29udGEuIFF1YWwgZXhwbGljYcOnw6NvIMOpIGFkZXF1YWRhPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY2FjaGUiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIOKAlCBTaXRlcyBleGliaWRvcyBlcnJhZG9zIG91IHF1ZSBuw6NvIGZ1bmNpb25hbSBjb21vIGRldmVyaWFtIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL3NpdGVzLWV4aWJpZG9zLWVycmFkb3Mtb3UtbmFvLWZ1bmNpb25hbS1jb21vLWRldmVyaWFtIn0sImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29va2llcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIExpbXBlIGNvb2tpZXMgZSBkYWRvcyBkZSBzaXRlcyBubyBGaXJlZm94IiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2xpbXBlLWNvb2tpZXMtZS1kYWRvcy1kZS1zaXRlcy1uby1maXJlZm94In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-download-acao-tipo.json",
+        "mediaType": "application/json",
+        "sha256": "bafb31d5f5653c45ac0b0c8ba2764e146a0c2740cb207974b59ebdb64bee3f4f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU29tZW50ZSBvIG5vbWUgZGUgdW0gZmF2b3JpdG8gcXVlIGNvbnTDqW0gYSBwYWxhdnJhIFBERi4ifSx7ImlkIjoiYiIsInRleHQiOiJBIGNvciBkbyBwYXBlbCBkZSBwYXJlZGUgY29tbyBjb250cm9sZSBkZSB0b2RvcyBvcyB0aXBvcyBkZSBhcnF1aXZvLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkEgZXhjbHVzw6NvIGRlIHRvZG9zIG9zIG91dHJvcyB0aXBvcyBkZSBhcnF1aXZvIGRvIGNvbXB1dGFkb3IuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQSBhw6fDo28gU2VtcHJlIHBlcmd1bnRhciBwYXJhIG8gdGlwbyBkZSBjb250ZcO6ZG8gUERGIG5hcyBjb25maWd1cmHDp8O1ZXMgZGUgYXBsaWNhdGl2b3MvZG93bmxvYWRzLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LWRvd25sb2FkLWFjYW8tdGlwbyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZmLWFjb2VzIl0sInJlc29sdXRpb24iOiIxLiBBw6fDtWVzIHBvciB0aXBvIGRlIGNvbnRlw7pkbyBwZXJtaXRlbSBjb250cm9sYXIgbyB0cmF0YW1lbnRvIGRlc3NlIHRpcG8gZXNwZWPDrWZpY28uIDIuIEZhdm9yaXRvLCBwYXBlbCBkZSBwYXJlZGUgZSBleGNsdXPDo28gZ2VyYWwgbsOjbyBjb25maWd1cmFtIGVzc2EgZGVjaXPDo28gZGUgYWJlcnR1cmEgb3Ugc2FsdmFtZW50by4iLCJzdGF0ZW1lbnQiOiJObyBGaXJlZm94IGRlIGRlc2t0b3AsIFBERnMgZGV2ZW0gc29saWNpdGFyIHVtYSBkZWNpc8OjbyBhIGNhZGEgZG93bmxvYWQsIGVucXVhbnRvIG91dHJvcyB0aXBvcyBwb2RlbSBtYW50ZXIgc3VhcyBhw6fDtWVzIHByw7Nwcmlhcy4gUXVhbCBhanVzdGUgZGV2ZSBzZXIgY29uZmVyaWRvPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtYWNvZXMiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIOKAlCBUaXBvcyBkZSBjb250ZcO6ZG8gZSBhw6fDtWVzIGRlIGRvd25sb2FkIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2dlcmVuY2llLXRpcG9zLWRlLWNvbnRldWRvLWUtYWNvZXMtZGUtZG93bmxvYWQtbm8tIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-downloads-remover-historico.json",
+        "mediaType": "application/json",
+        "sha256": "022bf84b3f9667f963a57d6737887f47c48de078d6ccae6678678e1425d24f2c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhjbHVpciBhcnF1aXZvIGJhaXhhZG8gYXBhZ2Egc29tZW50ZSBvIHRleHRvIGRlIHVtYSBwZXNxdWlzYSBXZWIuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUmVtb3ZlciBkbyBoaXN0w7NyaWNvIHRpcmEgbyByZWdpc3RybyBkYSBsaXN0YTsgRXhjbHVpciBhcnF1aXZvIGJhaXhhZG8gcmVtb3ZlIG8gYXJxdWl2byBkbyBkaXNjby4ifSx7ImlkIjoiYyIsInRleHQiOiJBbWJvcyBhcGVuYXMgbXVkYW0gbyBub21lIGRvIGFycXVpdm8sIHNlbSBxdWFscXVlciBvdXRyYSBkaWZlcmVuw6dhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlJlbW92ZXIgZG8gaGlzdMOzcmljbyBhcGFnYSBvYnJpZ2F0b3JpYW1lbnRlIHRvZGEgYSBwYXN0YSBkbyB1c3XDoXJpby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJpdC1kb3dubG9hZHMtcmVtb3Zlci1oaXN0b3JpY28iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mZi1kb3dubG9hZHMiXSwicmVzb2x1dGlvbiI6IjEuIEEgZG9jdW1lbnRhw6fDo28gZGlzdGluZ3VlIGEgbGlzdGEgZGUgcmVnaXN0cm9zIGRvIGFycXVpdm8gYXJtYXplbmFkby4gMi4gUmVub21lYcOnw6NvLCBleGNsdXPDo28gZGUgdG9kYSBhIHBhc3RhIGUgbGltcGV6YSBkZSBwZXNxdWlzYSBuw6NvIGRlc2NyZXZlbSBvcyBhbGNhbmNlcyBkZXNzZXMgY29tYW5kb3MuIiwic3RhdGVtZW50IjoiTm8gRmlyZWZveCBkZSBkZXNrdG9wLCBvIHVzdcOhcmlvIGVzY29saGV1IFJlbW92ZXIgZG8gaGlzdMOzcmljbyBlbSB1bSBpdGVtIGRlIGRvd25sb2FkLiBPIHF1ZSBkaXN0aW5ndWUgaXNzbyBkZSBFeGNsdWlyIGFycXVpdm8gYmFpeGFkbz8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZmLWRvd25sb2FkcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIEVuY29udHJhciBlIGdlcmVuY2lhciBhcnF1aXZvcyBiYWl4YWRvcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5tb3ppbGxhLm9yZy9wdC1CUi9rYi9nZXJlbmNpYWRvci1kZS1kb3dubG9hZHMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-email-enviar-depois.json",
+        "mediaType": "application/json",
+        "sha256": "6d543d1b34b1f7e2c237caf1a7c878a67b66a750645c048b6c66960d3fef1e08",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTm8gbGl4byBkbyBzaXN0ZW1hIG9wZXJhY2lvbmFsIGNvbW8gZm9ybWEgbm9ybWFsIGRlIGFnZW5kYW1lbnRvLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik5hIENhaXhhIGRlIHNhw61kYS4ifSx7ImlkIjoiYyIsInRleHQiOiJPYnJpZ2F0b3JpYW1lbnRlIGVtIEVudmlhZG9zIGNvbW8gcHJvdmEgZGUgZW50cmVnYSBqw6EgY29uY2x1w61kYS4ifSx7ImlkIjoiZCIsInRleHQiOiJFbSB1bWEgcGFzdGEgZGUgZmF2b3JpdG9zIEhUTUwgZG8gbmF2ZWdhZG9yLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWVtYWlsLWVudmlhci1kZXBvaXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10Yi1nbG9zc2FyaW8iXSwicmVzb2x1dGlvbiI6IjEuIEEgQ2FpeGEgZGUgc2HDrWRhIGNvbnTDqW0gbWVuc2FnZW5zIHF1ZSBhaW5kYSBzZXLDo28gZW52aWFkYXMuIDIuIFByZXBhcmFyIG91IGVuZmlsZWlyYXIgbsOjbyBjb21wcm92YSBlbnRyZWdhOyBmYXZvcml0b3MgZSBsaXhvIGRvIHNpc3RlbWEgbsOjbyBzw6NvIGEgZmlsYSBub3JtYWwgZGUgc2HDrWRhLiIsInN0YXRlbWVudCI6Ik5vIFRodW5kZXJiaXJkIHBhcmEgZGVza3RvcCBlbSBwb3J0dWd1w6pzLCB1bWEgbWVuc2FnZW0gZm9pIHByZXBhcmFkYSBjb20gRW52aWFyIGRlcG9pcy4gT25kZSBmaWNhIGFndWFyZGFuZG8gbyBlbnZpbywgZW0gdmV6IGRlIGNvbXByb3ZhciBlbnRyZWdhIGFvIGRlc3RpbmF0w6FyaW8/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10Yi1nbG9zc2FyaW8iOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIOKAlCBHbG9zc8OhcmlvIGRlIHRlcm1vcyBlIHRpcG9zIGRlIGNvbnRhcyIsInVybCI6Imh0dHBzOi8vc3VwcG9ydC5tb3ppbGxhLm9yZy9wdC1CUi9rYi9nbG9zc2FyaW8tdGVybW9zLXRpcG9zLWNvbnRhcyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-email-servidor-compartilhado.json",
+        "mediaType": "application/json",
+        "sha256": "8f0e3c0bc925cd75d2730a0e5ef862d87c315c32e1197d4c84f8a6fe45b3a705",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbzsgY2FkYSBwYXN0YSBsb2NhbCBleGlnZSBvYnJpZ2F0b3JpYW1lbnRlIHVtIHNlcnZpZG9yIFNNVFAgZXhjbHVzaXZvLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik7Do287IG8gbsO6bWVybyBkZSBmYXZvcml0b3MgZG8gbmF2ZWdhZG9yIGRldGVybWluYSBxdWFudG9zIHNlcnZpZG9yZXMgcG9kZW0gZXhpc3Rpci4ifSx7ImlkIjoiYyIsInRleHQiOiJTaW0sIGUgaXNzbyBlbGltaW5hIHF1YWxxdWVyIGV4aWfDqm5jaWEgZGUgYXV0ZW50aWNhw6fDo28gZG8gcHJvdmVkb3IuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2ltOyBhcyBjb25maWd1cmHDp8O1ZXMgZGUgU01UUCBzw6NvIHNlcGFyYWRhcyBkYXMgY29udGFzIGRlIGVudHJhZGEgZSBwb2RlbSBzZXIgY29tcGFydGlsaGFkYXMgY29uZm9ybWUgYSBjb25maWd1cmHDp8Ojby4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1lbWFpbC1zZXJ2aWRvci1jb21wYXJ0aWxoYWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGItY29uZmlnIl0sInJlc29sdXRpb24iOiIxLiBBIGRvY3VtZW50YcOnw6NvIHBlcm1pdGUgYXNzb2NpYXIgY29udGFzIGEgY29uZmlndXJhw6fDtWVzIGRlIHNlcnZpZG9yIGRlIHNhw61kYSwgcmVzcGVpdGFuZG8gc2V1cyByZXF1aXNpdG9zLiAyLiBQYXN0YSBlIGZhdm9yaXRvcyBuw6NvIGltcMO1ZW0gZXhjbHVzaXZpZGFkZTsgY29tcGFydGlsaGFtZW50byBuw6NvIGRpc3BlbnNhIGF1dGVudGljYcOnw6NvIG5lbSBhdXRvcml6YcOnw7VlcyBkbyBzZXJ2acOnby4iLCJzdGF0ZW1lbnQiOiJOYSBjb25maWd1cmHDp8OjbyBtYW51YWwgZG8gVGh1bmRlcmJpcmQsIGR1YXMgY29udGFzIGRlIGVudHJhZGEgcG9kZW0gdXNhciBvIG1lc21vIHNlcnZpZG9yIFNNVFAgZGUgc2HDrWRhLCBxdWFuZG8gaXNzbyDDqSBwZXJtaXRpZG8gcGVsbyBwcm92ZWRvcj8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXRiLWNvbmZpZyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIENvbmZpZ3VyYcOnw6NvIG1hbnVhbCBkZSB1bWEgY29udGEgZGUgZS1tYWlsIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2NvbmZpZ3VyYWNhby1tYW51YWwtZGUtY29udGEifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-favorito-nao-offline.json",
+        "mediaType": "application/json",
+        "sha256": "5e80c491e5af25862cbe3019d7a68f593f0886b4c341ef58c1efc6c1c2b10a15",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbzsgZmF2b3JpdG9zIHNlcnZlbSBzb21lbnRlIHBhcmEgZXhjbHVpciBhdXRvbWF0aWNhbWVudGUgbyBoaXN0w7NyaWNvLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik7Do287IG8gZmF2b3JpdG8gZ3VhcmRhIGEgcmVmZXLDqm5jaWEgYW8gZW5kZXJlw6dvLCBzZW0gZ2FyYW50aXIgdW1hIGPDs3BpYSBjb21wbGV0YSBwYXJhIGxlaXR1cmEgb2ZmbGluZS4ifSx7ImlkIjoiYyIsInRleHQiOiJTaW07IHRvZG8gZmF2b3JpdG8gbmVjZXNzYXJpYW1lbnRlIGJhaXhhIHRhbWLDqW0gdG9kb3Mgb3MgdsOtZGVvcyBlIGFycXVpdm9zIHZpbmN1bGFkb3MuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2ltOyBvIGZhdm9yaXRvIHN1YnN0aXR1aSBpbnRlZ3JhbG1lbnRlIHF1YWxxdWVyIGNvbmV4w6NvIGNvbSBvIHNlcnZpZG9yLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWZhdm9yaXRvLW5hby1vZmZsaW5lIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtZmF2b3JpdG9zIl0sInJlc29sdXRpb24iOiIxLiBGYXZvcml0b3MgcGVybWl0ZW0gcmV0b3JuYXIgYSBlbmRlcmXDp29zOyBzYWx2YXIgdW1hIHJlZmVyw6puY2lhIG7Do28gw6kgYmFpeGFyIHRvZG8gbyBjb250ZcO6ZG8uIDIuIE7Do28gZXhpc3RlIGdhcmFudGlhIGRlIGPDs3BpYSBpbnRlZ3JhbCBvdSBkZSBmdW5jaW9uYW1lbnRvIG9mZmxpbmU7IGZhdm9yaXRvcyB0YW1iw6ltIG7Do28gc8OjbyB1bSBjb21hbmRvIGRlIGxpbXBlemEgZGUgaGlzdMOzcmljby4iLCJzdGF0ZW1lbnQiOiJVbWEgcMOhZ2luYSBmb2kgYWRpY2lvbmFkYSBhb3MgZmF2b3JpdG9zIGRvIEZpcmVmb3ggZGUgZGVza3RvcC4gSXNzbywgcG9yIHNpIHPDsywgZ2FyYW50ZSBhY2Vzc28gYW8gY29udGXDumRvIGNvbXBsZXRvIGRhIHDDoWdpbmEgc2VtIEludGVybmV0PyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtZmF2b3JpdG9zIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgRmF2b3JpdG9zIG5vIEZpcmVmb3giLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2IvZmF2b3JpdG9zLW5vLWZpcmVmb3gifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-imap-cabecalho-offline.json",
+        "mediaType": "application/json",
+        "sha256": "b60cd5c59775fa96aafd873b615162c72ef0b0612bc005ff53dcc34a7551409e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUG9ycXVlIG8gYXNzdW50bywgcG9yIHNpIHPDsywgY29udMOpbSBvYnJpZ2F0b3JpYW1lbnRlIHRvZG8gbyBjb3JwbyBkYSBtZW5zYWdlbS4ifSx7ImlkIjoiYiIsInRleHQiOiJQb3JxdWUgcXVhbHF1ZXIgY2FiZcOnYWxobyBnYXJhbnRlIHVtYSBjw7NwaWEgbG9jYWwgaW50ZWdyYWwgZGUgdG9kb3Mgb3MgYW5leG9zLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlBvcnF1ZSBhIGNvbnRhIGRldmUgYXBhZ2FyIGEgbWVuc2FnZW0gYW50ZXMgZGUgcG9kZXIgbMOqLWxhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlBvcnF1ZSBzZXUgY29udGXDumRvIGNvbXBsZXRvIGFpbmRhIG7Do28gZm9pIGJhaXhhZG8gcGFyYSBhY2Vzc28gbG9jYWwuIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtaW1hcC1jYWJlY2FsaG8tb2ZmbGluZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXRiLWltYXAiXSwicmVzb2x1dGlvbiI6IjEuIENhYmXDp2FsaG8gZSBjb3JwbyBzw6NvIGNvbXBvbmVudGVzIGRpZmVyZW50ZXMsIGUgYSBkaXNwb25pYmlsaWRhZGUgb2ZmbGluZSBleGlnZSBvIGNvbnRlw7pkbyBsb2NhbC4gMi4gVmVyIGFzc3VudG8gb3UgcmVtZXRlbnRlIG7Do28gY29tcHJvdmEgZG93bmxvYWQgaW50ZWdyYWw7IGV4Y2x1c8OjbyBuw6NvIMOpIHJlcXVpc2l0byBkZSBsZWl0dXJhLiIsInN0YXRlbWVudCI6Ik5vIFRodW5kZXJiaXJkLCBmb3JhbSBvYnRpZG9zIGFwZW5hcyBvcyBjYWJlw6dhbGhvcyBkZSBjZXJ0YXMgbWVuc2FnZW5zIElNQVAuIFNlbSBjb25leMOjbywgcG9yIHF1ZSBvIGNvcnBvIGRlIHVtYSBkZWxhcyBwb2RlIG7Do28gYWJyaXI/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC10Yi1pbWFwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgU2luY3Jvbml6YcOnw6NvIElNQVAiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2Ivc2luY3Jvbml6YWNhby1JTUFQIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-imap-exclusao-sincronizada.json",
+        "mediaType": "application/json",
+        "sha256": "397ad7d1354b39537ce9fe62621db4168ec7604eb7f9ebc9c031cecbae4d37fc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQ29uY2x1aXIgcXVlIElNQVAgZGVzYXRpdmEgbmVjZXNzYXJpYW1lbnRlIHF1YWxxdWVyIGFjZXNzbyBwb3Igb3V0cm8gZGlzcG9zaXRpdm8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQSBleGNsdXPDo28gcG9kZSBzZXIgc2luY3Jvbml6YWRhIG5vIHNlcnZpZG9yIGUgcmVmbGV0aWRhIG5vcyBvdXRyb3MgZGlzcG9zaXRpdm9zOyBzaW5jcm9uaXphw6fDo28gbsOjbyBzdWJzdGl0dWkgY8OzcGlhIGRlIHNlZ3VyYW7Dp2EgaW5kZXBlbmRlbnRlLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlByZXN1bWlyIHF1ZSBJTUFQIHNlbXByZSBjcmlhIHVtYSBjw7NwaWEgZGUgc2VndXJhbsOnYSBpbXV0w6F2ZWwgZGUgdHVkbyBxdWUgZm9pIGFwYWdhZG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUHJlc3VtaXIgcXVlIHRvZGEgZXhjbHVzw6NvIHPDsyBtdWRhIGEgY29yIGRhIG1lbnNhZ2VtLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LWltYXAtZXhjbHVzYW8tc2luY3Jvbml6YWRhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGItaW1hcCJdLCJyZXNvbHV0aW9uIjoiMS4gTyBlc3RhZG8gc2luY3Jvbml6YWRvIHBvZGUgcHJvcGFnYXIgYSByZW1vw6fDo28gZW50cmUgb3MgYWNlc3NvcyDDoCBtZXNtYSBjb250YS4gMi4gUmVwbGljYcOnw6NvIGRlIGVzdGFkbyBuw6NvIMOpIHJldGVuw6fDo28gaW11dMOhdmVsOyBleGNsdXPDo28gbsOjbyDDqSBjb3IgbmVtIGltcGVkaW1lbnRvIHVuaXZlcnNhbCBhIG3Dumx0aXBsb3MgYWNlc3Nvcy4iLCJzdGF0ZW1lbnQiOiJVbWEgY29udGEgSU1BUCDDqSBhY2Vzc2FkYSBwZWxvIFRodW5kZXJiaXJkIGUgcG9yIG91dHJvIGRpc3Bvc2l0aXZvLiBBbyBleGNsdWlyIHVtYSBtZW5zYWdlbSBjb20gc2luY3Jvbml6YcOnw6NvIGF0aXZhLCBxdWUgY3VpZGFkbyDDqSBjb3JyZXRvPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdGItaW1hcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIFNpbmNyb25pemHDp8OjbyBJTUFQIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL3NpbmNyb25pemFjYW8tSU1BUCJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-limpar-um-site.json",
+        "mediaType": "application/json",
+        "sha256": "d1d291bd990fde1f48a1beb3abf663cf31b23f85b930ca714df79cc9b3567943",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhjbHVpciBvYnJpZ2F0b3JpYW1lbnRlIHRvZG9zIG9zIGNvb2tpZXMgZGUgdG9kb3Mgb3Mgc2l0ZXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQXBhZ2FyIGEgcGFzdGEgZGUgZG9jdW1lbnRvcyBkbyBXaW5kb3dzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkRlc2luc3RhbGFyIG8gcHJvY2Vzc2Fkb3IgZG8gY29tcHV0YWRvci4ifSx7ImlkIjoiZCIsInRleHQiOiJTZWxlY2lvbmFyIG8gc2l0ZSBubyBnZXJlbmNpYW1lbnRvIGRlIGNvb2tpZXMgZSBkYWRvcyBkZSBzaXRlcyBlIHJlbW92ZXIgYXBlbmFzIG9zIGRhZG9zIGNvcnJlc3BvbmRlbnRlcy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1saW1wYXItdW0tc2l0ZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWNvb2tpZXMiXSwicmVzb2x1dGlvbiI6IjEuIE8gZ2VyZW5jaWFtZW50byBkZSBkYWRvcyBwZXJtaXRlIHBlc3F1aXNhciBzaXRlcyBlIHJlbW92ZXIgb3Mgc2VsZWNpb25hZG9zLiAyLiBOw6NvIMOpIG5lY2Vzc8OhcmlvIGxpbXBhciB0dWRvIG5lbSBhZ2lyIHNvYnJlIGRvY3VtZW50b3MgcGVzc29haXMgb3UgaGFyZHdhcmUgcGFyYSBhcGFnYXIgZGFkb3MgZGUgdW0gc2l0ZSBlc3BlY8OtZmljby4iLCJzdGF0ZW1lbnQiOiJVbWEgcGVzc29hIHF1ZXIgbGltcGFyIGNvb2tpZXMgZGUgdW0gw7puaWNvIHNpdGUgbm8gRmlyZWZveCBlIHByZXNlcnZhciBvcyBkb3MgZGVtYWlzLiBRdWFsIGFib3JkYWdlbSDDqSBhcHJvcHJpYWRhPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtY29va2llcyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIExpbXBlIGNvb2tpZXMgZSBkYWRvcyBkZSBzaXRlcyBubyBGaXJlZm94IiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2xpbXBlLWNvb2tpZXMtZS1kYWRvcy1kZS1zaXRlcy1uby1maXJlZm94In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-privativo-dispositivo.json",
+        "mediaType": "application/json",
+        "sha256": "6705ac3a3fa1a3ad8a14c4614a24dfa182ccbb441ad3cbed009454b5d65e16c4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRWxhIHRvcm5hIGltcG9zc8OtdmVsIHF1ZSBvIGVtcHJlZ2Fkb3Igb2JzZXJ2ZSB0csOhZmVnbyBkZSBzdWEgcmVkZS4ifSx7ImlkIjoiYiIsInRleHQiOiJBIG5hdmVnYcOnw6NvIHByaXZhdGl2YSBuw6NvIHN1YnN0aXR1aSBhIHByb3Rlw6fDo28gZG8gcHLDs3ByaW8gZGlzcG9zaXRpdm8gZSBuw6NvIGVsaW1pbmEgdHVkbyBvIHF1ZSBleGlzdGUgbmVsZS4ifSx7ImlkIjoiYyIsInRleHQiOiJFbGEgYXBhZ2EgYXV0b21hdGljYW1lbnRlIHRvZG9zIG9zIGRvY3VtZW50b3MgZG8gdXN1w6FyaW8gYW50ZXJpb3IuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRWxhIHJlbW92ZSB0b2RvcyBvcyBwcm9ncmFtYXMgZGUgbW9uaXRvcmFtZW50byBkbyBzaXN0ZW1hIG9wZXJhY2lvbmFsLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXByaXZhdGl2by1kaXNwb3NpdGl2byIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXByaXZhdGl2byJdLCJyZXNvbHV0aW9uIjoiMS4gQSBwcm90ZcOnw6NvIGRvIG1vZG8gcHJpdmFkbyB0ZW0gZXNjb3BvIGxpbWl0YWRvOyBuw6NvIMOpIGxpbXBlemEgY29tcGxldGEgbmVtIGJsaW5kYWdlbSBkZSBkaXNwb3NpdGl2byBvdSByZWRlLiAyLiBBcGFnYXIgYXJxdWl2b3MgZGUgdGVyY2Vpcm9zLCBkZXNpbnN0YWxhciBtb25pdG9yYW1lbnRvIGUgaW1wZWRpciB0b2RhIG9ic2VydmHDp8OjbyBkZSByZWRlIG7Do28gc8OjbyBnYXJhbnRpYXMgZGVzc2UgcmVjdXJzby4iLCJzdGF0ZW1lbnQiOiJVbWEgcGVzc29hIHVzYSBqYW5lbGEgcHJpdmF0aXZhIGRvIEZpcmVmb3ggZW0gdW0gY29tcHV0YWRvciBjb21wYXJ0aWxoYWRvLiBRdWFsIGxpbWl0ZSBwZXJtYW5lY2UgcmVsZXZhbnRlPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtcHJpdmF0aXZvIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgTGVuZGFzIGNvbXVucyBzb2JyZSBuYXZlZ2HDp8OjbyBwcml2YXRpdmEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2IvbWl0b3MtY29tdW5zLXNvYnJlLW5hdmVnYWNhby1wcml2YXRpdmEifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-privativo-final.json",
+        "mediaType": "application/json",
+        "sha256": "c77936091fb92f3ab37e8059a63823a12afc36e62bb69d639bf0b9beb657c09e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiVG9kb3Mgb3MgYXJxdWl2b3MgcGVzc29haXMgZG8gZGlzcG9zaXRpdm8gc8OjbyBhcGFnYWRvcy4ifSx7ImlkIjoiYiIsInRleHQiOiJTw6NvIGRlc2NhcnRhZG9zIGNvbSBvcyBkYWRvcyBkZSBuYXZlZ2HDp8OjbyBwcml2YWRhIGRhcXVlbGEgc2Vzc8Ojby4ifSx7ImlkIjoiYyIsInRleHQiOiJTw6NvIGF1dG9tYXRpY2FtZW50ZSBlbnZpYWRvcyBwb3IgZW1haWwgYW8gdGl0dWxhciBkbyBjb21wdXRhZG9yLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlPDo28gY29udmVydGlkb3MgZW0gZG9jdW1lbnRvcyBXb3JkIG5hIMOBcmVhIGRlIFRyYWJhbGhvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXByaXZhdGl2by1maW5hbCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXByaXZhdGl2byJdLCJyZXNvbHV0aW9uIjoiMS4gRW5jZXJyYXIgdG9kYXMgYXMgamFuZWxhcyBwcml2YXRpdmFzIGVuY2VycmEgYSBzZXNzw6NvIGUgZWxpbWluYSBlc3NlcyBkYWRvcyBkZSBuYXZlZ2HDp8OjbyBwcml2YWRhLiAyLiBPIG1lY2FuaXNtbyBuw6NvIGVudmlhIGVtYWlscyBuZW0gY29udmVydGUgY29va2llcyBlbSBXb3JkIG91IGFwYWdhIGluZGlzY3JpbWluYWRhbWVudGUgYXJxdWl2b3MgcGVzc29haXMuIiwic3RhdGVtZW50IjoiVW1hIHNlc3PDo28gZG8gRmlyZWZveCBjb250w6ltIHbDoXJpYXMgamFuZWxhcyBwcml2YXRpdmFzLiBRdWFuZG8gdG9kYXMgZWxhcyBzw6NvIGZlY2hhZGFzLCBvIHF1ZSBhY29udGVjZSBjb20gb3MgY29va2llcyBlIGRhZG9zIGRlIHNpdGVzIGRlc3NhIHNlc3PDo28sIGNvbmZvcm1lIGEgZG9jdW1lbnRhw6fDo28gY29uc3VsdGFkYT8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXByaXZhdGl2byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIExlbmRhcyBjb211bnMgc29icmUgbmF2ZWdhw6fDo28gcHJpdmF0aXZhIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL21pdG9zLWNvbXVucy1zb2JyZS1uYXZlZ2FjYW8tcHJpdmF0aXZhIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-push-aba-fechada.json",
+        "mediaType": "application/json",
+        "sha256": "05641c2e27eda446cbb47d97d7d3b0137c94804ef17dfd392fc289e1d337a197",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbzsgcG9yIGlzc28gw6kgb2JyaWdhdMOzcmlvIHBlcm1pdGlyIG5vdGlmaWNhw6fDtWVzIGRlIHRvZG9zIG9zIHNpdGVzLiJ9LHsiaWQiOiJiIiwidGV4dCI6Ik7Do287IFdlYiBQdXNoIHBvZGUgZW50cmVnYXIgbm90aWZpY2HDp8O1ZXMgc2VtIG1hbnRlciBhIHDDoWdpbmEgYWJlcnRhLCBvYnNlcnZhZGFzIGFzIHBlcm1pc3PDtWVzIGUgY29uZGnDp8O1ZXMgZGUgZXhlY3XDp8Ojby4ifSx7ImlkIjoiYyIsInRleHQiOiJTaW07IHF1YWxxdWVyIGFiYSBmZWNoYWRhIHJldm9nYSBwZXJtYW5lbnRlbWVudGUgdG9kYXMgYXMgcGVybWlzc8O1ZXMgZG8gc2l0ZS4ifSx7ImlkIjoiZCIsInRleHQiOiJTaW07IGZlY2hhciBhIGFiYSBleGNsdWkgYXV0b21hdGljYW1lbnRlIGEgY29udGEgZG8gdXN1w6FyaW8gbm8gc2VydmnDp28uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoiaXQtcHVzaC1hYmEtZmVjaGFkYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LWZmLXB1c2giXSwicmVzb2x1dGlvbiI6IjEuIE8gbWVjYW5pc21vIGZvaSBwcm9qZXRhZG8gcGFyYSBuw6NvIGRlcGVuZGVyIGRlIHVtYSBww6FnaW5hIGNvbnRpbnVhbWVudGUgYWJlcnRhLiAyLiBGZWNoYXIgYWJhIG7Do28gZXF1aXZhbGUgYSByZXZvZ2FyIHBlcm1pc3PDo28gb3UgZXhjbHVpciBjb250YTsgbyB1c3XDoXJpbyBjb250aW51YSBwb2RlbmRvIG5lZ2FyIG91IHJldm9nYXIgbm90aWZpY2HDp8O1ZXMuIiwic3RhdGVtZW50IjoiTm8gRmlyZWZveCBkZSBkZXNrdG9wLCBmZWNoYXIgYSBhYmEgZGUgdW0gc2l0ZSBhdXRvcml6YWRvIGEgZW52aWFyIG5vdGlmaWNhw6fDtWVzIFdlYiBQdXNoIGdhcmFudGUsIHBvciBzaSBzw7MsIHF1ZSBlbGUgbsOjbyBwb3NzYSBlbnZpYXIgbm92YXMgbm90aWZpY2HDp8O1ZXM/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mZi1wdXNoIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgTm90aWZpY2HDp8O1ZXMgV2ViIFB1c2giLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2Ivbm90aWZpY2Fjb2VzLXdlYi1wdXNoLWZpcmVmb3gifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-site-informacoes-permissoes.json",
+        "mediaType": "application/json",
+        "sha256": "bf2a2b0b0c8a63a5c6e736ddd3fc5ab755cc97b4cae3b7a744e68f5e6c7bb4d9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUHJvdmFyIGF1dG9tYXRpY2FtZW50ZSBxdWUgdG9kbyBjb250ZcO6ZG8gcHVibGljYWRvIMOpIHZlcmRhZGVpcm8uIn0seyJpZCI6ImIiLCJ0ZXh0IjoiR2FyYW50aXIgcXVlIG8gYXV0b3IgcG9zc3VpIHF1YWxxdWVyIGRpcmVpdG8gc29icmUgcXVhbHF1ZXIgaW1hZ2VtIGRhIHDDoWdpbmEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU3Vic3RpdHVpciBvIGhpc3TDs3JpY28gZGUgdmVyc8O1ZXMgZGUgdG9kb3Mgb3MgZG9jdW1lbnRvcyBkYSBJbnRlcm5ldC4ifSx7ImlkIjoiZCIsInRleHQiOiJDb25mZXJpciBlIGFqdXN0YXIgYcOnw7VlcyBwZXJtaXRpZGFzIMOgcXVlbGUgc2l0ZSwgY29tbyBub3RpZmljYcOnw7VlcyBlIGFjZXNzbyBhIGRpc3Bvc2l0aXZvcy4ifV0sImF1dGhvciI6IkVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQTogQ29kZXguIFNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJpdC1zaXRlLWluZm9ybWFjb2VzLXBlcm1pc3NvZXMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC1mZi1pbmZvIl0sInJlc29sdXRpb24iOiIxLiBFc3NhIHNlw6fDo28gY29udHJvbGEgcGVybWlzc8O1ZXMgdMOpY25pY2FzIHJlbGFjaW9uYWRhcyBhbyBzaXRlLiAyLiBQZXJtaXNzw6NvIHTDqWNuaWNhIG7Do28gw6kgY2VydGlmaWNhw6fDo28gZGUgdmVyYWNpZGFkZSwgdGl0dWxhcmlkYWRlIGRlIGNvbnRlw7pkbyBvdSBoaXN0w7NyaWNvIGRvY3VtZW50YWwgdW5pdmVyc2FsLiIsInN0YXRlbWVudCI6Ik5vIEZpcmVmb3ggZGUgZGVza3RvcCwgcGFyYSBxdWUgc2VydmUgZXhhbWluYXIgYSBzZcOnw6NvIFBlcm1pc3PDtWVzIG5hcyBpbmZvcm1hw6fDtWVzIGRlIHVtYSBww6FnaW5hPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtZmYtaW5mbyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIEphbmVsYSBkZSBpbmZvcm1hw6fDtWVzIGRhIHDDoWdpbmEiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2IvamFuZWxhLWRlLWluZm9ybWFjb2VzLWRhLXBhZ2luYS1kby1maXJlZm94In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-url-consulta.json",
+        "mediaType": "application/json",
+        "sha256": "f5561762f9ca1f12da45b34f83b2998e15b5480ee4f291c21cec3b05c9ad927e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiZXhlbXBsby5vcmcsIGNvbW8gc2UgZm9zc2UgdG9kYSBhIGNvbnN1bHRhLiJ9LHsiaWQiOiJiIiwidGV4dCI6Imh0dHBzLCBjb21vIHNlIGZvc3NlIG8gdGVybW8gYnVzY2Fkby4ifSx7ImlkIjoiYyIsInRleHQiOiIvYnVzY2EsIGNvbW8gc2UgY29udGl2ZXNzZSBvcyBkb2lzIHBhcmVzIGRlIHBhcsOibWV0cm9zLiJ9LHsiaWQiOiJkIiwidGV4dCI6InE9YXRhcyZhbm89MjAyNiwgZGVwb2lzIGRvIHBvbnRvIGRlIGludGVycm9nYcOnw6NvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJpZCI6Iml0LXVybC1jb25zdWx0YSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXVybC1hcGkiXSwicmVzb2x1dGlvbiI6IjEuIE8gcG9udG8gZGUgaW50ZXJyb2dhw6fDo28gaW50cm9kdXogYSBjb25zdWx0YSwgYXF1aSBjb20gZG9pcyBwYXJlcyBub21lIGUgdmFsb3IuIDIuIERvbcOtbmlvLCBlc3F1ZW1hIGUgY2FtaW5obyB0w6ptIGZ1bsOnw7VlcyBwcsOzcHJpYXMgZSBuw6NvIHPDo28gb3MgcGFyZXMgYXByZXNlbnRhZG9zIGFww7NzID8uIiwic3RhdGVtZW50IjoiTm8gZW5kZXJlw6dvIGh0dHBzOi8vZXhlbXBsby5vcmcvYnVzY2E/cT1hdGFzJmFubz0yMDI2LCBxdWFsIHBhcnRlIHJlcHJlc2VudGEgb3MgcGFyw6JtZXRyb3MgZGUgY29uc3VsdGE/IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC11cmwtYXBpIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSBNRE4g4oCUIEFQSSBVUkwiLCJ1cmwiOiJodHRwczovL2RldmVsb3Blci5tb3ppbGxhLm9yZy9wdC1CUi9kb2NzL1dlYi9BUEkvVVJMIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-url-espaco-codificado.json",
+        "mediaType": "application/json",
+        "sha256": "85f348c201ab3c1bfd38e6ed98cc69302e86500d6342f7cedce491351f57d8ba",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQSB1bWEgc2VuaGEgb2JyaWdhdMOzcmlhIGRvIHNlcnZpZG9yLiJ9LHsiaWQiOiJiIiwidGV4dCI6IsOAIGNvbmZpcm1hw6fDo28gZGUgcXVlIGEgcGVzc29hIMOpIHByb3ByaWV0w6FyaWEgZG8gZG9tw61uaW8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQW8gaW7DrWNpbyBkbyBmcmFnbWVudG8sIHF1ZSB1c2EgIy4ifSx7ImlkIjoiZCIsInRleHQiOiJBIHVtIGVzcGHDp28uIn1dLCJhdXRob3IiOiJFbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUE6IENvZGV4LiBTZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoiaXQtdXJsLWVzcGFjby1jb2RpZmljYWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdXJsLWFwaSJdLCJyZXNvbHV0aW9uIjoiMS4gJTIwIMOpIGEgcmVwcmVzZW50YcOnw6NvIGNvZGlmaWNhZGEgZG8gY2FyYWN0ZXJlIGVzcGHDp28uIDIuIENvZGlmaWNhw6fDo28gZGUgY2FyYWN0ZXJlcyBuw6NvIGNvbXByb3ZhIGlkZW50aWRhZGUgb3UgcHJvcHJpZWRhZGU7IGZyYWdtZW50byDDqSBpbnRyb2R1emlkbyBwb3Igb3V0cm8gZGVsaW1pdGFkb3IuIiwic3RhdGVtZW50IjoiRW0gdW1hIFVSTCwgdW0gdmFsb3IgYXBhcmVjZSBjb21vIG5vbWU9QW5hJTIwU2lsdmEuIE5hIGNvZGlmaWNhw6fDo28gdXN1YWwgZGUgcGVyY2VudHVhaXMsIGEgcXVlIGNvcnJlc3BvbmRlICUyMCBuZXNzZSB2YWxvcj8iLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXVybC1hcGkiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNb3ppbGxhIE1ETiDigJQgQVBJIFVSTCIsInVybCI6Imh0dHBzOi8vZGV2ZWxvcGVyLm1vemlsbGEub3JnL3B0LUJSL2RvY3MvV2ViL0FQSS9VUkwifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.it-url-relativo-diretorio.json",
+        "mediaType": "application/json",
+        "sha256": "97eb518b008ffbff98c35d864333746c6f0aaabd1775334a71423cb16a035d7c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiaHR0cHM6Ly9leGVtcGxvLm9yZy9jdXJzb3MvYXVsYTEuaHRtbC9hanVkYS5odG1sLiJ9LHsiaWQiOiJiIiwidGV4dCI6Imh0dHBzOi8vZXhlbXBsby5vcmcvYWp1ZGEuaHRtbC4ifSx7ImlkIjoiYyIsInRleHQiOiJodHRwczovL2V4ZW1wbG8ub3JnL2N1cnNvcy9hanVkYS5odG1sLiJ9LHsiaWQiOiJkIiwidGV4dCI6Imh0dHBzOi8vYWp1ZGEuaHRtbC9jdXJzb3MvLiJ9XSwiYXV0aG9yIjoiRWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBOiBDb2RleC4gU2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Iml0LXVybC1yZWxhdGl2by1kaXJldG9yaW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC11cmwtYXBpIiwiaW5mb3JtYXRpY2EtYXV0b3JhbC1pdC11cmwtcmVsYXRpdm8iXSwicmVzb2x1dGlvbiI6IjEuIC4uLyBzb2JlIHVtIG7DrXZlbCBhIHBhcnRpciBkbyBkaXJldMOzcmlvIGN1cnNvcywgZSBhanVkYS5odG1sIMOpIHJlc29sdmlkbyBuYSByYWl6IGluZGljYWRhLiAyLiBOw6NvIHNlIG1hbnTDqW0gbyBkaXJldMOzcmlvIGN1cnNvcywgbsOjbyBzZSBjb252ZXJ0ZSBvIG5vbWUgZG8gYXJxdWl2byBlbSBkb23DrW5pbyBlIG7Do28gc2UgdHJhdGEgYXVsYTEuaHRtbCBjb21vIGRpcmV0w7NyaW8uIiwic3RhdGVtZW50IjoiVW1hIHDDoWdpbmEgdGVtIGNvbW8gZW5kZXJlw6dvIGJhc2UgaHR0cHM6Ly9leGVtcGxvLm9yZy9jdXJzb3MvYXVsYTEuaHRtbC4gU2VtIG91dHJhIGJhc2UgZGVmaW5pZGEsIG8gbGluayByZWxhdGl2byAuLi9hanVkYS5odG1sIGFwb250YSBwYXJhIHF1YWwgZW5kZXJlw6dvPyIsInRvcGljSWQiOiJJMTAifSwic3R1ZHlTb3VyY2VzIjp7ImluZm9ybWF0aWNhLWF1dG9yYWwtaXQtdXJsLWFwaSI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEgTUROIOKAlCBBUEkgVVJMIiwidXJsIjoiaHR0cHM6Ly9kZXZlbG9wZXIubW96aWxsYS5vcmcvcHQtQlIvZG9jcy9XZWIvQVBJL1VSTCJ9LCJpbmZvcm1hdGljYS1hdXRvcmFsLWl0LXVybC1yZWxhdGl2byI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEgTUROIOKAlCBDcmlhbmRvIGhpcGVybGlua3MiLCJ1cmwiOiJodHRwczovL2RldmVsb3Blci5tb3ppbGxhLm9yZy9wdC1CUi9kb2NzL0xlYXJuX3dlYl9kZXZlbG9wbWVudC9Db3JlL1N0cnVjdHVyaW5nX2NvbnRlbnQvQ3JlYXRpbmdfbGlua3MifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.morato-q20.json",
+        "mediaType": "application/json",
+        "sha256": "cb1a7cf18564bab7469a89b275211d307ebd79b2480d0ef8a7497dae590498e0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTWljcm9zb2Z0IEVkZ2UuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQWxmYSBPbmUuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQWRvYmUuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUHJpbnRlci4ifSx7ImlkIjoiZSIsInRleHQiOiJQb3AgdXAuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBDw6JtYXJhIE11bmljaXBhbCBkZSBGcmFuY2lzY28gTW9yYXRvIDAxLzIwMjUsIE9maWNpYWwgQWRtaW5pc3RyYXRpdm8sIHF1ZXN0w6NvIDIwLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9tb3JhdG8tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjgxMjEwNjM4OWJjYWYwZTVhMWZjNjI0ZmYzMDE2NzYxMDA1MTBlMTE5Njk1MzJiZDYwNWZkZmE0N2Q2OWI0ZmQiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzNC9hbmV4b3MvODI1ODEyNGItZDg2Ny00ZDMxLTllMWQtZWQ5NzFmOTk3MzE1LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiQ8OibWFyYSBNdW5pY2lwYWwgZGUgRnJhbmNpc2NvIE1vcmF0byAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtbW9yYXRvLTIwMjUtYWEvcTIwIiwibnVtYmVyIjoiMjAiLCJwcm9vZiI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9tb3JhdG8tYWEtcHJvb2YucGRmIiwic2hhMjU2IjoiNzA3NWZmYmQ4OGM5YTQ2ZjNjZGIxZDM4M2FiMTZjMzM2ZDkyNWZlZjdiYWU5YjRmZDg2ZGJhYWFlMWE3NzFlNiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjM0L2FuZXhvcy9kZmNhZTU0MC03YWI1LTQ2ZmMtYTdiOS01OGUxY2FlOTMyNzAucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEsIGFydC4gOMK6LCBJViBlIFRKUFIgQUMgMTQzNzMzMi0zLCBhcGxpY2FkYSDDoCBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZS4gTsOjbyDDqSBsaWNlbsOnYSBleHByZXNzYSBkYSBBdmFuw6dhIFNQIG5lbSBnYXJhbnRpYSBqdXLDrWRpY2E7IGV4Y2x1aSBvYnJhcyBkZSB0ZXJjZWlyb3MgZSBtYW50w6ltIG9yaWdlbS9nYWJhcml0by4iLCJwYXRoIjoiZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6Ik9maWNpYWwgQWRtaW5pc3RyYXRpdm8iLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6Im1vcmF0by1xMjAiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbInJldmlld3MtcjEtcnYtMWUxODI1MWMzMiJdLCJyZXNvbHV0aW9uIjoiMS4gTWljcm9zb2Z0IEVkZ2Ugw6kgdW0gbmF2ZWdhZG9yIGRlIHDDoWdpbmFzIGRhIHdlYi4gMi4gQWRvYmUgw6kgbyBub21lIGRlIHVtYSBlbXByZXNhIGRlIHNvZnR3YXJlLCBQcmludGVyIHNpZ25pZmljYSBpbXByZXNzb3JhIGUgcG9wLXVwIGRlc2lnbmEgdW1hIGphbmVsYSBxdWUgc2UgYWJyZSBzb2JyZSBhIHDDoWdpbmE7IEFsZmEgT25lIG7Do28gw6kgdW0gbmF2ZWdhZG9yIGNvbmhlY2lkby4gR2FiYXJpdG8gZGVmaW5pdGl2bzogYWx0ZXJuYXRpdmEgQS4iLCJzdGF0ZW1lbnQiOiJBc3NpbmFsZSBhIGFsdGVybmF0aXZhIHF1ZSBjb250w6ltIG8gbm9tZSBkZSB1bSBuYXZlZ2Fkb3IgZGEgaW50ZXJuZXQ6IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsicmV2aWV3cy1yMS1ydi0xZTE4MjUxYzMyIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTWljcm9zb2Z0IOKAlCBOYXZlZ2Fkb3IgTWljcm9zb2Z0IEVkZ2UiLCJ1cmwiOiJodHRwczovL3d3dy5taWNyb3NvZnQuY29tL3B0LWJyL2VkZ2UifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.morato-ti-q42.json",
+        "mediaType": "application/json",
+        "sha256": "f837f0a98d7ecd6c1e82b57af6081ce380819e2bb785dca61158ec902b9fdeb3",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicmVhbGl6YXIgbyBhY2Vzc28gw6AgaW50ZXJuZXQgZGUgZm9ybWEgbWFpcyBzZWd1cmEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoicmVhbGl6YXIgYSBjb25leMOjbyBlbnRyZSBkb2lzIGNvbXB1dGFkb3JlcyBwYXJhIHF1ZSB1bSBkZWxlcyDigJxmaW5qYeKAnSBzZXIgdGVybWluYWwgZG8gb3V0cm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoidHJhZHXDp8OjbyBkb3Mgbm9tZXMgZGUgZG9tw61uaW9zIn0seyJpZCI6ImQiLCJ0ZXh0IjoicmVhbGl6YXIgYSB0cmFuc2ZlcsOqbmNpYSBkZSBhcnF1aXZvcyBlbnRyZSBkb2lzIGNvbXB1dGFkb3JlcyBhdHJhdsOpcyBkYSBpbnRlcm5ldC4ifSx7ImlkIjoiZSIsInRleHQiOiJvIOKAnGNvbnRyb2xlIHJlbW90b+KAnSBkZSB2w6FyaW9zIGRpc3Bvc2l0aXZvcyBkYSByZWRlLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgQ8OibWFyYSBNdW5pY2lwYWwgZGUgRnJhbmNpc2NvIE1vcmF0byAwMS8yMDI1LCBUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2EsIHF1ZXN0w6NvIDQyLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvIGRlIDIwMjYtMDMtMjMsIHDDoWdpbmEgMSwgbGluaGEgZG8gY2FyZ28gVMOpY25pY28gZW0gSW5mb3Jtw6F0aWNhOiA0Mj1EOyBjb25mZXLDqm5jaWEgdmlzdWFsIGFzc2lzdGlkYSBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvbW9yYXRvLWFuc3dlci5wZGYiLCJzaGEyNTYiOiI4MTIxMDYzODliY2FmMGU1YTFmYzYyNGZmMzAxNjc2MTAwNTEwZTExOTY5NTMyYmQ2MDVmZGZhNDdkNjliNGZkIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzQvYW5leG9zLzgyNTgxMjRiLWQ4NjctNGQzMS05ZTFkLWVkOTcxZjk5NzMxNS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IkPDom1hcmEgTXVuaWNpcGFsIGRlIEZyYW5jaXNjbyBNb3JhdG8gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLW1vcmF0by0yMDI1LXRpL3E0MiIsIm51bWJlciI6IjQyIiwicHJvb2YiOnsibm90ZSI6IlF1ZXN0w6NvIDQyLCBww6FnaW5hIDkgZG8gY2FkZXJubzsgZXh0cmHDp8OjbyBjb25mcm9udGFkYSB2aXN1YWxtZW50ZSBjb20gYSByZW5kZXJpemHDp8OjbyBsb2NhbCBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvbW9yYXRvLXRpLXByb29mLnBkZiIsInNoYTI1NiI6ImRiZmVmNDFiY2ZjNzM0NTliYjdiMTJlM2Q4ZDQ2OWFjZDJiZjcwZWMzZWY4MzJiYjIzODAwYmI1OGFjNWZhZjAiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzNC9hbmV4b3MvNTM2ODYxYmMtMWZiOC00NjA5LTlmMGMtMTFlZWNkMGNmM2NhLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIGRvY3VtZW50YWRhIG5vIHByb2pldG8gYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZSwgc2VtIGltYWdlbSBvdSB0ZXh0byBkZSB0ZXJjZWlyby4gTsOjbyDDqSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYS4gRm9udGUsIHJlZGHDp8OjbyBlIGdhYmFyaXRvIHByZXNlcnZhZG9zOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZS4iLCJwYXRoIjoiZG9zc2llci9pbmZvcm1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVMOpY25pY28gZW0gSW5mb3Jtw6F0aWNhIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJtb3JhdG8tdGktcTQyIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1vZmljaWFsLXRpLWl0LWZ0cCJdLCJyZXNvbHV0aW9uIjoiMS4gRlRQIMOpIHVtIHByb3RvY29sbyBkZSB0cmFuc2ZlcsOqbmNpYSBkZSBhcnF1aXZvcyBlbnRyZSBjbGllbnRlIGUgc2Vydmlkb3IsIGluY2x1c2l2ZSBhdHJhdsOpcyBkYSBJbnRlcm5ldDsgRCBjb3JyZXNwb25kZSBhbyBnYWJhcml0byBkZWZpbml0aXZvLiAyLiBBIG7Do28gw6kgdW1hIGdhcmFudGlhIGdlcmFsIGRvIEZUUCBjb211bTsgQiBlIEUgdHJhdGFtIGRlIGFjZXNzbyBvdSBjb250cm9sZSByZW1vdG8gZSBDIHJlbWV0ZSDDoCByZXNvbHXDp8OjbyBETlMuIE7Do28gc2UgZGV2ZSBjb25mdW5kaXIgRlRQIGNvbXVtIGNvbSB2YXJpYW50ZXMgcHJvdGVnaWRhcyBwb3IgY3JpcHRvZ3JhZmlhLiIsInN0YXRlbWVudCI6Ik8gcHJvdG9jb2xvIEZUUCAoRmlsZSBUcmFuc2ZlciBQcm90b2NvbCkgw6kgdXNhZG8gcGFyYToiLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1vZmljaWFsLXRpLWl0LWZ0cCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1pY3Jvc29mdCBMZWFybiDigJQgUHJvdG9jb2xvIGUgY29uZWN0b3IgRlRQIiwidXJsIjoiaHR0cHM6Ly9sZWFybi5taWNyb3NvZnQuY29tL3B0LWJyL2Nvbm5lY3RvcnMvZnRwLyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.morato-ti-q43.json",
+        "mediaType": "application/json",
+        "sha256": "3799c4d35cb823b24db7ccf1854cb3e5d54905750d48215799a30334123f57cd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXh0cmFuZXQifSx7ImlkIjoiYiIsInRleHQiOiJJbnRyYW5ldCJ9LHsiaWQiOiJjIiwidGV4dCI6IkJBTiAoQm9keSBBcmVhIE5ldHdvcmsg4oCTIFJlZGUgQ29ycG9yYWwpIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUEFOIChQZXJzb25hbCBBcmVhIE5ldHdvcmsg4oCTIFJlZGUgUGVzc29hbCkifSx7ImlkIjoiZSIsInRleHQiOiJSZWRlIFdpLWZpIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBDw6JtYXJhIE11bmljaXBhbCBkZSBGcmFuY2lzY28gTW9yYXRvIDAxLzIwMjUsIFTDqWNuaWNvIGVtIEluZm9ybcOhdGljYSwgcXVlc3TDo28gNDMuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm8gZGUgMjAyNi0wMy0yMywgcMOhZ2luYSAxLCBsaW5oYSBkbyBjYXJnbyBUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2E6IDQzPUE7IGNvbmZlcsOqbmNpYSB2aXN1YWwgYXNzaXN0aWRhIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9tb3JhdG8tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjgxMjEwNjM4OWJjYWYwZTVhMWZjNjI0ZmYzMDE2NzYxMDA1MTBlMTE5Njk1MzJiZDYwNWZkZmE0N2Q2OWI0ZmQiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzNC9hbmV4b3MvODI1ODEyNGItZDg2Ny00ZDMxLTllMWQtZWQ5NzFmOTk3MzE1LnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiQ8OibWFyYSBNdW5pY2lwYWwgZGUgRnJhbmNpc2NvIE1vcmF0byAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtbW9yYXRvLTIwMjUtdGkvcTQzIiwibnVtYmVyIjoiNDMiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gNDMsIHDDoWdpbmEgOSBkbyBjYWRlcm5vOyBleHRyYcOnw6NvIGNvbmZyb250YWRhIHZpc3VhbG1lbnRlIGNvbSBhIHJlbmRlcml6YcOnw6NvIGxvY2FsIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9tb3JhdG8tdGktcHJvb2YucGRmIiwic2hhMjU2IjoiZGJmZWY0MWJjZmM3MzQ1OWJiN2IxMmUzZDhkNDY5YWNkMmJmNzBlYzNlZjgzMmJiMjM4MDBiYjU4YWM1ZmFmMCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjM0L2FuZXhvcy81MzY4NjFiYy0xZmI4LTQ2MDktOWYwYy0xMWVlY2QwY2YzY2EucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEgZG9jdW1lbnRhZGEgbm8gcHJvamV0byBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlLCBzZW0gaW1hZ2VtIG91IHRleHRvIGRlIHRlcmNlaXJvLiBOw6NvIMOpIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhLiBGb250ZSwgcmVkYcOnw6NvIGUgZ2FiYXJpdG8gcHJlc2VydmFkb3M7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2EiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6Im1vcmF0by10aS1xNDMiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbImluZm9ybWF0aWNhLW9maWNpYWwtdGktaXQtcmVkZXMtYWxjYW5jZSJdLCJyZXNvbHV0aW9uIjoiMS4gRXh0cmFuZXQgZXN0ZW5kZSByZWN1cnNvcyBvcmdhbml6YWNpb25haXMgYSB1c3XDoXJpb3MgZXh0ZXJub3MgZGV0ZXJtaW5hZG9zIGNvbSBhY2Vzc28gY29udHJvbGFkbzsgYSBhbHRlcm5hdGl2YSBBIMOpIGEgcmVzcG9zdGEgZGVmaW5pdGl2YS4gMi4gSW50cmFuZXQgaW5kaWNhIG8gYW1iaWVudGUgaW50ZXJubzsgQkFOIGUgUEFOIGNsYXNzaWZpY2FtIHJlZGVzIHBvciBwcm94aW1pZGFkZSBwZXNzb2FsIG91IGNvcnBvcmFsLCBlIFdpLUZpIGRlc2NyZXZlIHVtYSB0ZWNub2xvZ2lhIGRlIGFjZXNzbyBzZW0gZmlvLiBOZW5odW0gZGVzc2VzIHRlcm1vcywgaXNvbGFkYW1lbnRlLCBkZWZpbmUgYSBsaWJlcmHDp8OjbyByZXN0cml0YSBhIHBhcmNlaXJvcyBleHRlcm5vcy4iLCJzdGF0ZW1lbnQiOiJRdWFuZG8gcGFydGUgZG8gc2lzdGVtYSBkZSBpbmZvcm1hw6fDo28gZGUgdW1hIGVtcHJlc2Egw6kgbGliZXJhZG8gcG9yIG1laW8gZGEgaW50ZXJuZXQgcGFyYSBhbGd1bnMgdXN1w6FyaW9zIGV4dGVybm9zLCBkZSBmb3JtYSByZXN0cml0YSwgdGVtLXNlIHVtYToiLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1vZmljaWFsLXRpLWl0LXJlZGVzLWFsY2FuY2UiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJNaWNyb3NvZnQgTGVhcm4g4oCUIFdlYiBTZXJ2aWNlczogaW50cmFuZXQsIGV4dHJhbmV0IGUgSW50ZXJuZXQiLCJ1cmwiOiJodHRwczovL2xlYXJuLm1pY3Jvc29mdC5jb20vZW4tdXMvcHJldmlvdXMtdmVyc2lvbnMvd2luZG93cy9kZXNrdG9wL2FhOTY2MjgxKHY9YnRzLjEwKSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.potim-se-q20.json",
+        "mediaType": "application/json",
+        "sha256": "6d25a9e8524b19f4d0eaa0d86c3f6bc00ecd4dc84972f0b04c315c3a5a1d0413",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSW1wcmVzc8OjbyByZW1vdGEgZGUgZG9jdW1lbnRvcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBcm1hemVuYW1lbnRvIGxvY2FsIGRlIGFycXVpdm9zLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkNvbXVuaWNhw6fDo28gbmEgcmVkZSBkZSBpbnRlcm5ldC4ifSx7ImlkIjoiZCIsInRleHQiOiJNb25pdG9yYW1lbnRvIGRlIGRpc3Bvc2l0aXZvcyBtw7N2ZWlzLiJ9LHsiaWQiOiJlIiwidGV4dCI6IkV4ZWN1w6fDo28gZGUgcHJvZ3JhbWFzIGVtIHNlZ3VuZG8gcGxhbm8uIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSAwMS8yMDI1LCBTZWNyZXTDoXJpbyBkZSBFc2NvbGEsIHF1ZXN0w6NvIDIwLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiRm9udGUgcHJpbcOhcmlhIG9maWNpYWw7IGNhZGVybm8vY2FyZ28vbsO6bWVybyBlIGdhYmFyaXRvIGRlZmluaXRpdm8gY29uZmVyaWRvcyBwYXJhIGVzdGEgc2VsZcOnw6NvIGFzc2lzdGlkYS4iLCJwYXRoIjoiZG9zc2llci9wb3RpbS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiMDk5NzhlZTNhMTg0YTQ0Nzg1MGRhY2E3OGU0YzFmNDM4NjI5Y2FjNjU4MTFjMjY5MGI1ZWY1YzViM2JlYTc4NiIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjIwL2FuZXhvcy83NzI1YzI3ZC02ODI1LTQ0MGItYjRiZi00YmZmZDk3N2MzOGUucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtcG90aW0tMjAyNS1zZS9xMjAiLCJudW1iZXIiOiIyMCIsInByb29mIjp7Im5vdGUiOiJGb250ZSBwcmltw6FyaWEgb2ZpY2lhbDsgY2FkZXJuby9jYXJnby9uw7ptZXJvIGUgZ2FiYXJpdG8gZGVmaW5pdGl2byBjb25mZXJpZG9zIHBhcmEgZXN0YSBzZWxlw6fDo28gYXNzaXN0aWRhLiIsInBhdGgiOiJkb3NzaWVyL3BvdGltLXNlLXByb29mLnBkZiIsInNoYTI1NiI6IjBhNDJjMTE3MjAxMmQ3NTI0OWYyYmQyMjgxNmM4ZTcwYzIwM2ZkNTM3Nzc5ZjIzYWU1MGZmZDk2ZTA4ZmM5NGMiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvMzExNThkMWMtMWFmMi00OTcxLWI4MzMtMjkyNDZmZjRjZWM0LnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhLCBhcnQuIDjCuiwgSVYgZSBUSlBSIEFDIDE0MzczMzItMywgYXBsaWNhZGEgw6AgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUuIE7Do28gw6kgbGljZW7Dp2EgZXhwcmVzc2EgZGEgQXZhbsOnYSBTUCBuZW0gZ2FyYW50aWEganVyw61kaWNhOyBleGNsdWkgb2JyYXMgZGUgdGVyY2Vpcm9zIGUgbWFudMOpbSBvcmlnZW0vZ2FiYXJpdG8uIiwicGF0aCI6ImRvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJTZWNyZXTDoXJpbyBkZSBFc2NvbGEiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InBvdGltLXNlLXEyMCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsicmV2aWV3cy1yMS1ydi1mMDUwODc0MzYyIl0sInJlc29sdXRpb24iOiIxLiBPIGUtbWFpbCDDqSB1bSBzZXJ2acOnbyBkZSBjb211bmljYcOnw6NvIGVtIHJlZGUsIHBlcm1pdGluZG8gZW52aWFyIGUgcmVjZWJlciBtZW5zYWdlbnMuIDIuIEltcHJlc3PDo28sIGV4ZWN1w6fDo28gbG9jYWwgZGUgcHJvZ3JhbWFzLCByYXN0cmVhbWVudG8gZSBhcm1hemVuYW1lbnRvIHNvbWVudGUgbG9jYWwgbsOjbyBkZWZpbmVtIGVzc2Ugc2VydmnDp28uIiwic3RhdGVtZW50IjoiTyBjb3JyZWlvIGVsZXRyw7RuaWNvIChlIC1tYWlsKSDDqSBvIHNlcnZpw6dvIGLDoXNpY28gZGU6IiwidG9waWNJZCI6IkkxMCJ9LCJzdHVkeVNvdXJjZXMiOnsicmV2aWV3cy1yMS1ydi1mMDUwODc0MzYyIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTIiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiTW96aWxsYSDigJQgR2xvc3PDoXJpbyBkZSB0ZXJtb3MgZSB0aXBvcyBkZSBjb250YXMiLCJ1cmwiOiJodHRwczovL3N1cHBvcnQubW96aWxsYS5vcmcvcHQtQlIva2IvZ2xvc3NhcmlvLXRlcm1vcy10aXBvcy1jb250YXMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.I10.p.potim-ti-q32.json",
+        "mediaType": "application/json",
+        "sha256": "508d1c6a3b1417e91261a83b97e34a8c3e2bb71e04246f57668a3c0d1fa57362",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUE9QMy4ifSx7ImlkIjoiYiIsInRleHQiOiJJTUFQLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkhUVFAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRlRQLiJ9LHsiaWQiOiJlIiwidGV4dCI6IlNNVFAuIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSAwMS8yMDI1LCBUw6ljbmljbyBlbSBJbmZvcm3DoXRpY2EsIHF1ZXN0w6NvIDMyLiBSZXNvbHXDp8OjbyBwcsOzcHJpYTogQ29kZXgsIGFzc2lzdGlkYSBwb3IgSUEuIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvIGRlIDIwMjYtMDItMjMsIHDDoWdpbmEgNywgbGluaGEgZG8gY2FyZ28gVMOpY25pY28gZW0gSW5mb3Jtw6F0aWNhOiAzMj1FOyBjb25mZXLDqm5jaWEgdmlzdWFsIGFzc2lzdGlkYSBlbSAyMDI2LTExLTExLiIsInBhdGgiOiJkb3NzaWVyL2luZm9ybWF0aWNhL2Rvc3NpZXIvcG90aW0tYW5zd2VyLnBkZiIsInNoYTI1NiI6IjA5OTc4ZWUzYTE4NGE0NDc4NTBkYWNhNzhlNGMxZjQzODYyOWNhYzY1ODExYzI2OTBiNWVmNWM1YjNiZWE3ODYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNzcyNWMyN2QtNjgyNS00NDBiLWI0YmYtNGJmZmQ5NzdjMzhlLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLXBvdGltLTIwMjUtdGkvcTMyIiwibnVtYmVyIjoiMzIiLCJwcm9vZiI6eyJub3RlIjoiUXVlc3TDo28gMzIsIHDDoWdpbmEgOCBkbyBjYWRlcm5vOyBleHRyYcOnw6NvIGNvbmZyb250YWRhIHZpc3VhbG1lbnRlIGNvbSBhIHJlbmRlcml6YcOnw6NvIGxvY2FsIGVtIDIwMjYtMTEtMTEuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9wb3RpbS10aS1wcm9vZi5wZGYiLCJzaGEyNTYiOiI3MDllMzBmNTQxM2U1ZmJhZDJmODY4NjNhMTA3MjJiZTM2ODVlMGMxOGM4M2NhMTI5MWNkYTU4MWJlYTMzZDRjIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zL2FhM2FmZWYzLWMxNDktNDZmMi04MGNkLWM5YjdjZDA5N2MyNC5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBkb2N1bWVudGFkYSBubyBwcm9qZXRvIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUsIHNlbSBpbWFnZW0gb3UgdGV4dG8gZGUgdGVyY2Vpcm8uIE7Do28gw6kgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EuIEZvbnRlLCByZWRhw6fDo28gZSBnYWJhcml0byBwcmVzZXJ2YWRvczsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUuIiwicGF0aCI6ImRvc3NpZXIvaW5mb3JtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlTDqWNuaWNvIGVtIEluZm9ybcOhdGljYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoicG90aW0tdGktcTMyIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJpbmZvcm1hdGljYS1vZmljaWFsLXRpLWl0LXRiLWdsb3NzYXJpbyJdLCJyZXNvbHV0aW9uIjoiMS4gU01UUCDDqSBvIHByb3RvY29sbyBkZSBlbnZpbyBkZSBjb3JyZWlvIGVsZXRyw7RuaWNvLCBpbmNsdXNpdmUgYSBzdWJtaXNzw6NvIGRvIGNsaWVudGUgYW8gc2Vydmlkb3I7IEUgZm9pIGNvbmZpcm1hZGEgbm8gZ2FiYXJpdG8gZGVmaW5pdGl2by4gMi4gUE9QMyBlIElNQVAgc8OjbyBhc3NvY2lhZG9zIGFvIHJlY2ViaW1lbnRvIG91IGFjZXNzbyDDoCBjYWl4YSBkZSBtZW5zYWdlbnM7IEhUVFAgYXRlbmRlIGEgcmVjdXJzb3MgV2ViIGUgRlRQIMOgIHRyYW5zZmVyw6puY2lhIGRlIGFycXVpdm9zLiBBIHJlZGHDp8OjbyBpbmNvbXBsZXRhIGRlIMOpIGZvaSBwcmVzZXJ2YWRhIGRvIGNhZGVybm8sIHNlbSBhbHRlcmFyIGEgcGVyZ3VudGEgbmVtIGFzIG9ww6fDtWVzLiIsInN0YXRlbWVudCI6Ik5vIG1vZGVsbyBjbGllbnRlLXNlcnZpZG9yLCBvIHByb3RvY29sbyB1dGlsaXphZG8gcGFyYSBlbnZpYXIgZS1tYWlscyBkZSB1bSBjbGllbnRlIHBhcmEgdW0gc2Vydmlkb3IgZGUgw6kgbzoiLCJ0b3BpY0lkIjoiSTEwIn0sInN0dWR5U291cmNlcyI6eyJpbmZvcm1hdGljYS1vZmljaWFsLXRpLWl0LXRiLWdsb3NzYXJpbyI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6Ik1vemlsbGEg4oCUIEdsb3Nzw6FyaW8gZGUgdGVybW9zIGUgdGlwb3MgZGUgY29udGFzIiwidXJsIjoiaHR0cHM6Ly9zdXBwb3J0Lm1vemlsbGEub3JnL3B0LUJSL2tiL2dsb3NzYXJpby10ZXJtb3MtdGlwb3MtY29udGFzIn19fQ=="
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.I10.p.it-busca-excluir-termo",
+    "admin.2026-11.I10.p.it-busca-frase-exata",
+    "admin.2026-11.I10.p.it-busca-intervalo-data",
+    "admin.2026-11.I10.p.it-cache-versao-antiga",
+    "admin.2026-11.I10.p.it-cookies-sair",
+    "admin.2026-11.I10.p.it-download-acao-tipo",
+    "admin.2026-11.I10.p.it-downloads-remover-historico",
+    "admin.2026-11.I10.p.it-email-enviar-depois",
+    "admin.2026-11.I10.p.it-email-servidor-compartilhado",
+    "admin.2026-11.I10.p.it-favorito-nao-offline",
+    "admin.2026-11.I10.p.it-imap-cabecalho-offline",
+    "admin.2026-11.I10.p.it-imap-exclusao-sincronizada",
+    "admin.2026-11.I10.p.it-limpar-um-site",
+    "admin.2026-11.I10.p.it-privativo-dispositivo",
+    "admin.2026-11.I10.p.it-privativo-final",
+    "admin.2026-11.I10.p.it-push-aba-fechada",
+    "admin.2026-11.I10.p.it-site-informacoes-permissoes",
+    "admin.2026-11.I10.p.it-url-consulta",
+    "admin.2026-11.I10.p.it-url-espaco-codificado",
+    "admin.2026-11.I10.p.it-url-relativo-diretorio",
+    "admin.2026-11.I10.p.morato-q20",
+    "admin.2026-11.I10.p.morato-ti-q42",
+    "admin.2026-11.I10.p.morato-ti-q43",
+    "admin.2026-11.I10.p.potim-se-q20",
+    "admin.2026-11.I10.p.potim-ti-q32"
+  ]
+}

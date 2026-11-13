@@ -50,7 +50,8 @@ public final class Question {
     }
     public static Question restore(UUID id, QuestionOrigin origin, List<QuestionRevision> revisions, List<EditorialDecision> history) {
         var question = new Question(id, origin, revisions);
-        for (var decision : List.copyOf(history)) question.decide(decision);
+        // Histórico já persistido pode não ter origem da revisão; não exigir retroativamente.
+        for (var decision : List.copyOf(history)) question.apply(decision);
         return question;
     }
     public Status status(UUID revisionId) { revision(revisionId); return statuses.get(revisionId); }
@@ -58,7 +59,14 @@ public final class Question {
     public List<EditorialDecision> decisions() { return List.copyOf(decisions); }
     /** Token monotônico de decisões; não expõe @Version/JPA nem depende do ponteiro elegível. */
     public int editorialSequence() { return decisions.size(); }
+    /** Nova decisão: APPROVE exige origem da revisão informada pelo operador. */
     public void decide(EditorialDecision decision) {
+        if (decision.action() == EditorialDecision.Action.APPROVE && decision.reviewKind() == null) {
+            throw new IllegalArgumentException("Aprovação exige origem da revisão");
+        }
+        apply(decision);
+    }
+    private void apply(EditorialDecision decision) {
         var revision = revision(decision.revisionId());
         if (!id.equals(decision.questionId()) || !revision.fingerprint().equals(decision.fingerprint())) {
             throw new IllegalArgumentException("Evidência não corresponde à questão/revisão/conteúdo");

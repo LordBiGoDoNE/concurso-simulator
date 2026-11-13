@@ -3,7 +3,7 @@
 Operação síncrona para ampliar os acervos **SIMULADO** e **PRATICA_AULA**, por JSON
 autossuficiente. Até 100 questões por pacote, sem teto acumulado de armazenamento.
 Tudo novo entra em DRAFT. A interface administrativa limita-se a login, senha e vínculo Google;
-não há upload/editorial na interface, aprovação HTTP, publicação de recursos, carga no startup ou suporte a templates. Os leitores locais antigos
+não há upload/editorial na interface, publicação de recursos, carga no startup ou suporte a templates. Decisões editoriais por HTTP existem somente em lote para o ADM ([#177](#decisões-editoriais-em-lote--177)). Os leitores locais antigos
 continuam aceitando seus próprios formatos sem conversão automática.
 
 ## Acesso e operação local
@@ -196,3 +196,85 @@ O controller não lê sessão/JPA, não cria token CSRF e não promove decisões
 Testes usam fixtures e PostgreSQL isolado: não demonstram curadoria real, desempenho de
 produção ou revisão independente. Carga real, publicação e revisão por modelo exigem
 autorizações próprias. A proposta e a implementação local pertencem à issue #160.
+
+## Consulta administrativa do acervo — #177
+
+Para o ADM (ou a IA que o auxilia) conferir o acervo antes de importar ou decidir, há
+rotas **somente leitura** sob `/api/v1/admin/questions` ([#177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177)).
+Mesma exigência de acesso da importação: sessão ADM, permissão e versão persistentes,
+troca inicial concluída; CSRF em POST; respostas `no-store`. Não dependem de
+`destination-id`/`confirmation-key`. Nada é gravado nem reservado. As rotas públicas
+`/api/v1/question-bank/questions` continuam sem gabarito, resolução, estado e fingerprint.
+
+- `GET /api/v1/admin/questions`: página (`page`, `size` até 100, padrão 50) ordenada por
+  namespace, chave e ID, com total. Filtros por AND: `purpose`, `namespace`, `keyPrefix`
+  (prefixo literal da chave), `disciplineId`/`topicId`/`latestStatus` (da última revisão),
+  `hasEligible`, `reviewKind` (`HUMAN_PEER`/`AI_ONLY` da aprovação elegível) e
+  `activityFrom`/`activityTo` (última decisão ou importação registrada). Aprovações
+  históricas sem origem aparecem com `reviewKind: null` e não entram no filtro.
+- `GET /api/v1/admin/questions/{id}`: todas as revisões com conteúdo integral, inclusive
+  gabarito e resolução, no formato de conteúdo do pacote; decisões com sequência, responsável,
+  checklist, justificativa e origem da revisão; recibos de importação relacionados.
+- `POST /api/v1/admin/questions/lookup`: até 1.000 pares `{origin, fingerprint}` de um pacote
+  local. Resultado por par, na ordem enviada: `ABSENT`, `PRESENT` (sem fingerprint),
+  `SAME_AS_LATEST`, `SAME_AS_ELIGIBLE` ou `DIFFERENT`, com IDs/fingerprints atuais e
+  `matchingRevisionId` quando alguma revisão tem o fingerprint informado. POST apenas
+  pelo tamanho do corpo; sem efeitos.
+- `POST /api/v1/admin/questions/export`: `questionIds` (última revisão de cada, até 100) ou
+  `importReceiptId` (revisões do recibo), nunca ambos. Devolve `administrative-question-package/v1`
+  com `expectedLatestRevision: null`, digests e chaves. O pacote é conferido pelo próprio
+  leitor de importação antes da resposta; reimportá-lo resulta em `IDENTICAL`. Recusa com 422
+  `EXPORT_REFUSED` e motivo (`NOT_FOUND`, `MIXED_PURPOSE`, `ORIGIN_NOT_EXPORTABLE` para origens
+  fora do formato administrativo, `MISSING_EVIDENCE` quando fontes/recursos não foram
+  armazenados por importação administrativa, `LIMIT_EXCEEDED` para recibo vazio ou acima de 100,
+  `NOT_REIMPORTABLE` quando o pacote excederia os limites de arquivos/bytes ou seria recusado pelo leitor).
+
+Corpos POST: JSON UTF-8 sem compressão, até 2 MiB, sem chaves duplicadas, campos
+desconhecidos ou coerção de tipos (400 `INVALID_REQUEST`); filtros/limites inválidos
+retornam 400 `INVALID_QUERY`. A plataforma não julga conteúdo nem semelhança entre questões:
+a conferência de concorrência e de curadoria é do operador.
+
+## Decisões editoriais em lote — #177
+
+**Decisão alterada:** a #160 registrava "sem decisões editoriais HTTP". Por decisão do
+usuário de 2026-11-12 ([#177](https://github.com/LordBiGoDoNE/concurso-simulator/issues/177)),
+o ADM autenticado pode decidir em lote pela API. A CLI local `decide` continua disponível,
+inclusive para RETURN_TO_DRAFT e WITHDRAW, que ficaram fora do lote nesta entrega.
+
+Mesmo modelo da importação: prévia sem escrita, token de confirmação e aplicação atômica com
+recibo. Exige a mesma configuração (`destination-id` e `confirmation-key`); sem ela, as rotas
+respondem 503 `DECISIONS_NOT_CONFIGURED` antes de ler o corpo. O token é HMAC com separação de
+domínio própria: token de importação não confirma lote, nem o inverso.
+
+1. `POST /api/v1/admin/editorial-decisions/preview` com `action` (`SUBMIT` ou `APPROVE`),
+   `reviewKind` (`HUMAN_PEER`/`AI_ONLY`, obrigatório em APPROVE), `checklist`, `rationale`
+   (até 3.500 caracteres) e a seleção: `items` (`questionId`, `revisionId`, `fingerprint`) ou
+   `importReceiptId` (as revisões gravadas por aquele recibo), nunca ambos. Até 100 questões,
+   sem repetição — um recibo de importação sempre cabe.
+2. A prévia devolve, por item, estado atual, estado resultante ou motivo de recusa
+   (`QUESTION_NOT_FOUND`, `REVISION_NOT_FOUND`, `FINGERPRINT_MISMATCH`, `INVALID_TRANSITION`,
+   `CHECKLIST_INCOMPLETE`), calculados aplicando a decisão a uma cópia do agregado pelas
+   próprias regras do domínio. Se todos os itens forem válidos, devolve `expected` (ponteiro
+   elegível e sequência observados por questão), `digest` e `confirmationToken` válido por
+   15 minutos. Nada é gravado.
+3. `POST /api/v1/admin/editorial-decisions/apply` com o mesmo envelope, `items` = `expected`
+   da prévia e o token. O token vincula ator, destino e o digest do envelope e do estado
+   confirmado; qualquer alteração retorna 409 `CONFIRMATION_MISMATCH` (ou
+   `CONFIRMATION_EXPIRED`).
+4. A aplicação trava as questões em ordem fixa e confere que o estado de **todas** é igual ao
+   confirmado. Divergência recusa o lote inteiro com 409 `BATCH_DIVERGED` e a lista de
+   questões, sem efeito parcial; refaça a prévia. Depois grava cada decisão pelo domínio
+   (mesma regra do `DecideQuestionUseCase`), com `responsible = admin:<UUID do ADM>`, horário
+   do servidor, checklist, origem da revisão e justificativa acrescida de `[lote <nonce>]`,
+   e o recibo (`qb_decision_batch`, `qb_decision_batch_item`, V17), tudo no mesmo commit.
+5. Resposta perdida: reenviar a mesma aplicação devolve o recibo original com
+   `replayed: true`, sem decisões duplicadas — inclusive quando as duas aplicações chegam ao
+   mesmo tempo: a segunda espera as travas e relê o recibo antes de avaliar divergência.
+6. Importação e lote travam questões em ordens diferentes (origem × ID). Se rodarem ao mesmo
+   tempo sobre as mesmas questões, o PostgreSQL pode abortar uma delas por deadlock: rollback
+   integral e 503, sem efeito parcial; basta repetir.
+
+A plataforma não procura conflitos editoriais nem julga conteúdo ou semelhança: a única
+recusa automática além de forma, acesso e transições do domínio é a divergência entre a
+prévia confirmada e o estado atual. Conferir revisão esperada e mudanças concorrentes é
+responsabilidade do operador (ADM ou IA que o auxilia), apoiado pela consulta administrativa.

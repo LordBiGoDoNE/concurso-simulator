@@ -42,6 +42,7 @@ public final class AttemptDatabase implements AutoCloseable {
         var bean=new LocalContainerEntityManagerFactoryBean(); bean.setDataSource(ds);
         bean.setPackagesToScan(packages);
         bean.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
+        br.com.concursosimulator.questionbank.LegacySchemaMapping.apply(bean,jdbc);
         bean.setJpaPropertyMap(Map.of("hibernate.hbm2ddl.auto","validate")); bean.afterPropertiesSet();
         factory=bean.getObject(); entities=SharedEntityManagerCreator.createSharedEntityManager(factory);
         manager=new JpaTransactionManager(factory); questions=new JpaQuestionStore(entities,manager); pool=new JpaEligibleRevisionPool(entities);
@@ -58,7 +59,7 @@ public final class AttemptDatabase implements AutoCloseable {
     void decide(UUID id,EditorialDecision.Action action) {
         questions.transaction(s -> {
             var q=s.loadForUpdate(id).orElseThrow(); var r=q.latest();
-            q.decide(new EditorialDecision(action,q.id(),r.id(),r.fingerprint(),"Fixture",NOW,Set.of(EditorialDecision.Check.values()),"Revisão sintética de teste"));
+            q.decide(new EditorialDecision(action,q.id(),r.id(),r.fingerprint(),"Fixture",NOW,Set.of(EditorialDecision.Check.values()),"Revisão sintética de teste",EditorialDecision.ReviewKind.HUMAN_PEER));
             s.save(q); return null;
         });
     }

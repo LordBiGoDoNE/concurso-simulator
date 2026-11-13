@@ -147,7 +147,7 @@ class AdministrativeImportHttpTests {
         var ids=new HashSet<UUID>();
         for(var result:json.readTree(applied.body()).path("receipt").path("results"))ids.add(UUID.fromString(result.path("questionId").asString()));
         for(var id:ids)for(var action:List.of(EditorialDecision.Action.SUBMIT,EditorialDecision.Action.APPROVE))questions.transaction(s->{
-            var q=s.loadForUpdate(id).orElseThrow();q.decide(new EditorialDecision(action,q.id(),q.latest().id(),q.latest().fingerprint(),"Synthetic test only",java.time.Instant.now(),Set.of(EditorialDecision.Check.values()),"Not editorial approval of real material"));s.save(q);return null;
+            var q=s.loadForUpdate(id).orElseThrow();q.decide(new EditorialDecision(action,q.id(),q.latest().id(),q.latest().fingerprint(),"Synthetic test only",java.time.Instant.now(),Set.of(EditorialDecision.Check.values()),"Not editorial approval of real material",EditorialDecision.ReviewKind.HUMAN_PEER));s.save(q);return null;
         });
         var available=practice.practiceAvailability(Topic.P01);
         assertThat(available.available()).isEqualTo(6);assertThat(available.maximum()).isEqualTo(5);

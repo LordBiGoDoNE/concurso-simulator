@@ -1,0 +1,2034 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.ebserh-2018-basic-q36"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere as seguintes proposições: P: O paciente receberá alta; Q: O paciente receberá medicação; R: O paciente receberá visitas. Tendo como referência essas proposições, julgue os itens a seguir, considerando que a notação ~S significa a negação da proposição S.\n\n36 A proposição ~P→[Q∨R] pode assim ser traduzida: Se o paciente receber alta, então ele não receberá medicação ou não receberá visitas.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "4e3d048f-1742-51be-bf50-59b676ea1d18",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "68b48d10-242e-5856-9f9a-3d66bde8ed68",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "68b48d10-242e-5856-9f9a-3d66bde8ed68",
+          "resolution": {
+            "text": "1. A fórmula afirma: se o paciente não receber alta, então receberá medicação ou receberá visitas. 2. A tradução troca o antecedente e nega os consequentes. Com P falso, Q e R falsos, a fórmula é falsa e a tradução verdadeira. Julgamento: Errado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Introdução à Lógica Matemática: conectivos, negação e quantificadores",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=153",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — EBSERH — Concurso Público, área administrativa, aplicação 06/05/2018, item 36. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M11.s.ebserh-2018-basic-q36.json",
+            "answerPath": "sources/admin.2026-11.M11.s.ebserh-2018-basic-q36.json",
+            "contentSha256": "1d76caf990cdb9dc0b6d76718c0f8c6f1acc402fc52f54ed87e06e9e6f769f7e",
+            "answerSha256": "1d76caf990cdb9dc0b6d76718c0f8c6f1acc402fc52f54ed87e06e9e6f769f7e"
+          }
+        },
+        "fingerprint": "26e665cdade40906a35b25af6dcfaef21004b58b5a45c821a7683375c4df4018",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.ebserh-2018-basic-q38"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere as seguintes proposições: P: O paciente receberá alta; Q: O paciente receberá medicação; R: O paciente receberá visitas. Tendo como referência essas proposições, julgue os itens a seguir, considerando que a notação ~S significa a negação da proposição S.\n\n38 Se a proposição Q→[~R] for falsa, então será também falsa a proposição: Caso o paciente receba visitas, ele não receberá medicação.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b5310475-f8e2-538c-a053-8c0c8b01cb58",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "0a256ab8-17fc-510c-9d17-83d6a76d96e6",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b5310475-f8e2-538c-a053-8c0c8b01cb58",
+          "resolution": {
+            "text": "1. Q→¬R só é falsa quando Q e R são verdadeiros. 2. Nesse caso, R→¬Q também tem antecedente verdadeiro e consequente falso. Julgamento: Certo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Introdução à Lógica Matemática: conectivos, negação e quantificadores",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=153",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — EBSERH — Concurso Público, área administrativa, aplicação 06/05/2018, item 38. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M11.s.ebserh-2018-basic-q38.json",
+            "answerPath": "sources/admin.2026-11.M11.s.ebserh-2018-basic-q38.json",
+            "contentSha256": "6cea214182d136603d22279f75385632b9b03f00afe224a8e0c4d33e58d39035",
+            "answerSha256": "6cea214182d136603d22279f75385632b9b03f00afe224a8e0c4d33e58d39035"
+          }
+        },
+        "fingerprint": "a7248051b58a959b358c1d7934c258d782de57e45fb44fd14bc8ad64e3b42b4f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.inss-2022-comum-q48"
+        },
+        "content": {
+          "statement": {
+            "text": "P: Nos processos de justificações administrativas, quando o segurado apresentar testemunhas com valor de prova, a agência fornecerá um servidor exclusivo para o atendimento. A partir da proposição precedente, julgue os itens a seguir.\n\n48 A tabela-verdade associada à proposição P possui oito linhas.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "d5903bd3-6563-56a5-be55-cc2b7eab4917",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "d7c2be54-df3f-50b4-87f8-6cb2d2ee10f1",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d7c2be54-df3f-50b4-87f8-6cb2d2ee10f1",
+          "resolution": {
+            "text": "1. P tem duas proposições simples: apresentar testemunhas com valor de prova e fornecer servidor exclusivo. 2. A condicional tem 2²=4 linhas, não oito. Julgamento: Errado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Introdução à Lógica Matemática: conectivos, negação e quantificadores",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=153",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — INSS — Concurso Público, Edital 2022, aplicação 27/11/2022, item 48. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M11.s.inss-2022-comum-q48.json",
+            "answerPath": "sources/admin.2026-11.M11.s.inss-2022-comum-q48.json",
+            "contentSha256": "cdbd0525c2075b5b31c89f3c9668328257fe958422aa3dc0dd46413abc669939",
+            "answerSha256": "cdbd0525c2075b5b31c89f3c9668328257fe958422aa3dc0dd46413abc669939"
+          }
+        },
+        "fingerprint": "e649a2a1c08194da74e5d4f9dfc42ed24dd593021486649fa29db31428151da9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-bicondicional-tabela"
+        },
+        "content": {
+          "statement": {
+            "text": "A proposição “p se e somente se q” é verdadeira quando:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a31db00a-146f-5bb7-b8d7-ba748a946c6c",
+              "content": {
+                "text": "p e q têm o mesmo valor lógico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "352ef4c0-2ec4-5bac-991e-5f1043260720",
+              "content": {
+                "text": "p é sempre verdadeira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "07e901ed-4e15-57d1-baaa-eda5a9b9e85f",
+              "content": {
+                "text": "p e q têm valores diferentes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f713f20d-a14a-51b8-99f9-20da6a84a86d",
+              "content": {
+                "text": "Somente quando p e q são falsas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a31db00a-146f-5bb7-b8d7-ba748a946c6c",
+          "resolution": {
+            "text": "1. A bicondicional reúne p→q e q→p. 2. Ambas valem quando os valores coincidem: verdadeira/verdadeira ou falsa/falsa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-bicondicional-tabela.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-bicondicional-tabela.json",
+            "contentSha256": "66f4b4fca2dcc1221f52898b1d6e586c131ffc416b42ba4a20294f61dce99586",
+            "answerSha256": "66f4b4fca2dcc1221f52898b1d6e586c131ffc416b42ba4a20294f61dce99586"
+          }
+        },
+        "fingerprint": "7dfbd7976bbd5301c9937c6cd0ee42e083f6de77622c594f884fd3ffa14d0c7d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-cadeia-refutacao-final"
+        },
+        "content": {
+          "statement": {
+            "text": "São verdadeiras p→q, q→r e não r. Qual conclusão decorre necessariamente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "31f5157b-603c-58bb-ae9e-d25af809f641",
+              "content": {
+                "text": "q.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0604f1a8-d9e4-5cf9-b8c9-4a79201352a1",
+              "content": {
+                "text": "r.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9721cf84-63fd-5798-82ce-7385d5049a9d",
+              "content": {
+                "text": "Não p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a0636a5f-e35d-5b9e-b131-43c1eda93e5f",
+              "content": {
+                "text": "p.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9721cf84-63fd-5798-82ce-7385d5049a9d",
+          "resolution": {
+            "text": "1. De q→r e não r, modus tollens fornece não q. 2. De p→q e não q, aplica-se novamente a regra, obtendo não p.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-cadeia-refutacao-final.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-cadeia-refutacao-final.json",
+            "contentSha256": "de4fdf006c8be28a62de05249f18781328476f7ae452f3dc1b5d227d68639325",
+            "answerSha256": "de4fdf006c8be28a62de05249f18781328476f7ae452f3dc1b5d227d68639325"
+          }
+        },
+        "fingerprint": "23f1cc04c0694dfc5e49115f2e2548fd07457f98f0d0d769234d33b7f790b470",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-conclusao-por-casos"
+        },
+        "content": {
+          "statement": {
+            "text": "São verdadeiras as premissas p ou q, p→r e q→r. Qual conclusão é obrigatória?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8738073f-96b9-5a27-9472-abc6c2ef3eb2",
+              "content": {
+                "text": "r.",
+                "resources": []
+              }
+            },
+            {
+              "id": "da023ad7-575c-5fe2-95b7-1063532a774c",
+              "content": {
+                "text": "p e q.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a35f5adf-527c-5223-81d1-e0da30c74878",
+              "content": {
+                "text": "Não r.",
+                "resources": []
+              }
+            },
+            {
+              "id": "d8dd3ebd-120b-575e-a6c6-5ac6159521af",
+              "content": {
+                "text": "Não p e não q.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8738073f-96b9-5a27-9472-abc6c2ef3eb2",
+          "resolution": {
+            "text": "1. A disjunção garante pelo menos um dos casos p ou q. Se p ocorre, p→r fornece r; se q ocorre, q→r também fornece r. 2. Assim r decorre em todos os casos permitidos, sem exigir que p e q sejam simultaneamente verdadeiras.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-conclusao-por-casos.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-conclusao-por-casos.json",
+            "contentSha256": "a61703cf13d7434bae8d2c2332c35cc16c16f8c48bf8e3f3c7db66dad36760cd",
+            "answerSha256": "a61703cf13d7434bae8d2c2332c35cc16c16f8c48bf8e3f3c7db66dad36760cd"
+          }
+        },
+        "fingerprint": "7010ce5b7c940f289c670b7c516dbc8ff80b1e8e5e6a29252d15c7f5aefbe418",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-condicional-falsa"
+        },
+        "content": {
+          "statement": {
+            "text": "Em lógica proposicional, em qual situação “se p, então q” é falsa?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "720cf6ac-5af3-5576-a085-c735c6fff1dc",
+              "content": {
+                "text": "p verdadeira e q falsa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "6d17dc92-13f7-56c8-aace-2b2a6749d509",
+              "content": {
+                "text": "p falsa e q verdadeira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2aeb19bc-f67f-55a5-856b-6c8dc29d4787",
+              "content": {
+                "text": "p e q falsas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c32ee3d5-b5d8-5012-87e3-8dec45ba1e24",
+              "content": {
+                "text": "p e q verdadeiras.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "720cf6ac-5af3-5576-a085-c735c6fff1dc",
+          "resolution": {
+            "text": "1. A condicional exclui apenas antecedente verdadeiro junto de consequente falso. 2. Nas outras três combinações ela é verdadeira; antecedente falso não torna a condicional falsa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-condicional-falsa.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-condicional-falsa.json",
+            "contentSha256": "114468db4762e03119f8d02e8e666c8cc6ff8b6a9daeb9399bed1f7d72159693",
+            "answerSha256": "114468db4762e03119f8d02e8e666c8cc6ff8b6a9daeb9399bed1f7d72159693"
+          }
+        },
+        "fingerprint": "aabb8e6d77aa0a60d346ce68f68d4a1951c8ac001bc0b88b9d1875de1f1b55c5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-contar-linhas-tabela"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma tabela-verdade envolve quatro proposições simples independentes. Quantas linhas de combinações ela possui?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "3aeabb68-12ad-5433-a3f3-96cd2ae6dfe7",
+              "content": {
+                "text": "24",
+                "resources": []
+              }
+            },
+            {
+              "id": "59ac07c6-d8f5-5875-937f-e3a179f75047",
+              "content": {
+                "text": "16",
+                "resources": []
+              }
+            },
+            {
+              "id": "206d58d3-2ed3-59c0-a512-f8d7e183ee26",
+              "content": {
+                "text": "8",
+                "resources": []
+              }
+            },
+            {
+              "id": "98622f34-6b65-5ae7-aee3-7135e48e107a",
+              "content": {
+                "text": "4",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "59ac07c6-d8f5-5875-937f-e3a179f75047",
+          "resolution": {
+            "text": "1. Cada proposição tem dois valores possíveis. 2. Quatro escolhas independentes produzem 2⁴=16 linhas; não se multiplica quatro por dois.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-contar-linhas-tabela.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-contar-linhas-tabela.json",
+            "contentSha256": "3001a3c9cc0a0aab07b537877416a8a731621d09243a5a54a43a705213de0c5e",
+            "answerSha256": "3001a3c9cc0a0aab07b537877416a8a731621d09243a5a54a43a705213de0c5e"
+          }
+        },
+        "fingerprint": "97b4b25258f2c017552940b575fcd559236c2d2e9dee70ac9d538531aa60544b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-demorgan-conjuncao"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é a negação de “A e B ocorreram”?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c78f99d1-c04b-5716-8eb4-f1969e0f1c7e",
+              "content": {
+                "text": "Se A ocorreu, B não ocorreu.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4886039a-1820-5898-a35b-509f92ea5f4b",
+              "content": {
+                "text": "A não ocorreu ou B não ocorreu.",
+                "resources": []
+              }
+            },
+            {
+              "id": "57ead99c-20bf-5f51-9537-a136981bc8a6",
+              "content": {
+                "text": "A não ocorreu e B não ocorreu.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a852b784-aaba-5aa7-a511-aa6a82af72ee",
+              "content": {
+                "text": "A ocorreu ou B ocorreu.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "4886039a-1820-5898-a35b-509f92ea5f4b",
+          "resolution": {
+            "text": "1. Para negar uma conjunção basta que pelo menos uma parte seja falsa. 2. Pela lei de De Morgan, ¬(A e B) equivale a ¬A ou ¬B, com ou inclusivo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-demorgan-conjuncao.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-demorgan-conjuncao.json",
+            "contentSha256": "125b253cb4ab7cc378847be142ad88b88fc40e821f97f9798a8fb5492aeceac0",
+            "answerSha256": "125b253cb4ab7cc378847be142ad88b88fc40e821f97f9798a8fb5492aeceac0"
+          }
+        },
+        "fingerprint": "41501a75899496e8f2bf64a05a27d62c11b24d0919d33e975b589c526e53d32f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-distributiva-logica"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual fórmula equivale a p e (q ou r)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b37d2877-8912-5fb1-8e81-267bd0c9c2e4",
+              "content": {
+                "text": "(p e q) e r.",
+                "resources": []
+              }
+            },
+            {
+              "id": "04f0bc0c-00a0-54ce-b65c-d8427bd49bd2",
+              "content": {
+                "text": "(p e q) ou (p e r).",
+                "resources": []
+              }
+            },
+            {
+              "id": "bedaba26-7b98-53b7-8250-95b07bd0be2e",
+              "content": {
+                "text": "(p ou q) e r.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0bf071c5-73c8-5593-a9c6-c2fa2e352ff3",
+              "content": {
+                "text": "p ou (q e r).",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "04f0bc0c-00a0-54ce-b65c-d8427bd49bd2",
+          "resolution": {
+            "text": "1. Para a conjunção ser verdadeira, p deve valer junto com ao menos uma de q e r. 2. Isso corresponde à disjunção dos casos p e q, ou p e r; é a distributividade lógica.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-distributiva-logica.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-distributiva-logica.json",
+            "contentSha256": "66d9c4a7e627d3a696d2a4d4600325c701d4cc6cc3e4638b59887af52c5f408f",
+            "answerSha256": "66d9c4a7e627d3a696d2a4d4600325c701d4cc6cc3e4638b59887af52c5f408f"
+          }
+        },
+        "fingerprint": "682b14412294edbbda5269e8280538f8643d66de07b79c9b677e141822918ba6",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-dupla-negacao"
+        },
+        "content": {
+          "statement": {
+            "text": "Em lógica clássica, “não é verdade que p é falsa” equivale a:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e99dafdc-47cd-520d-8e88-2683b6f3c086",
+              "content": {
+                "text": "Não p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "532a3355-a266-5cb2-a7ab-decb1949ce0b",
+              "content": {
+                "text": "p e não p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9e4b5f8f-a5ae-524a-adfc-7ac769c3272b",
+              "content": {
+                "text": "Uma contradição.",
+                "resources": []
+              }
+            },
+            {
+              "id": "93576795-1911-5457-91a4-d19083deaf4b",
+              "content": {
+                "text": "p.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "93576795-1911-5457-91a4-d19083deaf4b",
+          "resolution": {
+            "text": "1. A frase nega a negação de p. 2. A dupla negação restaura o valor original, tanto para p verdadeira quanto para p falsa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-dupla-negacao.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-dupla-negacao.json",
+            "contentSha256": "214ca6d45a1e3cbe0efb3b2385776d89aaed3d54039dda6dcc30f4869e2d0c52",
+            "answerSha256": "214ca6d45a1e3cbe0efb3b2385776d89aaed3d54039dda6dcc30f4869e2d0c52"
+          }
+        },
+        "fingerprint": "36dd4f78527e2c8c09f6b88ba1aea73ff32a2b84110032bde00e8f2ec588f2af",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-existenciais-nao-se-unem"
+        },
+        "content": {
+          "statement": {
+            "text": "Alguns A são B e alguns B são C. É obrigatório que alguns A sejam C?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "79dd8e8a-b07b-5565-a62b-d12049c703e7",
+              "content": {
+                "text": "Sim, porque A e C têm a mesma letra de origem.",
+                "resources": []
+              }
+            },
+            {
+              "id": "320454de-180d-56bc-9630-3d25f09da3ba",
+              "content": {
+                "text": "Não; os elementos de B citados nas duas premissas podem ser diferentes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9a9faa95-42a5-5b57-80ed-a7a24b6d3704",
+              "content": {
+                "text": "Sim, por transitividade automática de “alguns”.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7e946f5c-27f7-576e-a38e-768c24c17686",
+              "content": {
+                "text": "Sim, desde que B não seja vazio.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "320454de-180d-56bc-9630-3d25f09da3ba",
+          "resolution": {
+            "text": "1. Pode haver um indivíduo em A∩B e outro diferente em B∩C, sem ninguém em A∩C. 2. Esse modelo satisfaz as duas premissas e refuta a conclusão; interseções parciais não são transitivas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-existenciais-nao-se-unem.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-existenciais-nao-se-unem.json",
+            "contentSha256": "e14c29060874088e112a5ee826603cf7619e41942d61110eeadc409d72879cb9",
+            "answerSha256": "e14c29060874088e112a5ee826603cf7619e41942d61110eeadc409d72879cb9"
+          }
+        },
+        "fingerprint": "bdf2d21aa3c4cc27f2c42d61dd88376b5034bf63756122b56f9b0390a9548427",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-inconsistencia-premissas"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual conjunto de premissas é inconsistente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "aada204f-95c1-5caf-8fa7-80064dc3ea3a",
+              "content": {
+                "text": "Não p e p→q.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e78e90b4-5eba-5ab4-a192-2bb555cbb1c6",
+              "content": {
+                "text": "p ou q e não p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7a4f695d-137a-5559-afbd-b20019f0d107",
+              "content": {
+                "text": "p↔q e não p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "990ab9de-c6c2-5749-802b-8ad88ade2577",
+              "content": {
+                "text": "p, p→q e não q.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "990ab9de-c6c2-5749-802b-8ad88ade2577",
+          "resolution": {
+            "text": "1. p e p→q forçam q verdadeira. 2. A premissa não q exige o contrário, portanto nenhuma interpretação torna as três verdadeiras ao mesmo tempo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-inconsistencia-premissas.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-inconsistencia-premissas.json",
+            "contentSha256": "9ca4bca0915cec8732b1eb0dd5b590e2874b455e63f1179179d858e4a3e0fd32",
+            "answerSha256": "9ca4bca0915cec8732b1eb0dd5b590e2874b455e63f1179179d858e4a3e0fd32"
+          }
+        },
+        "fingerprint": "38a31339b9594ec6b7bfd4a145f067320eb78395c667a2e0a9941e451eb4ef44",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-modus-ponens"
+        },
+        "content": {
+          "statement": {
+            "text": "Considere verdadeiras as premissas “se chove, a rua molha” e “chove”. Qual conclusão é necessariamente válida?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "084e796b-dc76-5fe5-a293-639c5df09b5b",
+              "content": {
+                "text": "Não chove.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b5c38da6-7a41-5be0-b65e-6a986d349884",
+              "content": {
+                "text": "Toda rua molhada prova chuva.",
+                "resources": []
+              }
+            },
+            {
+              "id": "31a52a53-98b6-52d0-88da-d2d6d2f73f4a",
+              "content": {
+                "text": "A rua molha.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b18a2378-1768-520d-84ea-3029890e1871",
+              "content": {
+                "text": "A rua não molha.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "31a52a53-98b6-52d0-88da-d2d6d2f73f4a",
+          "resolution": {
+            "text": "1. A primeira premissa dá a implicação chuva→rua molhada. 2. A segunda confirma o antecedente, permitindo concluir o consequente por modus ponens; ela não estabelece a recíproca.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-modus-ponens.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-modus-ponens.json",
+            "contentSha256": "23e38ea317ca98637725fc244f73997d2dacb326c9d9c28b7492bde4d372b359",
+            "answerSha256": "23e38ea317ca98637725fc244f73997d2dacb326c9d9c28b7492bde4d372b359"
+          }
+        },
+        "fingerprint": "395dda322dbe44ad34d802ab0137a7feb8366e065a347331f57a34549c2d2a70",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-modus-tollens"
+        },
+        "content": {
+          "statement": {
+            "text": "São verdadeiras “se o serviço está ativo, responde” e “o serviço não responde”. O que decorre?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "de6bd6f1-65e1-5eaf-9e25-205adc5bb14b",
+              "content": {
+                "text": "O serviço está ativo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "67ef925c-4ef4-5552-aba0-0af9913b747b",
+              "content": {
+                "text": "A resposta é indeterminada.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8da22560-7107-5cd2-a5d2-cf8fa1f57b1f",
+              "content": {
+                "text": "A primeira premissa necessariamente é falsa.",
+                "resources": []
+              }
+            },
+            {
+              "id": "667ea5d0-876d-532b-871e-cb11c689e3db",
+              "content": {
+                "text": "O serviço não está ativo.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "667ea5d0-876d-532b-871e-cb11c689e3db",
+          "resolution": {
+            "text": "1. Se ativo implicasse resposta e ele estivesse ativo, haveria resposta. 2. A ausência de resposta com a condicional verdadeira obriga antecedente falso: modus tollens.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-modus-tollens.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-modus-tollens.json",
+            "contentSha256": "abb65588a7a2700cf209ceef18c12a03d07a16dc6c02ac31382818dc28f898f1",
+            "answerSha256": "abb65588a7a2700cf209ceef18c12a03d07a16dc6c02ac31382818dc28f898f1"
+          }
+        },
+        "fingerprint": "8c681959a544353e33b8c591c2dfbff11dc9978d1c2d5745348e6bd225632739",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-necessaria-suficiente"
+        },
+        "content": {
+          "statement": {
+            "text": "Na afirmação “se há autorização, então há acesso”, que papel a autorização exerce para o acesso, apenas com essa informação?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "00ab8f08-ba07-5a77-938e-605a58a33479",
+              "content": {
+                "text": "É condição necessária e suficiente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "4ed840a0-a0d6-5bdf-9656-9c741218125d",
+              "content": {
+                "text": "É condição impossível.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fd49aa71-36c8-5c2f-973c-10e5763f0dc1",
+              "content": {
+                "text": "É condição suficiente.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0b45c08f-7263-5a2e-8b44-e2fc6df74d3a",
+              "content": {
+                "text": "É condição necessária, mas não suficiente.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fd49aa71-36c8-5c2f-973c-10e5763f0dc1",
+          "resolution": {
+            "text": "1. A implicação garante acesso sempre que a autorização ocorre. 2. Portanto autorização é suficiente; a frase não exclui outros modos de acesso e não prova necessidade.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-necessaria-suficiente.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-necessaria-suficiente.json",
+            "contentSha256": "32893142804f8f8fe81996a56089236731b289bfcdf5a279e394516686f95050",
+            "answerSha256": "32893142804f8f8fe81996a56089236731b289bfcdf5a279e394516686f95050"
+          }
+        },
+        "fingerprint": "1729adb1c8b28b799c9d6238311d05abafe6bccd7c7b87825e380c396a6886a7",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-negacao-bicondicional"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual descrição equivale à negação de “p se e somente se q”?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8d9748ae-b429-5962-8a29-3c46d2d22186",
+              "content": {
+                "text": "p e q têm valores lógicos diferentes.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ba756c41-0cb1-5479-a625-3646e3567029",
+              "content": {
+                "text": "p e q têm o mesmo valor.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2bdc6796-a8b2-59a3-94f3-0a51fb464a53",
+              "content": {
+                "text": "p e q são ambas verdadeiras.",
+                "resources": []
+              }
+            },
+            {
+              "id": "68fa8996-23b1-50d2-930d-25c6b4a89f6e",
+              "content": {
+                "text": "p e q são ambas falsas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8d9748ae-b429-5962-8a29-3c46d2d22186",
+          "resolution": {
+            "text": "1. A bicondicional é verdadeira quando os valores coincidem. 2. Sua negação vale nos casos de diferença: verdadeira/falsa ou falsa/verdadeira.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-negacao-bicondicional.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-negacao-bicondicional.json",
+            "contentSha256": "08ac5bbc5c19664639acd3021bc92d37b7f7ad582f9238681fbc25736502fd86",
+            "answerSha256": "08ac5bbc5c19664639acd3021bc92d37b7f7ad582f9238681fbc25736502fd86"
+          }
+        },
+        "fingerprint": "52a7166a5010f8bd24b46f79f3664cc231bf03db5a7879c31f6d750bbbe12e3d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-negacao-condicional"
+        },
+        "content": {
+          "statement": {
+            "text": "A negação de “se p, então q” é:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a5cb1d11-deeb-54c7-b434-a44a148b772e",
+              "content": {
+                "text": "p e não q.",
+                "resources": []
+              }
+            },
+            {
+              "id": "56a867e3-96f1-50fe-b9c1-c180b60adb43",
+              "content": {
+                "text": "Não p ou q.",
+                "resources": []
+              }
+            },
+            {
+              "id": "567aa3df-a2ae-5f81-ad40-97f3ecdb0261",
+              "content": {
+                "text": "Não p e q.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dff77c8c-1871-5df8-8b7a-f226f63b8e34",
+              "content": {
+                "text": "Se q, então p.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "a5cb1d11-deeb-54c7-b434-a44a148b772e",
+          "resolution": {
+            "text": "1. Para falsificar a condicional, o antecedente precisa ocorrer e o consequente não. 2. Portanto ¬(p→q) equivale a p e ¬q, não a outra implicação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-negacao-condicional.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-negacao-condicional.json",
+            "contentSha256": "e2f7737daa10404c4eaf991dc4a802249e1ea2153e3892417e002bd44aa81694",
+            "answerSha256": "e2f7737daa10404c4eaf991dc4a802249e1ea2153e3892417e002bd44aa81694"
+          }
+        },
+        "fingerprint": "ed29168334c42ce0a9272ef1ef938d9a69f179ebe5815fb3f0294e086308cd76",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-negacao-universal"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual é a negação de “todos os formulários estão completos”?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "fa8bfae9-0472-5088-b976-78d5560a095d",
+              "content": {
+                "text": "Existe um formulário completo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2ecf6ac2-1d69-5950-a229-e4e46efd3ddb",
+              "content": {
+                "text": "Existe ao menos um formulário que não está completo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "52defcb1-ed6f-5437-bd9e-de9f8f84835f",
+              "content": {
+                "text": "Nenhum formulário está completo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "dde75ded-3874-558b-aa18-981aa07af559",
+              "content": {
+                "text": "Todos estão incompletos.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2ecf6ac2-1d69-5950-a229-e4e46efd3ddb",
+          "resolution": {
+            "text": "1. Negar uma afirmação universal exige um contraexemplo. 2. Basta existir ao menos um formulário incompleto; não é necessário que todos estejam incompletos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-negacao-universal.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-negacao-universal.json",
+            "contentSha256": "117d2517c5df9505b9cf4aec5906d21619065f320817df0d926170db840c494b",
+            "answerSha256": "117d2517c5df9505b9cf4aec5906d21619065f320817df0d926170db840c494b"
+          }
+        },
+        "fingerprint": "75ac449aea1361c3ddfbe9993e574a2adbf71c354169a46e999be5b248c486b7",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-proposicao-comando"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual expressão NÃO é uma proposição lógica declarativa?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5d9bc336-1e53-5569-b00b-8ea45875380d",
+              "content": {
+                "text": "O número 8 é par.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fa047697-4312-5466-9936-52a21532cdb9",
+              "content": {
+                "text": "Dois mais dois são cinco.",
+                "resources": []
+              }
+            },
+            {
+              "id": "98e6b597-60f0-5df2-9c3f-30b673393969",
+              "content": {
+                "text": "Brasília é uma cidade brasileira.",
+                "resources": []
+              }
+            },
+            {
+              "id": "2eee4c6f-68bf-5074-a00e-70345f716b55",
+              "content": {
+                "text": "Feche a porta.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "2eee4c6f-68bf-5074-a00e-70345f716b55",
+          "resolution": {
+            "text": "1. Uma proposição declarativa admite valor verdadeiro ou falso, mesmo quando é falsa. 2. “Feche a porta” é uma ordem, não uma afirmação com valor lógico; uma conta falsa continua sendo proposição.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-proposicao-comando.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-proposicao-comando.json",
+            "contentSha256": "e64a9b34169825c1d9d89a6c65a1b6db29e9973413c3b771d93ca3d11fd375d9",
+            "answerSha256": "e64a9b34169825c1d9d89a6c65a1b6db29e9973413c3b771d93ca3d11fd375d9"
+          }
+        },
+        "fingerprint": "23df4003b27c1f1645478a2dbaf14913a3f6fd5659e74537bd77b6ee5de19fd3",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-silogismo-categorico"
+        },
+        "content": {
+          "statement": {
+            "text": "Todo técnico é servidor. Nenhum servidor é terceirizado. O que se conclui necessariamente?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9d064c42-2646-50c6-884f-9063df297b15",
+              "content": {
+                "text": "Algum técnico é terceirizado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "82ca2abd-2281-5847-995f-5852f3a51d63",
+              "content": {
+                "text": "Todo servidor é técnico.",
+                "resources": []
+              }
+            },
+            {
+              "id": "450676d1-9d4f-5911-8fb1-5e299654dc02",
+              "content": {
+                "text": "Nenhum técnico é terceirizado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "31d02b99-317e-563f-8696-c7d1eda12be8",
+              "content": {
+                "text": "Todo terceirizado é técnico.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "450676d1-9d4f-5911-8fb1-5e299654dc02",
+          "resolution": {
+            "text": "1. O conjunto dos técnicos está contido no dos servidores. 2. Como servidores e terceirizados são disjuntos, técnicos também não podem ser terceirizados; a conclusão não afirma existência de técnicos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-silogismo-categorico.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-silogismo-categorico.json",
+            "contentSha256": "e8addf18c74760e77784f6934b9f04193ffe90f2b981d65a9d3ac31451c27e6c",
+            "answerSha256": "e8addf18c74760e77784f6934b9f04193ffe90f2b981d65a9d3ac31451c27e6c"
+          }
+        },
+        "fingerprint": "a314273d718247231d55641a603921c3100935e19fb2193595435c1a99aa7376",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-tautologia"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual fórmula é sempre verdadeira, independentemente do valor de p?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2f0dea95-4a02-518d-8732-30dcb97c544a",
+              "content": {
+                "text": "p e não p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "226a7923-5763-5120-aee8-6a2093dba66a",
+              "content": {
+                "text": "p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "47a01e7b-110b-563e-8db9-f272f4aaf14d",
+              "content": {
+                "text": "Não p.",
+                "resources": []
+              }
+            },
+            {
+              "id": "287aadae-3101-56e7-b8fa-2163fadd476f",
+              "content": {
+                "text": "p ou não p.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "287aadae-3101-56e7-b8fa-2163fadd476f",
+          "resolution": {
+            "text": "1. p assume verdadeira ou falsa. 2. Em ambos os casos, uma das partes de p ou não p é verdadeira; a conjunção contrária seria sempre falsa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-tautologia.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-tautologia.json",
+            "contentSha256": "cec749e36f0b7ed92706f9b81e0c02d88c15098c791bd673fe00a3d7eefef433",
+            "answerSha256": "cec749e36f0b7ed92706f9b81e0c02d88c15098c791bd673fe00a3d7eefef433"
+          }
+        },
+        "fingerprint": "dff2caec584388230af9af77c1b4b1ebbfdf448a489a213734a891bc37c64a15",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-troca-quantificadores"
+        },
+        "content": {
+          "statement": {
+            "text": "Qual afirmação é mais forte que “cada estudante leu algum livro”, no sentido de que a implica?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f1193642-aa8e-5ece-b86c-b98db4a175a2",
+              "content": {
+                "text": "Existe um mesmo livro que todos os estudantes leram.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c71c2833-358d-5018-8281-3d901c0a155d",
+              "content": {
+                "text": "Cada estudante deixou de ler algum livro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5c74797a-cdb5-5964-a40a-5d27fbd095da",
+              "content": {
+                "text": "Nenhum estudante leu qualquer livro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "ec87932f-9092-581c-88d5-51c241ce1826",
+              "content": {
+                "text": "Cada livro foi lido por alguém.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f1193642-aa8e-5ece-b86c-b98db4a175a2",
+          "resolution": {
+            "text": "1. Um livro comum a todos fornece, para cada estudante, um livro que ele leu. 2. A recíproca não vale: cada estudante pode ter lido um livro diferente; a ordem dos quantificadores importa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-troca-quantificadores.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-troca-quantificadores.json",
+            "contentSha256": "de0d453c79daa27f93f877f4639819f3d8f2ad2e86a225de7a4d8bef8ceadd8c",
+            "answerSha256": "de0d453c79daa27f93f877f4639819f3d8f2ad2e86a225de7a4d8bef8ceadd8c"
+          }
+        },
+        "fingerprint": "4e8b34a45ec8c0c36e3bd3f88f0c58007e97df4e7e3e32442a75817ec588cf77",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.mat-valor-formula-composta"
+        },
+        "content": {
+          "statement": {
+            "text": "Se p é verdadeira, q é falsa e r é verdadeira, qual é o valor de (p e q) ou (r e não q)?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "627c9e9e-2c89-5b5a-8e1c-3ef70ca3ef53",
+              "content": {
+                "text": "Indeterminado.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3452d1d7-f9b9-5dc2-be33-7e44edf9a549",
+              "content": {
+                "text": "Não é uma proposição.",
+                "resources": []
+              }
+            },
+            {
+              "id": "1351effc-a8ef-5d4a-b071-5e2d33f7e4ac",
+              "content": {
+                "text": "Verdadeiro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "92cbaa4b-e3ea-54aa-9aaf-c731dd0521ff",
+              "content": {
+                "text": "Falso.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1351effc-a8ef-5d4a-b071-5e2d33f7e4ac",
+          "resolution": {
+            "text": "1. p e q é falso porque q é falsa. 2. r e não q é verdadeiro, portanto a disjunção completa é verdadeira.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M11.s.mat-valor-formula-composta.json",
+            "answerPath": "sources/admin.2026-11.M11.s.mat-valor-formula-composta.json",
+            "contentSha256": "1a0fc04e646051e9be8d99dbc713b39cf0b21c241df81c9366523fc4e11c6e2e",
+            "answerSha256": "1a0fc04e646051e9be8d99dbc713b39cf0b21c241df81c9366523fc4e11c6e2e"
+          }
+        },
+        "fingerprint": "b7c156585cfb9cb08ff7c7136f72d230530e16f503a91316ae7d85df8a8d0cdf",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.pcdf-2021-basic-q47"
+        },
+        "content": {
+          "statement": {
+            "text": "Luís, Fernando, Paulo, Carlos e Marcos, suspeitos de terem praticado determinado crime, foram convocados para depor. Na delegacia, ocorreram os eventos descritos a seguir. • Marcos e Carlos preferiram ficar em silêncio. • Fernando afirmou que o culpado era Marcos ou Carlos. • Luís afirmou que o culpado era Fernando ou Carlos. • Paulo afirmou que o culpado era Marcos ou Fernando. Considerando que exatamente dois deles são culpados e que, em 2021, todos eles terão mais de quinze anos de idade, julgue os itens a seguir.\n\n47 Se os três que se pronunciaram mentiram nas afirmações, então os culpados são Luís e Paulo.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "6990140c-9a2b-5c5f-95a0-e1a216833f20",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "60d00e0e-26c6-5518-ae6b-816d32352d0e",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6990140c-9a2b-5c5f-95a0-e1a216833f20",
+          "resolution": {
+            "text": "1. Se Fernando mentiu, nem Marcos nem Carlos são culpados. Se Luís mentiu, nem Fernando nem Carlos são culpados. 2. Excluídos Marcos, Carlos e Fernando, os dois culpados entre os cinco só podem ser Luís e Paulo. A fala falsa de Paulo é compatível com isso. Julgamento: Certo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Civil do Distrito Federal — Agente, Edital 1/2020, aplicação 2021, item 47. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M11.s.pcdf-2021-basic-q47.json",
+            "answerPath": "sources/admin.2026-11.M11.s.pcdf-2021-basic-q47.json",
+            "contentSha256": "8c7373f31a22d747bdad19e40870804b06893d69deae759172883b1c7cc75674",
+            "answerSha256": "8c7373f31a22d747bdad19e40870804b06893d69deae759172883b1c7cc75674"
+          }
+        },
+        "fingerprint": "0caff2d344744248c690db0d2c519c754954ab31a30f0e78425672b8e6f810ad",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.pf-2021-agente-q52"
+        },
+        "content": {
+          "statement": {
+            "text": "P1: Se a fiscalização foi deficiente, as falhas construtivas não foram corrigidas. P2: Se as falhas construtivas foram corrigidas, os mutuários não tiveram prejuízos. P3: A fiscalização foi deficiente. C: Os mutuários tiveram prejuízos. Considerando um argumento formado pelas proposições precedentes, em que C é a conclusão, e P1 a P3 são as premissas, julgue os itens a seguir.\n\n52 A proposição P2 é equivalente a “Se as falhas construtivas não foram corrigidas, os mutuários tiveram prejuízos”.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8fd1e2c8-4272-5176-b8c1-60fc03e2bc04",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "91c631e2-ea8e-5b03-909b-ce344eef0aac",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "91c631e2-ea8e-5b03-909b-ce344eef0aac",
+          "resolution": {
+            "text": "1. Escreva B para falhas corrigidas e C para prejuízos. P2 é B→¬C; a proposta é ¬B→C. 2. Para B falso e C falso, P2 é verdadeira e a proposta é falsa. Não são equivalentes. Julgamento: Errado.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Introdução à Lógica Matemática: conectivos, negação e quantificadores",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=153",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, item 52. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M11.s.pf-2021-agente-q52.json",
+            "answerPath": "sources/admin.2026-11.M11.s.pf-2021-agente-q52.json",
+            "contentSha256": "1dbc60f5943334ed520c9666c6b6ccda91c519c7e4ee6a2d2764778aefe59cef",
+            "answerSha256": "1dbc60f5943334ed520c9666c6b6ccda91c519c7e4ee6a2d2764778aefe59cef"
+          }
+        },
+        "fingerprint": "cd7cf8c11ef36b03353d974f909ce0f3c70b1d9aa51d18db514ccdf0fc39cb1f",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M11.s.pf-2021-agente-q55"
+        },
+        "content": {
+          "statement": {
+            "text": "P1: Se a fiscalização foi deficiente, as falhas construtivas não foram corrigidas. P2: Se as falhas construtivas foram corrigidas, os mutuários não tiveram prejuízos. P3: A fiscalização foi deficiente. C: Os mutuários tiveram prejuízos. Considerando um argumento formado pelas proposições precedentes, em que C é a conclusão, e P1 a P3 são as premissas, julgue os itens a seguir.\n\n55 A proposição P1 é equivalente a “Não é verdade que a fiscalização foi deficiente e que as falhas construtivas foram corrigidas”.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "e73a5d7e-3fa7-5a6b-8d10-af4d3e8e0b86",
+              "content": {
+                "text": "Certo",
+                "resources": []
+              }
+            },
+            {
+              "id": "35e82f0b-15c9-5dd5-ab54-3b08c29d87bb",
+              "content": {
+                "text": "Errado",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "e73a5d7e-3fa7-5a6b-8d10-af4d3e8e0b86",
+          "resolution": {
+            "text": "1. Escreva A para fiscalização deficiente e B para falhas corrigidas. P1 é A→¬B, equivalente a ¬A∨¬B. 2. Pela lei de De Morgan, ¬A∨¬B equivale a ¬(A∧B), exatamente a frase proposta. Julgamento: Certo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M11",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Introdução à Lógica Matemática: conectivos, negação e quantificadores",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/ver?modulo=153",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Cebraspe — Polícia Federal — Concurso Público, Edital 1/2021, item 55. Resolução própria assistida por IA: Codex.",
+            "contentPath": "sources/admin.2026-11.M11.s.pf-2021-agente-q55.json",
+            "answerPath": "sources/admin.2026-11.M11.s.pf-2021-agente-q55.json",
+            "contentSha256": "7520ae0a8be3f3817cbdf313ac44e928fca1887b8bf8677044237c9ba4d3723d",
+            "answerSha256": "7520ae0a8be3f3817cbdf313ac44e928fca1887b8bf8677044237c9ba4d3723d"
+          }
+        },
+        "fingerprint": "3c344471e1816eb3afb7421106258eaa7a8654116b663b5747003e272a798180",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M11.s.ebserh-2018-basic-q36.json",
+        "mediaType": "application/json",
+        "sha256": "1d76caf990cdb9dc0b6d76718c0f8c6f1acc402fc52f54ed87e06e9e6f769f7e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBFQlNFUkgg4oCUIENvbmN1cnNvIFDDumJsaWNvLCDDoXJlYSBhZG1pbmlzdHJhdGl2YSwgYXBsaWNhw6fDo28gMDYvMDUvMjAxOCwgaXRlbSAzNi4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvZWJzZXJoLTIwMTgtYmFzaWMtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjY4MjUxMmJhNTRiNDRkNTdiZmViYjg0YWRjNDAxMGUwNzExMzlkYzJhZThmMTdiMDFhNzY3ZTA0NzA4Y2QwYzMiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2Vic2VyaF8xOF9hZG1pbmlzdHJhdGl2by9hcnF1aXZvcy9HQUJfREVGSU5JVElWT18zOTNfRUJTRVJIQURNSU5JU1RSQVRJVkFDQjIuUERGIn0sImJvYXJkIjoiQ2VicmFzcGUiLCJib29rbGV0IjoiMzkzX0VCU0VSSEFETUlOSVNUUkFUSVZBQ0IyIiwiY29tcGV0aXRpb24iOiJFQlNFUkgg4oCUIENvbmN1cnNvIFDDumJsaWNvLCDDoXJlYSBhZG1pbmlzdHJhdGl2YSwgYXBsaWNhw6fDo28gMDYvMDUvMjAxOCIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtZWJzZXJoLTIwMTgtYmFzaWMvcTM2IiwibnVtYmVyIjoiMzYiLCJwcm9vZiI6eyJub3RlIjoiUHJvdmEgb2ZpY2lhbDsgY29tYW5kbywgY29udGV4dG8gZSBqdWxnYW1lbnRvIHByZXNlcnZhZG9zIGVtIENlcnRvL0VycmFkby4gU8OtbWJvbG9zIG1hdGVtw6F0aWNvcyBsaW5lYXJpemFkb3Mgb25kZSBpbmRpY2FkbyBubyByZWdpc3RybyBlZGl0b3JpYWwuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL2Vic2VyaC0yMDE4LWJhc2ljLXByb29mLnBkZiIsInNoYTI1NiI6ImY5YTQ5YjJhMThiYmRiYWZjOGEwYjc1ZmRlY2FkYWU1OTQ5Y2JkNjg0YTJhYzNmMjVlYzdmY2I3NzJlYjYyMTMiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2Vic2VyaF8xOF9hZG1pbmlzdHJhdGl2by9hcnF1aXZvcy8zOTNfRUJTRVJIQURNSU5JU1RSQVRJVkFDQjJfX1BBR18zLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQ29uaGVjaW1lbnRvcyBiw6FzaWNvcyBwYXJhIG9zIGNhcmdvcyBkZSBuw612ZWwgbcOpZGlvLCBjYXJnb3MgMTYgYSAxOSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAxOH0sImlkIjoiZWJzZXJoLTIwMTgtYmFzaWMtcTM2Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJsb2dpY2EiXSwicmVzb2x1dGlvbiI6IjEuIEEgZsOzcm11bGEgYWZpcm1hOiBzZSBvIHBhY2llbnRlIG7Do28gcmVjZWJlciBhbHRhLCBlbnTDo28gcmVjZWJlcsOhIG1lZGljYcOnw6NvIG91IHJlY2ViZXLDoSB2aXNpdGFzLiAyLiBBIHRyYWR1w6fDo28gdHJvY2EgbyBhbnRlY2VkZW50ZSBlIG5lZ2Egb3MgY29uc2VxdWVudGVzLiBDb20gUCBmYWxzbywgUSBlIFIgZmFsc29zLCBhIGbDs3JtdWxhIMOpIGZhbHNhIGUgYSB0cmFkdcOnw6NvIHZlcmRhZGVpcmEuIEp1bGdhbWVudG86IEVycmFkby4iLCJzdGF0ZW1lbnQiOiJDb25zaWRlcmUgYXMgc2VndWludGVzIHByb3Bvc2nDp8O1ZXM6IFA6IE8gcGFjaWVudGUgcmVjZWJlcsOhIGFsdGE7IFE6IE8gcGFjaWVudGUgcmVjZWJlcsOhIG1lZGljYcOnw6NvOyBSOiBPIHBhY2llbnRlIHJlY2ViZXLDoSB2aXNpdGFzLiBUZW5kbyBjb21vIHJlZmVyw6puY2lhIGVzc2FzIHByb3Bvc2nDp8O1ZXMsIGp1bGd1ZSBvcyBpdGVucyBhIHNlZ3VpciwgY29uc2lkZXJhbmRvIHF1ZSBhIG5vdGHDp8OjbyB+UyBzaWduaWZpY2EgYSBuZWdhw6fDo28gZGEgcHJvcG9zacOnw6NvIFMuXG5cbjM2IEEgcHJvcG9zacOnw6NvIH5Q4oaSW1HiiKhSXSBwb2RlIGFzc2ltIHNlciB0cmFkdXppZGE6IFNlIG8gcGFjaWVudGUgcmVjZWJlciBhbHRhLCBlbnTDo28gZWxlIG7Do28gcmVjZWJlcsOhIG1lZGljYcOnw6NvIG91IG7Do28gcmVjZWJlcsOhIHZpc2l0YXMuIiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibG9naWNhIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTAtMTQiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgSW50cm9kdcOnw6NvIMOgIEzDs2dpY2EgTWF0ZW3DoXRpY2E6IGNvbmVjdGl2b3MsIG5lZ2HDp8OjbyBlIHF1YW50aWZpY2Fkb3JlcyIsInVybCI6Imh0dHBzOi8vcG9ydGFsZGFvYm1lcC5pbXBhLmJyL2luZGV4LnBocC9tb2R1bG8vdmVyP21vZHVsbz0xNTMifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.ebserh-2018-basic-q38.json",
+        "mediaType": "application/json",
+        "sha256": "6cea214182d136603d22279f75385632b9b03f00afe224a8e0c4d33e58d39035",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBFQlNFUkgg4oCUIENvbmN1cnNvIFDDumJsaWNvLCDDoXJlYSBhZG1pbmlzdHJhdGl2YSwgYXBsaWNhw6fDo28gMDYvMDUvMjAxOCwgaXRlbSAzOC4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvZWJzZXJoLTIwMTgtYmFzaWMtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjY4MjUxMmJhNTRiNDRkNTdiZmViYjg0YWRjNDAxMGUwNzExMzlkYzJhZThmMTdiMDFhNzY3ZTA0NzA4Y2QwYzMiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2Vic2VyaF8xOF9hZG1pbmlzdHJhdGl2by9hcnF1aXZvcy9HQUJfREVGSU5JVElWT18zOTNfRUJTRVJIQURNSU5JU1RSQVRJVkFDQjIuUERGIn0sImJvYXJkIjoiQ2VicmFzcGUiLCJib29rbGV0IjoiMzkzX0VCU0VSSEFETUlOSVNUUkFUSVZBQ0IyIiwiY29tcGV0aXRpb24iOiJFQlNFUkgg4oCUIENvbmN1cnNvIFDDumJsaWNvLCDDoXJlYSBhZG1pbmlzdHJhdGl2YSwgYXBsaWNhw6fDo28gMDYvMDUvMjAxOCIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtZWJzZXJoLTIwMTgtYmFzaWMvcTM4IiwibnVtYmVyIjoiMzgiLCJwcm9vZiI6eyJub3RlIjoiUHJvdmEgb2ZpY2lhbDsgY29tYW5kbywgY29udGV4dG8gZSBqdWxnYW1lbnRvIHByZXNlcnZhZG9zIGVtIENlcnRvL0VycmFkby4gU8OtbWJvbG9zIG1hdGVtw6F0aWNvcyBsaW5lYXJpemFkb3Mgb25kZSBpbmRpY2FkbyBubyByZWdpc3RybyBlZGl0b3JpYWwuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL2Vic2VyaC0yMDE4LWJhc2ljLXByb29mLnBkZiIsInNoYTI1NiI6ImY5YTQ5YjJhMThiYmRiYWZjOGEwYjc1ZmRlY2FkYWU1OTQ5Y2JkNjg0YTJhYzNmMjVlYzdmY2I3NzJlYjYyMTMiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2Vic2VyaF8xOF9hZG1pbmlzdHJhdGl2by9hcnF1aXZvcy8zOTNfRUJTRVJIQURNSU5JU1RSQVRJVkFDQjJfX1BBR18zLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQ29uaGVjaW1lbnRvcyBiw6FzaWNvcyBwYXJhIG9zIGNhcmdvcyBkZSBuw612ZWwgbcOpZGlvLCBjYXJnb3MgMTYgYSAxOSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAxOH0sImlkIjoiZWJzZXJoLTIwMTgtYmFzaWMtcTM4Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJsb2dpY2EiXSwicmVzb2x1dGlvbiI6IjEuIFHihpLCrFIgc8OzIMOpIGZhbHNhIHF1YW5kbyBRIGUgUiBzw6NvIHZlcmRhZGVpcm9zLiAyLiBOZXNzZSBjYXNvLCBS4oaSwqxRIHRhbWLDqW0gdGVtIGFudGVjZWRlbnRlIHZlcmRhZGVpcm8gZSBjb25zZXF1ZW50ZSBmYWxzby4gSnVsZ2FtZW50bzogQ2VydG8uIiwic3RhdGVtZW50IjoiQ29uc2lkZXJlIGFzIHNlZ3VpbnRlcyBwcm9wb3Npw6fDtWVzOiBQOiBPIHBhY2llbnRlIHJlY2ViZXLDoSBhbHRhOyBROiBPIHBhY2llbnRlIHJlY2ViZXLDoSBtZWRpY2HDp8OjbzsgUjogTyBwYWNpZW50ZSByZWNlYmVyw6EgdmlzaXRhcy4gVGVuZG8gY29tbyByZWZlcsOqbmNpYSBlc3NhcyBwcm9wb3Npw6fDtWVzLCBqdWxndWUgb3MgaXRlbnMgYSBzZWd1aXIsIGNvbnNpZGVyYW5kbyBxdWUgYSBub3Rhw6fDo28gflMgc2lnbmlmaWNhIGEgbmVnYcOnw6NvIGRhIHByb3Bvc2nDp8OjbyBTLlxuXG4zOCBTZSBhIHByb3Bvc2nDp8OjbyBR4oaSW35SXSBmb3IgZmFsc2EsIGVudMOjbyBzZXLDoSB0YW1iw6ltIGZhbHNhIGEgcHJvcG9zacOnw6NvOiBDYXNvIG8gcGFjaWVudGUgcmVjZWJhIHZpc2l0YXMsIGVsZSBuw6NvIHJlY2ViZXLDoSBtZWRpY2HDp8Ojby4iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJsb2dpY2EiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMC0xNCIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBJbnRyb2R1w6fDo28gw6AgTMOzZ2ljYSBNYXRlbcOhdGljYTogY29uZWN0aXZvcywgbmVnYcOnw6NvIGUgcXVhbnRpZmljYWRvcmVzIiwidXJsIjoiaHR0cHM6Ly9wb3J0YWxkYW9ibWVwLmltcGEuYnIvaW5kZXgucGhwL21vZHVsby92ZXI/bW9kdWxvPTE1MyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.inss-2022-comum-q48.json",
+        "mediaType": "application/json",
+        "sha256": "cdbd0525c2075b5b31c89f3c9668328257fe958422aa3dc0dd46413abc669939",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBJTlNTIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDIwMjIsIGFwbGljYcOnw6NvIDI3LzExLzIwMjIsIGl0ZW0gNDguIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6IENvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJlIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgY2FkZXJubywgbsO6bWVybyBlIHJlc3Bvc3RhIGNvbmZlcmlkb3MsIHNlbSBpbXBvcnRhciBpdGVtIGFudWxhZG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL2luc3MtMjAyMi1jb211bS1hbnN3ZXIucGRmIiwic2hhMjU2IjoiMTllZDk1MmIxYjEwYjk5NjBhM2VjYTRhMmYyOTMwMDI5YWNkODI5OGQ1MmYwN2Y1OGNhN2JiZjU4MzFlZmZlZSIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvaW5zc18yMi9hcnF1aXZvcy9HQUJfREVGSU5JVElWT183NjBfSU5TU19DQjFfMDEuUERGIn0sImJvYXJkIjoiQ2VicmFzcGUiLCJib29rbGV0IjoiNzYwX0lOU1NfQ0IxXzAxIiwiY29tcGV0aXRpb24iOiJJTlNTIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDIwMjIsIGFwbGljYcOnw6NvIDI3LzExLzIwMjIiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImNlYnJhc3BlLWluc3MtMjAyMi1jb211bS9xNDgiLCJudW1iZXIiOiI0OCIsInByb29mIjp7Im5vdGUiOiJQcm92YSBvZmljaWFsOyBjb21hbmRvLCBjb250ZXh0byBlIGp1bGdhbWVudG8gcHJlc2VydmFkb3MgZW0gQ2VydG8vRXJyYWRvLiBTw61tYm9sb3MgbWF0ZW3DoXRpY29zIGxpbmVhcml6YWRvcyBvbmRlIGluZGljYWRvIG5vIHJlZ2lzdHJvIGVkaXRvcmlhbC4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvaW5zcy0yMDIyLWNvbXVtLXByb29mLnBkZiIsInNoYTI1NiI6ImVjYWNmN2ZkODhkMGYzZjI4NDJhMzU1NTE5YmM2YzdmNGIzN2NiOTY1OTNjYjc4YWIwNDJiNjE3MTkwMzA5MDEiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL2luc3NfMjIvYXJxdWl2b3MvNzYwX0lOU1NfQ0IxXzAxLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiVMOpY25pY28gZG8gU2VndXJvIFNvY2lhbCIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyMn0sImlkIjoiaW5zcy0yMDIyLWNvbXVtLXE0OCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibG9naWNhIl0sInJlc29sdXRpb24iOiIxLiBQIHRlbSBkdWFzIHByb3Bvc2nDp8O1ZXMgc2ltcGxlczogYXByZXNlbnRhciB0ZXN0ZW11bmhhcyBjb20gdmFsb3IgZGUgcHJvdmEgZSBmb3JuZWNlciBzZXJ2aWRvciBleGNsdXNpdm8uIDIuIEEgY29uZGljaW9uYWwgdGVtIDLCsj00IGxpbmhhcywgbsOjbyBvaXRvLiBKdWxnYW1lbnRvOiBFcnJhZG8uIiwic3RhdGVtZW50IjoiUDogTm9zIHByb2Nlc3NvcyBkZSBqdXN0aWZpY2HDp8O1ZXMgYWRtaW5pc3RyYXRpdmFzLCBxdWFuZG8gbyBzZWd1cmFkbyBhcHJlc2VudGFyIHRlc3RlbXVuaGFzIGNvbSB2YWxvciBkZSBwcm92YSwgYSBhZ8OqbmNpYSBmb3JuZWNlcsOhIHVtIHNlcnZpZG9yIGV4Y2x1c2l2byBwYXJhIG8gYXRlbmRpbWVudG8uIEEgcGFydGlyIGRhIHByb3Bvc2nDp8OjbyBwcmVjZWRlbnRlLCBqdWxndWUgb3MgaXRlbnMgYSBzZWd1aXIuXG5cbjQ4IEEgdGFiZWxhLXZlcmRhZGUgYXNzb2NpYWRhIMOgIHByb3Bvc2nDp8OjbyBQIHBvc3N1aSBvaXRvIGxpbmhhcy4iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJsb2dpY2EiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMC0xNCIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBJbnRyb2R1w6fDo28gw6AgTMOzZ2ljYSBNYXRlbcOhdGljYTogY29uZWN0aXZvcywgbmVnYcOnw6NvIGUgcXVhbnRpZmljYWRvcmVzIiwidXJsIjoiaHR0cHM6Ly9wb3J0YWxkYW9ibWVwLmltcGEuYnIvaW5kZXgucGhwL21vZHVsby92ZXI/bW9kdWxvPTE1MyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-bicondicional-tabela.json",
+        "mediaType": "application/json",
+        "sha256": "66f4b4fca2dcc1221f52898b1d6e586c131ffc416b42ba4a20294f61dce99586",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicCBlIHEgdMOqbSBvIG1lc21vIHZhbG9yIGzDs2dpY28uIn0seyJpZCI6ImIiLCJ0ZXh0IjoicCDDqSBzZW1wcmUgdmVyZGFkZWlyYS4ifSx7ImlkIjoiYyIsInRleHQiOiJwIGUgcSB0w6ptIHZhbG9yZXMgZGlmZXJlbnRlcy4ifSx7ImlkIjoiZCIsInRleHQiOiJTb21lbnRlIHF1YW5kbyBwIGUgcSBzw6NvIGZhbHNhcy4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LWJpY29uZGljaW9uYWwtdGFiZWxhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIGJpY29uZGljaW9uYWwgcmXDum5lIHDihpJxIGUgceKGknAuIDIuIEFtYmFzIHZhbGVtIHF1YW5kbyBvcyB2YWxvcmVzIGNvaW5jaWRlbTogdmVyZGFkZWlyYS92ZXJkYWRlaXJhIG91IGZhbHNhL2ZhbHNhLiIsInN0YXRlbWVudCI6IkEgcHJvcG9zacOnw6NvIOKAnHAgc2UgZSBzb21lbnRlIHNlIHHigJ0gw6kgdmVyZGFkZWlyYSBxdWFuZG86IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-cadeia-refutacao-final.json",
+        "mediaType": "application/json",
+        "sha256": "de4fdf006c8be28a62de05249f18781328476f7ae452f3dc1b5d227d68639325",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicS4ifSx7ImlkIjoiYiIsInRleHQiOiJyLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik7Do28gcC4ifSx7ImlkIjoiZCIsInRleHQiOiJwLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtY2FkZWlhLXJlZnV0YWNhby1maW5hbCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gRGUgceKGknIgZSBuw6NvIHIsIG1vZHVzIHRvbGxlbnMgZm9ybmVjZSBuw6NvIHEuIDIuIERlIHDihpJxIGUgbsOjbyBxLCBhcGxpY2Etc2Ugbm92YW1lbnRlIGEgcmVncmEsIG9idGVuZG8gbsOjbyBwLiIsInN0YXRlbWVudCI6IlPDo28gdmVyZGFkZWlyYXMgcOKGknEsIHHihpJyIGUgbsOjbyByLiBRdWFsIGNvbmNsdXPDo28gZGVjb3JyZSBuZWNlc3NhcmlhbWVudGU/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-conclusao-por-casos.json",
+        "mediaType": "application/json",
+        "sha256": "a61703cf13d7434bae8d2c2332c35cc16c16f8c48bf8e3f3c7db66dad36760cd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0Ijoici4ifSx7ImlkIjoiYiIsInRleHQiOiJwIGUgcS4ifSx7ImlkIjoiYyIsInRleHQiOiJOw6NvIHIuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTsOjbyBwIGUgbsOjbyBxLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtY29uY2x1c2FvLXBvci1jYXNvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSBkaXNqdW7Dp8OjbyBnYXJhbnRlIHBlbG8gbWVub3MgdW0gZG9zIGNhc29zIHAgb3UgcS4gU2UgcCBvY29ycmUsIHDihpJyIGZvcm5lY2Ugcjsgc2UgcSBvY29ycmUsIHHihpJyIHRhbWLDqW0gZm9ybmVjZSByLiAyLiBBc3NpbSByIGRlY29ycmUgZW0gdG9kb3Mgb3MgY2Fzb3MgcGVybWl0aWRvcywgc2VtIGV4aWdpciBxdWUgcCBlIHEgc2VqYW0gc2ltdWx0YW5lYW1lbnRlIHZlcmRhZGVpcmFzLiIsInN0YXRlbWVudCI6IlPDo28gdmVyZGFkZWlyYXMgYXMgcHJlbWlzc2FzIHAgb3UgcSwgcOKGknIgZSBx4oaSci4gUXVhbCBjb25jbHVzw6NvIMOpIG9icmlnYXTDs3JpYT8iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-condicional-falsa.json",
+        "mediaType": "application/json",
+        "sha256": "114468db4762e03119f8d02e8e666c8cc6ff8b6a9daeb9399bed1f7d72159693",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicCB2ZXJkYWRlaXJhIGUgcSBmYWxzYS4ifSx7ImlkIjoiYiIsInRleHQiOiJwIGZhbHNhIGUgcSB2ZXJkYWRlaXJhLiJ9LHsiaWQiOiJjIiwidGV4dCI6InAgZSBxIGZhbHNhcy4ifSx7ImlkIjoiZCIsInRleHQiOiJwIGUgcSB2ZXJkYWRlaXJhcy4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LWNvbmRpY2lvbmFsLWZhbHNhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIGNvbmRpY2lvbmFsIGV4Y2x1aSBhcGVuYXMgYW50ZWNlZGVudGUgdmVyZGFkZWlybyBqdW50byBkZSBjb25zZXF1ZW50ZSBmYWxzby4gMi4gTmFzIG91dHJhcyB0csOqcyBjb21iaW5hw6fDtWVzIGVsYSDDqSB2ZXJkYWRlaXJhOyBhbnRlY2VkZW50ZSBmYWxzbyBuw6NvIHRvcm5hIGEgY29uZGljaW9uYWwgZmFsc2EuIiwic3RhdGVtZW50IjoiRW0gbMOzZ2ljYSBwcm9wb3NpY2lvbmFsLCBlbSBxdWFsIHNpdHVhw6fDo28g4oCcc2UgcCwgZW50w6NvIHHigJ0gw6kgZmFsc2E/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-contar-linhas-tabela.json",
+        "mediaType": "application/json",
+        "sha256": "3001a3c9cc0a0aab07b537877416a8a731621d09243a5a54a43a705213de0c5e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjQifSx7ImlkIjoiYiIsInRleHQiOiIxNiJ9LHsiaWQiOiJjIiwidGV4dCI6IjgifSx7ImlkIjoiZCIsInRleHQiOiI0In1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1jb250YXItbGluaGFzLXRhYmVsYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQ2FkYSBwcm9wb3Npw6fDo28gdGVtIGRvaXMgdmFsb3JlcyBwb3Nzw612ZWlzLiAyLiBRdWF0cm8gZXNjb2xoYXMgaW5kZXBlbmRlbnRlcyBwcm9kdXplbSAy4oG0PTE2IGxpbmhhczsgbsOjbyBzZSBtdWx0aXBsaWNhIHF1YXRybyBwb3IgZG9pcy4iLCJzdGF0ZW1lbnQiOiJVbWEgdGFiZWxhLXZlcmRhZGUgZW52b2x2ZSBxdWF0cm8gcHJvcG9zacOnw7VlcyBzaW1wbGVzIGluZGVwZW5kZW50ZXMuIFF1YW50YXMgbGluaGFzIGRlIGNvbWJpbmHDp8O1ZXMgZWxhIHBvc3N1aT8iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-demorgan-conjuncao.json",
+        "mediaType": "application/json",
+        "sha256": "125b253cb4ab7cc378847be142ad88b88fc40e821f97f9798a8fb5492aeceac0",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2UgQSBvY29ycmV1LCBCIG7Do28gb2NvcnJldS4ifSx7ImlkIjoiYiIsInRleHQiOiJBIG7Do28gb2NvcnJldSBvdSBCIG7Do28gb2NvcnJldS4ifSx7ImlkIjoiYyIsInRleHQiOiJBIG7Do28gb2NvcnJldSBlIEIgbsOjbyBvY29ycmV1LiJ9LHsiaWQiOiJkIiwidGV4dCI6IkEgb2NvcnJldSBvdSBCIG9jb3JyZXUuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1kZW1vcmdhbi1jb25qdW5jYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFBhcmEgbmVnYXIgdW1hIGNvbmp1bsOnw6NvIGJhc3RhIHF1ZSBwZWxvIG1lbm9zIHVtYSBwYXJ0ZSBzZWphIGZhbHNhLiAyLiBQZWxhIGxlaSBkZSBEZSBNb3JnYW4sIMKsKEEgZSBCKSBlcXVpdmFsZSBhIMKsQSBvdSDCrEIsIGNvbSBvdSBpbmNsdXNpdm8uIiwic3RhdGVtZW50IjoiUXVhbCDDqSBhIG5lZ2HDp8OjbyBkZSDigJxBIGUgQiBvY29ycmVyYW3igJ0/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-distributiva-logica.json",
+        "mediaType": "application/json",
+        "sha256": "66d9c4a7e627d3a696d2a4d4600325c701d4cc6cc3e4638b59887af52c5f408f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiKHAgZSBxKSBlIHIuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiKHAgZSBxKSBvdSAocCBlIHIpLiJ9LHsiaWQiOiJjIiwidGV4dCI6IihwIG91IHEpIGUgci4ifSx7ImlkIjoiZCIsInRleHQiOiJwIG91IChxIGUgcikuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1kaXN0cmlidXRpdmEtbG9naWNhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBQYXJhIGEgY29uanVuw6fDo28gc2VyIHZlcmRhZGVpcmEsIHAgZGV2ZSB2YWxlciBqdW50byBjb20gYW8gbWVub3MgdW1hIGRlIHEgZSByLiAyLiBJc3NvIGNvcnJlc3BvbmRlIMOgIGRpc2p1bsOnw6NvIGRvcyBjYXNvcyBwIGUgcSwgb3UgcCBlIHI7IMOpIGEgZGlzdHJpYnV0aXZpZGFkZSBsw7NnaWNhLiIsInN0YXRlbWVudCI6IlF1YWwgZsOzcm11bGEgZXF1aXZhbGUgYSBwIGUgKHEgb3Ugcik/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-dupla-negacao.json",
+        "mediaType": "application/json",
+        "sha256": "214ca6d45a1e3cbe0efb3b2385776d89aaed3d54039dda6dcc30f4869e2d0c52",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbyBwLiJ9LHsiaWQiOiJiIiwidGV4dCI6InAgZSBuw6NvIHAuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVW1hIGNvbnRyYWRpw6fDo28uIn0seyJpZCI6ImQiLCJ0ZXh0IjoicC4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWR1cGxhLW5lZ2FjYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgZnJhc2UgbmVnYSBhIG5lZ2HDp8OjbyBkZSBwLiAyLiBBIGR1cGxhIG5lZ2HDp8OjbyByZXN0YXVyYSBvIHZhbG9yIG9yaWdpbmFsLCB0YW50byBwYXJhIHAgdmVyZGFkZWlyYSBxdWFudG8gcGFyYSBwIGZhbHNhLiIsInN0YXRlbWVudCI6IkVtIGzDs2dpY2EgY2zDoXNzaWNhLCDigJxuw6NvIMOpIHZlcmRhZGUgcXVlIHAgw6kgZmFsc2HigJ0gZXF1aXZhbGUgYToiLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-existenciais-nao-se-unem.json",
+        "mediaType": "application/json",
+        "sha256": "e14c29060874088e112a5ee826603cf7619e41942d61110eeadc409d72879cb9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiU2ltLCBwb3JxdWUgQSBlIEMgdMOqbSBhIG1lc21hIGxldHJhIGRlIG9yaWdlbS4ifSx7ImlkIjoiYiIsInRleHQiOiJOw6NvOyBvcyBlbGVtZW50b3MgZGUgQiBjaXRhZG9zIG5hcyBkdWFzIHByZW1pc3NhcyBwb2RlbSBzZXIgZGlmZXJlbnRlcy4ifSx7ImlkIjoiYyIsInRleHQiOiJTaW0sIHBvciB0cmFuc2l0aXZpZGFkZSBhdXRvbcOhdGljYSBkZSDigJxhbGd1bnPigJ0uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiU2ltLCBkZXNkZSBxdWUgQiBuw6NvIHNlamEgdmF6aW8uIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1leGlzdGVuY2lhaXMtbmFvLXNlLXVuZW0iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFBvZGUgaGF2ZXIgdW0gaW5kaXbDrWR1byBlbSBB4oipQiBlIG91dHJvIGRpZmVyZW50ZSBlbSBC4oipQywgc2VtIG5pbmd1w6ltIGVtIEHiiKlDLiAyLiBFc3NlIG1vZGVsbyBzYXRpc2ZheiBhcyBkdWFzIHByZW1pc3NhcyBlIHJlZnV0YSBhIGNvbmNsdXPDo287IGludGVyc2XDp8O1ZXMgcGFyY2lhaXMgbsOjbyBzw6NvIHRyYW5zaXRpdmFzLiIsInN0YXRlbWVudCI6IkFsZ3VucyBBIHPDo28gQiBlIGFsZ3VucyBCIHPDo28gQy4gw4kgb2JyaWdhdMOzcmlvIHF1ZSBhbGd1bnMgQSBzZWphbSBDPyIsInRvcGljSWQiOiJNMTEifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-inconsistencia-premissas.json",
+        "mediaType": "application/json",
+        "sha256": "9ca4bca0915cec8732b1eb0dd5b590e2874b455e63f1179179d858e4a3e0fd32",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbyBwIGUgcOKGknEuIn0seyJpZCI6ImIiLCJ0ZXh0IjoicCBvdSBxIGUgbsOjbyBwLiJ9LHsiaWQiOiJjIiwidGV4dCI6InDihpRxIGUgbsOjbyBwLiJ9LHsiaWQiOiJkIiwidGV4dCI6InAsIHDihpJxIGUgbsOjbyBxLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtaW5jb25zaXN0ZW5jaWEtcHJlbWlzc2FzIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBwIGUgcOKGknEgZm9yw6dhbSBxIHZlcmRhZGVpcmEuIDIuIEEgcHJlbWlzc2EgbsOjbyBxIGV4aWdlIG8gY29udHLDoXJpbywgcG9ydGFudG8gbmVuaHVtYSBpbnRlcnByZXRhw6fDo28gdG9ybmEgYXMgdHLDqnMgdmVyZGFkZWlyYXMgYW8gbWVzbW8gdGVtcG8uIiwic3RhdGVtZW50IjoiUXVhbCBjb25qdW50byBkZSBwcmVtaXNzYXMgw6kgaW5jb25zaXN0ZW50ZT8iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-modus-ponens.json",
+        "mediaType": "application/json",
+        "sha256": "23e38ea317ca98637725fc244f73997d2dacb326c9d9c28b7492bde4d372b359",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTsOjbyBjaG92ZS4ifSx7ImlkIjoiYiIsInRleHQiOiJUb2RhIHJ1YSBtb2xoYWRhIHByb3ZhIGNodXZhLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkEgcnVhIG1vbGhhLiJ9LHsiaWQiOiJkIiwidGV4dCI6IkEgcnVhIG7Do28gbW9saGEuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1tb2R1cy1wb25lbnMiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgcHJpbWVpcmEgcHJlbWlzc2EgZMOhIGEgaW1wbGljYcOnw6NvIGNodXZh4oaScnVhIG1vbGhhZGEuIDIuIEEgc2VndW5kYSBjb25maXJtYSBvIGFudGVjZWRlbnRlLCBwZXJtaXRpbmRvIGNvbmNsdWlyIG8gY29uc2VxdWVudGUgcG9yIG1vZHVzIHBvbmVuczsgZWxhIG7Do28gZXN0YWJlbGVjZSBhIHJlY8OtcHJvY2EuIiwic3RhdGVtZW50IjoiQ29uc2lkZXJlIHZlcmRhZGVpcmFzIGFzIHByZW1pc3NhcyDigJxzZSBjaG92ZSwgYSBydWEgbW9saGHigJ0gZSDigJxjaG92ZeKAnS4gUXVhbCBjb25jbHVzw6NvIMOpIG5lY2Vzc2FyaWFtZW50ZSB2w6FsaWRhPyIsInRvcGljSWQiOiJNMTEifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-modus-tollens.json",
+        "mediaType": "application/json",
+        "sha256": "abb65588a7a2700cf209ceef18c12a03d07a16dc6c02ac31382818dc28f898f1",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBzZXJ2acOnbyBlc3TDoSBhdGl2by4ifSx7ImlkIjoiYiIsInRleHQiOiJBIHJlc3Bvc3RhIMOpIGluZGV0ZXJtaW5hZGEuIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQSBwcmltZWlyYSBwcmVtaXNzYSBuZWNlc3NhcmlhbWVudGUgw6kgZmFsc2EuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTyBzZXJ2acOnbyBuw6NvIGVzdMOhIGF0aXZvLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtbW9kdXMtdG9sbGVucyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gU2UgYXRpdm8gaW1wbGljYXNzZSByZXNwb3N0YSBlIGVsZSBlc3RpdmVzc2UgYXRpdm8sIGhhdmVyaWEgcmVzcG9zdGEuIDIuIEEgYXVzw6puY2lhIGRlIHJlc3Bvc3RhIGNvbSBhIGNvbmRpY2lvbmFsIHZlcmRhZGVpcmEgb2JyaWdhIGFudGVjZWRlbnRlIGZhbHNvOiBtb2R1cyB0b2xsZW5zLiIsInN0YXRlbWVudCI6IlPDo28gdmVyZGFkZWlyYXMg4oCcc2UgbyBzZXJ2acOnbyBlc3TDoSBhdGl2bywgcmVzcG9uZGXigJ0gZSDigJxvIHNlcnZpw6dvIG7Do28gcmVzcG9uZGXigJ0uIE8gcXVlIGRlY29ycmU/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-necessaria-suficiente.json",
+        "mediaType": "application/json",
+        "sha256": "32893142804f8f8fe81996a56089236731b289bfcdf5a279e394516686f95050",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0Ijoiw4kgY29uZGnDp8OjbyBuZWNlc3PDoXJpYSBlIHN1ZmljaWVudGUuIn0seyJpZCI6ImIiLCJ0ZXh0Ijoiw4kgY29uZGnDp8OjbyBpbXBvc3PDrXZlbC4ifSx7ImlkIjoiYyIsInRleHQiOiLDiSBjb25kacOnw6NvIHN1ZmljaWVudGUuIn0seyJpZCI6ImQiLCJ0ZXh0Ijoiw4kgY29uZGnDp8OjbyBuZWNlc3PDoXJpYSwgbWFzIG7Do28gc3VmaWNpZW50ZS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LW5lY2Vzc2FyaWEtc3VmaWNpZW50ZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSBpbXBsaWNhw6fDo28gZ2FyYW50ZSBhY2Vzc28gc2VtcHJlIHF1ZSBhIGF1dG9yaXphw6fDo28gb2NvcnJlLiAyLiBQb3J0YW50byBhdXRvcml6YcOnw6NvIMOpIHN1ZmljaWVudGU7IGEgZnJhc2UgbsOjbyBleGNsdWkgb3V0cm9zIG1vZG9zIGRlIGFjZXNzbyBlIG7Do28gcHJvdmEgbmVjZXNzaWRhZGUuIiwic3RhdGVtZW50IjoiTmEgYWZpcm1hw6fDo28g4oCcc2UgaMOhIGF1dG9yaXphw6fDo28sIGVudMOjbyBow6EgYWNlc3Nv4oCdLCBxdWUgcGFwZWwgYSBhdXRvcml6YcOnw6NvIGV4ZXJjZSBwYXJhIG8gYWNlc3NvLCBhcGVuYXMgY29tIGVzc2EgaW5mb3JtYcOnw6NvPyIsInRvcGljSWQiOiJNMTEifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-negacao-bicondicional.json",
+        "mediaType": "application/json",
+        "sha256": "08ac5bbc5c19664639acd3021bc92d37b7f7ad582f9238681fbc25736502fd86",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicCBlIHEgdMOqbSB2YWxvcmVzIGzDs2dpY29zIGRpZmVyZW50ZXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoicCBlIHEgdMOqbSBvIG1lc21vIHZhbG9yLiJ9LHsiaWQiOiJjIiwidGV4dCI6InAgZSBxIHPDo28gYW1iYXMgdmVyZGFkZWlyYXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoicCBlIHEgc8OjbyBhbWJhcyBmYWxzYXMuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC1uZWdhY2FvLWJpY29uZGljaW9uYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEEgYmljb25kaWNpb25hbCDDqSB2ZXJkYWRlaXJhIHF1YW5kbyBvcyB2YWxvcmVzIGNvaW5jaWRlbS4gMi4gU3VhIG5lZ2HDp8OjbyB2YWxlIG5vcyBjYXNvcyBkZSBkaWZlcmVuw6dhOiB2ZXJkYWRlaXJhL2ZhbHNhIG91IGZhbHNhL3ZlcmRhZGVpcmEuIiwic3RhdGVtZW50IjoiUXVhbCBkZXNjcmnDp8OjbyBlcXVpdmFsZSDDoCBuZWdhw6fDo28gZGUg4oCccCBzZSBlIHNvbWVudGUgc2UgceKAnT8iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-negacao-condicional.json",
+        "mediaType": "application/json",
+        "sha256": "e2f7737daa10404c4eaf991dc4a802249e1ea2153e3892417e002bd44aa81694",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicCBlIG7Do28gcS4ifSx7ImlkIjoiYiIsInRleHQiOiJOw6NvIHAgb3UgcS4ifSx7ImlkIjoiYyIsInRleHQiOiJOw6NvIHAgZSBxLiJ9LHsiaWQiOiJkIiwidGV4dCI6IlNlIHEsIGVudMOjbyBwLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtbmVnYWNhby1jb25kaWNpb25hbCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gUGFyYSBmYWxzaWZpY2FyIGEgY29uZGljaW9uYWwsIG8gYW50ZWNlZGVudGUgcHJlY2lzYSBvY29ycmVyIGUgbyBjb25zZXF1ZW50ZSBuw6NvLiAyLiBQb3J0YW50byDCrChw4oaScSkgZXF1aXZhbGUgYSBwIGUgwqxxLCBuw6NvIGEgb3V0cmEgaW1wbGljYcOnw6NvLiIsInN0YXRlbWVudCI6IkEgbmVnYcOnw6NvIGRlIOKAnHNlIHAsIGVudMOjbyBx4oCdIMOpOiIsInRvcGljSWQiOiJNMTEifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-negacao-universal.json",
+        "mediaType": "application/json",
+        "sha256": "117d2517c5df9505b9cf4aec5906d21619065f320817df0d926170db840c494b",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhpc3RlIHVtIGZvcm11bMOhcmlvIGNvbXBsZXRvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkV4aXN0ZSBhbyBtZW5vcyB1bSBmb3JtdWzDoXJpbyBxdWUgbsOjbyBlc3TDoSBjb21wbGV0by4ifSx7ImlkIjoiYyIsInRleHQiOiJOZW5odW0gZm9ybXVsw6FyaW8gZXN0w6EgY29tcGxldG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiVG9kb3MgZXN0w6NvIGluY29tcGxldG9zLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtbmVnYWNhby11bml2ZXJzYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE5lZ2FyIHVtYSBhZmlybWHDp8OjbyB1bml2ZXJzYWwgZXhpZ2UgdW0gY29udHJhZXhlbXBsby4gMi4gQmFzdGEgZXhpc3RpciBhbyBtZW5vcyB1bSBmb3JtdWzDoXJpbyBpbmNvbXBsZXRvOyBuw6NvIMOpIG5lY2Vzc8OhcmlvIHF1ZSB0b2RvcyBlc3RlamFtIGluY29tcGxldG9zLiIsInN0YXRlbWVudCI6IlF1YWwgw6kgYSBuZWdhw6fDo28gZGUg4oCcdG9kb3Mgb3MgZm9ybXVsw6FyaW9zIGVzdMOjbyBjb21wbGV0b3PigJ0/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-proposicao-comando.json",
+        "mediaType": "application/json",
+        "sha256": "e64a9b34169825c1d9d89a6c65a1b6db29e9973413c3b771d93ca3d11fd375d9",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBuw7ptZXJvIDggw6kgcGFyLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkRvaXMgbWFpcyBkb2lzIHPDo28gY2luY28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiQnJhc8OtbGlhIMOpIHVtYSBjaWRhZGUgYnJhc2lsZWlyYS4ifSx7ImlkIjoiZCIsInRleHQiOiJGZWNoZSBhIHBvcnRhLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtcHJvcG9zaWNhby1jb21hbmRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBVbWEgcHJvcG9zacOnw6NvIGRlY2xhcmF0aXZhIGFkbWl0ZSB2YWxvciB2ZXJkYWRlaXJvIG91IGZhbHNvLCBtZXNtbyBxdWFuZG8gw6kgZmFsc2EuIDIuIOKAnEZlY2hlIGEgcG9ydGHigJ0gw6kgdW1hIG9yZGVtLCBuw6NvIHVtYSBhZmlybWHDp8OjbyBjb20gdmFsb3IgbMOzZ2ljbzsgdW1hIGNvbnRhIGZhbHNhIGNvbnRpbnVhIHNlbmRvIHByb3Bvc2nDp8Ojby4iLCJzdGF0ZW1lbnQiOiJRdWFsIGV4cHJlc3PDo28gTsODTyDDqSB1bWEgcHJvcG9zacOnw6NvIGzDs2dpY2EgZGVjbGFyYXRpdmE/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-silogismo-categorico.json",
+        "mediaType": "application/json",
+        "sha256": "e8addf18c74760e77784f6934b9f04193ffe90f2b981d65a9d3ac31451c27e6c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQWxndW0gdMOpY25pY28gw6kgdGVyY2Vpcml6YWRvLiJ9LHsiaWQiOiJiIiwidGV4dCI6IlRvZG8gc2Vydmlkb3Igw6kgdMOpY25pY28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTmVuaHVtIHTDqWNuaWNvIMOpIHRlcmNlaXJpemFkby4ifSx7ImlkIjoiZCIsInRleHQiOiJUb2RvIHRlcmNlaXJpemFkbyDDqSB0w6ljbmljby4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXNpbG9naXNtby1jYXRlZ29yaWNvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIGNvbmp1bnRvIGRvcyB0w6ljbmljb3MgZXN0w6EgY29udGlkbyBubyBkb3Mgc2Vydmlkb3Jlcy4gMi4gQ29tbyBzZXJ2aWRvcmVzIGUgdGVyY2Vpcml6YWRvcyBzw6NvIGRpc2p1bnRvcywgdMOpY25pY29zIHRhbWLDqW0gbsOjbyBwb2RlbSBzZXIgdGVyY2Vpcml6YWRvczsgYSBjb25jbHVzw6NvIG7Do28gYWZpcm1hIGV4aXN0w6puY2lhIGRlIHTDqWNuaWNvcy4iLCJzdGF0ZW1lbnQiOiJUb2RvIHTDqWNuaWNvIMOpIHNlcnZpZG9yLiBOZW5odW0gc2Vydmlkb3Igw6kgdGVyY2Vpcml6YWRvLiBPIHF1ZSBzZSBjb25jbHVpIG5lY2Vzc2FyaWFtZW50ZT8iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-tautologia.json",
+        "mediaType": "application/json",
+        "sha256": "cec749e36f0b7ed92706f9b81e0c02d88c15098c791bd673fe00a3d7eefef433",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoicCBlIG7Do28gcC4ifSx7ImlkIjoiYiIsInRleHQiOiJwLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik7Do28gcC4ifSx7ImlkIjoiZCIsInRleHQiOiJwIG91IG7Do28gcC4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXRhdXRvbG9naWEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIHAgYXNzdW1lIHZlcmRhZGVpcmEgb3UgZmFsc2EuIDIuIEVtIGFtYm9zIG9zIGNhc29zLCB1bWEgZGFzIHBhcnRlcyBkZSBwIG91IG7Do28gcCDDqSB2ZXJkYWRlaXJhOyBhIGNvbmp1bsOnw6NvIGNvbnRyw6FyaWEgc2VyaWEgc2VtcHJlIGZhbHNhLiIsInN0YXRlbWVudCI6IlF1YWwgZsOzcm11bGEgw6kgc2VtcHJlIHZlcmRhZGVpcmEsIGluZGVwZW5kZW50ZW1lbnRlIGRvIHZhbG9yIGRlIHA/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-troca-quantificadores.json",
+        "mediaType": "application/json",
+        "sha256": "de0d453c79daa27f93f877f4639819f3d8f2ad2e86a225de7a4d8bef8ceadd8c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiRXhpc3RlIHVtIG1lc21vIGxpdnJvIHF1ZSB0b2RvcyBvcyBlc3R1ZGFudGVzIGxlcmFtLiJ9LHsiaWQiOiJiIiwidGV4dCI6IkNhZGEgZXN0dWRhbnRlIGRlaXhvdSBkZSBsZXIgYWxndW0gbGl2cm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiTmVuaHVtIGVzdHVkYW50ZSBsZXUgcXVhbHF1ZXIgbGl2cm8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQ2FkYSBsaXZybyBmb2kgbGlkbyBwb3IgYWxndcOpbS4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXRyb2NhLXF1YW50aWZpY2Fkb3JlcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gVW0gbGl2cm8gY29tdW0gYSB0b2RvcyBmb3JuZWNlLCBwYXJhIGNhZGEgZXN0dWRhbnRlLCB1bSBsaXZybyBxdWUgZWxlIGxldS4gMi4gQSByZWPDrXByb2NhIG7Do28gdmFsZTogY2FkYSBlc3R1ZGFudGUgcG9kZSB0ZXIgbGlkbyB1bSBsaXZybyBkaWZlcmVudGU7IGEgb3JkZW0gZG9zIHF1YW50aWZpY2Fkb3JlcyBpbXBvcnRhLiIsInN0YXRlbWVudCI6IlF1YWwgYWZpcm1hw6fDo28gw6kgbWFpcyBmb3J0ZSBxdWUg4oCcY2FkYSBlc3R1ZGFudGUgbGV1IGFsZ3VtIGxpdnJv4oCdLCBubyBzZW50aWRvIGRlIHF1ZSBhIGltcGxpY2E/IiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.mat-valor-formula-composta.json",
+        "mediaType": "application/json",
+        "sha256": "1a0fc04e646051e9be8d99dbc713b39cf0b21c241df81c9366523fc4e11c6e2e",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSW5kZXRlcm1pbmFkby4ifSx7ImlkIjoiYiIsInRleHQiOiJOw6NvIMOpIHVtYSBwcm9wb3Npw6fDo28uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiVmVyZGFkZWlyby4ifSx7ImlkIjoiZCIsInRleHQiOiJGYWxzby4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYyIsImlkIjoibWF0LXZhbG9yLWZvcm11bGEtY29tcG9zdGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIHAgZSBxIMOpIGZhbHNvIHBvcnF1ZSBxIMOpIGZhbHNhLiAyLiByIGUgbsOjbyBxIMOpIHZlcmRhZGVpcm8sIHBvcnRhbnRvIGEgZGlzanVuw6fDo28gY29tcGxldGEgw6kgdmVyZGFkZWlyYS4iLCJzdGF0ZW1lbnQiOiJTZSBwIMOpIHZlcmRhZGVpcmEsIHEgw6kgZmFsc2EgZSByIMOpIHZlcmRhZGVpcmEsIHF1YWwgw6kgbyB2YWxvciBkZSAocCBlIHEpIG91IChyIGUgbsOjbyBxKT8iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.pcdf-2021-basic-q47.json",
+        "mediaType": "application/json",
+        "sha256": "8c7373f31a22d747bdad19e40870804b06893d69deae759172883b1c7cc75674",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBDaXZpbCBkbyBEaXN0cml0byBGZWRlcmFsIOKAlCBBZ2VudGUsIEVkaXRhbCAxLzIwMjAsIGFwbGljYcOnw6NvIDIwMjEsIGl0ZW0gNDcuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6IENvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgY2FkZXJubywgbsO6bWVybyBlIHJlc3Bvc3RhIGNvbmZlcmlkb3MsIHNlbSBpbXBvcnRhciBpdGVtIGFudWxhZG8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL3BjZGYtMjAyMS1iYXNpYy1hbnN3ZXIucGRmIiwic2hhMjU2IjoiMjFlOTA5YWQ4MGZhMjQ1YmM2N2ZiZTE2M2RjNWMzMjFhYjcxNDc5NWIwODJmMjhhYTlmMWFmMDJjZTkzM2NjMSIsInVybCI6Imh0dHBzOi8vY2RuLmNlYnJhc3BlLm9yZy5ici9jb25jdXJzb3MvcGNfZGZfMjBfYWdlbnRlL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPX01BVFJJWl81NTBfUENERl9BR0VOVEVfQ0IxXzAwLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1hdHJpel81NTBfUENERl9BR0VOVEVfQ0IxXzAwIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBDaXZpbCBkbyBEaXN0cml0byBGZWRlcmFsIOKAlCBBZ2VudGUsIEVkaXRhbCAxLzIwMjAsIGFwbGljYcOnw6NvIDIwMjEiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImNlYnJhc3BlLXBjZGYtMjAyMS1iYXNpYy9xNDciLCJudW1iZXIiOiI0NyIsInByb29mIjp7Im5vdGUiOiJQcm92YSBvZmljaWFsOyBjb21hbmRvLCBjb250ZXh0byBlIGp1bGdhbWVudG8gcHJlc2VydmFkb3MgZW0gQ2VydG8vRXJyYWRvLiBTw61tYm9sb3MgbWF0ZW3DoXRpY29zIGxpbmVhcml6YWRvcyBvbmRlIGluZGljYWRvIG5vIHJlZ2lzdHJvIGVkaXRvcmlhbC4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGNkZi0yMDIxLWJhc2ljLXByb29mLnBkZiIsInNoYTI1NiI6IjExNzhmZjFlMTA2OTFmNDM1ZGY3NWVlYmQwNmY2NGViNGU1MGJjMjg2NTBmZjUxZjY3MjZjYjUxMWEwZjExYTkiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BjX2RmXzIwX2FnZW50ZS9hcnF1aXZvcy9QQ0RGX0FHRU5URV9DQjFfQ09NSlVTVElGSUNBVElWQS5QREYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgZSBuw6NvIGluY29ycG9yYSBvYnJhIGRlIHRlcmNlaXJvLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IkFnZW50ZSBkZSBQb2zDrWNpYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyMX0sImlkIjoicGNkZi0yMDIxLWJhc2ljLXE0NyIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFNlIEZlcm5hbmRvIG1lbnRpdSwgbmVtIE1hcmNvcyBuZW0gQ2FybG9zIHPDo28gY3VscGFkb3MuIFNlIEx1w61zIG1lbnRpdSwgbmVtIEZlcm5hbmRvIG5lbSBDYXJsb3Mgc8OjbyBjdWxwYWRvcy4gMi4gRXhjbHXDrWRvcyBNYXJjb3MsIENhcmxvcyBlIEZlcm5hbmRvLCBvcyBkb2lzIGN1bHBhZG9zIGVudHJlIG9zIGNpbmNvIHPDsyBwb2RlbSBzZXIgTHXDrXMgZSBQYXVsby4gQSBmYWxhIGZhbHNhIGRlIFBhdWxvIMOpIGNvbXBhdMOtdmVsIGNvbSBpc3NvLiBKdWxnYW1lbnRvOiBDZXJ0by4iLCJzdGF0ZW1lbnQiOiJMdcOtcywgRmVybmFuZG8sIFBhdWxvLCBDYXJsb3MgZSBNYXJjb3MsIHN1c3BlaXRvcyBkZSB0ZXJlbSBwcmF0aWNhZG8gZGV0ZXJtaW5hZG8gY3JpbWUsIGZvcmFtIGNvbnZvY2Fkb3MgcGFyYSBkZXBvci4gTmEgZGVsZWdhY2lhLCBvY29ycmVyYW0gb3MgZXZlbnRvcyBkZXNjcml0b3MgYSBzZWd1aXIuIOKAoiBNYXJjb3MgZSBDYXJsb3MgcHJlZmVyaXJhbSBmaWNhciBlbSBzaWzDqm5jaW8uIOKAoiBGZXJuYW5kbyBhZmlybW91IHF1ZSBvIGN1bHBhZG8gZXJhIE1hcmNvcyBvdSBDYXJsb3MuIOKAoiBMdcOtcyBhZmlybW91IHF1ZSBvIGN1bHBhZG8gZXJhIEZlcm5hbmRvIG91IENhcmxvcy4g4oCiIFBhdWxvIGFmaXJtb3UgcXVlIG8gY3VscGFkbyBlcmEgTWFyY29zIG91IEZlcm5hbmRvLiBDb25zaWRlcmFuZG8gcXVlIGV4YXRhbWVudGUgZG9pcyBkZWxlcyBzw6NvIGN1bHBhZG9zIGUgcXVlLCBlbSAyMDIxLCB0b2RvcyBlbGVzIHRlcsOjbyBtYWlzIGRlIHF1aW56ZSBhbm9zIGRlIGlkYWRlLCBqdWxndWUgb3MgaXRlbnMgYSBzZWd1aXIuXG5cbjQ3IFNlIG9zIHRyw6pzIHF1ZSBzZSBwcm9udW5jaWFyYW0gbWVudGlyYW0gbmFzIGFmaXJtYcOnw7VlcywgZW50w6NvIG9zIGN1bHBhZG9zIHPDo28gTHXDrXMgZSBQYXVsby4iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.pf-2021-agente-q52.json",
+        "mediaType": "application/json",
+        "sha256": "1dbc60f5943334ed520c9666c6b6ccda91c519c7e4ee6a2d2764778aefe59cef",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSwgaXRlbSA1Mi4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImUiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGYtMjAyMS1hZ2VudGUtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjM2YzcwZTNhZDZiY2U3OWFlODcyMzMzYjBiYzRjYmI0ODQ4Y2Q4NDNiNmVkN2Y1NjUxNmI4YTE2OTAyZGJlM2IiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPX01BVFJJWl81NzdfUEZfMDAyXzAwLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1hdHJpel81NzdfUEZfMDAyXzAwIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtcGYtMjAyMS1hZ2VudGUvcTUyIiwibnVtYmVyIjoiNTIiLCJwcm9vZiI6eyJub3RlIjoiUHJvdmEgb2ZpY2lhbDsgY29tYW5kbywgY29udGV4dG8gZSBqdWxnYW1lbnRvIHByZXNlcnZhZG9zIGVtIENlcnRvL0VycmFkby4gU8OtbWJvbG9zIG1hdGVtw6F0aWNvcyBsaW5lYXJpemFkb3Mgb25kZSBpbmRpY2FkbyBubyByZWdpc3RybyBlZGl0b3JpYWwuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL3BmLTIwMjEtYWdlbnRlLXByb29mLnBkZiIsInNoYTI1NiI6IjU0NjQ2NTRmMDJhYmZjYWZlOTIxZWFhNjVjNGYzMGJmOWMyNjdkODBlNjY3YjdiMzVhOGNhOWUzZjExNWI0MmYiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0NBUkdPXzJfQUdFTlRFX0RFX1BPTENJQV9GRURFUkFMLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIGRlIFBvbMOtY2lhIEZlZGVyYWwiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjF9LCJpZCI6InBmLTIwMjEtYWdlbnRlLXE1MiIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibG9naWNhIl0sInJlc29sdXRpb24iOiIxLiBFc2NyZXZhIEIgcGFyYSBmYWxoYXMgY29ycmlnaWRhcyBlIEMgcGFyYSBwcmVqdcOtem9zLiBQMiDDqSBC4oaSwqxDOyBhIHByb3Bvc3RhIMOpIMKsQuKGkkMuIDIuIFBhcmEgQiBmYWxzbyBlIEMgZmFsc28sIFAyIMOpIHZlcmRhZGVpcmEgZSBhIHByb3Bvc3RhIMOpIGZhbHNhLiBOw6NvIHPDo28gZXF1aXZhbGVudGVzLiBKdWxnYW1lbnRvOiBFcnJhZG8uIiwic3RhdGVtZW50IjoiUDE6IFNlIGEgZmlzY2FsaXphw6fDo28gZm9pIGRlZmljaWVudGUsIGFzIGZhbGhhcyBjb25zdHJ1dGl2YXMgbsOjbyBmb3JhbSBjb3JyaWdpZGFzLiBQMjogU2UgYXMgZmFsaGFzIGNvbnN0cnV0aXZhcyBmb3JhbSBjb3JyaWdpZGFzLCBvcyBtdXR1w6FyaW9zIG7Do28gdGl2ZXJhbSBwcmVqdcOtem9zLiBQMzogQSBmaXNjYWxpemHDp8OjbyBmb2kgZGVmaWNpZW50ZS4gQzogT3MgbXV0dcOhcmlvcyB0aXZlcmFtIHByZWp1w616b3MuIENvbnNpZGVyYW5kbyB1bSBhcmd1bWVudG8gZm9ybWFkbyBwZWxhcyBwcm9wb3Npw6fDtWVzIHByZWNlZGVudGVzLCBlbSBxdWUgQyDDqSBhIGNvbmNsdXPDo28sIGUgUDEgYSBQMyBzw6NvIGFzIHByZW1pc3NhcywganVsZ3VlIG9zIGl0ZW5zIGEgc2VndWlyLlxuXG41MiBBIHByb3Bvc2nDp8OjbyBQMiDDqSBlcXVpdmFsZW50ZSBhIOKAnFNlIGFzIGZhbGhhcyBjb25zdHJ1dGl2YXMgbsOjbyBmb3JhbSBjb3JyaWdpZGFzLCBvcyBtdXR1w6FyaW9zIHRpdmVyYW0gcHJlanXDrXpvc+KAnS4iLCJ0b3BpY0lkIjoiTTExIn0sInN0dWR5U291cmNlcyI6eyJsb2dpY2EiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMC0xNCIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBJbnRyb2R1w6fDo28gw6AgTMOzZ2ljYSBNYXRlbcOhdGljYTogY29uZWN0aXZvcywgbmVnYcOnw6NvIGUgcXVhbnRpZmljYWRvcmVzIiwidXJsIjoiaHR0cHM6Ly9wb3J0YWxkYW9ibWVwLmltcGEuYnIvaW5kZXgucGhwL21vZHVsby92ZXI/bW9kdWxvPTE1MyJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M11.s.pf-2021-agente-q55.json",
+        "mediaType": "application/json",
+        "sha256": "7520ae0a8be3f3817cbdf313ac44e928fca1887b8bf8677044237c9ba4d3723d",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImMiLCJ0ZXh0IjoiQ2VydG8ifSx7ImlkIjoiZSIsInRleHQiOiJFcnJhZG8ifV0sImF1dGhvciI6IkNlYnJhc3BlIOKAlCBQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSwgaXRlbSA1NS4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTogQ29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBjYWRlcm5vLCBuw7ptZXJvIGUgcmVzcG9zdGEgY29uZmVyaWRvcywgc2VtIGltcG9ydGFyIGl0ZW0gYW51bGFkby4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2VicmFzcGUvcGYtMjAyMS1hZ2VudGUtYW5zd2VyLnBkZiIsInNoYTI1NiI6IjM2YzcwZTNhZDZiY2U3OWFlODcyMzMzYjBiYzRjYmI0ODQ4Y2Q4NDNiNmVkN2Y1NjUxNmI4YTE2OTAyZGJlM2IiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0dBQl9ERUZJTklUSVZPX01BVFJJWl81NzdfUEZfMDAyXzAwLlBERiJ9LCJib2FyZCI6IkNlYnJhc3BlIiwiYm9va2xldCI6Ik1hdHJpel81NzdfUEZfMDAyXzAwIiwiY29tcGV0aXRpb24iOiJQb2zDrWNpYSBGZWRlcmFsIOKAlCBDb25jdXJzbyBQw7pibGljbywgRWRpdGFsIDEvMjAyMSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiY2VicmFzcGUtcGYtMjAyMS1hZ2VudGUvcTU1IiwibnVtYmVyIjoiNTUiLCJwcm9vZiI6eyJub3RlIjoiUHJvdmEgb2ZpY2lhbDsgY29tYW5kbywgY29udGV4dG8gZSBqdWxnYW1lbnRvIHByZXNlcnZhZG9zIGVtIENlcnRvL0VycmFkby4gU8OtbWJvbG9zIG1hdGVtw6F0aWNvcyBsaW5lYXJpemFkb3Mgb25kZSBpbmRpY2FkbyBubyByZWdpc3RybyBlZGl0b3JpYWwuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL2NlYnJhc3BlL3BmLTIwMjEtYWdlbnRlLXByb29mLnBkZiIsInNoYTI1NiI6IjU0NjQ2NTRmMDJhYmZjYWZlOTIxZWFhNjVjNGYzMGJmOWMyNjdkODBlNjY3YjdiMzVhOGNhOWUzZjExNWI0MmYiLCJ1cmwiOiJodHRwczovL2Nkbi5jZWJyYXNwZS5vcmcuYnIvY29uY3Vyc29zL3BmXzIxL2FycXVpdm9zL0NBUkdPXzJfQUdFTlRFX0RFX1BPTENJQV9GRURFUkFMLlBERiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSBhcGxpY2FkYSBhIHF1ZXN0w6NvIG9maWNpYWwgYXV0b3NzdWZpY2llbnRlOyBuw6NvIGFmaXJtYSBsaWNlbsOnYSBleHByZXNzYSBkYSBiYW5jYSBlIG7Do28gaW5jb3Jwb3JhIG9icmEgZGUgdGVyY2Vpcm8uIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3JldXNlLWFzc2Vzc21lbnQubWQiLCJzaGEyNTYiOiJmNTIwY2VjNTliZTFhYjlmMzZmZTE3Y2VmMTAzM2UyZTIzMDdhMTQ3YzAyZDBmOTcyNTZhMWQ1ZmQ3ZGQwNGRkIiwidXJsIjoiaHR0cHM6Ly93d3cyLmNhbWFyYS5sZWcuYnIvbGVnaW4vZmVkL2xlaS8xOTk4L2xlaS05NjEwLTE5LWZldmVyZWlyby0xOTk4LTM2NTM5OS1ub3JtYWF0dWFsaXphZGEtcGwuaHRtbCJ9LCJyb2xlIjoiQWdlbnRlIGRlIFBvbMOtY2lhIEZlZGVyYWwiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjF9LCJpZCI6InBmLTIwMjEtYWdlbnRlLXE1NSIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibG9naWNhIl0sInJlc29sdXRpb24iOiIxLiBFc2NyZXZhIEEgcGFyYSBmaXNjYWxpemHDp8OjbyBkZWZpY2llbnRlIGUgQiBwYXJhIGZhbGhhcyBjb3JyaWdpZGFzLiBQMSDDqSBB4oaSwqxCLCBlcXVpdmFsZW50ZSBhIMKsQeKIqMKsQi4gMi4gUGVsYSBsZWkgZGUgRGUgTW9yZ2FuLCDCrEHiiKjCrEIgZXF1aXZhbGUgYSDCrChB4oinQiksIGV4YXRhbWVudGUgYSBmcmFzZSBwcm9wb3N0YS4gSnVsZ2FtZW50bzogQ2VydG8uIiwic3RhdGVtZW50IjoiUDE6IFNlIGEgZmlzY2FsaXphw6fDo28gZm9pIGRlZmljaWVudGUsIGFzIGZhbGhhcyBjb25zdHJ1dGl2YXMgbsOjbyBmb3JhbSBjb3JyaWdpZGFzLiBQMjogU2UgYXMgZmFsaGFzIGNvbnN0cnV0aXZhcyBmb3JhbSBjb3JyaWdpZGFzLCBvcyBtdXR1w6FyaW9zIG7Do28gdGl2ZXJhbSBwcmVqdcOtem9zLiBQMzogQSBmaXNjYWxpemHDp8OjbyBmb2kgZGVmaWNpZW50ZS4gQzogT3MgbXV0dcOhcmlvcyB0aXZlcmFtIHByZWp1w616b3MuIENvbnNpZGVyYW5kbyB1bSBhcmd1bWVudG8gZm9ybWFkbyBwZWxhcyBwcm9wb3Npw6fDtWVzIHByZWNlZGVudGVzLCBlbSBxdWUgQyDDqSBhIGNvbmNsdXPDo28sIGUgUDEgYSBQMyBzw6NvIGFzIHByZW1pc3NhcywganVsZ3VlIG9zIGl0ZW5zIGEgc2VndWlyLlxuXG41NSBBIHByb3Bvc2nDp8OjbyBQMSDDqSBlcXVpdmFsZW50ZSBhIOKAnE7Do28gw6kgdmVyZGFkZSBxdWUgYSBmaXNjYWxpemHDp8OjbyBmb2kgZGVmaWNpZW50ZSBlIHF1ZSBhcyBmYWxoYXMgY29uc3RydXRpdmFzIGZvcmFtIGNvcnJpZ2lkYXPigJ0uIiwidG9waWNJZCI6Ik0xMSJ9LCJzdHVkeVNvdXJjZXMiOnsibG9naWNhIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTAtMTQiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgSW50cm9kdcOnw6NvIMOgIEzDs2dpY2EgTWF0ZW3DoXRpY2E6IGNvbmVjdGl2b3MsIG5lZ2HDp8OjbyBlIHF1YW50aWZpY2Fkb3JlcyIsInVybCI6Imh0dHBzOi8vcG9ydGFsZGFvYm1lcC5pbXBhLmJyL2luZGV4LnBocC9tb2R1bG8vdmVyP21vZHVsbz0xNTMifX19"
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M11.s.ebserh-2018-basic-q36",
+    "admin.2026-11.M11.s.ebserh-2018-basic-q38",
+    "admin.2026-11.M11.s.inss-2022-comum-q48",
+    "admin.2026-11.M11.s.mat-bicondicional-tabela",
+    "admin.2026-11.M11.s.mat-cadeia-refutacao-final",
+    "admin.2026-11.M11.s.mat-conclusao-por-casos",
+    "admin.2026-11.M11.s.mat-condicional-falsa",
+    "admin.2026-11.M11.s.mat-contar-linhas-tabela",
+    "admin.2026-11.M11.s.mat-demorgan-conjuncao",
+    "admin.2026-11.M11.s.mat-distributiva-logica",
+    "admin.2026-11.M11.s.mat-dupla-negacao",
+    "admin.2026-11.M11.s.mat-existenciais-nao-se-unem",
+    "admin.2026-11.M11.s.mat-inconsistencia-premissas",
+    "admin.2026-11.M11.s.mat-modus-ponens",
+    "admin.2026-11.M11.s.mat-modus-tollens",
+    "admin.2026-11.M11.s.mat-necessaria-suficiente",
+    "admin.2026-11.M11.s.mat-negacao-bicondicional",
+    "admin.2026-11.M11.s.mat-negacao-condicional",
+    "admin.2026-11.M11.s.mat-negacao-universal",
+    "admin.2026-11.M11.s.mat-proposicao-comando",
+    "admin.2026-11.M11.s.mat-silogismo-categorico",
+    "admin.2026-11.M11.s.mat-tautologia",
+    "admin.2026-11.M11.s.mat-troca-quantificadores",
+    "admin.2026-11.M11.s.mat-valor-formula-composta",
+    "admin.2026-11.M11.s.pcdf-2021-basic-q47",
+    "admin.2026-11.M11.s.pf-2021-agente-q52",
+    "admin.2026-11.M11.s.pf-2021-agente-q55"
+  ]
+}

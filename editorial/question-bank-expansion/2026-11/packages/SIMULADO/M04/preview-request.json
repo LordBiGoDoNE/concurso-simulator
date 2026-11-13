@@ -1,0 +1,2082 @@
+{
+  "package": {
+    "format": "administrative-question-package/v1",
+    "purpose": "SIMULADO",
+    "items": [
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.cacapava-profmat-q14"
+        },
+        "content": {
+          "statement": {
+            "text": "Danilo e Samuel são colegas de trabalho e decidiram iniciar a leitura de livros diferentes no mesmo dia. Danilo está lendo um romance policial com 420 páginas, enquanto Samuel está lendo um livro de filosofia com 300 páginas. Após alguns dias, sabe-se que Danilo já leu 45% do seu livro e Samuel leu 70% do seu livro. Diante dessas informações, é correto afirmar que:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "827a8cf7-f1ba-55a1-9d56-623845c76aba",
+              "content": {
+                "text": "O número de páginas lido por Danilo é superior ao número de páginas lidas por Samuel.",
+                "resources": []
+              }
+            },
+            {
+              "id": "cf29c562-506b-513f-8200-22f31f58a00d",
+              "content": {
+                "text": "Samuel leu 210 páginas e a diferença de páginas entre Samuel e Danilo é 20 páginas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "72a0313a-bdd6-5a11-81ed-317296262a4c",
+              "content": {
+                "text": "Samuel leu 21 páginas a mais que Danilo.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9ff60d79-fed4-5c43-b31d-01374d5c9dbf",
+              "content": {
+                "text": "Faltam 180 páginas para Danilo terminar o livro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "803e9703-4bde-5198-a9da-2b9f3d7d0b39",
+              "content": {
+                "text": "Danilo leu 175 páginas do seu livro.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "72a0313a-bdd6-5a11-81ed-317296262a4c",
+          "resolution": {
+            "text": "1. Danilo leu 420×0,45=189 páginas; Samuel leu 300×0,70=210. 2. Samuel leu 210−189=21 páginas a mais, como diz C; a alternativa B erra a diferença.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Caçapava — Processo Seletivo 01/2025, PROFESSOR II (PII) - MATEMÁTICA, questão14. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M04.s.cacapava-profmat-q14.json",
+            "answerPath": "sources/admin.2026-11.M04.s.cacapava-profmat-q14.json",
+            "contentSha256": "0539ecabe5091ab15c8f7fdb8e06dd9671d05310743740d76ff7e1b044390295",
+            "answerSha256": "0539ecabe5091ab15c8f7fdb8e06dd9671d05310743740d76ff7e1b044390295"
+          }
+        },
+        "fingerprint": "4c0f37a8ff1df934c23e3c7040c621ef87b794d8963432a9a278f9b449af6760",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.cacapava-profmat-q20"
+        },
+        "content": {
+          "statement": {
+            "text": "Ariane decidiu juntar mensalmente R$ 2.000,00 em uma conta bancária que não rende juros, durante 10 anos. Após esse período, ela terá acumulado um montante total. Kleber, por sua vez, aplicou um quarto do montante total obtido por Ariane em um investimento que rende juros simples de 10% ao mês, em uma única vez e sem realizar novos depósitos. Quanto tempo Kleber deverá esperar para que seu investimento atinja o mesmo montante que Ariane acumulou em 10 anos? Assinale a alternativa correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "33b1e642-eb07-57c7-8adf-1e62fa86022b",
+              "content": {
+                "text": "120 meses",
+                "resources": []
+              }
+            },
+            {
+              "id": "c780494f-8bc6-5866-bbbd-74273407d449",
+              "content": {
+                "text": "90 meses",
+                "resources": []
+              }
+            },
+            {
+              "id": "52054531-b6b2-5d1c-a302-0037224311c8",
+              "content": {
+                "text": "60 meses",
+                "resources": []
+              }
+            },
+            {
+              "id": "902d2b57-1ac4-5811-94d3-1164a01997a8",
+              "content": {
+                "text": "30 meses",
+                "resources": []
+              }
+            },
+            {
+              "id": "174c1ed1-901c-518f-a779-ee7952c2bbdc",
+              "content": {
+                "text": "24 meses",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "902d2b57-1ac4-5811-94d3-1164a01997a8",
+          "resolution": {
+            "text": "1. Ariane acumula 2000×12×10=240000 reais; Kleber aplica um quarto, 60000. 2. Em juros simples, 240000=60000(1+0,10t), de modo que 4=1+0,10t e t=30 meses.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Caçapava — Processo Seletivo 01/2025, PROFESSOR II (PII) - MATEMÁTICA, questão20. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M04.s.cacapava-profmat-q20.json",
+            "answerPath": "sources/admin.2026-11.M04.s.cacapava-profmat-q20.json",
+            "contentSha256": "b0560397007942d573406e286873c4b848a559d95f08aa4d06405770298cf26f",
+            "answerSha256": "b0560397007942d573406e286873c4b848a559d95f08aa4d06405770298cf26f"
+          }
+        },
+        "fingerprint": "5d171eeba4e12cd17d36b4c914e94af4ca186ee697944c76e23a1d08e52916c4",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-aumento-e-volta"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma tarifa sobe 25% e depois cai 20% sobre o novo valor. Comparada ao valor inicial, ela fica:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "536f2fe6-d148-534e-a929-83e545154a1b",
+              "content": {
+                "text": "10% maior.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f0ed87db-d960-5d24-b352-463997d3e54f",
+              "content": {
+                "text": "Igual.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b40f00cc-4ee4-570d-8044-0c084416a51c",
+              "content": {
+                "text": "5% maior.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c7268593-fac3-5c50-b0fe-e10c73600cf4",
+              "content": {
+                "text": "5% menor.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f0ed87db-d960-5d24-b352-463997d3e54f",
+          "resolution": {
+            "text": "1. Os fatores são 1,25 e 0,80. 2. Seu produto é 1, logo o valor retorna ao inicial; somar +25 e −20 seria usar bases iguais indevidamente.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-aumento-e-volta.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-aumento-e-volta.json",
+            "contentSha256": "76c3f011b17b0e453e76c5e6aaedbbb9613f38b8023c4c2cee6c18484b215415",
+            "answerSha256": "76c3f011b17b0e453e76c5e6aaedbbb9613f38b8023c4c2cee6c18484b215415"
+          }
+        },
+        "fingerprint": "44843112c4eb796d3ff5f295fd8da544b0e3838c354d686859ea40996c72ec81",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-desconto-ou-valor-fixo"
+        },
+        "content": {
+          "statement": {
+            "text": "Um produto custa R$180. Pode-se escolher desconto de R$30 ou desconto de 15%, sem acumular. Qual opção reduz mais o preço e em quanto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "5a193134-306d-59bc-a929-34c8c6a4ffd8",
+              "content": {
+                "text": "O desconto percentual reduz R$3 a mais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c89550b2-f57b-5806-a82b-f89f3cca07be",
+              "content": {
+                "text": "Ambos reduzem R$30.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a7b4e7db-9056-53a9-b778-e1ca35621b4a",
+              "content": {
+                "text": "O desconto fixo reduz R$15 a mais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b5cb48ae-8a30-55fc-addc-89f858edd3d5",
+              "content": {
+                "text": "O desconto fixo reduz R$3 a mais.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b5cb48ae-8a30-55fc-addc-89f858edd3d5",
+          "resolution": {
+            "text": "1. Quinze por cento de 180 são 27 reais. 2. O desconto fixo de 30 supera 27 em 3 reais; as opções não podem ser somadas.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-desconto-ou-valor-fixo.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-desconto-ou-valor-fixo.json",
+            "contentSha256": "cebf3e5b51c288c6fd601d66154f8b8f5ec1ec830f9b399d2ad49263a694e6ba",
+            "answerSha256": "cebf3e5b51c288c6fd601d66154f8b8f5ec1ec830f9b399d2ad49263a694e6ba"
+          }
+        },
+        "fingerprint": "2a42bbfde563eb91f9ce8ad22d223d1e77a83c9791c3e23c705bde241e488161",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-desconto-receita-fixa"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma loja fictícia reduz o preço unitário em 20%. Para manter a mesma receita, de quanto deve aumentar a quantidade vendida?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "986af083-2062-5781-bc34-cb8ac5bdbdfd",
+              "content": {
+                "text": "40%",
+                "resources": []
+              }
+            },
+            {
+              "id": "b9883d64-775c-5167-b84f-cb0b653ac04f",
+              "content": {
+                "text": "80%",
+                "resources": []
+              }
+            },
+            {
+              "id": "bd4390db-d881-5a87-a4f0-ce8b71d68a0d",
+              "content": {
+                "text": "25%",
+                "resources": []
+              }
+            },
+            {
+              "id": "4bc76152-5cce-5098-83db-e4eecfd33812",
+              "content": {
+                "text": "20%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "bd4390db-d881-5a87-a4f0-ce8b71d68a0d",
+          "resolution": {
+            "text": "1. Com preço multiplicado por 0,8, a quantidade precisa de fator 1/0,8=1,25. 2. Isso representa aumento de 25%; preço e quantidade variam inversamente quando a receita é fixa.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-desconto-receita-fixa.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-desconto-receita-fixa.json",
+            "contentSha256": "01a206dde631b5f568cb715710652fd1ecd910674d6ecc530b5a6915bb99ff98",
+            "answerSha256": "01a206dde631b5f568cb715710652fd1ecd910674d6ecc530b5a6915bb99ff98"
+          }
+        },
+        "fingerprint": "52cffe2ee8e4b881b4d7edd0ee5075f27758dfbde6772315761f20c61822a80d",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-erro-percentual-medida"
+        },
+        "content": {
+          "statement": {
+            "text": "Um valor exato é 250 e sua estimativa é 260. Qual é o erro percentual absoluto, tomando o exato como base?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "eb89ac70-00da-5ce8-b1f4-33187086d17c",
+              "content": {
+                "text": "104%",
+                "resources": []
+              }
+            },
+            {
+              "id": "6a853a2a-892a-539d-ba4b-ead49a2cc31e",
+              "content": {
+                "text": "4%",
+                "resources": []
+              }
+            },
+            {
+              "id": "ad028155-29b2-5e2d-8b6b-f800d38e66e9",
+              "content": {
+                "text": "10%",
+                "resources": []
+              }
+            },
+            {
+              "id": "b3d0b861-50cd-5155-8369-50f82a5e3683",
+              "content": {
+                "text": "3,85%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "6a853a2a-892a-539d-ba4b-ead49a2cc31e",
+          "resolution": {
+            "text": "1. O erro absoluto é |260−250|=10. 2. Dividindo pelo valor exato, 10/250=4%; usar 260 como denominador responderia outra medida.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-erro-percentual-medida.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-erro-percentual-medida.json",
+            "contentSha256": "a96d3ca6d2a0e18d8fc0456c89c28af117f17a1dcc5942a1fb596f93881e53dc",
+            "answerSha256": "a96d3ca6d2a0e18d8fc0456c89c28af117f17a1dcc5942a1fb596f93881e53dc"
+          }
+        },
+        "fingerprint": "8308de879f7799877461a18fc52faa819beb528e688b09c29566d4b7114a8b1a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-estoque-perda-base-remanescente"
+        },
+        "content": {
+          "statement": {
+            "text": "Um lote perde 25% de seus itens. Depois são acrescentados itens novos em quantidade igual a 20% do que restou. O total final corresponde a que percentual do inicial?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "1329c329-5e0d-5fe5-b516-9f3f40119528",
+              "content": {
+                "text": "90%",
+                "resources": []
+              }
+            },
+            {
+              "id": "65d41c98-08bc-5b79-9ab0-8e5cca784b71",
+              "content": {
+                "text": "95%",
+                "resources": []
+              }
+            },
+            {
+              "id": "61cf2ad9-b2d5-56df-81df-16c4c65eaef3",
+              "content": {
+                "text": "105%",
+                "resources": []
+              }
+            },
+            {
+              "id": "e2d6f971-5b90-544e-b99e-5f7fd2b50a96",
+              "content": {
+                "text": "80%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "1329c329-5e0d-5fe5-b516-9f3f40119528",
+          "resolution": {
+            "text": "1. Após a perda restam 75% do inicial. 2. Acrescentar 20% desse restante multiplica por 1,2: 0,75×1,2=0,9, ou 90%.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-estoque-perda-base-remanescente.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-estoque-perda-base-remanescente.json",
+            "contentSha256": "a5501e377a0852c4d712f0dd8b8b0a81e37da5ce911d1c0d7d4a1246d5cc5493",
+            "answerSha256": "a5501e377a0852c4d712f0dd8b8b0a81e37da5ce911d1c0d7d4a1246d5cc5493"
+          }
+        },
+        "fingerprint": "1ac82cb85c1e4cd9ecdb6fa531a7f3325c1ca45001091fbe2ee506041b7ce523",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-imposto-embutido"
+        },
+        "content": {
+          "statement": {
+            "text": "Um total de R$120 inclui imposto equivalente a 20% do valor antes do imposto. Qual é o valor do imposto embutido?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "abf8ad7f-eaa9-58fc-82ff-651b5c5f1465",
+              "content": {
+                "text": "R$30.",
+                "resources": []
+              }
+            },
+            {
+              "id": "3a8a5aeb-2687-504d-9930-3082a3f54321",
+              "content": {
+                "text": "R$20.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b8354556-8067-51b1-ab74-7f279bb644c1",
+              "content": {
+                "text": "R$24.",
+                "resources": []
+              }
+            },
+            {
+              "id": "0c84e429-75c1-555b-9e1a-4dbbb1c15dd6",
+              "content": {
+                "text": "R$100.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3a8a5aeb-2687-504d-9930-3082a3f54321",
+          "resolution": {
+            "text": "1. Se a base é B, o total é 1,2B=120, logo B=100. 2. O imposto é 120−100=20; calcular 20% do total usaria a base errada.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-imposto-embutido.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-imposto-embutido.json",
+            "contentSha256": "53f1744e25c4da544f9c977092826de7001970e1c5ef7f7810afc4eaf535515f",
+            "answerSha256": "53f1744e25c4da544f9c977092826de7001970e1c5ef7f7810afc4eaf535515f"
+          }
+        },
+        "fingerprint": "56b32951aa3daf494b8a7e2088e2683924b6de35e022956610c954f60d7922bd",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-inflacao-salario-real"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma situação fictícia, o salário aumenta 10% e os preços aumentam 25%. Qual é a variação exata do poder de compra?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "f3192741-cb19-5cca-a1db-14a11be32a65",
+              "content": {
+                "text": "Aumento de 10%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "645c5186-3533-51f4-9a68-013933b7c919",
+              "content": {
+                "text": "Queda de 25%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "69c6063f-13e4-5a99-9f93-0cb9a5c85868",
+              "content": {
+                "text": "Queda de 12%.",
+                "resources": []
+              }
+            },
+            {
+              "id": "9f1464d1-3968-56ff-a78f-577ed737b8ae",
+              "content": {
+                "text": "Queda de 15%.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "69c6063f-13e4-5a99-9f93-0cb9a5c85868",
+          "resolution": {
+            "text": "1. O fator real é 1,10/1,25=0,88. 2. O poder de compra fica em 88% do anterior, uma queda de 12%; subtrair taxas daria apenas aproximação.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-inflacao-salario-real.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-inflacao-salario-real.json",
+            "contentSha256": "5549c8ddd1763f2497017808602c497c678b6c03ace0bb8ff9cff9a18c778d5c",
+            "answerSha256": "5549c8ddd1763f2497017808602c497c678b6c03ace0bb8ff9cff9a18c778d5c"
+          }
+        },
+        "fingerprint": "ce2379e9d7546a8121f109f4d6c16eca2bd786124995c3b1533fbca05f215489",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-juros-compara-prazos"
+        },
+        "content": {
+          "statement": {
+            "text": "Dois capitais iguais são aplicados em juros simples: um a 2% ao mês por 6 meses e outro a 3% ao mês por 4 meses. Comparando apenas os juros, qual afirmação vale?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2cb0f12b-d027-5df3-bfd1-947fa94015e3",
+              "content": {
+                "text": "O segundo é 50% maior.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e8791e68-9f34-5bbc-9006-e081a17c42e4",
+              "content": {
+                "text": "O primeiro é o dobro.",
+                "resources": []
+              }
+            },
+            {
+              "id": "fbd99103-c316-53f8-8c65-e04c0e1a0c56",
+              "content": {
+                "text": "São iguais.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f053ff84-e109-5a44-939d-c845556fb2e4",
+              "content": {
+                "text": "O primeiro é 50% maior.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "fbd99103-c316-53f8-8c65-e04c0e1a0c56",
+          "resolution": {
+            "text": "1. As taxas acumuladas simples são 0,02×6=0,12 e 0,03×4=0,12. 2. Como os capitais são iguais, os juros também são iguais; a taxa mensal isolada não basta.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-juros-compara-prazos.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-juros-compara-prazos.json",
+            "contentSha256": "715e5f838feb9e691ce755b60e3ec4356bf52dc3c847561629bc161a3d38c60a",
+            "answerSha256": "715e5f838feb9e691ce755b60e3ec4356bf52dc3c847561629bc161a3d38c60a"
+          }
+        },
+        "fingerprint": "e358f018daf0f2ad6010ad46b9b85a893bdafbf2fd577c95fb1d52785af2f8f9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-juros-taxa-anual"
+        },
+        "content": {
+          "statement": {
+            "text": "Em juros simples, uma taxa de 1,5% ao mês corresponde a qual taxa proporcional anual?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "2e736c5f-c77c-5165-b955-50bfcbd23822",
+              "content": {
+                "text": "19,56%",
+                "resources": []
+              }
+            },
+            {
+              "id": "2cb969b8-888b-5b1a-a557-2e09e32671e4",
+              "content": {
+                "text": "1,5%",
+                "resources": []
+              }
+            },
+            {
+              "id": "607ff754-3092-5b11-b733-9126de991b72",
+              "content": {
+                "text": "12%",
+                "resources": []
+              }
+            },
+            {
+              "id": "3d690398-3078-50d7-aea6-ada69a2934cf",
+              "content": {
+                "text": "18%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "3d690398-3078-50d7-aea6-ada69a2934cf",
+          "resolution": {
+            "text": "1. No regime simples, a taxa proporcional cresce linearmente com o número de períodos. 2. São 12 meses: 12×1,5%=18%; 19,56% seria aproximação de composição mensal.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-juros-taxa-anual.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-juros-taxa-anual.json",
+            "contentSha256": "1af3169192fb67df11b0ee01cc1bc72767cd260e8cf82b54f584d7b7944d60ee",
+            "answerSha256": "1af3169192fb67df11b0ee01cc1bc72767cd260e8cf82b54f584d7b7944d60ee"
+          }
+        },
+        "fingerprint": "095d96ef5a837f7a4f537c77b4deb5e589979dd932959928dd88b6abd1298afb",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-juros-taxa-proporcional-dia"
+        },
+        "content": {
+          "statement": {
+            "text": "Usando ano comercial de 360 dias, uma taxa simples de 18% ao ano gera qual percentual de juro em 20 dias?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "c19af90e-28f5-5473-ac93-1b7a1e0159df",
+              "content": {
+                "text": "18%",
+                "resources": []
+              }
+            },
+            {
+              "id": "0e0f15aa-1742-545d-a4e8-1f4187e300d8",
+              "content": {
+                "text": "1%",
+                "resources": []
+              }
+            },
+            {
+              "id": "ba46d6c8-8a1a-5f3a-a871-7deaac097825",
+              "content": {
+                "text": "0,9%",
+                "resources": []
+              }
+            },
+            {
+              "id": "31c57814-9f9c-5896-951e-1fada05fb7f1",
+              "content": {
+                "text": "3,6%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "0e0f15aa-1742-545d-a4e8-1f4187e300d8",
+          "resolution": {
+            "text": "1. O tempo é 20/360 do ano comercial. 2. O percentual é 18%×20/360=1%; a convenção de dias foi explicitada.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-juros-taxa-proporcional-dia.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-juros-taxa-proporcional-dia.json",
+            "contentSha256": "573ad68f322ef71f55b36e09da3868d9a9e54a888ddbd4a657fafd6fb087dcd4",
+            "answerSha256": "573ad68f322ef71f55b36e09da3868d9a9e54a888ddbd4a657fafd6fb087dcd4"
+          }
+        },
+        "fingerprint": "ccd27c2063468bbbd5fd9bca5e99f7aeccfccb499c67e3cd0eafd0f79b35b5de",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-markup-margem"
+        },
+        "content": {
+          "statement": {
+            "text": "Para obter lucro equivalente a 20% do preço de venda, uma mercadoria que custa R$80 deve ser vendida por:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0f716e55-8aca-5e6e-bf94-613fea8ded69",
+              "content": {
+                "text": "R$90.",
+                "resources": []
+              }
+            },
+            {
+              "id": "8929508d-23b7-58ef-bfec-c8a78e8304d6",
+              "content": {
+                "text": "R$120.",
+                "resources": []
+              }
+            },
+            {
+              "id": "f3c6faee-1575-51ff-98c8-497e4bb4e52b",
+              "content": {
+                "text": "R$100.",
+                "resources": []
+              }
+            },
+            {
+              "id": "96fd84af-ed98-5a4f-bf97-b7a94fa5c885",
+              "content": {
+                "text": "R$96.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "f3c6faee-1575-51ff-98c8-497e4bb4e52b",
+          "resolution": {
+            "text": "1. O custo ocupa 80% do preço de venda, já que o lucro é 20% dessa mesma venda. 2. Assim 0,8V=80 e V=100; aumentar o custo em 20% daria margem menor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-markup-margem.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-markup-margem.json",
+            "contentSha256": "ae7f6ea72a2b3b8f3d747d840cb8eecdd1003c7b311ce5b660fb8eb138d9cd11",
+            "answerSha256": "ae7f6ea72a2b3b8f3d747d840cb8eecdd1003c7b311ce5b660fb8eb138d9cd11"
+          }
+        },
+        "fingerprint": "e1606a1cbc9b8174aa4378faf85295ae5b46654e5776063bad37c11138ec50c9",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-percentual-area"
+        },
+        "content": {
+          "statement": {
+            "text": "O lado de um quadrado aumenta 20%. Qual é o aumento percentual da área?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "20b9abd2-d9fd-5047-b1d8-df8f4b6ac35a",
+              "content": {
+                "text": "44%",
+                "resources": []
+              }
+            },
+            {
+              "id": "402d00ee-86a0-5b27-bd1c-338371d43705",
+              "content": {
+                "text": "20%",
+                "resources": []
+              }
+            },
+            {
+              "id": "9bf295bd-2911-52f8-a76a-33954a409f32",
+              "content": {
+                "text": "40%",
+                "resources": []
+              }
+            },
+            {
+              "id": "053eaa99-7e5c-5b40-80bf-aa02de6ffd62",
+              "content": {
+                "text": "144%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "20b9abd2-d9fd-5047-b1d8-df8f4b6ac35a",
+          "resolution": {
+            "text": "1. A área varia com o quadrado do lado. 2. O fator é 1,2²=1,44, então o aumento é 44%; 144% é a área final em relação à inicial.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-percentual-area.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-percentual-area.json",
+            "contentSha256": "6c38e0c3e30dca606219f6f406085d6af1ac8ccb40677c557343bc3f17e08d73",
+            "answerSha256": "6c38e0c3e30dca606219f6f406085d6af1ac8ccb40677c557343bc3f17e08d73"
+          }
+        },
+        "fingerprint": "0010a07ef9961dc9eb071d84ccf259c186962443cf2fd1d5ad1417251c623282",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-percentual-erro-em-cadeia"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma estimativa supera o valor real em 25%. Se a estimativa é 150 unidades, qual é o valor real?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8306f491-04e0-55c9-a83f-f718641b19c3",
+              "content": {
+                "text": "112,5",
+                "resources": []
+              }
+            },
+            {
+              "id": "38b994a8-b224-5803-a231-870c43b0e2aa",
+              "content": {
+                "text": "125",
+                "resources": []
+              }
+            },
+            {
+              "id": "aa601c75-4499-52e5-a225-c9637f37e72e",
+              "content": {
+                "text": "187,5",
+                "resources": []
+              }
+            },
+            {
+              "id": "b4655649-ae46-5c79-b5a3-9d8c5de77fac",
+              "content": {
+                "text": "120",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b4655649-ae46-5c79-b5a3-9d8c5de77fac",
+          "resolution": {
+            "text": "1. A estimativa é 125% do valor real, portanto 1,25R=150. 2. Dividindo por 1,25, R=120; descontar 25% de 150 usaria a base errada.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-percentual-erro-em-cadeia.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-percentual-erro-em-cadeia.json",
+            "contentSha256": "0b1554d026dc81681f382df3723114bc7112e41bd4436407b2771982a3da5d64",
+            "answerSha256": "0b1554d026dc81681f382df3723114bc7112e41bd4436407b2771982a3da5d64"
+          }
+        },
+        "fingerprint": "2d77446e4711cb9b2d330afb74c1e356d0c24b3882f38f6c782ef963df881cb0",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-pontos-percentuais"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma taxa passou de 12% para 15%. Qual foi o aumento relativo à taxa inicial?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "48386acd-b566-5d16-b077-1bc35e3976b4",
+              "content": {
+                "text": "25%",
+                "resources": []
+              }
+            },
+            {
+              "id": "eff6962f-dbb5-58bd-aa5b-84cdab86d6a7",
+              "content": {
+                "text": "3%",
+                "resources": []
+              }
+            },
+            {
+              "id": "460628ec-3e7f-513f-9acb-3d49a025c112",
+              "content": {
+                "text": "27%",
+                "resources": []
+              }
+            },
+            {
+              "id": "8687f036-1c18-5d36-a7d8-12c0d7b8f6b1",
+              "content": {
+                "text": "20%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "48386acd-b566-5d16-b077-1bc35e3976b4",
+          "resolution": {
+            "text": "1. A variação é de 3 pontos percentuais. 2. Em relação aos 12% iniciais, 3/12=25%; pontos percentuais e crescimento relativo são medidas diferentes.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-pontos-percentuais.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-pontos-percentuais.json",
+            "contentSha256": "396b7cd4be2b2b0aad438a0d4724cd20e9085d42d5a3b5f6442e6ce4c021b85a",
+            "answerSha256": "396b7cd4be2b2b0aad438a0d4724cd20e9085d42d5a3b5f6442e6ce4c021b85a"
+          }
+        },
+        "fingerprint": "173556469b780e3fd6bb6f79f05ee9c7f371ab5791e5eda3acb6aa12f9eccd53",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-porcentagem-por-conversao"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma proporção de 7/20 corresponde a:",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "05ab8d85-ad34-5972-a637-ff35da4bd8af",
+              "content": {
+                "text": "7%",
+                "resources": []
+              }
+            },
+            {
+              "id": "629231df-3421-5e1d-9595-aa7be754fdc8",
+              "content": {
+                "text": "20%",
+                "resources": []
+              }
+            },
+            {
+              "id": "4f835572-6374-53ff-809a-b5cf4ed81946",
+              "content": {
+                "text": "28,57%",
+                "resources": []
+              }
+            },
+            {
+              "id": "d396a40c-d587-57e7-9ed4-9a5cf55e0483",
+              "content": {
+                "text": "35%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "d396a40c-d587-57e7-9ed4-9a5cf55e0483",
+          "resolution": {
+            "text": "1. Transforme o denominador 20 em 100 multiplicando por 5. 2. A fração vira 35/100, isto é, 35%; inverter a razão muda o valor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-porcentagem-por-conversao.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-porcentagem-por-conversao.json",
+            "contentSha256": "838b28f336278c459ef684c6f72ef9d35b776e40e28fec4d9d9eb4645cdde1fa",
+            "answerSha256": "838b28f336278c459ef684c6f72ef9d35b776e40e28fec4d9d9eb4645cdde1fa"
+          }
+        },
+        "fingerprint": "a92a775eb438d7c0c5317feaca5e02e21d9493e47a2cbba9d8bf7706e63c8a9a",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-prejuizo-recompor"
+        },
+        "content": {
+          "statement": {
+            "text": "Um investimento fictício sofre perda de 40%. Que ganho percentual sobre o saldo restante recuperaria exatamente o valor inicial?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "b4c65756-69d1-578f-beb7-0223bd388ea7",
+              "content": {
+                "text": "60%",
+                "resources": []
+              }
+            },
+            {
+              "id": "0b6fa0ea-ce10-55ee-bc4f-84c78562d8c7",
+              "content": {
+                "text": "166⅔%",
+                "resources": []
+              }
+            },
+            {
+              "id": "15d96fdf-2c87-530e-9dd2-6f57bee532d8",
+              "content": {
+                "text": "66⅔%",
+                "resources": []
+              }
+            },
+            {
+              "id": "05f33117-9af8-5fcd-a815-a301b323eb2a",
+              "content": {
+                "text": "40%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "15d96fdf-2c87-530e-9dd2-6f57bee532d8",
+          "resolution": {
+            "text": "1. De cada 100 unidades iniciais restam 60, e faltam 40 para recuperar. 2. O ganho necessário é 40/60=2/3=66⅔%; ele incide no saldo menor.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-prejuizo-recompor.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-prejuizo-recompor.json",
+            "contentSha256": "802411bfc80ce03c84c0db0ab440581f6b3a2d69aa1dcfdd5c1c21066b86ebc8",
+            "answerSha256": "802411bfc80ce03c84c0db0ab440581f6b3a2d69aa1dcfdd5c1c21066b86ebc8"
+          }
+        },
+        "fingerprint": "6c156d67ba131fb7b5f14966be63f5d4cbdb07e942f90b0ff64c9ecf78e39046",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-residuo-percentual"
+        },
+        "content": {
+          "statement": {
+            "text": "Após utilizar 35% de um orçamento e reservar outros 20% do valor inicial, restam R$900 sem destinação. Qual era o orçamento inicial?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "35ba7d9d-e316-58a8-8fc0-460187a7cf09",
+              "content": {
+                "text": "R$1.800.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7db8aef9-d9ed-5f84-ac33-8fefe37ea313",
+              "content": {
+                "text": "R$1.500.",
+                "resources": []
+              }
+            },
+            {
+              "id": "e4021089-22bc-58e8-a628-f5f25985bf87",
+              "content": {
+                "text": "R$4.500.",
+                "resources": []
+              }
+            },
+            {
+              "id": "c792fa9c-9900-54b5-b41d-341b22d0522c",
+              "content": {
+                "text": "R$2.000.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "c792fa9c-9900-54b5-b41d-341b22d0522c",
+          "resolution": {
+            "text": "1. As duas parcelas usam a mesma base inicial e totalizam 55%, deixando 45%. 2. Se 45% equivalem a 900, o total é 900/0,45=2.000 reais.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-residuo-percentual.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-residuo-percentual.json",
+            "contentSha256": "fafd8ac6bc57425cc0d9627da2bed1d721e1f56f5a6e25de4d1d71e50d97a1dd",
+            "answerSha256": "fafd8ac6bc57425cc0d9627da2bed1d721e1f56f5a6e25de4d1d71e50d97a1dd"
+          }
+        },
+        "fingerprint": "6139be21cb855c0c4aae78f13404fb3c3b6325c74db194b7a6a4e51c5b5b04c1",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-taxa-a-partir-montante"
+        },
+        "content": {
+          "statement": {
+            "text": "Um capital de R$2.000 atinge R$2.360 após 9 meses em juros simples. Qual é a taxa mensal?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "8b8ca78d-8f94-5deb-b054-dfd6c9b3edab",
+              "content": {
+                "text": "2%",
+                "resources": []
+              }
+            },
+            {
+              "id": "24a666b6-f9db-5f8e-9844-e597936a1e1f",
+              "content": {
+                "text": "18%",
+                "resources": []
+              }
+            },
+            {
+              "id": "42cf9a1d-c015-50be-99ae-d8a5cffb19bd",
+              "content": {
+                "text": "1,8%",
+                "resources": []
+              }
+            },
+            {
+              "id": "41f01832-3ac4-5880-b1a2-dd413f23e4c4",
+              "content": {
+                "text": "9%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "8b8ca78d-8f94-5deb-b054-dfd6c9b3edab",
+          "resolution": {
+            "text": "1. O juro acumulado é 360 reais. 2. Pela fórmula J=Cit, i=360/(2.000×9)=0,02=2% ao mês; 18% é o total do período.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-taxa-a-partir-montante.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-taxa-a-partir-montante.json",
+            "contentSha256": "3216314128c352a49889aabcfb0cb0cb572173cb1eb881bdbffacccadaa410cf",
+            "answerSha256": "3216314128c352a49889aabcfb0cb0cb572173cb1eb881bdbffacccadaa410cf"
+          }
+        },
+        "fingerprint": "9812d177ad10f9eef961a03606c38bfcdaa47847cb78bbfeb00d5c5eb0dfaa25",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-valor-absoluto-de-queda"
+        },
+        "content": {
+          "statement": {
+            "text": "Uma quantidade cai de 500 para 425. Qual é a redução percentual?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0d14306f-8bec-557c-8ba2-c53c72a966a7",
+              "content": {
+                "text": "85%",
+                "resources": []
+              }
+            },
+            {
+              "id": "17bea59d-0788-5d8a-956b-5ea19694264d",
+              "content": {
+                "text": "15%",
+                "resources": []
+              }
+            },
+            {
+              "id": "0bd5b8d2-d588-5a47-9631-5bdb78267043",
+              "content": {
+                "text": "17,65%",
+                "resources": []
+              }
+            },
+            {
+              "id": "01d21cf5-3280-5900-8de8-2703aaf4cda2",
+              "content": {
+                "text": "75%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "17bea59d-0788-5d8a-956b-5ea19694264d",
+          "resolution": {
+            "text": "1. A redução absoluta é 75. 2. Em relação ao valor inicial, 75/500=15%; 85% é a parcela que permaneceu.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-valor-absoluto-de-queda.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-valor-absoluto-de-queda.json",
+            "contentSha256": "47d7dbc3a3a893ee285dd4a8939c856b0d0b31f9854829b8a6fbdc95ee303c86",
+            "answerSha256": "47d7dbc3a3a893ee285dd4a8939c856b0d0b31f9854829b8a6fbdc95ee303c86"
+          }
+        },
+        "fingerprint": "d8eb50c05123bab3cbb14b793e576aba0ac6add31e6ad849fe77d65afbf59a3c",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.mat-votos-validos-base"
+        },
+        "content": {
+          "statement": {
+            "text": "Em uma eleição fictícia com 1.000 votantes, houve 100 votos brancos e 150 nulos. Um candidato recebeu 450 votos. Qual foi sua participação nos votos válidos?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "548df108-c121-5ca0-b933-6f5f54a78bd2",
+              "content": {
+                "text": "60%",
+                "resources": []
+              }
+            },
+            {
+              "id": "7c897521-39d8-5503-a54f-65ee6b4c3986",
+              "content": {
+                "text": "45%",
+                "resources": []
+              }
+            },
+            {
+              "id": "885b2623-aff4-54c3-9341-071c977a3eea",
+              "content": {
+                "text": "75%",
+                "resources": []
+              }
+            },
+            {
+              "id": "d8ad5f76-dc07-5e87-9321-eacdc1448b96",
+              "content": {
+                "text": "50%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "548df108-c121-5ca0-b933-6f5f54a78bd2",
+          "resolution": {
+            "text": "1. Os votos válidos são 1.000−100−150=750. 2. A participação do candidato é 450/750=60%; a base solicitada não inclui brancos e nulos.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência de estudo em matemática elementar; autoria dos itens desta edição é própria e assistida por IA",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Codex — elaboração e conferência assistidas por IA em 2026-11; sem revisão humana independente",
+            "contentPath": "sources/admin.2026-11.M04.s.mat-votos-validos-base.json",
+            "answerPath": "sources/admin.2026-11.M04.s.mat-votos-validos-base.json",
+            "contentSha256": "2d67b01e586c50531320262dbdd1918612e89fd5a17f92e50535a2516eb1d9af",
+            "answerSha256": "2d67b01e586c50531320262dbdd1918612e89fd5a17f92e50535a2516eb1d9af"
+          }
+        },
+        "fingerprint": "56ce8a38a5404885226b1e33fb5ee2dfdaec4a5a9b97e19a0180560639ca46a5",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.morato-q12"
+        },
+        "content": {
+          "statement": {
+            "text": "Analise as afirmativas a seguir, referentes a porcentagens. Em seguida, assinale a alternativa correta: I. 11% de 60 é igual a 6,6. II. Um aumento de 7% sobre 987 resulta em 1050. III. 80% de 774 é exatamente igual a 620. IV. Ao reduzir um valor em 5% e, em seguida, aumentar 20% sobre o novo valor, o resultado será 14% maior que o valor inicial.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "a008c7d3-54e1-5da2-84df-f88189e6c9b8",
+              "content": {
+                "text": "I, II, III e IV estão corretas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "a5c6b7ff-6bc1-579b-9faf-801ed0a1bd0b",
+              "content": {
+                "text": "Apenas I, II e III estão corretas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "7cb1f869-9f63-5ed3-b9dc-47a9cfe9c57f",
+              "content": {
+                "text": "Apenas II e III estão corretas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "5d9ebc79-fec0-56fe-9cfa-698fd5e7cd08",
+              "content": {
+                "text": "Apenas I e III estão corretas.",
+                "resources": []
+              }
+            },
+            {
+              "id": "b4ffc049-3bcd-599e-b531-c51f54c3b3f8",
+              "content": {
+                "text": "Apenas I e IV estão corretas.",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "b4ffc049-3bcd-599e-b531-c51f54c3b3f8",
+          "resolution": {
+            "text": "1. Conferir as afirmações: 11% de 60 = 6,6; 987 × 1,07 = 1.056,09; 774 × 0,80 = 619,2. 2. A redução e o aumento sucessivos multiplicam o valor por 0,95 × 1,20 = 1,14. Apenas I e IV são verdadeiras.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Câmara Municipal de Francisco Morato 01/2025, Oficial Administrativo, questão 12. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M04.s.morato-q12.json",
+            "answerPath": "sources/admin.2026-11.M04.s.morato-q12.json",
+            "contentSha256": "2aebb42d1373d7b6734dc30d6331c7cb9310635ac809a72b68364e0bb052f767",
+            "answerSha256": "2aebb42d1373d7b6734dc30d6331c7cb9310635ac809a72b68364e0bb052f767"
+          }
+        },
+        "fingerprint": "caa592faa7ee50b7dd6e073e507ff1c72f3c20eab38c6f66b7d0bde7bf6daa8b",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.potim-profmat-q20"
+        },
+        "content": {
+          "statement": {
+            "text": "Juvenal está assistindo seu podcast favorito sobre finanças pessoais e gostou de um trecho em que o apresentador afirma que o ideal é que os gastos essenciais representem, no máximo, 70% do salário. Atualmente, Juvenal compromete 84% de sua renda mensal com gastos essenciais. Sem alterar seus gastos atuais, para que esses gastos passem a representar exatamente 70% de seu salário, ele precisaria receber um aumento mínimo, em relação ao salário atual, de ____. Assinale a alternativa correta que completa a lacuna acima.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "0efcef83-b2c8-507b-87d5-e63ba897d32f",
+              "content": {
+                "text": "10%",
+                "resources": []
+              }
+            },
+            {
+              "id": "84a9f86b-fac9-524b-abac-26e47d55ebdc",
+              "content": {
+                "text": "15%",
+                "resources": []
+              }
+            },
+            {
+              "id": "93fd0744-f348-5b8f-a83f-cdf0c9fb5fbe",
+              "content": {
+                "text": "20%",
+                "resources": []
+              }
+            },
+            {
+              "id": "32821380-28c7-589d-a4c9-75b48fc11998",
+              "content": {
+                "text": "25%",
+                "resources": []
+              }
+            },
+            {
+              "id": "3acc6be8-61f2-54ed-b79f-796c41f4f998",
+              "content": {
+                "text": "30%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "93fd0744-f348-5b8f-a83f-cdf0c9fb5fbe",
+          "resolution": {
+            "text": "1. Se a renda atual é S, os gastos essenciais são 0,84S. A renda nova N precisa satisfazer 0,70N=0,84S. 2. N=1,2S, portanto o aumento necessário é 20%, opção C; a questão fixa os gastos em valor absoluto.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim — Concurso Público 01/2025, PROFESSOR DE EDUCAÇÃO BÁSICA II - MATEMÁTICA, questão20. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M04.s.potim-profmat-q20.json",
+            "answerPath": "sources/admin.2026-11.M04.s.potim-profmat-q20.json",
+            "contentSha256": "122f1615355d087f00e27aa5f578744effc6bf397132de90ba2074726c488111",
+            "answerSha256": "122f1615355d087f00e27aa5f578744effc6bf397132de90ba2074726c488111"
+          }
+        },
+        "fingerprint": "f600dde597bec4094345ce2d703635c0ac8918f3169486981bb82a40d3e36010",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.potim-profmat-q46"
+        },
+        "content": {
+          "statement": {
+            "text": "Ana foi a uma papelaria comprar cadernos. Cada caderno custava R$ 30,00. Como ela comprou 3 cadernos, a loja ofereceu um desconto de 10% sobre o valor total da compra. Quanto Ana pagou ao final, já com o desconto?",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9e7eba7e-2af0-566e-b139-3713a2671140",
+              "content": {
+                "text": "R$ 81,00",
+                "resources": []
+              }
+            },
+            {
+              "id": "accccb1d-c802-5aca-bbde-9d90e5513e31",
+              "content": {
+                "text": "R$ 84,00",
+                "resources": []
+              }
+            },
+            {
+              "id": "9007e2d8-85d0-53e5-8339-c082cf5ec36d",
+              "content": {
+                "text": "R$ 85,00",
+                "resources": []
+              }
+            },
+            {
+              "id": "65a21ccb-5580-5591-a637-56636a1a47f9",
+              "content": {
+                "text": "R$ 87,00",
+                "resources": []
+              }
+            },
+            {
+              "id": "41a5230a-e370-519e-bf5f-fa2c825f0d53",
+              "content": {
+                "text": "R$ 90,00",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "9e7eba7e-2af0-566e-b139-3713a2671140",
+          "resolution": {
+            "text": "1. Os três cadernos custam 3×30=90 reais antes do desconto. 2. Pagar 90% desse total dá 90×0,9=81 reais, alternativa A; o desconto é 9 reais.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Banco de Questões, referência complementar de estudo em matemática elementar; a questão é transcrita de prova oficial, cuja origem consta da proveniência do item",
+              "url": "https://www.obmep.org.br/banco.htm",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim — Concurso Público 01/2025, PROFESSOR DE EDUCAÇÃO BÁSICA II - MATEMÁTICA, questão46. Resolução própria assistida por IA:Codex.",
+            "contentPath": "sources/admin.2026-11.M04.s.potim-profmat-q46.json",
+            "answerPath": "sources/admin.2026-11.M04.s.potim-profmat-q46.json",
+            "contentSha256": "4a7f542b20467570d2bfcc00c4cfb72cbbd8b649b05845458844fce35f301f7a",
+            "answerSha256": "4a7f542b20467570d2bfcc00c4cfb72cbbd8b649b05845458844fce35f301f7a"
+          }
+        },
+        "fingerprint": "273d72df0b340729e084b1eb302347acc4b4bbe68ff09643e8314c658a2e2d46",
+        "expectedLatestRevision": null
+      },
+      {
+        "origin": {
+          "namespace": "admin-question-v1",
+          "key": "admin.2026-11.M04.s.potim-se-q11"
+        },
+        "content": {
+          "statement": {
+            "text": "Garcia fez uma pesquisa recentemente e identificou que o preço de um determinado produto sofreu um aumento de 15% e, em um intervalo de uma semana, passou por um novo aumento, no qual seu valor triplicou em relação ao valor inicial. Nesse contexto, qual é o valor final (após o segundo aumento) expresso em porcentagem do valor após o primeiro aumento? Assinale a alternativa que indica a resposta correta.",
+            "resources": []
+          },
+          "alternatives": [
+            {
+              "id": "9f2085d0-cef0-5dee-9781-2b19e12b64ed",
+              "content": {
+                "text": "300%",
+                "resources": []
+              }
+            },
+            {
+              "id": "24902a88-4d43-59c6-aad4-a003b86e6ca3",
+              "content": {
+                "text": "200%",
+                "resources": []
+              }
+            },
+            {
+              "id": "6a9f4137-6ab4-5b8e-a890-0375428b5e0f",
+              "content": {
+                "text": "230%",
+                "resources": []
+              }
+            },
+            {
+              "id": "c8036dc3-6471-55b9-b289-5408029ebb0a",
+              "content": {
+                "text": "245,87%",
+                "resources": []
+              }
+            },
+            {
+              "id": "7cea0d80-e7c0-59e9-8ebf-2375597a3d54",
+              "content": {
+                "text": "260,87%",
+                "resources": []
+              }
+            }
+          ],
+          "correctAlternativeId": "7cea0d80-e7c0-59e9-8ebf-2375597a3d54",
+          "resolution": {
+            "text": "1. Representar o valor inicial por 100: após o primeiro aumento ele vale 115; o valor final triplicado é 300. 2. O valor final como porcentagem do valor após o primeiro aumento é 300 ÷ 115 × 100 = 260,8695…%, aproximadamente 260,87%. Não é o percentual de aumento sobre 115, que seria outro cálculo.",
+            "resources": []
+          },
+          "classification": {
+            "topicId": "M04",
+            "disciplineId": "matematica-raciocinio",
+            "roleIds": [
+              "assistente-administrativo",
+              "secretario-de-escola"
+            ]
+          },
+          "references": [
+            {
+              "name": "IMPA/OBMEP — Módulos de Matemática: operações, medidas, geometria e estatística (apoio temático)",
+              "url": "https://portaldaobmep.impa.br/index.php/modulo/index",
+              "legalBasis": null
+            }
+          ],
+          "provenance": {
+            "author": "Avança SP — Prefeitura Municipal de Potim 01/2025, Secretário de Escola, questão 11. Resolução própria: Codex, assistida por IA.",
+            "contentPath": "sources/admin.2026-11.M04.s.potim-se-q11.json",
+            "answerPath": "sources/admin.2026-11.M04.s.potim-se-q11.json",
+            "contentSha256": "bb53d40f955c2c08b13fd17bb65e5e38f126fb0ca2c161001757fed4c9fd3308",
+            "answerSha256": "bb53d40f955c2c08b13fd17bb65e5e38f126fb0ca2c161001757fed4c9fd3308"
+          }
+        },
+        "fingerprint": "b52ae1df271f4a00a1e4cba4664f4f76e06f0419b19a82ea556c9676e0926ca1",
+        "expectedLatestRevision": null
+      }
+    ],
+    "files": [
+      {
+        "path": "sources/admin.2026-11.M04.s.cacapava-profmat-q14.json",
+        "mediaType": "application/json",
+        "sha256": "0539ecabe5091ab15c8f7fdb8e06dd9671d05310743740d76ff7e1b044390295",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBuw7ptZXJvIGRlIHDDoWdpbmFzIGxpZG8gcG9yIERhbmlsbyDDqSBzdXBlcmlvciBhbyBuw7ptZXJvIGRlIHDDoWdpbmFzIGxpZGFzIHBvciBTYW11ZWwuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiU2FtdWVsIGxldSAyMTAgcMOhZ2luYXMgZSBhIGRpZmVyZW7Dp2EgZGUgcMOhZ2luYXMgZW50cmUgU2FtdWVsIGUgRGFuaWxvIMOpIDIwIHDDoWdpbmFzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlNhbXVlbCBsZXUgMjEgcMOhZ2luYXMgYSBtYWlzIHF1ZSBEYW5pbG8uIn0seyJpZCI6ImQiLCJ0ZXh0IjoiRmFsdGFtIDE4MCBww6FnaW5hcyBwYXJhIERhbmlsbyB0ZXJtaW5hciBvIGxpdnJvLiJ9LHsiaWQiOiJlIiwidGV4dCI6IkRhbmlsbyBsZXUgMTc1IHDDoWdpbmFzIGRvIHNldSBsaXZyby4ifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENhw6dhcGF2YSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSwgUFJPRkVTU09SIElJIChQSUkpIC0gTUFURU3DgVRJQ0EsIHF1ZXN0w6NvMTQuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6Q29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBzZcOnw6NvIGVzcGVjw61maWNhIGRvIGNhcmdvIGUgcmVzcG9zdGEgY29uZmVyaWRhcywgYW51bGFkYXMgZXhjbHXDrWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2FjYXBhdmEtZ2FiYXJpdG8ucGRmIiwic2hhMjU2IjoiYThhNmMwZDgwZjViYmI2MDJmZmQ3OWVjZTk2Y2VjNWMzZDIxZWRiNzQ0NzNhYWY0MmQzZmE2ZDQ0MDJkM2Q2MCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjMwL2FuZXhvcy8yN2RmMjVjNC0zYjU2LTQ0NzYtYTQ5YS1mZjZjMGRmNjcxNGYucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYcOnYXBhdmEg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1jYWNhcGF2YS0yMDI1LXByb2ZtYXQvcTE0IiwibnVtYmVyIjoiMTQiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsOyBjYXJnbyBlIG7Dum1lcm8gY29uZmVyaWRvczsgY2FiZcOnYWxob3MgZSBxdWVicmFzIHJldGlyYWRvcy4gRm9ybWF0b3MgbWF0ZW3DoXRpY29zIHJlbGV2YW50ZXMgY29tcGFyYWRvcyBjb20gcMOhZ2luYXMgcmVuZGVyaXphZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9jYWNhcGF2YS1wcm9mbWF0LnBkZiIsInNoYTI1NiI6ImJiZTk2ZGJkYzNhZGU4MDMwY2FlMzJjYWM5ODM4MWJiYmVhNmIxMWQ3MjJiMjViZjRhMmE2NWExN2IwMjhjNjYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzMC9hbmV4b3MvOGIyZjViMmYtM2YyMi00NzBlLWJmYWUtNGJlNTQ2NzJmMWYzLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSwgYXJ0LjjCuixJViBlIFRKUFIgQUMxNDM3MzMyLTMgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIHJldXRpbGl6YSBvYnJhcyBkZSB0ZXJjZWlyb3MgbmVjZXNzw6FyaWFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlBST0ZFU1NPUiBJSSAoUElJKSAtIE1BVEVNw4FUSUNBIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJjYWNhcGF2YS1wcm9mbWF0LXExNCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIERhbmlsbyBsZXUgNDIww5cwLDQ1PTE4OSBww6FnaW5hczsgU2FtdWVsIGxldSAzMDDDlzAsNzA9MjEwLiAyLiBTYW11ZWwgbGV1IDIxMOKIkjE4OT0yMSBww6FnaW5hcyBhIG1haXMsIGNvbW8gZGl6IEM7IGEgYWx0ZXJuYXRpdmEgQiBlcnJhIGEgZGlmZXJlbsOnYS4iLCJzdGF0ZW1lbnQiOiJEYW5pbG8gZSBTYW11ZWwgc8OjbyBjb2xlZ2FzIGRlIHRyYWJhbGhvIGUgZGVjaWRpcmFtIGluaWNpYXIgYSBsZWl0dXJhIGRlIGxpdnJvcyBkaWZlcmVudGVzIG5vIG1lc21vIGRpYS4gRGFuaWxvIGVzdMOhIGxlbmRvIHVtIHJvbWFuY2UgcG9saWNpYWwgY29tIDQyMCBww6FnaW5hcywgZW5xdWFudG8gU2FtdWVsIGVzdMOhIGxlbmRvIHVtIGxpdnJvIGRlIGZpbG9zb2ZpYSBjb20gMzAwIHDDoWdpbmFzLiBBcMOzcyBhbGd1bnMgZGlhcywgc2FiZS1zZSBxdWUgRGFuaWxvIGrDoSBsZXUgNDUlIGRvIHNldSBsaXZybyBlIFNhbXVlbCBsZXUgNzAlIGRvIHNldSBsaXZyby4gRGlhbnRlIGRlc3NhcyBpbmZvcm1hw6fDtWVzLCDDqSBjb3JyZXRvIGFmaXJtYXIgcXVlOiIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBjb21wbGVtZW50YXIgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYSBxdWVzdMOjbyDDqSB0cmFuc2NyaXRhIGRlIHByb3ZhIG9maWNpYWwsIGN1amEgb3JpZ2VtIGNvbnN0YSBkYSBwcm92ZW5pw6puY2lhIGRvIGl0ZW0iLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.cacapava-profmat-q20.json",
+        "mediaType": "application/json",
+        "sha256": "b0560397007942d573406e286873c4b848a559d95f08aa4d06405770298cf26f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTIwIG1lc2VzIn0seyJpZCI6ImIiLCJ0ZXh0IjoiOTAgbWVzZXMifSx7ImlkIjoiYyIsInRleHQiOiI2MCBtZXNlcyJ9LHsiaWQiOiJkIiwidGV4dCI6IjMwIG1lc2VzIn0seyJpZCI6ImUiLCJ0ZXh0IjoiMjQgbWVzZXMifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIENhw6dhcGF2YSDigJQgUHJvY2Vzc28gU2VsZXRpdm8gMDEvMjAyNSwgUFJPRkVTU09SIElJIChQSUkpIC0gTUFURU3DgVRJQ0EsIHF1ZXN0w6NvMjAuIFJlc29sdcOnw6NvIHByw7NwcmlhIGFzc2lzdGlkYSBwb3IgSUE6Q29kZXguIiwiY29ycmVjdE9wdGlvbiI6ImQiLCJleGFtIjp7ImFuc3dlciI6eyJub3RlIjoiR2FiYXJpdG8gb2ZpY2lhbCBkZWZpbml0aXZvOyBzZcOnw6NvIGVzcGVjw61maWNhIGRvIGNhcmdvIGUgcmVzcG9zdGEgY29uZmVyaWRhcywgYW51bGFkYXMgZXhjbHXDrWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvY2FjYXBhdmEtZ2FiYXJpdG8ucGRmIiwic2hhMjU2IjoiYThhNmMwZDgwZjViYmI2MDJmZmQ3OWVjZTk2Y2VjNWMzZDIxZWRiNzQ0NzNhYWY0MmQzZmE2ZDQ0MDJkM2Q2MCIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjMwL2FuZXhvcy8yN2RmMjVjNC0zYjU2LTQ0NzYtYTQ5YS1mZjZjMGRmNjcxNGYucGRmIn0sImJvYXJkIjoiQXZhbsOnYSBTUCIsImJvb2tsZXQiOiJDYWRlcm5vIG9maWNpYWwgcHVibGljYWRvLCBzZW0gY8OzZGlnbyBkZSB2ZXJzw6NvIGluZGljYWRvIiwiY29tcGV0aXRpb24iOiJQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBDYcOnYXBhdmEg4oCUIFByb2Nlc3NvIFNlbGV0aXZvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1jYWNhcGF2YS0yMDI1LXByb2ZtYXQvcTIwIiwibnVtYmVyIjoiMjAiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsOyBjYXJnbyBlIG7Dum1lcm8gY29uZmVyaWRvczsgY2FiZcOnYWxob3MgZSBxdWVicmFzIHJldGlyYWRvcy4gRm9ybWF0b3MgbWF0ZW3DoXRpY29zIHJlbGV2YW50ZXMgY29tcGFyYWRvcyBjb20gcMOhZ2luYXMgcmVuZGVyaXphZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9jYWNhcGF2YS1wcm9mbWF0LnBkZiIsInNoYTI1NiI6ImJiZTk2ZGJkYzNhZGU4MDMwY2FlMzJjYWM5ODM4MWJiYmVhNmIxMWQ3MjJiMjViZjRhMmE2NWExN2IwMjhjNjYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzMC9hbmV4b3MvOGIyZjViMmYtM2YyMi00NzBlLWJmYWUtNGJlNTQ2NzJmMWYzLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSwgYXJ0LjjCuixJViBlIFRKUFIgQUMxNDM3MzMyLTMgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIHJldXRpbGl6YSBvYnJhcyBkZSB0ZXJjZWlyb3MgbmVjZXNzw6FyaWFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlBST0ZFU1NPUiBJSSAoUElJKSAtIE1BVEVNw4FUSUNBIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJjYWNhcGF2YS1wcm9mbWF0LXEyMCIsIm9yaWdpbktpbmQiOiJPUklHSU5BTF9ERV9QUk9WQSIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIEFyaWFuZSBhY3VtdWxhIDIwMDDDlzEyw5cxMD0yNDAwMDAgcmVhaXM7IEtsZWJlciBhcGxpY2EgdW0gcXVhcnRvLCA2MDAwMC4gMi4gRW0ganVyb3Mgc2ltcGxlcywgMjQwMDAwPTYwMDAwKDErMCwxMHQpLCBkZSBtb2RvIHF1ZSA0PTErMCwxMHQgZSB0PTMwIG1lc2VzLiIsInN0YXRlbWVudCI6IkFyaWFuZSBkZWNpZGl1IGp1bnRhciBtZW5zYWxtZW50ZSBSJCAyLjAwMCwwMCBlbSB1bWEgY29udGEgYmFuY8OhcmlhIHF1ZSBuw6NvIHJlbmRlIGp1cm9zLCBkdXJhbnRlIDEwIGFub3MuIEFww7NzIGVzc2UgcGVyw61vZG8sIGVsYSB0ZXLDoSBhY3VtdWxhZG8gdW0gbW9udGFudGUgdG90YWwuIEtsZWJlciwgcG9yIHN1YSB2ZXosIGFwbGljb3UgdW0gcXVhcnRvIGRvIG1vbnRhbnRlIHRvdGFsIG9idGlkbyBwb3IgQXJpYW5lIGVtIHVtIGludmVzdGltZW50byBxdWUgcmVuZGUganVyb3Mgc2ltcGxlcyBkZSAxMCUgYW8gbcOqcywgZW0gdW1hIMO6bmljYSB2ZXogZSBzZW0gcmVhbGl6YXIgbm92b3MgZGVww7NzaXRvcy4gUXVhbnRvIHRlbXBvIEtsZWJlciBkZXZlcsOhIGVzcGVyYXIgcGFyYSBxdWUgc2V1IGludmVzdGltZW50byBhdGluamEgbyBtZXNtbyBtb250YW50ZSBxdWUgQXJpYW5lIGFjdW11bG91IGVtIDEwIGFub3M/IEFzc2luYWxlIGEgYWx0ZXJuYXRpdmEgY29ycmV0YS4iLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgY29tcGxlbWVudGFyIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGEgcXVlc3TDo28gw6kgdHJhbnNjcml0YSBkZSBwcm92YSBvZmljaWFsLCBjdWphIG9yaWdlbSBjb25zdGEgZGEgcHJvdmVuacOqbmNpYSBkbyBpdGVtIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-aumento-e-volta.json",
+        "mediaType": "application/json",
+        "sha256": "76c3f011b17b0e453e76c5e6aaedbbb9613f38b8023c4c2cee6c18484b215415",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTAlIG1haW9yLiJ9LHsiaWQiOiJiIiwidGV4dCI6IklndWFsLiJ9LHsiaWQiOiJjIiwidGV4dCI6IjUlIG1haW9yLiJ9LHsiaWQiOiJkIiwidGV4dCI6IjUlIG1lbm9yLiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtYXVtZW50by1lLXZvbHRhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPcyBmYXRvcmVzIHPDo28gMSwyNSBlIDAsODAuIDIuIFNldSBwcm9kdXRvIMOpIDEsIGxvZ28gbyB2YWxvciByZXRvcm5hIGFvIGluaWNpYWw7IHNvbWFyICsyNSBlIOKIkjIwIHNlcmlhIHVzYXIgYmFzZXMgaWd1YWlzIGluZGV2aWRhbWVudGUuIiwic3RhdGVtZW50IjoiVW1hIHRhcmlmYSBzb2JlIDI1JSBlIGRlcG9pcyBjYWkgMjAlIHNvYnJlIG8gbm92byB2YWxvci4gQ29tcGFyYWRhIGFvIHZhbG9yIGluaWNpYWwsIGVsYSBmaWNhOiIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-desconto-ou-valor-fixo.json",
+        "mediaType": "application/json",
+        "sha256": "cebf3e5b51c288c6fd601d66154f8b8f5ec1ec830f9b399d2ad49263a694e6ba",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBkZXNjb250byBwZXJjZW50dWFsIHJlZHV6IFIkMyBhIG1haXMuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiQW1ib3MgcmVkdXplbSBSJDMwLiJ9LHsiaWQiOiJjIiwidGV4dCI6Ik8gZGVzY29udG8gZml4byByZWR1eiBSJDE1IGEgbWFpcy4ifSx7ImlkIjoiZCIsInRleHQiOiJPIGRlc2NvbnRvIGZpeG8gcmVkdXogUiQzIGEgbWFpcy4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LWRlc2NvbnRvLW91LXZhbG9yLWZpeG8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFF1aW56ZSBwb3IgY2VudG8gZGUgMTgwIHPDo28gMjcgcmVhaXMuIDIuIE8gZGVzY29udG8gZml4byBkZSAzMCBzdXBlcmEgMjcgZW0gMyByZWFpczsgYXMgb3DDp8O1ZXMgbsOjbyBwb2RlbSBzZXIgc29tYWRhcy4iLCJzdGF0ZW1lbnQiOiJVbSBwcm9kdXRvIGN1c3RhIFIkMTgwLiBQb2RlLXNlIGVzY29saGVyIGRlc2NvbnRvIGRlIFIkMzAgb3UgZGVzY29udG8gZGUgMTUlLCBzZW0gYWN1bXVsYXIuIFF1YWwgb3DDp8OjbyByZWR1eiBtYWlzIG8gcHJlw6dvIGUgZW0gcXVhbnRvPyIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-desconto-receita-fixa.json",
+        "mediaType": "application/json",
+        "sha256": "01a206dde631b5f568cb715710652fd1ecd910674d6ecc530b5a6915bb99ff98",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDAlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiODAlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjUlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjAlIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1kZXNjb250by1yZWNlaXRhLWZpeGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIENvbSBwcmXDp28gbXVsdGlwbGljYWRvIHBvciAwLDgsIGEgcXVhbnRpZGFkZSBwcmVjaXNhIGRlIGZhdG9yIDEvMCw4PTEsMjUuIDIuIElzc28gcmVwcmVzZW50YSBhdW1lbnRvIGRlIDI1JTsgcHJlw6dvIGUgcXVhbnRpZGFkZSB2YXJpYW0gaW52ZXJzYW1lbnRlIHF1YW5kbyBhIHJlY2VpdGEgw6kgZml4YS4iLCJzdGF0ZW1lbnQiOiJVbWEgbG9qYSBmaWN0w61jaWEgcmVkdXogbyBwcmXDp28gdW5pdMOhcmlvIGVtIDIwJS4gUGFyYSBtYW50ZXIgYSBtZXNtYSByZWNlaXRhLCBkZSBxdWFudG8gZGV2ZSBhdW1lbnRhciBhIHF1YW50aWRhZGUgdmVuZGlkYT8iLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-erro-percentual-medida.json",
+        "mediaType": "application/json",
+        "sha256": "a96d3ca6d2a0e18d8fc0456c89c28af117f17a1dcc5942a1fb596f93881e53dc",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTA0JSJ9LHsiaWQiOiJiIiwidGV4dCI6IjQlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTAlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMyw4NSUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYiIsImlkIjoibWF0LWVycm8tcGVyY2VudHVhbC1tZWRpZGEiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gZXJybyBhYnNvbHV0byDDqSB8MjYw4oiSMjUwfD0xMC4gMi4gRGl2aWRpbmRvIHBlbG8gdmFsb3IgZXhhdG8sIDEwLzI1MD00JTsgdXNhciAyNjAgY29tbyBkZW5vbWluYWRvciByZXNwb25kZXJpYSBvdXRyYSBtZWRpZGEuIiwic3RhdGVtZW50IjoiVW0gdmFsb3IgZXhhdG8gw6kgMjUwIGUgc3VhIGVzdGltYXRpdmEgw6kgMjYwLiBRdWFsIMOpIG8gZXJybyBwZXJjZW50dWFsIGFic29sdXRvLCB0b21hbmRvIG8gZXhhdG8gY29tbyBiYXNlPyIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-estoque-perda-base-remanescente.json",
+        "mediaType": "application/json",
+        "sha256": "a5501e377a0852c4d712f0dd8b8b0a81e37da5ce911d1c0d7d4a1246d5cc5493",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiOTAlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiOTUlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTA1JSJ9LHsiaWQiOiJkIiwidGV4dCI6IjgwJSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtZXN0b3F1ZS1wZXJkYS1iYXNlLXJlbWFuZXNjZW50ZSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQXDDs3MgYSBwZXJkYSByZXN0YW0gNzUlIGRvIGluaWNpYWwuIDIuIEFjcmVzY2VudGFyIDIwJSBkZXNzZSByZXN0YW50ZSBtdWx0aXBsaWNhIHBvciAxLDI6IDAsNzXDlzEsMj0wLDksIG91IDkwJS4iLCJzdGF0ZW1lbnQiOiJVbSBsb3RlIHBlcmRlIDI1JSBkZSBzZXVzIGl0ZW5zLiBEZXBvaXMgc8OjbyBhY3Jlc2NlbnRhZG9zIGl0ZW5zIG5vdm9zIGVtIHF1YW50aWRhZGUgaWd1YWwgYSAyMCUgZG8gcXVlIHJlc3RvdS4gTyB0b3RhbCBmaW5hbCBjb3JyZXNwb25kZSBhIHF1ZSBwZXJjZW50dWFsIGRvIGluaWNpYWw/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-imposto-embutido.json",
+        "mediaType": "application/json",
+        "sha256": "53f1744e25c4da544f9c977092826de7001970e1c5ef7f7810afc4eaf535515f",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUiQzMC4ifSx7ImlkIjoiYiIsInRleHQiOiJSJDIwLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlIkMjQuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUiQxMDAuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC1pbXBvc3RvLWVtYnV0aWRvIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBhIGJhc2Ugw6kgQiwgbyB0b3RhbCDDqSAxLDJCPTEyMCwgbG9nbyBCPTEwMC4gMi4gTyBpbXBvc3RvIMOpIDEyMOKIkjEwMD0yMDsgY2FsY3VsYXIgMjAlIGRvIHRvdGFsIHVzYXJpYSBhIGJhc2UgZXJyYWRhLiIsInN0YXRlbWVudCI6IlVtIHRvdGFsIGRlIFIkMTIwIGluY2x1aSBpbXBvc3RvIGVxdWl2YWxlbnRlIGEgMjAlIGRvIHZhbG9yIGFudGVzIGRvIGltcG9zdG8uIFF1YWwgw6kgbyB2YWxvciBkbyBpbXBvc3RvIGVtYnV0aWRvPyIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-inflacao-salario-real.json",
+        "mediaType": "application/json",
+        "sha256": "5549c8ddd1763f2497017808602c497c678b6c03ace0bb8ff9cff9a18c778d5c",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiQXVtZW50byBkZSAxMCUuIn0seyJpZCI6ImIiLCJ0ZXh0IjoiUXVlZGEgZGUgMjUlLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlF1ZWRhIGRlIDEyJS4ifSx7ImlkIjoiZCIsInRleHQiOiJRdWVkYSBkZSAxNSUuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1pbmZsYWNhby1zYWxhcmlvLXJlYWwiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8gZmF0b3IgcmVhbCDDqSAxLDEwLzEsMjU9MCw4OC4gMi4gTyBwb2RlciBkZSBjb21wcmEgZmljYSBlbSA4OCUgZG8gYW50ZXJpb3IsIHVtYSBxdWVkYSBkZSAxMiU7IHN1YnRyYWlyIHRheGFzIGRhcmlhIGFwZW5hcyBhcHJveGltYcOnw6NvLiIsInN0YXRlbWVudCI6IkVtIHVtYSBzaXR1YcOnw6NvIGZpY3TDrWNpYSwgbyBzYWzDoXJpbyBhdW1lbnRhIDEwJSBlIG9zIHByZcOnb3MgYXVtZW50YW0gMjUlLiBRdWFsIMOpIGEgdmFyaWHDp8OjbyBleGF0YSBkbyBwb2RlciBkZSBjb21wcmE/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-juros-compara-prazos.json",
+        "mediaType": "application/json",
+        "sha256": "715e5f838feb9e691ce755b60e3ec4356bf52dc3c847561629bc161a3d38c60a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiTyBzZWd1bmRvIMOpIDUwJSBtYWlvci4ifSx7ImlkIjoiYiIsInRleHQiOiJPIHByaW1laXJvIMOpIG8gZG9icm8uIn0seyJpZCI6ImMiLCJ0ZXh0IjoiU8OjbyBpZ3VhaXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiTyBwcmltZWlybyDDqSA1MCUgbWFpb3IuIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImMiLCJpZCI6Im1hdC1qdXJvcy1jb21wYXJhLXByYXpvcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQXMgdGF4YXMgYWN1bXVsYWRhcyBzaW1wbGVzIHPDo28gMCwwMsOXNj0wLDEyIGUgMCwwM8OXND0wLDEyLiAyLiBDb21vIG9zIGNhcGl0YWlzIHPDo28gaWd1YWlzLCBvcyBqdXJvcyB0YW1iw6ltIHPDo28gaWd1YWlzOyBhIHRheGEgbWVuc2FsIGlzb2xhZGEgbsOjbyBiYXN0YS4iLCJzdGF0ZW1lbnQiOiJEb2lzIGNhcGl0YWlzIGlndWFpcyBzw6NvIGFwbGljYWRvcyBlbSBqdXJvcyBzaW1wbGVzOiB1bSBhIDIlIGFvIG3DqnMgcG9yIDYgbWVzZXMgZSBvdXRybyBhIDMlIGFvIG3DqnMgcG9yIDQgbWVzZXMuIENvbXBhcmFuZG8gYXBlbmFzIG9zIGp1cm9zLCBxdWFsIGFmaXJtYcOnw6NvIHZhbGU/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-juros-taxa-anual.json",
+        "mediaType": "application/json",
+        "sha256": "1af3169192fb67df11b0ee01cc1bc72767cd260e8cf82b54f584d7b7944d60ee",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTksNTYlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMSw1JSJ9LHsiaWQiOiJjIiwidGV4dCI6IjEyJSJ9LHsiaWQiOiJkIiwidGV4dCI6IjE4JSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtanVyb3MtdGF4YS1hbnVhbCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTm8gcmVnaW1lIHNpbXBsZXMsIGEgdGF4YSBwcm9wb3JjaW9uYWwgY3Jlc2NlIGxpbmVhcm1lbnRlIGNvbSBvIG7Dum1lcm8gZGUgcGVyw61vZG9zLiAyLiBTw6NvIDEyIG1lc2VzOiAxMsOXMSw1JT0xOCU7IDE5LDU2JSBzZXJpYSBhcHJveGltYcOnw6NvIGRlIGNvbXBvc2nDp8OjbyBtZW5zYWwuIiwic3RhdGVtZW50IjoiRW0ganVyb3Mgc2ltcGxlcywgdW1hIHRheGEgZGUgMSw1JSBhbyBtw6pzIGNvcnJlc3BvbmRlIGEgcXVhbCB0YXhhIHByb3BvcmNpb25hbCBhbnVhbD8iLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-juros-taxa-proporcional-dia.json",
+        "mediaType": "application/json",
+        "sha256": "573ad68f322ef71f55b36e09da3868d9a9e54a888ddbd4a657fafd6fb087dcd4",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTglIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMSUifSx7ImlkIjoiYyIsInRleHQiOiIwLDklIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMyw2JSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJiIiwiaWQiOiJtYXQtanVyb3MtdGF4YS1wcm9wb3JjaW9uYWwtZGlhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBPIHRlbXBvIMOpIDIwLzM2MCBkbyBhbm8gY29tZXJjaWFsLiAyLiBPIHBlcmNlbnR1YWwgw6kgMTglw5cyMC8zNjA9MSU7IGEgY29udmVuw6fDo28gZGUgZGlhcyBmb2kgZXhwbGljaXRhZGEuIiwic3RhdGVtZW50IjoiVXNhbmRvIGFubyBjb21lcmNpYWwgZGUgMzYwIGRpYXMsIHVtYSB0YXhhIHNpbXBsZXMgZGUgMTglIGFvIGFubyBnZXJhIHF1YWwgcGVyY2VudHVhbCBkZSBqdXJvIGVtIDIwIGRpYXM/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-markup-margem.json",
+        "mediaType": "application/json",
+        "sha256": "ae7f6ea72a2b3b8f3d747d840cb8eecdd1003c7b311ce5b660fb8eb138d9cd11",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUiQ5MC4ifSx7ImlkIjoiYiIsInRleHQiOiJSJDEyMC4ifSx7ImlkIjoiYyIsInRleHQiOiJSJDEwMC4ifSx7ImlkIjoiZCIsInRleHQiOiJSJDk2LiJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtbWFya3VwLW1hcmdlbSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gTyBjdXN0byBvY3VwYSA4MCUgZG8gcHJlw6dvIGRlIHZlbmRhLCBqw6EgcXVlIG8gbHVjcm8gw6kgMjAlIGRlc3NhIG1lc21hIHZlbmRhLiAyLiBBc3NpbSAwLDhWPTgwIGUgVj0xMDA7IGF1bWVudGFyIG8gY3VzdG8gZW0gMjAlIGRhcmlhIG1hcmdlbSBtZW5vci4iLCJzdGF0ZW1lbnQiOiJQYXJhIG9idGVyIGx1Y3JvIGVxdWl2YWxlbnRlIGEgMjAlIGRvIHByZcOnbyBkZSB2ZW5kYSwgdW1hIG1lcmNhZG9yaWEgcXVlIGN1c3RhIFIkODAgZGV2ZSBzZXIgdmVuZGlkYSBwb3I6IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-percentual-area.json",
+        "mediaType": "application/json",
+        "sha256": "6c38e0c3e30dca606219f6f406085d6af1ac8ccb40677c557343bc3f17e08d73",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNDQlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMjAlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNDAlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMTQ0JSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJhIiwiaWQiOiJtYXQtcGVyY2VudHVhbC1hcmVhIiwib3JpZ2luS2luZCI6IkFVVE9SQUwiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBBIMOhcmVhIHZhcmlhIGNvbSBvIHF1YWRyYWRvIGRvIGxhZG8uIDIuIE8gZmF0b3Igw6kgMSwywrI9MSw0NCwgZW50w6NvIG8gYXVtZW50byDDqSA0NCU7IDE0NCUgw6kgYSDDoXJlYSBmaW5hbCBlbSByZWxhw6fDo28gw6AgaW5pY2lhbC4iLCJzdGF0ZW1lbnQiOiJPIGxhZG8gZGUgdW0gcXVhZHJhZG8gYXVtZW50YSAyMCUuIFF1YWwgw6kgbyBhdW1lbnRvIHBlcmNlbnR1YWwgZGEgw6FyZWE/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-percentual-erro-em-cadeia.json",
+        "mediaType": "application/json",
+        "sha256": "0b1554d026dc81681f382df3723114bc7112e41bd4436407b2771982a3da5d64",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTEyLDUifSx7ImlkIjoiYiIsInRleHQiOiIxMjUifSx7ImlkIjoiYyIsInRleHQiOiIxODcsNSJ9LHsiaWQiOiJkIiwidGV4dCI6IjEyMCJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJkIiwiaWQiOiJtYXQtcGVyY2VudHVhbC1lcnJvLWVtLWNhZGVpYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSBlc3RpbWF0aXZhIMOpIDEyNSUgZG8gdmFsb3IgcmVhbCwgcG9ydGFudG8gMSwyNVI9MTUwLiAyLiBEaXZpZGluZG8gcG9yIDEsMjUsIFI9MTIwOyBkZXNjb250YXIgMjUlIGRlIDE1MCB1c2FyaWEgYSBiYXNlIGVycmFkYS4iLCJzdGF0ZW1lbnQiOiJVbWEgZXN0aW1hdGl2YSBzdXBlcmEgbyB2YWxvciByZWFsIGVtIDI1JS4gU2UgYSBlc3RpbWF0aXZhIMOpIDE1MCB1bmlkYWRlcywgcXVhbCDDqSBvIHZhbG9yIHJlYWw/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-pontos-percentuais.json",
+        "mediaType": "application/json",
+        "sha256": "396b7cd4be2b2b0aad438a0d4724cd20e9085d42d5a3b5f6442e6ce4c021b85a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMjUlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMyUifSx7ImlkIjoiYyIsInRleHQiOiIyNyUifSx7ImlkIjoiZCIsInRleHQiOiIyMCUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXBvbnRvcy1wZXJjZW50dWFpcyIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSB2YXJpYcOnw6NvIMOpIGRlIDMgcG9udG9zIHBlcmNlbnR1YWlzLiAyLiBFbSByZWxhw6fDo28gYW9zIDEyJSBpbmljaWFpcywgMy8xMj0yNSU7IHBvbnRvcyBwZXJjZW50dWFpcyBlIGNyZXNjaW1lbnRvIHJlbGF0aXZvIHPDo28gbWVkaWRhcyBkaWZlcmVudGVzLiIsInN0YXRlbWVudCI6IlVtYSB0YXhhIHBhc3NvdSBkZSAxMiUgcGFyYSAxNSUuIFF1YWwgZm9pIG8gYXVtZW50byByZWxhdGl2byDDoCB0YXhhIGluaWNpYWw/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-porcentagem-por-conversao.json",
+        "mediaType": "application/json",
+        "sha256": "838b28f336278c459ef684c6f72ef9d35b776e40e28fec4d9d9eb4645cdde1fa",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNyUifSx7ImlkIjoiYiIsInRleHQiOiIyMCUifSx7ImlkIjoiYyIsInRleHQiOiIyOCw1NyUifSx7ImlkIjoiZCIsInRleHQiOiIzNSUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXBvcmNlbnRhZ2VtLXBvci1jb252ZXJzYW8iLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIFRyYW5zZm9ybWUgbyBkZW5vbWluYWRvciAyMCBlbSAxMDAgbXVsdGlwbGljYW5kbyBwb3IgNS4gMi4gQSBmcmHDp8OjbyB2aXJhIDM1LzEwMCwgaXN0byDDqSwgMzUlOyBpbnZlcnRlciBhIHJhesOjbyBtdWRhIG8gdmFsb3IuIiwic3RhdGVtZW50IjoiVW1hIHByb3BvcsOnw6NvIGRlIDcvMjAgY29ycmVzcG9uZGUgYToiLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-prejuizo-recompor.json",
+        "mediaType": "application/json",
+        "sha256": "802411bfc80ce03c84c0db0ab440581f6b3a2d69aa1dcfdd5c1c21066b86ebc8",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjAlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTY24oWUJSJ9LHsiaWQiOiJjIiwidGV4dCI6IjY24oWUJSJ9LHsiaWQiOiJkIiwidGV4dCI6IjQwJSJ9XSwiYXV0aG9yIjoiQ29kZXgg4oCUIGVsYWJvcmHDp8OjbyBlIGNvbmZlcsOqbmNpYSBhc3Npc3RpZGFzIHBvciBJQSBlbSAyMDI2LTExOyBzZW0gcmV2aXPDo28gaHVtYW5hIGluZGVwZW5kZW50ZSIsImNvcnJlY3RPcHRpb24iOiJjIiwiaWQiOiJtYXQtcHJlanVpem8tcmVjb21wb3IiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIERlIGNhZGEgMTAwIHVuaWRhZGVzIGluaWNpYWlzIHJlc3RhbSA2MCwgZSBmYWx0YW0gNDAgcGFyYSByZWN1cGVyYXIuIDIuIE8gZ2FuaG8gbmVjZXNzw6FyaW8gw6kgNDAvNjA9Mi8zPTY24oWUJTsgZWxlIGluY2lkZSBubyBzYWxkbyBtZW5vci4iLCJzdGF0ZW1lbnQiOiJVbSBpbnZlc3RpbWVudG8gZmljdMOtY2lvIHNvZnJlIHBlcmRhIGRlIDQwJS4gUXVlIGdhbmhvIHBlcmNlbnR1YWwgc29icmUgbyBzYWxkbyByZXN0YW50ZSByZWN1cGVyYXJpYSBleGF0YW1lbnRlIG8gdmFsb3IgaW5pY2lhbD8iLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-residuo-percentual.json",
+        "mediaType": "application/json",
+        "sha256": "fafd8ac6bc57425cc0d9627da2bed1d721e1f56f5a6e25de4d1d71e50d97a1dd",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUiQxLjgwMC4ifSx7ImlkIjoiYiIsInRleHQiOiJSJDEuNTAwLiJ9LHsiaWQiOiJjIiwidGV4dCI6IlIkNC41MDAuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUiQyLjAwMC4ifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiZCIsImlkIjoibWF0LXJlc2lkdW8tcGVyY2VudHVhbCIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQXMgZHVhcyBwYXJjZWxhcyB1c2FtIGEgbWVzbWEgYmFzZSBpbmljaWFsIGUgdG90YWxpemFtIDU1JSwgZGVpeGFuZG8gNDUlLiAyLiBTZSA0NSUgZXF1aXZhbGVtIGEgOTAwLCBvIHRvdGFsIMOpIDkwMC8wLDQ1PTIuMDAwIHJlYWlzLiIsInN0YXRlbWVudCI6IkFww7NzIHV0aWxpemFyIDM1JSBkZSB1bSBvcsOnYW1lbnRvIGUgcmVzZXJ2YXIgb3V0cm9zIDIwJSBkbyB2YWxvciBpbmljaWFsLCByZXN0YW0gUiQ5MDAgc2VtIGRlc3RpbmHDp8Ojby4gUXVhbCBlcmEgbyBvcsOnYW1lbnRvIGluaWNpYWw/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGRlIGVzdHVkbyBlbSBtYXRlbcOhdGljYSBlbGVtZW50YXI7IGF1dG9yaWEgZG9zIGl0ZW5zIGRlc3RhIGVkacOnw6NvIMOpIHByw7NwcmlhIGUgYXNzaXN0aWRhIHBvciBJQSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-taxa-a-partir-montante.json",
+        "mediaType": "application/json",
+        "sha256": "3216314128c352a49889aabcfb0cb0cb572173cb1eb881bdbffacccadaa410cf",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMiUifSx7ImlkIjoiYiIsInRleHQiOiIxOCUifSx7ImlkIjoiYyIsInRleHQiOiIxLDglIn0seyJpZCI6ImQiLCJ0ZXh0IjoiOSUifV0sImF1dGhvciI6IkNvZGV4IOKAlCBlbGFib3Jhw6fDo28gZSBjb25mZXLDqm5jaWEgYXNzaXN0aWRhcyBwb3IgSUEgZW0gMjAyNi0xMTsgc2VtIHJldmlzw6NvIGh1bWFuYSBpbmRlcGVuZGVudGUiLCJjb3JyZWN0T3B0aW9uIjoiYSIsImlkIjoibWF0LXRheGEtYS1wYXJ0aXItbW9udGFudGUiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE8ganVybyBhY3VtdWxhZG8gw6kgMzYwIHJlYWlzLiAyLiBQZWxhIGbDs3JtdWxhIEo9Q2l0LCBpPTM2MC8oMi4wMDDDlzkpPTAsMDI9MiUgYW8gbcOqczsgMTglIMOpIG8gdG90YWwgZG8gcGVyw61vZG8uIiwic3RhdGVtZW50IjoiVW0gY2FwaXRhbCBkZSBSJDIuMDAwIGF0aW5nZSBSJDIuMzYwIGFww7NzIDkgbWVzZXMgZW0ganVyb3Mgc2ltcGxlcy4gUXVhbCDDqSBhIHRheGEgbWVuc2FsPyIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EtYXV0b3JhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhdXRvcmlhIGRvcyBpdGVucyBkZXN0YSBlZGnDp8OjbyDDqSBwcsOzcHJpYSBlIGFzc2lzdGlkYSBwb3IgSUEiLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-valor-absoluto-de-queda.json",
+        "mediaType": "application/json",
+        "sha256": "47d7dbc3a3a893ee285dd4a8939c856b0d0b31f9854829b8a6fbdc95ee303c86",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiODUlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTUlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMTcsNjUlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNzUlIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImIiLCJpZCI6Im1hdC12YWxvci1hYnNvbHV0by1kZS1xdWVkYSIsIm9yaWdpbktpbmQiOiJBVVRPUkFMIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gQSByZWR1w6fDo28gYWJzb2x1dGEgw6kgNzUuIDIuIEVtIHJlbGHDp8OjbyBhbyB2YWxvciBpbmljaWFsLCA3NS81MDA9MTUlOyA4NSUgw6kgYSBwYXJjZWxhIHF1ZSBwZXJtYW5lY2V1LiIsInN0YXRlbWVudCI6IlVtYSBxdWFudGlkYWRlIGNhaSBkZSA1MDAgcGFyYSA0MjUuIFF1YWwgw6kgYSByZWR1w6fDo28gcGVyY2VudHVhbD8iLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.mat-votos-validos-base.json",
+        "mediaType": "application/json",
+        "sha256": "2d67b01e586c50531320262dbdd1918612e89fd5a17f92e50535a2516eb1d9af",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiNjAlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiNDUlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiNzUlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiNTAlIn1dLCJhdXRob3IiOiJDb2RleCDigJQgZWxhYm9yYcOnw6NvIGUgY29uZmVyw6puY2lhIGFzc2lzdGlkYXMgcG9yIElBIGVtIDIwMjYtMTE7IHNlbSByZXZpc8OjbyBodW1hbmEgaW5kZXBlbmRlbnRlIiwiY29ycmVjdE9wdGlvbiI6ImEiLCJpZCI6Im1hdC12b3Rvcy12YWxpZG9zLWJhc2UiLCJvcmlnaW5LaW5kIjoiQVVUT1JBTCIsInJlZmVyZW5jZXMiOlsibWF0ZW1hdGljYS1hdXRvcmFsLW1hdGgtb2JtZXAiXSwicmVzb2x1dGlvbiI6IjEuIE9zIHZvdG9zIHbDoWxpZG9zIHPDo28gMS4wMDDiiJIxMDDiiJIxNTA9NzUwLiAyLiBBIHBhcnRpY2lwYcOnw6NvIGRvIGNhbmRpZGF0byDDqSA0NTAvNzUwPTYwJTsgYSBiYXNlIHNvbGljaXRhZGEgbsOjbyBpbmNsdWkgYnJhbmNvcyBlIG51bG9zLiIsInN0YXRlbWVudCI6IkVtIHVtYSBlbGVpw6fDo28gZmljdMOtY2lhIGNvbSAxLjAwMCB2b3RhbnRlcywgaG91dmUgMTAwIHZvdG9zIGJyYW5jb3MgZSAxNTAgbnVsb3MuIFVtIGNhbmRpZGF0byByZWNlYmV1IDQ1MCB2b3Rvcy4gUXVhbCBmb2kgc3VhIHBhcnRpY2lwYcOnw6NvIG5vcyB2b3RvcyB2w6FsaWRvcz8iLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhLWF1dG9yYWwtbWF0aC1vYm1lcCI6eyJjaGVja2VkT24iOiIyMDI2LTExLTExIiwibGVnYWxCYXNpcyI6bnVsbCwibmFtZSI6IklNUEEvT0JNRVAg4oCUIEJhbmNvIGRlIFF1ZXN0w7VlcywgcmVmZXLDqm5jaWEgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYXV0b3JpYSBkb3MgaXRlbnMgZGVzdGEgZWRpw6fDo28gw6kgcHLDs3ByaWEgZSBhc3Npc3RpZGEgcG9yIElBIiwidXJsIjoiaHR0cHM6Ly93d3cub2JtZXAub3JnLmJyL2JhbmNvLmh0bSJ9fX0="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.morato-q12.json",
+        "mediaType": "application/json",
+        "sha256": "2aebb42d1373d7b6734dc30d6331c7cb9310635ac809a72b68364e0bb052f767",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiSSwgSUksIElJSSBlIElWIGVzdMOjbyBjb3JyZXRhcy4ifSx7ImlkIjoiYiIsInRleHQiOiJBcGVuYXMgSSwgSUkgZSBJSUkgZXN0w6NvIGNvcnJldGFzLiJ9LHsiaWQiOiJjIiwidGV4dCI6IkFwZW5hcyBJSSBlIElJSSBlc3TDo28gY29ycmV0YXMuIn0seyJpZCI6ImQiLCJ0ZXh0IjoiQXBlbmFzIEkgZSBJSUkgZXN0w6NvIGNvcnJldGFzLiJ9LHsiaWQiOiJlIiwidGV4dCI6IkFwZW5hcyBJIGUgSVYgZXN0w6NvIGNvcnJldGFzLiJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgQ8OibWFyYSBNdW5pY2lwYWwgZGUgRnJhbmNpc2NvIE1vcmF0byAwMS8yMDI1LCBPZmljaWFsIEFkbWluaXN0cmF0aXZvLCBxdWVzdMOjbyAxMi4gUmVzb2x1w6fDo28gcHLDs3ByaWE6IENvZGV4LCBhc3Npc3RpZGEgcG9yIElBLiIsImNvcnJlY3RPcHRpb24iOiJlIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvbW9yYXRvLWFuc3dlci5wZGYiLCJzaGEyNTYiOiI4MTIxMDYzODliY2FmMGU1YTFmYzYyNGZmMzAxNjc2MTAwNTEwZTExOTY5NTMyYmQ2MDVmZGZhNDdkNjliNGZkIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMzQvYW5leG9zLzgyNTgxMjRiLWQ4NjctNGQzMS05ZTFkLWVkOTcxZjk5NzMxNS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IkPDom1hcmEgTXVuaWNpcGFsIGRlIEZyYW5jaXNjbyBNb3JhdG8gMDEvMjAyNSIsImRlZmluaXRpdmUiOnRydWUsImlkZW50aXR5IjoiYXZhbmNhLW1vcmF0by0yMDI1LWFhL3ExMiIsIm51bWJlciI6IjEyIiwicHJvb2YiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvbW9yYXRvLWFhLXByb29mLnBkZiIsInNoYTI1NiI6IjcwNzVmZmJkODhjOWE0NmYzY2RiMWQzODNhYjE2YzMzNmQ5MjVmZWY3YmFlOWI0ZmQ4NmRiYWFhZTFhNzcxZTYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIzNC9hbmV4b3MvZGZjYWU1NDAtN2FiNS00NmZjLWE3YjktNThlMWNhZTkzMjcwLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhLCBhcnQuIDjCuiwgSVYgZSBUSlBSIEFDIDE0MzczMzItMywgYXBsaWNhZGEgw6AgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGUuIE7Do28gw6kgbGljZW7Dp2EgZXhwcmVzc2EgZGEgQXZhbsOnYSBTUCBuZW0gZ2FyYW50aWEganVyw61kaWNhOyBleGNsdWkgb2JyYXMgZGUgdGVyY2Vpcm9zIGUgbWFudMOpbSBvcmlnZW0vZ2FiYXJpdG8uIiwicGF0aCI6ImRvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJPZmljaWFsIEFkbWluaXN0cmF0aXZvIiwic3RhdHVzIjoiVkFMSUQiLCJ5ZWFyIjoyMDI2fSwiaWQiOiJtb3JhdG8tcTEyIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhIl0sInJlc29sdXRpb24iOiIxLiBDb25mZXJpciBhcyBhZmlybWHDp8O1ZXM6IDExJSBkZSA2MCA9IDYsNjsgOTg3IMOXIDEsMDcgPSAxLjA1NiwwOTsgNzc0IMOXIDAsODAgPSA2MTksMi4gMi4gQSByZWR1w6fDo28gZSBvIGF1bWVudG8gc3VjZXNzaXZvcyBtdWx0aXBsaWNhbSBvIHZhbG9yIHBvciAwLDk1IMOXIDEsMjAgPSAxLDE0LiBBcGVuYXMgSSBlIElWIHPDo28gdmVyZGFkZWlyYXMuIiwic3RhdGVtZW50IjoiQW5hbGlzZSBhcyBhZmlybWF0aXZhcyBhIHNlZ3VpciwgcmVmZXJlbnRlcyBhIHBvcmNlbnRhZ2Vucy4gRW0gc2VndWlkYSwgYXNzaW5hbGUgYSBhbHRlcm5hdGl2YSBjb3JyZXRhOiBJLiAxMSUgZGUgNjAgw6kgaWd1YWwgYSA2LDYuIElJLiBVbSBhdW1lbnRvIGRlIDclIHNvYnJlIDk4NyByZXN1bHRhIGVtIDEwNTAuIElJSS4gODAlIGRlIDc3NCDDqSBleGF0YW1lbnRlIGlndWFsIGEgNjIwLiBJVi4gQW8gcmVkdXppciB1bSB2YWxvciBlbSA1JSBlLCBlbSBzZWd1aWRhLCBhdW1lbnRhciAyMCUgc29icmUgbyBub3ZvIHZhbG9yLCBvIHJlc3VsdGFkbyBzZXLDoSAxNCUgbWFpb3IgcXVlIG8gdmFsb3IgaW5pY2lhbC4iLCJ0b3BpY0lkIjoiTTA0In0sInN0dWR5U291cmNlcyI6eyJtYXRlbWF0aWNhIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTAtMTQiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgTcOzZHVsb3MgZGUgTWF0ZW3DoXRpY2E6IG9wZXJhw6fDtWVzLCBtZWRpZGFzLCBnZW9tZXRyaWEgZSBlc3RhdMOtc3RpY2EgKGFwb2lvIHRlbcOhdGljbykiLCJ1cmwiOiJodHRwczovL3BvcnRhbGRhb2JtZXAuaW1wYS5ici9pbmRleC5waHAvbW9kdWxvL2luZGV4In19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.potim-profmat-q20.json",
+        "mediaType": "application/json",
+        "sha256": "122f1615355d087f00e27aa5f578744effc6bf397132de90ba2074726c488111",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMTAlIn0seyJpZCI6ImIiLCJ0ZXh0IjoiMTUlIn0seyJpZCI6ImMiLCJ0ZXh0IjoiMjAlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjUlIn0seyJpZCI6ImUiLCJ0ZXh0IjoiMzAlIn1dLCJhdXRob3IiOiJBdmFuw6dhIFNQIOKAlCBQcmVmZWl0dXJhIE11bmljaXBhbCBkZSBQb3RpbSDigJQgQ29uY3Vyc28gUMO6YmxpY28gMDEvMjAyNSwgUFJPRkVTU09SIERFIEVEVUNBw4fDg08gQsOBU0lDQSBJSSAtIE1BVEVNw4FUSUNBLCBxdWVzdMOjbzIwLiBSZXNvbHXDp8OjbyBwcsOzcHJpYSBhc3Npc3RpZGEgcG9yIElBOkNvZGV4LiIsImNvcnJlY3RPcHRpb24iOiJjIiwiZXhhbSI6eyJhbnN3ZXIiOnsibm90ZSI6IkdhYmFyaXRvIG9maWNpYWwgZGVmaW5pdGl2bzsgc2XDp8OjbyBlc3BlY8OtZmljYSBkbyBjYXJnbyBlIHJlc3Bvc3RhIGNvbmZlcmlkYXMsIGFudWxhZGFzIGV4Y2x1w61kYXMuIiwicGF0aCI6ImRvc3NpZXIvbWF0ZW1hdGljYS9kb3NzaWVyL3BvdGltLWdhYmFyaXRvLnBkZiIsInNoYTI1NiI6IjA5OTc4ZWUzYTE4NGE0NDc4NTBkYWNhNzhlNGMxZjQzODYyOWNhYzY1ODExYzI2OTBiNWVmNWM1YjNiZWE3ODYiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNzcyNWMyN2QtNjgyNS00NDBiLWI0YmYtNGJmZmQ5NzdjMzhlLnBkZiJ9LCJib2FyZCI6IkF2YW7Dp2EgU1AiLCJib29rbGV0IjoiQ2FkZXJubyBvZmljaWFsIHB1YmxpY2Fkbywgc2VtIGPDs2RpZ28gZGUgdmVyc8OjbyBpbmRpY2FkbyIsImNvbXBldGl0aW9uIjoiUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1wb3RpbS0yMDI1LXByb2ZtYXQvcTIwIiwibnVtYmVyIjoiMjAiLCJwcm9vZiI6eyJub3RlIjoiQ2FkZXJubyBvZmljaWFsOyBjYXJnbyBlIG7Dum1lcm8gY29uZmVyaWRvczsgY2FiZcOnYWxob3MgZSBxdWVicmFzIHJldGlyYWRvcy4gRm9ybWF0b3MgbWF0ZW3DoXRpY29zIHJlbGV2YW50ZXMgY29tcGFyYWRvcyBjb20gcMOhZ2luYXMgcmVuZGVyaXphZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9wb3RpbS1wcm9mbWF0LnBkZiIsInNoYTI1NiI6ImIxNGRlZTU5ZDZjYTE3ZTRmZGJmZGU3NTE1YTQwNzU3ODA3MGY0ZWZhNzdjYmMxNWRlOTNkZDlmMGFiMTUwYzMiLCJ1cmwiOiJodHRwczovL2FuZXhvcy5jZG4uc2VsZWNhby5uZXQuYnIvdXBsb2Fkcy8zMDEvY29uY3Vyc29zLzIyMC9hbmV4b3MvNGIyOThhNDUtMjUyNi00NGNlLTg5M2EtMjc0OGNhYjM3OWJjLnBkZiJ9LCJyZXVzZSI6eyJub3RlIjoiQXZhbGlhw6fDo28gYXNzaXN0aWRhIHByZWV4aXN0ZW50ZSwgYXJ0LjjCuixJViBlIFRKUFIgQUMxNDM3MzMyLTMgYXBsaWNhZGEgYSBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZTsgbsOjbyBhZmlybWEgbGljZW7Dp2EgZXhwcmVzc2EgZGEgYmFuY2EgbmVtIHJldXRpbGl6YSBvYnJhcyBkZSB0ZXJjZWlyb3MgbmVjZXNzw6FyaWFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlBST0ZFU1NPUiBERSBFRFVDQcOHw4NPIELDgVNJQ0EgSUkgLSBNQVRFTcOBVElDQSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoicG90aW0tcHJvZm1hdC1xMjAiLCJvcmlnaW5LaW5kIjoiT1JJR0lOQUxfREVfUFJPVkEiLCJyZWZlcmVuY2VzIjpbIm1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIl0sInJlc29sdXRpb24iOiIxLiBTZSBhIHJlbmRhIGF0dWFsIMOpIFMsIG9zIGdhc3RvcyBlc3NlbmNpYWlzIHPDo28gMCw4NFMuIEEgcmVuZGEgbm92YSBOIHByZWNpc2Egc2F0aXNmYXplciAwLDcwTj0wLDg0Uy4gMi4gTj0xLDJTLCBwb3J0YW50byBvIGF1bWVudG8gbmVjZXNzw6FyaW8gw6kgMjAlLCBvcMOnw6NvIEM7IGEgcXVlc3TDo28gZml4YSBvcyBnYXN0b3MgZW0gdmFsb3IgYWJzb2x1dG8uIiwic3RhdGVtZW50IjoiSnV2ZW5hbCBlc3TDoSBhc3Npc3RpbmRvIHNldSBwb2RjYXN0IGZhdm9yaXRvIHNvYnJlIGZpbmFuw6dhcyBwZXNzb2FpcyBlIGdvc3RvdSBkZSB1bSB0cmVjaG8gZW0gcXVlIG8gYXByZXNlbnRhZG9yIGFmaXJtYSBxdWUgbyBpZGVhbCDDqSBxdWUgb3MgZ2FzdG9zIGVzc2VuY2lhaXMgcmVwcmVzZW50ZW0sIG5vIG3DoXhpbW8sIDcwJSBkbyBzYWzDoXJpby4gQXR1YWxtZW50ZSwgSnV2ZW5hbCBjb21wcm9tZXRlIDg0JSBkZSBzdWEgcmVuZGEgbWVuc2FsIGNvbSBnYXN0b3MgZXNzZW5jaWFpcy4gU2VtIGFsdGVyYXIgc2V1cyBnYXN0b3MgYXR1YWlzLCBwYXJhIHF1ZSBlc3NlcyBnYXN0b3MgcGFzc2VtIGEgcmVwcmVzZW50YXIgZXhhdGFtZW50ZSA3MCUgZGUgc2V1IHNhbMOhcmlvLCBlbGUgcHJlY2lzYXJpYSByZWNlYmVyIHVtIGF1bWVudG8gbcOtbmltbywgZW0gcmVsYcOnw6NvIGFvIHNhbMOhcmlvIGF0dWFsLCBkZSBfX19fLiBBc3NpbmFsZSBhIGFsdGVybmF0aXZhIGNvcnJldGEgcXVlIGNvbXBsZXRhIGEgbGFjdW5hIGFjaW1hLiIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2Etb2ZpY2lhbC1tYXRoLW9ibWVwIjp7ImNoZWNrZWRPbiI6IjIwMjYtMTEtMTEiLCJsZWdhbEJhc2lzIjpudWxsLCJuYW1lIjoiSU1QQS9PQk1FUCDigJQgQmFuY28gZGUgUXVlc3TDtWVzLCByZWZlcsOqbmNpYSBjb21wbGVtZW50YXIgZGUgZXN0dWRvIGVtIG1hdGVtw6F0aWNhIGVsZW1lbnRhcjsgYSBxdWVzdMOjbyDDqSB0cmFuc2NyaXRhIGRlIHByb3ZhIG9maWNpYWwsIGN1amEgb3JpZ2VtIGNvbnN0YSBkYSBwcm92ZW5pw6puY2lhIGRvIGl0ZW0iLCJ1cmwiOiJodHRwczovL3d3dy5vYm1lcC5vcmcuYnIvYmFuY28uaHRtIn19fQ=="
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.potim-profmat-q46.json",
+        "mediaType": "application/json",
+        "sha256": "4a7f542b20467570d2bfcc00c4cfb72cbbd8b649b05845458844fce35f301f7a",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiUiQgODEsMDAifSx7ImlkIjoiYiIsInRleHQiOiJSJCA4NCwwMCJ9LHsiaWQiOiJjIiwidGV4dCI6IlIkIDg1LDAwIn0seyJpZCI6ImQiLCJ0ZXh0IjoiUiQgODcsMDAifSx7ImlkIjoiZSIsInRleHQiOiJSJCA5MCwwMCJ9XSwiYXV0aG9yIjoiQXZhbsOnYSBTUCDigJQgUHJlZmVpdHVyYSBNdW5pY2lwYWwgZGUgUG90aW0g4oCUIENvbmN1cnNvIFDDumJsaWNvIDAxLzIwMjUsIFBST0ZFU1NPUiBERSBFRFVDQcOHw4NPIELDgVNJQ0EgSUkgLSBNQVRFTcOBVElDQSwgcXVlc3TDo280Ni4gUmVzb2x1w6fDo28gcHLDs3ByaWEgYXNzaXN0aWRhIHBvciBJQTpDb2RleC4iLCJjb3JyZWN0T3B0aW9uIjoiYSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJHYWJhcml0byBvZmljaWFsIGRlZmluaXRpdm87IHNlw6fDo28gZXNwZWPDrWZpY2EgZG8gY2FyZ28gZSByZXNwb3N0YSBjb25mZXJpZGFzLCBhbnVsYWRhcyBleGNsdcOtZGFzLiIsInBhdGgiOiJkb3NzaWVyL21hdGVtYXRpY2EvZG9zc2llci9wb3RpbS1nYWJhcml0by5wZGYiLCJzaGEyNTYiOiIwOTk3OGVlM2ExODRhNDQ3ODUwZGFjYTc4ZTRjMWY0Mzg2MjljYWM2NTgxMWMyNjkwYjVlZjVjNWIzYmVhNzg2IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zLzc3MjVjMjdkLTY4MjUtNDQwYi1iNGJmLTRiZmZkOTc3YzM4ZS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIOKAlCBDb25jdXJzbyBQw7pibGljbyAwMS8yMDI1IiwiZGVmaW5pdGl2ZSI6dHJ1ZSwiaWRlbnRpdHkiOiJhdmFuY2EtcG90aW0tMjAyNS1wcm9mbWF0L3E0NiIsIm51bWJlciI6IjQ2IiwicHJvb2YiOnsibm90ZSI6IkNhZGVybm8gb2ZpY2lhbDsgY2FyZ28gZSBuw7ptZXJvIGNvbmZlcmlkb3M7IGNhYmXDp2FsaG9zIGUgcXVlYnJhcyByZXRpcmFkb3MuIEZvcm1hdG9zIG1hdGVtw6F0aWNvcyByZWxldmFudGVzIGNvbXBhcmFkb3MgY29tIHDDoWdpbmFzIHJlbmRlcml6YWRhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcG90aW0tcHJvZm1hdC5wZGYiLCJzaGEyNTYiOiJiMTRkZWU1OWQ2Y2ExN2U0ZmRiZmRlNzUxNWE0MDc1NzgwNzBmNGVmYTc3Y2JjMTVkZTkzZGQ5ZjBhYjE1MGMzIiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zLzRiMjk4YTQ1LTI1MjYtNDRjZS04OTNhLTI3NDhjYWIzNzliYy5wZGYifSwicmV1c2UiOnsibm90ZSI6IkF2YWxpYcOnw6NvIGFzc2lzdGlkYSBwcmVleGlzdGVudGUsIGFydC44wrosSVYgZSBUSlBSIEFDMTQzNzMzMi0zIGFwbGljYWRhIGEgcXVlc3TDo28gb2ZpY2lhbCBhdXRvc3N1ZmljaWVudGU7IG7Do28gYWZpcm1hIGxpY2Vuw6dhIGV4cHJlc3NhIGRhIGJhbmNhIG5lbSByZXV0aWxpemEgb2JyYXMgZGUgdGVyY2Vpcm9zIG5lY2Vzc8Ohcmlhcy4iLCJwYXRoIjoiZG9zc2llci9tYXRlbWF0aWNhL2Rvc3NpZXIvcmV1c2UtYXNzZXNzbWVudC5tZCIsInNoYTI1NiI6ImY1MjBjZWM1OWJlMWFiOWYzNmZlMTdjZWYxMDMzZTJlMjMwN2ExNDdjMDJkMGY5NzI1NmExZDVmZDdkZDA0ZGQiLCJ1cmwiOiJodHRwczovL3d3dzIuY2FtYXJhLmxlZy5ici9sZWdpbi9mZWQvbGVpLzE5OTgvbGVpLTk2MTAtMTktZmV2ZXJlaXJvLTE5OTgtMzY1Mzk5LW5vcm1hYXR1YWxpemFkYS1wbC5odG1sIn0sInJvbGUiOiJQUk9GRVNTT1IgREUgRURVQ0HDh8ODTyBCw4FTSUNBIElJIC0gTUFURU3DgVRJQ0EiLCJzdGF0dXMiOiJWQUxJRCIsInllYXIiOjIwMjZ9LCJpZCI6InBvdGltLXByb2ZtYXQtcTQ2Iiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhLW9maWNpYWwtbWF0aC1vYm1lcCJdLCJyZXNvbHV0aW9uIjoiMS4gT3MgdHLDqnMgY2FkZXJub3MgY3VzdGFtIDPDlzMwPTkwIHJlYWlzIGFudGVzIGRvIGRlc2NvbnRvLiAyLiBQYWdhciA5MCUgZGVzc2UgdG90YWwgZMOhIDkww5cwLDk9ODEgcmVhaXMsIGFsdGVybmF0aXZhIEE7IG8gZGVzY29udG8gw6kgOSByZWFpcy4iLCJzdGF0ZW1lbnQiOiJBbmEgZm9pIGEgdW1hIHBhcGVsYXJpYSBjb21wcmFyIGNhZGVybm9zLiBDYWRhIGNhZGVybm8gY3VzdGF2YSBSJCAzMCwwMC4gQ29tbyBlbGEgY29tcHJvdSAzIGNhZGVybm9zLCBhIGxvamEgb2ZlcmVjZXUgdW0gZGVzY29udG8gZGUgMTAlIHNvYnJlIG8gdmFsb3IgdG90YWwgZGEgY29tcHJhLiBRdWFudG8gQW5hIHBhZ291IGFvIGZpbmFsLCBqw6EgY29tIG8gZGVzY29udG8/IiwidG9waWNJZCI6Ik0wNCJ9LCJzdHVkeVNvdXJjZXMiOnsibWF0ZW1hdGljYS1vZmljaWFsLW1hdGgtb2JtZXAiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMS0xMSIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBCYW5jbyBkZSBRdWVzdMO1ZXMsIHJlZmVyw6puY2lhIGNvbXBsZW1lbnRhciBkZSBlc3R1ZG8gZW0gbWF0ZW3DoXRpY2EgZWxlbWVudGFyOyBhIHF1ZXN0w6NvIMOpIHRyYW5zY3JpdGEgZGUgcHJvdmEgb2ZpY2lhbCwgY3VqYSBvcmlnZW0gY29uc3RhIGRhIHByb3ZlbmnDqm5jaWEgZG8gaXRlbSIsInVybCI6Imh0dHBzOi8vd3d3Lm9ibWVwLm9yZy5ici9iYW5jby5odG0ifX19"
+      },
+      {
+        "path": "sources/admin.2026-11.M04.s.potim-se-q11.json",
+        "mediaType": "application/json",
+        "sha256": "bb53d40f955c2c08b13fd17bb65e5e38f126fb0ca2c161001757fed4c9fd3308",
+        "base64": "eyJlZGl0b3JpYWwiOnsiYWx0ZXJuYXRpdmVzIjpbeyJpZCI6ImEiLCJ0ZXh0IjoiMzAwJSJ9LHsiaWQiOiJiIiwidGV4dCI6IjIwMCUifSx7ImlkIjoiYyIsInRleHQiOiIyMzAlIn0seyJpZCI6ImQiLCJ0ZXh0IjoiMjQ1LDg3JSJ9LHsiaWQiOiJlIiwidGV4dCI6IjI2MCw4NyUifV0sImF1dGhvciI6IkF2YW7Dp2EgU1Ag4oCUIFByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIDAxLzIwMjUsIFNlY3JldMOhcmlvIGRlIEVzY29sYSwgcXVlc3TDo28gMTEuIFJlc29sdcOnw6NvIHByw7NwcmlhOiBDb2RleCwgYXNzaXN0aWRhIHBvciBJQS4iLCJjb3JyZWN0T3B0aW9uIjoiZSIsImV4YW0iOnsiYW5zd2VyIjp7Im5vdGUiOiJGb250ZSBwcmltw6FyaWEgb2ZpY2lhbDsgY2FkZXJuby9jYXJnby9uw7ptZXJvIGUgZ2FiYXJpdG8gZGVmaW5pdGl2byBjb25mZXJpZG9zIHBhcmEgZXN0YSBzZWxlw6fDo28gYXNzaXN0aWRhLiIsInBhdGgiOiJkb3NzaWVyL3BvdGltLWFuc3dlci5wZGYiLCJzaGEyNTYiOiIwOTk3OGVlM2ExODRhNDQ3ODUwZGFjYTc4ZTRjMWY0Mzg2MjljYWM2NTgxMWMyNjkwYjVlZjVjNWIzYmVhNzg2IiwidXJsIjoiaHR0cHM6Ly9hbmV4b3MuY2RuLnNlbGVjYW8ubmV0LmJyL3VwbG9hZHMvMzAxL2NvbmN1cnNvcy8yMjAvYW5leG9zLzc3MjVjMjdkLTY4MjUtNDQwYi1iNGJmLTRiZmZkOTc3YzM4ZS5wZGYifSwiYm9hcmQiOiJBdmFuw6dhIFNQIiwiYm9va2xldCI6IkNhZGVybm8gb2ZpY2lhbCBwdWJsaWNhZG8sIHNlbSBjw7NkaWdvIGRlIHZlcnPDo28gaW5kaWNhZG8iLCJjb21wZXRpdGlvbiI6IlByZWZlaXR1cmEgTXVuaWNpcGFsIGRlIFBvdGltIDAxLzIwMjUiLCJkZWZpbml0aXZlIjp0cnVlLCJpZGVudGl0eSI6ImF2YW5jYS1wb3RpbS0yMDI1LXNlL3ExMSIsIm51bWJlciI6IjExIiwicHJvb2YiOnsibm90ZSI6IkZvbnRlIHByaW3DoXJpYSBvZmljaWFsOyBjYWRlcm5vL2NhcmdvL27Dum1lcm8gZSBnYWJhcml0byBkZWZpbml0aXZvIGNvbmZlcmlkb3MgcGFyYSBlc3RhIHNlbGXDp8OjbyBhc3Npc3RpZGEuIiwicGF0aCI6ImRvc3NpZXIvcG90aW0tc2UtcHJvb2YucGRmIiwic2hhMjU2IjoiMGE0MmMxMTcyMDEyZDc1MjQ5ZjJiZDIyODE2YzhlNzBjMjAzZmQ1Mzc3NzlmMjNhZTUwZmZkOTZlMDhmYzk0YyIsInVybCI6Imh0dHBzOi8vYW5leG9zLmNkbi5zZWxlY2FvLm5ldC5ici91cGxvYWRzLzMwMS9jb25jdXJzb3MvMjIwL2FuZXhvcy8zMTE1OGQxYy0xYWYyLTQ5NzEtYjgzMy0yOTI0NmZmNGNlYzQucGRmIn0sInJldXNlIjp7Im5vdGUiOiJBdmFsaWHDp8OjbyBhc3Npc3RpZGEsIGFydC4gOMK6LCBJViBlIFRKUFIgQUMgMTQzNzMzMi0zLCBhcGxpY2FkYSDDoCBxdWVzdMOjbyBvZmljaWFsIGF1dG9zc3VmaWNpZW50ZS4gTsOjbyDDqSBsaWNlbsOnYSBleHByZXNzYSBkYSBBdmFuw6dhIFNQIG5lbSBnYXJhbnRpYSBqdXLDrWRpY2E7IGV4Y2x1aSBvYnJhcyBkZSB0ZXJjZWlyb3MgZSBtYW50w6ltIG9yaWdlbS9nYWJhcml0by4iLCJwYXRoIjoiZG9zc2llci9yZXVzZS1hc3Nlc3NtZW50Lm1kIiwic2hhMjU2IjoiZjUyMGNlYzU5YmUxYWI5ZjM2ZmUxN2NlZjEwMzNlMmUyMzA3YTE0N2MwMmQwZjk3MjU2YTFkNWZkN2RkMDRkZCIsInVybCI6Imh0dHBzOi8vd3d3Mi5jYW1hcmEubGVnLmJyL2xlZ2luL2ZlZC9sZWkvMTk5OC9sZWktOTYxMC0xOS1mZXZlcmVpcm8tMTk5OC0zNjUzOTktbm9ybWFhdHVhbGl6YWRhLXBsLmh0bWwifSwicm9sZSI6IlNlY3JldMOhcmlvIGRlIEVzY29sYSIsInN0YXR1cyI6IlZBTElEIiwieWVhciI6MjAyNn0sImlkIjoicG90aW0tc2UtcTExIiwib3JpZ2luS2luZCI6Ik9SSUdJTkFMX0RFX1BST1ZBIiwicmVmZXJlbmNlcyI6WyJtYXRlbWF0aWNhIl0sInJlc29sdXRpb24iOiIxLiBSZXByZXNlbnRhciBvIHZhbG9yIGluaWNpYWwgcG9yIDEwMDogYXDDs3MgbyBwcmltZWlybyBhdW1lbnRvIGVsZSB2YWxlIDExNTsgbyB2YWxvciBmaW5hbCB0cmlwbGljYWRvIMOpIDMwMC4gMi4gTyB2YWxvciBmaW5hbCBjb21vIHBvcmNlbnRhZ2VtIGRvIHZhbG9yIGFww7NzIG8gcHJpbWVpcm8gYXVtZW50byDDqSAzMDAgw7cgMTE1IMOXIDEwMCA9IDI2MCw4Njk14oCmJSwgYXByb3hpbWFkYW1lbnRlIDI2MCw4NyUuIE7Do28gw6kgbyBwZXJjZW50dWFsIGRlIGF1bWVudG8gc29icmUgMTE1LCBxdWUgc2VyaWEgb3V0cm8gY8OhbGN1bG8uIiwic3RhdGVtZW50IjoiR2FyY2lhIGZleiB1bWEgcGVzcXVpc2EgcmVjZW50ZW1lbnRlIGUgaWRlbnRpZmljb3UgcXVlIG8gcHJlw6dvIGRlIHVtIGRldGVybWluYWRvIHByb2R1dG8gc29mcmV1IHVtIGF1bWVudG8gZGUgMTUlIGUsIGVtIHVtIGludGVydmFsbyBkZSB1bWEgc2VtYW5hLCBwYXNzb3UgcG9yIHVtIG5vdm8gYXVtZW50bywgbm8gcXVhbCBzZXUgdmFsb3IgdHJpcGxpY291IGVtIHJlbGHDp8OjbyBhbyB2YWxvciBpbmljaWFsLiBOZXNzZSBjb250ZXh0bywgcXVhbCDDqSBvIHZhbG9yIGZpbmFsIChhcMOzcyBvIHNlZ3VuZG8gYXVtZW50bykgZXhwcmVzc28gZW0gcG9yY2VudGFnZW0gZG8gdmFsb3IgYXDDs3MgbyBwcmltZWlybyBhdW1lbnRvPyBBc3NpbmFsZSBhIGFsdGVybmF0aXZhIHF1ZSBpbmRpY2EgYSByZXNwb3N0YSBjb3JyZXRhLiIsInRvcGljSWQiOiJNMDQifSwic3R1ZHlTb3VyY2VzIjp7Im1hdGVtYXRpY2EiOnsiY2hlY2tlZE9uIjoiMjAyNi0xMC0xNCIsImxlZ2FsQmFzaXMiOm51bGwsIm5hbWUiOiJJTVBBL09CTUVQIOKAlCBNw7NkdWxvcyBkZSBNYXRlbcOhdGljYTogb3BlcmHDp8O1ZXMsIG1lZGlkYXMsIGdlb21ldHJpYSBlIGVzdGF0w61zdGljYSAoYXBvaW8gdGVtw6F0aWNvKSIsInVybCI6Imh0dHBzOi8vcG9ydGFsZGFvYm1lcC5pbXBhLmJyL2luZGV4LnBocC9tb2R1bG8vaW5kZXgifX19"
+      }
+    ]
+  },
+  "keys": [
+    "admin.2026-11.M04.s.cacapava-profmat-q14",
+    "admin.2026-11.M04.s.cacapava-profmat-q20",
+    "admin.2026-11.M04.s.mat-aumento-e-volta",
+    "admin.2026-11.M04.s.mat-desconto-ou-valor-fixo",
+    "admin.2026-11.M04.s.mat-desconto-receita-fixa",
+    "admin.2026-11.M04.s.mat-erro-percentual-medida",
+    "admin.2026-11.M04.s.mat-estoque-perda-base-remanescente",
+    "admin.2026-11.M04.s.mat-imposto-embutido",
+    "admin.2026-11.M04.s.mat-inflacao-salario-real",
+    "admin.2026-11.M04.s.mat-juros-compara-prazos",
+    "admin.2026-11.M04.s.mat-juros-taxa-anual",
+    "admin.2026-11.M04.s.mat-juros-taxa-proporcional-dia",
+    "admin.2026-11.M04.s.mat-markup-margem",
+    "admin.2026-11.M04.s.mat-percentual-area",
+    "admin.2026-11.M04.s.mat-percentual-erro-em-cadeia",
+    "admin.2026-11.M04.s.mat-pontos-percentuais",
+    "admin.2026-11.M04.s.mat-porcentagem-por-conversao",
+    "admin.2026-11.M04.s.mat-prejuizo-recompor",
+    "admin.2026-11.M04.s.mat-residuo-percentual",
+    "admin.2026-11.M04.s.mat-taxa-a-partir-montante",
+    "admin.2026-11.M04.s.mat-valor-absoluto-de-queda",
+    "admin.2026-11.M04.s.mat-votos-validos-base",
+    "admin.2026-11.M04.s.morato-q12",
+    "admin.2026-11.M04.s.potim-profmat-q20",
+    "admin.2026-11.M04.s.potim-profmat-q46",
+    "admin.2026-11.M04.s.potim-se-q11"
+  ]
+}

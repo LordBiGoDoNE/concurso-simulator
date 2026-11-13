@@ -16,5 +16,6 @@ public class DecisionRow {
     @Column(name="decided_at", nullable=false) Instant at;
     @Column(nullable=false, length=300) String checklist;
     @Column(nullable=false, length=4000) String rationale;
+    @Column(name="review_kind", length=16) String reviewKind;
     protected DecisionRow() {}
 }

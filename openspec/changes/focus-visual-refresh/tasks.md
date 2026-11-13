@@ -27,9 +27,9 @@ abaixo estão implementados e verificados localmente em
 
 ## 3. Montagem e realização (depende de 1)
 
-- [ ] 3.1 Aplicar Foco à montagem do simulado: etapas, campos com borda de 3:1, resumo lateral e barra fixa no celular.
-- [ ] 3.2 Aplicar Foco à realização: enunciado de 18 a 19px, alternativas em cartão, mapa com estados por forma e legenda, rodapé de navegação no celular.
-- [ ] 3.3 Concluir as regressões, incluindo a ausência de gabarito durante a realização nos dois temas, e a documentação.
+- [x] 3.1 Aplicar Foco à montagem do simulado: etapas, campos com borda de 3:1, resumo lateral e barra fixa no celular.
+- [x] 3.2 Aplicar Foco à realização: enunciado de 18 a 19px, alternativas em cartão, mapa com estados por forma e legenda, rodapé de navegação no celular.
+- [x] 3.3 Concluir as regressões, incluindo a ausência de gabarito durante a realização nos dois temas, e a documentação.
 
 ## 4. Resultado e histórico (depende de 1 e 3)
 

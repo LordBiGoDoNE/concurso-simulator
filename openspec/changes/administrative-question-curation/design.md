@@ -65,16 +65,18 @@ Tela para filtrar, revisar a prévia e confirmar um lote; sem edição de conte�
 - [Aprovação em massa mal selecionada] → prévia obrigatória, limite por lote, recibo e origem da revisão visíveis.
 - [Exposição de gabaritos] → somente rotas ADM no-store; rotas de estudante inalteradas; testes de cadeia de segurança real.
 - [Replay/resposta perdida] → nonce e recibo idempotente, como na importação.
-- [Lote tudo-ou-nada pode frustrar lotes grandes] → limite de 100 e prévia reexecutável; alternativa parcial fica como questão em aberto.
+- [Lote tudo-ou-nada pode frustrar lotes grandes] → limite de 100 e prévia reexecutável (decisão 1).
 - [Histórico sem origem da revisão] → nulo explícito "não informado", nunca inferido.
 
 ## Migration Plan
 
-Nova migração após a V15 da #173 (número final coordenado na integração): coluna `qb_decision.review_kind`, tabela de recibos de decisões em lote. Sem alterar migrações versionadas nem dados históricos. Rollback operacional: revogar permissão ADM; sem down migration.
+Migrações V16 e V17 após a V15 da #173 (número final reconferido na integração): coluna `qb_decision.review_kind`, tabela de recibos de decisões em lote. Sem alterar migrações versionadas nem dados históricos. Rollback operacional: revogar permissão ADM; sem down migration.
 
-## Open Questions
+## Decisões das questões em aberto (usuário, 2026-11-12)
 
-1. Lote parcial (aplicar os itens válidos e listar os demais) em vez de tudo-ou-nada?
-2. Limite do lote de decisões: manter 100 ou permitir um recibo de importação inteiro?
-3. Incluir RETURN_TO_DRAFT/WITHDRAW no lote já na primeira entrega?
-4. Marcar o acervo da #173 como `AI_ONLY` na aprovação (proposto) — confirmar.
+1. **Lote tudo-ou-nada.** Qualquer divergência entre prévia e aplicação recusa o lote inteiro e devolve os itens divergentes para nova prévia; sem aplicação parcial.
+2. **Limite de 100 itens por lote.** Um recibo de importação tem no máximo 100 questões (teto do pacote), então um recibo inteiro sempre cabe no limite.
+3. **Somente SUBMIT e APPROVE na primeira entrega.** RETURN_TO_DRAFT e WITHDRAW continuam disponíveis pela CLI local e podem entrar no lote depois, por proposta própria.
+4. **Acervo da #173 marcado `AI_ONLY`** na aprovação.
+
+Numeração das migrações: V16 (`qb_decision.review_kind`) e V17 (recibos de decisões em lote), após a V15 da #173; o número final é reconferido na integração com a `main`.

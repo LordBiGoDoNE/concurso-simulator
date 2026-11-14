@@ -54,7 +54,7 @@ Expansão 2026-11 carregada e verificada em 2026-11-13 (#220); conjuntos de outu
 
 
 - [x] 5.1 Preparar o pacote do acervo aprovado a partir da main da release, com contagens/digests calculados e remapeamento R1.
-- [x] 5.2 Carregar pelo fluxo administrativo existente (importação e decisões em lote) no banco de produção, por HTTPS.
+- [x] 5.2 Carregar pelo fluxo administrativo existente (importação e decisões em lote) no banco de produção, pelo loopback do host (sem passar pela internet), com o lock do operador.
 - [x] 5.3 Conferir idempotência, linhagem, finalidade e ausência de contas/sessões/tentativas do PC.
 - [x] 5.4 Validar simulado, prática por assunto e revisão nos dois cargos; docs do grupo.
 
@@ -70,10 +70,10 @@ Implementado em 2026-11-13; 6.1–6.4 verificados na VPS, inclusive troca de rel
 
 ## 7. Abertura e gate — depende de 1–6
 
-- [ ] 7.1 Revisão final de código (Opus 5.5 medium, `spec-reviewer`), triagem e evidências em `spec-review.json`/`spec-review.md`.
-- [ ] 7.2 PR `[SPEC]` da épica para `main` com autorização específica de merge.
-- [ ] 7.3 Corte: release da main em produção, remoção do acesso HTTP pelo IP e da restrição do vhost; volume antigo preservado até decisão do usuário.
-- [ ] 7.4 Checklist público (portas, TLS, fluxos em 390/1280 px, Google, acervo, reboot) e issue atualizada com verificado × integrado.
+- [x] 7.1 Revisão final de código (Opus 5.5 medium, `spec-reviewer`), triagem e evidências em `spec-review.json`/`spec-review.md`.
+- [x] 7.2 PR `[SPEC]` da épica para `main` com autorização específica de merge.
+- [x] 7.3 Corte: release da main em produção, `promote` (sai do modo ensaio; `rehearsal: false`), remoção do acesso HTTP pelo IP e da restrição do vhost; volume antigo preservado até decisão do usuário.
+- [x] 7.4 Checklist público (portas, TLS, fluxos principais em 390 px e desktop, acervo) e issue atualizada com verificado × integrado. Google e reboot pós-abertura ficam na #221.
 
 Cada grupo inclui testes e documentação. Dependências reais seguem Stacks
 conforme AGENTS.md. Nenhum merge, publicação ou exclusão de dados é autorizado

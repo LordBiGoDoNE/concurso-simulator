@@ -265,6 +265,6 @@ decisão.
    distintas; usar os mecanismos existentes, sem aprovação pelo startup ou HTTP.
 4. Entregar conteúdo conferido para teste local preservando tentativas e registrando
    seleção/fingerprints/digests/destino. Não declarar os grupos completos antes disso.
-5. Depois do teste, cumprir revisões independentes e gate cumulativo com o modelo
-   exigido em AGENTS (`openai/gpt-6.1-sol#xhigh`), em contexto novo. Nenhuma revisão
+5. Depois do teste, cumprir as revisões conforme `~/.claude/rules/revisao-e-integracao.md`
+   (exigência SOL original substituída em 2026-11-17), em contexto novo. Nenhuma revisão
    desse tipo foi executada. Publicação/merge/deploy não estão autorizados pelo commit.

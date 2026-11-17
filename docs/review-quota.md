@@ -5,8 +5,8 @@ medir nem registrar cota nas próximas revisões, nem pedir pausa de outros usos
 para essa finalidade. As instruções abaixo descrevem o procedimento anterior,
 sem obrigação ativa de coleta/comparação. Scripts, testes e observações antigas
 permanecem preservados; não reinterpretar sua ausência futura como consumo zero.
-Continuam válidas as exigências de revisão independente SOL 6.1 xhigh, triagem,
-testes, evidências e autorização de integração em docs/architecture/spec-review.md.
+Revisão, triagem, testes, evidências e autorização de integração vigentes estão em
+`~/.claude/rules/revisao-e-integracao.md`; `docs/architecture/spec-review.md` é histórico.
 
 ## Procedimento anterior — preservado como histórico
 

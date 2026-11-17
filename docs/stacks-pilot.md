@@ -1,5 +1,9 @@
 # GitHub Stacks — padrão de tarefas dependentes e evidência do piloto
 
+> **HISTÓRICO — não é regra vigente.** Desde 2026-11-17, tarefas dependentes usam PRs
+> encadeados comuns, sem `gh stack` (`~/.claude/rules/openspec-e-branches.md`). Este
+> documento preserva a evidência do piloto e da adoção em question-bank.
+
 ## Escopo e autorização
 
 O usuário aprovou o piloto e a proposta #31, integrada somente em `epic/question-bank`

@@ -14,27 +14,12 @@ context: |
   Versões escolhidas pelo usuário: Java 25 LTS e PostgreSQL 18.
   Build do backend: Gradle Wrapper 9.8.0 com Kotlin DSL, não Maven.
   monólito modular, API REST/OpenAPI, frontend React/TypeScript/Vite proposto.
-  Trabalhe por mudanças pequenas, branches e PRs; nunca faça merge sem aprovação.
-  Padrão obrigatório: epic/<change-name> integra a spec; task/<change-name>/<assunto>
-  implementa uma tarefa ou grupo coeso com testes e PR destinado à épica.
-  Dependências aguardam integração ou ficam em PR de rascunho explicitamente bloqueado.
-  Issue da spec reúne checklist e PRs; revisão final da épica para main é integrada.
-  Ao criar uma spec, criar também sua issue no GitHub, evitando duplicidade.
-  Proposta e tarefas apontam para a issue; a issue aponta para os artefatos na branch da spec.
-  Ao concluir um planejamento com escopo definido, formalizar primeiro spec e issue,
-  apresentar os links e grupos de tarefas e solicitar confirmação explícita antes
-  de iniciar a implementação, incluindo quais grupos estão autorizados.
-  Aprovar o planejamento ou autorizar criar/publicar spec, issue ou documentação
-  não autoriza implementar. Encerrar a etapa documental nesse ponto de confirmação,
-  sem iniciar código, migrações ou cargas de dados.
-  A reformulação foi entregue pelo #133; epic/application-reformulation é histórica.
-  Novas specs partem de main atualizada, integram tarefas em epic/<change-name>
-  e abrem PR final [SPEC] diretamente para main, com gate cumulativo independente
-  e autorização específica de merge. Não reutilizar a épica geral encerrada.
+  Processo (épicas, tarefas, PRs, issue, autorização, revisão, teste local,
+  hotfix, deploy): regras globais em ~/.claude/rules e AGENTS.md, nessa precedência.
+  Tarefas de cada spec são organizadas em grupos coesos; uma única confirmação
+  de início cobre todos os grupos da spec.
   Roadmap e decisões pendentes: docs/application-reformulation.md.
-  CI não publica previews. Preview estático é workflow_dispatch manual com branch
-  informada como input e workflow executado a partir de stable. main não publica
-  a stack no Pages. Consulte AGENTS.md para limites da automação e do gate.
+  Site estático, Pages e previews: seção própria do AGENTS.md.
   Questões parametrizadas e correções precisam ser calculadas no backend,
   com versão, parâmetros e ordem de alternativas preservados por tentativa.
   Não exponha gabaritos durante simulados nem atribua questões autorais às

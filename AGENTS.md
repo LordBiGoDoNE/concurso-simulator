@@ -52,4 +52,4 @@ Este arquivo só **detalha** o que é próprio do projeto e registra as **exceç
 - Primeira épica combinada: `epic/question-bank-expansion-curation` (#173 + #177).
 - Execução contínua autorizada para `optional-google-identity` e a rodada inicial de question-bank (1.2, 1.3, 2.1–2.3 sobre #38) antecedem a regra global de autorização única por spec.
 - Artefatos de specs abertas antes de 2026-11-17 (proposal/design/tasks) que citam Stacks, SOL, lotes ou `spec-review.json` registram o processo da época; a execução restante dessas specs segue as regras globais vigentes.
-- Branches e commits históricos são preservados.
+- Commits e PRs históricos são preservados. Branches seguem `revisao-e-integracao.md` (seção 8): as já contidas na `main` são apagadas no encerramento; `stable` e `pages-store` são permanentes.

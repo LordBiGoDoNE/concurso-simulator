@@ -34,13 +34,13 @@ gerados.
 
 ## 3. Informática I06–I10 — depende de 2
 
-- [ ] 3.1 Aprofundar I06 (funções cobradas, com sintaxe, exemplo e resultado; erros).
-- [ ] 3.2 Aprofundar I07 (tabela dinâmica, Análise Rápida, tipos de gráfico,
+- [x] 3.1 Aprofundar I06 (funções cobradas, com sintaxe, exemplo e resultado; erros).
+- [x] 3.2 Aprofundar I07 (tabela dinâmica, Análise Rápida, tipos de gráfico,
   classificação, duplicatas).
-- [ ] 3.3 Reescrever o núcleo de I08 com leitura de VBA (objetos, métodos e
+- [x] 3.3 Reescrever o núcleo de I08 com leitura de VBA (objetos, métodos e
   argumentos cobrados, segurança e formatos).
-- [ ] 3.4 Aprofundar I09 e I10 (mídia e narração; URL, cache, extensões, e-mail).
-- [ ] 3.5 Recompilar, atualizar resumo/checklist/referências e registrar a matriz.
+- [x] 3.4 Aprofundar I09 e I10 (mídia e narração; URL, cache, extensões, e-mail).
+- [x] 3.5 Recompilar, atualizar resumo/checklist/referências e registrar a matriz.
 
 ## 4. Conhecimentos Administrativos A01–A08 — depende de 3
 

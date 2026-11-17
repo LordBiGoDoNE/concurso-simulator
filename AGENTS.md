@@ -1,6 +1,6 @@
 # Regras do projeto concurso-simulator
 
-As **regras globais** do usuário valem primeiro: `~/.claude/rules/*.md` e os agentes em `~/.claude/agents/` (OpenSpec, épicas e PRs encadeados, planejamento/autorização, revisão e integração, teste local, hotfix, issues, arquitetura de backend, Java/Spring, CI/deploy/segredos e precedência de regras). Agentes que não carregam esses arquivos automaticamente (ex.: Codex) devem lê-los antes de trabalhar.
+As **regras globais** do usuário valem primeiro: `~/.claude/rules/*.md` e os agentes em `~/.claude/agents/` (OpenSpec, épicas e PRs encadeados, planejamento/autorização, revisão e integração, teste local, hotfix, issues, arquitetura de backend, Java/Spring, CI/deploy/segredos e precedência de regras).
 
 Este arquivo só **detalha** o que é próprio do projeto e registra as **exceções** aprovadas. Conflito sem exceção registrada abaixo: vale a regra global (`precedencia-de-regras.md`).
 

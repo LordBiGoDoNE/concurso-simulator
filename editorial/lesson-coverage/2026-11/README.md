@@ -24,9 +24,8 @@ Uma linha JSON por conceito:
 
 Toda questão do acervo aparece em pelo menos um conceito do seu assunto. Toda
 questão com base legal (`legalBasis.provision`) aparece também em pelo menos um
-conceito `dispositivo`; os padrões desse conceito exigem a norma e o artigo (ou o
-item, quando a norma é organizada em itens), além do conteúdo cobrado.
-`--check-structure` falha quando essa ligação falta.
+conceito `dispositivo`; `--check-structure` falha quando essa ligação falta. A
+validação não confere o que os padrões desse conceito exigem (ver Limites).
 
 ## Uso
 
@@ -46,5 +45,9 @@ relatório, com `--write-report`.
 
 - Padrão presente indica que a aula menciona o conceito, não que a explicação é
   boa. A qualidade é conferida na revisão do conteúdo.
+- Parte dos conceitos `dispositivo` identifica o dispositivo só pelo artigo ou só
+  pelo conteúdo, sem exigir a norma e o artigo nos padrões. Por isso, "coberto"
+  não prova que a aula cita a norma e o artigo; isso é conferido na revisão do
+  conteúdo.
 - O texto de esquemas (SVG) e de tabelas conta como texto da aula.
 - A lista reflete o acervo de 2026-11. Questões novas exigem atualizar a lista.

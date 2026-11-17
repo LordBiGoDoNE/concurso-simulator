@@ -8,7 +8,7 @@ da explicação.
 
 | Total | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 51 assuntos | 2587 | 1671 | 208 | 1463 | 0 |
+| 51 assuntos | 2587 | 1687 | 208 | 1479 | 0 |
 
 ## Por assunto
 
@@ -48,12 +48,12 @@ da explicação.
 | I10 | E-mail, Internet, URL, Links e Busca | 50 | 26 | 1 | 25 | 0 |
 | A01 | Princípios da Administração Pública | 50 | 50 | 5 | 45 | 0 |
 | A02 | Rotinas Administrativas e Redação Técnica | 50 | 41 | 1 | 40 | 0 |
-| A03 | Processos Administrativos- Autuação, Registro e Encaminhamento | 50 | 54 | 1 | 53 | 0 |
-| A04 | Gestão de Materiais e Suprimentos | 54 | 54 | 4 | 50 | 0 |
+| A03 | Processos Administrativos- Autuação, Registro e Encaminhamento | 50 | 56 | 1 | 55 | 0 |
+| A04 | Gestão de Materiais e Suprimentos | 54 | 60 | 4 | 56 | 0 |
 | A05 | Arquivística e Gestão Documental | 50 | 52 | 9 | 43 | 0 |
 | A06 | Atendimento ao Público e Comunicação | 50 | 52 | 0 | 52 | 0 |
 | A07 | Ética e Sigilo Profissional | 50 | 54 | 0 | 54 | 0 |
-| A08 | Orçamento, Cálculos e Prestação de Contas | 52 | 53 | 1 | 52 | 0 |
+| A08 | Orçamento, Cálculos e Prestação de Contas | 52 | 55 | 1 | 54 | 0 |
 | S01 | LDB - Lei 9.394-1996 | 62 | 54 | 5 | 49 | 0 |
 | S02 | Escrituração Escolar | 50 | 26 | 1 | 25 | 0 |
 | S03 | Registros Individuais, Ficha e Histórico Escolar | 50 | 26 | 1 | 25 | 0 |
@@ -63,8 +63,8 @@ da explicação.
 | S07 | Constituição Federal - Educação - arts. 205 a 214 | 50 | 49 | 14 | 35 | 0 |
 | S08 | ECA - arts. 1 a 6 e 53 a 69 | 50 | 46 | 15 | 31 | 0 |
 | S09 | Atendimento ao Público e Comunicação Escolar | 50 | 44 | 2 | 42 | 0 |
-| S10 | Relações Humanas, Ética, Sigilo e Assiduidade | 52 | 49 | 1 | 48 | 0 |
-| S11 | Censo Escolar e Informações Educacionais | 50 | 50 | 6 | 44 | 0 |
+| S10 | Relações Humanas, Ética, Sigilo e Assiduidade | 52 | 53 | 1 | 52 | 0 |
+| S11 | Censo Escolar e Informações Educacionais | 50 | 52 | 6 | 46 | 0 |
 
 ## Conceitos ausentes
 
@@ -990,6 +990,8 @@ da explicação.
 - Lei 9.784/1999, art. 61: salvo disposição legal, o recurso não tem efeito suspensivo (dispositivo; 1 questões)
 - Lei 9.784/1999, art. 65: revisão de processo sancionador por fatos novos, vedado o agravamento da sanção (par. único) (dispositivo; 1 questões)
 - Atividades de protocolo (Portaria Interministerial MJ/MP 1.677/2015, Anexo, item 2): recebimento, classificação, registro, distribuição, controle da tramitação, expedição e autuação (dispositivo; 3 questões)
+- Portaria Interministerial MJ/MP 1.677/2015, Anexo, itens 2 e 2.1: recebimento, classificação e registro do documento antes da distribuição (dispositivo; 1 questões)
+- Portaria Interministerial MJ/MP 1.677/2015, Anexo, itens 2.7.1 e 2.9.1: numeração de folhas, carimbo "Em branco" e aproveitamento da folha de despacho (dispositivo; 1 questões)
 - Recebimento: fase inicial do protocolo, entrada controlada dos documentos (× expedição e arquivamento) (termo; 1 questões)
 - Protocolo e gestão documental: padronização de procedimentos, rastreabilidade e controle dos documentos desde a origem (termo; 1 questões)
 - Lei 8.159/1991, art. 3º: gestão de documentos (produção, tramitação, uso, avaliação e arquivamento) (dispositivo; 1 questões)
@@ -1041,6 +1043,12 @@ da explicação.
 - Acurácia do inventário = itens sem divergência ÷ itens contados × 100 (calculo; 1 questões)
 - Unidade de medida na conferência e no inventário (IN SEDAP 205/1988, item 3.2.1): converter caixas/pacotes em unidades antes de comparar (procedimento; 2 questões)
 - Requisição de material: documento interno de saída, com destinatário, itens, quantidades e recebimento (IN SEDAP 205/1988, itens 5.1.3, 5.4, 5.6) (termo; 2 questões)
+- IN SEDAP 205/1988, item 7.6, e: estoque máximo como parâmetro de ressuprimento (dispositivo; 1 questões)
+- IN SEDAP 205/1988, itens 7.6, a e 7.7, a: consumo médio mensal (consumo anual ÷ 12) (dispositivo; 1 questões)
+- IN SEDAP 205/1988, itens 7.6, f e 7.7, d: ponto de pedido (estoque mínimo + consumo durante o tempo de aquisição) (dispositivo; 1 questões)
+- IN SEDAP 205/1988, itens 7.6, g e 7.7, e: quantidade a ressuprir (dispositivo; 1 questões)
+- IN SEDAP 205/1988, itens 3.2.1 e 8, a: unidade de medida nos documentos e ajuste entre registro e saldo físico (dispositivo; 1 questões)
+- IN SEDAP 205/1988, itens 5.1.3, 5.4, d, 5.6 e 7.9: requisição como documento de saída, com destinatário e comprovação do recebimento (dispositivo; 1 questões)
 - IN SEDAP 205/1988, itens 7.3.1, a e 7.4: grau de controle por item conforme importância, valor relativo e dificuldade de ressuprimento (dispositivo; 1 questões)
 - Material permanente: uso duradouro (vida útil superior a dois anos), registro patrimonial, sujeito a depreciação (termo; 2 questões)
 - Material de consumo: exaure-se no uso ou perde a identidade física em até dois anos (termo; 2 questões)
@@ -1254,12 +1262,14 @@ da explicação.
 - Lei 4.320/1964, art. 106, III: bens de almoxarifado avaliados pelo preço médio ponderado das compras (dispositivo; 2 questões)
 - Cálculo do custo médio ponderado: valor total das compras ÷ quantidade total (calculo; 1 questões)
 - Balanço Orçamentário (Lei 4.320/1964, art. 102): receitas e despesas previstas em confronto com as realizadas (termo; 2 questões)
+- Lei 4.320/1964, arts. 101 a 105: balanços orçamentário (102), financeiro (103) e patrimonial (105) e demonstração das variações patrimoniais (104) (dispositivo; 3 questões)
 - Balanço Financeiro (Lei 4.320/1964, art. 103): recebimentos e pagamentos orçamentários e extraorçamentários, com saldos anterior e seguinte (termo; 2 questões)
 - Balanço Patrimonial (Lei 4.320/1964, art. 105): ativo, passivo e saldo patrimonial (patrimônio líquido) (termo; 2 questões)
 - Demonstração das Variações Patrimoniais (Lei 4.320/1964, art. 104): alterações do patrimônio e resultado patrimonial do exercício (termo; 3 questões)
 - Ciclo orçamentário: elaboração (Executivo), aprovação (Legislativo), execução e controle/avaliação (termo; 2 questões)
-- CF, art. 165: instrumentos de planejamento (PPA, LDO e LOA), de iniciativa do Poder Executivo (dispositivo; 2 questões)
-- ADCT, art. 35, §2º, I: projeto do PPA encaminhado até quatro meses antes do encerramento do primeiro exercício financeiro do mandato (dispositivo; 1 questões)
+- CF, art. 165: instrumentos de planejamento (PPA, LDO e LOA), de iniciativa do Poder Executivo (dispositivo; 3 questões)
+- ADCT, art. 35, §2º, I: projeto do PPA encaminhado até quatro meses antes do encerramento do primeiro exercício financeiro do mandato (dispositivo; 2 questões)
+- CF, art. 74, I: o controle interno avalia o cumprimento das metas do plano plurianual e a execução dos programas e orçamentos (dispositivo; 1 questões)
 - Estágios da receita: previsão (estimativa da arrecadação na proposta orçamentária) (termo; 3 questões)
 - Estágios da receita: lançamento (Lei 4.320/1964, art. 53) — verifica a procedência do crédito fiscal e a pessoa devedora (dispositivo; 3 questões)
 - Estágios da receita: arrecadação (pagamento pelo contribuinte aos agentes arrecadadores ou bancos) (termo; 3 questões)
@@ -1491,18 +1501,18 @@ da explicação.
 - CF art. 212, §8º: extinção ou substituição de impostos exige redefinir percentuais para manter aplicações equivalentes (dispositivo; 1 questões)
 - CF art. 212, §9º: lei disporá sobre fiscalização, avaliação e controle das despesas com educação (dispositivo; 1 questões)
 - CF art. 212-A, I: Fundeb como fundos de natureza contábil em cada Estado e no DF (dispositivo; 1 questões)
-- CF art. 212-A, II: fundos constituídos por 20% dos recursos tributários e transferências indicados (calculo; 1 questões)
-- CF art. 212-A, V: complementação da União de no mínimo 23% do total dos recursos do inciso II (calculo; 1 questões)
-- CF art. 212-A, V, a: complementação VAAF (valor anual por aluno no âmbito do Estado/DF abaixo do mínimo nacional) (termo; 1 questões)
-- CF art. 212-A, V, b: complementação VAAT (valor anual total por aluno de cada rede pública) (termo; 1 questões)
-- CF art. 212-A, V, c: complementação por condicionalidades de gestão e evolução de indicadores de atendimento e aprendizagem com redução de desigualdades (VAAR) (termo; 1 questões)
+- CF art. 212-A, II: fundos constituídos por 20% dos recursos tributários e transferências indicados (dispositivo; 1 questões)
+- CF art. 212-A, V: complementação da União de no mínimo 23% do total dos recursos do inciso II (dispositivo; 1 questões)
+- CF art. 212-A, V, a: complementação VAAF (valor anual por aluno no âmbito do Estado/DF abaixo do mínimo nacional) (dispositivo; 1 questões)
+- CF art. 212-A, V, b: complementação VAAT (valor anual total por aluno de cada rede pública) (dispositivo; 1 questões)
+- CF art. 212-A, V, c: complementação por condicionalidades de gestão e evolução de indicadores de atendimento e aprendizagem com redução de desigualdades (VAAR) (dispositivo; 1 questões)
 - CF art. 212-A, VII: recursos do Fundeb aplicados nos âmbitos de atuação prioritária de Estados e Municípios (dispositivo; 1 questões)
-- CF art. 212-A, VIII: vinculação do art. 212 suporta no máximo 30% da complementação da União (calculo; 1 questões)
-- CF art. 212-A, XI: no mínimo 70% de cada fundo para remuneração dos profissionais da educação básica em efetivo exercício (calculo; 1 questões)
-- CF art. 212-A, XI: no mínimo 15% da complementação VAAT para despesas de capital (calculo; 1 questões)
+- CF art. 212-A, VIII: vinculação do art. 212 suporta no máximo 30% da complementação da União (dispositivo; 1 questões)
+- CF art. 212-A, XI: no mínimo 70% de cada fundo para remuneração dos profissionais da educação básica em efetivo exercício (dispositivo; 1 questões)
+- CF art. 212-A, XI: no mínimo 15% da complementação VAAT para despesas de capital (dispositivo; 1 questões)
 - CF art. 212-A, XIII: vedado usar o salário-educação na complementação da União ao Fundeb (dispositivo; 1 questões)
-- CF art. 212-A, XV (EC 135/2024): a partir de 2026, no mínimo 4% dos fundos para criação de matrículas em tempo integral (calculo; 1 questões)
-- CF art. 212-A, §3º: 50% dos recursos globais da complementação VAAT destinados à educação infantil (calculo; 1 questões)
+- CF art. 212-A, XV (EC 135/2024): a partir de 2026, no mínimo 4% dos fundos para criação de matrículas em tempo integral (dispositivo; 1 questões)
+- CF art. 212-A, §3º: 50% dos recursos globais da complementação VAAT destinados à educação infantil (dispositivo; 1 questões)
 - CF art. 213, I: comprovar finalidade não lucrativa e aplicar excedentes financeiros em educação (dispositivo; 2 questões)
 - CF art. 213, II: assegurar a destinação do patrimônio a outra escola das mesmas categorias ou ao poder público no encerramento (dispositivo; 2 questões)
 - CF art. 213, §1º: bolsas de estudo por falta de vagas, com obrigação de investir prioritariamente na expansão da rede pública na localidade (dispositivo; 1 questões)
@@ -1557,9 +1567,9 @@ da explicação.
 - LDB art. 13, VI: docentes colaboram com as atividades de articulação da escola com as famílias e a comunidade (dispositivo; 1 questões)
 - LDB art. 14-A, I: transparência ativa sobre vagas disponíveis e preenchidas por instituição e lista de espera (dispositivo; 1 questões)
 - LDB art. 14-A, IV: divulgação de estatísticas relativas ao fluxo e ao rendimento escolar (dispositivo; 1 questões)
-- LBI art. 3º, IV, d: barreiras nas comunicações e na informação (termo; 1 questões)
-- LBI art. 3º, IV, e: barreiras atitudinais (termo; 1 questões)
-- LBI art. 3º, IV, f: barreiras tecnológicas (termo; 1 questões)
+- LBI art. 3º, IV, d: barreiras nas comunicações e na informação (dispositivo; 1 questões)
+- LBI art. 3º, IV, e: barreiras atitudinais (dispositivo; 1 questões)
+- LBI art. 3º, IV, f: barreiras tecnológicas (dispositivo; 1 questões)
 - LBI art. 3º, V: conceito de comunicação inclui modos, meios e formatos aumentativos e alternativos (dispositivo; 1 questões)
 - LBI art. 4º, §1º: discriminação por deficiência inclui a recusa de adaptações razoáveis e de tecnologias assistivas (dispositivo; 1 questões)
 - LBI art. 9º, III: atendimento prioritário com recursos humanos e tecnológicos que garantam igualdade de condições (dispositivo; 1 questões)
@@ -1568,7 +1578,7 @@ da explicação.
 - LBI art. 28, XIX (Lei 15.249/2025): sistemas de comunicação aumentativa e alternativa de baixa tecnologia no AEE (dispositivo; 1 questões)
 - LBI art. 63: acessibilidade obrigatória nos sítios da internet mantidos por órgãos de governo (dispositivo; 1 questões)
 - Expedição de documentos escolares: verificar fluxo e prazo aplicável antes de informar o usuário (procedimento; 1 questões)
-- Lei 13.460/2017, art. 5º, I: urbanidade, respeito, acessibilidade e cortesia no atendimento ao usuário (dispositivo; 7 questões)
+- Lei 13.460/2017, art. 5º, I: urbanidade, respeito, acessibilidade e cortesia no atendimento ao usuário (dispositivo; 8 questões)
 - Lei 13.460/2017, art. 5º, IX: autenticação pelo próprio agente à vista dos originais, vedado exigir reconhecimento de firma salvo dúvida (dispositivo; 1 questões)
 - Lei 13.460/2017, art. 5º, XV: vedada a exigência de nova prova sobre fato já comprovado em documentação válida (dispositivo; 1 questões)
 - Atendimento telefônico: atender prontamente, identificar-se, ouvir, informar com objetividade, responsabilizar-se e agradecer (procedimento; 2 questões)
@@ -1595,7 +1605,11 @@ da explicação.
 - Cuidado no cotidiano escolar: fundamentado na ética e na estética, com cooperação, solidariedade e respeito à alteridade e à liberdade (termo; 1 questões)
 - Sigilo profissional: não repassar a terceiros informação de aluno/família conhecida em razão do trabalho (ref.: Lei 8.112/1990, art. 116, VIII) (termo; 1 questões)
 - Impessoalidade (CF art. 37, caput): tratamento equitativo e padronizado, sem favorecer conhecidos (termo; 1 questões)
-- Decreto 1.171/1994, II: o servidor decide não só entre legal e ilegal, mas principalmente entre o honesto e o desonesto (dispositivo; 1 questões)
+- Decreto 1.171/1994, II: o servidor decide não só entre legal e ilegal, mas principalmente entre o honesto e o desonesto (dispositivo; 4 questões)
+- Decreto 1.171/1994, Anexo, III: a moralidade se consolida no equilíbrio entre a legalidade e a finalidade, com o bem comum como fim (dispositivo; 3 questões)
+- Decreto 1.171/1994, Anexo, XIV: deveres fundamentais do servidor público (dispositivo; 3 questões)
+- Lei 8.112/1990, art. 116 (referência federal): deveres do servidor, entre eles guardar sigilo sobre assunto da repartição (VIII) (dispositivo; 1 questões)
+- CF, art. 37, caput: impessoalidade da administração pública (tratamento igual, sem favorecimento pessoal) (dispositivo; 1 questões)
 - Decreto 1.171/1994, V: trabalho do servidor como acréscimo ao próprio bem-estar; seu êxito é o êxito da sociedade (dispositivo; 1 questões)
 - Decreto 1.171/1994, VI: fatos da vida privada podem acrescer ou diminuir o conceito na vida funcional (dispositivo; 1 questões)
 - Decreto 1.171/1994, VIII: direito à verdade; vedado omiti-la ou falseá-la, ainda que contrária aos interesses da Administração (dispositivo; 1 questões)
@@ -1640,6 +1654,8 @@ da explicação.
 ### S11 — Censo Escolar e Informações Educacionais
 
 - Decreto 6.425/2008, art. 2º: censo anual, declaratório, com alunos, turmas, escolas e profissionais como unidades de informação (dispositivo; 3 questões)
+- Decreto 6.425/2008, arts. 4º e 5º: fornecimento obrigatório das informações do censo pelas instituições de educação (dispositivo; 1 questões)
+- Decreto 6.094/2007, art. 3º: Ideb calculado com dados de rendimento escolar do Censo Escolar e desempenho no Saeb (dispositivo; 1 questões)
 - Formulário/questionário da escola: infraestrutura, dependências físicas e equipamentos (termo; 1 questões)
 - Rendimento escolar: aprovado ou reprovado (termo; 2 questões)
 - Movimento escolar: transferido, deixou de frequentar (e falecido) (termo; 1 questões)

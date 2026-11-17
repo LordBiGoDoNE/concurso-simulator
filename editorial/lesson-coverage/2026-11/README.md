@@ -22,7 +22,11 @@ Uma linha JSON por conceito:
 | `questionKeys` | chaves de origem das questões que cobram o conceito |
 | `outOfScope` | opcional: justificativa para o conceito não entrar na aula |
 
-Toda questão do acervo aparece em pelo menos um conceito do seu assunto.
+Toda questão do acervo aparece em pelo menos um conceito do seu assunto. Toda
+questão com base legal (`legalBasis.provision`) aparece também em pelo menos um
+conceito `dispositivo`; os padrões desse conceito exigem a norma e o artigo (ou o
+item, quando a norma é organizada em itens), além do conteúdo cobrado.
+`--check-structure` falha quando essa ligação falta.
 
 ## Uso
 

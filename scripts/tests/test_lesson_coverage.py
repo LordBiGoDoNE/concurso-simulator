@@ -158,6 +158,18 @@ class LessonCoverageTests(unittest.TestCase):
         self.assertEqual(1, code)
         self.assertIn('questão sem conceito: k.a08 (A08)', err)
 
+    def test_question_with_legal_basis_needs_a_dispositivo_concept(self):
+        self.workspace.lesson('I08', 'Use o método PasteSpecial para colar valores.')
+        self.workspace.concepts([VALID[0], dict(VALID[1], kind='termo')])
+        code, _, err = self.workspace.run('--check-structure')
+        self.assertEqual(1, code)
+        self.assertIn('questão com base legal sem conceito dispositivo: k.a08 (A08)', err)
+        self.assertNotIn('k.i08', err)
+        self.workspace.concepts(VALID + [concept('A08-termo', 'A08', ['contas'], ['k.a08'])])
+        self.workspace.run('--write-report')
+        code, _, err = self.workspace.run('--check-structure')
+        self.assertEqual(0, code, err)
+
     def test_missing_list_and_invalid_json_fail(self):
         code, _, err = self.workspace.run()
         self.assertEqual(1, code)

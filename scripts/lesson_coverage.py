@@ -147,6 +147,12 @@ def validate(concepts, topics, questions):
               if isinstance(key, str)}
     for key in sorted(set(questions) - mapped):
         problems.append('questão sem conceito: %s (%s)' % (key, questions[key]['topicId']))
+    legal = {key for concept in concepts if concept.get('kind') == 'dispositivo'
+             for key in concept.get('questionKeys') or [] if isinstance(key, str)}
+    for key in sorted(mapped - legal):
+        if key in questions and questions[key]['provisions']:
+            problems.append('questão com base legal sem conceito dispositivo: %s (%s)'
+                            % (key, questions[key]['topicId']))
     return problems
 
 

@@ -24,12 +24,12 @@ gerados.
 
 ## 2. Informática I01–I05 — depende de 1
 
-- [ ] 2.1 Declarar a versão de referência e aprofundar I01 e I02 (arquivos,
+- [x] 2.1 Declarar a versão de referência e aprofundar I01 e I02 (arquivos,
   atalhos, Configurações, Área de Transferência, acessibilidade).
-- [ ] 2.2 Aprofundar I03 e I04 (formatação, tabulação, revisão, quebras de seção,
+- [x] 2.2 Aprofundar I03 e I04 (formatação, tabulação, revisão, quebras de seção,
   tabelas, índices).
-- [ ] 2.3 Aprofundar I05 (referências, intervalos, nomes definidos).
-- [ ] 2.4 Recompilar, atualizar resumo/checklist/referências e registrar a matriz
+- [x] 2.3 Aprofundar I05 (referências, intervalos, nomes definidos).
+- [x] 2.4 Recompilar, atualizar resumo/checklist/referências e registrar a matriz
   antes e depois no PR.
 
 ## 3. Informática I06–I10 — depende de 2

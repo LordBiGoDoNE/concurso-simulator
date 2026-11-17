@@ -8,7 +8,7 @@ da explicação.
 
 | Total | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 51 assuntos | 2587 | 1687 | 208 | 1479 | 0 |
+| 51 assuntos | 2587 | 1687 | 359 | 1328 | 0 |
 
 ## Por assunto
 
@@ -36,11 +36,11 @@ da explicação.
 | M10 | Relações Lógicas, Dedução e Sequências | 50 | 26 | 1 | 25 | 0 |
 | M11 | Estruturas e Argumentação Lógica | 54 | 28 | 7 | 21 | 0 |
 | M12 | Diagramas Lógicos e Situações-Problema | 54 | 27 | 4 | 23 | 0 |
-| I01 | Windows - Arquivos, Pastas e Diretórios | 50 | 36 | 2 | 34 | 0 |
-| I02 | Windows - Atalhos, Área de Trabalho e Área de Transferência | 50 | 47 | 7 | 40 | 0 |
-| I03 | Word - Edição e Formatação | 50 | 32 | 3 | 29 | 0 |
-| I04 | Word - Tabelas, Páginas, Índices e Objetos | 50 | 23 | 0 | 23 | 0 |
-| I05 | Excel - Células, Linhas, Colunas e Referências | 50 | 28 | 3 | 25 | 0 |
+| I01 | Windows - Arquivos, Pastas e Diretórios | 50 | 36 | 36 | 0 | 0 |
+| I02 | Windows - Atalhos, Área de Trabalho e Área de Transferência | 50 | 47 | 47 | 0 | 0 |
+| I03 | Word - Edição e Formatação | 50 | 32 | 32 | 0 | 0 |
+| I04 | Word - Tabelas, Páginas, Índices e Objetos | 50 | 23 | 23 | 0 | 0 |
+| I05 | Excel - Células, Linhas, Colunas e Referências | 50 | 28 | 28 | 0 | 0 |
 | I06 | Excel - Fórmulas e Funções | 50 | 29 | 2 | 27 | 0 |
 | I07 | Excel - Tabelas, Gráficos, Classificação e Dados | 50 | 26 | 1 | 25 | 0 |
 | I08 | Excel - Macros | 50 | 33 | 1 | 32 | 0 |
@@ -538,172 +538,6 @@ da explicação.
 - Produto cartesiano: n(A × B) = n(A) × n(B) pares ordenados (calculo; 2 questões)
 - Probabilidade clássica: casos favoráveis ÷ casos possíveis (espaço amostral) (calculo; 5 questões)
 - Probabilidade com universo restrito a um conjunto (condicional) (calculo; 1 questões)
-
-### I01 — Windows - Arquivos, Pastas e Diretórios
-
-- Pastas pessoais criadas automaticamente no perfil (Documentos, Imagens, Músicas, Vídeos, Downloads, Área de Trabalho) (termo; 1 questões)
-- Explorador de Arquivos: gerenciador nativo de arquivos e pastas do Windows (termo; 1 questões)
-- Acesso rápido: Fixar/Desafixar pasta pelo botão direito (não move, não copia nem exclui a pasta original) (comando; 3 questões)
-- Opções do Explorador: "Abrir Explorador de Arquivos para" Início ou Este Computador (comando; 1 questões)
-- Modo de exibição Detalhes: colunas de nome, tipo, tamanho e data de modificação (comando; 1 questões)
-- Exibir > Mostrar > Extensões de nomes de arquivos (comando; 1 questões)
-- Atributo Oculto e Exibir > Mostrar > Itens ocultos (ocultar não apaga nem criptografa) (comando; 1 questões)
-- Menu de contexto do Windows 11: Mostrar mais opções (Shift+F10) abre o menu tradicional (comando; 1 questões)
-- Nome de arquivo: ponto separa nome principal e extensão; a extensão é opcional (termo; 2 questões)
-- Configurações > Aplicativos > Aplicativos padrão: trocar o programa que abre um tipo de arquivo (comando; 1 questões)
-- Miniatura/pré-visualização não garante editor compatível instalado (termo; 1 questões)
-- Caracteres reservados em nomes (\ / : * ? " < > |); barra invertida separa componentes do caminho (termo; 2 questões)
-- Nomes de arquivo no Windows: não presumir diferenciação de maiúsculas e minúsculas (termo; 1 questões)
-- Caminho UNC de rede: \\servidor\compartilhamento\arquivo (termo; 1 questões)
-- Mapear unidade de rede: letra de unidade para um compartilhamento (não é cópia offline; depende de servidor e permissões) (comando; 3 questões)
-- Mapear unidade de rede: opção Reconectar-se na entrada (comando; 1 questões)
-- Compartilhamento de pasta: Conceder acesso a > Pessoas específicas (x Todos) (comando; 1 questões)
-- Opção Remover acesso no menu da pasta (aparece mesmo em pasta não compartilhada) (comando; 1 questões)
-- Compartilhamento em rede local não é publicação na Internet (termo; 1 questões)
-- Configurações > Privacidade e segurança: permissão de aplicativos às bibliotecas (Documentos, Imagens) (comando; 2 questões)
-- Indexação de pesquisa: cataloga conteúdo e propriedades (metadados) para acelerar buscas; não é backup nem compactação (termo; 2 questões)
-- Opções de indexação: personalizar os locais de pesquisa (modo Clássico) para incluir pasta (comando; 1 questões)
-- Indexação contínua em segundo plano; resultados incompletos enquanto a indexação não termina (termo; 2 questões)
-- Arquivo aberto/em uso por um programa não pode ser excluído de imediato (termo; 1 questões)
-- Pasta compactada (.zip): navegável como pasta comum, aceita tipos variados, acrescenta itens arrastando; Enviar para > Pasta compactada cria novo ZIP (procedimento; 2 questões)
-- Extrair tudo (com destino) ou copiar/arrastar um único item para fora do ZIP (comando; 3 questões)
-- Compactar não é criptografar: ZIP comum não dá sigilo; suporte nativo limitado a ZIP criptografado (termo; 2 questões)
-- Arquivos já comprimidos (JPEG) quase não reduzem ao entrar em ZIP (termo; 1 questões)
-- OneDrive: sincronização exige conta (pessoal, corporativa ou de estudante) configurada (termo; 1 questões)
-- OneDrive: excluir na pasta sincronizada propaga a exclusão à nuvem e aos outros dispositivos (sincronização não é backup) (termo; 1 questões)
-- OneDrive Arquivos Sob Demanda: arquivo somente online (nuvem azul) aparece pelo nome, mas o conteúdo precisa ser baixado para uso/pesquisa offline (termo; 2 questões)
-- OneDrive: Sempre manter neste dispositivo (por arquivo ou pasta; novos itens da pasta também são baixados) (comando; 2 questões)
-- OneDrive: Liberar espaço torna o arquivo somente online sem excluí-lo da nuvem (comando; 1 questões)
-- Prompt de Comando: cd exibe ou muda o diretório atual (comando; 1 questões)
-
-### I02 — Windows - Atalhos, Área de Trabalho e Área de Transferência
-
-- Menu Iniciar: acesso a programas, configurações, pesquisa e itens fixados; abre com a tecla Windows (ou Ctrl+Esc) (termo; 2 questões)
-- Áreas de trabalho virtuais: separam janelas sem apagar dados, são nativas e renomeáveis (Windows+Ctrl+D cria) (termo; 3 questões)
-- Windows+Ctrl+Seta alterna entre áreas virtuais; Windows+Ctrl+F4 fecha a área virtual atual (comando; 2 questões)
-- Windows+Tab: Visão de tarefas (comando; 2 questões)
-- Windows+M: minimizar todas as janelas (comando; 1 questões)
-- Windows+L: bloquear o computador/sessão (comando; 1 questões)
-- Windows+I: abrir Configurações (comando; 1 questões)
-- Windows+R: caixa Executar (comando; 1 questões)
-- Windows+S: Pesquisa do Windows (comando; 1 questões)
-- Windows+X: menu Link Rápido (comando; 1 questões)
-- Windows+T: percorrer os aplicativos da barra de tarefas (comando; 1 questões)
-- Windows+P: modo de projeção (duplicar, estender) (comando; 1 questões)
-- Windows+Seta para cima: maximizar a janela (comando; 1 questões)
-- Windows+Barra de espaços: alternar idioma de entrada e layout de teclado (comando; 1 questões)
-- Windows+U: configurações de Acessibilidade (comando; 1 questões)
-- Lupa: Windows+Mais (+) abre; Windows+Esc fecha (comando; 2 questões)
-- Windows+Ctrl+Enter: iniciar/alternar o Narrador (comando; 1 questões)
-- Windows+H: digitação por voz (ditado) (comando; 1 questões)
-- Windows+Shift+S: captura de parte da tela (Ferramenta de Captura) (comando; 1 questões)
-- Configurações > Sistema > Área de Transferência: ativar o histórico e Limpar dados da Área de Transferência (comando; 2 questões)
-- Histórico da Área de Transferência: é limpo ao reiniciar, exceto itens fixados; exclusão individual de item x Limpar tudo (procedimento; 2 questões)
-- Sincronização do histórico da Área de Transferência entre dispositivos exige a mesma conta Microsoft/corporativa (termo; 1 questões)
-- Opções de energia: Reiniciar x Suspender x Desligar (pausa rápida mantendo a sessão é Suspender) (termo; 1 questões)
-- Alt+F4: fechar a janela/aplicativo ativo (comando; 2 questões)
-- Ctrl+Shift+Esc: abrir o Gerenciador de Tarefas (comando; 1 questões)
-- Barra de tarefas: Shift+clique abre nova instância; Ctrl+Shift+clique abre como administrador (comando; 1 questões)
-- F2: renomear o item selecionado (comando; 2 questões)
-- F3: pesquisar arquivo ou pasta no Explorador (comando; 1 questões)
-- F5: atualizar a janela ativa (comando; 2 questões)
-- Alt+Enter: propriedades do item selecionado (comando; 1 questões)
-- Alt+D: selecionar a barra de endereços do Explorador (comando; 1 questões)
-- Alt+P: painel de visualização (Alt+Shift+P: painel de detalhes) (comando; 1 questões)
-- Alt+Seta para cima sobe à pasta pai; Alt+Seta para a esquerda volta no histórico de navegação (comando; 2 questões)
-- Shift+F10: abrir o menu de contexto do item selecionado (comando; 1 questões)
-- Ctrl+Shift+N: criar nova pasta (comando; 2 questões)
-- Shift+Delete: excluir sem enviar à Lixeira (comando; 1 questões)
-- Seleção múltipla: Ctrl+clique para itens não adjacentes; Shift+clique para intervalo (comando; 1 questões)
-- Arrastar com Ctrl copia; arrastar com Alt cria atalho (comando; 1 questões)
-- Ctrl+Shift+tecla de direção: estender a seleção de texto por palavra/bloco (comando; 1 questões)
-- Caixas de diálogo: Tab avança o foco, Barra de espaços marca/desmarca caixa de seleção, Esc cancela (comando; 3 questões)
-
-### I03 — Word - Edição e Formatação
-
-- Listas automáticas (AutoFormatação ao digitar): * + espaço inicia marcadores; 1. + espaço inicia numeração (comando; 1 questões)
-- Localizar e Substituir (Página Inicial > Substituir, Ctrl+U): Substituir tudo x Localizar próximo/Substituir caso a caso (comando; 2 questões)
-- Opções de Localizar: Diferenciar maiúsculas de minúsculas, palavras inteiras, caracteres curinga (comando; 1 questões)
-- Espaçamento entre linhas: Simples, Múltiplo (fator), Exatamente (fixo em pt) e Pelo menos (mínimo) (termo; 3 questões)
-- Recuo especial: Primeira linha x Deslocado (Parágrafo > Recuo > Especial) (comando; 2 questões)
-- Caixa Parágrafo: área Visualização e botão Definir como Padrão (modelo Normal: vale para novos documentos) (comando; 2 questões)
-- Paginação do parágrafo: Manter linhas juntas, Manter com o próximo, controle de linhas órfãs/viúvas (comando; 2 questões)
-- Paradas de tabulação: esquerda, decimal (alinha pelo separador decimal), barra (termo; 1 questões)
-- Ctrl+Shift+Barra de espaços: espaço incondicional (não separável) (comando; 1 questões)
-- Atalhos de quebra: Shift+Enter (linha), Ctrl+Enter (página), Ctrl+Shift+Enter (coluna) (comando; 2 questões)
-- Sublinhado: Ctrl+S no Word em português (Ctrl+U em inglês); seta escolhe o estilo da linha (comando; 2 questões)
-- Tachado: linha no meio do texto, que continua legível (termo; 2 questões)
-- Sobrescrito (acima da linha de base, m²) x Subscrito (abaixo, H2O) (termo; 2 questões)
-- Cor do Realce do Texto (fundo, marca-texto) x Cor da Fonte (letras) x Cor da Página; selecionar antes de formatar (comando; 2 questões)
-- Efeitos de Texto e Tipografia: sombra, reflexo, brilho, contorno (comando; 1 questões)
-- Grupo/caixa Fonte na guia Página Inicial: tipo de letra (família) e tamanho em pontos (pt) (termo; 3 questões)
-- Limpar Toda a Formatação (comando; 1 questões)
-- Pincel de Formatação: copia a aparência; duplo clique mantém ativo (Esc encerra); incluir a marca de parágrafo copia a formatação do parágrafo (comando; 3 questões)
-- Shift+F3: alternar maiúsculas, minúsculas e capitalização (comando; 1 questões)
-- Seleção com mouse: duplo clique = palavra, triplo = parágrafo, clique na área de seleção à esquerda = linha; digitar sobre a seleção a substitui (procedimento; 3 questões)
-- Estilos (galeria na Página Inicial): formatação consistente de títulos e parágrafos; botão direito no estilo Normal > Modificar (comando; 2 questões)
-- Ctrl+J: alinhamento justificado (comando; 1 questões)
-- Ctrl+Alt+Z: percorrer os locais das últimas alterações (seleção em bloco: Ctrl+Shift+F8) (comando; 2 questões)
-- Salvar uma Cópia: grava novo arquivo com outro nome mantendo o original (comando; 1 questões)
-- Verificação ortográfica e gramatical: sublinhado colorido, sugestões pelo botão direito, F7 (procedimento; 1 questões)
-- Idioma de revisão de texto do trecho selecionado (comando; 2 questões)
-- Controle de alterações: exibição Sem Marcação só oculta; é preciso Aceitar ou Rejeitar (termo; 1 questões)
-- Comentários modernos: Postar comentário (Ctrl+Enter); Resolver (comando; 1 questões)
-- Contagem de palavras do trecho selecionado na barra de status (procedimento; 1 questões)
-
-### I04 — Word - Tabelas, Páginas, Índices e Objetos
-
-- Guia Referências: Sumário (Atualizar Sumário), Inserir Citação, notas, legendas e índice (comando; 2 questões)
-- Legenda: rótulo numerado (Figura 1, Tabela 2) em Referências > Inserir Legenda (termo; 1 questões)
-- Índice remissivo: termos e páginas; Alt+Shift+X marca entrada de índice (comando; 2 questões)
-- Layout > Margens > Margens Personalizadas (caixa Configurar Página) (comando; 1 questões)
-- Quebra de seção Próxima Página x Contínua x quebra de página comum: seção permite cabeçalho/rodapé/numeração independentes (termo; 2 questões)
-- Excluir quebra de seção: o texto anterior herda a formatação da seção seguinte (procedimento; 1 questões)
-- Mostrar/Ocultar marcas de formatação (¶) para enxergar quebras (comando; 1 questões)
-- Atalhos de quebra: Ctrl+Enter (página), Ctrl+Shift+Enter (coluna), Shift+Enter (linha) (comando; 2 questões)
-- Cabeçalho/rodapé por seção: Vincular ao anterior (vínculos separados para cabeçalho, rodapé e para cada tipo: primeira, par, ímpar) (comando; 4 questões)
-- Cabeçalho e rodapé: Primeira Página Diferente (vale por seção); páginas pares e ímpares diferentes (comando; 4 questões)
-- Campos: F9 atualiza; Shift+F9 alterna código/resultado; Ctrl+F9 insere campo vazio (comando; 3 questões)
-- Campos: Ctrl+Shift+F9 desvincula; Ctrl+F11 bloqueia; F11 vai ao próximo campo (comando; 3 questões)
-- Nota de rodapé (Ctrl+Alt+F) e nota de fim (Ctrl+Alt+D) (comando; 2 questões)
-- Notas: ligadas ao texto por marca de referência (excluir a marca remove a nota); rodapé da nota x rodapé da seção; nota de fim fica no final do documento/seção (termo; 4 questões)
-- Marca-d'água de texto (RASCUNHO) ou de imagem; no Word para a Web só é exibida, edita-se no desktop (comando; 3 questões)
-- Tabela: Inserir Tabela (nº de linhas e colunas), Dividir Células, Mesclar Células (comando; 2 questões)
-- Tabela: Ajuste automático ao conteúdo x à janela x Largura de coluna fixa (comando; 3 questões)
-- Converter Texto em Tabela / Tabela em Texto: separador de colunas (tabulação, vírgula) e marcas de parágrafo como linhas (procedimento; 5 questões)
-- Linhas de grade da tabela: guias de edição não imprimíveis, diferentes de bordas (termo; 2 questões)
-- Ctrl+Tab insere tabulação dentro da célula (Tab sozinho vai à próxima célula) (comando; 1 questões)
-- Abrir PDF no Word: conversão pode alterar layout (tabelas, notas); PDF digitalizado vem como imagem (termo; 3 questões)
-- Modelos do Word (.dotx/.dotm): salvar documento existente como modelo (termo; 1 questões)
-- Arquivo > Imprimir: Imprimir Página Atual e Impressão Personalizada (comando; 1 questões)
-
-### I05 — Excel - Células, Linhas, Colunas e Referências
-
-- Limites da planilha: 1.048.576 linhas e 16.384 colunas (antigo .xls: 65.536 x 256) (termo; 2 questões)
-- Nome de planilha (aba): até 31 caracteres, sem / \ ? * : [ ]; independente do nome do arquivo (termo; 3 questões)
-- Recortar/mover fórmula não ajusta as referências; copiar ajusta as relativas (termo; 1 questões)
-- Referência de linha inteira (5:5) e de coluna inteira (B:B) (termo; 2 questões)
-- Referência a outra planilha: Planilha!A1; nome com espaço entre apóstrofos ('Dados Gerais'!A1) (comando; 2 questões)
-- Referência 3D: =SOMA(Janeiro:Março!B2) abrange as planilhas entre os extremos (ordem das abas importa) (termo; 2 questões)
-- Referência externa: aponta para outra pasta de trabalho (termo; 1 questões)
-- Nome definido (intervalo nomeado) usado em fórmulas (termo; 1 questões)
-- Ctrl+Shift+Barra de espaços (ou Ctrl+A): selecionar a planilha inteira (comando; 1 questões)
-- Alt+Enter: quebra de linha dentro da célula (comando; 2 questões)
-- Ctrl+Enter: preencher todas as células selecionadas com a mesma entrada (comando; 1 questões)
-- Colar Especial: Fórmulas, Valores, Formatação, Colar vínculo, Imagem Vinculada, largura da coluna (comando; 5 questões)
-- Colar Especial > Transpor: troca linhas por colunas (comando; 1 questões)
-- Exibir > Congelar Painéis: fixa linhas acima e colunas à esquerda da célula selecionada; Descongelar; não é proteção (comando; 3 questões)
-- Exibir > Dividir: painéis roláveis da mesma planilha (comando; 1 questões)
-- Proteger Planilha: células bloqueadas ficam selecionáveis mas não editáveis (termo; 2 questões)
-- Formato Texto preserva zeros à esquerda em códigos/identificadores (procedimento; 1 questões)
-- Formato de número (Porcentagem, casas decimais: Aumentar/Diminuir Casas Decimais) muda a exibição, não o valor armazenado (termo; 2 questões)
-- Limpar conteúdo x Excluir célula (desloca vizinhas) x Excluir planilha (termo; 2 questões)
-- Inserir: várias linhas (selecionar a mesma quantidade), células com deslocamento, Opções de Inserção (formatação herdada) (procedimento; 3 questões)
-- Mesclar células: só o conteúdo da célula superior esquerda é mantido (termo; 1 questões)
-- Dados > Texto para Colunas: separa por delimitador em colunas adjacentes (pode sobrescrever o destino); célula não se divide como no Word (comando; 3 questões)
-- Planilhas agrupadas: a entrada vale para todas as abas do grupo; desagrupar antes (procedimento; 1 questões)
-- Ajustar largura da coluna / altura da linha (texto cortado, AutoAjuste) (comando; 1 questões)
-- Salvar como CSV: mantém só valores/texto; perde fórmulas, mesclagem e formatação (termo; 1 questões)
 
 ### I06 — Excel - Fórmulas e Funções
 

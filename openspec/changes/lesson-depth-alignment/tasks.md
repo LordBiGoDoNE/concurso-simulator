@@ -15,11 +15,11 @@ gerados.
 
 ## 1. Matriz de cobertura aula × questões
 
-- [ ] 1.1 Levantar, por assunto, os conceitos cobrados pelas questões dos pacotes
+- [x] 1.1 Levantar, por assunto, os conceitos cobrados pelas questões dos pacotes
   de simulado e prática e registrar em `editorial/lesson-coverage/2026-11/concepts.jsonl`.
-- [ ] 1.2 Implementar `scripts/lesson_coverage.py` (relatório e `--check`), somente
+- [x] 1.2 Implementar `scripts/lesson_coverage.py` (relatório e `--check`), somente
   leitura, com testes em `scripts/tests/`.
-- [ ] 1.3 Gerar `docs/lesson-coverage.md` com o estado inicial (linha de base) dos
+- [x] 1.3 Gerar `docs/lesson-coverage.md` com o estado inicial (linha de base) dos
   51 assuntos e documentar o uso do comando.
 
 ## 2. Informática I01–I05 — depende de 1

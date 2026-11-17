@@ -1,75 +1,55 @@
-# Organização do projeto
+# Regras do projeto concurso-simulator
 
-## Specs, épicas e tarefas
+As **regras globais** do usuário valem primeiro: `~/.claude/rules/*.md` e os agentes em `~/.claude/agents/` (OpenSpec, épicas e PRs encadeados, planejamento/autorização, revisão e integração, teste local, hotfix, issues, arquitetura de backend, Java/Spring, CI/deploy/segredos e precedência de regras). Agentes que não carregam esses arquivos automaticamente (ex.: Codex) devem lê-los antes de trabalhar.
 
-- Toda spec OpenSpec usa `epic/<change-name>` como branch de integração.
-- Uma tarefa ou grupo pequeno e coeso usa `task/<change-name>/<assunto>` e abre PR para a épica, nunca diretamente para `main`. Para tarefas com dependências reais, Stacks é o padrão: a camada superior abre PR para a tarefa inferior da mesma spec, conforme as condições abaixo. Tarefas independentes continuam diretamente para a épica.
-- Inclua código, testes e documentação necessários à tarefa no mesmo PR. Evite separar testes da implementação.
-- Prefira PRs revisáveis: cerca de 300–500 linhas autorais quando possível; identifique lockfiles e arquivos gerados à parte. Não divida artificialmente uma mudança inseparável.
-- Branches novas sem dependências partem da épica atualizada; camadas dependentes em Stacks partem da tarefa inferior da mesma spec. Se Stacks não puder ser usado com segurança, tarefas dependentes seguem sequencialmente, aguardando os PRs anteriores; não criar dependências artificiais. PR antecipado deve ser rascunho com dependências explícitas. Não marque tarefas integradas à épica antes da revisão/merge.
-- Quando autorizado pelo usuário, implemente grupos em PRs encadeados de rascunho para revisão ao final, sem pausas e sem merges no GitHub. Este modo está autorizado para `optional-google-identity`. Preserve o histórico ao atualizar dependências; merges locais entre branches de trabalho não representam aprovação/integração na épica. No fluxo sem Stacks, retargetar os PRs na ordem após revisão autorizada; membros de uma stack não permitem troca manual de base.
-- Ao criar uma spec OpenSpec, crie também sua issue no GitHub e vincule as duas nos dois sentidos: a proposta e as tarefas apontam para a issue; a issue aponta para proposta, requisitos e tarefas na branch da spec. Verifique se já existe uma issue correspondente antes de criar outra. Decisão do usuário em 2026-11-08.
-- Ao concluir um planejamento com escopo definido, formalize primeiro a spec e sua issue e apresente os links e os grupos de tarefas. Antes de iniciar a implementação, solicite confirmação explícita de início e dos grupos autorizados. Aprovar o planejamento ou autorizar criar/publicar spec, issue ou documentação não autoriza implementar. A entrega documental termina nesse ponto de confirmação; não iniciar código, migrações ou cargas de dados na mesma etapa. Decisão do usuário em 2026-11-08.
-- Use a issue da spec com checklist e links dos PRs, atualizando os links após publicar as branches. Registre tarefas implementadas/verificadas separadamente das integradas/aprovadas. Criar a spec/issue não autoriza implementação, merge, arquivamento ou deploy.
-- Decisão do usuário em 2026-11-09: não medir nem registrar cota ChatGPT/Codex nas revisões; não exigir pausa de outros usos para essa medição. O procedimento de `docs/review-quota.md`, seus scripts e observações anteriores ficam somente como histórico, sem nova coleta/comparação obrigatória. Não inventar medições nem publicar diagnósticos privados.
-- Lotes não têm limite fixo de tarefas: o usuário define os grupos completos antes de implementar (ex.: “faça 3, 4 e 5” inclui todas as subtarefas desses grupos). Se o escopo não vier explícito, listar os grupos/tarefas pendentes e perguntar quais entram; não começar por suposição. Concluir cada grupo inteiro com código/testes/docs/revisão, sem encerrar o lote num prefixo como 3.1–3.3 deixando 3.4 pendente. PRs pequenos podem dividir a entrega, não o compromisso do lote. Bloqueio real deve ser comunicado sem declarar o grupo concluído; dependência ausente não autoriza ampliar escopo automaticamente. A rodada inicial de question-bank, histórica, contém 1.2, 1.3 e 2.1–2.3 sobre #38, cuja adoção preservou base/head/commits. Não iniciar automaticamente o lote seguinte; merges continuam exigindo autorização própria.
-- **Decisão do usuário em 2026-11-12 (substitui as regras SOL de 2026-10-15):** não há mais revisão independente por lote nem modelo `openai/gpt-6.1-sol#xhigh`. A única revisão por modelo é a **revisão final de código antes do merge `[SPEC]` `epic/<spec>` → `main`**, feita por um agente autônomo novo (subagente `spec-reviewer`), com **Claude Opus 5.5 e esforço medium**, em contexto independente, sem viés: recebe spec, AGENTS/ADRs/padrões, base/head imutáveis e acesso ao código, sem conversa nem justificativas da implementação. Ao concluir cada lote: testes, triagem própria e relatório com SHAs/checks antes de pedir aprovação de merge na épica. Registrar classificação de risco conforme `docs/architecture/spec-review.md`. Aprovação do lote exige lista explícita dos PRs incluídos; não presume aprovação de inferiores pelo topo. Revisões SOL/Astra já executadas permanecem histórico verdadeiro.
-- A reformulação foi entregue à `main` pelo PR #133 em 2026-10-23. `epic/application-reformulation` permanece como histórico, sem reutilização para novas specs. A regra anterior de reunir todas as specs nessa épica vale para a entrega encerrada.
-- Após essa entrega, cada nova spec parte da `main` atualizada e integra em `epic/<change-name>`. Tarefas independentes abrem PRs para a épica da própria spec; dependentes seguem Stacks abaixo. O PR final `[SPEC]` segue de `epic/<change-name>` diretamente para `main`, com revisão cumulativa independente e autorização específica de merge. Aprovar tarefas não aprova esse merge.
-- **Épica combinada para specs interdependentes (decisão do usuário em 2026-11-12):** quando duas ou mais specs/issues dependem uma da outra (ex.: migrações Flyway em sequência, uma usa a funcionalidade da outra), criar `epic/<nome-combinado>` a partir da `main` atualizada. Cada spec mantém sua épica, tarefas e Stacks; o PR `[SPEC]` de cada `epic/<change-name>` vai para a épica combinada, não para `main`. Um único PR `[SPEC]` final segue da épica combinada para `main`, com uma revisão final de código do conjunto e autorização específica de merge. Migrações de todas as specs ficam contíguas na épica combinada; numerar na ordem de integração dela. Registrar a épica combinada nas issues de todas as specs envolvidas. Primeiro caso: `epic/question-bank-expansion-curation` (#173 + #177).
-- Na spec `study-experience-redesign`, a base inicial histórica foi `epic/application-reformulation` em 1817673, de árvore idêntica à `main` c8efceb. O usuário autorizou corrigir o destino do PR #147 para `main` e concluir o merge após revalidar base/head/digest. Preservar commits/branches da stack; não sincronizar, rebasear ou retargetar seus membros por essa decisão.
-- Correções independentes do site estático seguem em `stable` por PR aprovado, sem trazer a stack completa para o site estático.
-- Nunca faça merge, feche PRs sem substituição documentada, arquive OpenSpec ou relaxe regras de deploy sem autorização.
-- Preserve branches/commits anteriores ao reorganizar trabalho. Não apague implementação existente.
-- Consulte `docs/application-reformulation.md` para o roadmap, critérios de entrega e decisões ainda abertas. Uma etapa do roadmap não autoriza implementar uma spec sem proposta e aprovação.
+Este arquivo só **detalha** o que é próprio do projeto e registra as **exceções** aprovadas. Conflito sem exceção registrada abaixo: vale a regra global (`precedencia-de-regras.md`).
 
-## Desenvolvimento e validação local
+## Contexto
 
-- Decisão do usuário em2026-10-24: entregar localmente todas as funcionalidades e conteúdos do escopo autorizado habilitados para teste, inclusive elegibilidade das questões preparadas/conferidas. A autorização de teste local dispensa nova pausa para aprovação editorial local; registrar seleção, fingerprints/digests e destino ao habilitar. Preservar os dados existentes. O usuário testa e valida antes de enviar ao GitHub ou disparar revisões por modelo; habilitação local não presume aceite final, merge ou publicação externa.
+- Roadmap, critérios de entrega e decisões abertas: `docs/application-reformulation.md`. Uma etapa do roadmap não autoriza spec nem implementação.
+- Stack e versões escolhidas pelo usuário: ver `openspec/config.yaml` (Java 25 LTS, Spring Boot, PostgreSQL 18, Flyway, Gradle Wrapper 9.8.0 com Kotlin DSL, React/TypeScript/Vite).
 
-## Stacks — padrão para tarefas dependentes
+## Arquitetura (detalhamento das regras globais)
 
-- Após o piloto remoto #33/#34 (issue #30) e adoção em question-bank (#36), o usuário aprovou Stacks como padrão também para as próximas specs. O registro desse padrão segue por PR próprio, sem merge presumido. Depois de integrado, novas specs não precisam de nova aprovação do método: usar somente tarefas realmente dependentes e previamente solicitadas, em `task/<change-name>/<assunto>`. Inferior parte da épica atualizada e abre PR para ela; superior parte da inferior e abre PR para essa tarefa. Mesma spec/repositório, trunk sempre `epic/<change-name>`, nunca main/épica geral/outra spec.
-- Camadas novas abrem PRs em rascunho com dependências explícitas, código/testes/docs coesos e diff isolado. Tarefas independentes e o PR `[SPEC]` ficam fora da stack. O padrão não autoriza iniciar automaticamente specs/tarefas ou grupos sem pausas; proposta e escopo de implementação continuam exigindo aprovação/pedido próprios. Os PRs sintéticos #33/#34 não entram na stack de produto nem têm merge/encerramento autorizados por esta regra.
-- Registrar na issue de cada spec dependências, bases/heads, composição, runs/checks e limitações. O piloto confirmou criação/diffs/rebase/CI e `edited` por título; não validou retargeting, merge/fila ou sync pós-merge. Tarefas devem emitir `spec-review-tests`, sem certificar revisão cumulativa. Conferir em cada nova stack trunk/refs/checks sem presumir que os resultados do piloto cobrem configuração diferente. Não relaxar workflow/ruleset/deploy; correções de automação exigem PR/aprovação próprios. Se CI/metadados divergirem, parar a stack e retomar fluxo sequencial sem reorganização silenciosa.
-- Rebase/sync apenas com todos os worktrees afetados limpos e ociosos, preservando refs dos commits anteriores. Metadados são compartilhados; lock da ferramenta não protege contra agente/editor/Git. Usar leases conferidas nos pushes e verificar cada ref após operação, que pode ter sucesso parcial. Manter v0.2.1 fixada, sem prune automático/upgrade silencioso.
-- GitHub bloqueia troca manual de base de membro da stack. Não contornar por unstack/link/modify, retargetar trabalho existente ou executar sync pós-merge não ensaiado sem autorização específica do caminho. Antes do primeiro merge/pós-merge, apresentar composição/SHAs/checks e limites para decisão explícita; não fazer merge real só para testar a ferramenta. Reorganização/encerramento exige autorização e preservação/substituição documentada do histórico.
-- Merge de prefixo/topo exige aprovação explícita de cada PR incluído e conferência dos commits/checks atuais; aprovação do topo não aprova inferiores. Não usar merge sem alvo/prefixo conferido, auto-merge, fila ou bypass. O padrão não autoriza nenhum merge, fechamento/deleção, publicação ou arquivamento.
-- Base/head/digest de revisão devem ser conferidos após rebase/mudança de base; não reaproveitar evidência por igualdade visual do diff. A revisão final de código (Opus 5.5 medium) antes do merge em `main` continua obrigatória. Procedimento/evidências/limites: `docs/stacks-pilot.md`.
+- Antes de implementar ou revisar backend, ler `docs/architecture/adr/0001-domain-and-application-boundaries.md` (decisões aprovadas em 2026-10-08).
+- Antes de criar ou revisar endpoints, ler `docs/architecture/http-endpoint-review.md` e aplicar seu checklist.
+- Identidade OAuth opcional: ao recuperar conflito de integridade, preservar o rollback e não tratar toda falha de integridade como identidade já vinculada.
 
-## Gate de integração de specs
+## Teste local (detalhamento de `teste-local.md`)
 
-- Decisão do usuário em 2026-11-12: a revisão final de código antes do merge em `main` usa Claude Opus 5.5 com esforço medium em agente autônomo novo; a regra SOL de 2026-10-15 fica como histórico. Contexto novo e somente leitura continuam obrigatórios: o revisor lê código/commits/hashes, sem testes/build/escritas/rede/DB.
-- Todo PR de integração `epic/<spec>` → `main` após a entrega #133 usa `[SPEC] <Título>` e passa por revisão independente do diff completo, conforme `docs/architecture/spec-review.md`, antes do merge autorizado. A integração na épica geral durante a reformulação seguia a mesma exigência. Aprovações das tarefas/CI não substituem essa revisão.
-- Dispare o subagente `spec-reviewer` em contexto novo; forneça spec aprovada, AGENTS.md/ADRs/padrões, base/head imutáveis e acesso ao código. Não fornecer inicialmente conversa, justificativas de implementação, relatórios anteriores ou sugestões de resultado. Decisões versionadas são requisitos, não devem ser ocultadas. A autorização para delegar cobre somente essa revisão, sem edições/merges pelo revisor.
-- Modelo/esforço escolhidos pelo usuário: Claude Opus 5.5, esforço medium, fixados no perfil `.claude/agents/spec-reviewer.md`. Antes do disparo, registre o modelo/esforço efetivos. Modelo indisponível bloqueia o disparo; não substituir silenciosamente. Outra escolha exige aprovação do usuário e atualização do perfil.
-- Registre evidências em `openspec/changes/<spec>/spec-review.json` e `spec-review.md`: commits/digest analisados, modelo/sessão, cobertura/limitações, achados e triagem. Não invente revisão executada, aprovações ou findings. Ausência de achados é válida quando fundamentada.
-- Corrija achados confirmados por commits/PRs revisáveis. Bloqueadores não podem ser adiados. Mudança de base ou do diff (incluindo requisitos, docs, testes e CI) invalida o relatório; só os dois arquivos de evidência são excluídos do digest para permitir registrar a revisão sem ciclo infinito. Revisor confere o novo conjunto; não atualizar digest apenas para fazer o gate passar.
-- O check `spec-review` valida título, evidência/atualidade e triagem, não a qualidade semântica. A automação/ruleset atuais aplicam esse gate somente à antiga épica geral; em `main` o workflow emite `spec-review-tests`, sem certificar revisão cumulativa. Até alterar essa automação por PR/aprovação próprios, o coordenador valida explicitamente `validate_report` com base/head/número reais e registra a revisão independente antes do merge autorizado em `main`. Não declarar `spec-review-tests` como certificação semântica nem relaxar proteções. A aprovação de merge não autoriza publicação ou arquivamento. Sincronização histórica `main` → épica geral não era integração de spec.
+- Habilitar para teste todo o escopo autorizado, inclusive a elegibilidade das questões preparadas/conferidas. A habilitação local dispensa nova pausa para aprovação editorial local; registrar seleção, fingerprints/digests e destino ao habilitar. Preservar os dados existentes.
+- Habilitação local não é aceite final, aprovação editorial de conteúdo real, merge nem publicação.
 
-## Arquitetura
+## Site estático, GitHub Pages e previews
 
-- Antes de implementar ou revisar backend, leia `docs/architecture/adr/0001-domain-and-application-boundaries.md`. Esta é a referência detalhada das decisões aprovadas em 2026-10-08; não dependa da memória da conversa.
-- Use monólito modular por funcionalidade. UseCases coordenam ações relevantes; entidades/objetos de valor protegem invariantes. Domain Services somente para regras sem proprietário natural; não invente comportamento para preencher camadas.
-- Domínio e núcleo da aplicação são Java puro, sem Spring/JPA/JDBC/HTTP/OAuth. Dependências apontam dos adaptadores para o núcleo, nunca no sentido contrário. Wiring e execução transacional ficam na infraestrutura.
-- Persistência do domínio usa JPA/Hibernate por contratos de repository. Modelos JPA ficam na infraestrutura; SQL nativo é permitido ali quando justificado. Nunca acessar EntityManager/JdbcTemplate ou repositories JPA concretos em UseCases/controllers/handlers.
-- Flyway é o único dono do schema; Hibernate usa `ddl-auto=validate` e `open-in-view=false`. Não alterar migrações já versionadas para adaptar ORM. Spring Session JDBC e prontidão SQL são mecanismos técnicos, não entidades de negócio.
-- Prefira composição; interfaces somente em fronteiras úteis. Não criar Service intermediário que apenas repasse ao UseCase, classe abstrata especulativa, entidade de negócio para cookie/CSRF ou DTO que vaze entidade JPA.
-- Teste domínio sem framework, aplicação com portas substituíveis, infraestrutura com PostgreSQL real isolado e limites com ArchUnit. Preserve rollback antes de recuperar conflitos; não tratar toda falha de integridade como identidade já vinculada.
+- `stable` preserva o site estático anterior; `main` recebe a stack completa e não publica no Pages (decisão do usuário de 2026-10-23).
+- Correções independentes do site estático seguem `hotfix.md` com branch de destino `stable`, sem trazer a stack completa para o site estático.
+- Preview estático é manual: Actions → Publish GitHub Pages → Run workflow, executado a partir de `stable`, informando a branch de material no campo `branch`. `main` e `pages-store` não são entradas publicáveis.
+- A referência do workflow e a única branch autorizada no ambiente `github-pages` são `stable`; previews usam o material de `stable` como produção. A cópia do workflow em `main` serve à descoberta pelo Actions e não publica nessa referência.
+- Previews atuais são do material estático; não executam Java/PostgreSQL nem publicam a aplicação React. Deployment da aplicação completa tem spec própria.
+- Preservar as aulas, `pages-store` e os previews já armazenados.
 
-## Endpoints e revisão de responsabilidades
+## Automação legada de revisão
 
-- Antes de criar/revisar endpoints, leia `docs/architecture/http-endpoint-review.md` e aplique seu checklist. CI verde não substitui revisão de responsabilidades; inclua no PR o proprietário das decisões e as evidências, não apenas a contagem de testes.
-- Autenticação, autorização técnica de rota, sessão e validação CSRF pertencem ao Spring Security/infraestrutura. Controllers recebem identidade já verificada e traduzem HTTP; não repetir rejeição de visitante/principal inválido nem gerar/validar tokens manualmente. Regras de negócio/posse de recursos continuam no núcleo, não em filtros.
-- Contratos JSON estáveis usam DTOs tipados na web e retornos concretos; evite `Map`, `Object` e `ResponseEntity<?>` como contrato. Exceções (ex.: payload genuinamente dinâmico) precisam de justificativa e testes, não de proibição cega.
-- UseCases só para ações relevantes. Expor UUID da sessão ou token CSRF do framework não exige Service/UseCase artificial. Teste rejeições com a cadeia de segurança real, além dos contratos; testes isolados de controller não demonstram essa fronteira.
-- Ao corrigir um achado recorrente, registre causa, regra positiva, regressão automatizada quando viável e limites da proteção. Não relaxe testes para acomodar violações nem prometa que lint/ArchUnit/modelo garantem toda decisão semântica.
+- O workflow `spec-review.yml` e `scripts/check_spec_review.py` aplicam o gate estrutural (`spec-review.json` + digest) somente à antiga `epic/application-reformulation`; em PRs para `main` emitem `spec-review-tests`, que não certifica revisão.
+- A evidência vigente é o `review.md` da spec (`revisao-e-integracao.md`, seção 7). `spec-review.json/md` de specs anteriores ficam como histórico verdadeiro.
+- Alterar ou remover essa automação exige PR e aprovação próprios; não relaxar workflows/rulesets nesse meio-tempo.
 
-## CI e preview
+## Exceções às regras globais
 
-- CI verifica builds, testes e regressão; não publica previews.
-- Desde a decisão do usuário de 2026-10-23, `stable` preserva o site estático anterior e publica automaticamente em push. `main` recebe a stack completa e não publica no Pages.
-- Preview estático é manual: Actions → Publish GitHub Pages → Run workflow, executar o workflow de `stable` e informar a branch de material desejada no campo `branch`. `main` e `pages-store` não são entradas publicáveis.
-- A referência do workflow e a única branch autorizada no ambiente `github-pages` são `stable`; previews usam o material de `stable` como produção. A cópia do workflow em `main` serve à descoberta pelo Actions e não executa publicação nessa referência.
-- Previews atuais são do material estático; não executam Java/PostgreSQL nem publicam a aplicação React. Deployment da aplicação completa terá spec própria.
-- Nunca publicar segredos, arquivos `.env` ou dados privados. Preserve as aulas e os previews já armazenados.
+| # | Regra global afetada | Regra do projeto | Motivo | Data | Aprovação |
+| --- | --- | --- | --- | --- | --- |
+| E1 | `ci-deploy-e-segredos.md`: deploy manual por padrão | Push em `stable` publica automaticamente o site estático no GitHub Pages | Manter o site estático legado em produção com o fluxo que já existia antes da reformulação | 2026-10-23 | Decisão do usuário de 2026-10-23 |
+
+## Histórico (não são regras vigentes)
+
+- Reformulação entregue à `main` pelo #133 (2026-10-23); `epic/application-reformulation` é histórica e não é reutilizada.
+- GitHub Stacks (piloto #33/#34, adoção em question-bank #36) foi substituído por PRs encadeados comuns: `docs/stacks-pilot.md`.
+- Revisões SOL/Astra, revisão por lote, classificação de risco e gate com `spec-review.json`/digest: `docs/architecture/spec-review.md`. Revisões já executadas permanecem histórico verdadeiro.
+- Medição de cota ChatGPT/Codex encerrada em 2026-11-09: `docs/review-quota.md`.
+- Lotes e revisão SOL por lote: `docs/implementation-batches.md`.
+- `study-experience-redesign`: base inicial em `epic/application-reformulation` 1817673 (árvore idêntica à `main` c8efceb); PR #147 retargetado para `main` com autorização do usuário.
+- Primeira épica combinada: `epic/question-bank-expansion-curation` (#173 + #177).
+- Execução contínua autorizada para `optional-google-identity` e a rodada inicial de question-bank (1.2, 1.3, 2.1–2.3 sobre #38) antecedem a regra global de autorização única por spec.
+- Artefatos de specs abertas antes de 2026-11-17 (proposal/design/tasks) que citam Stacks, SOL, lotes ou `spec-review.json` registram o processo da época; a execução restante dessas specs segue as regras globais vigentes.
+- Branches e commits históricos são preservados.

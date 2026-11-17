@@ -42,9 +42,9 @@ python3 scripts/check_links.py
 
 ## Revisão por branch e previews
 
-**Padrão do projeto:** uma spec usa `epic/<nome-da-spec>`; tarefas ou grupos coesos usam `task/<nome-da-spec>/<assunto>` e abrem PRs para a épica. Após revisão dos PRs menores, a épica abre PR para `main`. Regras e dependências estão em `AGENTS.md`.
+**Padrão do projeto:** uma spec usa `epic/<nome-da-spec>`; tarefas ou grupos coesos usam `task/<nome-da-spec>/<assunto>` e abrem PRs para a épica. Após revisão dos PRs menores, a épica abre PR para `main`. Regras: regras globais do usuário (`~/.claude/rules/`) e `AGENTS.md`.
 
-**Reformulação completa:** neste pacote, as épicas das specs abrem PR para `epic/application-reformulation`, e não para main. Somente após concluir e aprovar todas as etapas, a épica geral segue para main em uma entrega única. O site atual permanece em produção. Veja `docs/application-reformulation.md`.
+**Histórico — reformulação completa (entregue pelo #133 em 2026-10-23):** naquele pacote, as épicas das specs abrem PR para `epic/application-reformulation`, e não para main. Somente após concluir e aprovar todas as etapas, a épica geral segue para main em uma entrega única. O site atual permanece em produção. Veja `docs/application-reformulation.md`.
 
 Mantenha `stable` como versão aprovada do site estático. Crie uma branch para cada melhoria e abra um Pull Request; faça merge apenas após aprovação. A aplicação completa evolui em `main`.
 

@@ -1,5 +1,13 @@
 # Revisão independente de integração de spec
 
+> **HISTÓRICO — não é regra vigente.** Substituído em 2026-11-17 pelas regras globais do
+> usuário (`~/.claude/rules/revisao-e-integracao.md`): revisão por grupo (Sonnet) com
+> correção pelo `finding-fixer`, revisão final pelo `spec-reviewer` (Opus 5.5 medium),
+> reverificação só do delta, pacote e aprovação únicos e evidência em `review.md`. O texto
+> abaixo registra o processo anterior (SOL/Astra, lotes, classificação de risco,
+> `spec-review.json`/digest, Stacks) e as limitações da automação legada descritas no
+> `AGENTS.md`.
+
 ## Integração após a entrega da reformulação
 
 A entrega inicial foi integrada à `main` pelo #133 em 2026-10-23. Novas specs

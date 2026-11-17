@@ -31,11 +31,11 @@ Os arquivos gerados da ferramenta devem ser atualizados pela CLI; regras particu
 ## Ciclo atual após a entrega
 
 A reformulação foi entregue à main pelo #133 e o layout pelo #147. Novas specs
-partem de main atualizada e seguem tarefas → epic/<spec> → main, com proposta e
-grupo completo escolhidos antes da implementação, revisão cumulativa independente
-SOL6.1xHigh e autorização própria de merge. A antiga épica geral fica preservada
-como histórico. Stable publica apenas o material estático. AGENTS.md é a referência
-para o ciclo e os limites atuais do gate automatizado.
+partem de main atualizada e seguem tarefas → epic/<spec> → main. O ciclo (spec,
+issue, autorização, revisão por grupo e final, pacote e aprovação únicos) segue as
+regras globais em `~/.claude/rules/` e o `AGENTS.md` do projeto, nessa precedência.
+A antiga épica geral fica preservada como histórico. Stable publica apenas o
+material estático.
 
 ## Registro histórico do planejamento inicial
 

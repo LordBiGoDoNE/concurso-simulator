@@ -1,5 +1,10 @@
 # Rodadas de implementação e revisão
 
+> **HISTÓRICO — não é regra vigente.** Lotes, revisão SOL por lote e medições aqui descritas foram
+> substituídos em 2026-11-17 pelas regras globais (`~/.claude/rules/openspec-e-branches.md`,
+> `planejamento-e-autorizacao.md` e `revisao-e-integracao.md`): uma confirmação por spec cobre todos
+> os grupos, revisão por grupo (Sonnet) e revisão final (Opus 5.5 medium).
+
 Decisão atual do usuário: entregar os grupos completos escolhidos para cada lote,
 sem limite fixo de tarefas, em PRs coesos, sem pausas por subtarefa nem merges.
 Se o escopo não vier explícito, listar grupos/tarefas pendentes e perguntar quais serão

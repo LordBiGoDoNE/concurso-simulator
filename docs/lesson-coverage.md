@@ -8,34 +8,34 @@ da explicação.
 
 | Total | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 51 assuntos | 2587 | 1671 | 229 | 1442 | 0 |
+| 51 assuntos | 2587 | 1671 | 208 | 1463 | 0 |
 
 ## Por assunto
 
 | Assunto | Título | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |
 | --- | --- | ---: | ---: | ---: | ---: | ---: |
-| P01 | Interpretação de Textos | 50 | 23 | 7 | 16 | 0 |
+| P01 | Interpretação de Textos | 50 | 23 | 5 | 18 | 0 |
 | P02 | Sinônimos, Antônimos e Relações de Sentido | 50 | 24 | 4 | 20 | 0 |
 | P03 | Sentido Próprio e Figurado | 50 | 15 | 4 | 11 | 0 |
 | P04 | Pontuação | 50 | 18 | 12 | 6 | 0 |
-| P05 | Ortografia e Acentuação | 50 | 23 | 9 | 14 | 0 |
+| P05 | Ortografia e Acentuação | 50 | 23 | 7 | 16 | 0 |
 | P06 | Classes de Palavras | 50 | 20 | 5 | 15 | 0 |
 | P07 | Concordância Verbal e Nominal | 50 | 25 | 7 | 18 | 0 |
 | P08 | Regência Verbal e Nominal | 50 | 21 | 6 | 15 | 0 |
-| P09 | Colocação Pronominal | 50 | 17 | 9 | 8 | 0 |
-| P10 | Crase | 50 | 20 | 9 | 11 | 0 |
+| P09 | Colocação Pronominal | 50 | 17 | 7 | 10 | 0 |
+| P10 | Crase | 50 | 20 | 8 | 12 | 0 |
 | M01 | Operações com Números Reais | 56 | 32 | 2 | 30 | 0 |
-| M02 | MMC e MDC | 50 | 22 | 6 | 16 | 0 |
+| M02 | MMC e MDC | 50 | 22 | 5 | 17 | 0 |
 | M03 | Razão, Proporção e Regra de Três | 50 | 21 | 4 | 17 | 0 |
 | M04 | Porcentagem e Juros Simples | 51 | 18 | 6 | 12 | 0 |
 | M05 | Média Aritmética e Ponderada | 50 | 19 | 3 | 16 | 0 |
 | M06 | Equações e Sistemas do 1º Grau | 51 | 22 | 5 | 17 | 0 |
 | M07 | Tabelas e Gráficos | 51 | 34 | 3 | 31 | 0 |
 | M08 | Sistemas de Medidas | 50 | 33 | 7 | 26 | 0 |
-| M09 | Geometria- Perímetro, Área, Volume, Ângulos e Pitágoras | 50 | 33 | 6 | 27 | 0 |
-| M10 | Relações Lógicas, Dedução e Sequências | 50 | 26 | 2 | 24 | 0 |
-| M11 | Estruturas e Argumentação Lógica | 54 | 28 | 8 | 20 | 0 |
-| M12 | Diagramas Lógicos e Situações-Problema | 54 | 27 | 5 | 22 | 0 |
+| M09 | Geometria- Perímetro, Área, Volume, Ângulos e Pitágoras | 50 | 33 | 4 | 29 | 0 |
+| M10 | Relações Lógicas, Dedução e Sequências | 50 | 26 | 1 | 25 | 0 |
+| M11 | Estruturas e Argumentação Lógica | 54 | 28 | 7 | 21 | 0 |
+| M12 | Diagramas Lógicos e Situações-Problema | 54 | 27 | 4 | 23 | 0 |
 | I01 | Windows - Arquivos, Pastas e Diretórios | 50 | 36 | 2 | 34 | 0 |
 | I02 | Windows - Atalhos, Área de Trabalho e Área de Transferência | 50 | 47 | 7 | 40 | 0 |
 | I03 | Word - Edição e Formatação | 50 | 32 | 3 | 29 | 0 |
@@ -43,26 +43,26 @@ da explicação.
 | I05 | Excel - Células, Linhas, Colunas e Referências | 50 | 28 | 3 | 25 | 0 |
 | I06 | Excel - Fórmulas e Funções | 50 | 29 | 2 | 27 | 0 |
 | I07 | Excel - Tabelas, Gráficos, Classificação e Dados | 50 | 26 | 1 | 25 | 0 |
-| I08 | Excel - Macros | 50 | 33 | 2 | 31 | 0 |
+| I08 | Excel - Macros | 50 | 33 | 1 | 32 | 0 |
 | I09 | PowerPoint - Apresentações, Edição, Animações e Transições | 50 | 24 | 1 | 23 | 0 |
-| I10 | E-mail, Internet, URL, Links e Busca | 50 | 26 | 2 | 24 | 0 |
+| I10 | E-mail, Internet, URL, Links e Busca | 50 | 26 | 1 | 25 | 0 |
 | A01 | Princípios da Administração Pública | 50 | 50 | 5 | 45 | 0 |
 | A02 | Rotinas Administrativas e Redação Técnica | 50 | 41 | 1 | 40 | 0 |
-| A03 | Processos Administrativos- Autuação, Registro e Encaminhamento | 50 | 54 | 2 | 52 | 0 |
-| A04 | Gestão de Materiais e Suprimentos | 54 | 54 | 5 | 49 | 0 |
+| A03 | Processos Administrativos- Autuação, Registro e Encaminhamento | 50 | 54 | 1 | 53 | 0 |
+| A04 | Gestão de Materiais e Suprimentos | 54 | 54 | 4 | 50 | 0 |
 | A05 | Arquivística e Gestão Documental | 50 | 52 | 9 | 43 | 0 |
 | A06 | Atendimento ao Público e Comunicação | 50 | 52 | 0 | 52 | 0 |
 | A07 | Ética e Sigilo Profissional | 50 | 54 | 0 | 54 | 0 |
 | A08 | Orçamento, Cálculos e Prestação de Contas | 52 | 53 | 1 | 52 | 0 |
 | S01 | LDB - Lei 9.394-1996 | 62 | 54 | 5 | 49 | 0 |
 | S02 | Escrituração Escolar | 50 | 26 | 1 | 25 | 0 |
-| S03 | Registros Individuais, Ficha e Histórico Escolar | 50 | 26 | 2 | 24 | 0 |
+| S03 | Registros Individuais, Ficha e Histórico Escolar | 50 | 26 | 1 | 25 | 0 |
 | S04 | Matrícula, Frequência e Transferência | 50 | 46 | 1 | 45 | 0 |
-| S05 | Protocolo e Arquivo Escolar | 50 | 28 | 1 | 27 | 0 |
-| S06 | Redação Oficial - Atas, Ofícios e Requerimentos | 50 | 18 | 5 | 13 | 0 |
+| S05 | Protocolo e Arquivo Escolar | 50 | 28 | 0 | 28 | 0 |
+| S06 | Redação Oficial - Atas, Ofícios e Requerimentos | 50 | 18 | 4 | 14 | 0 |
 | S07 | Constituição Federal - Educação - arts. 205 a 214 | 50 | 49 | 14 | 35 | 0 |
 | S08 | ECA - arts. 1 a 6 e 53 a 69 | 50 | 46 | 15 | 31 | 0 |
-| S09 | Atendimento ao Público e Comunicação Escolar | 50 | 44 | 3 | 41 | 0 |
+| S09 | Atendimento ao Público e Comunicação Escolar | 50 | 44 | 2 | 42 | 0 |
 | S10 | Relações Humanas, Ética, Sigilo e Assiduidade | 52 | 49 | 1 | 48 | 0 |
 | S11 | Censo Escolar e Informações Educacionais | 50 | 50 | 6 | 44 | 0 |
 
@@ -74,6 +74,7 @@ da explicação.
 - Coesão referencial: anáfora (retoma o que já foi dito) e catáfora (antecipa o que virá) (termo; 4 questões)
 - Referência exofórica (dêitica): o termo aponta para algo fora do texto (termo; 1 questões)
 - Coesão por substituição nominal (expressão equivalente/hiperônimo) e por elipse de termo já citado (termo; 2 questões)
+- Relações lógicas de causa (como, porque) e de finalidade (para + infinitivo) (termo; 2 questões)
 - Relações de condição (se, poderá) e de proporção (quanto mais... maior) (termo; 2 questões)
 - Operadores de retificação (ou melhor) e de exemplificação (como, por exemplo) (termo; 2 questões)
 - Pressuposto: informação implícita acionada por marcadores (ainda, parar de, voltar a) (termo; 3 questões)
@@ -85,6 +86,7 @@ da explicação.
 - Função argumentativa de dados/exemplos (sustentar tese) e contraexemplo que refuta generalização (termo; 2 questões)
 - Defeitos de argumentação: circularidade (petição de princípio), falsa dicotomia e falsa causa (termo; 3 questões)
 - Significado de palavra ou expressão determinado pelo contexto (procedimento; 1 questões)
+- Sequência de ações e marcadores temporais (primeiro, depois, antes de, só então) (procedimento; 2 questões)
 - Foco narrativo: narrador em primeira × terceira pessoa, onisciente × de conhecimento limitado (termo; 1 questões)
 
 ### P02 — Sinônimos, Antônimos e Relações de Sentido
@@ -144,6 +146,8 @@ da explicação.
 - Mal (advérbio, oposto de bem) × mau (adjetivo, oposto de bom) (termo; 1 questões)
 - Mas (conjunção de oposição) × mais (quantidade/intensidade) (termo; 1 questões)
 - Onde (lugar em que se está) × aonde (destino, com verbos de movimento) (termo; 1 questões)
+- Emprego de x e ch (enxergar, mexer, enxofre, vexame: x após en- e me-) (termo; 3 questões)
+- Emprego de g e j (viagem substantivo × viajem verbo; -agem, -igem, -ugem: tigela, origem, vertigem) (termo; 2 questões)
 - Grafias com s, ss, ç, sc, xc (exceção, excesso, excessivo, excelência, excedente, excepcional, engessar) (termo; 6 questões)
 - Homófonos sessão (reunião) × seção (divisão) × cessão (ato de ceder) (termo; 1 questões)
 - Homófonos conserto (reparo) × concerto (apresentação musical) (termo; 1 questões)
@@ -211,7 +215,9 @@ da explicação.
 
 - Próclise atraída por palavra negativa (não, nunca, jamais, ninguém, nada) sem pausa (procedimento; 18 questões)
 - Próclise em orações optativas, que exprimem desejo (Que Deus o proteja; Oxalá te acompanhem) (procedimento; 3 questões)
+- Advérbio antes do verbo sem pausa atrai próclise (Sempre se preparou); com vírgula, usa-se ênclise (Ontem, enviou-se) (procedimento; 2 questões)
 - Próclise com gerúndio precedido de "em" (em se tratando de) (procedimento; 1 questões)
+- Futuro do presente e do pretérito nunca admitem ênclise (não "faria-o", "aumentaria-se"); com palavra atrativa, próclise em vez de mesóclise (procedimento; 6 questões)
 - Particípio não admite ênclise: em tempos compostos e na passiva o pronome liga-se ao auxiliar (Tinham-me avisado; Não me tinham informado) (procedimento; 3 questões)
 - Locução verbal com infinitivo ou gerúndio: ênclise ao verbo principal é admitida, mesmo com negativa antes do auxiliar (não vou ajudar-te; estava tornando-se) (procedimento; 4 questões)
 - Infinitivo precedido de preposição: próclise ou ênclise (para me orientar / para orientar-me; para não me esquecer / para não esquecer-me) (procedimento; 2 questões)
@@ -223,6 +229,7 @@ da explicação.
 - Crase com nomes de lugar: teste "volto da/volto de" (à Bahia; a Brasília; à Brasília de sua infância, quando especificada) (procedimento; 3 questões)
 - Crase com pronomes relativos: "à qual/às quais" (pode haver) × "a que", "a quem", "a cuja" (sem crase) (procedimento; 4 questões)
 - Sem crase antes de pronomes que rejeitam artigo: pessoais (ela, você), de tratamento (Vossa Senhoria), indefinidos (toda, qualquer, ninguém, todas) e artigo indefinido (uma); exceção: senhora, senhorita, dona (procedimento; 12 questões)
+- Sem crase depois de outras preposições (desde as sete horas, entre as oito e as nove, para as dez horas, conforme a agenda) (procedimento; 5 questões)
 - Crase facultativa depois de "até" (até as dez horas / até às dez horas) (procedimento; 1 questões)
 - Paralelismo nos intervalos: "de... a" sem artigos (de segunda a sexta) × "das... às" com artigos (das nove às onze) (procedimento; 2 questões)
 - Crase com "à moda de" subentendido (bife à milanesa, sair à francesa, à moda antiga) (procedimento; 3 questões)
@@ -275,6 +282,7 @@ da explicação.
 - Todo divisor comum divide a soma e a diferença: MDC(a+b, b) = MDC(a, b); consecutivos (termo; 3 questões)
 - Quantidade de divisores: produto dos (expoentes + 1); número com exatamente três divisores (calculo; 4 questões)
 - Quadrado perfeito: todos os expoentes pares na fatoração (menor fator para completar; divisores quadrados) (termo; 5 questões)
+- Divisor e divisão exata: listar divisores, pares de divisores complementares (d × n/d = n) (termo; 4 questões)
 - Divisores comuns são exatamente os divisores do MDC (termo; 1 questões)
 - Múltiplos comuns são os múltiplos do MMC (contar em intervalo, primeiro acima de um limite, divisível por ambos) (termo; 4 questões)
 - Critérios de divisibilidade por 2, 3, 5, 9 e 10 (último algarismo, soma dos algarismos) (procedimento; 2 questões)
@@ -438,6 +446,8 @@ da explicação.
 - Número de diagonais de polígono convexo: n(n − 3)/2 (calculo; 1 questões)
 - Área do trapézio: (B + b) × h ÷ 2, inclusive isolando a altura (calculo; 1 questões)
 - Área do losango: produto das diagonais ÷ 2 (calculo; 1 questões)
+- Área por composição e decomposição: somar partes ou subtrair recortes; conservação da área (procedimento; 3 questões)
+- Quantas peças quadradas cobrem uma região: área total ÷ área da peça (procedimento; 2 questões)
 - Perímetro fixo: o quadrado tem a maior área entre os retângulos (termo; 1 questões)
 - Área do círculo: A = πr² (inclusive achando o raio a partir da área) (calculo; 5 questões)
 - Arco e setor circular: fração ângulo/360° do comprimento ou da área (calculo; 2 questões)
@@ -465,6 +475,7 @@ da explicação.
 - Descobrir o padrão: multiplicar e somar constante (2x + 1) (procedimento; 1 questões)
 - Termo geral dado por fórmula: substituir a posição n (calculo; 4 questões)
 - Ordenação por comparações: encadear relações por transitividade (procedimento; 5 questões)
+- Posicionamento com restrições: fixar o que é certo e testar os casos restantes (procedimento; 5 questões)
 - Dedução por hipótese e contradição: supor, verificar as condições e eliminar (procedimento; 3 questões)
 - Verdades e mentiras: usar a falsidade de uma afirmação como informação (procedimento; 1 questões)
 - Relações de parentesco: montar a árvore familiar (procedimento; 1 questões)
@@ -490,6 +501,7 @@ da explicação.
 - Dupla negação (termo; 1 questões)
 - Tautologia e contradição (termo; 2 questões)
 - Equivalências algébricas: distributiva, absorção e exportação (dispositivo; 3 questões)
+- Condição necessária e condição suficiente; leitura de 'só se' / 'somente se' (termo; 2 questões)
 - Modus tollens: negar o consequente (dispositivo; 2 questões)
 - Cadeia de condicionais (silogismo hipotético): encadear p → q e q → r (procedimento; 2 questões)
 - Silogismo disjuntivo (p ou q, não p, logo q) e conclusão por casos (dispositivo; 2 questões)
@@ -503,6 +515,7 @@ da explicação.
 
 ### M12 — Diagramas Lógicos e Situações-Problema
 
+- Pertinência (elemento ∈ conjunto) versus inclusão (subconjunto ⊂); conjunto como elemento (termo; 2 questões)
 - Conjunto vazio e conjunto unitário (∅ ≠ {∅}) (termo; 1 questões)
 - Operações: união, interseção e diferença (A − B = A ∩ Bᶜ) (calculo; 3 questões)
 - De Morgan em conjuntos: complementar da união = interseção dos complementares (dispositivo; 1 questões)
@@ -752,6 +765,7 @@ da explicação.
 
 ### I08 — Excel - Macros
 
+- Macro: sequência de comandos gravada em módulo, escrita em VBA (não JavaScript; Office Scripts é outra tecnologia) (termo; 3 questões)
 - Gravar Macro (guia Desenvolvedor): registra as ações e gera código VBA (Sub); erros também são gravados; preferir macros curtas (procedimento; 4 questões)
 - Guia Desenvolvedor: habilitar em Personalizar a Faixa de Opções (comando; 2 questões)
 - Alt+F11: abrir o Editor do Visual Basic (VBE) (comando; 1 questões)
@@ -814,6 +828,7 @@ da explicação.
 
 - Pesquisa Google: operador filetype: (tipo de arquivo, ex.: filetype:pdf) (comando; 1 questões)
 - Pesquisa Google: operador site:dominio (sem espaço) (comando; 1 questões)
+- Pesquisa Google: aspas para expressão exata; sinal de menos (-termo) exclui (comando; 2 questões)
 - Pesquisa Google: filtro por intervalo de datas (Ferramentas; before:/after:) (comando; 2 questões)
 - Navegadores Web: Microsoft Edge, Firefox, Chrome; testar em outro navegador para diagnosticar (termo; 2 questões)
 - Cache: guarda recursos localmente para não baixar de novo; pode exibir versão antiga (limpar e recarregar) (termo; 2 questões)
@@ -979,6 +994,7 @@ da explicação.
 - Protocolo e gestão documental: padronização de procedimentos, rastreabilidade e controle dos documentos desde a origem (termo; 1 questões)
 - Lei 8.159/1991, art. 3º: gestão de documentos (produção, tramitação, uso, avaliação e arquivamento) (dispositivo; 1 questões)
 - Número de protocolo: identifica o documento ou processo e permite rastrear sua tramitação (termo; 1 questões)
+- Autuação (formação do processo): capa, ordem cronológica, numeração das folhas e identificação da unidade de destino (procedimento; 2 questões)
 - Numeração de folhas do processo (Portaria 1.677/2015, item 2.7.1): carimbo no canto superior direito, ordem crescente, capa não numerada, sem rasura ou letras (procedimento; 2 questões)
 - Folha de despacho (Portaria 1.677/2015, item 2.9.1): uso de frente e verso até o total aproveitamento e carimbo 'Em branco' (procedimento; 1 questões)
 - Elementos essenciais da correspondência oficial: identificação do remetente e do destinatário (termo; 1 questões)
@@ -1011,6 +1027,7 @@ da explicação.
 - Inventário de transferência de responsabilidade (IN SEDAP 205/1988, item 8.1, c): mudança do dirigente da unidade (dispositivo; 3 questões)
 - Inventário de extinção ou transformação (IN SEDAP 205/1988, item 8.1, d) (dispositivo; 3 questões)
 - Inventário eventual (IN SEDAP 205/1988, item 8.1, e): em qualquer época, por iniciativa do dirigente ou do órgão fiscalizador (dispositivo; 3 questões)
+- Inventário físico: corte (suspensão) das movimentações durante a contagem e reconciliação dos eventos (procedimento; 1 questões)
 - IN SEDAP 205/1988, itens 7.2, 8 e 11.2.1: material ocioso ou desnecessário é posto à disposição para cessão ou redistribuição (dispositivo; 1 questões)
 - Tempo de aquisição ou reposição (IN SEDAP 205/1988, item 7.6, b): da emissão do pedido de compra ao recebimento do material (dispositivo; 1 questões)
 - Estoque máximo (IN SEDAP 205/1988, item 7.6, e): limite que evita capital imobilizado, considerando consumo, espaço, prazo de aquisição e perecimento/obsolescência (termo; 2 questões)
@@ -1352,6 +1369,7 @@ da explicação.
 - Documentos individuais (boletim, diploma, atestado, certificado) × coletivos (regimento, proposta pedagógica) (termo; 2 questões)
 - LDB art. 12, I: proposta pedagógica elaborada e executada pelo estabelecimento (documento coletivo) (dispositivo; 2 questões)
 - Documentos de vida escolar (ficha de matrícula, histórico, certificados/diplomas, atas de resultados finais) × documentos alheios (débitos, folha ponto) (termo; 2 questões)
+- LDB art. 24, II, b: classificação por transferência com base nos estudos comprovados no histórico (dispositivo; 1 questões)
 - Transcrição fiel: o histórico reproduz a documentação escolar anterior, sem inventar ou modernizar dados (procedimento; 5 questões)
 - Modelo paulista de histórico como referência técnica: verificar as normas do sistema municipal (termo; 1 questões)
 
@@ -1423,6 +1441,7 @@ da explicação.
 - Retificação formal: manter a relação entre o documento anterior e o ato de retificação (procedimento; 1 questões)
 - Minuta × versão assinada/formalizada de um ato (termo; 1 questões)
 - Arquivo institucional: ato de criação da escola × ato de autorização do curso (termo; 1 questões)
+- Lei 8.159/1991, art. 3º: gestão de documentos (produção, tramitação, uso, avaliação e arquivamento) (dispositivo; 2 questões)
 - Lei 8.159/1991, art. 8º: documentos correntes, intermediários e permanentes (dispositivo; 5 questões)
 - Arquivo corrente da secretaria: pastas de alunos ativos identificadas (nome, curso, ano/série, nº de ordem, etapa, turma, turno) (procedimento; 2 questões)
 - Arquivo permanente: dossiês de ex-alunos e concluintes, preservados definitivamente e usados para expedir históricos (procedimento; 2 questões)
@@ -1443,6 +1462,7 @@ da explicação.
 - Termo de adaptação e registro em livro próprio: estudante, componentes conforme a matriz, professores responsáveis, decisão final e assinatura da direção (termo; 6 questões)
 - Despacho (decisão da direção) × ciência do interessado; a comunicação segue o despacho, não o requerimento (termo; 2 questões)
 - Convocação: destinatário e estudante identificados, data, horário, local e finalidade; emissão × recebimento (termo; 4 questões)
+- Ofício de encaminhamento: identifica estudante, caso e processo; síntese cronológica dos fatos; anexos conferidos; estágio real do processo (procedimento; 5 questões)
 - Ofício: comunicação oficial expedida por órgãos públicos, inclusive a particulares; o particular usa carta ou requerimento (termo; 1 questões)
 - MRPR 2018, item 5.1.2: identificação do expediente (nome em maiúsculas, nº, ano com quatro dígitos e siglas separadas por barra) (dispositivo; 1 questões)
 - Requerimento: pedido de pessoa física ou jurídica à autoridade, com objeto, finalidade, amparo legal e documentos identificados (não equivale a deferimento) (termo; 6 questões)
@@ -1561,6 +1581,7 @@ da explicação.
 - Redação de comunicados: coesão e referentes claros para identificar o responsável e a sequência das ações (termo; 1 questões)
 - Redação de comunicados: concisão elimina excessos sem suprimir informação necessária (ex.: prazo) (termo; 1 questões)
 - Padronização e coerência: confirmar a informação e unificar a versão vigente em todos os canais (procedimento; 1 questões)
+- Revisão do comunicado: conferir conteúdo e dados (turma, data, destinatário), não só a gramática (procedimento; 1 questões)
 - Instrução executável: ordem direta com verbo de ação, documento, destino e prazo (termo; 1 questões)
 - Atuação coletiva: alinhar objetivos, papéis e fluxo de encaminhamento entre os setores da escola (procedimento; 1 questões)
 - Comunicação visual: imagem e texto devem produzir sentido coerente para o público (termo; 1 questões)

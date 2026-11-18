@@ -9,3 +9,5 @@ acervo-local/**/*.zip binary
 backend/build/question-expansion/**/*.pdf binary
 backend/build/question-expansion/**/*.png binary
 backend/build/question-expansion/**/*.zip binary
+# Fontes congeladas da curadoria 2026-10: manifest.json → sourceFiles confere o SHA-256 dos bytes exatos.
+editorial/question-bank/2026-10/legacy-sources/** -text

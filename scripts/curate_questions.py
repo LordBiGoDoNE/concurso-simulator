@@ -11,6 +11,10 @@ from extract_questions import extract
 from question_package import CATALOG, fingerprint, safe_url
 
 DIRECTORY = Path("editorial/question-bank/2026-10")
+# Cópias congeladas, byte a byte, das fontes registradas em manifest.json → sourceFiles.
+# A curadoria 2026-10 extrai delas para que edições posteriores das aulas vivas não
+# alterem hashes/fingerprints do snapshot já revisado e carregado.
+LEGACY_SOURCES = "legacy-sources"
 DISCIPLINES = ("portugues", "matematica", "informatica", "administrativo", "escolar")
 CHECKLIST = ("CORRECTNESS", "DISTRACTORS", "CLARITY", "STEP_BY_STEP",
              "ACCESSIBILITY", "SOURCES", "CLASSIFICATION")
@@ -29,7 +33,8 @@ def digest(value):
 def compile_curation(root, directory=None):
     root = Path(root).resolve()
     directory = Path(directory) if directory else root / DIRECTORY
-    original = extract(root)
+    # Os caminhos de proveniência continuam os originais; só a leitura vem do snapshot.
+    original = extract(directory / LEGACY_SOURCES)
     originals = {item["origin"]["key"]: item for item in original["items"]}
     sources = load_json(directory / "sources.json")
     items, records, batches, seen = [], [], [], set()
@@ -114,7 +119,11 @@ def compile_curation(root, directory=None):
 
 
 def verify_manifest(manifest, directory):
-    if load_json(Path(directory) / "manifest.json") != manifest:
+    expected = load_json(Path(directory) / "manifest.json")
+    if expected.get("sourceFiles") != manifest.get("sourceFiles"):
+        raise ValueError("Snapshot editorial mudou: fontes congeladas em " + LEGACY_SOURCES
+                         + " divergem de sourceFiles; revisar conteúdo e registrar novo manifest explicitamente")
+    if expected != manifest:
         raise ValueError("Snapshot editorial mudou; revisar conteúdo e registrar novo manifest explicitamente")
 
 

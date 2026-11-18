@@ -35,6 +35,9 @@ Conteúdo versionado em `src/lesson-documents/`, gerado a partir das fontes púb
 preservadas por `python scripts/compile_native_lessons.py` (a partir da raiz).
 Para verificar reprodutibilidade: `python scripts/compile_native_lessons.py --check`
 e `python -m unittest discover -s scripts/tests -p test_native_lessons.py -v`.
+A cobertura das aulas em relação ao banco de questões é conferida por
+`python scripts/lesson_coverage.py --check` (lista de conceitos em
+`editorial/lesson-coverage/2026-11/`; relatório em `docs/lesson-coverage.md`).
 O manifesto registra hashes LF das fontes e de cada documento. Alterações nas
 fontes exigem regeneração e inspeção; não editar os JSONs manualmente. Python é
 necessário nessa autoria/verificação; o build e o runtime usam apenas os dados

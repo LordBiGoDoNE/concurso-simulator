@@ -89,6 +89,11 @@ def answer(number, question, letter):
     return f'<div class="inline-resolution"><h4>Resposta: alternativa {letter}</h4><p>Leia o pedido e acompanhe o raciocínio:</p>{steps(route, number)}<p><strong>Confira:</strong> refaça a operação final, verifique as unidades e compare com o que foi pedido.</p></div>'
 
 
+def deep_sections(html):
+    """(id, heading) of the authored deeper sections, in page order."""
+    return re.findall(r'<section class="card" id="(a\d+)"><h2>(.*?)</h2>', html, re.S)
+
+
 def enhance(source, output):
     output.mkdir(parents=True, exist_ok=True)
     pages = source / '02_Matematica_Logica'
@@ -119,7 +124,10 @@ def enhance(source, output):
         text = text.replace(old_sections[0], sections, 1)
         for section in old_sections[1:]:
             text = text.replace(section, '', 1)
-        toc = '<ol class="toc">' + ''.join(f'<li><a href="#s{i}">{i}. {escape(lesson[0])}</a></li>' for i, lesson in enumerate(lessons, 1)) + '</ol>'
+        toc = '<ol class="toc">' + ''.join(f'<li><a href="#s{i}">{i}. {escape(lesson[0])}</a></li>' for i, lesson in enumerate(lessons, 1))
+        # Deeper sections authored in the page (id="a1", "a2"…) survive the
+        # rewrite of the guided sections and are listed after them.
+        toc += ''.join(f'<li><a href="#{ident}">{title}</a></li>' for ident, title in deep_sections(text)) + '</ol>'
         text = re.sub(r'<ol class="toc">.*?</ol>', lambda _: toc, text, count=1, flags=re.S)
         title, math, linear = FORMULAS[number]
         math_box = f'<section class="card"><h2>Fórmula em duas formas: {escape(title)}</h2><div class="formula"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><mrow>{math}</mrow></math><p><strong>Em linha:</strong> {readable(linear, number)}</p></div><p>As duas escritas descrevem a mesma conta. Use o formato que ajudar a entender cada operação.</p></section>'

@@ -46,7 +46,23 @@ Saída fora do Git: `packages/<disciplina>-<lote>.json`, `review-records.json`,
 `coverage.json` e `review.md`. Cada pacote contém o inventário completo e exatamente
 dez itens selecionados; o acervo não selecionado é preservado nas fontes. Os hashes
 de `manifest.json` fixam o conteúdo revisado: divergência exige nova revisão,
-não regeneração silenciosa do aceite. Pacotes completos não entram em Flyway,
+não regeneração silenciosa do aceite.
+
+`legacy-sources/` guarda cópias congeladas, byte a byte, dos 104 arquivos de
+`manifest.json` → `sourceFiles` (`manifesto_v3.json`, catálogo CSV e os HTML de
+conteúdo e gabarito), no mesmo caminho relativo do original. O compilador extrai
+dessas cópias, não das aulas vivas: edições posteriores das aulas (por exemplo,
+`lesson-depth-alignment`) não alteram hashes, fingerprints, pacotes nem o banco já
+carregado, e `contentPath`/`answerPath` continuam com o caminho original. Uma cópia
+alterada diverge do SHA-256 em `sourceFiles` e é recusada. As cópias não são
+publicadas nem verificadas como páginas e não devem ser editadas; levar mudanças
+das aulas às questões exige nova curadoria e novo manifest explícitos.
+O leitor Java confere o SHA-256 de cada `sourceFiles` sob a raiz recebida; por isso,
+pré-visualizar ou reimportar esses pacotes pela ferramenta local (`questionBankLocal`,
+ver `docs/question-local-operations.md`) exige `--root editorial/question-bank/2026-10/legacy-sources`
+(`--root ../editorial/question-bank/2026-10/legacy-sources` pelo Gradle, que roda em `backend/`).
+Com a raiz do repositório, as aulas vivas divergem e a operação é recusada.
+Pacotes completos não entram em Flyway,
 recursos do JAR, frontend, assets ou build público das aulas.
 
 ## Elegibilidade verificada no banco local

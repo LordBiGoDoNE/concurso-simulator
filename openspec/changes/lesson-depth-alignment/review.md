@@ -113,3 +113,11 @@ Instância separada (porta 8092, imagens de `487ef12`) aberta para o usuário co
 ## Questões com fundamentação a revisar (fora do escopo)
 
 Registradas nos PRs de cada grupo (#234–#240): resoluções com base legal desatualizada ou imprecisa, atribuições de fonte não confirmadas e sugestões de reclassificação de assunto. Alterar questões está fora desta spec.
+
+## Integração na épica e merge da `main`
+
+- Pacote aprovado pelo usuário em 18/11/2026 ("Aprovo o pacote"), incluindo o delta `0fc9c3c..487ef12` sem nova rodada do `spec-reviewer`.
+- PRs #233–#241 integrados na épica em ordem, com merge commit; em cada troca de base o diff mostrou só o próprio grupo e os checks estavam verdes. Épica integrada `dcfe105` com tree igual ao head aprovado `d7bd87e` (`2f1de6352d788edffcfb3bb7cb9237f6c5e5544e`).
+- `main` avançou para `9ed5e85` (só o arquivamento de `administrative-question-import`, #231). Merge da `main` na épica sem rebase: `eb284e1` (tree `79b0e0b230e11d305910049edab985f66549d0df`), sem conflito.
+- Verificação em `eb284e1`: `compile_native_lessons.py --check` verified; `lesson_coverage.py --check` 1.687/1.687; `check_links.py` OK; 58 testes Python (cobertura, aulas nativas, `enrich_math`, curadoria 2026-10, banco curado, expansão, `build_pages`) OK; `act` `study-material` e `static-pages` verdes.
+- Reverificação do delta do merge (`spec-reviewer`, Claude Opus 5.5, medium): merge limpo, sem resolução de conflito (resultado = soma exata dos dois lados); delta só em `openspec/` (11 renomeações sem mudança de conteúdo e 2 specs vigentes novas de outra capability); nenhuma interferência na spec; sem bloqueador nem achado alto. A mesma aprovação segue válida (seção 5).

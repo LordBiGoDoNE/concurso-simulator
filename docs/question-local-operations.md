@@ -24,6 +24,11 @@ não há permissão Google editorial. O acesso de escrita pertence ao operador l
 ```
 
 O Gradle executa na pasta backend; passe `--root ..` para a raiz deste repositório.
+Pacotes da curadoria 2026-10 (`scripts/curate_questions.py`) fixam os hashes das
+cópias congeladas, não das aulas vivas: para pré-visualizá-los ou reimportá-los, passe
+`--root ../editorial/question-bank/2026-10/legacy-sources` (a partir da raiz,
+`editorial/question-bank/2026-10/legacy-sources`). Com `--root ..`, aulas editadas depois
+da curadoria dão hash divergente e a operação é recusada.
 Argumentos via localArgs não suportam caminhos com espaços; use classpath/launcher
 Java diretamente com argumentos separados quando necessário. `standardInput` preserva
 a confirmação interativa. Destino/ação/chaves/SHA-256 do pacote são apresentados antes

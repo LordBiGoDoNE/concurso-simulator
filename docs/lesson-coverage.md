@@ -11,7 +11,7 @@ Este relatório mostra só o estado atual. Histórico e limites da cobertura:
 
 | Total | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 51 assuntos | 2587 | 1687 | 359 | 1328 | 0 |
+| 51 assuntos | 2587 | 1687 | 491 | 1196 | 0 |
 
 ## Por assunto
 
@@ -44,11 +44,11 @@ Este relatório mostra só o estado atual. Histórico e limites da cobertura:
 | I03 | Word - Edição e Formatação | 50 | 32 | 32 | 0 | 0 |
 | I04 | Word - Tabelas, Páginas, Índices e Objetos | 50 | 23 | 23 | 0 | 0 |
 | I05 | Excel - Células, Linhas, Colunas e Referências | 50 | 28 | 28 | 0 | 0 |
-| I06 | Excel - Fórmulas e Funções | 50 | 29 | 2 | 27 | 0 |
-| I07 | Excel - Tabelas, Gráficos, Classificação e Dados | 50 | 26 | 1 | 25 | 0 |
-| I08 | Excel - Macros | 50 | 33 | 1 | 32 | 0 |
-| I09 | PowerPoint - Apresentações, Edição, Animações e Transições | 50 | 24 | 1 | 23 | 0 |
-| I10 | E-mail, Internet, URL, Links e Busca | 50 | 26 | 1 | 25 | 0 |
+| I06 | Excel - Fórmulas e Funções | 50 | 29 | 29 | 0 | 0 |
+| I07 | Excel - Tabelas, Gráficos, Classificação e Dados | 50 | 26 | 26 | 0 | 0 |
+| I08 | Excel - Macros | 50 | 33 | 33 | 0 | 0 |
+| I09 | PowerPoint - Apresentações, Edição, Animações e Transições | 50 | 24 | 24 | 0 | 0 |
+| I10 | E-mail, Internet, URL, Links e Busca | 50 | 26 | 26 | 0 | 0 |
 | A01 | Princípios da Administração Pública | 50 | 50 | 5 | 45 | 0 |
 | A02 | Rotinas Administrativas e Redação Técnica | 50 | 41 | 1 | 40 | 0 |
 | A03 | Processos Administrativos- Autuação, Registro e Encaminhamento | 50 | 56 | 1 | 55 | 0 |
@@ -541,153 +541,6 @@ Este relatório mostra só o estado atual. Histórico e limites da cobertura:
 - Produto cartesiano: n(A × B) = n(A) × n(B) pares ordenados (calculo; 2 questões)
 - Probabilidade clássica: casos favoráveis ÷ casos possíveis (espaço amostral) (calculo; 5 questões)
 - Probabilidade com universo restrito a um conjunto (condicional) (calculo; 1 questões)
-
-### I06 — Excel - Fórmulas e Funções
-
-- Toda fórmula começa com o sinal de igual (=); sem ele a entrada é texto; sintaxe válida de referências (termo; 3 questões)
-- Operadores aritméticos: + - * / (divisão), ^ (potência/exponenciação), % (porcentagem) (termo; 5 questões)
-- Operadores de comparação: = (igual), <> (diferente), >=, <= (termo; 2 questões)
-- Operador & concatena textos (=A1&" "&B1); funções CONCAT/CONCATENAR (comando; 2 questões)
-- MÉDIA (média aritmética, ignora texto) x MED (mediana) (comando; 2 questões)
-- SOMA ignora texto em referências; o operador + com texto gera erro (#VALOR!) (comando; 1 questões)
-- CONT.NÚM (só números), CONT.VALORES (não vazias), CONTAR.VAZIO (comando; 3 questões)
-- SOMASE(intervalo;critério;intervalo_soma) e MÉDIASE (comando; 2 questões)
-- SOMASES e CONT.SES: todos os critérios na mesma linha (CONT.SE: um critério) (comando; 2 questões)
-- SOMARPRODUTO: multiplica posições correspondentes e soma (comando; 1 questões)
-- PRODUTO: multiplica todos os argumentos (comando; 1 questões)
-- SUBTOTAL: agrega desconsiderando linhas ocultas por filtro (comando; 1 questões)
-- MAIOR(matriz;k) e MENOR(matriz;k): k-ésimo valor; MÁXIMO/MÍNIMO (MIN) (comando; 2 questões)
-- ARRED(número;casas): arredonda (comando; 1 questões)
-- ABS (valor absoluto) e RAIZ (raiz quadrada) (comando; 2 questões)
-- MOD (resto da divisão) e QUOCIENTE (parte inteira) (comando; 2 questões)
-- Funções lógicas E (todas verdadeiras), OU (ao menos uma), NÃO (inverte) (comando; 3 questões)
-- SEERRO: substitui o erro por outro valor, sem corrigir a causa (comando; 1 questões)
-- PROCV: procura na primeira coluna da matriz e retorna coluna à direita; último argumento FALSO = correspondência exata (comando; 3 questões)
-- ÍNDICE(matriz;linha;coluna) e CORRESP (posição do item) (comando; 2 questões)
-- HOJE() (data), AGORA() (data e hora), DATA(ano;mês;dia) (comando; 3 questões)
-- ESQUERDA, DIREITA, EXT.TEXTO(texto;início;qtd) e NÚM.CARACT (conta espaços) (comando; 3 questões)
-- MAIÚSCULA e MINÚSCULA (TEXTO formata números; CONVERTER muda unidades) (comando; 2 questões)
-- SUBSTITUIR(texto;antigo;novo;[nº da ocorrência]) (comando; 1 questões)
-- ARRUMAR: remove espaços excedentes (comando; 1 questões)
-- Referência circular: a fórmula depende da própria célula (termo; 1 questões)
-- Modo de cálculo manual x automático; recalcular (F9) (termo; 1 questões)
-
-### I07 — Excel - Tabelas, Gráficos, Classificação e Dados
-
-- Tabela Dinâmica (Inserir > Tabela Dinâmica): calcula, resume e analisa dados (termo; 2 questões)
-- Tabela Dinâmica: áreas Filtros, Colunas, Linhas e Valores (termo; 1 questões)
-- Tabela Dinâmica: Configurações do Campo de Valor > Resumir Valores Por (Soma, Média, Contagem x Contar Números); mesmo campo pode entrar duas vezes; texto/vazio leva a Contagem (comando; 4 questões)
-- Tabela Dinâmica: Contagem Distinta exige o Modelo de Dados (termo; 1 questões)
-- Tabela Dinâmica: botão direito > Atualizar (guia Analisar); gráfico comum atualiza sozinho, sem exigir Gráfico Dinâmico (comando; 2 questões)
-- Tabela do Excel: Design > Converter em Intervalo (referências estruturadas viram referências comuns); alça de dimensionamento no canto inferior direito (comando; 3 questões)
-- Análise Rápida: botão no canto inferior direito da seleção ou Ctrl+Q (comando; 1 questões)
-- Alt+F1 cria gráfico incorporado na planilha; F11 cria em folha separada (comando; 1 questões)
-- Guia Inserir > grupo Gráficos > Gráficos Recomendados / Gráfico Dinâmico (comando; 2 questões)
-- Gráficos estatísticos: Histograma (faixas) e Caixa e bigodes (quartis, mediana, discrepantes) (termo; 2 questões)
-- Gráfico de Dispersão XY (dois eixos numéricos) e Bolhas (terceira variável no tamanho) (termo; 2 questões)
-- Gráficos de Superfície, Radar (eixos radiais) e Cascata (acréscimos e reduções até o total) (termo; 3 questões)
-- Gráficos de Setores (pizza) e Rosca: partes de um todo (termo; 2 questões)
-- Classificar: opção "Meus dados têm cabeçalhos"; uma única linha de títulos (comando; 2 questões)
-- Classificar em: Valores das Células, Cor da Célula, Cor da Fonte, Ícone de Formatação Condicional (comando; 2 questões)
-- Classificar por Lista personalizada (Alta, Média, Baixa) (comando; 1 questões)
-- Classificação: números/datas armazenados como texto e espaços iniciais distorcem a ordem; converter antes (procedimento; 3 questões)
-- Reaplicar classificação/filtro após mudança dos dados; coluna de índice para voltar à ordem original; Tabela não classifica da esquerda para a direita (procedimento; 4 questões)
-- Filtro: Limpar filtro de uma coluna x Limpar todos (Ctrl+Shift+L liga/desliga filtros) (comando; 2 questões)
-- Dados > Validação de Dados: critérios (número inteiro, decimal, entre), Mensagem de entrada e Alerta de erro (comando; 3 questões)
-- Validação de Dados do tipo Lista (lista suspensa) e sua origem (comando; 2 questões)
-- Dados > Remover Duplicatas: escolhe as colunas da comparação e apaga registros (copiar antes) (comando; 2 questões)
-- Formatação Condicional > Realçar Regras das Células > Valores Duplicados (destaca sem remover) (comando; 2 questões)
-- Dados > Consolidar: por posição x por categoria (rótulos); consolidar resume, não empilha linhas (comando; 3 questões)
-- Power Query (Obter Dados): importar da Web, Mesclar consultas por chave, Acrescentar consultas, níveis de privacidade (termo; 4 questões)
-
-### I08 — Excel - Macros
-
-- Macro: sequência de comandos gravada em módulo, escrita em VBA (não JavaScript; Office Scripts é outra tecnologia) (termo; 3 questões)
-- Gravar Macro (guia Desenvolvedor): registra as ações e gera código VBA (Sub); erros também são gravados; preferir macros curtas (procedimento; 4 questões)
-- Guia Desenvolvedor: habilitar em Personalizar a Faixa de Opções (comando; 2 questões)
-- Alt+F11: abrir o Editor do Visual Basic (VBE) (comando; 1 questões)
-- Nome de macro: começa por letra, sem espaços (usar sublinhado), não pode ser referência de célula (termo; 1 questões)
-- Atalho atribuído à macro sobrepõe o atalho padrão do Excel enquanto a pasta está aberta (termo; 1 questões)
-- Pasta de trabalho pessoal de macros (PERSONAL.XLSB), aberta oculta na inicialização (termo; 1 questões)
-- Excel para a Web: abre/edita pasta com macros, mas não cria, executa nem edita VBA (termo; 2 questões)
-- VBA pode automatizar outros aplicativos do Office (ex.: Outlook) (termo; 1 questões)
-- Arquivo > Opções > Central de Confiabilidade > Configurações de Macro (por aplicativo): Desabilitar com/sem notificação, Habilitar todas (comando; 3 questões)
-- Vírus de macro: código malicioso embutido em documentos; não habilitar macros de origem desconhecida (termo; 2 questões)
-- Proteção do projeto VBA com senha (Propriedades do projeto > guia Proteção); assinatura digital não oculta o código (comando; 1 questões)
-- Dim declara variável (não atribui valor); Option Explicit exige declaração (comando; 2 questões)
-- Set atribui referência de objeto (Set alvo = Range("A1")); necessário para retornar/guardar Range (comando; 2 questões)
-- Sub x Function: a Function retorna o valor atribuído ao próprio nome (comando; 3 questões)
-- MsgBox exibe caixa de mensagem e retorna o botão escolhido (vbYesNo, vbYes) (comando; 2 questões)
-- Operador Mod do VBA: resto da divisão (comando; 1 questões)
-- If ... Then ... Else ... End If (comando; 1 questões)
-- For i = 1 To n ... Next; Step (negativo para decrescer); Exit For (comando; 3 questões)
-- For Each elemento In coleção ... Next (ex.: planilhas em Sheets/Worksheets) (comando; 2 questões)
-- Bloco With ... End With: .Propriedade refere-se ao objeto do With (comando; 1 questões)
-- Tratamento de erros: On Error Resume Next (continua após o erro) e On Error GoTo 0 (desabilita o tratador) (comando; 2 questões)
-- Range("A1").Value: define/consulta o valor; referência não qualificada atua na planilha ativa (comando; 2 questões)
-- Cells(linha, coluna): Cells(3, 2) é B3 (comando; 1 questões)
-- Range.Offset(linhas, colunas) desloca; Range.Resize(linhas, colunas) redimensiona (comando; 2 questões)
-- Range.Copy Destination:=...; sem Destination copia para a área de transferência (comando; 2 questões)
-- PasteSpecial: Paste:=xlPasteValues (só valores), SkipBlanks, Transpose (comando; 2 questões)
-- ClearContents: limpa valores e fórmulas mantendo a formatação (x Delete) (comando; 1 questões)
-- Formatação por VBA: Range.Font.Bold e Range.NumberFormat (comando; 2 questões)
-- ThisWorkbook (pasta do código) x ActiveWorkbook; coleção Workbooks e seu índice (ordem de abertura) (comando; 2 questões)
-- Workbook.Save x Saved = True; Close SaveChanges:=False descarta alterações (comando; 2 questões)
-- Application.ScreenUpdating e Application.EnableEvents: desligar e restaurar ao final (comando; 2 questões)
-
-### I09 — PowerPoint - Apresentações, Edição, Animações e Transições
-
-- Transições: Opções de Efeito (direção) e Duração do efeito (comando; 2 questões)
-- Animações: Adicionar Animação (segundo efeito no mesmo objeto) e Painel de Animação (remover um efeito) (comando; 2 questões)
-- Intervalo da animação: Iniciar Ao Clicar / Com o Anterior / Após o Anterior; Atraso x Duração (comando; 2 questões)
-- Slide Mestre (elementos e formatação comuns aos slides) x Designer (sugestões automáticas de layout) (termo; 1 questões)
-- Inserir > Vídeo; guia Reprodução > Iniciar: Automaticamente (comando; 1 questões)
-- Inserir > Câmera > Cameo (feed da câmera no slide) (comando; 1 questões)
-- Inserir > Links > Link (Inserir Link): Colocar neste documento (slides), página da Web, e-mail; botão Ação (comando; 2 questões)
-- Gráfico no PowerPoint: Elementos do Gráfico (títulos de eixos, rótulos) x Estilos de Gráfico (aparência predefinida) (comando; 1 questões)
-- Cortar imagem não elimina as áreas cortadas do arquivo (Compactar Imagens > Excluir áreas cortadas) (termo; 1 questões)
-- Painel de Seleção: lista, oculta e seleciona objetos; ordem de empilhamento (Trazer para a Frente / Enviar para Trás) (comando; 3 questões)
-- Design > Tamanho do Slide: Padrão (4:3) x Widescreen (16:9); vale para toda a apresentação; Maximizar x Garantir o Ajuste (comando; 3 questões)
-- Ctrl+M: novo slide; Ctrl+Shift+D: duplicar slide (comando; 2 questões)
-- F5: iniciar a apresentação do começo (Shift+F5: do slide atual; Esc encerra) (comando; 1 questões)
-- Ocultar Slide: fica no arquivo, é pulado na exibição, mas pode ser aberto pela visualização de todos os slides (comando; 2 questões)
-- Durante a apresentação: Ver todos os slides (miniaturas), ampliar (lupa/zoom) e tela preta temporária (comando; 4 questões)
-- Modo de Exibição do Apresentador: anotações, próximo slide e cronômetro só para o palestrante (termo; 1 questões)
-- Apresentação de Slides > Configurar Apresentação de Slides: tipo, avanço, monitor, Mostrar sem animação, Mostrar sem narração/Reproduzir Narrações (comando; 3 questões)
-- Gravar apresentação: narração e intervalos por slide; pausar/retomar; regravar substitui; não fala durante a transição; Limpar intervalos (slide atual x todos) (procedimento; 5 questões)
-- Imprimir: Slides em Página Inteira, Anotações, Estrutura de Tópicos e Folhetos (3 por página traz linhas para notas) (comando; 4 questões)
-- Inserir > Cabeçalho e Rodapé: Número do slide, Aplicar a Todos, Não mostrar no slide de título (comando; 2 questões)
-- Reutilizar Slides: cópia independente; opção Manter formatação original (comando; 2 questões)
-- Acessibilidade: ordem de leitura, título exclusivo por slide, não depender só de cor (termo; 3 questões)
-- PowerPoint para a Web: sem repetição contínua (loop) e sem suporte completo a gatilhos de animação (termo; 2 questões)
-
-### I10 — E-mail, Internet, URL, Links e Busca
-
-- Pesquisa Google: operador filetype: (tipo de arquivo, ex.: filetype:pdf) (comando; 1 questões)
-- Pesquisa Google: operador site:dominio (sem espaço) (comando; 1 questões)
-- Pesquisa Google: aspas para expressão exata; sinal de menos (-termo) exclui (comando; 2 questões)
-- Pesquisa Google: filtro por intervalo de datas (Ferramentas; before:/after:) (comando; 2 questões)
-- Navegadores Web: Microsoft Edge, Firefox, Chrome; testar em outro navegador para diagnosticar (termo; 2 questões)
-- Cache: guarda recursos localmente para não baixar de novo; pode exibir versão antiga (limpar e recarregar) (termo; 2 questões)
-- Cookies: guardam preferências e estado de sessão; limpar (de um site ou de todos) pode exigir novo login (termo; 3 questões)
-- Ctrl+F: Localizar na página atual (comando; 1 questões)
-- Extensões do navegador podem interferir em sites; desativar uma a uma para diagnosticar (procedimento; 1 questões)
-- Downloads: status (em andamento, falha, concluído); Remover do histórico x Excluir arquivo; ação por tipo (Sempre perguntar); abrir com aplicativo também baixa (procedimento; 4 questões)
-- Favoritos: guardam o endereço (não cópia offline); exportar/importar em HTML; importar dados de outro navegador escolhendo categorias (termo; 3 questões)
-- Navegação privativa/anônima: descarta histórico, cookies e dados locais ao fechar; não oculta IP nem protege da rede/empregador (termo; 3 questões)
-- Permissões por site (notificações Web Push, microfone, câmera): revisar e revogar nas informações da página; push funciona com a aba fechada (comando; 4 questões)
-- Partes da URL: esquema (https), domínio, caminho, consulta (?chave=valor&...) e fragmento (#) (termo; 2 questões)
-- Endereço absoluto x link relativo (../ sobe um nível a partir do endereço base) (termo; 2 questões)
-- Codificação percentual em URL: %20 = espaço (termo; 1 questões)
-- Outlook: e-mails, calendário e contatos (desktop, web e móvel) (termo; 1 questões)
-- SMTP: protocolo de envio (servidor de saída), configurado à parte das contas de entrada (termo; 3 questões)
-- IMAP: sincroniza pastas com o servidor entre dispositivos (exclusão propaga); cabeçalho x corpo baixado para uso offline (termo; 4 questões)
-- POP3: baixa as mensagens para o dispositivo; pode ou não manter cópia no servidor (termo; 2 questões)
-- Caixa de saída: mensagens aguardando envio (offline, Enviar depois); não comprova entrega (termo; 2 questões)
-- Spam: mensagens não solicitadas enviadas em massa (x engenharia social, cracker) (termo; 1 questões)
-- Intranet (rede privada interna) x Extranet (acesso restrito a usuários externos) x Internet (termo; 2 questões)
-- DNS: traduz nomes de domínio em endereços IP (x DHCP, UDP, HTTPS) (termo; 2 questões)
-- FTP: transferência de arquivos (x Telnet/acesso remoto, HTTP) (termo; 2 questões)
 
 ### A01 — Princípios da Administração Pública
 

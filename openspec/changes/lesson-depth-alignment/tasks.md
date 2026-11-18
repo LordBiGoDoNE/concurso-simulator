@@ -44,11 +44,11 @@ gerados.
 
 ## 4. Conhecimentos Administrativos A01–A08 — depende de 3
 
-- [ ] 4.1 A01–A03: CF art. 37, Lei 9.784/1999 e redação oficial, com os
+- [x] 4.1 A01–A03: CF art. 37, Lei 9.784/1999 e redação oficial, com os
   dispositivos cobrados conferidos na fonte.
-- [ ] 4.2 A04–A06: IN SEDAP 205/1988, Lei 8.159/1991 e Lei 13.460/2017.
-- [ ] 4.3 A07–A08: LGPD e Lei 4.320/1964 (receita, créditos adicionais, balanços).
-- [ ] 4.4 Recompilar, atualizar resumo/checklist/referências com fonte e data, e
+- [x] 4.2 A04–A06: IN SEDAP 205/1988, Lei 8.159/1991 e Lei 13.460/2017.
+- [x] 4.3 A07–A08: LGPD e Lei 4.320/1964 (receita, créditos adicionais, balanços).
+- [x] 4.4 Recompilar, atualizar resumo/checklist/referências com fonte e data, e
   registrar a matriz.
 
 ## 5. Conhecimentos Escolares S01–S06 — depende de 4

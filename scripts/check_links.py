@@ -8,6 +8,8 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 APPLICATION_DIRECTORIES = {"backend", "frontend", "infra", "openspec", ".opencode", ".git"}
+# Cópias congeladas das fontes da curadoria 2026-10: dados editoriais, não páginas publicadas.
+FROZEN_SOURCES = Path("editorial/question-bank/2026-10/legacy-sources")
 
 
 class References(HTMLParser):
@@ -33,6 +35,8 @@ def main():
     for directory in root.iterdir():
         if directory.is_dir() and directory.name not in APPLICATION_DIRECTORIES:
             pages.extend(directory.rglob("*.html"))
+    frozen = root / FROZEN_SOURCES
+    pages = [page for page in pages if not page.is_relative_to(frozen)]
     pages.sort()
     for page in pages:
         parser = References()

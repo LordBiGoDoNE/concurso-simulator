@@ -84,5 +84,10 @@ permanecem como estão.
   gerados por `scripts/compile_native_lessons.py`.
 - Novo script somente leitura e seus testes em `scripts/`; lista editorial de
   conceitos em `editorial/lesson-coverage/2026-11/`; relatório em `docs/`.
+- Fontes congeladas da curadoria 2026-10 em
+  `editorial/question-bank/2026-10/legacy-sources/` (cópias byte a byte dos arquivos
+  de `sourceFiles`), lidas por `scripts/curate_questions.py`; `scripts/check_links.py`
+  ignora essa pasta; regra `-text` em `.gitattributes` (design D8). O manifest, as
+  fingerprints e os pacotes 2026-10 não mudam.
 - Sem mudança em backend, schema, API, frontend de execução, CI ou deploy.
 - As aulas ficam mais longas; o tempo de leitura por assunto aumenta.

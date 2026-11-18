@@ -79,11 +79,11 @@ gerados.
 
 ## 8. Português P01–P10 — depende de 7
 
-- [ ] 8.1 P01–P03: coesão referencial, valor de conectivos, ambiguidade, parônimos.
-- [ ] 8.2 P04–P06: casos cobrados de pontuação, ortografia/acentuação e classes.
-- [ ] 8.3 P07–P10: casos especiais de concordância e regência, colocação
+- [x] 8.1 P01–P03: coesão referencial, valor de conectivos, ambiguidade, parônimos.
+- [x] 8.2 P04–P06: casos cobrados de pontuação, ortografia/acentuação e classes.
+- [x] 8.3 P07–P10: casos especiais de concordância e regência, colocação
   pronominal e crase (obrigatória, proibida e facultativa).
-- [ ] 8.4 Recompilar, atualizar resumo/checklist e registrar a matriz.
+- [x] 8.4 Recompilar, atualizar resumo/checklist e registrar a matriz.
 
 ## 9. Consolidação e verificação final — depende de 8
 

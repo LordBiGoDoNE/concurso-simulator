@@ -114,6 +114,38 @@ Grupos de conteúdo passam de 500 linhas autorais por natureza (prosa didática)
 a divisão por blocos de assuntos mantém cada PR revisável. Os JSON nativos e o
 `manifest.json` são identificados no PR como gerados.
 
+### D8. Fontes congeladas da curadoria 2026-10
+
+Motivo: as 250 questões curadas em `editorial/question-bank/2026-10/` são extraídas
+dos exercícios dentro dos HTML de conteúdo e gabarito. `provenance.contentSha256` e
+`answerSha256` guardam o SHA-256 do arquivo inteiro e entram na fingerprint; o
+`manifest.json` registra também o SHA-256 de cada arquivo em `sourceFiles`. Editar as
+aulas fora dos blocos de exercício (D1) muda esses hashes, e a curadoria passa a
+recusar o snapshot já revisado e carregado no banco local (falhas de CI em
+`spec-review-tests` e `CuratedPackageTests`).
+
+Solução (decisão do usuário, "fixar fontes antigas"): versionar em
+`editorial/question-bank/2026-10/legacy-sources/<caminho original>` cópias byte a byte
+dos 104 arquivos de `sourceFiles` (blobs da base `fc3b9e4`, conferidos pelo SHA-256
+registrado), sem conversão de fim de linha (`.gitattributes` com `-text`).
+`compile_curation` extrai dessas cópias em vez da raiz viva; com isso também
+`verify_curated_bank.py`, `audit_question_expansion.py` (`baseline`) e
+`compile_lesson_practice.py` (`comparison_snapshot`) comparam com o snapshot 2026-10.
+Divergência entre uma cópia e `sourceFiles` é recusada por `verify_manifest`.
+`check_links.py` ignora a pasta, que não é página publicada.
+
+Fica idêntico: o texto de `contentPath`/`answerPath` (caminho original), os hashes de
+proveniência, as 250 fingerprints, o `manifest.json`, os 25 pacotes gerados e o banco
+já carregado. Não muda: o site estático (`build_pages.py` copia só as raízes `0[1-5]_*`,
+`assets` e arquivos de topo), o compilador de aulas nativas (lê as aulas vivas) e a
+extração local completa (`extract_questions.py --root .`, usada pela importação local),
+que continua lendo as aulas vivas.
+
+Limites: as cópias são dados editoriais, não fonte de estudo; correções futuras nas
+aulas não chegam às questões 2026-10 sem nova curadoria e novo manifest explícitos.
+Questões com imagem seriam lidas de `assets/` dentro da pasta congelada; o snapshot
+2026-10 não tem nenhuma. O repositório cresce cerca de 1,9 MB.
+
 ## Risks / Trade-offs
 
 - **Erro de conteúdo jurídico ou técnico** → conferência na fonte oficial com data

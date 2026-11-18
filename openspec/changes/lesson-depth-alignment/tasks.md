@@ -71,11 +71,11 @@ gerados.
 
 ## 7. Raciocínio Lógico M10–M12 e ajustes de Matemática — depende de 6
 
-- [ ] 7.1 M10 e M11: sequências e ciclos, tabela-verdade, equivalências, negação
+- [x] 7.1 M10 e M11: sequências e ciclos, tabela-verdade, equivalências, negação
   de quantificadores.
-- [ ] 7.2 M12: três conjuntos, "exatamente dois", casa dos pombos.
-- [ ] 7.3 M01–M09: somente os conceitos que a matriz apontar como ausentes.
-- [ ] 7.4 Recompilar, conferir fórmulas acessíveis e registrar a matriz.
+- [x] 7.2 M12: três conjuntos, "exatamente dois", casa dos pombos.
+- [x] 7.3 M01–M09: somente os conceitos que a matriz apontar como ausentes.
+- [x] 7.4 Recompilar, conferir fórmulas acessíveis e registrar a matriz.
 
 ## 8. Português P01–P10 — depende de 7
 

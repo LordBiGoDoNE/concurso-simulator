@@ -63,10 +63,10 @@ gerados.
 
 ## 6. Conhecimentos Escolares S07–S11 — depende de 5
 
-- [ ] 6.1 S07 e S08: CF arts. 205–214 e ECA, com os dispositivos cobrados.
-- [ ] 6.2 S09 e S10: LBI no atendimento escolar e Decreto 1.171/1994.
-- [ ] 6.3 S11: Censo Escolar (papéis, prazos e operações cobrados).
-- [ ] 6.4 Recompilar, atualizar resumo/checklist/referências com fonte e data, e
+- [x] 6.1 S07 e S08: CF arts. 205–214 e ECA, com os dispositivos cobrados.
+- [x] 6.2 S09 e S10: LBI no atendimento escolar e Decreto 1.171/1994.
+- [x] 6.3 S11: Censo Escolar (papéis, prazos e operações cobrados).
+- [x] 6.4 Recompilar, atualizar resumo/checklist/referências com fonte e data, e
   registrar a matriz.
 
 ## 7. Raciocínio Lógico M10–M12 e ajustes de Matemática — depende de 6

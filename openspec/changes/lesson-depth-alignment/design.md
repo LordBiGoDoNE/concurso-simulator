@@ -145,6 +145,12 @@ Limites: as cópias são dados editoriais, não fonte de estudo; correções fut
 aulas não chegam às questões 2026-10 sem nova curadoria e novo manifest explícitos.
 Questões com imagem seriam lidas de `assets/` dentro da pasta congelada; o snapshot
 2026-10 não tem nenhuma. O repositório cresce cerca de 1,9 MB.
+O leitor Java (`QuestionPackageReader`) não muda: confere `sourceFiles` sob a raiz que
+recebe. `CuratedPackageTests` passa a ele a pasta congelada, e pré-visualizar ou
+reimportar pacotes 2026-10 pela ferramenta local (`questionBankLocal`) exige
+`--root editorial/question-bank/2026-10/legacy-sources`; com a raiz do repositório,
+as aulas editadas divergem e a operação é recusada. O import administrativo HTTP não
+lê arquivos-fonte.
 
 ## Risks / Trade-offs
 

@@ -8,7 +8,7 @@ da explicação.
 
 | Total | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |
 | --- | ---: | ---: | ---: | ---: | ---: |
-| 51 assuntos | 2587 | 1687 | 890 | 797 | 0 |
+| 51 assuntos | 2587 | 1687 | 1076 | 611 | 0 |
 
 ## Por assunto
 
@@ -54,12 +54,12 @@ da explicação.
 | A06 | Atendimento ao Público e Comunicação | 50 | 52 | 52 | 0 | 0 |
 | A07 | Ética e Sigilo Profissional | 50 | 54 | 54 | 0 | 0 |
 | A08 | Orçamento, Cálculos e Prestação de Contas | 52 | 55 | 55 | 0 | 0 |
-| S01 | LDB - Lei 9.394-1996 | 62 | 54 | 5 | 49 | 0 |
-| S02 | Escrituração Escolar | 50 | 26 | 1 | 25 | 0 |
-| S03 | Registros Individuais, Ficha e Histórico Escolar | 50 | 26 | 1 | 25 | 0 |
-| S04 | Matrícula, Frequência e Transferência | 50 | 46 | 1 | 45 | 0 |
-| S05 | Protocolo e Arquivo Escolar | 50 | 28 | 0 | 28 | 0 |
-| S06 | Redação Oficial - Atas, Ofícios e Requerimentos | 50 | 18 | 4 | 14 | 0 |
+| S01 | LDB - Lei 9.394-1996 | 62 | 54 | 54 | 0 | 0 |
+| S02 | Escrituração Escolar | 50 | 26 | 26 | 0 | 0 |
+| S03 | Registros Individuais, Ficha e Histórico Escolar | 50 | 26 | 26 | 0 | 0 |
+| S04 | Matrícula, Frequência e Transferência | 50 | 46 | 46 | 0 | 0 |
+| S05 | Protocolo e Arquivo Escolar | 50 | 28 | 28 | 0 | 0 |
+| S06 | Redação Oficial - Atas, Ofícios e Requerimentos | 50 | 18 | 18 | 0 | 0 |
 | S07 | Constituição Federal - Educação - arts. 205 a 214 | 50 | 49 | 14 | 35 | 0 |
 | S08 | ECA - arts. 1 a 6 e 53 a 69 | 50 | 46 | 15 | 31 | 0 |
 | S09 | Atendimento ao Público e Comunicação Escolar | 50 | 44 | 2 | 42 | 0 |
@@ -538,210 +538,6 @@ da explicação.
 - Produto cartesiano: n(A × B) = n(A) × n(B) pares ordenados (calculo; 2 questões)
 - Probabilidade clássica: casos favoráveis ÷ casos possíveis (espaço amostral) (calculo; 5 questões)
 - Probabilidade com universo restrito a um conjunto (condicional) (calculo; 1 questões)
-
-### S01 — LDB - Lei 9.394-1996
-
-- LDB art. 1º, caput: abrangência da educação (processos formativos na família, trabalho, instituições de ensino e pesquisa, movimentos sociais) (dispositivo; 1 questões)
-- LDB art. 1º, §2º: educação escolar vinculada ao mundo do trabalho e à prática social (dispositivo; 1 questões)
-- LDB art. 2º: finalidades da educação (pleno desenvolvimento, cidadania, qualificação para o trabalho) (dispositivo; 1 questões)
-- LDB art. 3º, V: coexistência de instituições públicas e privadas de ensino (dispositivo; 1 questões)
-- LDB art. 3º, X: valorização da experiência extraescolar (dispositivo; 1 questões)
-- LDB art. 3º, XIII: direito à educação e à aprendizagem ao longo da vida (dispositivo; 1 questões)
-- LDB art. 3º, XV: acesso a informações públicas sobre a gestão da educação (dispositivo; 1 questões)
-- LDB art. 4º, XII: educação digital e conectividade das instituições públicas (dispositivo; 1 questões)
-- LDB art. 4º, XIII: água potável e infraestrutura física e sanitária adequadas (dispositivo; 1 questões)
-- LDB art. 4º-A: atendimento educacional ao aluno internado em regime hospitalar ou domiciliar (dispositivo; 1 questões)
-- LDB art. 7º-A: ausência a prova ou aula por preceito religioso (requerimento prévio e motivado, prestação alternativa) (dispositivo; 1 questões)
-- LDB art. 8º, §2º: liberdade de organização dos sistemas de ensino nos termos da lei (dispositivo; 1 questões)
-- LDB art. 9º, I e III: União elabora o PNE e exerce função redistributiva e supletiva (dispositivo; 2 questões)
-- LDB art. 11, I e V: incumbências dos Municípios (organizar seu sistema; educação infantil em creches e pré-escolas e prioridade ao fundamental, considerada a distribuição populacional urbana e rural) (dispositivo; 2 questões)
-- LDB art. 11, VI: transporte escolar dos alunos da rede municipal é incumbência do Município (dispositivo; 1 questões)
-- LDB art. 12, V: prover meios para a recuperação dos alunos de menor rendimento (dispositivo; 1 questões)
-- LDB art. 12, IX e X: prevenção e combate à violência (bullying) e promoção da cultura de paz (dispositivo; 2 questões)
-- LDB art. 13, II: plano de trabalho docente segundo a proposta pedagógica (dispositivo; 1 questões)
-- LDB art. 14, §1º: Conselho Escolar como órgão deliberativo que representa a comunidade escolar e local (dispositivo; 2 questões)
-- LDB art. 14, §1º, I a V: composição do Conselho Escolar (diretor membro nato; representantes eleitos, inclusive servidores administrativos) (dispositivo; 1 questões)
-- LDB art. 14, §§2º e 3º: Fórum dos Conselhos Escolares (finalidade e composição com dois representantes) (dispositivo; 2 questões)
-- LDB art. 15: graus progressivos de autonomia pedagógica, administrativa e de gestão financeira (dispositivo; 1 questões)
-- LDB art. 16, I: instituições mantidas pela União integram o sistema federal de ensino (dispositivo; 1 questões)
-- LDB art. 18, II: educação infantil privada integra o sistema municipal de ensino (dispositivo; 1 questões)
-- LDB art. 21: educação escolar = educação básica (infantil, fundamental e médio) e educação superior (dispositivo; 2 questões)
-- LDB art. 22: finalidades da educação básica (cidadania, progredir no trabalho e em estudos posteriores) (dispositivo; 1 questões)
-- LDB art. 23, caput: séries, ciclos e outras formas de organização no interesse do processo de aprendizagem (dispositivo; 1 questões)
-- LDB art. 23, §1º: reclassificação, inclusive em transferências no País e do exterior (dispositivo; 1 questões)
-- LDB art. 23, §2º: calendário adequado às peculiaridades locais sem reduzir as horas letivas (dispositivo; 1 questões)
-- LDB art. 24, I: mínimo de 200 dias de efetivo trabalho escolar, excluído o tempo dos exames finais (dispositivo; 1 questões)
-- LDB art. 24, III: progressão parcial (regimento, sequência do currículo, normas do sistema) (dispositivo; 1 questões)
-- LDB art. 24, IV: turmas com alunos de séries distintas e níveis equivalentes (línguas, artes e outros componentes) (dispositivo; 1 questões)
-- LDB art. 24, V, b e c: aceleração de estudos (atraso escolar) e avanço mediante verificação do aprendizado (dispositivo; 2 questões)
-- LDB art. 24, V, e: estudos de recuperação obrigatórios, de preferência paralelos ao período letivo (dispositivo; 1 questões)
-- LDB art. 26, caput: base nacional comum complementada por parte diversificada (dispositivo; 1 questões)
-- LDB art. 26, §5º: língua inglesa a partir do sexto ano do ensino fundamental (dispositivo; 1 questões)
-- LDB art. 26, §6º: artes visuais, dança, música e teatro como linguagens do componente arte (dispositivo; 1 questões)
-- LDB art. 26, §11: educação digital como componente curricular (letramento digital, computação, programação, robótica) (dispositivo; 1 questões)
-- LDB art. 31, II e III: educação infantil com 800 horas em 200 dias; turno parcial de 4 horas e integral de 7 horas (dispositivo; 2 questões)
-- LDB art. 32, caput: ensino fundamental obrigatório de 9 anos, com início aos 6 anos (dispositivo; 1 questões)
-- LDB art. 32, §2º: progressão continuada sem prejuízo da avaliação do ensino-aprendizagem (dispositivo; 1 questões)
-- LDB art. 32, §3º: comunidades indígenas, línguas maternas e processos próprios de aprendizagem (dispositivo; 1 questões)
-- LDB art. 32, §4º: fundamental presencial; ensino a distância como complementação ou em situações emergenciais (dispositivo; 1 questões)
-- LDB art. 37, caput: EJA para quem não teve acesso ou continuidade de estudos na idade própria (dispositivo; 1 questões)
-- LDB art. 37, §1º: oportunidades gratuitas e apropriadas na EJA (características, interesses, condições de vida e de trabalho) (dispositivo; 1 questões)
-- LDB art. 38, §1º: exames supletivos para maiores de 15 (fundamental) e de 18 anos (médio) (dispositivo; 1 questões)
-- LDB art. 58, §3º: educação especial com início na educação infantil e extensão ao longo da vida (dispositivo; 1 questões)
-- LDB art. 59, I: currículos, métodos, técnicas, recursos educativos e organização específicos (dispositivo; 1 questões)
-- LDB art. 67, V: período reservado a estudos, planejamento e avaliação incluído na carga de trabalho (dispositivo; 1 questões)
-
-### S02 — Escrituração Escolar
-
-- Conceito de escrituração escolar: registro sistemático e contínuo dos fatos da vida escolar e da instituição (termo; 6 questões)
-- Finalidade da escrituração: assegurar, a qualquer tempo, a regularidade e a autenticidade da vida escolar e do funcionamento da escola (termo; 7 questões)
-- Abrangência da escrituração: vida escolar dos alunos, vida funcional dos servidores e fatos da própria instituição (termo; 4 questões)
-- Registro na ordem e sequência dos acontecimentos (cronologia; data efetiva do fato; função comprobatória) (termo; 5 questões)
-- Secretaria escolar como setor responsável pela escrituração (termo; 3 questões)
-- Dever da unidade de organizar a escrituração para atender prontamente a solicitações de informações (termo; 2 questões)
-- O que os registros escolares verificam (direito à matrícula, desenvolvimento da aprendizagem, regularidade da vida escolar) × atos de gestão de pessoal (termo; 1 questões)
-- Documentos escolares individuais (ficha individual, histórico, prontuário) × coletivos (livro de matrícula, diário de classe, atas) (termo; 3 questões)
-- Diário de classe: registro coletivo das atividades da turma, do desempenho e da frequência (termo; 1 questões)
-- Digitação do diário de classe: competência e responsabilidade exclusivas do professor (SED ou aplicativo) (procedimento; 2 questões)
-- Diário de classe lançado diariamente pelo professor (procedimento; 1 questões)
-- Secretaria acompanha o lançamento de notas e frequência sem substituir o professor nem inventar resultados (procedimento; 3 questões)
-- Possível irregularidade em documento escolar: informar a direção, separando fato constatado e ponto a verificar (procedimento; 2 questões)
-- Convalidação de estudos: vício não pedagógico (ex.: curso sem autorização de funcionamento) (termo; 1 questões)
-- Regularização de vida escolar: providenciada pela escola em que o estudante mantém matrícula ativa (procedimento; 1 questões)
-- Fidedignidade: o registro corresponde ao fato e à fonte; divergência ou dado ausente é apurado, não presumido nem inventado (procedimento; 11 questões)
-- Rendimento escolar individualizado: situação final do estudante no ano (≠ resultado parcial) e base dos indicadores de fluxo (termo; 3 questões)
-- Ficha cadastral: dados conforme a documentação civil e assinatura do estudante ou responsável legal (procedimento; 2 questões)
-- Ficha cadastral preenchida manualmente se o sistema estiver indisponível, com transcrição conferida depois (procedimento; 2 questões)
-- Movimentação escolar: registro formal e comunicado à equipe escolar (procedimento; 2 questões)
-- Rotina da secretaria: acompanhar publicações oficiais e preparar dados para o registro/publicação de concluintes (procedimento; 2 questões)
-- Rotina da secretaria: manter prontuários e dados de vida escolar organizados e atualizados no sistema (SED na rede paulista) (procedimento; 4 questões)
-- Manual paulista: atribuições de vida escolar sob supervisão do Gerente de Organização Escolar (termo; 1 questões)
-- Manual paulista de 2020 como referência técnica: conferir âmbito, vigência e sistemas adotados pela rede municipal (termo; 2 questões)
-- Livro de registro de atas: decisões e deliberações de reuniões pedagógicas, administrativas e colegiadas, de modo formal e sequencial (termo; 1 questões)
-
-### S03 — Registros Individuais, Ficha e Histórico Escolar
-
-- LDB art. 24, VII: cada instituição de ensino (pública ou privada) expede históricos, declarações de conclusão de série e diplomas ou certificados (dispositivo; 7 questões)
-- Itens essenciais do histórico (identificação, séries/etapas, componentes, carga horária, rendimento); não inclui parecer de conduta ou comportamento (termo; 3 questões)
-- Bloco de identificação do estudante no histórico: nome completo, RG/RNM, RA, CPF e dados de nascimento (termo; 3 questões)
-- Cabeçalho do histórico: identificação da unidade emissora; ato de criação da escola × ato de autorização do curso (termo; 3 questões)
-- Percurso no histórico: ano/série, ano civil e estabelecimento de cada etapa (≠ data de emissão) (termo; 3 questões)
-- Matriz curricular e carga horária transcritas no histórico conforme a documentação de origem (termo; 2 questões)
-- Conversão de hora-aula em hora-relógio (aulas × minutos ÷ 60) (calculo; 1 questões)
-- Campo de observações do histórico: esclarece fatos da trajetória com a base legal (ex.: escala de avaliação) (termo; 2 questões)
-- Observações de equivalência, reclassificação, progressão parcial e classificação sem comprovante no histórico (procedimento; 4 questões)
-- Termo "certificado" para concluintes × "declaração" na transferência (termo; 1 questões)
-- Rodapé do histórico: data de emissão, identificação, cargo e assinatura de quem de direito (termo; 2 questões)
-- Segunda via do histórico: cópia fidedigna, "2ª via" no alto, nomenclatura das disciplinas vigente à época (procedimento; 4 questões)
-- Histórico não pode conter emendas nem rasuras; regulariza-se pelos registros corretos (procedimento; 1 questões)
-- Histórico é emitido na transferência e na conclusão de curso; principal documento da transferência (procedimento; 2 questões)
-- Número de registro de publicação no histórico de concluintes (termo; 1 questões)
-- Averbação de convalidação no histórico, na ficha de registro individual e na ata de resultados finais (procedimento; 2 questões)
-- Ficha cadastral: inscreve e identifica o estudante no quadro discente (dados pessoais, escola de origem, assinatura, atualização cadastral) (termo; 4 questões)
-- Rendimento escolar individualizado: situação final de aproveitamento no ano/série, transcrita no boletim (termo; 2 questões)
-- Diário de classe: frequência, aproveitamento e conteúdo dos dias letivos; competências e habilidades que orientam o planejamento (termo; 3 questões)
-- Documentos individuais (boletim, diploma, atestado, certificado) × coletivos (regimento, proposta pedagógica) (termo; 2 questões)
-- LDB art. 12, I: proposta pedagógica elaborada e executada pelo estabelecimento (documento coletivo) (dispositivo; 2 questões)
-- Documentos de vida escolar (ficha de matrícula, histórico, certificados/diplomas, atas de resultados finais) × documentos alheios (débitos, folha ponto) (termo; 2 questões)
-- LDB art. 24, II, b: classificação por transferência com base nos estudos comprovados no histórico (dispositivo; 1 questões)
-- Transcrição fiel: o histórico reproduz a documentação escolar anterior, sem inventar ou modernizar dados (procedimento; 5 questões)
-- Modelo paulista de histórico como referência técnica: verificar as normas do sistema municipal (termo; 1 questões)
-
-### S04 — Matrícula, Frequência e Transferência
-
-- LDB art. 6º: dever dos pais ou responsáveis de matricular a partir dos 4 anos (dispositivo; 1 questões)
-- LDB art. 24, II, a: classificação por promoção (série anterior cursada com aproveitamento na própria escola) (dispositivo; 1 questões)
-- LDB art. 24, II, b: classificação por transferência (candidato procedente de outra escola) (dispositivo; 2 questões)
-- LDB art. 24, II, c: classificação independentemente de escolarização anterior, mediante avaliação da escola (dispositivo; 2 questões)
-- LDB art. 24, II, caput: classificação em qualquer série ou etapa, exceto a primeira do ensino fundamental (dispositivo; 1 questões)
-- LDB art. 23, §1º: reclassificação, inclusive em transferências do exterior, com base nas normas curriculares gerais (dispositivo; 1 questões)
-- LDB art. 24, V, d: aproveitamento de estudos concluídos com êxito (dispositivo; 1 questões)
-- LDB art. 31, IV: frequência mínima de 60% do total de horas na pré-escola (dispositivo; 1 questões)
-- LDB art. 24, VI: controle de frequência pela escola; mínimo de 75% do total de horas letivas para aprovação (dispositivo; 2 questões)
-- LDB art. 7º-A, caput: ausência por preceito religioso mediante requerimento prévio e motivado (dispositivo; 1 questões)
-- LDB art. 7º-A, I e II: prova ou aula de reposição (outro horário com anuência expressa) ou trabalho escrito/pesquisa (dispositivo; 2 questões)
-- LDB art. 7º-A, §1º: prestação alternativa observa os parâmetros curriculares e o plano de aula do dia da ausência (dispositivo; 1 questões)
-- LDB art. 7º-A, §2º: prestação alternativa substitui a obrigação original, inclusive para regularizar a frequência (dispositivo; 1 questões)
-- LDB art. 7º-A, §4º: regra não se aplica ao ensino militar do art. 83 (dispositivo; 1 questões)
-- LDB art. 60-A, §3º: educação bilíngue de surdos sem prejuízo da matrícula em escolas e classes regulares (dispositivo; 1 questões)
-- LDB art. 12, VII: informar pai e mãe, conviventes ou não, sobre frequência e rendimento (dispositivo; 1 questões)
-- LDB art. 12, VIII: notificar o Conselho Tutelar das faltas acima de 30% do percentual permitido em lei (dispositivo; 1 questões)
-- LDB art. 5º, caput (CF art. 208, §1º): acesso à educação básica obrigatória é direito público subjetivo; falta de documento não impede a matrícula (dispositivo; 2 questões)
-- LDB art. 5º, §1º, I: recenseamento anual de crianças e adolescentes em idade escolar e de jovens e adultos sem educação básica (dispositivo; 1 questões)
-- LDB art. 5º, §1º, II: chamada pública (dispositivo; 1 questões)
-- LDB art. 5º, §1º, III: zelar, junto aos pais ou responsáveis, pela frequência à escola (dispositivo; 1 questões)
-- LDB art. 5º, §1º, IV: divulgação da lista de espera por vagas com os critérios de elaboração (dispositivo; 1 questões)
-- LDB art. 5º, §5º: formas alternativas de acesso, independentemente da escolarização anterior (dispositivo; 1 questões)
-- Lei 11.340/2006, art. 9º, §§7º e 8º: prioridade de matrícula/transferência de dependentes e sigilo dos dados (dispositivo; 1 questões)
-- ECA art. 53, V: escola pública próxima da residência e vagas no mesmo estabelecimento para irmãos da mesma etapa ou ciclo (dispositivo; 1 questões)
-- ECA art. 56, II: comunicar ao Conselho Tutelar faltas injustificadas reiteradas e evasão, esgotados os recursos escolares (dispositivo; 1 questões)
-- LDB art. 24, VII: cada instituição de ensino expede históricos e declarações de conclusão de série (dispositivo; 1 questões)
-- Lei estadual SP 17.252/2020: apresentação da carteira de vacinação na matrícula (a falta não impede a matrícula) (dispositivo; 1 questões)
-- Matrícula como marco inicial da vida escolar do aluno (termo; 2 questões)
-- Etapas da matrícula: entrega da documentação e registro no Sistema de Cadastro de Alunos (procedimento; 1 questões)
-- Matrícula requerida pelo estudante maior de 18 anos ou pelo responsável legal e deferida pela direção conforme o regimento (procedimento; 3 questões)
-- Matrícula: dar ciência do regimento escolar ao estudante ou responsável (procedimento; 1 questões)
-- Falta de certidão de nascimento: efetivar a matrícula e encaminhar os responsáveis ao Conselho Tutelar (procedimento; 2 questões)
-- Formas de matrícula no manual paulista: ingresso (idade), classificação (idade/série/competência) e reclassificação (processo avaliativo, correlação idade/ano/série) (termo; 2 questões)
-- RA (Registro do Aluno/Estudante): consultar se o estudante já possui RA antes de gerar novo (procedimento; 1 questões)
-- Ficha cadastral preenchida manualmente quando o sistema está inacessível, com posterior transcrição (procedimento; 1 questões)
-- Lançamento de frequência no diário: competência exclusiva do professor; secretaria acompanha (procedimento; 1 questões)
-- Transferência pode ocorrer em qualquer época do ano letivo (procedimento; 1 questões)
-- Transferência durante o percurso: histórico acompanhado de frequência e avaliação até a solicitação (procedimento; 1 questões)
-- Matrícula por transferência: histórico escolar de transferência como documento essencial (procedimento; 1 questões)
-- Histórico: termo "certificado" para concluintes × "declaração" na transferência (termo; 1 questões)
-- Segunda via do histórico: cópia fidedigna, nomenclatura da época, "2ª via" no alto, sem emendas nem rasuras (procedimento; 1 questões)
-- Dúvida sobre autenticidade de histórico: oficiar a Diretoria de Ensino da escola expedidora; ampla defesa se comprovada a inautenticidade (procedimento; 1 questões)
-- Compensação de ausências (manual paulista): comunicar por escrito pais, Conselho Tutelar e Vara da Infância ao atingir 20% de faltas no bimestre (procedimento; 1 questões)
-- Compensação de ausências: aulas compensadas são informadas à secretaria para registro (procedimento; 1 questões)
-
-### S05 — Protocolo e Arquivo Escolar
-
-- Prontuário individual do estudante: vinculação pela identidade (identificadores, homônimos, mudança de nome) (termo; 5 questões)
-- Juntada ao prontuário de documentos recebidos depois, após conferir a correspondência com o caso (procedimento; 2 questões)
-- Arquivar no prontuário o procedimento de classificação/reclassificação (instrumentos de avaliação, parecer, ata; minuta × versão assinada) (procedimento; 6 questões)
-- Documentação de progressão parcial vinculada a estudante, componente e procedimento (procedimento; 2 questões)
-- Adaptação de estudos: expediente no prontuário e ato registrado em livro próprio (procedimento; 3 questões)
-- Dispensa da prática de Educação Física: requerimento e despacho arquivados no prontuário, por período (procedimento; 2 questões)
-- Processo de regularização de vida escolar (histórico dos fatos, pareceres, publicação) arquivado no prontuário (procedimento; 4 questões)
-- Protocolo: comprovação de entrega com data, assinatura e identificação de quem recebeu, vinculada ao expediente (termo; 3 questões)
-- Aviso de recebimento (AR) como comprovante de remessa postal vinculado ao expediente (termo; 1 questões)
-- Controle de movimentação do arquivo: registro de retirada (prontuário, responsável, finalidade, devolução) (procedimento; 1 questões)
-- Conferência de cópia: "confere com o original" com identificação do responsável (procedimento; 1 questões)
-- Verificação de autenticidade: manter no prontuário documento recebido, consulta à escola emissora e resposta (procedimento; 2 questões)
-- Equivalência de estudos no exterior: documento de origem identificado e tradução vinculada (procedimento; 2 questões)
-- Recuperação da informação: índices, instrumentos de busca e descrição (tipo documental, estudante, curso, período) (termo; 7 questões)
-- Organicidade: manter a relação entre as peças do mesmo procedimento (referência cruzada, datas de cada ato, etapas finais) (termo; 9 questões)
-- Retificação formal: manter a relação entre o documento anterior e o ato de retificação (procedimento; 1 questões)
-- Minuta × versão assinada/formalizada de um ato (termo; 1 questões)
-- Arquivo institucional: ato de criação da escola × ato de autorização do curso (termo; 1 questões)
-- Lei 8.159/1991, art. 3º: gestão de documentos (produção, tramitação, uso, avaliação e arquivamento) (dispositivo; 2 questões)
-- Lei 8.159/1991, art. 8º: documentos correntes, intermediários e permanentes (dispositivo; 5 questões)
-- Arquivo corrente da secretaria: pastas de alunos ativos identificadas (nome, curso, ano/série, nº de ordem, etapa, turma, turno) (procedimento; 2 questões)
-- Arquivo permanente: dossiês de ex-alunos e concluintes, preservados definitivamente e usados para expedir históricos (procedimento; 2 questões)
-- Arquivo ativo (uso frequente; alunos e servidores atuais) × arquivo passivo (ex-alunos, ex-professores, ex-funcionários) (termo; 2 questões)
-- Lei 8.159/1991, arts. 8º, §3º, 9º e 10: documentos permanentes preservados; eliminação só com autorização da instituição arquivística pública (dispositivo; 2 questões)
-- Livro de matrícula tem guarda permanente (valor probatório), diferente de declarações de uso pontual (termo; 1 questões)
-- Lei 8.159/1991, art. 25: responsabilidade penal, civil e administrativa por destruir documentos de valor permanente (dispositivo; 1 questões)
-- Princípio da proveniência (não misturar documentos de produtores distintos) × organização por assunto (pertinência) (termo; 2 questões)
-- Preservação e acesso: acondicionamento, higienização e manuais técnicos adaptados à realidade da escola (procedimento; 1 questões)
-
-### S06 — Redação Oficial - Atas, Ofícios e Requerimentos
-
-- Ata: registro claro e preciso das ocorrências de reunião, assembleia ou convenção; aprovada, tem valor de documento (≠ lista de presença, ≠ requerimento) (termo; 3 questões)
-- Elementos da ata: data e local, participantes e funções, assunto, deliberações e assinaturas (termo; 5 questões)
-- Estrutura da ata: identificação, corpo (especificação, data, horário, local, participantes, deliberações), encerramento e fecho, nessa ordem (termo; 2 questões)
-- Ata de classificação (modelo paulista): conselho analisa avaliações e indica ano/série/nível, aptidão e componentes em adaptação, por estudante (termo; 9 questões)
-- Síntese das avaliações (resultados por componente e professor) × ata de classificação (deliberação do conselho) (termo; 2 questões)
-- Termo de adaptação e registro em livro próprio: estudante, componentes conforme a matriz, professores responsáveis, decisão final e assinatura da direção (termo; 6 questões)
-- Despacho (decisão da direção) × ciência do interessado; a comunicação segue o despacho, não o requerimento (termo; 2 questões)
-- Convocação: destinatário e estudante identificados, data, horário, local e finalidade; emissão × recebimento (termo; 4 questões)
-- Ofício de encaminhamento: identifica estudante, caso e processo; síntese cronológica dos fatos; anexos conferidos; estágio real do processo (procedimento; 5 questões)
-- Ofício: comunicação oficial expedida por órgãos públicos, inclusive a particulares; o particular usa carta ou requerimento (termo; 1 questões)
-- MRPR 2018, item 5.1.2: identificação do expediente (nome em maiúsculas, nº, ano com quatro dígitos e siglas separadas por barra) (dispositivo; 1 questões)
-- Requerimento: pedido de pessoa física ou jurídica à autoridade, com objeto, finalidade, amparo legal e documentos identificados (não equivale a deferimento) (termo; 6 questões)
-- Classificação dos textos oficiais: correspondências (ex.: ofício) × documentos (ex.: ata), categorias relacionadas (termo; 1 questões)
-- Uso de modelos: individualizar o caso real (dados da escola, nível, campos) e conferir a regulamentação vigente da rede (procedimento; 3 questões)
 
 ### S07 — Constituição Federal - Educação - arts. 205 a 214
 

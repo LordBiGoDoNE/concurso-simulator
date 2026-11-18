@@ -53,12 +53,12 @@ gerados.
 
 ## 5. Conhecimentos Escolares S01–S06 — depende de 4
 
-- [ ] 5.1 S01 e S04: LDB (arts. cobrados, reclassificação, frequência, educação
+- [x] 5.1 S01 e S04: LDB (arts. cobrados, reclassificação, frequência, educação
   bilíngue de surdos).
-- [ ] 5.2 S02, S03 e S05: escrituração, documentos individuais e coletivos,
+- [x] 5.2 S02, S03 e S05: escrituração, documentos individuais e coletivos,
   carga horária, protocolo e arquivo.
-- [ ] 5.3 S06: redação oficial escolar.
-- [ ] 5.4 Recompilar, atualizar resumo/checklist/referências com fonte e data, e
+- [x] 5.3 S06: redação oficial escolar.
+- [x] 5.4 Recompilar, atualizar resumo/checklist/referências com fonte e data, e
   registrar a matriz.
 
 ## 6. Conhecimentos Escolares S07–S11 — depende de 5

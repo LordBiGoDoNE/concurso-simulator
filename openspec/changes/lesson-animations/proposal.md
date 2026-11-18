@@ -1,6 +1,6 @@
 # Proposal
 
-Issue: a criar (link registrado após a criação).
+Issue: [#245](https://github.com/LordBiGoDoNE/concurso-simulator/issues/245).
 Épica: `epic/lesson-animations`, criada da `main` `85c2d2c` em 2026-11-18.
 
 ## Why

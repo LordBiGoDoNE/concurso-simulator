@@ -1,6 +1,6 @@
 # Tasks
 
-Issue: a criar (link registrado após a criação).
+Issue: [#245](https://github.com/LordBiGoDoNE/concurso-simulator/issues/245).
 Épica: `epic/lesson-animations`. Spec formalizada em 2026-11-18.
 **Implementação não autorizada**: aguarda confirmação explícita de início e a
 resposta sobre teste local. Uma confirmação cobre todos os grupos.

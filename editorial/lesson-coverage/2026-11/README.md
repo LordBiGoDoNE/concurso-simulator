@@ -41,6 +41,22 @@ python scripts/lesson_coverage.py --lesson I08       # texto da aula compilada
 O comando só lê os pacotes de questões e as aulas; o único arquivo que grava é o
 relatório, com `--write-report`.
 
+## Histórico da cobertura (spec `lesson-depth-alignment`)
+
+| Etapa | Conceitos cobertos | Ausentes |
+| --- | ---: | ---: |
+| Linha de base, depois da revisão da lista (grupo 1) | 208 de 1.687 | 1.479 |
+| Informática I01–I05 (grupo 2) | 359 | 1.328 |
+| Informática I06–I10 (grupo 3) | 491 | 1.196 |
+| Conhecimentos Administrativos A01–A08 (grupo 4) | 890 | 797 |
+| Conhecimentos Escolares S01–S06 (grupo 5) | 1.076 | 611 |
+| Conhecimentos Escolares S07–S11 (grupo 6) | 1.282 | 405 |
+| Matemática e Raciocínio Lógico M01–M12 (grupo 7) | 1.546 | 141 |
+| Português P01–P10 (grupo 8) | 1.687 | 0 |
+
+A partir do grupo 8, `--check` passa: nenhum dos 51 assuntos tem conceito ausente
+e nenhum conceito foi marcado como fora de escopo.
+
 ## Limites
 
 - Padrão presente indica que a aula menciona o conceito, não que a explicação é

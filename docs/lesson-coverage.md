@@ -6,6 +6,9 @@ Fonte dos conceitos: `editorial/lesson-coverage/2026-11/concepts.jsonl`. Um conc
 padrões aparecem no texto da aula compilada; isso indica presença, não qualidade
 da explicação.
 
+Este relatório mostra só o estado atual. Histórico e limites da cobertura:
+`editorial/lesson-coverage/2026-11/README.md`.
+
 | Total | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |
 | --- | ---: | ---: | ---: | ---: | ---: |
 | 51 assuntos | 2587 | 1687 | 1282 | 405 | 0 |

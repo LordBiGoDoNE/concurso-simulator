@@ -195,10 +195,13 @@ def render(matrix, topics, questions):
         'padrões aparecem no texto da aula compilada; isso indica presença, não qualidade',
         'da explicação.',
         '',
+        'Este relatório mostra só o estado atual. Histórico e limites da cobertura:',
+        '`editorial/lesson-coverage/2026-11/README.md`.',
+        '',
         '| Total | Questões | Conceitos | Cobertos | Ausentes | Fora de escopo |',
         '| --- | ---: | ---: | ---: | ---: | ---: |',
-        '| 51 assuntos | %d | %d | %d | %d | %d |' % (
-            len(questions), len(rows), count(rows, COVERED), count(rows, ABSENT),
+        '| %d assuntos | %d | %d | %d | %d | %d |' % (
+            len(topics), len(questions), len(rows), count(rows, COVERED), count(rows, ABSENT),
             count(rows, OUT_OF_SCOPE)),
         '',
         '## Por assunto',

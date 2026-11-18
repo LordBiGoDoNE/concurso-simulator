@@ -87,11 +87,11 @@ gerados.
 
 ## 9. Consolidação e verificação final — depende de 8
 
-- [ ] 9.1 Rodar a matriz completa: nenhum assunto com conceito ausente sem
+- [x] 9.1 Rodar a matriz completa: nenhum assunto com conceito ausente sem
   justificativa; atualizar `docs/lesson-coverage.md` com antes e depois.
-- [ ] 9.2 Conferir que o diff da épica não toca questões, backend, migrações,
+- [x] 9.2 Conferir que o diff da épica não toca questões, backend, migrações,
   workflows nem `stable`.
-- [ ] 9.3 Teste de ponta a ponta no sistema local: abrir aulas alteradas de cada
+- [x] 9.3 Teste de ponta a ponta no sistema local: abrir aulas alteradas de cada
   disciplina, fazer a prática do assunto e conferir, por amostra, que a resolução
   é explicável pela aula.
-- [ ] 9.4 Atualizar `frontend/README.md` e a documentação de conteúdo afetada.
+- [x] 9.4 Atualizar `frontend/README.md` e a documentação de conteúdo afetada.

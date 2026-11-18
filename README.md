@@ -62,6 +62,8 @@ Os nove módulos de Matemática recebem aulas guiadas, desenhos/fluxos, fórmula
 
 O módulo M04 é escrito diretamente em HTML. Nos demais, `scripts/math_content.py` centraliza aulas e resoluções; `scripts/enrich_math.py` gera HTML estático completo na publicação, preservando os arquivos V3 como base. A mesma resolução alimenta o botão na questão e o gabarito separado, evitando divergências. O site publicado funciona sem JavaScript, CDN ou conexão para ler o material.
 
+**Aprofundamento nos módulos enriquecidos (M01–M03, M05–M09).** O `enrich_math.py` substitui as seções numeradas (`id="s1"`, `id="s2"`…), o Mapa, a seção "Exemplos resolvidos passo a passo" e o Resumo do HTML-base. O conteúdo aprofundado dessas aulas fica em seções próprias `<section class="card" id="a1"><h2>Aprofundamento 1 — …</h2>`, `id="a2"`…, que o script preserva e acrescenta ao Mapa depois das seções guiadas. Edite o aprofundamento nessas seções `aN`; texto escrito nas seções `sN`, no Mapa, nos exemplos guiados ou no Resumo é descartado na geração. Pegadinhas, Checklist e Referências não são substituídos.
+
 **Para avaliar a edição enriquecida localmente**, gere uma cópia em uma pasta nova (os HTML-base desses oito módulos não incluem a revisão quando abertos diretamente):
 
 ```sh

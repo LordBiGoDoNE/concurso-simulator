@@ -1,14 +1,16 @@
 """Regressões editoriais e de snapshot; não executa aprovação de acervo em CI."""
 import copy
 from fractions import Fraction
+import hashlib
 import json
 from pathlib import Path
+import shutil
 import sys
 import tempfile
 import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from curate_questions import compile_curation, DIRECTORY, verify_manifest, write_outputs
+from curate_questions import compile_curation, DIRECTORY, LEGACY_SOURCES, verify_manifest, write_outputs
 
 ROOT = Path(__file__).resolve().parents[2]
 
@@ -111,6 +113,46 @@ class CurationTests(unittest.TestCase):
             self.assertEqual(len(list((Path(temp)/"packages").glob("*.json"))), 25)
             self.assertNotIn("P05-Q01", self.by_key)
             self.assertIn("P05-Q01", coverage["notSelected"])
+
+
+class FrozenSourcesTests(unittest.TestCase):
+    """A curadoria 2026-10 lê as fontes congeladas, não as aulas vivas."""
+
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory()
+        self.root = Path(self.temp.name)
+        shutil.copytree(ROOT / DIRECTORY, self.root / DIRECTORY)
+        self.manifest = json.loads((ROOT / DIRECTORY / "manifest.json").read_text(encoding="utf-8"))
+        # Aulas vivas divergentes do snapshot (como depois de lesson-depth-alignment).
+        for source in self.manifest["sourceFiles"]:
+            live = self.root / source["path"]
+            live.parent.mkdir(parents=True, exist_ok=True)
+            live.write_bytes((self.root / DIRECTORY / LEGACY_SOURCES / source["path"]).read_bytes() + b"\n<!-- aula viva editada -->\n")
+
+    def tearDown(self):
+        self.temp.cleanup()
+
+    def test_frozen_copies_match_registered_source_hashes(self):
+        for source in self.manifest["sourceFiles"]:
+            data = (ROOT / DIRECTORY / LEGACY_SOURCES / source["path"]).read_bytes()
+            self.assertEqual(hashlib.sha256(data).hexdigest(), source["sha256"], source["path"])
+
+    def test_curation_reproduces_versioned_manifest_with_edited_live_lessons(self):
+        original, items, _, batches, manifest = compile_curation(self.root)
+        verify_manifest(manifest, self.root / DIRECTORY)
+        self.assertEqual(manifest, self.manifest)
+        self.assertEqual((len(items), len(batches)), (250, 25))
+        for item in items:
+            provenance = item["content"]["provenance"]
+            self.assertFalse(provenance["contentPath"].startswith("editorial/"))
+            self.assertFalse(provenance["answerPath"].startswith("editorial/"))
+
+    def test_changed_frozen_copy_is_rejected(self):
+        path = self.root / DIRECTORY / LEGACY_SOURCES / self.manifest["sourceFiles"][0]["path"]
+        path.write_bytes(path.read_bytes() + b"\n")
+        *_, manifest = compile_curation(self.root)
+        with self.assertRaisesRegex(ValueError, "Snapshot editorial mudou: fontes congeladas"):
+            verify_manifest(manifest, self.root / DIRECTORY)
 
 
 if __name__ == "__main__":

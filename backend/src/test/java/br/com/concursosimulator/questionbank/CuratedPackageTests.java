@@ -26,6 +26,8 @@ class CuratedPackageTests {
         assertThat(process.waitFor()).withFailMessage(diagnostic).isZero();
         var json = JsonMapper.builder().build();
         var ids = new HashSet<String>();
+        // Os pacotes 2026-10 fixam hashes das cópias congeladas (D8), não das aulas vivas.
+        var sources = root.resolve("editorial/question-bank/2026-10/legacy-sources");
         var reader = new QuestionPackageReader();
         try (var paths = Files.list(temp.resolve("packages"))) {
             var packages = paths.sorted().toList();
@@ -37,7 +39,7 @@ class CuratedPackageTests {
                 assertThat(keys).hasSize(10);
                 assertThat(keys).noneMatch(ids::contains);
                 ids.addAll(keys);
-                var selected = reader.read(file, root, keys);
+                var selected = reader.read(file, sources, keys);
                 assertThat(selected.inventory()).hasSize(510);
                 assertThat(selected.candidates()).hasSize(10).allSatisfy(candidate -> {
                     assertThat(candidate.expectedLatestRevision()).isNull();
@@ -47,12 +49,12 @@ class CuratedPackageTests {
             }
         }
         assertThat(ids).hasSize(250).doesNotContain("P05-Q01");
-        var selected = reader.read(temp.resolve("all-selected.json"), root, ids);
+        var selected = reader.read(temp.resolve("all-selected.json"), sources, ids);
         var disciplines = selected.candidates().stream().collect(Collectors.groupingBy(
                 c -> c.content().classification().discipline().id(), Collectors.counting()));
         assertThat(disciplines).hasSize(5).allSatisfy((key, count) -> assertThat(count).isEqualTo(50));
         assertThat(selected.candidates().stream().map(c -> c.content().classification().topic()).distinct()).hasSize(51);
-        assertThatThrownBy(() -> reader.read(temp.resolve("all-selected.json"), root, java.util.Set.of("P05-Q01")))
+        assertThatThrownBy(() -> reader.read(temp.resolve("all-selected.json"), sources, java.util.Set.of("P05-Q01")))
                 .isInstanceOf(IllegalArgumentException.class);
     }
 }

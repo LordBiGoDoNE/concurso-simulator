@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 type Entry = { id: string; topic: string; title: string; mode: 'steps' | 'cycle'; duration: number; poster: number; steps?: { time: number; caption: string }[] };
 const manifest: { animations: Entry[] } = JSON.parse(readFileSync('../assets/animacoes/manifest.json', 'utf8'));
+// SVGSVGElement.getCurrentTime() is float32 in Chromium (3.4 -> 3.4000000953674316): compare times with tolerance.
 const time = (page: Page, id: string) => page.evaluate(ident => {
   const svg = document.getElementById(ident)!.querySelector('svg')!;
   return { time: svg.getCurrentTime(), paused: svg.animationsPaused() };
@@ -36,7 +37,7 @@ for (const entry of manifest.animations) for (const width of [360, 1280]) {
     }
     if (entry.mode === 'steps') {
       const steps = entry.steps!;
-      await expect.poll(() => time(page, domId(entry))).toEqual({ time: steps[0].time, paused: true });
+      await expect.poll(() => time(page, domId(entry))).toEqual({ time: expect.closeTo(steps[0].time, 3), paused: true });
       await expect(figure.getByText(`Etapa 1 de ${steps.length}`)).toBeVisible();
       await expect(figure.locator('[aria-live="polite"]')).toHaveText(steps[0].caption);
       const next = figure.getByRole('button', { name: 'Próxima' });
@@ -45,7 +46,7 @@ for (const entry of manifest.animations) for (const width of [360, 1280]) {
         await page.keyboard.press('Enter');
         await expect(figure.getByText(`Etapa ${index + 1} de ${steps.length}`)).toBeVisible();
         await expect(figure.locator('[aria-live="polite"]')).toHaveText(steps[index].caption);
-        expect(await time(page, domId(entry))).toEqual({ time: steps[index].time, paused: true });
+        expect(await time(page, domId(entry))).toEqual({ time: expect.closeTo(steps[index].time, 3), paused: true });
       }
       await expect(next).toBeDisabled();
       await figure.getByRole('button', { name: 'Reproduzir tudo' }).click();
@@ -70,7 +71,7 @@ for (const entry of manifest.animations) test(`${entry.id}: com movimento reduzi
   const figure = page.getByRole('figure', { name: entry.title, exact: true });
   await figure.scrollIntoViewIfNeeded();
   const start = entry.mode === 'steps' ? entry.steps![0].time : entry.poster;
-  await expect.poll(() => time(page, domId(entry))).toEqual({ time: start, paused: true });
+  await expect.poll(() => time(page, domId(entry))).toEqual({ time: expect.closeTo(start, 3), paused: true });
   await page.waitForTimeout(500);
-  expect(await time(page, domId(entry))).toEqual({ time: start, paused: true });
+  expect(await time(page, domId(entry))).toEqual({ time: expect.closeTo(start, 3), paused: true });
 });

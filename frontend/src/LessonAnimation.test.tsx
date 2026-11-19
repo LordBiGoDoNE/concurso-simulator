@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
 import NativeLesson from './NativeLesson';
 import type { AnimationNode, NativeLessonDocument } from './native-lesson';
@@ -18,16 +18,25 @@ const lesson = (node: AnimationNode): NativeLessonDocument => ({ format: 'native
 let clock: { time: number; paused: boolean };
 let observers: ((entries: { isIntersecting: boolean }[]) => void)[];
 let reduced: boolean;
+let mediaListeners: (() => void)[];
+let disconnect: ReturnType<typeof vi.fn<() => void>>;
+const setReduced = (value: boolean) => act(() => { reduced = value; mediaListeners.forEach(listener => listener()); });
+const intersect = (isIntersecting: boolean) => act(() => observers.forEach(callback => callback([{ isIntersecting }])));
+const frame = () => act(async () => { await new Promise(resolve => requestAnimationFrame(resolve)); });
 beforeEach(() => {
-  clock = { time: 0, paused: false }; observers = []; reduced = false;
+  clock = { time: 0, paused: false }; observers = []; reduced = false; mediaListeners = []; disconnect = vi.fn();
   Object.assign(SVGSVGElement.prototype, {
     pauseAnimations: vi.fn(() => { clock.paused = true; }),
     unpauseAnimations: vi.fn(() => { clock.paused = false; }),
     setCurrentTime: vi.fn((time: number) => { clock.time = time; }),
     getCurrentTime: vi.fn(() => clock.time),
   });
-  vi.stubGlobal('IntersectionObserver', class { constructor(callback: (entries: { isIntersecting: boolean }[]) => void) { observers.push(callback); } observe() {} disconnect() {} });
-  vi.stubGlobal('matchMedia', (query: string) => ({ matches: reduced && query.includes('reduce'), addEventListener() {}, removeEventListener() {} }));
+  vi.stubGlobal('IntersectionObserver', class { constructor(callback: (entries: { isIntersecting: boolean }[]) => void) { observers.push(callback); } observe() {} disconnect() { disconnect(); } });
+  vi.stubGlobal('matchMedia', (query: string) => ({
+    get matches() { return reduced && query.includes('reduce'); },
+    addEventListener: (_type: string, listener: () => void) => { mediaListeners.push(listener); },
+    removeEventListener: (_type: string, listener: () => void) => { mediaListeners = mediaListeners.filter(item => item !== listener); },
+  }));
 });
 afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
 async function open(node: AnimationNode) {
@@ -60,7 +69,7 @@ it('reproduzir tudo avança as etapas pelo tempo e para no fim', async () => {
   const figure = await open(steps);
   fireEvent.click(within(figure).getByRole('button', { name: 'Reproduzir tudo' }));
   expect(clock.paused).toBe(false);
-  expect(within(figure).getByRole('button', { name: 'Pausar' })).toHaveAttribute('aria-pressed', 'true');
+  expect(within(figure).getByRole('button', { name: 'Pausar' })).not.toHaveAttribute('aria-pressed');
   await act(async () => { clock.time = 3.2; await new Promise(resolve => requestAnimationFrame(resolve)); });
   expect(within(figure).getByText('Etapa 2 de 3')).toBeVisible();
   await act(async () => { clock.time = 6; await new Promise(resolve => requestAnimationFrame(resolve)); await new Promise(resolve => requestAnimationFrame(resolve)); });
@@ -101,4 +110,75 @@ it('sem suporte a SMIL a figura aparece com o estado estático e controles inofe
   fireEvent.click(within(figure).getByRole('button', { name: 'Próxima' }));
   expect(within(figure).getByText('Segunda etapa')).toBeVisible();
   expect(figure.querySelector('rect')).toHaveAttribute('opacity', '1');
+});
+
+it('reproduzir tudo depois da última etapa recomeça do início', async () => {
+  const figure = await open(steps);
+  fireEvent.click(within(figure).getByRole('button', { name: 'Próxima' }));
+  fireEvent.click(within(figure).getByRole('button', { name: 'Próxima' }));
+  expect(clock).toEqual({ time: 5, paused: true });
+  fireEvent.click(within(figure).getByRole('button', { name: 'Reproduzir tudo' }));
+  expect(clock).toEqual({ time: 0, paused: false });
+  await frame();
+  expect(within(figure).getByText('Etapa 1 de 3')).toBeVisible();
+});
+
+it('ciclo volta ao início ao chegar ao fim da duração e segue reproduzindo', async () => {
+  const figure = await open(cycle);
+  intersect(true);
+  expect(within(figure).getByRole('button', { name: 'Pausar' })).not.toHaveAttribute('aria-pressed');
+  await act(async () => { clock.time = 6.1; await new Promise(resolve => requestAnimationFrame(resolve)); });
+  expect(clock).toEqual({ time: 0, paused: false });
+  // Played to the end and paused there: play again restarts from the beginning.
+  fireEvent.click(within(figure).getByRole('button', { name: 'Pausar' }));
+  clock.time = 6;
+  fireEvent.click(within(figure).getByRole('button', { name: 'Reproduzir' }));
+  expect(clock).toEqual({ time: 0, paused: false });
+});
+
+it('desmontar cancela o quadro pendente e desliga o observador', async () => {
+  const cancel = vi.spyOn(window, 'cancelAnimationFrame');
+  const figure = await open(cycle);
+  intersect(true);
+  expect(figure).toBeInTheDocument();
+  cleanup();
+  expect(cancel).toHaveBeenCalled();
+  expect(disconnect).toHaveBeenCalled();
+  expect(mediaListeners).toEqual([]);
+  cancel.mockRestore();
+});
+
+it('pedir movimento reduzido durante a reprodução automática para o ciclo', async () => {
+  const figure = await open(cycle);
+  intersect(true);
+  expect(clock.paused).toBe(false);
+  setReduced(true);
+  expect(clock.paused).toBe(true);
+  expect(within(figure).getByRole('button', { name: 'Reproduzir' })).toBeInTheDocument();
+  setReduced(false);
+  expect(clock.paused).toBe(false);
+});
+
+it('com movimento reduzido pausar e reproduzir funcionam repetidas vezes', async () => {
+  reduced = true;
+  const figure = await open(cycle);
+  intersect(true);
+  for (let round = 0; round < 3; round++) {
+    fireEvent.click(within(figure).getByRole('button', { name: 'Reproduzir' }));
+    expect(clock.paused).toBe(false);
+    fireEvent.click(within(figure).getByRole('button', { name: 'Pausar' }));
+    expect(clock.paused).toBe(true);
+  }
+});
+
+it('sem IntersectionObserver o ciclo não começa sozinho e reproduz a pedido repetidas vezes', async () => {
+  vi.stubGlobal('IntersectionObserver', undefined);
+  const figure = await open(cycle);
+  expect(clock).toEqual({ time: 4, paused: true });
+  for (let round = 0; round < 2; round++) {
+    fireEvent.click(within(figure).getByRole('button', { name: 'Reproduzir' }));
+    expect(clock.paused).toBe(false);
+    fireEvent.click(within(figure).getByRole('button', { name: 'Pausar' }));
+    expect(clock.paused).toBe(true);
+  }
 });

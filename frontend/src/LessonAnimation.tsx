@@ -26,10 +26,12 @@ export default function LessonAnimation({ node, svg }: { node: AnimationNode; sv
   const reduced = useReducedMotion();
   const steps = node.mode === 'steps' ? node.steps ?? [] : [];
   const [step, setStep] = useState(0);
-  const [playing, setPlaying] = useState(false);
+  const [stepsPlaying, setStepsPlaying] = useState(false);
   const [visible, setVisible] = useState(false);
-  // A cycle the student paused stays paused until they press play again.
-  const [held, setHeld] = useState(false);
+  // What the student asked for in a cycle: null follows the automatic rule (on screen
+  // and without reduced motion); a pause holds until they press play again.
+  const [intent, setIntent] = useState<null | 'play' | 'pause'>(null);
+  const playing = node.mode === 'steps' ? stepsPlaying : intent === 'play' || (intent === null && visible && !reduced);
   const titleId = node.id + '-title', descriptionId = node.id + '-description';
 
   // Start still, before paint: first step, or the poster frame of a cycle.
@@ -43,10 +45,10 @@ export default function LessonAnimation({ node, svg }: { node: AnimationNode; sv
     return () => observer.disconnect();
   }, [node.mode]);
 
-  // Cycles play on their own only while on screen, never with reduced motion.
+  // Leaving the screen stops a cycle the student started; a pause they chose persists.
   useEffect(() => {
-    if (node.mode === 'cycle') setPlaying(visible && !reduced && !held);
-  }, [node.mode, visible, reduced, held]);
+    if (!visible) setIntent(current => current === 'play' ? null : current);
+  }, [visible]);
 
   useEffect(() => {
     const svg = timeline.current;
@@ -60,7 +62,7 @@ export default function LessonAnimation({ node, svg }: { node: AnimationNode; sv
         let current = 0;
         steps.forEach((item, index) => { if (time >= item.time) current = index; });
         setStep(current);
-        if (time >= node.duration) { seek(svg, steps[steps.length - 1].time); setStep(steps.length - 1); setPlaying(false); return; }
+        if (time >= node.duration) { seek(svg, steps[steps.length - 1].time); setStep(steps.length - 1); setStepsPlaying(false); return; }
       } else if (time >= node.duration) {
         svg.setCurrentTime?.(0);
       }
@@ -70,16 +72,16 @@ export default function LessonAnimation({ node, svg }: { node: AnimationNode; sv
     return () => cancelAnimationFrame(frame);
   }, [playing]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const go = (index: number) => { setPlaying(false); setStep(index); seek(timeline.current, steps[index].time); };
+  const go = (index: number) => { setStepsPlaying(false); setStep(index); seek(timeline.current, steps[index].time); };
   const playAll = () => {
-    if (playing) { setPlaying(false); return; }
+    if (playing) { setStepsPlaying(false); return; }
     // From the current step onwards; from the beginning after the last one.
     seek(timeline.current, step === steps.length - 1 ? 0 : steps[step].time);
-    setPlaying(true);
+    setStepsPlaying(true);
   };
   const toggleCycle = () => {
-    if (playing) { setHeld(true); setPlaying(false); seek(timeline.current, now(timeline.current)); }
-    else { setHeld(false); setPlaying(true); }
+    if (playing) { setIntent('pause'); seek(timeline.current, now(timeline.current)); }
+    else setIntent('play');
   };
 
   return <figure ref={figure} id={node.id} className="native-animation" aria-labelledby={titleId}>
@@ -91,8 +93,8 @@ export default function LessonAnimation({ node, svg }: { node: AnimationNode; sv
         <button type="button" className="secondary" onClick={() => go(step - 1)} disabled={step === 0}>Anterior</button>
         <span className="native-animation-progress">Etapa {step + 1} de {steps.length}</span>
         <button type="button" className="secondary" onClick={() => go(step + 1)} disabled={step === steps.length - 1}>Próxima</button>
-        <button type="button" className="secondary" onClick={playAll} aria-pressed={playing}>{playing ? 'Pausar' : 'Reproduzir tudo'}</button>
-      </> : <button type="button" className="secondary" onClick={toggleCycle} aria-pressed={playing}>{playing ? 'Pausar' : 'Reproduzir'}</button>}
+        <button type="button" className="secondary" onClick={playAll}>{playing ? 'Pausar' : 'Reproduzir tudo'}</button>
+      </> : <button type="button" className="secondary" onClick={toggleCycle}>{playing ? 'Pausar' : 'Reproduzir'}</button>}
     </div>
     {node.mode === 'steps' && <p className="native-animation-caption" aria-live="polite">{steps[step].caption}</p>}
     <p id={descriptionId} className="native-animation-description">{node.description}</p>

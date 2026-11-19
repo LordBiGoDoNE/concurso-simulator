@@ -116,7 +116,7 @@ para as demais disciplinas (outra spec).
 | Aula | Seção | Animação | Modo |
 | --- | --- | --- | --- |
 | I02 | `s2` | Área de Transferência: Ctrl+C, Ctrl+X, Ctrl+V e Windows+V | etapas |
-| I05 | `s2` | Alça de preenchimento: referência relativa e absoluta | etapas |
+| I05 | `s2` | Alça de preenchimento: referências relativa, absoluta e mista | etapas |
 | I07 | `s6` | Tabela dinâmica: Linhas, Colunas, Valores e Filtros | etapas |
 | I08 | `s9` | `For Each` em B2:B4 com `ClearContents` | etapas |
 | I09 | `s3` | Animação de objeto × transição de slide | ciclo |

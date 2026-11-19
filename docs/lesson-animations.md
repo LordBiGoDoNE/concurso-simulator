@@ -87,8 +87,15 @@ movimento reduzido) e ver o estado certo.
 | `warm` / `warm-soft` | `#b45309` / `#fbe5cc` | o que fica fixo, alerta ou erro |
 | `soft`, `white` | `#efeae0`, `#ffffff` | preenchimentos neutros |
 
-  Contraste sobre `paper`: `ink` 13,6:1, `muted` 5,9:1, `accent` 5,2:1 e `warm`
-  4,8:1. Texto colorido só nessas quatro cores.
+  Contraste (WCAG 2.x) sobre `paper`: `ink` 13,35:1, `muted` 5,70:1, `accent` 5,16:1
+  e `warm` 4,73:1; sobre `white`: 14,16:1, 6,05:1, 5,47:1 e 5,02:1. Texto só nessas
+  quatro cores.
+- **Texto colorido (`accent`, `warm`, `muted`) fica só sobre `paper` ou `white`.**
+  Sobre `soft`, `accent-soft` e `warm-soft` o contraste cai (por exemplo, `accent`
+  sobre `accent-soft` 4,50:1, `warm` sobre `warm-soft` 4,11:1, `warm` sobre `soft`
+  4,19:1); nesses fundos o texto usa `ink` (11,6:1 ou mais). A ferramenta recusa
+  `label_color` diferente de `ink` numa `box` com `fill` suave; texto solto sobre
+  áreas suaves é conferido na revisão do desenho.
 
 ## Limites (conferidos pela ferramenta)
 

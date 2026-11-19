@@ -25,6 +25,8 @@ PALETTE = {'paper': '#fbf8f1', 'ink': '#2b2b2b', 'muted': '#5f6368', 'accent': '
 MAX_BYTES, MAX_CYCLE, MAX_STEPS, MAX_PER_TOPIC = 30_000, 12, 8, 2
 MAX_WIDTH, MIN_TEXT = 480, 18
 FADE = 0.3
+# Colored text keeps WCAG AA (>= 4.5:1) only on paper/white; on these fills labels use ink.
+SOFT_FILLS = ('soft', 'accent-soft', 'warm-soft')
 META = ('id', 'topic', 'anchor', 'title', 'description', 'mode', 'duration', 'poster')
 
 
@@ -172,6 +174,8 @@ class Sketch:
             body += f'<path d="M{"L".join(fmt(px) + " " + fmt(py) for px, py in fill)}Z" fill="{color(item.get("fill", "white"))}"/>'
         body += self.paths(self.stroke(corners, rng, closed=True), color(item.get('stroke', 'ink')), item.get('width', 2))
         if 'label' in item:
+            if item.get('fill', 'white') in SOFT_FILLS and item.get('label_color', 'ink') != 'ink':
+                raise ValueError(f'Rótulo colorido sobre {item["fill"]}: use ink ({item["label"]})')
             body += self.text({'x': x + w / 2, 'y': y + h / 2 + item.get('label_size', MIN_TEXT) * 0.35,
                                'text': item['label'], 'size': item.get('label_size', MIN_TEXT),
                                'color': item.get('label_color', 'ink'), **({'weight': item['weight']} if 'weight' in item else {})})

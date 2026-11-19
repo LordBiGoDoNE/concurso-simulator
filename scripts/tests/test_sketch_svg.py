@@ -83,6 +83,8 @@ class SketchTests(unittest.TestCase):
             'cor': dict(SOURCE, elements=[{'type': 'box', 'x': 1, 'y': 1, 'w': 1, 'h': 1, 'fill': 'red'}]),
             'tipo': dict(SOURCE, elements=[{'type': 'image'}]),
             'etapas': dict(SOURCE, steps=[{'time': i, 'caption': str(i)} for i in range(9)]),
+            'contraste': dict(SOURCE, elements=[{'type': 'box', 'x': 1, 'y': 1, 'w': 90, 'h': 40, 'fill': 'warm-soft',
+                                                  'label': 'aviso', 'label_color': 'warm'}]),
             'peso': dict(SOURCE, elements=[{'type': 'circle', 'cx': i, 'cy': 50, 'r': 9} for i in range(400)]),
         }
         for name, source in cases.items():
@@ -90,6 +92,11 @@ class SketchTests(unittest.TestCase):
                 for path in (self.root / FOLDER / 'fontes').glob('*.json'):
                     path.unlink()
                 self.write(source)
+
+    def test_soft_fill_accepts_ink_label_and_paper_accepts_colored_label(self):
+        ink = {'type': 'box', 'x': 1, 'y': 1, 'w': 90, 'h': 40, 'fill': 'accent-soft', 'label': 'ok', 'label_color': 'ink'}
+        colored = {'type': 'box', 'x': 1, 'y': 60, 'w': 90, 'h': 40, 'fill': 'none', 'label': 'ok', 'label_color': 'accent'}
+        self.write(dict(SOURCE, elements=[ink, colored]))
 
     def test_at_most_two_animations_per_lesson_and_matching_file_names(self):
         with self.assertRaises(ValueError):

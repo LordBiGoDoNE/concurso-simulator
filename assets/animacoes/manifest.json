@@ -6,10 +6,10 @@
       "topic": "I05",
       "anchor": "s2",
       "title": "Alça de preenchimento: referência relativa e absoluta",
-      "description": "Planilha com preços em B4 (200), B5 (350) e B6 (80) e desconto de 0,1 em G2. A célula C4 contém =B4*$G$2 e mostra 20. A alça de preenchimento é o quadradinho no canto inferior direito de C4. Ao arrastá-la até C6, a fórmula é copiada: C5 fica =B5*$G$2 (35) e C6 fica =B6*$G$2 (8). A referência relativa B4 anda com a cópia; a absoluta $G$2 continua igual. Sem o cifrão, C5 ficaria =B5*G3 e, como G3 está vazia, o resultado seria 0.",
+      "description": "Trecho de planilha com as linhas 2 a 6 e as colunas B, C e G; uma coluna com reticências entre C e G indica as colunas omitidas. Acima da grade, a caixa de nome mostra a célula em foco e a barra de fórmulas (fx) mostra a fórmula dela. B4, B5 e B6 contêm os preços 200, 350 e 80; G2 contém o desconto 0,1; G3 está vazia. C4 contém =B4*$G$2 e mostra 20; B4 aparece destacada como referência relativa e G2 como referência absoluta. A alça de preenchimento é o quadradinho no canto inferior direito de C4. Ao arrastá-la até C6, a fórmula é copiada: C5 fica =B5*$G$2 e mostra 35; C6 fica =B6*$G$2 e mostra 8. A referência relativa anda com a cópia (B4 vira B5 e B6); a absoluta $G$2 continua igual. Na última etapa, a figura mostra a hipótese sem cifrão: C5 ficaria =B5*G3 e mostraria 0, porque G3 está vazia; nessa etapa o valor de C6 deixa de ser exibido.",
       "mode": "steps",
       "duration": 12,
-      "poster": 10.5,
+      "poster": 7.5,
       "file": "I05-alca-preenchimento.svg",
       "steps": [
         {

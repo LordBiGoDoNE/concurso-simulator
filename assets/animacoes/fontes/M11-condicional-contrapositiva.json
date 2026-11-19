@@ -1,0 +1,622 @@
+{
+  "id": "M11-condicional-contrapositiva",
+  "topic": "M11",
+  "anchor": "s4",
+  "title": "Condicional e contrapositiva na tabela-verdade",
+  "description": "Tabela-verdade com as colunas p, q, p → q, ¬q, ¬p e ¬q → ¬p, nas quatro linhas VV, VF, FV e FF de p e q (2² = 4 linhas). Primeiro aparecem os valores de p e q. Depois a coluna p → q é preenchida linha a linha: V, F, V, V. A 2ª linha (p V e q F) é destacada como a única linha falsa: das 4 combinações, 3 tornam p → q verdadeira. Em seguida, para a contrapositiva, que troca a ordem e nega as duas partes, aparecem as colunas ¬q (F, V, F, V) e ¬p (F, F, V, V). A coluna ¬q → ¬p é preenchida linha a linha: V, F, V, V; ela também só é falsa na 2ª linha, em que ¬q é V e ¬p é F. Por fim, as colunas p → q e ¬q → ¬p são destacadas como idênticas, e um quadro mostra p → q ≡ ¬q → ¬p com o exemplo da aula: “Se o arquivo foi aprovado, foi revisado” equivale a “Se o arquivo não foi revisado, não foi aprovado”.",
+  "mode": "steps",
+  "duration": 15,
+  "poster": 14,
+  "steps": [
+    {
+      "time": 1.5,
+      "caption": "Com p e q há 2² = 4 linhas: VV, VF, FV e FF."
+    },
+    {
+      "time": 4.5,
+      "caption": "Linha a linha, a condicional p → q vale V, F, V e V."
+    },
+    {
+      "time": 6.5,
+      "caption": "p → q só é falsa na 2ª linha: antecedente p V e consequente q F."
+    },
+    {
+      "time": 9,
+      "caption": "A contrapositiva troca a ordem e nega as duas partes: usa ¬q e ¬p."
+    },
+    {
+      "time": 12.5,
+      "caption": "¬q → ¬p também só é falsa na 2ª linha, com ¬q V e ¬p F."
+    },
+    {
+      "time": 14,
+      "caption": "As colunas são idênticas: p → q ≡ ¬q → ¬p."
+    }
+  ],
+  "seed": 11,
+  "size": [
+    480,
+    334
+  ],
+  "elements": [
+    {
+      "type": "box",
+      "x": 12,
+      "y": 14,
+      "w": 456,
+      "h": 192,
+      "fill": "white",
+      "stroke": "muted",
+      "width": 1.5
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          12,
+          54
+        ],
+        [
+          468,
+          54
+        ]
+      ],
+      "color": "muted",
+      "width": 2
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          12,
+          92
+        ],
+        [
+          468,
+          92
+        ]
+      ],
+      "color": "muted",
+      "width": 1
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          12,
+          130
+        ],
+        [
+          468,
+          130
+        ]
+      ],
+      "color": "muted",
+      "width": 1
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          12,
+          168
+        ],
+        [
+          468,
+          168
+        ]
+      ],
+      "color": "muted",
+      "width": 1
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          60,
+          14
+        ],
+        [
+          60,
+          206
+        ]
+      ],
+      "color": "muted",
+      "width": 1
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          108,
+          14
+        ],
+        [
+          108,
+          206
+        ]
+      ],
+      "color": "muted",
+      "width": 2
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          208,
+          14
+        ],
+        [
+          208,
+          206
+        ]
+      ],
+      "color": "muted",
+      "width": 1
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          266,
+          14
+        ],
+        [
+          266,
+          206
+        ]
+      ],
+      "color": "muted",
+      "width": 1
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          324,
+          14
+        ],
+        [
+          324,
+          206
+        ]
+      ],
+      "color": "muted",
+      "width": 2
+    },
+    {
+      "type": "text",
+      "x": 36.0,
+      "y": 41,
+      "text": "p",
+      "color": "muted",
+      "weight": "700"
+    },
+    {
+      "type": "text",
+      "x": 84.0,
+      "y": 41,
+      "text": "q",
+      "color": "muted",
+      "weight": "700"
+    },
+    {
+      "type": "text",
+      "x": 158.0,
+      "y": 41,
+      "text": "p → q",
+      "color": "muted",
+      "weight": "700"
+    },
+    {
+      "type": "text",
+      "x": 237.0,
+      "y": 41,
+      "text": "¬q",
+      "color": "muted",
+      "weight": "700"
+    },
+    {
+      "type": "text",
+      "x": 295.0,
+      "y": 41,
+      "text": "¬p",
+      "color": "muted",
+      "weight": "700"
+    },
+    {
+      "type": "text",
+      "x": 396.0,
+      "y": 41,
+      "text": "¬q → ¬p",
+      "color": "muted",
+      "weight": "700"
+    },
+    {
+      "type": "text",
+      "x": 36.0,
+      "y": 80,
+      "text": "V",
+      "show": [
+        0.3
+      ]
+    },
+    {
+      "type": "text",
+      "x": 84.0,
+      "y": 80,
+      "text": "V",
+      "show": [
+        0.3
+      ]
+    },
+    {
+      "type": "text",
+      "x": 36.0,
+      "y": 118,
+      "text": "V",
+      "show": [
+        0.5
+      ]
+    },
+    {
+      "type": "text",
+      "x": 84.0,
+      "y": 118,
+      "text": "F",
+      "show": [
+        0.5
+      ]
+    },
+    {
+      "type": "text",
+      "x": 36.0,
+      "y": 156,
+      "text": "F",
+      "show": [
+        0.7
+      ]
+    },
+    {
+      "type": "text",
+      "x": 84.0,
+      "y": 156,
+      "text": "V",
+      "show": [
+        0.7
+      ]
+    },
+    {
+      "type": "text",
+      "x": 36.0,
+      "y": 194,
+      "text": "F",
+      "show": [
+        0.9000000000000001
+      ]
+    },
+    {
+      "type": "text",
+      "x": 84.0,
+      "y": 194,
+      "text": "F",
+      "show": [
+        0.9000000000000001
+      ]
+    },
+    {
+      "type": "text",
+      "x": 158.0,
+      "y": 80,
+      "text": "V",
+      "weight": "700",
+      "show": [
+        2.0
+      ]
+    },
+    {
+      "type": "text",
+      "x": 158.0,
+      "y": 118,
+      "text": "F",
+      "weight": "700",
+      "show": [
+        2.6
+      ],
+      "color": "warm"
+    },
+    {
+      "type": "text",
+      "x": 158.0,
+      "y": 156,
+      "text": "V",
+      "weight": "700",
+      "show": [
+        3.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 158.0,
+      "y": 194,
+      "text": "V",
+      "weight": "700",
+      "show": [
+        3.8
+      ]
+    },
+    {
+      "type": "box",
+      "x": 15,
+      "y": 95,
+      "w": 450,
+      "h": 32,
+      "fill": "none",
+      "stroke": "warm",
+      "width": 2.5,
+      "show": [
+        5.0,
+        12.8
+      ]
+    },
+    {
+      "type": "text",
+      "x": 237.0,
+      "y": 80,
+      "text": "F",
+      "show": [
+        7.6
+      ]
+    },
+    {
+      "type": "text",
+      "x": 295.0,
+      "y": 80,
+      "text": "F",
+      "show": [
+        8.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 237.0,
+      "y": 118,
+      "text": "V",
+      "show": [
+        7.6
+      ]
+    },
+    {
+      "type": "text",
+      "x": 295.0,
+      "y": 118,
+      "text": "F",
+      "show": [
+        8.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 237.0,
+      "y": 156,
+      "text": "F",
+      "show": [
+        7.6
+      ]
+    },
+    {
+      "type": "text",
+      "x": 295.0,
+      "y": 156,
+      "text": "V",
+      "show": [
+        8.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 237.0,
+      "y": 194,
+      "text": "V",
+      "show": [
+        7.6
+      ]
+    },
+    {
+      "type": "text",
+      "x": 295.0,
+      "y": 194,
+      "text": "V",
+      "show": [
+        8.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 396.0,
+      "y": 80,
+      "text": "V",
+      "weight": "700",
+      "show": [
+        10.0
+      ]
+    },
+    {
+      "type": "text",
+      "x": 396.0,
+      "y": 118,
+      "text": "F",
+      "weight": "700",
+      "show": [
+        10.6
+      ],
+      "color": "warm"
+    },
+    {
+      "type": "text",
+      "x": 396.0,
+      "y": 156,
+      "text": "V",
+      "weight": "700",
+      "show": [
+        11.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 396.0,
+      "y": 194,
+      "text": "V",
+      "weight": "700",
+      "show": [
+        11.8
+      ]
+    },
+    {
+      "type": "box",
+      "x": 112,
+      "y": 18,
+      "w": 92,
+      "h": 184,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 3,
+      "show": [
+        13.0
+      ]
+    },
+    {
+      "type": "box",
+      "x": 328,
+      "y": 18,
+      "w": 136,
+      "h": 184,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 3,
+      "show": [
+        13.0
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        5.0,
+        7.3
+      ],
+      "children": [
+        {
+          "type": "text",
+          "x": 240,
+          "y": 240,
+          "text": "Única linha falsa: p V e q F",
+          "color": "warm",
+          "weight": "700"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 268,
+          "text": "Das 4 combinações, 3 tornam p → q verdadeira"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        7.6,
+        9.7
+      ],
+      "children": [
+        {
+          "type": "text",
+          "x": 240,
+          "y": 240,
+          "text": "Contrapositiva: ¬q → ¬p",
+          "weight": "700"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 268,
+          "text": "troca a ordem e nega as duas partes",
+          "color": "muted"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        10.0,
+        12.7
+      ],
+      "children": [
+        {
+          "type": "text",
+          "x": 240,
+          "y": 240,
+          "text": "¬q → ¬p também só é F na 2ª linha",
+          "weight": "700"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 268,
+          "text": "(¬q V e ¬p F)",
+          "color": "muted"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        13.0
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 12,
+          "y": 218,
+          "w": 456,
+          "h": 104,
+          "fill": "white",
+          "stroke": "accent",
+          "width": 2
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 248,
+          "spans": [
+            [
+              "p → q",
+              "accent"
+            ],
+            [
+              "  ≡  ",
+              null
+            ],
+            [
+              "¬q → ¬p",
+              "accent"
+            ]
+          ],
+          "weight": "700",
+          "size": 20
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 278,
+          "text": "“Se o arquivo foi aprovado, foi revisado”"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 306,
+          "text": "≡ “Se o arquivo não foi revisado, não foi aprovado”"
+        }
+      ]
+    }
+  ]
+}

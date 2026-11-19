@@ -1,0 +1,725 @@
+{
+  "id": "M12-casa-dos-pombos",
+  "topic": "M12",
+  "anchor": "s8",
+  "title": "Casa dos pombos: 3 cartas do mesmo naipe",
+  "description": "Quatro caixas abertas, uma para cada naipe (♠, ♥, ♦ e ♣), e um monte de cartas. A pergunta é quantas cartas retirar para garantir 3 do mesmo naipe. As cartas saem do monte uma a uma e vão para a caixa do seu naipe no pior caso, distribuídas por igual: depois de 8 cartas, cada naipe tem 2, e ainda não há 3 de um mesmo naipe. A legenda diz: pior caso, 2 de cada naipe = 8 cartas. A 9ª carta, destacada, vai para uma das caixas (na figura, ♠), que passa a ter 3 cartas e fica destacada: a 9ª carta forma 3 do mesmo naipe, qualquer que seja o naipe dela. A conta aparece de dois modos: 8 + 1 = 9 e, pela regra n × (k − 1) + 1 com n = 4 naipes e k = 3, 4 × (3 − 1) + 1 = 9. Em seguida as cartas e as legendas somem, as caixas ficam vazias e o ciclo recomeça.",
+  "mode": "cycle",
+  "duration": 12,
+  "poster": 9.5,
+  "seed": 8,
+  "size": [
+    480,
+    398
+  ],
+  "elements": [
+    {
+      "type": "text",
+      "x": 240,
+      "y": 34,
+      "text": "4 naipes: garantir 3 do mesmo naipe",
+      "weight": "700"
+    },
+    {
+      "type": "box",
+      "x": 204,
+      "y": 52,
+      "w": 72,
+      "h": 38,
+      "fill": "soft",
+      "stroke": "muted",
+      "width": 1.5
+    },
+    {
+      "type": "text",
+      "x": 194,
+      "y": 77,
+      "text": "monte",
+      "color": "muted",
+      "anchor": "end"
+    },
+    {
+      "type": "box",
+      "x": 22,
+      "y": 132,
+      "w": 100,
+      "h": 124,
+      "fill": "white",
+      "stroke": "none",
+      "width": 2
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          22,
+          132
+        ],
+        [
+          22,
+          256
+        ],
+        [
+          122,
+          256
+        ],
+        [
+          122,
+          132
+        ]
+      ],
+      "color": "ink",
+      "width": 2
+    },
+    {
+      "type": "text",
+      "x": 72.0,
+      "y": 282,
+      "text": "♠",
+      "size": 22
+    },
+    {
+      "type": "box",
+      "x": 134,
+      "y": 132,
+      "w": 100,
+      "h": 124,
+      "fill": "white",
+      "stroke": "none",
+      "width": 2
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          134,
+          132
+        ],
+        [
+          134,
+          256
+        ],
+        [
+          234,
+          256
+        ],
+        [
+          234,
+          132
+        ]
+      ],
+      "color": "ink",
+      "width": 2
+    },
+    {
+      "type": "text",
+      "x": 184.0,
+      "y": 282,
+      "text": "♥",
+      "size": 22
+    },
+    {
+      "type": "box",
+      "x": 246,
+      "y": 132,
+      "w": 100,
+      "h": 124,
+      "fill": "white",
+      "stroke": "none",
+      "width": 2
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          246,
+          132
+        ],
+        [
+          246,
+          256
+        ],
+        [
+          346,
+          256
+        ],
+        [
+          346,
+          132
+        ]
+      ],
+      "color": "ink",
+      "width": 2
+    },
+    {
+      "type": "text",
+      "x": 296.0,
+      "y": 282,
+      "text": "♦",
+      "size": 22
+    },
+    {
+      "type": "box",
+      "x": 358,
+      "y": 132,
+      "w": 100,
+      "h": 124,
+      "fill": "white",
+      "stroke": "none",
+      "width": 2
+    },
+    {
+      "type": "line",
+      "points": [
+        [
+          358,
+          132
+        ],
+        [
+          358,
+          256
+        ],
+        [
+          458,
+          256
+        ],
+        [
+          458,
+          132
+        ]
+      ],
+      "color": "ink",
+      "width": 2
+    },
+    {
+      "type": "text",
+      "x": 408.0,
+      "y": 282,
+      "text": "♣",
+      "size": 22
+    },
+    {
+      "type": "group",
+      "show": [
+        0.4,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            0.7,
+            0.9
+          ]
+        },
+        {
+          "to": [
+            -168.0,
+            42
+          ],
+          "at": [
+            0.9,
+            1.2000000000000002
+          ]
+        },
+        {
+          "to": [
+            -168.0,
+            164
+          ],
+          "at": [
+            1.2000000000000002,
+            1.5
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♠",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        1.05,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            1.35,
+            1.55
+          ]
+        },
+        {
+          "to": [
+            -56.0,
+            42
+          ],
+          "at": [
+            1.55,
+            1.85
+          ]
+        },
+        {
+          "to": [
+            -56.0,
+            164
+          ],
+          "at": [
+            1.85,
+            2.1500000000000004
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♥",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        1.7000000000000002,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            2.0,
+            2.2
+          ]
+        },
+        {
+          "to": [
+            56.0,
+            42
+          ],
+          "at": [
+            2.2,
+            2.5
+          ]
+        },
+        {
+          "to": [
+            56.0,
+            164
+          ],
+          "at": [
+            2.5,
+            2.8000000000000003
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♦",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        2.35,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            2.65,
+            2.85
+          ]
+        },
+        {
+          "to": [
+            168.0,
+            42
+          ],
+          "at": [
+            2.85,
+            3.1500000000000004
+          ]
+        },
+        {
+          "to": [
+            168.0,
+            164
+          ],
+          "at": [
+            3.1500000000000004,
+            3.45
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♣",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        3.0,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            3.3,
+            3.5
+          ]
+        },
+        {
+          "to": [
+            -168.0,
+            42
+          ],
+          "at": [
+            3.5,
+            3.8
+          ]
+        },
+        {
+          "to": [
+            -168.0,
+            132
+          ],
+          "at": [
+            3.8,
+            4.1
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♠",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        3.65,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            3.9499999999999997,
+            4.15
+          ]
+        },
+        {
+          "to": [
+            -56.0,
+            42
+          ],
+          "at": [
+            4.15,
+            4.45
+          ]
+        },
+        {
+          "to": [
+            -56.0,
+            132
+          ],
+          "at": [
+            4.45,
+            4.75
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♥",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        4.300000000000001,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            4.6000000000000005,
+            4.800000000000001
+          ]
+        },
+        {
+          "to": [
+            56.0,
+            42
+          ],
+          "at": [
+            4.800000000000001,
+            5.1000000000000005
+          ]
+        },
+        {
+          "to": [
+            56.0,
+            132
+          ],
+          "at": [
+            5.1000000000000005,
+            5.4
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♦",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        4.95,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            5.25,
+            5.45
+          ]
+        },
+        {
+          "to": [
+            168.0,
+            42
+          ],
+          "at": [
+            5.45,
+            5.75
+          ]
+        },
+        {
+          "to": [
+            168.0,
+            132
+          ],
+          "at": [
+            5.75,
+            6.050000000000001
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "white",
+          "stroke": "ink",
+          "width": 2,
+          "label": "♣",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        7.0,
+        10.4
+      ],
+      "move": [
+        {
+          "to": [
+            0,
+            42
+          ],
+          "at": [
+            7.3,
+            7.5
+          ]
+        },
+        {
+          "to": [
+            -168.0,
+            42
+          ],
+          "at": [
+            7.5,
+            7.8
+          ]
+        },
+        {
+          "to": [
+            -168.0,
+            100
+          ],
+          "at": [
+            7.8,
+            8.1
+          ]
+        }
+      ],
+      "children": [
+        {
+          "type": "box",
+          "x": 210,
+          "y": 58,
+          "w": 60,
+          "h": 26,
+          "fill": "warm-soft",
+          "stroke": "warm",
+          "width": 2,
+          "label": "♠",
+          "label_color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "box",
+      "x": 17,
+      "y": 127,
+      "w": 110,
+      "h": 134,
+      "fill": "none",
+      "stroke": "warm",
+      "width": 3,
+      "show": [
+        8.1,
+        10.4
+      ]
+    },
+    {
+      "type": "text",
+      "x": 240,
+      "y": 320,
+      "text": "Pior caso: 2 de cada naipe = 8 cartas",
+      "show": [
+        5.8,
+        10.4
+      ]
+    },
+    {
+      "type": "text",
+      "x": 240,
+      "y": 348,
+      "text": "A 9ª carta forma 3 do mesmo naipe",
+      "color": "warm",
+      "weight": "700",
+      "show": [
+        8.1,
+        10.4
+      ]
+    },
+    {
+      "type": "text",
+      "x": 240,
+      "y": 376,
+      "text": "8 + 1 = 9  ·  4 × (3 − 1) + 1 = 9",
+      "show": [
+        8.6,
+        10.4
+      ]
+    }
+  ]
+}

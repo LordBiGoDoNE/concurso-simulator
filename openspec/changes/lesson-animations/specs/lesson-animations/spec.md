@@ -34,7 +34,7 @@ interação do usuário para começar ou que aponte para fora da própria figura
 O projeto SHALL manter `assets/animacoes/manifest.json` com, para cada animação,
 aula, âncora de inserção, arquivo, título, descrição, modo, quadro estático e, no
 modo etapas, as etapas com tempo e legenda. O compilador SHALL validar o manifesto e
-inserir cada animação depois da âncora indicada.
+inserir cada animação ao final da seção âncora indicada.
 
 #### Scenario: Âncora inexistente
 

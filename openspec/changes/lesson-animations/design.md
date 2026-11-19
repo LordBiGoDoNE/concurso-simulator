@@ -70,7 +70,8 @@ por animação: `id`, `topic`, `anchor` (ID de seção existente na aula), `file
 estático) e, no modo etapas, `steps` com `time` e `caption`. O compilador valida o
 manifesto (arquivo em `assets/animacoes/`, âncora existente uma única vez, tempos
 crescentes dentro da duração, legendas não vazias) e insere um nó nativo
-`animation` logo depois do bloco âncora.
+`animation` ao final do bloco âncora (a seção da aula com aquele ID), depois do
+conteúdo dela.
 
 Consequência: `/material/`, `stable` e previews ficam sem animação, sem risco de
 movimento automático sem controle nesses canais.

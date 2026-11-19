@@ -1,5 +1,7 @@
-import { act, cleanup, fireEvent, render, screen, within } from '@testing-library/react';
+import { act, cleanup, fireEvent, render, screen, waitFor, within } from '@testing-library/react';
+import { createRoot } from 'react-dom/client';
 import { afterEach, beforeEach, expect, it, vi } from 'vitest';
+import LessonAnimation from './LessonAnimation';
 import NativeLesson from './NativeLesson';
 import type { AnimationNode, NativeLessonDocument } from './native-lesson';
 
@@ -42,7 +44,11 @@ afterEach(() => { vi.unstubAllGlobals(); vi.useRealTimers(); });
 async function open(node: AnimationNode) {
   vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => lesson(node) })));
   render(<NativeLesson topicId="I05" />);
-  return screen.findByRole('figure', { name: node.title });
+  const figure = await screen.findByRole('figure', { name: node.title });
+  // The lesson commits outside act (after fetch) and its mount effects run in a later task.
+  // They all run together, so the reduced-motion subscription marks that the observer exists too.
+  await waitFor(() => expect(mediaListeners).not.toHaveLength(0));
+  return figure;
 }
 
 it('modo etapas começa parado na primeira etapa e navega com legenda anunciada', async () => {
@@ -181,4 +187,32 @@ it('sem IntersectionObserver o ciclo não começa sozinho e reproduz a pedido re
     fireEvent.click(within(figure).getByRole('button', { name: 'Pausar' }));
     expect(clock.paused).toBe(true);
   }
+});
+
+it('reproduzir antes de os efeitos de montagem rodarem não é desfeito', async () => {
+  // A lesson that arrives by fetch commits outside act; its mount effects run in a later
+  // task, so a click can come first (intermittent in CI). Reproduce that order exactly.
+  reduced = true;
+  const container = document.body.appendChild(document.createElement('div'));
+  const environment = globalThis as { IS_REACT_ACT_ENVIRONMENT?: boolean };
+  const committed = new Promise<void>(resolve => new MutationObserver((_, observer) => { observer.disconnect(); resolve(); }).observe(container, { childList: true, subtree: true }));
+  const root = createRoot(container);
+  environment.IS_REACT_ACT_ENVIRONMENT = false;
+  try {
+    root.render(<LessonAnimation node={cycle} svg={(ref, labelledBy) => <svg ref={ref} role="img" aria-labelledby={labelledBy} />} />);
+    await committed;
+  } finally { environment.IS_REACT_ACT_ENVIRONMENT = true; }
+  expect(observers).toEqual([]);
+  expect(clock).toEqual({ time: 4, paused: true });
+  fireEvent.click(within(container).getByRole('button', { name: 'Reproduzir' }));
+  expect(observers).toHaveLength(1);
+  expect(clock).toEqual({ time: 0, paused: false });
+  expect(within(container).getByRole('button', { name: 'Pausar' })).toBeInTheDocument();
+  intersect(false);
+  expect(clock.paused).toBe(false);
+  intersect(true);
+  intersect(false);
+  expect(clock.paused).toBe(true);
+  act(() => root.unmount());
+  container.remove();
 });

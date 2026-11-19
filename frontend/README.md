@@ -43,6 +43,16 @@ fontes exigem regeneração e inspeção; não editar os JSONs manualmente. Pyth
 necessário nessa autoria/verificação; o build e o runtime usam apenas os dados
 preparados. O renderer admite elementos conhecidos, sem HTML bruto ou scripts.
 Esquemas e tabelas largos podem ser percorridos na horizontal com teclado.
+Animações didáticas (spec `lesson-animations`): figuras em SVG declarativo
+(SMIL) listadas em `assets/animacoes/manifest.json` e inseridas pelo compilador
+ao final da seção âncora da aula. As fontes ficam em `assets/animacoes/fontes/` e
+são geradas por `python scripts/sketch_svg.py` (`--check` confere limites e
+atualização); guia em `docs/lesson-animations.md`. O componente `LessonAnimation`
+mostra controles (etapas: Anterior, Próxima, Reproduzir tudo; ciclo: Reproduzir,
+Pausar), a legenda da etapa anunciada a leitores de tela e a descrição completa em
+texto. Com "reduzir movimento" nada começa sozinho; o ciclo só reproduz sozinho
+quando visível. Em tela estreita a figura rola dentro do próprio cartão. O
+material estático (`/material/`, `stable`) não recebe animações.
 Falha na leitura oferece retry; navegar cancela/ignora respostas anteriores.
 
 Node **24 LTS**, React **19.3.0**, TypeScript **5.9.3**, Vite **8.3.3**, Vitest **5.0.3**. As versões resolvidas das dependências estão em `package-lock.json`.

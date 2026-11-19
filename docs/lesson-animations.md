@@ -108,6 +108,23 @@ O compilador das aulas aplica ainda a lista branca de segurança (somente anima�
 opacidade, posição, tamanho, traço e visibilidade; nada de links, estilos, eventos ou
 referências fora da figura).
 
+## Piloto (2026-11)
+
+Nove animações em Informática e Raciocínio Lógico, para avaliação antes de expandir
+para as demais disciplinas (outra spec).
+
+| Aula | Seção | Animação | Modo |
+| --- | --- | --- | --- |
+| I02 | `s2` | Área de Transferência: Ctrl+C, Ctrl+X, Ctrl+V e Windows+V | etapas |
+| I05 | `s2` | Alça de preenchimento: referência relativa e absoluta | etapas |
+| I07 | `s6` | Tabela dinâmica: Linhas, Colunas, Valores e Filtros | etapas |
+| I08 | `s9` | `For Each` em B2:B4 com `ClearContents` | etapas |
+| I09 | `s3` | Animação de objeto × transição de slide | ciclo |
+| I10 | `s6` | Caminho do e-mail: SMTP, POP3/IMAP, Para/Cc/Cco | etapas |
+| M11 | `s4` | Tabela-verdade da condicional e contrapositiva | etapas |
+| M12 | `s6` | Três conjuntos, de dentro para fora | etapas |
+| M12 | `s8` | Casa dos pombos | ciclo |
+
 ## Conferência técnica
 
 Cada animação entregue registra no PR, etapa por etapa, a afirmação mostrada e o

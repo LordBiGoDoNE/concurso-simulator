@@ -34,6 +34,8 @@ export function parseNativeLesson(value: unknown, topicId: string): NativeLesson
   if (!record(value) || value.format !== 'native-lesson/v1' || value.topicId !== topicId || typeof value.title !== 'string' || !Array.isArray(value.children)) return invalid();
   const prefix = 'lesson-' + topicId + '-';
   let count = 0; const ids = new Set<string>(), references: string[] = [];
+  // SMIL references (begin/end sync and mpath) resolve only inside their own figure.
+  let figure: { ids: Set<string>; references: string[] } | null = null;
   function animation(node: Record<string, unknown>, depth: number): void {
     const keys = ['tag', 'id', 'mode', 'title', 'description', 'duration', 'poster', 'svg', ...(node.mode === 'steps' ? ['steps'] : [])];
     if (Object.keys(node).length !== keys.length || keys.some(key => !(key in node))) return invalid();
@@ -51,14 +53,18 @@ export function parseNativeLesson(value: unknown, topicId: string): NativeLesson
       }
     }
     if (!record(node.svg) || node.svg.tag !== 'svg' || !record(node.svg.attrs) || typeof node.svg.attrs.viewBox !== 'string') return invalid();
+    figure = { ids: new Set(), references: [] };
     check(node.svg, depth + 1, true);
+    const own = figure;
+    figure = null;
+    if (own.references.some(id => !own.ids.has(id))) return invalid();
   }
   function smil(node: Record<string, unknown>, attrs: Record<string, unknown>, parent: string): void {
     const name = attrs.attributeName;
     if (node.tag === 'mpath') {
       const href = attrs.href;
       if (parent !== 'animateMotion' || Object.keys(attrs).length !== 1 || typeof href !== 'string' || !href.startsWith('#' + prefix)) return invalid();
-      references.push(href.slice(1));
+      figure?.references.push(href.slice(1));
       return;
     }
     if ((node.tag === 'animate' || node.tag === 'set') && !animatable.has(String(name))) return invalid();
@@ -73,7 +79,7 @@ export function parseNativeLesson(value: unknown, topicId: string): NativeLesson
         if (timePattern.test(part)) continue;
         const match = syncPattern.exec(part);
         if (!match || !match[1].startsWith(prefix)) return invalid();
-        references.push(match[1]);
+        figure?.references.push(match[1]);
       }
     }
     if (Object.values(attrs).some(value => /url\s*\(|javascript|</i.test(String(value)))) return invalid();
@@ -100,6 +106,7 @@ export function parseNativeLesson(value: unknown, topicId: string): NativeLesson
         if (name === 'id') {
           if (!val.startsWith(prefix) || !/^[\w.-]+$/.test(val) || ids.has(val)) return invalid();
           ids.add(val);
+          figure?.ids.add(val);
         }
         if (name === 'href' && node.tag === 'mpath') continue;
         if (name === 'href') {

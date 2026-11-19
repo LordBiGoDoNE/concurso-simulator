@@ -124,6 +124,10 @@ class Compiler:
             if tag == 'text' and (label == 'GABY  /  LIMEIRA 2026' or label.startswith('ESQUEMA AUTORAL V3 ·')):
                 return None  # Edition/brand chrome, not the teaching diagram.
             raw = {key.replace('{http://www.w3.org/1999/xlink}', 'xlink:'): value for key, value in element.attrib.items()}
+            if animated and tag != 'mpath':
+                for key in ('href', 'xlink:href'):
+                    if key in raw:
+                        raise ValueError(f'atributo {key} não permitido em {tag} (só mpath referencia a figura)')
             if tag in ANIMATION_TAGS:
                 raw = self.animation_attrs(tag, raw, parent, prefix)
             elif any(key in ANIMATION_ATTRS for key in raw):
@@ -186,13 +190,20 @@ class Compiler:
         if path.parent.resolve() != folder:
             raise ValueError('Animação fora de ' + ANIMATIONS)
         prefix = self.prefix + 'animation-' + entry['id'] + '-'
-        svg = self.svg(self.svg_root(path), prefix, animated=True)
+        where = f'Animação {entry["id"]} ({ANIMATIONS}/{entry["file"]})'
+        try:
+            svg = self.svg(self.svg_root(path), prefix, animated=True)
+        except ValueError as error:
+            raise ValueError(f'{where}: {error}') from error
         if svg['tag'] != 'svg' or 'viewBox' not in svg['attrs']:
-            raise ValueError('Animação deve ser um SVG com viewBox: ' + entry['id'])
+            raise ValueError(f'{where}: deve ser um SVG com viewBox')
         ids, references = set(), set()
         def walk(element):
             attrs = element['attrs']
-            if 'id' in attrs: ids.add(attrs['id'])
+            if 'id' in attrs:
+                if attrs['id'] in ids:
+                    raise ValueError(f'{where}: atributo id duplicado na figura: {attrs["id"].removeprefix(prefix)}')
+                ids.add(attrs['id'])
             if element['tag'] == 'mpath': references.add(attrs['href'][1:])
             for key in ('begin', 'end'):
                 for part in attrs.get(key, '').split(';'):
@@ -202,7 +213,8 @@ class Compiler:
                 if isinstance(child, dict): walk(child)
         walk(svg)
         if references - ids:
-            raise ValueError(f'Animação {entry["id"]}: referência fora da figura')
+            missing = ', '.join(sorted(ident.removeprefix(prefix) for ident in references - ids))
+            raise ValueError(f'{where}: begin/end/mpath referencia ID fora da figura: {missing}')
         node = {'tag': 'animation', 'id': prefix[:-1], 'mode': entry['mode'], 'title': entry['title'],
                 'description': entry['description'], 'duration': entry['duration'], 'poster': entry['poster'], 'svg': svg}
         if entry['mode'] == 'steps':

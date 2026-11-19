@@ -57,6 +57,24 @@ it('recusa elementos de animação fora da figura animada, aninhados ou com alvo
   expect(() => parse({ tag: 'animation', children: [animation()] })).toThrow();
 });
 
+it('recusa begin e mpath que apontam para ID existente na aula, mas fora da própria figura', () => {
+  const outside = { tag: 'section', attrs: { id: 'lesson-I05-s2' }, children: [
+    { tag: 'svg', attrs: { viewBox: '0 0 1 1' }, children: [{ tag: 'path', attrs: { id: 'lesson-I05-figure-1-x', d: 'M0 0' }, children: [] }] }] };
+  expect(parse(outside, animation())).toBeTruthy();
+  expect(() => parse(outside, withAnimate({ attributeName: 'opacity', to: '1', begin: 'lesson-I05-s2.end', dur: '1s' }))).toThrow();
+  expect(() => parse(outside, animation({}, svg({ tag: 'circle', children: [{ tag: 'animateMotion', attrs: { dur: '1s' },
+    children: [{ tag: 'mpath', attrs: { href: '#lesson-I05-figure-1-x' }, children: [] }] }] })))).toThrow();
+  const other = animation({ id: 'lesson-I05-animation-other' }, svg({ tag: 'rect', attrs: { id: 'lesson-I05-animation-other-box' }, children: [] }));
+  expect(parse(other, animation())).toBeTruthy();
+  expect(() => parse(other, withAnimate({ attributeName: 'opacity', to: '1', begin: 'lesson-I05-animation-other-box.end', dur: '1s' }))).toThrow();
+});
+
+it('recusa href em elemento de animação que não seja mpath e ID duplicado na figura', () => {
+  expect(() => parse(withAnimate({ attributeName: 'opacity', to: '1', dur: '1s', href: '#' + prefix + 'box' }))).toThrow();
+  expect(() => parse(withAnimate({ attributeName: 'opacity', to: '1', dur: '1s', 'xlink:href': '#' + prefix + 'box' }))).toThrow();
+  expect(() => parse(withAnimate({ id: prefix + 'box', attributeName: 'opacity', to: '1', dur: '1s' }))).toThrow();
+});
+
 it.each([
   ['modo', { mode: 'loop' }],
   ['título', { title: ' ' }],

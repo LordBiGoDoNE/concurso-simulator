@@ -2,8 +2,8 @@
 
 Issue: [#245](https://github.com/LordBiGoDoNE/concurso-simulator/issues/245).
 Épica: `epic/lesson-animations`. Spec formalizada em 2026-11-18.
-**Implementação não autorizada**: aguarda confirmação explícita de início e a
-resposta sobre teste local. Uma confirmação cobre todos os grupos.
+Implementação autorizada em 2026-11-19 (grupos 1–7); teste local pelo usuário:
+sim. Merges dependem da aprovação do pacote final.
 
 Cada grupo é um PR em rascunho. O grupo 1 parte da épica; os demais são
 encadeados, cada um sobre o anterior: o grupo 3 usa nos testes de ponta a ponta a

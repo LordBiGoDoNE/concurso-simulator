@@ -6,7 +6,7 @@
       "topic": "I02",
       "anchor": "s2",
       "title": "Copiar, recortar, colar e o histórico da área de transferência",
-      "description": "Dois painéis, Origem e Destino, e abaixo deles a caixa Área de transferência; no alto, uma tecla mostra o atalho usado em cada etapa. No início, a Origem tem o Item A e o Item B, e o Destino está vazio. Ctrl+C: o Item A é selecionado e uma cópia dele vai para a área de transferência; o original continua na Origem. Ctrl+X: o Item B é selecionado e vai para a área de transferência, no lugar do Item A; na Origem, o Item B fica apagado, marcado para ser movido, porque recortar não é excluir. Ctrl+V: o último item recortado, o Item B, é colado no Destino e sai da Origem; a área de transferência continua com o Item B. Windows+V, com o histórico ativado: a caixa vira o Histórico da área de transferência e mostra os dois itens, o Item B e, abaixo, o Item A, copiado antes. Por fim, o Item A é escolhido no histórico e colado no Destino, que fica com o Item B e o Item A; a Origem fica só com o Item A.",
+      "description": "Dois painéis de texto, Origem e Destino, e abaixo deles a caixa Área de transferência; no alto, uma tecla mostra o atalho usado em cada etapa. No início, a Origem tem dois trechos de texto, o texto A e o texto B, e o Destino está vazio. Ctrl+C: o texto A é selecionado e uma cópia dele vai para a área de transferência; o original continua na Origem. Ctrl+X: o texto B é selecionado, sai da Origem e vai para a área de transferência, no lugar do texto A; recortar não é excluir. Ctrl+V: o último item copiado ou recortado, o texto B, é colado no Destino; a área de transferência continua com o texto B. Windows+V, com o histórico ativado: a caixa vira o Histórico da área de transferência e mostra os dois itens guardados, o texto B e o texto A, copiado antes. Por fim, o texto A é escolhido no histórico e colado no Destino, que fica com o texto B e o texto A; a Origem fica só com o texto A.",
       "mode": "steps",
       "duration": 12.5,
       "poster": 12,
@@ -14,15 +14,15 @@
       "steps": [
         {
           "time": 2.5,
-          "caption": "Ctrl+C copia o Item A: o original permanece na Origem, e a cópia vai para a área de transferência."
+          "caption": "Ctrl+C copia o texto A: o original permanece na Origem, e a cópia vai para a área de transferência."
         },
         {
           "time": 5,
-          "caption": "Ctrl+X recorta o Item B para movê-lo: recortar não é excluir; o conteúdo vai para a área de transferência."
+          "caption": "Ctrl+X recorta o texto B para movê-lo: recortar não é excluir; o conteúdo vai para a área de transferência."
         },
         {
           "time": 7.5,
-          "caption": "Ctrl+V cola o último item copiado ou recortado: o Item B vai para o Destino e sai da Origem."
+          "caption": "Ctrl+V cola o último item copiado ou recortado: o texto B vai para o Destino."
         },
         {
           "time": 9.5,
@@ -30,7 +30,7 @@
         },
         {
           "time": 12,
-          "caption": "No histórico, escolhe-se qual item colar: o Item A, copiado antes, vai para o Destino."
+          "caption": "No histórico, escolhe-se qual item colar: o texto A, copiado antes, vai para o Destino."
         }
       ]
     },

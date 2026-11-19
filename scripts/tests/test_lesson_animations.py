@@ -95,6 +95,33 @@ class AnimationCompilerTests(unittest.TestCase):
             with self.subTest(markup=markup), self.assertRaises(ValueError):
                 self.compile(SVG.format('<rect id="box" width="1" height="1"/><g>' + markup + '</g>'))
 
+    def test_href_outside_mpath_fails_naming_animation_and_attribute(self):
+        xlink = ' xmlns:xlink="http://www.w3.org/1999/xlink"'
+        for markup, name in [('<animate href="#box" attributeName="opacity" to="1" dur="1s"/>', 'href'),
+                             ('<set xlink:href="#box" attributeName="opacity" to="1"/>', 'xlink:href'),
+                             ('<animateMotion href="#box" dur="1s"/>', 'href'),
+                             ('<animateTransform href="#box" attributeName="transform" type="scale" dur="1s"/>', 'href'),
+                             ('<rect href="#box" width="1" height="1"/>', 'href')]:
+            with self.subTest(markup=markup), self.assertRaises(ValueError) as raised:
+                self.compile(SVG.replace('<svg ', '<svg' + xlink + ' ').format('<rect id="box" width="1" height="1"/><g>' + markup + '</g>'))
+            message = str(raised.exception)
+            self.assertIn('Animação demo (' + ANIMATIONS + '/demo.svg)', message)
+            self.assertIn(f'atributo {name} ', message)
+        self.compile(SVG.replace('<svg ', '<svg' + xlink + ' ').format(
+            '<path id="p" d="M0 0"/><circle r="1"><animateMotion dur="1s"><mpath xlink:href="#p"/></animateMotion></circle>'))
+
+    def test_duplicate_id_in_animated_figure_fails_naming_animation_and_attribute(self):
+        with self.assertRaises(ValueError) as raised:
+            self.compile(SVG.format('<rect id="box" width="1" height="1"><animate id="box" attributeName="opacity" to="1" dur="1s"/></rect>'))
+        self.assertIn('Animação demo (' + ANIMATIONS + '/demo.svg)', str(raised.exception))
+        self.assertIn('atributo id duplicado na figura: box', str(raised.exception))
+
+    def test_outside_reference_names_animation_and_missing_id(self):
+        with self.assertRaises(ValueError) as raised:
+            self.compile(SVG.format('<g><animate attributeName="opacity" to="1" begin="s2.end" dur="1s"/></g>'))
+        self.assertIn('Animação demo (' + ANIMATIONS + '/demo.svg)', str(raised.exception))
+        self.assertIn('fora da figura: s2', str(raised.exception))
+
     def test_timing_attributes_outside_animation_elements_and_static_figures_fail(self):
         with self.assertRaises(ValueError):
             self.compile(SVG.format('<rect width="1" height="1" dur="1s"/>'))

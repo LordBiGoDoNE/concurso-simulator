@@ -128,6 +128,50 @@
           "caption": "Quando as células acabam, o laço termina: B2:B4 ficam vazias, mas mantêm as cores e as bordas."
         }
       ]
+    },
+    {
+      "id": "I09-animacao-transicao",
+      "topic": "I09",
+      "anchor": "s3",
+      "title": "Animação de objeto × transição de slide",
+      "description": "No alto, duas guias da faixa de opções: Animações e Transições. Abaixo, as miniaturas do Slide 1 e do Slide 2, lado a lado; uma moldura indica o slide que está na tela. No início, o Slide 1 está na tela e ainda não mostra o título. Primeiro, a guia Animações fica destacada, ao lado do efeito Entrada: o objeto Título entra no Slide 1, subindo até o lugar dele, sem que o slide mude. A legenda diz: Animação: atua em um objeto do slide. Depois, a guia Transições fica destacada: uma seta liga o Slide 1 ao Slide 2 e a moldura desliza do Slide 1 para o Slide 2, que é o slide que chega à tela. A segunda legenda diz: Transição: atua na passagem entre slides. Por fim, a figura volta ao estado inicial e o ciclo recomeça.",
+      "mode": "cycle",
+      "duration": 12,
+      "poster": 8,
+      "file": "I09-animacao-transicao.svg"
+    },
+    {
+      "id": "I10-caminho-email",
+      "topic": "I10",
+      "anchor": "s6",
+      "title": "Caminho de um e-mail: SMTP, POP3, IMAP e Para, Cc, Cco",
+      "description": "Quatro caixas: no alto, à esquerda, o programa do remetente; à direita, o servidor de saída; embaixo, à direita, o servidor do destinatário; à esquerda, o dispositivo do destinatário. No programa do remetente, a mensagem (um envelope) tem Para: Ana, Cc: Bruno e Cco: Carla. Primeiro, o SMTP leva o envelope do programa ao servidor de saída. Em seguida, o SMTP leva o envelope de um servidor a outro, até o servidor do destinatário. Depois aparecem os dois protocolos de recebimento entre o servidor do destinatário e o dispositivo: POP3, com seta do servidor para o dispositivo, baixa as mensagens para o dispositivo; IMAP, com seta nos dois sentidos, mantém as mensagens no servidor e sincroniza. Uma cópia do envelope chega ao dispositivo e o envelope continua no servidor. Por fim, um quadro mostra o que Ana, Bruno e Carla veem na mensagem: Para: Ana e Cc: Bruno; Carla, que está em Cco, não aparece para os demais. No programa do remetente, a linha Cco: Carla fica destacada, porque só o remetente vê o Cco.",
+      "mode": "steps",
+      "duration": 10.5,
+      "poster": 10,
+      "file": "I10-caminho-email.svg",
+      "steps": [
+        {
+          "time": 0.5,
+          "caption": "No programa do remetente, a mensagem tem destinatários em Para, Cc e Cco."
+        },
+        {
+          "time": 3.4,
+          "caption": "O SMTP faz o envio: leva a mensagem do programa ao servidor de saída."
+        },
+        {
+          "time": 5.6,
+          "caption": "O SMTP também leva a mensagem de um servidor a outro, até o servidor do destinatário."
+        },
+        {
+          "time": 8.0,
+          "caption": "No recebimento, o POP3 baixa a mensagem para o dispositivo; no IMAP, ela fica no servidor e é sincronizada."
+        },
+        {
+          "time": 10,
+          "caption": "Para e Cc aparecem para todos os destinatários; o Cco, só para o remetente."
+        }
+      ]
     }
   ]
 }

@@ -2,6 +2,39 @@
   "format": "lesson-animations/v1",
   "animations": [
     {
+      "id": "I02-area-transferencia",
+      "topic": "I02",
+      "anchor": "s2",
+      "title": "Copiar, recortar, colar e o histórico da área de transferência",
+      "description": "Dois painéis, Origem e Destino, e abaixo deles a caixa Área de transferência; no alto, uma tecla mostra o atalho usado em cada etapa. No início, a Origem tem o Item A e o Item B, e o Destino está vazio. Ctrl+C: o Item A é selecionado e uma cópia dele vai para a área de transferência; o original continua na Origem. Ctrl+X: o Item B é selecionado e vai para a área de transferência, no lugar do Item A; na Origem, o Item B fica apagado, marcado para ser movido, porque recortar não é excluir. Ctrl+V: o último item recortado, o Item B, é colado no Destino e sai da Origem; a área de transferência continua com o Item B. Windows+V, com o histórico ativado: a caixa vira o Histórico da área de transferência e mostra os dois itens, o Item B e, abaixo, o Item A, copiado antes. Por fim, o Item A é escolhido no histórico e colado no Destino, que fica com o Item B e o Item A; a Origem fica só com o Item A.",
+      "mode": "steps",
+      "duration": 12.5,
+      "poster": 12,
+      "file": "I02-area-transferencia.svg",
+      "steps": [
+        {
+          "time": 2.5,
+          "caption": "Ctrl+C copia o Item A: o original permanece na Origem, e a cópia vai para a área de transferência."
+        },
+        {
+          "time": 5,
+          "caption": "Ctrl+X recorta o Item B para movê-lo: recortar não é excluir; o conteúdo vai para a área de transferência."
+        },
+        {
+          "time": 7.5,
+          "caption": "Ctrl+V cola o último item copiado ou recortado: o Item B vai para o Destino e sai da Origem."
+        },
+        {
+          "time": 9.5,
+          "caption": "Com o histórico ativado, Windows+V mostra os itens copiados antes, e não só o mais recente."
+        },
+        {
+          "time": 12,
+          "caption": "No histórico, escolhe-se qual item colar: o Item A, copiado antes, vai para o Destino."
+        }
+      ]
+    },
+    {
       "id": "I05-alca-preenchimento",
       "topic": "I05",
       "anchor": "s2",
@@ -27,6 +60,72 @@
         {
           "time": 10.5,
           "caption": "Sem o cifrão, C5 ficaria =B5*G3; como G3 está vazia, o resultado seria 0."
+        }
+      ]
+    },
+    {
+      "id": "I07-tabela-dinamica",
+      "topic": "I07",
+      "anchor": "s6",
+      "title": "Tabela Dinâmica: campos levados às quatro áreas",
+      "description": "No alto, o painel Campos da Tabela Dinâmica: a lista de campos de uma lista de atendimentos (Unidade, Mês, Tipo e Quantidade) e as quatro áreas, Filtros e Colunas em cima, Linhas e Valores embaixo. Abaixo do painel fica o relatório. Unidade vai para Linhas: as unidades Norte e Sul viram os rótulos das linhas. Mês vai para Colunas: Janeiro e Fevereiro viram os rótulos das colunas, cruzando com as linhas. Quantidade vai para Valores e entra como Soma de Quantidade: cada cruzamento mostra o total atendido, Norte 42 em janeiro e 40 em fevereiro, Sul 28 em janeiro e 32 em fevereiro. Por fim, Tipo vai para Filtros e o filtro Tipo = Vacina restringe o relatório inteiro: Norte 12 e 15, Sul 8 e 14. Os números são ilustrativos.",
+      "mode": "steps",
+      "duration": 12.5,
+      "poster": 12,
+      "file": "I07-tabela-dinamica.svg",
+      "steps": [
+        {
+          "time": 1,
+          "caption": "O painel Campos da Tabela Dinâmica mostra a lista de campos (os títulos das colunas) e quatro áreas."
+        },
+        {
+          "time": 3.5,
+          "caption": "Unidade vai para Linhas: seus valores, Norte e Sul, viram os rótulos das linhas do relatório."
+        },
+        {
+          "time": 6,
+          "caption": "Mês vai para Colunas: seus valores viram os rótulos das colunas, cruzando com as linhas."
+        },
+        {
+          "time": 9,
+          "caption": "Quantidade vai para Valores e entra como Soma: cada cruzamento mostra o total atendido."
+        },
+        {
+          "time": 12,
+          "caption": "Tipo vai para Filtros e restringe o relatório inteiro: aqui, só as vacinas."
+        }
+      ]
+    },
+    {
+      "id": "I08-for-each-clearcontents",
+      "topic": "I08",
+      "anchor": "s9",
+      "title": "For Each percorrendo um intervalo com ClearContents",
+      "description": "No alto, um trecho de código VBA em três linhas: For Each celula In Range(\"B2:B4\"), celula.ClearContents e Next celula; uma seta indica a linha em execução. Abaixo, a coluna B de uma planilha: B1 tem o título Valor; B2, B3 e B4 têm 120, 80 e 50, com cor de fundo e borda. Primeiro, o intervalo B2:B4 é destacado: o laço repete o bloco uma vez para cada célula dele. Na 1ª volta, celula é B2 e ClearContents apaga o 120; a cor e a borda de B2 continuam. Next celula passa à célula seguinte: na 2ª volta, celula é B3 e o 80 é apagado; na 3ª volta, celula é B4 e o 50 é apagado. Quando as células acabam, o laço termina: B2:B4 ficam vazias, ainda com cor e borda, e B1 não muda. Um resumo ao lado diz que ClearContents remove valores e fórmulas e que permanece a formatação (cores e bordas).",
+      "mode": "steps",
+      "duration": 12,
+      "poster": 11.5,
+      "file": "I08-for-each-clearcontents.svg",
+      "steps": [
+        {
+          "time": 1.5,
+          "caption": "For Each celula In Range(\"B2:B4\") repete o bloco uma vez para cada célula do intervalo."
+        },
+        {
+          "time": 4,
+          "caption": "1ª volta: celula é B2; celula.ClearContents apaga o valor de B2, e a cor e a borda permanecem."
+        },
+        {
+          "time": 6.5,
+          "caption": "Next celula passa à célula seguinte: na 2ª volta, celula é B3, e o valor dela é apagado."
+        },
+        {
+          "time": 9,
+          "caption": "Na 3ª volta, celula é B4: o último valor do intervalo é apagado."
+        },
+        {
+          "time": 11.5,
+          "caption": "Quando as células acabam, o laço termina: B2:B4 ficam vazias, mas mantêm as cores e as bordas."
         }
       ]
     }

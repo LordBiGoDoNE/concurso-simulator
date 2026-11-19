@@ -40,15 +40,18 @@ export default function LessonAnimation({ node, svg }: { node: AnimationNode; sv
   useEffect(() => {
     const element = figure.current;
     if (node.mode !== 'cycle' || !element || typeof IntersectionObserver !== 'function') return;
-    const observer = new IntersectionObserver(entries => setVisible(entries.some(entry => entry.isIntersecting)), { threshold: 0.5 });
+    let wasVisible = false;
+    const observer = new IntersectionObserver(entries => {
+      const isVisible = entries.some(entry => entry.isIntersecting);
+      // Leaving the screen stops a cycle the student started; a pause they chose persists.
+      // Only a real exit counts: a play pressed before the first report is kept.
+      if (wasVisible && !isVisible) setIntent(current => current === 'play' ? null : current);
+      wasVisible = isVisible;
+      setVisible(isVisible);
+    }, { threshold: 0.5 });
     observer.observe(element);
     return () => observer.disconnect();
   }, [node.mode]);
-
-  // Leaving the screen stops a cycle the student started; a pause they chose persists.
-  useEffect(() => {
-    if (!visible) setIntent(current => current === 'play' ? null : current);
-  }, [visible]);
 
   useEffect(() => {
     const svg = timeline.current;

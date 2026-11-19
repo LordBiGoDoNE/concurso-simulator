@@ -1,4 +1,5 @@
 import { createElement, useEffect, useState, type ReactNode } from 'react';
+import LessonAnimation from './LessonAnimation';
 import { loadNativeLesson, type AnimationNode, type ElementNode, type LessonNode, type NativeLessonDocument } from './native-lesson';
 
 const reactAttributes: Record<string, string> = { colspan: 'colSpan', rowspan: 'rowSpan',
@@ -13,14 +14,9 @@ function props(node: ElementNode, key: number): Record<string, unknown> {
   if (node.tone) result.className = 'native-' + node.tone;
   return result;
 }
-// Static figure; playback controls arrive with the lesson animation component.
 function renderAnimation(node: AnimationNode, key: number): ReactNode {
-  const svg = createElement('svg', { ...props(node.svg, 0), role: 'img', 'aria-labelledby': node.id + '-title' }, node.svg.children.map(renderNode));
-  return <figure key={key} id={node.id} className="native-animation" aria-labelledby={node.id + '-title'}>
-    <div className="native-diagram-view">{svg}</div>
-    <figcaption id={node.id + '-title'}>{node.title}</figcaption>
-    <p className="native-animation-description">{node.description}</p>
-  </figure>;
+  return <LessonAnimation key={key} node={node} svg={(ref, labelledBy) => createElement('svg',
+    { ...props(node.svg, 0), ref, role: 'img', 'aria-labelledby': labelledBy, focusable: 'false' }, node.svg.children.map(renderNode))} />;
 }
 function renderNode(node: LessonNode, key: number): ReactNode {
   if (typeof node === 'string') return node;

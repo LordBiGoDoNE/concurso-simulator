@@ -94,7 +94,7 @@ it('renderiza a animação como figura com título, descrição e SVG acessível
   vi.stubGlobal('fetch', vi.fn(async () => ({ ok: true, json: async () => lesson({ tag: 'section', attrs: { id: 'lesson-I05-s2' }, children: [{ tag: 'h2', children: ['Tipos'] }, animation() as unknown as LessonNode] }) })));
   render(<NativeLesson topicId="I05" />);
   const figure = await screen.findByRole('figure', { name: 'Alça de preenchimento' });
-  expect(within(figure).getByRole('img', { name: 'Alça de preenchimento' })).toBeInTheDocument();
+  expect(within(figure).getByRole('img', { name: 'Alça de preenchimento Descrição completa.' })).toBeInTheDocument();
   expect(within(figure).getByText('Descrição completa.')).toBeVisible();
   expect(figure.querySelector('animateMotion mpath')?.getAttribute('href')).toBe('#' + prefix + 'route');
   expect(figure.querySelector('set')?.getAttribute('begin')).toBe(prefix + 'show.end+0.5s');

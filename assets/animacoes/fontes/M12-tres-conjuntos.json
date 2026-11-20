@@ -1,0 +1,423 @@
+{
+  "id": "M12-tres-conjuntos",
+  "topic": "M12",
+  "anchor": "s6",
+  "title": "Três conjuntos: preencher do centro para fora",
+  "description": "Diagrama de Venn com três círculos dentro do retângulo do universo U, de 100 servidores: Excel (E), com 45; Word (W), com 38; e Redação (R), com 30. As duplas informadas, 15 em E e W, 12 em E e R e 10 em W e R, incluem quem fez os três cursos. Primeiro se preenche o centro, a interseção dos três: 6. Depois as regiões de exatamente dois, descontando o centro de cada dupla: E e W, fora de R, 15 − 6 = 9; E e R, fora de W, 12 − 6 = 6; W e R, fora de E, 10 − 6 = 4. Em seguida as partes de um só conjunto: somente E, 45 − 9 − 6 − 6 = 24; somente W, 38 − 9 − 4 − 6 = 19; somente R, 30 − 6 − 4 − 6 = 14. Por fim, o exterior: a união é 24 + 19 + 14 + 9 + 6 + 4 + 6 = 82, e fora dos três (nenhum curso) ficam 100 − 82 = 18; a soma de todas as regiões, 82 + 18, dá os 100 do universo. Em cada etapa, os números recém-preenchidos aparecem circulados.",
+  "mode": "steps",
+  "duration": 11,
+  "poster": 10,
+  "steps": [
+    {
+      "time": 1.5,
+      "caption": "Comece pelo centro: 6 servidores fizeram os três cursos."
+    },
+    {
+      "time": 4,
+      "caption": "Exatamente dois: desconte o centro de cada dupla, 9, 6 e 4."
+    },
+    {
+      "time": 7,
+      "caption": "Somente um: tire do total do curso as regiões já preenchidas, 24, 19 e 14."
+    },
+    {
+      "time": 10,
+      "caption": "Por último, o exterior: 100 − 82 = 18 não fizeram nenhum curso."
+    }
+  ],
+  "seed": 12,
+  "size": [
+    480,
+    440
+  ],
+  "elements": [
+    {
+      "type": "box",
+      "x": 12,
+      "y": 12,
+      "w": 456,
+      "h": 320,
+      "fill": "white",
+      "stroke": "muted",
+      "width": 1.5
+    },
+    {
+      "type": "text",
+      "x": 240,
+      "y": 36,
+      "text": "U: 100 servidores",
+      "color": "muted",
+      "weight": "700"
+    },
+    {
+      "type": "circle",
+      "cx": 190,
+      "cy": 146,
+      "r": 90,
+      "fill": "none",
+      "stroke": "ink",
+      "width": 2
+    },
+    {
+      "type": "circle",
+      "cx": 290,
+      "cy": 146,
+      "r": 90,
+      "fill": "none",
+      "stroke": "ink",
+      "width": 2
+    },
+    {
+      "type": "circle",
+      "cx": 240,
+      "cy": 233,
+      "r": 90,
+      "fill": "none",
+      "stroke": "ink",
+      "width": 2
+    },
+    {
+      "type": "text",
+      "x": 26,
+      "y": 56,
+      "text": "Excel (E): 45",
+      "anchor": "start"
+    },
+    {
+      "type": "text",
+      "x": 454,
+      "y": 56,
+      "text": "Word (W): 38",
+      "anchor": "end"
+    },
+    {
+      "type": "text",
+      "x": 26,
+      "y": 318,
+      "text": "Redação (R): 30",
+      "anchor": "start"
+    },
+    {
+      "type": "circle",
+      "cx": 240,
+      "cy": 176,
+      "r": 15,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        0.4,
+        2.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 240,
+      "y": 183,
+      "text": "6",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        0.4
+      ]
+    },
+    {
+      "type": "circle",
+      "cx": 240,
+      "cy": 112,
+      "r": 15,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        2.4,
+        5.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 240,
+      "y": 119,
+      "text": "9",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        2.4
+      ]
+    },
+    {
+      "type": "circle",
+      "cx": 186,
+      "cy": 206,
+      "r": 15,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        2.8,
+        5.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 186,
+      "y": 213,
+      "text": "6",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        2.8
+      ]
+    },
+    {
+      "type": "circle",
+      "cx": 294,
+      "cy": 206,
+      "r": 15,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        3.2,
+        5.2
+      ]
+    },
+    {
+      "type": "text",
+      "x": 294,
+      "y": 213,
+      "text": "4",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        3.2
+      ]
+    },
+    {
+      "type": "circle",
+      "cx": 154,
+      "cy": 124,
+      "r": 18,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        5.4,
+        8.4
+      ]
+    },
+    {
+      "type": "text",
+      "x": 154,
+      "y": 131,
+      "text": "24",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        5.4
+      ]
+    },
+    {
+      "type": "circle",
+      "cx": 326,
+      "cy": 124,
+      "r": 18,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        5.8,
+        8.4
+      ]
+    },
+    {
+      "type": "text",
+      "x": 326,
+      "y": 131,
+      "text": "19",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        5.8
+      ]
+    },
+    {
+      "type": "circle",
+      "cx": 240,
+      "cy": 274,
+      "r": 18,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        6.2,
+        8.4
+      ]
+    },
+    {
+      "type": "text",
+      "x": 240,
+      "y": 281,
+      "text": "14",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        6.2
+      ]
+    },
+    {
+      "type": "circle",
+      "cx": 418,
+      "cy": 286,
+      "r": 18,
+      "fill": "none",
+      "stroke": "accent",
+      "width": 2.5,
+      "show": [
+        8.6
+      ]
+    },
+    {
+      "type": "text",
+      "x": 418,
+      "y": 293,
+      "text": "18",
+      "size": 20,
+      "weight": "700",
+      "show": [
+        8.6
+      ]
+    },
+    {
+      "type": "text",
+      "x": 418,
+      "y": 254,
+      "text": "nenhum",
+      "color": "muted",
+      "show": [
+        8.6
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        0.4,
+        2.2
+      ],
+      "children": [
+        {
+          "type": "text",
+          "x": 240,
+          "y": 362,
+          "text": "Nos três (centro): 6",
+          "color": "ink",
+          "weight": "700"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 390,
+          "text": "As duplas 15, 12 e 10",
+          "color": "muted"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 418,
+          "text": "incluem quem fez os três",
+          "color": "muted"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        2.4,
+        5.2
+      ],
+      "children": [
+        {
+          "type": "text",
+          "x": 240,
+          "y": 362,
+          "text": "E e W, fora de R: 15 − 6 = 9",
+          "color": "ink"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 390,
+          "text": "E e R, fora de W: 12 − 6 = 6",
+          "color": "ink"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 418,
+          "text": "W e R, fora de E: 10 − 6 = 4",
+          "color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        5.4,
+        8.4
+      ],
+      "children": [
+        {
+          "type": "text",
+          "x": 240,
+          "y": 362,
+          "text": "Somente E: 45 − 9 − 6 − 6 = 24",
+          "color": "ink"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 390,
+          "text": "Somente W: 38 − 9 − 4 − 6 = 19",
+          "color": "ink"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 418,
+          "text": "Somente R: 30 − 6 − 4 − 6 = 14",
+          "color": "ink"
+        }
+      ]
+    },
+    {
+      "type": "group",
+      "show": [
+        8.6
+      ],
+      "children": [
+        {
+          "type": "text",
+          "x": 240,
+          "y": 362,
+          "text": "União: 24 + 19 + 14 + 9 + 6 + 4 + 6 = 82",
+          "color": "ink",
+          "weight": "700"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 390,
+          "text": "Nenhum: 100 − 82 = 18",
+          "color": "ink"
+        },
+        {
+          "type": "text",
+          "x": 240,
+          "y": 418,
+          "text": "Conferência: 82 + 18 = 100",
+          "color": "ink"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "id": "I05-alca-preenchimento",
+  "topic": "I05",
+  "anchor": "s2",
+  "title": "Alça de preenchimento: referências relativa, absoluta e mista",
+  "description": "Trecho de planilha com as linhas 2 a 6 e as colunas B, C e G; uma coluna com reticências entre C e G indica as colunas omitidas. Acima da grade, a caixa de nome mostra a célula em foco e a barra de fórmulas (fx) mostra a fórmula dela. B4, B5 e B6 contêm os preços 200, 350 e 80; G2 contém o desconto 0,1; G3 está vazia. C4 contém =B4*$G$2 e mostra 20; B4 aparece destacada como referência relativa e G2 como referência absoluta. A alça de preenchimento é o quadradinho no canto inferior direito de C4. Ao arrastá-la até C6, a fórmula é copiada: C5 fica =B5*$G$2 e mostra 35; C6 fica =B6*$G$2 e mostra 8. A referência relativa anda com a cópia (B4 vira B5 e B6); a absoluta $G$2 continua igual. Na etapa seguinte, a figura mostra a referência mista: com =B4*G$2 em C4, a cópia para baixo também funcionaria, porque a cópia só desce e G$2 trava só a linha; a barra de fórmulas mostra C5 =B5*G$2 e depois C6 =B6*G$2 (G destacado como relativo e $2 como travado), os resultados continuam 35 e 8, e uma faixa abaixo da grade resume: \"Mista G$2: trava só a linha → 35 e 8\". Na última etapa, a figura mostra a hipótese sem cifrão: C5 ficaria =B5*G3 e mostraria 0, porque G3 está vazia; nessa etapa o valor de C6 deixa de ser exibido.",
+  "mode": "steps",
+  "duration": 15,
+  "poster": 7.5,
+  "steps": [
+    {
+      "time": 1.5,
+      "caption": "C4 contém =B4*$G$2: B4 é referência relativa; $G$2 é absoluta e aponta para o desconto."
+    },
+    {
+      "time": 4,
+      "caption": "A alça de preenchimento é o quadradinho no canto inferior direito da célula selecionada."
+    },
+    {
+      "time": 7.5,
+      "caption": "Arrastar a alça até C6 copia a fórmula: B4 vira B5 e B6, e $G$2 continua igual."
+    },
+    {
+      "time": 10.5,
+      "caption": "Neste caso, a mista =B4*G$2 também funciona, porque a cópia só desce: C5 =B5*G$2 dá 35 e C6 =B6*G$2 dá 8."
+    },
+    {
+      "time": 13.5,
+      "caption": "Sem o cifrão, C5 ficaria =B5*G3; como G3 está vazia, o resultado seria 0."
+    }
+  ],
+  "seed": 5,
+  "size": [
+    480,
+    342
+  ],
+  "elements": [
+    {"type": "box", "x": 14, "y": 14, "w": 76, "h": 38, "width": 1.5, "stroke": "muted"},
+    {"type": "text", "x": 118, "y": 39, "text": "fx", "color": "muted", "weight": "700"},
+    {"type": "box", "x": 140, "y": 14, "w": 326, "h": 38, "width": 1.5, "stroke": "muted"},
+    {"type": "group", "show": [0, 5.9], "children": [{"type": "text", "x": 52, "y": 39, "text": "C4", "weight": "700"}, {"type": "text", "x": 152, "y": 39, "spans": [["=", null], ["B4", "accent"], ["*", null], ["$G$2", "warm"]], "anchor": "start", "weight": "700"}]},
+    {"type": "group", "show": [5.9, 6.9], "children": [{"type": "text", "x": 52, "y": 39, "text": "C5", "weight": "700"}, {"type": "text", "x": 152, "y": 39, "spans": [["=", null], ["B5", "accent"], ["*", null], ["$G$2", "warm"]], "anchor": "start", "weight": "700"}]},
+    {"type": "group", "show": [6.9, 8], "children": [{"type": "text", "x": 52, "y": 39, "text": "C6", "weight": "700"}, {"type": "text", "x": 152, "y": 39, "spans": [["=", null], ["B6", "accent"], ["*", null], ["$G$2", "warm"]], "anchor": "start", "weight": "700"}]},
+    {"type": "group", "show": [8, 9.4], "children": [{"type": "text", "x": 52, "y": 39, "text": "C5", "weight": "700"}, {"type": "text", "x": 152, "y": 39, "spans": [["=", null], ["B5", "accent"], ["*", null], ["G", "accent"], ["$2", "warm"]], "anchor": "start", "weight": "700"}]},
+    {"type": "group", "show": [9.4, 11], "children": [{"type": "text", "x": 52, "y": 39, "text": "C6", "weight": "700"}, {"type": "text", "x": 152, "y": 39, "spans": [["=", null], ["B6", "accent"], ["*", null], ["G", "accent"], ["$2", "warm"]], "anchor": "start", "weight": "700"}]},
+    {"type": "group", "show": [11], "children": [{"type": "text", "x": 52, "y": 39, "text": "C5", "weight": "700"}, {"type": "text", "x": 152, "y": 39, "spans": [["=", null], ["B5", "accent"], ["*", null], ["G3", "warm"]], "anchor": "start", "weight": "700"}]},
+    {"type": "box", "x": 56, "y": 96, "w": 410, "h": 170, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "box", "x": 300, "y": 96, "w": 44, "h": 170, "fill": "soft", "stroke": "muted", "width": 1.5},
+    {"type": "box", "x": 14, "y": 64, "w": 452, "h": 202, "fill": "none", "stroke": "muted", "width": 1.5},
+    {"type": "line", "points": [[14, 96], [466, 96]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[14, 130], [466, 130]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[14, 164], [466, 164]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[14, 198], [466, 198]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[14, 232], [466, 232]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[56, 64], [56, 266]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[170, 64], [170, 266]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[300, 64], [300, 266]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[344, 64], [344, 266]], "color": "muted", "width": 1.5},
+    {"type": "text", "x": 113.0, "y": 86.0, "text": "B", "color": "muted", "weight": "700"},
+    {"type": "text", "x": 235.0, "y": 86.0, "text": "C", "color": "muted", "weight": "700"},
+    {"type": "text", "x": 322.0, "y": 86.0, "text": "…", "color": "muted", "weight": "700"},
+    {"type": "text", "x": 405.0, "y": 86.0, "text": "G", "color": "muted", "weight": "700"},
+    {"type": "text", "x": 35.0, "y": 119.0, "text": "2", "color": "muted"},
+    {"type": "text", "x": 35.0, "y": 153.0, "text": "3", "color": "muted"},
+    {"type": "text", "x": 35.0, "y": 187.0, "text": "4", "color": "muted"},
+    {"type": "text", "x": 35.0, "y": 221.0, "text": "5", "color": "muted"},
+    {"type": "text", "x": 35.0, "y": 255.0, "text": "6", "color": "muted"},
+    {"type": "box", "x": 60, "y": 168, "w": 106, "h": 26, "width": 1.5, "fill": "accent-soft", "stroke": "accent", "show": [0.3, 11]},
+    {"type": "box", "x": 348, "y": 100, "w": 114, "h": 26, "width": 1.5, "fill": "warm-soft", "stroke": "warm", "show": [0.3, 11]},
+    {"type": "box", "x": 60, "y": 202, "w": 106, "h": 26, "width": 1.5, "fill": "accent-soft", "stroke": "accent", "show": [6.2]},
+    {"type": "box", "x": 60, "y": 236, "w": 106, "h": 26, "width": 1.5, "fill": "accent-soft", "stroke": "accent", "show": [6.2, 11]},
+    {"type": "text", "x": 113.0, "y": 187.0, "text": "200"},
+    {"type": "text", "x": 113.0, "y": 221.0, "text": "350"},
+    {"type": "text", "x": 113.0, "y": 255.0, "text": "80"},
+    {"type": "text", "x": 405.0, "y": 119.0, "text": "0,1"},
+    {"type": "text", "x": 235.0, "y": 187.0, "text": "20"},
+    {"type": "text", "x": 235.0, "y": 221.0, "text": "35", "show": [6.6, 11]},
+    {"type": "text", "x": 235.0, "y": 255.0, "text": "8", "show": [6.6, 11]},
+    {"type": "text", "x": 235.0, "y": 221.0, "text": "0", "color": "warm", "weight": "700", "show": [11.3]},
+    {"type": "box", "x": 170, "y": 164, "w": 130, "h": 34, "fill": "none", "stroke": "accent", "width": 3, "show": [0.3, 4.4]},
+    {"type": "box", "x": 170, "y": 164, "w": 130, "h": 102, "fill": "none", "stroke": "accent", "width": 3, "show": [6, 11]},
+    {"type": "group", "show": [2.4, 11], "move": [{"to": [0, 68], "at": [4.4, 6]}], "children": [{"type": "box", "x": 294, "y": 192, "w": 12, "h": 12, "fill": "warm", "stroke": "warm", "width": 1.5}]},
+    {"type": "group", "show": [2.4, 6.4], "move": [{"to": [0, 68], "at": [4.4, 6]}], "children": [{"type": "line", "points": [[312, 216], [332, 216]], "color": "ink", "width": 3}, {"type": "line", "points": [[322, 206], [322, 226]], "color": "ink", "width": 3}]},
+    {"type": "ellipse", "cx": 300, "cy": 198, "rx": 22, "ry": 18, "stroke": "warm", "width": 2, "show": [2.8, 4.4]},
+    {"type": "box", "x": 170, "y": 198, "w": 130, "h": 34, "fill": "none", "stroke": "warm", "width": 3, "show": [11.3]},
+    {"type": "box", "x": 348, "y": 134, "w": 114, "h": 26, "width": 2.5, "fill": "none", "stroke": "warm", "show": [11.3]},
+    {"type": "box", "x": 14, "y": 282, "w": 452, "h": 46, "fill": "warm-soft", "stroke": "warm", "width": 2, "show": [11.3], "label": "Sem o cifrão: C5 =B5*G3 → 0 (G3 vazia)", "label_color": "ink"},
+    {"type": "box", "x": 14, "y": 282, "w": 452, "h": 46, "fill": "warm-soft", "stroke": "warm", "width": 2, "show": [8.3, 11], "label": "Mista G$2: trava só a linha → 35 e 8", "label_color": "ink"}
+  ]
+}

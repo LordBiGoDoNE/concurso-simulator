@@ -1,4 +1,38 @@
 {
   "format": "lesson-animations/v1",
-  "animations": []
+  "animations": [
+    {
+      "id": "I05-alca-preenchimento",
+      "topic": "I05",
+      "anchor": "s2",
+      "title": "Alça de preenchimento: referências relativa, absoluta e mista",
+      "description": "Trecho de planilha com as linhas 2 a 6 e as colunas B, C e G; uma coluna com reticências entre C e G indica as colunas omitidas. Acima da grade, a caixa de nome mostra a célula em foco e a barra de fórmulas (fx) mostra a fórmula dela. B4, B5 e B6 contêm os preços 200, 350 e 80; G2 contém o desconto 0,1; G3 está vazia. C4 contém =B4*$G$2 e mostra 20; B4 aparece destacada como referência relativa e G2 como referência absoluta. A alça de preenchimento é o quadradinho no canto inferior direito de C4. Ao arrastá-la até C6, a fórmula é copiada: C5 fica =B5*$G$2 e mostra 35; C6 fica =B6*$G$2 e mostra 8. A referência relativa anda com a cópia (B4 vira B5 e B6); a absoluta $G$2 continua igual. Na etapa seguinte, a figura mostra a referência mista: com =B4*G$2 em C4, a cópia para baixo também funcionaria, porque a cópia só desce e G$2 trava só a linha; a barra de fórmulas mostra C5 =B5*G$2 e depois C6 =B6*G$2 (G destacado como relativo e $2 como travado), os resultados continuam 35 e 8, e uma faixa abaixo da grade resume: \"Mista G$2: trava só a linha → 35 e 8\". Na última etapa, a figura mostra a hipótese sem cifrão: C5 ficaria =B5*G3 e mostraria 0, porque G3 está vazia; nessa etapa o valor de C6 deixa de ser exibido.",
+      "mode": "steps",
+      "duration": 15,
+      "poster": 7.5,
+      "file": "I05-alca-preenchimento.svg",
+      "steps": [
+        {
+          "time": 1.5,
+          "caption": "C4 contém =B4*$G$2: B4 é referência relativa; $G$2 é absoluta e aponta para o desconto."
+        },
+        {
+          "time": 4,
+          "caption": "A alça de preenchimento é o quadradinho no canto inferior direito da célula selecionada."
+        },
+        {
+          "time": 7.5,
+          "caption": "Arrastar a alça até C6 copia a fórmula: B4 vira B5 e B6, e $G$2 continua igual."
+        },
+        {
+          "time": 10.5,
+          "caption": "Neste caso, a mista =B4*G$2 também funciona, porque a cópia só desce: C5 =B5*G$2 dá 35 e C6 =B6*G$2 dá 8."
+        },
+        {
+          "time": 13.5,
+          "caption": "Sem o cifrão, C5 ficaria =B5*G3; como G3 está vazia, o resultado seria 0."
+        }
+      ]
+    }
+  ]
 }

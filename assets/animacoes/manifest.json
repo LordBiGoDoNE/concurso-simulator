@@ -1,0 +1,258 @@
+{
+  "format": "lesson-animations/v1",
+  "animations": [
+    {
+      "id": "I02-area-transferencia",
+      "topic": "I02",
+      "anchor": "s2",
+      "title": "Copiar, recortar, colar e o histórico da área de transferência",
+      "description": "Dois painéis de texto, Origem e Destino, e abaixo deles a caixa Área de transferência; no alto, uma tecla mostra o atalho usado em cada etapa. No início, a Origem tem dois trechos de texto, o texto A e o texto B, e o Destino está vazio. Ctrl+C: o texto A é selecionado e uma cópia dele vai para a área de transferência; o original continua na Origem. Ctrl+X: o texto B é selecionado, sai da Origem e vai para a área de transferência, no lugar do texto A; recortar não é excluir. Ctrl+V: o último item copiado ou recortado, o texto B, é colado no Destino; a área de transferência continua com o texto B. Windows+V, com o histórico ativado: a caixa vira o Histórico da área de transferência e mostra os dois itens guardados, o texto B e o texto A, copiado antes. Por fim, o texto A é escolhido no histórico e colado no Destino, que fica com o texto B e o texto A; a Origem fica só com o texto A.",
+      "mode": "steps",
+      "duration": 12.5,
+      "poster": 12,
+      "file": "I02-area-transferencia.svg",
+      "steps": [
+        {
+          "time": 2.5,
+          "caption": "Ctrl+C copia o texto A: o original permanece na Origem, e a cópia vai para a área de transferência."
+        },
+        {
+          "time": 5,
+          "caption": "Ctrl+X recorta o texto B para movê-lo: recortar não é excluir; o conteúdo vai para a área de transferência."
+        },
+        {
+          "time": 7.5,
+          "caption": "Ctrl+V cola o último item copiado ou recortado: o texto B vai para o Destino."
+        },
+        {
+          "time": 9.5,
+          "caption": "Com o histórico ativado, Windows+V mostra os itens copiados antes, e não só o mais recente."
+        },
+        {
+          "time": 12,
+          "caption": "No histórico, escolhe-se qual item colar: o texto A, copiado antes, vai para o Destino."
+        }
+      ]
+    },
+    {
+      "id": "I05-alca-preenchimento",
+      "topic": "I05",
+      "anchor": "s2",
+      "title": "Alça de preenchimento: referências relativa, absoluta e mista",
+      "description": "Trecho de planilha com as linhas 2 a 6 e as colunas B, C e G; uma coluna com reticências entre C e G indica as colunas omitidas. Acima da grade, a caixa de nome mostra a célula em foco e a barra de fórmulas (fx) mostra a fórmula dela. B4, B5 e B6 contêm os preços 200, 350 e 80; G2 contém o desconto 0,1; G3 está vazia. C4 contém =B4*$G$2 e mostra 20; B4 aparece destacada como referência relativa e G2 como referência absoluta. A alça de preenchimento é o quadradinho no canto inferior direito de C4. Ao arrastá-la até C6, a fórmula é copiada: C5 fica =B5*$G$2 e mostra 35; C6 fica =B6*$G$2 e mostra 8. A referência relativa anda com a cópia (B4 vira B5 e B6); a absoluta $G$2 continua igual. Na etapa seguinte, a figura mostra a referência mista: com =B4*G$2 em C4, a cópia para baixo também funcionaria, porque a cópia só desce e G$2 trava só a linha; a barra de fórmulas mostra C5 =B5*G$2 e depois C6 =B6*G$2 (G destacado como relativo e $2 como travado), os resultados continuam 35 e 8, e uma faixa abaixo da grade resume: \"Mista G$2: trava só a linha → 35 e 8\". Na última etapa, a figura mostra a hipótese sem cifrão: C5 ficaria =B5*G3 e mostraria 0, porque G3 está vazia; nessa etapa o valor de C6 deixa de ser exibido.",
+      "mode": "steps",
+      "duration": 15,
+      "poster": 7.5,
+      "file": "I05-alca-preenchimento.svg",
+      "steps": [
+        {
+          "time": 1.5,
+          "caption": "C4 contém =B4*$G$2: B4 é referência relativa; $G$2 é absoluta e aponta para o desconto."
+        },
+        {
+          "time": 4,
+          "caption": "A alça de preenchimento é o quadradinho no canto inferior direito da célula selecionada."
+        },
+        {
+          "time": 7.5,
+          "caption": "Arrastar a alça até C6 copia a fórmula: B4 vira B5 e B6, e $G$2 continua igual."
+        },
+        {
+          "time": 10.5,
+          "caption": "Neste caso, a mista =B4*G$2 também funciona, porque a cópia só desce: C5 =B5*G$2 dá 35 e C6 =B6*G$2 dá 8."
+        },
+        {
+          "time": 13.5,
+          "caption": "Sem o cifrão, C5 ficaria =B5*G3; como G3 está vazia, o resultado seria 0."
+        }
+      ]
+    },
+    {
+      "id": "I07-tabela-dinamica",
+      "topic": "I07",
+      "anchor": "s6",
+      "title": "Tabela Dinâmica: campos levados às quatro áreas",
+      "description": "No alto, o painel Campos da Tabela Dinâmica: a lista de campos de uma lista de atendimentos (Unidade, Mês, Tipo e Quantidade) e as quatro áreas, Filtros e Colunas em cima, Linhas e Valores embaixo. Abaixo do painel fica o relatório. Unidade vai para Linhas: as unidades Norte e Sul viram os rótulos das linhas. Mês vai para Colunas: Janeiro e Fevereiro viram os rótulos das colunas, cruzando com as linhas. Quantidade vai para Valores e entra como Soma de Quantidade: cada cruzamento mostra o total atendido, Norte 42 em janeiro e 40 em fevereiro, Sul 28 em janeiro e 32 em fevereiro. Por fim, Tipo vai para Filtros e o filtro Tipo = Vacina restringe o relatório inteiro: Norte 12 e 15, Sul 8 e 14. Os números são ilustrativos.",
+      "mode": "steps",
+      "duration": 12.5,
+      "poster": 12,
+      "file": "I07-tabela-dinamica.svg",
+      "steps": [
+        {
+          "time": 1,
+          "caption": "O painel Campos da Tabela Dinâmica mostra a lista de campos (os títulos das colunas) e quatro áreas."
+        },
+        {
+          "time": 3.5,
+          "caption": "Unidade vai para Linhas: seus valores, Norte e Sul, viram os rótulos das linhas do relatório."
+        },
+        {
+          "time": 6,
+          "caption": "Mês vai para Colunas: seus valores viram os rótulos das colunas, cruzando com as linhas."
+        },
+        {
+          "time": 9,
+          "caption": "Quantidade vai para Valores e entra como Soma: cada cruzamento mostra o total atendido."
+        },
+        {
+          "time": 12,
+          "caption": "Tipo vai para Filtros e restringe o relatório inteiro: aqui, só as vacinas."
+        }
+      ]
+    },
+    {
+      "id": "I08-for-each-clearcontents",
+      "topic": "I08",
+      "anchor": "s9",
+      "title": "For Each percorrendo um intervalo com ClearContents",
+      "description": "No alto, um trecho de código VBA em três linhas: For Each celula In Range(\"B2:B4\"), celula.ClearContents e Next celula; uma seta indica a linha em execução. Abaixo, a coluna B de uma planilha: B1 tem o título Valor; B2, B3 e B4 têm 120, 80 e 50, com cor de fundo e borda. Primeiro, o intervalo B2:B4 é destacado: o laço repete o bloco uma vez para cada célula dele. Na 1ª volta, celula é B2 e ClearContents apaga o 120; a cor e a borda de B2 continuam. Next celula passa à célula seguinte: na 2ª volta, celula é B3 e o 80 é apagado; na 3ª volta, celula é B4 e o 50 é apagado. Quando as células acabam, o laço termina: B2:B4 ficam vazias, ainda com cor e borda, e B1 não muda. Um resumo ao lado diz que ClearContents remove valores e fórmulas e que permanece a formatação (cores e bordas).",
+      "mode": "steps",
+      "duration": 12,
+      "poster": 11.5,
+      "file": "I08-for-each-clearcontents.svg",
+      "steps": [
+        {
+          "time": 1.5,
+          "caption": "For Each celula In Range(\"B2:B4\") repete o bloco uma vez para cada célula do intervalo."
+        },
+        {
+          "time": 4,
+          "caption": "1ª volta: celula é B2; celula.ClearContents apaga o valor de B2, e a cor e a borda permanecem."
+        },
+        {
+          "time": 6.5,
+          "caption": "Next celula passa à célula seguinte: na 2ª volta, celula é B3, e o valor dela é apagado."
+        },
+        {
+          "time": 9,
+          "caption": "Na 3ª volta, celula é B4: o último valor do intervalo é apagado."
+        },
+        {
+          "time": 11.5,
+          "caption": "Quando as células acabam, o laço termina: B2:B4 ficam vazias, mas mantêm as cores e as bordas."
+        }
+      ]
+    },
+    {
+      "id": "I09-animacao-transicao",
+      "topic": "I09",
+      "anchor": "s3",
+      "title": "Animação de objeto × transição de slide",
+      "description": "No alto, duas guias da faixa de opções: Animações e Transições. Abaixo, as miniaturas do Slide 1 e do Slide 2, lado a lado; uma moldura indica o slide que está na tela. No início, o Slide 1 está na tela e ainda não mostra o título. Primeiro, a guia Animações fica destacada, ao lado do efeito Entrada: o objeto Título entra no Slide 1, subindo até o lugar dele, sem que o slide mude. A legenda diz: Animação: atua em um objeto do slide. Depois, a guia Transições fica destacada: uma seta liga o Slide 1 ao Slide 2 e a moldura desliza do Slide 1 para o Slide 2, que é o slide que chega à tela. A segunda legenda diz: Transição: atua na passagem entre slides. Por fim, a figura volta ao estado inicial e o ciclo recomeça.",
+      "mode": "cycle",
+      "duration": 12,
+      "poster": 8,
+      "file": "I09-animacao-transicao.svg"
+    },
+    {
+      "id": "I10-caminho-email",
+      "topic": "I10",
+      "anchor": "s6",
+      "title": "Caminho de um e-mail: SMTP, POP3, IMAP e Para, Cc, Cco",
+      "description": "Quatro caixas: no alto, à esquerda, o programa do remetente; à direita, o servidor de saída; embaixo, à direita, o servidor do destinatário; à esquerda, o dispositivo do destinatário. No programa do remetente, a mensagem (um envelope) tem Para: Ana, Cc: Bruno e Cco: Carla. Primeiro, o SMTP leva o envelope do programa ao servidor de saída. Em seguida, o SMTP leva o envelope de um servidor a outro, até o servidor do destinatário. Depois aparecem os dois protocolos de recebimento entre o servidor do destinatário e o dispositivo: POP3, com seta do servidor para o dispositivo, baixa as mensagens para o dispositivo; IMAP, com seta nos dois sentidos, mantém as mensagens no servidor e sincroniza. Uma cópia do envelope chega ao dispositivo e o envelope continua no servidor. Por fim, um quadro mostra o que Ana, Bruno e Carla veem na mensagem: Para: Ana e Cc: Bruno; Carla, que está em Cco, não aparece para os demais. No programa do remetente, a linha Cco: Carla fica destacada, porque só o remetente vê o Cco.",
+      "mode": "steps",
+      "duration": 10.5,
+      "poster": 10,
+      "file": "I10-caminho-email.svg",
+      "steps": [
+        {
+          "time": 0.5,
+          "caption": "No programa do remetente, a mensagem tem destinatários em Para, Cc e Cco."
+        },
+        {
+          "time": 3.4,
+          "caption": "O SMTP faz o envio: leva a mensagem do programa ao servidor de saída."
+        },
+        {
+          "time": 5.6,
+          "caption": "O SMTP também leva a mensagem de um servidor a outro, até o servidor do destinatário."
+        },
+        {
+          "time": 8.0,
+          "caption": "No recebimento, o POP3 baixa a mensagem para o dispositivo; no IMAP, ela fica no servidor e é sincronizada."
+        },
+        {
+          "time": 10,
+          "caption": "Para e Cc aparecem para todos os destinatários; o Cco, só para o remetente."
+        }
+      ]
+    },
+    {
+      "id": "M11-condicional-contrapositiva",
+      "topic": "M11",
+      "anchor": "s4",
+      "title": "Condicional e contrapositiva na tabela-verdade",
+      "description": "Tabela-verdade com as colunas p, q, p → q, ¬q, ¬p e ¬q → ¬p, nas quatro linhas VV, VF, FV e FF de p e q (2² = 4 linhas). Primeiro aparecem os valores de p e q. Depois a coluna p → q é preenchida linha a linha: V, F, V, V. A 2ª linha (p V e q F) é destacada como a única linha falsa: das 4 combinações, 3 tornam p → q verdadeira. Em seguida, para a contrapositiva, que troca a ordem e nega as duas partes, aparecem as colunas ¬q (F, V, F, V) e ¬p (F, F, V, V). A coluna ¬q → ¬p é preenchida linha a linha: V, F, V, V; ela também só é falsa na 2ª linha, em que ¬q é V e ¬p é F. Por fim, as colunas p → q e ¬q → ¬p são destacadas como idênticas, e um quadro mostra p → q ≡ ¬q → ¬p com o exemplo da aula: “Se o arquivo foi aprovado, foi revisado” equivale a “Se o arquivo não foi revisado, não foi aprovado”.",
+      "mode": "steps",
+      "duration": 15,
+      "poster": 14,
+      "file": "M11-condicional-contrapositiva.svg",
+      "steps": [
+        {
+          "time": 1.5,
+          "caption": "Com p e q há 2² = 4 linhas: VV, VF, FV e FF."
+        },
+        {
+          "time": 4.5,
+          "caption": "Linha a linha, a condicional p → q vale V, F, V e V."
+        },
+        {
+          "time": 6.5,
+          "caption": "p → q só é falsa na 2ª linha: antecedente p V e consequente q F."
+        },
+        {
+          "time": 9,
+          "caption": "A contrapositiva troca a ordem e nega as duas partes: usa ¬q e ¬p."
+        },
+        {
+          "time": 12.5,
+          "caption": "¬q → ¬p também só é falsa na 2ª linha, com ¬q V e ¬p F."
+        },
+        {
+          "time": 14,
+          "caption": "As colunas são idênticas: p → q ≡ ¬q → ¬p."
+        }
+      ]
+    },
+    {
+      "id": "M12-casa-dos-pombos",
+      "topic": "M12",
+      "anchor": "s8",
+      "title": "Casa dos pombos: 3 cartas do mesmo naipe",
+      "description": "Quatro caixas abertas, uma para cada naipe (♠, ♥, ♦ e ♣), e um monte de cartas. A pergunta é quantas cartas retirar para garantir 3 do mesmo naipe. As cartas saem do monte uma a uma e vão para a caixa do seu naipe no pior caso, distribuídas por igual: depois de 8 cartas, cada naipe tem 2, e ainda não há 3 de um mesmo naipe. A legenda diz: pior caso, 2 de cada naipe = 8 cartas. A 9ª carta, destacada, vai para uma das caixas (na figura, ♠), que passa a ter 3 cartas e fica destacada: a 9ª carta forma 3 do mesmo naipe, qualquer que seja o naipe dela. A conta aparece de dois modos: 8 + 1 = 9 e, pela regra n × (k − 1) + 1 com n = 4 naipes e k = 3, 4 × (3 − 1) + 1 = 9. Em seguida as cartas e as legendas somem, as caixas ficam vazias e o ciclo recomeça.",
+      "mode": "cycle",
+      "duration": 12,
+      "poster": 9.5,
+      "file": "M12-casa-dos-pombos.svg"
+    },
+    {
+      "id": "M12-tres-conjuntos",
+      "topic": "M12",
+      "anchor": "s6",
+      "title": "Três conjuntos: preencher do centro para fora",
+      "description": "Diagrama de Venn com três círculos dentro do retângulo do universo U, de 100 servidores: Excel (E), com 45; Word (W), com 38; e Redação (R), com 30. As duplas informadas, 15 em E e W, 12 em E e R e 10 em W e R, incluem quem fez os três cursos. Primeiro se preenche o centro, a interseção dos três: 6. Depois as regiões de exatamente dois, descontando o centro de cada dupla: E e W, fora de R, 15 − 6 = 9; E e R, fora de W, 12 − 6 = 6; W e R, fora de E, 10 − 6 = 4. Em seguida as partes de um só conjunto: somente E, 45 − 9 − 6 − 6 = 24; somente W, 38 − 9 − 4 − 6 = 19; somente R, 30 − 6 − 4 − 6 = 14. Por fim, o exterior: a união é 24 + 19 + 14 + 9 + 6 + 4 + 6 = 82, e fora dos três (nenhum curso) ficam 100 − 82 = 18; a soma de todas as regiões, 82 + 18, dá os 100 do universo. Em cada etapa, os números recém-preenchidos aparecem circulados.",
+      "mode": "steps",
+      "duration": 11,
+      "poster": 10,
+      "file": "M12-tres-conjuntos.svg",
+      "steps": [
+        {
+          "time": 1.5,
+          "caption": "Comece pelo centro: 6 servidores fizeram os três cursos."
+        },
+        {
+          "time": 4,
+          "caption": "Exatamente dois: desconte o centro de cada dupla, 9, 6 e 4."
+        },
+        {
+          "time": 7,
+          "caption": "Somente um: tire do total do curso as regiões já preenchidas, 24, 19 e 14."
+        },
+        {
+          "time": 10,
+          "caption": "Por último, o exterior: 100 − 82 = 18 não fizeram nenhum curso."
+        }
+      ]
+    }
+  ]
+}

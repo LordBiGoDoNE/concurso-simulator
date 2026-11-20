@@ -89,6 +89,18 @@
 .native-lesson .native-diagram-view svg { min-width: 640px; }
 .native-diagram-help { display: none; }
 
+/* Animações didáticas: figura num cartão claro (como os esquemas), sem rolagem horizontal. */
+.native-animation { margin: 24px 0; padding: 16px; border: 1px solid var(--line); border-radius: 16px; background: var(--paper); }
+.native-animation > figcaption { font-weight: 650; margin-bottom: 12px; }
+.native-animation-stage { max-width: 640px; }
+.native-animation-stage svg { display: block; width: 100%; height: auto; border-radius: 12px; }
+.native-animation-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin-top: 12px; }
+.native-animation-controls button { min-height: 44px; }
+.native-animation-progress { font-size: .95rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.native-animation-caption { margin: 12px 0 0; font-weight: 600; }
+.native-animation-description { margin: 12px 0 0; font-size: .95rem; color: var(--muted); }
+.native-animation-help { display: none; margin: 0 0 8px; font-size: .9rem; color: var(--muted); }
+
 /* Prática da aula */
 .lesson-practice-workspace { padding: 0; border: 0; background: transparent; margin-top: 0; }
 .lesson-practice-panel { margin-top: 24px; border: 1px solid var(--line); border-radius: 20px; background: var(--paper); }
@@ -131,5 +143,10 @@
 }
 @media (max-width: 540px) {
   .lesson-practice-panel > summary, .lesson-practice-panel-body { padding: 18px; }
+  /* Rótulos legíveis (~16 px) em tela estreita: a figura mantém largura mínima e rola dentro do cartão. */
+  .native-animation { padding: 12px; }
+  .native-animation-stage { overflow-x: auto; }
+  .native-animation-stage svg { min-width: 440px; }
+  .native-animation-help { display: block; }
   .lesson-list { grid-template-columns: 1fr; }
 }

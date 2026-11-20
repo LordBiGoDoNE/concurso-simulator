@@ -13,6 +13,7 @@ Material de estudo para o Concurso Público de Limeira 01/2026, voltado aos carg
 - Teoria, exercícios e gabaritos em páginas separadas.
 - 510 questões autorais, esquemas visuais e oficinas.
 - Busca por assunto, plano de estudo, cronograma e fontes de referência.
+- Na aplicação de `main`: 9 animações didáticas em traço à mão nas aulas de Informática e Raciocínio Lógico (piloto; ver [o guia](docs/lesson-animations.md)). O site estático não tem animações.
 
 Esta publicação preserva o conteúdo e o visual do material V3 original. Não é um site oficial do concurso. Confira sempre o edital, as retificações e a legislação vigente. As referências das questões não significam que elas foram elaboradas ou validadas pelos órgãos citados.
 

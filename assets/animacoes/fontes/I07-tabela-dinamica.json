@@ -1,0 +1,64 @@
+{
+  "id": "I07-tabela-dinamica",
+  "topic": "I07",
+  "anchor": "s6",
+  "title": "Tabela Dinâmica: campos levados às quatro áreas",
+  "description": "No alto, o painel Campos da Tabela Dinâmica: a lista de campos de uma lista de atendimentos (Unidade, Mês, Tipo e Quantidade) e as quatro áreas, Filtros e Colunas em cima, Linhas e Valores embaixo. Abaixo do painel fica o relatório. Unidade vai para Linhas: as unidades Norte e Sul viram os rótulos das linhas. Mês vai para Colunas: Janeiro e Fevereiro viram os rótulos das colunas, cruzando com as linhas. Quantidade vai para Valores e entra como Soma de Quantidade: cada cruzamento mostra o total atendido, Norte 42 em janeiro e 40 em fevereiro, Sul 28 em janeiro e 32 em fevereiro. Por fim, Tipo vai para Filtros e o filtro Tipo = Vacina restringe o relatório inteiro: Norte 12 e 15, Sul 8 e 14. Os números são ilustrativos.",
+  "mode": "steps",
+  "duration": 12.5,
+  "poster": 12,
+  "steps": [
+    {
+      "time": 1,
+      "caption": "O painel Campos da Tabela Dinâmica mostra a lista de campos (os títulos das colunas) e quatro áreas."
+    },
+    {
+      "time": 3.5,
+      "caption": "Unidade vai para Linhas: seus valores, Norte e Sul, viram os rótulos das linhas do relatório."
+    },
+    {
+      "time": 6,
+      "caption": "Mês vai para Colunas: seus valores viram os rótulos das colunas, cruzando com as linhas."
+    },
+    {
+      "time": 9,
+      "caption": "Quantidade vai para Valores e entra como Soma: cada cruzamento mostra o total atendido."
+    },
+    {
+      "time": 12,
+      "caption": "Tipo vai para Filtros e restringe o relatório inteiro: aqui, só as vacinas."
+    }
+  ],
+  "seed": 7,
+  "size": [
+    480,
+    440
+  ],
+  "elements": [
+    {"type": "text", "x": 240, "y": 32, "text": "Campos da Tabela Dinâmica", "color": "muted", "weight": "700"},
+    {"type": "box", "x": 37, "y": 44, "w": 100, "h": 36, "fill": "white", "stroke": "ink", "width": 1.5, "label": "Unidade"},
+    {"type": "box", "x": 149, "y": 44, "w": 70, "h": 36, "fill": "white", "stroke": "ink", "width": 1.5, "label": "Mês"},
+    {"type": "box", "x": 231, "y": 44, "w": 70, "h": 36, "fill": "white", "stroke": "ink", "width": 1.5, "label": "Tipo"},
+    {"type": "box", "x": 313, "y": 44, "w": 130, "h": 36, "fill": "white", "stroke": "ink", "width": 1.5, "label": "Quantidade"},
+    {"type": "box", "x": 14, "y": 94, "w": 220, "h": 80, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 26, "y": 118, "text": "Filtros", "color": "muted", "weight": "700", "anchor": "start"},
+    {"type": "box", "x": 246, "y": 94, "w": 220, "h": 80, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 258, "y": 118, "text": "Colunas", "color": "muted", "weight": "700", "anchor": "start"},
+    {"type": "box", "x": 14, "y": 184, "w": 220, "h": 80, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 26, "y": 208, "text": "Linhas", "color": "muted", "weight": "700", "anchor": "start"},
+    {"type": "box", "x": 246, "y": 184, "w": 220, "h": 80, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 258, "y": 208, "text": "Valores", "color": "muted", "weight": "700", "anchor": "start"},
+    {"type": "box", "x": 37, "y": 44, "w": 100, "h": 36, "fill": "accent-soft", "stroke": "accent", "width": 2, "label": "Unidade", "label_color": "ink", "show": [1.2], "move": [{"to": [-11, 176], "at": [1.5, 3.0]}]},
+    {"type": "box", "x": 149, "y": 44, "w": 70, "h": 36, "fill": "accent-soft", "stroke": "accent", "width": 2, "label": "Mês", "label_color": "ink", "show": [3.7], "move": [{"to": [109, 86], "at": [4.0, 5.5]}]},
+    {"type": "box", "x": 313, "y": 44, "w": 130, "h": 36, "fill": "accent-soft", "stroke": "accent", "width": 2, "label": "Quantidade", "label_color": "ink", "show": [6.2, 8.0], "move": [{"to": [-55, 176], "at": [6.5, 8.0]}]},
+    {"type": "box", "x": 231, "y": 44, "w": 70, "h": 36, "fill": "accent-soft", "stroke": "accent", "width": 2, "label": "Tipo", "label_color": "ink", "show": [9.2], "move": [{"to": [-205, 86], "at": [9.5, 11.0]}]},
+    {"type": "box", "x": 258, "y": 220, "w": 196, "h": 36, "fill": "accent-soft", "stroke": "accent", "width": 2, "label": "Soma de Quantidade", "label_color": "ink", "show": [8.0]},
+    {"type": "box", "x": 14, "y": 280, "w": 110, "h": 34, "label": "Tipo", "weight": "700", "show": [11.0], "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "box", "x": 124, "y": 280, "w": 120, "h": 34, "label": "Vacina", "label_color": "accent", "weight": "700", "show": [11.0], "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "group", "show": [3.0], "children": [{"type": "box", "x": 14, "y": 324, "w": 220, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5}, {"type": "box", "x": 14, "y": 358, "w": 220, "h": 34, "label": "Norte", "weight": "700", "fill": "white", "stroke": "muted", "width": 1.5}, {"type": "box", "x": 14, "y": 392, "w": 220, "h": 34, "label": "Sul", "weight": "700", "fill": "white", "stroke": "muted", "width": 1.5}]},
+    {"type": "group", "show": [5.5], "children": [{"type": "box", "x": 234, "y": 324, "w": 116, "h": 34, "label": "Janeiro", "weight": "700", "fill": "white", "stroke": "muted", "width": 1.5}, {"type": "box", "x": 350, "y": 324, "w": 116, "h": 34, "label": "Fevereiro", "weight": "700", "fill": "white", "stroke": "muted", "width": 1.5}, {"type": "box", "x": 234, "y": 358, "w": 116, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5}, {"type": "box", "x": 350, "y": 358, "w": 116, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5}, {"type": "box", "x": 234, "y": 392, "w": 116, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5}, {"type": "box", "x": 350, "y": 392, "w": 116, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5}]},
+    {"type": "text", "x": 124, "y": 347, "text": "Soma de Quantidade", "weight": "700", "show": [8.2]},
+    {"type": "group", "show": [8.2, 11.0], "children": [{"type": "text", "x": 292, "y": 381, "text": "42"}, {"type": "text", "x": 408, "y": 381, "text": "40"}, {"type": "text", "x": 292, "y": 415, "text": "28"}, {"type": "text", "x": 408, "y": 415, "text": "32"}]},
+    {"type": "group", "show": [11.3], "children": [{"type": "text", "x": 292, "y": 381, "text": "12", "color": "accent", "weight": "700"}, {"type": "text", "x": 408, "y": 381, "text": "15", "color": "accent", "weight": "700"}, {"type": "text", "x": 292, "y": 415, "text": "8", "color": "accent", "weight": "700"}, {"type": "text", "x": 408, "y": 415, "text": "14", "color": "accent", "weight": "700"}]}
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "id": "I08-for-each-clearcontents",
+  "topic": "I08",
+  "anchor": "s9",
+  "title": "For Each percorrendo um intervalo com ClearContents",
+  "description": "No alto, um trecho de código VBA em três linhas: For Each celula In Range(\"B2:B4\"), celula.ClearContents e Next celula; uma seta indica a linha em execução. Abaixo, a coluna B de uma planilha: B1 tem o título Valor; B2, B3 e B4 têm 120, 80 e 50, com cor de fundo e borda. Primeiro, o intervalo B2:B4 é destacado: o laço repete o bloco uma vez para cada célula dele. Na 1ª volta, celula é B2 e ClearContents apaga o 120; a cor e a borda de B2 continuam. Next celula passa à célula seguinte: na 2ª volta, celula é B3 e o 80 é apagado; na 3ª volta, celula é B4 e o 50 é apagado. Quando as células acabam, o laço termina: B2:B4 ficam vazias, ainda com cor e borda, e B1 não muda. Um resumo ao lado diz que ClearContents remove valores e fórmulas e que permanece a formatação (cores e bordas).",
+  "mode": "steps",
+  "duration": 12,
+  "poster": 11.5,
+  "steps": [
+    {
+      "time": 1.5,
+      "caption": "For Each celula In Range(\"B2:B4\") repete o bloco uma vez para cada célula do intervalo."
+    },
+    {
+      "time": 4,
+      "caption": "1ª volta: celula é B2; celula.ClearContents apaga o valor de B2, e a cor e a borda permanecem."
+    },
+    {
+      "time": 6.5,
+      "caption": "Next celula passa à célula seguinte: na 2ª volta, celula é B3, e o valor dela é apagado."
+    },
+    {
+      "time": 9,
+      "caption": "Na 3ª volta, celula é B4: o último valor do intervalo é apagado."
+    },
+    {
+      "time": 11.5,
+      "caption": "Quando as células acabam, o laço termina: B2:B4 ficam vazias, mas mantêm as cores e as bordas."
+    }
+  ],
+  "seed": 9,
+  "size": [
+    480,
+    334
+  ],
+  "elements": [
+    {"type": "box", "x": 14, "y": 14, "w": 452, "h": 116, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 48, "y": 46, "anchor": "start", "spans": [["For Each ", null], ["celula", "accent"], [" In Range(\"B2:B4\")", null]]},
+    {"type": "text", "x": 78, "y": 80, "anchor": "start", "spans": [["celula", "accent"], [".ClearContents", null]]},
+    {"type": "text", "x": 48, "y": 114, "anchor": "start", "spans": [["Next ", null], ["celula", "accent"]]},
+    {"type": "arrow", "points": [[20, 40], [38, 40]], "color": "accent", "width": 2.5, "head": 8, "show": [0.3, 10.2], "move": [{"to": [0, 34], "at": [2.2, 2.6]}, {"to": [0, 68], "at": [4.3, 4.7]}, {"to": [0, 34], "at": [4.9, 5.3]}, {"to": [0, 68], "at": [6.8, 7.2]}, {"to": [0, 34], "at": [7.4, 7.8]}, {"to": [0, 68], "at": [9.3, 9.7]}]},
+    {"type": "box", "x": 14, "y": 148, "w": 46, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "box", "x": 60, "y": 148, "w": 140, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 130, "y": 171, "text": "B", "color": "muted", "weight": "700"},
+    {"type": "box", "x": 14, "y": 182, "w": 46, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 37, "y": 205, "text": "1", "color": "muted"},
+    {"type": "box", "x": 14, "y": 216, "w": 46, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 37, "y": 239, "text": "2", "color": "muted"},
+    {"type": "box", "x": 14, "y": 250, "w": 46, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 37, "y": 273, "text": "3", "color": "muted"},
+    {"type": "box", "x": 14, "y": 284, "w": 46, "h": 34, "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "text", "x": 37, "y": 307, "text": "4", "color": "muted"},
+    {"type": "box", "x": 60, "y": 182, "w": 140, "h": 34, "label": "Valor", "weight": "700", "fill": "white", "stroke": "muted", "width": 1.5},
+    {"type": "box", "x": 60, "y": 216, "w": 140, "h": 34, "fill": "warm-soft", "stroke": "warm", "width": 2.5},
+    {"type": "text", "x": 130, "y": 239, "text": "120", "show": [0, 3.0]},
+    {"type": "box", "x": 60, "y": 250, "w": 140, "h": 34, "fill": "warm-soft", "stroke": "warm", "width": 2.5},
+    {"type": "text", "x": 130, "y": 273, "text": "80", "show": [0, 5.6]},
+    {"type": "box", "x": 60, "y": 284, "w": 140, "h": 34, "fill": "warm-soft", "stroke": "warm", "width": 2.5},
+    {"type": "text", "x": 130, "y": 307, "text": "50", "show": [0, 8.1]},
+    {"type": "box", "x": 54, "y": 210, "w": 152, "h": 114, "fill": "none", "stroke": "accent", "width": 3, "show": [0.3, 2.0]},
+    {"type": "group", "show": [2.4, 4.6], "children": [{"type": "arrow", "points": [[258, 233], [210, 233]], "color": "accent", "width": 2.5, "head": 10}, {"type": "text", "x": 266, "y": 213, "text": "1ª volta", "color": "muted", "anchor": "start"}, {"type": "text", "x": 266, "y": 239, "anchor": "start", "weight": "700", "spans": [["celula", "accent"], [" = B2", null]]}]},
+    {"type": "group", "show": [4.9, 7.1], "children": [{"type": "arrow", "points": [[258, 267], [210, 267]], "color": "accent", "width": 2.5, "head": 10}, {"type": "text", "x": 266, "y": 247, "text": "2ª volta", "color": "muted", "anchor": "start"}, {"type": "text", "x": 266, "y": 273, "anchor": "start", "weight": "700", "spans": [["celula", "accent"], [" = B3", null]]}]},
+    {"type": "group", "show": [7.4, 9.6], "children": [{"type": "arrow", "points": [[258, 301], [210, 301]], "color": "accent", "width": 2.5, "head": 10}, {"type": "text", "x": 266, "y": 281, "text": "3ª volta", "color": "muted", "anchor": "start"}, {"type": "text", "x": 266, "y": 307, "anchor": "start", "weight": "700", "spans": [["celula", "accent"], [" = B4", null]]}]},
+    {"type": "group", "show": [10.0], "children": [{"type": "text", "x": 226, "y": 200, "text": "Remove:", "color": "accent", "weight": "700", "anchor": "start"}, {"type": "text", "x": 226, "y": 224, "text": "valores e fórmulas", "anchor": "start"}, {"type": "text", "x": 226, "y": 262, "text": "Permanece:", "color": "warm", "weight": "700", "anchor": "start"}, {"type": "text", "x": 226, "y": 286, "text": "a formatação", "anchor": "start"}, {"type": "text", "x": 226, "y": 310, "text": "(cores e bordas)", "anchor": "start"}]}
+  ]
+}

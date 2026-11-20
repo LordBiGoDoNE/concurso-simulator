@@ -1,0 +1,68 @@
+{
+  "id": "I10-caminho-email",
+  "topic": "I10",
+  "anchor": "s6",
+  "title": "Caminho de um e-mail: SMTP, POP3, IMAP e Para, Cc, Cco",
+  "description": "Quatro caixas: no alto, à esquerda, o programa do remetente; à direita, o servidor de saída; embaixo, à direita, o servidor do destinatário; à esquerda, o dispositivo do destinatário. No programa do remetente, a mensagem (um envelope) tem Para: Ana, Cc: Bruno e Cco: Carla. Primeiro, o SMTP leva o envelope do programa ao servidor de saída. Em seguida, o SMTP leva o envelope de um servidor a outro, até o servidor do destinatário. Depois aparecem os dois protocolos de recebimento entre o servidor do destinatário e o dispositivo: POP3, com seta do servidor para o dispositivo, baixa as mensagens para o dispositivo; IMAP, com seta nos dois sentidos, mantém as mensagens no servidor e sincroniza. Uma cópia do envelope chega ao dispositivo e o envelope continua no servidor. Por fim, um quadro mostra o que Ana, Bruno e Carla veem na mensagem: Para: Ana e Cc: Bruno; Carla, que está em Cco, não aparece para os demais. No programa do remetente, a linha Cco: Carla fica destacada, porque só o remetente vê o Cco.",
+  "mode": "steps",
+  "duration": 10.5,
+  "poster": 10,
+  "steps": [
+    {"time": 0.5, "caption": "No programa do remetente, a mensagem tem destinatários em Para, Cc e Cco."},
+    {"time": 3.4, "caption": "O SMTP faz o envio: leva a mensagem do programa ao servidor de saída."},
+    {"time": 5.6, "caption": "O SMTP também leva a mensagem de um servidor a outro, até o servidor do destinatário."},
+    {"time": 8.0, "caption": "No recebimento, o POP3 baixa a mensagem para o dispositivo; no IMAP, ela fica no servidor e é sincronizada."},
+    {"time": 10, "caption": "Para e Cc aparecem para todos os destinatários; o Cco, só para o remetente."}
+  ],
+  "seed": 10,
+  "size": [480, 432],
+  "elements": [
+    {"type": "box", "x": 14, "y": 14, "w": 196, "h": 122, "fill": "white", "stroke": "ink", "width": 1.5},
+    {"type": "text", "x": 26, "y": 40, "text": "Remetente", "color": "muted", "weight": "700", "anchor": "start"},
+    {"type": "text", "x": 26, "y": 70, "spans": [["Para: ", "muted"], ["Ana", null]], "anchor": "start"},
+    {"type": "text", "x": 26, "y": 96, "spans": [["Cc: ", "muted"], ["Bruno", null]], "anchor": "start"},
+    {"type": "text", "x": 26, "y": 122, "spans": [["Cco: ", "muted"], ["Carla", null]], "anchor": "start"},
+    {"type": "ellipse", "cx": 72, "cy": 116, "rx": 58, "ry": 14, "stroke": "warm", "width": 2, "show": [8.8]},
+
+    {"type": "box", "x": 290, "y": 14, "w": 176, "h": 76, "fill": "white", "stroke": "ink", "width": 1.5},
+    {"type": "text", "x": 378, "y": 40, "text": "Servidor de saída", "weight": "700"},
+
+    {"type": "box", "x": 290, "y": 156, "w": 176, "h": 96, "fill": "white", "stroke": "ink", "width": 1.5},
+    {"type": "text", "x": 378, "y": 182, "text": "Servidor do", "weight": "700"},
+    {"type": "text", "x": 378, "y": 206, "text": "destinatário", "weight": "700"},
+
+    {"type": "box", "x": 14, "y": 156, "w": 196, "h": 96, "fill": "white", "stroke": "ink", "width": 1.5},
+    {"type": "text", "x": 112, "y": 182, "text": "Dispositivo do", "weight": "700"},
+    {"type": "text", "x": 112, "y": 206, "text": "destinatário", "weight": "700"},
+
+    {"type": "arrow", "points": [[216, 54], [284, 54]], "color": "accent", "width": 2.5, "draw": [1.4, 2.0]},
+    {"type": "text", "x": 250, "y": 42, "text": "SMTP", "color": "accent", "weight": "700", "show": [1.4]},
+    {"type": "arrow", "points": [[378, 98], [378, 150]], "color": "accent", "width": 2.5, "draw": [3.6, 4.1]},
+    {"type": "text", "x": 366, "y": 130, "text": "SMTP", "color": "accent", "weight": "700", "anchor": "end", "show": [3.6]},
+
+    {"type": "arrow", "points": [[284, 194], [216, 194]], "color": "accent", "width": 2.5, "draw": [6.0, 6.6]},
+    {"type": "text", "x": 250, "y": 182, "text": "POP3", "color": "accent", "weight": "700", "show": [6.0]},
+    {"type": "arrow", "points": [[216, 238], [284, 238]], "color": "accent", "width": 2.5, "draw": [6.2, 6.8]},
+    {"type": "arrow", "points": [[284, 238], [216, 238]], "color": "accent", "width": 2.5, "draw": [6.2, 6.8]},
+    {"type": "text", "x": 250, "y": 226, "text": "IMAP", "color": "accent", "weight": "700", "show": [6.2]},
+
+    {"type": "group", "move": [{"to": [197, 30], "at": [1.8, 3.2]}, {"to": [197, 196], "at": [4.0, 5.4]}], "children": [
+      {"type": "box", "x": 164, "y": 22, "w": 34, "h": 22, "fill": "accent-soft", "stroke": "accent", "width": 1.5},
+      {"type": "line", "points": [[164, 22], [181, 34], [198, 22]], "color": "accent", "width": 1.5}
+    ]},
+    {"type": "group", "show": [6.3], "move": [{"to": [-266, 0], "at": [6.4, 7.6]}], "children": [
+      {"type": "box", "x": 361, "y": 218, "w": 34, "h": 22, "fill": "accent-soft", "stroke": "accent", "width": 1.5},
+      {"type": "line", "points": [[361, 218], [378, 230], [395, 218]], "color": "accent", "width": 1.5}
+    ]},
+
+    {"type": "text", "x": 240, "y": 282, "spans": [["POP3", "accent"], [": baixa as mensagens para o dispositivo", null]], "show": [6.2]},
+    {"type": "text", "x": 240, "y": 308, "spans": [["IMAP", "accent"], [": mensagens ficam no servidor e sincronizam", null]], "show": [6.4]},
+
+    {"type": "group", "show": [8.8], "children": [
+      {"type": "box", "x": 14, "y": 324, "w": 452, "h": 94, "fill": "white", "stroke": "muted", "width": 1.5},
+      {"type": "text", "x": 240, "y": 350, "text": "Ana, Bruno e Carla veem na mensagem:", "color": "muted"},
+      {"type": "text", "x": 240, "y": 378, "spans": [["Para: ", "muted"], ["Ana", null], [" · Cc: ", "muted"], ["Bruno", null]], "weight": "700"},
+      {"type": "text", "x": 240, "y": 406, "text": "Carla (Cco) não aparece para os demais.", "color": "warm", "weight": "700"}
+    ]}
+  ]
+}

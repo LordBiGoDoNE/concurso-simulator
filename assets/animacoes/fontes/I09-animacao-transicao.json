@@ -1,0 +1,44 @@
+{
+  "id": "I09-animacao-transicao",
+  "topic": "I09",
+  "anchor": "s3",
+  "title": "Animação de objeto × transição de slide",
+  "description": "No alto, duas guias da faixa de opções: Animações e Transições. Abaixo, as miniaturas do Slide 1 e do Slide 2, lado a lado; uma moldura indica o slide que está na tela. No início, o Slide 1 está na tela e ainda não mostra o título. Primeiro, a guia Animações fica destacada, ao lado do efeito Entrada: o objeto Título entra no Slide 1, subindo até o lugar dele, sem que o slide mude. A legenda diz: Animação: atua em um objeto do slide. Depois, a guia Transições fica destacada: uma seta liga o Slide 1 ao Slide 2 e a moldura desliza do Slide 1 para o Slide 2, que é o slide que chega à tela. A segunda legenda diz: Transição: atua na passagem entre slides. Por fim, a figura volta ao estado inicial e o ciclo recomeça.",
+  "mode": "cycle",
+  "duration": 12,
+  "poster": 8,
+  "seed": 9,
+  "size": [480, 296],
+  "elements": [
+    {"type": "box", "x": 14, "y": 14, "w": 150, "h": 36, "fill": "white", "stroke": "muted", "width": 1.5, "label": "Animações", "label_color": "muted"},
+    {"type": "box", "x": 176, "y": 14, "w": 150, "h": 36, "fill": "white", "stroke": "muted", "width": 1.5, "label": "Transições", "label_color": "muted"},
+    {"type": "box", "x": 14, "y": 14, "w": 150, "h": 36, "fill": "accent-soft", "stroke": "accent", "width": 2.5, "label": "Animações", "weight": "700", "show": [0.6, 4.9]},
+    {"type": "box", "x": 176, "y": 14, "w": 150, "h": 36, "fill": "accent-soft", "stroke": "accent", "width": 2.5, "label": "Transições", "weight": "700", "show": [5.3, 11.0]},
+    {"type": "box", "x": 346, "y": 14, "w": 120, "h": 36, "fill": "white", "stroke": "accent", "width": 1.5, "label": "Entrada", "label_color": "accent", "show": [0.6, 4.9]},
+
+    {"type": "box", "x": 14, "y": 68, "w": 184, "h": 124, "fill": "white", "stroke": "ink", "width": 1.5},
+    {"type": "line", "points": [[34, 144], [178, 144]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[34, 160], [178, 160]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[34, 176], [140, 176]], "color": "muted", "width": 1.5},
+    {"type": "box", "x": 30, "y": 104, "w": 152, "h": 30, "fill": "accent-soft", "stroke": "accent", "width": 2, "label": "Título", "weight": "700", "show": [1.0, 11.3], "move": [{"to": [0, -22], "at": [1.0, 2.2]}]},
+
+    {"type": "box", "x": 282, "y": 68, "w": 184, "h": 124, "fill": "white", "stroke": "ink", "width": 1.5},
+    {"type": "box", "x": 298, "y": 82, "w": 152, "h": 30, "fill": "soft", "stroke": "muted", "width": 1.5},
+    {"type": "line", "points": [[302, 144], [446, 144]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[302, 160], [446, 160]], "color": "muted", "width": 1.5},
+    {"type": "line", "points": [[302, 176], [408, 176]], "color": "muted", "width": 1.5},
+
+    {"type": "box", "x": 8, "y": 62, "w": 196, "h": 136, "fill": "none", "stroke": "accent", "width": 3, "show": [0, 11.3], "move": [{"to": [268, 0], "at": [5.9, 6.9]}]},
+    {"type": "box", "x": 8, "y": 62, "w": 196, "h": 136, "fill": "none", "stroke": "accent", "width": 3, "show": [11.6]},
+    {"type": "arrow", "points": [[212, 130], [266, 130]], "color": "accent", "width": 3, "draw": [5.6, 6.3], "show": [5.5, 11.3]},
+
+    {"type": "text", "x": 14, "y": 222, "text": "Slide 1", "color": "muted", "weight": "700", "anchor": "start"},
+    {"type": "text", "x": 90, "y": 222, "text": "na tela", "color": "accent", "anchor": "start", "show": [0, 6.4]},
+    {"type": "text", "x": 90, "y": 222, "text": "na tela", "color": "accent", "anchor": "start", "show": [11.6]},
+    {"type": "text", "x": 282, "y": 222, "text": "Slide 2", "color": "muted", "weight": "700", "anchor": "start"},
+    {"type": "text", "x": 358, "y": 222, "text": "na tela", "color": "accent", "anchor": "start", "show": [6.6, 11.3]},
+
+    {"type": "text", "x": 240, "y": 254, "spans": [["Animação", "accent"], [": atua em um objeto do slide", null]], "weight": "700", "show": [0.6, 11.0]},
+    {"type": "text", "x": 240, "y": 282, "spans": [["Transição", "accent"], [": atua na passagem entre slides", null]], "weight": "700", "show": [5.3, 11.0]}
+  ]
+}

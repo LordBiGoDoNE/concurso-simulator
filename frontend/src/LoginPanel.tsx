@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import AdministrativeAccountPanel from './AdministrativeAccountPanel';
-import { currentIdentity, field, identityApiUrl, identityRequest, type CurrentIdentity } from './identity-api';
+import { field } from './contract';
+import { apiBaseUrl } from './http-client';
+import { currentIdentity, identityRequest, type CurrentIdentity } from './identity-api';
 
 type Identity = CurrentIdentity;
 
@@ -105,7 +107,7 @@ export default function LoginPanel({ onIdentity, onChecking, onBeforeLogin }: { 
       {message && <p role="alert">{message}</p>}
       {state === 'ready' && identity?.connected && <button disabled={exiting || adminPending} onClick={() => void logout()}>{exiting ? 'Saindo…' : 'Sair'}</button>}
       {state === 'ready' && !identity?.connected && identity?.googleEnabled && (
-        <a className="material-link" href={`${identityApiUrl}/oauth2/authorization/google`} onClick={event => { if (onBeforeLogin && !onBeforeLogin()) event.preventDefault(); }}>Entrar com Google</a>
+        <a className="material-link" href={`${apiBaseUrl}/oauth2/authorization/google`} onClick={event => { if (onBeforeLogin && !onBeforeLogin()) event.preventDefault(); }}>Entrar com Google</a>
       )}
       <button className="session-refresh" disabled={state === 'loading' || exiting || adminPending} onClick={refreshSession}>Atualizar sessão</button>
       <details className="admin-access" open={adminOpen} onToggle={event => setAdminOpen(event.currentTarget.open)}>

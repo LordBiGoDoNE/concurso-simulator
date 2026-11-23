@@ -1,36 +1,14 @@
-export const identityApiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8080').replace(/\/$/, '');
-
-/** Campo de um corpo JSON ainda não validado; `undefined` quando o corpo não é objeto. */
-export function field(body: unknown, key: string): unknown {
-  return typeof body === 'object' && body !== null ? (body as Record<string, unknown>)[key] : undefined;
-}
+import { field, uuidPattern } from './contract';
+import { apiFetch, withAbortScope } from './http-client';
 
 export type IdentityResponse = { ok: boolean; status: number; body: unknown };
-export async function identityRequest(path: string, options: RequestInit = {}, readJson = true): Promise<IdentityResponse> {
-  const controller = new AbortController();
-  const abort = () => controller.abort();
-  options.signal?.addEventListener('abort', abort, { once: true });
-  if (options.signal?.aborted) controller.abort();
-  const timer = window.setTimeout(() => controller.abort(), 5000);
-  let rejectAbort!: () => void;
-  const aborted = new Promise<never>((_resolve, reject) => {
-    rejectAbort = () => reject(new DOMException('Identity request aborted', 'AbortError'));
-    controller.signal.addEventListener('abort', rejectAbort, { once: true });
-    if (controller.signal.aborted) rejectAbort();
+export function identityRequest(path: string, options: RequestInit = {}, readJson = true): Promise<IdentityResponse> {
+  return withAbortScope(options.signal, 5000, 'Identity request aborted', async signal => {
+    const response = await apiFetch(path, { ...options, credentials: 'include', cache: 'no-store', signal });
+    const body: unknown = readJson && response.ok && response.status !== 204 ? await response.json() : undefined;
+    signal.throwIfAborted();
+    return { ok: response.ok, status: response.status, body };
   });
-  try {
-    return await Promise.race([aborted, (async () => {
-      controller.signal.throwIfAborted();
-      const response = await fetch(`${identityApiUrl}${path}`, { ...options, credentials: 'include', cache: 'no-store', signal: controller.signal });
-      const body: unknown = readJson && response.ok && response.status !== 204 ? await response.json() : undefined;
-      controller.signal.throwIfAborted();
-      return { ok: response.ok, status: response.status, body };
-    })()]);
-  } finally {
-    window.clearTimeout(timer);
-    options.signal?.removeEventListener('abort', abort);
-    controller.signal.removeEventListener('abort', rejectAbort);
-  }
 }
 
 export type CurrentIdentity = { connected: false; googleEnabled: boolean } | { connected: true; googleEnabled: boolean; id: string };
@@ -43,7 +21,7 @@ export async function currentIdentity(signal?: AbortSignal): Promise<CurrentIden
   if (typeof googleEnabled !== 'boolean') throw new Error('invalid config');
   if (me.status === 401) return { connected: false, googleEnabled };
   const id = field(me.body, 'id');
-  if (typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) {
+  if (typeof id !== 'string' || !uuidPattern.test(id)) {
     throw new Error('invalid identity');
   }
   return { connected: true, googleEnabled, id };

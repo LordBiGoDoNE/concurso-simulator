@@ -197,12 +197,14 @@ de `spotlessApply` (gerado, fora da contagem de linhas autorais); commit de
   função `interpret(response)` que cada módulo usa para mapear status e decidir se lê
   o corpo.
 
-`src/contract.ts` reúne os validadores idênticos (`ensure`, `row`, `list`, `uuid`,
-`id`). Validadores com semânticas diferentes continuam distintos e com nomes que as
+`src/contract.ts` reúne os validadores idênticos. No grupo 6 a comparação mostrou que só
+a regex de UUID e o acesso a campo (`field`, `isObject`) são iguais: `ensure`, `row`,
+`list` e `id` diferem nas mensagens (conferidas pelos testes) ou na checagem de chaves
+(`in` × `Object.hasOwn`), por isso continuam em cada módulo. Validadores com semânticas diferentes continuam distintos e com nomes que as
 dizem (por exemplo, `string` de `question-api` aceita texto vazio; `text` de
 `attempt-api` exige texto não vazio). Cada módulo mantém credenciais, timeout,
-mensagens, `AttemptApiError` e validadores de domínio. `App.tsx` usa o cliente e um
-validador de `{ status }`; corpo inválido continua resultando em `down`.
+mensagens, `AttemptApiError` e validadores de domínio. `App.tsx` usa `src/status-api.ts`,
+que passa pelo cliente e valida `{ status }`; corpo inválido continua resultando em `down`.
 
 Evidência de comportamento preservado: os testes atuais de `attempt-api`,
 `identity-api`, `lesson-practice-api` e dos componentes passam sem alteração das

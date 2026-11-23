@@ -34,6 +34,14 @@ export default tseslint.config(
     },
   },
   {
+    // Requisições à API só pelo cliente único; native-lesson busca documentos estáticos de aula, não a API.
+    files: ['src/**/*.{ts,tsx}'],
+    ignores: ['src/http-client.ts', 'src/native-lesson.ts', 'src/**/*.test.{ts,tsx}', 'src/test-setup.ts'],
+    rules: {
+      'no-restricted-globals': ['error', { name: 'fetch', message: 'Use apiFetch de src/http-client.ts.' }],
+    },
+  },
+  {
     files: ['e2e/**/*.ts', '*.config.ts', 'eslint.config.js'],
     languageOptions: { globals: globals.node },
   },

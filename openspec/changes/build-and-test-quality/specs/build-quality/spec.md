@@ -149,8 +149,11 @@ de ser exibido.
 
 #### Scenario: Requisição fora do cliente
 
-- **WHEN** um arquivo de `src` diferente do cliente HTTP chama `fetch`
+- **WHEN** um arquivo de produção de `src` diferente do cliente HTTP chama `fetch`
 - **THEN** `npm run lint` falha
+- **AND** a única exceção nominal é `src/native-lesson.ts`, que carrega documentos
+  estáticos de aula e não a API; testes (`*.test.*`) e `src/test-setup.ts` ficam fora
+  da regra
 
 ### Requirement: Cobertura do CI sem duplicação
 

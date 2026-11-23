@@ -1,0 +1,81 @@
+{
+  "packageDigest" : "fd6ec7325d24dbf8032815dfdf34585cb5370af53debbb3d0237a2871d9f33f2",
+  "selectionDigest" : "bf87061305ffa6811a96c794aa6ecb74202ad411ee26399483e4e5461d40adf0",
+  "keys" : [ "snapshot.rich-a" ],
+  "package" : {
+    "format" : "administrative-question-package/v1",
+    "purpose" : "SIMULADO",
+    "items" : [ {
+      "origin" : {
+        "namespace" : "admin-question-v1",
+        "key" : "snapshot.rich-a"
+      },
+      "content" : {
+        "statement" : {
+          "text" : "Fixture snapshot.rich-a a < b > c",
+          "resources" : [ {
+            "path" : "assets/figura-sintetica.png",
+            "mediaType" : "image/png",
+            "sha256" : "02a3e298f1533f62558c58e4c70edcab9af5a50d62d925fd5390942020fb0fb8",
+            "description" : "Figura sintética: dois quadrados lado a lado"
+          } ]
+        },
+        "alternatives" : [ {
+          "id" : "<uuid>",
+          "content" : {
+            "text" : "Opção sintética A",
+            "resources" : [ ]
+          }
+        }, {
+          "id" : "<uuid>",
+          "content" : {
+            "text" : "Opção sintética B",
+            "resources" : [ ]
+          }
+        } ],
+        "correctAlternativeId" : "<uuid>",
+        "resolution" : {
+          "text" : "Resolução sintética: x² = x vezes x.",
+          "resources" : [ ]
+        },
+        "classification" : {
+          "disciplineId" : "portugues",
+          "topicId" : "P01",
+          "roleIds" : [ "assistente-administrativo", "secretario-de-escola" ]
+        },
+        "references" : [ {
+          "name" : "Referência sintética",
+          "url" : "https://example.test/study",
+          "legalBasis" : null
+        }, {
+          "name" : "Referência legal sintética",
+          "url" : "https://example.test/lei-sintetica",
+          "legalBasis" : {
+            "provision" : "Art. 1º da lei sintética",
+            "checkedOn" : "2026-01-15"
+          }
+        } ],
+        "provenance" : {
+          "author" : "Teste sintético",
+          "contentPath" : "sources/fixture.txt",
+          "answerPath" : "sources/fixture.txt",
+          "contentSha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f",
+          "answerSha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f"
+        }
+      },
+      "fingerprint" : "b413b50e035d8aa2159e497811718131caf70816aa289f0aedf9ed3e61899fdc",
+      "expectedLatestRevision" : null
+    } ],
+    "files" : [ {
+      "path" : "assets/figura-sintetica.png",
+      "mediaType" : "image/png",
+      "sha256" : "02a3e298f1533f62558c58e4c70edcab9af5a50d62d925fd5390942020fb0fb8",
+      "base64" : "iVBORw0KGgoAAAANSUhEUg=="
+    }, {
+      "path" : "sources/fixture.txt",
+      "mediaType" : "text/plain",
+      "sha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f",
+      "base64" : "Rm9udGUgc2ludMOpdGljYSBwcml2YWRhIFBSSVZBVEVfU0VOVElORUw="
+    } ]
+  }
+}

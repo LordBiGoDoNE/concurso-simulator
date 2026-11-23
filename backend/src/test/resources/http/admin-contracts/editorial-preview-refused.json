@@ -1,0 +1,26 @@
+{
+  "destinationId" : "isolated-test",
+  "action" : "APPROVE",
+  "reviewKind" : "HUMAN_PEER",
+  "checklist" : [ "CORRECTNESS", "DISTRACTORS", "CLARITY", "STEP_BY_STEP", "ACCESSIBILITY", "SOURCES", "CLASSIFICATION" ],
+  "rationale" : "Aprovação sintética recusada",
+  "items" : [ {
+    "questionId" : "<uuid>",
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.refused"
+    },
+    "revisionId" : "<uuid>",
+    "fingerprint" : "459fa1be1aab7bc4814caf6f86618991c916c9d92b09d14c8f4aee516068b14d",
+    "currentStatus" : "DRAFT",
+    "resultingStatus" : null,
+    "eligibleRevisionId" : null,
+    "editorialSequence" : 0,
+    "refusal" : "INVALID_TRANSITION"
+  } ],
+  "expected" : [ ],
+  "digest" : null,
+  "confirmable" : false,
+  "confirmationToken" : null,
+  "expiresAt" : null
+}

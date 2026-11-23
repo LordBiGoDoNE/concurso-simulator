@@ -1,6 +1,7 @@
 package br.com.concursosimulator.mockexam;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.shared.web.ErrorResponses;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.mockexam.domain.AttemptOwner;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
 import org.junit.jupiter.api.Test;
@@ -50,15 +51,15 @@ class AttemptActorHttpTests {
                 UsernamePasswordAuthenticationToken.unauthenticated(new UserPrincipal(UUID.randomUUID()),null),
                 new AnonymousAuthenticationToken("fixture",new UserPrincipal(UUID.randomUUID()),List.of(new SimpleGrantedAuthority("ROLE_ANONYMOUS")))}) {
             var cookie=session(auth); var response=send("GET",auth==null?"/api/v1/me/attempts":path,cookie,null);
-            assertThat(response.statusCode()).isEqualTo(401); assertThat(response.body()).isEqualTo("{\"error\":\"unauthenticated\"}");
+            ErrorResponses.assertError(response,401,"UNAUTHENTICATED");
             assertThat(response.headers().firstValue("Cache-Control")).contains("no-store"); assertThat(response.headers().firstValue("Location")).isEmpty();
         }
     }
     @Test void visitorAndAccountPassTechnicalBoundaryWhileCsrfAndCorsRemainEnforced() throws Exception {
         var csrf=send("GET","/api/v1/csrf",null,null); var cookie=csrf.headers().firstValue("Set-Cookie").orElseThrow().split(";",2)[0];
         var token=json.readTree(csrf.body()).get("token").asString();
-        assertThat(send("POST","/api/v1/attempts",cookie,null).statusCode()).isEqualTo(403);
-        assertThat(send("PUT",path+"/answers/"+UUID.randomUUID(),cookie,null).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("POST","/api/v1/attempts",cookie,null),403);
+        ErrorResponses.assertError(send("PUT",path+"/answers/"+UUID.randomUUID(),cookie,null),403);
         var visitorResponse=send("GET",path,cookie,null);
         assertThat(visitorResponse.statusCode()).isEqualTo(200);assertThat(visitorResponse.body()).isEqualTo("{\"mode\":\"VISITOR\"}");
         var id=cookie.substring("SESSION=".length());
@@ -67,15 +68,15 @@ class AttemptActorHttpTests {
         assertThat((UUID)repository().findById(id).getAttribute(AttemptAccess.VISITOR)).isEqualTo(visitor);
         var account=session(UsernamePasswordAuthenticationToken.authenticated(new UserPrincipal(UUID.randomUUID()),null,List.of()));
         assertThat(send("GET",path,account,null).body()).isEqualTo("{\"mode\":\"ACCOUNT\"}");
-        assertThat(send("PATCH",path,cookie,token).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("PATCH",path,cookie,token),403);
         var preflight=HttpRequest.newBuilder(URI.create(base()+"/api/v1/attempts")).method("OPTIONS",HttpRequest.BodyPublishers.noBody())
                 .header("Origin","http://localhost:5173").header("Access-Control-Request-Method","POST").header("Access-Control-Request-Headers","X-CSRF-TOKEN");
         var allowed=client.send(preflight.build(),HttpResponse.BodyHandlers.ofString()); assertThat(allowed.statusCode()).isEqualTo(200);
         assertThat(allowed.headers().firstValue("Access-Control-Allow-Credentials")).contains("true");
         assertThat(client.send(HttpRequest.newBuilder(URI.create(base()+path)).header("Origin","https://unknown.example").build(),HttpResponse.BodyHandlers.ofString()).statusCode()).isEqualTo(403);
         var expired=repository().findById(id);expired.setLastAccessedTime(Instant.now().minusSeconds(3600));repository().save(expired);
-        assertThat(send("GET","/api/v1/me/attempts",cookie,null).statusCode()).isEqualTo(401);
-        assertThat(send("POST","/api/v1/attempts",cookie,token).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("GET","/api/v1/me/attempts",cookie,null),401);
+        ErrorResponses.assertError(send("POST","/api/v1/attempts",cookie,token),403);
     }
     @Test void concurrentInitialRequestsHaveSameOpaqueVisitorAndLoginNeverAdoptsIt() {
         var access=new AttemptAccess(); var sessionId=UUID.randomUUID().toString(); var owners=new ArrayList<AttemptOwner>();

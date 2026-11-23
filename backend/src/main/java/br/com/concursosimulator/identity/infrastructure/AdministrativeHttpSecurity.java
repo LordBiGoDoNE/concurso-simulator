@@ -1,6 +1,10 @@
 package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
+import br.com.concursosimulator.shared.failure.TransientFailures;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.*;
@@ -25,18 +29,18 @@ import tools.jackson.databind.json.JsonMapper;
 public class AdministrativeHttpSecurity {
     @Bean @Order(-1)
     SecurityFilterChain administrativeAccountSecurity(HttpSecurity http,AdministrativeSecurity security,
-            AdministrativeAccessUseCases access,HttpSessionSecurityContextRepository repository) throws Exception {
-        return http.securityMatcher("/api/v1/admin/auth/**","/api/v1/admin/account","/api/v1/admin/account/**")
+            AdministrativeAccessUseCases access,HttpSessionSecurityContextRepository repository,ApiRoutes routes) throws Exception {
+        return http.securityMatcher(routes.paths(IdentityRoutes.ADMIN_AREA))
             .cors(org.springframework.security.config.Customizer.withDefaults())
             .securityContext(c->c.securityContextRepository(repository)).requestCache(c->c.requestCache(new NullRequestCache()))
-            .authorizeHttpRequests(a->a.requestMatchers(r->"POST".equals(r.getMethod()) && "/api/v1/admin/auth/login".equals(r.getServletPath())).permitAll()
-                .requestMatchers(r->"GET".equals(r.getMethod()) && "/api/v1/admin/account".equals(r.getServletPath()) || "POST".equals(r.getMethod()) && Set.of("/api/v1/admin/account/password","/api/v1/admin/account/google-link").contains(r.getServletPath()))
+            .authorizeHttpRequests(a->a.requestMatchers(r->routes.permits(ApiRoute.Access.PUBLIC,r)).permitAll()
+                .requestMatchers(r->routes.permits(ApiRoute.Access.ADMINISTRATIVE,r))
                 .access((auth,context)->new AuthorizationDecision(security.authorize(auth.get(),context.getRequest())))
                 .anyRequest().denyAll())
             .exceptionHandling(e->e.authenticationEntryPoint((r,s,x)->reject(s,401,"UNAUTHENTICATED"))
                 .accessDeniedHandler((r,s,x)->{
                     var auth=org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
-                    boolean invalid=!new org.springframework.security.authentication.AuthenticationTrustResolverImpl().isAuthenticated(auth) || !(auth.getPrincipal() instanceof br.com.concursosimulator.identity.web.UserPrincipal);
+                    boolean invalid=!new org.springframework.security.authentication.AuthenticationTrustResolverImpl().isAuthenticated(auth) || !(auth.getPrincipal() instanceof br.com.concursosimulator.identity.application.UserPrincipal);
                     int status=!(x instanceof org.springframework.security.web.csrf.CsrfException) && invalid?401:403;
                     reject(s,status,status==401?"UNAUTHENTICATED":"FORBIDDEN");
                 }))
@@ -45,9 +49,8 @@ public class AdministrativeHttpSecurity {
             .addFilterAfter(new LocalLogin(access,security),Body.class).build();
     }
     static void reject(HttpServletResponse s,int status,String code)throws IOException {
-        s.setStatus(status);s.setContentType("application/json");s.setHeader("Cache-Control","no-store");
         if(status==429)s.setHeader("Retry-After","900");
-        s.getWriter().write("{\"error\":\""+code+"\"}");
+        JsonRejection.write(s,status,code);
     }
     static class NoStore extends OncePerRequestFilter {
         @Override protected void doFilterInternal(HttpServletRequest r,HttpServletResponse s,FilterChain chain)throws IOException,ServletException {s.setHeader("Cache-Control","no-store");chain.doFilter(r,s);}
@@ -93,7 +96,7 @@ public class AdministrativeHttpSecurity {
         LocalLogin(AdministrativeAccessUseCases access,AdministrativeSecurity security){this.access=access;this.security=security;}
         public record LoginRequest(String username,String password) { @Override public String toString(){return "LoginRequest[redacted]";} }
         @Override protected void doFilterInternal(HttpServletRequest r,HttpServletResponse s,FilterChain chain)throws IOException,ServletException {
-            if(!"/api/v1/admin/auth/login".equals(r.getServletPath()) || !"POST".equals(r.getMethod())){chain.doFilter(r,s);return;}
+            if(!IdentityRoutes.ADMIN_LOGIN.equals(r.getServletPath()) || !"POST".equals(r.getMethod())){chain.doFilter(r,s);return;}
             long now=Instant.now().getEpochSecond();
             if(origins.size()>4096)origins.entrySet().removeIf(e->now-e.getValue().start>=900);
             if(origins.size()>4096 && !origins.containsKey(r.getRemoteAddr())){reject(s,429,"LOGIN_THROTTLED");return;}
@@ -103,8 +106,7 @@ public class AdministrativeHttpSecurity {
                 var input=JsonMapper.builder().build().readValue(r.getInputStream(),LoginRequest.class);
                 var a=access.login(input.username(),input.password());security.replace(r,s,a);s.setStatus(204);
             }catch(AdministrativeAccessUseCases.Failure failed) { reject(s,"LOGIN_THROTTLED".equals(failed.code())?429:401,failed.code()); }
-            catch(org.springframework.dao.DataAccessException | org.springframework.transaction.TransactionException unavailable){reject(s,503,"ADMIN_UNAVAILABLE");}
-            catch(RuntimeException failed){reject(s,500,"ADMIN_FAILURE");}
+            catch(RuntimeException failed){reject(s,TransientFailures.transientCause(failed)?503:500,TransientFailures.transientCause(failed)?"ADMIN_UNAVAILABLE":"ADMIN_FAILURE");}
         }
     }
 }

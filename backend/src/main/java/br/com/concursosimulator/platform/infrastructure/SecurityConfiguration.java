@@ -1,17 +1,18 @@
 package br.com.concursosimulator.platform.infrastructure;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
-import br.com.concursosimulator.shared.infrastructure.PublicQuestionRoutes;
-import br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes;
+import br.com.concursosimulator.identity.application.UserPrincipal;
+import br.com.concursosimulator.identity.infrastructure.ActiveAccountFilter;
+import br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity;
+import br.com.concursosimulator.identity.infrastructure.IdentityRoutes;
+import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
-import br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.ApiArea;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
 import java.util.Arrays;
-import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.annotation.Order;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.authentication.AuthenticationTrustResolverImpl;
 import org.springframework.security.authorization.AuthorizationDecision;
 import org.springframework.security.config.Customizer;
@@ -26,15 +27,18 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizationRequestResolver;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestCustomizers;
 import org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizedClientRepository;
-import br.com.concursosimulator.identity.web.GoogleLoginHandlers;
+import br.com.concursosimulator.identity.infrastructure.GoogleLoginHandlers;
 import br.com.concursosimulator.identity.infrastructure.GoogleLoginProperties;
 import br.com.concursosimulator.identity.infrastructure.OAuthRequestMethods;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import static br.com.concursosimulator.shared.infrastructure.http.ApiRoute.Access.*;
 
+/**
+ * Compõe as cadeias de segurança a partir das áreas declaradas pelas funcionalidades ({@link ApiRoutes}).
+ * Esta classe não declara caminhos de rota.
+ */
 @Configuration
 public class SecurityConfiguration {
     @Bean
@@ -49,13 +53,15 @@ public class SecurityConfiguration {
 
     @Bean
     @Order(1)
-    SecurityFilterChain readinessSecurityFilterChain(HttpSecurity http, ApiAccessFailureHandler failures) throws Exception {
-        return http.securityMatcher("/api/v1/status")
+    SecurityFilterChain statelessSecurityFilterChain(HttpSecurity http, ApiAccessFailureHandler failures, ApiRoutes routes) throws Exception {
+        // Áreas sem sessão (prontidão, questões públicas): só leem ou negam; logout/OIDC mantêm proteção própria.
+        return http.securityMatcher(r -> routes.owns(ApiArea.Chain.STATELESS, r))
                 .cors(Customizer.withDefaults())
                 .securityContext(context -> context.securityContextRepository(new NullSecurityContextRepository()))
                 .requestCache(cache -> cache.requestCache(new NullRequestCache()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .authorizeHttpRequests(auth -> auth.requestMatchers(HttpMethod.GET, "/api/v1/status").permitAll()
+                .csrf(csrf -> csrf.disable())
+                .authorizeHttpRequests(auth -> auth.requestMatchers(r -> routes.permits(PUBLIC, r)).permitAll()
                         .anyRequest().denyAll())
                 .exceptionHandling(errors -> errors.authenticationEntryPoint(failures).accessDeniedHandler(failures))
                 .build();
@@ -78,62 +84,48 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    @Order(3)
-    SecurityFilterChain publicQuestionsSecurityFilterChain(HttpSecurity http,ApiAccessFailureHandler failures) throws Exception {
-        return http.securityMatcher(PublicQuestionRoutes::owns).cors(Customizer.withDefaults())
-                .securityContext(context -> context.securityContextRepository(new NullSecurityContextRepository()))
-                .requestCache(cache -> cache.requestCache(new NullRequestCache()))
-                .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-                .csrf(csrf -> csrf.disable()) // Essa cadeia só lê ou nega; logout/OIDC mantêm proteção própria.
-                .authorizeHttpRequests(auth -> auth.requestMatchers(PublicQuestionRoutes::permits).permitAll().anyRequest().denyAll())
-                .exceptionHandling(errors -> errors.authenticationEntryPoint(failures).accessDeniedHandler(failures)).build();
-    }
-
-    @Bean
     @Order(4)
     SecurityFilterChain securityFilterChain(HttpSecurity http, HttpSessionSecurityContextRepository repository,
             GoogleLoginProperties google, ObjectProvider<ClientRegistrationRepository> registrations,
             GoogleLoginHandlers handlers, HttpSessionOAuth2AuthorizedClientRepository clients,
-            ApiAccessFailureHandler failures, AttemptAccess attempts, br.com.concursosimulator.identity.application.AdministrativeAccessUseCases adminAccess) throws Exception {
+            ApiAccessFailureHandler failures, AttemptAccess attempts, AdministrativeAccessUseCases adminAccess,
+            ApiRoutes routes) throws Exception {
         if (google.enabled()) {
-            var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), "/oauth2/authorization");
+            var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), IdentityRoutes.OAUTH_AUTHORIZATION_BASE);
             resolver.setAuthorizationRequestCustomizer(builder -> {
                 OAuth2AuthorizationRequestCustomizers.withPkce().accept(builder);
                 var attrs=(org.springframework.web.context.request.ServletRequestAttributes)org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes();
                 var session=attrs.getRequest().getSession(false);
-                if(session!=null && session.getAttribute(br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LINK) instanceof br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LinkIntent intent) {
+                if(session!=null && session.getAttribute(AdministrativeSecurity.LINK) instanceof AdministrativeSecurity.LinkIntent intent) {
                     if(java.time.Instant.now().isAfter(intent.expires()) || intent.state()!=null)
                         throw new org.springframework.security.oauth2.core.OAuth2AuthenticationException("Invalid link intent");
                     builder.additionalParameters(p->p.put("prompt","select_account"));
-                    session.setAttribute(br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LINK,
-                        new br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.LinkIntent(intent.actor(),intent.version(),intent.expires(),builder.build().getState()));
+                    session.setAttribute(AdministrativeSecurity.LINK,
+                        new AdministrativeSecurity.LinkIntent(intent.actor(),intent.version(),intent.expires(),builder.build().getState()));
                 }
             });
             http.oauth2Login(login -> login.authorizedClientRepository(clients)
-                    .loginProcessingUrl("/login/oauth2/code/google")
+                    .loginProcessingUrl(IdentityRoutes.OAUTH_CALLBACK)
                     .authorizationEndpoint(endpoint -> endpoint.authorizationRequestResolver(resolver))
                     .successHandler(handlers).failureHandler(handlers));
         }
         var trust = new AuthenticationTrustResolverImpl();
-        return http.addFilterAfter(new br.com.concursosimulator.identity.infrastructure.ActiveAccountFilter(adminAccess), org.springframework.security.web.context.SecurityContextHolderFilter.class)
+        return http.addFilterAfter(new ActiveAccountFilter(adminAccess, routes), org.springframework.security.web.context.SecurityContextHolderFilter.class)
                 .cors(Customizer.withDefaults())
                 .securityContext(context -> context.securityContextRepository(repository))
                 .requestCache(cache -> cache.requestCache(new NullRequestCache()))
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers(HttpMethod.GET, "/api/v1/csrf", "/api/v1/auth/config",
-                                "/oauth2/authorization/google", "/login/oauth2/code/google").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/v1/me/attempts", "/api/v1/me/lesson-practices").access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
-                        .requestMatchers(r -> SubjectReviewRoutes.permits(r) && SubjectReviewRoutes.overview(r)).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
-                        .requestMatchers(SubjectReviewRoutes::permits).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
-                        .requestMatchers(AttemptRoutes::permits).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
-                        .requestMatchers(HttpMethod.GET, "/api/v1/me").access((authentication, request) -> {
+                        .requestMatchers(r -> routes.permits(PUBLIC, r)).permitAll()
+                        .requestMatchers(r -> routes.permits(ACCOUNT, r)).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),true))
+                        .requestMatchers(r -> routes.permits(VISITOR_OR_ACCOUNT, r)).access((a,r) -> attempts.authorize(a.get(),r.getRequest(),false))
+                        .requestMatchers(r -> routes.permits(ACCOUNT_PRINCIPAL, r)).access((authentication, request) -> {
                             var current = authentication.get();
                             return new AuthorizationDecision(trust.isAuthenticated(current)
                                     && current.getPrincipal() instanceof UserPrincipal);
                         })
                         .anyRequest().denyAll())
-                .logout(logout -> logout.logoutUrl("/api/v1/auth/logout")
+                .logout(logout -> logout.logoutUrl(IdentityRoutes.LOGOUT)
                         .invalidateHttpSession(true).clearAuthentication(true).deleteCookies("SESSION")
                         .logoutSuccessHandler((request, response, authentication) -> response.setStatus(204)))
                 .exceptionHandling(errors -> errors
@@ -142,41 +134,7 @@ public class SecurityConfiguration {
     }
 
     @Bean
-    CorsConfigurationSource corsConfigurationSource(@Value("${app.cors-origins}") String origins) {
-        var configuration = new CorsConfiguration();
-        var allowed = Arrays.stream(origins.split(",")).map(String::trim).filter(value -> !value.isEmpty()).toList();
-        if (allowed.stream().anyMatch(value -> value.contains("*"))) {
-            throw new IllegalArgumentException("CORS exige origens explícitas, sem wildcard");
-        }
-        configuration.setAllowedOrigins(allowed);
-        configuration.setAllowedMethods(List.of("GET"));
-        configuration.setAllowedHeaders(List.of("Accept", "Content-Type"));
-        configuration.setAllowCredentials(false);
-        var source = new UrlBasedCorsConfigurationSource();
-        source.registerCorsConfiguration("/api/v1/status", configuration);
-        source.registerCorsConfiguration("/api/v1/question-bank/catalog", configuration);
-        source.registerCorsConfiguration("/api/v1/question-bank/questions", configuration);
-        source.registerCorsConfiguration("/api/v1/question-bank/questions/*", configuration);
-        var sessions = new CorsConfiguration(configuration);
-        sessions.setAllowCredentials(true);
-        sessions.setAllowedMethods(List.of("GET", "POST"));
-        sessions.setAllowedHeaders(List.of("Accept", "Content-Type", "X-CSRF-TOKEN"));
-        source.registerCorsConfiguration("/api/v1/admin/auth/**", sessions);
-        source.registerCorsConfiguration("/api/v1/admin/account", sessions);
-        source.registerCorsConfiguration("/api/v1/admin/account/**", sessions);
-        source.registerCorsConfiguration("/api/v1/me", sessions);
-        source.registerCorsConfiguration("/api/v1/csrf", sessions);
-        source.registerCorsConfiguration("/api/v1/auth/logout", sessions);
-        source.registerCorsConfiguration("/api/v1/auth/config", sessions);
-        var attempts=new CorsConfiguration(sessions);
-        attempts.setAllowedMethods(List.of("GET","POST","PUT"));
-        source.registerCorsConfiguration("/api/v1/attempts",attempts);
-        source.registerCorsConfiguration("/api/v1/attempts/**",attempts);
-        source.registerCorsConfiguration("/api/v1/me/attempts",attempts);
-        source.registerCorsConfiguration("/api/v1/lesson-practices",attempts);
-        source.registerCorsConfiguration("/api/v1/lesson-practices/**",attempts);
-        source.registerCorsConfiguration("/api/v1/me/lesson-practices",attempts);
-        source.registerCorsConfiguration("/api/v1/me/subject-review",sessions);
-        return source;
+    CorsConfigurationSource corsConfigurationSource(@Value("${app.cors-origins}") String origins, ApiRoutes routes) {
+        return routes.cors(Arrays.stream(origins.split(",")).map(String::trim).filter(value -> !value.isEmpty()).toList());
     }
 }

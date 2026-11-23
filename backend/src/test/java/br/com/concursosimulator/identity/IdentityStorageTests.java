@@ -5,7 +5,7 @@ import br.com.concursosimulator.identity.application.port.IdentityAlreadyLinkedE
 import br.com.concursosimulator.identity.application.port.IdentityRepository;
 import br.com.concursosimulator.identity.domain.ExternalIdentity;
 import br.com.concursosimulator.identity.infrastructure.persistence.JpaIdentityRepository;
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.shared.infrastructure.SpringUnitOfWork;
 import jakarta.persistence.EntityManagerFactory;
 

@@ -1,13 +1,15 @@
 package br.com.concursosimulator.questionbank.infrastructure.importing;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.questionbank.infrastructure.QuestionBankRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.port.AdministrativeImportPermission;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.util.*;
-import java.util.regex.Pattern;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authorization.AuthorizationDecision;
@@ -17,7 +19,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.AuthorizationFilter;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.security.web.savedrequest.NullRequestCache;
-import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /**
@@ -28,47 +29,29 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 @Configuration
 public class AdministrativeCurationSecurityConfiguration {
-    static final Pattern QUESTION = Pattern.compile("/api/v1/admin/questions(/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})?");
-    static final Set<String> POSTS = Set.of("/api/v1/admin/questions/lookup", "/api/v1/admin/questions/export",
-            "/api/v1/admin/editorial-decisions/preview", "/api/v1/admin/editorial-decisions/apply");
-
     @Bean @Order(0)
     SecurityFilterChain administrativeCurationSecurity(HttpSecurity http, AdministrativeImportPermission permission, ImportSettings settings,
-            HttpSessionSecurityContextRepository repository, @Value("${app.cors-origins}") String origins) throws Exception {
-        var cors = new CorsConfiguration();
-        cors.setAllowedOrigins(Arrays.stream(origins.split(",")).map(String::trim).filter(s -> !s.isEmpty()).toList());
-        if (cors.getAllowedOrigins().stream().anyMatch(o -> o.contains("*"))) throw new IllegalArgumentException("Origem explícita obrigatória");
-        cors.setAllowCredentials(true); cors.setAllowedMethods(List.of("GET", "POST"));
-        cors.setAllowedHeaders(List.of("Content-Type", "Accept", "X-CSRF-TOKEN"));
-        return http.securityMatcher("/api/v1/admin/questions", "/api/v1/admin/questions/**", "/api/v1/admin/editorial-decisions", "/api/v1/admin/editorial-decisions/**")
-                .cors(c -> c.configurationSource(r -> cors))
+            HttpSessionSecurityContextRepository repository, ApiRoutes routes) throws Exception {
+        return http.securityMatcher(routes.paths(QuestionBankRoutes.CURATION_AREA))
+                .cors(org.springframework.security.config.Customizer.withDefaults())
                 .securityContext(c -> c.securityContextRepository(repository))
                 .requestCache(c -> c.requestCache(new NullRequestCache()))
                 .sessionManagement(c -> c.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
-                .authorizeHttpRequests(a -> a.requestMatchers(AdministrativeCurationSecurityConfiguration::allowedRoute)
+                .authorizeHttpRequests(a -> a.requestMatchers(r -> routes.permits(ApiRoute.Access.ADMINISTRATIVE, r))
                         .access((authentication, context) -> {
                             var current = authentication.get();
                             return new AuthorizationDecision(ImportSecurityConfiguration.valid(current)
                                     && current.getDetails() instanceof br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.Evidence evidence
                                     && permission.permits(((UserPrincipal) current.getPrincipal()).id(), evidence.version()));
                         }).anyRequest().denyAll())
-                .exceptionHandling(e -> e.authenticationEntryPoint((r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "unauthenticated"))
+                .exceptionHandling(e -> e.authenticationEntryPoint((r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "UNAUTHENTICATED"))
                         .accessDeniedHandler((r, s, x) -> {
                             int status = x instanceof org.springframework.security.web.csrf.CsrfException ? 403
                                     : ImportSecurityConfiguration.valid(org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication()) ? 403 : 401;
-                            ImportSecurityConfiguration.reject(s, status, status == 401 ? "unauthenticated" : "forbidden");
+                            ImportSecurityConfiguration.reject(s, status, status == 401 ? "UNAUTHENTICATED" : "FORBIDDEN");
                         }))
                 .addFilterBefore(new ImportSecurityConfiguration.NoStore(), org.springframework.web.filter.CorsFilter.class)
                 .addFilterAfter(new BodyLimits(settings), AuthorizationFilter.class).build();
-    }
-
-    static boolean allowedRoute(HttpServletRequest request) {
-        var path = request.getServletPath();
-        return switch (request.getMethod()) {
-            case "GET" -> QUESTION.matcher(path).matches();
-            case "POST" -> POSTS.contains(path);
-            default -> false;
-        };
     }
 
     /** Depois da autorização: configuração das decisões em lote; só JSON UTF-8 sem compressão e corpo declarado até 2 MiB em POST. */
@@ -78,9 +61,8 @@ public class AdministrativeCurationSecurityConfiguration {
         @Override protected boolean shouldNotFilter(HttpServletRequest r) { return !"POST".equals(r.getMethod()); }
         @Override protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain) throws ServletException, IOException {
             // Decisões em lote dependem do destino e da chave de confirmação; consultas não.
-            if (r.getServletPath().startsWith("/api/v1/admin/editorial-decisions/") && !settings.configured()) {
-                s.setStatus(503); s.setContentType("application/json"); s.setHeader("Cache-Control", "no-store");
-                s.getWriter().write("{\"error\":\"DECISIONS_NOT_CONFIGURED\",\"correlationId\":\"" + UUID.randomUUID() + "\"}"); return;
+            if (r.getServletPath().startsWith(QuestionBankRoutes.EDITORIAL_DECISIONS + "/") && !settings.configured()) {
+                JsonRejection.writeCorrelated(s, 503, "DECISIONS_NOT_CONFIGURED"); return;
             }
             try {
                 var type = org.springframework.http.MediaType.parseMediaType(r.getContentType());

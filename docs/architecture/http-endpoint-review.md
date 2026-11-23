@@ -27,11 +27,44 @@ Complementa o ADR 0001. Aplicar antes da implementação e na revisão; registra
 
 Usar DTOs web tipados (records quando adequados) e retornos concretos, como `ResponseEntity<MeResponse>`. Não expor entidade JPA, credencial, token Google ou dados pessoais desnecessários. `Map`, `Object` e curingas não são o padrão para JSON estável; payload realmente dinâmico exige justificativa e testes de contrato.
 
+DTOs web não reutilizam records de `domain`/`application` como componentes: a administração de questões usa `questionbank/web/AdministrativeContracts` com mapeadores explícitos, e `ArchitectureTests.questionBankWebRecordsDoNotExposeCoreTypes` protege essa regra. Renomear algo no núcleo exige alterar o mapeador, não muda o JSON por acidente; `JsonContractSnapshot` (testes) registra o JSON público administrativo.
+
 Rejeições técnicas de segurança ficam nos mecanismos do Spring Security. Erros da aplicação podem ser traduzidos por adaptadores web/ControllerAdvice sem contaminar o núcleo com HTTP. Não capturar toda exceção para fingir visitante, conflito conhecido ou sucesso.
+
+### Contrato de erro
+
+Toda resposta de erro é um objeto JSON com `error` em `UPPER_SNAKE_CASE` e `Cache-Control: no-store`, sem mensagem de exceção, SQL, conteúdo de questão ou dado pessoal. Campos extras existentes (`correlationId`, `available`, `questionIds`, `reason`) continuam onde já estavam. Adaptadores web usam `shared/web/ApiErrors`/`ApiError`; filtros e handlers de segurança, `shared/infrastructure/http/JsonRejection`.
+
+| Situação | Status e código |
+| --- | --- |
+| Entrada recusada no adaptador web (`InvalidRequest`, corpo ilegível, tipo de parâmetro) | 400 `INVALID_REQUEST` |
+| Comando que referencia item/alternativa de outra tentativa (`Attempt.InvalidAnswer`) | 400 `INVALID_REQUEST` |
+| Sem autenticação válida em rota que exige identidade | 401 `UNAUTHENTICATED` |
+| Acesso negado ou CSRF inválido (áreas com falhas JSON) | 403 `FORBIDDEN` |
+| Recurso inexistente ou de outro dono | 404 `NOT_FOUND` |
+| Versão/estado divergente; acervo insuficiente | 409 `CONFLICT`; 409 `INSUFFICIENT_POOL` |
+| Geração parametrizada desligada no servidor | 503 `PARAMETERIZED_GENERATION_UNAVAILABLE` |
+| Banco, conexão ou transação temporariamente indisponíveis (`TransientDataAccessException`, `DataAccessResourceFailureException`, `CannotCreateTransactionException`, `TransactionTimedOutException`, falha de conexão JDBC: SQLState classe 08, `SQLTransientConnectionException`, `SQLRecoverableException`, `SQLNonTransientConnectionException`); falha do sistema de transação (`TransactionSystemException`, `org.hibernate.TransactionException`) somente quando a cadeia mostra conexão perdida, inclusive a conexão fechada do pool (`SQLException` "Connection is closed" sem SQLState) no rollback; nunca com violação de integridade na cadeia (`shared/failure/TransientFailures`); projeção pública insegura recusada | 503 `UNAVAILABLE` (administração: `ADMIN_UNAVAILABLE`/`IMPORT_UNAVAILABLE`) |
+| Falha não reconhecida, inclusive integridade e `IllegalArgumentException`/`IllegalStateException` vindas do núcleo ou da persistência | 500 `INTERNAL_ERROR` (administração: `ADMIN_FAILURE`, `IMPORT_FAILED`, `ADMIN_CURATION_FAILED`), com log e correlação no servidor |
+
+- `IllegalArgumentException` só vira 400 quando a recusa acontece na conversão da entrada (`RequestValues.parse`); dentro da aplicação ou da persistência ela indica dado inconsistente e é 500.
+- 503 não é usado para violação de integridade: constraint não reconhecida reverte a transação e responde 500.
+- Exceção nova da aplicação que deva virar 4xx precisa ser nomeada e mapeada explicitamente no advice da funcionalidade.
+
+## Declaração de rotas
+
+Cada funcionalidade declara suas áreas HTTP (`ApiArea`) na própria `infrastructure` (`IdentityRoutes`, `QuestionBankRoutes`, `MockExamRoutes`, `SubjectReviewRoutes`, `PlatformRoutes`): caminhos possuídos, cadeia (`STATELESS`, `SESSION` ou cadeia própria `OWN`), CORS, se as falhas são JSON e cada rota com método, padrão e acesso técnico (`PUBLIC`, `VISITOR_OR_ACCOUNT`, `ACCOUNT`, `ACCOUNT_PRINCIPAL`, `ADMINISTRATIVE`). O registro `ApiRoutes` (`shared/infrastructure/http`) é a única fonte lida pelas cadeias de segurança, CORS, `ApiAccessFailureHandler`, desvio de sessão, isenção de troca de senha e filtros de indisponibilidade; `platform` só compõe.
+
+- Rota nova: declarar no mesmo PR, na funcionalidade dona; não editar `platform` nem outra funcionalidade.
+- Rota não declarada continua negada pela cadeia padrão.
+- A correspondência usa `PathPattern` sobre `servletPath`, sem barra final opcional; variáveis com regex são aceitas.
+- `ApiRouteCoverageTests` falha se um mapeamento de controller não tiver exatamente uma rota declarada ou se uma rota declarada não tiver controller nem estiver na lista de rotas do framework. Prova presença e unicidade, não que o acesso escolhido esteja certo.
+- `HttpRouteMatrixTests` compara status, cache, tipo, erro, sessão e CORS de cada rota e variante com `src/test/resources/http/route-matrix.tsv`. Mudança no arquivo é mudança de contrato e precisa de justificativa no PR.
 
 ## Checklist obrigatório para endpoints alterados
 
 - [ ] Cada endpoint tem finalidade e público explícitos; a rota não existe apenas por conveniência de implementação.
+- [ ] A rota está declarada uma única vez na área da funcionalidade dona, com acesso, CORS e isenções explícitos; `platform` não ganhou caminho literal.
 - [ ] Cada decisão tem um proprietário (segurança, web, aplicação ou domínio); não há regra duplicada nem camadas apenas delegadoras.
 - [ ] Autenticação/principal, acesso técnico e CSRF são tratados antes do controller quando aplicáveis; regras de negócio não foram deslocadas para filtros.
 - [ ] Entrada/saída e principal são tipados; contratos, códigos de erro, cache e privacidade estão documentados. Exceções ao padrão têm justificativa.

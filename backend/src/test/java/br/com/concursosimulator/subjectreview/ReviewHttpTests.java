@@ -1,6 +1,7 @@
 package br.com.concursosimulator.subjectreview;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.shared.web.ErrorResponses;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.QuestionBrowserFixtures;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.*;
@@ -49,42 +50,42 @@ class ReviewHttpTests {
         assertThat(send("GET",panel+"?roleId=secretario-de-escola",account,null).statusCode()).isEqualTo(200);
         for(var actor:List.of(account,browser(null))) {
             var v=create(actor);var path="/api/v1/attempts/"+v.get("id").asString();
-            assertThat(send("GET",path+"/subject-review",actor,null).statusCode()).isEqualTo(409);
+            ErrorResponses.assertError(send("GET",path+"/subject-review",actor,null),409);
             assertThat(send("POST",path+"/finish",actor,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}").statusCode()).isEqualTo(200);
             var one=send("GET",path+"/subject-review",actor,null);assertThat(one.statusCode()).isEqualTo(200);schema(one.body(),"SubjectReviewIndividual");
             var i=json.readTree(one.body());assertThat(i.get("attemptId").asString()).isEqualTo(v.get("id").asString());
             assertThat(i.get("subjects").get(0).get("blank").asInt()).isEqualTo(3);assertThat(i.has("window")).isFalse();
-            assertThat(send("GET",path+"/subject-review",browser(null),null).statusCode()).isEqualTo(404);
+            ErrorResponses.assertError(send("GET",path+"/subject-review",browser(null),null),404);
         }
         var summary=json.readTree(send("GET",panel+role,account,null).body());assertThat(summary.get("window").get("attemptCount").asInt()).isEqualTo(1);
     }
     @Test @Order(2) void inputsAreStrictAndRouteSecurityRejectsBeforeTheController() throws Exception {
         var a=account(UUID.randomUUID());
         for(var query:List.of("","?roleId=","?roleId=outside",role+"&roleId=secretario-de-escola",role+"&limit=1",role+"&owner="+UUID.randomUUID(),role+"&useParameterizedQuestions=true")) {
-            var r=send("GET",panel+query,a,null);assertThat(r.statusCode()).as(query).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            var r=send("GET",panel+query,a,null);ErrorResponses.assertError(r,400,"INVALID_REQUEST");
         }
-        for(var id:List.of("invalid","1-1-1-1-1"))assertThat(send("GET","/api/v1/attempts/"+id+"/subject-review",a,null).statusCode()).isEqualTo(400);
+        for(var id:List.of("invalid","1-1-1-1-1"))ErrorResponses.assertError(send("GET","/api/v1/attempts/"+id+"/subject-review",a,null),400);
         var path="/api/v1/attempts/"+UUID.randomUUID()+"/subject-review";
-        for(var q:List.of("roleId=assistente-administrativo","page=0","x=1&x=2"))assertThat(send("GET",path+"?"+q,a,null).statusCode()).isEqualTo(400);
+        for(var q:List.of("roleId=assistente-administrativo","page=0","x=1&x=2"))ErrorResponses.assertError(send("GET",path+"?"+q,a,null),400);
         for(Authentication auth:new Authentication[]{null,UsernamePasswordAuthenticationToken.authenticated("invalid",null,List.of()),
                 UsernamePasswordAuthenticationToken.unauthenticated(new UserPrincipal(UUID.randomUUID()),null),
                 new AnonymousAuthenticationToken("fixture",new UserPrincipal(UUID.randomUUID()),List.of(new org.springframework.security.core.authority.SimpleGrantedAuthority("ROLE_ANONYMOUS")))}) {
-            var b=session(auth);var r=send("GET",panel,b,null);assertThat(r.statusCode()).isEqualTo(401);assertThat(r.body()).isEqualTo("{\"error\":\"unauthenticated\"}");
-            if(auth!=null)assertThat(send("GET",path,b,null).statusCode()).isEqualTo(401);
+            var b=session(auth);var r=send("GET",panel,b,null);ErrorResponses.assertError(r,401,"UNAUTHENTICATED");
+            if(auth!=null)ErrorResponses.assertError(send("GET",path,b,null),401);
         }
-        assertThat(send("GET",panel+role,browser(null),null).statusCode()).isEqualTo(401);
-        var noCsrf=new Browser(a.cookie(),null);assertThat(send("POST","/api/v1/attempts",noCsrf,createBody()).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("GET",panel+role,browser(null),null),401);
+        var noCsrf=new Browser(a.cookie(),null);ErrorResponses.assertError(send("POST","/api/v1/attempts",noCsrf,createBody()),403);
     }
     @Test @Order(3) void sameAccountAnotherSessionSeesItsEvidenceButOtherAccountAndExpiredVisitorDoNot() throws Exception {
         var id=UUID.randomUUID();var a=account(id);var view=create(a);var path="/api/v1/attempts/"+view.get("id").asString();
         send("POST",path+"/finish",a,"{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0}");
         var fresh=account(id);assertThat(send("GET",path+"/subject-review",fresh,null).body()).isEqualTo(send("GET",path+"/subject-review",a,null).body());
         var other=account(UUID.randomUUID());var hidden=send("GET",path+"/subject-review",other,null);var absent=send("GET","/api/v1/attempts/"+UUID.randomUUID()+"/subject-review",other,null);
-        assertThat(hidden.statusCode()).isEqualTo(404);assertThat(hidden.body()).isEqualTo(absent.body());
+        ErrorResponses.assertError(hidden,404);assertThat(hidden.body()).isEqualTo(absent.body());
         assertThat(json.readTree(send("GET",panel+role,other,null).body()).get("window").get("attemptCount").asInt()).isZero();
         var guest=browser(null);send("GET","/api/v1/attempts/"+UUID.randomUUID(),guest,null);var session=repository().findById(guest.cookie().substring(8));
         session.setLastAccessedTime(Instant.now().minusSeconds(3600));repository().save(session);
-        assertThat(send("GET",path+"/subject-review",guest,null).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(send("GET",path+"/subject-review",guest,null),404);
     }
     @Test @Order(4) void allProjectionLevelsRejectPrivateFieldsAndReadsNeverWriteBusinessRows() throws Exception {
         var a=account(UUID.randomUUID());var v=create(a);var path="/api/v1/attempts/"+v.get("id").asString();
@@ -107,13 +108,13 @@ class ReviewHttpTests {
         try { jdbc.update("update me_item set payload=jsonb_set(payload,'{question,revisionId}',to_jsonb(?::text)) where attempt_id=?",UUID.randomUUID().toString(),UUID.fromString(v.get("id").asString())); }
         finally { jdbc.execute("alter table me_item enable trigger user"); }
         var before=rows();
-        for(var url:List.of(panel+role,path+"/subject-review")) {var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");}
+        for(var url:List.of(panel+role,path+"/subject-review")) {var r=send("GET",url,a,null);ErrorResponses.assertError(r,500,"INTERNAL_ERROR");}
         assertThat(rows()).isEqualTo(before);
         for(var failure:List.of(new IllegalStateException("PRIVATE_FORMAT payload=secret"),new org.springframework.dao.InvalidDataAccessApiUsageException("PRIVATE_INTEGRITY"),
                 new org.springframework.dao.DataAccessResourceFailureException("PRIVATE_JDBC password=secret"),new org.springframework.transaction.CannotCreateTransactionException("PRIVATE_TX"))) {
             org.mockito.Mockito.doThrow(failure).when(evidence).recent(org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.anyInt(),org.mockito.ArgumentMatchers.any());
             try {var r=send("GET",panel+role,a,null);boolean integrity=failure instanceof IllegalStateException || failure instanceof org.springframework.dao.InvalidDataAccessApiUsageException;
-                assertThat(r.statusCode()).isEqualTo(integrity?500:503);assertThat(r.body()).isEqualTo(integrity?"{\"error\":\"internal_error\"}":"{\"error\":\"unavailable\"}");}
+                ErrorResponses.assertError(r,integrity?500:503,integrity?"INTERNAL_ERROR":"UNAVAILABLE");assertThat(r.body()).doesNotContain("PRIVATE_");}
             finally {org.mockito.Mockito.reset(evidence);}
         }
         assertThat(rows()).isEqualTo(before);
@@ -130,7 +131,7 @@ class ReviewHttpTests {
             assertThat(send("POST","/api/v1/auth/logout",a,null).statusCode()).isEqualTo(204);release.countDown();
             var earlier=pending.get(10,java.util.concurrent.TimeUnit.SECONDS);assertThat(earlier.statusCode()).isEqualTo(200);
             assertThat(json.readTree(earlier.body()).get("window").get("attemptCount").asInt()).isZero();
-            assertThat(send("GET",panel+role,a,null).statusCode()).isEqualTo(401);
+            ErrorResponses.assertError(send("GET",panel+role,a,null),401);
         } finally {release.countDown();org.mockito.Mockito.reset(evidence);}
         // Identity was checked when the earlier request entered. It is not a promise to revoke an in-flight response.
         var owner=jdbc.queryForObject("select owner_id from me_attempt where id=?",UUID.class,UUID.fromString(v.get("id").asString()));
@@ -155,8 +156,8 @@ class ReviewHttpTests {
         var owner=jdbc.queryForObject("select owner_id from me_attempt where id=?",UUID.class,id);
         var actor=new br.com.concursosimulator.mockexam.domain.AttemptOwner(br.com.concursosimulator.mockexam.domain.AttemptOwner.Kind.VISITOR,owner);
         assertThatThrownBy(()->evidence.one(actor,id,now.plusSeconds(86401))).isInstanceOf(br.com.concursosimulator.mockexam.domain.Attempt.Unavailable.class);
-        assertThat(send("GET",path+"/subject-review",a,null).statusCode()).isEqualTo(404);
-        assertThat(send("GET",path+"/subject-review",browser(null),null).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(send("GET",path+"/subject-review",a,null),404);
+        ErrorResponses.assertError(send("GET",path+"/subject-review",browser(null),null),404);
     }
     @Test @Order(8) void capturedGeneratedResultRemainsMinimalAfterTemplateWithdrawalAndCorsKeepsCredentialsControlled() throws Exception {
         var versions=br.com.concursosimulator.parameterization.ParameterizedBrowserFixtures.seed(context);
@@ -201,7 +202,7 @@ class ReviewHttpTests {
     @Test @Order(90) void databaseAndSessionOutageRemain503JsonNoStoreIncludingCors() throws Exception {
         var a=account(UUID.randomUUID());PG.stop();
         for(var url:List.of(panel+role,"/api/v1/attempts/"+UUID.randomUUID()+"/subject-review")) {
-            var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            var r=send("GET",url,a,null);ErrorResponses.assertError(r,503,"UNAVAILABLE");
         }
     }
     List<List<String>> rows() { return List.of("app_user","qb_question","qb_revision","qb_decision","me_attempt","me_item","me_command","pq_instance").stream()

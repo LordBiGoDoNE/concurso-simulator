@@ -1,6 +1,7 @@
 package br.com.concursosimulator.identity;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.shared.web.ErrorResponses;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -59,9 +60,7 @@ class SessionAccessTests {
         assertThat(send("GET", "/login/oauth2/code/google", null, null, null).statusCode()).isEqualTo(404);
         var me = send("GET", "/api/v1/me", null, null, null);
         HttpContract.json("/api/v1/me", 401, me);
-        assertThat(me.statusCode()).isEqualTo(401);
-        assertThat(json(me)).containsExactly(Map.entry("error", "unauthenticated"));
-        assertThat(me.headers().firstValue("Cache-Control")).contains("no-store");
+        ErrorResponses.assertError(me, 401, "UNAUTHENTICATED");
         var csrf = send("GET", "/api/v1/csrf", null, null, null);
         HttpContract.json("/api/v1/csrf", 200, csrf);
         assertThat(csrf.statusCode()).isEqualTo(200);
@@ -123,7 +122,7 @@ class SessionAccessTests {
             String cookie = sessionWithAuthentication(authentication);
             var me = send("GET", "/api/v1/me", cookie, null, null);
             HttpContract.json("/api/v1/me", 401, me);
-            assertThat(me.headers().firstValue("Cache-Control")).contains("no-store");
+            ErrorResponses.assertError(me, 401, "UNAUTHENTICATED");
             assertThat(me.headers().firstValue("Location")).isEmpty();
             assertThat(me.body()).doesNotContain("fixture-other-principal", principal.id().toString());
         }
@@ -143,7 +142,7 @@ class SessionAccessTests {
         var logout = send("POST", "/api/v1/auth/logout", first, token, null);
         assertThat(logout.statusCode()).isEqualTo(204);
         assertThat(logout.headers().allValues("Set-Cookie").toString()).contains("Max-Age=0");
-        assertThat(send("GET", "/api/v1/me", first, null, null).statusCode()).isEqualTo(401);
+        ErrorResponses.assertError(send("GET", "/api/v1/me", first, null, null), 401, "UNAUTHENTICATED");
         assertThat(send("GET", "/api/v1/me", second, null, null).statusCode()).isEqualTo(200);
         var anonymous = send("GET", "/api/v1/csrf", null, null, null);
         var anonymousCookie = anonymous.headers().firstValue("Set-Cookie").orElseThrow().split(";", 2)[0];
@@ -162,7 +161,7 @@ class SessionAccessTests {
         var session = repository().findById(id);
         session.setLastAccessedTime(Instant.now().minus(Duration.ofHours(1)));
         repository().save(session);
-        assertThat(send("GET", "/api/v1/me", cookie, null, null).statusCode()).isEqualTo(401);
+        ErrorResponses.assertError(send("GET", "/api/v1/me", cookie, null, null), 401, "UNAUTHENTICATED");
         sessions.cleanUpExpiredSessions();
         assertThat(jdbc.queryForObject("SELECT count(*) FROM spring_session WHERE session_id = ?", Integer.class, id)).isZero();
     }

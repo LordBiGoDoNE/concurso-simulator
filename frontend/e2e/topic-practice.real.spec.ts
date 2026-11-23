@@ -77,7 +77,7 @@ test('simulado, prática, conflito, troca de conta e resposta tardia ficam isola
   const mockRadio = page.getByRole('radio').first(); await mockRadio.check(); await expect(page.locator('.save-status:visible')).toHaveText('Respostas confirmadas.');
   await route(page, '#/aulas/P01'); await begin(page);
   let released = false; await page.route('**/lesson-practices/*/answers/*', async r => {
-    if (!released) { released = true; return r.fulfill({ status: 409, json: { error: 'conflict' } }); } await r.continue();
+    if (!released) { released = true; return r.fulfill({ status: 409, json: { error: 'CONFLICT' } }); } await r.continue();
   });
   await page.getByRole('radio').first().check(); await expect(page.getByText(/Outra alteração avançou/)).toBeVisible();
   await page.getByRole('button', { name: 'Recarregar tentativa', exact: true }).click(); await expect(page.getByRole('button', { name: 'Salvar escolhas preservadas' })).toBeVisible();

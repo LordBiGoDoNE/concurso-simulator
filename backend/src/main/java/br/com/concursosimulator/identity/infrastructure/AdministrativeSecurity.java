@@ -2,7 +2,8 @@ package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases.Access;
-import br.com.concursosimulator.identity.web.*;
+import br.com.concursosimulator.identity.application.UserPrincipal;
+import br.com.concursosimulator.identity.application.port.AdministrativeSession;
 import jakarta.servlet.http.*;
 import java.io.Serializable;
 import java.time.Instant;
@@ -78,6 +79,6 @@ public class AdministrativeSecurity implements AdministrativeSession, Administra
         if(!google.enabled())throw new AdministrativeAccessUseCases.Failure("GOOGLE_DISABLED");
         var request=((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
         request.getSession().setAttribute(LINK,new LinkIntent(a.owner(),a.version(),Instant.now().plusSeconds(300),null));
-        return "/oauth2/authorization/google";
+        return IdentityRoutes.OAUTH_AUTHORIZATION;
     }
 }

@@ -34,7 +34,7 @@ async function api(page: Page) {
     if (path.endsWith('/finish')) return route.fulfill({ json: { attempt: finished, result } });
     if (path.endsWith('/attempts') && method === 'POST') return route.fulfill({ status: 201, json: started });
     if (path.endsWith(`/attempts/${view.id}`)) return route.fulfill({ json: started });
-    return route.fulfill({ status: 503, json: { error: 'unavailable' } });
+    return route.fulfill({ status: 503, json: { error: 'UNAVAILABLE' } });
   });
   return () => practiceCreates;
 }

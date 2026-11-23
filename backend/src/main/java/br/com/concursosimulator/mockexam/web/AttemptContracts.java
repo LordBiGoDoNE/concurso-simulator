@@ -5,6 +5,8 @@ import br.com.concursosimulator.questionbank.domain.*;
 import java.time.Instant;
 import java.util.*;
 
+import static br.com.concursosimulator.shared.web.RequestValues.parse;
+
 public final class AttemptContracts {
     private AttemptContracts() {}
     public record PortionRequest(String disciplineId,Integer quantity,Set<String> topicIds) {}
@@ -15,10 +17,11 @@ public final class AttemptContracts {
             var map=new EnumMap<Discipline,Composition.Portion>(Discipline.class);
             for (var p:disciplines) {
                 if (p==null || p.quantity()==null) throw invalid();
-                var topics=p.topicIds()==null?Set.<Topic>of():p.topicIds().stream().map(Topic::fromId).collect(java.util.stream.Collectors.toSet());
-                if (map.put(Discipline.fromId(p.disciplineId()),new Composition.Portion(p.quantity(),topics))!=null) throw invalid();
+                var topics=p.topicIds()==null?Set.<Topic>of():p.topicIds().stream().map(t -> parse(() -> Topic.fromId(t))).collect(java.util.stream.Collectors.toSet());
+                var portion=parse(() -> new Composition.Portion(p.quantity(),topics));
+                if (map.put(parse(() -> Discipline.fromId(p.disciplineId())),portion)!=null) throw invalid();
             }
-            return new Composition(TargetRole.fromId(roleId),map,useParameterizedQuestions);
+            return parse(() -> new Composition(TargetRole.fromId(roleId),map,useParameterizedQuestions));
         }
     }
     /** Ausente é false; null não é booleano. Não relaxa coerção/null dos demais DTOs. */
@@ -61,7 +64,6 @@ public final class AttemptContracts {
     public record Finished(View attempt,Result result) {}
     public record HistoryItem(UUID id,String roleId,Instant createdAt,Instant finishedAt,int total,java.math.BigDecimal percentage) {}
     public record History(List<HistoryItem> items,int page,int size) {}
-    public record Error(String error) {}
     public record Available(String disciplineId,int available) {}
     public record Insufficient(String error,List<Available> available) {}
     static UUID uuid(String s) {
@@ -69,5 +71,5 @@ public final class AttemptContracts {
         return UUID.fromString(s);
     }
     static long version(Long v) { if (v==null || v<0) throw invalid(); return v; }
-    static IllegalArgumentException invalid() { return new IllegalArgumentException("Pedido inválido"); }
+    static br.com.concursosimulator.shared.web.InvalidRequest invalid() { return br.com.concursosimulator.shared.web.RequestValues.invalid(); }
 }

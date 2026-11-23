@@ -1,0 +1,31 @@
+{
+  "purpose" : "SIMULADO",
+  "destinationId" : "isolated-test",
+  "packageDigest" : "d95fe728f5f59cffc9aa294463a2302d94545217057206e56b76a1d44353116d",
+  "selectionDigest" : "ba9acd982717c102d75e9e7123ac4f033ea04035a5a0c776ccf251c488fc76cb",
+  "items" : [ {
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.one"
+    },
+    "fingerprint" : "d4690884989794dc70dd8fbec4c793ab149d70b784e464196c31a9e566c79970",
+    "expectedLatestRevision" : null,
+    "change" : "NEW",
+    "questionId" : null,
+    "latestRevisionId" : null
+  }, {
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.two"
+    },
+    "fingerprint" : "ef10d91d822f65c1ae41b934be604a7336a1a67b569c6241dd79610ade0c47c8",
+    "expectedLatestRevision" : null,
+    "change" : "NEW",
+    "questionId" : null,
+    "latestRevisionId" : null
+  } ],
+  "possibleDuplicates" : [ ],
+  "confirmable" : true,
+  "confirmationToken" : "<token>",
+  "expiresAt" : "<instant>"
+}

@@ -1,6 +1,6 @@
 package br.com.concursosimulator.questionbank;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.web.AdministrativeImportController.*;
 import java.net.URI;
@@ -72,9 +72,9 @@ class EditorialDecisionBatchHttpTests {
     }
     JsonNode imported(String cookie, String csrf, QuestionPurpose purpose, String... keys) throws Exception {
         var doc = document(purpose, keys);
-        var preview = ok(send("/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(doc, List.of(keys)))));
+        var preview = ok(send("/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), List.of(keys)))));
         return ok(send("/api/v1/admin/question-imports/apply", cookie, csrf,
-                json.writeValueAsString(new ApplyRequest(doc, List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
+                json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
     }
     ObjectNode envelope(String action, String kind, List<String> checks, String rationale) {
         var node = json.createObjectNode().put("action", action);
@@ -253,7 +253,7 @@ class EditorialDecisionBatchHttpTests {
         assertMismatch(send(BASE + "/apply", cookie, csrf, json.writeValueAsString(badToken)));
         // Token de importação não confirma lote de decisões (separação de domínio).
         var importPreview = ok(send("/api/v1/admin/question-imports/preview", cookie, csrf,
-                json.writeValueAsString(new PreviewRequest(document(QuestionPurpose.SIMULADO, "batch.other"), List.of("batch.other")))));
+                json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(document(QuestionPurpose.SIMULADO, "batch.other")), List.of("batch.other")))));
         var crossToken = (ObjectNode) json.readTree(applyBody(preview)); crossToken.put("confirmationToken", importPreview.get("confirmationToken").asString());
         assertMismatch(send(BASE + "/apply", cookie, csrf, json.writeValueAsString(crossToken)));
         // Outro ADM/ator não reutiliza o token (sessão comum sequer chega ao controller).
@@ -336,7 +336,7 @@ class EditorialDecisionBatchHttpTests {
         AdministrativeQuestionHttpTests.contract("EditorialBatchExpected", preview.get("expected").get(0));
         // Token do lote não confirma importação (separação de domínio nos dois sentidos).
         var doc = document(QuestionPurpose.SIMULADO, "batch.cross");
-        var importApply = send("/api/v1/admin/question-imports/apply", cookie, csrf, json.writeValueAsString(new ApplyRequest(doc, List.of("batch.cross"), preview.get("confirmationToken").asString())));
+        var importApply = send("/api/v1/admin/question-imports/apply", cookie, csrf, json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), List.of("batch.cross"), preview.get("confirmationToken").asString())));
         assertThat(importApply.statusCode()).isEqualTo(409);
         var applied = ok(send(BASE + "/apply", cookie, csrf, applyBody(preview)));
         AdministrativeQuestionHttpTests.contract("EditorialBatchApplied", applied);
@@ -344,5 +344,30 @@ class EditorialDecisionBatchHttpTests {
         var conflict = send(BASE + "/apply", cookie, csrf, applyBody(preview).replace("Seleção explícita", "Outra"));
         AdministrativeQuestionHttpTests.contract("EditorialBatchConflict", json.readTree(conflict.body()));
         assertThat(jdbc.queryForObject("select status from qb_revision where id=?", String.class, UUID.fromString(item.path("revisionId").asString()))).isEqualTo("IN_REVIEW");
+    }
+
+    /** JSON público da prévia e da aplicação de decisões em lote (grupo 5: DTOs web próprios). */
+    @Test void zz_editorialBatchJsonContractsAreStable() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie);
+        // Uma questão: a ordem dos itens do lote segue o questionId, aleatório.
+        var receipt = imported(cookie, csrf, QuestionPurpose.PRATICA_AULA, "admin.snapshot-a");
+        var nonce = receipt.path("confirmation").path("nonce").asString();
+        var submit = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("SUBMIT", null, List.of(), "Lote sintético de contrato"), nonce))));
+        JsonContractSnapshot.check("editorial-preview-submit", submit);
+        JsonContractSnapshot.check("editorial-apply-submit", ok(send(BASE + "/apply", cookie, csrf, applyBody(submit))));
+        var approve = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("APPROVE", "AI_ONLY", ALL_CHECKS, "Revisão somente por IA, contrato"), nonce))));
+        JsonContractSnapshot.check("editorial-preview-approve", approve);
+        var body = applyBody(approve);
+        JsonContractSnapshot.check("editorial-apply-approve", ok(send(BASE + "/apply", cookie, csrf, body)));
+        JsonContractSnapshot.check("editorial-apply-replay", ok(send(BASE + "/apply", cookie, csrf, body)));
+    }
+
+    /** Prévia recusada (aprovar rascunho): refusal preenchido, lote não confirmável e sem token. */
+    @Test void zz_editorialBatchRefusalJsonContractIsStable() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie);
+        var receipt = imported(cookie, csrf, QuestionPurpose.SIMULADO, "snapshot.refused");
+        var nonce = receipt.path("confirmation").path("nonce").asString();
+        JsonContractSnapshot.check("editorial-preview-refused", ok(send(BASE + "/preview", cookie, csrf,
+                json.writeValueAsString(byReceipt(envelope("APPROVE", "HUMAN_PEER", ALL_CHECKS, "Aprovação sintética recusada"), nonce)))));
     }
 }

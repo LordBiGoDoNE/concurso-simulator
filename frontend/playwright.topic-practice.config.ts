@@ -1,4 +1,6 @@
 import { defineConfig } from '@playwright/test';
+// --offline só fora do CI: localmente reaproveita o cache do Gradle; no CI o cache pode estar frio.
+const offline = process.env.CI ? '' : ' --offline';
 const expansion = process.env.PRACTICE_EXPANSION === '1';
 const custom = process.env.TOPIC_PRACTICE_PORTS?.split(',').map(Number); // opcional "ui,api,controle"
 const [uiPort, apiPort, fixturePort] =
@@ -18,8 +20,8 @@ export default defineConfig({
     {
       command:
         process.platform === 'win32'
-          ? '..\\backend\\gradlew.bat -p ../backend --offline --no-daemon --console=plain topicPracticeBrowserFixture'
-          : '../backend/gradlew -p ../backend --offline --no-daemon --console=plain topicPracticeBrowserFixture',
+          ? `..\\backend\\gradlew.bat -p ../backend${offline} --no-daemon --console=plain topicPracticeBrowserFixture`
+          : `../backend/gradlew -p ../backend${offline} --no-daemon --console=plain topicPracticeBrowserFixture`,
       url: `http://127.0.0.1:${fixturePort}/fixture`,
       timeout: 180000,
       reuseExistingServer: false,

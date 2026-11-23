@@ -18,7 +18,9 @@
     "preview": "vite preview --host 127.0.0.1",
     "test:e2e": "playwright test",
     "test:identity": "playwright test --config playwright.identity.config.ts",
-    "test:parameterized": "playwright test --config playwright.parameterized.config.ts"
+    "test:parameterized": "playwright test --config playwright.parameterized.config.ts",
+    "test:admin": "playwright test --config playwright.admin.config.ts",
+    "test:topic-practice": "playwright test --config playwright.topic-practice.config.ts"
   },
   "dependencies": {
     "@fontsource-variable/figtree": "5.3.0",

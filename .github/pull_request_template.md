@@ -28,3 +28,12 @@ CI verde não é aprovação semântica. -->
 - [ ] `review.md` da spec linkado, com head revisado e tree SHA.
 - [ ] Achados das revisões triados; bloqueadores/altos corrigidos e reverificados no delta.
 - [ ] Merge aguarda a aprovação do pacote pelo usuário.
+
+## Arquivamento (somente `chore/archive-*`)
+
+<!-- Encerramento após o merge do [SPEC] (~/.claude/rules/revisao-e-integracao.md, seção 8, e
+pendencias-e-encerramento.md). O job `openspec` falha se a change arquivada não tiver linha no registro. -->
+
+- [ ] Diff de `openspec/specs/` conferido e registrado neste PR; nada fora de `openspec/` além dos documentos de estado.
+- [ ] Registro de entregas e documentos de estado (seção "Documentos de estado" do `AGENTS.md`) atualizados neste PR.
+- [ ] Issue da spec a fechar depois do merge, com os links do `[SPEC]`, do merge commit e deste PR.

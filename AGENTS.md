@@ -9,6 +9,16 @@ Este arquivo só **detalha** o que é próprio do projeto e registra as **exceç
 - Roadmap, critérios de entrega e decisões abertas: `docs/application-reformulation.md`. Uma etapa do roadmap não autoriza spec nem implementação.
 - Stack e versões escolhidas pelo usuário: ver `openspec/config.yaml` (Java 25 LTS, Spring Boot, PostgreSQL 18, Flyway, Gradle Wrapper 9.8.0 com Kotlin DSL, React/TypeScript/Vite).
 
+## Documentos de estado
+
+Declaração exigida por `pendencias-e-encerramento.md`.
+
+- `docs/application-reformulation.md`: estado entregue, roadmap e seção "Registro de entregas" (conferida pelo job `openspec` do CI).
+- `README.md`: visão geral e como executar.
+- `openspec/config.yaml`: contexto e estado atual do projeto para o OpenSpec.
+- Registro de entregas: docs/application-reformulation.md
+- Branches permanentes: main, stable, pages-store
+
 ## Arquitetura (detalhamento das regras globais)
 
 - Antes de implementar ou revisar backend, ler `docs/architecture/adr/0001-domain-and-application-boundaries.md` (decisões aprovadas em 2026-10-08).
@@ -48,4 +58,4 @@ Este arquivo só **detalha** o que é próprio do projeto e registra as **exceç
 - Primeira épica combinada: `epic/question-bank-expansion-curation` (#173 + #177).
 - Execução contínua autorizada para `optional-google-identity` e a rodada inicial de question-bank (1.2, 1.3, 2.1–2.3 sobre #38) antecedem a regra global de autorização única por spec.
 - Artefatos de specs abertas antes de 2026-11-17 (proposal/design/tasks) que citam Stacks, SOL, lotes ou `spec-review.json` registram o processo da época; a execução restante dessas specs segue as regras globais vigentes.
-- Commits e PRs históricos são preservados. Branches seguem `revisao-e-integracao.md` (seção 8): as já contidas na `main` são apagadas no encerramento; `stable` e `pages-store` são permanentes.
+- Commits e PRs históricos são preservados. Branches seguem `revisao-e-integracao.md` (seção 8): as já contidas na `main` são apagadas no encerramento; branches permanentes: ver "Documentos de estado".

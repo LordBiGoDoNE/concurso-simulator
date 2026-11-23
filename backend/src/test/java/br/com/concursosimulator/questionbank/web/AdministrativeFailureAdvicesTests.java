@@ -32,6 +32,7 @@ class AdministrativeFailureAdvicesTests {
         assertCuration(curation.data(new DataIntegrityViolationException("dup", new SQLException("dup", "23505"))), 500, "ADMIN_CURATION_FAILED");
         assertCuration(curation.data(new TransactionSystemException("commit failed", new SQLException("deferred", "23503"))), 500, "ADMIN_CURATION_FAILED");
         assertCuration(curation.data(new InvalidDataAccessApiUsageException("misuse")), 500, "ADMIN_CURATION_FAILED");
+        assertCuration(curation.data(new TransactionSystemException("commit failed", new IllegalStateException("not active"))), 500, "ADMIN_CURATION_FAILED");
     }
 
     @Test
@@ -42,6 +43,7 @@ class AdministrativeFailureAdvicesTests {
         assertImport(importing.data(new DataIntegrityViolationException("dup", new SQLException("dup", "23505"))), 500, "IMPORT_FAILED");
         assertImport(importing.data(new TransactionSystemException("commit failed", new SQLException("deferred", "23503"))), 500, "IMPORT_FAILED");
         assertImport(importing.data(new InvalidDataAccessApiUsageException("misuse")), 500, "IMPORT_FAILED");
+        assertImport(importing.data(new TransactionSystemException("commit failed", new IllegalStateException("not active"))), 500, "IMPORT_FAILED");
     }
 
     private static void assertCuration(ResponseEntity<AdministrativeCurationFailureAdvice.ErrorResponse> response, int status, String code) {

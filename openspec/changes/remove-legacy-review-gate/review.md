@@ -88,3 +88,28 @@ Conferido em 2026-11-23, antes do pacote:
 - **Head revisado pela revisão final:** `cddfe04150afac63a587b19ec450cec54174c10b`.
 - **Correções posteriores, sem reverificação** (médio/baixo): `2a5ac566250f97a32a9134a92e0ada4d2ef5e761`, tree `5780e03a6843781ecb002f3618d98311aeccc5ca`.
 - **Estado final:** o commit deste `review.md` sobre `2a5ac56`. Entre `2a5ac56` e o estado final da épica, o único arquivo que pode mudar é este `review.md`.
+
+## Integração na épica e merge da `main`
+
+Aprovação do pacote pelo usuário em 2026-11-23.
+
+- **#262:** marcado como pronto e integrado com merge commit, em `824b32b`. O tree de `824b32b` é igual ao de `a1c653e` (`2990d37`).
+- **#263:**
+  - A base trocou para a épica. O diff do PR mostrou só os arquivos do grupo 2 e da spec.
+  - Os checks rodaram de novo depois da troca e os 13 ficaram verdes. Depois veio o merge commit `f7d0c5d`, com tree `a41aef8`, igual ao de `fbb435d`.
+- **Limitação do procedimento de D1** (baixo, registrado):
+  - No GitHub, um re-run reaproveita o SHA original do evento, então não testa o novo merge ref. Só um push gera um merge ref novo.
+  - Neste caso, a verificação continua válida: o tree da nova base (`824b32b`) é idêntico ao da base antiga (`a1c653e`), e o run de push testou o próprio head.
+  - Em trocas de base futuras, prefira um push (ou fechar e reabrir o PR) a um re-run.
+- **A `main` avançou** de `9dea050` para `7862195`, com o arquivamento retroativo das changes antigas e docs pós-VPS:
+  - Merge da `main` na épica, sem rebase, em `b745426`.
+  - Sem conflito. O delta é idêntico a `git diff 9dea050 7862195`.
+  - Testes em Windows: os mesmos 124, com os 2 erros de ambiente já descritos.
+  - `act`: `scripts-tests` (124 OK), `study-material` e `static-pages` verdes.
+  - `openspec validate --strict` válido e `check_links.py` OK.
+- **Reverificação do delta do merge** pelo `spec-reviewer` (Opus 5.5 medium, em contexto novo, somente leitura), sobre `git diff fbb435d b745426`, excluído este arquivo:
+  - Nenhum achado e nenhum conflito.
+  - Os 26 `spec-review.json/md` movidos pela `main` são renames `R100`, com conteúdo inalterado.
+  - `repository-ci-checks` não colide com as 29 capabilities de `openspec/specs/`.
+  - Nada da `main` reintroduz o gate.
+- **Observação, fora do escopo:** depois do arquivamento da `main`, alguns docs históricos citam os caminhos antigos `openspec/changes/<spec>/spec-review.*`. São eles `docs/application-reformulation.md:73`, `docs/handoffs/new-student-experience.md:162` e `docs/architecture/spec-review.md:194`. Os relatórios agora ficam em `openspec/changes/archive/2026-11-23-<spec>/`.

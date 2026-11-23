@@ -180,3 +180,41 @@ da cadeia:
   - B6 resolvido: o `test_build_pages.py` roda no job `scripts-tests`.
 - **Limites:** o revisor não rodou testes. O mérito dos arquivos vindos da `main` não
   entrou nesta revisão, que só confirmou que chegaram iguais.
+
+### Merge da `main` (`98c33b3`, spec `backend-http-boundaries`, #281)
+
+A `main` avançou depois de o `[SPEC]` (#282) ser aberto, e o merge passou a conflitar.
+
+- **Causa dos conflitos:** os commits só de formatação (`096fe8d` e `1b64ba0`) geravam
+  cerca de 63 conflitos com as mudanças de rotas e erros da spec C.
+- **Resolução:**
+  - a base `2672f9a` e a `main` `98c33b3` foram formatadas com a configuração da épica,
+    gerando as árvores `f23a08e` e `c8531f5`;
+  - o merge de 3 vias foi refeito por arquivo sobre essas versões formatadas;
+  - os arquivos novos da `main` entraram formatados e os 3 removidos saíram;
+  - as 5 renomeações foram aplicadas.
+- **Conflitos reais restantes:**
+  - 9 testes HTTP, só de imports: pacote renomeado pela `main` mais `TestPostgres`;
+  - `frontend/src/attempt-api.ts`: o cliente da épica (`withAbortScope`/`apiFetch`) mais
+    o `code` que a `main` acrescentou ao `AttemptApiError`.
+- **Merge:** `787b2b9`, árvore `9889f8c`.
+- **Testes do merge:**
+  - `./gradlew clean build` verde, com 404 testes e 1 pulado;
+  - frontend: `lint`, `typecheck`, `format:check` e `build` ok, Vitest 382/382;
+  - `act` `scripts-tests`: 124 OK;
+  - Playwright: padrão 67/67, `admin` 1/1, `topic-practice` 30/30.
+  - `identity` e `parameterized` não rodaram localmente: a porta 18080 estava ocupada por
+    um contêiner de outro projeto. Ficam cobertas pelo job `identity-browser` do CI no #282.
+- **Reverificação do delta** (`spec-reviewer`, Claude Opus 5.5): 0 bloqueador, 0 alto,
+  1 médio.
+  - `git diff f23a08e 74d3fda` equivale a `git diff c8531f5 787b2b9`: as mudanças da
+    épica foram preservadas sobre a `main`.
+  - Os arquivos fora dos formatadores são idênticos aos da `main`.
+  - O blob de `NumericGenerator.java` continua `37cbf29`.
+
+| Achado | Severidade | Triagem |
+| --- | --- | --- |
+| M1: 4 testes da `main` com contêiner próprio e imagem literal (`LegacySessionPrincipalTests`, `ParameterizedGenerationDisabledHttpTests`, `ApiRouteCoverageTests`, `HttpRouteMatrixTests`), contra o requisito do PostgreSQL de teste compartilhado | médio | `finding-fixer` confirmou e corrigiu em `ae4fe20`: as 4 classes usam `TestPostgres.newDatabase()`; build verde com 404 testes; `postgres:18` só aparece em `TestPostgres.IMAGE` |
+
+O M1 é médio, com 12 linhas a mais e 24 a menos, só em testes. Pela seção 3, não tem nova
+rodada de revisão.

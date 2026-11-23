@@ -24,45 +24,45 @@ e o caso vai ao usuário.
 
 ## 1. Build do backend (~150 linhas autorais)
 
-- [ ] 1.1 Registrar a linha de base: `./gradlew tasks --all`, `help --task` das dez
+- [x] 1.1 Registrar a linha de base: `./gradlew tasks --all`, `help --task` das dez
   tarefas operacionais, `dependencies --configuration runtimeClasspath`, tempo de
   `./gradlew build` e contagem de advertências com `-Xlint:all`.
-- [ ] 1.2 BOM por `SpringBootPlugin.BOM_COORDINATES` (D1).
-- [ ] 1.3 Conferir `spring-boot-starter-jdbc` com `dependencyInsight` e removê-lo se
+- [x] 1.2 BOM por `SpringBootPlugin.BOM_COORDINATES` (D1).
+- [x] 1.3 Conferir `spring-boot-starter-jdbc` com `dependencyInsight` e removê-lo se
   redundante, ou comentar por que fica (D2); comparar `runtimeClasspath`.
-- [ ] 1.4 `-Xlint:all` com exclusões comentadas, correção das advertências e `-Werror`
+- [x] 1.4 `-Xlint:all` com exclusões comentadas, correção das advertências e `-Werror`
   em `compileJava` (e em `compileTestJava` se zerar); restante em issue (D3).
-- [ ] 1.5 JaCoCo só como relatório (D4); documentar em `backend/README.md`.
-- [ ] 1.6 Extrair as tarefas operacionais para `gradle/operational-tasks.gradle.kts`
+- [x] 1.5 JaCoCo só como relatório (D4); documentar em `backend/README.md`.
+- [x] 1.6 Extrair as tarefas operacionais para `gradle/operational-tasks.gradle.kts`
   (D5) e comparar com a linha de base.
 
 ## 2. Relógio único — depende de 1 (~80 linhas autorais)
 
-- [ ] 2.1 `ClockConfiguration` com o bean `Clock` e injeção nas seis configurações e
+- [x] 2.1 `ClockConfiguration` com o bean `Clock` e injeção nas seis configurações e
   em `AdministrativeRecovery` (D6).
-- [ ] 2.2 Regra ArchUnit contra `Clock.system*` fora da configuração, com teste que
+- [x] 2.2 Regra ArchUnit contra `Clock.system*` fora da configuração, com teste que
   prova a falha.
-- [ ] 2.3 Abrir issue `review-finding` sobre `Instant.now()` nas classes de segurança
-  (limite da proteção, D6).
+- [x] 2.3 Abrir issue `review-finding` sobre `Instant.now()` nas classes de segurança
+  (limite da proteção, D6): #266
 
 ## 3. PostgreSQL de teste compartilhado — depende de 2 (~300 linhas autorais)
 
-- [ ] 3.1 Levantar as classes que param, pausam ou reconfiguram o servidor e as
+- [x] 3.1 Levantar as classes que param, pausam ou reconfiguram o servidor e as
   fixtures `main`; registrar a lista no PR.
-- [ ] 3.2 Criar `TestPostgres` (imagem única, servidor por JVM, `max_connections`,
+- [x] 3.2 Criar `TestPostgres` (imagem única, servidor por JVM, `max_connections`,
   `newDatabase()`) e testes do próprio suporte (bancos distintos e vazios).
-- [ ] 3.3 Migrar as demais classes para `newDatabase()`; as excluídas passam a usar
+- [x] 3.3 Migrar as demais classes para `newDatabase()`; as excluídas passam a usar
   `TestPostgres.IMAGE`.
-- [ ] 3.4 Medir tempo de `./gradlew test` e contêineres iniciados antes/depois; rodar a
+- [x] 3.4 Medir tempo de `./gradlew test` e contêineres iniciados antes/depois; rodar a
   suíte duas vezes com `--rerun-tasks`; registrar no PR.
 
 ## 4. Spotless no backend — depende de 3 (~40 linhas autorais + formatação gerada)
 
-- [ ] 4.1 Confirmar suporte do Spotless e do palantir-java-format ao Java 25 e ao
+- [x] 4.1 Confirmar suporte do Spotless e do palantir-java-format ao Java 25 e ao
   Gradle 9.8 e fixar versões (D8); sem suporte, parar e chamar o usuário.
-- [ ] 4.2 Commit de configuração (`spotlessCheck` em `check`).
-- [ ] 4.3 Commit só de `spotlessApply`; `./gradlew build` verde sem outra mudança.
-- [ ] 4.4 Commit de `.git-blame-ignore-revs` com o SHA de 4.3; documentar no
+- [x] 4.2 Commit de configuração (`spotlessCheck` em `check`).
+- [x] 4.3 Commit só de `spotlessApply`; `./gradlew build` verde sem outra mudança.
+- [x] 4.4 Commit de `.git-blame-ignore-revs` com o SHA de 4.3; documentar no
   `backend/README.md`.
 
 ## 5. Ferramentas do frontend (~250 linhas autorais + lockfile)

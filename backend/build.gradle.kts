@@ -1,6 +1,10 @@
+import org.springframework.boot.gradle.plugin.SpringBootPlugin
+
 plugins {
     java
+    jacoco
     id("org.springframework.boot") version "4.1.1"
+    id("com.diffplug.spotless") version "8.11.0"
 }
 
 group = "br.com.concursosimulator"
@@ -18,9 +22,9 @@ repositories {
 }
 
 dependencies {
-    implementation(platform("org.springframework.boot:spring-boot-dependencies:4.1.1"))
+    // BOM derivado do plugin: a versão do Spring Boot fica só no bloco plugins.
+    implementation(platform(SpringBootPlugin.BOM_COORDINATES))
     implementation("org.springframework.boot:spring-boot-starter-webmvc")
-    implementation("org.springframework.boot:spring-boot-starter-jdbc")
     implementation("org.springframework.boot:spring-boot-starter-data-jpa")
     implementation("org.springframework.boot:spring-boot-starter-flyway")
     implementation("org.flywaydb:flyway-database-postgresql")
@@ -39,7 +43,21 @@ dependencies {
 
 tasks.withType<JavaCompile>().configureEach {
     options.encoding = "UTF-8"
-    options.compilerArgs.add("-parameters")
+    // -serial: as advertências só aparecem em exceções da aplicação, que nunca são gravadas na
+    // sessão JDBC nem serializadas; serialVersionUID nelas seria ruído em ~30 classes. Os atributos
+    // de sessão são records Serializable, que essa advertência não cobre.
+    options.compilerArgs.addAll(listOf("-parameters", "-Xlint:all", "-Xlint:-serial"))
+}
+
+// Advertências do compilador quebram o build.
+tasks.compileJava {
+    options.compilerArgs.add("-Werror")
+}
+
+tasks.compileTestJava {
+    // -try: fixtures operacionais encerram processos filhos em close() (waitFor lança
+    // InterruptedException) e MigrationFailureTests abre um contexto só para vê-lo falhar.
+    options.compilerArgs.addAll(listOf("-Xlint:-try", "-Werror"))
 }
 
 tasks.test {
@@ -48,101 +66,36 @@ tasks.test {
     testLogging {
         events("passed", "skipped", "failed")
     }
+    finalizedBy(tasks.jacocoTestReport)
 }
 
-tasks.register<JavaExec>("identityBrowserFixture") {
-    group = "verification"
-    description = "Start isolated PostgreSQL and test-only OIDC/API for Playwright"
-    dependsOn(tasks.testClasses)
-    classpath = sourceSets.test.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.identity.IdentityBrowserFixture")
+// Cobertura só como relatório local (build/reports/jacoco); sem limite mínimo nem publicação.
+jacoco {
+    toolVersion = "0.8.14"
 }
 
-tasks.register<JavaExec>("questionBankLocal") {
-    group = "application"
-    description = "Deliberate nonweb question package preview/import; never runs on startup or build"
-    classpath = sourceSets.main.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal")
-    standardInput = System.`in`
-    if (project.hasProperty("localArgs")) args(project.property("localArgs").toString().split(" "))
-}
-
-
-tasks.register<JavaExec>("mockExamOperationalCheck") {
-    group = "verification"
-    description = "Deliberate isolated PostgreSQL rollback/restart check using an approved previous JAR"
-    dependsOn(tasks.testClasses)
-    classpath = sourceSets.test.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.mockexam.MockExamOperationalFixture")
-    if (project.hasProperty("rollbackJar")) args(project.property("rollbackJar").toString())
-}
-
-tasks.register<JavaExec>("parameterizationLocal") {
-    group = "application"
-    description = "Deliberate nonweb numeric template preview/register/decision; never runs on startup or build"
-    dependsOn(tasks.classes)
-    classpath = sourceSets.main.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal")
-    standardInput = System.`in`
-    if (project.hasProperty("templateAction")) {
-        val action = project.property("templateAction").toString()
-        args(action, "--editorial-local", "true", "--root", project.property("templateRoot").toString(),
-            if (action == "decide") "--decision" else "--definition", project.property("templateFile").toString())
+tasks.jacocoTestReport {
+    reports {
+        xml.required = true
+        html.required = true
     }
 }
 
-tasks.register<JavaExec>("parameterizedOperationalCheck") {
-    group = "verification"
-    description = "Deliberate isolated V5/V9 upgrade and compatible rollback check; requires approved V5 JAR"
-    dependsOn(tasks.testClasses)
-    classpath = sourceSets.test.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.parameterization.ParameterizedOperationalFixture")
-    if (project.hasProperty("rollbackJar")) args(project.property("rollbackJar").toString())
+// Formatação do Java verificada em check (logo em build); corrigir com ./gradlew spotlessApply.
+spotless {
+    // LF em qualquer sistema: o repositório versiona os fontes com LF.
+    lineEndings = com.diffplug.spotless.LineEnding.UNIX
+    java {
+        target("src/**/*.java")
+        // As definições editoriais em editorial/parameterized-questions/ fixam os bytes deste
+        // arquivo por SHA-256 (contentSha256/answerSha256) como proveniência; reformatá-lo
+        // quebra essa proveniência e o audit_parameterized_content.py.
+        targetExclude("src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java")
+        palantirJavaFormat("2.103.0")
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
+    }
 }
 
-// Deliberate operational exercise, outside normal build/startup; synthetic PostgreSQL only.
-tasks.register<JavaExec>("subjectReviewOperationalCheck") {
-    group = "verification"
-    description = "Check V9/V10 and mixed snapshots across separate compatible JAR processes"
-    dependsOn(tasks.testClasses, tasks.named("bootJar"))
-    classpath = sourceSets.test.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.mockexam.SubjectReviewOperationalFixture")
-    args(tasks.named<org.springframework.boot.gradle.tasks.bundling.BootJar>("bootJar").get().archiveFile.get().asFile.absolutePath)
-}
-
-// Separate helper image/classpath; never copied into the production bootJar or startup.
-tasks.register<Sync>("localDeliveryFixtureClasses") {
-    group = "verification"
-    dependsOn(tasks.testClasses)
-    into(layout.buildDirectory.dir("local-delivery-fixture"))
-    from(sourceSets.main.get().output) { into("classes") }
-    from(sourceSets.test.get().output) { into("classes") }
-    from(configurations.testRuntimeClasspath) { into("lib") }
-}
-
-// Explicit local recovery; never executed by build, tests or normal application startup.
-tasks.register<JavaExec>("administrativeRecovery") {
-    group = "application"
-    description = "Deliberate password recovery for the existing ADM on an explicitly configured local PostgreSQL"
-    dependsOn(tasks.classes)
-    classpath = sourceSets.main.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.identity.infrastructure.AdministrativeRecovery")
-    standardInput = System.`in`
-    args("--recover-admin")
-}
-
-tasks.register<JavaExec>("administrativeBrowserFixture") {
-    group = "verification"
-    description = "Isolated ADM/OIDC browser fixture on dedicated ports; never packaged in bootJar"
-    dependsOn(tasks.testClasses)
-    classpath = sourceSets.test.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.identity.AdministrativeBrowserFixture")
-}
-
-tasks.register<JavaExec>("topicPracticeBrowserFixture") {
-    group = "verification"
-    description = "Isolated topic-practice fixture on ports 19160/19161; never packaged in bootJar"
-    dependsOn(tasks.testClasses)
-    classpath = sourceSets.test.get().runtimeClasspath
-    mainClass.set("br.com.concursosimulator.mockexam.TopicPracticeBrowserFixture")
-}
+apply(from = "gradle/operational-tasks.gradle.kts")

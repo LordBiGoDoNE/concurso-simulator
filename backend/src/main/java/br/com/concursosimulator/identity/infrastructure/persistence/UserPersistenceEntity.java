@@ -18,5 +18,7 @@ public class UserPersistenceEntity {
 
     protected UserPersistenceEntity() {}
 
-    UserPersistenceEntity(UUID id) { this.id = id; }
+    UserPersistenceEntity(UUID id) {
+        this.id = id;
+    }
 }

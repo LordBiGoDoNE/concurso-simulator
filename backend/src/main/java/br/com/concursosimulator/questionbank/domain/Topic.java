@@ -64,9 +64,17 @@ public enum Topic {
         this.title = title;
     }
 
-    public String id() { return name(); }
-    public Discipline discipline() { return discipline; }
-    public String title() { return title; }
+    public String id() {
+        return name();
+    }
+
+    public Discipline discipline() {
+        return discipline;
+    }
+
+    public String title() {
+        return title;
+    }
 
     public static Topic fromId(String id) {
         for (var topic : values()) {

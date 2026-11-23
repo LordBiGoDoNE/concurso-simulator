@@ -25,13 +25,15 @@ public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, 
     }
 
     private void reject(HttpServletRequest request, HttpServletResponse response, boolean csrf) throws IOException {
-        boolean attempts=br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.owns(request)
+        boolean attempts = br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.owns(request)
                 || br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.owns(request);
-        if (!csrf && ("GET".equals(request.getMethod()) && ("/api/v1/me".equals(request.getServletPath())
-                || "/api/v1/me/attempts".equals(request.getServletPath())
-                || "/api/v1/me/lesson-practices".equals(request.getServletPath()))
-                || br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.permits(request)
-                || br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.permits(request))) {
+        if (!csrf
+                && ("GET".equals(request.getMethod())
+                                && ("/api/v1/me".equals(request.getServletPath())
+                                        || "/api/v1/me/attempts".equals(request.getServletPath())
+                                        || "/api/v1/me/lesson-practices".equals(request.getServletPath()))
+                        || br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.permits(request)
+                        || br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.permits(request))) {
             response.setStatus(401);
             response.setContentType("application/json");
             response.setHeader("Cache-Control", "no-store");
@@ -39,7 +41,8 @@ public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, 
         } else {
             response.setStatus(403);
             if (attempts) {
-                response.setContentType("application/json"); response.setHeader("Cache-Control","no-store");
+                response.setContentType("application/json");
+                response.setHeader("Cache-Control", "no-store");
                 response.getWriter().write("{\"error\":\"forbidden\"}");
             }
         }

@@ -15,8 +15,13 @@ public enum TargetRole {
         this.title = title;
     }
 
-    public String id() { return id; }
-    public String title() { return title; }
+    public String id() {
+        return id;
+    }
+
+    public String title() {
+        return title;
+    }
 
     public static TargetRole fromId(String id) {
         for (var role : values()) {

@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "backend/build/local-app"
 SCRIPTS = {"build_pages.py", "enrich_math.py", "math_content.py", "compact_sources.py", "check_math.py", "check_links.py"}
 BUILD_FILES = {"backend/build.gradle.kts", "backend/settings.gradle.kts", "backend/gradlew",
+               "backend/gradle/operational-tasks.gradle.kts",
                "frontend/package.json", "frontend/package-lock.json", "frontend/tsconfig.json",
                "frontend/index.html", "frontend/vite.config.ts"}
 CONTAINER_FILES = {"backend.Dockerfile", "web.Dockerfile", "nginx.conf", "Health.java", "images.lock.json"}

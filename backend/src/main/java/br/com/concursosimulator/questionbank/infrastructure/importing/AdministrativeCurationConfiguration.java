@@ -3,6 +3,7 @@ package br.com.concursosimulator.questionbank.infrastructure.importing;
 import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries;
 import br.com.concursosimulator.questionbank.infrastructure.persistence.*;
 import jakarta.persistence.EntityManager;
+import java.time.Clock;
 import org.springframework.context.annotation.*;
 import org.springframework.transaction.PlatformTransactionManager;
 
@@ -10,14 +11,23 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration
 public class AdministrativeCurationConfiguration {
     // JpaAdministrativeQuestionCatalog é @Repository (componente): tradução de exceções JPA pelo Spring.
-    @Bean AdministrativeQuestionQueries administrativeQuestionQueries(JpaAdministrativeQuestionCatalog catalog, EntityManager em,
-            PlatformTransactionManager manager, AdministrativePackageReader reader) {
+    @Bean
+    AdministrativeQuestionQueries administrativeQuestionQueries(
+            JpaAdministrativeQuestionCatalog catalog,
+            EntityManager em,
+            PlatformTransactionManager manager,
+            AdministrativePackageReader reader) {
         return new AdministrativeQuestionQueries(catalog, new JpaQuestionInventory(em, manager), reader);
     }
-    @Bean br.com.concursosimulator.questionbank.application.EditorialBatchUseCase editorialBatchUseCase(JpaAdministrativeQuestionCatalog catalog, JpaQuestionStore store) {
-        return new br.com.concursosimulator.questionbank.application.EditorialBatchUseCase(catalog, store, java.time.Clock.systemUTC());
+
+    @Bean
+    br.com.concursosimulator.questionbank.application.EditorialBatchUseCase editorialBatchUseCase(
+            JpaAdministrativeQuestionCatalog catalog, JpaQuestionStore store, Clock clock) {
+        return new br.com.concursosimulator.questionbank.application.EditorialBatchUseCase(catalog, store, clock);
     }
-    @Bean EditorialBatchTokens editorialBatchTokens(ImportSettings settings) {
-        return new EditorialBatchTokens(settings.secret(), java.time.Clock.systemUTC());
+
+    @Bean
+    EditorialBatchTokens editorialBatchTokens(ImportSettings settings, Clock clock) {
+        return new EditorialBatchTokens(settings.secret(), clock);
     }
 }

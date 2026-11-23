@@ -28,19 +28,38 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 @Configuration
 public class AdministrativeCurationSecurityConfiguration {
-    static final Pattern QUESTION = Pattern.compile("/api/v1/admin/questions(/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})?");
-    static final Set<String> POSTS = Set.of("/api/v1/admin/questions/lookup", "/api/v1/admin/questions/export",
-            "/api/v1/admin/editorial-decisions/preview", "/api/v1/admin/editorial-decisions/apply");
+    static final Pattern QUESTION = Pattern.compile(
+            "/api/v1/admin/questions(/[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12})?");
+    static final Set<String> POSTS = Set.of(
+            "/api/v1/admin/questions/lookup",
+            "/api/v1/admin/questions/export",
+            "/api/v1/admin/editorial-decisions/preview",
+            "/api/v1/admin/editorial-decisions/apply");
 
-    @Bean @Order(0)
-    SecurityFilterChain administrativeCurationSecurity(HttpSecurity http, AdministrativeImportPermission permission, ImportSettings settings,
-            HttpSessionSecurityContextRepository repository, @Value("${app.cors-origins}") String origins) throws Exception {
+    @Bean
+    @Order(0)
+    SecurityFilterChain administrativeCurationSecurity(
+            HttpSecurity http,
+            AdministrativeImportPermission permission,
+            ImportSettings settings,
+            HttpSessionSecurityContextRepository repository,
+            @Value("${app.cors-origins}") String origins)
+            throws Exception {
         var cors = new CorsConfiguration();
-        cors.setAllowedOrigins(Arrays.stream(origins.split(",")).map(String::trim).filter(s -> !s.isEmpty()).toList());
-        if (cors.getAllowedOrigins().stream().anyMatch(o -> o.contains("*"))) throw new IllegalArgumentException("Origem explícita obrigatória");
-        cors.setAllowCredentials(true); cors.setAllowedMethods(List.of("GET", "POST"));
+        cors.setAllowedOrigins(Arrays.stream(origins.split(","))
+                .map(String::trim)
+                .filter(s -> !s.isEmpty())
+                .toList());
+        if (cors.getAllowedOrigins().stream().anyMatch(o -> o.contains("*")))
+            throw new IllegalArgumentException("Origem explícita obrigatória");
+        cors.setAllowCredentials(true);
+        cors.setAllowedMethods(List.of("GET", "POST"));
         cors.setAllowedHeaders(List.of("Content-Type", "Accept", "X-CSRF-TOKEN"));
-        return http.securityMatcher("/api/v1/admin/questions", "/api/v1/admin/questions/**", "/api/v1/admin/editorial-decisions", "/api/v1/admin/editorial-decisions/**")
+        return http.securityMatcher(
+                        "/api/v1/admin/questions",
+                        "/api/v1/admin/questions/**",
+                        "/api/v1/admin/editorial-decisions",
+                        "/api/v1/admin/editorial-decisions/**")
                 .cors(c -> c.configurationSource(r -> cors))
                 .securityContext(c -> c.securityContextRepository(repository))
                 .requestCache(c -> c.requestCache(new NullRequestCache()))
@@ -49,17 +68,34 @@ public class AdministrativeCurationSecurityConfiguration {
                         .access((authentication, context) -> {
                             var current = authentication.get();
                             return new AuthorizationDecision(ImportSecurityConfiguration.valid(current)
-                                    && current.getDetails() instanceof br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.Evidence evidence
-                                    && permission.permits(((UserPrincipal) current.getPrincipal()).id(), evidence.version()));
-                        }).anyRequest().denyAll())
-                .exceptionHandling(e -> e.authenticationEntryPoint((r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "unauthenticated"))
+                                    && current.getDetails()
+                                            instanceof
+                                            br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity
+                                                            .Evidence
+                                                    evidence
+                                    && permission.permits(
+                                            ((UserPrincipal) current.getPrincipal()).id(), evidence.version()));
+                        })
+                        .anyRequest()
+                        .denyAll())
+                .exceptionHandling(e -> e.authenticationEntryPoint(
+                                (r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "unauthenticated"))
                         .accessDeniedHandler((r, s, x) -> {
-                            int status = x instanceof org.springframework.security.web.csrf.CsrfException ? 403
-                                    : ImportSecurityConfiguration.valid(org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication()) ? 403 : 401;
-                            ImportSecurityConfiguration.reject(s, status, status == 401 ? "unauthenticated" : "forbidden");
+                            int status =
+                                    x instanceof org.springframework.security.web.csrf.CsrfException
+                                            ? 403
+                                            : ImportSecurityConfiguration.valid(org.springframework.security.core
+                                                            .context.SecurityContextHolder.getContext()
+                                                            .getAuthentication())
+                                                    ? 403
+                                                    : 401;
+                            ImportSecurityConfiguration.reject(
+                                    s, status, status == 401 ? "unauthenticated" : "forbidden");
                         }))
-                .addFilterBefore(new ImportSecurityConfiguration.NoStore(), org.springframework.web.filter.CorsFilter.class)
-                .addFilterAfter(new BodyLimits(settings), AuthorizationFilter.class).build();
+                .addFilterBefore(
+                        new ImportSecurityConfiguration.NoStore(), org.springframework.web.filter.CorsFilter.class)
+                .addFilterAfter(new BodyLimits(settings), AuthorizationFilter.class)
+                .build();
     }
 
     static boolean allowedRoute(HttpServletRequest request) {
@@ -74,25 +110,52 @@ public class AdministrativeCurationSecurityConfiguration {
     /** Depois da autorização: configuração das decisões em lote; só JSON UTF-8 sem compressão e corpo declarado até 2 MiB em POST. */
     static final class BodyLimits extends OncePerRequestFilter {
         private final ImportSettings settings;
-        BodyLimits(ImportSettings settings) { this.settings = settings; }
-        @Override protected boolean shouldNotFilter(HttpServletRequest r) { return !"POST".equals(r.getMethod()); }
-        @Override protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain) throws ServletException, IOException {
+
+        BodyLimits(ImportSettings settings) {
+            this.settings = settings;
+        }
+
+        @Override
+        protected boolean shouldNotFilter(HttpServletRequest r) {
+            return !"POST".equals(r.getMethod());
+        }
+
+        @Override
+        protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain)
+                throws ServletException, IOException {
             // Decisões em lote dependem do destino e da chave de confirmação; consultas não.
             if (r.getServletPath().startsWith("/api/v1/admin/editorial-decisions/") && !settings.configured()) {
-                s.setStatus(503); s.setContentType("application/json"); s.setHeader("Cache-Control", "no-store");
-                s.getWriter().write("{\"error\":\"DECISIONS_NOT_CONFIGURED\",\"correlationId\":\"" + UUID.randomUUID() + "\"}"); return;
+                s.setStatus(503);
+                s.setContentType("application/json");
+                s.setHeader("Cache-Control", "no-store");
+                s.getWriter()
+                        .write("{\"error\":\"DECISIONS_NOT_CONFIGURED\",\"correlationId\":\"" + UUID.randomUUID()
+                                + "\"}");
+                return;
             }
             try {
                 var type = org.springframework.http.MediaType.parseMediaType(r.getContentType());
-                if (!"application".equals(type.getType()) || !"json".equals(type.getSubtype())
-                        || type.getCharset() != null && !java.nio.charset.StandardCharsets.UTF_8.equals(type.getCharset())) {
-                    ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE"); return;
+                if (!"application".equals(type.getType())
+                        || !"json".equals(type.getSubtype())
+                        || type.getCharset() != null
+                                && !java.nio.charset.StandardCharsets.UTF_8.equals(type.getCharset())) {
+                    ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE");
+                    return;
                 }
-            } catch (IllegalArgumentException invalid) { ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE"); return; }
-            if (!"identity".equalsIgnoreCase(Optional.ofNullable(r.getHeader("Content-Encoding")).orElse("identity"))) {
-                ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_CONTENT_ENCODING"); return;
+            } catch (IllegalArgumentException invalid) {
+                ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE");
+                return;
             }
-            if (r.getContentLengthLong() > 2_097_152) { ImportSecurityConfiguration.reject(s, 413, "REQUEST_TOO_LARGE"); return; }
+            if (!"identity"
+                    .equalsIgnoreCase(
+                            Optional.ofNullable(r.getHeader("Content-Encoding")).orElse("identity"))) {
+                ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_CONTENT_ENCODING");
+                return;
+            }
+            if (r.getContentLengthLong() > 2_097_152) {
+                ImportSecurityConfiguration.reject(s, 413, "REQUEST_TOO_LARGE");
+                return;
+            }
             chain.doFilter(r, s);
         }
     }

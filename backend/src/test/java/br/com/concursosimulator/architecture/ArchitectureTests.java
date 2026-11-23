@@ -1,139 +1,252 @@
 package br.com.concursosimulator.architecture;
 
-import br.com.concursosimulator.identity.web.SessionController;
-import br.com.concursosimulator.identity.web.GoogleLoginController;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
+import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
+import static com.tngtech.archunit.library.dependencies.SlicesRuleDefinition.slices;
+import static org.assertj.core.api.Assertions.assertThat;
+
 import br.com.concursosimulator.identity.web.AuthConfigResponse;
+import br.com.concursosimulator.identity.web.GoogleLoginController;
+import br.com.concursosimulator.identity.web.SessionController;
+import com.tngtech.archunit.core.domain.JavaClasses;
 import com.tngtech.archunit.core.importer.ClassFileImporter;
 import com.tngtech.archunit.core.importer.ImportOption;
-import com.tngtech.archunit.core.domain.JavaClasses;
-import org.junit.jupiter.api.Test;
 import java.lang.reflect.ParameterizedType;
+import org.junit.jupiter.api.Test;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
-import static org.assertj.core.api.Assertions.assertThat;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
-import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.classes;
-import static com.tngtech.archunit.library.dependencies.SlicesRuleDefinition.slices;
 
 class ArchitectureTests {
     private static final JavaClasses CODE = new ClassFileImporter()
-            .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS).importPackages("br.com.concursosimulator");
+            .withImportOption(ImportOption.Predefined.DO_NOT_INCLUDE_TESTS)
+            .importPackages("br.com.concursosimulator");
 
     @Test
     void coreIsFrameworkIndependentAndDoesNotDependOnAdapters() {
-        classes().that().resideInAnyPackage("..domain..", "..application..")
-                .should().onlyDependOnClassesThat().resideInAnyPackage("java..", "..domain..", "..application..")
+        classes()
+                .that()
+                .resideInAnyPackage("..domain..", "..application..")
+                .should()
+                .onlyDependOnClassesThat()
+                .resideInAnyPackage("java..", "..domain..", "..application..")
                 .check(CODE);
-        noClasses().that().resideInAnyPackage("..domain..", "..application..")
-                .should().dependOnClassesThat().resideInAnyPackage("org.springframework..", "jakarta.persistence..",
-                        "org.hibernate..", "jakarta.servlet..", "java.sql..", "javax.sql..", "..infrastructure..", "..web..")
+        noClasses()
+                .that()
+                .resideInAnyPackage("..domain..", "..application..")
+                .should()
+                .dependOnClassesThat()
+                .resideInAnyPackage(
+                        "org.springframework..",
+                        "jakarta.persistence..",
+                        "org.hibernate..",
+                        "jakarta.servlet..",
+                        "java.sql..",
+                        "javax.sql..",
+                        "..infrastructure..",
+                        "..web..")
                 .check(CODE);
     }
 
     @Test
     void domainDoesNotDependOnApplication() {
-        noClasses().that().resideInAPackage("..domain..")
-                .should().dependOnClassesThat().resideInAPackage("..application..").check(CODE);
+        noClasses()
+                .that()
+                .resideInAPackage("..domain..")
+                .should()
+                .dependOnClassesThat()
+                .resideInAPackage("..application..")
+                .check(CODE);
     }
 
     @Test
     void questionCoreOwnsItsRulesWithoutDependingOnIdentityOrAdapters() {
-        classes().that().resideInAnyPackage("..questionbank.domain..", "..questionbank.application..")
-                .should().onlyDependOnClassesThat().resideInAnyPackage(
-                        "java..", "..questionbank.domain..", "..questionbank.application..").check(CODE);
+        classes()
+                .that()
+                .resideInAnyPackage("..questionbank.domain..", "..questionbank.application..")
+                .should()
+                .onlyDependOnClassesThat()
+                .resideInAnyPackage("java..", "..questionbank.domain..", "..questionbank.application..")
+                .check(CODE);
     }
 
-    @Test void mockExamCoreConsumesQuestionAndParameterizationDomainWithoutAdaptersOrReverseDependency() {
-        classes().that().resideInAnyPackage("..mockexam.domain..", "..mockexam.application..")
-                .should().onlyDependOnClassesThat().resideInAnyPackage(
-                        "java..", "..mockexam.domain..", "..mockexam.application..", "..questionbank.domain..",
-                        "..parameterization.domain..").check(CODE);
+    @Test
+    void mockExamCoreConsumesQuestionAndParameterizationDomainWithoutAdaptersOrReverseDependency() {
+        classes()
+                .that()
+                .resideInAnyPackage("..mockexam.domain..", "..mockexam.application..")
+                .should()
+                .onlyDependOnClassesThat()
+                .resideInAnyPackage(
+                        "java..",
+                        "..mockexam.domain..",
+                        "..mockexam.application..",
+                        "..questionbank.domain..",
+                        "..parameterization.domain..")
+                .check(CODE);
     }
-    @Test void parameterizationCoreOnlyDependsOnItsOwnCoreAndQuestionValueObjects() {
-        classes().that().resideInAnyPackage("..parameterization.domain..", "..parameterization.application..")
-                .should().onlyDependOnClassesThat().resideInAnyPackage(
-                        "java..", "..parameterization.domain..", "..parameterization.application..", "..questionbank.domain..").check(CODE);
+
+    @Test
+    void parameterizationCoreOnlyDependsOnItsOwnCoreAndQuestionValueObjects() {
+        classes()
+                .that()
+                .resideInAnyPackage("..parameterization.domain..", "..parameterization.application..")
+                .should()
+                .onlyDependOnClassesThat()
+                .resideInAnyPackage(
+                        "java..",
+                        "..parameterization.domain..",
+                        "..parameterization.application..",
+                        "..questionbank.domain..")
+                .check(CODE);
     }
-    @Test void subjectReviewCoreConsumesOnlyCompletedEvidenceAndQuestionValueObjects() {
-        classes().that().resideInAnyPackage("..subjectreview.domain..", "..subjectreview.application..")
-                .should().onlyDependOnClassesThat().resideInAnyPackage(
-                        "java..", "..subjectreview.domain..", "..subjectreview.application..", "..questionbank.domain..",
-                        "..mockexam.domain..", "..mockexam.application..").check(CODE);
+
+    @Test
+    void subjectReviewCoreConsumesOnlyCompletedEvidenceAndQuestionValueObjects() {
+        classes()
+                .that()
+                .resideInAnyPackage("..subjectreview.domain..", "..subjectreview.application..")
+                .should()
+                .onlyDependOnClassesThat()
+                .resideInAnyPackage(
+                        "java..",
+                        "..subjectreview.domain..",
+                        "..subjectreview.application..",
+                        "..questionbank.domain..",
+                        "..mockexam.domain..",
+                        "..mockexam.application..")
+                .check(CODE);
     }
-    @Test void attemptControllersReceiveVerifiedActorsAndUseConcreteWebContracts() {
-        for (var controller:java.util.List.of(br.com.concursosimulator.mockexam.web.AttemptController.class,
+
+    @Test
+    void attemptControllersReceiveVerifiedActorsAndUseConcreteWebContracts() {
+        for (var controller : java.util.List.of(
+                br.com.concursosimulator.mockexam.web.AttemptController.class,
                 br.com.concursosimulator.mockexam.web.AttemptHistoryController.class,
                 br.com.concursosimulator.mockexam.web.LessonPracticeController.class)) {
-            noClasses().that().haveFullyQualifiedName(controller.getName()).should().dependOnClassesThat()
-                    .resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..").check(CODE);
-            for(var method:controller.getDeclaredMethods()) {
-                if(java.util.Arrays.stream(method.getAnnotations()).noneMatch(a -> a.annotationType().isAnnotationPresent(org.springframework.web.bind.annotation.RequestMapping.class)))continue;
+            noClasses()
+                    .that()
+                    .haveFullyQualifiedName(controller.getName())
+                    .should()
+                    .dependOnClassesThat()
+                    .resideInAnyPackage(
+                            "org.springframework.security..", "org.springframework.session..", "jakarta.servlet.http..")
+                    .check(CODE);
+            for (var method : controller.getDeclaredMethods()) {
+                if (java.util.Arrays.stream(method.getAnnotations())
+                        .noneMatch(a -> a.annotationType()
+                                .isAnnotationPresent(org.springframework.web.bind.annotation.RequestMapping.class)))
+                    continue;
                 assertThat(method.getGenericReturnType()).isInstanceOf(ParameterizedType.class);
-                var response=(ParameterizedType)method.getGenericReturnType();assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
+                var response = (ParameterizedType) method.getGenericReturnType();
+                assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
                 assertThat(response.getActualTypeArguments()[0]).isInstanceOf(Class.class);
-                assertThat(((Class<?>)response.getActualTypeArguments()[0]).isRecord()).isTrue();
+                assertThat(((Class<?>) response.getActualTypeArguments()[0]).isRecord())
+                        .isTrue();
             }
         }
     }
 
-    @Test void questionControllerDoesNotOwnSessionOrAuthenticationAndHasConcreteContracts() {
-        noClasses().that().haveFullyQualifiedName(br.com.concursosimulator.questionbank.web.QuestionController.class.getName())
-                .should().dependOnClassesThat().resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..")
+    @Test
+    void questionControllerDoesNotOwnSessionOrAuthenticationAndHasConcreteContracts() {
+        noClasses()
+                .that()
+                .haveFullyQualifiedName(br.com.concursosimulator.questionbank.web.QuestionController.class.getName())
+                .should()
+                .dependOnClassesThat()
+                .resideInAnyPackage(
+                        "org.springframework.security..", "org.springframework.session..", "jakarta.servlet.http..")
                 .check(CODE);
-        for(var method:br.com.concursosimulator.questionbank.web.QuestionController.class.getDeclaredMethods()) {
-            if(!method.isAnnotationPresent(GetMapping.class)) continue;
+        for (var method : br.com.concursosimulator.questionbank.web.QuestionController.class.getDeclaredMethods()) {
+            if (!method.isAnnotationPresent(GetMapping.class)) continue;
             assertThat(method.getGenericReturnType()).isInstanceOf(ParameterizedType.class);
-            var returnType=(ParameterizedType)method.getGenericReturnType();assertThat(returnType.getRawType()).isEqualTo(ResponseEntity.class);
+            var returnType = (ParameterizedType) method.getGenericReturnType();
+            assertThat(returnType.getRawType()).isEqualTo(ResponseEntity.class);
             assertThat(returnType.getActualTypeArguments()[0]).isInstanceOf(Class.class);
-            assertThat(((Class<?>)returnType.getActualTypeArguments()[0]).isRecord()).isTrue();
+            assertThat(((Class<?>) returnType.getActualTypeArguments()[0]).isRecord())
+                    .isTrue();
         }
     }
 
-    @Test void subjectReviewControllerReceivesVerifiedActorAndUsesConcreteWebRecords() {
-        var controller=br.com.concursosimulator.subjectreview.web.ReviewController.class;
-        noClasses().that().haveFullyQualifiedName(controller.getName()).should().dependOnClassesThat()
-                .resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..").check(CODE);
-        for(var method:controller.getDeclaredMethods()) {
-            if(!method.isAnnotationPresent(GetMapping.class))continue;
-            var response=(ParameterizedType)method.getGenericReturnType();assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
+    @Test
+    void subjectReviewControllerReceivesVerifiedActorAndUsesConcreteWebRecords() {
+        var controller = br.com.concursosimulator.subjectreview.web.ReviewController.class;
+        noClasses()
+                .that()
+                .haveFullyQualifiedName(controller.getName())
+                .should()
+                .dependOnClassesThat()
+                .resideInAnyPackage(
+                        "org.springframework.security..", "org.springframework.session..", "jakarta.servlet.http..")
+                .check(CODE);
+        for (var method : controller.getDeclaredMethods()) {
+            if (!method.isAnnotationPresent(GetMapping.class)) continue;
+            var response = (ParameterizedType) method.getGenericReturnType();
+            assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
             assertThat(response.getActualTypeArguments()[0]).isInstanceOf(Class.class);
-            assertThat(((Class<?>)response.getActualTypeArguments()[0]).isRecord()).isTrue();
+            assertThat(((Class<?>) response.getActualTypeArguments()[0]).isRecord())
+                    .isTrue();
         }
     }
 
     @Test
     void webDoesNotAccessPersistenceImplementations() {
-        noClasses().that().resideInAPackage("..web..")
-                .should().dependOnClassesThat().resideInAnyPackage("..infrastructure..", "jakarta.persistence..",
-                        "org.hibernate..", "org.springframework.jdbc..", "org.springframework.data..", "java.sql..", "javax.sql..")
+        noClasses()
+                .that()
+                .resideInAPackage("..web..")
+                .should()
+                .dependOnClassesThat()
+                .resideInAnyPackage(
+                        "..infrastructure..",
+                        "jakarta.persistence..",
+                        "org.hibernate..",
+                        "org.springframework.jdbc..",
+                        "org.springframework.data..",
+                        "java.sql..",
+                        "javax.sql..")
                 .check(CODE);
     }
 
     @Test
     void jpaModelsAreInfrastructureOnly() {
-        classes().that().areAnnotatedWith(jakarta.persistence.Entity.class)
-                .or().areAnnotatedWith(jakarta.persistence.Embeddable.class)
-                .should().resideInAPackage("..infrastructure.persistence..").check(CODE);
+        classes()
+                .that()
+                .areAnnotatedWith(jakarta.persistence.Entity.class)
+                .or()
+                .areAnnotatedWith(jakarta.persistence.Embeddable.class)
+                .should()
+                .resideInAPackage("..infrastructure.persistence..")
+                .check(CODE);
     }
 
     @Test
     void functionalModulesHaveNoCycles() {
-        slices().matching("br.com.concursosimulator.(*)..").should().beFreeOfCycles().check(CODE);
+        slices().matching("br.com.concursosimulator.(*)..")
+                .should()
+                .beFreeOfCycles()
+                .check(CODE);
     }
 
     @Test
     void sessionControllerDoesNotOwnAuthenticationOrCsrfMechanisms() {
         // Escopo intencional: handlers/callbacks OIDC podem consumir Authentication.
-        noClasses().that().haveFullyQualifiedName(SessionController.class.getName())
-                .should().dependOnClassesThat().resideInAnyPackage(
+        noClasses()
+                .that()
+                .haveFullyQualifiedName(SessionController.class.getName())
+                .should()
+                .dependOnClassesThat()
+                .resideInAnyPackage(
                         "org.springframework.security.core", "org.springframework.security.core.context..",
                         "org.springframework.security.authentication..", "jakarta.servlet.http..")
                 .check(CODE);
-        noClasses().that().haveFullyQualifiedName(SessionController.class.getName())
-                .should().dependOnClassesThat().haveFullyQualifiedName(
-                        "org.springframework.security.web.csrf.CsrfTokenRepository")
-                .orShould().dependOnClassesThat().haveFullyQualifiedName(
-                        "org.springframework.security.web.csrf.CsrfFilter")
+        noClasses()
+                .that()
+                .haveFullyQualifiedName(SessionController.class.getName())
+                .should()
+                .dependOnClassesThat()
+                .haveFullyQualifiedName("org.springframework.security.web.csrf.CsrfTokenRepository")
+                .orShould()
+                .dependOnClassesThat()
+                .haveFullyQualifiedName("org.springframework.security.web.csrf.CsrfFilter")
                 .check(CODE);
     }
 
@@ -152,7 +265,8 @@ class ArchitectureTests {
     void sessionHttpResponsesUseConcreteWebRecords() {
         // Protege este contrato estável, sem impor record a payloads dinâmicos ou outros adaptadores.
         var endpoints = java.util.Arrays.stream(SessionController.class.getDeclaredMethods())
-                .filter(method -> method.isAnnotationPresent(GetMapping.class)).toList();
+                .filter(method -> method.isAnnotationPresent(GetMapping.class))
+                .toList();
         assertThat(endpoints).hasSize(2);
         for (var endpoint : endpoints) {
             assertThat(endpoint.getGenericReturnType()).isInstanceOf(ParameterizedType.class);

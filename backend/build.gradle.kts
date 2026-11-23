@@ -87,6 +87,10 @@ spotless {
     lineEndings = com.diffplug.spotless.LineEnding.UNIX
     java {
         target("src/**/*.java")
+        // As definições editoriais em editorial/parameterized-questions/ fixam os bytes deste
+        // arquivo por SHA-256 (contentSha256/answerSha256) como proveniência; reformatá-lo
+        // quebra essa proveniência e o audit_parameterized_content.py.
+        targetExclude("src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java")
         palantirJavaFormat("2.103.0")
         removeUnusedImports()
         trimTrailingWhitespace()

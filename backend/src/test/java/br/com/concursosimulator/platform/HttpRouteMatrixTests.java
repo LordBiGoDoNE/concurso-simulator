@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.fail;
 
 import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.identity.application.port.AdministrativePasswords;
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -34,9 +36,6 @@ import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 
 /**
@@ -64,10 +63,8 @@ import tools.jackson.databind.json.JsonMapper;
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("local")
-@Testcontainers
 class HttpRouteMatrixTests {
-    @Container
-    static final PostgreSQLContainer PG = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG = TestPostgres.newDatabase();
 
     static final Path SNAPSHOT = Path.of("src/test/resources/http/route-matrix.tsv");
     static final String PASSWORD = "synthetic-route-matrix-password";

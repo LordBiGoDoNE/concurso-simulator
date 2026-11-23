@@ -3,6 +3,8 @@ package br.com.concursosimulator.platform;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -16,9 +18,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.postgresql.PostgreSQLContainer;
 
 /**
  * Todo mapeamento HTTP de controller tem exatamente uma rota declarada, e toda rota declarada é atendida
@@ -29,10 +28,8 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
  */
 @SpringBootTest
 @ActiveProfiles("local")
-@Testcontainers
 class ApiRouteCoverageTests {
-    @Container
-    static final PostgreSQLContainer PG = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG = TestPostgres.newDatabase();
 
     @DynamicPropertySource
     static void properties(DynamicPropertyRegistry r) {

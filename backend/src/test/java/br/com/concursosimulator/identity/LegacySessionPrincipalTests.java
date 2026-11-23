@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
 import br.com.concursosimulator.questionbank.QuestionBrowserFixtures;
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.io.ByteArrayOutputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -29,9 +31,6 @@ import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 
 /**
@@ -41,10 +40,8 @@ import tools.jackson.databind.json.JsonMapper;
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("local")
-@Testcontainers
 class LegacySessionPrincipalTests {
-    @Container
-    static final PostgreSQLContainer PG = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG = TestPostgres.newDatabase();
 
     @DynamicPropertySource
     static void properties(DynamicPropertyRegistry r) {

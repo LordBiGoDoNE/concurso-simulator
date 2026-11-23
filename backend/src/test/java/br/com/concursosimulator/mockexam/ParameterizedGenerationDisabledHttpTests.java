@@ -5,6 +5,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 import br.com.concursosimulator.questionbank.domain.Discipline;
 import br.com.concursosimulator.questionbank.domain.TargetRole;
 import br.com.concursosimulator.shared.web.ErrorResponses;
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
@@ -20,9 +22,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 
 /** Geração parametrizada desligada: 503 nomeado, sem gravar tentativa ou comando (backend-http-boundaries, D4). */
@@ -30,10 +29,8 @@ import tools.jackson.databind.json.JsonMapper;
         webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT,
         properties = "parameterization.generation-enabled=false")
 @ActiveProfiles("local")
-@Testcontainers
 class ParameterizedGenerationDisabledHttpTests {
-    @Container
-    static final PostgreSQLContainer PG = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG = TestPostgres.newDatabase();
 
     @DynamicPropertySource
     static void properties(DynamicPropertyRegistry r) {

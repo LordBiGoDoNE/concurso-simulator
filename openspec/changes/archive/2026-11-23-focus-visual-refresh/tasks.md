@@ -51,8 +51,9 @@ e SHAs de cada grupo; o merge em `main` exige autorização própria.
 
 - [x] 6.1 Verificar no Docker local os fluxos início, aula, prática, simulado, resultado e histórico, nos dois temas, em desktop e celular, sem requisições externas.
 - [x] 6.2 Consolidar as capturas antes e depois e os limites (figuras SVG em placa clara).
-- [ ] 6.3 Executar a revisão final de código com o `spec-reviewer` (Claude Opus 5.5, esforço medium) em contexto novo, registrar `spec-review.json` e `spec-review.md` e corrigir os achados.
-- [ ] 6.4 Conferir checks e SHAs e solicitar os merges específicos.
+- [x] 6.3 Executar a revisão final de código com o `spec-reviewer` (Claude Opus 5.5, esforço medium) em contexto novo, registrar `spec-review.json` e `spec-review.md` e corrigir os achados.
+- [x] 6.4 Conferir checks e SHAs e solicitar os merges específicos.
+  - Marcadas no arquivamento retroativo (2026-11-23): a rodada 6 do `spec-review.md` não teve achados bloqueadores, altos ou médios (baixos na #216), e o #204 foi mesclado na `main` em 3bc2d93.
 
 Cada grupo inclui código, testes e documentação. Cada lote termina com testes,
 triagem própria e relatório de SHAs e checks antes de pedir aprovação de merge.

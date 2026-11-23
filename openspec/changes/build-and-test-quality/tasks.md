@@ -39,8 +39,8 @@ e o caso vai ao usuário.
   em `AdministrativeRecovery` (D6).
 - [x] 2.2 Regra ArchUnit contra `Clock.system*` fora da configuração, com teste que
   prova a falha.
-- [ ] 2.3 Abrir issue `review-finding` sobre `Instant.now()` nas classes de segurança
-  (limite da proteção, D6).
+- [x] 2.3 Abrir issue `review-finding` sobre `Instant.now()` nas classes de segurança
+  (limite da proteção, D6): #266
 
 ## 3. PostgreSQL de teste compartilhado — depende de 2 (~300 linhas autorais)
 

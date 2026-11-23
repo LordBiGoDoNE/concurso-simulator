@@ -9,7 +9,7 @@ certificação de revisão.
 
 #### Scenario: PR qualquer executa todos os testes de scripts/tests
 
-- **WHEN** um pull request é aberto ou atualizado, qualquer que seja a base
+- **WHEN** um pull request é aberto, reaberto ou recebe novos commits, qualquer que seja a base
 - **THEN** o job `scripts-tests` executa todos os módulos de `scripts/tests`
 - **AND** uma falha em qualquer módulo deixa o job vermelho
 

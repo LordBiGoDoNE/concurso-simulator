@@ -1,43 +1,30 @@
 # OpenSpec no concurso-simulator
 
-Ferramenta inicializada com OpenSpec **1.14.1**, perfil `core`, integração OpenCode e documentos em português. Não há dependência de OpenSpec para executar o site ou a futura aplicação.
+O projeto usa OpenSpec **1.15.0**, com documentos em português. A OpenSpec não é necessária para executar o site nem a aplicação.
 
 ## Usar a CLI sem instalação global
 
 ```sh
-OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.14.1 list
-OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.14.1 status --change bootstrap-application-stack
-OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.14.1 validate bootstrap-application-stack --strict
+OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.15.0 list
+OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.15.0 validate --all
+OPENSPEC_TELEMETRY=0 npx --yes @fission-ai/openspec@1.15.0 archive <change-name> -y
 ```
 
-Os comandos nesta documentação desativam telemetria apenas para a execução, sem alterar preferências globais. A ferramenta está disponível via `npx`, não foi instalada globalmente.
+Esses comandos desativam a telemetria só durante a execução e não alteram preferências globais.
 
-## Fluxo no OpenCode
+## Estrutura
 
-Abra o projeto como diretório da sessão para carregar `.opencode/commands/` e `.opencode/skills/`.
+- `specs/`: capacidades vigentes do sistema entregue.
+- `changes/<change-name>/`: specs em andamento (proposta, design, deltas e tarefas).
+- `changes/archive/`: changes entregues. Os deltas delas já estão aplicados em `specs/`.
 
-- `/opsx-explore`: discutir decisões e alternativas.
-- `/opsx-propose`: preparar proposta, requisitos, desenho e tarefas.
-- `/opsx-update`: ajustar artefatos após a revisão.
-- `/opsx-apply`: implementar uma mudança expressamente aprovada.
-- `/opsx-archive`: consolidar a mudança implementada e verificada.
+As regras particulares do projeto ficam em `openspec/config.yaml`. Não implemente sem spec aprovada e não arquive changes ainda não integradas à `main`.
 
-Os arquivos gerados da ferramenta devem ser atualizados pela CLI; regras particulares do projeto ficam em `openspec/config.yaml`. Não use `apply` antes da aprovação, nem arquive propostas ainda não implementadas.
+## Ciclo atual
 
-## Primeira proposta
+Novas specs partem da `main` atualizada e seguem tarefas → `epic/<spec>` → `main`. O ciclo completo (spec, issue, autorização, revisão por grupo e final, pacote e aprovação únicos, arquivamento) segue as regras globais em `~/.claude/rules/` e o `AGENTS.md` do projeto, nessa precedência. A aplicação está em produção na VPS (ver `infra/vps-production/README.md`). `stable` publica apenas o material estático.
 
-`changes/bootstrap-application-stack/` contém apenas o planejamento da base local Java/PostgreSQL e a preservação das aulas. Todas as tarefas de implementação permanecem pendentes.
-
-## Ciclo atual após a entrega
-
-A reformulação foi entregue à main pelo #133 e o layout pelo #147. Novas specs
-partem de main atualizada e seguem tarefas → epic/<spec> → main. O ciclo (spec,
-issue, autorização, revisão por grupo e final, pacote e aprovação únicos) segue as
-regras globais em `~/.claude/rules/` e o `AGENTS.md` do projeto, nessa precedência.
-A antiga épica geral fica preservada como histórico. Stable publica apenas o
-material estático.
-
-## Registro histórico do planejamento inicial
+## Registro histórico do planejamento inicial (não vigente)
 
 Os incrementos são revisados separadamente, mas a **entrega é única**: as branches das specs integram em `epic/application-reformulation`, não diretamente em main. A base inicial é a primeira spec desse pacote. Roadmap e critérios de entrega: `docs/application-reformulation.md`.
 
@@ -48,4 +35,4 @@ Os incrementos são revisados separadamente, mas a **entrega é única**: as bra
 5. Questões parametrizadas, com validação matemática.
 6. Desempenho por conceito e revisão de dificuldades.
 
-Hospedagem e previews completos da aplicação terão proposta própria antes de colocar Java e PostgreSQL online. O GitHub Pages atual publica apenas o material estático.
+A hospedagem da aplicação completa foi entregue depois pela spec `vps-staging-delivery` (#224). O GitHub Pages continua publicando apenas o material estático.

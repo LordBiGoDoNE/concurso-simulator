@@ -37,7 +37,7 @@ for (const colorScheme of ['light', 'dark'] as const) test(`51 aulas legíveis n
         const ratio = (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);
         const size = parseFloat(style.fontSize), bold = Number(style.fontWeight) >= 700;
         const min = size >= 24 || (bold && size >= 18.66) ? 3 : 4.5;
-        if (ratio < min) out.push(`${element.tagName.toLowerCase()}.${element.className} ${ratio.toFixed(2)} "${element.textContent!.trim().slice(0, 30)}"`);
+        if (ratio < min) out.push(`${element.tagName.toLowerCase()}.${element.className} ${ratio.toFixed(2)} "${element.textContent.trim().slice(0, 30)}"`);
       }
       return out;
     });

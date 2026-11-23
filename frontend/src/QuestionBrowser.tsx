@@ -35,7 +35,8 @@ export default function QuestionBrowser() {
     questionList(filters, controller.signal).then(value => { if (active) setList({ key: queryKey, state: 'ready', value }); })
       .catch(() => { if (active) setList({ key: queryKey, state: 'error' }); });
     return () => { active = false; controller.abort(); };
-  }, [catalogReady, queryKey, retry]); // key contém todos os filtros; identidade não interfere na consulta pública.
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- queryKey contém todos os filtros; identidade não interfere na consulta pública.
+  }, [catalogReady, queryKey, retry]);
   useEffect(() => {
     if (!selected) return;
     const controller = new AbortController(); let active = true;

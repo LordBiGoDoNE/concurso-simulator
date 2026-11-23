@@ -3,7 +3,7 @@ import { afterEach, expect, it, vi } from 'vitest';
 import App from './App';
 
 function api(offline = false) {
-  const fetchMock = vi.fn(async (input: string, options?: RequestInit) => {
+  const fetchMock = vi.fn(async (input: string, _options?: RequestInit) => {
     if (offline) throw new TypeError('offline');
     const url = new URL(input);
     const body = url.pathname.endsWith('/auth/config') ? { googleEnabled: false }

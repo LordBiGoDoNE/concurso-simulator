@@ -163,6 +163,14 @@ de `spotlessApply` (gerado, fora da contagem de linhas autorais); commit de
   existente é corrigida quando a correção é inequívoca e coberta por teste; senão,
   supressão na linha com justificativa. Nenhuma regra desligada globalmente para
   acomodar código existente; as supressões ficam listadas no PR.
+- Escopo de testes (decidido no grupo 5, com a contagem real: 58 violações em `src`,
+  155 nos testes unitários e 211 no e2e): em `*.test.*`, `test/` e `e2e/` ficam
+  desligadas só as regras de dados não confiáveis (`no-unsafe-*`, `no-explicit-any`),
+  `require-await` (mocks `async`), `unbound-method` (mocks do Vitest) e
+  `no-base-to-string` (`mock.calls` tipa a URL como `RequestInfo | URL`). No código de
+  produção todas continuam ativas, e as violações de `src` foram corrigidas.
+- `no-unused-vars` ignora nomes com prefixo `_` (omissão intencional em desestruturação
+  e parâmetros exigidos pela assinatura).
 - Restrição de lint: `fetch` só em `src/http-client.ts` (ativada no grupo 6).
 - Prettier com `printWidth: 120`, `singleQuote: true`, `semi: true` e `.prettierignore`
   para JSON gerados (`src/lesson-documents/`, `lesson-catalog.json`, `lesson-paths.json`)

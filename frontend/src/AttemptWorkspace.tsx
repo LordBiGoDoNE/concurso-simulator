@@ -27,8 +27,10 @@ export default function AttemptWorkspace({ identity, onUnavailable, onGuestActiv
     return () => controller.abort();
   }, [identity, verifyRetry, onUnavailable]);
   useEffect(() => () => { generation.current++; request.current?.abort(); }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- só troca de tentativa (id) muda o estado de visitante, não novas versões dela.
   useEffect(() => { onGuestActive(!identity.connected && selected !== null); }, [identity.connected, selected?.id, onGuestActive]);
   useEffect(() => () => onGuestActive(false), [onGuestActive]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- o aviso depende só da tentativa (id) e do seu término.
   useLayoutEffect(() => { onRunActiveChange?.(selected !== null && selected.finishedAt === null); }, [selected?.id, selected?.finishedAt, onRunActiveChange]);
   useLayoutEffect(() => () => onRunActiveChange?.(false), [onRunActiveChange]);
   const finished = useCallback(() => { setHistoryRefresh(v => v + 1); onRunActiveChange?.(false); }, [onRunActiveChange]);

@@ -45,6 +45,7 @@ export default function LessonPracticeWorkspace({identity,contextActive,onUnavai
     gestures.forEach(g=>window.addEventListener(g,stop,{passive:true}));observer.observe(document.body);
     return stop;
   },[practiceRequest,inlineKey]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- só conexão e troca de prática (id) mudam o estado de visitante.
   useEffect(()=>{onGuestActive(!!identity && !identity.connected && selected!==null);return()=>onGuestActive(false);},[identity?.connected,selected?.id,onGuestActive]);
   useLayoutEffect(()=>{
     const current=selectedRef.current;if(!current || !contextActive)return;const c=new AbortController();setAccess('checking');

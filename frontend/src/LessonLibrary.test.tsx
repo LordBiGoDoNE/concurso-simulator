@@ -34,7 +34,7 @@ it('pede a escolha de disciplina antes de listar e mostra só as aulas dela', ()
 });
 it('busca sem acento atravessa disciplinas, mantém estado vazio explícito e limpa filtros', () => {
   render(<LessonLibrary />);
-  const filter = () => screen.getByLabelText('Filtrar disciplina') as HTMLSelectElement;
+  const filter = () => screen.getByLabelText<HTMLSelectElement>('Filtrar disciplina');
   expect(filter().selectedOptions[0]).toHaveTextContent('Escolha uma disciplina');
   fireEvent.change(screen.getByLabelText('Buscar aula'), { target: { value: 'interpretacao' } });
   expect(screen.getByRole('status')).toHaveTextContent('1 aula encontrada.');

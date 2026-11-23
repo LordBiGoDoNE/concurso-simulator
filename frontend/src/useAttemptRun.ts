@@ -14,7 +14,9 @@ export function useAttemptRun(initial: RunView, onUnavailable: () => void, trans
   const drafts = useRef<Record<string, string | null>>({}); const queue = useRef<Job[]>([]);
   const [revision, redraw] = useState(0); const working = useRef(false); const blocked = useRef(false);
   const lifetime = useRef<AbortController | null>(null); const unavailable = useRef(onUnavailable); unavailable.current = onUnavailable;
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- ciclo de vida do componente: roda só na montagem e aborta na desmontagem.
   useLayoutEffect(() => { const controller = new AbortController(); lifetime.current = controller; if (queue.current.length) void pump(); return () => controller.abort(); }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- carrega o resultado quando a tentativa termina, uma vez.
   useEffect(() => { if (view.finishedAt !== null && !result) void loadResult(); }, [view.finishedAt]);
   async function loadResult() {
     const controller = lifetime.current; if (!controller || view.finishedAt === null) return;

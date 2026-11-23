@@ -19,6 +19,7 @@ export default function AttemptPractice({ initial, onUnavailable, onFinished, re
   const wasConfirming = useRef(false);
   useEffect(() => { if (wasConfirming.current && !confirm) finishButton.current?.focus(); wasConfirming.current = confirm; }, [confirm]);
   useEffect(() => { heading.current?.focus(); }, [position]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps -- avisa uma vez quando a tentativa termina, não a cada nova versão da view.
   useEffect(() => { if (run.view.finishedAt !== null) onFinished?.(run.view); }, [run.view.finishedAt, onFinished]);
   const item = run.view.items[position]; const selection = run.selected(item);
   const answered = run.view.items.filter(i => run.selected(i) !== null).length;

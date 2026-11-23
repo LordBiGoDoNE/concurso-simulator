@@ -70,12 +70,14 @@ export function parseNativeLesson(value: unknown, topicId: string): NativeLesson
     if ((node.tag === 'animate' || node.tag === 'set') && !animatable.has(String(name))) return invalid();
     if (node.tag === 'animateTransform' && (name !== 'transform' || !transformTypes.has(String(attrs.type)))) return invalid();
     if (node.tag === 'animateMotion' && name !== undefined) return invalid();
-    if (attrs.fill !== undefined && !['freeze', 'remove'].includes(String(attrs.fill))) return invalid();
-    if (attrs.repeatCount !== undefined && attrs.repeatCount !== 'indefinite' && !/^\d+(?:\.\d+)?$/.test(String(attrs.repeatCount))) return invalid();
-    if (attrs.dur !== undefined && !timePattern.test(String(attrs.dur))) return invalid();
+    if (attrs.fill !== undefined && !(typeof attrs.fill === 'string' && ['freeze', 'remove'].includes(attrs.fill))) return invalid();
+    if (attrs.repeatCount !== undefined && attrs.repeatCount !== 'indefinite' && !(typeof attrs.repeatCount === 'string' && /^\d+(?:\.\d+)?$/.test(attrs.repeatCount))) return invalid();
+    if (attrs.dur !== undefined && !(typeof attrs.dur === 'string' && timePattern.test(attrs.dur))) return invalid();
     for (const key of ['begin', 'end']) {
-      if (attrs[key] === undefined) continue;
-      for (const part of String(attrs[key]).split(';').map(value => value.trim())) {
+      const timing = attrs[key];
+      if (timing === undefined) continue;
+      if (typeof timing !== 'string') return invalid();
+      for (const part of timing.split(';').map(value => value.trim())) {
         if (timePattern.test(part)) continue;
         const match = syncPattern.exec(part);
         if (!match || !match[1].startsWith(prefix)) return invalid();
@@ -96,7 +98,7 @@ export function parseNativeLesson(value: unknown, topicId: string): NativeLesson
       return;
     }
     const motion = animationTags.has(node.tag);
-    if (!(tags.has(node.tag) || animated && motion) || !Array.isArray(node.children) || (node.tone !== undefined && !tones.has(String(node.tone)))) return invalid();
+    if (!(tags.has(node.tag) || animated && motion) || !Array.isArray(node.children) || (node.tone !== undefined && !(typeof node.tone === 'string' && tones.has(node.tone)))) return invalid();
     if (motion) smil(node, record(node.attrs) ? node.attrs : {}, parent);
     if (node.attrs !== undefined) {
       if (!record(node.attrs)) return invalid();

@@ -1,5 +1,5 @@
 import { identityApiUrl } from './identity-api';
-import type { Classification, Content, Detail } from './question-api';
+import type { Content, Detail } from './question-api';
 
 export interface AttemptItem extends Detail { id: string; selectedAlternativeId: string | null }
 export interface RunView { id: string; createdAt: string; finishedAt: string | null; version: number; items: AttemptItem[] }
@@ -65,7 +65,7 @@ async function request<T>(path: string, signal: AbortSignal, validate: (v: unkno
     if ([401, 403, 404].includes(response.status)) throw new AttemptApiError(response.status);
     const body: unknown = await response.json(); controller.signal.throwIfAborted();
     if (!response.ok) {
-      const available = typeof body === 'object' && body && 'available' in body && Array.isArray(body.available) ? body.available.filter((a): a is { disciplineId: string; available: number } => !!a && typeof a.disciplineId === 'string' && Number.isSafeInteger(a.available) && a.available >= 0) : [];
+      const available = typeof body === 'object' && body && 'available' in body && Array.isArray(body.available) ? (body.available as unknown[]).filter((a): a is { disciplineId: string; available: number } => typeof a === 'object' && a !== null && 'disciplineId' in a && typeof a.disciplineId === 'string' && 'available' in a && Number.isSafeInteger(a.available) && (a.available as number) >= 0) : [];
       throw new AttemptApiError(response.status, available);
     }
     return body;

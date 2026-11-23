@@ -47,6 +47,19 @@ it.each([
   expect(() => parse(withAnimate(attrs))).toThrow();
 });
 
+it.each([
+  ['dur numérico', { attributeName: 'opacity', to: '1', dur: 1 }],
+  ['fill em lista', { attributeName: 'opacity', to: '1', dur: '1s', fill: ['freeze'] }],
+  ['begin em lista', { attributeName: 'opacity', to: '1', dur: '1s', begin: ['0s'] }],
+])('recusa valor de atributo de animação que não é texto: %s', (_name, attrs) => {
+  expect(() => parse(withAnimate(attrs as unknown as Record<string, string>))).toThrow();
+});
+
+it('recusa tom de bloco que não é texto, mesmo que a lista contenha um tom válido', () => {
+  expect(() => parse({ tag: 'section', tone: ['note'], children: ['Texto'] })).toThrow();
+  expect(parse({ tag: 'section', tone: 'note', children: ['Texto'] })).toBeTruthy();
+});
+
 it('recusa elementos de animação fora da figura animada, aninhados ou com alvo externo', () => {
   expect(() => parse({ tag: 'svg', attrs: { viewBox: '0 0 1 1' }, children: [{ tag: 'animate', attrs: { attributeName: 'opacity', dur: '1s' }, children: [] }] })).toThrow();
   expect(() => parse(svg({ tag: 'rect', attrs: { dur: '1s' }, children: [] }))).toThrow();

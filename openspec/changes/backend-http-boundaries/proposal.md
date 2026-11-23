@@ -1,6 +1,6 @@
 # Proposal
 
-Issue: #ISSUE.
+Issue: [#261](https://github.com/LordBiGoDoNE/concurso-simulator/issues/261).
 Épica: `epic/backend-http-boundaries`, criada da `main` `9dea050` em 2026-11-23.
 
 ## Why

@@ -1,6 +1,6 @@
 # Tasks
 
-Issue: #ISSUE.
+Issue: [#261](https://github.com/LordBiGoDoNE/concurso-simulator/issues/261).
 Épica: `epic/backend-http-boundaries`. Spec formalizada em 2026-11-23.
 Implementação: aguardando confirmação explícita de início. Teste local pelo
 usuário: pergunta pendente. Merges dependem da aprovação do pacote final.

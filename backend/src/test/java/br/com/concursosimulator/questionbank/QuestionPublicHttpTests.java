@@ -1,5 +1,6 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.shared.web.ErrorResponses;
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
 import br.com.concursosimulator.questionbank.application.DecideQuestionUseCase;
 import br.com.concursosimulator.questionbank.domain.*;
@@ -62,7 +63,7 @@ class QuestionPublicHttpTests {
         var q2=insert(SECOND,"Outra fixture",new QuestionClassification(Discipline.MATHEMATICS_LOGIC,Topic.M01,Set.of(TargetRole.SCHOOL_SECRETARY)));
         decision(SECOND,q2.latest().id(),EditorialDecision.Action.SUBMIT);decision(SECOND,q2.latest().id(),EditorialDecision.Action.APPROVE);
         var privateQuestion=insert(UUID.randomUUID(),"PRIVATE_DRAFT_SENTINEL",new QuestionClassification(Discipline.PORTUGUESE,Topic.P01,Set.of(TargetRole.values())));
-        assertThat(get("/questions/"+privateQuestion.id()).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(get("/questions/"+privateQuestion.id()),404);
         store.transaction(s -> {var q=s.loadForUpdate(FIRST).orElseThrow();q.append(UUID.randomUUID(),q2.latest().content());s.save(q);return null;});
         var page=get("/questions?size=1");var body=json.readTree(page.body());assertThat(body.get("total").asInt()).isEqualTo(2);assertThat(body.get("items").get(0).get("questionId").asString()).isEqualTo(FIRST.toString());
         assertThat(json.readTree(get("/questions?page=1&size=1").body()).get("items").get(0).get("questionId").asString()).isEqualTo(SECOND.toString());
@@ -74,16 +75,16 @@ class QuestionPublicHttpTests {
         assertThat(detail.body()).contains("πr²","2 < 3","x < y e y > z","a < b > c","x < i > y","(x)_(1) + (y)_(2)").doesNotContain("correctAlternativeId","resolution","status","provenance","checklist","gabarito","PRIVATE_DRAFT_SENTINEL");
         assertSchema(page.body(),"QuestionPage");assertSchema(detail.body(),"QuestionDetail");
         decision(SECOND,q2.latest().id(),EditorialDecision.Action.WITHDRAW);
-        assertThat(get("/questions/"+SECOND).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(get("/questions/"+SECOND),404);
         assertThat(json.readTree(get("/questions").body()).get("total").asInt()).isEqualTo(1);
     }
     @Test @Order(3) void invalidParametersAndUnknownIdsHaveStable400404Contracts() throws Exception {
         for(var path:List.of("/questions?disciplineId=other","/questions?topicId=P99","/questions?roleId=admin","/questions?disciplineId=portugues&topicId=M01",
                 "/questions?page=-1","/questions?size=0","/questions?size=101","/questions?page=999999999999","/questions?page=2147483647&size=100",
                 "/questions?size=","/questions?size=1&size=2","/questions?answer=true","/catalog?extra=1","/questions/no-uuid","/questions/"+FIRST+"?revisionId=old")) {
-            var response=get(path);assertThat(response.statusCode()).as(path).isEqualTo(400);assertThat(response.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            var response=get(path);ErrorResponses.assertError(response,400,"INVALID_REQUEST");
         }
-        var absent=get("/questions/"+UUID.randomUUID());assertThat(absent.statusCode()).isEqualTo(404);assertThat(absent.body()).isEqualTo("{\"error\":\"not_found\"}");
+        var absent=get("/questions/"+UUID.randomUUID());ErrorResponses.assertError(absent,404,"NOT_FOUND");
     }
     @SuppressWarnings({"unchecked","rawtypes"})
     @Test @Order(4) void publicAndDeniedRoutesNeverLoadRenewCreateOrCommitSessionsForAnyCookie() throws Exception {
@@ -154,10 +155,9 @@ class QuestionPublicHttpTests {
         for(var content:badCases) {
             var q=Question.draft(UUID.randomUUID(),new QuestionOrigin("fixture-projection-negative",UUID.randomUUID().toString()),UUID.randomUUID(),content);
             store.transaction(s -> {s.insert(q);return null;});decision(q.id(),q.latest().id(),EditorialDecision.Action.SUBMIT);decision(q.id(),q.latest().id(),EditorialDecision.Action.APPROVE);
-            var response=get("/questions/"+q.id());assertThat(response.statusCode()).isEqualTo(503);
-            assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+            var response=get("/questions/"+q.id());ErrorResponses.assertError(response,503,"UNAVAILABLE");assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
         }
-        assertThat(get("/questions").statusCode()).isEqualTo(503); // markup em resumo também é rejeitado
+        ErrorResponses.assertError(get("/questions"),503); // markup em resumo também é rejeitado
     }
     @Test @Order(7) void negativeSerializationControlDetectsAnAddedAnswerEvenWhenNotVisibleInUi() throws Exception {
         var good=get("/questions/"+FIRST);assertSchema(good.body(),"QuestionDetail");
@@ -174,7 +174,7 @@ class QuestionPublicHttpTests {
         POSTGRES.stop();
         for(var path:List.of("/questions","/questions/"+FIRST)) {
             long start=System.nanoTime();var response=get(path);
-            assertThat(response.statusCode()).isEqualTo(503);assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            ErrorResponses.assertError(response,503,"UNAVAILABLE");
             assertThat(Duration.ofNanos(System.nanoTime()-start)).isLessThan(Duration.ofSeconds(8));
             assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
         }

@@ -3,6 +3,7 @@ package br.com.concursosimulator.questionbank.web;
 import br.com.concursosimulator.questionbank.application.BrowseQuestionsUseCase;
 import br.com.concursosimulator.questionbank.application.port.EligibleQuestions;
 import br.com.concursosimulator.questionbank.domain.*;
+import br.com.concursosimulator.shared.web.RequestValues;
 import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.util.MultiValueMap;
@@ -22,20 +23,21 @@ public class QuestionController {
     }
     @GetMapping("/questions") public ResponseEntity<QuestionResponses.Page> list(@RequestParam MultiValueMap<String,String> params) {
         parameters(params,Set.of("disciplineId","topicId","roleId","page","size"));
-        var filter=new EligibleQuestions.Filter(params.containsKey("disciplineId")?Discipline.fromId(params.getFirst("disciplineId")):null,
+        var page=number(params.getFirst("page"),0); var size=number(params.getFirst("size"),20);
+        var filter=RequestValues.parse(() -> new EligibleQuestions.Filter(params.containsKey("disciplineId")?Discipline.fromId(params.getFirst("disciplineId")):null,
                 params.containsKey("topicId")?Topic.fromId(params.getFirst("topicId")):null,
                 params.containsKey("roleId")?TargetRole.fromId(params.getFirst("roleId")):null,
-                number(params.getFirst("page"),0),number(params.getFirst("size"),20));
+                page,size));
         return ok(QuestionResponses.Page.from(browse.list(filter)));
     }
     @GetMapping("/questions/{questionId}") public ResponseEntity<QuestionResponses.Detail> detail(@PathVariable String questionId,@RequestParam MultiValueMap<String,String> params) {
         parameters(params,Set.of());
-        if(!questionId.matches("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}")) throw new IllegalArgumentException("UUID inválido");
+        RequestValues.require(questionId.matches("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"));
         return ok(QuestionResponses.Detail.from(browse.detail(UUID.fromString(questionId))));
     }
-    private static int number(String value,int defaultValue) { if(value==null) return defaultValue; if(!value.matches("[0-9]+")) throw new IllegalArgumentException("Número inválido"); return Integer.parseInt(value); }
+    private static int number(String value,int defaultValue) { if(value==null) return defaultValue; RequestValues.require(value.matches("[0-9]+")); return RequestValues.parse(() -> Integer.parseInt(value)); }
     private static void parameters(MultiValueMap<String,String> params,Set<String> allowed) {
-        if(!allowed.containsAll(params.keySet()) || params.values().stream().anyMatch(v -> v.size()!=1 || v.getFirst().isBlank())) throw new IllegalArgumentException("Parâmetro inválido/repetido");
+        RequestValues.require(allowed.containsAll(params.keySet()) && params.values().stream().allMatch(v -> v.size()==1 && !v.getFirst().isBlank()));
     }
     private static <T> ResponseEntity<T> ok(T body) { return ResponseEntity.ok().cacheControl(CacheControl.noStore()).body(body); }
 }

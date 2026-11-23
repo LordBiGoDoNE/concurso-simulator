@@ -42,6 +42,10 @@ public final class Attempt {
     public record Correction(ItemView item, UUID correctAlternativeId, TextContent resolution) {}
     public record Result(int total, int correct, int wrong, int blank, BigDecimal percentage, List<Correction> items) {}
     public static final class Unavailable extends RuntimeException {}
+    /** Comando de resposta com item ou alternativa que não pertencem à tentativa: erro do cliente. */
+    public static final class InvalidAnswer extends RuntimeException {
+        public InvalidAnswer(String message) { super(message); }
+    }
     public static final class Conflict extends RuntimeException {
         public Conflict() { super("Estado/versão da tentativa divergente"); }
     }
@@ -120,9 +124,9 @@ public final class Attempt {
     }
     private void validateAnswer(UUID itemId, UUID alternativeId) {
         var item = state.items().stream().filter(i -> i.id().equals(itemId)).findFirst()
-                .orElseThrow(() -> new IllegalArgumentException("Item não pertence à tentativa"));
+                .orElseThrow(() -> new InvalidAnswer("Item não pertence à tentativa"));
         if (alternativeId != null && !item.optionOrder().contains(alternativeId))
-            throw new IllegalArgumentException("Alternativa não pertence ao item");
+            throw new InvalidAnswer("Alternativa não pertence ao item");
     }
     public View view(AttemptOwner actor, Instant now) {
         requireAccessible(actor,now);

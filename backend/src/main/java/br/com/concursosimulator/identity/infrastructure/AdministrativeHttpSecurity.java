@@ -3,6 +3,8 @@ package br.com.concursosimulator.identity.infrastructure;
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
+import br.com.concursosimulator.shared.failure.TransientFailures;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.*;
@@ -47,9 +49,8 @@ public class AdministrativeHttpSecurity {
             .addFilterAfter(new LocalLogin(access,security),Body.class).build();
     }
     static void reject(HttpServletResponse s,int status,String code)throws IOException {
-        s.setStatus(status);s.setContentType("application/json");s.setHeader("Cache-Control","no-store");
         if(status==429)s.setHeader("Retry-After","900");
-        s.getWriter().write("{\"error\":\""+code+"\"}");
+        JsonRejection.write(s,status,code);
     }
     static class NoStore extends OncePerRequestFilter {
         @Override protected void doFilterInternal(HttpServletRequest r,HttpServletResponse s,FilterChain chain)throws IOException,ServletException {s.setHeader("Cache-Control","no-store");chain.doFilter(r,s);}
@@ -105,8 +106,7 @@ public class AdministrativeHttpSecurity {
                 var input=JsonMapper.builder().build().readValue(r.getInputStream(),LoginRequest.class);
                 var a=access.login(input.username(),input.password());security.replace(r,s,a);s.setStatus(204);
             }catch(AdministrativeAccessUseCases.Failure failed) { reject(s,"LOGIN_THROTTLED".equals(failed.code())?429:401,failed.code()); }
-            catch(org.springframework.dao.DataAccessException | org.springframework.transaction.TransactionException unavailable){reject(s,503,"ADMIN_UNAVAILABLE");}
-            catch(RuntimeException failed){reject(s,500,"ADMIN_FAILURE");}
+            catch(RuntimeException failed){reject(s,TransientFailures.transientCause(failed)?503:500,TransientFailures.transientCause(failed)?"ADMIN_UNAVAILABLE":"ADMIN_FAILURE");}
         }
     }
 }

@@ -2,6 +2,8 @@ package br.com.concursosimulator.questionbank.infrastructure.importing;
 
 import br.com.concursosimulator.questionbank.infrastructure.QuestionBankRoutes;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
+import br.com.concursosimulator.shared.failure.TransientFailures;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.IOException;
@@ -9,9 +11,7 @@ import java.util.*;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.*;
-import org.springframework.dao.DataAccessException;
 import org.springframework.session.web.http.SessionRepositoryFilter;
-import org.springframework.transaction.TransactionException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /** A leitura/renovação da sessão ocorre fora do MVC e pode falhar antes da segurança. */
@@ -27,13 +27,12 @@ public class ImportAvailabilityConfiguration {
                 s.setHeader("Cache-Control","no-store");
                 try{chain.doFilter(r,s);}
                 catch(RuntimeException | ServletException failure){
-                    boolean database=false;
-                    for(Throwable cause=failure;cause!=null;cause=cause.getCause())if(cause instanceof DataAccessException || cause instanceof TransactionException){database=true;break;}
+                    boolean database=TransientFailures.transientCause(failure);
                     if(s.isCommitted() || !database)throw failure;
                     s.resetBuffer();s.setHeader("Content-Length",null);s.setStatus(503);s.setContentType("application/json");s.setHeader("Cache-Control","no-store");
                     var origin=r.getHeader("Origin");
                     if(origin!=null && origins.contains(origin)){s.setHeader("Access-Control-Allow-Origin",origin);s.setHeader("Access-Control-Allow-Credentials","true");s.addHeader("Vary","Origin");}
-                    s.getWriter().write("{\"error\":\""+(routes.owns(QuestionBankRoutes.IMPORT_AREA,r)?"IMPORT_UNAVAILABLE":"ADMIN_UNAVAILABLE")+"\",\"correlationId\":\""+UUID.randomUUID()+"\"}");
+                    JsonRejection.writeCorrelated(s,503,routes.owns(QuestionBankRoutes.IMPORT_AREA,r)?"IMPORT_UNAVAILABLE":"ADMIN_UNAVAILABLE");
                 }
             }
         };

@@ -29,6 +29,26 @@ Usar DTOs web tipados (records quando adequados) e retornos concretos, como `Res
 
 Rejeições técnicas de segurança ficam nos mecanismos do Spring Security. Erros da aplicação podem ser traduzidos por adaptadores web/ControllerAdvice sem contaminar o núcleo com HTTP. Não capturar toda exceção para fingir visitante, conflito conhecido ou sucesso.
 
+### Contrato de erro
+
+Toda resposta de erro é um objeto JSON com `error` em `UPPER_SNAKE_CASE` e `Cache-Control: no-store`, sem mensagem de exceção, SQL, conteúdo de questão ou dado pessoal. Campos extras existentes (`correlationId`, `available`, `questionIds`, `reason`) continuam onde já estavam. Adaptadores web usam `shared/web/ApiErrors`/`ApiError`; filtros e handlers de segurança, `shared/infrastructure/http/JsonRejection`.
+
+| Situação | Status e código |
+| --- | --- |
+| Entrada recusada no adaptador web (`InvalidRequest`, corpo ilegível, tipo de parâmetro) | 400 `INVALID_REQUEST` |
+| Comando que referencia item/alternativa de outra tentativa (`Attempt.InvalidAnswer`) | 400 `INVALID_REQUEST` |
+| Sem autenticação válida em rota que exige identidade | 401 `UNAUTHENTICATED` |
+| Acesso negado ou CSRF inválido (áreas com falhas JSON) | 403 `FORBIDDEN` |
+| Recurso inexistente ou de outro dono | 404 `NOT_FOUND` |
+| Versão/estado divergente; acervo insuficiente | 409 `CONFLICT`; 409 `INSUFFICIENT_POOL` |
+| Geração parametrizada desligada no servidor | 503 `PARAMETERIZED_GENERATION_UNAVAILABLE` |
+| Banco, conexão ou transação temporariamente indisponíveis (`TransientDataAccessException`, `DataAccessResourceFailureException`, `CannotCreateTransactionException`, `TransactionTimedOutException`, falha de conexão JDBC: SQLState classe 08, `SQLTransientConnectionException`, `SQLRecoverableException`, `SQLNonTransientConnectionException`); falha do sistema de transação (`TransactionSystemException`, `org.hibernate.TransactionException`) somente quando a cadeia mostra conexão perdida, inclusive a conexão fechada do pool (`SQLException` "Connection is closed" sem SQLState) no rollback; nunca com violação de integridade na cadeia (`shared/failure/TransientFailures`); projeção pública insegura recusada | 503 `UNAVAILABLE` (administração: `ADMIN_UNAVAILABLE`/`IMPORT_UNAVAILABLE`) |
+| Falha não reconhecida, inclusive integridade e `IllegalArgumentException`/`IllegalStateException` vindas do núcleo ou da persistência | 500 `INTERNAL_ERROR` (administração: `ADMIN_FAILURE`, `IMPORT_FAILED`, `ADMIN_CURATION_FAILED`), com log e correlação no servidor |
+
+- `IllegalArgumentException` só vira 400 quando a recusa acontece na conversão da entrada (`RequestValues.parse`); dentro da aplicação ou da persistência ela indica dado inconsistente e é 500.
+- 503 não é usado para violação de integridade: constraint não reconhecida reverte a transação e responde 500.
+- Exceção nova da aplicação que deva virar 4xx precisa ser nomeada e mapeada explicitamente no advice da funcionalidade.
+
 ## Declaração de rotas
 
 Cada funcionalidade declara suas áreas HTTP (`ApiArea`) na própria `infrastructure` (`IdentityRoutes`, `QuestionBankRoutes`, `MockExamRoutes`, `SubjectReviewRoutes`, `PlatformRoutes`): caminhos possuídos, cadeia (`STATELESS`, `SESSION` ou cadeia própria `OWN`), CORS, se as falhas são JSON e cada rota com método, padrão e acesso técnico (`PUBLIC`, `VISITOR_OR_ACCOUNT`, `ACCOUNT`, `ACCOUNT_PRINCIPAL`, `ADMINISTRATIVE`). O registro `ApiRoutes` (`shared/infrastructure/http`) é a única fonte lida pelas cadeias de segurança, CORS, `ApiAccessFailureHandler`, desvio de sessão, isenção de troca de senha e filtros de indisponibilidade; `platform` só compõe.

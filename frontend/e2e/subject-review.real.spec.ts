@@ -43,7 +43,7 @@ test('visitante revisa somente tentativa concluída sem painel nem histórico im
 });
 test('falha não vira zero, retry preserva cargo e logout descarta resposta real tardia', async ({ page, request }) => {
   await login(page, request, 'subject-review-failure');let failed = false;
-  await page.route('**/api/v1/me/subject-review?*', async route => { if (!failed) { failed = true;await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"unavailable"}' }); } else await route.continue(); });
+  await page.route('**/api/v1/me/subject-review?*', async route => { if (!failed) { failed = true;await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"UNAVAILABLE"}' }); } else await route.continue(); });
   const area = panel(page);await area.getByLabel('Cargo para revisão').selectOption('assistente-administrativo');await expect(area.getByRole('alert')).toContainText('Não significa ausência de dados');await expect(area.getByRole('table')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Acessar material de estudo' })).toBeVisible();await area.getByRole('button', { name: 'Atualizar revisão' }).click();await expect(area.getByRole('table')).toBeVisible();
   await page.unroute('**/api/v1/me/subject-review?*');let captured = false;let release!: () => void;const held = new Promise<void>(resolve => { release = resolve; });
@@ -56,7 +56,7 @@ test('falha explícita seguida de conclusão preserva foco no resultado durante 
   await login(page, request, 'subject-review-focus-regression');await page.getByLabel('Quantidade de Português').fill('1');
   await page.getByRole('button', { name: 'Iniciar simulado' }).click();await expect(page.getByRole('heading', { name: 'Questão 1 de 1' })).toBeVisible();
   let failed = false;await page.route('**/api/v1/me/subject-review?*', async route => {
-    if (!failed) { failed = true;await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"unavailable"}' }); } else await route.continue();
+    if (!failed) { failed = true;await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"UNAVAILABLE"}' }); } else await route.continue();
   });
   const area = panel(page);await area.getByLabel('Cargo para revisão').selectOption('assistente-administrativo');await expect(area.getByRole('alert')).toBeVisible();
   await page.getByRole('button', { name: 'Concluir simulado', exact: true }).click();await page.getByRole('button', { name: 'Confirmar conclusão' }).click();

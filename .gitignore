@@ -14,3 +14,7 @@ infra/local-app/.local/
 .local-app-export-*/
 /acervo-local/
 *.tsbuildinfo
+# Configuração local do Claude Code (pessoal, com caminhos absolutos)
+.claude/launch.json
+.claude/worktrees/
+.claude/settings.local.json

@@ -26,3 +26,12 @@ navegador ou anunciar salvamento antes de confirmação.
 #### Scenario: Trocar de conta com resposta tardia
 - **WHEN** muda de identidade enquanto uma das realizações está oculta e responde depois
 - **THEN** nenhum contexto privado anterior reaparece em qualquer das duas realizações
+
+#### Scenario: Consultar aula com resposta pendente
+- **WHEN** o estudante visita uma aula durante uma realização e volta a Simulados
+- **THEN** a escolha, o estado de salvamento e o comando de retry são preservados
+- **AND** cancelar uma proposta de nova prática mantém a realização anterior
+
+#### Scenario: Trocar de conta enquanto a realização está oculta
+- **WHEN** a verificação identifica outra conta ou logout em qualquer área
+- **THEN** o contexto anterior é desmontado e uma resposta tardia não reaparece

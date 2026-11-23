@@ -1,6 +1,8 @@
 package br.com.concursosimulator.identity;
 
 import br.com.concursosimulator.identity.application.UserPrincipal;
+import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
+import br.com.concursosimulator.questionbank.QuestionBrowserFixtures;
 import java.io.ByteArrayOutputStream;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -14,6 +16,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextImpl;
@@ -27,6 +30,7 @@ import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
+import tools.jackson.databind.json.JsonMapper;
 import static org.assertj.core.api.Assertions.assertThat;
 
 /**
@@ -49,7 +53,9 @@ class LegacySessionPrincipalTests {
     @Value("${local.server.port}") int port;
     @Autowired JdbcIndexedSessionRepository sessions;
     @Autowired JdbcTemplate jdbc;
+    @Autowired ConfigurableApplicationContext context;
     final HttpClient client = HttpClient.newHttpClient();
+    final JsonMapper json = JsonMapper.builder().build();
 
     @Test
     void sessionWithRemovedPrincipalClassIsUnauthenticatedAndStudyContinuesAsVisitor() throws Exception {
@@ -64,6 +70,42 @@ class LegacySessionPrincipalTests {
         assertThat(send("GET", "/api/v1/attempts/" + UUID.randomUUID(), cookie).statusCode()).isEqualTo(404);
         assertThat(send("GET", "/api/v1/me/attempts", cookie).statusCode()).isEqualTo(401);
         assertThat(jdbc.queryForObject("select count(*) from app_user", Integer.class)).isEqualTo(users);
+    }
+
+    @Test
+    void sessionWithRemovedPrincipalClassCreatesAttemptAsVisitor() throws Exception {
+        if (jdbc.queryForObject("select count(*) from qb_question", Integer.class) == 0) QuestionBrowserFixtures.seed(context);
+        var user = UUID.randomUUID();
+        var cookie = legacySession(user);
+        var sessionId = cookie.substring("SESSION=".length());
+        int users = jdbc.queryForObject("select count(*) from app_user", Integer.class);
+
+        var csrf = send("GET", "/api/v1/csrf", cookie, null, null);
+        assertThat(csrf.statusCode()).isEqualTo(200);
+        // A sessão antiga continua em uso (sem contexto de segurança); não é trocada por outra.
+        assertThat(csrf.headers().firstValue("Set-Cookie")).isEmpty();
+        var token = json.readTree(csrf.body()).get("token").asString();
+        var body = "{\"commandId\":\"" + UUID.randomUUID() + "\",\"roleId\":\"assistente-administrativo\","
+                + "\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":1,\"topicIds\":[]}]}";
+        var created = send("POST", "/api/v1/attempts", cookie, token, body);
+        assertThat(created.statusCode()).isEqualTo(201);
+        assertThat(created.body()).doesNotContain(user.toString());
+        var attempt = UUID.fromString(json.readTree(created.body()).get("id").asString());
+
+        var owner = jdbc.queryForMap("select owner_kind, owner_id, account_id from me_attempt where id=?", attempt);
+        @SuppressWarnings({"unchecked", "rawtypes"})
+        var repository = (SessionRepository<Session>) (SessionRepository) sessions;
+        UUID visitor = repository.findById(sessionId).getAttribute(AttemptAccess.VISITOR);
+        assertThat(visitor).isNotNull().isNotEqualTo(user);
+        assertThat(owner.get("owner_kind")).isEqualTo("VISITOR");
+        assertThat(owner.get("owner_id")).isEqualTo(visitor);
+        assertThat(owner.get("account_id")).isNull();
+        assertThat(jdbc.queryForObject("select count(*) from me_attempt where owner_id=? or account_id=?", Integer.class, user, user)).isZero();
+        assertThat(jdbc.queryForObject("select count(*) from app_user", Integer.class)).isEqualTo(users);
+        assertThat(jdbc.queryForObject("select count(*) from app_user where id=?", Integer.class, user)).isZero();
+        // A identidade antiga não volta: a mesma sessão segue sem conta.
+        assertThat(send("GET", "/api/v1/me", cookie).statusCode()).isEqualTo(401);
+        assertThat(send("GET", "/api/v1/attempts/" + attempt, cookie).statusCode()).isEqualTo(200);
     }
 
     @Test
@@ -117,7 +159,15 @@ class LegacySessionPrincipalTests {
     }
 
     HttpResponse<String> send(String method, String path, String cookie) throws Exception {
-        return client.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + path)).timeout(Duration.ofSeconds(20))
-                .method(method, HttpRequest.BodyPublishers.noBody()).header("Cookie", cookie).build(), HttpResponse.BodyHandlers.ofString());
+        return send(method, path, cookie, null, null);
+    }
+
+    HttpResponse<String> send(String method, String path, String cookie, String token, String body) throws Exception {
+        var request = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + path)).timeout(Duration.ofSeconds(20))
+                .method(method, body == null ? HttpRequest.BodyPublishers.noBody() : HttpRequest.BodyPublishers.ofString(body))
+                .header("Cookie", cookie);
+        if (token != null) request.header("X-CSRF-TOKEN", token);
+        if (body != null) request.header("Content-Type", "application/json");
+        return client.send(request.build(), HttpResponse.BodyHandlers.ofString());
     }
 }

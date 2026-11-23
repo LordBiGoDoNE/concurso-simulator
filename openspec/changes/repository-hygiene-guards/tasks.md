@@ -44,6 +44,9 @@ CI/deploy é área crítica (`revisao-e-integracao.md`, seção 1).
   `question-bank-expansion`, `remove-legacy-review-gate`, `subject-review`). Issue,
   `[SPEC]` e arquivamento conferidos no GitHub e nos artefatos; o que não for
   localizado fica "não localizado". Não entregues: "arquivada sem entrega" e motivo.
+  Nota: nenhuma das 25 ficou sem entrega; `local-only-delivery-scope`,
+  `pages-stable-epic-sync` e `pages-stable-migration` foram entregues (#132, #138,
+  #135/#136) e arquivadas sem delta de specs no #259 (D3).
 - [x] 2.2 Estender o script: ler `Registro de entregas:` do `AGENTS.md` (ou
   `--registry`) e falhar se alguma pasta de `archive/` não tiver linha na tabela da
   seção; falhar com mensagem se o registro, a seção ou a declaração faltar. Testes

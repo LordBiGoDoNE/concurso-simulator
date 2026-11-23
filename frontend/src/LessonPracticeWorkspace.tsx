@@ -101,10 +101,10 @@ export default function LessonPracticeWorkspace({
     observer.observe(document.body);
     return stop;
   }, [practiceRequest, inlineKey]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- só conexão e troca de prática (id) mudam o estado de visitante.
   useEffect(() => {
     onGuestActive(!!identity && !identity.connected && selected !== null);
     return () => onGuestActive(false);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- só conexão e troca de prática (id) mudam o estado de visitante.
   }, [identity?.connected, selected?.id, onGuestActive]);
   useLayoutEffect(() => {
     const current = selectedRef.current;

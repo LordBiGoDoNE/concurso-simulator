@@ -49,9 +49,9 @@ export default function AttemptPractice({
   useEffect(() => {
     heading.current?.focus();
   }, [position]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- avisa uma vez quando a tentativa termina, não a cada nova versão da view.
   useEffect(() => {
     if (run.view.finishedAt !== null) onFinished?.(run.view);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- avisa uma vez quando a tentativa termina, não a cada nova versão da view.
   }, [run.view.finishedAt, onFinished]);
   const item = run.view.items[position];
   const selection = run.selected(item);

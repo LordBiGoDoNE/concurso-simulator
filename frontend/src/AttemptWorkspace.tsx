@@ -68,14 +68,14 @@ export default function AttemptWorkspace({
     },
     [],
   );
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- só troca de tentativa (id) muda o estado de visitante, não novas versões dela.
   useEffect(() => {
     onGuestActive(!identity.connected && selected !== null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- só troca de tentativa (id) muda o estado de visitante, não novas versões dela.
   }, [identity.connected, selected?.id, onGuestActive]);
   useEffect(() => () => onGuestActive(false), [onGuestActive]);
-  // eslint-disable-next-line react-hooks/exhaustive-deps -- o aviso depende só da tentativa (id) e do seu término.
   useLayoutEffect(() => {
     onRunActiveChange?.(selected !== null && selected.finishedAt === null);
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- o aviso depende só da tentativa (id) e do seu término.
   }, [selected?.id, selected?.finishedAt, onRunActiveChange]);
   useLayoutEffect(() => () => onRunActiveChange?.(false), [onRunActiveChange]);
   const finished = useCallback(() => {

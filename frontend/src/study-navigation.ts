@@ -47,6 +47,7 @@ export function parseStudyRoute(hash: string): { route: StudyRoute; notice: stri
   if (match[2] && area !== 'lessons') invalid = true;
   if (topic && !lessons.some(t => t.id === topic)) invalid = true; else route.topicId = topic;
   const search = read('busca');
+  // eslint-disable-next-line no-control-regex -- remove de propósito caracteres de controle da busca vinda da URL.
   route.search = search.replace(/[\u0000-\u001f\u007f]/g, '').slice(0, 160);
   if (search !== route.search) invalid = true;
   const compatible = locationForRole(route, route.roleId);

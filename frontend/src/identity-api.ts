@@ -1,6 +1,12 @@
 export const identityApiUrl = (import.meta.env.VITE_API_URL || 'http://localhost:8080').replace(/\/$/, '');
 
-export async function identityRequest(path: string, options: RequestInit = {}, readJson = true) {
+/** Campo de um corpo JSON ainda não validado; `undefined` quando o corpo não é objeto. */
+export function field(body: unknown, key: string): unknown {
+  return typeof body === 'object' && body !== null ? (body as Record<string, unknown>)[key] : undefined;
+}
+
+export type IdentityResponse = { ok: boolean; status: number; body: unknown };
+export async function identityRequest(path: string, options: RequestInit = {}, readJson = true): Promise<IdentityResponse> {
   const controller = new AbortController();
   const abort = () => controller.abort();
   options.signal?.addEventListener('abort', abort, { once: true });
@@ -16,7 +22,7 @@ export async function identityRequest(path: string, options: RequestInit = {}, r
     return await Promise.race([aborted, (async () => {
       controller.signal.throwIfAborted();
       const response = await fetch(`${identityApiUrl}${path}`, { ...options, credentials: 'include', cache: 'no-store', signal: controller.signal });
-      const body = readJson && response.ok && response.status !== 204 ? await response.json() : undefined;
+      const body: unknown = readJson && response.ok && response.status !== 204 ? await response.json() : undefined;
       controller.signal.throwIfAborted();
       return { ok: response.ok, status: response.status, body };
     })()]);
@@ -33,14 +39,14 @@ export async function currentIdentity(signal?: AbortSignal): Promise<CurrentIden
     identityRequest('/api/v1/auth/config', { signal }), identityRequest('/api/v1/me', { signal }),
   ]);
   if (!config.ok || (!me.ok && me.status !== 401)) throw new Error('identity unavailable');
-  const settings = config.body;
-  if (typeof settings?.googleEnabled !== 'boolean') throw new Error('invalid config');
-  if (me.status === 401) return { connected: false, googleEnabled: settings.googleEnabled as boolean };
-  const user = me.body;
-  if (typeof user?.id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(user.id)) {
+  const googleEnabled = field(config.body, 'googleEnabled');
+  if (typeof googleEnabled !== 'boolean') throw new Error('invalid config');
+  if (me.status === 401) return { connected: false, googleEnabled };
+  const id = field(me.body, 'id');
+  if (typeof id !== 'string' || !/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(id)) {
     throw new Error('invalid identity');
   }
-  return { connected: true, googleEnabled: settings.googleEnabled as boolean, id: user.id as string };
+  return { connected: true, googleEnabled, id };
 }
 
 export type AdministrativeAccount = {
@@ -51,18 +57,19 @@ export async function administrativeAccount(): Promise<AdministrativeAccount | n
   const result = await identityRequest('/api/v1/admin/account');
   if (result.status === 401 || result.status === 403) return null;
   const body = result.body;
-  if (!result.ok || typeof body?.username !== 'string' ||
-      ['mustChangePassword', 'googleEnabled', 'googleLinked', 'questionImportAvailable'].some(key => typeof body[key] !== 'boolean')) {
+  if (!result.ok || typeof field(body, 'username') !== 'string' ||
+      ['mustChangePassword', 'googleEnabled', 'googleLinked', 'questionImportAvailable'].some(key => typeof field(body, key) !== 'boolean')) {
     throw new Error('administrative account unavailable');
   }
   return body as AdministrativeAccount;
 }
 export async function administrativeMutation(path: '/auth/login' | '/account/password' | '/account/google-link', input: Record<string, string>) {
   const csrf = await identityRequest('/api/v1/csrf');
-  if (!csrf.ok || csrf.body?.headerName !== 'X-CSRF-TOKEN' || typeof csrf.body.token !== 'string' || !csrf.body.token) {
+  const token = field(csrf.body, 'token');
+  if (!csrf.ok || field(csrf.body, 'headerName') !== 'X-CSRF-TOKEN' || typeof token !== 'string' || !token) {
     throw new Error('csrf unavailable');
   }
   return identityRequest(`/api/v1/admin${path}`, {
-    method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': csrf.body.token }, body: JSON.stringify(input),
+    method: 'POST', headers: { 'Content-Type': 'application/json', 'X-CSRF-TOKEN': token }, body: JSON.stringify(input),
   });
 }

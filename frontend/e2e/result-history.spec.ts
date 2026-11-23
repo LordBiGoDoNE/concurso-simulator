@@ -52,7 +52,7 @@ const contrast = (page: Page, selector: string) => page.evaluate(sel => {
     if (!own || !(element as HTMLElement).offsetParent) continue;
     const style = getComputedStyle(element); const [fg, bg] = [lum(rgb(style.color)), lum(background(element))];
     const ratio = (Math.max(fg, bg) + 0.05) / (Math.min(fg, bg) + 0.05);
-    if (ratio < 4.5) out.push(`${element.tagName.toLowerCase()}.${element.className} ${ratio.toFixed(2)} "${element.textContent!.trim().slice(0, 30)}"`);
+    if (ratio < 4.5) out.push(`${element.tagName.toLowerCase()}.${element.className} ${ratio.toFixed(2)} "${element.textContent.trim().slice(0, 30)}"`);
   }
   return out;
 }, selector);

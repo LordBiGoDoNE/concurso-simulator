@@ -1,5 +1,12 @@
 # Frontend
 
+## Verificações
+
+- `npm run lint`: ESLint com regras de TypeScript que usam tipos e regras de hooks do React. No código de produção valem também as regras contra `any` e dados não validados; em testes e e2e elas ficam desligadas, porque mocks e `page.evaluate` usam `any` de propósito. Supressões são só na linha, com justificativa.
+- `npm run typecheck`: `tsc` sobre `src` e `test` (`tsconfig.json`) e sobre `e2e`, configs do Playwright e `vite.config.ts` (`tsconfig.node.json`).
+- `npm run format:check` / `npm run format`: Prettier (120 colunas); JSON gerados ficam fora (`.prettierignore`).
+- `npm run test:coverage`: Vitest com cobertura V8, só como relatório em `coverage/` (fora do versionamento), sem limite mínimo.
+
 ## Primeira experiência do estudante — implementação local
 
 Entrada por cargo, biblioteca e prática seguem a spec `new-student-experience`.

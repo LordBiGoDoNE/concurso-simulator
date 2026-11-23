@@ -69,8 +69,8 @@ export default function App() {
     setStatus('loading');
     fetch(`${apiUrl.replace(/\/$/, '')}/api/v1/status`, { signal: controller.signal })
       .then(async response => {
-        const body = await response.json();
-        if (active) setStatus(response.ok && body.status === 'UP' ? 'up' : 'down');
+        const body: unknown = await response.json();
+        if (active) setStatus(response.ok && typeof body === 'object' && body !== null && 'status' in body && body.status === 'UP' ? 'up' : 'down');
       })
       .catch(() => { if (active) setStatus('down'); })
       .finally(() => window.clearTimeout(timer));

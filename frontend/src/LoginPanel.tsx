@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, useCallback } from 'react';
 import AdministrativeAccountPanel from './AdministrativeAccountPanel';
-import { currentIdentity, identityApiUrl, identityRequest, type CurrentIdentity } from './identity-api';
+import { currentIdentity, field, identityApiUrl, identityRequest, type CurrentIdentity } from './identity-api';
 
 type Identity = CurrentIdentity;
 
@@ -71,10 +71,10 @@ export default function LoginPanel({ onIdentity, onChecking, onBeforeLogin }: { 
     try {
       const csrf = await identityRequest('/api/v1/csrf');
       if (!csrf.ok) throw new Error('csrf unavailable');
-      const token = csrf.body;
-      if (token?.headerName !== 'X-CSRF-TOKEN' || typeof token.token !== 'string' || !token.token) throw new Error('invalid csrf');
+      const headerName = field(csrf.body, 'headerName'); const token = field(csrf.body, 'token');
+      if (headerName !== 'X-CSRF-TOKEN' || typeof token !== 'string' || !token) throw new Error('invalid csrf');
       const response = await identityRequest('/api/v1/auth/logout', {
-        method: 'POST', headers: { [token.headerName]: token.token },
+        method: 'POST', headers: { [headerName]: token },
       }, false);
       if (response.status === 403) {
         setMessage('Não foi possível confirmar a saída. Tente novamente para renovar a proteção da sessão.');
@@ -103,7 +103,7 @@ export default function LoginPanel({ onIdentity, onChecking, onBeforeLogin }: { 
           : identity?.connected ? 'Você está conectado.' : 'Você está estudando como visitante.'}
       </p>
       {message && <p role="alert">{message}</p>}
-      {state === 'ready' && identity?.connected && <button disabled={exiting || adminPending} onClick={logout}>{exiting ? 'Saindo…' : 'Sair'}</button>}
+      {state === 'ready' && identity?.connected && <button disabled={exiting || adminPending} onClick={() => void logout()}>{exiting ? 'Saindo…' : 'Sair'}</button>}
       {state === 'ready' && !identity?.connected && identity?.googleEnabled && (
         <a className="material-link" href={`${identityApiUrl}/oauth2/authorization/google`} onClick={event => { if (onBeforeLogin && !onBeforeLogin()) event.preventDefault(); }}>Entrar com Google</a>
       )}

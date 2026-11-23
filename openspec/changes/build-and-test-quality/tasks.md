@@ -64,17 +64,17 @@ e o caso vai ao usuário.
 
 ## 5. Ferramentas do frontend (~250 linhas autorais + lockfile)
 
-- [ ] 5.1 ESLint flat config com `typescript-eslint`, `react-hooks` e
+- [x] 5.1 ESLint flat config com `typescript-eslint`, `react-hooks` e
   `eslint-config-prettier` (D9); script `lint`.
-- [ ] 5.2 Corrigir as violações existentes com teste, ou suprimir na linha com
+- [x] 5.2 Corrigir as violações existentes com teste, ou suprimir na linha com
   justificativa; listar as supressões no PR.
-- [ ] 5.3 `tsconfig.json` com `src` e `test`; `tsconfig.node.json` para `e2e/` e
+- [x] 5.3 `tsconfig.json` com `src` e `test`; `tsconfig.node.json` para `e2e/` e
   configs; `@types/node`; script `typecheck`; corrigir os erros de tipo encontrados.
-- [ ] 5.4 Configuração do Prettier e `.prettierignore`; script `format:check` (sem
+- [x] 5.4 Configuração do Prettier e `.prettierignore`; script `format:check` (sem
   aplicar ainda).
-- [ ] 5.5 `@vitest/coverage-v8` e script `test:coverage` sem limites; `coverage/` no
+- [x] 5.5 `@vitest/coverage-v8` e script `test:coverage` sem limites; `coverage/` no
   `.gitignore`.
-- [ ] 5.6 Passos `lint` e `typecheck` no job `frontend`; documentar em
+- [x] 5.6 Passos `lint` e `typecheck` no job `frontend`; documentar em
   `frontend/README.md`.
 
 ## 6. Cliente HTTP único — depende de 5 (~350 linhas autorais)

@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './AdministrativeAccountPanel.css';
-import { administrativeAccount, administrativeMutation, identityApiUrl, type AdministrativeAccount } from './identity-api';
+import { administrativeAccount, administrativeMutation, field, identityApiUrl, type AdministrativeAccount } from './identity-api';
 
 type Props = { connected: boolean; identityId?: string; onBeforeLogin?: () => boolean; onMutation: (pending: boolean) => void; navigate?: (url: string) => void };
 export default function AdministrativeAccountPanel({ connected, identityId, onBeforeLogin, onMutation, navigate = url => window.location.assign(url) }: Props) {
@@ -41,8 +41,9 @@ export default function AdministrativeAccountPanel({ connected, identityId, onBe
         return;
       }
       if (action === 'link') {
-        if (result.body?.authorizationUrl !== '/oauth2/authorization/google') throw new Error('invalid authorization destination');
-        navigate(`${identityApiUrl}${result.body.authorizationUrl}`); redirecting = true;
+        const authorizationUrl = field(result.body, 'authorizationUrl');
+        if (authorizationUrl !== '/oauth2/authorization/google') throw new Error('invalid authorization destination');
+        navigate(`${identityApiUrl}${authorizationUrl}`); redirecting = true;
       } else {
         setMessage(action === 'password' ? 'Senha atualizada.' : 'Login administrativo confirmado.');
       }

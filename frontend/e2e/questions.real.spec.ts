@@ -82,7 +82,7 @@ test('mesmos filtros antes/depois de login OIDC real e aulas disponíveis durant
   expect(bundle).not.toMatch(/PRIVATE_BROWSER_RESOLUTION_SENTINEL|NEW_BROWSER_RESOLUTION_SENTINEL|Fixture de navegador|Questão sintética/);
   // A tela de resultado usa o campo corretivo em chunk tardio, sem payload no bundle.
   const html = readFileSync(resolve('dist/index.html'), 'utf8');
-  const entry = html.match(/src="([^\"]+\.js)"/)?.[1];expect(entry).toBeTruthy();
+  const entry = html.match(/src="([^"]+\.js)"/)?.[1];expect(entry).toBeTruthy();
   expect(readFileSync(resolve('dist', entry!.replace(/^\//, '')), 'utf8')).not.toContain('correctAlternativeId');
   expect(await page.evaluate(() => performance.getEntriesByType('resource').map(r => r.name).filter(name => /AttemptResult-|attempt-result-api-/.test(name)))).toEqual([]);
 });

@@ -31,7 +31,7 @@ function summary(v: unknown, context: 'window' | 'attemptId', roleId: string) {
   return r;
 }
 async function read(path: string, signal: AbortSignal) {
-  const response = await identityRequest(path, { signal });if (!response.ok) throw new ReviewApiError(response.status);return response.body as unknown;
+  const response = await identityRequest(path, { signal });if (!response.ok) throw new ReviewApiError(response.status);return response.body;
 }
 export async function reviewOverview(roleId: string, signal: AbortSignal): Promise<ReviewOverview> {
   ensure(reviewRoles.some(r => r.id === roleId));const v = await read(`/api/v1/me/subject-review?roleId=${encodeURIComponent(roleId)}`, signal);

@@ -32,4 +32,29 @@ public final class AdministrativeImportFixtures {
         }
         return new AdministrativePackageReader.Document(AdministrativePackageReader.FORMAT,purpose,items,List.of(file));
     }
+    /** Como {@link #document}, com recurso (PNG declarado em files) no enunciado e referência com base legal. */
+    public static AdministrativePackageReader.Document rich(QuestionPurpose purpose,String...keys){return rich(purpose,"",keys);}
+    /** Variante com sufixo no enunciado: mesmo pacote de arquivos, conteúdo (e fingerprint) diferente. */
+    public static AdministrativePackageReader.Document rich(QuestionPurpose purpose,String statementSuffix,String...keys){
+        var base=document(purpose,keys);
+        var png=new byte[]{(byte)137,80,78,71,13,10,26,10,0,0,0,13,73,72,68,82};
+        var pngHash=AdministrativePackageReader.sha(png);
+        var asset=new AdministrativePackageReader.File("assets/figura-sintetica.png","image/png",pngHash,Base64.getEncoder().encodeToString(png));
+        var resource=new TextContent.Resource("assets/figura-sintetica.png","image/png",pngHash,"Figura sintética: dois quadrados lado a lado");
+        var reference=new StudyReference("Referência legal sintética",java.net.URI.create("https://example.test/lei-sintetica"),
+                new StudyReference.LegalBasis("Art. 1º da lei sintética",java.time.LocalDate.of(2026,1,15)));
+        var items=new ArrayList<AdministrativePackageReader.Item>();
+        for(var item:base.items()){
+            var c=item.content();
+            var statement=new TextContent(c.statement().text()+statementSuffix,List.of(resource));
+            var references=new ArrayList<>(c.references());references.add(reference);
+            var k=c.classification();
+            var content=new QuestionContent(statement,c.alternatives(),c.correctAlternativeId(),c.resolution(),
+                    QuestionClassification.fromIds(k.disciplineId(),k.topicId(),k.roleIds()),references,c.provenance());
+            items.add(new AdministrativePackageReader.Item(item.origin(),new QuestionImportReader.Content(statement,c.alternatives(),c.correctAlternativeId(),
+                    c.resolution(),k,references,c.provenance()),content.fingerprint(),null));
+        }
+        var files=new ArrayList<>(base.files());files.add(asset);
+        return new AdministrativePackageReader.Document(base.format(),purpose,items,files);
+    }
 }

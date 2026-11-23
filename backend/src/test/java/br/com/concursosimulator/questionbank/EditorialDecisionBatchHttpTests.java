@@ -361,4 +361,13 @@ class EditorialDecisionBatchHttpTests {
         JsonContractSnapshot.check("editorial-apply-approve", ok(send(BASE + "/apply", cookie, csrf, body)));
         JsonContractSnapshot.check("editorial-apply-replay", ok(send(BASE + "/apply", cookie, csrf, body)));
     }
+
+    /** Prévia recusada (aprovar rascunho): refusal preenchido, lote não confirmável e sem token. */
+    @Test void zz_editorialBatchRefusalJsonContractIsStable() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie);
+        var receipt = imported(cookie, csrf, QuestionPurpose.SIMULADO, "snapshot.refused");
+        var nonce = receipt.path("confirmation").path("nonce").asString();
+        JsonContractSnapshot.check("editorial-preview-refused", ok(send(BASE + "/preview", cookie, csrf,
+                json.writeValueAsString(byReceipt(envelope("APPROVE", "HUMAN_PEER", ALL_CHECKS, "Aprovação sintética recusada"), nonce)))));
+    }
 }

@@ -4,7 +4,7 @@ import br.com.concursosimulator.identity.application.AdministrativeAccessUseCase
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
 import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
-import br.com.concursosimulator.shared.infrastructure.http.TransientFailures;
+import br.com.concursosimulator.shared.failure.TransientFailures;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.*;

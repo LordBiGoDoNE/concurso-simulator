@@ -2,10 +2,13 @@ package br.com.concursosimulator.questionbank.web;
 
 import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries.ExportRefused;
 import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries.InvalidQuery;
+import br.com.concursosimulator.shared.failure.TransientFailures;
 import java.util.List;
 import java.util.UUID;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
+import org.springframework.transaction.TransactionException;
 import org.springframework.web.HttpMediaTypeNotSupportedException;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
@@ -48,8 +51,10 @@ public class AdministrativeCurationFailureAdvice {
         return ResponseEntity.status(409).header("Cache-Control", "no-store")
                 .body(new ConflictResponse("BATCH_DIVERGED", diverged.questionIds(), correlation("BATCH_DIVERGED")));
     }
-    @ExceptionHandler({org.springframework.dao.TransientDataAccessException.class, org.springframework.dao.DataAccessResourceFailureException.class,
-            org.springframework.transaction.CannotCreateTransactionException.class, org.springframework.transaction.TransactionTimedOutException.class})
-    ResponseEntity<ErrorResponse> unavailable() { return error(503, "ADMIN_UNAVAILABLE"); }
+    /** 503 somente para indisponibilidade transitória ({@link TransientFailures}); o restante é falha inesperada. */
+    @ExceptionHandler({DataAccessException.class, TransactionException.class})
+    ResponseEntity<ErrorResponse> data(RuntimeException failure) {
+        return TransientFailures.transientCause(failure) ? error(503, "ADMIN_UNAVAILABLE") : unexpected();
+    }
     @ExceptionHandler(Exception.class) ResponseEntity<ErrorResponse> unexpected() { return error(500, "ADMIN_CURATION_FAILED"); }
 }

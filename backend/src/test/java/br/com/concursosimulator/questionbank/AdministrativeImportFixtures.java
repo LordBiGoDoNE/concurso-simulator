@@ -9,6 +9,15 @@ import java.util.*;
 /** Dados sintéticos exclusivos; aprovação destes dados nunca constitui curadoria real. */
 public final class AdministrativeImportFixtures {
     private AdministrativeImportFixtures(){}
+    private static final tools.jackson.databind.json.JsonMapper JSON=tools.jackson.databind.json.JsonMapper.builder().build();
+    /** Pacote no contrato web (DTO), pelo mesmo JSON que o cliente envia. */
+    public static br.com.concursosimulator.questionbank.web.AdministrativeContracts.PackageDocument web(Object document){
+        return JSON.convertValue(document,br.com.concursosimulator.questionbank.web.AdministrativeContracts.PackageDocument.class);
+    }
+    /** Pacote no contrato da aplicação, pelo mesmo JSON. */
+    public static QuestionImportReader.Document application(Object document){
+        return JSON.convertValue(document,QuestionImportReader.Document.class);
+    }
     public static AdministrativePackageReader.Document document(QuestionPurpose purpose,String...keys){
         var bytes="Fonte sintética privada PRIVATE_SENTINEL".getBytes(StandardCharsets.UTF_8);
         var hash=AdministrativePackageReader.sha(bytes);var file=new AdministrativePackageReader.File("sources/fixture.txt","text/plain",hash,Base64.getEncoder().encodeToString(bytes));

@@ -74,9 +74,9 @@ class AdministrativeQuestionHttpTests {
     /** Importa pelo fluxo administrativo real e devolve o corpo do recibo. */
     JsonNode imported(String cookie, String csrf, QuestionPurpose purpose, String... keys) throws Exception {
         var doc = document(purpose, keys);
-        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(doc, List.of(keys)))));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), List.of(keys)))));
         return ok(send("POST", "/api/v1/admin/question-imports/apply", cookie, csrf,
-                json.writeValueAsString(new ApplyRequest(doc, List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
+                json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
     }
     void decide(UUID id, EditorialDecision.Action action, EditorialDecision.ReviewKind kind) {
         questions.transaction(s -> { var q = s.loadForUpdate(id).orElseThrow();
@@ -246,7 +246,7 @@ class AdministrativeQuestionHttpTests {
         var byIds = ok(send("POST", BASE + "/export", cookie, csrf, "{\"questionIds\":[" + String.join(",", ids) + "]}"));
         assertThat(byIds.get("packageDigest").asString()).isEqualTo(byReceipt.get("packageDigest").asString());
         // Reimportar o pacote exportado reconhece conteúdo idêntico, sem novas revisões.
-        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(exported, keys))));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(exported), keys))));
         assertThat(preview.get("items")).extracting(i -> i.path("change").asString()).containsOnly("IDENTICAL");
         assertThat(writes()).isEqualTo(before);
         // Recusas explícitas e sanitizadas.
@@ -302,10 +302,10 @@ class AdministrativeQuestionHttpTests {
     @Test void f_administrativeJsonContractsAreStable() throws Exception {
         var cookie = admin(); var csrf = csrf(cookie); var keys = List.of("snapshot.one", "snapshot.two");
         var doc = document(QuestionPurpose.SIMULADO, keys.toArray(String[]::new));
-        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(doc, keys))));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), keys))));
         JsonContractSnapshot.check("import-preview", preview);
         var applied = ok(send("POST", "/api/v1/admin/question-imports/apply", cookie, csrf,
-                json.writeValueAsString(new ApplyRequest(doc, keys, preview.get("confirmationToken").asString()))));
+                json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), keys, preview.get("confirmationToken").asString()))));
         JsonContractSnapshot.check("import-apply", applied);
         var id = applied.path("receipt").path("results").get(0).path("questionId").asString();
         JsonContractSnapshot.check("question-search", ok(send("GET", BASE + "?keyPrefix=snapshot.", cookie, null, null)));
@@ -317,6 +317,6 @@ class AdministrativeQuestionHttpTests {
         JsonContractSnapshot.check("question-export", ok(send("POST", BASE + "/export", cookie, csrf, "{\"questionIds\":[\"" + id + "\"]}")));
         // Re-preview do mesmo pacote: itens já existentes mudam o tipo de alteração e o JSON continua estável.
         JsonContractSnapshot.check("import-preview-existing", ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf,
-                json.writeValueAsString(new PreviewRequest(doc, keys)))));
+                json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), keys)))));
     }
 }

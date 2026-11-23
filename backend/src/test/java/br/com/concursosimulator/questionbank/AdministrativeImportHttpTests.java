@@ -78,11 +78,11 @@ class AdministrativeImportHttpTests {
         int editorialBefore=jdbc.queryForObject("select count(*) from qb_decision",Integer.class);
         for(var purpose:QuestionPurpose.values()) {
             var key="admin.http"+purpose;var doc=document(purpose,key);int before=jdbc.queryForObject("select count(*) from qb_import_receipt",Integer.class);
-            var preview=send("POST",prefix+"/preview",cookie,csrf,json.writeValueAsString(new PreviewRequest(doc,List.of(key))),null);
+            var preview=send("POST",prefix+"/preview",cookie,csrf,json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc),List.of(key))),null);
             assertThat(preview.statusCode()).as(preview.body()).isEqualTo(200);assertThat(preview.headers().firstValue("Cache-Control")).contains("no-store");
             assertThat(preview.body()).doesNotContain("PRIVATE_SENTINEL","Resolução sintética","correctAlternativeId");
             assertThat(jdbc.queryForObject("select count(*) from qb_import_receipt",Integer.class)).isEqualTo(before);
-            var token=json.readTree(preview.body()).get("confirmationToken").asString();var body=json.writeValueAsString(new ApplyRequest(doc,List.of(key),token));
+            var token=json.readTree(preview.body()).get("confirmationToken").asString();var body=json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc),List.of(key),token));
             var applied=send("POST",prefix+"/apply",cookie,csrf,body,null);assertThat(applied.statusCode()).as(applied.body()).isEqualTo(200);
             assertThat(json.readTree(applied.body()).get("replayed").asBoolean()).isFalse();
             var retry=send("POST",prefix+"/apply",cookie,csrf,body,null);assertThat(retry.statusCode()).as(retry.body()).isEqualTo(200);
@@ -91,15 +91,15 @@ class AdministrativeImportHttpTests {
             var id=json.readTree(applied.body()).path("receipt").path("results").get(0).path("questionId").asString();
             assertThat(send("GET","/api/v1/question-bank/questions/"+id,null,null,null,null).statusCode()).isEqualTo(404);
             var changed=document(purpose,"admin.different");
-            var mismatch=send("POST",prefix+"/apply",cookie,csrf,json.writeValueAsString(new ApplyRequest(changed,List.of("admin.different"),token)),null);
+            var mismatch=send("POST",prefix+"/apply",cookie,csrf,json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(changed),List.of("admin.different"),token)),null);
             assertThat(mismatch.statusCode()).isEqualTo(409);
-            assertThat(send("POST",prefix+"/apply",cookie,csrf,json.writeValueAsString(new ApplyRequest(doc,List.of(key),"X"+token)),null).statusCode()).isEqualTo(409);
+            assertThat(send("POST",prefix+"/apply",cookie,csrf,json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc),List.of(key),"X"+token)),null).statusCode()).isEqualTo(409);
         }
         assertThat(jdbc.queryForObject("select count(*) from qb_decision",Integer.class)).isEqualTo(editorialBefore);
     }
     @Test void strictJsonRejectsDuplicateTrailingUnknownAndMissingBasesSanitized()throws Exception{
         var cookie=session(new UserPrincipal(OPERATOR));var token=csrf(cookie);var doc=document(QuestionPurpose.PRATICA_AULA,"admin.strict");
-        var good=json.writeValueAsString(new PreviewRequest(doc,List.of("admin.strict")));
+        var good=json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc),List.of("admin.strict")));
         for(var bad:List.of(good+" {}","{\"package\":null,\"package\":null,\"keys\":[]}",good.replace("\"keys\":", "\"PRIVATE_SENTINEL\":"))) {
             var response=send("POST",prefix+"/preview",cookie,token,bad,null);
             assertThat(response.statusCode()).as(response.body()).isEqualTo(400);assertThat(response.body()).doesNotContain("PRIVATE_SENTINEL","Fixture");
@@ -112,9 +112,9 @@ class AdministrativeImportHttpTests {
     @Test @org.junit.jupiter.api.extension.ExtendWith(org.springframework.boot.test.system.OutputCaptureExtension.class)
     void unexpectedAndTransientFailuresHaveStableSanitizedContracts(org.springframework.boot.test.system.CapturedOutput output)throws Exception {
         var cookie=session(new UserPrincipal(OPERATOR));var csrf=csrf(cookie);var d=document(QuestionPurpose.SIMULADO,"admin.failed");
-        var preview=send("POST",prefix+"/preview",cookie,csrf,json.writeValueAsString(new PreviewRequest(d,List.of("admin.failed"))),null);
+        var preview=send("POST",prefix+"/preview",cookie,csrf,json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(d),List.of("admin.failed"))),null);
         var token=json.readTree(preview.body()).path("confirmationToken").asString();
-        var body=json.writeValueAsString(new ApplyRequest(d,List.of("admin.failed"),token));
+        var body=json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(d),List.of("admin.failed"),token));
         int before=jdbc.queryForObject("select count(*) from qb_import_receipt",Integer.class);
         for(var failure:List.of(new IllegalStateException("PRIVATE_FAILURE_SENTINEL"),new org.springframework.dao.TransientDataAccessResourceException("PRIVATE_FAILURE_SENTINEL"))){
             org.mockito.Mockito.doThrow(failure).when(importer).execute(org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.anyString());
@@ -130,7 +130,7 @@ class AdministrativeImportHttpTests {
         var cookie=session(new UserPrincipal(OPERATOR));var token=csrf(cookie);var d=document(QuestionPurpose.SIMULADO,"admin.stale-preview");
         var item=d.items().getFirst();var staleItem=new br.com.concursosimulator.questionbank.application.port.QuestionImportReader.Item(item.origin(),item.content(),item.fingerprint(),UUID.randomUUID());
         var stale=new br.com.concursosimulator.questionbank.application.port.QuestionImportReader.Document(d.format(),d.purpose(),List.of(staleItem),d.files());
-        var response=send("POST",prefix+"/preview",cookie,token,json.writeValueAsString(new PreviewRequest(stale,List.of(item.origin().key()))),null);
+        var response=send("POST",prefix+"/preview",cookie,token,json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(stale),List.of(item.origin().key()))),null);
         assertThat(response.statusCode()).as(response.body()).isEqualTo(200);var body=json.readTree(response.body());
         assertThat(body.get("confirmable").asBoolean()).isFalse();assertThat(body.get("confirmationToken").isNull()).isTrue();
         assertThat(body.path("items").get(0).path("change").asString()).isEqualTo("STALE");
@@ -140,9 +140,9 @@ class AdministrativeImportHttpTests {
         var cookie=session(new UserPrincipal(OPERATOR));var csrf=csrf(cookie);
         var keys=java.util.stream.IntStream.range(0,6).mapToObj(n->"admin.grow"+n).toArray(String[]::new);
         var doc=document(QuestionPurpose.PRATICA_AULA,keys);
-        var preview=send("POST",prefix+"/preview",cookie,csrf,json.writeValueAsString(new PreviewRequest(doc,List.of(keys))),null);
+        var preview=send("POST",prefix+"/preview",cookie,csrf,json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc),List.of(keys))),null);
         var token=json.readTree(preview.body()).path("confirmationToken").asString();
-        var applied=send("POST",prefix+"/apply",cookie,csrf,json.writeValueAsString(new ApplyRequest(doc,List.of(keys),token)),null);
+        var applied=send("POST",prefix+"/apply",cookie,csrf,json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc),List.of(keys),token)),null);
         assertThat(applied.statusCode()).as(applied.body()).isEqualTo(200);
         var ids=new HashSet<UUID>();
         for(var result:json.readTree(applied.body()).path("receipt").path("results"))ids.add(UUID.fromString(result.path("questionId").asString()));
@@ -160,12 +160,12 @@ class AdministrativeImportHttpTests {
     @org.junit.jupiter.params.provider.ValueSource(strings={"nullKeys","numberKey","nullElement","nullToken"})
     void invalidEnvelopeFieldTypesAre400(String mode)throws Exception {
         var cookie=session(new UserPrincipal(OPERATOR));var token=csrf(cookie);var doc=document(QuestionPurpose.SIMULADO,"123");
-        String body=json.writeValueAsString(new PreviewRequest(doc,List.of("123")));
+        String body=json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc),List.of("123")));
         String path=prefix+"/preview";
         if(mode.equals("nullKeys"))body=body.replace("\"keys\":[\"123\"]","\"keys\":null");
         if(mode.equals("nullElement"))body=body.replace("\"keys\":[\"123\"]","\"keys\":[null]");
         if(mode.equals("numberKey"))body=body.replace("\"keys\":[\"123\"]","\"keys\":[123]");
-        if(mode.equals("nullToken")){body=json.writeValueAsString(new ApplyRequest(doc,List.of("123"),null));path=prefix+"/apply";}
+        if(mode.equals("nullToken")){body=json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc),List.of("123"),null));path=prefix+"/apply";}
         var response=send("POST",path,cookie,token,body,null);
         assertThat(response.statusCode()).as(mode+": "+response.body()).isEqualTo(400);
     }
@@ -174,7 +174,7 @@ class AdministrativeImportHttpTests {
         for(var mediaType:List.of("application/problem+json","application/json; charset=ISO-8859-1")){
         var request=HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+prefix+"/preview"))
             .header("Cookie",cookie).header("X-CSRF-TOKEN",token).header("Content-Type",mediaType)
-            .POST(HttpRequest.BodyPublishers.ofString(json.writeValueAsString(new PreviewRequest(doc,List.of("admin.media"))))).build();
+            .POST(HttpRequest.BodyPublishers.ofString(json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc),List.of("admin.media"))))).build();
         var response=http.send(request,HttpResponse.BodyHandlers.ofString());
         assertThat(response.statusCode()).as(mediaType).isEqualTo(415);assertThat(response.headers().firstValue("Cache-Control")).contains("no-store");
         }

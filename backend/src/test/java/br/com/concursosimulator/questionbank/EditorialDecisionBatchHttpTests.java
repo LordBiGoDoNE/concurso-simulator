@@ -72,9 +72,9 @@ class EditorialDecisionBatchHttpTests {
     }
     JsonNode imported(String cookie, String csrf, QuestionPurpose purpose, String... keys) throws Exception {
         var doc = document(purpose, keys);
-        var preview = ok(send("/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(doc, List.of(keys)))));
+        var preview = ok(send("/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), List.of(keys)))));
         return ok(send("/api/v1/admin/question-imports/apply", cookie, csrf,
-                json.writeValueAsString(new ApplyRequest(doc, List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
+                json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
     }
     ObjectNode envelope(String action, String kind, List<String> checks, String rationale) {
         var node = json.createObjectNode().put("action", action);
@@ -253,7 +253,7 @@ class EditorialDecisionBatchHttpTests {
         assertMismatch(send(BASE + "/apply", cookie, csrf, json.writeValueAsString(badToken)));
         // Token de importação não confirma lote de decisões (separação de domínio).
         var importPreview = ok(send("/api/v1/admin/question-imports/preview", cookie, csrf,
-                json.writeValueAsString(new PreviewRequest(document(QuestionPurpose.SIMULADO, "batch.other"), List.of("batch.other")))));
+                json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(document(QuestionPurpose.SIMULADO, "batch.other")), List.of("batch.other")))));
         var crossToken = (ObjectNode) json.readTree(applyBody(preview)); crossToken.put("confirmationToken", importPreview.get("confirmationToken").asString());
         assertMismatch(send(BASE + "/apply", cookie, csrf, json.writeValueAsString(crossToken)));
         // Outro ADM/ator não reutiliza o token (sessão comum sequer chega ao controller).
@@ -336,7 +336,7 @@ class EditorialDecisionBatchHttpTests {
         AdministrativeQuestionHttpTests.contract("EditorialBatchExpected", preview.get("expected").get(0));
         // Token do lote não confirma importação (separação de domínio nos dois sentidos).
         var doc = document(QuestionPurpose.SIMULADO, "batch.cross");
-        var importApply = send("/api/v1/admin/question-imports/apply", cookie, csrf, json.writeValueAsString(new ApplyRequest(doc, List.of("batch.cross"), preview.get("confirmationToken").asString())));
+        var importApply = send("/api/v1/admin/question-imports/apply", cookie, csrf, json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), List.of("batch.cross"), preview.get("confirmationToken").asString())));
         assertThat(importApply.statusCode()).isEqualTo(409);
         var applied = ok(send(BASE + "/apply", cookie, csrf, applyBody(preview)));
         AdministrativeQuestionHttpTests.contract("EditorialBatchApplied", applied);

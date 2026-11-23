@@ -3,6 +3,7 @@ package br.com.concursosimulator.questionbank.infrastructure.importing;
 import br.com.concursosimulator.questionbank.infrastructure.QuestionBankRoutes;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
 import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.port.AdministrativeImportPermission;
 import jakarta.servlet.*;
@@ -43,11 +44,11 @@ public class AdministrativeCurationSecurityConfiguration {
                                     && current.getDetails() instanceof br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.Evidence evidence
                                     && permission.permits(((UserPrincipal) current.getPrincipal()).id(), evidence.version()));
                         }).anyRequest().denyAll())
-                .exceptionHandling(e -> e.authenticationEntryPoint((r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "unauthenticated"))
+                .exceptionHandling(e -> e.authenticationEntryPoint((r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "UNAUTHENTICATED"))
                         .accessDeniedHandler((r, s, x) -> {
                             int status = x instanceof org.springframework.security.web.csrf.CsrfException ? 403
                                     : ImportSecurityConfiguration.valid(org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication()) ? 403 : 401;
-                            ImportSecurityConfiguration.reject(s, status, status == 401 ? "unauthenticated" : "forbidden");
+                            ImportSecurityConfiguration.reject(s, status, status == 401 ? "UNAUTHENTICATED" : "FORBIDDEN");
                         }))
                 .addFilterBefore(new ImportSecurityConfiguration.NoStore(), org.springframework.web.filter.CorsFilter.class)
                 .addFilterAfter(new BodyLimits(settings), AuthorizationFilter.class).build();
@@ -61,8 +62,7 @@ public class AdministrativeCurationSecurityConfiguration {
         @Override protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain) throws ServletException, IOException {
             // Decisões em lote dependem do destino e da chave de confirmação; consultas não.
             if (r.getServletPath().startsWith(QuestionBankRoutes.EDITORIAL_DECISIONS + "/") && !settings.configured()) {
-                s.setStatus(503); s.setContentType("application/json"); s.setHeader("Cache-Control", "no-store");
-                s.getWriter().write("{\"error\":\"DECISIONS_NOT_CONFIGURED\",\"correlationId\":\"" + UUID.randomUUID() + "\"}"); return;
+                JsonRejection.writeCorrelated(s, 503, "DECISIONS_NOT_CONFIGURED"); return;
             }
             try {
                 var type = org.springframework.http.MediaType.parseMediaType(r.getContentType());

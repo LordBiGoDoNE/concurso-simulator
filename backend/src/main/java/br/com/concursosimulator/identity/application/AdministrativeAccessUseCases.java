@@ -61,7 +61,8 @@ public final class AdministrativeAccessUseCases {
     }
     public boolean active(UUID actor) { return accounts.active(actor); }
     public Access changePassword(UUID actor,long epoch,String oldPassword,String newPassword) {
-        AdministrativeAccount.validatePassword(newPassword);
+        try { AdministrativeAccount.validatePassword(newPassword); }
+        catch (IllegalArgumentException refused) { throw new Failure("INVALID_REQUEST"); }
         // Failed proof is committed to the same attempt counter used by login.
         verifyPassword(actor,epoch,oldPassword,true);
         return accounts.atomic(s -> {

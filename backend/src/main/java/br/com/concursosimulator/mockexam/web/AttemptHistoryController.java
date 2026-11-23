@@ -18,10 +18,11 @@ public class AttemptHistoryController {
         var page=number(params.getFirst("page"),0); var size=number(params.getFirst("size"),20);
         var finished=params.getFirst("finished");
         if (finished!=null && !Set.of("true","false").contains(finished)) throw invalid();
-        var items=cases.history(actor,new AttemptStore.HistoryQuery(page,size,finished==null?null:Boolean.valueOf(finished)));
+        var query=br.com.concursosimulator.shared.web.RequestValues.parse(() -> new AttemptStore.HistoryQuery(page,size,finished==null?null:Boolean.valueOf(finished)));
+        var items=cases.history(actor,query);
         return AttemptController.ok(new History(items.stream().map(e -> new HistoryItem(e.id(),TargetRole.valueOf(e.role()).id(),e.createdAt(),e.finishedAt(),e.total(),e.percentage())).toList(),page,size));
     }
     private static int number(String value,int fallback) {
-        if (value==null) return fallback; if (!value.matches("[0-9]+")) throw invalid(); return Integer.parseInt(value);
+        if (value==null) return fallback; if (!value.matches("[0-9]+")) throw invalid(); return br.com.concursosimulator.shared.web.RequestValues.parse(() -> Integer.parseInt(value));
     }
 }

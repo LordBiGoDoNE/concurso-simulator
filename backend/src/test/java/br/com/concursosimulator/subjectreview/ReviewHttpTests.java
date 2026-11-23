@@ -61,7 +61,7 @@ class ReviewHttpTests {
     @Test @Order(2) void inputsAreStrictAndRouteSecurityRejectsBeforeTheController() throws Exception {
         var a=account(UUID.randomUUID());
         for(var query:List.of("","?roleId=","?roleId=outside",role+"&roleId=secretario-de-escola",role+"&limit=1",role+"&owner="+UUID.randomUUID(),role+"&useParameterizedQuestions=true")) {
-            var r=send("GET",panel+query,a,null);assertThat(r.statusCode()).as(query).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            var r=send("GET",panel+query,a,null);assertThat(r.statusCode()).as(query).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"INVALID_REQUEST\"}");
         }
         for(var id:List.of("invalid","1-1-1-1-1"))assertThat(send("GET","/api/v1/attempts/"+id+"/subject-review",a,null).statusCode()).isEqualTo(400);
         var path="/api/v1/attempts/"+UUID.randomUUID()+"/subject-review";
@@ -69,7 +69,7 @@ class ReviewHttpTests {
         for(Authentication auth:new Authentication[]{null,UsernamePasswordAuthenticationToken.authenticated("invalid",null,List.of()),
                 UsernamePasswordAuthenticationToken.unauthenticated(new UserPrincipal(UUID.randomUUID()),null),
                 new AnonymousAuthenticationToken("fixture",new UserPrincipal(UUID.randomUUID()),List.of(new org.springframework.security.core.authority.SimpleGrantedAuthority("ROLE_ANONYMOUS")))}) {
-            var b=session(auth);var r=send("GET",panel,b,null);assertThat(r.statusCode()).isEqualTo(401);assertThat(r.body()).isEqualTo("{\"error\":\"unauthenticated\"}");
+            var b=session(auth);var r=send("GET",panel,b,null);assertThat(r.statusCode()).isEqualTo(401);assertThat(r.body()).isEqualTo("{\"error\":\"UNAUTHENTICATED\"}");
             if(auth!=null)assertThat(send("GET",path,b,null).statusCode()).isEqualTo(401);
         }
         assertThat(send("GET",panel+role,browser(null),null).statusCode()).isEqualTo(401);
@@ -107,13 +107,13 @@ class ReviewHttpTests {
         try { jdbc.update("update me_item set payload=jsonb_set(payload,'{question,revisionId}',to_jsonb(?::text)) where attempt_id=?",UUID.randomUUID().toString(),UUID.fromString(v.get("id").asString())); }
         finally { jdbc.execute("alter table me_item enable trigger user"); }
         var before=rows();
-        for(var url:List.of(panel+role,path+"/subject-review")) {var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");}
+        for(var url:List.of(panel+role,path+"/subject-review")) {var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"INTERNAL_ERROR\"}");}
         assertThat(rows()).isEqualTo(before);
         for(var failure:List.of(new IllegalStateException("PRIVATE_FORMAT payload=secret"),new org.springframework.dao.InvalidDataAccessApiUsageException("PRIVATE_INTEGRITY"),
                 new org.springframework.dao.DataAccessResourceFailureException("PRIVATE_JDBC password=secret"),new org.springframework.transaction.CannotCreateTransactionException("PRIVATE_TX"))) {
             org.mockito.Mockito.doThrow(failure).when(evidence).recent(org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.any(),org.mockito.ArgumentMatchers.anyInt(),org.mockito.ArgumentMatchers.any());
             try {var r=send("GET",panel+role,a,null);boolean integrity=failure instanceof IllegalStateException || failure instanceof org.springframework.dao.InvalidDataAccessApiUsageException;
-                assertThat(r.statusCode()).isEqualTo(integrity?500:503);assertThat(r.body()).isEqualTo(integrity?"{\"error\":\"internal_error\"}":"{\"error\":\"unavailable\"}");}
+                assertThat(r.statusCode()).isEqualTo(integrity?500:503);assertThat(r.body()).isEqualTo(integrity?"{\"error\":\"INTERNAL_ERROR\"}":"{\"error\":\"UNAVAILABLE\"}");}
             finally {org.mockito.Mockito.reset(evidence);}
         }
         assertThat(rows()).isEqualTo(before);
@@ -201,7 +201,7 @@ class ReviewHttpTests {
     @Test @Order(90) void databaseAndSessionOutageRemain503JsonNoStoreIncludingCors() throws Exception {
         var a=account(UUID.randomUUID());PG.stop();
         for(var url:List.of(panel+role,"/api/v1/attempts/"+UUID.randomUUID()+"/subject-review")) {
-            var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            var r=send("GET",url,a,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"UNAVAILABLE\"}");
         }
     }
     List<List<String>> rows() { return List.of("app_user","qb_question","qb_revision","qb_decision","me_attempt","me_item","me_command","pq_instance").stream()

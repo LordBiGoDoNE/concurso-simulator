@@ -56,7 +56,7 @@ class TopicPracticeDomainTests {
         assertThatThrownBy(()->Attempt.startPractice(UUID.randomUUID(),ACCOUNT,Topic.P02,NOW,items)).isInstanceOf(IllegalArgumentException.class);
         assertThatThrownBy(()->Attempt.startPractice(UUID.randomUUID(),ACCOUNT,Topic.P01,NOW,List.of(items.getFirst(),items.getFirst()))).isInstanceOf(IllegalArgumentException.class);
         assertThatThrownBy(()->Attempt.startPractice(UUID.randomUUID(),ACCOUNT,Topic.P01,NOW,List.of())).isInstanceOf(IllegalArgumentException.class);
-        assertThatThrownBy(()->a.answer(ACCOUNT,NOW,0,items.getFirst().id(),UUID.randomUUID())).isInstanceOf(IllegalArgumentException.class);
+        assertThatThrownBy(()->a.answer(ACCOUNT,NOW,0,items.getFirst().id(),UUID.randomUUID())).isInstanceOf(Attempt.InvalidAnswer.class);
         var oversized=java.util.stream.IntStream.range(0,6).mapToObj(i->item(practiceQuestion(i))).toList();
         assertThatThrownBy(()->Attempt.startPractice(UUID.randomUUID(),ACCOUNT,Topic.P01,NOW,oversized)).isInstanceOf(IllegalArgumentException.class);
         var historical=java.util.stream.IntStream.range(0,25).mapToObj(i->item(practiceQuestion(i))).toList();

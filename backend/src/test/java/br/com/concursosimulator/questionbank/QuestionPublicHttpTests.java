@@ -81,9 +81,9 @@ class QuestionPublicHttpTests {
         for(var path:List.of("/questions?disciplineId=other","/questions?topicId=P99","/questions?roleId=admin","/questions?disciplineId=portugues&topicId=M01",
                 "/questions?page=-1","/questions?size=0","/questions?size=101","/questions?page=999999999999","/questions?page=2147483647&size=100",
                 "/questions?size=","/questions?size=1&size=2","/questions?answer=true","/catalog?extra=1","/questions/no-uuid","/questions/"+FIRST+"?revisionId=old")) {
-            var response=get(path);assertThat(response.statusCode()).as(path).isEqualTo(400);assertThat(response.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            var response=get(path);assertThat(response.statusCode()).as(path).isEqualTo(400);assertThat(response.body()).isEqualTo("{\"error\":\"INVALID_REQUEST\"}");
         }
-        var absent=get("/questions/"+UUID.randomUUID());assertThat(absent.statusCode()).isEqualTo(404);assertThat(absent.body()).isEqualTo("{\"error\":\"not_found\"}");
+        var absent=get("/questions/"+UUID.randomUUID());assertThat(absent.statusCode()).isEqualTo(404);assertThat(absent.body()).isEqualTo("{\"error\":\"NOT_FOUND\"}");
     }
     @SuppressWarnings({"unchecked","rawtypes"})
     @Test @Order(4) void publicAndDeniedRoutesNeverLoadRenewCreateOrCommitSessionsForAnyCookie() throws Exception {
@@ -155,7 +155,7 @@ class QuestionPublicHttpTests {
             var q=Question.draft(UUID.randomUUID(),new QuestionOrigin("fixture-projection-negative",UUID.randomUUID().toString()),UUID.randomUUID(),content);
             store.transaction(s -> {s.insert(q);return null;});decision(q.id(),q.latest().id(),EditorialDecision.Action.SUBMIT);decision(q.id(),q.latest().id(),EditorialDecision.Action.APPROVE);
             var response=get("/questions/"+q.id());assertThat(response.statusCode()).isEqualTo(503);
-            assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
+            assertThat(response.body()).isEqualTo("{\"error\":\"UNAVAILABLE\"}");assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
         }
         assertThat(get("/questions").statusCode()).isEqualTo(503); // markup em resumo também é rejeitado
     }
@@ -174,7 +174,7 @@ class QuestionPublicHttpTests {
         POSTGRES.stop();
         for(var path:List.of("/questions","/questions/"+FIRST)) {
             long start=System.nanoTime();var response=get(path);
-            assertThat(response.statusCode()).isEqualTo(503);assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            assertThat(response.statusCode()).isEqualTo(503);assertThat(response.body()).isEqualTo("{\"error\":\"UNAVAILABLE\"}");
             assertThat(Duration.ofNanos(System.nanoTime()-start)).isLessThan(Duration.ofSeconds(8));
             assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
         }

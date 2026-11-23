@@ -66,11 +66,11 @@ class AttemptHttpTests {
                 valid.replace("\"quantity\":1","\"quantity\":0"),valid.replace("assistente-administrativo","outside"),
                 valid.replace("\"portugues\"","\"outside\""),valid.replace("\"topicIds\":[]","\"topicIds\":[\"M01\"]"),
                 valid.substring(0,valid.length()-1)+",\"owner\":\""+UUID.randomUUID()+"\"}",valid.substring(0,valid.length()-1)+",\"correctAlternativeId\":\""+UUID.randomUUID()+"\"}")) {
-            var r=send("POST","/api/v1/attempts",b,body);assertThat(r.statusCode()).as(body).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            var r=send("POST","/api/v1/attempts",b,body);assertThat(r.statusCode()).as(body).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"INVALID_REQUEST\"}");
         }
         var noCsrf=new Browser(b.cookie(),null);assertThat(send("POST","/api/v1/attempts",noCsrf,valid).statusCode()).isEqualTo(403);
         var missing=send("POST","/api/v1/attempts",b,createBody(UUID.randomUUID(),100));assertThat(missing.statusCode()).isEqualTo(409);
-        assertThat(missing.body()).contains("insufficient_pool","available");
+        assertThat(missing.body()).contains("INSUFFICIENT_POOL","available");
         assertThat(jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(before);
     }
     @Test @Order(3) void wrongOwnerAndMissingResourceHaveIndistinguishableJsonAndSchemaControlDetectsLeak() throws Exception {
@@ -136,7 +136,7 @@ class AttemptHttpTests {
         var before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
         for(var value:List.of("null","\"true\"","1","0","[]","{}")) {
             var r=send("POST","/api/v1/attempts",b,option(createBody(UUID.randomUUID(),1),value));
-            assertThat(r.statusCode()).as(value).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            assertThat(r.statusCode()).as(value).isEqualTo(400);assertThat(r.body()).isEqualTo("{\"error\":\"INVALID_REQUEST\"}");
         }
         assertThat(send("POST","/api/v1/attempts",new Browser(b.cookie(),null),option(request,"true")).statusCode()).isEqualTo(403);
         assertThat(send("POST","/api/v1/attempts",b,option(request,"true").replace("\"useParameterizedQuestions\":true","\"useParameterizedQuestions\":true,\"parameters\":{}")).statusCode()).isEqualTo(400);
@@ -175,7 +175,7 @@ class AttemptHttpTests {
         org.mockito.Mockito.doThrow(new IllegalStateException("PRIVATE_PARAMETERIZED_FAILURE definitionDigest=secret")).when(templates).capture();
         try {
             var r=send("POST","/api/v1/attempts",b,option(createBody(UUID.randomUUID(),1),"true"));
-            assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");
+            assertThat(r.statusCode()).isEqualTo(500);assertThat(r.body()).isEqualTo("{\"error\":\"INTERNAL_ERROR\"}");
             assertThat(tables.stream().map(t->jdbc.queryForObject("select count(*) from "+t,Integer.class)).toList()).isEqualTo(before);
         } finally { org.mockito.Mockito.reset(templates); }
     }
@@ -191,14 +191,14 @@ class AttemptHttpTests {
         int before=jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
         try {
             var r=send("POST","/api/v1/attempts",browser(null),createBody(UUID.randomUUID(),1));
-            assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"UNAVAILABLE\"}");
             assertThat(jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(before);
         } finally { store.transaction(s -> {var loaded=s.loadForUpdate(q.id()).orElseThrow();loaded.decide(new br.com.concursosimulator.questionbank.domain.EditorialDecision(br.com.concursosimulator.questionbank.domain.EditorialDecision.Action.WITHDRAW,q.id(),q.latest().id(),c.fingerprint(),"Fixture",java.time.Instant.now(),Set.of(),"Remover controle negativo",null));s.save(loaded);return null;}); }
     }
     @Test @Order(99) void unavailableSessionDatabaseReturns503BeforeMvcAndReadinessStillWorks() throws Exception {
         var b=browser(null);PG.stop();
         for(var path:List.of("/api/v1/me/attempts","/api/v1/attempts/"+UUID.randomUUID())) {
-            var r=send("GET",path,b,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            var r=send("GET",path,b,null);assertThat(r.statusCode()).isEqualTo(503);assertThat(r.body()).isEqualTo("{\"error\":\"UNAVAILABLE\"}");
         }
         var cors=client.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:"+port+"/api/v1/me/attempts"))
                 .header("Origin","http://localhost:5173").header("Cookie",b.cookie()).timeout(Duration.ofSeconds(10)).build(),HttpResponse.BodyHandlers.ofString());

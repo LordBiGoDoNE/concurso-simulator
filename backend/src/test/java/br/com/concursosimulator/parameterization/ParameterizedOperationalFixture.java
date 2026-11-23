@@ -74,7 +74,7 @@ public final class ParameterizedOperationalFixture {
                     call(port,"GET","/api/v1/attempts/"+generatedId,freshCookie,null,200);
                     call(port,"POST","/api/v1/attempts",freshCookie,generatedRequest,200);
                     var before=db.jdbc.queryForObject("select count(*) from me_attempt",Integer.class);
-                    assertThat(call(port,"POST","/api/v1/attempts",freshCookie,create(UUID.randomUUID(),true),500)).isEqualTo("{\"error\":\"internal_error\"}");
+                    assertThat(call(port,"POST","/api/v1/attempts",freshCookie,create(UUID.randomUUID(),true),503)).isEqualTo("{\"error\":\"PARAMETERIZED_GENERATION_UNAVAILABLE\"}");
                     assertThat(db.jdbc.queryForObject("select count(*) from me_attempt",Integer.class)).isEqualTo(before);
                     call(port,"PUT","/api/v1/attempts/"+generatedId+"/answers/"+itemId,freshCookie,
                             "{\"commandId\":\""+UUID.randomUUID()+"\",\"expectedVersion\":0,\"alternativeId\":\""+correctId+"\"}",200);

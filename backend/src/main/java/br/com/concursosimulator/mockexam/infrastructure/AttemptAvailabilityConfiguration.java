@@ -4,9 +4,7 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.*;
-import org.springframework.dao.DataAccessException;
 import org.springframework.session.web.http.SessionRepositoryFilter;
-import org.springframework.transaction.TransactionException;
 import org.springframework.web.filter.OncePerRequestFilter;
 import java.io.IOException;
 
@@ -26,14 +24,13 @@ public class AttemptAvailabilityConfiguration {
                     response.resetBuffer();response.setHeader("Content-Length",null);response.setStatus(503);response.setContentType("application/json");response.setHeader("Cache-Control","no-store");
                     var origin=request.getHeader("Origin");
                     if(origin!=null && origins.contains(origin)){response.setHeader("Access-Control-Allow-Origin",origin);response.setHeader("Access-Control-Allow-Credentials","true");response.addHeader("Vary","Origin");}
-                    response.getWriter().write("{\"error\":\"unavailable\"}");
+                    br.com.concursosimulator.shared.infrastructure.http.JsonRejection.write(response,503,"UNAVAILABLE");
                 }
             }
         };
         var registration=new FilterRegistrationBean<OncePerRequestFilter>(filter);registration.setOrder(SessionRepositoryFilter.DEFAULT_ORDER-10);return registration;
     }
     private static boolean databaseFailure(Throwable failure) {
-        for (var cause=failure;cause!=null;cause=cause.getCause()) if (cause instanceof DataAccessException || cause instanceof TransactionException) return true;
-        return false;
+        return br.com.concursosimulator.shared.infrastructure.http.TransientFailures.transientCause(failure);
     }
 }

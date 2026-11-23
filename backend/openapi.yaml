@@ -57,7 +57,7 @@ paths:
                 additionalProperties: false
                 required: [error]
                 properties:
-                  error: {type: string, const: unauthenticated}
+                  error: {type: string, const: UNAUTHENTICATED}
   /api/v1/csrf:
     get:
       summary: Obter token CSRF da sessão; Cache-Control no-store
@@ -148,7 +148,7 @@ paths:
                 type: object
                 additionalProperties: false
                 required: [error]
-                properties: {error: {type: string, const: not_found}}
+                properties: {error: {type: string, const: NOT_FOUND}}
         '503': {$ref: '#/components/responses/QuestionUnavailable'}
   /api/v1/attempts:
     post:
@@ -727,7 +727,7 @@ components:
             type: object
             additionalProperties: false
             required: [error]
-            properties: {error: {type: string, const: internal_error}}
+            properties: {error: {type: string, const: INTERNAL_ERROR}}
     QuestionInvalid:
       description: UUID/filtro/paginação/parâmetro desconhecido, vazio ou repetido; no-store
       content:
@@ -736,7 +736,7 @@ components:
             type: object
             additionalProperties: false
             required: [error]
-            properties: {error: {type: string, const: invalid_request}}
+            properties: {error: {type: string, const: INVALID_REQUEST}}
     QuestionUnavailable:
       description: Indisponibilidade/conteúdo incompatível; não é acervo vazio; no-store
       content:
@@ -745,7 +745,7 @@ components:
             type: object
             additionalProperties: false
             required: [error]
-            properties: {error: {type: string, const: unavailable}}
+            properties: {error: {type: string, const: UNAVAILABLE}}
     AttemptUnauthenticated:
       description: Contexto inválido ou histórico sem conta; no-store
       content:
@@ -754,7 +754,7 @@ components:
             type: object
             additionalProperties: false
             required: [error]
-            properties: {error: {type: string, const: unauthenticated}}
+            properties: {error: {type: string, const: UNAUTHENTICATED}}
     AttemptForbidden:
       description: CSRF inválido ou acesso técnico negado; no-store
       content:
@@ -763,7 +763,7 @@ components:
             type: object
             additionalProperties: false
             required: [error]
-            properties: {error: {type: string, const: forbidden}}
+            properties: {error: {type: string, const: FORBIDDEN}}
     AttemptNotFound:
       description: Ausente, outro dono ou visitante expirado, indistinguíveis; no-store
       content:
@@ -772,7 +772,7 @@ components:
             type: object
             additionalProperties: false
             required: [error]
-            properties: {error: {type: string, const: not_found}}
+            properties: {error: {type: string, const: NOT_FOUND}}
     AttemptConflict:
       description: Estado, versão ou payload divergente; no-store
       content:
@@ -781,7 +781,7 @@ components:
             type: object
             additionalProperties: false
             required: [error]
-            properties: {error: {type: string, const: conflict}}
+            properties: {error: {type: string, const: CONFLICT}}
   schemas:
     AdministrativeLoginRequest:
       type: object
@@ -1026,7 +1026,7 @@ components:
       additionalProperties: false
       required: [error, available]
       properties:
-        error: {type: string, const: insufficient_pool}
+        error: {type: string, const: INSUFFICIENT_POOL}
         available:
           type: array
           items:

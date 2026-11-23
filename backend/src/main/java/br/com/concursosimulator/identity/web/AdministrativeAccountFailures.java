@@ -1,21 +1,31 @@
 package br.com.concursosimulator.identity.web;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases.Failure;
+import br.com.concursosimulator.shared.web.ApiError;
+import br.com.concursosimulator.shared.web.ApiErrors;
+import org.springframework.dao.DataAccessResourceFailureException;
+import org.springframework.dao.TransientDataAccessException;
 import org.springframework.http.ResponseEntity;
+import org.springframework.transaction.CannotCreateTransactionException;
+import org.springframework.transaction.TransactionTimedOutException;
 import org.springframework.web.bind.annotation.*;
 
+/** Contrato de erro da conta administrativa: falhas nomeadas da aplicação decidem o status. */
 @RestControllerAdvice(assignableTypes=AdministrativeAccountController.class)
 public class AdministrativeAccountFailures {
-    public record ErrorResponse(String error) {}
-    @ExceptionHandler(Failure.class) ResponseEntity<ErrorResponse> failure(Failure failure) {
-        int status=switch(failure.code()) { case "LOGIN_THROTTLED"->429;case "INVALID_CREDENTIALS"->401;case "GOOGLE_DISABLED"->409;case "ADMIN_ACCESS_DENIED"->403;default->409; };
-        var response=ResponseEntity.status(status).header("Cache-Control","no-store");if(status==429)response.header("Retry-After","900");
-        return response.body(new ErrorResponse(failure.code()));
+    @ExceptionHandler(Failure.class) ResponseEntity<ApiError> failure(Failure failure) {
+        int status=switch(failure.code()) {
+            case "LOGIN_THROTTLED"->429;case "INVALID_CREDENTIALS"->401;case "ADMIN_ACCESS_DENIED"->403;case "INVALID_REQUEST"->400;
+            default->409;
+        };
+        var response=ApiErrors.of(status,failure.code());
+        return status==429?ResponseEntity.status(429).headers(response.getHeaders()).header("Retry-After","900").body(response.getBody()):response;
     }
-    @ExceptionHandler({IllegalArgumentException.class,org.springframework.http.converter.HttpMessageNotReadableException.class})
-    ResponseEntity<ErrorResponse> invalid(Exception failure) { return ResponseEntity.badRequest().header("Cache-Control","no-store").body(new ErrorResponse("INVALID_REQUEST")); }
-    @ExceptionHandler({org.springframework.dao.DataAccessException.class,org.springframework.transaction.TransactionException.class})
-    ResponseEntity<ErrorResponse> unavailable(Exception failure) { return ResponseEntity.status(503).header("Cache-Control","no-store").body(new ErrorResponse("ADMIN_UNAVAILABLE")); }
+    @ExceptionHandler(org.springframework.http.converter.HttpMessageNotReadableException.class)
+    ResponseEntity<ApiError> invalid() { return ApiErrors.of(400,"INVALID_REQUEST"); }
+    @ExceptionHandler({TransientDataAccessException.class,DataAccessResourceFailureException.class,CannotCreateTransactionException.class,
+            TransactionTimedOutException.class})
+    ResponseEntity<ApiError> unavailable() { return ApiErrors.of(503,"ADMIN_UNAVAILABLE"); }
     @ExceptionHandler(RuntimeException.class)
-    ResponseEntity<ErrorResponse> unexpected(RuntimeException failure) { return ResponseEntity.internalServerError().header("Cache-Control","no-store").body(new ErrorResponse("ADMIN_FAILURE")); }
+    ResponseEntity<ApiError> unexpected(RuntimeException failure) { return ApiErrors.of(500,"ADMIN_FAILURE"); }
 }

@@ -1,5 +1,6 @@
 package br.com.concursosimulator.mockexam.web;
 
+import br.com.concursosimulator.shared.web.RequestValues;
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.AttemptOwner;
 import br.com.concursosimulator.mockexam.domain.Attempt;
@@ -28,12 +29,12 @@ public final class LessonPracticeController {
     public LessonPracticeController(@Qualifier("lessonPracticeUseCases") AttemptUseCases cases) { this.cases=cases; }
     @PostMapping("/api/v1/lesson-practices") public ResponseEntity<PracticeView> create(@CurrentActor AttemptOwner actor,@RequestBody Start body,@RequestParam MultiValueMap<String,String> params) {
         AttemptController.parameters(params,Set.of());
-        var outcome=cases.createPractice(actor,uuid(body.commandId()),Topic.fromId(body.topicId()));
+        var outcome=cases.createPractice(actor,uuid(body.commandId()),RequestValues.parse(() -> Topic.fromId(body.topicId())));
         return ResponseEntity.status(outcome.replayed()?200:201).cacheControl(org.springframework.http.CacheControl.noStore()).body(PracticeView.from(outcome.attempt()));
     }
     @GetMapping("/api/v1/lesson-practices/availability") public ResponseEntity<Availability> availability(@RequestParam MultiValueMap<String,String> params) {
         AttemptController.parameters(params,Set.of("topicId"));
-        var value=cases.practiceAvailability(Topic.fromId(params.getFirst("topicId")));
+        var value=cases.practiceAvailability(RequestValues.parse(() -> Topic.fromId(params.getFirst("topicId"))));
         return AttemptController.ok(new Availability(value.topicId(),value.available(),value.maximum()));
     }
     @GetMapping("/api/v1/lesson-practices/{id}") public ResponseEntity<PracticeView> read(@CurrentActor AttemptOwner actor,@PathVariable String id,@RequestParam MultiValueMap<String,String> params) {
@@ -53,10 +54,11 @@ public final class LessonPracticeController {
         AttemptController.parameters(params,Set.of("page","size","finished"));
         var page=number(params.getFirst("page"),0);var size=number(params.getFirst("size"),20);var finished=params.getFirst("finished");
         if (finished!=null && !Set.of("true","false").contains(finished)) throw invalid();
-        var entries=cases.history(actor,new AttemptStore.HistoryQuery(page,size,finished==null?null:Boolean.valueOf(finished),QuestionPurpose.PRATICA_AULA));
+        var query=RequestValues.parse(() -> new AttemptStore.HistoryQuery(page,size,finished==null?null:Boolean.valueOf(finished),QuestionPurpose.PRATICA_AULA));
+        var entries=cases.history(actor,query);
         return AttemptController.ok(new History(entries.stream().map(e -> new HistoryItem(e.id(),e.topicId(),e.createdAt(),e.finishedAt(),e.total(),e.percentage())).toList(),page,size));
     }
     private static int number(String value,int fallback) {
-        if (value==null) return fallback;if (!value.matches("[0-9]+")) throw invalid();return Integer.parseInt(value);
+        if (value==null) return fallback;if (!value.matches("[0-9]+")) throw invalid();return RequestValues.parse(() -> Integer.parseInt(value));
     }
 }

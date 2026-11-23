@@ -26,5 +26,4 @@ public final class QuestionResponses {
         static Detail from(EligibleQuestions.Detail d) { return new Detail(d.questionId(),d.revisionId(),Classification.from(d.classification()),Text.from(d.statement()),
                 d.alternatives().stream().map(a -> new Alternative(a.id(),Text.from(a.content()))).toList(),d.references().stream().map(r -> new Reference(r.name(),r.url().toString())).toList()); }
     }
-    public record Error(String error) {}
 }

@@ -50,7 +50,7 @@ class AttemptActorHttpTests {
                 UsernamePasswordAuthenticationToken.unauthenticated(new UserPrincipal(UUID.randomUUID()),null),
                 new AnonymousAuthenticationToken("fixture",new UserPrincipal(UUID.randomUUID()),List.of(new SimpleGrantedAuthority("ROLE_ANONYMOUS")))}) {
             var cookie=session(auth); var response=send("GET",auth==null?"/api/v1/me/attempts":path,cookie,null);
-            assertThat(response.statusCode()).isEqualTo(401); assertThat(response.body()).isEqualTo("{\"error\":\"unauthenticated\"}");
+            assertThat(response.statusCode()).isEqualTo(401); assertThat(response.body()).isEqualTo("{\"error\":\"UNAUTHENTICATED\"}");
             assertThat(response.headers().firstValue("Cache-Control")).contains("no-store"); assertThat(response.headers().firstValue("Location")).isEmpty();
         }
     }

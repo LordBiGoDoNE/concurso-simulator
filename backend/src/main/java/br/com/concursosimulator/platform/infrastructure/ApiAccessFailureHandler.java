@@ -2,6 +2,7 @@ package br.com.concursosimulator.platform.infrastructure;
 
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -36,16 +37,10 @@ public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, 
 
     private void reject(HttpServletRequest request, HttpServletResponse response, boolean csrf) throws IOException {
         if (!csrf && routes.route(request).map(ApiRoute::requiresIdentity).orElse(false)) {
-            response.setStatus(401);
-            response.setContentType("application/json");
-            response.setHeader("Cache-Control", "no-store");
-            response.getWriter().write("{\"error\":\"unauthenticated\"}");
+            JsonRejection.write(response, 401, "UNAUTHENTICATED");
         } else {
-            response.setStatus(403);
-            if (routes.jsonFailures(request)) {
-                response.setContentType("application/json"); response.setHeader("Cache-Control", "no-store");
-                response.getWriter().write("{\"error\":\"forbidden\"}");
-            }
+            if (routes.jsonFailures(request)) JsonRejection.write(response, 403, "FORBIDDEN");
+            else response.setStatus(403);
         }
     }
 }

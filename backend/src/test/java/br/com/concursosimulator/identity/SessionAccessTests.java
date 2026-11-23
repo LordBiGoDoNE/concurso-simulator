@@ -60,7 +60,7 @@ class SessionAccessTests {
         var me = send("GET", "/api/v1/me", null, null, null);
         HttpContract.json("/api/v1/me", 401, me);
         assertThat(me.statusCode()).isEqualTo(401);
-        assertThat(json(me)).containsExactly(Map.entry("error", "unauthenticated"));
+        assertThat(json(me)).containsExactly(Map.entry("error", "UNAUTHENTICATED"));
         assertThat(me.headers().firstValue("Cache-Control")).contains("no-store");
         var csrf = send("GET", "/api/v1/csrf", null, null, null);
         HttpContract.json("/api/v1/csrf", 200, csrf);

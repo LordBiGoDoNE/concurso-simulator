@@ -26,5 +26,4 @@ public final class ReviewContracts {
         static Individual from(ReviewUseCases.Individual i) { return new Individual(ReviewSummary.POLICY,i.role().id(),ReviewSummary.MIN_BASES,
                 i.attemptId(),i.summary().subjects().stream().map(Subject::from).toList(),i.summary().priorities().stream().map(t->t.id()).toList()); }
     }
-    public record Error(String error) {}
 }

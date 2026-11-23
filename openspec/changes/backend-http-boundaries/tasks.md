@@ -2,8 +2,8 @@
 
 Issue: [#261](https://github.com/LordBiGoDoNE/concurso-simulator/issues/261).
 Épica: `epic/backend-http-boundaries`. Spec formalizada em 2026-11-23.
-Implementação: aguardando confirmação explícita de início. Teste local pelo
-usuário: pergunta pendente. Merges dependem da aprovação do pacote final.
+Implementação autorizada em 2026-11-23 (grupos 1–5); teste local pelo usuário:
+não. Merges dependem da aprovação do pacote final.
 
 Cada grupo é um PR em rascunho, encadeado sobre o anterior (dependências no
 design, "Plano de grupos"). Em cada grupo: testes do backend e do frontend

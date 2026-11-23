@@ -45,7 +45,7 @@ test('login real, duas identidades e dispositivos isolados, CSRF e saída', asyn
     expect(recovered.status()).toBe(200);
     expect((await recovered.json()).id).toBe(firstId);
     const cookies = await first.cookies(api);
-    const session = cookies.find(cookie => cookie.name === 'SESSION');
+    const session = cookies.find((cookie) => cookie.name === 'SESSION');
     expect(session).toMatchObject({ httpOnly: true, sameSite: 'Lax', secure: false, path: '/' });
     await setProvider(request, 'browser-user-two');
     const secondId = await login(two);
@@ -63,7 +63,9 @@ test('login real, duas identidades e dispositivos isolados, CSRF e saída', asyn
     expect(await login(one)).toBe(firstId);
     expect(await one.evaluate(() => [localStorage.length, sessionStorage.length])).toEqual([0, 0]);
   } finally {
-    await first.close(); await second.close(); await sameUser.close();
+    await first.close();
+    await second.close();
+    await sameUser.close();
   }
 });
 

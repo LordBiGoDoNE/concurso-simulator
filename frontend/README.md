@@ -4,7 +4,7 @@
 
 - `npm run lint`: ESLint com regras de TypeScript que usam tipos e regras de hooks do React. No código de produção valem também as regras contra `any` e dados não validados; em testes e e2e elas ficam desligadas, porque mocks e `page.evaluate` usam `any` de propósito. Supressões são só na linha, com justificativa.
 - `npm run typecheck`: `tsc` sobre `src` e `test` (`tsconfig.json`) e sobre `e2e`, configs do Playwright e `vite.config.ts` (`tsconfig.node.json`).
-- `npm run format:check` / `npm run format`: Prettier (120 colunas); JSON gerados ficam fora (`.prettierignore`).
+- `npm run format:check` / `npm run format`: Prettier (120 colunas), verificado no CI; JSON gerados e CSS ficam fora (`.prettierignore`). Depois de `npm run format`, rode `npm run lint`: o Prettier pode quebrar um efeito em várias linhas, e um `eslint-disable-next-line react-hooks/exhaustive-deps` precisa ficar logo acima do array de dependências. Commits só de formatação ficam em `../.git-blame-ignore-revs`.
 - Requisições à API passam por `src/http-client.ts` (URL base única de `VITE_API_URL`, timeout e escopo de abort); cada módulo (`identity-api`, `attempt-api`, `question-api`, `status-api`) mantém credenciais, mensagens e mapeamento de erros. O lint recusa `fetch` fora do cliente (exceção: `native-lesson.ts`, que carrega documentos estáticos de aula).
 - `npm run test:coverage`: Vitest com cobertura V8, só como relatório em `coverage/` (fora do versionamento), sem limite mínimo.
 

@@ -3,7 +3,11 @@ import { apiStatus } from './status-api';
 
 afterEach(() => vi.unstubAllGlobals());
 
-const respond = (body: unknown, status = 200) => vi.stubGlobal('fetch', vi.fn(async () => new Response(JSON.stringify(body), { status })));
+const respond = (body: unknown, status = 200) =>
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => new Response(JSON.stringify(body), { status })),
+  );
 
 it('mostra a API disponível só com resposta OK e status UP', async () => {
   respond({ status: 'UP' });
@@ -23,8 +27,16 @@ it.each([
 });
 
 it('mostra a API indisponível quando o corpo não é JSON ou a rede falha', async () => {
-  vi.stubGlobal('fetch', vi.fn(async () => new Response('<html>', { status: 200 })));
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => new Response('<html>', { status: 200 })),
+  );
   await expect(apiStatus(new AbortController().signal)).resolves.toBe('down');
-  vi.stubGlobal('fetch', vi.fn(async () => { throw new TypeError('network'); }));
+  vi.stubGlobal(
+    'fetch',
+    vi.fn(async () => {
+      throw new TypeError('network');
+    }),
+  );
   await expect(apiStatus(new AbortController().signal)).resolves.toBe('down');
 });

@@ -35,8 +35,12 @@ describe('ThemeSelect', () => {
   });
 
   it('continua funcionando quando o armazenamento recusa acesso', () => {
-    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw new Error('bloqueado'); });
-    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('bloqueado'); });
+    vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => {
+      throw new Error('bloqueado');
+    });
+    vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => {
+      throw new Error('bloqueado');
+    });
     render(<ThemeSelect />);
     expect(screen.getByLabelText('Tema')).toHaveValue('auto');
     fireEvent.change(screen.getByLabelText('Tema'), { target: { value: 'light' } });

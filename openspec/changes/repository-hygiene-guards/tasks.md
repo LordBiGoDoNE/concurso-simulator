@@ -2,8 +2,8 @@
 
 Issue: [#285](https://github.com/LordBiGoDoNE/concurso-simulator/issues/285).
 Épica: `epic/repository-hygiene-guards`. Spec formalizada em 2026-11-23.
-Implementação: aguardando a confirmação única de início. Teste local pelo usuário:
-a perguntar junto com a confirmação. Merges dependem da aprovação do pacote final.
+Implementação autorizada em 2026-11-23 (grupos 1–3). Teste local pelo usuário:
+não. Merges dependem da aprovação do pacote final.
 
 Cada grupo é um PR em rascunho. O grupo 2 parte da branch do grupo 1 e aponta para
 ela, porque o script do grupo 1 passa a exigir o registro que o grupo 2 completa.
@@ -13,24 +13,24 @@ CI/deploy é área crítica (`revisao-e-integracao.md`, seção 1).
 
 ## 1. Ciclo de vida OpenSpec no CI
 
-- [ ] 1.1 Criar `scripts/check_openspec_lifecycle.py` (stdlib + `git`), com a
+- [x] 1.1 Criar `scripts/check_openspec_lifecycle.py` (stdlib + `git`), com a
   listagem de changes ativas e arquivadas por `git ls-tree` e a regra de ciclo de
   vida de D1: falha em PR para `main` com change pendente e sem arquivamento no PR;
   aviso para pendentes restantes quando o PR arquiva alguma; falha para remoção sem
   arquivamento; código 2 para erro de `git` ou de uso.
-- [ ] 1.2 Criar `scripts/tests/test_openspec_lifecycle.py` com repositórios `git`
+- [x] 1.2 Criar `scripts/tests/test_openspec_lifecycle.py` com repositórios `git`
   temporários: `[SPEC]` que introduz change, PR de arquivamento, PR comum com change
   pendente, arquivamento parcial, remoção sem arquivamento, PR para épica, push sem
   base e ref inexistente (D7).
-- [ ] 1.3 Adicionar o job `openspec` ao `.github/workflows/application.yml` (D2):
+- [x] 1.3 Adicionar o job `openspec` ao `.github/workflows/application.yml` (D2):
   nome exato `openspec`, `fetch-depth: 0`, `openspec validate --all` com
   `@fission-ai/openspec@1.15.0` e `OPENSPEC_TELEMETRY=0`, script com base do PR por
   `env`.
-- [ ] 1.4 Verificar: `python -m unittest discover -s scripts/tests -v`; o script
+- [x] 1.4 Verificar: `python -m unittest discover -s scripts/tests -v`; o script
   passa na `main` atual (`--base-ref origin/main --base-branch main` com head na
   épica); falha numa branch local de teste em que a base tem uma change ativa que
   o head mantém (a branch de teste não é publicada).
-- [ ] 1.5 Rodar com `act` os jobs `openspec` (evento `pull_request` simulado com base
+- [x] 1.5 Rodar com `act` os jobs `openspec` (evento `pull_request` simulado com base
   `main`) e `scripts-tests`. Registrar no PR o que não rodou localmente.
 - [ ] 1.6 No PR, mostrar o check-run `openspec` verde com esse nome exato.
 

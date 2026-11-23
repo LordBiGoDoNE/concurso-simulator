@@ -32,11 +32,11 @@ CI/deploy é área crítica (`revisao-e-integracao.md`, seção 1).
   o head mantém (a branch de teste não é publicada).
 - [x] 1.5 Rodar com `act` os jobs `openspec` (evento `pull_request` simulado com base
   `main`) e `scripts-tests`. Registrar no PR o que não rodou localmente.
-- [ ] 1.6 No PR, mostrar o check-run `openspec` verde com esse nome exato.
+- [x] 1.6 No PR, mostrar o check-run `openspec` verde com esse nome exato.
 
 ## 2. Registro de entregas e documentos de estado — depende de 1
 
-- [ ] 2.1 Criar a seção `## Registro de entregas` em `docs/application-reformulation.md`
+- [x] 2.1 Criar a seção `## Registro de entregas` em `docs/application-reformulation.md`
   (D3), com uma linha para cada uma das 25 pastas de `openspec/changes/archive/`,
   inclusive as 10 hoje sem menção (`backend-http-boundaries`,
   `build-and-test-quality`, `local-only-delivery-scope`, `optional-google-identity`,
@@ -44,22 +44,25 @@ CI/deploy é área crítica (`revisao-e-integracao.md`, seção 1).
   `question-bank-expansion`, `remove-legacy-review-gate`, `subject-review`). Issue,
   `[SPEC]` e arquivamento conferidos no GitHub e nos artefatos; o que não for
   localizado fica "não localizado". Não entregues: "arquivada sem entrega" e motivo.
-- [ ] 2.2 Estender o script: ler `Registro de entregas:` do `AGENTS.md` (ou
+  Nota: nenhuma das 25 ficou sem entrega; `local-only-delivery-scope`,
+  `pages-stable-epic-sync` e `pages-stable-migration` foram entregues (#132, #138,
+  #135/#136) e arquivadas sem delta de specs no #259 (D3).
+- [x] 2.2 Estender o script: ler `Registro de entregas:` do `AGENTS.md` (ou
   `--registry`) e falhar se alguma pasta de `archive/` não tiver linha na tabela da
   seção; falhar com mensagem se o registro, a seção ou a declaração faltar. Testes
   correspondentes em `test_openspec_lifecycle.py`.
-- [ ] 2.3 `AGENTS.md`: seção `## Documentos de estado` (D4) com
+- [x] 2.3 `AGENTS.md`: seção `## Documentos de estado` (D4) com
   `docs/application-reformulation.md`, `README.md`, `openspec/config.yaml`,
   `Registro de entregas: docs/application-reformulation.md` e
   `Branches permanentes: main, stable, pages-store`, referenciando
   `pendencias-e-encerramento.md` sem repeti-la.
-- [ ] 2.4 Disparar o `rules-conflict-checker` sobre o `AGENTS.md` alterado, contra as
+- [x] 2.4 Disparar o `rules-conflict-checker` sobre o `AGENTS.md` alterado, contra as
   regras globais, antes do commit. Conflitos pequenos corrigidos no grupo; exceção
   nova vai ao usuário.
-- [ ] 2.5 `.github/pull_request_template.md`: seção "Arquivamento (somente
+- [x] 2.5 `.github/pull_request_template.md`: seção "Arquivamento (somente
   `chore/archive-*`)" com as três caixas de D4, apontando a seção 8 de
   `revisao-e-integracao.md`.
-- [ ] 2.6 Verificar: testes; script passa no head do grupo e falha se uma linha do
+- [x] 2.6 Verificar: testes; script passa no head do grupo e falha se uma linha do
   registro for removida numa cópia local; `scripts/check_links.py`; `act` nos jobs
   `openspec` e `scripts-tests`; o guard global, rodado no worktree do grupo, não
   aponta change arquivada sem linha no registro.

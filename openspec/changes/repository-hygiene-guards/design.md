@@ -131,10 +131,16 @@ Alternativa descartada: decidir pelo título `[SPEC]` ou pelo prefixo
 
   `Change` traz o nome sem prefixo de data, entre crases. `Data` é a data do
   arquivamento (prefixo da pasta). Changes de épica combinada apontam o `[SPEC]` do
-  conjunto. Changes arquivadas sem entrega (`local-only-delivery-scope`,
-  `pages-stable-epic-sync`, `pages-stable-migration`, a confirmar pelos artefatos)
-  usam "arquivada sem entrega" e o motivo na observação. Dados não confirmados pelo
-  GitHub ou pelos artefatos ficam "não localizado", nunca inventados.
+  conjunto. Changes arquivadas sem entrega usam "arquivada sem entrega" e o motivo
+  na observação; a regra continua prevista, mas hoje não tem instância. Dados não
+  confirmados pelo GitHub ou pelos artefatos ficam "não localizado", nunca
+  inventados.
+- Correção da previsão feita na formalização: `local-only-delivery-scope`,
+  `pages-stable-epic-sync` e `pages-stable-migration` tinham sido previstas como
+  "arquivada sem entrega" (a confirmar pelos artefatos). A evidência mostrou que
+  foram entregues: #132, #138 e #135/#136 estão merged, #132 e #138 entraram na
+  `main` pelo #133, e o #259 as arquivou com `--skip-specs`. O registro as trata
+  como entregues sem delta de specs, com o motivo na observação.
 - O script (D1) lê o caminho do registro na linha `Registro de entregas:` do
   `AGENTS.md` (ou de `--registry`) e falha se alguma pasta de `archive/` não tiver
   linha na tabela da seção `Registro de entregas`. A busca é mais estrita que a do

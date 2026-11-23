@@ -18,6 +18,8 @@ sys.modules[SPEC.name] = lifecycle  # dataclasses resolve anotações pelo módu
 SPEC.loader.exec_module(lifecycle)
 
 CHANGES = Path("openspec") / "changes"
+REGISTRY = "docs/registro.md"
+REGISTRY_SECTION = "## Registro de entregas"
 
 
 class GitRepo:
@@ -46,11 +48,34 @@ class GitRepo:
         path.mkdir(parents=True, exist_ok=True)
         (path / "proposal.md").write_text(f"# {name}\n", encoding="utf-8")
 
-    def archive(self, name, date="2026-11-23"):
+    def archive(self, name, date="2026-11-23", register=True):
         source = self.root / CHANGES / name
         target = self.root / CHANGES / "archive" / f"{date}-{name}"
         target.parent.mkdir(parents=True, exist_ok=True)
         source.rename(target)
+        if register:
+            self.register(name, date)
+
+    def write_registry(self, rows=("antiga",), section=REGISTRY_SECTION, declare=True):
+        (self.root / "AGENTS.md").write_text(
+            "# Regras\n\n## Documentos de estado\n\n"
+            + (f"- Registro de entregas: `{REGISTRY}`\n" if declare else "")
+            + "- Branches permanentes: main, stable, pages-store\n",
+            encoding="utf-8",
+        )
+        path = self.root / REGISTRY
+        path.parent.mkdir(parents=True, exist_ok=True)
+        lines = ["# Roadmap", "", section, "", "| Change | Issue | [SPEC] | Arquivamento | Data | Observação |",
+                 "| --- | --- | --- | --- | --- | --- |"]
+        lines += [f"| `{row}` | #1 | #2 | #3 | 2026-11-01 | |" for row in rows]
+        lines += ["", "## Outra seção", "", "| `fora-da-secao` | | | | | |", ""]
+        path.write_text("\n".join(lines), encoding="utf-8")
+
+    def register(self, name, date):
+        path = self.root / REGISTRY
+        text = path.read_text(encoding="utf-8")
+        row = f"| `{name}` | #1 | #2 | #3 | {date} | |"
+        path.write_text(text.replace("\n\n## Outra seção", f"\n{row}\n\n## Outra seção"), encoding="utf-8")
 
     def remove_change(self, name):
         path = self.root / CHANGES / name
@@ -77,6 +102,7 @@ class LifecycleCliTests(unittest.TestCase):
         old = self.repo.root / CHANGES / "archive" / "2026-11-01-antiga"
         old.mkdir(parents=True)
         (old / "proposal.md").write_text("# antiga\n", encoding="utf-8")
+        self.repo.write_registry()
 
     def run_check(self, *args):
         stdout, stderr = io.StringIO(), io.StringIO()
@@ -186,6 +212,58 @@ class LifecycleCliTests(unittest.TestCase):
         code, output = self.pr_to()
         self.assertEqual(code, 0, output)
 
+    def test_archive_pr_without_registry_line_fails(self):
+        self.repo.add_change("entregue")
+        self.repo.commit("base com change entregue")
+        self.repo.branch("feature")
+        self.repo.archive("entregue", register=False)
+        self.repo.commit("arquivar sem registro")
+        code, output = self.pr_to()
+        self.assertEqual(code, 1, output)
+        self.assertIn("Change arquivada `entregue`", output)
+        self.assertIn(REGISTRY, output)
+
+    def test_registry_line_outside_section_does_not_count(self):
+        self.repo.write_registry(rows=())
+        self.repo.commit("registro sem a antiga na seção")
+        code, output = self.run_check()
+        self.assertEqual(code, 1, output)
+        self.assertIn("Change arquivada `antiga`", output)
+
+    def test_missing_registry_declaration_fails(self):
+        self.repo.write_registry(declare=False)
+        self.repo.commit("AGENTS sem declaração")
+        code, output = self.run_check()
+        self.assertEqual(code, 1, output)
+        self.assertIn("Documentos de estado", output)
+
+    def test_registry_option_overrides_declaration(self):
+        self.repo.write_registry(declare=False)
+        self.repo.commit("AGENTS sem declaração")
+        code, output = self.run_check("--registry", REGISTRY)
+        self.assertEqual(code, 0, output)
+
+    def test_missing_registry_file_fails(self):
+        self.repo.write_registry()
+        (self.repo.root / REGISTRY).unlink()
+        self.repo.commit("registro apagado")
+        code, output = self.run_check()
+        self.assertEqual(code, 1, output)
+        self.assertIn(f"`{REGISTRY}` não existe", output)
+
+    def test_missing_registry_section_fails(self):
+        self.repo.write_registry(section="## Outro título")
+        self.repo.commit("seção renomeada")
+        code, output = self.run_check()
+        self.assertEqual(code, 1, output)
+        self.assertIn("não tem a seção `## Registro de entregas`", output)
+
+    def test_registry_is_read_from_head_not_working_tree(self):
+        self.repo.commit("base")
+        self.repo.write_registry(rows=())  # só no working tree, sem commit
+        code, output = self.run_check()
+        self.assertEqual(code, 0, output)
+
     def test_base_and_branch_must_come_together(self):
         with contextlib.redirect_stderr(io.StringIO()):
             with self.assertRaises(SystemExit) as raised:
@@ -215,6 +293,26 @@ class LifecycleRuleTests(unittest.TestCase):
         result = lifecycle.check_lifecycle(self.tree({"antiga"}), self.tree({"antiga", "nova"}), "main")
         self.assertEqual(len(result.errors), 1)
         self.assertIn("antiga", result.errors[0])
+
+    def test_declared_registry_parsing(self):
+        self.assertEqual(
+            lifecycle.declared_registry("- Registro de entregas: `docs/application-reformulation.md` (tabela)"),
+            "docs/application-reformulation.md",
+        )
+        self.assertEqual(lifecycle.declared_registry("Registro de entregas: docs/x.md#registro"), "docs/x.md")
+        self.assertIsNone(lifecycle.declared_registry("sem declaração"))
+        self.assertIsNone(lifecycle.declared_registry(None))
+
+    def test_registry_entries_ignore_header_separator_and_other_sections(self):
+        text = "\n".join([
+            "## Registro de entregas", "",
+            "| Change | Issue |", "| --- | --- |",
+            "| `a` | #1 |", "| b | |", "",
+            "### Subtítulo", "| `c` | |",
+            "## Outra", "| `d` | |",
+        ])
+        self.assertEqual(lifecycle.registry_entries(text), {"a", "b", "c"})
+        self.assertIsNone(lifecycle.registry_entries("## Outra\n| `a` |"))
 
     def test_already_archived_name_does_not_excuse_removal(self):
         base = self.tree({"x"}, {"2026-01-01-x"})

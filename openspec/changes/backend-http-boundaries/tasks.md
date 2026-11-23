@@ -94,4 +94,4 @@ de build/testes.
 - [x] F.1 Sistema local com a cadeia completa: fluxos de estudo (visitante e conta),
   login local administrativo, importação, curadoria e lote editorial de ponta a
   ponta; sessão antiga após atualização.
-- [x] F.2 Revisão final pelo `spec-reviewer` e `review.md`.
+- [ ] F.2 Revisão final pelo `spec-reviewer` e `review.md`.

@@ -80,6 +80,4 @@ public final class ReviewContracts {
                     i.summary().priorities().stream().map(t -> t.id()).toList());
         }
     }
-
-    public record Error(String error) {}
 }

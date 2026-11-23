@@ -1,11 +1,14 @@
 package br.com.concursosimulator.questionbank.web;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import static br.com.concursosimulator.questionbank.web.AdministrativeContracts.*;
+
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries;
-import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries.*;
-import br.com.concursosimulator.questionbank.application.port.AdministrativeQuestionCatalog;
-import br.com.concursosimulator.questionbank.application.port.QuestionImportReader;
-import br.com.concursosimulator.questionbank.domain.*;
+import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries.Criteria;
+import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries.ExportSelection;
+import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries.InvalidQuery;
+import br.com.concursosimulator.questionbank.application.AdministrativeQuestionQueries.LookupKey;
+import br.com.concursosimulator.questionbank.domain.QuestionRevision;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;
 import java.util.*;
@@ -30,40 +33,39 @@ public class AdministrativeQuestionController {
 
     public record SummaryItem(
             UUID questionId,
-            QuestionOrigin origin,
-            QuestionPurpose purpose,
+            Origin origin,
+            Purpose purpose,
             int editorialSequence,
-            AdministrativeQuestionCatalog.LatestRevision latest,
-            AdministrativeQuestionCatalog.EligibleRevision eligible,
+            LatestRevision latest,
+            EligibleRevision eligible,
             Instant lastActivityAt) {}
 
     public record SearchResponse(int page, int size, long total, List<SummaryItem> items) {}
 
-    public record RevisionView(
-            UUID id, int number, Question.Status status, String fingerprint, QuestionImportReader.Content content) {}
+    public record RevisionView(UUID id, int number, Status status, String fingerprint, PackageContent content) {}
 
     public record DecisionView(
             int sequence,
-            EditorialDecision.Action action,
+            Action action,
             UUID revisionId,
             String fingerprint,
             String responsible,
             Instant at,
-            List<EditorialDecision.Check> checklist,
+            List<Check> checklist,
             String rationale,
-            EditorialDecision.ReviewKind reviewKind) {}
+            ReviewKind reviewKind) {}
 
     public record DetailResponse(
             UUID questionId,
-            QuestionOrigin origin,
-            QuestionPurpose purpose,
+            Origin origin,
+            Purpose purpose,
             int editorialSequence,
             UUID eligibleRevisionId,
             List<RevisionView> revisions,
             List<DecisionView> decisions,
-            List<AdministrativeQuestionCatalog.ImportLink> imports) {}
+            List<ImportLink> imports) {}
 
-    public record LookupItem(QuestionOrigin origin, String fingerprint) {}
+    public record LookupItem(Origin origin, String fingerprint) {}
 
     public record LookupRequest(List<LookupItem> items) {}
 
@@ -75,7 +77,7 @@ public class AdministrativeQuestionController {
             String packageDigest,
             String selectionDigest,
             List<String> keys,
-            @JsonProperty("package") QuestionImportReader.Document document) {}
+            @JsonProperty("package") PackageDocument document) {}
     /** Ausência é contrato explícito (404), não lista vazia nem 500. */
     public static final class QuestionNotFound extends RuntimeException {
         public QuestionNotFound() {
@@ -85,28 +87,28 @@ public class AdministrativeQuestionController {
 
     @GetMapping
     public ResponseEntity<SearchResponse> search(
-            @RequestParam(required = false) QuestionPurpose purpose,
+            @RequestParam(required = false) Purpose purpose,
             @RequestParam(required = false) String namespace,
             @RequestParam(required = false) String keyPrefix,
             @RequestParam(required = false) String disciplineId,
             @RequestParam(required = false) String topicId,
-            @RequestParam(required = false) Question.Status latestStatus,
+            @RequestParam(required = false) Status latestStatus,
             @RequestParam(required = false) Boolean hasEligible,
-            @RequestParam(required = false) EditorialDecision.ReviewKind reviewKind,
+            @RequestParam(required = false) ReviewKind reviewKind,
             @RequestParam(required = false) Instant activityFrom,
             @RequestParam(required = false) Instant activityTo,
             @RequestParam(defaultValue = "0") int page,
             @RequestParam(defaultValue = "50") int size,
             @AuthenticationPrincipal UserPrincipal actor) {
         var criteria = new Criteria(
-                purpose,
+                AdministrativeContracts.purpose(purpose),
                 namespace,
                 keyPrefix,
                 disciplineId,
                 topicId,
-                latestStatus,
+                AdministrativeContracts.status(latestStatus),
                 hasEligible,
-                reviewKind,
+                AdministrativeContracts.reviewKind(reviewKind),
                 activityFrom,
                 activityTo,
                 page,
@@ -122,11 +124,11 @@ public class AdministrativeQuestionController {
                         result.items().stream()
                                 .map(s -> new SummaryItem(
                                         s.questionId(),
-                                        s.origin(),
-                                        s.origin().purpose(),
+                                        AdministrativeContracts.origin(s.origin()),
+                                        map(s.origin().purpose(), Purpose.class),
                                         s.editorialSequence(),
-                                        s.latest(),
-                                        s.eligible(),
+                                        latest(s.latest()),
+                                        eligible(s.eligible()),
                                         s.lastActivityAt()))
                                 .toList()));
     }
@@ -141,45 +143,48 @@ public class AdministrativeQuestionController {
                 .map(r -> new RevisionView(
                         r.id(),
                         r.number(),
-                        q.status(r.id()),
+                        status(q.status(r.id())),
                         r.fingerprint(),
-                        AdministrativeQuestionQueries.packageContent(r.content())))
+                        content(AdministrativeQuestionQueries.packageContent(r.content()))))
                 .toList();
         var decisions = new ArrayList<DecisionView>();
         for (int i = 0; i < q.decisions().size(); i++) {
             var d = q.decisions().get(i);
             decisions.add(new DecisionView(
                     i,
-                    d.action(),
+                    map(d.action(), Action.class),
                     d.revisionId(),
                     d.fingerprint(),
                     d.responsible(),
                     d.at(),
-                    d.checklist().stream().sorted().toList(),
+                    d.checklist().stream()
+                            .sorted()
+                            .map(c -> map(c, Check.class))
+                            .toList(),
                     d.rationale(),
-                    d.reviewKind()));
+                    map(d.reviewKind(), ReviewKind.class)));
         }
         return ResponseEntity.ok()
                 .header("Cache-Control", "no-store")
                 .body(new DetailResponse(
                         q.id(),
-                        q.origin(),
-                        q.origin().purpose(),
+                        AdministrativeContracts.origin(q.origin()),
+                        map(q.origin().purpose(), Purpose.class),
                         q.editorialSequence(),
                         q.eligible().map(QuestionRevision::id).orElse(null),
                         revisions,
                         List.copyOf(decisions),
-                        detail.imports()));
+                        list(detail.imports(), AdministrativeContracts::link)));
     }
 
     @PostMapping(value = "/lookup", consumes = org.springframework.http.MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<LookupResponse> lookup(
             @RequestBody LookupRequest request, @AuthenticationPrincipal UserPrincipal actor) {
         if (request.items() == null) throw new InvalidQuery();
-        var keys = request.items().stream()
-                .map(i -> i == null ? null : new LookupKey(i.origin(), i.fingerprint()))
-                .toList();
-        var results = queries.lookup(keys);
+        var keys = br.com.concursosimulator.shared.web.RequestValues.parse(() -> request.items().stream()
+                .map(i -> i == null ? null : new LookupKey(AdministrativeContracts.origin(i.origin()), i.fingerprint()))
+                .toList());
+        var results = list(queries.lookup(keys), AdministrativeContracts::lookup);
         LOG.info("Admin question lookup actor={} items={}", actor.id(), results.size());
         return ResponseEntity.ok().header("Cache-Control", "no-store").body(new LookupResponse(results));
     }
@@ -196,6 +201,6 @@ public class AdministrativeQuestionController {
         return ResponseEntity.ok()
                 .header("Cache-Control", "no-store")
                 .body(new ExportResponse(
-                        export.packageDigest(), export.selectionDigest(), export.keys(), export.document()));
+                        export.packageDigest(), export.selectionDigest(), export.keys(), document(export.document())));
     }
 }

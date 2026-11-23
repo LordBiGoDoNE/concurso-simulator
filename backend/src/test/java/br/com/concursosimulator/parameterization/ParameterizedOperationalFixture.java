@@ -3,7 +3,7 @@ package br.com.concursosimulator.parameterization;
 import static org.assertj.core.api.Assertions.*;
 
 import br.com.concursosimulator.ConcursoSimulatorApplication;
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.mockexam.application.AttemptStore;
 import br.com.concursosimulator.parameterization.domain.Family;
 import br.com.concursosimulator.support.TestPostgres;
@@ -153,8 +153,8 @@ public final class ParameterizedOperationalFixture {
                                     "/api/v1/attempts",
                                     freshCookie,
                                     create(UUID.randomUUID(), true),
-                                    500))
-                            .isEqualTo("{\"error\":\"internal_error\"}");
+                                    503))
+                            .isEqualTo("{\"error\":\"PARAMETERIZED_GENERATION_UNAVAILABLE\"}");
                     assertThat(db.jdbc.queryForObject("select count(*) from me_attempt", Integer.class))
                             .isEqualTo(before);
                     call(

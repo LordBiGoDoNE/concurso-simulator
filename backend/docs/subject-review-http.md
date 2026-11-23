@@ -20,7 +20,7 @@ falham com 400. Janela tem limite fixo100; não há paginação fornecida pelo c
 - [x] Rejeições técnicas, CSRF e CORS pertencem à segurança, não ao controller.
   GET não exige token; POST existente continua protegido. CORS usa origens explícitas.
 - [x] OpenAPI fecha objetos e enumera códigos/limites. Falhas de integridade são500
-  internal_error, banco/transação503 unavailable; nenhuma vira vazio/sucesso parcial.
+  `INTERNAL_ERROR`, banco/transação 503 `UNAVAILABLE`; nenhuma vira vazio/sucesso parcial.
 - [x] ArchUnit protege dependências do novo controller e records concretos, sem afirmar
   detectar toda duplicação semântica. Testes HTTP usam servidor/segurança/sessão/PG reais.
 

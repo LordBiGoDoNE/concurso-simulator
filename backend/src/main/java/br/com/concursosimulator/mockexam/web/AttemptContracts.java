@@ -1,5 +1,7 @@
 package br.com.concursosimulator.mockexam.web;
 
+import static br.com.concursosimulator.shared.web.RequestValues.parse;
+
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.questionbank.domain.*;
 import java.time.Instant;
@@ -25,11 +27,13 @@ public final class AttemptContracts {
                 if (p == null || p.quantity() == null) throw invalid();
                 var topics = p.topicIds() == null
                         ? Set.<Topic>of()
-                        : p.topicIds().stream().map(Topic::fromId).collect(java.util.stream.Collectors.toSet());
-                if (map.put(Discipline.fromId(p.disciplineId()), new Composition.Portion(p.quantity(), topics)) != null)
-                    throw invalid();
+                        : p.topicIds().stream()
+                                .map(t -> parse(() -> Topic.fromId(t)))
+                                .collect(java.util.stream.Collectors.toSet());
+                var portion = parse(() -> new Composition.Portion(p.quantity(), topics));
+                if (map.put(parse(() -> Discipline.fromId(p.disciplineId())), portion) != null) throw invalid();
             }
-            return new Composition(TargetRole.fromId(roleId), map, useParameterizedQuestions);
+            return parse(() -> new Composition(TargetRole.fromId(roleId), map, useParameterizedQuestions));
         }
     }
     /** Ausente é false; null não é booleano. Não relaxa coerção/null dos demais DTOs. */
@@ -166,8 +170,6 @@ public final class AttemptContracts {
 
     public record History(List<HistoryItem> items, int page, int size) {}
 
-    public record Error(String error) {}
-
     public record Available(String disciplineId, int available) {}
 
     public record Insufficient(String error, List<Available> available) {}
@@ -183,7 +185,7 @@ public final class AttemptContracts {
         return v;
     }
 
-    static IllegalArgumentException invalid() {
-        return new IllegalArgumentException("Pedido inválido");
+    static br.com.concursosimulator.shared.web.InvalidRequest invalid() {
+        return br.com.concursosimulator.shared.web.RequestValues.invalid();
     }
 }

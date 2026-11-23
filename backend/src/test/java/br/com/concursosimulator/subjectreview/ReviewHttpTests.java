@@ -2,8 +2,9 @@ package br.com.concursosimulator.subjectreview;
 
 import static org.assertj.core.api.Assertions.*;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.QuestionBrowserFixtures;
+import br.com.concursosimulator.shared.web.ErrorResponses;
 import br.com.concursosimulator.support.TestPostgres;
 import java.net.*;
 import java.net.http.*;
@@ -85,8 +86,7 @@ class ReviewHttpTests {
         for (var actor : List.of(account, browser(null))) {
             var v = create(actor);
             var path = "/api/v1/attempts/" + v.get("id").asString();
-            assertThat(send("GET", path + "/subject-review", actor, null).statusCode())
-                    .isEqualTo(409);
+            ErrorResponses.assertError(send("GET", path + "/subject-review", actor, null), 409);
             assertThat(send(
                                     "POST",
                                     path + "/finish",
@@ -101,9 +101,7 @@ class ReviewHttpTests {
             assertThat(i.get("attemptId").asString()).isEqualTo(v.get("id").asString());
             assertThat(i.get("subjects").get(0).get("blank").asInt()).isEqualTo(3);
             assertThat(i.has("window")).isFalse();
-            assertThat(send("GET", path + "/subject-review", browser(null), null)
-                            .statusCode())
-                    .isEqualTo(404);
+            ErrorResponses.assertError(send("GET", path + "/subject-review", browser(null), null), 404);
         }
         var summary = json.readTree(send("GET", panel + role, account, null).body());
         assertThat(summary.get("window").get("attemptCount").asInt()).isEqualTo(1);
@@ -122,16 +120,13 @@ class ReviewHttpTests {
                 role + "&owner=" + UUID.randomUUID(),
                 role + "&useParameterizedQuestions=true")) {
             var r = send("GET", panel + query, a, null);
-            assertThat(r.statusCode()).as(query).isEqualTo(400);
-            assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            ErrorResponses.assertError(r, 400, "INVALID_REQUEST");
         }
         for (var id : List.of("invalid", "1-1-1-1-1"))
-            assertThat(send("GET", "/api/v1/attempts/" + id + "/subject-review", a, null)
-                            .statusCode())
-                    .isEqualTo(400);
+            ErrorResponses.assertError(send("GET", "/api/v1/attempts/" + id + "/subject-review", a, null), 400);
         var path = "/api/v1/attempts/" + UUID.randomUUID() + "/subject-review";
         for (var q : List.of("roleId=assistente-administrativo", "page=0", "x=1&x=2"))
-            assertThat(send("GET", path + "?" + q, a, null).statusCode()).isEqualTo(400);
+            ErrorResponses.assertError(send("GET", path + "?" + q, a, null), 400);
         for (Authentication auth : new Authentication[] {
             null,
             UsernamePasswordAuthenticationToken.authenticated("invalid", null, List.of()),
@@ -143,15 +138,12 @@ class ReviewHttpTests {
         }) {
             var b = session(auth);
             var r = send("GET", panel, b, null);
-            assertThat(r.statusCode()).isEqualTo(401);
-            assertThat(r.body()).isEqualTo("{\"error\":\"unauthenticated\"}");
-            if (auth != null)
-                assertThat(send("GET", path, b, null).statusCode()).isEqualTo(401);
+            ErrorResponses.assertError(r, 401, "UNAUTHENTICATED");
+            if (auth != null) ErrorResponses.assertError(send("GET", path, b, null), 401);
         }
-        assertThat(send("GET", panel + role, browser(null), null).statusCode()).isEqualTo(401);
+        ErrorResponses.assertError(send("GET", panel + role, browser(null), null), 401);
         var noCsrf = new Browser(a.cookie(), null);
-        assertThat(send("POST", "/api/v1/attempts", noCsrf, createBody()).statusCode())
-                .isEqualTo(403);
+        ErrorResponses.assertError(send("POST", "/api/v1/attempts", noCsrf, createBody()), 403);
     }
 
     @Test
@@ -168,7 +160,7 @@ class ReviewHttpTests {
         var other = account(UUID.randomUUID());
         var hidden = send("GET", path + "/subject-review", other, null);
         var absent = send("GET", "/api/v1/attempts/" + UUID.randomUUID() + "/subject-review", other, null);
-        assertThat(hidden.statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(hidden, 404);
         assertThat(hidden.body()).isEqualTo(absent.body());
         assertThat(json.readTree(send("GET", panel + role, other, null).body())
                         .get("window")
@@ -180,8 +172,7 @@ class ReviewHttpTests {
         var session = repository().findById(guest.cookie().substring(8));
         session.setLastAccessedTime(Instant.now().minusSeconds(3600));
         repository().save(session);
-        assertThat(send("GET", path + "/subject-review", guest, null).statusCode())
-                .isEqualTo(404);
+        ErrorResponses.assertError(send("GET", path + "/subject-review", guest, null), 404);
     }
 
     @Test
@@ -241,8 +232,7 @@ class ReviewHttpTests {
         var before = rows();
         for (var url : List.of(panel + role, path + "/subject-review")) {
             var r = send("GET", url, a, null);
-            assertThat(r.statusCode()).isEqualTo(500);
-            assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");
+            ErrorResponses.assertError(r, 500, "INTERNAL_ERROR");
         }
         assertThat(rows()).isEqualTo(before);
         for (var failure : List.of(
@@ -261,9 +251,8 @@ class ReviewHttpTests {
                 var r = send("GET", panel + role, a, null);
                 boolean integrity = failure instanceof IllegalStateException
                         || failure instanceof org.springframework.dao.InvalidDataAccessApiUsageException;
-                assertThat(r.statusCode()).isEqualTo(integrity ? 500 : 503);
-                assertThat(r.body())
-                        .isEqualTo(integrity ? "{\"error\":\"internal_error\"}" : "{\"error\":\"unavailable\"}");
+                ErrorResponses.assertError(r, integrity ? 500 : 503, integrity ? "INTERNAL_ERROR" : "UNAVAILABLE");
+                assertThat(r.body()).doesNotContain("PRIVATE_");
             } finally {
                 org.mockito.Mockito.reset(evidence);
             }
@@ -315,7 +304,7 @@ class ReviewHttpTests {
                             .get("attemptCount")
                             .asInt())
                     .isZero();
-            assertThat(send("GET", panel + role, a, null).statusCode()).isEqualTo(401);
+            ErrorResponses.assertError(send("GET", panel + role, a, null), 401);
         } finally {
             release.countDown();
             org.mockito.Mockito.reset(evidence);
@@ -378,9 +367,8 @@ class ReviewHttpTests {
                 br.com.concursosimulator.mockexam.domain.AttemptOwner.Kind.VISITOR, owner);
         assertThatThrownBy(() -> evidence.one(actor, id, now.plusSeconds(86401)))
                 .isInstanceOf(br.com.concursosimulator.mockexam.domain.Attempt.Unavailable.class);
-        assertThat(send("GET", path + "/subject-review", a, null).statusCode()).isEqualTo(404);
-        assertThat(send("GET", path + "/subject-review", browser(null), null).statusCode())
-                .isEqualTo(404);
+        ErrorResponses.assertError(send("GET", path + "/subject-review", a, null), 404);
+        ErrorResponses.assertError(send("GET", path + "/subject-review", browser(null), null), 404);
     }
 
     @Test
@@ -510,8 +498,7 @@ class ReviewHttpTests {
         PG.stop();
         for (var url : List.of(panel + role, "/api/v1/attempts/" + UUID.randomUUID() + "/subject-review")) {
             var r = send("GET", url, a, null);
-            assertThat(r.statusCode()).isEqualTo(503);
-            assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            ErrorResponses.assertError(r, 503, "UNAVAILABLE");
         }
     }
 

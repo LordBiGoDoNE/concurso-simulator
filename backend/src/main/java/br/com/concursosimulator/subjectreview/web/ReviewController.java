@@ -3,6 +3,7 @@ package br.com.concursosimulator.subjectreview.web;
 import br.com.concursosimulator.mockexam.domain.AttemptOwner;
 import br.com.concursosimulator.mockexam.web.CurrentActor;
 import br.com.concursosimulator.questionbank.domain.TargetRole;
+import br.com.concursosimulator.shared.web.RequestValues;
 import br.com.concursosimulator.subjectreview.application.ReviewUseCases;
 import java.util.*;
 import org.springframework.http.*;
@@ -21,11 +22,11 @@ public class ReviewController {
     public ResponseEntity<ReviewContracts.Overview> overview(
             @CurrentActor AttemptOwner actor, @RequestParam MultiValueMap<String, String> params) {
         parameters(params, Set.of("roleId"));
-        if (!params.containsKey("roleId")) throw new IllegalArgumentException("Cargo obrigatório");
+        RequestValues.require(params.containsKey("roleId"));
         return ResponseEntity.ok()
                 .cacheControl(CacheControl.noStore())
-                .body(ReviewContracts.Overview.from(
-                        cases.overview(actor, TargetRole.fromId(params.getFirst("roleId")))));
+                .body(ReviewContracts.Overview.from(cases.overview(
+                        actor, RequestValues.parse(() -> TargetRole.fromId(params.getFirst("roleId"))))));
     }
 
     @GetMapping("/api/v1/attempts/{id}/subject-review")
@@ -34,17 +35,16 @@ public class ReviewController {
             @PathVariable String id,
             @RequestParam MultiValueMap<String, String> params) {
         parameters(params, Set.of());
-        if (!id.matches("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"))
-            throw new IllegalArgumentException("UUID inválido");
+        RequestValues.require(
+                id.matches("[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}"));
         return ResponseEntity.ok()
                 .cacheControl(CacheControl.noStore())
                 .body(ReviewContracts.Individual.from(cases.individual(actor, UUID.fromString(id))));
     }
 
     private static void parameters(MultiValueMap<String, String> params, Set<String> allowed) {
-        if (!allowed.containsAll(params.keySet())
-                || params.values().stream()
-                        .anyMatch(v -> v.size() != 1 || v.getFirst().isBlank()))
-            throw new IllegalArgumentException("Parâmetros inválidos");
+        RequestValues.require(allowed.containsAll(params.keySet())
+                && params.values().stream()
+                        .allMatch(v -> v.size() == 1 && !v.getFirst().isBlank()));
     }
 }

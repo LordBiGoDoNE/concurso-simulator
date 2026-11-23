@@ -6,6 +6,7 @@ import static org.mockito.Mockito.*;
 import br.com.concursosimulator.questionbank.application.DecideQuestionUseCase;
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
 import br.com.concursosimulator.questionbank.domain.*;
+import br.com.concursosimulator.shared.web.ErrorResponses;
 import br.com.concursosimulator.support.TestPostgres;
 import java.net.*;
 import java.net.http.*;
@@ -147,7 +148,7 @@ class QuestionPublicHttpTests {
                 UUID.randomUUID(),
                 "PRIVATE_DRAFT_SENTINEL",
                 new QuestionClassification(Discipline.PORTUGUESE, Topic.P01, Set.of(TargetRole.values())));
-        assertThat(get("/questions/" + privateQuestion.id()).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(get("/questions/" + privateQuestion.id()), 404);
         store.transaction(s -> {
             var q = s.loadForUpdate(FIRST).orElseThrow();
             q.append(UUID.randomUUID(), q2.latest().content());
@@ -193,7 +194,7 @@ class QuestionPublicHttpTests {
         assertSchema(page.body(), "QuestionPage");
         assertSchema(detail.body(), "QuestionDetail");
         decision(SECOND, q2.latest().id(), EditorialDecision.Action.WITHDRAW);
-        assertThat(get("/questions/" + SECOND).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(get("/questions/" + SECOND), 404);
         assertThat(json.readTree(get("/questions").body()).get("total").asInt()).isEqualTo(1);
     }
 
@@ -217,12 +218,10 @@ class QuestionPublicHttpTests {
                 "/questions/no-uuid",
                 "/questions/" + FIRST + "?revisionId=old")) {
             var response = get(path);
-            assertThat(response.statusCode()).as(path).isEqualTo(400);
-            assertThat(response.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            ErrorResponses.assertError(response, 400, "INVALID_REQUEST");
         }
         var absent = get("/questions/" + UUID.randomUUID());
-        assertThat(absent.statusCode()).isEqualTo(404);
-        assertThat(absent.body()).isEqualTo("{\"error\":\"not_found\"}");
+        ErrorResponses.assertError(absent, 404, "NOT_FOUND");
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})
@@ -238,7 +237,7 @@ class QuestionPublicHttpTests {
                         .SPRING_SECURITY_CONTEXT_KEY,
                 new org.springframework.security.core.context.SecurityContextImpl(
                         org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated(
-                                new br.com.concursosimulator.identity.web.UserPrincipal(UUID.randomUUID()),
+                                new br.com.concursosimulator.identity.application.UserPrincipal(UUID.randomUUID()),
                                 null,
                                 List.of())));
         repository.save(session);
@@ -398,11 +397,10 @@ class QuestionPublicHttpTests {
             decision(q.id(), q.latest().id(), EditorialDecision.Action.SUBMIT);
             decision(q.id(), q.latest().id(), EditorialDecision.Action.APPROVE);
             var response = get("/questions/" + q.id());
-            assertThat(response.statusCode()).isEqualTo(503);
-            assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            ErrorResponses.assertError(response, 503, "UNAVAILABLE");
             assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
         }
-        assertThat(get("/questions").statusCode()).isEqualTo(503); // markup em resumo também é rejeitado
+        ErrorResponses.assertError(get("/questions"), 503); // markup em resumo também é rejeitado
     }
 
     @Test
@@ -432,8 +430,7 @@ class QuestionPublicHttpTests {
         for (var path : List.of("/questions", "/questions/" + FIRST)) {
             long start = System.nanoTime();
             var response = get(path);
-            assertThat(response.statusCode()).isEqualTo(503);
-            assertThat(response.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            ErrorResponses.assertError(response, 503, "UNAVAILABLE");
             assertThat(Duration.ofNanos(System.nanoTime() - start)).isLessThan(Duration.ofSeconds(8));
             assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
         }

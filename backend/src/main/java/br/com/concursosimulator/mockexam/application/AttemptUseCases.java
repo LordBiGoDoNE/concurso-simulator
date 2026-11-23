@@ -69,7 +69,7 @@ public final class AttemptUseCases {
         var hash = hash("create", canonical(composition));
         return execute(actor, operation, hash, null, session -> {
             if (composition.useParameterizedQuestions() && !generationEnabled)
-                throw new IllegalStateException("Geração temporariamente desabilitada");
+                throw new ParameterizedGenerationUnavailable();
             var rng = random.get();
             var selected = composition.select(session.eligible(purpose), rng);
             var captured = composition.useParameterizedQuestions()

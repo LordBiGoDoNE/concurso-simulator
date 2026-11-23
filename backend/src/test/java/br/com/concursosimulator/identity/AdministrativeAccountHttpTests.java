@@ -207,7 +207,7 @@ class AdministrativeAccountHttpTests {
 
     @Test
     void securityRejectsUntrustedAnonymousAndObsoleteEvidenceBeforeAccountController() throws Exception {
-        var valid = new br.com.concursosimulator.identity.web.UserPrincipal(local);
+        var valid = new br.com.concursosimulator.identity.application.UserPrincipal(local);
         long version = jdbc.queryForObject("select auth_version from admin_registration", Long.class);
         var malformed = org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated(
                 "untrusted", null, List.of());

@@ -1,9 +1,10 @@
 package br.com.concursosimulator.questionbank.web;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import static br.com.concursosimulator.questionbank.web.AdministrativeContracts.*;
+
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.*;
 import br.com.concursosimulator.questionbank.application.port.*;
-import br.com.concursosimulator.questionbank.domain.QuestionPurpose;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Instant;
 import java.util.*;
@@ -36,23 +37,21 @@ public class AdministrativeImportController {
         this.target = target;
     }
 
-    public record PreviewRequest(@JsonProperty("package") QuestionImportReader.Document document, List<String> keys) {}
+    public record PreviewRequest(@JsonProperty("package") PackageDocument document, List<String> keys) {}
 
     public record ApplyRequest(
-            @JsonProperty("package") QuestionImportReader.Document document,
-            List<String> keys,
-            String confirmationToken) {}
+            @JsonProperty("package") PackageDocument document, List<String> keys, String confirmationToken) {}
 
     public record ItemPreview(
-            br.com.concursosimulator.questionbank.domain.QuestionOrigin origin,
+            Origin origin,
             String fingerprint,
             UUID expectedLatestRevision,
-            PreviewQuestionCandidatesUseCase.Change change,
+            String change,
             UUID questionId,
             UUID latestRevisionId) {}
 
     public record PreviewResponse(
-            QuestionPurpose purpose,
+            Purpose purpose,
             String destinationId,
             String packageDigest,
             String selectionDigest,
@@ -62,23 +61,30 @@ public class AdministrativeImportController {
             String confirmationToken,
             Instant expiresAt) {}
 
-    public record ApplyResponse(
-            QuestionPurpose purpose, String destinationId, ImportReceipt receipt, boolean replayed) {}
+    public record ApplyResponse(Purpose purpose, String destinationId, ImportReceiptView receipt, boolean replayed) {}
+    /** O pacote já foi validado pelo {@link ImportRequestBodyAdvice}; recusa aqui ainda é pacote inválido, nunca 500. */
+    static QuestionImportReader.Document application(PackageDocument document) {
+        try {
+            return AdministrativeContracts.document(document);
+        } catch (IllegalArgumentException | NullPointerException refused) {
+            throw new QuestionImportReader.InvalidPackage();
+        }
+    }
 
     @PostMapping("/preview")
     public ResponseEntity<PreviewResponse> preview(
             @RequestBody PreviewRequest request, @AuthenticationPrincipal UserPrincipal actor) {
-        var pack = reader.read(request.document(), request.keys());
+        var pack = reader.read(application(request.document()), request.keys());
         var results = preview.execute(pack.candidates());
         var items = new ArrayList<ItemPreview>();
         for (int i = 0; i < results.size(); i++) {
             var r = results.get(i);
             var c = pack.candidates().get(i);
             items.add(new ItemPreview(
-                    r.origin(),
+                    AdministrativeContracts.origin(r.origin()),
                     c.content().fingerprint(),
                     c.expectedLatestRevision(),
-                    r.change(),
+                    AdministrativeContracts.name(r.change()),
                     r.questionId(),
                     r.latestRevisionId()));
         }
@@ -97,7 +103,7 @@ public class AdministrativeImportController {
         return ResponseEntity.ok()
                 .header("Cache-Control", "no-store")
                 .body(new PreviewResponse(
-                        pack.purpose(),
+                        AdministrativeContracts.map(pack.purpose(), Purpose.class),
                         target.id(),
                         pack.digest(),
                         pack.selectionDigest(),
@@ -111,7 +117,7 @@ public class AdministrativeImportController {
     @PostMapping("/apply")
     public ResponseEntity<ApplyResponse> apply(
             @RequestBody ApplyRequest request, @AuthenticationPrincipal UserPrincipal actor) {
-        var pack = reader.read(request.document(), request.keys());
+        var pack = reader.read(application(request.document()), request.keys());
         var outcome = apply.execute(pack, tokens.verify(request.confirmationToken()), actor.id(), target.id());
         LOG.info(
                 "Question import committed actor={} destination={} packageDigest={} selectionDigest={} nonce={} replayed={}",
@@ -123,6 +129,10 @@ public class AdministrativeImportController {
                 outcome.replayed());
         return ResponseEntity.ok()
                 .header("Cache-Control", "no-store")
-                .body(new ApplyResponse(pack.purpose(), target.id(), outcome.receipt(), outcome.replayed()));
+                .body(new ApplyResponse(
+                        AdministrativeContracts.map(pack.purpose(), Purpose.class),
+                        target.id(),
+                        AdministrativeContracts.receipt(outcome.receipt()),
+                        outcome.replayed()));
     }
 }

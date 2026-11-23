@@ -59,6 +59,22 @@ class ParameterizedAttemptTests {
     }
 
     @Test
+    void disabledGenerationIsNamedUnavailableAndWritesNothing() {
+        var s = new AttemptUseCasesTests.Memory();
+        var a = base(Family.DIRECT_PROPORTION);
+        s.pool = List.of(a);
+        s.templates = List.of(template(a, Family.DIRECT_PROPORTION));
+        var disabled =
+                new AttemptUseCases(s, Clock.fixed(NOW, ZoneOffset.UTC), UUID::randomUUID, () -> new Random(8), false);
+        assertThatThrownBy(() -> disabled.create(ACCOUNT, UUID.randomUUID(), math(1, true)))
+                .isInstanceOf(br.com.concursosimulator.mockexam.application.ParameterizedGenerationUnavailable.class);
+        assertThat(s.attempts).isEmpty();
+        assertThat(s.commands).isEmpty();
+        assertThat(disabled.create(ACCOUNT, UUID.randomUUID(), math(1, false)).attempt())
+                .isNotNull();
+    }
+
+    @Test
     void selectedBaseIdentitiesStayDistinctAndMissingTemplateStaysFixed() {
         var s = new AttemptUseCasesTests.Memory();
         var a = base(Family.DIRECT_PROPORTION);

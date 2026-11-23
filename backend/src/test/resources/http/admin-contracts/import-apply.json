@@ -1,0 +1,34 @@
+{
+  "purpose" : "SIMULADO",
+  "destinationId" : "isolated-test",
+  "receipt" : {
+    "confirmation" : {
+      "nonce" : "<uuid>",
+      "actor" : "<uuid>",
+      "destination" : "isolated-test",
+      "packageDigest" : "d95fe728f5f59cffc9aa294463a2302d94545217057206e56b76a1d44353116d",
+      "selectionDigest" : "ba9acd982717c102d75e9e7123ac4f033ea04035a5a0c776ccf251c488fc76cb",
+      "issuedAt" : "<instant>",
+      "expiresAt" : "<instant>"
+    },
+    "committedAt" : "<instant>",
+    "results" : [ {
+      "origin" : {
+        "namespace" : "admin-question-v1",
+        "key" : "snapshot.one"
+      },
+      "questionId" : "<uuid>",
+      "revisionId" : "<uuid>",
+      "reused" : false
+    }, {
+      "origin" : {
+        "namespace" : "admin-question-v1",
+        "key" : "snapshot.two"
+      },
+      "questionId" : "<uuid>",
+      "revisionId" : "<uuid>",
+      "reused" : false
+    } ]
+  },
+  "replayed" : false
+}

@@ -4,7 +4,7 @@ import static br.com.concursosimulator.mockexam.AttemptFixtures.composition;
 import static org.assertj.core.api.Assertions.*;
 
 import br.com.concursosimulator.ConcursoSimulatorApplication;
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.mockexam.application.AttemptUseCases;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaAttemptStore;

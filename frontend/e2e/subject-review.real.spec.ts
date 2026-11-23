@@ -106,7 +106,7 @@ test('falha não vira zero, retry preserva cargo e logout descarta resposta real
   await page.route('**/api/v1/me/subject-review?*', async (route) => {
     if (!failed) {
       failed = true;
-      await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"unavailable"}' });
+      await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"UNAVAILABLE"}' });
     } else await route.continue();
   });
   const area = panel(page);
@@ -150,7 +150,7 @@ test('falha explícita seguida de conclusão preserva foco no resultado durante 
   await page.route('**/api/v1/me/subject-review?*', async (route) => {
     if (!failed) {
       failed = true;
-      await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"unavailable"}' });
+      await route.fulfill({ status: 503, contentType: 'application/json', body: '{"error":"UNAVAILABLE"}' });
     } else await route.continue();
   });
   const area = panel(page);

@@ -65,6 +65,14 @@ Autenticação, autorização técnica da rota, sessão e CSRF pertencem à segu
 
 Regras resumidas em `AGENTS.md`; este ADR é a referência detalhada, versionada junto ao código. Skills podem futuramente oferecer workflow de revisão, não substituir essas instruções. Alterações arquiteturais exigem nova decisão/justificativa e atualização coerente dos documentos.
 
+### Refinamento: fronteira web ↔ infraestrutura (backend-http-boundaries, #261)
+
+- **Causa:** a infraestrutura de segurança importava tipos de `web` (`UserPrincipal`, `CurrentActor`, `GoogleLoginHandlers`, portas `AdministrativeSession`/`AdministrativeGoogleCompletion`). As regras ArchUnit só cobriam `web → infrastructure` e listavam controllers um a um; três controllers ficaram fora da lista. Tudo funcionava, então os testes HTTP não acusavam.
+- **Regra positiva:** identidade verificada (`UserPrincipal`) e portas implementadas pela infraestrutura ficam em `application`, em Java puro; handlers do mecanismo de autenticação ficam na infraestrutura; resolução de argumentos do controller é adaptador web. `infrastructure` não depende de `web`, e controllers/advices só existem em `..web..`.
+- **Regressão automatizada:** `ArchitectureTests` ganha regras genéricas: infraestrutura sem dependência de web; controllers e advices só em web; todo controller sem mecanismos de sessão/servlet/segurança além de `@AuthenticationPrincipal` (exceção nominal: `SessionController` expõe o `CsrfToken`); todo método HTTP responde `ResponseEntity` de record do próprio pacote web ou sem corpo.
+- **Sessões já gravadas:** a mudança de pacote altera o nome da classe serializada no `SecurityContext`. Atributo de sessão com classe removida é tratado como ausente (`SessionAttributeConversion`): a conta entra de novo; o estudo segue como visitante; nada é restaurado por outro caminho. Outras falhas de desserialização continuam propagando.
+- **Limites:** as regras não verificam se o DTO interno do controller expõe tipos do núcleo (tratado nos DTOs administrativos da mesma spec), nem se a decisão está semanticamente no objeto certo. Revisão continua obrigatória.
+
 Integrações de spec usam PR `[SPEC]` e revisão final independente do conjunto em contexto novo, conforme `~/.claude/rules/revisao-e-integracao.md` (seções 2 e 7), com evidência no `review.md` da spec. Revisão pendente/desatualizada impede integração. CI, testes e aprovações das tarefas não substituem análise semântica ou autorização do usuário. O processo anterior (`docs/architecture/spec-review.md`) é histórico.
 
 Testar invariantes em Java puro, fluxo do UseCase com portas substituíveis, repositories/transações/schema em PostgreSQL 18.6 isolado, e o fluxo de navegador/OIDC já existente. ArchUnit verifica dependências, ausência de frameworks no núcleo e ciclos; não decide sozinho se o comportamento está no objeto correto. Não adicionar exceções abrangentes apenas para testes passarem.

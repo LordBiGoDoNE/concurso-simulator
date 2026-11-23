@@ -4,11 +4,11 @@ import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
 import br.com.concursosimulator.identity.application.ResolveExternalIdentityUseCase;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.identity.application.port.IdentityAlreadyLinkedException;
 import br.com.concursosimulator.identity.application.port.IdentityRepository;
 import br.com.concursosimulator.identity.domain.ExternalIdentity;
 import br.com.concursosimulator.identity.infrastructure.persistence.JpaIdentityRepository;
-import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.shared.infrastructure.SpringUnitOfWork;
 import br.com.concursosimulator.support.TestPostgres;
 import br.com.concursosimulator.support.TestPostgres.TestDatabase;

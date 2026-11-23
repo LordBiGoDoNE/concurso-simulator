@@ -5,9 +5,7 @@ import jakarta.servlet.http.*;
 import java.io.IOException;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.context.annotation.*;
-import org.springframework.dao.DataAccessException;
 import org.springframework.session.web.http.SessionRepositoryFilter;
-import org.springframework.transaction.TransactionException;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 /** Indisponibilidade de sessão ocorre antes do MVC; não deve virar 404, visitante ou sucesso. */
@@ -15,15 +13,15 @@ import org.springframework.web.filter.OncePerRequestFilter;
 public class AttemptAvailabilityConfiguration {
     @Bean
     FilterRegistrationBean<OncePerRequestFilter> attemptAvailability(
-            @org.springframework.beans.factory.annotation.Value("${app.cors-origins}") String configuredOrigins) {
+            @org.springframework.beans.factory.annotation.Value("${app.cors-origins}") String configuredOrigins,
+            br.com.concursosimulator.shared.infrastructure.http.ApiRoutes routes) {
         var origins = java.util.Arrays.stream(configuredOrigins.split(","))
                 .map(String::trim)
                 .toList();
         var filter = new OncePerRequestFilter() {
             @Override
             protected boolean shouldNotFilter(HttpServletRequest request) {
-                return !AttemptRoutes.owns(request)
-                        && !br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.owns(request);
+                return !routes.jsonFailures(request);
             }
 
             @Override
@@ -45,7 +43,8 @@ public class AttemptAvailabilityConfiguration {
                         response.setHeader("Access-Control-Allow-Credentials", "true");
                         response.addHeader("Vary", "Origin");
                     }
-                    response.getWriter().write("{\"error\":\"unavailable\"}");
+                    br.com.concursosimulator.shared.infrastructure.http.JsonRejection.write(
+                            response, 503, "UNAVAILABLE");
                 }
             }
         };
@@ -55,8 +54,6 @@ public class AttemptAvailabilityConfiguration {
     }
 
     private static boolean databaseFailure(Throwable failure) {
-        for (var cause = failure; cause != null; cause = cause.getCause())
-            if (cause instanceof DataAccessException || cause instanceof TransactionException) return true;
-        return false;
+        return br.com.concursosimulator.shared.failure.TransientFailures.transientCause(failure);
     }
 }

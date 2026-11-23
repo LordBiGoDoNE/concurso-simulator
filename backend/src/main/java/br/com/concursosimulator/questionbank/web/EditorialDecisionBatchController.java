@@ -1,8 +1,11 @@
 package br.com.concursosimulator.questionbank.web;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import static br.com.concursosimulator.questionbank.web.AdministrativeContracts.*;
+
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.EditorialBatchUseCase;
-import br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.*;
+import br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Envelope;
+import br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.InvalidBatch;
 import br.com.concursosimulator.questionbank.application.QuestionImportTarget;
 import br.com.concursosimulator.questionbank.application.port.EditorialBatchConfirmations;
 import br.com.concursosimulator.questionbank.domain.EditorialDecision;
@@ -35,20 +38,20 @@ public class EditorialDecisionBatchController {
     }
 
     public record PreviewRequest(
-            EditorialDecision.Action action,
-            EditorialDecision.ReviewKind reviewKind,
-            List<EditorialDecision.Check> checklist,
+            Action action,
+            ReviewKind reviewKind,
+            List<Check> checklist,
             String rationale,
             List<Target> items,
             UUID importReceiptId) {}
 
     public record PreviewResponse(
             String destinationId,
-            EditorialDecision.Action action,
-            EditorialDecision.ReviewKind reviewKind,
-            List<EditorialDecision.Check> checklist,
+            Action action,
+            ReviewKind reviewKind,
+            List<Check> checklist,
             String rationale,
-            List<PreviewItem> items,
+            List<BatchItem> items,
             List<Expected> expected,
             String digest,
             boolean confirmable,
@@ -56,20 +59,20 @@ public class EditorialDecisionBatchController {
             Instant expiresAt) {}
 
     public record ApplyRequest(
-            EditorialDecision.Action action,
-            EditorialDecision.ReviewKind reviewKind,
-            List<EditorialDecision.Check> checklist,
+            Action action,
+            ReviewKind reviewKind,
+            List<Check> checklist,
             String rationale,
             List<Expected> items,
             String confirmationToken) {}
 
-    public record ApplyResponse(String destinationId, Receipt receipt, boolean replayed) {}
+    public record ApplyResponse(String destinationId, BatchReceipt receipt, boolean replayed) {}
 
     @PostMapping("/preview")
     public ResponseEntity<PreviewResponse> preview(
             @RequestBody PreviewRequest request, @AuthenticationPrincipal UserPrincipal actor) {
         var envelope = envelope(request.action(), request.reviewKind(), request.checklist(), request.rationale());
-        var preview = batches.preview(envelope, request.items(), request.importReceiptId());
+        var preview = batches.preview(envelope, targets(request.items()), request.importReceiptId());
         var issued = preview.confirmable() ? tokens.issue(actor.id(), target.id(), preview.digest()) : null;
         LOG.info(
                 "Editorial batch preview actor={} destination={} action={} items={} confirmable={} digest={}",
@@ -83,12 +86,12 @@ public class EditorialDecisionBatchController {
                 .header("Cache-Control", "no-store")
                 .body(new PreviewResponse(
                         target.id(),
-                        envelope.action(),
-                        envelope.reviewKind(),
+                        map(envelope.action(), Action.class),
+                        map(envelope.reviewKind(), ReviewKind.class),
                         sorted(envelope.checklist()),
                         envelope.rationale(),
-                        preview.items(),
-                        preview.expected(),
+                        list(preview.items(), AdministrativeContracts::batchItem),
+                        list(preview.expected(), AdministrativeContracts::expected),
                         preview.digest(),
                         preview.confirmable(),
                         issued == null ? null : issued.token(),
@@ -100,7 +103,11 @@ public class EditorialDecisionBatchController {
             @RequestBody ApplyRequest request, @AuthenticationPrincipal UserPrincipal actor) {
         var envelope = envelope(request.action(), request.reviewKind(), request.checklist(), request.rationale());
         var outcome = batches.apply(
-                envelope, request.items(), tokens.verify(request.confirmationToken()), actor.id(), target.id());
+                envelope,
+                expected(request.items()),
+                tokens.verify(request.confirmationToken()),
+                actor.id(),
+                target.id());
         LOG.info(
                 "Editorial batch committed actor={} destination={} action={} nonce={} decisions={} replayed={}",
                 actor.id(),
@@ -111,19 +118,16 @@ public class EditorialDecisionBatchController {
                 outcome.replayed());
         return ResponseEntity.ok()
                 .header("Cache-Control", "no-store")
-                .body(new ApplyResponse(target.id(), outcome.receipt(), outcome.replayed()));
+                .body(new ApplyResponse(target.id(), batchReceipt(outcome.receipt()), outcome.replayed()));
     }
 
-    private static Envelope envelope(
-            EditorialDecision.Action action,
-            EditorialDecision.ReviewKind kind,
-            List<EditorialDecision.Check> checklist,
-            String rationale) {
+    private static Envelope envelope(Action action, ReviewKind kind, List<Check> checklist, String rationale) {
         if (checklist == null || new HashSet<>(checklist).size() != checklist.size()) throw new InvalidBatch();
-        return new Envelope(action, kind, new HashSet<>(checklist), rationale);
+        return new Envelope(
+                AdministrativeContracts.action(action), reviewKind(kind), new HashSet<>(checks(checklist)), rationale);
     }
 
-    private static List<EditorialDecision.Check> sorted(Set<EditorialDecision.Check> checks) {
-        return checks.stream().sorted().toList();
+    private static List<Check> sorted(Set<EditorialDecision.Check> checks) {
+        return checks.stream().sorted().map(c -> map(c, Check.class)).toList();
     }
 }

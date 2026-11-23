@@ -1,0 +1,64 @@
+{
+  "packageDigest" : "cfd7f511891068d5b41de902958b75db7a7c9267aa82f3b0b6a503c8e204c745",
+  "selectionDigest" : "8f4b1bfaf72c9b142a9be21ca218c4df1848e522febeafef5d552909a75d9ea3",
+  "keys" : [ "snapshot.one" ],
+  "package" : {
+    "format" : "administrative-question-package/v1",
+    "purpose" : "SIMULADO",
+    "items" : [ {
+      "origin" : {
+        "namespace" : "admin-question-v1",
+        "key" : "snapshot.one"
+      },
+      "content" : {
+        "statement" : {
+          "text" : "Fixture snapshot.one a < b > c",
+          "resources" : [ ]
+        },
+        "alternatives" : [ {
+          "id" : "<uuid>",
+          "content" : {
+            "text" : "Opção sintética A",
+            "resources" : [ ]
+          }
+        }, {
+          "id" : "<uuid>",
+          "content" : {
+            "text" : "Opção sintética B",
+            "resources" : [ ]
+          }
+        } ],
+        "correctAlternativeId" : "<uuid>",
+        "resolution" : {
+          "text" : "Resolução sintética: x² = x vezes x.",
+          "resources" : [ ]
+        },
+        "classification" : {
+          "disciplineId" : "portugues",
+          "topicId" : "P01",
+          "roleIds" : [ "assistente-administrativo", "secretario-de-escola" ]
+        },
+        "references" : [ {
+          "name" : "Referência sintética",
+          "url" : "https://example.test/study",
+          "legalBasis" : null
+        } ],
+        "provenance" : {
+          "author" : "Teste sintético",
+          "contentPath" : "sources/fixture.txt",
+          "answerPath" : "sources/fixture.txt",
+          "contentSha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f",
+          "answerSha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f"
+        }
+      },
+      "fingerprint" : "d4690884989794dc70dd8fbec4c793ab149d70b784e464196c31a9e566c79970",
+      "expectedLatestRevision" : null
+    } ],
+    "files" : [ {
+      "path" : "sources/fixture.txt",
+      "mediaType" : "text/plain",
+      "sha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f",
+      "base64" : "Rm9udGUgc2ludMOpdGljYSBwcml2YWRhIFBSSVZBVEVfU0VOVElORUw="
+    } ]
+  }
+}

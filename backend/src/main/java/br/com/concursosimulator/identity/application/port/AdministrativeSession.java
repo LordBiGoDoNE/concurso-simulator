@@ -1,4 +1,4 @@
-package br.com.concursosimulator.identity.web;
+package br.com.concursosimulator.identity.application.port;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases.Access;
 

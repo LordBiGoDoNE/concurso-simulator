@@ -77,6 +77,4 @@ public final class QuestionResponses {
                             .toList());
         }
     }
-
-    public record Error(String error) {}
 }

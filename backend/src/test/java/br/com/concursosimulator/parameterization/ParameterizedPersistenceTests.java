@@ -116,7 +116,8 @@ class ParameterizedPersistenceTests {
             assertThat(rollback.create(VISITOR, op, composition(true)).attempt())
                     .isEqualTo(created);
             assertThatThrownBy(() -> rollback.create(VISITOR, UUID.randomUUID(), composition(true)))
-                    .isInstanceOf(IllegalStateException.class);
+                    .isInstanceOf(
+                            br.com.concursosimulator.mockexam.application.ParameterizedGenerationUnavailable.class);
             rollback.answer(
                     VISITOR,
                     created.id(),

@@ -116,7 +116,9 @@ export default function AttemptComposer({
       setMessage(
         error instanceof AttemptApiError && error.available.length
           ? `Acervo insuficiente: ${error.available.map((a) => `${catalog?.disciplines.find((d) => d.id === a.disciplineId)?.title || a.disciplineId}: ${a.available} disponíveis`).join('; ')}.`
-          : 'Criação não confirmada. Tente novamente com os mesmos critérios para recuperar a tentativa, se ela foi gravada.',
+          : error instanceof AttemptApiError && error.code === 'PARAMETERIZED_GENERATION_UNAVAILABLE'
+            ? 'As variações numéricas estão indisponíveis no momento. Desmarque a opção para criar o simulado com questões fixas.'
+            : 'Criação não confirmada. Tente novamente com os mesmos critérios para recuperar a tentativa, se ela foi gravada.',
       );
     } finally {
       pending.current = false;

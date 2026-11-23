@@ -16,7 +16,11 @@ import tools.jackson.databind.cfg.*;
 import tools.jackson.databind.json.JsonMapper;
 import tools.jackson.databind.type.LogicalType;
 
-/** Limita o stream e confere a gramática antes da conversão em DTO tipado. */
+/**
+ * Limita o stream e confere a gramática antes da conversão em DTO tipado. O pacote é validado contra o DTO web
+ * ({@link AdministrativeContracts.PackageDocument}), nunca contra tipos do núcleo: o contrato de entrada não muda
+ * quando o núcleo é renomeado.
+ */
 @ControllerAdvice(assignableTypes = AdministrativeImportController.class)
 public class ImportRequestBodyAdvice extends RequestBodyAdviceAdapter {
     private final JsonMapper strict = JsonMapper.builder(JsonFactory.builder()
@@ -77,8 +81,11 @@ public class ImportRequestBodyAdvice extends RequestBodyAdviceAdapter {
                 if (!root.get("keys").isArray()
                         || apply && !root.get("confirmationToken").isString()) throw new IllegalArgumentException();
                 for (var key : root.get("keys")) if (!key.isString()) throw new IllegalArgumentException();
+                // Gramática do DTO web; a conversão para o núcleo roda os objetos de valor e recusa vira pacote
+                // inválido.
                 try {
-                    strict.treeToValue(root.get("package"), QuestionImportReader.Document.class);
+                    AdministrativeContracts.document(
+                            strict.treeToValue(root.get("package"), AdministrativeContracts.PackageDocument.class));
                 } catch (RuntimeException e) {
                     throw new QuestionImportReader.InvalidPackage();
                 }

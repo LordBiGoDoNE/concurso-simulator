@@ -1,8 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
 import br.com.concursosimulator.ConcursoSimulatorApplication;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity;
-import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.support.TestPostgres;
 import java.net.URI;
 import java.net.http.HttpClient;

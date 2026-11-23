@@ -2,8 +2,9 @@ package br.com.concursosimulator.mockexam;
 
 import static org.assertj.core.api.Assertions.*;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.QuestionBrowserFixtures;
+import br.com.concursosimulator.shared.web.ErrorResponses;
 import br.com.concursosimulator.support.TestPostgres;
 import java.net.*;
 import java.net.http.*;
@@ -88,16 +89,15 @@ class AttemptHttpTests {
         var alt = item.get("alternatives").get(1).get("id").asString();
         var answer = "{\"commandId\":\"" + op + "\",\"expectedVersion\":0,\"alternativeId\":\"" + alt + "\"}";
         var url = "/api/v1/attempts/" + id + "/answers/" + item.get("id").asString();
-        assertThat(send("PUT", url, browser, "{\"commandId\":\"" + op + "\",\"expectedVersion\":0}")
-                        .statusCode())
-                .isEqualTo(400);
-        assertThat(send(
-                                "PUT",
-                                url,
-                                browser,
-                                "{\"commandId\":\"" + op + "\",\"expectedVersion\":\"0\",\"alternativeId\":null}")
-                        .statusCode())
-                .isEqualTo(400);
+        ErrorResponses.assertError(
+                send("PUT", url, browser, "{\"commandId\":\"" + op + "\",\"expectedVersion\":0}"), 400);
+        ErrorResponses.assertError(
+                send(
+                        "PUT",
+                        url,
+                        browser,
+                        "{\"commandId\":\"" + op + "\",\"expectedVersion\":\"0\",\"alternativeId\":null}"),
+                400);
         var saved = send("PUT", url, browser, answer);
         assertThat(saved.statusCode()).isEqualTo(200);
         assertSafe(saved.body());
@@ -121,13 +121,8 @@ class AttemptHttpTests {
                         .get("selectedAlternativeId")
                         .isNull())
                 .isTrue();
-        assertThat(send(
-                                "PUT",
-                                url,
-                                browser,
-                                answer.replace(alt, UUID.randomUUID().toString()))
-                        .statusCode())
-                .isEqualTo(409);
+        ErrorResponses.assertError(
+                send("PUT", url, browser, answer.replace(alt, UUID.randomUUID().toString())), 409);
         assertThat(jdbc.queryForObject("select count(*) from app_user", Integer.class))
                 .isEqualTo(1);
         assertThat(jdbc.queryForObject("select owner_id from admin_registration where id=1", UUID.class))
@@ -151,14 +146,12 @@ class AttemptHttpTests {
                 valid.substring(0, valid.length() - 1) + ",\"owner\":\"" + UUID.randomUUID() + "\"}",
                 valid.substring(0, valid.length() - 1) + ",\"correctAlternativeId\":\"" + UUID.randomUUID() + "\"}")) {
             var r = send("POST", "/api/v1/attempts", b, body);
-            assertThat(r.statusCode()).as(body).isEqualTo(400);
-            assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            ErrorResponses.assertError(r, 400, "INVALID_REQUEST");
         }
         var noCsrf = new Browser(b.cookie(), null);
-        assertThat(send("POST", "/api/v1/attempts", noCsrf, valid).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("POST", "/api/v1/attempts", noCsrf, valid), 403);
         var missing = send("POST", "/api/v1/attempts", b, createBody(UUID.randomUUID(), 100));
-        assertThat(missing.statusCode()).isEqualTo(409);
-        assertThat(missing.body()).contains("insufficient_pool", "available");
+        ErrorResponses.assertError(missing, 409, "INSUFFICIENT_POOL", "available");
         assertThat(jdbc.queryForObject("select count(*) from me_attempt", Integer.class))
                 .isEqualTo(before);
     }
@@ -173,20 +166,17 @@ class AttemptHttpTests {
         var path = "/api/v1/attempts/" + view.get("id").asString();
         var forbidden = send("GET", path, other, null);
         var missing = send("GET", "/api/v1/attempts/" + UUID.randomUUID(), other, null);
-        assertThat(forbidden.statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(forbidden, 404);
         assertThat(forbidden.body()).isEqualTo(missing.body());
-        assertThat(send("GET", path + "?owner=" + UUID.randomUUID(), owner, null)
-                        .statusCode())
-                .isEqualTo(400);
+        ErrorResponses.assertError(send("GET", path + "?owner=" + UUID.randomUUID(), owner, null), 400);
         var item = view.get("items").get(0).get("id").asString();
-        assertThat(send(
-                                "PUT",
-                                path + "/answers/" + item,
-                                other,
-                                "{\"commandId\":\"" + UUID.randomUUID()
-                                        + "\",\"expectedVersion\":0,\"alternativeId\":null}")
-                        .statusCode())
-                .isEqualTo(404);
+        ErrorResponses.assertError(
+                send(
+                        "PUT",
+                        path + "/answers/" + item,
+                        other,
+                        "{\"commandId\":\"" + UUID.randomUUID() + "\",\"expectedVersion\":0,\"alternativeId\":null}"),
+                404);
         var mutant = (tools.jackson.databind.node.ObjectNode) view;
         mutant.put("correctAlternativeId", UUID.randomUUID().toString());
         assertThatThrownBy(() -> assertSchema(mutant.toString(), "AttemptView")).isInstanceOf(AssertionError.class);
@@ -200,8 +190,8 @@ class AttemptHttpTests {
         var initial = send("POST", "/api/v1/attempts", b, createBody(UUID.randomUUID(), 5));
         var v = json.readTree(initial.body());
         var path = "/api/v1/attempts/" + v.get("id").asString();
-        assertThat(send("GET", path + "/result", b, null).statusCode()).isEqualTo(409);
-        assertThat(send("GET", path + "/result", outsider, null).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(send("GET", path + "/result", b, null), 409);
+        ErrorResponses.assertError(send("GET", path + "/result", outsider, null), 404);
         for (int i = 0; i < 4; i++) {
             var item = v.get("items").get(i);
             var option = i < 3
@@ -218,14 +208,9 @@ class AttemptHttpTests {
         }
         var op = UUID.randomUUID();
         var command = "{\"commandId\":\"" + op + "\",\"expectedVersion\":4}";
-        assertThat(send("POST", path + "/finish", outsider, command).statusCode())
-                .isEqualTo(404);
-        assertThat(send("POST", path + "/finish", new Browser(b.cookie(), null), command)
-                        .statusCode())
-                .isEqualTo(403);
-        assertThat(send("POST", path + "/finish", b, command.replace("4}", "3}"))
-                        .statusCode())
-                .isEqualTo(409);
+        ErrorResponses.assertError(send("POST", path + "/finish", outsider, command), 404);
+        ErrorResponses.assertError(send("POST", path + "/finish", new Browser(b.cookie(), null), command), 403);
+        ErrorResponses.assertError(send("POST", path + "/finish", b, command.replace("4}", "3}")), 409);
         var finish = send("POST", path + "/finish", b, command);
         assertThat(finish.statusCode()).isEqualTo(200);
         assertSchema(finish.body(), "AttemptFinished");
@@ -240,15 +225,13 @@ class AttemptHttpTests {
         assertThat(send("POST", path + "/finish", b, command).body()).isEqualTo(finish.body());
         assertThat(json.readTree(send("GET", path + "/result", b, null).body())).isEqualTo(result);
         assertSafe(send("GET", path, b, null).body());
-        assertThat(send(
-                                "PUT",
-                                path + "/answers/"
-                                        + v.get("items").get(0).get("id").asString(),
-                                b,
-                                "{\"commandId\":\"" + UUID.randomUUID()
-                                        + "\",\"expectedVersion\":5,\"alternativeId\":null}")
-                        .statusCode())
-                .isEqualTo(409);
+        ErrorResponses.assertError(
+                send(
+                        "PUT",
+                        path + "/answers/" + v.get("items").get(0).get("id").asString(),
+                        b,
+                        "{\"commandId\":\"" + UUID.randomUUID() + "\",\"expectedVersion\":5,\"alternativeId\":null}"),
+                409);
     }
 
     @Test
@@ -284,15 +267,13 @@ class AttemptHttpTests {
                         .get("items")
                         .size())
                 .isZero();
-        assertThat(send("GET", path, other, null).statusCode()).isEqualTo(404);
+        ErrorResponses.assertError(send("GET", path, other, null), 404);
         assertThat(send("GET", "/api/v1/attempts/" + second.get("id").asString(), fresh, null)
                         .body())
                 .isEqualTo(second.toString());
-        assertThat(send("GET", "/api/v1/me/attempts", browser(null), null).statusCode())
-                .isEqualTo(401);
+        ErrorResponses.assertError(send("GET", "/api/v1/me/attempts", browser(null), null), 401);
         for (var q : List.of("page=-1", "size=101", "finished=invalid", "owner=" + owner, "page=0&page=1"))
-            assertThat(send("GET", "/api/v1/me/attempts?" + q, fresh, null).statusCode())
-                    .isEqualTo(400);
+            ErrorResponses.assertError(send("GET", "/api/v1/me/attempts?" + q, fresh, null), 400);
         assertThat(json.readTree(send("GET", "/api/v1/me/attempts?finished=true", fresh, null)
                                 .body())
                         .get("items")
@@ -300,7 +281,7 @@ class AttemptHttpTests {
                 .isEqualTo(1);
         var logout = send("POST", "/api/v1/auth/logout", a, null);
         assertThat(logout.statusCode()).isEqualTo(204);
-        assertThat(send("GET", "/api/v1/me/attempts", a, null).statusCode()).isEqualTo(401);
+        ErrorResponses.assertError(send("GET", "/api/v1/me/attempts", a, null), 401);
         assertThat(send("GET", path, fresh, null).statusCode()).isEqualTo(200);
     }
 
@@ -313,27 +294,24 @@ class AttemptHttpTests {
         assertThat(old.statusCode()).isEqualTo(201);
         assertThat(send("POST", "/api/v1/attempts", b, option(request, "false")).body())
                 .isEqualTo(old.body());
-        assertThat(send("POST", "/api/v1/attempts", b, option(request, "true")).statusCode())
-                .isEqualTo(409);
+        ErrorResponses.assertError(send("POST", "/api/v1/attempts", b, option(request, "true")), 409);
         var before = jdbc.queryForObject("select count(*) from me_attempt", Integer.class);
         for (var value : List.of("null", "\"true\"", "1", "0", "[]", "{}")) {
             var r = send("POST", "/api/v1/attempts", b, option(createBody(UUID.randomUUID(), 1), value));
-            assertThat(r.statusCode()).as(value).isEqualTo(400);
-            assertThat(r.body()).isEqualTo("{\"error\":\"invalid_request\"}");
+            ErrorResponses.assertError(r, 400, "INVALID_REQUEST");
         }
-        assertThat(send("POST", "/api/v1/attempts", new Browser(b.cookie(), null), option(request, "true"))
-                        .statusCode())
-                .isEqualTo(403);
-        assertThat(send(
-                                "POST",
-                                "/api/v1/attempts",
-                                b,
-                                option(request, "true")
-                                        .replace(
-                                                "\"useParameterizedQuestions\":true",
-                                                "\"useParameterizedQuestions\":true,\"parameters\":{}"))
-                        .statusCode())
-                .isEqualTo(400);
+        ErrorResponses.assertError(
+                send("POST", "/api/v1/attempts", new Browser(b.cookie(), null), option(request, "true")), 403);
+        ErrorResponses.assertError(
+                send(
+                        "POST",
+                        "/api/v1/attempts",
+                        b,
+                        option(request, "true")
+                                .replace(
+                                        "\"useParameterizedQuestions\":true",
+                                        "\"useParameterizedQuestions\":true,\"parameters\":{}")),
+                400);
         assertThat(jdbc.queryForObject("select count(*) from me_attempt", Integer.class))
                 .isEqualTo(before);
     }
@@ -410,9 +388,7 @@ class AttemptHttpTests {
         assertThat(send("GET", "/api/v1/attempts/" + accountId + "/result", fresh, null)
                         .statusCode())
                 .isEqualTo(200);
-        assertThat(send("GET", "/api/v1/attempts/" + accountId, browser(null), null)
-                        .statusCode())
-                .isEqualTo(404);
+        ErrorResponses.assertError(send("GET", "/api/v1/attempts/" + accountId, browser(null), null), 404);
         assertThat(send("GET", "/api/v1/me/attempts", fresh, null).body()).contains(accountId);
     }
 
@@ -429,8 +405,7 @@ class AttemptHttpTests {
                 .capture();
         try {
             var r = send("POST", "/api/v1/attempts", b, option(createBody(UUID.randomUUID(), 1), "true"));
-            assertThat(r.statusCode()).isEqualTo(500);
-            assertThat(r.body()).isEqualTo("{\"error\":\"internal_error\"}");
+            ErrorResponses.assertError(r, 500, "INTERNAL_ERROR");
             assertThat(tables.stream()
                             .map(t -> jdbc.queryForObject("select count(*) from " + t, Integer.class))
                             .toList())
@@ -438,6 +413,32 @@ class AttemptHttpTests {
         } finally {
             org.mockito.Mockito.reset(templates);
         }
+    }
+
+    @Test
+    @Order(9)
+    void unrecognizedIntegrityViolationRollsBackTheAttemptAndAnswersGeneric500() throws Exception {
+        var b = browser(null);
+        var tables = List.of("me_attempt", "me_item", "me_command");
+        var before = tables.stream()
+                .map(t -> jdbc.queryForObject("select count(*) from " + t, Integer.class))
+                .toList();
+        // Constraint que nenhum adaptador conhece: não é conflito nem indisponibilidade.
+        jdbc.execute("alter table me_item add constraint me_item_private_probe_check check (false) not valid");
+        try {
+            var r = send("POST", "/api/v1/attempts", b, createBody(UUID.randomUUID(), 1));
+            ErrorResponses.assertError(r, 500, "INTERNAL_ERROR");
+            assertThat(r.body()).doesNotContain("me_item", "private_probe", "23514");
+            assertThat(tables.stream()
+                            .map(t -> jdbc.queryForObject("select count(*) from " + t, Integer.class))
+                            .toList())
+                    .isEqualTo(before);
+        } finally {
+            jdbc.execute("alter table me_item drop constraint me_item_private_probe_check");
+        }
+        assertThat(send("POST", "/api/v1/attempts", b, createBody(UUID.randomUUID(), 1))
+                        .statusCode())
+                .isEqualTo(201);
     }
 
     String option(String body, String value) {
@@ -482,8 +483,7 @@ class AttemptHttpTests {
         int before = jdbc.queryForObject("select count(*) from me_attempt", Integer.class);
         try {
             var r = send("POST", "/api/v1/attempts", browser(null), createBody(UUID.randomUUID(), 1));
-            assertThat(r.statusCode()).isEqualTo(503);
-            assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            ErrorResponses.assertError(r, 503, "UNAVAILABLE");
             assertThat(jdbc.queryForObject("select count(*) from me_attempt", Integer.class))
                     .isEqualTo(before);
         } finally {
@@ -512,8 +512,7 @@ class AttemptHttpTests {
         PG.stop();
         for (var path : List.of("/api/v1/me/attempts", "/api/v1/attempts/" + UUID.randomUUID())) {
             var r = send("GET", path, b, null);
-            assertThat(r.statusCode()).isEqualTo(503);
-            assertThat(r.body()).isEqualTo("{\"error\":\"unavailable\"}");
+            ErrorResponses.assertError(r, 503, "UNAVAILABLE");
         }
         var cors = client.send(
                 HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + "/api/v1/me/attempts"))
@@ -522,7 +521,7 @@ class AttemptHttpTests {
                         .timeout(Duration.ofSeconds(10))
                         .build(),
                 HttpResponse.BodyHandlers.ofString());
-        assertThat(cors.statusCode()).isEqualTo(503);
+        ErrorResponses.assertError(cors, 503);
         assertThat(cors.headers().firstValue("Access-Control-Allow-Origin")).contains("http://localhost:5173");
         assertThat(cors.headers().firstValue("Access-Control-Allow-Credentials"))
                 .contains("true");

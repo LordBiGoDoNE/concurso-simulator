@@ -150,7 +150,7 @@ class TopicPracticeDomainTests {
         assertThatThrownBy(() -> Attempt.startPractice(UUID.randomUUID(), ACCOUNT, Topic.P01, NOW, List.of()))
                 .isInstanceOf(IllegalArgumentException.class);
         assertThatThrownBy(() -> a.answer(ACCOUNT, NOW, 0, items.getFirst().id(), UUID.randomUUID()))
-                .isInstanceOf(IllegalArgumentException.class);
+                .isInstanceOf(Attempt.InvalidAnswer.class);
         var oversized = java.util.stream.IntStream.range(0, 6)
                 .mapToObj(i -> item(practiceQuestion(i)))
                 .toList();

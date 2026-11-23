@@ -61,6 +61,7 @@ export class AttemptApiError extends Error {
   constructor(
     public status: number,
     public available: { disciplineId: string; available: number }[] = [],
+    public code?: string,
   ) {
     super('Não foi possível confirmar a operação.');
   }
@@ -210,7 +211,15 @@ function request<T>(
                   (a.available as number) >= 0,
               )
             : [];
-        throw new AttemptApiError(response.status, available);
+        const code =
+          typeof body === 'object' &&
+          body &&
+          'error' in body &&
+          typeof body.error === 'string' &&
+          /^[A-Z][A-Z0-9_]*$/.test(body.error)
+            ? body.error
+            : undefined;
+        throw new AttemptApiError(response.status, available, code);
       }
       return body;
     };

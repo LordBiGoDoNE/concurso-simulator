@@ -3,7 +3,7 @@ package br.com.concursosimulator.questionbank;
 import static br.com.concursosimulator.questionbank.AdministrativeImportFixtures.document;
 import static org.assertj.core.api.Assertions.*;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.web.AdministrativeImportController.*;
 import br.com.concursosimulator.support.TestPostgres;
@@ -120,13 +120,13 @@ class EditorialDecisionBatchHttpTests {
                 "/api/v1/admin/question-imports/preview",
                 cookie,
                 csrf,
-                json.writeValueAsString(new PreviewRequest(doc, List.of(keys)))));
+                json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), List.of(keys)))));
         return ok(send(
                         "/api/v1/admin/question-imports/apply",
                         cookie,
                         csrf,
                         json.writeValueAsString(new ApplyRequest(
-                                doc,
+                                AdministrativeImportFixtures.web(doc),
                                 List.of(keys),
                                 preview.get("confirmationToken").asString()))))
                 .path("receipt");
@@ -502,7 +502,8 @@ class EditorialDecisionBatchHttpTests {
                 cookie,
                 csrf,
                 json.writeValueAsString(new PreviewRequest(
-                        document(QuestionPurpose.SIMULADO, "batch.other"), List.of("batch.other")))));
+                        AdministrativeImportFixtures.web(document(QuestionPurpose.SIMULADO, "batch.other")),
+                        List.of("batch.other")))));
         var crossToken = (ObjectNode) json.readTree(applyBody(preview));
         crossToken.put(
                 "confirmationToken", importPreview.get("confirmationToken").asString());
@@ -653,7 +654,7 @@ class EditorialDecisionBatchHttpTests {
                 cookie,
                 csrf,
                 json.writeValueAsString(new ApplyRequest(
-                        doc,
+                        AdministrativeImportFixtures.web(doc),
                         List.of("batch.cross"),
                         preview.get("confirmationToken").asString())));
         assertThat(importApply.statusCode()).isEqualTo(409);
@@ -667,5 +668,52 @@ class EditorialDecisionBatchHttpTests {
                         String.class,
                         UUID.fromString(item.path("revisionId").asString())))
                 .isEqualTo("IN_REVIEW");
+    }
+
+    /** JSON público da prévia e da aplicação de decisões em lote (grupo 5: DTOs web próprios). */
+    @Test
+    void zz_editorialBatchJsonContractsAreStable() throws Exception {
+        var cookie = admin();
+        var csrf = csrf(cookie);
+        // Uma questão: a ordem dos itens do lote segue o questionId, aleatório.
+        var receipt = imported(cookie, csrf, QuestionPurpose.PRATICA_AULA, "admin.snapshot-a");
+        var nonce = receipt.path("confirmation").path("nonce").asString();
+        var submit = ok(send(
+                BASE + "/preview",
+                cookie,
+                csrf,
+                json.writeValueAsString(
+                        byReceipt(envelope("SUBMIT", null, List.of(), "Lote sintético de contrato"), nonce))));
+        JsonContractSnapshot.check("editorial-preview-submit", submit);
+        JsonContractSnapshot.check(
+                "editorial-apply-submit", ok(send(BASE + "/apply", cookie, csrf, applyBody(submit))));
+        var approve = ok(send(
+                BASE + "/preview",
+                cookie,
+                csrf,
+                json.writeValueAsString(byReceipt(
+                        envelope("APPROVE", "AI_ONLY", ALL_CHECKS, "Revisão somente por IA, contrato"), nonce))));
+        JsonContractSnapshot.check("editorial-preview-approve", approve);
+        var body = applyBody(approve);
+        JsonContractSnapshot.check("editorial-apply-approve", ok(send(BASE + "/apply", cookie, csrf, body)));
+        JsonContractSnapshot.check("editorial-apply-replay", ok(send(BASE + "/apply", cookie, csrf, body)));
+    }
+
+    /** Prévia recusada (aprovar rascunho): refusal preenchido, lote não confirmável e sem token. */
+    @Test
+    void zz_editorialBatchRefusalJsonContractIsStable() throws Exception {
+        var cookie = admin();
+        var csrf = csrf(cookie);
+        var receipt = imported(cookie, csrf, QuestionPurpose.SIMULADO, "snapshot.refused");
+        var nonce = receipt.path("confirmation").path("nonce").asString();
+        JsonContractSnapshot.check(
+                "editorial-preview-refused",
+                ok(send(
+                        BASE + "/preview",
+                        cookie,
+                        csrf,
+                        json.writeValueAsString(byReceipt(
+                                envelope("APPROVE", "HUMAN_PEER", ALL_CHECKS, "Aprovação sintética recusada"),
+                                nonce)))));
     }
 }

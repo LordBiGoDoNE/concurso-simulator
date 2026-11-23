@@ -2,9 +2,10 @@ package br.com.concursosimulator.mockexam;
 
 import static org.assertj.core.api.Assertions.*;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
 import br.com.concursosimulator.questionbank.domain.*;
+import br.com.concursosimulator.shared.web.ErrorResponses;
 import br.com.concursosimulator.support.TestPostgres;
 import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.net.*;
@@ -100,32 +101,31 @@ class LessonPracticeHttpTests {
             var original = start(UUID.randomUUID());
             var body = original.substring(0, original.length() - 1) + "," + extra + "}";
             var response = send("POST", "/api/v1/lesson-practices", b, body);
-            assertThat(response.statusCode()).isEqualTo(400);
+            ErrorResponses.assertError(response, 400);
             assertThat(response.body()).doesNotContain("PRACTICE_ONLY_", "MOCK_ONLY_");
         }
         var mock = "{\"commandId\":\"" + UUID.randomUUID()
                 + "\",\"roleId\":\"assistente-administrativo\",\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":1,\"topicIds\":[]}],\"purpose\":\"PRATICA_AULA\"}";
-        assertThat(send("POST", "/api/v1/attempts", b, mock).statusCode()).isEqualTo(400);
+        ErrorResponses.assertError(send("POST", "/api/v1/attempts", b, mock), 400);
         assertThat(jdbc.queryForObject("select count(*) from me_attempt", Integer.class))
                 .isEqualTo(before);
-        assertThat(send(
-                                "GET",
-                                "/api/v1/lesson-practices/availability?topicId=P01&roleId=assistente-administrativo",
-                                b,
-                                null)
-                        .statusCode())
-                .isEqualTo(400);
-        assertThat(send("GET", "/api/v1/lesson-practices/availability?topicId=P01&topicId=P02", b, null)
-                        .statusCode())
-                .isEqualTo(400);
-        assertThat(send(
-                                "POST",
-                                "/api/v1/attempts",
-                                b,
-                                "{\"commandId\":\"" + UUID.randomUUID()
-                                        + "\",\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":1,\"topicIds\":[]}]}")
-                        .statusCode())
-                .isEqualTo(400);
+        ErrorResponses.assertError(
+                send(
+                        "GET",
+                        "/api/v1/lesson-practices/availability?topicId=P01&roleId=assistente-administrativo",
+                        b,
+                        null),
+                400);
+        ErrorResponses.assertError(
+                send("GET", "/api/v1/lesson-practices/availability?topicId=P01&topicId=P02", b, null), 400);
+        ErrorResponses.assertError(
+                send(
+                        "POST",
+                        "/api/v1/attempts",
+                        b,
+                        "{\"commandId\":\"" + UUID.randomUUID()
+                                + "\",\"disciplines\":[{\"disciplineId\":\"portugues\",\"quantity\":1,\"topicIds\":[]}]}"),
+                400);
     }
 
     @Test
@@ -133,9 +133,8 @@ class LessonPracticeHttpTests {
         var b = browser(null);
         var command = UUID.randomUUID();
         var payload = start(command);
-        assertThat(send("POST", "/api/v1/lesson-practices", new Browser(b.cookie(), null), payload)
-                        .statusCode())
-                .isEqualTo(403);
+        ErrorResponses.assertError(
+                send("POST", "/api/v1/lesson-practices", new Browser(b.cookie(), null), payload), 403);
         var availability = send("GET", "/api/v1/lesson-practices/availability?topicId=P01", b, null);
         assertThat(availability.statusCode()).isEqualTo(200);
         assertThat(json.readTree(availability.body()).get("available").asInt()).isEqualTo(30);
@@ -153,10 +152,9 @@ class LessonPracticeHttpTests {
         assertThat(again.statusCode()).isEqualTo(200);
         assertThat(again.body()).isEqualTo(created.body());
         var path = "/api/v1/lesson-practices/" + view.get("id").asString();
-        assertThat(send("GET", path + "/result", b, null).statusCode()).isEqualTo(409);
-        assertThat(send("GET", "/api/v1/attempts/" + view.get("id").asString(), b, null)
-                        .statusCode())
-                .isEqualTo(404);
+        ErrorResponses.assertError(send("GET", path + "/result", b, null), 409);
+        ErrorResponses.assertError(
+                send("GET", "/api/v1/attempts/" + view.get("id").asString(), b, null), 404);
         var last = view.get("items").get(4);
         var answer = "{\"commandId\":\"" + UUID.randomUUID() + "\",\"expectedVersion\":0,\"alternativeId\":\""
                 + last.get("alternatives").get(0).get("id").asString() + "\"}";
@@ -169,8 +167,7 @@ class LessonPracticeHttpTests {
         assertThat(finish.body()).contains("correctAlternativeId", "resolution");
         assertThat(json.readTree(finish.body()).get("result").get("blank").asInt())
                 .isEqualTo(4);
-        assertThat(send("GET", "/api/v1/me/lesson-practices", b, null).statusCode())
-                .isEqualTo(401);
+        ErrorResponses.assertError(send("GET", "/api/v1/me/lesson-practices", b, null), 401);
     }
 
     @Test
@@ -190,17 +187,12 @@ class LessonPracticeHttpTests {
         var mockId = json.readTree(mock.body()).get("id").asString();
         var id = practice.get("id").asString();
         var item = practice.get("items").get(0).get("id").asString();
-        assertThat(send("GET", "/api/v1/lesson-practices/" + mockId, a, null).statusCode())
-                .isEqualTo(404);
-        assertThat(send("GET", "/api/v1/lesson-practices/" + id, other, null).statusCode())
-                .isEqualTo(404);
+        ErrorResponses.assertError(send("GET", "/api/v1/lesson-practices/" + mockId, a, null), 404);
+        ErrorResponses.assertError(send("GET", "/api/v1/lesson-practices/" + id, other, null), 404);
         var answer = "{\"commandId\":\"" + UUID.randomUUID() + "\",\"expectedVersion\":0,\"alternativeId\":null}";
-        assertThat(send("PUT", "/api/v1/attempts/" + id + "/answers/" + item, a, answer)
-                        .statusCode())
-                .isEqualTo(404);
-        assertThat(send("PUT", "/api/v1/lesson-practices/" + id + "/answers/" + item, other, answer)
-                        .statusCode())
-                .isEqualTo(404);
+        ErrorResponses.assertError(send("PUT", "/api/v1/attempts/" + id + "/answers/" + item, a, answer), 404);
+        ErrorResponses.assertError(
+                send("PUT", "/api/v1/lesson-practices/" + id + "/answers/" + item, other, answer), 404);
         var histories = send("GET", "/api/v1/me/lesson-practices?page=0&size=1", a, null);
         assertThat(histories.statusCode()).isEqualTo(200);
         assertThat(histories.body()).contains(id, "topicId").doesNotContain(mockId);
@@ -209,13 +201,15 @@ class LessonPracticeHttpTests {
         var publicPool = send("GET", "/api/v1/question-bank/questions?page=0&size=20", null, null);
         assertThat(json.readTree(publicPool.body()).get("total").asInt()).isEqualTo(2);
         assertThat(publicPool.body()).doesNotContain("PRACTICE_ONLY_");
-        assertThat(send(
-                                "POST",
-                                "/api/v1/lesson-practices",
-                                a,
-                                start(UUID.randomUUID()).replace("P01", "P02"))
-                        .statusCode())
-                .isEqualTo(409);
+        ErrorResponses.assertError(
+                send(
+                        "POST",
+                        "/api/v1/lesson-practices",
+                        a,
+                        start(UUID.randomUUID()).replace("P01", "P02")),
+                409,
+                "INSUFFICIENT_POOL",
+                "available");
     }
 
     @Test
@@ -239,8 +233,7 @@ class LessonPracticeHttpTests {
                         .get(0)
                         .has("roleId"))
                 .isFalse();
-        assertThat(send("POST", "/api/v1/lesson-practices", b, start(command)).statusCode())
-                .isEqualTo(409);
+        ErrorResponses.assertError(send("POST", "/api/v1/lesson-practices", b, start(command)), 409);
         var item = old.items().getFirst();
         var answer = "{\"commandId\":\"" + UUID.randomUUID() + "\",\"expectedVersion\":0,\"alternativeId\":\""
                 + item.optionOrder().getFirst() + "\"}";
@@ -258,8 +251,8 @@ class LessonPracticeHttpTests {
         assertThat(stored.get("format").asInt()).isEqualTo(3);
         assertThat(stored.get("composition").isObject()).isTrue();
         expire(b);
-        assertThat(send("GET", path, b, null).statusCode()).isEqualTo(404);
-        assertThat(send("POST", path + "/finish", b, finish).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("GET", path, b, null), 404);
+        ErrorResponses.assertError(send("POST", path + "/finish", b, finish), 403);
     }
 
     @SuppressWarnings({"unchecked", "rawtypes"})

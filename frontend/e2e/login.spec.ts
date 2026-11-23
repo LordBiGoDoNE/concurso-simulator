@@ -13,7 +13,7 @@ for (const width of [390, 1280]) {
     await page.route('**/api/v1/me', (route) =>
       route.fulfill({
         status: connected ? 200 : 401,
-        json: connected ? { id: '12345678-1234-1234-1234-123456789abc' } : { error: 'unauthenticated' },
+        json: connected ? { id: '12345678-1234-1234-1234-123456789abc' } : { error: 'UNAUTHENTICATED' },
       }),
     );
     await page.route('**/api/v1/csrf', (route) =>

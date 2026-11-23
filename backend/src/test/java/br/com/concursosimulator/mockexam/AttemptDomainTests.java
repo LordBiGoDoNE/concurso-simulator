@@ -79,10 +79,10 @@ class AttemptDomainTests {
         restored.answer(ACCOUNT, NOW, 1, item.id(), null);
         assertThat(restored.snapshot().answers()).isEmpty();
         assertThat(a.snapshot().answers()).hasSize(1);
-        assertThatIllegalArgumentException()
-                .isThrownBy(() -> restored.answer(ACCOUNT, NOW, 2, item.id(), UUID.randomUUID()));
-        assertThatIllegalArgumentException()
-                .isThrownBy(() -> restored.answer(ACCOUNT, NOW, 2, UUID.randomUUID(), null));
+        assertThatThrownBy(() -> restored.answer(ACCOUNT, NOW, 2, item.id(), UUID.randomUUID()))
+                .isInstanceOf(Attempt.InvalidAnswer.class);
+        assertThatThrownBy(() -> restored.answer(ACCOUNT, NOW, 2, UUID.randomUUID(), null))
+                .isInstanceOf(Attempt.InvalidAnswer.class);
         assertThatIllegalArgumentException()
                 .isThrownBy(() -> new Attempt.Item(
                         UUID.randomUUID(),

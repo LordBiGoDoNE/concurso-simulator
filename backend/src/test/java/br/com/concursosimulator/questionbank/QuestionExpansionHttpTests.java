@@ -2,7 +2,7 @@ package br.com.concursosimulator.questionbank;
 
 import static org.assertj.core.api.Assertions.*;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.support.TestPostgres;
 import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.net.URI;

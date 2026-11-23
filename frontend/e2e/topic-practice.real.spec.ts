@@ -162,7 +162,7 @@ test('simulado, prática, conflito, troca de conta e resposta tardia ficam isola
   await page.route('**/lesson-practices/*/answers/*', async (r) => {
     if (!released) {
       released = true;
-      return r.fulfill({ status: 409, json: { error: 'conflict' } });
+      return r.fulfill({ status: 409, json: { error: 'CONFLICT' } });
     }
     await r.continue();
   });

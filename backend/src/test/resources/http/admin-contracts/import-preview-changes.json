@@ -1,0 +1,41 @@
+{
+  "purpose" : "SIMULADO",
+  "destinationId" : "isolated-test",
+  "packageDigest" : "ec06f5320e2a4fad77b059494a446c82ec4deee6d494610df0d69a8940ba3432",
+  "selectionDigest" : "6db04561dd65e38dae5fe2b03e118359e2a739804cfd9517c2208ea83f2cc6df",
+  "items" : [ {
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.rich-a"
+    },
+    "fingerprint" : "7852dba3368690ee48c149452f858e44b4a55a7e0990ec4cdcc898fcb38068d4",
+    "expectedLatestRevision" : "<uuid>",
+    "change" : "CHANGED",
+    "questionId" : "<uuid>",
+    "latestRevisionId" : "<uuid>"
+  }, {
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.rich-b"
+    },
+    "fingerprint" : "8a3b390748d0732393bd502574172f728d4831ab95f7081f00ad23d6aa14ef55",
+    "expectedLatestRevision" : null,
+    "change" : "IDENTICAL",
+    "questionId" : "<uuid>",
+    "latestRevisionId" : "<uuid>"
+  }, {
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.rich-c"
+    },
+    "fingerprint" : "adafcbc583f054a8d0c14381214e77a3e05192d9b2ec2e8792aca94565a0ab07",
+    "expectedLatestRevision" : "<uuid>",
+    "change" : "STALE",
+    "questionId" : "<uuid>",
+    "latestRevisionId" : "<uuid>"
+  } ],
+  "possibleDuplicates" : [ ],
+  "confirmable" : false,
+  "confirmationToken" : null,
+  "expiresAt" : null
+}

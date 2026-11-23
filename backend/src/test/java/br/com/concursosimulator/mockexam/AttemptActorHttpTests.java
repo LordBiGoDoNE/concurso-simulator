@@ -2,10 +2,11 @@ package br.com.concursosimulator.mockexam;
 
 import static org.assertj.core.api.Assertions.*;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.mockexam.domain.AttemptOwner;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
 import br.com.concursosimulator.mockexam.web.CurrentActor;
+import br.com.concursosimulator.shared.web.ErrorResponses;
 import br.com.concursosimulator.support.TestPostgres;
 import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.net.*;
@@ -75,8 +76,7 @@ class AttemptActorHttpTests {
         }) {
             var cookie = session(auth);
             var response = send("GET", auth == null ? "/api/v1/me/attempts" : path, cookie, null);
-            assertThat(response.statusCode()).isEqualTo(401);
-            assertThat(response.body()).isEqualTo("{\"error\":\"unauthenticated\"}");
+            ErrorResponses.assertError(response, 401, "UNAUTHENTICATED");
             assertThat(response.headers().firstValue("Cache-Control")).contains("no-store");
             assertThat(response.headers().firstValue("Location")).isEmpty();
         }
@@ -87,10 +87,8 @@ class AttemptActorHttpTests {
         var csrf = send("GET", "/api/v1/csrf", null, null);
         var cookie = csrf.headers().firstValue("Set-Cookie").orElseThrow().split(";", 2)[0];
         var token = json.readTree(csrf.body()).get("token").asString();
-        assertThat(send("POST", "/api/v1/attempts", cookie, null).statusCode()).isEqualTo(403);
-        assertThat(send("PUT", path + "/answers/" + UUID.randomUUID(), cookie, null)
-                        .statusCode())
-                .isEqualTo(403);
+        ErrorResponses.assertError(send("POST", "/api/v1/attempts", cookie, null), 403);
+        ErrorResponses.assertError(send("PUT", path + "/answers/" + UUID.randomUUID(), cookie, null), 403);
         var visitorResponse = send("GET", path, cookie, null);
         assertThat(visitorResponse.statusCode()).isEqualTo(200);
         assertThat(visitorResponse.body()).isEqualTo("{\"mode\":\"VISITOR\"}");
@@ -103,7 +101,7 @@ class AttemptActorHttpTests {
         var account = session(UsernamePasswordAuthenticationToken.authenticated(
                 new UserPrincipal(UUID.randomUUID()), null, List.of()));
         assertThat(send("GET", path, account, null).body()).isEqualTo("{\"mode\":\"ACCOUNT\"}");
-        assertThat(send("PATCH", path, cookie, token).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("PATCH", path, cookie, token), 403);
         var preflight = HttpRequest.newBuilder(URI.create(base() + "/api/v1/attempts"))
                 .method("OPTIONS", HttpRequest.BodyPublishers.noBody())
                 .header("Origin", "http://localhost:5173")
@@ -123,9 +121,8 @@ class AttemptActorHttpTests {
         var expired = repository().findById(id);
         expired.setLastAccessedTime(Instant.now().minusSeconds(3600));
         repository().save(expired);
-        assertThat(send("GET", "/api/v1/me/attempts", cookie, null).statusCode())
-                .isEqualTo(401);
-        assertThat(send("POST", "/api/v1/attempts", cookie, token).statusCode()).isEqualTo(403);
+        ErrorResponses.assertError(send("GET", "/api/v1/me/attempts", cookie, null), 401);
+        ErrorResponses.assertError(send("POST", "/api/v1/attempts", cookie, token), 403);
     }
 
     @Test

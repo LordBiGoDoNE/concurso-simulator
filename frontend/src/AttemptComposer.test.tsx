@@ -80,6 +80,16 @@ it('insuficiência mantém operação no retry e critérios alterados geram outr
   await waitFor(() => expect(createAttempt).toHaveBeenCalledTimes(3));
   expect(vi.mocked(createAttempt).mock.calls[2][1]).not.toBe(vi.mocked(createAttempt).mock.calls[0][1]);
 });
+it('variações numéricas indisponíveis orientam a desmarcar a opção em vez de repetir os mesmos critérios', async () => {
+  vi.mocked(questionCatalog).mockResolvedValue(catalog);
+  vi.mocked(createAttempt).mockRejectedValue(new AttemptApiError(503, [], 'PARAMETERIZED_GENERATION_UNAVAILABLE'));
+  render(<AttemptComposer onCreated={vi.fn()} onUnavailable={vi.fn()} />);
+  fireEvent.click(await screen.findByRole('button', { name: 'Iniciar simulado' }));
+  expect(await screen.findByRole('alert')).toHaveTextContent(
+    'Desmarque a opção para criar o simulado com questões fixas.',
+  );
+  expect(screen.getByRole('alert')).not.toHaveTextContent('mesmos critérios');
+});
 it('desmontagem aborta criação e ignora resposta tardia', async () => {
   vi.mocked(questionCatalog).mockResolvedValue(catalog);
   let finish!: (v: typeof view) => void;

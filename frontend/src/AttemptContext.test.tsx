@@ -32,7 +32,7 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
   const fetchMock = vi.fn(async (url: string, options?: RequestInit) => {
     if (url.endsWith('/status')) return response({ status: 'UP' });
     if (url.endsWith('/auth/config')) return response({ googleEnabled: true });
-    if (url.endsWith('/me')) return user ? response({ id: user }) : response({ error: 'unauthenticated' }, 401);
+    if (url.endsWith('/me')) return user ? response({ id: user }) : response({ error: 'UNAUTHENTICATED' }, 401);
     if (url.endsWith('/csrf')) return response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' });
     if (url.endsWith('/auth/logout')) {
       user = null;
@@ -66,7 +66,7 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
       });
     if (url.endsWith('/attempts') && options?.method === 'POST') return response(privateView, 201);
     if (url.endsWith(`/attempts/${view.id}`))
-      return expired ? response({ error: 'not_found' }, 404) : response(privateView);
+      return expired ? response({ error: 'NOT_FOUND' }, 404) : response(privateView);
     if (url.includes('/answers/') && expired)
       return denied
         ? {
@@ -74,7 +74,7 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
             status: denied.status,
             json: () => (denied.stalled ? new Promise(() => {}) : Promise.reject(new SyntaxError('truncated'))),
           }
-        : response({ error: 'unauthenticated' }, 401);
+        : response({ error: 'UNAUTHENTICATED' }, 401);
     if (url.includes('/answers/'))
       return {
         ok: true,

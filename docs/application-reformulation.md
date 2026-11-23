@@ -12,8 +12,24 @@ com proposta/escopo aprovados, revisão cumulativa e aprovação própria de mer
 As novas specs partem da `main` atualizada. O layout `study-experience-redesign`
 é a primeira correção desse encaminhamento: PR #147 destinado diretamente à
 `main`, com nova revisão da base, sem reorganizar a stack de tarefas já integrada.
-`stable` continua responsável pelo site estático/Pages; publicação externa da
-aplicação completa permanece adiada.
+`stable` continua responsável pelo site estático/Pages.
+
+### Evolução após a entrega (atualizado em 2026-11-23)
+
+- **Produção pública:** a aplicação completa foi publicada na VPS pela spec
+  `vps-staging-delivery` (#156, [SPEC] #224, 2026-11-13), em
+  `https://concurso-simulator.reemsoftworks.com`. Procedimento e papéis em
+  [infra/vps-production](../infra/vps-production/README.md). O deploy é manual.
+- **Specs posteriores integradas à `main`:** `lesson-practice` (#154),
+  `new-student-experience` (#163), `lesson-practice-by-topic` (#176),
+  `focus-visual-refresh` (#204), `question-bank-expansion-curation` (épica
+  combinada #173 + #177), `administrative-question-curation`,
+  `administrative-question-import`, `study-experience-redesign`,
+  `lesson-depth-alignment` e `lesson-animations` (#254).
+- **Registro OpenSpec:** as specs vigentes ficam em `openspec/specs/`, e as changes
+  entregues em `openspec/changes/archive/`.
+- **Backlog:** a #221 reúne o pós-VPS (smoke Google real, acervo de outubro). As
+  issues `review-finding` abertas guardam os achados adiados.
 
 ## Registro histórico da entrega
 
@@ -72,10 +88,9 @@ Arquitetura/persistência revisadas pelo usuário em 2026-10-08: monólito modul
 
 - Sincronização offline e eventual mescla de visitante com conta; salvar/retomar simulados pela conta já foi escolhido para a proposta da etapa 4.
 - Expansão além dos dois cargos atuais, fora da spec inicial do banco (quantidade por disciplina e escopo inicial já decididos).
-- Para uma futura publicação externa: hospedagem, domínio/TLS, disponibilidade,
-  backups externos, acesso público, smoke Google real e publicação/rollback.
-  Adiados em 2026-10-20, fora do escopo da entrega local atual. O procedimento de
-  persistência e backup/restauração local já faz parte da spec #123.
+- ~~Publicação externa: hospedagem, domínio/TLS, backups e publicação/rollback.~~
+  Resolvida pela spec `vps-staging-delivery` (#224, 2026-11-13). Continua pendente
+  só o smoke Google real, acompanhado na #221.
 
 Essas decisões não serão presumidas apenas por constarem no roadmap.
 

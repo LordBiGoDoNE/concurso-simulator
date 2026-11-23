@@ -35,7 +35,7 @@ A aplicação SHALL associar a identidade Google a um identificador interno est�
 - **THEN** recebe o mesmo identificador interno; cada dispositivo mantém sua própria sessão.
 
 ### Requirement: Consulta privada da própria identidade
-`GET /api/v1/me` SHALL retornar HTTP 200 com somente `{"id":"<uuid>"}` para sessão válida e HTTP 401 com `{"error":"unauthenticated"}` sem sessão válida. A resposta MUST NOT aceitar identificador de terceiros como critério de acesso e SHALL usar `Cache-Control: no-store`.
+`GET /api/v1/me` SHALL retornar HTTP 200 com somente `{"id":"<uuid>"}` para sessão válida e HTTP 401 com `{"error":"UNAUTHENTICATED"}` sem sessão válida. A resposta MUST NOT aceitar identificador de terceiros como critério de acesso e SHALL usar `Cache-Control: no-store`.
 
 #### Scenario: Consulta autenticada
 - **WHEN** um cliente com sessão válida consulta sua identidade

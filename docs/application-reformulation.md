@@ -68,6 +68,7 @@ localizados ficam marcados como tal.
 | `remove-legacy-review-gate` | #256 | #269 | #270 | 2026-11-23 | |
 | `backend-http-boundaries` | #261 | #281 | #283 | 2026-11-23 | |
 | `build-and-test-quality` | #257 | #282 | #284 | 2026-11-23 | |
+| `repository-hygiene-guards` | #285 | #290 | #291 | 2026-11-23 | Job `openspec`, registro de entregas e relatório semanal; baixos na #289 |
 
 ## Registro histórico da entrega
 

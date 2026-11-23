@@ -91,7 +91,7 @@ public class SecurityConfiguration {
             ApiAccessFailureHandler failures, AttemptAccess attempts, AdministrativeAccessUseCases adminAccess,
             ApiRoutes routes) throws Exception {
         if (google.enabled()) {
-            var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), "/oauth2/authorization");
+            var resolver = new DefaultOAuth2AuthorizationRequestResolver(registrations.getObject(), IdentityRoutes.OAUTH_AUTHORIZATION_BASE);
             resolver.setAuthorizationRequestCustomizer(builder -> {
                 OAuth2AuthorizationRequestCustomizers.withPkce().accept(builder);
                 var attrs=(org.springframework.web.context.request.ServletRequestAttributes)org.springframework.web.context.request.RequestContextHolder.currentRequestAttributes();

@@ -4,8 +4,9 @@ Material de estudo para o Concurso Público de Limeira 01/2026, voltado aos carg
 
 **Acesse o site:** https://lordbigodone.github.io/concurso-simulator/
 
-**Aplicação completa em main:** execução local com Docker conforme
-[o procedimento local](infra/local-app/README.md). O site do Pages continua em `stable`.
+**Aplicação completa (main):** em produção em https://concurso-simulator.reemsoftworks.com
+([operação na VPS](infra/vps-production/README.md)). Também roda localmente com Docker
+([procedimento local](infra/local-app/README.md)). O site do Pages continua em `stable`.
 
 ## Conteúdo
 
@@ -68,8 +69,8 @@ O módulo M04 é escrito diretamente em HTML. Nos demais, `scripts/math_content.
 **Para avaliar a edição enriquecida localmente**, gere uma cópia em uma pasta nova (os HTML-base desses oito módulos não incluem a revisão quando abertos diretamente):
 
 ```sh
-python3 scripts/build_pages.py --branch main --stored /tmp/opencode/sem-previews --output /tmp/opencode/concurso-estudo
-python3 -m http.server 8000 --directory /tmp/opencode/concurso-estudo
+python3 scripts/build_pages.py --branch main --stored /tmp/concurso/sem-previews --output /tmp/concurso/estudo
+python3 -m http.server 8000 --directory /tmp/concurso/estudo
 ```
 
 Abra http://localhost:8000. Também é possível abrir o `index.html` dessa pasta offline. Use uma pasta de saída vazia; não use a raiz do repositório como saída.

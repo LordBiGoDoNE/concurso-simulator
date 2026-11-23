@@ -20,11 +20,11 @@ Para PR sem endpoints/backend, indicar não aplicável. -->
 
 ## Integração de spec (somente PR `[SPEC]`)
 
-<!-- Aplicar docs/architecture/spec-review.md. Tarefas não precisam deste relatório.
-Informar spec-review.json/md, base/head/digest, modelo/variante e sessão independente.
-Não marcar concluído se a revisão não foi executada; CI não demonstra qualidade semântica. -->
+<!-- Evidência vigente: openspec/changes/<spec>/review.md (~/.claude/rules/revisao-e-integracao.md,
+seções 4, 5 e 7). Tarefas não precisam desta seção. Não marcar concluído o que não foi executado;
+CI verde não é aprovação semântica. -->
 
-- [ ] Revisor independente analisou o conjunto completo em contexto novo, com modelo explicitamente escolhido.
-- [ ] Relatório corresponde à base/diff atuais; achados triados, bloqueadores resolvidos ou refutados com evidência.
-- [ ] Correções revalidadas pelo revisor; cobertura/limitações e pendências explícitas.
-- [ ] Check `spec-review` aprovado; merge aguarda autorização própria do usuário.
+- [ ] Revisão final independente executada em contexto novo sobre o diff completo da cadeia.
+- [ ] `review.md` da spec linkado, com head revisado e tree SHA.
+- [ ] Achados das revisões triados; bloqueadores/altos corrigidos e reverificados no delta.
+- [ ] Merge aguarda a aprovação do pacote pelo usuário.

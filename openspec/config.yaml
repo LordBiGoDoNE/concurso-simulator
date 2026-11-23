@@ -5,15 +5,19 @@ context: |
   All artifacts must be written in pt-BR.
   Keep OpenSpec structural headings and SHALL/MUST keywords in English.
   Projeto: concurso-simulator, material de estudo para concurso público.
-  Estado atual: aplicação Java/PostgreSQL/React entregue na main pelo PR #133,
-  com execução local Docker e layout integrado pelo #147. O site estático anterior
-  permanece em stable/GitHub Pages; novas questões dependem da política editorial.
+  Estado atual: aplicação Java/PostgreSQL/React na main (entregue pelo #133),
+  em produção na VPS desde 2026-11-13 (vps-staging-delivery, #224) e também
+  executável localmente com Docker. Specs vigentes em openspec/specs/. O site
+  estático anterior permanece em stable/GitHub Pages; novas questões dependem
+  da política editorial.
   Preserve aulas, links relativos, fórmulas acessíveis e funcionamento offline
-  do material estático durante a migração. Não mova os arquivos-base agora.
-  Evolução acordada: backend Java/Spring Boot, PostgreSQL, migrações Flyway,
+  do material estático. Os arquivos-base na raiz são lidos pelo backend, pelos
+  scripts e pelos Dockerfiles; movê-los exige spec própria.
+  Stack: monólito modular Java/Spring Boot, PostgreSQL, migrações Flyway,
+  API REST com contrato OpenAPI versionado em backend/openapi.yaml,
+  frontend React/TypeScript/Vite.
   Versões escolhidas pelo usuário: Java 25 LTS e PostgreSQL 18.
   Build do backend: Gradle Wrapper 9.8.0 com Kotlin DSL, não Maven.
-  monólito modular, API REST/OpenAPI, frontend React/TypeScript/Vite proposto.
   Processo (épicas, tarefas, PRs, issue, autorização, revisão, teste local,
   hotfix, deploy): regras globais em ~/.claude/rules e AGENTS.md, nessa precedência.
   Tarefas de cada spec são organizadas em grupos coesos; uma única confirmação

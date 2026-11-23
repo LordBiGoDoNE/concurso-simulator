@@ -91,7 +91,7 @@ class QuestionPublicHttpTests {
         var session=repository.createSession();session.setLastAccessedTime(Instant.now().minusSeconds(70));
         session.setAttribute(org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
                 new org.springframework.security.core.context.SecurityContextImpl(org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated(
-                        new br.com.concursosimulator.identity.web.UserPrincipal(UUID.randomUUID()),null,List.of())));
+                        new br.com.concursosimulator.identity.application.UserPrincipal(UUID.randomUUID()),null,List.of())));
         repository.save(session);
         var invalid=repository.createSession();invalid.setAttribute(org.springframework.security.web.context.HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
                         new org.springframework.security.core.context.SecurityContextImpl(org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated("not-a-UserPrincipal",null,List.of())));repository.save(invalid);

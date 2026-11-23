@@ -1,6 +1,6 @@
 package br.com.concursosimulator.subjectreview;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.QuestionBrowserFixtures;
 import org.junit.jupiter.api.*;
 import org.springframework.beans.factory.annotation.*;

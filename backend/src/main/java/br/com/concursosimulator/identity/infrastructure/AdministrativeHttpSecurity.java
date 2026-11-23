@@ -38,7 +38,7 @@ public class AdministrativeHttpSecurity {
             .exceptionHandling(e->e.authenticationEntryPoint((r,s,x)->reject(s,401,"UNAUTHENTICATED"))
                 .accessDeniedHandler((r,s,x)->{
                     var auth=org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication();
-                    boolean invalid=!new org.springframework.security.authentication.AuthenticationTrustResolverImpl().isAuthenticated(auth) || !(auth.getPrincipal() instanceof br.com.concursosimulator.identity.web.UserPrincipal);
+                    boolean invalid=!new org.springframework.security.authentication.AuthenticationTrustResolverImpl().isAuthenticated(auth) || !(auth.getPrincipal() instanceof br.com.concursosimulator.identity.application.UserPrincipal);
                     int status=!(x instanceof org.springframework.security.web.csrf.CsrfException) && invalid?401:403;
                     reject(s,status,status==401?"UNAUTHENTICATED":"FORBIDDEN");
                 }))

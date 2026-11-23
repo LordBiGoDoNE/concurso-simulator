@@ -1,7 +1,7 @@
 package br.com.concursosimulator.platform;
 
 import br.com.concursosimulator.identity.application.port.AdministrativePasswords;
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;

@@ -1,4 +1,4 @@
-package br.com.concursosimulator.identity.web;
+package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.identity.application.ResolveExternalIdentityUseCase;
 import br.com.concursosimulator.identity.application.port.LoginOptions;

@@ -60,45 +60,65 @@ class ArchitectureTests {
                         "java..", "..subjectreview.domain..", "..subjectreview.application..", "..questionbank.domain..",
                         "..mockexam.domain..", "..mockexam.application..").check(CODE);
     }
-    @Test void attemptControllersReceiveVerifiedActorsAndUseConcreteWebContracts() {
-        for (var controller:java.util.List.of(br.com.concursosimulator.mockexam.web.AttemptController.class,
-                br.com.concursosimulator.mockexam.web.AttemptHistoryController.class,
-                br.com.concursosimulator.mockexam.web.LessonPracticeController.class)) {
-            noClasses().that().haveFullyQualifiedName(controller.getName()).should().dependOnClassesThat()
-                    .resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..").check(CODE);
-            for(var method:controller.getDeclaredMethods()) {
-                if(java.util.Arrays.stream(method.getAnnotations()).noneMatch(a -> a.annotationType().isAnnotationPresent(org.springframework.web.bind.annotation.RequestMapping.class)))continue;
-                assertThat(method.getGenericReturnType()).isInstanceOf(ParameterizedType.class);
-                var response=(ParameterizedType)method.getGenericReturnType();assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
-                assertThat(response.getActualTypeArguments()[0]).isInstanceOf(Class.class);
-                assertThat(((Class<?>)response.getActualTypeArguments()[0]).isRecord()).isTrue();
+    /** Exceções nominais à regra de controllers, cada uma com motivo. */
+    private static final java.util.Map<String, String> CONTROLLER_SECURITY_EXCEPTIONS = java.util.Map.of(
+            "br.com.concursosimulator.identity.web.SessionController",
+            "expõe o CsrfToken gerado pelo framework (org.springframework.security.web.csrf.CsrfToken)");
+
+    @Test void everyControllerReceivesVerifiedIdentityWithoutOwningSessionOrServletMechanics() {
+        classes().that().areAnnotatedWith(org.springframework.web.bind.annotation.RestController.class)
+                .should().onlyDependOnClassesThat(com.tngtech.archunit.base.DescribedPredicate.describe(
+                        "fora de mecanismos de sessão/servlet/segurança, exceto @AuthenticationPrincipal",
+                        (com.tngtech.archunit.core.domain.JavaClass target) -> {
+                            var name = target.getName();
+                            if (name.startsWith("org.springframework.session.") || name.startsWith("jakarta.servlet.")) return false;
+                            if (!name.startsWith("org.springframework.security.")) return true;
+                            return name.equals("org.springframework.security.core.annotation.AuthenticationPrincipal");
+                        }))
+                .check(CODE.that(com.tngtech.archunit.base.DescribedPredicate.describe("sem exceção nominal",
+                        (com.tngtech.archunit.core.domain.JavaClass c) -> !CONTROLLER_SECURITY_EXCEPTIONS.containsKey(c.getName()))));
+        // A exceção só pode usar o CsrfToken, nada mais de segurança/sessão/servlet.
+        noClasses().that().haveFullyQualifiedName("br.com.concursosimulator.identity.web.SessionController")
+                .should().dependOnClassesThat().resideInAnyPackage("org.springframework.session..", "jakarta.servlet..",
+                        "org.springframework.security.core.context..", "org.springframework.security.authentication..")
+                .check(CODE);
+    }
+
+    @Test void everyMappedMethodReturnsAConcreteRecordFromItsOwnWebPackageOrNoBody() {
+        var controllers = CODE.stream().filter(c -> c.isAnnotatedWith(org.springframework.web.bind.annotation.RestController.class)).toList();
+        assertThat(controllers).hasSizeGreaterThanOrEqualTo(11);
+        var violations = new java.util.ArrayList<String>();
+        for (var controller : controllers) {
+            var type = controller.reflect();
+            for (var method : type.getDeclaredMethods()) {
+                if (java.util.Arrays.stream(method.getAnnotations()).noneMatch(a -> a.annotationType().isAnnotationPresent(
+                        org.springframework.web.bind.annotation.RequestMapping.class)
+                        || a.annotationType().equals(org.springframework.web.bind.annotation.RequestMapping.class))) continue;
+                if (!(method.getGenericReturnType() instanceof ParameterizedType response) || response.getRawType() != ResponseEntity.class
+                        || !(response.getActualTypeArguments()[0] instanceof Class<?> body)) {
+                    violations.add(type.getSimpleName() + "." + method.getName() + ": retorno não é ResponseEntity<Classe>");
+                    continue;
+                }
+                if (body == Void.class) continue; // sem corpo (204/404)
+                if (!body.isRecord() || !(body.getPackageName().equals(type.getPackageName())
+                        || body.getPackageName().equals("br.com.concursosimulator.shared.web")))
+                    violations.add(type.getSimpleName() + "." + method.getName() + ": " + body.getName());
             }
         }
+        assertThat(violations).as("métodos HTTP sem DTO record do próprio pacote web").isEmpty();
     }
 
-    @Test void questionControllerDoesNotOwnSessionOrAuthenticationAndHasConcreteContracts() {
-        noClasses().that().haveFullyQualifiedName(br.com.concursosimulator.questionbank.web.QuestionController.class.getName())
-                .should().dependOnClassesThat().resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..")
-                .check(CODE);
-        for(var method:br.com.concursosimulator.questionbank.web.QuestionController.class.getDeclaredMethods()) {
-            if(!method.isAnnotationPresent(GetMapping.class)) continue;
-            assertThat(method.getGenericReturnType()).isInstanceOf(ParameterizedType.class);
-            var returnType=(ParameterizedType)method.getGenericReturnType();assertThat(returnType.getRawType()).isEqualTo(ResponseEntity.class);
-            assertThat(returnType.getActualTypeArguments()[0]).isInstanceOf(Class.class);
-            assertThat(((Class<?>)returnType.getActualTypeArguments()[0]).isRecord()).isTrue();
-        }
+    @Test void controllersAndAdvicesResideInWebAdapters() {
+        classes().that().areAnnotatedWith(org.springframework.web.bind.annotation.RestController.class)
+                .or().areAnnotatedWith(org.springframework.stereotype.Controller.class)
+                .or().areAnnotatedWith(org.springframework.web.bind.annotation.RestControllerAdvice.class)
+                .or().areAnnotatedWith(org.springframework.web.bind.annotation.ControllerAdvice.class)
+                .should().resideInAPackage("..web..").check(CODE);
     }
 
-    @Test void subjectReviewControllerReceivesVerifiedActorAndUsesConcreteWebRecords() {
-        var controller=br.com.concursosimulator.subjectreview.web.ReviewController.class;
-        noClasses().that().haveFullyQualifiedName(controller.getName()).should().dependOnClassesThat()
-                .resideInAnyPackage("org.springframework.security..","org.springframework.session..","jakarta.servlet.http..").check(CODE);
-        for(var method:controller.getDeclaredMethods()) {
-            if(!method.isAnnotationPresent(GetMapping.class))continue;
-            var response=(ParameterizedType)method.getGenericReturnType();assertThat(response.getRawType()).isEqualTo(ResponseEntity.class);
-            assertThat(response.getActualTypeArguments()[0]).isInstanceOf(Class.class);
-            assertThat(((Class<?>)response.getActualTypeArguments()[0]).isRecord()).isTrue();
-        }
+    @Test void infrastructureDoesNotDependOnWebAdapters() {
+        noClasses().that().resideInAPackage("..infrastructure..")
+                .should().dependOnClassesThat().resideInAPackage("br.com.concursosimulator..web..").check(CODE);
     }
 
     @Test

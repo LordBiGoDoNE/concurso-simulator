@@ -1,6 +1,6 @@
 package br.com.concursosimulator.mockexam;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.mockexam.domain.AttemptOwner;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
 import org.junit.jupiter.api.Test;

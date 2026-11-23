@@ -1,6 +1,6 @@
 package br.com.concursosimulator.questionbank;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.port.QuestionImportReader;
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.infrastructure.importing.AdministrativePackageReader;

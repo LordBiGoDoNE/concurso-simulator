@@ -1,6 +1,6 @@
 package br.com.concursosimulator.platform.infrastructure;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.identity.infrastructure.ActiveAccountFilter;
 import br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity;
 import br.com.concursosimulator.identity.infrastructure.IdentityRoutes;
@@ -27,7 +27,7 @@ import org.springframework.security.oauth2.client.registration.ClientRegistratio
 import org.springframework.security.oauth2.client.web.DefaultOAuth2AuthorizationRequestResolver;
 import org.springframework.security.oauth2.client.web.OAuth2AuthorizationRequestCustomizers;
 import org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizedClientRepository;
-import br.com.concursosimulator.identity.web.GoogleLoginHandlers;
+import br.com.concursosimulator.identity.infrastructure.GoogleLoginHandlers;
 import br.com.concursosimulator.identity.infrastructure.GoogleLoginProperties;
 import br.com.concursosimulator.identity.infrastructure.OAuthRequestMethods;
 import org.springframework.security.core.userdetails.UserDetailsService;

@@ -2,7 +2,8 @@ package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases.Access;
-import br.com.concursosimulator.identity.web.*;
+import br.com.concursosimulator.identity.application.UserPrincipal;
+import br.com.concursosimulator.identity.application.port.AdministrativeSession;
 import jakarta.servlet.http.*;
 import java.io.Serializable;
 import java.time.Instant;

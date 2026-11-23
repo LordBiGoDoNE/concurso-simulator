@@ -1,7 +1,9 @@
 package br.com.concursosimulator.identity.web;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.identity.application.port.AdministrativeCapabilities;
+import br.com.concursosimulator.identity.application.port.AdministrativeSession;
 import br.com.concursosimulator.identity.application.port.LoginOptions;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;

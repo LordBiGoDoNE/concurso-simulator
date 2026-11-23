@@ -16,7 +16,7 @@ class AdministrativePackageTests {
         var json=tools.jackson.databind.json.JsonMapper.builder().build();
         var request=json.readValue(bytes,br.com.concursosimulator.questionbank.web.AdministrativeImportController.PreviewRequest.class);
         assertThat(reader.read(request.document(),request.keys()).purpose()).isEqualTo(QuestionPurpose.PRATICA_AULA);
-        var parameter=new org.springframework.core.MethodParameter(br.com.concursosimulator.questionbank.web.AdministrativeImportController.class.getMethod("preview",request.getClass(),br.com.concursosimulator.identity.web.UserPrincipal.class),0);
+        var parameter=new org.springframework.core.MethodParameter(br.com.concursosimulator.questionbank.web.AdministrativeImportController.class.getMethod("preview",request.getClass(),br.com.concursosimulator.identity.application.UserPrincipal.class),0);
         var advice=new br.com.concursosimulator.questionbank.web.ImportRequestBodyAdvice();
         byte[] max=new byte[16_777_216];java.util.Arrays.fill(max,(byte)' ');System.arraycopy(bytes,0,max,0,bytes.length);
         var message=new org.springframework.mock.http.MockHttpInputMessage(max);

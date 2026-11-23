@@ -1,6 +1,6 @@
 package br.com.concursosimulator.identity;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 
 import java.net.URI;
 import java.net.http.HttpClient;

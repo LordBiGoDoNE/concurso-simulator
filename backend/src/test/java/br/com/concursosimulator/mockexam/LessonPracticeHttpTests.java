@@ -1,6 +1,6 @@
 package br.com.concursosimulator.mockexam;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
 import br.com.concursosimulator.questionbank.domain.*;
 import org.junit.jupiter.api.*;

@@ -59,7 +59,7 @@ CI/deploy é área crítica (`revisao-e-integracao.md`, seção 1).
 - [x] 2.5 `.github/pull_request_template.md`: seção "Arquivamento (somente
   `chore/archive-*`)" com as três caixas de D4, apontando a seção 8 de
   `revisao-e-integracao.md`.
-- [ ] 2.6 Verificar: testes; script passa no head do grupo e falha se uma linha do
+- [x] 2.6 Verificar: testes; script passa no head do grupo e falha se uma linha do
   registro for removida numa cópia local; `scripts/check_links.py`; `act` nos jobs
   `openspec` e `scripts-tests`; o guard global, rodado no worktree do grupo, não
   aponta change arquivada sem linha no registro.

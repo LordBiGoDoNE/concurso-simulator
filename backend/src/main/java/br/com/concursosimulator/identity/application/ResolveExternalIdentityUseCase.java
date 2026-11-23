@@ -20,14 +20,16 @@ public final class ResolveExternalIdentityUseCase {
     public UUID execute(ExternalIdentity identity) {
         Objects.requireNonNull(identity);
         try {
-            return transactions.independently(() -> identities.findUserId(identity).orElseGet(() -> {
-                UUID id = UUID.randomUUID();
-                identities.createUserWithIdentity(id, identity);
-                return id;
-            }));
+            return transactions.independently(
+                    () -> identities.findUserId(identity).orElseGet(() -> {
+                        UUID id = UUID.randomUUID();
+                        identities.createUserWithIdentity(id, identity);
+                        return id;
+                    }));
         } catch (IdentityAlreadyLinkedException conflict) {
             // A porta garante que a tentativa anterior já sofreu rollback.
-            return transactions.independently(() -> identities.findUserId(identity).orElseThrow(() -> conflict));
+            return transactions.independently(
+                    () -> identities.findUserId(identity).orElseThrow(() -> conflict));
         }
     }
 }

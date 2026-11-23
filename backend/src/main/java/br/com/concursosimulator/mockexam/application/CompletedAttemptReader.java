@@ -7,11 +7,12 @@ import java.util.*;
 
 /** Fronteira de leitura de mockexam; confirma posse/estado e integridade antes de projetar. */
 public interface CompletedAttemptReader {
-    int MAX_LIMIT=100;
+    int MAX_LIMIT = 100;
+
     record Window(List<CompletedAttempt> attempts, boolean hasOlder) {
         public Window {
-            attempts=List.copyOf(attempts);
-            if (attempts.size()>MAX_LIMIT || hasOlder && attempts.isEmpty())
+            attempts = List.copyOf(attempts);
+            if (attempts.size() > MAX_LIMIT || hasOlder && attempts.isEmpty())
                 throw new IllegalArgumentException("Janela de evidência inválida");
         }
     }

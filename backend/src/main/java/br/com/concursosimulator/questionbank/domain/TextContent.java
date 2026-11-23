@@ -8,7 +8,10 @@ public record TextContent(String text, List<Resource> resources) {
         ContentRules.text(text, 100_000, "Texto acessível");
         resources = List.copyOf(resources);
     }
-    public TextContent(String text) { this(text, List.of()); }
+
+    public TextContent(String text) {
+        this(text, List.of());
+    }
 
     public record Resource(String path, String mediaType, String sha256, String description) {
         public Resource {

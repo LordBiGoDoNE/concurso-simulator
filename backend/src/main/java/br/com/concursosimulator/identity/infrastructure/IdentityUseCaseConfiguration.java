@@ -10,7 +10,8 @@ import org.springframework.transaction.PlatformTransactionManager;
 @Configuration(proxyBeanMethods = false)
 public class IdentityUseCaseConfiguration {
     @Bean
-    ResolveExternalIdentityUseCase resolveExternalIdentity(IdentityRepository repository, PlatformTransactionManager manager) {
+    ResolveExternalIdentityUseCase resolveExternalIdentity(
+            IdentityRepository repository, PlatformTransactionManager manager) {
         return new ResolveExternalIdentityUseCase(repository, new SpringUnitOfWork(manager));
     }
 }

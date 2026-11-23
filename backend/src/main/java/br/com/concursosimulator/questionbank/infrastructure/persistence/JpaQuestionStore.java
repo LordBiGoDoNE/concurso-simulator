@@ -77,8 +77,9 @@ public class JpaQuestionStore implements QuestionStore, QuestionImportStore, br.
         private void requireActive() { if (!active) throw new IllegalStateException("Unidade transacional encerrada"); }
         @Override public Optional<ImportReceipt> receipt(UUID nonce) {
             requireActive();
-            return entities.createNativeQuery("select cast(payload as text) from qb_import_receipt where nonce=:nonce",String.class)
-                    .setParameter("nonce",nonce).getResultStream().findFirst().map(payload->json.readValue((String)payload,ImportReceipt.class));
+            Optional<?> found=entities.createNativeQuery("select cast(payload as text) from qb_import_receipt where nonce=:nonce",String.class)
+                    .setParameter("nonce",nonce).getResultStream().findFirst();
+            return found.map(payload->json.readValue((String)payload,ImportReceipt.class));
         }
         @Override public void saveImport(ImportReceipt receipt,List<QuestionImportPackage.Evidence> evidence) {
             requireActive();
@@ -104,9 +105,9 @@ public class JpaQuestionStore implements QuestionStore, QuestionImportStore, br.
         }
         @Override public Optional<br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Receipt> batchReceipt(UUID nonce) {
             requireActive();
-            return entities.createNativeQuery("select cast(payload as text) from qb_decision_batch where nonce=:nonce",String.class)
-                    .setParameter("nonce",nonce).getResultStream().findFirst()
-                    .map(payload->json.readValue((String)payload,br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Receipt.class));
+            Optional<?> found=entities.createNativeQuery("select cast(payload as text) from qb_decision_batch where nonce=:nonce",String.class)
+                    .setParameter("nonce",nonce).getResultStream().findFirst();
+            return found.map(payload->json.readValue((String)payload,br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Receipt.class));
         }
         @Override public void saveBatch(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.Receipt receipt) {
             requireActive();

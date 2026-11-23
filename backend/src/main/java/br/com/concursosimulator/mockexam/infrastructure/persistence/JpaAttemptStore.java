@@ -112,14 +112,14 @@ public class JpaAttemptStore implements AttemptStore {
         public List<Attempt.Snapshot> history(AttemptOwner owner, HistoryQuery query) {
             active(); if (owner.kind()!=AttemptOwner.Kind.ACCOUNT) throw new Attempt.Unavailable();
             var suffix=query.finished()==null?"":query.finished()?" and finished_at is not null":" and finished_at is null";
-            var ids=entities.createNativeQuery("select id from me_attempt where owner_kind='ACCOUNT' and owner_id=:owner "
+            List<?> ids=entities.createNativeQuery("select id from me_attempt where owner_kind='ACCOUNT' and owner_id=:owner "
                     +"and coalesce(payload->>'purpose','SIMULADO')=:purpose"+suffix+" order by created_at desc,id desc",UUID.class)
                     .setParameter("owner",owner.id()).setParameter("purpose",query.purpose().name())
                     .setFirstResult(Math.multiplyExact(query.page(),query.size())).setMaxResults(query.size()).getResultList();
             if (ids.isEmpty()) return List.of();
             var rows=entities.createQuery("select a from AttemptRow a where a.id in :ids",AttemptRow.class).setParameter("ids",ids).getResultList();
             var byId=new HashMap<UUID,AttemptRow>();for (var row:rows) byId.put(row.id,row);
-            return new AttemptSnapshotReader(entities).read(ids.stream().map(byId::get).toList());
+            return new AttemptSnapshotReader(entities).read(ids.stream().map(id->byId.get((UUID)id)).toList());
         }
         public int deleteExpired(Instant now) {
             active(); entities.flush();

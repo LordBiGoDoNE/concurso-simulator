@@ -17,6 +17,8 @@ No Windows, use `gradlew.bat clean build`. Configure `JAVA_HOME` para o JDK 25 c
 
 Os testes requerem Docker disponível: Testcontainers cria bancos PostgreSQL **18.6** isolados e os encerra ao terminar, sem acessar o volume local.
 
+Verificações do build: `-Xlint:all` em `compileJava` e `compileTestJava`, com `-Werror` nos dois; as exclusões (`serial`, e `try` só nos testes) ficam comentadas em `build.gradle.kts`. A cobertura do JaCoCo é só relatório local, gerado depois de `test` em `build/reports/jacoco/test/` (HTML e XML), sem limite mínimo e sem publicação no CI. As tarefas operacionais deliberadas (fixtures de navegador, verificações de rollback, ferramentas locais) ficam em `gradle/operational-tasks.gradle.kts`.
+
 Identidade opcional Google e tentativas privadas com histórico/retomada pela conta. Modelo e privacidade: `docs/identity-storage.md`; sessões/CSRF/contratos: `docs/session-access.md`; configuração e smoke Google real: `docs/google-login.md`. Google desativado por padrão, sem chamadas externas no startup. O primeiro ADM é criado uma única vez com senha configurada ou temporária gerada no console privado; login por senha, vínculo Google e permissão persistente seguem o [guia administrativo](../docs/question-administrative-import.md) e o [ADR 0002](../docs/architecture/adr/0002-administrative-credential-and-google-link.md). Testes de login usam provedor OIDC local, nunca Google real.
 
 ## Executar localmente

@@ -95,7 +95,7 @@ class SessionAccessTests {
                     var after = repository().findById(id);
                     assertThat(after).isNotNull();
                     assertThat(after.getLastAccessedTime()).isEqualTo(before.getLastAccessedTime());
-                    assertThat((Object) after.getAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY))
+                    assertThat(after.<Object>getAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY))
                             .isEqualTo(context);
                     assertThat(jdbc.queryForList("SELECT encode(attribute_bytes, 'base64') FROM spring_session_attributes "
                             + "WHERE session_primary_id = (SELECT primary_id FROM spring_session WHERE session_id = ?) ORDER BY attribute_name",

@@ -113,10 +113,12 @@ public class JpaAdministrativeQuestionCatalog implements AdministrativeQuestionC
     }
 
     @Override public Optional<StoredFile> file(String path, String sha256) {
-        return reads.execute(status -> entities.createNativeQuery("select f.media_type, b.content from qb_import_file f "
-                        + "join qb_import_blob b on b.sha256=f.sha256 where f.path=:path and f.sha256=:hash order by f.nonce limit 1")
-                .setParameter("path", path).setParameter("hash", sha256).getResultStream().findFirst()
-                .map(raw -> { var row = (Object[]) raw; return new StoredFile(path, (String) row[0], sha256, (byte[]) row[1]); }));
+        return reads.execute(status -> {
+            Optional<?> found = entities.createNativeQuery("select f.media_type, b.content from qb_import_file f "
+                            + "join qb_import_blob b on b.sha256=f.sha256 where f.path=:path and f.sha256=:hash order by f.nonce limit 1")
+                    .setParameter("path", path).setParameter("hash", sha256).getResultStream().findFirst();
+            return found.map(raw -> { var row = (Object[]) raw; return new StoredFile(path, (String) row[0], sha256, (byte[]) row[1]); });
+        });
     }
 
     private static UUID uuid(Object value) { return value instanceof UUID id ? id : UUID.fromString(value.toString()); }

@@ -44,9 +44,12 @@ class ContextTests(unittest.TestCase):
                    "backend/src/test/Fixture.java": b"TEST_SENTINEL", "frontend/src/App.test.tsx": b"TEST_SENTINEL",
                    "backend/build/private.json": b"SECRET_SENTINEL", "assets/.env": b"SECRET_SENTINEL",
                    "frontend/.env.local": b"SECRET_SENTINEL", "editorial/decisions.json": b"PRIVATE_SENTINEL",
-                   ".git/config": b"SECRET_SENTINEL", "infra/.env": b"SECRET_SENTINEL"}
+                   ".git/config": b"SECRET_SENTINEL", "infra/.env": b"SECRET_SENTINEL",
+                   "backend/gradle/operational-tasks.gradle.kts": b"tasks",
+                   "backend/gradle/other.gradle.kts": b"PRIVATE_SENTINEL"}
         result, selected = restricted_tar(archive(entries))
-        self.assertEqual(set(selected), {"backend/src/main/App.java", "frontend/src/App.tsx", "01_Portugues/aula.html", "scripts/math_content.py"})
+        self.assertEqual(set(selected), {"backend/src/main/App.java", "frontend/src/App.tsx", "01_Portugues/aula.html", "scripts/math_content.py",
+                                         "backend/gradle/operational-tasks.gradle.kts"})
         self.assertNotIn(b"SENTINEL", result)
 
     def test_links_and_traversal_are_rejected(self):

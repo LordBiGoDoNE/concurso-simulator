@@ -135,9 +135,48 @@ migrações, sessão, segredos, transações de produção ou deploy.
 
 ## Integração
 
-A `main` avançou (`2672f9a`, spec `remove-legacy-review-gate`). Antes do `[SPEC]`:
-1. fazer merge da `main` na épica (simulado sem conflito: só `application.yml` e
-   `.gitignore`, mesclados automaticamente);
-2. rodar os testes e o `act`;
-3. reverificar o delta desse merge com o `spec-reviewer`;
-4. registrar aqui.
+Pacote aprovado pelo usuário em 2026-11-23. Merges na épica, com merge commit e na ordem
+da cadeia:
+
+| PR | Head | Merge |
+| --- | --- | --- |
+| #265 | `8209a6f` | `af9968a` |
+| #268 | `ba6c0e0` | `4e95246` |
+| #271 | `03b0176` | `d8b4fa7` |
+| #273 | `99abdd9` | `f4c5536` |
+| #275 | `9a685e2` | `3e62808` |
+| #276 | `809554f` | `ed832cb` |
+| #278 | `76fecfe` | `b5cea9e` (local) |
+| #279 | `6e0f005` | `63bec18` |
+
+- **#278:** o GitHub acusou conflito em `.git-blame-ignore-revs`. Há três bases
+  comuns (`99abdd9`, `809554f` e `5a6fa8a`), e com a base `809554f` isolada o arquivo
+  conflita. O merge recursivo do Git é limpo e gera a árvore `5a6fa8a`, idêntica à do
+  head revisado `76fecfe`. O merge foi feito localmente com o head exato do PR e
+  publicado na épica, sem push forçado; o GitHub registrou o PR como integrado.
+- **Depois do #279:** a épica tem a árvore `e9417063…`, e
+  `git diff --stat ddd3acf <épica>` mostra só este `review.md`.
+- **CI remoto:** os checks de `pull_request` dos 8 heads estavam verdes. No #268, o
+  run de `push` (`45133668676`) falhou em `backend` e `local-delivery` por um 429 do
+  Maven Central. Os jobs foram repetidos, e o `backend` passou.
+
+### Merge da `main` (`2672f9a`, spec `remove-legacy-review-gate`)
+
+- **Merge:** `968fe0e`, árvore `70c9062`, sem conflito. Os dois lados mexeram em
+  `application.yml` e `.gitignore`, em trechos que não se sobrepõem.
+- **Testes:** a árvore é idêntica à do estado validado no teste de ponta a ponta
+  (`265ae5e`, as duas cadeias mais a `main` `2672f9a`), exceto por este `review.md`. Os
+  resultados da seção acima valem para ela.
+- **`act`:** o job novo `scripts-tests` passou com 124 testes. Os demais jobs têm as
+  mesmas limitações da seção de CI local.
+- **Reverificação do delta** (`spec-reviewer`, Claude Opus 5.5):
+  - nenhum achado;
+  - `git diff 63bec18 968fe0e` é igual a `git diff 9dea050 2672f9a`, ou seja, tudo o
+    que a `main` mudou;
+  - os jobs `frontend` (com `lint`, `typecheck` e `format:check`), `scripts-tests` e
+    `practice-admin-browser` convivem sem duplicação;
+  - nenhuma referência ativa a `pages-checks.yml`, `spec-review.yml` ou
+    `check_spec_review.py`;
+  - B6 resolvido: o `test_build_pages.py` roda no job `scripts-tests`.
+- **Limites:** o revisor não rodou testes. O mérito dos arquivos vindos da `main` não
+  entrou nesta revisão, que só confirmou que chegaram iguais.

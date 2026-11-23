@@ -102,7 +102,7 @@ class AdministrativeAccountHttpTests {
         assertThat(post(c,"/api/v1/admin/question-imports/preview","{broken",true).statusCode()).isEqualTo(403);
     }
     @Test void securityRejectsUntrustedAnonymousAndObsoleteEvidenceBeforeAccountController()throws Exception {
-        var valid=new br.com.concursosimulator.identity.web.UserPrincipal(local);
+        var valid=new br.com.concursosimulator.identity.application.UserPrincipal(local);
         long version=jdbc.queryForObject("select auth_version from admin_registration",Long.class);
         var malformed=org.springframework.security.authentication.UsernamePasswordAuthenticationToken.authenticated("untrusted",null,List.of());
         var unauthenticated=org.springframework.security.authentication.UsernamePasswordAuthenticationToken.unauthenticated(valid,null);

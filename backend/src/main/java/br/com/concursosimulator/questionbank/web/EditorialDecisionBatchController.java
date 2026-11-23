@@ -1,6 +1,6 @@
 package br.com.concursosimulator.questionbank.web;
 
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.EditorialBatchUseCase;
 import br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.*;
 import br.com.concursosimulator.questionbank.application.QuestionImportTarget;

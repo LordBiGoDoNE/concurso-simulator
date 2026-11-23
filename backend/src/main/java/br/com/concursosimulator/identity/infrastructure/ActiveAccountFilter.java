@@ -1,7 +1,7 @@
 package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

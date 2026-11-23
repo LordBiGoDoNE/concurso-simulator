@@ -3,7 +3,7 @@ package br.com.concursosimulator.questionbank.infrastructure.importing;
 import br.com.concursosimulator.questionbank.infrastructure.QuestionBankRoutes;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.port.AdministrativeImportPermission;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;

@@ -1,5 +1,6 @@
 package br.com.concursosimulator.identity.web;
 
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import java.util.UUID;
 import org.springframework.http.CacheControl;
 import org.springframework.http.ResponseEntity;

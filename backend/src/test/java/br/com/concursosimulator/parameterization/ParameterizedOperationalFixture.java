@@ -1,7 +1,7 @@
 package br.com.concursosimulator.parameterization;
 
 import br.com.concursosimulator.ConcursoSimulatorApplication;
-import br.com.concursosimulator.identity.web.UserPrincipal;
+import br.com.concursosimulator.identity.application.UserPrincipal;
 import br.com.concursosimulator.mockexam.application.AttemptStore;
 import br.com.concursosimulator.parameterization.domain.Family;
 import org.springframework.boot.builder.SpringApplicationBuilder;

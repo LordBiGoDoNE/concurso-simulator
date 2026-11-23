@@ -46,8 +46,20 @@ import static org.assertj.core.api.Assertions.fail;
  * {@code src/test/resources/http/route-matrix.tsv} foi gerado na base da épica e só pode mudar
  * quando a spec mudar deliberadamente o contrato. Para regenerar: {@code ROUTE_MATRIX_UPDATE=true}.
  *
+ * <p>Variantes: atores (visitante, visitante com sessão, conta, ADM e ADM com troca de senha
+ * pendente); token CSRF ausente, válido ou inválido nos métodos inseguros com sessão; Origin
+ * permitida e desconhecida para visitante, conta e ADM; preflight com as duas origens; vizinhas
+ * dos {@code securityMatcher} administrativos, método errado, barra final, {@code ;param},
+ * {@code %2F}/{@code %2e}, {@code ..}, caixa e extensão. Logout com token usa sessão descartável
+ * do próprio ator (ADM: novo login local) e registra o {@code GET /api/v1/me} seguinte.
+ *
  * <p>Limites: corpos de sucesso não são registrados (contêm tokens/ids); requisições sem corpo
- * caracterizam acesso e rejeição, não a validação completa de cada endpoint.
+ * caracterizam acesso e rejeição, não a validação completa de cada endpoint. O cliente
+ * {@code java.net.http} envia o caminho bruto sem normalizar; URI que ele recusasse apareceria
+ * como {@code CLIENT_REJECTED}. Não cobre {@code \}, caracteres de controle, {@code %00} nem
+ * {@code //} inicial (recusados ou reinterpretados antes de chegar ao servidor). Origin com sessão
+ * usa apenas o token válido; ADM com troca pendente não é cruzado com Origin. A conta
+ * administrativa é única e {@code must_change} é global: a ordem dos atores importa.
  */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("local")
@@ -133,9 +145,44 @@ class HttpRouteMatrixTests {
             r("GET", "/api/v1/admin/other"),
             r("GET", "/api/v1/admin/questions/not-a-uuid"),
             r("GET", "/api/v1/unknown"),
-            r("GET", "/api/v2/me"));
+            r("GET", "/api/v2/me"),
+            // Vizinhas dentro dos securityMatcher administrativos (seleção de cadeia).
+            r("POST", "/api/v1/admin/auth/other"),
+            r("GET", "/api/v1/admin/auth/login"),
+            r("GET", "/api/v1/admin/account/other"),
+            r("POST", "/api/v1/admin/account/other"),
+            r("POST", "/api/v1/admin/question-imports"),
+            r("POST", "/api/v1/admin/question-imports/other"),
+            r("GET", "/api/v1/admin/editorial-decisions"),
+            r("POST", "/api/v1/admin/editorial-decisions/other"),
+            r("GET", "/api/v1/admin/questions/" + ID + "/other"),
+            // Método errado em rota com id.
+            r("GET", "/api/v1/attempts/" + ID + "/finish"),
+            r("POST", "/api/v1/attempts/" + ID + "/result"),
+            r("POST", "/api/v1/attempts/" + ID + "/answers/" + ID),
+            r("GET", "/api/v1/lesson-practices/" + ID + "/finish"),
+            r("DELETE", "/api/v1/lesson-practices/" + ID + "/answers/" + ID),
+            r("POST", "/api/v1/question-bank/questions/" + ID),
+            // Normalização: parâmetro de segmento, codificação, pontos, caixa e extensão.
+            r("GET", "/api/v1/me;x=1"),
+            r("GET", "/api/v1/status;x=1"),
+            r("POST", "/api/v1/auth/logout;x=1"),
+            r("GET", "/api/v1/me%2Fattempts"),
+            r("GET", "/api/v1/%2e%2e/v1/me"),
+            r("GET", "/api/v1/question-bank/%2e%2e/me"),
+            r("GET", "/api/v1/me/../status"),
+            r("GET", "/api/v1/ME"),
+            r("GET", "/API/V1/STATUS"),
+            r("GET", "/api/v1/question-bank/CATALOG"),
+            r("GET", "/api/v1/me.json"),
+            r("GET", "/api/v1/status.json"),
+            r("GET", "/api/v1/question-bank/catalog.json"));
+
+    static final String LOGOUT = "/api/v1/auth/logout";
+    static final String INVALID_CSRF = "invalid-route-matrix-csrf-token";
 
     enum Actor { VISITOR, VISITOR_SESSION, ACCOUNT, ADMIN, ADMIN_PENDING }
+    @FunctionalInterface interface Call { HttpResponse<String> send() throws Exception; }
     record Credentials(String cookie, String token) {}
 
     @Value("${local.server.port}") int port;
@@ -154,11 +201,12 @@ class HttpRouteMatrixTests {
                 admin, passwords.encode(PASSWORD));
         var rows = new ArrayList<String>();
         Credentials adminSession = null;
+        Credentials account = null;
         for (var actor : Actor.values()) {
             Credentials credentials = switch (actor) {
                 case VISITOR -> null;
                 case VISITOR_SESSION -> visitorSession();
-                case ACCOUNT -> accountSession();
+                case ACCOUNT -> account = accountSession();
                 case ADMIN -> adminSession = adminLogin();
                 case ADMIN_PENDING -> {
                     // Mesma sessão administrativa; a troca de senha pendente é lida do estado atual.
@@ -166,31 +214,68 @@ class HttpRouteMatrixTests {
                     yield adminSession;
                 }
             };
-            for (var route : ROUTES) {
-                boolean safe = route[0].equals("GET");
-                for (boolean csrf : safe || credentials == null ? List.of(false) : List.of(false, true)) {
-                    var used = credentials;
-                    if (csrf && route[1].equals("/api/v1/auth/logout")) {
-                        if (actor == Actor.ADMIN || actor == Actor.ADMIN_PENDING) continue; // logout encerraria a sessão compartilhada
-                        used = actor == Actor.VISITOR_SESSION ? visitorSession() : accountSession();
-                    }
-                    var response = send(route[0], route[1], used == null ? null : used.cookie(), csrf ? used.token() : null, null, Map.of());
-                    rows.add(key(route, actor, csrf, "-") + "\t" + describe(response));
-                }
-            }
+            for (var route : ROUTES)
+                for (var mode : modes(route, credentials, List.of("csrf", "csrf-invalid")))
+                    rows.add(key(route, actor, mode, "-") + "\t" + exercise(route, actor, credentials, mode, null));
         }
+        // Origin com sessão de conta e administrativa (sem troca de senha pendente).
+        jdbc.update("update admin_registration set must_change=false");
         for (var route : ROUTES) {
             for (var origin : List.of(ALLOWED_ORIGIN, UNKNOWN_ORIGIN)) {
-                var response = send(route[0], route[1], null, null, origin, Map.of());
-                rows.add(key(route, Actor.VISITOR, false, origin) + "\t" + describe(response) + "\t" + cors(response));
+                rows.add(key(route, Actor.VISITOR, "-", origin) + "\t" + exercise(route, Actor.VISITOR, null, "-", origin));
+                for (var actor : List.of(Actor.ACCOUNT, Actor.ADMIN)) {
+                    var credentials = actor == Actor.ACCOUNT ? account : adminSession;
+                    var mode = route[0].equals("GET") ? "-" : "csrf";
+                    rows.add(key(route, actor, mode, origin) + "\t" + exercise(route, actor, credentials, mode, origin));
+                }
+                rows.add("OPTIONS " + route[0] + "\t" + route[1] + "\tPREFLIGHT\t-\t" + origin + "\t" + observe(() -> send("OPTIONS", route[1], null, null, origin, Map.of(
+                        "Access-Control-Request-Method", route[0],
+                        "Access-Control-Request-Headers", "content-type,x-csrf-token")), true, true));
             }
-            var preflight = send("OPTIONS", route[1], null, null, ALLOWED_ORIGIN, Map.of(
-                    "Access-Control-Request-Method", route[0],
-                    "Access-Control-Request-Headers", "content-type,x-csrf-token"));
-            rows.add("OPTIONS " + route[0] + "\t" + route[1] + "\tPREFLIGHT\t-\t" + ALLOWED_ORIGIN + "\t"
-                    + preflight.statusCode() + "\t" + cors(preflight));
         }
         compare(rows);
+    }
+
+    /** Sem sessão ou GET: só sem token; com sessão e método inseguro: sem token e cada modo pedido. */
+    static List<String> modes(String[] route, Credentials credentials, List<String> unsafe) {
+        if (route[0].equals("GET") || credentials == null) return List.of("-");
+        var result = new ArrayList<String>(List.of("-"));
+        result.addAll(unsafe);
+        return result;
+    }
+
+    /**
+     * Logout com token (válido ou não) usa sessão descartável do mesmo ator, para não encerrar a
+     * sessão compartilhada; após logout com token, registra o status de {@code GET /api/v1/me} com
+     * o cookie descartado.
+     */
+    String exercise(String[] route, Actor actor, Credentials credentials, String mode, String origin) throws Exception {
+        var used = credentials;
+        boolean logout = route[1].startsWith(LOGOUT) && !mode.equals("-") && credentials != null;
+        if (logout) used = disposable(actor);
+        var cookie = used == null ? null : used.cookie();
+        var token = switch (mode) { case "csrf" -> used.token(); case "csrf-invalid" -> INVALID_CSRF; default -> null; };
+        var result = observe(() -> send(route[0], route[1], cookie, token, origin, Map.of()), false, origin != null);
+        if (logout) result += "\tme-after=" + send("GET", "/api/v1/me", cookie, null, null, Map.of()).statusCode();
+        return result;
+    }
+
+    Credentials disposable(Actor actor) throws Exception {
+        return switch (actor) {
+            case VISITOR_SESSION -> visitorSession();
+            case ACCOUNT -> accountSession();
+            case ADMIN, ADMIN_PENDING -> adminLogin(); // novo login local; a sessão compartilhada continua válida
+            case VISITOR -> null;
+        };
+    }
+
+    /** URIs que o cliente HTTP recusa ficam registradas como {@code CLIENT_REJECTED}. */
+    static String observe(Call call, boolean preflight, boolean withCors) throws Exception {
+        HttpResponse<String> response;
+        try { response = call.send(); }
+        catch (IllegalArgumentException | java.io.IOException rejected) { return "CLIENT_REJECTED\t" + rejected.getClass().getSimpleName(); }
+        if (preflight) return response.statusCode() + "\t" + cors(response);
+        return describe(response) + (withCors ? "\t" + cors(response) : "");
     }
 
     void compare(List<String> rows) throws Exception {
@@ -222,8 +307,8 @@ class HttpRouteMatrixTests {
         return result;
     }
 
-    static String key(String[] route, Actor actor, boolean csrf, String origin) {
-        return route[0] + "\t" + route[1] + "\t" + actor + "\t" + (csrf ? "csrf" : "-") + "\t" + origin;
+    static String key(String[] route, Actor actor, String mode, String origin) {
+        return route[0] + "\t" + route[1] + "\t" + actor + "\t" + mode + "\t" + origin;
     }
 
     static String describe(HttpResponse<String> response) {

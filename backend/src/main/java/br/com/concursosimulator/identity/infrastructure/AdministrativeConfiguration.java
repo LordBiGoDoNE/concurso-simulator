@@ -13,8 +13,7 @@ import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 @Configuration
 public class AdministrativeConfiguration {
     @Bean AdministrativePasswords administrativePasswords() {
-        var encoder=new Pbkdf2PasswordEncoder("",16,600000,256);
-        encoder.setAlgorithm(Pbkdf2PasswordEncoder.SecretKeyFactoryAlgorithm.PBKDF2WithHmacSHA256);
+        var encoder=compatibleEncoder();
         return new AdministrativePasswords() {
             private static final String PREFIX="{pbkdf2-sha256-600k}";
             public String encode(String value) { return PREFIX+encoder.encode(value); }
@@ -36,6 +35,14 @@ public class AdministrativeConfiguration {
             if(access.bootstrap(username,initial,generated) && generated)
                 System.out.println("ADM initial temporary password (private operator console; change after login): "+initial);
         };
+    }
+    // Parâmetros dos hashes já gravados (sal 16, 600k iterações, 256 bits, HMAC-SHA256). O construtor
+    // está depreciado; trocá-lo exige teste de compatibilidade com hashes existentes (#264).
+    @SuppressWarnings("deprecation")
+    private static Pbkdf2PasswordEncoder compatibleEncoder() {
+        var encoder=new Pbkdf2PasswordEncoder("",16,600000,256);
+        encoder.setAlgorithm(Pbkdf2PasswordEncoder.SecretKeyFactoryAlgorithm.PBKDF2WithHmacSHA256);
+        return encoder;
     }
     public static String temporaryPassword() {
         var bytes=new byte[32];new SecureRandom().nextBytes(bytes);

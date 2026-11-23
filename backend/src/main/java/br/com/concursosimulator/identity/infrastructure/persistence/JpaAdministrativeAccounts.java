@@ -32,7 +32,10 @@ public class JpaAdministrativeAccounts implements AdministrativeAccounts {
         }
     }
     @Override public Optional<AdministrativeAccount> current() { return tx.execute(s->read()); }
-    @Override public boolean active(UUID user) { return tx.execute(s -> Boolean.TRUE.equals(em.createNativeQuery("select active from app_user where id=:id",Boolean.class).setParameter("id",user).getResultStream().findFirst().orElse(true))); }
+    @Override public boolean active(UUID user) { return tx.execute(s -> {
+        Optional<?> found=em.createNativeQuery("select active from app_user where id=:id",Boolean.class).setParameter("id",user).getResultStream().findFirst();
+        return found.isEmpty() || Boolean.TRUE.equals(found.get());
+    }); }
     private Optional<AdministrativeAccount> read() {
         var r=(Object[])em.createNativeQuery("select owner_id,username,password_hash,must_change,enabled,auth_version,failed_attempts,failure_window,blocked_until from admin_registration where id=1").getSingleResult();
         if(r[0]==null) return Optional.empty();
@@ -51,7 +54,10 @@ public class JpaAdministrativeAccounts implements AdministrativeAccounts {
                 .setParameter("owner",a.owner()).setParameter("name",a.username()).setParameter("hash",a.passwordHash()).setParameter("change",a.mustChange()).setParameter("enabled",a.enabled()).setParameter("version",a.version()).setParameter("failures",a.failures()).setParameter("window",a.failureWindow()).setParameter("blocked",a.blockedUntil()).executeUpdate();
         }
         public void createUser(UUID id) { em.persist(new UserPersistenceEntity(id)); em.flush(); }
-        public Optional<UUID> owner(ExternalIdentity identity) { return em.createNativeQuery("select user_id from external_identity where provider=:p and issuer=:i and subject=:s",UUID.class).setParameter("p",identity.provider()).setParameter("i",identity.issuer()).setParameter("s",identity.subject()).getResultStream().findFirst(); }
+        public Optional<UUID> owner(ExternalIdentity identity) {
+            Optional<?> found=em.createNativeQuery("select user_id from external_identity where provider=:p and issuer=:i and subject=:s",UUID.class).setParameter("p",identity.provider()).setParameter("i",identity.issuer()).setParameter("s",identity.subject()).getResultStream().findFirst();
+            return found.map(UUID.class::cast);
+        }
         public boolean hasGoogle(UUID owner) { return !em.createNativeQuery("select 1 from external_identity where user_id=:u and provider='google'").setParameter("u",owner).getResultList().isEmpty(); }
         public void attach(ExternalIdentity identity,UUID owner) { em.createNativeQuery("insert into external_identity(user_id,provider,issuer,subject) values(:u,:p,:i,:s)").setParameter("u",owner).setParameter("p",identity.provider()).setParameter("i",identity.issuer()).setParameter("s",identity.subject()).executeUpdate(); }
         public void lockUsers(UUID first,UUID second) {

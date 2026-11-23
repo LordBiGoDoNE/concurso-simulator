@@ -21,16 +21,16 @@ e o caso vai ao usuário.
 
 ## 1. Build do backend (~150 linhas autorais)
 
-- [ ] 1.1 Registrar a linha de base: `./gradlew tasks --all`, `help --task` das dez
+- [x] 1.1 Registrar a linha de base: `./gradlew tasks --all`, `help --task` das dez
   tarefas operacionais, `dependencies --configuration runtimeClasspath`, tempo de
   `./gradlew build` e contagem de advertências com `-Xlint:all`.
-- [ ] 1.2 BOM por `SpringBootPlugin.BOM_COORDINATES` (D1).
-- [ ] 1.3 Conferir `spring-boot-starter-jdbc` com `dependencyInsight` e removê-lo se
+- [x] 1.2 BOM por `SpringBootPlugin.BOM_COORDINATES` (D1).
+- [x] 1.3 Conferir `spring-boot-starter-jdbc` com `dependencyInsight` e removê-lo se
   redundante, ou comentar por que fica (D2); comparar `runtimeClasspath`.
-- [ ] 1.4 `-Xlint:all` com exclusões comentadas, correção das advertências e `-Werror`
+- [x] 1.4 `-Xlint:all` com exclusões comentadas, correção das advertências e `-Werror`
   em `compileJava` (e em `compileTestJava` se zerar); restante em issue (D3).
-- [ ] 1.5 JaCoCo só como relatório (D4); documentar em `backend/README.md`.
-- [ ] 1.6 Extrair as tarefas operacionais para `gradle/operational-tasks.gradle.kts`
+- [x] 1.5 JaCoCo só como relatório (D4); documentar em `backend/README.md`.
+- [x] 1.6 Extrair as tarefas operacionais para `gradle/operational-tasks.gradle.kts`
   (D5) e comparar com a linha de base.
 
 ## 2. Relógio único — depende de 1 (~80 linhas autorais)

@@ -218,3 +218,16 @@ A `main` avançou depois de o `[SPEC]` (#282) ser aberto, e o merge passou a con
 
 O M1 é médio, com 12 linhas a mais e 24 a menos, só em testes. Pela seção 3, não tem nova
 rodada de revisão.
+
+### Merge da `main` (`371b2b3`, arquivamento de `backend-http-boundaries`, #283)
+
+- **Merge:** `b6588eb`, sem conflito. `git diff 4cbe99b b6588eb` é idêntico byte a byte
+  a `git diff 98c33b3 371b2b3`: 8 arquivos, todos em `openspec/`, sem tocar nesta spec.
+  `openspec validate --all --strict`: 32 itens válidos.
+- **Reverificação** (`spec-reviewer`, Claude Opus 5.5) deste merge, da correção M1
+  (`ae4fe20`) e do registro acima (`4cbe99b`): nenhum achado.
+  - O M1 só troca o contêiner pelo `TestPostgres.newDatabase()`, sem mudar asserções.
+  - Nenhuma das 4 classes para, pausa ou reconfigura o servidor.
+  - Os SHAs registrados conferem.
+- **Head revisado para a integração em `main`:** `b6588eb`. Depois dele muda só este
+  `review.md`.

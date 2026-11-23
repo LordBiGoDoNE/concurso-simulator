@@ -57,7 +57,7 @@ GitHub, condicionada à aprovação específica.
   issue o JSON atual do ruleset (`gh api repos/{owner}/{repo}/rulesets/24766642`),
   executar a ação aprovada e registrar a resposta da API e o estado final na issue.
   Se o `review.md` ainda não estiver integrado, registrar também nele.
-- [ ] 3.3 Conferir de novo, somente leitura, que `main` e `stable` continuam sem
+- [x] 3.3 Conferir de novo, somente leitura, que `main` e `stable` continuam sem
   alteração de proteção ou regras.
 
 ## Verificação final
@@ -66,7 +66,12 @@ GitHub, condicionada à aprovação específica.
   aplicação. A verificação é a cadeia completa com `scripts/tests` e `act` nos
   workflows `application.yml` e `pages-checks.yml`, mais o PR do grupo 1 com
   `scripts-tests` verde no GitHub.
-- [ ] Repetir a consulta de regras da tarefa 1.1 antes do merge `[SPEC]` em `main`.
-- [ ] Depois de cada troca de base de PR da cadeia e antes do merge, rodar de novo
+- [x] Repetir a consulta de regras da tarefa 1.1 antes do merge `[SPEC]` em `main`.
+- [x] Depois de cada troca de base de PR da cadeia e antes do merge, rodar de novo
   `scripts-tests` e os demais checks (re-run do run `pull_request` mais recente ou
   push na branch) e conferir que o run novo usa a base atual e está verde (D1).
+
+Encerramento (2026-11-23): consulta de regras repetida antes do merge `[SPEC]` #269
+(só o ruleset `24766642`, ativo e órfão; `main`/`stable` sem proteção nem regras).
+#263 teve os checks rodados de novo depois da troca de base (ver `review.md`, limitação
+do re-run). Merge em `main`: `6d508df`.

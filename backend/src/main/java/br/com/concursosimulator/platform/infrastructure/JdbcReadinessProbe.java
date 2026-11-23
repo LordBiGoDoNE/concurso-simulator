@@ -9,13 +9,17 @@ import org.springframework.stereotype.Component;
 public class JdbcReadinessProbe implements ReadinessProbe {
     private final JdbcTemplate jdbc;
 
-    public JdbcReadinessProbe(JdbcTemplate jdbc) { this.jdbc = jdbc; }
+    public JdbcReadinessProbe(JdbcTemplate jdbc) {
+        this.jdbc = jdbc;
+    }
 
     @Override
     public boolean isReady() {
         try {
             jdbc.queryForObject("SELECT 1", Integer.class);
             return true;
-        } catch (DataAccessException exception) { return false; }
+        } catch (DataAccessException exception) {
+            return false;
+        }
     }
 }

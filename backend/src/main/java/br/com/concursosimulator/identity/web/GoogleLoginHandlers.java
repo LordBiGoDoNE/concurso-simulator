@@ -3,16 +3,12 @@ package br.com.concursosimulator.identity.web;
 import br.com.concursosimulator.identity.application.ResolveExternalIdentityUseCase;
 import br.com.concursosimulator.identity.application.port.LoginOptions;
 import br.com.concursosimulator.identity.domain.ExternalIdentity;
-
-import java.io.IOException;
-import java.util.List;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import java.io.IOException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.security.oauth2.client.web.HttpSessionOAuth2AuthorizedClientRepository;
@@ -30,8 +26,12 @@ public class GoogleLoginHandlers implements AuthenticationSuccessHandler, Authen
     private final HttpSessionSecurityContextRepository contexts;
     private final HttpSessionOAuth2AuthorizedClientRepository clients;
 
-    public GoogleLoginHandlers(ResolveExternalIdentityUseCase identities, LoginOptions properties,
-                              HttpSessionSecurityContextRepository contexts, HttpSessionOAuth2AuthorizedClientRepository clients, AdministrativeGoogleCompletion administrative) {
+    public GoogleLoginHandlers(
+            ResolveExternalIdentityUseCase identities,
+            LoginOptions properties,
+            HttpSessionSecurityContextRepository contexts,
+            HttpSessionOAuth2AuthorizedClientRepository clients,
+            AdministrativeGoogleCompletion administrative) {
         this.identities = identities;
         this.administrative = administrative;
         this.properties = properties;
@@ -40,7 +40,8 @@ public class GoogleLoginHandlers implements AuthenticationSuccessHandler, Authen
     }
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
+    public void onAuthenticationSuccess(
+            HttpServletRequest request, HttpServletResponse response, Authentication authentication)
             throws IOException, ServletException {
         try {
             if (!(authentication instanceof OAuth2AuthenticationToken oauth)
@@ -53,7 +54,7 @@ public class GoogleLoginHandlers implements AuthenticationSuccessHandler, Authen
             // A link completion may redirect, which commits Spring Session immediately.
             // Remove provider credentials before entering any completion/response path.
             clients.removeAuthorizedClient("google", authentication, request, response);
-            if(administrative.completeLink(request,response,external)) return;
+            if (administrative.completeLink(request, response, external)) return;
             var minimal = administrative.googleAuthentication(identities.execute(external));
             var context = SecurityContextHolder.createEmptyContext();
             context.setAuthentication(minimal);
@@ -68,8 +69,11 @@ public class GoogleLoginHandlers implements AuthenticationSuccessHandler, Authen
     }
 
     @Override
-    public void onAuthenticationFailure(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
-            throws IOException { fail(request, response); }
+    public void onAuthenticationFailure(
+            HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
+            throws IOException {
+        fail(request, response);
+    }
 
     private void fail(HttpServletRequest request, HttpServletResponse response) throws IOException {
         SecurityContextHolder.clearContext();

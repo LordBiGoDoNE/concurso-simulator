@@ -22,5 +22,7 @@ public class ExternalIdentityPersistenceEntity {
         this.userId = userId;
     }
 
-    UUID userId() { return userId; }
+    UUID userId() {
+        return userId;
+    }
 }

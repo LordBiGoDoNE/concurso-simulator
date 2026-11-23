@@ -11,5 +11,7 @@ public record UserPrincipal(UUID id) implements Serializable, java.security.Prin
     }
 
     @Override
-    public String getName() { return id.toString(); }
+    public String getName() {
+        return id.toString();
+    }
 }

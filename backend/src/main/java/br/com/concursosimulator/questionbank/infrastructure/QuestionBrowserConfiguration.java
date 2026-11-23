@@ -6,5 +6,8 @@ import org.springframework.context.annotation.*;
 
 @Configuration
 public class QuestionBrowserConfiguration {
-    @Bean BrowseQuestionsUseCase browseQuestions(EligibleQuestions questions) { return new BrowseQuestionsUseCase(questions); }
+    @Bean
+    BrowseQuestionsUseCase browseQuestions(EligibleQuestions questions) {
+        return new BrowseQuestionsUseCase(questions);
+    }
 }

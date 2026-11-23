@@ -17,10 +17,12 @@ public class SessionController {
 
     @GetMapping("/api/v1/csrf")
     ResponseEntity<CsrfResponse> csrf(CsrfToken token) {
-        return ResponseEntity.ok().cacheControl(CacheControl.noStore())
+        return ResponseEntity.ok()
+                .cacheControl(CacheControl.noStore())
                 .body(new CsrfResponse(token.getToken(), token.getHeaderName()));
     }
 
     public record MeResponse(UUID id) {}
+
     public record CsrfResponse(String token, String headerName) {}
 }

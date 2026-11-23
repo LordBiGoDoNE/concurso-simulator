@@ -15,8 +15,13 @@ public enum Discipline {
         this.title = title;
     }
 
-    public String id() { return id; }
-    public String title() { return title; }
+    public String id() {
+        return id;
+    }
+
+    public String title() {
+        return title;
+    }
 
     public static Discipline fromId(String id) {
         for (var discipline : values()) {

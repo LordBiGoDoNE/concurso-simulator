@@ -14,7 +14,7 @@ export interface Finished extends RunFinished { attempt: AttemptView }
 export interface HistoryItem { id: string; roleId: string; createdAt: string; finishedAt: string | null; total: number; percentage: number | null }
 export interface HistoryPage { items: HistoryItem[]; page: number; size: number }
 export class AttemptApiError extends Error {
-  constructor(public status: number, public available: { disciplineId: string; available: number }[] = []) { super('Não foi possível confirmar a operação.'); }
+  constructor(public status: number, public available: { disciplineId: string; available: number }[] = [], public code?: string) { super('Não foi possível confirmar a operação.'); }
 }
 type Row = Record<string, unknown>;
 const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
@@ -66,7 +66,8 @@ async function request<T>(path: string, signal: AbortSignal, validate: (v: unkno
     const body: unknown = await response.json(); controller.signal.throwIfAborted();
     if (!response.ok) {
       const available = typeof body === 'object' && body && 'available' in body && Array.isArray(body.available) ? body.available.filter((a): a is { disciplineId: string; available: number } => !!a && typeof a.disciplineId === 'string' && Number.isSafeInteger(a.available) && a.available >= 0) : [];
-      throw new AttemptApiError(response.status, available);
+      const code = typeof body === 'object' && body && 'error' in body && typeof body.error === 'string' && /^[A-Z][A-Z0-9_]*$/.test(body.error) ? body.error : undefined;
+      throw new AttemptApiError(response.status, available, code);
     }
     return body;
   };

@@ -9,7 +9,7 @@ test.beforeEach(async ({ page }) => {
     const path = new URL(route.request().url()).pathname;
     if (path.endsWith('/status')) return route.fulfill({ json: { status: 'UP' } });
     if (path.endsWith('/auth/config')) return route.fulfill({ json: { googleEnabled: false } });
-    if (path.endsWith('/me')) return route.fulfill({ status: 401, json: { error: 'unauthenticated' } });
+    if (path.endsWith('/me')) return route.fulfill({ status: 401, json: { error: 'UNAUTHENTICATED' } });
     if(path.endsWith('/csrf'))return route.fulfill({json:{token:'test',headerName:'X-CSRF-TOKEN'}});
     if(path.endsWith('/lesson-practices/availability')) {
       const params = new URL(route.request().url()).searchParams;
@@ -29,7 +29,7 @@ test.beforeEach(async ({ page }) => {
     }
     if (path.endsWith('/catalog')) return route.fulfill({ json: catalog });
     if (path.includes('/question-bank/questions')) return route.fulfill({ json: emptyPage });
-    return route.fulfill({ status: 503, json: { error: 'unavailable' } });
+    return route.fulfill({ status: 503, json: { error: 'UNAVAILABLE' } });
   });
 });
 for (const width of [390, 1440]) test(`realização, mapa e confirmação por teclado em ${width}px`, async ({ page }, info) => {

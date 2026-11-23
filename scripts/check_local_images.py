@@ -84,7 +84,7 @@ def check(report):
             raise AssertionError("API ausente não pode parecer disponível")
         except HTTPError as error:
             assert error.code == 503 and "no-store" in error.headers["Cache-Control"]
-            assert json.loads(error.read()) == {"error": "unavailable"}
+            assert json.loads(error.read()) == {"error": "UNAVAILABLE"}
         write_report(OUTPUT / "image-check.json", {"status": "passed", "source_sha": metadata["source_sha"],
                      "images": images, "lessons": 51, "api_absent": 503, "missing_config_rejected": True, "spa_artifacts_inspected": True,
                      "limits": "JAR/static/proxy inspection; database/account flows are separate checks."})

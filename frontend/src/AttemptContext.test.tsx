@@ -13,7 +13,7 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
   const fetchMock = vi.fn(async (url: string, options?: RequestInit) => {
     if (url.endsWith('/status')) return response({ status: 'UP' });
     if (url.endsWith('/auth/config')) return response({ googleEnabled: true });
-    if (url.endsWith('/me')) return user ? response({ id: user }) : response({ error: 'unauthenticated' }, 401);
+    if (url.endsWith('/me')) return user ? response({ id: user }) : response({ error: 'UNAUTHENTICATED' }, 401);
     if (url.endsWith('/csrf')) return response({ token: 'csrf-test', headerName: 'X-CSRF-TOKEN' });
     if (url.endsWith('/auth/logout')) { user = null;return response(null, 204); }
     if (url.endsWith('/question-bank/catalog')) return response(catalog);
@@ -27,8 +27,8 @@ function api(initial: string | null, denied?: { status: number; stalled: boolean
     if (url.endsWith(`/lesson-practices/${practiceView.id}`)) return response(practiceView);
     if (url.includes('/me/attempts')) return response({ page: 0, size: 20, items: history ? [{ id: view.id, roleId: view.roleId, createdAt: view.createdAt, finishedAt: null, total: 1, percentage: null }] : [] });
     if (url.endsWith('/attempts') && options?.method === 'POST') return response(privateView, 201);
-    if (url.endsWith(`/attempts/${view.id}`)) return expired ? response({ error: 'not_found' }, 404) : response(privateView);
-    if (url.includes('/answers/') && expired) return denied ? { ok: false, status: denied.status, json: () => denied.stalled ? new Promise(() => {}) : Promise.reject(new SyntaxError('truncated')) } : response({ error: 'unauthenticated' }, 401);
+    if (url.endsWith(`/attempts/${view.id}`)) return expired ? response({ error: 'NOT_FOUND' }, 404) : response(privateView);
+    if (url.includes('/answers/') && expired) return denied ? { ok: false, status: denied.status, json: () => denied.stalled ? new Promise(() => {}) : Promise.reject(new SyntaxError('truncated')) } : response({ error: 'UNAUTHENTICATED' }, 401);
     if (url.includes('/answers/')) return { ok: true, status: 200, json: () => new Promise(resolve => { resolveWrite = resolve; }) };
     throw new Error('unexpected request');
   });vi.stubGlobal('fetch', fetchMock);

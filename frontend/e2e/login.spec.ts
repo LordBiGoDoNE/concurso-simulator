@@ -9,7 +9,7 @@ for (const width of [390, 1280]) {
     await page.route('**/api/v1/question-bank/**', route => route.fulfill({ json: route.request().url().endsWith('/catalog') ? catalog : emptyPage }));
     await page.route('**/api/v1/auth/config', route => route.fulfill({ json: { googleEnabled: true } }));
     await page.route('**/api/v1/me', route => route.fulfill({ status: connected ? 200 : 401,
-      json: connected ? { id: '12345678-1234-1234-1234-123456789abc' } : { error: 'unauthenticated' } }));
+      json: connected ? { id: '12345678-1234-1234-1234-123456789abc' } : { error: 'UNAUTHENTICATED' } }));
     await page.route('**/api/v1/csrf', route => route.fulfill({ json: { token: 'browser-csrf', headerName: 'X-CSRF-TOKEN' } }));
     await page.route('**/api/v1/auth/logout', route => {
       expect(route.request().headers()['x-csrf-token']).toBe('browser-csrf');

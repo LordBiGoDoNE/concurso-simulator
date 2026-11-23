@@ -27,7 +27,7 @@ async function api(page: Page) {
       return route.fulfill({ json: started });
     }
     if (path.includes(`/attempts/${view.id}`)) return route.fulfill({ json: started });
-    return route.fulfill({ status: 503, json: { error: 'unavailable' } });
+    return route.fulfill({ status: 503, json: { error: 'UNAVAILABLE' } });
   });
 }
 

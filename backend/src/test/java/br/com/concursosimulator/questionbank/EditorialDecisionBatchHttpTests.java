@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.web.AdministrativeImportController.*;
@@ -17,7 +20,6 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.session.*;
 import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.test.context.*;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.JsonNode;
 import tools.jackson.databind.json.JsonMapper;
@@ -27,12 +29,11 @@ import static org.assertj.core.api.Assertions.*;
 
 /** Decisões editoriais em lote (#177) pela cadeia HTTP/segurança real e PostgreSQL isolado; dados sintéticos. */
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("local") @Testcontainers
-class EditorialDecisionBatchHttpTests {
+@ActiveProfiles("local") class EditorialDecisionBatchHttpTests {
     static final UUID OPERATOR = UUID.fromString("99999999-1111-2222-3333-444444444444");
     static final String BASE = "/api/v1/admin/editorial-decisions";
     static final List<String> ALL_CHECKS = List.of("ACCESSIBILITY", "CLARITY", "CLASSIFICATION", "CORRECTNESS", "DISTRACTORS", "SOURCES", "STEP_BY_STEP");
-    @Container static final PostgreSQLContainer PG = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @DynamicPropertySource static void properties(DynamicPropertyRegistry r) {
         r.add("spring.datasource.url", PG::getJdbcUrl); r.add("spring.datasource.username", PG::getUsername); r.add("spring.datasource.password", PG::getPassword);
         r.add("app.question-import.destination-id", () -> "isolated-test");

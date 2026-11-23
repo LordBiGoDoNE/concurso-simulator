@@ -1,19 +1,20 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaAttemptStore;
 import br.com.concursosimulator.questionbank.domain.Topic;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import java.util.*;
 import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class PracticeCapacityMigrationTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @Test void v15ChangesOnlyNewCapacityAndPreservesFiveItemCapturesCommandsAndLegacyGuards() {
         try(var db=new AttemptDatabase(PG)) {
             db.migrate("14");new LessonPracticePersistenceTests().seedPractice(db,30);

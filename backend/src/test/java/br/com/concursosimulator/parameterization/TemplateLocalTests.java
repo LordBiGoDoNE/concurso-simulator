@@ -1,11 +1,13 @@
 package br.com.concursosimulator.parameterization;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.parameterization.domain.*;
 import br.com.concursosimulator.parameterization.application.TemplateUseCases;
 import br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.io.TempDir;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import java.io.*;
@@ -16,9 +18,8 @@ import java.util.*;
 import static br.com.concursosimulator.parameterization.ParameterFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class TemplateLocalTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @TempDir Path root;
     final JsonMapper json=JsonMapper.builder().build();
     final ByteArrayOutputStream output=new ByteArrayOutputStream();

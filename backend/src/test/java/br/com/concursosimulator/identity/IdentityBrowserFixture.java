@@ -1,5 +1,7 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.context.ConfigurableApplicationContext;
@@ -10,7 +12,7 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 /** Launcher exclusivo de testes; nunca empacotado no bootJar. */
 public final class IdentityBrowserFixture {
     public static void main(String[] args) throws Exception {
-        var postgres = new PostgreSQLContainer("postgres:18.6");
+        var postgres = new PostgreSQLContainer(TestPostgres.IMAGE);
         postgres.start();
         var oidc = new OidcFixture(18081);
         var context = new AtomicReference<ConfigurableApplicationContext>();

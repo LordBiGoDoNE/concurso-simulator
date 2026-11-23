@@ -1,5 +1,8 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
 import br.com.concursosimulator.questionbank.domain.*;
@@ -14,7 +17,6 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.session.*;
 import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.test.context.*;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import java.net.*;
@@ -23,9 +25,8 @@ import java.time.*;
 import java.util.*;
 import static org.assertj.core.api.Assertions.*;
 
-@SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT) @ActiveProfiles("local") @Testcontainers
-class LessonPracticeHttpTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+@SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT) @ActiveProfiles("local") class LessonPracticeHttpTests {
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @DynamicPropertySource static void db(DynamicPropertyRegistry r) {
         r.add("spring.datasource.url",PG::getJdbcUrl);r.add("spring.datasource.username",PG::getUsername);r.add("spring.datasource.password",PG::getPassword);
     }

@@ -1,5 +1,8 @@
 package br.com.concursosimulator.parameterization;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.parameterization.domain.*;
 import org.junit.jupiter.api.Test;
@@ -7,7 +10,6 @@ import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.springframework.transaction.support.TransactionTemplate;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import tools.jackson.databind.node.ObjectNode;
@@ -16,9 +18,8 @@ import java.util.*;
 import static br.com.concursosimulator.parameterization.ParameterizedPersistenceTests.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class CapturedOutputIntegrityTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @ParameterizedTest @ValueSource(strings={"7","8"})
     void validTupleDigestSwapIsRejectedAtV8CommitOrLegacyUpgrade(String target) {
         try(var db=new ParameterDatabase(PG,target)) {

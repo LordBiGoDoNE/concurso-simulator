@@ -1,5 +1,8 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.mockexam.application.AttemptUseCases;
 import br.com.concursosimulator.mockexam.domain.*;
@@ -36,8 +39,8 @@ public final class SubjectReviewOperationalFixture {
             assertThat(archive.getEntry("BOOT-INF/classes/db/migration/V10__completed_subject_window_index.sql")).isNotNull();
         }
         var logs=Path.of("build/subject-review-ops").toAbsolutePath();Files.createDirectories(logs);
-        try(var pg=new PostgreSQLContainer("postgres:18.6")) {
-            pg.start();try(var db=new AttemptDatabase(pg,"5")) {
+        try(var pg=new PostgreSQLContainer(TestPostgres.IMAGE)) {
+            pg.start();try(var db=new AttemptDatabase(TestDatabase.of(pg),"5")) {
                 var fixture=JSON.readTree(SubjectReviewOperationalFixture.class.getResourceAsStream("/mockexam/v5-creation.json"));
                 assertThat(fixture.get("sourceCommit").asString()).isEqualTo("0d0fc4848f55fc93c736aa76dcfbb73a7269eb39");
                 var snapshot=fixture.get("snapshot");var item=snapshot.get("items").get(0);var source=item.get("question");

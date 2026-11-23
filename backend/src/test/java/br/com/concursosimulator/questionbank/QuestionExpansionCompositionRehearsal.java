@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.application.*;
 import br.com.concursosimulator.questionbank.application.port.*;
 import br.com.concursosimulator.questionbank.domain.*;
@@ -58,10 +61,10 @@ public final class QuestionExpansionCompositionRehearsal {
         require(!loaded.isEmpty(),"Nenhum pacote");
         var steps=new LinkedHashMap<String,Object>();
         var started=System.nanoTime();
-        try(var pg=new PostgreSQLContainer("postgres:18.6")){
+        try(var pg=new PostgreSQLContainer(TestPostgres.IMAGE)){
             pg.start();
             var actor=UUID.randomUUID();
-            try(var db=new QuestionDatabase(pg)){
+            try(var db=new QuestionDatabase(TestDatabase.of(pg))){
                 var inventory=new JpaQuestionInventory(SharedEntityManagerCreator.createSharedEntityManager(db.factory),db.manager);
                 var preview=new PreviewQuestionCandidatesUseCase(inventory);
                 var apply=new ApplyAdministrativeQuestionsUseCase(db.store,CLOCK);
@@ -154,7 +157,7 @@ public final class QuestionExpansionCompositionRehearsal {
                         "eligibleSimulado",db.store.transaction(s->pool.capture(QuestionPurpose.SIMULADO)).size(),
                         "eligiblePratica",db.store.transaction(s->pool.capture(QuestionPurpose.PRATICA_AULA)).size()));
             }
-            try(var db=new QuestionDatabase(pg)){
+            try(var db=new QuestionDatabase(TestDatabase.of(pg))){
                 var apply=new ApplyAdministrativeQuestionsUseCase(db.store,CLOCK);
                 var p=loaded.getLast().read();var c=confirmation(p,actor);
                 try(var workers=Executors.newFixedThreadPool(4)){

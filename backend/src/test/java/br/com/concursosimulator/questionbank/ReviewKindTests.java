@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.application.DecideQuestionUseCase;
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.domain.EditorialDecision.ReviewKind;
@@ -7,8 +10,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.time.Instant;
 import java.util.Set;
@@ -17,9 +18,8 @@ import static br.com.concursosimulator.questionbank.domain.EditorialDecision.Act
 import static org.assertj.core.api.Assertions.*;
 
 /** Origem da revisão (#177): obrigatória em APPROVE novo; histórico sem o dado permanece não informado. */
-@Testcontainers
 class ReviewKindTests {
-    @Container static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     static final Instant AT = Instant.parse("2026-11-12T00:00:00Z");
     static Question draft() {
         return Question.draft(UUID.randomUUID(), new QuestionOrigin("fixture", "review-kind-" + UUID.randomUUID()), UUID.randomUUID(), QuestionFixtures.content("Fixture origem"));

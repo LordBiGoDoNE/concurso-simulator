@@ -1,5 +1,8 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.mockexam.domain.AttemptOwner;
 import br.com.concursosimulator.mockexam.infrastructure.AttemptAccess;
@@ -19,7 +22,6 @@ import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.test.context.*;
 import org.springframework.mock.web.MockHttpServletRequest;
 import org.springframework.mock.web.MockHttpSession;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import java.net.*;
@@ -28,14 +30,13 @@ import java.time.*;
 import java.util.*;
 import static org.assertj.core.api.Assertions.*;
 
-@SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT) @ActiveProfiles("local") @Testcontainers
-@Import(AttemptActorHttpTests.Probe.class)
+@SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT) @ActiveProfiles("local") @Import(AttemptActorHttpTests.Probe.class)
 class AttemptActorHttpTests {
     @RestController static class Probe {
         record Mode(String mode) {}
         @GetMapping("/api/v1/attempts/actor-probe") Mode probe(@CurrentActor AttemptOwner actor) { return new Mode(actor.kind().name()); }
     }
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @DynamicPropertySource static void database(DynamicPropertyRegistry r) {
         r.add("spring.datasource.url",PG::getJdbcUrl); r.add("spring.datasource.username",PG::getUsername);r.add("spring.datasource.password",PG::getPassword);
     }

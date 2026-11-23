@@ -1,10 +1,12 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.infrastructure.local.*;
 import br.com.concursosimulator.questionbank.domain.QuestionPurpose;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.io.TempDir;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import tools.jackson.databind.node.ObjectNode;
@@ -14,9 +16,8 @@ import java.util.*;
 import static org.assertj.core.api.Assertions.*;
 
 /** O lote real é validado/importado SOMENTE como rascunho em PostgreSQL efêmero. */
-@Testcontainers
 class LessonPracticePackageTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @TempDir static Path temp;
     static final Path ROOT=Path.of("..").toAbsolutePath().normalize();
     static final JsonMapper JSON=JsonMapper.builder().build();

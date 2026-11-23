@@ -1,5 +1,7 @@
 package br.com.concursosimulator;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.WebApplicationType;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -9,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class MigrationFailureTests {
     @Test
     void failedMigrationPreventsStartup() {
-        try (var postgres = new PostgreSQLContainer("postgres:18.6")) {
+        try (var postgres = new PostgreSQLContainer(TestPostgres.IMAGE)) {
             postgres.start();
             assertThatThrownBy(() -> {
                 try (var context = new SpringApplicationBuilder(ConcursoSimulatorApplication.class)

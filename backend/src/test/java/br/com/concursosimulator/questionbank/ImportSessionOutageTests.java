@@ -1,5 +1,7 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import java.net.URI;
 import java.net.http.*;
 import java.time.Duration;
@@ -15,7 +17,7 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT,properties={"spring.datasource.hikari.connection-timeout=1000"})
 @ActiveProfiles("local") @Testcontainers
 class ImportSessionOutageTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer(TestPostgres.IMAGE);
     @DynamicPropertySource static void database(DynamicPropertyRegistry r){
         r.add("spring.datasource.url",PG::getJdbcUrl);r.add("spring.datasource.username",PG::getUsername);r.add("spring.datasource.password",PG::getPassword);
     }

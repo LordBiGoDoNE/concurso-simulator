@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.application.PreviewQuestionCandidatesUseCase;
 import br.com.concursosimulator.questionbank.infrastructure.importing.AdministrativePackageReader;
 import br.com.concursosimulator.questionbank.infrastructure.persistence.JpaQuestionInventory;
@@ -25,9 +28,9 @@ public final class QuestionExpansionContentCheck {
         }
         if (files.isEmpty()) throw new IllegalArgumentException("Nenhum pacote selecionado");
         int total = 0;
-        try (var pg = new PostgreSQLContainer("postgres:18.6")) {
+        try (var pg = new PostgreSQLContainer(TestPostgres.IMAGE)) {
             pg.start();
-            try (var db = new QuestionDatabase(pg)) {
+            try (var db = new QuestionDatabase(TestDatabase.of(pg))) {
                 var inventory = new JpaQuestionInventory(SharedEntityManagerCreator.createSharedEntityManager(db.factory), db.manager);
                 var preview = new PreviewQuestionCandidatesUseCase(inventory);
                 for (var file : files) {

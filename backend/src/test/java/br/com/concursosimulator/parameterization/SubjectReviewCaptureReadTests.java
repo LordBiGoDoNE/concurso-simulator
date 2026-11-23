@@ -1,5 +1,8 @@
 package br.com.concursosimulator.parameterization;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.*;
@@ -10,16 +13,14 @@ import br.com.concursosimulator.subjectreview.application.ReviewUseCases;
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.time.*;
 import java.util.*;
 import static br.com.concursosimulator.parameterization.ParameterizedPersistenceTests.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class SubjectReviewCaptureReadTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @Test void fixedAndGeneratedBaseAreDeduplicatedAfterReclassificationWithdrawalUpgradeAndFactoryRestart() {
         try(var db=new ParameterDatabase(PG)) {
             var d=db.seed(Family.PERCENTAGE);var version=db.approve(d);

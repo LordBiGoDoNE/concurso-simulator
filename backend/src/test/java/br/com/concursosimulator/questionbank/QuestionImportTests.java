@@ -1,13 +1,14 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.application.ApplyQuestionCandidatesUseCase;
 import br.com.concursosimulator.questionbank.application.ApplyQuestionCandidatesUseCase.Candidate;
 import br.com.concursosimulator.questionbank.application.DecideQuestionUseCase;
 import br.com.concursosimulator.questionbank.application.port.*;
 import br.com.concursosimulator.questionbank.domain.*;
 import org.junit.jupiter.api.*;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.util.*;
 import java.util.concurrent.*;
@@ -18,9 +19,8 @@ import static br.com.concursosimulator.questionbank.QuestionFixtures.*;
 import static br.com.concursosimulator.questionbank.QuestionEditorialTests.decision;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class QuestionImportTests {
-    @Container static final PostgreSQLContainer POSTGRES=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     QuestionDatabase db; ApplyQuestionCandidatesUseCase apply;
     @BeforeEach void open(){db=new QuestionDatabase(POSTGRES);apply=new ApplyQuestionCandidatesUseCase(db.store);}
     @AfterEach void close(){db.close();}

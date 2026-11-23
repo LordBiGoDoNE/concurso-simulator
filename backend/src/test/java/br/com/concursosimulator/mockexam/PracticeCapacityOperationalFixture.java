@@ -1,5 +1,8 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaAttemptStore;
@@ -20,8 +23,8 @@ public final class PracticeCapacityOperationalFixture {
     public static void main(String[] args) throws Exception {
         if(args.length!=2)throw new IllegalArgumentException("Informe JAR atual e diretório privado de relatório");
         var jar=Path.of(args[0]).toAbsolutePath();var output=Path.of(args[1]).toAbsolutePath();Files.createDirectories(output);
-        try(var pg=new org.testcontainers.postgresql.PostgreSQLContainer("postgres:18.6")) {
-            pg.start();try(var db=new AttemptDatabase(pg)) {
+        try(var pg=new org.testcontainers.postgresql.PostgreSQLContainer(TestPostgres.IMAGE)) {
+            pg.start();try(var db=new AttemptDatabase(TestDatabase.of(pg))) {
                 db.migrate("15");db.jdbc.update("insert into app_user(id) values (?)",ACCOUNT.id());
                 new LessonPracticePersistenceTests().seedPractice(db,30);
                 var store=new JpaAttemptStore(db.entities,db.manager,db.pool);

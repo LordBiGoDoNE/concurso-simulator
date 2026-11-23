@@ -15,7 +15,7 @@ cd backend
 
 No Windows, use `gradlew.bat clean build`. Configure `JAVA_HOME` para o JDK 25 caso o Java padrão seja outro. A toolchain também exige JDK 25 completo.
 
-Os testes requerem Docker disponível: Testcontainers cria bancos PostgreSQL **18.6** isolados e os encerra ao terminar, sem acessar o volume local.
+Os testes requerem Docker disponível: Testcontainers cria bancos PostgreSQL **18.6** isolados e os encerra ao terminar, sem acessar o volume local. `src/test/java/.../support/TestPostgres` declara a imagem uma única vez e mantém um servidor por execução de testes; cada classe recebe um banco vazio e exclusivo (`TestPostgres.newDatabase()`). Testes que param o servidor (indisponibilidade) e as fixtures executáveis usam contêiner próprio com `TestPostgres.IMAGE`.
 
 Verificações do build: `-Xlint:all` em `compileJava` e `compileTestJava`, com `-Werror` nos dois; as exclusões (`serial`, e `try` só nos testes) ficam comentadas em `build.gradle.kts`. A cobertura do JaCoCo é só relatório local, gerado depois de `test` em `build/reports/jacoco/test/` (HTML e XML), sem limite mínimo e sem publicação no CI. As tarefas operacionais deliberadas (fixtures de navegador, verificações de rollback, ferramentas locais) ficam em `gradle/operational-tasks.gradle.kts`.
 

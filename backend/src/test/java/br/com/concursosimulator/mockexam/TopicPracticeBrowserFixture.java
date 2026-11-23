@@ -1,5 +1,7 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.mockexam.application.AttemptStore;
@@ -35,7 +37,7 @@ public final class TopicPracticeBrowserFixture {
         boolean expansion="1".equals(System.getenv("PRACTICE_EXPANSION"));
         int[] chosen=ports(expansion);
         int uiPort=chosen[0], apiPort=chosen[1], controlPort=chosen[2];
-        var pg=new PostgreSQLContainer("postgres:18.6");pg.start();
+        var pg=new PostgreSQLContainer(TestPostgres.IMAGE);pg.start();
         ConfigurableApplicationContext app=null;HttpServer control=null;
         try {
             if(restoring) {

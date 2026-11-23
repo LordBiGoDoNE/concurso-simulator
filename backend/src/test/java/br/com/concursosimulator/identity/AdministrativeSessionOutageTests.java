@@ -1,5 +1,7 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import java.net.*;
 import java.net.http.*;
 import org.junit.jupiter.api.Test;
@@ -14,7 +16,7 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("local") @Testcontainers
 class AdministrativeSessionOutageTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer(TestPostgres.IMAGE);
     @DynamicPropertySource static void properties(DynamicPropertyRegistry r){r.add("spring.datasource.url",PG::getJdbcUrl);r.add("spring.datasource.username",PG::getUsername);r.add("spring.datasource.password",PG::getPassword);}
     @Value("${local.server.port}")int port;
     @Test void sessionOutageBeforeSecurityPreservesAdministrative503NoStoreAndKnownCors()throws Exception {

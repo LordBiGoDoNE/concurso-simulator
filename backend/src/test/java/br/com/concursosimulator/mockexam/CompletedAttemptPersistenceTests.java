@@ -1,12 +1,14 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaCompletedAttempts;
 import br.com.concursosimulator.questionbank.domain.TargetRole;
 import br.com.concursosimulator.subjectreview.application.ReviewUseCases;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.time.*;
 import java.util.*;
@@ -14,9 +16,8 @@ import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
 import static br.com.concursosimulator.mockexam.CompletedEvidenceFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class CompletedAttemptPersistenceTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     static final TargetRole ROLE=TargetRole.ADMINISTRATIVE_ASSISTANT;
     JpaCompletedAttempts reader(AttemptDatabase db) { return new JpaCompletedAttempts(db.entities,db.manager); }
     void account(AttemptDatabase db,AttemptOwner owner) { db.jdbc.update("insert into app_user(id) values (?)",owner.id()); }

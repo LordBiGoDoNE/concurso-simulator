@@ -1,5 +1,8 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.application.ResolveExternalIdentityUseCase;
 import br.com.concursosimulator.identity.application.port.IdentityAlreadyLinkedException;
 import br.com.concursosimulator.identity.application.port.IdentityRepository;
@@ -35,17 +38,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.support.TransactionTemplate;
 import java.util.Map;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
-@Testcontainers
 @ExtendWith(OutputCaptureExtension.class)
 class IdentityStorageTests {
-    @Container
-    static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     String schema;
     DriverManagerDataSource dataSource;
     JdbcTemplate jdbc;

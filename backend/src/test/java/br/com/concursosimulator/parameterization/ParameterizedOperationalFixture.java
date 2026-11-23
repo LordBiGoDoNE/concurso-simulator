@@ -1,5 +1,8 @@
 package br.com.concursosimulator.parameterization;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.mockexam.application.AttemptStore;
@@ -30,8 +33,8 @@ public final class ParameterizedOperationalFixture {
         if(args.length!=1 || !Files.isRegularFile(Path.of(args[0])))throw new IllegalArgumentException("Informe JAR V5 aprovado");
         var oldJar=Path.of(args[0]).toAbsolutePath();var logs=Path.of("build/parameterized-ops").toAbsolutePath();Files.createDirectories(logs);
         var jarHash=HexFormat.of().formatHex(java.security.MessageDigest.getInstance("SHA-256").digest(Files.readAllBytes(oldJar)));
-        try(var pg=new PostgreSQLContainer("postgres:18.6")) {
-            pg.start();try(var db=new ParameterDatabase(pg,"5")) {
+        try(var pg=new PostgreSQLContainer(TestPostgres.IMAGE)) {
+            pg.start();try(var db=new ParameterDatabase(TestDatabase.of(pg),"5")) {
                 var definition=db.seed(Family.PERCENTAGE);var user=UUID.randomUUID();
                 db.jdbc.update("insert into app_user(id) values (?)",user);
                 db.jdbc.update("insert into external_identity values (?,'google','https://accounts.google.com','parameterized-ops-only')",user);

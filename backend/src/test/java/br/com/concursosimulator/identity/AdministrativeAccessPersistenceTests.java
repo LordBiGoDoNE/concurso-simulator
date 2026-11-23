@@ -1,5 +1,8 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.application.*;
 import br.com.concursosimulator.identity.application.port.*;
 import br.com.concursosimulator.identity.domain.*;
@@ -15,13 +18,11 @@ import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.*;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.support.TransactionTemplate;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class AdministrativeAccessPersistenceTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     static final String PASSWORD="synthetic-local-password";
     String jdbcUrl;
     JdbcTemplate jdbc;jakarta.persistence.EntityManagerFactory factory;JpaTransactionManager manager;

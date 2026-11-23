@@ -1,5 +1,8 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.application.*;
 import br.com.concursosimulator.identity.application.port.AdministrativePasswords;
 import java.net.*;
@@ -14,16 +17,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.context.annotation.Import;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.*;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("local") @Import(OidcTestRegistration.class) @Testcontainers @ExtendWith(OutputCaptureExtension.class)
+@ActiveProfiles("local") @Import(OidcTestRegistration.class) @ExtendWith(OutputCaptureExtension.class)
 class AdministrativeAccountHttpTests {
     static final OidcFixture OIDC=new OidcFixture();
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     static final String PASSWORD="synthetic-administrative-password";
     @DynamicPropertySource static void properties(DynamicPropertyRegistry r){
         r.add("spring.datasource.url",PG::getJdbcUrl);r.add("spring.datasource.username",PG::getUsername);r.add("spring.datasource.password",PG::getPassword);

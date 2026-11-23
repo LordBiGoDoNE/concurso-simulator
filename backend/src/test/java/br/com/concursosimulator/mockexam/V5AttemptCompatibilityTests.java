@@ -1,11 +1,13 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaAttemptStore;
 import br.com.concursosimulator.questionbank.domain.*;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import java.sql.Timestamp;
@@ -15,9 +17,8 @@ import static br.com.concursosimulator.mockexam.AttemptFixtures.NOW;
 import static org.assertj.core.api.Assertions.*;
 
 /** Fixture serializada por AttemptUseCases/Attempt V5 reais, não pelo codec sob teste. */
-@Testcontainers
 class V5AttemptCompatibilityTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @Test void upgradePreservesV5HashesRawImmutableJsonAndCommandOutcomesThroughAnswerAndFinish() throws Exception {
         var json=JsonMapper.builder().build();
         var fixture=json.readTree(getClass().getResourceAsStream("/mockexam/v5-creation.json"));

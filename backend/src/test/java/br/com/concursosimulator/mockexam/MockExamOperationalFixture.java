@@ -1,5 +1,8 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.mockexam.application.AttemptUseCases;
@@ -28,9 +31,9 @@ public final class MockExamOperationalFixture {
     public static void main(String[] args) throws Exception {
         if (args.length!=1 || !Files.isRegularFile(Path.of(args[0]))) throw new IllegalArgumentException("Informe o JAR anterior aprovado");
         var oldJar=Path.of(args[0]).toAbsolutePath();var logs=Path.of("build/mock-ops").toAbsolutePath();Files.createDirectories(logs);
-        try(var pg=new PostgreSQLContainer("postgres:18.6")) {
+        try(var pg=new PostgreSQLContainer(TestPostgres.IMAGE)) {
             pg.start();
-            try(var db=new AttemptDatabase(pg)) {
+            try(var db=new AttemptDatabase(TestDatabase.of(pg))) {
                 var owner=new AttemptOwner(AttemptOwner.Kind.ACCOUNT,UUID.randomUUID());
                 var guest=new AttemptOwner(AttemptOwner.Kind.VISITOR,UUID.randomUUID());
                 db.jdbc.update("insert into app_user(id) values (?)",owner.id());

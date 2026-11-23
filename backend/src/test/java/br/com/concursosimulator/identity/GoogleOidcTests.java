@@ -1,5 +1,8 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import java.net.CookieManager;
 import java.net.CookiePolicy;
 import java.net.URI;
@@ -25,8 +28,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.yaml.snakeyaml.Yaml;
 import static org.assertj.core.api.Assertions.assertThat;
@@ -34,11 +35,10 @@ import static org.assertj.core.api.Assertions.assertThat;
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @ActiveProfiles("local")
 @Import(OidcTestRegistration.class)
-@Testcontainers
 @ExtendWith(OutputCaptureExtension.class)
 class GoogleOidcTests {
     static final OidcFixture OIDC = new OidcFixture();
-    @Container static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     @DynamicPropertySource static void configuration(DynamicPropertyRegistry registry) {
         registry.add("spring.datasource.url", POSTGRES::getJdbcUrl);
         registry.add("spring.datasource.username", POSTGRES::getUsername);

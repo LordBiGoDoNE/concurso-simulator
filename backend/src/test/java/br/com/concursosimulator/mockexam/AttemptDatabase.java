@@ -1,5 +1,7 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.QuestionFixtures;
 import br.com.concursosimulator.questionbank.infrastructure.persistence.*;
@@ -9,7 +11,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.*;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.util.*;
 import static br.com.concursosimulator.mockexam.AttemptFixtures.NOW;
 
@@ -22,8 +23,8 @@ public final class AttemptDatabase implements AutoCloseable {
     JpaTransactionManager manager;
     JpaQuestionStore questions;
     JpaEligibleRevisionPool pool;
-    AttemptDatabase(PostgreSQLContainer pg) { this(pg,"9"); }
-    AttemptDatabase(PostgreSQLContainer pg,String target) {
+    AttemptDatabase(TestDatabase pg) { this(pg,"9"); }
+    AttemptDatabase(TestDatabase pg,String target) {
         schema="me_"+UUID.randomUUID().toString().replace("-","");
         ds=new DriverManagerDataSource(pg.getJdbcUrl()+"&currentSchema="+schema,pg.getUsername(),pg.getPassword());
         jdbc=new JdbcTemplate(ds); migrate(target);

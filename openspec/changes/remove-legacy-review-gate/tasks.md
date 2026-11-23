@@ -2,10 +2,9 @@
 
 Issue: [#256](https://github.com/LordBiGoDoNE/concurso-simulator/issues/256).
 Épica: `epic/remove-legacy-review-gate`. Spec formalizada em 2026-11-23.
-Implementação **não autorizada**: aguarda a confirmação única de início e a
-resposta a "Vai testar as tarefas localmente?". A decisão sobre o ruleset
-`24766642` (manter, desativar ou remover) é uma aprovação específica, pedida junto
-com a confirmação e registrada na issue. Sem resposta, vale "manter".
+Implementação autorizada em 2026-11-23 (grupos 1–3). Teste local pelo usuário:
+não. Ruleset `24766642`: o usuário decidiu **manter** (2026-11-23); não há
+aprovação para desativar ou remover. Merges dependem da aprovação do pacote final.
 
 Cada grupo é um PR em rascunho para a épica. O grupo 2 parte da branch do grupo 1
 e aponta para ela, porque documenta o resultado do grupo 1 (job `scripts-tests`,

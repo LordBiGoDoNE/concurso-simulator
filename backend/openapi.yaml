@@ -169,7 +169,18 @@ paths:
         '403': {$ref: '#/components/responses/AttemptForbidden'}
         '409': {description: Payload divergente ou acervo insuficiente; error e available por disciplina, content: {application/json: {schema: {oneOf: [{$ref: '#/components/schemas/AttemptError'}, {$ref: '#/components/schemas/AttemptInsufficient'}]}}}}
         '500': {description: Falha interna de integridade; sem captura parcial ou dados privados; no-store, content: {application/json: {schema: {$ref: '#/components/schemas/AttemptError'}}}}
-        '503': {$ref: '#/components/responses/QuestionUnavailable'}
+        '503':
+          description: >-
+            Indisponibilidade transitória (UNAVAILABLE) ou geração parametrizada desligada no servidor com
+            useParameterizedQuestions=true (PARAMETERIZED_GENERATION_UNAVAILABLE; nada é gravado e repetir com
+            useParameterizedQuestions=false funciona); no-store
+          content:
+            application/json:
+              schema:
+                type: object
+                additionalProperties: false
+                required: [error]
+                properties: {error: {type: string, enum: [UNAVAILABLE, PARAMETERIZED_GENERATION_UNAVAILABLE]}}
   /api/v1/attempts/{id}:
     parameters:
       - {in: path, name: id, required: true, schema: {type: string, format: uuid}}

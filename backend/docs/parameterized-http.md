@@ -14,8 +14,9 @@ elegibilidade/integridade/posse; infraestrutura JPA confirma a transação. Não
 camada delegadora nem autenticação duplicada no controller. Respostas tipadas e
 schemas de tentativa/resultado/histórico permanecem iguais; metadados não são públicos.
 
-Falha interna de estado da geração é 500 `internal_error`, no-store e sem conteúdo
-privado; falhas de banco/projeção permanecem 503. Não há fallback de integridade.
+Falha interna de estado da geração é 500 `INTERNAL_ERROR`, no-store e sem conteúdo
+privado; falhas de banco/projeção permanecem 503 `UNAVAILABLE`; geração parametrizada
+desligada no servidor é 503 `PARAMETERIZED_GENERATION_UNAVAILABLE`, sem gravação. Não há fallback de integridade.
 O tradutor de exceções de `@Repository` envolve IllegalStateException em
 InvalidDataAccessApiUsageException; o advice reconhece essa causa de uso/estado
 inválido como 500, sem confundi-la com indisponibilidade de conexão. A regressão da

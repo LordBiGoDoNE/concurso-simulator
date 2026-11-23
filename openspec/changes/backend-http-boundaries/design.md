@@ -148,6 +148,14 @@ proposta.
   os advices administrativos já usam), `UnsafeQuestionProjectionException` e a nova
   `ParameterizedGenerationUnavailable`. `DataIntegrityViolationException` não
   reconhecida e `InvalidDataAccessApiUsageException` viram 500.
+- Decisão da revisão final (2026-11-23): o conjunto acima inclui falha de conexão
+  JDBC (SQLState classe 08, `SQLTransientConnectionException`,
+  `SQLRecoverableException`, `SQLNonTransientConnectionException`). Falha do
+  sistema de transação (`TransactionSystemException`,
+  `org.hibernate.TransactionException`) só é 503 quando a cadeia mostra conexão
+  perdida, inclusive a conexão fechada do HikariCP ("Connection is closed", sem
+  SQLState) vista quando o banco cai e o rollback falha; sem essa evidência
+  (ex.: "Transaction already active") é 500.
 
 Status para geração desabilitada: 503 e não 409, porque o estado é operacional
 (configuração temporária do servidor) e não conflito com o recurso; repetir com

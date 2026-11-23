@@ -1,5 +1,6 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.shared.web.ErrorResponses;
 import br.com.concursosimulator.questionbank.domain.Discipline;
 import br.com.concursosimulator.questionbank.domain.TargetRole;
 import java.net.URI;
@@ -49,9 +50,7 @@ class ParameterizedGenerationDisabledHttpTests {
         var body = "{\"commandId\":\"" + UUID.randomUUID() + "\",\"roleId\":\"" + TargetRole.ADMINISTRATIVE_ASSISTANT.id()
                 + "\",\"disciplines\":[{\"disciplineId\":\"" + Discipline.MATHEMATICS_LOGIC.id() + "\",\"quantity\":1}],\"useParameterizedQuestions\":true}";
         var response = send("POST", "/api/v1/attempts", cookie, token, body);
-        assertThat(response.statusCode()).isEqualTo(503);
-        assertThat(response.body()).isEqualTo("{\"error\":\"PARAMETERIZED_GENERATION_UNAVAILABLE\"}");
-        assertThat(response.headers().firstValue("Cache-Control")).contains("no-store");
+        ErrorResponses.assertError(response, 503, "PARAMETERIZED_GENERATION_UNAVAILABLE");
         assertThat(tables.stream().map(t -> jdbc.queryForObject("select count(*) from " + t, Integer.class)).toList()).isEqualTo(before);
     }
 

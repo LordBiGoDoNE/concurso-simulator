@@ -60,28 +60,43 @@ class ArchitectureTests {
                         "java..", "..subjectreview.domain..", "..subjectreview.application..", "..questionbank.domain..",
                         "..mockexam.domain..", "..mockexam.application..").check(CODE);
     }
-    /** Exceções nominais à regra de controllers, cada uma com motivo. */
-    private static final java.util.Map<String, String> CONTROLLER_SECURITY_EXCEPTIONS = java.util.Map.of(
-            "br.com.concursosimulator.identity.web.SessionController",
-            "expõe o CsrfToken gerado pelo framework (org.springframework.security.web.csrf.CsrfToken)");
+    private static final String AUTHENTICATION_PRINCIPAL = "org.springframework.security.core.annotation.AuthenticationPrincipal";
+
+    /** Exceção nominal à regra de controllers: motivo e únicos tipos extras de segurança permitidos. */
+    private record ControllerSecurityException(String reason, java.util.Set<String> extraSecurityTypes) {}
+
+    private static final java.util.Map<String, ControllerSecurityException> CONTROLLER_SECURITY_EXCEPTIONS = java.util.Map.of(
+            "br.com.concursosimulator.identity.web.SessionController", new ControllerSecurityException(
+                    "expõe o CsrfToken gerado pelo framework",
+                    java.util.Set.of("org.springframework.security.web.csrf.CsrfToken")));
+
+    private static com.tngtech.archunit.base.DescribedPredicate<com.tngtech.archunit.core.domain.JavaClass> outsideSessionServletAndSecurityExcept(
+            java.util.Set<String> allowedSecurityTypes) {
+        return com.tngtech.archunit.base.DescribedPredicate.describe(
+                "fora de mecanismos de sessão/servlet/segurança, exceto " + new java.util.TreeSet<>(allowedSecurityTypes),
+                (com.tngtech.archunit.core.domain.JavaClass target) -> {
+                    var name = target.getName();
+                    if (name.startsWith("org.springframework.session.") || name.startsWith("jakarta.servlet.")) return false;
+                    if (!name.startsWith("org.springframework.security.")) return true;
+                    return allowedSecurityTypes.contains(name);
+                });
+    }
 
     @Test void everyControllerReceivesVerifiedIdentityWithoutOwningSessionOrServletMechanics() {
         classes().that().areAnnotatedWith(org.springframework.web.bind.annotation.RestController.class)
-                .should().onlyDependOnClassesThat(com.tngtech.archunit.base.DescribedPredicate.describe(
-                        "fora de mecanismos de sessão/servlet/segurança, exceto @AuthenticationPrincipal",
-                        (com.tngtech.archunit.core.domain.JavaClass target) -> {
-                            var name = target.getName();
-                            if (name.startsWith("org.springframework.session.") || name.startsWith("jakarta.servlet.")) return false;
-                            if (!name.startsWith("org.springframework.security.")) return true;
-                            return name.equals("org.springframework.security.core.annotation.AuthenticationPrincipal");
-                        }))
+                .should().onlyDependOnClassesThat(outsideSessionServletAndSecurityExcept(java.util.Set.of(AUTHENTICATION_PRINCIPAL)))
                 .check(CODE.that(com.tngtech.archunit.base.DescribedPredicate.describe("sem exceção nominal",
                         (com.tngtech.archunit.core.domain.JavaClass c) -> !CONTROLLER_SECURITY_EXCEPTIONS.containsKey(c.getName()))));
-        // A exceção só pode usar o CsrfToken, nada mais de segurança/sessão/servlet.
-        noClasses().that().haveFullyQualifiedName("br.com.concursosimulator.identity.web.SessionController")
-                .should().dependOnClassesThat().resideInAnyPackage("org.springframework.session..", "jakarta.servlet..",
-                        "org.springframework.security.core.context..", "org.springframework.security.authentication..")
-                .check(CODE);
+        // Cada exceção só ganha os tipos nomeados no mapa, nada mais de segurança/sessão/servlet.
+        CONTROLLER_SECURITY_EXCEPTIONS.forEach((controller, exception) -> {
+            assertThat(CODE.contain(controller)).as("exceção nominal sem classe correspondente: %s", controller).isTrue();
+            var allowed = new java.util.HashSet<>(exception.extraSecurityTypes());
+            allowed.add(AUTHENTICATION_PRINCIPAL);
+            classes().that().haveFullyQualifiedName(controller)
+                    .should().onlyDependOnClassesThat(outsideSessionServletAndSecurityExcept(allowed))
+                    .because(exception.reason())
+                    .check(CODE);
+        });
     }
 
     @Test void everyMappedMethodReturnsAConcreteRecordFromItsOwnWebPackageOrNoBody() {

@@ -29,12 +29,6 @@ Este arquivo só **detalha** o que é próprio do projeto e registra as **exceç
 - Previews atuais são do material estático; não executam Java/PostgreSQL nem publicam a aplicação React. Deployment da aplicação completa tem spec própria.
 - Preservar as aulas, `pages-store` e os previews já armazenados.
 
-## Automação legada de revisão
-
-- O workflow `spec-review.yml` e `scripts/check_spec_review.py` aplicam o gate estrutural (`spec-review.json` + digest) somente à antiga `epic/application-reformulation`; em PRs para `main` emitem `spec-review-tests`, que não certifica revisão.
-- A evidência vigente é o `review.md` da spec (`revisao-e-integracao.md`, seção 7). `spec-review.json/md` de specs anteriores ficam como histórico verdadeiro.
-- Alterar ou remover essa automação exige PR e aprovação próprios; não relaxar workflows/rulesets nesse meio-tempo.
-
 ## Exceções às regras globais
 
 | # | Regra global afetada | Regra do projeto | Motivo | Data | Aprovação |
@@ -47,6 +41,8 @@ Este arquivo só **detalha** o que é próprio do projeto e registra as **exceç
 - GitHub Stacks (piloto #33/#34, adoção em question-bank #36) foi substituído por PRs encadeados comuns: `docs/stacks-pilot.md`.
 - Revisões SOL/Astra, revisão por lote, classificação de risco e gate com `spec-review.json`/digest: `docs/architecture/spec-review.md`. Revisões já executadas permanecem histórico verdadeiro.
 - Medição de cota ChatGPT/Codex encerrada em 2026-11-09: `docs/review-quota.md`.
+- Automação legada de revisão (`spec-review.yml`, `scripts/check_spec_review.py`) removida pela spec `remove-legacy-review-gate` (#256, 2026-11-23); `scripts/tests` roda no job `scripts-tests` do `application.yml`. Os `spec-review.json/md` antigos são histórico verdadeiro; detalhes em `docs/architecture/spec-review.md`.
+- Ruleset `24766642` (alvo só `refs/heads/epic/application-reformulation`, check `spec-review`) mantido por decisão do usuário de 2026-11-23. Está órfão: a branch e o check não existem mais. Desativá-lo ou removê-lo exige aprovação específica (`planejamento-e-autorizacao.md`).
 - Lotes e revisão SOL por lote: `docs/implementation-batches.md`.
 - `study-experience-redesign`: base inicial em `epic/application-reformulation` 1817673 (árvore idêntica à `main` c8efceb); PR #147 retargetado para `main` com autorização do usuário.
 - Primeira épica combinada: `epic/question-bank-expansion-curation` (#173 + #177).

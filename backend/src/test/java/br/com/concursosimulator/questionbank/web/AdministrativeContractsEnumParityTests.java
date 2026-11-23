@@ -28,24 +28,45 @@ class AdministrativeContractsEnumParityTests {
         assertThat(names(AdministrativeContracts.Status.class)).isEqualTo(names(Question.Status.class));
         assertThat(names(AdministrativeContracts.Action.class)).isEqualTo(names(EditorialDecision.Action.class));
         assertThat(names(AdministrativeContracts.Check.class)).isEqualTo(names(EditorialDecision.Check.class));
-        assertThat(names(AdministrativeContracts.ReviewKind.class)).isEqualTo(names(EditorialDecision.ReviewKind.class));
+        assertThat(names(AdministrativeContracts.ReviewKind.class))
+                .isEqualTo(names(EditorialDecision.ReviewKind.class));
     }
 
     @Test
     void everyCoreValueRoundTripsThroughTheWebContract() {
-        for (var value : QuestionPurpose.values()) assertThat(AdministrativeContracts.purpose(AdministrativeContracts.map(value, AdministrativeContracts.Purpose.class))).isEqualTo(value);
-        for (var value : Question.Status.values()) assertThat(AdministrativeContracts.status(AdministrativeContracts.status(value))).isEqualTo(value);
-        for (var value : EditorialDecision.Action.values()) assertThat(AdministrativeContracts.action(AdministrativeContracts.map(value, AdministrativeContracts.Action.class))).isEqualTo(value);
-        for (var value : EditorialDecision.ReviewKind.values()) assertThat(AdministrativeContracts.reviewKind(AdministrativeContracts.map(value, AdministrativeContracts.ReviewKind.class))).isEqualTo(value);
-        assertThat(AdministrativeContracts.checks(Arrays.stream(EditorialDecision.Check.values()).map(c -> AdministrativeContracts.map(c, AdministrativeContracts.Check.class)).toList()))
+        for (var value : QuestionPurpose.values())
+            assertThat(AdministrativeContracts.purpose(
+                            AdministrativeContracts.map(value, AdministrativeContracts.Purpose.class)))
+                    .isEqualTo(value);
+        for (var value : Question.Status.values())
+            assertThat(AdministrativeContracts.status(AdministrativeContracts.status(value)))
+                    .isEqualTo(value);
+        for (var value : EditorialDecision.Action.values())
+            assertThat(AdministrativeContracts.action(
+                            AdministrativeContracts.map(value, AdministrativeContracts.Action.class)))
+                    .isEqualTo(value);
+        for (var value : EditorialDecision.ReviewKind.values())
+            assertThat(AdministrativeContracts.reviewKind(
+                            AdministrativeContracts.map(value, AdministrativeContracts.ReviewKind.class)))
+                    .isEqualTo(value);
+        assertThat(AdministrativeContracts.checks(Arrays.stream(EditorialDecision.Check.values())
+                        .map(c -> AdministrativeContracts.map(c, AdministrativeContracts.Check.class))
+                        .toList()))
                 .containsExactly(EditorialDecision.Check.values());
     }
 
     @Test
     void coreEnumsPublishedAsTextKeepTheirContractNames() {
-        assertThat(names(PreviewQuestionCandidatesUseCase.Change.class)).containsExactly("NEW", "IDENTICAL", "CHANGED", "STALE");
-        assertThat(names(AdministrativeQuestionQueries.Match.class)).containsExactly("ABSENT", "PRESENT", "SAME_AS_LATEST", "SAME_AS_ELIGIBLE", "DIFFERENT");
+        assertThat(names(PreviewQuestionCandidatesUseCase.Change.class))
+                .containsExactly("NEW", "IDENTICAL", "CHANGED", "STALE");
+        assertThat(names(AdministrativeQuestionQueries.Match.class))
+                .containsExactly("ABSENT", "PRESENT", "SAME_AS_LATEST", "SAME_AS_ELIGIBLE", "DIFFERENT");
         assertThat(names(EditorialBatchUseCase.Refusal.class))
-                .containsExactly("QUESTION_NOT_FOUND", "REVISION_NOT_FOUND", "FINGERPRINT_MISMATCH", "INVALID_TRANSITION", "CHECKLIST_INCOMPLETE");
+                .containsExactly(
+                        "QUESTION_NOT_FOUND",
+                        "REVISION_NOT_FOUND",
+                        "FINGERPRINT_MISMATCH",
+                        "INVALID_TRANSITION",
+                        "CHECKLIST_INCOMPLETE");
     }
 }

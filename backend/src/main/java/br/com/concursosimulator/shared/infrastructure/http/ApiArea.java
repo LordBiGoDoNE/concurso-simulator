@@ -15,8 +15,14 @@ import java.util.Objects;
  * @param jsonFailures se 403 da segurança e indisponibilidade da sessão na área respondem JSON {@code no-store}
  * @param routes rotas atendidas, cada uma com método, padrão e acesso
  */
-public record ApiArea(String name, Chain chain, List<String> paths, Cors cors, List<String> corsPaths,
-                      boolean jsonFailures, List<ApiRoute> routes) {
+public record ApiArea(
+        String name,
+        Chain chain,
+        List<String> paths,
+        Cors cors,
+        List<String> corsPaths,
+        boolean jsonFailures,
+        List<ApiRoute> routes) {
     public enum Chain {
         /** Sem sessão nem contexto de segurança; só leitura pública ou negação. */
         STATELESS,
@@ -28,13 +34,21 @@ public record ApiArea(String name, Chain chain, List<String> paths, Cors cors, L
 
     /** Métodos aceitos em origem cruzada e se a origem pode enviar credenciais. */
     public record Cors(List<String> methods, boolean credentials) {
-        public static Cors publicRead() { return new Cors(List.of("GET"), false); }
-        public static Cors credentialed(String... methods) { return new Cors(List.of(methods), true); }
+        public static Cors publicRead() {
+            return new Cors(List.of("GET"), false);
+        }
+
+        public static Cors credentialed(String... methods) {
+            return new Cors(List.of(methods), true);
+        }
     }
 
     public ApiArea {
-        Objects.requireNonNull(name); Objects.requireNonNull(chain);
-        paths = List.copyOf(paths); corsPaths = List.copyOf(corsPaths); routes = List.copyOf(routes);
+        Objects.requireNonNull(name);
+        Objects.requireNonNull(chain);
+        paths = List.copyOf(paths);
+        corsPaths = List.copyOf(corsPaths);
+        routes = List.copyOf(routes);
         if (paths.isEmpty()) throw new IllegalArgumentException("Área sem caminhos: " + name);
         if (cors == null != corsPaths.isEmpty()) throw new IllegalArgumentException("CORS incompleto na área " + name);
     }

@@ -1,11 +1,11 @@
 package br.com.concursosimulator.questionbank.infrastructure.importing;
 
+import br.com.concursosimulator.identity.application.UserPrincipal;
+import br.com.concursosimulator.questionbank.application.port.AdministrativeImportPermission;
 import br.com.concursosimulator.questionbank.infrastructure.QuestionBankRoutes;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
 import br.com.concursosimulator.shared.infrastructure.http.JsonRejection;
-import br.com.concursosimulator.identity.application.UserPrincipal;
-import br.com.concursosimulator.questionbank.application.port.AdministrativeImportPermission;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.IOException;
@@ -29,9 +29,15 @@ import org.springframework.web.filter.OncePerRequestFilter;
  */
 @Configuration
 public class AdministrativeCurationSecurityConfiguration {
-    @Bean @Order(0)
-    SecurityFilterChain administrativeCurationSecurity(HttpSecurity http, AdministrativeImportPermission permission, ImportSettings settings,
-            HttpSessionSecurityContextRepository repository, ApiRoutes routes) throws Exception {
+    @Bean
+    @Order(0)
+    SecurityFilterChain administrativeCurationSecurity(
+            HttpSecurity http,
+            AdministrativeImportPermission permission,
+            ImportSettings settings,
+            HttpSessionSecurityContextRepository repository,
+            ApiRoutes routes)
+            throws Exception {
         return http.securityMatcher(routes.paths(QuestionBankRoutes.CURATION_AREA))
                 .cors(org.springframework.security.config.Customizer.withDefaults())
                 .securityContext(c -> c.securityContextRepository(repository))
@@ -41,40 +47,80 @@ public class AdministrativeCurationSecurityConfiguration {
                         .access((authentication, context) -> {
                             var current = authentication.get();
                             return new AuthorizationDecision(ImportSecurityConfiguration.valid(current)
-                                    && current.getDetails() instanceof br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.Evidence evidence
-                                    && permission.permits(((UserPrincipal) current.getPrincipal()).id(), evidence.version()));
-                        }).anyRequest().denyAll())
-                .exceptionHandling(e -> e.authenticationEntryPoint((r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "UNAUTHENTICATED"))
+                                    && current.getDetails()
+                                            instanceof
+                                            br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity
+                                                            .Evidence
+                                                    evidence
+                                    && permission.permits(
+                                            ((UserPrincipal) current.getPrincipal()).id(), evidence.version()));
+                        })
+                        .anyRequest()
+                        .denyAll())
+                .exceptionHandling(e -> e.authenticationEntryPoint(
+                                (r, s, x) -> ImportSecurityConfiguration.reject(s, 401, "UNAUTHENTICATED"))
                         .accessDeniedHandler((r, s, x) -> {
-                            int status = x instanceof org.springframework.security.web.csrf.CsrfException ? 403
-                                    : ImportSecurityConfiguration.valid(org.springframework.security.core.context.SecurityContextHolder.getContext().getAuthentication()) ? 403 : 401;
-                            ImportSecurityConfiguration.reject(s, status, status == 401 ? "UNAUTHENTICATED" : "FORBIDDEN");
+                            int status =
+                                    x instanceof org.springframework.security.web.csrf.CsrfException
+                                            ? 403
+                                            : ImportSecurityConfiguration.valid(org.springframework.security.core
+                                                            .context.SecurityContextHolder.getContext()
+                                                            .getAuthentication())
+                                                    ? 403
+                                                    : 401;
+                            ImportSecurityConfiguration.reject(
+                                    s, status, status == 401 ? "UNAUTHENTICATED" : "FORBIDDEN");
                         }))
-                .addFilterBefore(new ImportSecurityConfiguration.NoStore(), org.springframework.web.filter.CorsFilter.class)
-                .addFilterAfter(new BodyLimits(settings), AuthorizationFilter.class).build();
+                .addFilterBefore(
+                        new ImportSecurityConfiguration.NoStore(), org.springframework.web.filter.CorsFilter.class)
+                .addFilterAfter(new BodyLimits(settings), AuthorizationFilter.class)
+                .build();
     }
 
     /** Depois da autorização: configuração das decisões em lote; só JSON UTF-8 sem compressão e corpo declarado até 2 MiB em POST. */
     static final class BodyLimits extends OncePerRequestFilter {
         private final ImportSettings settings;
-        BodyLimits(ImportSettings settings) { this.settings = settings; }
-        @Override protected boolean shouldNotFilter(HttpServletRequest r) { return !"POST".equals(r.getMethod()); }
-        @Override protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain) throws ServletException, IOException {
+
+        BodyLimits(ImportSettings settings) {
+            this.settings = settings;
+        }
+
+        @Override
+        protected boolean shouldNotFilter(HttpServletRequest r) {
+            return !"POST".equals(r.getMethod());
+        }
+
+        @Override
+        protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain)
+                throws ServletException, IOException {
             // Decisões em lote dependem do destino e da chave de confirmação; consultas não.
             if (r.getServletPath().startsWith(QuestionBankRoutes.EDITORIAL_DECISIONS + "/") && !settings.configured()) {
-                JsonRejection.writeCorrelated(s, 503, "DECISIONS_NOT_CONFIGURED"); return;
+                JsonRejection.writeCorrelated(s, 503, "DECISIONS_NOT_CONFIGURED");
+                return;
             }
             try {
                 var type = org.springframework.http.MediaType.parseMediaType(r.getContentType());
-                if (!"application".equals(type.getType()) || !"json".equals(type.getSubtype())
-                        || type.getCharset() != null && !java.nio.charset.StandardCharsets.UTF_8.equals(type.getCharset())) {
-                    ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE"); return;
+                if (!"application".equals(type.getType())
+                        || !"json".equals(type.getSubtype())
+                        || type.getCharset() != null
+                                && !java.nio.charset.StandardCharsets.UTF_8.equals(type.getCharset())) {
+                    ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE");
+                    return;
                 }
-            } catch (IllegalArgumentException invalid) { ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE"); return; }
-            if (!"identity".equalsIgnoreCase(Optional.ofNullable(r.getHeader("Content-Encoding")).orElse("identity"))) {
-                ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_CONTENT_ENCODING"); return;
+            } catch (IllegalArgumentException invalid) {
+                ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_MEDIA_TYPE");
+                return;
             }
-            if (r.getContentLengthLong() > 2_097_152) { ImportSecurityConfiguration.reject(s, 413, "REQUEST_TOO_LARGE"); return; }
+            if (!"identity"
+                    .equalsIgnoreCase(
+                            Optional.ofNullable(r.getHeader("Content-Encoding")).orElse("identity"))) {
+                ImportSecurityConfiguration.reject(s, 415, "UNSUPPORTED_CONTENT_ENCODING");
+                return;
+            }
+            if (r.getContentLengthLong() > 2_097_152) {
+                ImportSecurityConfiguration.reject(s, 413, "REQUEST_TOO_LARGE");
+                return;
+            }
             chain.doFilter(r, s);
         }
     }

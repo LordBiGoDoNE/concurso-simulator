@@ -23,5 +23,7 @@ public record QuestionClassification(Discipline discipline, Topic topic, Set<Tar
         return new QuestionClassification(Discipline.fromId(disciplineId), Topic.fromId(topicId), roles);
     }
 
-    public boolean appliesTo(TargetRole role) { return role != null && roles.contains(role); }
+    public boolean appliesTo(TargetRole role) {
+        return role != null && roles.contains(role);
+    }
 }

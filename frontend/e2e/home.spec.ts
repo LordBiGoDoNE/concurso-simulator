@@ -3,9 +3,9 @@ import { test, expect } from '@playwright/test';
 for (const width of [390, 1280]) {
   test(`entrada acessível com API indisponível em ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
-    await page.route('**/api/v1/status', route => route.abort('connectionrefused'));
-    await page.route('**/api/v1/me', route => route.abort('connectionrefused'));
-    await page.route('**/api/v1/auth/config', route => route.abort('connectionrefused'));
+    await page.route('**/api/v1/status', (route) => route.abort('connectionrefused'));
+    await page.route('**/api/v1/me', (route) => route.abort('connectionrefused'));
+    await page.route('**/api/v1/auth/config', (route) => route.abort('connectionrefused'));
     await page.goto('/');
     await expect(page.getByRole('status').filter({ hasText: 'API indisponível' })).toBeVisible();
     await expect(page.getByText(/Consulta de sessão indisponível/)).toBeVisible();
@@ -13,7 +13,10 @@ for (const width of [390, 1280]) {
     await expect(page.getByRole('link', { name: 'Pular para o conteúdo' })).toBeFocused();
     await page.keyboard.press('Enter');
     await expect(page.getByRole('main')).toBeFocused();
-    await page.getByRole('navigation', { name: 'Navegação principal' }).getByRole('button', { name: 'Aulas', exact: true }).focus();
+    await page
+      .getByRole('navigation', { name: 'Navegação principal' })
+      .getByRole('button', { name: 'Aulas', exact: true })
+      .focus();
     await page.keyboard.press('Enter');
     await expect(page.getByRole('heading', { name: 'Aulas', exact: true })).toBeFocused();
     await page.getByRole('button', { name: 'Atualizar sessão' }).focus();
@@ -25,7 +28,7 @@ for (const width of [390, 1280]) {
 }
 
 test('apresenta disponibilidade da API', async ({ page }) => {
-  await page.route('**/api/v1/status', route => route.fulfill({ json: { status: 'UP' } }));
+  await page.route('**/api/v1/status', (route) => route.fulfill({ json: { status: 'UP' } }));
   await page.goto('/');
   await expect(page.getByRole('status').filter({ hasText: 'API disponível.' })).toBeVisible();
 });

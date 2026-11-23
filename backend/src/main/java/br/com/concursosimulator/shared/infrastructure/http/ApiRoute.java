@@ -22,16 +22,28 @@ public record ApiRoute(String method, String pattern, Access access, boolean pas
     }
 
     public ApiRoute {
-        Objects.requireNonNull(method); Objects.requireNonNull(pattern); Objects.requireNonNull(access);
+        Objects.requireNonNull(method);
+        Objects.requireNonNull(pattern);
+        Objects.requireNonNull(access);
         if (!pattern.startsWith("/")) throw new IllegalArgumentException("Padrão relativo: " + pattern);
     }
 
-    public static ApiRoute get(String pattern, Access access) { return new ApiRoute("GET", pattern, access, false); }
-    public static ApiRoute post(String pattern, Access access) { return new ApiRoute("POST", pattern, access, false); }
-    public static ApiRoute put(String pattern, Access access) { return new ApiRoute("PUT", pattern, access, false); }
+    public static ApiRoute get(String pattern, Access access) {
+        return new ApiRoute("GET", pattern, access, false);
+    }
+
+    public static ApiRoute post(String pattern, Access access) {
+        return new ApiRoute("POST", pattern, access, false);
+    }
+
+    public static ApiRoute put(String pattern, Access access) {
+        return new ApiRoute("PUT", pattern, access, false);
+    }
 
     /** O caminho segue acessível durante a troca de senha pendente, qualquer que seja o método. */
-    public ApiRoute exemptFromPasswordChange() { return new ApiRoute(method, pattern, access, true); }
+    public ApiRoute exemptFromPasswordChange() {
+        return new ApiRoute(method, pattern, access, true);
+    }
 
     public boolean requiresIdentity() {
         return access == Access.VISITOR_OR_ACCOUNT || access == Access.ACCOUNT || access == Access.ACCOUNT_PRINCIPAL;

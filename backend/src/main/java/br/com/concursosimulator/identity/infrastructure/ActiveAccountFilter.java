@@ -13,20 +13,35 @@ import org.springframework.web.filter.OncePerRequestFilter;
 public class ActiveAccountFilter extends OncePerRequestFilter {
     private final AdministrativeAccessUseCases access;
     private final ApiRoutes routes;
-    public ActiveAccountFilter(AdministrativeAccessUseCases access,ApiRoutes routes){this.access=access;this.routes=routes;}
-    @Override protected void doFilterInternal(HttpServletRequest r,HttpServletResponse s,FilterChain chain)throws IOException,ServletException {
-        var auth=SecurityContextHolder.getContext().getAuthentication();
-        if(auth!=null && auth.getPrincipal() instanceof UserPrincipal p && !access.active(p.id())) {
-            SecurityContextHolder.clearContext();var session=r.getSession(false);if(session!=null)session.invalidate();
-            AdministrativeHttpSecurity.reject(s,401,"UNAUTHENTICATED");return;
+
+    public ActiveAccountFilter(AdministrativeAccessUseCases access, ApiRoutes routes) {
+        this.access = access;
+        this.routes = routes;
+    }
+
+    @Override
+    protected void doFilterInternal(HttpServletRequest r, HttpServletResponse s, FilterChain chain)
+            throws IOException, ServletException {
+        var auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null && auth.getPrincipal() instanceof UserPrincipal p && !access.active(p.id())) {
+            SecurityContextHolder.clearContext();
+            var session = r.getSession(false);
+            if (session != null) session.invalidate();
+            AdministrativeHttpSecurity.reject(s, 401, "UNAUTHENTICATED");
+            return;
         }
-        if(auth!=null && auth.getPrincipal() instanceof UserPrincipal p && auth.getDetails() instanceof AdministrativeSecurity.Evidence epoch) {
-            var current=access.googleAccess(p.id());
-            if(current!=null && current.version()==epoch.version() && current.mustChange()
+        if (auth != null
+                && auth.getPrincipal() instanceof UserPrincipal p
+                && auth.getDetails() instanceof AdministrativeSecurity.Evidence epoch) {
+            var current = access.googleAccess(p.id());
+            if (current != null
+                    && current.version() == epoch.version()
+                    && current.mustChange()
                     && !routes.passwordChangeExempt(r)) {
-                AdministrativeHttpSecurity.reject(s,403,"PASSWORD_CHANGE_REQUIRED");return;
+                AdministrativeHttpSecurity.reject(s, 403, "PASSWORD_CHANGE_REQUIRED");
+                return;
             }
         }
-        chain.doFilter(r,s);
+        chain.doFilter(r, s);
     }
 }

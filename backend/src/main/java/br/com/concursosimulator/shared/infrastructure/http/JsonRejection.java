@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 /** Rejeições escritas por filtros e handlers de segurança, antes do MVC, no mesmo formato da API. */
 public final class JsonRejection {
     private static final Pattern CODE = Pattern.compile("[A-Z][A-Z0-9_]*");
+
     private JsonRejection() {}
 
     public static void write(HttpServletResponse response, int status, String code) throws IOException {
@@ -29,7 +30,8 @@ public final class JsonRejection {
     }
 
     private static String code(String code) {
-        if (code == null || !CODE.matcher(code).matches()) throw new IllegalStateException("Código de erro fora do padrão: " + code);
+        if (code == null || !CODE.matcher(code).matches())
+            throw new IllegalStateException("Código de erro fora do padrão: " + code);
         return code;
     }
 }

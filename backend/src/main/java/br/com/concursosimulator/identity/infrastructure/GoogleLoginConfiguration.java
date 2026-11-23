@@ -21,15 +21,21 @@ public class GoogleLoginConfiguration {
     @ConditionalOnMissingBean(ClientRegistrationRepository.class)
     ClientRegistrationRepository googleRegistration(GoogleLoginProperties properties, Environment environment) {
         validate(properties, environment);
-        return new InMemoryClientRegistrationRepository(CommonOAuth2Provider.GOOGLE.getBuilder("google")
-                .clientId(properties.clientId()).clientSecret(properties.clientSecret())
-                .scope("openid", "profile").redirectUri(properties.callbackUrl())
-                .issuerUri("https://accounts.google.com").build());
+        return new InMemoryClientRegistrationRepository(CommonOAuth2Provider.GOOGLE
+                .getBuilder("google")
+                .clientId(properties.clientId())
+                .clientSecret(properties.clientSecret())
+                .scope("openid", "profile")
+                .redirectUri(properties.callbackUrl())
+                .issuerUri("https://accounts.google.com")
+                .build());
     }
 
     static void validate(GoogleLoginProperties properties, Environment environment) {
-        if (properties.clientId() == null || properties.clientId().isBlank()
-                || properties.clientSecret() == null || properties.clientSecret().isBlank()) {
+        if (properties.clientId() == null
+                || properties.clientId().isBlank()
+                || properties.clientSecret() == null
+                || properties.clientSecret().isBlank()) {
             throw new IllegalArgumentException("Login Google habilitado exige client ID e secret externos");
         }
         URI callback = browserUri(properties.callbackUrl(), environment);
@@ -41,11 +47,17 @@ public class GoogleLoginConfiguration {
 
     private static URI browserUri(String value, Environment environment) {
         URI uri;
-        try { uri = URI.create(value == null ? "" : value); }
-        catch (IllegalArgumentException exception) { throw new IllegalArgumentException("URL de login inválida"); }
+        try {
+            uri = URI.create(value == null ? "" : value);
+        } catch (IllegalArgumentException exception) {
+            throw new IllegalArgumentException("URL de login inválida");
+        }
         boolean local = environment.acceptsProfiles(Profiles.of("local"))
                 && ("localhost".equals(uri.getHost()) || "127.0.0.1".equals(uri.getHost()));
-        if (uri.getHost() == null || uri.getUserInfo() != null || uri.getQuery() != null || uri.getFragment() != null
+        if (uri.getHost() == null
+                || uri.getUserInfo() != null
+                || uri.getQuery() != null
+                || uri.getFragment() != null
                 || !("https".equals(uri.getScheme()) || local && "http".equals(uri.getScheme()))) {
             throw new IllegalArgumentException("URLs de login exigem HTTPS; HTTP somente em localhost no perfil local");
         }

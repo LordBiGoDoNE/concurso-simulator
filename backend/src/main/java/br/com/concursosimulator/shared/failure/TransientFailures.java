@@ -36,39 +36,52 @@ import org.springframework.transaction.TransactionTimedOutException;
 public final class TransientFailures {
     private static final String HIBERNATE_TRANSACTION_FAILURE = "org.hibernate.TransactionException";
     private static final String POOL_CLOSED_CONNECTION = "Connection is closed";
+
     private TransientFailures() {}
 
     public static boolean transientCause(Throwable failure) {
         if (anyInChain(failure, TransientFailures::integrity)) return false;
-        return anyInChain(failure, cause -> isTransient(cause)
-                || transactionSystemFailure(cause) && anyInChain(cause, TransientFailures::connectionLost));
+        return anyInChain(
+                failure,
+                cause -> isTransient(cause)
+                        || transactionSystemFailure(cause) && anyInChain(cause, TransientFailures::connectionLost));
     }
 
     public static boolean isTransient(Throwable failure) {
-        return failure instanceof TransientDataAccessException || failure instanceof DataAccessResourceFailureException
-                || failure instanceof CannotCreateTransactionException || failure instanceof TransactionTimedOutException
+        return failure instanceof TransientDataAccessException
+                || failure instanceof DataAccessResourceFailureException
+                || failure instanceof CannotCreateTransactionException
+                || failure instanceof TransactionTimedOutException
                 || connectionFailure(failure);
     }
 
     private static boolean connectionFailure(Throwable failure) {
-        return failure instanceof SQLTransientConnectionException || failure instanceof SQLRecoverableException
+        return failure instanceof SQLTransientConnectionException
+                || failure instanceof SQLRecoverableException
                 || failure instanceof SQLNonTransientConnectionException
                 // SQLState classe 08: exceção de conexão (padrão SQL), sem ligação com integridade.
-                || failure instanceof SQLException sql && sql.getSQLState() != null && sql.getSQLState().startsWith("08");
+                || failure instanceof SQLException sql
+                        && sql.getSQLState() != null
+                        && sql.getSQLState().startsWith("08");
     }
 
     private static boolean connectionLost(Throwable failure) {
-        return connectionFailure(failure) || failure instanceof SQLException sql && sql.getSQLState() == null
-                && POOL_CLOSED_CONNECTION.equals(sql.getMessage());
+        return connectionFailure(failure)
+                || failure instanceof SQLException sql
+                        && sql.getSQLState() == null
+                        && POOL_CLOSED_CONNECTION.equals(sql.getMessage());
     }
 
     private static boolean integrity(Throwable failure) {
         return failure instanceof DataIntegrityViolationException
-                || failure instanceof SQLException sql && sql.getSQLState() != null && sql.getSQLState().startsWith("23");
+                || failure instanceof SQLException sql
+                        && sql.getSQLState() != null
+                        && sql.getSQLState().startsWith("23");
     }
 
     private static boolean transactionSystemFailure(Throwable failure) {
-        return failure instanceof TransactionSystemException || HIBERNATE_TRANSACTION_FAILURE.equals(failure.getClass().getName());
+        return failure instanceof TransactionSystemException
+                || HIBERNATE_TRANSACTION_FAILURE.equals(failure.getClass().getName());
     }
 
     /** Percorre causas e, em {@link TransactionSystemException}, a exceção original que o rollback encobriu. */
@@ -79,7 +92,8 @@ public final class TransientFailures {
     private static boolean anyInChain(Throwable failure, Predicate<Throwable> test, Set<Throwable> seen) {
         for (var cause = failure; cause != null && seen.add(cause); cause = cause.getCause()) {
             if (test.test(cause)) return true;
-            if (cause instanceof TransactionSystemException system && system.getOriginalException() != null
+            if (cause instanceof TransactionSystemException system
+                    && system.getOriginalException() != null
                     && anyInChain(system.getOriginalException(), test, seen)) return true;
         }
         return false;

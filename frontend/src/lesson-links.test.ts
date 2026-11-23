@@ -5,7 +5,15 @@ import { nativeLessonUrl } from './lesson-links';
 it('os 51 atalhos abrem a aula nativa, sem referência a arquivos estáticos', () => {
   for (const topic of catalog.topics) expect(nativeLessonUrl(topic.id)).toBe('#/aulas/' + topic.id);
 });
-it.each(['../P01', '%2e%2e/P01', 'javascript:alert(1)', 'https://evil.test', '__proto__', 'constructor', 'P01?gabarito'])('recusa assunto desconhecido: %s', id => {
+it.each([
+  '../P01',
+  '%2e%2e/P01',
+  'javascript:alert(1)',
+  'https://evil.test',
+  '__proto__',
+  'constructor',
+  'P01?gabarito',
+])('recusa assunto desconhecido: %s', (id) => {
   expect(nativeLessonUrl(id)).toBeNull();
 });
 it('preserva cargo compatível, permite leitura livre de outro cargo e recusa desconhecido', () => {

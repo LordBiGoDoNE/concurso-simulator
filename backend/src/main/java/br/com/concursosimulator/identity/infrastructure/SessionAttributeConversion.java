@@ -27,19 +27,24 @@ public class SessionAttributeConversion {
 
     @Bean
     SessionRepositoryCustomizer<JdbcIndexedSessionRepository> tolerantSessionAttributes() {
-        return repository -> repository.setConversionService(conversionService(SessionAttributeConversion.class.getClassLoader()));
+        return repository ->
+                repository.setConversionService(conversionService(SessionAttributeConversion.class.getClassLoader()));
     }
 
     static GenericConversionService conversionService(ClassLoader classLoader) {
         var service = new GenericConversionService();
         service.addConverter(Object.class, byte[].class, new SerializingConverter());
-        service.addConverter(byte[].class, Object.class, new AbsentWhenClassIsGone(new DeserializingConverter(classLoader)));
+        service.addConverter(
+                byte[].class, Object.class, new AbsentWhenClassIsGone(new DeserializingConverter(classLoader)));
         return service;
     }
 
     static final class AbsentWhenClassIsGone implements Converter<byte[], Object> {
         private final DeserializingConverter delegate;
-        AbsentWhenClassIsGone(DeserializingConverter delegate) { this.delegate = delegate; }
+
+        AbsentWhenClassIsGone(DeserializingConverter delegate) {
+            this.delegate = delegate;
+        }
 
         @Override
         public Object convert(byte[] source) {

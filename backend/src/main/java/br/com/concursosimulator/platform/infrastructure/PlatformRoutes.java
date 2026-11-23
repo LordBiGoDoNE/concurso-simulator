@@ -14,7 +14,13 @@ public class PlatformRoutes {
 
     @Bean
     ApiArea platformStatusArea() {
-        return new ApiArea("platform.status", ApiArea.Chain.STATELESS, List.of(STATUS), Cors.publicRead(), List.of(STATUS), false,
+        return new ApiArea(
+                "platform.status",
+                ApiArea.Chain.STATELESS,
+                List.of(STATUS),
+                Cors.publicRead(),
+                List.of(STATUS),
+                false,
                 List.of(ApiRoute.get(STATUS, ApiRoute.Access.PUBLIC)));
     }
 }

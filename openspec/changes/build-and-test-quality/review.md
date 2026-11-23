@@ -1,0 +1,233 @@
+# Revisão — build-and-test-quality
+
+Issue: [#257](https://github.com/LordBiGoDoNE/concurso-simulator/issues/257).
+Épica: `epic/build-and-test-quality` (`42c22a5`, criada da `main` `9dea050`).
+Implementação autorizada em 2026-11-23; teste local pelo usuário: não.
+
+## Cadeia de PRs
+
+| Grupo | PR | Branch | Base | Head revisado |
+| --- | --- | --- | --- | --- |
+| 1 Build do backend | #265 | `task/build-and-test-quality/backend-build` | `epic/build-and-test-quality` | `8209a6f` |
+| 2 Relógio único | #268 | `.../clock` | `.../backend-build` | `ba6c0e0` |
+| 3 PostgreSQL de teste | #271 | `.../test-postgres` | `.../clock` | `03b0176` |
+| 4 Spotless | #273 | `.../spotless` | `.../test-postgres` | `99abdd9` |
+| 5 Ferramentas do frontend | #275 | `.../frontend-tooling` | `epic/build-and-test-quality` | `9a685e2` |
+| 6 Cliente HTTP único | #276 | `.../http-client` | `.../frontend-tooling` | `809554f` |
+| 7 Formatação do frontend | #278 | `.../frontend-format` | `.../http-client` | `76fecfe` |
+| 8 CI | #279 | `.../ci` | `.../frontend-format` | `ddd3acf` |
+
+O grupo 7 recebeu por merge a cadeia do backend (`76fecfe`). As duas cadeias criam
+`.git-blame-ignore-revs`, e a resolução (união dos SHAs `096fe8d` e `1b64ba0`) já está no
+head revisado. Ordem de integração: 1→2→3→4, depois 5→6→7→8.
+
+Head revisado (topo): `ddd3acfec46793e8249b9698c1b16bec1ca6d791`, árvore
+`36f872e9e15286c77fb1e3b91a3557ec2d08af0d`. Este `review.md` é o único arquivo acrescentado
+depois dele.
+
+## Revisões por grupo (`group-reviewer`, Sonnet)
+
+| Grupo | Base → head revisado | Achados | Triagem |
+| --- | --- | --- | --- |
+| 1 | `42c22a5` → `9c22641`/`c3504b6` | nenhum | — |
+| 2 | `backend-build` → `c7cac71` | nenhum | — |
+| 3 | `clock` → `26544a3` | 1 baixo: `withCommand` perde o `fsync=off` padrão (só desempenho) | registrado, sem ação |
+| 4 | `test-postgres` → `66fdc90` | nenhum | — |
+| 5 | `42c22a5` → `ba15506` | 1 médio (M1): `playwright.config.ts` só incluído de forma transitiva no `tsconfig.node.json` | `finding-fixer` confirmou e corrigiu em `9a685e2` |
+| 6 | `frontend-tooling` → `21c9119` | nenhum | — |
+| 7 | `21c9119` → `6da92a2` | nenhum | — |
+| 8 | `6da92a2` → `cd7c86b` | nenhum | — |
+
+Nenhuma correção de grupo passou de ~100 linhas nem tocou área crítica; não houve rodada extra.
+
+## CI remoto antes da revisão final (achados, `finding-fixer`)
+
+- **`local-delivery` nos PRs 1–4 (origem: grupo 1).** O contexto da imagem do backend é
+  filtrado por lista branca em `scripts/local_app_images.py`, que não incluía
+  `backend/gradle/operational-tasks.gradle.kts`, aplicado pelo build. Confirmado
+  reproduzindo o `docker build`. Correção `8209a6f`: o caminho exato entra na lista, e um
+  teste prova que outro `backend/gradle/*.gradle.kts` continua excluído. Propagado por
+  merge até o grupo 4.
+- **`spec-review-tests` no PR 4 (origem: grupo 4).** As definições em
+  `editorial/parameterized-questions/2026-10/` fixam por SHA-256 os bytes de
+  `NumericGenerator.java`, e a formatação os mudou ("Proveniência divergente"). Correção
+  `55318ee`: o arquivo sai do Spotless (`targetExclude`) e os bytes voltam ao original
+  (blob `37cbf29`). As definições editoriais não foram alteradas, e não há outro arquivo
+  formatado com bytes fixados.
+
+## Revisão final (`spec-reviewer`, Claude Opus 5.5, esforço do perfil)
+
+- **Base e heads:** épica `42c22a5`, `origin/main` `2672f9a`, topos `57f40d7`
+  (cadeia A) e `cd7c86b` (cadeia B).
+- **Cobertura:** os diffs completos das duas cadeias contra a épica, a épica contra a
+  `main` e a simulação de merge entre as cadeias e a `main` (`git merge-tree`). Os
+  commits gerados `096fe8d` e `1b64ba0` e o `package-lock.json` foram vistos por
+  amostragem e por regra. Sem execução de testes.
+- **Resultado:** 0 bloqueador, 0 alto, 1 médio, 6 baixos.
+
+| Achado | Severidade | Triagem |
+| --- | --- | --- |
+| M1: exceção nominal da regra de `fetch` (`native-lesson.ts`) sem registro no design e no cenário do spec | médio | corrigido (`809554f`, D9/D10 e cenário) |
+| B1: D10 descrevia `requestJson`/`interpret`; o código tem `withAbortScope`/`apiFetch` | baixo | corrigido (`809554f`) |
+| B2: tarefa 2.3 desmarcada | baixo | corrigido (`ba6c0e0`, com #266) |
+| B3: `tasks.md` versionado com CRLF, consistente em todas as linhas | baixo | registrado; converter agora conflitaria com todas as branches |
+| B4: `TestPostgres.withCommand` perde o `fsync=off` | baixo | registrado (melhoria de desempenho possível) |
+| B5: `native-lesson.ts` passa a recusar atributos que não são texto; nenhum documento real usa | baixo | registrado (endurecimento declarado no grupo 5) |
+| B6: `test_build_pages.py` só roda na épica depois do merge da `main` (job `scripts-tests`) | baixo | condição da integração: merge da `main` antes do `[SPEC]` |
+| B7: a chave de cache Gradle dos jobs não inclui `backend/gradle/operational-tasks.gradle.kts` | baixo | registrado (só cache) |
+
+### Reverificação do delta (`spec-reviewer`, uma rodada)
+
+- **Delta:**
+  - cadeia A `57f40d7` → `99abdd9`: só a tarefa 2.3;
+  - cadeia B, comparada com a união dos heads revisados: a resolução de
+    `.git-blame-ignore-revs`, o `809554f` e a tarefa 2.3;
+  - `backend` e `scripts` idênticos entre `99abdd9` e `ddd3acf`.
+- **Resultado:** M1, B1, B2 e a integração resolvidos, sem bloqueador.
+  `.git-blame-ignore-revs` contém exatamente os dois SHAs completos, e o blob de
+  `NumericGenerator.java` é `37cbf29`.
+- **Divergência anotada:** o revisor leu o `tasks.md` como LF. O coordenador confirmou
+  com `git cat-file`: o blob tem CRLF em todas as linhas (125 CR em `ddd3acf`). Permanece
+  o B3.
+
+## CI local (`act`)
+
+| Job | Resultado |
+| --- | --- |
+| `frontend` (grupos 5, 6, 7) | `npm ci`, `lint`, `typecheck`, `format:check` (7), `test` e `build` passaram no Linux. O `test:e2e` falha por tempo limite em conjuntos que variam a cada execução (7–8 testes, com 6 workers); a épica sem mudanças falha igual no `act`, então o e2e não é declarado verificado pelo `act` |
+| `backend` | não verificado: no Windows o `act` copia o repositório sem bit de execução (`./gradlew: Permission denied`). Com `--bind`, o contêiner foi morto com código 137 enquanto outro `act` do mesmo job rodava; execuções simultâneas do mesmo job derrubam uma à outra |
+| `practice-admin-browser`, `identity-browser`, `local-delivery` | não executados no `act` (Gradle + Testcontainers dentro do contêiner, mesma limitação) |
+
+## Teste de ponta a ponta local (Windows; estado final = topos das duas cadeias + `origin/main`)
+
+- `openspec validate build-and-test-quality --strict`: válido.
+- `./gradlew clean build`: verde, 366 testes passaram e 1 foi pulado (link simbólico no
+  Windows); `spotlessCheck` e `-Werror` ativos.
+- `python3 -m unittest discover -s scripts/tests`: 124 testes OK no Linux (`python:3.14`).
+  `test_local_app*.py`: 24 OK. No Windows, testes de `scripts/` falham por ambiente
+  (links simbólicos, identidade do Git), sem relação com a spec.
+- Frontend:
+  - `npm run lint`, `typecheck`, `format:check` e `build`: ok;
+  - Vitest 381/381;
+  - `test:coverage`: instruções 90,6%, sem limite.
+- Playwright:
+  - padrão 67/67;
+  - `test:identity` 24/24;
+  - `test:parameterized` 5/5;
+  - `test:admin` 1/1 (também com `CI=1`, sem `--offline`);
+  - `test:topic-practice` 30/30 (Chromium e Edge).
+- **Medições do grupo 3** (`gradle test --rerun-tasks`, mesma máquina): 457 s e 29
+  contêineres PostgreSQL antes; 360 s e 7 depois. O commit `096fe8d` tem bytecode
+  idêntico (`javap -c -p -constants` das 568 classes).
+
+## Issues abertas durante a spec
+
+- #264 (baixo): trocar o construtor depreciado do `Pbkdf2PasswordEncoder` com teste de
+  compatibilidade dos hashes.
+- #266 (baixo): `Instant.now()` sem o relógio da aplicação nas classes de segurança.
+
+## Áreas críticas tocadas
+
+CI (workflows: `pages-checks.yml` removido da `main`, job novo, passos de verificação) e
+o empacotamento local (lista branca do contexto da imagem). Autenticação: só o
+isolamento, sem mudança de parâmetros, do construtor do encoder do ADM. Sem
+migrações, sessão, segredos, transações de produção ou deploy.
+
+## Integração
+
+Pacote aprovado pelo usuário em 2026-11-23. Merges na épica, com merge commit e na ordem
+da cadeia:
+
+| PR | Head | Merge |
+| --- | --- | --- |
+| #265 | `8209a6f` | `af9968a` |
+| #268 | `ba6c0e0` | `4e95246` |
+| #271 | `03b0176` | `d8b4fa7` |
+| #273 | `99abdd9` | `f4c5536` |
+| #275 | `9a685e2` | `3e62808` |
+| #276 | `809554f` | `ed832cb` |
+| #278 | `76fecfe` | `b5cea9e` (local) |
+| #279 | `6e0f005` | `63bec18` |
+
+- **#278:** o GitHub acusou conflito em `.git-blame-ignore-revs`. Há três bases
+  comuns (`99abdd9`, `809554f` e `5a6fa8a`), e com a base `809554f` isolada o arquivo
+  conflita. O merge recursivo do Git é limpo e gera a árvore `5a6fa8a`, idêntica à do
+  head revisado `76fecfe`. O merge foi feito localmente com o head exato do PR e
+  publicado na épica, sem push forçado; o GitHub registrou o PR como integrado.
+- **Depois do #279:** a épica tem a árvore `e9417063…`, e
+  `git diff --stat ddd3acf <épica>` mostra só este `review.md`.
+- **CI remoto:** os checks de `pull_request` dos 8 heads estavam verdes. No #268, o
+  run de `push` (`45133668676`) falhou em `backend` e `local-delivery` por um 429 do
+  Maven Central. Os jobs foram repetidos, e o `backend` passou.
+
+### Merge da `main` (`2672f9a`, spec `remove-legacy-review-gate`)
+
+- **Merge:** `968fe0e`, árvore `70c9062`, sem conflito. Os dois lados mexeram em
+  `application.yml` e `.gitignore`, em trechos que não se sobrepõem.
+- **Testes:** a árvore é idêntica à do estado validado no teste de ponta a ponta
+  (`265ae5e`, as duas cadeias mais a `main` `2672f9a`), exceto por este `review.md`. Os
+  resultados da seção acima valem para ela.
+- **`act`:** o job novo `scripts-tests` passou com 124 testes. Os demais jobs têm as
+  mesmas limitações da seção de CI local.
+- **Reverificação do delta** (`spec-reviewer`, Claude Opus 5.5):
+  - nenhum achado;
+  - `git diff 63bec18 968fe0e` é igual a `git diff 9dea050 2672f9a`, ou seja, tudo o
+    que a `main` mudou;
+  - os jobs `frontend` (com `lint`, `typecheck` e `format:check`), `scripts-tests` e
+    `practice-admin-browser` convivem sem duplicação;
+  - nenhuma referência ativa a `pages-checks.yml`, `spec-review.yml` ou
+    `check_spec_review.py`;
+  - B6 resolvido: o `test_build_pages.py` roda no job `scripts-tests`.
+- **Limites:** o revisor não rodou testes. O mérito dos arquivos vindos da `main` não
+  entrou nesta revisão, que só confirmou que chegaram iguais.
+
+### Merge da `main` (`98c33b3`, spec `backend-http-boundaries`, #281)
+
+A `main` avançou depois de o `[SPEC]` (#282) ser aberto, e o merge passou a conflitar.
+
+- **Causa dos conflitos:** os commits só de formatação (`096fe8d` e `1b64ba0`) geravam
+  cerca de 63 conflitos com as mudanças de rotas e erros da spec C.
+- **Resolução:**
+  - a base `2672f9a` e a `main` `98c33b3` foram formatadas com a configuração da épica,
+    gerando as árvores `f23a08e` e `c8531f5`;
+  - o merge de 3 vias foi refeito por arquivo sobre essas versões formatadas;
+  - os arquivos novos da `main` entraram formatados e os 3 removidos saíram;
+  - as 5 renomeações foram aplicadas.
+- **Conflitos reais restantes:**
+  - 9 testes HTTP, só de imports: pacote renomeado pela `main` mais `TestPostgres`;
+  - `frontend/src/attempt-api.ts`: o cliente da épica (`withAbortScope`/`apiFetch`) mais
+    o `code` que a `main` acrescentou ao `AttemptApiError`.
+- **Merge:** `787b2b9`, árvore `9889f8c`.
+- **Testes do merge:**
+  - `./gradlew clean build` verde, com 404 testes e 1 pulado;
+  - frontend: `lint`, `typecheck`, `format:check` e `build` ok, Vitest 382/382;
+  - `act` `scripts-tests`: 124 OK;
+  - Playwright: padrão 67/67, `admin` 1/1, `topic-practice` 30/30.
+  - `identity` e `parameterized` não rodaram localmente: a porta 18080 estava ocupada por
+    um contêiner de outro projeto. Ficam cobertas pelo job `identity-browser` do CI no #282.
+- **Reverificação do delta** (`spec-reviewer`, Claude Opus 5.5): 0 bloqueador, 0 alto,
+  1 médio.
+  - `git diff f23a08e 74d3fda` equivale a `git diff c8531f5 787b2b9`: as mudanças da
+    épica foram preservadas sobre a `main`.
+  - Os arquivos fora dos formatadores são idênticos aos da `main`.
+  - O blob de `NumericGenerator.java` continua `37cbf29`.
+
+| Achado | Severidade | Triagem |
+| --- | --- | --- |
+| M1: 4 testes da `main` com contêiner próprio e imagem literal (`LegacySessionPrincipalTests`, `ParameterizedGenerationDisabledHttpTests`, `ApiRouteCoverageTests`, `HttpRouteMatrixTests`), contra o requisito do PostgreSQL de teste compartilhado | médio | `finding-fixer` confirmou e corrigiu em `ae4fe20`: as 4 classes usam `TestPostgres.newDatabase()`; build verde com 404 testes; `postgres:18` só aparece em `TestPostgres.IMAGE` |
+
+O M1 é médio, com 12 linhas a mais e 24 a menos, só em testes. Pela seção 3, não tem nova
+rodada de revisão.
+
+### Merge da `main` (`371b2b3`, arquivamento de `backend-http-boundaries`, #283)
+
+- **Merge:** `b6588eb`, sem conflito. `git diff 4cbe99b b6588eb` é idêntico byte a byte
+  a `git diff 98c33b3 371b2b3`: 8 arquivos, todos em `openspec/`, sem tocar nesta spec.
+  `openspec validate --all --strict`: 32 itens válidos.
+- **Reverificação** (`spec-reviewer`, Claude Opus 5.5) deste merge, da correção M1
+  (`ae4fe20`) e do registro acima (`4cbe99b`): nenhum achado.
+  - O M1 só troca o contêiner pelo `TestPostgres.newDatabase()`, sem mudar asserções.
+  - Nenhuma das 4 classes para, pausa ou reconfigura o servidor.
+  - Os SHAs registrados conferem.
+- **Head revisado para a integração em `main`:** `b6588eb`. Depois dele muda só este
+  `review.md`.

@@ -21,7 +21,9 @@ import org.springframework.stereotype.Component;
 public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, AccessDeniedHandler {
     private final ApiRoutes routes;
 
-    public ApiAccessFailureHandler(ApiRoutes routes) { this.routes = routes; }
+    public ApiAccessFailureHandler(ApiRoutes routes) {
+        this.routes = routes;
+    }
 
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)

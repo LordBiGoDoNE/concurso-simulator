@@ -1,6 +1,10 @@
 package br.com.concursosimulator.platform;
 
+import static org.assertj.core.api.Assertions.assertThat;
+
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -14,10 +18,6 @@ import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
-import org.testcontainers.postgresql.PostgreSQLContainer;
-import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  * Todo mapeamento HTTP de controller tem exatamente uma rota declarada, e toda rota declarada é atendida
@@ -28,10 +28,11 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @SpringBootTest
 @ActiveProfiles("local")
-@Testcontainers
 class ApiRouteCoverageTests {
-    @Container static final PostgreSQLContainer PG = new PostgreSQLContainer("postgres:18.6");
-    @DynamicPropertySource static void properties(DynamicPropertyRegistry r) {
+    static final TestDatabase PG = TestPostgres.newDatabase();
+
+    @DynamicPropertySource
+    static void properties(DynamicPropertyRegistry r) {
         r.add("spring.datasource.url", PG::getJdbcUrl);
         r.add("spring.datasource.username", PG::getUsername);
         r.add("spring.datasource.password", PG::getPassword);
@@ -42,8 +43,12 @@ class ApiRouteCoverageTests {
     /** Mapeamentos do próprio Spring Boot, fora da API. */
     static final Set<String> FRAMEWORK_MAPPINGS = Set.of("/error");
 
-    @Autowired ApiRoutes routes;
-    @Autowired @Qualifier("requestMappingHandlerMapping") RequestMappingHandlerMapping mappings;
+    @Autowired
+    ApiRoutes routes;
+
+    @Autowired
+    @Qualifier("requestMappingHandlerMapping")
+    RequestMappingHandlerMapping mappings;
 
     @Test
     void everyControllerMappingHasExactlyOneDeclaredRouteAndEveryRouteIsServed() {
@@ -57,7 +62,9 @@ class ApiRouteCoverageTests {
             for (var pattern : info.getPatternValues()) {
                 if (FRAMEWORK_MAPPINGS.contains(pattern)) continue;
                 var methods = info.getMethodsCondition().getMethods();
-                assertThat(methods).as("mapeamento sem método explícito: %s %s", handler, pattern).isNotEmpty();
+                assertThat(methods)
+                        .as("mapeamento sem método explícito: %s %s", handler, pattern)
+                        .isNotEmpty();
                 for (var method : methods) {
                     var key = method.name() + " " + ApiRoutes.normalized(pattern, "{}");
                     mapped.add(key);
@@ -69,15 +76,22 @@ class ApiRouteCoverageTests {
         var orphan = new TreeSet<>(declared.keySet());
         orphan.removeAll(mapped);
         orphan.removeAll(FRAMEWORK);
-        assertThat(orphan).as("rotas declaradas sem controller nem filtro do framework").isEmpty();
-        assertThat(declared.keySet()).as("rotas do framework precisam continuar declaradas").containsAll(FRAMEWORK);
+        assertThat(orphan)
+                .as("rotas declaradas sem controller nem filtro do framework")
+                .isEmpty();
+        assertThat(declared.keySet())
+                .as("rotas do framework precisam continuar declaradas")
+                .containsAll(FRAMEWORK);
     }
 
     @Test
     void frameworkListOnlyNamesRoutesWithoutController() {
         var mapped = new TreeSet<String>();
-        mappings.getHandlerMethods().forEach((info, handler) -> info.getPatternValues().forEach(pattern ->
-                info.getMethodsCondition().getMethods().forEach(m -> mapped.add(m.name() + " " + pattern))));
+        mappings.getHandlerMethods()
+                .forEach((info, handler) -> info.getPatternValues()
+                        .forEach(pattern -> info.getMethodsCondition()
+                                .getMethods()
+                                .forEach(m -> mapped.add(m.name() + " " + pattern))));
         assertThat(mapped).doesNotContainAnyElementsOf(FRAMEWORK);
         assertThat(List.copyOf(mapped)).isNotEmpty();
     }

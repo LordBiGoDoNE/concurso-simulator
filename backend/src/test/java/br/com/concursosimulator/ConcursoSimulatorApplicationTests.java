@@ -1,26 +1,30 @@
 package br.com.concursosimulator;
 
-import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.TestMethodOrder;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.jdbc.core.JdbcTemplate;
-import org.flywaydb.core.Flyway;
-import org.yaml.snakeyaml.Yaml;
-import java.nio.file.Files;
-import java.nio.file.Path;
+import static org.assertj.core.api.Assertions.assertThat;
+
+import br.com.concursosimulator.identity.application.UserPrincipal;
+import br.com.concursosimulator.support.TestPostgres;
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
+import java.nio.file.Files;
+import java.nio.file.Path;
 import java.time.Duration;
-import java.util.Map;
-import java.util.List;
-import java.util.UUID;
 import java.util.Base64;
-import br.com.concursosimulator.identity.application.UserPrincipal;
+import java.util.List;
+import java.util.Map;
+import java.util.UUID;
+import org.flywaydb.core.Flyway;
+import org.junit.jupiter.api.MethodOrderer;
+import org.junit.jupiter.api.Order;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.TestMethodOrder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextImpl;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
@@ -28,33 +32,48 @@ import org.springframework.session.Session;
 import org.springframework.session.SessionRepository;
 import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.session.web.http.SessionRepositoryFilter;
-import org.springframework.boot.web.servlet.DelegatingFilterProxyRegistrationBean;
-import static org.assertj.core.api.Assertions.assertThat;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
+import org.yaml.snakeyaml.Yaml;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ConcursoSimulatorApplicationTests {
     @Container
-    static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6")
-            .withUrlParam("connectTimeout", "2").withUrlParam("socketTimeout", "3");
+    static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer(TestPostgres.IMAGE)
+            .withUrlParam("connectTimeout", "2")
+            .withUrlParam("socketTimeout", "3");
 
     @Value("${local.server.port}")
     int port;
-    @Autowired JdbcTemplate jdbc;
-    @Autowired Flyway flyway;
-    @Autowired jakarta.persistence.EntityManagerFactory entities;
-    @Autowired org.springframework.core.env.Environment environment;
-    @Autowired JdbcIndexedSessionRepository sessions;
-    @Autowired org.springframework.context.ApplicationContext context;
-    @Autowired jakarta.servlet.ServletContext servlet;
-    final HttpClient client = HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
+
+    @Autowired
+    JdbcTemplate jdbc;
+
+    @Autowired
+    Flyway flyway;
+
+    @Autowired
+    jakarta.persistence.EntityManagerFactory entities;
+
+    @Autowired
+    org.springframework.core.env.Environment environment;
+
+    @Autowired
+    JdbcIndexedSessionRepository sessions;
+
+    @Autowired
+    org.springframework.context.ApplicationContext context;
+
+    @Autowired
+    jakarta.servlet.ServletContext servlet;
+
+    final HttpClient client =
+            HttpClient.newBuilder().connectTimeout(Duration.ofSeconds(2)).build();
 
     @DynamicPropertySource
     static void databaseProperties(DynamicPropertyRegistry registry) {
@@ -62,20 +81,35 @@ class ConcursoSimulatorApplicationTests {
         registry.add("spring.datasource.username", POSTGRES::getUsername);
         registry.add("spring.datasource.password", POSTGRES::getPassword);
     }
+
     @Test
     @Order(1)
     void contextLoads() {
         assertThat(entities.getProperties().get("hibernate.hbm2ddl.auto")).isEqualTo("validate");
-        assertThat(environment.getProperty("spring.jpa.open-in-view", Boolean.class)).isFalse();
-        assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);
+        assertThat(environment.getProperty("spring.jpa.open-in-view", Boolean.class))
+                .isFalse();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class))
+                .isEqualTo(1);
         assertThat(flyway.migrate().migrationsExecuted).isZero();
-        assertThat(context.getBeansOfType(br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal.PersistenceOnly.class)).isEmpty();
-        assertThat(jdbc.queryForObject("SELECT count(*) FROM pq_family",Integer.class)).isZero();
-        assertThat(jdbc.queryForObject("SELECT count(*) FROM pq_decision",Integer.class)).isZero();
-        assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class)).isEqualTo(1);
-        assertThat(context.getBeansOfType(br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal.PersistenceOnly.class)).isEmpty();
-        assertThat(context.getBeansOfType(br.com.concursosimulator.questionbank.application.port.QuestionInventory.class)).isEmpty();
-        assertThat(jdbc.queryForObject("SELECT count(*) FROM qb_question", Integer.class)).isZero();
+        assertThat(context.getBeansOfType(
+                        br.com.concursosimulator.parameterization.infrastructure.local.TemplateLocal.PersistenceOnly
+                                .class))
+                .isEmpty();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM pq_family", Integer.class))
+                .isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM pq_decision", Integer.class))
+                .isZero();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM application_marker", Integer.class))
+                .isEqualTo(1);
+        assertThat(context.getBeansOfType(
+                        br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal.PersistenceOnly
+                                .class))
+                .isEmpty();
+        assertThat(context.getBeansOfType(
+                        br.com.concursosimulator.questionbank.application.port.QuestionInventory.class))
+                .isEmpty();
+        assertThat(jdbc.queryForObject("SELECT count(*) FROM qb_question", Integer.class))
+                .isZero();
     }
 
     @Test
@@ -95,10 +129,13 @@ class ConcursoSimulatorApplicationTests {
         assertThat(denied.headers().firstValue("Access-Control-Allow-Origin")).isEmpty();
         assertThat(get("/api/v1/questions", null).statusCode()).isEqualTo(403);
         assertThat(get("/actuator/health", null).statusCode()).isEqualTo(403);
-        var preflight = client.send(HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + "/api/v1/status"))
-                .method("OPTIONS", HttpRequest.BodyPublishers.noBody())
-                .header("Origin", "http://localhost:5173")
-                .header("Access-Control-Request-Method", "GET").build(), HttpResponse.BodyHandlers.ofString());
+        var preflight = client.send(
+                HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + "/api/v1/status"))
+                        .method("OPTIONS", HttpRequest.BodyPublishers.noBody())
+                        .header("Origin", "http://localhost:5173")
+                        .header("Access-Control-Request-Method", "GET")
+                        .build(),
+                HttpResponse.BodyHandlers.ofString());
         assertThat(preflight.statusCode()).isEqualTo(200);
     }
 
@@ -113,12 +150,16 @@ class ConcursoSimulatorApplicationTests {
         Session after = sessions.findById(id);
         assertThat(after.getLastAccessedTime()).isEqualTo(accessed);
         assertThat(context.getBeansOfType(SessionRepositoryFilter.class)).hasSize(1);
-        var registration = context.getBean("sessionRepositoryFilterRegistration", DelegatingFilterProxyRegistrationBean.class);
+        var registration =
+                context.getBean("sessionRepositoryFilterRegistration", DelegatingFilterProxyRegistrationBean.class);
         assertThat(registration.getOrder()).isEqualTo(SessionRepositoryFilter.DEFAULT_ORDER);
-        var securityRegistration = context.getBean("securityFilterChainRegistration", DelegatingFilterProxyRegistrationBean.class);
+        var securityRegistration =
+                context.getBean("securityFilterChainRegistration", DelegatingFilterProxyRegistrationBean.class);
         assertThat(registration.getOrder()).isLessThan(securityRegistration.getOrder());
         assertThat(servlet.getFilterRegistrations().keySet().stream()
-                .filter(name -> name.toLowerCase(java.util.Locale.ROOT).contains("session")).toList()).hasSize(1);
+                        .filter(name -> name.toLowerCase(java.util.Locale.ROOT).contains("session"))
+                        .toList())
+                .hasSize(1);
     }
 
     @Test
@@ -134,13 +175,18 @@ class ConcursoSimulatorApplicationTests {
         SessionRepository<Session> repository = (SessionRepository) sessions;
         var session = repository.createSession();
         session.setLastAccessedTime(java.time.Instant.now().minusSeconds(60));
-        session.setAttribute(HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
+        session.setAttribute(
+                HttpSessionSecurityContextRepository.SPRING_SECURITY_CONTEXT_KEY,
                 new SecurityContextImpl(UsernamePasswordAuthenticationToken.authenticated(
                         new UserPrincipal(UUID.randomUUID()), null, List.of())));
         repository.save(session);
         String unknown = UUID.randomUUID().toString();
-        return List.of("SESSION=" + session.getId(), "SESSION=" + unknown,
-                "SESSION=" + Base64.getEncoder().encodeToString(unknown.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
+        return List.of(
+                "SESSION=" + session.getId(),
+                "SESSION=" + unknown,
+                "SESSION="
+                        + Base64.getEncoder()
+                                .encodeToString(unknown.getBytes(java.nio.charset.StandardCharsets.UTF_8)));
     }
 
     void assertReadinessForEveryCookie(int code, List<String> readinessCookies) throws Exception {
@@ -149,22 +195,28 @@ class ConcursoSimulatorApplicationTests {
         cookies.addAll(readinessCookies);
         for (String cookie : cookies) {
             var request = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + "/api/v1/status"))
-                    .timeout(Duration.ofSeconds(10)).header("Origin", "http://localhost:5173").GET();
+                    .timeout(Duration.ofSeconds(10))
+                    .header("Origin", "http://localhost:5173")
+                    .GET();
             if (cookie != null) request.header("Cookie", cookie);
             long start = System.nanoTime();
             var response = client.send(request.build(), HttpResponse.BodyHandlers.ofString());
             assertThat(Duration.ofNanos(System.nanoTime() - start)).isLessThan(Duration.ofSeconds(8));
             assertContract(response, code);
             assertThat(response.headers().allValues("Set-Cookie")).isEmpty();
-            assertThat(response.headers().firstValue("Access-Control-Allow-Origin")).contains("http://localhost:5173");
-            assertThat(response.headers().firstValue("Access-Control-Allow-Credentials")).isEmpty();
+            assertThat(response.headers().firstValue("Access-Control-Allow-Origin"))
+                    .contains("http://localhost:5173");
+            assertThat(response.headers().firstValue("Access-Control-Allow-Credentials"))
+                    .isEmpty();
             assertThat(response.headers().firstValue("X-Content-Type-Options")).contains("nosniff");
             assertThat(response.headers().firstValue("X-Frame-Options")).contains("DENY");
         }
     }
 
     HttpResponse<String> get(String path, String origin) throws Exception {
-        var request = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + path)).timeout(Duration.ofSeconds(10)).GET();
+        var request = HttpRequest.newBuilder(URI.create("http://127.0.0.1:" + port + path))
+                .timeout(Duration.ofSeconds(10))
+                .GET();
         if (origin != null) request.header("Origin", origin);
         return client.send(request.build(), HttpResponse.BodyHandlers.ofString());
     }

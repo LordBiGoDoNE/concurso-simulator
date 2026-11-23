@@ -11,154 +11,361 @@ public final class Attempt {
     public static final String POLICY = "uniform-v1";
     public static final int PRACTICE_MAXIMUM = 5;
     private static final int RESTORED_PRACTICE_MAXIMUM = 25;
-    public record Item(UUID id, AttemptQuestion question, List<UUID> optionOrder, Map<String,String> parameters) {
+
+    public record Item(UUID id, AttemptQuestion question, List<UUID> optionOrder, Map<String, String> parameters) {
         public Item {
-            Objects.requireNonNull(id); Objects.requireNonNull(question);
-            optionOrder = List.copyOf(optionOrder); parameters = Map.copyOf(parameters);
-            var ids = question.content().alternatives().stream().map(QuestionContent.Alternative::id).toList();
-            var expected=question.source().capture()==null?Map.<String,String>of():question.source().capture().parameterStrings();
-            if (!parameters.equals(expected) || optionOrder.size() != ids.size() || !new HashSet<>(optionOrder).equals(new HashSet<>(ids)))
+            Objects.requireNonNull(id);
+            Objects.requireNonNull(question);
+            optionOrder = List.copyOf(optionOrder);
+            parameters = Map.copyOf(parameters);
+            var ids = question.content().alternatives().stream()
+                    .map(QuestionContent.Alternative::id)
+                    .toList();
+            var expected = question.source().capture() == null
+                    ? Map.<String, String>of()
+                    : question.source().capture().parameterStrings();
+            if (!parameters.equals(expected)
+                    || optionOrder.size() != ids.size()
+                    || !new HashSet<>(optionOrder).equals(new HashSet<>(ids)))
                 throw new IllegalArgumentException("Ordem/parâmetros inválidos");
         }
     }
     /** Somente persistência interna; contém material privado de correção. */
-    public record Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt,
-                           Instant finishedAt, String policy, List<Item> items, Map<UUID,UUID> answers, long version, int format, QuestionPurpose purpose, Topic practiceTopic) {
-        public Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt, Instant finishedAt,
-                        String policy, List<Item> items, Map<UUID,UUID> answers, long version, int format) {
-            this(id,owner,composition,createdAt,finishedAt,policy,items,answers,version,format,QuestionPurpose.SIMULADO,null);
+    public record Snapshot(
+            UUID id,
+            AttemptOwner owner,
+            Composition composition,
+            Instant createdAt,
+            Instant finishedAt,
+            String policy,
+            List<Item> items,
+            Map<UUID, UUID> answers,
+            long version,
+            int format,
+            QuestionPurpose purpose,
+            Topic practiceTopic) {
+        public Snapshot(
+                UUID id,
+                AttemptOwner owner,
+                Composition composition,
+                Instant createdAt,
+                Instant finishedAt,
+                String policy,
+                List<Item> items,
+                Map<UUID, UUID> answers,
+                long version,
+                int format) {
+            this(
+                    id,
+                    owner,
+                    composition,
+                    createdAt,
+                    finishedAt,
+                    policy,
+                    items,
+                    answers,
+                    version,
+                    format,
+                    QuestionPurpose.SIMULADO,
+                    null);
         }
-        public Snapshot(UUID id, AttemptOwner owner, Composition composition, Instant createdAt, Instant finishedAt,
-                        String policy, List<Item> items, Map<UUID,UUID> answers, long version) {
-            this(id,owner,composition,createdAt,finishedAt,policy,items,answers,version,2);
+
+        public Snapshot(
+                UUID id,
+                AttemptOwner owner,
+                Composition composition,
+                Instant createdAt,
+                Instant finishedAt,
+                String policy,
+                List<Item> items,
+                Map<UUID, UUID> answers,
+                long version) {
+            this(id, owner, composition, createdAt, finishedAt, policy, items, answers, version, 2);
         }
-        public Snapshot { items = List.copyOf(items); answers = Map.copyOf(answers); }
+
+        public Snapshot {
+            items = List.copyOf(items);
+            answers = Map.copyOf(answers);
+        }
     }
+
     public record Reference(String name, URI url) {}
-    public record ItemView(UUID id, UUID questionId, UUID revisionId, QuestionClassification classification,
-                           TextContent statement, List<QuestionContent.Alternative> alternatives,
-                           List<Reference> references, UUID selectedAlternativeId) {}
-    public record View(UUID id, TargetRole role, Topic practiceTopic, Instant createdAt, Instant finishedAt, long version, List<ItemView> items) {}
+
+    public record ItemView(
+            UUID id,
+            UUID questionId,
+            UUID revisionId,
+            QuestionClassification classification,
+            TextContent statement,
+            List<QuestionContent.Alternative> alternatives,
+            List<Reference> references,
+            UUID selectedAlternativeId) {}
+
+    public record View(
+            UUID id,
+            TargetRole role,
+            Topic practiceTopic,
+            Instant createdAt,
+            Instant finishedAt,
+            long version,
+            List<ItemView> items) {}
+
     public record Correction(ItemView item, UUID correctAlternativeId, TextContent resolution) {}
+
     public record Result(int total, int correct, int wrong, int blank, BigDecimal percentage, List<Correction> items) {}
+
     public static final class Unavailable extends RuntimeException {}
     /** Comando de resposta com item ou alternativa que não pertencem à tentativa: erro do cliente. */
     public static final class InvalidAnswer extends RuntimeException {
-        public InvalidAnswer(String message) { super(message); }
+        public InvalidAnswer(String message) {
+            super(message);
+        }
     }
+
     public static final class Conflict extends RuntimeException {
-        public Conflict() { super("Estado/versão da tentativa divergente"); }
+        public Conflict() {
+            super("Estado/versão da tentativa divergente");
+        }
     }
+
     private Snapshot state;
+
     private Attempt(Snapshot state) {
-        Objects.requireNonNull(state.id()); Objects.requireNonNull(state.owner());
+        Objects.requireNonNull(state.id());
+        Objects.requireNonNull(state.owner());
         Objects.requireNonNull(state.createdAt());
         Objects.requireNonNull(state.purpose());
-        var composition=state.composition();
-        boolean byTopic=state.format()==4;
-        if (state.purpose()==QuestionPurpose.PRATICA_AULA) {
-            if ((!byTopic && state.format()!=3) || state.practiceTopic()==null
-                    || state.items().isEmpty() || state.items().size()>(byTopic ? RESTORED_PRACTICE_MAXIMUM : 5)
-                    || (byTopic ? composition!=null : composition==null || composition.useParameterizedQuestions()
-                    || composition.disciplines().size()!=1
-                    || !composition.disciplines().containsKey(state.practiceTopic().discipline())
-                    || !composition.disciplines().get(state.practiceTopic().discipline()).topics().equals(Set.of(state.practiceTopic()))))
+        var composition = state.composition();
+        boolean byTopic = state.format() == 4;
+        if (state.purpose() == QuestionPurpose.PRATICA_AULA) {
+            if ((!byTopic && state.format() != 3)
+                    || state.practiceTopic() == null
+                    || state.items().isEmpty()
+                    || state.items().size() > (byTopic ? RESTORED_PRACTICE_MAXIMUM : 5)
+                    || (byTopic
+                            ? composition != null
+                            : composition == null
+                                    || composition.useParameterizedQuestions()
+                                    || composition.disciplines().size() != 1
+                                    || !composition
+                                            .disciplines()
+                                            .containsKey(state.practiceTopic().discipline())
+                                    || !composition
+                                            .disciplines()
+                                            .get(state.practiceTopic().discipline())
+                                            .topics()
+                                            .equals(Set.of(state.practiceTopic()))))
                 throw new IllegalArgumentException("Contexto de prática inválido");
-        } else if (state.practiceTopic()!=null || state.format()==3 || byTopic || composition==null) throw new IllegalArgumentException("Modalidade divergente");
-        if ((state.format()<1 || state.format()>4) || state.format()==1 && composition.useParameterizedQuestions()
-                || !POLICY.equals(state.policy()) || state.version() < 0 || !byTopic && state.items().size()!=composition.total())
+        } else if (state.practiceTopic() != null || state.format() == 3 || byTopic || composition == null)
+            throw new IllegalArgumentException("Modalidade divergente");
+        if ((state.format() < 1 || state.format() > 4)
+                || state.format() == 1 && composition.useParameterizedQuestions()
+                || !POLICY.equals(state.policy())
+                || state.version() < 0
+                || !byTopic && state.items().size() != composition.total())
             throw new IllegalArgumentException("Snapshot de tentativa inválido");
-        var itemIds = new HashSet<UUID>(); var questions = new HashSet<UUID>();
-        var counts = new EnumMap<Discipline,Integer>(Discipline.class);
+        var itemIds = new HashSet<UUID>();
+        var questions = new HashSet<UUID>();
+        var counts = new EnumMap<Discipline, Integer>(Discipline.class);
         for (var item : state.items()) {
-            if (item.question().purpose()!=state.purpose() || state.practiceTopic()!=null
-                    && item.question().content().classification().topic()!=state.practiceTopic())
+            if (item.question().purpose() != state.purpose()
+                    || state.practiceTopic() != null
+                            && item.question().content().classification().topic() != state.practiceTopic())
                 throw new IllegalArgumentException("Questão fora do acervo/assunto da realização");
-            if ((byTopic || !composition.useParameterizedQuestions()) && item.question().source().kind()!=QuestionSource.Kind.FIXED)
+            if ((byTopic || !composition.useParameterizedQuestions())
+                    && item.question().source().kind() != QuestionSource.Kind.FIXED)
                 throw new IllegalArgumentException("Geração não solicitada");
-            if (!itemIds.add(item.id()) || !questions.add(item.question().questionId()) || !byTopic && !composition.accepts(item.question()))
+            if (!itemIds.add(item.id())
+                    || !questions.add(item.question().questionId())
+                    || !byTopic && !composition.accepts(item.question()))
                 throw new IllegalArgumentException("Itens da composição inválidos");
             counts.merge(item.question().content().classification().discipline(), 1, Integer::sum);
         }
-        if (!byTopic) composition.disciplines().forEach((d,p) -> {
-            if (counts.getOrDefault(d,0) != p.quantity()) throw new IllegalArgumentException("Quantidade divergente");
-        });
+        if (!byTopic)
+            composition.disciplines().forEach((d, p) -> {
+                if (counts.getOrDefault(d, 0) != p.quantity())
+                    throw new IllegalArgumentException("Quantidade divergente");
+            });
         this.state = state;
         state.answers().forEach(this::validateAnswer);
-        if (state.finishedAt() != null && (state.finishedAt().isBefore(state.createdAt())
-                || expiresAt() != null && !state.finishedAt().isBefore(expiresAt())))
+        if (state.finishedAt() != null
+                && (state.finishedAt().isBefore(state.createdAt())
+                        || expiresAt() != null && !state.finishedAt().isBefore(expiresAt())))
             throw new IllegalArgumentException("Data de conclusão inválida");
     }
+
     public static Attempt start(UUID id, AttemptOwner owner, Composition composition, Instant at, List<Item> items) {
-        return new Attempt(new Snapshot(id,owner,composition,at,null,POLICY,items,Map.of(),0));
+        return new Attempt(new Snapshot(id, owner, composition, at, null, POLICY, items, Map.of(), 0));
     }
+
     public static Attempt startPractice(UUID id, AttemptOwner owner, Topic topic, Instant at, List<Item> items) {
-        if (items.size()>PRACTICE_MAXIMUM) throw new IllegalArgumentException("Uma nova prática admite até cinco questões");
-        return new Attempt(new Snapshot(id,owner,null,at,null,POLICY,items,Map.of(),0,4,QuestionPurpose.PRATICA_AULA,topic));
+        if (items.size() > PRACTICE_MAXIMUM)
+            throw new IllegalArgumentException("Uma nova prática admite até cinco questões");
+        return new Attempt(new Snapshot(
+                id, owner, null, at, null, POLICY, items, Map.of(), 0, 4, QuestionPurpose.PRATICA_AULA, topic));
     }
-    public void requirePurpose(QuestionPurpose purpose) { if (state.purpose()!=purpose) throw new Unavailable(); }
-    public static Attempt restore(Snapshot snapshot) { return new Attempt(snapshot); }
-    public Snapshot snapshot() { return state; }
+
+    public void requirePurpose(QuestionPurpose purpose) {
+        if (state.purpose() != purpose) throw new Unavailable();
+    }
+
+    public static Attempt restore(Snapshot snapshot) {
+        return new Attempt(snapshot);
+    }
+
+    public Snapshot snapshot() {
+        return state;
+    }
+
     public Instant expiresAt() {
-        return state.owner().kind() == AttemptOwner.Kind.VISITOR ? state.createdAt().plus(Duration.ofHours(24)) : null;
+        return state.owner().kind() == AttemptOwner.Kind.VISITOR
+                ? state.createdAt().plus(Duration.ofHours(24))
+                : null;
     }
+
     public void requireAccessible(AttemptOwner actor, Instant now) {
-        if (!state.owner().equals(actor) || now.isBefore(state.createdAt()) || expiresAt() != null && !now.isBefore(expiresAt()))
-            throw new Unavailable();
+        if (!state.owner().equals(actor)
+                || now.isBefore(state.createdAt())
+                || expiresAt() != null && !now.isBefore(expiresAt())) throw new Unavailable();
     }
+
     public void answer(AttemptOwner actor, Instant now, long expectedVersion, UUID itemId, UUID alternativeId) {
-        editable(actor,now,expectedVersion); validateAnswer(itemId,alternativeId);
+        editable(actor, now, expectedVersion);
+        validateAnswer(itemId, alternativeId);
         var answers = new HashMap<>(state.answers());
-        if (alternativeId == null) answers.remove(itemId); else answers.put(itemId,alternativeId);
-        state = new Snapshot(state.id(),state.owner(),state.composition(),state.createdAt(),null,POLICY,
-                state.items(),answers,Math.addExact(state.version(),1),state.format(),state.purpose(),state.practiceTopic());
+        if (alternativeId == null) answers.remove(itemId);
+        else answers.put(itemId, alternativeId);
+        state = new Snapshot(
+                state.id(),
+                state.owner(),
+                state.composition(),
+                state.createdAt(),
+                null,
+                POLICY,
+                state.items(),
+                answers,
+                Math.addExact(state.version(), 1),
+                state.format(),
+                state.purpose(),
+                state.practiceTopic());
     }
+
     public void finish(AttemptOwner actor, Instant now, long expectedVersion) {
-        editable(actor,now,expectedVersion);
-        state = new Snapshot(state.id(),state.owner(),state.composition(),state.createdAt(),now,POLICY,
-                state.items(),state.answers(),Math.addExact(state.version(),1),state.format(),state.purpose(),state.practiceTopic());
+        editable(actor, now, expectedVersion);
+        state = new Snapshot(
+                state.id(),
+                state.owner(),
+                state.composition(),
+                state.createdAt(),
+                now,
+                POLICY,
+                state.items(),
+                state.answers(),
+                Math.addExact(state.version(), 1),
+                state.format(),
+                state.purpose(),
+                state.practiceTopic());
     }
+
     private void editable(AttemptOwner actor, Instant now, long version) {
-        requireAccessible(actor,now);
+        requireAccessible(actor, now);
         if (state.finishedAt() != null || state.version() != version) throw new Conflict();
     }
+
     private void validateAnswer(UUID itemId, UUID alternativeId) {
-        var item = state.items().stream().filter(i -> i.id().equals(itemId)).findFirst()
+        var item = state.items().stream()
+                .filter(i -> i.id().equals(itemId))
+                .findFirst()
                 .orElseThrow(() -> new InvalidAnswer("Item não pertence à tentativa"));
         if (alternativeId != null && !item.optionOrder().contains(alternativeId))
             throw new InvalidAnswer("Alternativa não pertence ao item");
     }
+
     public View view(AttemptOwner actor, Instant now) {
-        requireAccessible(actor,now);
-        return new View(state.id(),state.purpose()==QuestionPurpose.SIMULADO?state.composition().role():null,state.practiceTopic(),state.createdAt(),state.finishedAt(),state.version(),
+        requireAccessible(actor, now);
+        return new View(
+                state.id(),
+                state.purpose() == QuestionPurpose.SIMULADO
+                        ? state.composition().role()
+                        : null,
+                state.practiceTopic(),
+                state.createdAt(),
+                state.finishedAt(),
+                state.version(),
                 state.items().stream().map(this::viewItem).toList());
     }
+
     private ItemView viewItem(Item item) {
-        var q = item.question(); var c = q.content();
-        var options = item.optionOrder().stream().map(id -> c.alternatives().stream().filter(a -> a.id().equals(id)).findFirst().orElseThrow()).toList();
-        return new ItemView(item.id(),q.questionId(),q.revisionId(),c.classification(),c.statement(),options,
-                c.references().stream().map(r -> new Reference(r.name(),r.url())).toList(),state.answers().get(item.id()));
+        var q = item.question();
+        var c = q.content();
+        var options = item.optionOrder().stream()
+                .map(id -> c.alternatives().stream()
+                        .filter(a -> a.id().equals(id))
+                        .findFirst()
+                        .orElseThrow())
+                .toList();
+        return new ItemView(
+                item.id(),
+                q.questionId(),
+                q.revisionId(),
+                c.classification(),
+                c.statement(),
+                options,
+                c.references().stream()
+                        .map(r -> new Reference(r.name(), r.url()))
+                        .toList(),
+                state.answers().get(item.id()));
     }
+
     public Result result(AttemptOwner actor, Instant now) {
-        requireAccessible(actor,now); if (state.finishedAt() == null) throw new Conflict();
+        requireAccessible(actor, now);
+        if (state.finishedAt() == null) throw new Conflict();
         int correct = 0, blank = 0;
         for (var item : state.items()) {
-            switch (outcome(item)) { case CORRECT -> correct++; case BLANK -> blank++; case WRONG -> {} }
+            switch (outcome(item)) {
+                case CORRECT -> correct++;
+                case BLANK -> blank++;
+                case WRONG -> {}
+            }
         }
         int total = state.items().size();
-        return new Result(total,correct,total-correct-blank,blank,
-                BigDecimal.valueOf(correct * 100L).divide(BigDecimal.valueOf(total),2,RoundingMode.HALF_UP),
-                state.items().stream().map(i -> new Correction(viewItem(i),i.question().content().correctAlternativeId(),i.question().content().resolution())).toList());
+        return new Result(
+                total,
+                correct,
+                total - correct - blank,
+                blank,
+                BigDecimal.valueOf(correct * 100L).divide(BigDecimal.valueOf(total), 2, RoundingMode.HALF_UP),
+                state.items().stream()
+                        .map(i -> new Correction(
+                                viewItem(i),
+                                i.question().content().correctAlternativeId(),
+                                i.question().content().resolution()))
+                        .toList());
     }
+
     public CompletedAttempt evidence(AttemptOwner actor, Instant now) {
-        requireAccessible(actor,now); requirePurpose(QuestionPurpose.SIMULADO); if (state.finishedAt()==null) throw new Conflict();
-        return new CompletedAttempt(state.id(),state.owner(),state.composition().role(),state.finishedAt(),
-                state.items().stream().map(i -> new CompletedAttempt.Item(i.question().questionId(),
-                        i.question().content().classification(),outcome(i))).toList());
+        requireAccessible(actor, now);
+        requirePurpose(QuestionPurpose.SIMULADO);
+        if (state.finishedAt() == null) throw new Conflict();
+        return new CompletedAttempt(
+                state.id(),
+                state.owner(),
+                state.composition().role(),
+                state.finishedAt(),
+                state.items().stream()
+                        .map(i -> new CompletedAttempt.Item(
+                                i.question().questionId(),
+                                i.question().content().classification(),
+                                outcome(i)))
+                        .toList());
     }
+
     private CompletedAttempt.Outcome outcome(Item item) {
-        var answer=state.answers().get(item.id());
-        return answer==null?CompletedAttempt.Outcome.BLANK:answer.equals(item.question().content().correctAlternativeId())
-                ?CompletedAttempt.Outcome.CORRECT:CompletedAttempt.Outcome.WRONG;
+        var answer = state.answers().get(item.id());
+        return answer == null
+                ? CompletedAttempt.Outcome.BLANK
+                : answer.equals(item.question().content().correctAlternativeId())
+                        ? CompletedAttempt.Outcome.CORRECT
+                        : CompletedAttempt.Outcome.WRONG;
     }
 }

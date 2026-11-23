@@ -1,5 +1,9 @@
 package br.com.concursosimulator.identity;
 
+import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
+import static org.mockito.Mockito.*;
+
 import br.com.concursosimulator.identity.application.ResolveExternalIdentityUseCase;
 import br.com.concursosimulator.identity.application.port.IdentityAlreadyLinkedException;
 import br.com.concursosimulator.identity.application.port.IdentityRepository;
@@ -12,19 +16,23 @@ import java.util.UUID;
 import java.util.function.Supplier;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
-import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.assertThatThrownBy;
-import static org.mockito.Mockito.*;
 
 class ResolveExternalIdentityUseCaseTests {
     final IdentityRepository repository = mock(IdentityRepository.class);
     final ExternalIdentity identity = new ExternalIdentity("google", "https://accounts.google.com", "opaque-subject");
     final List<String> events = new ArrayList<>();
     final UnitOfWork transactions = new UnitOfWork() {
-        @Override public <T> T independently(Supplier<T> operation) {
+        @Override
+        public <T> T independently(Supplier<T> operation) {
             events.add("begin");
-            try { T result = operation.get(); events.add("commit"); return result; }
-            catch (RuntimeException exception) { events.add("rollback"); throw exception; }
+            try {
+                T result = operation.get();
+                events.add("commit");
+                return result;
+            } catch (RuntimeException exception) {
+                events.add("rollback");
+                throw exception;
+            }
         }
     };
     final ResolveExternalIdentityUseCase useCase = new ResolveExternalIdentityUseCase(repository, transactions);

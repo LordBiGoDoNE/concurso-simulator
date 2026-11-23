@@ -22,5 +22,7 @@ public final class RequestValues {
         if (!condition) throw new InvalidRequest("Pedido inválido");
     }
 
-    public static InvalidRequest invalid() { return new InvalidRequest("Pedido inválido"); }
+    public static InvalidRequest invalid() {
+        return new InvalidRequest("Pedido inválido");
+    }
 }

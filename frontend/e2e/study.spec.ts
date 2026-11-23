@@ -6,7 +6,7 @@ import { pathToFileURL } from 'node:url';
 test('nove módulos e 90 resoluções funcionam offline, sem JavaScript', async ({ browser }) => {
   test.skip(!process.env.STUDY_ROOT, 'Defina STUDY_ROOT com o pacote estático montado.');
   const directory = join(process.env.STUDY_ROOT!, '02_Matematica_Logica');
-  const files = readdirSync(directory).filter(name => name.startsWith('Matemática') && !name.includes('Gabarito'));
+  const files = readdirSync(directory).filter((name) => name.startsWith('Matemática') && !name.includes('Gabarito'));
   expect(files).toHaveLength(9);
   const context = await browser.newContext({ offline: true, javaScriptEnabled: false });
   const page = await context.newPage();

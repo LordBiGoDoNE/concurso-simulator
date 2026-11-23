@@ -1,10 +1,10 @@
 package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.core.env.Profiles;
 import org.springframework.session.Session;
@@ -32,7 +32,9 @@ public class SessionConfiguration {
                 if ("springSessionRepositoryFilter".equals(name) && bean instanceof SessionRepositoryFilter<?>) {
                     // Spring Session 4.1.1 exposes only the repository and ID resolver as filter configuration.
                     // Keep Boot's single proxy registration and order; replace its target, not the registration.
-                    return sessionFilter(beans.getBean(SessionRepository.class), beans.getBean(HttpSessionIdResolver.class),
+                    return sessionFilter(
+                            beans.getBean(SessionRepository.class),
+                            beans.getBean(HttpSessionIdResolver.class),
                             beans.getBean(ApiRoutes.class));
                 }
                 return bean;

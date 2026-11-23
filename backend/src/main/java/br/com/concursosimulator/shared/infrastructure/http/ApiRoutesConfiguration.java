@@ -8,5 +8,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class ApiRoutesConfiguration {
     @Bean
-    ApiRoutes apiRoutes(List<ApiArea> areas) { return new ApiRoutes(areas); }
+    ApiRoutes apiRoutes(List<ApiArea> areas) {
+        return new ApiRoutes(areas);
+    }
 }

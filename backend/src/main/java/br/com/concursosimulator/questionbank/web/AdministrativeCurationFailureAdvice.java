@@ -14,41 +14,89 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 
 /** Erros sanitizados e no-store da curadoria administrativa; nunca ecoam conteúdo, SQL ou exceção. */
-@RestControllerAdvice(assignableTypes = {AdministrativeQuestionController.class, EditorialDecisionBatchController.class})
+@RestControllerAdvice(
+        assignableTypes = {AdministrativeQuestionController.class, EditorialDecisionBatchController.class})
 public class AdministrativeCurationFailureAdvice {
     public record ErrorResponse(String error, String correlationId) {}
+
     public record ExportErrorResponse(String error, String reason, List<UUID> questionIds, String correlationId) {}
-    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(AdministrativeCurationFailureAdvice.class);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(AdministrativeCurationFailureAdvice.class);
+
     static String correlation(String code) {
         var correlation = UUID.randomUUID().toString();
         LOG.warn("Administrative curation rejected code={} correlationId={}", code, correlation);
         return correlation;
     }
+
     static ResponseEntity<ErrorResponse> error(int status, String code) {
-        return ResponseEntity.status(status).header("Cache-Control", "no-store").body(new ErrorResponse(code, correlation(code)));
+        return ResponseEntity.status(status)
+                .header("Cache-Control", "no-store")
+                .body(new ErrorResponse(code, correlation(code)));
     }
-    @ExceptionHandler({InvalidQuery.class, MethodArgumentTypeMismatchException.class,
-            org.springframework.web.bind.MissingServletRequestParameterException.class})
-    ResponseEntity<ErrorResponse> invalid() { return error(400, "INVALID_QUERY"); }
+
+    @ExceptionHandler({
+        InvalidQuery.class,
+        MethodArgumentTypeMismatchException.class,
+        org.springframework.web.bind.MissingServletRequestParameterException.class
+    })
+    ResponseEntity<ErrorResponse> invalid() {
+        return error(400, "INVALID_QUERY");
+    }
+
     @ExceptionHandler({HttpMessageNotReadableException.class, br.com.concursosimulator.shared.web.InvalidRequest.class})
-    ResponseEntity<ErrorResponse> malformed() { return error(400, "INVALID_REQUEST"); }
-    @ExceptionHandler(AdministrativeCurationBodyAdvice.TooLarge.class) ResponseEntity<ErrorResponse> large() { return error(413, "REQUEST_TOO_LARGE"); }
-    @ExceptionHandler(HttpMediaTypeNotSupportedException.class) ResponseEntity<ErrorResponse> media() { return error(415, "UNSUPPORTED_MEDIA_TYPE"); }
-    @ExceptionHandler(AdministrativeQuestionController.QuestionNotFound.class) ResponseEntity<ErrorResponse> missing() { return error(404, "QUESTION_NOT_FOUND"); }
-    @ExceptionHandler(ExportRefused.class) ResponseEntity<ExportErrorResponse> refused(ExportRefused refused) {
-        return ResponseEntity.status(422).header("Cache-Control", "no-store")
-                .body(new ExportErrorResponse("EXPORT_REFUSED", refused.failure().name(), refused.questionIds(), correlation("EXPORT_REFUSED")));
+    ResponseEntity<ErrorResponse> malformed() {
+        return error(400, "INVALID_REQUEST");
     }
+
+    @ExceptionHandler(AdministrativeCurationBodyAdvice.TooLarge.class)
+    ResponseEntity<ErrorResponse> large() {
+        return error(413, "REQUEST_TOO_LARGE");
+    }
+
+    @ExceptionHandler(HttpMediaTypeNotSupportedException.class)
+    ResponseEntity<ErrorResponse> media() {
+        return error(415, "UNSUPPORTED_MEDIA_TYPE");
+    }
+
+    @ExceptionHandler(AdministrativeQuestionController.QuestionNotFound.class)
+    ResponseEntity<ErrorResponse> missing() {
+        return error(404, "QUESTION_NOT_FOUND");
+    }
+
+    @ExceptionHandler(ExportRefused.class)
+    ResponseEntity<ExportErrorResponse> refused(ExportRefused refused) {
+        return ResponseEntity.status(422)
+                .header("Cache-Control", "no-store")
+                .body(new ExportErrorResponse(
+                        "EXPORT_REFUSED",
+                        refused.failure().name(),
+                        refused.questionIds(),
+                        correlation("EXPORT_REFUSED")));
+    }
+
     public record ConflictResponse(String error, List<UUID> questionIds, String correlationId) {}
-    @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.InvalidBatch.class) ResponseEntity<ErrorResponse> invalidBatch() { return error(400, "INVALID_BATCH"); }
-    @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.ConfirmationFailure.class)
-    ResponseEntity<ConflictResponse> confirmation(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.ConfirmationFailure failure) {
-        var code = failure.expired() ? "CONFIRMATION_EXPIRED" : "CONFIRMATION_MISMATCH";
-        return ResponseEntity.status(409).header("Cache-Control", "no-store").body(new ConflictResponse(code, null, correlation(code)));
+
+    @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.InvalidBatch.class)
+    ResponseEntity<ErrorResponse> invalidBatch() {
+        return error(400, "INVALID_BATCH");
     }
+
+    @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.ConfirmationFailure.class)
+    ResponseEntity<ConflictResponse> confirmation(
+            br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.ConfirmationFailure failure) {
+        var code = failure.expired() ? "CONFIRMATION_EXPIRED" : "CONFIRMATION_MISMATCH";
+        return ResponseEntity.status(409)
+                .header("Cache-Control", "no-store")
+                .body(new ConflictResponse(code, null, correlation(code)));
+    }
+
     @ExceptionHandler(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.BatchDiverged.class)
-    ResponseEntity<ConflictResponse> diverged(br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.BatchDiverged diverged) {
-        return ResponseEntity.status(409).header("Cache-Control", "no-store")
+    ResponseEntity<ConflictResponse> diverged(
+            br.com.concursosimulator.questionbank.application.EditorialBatchUseCase.BatchDiverged diverged) {
+        return ResponseEntity.status(409)
+                .header("Cache-Control", "no-store")
                 .body(new ConflictResponse("BATCH_DIVERGED", diverged.questionIds(), correlation("BATCH_DIVERGED")));
     }
     /** 503 somente para indisponibilidade transitória ({@link TransientFailures}); o restante é falha inesperada. */
@@ -56,5 +104,9 @@ public class AdministrativeCurationFailureAdvice {
     ResponseEntity<ErrorResponse> data(RuntimeException failure) {
         return TransientFailures.transientCause(failure) ? error(503, "ADMIN_UNAVAILABLE") : unexpected();
     }
-    @ExceptionHandler(Exception.class) ResponseEntity<ErrorResponse> unexpected() { return error(500, "ADMIN_CURATION_FAILED"); }
+
+    @ExceptionHandler(Exception.class)
+    ResponseEntity<ErrorResponse> unexpected() {
+        return error(500, "ADMIN_CURATION_FAILED");
+    }
 }

@@ -66,7 +66,7 @@ erro alterados pelo requisito de formato de erro.
 
 ### Requirement: Formato único de erro HTTP
 
-Toda resposta de erro da API SHALL ser um objeto JSON com o campo `error` em
+Toda resposta de erro da API com corpo SHALL ser um objeto JSON com o campo `error` em
 `UPPER_SNAKE_CASE`, com `Cache-Control: no-store`, e SHALL NOT conter mensagem de
 exceção, SQL, conteúdo de questão ou dado pessoal. Campos adicionais já existentes
 (`correlationId`, `available`, `questionIds`, `reason`) MAY permanecer.
@@ -80,6 +80,12 @@ exceção, SQL, conteúdo de questão ou dado pessoal. Campos adicionais já exi
 
 - **WHEN** um visitante chama `GET /api/v1/me`
 - **THEN** a resposta é 401 com `{"error":"UNAUTHENTICATED"}` e `no-store`
+
+#### Scenario: Rejeição da segurança sem corpo preservada
+
+- **WHEN** a segurança nega com 403 uma requisição fora das áreas declaradas com falhas
+  JSON (CSRF ausente no logout, origem CORS desconhecida, rota pública negada)
+- **THEN** a resposta continua 403 sem corpo, como antes da spec
 
 #### Scenario: Backend fora atrás do nginx
 

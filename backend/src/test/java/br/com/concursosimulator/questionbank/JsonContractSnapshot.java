@@ -24,14 +24,15 @@ final class JsonContractSnapshot {
 
     static void check(String name, JsonNode actual) throws Exception {
         var file = Path.of("src/test/resources/http/admin-contracts/" + name + ".json");
-        var normalized = JSON.writerWithDefaultPrettyPrinter().writeValueAsString(normalize(actual)) + "\n";
+        // O pretty-printer usa o separador do sistema; o contrato é comparado sempre com LF.
+        var normalized = JSON.writerWithDefaultPrettyPrinter().writeValueAsString(normalize(actual)).replace("\r\n", "\n") + "\n";
         if ("true".equals(System.getenv("ADMIN_CONTRACT_UPDATE"))) {
             Files.createDirectories(file.getParent());
             Files.writeString(file, normalized, StandardCharsets.UTF_8);
             return;
         }
         assertThat(file).as("Gere o contrato com ADMIN_CONTRACT_UPDATE=true antes de trocar os DTOs").exists();
-        assertThat(normalized).as("contrato JSON " + name).isEqualTo(Files.readString(file, StandardCharsets.UTF_8));
+        assertThat(normalized).as("contrato JSON " + name).isEqualTo(Files.readString(file, StandardCharsets.UTF_8).replace("\r\n", "\n"));
     }
 
     static JsonNode normalize(JsonNode node) {

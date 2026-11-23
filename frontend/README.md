@@ -6,6 +6,7 @@
 - `npm run typecheck`: `tsc` sobre `src` e `test` (`tsconfig.json`) e sobre `e2e`, configs do Playwright e `vite.config.ts` (`tsconfig.node.json`).
 - `npm run format:check` / `npm run format`: Prettier (120 colunas), verificado no CI; JSON gerados e CSS ficam fora (`.prettierignore`). Depois de `npm run format`, rode `npm run lint`: o Prettier pode quebrar um efeito em várias linhas, e um `eslint-disable-next-line react-hooks/exhaustive-deps` precisa ficar logo acima do array de dependências. Commits só de formatação ficam em `../.git-blame-ignore-revs`.
 - Requisições à API passam por `src/http-client.ts` (URL base única de `VITE_API_URL`, timeout e escopo de abort); cada módulo (`identity-api`, `attempt-api`, `question-api`, `status-api`) mantém credenciais, mensagens e mapeamento de erros. O lint recusa `fetch` fora do cliente (exceção: `native-lesson.ts`, que carrega documentos estáticos de aula).
+- Suítes Playwright com backend real (PostgreSQL isolado e OIDC local), todas no CI: `test:identity`, `test:parameterized`, `test:admin` e `test:topic-practice` (no CI só o projeto `chromium`; localmente também `edge`). Fora do CI, as fixtures Gradle rodam com `--offline`.
 - `npm run test:coverage`: Vitest com cobertura V8, só como relatório em `coverage/` (fora do versionamento), sem limite mínimo.
 
 ## Primeira experiência do estudante — implementação local

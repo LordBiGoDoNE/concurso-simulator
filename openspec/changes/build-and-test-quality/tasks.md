@@ -104,16 +104,18 @@ e o caso vai ao usuário.
 
 ## 8. CI sem duplicação e suítes reais — depende de 7 (~80 linhas autorais)
 
-- [ ] 8.1 Conferir se #256 já pôs `scripts/tests` em `application.yml`; se não,
-  acrescentar `test_build_pages.py` ao job `study-material`.
-- [ ] 8.2 Remover `.github/workflows/pages-checks.yml` da `main`; confirmar que a
+- [x] 8.1 Conferir se #256 já pôs `scripts/tests` em `application.yml`; se não,
+  acrescentar `test_build_pages.py` ao job `study-material`. #256 já está na `main`
+  (#269, job `scripts-tests`); a cobertura chega à épica com o merge da `main` exigido
+  na integração.
+- [x] 8.2 Remover `.github/workflows/pages-checks.yml` da `main`; confirmar que a
   cópia de `stable` não muda.
-- [ ] 8.3 Configs `admin` e `topic-practice` com `--offline` só fora do CI; scripts
+- [x] 8.3 Configs `admin` e `topic-practice` com `--offline` só fora do CI; scripts
   `test:admin` e `test:topic-practice`.
-- [ ] 8.4 Job `practice-admin-browser` em `application.yml`, em Chromium; rodar as duas
+- [x] 8.4 Job `practice-admin-browser` em `application.yml`, em Chromium; rodar as duas
   suítes localmente e via `act` (o que não rodar no `act` fica registrado).
-- [ ] 8.5 Atualizar `frontend/README.md` e as referências a `pages-checks.yml` na
-  documentação vigente (histórico permanece).
+- [x] 8.5 Atualizar `frontend/README.md` e as referências a `pages-checks.yml` na
+  documentação vigente (histórico permanece; só artefatos históricos o citam).
 
 ## 9. Encerramento da spec
 

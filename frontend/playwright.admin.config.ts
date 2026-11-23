@@ -1,4 +1,6 @@
 import { defineConfig } from '@playwright/test';
+// --offline só fora do CI: localmente reaproveita o cache do Gradle; no CI o cache pode estar frio.
+const offline = process.env.CI ? '' : ' --offline';
 export default defineConfig({
   testDir: './e2e',
   testMatch: '**/administrative.real.spec.ts',
@@ -9,8 +11,8 @@ export default defineConfig({
     {
       command:
         process.platform === 'win32'
-          ? '..\\backend\\gradlew.bat -p ../backend --offline --no-daemon --console=plain administrativeBrowserFixture'
-          : '../backend/gradlew -p ../backend --offline --no-daemon --console=plain administrativeBrowserFixture',
+          ? `..\\backend\\gradlew.bat -p ../backend${offline} --no-daemon --console=plain administrativeBrowserFixture`
+          : `../backend/gradlew -p ../backend${offline} --no-daemon --console=plain administrativeBrowserFixture`,
       url: 'http://127.0.0.1:19086/api/v1/status',
       timeout: 180000,
       reuseExistingServer: false,

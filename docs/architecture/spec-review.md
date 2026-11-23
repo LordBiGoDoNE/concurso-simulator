@@ -5,10 +5,19 @@
 > correção pelo `finding-fixer`, revisão final pelo `spec-reviewer` (Opus 5.5 medium),
 > reverificação só do delta, pacote e aprovação únicos e evidência em `review.md`. O texto
 > abaixo registra o processo anterior (SOL/Astra, lotes, classificação de risco,
-> `spec-review.json`/digest, Stacks) e as limitações da automação legada descritas no
-> `AGENTS.md`.
+> `spec-review.json`/digest, Stacks) e as limitações da automação legada.
+>
+> **Automação removida em 2026-11-23** pela spec `remove-legacy-review-gate` (#256):
+> `.github/workflows/spec-review.yml`, `scripts/check_spec_review.py` e
+> `scripts/tests/test_spec_review.py` não existem mais na `main`, e os checks `spec-review`
+> e `spec-review-tests` deixaram de ser publicados. Os comandos com esse script abaixo e nos
+> relatórios antigos valem para o commit em que foram executados. Para recalcular um digest
+> histórico, use o script de um commit anterior à remoção, sem copiá-lo de volta para o
+> repositório, por exemplo
+> `git show 9dea050:scripts/check_spec_review.py > "$TMPDIR/check_spec_review.py"`. O ruleset
+> `24766642` descrito em "Check e proteção no GitHub" foi mantido, órfão (`AGENTS.md`, Histórico).
 
-## Integração após a entrega da reformulação
+## Integração após a entrega da reformulação (histórico; automação removida em 2026-11-23)
 
 A entrega inicial foi integrada à `main` pelo #133 em 2026-10-23. Novas specs
 partem de `main`; tarefas continuam em sua própria `epic/<spec>`, e o PR final
@@ -42,9 +51,9 @@ implementar. Não encerrar num prefixo de grupo; PRs pequenos/coerentes não aut
 deixar sua última subtarefa para outro lote. Comunicar bloqueios reais sem fingir
 conclusão nem incluir dependências fora do escopo por iniciativa própria. Implementação
 sem pausas por subtarefa, PRs em rascunho e nenhuma integração presumida permanecem.
-> **Decisão vigente do usuário (2026-11-12):** não há revisão por modelo a cada lote. A única
+> **Decisão do usuário (2026-11-12, histórica):** não há revisão por modelo a cada lote. A única
 > revisão por modelo é a **revisão final de código antes do merge `[SPEC]` em `main`**, feita por
-> agente autônomo novo (`.claude/agents/spec-reviewer.md`) com **Claude Opus 5.5, esforço
+> agente autônomo novo (`~/.claude/agents/spec-reviewer.md`) com **Claude Opus 5.5, esforço
 > medium**, em contexto independente e sem viés (mesmas entradas, isolamento, triagem,
 > atualidade e evidência descritos abaixo). As menções a `openai/gpt-6.1-sol#xhigh` e Astra
 > nas seções seguintes descrevem a regra anterior e ficam como histórico; onde o texto exige
@@ -124,7 +133,7 @@ automaticamente. A primeira rodada autorizada é question-bank 1.2, 1.3, 2.1–2
 
 ### Integração final da spec
 
-**Vigente desde 2026-11-12:** revisão final de código com Claude Opus 5.5, esforço medium, em agente autônomo novo (`.claude/agents/spec-reviewer.md`). O parágrafo seguinte é histórico.
+**Decisão de 2026-11-12 (histórica, substituída em 2026-11-17):** revisão final de código com Claude Opus 5.5, esforço medium, em agente autônomo novo (`~/.claude/agents/spec-reviewer.md`). O parágrafo seguinte é histórico.
 
 **Padrão aprovado em 2026-10-15:** `openai/gpt-6.1-sol#xhigh` para todas as revisões,
 revalidações e gates cumulativos, inclusive da épica geral. Não há exigência ativa
@@ -224,7 +233,7 @@ O Markdown deve explicar escopo/cobertura, achados/triagem, evidências/limitaç
 revalidação, usando os títulos do relatório inicial. Modelo ainda não escolhido:
 `reviewer.model: null`, `status: pending`; nunca preencher conclusão fictícia.
 
-## Check e proteção no GitHub
+## Check e proteção no GitHub (histórico; automação removida em 2026-11-23)
 
 `Spec review gate` executa testes do guard em todos os PRs, inclusive alterações de
 título/base. Na épica geral publica `spec-review`; nas tarefas, `spec-review-tests`,

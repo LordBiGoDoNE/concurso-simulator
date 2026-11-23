@@ -122,8 +122,12 @@ caracterização do grupo 1 prova isso antes e depois.
 
 ### Modified Capabilities
 
-- Nenhuma. As specs vigentes (`administrative-*`, `study-experience` etc.) não fixam
-  códigos de erro em minúsculas nem o 500 da geração desabilitada.
+- `user-auth`: o requisito "Consulta privada da própria identidade" passa a fixar
+  `401 {"error":"UNAUTHENTICATED"}` para `GET /api/v1/me` sem sessão válida, em vez
+  de `unauthenticated`. As demais specs vigentes (`administrative-*`,
+  `parameterized-questions`, `subject-performance`, `study-experience` etc.) não fixam
+  códigos de erro em minúsculas nem o 500 da geração desabilitada; as que citam
+  503/500 o fazem por causa (indisponibilidade ou integridade), o que esta spec mantém.
 
 ## Impact
 
@@ -136,6 +140,7 @@ caracterização do grupo 1 prova isso antes e depois.
 - Infra: `infra/local-app/nginx.conf`, `infra/vps-production/nginx.conf`,
   `scripts/check_local_images.py`.
 - Docs: `docs/architecture/http-endpoint-review.md` e refinamento no ADR 0001.
+- Specs vigentes: delta em `user-auth` (código do 401 de `GET /api/v1/me`).
 - Sem migração Flyway nem mudança de schema. Sessões JDBC existentes deixam de
   autenticar (nova entrada necessária); nenhum dado de estudo é apagado.
 - Áreas críticas tocadas: autenticação, sessão, CSRF/CORS e contratos de erro.

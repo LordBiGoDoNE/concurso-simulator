@@ -39,16 +39,22 @@ it('rejeita com AbortError no timeout mesmo que o trabalho ignore o sinal, e lib
 });
 
 it('não inicia o trabalho quando o sinal externo já foi abortado', async () => {
-  const external = new AbortController(); external.abort();
+  const external = new AbortController();
+  external.abort();
   const work = vi.fn(async () => 'never');
-  await expect(withAbortScope(external.signal, 1000, 'Interrompida', work)).rejects.toMatchObject({ name: 'AbortError' });
+  await expect(withAbortScope(external.signal, 1000, 'Interrompida', work)).rejects.toMatchObject({
+    name: 'AbortError',
+  });
   expect(work).not.toHaveBeenCalled();
 });
 
 it('propaga o abort externo para o sinal do trabalho durante a requisição', async () => {
   const external = new AbortController();
   let inner: AbortSignal | undefined;
-  const pending = withAbortScope(external.signal, 10000, 'Interrompida', signal => { inner = signal; return never(); });
+  const pending = withAbortScope(external.signal, 10000, 'Interrompida', (signal) => {
+    inner = signal;
+    return never();
+  });
   await Promise.resolve();
   external.abort();
   await expect(pending).rejects.toMatchObject({ name: 'AbortError', message: 'Interrompida' });
@@ -58,7 +64,7 @@ it('propaga o abort externo para o sinal do trabalho durante a requisição', as
 it('não entrega dados quando o abort chega depois do corpo e antes da validação', async () => {
   const external = new AbortController();
   const validate = vi.fn();
-  const pending = withAbortScope(external.signal, 10000, 'Interrompida', async signal => {
+  const pending = withAbortScope(external.signal, 10000, 'Interrompida', async (signal) => {
     const body = await Promise.resolve({ ok: true });
     external.abort();
     signal.throwIfAborted();

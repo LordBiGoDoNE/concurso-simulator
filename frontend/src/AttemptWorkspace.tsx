@@ -9,66 +9,225 @@ import type { TopicShortcuts } from './AttemptResult';
 
 import type { DirectedPractice } from './directed-practice';
 
-export interface AttemptWorkspaceHandle { practice: (selection: DirectedPractice) => boolean }
-export default function AttemptWorkspace({ identity, onUnavailable, onGuestActive, reviewActive = true, contextActive = true, ref, onRunActiveChange, shortcuts }: { shortcuts?: TopicShortcuts; onRunActiveChange?: (active: boolean) => void; ref?: Ref<AttemptWorkspaceHandle>; contextActive?: boolean; reviewActive?: boolean; identity: CurrentIdentity; onUnavailable: () => void; onGuestActive: (active: boolean) => void }) {
-  const [directed, setDirected] = useState<DirectedPractice | null>(null); const [composerVersion, setComposerVersion] = useState(0); const [composing, setComposing] = useState(false);
-  const [selected, setSelected] = useState<AttemptView | null>(null); const [loading, setLoading] = useState(false); const [message, setMessage] = useState('');
-  const [historyRefresh, setHistoryRefresh] = useState(0); const generation = useRef(0); const request = useRef<AbortController | null>(null);
-  const selectedRef = useRef(selected); selectedRef.current = selected;
+export interface AttemptWorkspaceHandle {
+  practice: (selection: DirectedPractice) => boolean;
+}
+export default function AttemptWorkspace({
+  identity,
+  onUnavailable,
+  onGuestActive,
+  reviewActive = true,
+  contextActive = true,
+  ref,
+  onRunActiveChange,
+  shortcuts,
+}: {
+  shortcuts?: TopicShortcuts;
+  onRunActiveChange?: (active: boolean) => void;
+  ref?: Ref<AttemptWorkspaceHandle>;
+  contextActive?: boolean;
+  reviewActive?: boolean;
+  identity: CurrentIdentity;
+  onUnavailable: () => void;
+  onGuestActive: (active: boolean) => void;
+}) {
+  const [directed, setDirected] = useState<DirectedPractice | null>(null);
+  const [composerVersion, setComposerVersion] = useState(0);
+  const [composing, setComposing] = useState(false);
+  const [selected, setSelected] = useState<AttemptView | null>(null);
+  const [loading, setLoading] = useState(false);
+  const [message, setMessage] = useState('');
+  const [historyRefresh, setHistoryRefresh] = useState(0);
+  const generation = useRef(0);
+  const request = useRef<AbortController | null>(null);
+  const selectedRef = useRef(selected);
+  selectedRef.current = selected;
   const realization = useRef<AttemptPracticeHandle>(null);
-  const [access, setAccess] = useState<'ready' | 'checking' | 'failed'>('ready'); const [verifyRetry, setVerifyRetry] = useState(0);
+  const [access, setAccess] = useState<'ready' | 'checking' | 'failed'>('ready');
+  const [verifyRetry, setVerifyRetry] = useState(0);
   useLayoutEffect(() => {
-    const target = selectedRef.current; if (!target) return;
-    const controller = new AbortController(); setAccess('checking');
-    readAttempt(target.id, controller.signal).then(() => { if (!controller.signal.aborted && selectedRef.current?.id === target.id) setAccess('ready'); })
-      .catch(error => { if (controller.signal.aborted || selectedRef.current?.id !== target.id) return;
-        if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) onUnavailable(); else setAccess('failed');
+    const target = selectedRef.current;
+    if (!target) return;
+    const controller = new AbortController();
+    setAccess('checking');
+    readAttempt(target.id, controller.signal)
+      .then(() => {
+        if (!controller.signal.aborted && selectedRef.current?.id === target.id) setAccess('ready');
+      })
+      .catch((error) => {
+        if (controller.signal.aborted || selectedRef.current?.id !== target.id) return;
+        if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) onUnavailable();
+        else setAccess('failed');
       });
     return () => controller.abort();
   }, [identity, verifyRetry, onUnavailable]);
-  useEffect(() => () => { generation.current++; request.current?.abort(); }, []);
+  useEffect(
+    () => () => {
+      generation.current++;
+      request.current?.abort();
+    },
+    [],
+  );
   // eslint-disable-next-line react-hooks/exhaustive-deps -- só troca de tentativa (id) muda o estado de visitante, não novas versões dela.
-  useEffect(() => { onGuestActive(!identity.connected && selected !== null); }, [identity.connected, selected?.id, onGuestActive]);
+  useEffect(() => {
+    onGuestActive(!identity.connected && selected !== null);
+  }, [identity.connected, selected?.id, onGuestActive]);
   useEffect(() => () => onGuestActive(false), [onGuestActive]);
   // eslint-disable-next-line react-hooks/exhaustive-deps -- o aviso depende só da tentativa (id) e do seu término.
-  useLayoutEffect(() => { onRunActiveChange?.(selected !== null && selected.finishedAt === null); }, [selected?.id, selected?.finishedAt, onRunActiveChange]);
+  useLayoutEffect(() => {
+    onRunActiveChange?.(selected !== null && selected.finishedAt === null);
+  }, [selected?.id, selected?.finishedAt, onRunActiveChange]);
   useLayoutEffect(() => () => onRunActiveChange?.(false), [onRunActiveChange]);
-  const finished = useCallback(() => { setHistoryRefresh(v => v + 1); onRunActiveChange?.(false); }, [onRunActiveChange]);
-  function clearDirected() { if (directed) { setDirected(null); setComposerVersion(v => v + 1); } }
-  useImperativeHandle(ref, () => ({ practice: selection => practice(selection, true) }));
+  const finished = useCallback(() => {
+    setHistoryRefresh((v) => v + 1);
+    onRunActiveChange?.(false);
+  }, [onRunActiveChange]);
+  function clearDirected() {
+    if (directed) {
+      setDirected(null);
+      setComposerVersion((v) => v + 1);
+    }
+  }
+  useImperativeHandle(ref, () => ({ practice: (selection) => practice(selection, true) }));
   function canReplaceSelected(): boolean {
     if (!selected || realization.current?.canReplace() === true) return true;
-    setMessage('Aguarde a operação da realização terminar antes de trocar de simulado.'); return false;
+    setMessage('Aguarde a operação da realização terminar antes de trocar de simulado.');
+    return false;
   }
   function practice(selection: DirectedPractice, fromLesson = false): boolean {
     if (!contextActive || (!reviewActive && !fromLesson) || composing || loading || access !== 'ready') return false;
     if (!canReplaceSelected()) return false;
-    if (selected && !window.confirm('Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.')) return false;
-    generation.current++; request.current?.abort(); setSelected(null); setLoading(false); setMessage('');
-    setDirected(selection); setComposerVersion(v => v + 1);
+    if (
+      selected &&
+      !window.confirm(
+        'Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.',
+      )
+    )
+      return false;
+    generation.current++;
+    request.current?.abort();
+    setSelected(null);
+    setLoading(false);
+    setMessage('');
+    setDirected(selection);
+    setComposerVersion((v) => v + 1);
     return true;
   }
-  function created(view: AttemptView) { setDirected(null); onGuestActive(!identity.connected); setSelected(view); setAccess('ready'); setMessage(''); setHistoryRefresh(v => v + 1); }
+  function created(view: AttemptView) {
+    setDirected(null);
+    onGuestActive(!identity.connected);
+    setSelected(view);
+    setAccess('ready');
+    setMessage('');
+    setHistoryRefresh((v) => v + 1);
+  }
   async function open(id: string) {
     if (selected?.id === id) return;
     if (!canReplaceSelected()) return;
-    if (selected && selected.id !== id && !window.confirm('Trocar de tentativa? Apenas respostas confirmadas poderão ser retomadas.')) return;
-    request.current?.abort(); const controller = new AbortController(); request.current = controller; const current = ++generation.current;
-    clearDirected(); setSelected(null); setLoading(true); setMessage('');
-    try { const view = await readAttempt(id, controller.signal); if (current === generation.current && !controller.signal.aborted) { setSelected(view); setAccess('ready'); } }
-    catch (error) { if (current !== generation.current || controller.signal.aborted) return; if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) onUnavailable(); else setMessage('Tentativa indisponível. Tente abri-la novamente pelo histórico.'); }
-    finally { if (current === generation.current && !controller.signal.aborted) setLoading(false); }
+    if (
+      selected &&
+      selected.id !== id &&
+      !window.confirm('Trocar de tentativa? Apenas respostas confirmadas poderão ser retomadas.')
+    )
+      return;
+    request.current?.abort();
+    const controller = new AbortController();
+    request.current = controller;
+    const current = ++generation.current;
+    clearDirected();
+    setSelected(null);
+    setLoading(true);
+    setMessage('');
+    try {
+      const view = await readAttempt(id, controller.signal);
+      if (current === generation.current && !controller.signal.aborted) {
+        setSelected(view);
+        setAccess('ready');
+      }
+    } catch (error) {
+      if (current !== generation.current || controller.signal.aborted) return;
+      if (error instanceof AttemptApiError && [401, 403, 404].includes(error.status)) onUnavailable();
+      else setMessage('Tentativa indisponível. Tente abri-la novamente pelo histórico.');
+    } finally {
+      if (current === generation.current && !controller.signal.aborted) setLoading(false);
+    }
   }
-  return <section className="attempt-workspace" aria-labelledby="mock-exam-title"><h2 id="mock-exam-title" className="sr-only">Simulados</h2>
-    <details className="attempt-session-note" open={!selected}><summary>Sobre esta tentativa</summary><p>{identity.connected ? 'Respostas confirmadas ficam salvas na sua conta para retomar em outra sessão.' : 'Modo visitante: tentativa temporária por até 24 horas, acessível somente nesta sessão válida. Não há histórico permanente; entrar na conta não transfere esta tentativa.'}</p></details>
-    {message && <p role="alert">{message}</p>}
-    {loading ? <p role="status">Retomando tentativa…</p> : selected ? <>
-      {access === 'checking' && <p role="status">Conferindo acesso à tentativa…</p>}
-      {access === 'failed' && <><p role="alert">Não foi possível confirmar o acesso à tentativa. O conteúdo permanece oculto.</p><button onClick={() => setVerifyRetry(v => v + 1)}>Conferir tentativa novamente</button></>}
-      <div hidden={access !== 'ready'}><AttemptPractice ref={realization} key={selected.id} initial={selected} reviewActive={reviewActive && access === 'ready'} onUnavailable={onUnavailable} onFinished={finished} onPractice={practice} shortcuts={shortcuts} /></div>
-      <button onClick={() => { if (canReplaceSelected() && window.confirm('Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.')) { clearDirected(); setSelected(null); } }}>Compor outro simulado</button>
-    </> : <AttemptComposer key={composerVersion} prefill={directed} active={reviewActive} onBusy={setComposing} onCreated={created} onUnavailable={onUnavailable} />}
-    {identity.connected && <SubjectReviewPanel onPractice={practice} practiceEnabled={!composing && !loading && access === 'ready'} onRoleChange={clearDirected} active={reviewActive} refresh={historyRefresh} onUnavailable={onUnavailable} />}
-    {identity.connected && <AttemptHistory refresh={historyRefresh} onOpen={id => void open(id)} onUnavailable={onUnavailable} />}
-  </section>;
+  return (
+    <section className="attempt-workspace" aria-labelledby="mock-exam-title">
+      <h2 id="mock-exam-title" className="sr-only">
+        Simulados
+      </h2>
+      <details className="attempt-session-note" open={!selected}>
+        <summary>Sobre esta tentativa</summary>
+        <p>
+          {identity.connected
+            ? 'Respostas confirmadas ficam salvas na sua conta para retomar em outra sessão.'
+            : 'Modo visitante: tentativa temporária por até 24 horas, acessível somente nesta sessão válida. Não há histórico permanente; entrar na conta não transfere esta tentativa.'}
+        </p>
+      </details>
+      {message && <p role="alert">{message}</p>}
+      {loading ? (
+        <p role="status">Retomando tentativa…</p>
+      ) : selected ? (
+        <>
+          {access === 'checking' && <p role="status">Conferindo acesso à tentativa…</p>}
+          {access === 'failed' && (
+            <>
+              <p role="alert">Não foi possível confirmar o acesso à tentativa. O conteúdo permanece oculto.</p>
+              <button onClick={() => setVerifyRetry((v) => v + 1)}>Conferir tentativa novamente</button>
+            </>
+          )}
+          <div hidden={access !== 'ready'}>
+            <AttemptPractice
+              ref={realization}
+              key={selected.id}
+              initial={selected}
+              reviewActive={reviewActive && access === 'ready'}
+              onUnavailable={onUnavailable}
+              onFinished={finished}
+              onPractice={practice}
+              shortcuts={shortcuts}
+            />
+          </div>
+          <button
+            onClick={() => {
+              if (
+                canReplaceSelected() &&
+                window.confirm(
+                  'Compor outro simulado? Apenas respostas confirmadas ficam salvas na conta; visitante não possui histórico.',
+                )
+              ) {
+                clearDirected();
+                setSelected(null);
+              }
+            }}
+          >
+            Compor outro simulado
+          </button>
+        </>
+      ) : (
+        <AttemptComposer
+          key={composerVersion}
+          prefill={directed}
+          active={reviewActive}
+          onBusy={setComposing}
+          onCreated={created}
+          onUnavailable={onUnavailable}
+        />
+      )}
+      {identity.connected && (
+        <SubjectReviewPanel
+          onPractice={practice}
+          practiceEnabled={!composing && !loading && access === 'ready'}
+          onRoleChange={clearDirected}
+          active={reviewActive}
+          refresh={historyRefresh}
+          onUnavailable={onUnavailable}
+        />
+      )}
+      {identity.connected && (
+        <AttemptHistory refresh={historyRefresh} onOpen={(id) => void open(id)} onUnavailable={onUnavailable} />
+      )}
+    </section>
+  );
 }

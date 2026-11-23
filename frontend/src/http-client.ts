@@ -33,7 +33,13 @@ export async function withAbortScope<T>(
     if (controller.signal.aborted) rejectAbort();
   });
   try {
-    return await Promise.race([aborted, (async () => { controller.signal.throwIfAborted(); return work(controller.signal); })()]);
+    return await Promise.race([
+      aborted,
+      (async () => {
+        controller.signal.throwIfAborted();
+        return work(controller.signal);
+      })(),
+    ]);
   } finally {
     window.clearTimeout(timer);
     external?.removeEventListener('abort', abort);

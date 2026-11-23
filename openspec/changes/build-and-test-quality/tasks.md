@@ -55,11 +55,11 @@ e o caso vai ao usuário.
 
 ## 4. Spotless no backend — depende de 3 (~40 linhas autorais + formatação gerada)
 
-- [ ] 4.1 Confirmar suporte do Spotless e do palantir-java-format ao Java 25 e ao
+- [x] 4.1 Confirmar suporte do Spotless e do palantir-java-format ao Java 25 e ao
   Gradle 9.8 e fixar versões (D8); sem suporte, parar e chamar o usuário.
-- [ ] 4.2 Commit de configuração (`spotlessCheck` em `check`).
-- [ ] 4.3 Commit só de `spotlessApply`; `./gradlew build` verde sem outra mudança.
-- [ ] 4.4 Commit de `.git-blame-ignore-revs` com o SHA de 4.3; documentar no
+- [x] 4.2 Commit de configuração (`spotlessCheck` em `check`).
+- [x] 4.3 Commit só de `spotlessApply`; `./gradlew build` verde sem outra mudança.
+- [x] 4.4 Commit de `.git-blame-ignore-revs` com o SHA de 4.3; documentar no
   `backend/README.md`.
 
 ## 5. Ferramentas do frontend (~250 linhas autorais + lockfile)

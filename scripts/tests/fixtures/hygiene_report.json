@@ -1,0 +1,34 @@
+{
+  "now": "2026-11-23T12:00:00Z",
+  "prs": [
+    {"number": 10, "title": "Rascunho parado", "isDraft": true, "updatedAt": "2026-11-01T10:00:00Z", "baseRefName": "epic/x", "headRefName": "task/x/a", "url": "https://example.invalid/pull/10"},
+    {"number": 11, "title": "Rascunho recente", "isDraft": true, "updatedAt": "2026-11-20T10:00:00Z", "baseRefName": "epic/x", "headRefName": "task/x/b", "url": "https://example.invalid/pull/11"},
+    {"number": 12, "title": "Base apagada", "isDraft": false, "updatedAt": "2026-11-22T10:00:00Z", "baseRefName": "epic/gone", "headRefName": "task/gone/c", "url": "https://example.invalid/pull/12"}
+  ],
+  "issues": [
+    {"number": 20, "title": "[SPEC] Algo entregue — entregue-change", "createdAt": "2026-11-01T00:00:00Z", "updatedAt": "2026-11-01T00:00:00Z", "url": "https://example.invalid/issues/20", "labels": [{"name": "enhancement"}]},
+    {"number": 21, "title": "[SPEC] Algo em andamento — ativa-change", "createdAt": "2026-11-01T00:00:00Z", "updatedAt": "2026-11-01T00:00:00Z", "url": "https://example.invalid/issues/21", "labels": [{"name": "enhancement"}]},
+    {"number": 22, "title": "Achado antigo", "createdAt": "2026-09-01T00:00:00Z", "updatedAt": "2026-11-20T00:00:00Z", "url": "https://example.invalid/issues/22", "labels": [{"name": "review-finding"}]},
+    {"number": 23, "title": "Achado recente", "createdAt": "2026-11-10T00:00:00Z", "updatedAt": "2026-11-10T00:00:00Z", "url": "https://example.invalid/issues/23", "labels": [{"name": "review-finding"}]},
+    {"number": 24, "title": "Ideia antiga", "createdAt": "2026-08-01T00:00:00Z", "updatedAt": "2026-08-01T00:00:00Z", "url": "https://example.invalid/issues/24", "labels": [{"name": "enhancement"}]}
+  ],
+  "report_issues": [],
+  "refs": [
+    {"name": "HEAD", "date": "2026-11-23T10:00:00-03:00"},
+    {"name": "main", "date": "2026-11-23T10:00:00-03:00"},
+    {"name": "stable", "date": "2026-10-23T00:00:00-03:00"},
+    {"name": "pages-store", "date": "2026-10-06T20:00:00Z"},
+    {"name": "epic/x", "date": "2026-11-01T00:00:00Z"},
+    {"name": "task/x/a", "date": "2026-11-01T00:00:00Z"},
+    {"name": "task/x/b", "date": "2026-11-20T00:00:00Z"},
+    {"name": "task/gone/c", "date": "2026-11-22T00:00:00Z"},
+    {"name": "task/old/merged", "date": "2026-11-15T00:00:00Z"},
+    {"name": "epic/merged-old", "date": "2026-09-15T00:00:00Z"},
+    {"name": "task/old/stale", "date": "2026-10-01T00:00:00Z"},
+    {"name": "task/recent", "date": "2026-11-20T00:00:00Z"}
+  ],
+  "merged": ["main", "stable", "pages-store", "task/x/a", "task/old/merged", "epic/merged-old"],
+  "changes": ["openspec/changes/archive", "openspec/changes/ativa-change"],
+  "archive": ["openspec/changes/archive/2026-11-23-entregue-change", "openspec/changes/archive/2026-11-01-outra"],
+  "agents": "# Regras\n\n## Documentos de estado\n\n- Registro de entregas: docs/application-reformulation.md\n- Branches permanentes: main, stable, pages-store\n"
+}

@@ -1,0 +1,44 @@
+name: Hygiene report
+# Relatório semanal de pendências (spec repository-hygiene-guards, D6).
+# Só escreve no GitHub (issue `[PENDÊNCIAS] Relatório semanal`) quando:
+# - execução agendada e a variável de repositório HYGIENE_REPORT_ENABLED vale 'true';
+# - disparo manual com o input dry-run desmarcado.
+# Em qualquer outro caso roda com --dry-run e deixa o relatório no resumo do job.
+on:
+  schedule:
+    - cron: '0 12 * * 1'
+  workflow_dispatch:
+    inputs:
+      dry-run:
+        description: 'Só listar no resumo do job, sem escrever no GitHub'
+        type: boolean
+        default: true
+permissions:
+  contents: read
+  pull-requests: read
+  issues: write
+concurrency:
+  group: hygiene-report
+  cancel-in-progress: false
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Report pending hygiene items
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT_NAME: ${{ github.event_name }}
+          DISPATCH_DRY_RUN: ${{ inputs.dry-run }}
+          ENABLED: ${{ vars.HYGIENE_REPORT_ENABLED }}
+        run: |
+          mode=--dry-run
+          if [ "$EVENT_NAME" = "schedule" ] && [ "$ENABLED" = "true" ]; then mode=""; fi
+          if [ "$EVENT_NAME" = "workflow_dispatch" ] && [ "$DISPATCH_DRY_RUN" = "false" ]; then mode=""; fi
+          python3 scripts/hygiene_report.py $mode

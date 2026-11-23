@@ -69,21 +69,21 @@ CI/deploy é área crítica (`revisao-e-integracao.md`, seção 1).
 
 ## 3. Relatório semanal de pendências — independente
 
-- [ ] 3.1 Criar `scripts/hygiene_report.py` (D5): coleta com `gh`/`git`, detecção em
+- [x] 3.1 Criar `scripts/hygiene_report.py` (D5): coleta com `gh`/`git`, detecção em
   funções puras para os 7 itens, exclusão das branches permanentes lidas do
   `AGENTS.md` (padrão `main, stable, pages-store` enquanto o grupo 2 não estiver
   integrado) e das branches em PR aberto.
-- [ ] 3.2 Saída: `--dry-run` imprime (e grava em `$GITHUB_STEP_SUMMARY` quando
+- [x] 3.2 Saída: `--dry-run` imprime (e grava em `$GITHUB_STEP_SUMMARY` quando
   existir); sem `--dry-run`, mantém a issue única `[PENDÊNCIAS] Relatório semanal`
   (label `hygiene-report`): cria, atualiza, reabre ou fecha conforme D5, com data e
   hora UTC no corpo. Nunca altera outros PRs, issues ou branches.
-- [ ] 3.3 Criar `scripts/tests/test_hygiene_report.py` com fixtures JSON e dublê do
+- [x] 3.3 Criar `scripts/tests/test_hygiene_report.py` com fixtures JSON e dublê do
   `gh` (D7), cobrindo cada item, as exclusões e as decisões sobre a issue.
-- [ ] 3.4 Criar `.github/workflows/hygiene-report.yml` (D6): cron `0 12 * * 1`,
+- [x] 3.4 Criar `.github/workflows/hygiene-report.yml` (D6): cron `0 12 * * 1`,
   `workflow_dispatch` com `dry-run` padrão `true`, permissões `contents: read`,
   `pull-requests: read`, `issues: write`, escrita só com
   `HYGIENE_REPORT_ENABLED == 'true'`.
-- [ ] 3.5 Verificar: testes; `python scripts/hygiene_report.py --dry-run` contra o
+- [x] 3.5 Verificar: testes; `python scripts/hygiene_report.py --dry-run` contra o
   repositório real com o `gh` do usuário (somente leitura), resultado registrado no
   PR; `act` no job `scripts-tests`. O relatório não roda no `act` (depende de token
   e da API do GitHub): limitação registrada. Opcional, só com `dry-run`: disparo

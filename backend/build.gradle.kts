@@ -4,6 +4,7 @@ plugins {
     java
     jacoco
     id("org.springframework.boot") version "4.1.1"
+    id("com.diffplug.spotless") version "8.11.0"
 }
 
 group = "br.com.concursosimulator"
@@ -77,6 +78,19 @@ tasks.jacocoTestReport {
     reports {
         xml.required = true
         html.required = true
+    }
+}
+
+// Formatação do Java verificada em check (logo em build); corrigir com ./gradlew spotlessApply.
+spotless {
+    // LF em qualquer sistema: o repositório versiona os fontes com LF.
+    lineEndings = com.diffplug.spotless.LineEnding.UNIX
+    java {
+        target("src/**/*.java")
+        palantirJavaFormat("2.103.0")
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
     }
 }
 

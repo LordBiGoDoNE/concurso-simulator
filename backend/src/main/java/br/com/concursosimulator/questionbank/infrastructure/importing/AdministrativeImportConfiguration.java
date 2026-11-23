@@ -10,11 +10,29 @@ import org.springframework.transaction.PlatformTransactionManager;
 
 @Configuration
 public class AdministrativeImportConfiguration {
-    @Bean AdministrativePackageReader administrativePackageReader(){return new AdministrativePackageReader();}
-    @Bean QuestionImportTarget questionImportTarget(ImportSettings settings){return new QuestionImportTarget(settings.destination());}
-    @Bean PreviewQuestionCandidatesUseCase previewAdministrativeQuestions(EntityManager em,PlatformTransactionManager manager){
-        return new PreviewQuestionCandidatesUseCase(new JpaQuestionInventory(em,manager));
+    @Bean
+    AdministrativePackageReader administrativePackageReader() {
+        return new AdministrativePackageReader();
     }
-    @Bean ApplyAdministrativeQuestionsUseCase applyAdministrativeQuestions(QuestionImportStore store,Clock clock){return new ApplyAdministrativeQuestionsUseCase(store,clock);}
-    @Bean ImportConfirmationTokens importConfirmationTokens(ImportSettings settings,Clock clock){return new ImportConfirmationTokens(settings.secret(),clock);}
+
+    @Bean
+    QuestionImportTarget questionImportTarget(ImportSettings settings) {
+        return new QuestionImportTarget(settings.destination());
+    }
+
+    @Bean
+    PreviewQuestionCandidatesUseCase previewAdministrativeQuestions(
+            EntityManager em, PlatformTransactionManager manager) {
+        return new PreviewQuestionCandidatesUseCase(new JpaQuestionInventory(em, manager));
+    }
+
+    @Bean
+    ApplyAdministrativeQuestionsUseCase applyAdministrativeQuestions(QuestionImportStore store, Clock clock) {
+        return new ApplyAdministrativeQuestionsUseCase(store, clock);
+    }
+
+    @Bean
+    ImportConfirmationTokens importConfirmationTokens(ImportSettings settings, Clock clock) {
+        return new ImportConfirmationTokens(settings.secret(), clock);
+    }
 }

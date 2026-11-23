@@ -15,7 +15,8 @@ public class StatusController {
 
     @GetMapping("/api/v1/status")
     public ResponseEntity<Status> status() {
-        return readiness.isReady() ? ResponseEntity.ok(new Status("UP"))
+        return readiness.isReady()
+                ? ResponseEntity.ok(new Status("UP"))
                 : ResponseEntity.status(503).body(new Status("DOWN"));
     }
 

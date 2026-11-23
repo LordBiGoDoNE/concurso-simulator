@@ -34,7 +34,8 @@ class TestPostgresTests {
         var database = TestPostgres.newDatabase();
 
         assertThat(database.getJdbcUrl()).contains("/" + database.getDatabaseName() + "?");
-        try (var connection = DriverManager.getConnection(database.getJdbcUrl(), database.getUsername(), database.getPassword())) {
+        try (var connection =
+                DriverManager.getConnection(database.getJdbcUrl(), database.getUsername(), database.getPassword())) {
             assertThat(connection.getCatalog()).isEqualTo(database.getDatabaseName());
         }
     }
@@ -43,19 +44,28 @@ class TestPostgresTests {
     void execInContainerReachesTheOwnDatabase() throws Exception {
         var database = TestPostgres.newDatabase();
         var result = database.execInContainer(
-                "psql", "-U", database.getUsername(), "-d", database.getDatabaseName(), "-tAc", "select current_database()");
+                "psql",
+                "-U",
+                database.getUsername(),
+                "-d",
+                database.getDatabaseName(),
+                "-tAc",
+                "select current_database()");
 
         assertThat(result.getExitCode()).isZero();
         assertThat(result.getStdout().trim()).isEqualTo(database.getDatabaseName());
     }
 
     private static int tables(TestDatabase database) throws SQLException {
-        return withJdbc(database, jdbc -> jdbc.queryForObject(
-                "select count(*) from information_schema.tables where table_schema = 'public'", Integer.class));
+        return withJdbc(
+                database,
+                jdbc -> jdbc.queryForObject(
+                        "select count(*) from information_schema.tables where table_schema = 'public'", Integer.class));
     }
 
     private static <T> T withJdbc(TestDatabase database, Function<JdbcTemplate, T> work) throws SQLException {
-        try (var connection = DriverManager.getConnection(database.getJdbcUrl(), database.getUsername(), database.getPassword())) {
+        try (var connection =
+                DriverManager.getConnection(database.getJdbcUrl(), database.getUsername(), database.getPassword())) {
             return work.apply(new JdbcTemplate(new SingleConnectionDataSource(connection, true)));
         }
     }

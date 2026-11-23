@@ -29,8 +29,10 @@ public final class TestPostgres {
     /** Banco novo e vazio no servidor compartilhado. */
     public static TestDatabase newDatabase() {
         var server = server();
-        var name = "t" + SEQUENCE.incrementAndGet() + "_" + UUID.randomUUID().toString().replace("-", "").substring(0, 12);
-        try (var connection = DriverManager.getConnection(server.getJdbcUrl(), server.getUsername(), server.getPassword());
+        var name = "t" + SEQUENCE.incrementAndGet() + "_"
+                + UUID.randomUUID().toString().replace("-", "").substring(0, 12);
+        try (var connection =
+                        DriverManager.getConnection(server.getJdbcUrl(), server.getUsername(), server.getPassword());
                 var statement = connection.createStatement()) {
             statement.execute("create database " + name);
         } catch (SQLException failure) {
@@ -79,11 +81,25 @@ public final class TestPostgres {
             return url.substring(0, at) + "/" + name + url.substring(at + current.length());
         }
 
-        public String getUsername() { return server.getUsername(); }
-        public String getPassword() { return server.getPassword(); }
-        public String getDatabaseName() { return name; }
-        public String getHost() { return server.getHost(); }
-        public Integer getMappedPort(int port) { return server.getMappedPort(port); }
+        public String getUsername() {
+            return server.getUsername();
+        }
+
+        public String getPassword() {
+            return server.getPassword();
+        }
+
+        public String getDatabaseName() {
+            return name;
+        }
+
+        public String getHost() {
+            return server.getHost();
+        }
+
+        public Integer getMappedPort(int port) {
+            return server.getMappedPort(port);
+        }
 
         public ExecResult execInContainer(String... command) throws IOException, InterruptedException {
             return server.execInContainer(command);

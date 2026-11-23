@@ -12,151 +12,273 @@ import java.util.random.RandomGenerator;
 
 public final class AttemptUseCases {
     public record Outcome(Attempt.View attempt, boolean replayed) {}
+
     public record Finished(Attempt.View attempt, Attempt.Result result, boolean replayed) {}
-    public record HistoryEntry(UUID id, String role, Instant createdAt, Instant finishedAt, int total,
-                               java.math.BigDecimal percentage, String topicId) {}
+
+    public record HistoryEntry(
+            UUID id,
+            String role,
+            Instant createdAt,
+            Instant finishedAt,
+            int total,
+            java.math.BigDecimal percentage,
+            String topicId) {}
+
     public record PracticeAvailability(String topicId, int available, int maximum) {}
+
     private final AttemptStore store;
     private final Clock clock;
     private final Supplier<UUID> ids;
     private final Supplier<RandomGenerator> random;
     private final boolean generationEnabled;
     private final QuestionPurpose purpose;
+
     public AttemptUseCases(AttemptStore store, Clock clock, Supplier<UUID> ids, Supplier<RandomGenerator> random) {
-        this(store,clock,ids,random,true);
+        this(store, clock, ids, random, true);
     }
-    public AttemptUseCases(AttemptStore store, Clock clock, Supplier<UUID> ids, Supplier<RandomGenerator> random, boolean generationEnabled) {
-        this(store,clock,ids,random,generationEnabled,QuestionPurpose.SIMULADO);
+
+    public AttemptUseCases(
+            AttemptStore store,
+            Clock clock,
+            Supplier<UUID> ids,
+            Supplier<RandomGenerator> random,
+            boolean generationEnabled) {
+        this(store, clock, ids, random, generationEnabled, QuestionPurpose.SIMULADO);
     }
-    public AttemptUseCases(AttemptStore store, Clock clock, Supplier<UUID> ids, Supplier<RandomGenerator> random, boolean generationEnabled, QuestionPurpose purpose) {
-        this.purpose=Objects.requireNonNull(purpose);
-        this.store=Objects.requireNonNull(store); this.clock=Objects.requireNonNull(clock);
-        this.ids=Objects.requireNonNull(ids); this.random=Objects.requireNonNull(random);
-        this.generationEnabled=generationEnabled;
+
+    public AttemptUseCases(
+            AttemptStore store,
+            Clock clock,
+            Supplier<UUID> ids,
+            Supplier<RandomGenerator> random,
+            boolean generationEnabled,
+            QuestionPurpose purpose) {
+        this.purpose = Objects.requireNonNull(purpose);
+        this.store = Objects.requireNonNull(store);
+        this.clock = Objects.requireNonNull(clock);
+        this.ids = Objects.requireNonNull(ids);
+        this.random = Objects.requireNonNull(random);
+        this.generationEnabled = generationEnabled;
     }
+
     public Outcome create(AttemptOwner actor, UUID operation, Composition composition) {
-        if (purpose!=QuestionPurpose.SIMULADO) throw new IllegalArgumentException("Use o início próprio de prática");
-        Objects.requireNonNull(actor); Objects.requireNonNull(operation); Objects.requireNonNull(composition);
-        var hash=hash("create", canonical(composition));
-        return execute(actor,operation,hash,null, session -> {
+        if (purpose != QuestionPurpose.SIMULADO) throw new IllegalArgumentException("Use o início próprio de prática");
+        Objects.requireNonNull(actor);
+        Objects.requireNonNull(operation);
+        Objects.requireNonNull(composition);
+        var hash = hash("create", canonical(composition));
+        return execute(actor, operation, hash, null, session -> {
             if (composition.useParameterizedQuestions() && !generationEnabled)
                 throw new IllegalStateException("Geração temporariamente desabilitada");
-            var rng=random.get(); var selected=composition.select(session.eligible(purpose),rng);
-            var captured=composition.useParameterizedQuestions()
-                    ?AttemptMaterializer.materialize(selected,session.templates(),rng,ids):selected;
-            var items=captured.stream().map(q -> {
-                var order=new ArrayList<>(q.content().alternatives().stream().map(a -> a.id()).toList());
-                for (int i=order.size()-1;i>0;i--) Collections.swap(order,i,rng.nextInt(i+1));
-                return new Attempt.Item(ids.get(),q,order,q.source().capture()==null?Map.of():q.source().capture().parameterStrings());
-            }).toList();
-            var attempt=Attempt.start(ids.get(),actor,composition,now(),items);
-            session.insert(attempt.snapshot()); return attempt;
+            var rng = random.get();
+            var selected = composition.select(session.eligible(purpose), rng);
+            var captured = composition.useParameterizedQuestions()
+                    ? AttemptMaterializer.materialize(selected, session.templates(), rng, ids)
+                    : selected;
+            var items = captured.stream()
+                    .map(q -> {
+                        var order = new ArrayList<>(q.content().alternatives().stream()
+                                .map(a -> a.id())
+                                .toList());
+                        for (int i = order.size() - 1; i > 0; i--) Collections.swap(order, i, rng.nextInt(i + 1));
+                        return new Attempt.Item(
+                                ids.get(),
+                                q,
+                                order,
+                                q.source().capture() == null
+                                        ? Map.of()
+                                        : q.source().capture().parameterStrings());
+                    })
+                    .toList();
+            var attempt = Attempt.start(ids.get(), actor, composition, now(), items);
+            session.insert(attempt.snapshot());
+            return attempt;
         });
     }
+
     public PracticeAvailability practiceAvailability(Topic topic) {
-        requirePractice(); Objects.requireNonNull(topic);
-        return store.transaction(s -> new PracticeAvailability(topic.id(),practicePool(s,topic).size(),Attempt.PRACTICE_MAXIMUM));
+        requirePractice();
+        Objects.requireNonNull(topic);
+        return store.transaction(
+                s -> new PracticeAvailability(topic.id(), practicePool(s, topic).size(), Attempt.PRACTICE_MAXIMUM));
     }
+
     public Outcome createPractice(AttemptOwner actor, UUID operation, Topic topic) {
-        requirePractice(); Objects.requireNonNull(topic);
-        return execute(actor,operation,hash("lesson-practice/v2",topic.name()),null,session -> {
-            var pool=practicePool(session,topic);
-            if (pool.isEmpty()) throw new Composition.InsufficientPool(Map.of(topic.discipline(),0));
-            var rng=random.get();var selected=Composition.shuffle(pool,rng).subList(0,Math.min(Attempt.PRACTICE_MAXIMUM,pool.size()));
-            var items=selected.stream().map(q -> new Attempt.Item(ids.get(),q,
-                    Composition.shuffle(q.content().alternatives().stream().map(a -> a.id()).toList(),rng),Map.<String,String>of())).toList();
-            var attempt=Attempt.startPractice(ids.get(),actor,topic,now(),items);
-            session.insert(attempt.snapshot());return attempt;
+        requirePractice();
+        Objects.requireNonNull(topic);
+        return execute(actor, operation, hash("lesson-practice/v2", topic.name()), null, session -> {
+            var pool = practicePool(session, topic);
+            if (pool.isEmpty()) throw new Composition.InsufficientPool(Map.of(topic.discipline(), 0));
+            var rng = random.get();
+            var selected = Composition.shuffle(pool, rng).subList(0, Math.min(Attempt.PRACTICE_MAXIMUM, pool.size()));
+            var items = selected.stream()
+                    .map(q -> new Attempt.Item(
+                            ids.get(),
+                            q,
+                            Composition.shuffle(
+                                    q.content().alternatives().stream()
+                                            .map(a -> a.id())
+                                            .toList(),
+                                    rng),
+                            Map.<String, String>of()))
+                    .toList();
+            var attempt = Attempt.startPractice(ids.get(), actor, topic, now(), items);
+            session.insert(attempt.snapshot());
+            return attempt;
         });
     }
-    private List<AttemptQuestion> practicePool(AttemptStore.Session session,Topic topic) {
-        var pool=session.eligible(QuestionPurpose.PRATICA_AULA).stream()
-                .filter(q -> q.purpose()==QuestionPurpose.PRATICA_AULA && q.content().classification().topic()==topic
-                        && q.source().kind()==QuestionSource.Kind.FIXED).toList();
-        if (pool.stream().map(AttemptQuestion::questionId).distinct().count()!=pool.size())
+
+    private List<AttemptQuestion> practicePool(AttemptStore.Session session, Topic topic) {
+        var pool = session.eligible(QuestionPurpose.PRATICA_AULA).stream()
+                .filter(q -> q.purpose() == QuestionPurpose.PRATICA_AULA
+                        && q.content().classification().topic() == topic
+                        && q.source().kind() == QuestionSource.Kind.FIXED)
+                .toList();
+        if (pool.stream().map(AttemptQuestion::questionId).distinct().count() != pool.size())
             throw new IllegalStateException("Identidade duplicada no pool");
         return pool;
     }
+
     private void requirePractice() {
-        if (purpose!=QuestionPurpose.PRATICA_AULA) throw new IllegalArgumentException("Operação de prática indisponível neste contexto");
+        if (purpose != QuestionPurpose.PRATICA_AULA)
+            throw new IllegalArgumentException("Operação de prática indisponível neste contexto");
     }
-    public Outcome answer(AttemptOwner actor, UUID attemptId, UUID operation, long version, UUID item, UUID alternative) {
+
+    public Outcome answer(
+            AttemptOwner actor, UUID attemptId, UUID operation, long version, UUID item, UUID alternative) {
         Objects.requireNonNull(item);
-        return execute(actor,operation,hash("answer",attemptId,version,item,alternative),attemptId, session -> {
-            var attempt=load(session,actor,attemptId); attempt.answer(actor,now(),version,item,alternative);
-            session.update(attempt.snapshot(),version); return attempt;
+        return execute(actor, operation, hash("answer", attemptId, version, item, alternative), attemptId, session -> {
+            var attempt = load(session, actor, attemptId);
+            attempt.answer(actor, now(), version, item, alternative);
+            session.update(attempt.snapshot(), version);
+            return attempt;
         });
     }
+
     public Finished finish(AttemptOwner actor, UUID attemptId, UUID operation, long version) {
-        var outcome=execute(actor,operation,hash("finish",attemptId,version),attemptId, session -> {
-            var attempt=load(session,actor,attemptId); attempt.finish(actor,now(),version);
-            session.update(attempt.snapshot(),version); return attempt;
+        var outcome = execute(actor, operation, hash("finish", attemptId, version), attemptId, session -> {
+            var attempt = load(session, actor, attemptId);
+            attempt.finish(actor, now(), version);
+            session.update(attempt.snapshot(), version);
+            return attempt;
         });
-        var result=store.transaction(s -> load(s,actor,attemptId).result(actor,now()));
-        return new Finished(outcome.attempt(),result,outcome.replayed());
+        var result = store.transaction(s -> load(s, actor, attemptId).result(actor, now()));
+        return new Finished(outcome.attempt(), result, outcome.replayed());
     }
+
     public Attempt.View read(AttemptOwner actor, UUID id) {
-        return store.transaction(s -> load(s,actor,id).view(actor,now()));
+        return store.transaction(s -> load(s, actor, id).view(actor, now()));
     }
+
     public Attempt.Result result(AttemptOwner actor, UUID id) {
-        return store.transaction(s -> load(s,actor,id).result(actor,now()));
+        return store.transaction(s -> load(s, actor, id).result(actor, now()));
     }
+
     public List<HistoryEntry> history(AttemptOwner actor, AttemptStore.HistoryQuery query) {
-        Objects.requireNonNull(actor); Objects.requireNonNull(query);
-        if (actor.kind()!=AttemptOwner.Kind.ACCOUNT) throw new Attempt.Unavailable();
-        if (query.purpose()!=purpose) throw new IllegalArgumentException("Histórico de outra modalidade");
-        return store.transaction(s -> s.history(actor,query).stream().map(snapshot -> {
-            var a=Attempt.restore(snapshot); a.requireAccessible(actor,now()); a.requirePurpose(purpose);
-            return new HistoryEntry(snapshot.id(),purpose==QuestionPurpose.SIMULADO?snapshot.composition().role().name():null,snapshot.createdAt(),snapshot.finishedAt(),
-                    snapshot.items().size(),snapshot.finishedAt()==null?null:a.result(actor,now()).percentage(),
-                    snapshot.practiceTopic()==null?null:snapshot.practiceTopic().id());
-        }).toList());
+        Objects.requireNonNull(actor);
+        Objects.requireNonNull(query);
+        if (actor.kind() != AttemptOwner.Kind.ACCOUNT) throw new Attempt.Unavailable();
+        if (query.purpose() != purpose) throw new IllegalArgumentException("Histórico de outra modalidade");
+        return store.transaction(s -> s.history(actor, query).stream()
+                .map(snapshot -> {
+                    var a = Attempt.restore(snapshot);
+                    a.requireAccessible(actor, now());
+                    a.requirePurpose(purpose);
+                    return new HistoryEntry(
+                            snapshot.id(),
+                            purpose == QuestionPurpose.SIMULADO
+                                    ? snapshot.composition().role().name()
+                                    : null,
+                            snapshot.createdAt(),
+                            snapshot.finishedAt(),
+                            snapshot.items().size(),
+                            snapshot.finishedAt() == null
+                                    ? null
+                                    : a.result(actor, now()).percentage(),
+                            snapshot.practiceTopic() == null
+                                    ? null
+                                    : snapshot.practiceTopic().id());
+                })
+                .toList());
     }
-    private Instant now() { return clock.instant().truncatedTo(java.time.temporal.ChronoUnit.MICROS); }
+
+    private Instant now() {
+        return clock.instant().truncatedTo(java.time.temporal.ChronoUnit.MICROS);
+    }
+
     private Attempt load(AttemptStore.Session session, AttemptOwner actor, UUID id) {
-        var attempt=Attempt.restore(session.find(Objects.requireNonNull(id)).orElseThrow(Attempt.Unavailable::new));
-        attempt.requireAccessible(Objects.requireNonNull(actor),now()); attempt.requirePurpose(purpose); return attempt;
+        var attempt = Attempt.restore(session.find(Objects.requireNonNull(id)).orElseThrow(Attempt.Unavailable::new));
+        attempt.requireAccessible(Objects.requireNonNull(actor), now());
+        attempt.requirePurpose(purpose);
+        return attempt;
     }
-    private Outcome execute(AttemptOwner actor, UUID operation, String hash, UUID id, Function<AttemptStore.Session,Attempt> action) {
-        Objects.requireNonNull(actor); Objects.requireNonNull(operation);
-        try { return store.transaction(s -> command(s,actor,operation,hash,id,action)); }
-        catch (AttemptStore.ConcurrentWrite conflict) {
+
+    private Outcome execute(
+            AttemptOwner actor, UUID operation, String hash, UUID id, Function<AttemptStore.Session, Attempt> action) {
+        Objects.requireNonNull(actor);
+        Objects.requireNonNull(operation);
+        try {
+            return store.transaction(s -> command(s, actor, operation, hash, id, action));
+        } catch (AttemptStore.ConcurrentWrite conflict) {
             // A transação perdedora já foi revertida. Só um comando confirmado permite sucesso.
             return store.transaction(s -> {
-                if (id!=null) load(s,actor,id);
-                var prior=s.command(actor,operation).orElseThrow(Attempt.Conflict::new);
-                return replay(prior,actor,hash);
+                if (id != null) load(s, actor, id);
+                var prior = s.command(actor, operation).orElseThrow(Attempt.Conflict::new);
+                return replay(prior, actor, hash);
             });
         }
     }
-    private Outcome command(AttemptStore.Session session, AttemptOwner actor, UUID operation, String hash, UUID id,
-                            Function<AttemptStore.Session,Attempt> action) {
-        if (id!=null) load(session,actor,id); // Posse/expiração antecedem até o replay.
-        var prior=session.command(actor,operation);
-        if (prior.isPresent()) return replay(prior.get(),actor,hash);
-        var attempt=action.apply(session);
-        session.record(actor,operation,new AttemptStore.Command(hash,attempt.snapshot()));
-        return new Outcome(attempt.view(actor,now()),false);
+
+    private Outcome command(
+            AttemptStore.Session session,
+            AttemptOwner actor,
+            UUID operation,
+            String hash,
+            UUID id,
+            Function<AttemptStore.Session, Attempt> action) {
+        if (id != null) load(session, actor, id); // Posse/expiração antecedem até o replay.
+        var prior = session.command(actor, operation);
+        if (prior.isPresent()) return replay(prior.get(), actor, hash);
+        var attempt = action.apply(session);
+        session.record(actor, operation, new AttemptStore.Command(hash, attempt.snapshot()));
+        return new Outcome(attempt.view(actor, now()), false);
     }
+
     private Outcome replay(AttemptStore.Command prior, AttemptOwner actor, String hash) {
-        var attempt=Attempt.restore(prior.outcome()); attempt.requireAccessible(actor,now());
-        if (attempt.snapshot().purpose()!=purpose || !prior.hash().equals(hash)) throw new Attempt.Conflict();
-        return new Outcome(attempt.view(actor,now()),true);
+        var attempt = Attempt.restore(prior.outcome());
+        attempt.requireAccessible(actor, now());
+        if (attempt.snapshot().purpose() != purpose || !prior.hash().equals(hash)) throw new Attempt.Conflict();
+        return new Outcome(attempt.view(actor, now()), true);
     }
+
     private static String canonical(Composition c) {
-        var parts=new ArrayList<String>(); parts.add(c.role().name());
+        var parts = new ArrayList<String>();
+        parts.add(c.role().name());
         c.disciplines().entrySet().stream().sorted(Map.Entry.comparingByKey()).forEach(e -> {
-            parts.add(e.getKey().name()); parts.add(Integer.toString(e.getValue().quantity()));
-            parts.add(e.getValue().topics().stream().map(Enum::name).sorted().toList().toString());
+            parts.add(e.getKey().name());
+            parts.add(Integer.toString(e.getValue().quantity()));
+            parts.add(e.getValue().topics().stream()
+                    .map(Enum::name)
+                    .sorted()
+                    .toList()
+                    .toString());
         });
         // Ausente/false deve produzir exatamente os bytes da V5, inclusive pontuação.
-        return c.useParameterizedQuestions()?"parameterized-create/v1:"+parts:parts.toString();
+        return c.useParameterizedQuestions() ? "parameterized-create/v1:" + parts : parts.toString();
     }
+
     private static String hash(Object... values) {
         try {
-            var bytes=new ByteArrayOutputStream(); var data=new DataOutputStream(bytes);
-            for (var value:values) { var b=String.valueOf(value).getBytes(StandardCharsets.UTF_8); data.writeInt(b.length); data.write(b); }
+            var bytes = new ByteArrayOutputStream();
+            var data = new DataOutputStream(bytes);
+            for (var value : values) {
+                var b = String.valueOf(value).getBytes(StandardCharsets.UTF_8);
+                data.writeInt(b.length);
+                data.write(b);
+            }
             return HexFormat.of().formatHex(MessageDigest.getInstance("SHA-256").digest(bytes.toByteArray()));
-        } catch (IOException | NoSuchAlgorithmException impossible) { throw new IllegalStateException(impossible); }
+        } catch (IOException | NoSuchAlgorithmException impossible) {
+            throw new IllegalStateException(impossible);
+        }
     }
 }

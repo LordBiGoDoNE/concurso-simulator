@@ -14,7 +14,9 @@ import org.springframework.stereotype.Repository;
 public class JpaIdentityRepository implements IdentityRepository {
     private final EntityManager entities;
 
-    public JpaIdentityRepository(EntityManager entities) { this.entities = entities; }
+    public JpaIdentityRepository(EntityManager entities) {
+        this.entities = entities;
+    }
 
     @Override
     public Optional<UUID> findUserId(ExternalIdentity identity) {

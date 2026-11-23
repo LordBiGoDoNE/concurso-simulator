@@ -15,5 +15,7 @@ public record ExternalIdentity(String provider, String issuer, String subject) {
     }
 
     @Override
-    public String toString() { return "ExternalIdentity[redacted]"; }
+    public String toString() {
+        return "ExternalIdentity[redacted]";
+    }
 }

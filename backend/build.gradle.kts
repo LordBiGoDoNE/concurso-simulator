@@ -4,6 +4,7 @@ plugins {
     java
     jacoco
     id("org.springframework.boot") version "4.1.1"
+    id("com.diffplug.spotless") version "8.11.0"
 }
 
 group = "br.com.concursosimulator"
@@ -77,6 +78,23 @@ tasks.jacocoTestReport {
     reports {
         xml.required = true
         html.required = true
+    }
+}
+
+// Formatação do Java verificada em check (logo em build); corrigir com ./gradlew spotlessApply.
+spotless {
+    // LF em qualquer sistema: o repositório versiona os fontes com LF.
+    lineEndings = com.diffplug.spotless.LineEnding.UNIX
+    java {
+        target("src/**/*.java")
+        // As definições editoriais em editorial/parameterized-questions/ fixam os bytes deste
+        // arquivo por SHA-256 (contentSha256/answerSha256) como proveniência; reformatá-lo
+        // quebra essa proveniência e o audit_parameterized_content.py.
+        targetExclude("src/main/java/br/com/concursosimulator/parameterization/domain/NumericGenerator.java")
+        palantirJavaFormat("2.103.0")
+        removeUnusedImports()
+        trimTrailingWhitespace()
+        endWithNewline()
     }
 }
 

@@ -22,10 +22,14 @@ class ClockArchitectureTests {
             .importPackages("br.com.concursosimulator");
 
     static final ArchRule SYSTEM_CLOCK_ONLY_IN_CONFIGURATION = noClasses()
-            .that().doNotHaveFullyQualifiedName(ClockConfiguration.class.getName())
-            .should().callMethod(Clock.class, "systemUTC")
-            .orShould().callMethod(Clock.class, "systemDefaultZone")
-            .orShould().callMethod(Clock.class, "system", ZoneId.class)
+            .that()
+            .doNotHaveFullyQualifiedName(ClockConfiguration.class.getName())
+            .should()
+            .callMethod(Clock.class, "systemUTC")
+            .orShould()
+            .callMethod(Clock.class, "systemDefaultZone")
+            .orShould()
+            .callMethod(Clock.class, "system", ZoneId.class)
             .because("o relógio da aplicação é o bean Clock de ClockConfiguration");
 
     @Test

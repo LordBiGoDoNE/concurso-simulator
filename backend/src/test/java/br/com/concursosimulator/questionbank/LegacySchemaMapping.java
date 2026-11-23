@@ -10,8 +10,11 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
  */
 public final class LegacySchemaMapping {
     private LegacySchemaMapping() {}
+
     public static void apply(LocalContainerEntityManagerFactoryBean bean, JdbcTemplate jdbc) {
-        var version = jdbc.queryForObject("select max(cast(version as integer)) from flyway_schema_history where success and version is not null", Integer.class);
+        var version = jdbc.queryForObject(
+                "select max(cast(version as integer)) from flyway_schema_history where success and version is not null",
+                Integer.class);
         if (version != null && version < 16) bean.setMappingResources("legacy/decision-before-v16-orm.xml");
     }
 }

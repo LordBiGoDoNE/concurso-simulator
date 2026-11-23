@@ -1,11 +1,13 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.infrastructure.local.QuestionBankLocal;
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.application.port.StaleQuestionException;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.io.TempDir;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import java.io.*;
@@ -14,9 +16,8 @@ import java.util.*;
 import java.time.Instant;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class QuestionEditorialCliTests {
-    @Container static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     @TempDir Path temp;
     final JsonMapper json = JsonMapper.builder().build();
     final ByteArrayOutputStream output = new ByteArrayOutputStream();

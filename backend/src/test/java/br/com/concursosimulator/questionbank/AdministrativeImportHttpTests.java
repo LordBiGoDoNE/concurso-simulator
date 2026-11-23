@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.web.AdministrativeImportController.*;
@@ -17,17 +20,15 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.session.*;
 import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.test.context.*;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import static br.com.concursosimulator.questionbank.AdministrativeImportFixtures.document;
 import static org.assertj.core.api.Assertions.*;
 
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("local") @Testcontainers
-class AdministrativeImportHttpTests {
+@ActiveProfiles("local") class AdministrativeImportHttpTests {
     static final UUID OPERATOR=UUID.fromString("77777777-1111-2222-3333-444444444444");
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @DynamicPropertySource static void properties(DynamicPropertyRegistry r){
         r.add("spring.datasource.url",PG::getJdbcUrl);r.add("spring.datasource.username",PG::getUsername);r.add("spring.datasource.password",PG::getPassword);
         r.add("app.question-import.destination-id",()->"isolated-test");

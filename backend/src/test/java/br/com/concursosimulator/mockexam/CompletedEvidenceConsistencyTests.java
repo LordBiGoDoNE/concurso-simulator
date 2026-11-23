@@ -1,12 +1,14 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.*;
 import br.com.concursosimulator.questionbank.domain.TargetRole;
 import jakarta.persistence.*;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.lang.reflect.*;
 import java.nio.file.*;
@@ -18,9 +20,8 @@ import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
 import static br.com.concursosimulator.mockexam.CompletedEvidenceFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class CompletedEvidenceConsistencyTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     static final TargetRole ROLE=TargetRole.ADMINISTRATIVE_ASSISTANT;
     @Test void additiveIndexRemovesTheWindowSortAndPreservesRowsAndCompatibleReadsAfterReopen() throws Exception {
         try(var db=new AttemptDatabase(PG,"9")) {

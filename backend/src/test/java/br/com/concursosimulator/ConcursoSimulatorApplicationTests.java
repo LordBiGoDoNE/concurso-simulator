@@ -1,5 +1,7 @@
 package br.com.concursosimulator;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.MethodOrderer;
@@ -42,7 +44,7 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class ConcursoSimulatorApplicationTests {
     @Container
-    static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6")
+    static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer(TestPostgres.IMAGE)
             .withUrlParam("connectTimeout", "2").withUrlParam("socketTimeout", "3");
 
     @Value("${local.server.port}")

@@ -1,5 +1,8 @@
 package br.com.concursosimulator.parameterization;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaAttemptStore;
@@ -10,7 +13,6 @@ import br.com.concursosimulator.questionbank.infrastructure.persistence.JpaEligi
 import org.junit.jupiter.api.Test;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.support.TransactionTemplate;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import java.sql.Timestamp;
@@ -19,9 +21,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class ParameterizedPersistenceTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     static final Instant NOW=Instant.parse("2026-10-15T12:00:00Z");
     static final AttemptOwner VISITOR=new AttemptOwner(AttemptOwner.Kind.VISITOR,UUID.randomUUID());
     static Composition composition(boolean enabled) { return new Composition(TargetRole.SCHOOL_SECRETARY,

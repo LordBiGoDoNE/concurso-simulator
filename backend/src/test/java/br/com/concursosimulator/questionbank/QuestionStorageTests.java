@@ -1,11 +1,12 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.domain.*;
 import br.com.concursosimulator.questionbank.application.DecideQuestionUseCase;
 import br.com.concursosimulator.questionbank.application.port.StaleQuestionException;
 import org.junit.jupiter.api.*;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.springframework.transaction.support.TransactionTemplate;
 import java.util.List;
@@ -19,9 +20,8 @@ import static br.com.concursosimulator.questionbank.QuestionFixtures.*;
 import static br.com.concursosimulator.questionbank.QuestionEditorialTests.decision;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class QuestionStorageTests {
-    @Container static final PostgreSQLContainer POSTGRES=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     QuestionDatabase db;
     @BeforeEach void open() { db=new QuestionDatabase(POSTGRES); }
     @AfterEach void close() { db.close(); }

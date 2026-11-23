@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.application.*;
 import br.com.concursosimulator.questionbank.application.port.*;
 import br.com.concursosimulator.questionbank.domain.*;
@@ -9,15 +12,13 @@ import java.time.*;
 import java.util.*;
 import java.util.concurrent.*;
 import org.junit.jupiter.api.*;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.springframework.orm.jpa.SharedEntityManagerCreator;
 import static org.assertj.core.api.Assertions.*;
 import static br.com.concursosimulator.questionbank.AdministrativeImportFixtures.document;
 
-@Testcontainers
 class AdministrativeImportPersistenceTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     QuestionDatabase db;ApplyAdministrativeQuestionsUseCase apply;
     final Clock clock=Clock.fixed(Instant.parse("2026-11-09T12:00:00Z"),ZoneOffset.UTC);
     @BeforeEach void open(){db=new QuestionDatabase(PG);apply=new ApplyAdministrativeQuestionsUseCase(db.store,clock);}

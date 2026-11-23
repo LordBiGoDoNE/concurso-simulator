@@ -1,11 +1,13 @@
 package br.com.concursosimulator.parameterization;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.parameterization.domain.*;
 import br.com.concursosimulator.parameterization.application.*;
 import br.com.concursosimulator.parameterization.infrastructure.persistence.*;
 import br.com.concursosimulator.questionbank.domain.EditorialDecision;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.transaction.TransactionDefinition;
@@ -17,9 +19,8 @@ import java.util.function.Function;
 import static br.com.concursosimulator.parameterization.ParameterFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class TemplatePersistenceTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     @Test void registrationApprovalReloadWithdrawalAndImmutableHistoryRoundTripThroughJpa() {
         try(var db=new ParameterDatabase(PG)) {
             var d=db.seed(Family.PERCENTAGE);var uc=new TemplateUseCases(db.store);var v=db.approve(d);

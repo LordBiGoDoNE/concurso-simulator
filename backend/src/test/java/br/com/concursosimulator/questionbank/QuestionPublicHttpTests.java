@@ -1,5 +1,7 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import br.com.concursosimulator.questionbank.application.port.QuestionStore;
 import br.com.concursosimulator.questionbank.application.DecideQuestionUseCase;
 import br.com.concursosimulator.questionbank.domain.*;
@@ -23,7 +25,7 @@ import static org.mockito.Mockito.*;
 @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class QuestionPublicHttpTests {
-    @Container static final PostgreSQLContainer POSTGRES=new PostgreSQLContainer("postgres:18.6").withUrlParam("connectTimeout","2").withUrlParam("socketTimeout","3");
+    @Container static final PostgreSQLContainer POSTGRES=new PostgreSQLContainer(TestPostgres.IMAGE).withUrlParam("connectTimeout","2").withUrlParam("socketTimeout","3");
     @DynamicPropertySource static void database(DynamicPropertyRegistry r) {
         r.add("spring.datasource.url",POSTGRES::getJdbcUrl);r.add("spring.datasource.username",POSTGRES::getUsername);r.add("spring.datasource.password",POSTGRES::getPassword);
     }

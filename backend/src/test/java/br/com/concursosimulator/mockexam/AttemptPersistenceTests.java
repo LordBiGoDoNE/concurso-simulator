@@ -1,12 +1,14 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaAttemptStore;
 import br.com.concursosimulator.questionbank.domain.EditorialDecision;
 import br.com.concursosimulator.questionbank.application.port.EligibleRevisionPool;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.lang.reflect.*;
 import java.time.*;
@@ -17,9 +19,8 @@ import java.util.function.Function;
 import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class AttemptPersistenceTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     JpaAttemptStore store(AttemptDatabase db) { return new JpaAttemptStore(db.entities,db.manager,db.pool); }
     AttemptUseCases cases(AttemptStore store) { return new AttemptUseCases(store,Clock.fixed(NOW,ZoneOffset.UTC),UUID::randomUUID,() -> new Random(42)); }
     void seed(AttemptDatabase db) {

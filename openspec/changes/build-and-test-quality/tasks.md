@@ -44,13 +44,13 @@ e o caso vai ao usuário.
 
 ## 3. PostgreSQL de teste compartilhado — depende de 2 (~300 linhas autorais)
 
-- [ ] 3.1 Levantar as classes que param, pausam ou reconfiguram o servidor e as
+- [x] 3.1 Levantar as classes que param, pausam ou reconfiguram o servidor e as
   fixtures `main`; registrar a lista no PR.
-- [ ] 3.2 Criar `TestPostgres` (imagem única, servidor por JVM, `max_connections`,
+- [x] 3.2 Criar `TestPostgres` (imagem única, servidor por JVM, `max_connections`,
   `newDatabase()`) e testes do próprio suporte (bancos distintos e vazios).
-- [ ] 3.3 Migrar as demais classes para `newDatabase()`; as excluídas passam a usar
+- [x] 3.3 Migrar as demais classes para `newDatabase()`; as excluídas passam a usar
   `TestPostgres.IMAGE`.
-- [ ] 3.4 Medir tempo de `./gradlew test` e contêineres iniciados antes/depois; rodar a
+- [x] 3.4 Medir tempo de `./gradlew test` e contêineres iniciados antes/depois; rodar a
   suíte duas vezes com `--rerun-tasks`; registrar no PR.
 
 ## 4. Spotless no backend — depende de 3 (~40 linhas autorais + formatação gerada)

@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import org.flywaydb.core.Flyway;
 import org.junit.jupiter.api.Test;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -9,16 +12,13 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 import org.springframework.transaction.support.TransactionTemplate;
-import org.testcontainers.junit.jupiter.Container;
-import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.util.Map;
 import java.util.UUID;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class QuestionSchemaTests {
-    @Container static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     @Test void freshAndUpgradeFromV3PreserveIdentitiesAndSessionsAndValidateJpa() {
         var schema="qb_"+UUID.randomUUID().toString().replace("-", "");
         var ds=new DriverManagerDataSource(POSTGRES.getJdbcUrl()+"&currentSchema="+schema,POSTGRES.getUsername(),POSTGRES.getPassword());

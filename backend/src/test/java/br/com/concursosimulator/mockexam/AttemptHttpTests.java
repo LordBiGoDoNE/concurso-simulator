@@ -1,5 +1,7 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import br.com.concursosimulator.questionbank.QuestionBrowserFixtures;
 import org.junit.jupiter.api.*;
@@ -26,7 +28,7 @@ import static org.assertj.core.api.Assertions.*;
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT) @ActiveProfiles("local") @Testcontainers
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 class AttemptHttpTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer(TestPostgres.IMAGE);
     @DynamicPropertySource static void database(DynamicPropertyRegistry r) {
         r.add("spring.datasource.url",PG::getJdbcUrl);r.add("spring.datasource.username",PG::getUsername);r.add("spring.datasource.password",PG::getPassword);
     }

@@ -1,5 +1,7 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.infrastructure.persistence.JpaQuestionStore;
 import jakarta.persistence.EntityManagerFactory;
 import org.flywaydb.core.Flyway;
@@ -7,7 +9,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.*;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.util.Map;
 import java.util.UUID;
 
@@ -17,7 +18,7 @@ public final class QuestionDatabase implements AutoCloseable {
     public final JpaQuestionStore store;
     public final JpaTransactionManager manager;
     public final EntityManagerFactory factory;
-    public QuestionDatabase(PostgreSQLContainer postgres) {
+    public QuestionDatabase(TestDatabase postgres) {
         var schema="qb_"+UUID.randomUUID().toString().replace("-", ""); var url=postgres.getJdbcUrl();
         var ds=new DriverManagerDataSource(url+(url.contains("?")?"&":"?")+"currentSchema="+schema+"&logServerErrorDetail=false",postgres.getUsername(),postgres.getPassword());
         jdbc=new JdbcTemplate(ds);

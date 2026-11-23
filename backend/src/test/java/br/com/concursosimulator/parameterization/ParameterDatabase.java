@@ -1,5 +1,7 @@
 package br.com.concursosimulator.parameterization;
 
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.parameterization.domain.*;
 import br.com.concursosimulator.parameterization.application.*;
 import br.com.concursosimulator.parameterization.infrastructure.persistence.*;
@@ -10,7 +12,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.*;
 import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
-import org.testcontainers.postgresql.PostgreSQLContainer;
 import jakarta.persistence.*;
 import java.time.Instant;
 import java.util.*;
@@ -21,8 +22,8 @@ final class ParameterDatabase implements AutoCloseable {
     final DriverManagerDataSource ds;final JdbcTemplate jdbc;
     EntityManagerFactory factory;EntityManager entities;JpaTransactionManager manager;
     JpaQuestionStore questions;JpaTemplateStore store;JpaEligibleTemplates eligible;
-    ParameterDatabase(PostgreSQLContainer pg){this(pg,"9");}
-    ParameterDatabase(PostgreSQLContainer pg,String target) {
+    ParameterDatabase(TestDatabase pg){this(pg,"9");}
+    ParameterDatabase(TestDatabase pg,String target) {
         ds=new DriverManagerDataSource(pg.getJdbcUrl()+"&currentSchema="+schema,pg.getUsername(),pg.getPassword());jdbc=new JdbcTemplate(ds);
         migrate(target);open(!target.equals("5"));
     }

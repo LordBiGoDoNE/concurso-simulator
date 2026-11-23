@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import java.net.URI;
 import java.net.http.*;
@@ -16,16 +19,14 @@ import org.springframework.security.web.context.HttpSessionSecurityContextReposi
 import org.springframework.session.*;
 import org.springframework.session.jdbc.JdbcIndexedSessionRepository;
 import org.springframework.test.context.*;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import tools.jackson.databind.json.JsonMapper;
 import static org.assertj.core.api.Assertions.*;
 
 /** Ensaio #173 com pacotes Python completos pela cadeia HTTP existente; sem acervo real. */
 @SpringBootTest(webEnvironment=SpringBootTest.WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("local") @Testcontainers
-class QuestionExpansionHttpTests {
-    @Container static final PostgreSQLContainer PG = new PostgreSQLContainer("postgres:18.6");
+@ActiveProfiles("local") class QuestionExpansionHttpTests {
+    static final TestDatabase PG=TestPostgres.newDatabase();
     static final UUID OPERATOR = UUID.randomUUID();
     static final Path FIXTURES = Path.of("build/question-expansion-http-fixtures");
     @DynamicPropertySource static void properties(DynamicPropertyRegistry r) {

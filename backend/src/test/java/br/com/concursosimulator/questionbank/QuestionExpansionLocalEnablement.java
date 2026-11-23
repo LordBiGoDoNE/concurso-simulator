@@ -1,5 +1,7 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity;
 import br.com.concursosimulator.identity.web.UserPrincipal;
@@ -65,7 +67,7 @@ public final class QuestionExpansionLocalEnablement {
         var manifest = JSON.readTree(Files.readAllBytes(packages.resolve("manifest.json")));
         var started = Instant.now();
 
-        var pg = new PostgreSQLContainer("postgres:18.6"); pg.start();
+        var pg = new PostgreSQLContainer(TestPostgres.IMAGE); pg.start();
         ConfigurableApplicationContext app = null;
         try {
             pg.copyFileToContainer(org.testcontainers.utility.MountableFile.forHostPath(dump.toAbsolutePath().normalize().toString()), "/tmp/local-restore.dump");

@@ -1,5 +1,7 @@
 package br.com.concursosimulator.identity;
 
+import br.com.concursosimulator.support.TestPostgres;
+
 import br.com.concursosimulator.ConcursoSimulatorApplication;
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
 import java.util.concurrent.atomic.AtomicReference;
@@ -11,7 +13,7 @@ import org.testcontainers.postgresql.PostgreSQLContainer;
 /** Separate ports, database and test-only provider; never part of the production artifact. */
 public final class AdministrativeBrowserFixture {
     public static void main(String[] args)throws Exception {
-        var pg=new PostgreSQLContainer("postgres:18.6");pg.start();var oidc=new OidcFixture(19087);
+        var pg=new PostgreSQLContainer(TestPostgres.IMAGE);pg.start();var oidc=new OidcFixture(19087);
         var registration=new OidcTestRegistration().fixtureRegistration(oidc.issuer(),"http://127.0.0.1:19086/login/oauth2/code/google");
         var current=new AtomicReference<ConfigurableApplicationContext>();
         try {

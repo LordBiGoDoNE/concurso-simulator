@@ -1,20 +1,21 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.*;
 import br.com.concursosimulator.questionbank.domain.*;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.time.*;
 import java.util.*;
 import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class LessonPracticePersistenceTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     void seedPractice(AttemptDatabase db,int count) {
         for(int i=0;i<count;i++) {
             var c=br.com.concursosimulator.questionbank.QuestionFixtures.content("Prática própria " + i);

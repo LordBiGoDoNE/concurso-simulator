@@ -1,5 +1,8 @@
 package br.com.concursosimulator.questionbank;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.questionbank.infrastructure.local.*;
 import br.com.concursosimulator.questionbank.application.*;
 import br.com.concursosimulator.questionbank.infrastructure.persistence.JpaQuestionInventory;
@@ -8,7 +11,6 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.api.io.TempDir;
 import org.junit.jupiter.api.parallel.ResourceLock;
 import org.junit.jupiter.api.parallel.Resources;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import org.springframework.orm.jpa.SharedEntityManagerCreator;
 import tools.jackson.databind.json.JsonMapper;
@@ -20,9 +22,8 @@ import java.io.*;
 import static org.assertj.core.api.Assertions.*;
 
 /** Banco/schema isolados; comandos de escrita usam somente conteúdo sintético identificado. */
-@Testcontainers
 class QuestionLocalImportTests {
-    @Container static final PostgreSQLContainer POSTGRES = new PostgreSQLContainer("postgres:18.6").withPassword("isolated-fixture-secret-not-logged");
+    static final TestDatabase POSTGRES=TestPostgres.newDatabase();
     @TempDir static Path TEMP;
     static final JsonMapper JSON = JsonMapper.builder().build();
     static final Path ROOT = Path.of("..").toAbsolutePath().normalize();

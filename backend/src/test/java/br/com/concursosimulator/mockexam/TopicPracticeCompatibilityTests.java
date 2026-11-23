@@ -1,11 +1,13 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.persistence.JpaAttemptStore;
 import br.com.concursosimulator.questionbank.domain.*;
 import org.junit.jupiter.api.Test;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.io.*;
 import java.nio.charset.StandardCharsets;
@@ -16,9 +18,8 @@ import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
 import static br.com.concursosimulator.mockexam.LessonPracticeUseCasesTests.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class TopicPracticeCompatibilityTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
 
     static String legacyHash(Object... values) {
         try {

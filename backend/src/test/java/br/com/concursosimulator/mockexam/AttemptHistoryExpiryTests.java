@@ -1,5 +1,8 @@
 package br.com.concursosimulator.mockexam;
 
+import br.com.concursosimulator.support.TestPostgres;
+import br.com.concursosimulator.support.TestPostgres.TestDatabase;
+
 import br.com.concursosimulator.mockexam.application.*;
 import br.com.concursosimulator.mockexam.domain.*;
 import br.com.concursosimulator.mockexam.infrastructure.ExpiredAttemptCleanup;
@@ -11,16 +14,14 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.scheduling.annotation.*;
 import org.springframework.scheduling.config.ScheduledTask;
 import org.springframework.scheduling.config.IntervalTask;
-import org.testcontainers.junit.jupiter.*;
 import org.testcontainers.postgresql.PostgreSQLContainer;
 import java.time.*;
 import java.util.*;
 import static br.com.concursosimulator.mockexam.AttemptFixtures.*;
 import static org.assertj.core.api.Assertions.*;
 
-@Testcontainers
 class AttemptHistoryExpiryTests {
-    @Container static final PostgreSQLContainer PG=new PostgreSQLContainer("postgres:18.6");
+    static final TestDatabase PG=TestPostgres.newDatabase();
     JpaAttemptStore store(AttemptDatabase db) { return new JpaAttemptStore(db.entities,db.manager,db.pool); }
     AttemptUseCases cases(AttemptStore store,Instant now) { return new AttemptUseCases(store,Clock.fixed(now,ZoneOffset.UTC),UUID::randomUUID,() -> new Random(42)); }
     void seed(AttemptDatabase db) {

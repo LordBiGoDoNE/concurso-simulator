@@ -7,11 +7,14 @@ Formatador Java e largura do Prettier: valem as propostas do design. Merges depe
 da aprovação do pacote final.
 
 Cada grupo é um PR em rascunho para a épica, com código, testes e documentação juntos.
-Duas cadeias independentes e um grupo solto:
+Duas cadeias independentes:
 
 - backend: 1 → 2 → 3 → 4 (o grupo 4 formata o código já alterado por 1–3);
-- frontend: 5 → 6 → 7 (o grupo 6 usa o lint do 5; o grupo 7 formata o código do 6);
-- CI: 8, a partir da épica.
+- frontend e CI: 5 → 6 → 7 → 8 (o grupo 6 usa o lint do 5; o grupo 7 formata o código do 6;
+  o grupo 8 altera configs do Playwright e `application.yml` já formatados pelo 7).
+
+As duas cadeias criam `.git-blame-ignore-revs` (grupos 4 e 7); na integração da segunda
+cadeia, a épica entra por merge na branch do grupo 7 e o arquivo fica com as duas linhas.
 
 Em cada grupo: testes do projeto, CI local via `act` e revisão por grupo antes de abrir
 o PR. Commits de formatação, `package-lock.json` e saídas de ferramenta são
@@ -92,12 +95,14 @@ e o caso vai ao usuário.
 
 ## 7. Formatação do frontend — depende de 6 (~20 linhas autorais + formatação gerada)
 
-- [ ] 7.1 Commit só de `prettier --write` em `src`, `e2e`, `test` e configs; testes,
-  `lint`, `typecheck` e build verdes sem outra mudança.
-- [ ] 7.2 Acrescentar o SHA de 7.1 a `.git-blame-ignore-revs`.
-- [ ] 7.3 Passo `format:check` no job `frontend`.
+- [x] 7.1 Commit só de `prettier --write` em `src`, `e2e`, `test` e configs; testes,
+  `lint`, `typecheck` e build verdes sem outra mudança. CSS fica fora (os testes de
+  tokens leem o CSS cru); as supressões de `exhaustive-deps` voltam à linha do array em
+  commit próprio.
+- [x] 7.2 Acrescentar o SHA de 7.1 a `.git-blame-ignore-revs`.
+- [x] 7.3 Passo `format:check` no job `frontend`.
 
-## 8. CI sem duplicação e suítes reais (~80 linhas autorais)
+## 8. CI sem duplicação e suítes reais — depende de 7 (~80 linhas autorais)
 
 - [ ] 8.1 Conferir se #256 já pôs `scripts/tests` em `application.yml`; se não,
   acrescentar `test_build_pages.py` ao job `study-material`.

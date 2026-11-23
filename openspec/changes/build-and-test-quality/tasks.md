@@ -79,16 +79,16 @@ e o caso vai ao usuário.
 
 ## 6. Cliente HTTP único — depende de 5 (~350 linhas autorais)
 
-- [ ] 6.1 `src/http-client.ts` (URL base, timeout, abort, leitura de JSON, limpeza)
+- [x] 6.1 `src/http-client.ts` (URL base, timeout, abort, leitura de JSON, limpeza)
   com testes de timeout, abort externo antes/durante/depois do corpo, barra final e
   limpeza de timer e ouvintes (D10).
-- [ ] 6.2 `src/contract.ts` com os validadores idênticos; validadores de semântica
+- [x] 6.2 `src/contract.ts` com os validadores idênticos; validadores de semântica
   diferente ficam distintos.
-- [ ] 6.3 Migrar `identity-api.ts`, `attempt-api.ts` e `question-api.ts`, preservando
+- [x] 6.3 Migrar `identity-api.ts`, `attempt-api.ts` e `question-api.ts`, preservando
   credenciais, timeouts, mensagens e `AttemptApiError`; testes atuais sem mudança de
   asserções.
-- [ ] 6.4 `App.tsx` usa o cliente e valida o status; teste de corpo fora do contrato.
-- [ ] 6.5 Regra de lint que restringe `fetch` a `http-client.ts`.
+- [x] 6.4 `App.tsx` usa o cliente e valida o status; teste de corpo fora do contrato.
+- [x] 6.5 Regra de lint que restringe `fetch` a `http-client.ts`.
 
 ## 7. Formatação do frontend — depende de 6 (~20 linhas autorais + formatação gerada)
 

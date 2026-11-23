@@ -173,7 +173,8 @@ de `spotlessApply` (gerado, fora da contagem de linhas autorais); commit de
   produção todas continuam ativas, e as violações de `src` foram corrigidas.
 - `no-unused-vars` ignora nomes com prefixo `_` (omissão intencional em desestruturação
   e parâmetros exigidos pela assinatura).
-- Restrição de lint: `fetch` só em `src/http-client.ts` (ativada no grupo 6).
+- Restrição de lint: `fetch` para a API só em `src/http-client.ts` (ativada no grupo 6;
+  exceção nominal e escopo em D10).
 - Prettier com `printWidth: 120`, `singleQuote: true`, `semi: true` e `.prettierignore`
   para JSON gerados (`src/lesson-documents/`, `lesson-catalog.json`, `lesson-paths.json`)
   e saídas de build/teste. Configuração no grupo 5; aplicação no grupo 7.
@@ -192,19 +193,31 @@ de `spotlessApply` (gerado, fora da contagem de linhas autorais); commit de
 - `apiBaseUrl`: `VITE_API_URL` ou `http://localhost:8080`, sem barra final;
 - `positiveTimeout(valor, padrão)`: a regra hoje repetida em `question-api.ts` e
   `App.tsx`;
-- `requestJson(...)`: liga o `signal` externo, aplica o timeout, corre contra o abort
-  (a promessa rejeita com `AbortError` mesmo se `fetch` ignorar o sinal), chama
-  `throwIfAborted()` depois do corpo e limpa timer e ouvintes no `finally`.
-  Recebe `credentials`, `method`, corpo, timeout, mensagem do `AbortError` e uma
-  função `interpret(response)` que cada módulo usa para mapear status e decidir se lê
-  o corpo.
+- `withAbortScope(external, timeoutMs, abortMessage, work)`: cria o escopo de abort
+  ligado ao `signal` externo e ao timeout, corre `work(signal)` contra o abort (a
+  promessa rejeita com `AbortError` e a mensagem do módulo mesmo se `fetch` ou a
+  validação ignorarem o sinal) e limpa timer e ouvintes no `finally`;
+- `apiFetch(path, init)`: o único `fetch` para a API, sobre `apiBaseUrl`.
 
-`src/contract.ts` reúne os validadores idênticos (`ensure`, `row`, `list`, `uuid`,
-`id`). Validadores com semânticas diferentes continuam distintos e com nomes que as
+Cada módulo chama `withAbortScope` com o próprio timeout e mensagem e, dentro de `work`,
+chama `apiFetch` com as próprias opções (`credentials`, `method`, `cache`, corpo e o
+`signal` do escopo), mapeia os próprios status e erros, decide se lê o corpo e chama
+`signal.throwIfAborted()` depois do corpo, antes de validar e entregar os dados.
+
+Regra de lint (`no-restricted-globals` para `fetch` em `src/**/*.{ts,tsx}`): ficam fora
+`src/http-client.ts`, os testes (`*.test.*`, `src/test-setup.ts`) e, como exceção
+nominal, `src/native-lesson.ts`, que carrega documentos estáticos de aula (não a API)
+com `credentials: 'omit'` e `referrerPolicy: 'no-referrer'`. Qualquer outro arquivo de
+produção de `src` que chame `fetch` faz o lint falhar.
+
+`src/contract.ts` reúne os validadores idênticos. No grupo 6 a comparação mostrou que só
+a regex de UUID e o acesso a campo (`field`, `isObject`) são iguais: `ensure`, `row`,
+`list` e `id` diferem nas mensagens (conferidas pelos testes) ou na checagem de chaves
+(`in` × `Object.hasOwn`), por isso continuam em cada módulo. Validadores com semânticas diferentes continuam distintos e com nomes que as
 dizem (por exemplo, `string` de `question-api` aceita texto vazio; `text` de
 `attempt-api` exige texto não vazio). Cada módulo mantém credenciais, timeout,
-mensagens, `AttemptApiError` e validadores de domínio. `App.tsx` usa o cliente e um
-validador de `{ status }`; corpo inválido continua resultando em `down`.
+mensagens, `AttemptApiError` e validadores de domínio. `App.tsx` usa `src/status-api.ts`,
+que passa pelo cliente e valida `{ status }`; corpo inválido continua resultando em `down`.
 
 Evidência de comportamento preservado: os testes atuais de `attempt-api`,
 `identity-api`, `lesson-practice-api` e dos componentes passam sem alteração das

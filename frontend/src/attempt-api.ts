@@ -1,4 +1,5 @@
-import { identityApiUrl } from './identity-api';
+import { uuidPattern as uuid } from './contract';
+import { apiFetch, withAbortScope } from './http-client';
 import type { Content, Detail } from './question-api';
 
 export interface AttemptItem extends Detail { id: string; selectedAlternativeId: string | null }
@@ -17,7 +18,6 @@ export class AttemptApiError extends Error {
   constructor(public status: number, public available: { disciplineId: string; available: number }[] = []) { super('Não foi possível confirmar a operação.'); }
 }
 type Row = Record<string, unknown>;
-const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
 export function ensure(ok: unknown): asserts ok { if (!ok) throw new Error('Contrato de tentativa inválido'); }
 export function row(value: unknown, keys: string[]): Row {
   ensure(value && typeof value === 'object' && !Array.isArray(value)); const r = value as Row;
@@ -54,30 +54,25 @@ function history(v: unknown): asserts v is HistoryPage {
     if (e.finishedAt === null) ensure(e.percentage === null); else { date(e.finishedAt); ensure(typeof e.percentage === 'number' && e.percentage >= 0 && e.percentage <= 100); }
   });
 }
-async function request<T>(path: string, signal: AbortSignal, validate: (v: unknown) => void | T | Promise<void | T>, method = 'GET', payload?: unknown): Promise<T> {
-  const controller = new AbortController(); const abort = () => controller.abort(); signal.addEventListener('abort', abort, { once: true }); if (signal.aborted) abort();
-  const timer = window.setTimeout(abort, 5000); let rejectAbort!: () => void;
-  const aborted = new Promise<never>((_, reject) => { rejectAbort = () => reject(new DOMException('Operação interrompida', 'AbortError')); controller.signal.addEventListener('abort', rejectAbort, { once: true }); if (controller.signal.aborted) rejectAbort(); });
+function request<T>(path: string, signal: AbortSignal, validate: (v: unknown) => void | T | Promise<void | T>, method = 'GET', payload?: unknown): Promise<T> {
+  return withAbortScope(signal, 5000, 'Operação interrompida', async scope => {
   const fetchJson = async (url: string, options: RequestInit = {}) => {
-    controller.signal.throwIfAborted();
-    const response = await fetch(identityApiUrl + url, { ...options, credentials: 'include', cache: 'no-store', signal: controller.signal });
+    scope.throwIfAborted();
+    const response = await apiFetch(url, { ...options, credentials: 'include', cache: 'no-store', signal: scope });
     // Access is already denied by the headers; a missing/broken body must not retain private state.
     if ([401, 403, 404].includes(response.status)) throw new AttemptApiError(response.status);
-    const body: unknown = await response.json(); controller.signal.throwIfAborted();
+    const body: unknown = await response.json(); scope.throwIfAborted();
     if (!response.ok) {
       const available = typeof body === 'object' && body && 'available' in body && Array.isArray(body.available) ? (body.available as unknown[]).filter((a): a is { disciplineId: string; available: number } => typeof a === 'object' && a !== null && 'disciplineId' in a && typeof a.disciplineId === 'string' && 'available' in a && Number.isSafeInteger(a.available) && (a.available as number) >= 0) : [];
       throw new AttemptApiError(response.status, available);
     }
     return body;
   };
-  try {
-    return await Promise.race([aborted, (async () => {
       const headers: Record<string, string> = {};
       if (method !== 'GET') { const csrf = row(await fetchJson('/api/v1/csrf'), ['token', 'headerName']); text(csrf.token); ensure(csrf.headerName === 'X-CSRF-TOKEN'); headers[csrf.headerName] = csrf.token; headers['Content-Type'] = 'application/json'; }
       const body = await fetchJson(path, { method, headers, ...(payload === undefined ? {} : { body: JSON.stringify(payload) }) });
-      const projected = await validate(body); controller.signal.throwIfAborted(); return (projected === undefined ? body : projected) as T;
-    })()]);
-  } finally { window.clearTimeout(timer); signal.removeEventListener('abort', abort); controller.signal.removeEventListener('abort', rejectAbort); }
+      const projected = await validate(body); scope.throwIfAborted(); return (projected === undefined ? body : projected) as T;
+  });
 }
 const attemptPath = (id: string) => { ensure(uuid.test(id)); return `/api/v1/attempts/${id}`; };
 export const createAttempt = (composition: Composition, commandId: string, signal: AbortSignal) => request<AttemptView>('/api/v1/attempts', signal, validateAttempt, 'POST', { ...composition, commandId });

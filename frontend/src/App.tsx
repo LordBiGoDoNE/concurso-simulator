@@ -8,13 +8,11 @@ import StudyHome from './StudyHome';
 import LessonLibrary, { LessonPagination } from './LessonLibrary';
 import { lessons, lessonSupportsRole } from './study-catalog';
 import type { CurrentIdentity } from './identity-api';
+import { apiStatus } from './status-api';
 import { useStudyNavigation, locationForRole, type Area } from './study-navigation';
 import ThemeSelect from './ThemeSelect';
 import './styles/shell.css';
 
-const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:8080';
-const configuredTimeout = Number(import.meta.env.VITE_STATUS_TIMEOUT_MS || 5000);
-const timeoutMs = Number.isFinite(configuredTimeout) && configuredTimeout > 0 ? configuredTimeout : 5000;
 const areaNames: Record<Area, string> = { home: 'Início', attempts: 'Simulados', lessons: 'Aulas', practice: 'Práticas', questions: 'Banco de questões' };
 
 export default function App() {
@@ -64,17 +62,10 @@ export default function App() {
 
   useEffect(() => {
     const controller = new AbortController();
-    const timer = window.setTimeout(() => controller.abort(), timeoutMs);
     let active = true;
     setStatus('loading');
-    fetch(`${apiUrl.replace(/\/$/, '')}/api/v1/status`, { signal: controller.signal })
-      .then(async response => {
-        const body: unknown = await response.json();
-        if (active) setStatus(response.ok && typeof body === 'object' && body !== null && 'status' in body && body.status === 'UP' ? 'up' : 'down');
-      })
-      .catch(() => { if (active) setStatus('down'); })
-      .finally(() => window.clearTimeout(timer));
-    return () => { active = false; window.clearTimeout(timer); controller.abort(); };
+    void apiStatus(controller.signal).then(value => { if (active) setStatus(value); });
+    return () => { active = false; controller.abort(); };
   }, [attempt]);
 
   return (

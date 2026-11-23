@@ -1,3 +1,6 @@
+import { uuidPattern as uuid } from './contract';
+import { apiFetch, positiveTimeout, withAbortScope } from './http-client';
+
 export interface Named { id: string; title: string }
 export interface Topic extends Named { disciplineId: string }
 export interface Catalog { contestId: string; disciplines: Named[]; topics: Topic[]; roles: Named[] }
@@ -9,10 +12,7 @@ export interface QuestionPage { items: Summary[]; page: number; size: number; to
 export interface Detail { questionId: string; revisionId: string; classification: Classification; statement: Content; alternatives: { id: string; content: Content }[]; references: { name: string; url: string }[] }
 export interface Filters { disciplineId: string; topicId: string; roleId: string; page: number }
 
-const api = (import.meta.env.VITE_API_URL || 'http://localhost:8080').replace(/\/$/, '');
-const configured = Number(import.meta.env.VITE_QUESTION_TIMEOUT_MS || 5000);
-const timeout = Number.isFinite(configured) && configured > 0 ? configured : 5000;
-const uuid = /^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i;
+const timeout = positiveTimeout(import.meta.env.VITE_QUESTION_TIMEOUT_MS, 5000);
 type Row = Record<string, unknown>;
 function row(value: unknown, keys: string[]): Row {
   if (!value || typeof value !== 'object' || Array.isArray(value) || Object.keys(value).length !== keys.length || keys.some(k => !(k in value))) throw new Error('Contrato de questões inválido');
@@ -29,29 +29,13 @@ function content(value: unknown) {
 }
 function summary(value: unknown) { const r = row(value, ['questionId', 'revisionId', 'classification', 'statementStart']); id(r.questionId); id(r.revisionId); classification(r.classification); string(r.statementStart); }
 
-async function request<T>(path: string, signal: AbortSignal, validate: (body: unknown) => void): Promise<T> {
-  const controller = new AbortController();
-  const abort = () => controller.abort();
-  signal.addEventListener('abort', abort, { once: true });
-  if (signal.aborted) controller.abort();
-  const timer = window.setTimeout(abort, timeout);
-  let rejectAbort!: (error: unknown) => void;
-  const aborted = new Promise<never>((_resolve, reject) => {
-    rejectAbort = () => reject(new DOMException('Consulta interrompida', 'AbortError'));
-    controller.signal.addEventListener('abort', rejectAbort, { once: true });
-    if (controller.signal.aborted) rejectAbort(undefined);
+function request<T>(path: string, signal: AbortSignal, validate: (body: unknown) => void): Promise<T> {
+  return withAbortScope(signal, timeout, 'Consulta interrompida', async scope => {
+    const response = await apiFetch(`/api/v1/question-bank${path}`, { method: 'GET', credentials: 'omit', cache: 'no-store', signal: scope });
+    if (!response.ok) throw new Error('Consulta de questões indisponível');
+    const body: unknown = await response.json();
+    scope.throwIfAborted(); validate(body); return body as T;
   });
-  try {
-    return await Promise.race([aborted, (async () => {
-      controller.signal.throwIfAborted();
-      const response = await fetch(`${api}/api/v1/question-bank${path}`, { method: 'GET', credentials: 'omit', cache: 'no-store', signal: controller.signal });
-      if (!response.ok) throw new Error('Consulta de questões indisponível');
-      const body: unknown = await response.json();
-      controller.signal.throwIfAborted(); validate(body); return body as T;
-    })()]);
-  } finally {
-    window.clearTimeout(timer); signal.removeEventListener('abort', abort); controller.signal.removeEventListener('abort', rejectAbort);
-  }
 }
 export function questionCatalog(signal: AbortSignal) {
   return request<Catalog>('/catalog', signal, body => {

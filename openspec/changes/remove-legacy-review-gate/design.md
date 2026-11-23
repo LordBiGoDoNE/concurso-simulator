@@ -75,10 +75,12 @@ conflito entre as specs.
 
 ### D2. Ordem: adicionar antes de remover, no mesmo PR
 
-O grupo 1 faz as duas mudanças num único PR. O PR roda o workflow novo e, por ser
-PR, ainda roda o `spec-review.yml` da base. Assim o próprio PR mostra
-`scripts-tests` verde antes da remoção chegar à épica. Não há janela em que
-`scripts/tests` fique sem CI.
+O grupo 1 faz as duas mudanças num único PR. Em `pull_request`, o GitHub usa os
+workflows do merge ref do próprio PR. Por isso o PR já mostra `scripts-tests`
+verde e deixa de publicar `spec-review-tests` antes da remoção chegar à épica.
+Não há janela em que `scripts/tests` fique sem CI. Correção de 2026-11-23: a
+versão anterior deste texto dizia que o PR ainda rodaria o `spec-review.yml` da
+base. O run do #262 mostrou que não.
 
 ### D3. Preservação do histórico
 

@@ -61,6 +61,35 @@ jobs:
         with:
           python-version: '3.x'
       - run: python3 -m unittest discover -s scripts/tests -v
+  # Nome exato `openspec`: o guard global do Claude Code lê este check-run.
+  openspec:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+      - name: Validate OpenSpec
+        run: npx --yes @fission-ai/openspec@1.15.0 validate --all
+        env:
+          OPENSPEC_TELEMETRY: '0'
+      - name: OpenSpec lifecycle
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          BASE_BRANCH: ${{ github.base_ref }}
+        run: |
+          if [ "$EVENT_NAME" = "pull_request" ]; then
+            python3 scripts/check_openspec_lifecycle.py \
+              --base-ref "origin/$BASE_BRANCH" --base-branch "$BASE_BRANCH"
+          else
+            python3 scripts/check_openspec_lifecycle.py
+          fi
   study-material:
     runs-on: ubuntu-latest
     timeout-minutes: 10

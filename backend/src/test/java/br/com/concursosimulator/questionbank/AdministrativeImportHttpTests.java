@@ -108,6 +108,12 @@ class AdministrativeImportHttpTests {
         assertThat(send("POST",prefix+"/preview",cookie,token,missing,null).statusCode()).isEqualTo(422);
         var wrong=good.replace("\"purpose\":\"PRATICA_AULA\"","\"purpose\":\"SIMULADO\"");
         assertThat(send("POST",prefix+"/preview",cookie,token,wrong,null).statusCode()).isEqualTo(422);
+        // Objeto de valor recusado e lista com null continuam pacote inválido com a validação contra o DTO web.
+        assertThat(good).contains("\"key\":\"admin.strict\"");
+        for(var invalid:List.of(good.replace("\"key\":\"admin.strict\"","\"key\":\"\""),good.replaceFirst("\"items\":\\[","\"items\":[null,"))) {
+            var response=send("POST",prefix+"/preview",cookie,token,invalid,null);
+            assertThat(response.statusCode()).as(response.body()).isEqualTo(422);assertThat(response.body()).contains("INVALID_PACKAGE");
+        }
     }
     @Test @org.junit.jupiter.api.extension.ExtendWith(org.springframework.boot.test.system.OutputCaptureExtension.class)
     void unexpectedAndTransientFailuresHaveStableSanitizedContracts(org.springframework.boot.test.system.CapturedOutput output)throws Exception {

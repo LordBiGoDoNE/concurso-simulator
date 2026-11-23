@@ -1,0 +1,31 @@
+{
+  "destinationId" : "isolated-test",
+  "receipt" : {
+    "confirmation" : {
+      "nonce" : "<uuid>",
+      "actor" : "<uuid>",
+      "destination" : "isolated-test",
+      "digest" : "6a27629d0d5323f4f56070e3913eb7e1f440bb4e216ec67a1d3ae60c3a2e69b4",
+      "issuedAt" : "<instant>",
+      "expiresAt" : "<instant>"
+    },
+    "committedAt" : "<instant>",
+    "action" : "SUBMIT",
+    "reviewKind" : null,
+    "responsible" : "admin:<uuid>",
+    "decisions" : [ {
+      "questionId" : "<uuid>",
+      "revisionId" : "<uuid>",
+      "fingerprint" : "1df06d3eff6127b6611c8494bb847c39d66d35ce5c673f783aa666421d6d0e9e",
+      "decisionSequence" : 0,
+      "resultingStatus" : "IN_REVIEW"
+    }, {
+      "questionId" : "<uuid>",
+      "revisionId" : "<uuid>",
+      "fingerprint" : "9dca6647e4fa41890905cdfa0c7ecc5b92d9b5865c5886b7aa47c2d9102f3c9e",
+      "decisionSequence" : 0,
+      "resultingStatus" : "IN_REVIEW"
+    } ]
+  },
+  "replayed" : false
+}

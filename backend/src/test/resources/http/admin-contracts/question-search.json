@@ -1,0 +1,42 @@
+{
+  "page" : 0,
+  "size" : 50,
+  "total" : 2,
+  "items" : [ {
+    "questionId" : "<uuid>",
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.one"
+    },
+    "purpose" : "SIMULADO",
+    "editorialSequence" : 0,
+    "latest" : {
+      "id" : "<uuid>",
+      "number" : 1,
+      "status" : "DRAFT",
+      "fingerprint" : "d4690884989794dc70dd8fbec4c793ab149d70b784e464196c31a9e566c79970",
+      "disciplineId" : "portugues",
+      "topicId" : "P01"
+    },
+    "eligible" : null,
+    "lastActivityAt" : "<instant>"
+  }, {
+    "questionId" : "<uuid>",
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.two"
+    },
+    "purpose" : "SIMULADO",
+    "editorialSequence" : 0,
+    "latest" : {
+      "id" : "<uuid>",
+      "number" : 1,
+      "status" : "DRAFT",
+      "fingerprint" : "ef10d91d822f65c1ae41b934be604a7336a1a67b569c6241dd79610ade0c47c8",
+      "disciplineId" : "portugues",
+      "topicId" : "P01"
+    },
+    "eligible" : null,
+    "lastActivityAt" : "<instant>"
+  } ]
+}

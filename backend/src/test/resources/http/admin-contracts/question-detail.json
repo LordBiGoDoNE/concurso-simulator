@@ -1,0 +1,76 @@
+{
+  "questionId" : "<uuid>",
+  "origin" : {
+    "namespace" : "admin-question-v1",
+    "key" : "snapshot.one"
+  },
+  "purpose" : "SIMULADO",
+  "editorialSequence" : 1,
+  "eligibleRevisionId" : null,
+  "revisions" : [ {
+    "id" : "<uuid>",
+    "number" : 1,
+    "status" : "IN_REVIEW",
+    "fingerprint" : "d4690884989794dc70dd8fbec4c793ab149d70b784e464196c31a9e566c79970",
+    "content" : {
+      "statement" : {
+        "text" : "Fixture snapshot.one a < b > c",
+        "resources" : [ ]
+      },
+      "alternatives" : [ {
+        "id" : "<uuid>",
+        "content" : {
+          "text" : "Opção sintética A",
+          "resources" : [ ]
+        }
+      }, {
+        "id" : "<uuid>",
+        "content" : {
+          "text" : "Opção sintética B",
+          "resources" : [ ]
+        }
+      } ],
+      "correctAlternativeId" : "<uuid>",
+      "resolution" : {
+        "text" : "Resolução sintética: x² = x vezes x.",
+        "resources" : [ ]
+      },
+      "classification" : {
+        "disciplineId" : "portugues",
+        "topicId" : "P01",
+        "roleIds" : [ "assistente-administrativo", "secretario-de-escola" ]
+      },
+      "references" : [ {
+        "name" : "Referência sintética",
+        "url" : "https://example.test/study",
+        "legalBasis" : null
+      } ],
+      "provenance" : {
+        "author" : "Teste sintético",
+        "contentPath" : "sources/fixture.txt",
+        "answerPath" : "sources/fixture.txt",
+        "contentSha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f",
+        "answerSha256" : "78d32c930b90678649b352643f4e43fb42f3c07480d5e78d69e80955eebf078f"
+      }
+    }
+  } ],
+  "decisions" : [ {
+    "sequence" : 0,
+    "action" : "SUBMIT",
+    "revisionId" : "<uuid>",
+    "fingerprint" : "d4690884989794dc70dd8fbec4c793ab149d70b784e464196c31a9e566c79970",
+    "responsible" : "Fixture sintética",
+    "at" : "<instant>",
+    "checklist" : [ "CORRECTNESS", "DISTRACTORS", "CLARITY", "STEP_BY_STEP", "ACCESSIBILITY", "SOURCES", "CLASSIFICATION" ],
+    "rationale" : "Somente teste isolado",
+    "reviewKind" : null
+  } ],
+  "imports" : [ {
+    "receiptId" : "<uuid>",
+    "actor" : "<uuid>",
+    "destination" : "isolated-test",
+    "committedAt" : "<instant>",
+    "revisionId" : "<uuid>",
+    "reused" : false
+  } ]
+}

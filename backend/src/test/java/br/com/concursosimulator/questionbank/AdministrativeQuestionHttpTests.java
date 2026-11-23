@@ -297,4 +297,26 @@ class AdministrativeQuestionHttpTests {
         contract("AdminQuestionExportError", json.readTree(refused.body()));
         contract("QuestionImportError", json.readTree(send("GET", BASE + "?size=0", cookie, null, null).body()));
     }
+
+    /** JSON público da importação, consulta, detalhe, lookup e exportação (grupo 5: DTOs web próprios). */
+    @Test void f_administrativeJsonContractsAreStable() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie); var keys = List.of("snapshot.one", "snapshot.two");
+        var doc = document(QuestionPurpose.SIMULADO, keys.toArray(String[]::new));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(doc, keys))));
+        JsonContractSnapshot.check("import-preview", preview);
+        var applied = ok(send("POST", "/api/v1/admin/question-imports/apply", cookie, csrf,
+                json.writeValueAsString(new ApplyRequest(doc, keys, preview.get("confirmationToken").asString()))));
+        JsonContractSnapshot.check("import-apply", applied);
+        var id = applied.path("receipt").path("results").get(0).path("questionId").asString();
+        JsonContractSnapshot.check("question-search", ok(send("GET", BASE + "?keyPrefix=snapshot.", cookie, null, null)));
+        decide(UUID.fromString(id), EditorialDecision.Action.SUBMIT, null);
+        JsonContractSnapshot.check("question-detail", ok(send("GET", BASE + "/" + id, cookie, null, null)));
+        JsonContractSnapshot.check("question-lookup", ok(send("POST", BASE + "/lookup", cookie, csrf,
+                "{\"items\":[{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\"snapshot.one\"},\"fingerprint\":null},"
+                        + "{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\"snapshot.absent\"},\"fingerprint\":null}]}")));
+        JsonContractSnapshot.check("question-export", ok(send("POST", BASE + "/export", cookie, csrf, "{\"questionIds\":[\"" + id + "\"]}")));
+        // Re-preview do mesmo pacote: itens já existentes mudam o tipo de alteração e o JSON continua estável.
+        JsonContractSnapshot.check("import-preview-existing", ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf,
+                json.writeValueAsString(new PreviewRequest(doc, keys)))));
+    }
 }

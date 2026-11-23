@@ -1,0 +1,33 @@
+{
+  "items" : [ {
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.one"
+    },
+    "fingerprint" : null,
+    "match" : "PRESENT",
+    "questionId" : "<uuid>",
+    "latestRevisionId" : "<uuid>",
+    "latestFingerprint" : "d4690884989794dc70dd8fbec4c793ab149d70b784e464196c31a9e566c79970",
+    "latestStatus" : "IN_REVIEW",
+    "eligibleRevisionId" : null,
+    "eligibleFingerprint" : null,
+    "editorialSequence" : 1,
+    "matchingRevisionId" : null
+  }, {
+    "origin" : {
+      "namespace" : "admin-question-v1",
+      "key" : "snapshot.absent"
+    },
+    "fingerprint" : null,
+    "match" : "ABSENT",
+    "questionId" : null,
+    "latestRevisionId" : null,
+    "latestFingerprint" : null,
+    "latestStatus" : null,
+    "eligibleRevisionId" : null,
+    "eligibleFingerprint" : null,
+    "editorialSequence" : null,
+    "matchingRevisionId" : null
+  } ]
+}

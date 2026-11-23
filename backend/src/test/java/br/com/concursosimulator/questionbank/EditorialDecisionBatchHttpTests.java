@@ -345,4 +345,19 @@ class EditorialDecisionBatchHttpTests {
         AdministrativeQuestionHttpTests.contract("EditorialBatchConflict", json.readTree(conflict.body()));
         assertThat(jdbc.queryForObject("select status from qb_revision where id=?", String.class, UUID.fromString(item.path("revisionId").asString()))).isEqualTo("IN_REVIEW");
     }
+
+    /** JSON público da prévia e da aplicação de decisões em lote (grupo 5: DTOs web próprios). */
+    @Test void zz_editorialBatchJsonContractsAreStable() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie);
+        var receipt = imported(cookie, csrf, QuestionPurpose.PRATICA_AULA, "admin.snapshot-a", "admin.snapshot-b");
+        var nonce = receipt.path("confirmation").path("nonce").asString();
+        var submit = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("SUBMIT", null, List.of(), "Lote sintético de contrato"), nonce))));
+        JsonContractSnapshot.check("editorial-preview-submit", submit);
+        JsonContractSnapshot.check("editorial-apply-submit", ok(send(BASE + "/apply", cookie, csrf, applyBody(submit))));
+        var approve = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("APPROVE", "AI_ONLY", ALL_CHECKS, "Revisão somente por IA, contrato"), nonce))));
+        JsonContractSnapshot.check("editorial-preview-approve", approve);
+        var body = applyBody(approve);
+        JsonContractSnapshot.check("editorial-apply-approve", ok(send(BASE + "/apply", cookie, csrf, body)));
+        JsonContractSnapshot.check("editorial-apply-replay", ok(send(BASE + "/apply", cookie, csrf, body)));
+    }
 }

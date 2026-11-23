@@ -1,0 +1,51 @@
+{
+  "destinationId" : "isolated-test",
+  "action" : "APPROVE",
+  "reviewKind" : "AI_ONLY",
+  "checklist" : [ "CORRECTNESS", "DISTRACTORS", "CLARITY", "STEP_BY_STEP", "ACCESSIBILITY", "SOURCES", "CLASSIFICATION" ],
+  "rationale" : "Revisão somente por IA, contrato",
+  "items" : [ {
+    "questionId" : "<uuid>",
+    "origin" : {
+      "namespace" : "lesson-practice-v1",
+      "key" : "admin.snapshot-a"
+    },
+    "revisionId" : "<uuid>",
+    "fingerprint" : "9dca6647e4fa41890905cdfa0c7ecc5b92d9b5865c5886b7aa47c2d9102f3c9e",
+    "currentStatus" : "IN_REVIEW",
+    "resultingStatus" : "APPROVED",
+    "eligibleRevisionId" : null,
+    "editorialSequence" : 1,
+    "refusal" : null
+  }, {
+    "questionId" : "<uuid>",
+    "origin" : {
+      "namespace" : "lesson-practice-v1",
+      "key" : "admin.snapshot-b"
+    },
+    "revisionId" : "<uuid>",
+    "fingerprint" : "1df06d3eff6127b6611c8494bb847c39d66d35ce5c673f783aa666421d6d0e9e",
+    "currentStatus" : "IN_REVIEW",
+    "resultingStatus" : "APPROVED",
+    "eligibleRevisionId" : null,
+    "editorialSequence" : 1,
+    "refusal" : null
+  } ],
+  "expected" : [ {
+    "questionId" : "<uuid>",
+    "revisionId" : "<uuid>",
+    "fingerprint" : "9dca6647e4fa41890905cdfa0c7ecc5b92d9b5865c5886b7aa47c2d9102f3c9e",
+    "eligibleRevisionId" : null,
+    "editorialSequence" : 1
+  }, {
+    "questionId" : "<uuid>",
+    "revisionId" : "<uuid>",
+    "fingerprint" : "1df06d3eff6127b6611c8494bb847c39d66d35ce5c673f783aa666421d6d0e9e",
+    "eligibleRevisionId" : null,
+    "editorialSequence" : 1
+  } ],
+  "digest" : "c6666cc89a269bcbb067e33c96862859dd54df1ac20b9d75bd23543e6fbea37f",
+  "confirmable" : true,
+  "confirmationToken" : "<token>",
+  "expiresAt" : "<instant>"
+}

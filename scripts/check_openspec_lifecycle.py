@@ -78,7 +78,7 @@ def read_tree(ref: str, cwd: Path) -> ChangeTree:
     try:
         git(["rev-parse", "--verify", "--quiet", f"{ref}^{{commit}}"], cwd)
     except GitError as error:
-        raise GitError(f"ref `{ref}` não existe ou não é um commit") from error
+        raise GitError(f"ref `{ref}` não existe ou não é um commit ({error})") from error
     entries = list_dirs(ref, CHANGES_DIR, cwd)
     active = frozenset(e for e in entries if e != ARCHIVE)
     archive_dirs = list_dirs(ref, f"{CHANGES_DIR}/{ARCHIVE}", cwd) if ARCHIVE in entries else frozenset()

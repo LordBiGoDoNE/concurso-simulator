@@ -7,7 +7,7 @@ import java.time.Clock;
 
 @Configuration
 public class ReviewConfiguration {
-    @Bean ReviewUseCases reviewUseCases(CompletedAttemptReader reader) {
-        return new ReviewUseCases(reader,Clock.systemUTC());
+    @Bean ReviewUseCases reviewUseCases(CompletedAttemptReader reader,Clock clock) {
+        return new ReviewUseCases(reader,clock);
     }
 }

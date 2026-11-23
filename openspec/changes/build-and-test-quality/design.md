@@ -108,8 +108,10 @@ antes e depois, sem diferença além da origem do script. Alternativa descartada
 
 ### D6 — Relógio único
 
-`platform/infrastructure/ClockConfiguration` declara `@Bean Clock clock()` com
-`Clock.systemUTC()`; as configurações recebem `Clock` como parâmetro do método `@Bean`;
+`shared/infrastructure/ClockConfiguration` declara `@Bean Clock clock()` com
+`Clock.systemUTC()` (em `shared`, e não em `platform`, porque `platform` já depende de
+`identity` e `AdministrativeRecovery` importaria a configuração, criando ciclo entre
+módulos); as configurações recebem `Clock` como parâmetro do método `@Bean`;
 `AdministrativeRecovery` obtém o bean do contexto que já cria. Um teste ArchUnit proíbe
 chamar as fábricas `Clock.system*` no código principal fora de `ClockConfiguration`.
 Domínio e aplicação continuam sem Spring: só recebem `Clock`.
@@ -118,7 +120,7 @@ Limite da proteção: `Instant.now()` sem relógio continua em três pontos de
 autenticação e sessão (`AdministrativeHttpSecurity`, `AdministrativeSecurity` e
 `SecurityConfiguration`, expiração de intenções OAuth). Trocá-los mexe em área crítica
 e não é necessário para os objetivos desta spec; a regra ArchUnit não os cobre e o
-grupo 2 abre uma issue `review-finding` vinculada à #257 para decidir isso depois.
+grupo 2 abriu a issue `review-finding` #266 para decidir isso depois.
 
 ### D7 — PostgreSQL de teste compartilhado, banco exclusivo por classe
 

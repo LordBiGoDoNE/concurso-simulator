@@ -15,6 +15,6 @@ public class AdministrativeImportConfiguration {
     @Bean PreviewQuestionCandidatesUseCase previewAdministrativeQuestions(EntityManager em,PlatformTransactionManager manager){
         return new PreviewQuestionCandidatesUseCase(new JpaQuestionInventory(em,manager));
     }
-    @Bean ApplyAdministrativeQuestionsUseCase applyAdministrativeQuestions(QuestionImportStore store){return new ApplyAdministrativeQuestionsUseCase(store,Clock.systemUTC());}
-    @Bean ImportConfirmationTokens importConfirmationTokens(ImportSettings settings){return new ImportConfirmationTokens(settings.secret(),Clock.systemUTC());}
+    @Bean ApplyAdministrativeQuestionsUseCase applyAdministrativeQuestions(QuestionImportStore store,Clock clock){return new ApplyAdministrativeQuestionsUseCase(store,clock);}
+    @Bean ImportConfirmationTokens importConfirmationTokens(ImportSettings settings,Clock clock){return new ImportConfirmationTokens(settings.secret(),clock);}
 }

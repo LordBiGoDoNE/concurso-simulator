@@ -35,12 +35,12 @@ e o caso vai ao usuário.
 
 ## 2. Relógio único — depende de 1 (~80 linhas autorais)
 
-- [ ] 2.1 `ClockConfiguration` com o bean `Clock` e injeção nas seis configurações e
+- [x] 2.1 `ClockConfiguration` com o bean `Clock` e injeção nas seis configurações e
   em `AdministrativeRecovery` (D6).
-- [ ] 2.2 Regra ArchUnit contra `Clock.system*` fora da configuração, com teste que
+- [x] 2.2 Regra ArchUnit contra `Clock.system*` fora da configuração, com teste que
   prova a falha.
-- [ ] 2.3 Abrir issue `review-finding` sobre `Instant.now()` nas classes de segurança
-  (limite da proteção, D6).
+- [x] 2.3 Abrir issue `review-finding` sobre `Instant.now()` nas classes de segurança
+  (limite da proteção, D6): #266
 
 ## 3. PostgreSQL de teste compartilhado — depende de 2 (~300 linhas autorais)
 

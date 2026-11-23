@@ -42,7 +42,7 @@ Toda resposta de erro é um objeto JSON com `error` em `UPPER_SNAKE_CASE` e `Cac
 | Recurso inexistente ou de outro dono | 404 `NOT_FOUND` |
 | Versão/estado divergente; acervo insuficiente | 409 `CONFLICT`; 409 `INSUFFICIENT_POOL` |
 | Geração parametrizada desligada no servidor | 503 `PARAMETERIZED_GENERATION_UNAVAILABLE` |
-| Banco, conexão ou transação temporariamente indisponíveis (`TransientFailures`); projeção pública insegura recusada | 503 `UNAVAILABLE` (administração: `ADMIN_UNAVAILABLE`/`IMPORT_UNAVAILABLE`) |
+| Banco, conexão ou transação temporariamente indisponíveis, inclusive rollback/commit que falha por conexão perdida sem violação de integridade (`shared/failure/TransientFailures`); projeção pública insegura recusada | 503 `UNAVAILABLE` (administração: `ADMIN_UNAVAILABLE`/`IMPORT_UNAVAILABLE`) |
 | Falha não reconhecida, inclusive integridade e `IllegalArgumentException`/`IllegalStateException` vindas do núcleo ou da persistência | 500 `INTERNAL_ERROR` (administração: `ADMIN_FAILURE`, `IMPORT_FAILED`, `ADMIN_CURATION_FAILED`), com log e correlação no servidor |
 
 - `IllegalArgumentException` só vira 400 quando a recusa acontece na conversão da entrada (`RequestValues.parse`); dentro da aplicação ou da persistência ela indica dado inconsistente e é 500.

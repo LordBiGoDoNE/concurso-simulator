@@ -61,7 +61,7 @@ class ParameterizedPersistenceTests {
             var rollback=new AttemptUseCases(unavailable,Clock.fixed(NOW,ZoneOffset.UTC),UUID::randomUUID,()->new Random(),false);
             assertThat(rollback.read(VISITOR,created.id())).isEqualTo(created);
             assertThat(rollback.create(VISITOR,op,composition(true)).attempt()).isEqualTo(created);
-            assertThatThrownBy(()->rollback.create(VISITOR,UUID.randomUUID(),composition(true))).isInstanceOf(IllegalStateException.class);
+            assertThatThrownBy(()->rollback.create(VISITOR,UUID.randomUUID(),composition(true))).isInstanceOf(br.com.concursosimulator.mockexam.application.ParameterizedGenerationUnavailable.class);
             rollback.answer(VISITOR,created.id(),UUID.randomUUID(),0,item.id(),item.question().content().correctAlternativeId());
             assertThat(rollback.finish(VISITOR,created.id(),UUID.randomUUID(),1).result().correct()).isEqualTo(1);
             assertThat(rollback.result(VISITOR,created.id()).items().getFirst().resolution()).isEqualTo(item.question().content().resolution());

@@ -3,11 +3,10 @@ package br.com.concursosimulator.identity.web;
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases.Failure;
 import br.com.concursosimulator.shared.web.ApiError;
 import br.com.concursosimulator.shared.web.ApiErrors;
-import org.springframework.dao.DataAccessResourceFailureException;
-import org.springframework.dao.TransientDataAccessException;
+import br.com.concursosimulator.shared.failure.TransientFailures;
+import org.springframework.dao.DataAccessException;
 import org.springframework.http.ResponseEntity;
-import org.springframework.transaction.CannotCreateTransactionException;
-import org.springframework.transaction.TransactionTimedOutException;
+import org.springframework.transaction.TransactionException;
 import org.springframework.web.bind.annotation.*;
 
 /** Contrato de erro da conta administrativa: falhas nomeadas da aplicação decidem o status. */
@@ -23,9 +22,10 @@ public class AdministrativeAccountFailures {
     }
     @ExceptionHandler(org.springframework.http.converter.HttpMessageNotReadableException.class)
     ResponseEntity<ApiError> invalid() { return ApiErrors.of(400,"INVALID_REQUEST"); }
-    @ExceptionHandler({TransientDataAccessException.class,DataAccessResourceFailureException.class,CannotCreateTransactionException.class,
-            TransactionTimedOutException.class})
-    ResponseEntity<ApiError> unavailable() { return ApiErrors.of(503,"ADMIN_UNAVAILABLE"); }
+    @ExceptionHandler({DataAccessException.class,TransactionException.class})
+    ResponseEntity<ApiError> data(RuntimeException failure) {
+        return TransientFailures.transientCause(failure) ? ApiErrors.of(503,"ADMIN_UNAVAILABLE") : unexpected(failure);
+    }
     @ExceptionHandler(RuntimeException.class)
     ResponseEntity<ApiError> unexpected(RuntimeException failure) { return ApiErrors.of(500,"ADMIN_FAILURE"); }
 }

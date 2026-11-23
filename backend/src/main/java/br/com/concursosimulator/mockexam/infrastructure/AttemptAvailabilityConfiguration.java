@@ -31,6 +31,6 @@ public class AttemptAvailabilityConfiguration {
         var registration=new FilterRegistrationBean<OncePerRequestFilter>(filter);registration.setOrder(SessionRepositoryFilter.DEFAULT_ORDER-10);return registration;
     }
     private static boolean databaseFailure(Throwable failure) {
-        return br.com.concursosimulator.shared.infrastructure.http.TransientFailures.transientCause(failure);
+        return br.com.concursosimulator.shared.failure.TransientFailures.transientCause(failure);
     }
 }

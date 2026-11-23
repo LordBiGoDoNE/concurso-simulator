@@ -1,7 +1,7 @@
 # question-purpose Specification
 
 ## Purpose
-TBD - created by archiving change lesson-practice. Update Purpose after archive.
+Separar o acervo por destinação exclusiva da questão-base (SIMULADO ou PRATICA_AULA), herdada por revisões e variantes, para que prática e simulado nunca compartilhem as mesmas questões.
 
 ## Requirements
 

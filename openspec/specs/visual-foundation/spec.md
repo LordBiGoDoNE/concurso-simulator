@@ -1,7 +1,7 @@
 # visual-foundation Specification
 
 ## Purpose
-TBD - created by archiving change focus-visual-refresh. Update Purpose after archive.
+Definir a fundação visual da direção Foco: tokens de cor e tipografia centralizados, temas claro e escuro e pares de cor que atendem ao contraste mínimo nas telas de estudo.
 
 ## Requirements
 

@@ -1,7 +1,7 @@
 # lesson-practice Specification
 
 ## Purpose
-TBD - created by archiving change lesson-practice. Update Purpose after archive.
+Oferecer, a partir do leitor de aula, uma prática própria e curta de questões fixas do assunto, separada do compositor de simulados, com correção mostrada somente ao encerrar a prática.
 
 ## Requirements
 

@@ -17,7 +17,9 @@ public class IdentityRoutes {
     public static final String CSRF = "/api/v1/csrf";
     public static final String AUTH_CONFIG = "/api/v1/auth/config";
     public static final String LOGOUT = "/api/v1/auth/logout";
-    public static final String OAUTH_AUTHORIZATION = "/oauth2/authorization/google";
+    /** Prefixo do resolvedor OAuth do Spring; o id do registro completa a rota. */
+    public static final String OAUTH_AUTHORIZATION_BASE = "/oauth2/authorization";
+    public static final String OAUTH_AUTHORIZATION = OAUTH_AUTHORIZATION_BASE + "/google";
     public static final String OAUTH_CALLBACK = "/login/oauth2/code/google";
     public static final String ADMIN_LOGIN = "/api/v1/admin/auth/login";
     public static final String ADMIN_ACCOUNT = "/api/v1/admin/account";

@@ -30,7 +30,8 @@ public class AdministrativeCurationFailureAdvice {
     @ExceptionHandler({InvalidQuery.class, MethodArgumentTypeMismatchException.class,
             org.springframework.web.bind.MissingServletRequestParameterException.class})
     ResponseEntity<ErrorResponse> invalid() { return error(400, "INVALID_QUERY"); }
-    @ExceptionHandler(HttpMessageNotReadableException.class) ResponseEntity<ErrorResponse> malformed() { return error(400, "INVALID_REQUEST"); }
+    @ExceptionHandler({HttpMessageNotReadableException.class, br.com.concursosimulator.shared.web.InvalidRequest.class})
+    ResponseEntity<ErrorResponse> malformed() { return error(400, "INVALID_REQUEST"); }
     @ExceptionHandler(AdministrativeCurationBodyAdvice.TooLarge.class) ResponseEntity<ErrorResponse> large() { return error(413, "REQUEST_TOO_LARGE"); }
     @ExceptionHandler(HttpMediaTypeNotSupportedException.class) ResponseEntity<ErrorResponse> media() { return error(415, "UNSUPPORTED_MEDIA_TYPE"); }
     @ExceptionHandler(AdministrativeQuestionController.QuestionNotFound.class) ResponseEntity<ErrorResponse> missing() { return error(404, "QUESTION_NOT_FOUND"); }

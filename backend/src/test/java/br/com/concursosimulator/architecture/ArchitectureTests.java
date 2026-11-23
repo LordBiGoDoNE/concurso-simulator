@@ -123,6 +123,33 @@ class ArchitectureTests {
         assertThat(violations).as("métodos HTTP sem DTO record do próprio pacote web").isEmpty();
     }
 
+    /** Contrato JSON da administração de questões não expõe tipos do núcleo (backend-http-boundaries, grupo 5). */
+    @Test void questionBankWebRecordsDoNotExposeCoreTypes() {
+        var violations = new java.util.ArrayList<String>();
+        for (var javaClass : CODE) {
+            if (!javaClass.getPackageName().equals("br.com.concursosimulator.questionbank.web")) continue;
+            var type = javaClass.reflect();
+            if (!type.isRecord() || !java.lang.reflect.Modifier.isPublic(type.getModifiers())) continue;
+            for (var component : type.getRecordComponents())
+                for (var used : typesIn(component.getGenericType()))
+                    if (used.getName().matches("br\\.com\\.concursosimulator\\..*\\.(domain|application)(\\..*)?\\.[^.]+"))
+                        violations.add(type.getName() + "." + component.getName() + ": " + used.getName());
+        }
+        assertThat(violations).as("componentes de records web com tipos de domain/application").isEmpty();
+    }
+
+    private static java.util.List<Class<?>> typesIn(java.lang.reflect.Type type) {
+        var found = new java.util.ArrayList<Class<?>>();
+        if (type instanceof Class<?> c) { found.add(c.isArray() ? c.getComponentType() : c); }
+        else if (type instanceof ParameterizedType p) {
+            found.addAll(typesIn(p.getRawType()));
+            for (var argument : p.getActualTypeArguments()) found.addAll(typesIn(argument));
+        } else if (type instanceof java.lang.reflect.WildcardType w) {
+            for (var bound : w.getUpperBounds()) found.addAll(typesIn(bound));
+        }
+        return found;
+    }
+
     @Test void controllersAndAdvicesResideInWebAdapters() {
         classes().that().areAnnotatedWith(org.springframework.web.bind.annotation.RestController.class)
                 .or().areAnnotatedWith(org.springframework.stereotype.Controller.class)

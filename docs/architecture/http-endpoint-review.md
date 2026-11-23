@@ -27,6 +27,8 @@ Complementa o ADR 0001. Aplicar antes da implementação e na revisão; registra
 
 Usar DTOs web tipados (records quando adequados) e retornos concretos, como `ResponseEntity<MeResponse>`. Não expor entidade JPA, credencial, token Google ou dados pessoais desnecessários. `Map`, `Object` e curingas não são o padrão para JSON estável; payload realmente dinâmico exige justificativa e testes de contrato.
 
+DTOs web não reutilizam records de `domain`/`application` como componentes: a administração de questões usa `questionbank/web/AdministrativeContracts` com mapeadores explícitos, e `ArchitectureTests.questionBankWebRecordsDoNotExposeCoreTypes` protege essa regra. Renomear algo no núcleo exige alterar o mapeador, não muda o JSON por acidente; `JsonContractSnapshot` (testes) registra o JSON público administrativo.
+
 Rejeições técnicas de segurança ficam nos mecanismos do Spring Security. Erros da aplicação podem ser traduzidos por adaptadores web/ControllerAdvice sem contaminar o núcleo com HTTP. Não capturar toda exceção para fingir visitante, conflito conhecido ou sucesso.
 
 ### Contrato de erro

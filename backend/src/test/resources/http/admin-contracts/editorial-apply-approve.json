@@ -1,0 +1,25 @@
+{
+  "destinationId" : "isolated-test",
+  "receipt" : {
+    "confirmation" : {
+      "nonce" : "<uuid>",
+      "actor" : "<uuid>",
+      "destination" : "isolated-test",
+      "digest" : "<digest>",
+      "issuedAt" : "<instant>",
+      "expiresAt" : "<instant>"
+    },
+    "committedAt" : "<instant>",
+    "action" : "APPROVE",
+    "reviewKind" : "AI_ONLY",
+    "responsible" : "admin:<uuid>",
+    "decisions" : [ {
+      "questionId" : "<uuid>",
+      "revisionId" : "<uuid>",
+      "fingerprint" : "9dca6647e4fa41890905cdfa0c7ecc5b92d9b5865c5886b7aa47c2d9102f3c9e",
+      "decisionSequence" : 1,
+      "resultingStatus" : "APPROVED"
+    } ]
+  },
+  "replayed" : false
+}

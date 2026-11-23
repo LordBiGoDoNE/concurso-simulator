@@ -74,9 +74,9 @@ class AdministrativeQuestionHttpTests {
     /** Importa pelo fluxo administrativo real e devolve o corpo do recibo. */
     JsonNode imported(String cookie, String csrf, QuestionPurpose purpose, String... keys) throws Exception {
         var doc = document(purpose, keys);
-        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(doc, List.of(keys)))));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), List.of(keys)))));
         return ok(send("POST", "/api/v1/admin/question-imports/apply", cookie, csrf,
-                json.writeValueAsString(new ApplyRequest(doc, List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
+                json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), List.of(keys), preview.get("confirmationToken").asString())))).path("receipt");
     }
     void decide(UUID id, EditorialDecision.Action action, EditorialDecision.ReviewKind kind) {
         questions.transaction(s -> { var q = s.loadForUpdate(id).orElseThrow();
@@ -215,7 +215,10 @@ class AdministrativeQuestionHttpTests {
                 "{\"items\":[{\"origin\":{\"namespace\":\"x\",\"key\":\"k\"},\"fingerprint\":null},{\"origin\":{\"namespace\":\"x\",\"key\":\"k\"},\"fingerprint\":null}]}")) {
             assertThat(send("POST", BASE + "/lookup", cookie, csrf, bad).statusCode()).as(bad).isEqualTo(400);
         }
-        for (var malformed : List.of("{\"items\":[],\"items\":[]}", "{\"items\":[]} {}", "{\"items\":[],\"extra\":1}", "{broken")) {
+        // Origem recusada pelo objeto de valor (namespace/chave em branco) é erro de entrada, nunca 500.
+        for (var malformed : List.of("{\"items\":[],\"items\":[]}", "{\"items\":[]} {}", "{\"items\":[],\"extra\":1}", "{broken",
+                "{\"items\":[{\"origin\":{\"namespace\":\"\",\"key\":\"k\"},\"fingerprint\":null}]}",
+                "{\"items\":[{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\" \"},\"fingerprint\":null}]}")) {
             var response = send("POST", BASE + "/lookup", cookie, csrf, malformed);
             assertThat(response.statusCode()).as(malformed).isEqualTo(400);
             assertThat(json.readTree(response.body()).get("error").asString()).isEqualTo("INVALID_REQUEST");
@@ -246,7 +249,7 @@ class AdministrativeQuestionHttpTests {
         var byIds = ok(send("POST", BASE + "/export", cookie, csrf, "{\"questionIds\":[" + String.join(",", ids) + "]}"));
         assertThat(byIds.get("packageDigest").asString()).isEqualTo(byReceipt.get("packageDigest").asString());
         // Reimportar o pacote exportado reconhece conteúdo idêntico, sem novas revisões.
-        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(exported, keys))));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(exported), keys))));
         assertThat(preview.get("items")).extracting(i -> i.path("change").asString()).containsOnly("IDENTICAL");
         assertThat(writes()).isEqualTo(before);
         // Recusas explícitas e sanitizadas.
@@ -296,5 +299,72 @@ class AdministrativeQuestionHttpTests {
         var refused = send("POST", BASE + "/export", cookie, csrf, "{\"questionIds\":[\"" + UUID.randomUUID() + "\"]}");
         contract("AdminQuestionExportError", json.readTree(refused.body()));
         contract("QuestionImportError", json.readTree(send("GET", BASE + "?size=0", cookie, null, null).body()));
+    }
+
+    /** JSON público da importação, consulta, detalhe, lookup e exportação (grupo 5: DTOs web próprios). */
+    @Test void f_administrativeJsonContractsAreStable() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie); var keys = List.of("snapshot.one", "snapshot.two");
+        var doc = document(QuestionPurpose.SIMULADO, keys.toArray(String[]::new));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), keys))));
+        JsonContractSnapshot.check("import-preview", preview);
+        var applied = ok(send("POST", "/api/v1/admin/question-imports/apply", cookie, csrf,
+                json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), keys, preview.get("confirmationToken").asString()))));
+        JsonContractSnapshot.check("import-apply", applied);
+        var id = applied.path("receipt").path("results").get(0).path("questionId").asString();
+        JsonContractSnapshot.check("question-search", ok(send("GET", BASE + "?keyPrefix=snapshot.", cookie, null, null)));
+        decide(UUID.fromString(id), EditorialDecision.Action.SUBMIT, null);
+        JsonContractSnapshot.check("question-detail", ok(send("GET", BASE + "/" + id, cookie, null, null)));
+        JsonContractSnapshot.check("question-lookup", ok(send("POST", BASE + "/lookup", cookie, csrf,
+                "{\"items\":[{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\"snapshot.one\"},\"fingerprint\":null},"
+                        + "{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\"snapshot.absent\"},\"fingerprint\":null}]}")));
+        JsonContractSnapshot.check("question-export", ok(send("POST", BASE + "/export", cookie, csrf, "{\"questionIds\":[\"" + id + "\"]}")));
+        // Re-preview do mesmo pacote: itens já existentes mudam o tipo de alteração e o JSON continua estável.
+        JsonContractSnapshot.check("import-preview-existing", ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf,
+                json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), keys)))));
+    }
+
+    /**
+     * Partes do mapeamento web <-> núcleo ausentes do snapshot básico: recurso em texto, base legal, revisão por
+     * pares no detalhe, lookup SAME_AS_ELIGIBLE/SAME_AS_LATEST/DIFFERENT e prévia CHANGED/IDENTICAL/STALE.
+     */
+    @Test void g_richAdministrativeJsonContractsAreStable() throws Exception {
+        var cookie = admin(); var csrf = csrf(cookie); var keys = List.of("snapshot.rich-a", "snapshot.rich-b", "snapshot.rich-c");
+        var doc = AdministrativeImportFixtures.rich(QuestionPurpose.SIMULADO, keys.toArray(String[]::new));
+        var preview = ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf, json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(doc), keys))));
+        var applied = ok(send("POST", "/api/v1/admin/question-imports/apply", cookie, csrf,
+                json.writeValueAsString(new ApplyRequest(AdministrativeImportFixtures.web(doc), keys, preview.get("confirmationToken").asString()))));
+        var ids = new HashMap<String, UUID>();
+        for (var r : applied.path("receipt").path("results")) ids.put(r.path("origin").path("key").asString(), UUID.fromString(r.path("questionId").asString()));
+        var a = ids.get("snapshot.rich-a");
+        decide(a, EditorialDecision.Action.SUBMIT, null); decide(a, EditorialDecision.Action.APPROVE, EditorialDecision.ReviewKind.HUMAN_PEER);
+        JsonContractSnapshot.check("question-detail-rich", ok(send("GET", BASE + "/" + a, cookie, null, null)));
+        JsonContractSnapshot.check("question-export-rich", ok(send("POST", BASE + "/export", cookie, csrf, "{\"questionIds\":[\"" + a + "\"]}")));
+        // Nova revisão em rascunho: a aprovada continua elegível e deixa de ser a mais recente. ID fixo porque a
+        // revisão esperada entra no packageDigest da re-prévia abaixo.
+        var draft = QuestionFixtures.content("Correção sintética do snapshot"); var draftId = UUID.fromString("00000000-0000-0000-0000-0000000000a2");
+        questions.transaction(s -> { var q = s.loadForUpdate(a).orElseThrow(); q.append(draftId, draft); s.save(q); return null; });
+        var fingerprints = new HashMap<String, String>();
+        for (var item : doc.items()) fingerprints.put(item.origin().key(), item.fingerprint());
+        var matches = ok(send("POST", BASE + "/lookup", cookie, csrf, "{\"items\":["
+                + "{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\"snapshot.rich-a\"},\"fingerprint\":\"" + fingerprints.get("snapshot.rich-a") + "\"},"
+                + "{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\"snapshot.rich-b\"},\"fingerprint\":\"" + fingerprints.get("snapshot.rich-b") + "\"},"
+                + "{\"origin\":{\"namespace\":\"admin-question-v1\",\"key\":\"snapshot.rich-c\"},\"fingerprint\":\"" + "c".repeat(64) + "\"}]}"));
+        JsonContractSnapshot.check("question-lookup-matches", matches);
+        // Re-prévia: a muda declarando a revisão mais recente (CHANGED), b é idêntica (IDENTICAL) e c muda
+        // declarando revisão divergente (STALE, lote não confirmável).
+        var revised = AdministrativeImportFixtures.rich(QuestionPurpose.SIMULADO, " (revisada)", keys.toArray(String[]::new));
+        assertThat(matches.path("items").get(0).path("latestRevisionId").asString()).isEqualTo(draftId.toString());
+        var items = new ArrayList<QuestionImportReader.Item>();
+        for (int n = 0; n < keys.size(); n++) {
+            var original = doc.items().get(n); var variant = revised.items().get(n);
+            items.add(switch (original.origin().key()) {
+                case "snapshot.rich-a" -> new QuestionImportReader.Item(variant.origin(), variant.content(), variant.fingerprint(), draftId);
+                case "snapshot.rich-c" -> new QuestionImportReader.Item(variant.origin(), variant.content(), variant.fingerprint(), UUID.fromString("00000000-0000-0000-0000-00000000000c"));
+                default -> original;
+            });
+        }
+        var changed = new QuestionImportReader.Document(doc.format(), doc.purpose(), items, doc.files());
+        JsonContractSnapshot.check("import-preview-changes", ok(send("POST", "/api/v1/admin/question-imports/preview", cookie, csrf,
+                json.writeValueAsString(new PreviewRequest(AdministrativeImportFixtures.web(changed), keys)))));
     }
 }

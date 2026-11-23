@@ -39,7 +39,10 @@ final class JsonContractSnapshot {
             var copy = JSON.createObjectNode();
             for (var name : object.propertyNames()) {
                 var value = object.get(name);
-                copy.set(name, (name.toLowerCase().endsWith("token")) && value.isString() ? StringNode.valueOf("<token>") : normalize(value));
+                if (value.isString() && name.toLowerCase().endsWith("token")) copy.set(name, StringNode.valueOf("<token>"));
+                // Digest do lote cobre IDs aleatórios; packageDigest e selectionDigest são determinísticos e ficam.
+                else if (value.isString() && name.equals("digest")) copy.set(name, StringNode.valueOf("<digest>"));
+                else copy.set(name, normalize(value));
             }
             return copy;
         }

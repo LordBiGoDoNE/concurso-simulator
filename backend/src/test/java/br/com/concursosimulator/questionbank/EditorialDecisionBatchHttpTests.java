@@ -349,7 +349,8 @@ class EditorialDecisionBatchHttpTests {
     /** JSON público da prévia e da aplicação de decisões em lote (grupo 5: DTOs web próprios). */
     @Test void zz_editorialBatchJsonContractsAreStable() throws Exception {
         var cookie = admin(); var csrf = csrf(cookie);
-        var receipt = imported(cookie, csrf, QuestionPurpose.PRATICA_AULA, "admin.snapshot-a", "admin.snapshot-b");
+        // Uma questão: a ordem dos itens do lote segue o questionId, aleatório.
+        var receipt = imported(cookie, csrf, QuestionPurpose.PRATICA_AULA, "admin.snapshot-a");
         var nonce = receipt.path("confirmation").path("nonce").asString();
         var submit = ok(send(BASE + "/preview", cookie, csrf, json.writeValueAsString(byReceipt(envelope("SUBMIT", null, List.of(), "Lote sintético de contrato"), nonce))));
         JsonContractSnapshot.check("editorial-preview-submit", submit);

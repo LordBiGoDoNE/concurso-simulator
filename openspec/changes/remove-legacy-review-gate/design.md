@@ -58,9 +58,19 @@ Non-Goals:
       - run: python3 -m unittest discover -s scripts/tests -v
 ```
 
-- Ele fica no workflow de aplicação, que já roda em todo `pull_request` e em push
-  para `main`, `epic/**` e `task/**`. Hoje o `spec-review-tests` roda só em PR.
-  O job novo também roda nesses pushes. Isso amplia a verificação, não a reduz.
+- Ele fica no workflow de aplicação, que roda em `pull_request` com os tipos
+  padrão do GitHub (`opened`, `synchronize`, `reopened`) e em push para `main`,
+  `epic/**` e `task/**`. Hoje o `spec-review-tests` roda só em PR. O job novo
+  também roda nesses pushes, o que amplia a cobertura por push.
+- Há uma redução: o `spec-review.yml` também reagia a `edited` e
+  `ready_for_review`. Trocar a base de um PR gera só `edited`, então
+  `scripts-tests` (como os demais checks do `application.yml`) não roda de novo
+  contra a nova base, e o PR continua mostrando o resultado do merge ref antigo.
+  Mudar os gatilhos do `application.yml` mudaria também os jobs pesados e fica
+  fora do escopo desta spec. Procedimento: depois de trocar a base de um PR e
+  antes do merge, rodar de novo `scripts-tests` e os demais checks, por
+  "Re-run all jobs" do run `pull_request` mais recente ou por um push na branch
+  do PR, e conferir que o run novo usa a base atual e está verde.
 - Usa `python-version: '3.x'`, a mesma do job atual, para não mudar o resultado
   dos testes junto com a troca de workflow. Fixar a versão é assunto da spec de
   qualidade.
@@ -141,6 +151,9 @@ Se exigirem exceção, ela vai ao usuário.
   execução restante segue as regras globais, que não exigem o script.
 - **Duplicação de `test_build_pages.py`** (roda no `pages-checks.yml` e no job
   novo). A duplicação já existe hoje e o custo é pequeno. A outra spec trata disso.
+- **Check desatualizado após troca de base.** `pull_request` sem `edited` não
+  roda de novo os checks quando a base muda (D1). Mitigação: rodar de novo os
+  checks manualmente ou por push antes do merge, conforme o procedimento de D1.
 - **Desaparecimento do check `spec-review-tests` em PRs abertos.** Não há PR aberto
   em 2026-11-23. PRs abertos depois do merge passam a mostrar `scripts-tests`.
 

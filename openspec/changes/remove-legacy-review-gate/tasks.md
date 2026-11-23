@@ -67,3 +67,6 @@ GitHub, condicionada à aprovação específica.
   workflows `application.yml` e `pages-checks.yml`, mais o PR do grupo 1 com
   `scripts-tests` verde no GitHub.
 - [ ] Repetir a consulta de regras da tarefa 1.1 antes do merge `[SPEC]` em `main`.
+- [ ] Depois de cada troca de base de PR da cadeia e antes do merge, rodar de novo
+  `scripts-tests` e os demais checks (re-run do run `pull_request` mais recente ou
+  push na branch) e conferir que o run novo usa a base atual e está verde (D1).

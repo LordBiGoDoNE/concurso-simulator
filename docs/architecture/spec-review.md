@@ -53,7 +53,7 @@ conclusão nem incluir dependências fora do escopo por iniciativa própria. Imp
 sem pausas por subtarefa, PRs em rascunho e nenhuma integração presumida permanecem.
 > **Decisão do usuário (2026-11-12, histórica):** não há revisão por modelo a cada lote. A única
 > revisão por modelo é a **revisão final de código antes do merge `[SPEC]` em `main`**, feita por
-> agente autônomo novo (`~/.claude/agents/spec-reviewer.md`) com **Claude Opus 5.5, esforço
+> agente autônomo novo (`.claude/agents/spec-reviewer.md`, hoje `~/.claude/agents/spec-reviewer.md`) com **Claude Opus 5.5, esforço
 > medium**, em contexto independente e sem viés (mesmas entradas, isolamento, triagem,
 > atualidade e evidência descritos abaixo). As menções a `openai/gpt-6.1-sol#xhigh` e Astra
 > nas seções seguintes descrevem a regra anterior e ficam como histórico; onde o texto exige
@@ -133,7 +133,7 @@ automaticamente. A primeira rodada autorizada é question-bank 1.2, 1.3, 2.1–2
 
 ### Integração final da spec
 
-**Decisão de 2026-11-12 (histórica, substituída em 2026-11-17):** revisão final de código com Claude Opus 5.5, esforço medium, em agente autônomo novo (`~/.claude/agents/spec-reviewer.md`). O parágrafo seguinte é histórico.
+**Decisão de 2026-11-12 (histórica, substituída em 2026-11-17):** revisão final de código com Claude Opus 5.5, esforço medium, em agente autônomo novo (`.claude/agents/spec-reviewer.md`, hoje `~/.claude/agents/spec-reviewer.md`). O parágrafo seguinte é histórico.
 
 **Padrão aprovado em 2026-10-15:** `openai/gpt-6.1-sol#xhigh` para todas as revisões,
 revalidações e gates cumulativos, inclusive da épica geral. Não há exigência ativa

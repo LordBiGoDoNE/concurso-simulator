@@ -1,6 +1,8 @@
 package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.*;
@@ -25,12 +27,12 @@ import tools.jackson.databind.json.JsonMapper;
 public class AdministrativeHttpSecurity {
     @Bean @Order(-1)
     SecurityFilterChain administrativeAccountSecurity(HttpSecurity http,AdministrativeSecurity security,
-            AdministrativeAccessUseCases access,HttpSessionSecurityContextRepository repository) throws Exception {
-        return http.securityMatcher("/api/v1/admin/auth/**","/api/v1/admin/account","/api/v1/admin/account/**")
+            AdministrativeAccessUseCases access,HttpSessionSecurityContextRepository repository,ApiRoutes routes) throws Exception {
+        return http.securityMatcher(routes.paths(IdentityRoutes.ADMIN_AREA))
             .cors(org.springframework.security.config.Customizer.withDefaults())
             .securityContext(c->c.securityContextRepository(repository)).requestCache(c->c.requestCache(new NullRequestCache()))
-            .authorizeHttpRequests(a->a.requestMatchers(r->"POST".equals(r.getMethod()) && "/api/v1/admin/auth/login".equals(r.getServletPath())).permitAll()
-                .requestMatchers(r->"GET".equals(r.getMethod()) && "/api/v1/admin/account".equals(r.getServletPath()) || "POST".equals(r.getMethod()) && Set.of("/api/v1/admin/account/password","/api/v1/admin/account/google-link").contains(r.getServletPath()))
+            .authorizeHttpRequests(a->a.requestMatchers(r->routes.permits(ApiRoute.Access.PUBLIC,r)).permitAll()
+                .requestMatchers(r->routes.permits(ApiRoute.Access.ADMINISTRATIVE,r))
                 .access((auth,context)->new AuthorizationDecision(security.authorize(auth.get(),context.getRequest())))
                 .anyRequest().denyAll())
             .exceptionHandling(e->e.authenticationEntryPoint((r,s,x)->reject(s,401,"UNAUTHENTICATED"))
@@ -93,7 +95,7 @@ public class AdministrativeHttpSecurity {
         LocalLogin(AdministrativeAccessUseCases access,AdministrativeSecurity security){this.access=access;this.security=security;}
         public record LoginRequest(String username,String password) { @Override public String toString(){return "LoginRequest[redacted]";} }
         @Override protected void doFilterInternal(HttpServletRequest r,HttpServletResponse s,FilterChain chain)throws IOException,ServletException {
-            if(!"/api/v1/admin/auth/login".equals(r.getServletPath()) || !"POST".equals(r.getMethod())){chain.doFilter(r,s);return;}
+            if(!IdentityRoutes.ADMIN_LOGIN.equals(r.getServletPath()) || !"POST".equals(r.getMethod())){chain.doFilter(r,s);return;}
             long now=Instant.now().getEpochSecond();
             if(origins.size()>4096)origins.entrySet().removeIf(e->now-e.getValue().start>=900);
             if(origins.size()>4096 && !origins.containsKey(r.getRemoteAddr())){reject(s,429,"LOGIN_THROTTLED");return;}

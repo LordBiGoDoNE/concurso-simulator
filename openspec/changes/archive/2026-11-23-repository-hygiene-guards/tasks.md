@@ -91,16 +91,22 @@ CI/deploy é área crítica (`revisao-e-integracao.md`, seção 1).
 
 ## Verificação final
 
-- [ ] Teste de ponta a ponta do agente (`teste-local.md`): a spec não tem fluxo de
+- [x] Teste de ponta a ponta do agente (`teste-local.md`): a spec não tem fluxo de
   aplicação. A verificação é a cadeia completa com `scripts/tests`, o script de
   ciclo de vida contra a `main` e `act` nos jobs `openspec` e `scripts-tests`, mais o
   `--dry-run` do relatório.
-- [ ] O PR `[SPEC]` mostra `openspec` verde: a change `repository-hygiene-guards` é
+- [x] O PR `[SPEC]` mostra `openspec` verde: a change `repository-hygiene-guards` é
   nova em relação à `main`.
-- [ ] Depois de cada troca de base de PR da cadeia e antes do merge, rodar de novo os
+- [x] Depois de cada troca de base de PR da cadeia e antes do merge, rodar de novo os
   checks (push ou fechar/reabrir) e conferir que o run usa a base atual.
-- [ ] Encerramento (seção 8): o PR de arquivamento acrescenta a linha de
+- [x] Encerramento (seção 8): o PR de arquivamento acrescenta a linha de
   `repository-hygiene-guards` ao registro e passa no job `openspec`.
 - [ ] Primeira execução real do relatório e definição de `HYGIENE_REPORT_ENABLED`:
   somente com autorização específica do usuário, depois do merge em `main`.
   Registrar na issue a execução e a issue `[PENDÊNCIAS]` criada.
+
+Encerramento (2026-11-23): pacote aprovado pelo usuário. Integração na épica: #286
+(`cb836f5`), #288 (`0230053`, base trocada para a épica e checks rodados de novo) e
+#287 (`0f4e32d`, checks rodados de novo sobre a épica atualizada). `[SPEC]` #290 →
+`main` (`2cb0295`), com `openspec` verde. A primeira execução real do relatório
+continua pendente de autorização específica do usuário.

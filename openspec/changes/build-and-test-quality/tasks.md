@@ -2,8 +2,9 @@
 
 Issue: [#257](https://github.com/LordBiGoDoNE/concurso-simulator/issues/257).
 Épica: `epic/build-and-test-quality`. Spec formalizada em 2026-11-23.
-Implementação **não autorizada**: aguarda a confirmação única de início e a resposta a
-"Vai testar as tarefas localmente?". Merges dependem da aprovação do pacote final.
+Implementação autorizada em 2026-11-23 (grupos 1–9); teste local pelo usuário: não.
+Formatador Java e largura do Prettier: valem as propostas do design. Merges dependem
+da aprovação do pacote final.
 
 Cada grupo é um PR em rascunho para a épica, com código, testes e documentação juntos.
 Duas cadeias independentes e um grupo solto:

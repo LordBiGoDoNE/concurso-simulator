@@ -2,6 +2,7 @@ package br.com.concursosimulator.identity.infrastructure;
 
 import br.com.concursosimulator.identity.application.AdministrativeAccessUseCases;
 import br.com.concursosimulator.identity.infrastructure.persistence.*;
+import br.com.concursosimulator.shared.infrastructure.ClockConfiguration;
 import java.io.*;
 import java.net.URI;
 import java.time.Clock;
@@ -15,7 +16,7 @@ import org.springframework.context.annotation.Import;
 public final class AdministrativeRecovery {
     @EnableAutoConfiguration
     @EntityScan(basePackageClasses=UserPersistenceEntity.class)
-    @Import(JpaAdministrativeAccounts.class)
+    @Import({JpaAdministrativeAccounts.class,ClockConfiguration.class})
     public static class PersistenceOnly {}
     public static void main(String[] args) {
         int code=launch(args,System.getenv(),new BufferedReader(new InputStreamReader(System.in)),System.out,System.err);
@@ -40,7 +41,7 @@ public final class AdministrativeRecovery {
                     "--spring.jpa.hibernate.ddl-auto=validate","--spring.jpa.open-in-view=false","--spring.main.web-application-type=none",
                     "--spring.main.banner-mode=off","--logging.level.root=OFF")) {
                 var passwords=new AdministrativeConfiguration().administrativePasswords();
-                var access=new AdministrativeAccessUseCases(context.getBean(JpaAdministrativeAccounts.class),passwords,Clock.systemUTC());
+                var access=new AdministrativeAccessUseCases(context.getBean(JpaAdministrativeAccounts.class),passwords,context.getBean(Clock.class));
                 access.recover(temporary);
             }
             output.println("Commit confirmed. ADM temporary password (private operator console): "+temporary);return 0;

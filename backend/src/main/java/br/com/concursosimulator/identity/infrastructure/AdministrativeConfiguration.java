@@ -22,8 +22,8 @@ public class AdministrativeConfiguration {
             }
         };
     }
-    @Bean AdministrativeAccessUseCases administrativeAccess(AdministrativeAccounts accounts,AdministrativePasswords passwords) {
-        return new AdministrativeAccessUseCases(accounts,passwords,Clock.systemUTC());
+    @Bean AdministrativeAccessUseCases administrativeAccess(AdministrativeAccounts accounts,AdministrativePasswords passwords,Clock clock) {
+        return new AdministrativeAccessUseCases(accounts,passwords,clock);
     }
     @Bean ApplicationRunner administrativeBootstrap(AdministrativeAccessUseCases access,
             @Value("${app.admin.bootstrap.username:admin}")String username,

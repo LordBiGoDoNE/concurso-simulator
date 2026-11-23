@@ -6,6 +6,10 @@ Em PR para ``main``, falha quando uma change que já estava fora de
 nenhuma change. A decisão usa o conteúdo das árvores Git, nunca o título do PR
 nem o nome da branch (spec ``repository-hygiene-guards``, design D1).
 
+Em qualquer evento, falha quando uma pasta de ``openspec/changes/archive/`` não
+tem linha na tabela da seção "Registro de entregas" do registro declarado no
+``AGENTS.md`` (``Registro de entregas: <caminho>``) ou em ``--registry`` (D3).
+
 Códigos de saída: 0 sem falhas, 1 com falhas, 2 para erro de uso ou de ``git``.
 """
 
@@ -23,6 +27,9 @@ CHANGES_DIR = "openspec/changes"
 ARCHIVE = "archive"
 MAIN_BRANCH = "main"
 DATED = re.compile(r"^\d{4}-\d{2}-\d{2}-(.+)$")
+AGENTS_FILE = "AGENTS.md"
+REGISTRY_SECTION = "## Registro de entregas"
+REGISTRY_LINE = re.compile(r"^\s*[-*]?\s*Registro de entregas:\s*(.+)$", re.IGNORECASE | re.MULTILINE)
 
 
 class GitError(Exception):
@@ -139,6 +146,79 @@ def check_without_base(head: ChangeTree) -> Result:
     return result
 
 
+def read_file(ref: str, path: str, cwd: Path) -> str | None:
+    """Conteúdo de ``path`` em ``ref``; ``None`` se o arquivo não existe nesse commit."""
+    try:
+        git(["cat-file", "-e", f"{ref}:{path}"], cwd)
+    except GitError:
+        return None
+    return git(["show", f"{ref}:{path}"], cwd)
+
+
+def declared_registry(agents_text: str | None) -> str | None:
+    match = REGISTRY_LINE.search(agents_text or "")
+    if not match:
+        return None
+    value = match.group(1).replace("`", "").strip()
+    return re.split(r"[\s#]", value)[0] or None
+
+
+def registry_entries(text: str) -> set[str] | None:
+    """Primeira coluna das linhas da tabela da seção; ``None`` se a seção não existe."""
+    lines = text.splitlines()
+    try:
+        start = next(i for i, line in enumerate(lines) if line.strip() == REGISTRY_SECTION)
+    except StopIteration:
+        return None
+    entries = set()
+    for line in lines[start + 1:]:
+        if line.startswith("## ") or line.startswith("# "):
+            break
+        if not line.lstrip().startswith("|"):
+            continue
+        cells = [cell.strip() for cell in line.strip().strip("|").split("|")]
+        first = cells[0].replace("`", "").strip() if cells else ""
+        if first and not set(first) <= set("-: ") and first.lower() != "change":
+            entries.add(first)
+    return entries
+
+
+def check_registry(head: ChangeTree, path: str | None, text: str | None) -> Result:
+    result = Result()
+    if path is None:
+        result.errors.append(
+            f"`{AGENTS_FILE}` não declara `Registro de entregas: <caminho>` na seção "
+            "\"Documentos de estado\" (pendencias-e-encerramento.md)."
+        )
+        return result
+    if text is None:
+        result.errors.append(f"Registro de entregas `{path}` não existe.")
+        return result
+    entries = registry_entries(text)
+    if entries is None:
+        result.errors.append(f"`{path}` não tem a seção `{REGISTRY_SECTION}`.")
+        return result
+    for directory in sorted(head.archive_dirs):
+        change = archived_name(directory)
+        if change not in entries:
+            result.errors.append(
+                f"Change arquivada `{change}` (`{CHANGES_DIR}/{ARCHIVE}/{directory}`) sem linha no "
+                f"registro de entregas `{path}`: acrescente a linha no PR de arquivamento."
+            )
+    if not result.errors:
+        result.notes.append(f"Registro de entregas `{path}`: {len(head.archive_dirs)} change(s) arquivada(s) com linha.")
+    return result
+
+
+def merge(*results: Result) -> Result:
+    merged = Result()
+    for result in results:
+        merged.errors += result.errors
+        merged.warnings += result.warnings
+        merged.notes += result.notes
+    return merged
+
+
 def report(result: Result, stream=None) -> None:
     stream = stream or sys.stdout
     annotate = os.environ.get("GITHUB_ACTIONS") == "true"
@@ -149,9 +229,9 @@ def report(result: Result, stream=None) -> None:
     for error in result.errors:
         print(("::error::" if annotate else "ERRO: ") + error, file=stream)
     if result.errors:
-        print(f"Ciclo de vida OpenSpec: {len(result.errors)} falha(s).", file=stream)
+        print(f"OpenSpec (ciclo de vida e registro): {len(result.errors)} falha(s).", file=stream)
     else:
-        print("Ciclo de vida OpenSpec: sem falhas.", file=stream)
+        print("OpenSpec (ciclo de vida e registro): sem falhas.", file=stream)
 
 
 def parse_args(argv: list[str] | None) -> argparse.Namespace:
@@ -160,6 +240,9 @@ def parse_args(argv: list[str] | None) -> argparse.Namespace:
     parser.add_argument("--base-branch", help="nome da branch base do PR, ex.: main")
     parser.add_argument("--head-ref", default="HEAD", help="ref do head (padrão: HEAD)")
     parser.add_argument("-C", "--repo", default=".", help="diretório do repositório")
+    parser.add_argument(
+        "--registry", help=f"caminho do registro de entregas (padrão: o declarado no {AGENTS_FILE} do head)"
+    )
     args = parser.parse_args(argv)
     if bool(args.base_ref) != bool(args.base_branch):
         parser.error("--base-ref e --base-branch devem ser informados juntos")
@@ -173,9 +256,12 @@ def main(argv: list[str] | None = None) -> int:
         head = read_tree(args.head_ref, repo)
         if args.base_ref:
             base = read_tree(args.base_ref, repo)
-            result = check_lifecycle(base, head, args.base_branch)
+            lifecycle = check_lifecycle(base, head, args.base_branch)
         else:
-            result = check_without_base(head)
+            lifecycle = check_without_base(head)
+        path = args.registry or declared_registry(read_file(args.head_ref, AGENTS_FILE, repo))
+        text = read_file(args.head_ref, path, repo) if path else None
+        result = merge(lifecycle, check_registry(head, path, text))
     except GitError as error:
         print(f"ERRO: {error}", file=sys.stderr)
         return 2

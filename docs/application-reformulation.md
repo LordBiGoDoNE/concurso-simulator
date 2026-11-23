@@ -27,9 +27,47 @@ As novas specs partem da `main` atualizada. O layout `study-experience-redesign`
   `administrative-question-import`, `study-experience-redesign`,
   `lesson-depth-alignment` e `lesson-animations` (#254).
 - **Registro OpenSpec:** as specs vigentes ficam em `openspec/specs/`, e as changes
-  entregues em `openspec/changes/archive/`.
+  entregues em `openspec/changes/archive/`, cada uma com uma linha no
+  [Registro de entregas](#registro-de-entregas).
 - **Backlog:** a #221 reúne o pós-VPS (smoke Google real, acervo de outubro). As
   issues `review-finding` abertas guardam os achados adiados.
+
+## Registro de entregas
+
+Uma linha por pasta de `openspec/changes/archive/`. O PR de arquivamento acrescenta a
+linha da change (`~/.claude/rules/pendencias-e-encerramento.md`), e o job `openspec`
+do CI falha se faltar alguma. `[SPEC]` é o PR que integrou a change; "→ #133" indica
+que ela entrou primeiro na épica geral, levada à `main` pelo #133. Changes de épica
+combinada apontam também o `[SPEC]` do conjunto. Data é a do arquivamento. Dados não
+localizados ficam marcados como tal.
+
+| Change | Issue | [SPEC] | Arquivamento | Data | Observação |
+| --- | --- | --- | --- | --- | --- |
+| `question-bank-expansion` | #173 | #189 → #202 | #205 | 2026-11-13 | Épica combinada `question-bank-expansion-curation` |
+| `administrative-question-curation` | #177 | #191 → #202 | #205 | 2026-11-13 | Épica combinada `question-bank-expansion-curation` |
+| `question-bank-expansion-curation` | #173, #177 | #202 | #205 | 2026-11-13 | Épica combinada (#189 + #191) |
+| `vps-staging-delivery` | #156 | #224 | #226 | 2026-11-13 | Lançamento público na VPS; arquivada por `task/vps-staging-delivery/archive` |
+| `study-experience-redesign` | #139 | #147 | #227 | 2026-11-17 | |
+| `administrative-question-import` | #160 | #171 | #231 | 2026-11-17 | |
+| `lesson-depth-alignment` | #230 | #243 | #244 | 2026-11-18 | |
+| `lesson-animations` | #245 | #254 | #255 | 2026-11-20 | |
+| `bootstrap-application-stack` | #13 | #14 → #133 | #259 | 2026-11-23 | Arquivamento retroativo em lote (#259) |
+| `optional-google-identity` | #17 | #25 → #133 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `question-bank` | #30 | #63 → #133 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `mock-exam-attempts` | #64 | #84 → #133 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `parameterized-questions` | #86 | #103 → #133 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `subject-review` | #104 | #121 → #133 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `local-application-delivery` | #123 | #130 → #133 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `local-only-delivery-scope` | #131 | #132 → #133 | #259 | 2026-11-23 | Arquivamento retroativo sem delta de specs; escopo somente local superado pela VPS (#224) |
+| `pages-stable-migration` | #134 | sem `[SPEC]`: #135 (`stable`) e #136 (`main`) | #259 | 2026-11-23 | Arquivamento retroativo sem delta de specs (só evidência de revisão) |
+| `pages-stable-epic-sync` | #134 | #138 → #133 | #259 | 2026-11-23 | Arquivamento retroativo sem delta de specs (só documentação) |
+| `lesson-practice` | #148 | #154 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `new-student-experience` | #158 | #163 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `lesson-practice-by-topic` | #161 | #176 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `focus-visual-refresh` | #193 | #204 | #259 | 2026-11-23 | Arquivamento retroativo em lote |
+| `remove-legacy-review-gate` | #256 | #269 | #270 | 2026-11-23 | |
+| `backend-http-boundaries` | #261 | #281 | #283 | 2026-11-23 | |
+| `build-and-test-quality` | #257 | #282 | #284 | 2026-11-23 | |
 
 ## Registro histórico da entrega
 

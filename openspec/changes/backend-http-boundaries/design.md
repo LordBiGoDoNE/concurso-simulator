@@ -48,15 +48,24 @@ Contrato técnico em `shared/infrastructure/http` (mecanismo realmente compartil
 sem regra de negócio):
 
 ```java
-public record ApiRoute(HttpMethod method, String pattern, Access access, Cors cors,
-                       Session session, boolean passwordChangeExempt) {}
-public enum Access { PUBLIC, VISITOR_OR_ACCOUNT, ACCOUNT, ACCOUNT_PRINCIPAL, OWN_CHAIN }
-public enum Cors { NONE, PUBLIC_READ, CREDENTIALED }
-public enum Session { STATELESS, STATEFUL }
-public interface ApiRoutePolicy { List<ApiRoute> routes(); }
+public record ApiArea(String name, Chain chain, List<String> paths, Cors cors,
+                      List<String> corsPaths, boolean jsonFailures, List<ApiRoute> routes) {
+    public enum Chain { STATELESS, SESSION, OWN }
+    public record Cors(List<String> methods, boolean credentials) {}
+}
+public record ApiRoute(String method, String pattern, Access access, boolean passwordChangeExempt) {
+    public enum Access { PUBLIC, VISITOR_OR_ACCOUNT, ACCOUNT, ACCOUNT_PRINCIPAL, ADMINISTRATIVE }
+}
 ```
 
-- Cada funcionalidade expõe um bean `ApiRoutePolicy` na sua `infrastructure`:
+Implementado (substitui o esboço inicial com `Session`, `OWN_CHAIN` e
+`ApiRoutePolicy`): a unidade declarada é a **área** (`ApiArea`), que reúne os
+caminhos possuídos, a cadeia que os atende, o CORS e se as falhas da segurança
+respondem JSON `no-store`; cada `ApiRoute` só carrega método, padrão, acesso e
+isenção de troca de senha. `ApiRoutesConfiguration` agrega os beans `ApiArea` no
+registro `ApiRoutes`.
+
+- Cada funcionalidade expõe um ou mais beans `ApiArea` na sua `infrastructure`:
   `platform` (status), `identity` (sessão, CSRF, config, logout, OAuth, conta
   administrativa), `questionbank` (públicas, importação, curadoria), `mockexam`
   (tentativas, práticas, históricos), `subjectreview` (revisão por assunto).
@@ -66,11 +75,17 @@ public interface ApiRoutePolicy { List<ApiRoute> routes(); }
   401/403 com ou sem corpo em `ApiAccessFailureHandler`, desvio de sessão em
   `SessionIndependentRoutesFilter` e isenções em `ActiveAccountFilter`, todos lendo
   o mesmo registro (`ApiRoutes`, que agrega os beans).
-- `OWN_CHAIN` marca rotas atendidas pelas cadeias administrativas: elas usam o
-  registro para `securityMatcher` e CORS, mas mantêm a autorização e os filtros
-  próprios.
-- O registro falha na inicialização se duas políticas declararem o mesmo
-  método+padrão.
+- Áreas com `Chain.OWN` (cadeias administrativas, rotas com acesso
+  `ADMINISTRATIVE`) usam o registro para `securityMatcher` e CORS, mas mantêm a
+  autorização e os filtros próprios.
+- CORS é da área, aplicado a `corsPaths`: `/api/v1/attempts/*/subject-review` é
+  possuído pela área de `subjectreview`, mas recebe o CORS da área do simulado
+  (`mockexam`), cujos `corsPaths` cobrem `/api/v1/attempts/**`.
+- `ApiRoutes.ADMIN_NAMESPACE` (`/api/v1/admin/`) é um prefixo compartilhado, não
+  uma rota: `no-store` e indisponibilidade comuns a tudo sob ele, declarado ou não.
+- O registro falha na inicialização se duas declarações repetirem
+  método+padrão, se duas áreas tiverem o mesmo nome ou se uma rota ficar fora dos
+  caminhos da própria área.
 - Correspondência: `PathPatternParser` sobre o mesmo `servletPath` usado hoje.
   Padrões com variável (`/api/v1/attempts/{id}/result`) substituem as regex
   `[^/]+`. Barra final, caminho codificado e segmento vazio entram na matriz de
@@ -199,7 +214,8 @@ compatibilidade implícita sem prazo para sair).
 - Todo `@RestController`: não depende de `org.springframework.security..` (exceto
   `@AuthenticationPrincipal`), `org.springframework.session..`,
   `jakarta.servlet.http..`; todo método mapeado retorna `ResponseEntity<T>` com `T`
-  record do próprio pacote web ou de `shared.web`.
+  record do próprio pacote web ou de `shared.web`; `ResponseEntity<Void>` é aceito
+  para respostas sem corpo (204/404).
 - Os testes classe a classe atuais viram casos particulares e são removidos quando
   cobertos; as regras próprias de `SessionController` (CSRF) ficam.
 - Exceções a uma regra genérica, se surgirem, são listadas no teste com motivo; não

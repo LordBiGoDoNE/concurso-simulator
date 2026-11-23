@@ -29,9 +29,20 @@ Usar DTOs web tipados (records quando adequados) e retornos concretos, como `Res
 
 Rejeições técnicas de segurança ficam nos mecanismos do Spring Security. Erros da aplicação podem ser traduzidos por adaptadores web/ControllerAdvice sem contaminar o núcleo com HTTP. Não capturar toda exceção para fingir visitante, conflito conhecido ou sucesso.
 
+## Declaração de rotas
+
+Cada funcionalidade declara suas áreas HTTP (`ApiArea`) na própria `infrastructure` (`IdentityRoutes`, `QuestionBankRoutes`, `MockExamRoutes`, `SubjectReviewRoutes`, `PlatformRoutes`): caminhos possuídos, cadeia (`STATELESS`, `SESSION` ou cadeia própria `OWN`), CORS, se as falhas são JSON e cada rota com método, padrão e acesso técnico (`PUBLIC`, `VISITOR_OR_ACCOUNT`, `ACCOUNT`, `ACCOUNT_PRINCIPAL`, `ADMINISTRATIVE`). O registro `ApiRoutes` (`shared/infrastructure/http`) é a única fonte lida pelas cadeias de segurança, CORS, `ApiAccessFailureHandler`, desvio de sessão, isenção de troca de senha e filtros de indisponibilidade; `platform` só compõe.
+
+- Rota nova: declarar no mesmo PR, na funcionalidade dona; não editar `platform` nem outra funcionalidade.
+- Rota não declarada continua negada pela cadeia padrão.
+- A correspondência usa `PathPattern` sobre `servletPath`, sem barra final opcional; variáveis com regex são aceitas.
+- `ApiRouteCoverageTests` falha se um mapeamento de controller não tiver exatamente uma rota declarada ou se uma rota declarada não tiver controller nem estiver na lista de rotas do framework. Prova presença e unicidade, não que o acesso escolhido esteja certo.
+- `HttpRouteMatrixTests` compara status, cache, tipo, erro, sessão e CORS de cada rota e variante com `src/test/resources/http/route-matrix.tsv`. Mudança no arquivo é mudança de contrato e precisa de justificativa no PR.
+
 ## Checklist obrigatório para endpoints alterados
 
 - [ ] Cada endpoint tem finalidade e público explícitos; a rota não existe apenas por conveniência de implementação.
+- [ ] A rota está declarada uma única vez na área da funcionalidade dona, com acesso, CORS e isenções explícitos; `platform` não ganhou caminho literal.
 - [ ] Cada decisão tem um proprietário (segurança, web, aplicação ou domínio); não há regra duplicada nem camadas apenas delegadoras.
 - [ ] Autenticação/principal, acesso técnico e CSRF são tratados antes do controller quando aplicáveis; regras de negócio não foram deslocadas para filtros.
 - [ ] Entrada/saída e principal são tipados; contratos, códigos de erro, cache e privacidade estão documentados. Exceções ao padrão têm justificativa.

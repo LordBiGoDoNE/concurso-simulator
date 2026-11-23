@@ -78,6 +78,6 @@ public class AdministrativeSecurity implements AdministrativeSession, Administra
         if(!google.enabled())throw new AdministrativeAccessUseCases.Failure("GOOGLE_DISABLED");
         var request=((ServletRequestAttributes)RequestContextHolder.currentRequestAttributes()).getRequest();
         request.getSession().setAttribute(LINK,new LinkIntent(a.owner(),a.version(),Instant.now().plusSeconds(300),null));
-        return "/oauth2/authorization/google";
+        return IdentityRoutes.OAUTH_AUTHORIZATION;
     }
 }

@@ -8,7 +8,7 @@ public final class OAuthRequestMethods {
 
     public static boolean rejects(HttpServletRequest request) {
         return !"GET".equals(request.getMethod())
-                && ("/oauth2/authorization/google".equals(request.getServletPath())
-                    || "/login/oauth2/code/google".equals(request.getServletPath()));
+                && (IdentityRoutes.OAUTH_AUTHORIZATION.equals(request.getServletPath())
+                    || IdentityRoutes.OAUTH_CALLBACK.equals(request.getServletPath()));
     }
 }

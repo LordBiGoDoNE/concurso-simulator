@@ -13,10 +13,11 @@ import java.io.IOException;
 /** Indisponibilidade de sessão ocorre antes do MVC; não deve virar 404, visitante ou sucesso. */
 @Configuration
 public class AttemptAvailabilityConfiguration {
-    @Bean FilterRegistrationBean<OncePerRequestFilter> attemptAvailability(@org.springframework.beans.factory.annotation.Value("${app.cors-origins}")String configuredOrigins) {
+    @Bean FilterRegistrationBean<OncePerRequestFilter> attemptAvailability(@org.springframework.beans.factory.annotation.Value("${app.cors-origins}")String configuredOrigins,
+            br.com.concursosimulator.shared.infrastructure.http.ApiRoutes routes) {
         var origins=java.util.Arrays.stream(configuredOrigins.split(",")).map(String::trim).toList();
         var filter=new OncePerRequestFilter() {
-            @Override protected boolean shouldNotFilter(HttpServletRequest request) { return !AttemptRoutes.owns(request) && !br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.owns(request); }
+            @Override protected boolean shouldNotFilter(HttpServletRequest request) { return !routes.jsonFailures(request); }
             @Override protected void doFilterInternal(HttpServletRequest request,HttpServletResponse response,FilterChain chain) throws ServletException,IOException {
                 response.setHeader("Cache-Control","no-store");
                 try { chain.doFilter(request,response); }

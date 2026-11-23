@@ -34,8 +34,8 @@ public class GoogleLoginConfiguration {
         }
         URI callback = browserUri(properties.callbackUrl(), environment);
         browserUri(properties.frontendUrl(), environment);
-        if (!"/login/oauth2/code/google".equals(callback.getPath())) {
-            throw new IllegalArgumentException("Callback Google deve usar /login/oauth2/code/google");
+        if (!IdentityRoutes.OAUTH_CALLBACK.equals(callback.getPath())) {
+            throw new IllegalArgumentException("Callback Google deve usar " + IdentityRoutes.OAUTH_CALLBACK);
         }
     }
 

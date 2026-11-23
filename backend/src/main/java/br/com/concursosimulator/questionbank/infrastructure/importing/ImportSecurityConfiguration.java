@@ -1,12 +1,14 @@
 package br.com.concursosimulator.questionbank.infrastructure.importing;
 
+import br.com.concursosimulator.questionbank.infrastructure.QuestionBankRoutes;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
 import br.com.concursosimulator.identity.web.UserPrincipal;
 import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import java.io.IOException;
 import java.util.*;
 import java.util.concurrent.Semaphore;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.*;
 import org.springframework.core.annotation.Order;
 import org.springframework.security.authorization.AuthorizationDecision;
@@ -18,7 +20,6 @@ import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.AuthorizationFilter;
 import org.springframework.security.web.context.HttpSessionSecurityContextRepository;
 import org.springframework.security.web.savedrequest.NullRequestCache;
-import org.springframework.web.cors.*;
 import org.springframework.web.filter.OncePerRequestFilter;
 
 @Configuration
@@ -26,16 +27,13 @@ public class ImportSecurityConfiguration {
     @Bean @Order(0)
     SecurityFilterChain administrativeImportSecurity(HttpSecurity http,ImportSettings settings,
             br.com.concursosimulator.questionbank.application.port.AdministrativeImportPermission permission,
-            HttpSessionSecurityContextRepository repository,@Value("${app.cors-origins}")String origins)throws Exception {
-        var cors=new CorsConfiguration();cors.setAllowedOrigins(Arrays.stream(origins.split(",")).map(String::trim).filter(s->!s.isEmpty()).toList());
-        if(cors.getAllowedOrigins().stream().anyMatch(o->o.contains("*")))throw new IllegalArgumentException("Origem explícita obrigatória");
-        cors.setAllowCredentials(true);cors.setAllowedMethods(List.of("POST"));cors.setAllowedHeaders(List.of("Content-Type","Accept","X-CSRF-TOKEN"));
-        return http.securityMatcher("/api/v1/admin/question-imports","/api/v1/admin/question-imports/**")
-                .cors(c->c.configurationSource(r->cors))
+            HttpSessionSecurityContextRepository repository,ApiRoutes routes)throws Exception {
+        return http.securityMatcher(routes.paths(QuestionBankRoutes.IMPORT_AREA))
+                .cors(org.springframework.security.config.Customizer.withDefaults())
                 .securityContext(c->c.securityContextRepository(repository))
                 .requestCache(c->c.requestCache(new NullRequestCache()))
                 .sessionManagement(c->c.sessionCreationPolicy(SessionCreationPolicy.IF_REQUIRED))
-                .authorizeHttpRequests(a->a.requestMatchers(r->r.getMethod().equals("POST") && Set.of("/api/v1/admin/question-imports/preview","/api/v1/admin/question-imports/apply").contains(r.getServletPath()))
+                .authorizeHttpRequests(a->a.requestMatchers(r->routes.permits(ApiRoute.Access.ADMINISTRATIVE,r))
                         .access((authentication,context)->{
                             var current=authentication.get();return new AuthorizationDecision(valid(current) && current.getDetails() instanceof br.com.concursosimulator.identity.infrastructure.AdministrativeSecurity.Evidence evidence && permission.permits(((UserPrincipal)current.getPrincipal()).id(),evidence.version()));
                         }).anyRequest().denyAll())

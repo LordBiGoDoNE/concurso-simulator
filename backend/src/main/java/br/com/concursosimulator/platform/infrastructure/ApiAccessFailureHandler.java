@@ -1,5 +1,7 @@
 package br.com.concursosimulator.platform.infrastructure;
 
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoute;
+import br.com.concursosimulator.shared.infrastructure.http.ApiRoutes;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -9,9 +11,17 @@ import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
 
-/** Rejeições HTTP da segurança, antes dos controllers; sem redirects ou dados pessoais. */
+/**
+ * Rejeições HTTP da segurança, antes dos controllers; sem redirects ou dados pessoais.
+ * 401 para rota declarada que exige identidade (fora de falha CSRF); 403 nos demais casos,
+ * com corpo JSON somente nas áreas que o declaram.
+ */
 @Component
 public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, AccessDeniedHandler {
+    private final ApiRoutes routes;
+
+    public ApiAccessFailureHandler(ApiRoutes routes) { this.routes = routes; }
+
     @Override
     public void commence(HttpServletRequest request, HttpServletResponse response, AuthenticationException exception)
             throws IOException {
@@ -25,21 +35,15 @@ public final class ApiAccessFailureHandler implements AuthenticationEntryPoint, 
     }
 
     private void reject(HttpServletRequest request, HttpServletResponse response, boolean csrf) throws IOException {
-        boolean attempts=br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.owns(request)
-                || br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.owns(request);
-        if (!csrf && ("GET".equals(request.getMethod()) && ("/api/v1/me".equals(request.getServletPath())
-                || "/api/v1/me/attempts".equals(request.getServletPath())
-                || "/api/v1/me/lesson-practices".equals(request.getServletPath()))
-                || br.com.concursosimulator.mockexam.infrastructure.AttemptRoutes.permits(request)
-                || br.com.concursosimulator.shared.infrastructure.SubjectReviewRoutes.permits(request))) {
+        if (!csrf && routes.route(request).map(ApiRoute::requiresIdentity).orElse(false)) {
             response.setStatus(401);
             response.setContentType("application/json");
             response.setHeader("Cache-Control", "no-store");
             response.getWriter().write("{\"error\":\"unauthenticated\"}");
         } else {
             response.setStatus(403);
-            if (attempts) {
-                response.setContentType("application/json"); response.setHeader("Cache-Control","no-store");
+            if (routes.jsonFailures(request)) {
+                response.setContentType("application/json"); response.setHeader("Cache-Control", "no-store");
                 response.getWriter().write("{\"error\":\"forbidden\"}");
             }
         }
